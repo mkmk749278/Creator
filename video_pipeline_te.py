@@ -367,7 +367,7 @@ def main():
             '-ss', str(music_offset), '-i', f"{OUT}/music.wav",
             '-i', audio_p,
             '-filter_complex',
-            '[0:a]volume=0.13[m];[1:a]volume=1.0[v];[m][v]amix=inputs=2:duration=second[out]',
+            '[0:a]volume=0.13[m];[1:a]volume=1.0[v];[m][v]amix=inputs=2:duration=shortest[out]',
             '-map','[out]','-t', str(dur), '-c:a','aac','-b:a','192k', mix_p
         ], capture_output=True)
         music_offset += dur
