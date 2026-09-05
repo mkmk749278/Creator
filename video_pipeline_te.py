@@ -360,36 +360,31 @@ def main():
         img_p = f"{OUT}/frame_{i:02d}.jpg"
         img.save(img_p, quality=92)
 
-        # Mix: narration + music segment
-        mix_p = f"{OUT}/mix_{i:02d}.aac"
-        subprocess.run([
-            'ffmpeg', '-y',
-            '-ss', str(music_offset), '-i', f"{OUT}/music.wav",
-            '-i', audio_p,
-            '-filter_complex',
-            '[0:a]volume=0.13[m];[1:a]volume=1.0[v];[m][v]amix=inputs=2:duration=shortest[out]',
-            '-map','[out]','-t', str(dur), '-c:a','aac','-b:a','192k', mix_p
-        ], capture_output=True)
         music_offset += dur
 
-        # Encode segment (stillimage mode for speed)
+        # Encode segment: image + narration + background music in one pass
         seg_p = f"{OUT}/seg_{i:02d}.mp4"
-        subprocess.run([
+        r = subprocess.run([
             'ffmpeg', '-y',
             '-loop', '1', '-i', img_p,
-            '-i', mix_p,
+            '-ss', str(music_offset - dur), '-i', f"{OUT}/music.wav",
+            '-i', audio_p,
+            '-filter_complex',
+            '[1:a]volume=0.13[m];[2:a]volume=1.0[v];[m][v]amix=inputs=2:duration=shortest[out]',
+            '-map', '0:v', '-map', '[out]',
             '-c:v', 'libx264', '-preset', 'ultrafast', '-tune', 'stillimage',
             '-crf', '26', '-pix_fmt', 'yuv420p',
-            '-c:a', 'copy', '-shortest', '-t', str(dur+0.1),
+            '-c:a', 'aac', '-b:a', '192k',
+            '-shortest', '-t', str(dur + 0.1),
             seg_p
-        ], capture_output=True)
+        ], capture_output=True, text=True)
 
-        if os.path.exists(seg_p):
+        if os.path.exists(seg_p) and os.path.getsize(seg_p) > 1000:
             sz = os.path.getsize(seg_p) // 1024
             print(f"Seg {i:02d}: {dur:.1f}s → {sz}KB")
             segments.append(seg_p)
         else:
-            print(f"Seg {i:02d}: encoding failed")
+            print(f"Seg {i:02d}: encoding failed | {r.stderr[-200:]}")
 
     # --- Concatenate ---
     if not segments:
