@@ -1,0 +1,106 @@
+{
+  "id": "01_what_lumin_does",
+  "title": "What Lumin actually does",
+  "note": "Cold-audience explainer. Every claim is taken from the app's own onboarding screens (captured 2026-09-08) -- 75 pairs, 15s scan, 15 AI analysts, paper mode. No performance, profit or win-rate claim appears anywhere, by design.",
+  "voice": "Most crypto apps hand you a chart and wish you luck. Lumin does the work instead. Every fifteen seconds, it scans seventy five USDT futures pairs. Fifteen AI analysts score every setup before a signal fires. You get the whole trade: entry, stop loss, and three targets. Paper mode first, so you can prove it before you risk anything. Lumin. On Google Play.",
+  "bpm": 100,
+  "music_seed": 7,
+  "music_db": -20.0,
+  "scenes": [
+    {
+      "type": "character",
+      "image": "lia_hero_desk.png",
+      "kicker": "LUMIN",
+      "headline": "Most crypto apps hand you a chart.",
+      "headline_size": 84,
+      "zoom": [
+        1.1,
+        1.0
+      ],
+      "pan": [
+        [
+          0.5,
+          0.2
+        ],
+        [
+          0.5,
+          0.26
+        ]
+      ],
+      "scrim_top_h": 620,
+      "scrim_top_alpha": 205
+    },
+    {
+      "type": "card",
+      "until": "Lumin does the work",
+      "kicker": "SO WE BUILT THIS",
+      "headline": "Lumin does the work instead.",
+      "headline_size": 108
+    },
+    {
+      "type": "phone",
+      "until": "Every fifteen seconds",
+      "kicker": "EVERY 15 SECONDS",
+      "screens": [
+        "signals_list.png",
+        "signals_list_scrolled.png"
+      ],
+      "push": [
+        1.0,
+        1.07
+      ],
+      "width": 640
+    },
+    {
+      "type": "card",
+      "until": "Fifteen AI analysts",
+      "kicker": "BEFORE A SIGNAL FIRES",
+      "headline": "15 AI analysts score every setup.",
+      "headline_size": 100,
+      "pills": [
+        "Momentum",
+        "Structure",
+        "Regime"
+      ]
+    },
+    {
+      "type": "duo",
+      "until": "You get the whole trade",
+      "image": "lia_hero_laptop.png",
+      "screen": "signals_list.png",
+      "kicker": "THE WHOLE TRADE",
+      "pan": [
+        [
+          0.34,
+          0.14
+        ],
+        [
+          0.4,
+          0.19
+        ]
+      ]
+    },
+    {
+      "type": "phone",
+      "until": "Paper mode first",
+      "kicker": "PROVE IT FIRST",
+      "screens": [
+        "onboard_funds_safe.png"
+      ],
+      "push": [
+        1.04,
+        1.0
+      ],
+      "width": 640
+    },
+    {
+      "type": "end",
+      "until": "Lumin On Google Play",
+      "headline": "Lumin",
+      "sub": "Crypto insights in your hand",
+      "cta": "Get it on Google Play",
+      "handle": "@lumin.signals",
+      "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."
+    }
+  ]
+}

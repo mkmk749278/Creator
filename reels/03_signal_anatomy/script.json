@@ -1,0 +1,103 @@
+{
+  "id": "03_signal_anatomy",
+  "title": "What one Lumin signal gives you",
+  "note": "Product demo. Uses the live Signals list captured 2026-09-08 -- real setups, real levels, nothing redrawn. The free-signals / paid-automation split is the app's own Signals-tab wording.",
+  "voice": "This is one Lumin signal. Here is everything it hands you. The pair, and the setup that fired it. Named, not a mystery. Your entry. Your stop loss. And three take profit targets, all placed before you touch anything. No guessing where to get out. Every signal in the app is free. Automation is the part you pay for.",
+  "bpm": 104,
+  "music_seed": 21,
+  "music_db": -20.0,
+  "scenes": [
+    {
+      "type": "character",
+      "image": "lia_hero_desk.png",
+      "kicker": "INSIDE THE APP",
+      "headline": "What does one signal actually give you?",
+      "headline_size": 80,
+      "scrim_top_h": 660,
+      "scrim_top_alpha": 210,
+      "zoom": [
+        1.12,
+        1.02
+      ],
+      "pan": [
+        [
+          0.5,
+          0.18
+        ],
+        [
+          0.5,
+          0.24
+        ]
+      ]
+    },
+    {
+      "type": "screen",
+      "until": "The pair",
+      "screen": "signals_list.png",
+      "zoom": [
+        1.0,
+        1.04
+      ],
+      "pan": [
+        [
+          0.5,
+          0.16
+        ],
+        [
+          0.5,
+          0.32
+        ]
+      ],
+      "kicker_y": 130
+    },
+    {
+      "type": "card",
+      "until": "Your entry",
+      "kicker": "THE WHOLE TRADE",
+      "headline": "Entry. Stop. Three targets.",
+      "headline_size": 104,
+      "pills": [
+        "ENTRY",
+        "SL",
+        "TP1 / TP2 / TP3"
+      ]
+    },
+    {
+      "type": "screen",
+      "until": "all placed before you touch anything",
+      "screen": "signals_list_scrolled.png",
+      "zoom": [
+        1.0,
+        1.03
+      ],
+      "pan": [
+        [
+          0.5,
+          0.3
+        ],
+        [
+          0.5,
+          0.44
+        ]
+      ],
+      "kicker_y": 130
+    },
+    {
+      "type": "card",
+      "until": "Every signal in the app is free",
+      "kicker": "NO PAYWALL ON SIGNALS",
+      "headline": "Every signal is free.",
+      "headline_size": 124,
+      "sub": "Automation is the part you pay for."
+    },
+    {
+      "type": "end",
+      "until": "Automation is the part you pay for",
+      "headline": "Lumin",
+      "sub": "Crypto insights in your hand",
+      "cta": "Get it on Google Play",
+      "handle": "@lumin.signals",
+      "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."
+    }
+  ]
+}
