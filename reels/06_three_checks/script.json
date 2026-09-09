@@ -1,0 +1,114 @@
+{
+  "id": "06_three_checks",
+  "title": "Three things to check before you trust any signals app",
+  "note": "NEW 2026-09-09. Education-first and deliberately app-agnostic for most of its length: it is a checklist for judging ANY signals app, which is the safest ground there is and the format that earns saves. Lumin answers the checklist rather than being the subject of it. All three answers are pointable: trade_only_key, stop_on_every, paper_mode. The withdraw auto-reject is the engine's own hard limit (360-v2 CLAUDE.md).",
+  "voice": "Before you connect any signals app to your exchange — three things. One. What can the API key actually do? If it can withdraw, walk away. Lumin asks for trade-only, and a key with withdrawal turned on gets rejected. Two. Is there a stop on every trade, placed automatically? Three. Can you test the whole thing without money first? Look — if an app can't answer those three, the problem isn't that it's bad. It's that you can't tell. And with your money, that's the same thing.",
+  "bpm": 94,
+  "music_seed": 41,
+  "music_db": -20.5,
+  "tail": 2.4,
+  "scenes": [
+    {
+      "type": "talk",
+      "image": "lia_hero_desk.png",
+      "shot": "mid",
+      "seed": 2,
+      "kicker": "BEFORE YOU CONNECT ANYTHING",
+      "headline": "Three things to check.",
+      "headline_size": 104,
+      "scrim_top_h": 560
+    },
+    {
+      "type": "talk",
+      "until": "What can the API key",
+      "image": "lia_hero_desk.png",
+      "shot": "wide",
+      "seed": 5,
+      "kicker": "ONE",
+      "headline": "What can the key actually do?",
+      "headline_size": 84,
+      "scrim_top_h": 600,
+      "inset": {
+        "proof": "trade_only_key",
+        "y": 1080,
+        "width": 560,
+        "at": 0.3
+      }
+    },
+    {
+      "type": "card",
+      "until": "If it can withdraw",
+      "kicker": "IF IT CAN WITHDRAW",
+      "headline": "Walk away.",
+      "headline_size": 148
+    },
+    {
+      "type": "talk",
+      "until": "Is there a stop on every trade",
+      "image": "lia_hero_laptop.png",
+      "shot": "mid",
+      "seed": 8,
+      "kicker": "TWO",
+      "headline": "A stop on every trade — placed for you.",
+      "headline_size": 74,
+      "scrim_top_h": 630,
+      "inset": {
+        "proof": "stop_on_every",
+        "y": 1090,
+        "width": 560,
+        "at": 0.22
+      }
+    },
+    {
+      "type": "talk",
+      "until": "Can you test the whole thing",
+      "image": "lia_hero_desk.png",
+      "shot": "wide",
+      "seed": 11,
+      "kicker": "THREE",
+      "headline": "Can you test it without money?",
+      "headline_size": 82,
+      "scrim_top_h": 610,
+      "inset": {
+        "proof": "paper_mode",
+        "y": 1080,
+        "width": 560,
+        "at": 0.22
+      }
+    },
+    {
+      "type": "card",
+      "until": "the problem isn't that",
+      "kicker": "IF IT CAN'T ANSWER THOSE",
+      "headline": "It's not that it's bad.",
+      "headline_size": 100,
+      "sub": "It's that you can't tell."
+    },
+    {
+      "type": "duo",
+      "image": "lia_hero_laptop.png",
+      "screen": "onboard_funds_safe.png",
+      "kicker": "SAME THING",
+      "scrim_top_h": 430,
+      "pan": [
+        [
+          0.32,
+          0.12
+        ],
+        [
+          0.38,
+          0.17
+        ]
+      ]
+    },
+    {
+      "type": "end",
+      "until": "same thing",
+      "headline": "Lumin",
+      "sub": "Ask the three questions",
+      "cta": "Get it on Google Play",
+      "handle": "@lumin.signals",
+      "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."
+    }
+  ]
+}

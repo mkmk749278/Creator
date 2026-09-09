@@ -194,3 +194,59 @@ def pill(text: str, *, path: str = brand.BODY_BOLD, size: int = 30,
     box = f.getbbox(text)
     d.text((pad[0] - box[0], (h - th) / 2 - box[1]), text, font=f, fill=fg)
     return img
+
+
+def plate_card(plate: Image.Image, region, *, width: int = 470, radius: int = 26,
+               label: str | None = None, glow: bool = True) -> Image.Image:
+    """A CROPPED REGION of an app screen, as a small card.
+
+    The inset on a `talk` scene cannot be a whole phone. A 1290x2565 screenshot
+    shrunk to inset width puts the app's body text at about six pixels, so the
+    viewer sees a phone-shaped blur and takes the claim on trust -- which is the
+    one thing `COMPLIANCE.md` exists to stop, since the whole point of pointing
+    at a screen is that the viewer can read it.
+
+    So the inset shows ONE row of the screen at a legible size. `region` is
+    (x0, y0, x1, y1) normalised on the plate, which survives a re-capture at a
+    different device resolution; pixel coordinates would not.
+    """
+    x0, y0, x1, y1 = region
+    box = (int(x0 * plate.width), int(y0 * plate.height),
+           int(x1 * plate.width), int(y1 * plate.height))
+    crop = plate.convert("RGB").crop(box)
+    h = max(1, int(width * crop.height / crop.width))
+    crop = crop.resize((width, h), Image.LANCZOS)
+
+    card = Image.new("RGBA", (width, h), (0, 0, 0, 0))
+    card.paste(crop, (0, 0))
+    mask = Image.new("L", (width, h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, width - 1, h - 1],
+                                           radius=radius, fill=255)
+    card.putalpha(mask)
+    frame = rounded_rect((width, h), radius, (0, 0, 0, 0),
+                         outline=brand.ACCENT + (110,), width=2)
+    card.alpha_composite(frame)
+
+    if label:
+        f = font(brand.BODY_BOLD, 26)
+        tw, th = text_size(label, f)
+        strip = rounded_rect((tw + 34, th + 22), (th + 22) // 2,
+                             brand.BG_DEEP + (238,), outline=brand.ACCENT + (90,))
+        d = ImageDraw.Draw(strip)
+        bb = f.getbbox(label)
+        d.text((17 - bb[0], (th + 22 - th) / 2 - bb[1]), label, font=f,
+               fill=brand.ACCENT + (255,))
+        out = Image.new("RGBA", (max(width, strip.width), h + strip.height + 14),
+                        (0, 0, 0, 0))
+        out.alpha_composite(card, (0, strip.height + 14))
+        out.alpha_composite(strip, (0, 0))
+        card = out
+
+    if not glow:
+        return card
+    pad = 60
+    out = Image.new("RGBA", (card.width + pad * 2, card.height + pad * 2), (0, 0, 0, 0))
+    out.alpha_composite(drop_shadow(card, blur=30, offset=(0, 14)),
+                        (pad - 90, pad - 90))
+    out.alpha_composite(card, (pad, pad))
+    return out

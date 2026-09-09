@@ -1,105 +1,88 @@
 {
   "id": "04_stop_loss_saves_you",
   "title": "What a stop loss actually saves you",
-  "note": "Educational reel. The hard-stop rule is the payoff. No performance claim — explains what a stop loss does and why Lumin sets one on every position automatically. Claims sourced from app onboarding and 360-v2 hard limits (B7: each evaluator owns its SL/TP geometry, naked-position invariant enforced).",
-  "voice": "Most people learn what a stop loss is the hard way. Here is the short version. A stop loss is the price where your trade closes automatically, so a bad position does not turn into a disaster. The size of the loss is decided before the trade opens. Not after. Lumin sets a stop on every position before it touches the market. You cannot open a trade without one. That one rule is what keeps a losing trade from becoming the trade that wipes your account.",
+  "note": "Rewritten 2026-09-09 in the spoken register (CHARACTER_BIBLE 'How she talks') and re-cut character-led: 4 of 7 scenes are Lia. Education first -- the reel explains a concept and makes no claim about Lumin's results. The only product claim is the hard stop, which is the app's own onboarding line and is on screen as the `stop_on_every` proof.",
+  "voice": "Okay — real talk. Most people learn what a stop loss is the hard way. So, short version: a stop loss is the price where your trade closes itself. And you pick that price before you're in — not while you're staring at a red number, trying to talk yourself into holding. In Lumin, every position opens with a stop already sitting there. You can't open one without it. So the loss is a number you chose, instead of a number you found out about. Every signal's free. It's on Google Play.",
   "bpm": 92,
-  "music_seed": 3,
-  "music_db": -21.0,
+  "music_seed": 21,
+  "music_db": -20.5,
+  "tail": 2.0,
   "scenes": [
     {
-      "type": "character",
+      "type": "talk",
       "image": "lia_hero_desk.png",
-      "kicker": "TRADING 101",
-      "headline": "Most people learn what a stop loss is the hard way.",
-      "headline_size": 78,
-      "scrim_top_h": 680,
-      "scrim_top_alpha": 215,
-      "zoom": [
-        1.08,
-        1.0
-      ],
-      "pan": [
-        [
-          0.5,
-          0.18
-        ],
-        [
-          0.5,
-          0.24
-        ]
-      ]
+      "shot": "mid",
+      "seed": 0,
+      "kicker": "THE EXPENSIVE LESSON",
+      "headline": "Most people learn this the hard way.",
+      "headline_size": 84,
+      "scrim_top_h": 600
     },
     {
       "type": "card",
-      "until": "A stop loss is the price",
-      "kicker": "STOP LOSS",
-      "headline": "Here is the short version.",
-      "headline_size": 108
+      "until": "short version",
+      "kicker": "SO, SHORT VERSION",
+      "headline": "A stop loss is one decision.",
+      "headline_size": 104
+    },
+    {
+      "type": "talk",
+      "until": "you pick that price",
+      "image": "lia_hero_laptop.png",
+      "shot": "wide",
+      "seed": 3,
+      "kicker": "AND YOU PICK IT",
+      "headline": "Before you're in.",
+      "headline_size": 96,
+      "scrim_top_h": 560
     },
     {
       "type": "card",
-      "until": "The size of the loss",
-      "kicker": "IT CLOSES AUTOMATICALLY",
-      "headline": "A bad position does not turn into a disaster.",
+      "until": "staring at a red number",
+      "kicker": "NOT",
+      "headline": "While you're staring at a red number.",
       "headline_size": 88
     },
     {
-      "type": "phone",
-      "until": "Not after",
-      "kicker": "BEFORE THE TRADE OPENS",
-      "screens": [
-        "signals_list.png"
-      ],
-      "push": [
-        1.0,
-        1.06
-      ],
-      "width": 640
-    },
-    {
-      "type": "screen",
-      "until": "Lumin sets a stop",
-      "screen": "onboard_funds_safe.png",
-      "zoom": [
-        1.06,
-        1.1
-      ],
-      "pan": [
-        [
-          0.5,
-          0.28
-        ],
-        [
-          0.5,
-          0.4
-        ]
-      ],
-      "kicker_y": 210,
-      "kicker": "EVERY POSITION"
+      "type": "talk",
+      "until": "every position opens",
+      "image": "lia_hero_desk.png",
+      "shot": "mid",
+      "seed": 6,
+      "kicker": "IN LUMIN",
+      "headline": "Every position opens with a stop.",
+      "headline_size": 80,
+      "scrim_top_h": 620,
+      "inset": {
+        "proof": "stop_on_every",
+        "y": 1080,
+        "width": 560,
+        "at": 0.22
+      }
     },
     {
       "type": "duo",
-      "until": "You cannot open a trade",
+      "until": "the loss is a number you chose",
       "image": "lia_hero_laptop.png",
-      "screen": "signals_list.png",
-      "kicker": "NO STOP, NO TRADE",
+      "screen": "onboard_funds_safe.png",
+      "kicker": "A NUMBER YOU CHOSE",
+      "scrim_top_h": 430,
       "pan": [
         [
-          0.34,
+          0.32,
           0.12
         ],
         [
-          0.4,
+          0.38,
           0.17
         ]
       ]
     },
     {
       "type": "end",
-      "until": "wipes your account",
+      "until": "on Google Play",
       "headline": "Lumin",
-      "sub": "A stop on every trade, always.",
+      "sub": "The loss is a number you chose",
       "cta": "Get it on Google Play",
       "handle": "@lumin.signals",
       "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."

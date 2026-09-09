@@ -33,7 +33,8 @@ class Word:
         return self.start + self.dur
 
 
-def mark_punctuation(words: list["Word"], narration: str) -> list["Word"]:
+def mark_punctuation(words: list["Word"], narration: str, *,
+                     lookahead: int = 4) -> list["Word"]:
     """Flag which words end a sentence or a clause.
 
     edge-tts strips punctuation from WordBoundary events, so a chunker that
@@ -43,23 +44,55 @@ def mark_punctuation(words: list["Word"], narration: str) -> list["Word"]:
     punctuation back off the original narration is the only place that
     information survives.
 
-    Matching is positional and best-effort: a mismatch advances both cursors
-    rather than aborting, so an unexpected tokenisation degrades to the old
-    behaviour for one word instead of losing every mark after it.
+    Matching is positional and best-effort, and the resync is BOUNDED -- which
+    this function claimed to be and was not until 2026-09-09.
+
+    The old inner loop scanned forward to the end of the token list looking for
+    a match, so one word edge-tts tokenised differently did not cost that word's
+    marks: it consumed every remaining token and silently dropped the marks for
+    the WHOLE REST OF THE SCRIPT. The docstring said the opposite.
+
+    The word that triggered it was **a hyphenated compound**. `trade-only` comes
+    back from edge-tts as one word; the tokeniser split it into `trade-` and
+    `only,`; nothing ever matched `tradeonly`; and from that point on no caption
+    in the reel could break on a full stop -- so `06_three_checks` rendered
+    "rejected Two Is there" and "tell And with your" across three sentences.
+    Reels 01-03 were clean only because their narration happens to say "trade
+    only" without the hyphen, which is exactly how a bug like this waits.
+
+    Two fixes, because either alone leaves the trap armed:
+
+      * `-` joins the word class, so a hyphenated compound tokenises the way the
+        speech engine says it;
+      * the forward scan is capped at `lookahead` tokens, so ANY future
+        tokenisation surprise costs one word's marks instead of a whole reel's.
+
+    Unmatched words are counted and reported. A silent desync is worse than a
+    loud one: the captions still render, they just quietly stop breaking where
+    the sentences do, and nothing on screen says so.
     """
-    toks = re.findall(r"[A-Za-z0-9'\u2019]+[^A-Za-z0-9'\u2019]*", narration)
-    j = 0
+    toks = re.findall(r"[A-Za-z0-9'\u2019-]+[^A-Za-z0-9'\u2019]*", narration)
+    j, missed = 0, 0
     for w in words:
         target = re.sub(r"[^a-z0-9]", "", w.text.lower())
-        while j < len(toks):
-            tok = toks[j]
+        hit = False
+        for k in range(j, min(len(toks), j + lookahead + 1)):
+            tok = toks[k]
             core = re.sub(r"[^a-z0-9]", "", tok.lower())
-            j += 1
             if core == target or not core:
-                trail = tok[len(re.match(r"[A-Za-z0-9\u2019']*", tok).group(0)):]
+                trail = tok[len(re.match(r"[A-Za-z0-9\u2019'-]*", tok).group(0)):]
                 w.ends_sentence = bool(re.search(r"[.!?]", trail))
-                w.ends_clause = bool(re.search(r"[,;:\u2014-]", trail))
+                w.ends_clause = bool(re.search(r"[,;:\u2014]", trail))
+                j = k + 1
+                hit = True
                 break
+        if not hit:
+            missed += 1
+            j += 1
+    if missed:
+        print(f"  ! captions: {missed}/{len(words)} word(s) did not match the "
+              f"script's tokens -- their sentence breaks are lost. Check for a "
+              f"character the tokeniser and edge-tts disagree about.")
     return words
 
 

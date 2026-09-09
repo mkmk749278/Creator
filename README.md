@@ -3,24 +3,38 @@
 Builds Instagram Reels for the Lumin crypto-signals app from **real app footage**
 and the Lia character, end to end, with **no paid service anywhere in the chain**.
 
-Three finished reels ship in `reels/`. Everything needed to make the fourth is
-here too.
+Eight finished reels ship in `reels/` — three launch explainers and a
+character-led set of five. Everything needed to make the ninth is here too.
 
 ```
 python3 pipeline/capture_app.py            # sign in, screenshot + record the real app
 python3 pipeline/prep_screens.py           # crop captures into clean screen plates
+python3 pipeline/check_proofs.py           # render every claim's proof crop -- LOOK AT IT
 python3 pipeline/render_reel.py --all      # script.json -> 1080x1920 MP4
+python3 pipeline/check_captions.py         # no caption may straddle a full stop
 ```
 
 ---
 
 ## What comes out
 
-| Reel | Length | Angle |
+| Reel | Angle | Lia on screen |
 |---|---|---|
-| `01_what_lumin_does` | 24.9s | Cold-audience explainer |
-| `02_funds_never_leave` | 23.3s | Trust / the first objection. **Post this one first** |
-| `03_signal_anatomy` | 22.0s | Product detail: entry, stop, three targets |
+| `01_what_lumin_does` | Cold-audience explainer | 2 of 7 scenes |
+| `02_funds_never_leave` | Trust / the first objection. **Post this one first** | 2 of 6 |
+| `03_signal_anatomy` | Product detail: entry, stop, three targets | 2 of 7 |
+| `04_stop_loss_saves_you` | What a stop loss actually saves you | **4 of 7** |
+| `05_paper_mode_prove_it` | Don't trust it — test it | **4 of 7** |
+| `06_three_checks` | Three checks before trusting any signals app | **5 of 8** |
+| `07_named_setups` | Named setups, not mystery calls | **3 of 7** |
+| `08_free_and_paid` | Every signal is free. Here's what isn't | **4 of 7** |
+
+**04–08 are the character-led set** (2026-09-09, owner: *"use character more …
+let her talk with natural language like humans"*). Two changes, and only the
+first is visible: they are written to be **spoken** rather than read
+(`brand/CHARACTER_BIBLE.md § How she talks`), and they use the `talk` scene, so
+a claim is evidenced by an inset **beside** her instead of by cutting away from
+her. That is what took her from ~28% of a reel to ~60% on two photographs.
 
 Each renders an `.mp4` (H.264 / AAC, 1080×1920, 30fps, `+faststart`), an `.srt`,
 and a `_poster.jpg` for the feed thumbnail or a carousel.
@@ -88,7 +102,8 @@ here or in `lumin-app`.
 | `draw.py` | type layout, scrims, glows, the phone mockup |
 | `captions.py` | word-timed kinetic captions |
 | `audio.py` | edge-tts voice, synthesised bed, sidechain-ducked mix |
-| `scenes.py` | `character` · `phone` · `duo` · `screen` · `card` · `end` |
+| `scenes.py` | `talk` · `character` · `phone` · `duo` · `screen` · `card` · `end` |
+| `proof.py` | claim key -> the screen region that evidences it |
 | `build.py` | timing, frames, encode |
 
 ### Scenes cut on the voice, not on a stopwatch
@@ -123,11 +138,50 @@ phrases, and it renders as a strobe.
   which makes the presenter framing load-bearing rather than optional.
 * **The risk line renders on the end card**, not only in the caption — captions
   collapse behind "more".
+* **No caption may straddle a full stop**, and it is checked against the
+  rendered `.srt` rather than trusted from the code — `pipeline/check_captions.py`.
+  `mark_punctuation` silently stopped enforcing this on 2026-09-09: one
+  hyphenated compound (`trade-only`) desynced its token cursor, and because the
+  old inner loop scanned to the END of the script looking for a match, that one
+  word cost the sentence breaks for **every caption after it**. Nothing failed,
+  nothing was blank; the captions just started reading like "rejected Two Is
+  there". Reels 01–03 escaped only because their narration says "trade only"
+  without the hyphen.
+
+## The `talk` scene, and why the inset is not a design flourish
+
+The old grammar cut away to a `phone` or a `screen` whenever a claim needed
+evidence, so the presenter was on screen for about a quarter of a reel and the
+feed read as an app demo with a face on the front. `talk` keeps her in frame and
+brings the evidence to her:
+
+* **The camera breathes.** `motion.handheld` adds three sines at incommensurate
+  frequencies, so a still portrait held for four seconds stops reading as a
+  slideshow. The tell it removes is monotonic motion — nothing a hand holds
+  moves in one direction at a constant rate.
+* **The inset is one legible ROW of a screen**, not a shrunken phone. A
+  1290x2565 screenshot at inset width puts the app's body text at about six
+  pixels, and a phone-shaped blur asks the viewer to take the claim on trust —
+  which is the exact thing `content/COMPLIANCE.md` exists to prevent.
+* **A script names a CLAIM, never a crop box.** `"inset": {"proof":
+  "stop_on_every"}` resolves through `reelkit/proof.py`; an unknown key raises
+  at render. That is the compliance rule made structural instead of remembered.
+* **The inset is centred**, because Instagram's like/comment/share rail runs
+  down the right of the frame from about y=1100 — exactly where a designer
+  would naturally park a card.
+
+Framing is capped on purpose. The heroes are 1024x1536 into a 1080x1920 frame,
+so COVER is already 1.25x before any zoom; `TALK_SHOTS` offers `wide` and `mid`
+and deliberately has no `close`, because a face crop lands near 1.9x on a source
+that is soft to begin with — and a soft close-up is the shot that makes a viewer
+decide the person is not real. Anything over 1.62x prints a warning at render.
 
 ## Writing a new reel
 
-1. Draft the narration. Write numbers as words (`seventy five`), because the
-   `until` anchors match spoken words.
+1. Draft the narration **out loud**. Contractions, fragments, one discourse
+   marker per turn; punctuation is the prosody, because edge-tts gets no SSML
+   here — see `brand/CHARACTER_BIBLE.md § How she talks`. Write numbers as
+   words (`seventy five`), because the `until` anchors match spoken words.
 2. Check every claim against `content/COMPLIANCE.md`.
 3. Copy a `script.json`, set the scenes and their `until` anchors.
 4. `python3 pipeline/render_reel.py reels/<name>` and read the printed timing

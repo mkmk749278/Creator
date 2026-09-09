@@ -100,3 +100,156 @@ Two questions will dominate the comments. Answer both the same way every time.
 
 **Never answer a "what returns can I expect" question with a number.** Point at
 paper mode instead.
+
+---
+
+# The character-led set (2026-09-09)
+
+Reels 04–08 are written in the spoken register described in
+`brand/CHARACTER_BIBLE.md § How she talks`, and Lia is on screen for roughly
+60% of each rather than 28%. **The captions are written in the same voice** — a
+reel that sounds like a person over a caption that sounds like a brochure is
+still half a brochure, and the caption is what a reader lands on when the audio
+is muted, which on Instagram is most of them.
+
+The presenter rule holds in the caption too: the account may say *"not from us"*
+and may never say *"it worked for us"*.
+
+---
+
+## Reel 04 — `04_stop_loss_saves_you.mp4`
+
+> Most people learn what a stop loss is the hard way.
+>
+> Short version: it's the price where your trade closes itself — and you pick it
+> before you're in. Not while you're staring at a red number, trying to talk
+> yourself into holding.
+>
+> In Lumin every position opens with a stop already sitting there. You can't
+> open one without it. So the loss is a number you chose, instead of a number
+> you found out about.
+>
+> Every signal is free. Google Play, link in bio.
+>
+> Crypto futures trading carries substantial risk of loss. Lumin signals are
+> informational only and are not personalised investment advice. 18+.
+
+`#stoploss #riskmanagement #cryptotrading #futurestrading #binance
+#tradingsignals #cryptoindia #daytrading #usdt`
+
+**Best of the five for a cold audience.** It teaches something useful to
+somebody who never installs anything, and the product only shows up as the
+answer at the end.
+
+---
+
+## Reel 05 — `05_paper_mode_prove_it.mp4`
+
+> How do you know if a signals app actually works?
+>
+> You don't. Not from a screenshot, not from a testimonial, and definitely not
+> from us.
+>
+> So test it. Lumin has a paper mode — same engine, same signals, same entries
+> and stops, no real money behind it. Run it for a week. Watch what it does when
+> the market gets ugly. Then decide.
+>
+> Anyone telling you to skip that part is selling you something.
+>
+> Crypto futures trading carries substantial risk of loss. Lumin signals are
+> informational only and are not personalised investment advice. 18+.
+
+`#papertrading #cryptotrading #futurestrading #binance #tradingsignals
+#cryptoindia #backtesting #tradingapp`
+
+---
+
+## Reel 06 — `06_three_checks.mp4`
+
+> Three things to check before you connect ANY signals app to your exchange 👇
+>
+> 1. What can the API key actually do? If it can withdraw — walk away.
+> 2. Is there a stop on every trade, placed automatically?
+> 3. Can you test the whole thing without money first?
+>
+> For what it's worth: Lumin asks for a trade-only key and rejects one with
+> withdrawal enabled, puts a hard stop on every position, and has a paper mode.
+> But run the checklist on us the same as on anyone else.
+>
+> If an app can't answer those three, it isn't that it's bad. It's that you
+> can't tell. And with your money, that's the same thing.
+>
+> Crypto futures trading carries substantial risk of loss. Lumin signals are
+> informational only and are not personalised investment advice. 18+.
+
+`#cryptosecurity #apikey #binance #cryptotrading #tradingsignals #cryptoindia
+#futurestrading #dyor`
+
+**Save-bait, and the safest reel on the account.** It is a checklist for judging
+any signals app; Lumin answers it rather than being the subject of it. Expect
+saves and shares to beat likes — which is the ranking signal worth having.
+
+---
+
+## Reel 07 — `07_named_setups.mp4`
+
+> Most signal groups send you a coin, an arrow, and good luck. That's it. No
+> reason.
+>
+> Lumin names the setup that fired it — The Coil Hunter, The Momentum Rider.
+> Each name is a market structure the engine recognised before the signal fired.
+> And the plan comes with it: entry, stop, three targets.
+>
+> You're not following a call you can't question. You're reading a setup you can
+> look up.
+>
+> Crypto futures trading carries substantial risk of loss. Lumin signals are
+> informational only and are not personalised investment advice. 18+.
+
+`#tradingsignals #priceaction #cryptotrading #futurestrading #binance #scalping
+#cryptoindia #tradingsetup`
+
+---
+
+## Reel 08 — `08_free_and_paid.mp4`
+
+> Every signal in Lumin is free. All of them. Here's what actually costs money.
+>
+> Entry, stop, targets — you see exactly what a paying user sees. What you pay
+> for is automation: Assist places the trade with one tap, Auto does it without
+> you. That's the whole difference, and it runs on your own exchange keys.
+>
+> So you can run it for a month, take the signals by hand, and pay nothing. If
+> it turns out it's not for you, you've lost an install.
+>
+> Crypto futures trading carries substantial risk of loss. Lumin signals are
+> informational only and are not personalised investment advice. 18+.
+
+`#cryptotrading #tradingsignals #binance #futurestrading #freetrial #cryptoindia
+#tradingapp #usdt`
+
+**No price appears in this caption on purpose.** Tier pricing is Google Play
+Billing's and changes without this file hearing about it — a number here would
+be wrong the day it moved, in the one place a subscription decision gets made.
+
+---
+
+## Replying in the new voice
+
+The two templates above still stand and their *content* must not drift. Said in
+the spoken register:
+
+**"Does it guarantee profit?"**
+> No — and anything that says it does is lying to you. What you get is a scored
+> setup with a defined entry, stop and targets. Futures trading carries
+> substantial risk of loss, which is exactly why paper mode exists: test it
+> without money first.
+
+**"Do you take my funds / my keys?"**
+> No. You connect Binance with a trade-only API key — withdrawal permission is
+> never requested, and a key that has it gets rejected. Your funds stay in your
+> own Binance account.
+
+**Still never answer a returns question with a number.** Point at paper mode.
+The friendlier register makes this rule *easier to break*, not harder — a warm
+reply that ends with a figure is still a fabricated performance claim.

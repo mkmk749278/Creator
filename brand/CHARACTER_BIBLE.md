@@ -56,6 +56,92 @@ than an inconsistent look.
   product in one frame — is the one that ties the two together, so at least one
   belongs in every reel.
 
+## How she talks — natural, and why that is the dangerous instruction
+
+**Owner, 2026-09-09: "let her talk with natural language like humans."** He is
+right that the first three reels read as written copy rather than speech, and
+this section is that note turned into a rule.
+
+The rule has to be stated carefully, because *"talk like a human"* is the single
+most likely instruction in this whole repo to produce a compliance failure — and
+it would produce it while sounding better. The most natural thing a human being
+ever says about a financial product is **"I use it, and it works for me."** That
+one sentence is a testimonial, it is unsubstantiable, and it is the exact thing
+the table above bans.
+
+So:
+
+> **Natural is a property of the SYNTAX, never of the CLAIMS.**
+> Loosen the grammar. Never loosen the evidence.
+
+Everything in the "She never says" table stays banned in the new register, and
+it gets *harder* to police, not easier, because a conversational line slides
+into a personal one without the writer noticing:
+
+| Natural, and fine | Natural, and banned |
+|---|---|
+| "So — short version: a stop loss is the price where your trade closes itself." | "Honestly, stops have saved me so many times." |
+| "How do you know if a signals app actually works? You don't. Not from a screenshot, and definitely not from me." | "Trust me, I've been running it for weeks." |
+| "You can use it for a month, take the signals by hand, and pay nothing." | "I paid for Auto within a week, no regrets." |
+
+The left column is a presenter thinking out loud. The right column is a witness
+giving evidence. **She is never a witness.**
+
+### What actually makes it sound spoken
+
+Written copy and speech differ in structure, not in vocabulary, so "make it
+friendlier" is not the note. These are:
+
+* **Contractions, always.** *here's, doesn't, you're, it's, can't, won't.*
+  "Do not" in a reel is a robot reading a form.
+* **Fragments are a full stop.** "Not one you found out about." "That's it."
+  "All of them." A fragment is how emphasis works out loud.
+* **Open on a real second-person question**, then answer it. "How do you know if
+  it actually works? You don't."
+* **Discourse markers carry the turns** — *so, okay, look, right, here's the
+  thing* — one per turn, never two in a row, and never as decoration.
+* **Vary the sentence length hard.** Three long, one of two words. Uniform short
+  declaratives are just a different robot from uniform long ones.
+* **Say the objection out loud before the viewer does.** "Anyone who tells you to
+  skip that part is selling you something."
+* **No hype adjectives, still.** Natural speech is not excited speech, and the
+  ban on *insane / secret / guaranteed / life-changing* is unchanged.
+
+### Punctuation is the prosody — it is the only lever we have
+
+`edge-tts` gives no SSML control in this pipeline, so **the commas and dashes
+are the performance.** A comma is a beat; an em-dash is a longer one; a question
+mark actually lifts the intonation. A paragraph of full stops is read flat
+whatever the words are, which is precisely why the first three reels sound
+written.
+
+There is a second, non-obvious payoff and it is the reason to over-punctuate
+rather than under-punctuate: `captions.mark_punctuation` reads clause and
+sentence marks back off the script to decide where a caption line may break. So
+punctuation that makes her *sound* like she is thinking also makes the on-screen
+captions break where a person would breathe. One change, both surfaces.
+
+### The voice itself does not change
+
+Still `en-US-AvaNeural` at `+10%`. Three reels are already public in that voice
+and a fourth in a different one is a different presenter, not a better one — the
+rule above about never changing the voice per reel is unchanged and is now
+load-bearing rather than tidy. **The naturalness comes from the writing.**
+
+### She does not lip-sync, and that is a stated limit
+
+Checked 2026-09-09: the Higgsfield account is still `free` with **0 credits**, so
+generated talking-head video costs money and is not available. Every reel is
+therefore her *narrating over stills* — which is what a presenter does, and it is
+honest, but it is not the same product as a character who visibly speaks.
+
+The `talk` scene is the zero-cost answer to how much of her a reel can hold:
+the camera breathes (`motion.handheld`), and the app arrives as an **inset
+beside her** rather than as a cut away from her, so a claim can be evidenced
+without leaving the shot. That took character presence from about a quarter of a
+reel to roughly sixty percent. Going further than that needs one of two owner
+decisions, and both cost something — see `content/POSTING_CALENDAR.md`.
+
 ## AI disclosure — an owner decision, recorded
 
 **Owner decision, 2026-09-08: the account does not label Lia as AI-generated.**
