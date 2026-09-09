@@ -1,0 +1,99 @@
+1
+00:00:00,100 --> 00:00:01,440
+Before you connect any
+
+2
+00:00:01,202 --> 00:00:02,361
+signals app to your
+
+3
+00:00:02,122 --> 00:00:03,940
+exchange three things
+
+4
+00:00:04,015 --> 00:00:04,686
+One
+
+5
+00:00:04,765 --> 00:00:05,890
+What can the API
+
+6
+00:00:05,652 --> 00:00:06,902
+key actually do
+
+7
+00:00:06,981 --> 00:00:08,209
+If it can withdraw
+
+8
+00:00:08,140 --> 00:00:09,027
+walk away
+
+9
+00:00:09,106 --> 00:00:10,924
+Lumin asks for trade-only
+
+10
+00:00:10,925 --> 00:00:11,811
+and a key with
+
+11
+00:00:11,572 --> 00:00:13,686
+withdrawal turned on gets rejected
+
+12
+00:00:13,765 --> 00:00:14,436
+Two
+
+13
+00:00:14,515 --> 00:00:15,481
+Is there a stop
+
+14
+00:00:15,243 --> 00:00:16,277
+on every trade
+
+15
+00:00:16,175 --> 00:00:17,493
+placed automatically
+
+16
+00:00:17,572 --> 00:00:18,322
+Three
+
+17
+00:00:18,402 --> 00:00:19,186
+Can you test the
+
+18
+00:00:18,947 --> 00:00:20,538
+whole thing without money first
+
+19
+00:00:20,618 --> 00:00:21,765
+Look if an app
+
+20
+00:00:21,527 --> 00:00:22,924
+can't answer those three
+
+21
+00:00:23,004 --> 00:00:24,163
+the problem isn't that
+
+22
+00:00:23,925 --> 00:00:24,675
+it's bad
+
+23
+00:00:24,754 --> 00:00:25,981
+It's that you can't tell
+
+24
+00:00:26,061 --> 00:00:27,209
+And with your money
+
+25
+00:00:27,163 --> 00:00:28,436
+that's the same thing

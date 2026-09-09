@@ -12,7 +12,7 @@ import pathlib
 
 from PIL import Image, ImageDraw, ImageFilter
 
-from . import brand, draw, motion
+from . import brand, draw, motion, proof
 
 
 @functools.lru_cache(maxsize=32)
@@ -293,8 +293,117 @@ def screen(spec: dict, t: float, dur: float) -> Image.Image:
     return frame.convert("RGB")
 
 
+# Framing presets for `talk`. The numbers are upscale budgets, not taste.
+# The heroes are 1024x1536 (2:3) and the frame is 1080x1920 (9:16), so COVER
+# alone is already 1.25x before any zoom. "close" is deliberately absent: a
+# face crop lands near 1.9x on a source that is soft to begin with, and a soft
+# close-up is the shot a viewer reads as a fake person.
+TALK_SHOTS = {
+    "wide": {"zoom": [1.06, 1.01], "pan": [[0.5, 0.20], [0.5, 0.26]]},
+    "mid":  {"zoom": [1.24, 1.18], "pan": [[0.5, 0.17], [0.5, 0.22]]},
+}
+_UPSCALE_WARNED: set = set()
+UPSCALE_LIMIT = 1.62
+
+
+def _check_upscale(image: str, zoom: float, src, tag: str):
+    """Warn ONCE when a framing is asking for pixels the source does not have.
+
+    Silent softness is the failure mode here: nothing errors, the frame renders,
+    and the reel just looks slightly cheap in a way nobody can name afterwards.
+    A warning at render time is the only place this is cheap to notice.
+    """
+    cover = max(brand.W / src.width, brand.H / src.height) * zoom
+    key = (image, round(cover, 2), tag)
+    if cover > UPSCALE_LIMIT and key not in _UPSCALE_WARNED:
+        _UPSCALE_WARNED.add(key)
+        print(f"  ! {tag}: {image} is being upscaled {cover:.2f}x "
+              f"(limit {UPSCALE_LIMIT}) -- pull the framing wider")
+
+
+def talk(spec: dict, t: float, dur: float) -> Image.Image:
+    """Lia holding the frame, direct address, with the app as an INSET.
+
+    This scene exists to raise how much of a reel she is actually in. The old
+    grammar cut away to a `phone` or a `screen` whenever a claim needed proof,
+    so the presenter was on screen for roughly a quarter of a reel and the feed
+    read as an app demo with a face at the front. Here the proof arrives as a
+    card beside her, which means a claim can be evidenced without leaving her --
+    and `plate_card` shows one legible row rather than a phone-shaped blur, so
+    the pointing that `COMPLIANCE.md` requires still actually works.
+
+    The camera breathes (`motion.handheld`). A portrait held this long under a
+    pure Ken Burns move reads as a slideshow, and a slideshow is what makes a
+    still photograph look like a still photograph.
+    """
+    img = load(str(brand.CHARACTER_DIR / spec["image"]))
+    p = t / max(1e-6, dur)
+
+    preset = TALK_SHOTS.get(spec.get("shot", "wide"), TALK_SHOTS["wide"])
+    zf, zt = spec.get("zoom", preset["zoom"])
+    pf, pt = spec.get("pan", preset["pan"])
+    _check_upscale(spec["image"], max(zf, zt), img, "talk")
+
+    jx, jy, jz = motion.handheld(t, seed=spec.get("seed", 0),
+                                 amp=spec.get("handheld", 1.0))
+    frame = motion.ken_burns(img, p, zoom_from=zf + jz, zoom_to=zt + jz,
+                             pan_from=tuple(pf), pan_to=tuple(pt),
+                             size=(brand.W, brand.H),
+                             jitter=(jx, jy), zoom_floor=1.02).convert("RGBA")
+
+    frame.alpha_composite(draw.vertical_scrim(
+        (brand.W, brand.H), bottom_alpha=spec.get("scrim_alpha", 236),
+        start=spec.get("scrim_start", 0.42)))
+    frame.alpha_composite(draw.vertical_scrim(
+        (brand.W, spec.get("scrim_top_h", 560)),
+        top_alpha=spec.get("scrim_top_alpha", 208), bottom_alpha=0, start=0.0), (0, 0))
+
+    if spec.get("kicker"):
+        _kicker(frame, spec["kicker"], spec.get("kicker_y", 244))
+    if spec.get("headline"):
+        draw.draw_block(frame, spec["headline"], path=brand.DISPLAY,
+                        box=(brand.SAFE_X, spec.get("headline_y", 300),
+                             brand.W - brand.SAFE_X * 2, 420),
+                        start=spec.get("headline_size", 86),
+                        align=spec.get("align", "left"))
+
+    inset = spec.get("inset")
+    if inset:
+        # A script names a CLAIM, never a crop box. `proof.resolve` is the
+        # structural version of COMPLIANCE.md's one test: a sentence with no
+        # screen behind it raises here instead of shipping. Hand-written boxes
+        # are deliberately not accepted -- a new crop belongs in the table where
+        # somebody has to look at it.
+        screen, region, default_label = proof.resolve(inset["proof"])
+        plate = load(str(brand.CAPTURE_DIR / "screens" / screen))
+        card = draw.plate_card(plate, region,
+                               width=inset.get("width", 470),
+                               label=inset.get("label", default_label))
+        # Slide in and settle, rather than appearing. An inset that simply cuts
+        # on looks like a rendering glitch at the size a phone shows this.
+        at = inset.get("at", 0.18)
+        a = motion.ease_out_expo(motion.clamp((p - at) / max(1e-6, inset.get("in", 0.26))))
+        if a > 0.01:
+            # CENTRED by default, and that is not an aesthetic choice. Instagram
+            # lays its like / comment / share rail down the RIGHT of the frame,
+            # roughly x > 950 from about y 1100, so a card pushed to the right
+            # edge -- where a designer would naturally put it -- ends up partly
+            # under the app's own buttons on the one surface this is made for.
+            width = card.width - 120                      # card minus glow pad
+            x = int(motion.lerp(brand.W + 60,
+                                inset.get("x", (brand.W - width) // 2), a))
+            y = inset.get("y", 1080) + int((1 - a) * 22)
+            layer = card.copy()
+            layer.putalpha(layer.split()[-1].point(lambda v: int(v * a)))
+            frame.alpha_composite(layer, (x - 60, y - 60))
+
+    _pills(frame, spec.get("pills"), spec.get("pills_y", 1180))
+    return frame.convert("RGB")
+
+
 RENDERERS = {"character": character, "phone": phone, "duo": duo,
-             "card": card, "end": end, "screen": screen}
+             "card": card, "end": end, "screen": screen,
+             "talk": talk}
 
 
 def render(spec: dict, t: float, dur: float) -> Image.Image:
