@@ -1,0 +1,105 @@
+{
+  "id": "07_named_setups",
+  "title": "Named setups, not mystery calls",
+  "note": "The Coil Hunter / Momentum Rider naming angle. Unusual in this category — most signals apps send a coin and direction with no context. Lumin names the setup so you know what pattern fired. Claims taken from app signals list (captured 2026-09-08). No performance claim, no win-rate claim.",
+  "voice": "Most signals apps send you a coin and a direction. Long or short. That is it. You have no idea why. Lumin names the pattern that fired the signal. The Coil Hunter. The Momentum Rider. Each name tells you what the market structure looked like when the trade opened. You are not following a mystery call. You are reading a setup with a name, a reason, and a full trade plan behind it.",
+  "bpm": 98,
+  "music_seed": 11,
+  "music_db": -20.0,
+  "scenes": [
+    {
+      "type": "character",
+      "image": "lia_hero_desk.png",
+      "kicker": "MOST SIGNALS APPS",
+      "headline": "A coin and a direction. That is it.",
+      "headline_size": 86,
+      "scrim_top_h": 640,
+      "scrim_top_alpha": 210,
+      "zoom": [
+        1.1,
+        1.0
+      ],
+      "pan": [
+        [
+          0.5,
+          0.2
+        ],
+        [
+          0.5,
+          0.26
+        ]
+      ]
+    },
+    {
+      "type": "card",
+      "until": "You have no idea why",
+      "kicker": "NO CONTEXT",
+      "headline": "You have no idea why.",
+      "headline_size": 112
+    },
+    {
+      "type": "phone",
+      "until": "Lumin names the pattern",
+      "kicker": "LUMIN NAMES IT",
+      "screens": [
+        "signals_list.png",
+        "signals_list_scrolled.png"
+      ],
+      "push": [
+        1.0,
+        1.07
+      ],
+      "width": 640
+    },
+    {
+      "type": "card",
+      "until": "The Coil Hunter",
+      "kicker": "THE COIL HUNTER",
+      "headline": "The Coil Hunter.",
+      "headline_size": 120,
+      "pills": [
+        "Tight range",
+        "Volume buildup",
+        "Breakout"
+      ]
+    },
+    {
+      "type": "card",
+      "until": "Each name tells you",
+      "kicker": "THE MOMENTUM RIDER",
+      "headline": "The Momentum Rider.",
+      "headline_size": 112,
+      "pills": [
+        "Trend",
+        "Pullback",
+        "Continuation"
+      ]
+    },
+    {
+      "type": "duo",
+      "until": "You are not following",
+      "image": "lia_hero_laptop.png",
+      "screen": "signals_list.png",
+      "kicker": "A SETUP WITH A NAME",
+      "pan": [
+        [
+          0.36,
+          0.14
+        ],
+        [
+          0.42,
+          0.19
+        ]
+      ]
+    },
+    {
+      "type": "end",
+      "until": "full trade plan behind it",
+      "headline": "Lumin",
+      "sub": "Signals that explain themselves.",
+      "cta": "Get it on Google Play",
+      "handle": "@lumin.signals",
+      "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."
+    }
+  ]
+}
