@@ -1,0 +1,115 @@
+{
+  "id": "05_paper_mode_prove_it",
+  "title": "Paper mode: prove it before you fund it",
+  "note": "Removes the last objection — 'but does it actually work?'. Paper mode is the honest answer. Claims taken from app onboarding screens: paper mode runs the full engine with zero real capital. No performance or win-rate claim. The payoff line is 'prove it to yourself first'.",
+  "voice": "Before you put real money behind any signals app, there is one question you should ask. Does it actually work? Lumin gives you a way to check. Paper mode runs the full engine on your account, no real capital involved. Every signal fires. Every position opens and closes. Your paper balance moves with the market. The only thing missing is real money at risk. Run it for a week. See what the signals do. Then decide if you want to go live.",
+  "bpm": 94,
+  "music_seed": 19,
+  "music_db": -20.5,
+  "scenes": [
+    {
+      "type": "character",
+      "image": "lia_hero_laptop.png",
+      "kicker": "BEFORE YOU GO LIVE",
+      "headline": "Does it actually work?",
+      "headline_size": 96,
+      "scrim_top_h": 600,
+      "scrim_top_alpha": 205,
+      "zoom": [
+        1.1,
+        1.0
+      ],
+      "pan": [
+        [
+          0.5,
+          0.16
+        ],
+        [
+          0.5,
+          0.22
+        ]
+      ]
+    },
+    {
+      "type": "card",
+      "until": "Lumin gives you a way to check",
+      "kicker": "FAIR QUESTION",
+      "headline": "Lumin gives you a way to check.",
+      "headline_size": 100
+    },
+    {
+      "type": "screen",
+      "until": "Paper mode runs the full engine",
+      "screen": "onboard_funds_safe.png",
+      "zoom": [
+        1.05,
+        1.1
+      ],
+      "pan": [
+        [
+          0.5,
+          0.25
+        ],
+        [
+          0.5,
+          0.38
+        ]
+      ],
+      "kicker_y": 210,
+      "kicker": "PAPER MODE"
+    },
+    {
+      "type": "phone",
+      "until": "Every signal fires",
+      "kicker": "FULL ENGINE. ZERO RISK.",
+      "screens": [
+        "signals_list.png",
+        "signals_list_scrolled.png"
+      ],
+      "push": [
+        1.0,
+        1.07
+      ],
+      "width": 640
+    },
+    {
+      "type": "phone",
+      "until": "Your paper balance moves",
+      "kicker": "REAL SIGNALS. PAPER MONEY.",
+      "screens": [
+        "trade_connect.png"
+      ],
+      "push": [
+        1.04,
+        1.0
+      ],
+      "width": 640
+    },
+    {
+      "type": "duo",
+      "until": "Run it for a week",
+      "image": "lia_hero_desk.png",
+      "screen": "signals_list.png",
+      "kicker": "PROVE IT YOURSELF",
+      "pan": [
+        [
+          0.32,
+          0.14
+        ],
+        [
+          0.38,
+          0.19
+        ]
+      ]
+    },
+    {
+      "type": "end",
+      "until": "want to go live",
+      "headline": "Lumin",
+      "sub": "Prove it before you fund it.",
+      "cta": "Get it on Google Play",
+      "handle": "@lumin.signals",
+      "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."
+    }
+  ]
+}
