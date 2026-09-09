@@ -1,0 +1,110 @@
+{
+  "id": "02_funds_never_leave",
+  "title": "Your funds never leave Binance",
+  "note": "The trust/objection reel. Answers the first question anyone sane asks about a signals app that can trade for you. Every claim is the app's own onboarding wording plus 360-v2's hard limit that a key with withdraw permission is auto-rejected. No performance claim.",
+  "voice": "Before you connect any trading app to your exchange, check one thing. What can it actually do with your account? Lumin asks for a trade only key. Withdrawal permission is never requested, and a key that has it is rejected. Every position opens with a hard stop already in place. And you can run the whole engine on paper, before anything is real. Your funds never leave Binance.",
+  "bpm": 96,
+  "music_seed": 12,
+  "music_db": -20.5,
+  "scenes": [
+    {
+      "type": "character",
+      "image": "lia_hero_laptop.png",
+      "kicker": "BEFORE YOU CONNECT ANYTHING",
+      "headline": "Check what it can do with your account.",
+      "headline_size": 82,
+      "scrim_top_h": 660,
+      "scrim_top_alpha": 210,
+      "zoom": [
+        1.1,
+        1.0
+      ],
+      "pan": [
+        [
+          0.5,
+          0.16
+        ],
+        [
+          0.5,
+          0.22
+        ]
+      ]
+    },
+    {
+      "type": "card",
+      "until": "Lumin asks for a trade only key",
+      "kicker": "TRADE-ONLY",
+      "headline": "A key that can trade. Not withdraw.",
+      "headline_size": 100
+    },
+    {
+      "type": "screen",
+      "until": "Withdrawal permission is never",
+      "screen": "onboard_funds_safe.png",
+      "zoom": [
+        1.06,
+        1.1
+      ],
+      "pan": [
+        [
+          0.5,
+          0.3
+        ],
+        [
+          0.5,
+          0.42
+        ]
+      ],
+      "kicker_y": 210,
+      "kicker": "WHAT LUMIN ASKS FOR"
+    },
+    {
+      "type": "screen",
+      "until": "Every position opens",
+      "screen": "onboard_funds_safe.png",
+      "zoom": [
+        1.08,
+        1.1
+      ],
+      "pan": [
+        [
+          0.5,
+          0.4
+        ],
+        [
+          0.5,
+          0.52
+        ]
+      ],
+      "kicker_y": 210,
+      "kicker": "ON EVERY POSITION"
+    },
+    {
+      "type": "duo",
+      "until": "run the whole engine on paper",
+      "image": "lia_hero_desk.png",
+      "screen": "trade_connect.png",
+      "kicker": "PAPER MODE FIRST",
+      "scrim_top_h": 420,
+      "pan": [
+        [
+          0.32,
+          0.12
+        ],
+        [
+          0.38,
+          0.17
+        ]
+      ]
+    },
+    {
+      "type": "end",
+      "until": "Your funds never leave Binance",
+      "headline": "Lumin",
+      "sub": "Your funds never leave Binance",
+      "cta": "Get it on Google Play",
+      "handle": "@lumin.signals",
+      "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."
+    }
+  ]
+}

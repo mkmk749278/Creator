@@ -1,0 +1,71 @@
+1
+00:00:00,100 --> 00:00:01,497
+Before you connect any
+
+2
+00:00:01,259 --> 00:00:02,270
+trading app to your
+
+3
+00:00:02,031 --> 00:00:03,838
+exchange check one thing
+
+4
+00:00:03,913 --> 00:00:05,027
+What can it actually
+
+5
+00:00:04,788 --> 00:00:05,799
+do with your account
+
+6
+00:00:05,879 --> 00:00:07,095
+Lumin asks for a
+
+7
+00:00:06,856 --> 00:00:08,163
+trade only key
+
+8
+00:00:08,243 --> 00:00:09,811
+Withdrawal permission is
+
+9
+00:00:09,572 --> 00:00:10,720
+never requested
+
+10
+00:00:10,765 --> 00:00:11,618
+and a key that
+
+11
+00:00:11,379 --> 00:00:12,629
+has it is rejected
+
+12
+00:00:12,709 --> 00:00:14,220
+Every position opens with
+
+13
+00:00:13,981 --> 00:00:15,504
+a hard stop already
+
+14
+00:00:15,265 --> 00:00:16,084
+in place
+
+15
+00:00:16,163 --> 00:00:17,061
+And you can run
+
+16
+00:00:16,822 --> 00:00:17,788
+the whole engine on
+
+17
+00:00:17,550 --> 00:00:19,595
+paper before anything is real
+
+18
+00:00:19,675 --> 00:00:21,606
+Your funds never leave Binance

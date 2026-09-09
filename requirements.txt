@@ -1,0 +1,11 @@
+# Render pipeline. All free, all licence-clean.
+Pillow>=10.0            # frame composition
+numpy>=1.26             # music synthesis
+edge-tts>=7.0           # neural voice-over + per-word timings
+playwright>=1.40        # drives the local Lumin web build for app capture
+
+# Also required, not pip-installable:
+#   ffmpeg >= 6.0   (Debian/Ubuntu: apt-get install ffmpeg)
+#     The Playwright-bundled ffmpeg is built --disable-everything and can only
+#     write VP8/WebM -- it cannot produce the H.264/AAC MP4 Instagram needs.
+#   Chromium        (this environment ships one at /opt/pw-browsers)
