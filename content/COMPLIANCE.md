@@ -26,7 +26,7 @@ real signed-in session, not from a mock-up somebody designed.
 | Any return, profit, or rupee/dollar figure | Unsubstantiable performance claim |
 | Any win rate or accuracy percentage | Same, and the engine's own cells are small-sample |
 | "Guaranteed", "risk-free", "passive income", "double your money" | Unfalsifiable and regulator-bait |
-| A screenshot of the P&L or signal-book panels | Contains a live realised-P&L figure. `pipeline/prep_screens.py` deliberately excludes the Pulse P&L plates for exactly this reason |
+| A screenshot of the P&L or signal-book panels | Contains a live realised-P&L figure. `pipeline/prep_screens.py` now **enforces** this: the Pulse captures sit in its `BANNED` map and the script refuses to run if one ever reappears in `KEEP`. It did, silently, until 2026-09-22 |
 | Lia claiming personal results | Fabricated testimonial — see `brand/CHARACTER_BIBLE.md` |
 | Redrawn, retouched or "cleaned up" numbers in a screenshot | The plates are cropped only. Nothing is repainted |
 | Comparison claims about named competitors | Cannot be substantiated from anything we hold |
@@ -44,7 +44,20 @@ Verified against the onboarding and Signals screens captured **2026-09-08**:
 * "Stop-loss on every position. Every open trade has a hard stop."
 * "Paper mode — prove it first. Run the full engine on simulated trades before going live."
 * "Every signal is free." Automation (Assist / Auto) is the paid tier.
-* Entry, SL and TP1–TP3 are shown on every signal.
+* Entry, SL, TP1 and TP2 are shown on every signal **card**.
+
+**Corrected 2026-09-22.** This line used to read *"Entry, SL and TP1–TP3 are
+shown on every signal"*, and no captured plate supports it: every signal card
+in `signals_list.png` and `signals_list_scrolled.png` carries exactly four
+columns — ENTRY, SL, TP1, TP2. The engine genuinely does place a three-rung
+ladder (`tp3_order_id` / `tp3_price` / `tp3_qty` in `360-v2`'s
+`src/execution/position_fsm.py`, and `tp3` on the app's own signal model), so
+the *claim* is true of the product; TP3 simply lives on the signal-detail
+screen, which `capture_app.py` has never captured. That distinction is the
+whole point of the one test above: a reel may only assert what a plate shows,
+and "three targets" — which reels 01 and 03 both say — is currently
+unpointable. Either capture the detail screen and restore the count, or word
+it without one, as `10_meta_ad_signals` does ("Take profit targets").
 
 **Re-verify this list whenever the onboarding changes.** It is a copy of
 somebody else's screens, which makes it exactly the kind of constant that goes

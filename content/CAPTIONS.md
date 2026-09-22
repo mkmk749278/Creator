@@ -100,3 +100,45 @@ Two questions will dominate the comments. Answer both the same way every time.
 
 **Never answer a "what returns can I expect" question with a number.** Point at
 paper mode instead.
+
+
+---
+
+## 10 — Meta ad: "Crypto moves while you're looking away"
+
+Paid placement (Reels / Stories / Feed, 9:16). Cover still is uploaded
+separately — `out/10_meta_ad_signals_cover.jpg`, which is the opening frame
+with the burned caption left off.
+
+> Crypto moves while you're looking away. Lumin watches it for you.
+>
+> Every 15 seconds the engine scans 75 USDT futures pairs on Binance, and 15 AI
+> analysts score each setup before a signal fires. When one does, you get the
+> whole thing on one card — direction, entry, stop loss, take profit targets
+> and a confidence score.
+>
+> Then you decide how to trade it: yourself, one tap with Assist, or hands-off
+> Auto — all on your own exchange keys.
+>
+> Trade-only API key. Read and trade permissions only. Withdraw is never
+> requested. Your funds never leave Binance.
+>
+> Every signal in the app is free. Automation is the paid tier.
+>
+> 18+. Crypto futures trading carries substantial risk of loss. Lumin signals
+> are informational only and are not personalised investment advice.
+
+Claims used, and where each is pointable:
+
+| Line | Plate |
+|---|---|
+| 75 pairs / every 15 seconds | `onboard_how_it_works.png`, step 1 |
+| 15 AI analysts score each signal | `onboard_how_it_works.png`, step 2 |
+| direction, entry, stop loss, targets | `signals_list.png` — LONG badge, ENTRY / SL / TP1 / TP2 |
+| a confidence score | `signals_list.png` — the `74.2 A` badge (score + grade) |
+| yourself / Assist / Auto | the app's own "Automate your signals" banner |
+| trade-only key, withdraw never requested | `onboard_funds_safe.png` |
+| every signal free | "Automate your signals" banner |
+
+No count is put on the take-profit targets — see the correction in
+`COMPLIANCE.md`.
