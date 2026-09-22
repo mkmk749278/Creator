@@ -94,7 +94,8 @@ work, not styling.
 | A legible chart with axes or labels | Same: it asserts a specific market that did not happen |
 | A generated person shown as a user, customer or trader-with-results | A synthetic testimonial. Worse than Lia claiming results, because it reads as a real third party. See `brand/CHARACTER_BIBLE.md` |
 | A generated Binance, Google Play or exchange mark | Someone else's trademark, invented |
-| A phone screen in focus and readable | Whatever is on it is fabricated UI by definition. Keep it angled, out of focus, or a bare glow |
+| A phone screen in focus and readable | Whatever is on it is fabricated UI by definition. Keep it angled, out of focus, or a bare glow — and a take that comes back legible is re-rolled, never blurred or cropped in post |
+| A manufacturer's logo or recognisable device silhouette | Somebody else's trademark, invented |
 
 ### Allowed, and why it is enough
 

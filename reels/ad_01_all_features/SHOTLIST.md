@@ -32,9 +32,13 @@ screen that does not exist — and it is *more* dangerous than a mock-up, not
 less, precisely because "ultra realistic" is the brief. A viewer cannot tell it
 from a capture. Neither can a reviewer.
 
-So every shot below is **atmospheric or metaphorical**, and where a phone
-appears it is held at an angle with the screen as an out-of-focus glow. The
-prompts carry `no text, no UI, no numbers` for that reason, not for style.
+So every shot below is **atmospheric or metaphorical**, and the device — which
+now appears in six of the eight — is framed so its screen is never readable.
+The prompts carry `no text, no UI, no numbers` for that reason, not for style.
+
+A phone in frame makes the ad feel like an app ad, which is what it is. It also
+puts a screen in shot six times, so the framing constraint is the load-bearing
+part of every one of those prompts rather than a note at the end of it.
 
 ## The claims this ad makes
 
@@ -107,92 +111,151 @@ premium tier even if the rest are not.
 
 ## Shots
 
-Each block is ready to paste. Keep the trailing constraint line — it is doing
-the compliance work, not decorating the prompt.
+Owner direction 2026-09-22: **product-forward.** Six of the eight shots now put
+the device in frame, so this reads as an ad for an app rather than a brand film.
+
+That raises the stakes on one rule rather than relaxing it. A phone in frame is
+a phone with a screen, and the moment that screen is readable it is fabricated
+UI — the thing this ad cannot contain. So every device shot specifies the screen
+as **angled well off camera, out of focus, or blown out to pure glow**, and says
+so twice: once in the framing and once in the constraint line.
+
+**If a generated take comes back with a legible screen, it is a failed take.**
+Re-roll it. Do not crop around it, blur it in post, or decide it is small enough
+to be fine — a viewer pausing on a 1080p frame sees it, and the whole compliance
+argument for this ad is that there is nothing in frame to read.
+
+### Device continuity
+
+The phone should look like the same object in all six shots: a plain modern
+black slab, no brand mark, no camera-bump detail that dates it. Text-to-video
+will drift on this across independent generations.
+
+The cheap fix costs nothing extra: **generate Shot 1 first, pick the take, then
+pass its frame as `image_references` (or `start_image`) on the other device
+shots.** `seedance_2_0`, `seedance_2_0_mini` and `kling3_0` all accept it — see
+the `medias[].roles` in `models_explore`. Without that, budget for more
+re-rolls on continuity alone than on the shots themselves.
+
+Each block below is ready to paste. Keep the trailing constraint line.
 
 ### Shot 1 (5s) — hook · "Crypto moves while you sleep."
 
+*Establishes the device. Generate this one first — the rest reference it.*
+
 ```
-A dark bedroom at three in the morning. A phone lies face-down on a nightstand,
-its edge catching a faint cyan glow. Sheer curtains breathe. Far below and out
-of focus, a city grid burns orange through the window. Slow push-in.
+A dark bedroom at three in the morning. A plain black phone lies face-down on a
+wooden nightstand; a soft cyan glow leaks from under its edge and pulses gently,
+once, as if something just arrived. Sheer curtains breathe. Far below and far
+out of focus, a city grid burns orange through the window. Slow push-in.
 Ultra realistic, 35mm anamorphic, shallow depth of field, heavy filmic grain,
 deep navy and cyan grade.
-No text, no user interface, no visible screen content, no logos.
+The phone is face-down and its screen is never visible. No text, no user
+interface, no brand marks or logos on the device.
 ```
 
 ### Shot 2 (7s) — "Seventy five pairs, every fifteen seconds."
 
 ```
-Inside a dark server aisle. Ranks of indicator lights pulse in fast waves of
-cyan down a long corridor, wave after wave, cold fog pooling at floor level.
-Slow dolly forward between the racks.
-Ultra realistic, photographic, volumetric light, deep navy and cyan.
-No text, no user interface, no readable displays, no logos.
+Close on a hand holding a plain black phone, tilted steeply away from camera so
+the screen reads only as a bright cyan smear across the glass. Fast ribbons of
+light sweep across that glass and across the holder's cheekbone in repeating
+waves, wave after wave, quicker than the eye tracks. Dark room, cold fog of
+light. Camera holds, very slight drift.
+Ultra realistic, photographic, shallow depth of field, volumetric light, deep
+navy and cyan.
+The screen must stay off-axis and unreadable — a glow, never an image. No text,
+no user interface, no readable display, no brand marks or logos.
 ```
 
 ### Shot 3 (6s) — "Fifteen AI analysts score every setup."
 
 ```
-Fifteen tall panes of translucent glass suspended in a black void, each
-catching a different sliver of cyan light. They rotate slowly and settle into
-one aligned rank. Volumetric haze, dust in the beams.
-Ultra realistic CGI, physically based glass and caustics, cinematic.
-No text, no symbols, no numbers, no user interface.
+Over the shoulder in a dark room. A plain black phone is held low and at a steep
+angle, its screen a featureless bright bloom. Suspended in the air around and
+behind it, fifteen tall translucent glass panes hang in the void, each catching
+a different sliver of cyan light; they rotate slowly and settle into one aligned
+rank facing the device. Volumetric haze, dust in the beams.
+Ultra realistic, physically based glass and caustics, cinematic, deep navy.
+The screen is a bloom with no detail. No text, no symbols, no numbers, no user
+interface, no brand marks.
 ```
 
 ### Shot 4 (5s) — "The whole trade. Entry, stop, three targets."
 
 ```
-A single luminous cyan line climbs through dark space, crossed at five
-different heights by horizontal bars of light. The camera rises alongside it in
-slow parallax. Dust motes drift through the beams.
-Ultra realistic, cinematic, volumetric light, deep navy.
-No text, no numbers, no axis labels, no chart interface.
+A plain black phone lies flat on a dark desk, screen up but heavily out of focus
+and blown out. Rising out of it into the air, a single luminous cyan line climbs
+through the dark, crossed at five different heights by clean horizontal bars of
+light. The camera rises alongside the light in slow parallax. Dust motes drift
+through the beams.
+Ultra realistic, cinematic, volumetric light, deep navy, shallow depth of field
+with the phone soft in the foreground.
+The screen is an out-of-focus wash. No text, no numbers, no axis labels, no
+chart interface, no brand marks.
 ```
 
 ### Shot 5 (5s) — "Every position opens with a hard stop."
 
 ```
-Macro, high-speed camera. A heavy polished steel bar slams down and seats
-itself across a dark slot. A burst of sparks, hard cyan rim light along the
-bar's edge. Slow motion impact, the bar comes to absolute rest.
+A plain black phone rests on a dark machined-steel surface, screen dark. A
+heavy polished steel bar drops into frame in front of it and seats itself hard
+across the slot with a burst of sparks and a hard cyan rim light, then comes to
+absolute rest. High-speed camera, slow motion impact.
 Ultra realistic, industrial macro, shallow depth of field, navy and steel.
-No text, no markings, no logos.
+No text, no markings, no engraving, no brand marks or logos.
 ```
 
 ### Shot 6 (5s) — "Connect Binance and Lumin can place it for you."
 
+*The one shot where a 720p upscale will show, because of the skin. Worth the
+premium tier on its own even if the rest are not.*
+
 ```
-Night interior. Two hands in low cyan light: one holds a phone tilted well away
-from camera so its screen reads only as a soft out-of-focus glow; the other
-hand lifts away and comes to rest, the work handed over.
-Ultra realistic, shallow depth of field, cinematic night grade, navy and cyan.
-The screen must stay out of focus and unreadable.
-No text, no user interface, no app screen, no logos.
+Night interior, low cyan light. Two hands: one holds a plain black phone tilted
+well away from camera so its screen is only a soft out-of-focus glow; the other
+hand sets something down and lifts away, opening, coming to rest — the work
+handed over. The phone stays lit and unattended.
+Ultra realistic, shallow depth of field, cinematic night grade, navy and cyan,
+natural skin texture.
+The screen must remain out of focus and unreadable throughout. No text, no user
+interface, no app screen, no brand marks or logos.
 ```
 
 ### Shot 7 (8s) — "Your funds never leave Binance."
 
 ```
-A vault door of brushed steel, closed and utterly still. One thin line of cyan
-light traces the seam where it meets the frame. The camera orbits slowly around
-it. Cold, quiet, immovable.
-Ultra realistic, photographic, cold navy light, fine brushed-metal texture.
-No text, no dials, no brand marks, no logos.
+Foreground: a plain black phone held up, very soft and out of focus, its screen
+a dim cyan glow. Behind it and sharp: a vault door of brushed steel, closed and
+utterly still, one thin line of cyan light tracing the seam where it meets the
+frame. Focus stays on the vault; the camera orbits it slowly while the phone
+drifts at the edge of frame. Cold, quiet, immovable.
+Ultra realistic, photographic, cold navy light, fine brushed-metal texture,
+strong foreground bokeh.
+No text, no dials, no numbers, no brand marks or logos on the vault or the
+device.
 ```
 
 ### Shot 8 (6s) — "Paper mode. Prove it first."
 
 ```
-Overhead macro. A sheet of architect's tracing paper lit from beneath by cyan
-light, a faint blueprint grid showing through the fibres. A hand enters and
-smooths it flat. Slow push-in from directly above.
-Ultra realistic macro, cinematic, navy and cyan, visible paper tooth.
-No text, no legible drawing, no numbers, no letterforms.
+Overhead. A plain black phone lies on a dark desk beside a sheet of architect's
+tracing paper. The phone's cyan glow falls across the paper, and a faint
+blueprint grid shows through its fibres where the light catches. A hand enters
+and smooths the sheet flat. Slow push-in from directly above.
+Ultra realistic macro, cinematic, navy and cyan, visible paper tooth, shallow
+depth of field.
+The phone's screen is at a grazing angle and unreadable. No text, no legible
+drawing, no numbers, no letterforms, no brand marks.
 ```
 
 ---
+
+## Status
+
+**Not generated. Owner decision 2026-09-22: hold the spend.** The prompts,
+script, timing and render path are finished and sit here ready; nothing has
+been charged against the Higgsfield balance, which is still 0.
 
 ## Status of the render path
 
@@ -234,7 +297,15 @@ and it should be run on one shot before all eight are generated.
 ## Re-check before it ships
 
 * Does any frame contain legible text, a number, or anything resembling an app
-  interface? If yes it does not ship, whatever else is right about it.
+  interface? If yes it does not ship, whatever else is right about it — and the
+  fix is a re-roll, not a blur or a crop. Scrub the device shots frame by frame
+  at full size; a screen that is unreadable in motion can be perfectly legible
+  on a paused frame, and pausing is exactly what a sceptical viewer does.
+* Does the phone look like the same object in all six device shots? Drift here
+  is the most likely reason a take needs redoing, and it is cheapest to catch
+  before the voice is cut against the clips.
+* Does any device carry a manufacturer's logo or a recognisable silhouette? Both
+  are somebody else's trademark, invented.
 * Is the risk line on the end card, on-frame? (`reelkit` draws it; confirm it
   rendered and is inside the safe area.)
 * Is every spoken claim still on the verified list in `COMPLIANCE.md`? Re-verify
