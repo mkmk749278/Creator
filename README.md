@@ -21,6 +21,7 @@ python3 pipeline/render_reel.py --all      # script.json -> 1080x1920 MP4
 | `01_what_lumin_does` | 24.9s | Cold-audience explainer |
 | `02_funds_never_leave` | 23.3s | Trust / the first objection. **Post this one first** |
 | `03_signal_anatomy` | 22.0s | Product detail: entry, stop, three targets |
+| `ad_01_all_features` | ~46s | Every feature, one cut. **Generated footage, clips not yet made** |
 
 Each renders an `.mp4` (H.264 / AAC, 1080×1920, 30fps, `+faststart`), an `.srt`,
 and a `_poster.jpg` for the feed thumbnail or a carousel.
@@ -36,9 +37,16 @@ and a `_poster.jpg` for the feed thumbnail or a carousel.
 | Type | Inter + Montserrat (SIL OFL) | a licensed display face |
 | Composition & encode | Pillow + ffmpeg | After Effects, a template SaaS |
 
-Higgsfield image/video generation was checked and **not** used: the account has
-0 credits on a free plan, so it would have cost money. The character comes from
-the owner's supplied stills, animated rather than regenerated.
+Higgsfield image/video generation was checked and **not** used for reels 01–07:
+the account has 0 credits on a free plan, so it would have cost money. The
+character comes from the owner's supplied stills, animated rather than
+regenerated.
+
+`reels/ad_01_all_features` is the first piece that **does** want generated
+video — by request, so the ad carries no app screenshot at all. It is scripted,
+scene-timed and wired to render, and its eight clips are **not generated yet**
+because the balance is still 0. `SHOTLIST.md` holds the prompts, the per-shot
+durations and the measured credit cost of each quality tier.
 
 ## Pipeline
 
@@ -88,7 +96,7 @@ here or in `lumin-app`.
 | `draw.py` | type layout, scrims, glows, the phone mockup |
 | `captions.py` | word-timed kinetic captions |
 | `audio.py` | edge-tts voice, synthesised bed, sidechain-ducked mix |
-| `scenes.py` | `character` · `phone` · `duo` · `screen` · `card` · `end` |
+| `scenes.py` | `character` · `phone` · `duo` · `screen` · `card` · `end` · `footage` |
 | `build.py` | timing, frames, encode |
 
 ### Scenes cut on the voice, not on a stopwatch

@@ -100,3 +100,37 @@ Two questions will dominate the comments. Answer both the same way every time.
 
 **Never answer a "what returns can I expect" question with a number.** Point at
 paper mode instead.
+
+---
+
+## Ad 01 — `ad_01_all_features.mp4` (~46s)
+
+Every feature in one cut. Generated footage, no app screenshot — see
+`reels/ad_01_all_features/SHOTLIST.md`.
+
+> Crypto moves while you sleep. Lumin watches it for you.
+>
+> Every 15 seconds it scans 75 USDT futures pairs, and 15 AI analysts score
+> every setup — momentum, structure, volume profile, regime.
+>
+> When one passes you get the whole trade: entry, stop loss and three targets.
+> Every position opens with a hard stop. Always.
+>
+> Connect Binance and Lumin can place it for you. Your funds never leave
+> Binance — it's a trade-only key, withdraw is never requested, and a key that
+> has it is rejected.
+>
+> Not ready? Paper mode runs the whole engine on simulated trades first.
+>
+> Every signal is free. Automation is the paid tier. On Google Play.
+>
+> Crypto futures trading carries substantial risk of loss. Lumin signals are
+> informational only and are not personalised investment advice. 18+.
+
+`#crypto #cryptotrading #futurestrading #binance #tradingsignals #altcoins`
+
+**Note for whoever posts this:** the footage is AI-generated and carries no
+product claim by design. If a platform requires an AI-content label, that is a
+labelling decision the owner has already considered once for Lia
+(`brand/CHARACTER_BIBLE.md`) and should be re-checked here — this reel is
+entirely synthetic imagery rather than an animated still.

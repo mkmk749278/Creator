@@ -127,13 +127,26 @@ def build(script_path: pathlib.Path, out_dir: pathlib.Path | None = None) -> pat
 
     # 2. Timings -----------------------------------------------------------
     specs = script["scenes"]
+    # Generated-footage scenes carry a filename; resolve it against this reel's
+    # own footage/ directory before anything tries to render one.
+    for spec in specs:
+        if spec.get("type") == "footage":
+            spec["_clip_path"] = str(script_path.parent / "footage" / spec["clip"])
     timings = resolve_timings(specs, words, total)
     # A scene shorter than about a second reads as a flash, not a cut. It is
     # always a scripting problem -- two anchors sitting on adjacent phrases --
     # so say so loudly rather than silently shipping a strobe.
     MIN_SCENE = 1.2
+    # A generated clip is a fixed length, so a scene can resolve LONGER than its
+    # own footage -- which renders as a freeze on the last frame. That is a
+    # scripting problem too, and it is invisible in a timing table that only
+    # checks the lower bound, so check the upper one here where it is read.
     for spec, (s, d) in zip(specs, timings):
         flag = "  <-- TOO SHORT" if d < MIN_SCENE else ""
+        if not flag and spec.get("type") == "footage":
+            have = scenes.clip_duration(spec["_clip_path"])
+            if d > have + 1.0 / brand.FPS:
+                flag = f"  <-- SHORT CLIP (have {have:.2f}s, need {d:.2f}s)"
         print(f"  {spec['type']:<10} {s:6.2f}s +{d:5.2f}s  "
               f"{spec.get('until','(start)')}{flag}")
     short = [(i, d) for i, (_, d) in enumerate(timings) if d < MIN_SCENE]

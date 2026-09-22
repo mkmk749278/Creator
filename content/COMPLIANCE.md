@@ -64,6 +64,49 @@ stale silently — re-run `pipeline/capture_app.py` and read the plates.
 3. **18+.** The app's own consent gate requires it; the channel should not
    undercut its own product.
 
+## Generated footage
+
+Added 2026-09-22 with `reels/ad_01_all_features`, the first reel built from
+AI-generated video rather than captured plates.
+
+The one test at the top of this file — *every claim must be pointable at a
+screen* — was written for a channel whose footage came from a real signed-in
+session. Generated footage breaks the assumption underneath it: there is no
+screen to point at, because the frame was invented.
+
+So the rule for generated material is not a relaxation of that test. It is a
+split:
+
+> **The footage carries no claim. The typography carries every claim, and the
+> typography is checked against the list above exactly as before.**
+
+That is why the shots in `SHOTLIST.md` are atmospheric or metaphorical — a
+server aisle, a vault door, tracing paper — and why every prompt ends in
+`no text, no user interface, no numbers`. Those lines are doing compliance
+work, not styling.
+
+### Banned in generated footage, on top of everything above
+
+| Banned | Why |
+|---|---|
+| A generated Lumin interface, screen, card or feed | It is a repainted screen — the row already banned above — and "ultra realistic" makes it worse, not better: a viewer cannot tell it from a capture, and neither can a reviewer |
+| Any legible number, price, percentage or P&L in frame | A depicted trade the engine never emitted, at a price nothing traded. The engine's hard limit ("never fabricate signal performance numbers") does not stop at the repo boundary |
+| A legible chart with axes or labels | Same: it asserts a specific market that did not happen |
+| A generated person shown as a user, customer or trader-with-results | A synthetic testimonial. Worse than Lia claiming results, because it reads as a real third party. See `brand/CHARACTER_BIBLE.md` |
+| A generated Binance, Google Play or exchange mark | Someone else's trademark, invented |
+| A phone screen in focus and readable | Whatever is on it is fabricated UI by definition. Keep it angled, out of focus, or a bare glow — and a take that comes back legible is re-rolled, never blurred or cropped in post |
+| A manufacturer's logo or recognisable device silhouette | Somebody else's trademark, invented |
+
+### Allowed, and why it is enough
+
+Abstract and atmospheric footage, hands and environments where no product claim
+attaches, and the brand's own typography drawn by `reelkit` over the top. Every
+feature on the verified-safe list can be *said* in type; none of them needs to
+be *depicted* to be understood.
+
+If a shot only works because the viewer reads something in the frame, the frame
+is making the claim — and it does not ship.
+
 ## Two things to check with the owner's counsel
 
 Flagged, not resolved here — both are jurisdiction questions that an engineer
