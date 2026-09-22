@@ -21,10 +21,23 @@ BANNER_H = 225          # measured on the 1290x2790 (DSF 3) captures
 SRC = pathlib.Path("/home/user/Creator/capture/app/shots")
 DST = pathlib.Path("/home/user/Creator/capture/app/screens")
 
-# The plates worth keeping, and what each is for. Deliberately EXCLUDES the
-# Pulse P&L panels: they carry a live realised-P&L figure, and putting a
-# performance number in an ad is both a claim we would have to stand behind and
-# a thing 360-v2's own doctrine forbids fabricating or implying.
+# Captures that must NEVER become a plate, and why. Checked against KEEP below,
+# because this comment used to make the claim on its own and the code did not
+# honour it: "12_tab_pulse.png" sat in KEEP for the whole life of this file
+# while the paragraph above it said the Pulse panels were excluded. The plate it
+# produced carries "SIGNAL BOOK BY DAY - RECORDED -$19.02" and a calendar of
+# per-day P&L, i.e. exactly the artefact COMPLIANCE.md bans outright. Nothing
+# had used it yet; the next author reaching for a dashboard shot had no warning.
+# A constant asserting a property it does not have is this project's most
+# expensive recurring defect -- so the rule is now enforced, not narrated.
+BANNED = {
+    "12_tab_pulse.png": "Pulse dashboard: carries a live realised-P&L figure "
+                        "and the per-day signal book. COMPLIANCE.md, 'Banned "
+                        "outright'.",
+    "13_tab_pulse_scrolled.png": "Same panel, scrolled.",
+}
+
+# The plates worth keeping, and what each is for.
 KEEP = {
     "02_onboard_1.png": "onboard_how_it_works",
     "03_onboard_2.png": "onboard_funds_safe",
@@ -34,8 +47,13 @@ KEEP = {
     "18_tab_trade.png": "trade_connect",
     "20_tab_menu.png": "menu_controls",
     "21_tab_menu_scrolled.png": "menu_controls_scrolled",
-    "12_tab_pulse.png": "pulse_dashboard",
 }
+
+_overlap = sorted(set(KEEP) & set(BANNED))
+if _overlap:
+    raise SystemExit(
+        "prep_screens: refusing to run -- these captures are in KEEP and in "
+        "BANNED:\n" + "\n".join(f"  {k}: {BANNED[k]}" for k in _overlap))
 
 
 def main() -> int:

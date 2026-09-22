@@ -1,0 +1,256 @@
+{
+  "id": "10_meta_ad_signals",
+  "title": "Lumin \u2014 Meta ad (how signals work, and who stays in control)",
+  "note": "Meta/Instagram Reels ad. Narration follows the owner's own ad infographics (data -> AI analysis -> signal -> see the setup -> Manual/Assist/Auto -> funds safe). VISUALS are the real captured app plates, never the infographic mockups: those carry invented prices (BTC 27,432.80, TP 29,200) and an invented '87% confidence', both of which COMPLIANCE.md bans and the engine's own hard limit forbids fabricating. Opening plate is composed by pipeline/make_cover.py -- the raw stills crop Lia's head to the top edge, so type had nowhere to go but her face.",
+  "voice": "Crypto moves while you are looking away. Lumin watches it for you. Every fifteen seconds it scans seventy five pairs on Binance. Fifteen AI analysts score every setup. When one is strong enough, a signal lands on your phone. Direction. Entry. Stop loss. Take profit targets. A confidence score. Then you choose. Trade it yourself, one tap with Assist, or fully automatic. Your keys stay yours. Withdrawal is never requested. Your funds never leave Binance. Lumin. Crypto insights in your hand.",
+  "tail": 1.4,
+  "bpm": 102,
+  "music_seed": 33,
+  "music_db": -20.5,
+  "poster_at": 0.9,
+  "scenes": [
+    {
+      "type": "character",
+      "image": "lia_cover_close.png",
+      "kicker": "REAL-TIME CRYPTO SIGNALS",
+      "kicker_y": 140,
+      "headline": "Crypto moves while you're looking away.",
+      "headline_size": 80,
+      "headline_y": 196,
+      "scrim_top_h": 420,
+      "scrim_top_alpha": 150,
+      "scrim_alpha": 170,
+      "scrim_start": 0.56,
+      "zoom": [
+        1.05,
+        1.0
+      ],
+      "pan": [
+        [
+          0.5,
+          0.4
+        ],
+        [
+          0.5,
+          0.52
+        ]
+      ]
+    },
+    {
+      "type": "phone",
+      "until": "Lumin watches it",
+      "kicker": "LUMIN",
+      "kicker_y": 190,
+      "headline": "It watches the market for you.",
+      "headline_size": 70,
+      "headline_y": 240,
+      "screens": [
+        "signals_list.png"
+      ],
+      "push": [
+        1.0,
+        1.06
+      ],
+      "width": 620,
+      "y": 500
+    },
+    {
+      "type": "screen",
+      "until": "seventy five",
+      "screen": "onboard_how_it_works.png",
+      "kicker": "EVERY 15 SECONDS",
+      "kicker_y": 118,
+      "zoom": [
+        1.05,
+        1.12
+      ],
+      "pan": [
+        [
+          0.5,
+          0.26
+        ],
+        [
+          0.5,
+          0.4
+        ]
+      ]
+    },
+    {
+      "type": "card",
+      "until": "Fifteen AI analysts",
+      "kicker": "BEFORE A SIGNAL FIRES",
+      "headline": "15 AI analysts score every setup.",
+      "headline_size": 100,
+      "headline_y": 660,
+      "pills": [
+        "Momentum",
+        "Structure",
+        "Volume",
+        "Regime"
+      ],
+      "pills_y": 1140
+    },
+    {
+      "type": "screen",
+      "until": "When one is strong",
+      "screen": "signals_list.png",
+      "zoom": [
+        1.0,
+        1.06
+      ],
+      "pan": [
+        [
+          0.5,
+          0.02
+        ],
+        [
+          0.5,
+          0.12
+        ]
+      ]
+    },
+    {
+      "type": "screen",
+      "until": "Direction",
+      "screen": "signals_list.png",
+      "zoom": [
+        1.14,
+        1.22
+      ],
+      "pan": [
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.5,
+          0.06
+        ]
+      ]
+    },
+    {
+      "type": "card",
+      "until": "Take profit targets",
+      "kicker": "THE WHOLE TRADE",
+      "headline": "Entry. Stop loss. Targets.",
+      "headline_size": 104,
+      "headline_y": 680,
+      "pills": [
+        "ENTRY",
+        "SL",
+        "TP"
+      ],
+      "pills_y": 1140
+    },
+    {
+      "type": "screen",
+      "until": "A confidence score",
+      "screen": "signals_list_scrolled.png",
+      "zoom": [
+        1.14,
+        1.22
+      ],
+      "pan": [
+        [
+          0.5,
+          0.06
+        ],
+        [
+          0.5,
+          0.16
+        ]
+      ]
+    },
+    {
+      "type": "screen",
+      "until": "Then you choose",
+      "screen": "menu_controls.png",
+      "zoom": [
+        1.06,
+        1.13
+      ],
+      "pan": [
+        [
+          0.5,
+          0.4
+        ],
+        [
+          0.5,
+          0.56
+        ]
+      ]
+    },
+    {
+      "type": "card",
+      "until": "one tap",
+      "kicker": "HOW YOU TRADE IT",
+      "headline": "Manual. Assist. Auto.",
+      "headline_size": 116,
+      "headline_y": 680,
+      "pills": [
+        "YOURSELF",
+        "ONE TAP",
+        "HANDS-OFF"
+      ],
+      "pills_y": 1140
+    },
+    {
+      "type": "screen",
+      "until": "Your keys stay",
+      "screen": "onboard_funds_safe.png",
+      "kicker": "TRADE-ONLY API KEY",
+      "kicker_y": 118,
+      "zoom": [
+        1.06,
+        1.12
+      ],
+      "pan": [
+        [
+          0.5,
+          0.26
+        ],
+        [
+          0.5,
+          0.4
+        ]
+      ]
+    },
+    {
+      "type": "character",
+      "until": "Your funds never",
+      "image": "lia_cover_open.png",
+      "kicker": "YOU STAY IN CONTROL",
+      "kicker_y": 140,
+      "headline": "Your funds never leave Binance.",
+      "headline_size": 80,
+      "headline_y": 196,
+      "scrim_top_h": 420,
+      "scrim_top_alpha": 155,
+      "scrim_alpha": 175,
+      "scrim_start": 0.56,
+      "zoom": [
+        1.06,
+        1.0
+      ],
+      "pan": [
+        [
+          0.5,
+          0.4
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "type": "end",
+      "until": "Lumin Crypto insights",
+      "headline": "Lumin",
+      "sub": "Crypto insights in your hand",
+      "cta": "Get it on Google Play",
+      "handle": "@lumin.signals",
+      "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."
+    }
+  ]
+}
