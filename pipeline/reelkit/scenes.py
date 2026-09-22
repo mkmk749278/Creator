@@ -8,7 +8,9 @@ rather than encoding 25 seconds to find out a headline is clipped.
 from __future__ import annotations
 
 import functools
+import hashlib
 import pathlib
+import subprocess
 
 from PIL import Image, ImageDraw, ImageFilter
 
@@ -293,8 +295,122 @@ def screen(spec: dict, t: float, dur: float) -> Image.Image:
     return frame.convert("RGB")
 
 
+# --- Generated footage ----------------------------------------------------
+# Ad 01 introduced AI-generated cinematic b-roll as a scene source. The clip is
+# decoded to a JPEG sequence ONCE and indexed by frame, rather than seeking per
+# frame: a scene is rendered frame by frame from t=0 upward, so a per-frame seek
+# would re-decode the whole clip 180 times.
+#
+# The cache key carries the file's mtime and size, not just its path. A
+# regenerated clip lands at the same filename by design (SHOTLIST.md names
+# them), so keying on the path alone would serve the previous take forever --
+# and it would look exactly like a generation that did not change anything.
+
+_CLIP_CACHE = pathlib.Path(brand.FONTS).parents[1] / ".clipcache"
+
+# Scenes whose resolved duration outran their clip, as {clip_name: shortfall_s}.
+# Populated during render and reported by build.py, because a held last frame is
+# a freeze the viewer sees and nothing else would say where it came from.
+CLIP_SHORTFALL: dict[str, float] = {}
+
+
+def _clip_key(path: pathlib.Path) -> str:
+    st = path.stat()
+    return hashlib.sha1(
+        f"{path}|{st.st_mtime_ns}|{st.st_size}|{brand.FPS}".encode()).hexdigest()[:16]
+
+
+@functools.lru_cache(maxsize=16)
+def _clip_frames(path_str: str) -> tuple[str, int]:
+    """Decode a clip to brand.FPS JPEGs. Returns (directory, frame count)."""
+    path = pathlib.Path(path_str)
+    if not path.exists():
+        raise FileNotFoundError(
+            f"footage clip not found: {path}\n"
+            f"    Generate it per reels/*/SHOTLIST.md and save it to this exact "
+            f"filename, or the scene has no source.")
+    out = _CLIP_CACHE / _clip_key(path)
+    if not (out / "done").exists():
+        out.mkdir(parents=True, exist_ok=True)
+        subprocess.run(
+            ["ffmpeg", "-nostdin", "-loglevel", "error", "-y", "-i", str(path),
+             "-vf", f"fps={brand.FPS}", "-q:v", "3", str(out / "%05d.jpg")],
+            check=True)
+        (out / "done").write_text("")
+    n = len(list(out.glob("*.jpg")))
+    if n == 0:
+        raise RuntimeError(f"clip decoded to zero frames: {path}")
+    return str(out), n
+
+
+def clip_duration(path_str: str) -> float:
+    """Length of a clip in seconds, for the build-time coverage check."""
+    d, n = _clip_frames(path_str)
+    return n / brand.FPS
+
+
+def footage(spec: dict, t: float, dur: float) -> Image.Image:
+    """A generated cinematic plate, treated exactly like a character portrait.
+
+    Type, scrim, kicker and pills are identical to `character` on purpose. The
+    footage carries no claim -- every factual statement in an ad is drawn here,
+    in the app's own tokens, over the plate. See content/COMPLIANCE.md
+    "Generated footage" and reels/ad_01_all_features/SHOTLIST.md.
+    """
+    # build.py stamps the absolute path, because the scene spec alone does not
+    # know which reel directory it came from.
+    frames_dir, n = _clip_frames(spec["_clip_path"])
+
+    idx = int(round(t * brand.FPS))
+    if idx >= n:
+        # Hold the last frame and SAY SO. Looping instead would hide the
+        # shortfall behind a jump cut, which reads as a bad edit rather than as
+        # a clip that is too short -- two different fixes.
+        over = (idx - n + 1) / brand.FPS
+        CLIP_SHORTFALL[spec["clip"]] = max(CLIP_SHORTFALL.get(spec["clip"], 0.0), over)
+        idx = n - 1
+    img = load(f"{frames_dir}/{idx + 1:05d}.jpg")
+
+    p = t / max(1e-6, dur)
+    # Default is NO added camera move: the generated clip supplies its own, and
+    # stacking a Ken Burns push on top of it reads as drift rather than as
+    # intent. Override per scene where a plate is genuinely static.
+    zf, zt = spec.get("zoom", [1.0, 1.0])
+    pf, pt = spec.get("pan", [[0.5, 0.5], [0.5, 0.5]])
+    frame = motion.ken_burns(img, p, zoom_from=zf, zoom_to=zt,
+                             pan_from=tuple(pf), pan_to=tuple(pt),
+                             size=(brand.W, brand.H)).convert("RGBA")
+
+    if spec.get("scrim", True):
+        frame.alpha_composite(draw.vertical_scrim(
+            (brand.W, brand.H), bottom_alpha=spec.get("scrim_alpha", 232),
+            start=spec.get("scrim_start", 0.34)))
+        top = draw.vertical_scrim(
+            (brand.W, spec.get("scrim_top_h", 480)),
+            top_alpha=spec.get("scrim_top_alpha", 190), bottom_alpha=0, start=0.0)
+        frame.alpha_composite(top, (0, 0))
+
+    if spec.get("kicker"):
+        _kicker(frame, spec["kicker"], spec.get("kicker_y", 250))
+    if spec.get("headline"):
+        draw.draw_block(frame, spec["headline"], path=brand.DISPLAY,
+                        box=(brand.SAFE_X, spec.get("headline_y", 300),
+                             brand.W - brand.SAFE_X * 2, 430),
+                        start=spec.get("headline_size", 92),
+                        align=spec.get("align", "left"))
+    if spec.get("sub"):
+        draw.draw_block(frame, spec["sub"], path=brand.BODY,
+                        box=(brand.SAFE_X, spec.get("sub_y", 600),
+                             brand.W - brand.SAFE_X * 2, 200),
+                        start=40, fill=brand.TEXT_SECONDARY,
+                        align=spec.get("align", "left"))
+    _pills(frame, spec.get("pills"), spec.get("pills_y", 1420))
+    return frame.convert("RGB")
+
+
 RENDERERS = {"character": character, "phone": phone, "duo": duo,
-             "card": card, "end": end, "screen": screen}
+             "card": card, "end": end, "screen": screen,
+             "footage": footage}
 
 
 def render(spec: dict, t: float, dur: float) -> Image.Image:

@@ -1,0 +1,87 @@
+{
+  "id": "ad_01_all_features",
+  "title": "Everything Lumin does",
+  "note": "Generated-footage ad. No app screenshot appears -- every shot is AI-generated cinematic b-roll, and every factual claim is carried by brand typography drawn over it, never by a generated frame. Prompts and the reasoning behind that split are in SHOTLIST.md. All nine claims are on the verified-safe list in content/COMPLIANCE.md (onboarding captured 2026-09-08). No performance, profit or win-rate figure appears anywhere.",
+  "voice": "Crypto moves while you sleep. Lumin watches it for you. Every fifteen seconds it scans seventy five USDT futures pairs. Fifteen AI analysts score every setup. Momentum, structure, volume profile, regime. When one passes you get the whole trade. Entry, stop loss, and three targets. Every position opens with a hard stop. Always. Connect Binance and Lumin can place it for you. Your funds never leave Binance. A trade only key. Withdraw is never requested, and a key that has it is rejected. Not ready? Paper mode runs the whole engine on simulated trades first. Every signal is free. Automation is the paid tier. Lumin. On Google Play.",
+  "bpm": 100,
+  "music_seed": 11,
+  "music_db": -20.0,
+  "scenes": [
+    {
+      "type": "footage",
+      "clip": "01_sleep.mp4",
+      "kicker": "LUMIN",
+      "headline": "Crypto moves\nwhile you sleep.",
+      "headline_size": 96,
+      "scrim_top_h": 560,
+      "scrim_top_alpha": 200
+    },
+    {
+      "type": "footage",
+      "until": "Lumin watches it",
+      "clip": "02_scan.mp4",
+      "kicker": "EVERY 15 SECONDS",
+      "headline": "75 USDT futures pairs,\nscanned.",
+      "headline_size": 92
+    },
+    {
+      "type": "footage",
+      "until": "Fifteen AI analysts",
+      "clip": "03_analysts.mp4",
+      "kicker": "BEFORE A SIGNAL FIRES",
+      "headline": "15 AI analysts score\nevery setup.",
+      "headline_size": 88,
+      "pills": ["Momentum", "Structure", "Regime"]
+    },
+    {
+      "type": "footage",
+      "until": "you get the whole trade",
+      "clip": "04_trade.mp4",
+      "kicker": "THE WHOLE TRADE",
+      "headline": "Entry. Stop loss.\nThree targets.",
+      "headline_size": 92
+    },
+    {
+      "type": "footage",
+      "until": "Every position opens",
+      "clip": "05_stop.mp4",
+      "kicker": "ON EVERY POSITION",
+      "headline": "A hard stop.\nAlways.",
+      "headline_size": 104
+    },
+    {
+      "type": "footage",
+      "until": "Connect Binance",
+      "clip": "06_connect.mp4",
+      "kicker": "CONNECT BINANCE",
+      "headline": "Lumin can place\nit for you.",
+      "headline_size": 92
+    },
+    {
+      "type": "footage",
+      "until": "never leave Binance",
+      "clip": "07_vault.mp4",
+      "kicker": "YOUR FUNDS STAY PUT",
+      "headline": "Funds never\nleave Binance.",
+      "headline_size": 92,
+      "pills": ["Trade-only key", "Withdraw rejected"]
+    },
+    {
+      "type": "footage",
+      "until": "Paper mode runs",
+      "clip": "08_paper.mp4",
+      "kicker": "PROVE IT FIRST",
+      "headline": "Paper mode runs\nthe whole engine.",
+      "headline_size": 88
+    },
+    {
+      "type": "end",
+      "until": "Every signal is free",
+      "headline": "Lumin",
+      "sub": "Every signal free. Automation is the paid tier.",
+      "cta": "Get it on Google Play",
+      "handle": "@lumin.signals",
+      "disclaimer": "Crypto futures trading carries substantial risk of loss. Lumin signals are informational only and are not personalised investment advice."
+    }
+  ]
+}
