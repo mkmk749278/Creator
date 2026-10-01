@@ -1,0 +1,16 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+video/spike-4k/
+# vendored at npm install time (scripts/vendor-assets.mjs)
+video/**/vendor/
+video/**/snapshots/
+video/**/renders/
+*.mp4
+# run artefacts: only manifests are committed
+runs/*/*
+!runs/*/manifest.json
+!runs/.gitkeep
+spike-out/

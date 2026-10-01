@@ -1,0 +1,18 @@
+# Whitelist of trusted sources. Kishore edits this list.
+# TODO(owner): replace placeholders with real channels and sites.
+youtube_channels:
+  # - { name: "Reviewer Name", channel_id: "UCxxxxxxxxxxxxxxxxxxxxxx", language: en }
+  - { name: "TODO placeholder", channel_id: "UC_TODO", language: en }
+
+review_sites:
+  # - { name: "Site Name", domain: "example.com", search: "https://example.com/search?q={query}" }
+  - { name: "TODO placeholder", domain: "example.com" }
+
+# Official press media may only be downloaded from these domains.
+press_domains:
+  # - news.samsung.com
+  - TODO.example
+
+specs_source:
+  name: "TODO: one structured specs source"
+  currency: INR

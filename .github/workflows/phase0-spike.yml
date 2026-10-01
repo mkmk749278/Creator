@@ -1,0 +1,218 @@
+name: Phase 0 spike
+
+# Start from the GitHub app: Actions → "Phase 0 spike" → Run workflow.
+# Results: the run's Summary page (phone-readable) + artifacts, and optionally
+# a comment on an issue.
+
+on:
+  workflow_dispatch:
+    inputs:
+      render_4k:
+        description: "Also render 4K (native + supersampled; slow)"
+        type: boolean
+        default: true
+      run_opus:
+        description: "Run the Opus 5.5 API checks (needs ANTHROPIC_API_KEY; ~$1-3)"
+        type: boolean
+        default: true
+      bundle_tokens:
+        description: "Cached bundle size for the caching test (900000 ≈ full 1M call, ~$7.50)"
+        type: string
+        default: "150000"
+      issue:
+        description: "Issue number to post the report to (optional)"
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: phase0-spike
+  cancel-in-progress: false
+
+env:
+  HYPERFRAMES_NO_TELEMETRY: "1"
+
+defaults:
+  run:
+    shell: bash   # -eo pipefail, so `render | tee` fails when render fails
+
+jobs:
+  render:
+    name: render ${{ matrix.variant }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [1080p, 4k-native, 4k-supersample]
+    steps:
+      - name: Skip 4K if not requested
+        id: gate
+        run: |
+          if [[ "${{ matrix.variant }}" != "1080p" && "${{ inputs.render_4k }}" != "true" ]]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.skip != 'true'
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.skip != 'true'
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install FFmpeg, HyperFrames, Chrome
+        if: steps.gate.outputs.skip != 'true'
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          npm ci
+          npx hyperframes telemetry disable || true
+          npx hyperframes browser ensure
+          npx hyperframes doctor --json > doctor.json
+          nproc; free -g
+      - name: Prepare project
+        if: steps.gate.outputs.skip != 'true'
+        id: prep
+        run: |
+          if [[ "${{ matrix.variant }}" == "4k-native" ]]; then
+            node scripts/make_native_4k.mjs video/spike video/spike-4k
+            echo "dir=video/spike-4k" >> "$GITHUB_OUTPUT"
+            echo "args=--workers 4 --video-bitrate 45M" >> "$GITHUB_OUTPUT"
+          elif [[ "${{ matrix.variant }}" == "4k-supersample" ]]; then
+            echo "dir=video/spike" >> "$GITHUB_OUTPUT"
+            echo "args=--resolution 4k --workers 4 --video-bitrate 45M" >> "$GITHUB_OUTPUT"
+          else
+            echo "dir=video/spike" >> "$GITHUB_OUTPUT"
+            echo "args=--workers 4 --quality looks" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Check + snapshots
+        if: steps.gate.outputs.skip != 'true'
+        working-directory: ${{ steps.prep.outputs.dir }}
+        run: |
+          npx hyperframes check
+          npx hyperframes snapshot --at 2.5,9,14.5,19 --no-end --describe false -o "$GITHUB_WORKSPACE/out/snapshots"
+      - name: Render
+        if: steps.gate.outputs.skip != 'true'
+        working-directory: ${{ steps.prep.outputs.dir }}
+        run: |
+          start=$(date +%s)
+          npx hyperframes render ${{ steps.prep.outputs.args }} --output "$GITHUB_WORKSPACE/out/spike_${{ matrix.variant }}.mp4" 2>&1 | tee "$GITHUB_WORKSPACE/out/render.log"
+          echo "$(( $(date +%s) - start ))" > "$GITHUB_WORKSPACE/out/seconds.txt"
+      - name: Report
+        if: steps.gate.outputs.skip != 'true'
+        run: |
+          f=out/spike_${{ matrix.variant }}.mp4
+          secs=$(cat out/seconds.txt)
+          probe=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height,profile,bit_rate,r_frame_rate -of csv=p=0 "$f")
+          size=$(du -h "$f" | cut -f1)
+          path=$(grep -oE "(beginframe|screenshot) capture · [^·]+" out/render.log | head -1 || true)
+          {
+            echo "| ${{ matrix.variant }} | ${secs}s | $(python3 -c "print(round($secs/20,1))")× | $size | $probe | $path |"
+          } > out/row.md
+          cat out/row.md
+      - uses: actions/upload-artifact@v4
+        if: steps.gate.outputs.skip != 'true' && always()
+        with:
+          name: render-${{ matrix.variant }}
+          path: out/
+          retention-days: 14
+
+  ytdlp:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: pip install "yt-dlp[default]==2026.8.19"
+      - run: scripts/spike_ytdlp.sh out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ytdlp
+          path: out/
+
+  opus:
+    if: inputs.run_opus
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install
+        run: |
+          pip install -e .
+          npm ci
+          npx hyperframes browser ensure
+      - name: Snapshot a frame for the image-QA test
+        working-directory: video/spike
+        run: npx hyperframes snapshot --at 9 --no-end --describe false -o "$GITHUB_WORKSPACE/render/snapshots"
+      - name: Opus 5.5 checks
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          mkdir -p out
+          if [[ -z "$ANTHROPIC_API_KEY" ]]; then
+            echo "## Opus 5.5 spike" > out/opus_spike.md
+            echo "⏭️ Skipped: add the \`ANTHROPIC_API_KEY\` repository secret, then re-run." >> out/opus_spike.md
+            exit 0
+          fi
+          python -m pipeline.spike.opus_spike --image render/snapshots/frame-00-at-9s.png \
+            --out out --bundle-tokens "${{ inputs.bundle_tokens }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: opus
+          path: out/
+
+  report:
+    needs: [render, ytdlp, opus]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: a
+          pattern: "{render-*,ytdlp,opus}"
+          merge-multiple: false
+      - name: Build report
+        run: |
+          {
+            echo "# Phase 0 spike report"
+            echo
+            echo "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} (MP4s and snapshots are under Artifacts)"
+            echo
+            echo "## HyperFrames render (20 s test scene, ubuntu-24.04 runner)"
+            echo
+            echo "| variant | wall time | × realtime | size | profile,w,h,fps,bitrate | capture path |"
+            echo "|---|---|---|---|---|---|"
+            found=0
+            for f in a/render-*/row.md; do [ -f "$f" ] && cat "$f" && found=1; done
+            [ "$found" = 1 ] || echo "| (no renders) | | | | | |"
+            echo
+            cat a/ytdlp/ytdlp.md 2>/dev/null || echo "yt-dlp: no result"
+            echo
+            cat a/opus/opus_spike.md 2>/dev/null || echo "Opus: not run"
+          } > report.md
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Post to issue
+        if: inputs.issue != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment "${{ inputs.issue }}" --repo "${{ github.repository }}" --body-file report.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: report
+          path: report.md

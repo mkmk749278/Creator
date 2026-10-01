@@ -1,0 +1,42 @@
+# Model routing for every AI stage. Never hard-code these values in code.
+# Opus 5.5: thinking is always on (never send thinking: disabled); depth is set
+# with effort. Its API default is `medium`, so every task sets effort explicitly.
+model: claude-opus-5-5
+
+# Per-task routing (HANDOFF §3.3). mode: api | api_batch | agent
+tasks:
+  source_filter:     { mode: api_batch, effort: low }
+  claim_extraction:  { mode: api_batch, effort: medium }
+  synthesis:         { mode: api,       effort: xhigh }
+  verify:            { mode: api,       effort: max }     # fresh context, separate call
+  script:            { mode: api,       effort: high }
+  metadata:          { mode: api,       effort: medium }   # titles, description, chapters, tags
+  media_vetting:     { mode: api,       effort: medium }   # image input
+  composition:       { mode: agent,     effort: high }
+  visual_qa:         { mode: agent,     effort: high }
+  thumbnail_critique: { mode: api,      effort: high }
+
+caching:
+  ttl: 1h            # stages run minutes apart; 1h cache write $8/MTok, read $0.20/MTok
+
+fast_mode: false     # nothing here is latency-critical
+
+# Server-side refusal fallback (Claude API only; not on the Batch API).
+refusal_fallback: default
+
+budget:
+  per_video_usd: 15.0   # stop and ask in the issue if a run would exceed this
+
+# $ per million tokens, used for cost.json estimates. Update if pricing changes.
+pricing:
+  claude-opus-5-5:
+    input: 4.0
+    output: 20.0
+    cache_read: 0.20
+    cache_write_5m: 5.0
+    cache_write_1h: 8.0
+    batch_discount: 0.5
+
+# Agent stages (claude-code-action)
+agent:
+  max_turns: 60

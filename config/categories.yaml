@@ -1,0 +1,11 @@
+# Scoring categories and their weights in the overall consensus score.
+categories:
+  - { id: display,     label: Display,     weight: 1.0 }
+  - { id: camera,      label: Camera,      weight: 1.3 }
+  - { id: battery,     label: Battery,     weight: 1.2 }
+  - { id: performance, label: Performance, weight: 1.0 }
+  - { id: software,    label: Software,    weight: 1.0 }
+  - { id: build,       label: Build,       weight: 0.7 }
+  - { id: value,       label: Value,       weight: 1.2 }
+agreement_levels: [strong, mixed, split]
+problem_min_sources: 2   # "reported by multiple reviewers" means >= 2 independent sources

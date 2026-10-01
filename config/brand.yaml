@@ -1,0 +1,20 @@
+# Brand tokens. Compositions must use these (as CSS custom properties).
+channel_name: "TODO: channel name"
+colors:
+  bg: "#07090d"
+  bg_2: "#0e1320"
+  ink: "#f4f6fb"
+  ink_dim: "#9aa3b5"
+  accent: "#5ee1c2"     # agreement / positive
+  accent_2: "#7a8cff"
+  warn: "#ffb35c"       # mixed agreement
+  bad: "#ff6b7a"        # split / problems / skip
+  glass: "rgba(255, 255, 255, 0.06)"
+  glass_edge: "rgba(255, 255, 255, 0.14)"
+fonts:
+  family: Inter          # vendored from @fontsource/inter (OFL)
+  weights: [400, 600, 800]
+video:
+  width: 1920            # authoring canvas; 4K = --resolution 4k supersample
+  height: 1080
+  fps: 30                # 60 via config flag

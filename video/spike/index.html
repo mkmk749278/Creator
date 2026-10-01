@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Phase 0 spike: 20s consensus scene</title>
+    <!-- Vendored, pinned runtime: no network access at render time. -->
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+
+      /* Brand tokens: mirror config/brand.yaml */
+      :root {
+        --bg: #07090d;
+        --bg-2: #0e1320;
+        --ink: #f4f6fb;
+        --ink-dim: #9aa3b5;
+        --accent: #5ee1c2;
+        --accent-2: #7a8cff;
+        --warn: #ffb35c;
+        --bad: #ff6b7a;
+        --glass: rgba(255, 255, 255, 0.06);
+        --glass-edge: rgba(255, 255, 255, 0.14);
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", sans-serif; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
+
+      /* Shared background: depth gradient + slow drifting glows */
+      .bg { position: absolute; inset: 0; background: radial-gradient(120% 90% at 70% 20%, var(--bg-2) 0%, var(--bg) 60%); }
+      .glow { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.55; }
+      #glow-a { width: 900px; height: 900px; left: -200px; top: 300px; background: #1b3a6b; }
+      #glow-b { width: 700px; height: 700px; right: -150px; top: -200px; background: #134d48; }
+
+      .clip { position: absolute; inset: 0; }
+      .scene { width: 100%; height: 100%; padding: 120px 140px; display: flex; }
+      .eyebrow { font-weight: 600; font-size: 26px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+      .glass {
+        background: var(--glass);
+        border: 1px solid var(--glass-edge);
+        border-radius: 36px;
+        backdrop-filter: blur(24px);
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+
+      /* Scene 1: hero */
+      #hero .scene { align-items: center; justify-content: space-between; gap: 80px; }
+      .hero-copy { max-width: 980px; display: flex; flex-direction: column; gap: 28px; }
+      .hero-title { margin: 0; font-weight: 800; font-size: 120px; line-height: 1.0; letter-spacing: -0.03em; }
+      .hero-title .line { display: block; overflow: hidden; }
+      .hero-title .line > span { display: block; }
+      .hero-sub { margin: 0; font-size: 38px; line-height: 1.35; color: var(--ink-dim); max-width: 860px; }
+      .device-stage { position: relative; width: 560px; height: 820px; flex: none; }
+      .device {
+        position: absolute; inset: 0; border-radius: 72px;
+        background: linear-gradient(160deg, #2a3142 0%, #11151f 55%, #0a0d14 100%);
+        border: 2px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 80px 160px rgba(0, 0, 0, 0.6), inset 0 0 0 10px #05070b;
+        overflow: hidden;
+      }
+      .device .screen { position: absolute; inset: 18px; border-radius: 58px; background: linear-gradient(200deg, #1f3d63 0%, #0f1a2e 50%, #0b2a2a 100%); }
+      .device .label {
+        position: absolute; left: 0; right: 0; bottom: 60px; text-align: center;
+        font-size: 20px; letter-spacing: 0.2em; color: rgba(255, 255, 255, 0.7);
+      }
+      .sweep {
+        position: absolute; top: -20%; left: 0; width: 45%; height: 140%;
+        background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.22) 50%, transparent 100%);
+      }
+      .reflection {
+        position: absolute; left: 40px; right: 40px; bottom: -150px; height: 120px; border-radius: 50%;
+        background: radial-gradient(closest-side, rgba(94, 225, 194, 0.25), transparent);
+        filter: blur(20px);
+      }
+
+      /* Scene 2: scorecard */
+      #scorecard .scene { flex-direction: column; gap: 48px; }
+      .score-head { display: flex; align-items: flex-end; justify-content: space-between; }
+      .score-head h2 { margin: 12px 0 0; font-size: 72px; font-weight: 800; letter-spacing: -0.02em; }
+      .overall { display: flex; align-items: baseline; gap: 14px; }
+      .overall .num { font-size: 140px; font-weight: 800; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
+      .overall .of { font-size: 40px; color: var(--ink-dim); }
+      .rows { display: flex; flex-direction: column; gap: 26px; padding: 48px 56px; }
+      .row { display: grid; grid-template-columns: 300px 1fr 120px 200px; align-items: center; gap: 32px; }
+      .row .name { font-size: 36px; font-weight: 600; }
+      .track { position: relative; height: 22px; border-radius: 11px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+      .fill { display: block; width: 100%; height: 100%; border-radius: 11px; transform-origin: left center; background: linear-gradient(90deg, var(--accent-2), var(--accent)); }
+      .row .val { font-size: 40px; font-weight: 800; text-align: right; font-variant-numeric: tabular-nums; }
+      .chip { justify-self: start; font-size: 22px; font-weight: 600; padding: 8px 18px; border-radius: 999px; border: 1px solid currentColor; }
+      .chip.strong { color: var(--accent); }
+      .chip.mixed { color: var(--warn); }
+      .chip.split { color: var(--bad); }
+
+      /* Scene 3: quote + disagreement */
+      #debate .scene { gap: 56px; align-items: stretch; }
+      .quote { flex: 1.1; padding: 64px; display: flex; flex-direction: column; justify-content: space-between; }
+      .quote blockquote { margin: 0; font-size: 54px; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
+      .quote .cite { font-size: 28px; color: var(--ink-dim); }
+      .quote .cite b { color: var(--ink); font-weight: 600; }
+      .split-col { flex: 1; display: flex; flex-direction: column; gap: 32px; }
+      .split-col h3 { margin: 0; font-size: 44px; font-weight: 800; }
+      .side { padding: 40px 44px; display: flex; flex-direction: column; gap: 14px; }
+      .side .who { font-size: 24px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+      .side .what { font-size: 34px; line-height: 1.3; }
+      .side.pro .who { color: var(--accent); }
+      .side.con .who { color: var(--bad); }
+
+      /* Scene 4: verdict */
+      #verdict .scene { flex-direction: column; align-items: center; justify-content: center; gap: 36px; text-align: center; }
+      .verdict-title { margin: 0; font-size: 150px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+      .verdict-sub { margin: 0; font-size: 40px; color: var(--ink-dim); max-width: 1300px; line-height: 1.35; }
+      .pills { display: flex; gap: 24px; }
+      .pill { font-size: 30px; font-weight: 600; padding: 18px 34px; border-radius: 999px; }
+      .pill.buy { background: rgba(94, 225, 194, 0.14); color: var(--accent); }
+      .pill.skip { background: rgba(255, 107, 122, 0.14); color: var(--bad); }
+      .footnote { font-size: 22px; color: var(--ink-dim); letter-spacing: 0.06em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="spike" data-start="0" data-width="1920" data-height="1080" data-duration="20">
+      <div class="bg"></div>
+      <div id="glow-a" class="glow"></div>
+      <div id="glow-b" class="glow"></div>
+
+      <!-- Scene 1 (0-5s): hero -->
+      <section id="hero" class="clip" data-start="0" data-duration="5" data-track-index="1">
+        <div class="scene">
+          <div class="hero-copy">
+            <div id="hero-eyebrow" class="eyebrow">15 reviewers · 1 verdict</div>
+            <h1 class="hero-title">
+              <span class="line"><span id="ht-1">Test Phone X</span></span>
+              <span class="line"><span id="ht-2">The Consensus</span></span>
+            </h1>
+            <p id="hero-sub" class="hero-sub">What the trusted reviewers agree on, where they disagree, and who should buy it.</p>
+          </div>
+          <div id="device-stage" class="device-stage">
+            <div id="device" class="device">
+              <div class="screen"></div>
+              <div id="sweep" class="sweep"></div>
+              <div class="label">PRESS IMAGE PLACEHOLDER</div>
+            </div>
+            <div class="reflection"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 2 (5-12s): scorecard -->
+      <section id="scorecard" class="clip" data-start="5" data-duration="7" data-track-index="1">
+        <div class="scene">
+          <div class="score-head">
+            <div>
+              <div class="eyebrow">Consensus scorecard</div>
+              <h2 id="sc-title">How reviewers scored it</h2>
+            </div>
+            <div class="overall"><span id="overall-num" class="num">0.0</span><span class="of">/ 10</span></div>
+          </div>
+          <div id="rows" class="rows glass">
+            <div class="row"><span class="name">Display</span><div class="track"><span class="fill"></span></div><span class="val" data-score="9.1">0.0</span><span class="chip strong">Strong</span></div>
+            <div class="row"><span class="name">Camera</span><div class="track"><span class="fill"></span></div><span class="val" data-score="8.4">0.0</span><span class="chip mixed">Mixed</span></div>
+            <div class="row"><span class="name">Battery</span><div class="track"><span class="fill"></span></div><span class="val" data-score="7.2">0.0</span><span class="chip split">Split</span></div>
+            <div class="row"><span class="name">Performance</span><div class="track"><span class="fill"></span></div><span class="val" data-score="8.8">0.0</span><span class="chip strong">Strong</span></div>
+            <div class="row"><span class="name">Software</span><div class="track"><span class="fill"></span></div><span class="val" data-score="7.9">0.0</span><span class="chip mixed">Mixed</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 3 (12-17s): quote + disagreement -->
+      <section id="debate" class="clip" data-start="12" data-duration="5" data-track-index="1">
+        <div class="scene">
+          <div id="quote" class="quote glass">
+            <div class="eyebrow">Reviewer quote</div>
+            <blockquote>“The best screen I have used this year, but it gets warm in long games.”</blockquote>
+            <div class="cite"><b>Sample Reviewer</b> · Video · 07:42</div>
+          </div>
+          <div class="split-col">
+            <h3 id="split-title">Where reviewers disagree: battery</h3>
+            <div id="side-pro" class="side pro glass"><span class="who">8 reviewers</span><span class="what">Easily a full day, even with heavy camera use.</span></div>
+            <div id="side-con" class="side con glass"><span class="who">5 reviewers</span><span class="what">Drains fast on 5G and needs a top-up by evening.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 4 (17-20s): verdict -->
+      <section id="verdict" class="clip" data-start="17" data-duration="3" data-track-index="1">
+        <div class="scene">
+          <div id="v-eyebrow" class="eyebrow">The verdict</div>
+          <h2 id="v-title" class="verdict-title">Buy it for the screen.</h2>
+          <p id="v-sub" class="verdict-sub">Skip it if battery life is your top priority.</p>
+          <div id="pills" class="pills"><span class="pill buy">Buy: display lovers</span><span class="pill skip">Skip: heavy gamers</span></div>
+          <div class="footnote">SAMPLE DATA · PHASE 0 RENDER TEST</div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Background drift across the whole video (finite, seekable).
+      tl.fromTo("#glow-a", { x: 0, y: 0 }, { x: 260, y: -120, duration: 20, ease: "none" }, 0);
+      tl.fromTo("#glow-b", { x: 0, y: 0 }, { x: -200, y: 140, duration: 20, ease: "none" }, 0);
+
+      // Scene 1: kinetic title + device parallax + light sweep
+      tl.fromTo("#hero-eyebrow", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.2);
+      tl.fromTo("#ht-1", { yPercent: 110 }, { yPercent: 0, duration: 0.9, ease: "expo.out" }, 0.35);
+      tl.fromTo("#ht-2", { yPercent: 110 }, { yPercent: 0, duration: 0.9, ease: "expo.out" }, 0.5);
+      tl.fromTo("#hero-sub", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, 0.9);
+      tl.fromTo("#device-stage", { opacity: 0, y: 80, rotationY: -18, scale: 0.92 },
+        { opacity: 1, y: 0, rotationY: -6, scale: 1, duration: 1.4, ease: "power3.out" }, 0.3);
+      tl.to("#device-stage", { y: -18, rotationY: 4, duration: 3.2, ease: "sine.inOut" }, 1.7);
+      tl.fromTo("#sweep", { xPercent: -120 }, { xPercent: 260, duration: 1.4, ease: "power2.inOut" }, 1.6);
+      tl.to("#hero .scene", { opacity: 0, duration: 0.4, ease: "power1.in" }, 4.6);
+
+      // Scene 2: scorecard bars + count-up numbers
+      tl.fromTo("#sc-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 5.1);
+      tl.fromTo("#rows", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 5.3);
+      document.querySelectorAll("#rows .row").forEach((row, i) => {
+        const val = row.querySelector(".val");
+        const score = parseFloat(val.dataset.score);
+        const at = 5.7 + i * 0.25;
+        const counter = { v: 0 };
+        tl.fromTo(row.querySelector(".fill"), { scaleX: 0 }, { scaleX: score / 10, duration: 1.2, ease: "power3.out" }, at);
+        tl.fromTo(counter, { v: 0 }, { v: score, duration: 1.2, ease: "power3.out",
+          onUpdate: () => { val.textContent = counter.v.toFixed(1); } }, at);
+        tl.fromTo(row.querySelector(".chip"), { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, at + 0.8);
+      });
+      const overallEl = document.getElementById("overall-num");
+      const overall = { v: 0 };
+      tl.fromTo(overall, { v: 0 }, { v: 8.3, duration: 1.8, ease: "power2.out",
+        onUpdate: () => { overallEl.textContent = overall.v.toFixed(1); } }, 6.0);
+      tl.to("#scorecard .scene", { opacity: 0, duration: 0.4, ease: "power1.in" }, 11.6);
+
+      // Scene 3: quote card + disagreement split
+      tl.fromTo("#quote", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 12.1);
+      tl.fromTo("#split-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 12.6);
+      tl.fromTo("#side-pro", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 12.9);
+      tl.fromTo("#side-con", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 13.2);
+      tl.to("#debate .scene", { opacity: 0, duration: 0.4, ease: "power1.in" }, 16.6);
+
+      // Scene 4: verdict
+      tl.fromTo("#v-eyebrow", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 17.1);
+      tl.fromTo("#v-title", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.8, ease: "expo.out" }, 17.2);
+      tl.fromTo("#v-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 17.6);
+      tl.fromTo("#pills", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 17.9);
+
+      window.__timelines["spike"] = tl;
+    </script>
+  </body>
+</html>

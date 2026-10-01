@@ -1,0 +1,16 @@
+[project]
+name = "phone-consensus"
+version = "0.0.1"
+description = "Consensus phone review video pipeline"
+requires-python = ">=3.11"
+dependencies = [
+  "anthropic==1.11.0",
+  "pydantic==2.13.5",
+  "pyyaml==6.0.3",
+]
+
+[project.optional-dependencies]
+collect = ["yt-dlp==2026.8.19"]
+
+[tool.setuptools.packages.find]
+include = ["pipeline*"]
