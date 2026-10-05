@@ -11,7 +11,50 @@
       @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-      /* Part-specific styles go here. */
+
+      .model-badge { font-size: 30px; }
+      .model-badge.inpanel { position: static; align-self: flex-start; }
+      .tag-claim, .tag-measured, .tag-editorial { font-size: 30px; }
+      .center { flex-direction: column; justify-content: center; }
+      .q-wrap { display: flex; align-items: center; gap: 60px; width: 100%; }
+      .q-text { flex: 1; display: flex; flex-direction: column; gap: 34px; }
+      .verdict { display: inline-block; align-self: flex-start; font-size: 48px; font-weight: 800; padding: 16px 40px; border-radius: 999px; background: rgba(94,225,194,0.14); border: 2px solid var(--accent); color: var(--accent); }
+      .duo { display: flex; gap: 48px; width: 100%; align-items: stretch; }
+      .panel { flex: 1; padding: 44px 48px; display: flex; flex-direction: column; gap: 26px; }
+      .big { font-size: 120px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+      .big small { font-size: 44px; font-weight: 700; color: var(--ink-dim); letter-spacing: 0; }
+      .lbl { font-size: 34px; font-weight: 600; color: var(--ink); }
+      .cond { font-size: 30px; color: var(--ink-dim); line-height: 1.3; }
+      .dots { display: flex; flex-wrap: wrap; gap: 11px; }
+      .dot-i { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--ink-dim); }
+      .dot-i.on { background: var(--accent); border-color: var(--accent); }
+      .row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 14px 0; border-top: 1px solid var(--glass-edge); }
+      .row .m { font-size: 36px; font-weight: 600; }
+      .row .v { font-size: 64px; font-weight: 800; }
+      .row .v small { font-size: 30px; color: var(--ink-dim); font-weight: 600; }
+      .chips { display: flex; flex-direction: column; gap: 28px; }
+      .chip-big { display: flex; align-items: center; gap: 24px; font-size: 44px; font-weight: 700; padding: 26px 40px; border-radius: 26px; background: rgba(255,179,92,0.10); border: 2px solid var(--warn); }
+      .chip-big .sub { font-size: 30px; font-weight: 600; color: var(--ink-dim); }
+      .warn-card { border: 2px solid var(--warn); background: rgba(255,179,92,0.08); border-radius: 32px; padding: 56px 64px; display: flex; flex-direction: column; gap: 30px; width: 100%; }
+      .stack { display: flex; gap: 8px; width: 100%; height: 120px; }
+      .seg { flex: 1; border-radius: 12px; }
+      .seg.b { background: var(--bad); } .seg.w { background: var(--warn); } .seg.g { background: var(--accent); }
+      .legend { display: flex; gap: 48px; font-size: 36px; font-weight: 700; }
+      .tline { position: relative; display: flex; justify-content: space-between; width: 100%; gap: 30px; }
+      .tline .rail { position: absolute; left: 60px; right: 60px; top: 38px; height: 6px; background: var(--glass-edge); border-radius: 3px; transform-origin: left center; }
+      .node { position: relative; flex: 1; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+      .node .pin { width: 82px; height: 82px; border-radius: 50%; display: grid; place-items: center; font-size: 40px; font-weight: 800; color: #0a0d14; }
+      .node .when { font-size: 30px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); }
+      .node .what { font-size: 44px; font-weight: 800; }
+      .path { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
+      .step { font-size: 40px; font-weight: 700; padding: 22px 32px; border-radius: 20px; background: var(--glass); border: 1px solid var(--glass-edge); }
+      .step.final { background: rgba(94,225,194,0.14); border-color: var(--accent); color: var(--accent); }
+      .arrow { font-size: 44px; color: var(--ink-dim); font-weight: 800; }
+      .take { display: flex; flex-direction: column; gap: 28px; width: 100%; }
+      .take-row { display: flex; align-items: center; gap: 36px; padding: 34px 48px; font-size: 54px; font-weight: 800; }
+      .take-row .ic { width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; font-size: 56px; color: #0a0d14; flex: none; }
+      .note { font-size: 34px; font-weight: 700; color: var(--ink); padding: 18px 30px; border-radius: 18px; border: 2px dashed var(--ink-dim); align-self: center; }
+
     </style>
   </head>
   <body>
@@ -19,7 +62,204 @@
       <div class="bg"></div>
       <div class="bg-vignette"></div>
 
-      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <!-- S1 screen question -->
+      <section class="clip" id="s1" data-start="0" data-duration="5.54" data-track-index="1">
+        <div class="scene"><div class="q-wrap">
+          <div class="q-text">
+            <div class="eyebrow s1-a">Question one · Display</div>
+            <h1 class="h1 s1-b">Is the screen good?</h1>
+            <div class="verdict s1-c">Mostly yes</div>
+          </div>
+          <img class="phone-img s1-img" src="media/pro_family.png" style="width:720px;height:550px" alt="Pixel 11 Pro family">
+        </div></div>
+      </section>
+
+      <!-- S2 praise split -->
+      <section class="clip" id="s2" data-start="5.54" data-duration="6.64" data-track-index="1">
+        <div class="scene center"><div class="duo">
+          <div class="panel glass s2-p">
+            <div class="model-badge inpanel"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+            <div class="big good">12 <small>of 14 outlets</small></div>
+            <div class="lbl">praised the screen</div>
+            <div class="dots" id="dots-a"></div>
+          </div>
+          <div class="panel glass s2-p">
+            <div class="model-badge inpanel"><span class="dot"></span>Pixel 11</div>
+            <div class="big good">6 <small>of 7 outlets</small></div>
+            <div class="lbl">praised the screen</div>
+            <div class="dots" id="dots-b"></div>
+          </div>
+        </div></div>
+      </section>
+
+      <!-- S3 brightness: two separate panels -->
+      <section class="clip" id="s3" data-start="12.18" data-duration="6.70" data-track-index="1">
+        <div class="scene center" style="gap:26px">
+          <div class="h2 s3-t" style="font-size:56px">Brightness: two different numbers</div>
+          <div class="duo">
+            <div class="panel glass s3-p" style="gap:16px">
+              <div class="tag-claim">Google claims</div>
+              <div class="lbl">Peak rating</div>
+              <div class="cond">Manufacturer figure, not a test</div>
+              <div class="row"><span class="m">Pixel 11</span><span class="v">3,000 <small>nits</small></span></div>
+              <div class="row"><span class="m">Pro / Pro XL</span><span class="v">3,600 <small>nits</small></span></div>
+            </div>
+            <div class="panel glass s3-p" style="gap:16px">
+              <div class="tag-measured">Measured by GSMArena</div>
+              <div class="lbl">Peak, auto mode</div>
+              <div class="cond">10% white window, auto brightness</div>
+              <div class="row"><span class="m">Pixel 11</span><span class="v">~2,800 <small>nits</small></span></div>
+              <div class="row"><span class="m">Pro XL</span><span class="v">3,118 <small>nits</small></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S4 base catches -->
+      <section class="clip" id="s4" data-start="18.88" data-duration="7.42" data-track-index="1">
+        <div class="model-badge s4-badge"><span class="dot"></span>Pixel 11</div>
+        <div class="scene"><div class="q-wrap">
+          <img class="phone-img s4-img" src="media/p11_frost.png" style="width:470px;height:600px" alt="Pixel 11 in Frost">
+          <div class="q-text">
+            <div class="eyebrow">Two catches</div>
+            <div class="chips">
+              <div class="chip-big s4-c"><span>60Hz by default</span></div>
+              <div class="cond s4-c" style="padding-left:40px">Switch to 120Hz in settings</div>
+              <div class="chip-big s4-c"><span>No LTPO panel</span></div>
+            </div>
+            <div class="lbl s4-n"><span class="mid">3 of 7 outlets</span> called it a drawback</div>
+          </div>
+        </div></div>
+      </section>
+
+      <!-- S5 PWM -->
+      <section class="clip" id="s5" data-start="26.30" data-duration="8.40" data-track-index="1">
+        <div class="model-badge s5-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="scene center"><div class="warn-card s5-card">
+          <div class="eyebrow" style="color:var(--warn)">Sensitive to flicker?</div>
+          <div class="h2">PWM dimming</div>
+          <div class="lbl">Flagged by <span class="mid">3 of 15</span> Pro outlets</div>
+          <div class="cond s5-b" style="font-size:36px;color:var(--ink)">Video can't show flicker: try it in person</div>
+        </div></div>
+      </section>
+
+      <!-- S6 speed question -->
+      <section class="clip" id="s6" data-start="34.70" data-duration="3.90" data-track-index="1">
+        <div class="scene"><div class="q-wrap">
+          <div class="q-text">
+            <div class="eyebrow s6-a">Question two · Performance</div>
+            <h1 class="h1 s6-b">Is it fast enough?</h1>
+            <div class="verdict s6-c">Everyday use: yes</div>
+          </div>
+          <img class="phone-img s6-img" src="media/tensor_g6.png" style="width:560px;height:404px" alt="Tensor G6 chip">
+        </div></div>
+      </section>
+
+      <!-- S7 smooth split -->
+      <section class="clip" id="s7" data-start="38.60" data-duration="6.92" data-track-index="1">
+        <div class="scene center" style="gap:30px">
+          <div class="h2 s7-t" style="font-size:56px">Daily use called smooth</div>
+          <div class="duo">
+            <div class="panel glass s7-p">
+              <div class="model-badge inpanel"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+              <div class="big good">11 <small>of 13 outlets</small></div>
+              <div class="dots" id="dots-c"></div>
+            </div>
+            <div class="panel glass s7-p">
+              <div class="model-badge inpanel"><span class="dot"></span>Pixel 11</div>
+              <div class="big good">7 <small>of 10 outlets</small></div>
+              <div class="dots" id="dots-d"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S8 gaming stacked bar -->
+      <section class="clip" id="s8" data-start="45.52" data-duration="6.02" data-track-index="1">
+        <div class="model-badge s8-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="scene center" style="gap:44px">
+          <div class="eyebrow">GPU / gaming · 13 Pro outlets</div>
+          <div class="h2">Gaming is the weak spot</div>
+          <div class="stack" id="stack"></div>
+          <div class="legend">
+            <span class="bad s8-l">7 of 13 criticised</span>
+            <span class="mid s8-l">5 of 13 mixed</span>
+            <span class="good s8-l">1 of 13 praised</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- S9 Genshin timeline -->
+      <section class="clip" id="s9" data-start="51.54" data-duration="7.73" data-track-index="1">
+        <div class="model-badge s9-badge"><span class="dot"></span>All Pixel 11 models</div>
+        <div class="scene center" style="gap:56px">
+          <div class="h2">Genshin Impact: what happened</div>
+          <div class="tline">
+            <div class="rail s9-rail"></div>
+            <div class="node s9-n"><div class="pin" style="background:var(--bad)">1</div><div class="when">Launch</div><div class="what bad">Broken</div></div>
+            <div class="node s9-n"><div class="pin" style="background:var(--accent)">2</div><div class="when">Game patch</div><div class="what good">Fixed</div></div>
+            <div class="node s9-n"><div class="pin" style="background:var(--warn)">3</div><div class="when">Sept updates</div><div class="what mid">New stutter (ANGLE)</div></div>
+          </div>
+          <div class="cond s9-d">Status checked 5 Oct 2026</div>
+        </div>
+      </section>
+
+      <!-- S10 workaround path -->
+      <section class="clip" id="s10" data-start="59.27" data-duration="7.35" data-track-index="1">
+        <div class="scene center" style="gap:50px">
+          <div class="eyebrow">Workaround · Genshin stutter</div>
+          <div class="h2">Set Genshin to native</div>
+          <div class="path">
+            <div class="step s10-s">Developer options</div><div class="arrow s10-s">›</div>
+            <div class="step s10-s">ANGLE Preferences</div><div class="arrow s10-s">›</div>
+            <div class="step s10-s">Genshin Impact</div><div class="arrow s10-s">›</div>
+            <div class="step final s10-s">Native</div>
+          </div>
+          <div class="cond s10-n">Google hadn't fixed it yet (as of 5 Oct 2026)</div>
+        </div>
+      </section>
+
+      <!-- S11 + S12 heat: field report, then lab test beside it -->
+      <section class="clip" id="s11" data-start="72.85" data-duration="8.38" data-track-index="2">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+      </section>
+      <section class="clip" id="s11b" data-start="66.62" data-duration="6.23" data-track-index="2">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+      </section>
+      <section class="clip" id="sheat" data-start="66.62" data-duration="14.61" data-track-index="1">
+        <div class="scene center" style="gap:24px">
+          <div class="duo" style="gap:36px">
+            <div class="panel glass h-a" style="gap:18px">
+              <div class="tag-claim">Field report · real-world use</div>
+              <div class="lbl">Android Authority, outdoors in Phoenix</div>
+              <div class="cond">Over 100°F is typical there</div>
+              <div class="lbl bad" style="font-size:40px">Camera turned off zoom features</div>
+              <div class="cond">"Device too warm"</div>
+            </div>
+            <div class="panel glass h-b" style="gap:16px">
+              <div class="tag-measured">Measured: 3DMark stress test</div>
+              <div class="cond">Ambient temperature not stated</div>
+              <div class="row"><span class="m">Android Authority</span><span class="v">46°C <small>peak</small></span></div>
+              <div class="cond">On par with Pixel 10</div>
+              <div class="row"><span class="m">Android Headlines</span><span class="v">~40°C</span></div>
+              <div class="cond">About 3°C cooler than Pixel 10</div>
+            </div>
+          </div>
+          <div class="note h-n">Different conditions: not a head-to-head</div>
+        </div>
+      </section>
+
+      <!-- S13 takeaway -->
+      <section class="clip" id="s13" data-start="81.23" data-duration="8.471" data-track-index="1">
+        <div class="scene center" style="gap:36px">
+          <div class="eyebrow">Takeaway</div>
+          <div class="take">
+            <div class="take-row glass s13-r"><div class="ic" style="background:var(--accent)">✓</div>Everyday use: fine</div>
+            <div class="take-row glass s13-r"><div class="ic" style="background:var(--bad)">✗</div>Heavy gaming / extreme heat: can struggle</div>
+          </div>
+        </div>
+      </section>
 
       <div id="hostbar"></div>
       <audio id="p3-voice" src="voice.wav" data-start="0" data-duration="89.701" data-track-index="10" data-volume="1"></audio>
@@ -29,7 +269,51 @@
       const tl = gsap.timeline({ paused: true });
       HF_hostbar(tl, window.HF_TIMINGS);
 
-      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      function mkDots(id, n, on) { const el = document.getElementById(id); for (let i = 0; i < n; i++) { const d = document.createElement("div"); d.className = "dot-i" + (i < on ? " on" : ""); el.appendChild(d); } }
+      mkDots("dots-a", 14, 12); mkDots("dots-b", 7, 6); mkDots("dots-c", 13, 11); mkDots("dots-d", 10, 7);
+      (function () { const st = document.getElementById("stack"); for (let i = 0; i < 13; i++) { const d = document.createElement("div"); d.className = "seg " + (i < 7 ? "b" : i < 12 ? "w" : "g"); st.appendChild(d); } })();
+      const up = (sel, t, extra) => tl.fromTo(sel, { opacity: 0, y: 30 }, Object.assign({ opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, extra || {}), t);
+      // S1
+      up("#s1 .s1-a", 0.2); up("#s1 .s1-b", 0.35); tl.fromTo("#s1 .s1-img", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 0.3);
+      tl.fromTo("#s1 .s1-c", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 3.6);
+      // S2
+      up("#s2 .s2-p", 5.6, { stagger: 2.2 });
+      tl.fromTo("#dots-a .dot-i", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.04 }, 5.9);
+      tl.fromTo("#dots-b .dot-i", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.05 }, 8.1);
+      // S3
+      up("#s3 .s3-t", 12.25); up("#s3 .s3-p", 12.5, { stagger: 2.6 });
+      // S4
+      tl.fromTo("#s4 .s4-badge", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 18.9);
+      tl.fromTo("#s4 .s4-img", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.7, ease: "power2.out" }, 18.95);
+      up("#s4 .s4-c", 19.4, { stagger: 0.5 }); up("#s4 .s4-n", 22.6);
+      // S5
+      tl.fromTo("#s5 .s5-badge", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 26.35);
+      tl.fromTo("#s5 .s5-card", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 26.4);
+      up("#s5 .s5-b", 31.2);
+      // S6
+      up("#s6 .s6-a", 34.75); up("#s6 .s6-b", 34.9); tl.fromTo("#s6 .s6-img", { opacity: 0, rotation: -8, scale: 0.85 }, { opacity: 1, rotation: 0, scale: 1, duration: 0.8, ease: "power2.out" }, 34.85);
+      tl.fromTo("#s6 .s6-c", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 36.9);
+      // S7
+      up("#s7 .s7-t", 38.65); up("#s7 .s7-p", 38.9, { stagger: 2.6 });
+      tl.fromTo("#dots-c .dot-i", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.04 }, 39.2);
+      tl.fromTo("#dots-d .dot-i", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.05 }, 41.8);
+      // S8
+      tl.fromTo("#s8 .s8-badge", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 45.55);
+      tl.fromTo("#stack .seg", { opacity: 0, scaleY: 0.2 }, { opacity: 1, scaleY: 1, duration: 0.3, stagger: 0.06, ease: "power2.out" }, 46.0);
+      up("#s8 .s8-l", 47.0, { stagger: 0.9 });
+      // S9
+      tl.fromTo("#s9 .s9-badge", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 51.6);
+      tl.fromTo("#s9 .s9-rail", { scaleX: 0 }, { scaleX: 1, duration: 4.5, ease: "none" }, 51.8);
+      up("#s9 .s9-n", 51.9, { stagger: 2.1 }); up("#s9 .s9-d", 56.8);
+      // S10
+      up("#s10 .s10-s", 59.6, { stagger: 0.45 }); up("#s10 .s10-n", 63.9);
+      // Heat
+      tl.fromTo("#sheat .h-a", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 66.7);
+      tl.fromTo("#sheat .h-b", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 73.0);
+      up("#sheat .h-n", 77.2);
+      // S13
+      up("#s13 .s13-r", 81.4, { stagger: 2.5 });
 
       window.__timelines["p3"] = tl;
     </script>

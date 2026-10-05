@@ -11,7 +11,74 @@
       @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-      /* Part-specific styles go here. */
+      /* Part-specific styles */
+      .tag-claim, .tag-measured, .tag-editorial { font-size: 30px; }
+      .model-badge { font-size: 30px; }
+      .tag-box { display: inline-block; padding: 8px 18px; border: 2px solid currentColor; border-radius: 12px; }
+      .fade { opacity: 0; }
+      /* S1 */
+      .s1 { align-items: center; gap: 40px; }
+      .s1 .txt { flex: 1 1 52%; display: flex; flex-direction: column; gap: 30px; }
+      .s1 .eyebrow { font-size: 32px; }
+      .s1 img { width: 820px; height: 620px; object-fit: contain; }
+      /* S2 */
+      .s2 { align-items: center; gap: 70px; padding-top: 110px; }
+      .s2 .chipwrap { flex: none; width: 640px; height: 520px; display: grid; place-items: center; }
+      .s2 .chipwrap img { width: 600px; height: auto; }
+      .s2 .bars { flex: 1; display: flex; flex-direction: column; gap: 34px; }
+      .s2 .h2 { font-size: 64px; }
+      .bar-row { display: flex; flex-direction: column; gap: 10px; }
+      .bar-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 36px; font-weight: 600; }
+      .bar-head .val { font-size: 52px; font-weight: 800; color: var(--warn); }
+      .bar-track { height: 22px; border-radius: 11px; background: rgba(255,255,255,0.08); overflow: hidden; }
+      .bar-fill { height: 100%; border-radius: 11px; background: var(--warn); transform-origin: left center; }
+      /* S3 */
+      .s3bg { position: absolute; right: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; opacity: 0.18; }
+      .s3 { flex-direction: column; justify-content: center; gap: 44px; }
+      .tiles { display: flex; gap: 48px; }
+      .tile { flex: 1; padding: 50px 56px; display: flex; flex-direction: column; gap: 18px; background: rgba(14,19,32,0.88); }
+      .tile .big { font-size: 150px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: var(--ink); }
+      .tile .lbl { font-size: 40px; font-weight: 600; color: var(--ink); }
+      .tile .sub { font-size: 32px; color: var(--ink-dim); }
+      /* S4 split */
+      .s4 { padding: 40px 0 20px; gap: 0; }
+      .half { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 10px 70px 0; }
+      .half + .half { border-left: 2px solid var(--glass-edge); }
+      .half .model-badge { position: static; }
+      .half img { height: 430px; width: 100%; object-fit: contain; }
+      .half .callout { font-size: 40px; font-weight: 700; text-align: center; line-height: 1.2; }
+      /* S5 */
+      .s5 { flex-direction: column; justify-content: center; gap: 40px; padding-top: 120px; }
+      .ram { display: flex; align-items: center; gap: 40px; }
+      .ram .from { font-size: 150px; font-weight: 800; color: var(--ink-dim); text-decoration: line-through; text-decoration-thickness: 8px; }
+      .ram .arrow { font-size: 110px; font-weight: 800; color: var(--ink-dim); }
+      .ram .to { font-size: 190px; font-weight: 800; color: var(--bad); letter-spacing: -0.04em; }
+      .ram .unit { font-size: 46px; font-weight: 700; line-height: 1.2; }
+      .dotsrow { display: flex; align-items: center; gap: 40px; }
+      .dots { display: flex; gap: 16px; }
+      .dots i { display: block; width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--ink-dim); }
+      .dots i.on { background: var(--bad); border-color: var(--bad); }
+      .dotlbl { font-size: 44px; font-weight: 700; }
+      /* S6 */
+      .s6 { align-items: center; gap: 60px; padding-top: 110px; }
+      .glowcard { position: relative; flex: none; width: 880px; height: 495px; border-radius: 28px; }
+      .glowcard img { width: 100%; height: 100%; object-fit: cover; border-radius: 28px; display: block; }
+      .glowring { position: absolute; inset: -14px; border-radius: 40px; border: 6px solid var(--accent-2);
+        box-shadow: 0 0 60px 18px rgba(122,140,255,0.55), inset 0 0 40px 8px rgba(122,140,255,0.35); opacity: 0; }
+      .s6 .txt { flex: 1; display: flex; flex-direction: column; gap: 26px; }
+      #s6-dots { gap: 10px; }
+      #s6-dots i { width: 32px; height: 32px; }
+      .s6 .stat { font-size: 120px; font-weight: 800; line-height: 1; color: var(--bad); }
+      /* S7 */
+      .s7 { align-items: center; gap: 60px; padding-top: 110px; }
+      .status { flex: 1; padding: 46px 56px; display: flex; flex-direction: column; gap: 30px; }
+      .status .checked { display: inline-flex; align-items: center; gap: 14px; font-size: 34px; font-weight: 700; color: var(--accent); }
+      .status .checked .tick { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); }
+      .srow { display: flex; gap: 30px; align-items: flex-start; padding-top: 26px; border-top: 1px solid var(--glass-edge); }
+      .srow .k { flex: none; width: 300px; font-size: 36px; font-weight: 800; }
+      .srow .k small { display: block; font-size: 30px; font-weight: 600; color: var(--ink-dim); margin-top: 6px; }
+      .srow .v { font-size: 40px; font-weight: 600; line-height: 1.25; }
+      .s7 img { flex: none; width: 520px; height: 460px; object-fit: contain; }
     </style>
   </head>
   <body>
@@ -19,7 +86,107 @@
       <div class="bg"></div>
       <div class="bg-vignette"></div>
 
-      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+      <!-- S1: header -->
+      <section class="clip" id="s1" data-start="0" data-duration="4.436" data-track-index="1">
+        <div class="scene s1">
+          <div class="txt">
+            <div class="eyebrow fade" id="s1-eb">Pixel 10 &#8594; Pixel 11</div>
+            <h1 class="h1 fade" id="s1-h">What Google says is new</h1>
+            <div class="fade" id="s1-tag"><span class="tag-claim tag-box">Google claims</span></div>
+          </div>
+          <img class="phone-img fade" id="s1-img" src="media/p11_family.png" alt="Pixel 11 family" />
+        </div>
+      </section>
+
+      <!-- S2: Tensor G6 claims -->
+      <section class="clip" id="s2" data-start="4.436" data-duration="10.881" data-track-index="1">
+        <div class="model-badge fade" id="s2-badge"><span class="dot"></span>All Pixel 11 models</div>
+        <div class="scene s2">
+          <div class="chipwrap"><img class="phone-img fade" id="s2-chip" src="media/tensor_g6.png" alt="Tensor G6" /></div>
+          <div class="bars">
+            <div class="fade" id="s2-head">
+              <h2 class="h2">Tensor G6</h2>
+              <div class="tag-claim" style="margin-top:12px">Google claims (not independent tests)</div>
+            </div>
+            <div class="bar-row fade" id="s2-r1"><div class="bar-head"><span>AI compute</span><span class="val num">+50%</span></div><div class="bar-track"><div class="bar-fill" id="s2-f1" style="width:100%"></div></div></div>
+            <div class="bar-row fade" id="s2-r2"><div class="bar-head"><span>Web browsing</span><span class="val num">~25% faster</span></div><div class="bar-track"><div class="bar-fill" id="s2-f2" style="width:50%"></div></div></div>
+            <div class="bar-row fade" id="s2-r3"><div class="bar-head"><span>App launches</span><span class="val num">15% faster</span></div><div class="bar-track"><div class="bar-fill" id="s2-f3" style="width:30%"></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S3: storage + charging -->
+      <section class="clip" id="s3" data-start="15.317" data-duration="7.285" data-track-index="1">
+        <img class="s3bg" src="media/pro_social.jpg" alt="" />
+        <div class="model-badge fade" id="s3-badge"><span class="dot"></span>All Pixel 11 models</div>
+        <div class="scene s3">
+          <div class="fade" id="s3-tag"><span class="tag-claim tag-box">Google claims</span></div>
+          <div class="tiles">
+            <div class="tile glass fade" id="s3-t1"><div class="big num">256GB</div><div class="lbl">Base storage, every model</div></div>
+            <div class="tile glass fade" id="s3-t2"><div class="big num">25W</div><div class="lbl">Qi2.2 magnetic wireless</div><div class="sub">Pixelsnap magnets</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S4: split, each badge on its own half -->
+      <section class="clip" id="s4" data-start="22.602" data-duration="6.008" data-track-index="1">
+        <div class="scene s4">
+          <div class="half fade" id="s4-l">
+            <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+            <img class="phone-img" id="s4-limg" src="media/p11_frost.png" alt="Pixel 11 in Frost" />
+            <div class="callout">40% thinner camera bar</div>
+            <span class="tag-claim">Google claims</span>
+          </div>
+          <div class="half fade" id="s4-r">
+            <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+            <img class="phone-img" id="s4-rimg" src="media/pro_family.png" alt="Pixel 11 Pro and Pro XL" />
+            <div class="callout">3,600 nits peak &#183; 2&#215; scratch resistance</div>
+            <span class="tag-claim">Google claims</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- S5: RAM cut -->
+      <section class="clip" id="s5" data-start="28.61" data-duration="9.087" data-track-index="1">
+        <div class="model-badge fade" id="s5-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="scene s5">
+          <div class="ram fade" id="s5-ram">
+            <span class="from num">16GB</span><span class="arrow">&#8594;</span><span class="to num">12GB</span>
+            <div class="unit">Base RAM<br/><span class="tag-claim">Google claims &#183; spec</span></div>
+          </div>
+          <div class="dotsrow fade" id="s5-dots">
+            <div class="dots" id="s5-dotset"></div>
+            <div class="dotlbl"><span class="bad">10 of 15</span> Pro outlets criticised it</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S6: HiLight verdict -->
+      <section class="clip" id="s6" data-start="37.697" data-duration="7.937" data-track-index="1">
+        <div class="model-badge fade" id="s6-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="scene s6">
+          <div class="glowcard fade" id="s6-card"><img src="media/pro_social.jpg" alt="Pixel 11 Pro" /><div class="glowring" id="s6-ring"></div></div>
+          <div class="txt">
+            <div class="eyebrow fade" id="s6-eb">HiLight notification light</div>
+            <div class="stat num fade" id="s6-stat">13 of 15</div>
+            <div class="dots fade" id="s6-dots"></div>
+            <div class="h2 fade" id="s6-v" style="font-size:52px">outlets: it does too little</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S7: dated status card -->
+      <section class="clip" id="s7" data-start="45.634" data-duration="9.002" data-track-index="1">
+        <div class="model-badge fade" id="s7-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="scene s7">
+          <div class="status glass fade" id="s7-card">
+            <div class="checked"><span class="tick"></span>Checked 5 Oct 2026 &#183; HiLight</div>
+            <div class="srow fade" id="s7-r1"><div class="k">Stable</div><div class="v">Calls from favourite contacts + Gemini</div></div>
+            <div class="srow fade" id="s7-r2"><div class="k">Beta<small>Android 17 QPR2</small></div><div class="v">Adds messages from favourites</div></div>
+          </div>
+          <img class="phone-img fade" id="s7-img" src="media/pro_family.png" alt="Pixel 11 Pro family" />
+        </div>
+      </section>
 
       <div id="hostbar"></div>
       <audio id="p2-voice" src="voice.wav" data-start="0" data-duration="54.636" data-track-index="10" data-volume="1"></audio>
@@ -29,7 +196,49 @@
       const tl = gsap.timeline({ paused: true });
       HF_hostbar(tl, window.HF_TIMINGS);
 
-      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+      // Denominator dots (built once at setup).
+      function dots(id, on, total) { const el = document.getElementById(id); for (let i = 0; i < total; i++) { const d = document.createElement("i"); if (i < on) d.className = "on"; el.appendChild(d); } }
+      dots("s5-dotset", 10, 15); dots("s6-dots", 13, 15);
+      const fin = (sel, t, from) => tl.fromTo(sel, Object.assign({ opacity: 0, y: 24 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.5, ease: "power3.out" }, t);
+      const out = (sel, t) => tl.to(sel, { opacity: 0, duration: 0.3, ease: "power1.in" }, t);
+      // S1 0 - 4.436
+      fin("#s1-eb", 0.2); fin("#s1-h", 0.4); fin("#s1-tag", 0.9);
+      fin("#s1-img", 0.5, { y: 0, x: 80, scale: 0.94 });
+      tl.to("#s1-img", { scale: 1.05, duration: 3.4, ease: "none" }, 1.0);
+      out("#s1 .scene", 4.1);
+      // S2 4.436 - 15.317
+      fin("#s2-badge", 4.5, { y: -12 }); fin("#s2-chip", 4.55, { y: 0, scale: 0.85 });
+      tl.fromTo("#s2-chip", { rotationY: -22, rotationX: 10, transformPerspective: 900 }, { rotationY: 22, rotationX: -6, transformPerspective: 900, duration: 10.4, ease: "sine.inOut" }, 4.55);
+      fin("#s2-head", 4.8);
+      fin("#s2-r1", 7.0); fin("#s2-r2", 9.6); fin("#s2-r3", 12.2);
+      out("#s2 .scene, #s2-badge", 15.0);
+      // S3 15.317 - 22.602
+      tl.fromTo("#s3 .s3bg", { opacity: 0, scale: 1.08 }, { opacity: 0.18, scale: 1, duration: 7, ease: "none" }, 15.317);
+      fin("#s3-badge", 15.4, { y: -12 }); fin("#s3-tag", 15.5);
+      fin("#s3-t1", 15.8, { y: 40 }); fin("#s3-t2", 18.4, { y: 40 });
+      out("#s3 .scene, #s3-badge, #s3 .s3bg", 22.3);
+      // S4 22.602 - 28.61
+      fin("#s4-l", 22.7, { y: 0, x: -60 }); fin("#s4-r", 25.3, { y: 0, x: 60 });
+      tl.fromTo("#s4-limg", { scale: 0.96 }, { scale: 1.04, duration: 5.6, ease: "none" }, 22.7);
+      tl.fromTo("#s4-rimg", { scale: 0.96 }, { scale: 1.04, duration: 3.0, ease: "none" }, 25.3);
+      out("#s4 .scene", 28.3);
+      // S5 28.61 - 37.697
+      fin("#s5-badge", 28.7, { y: -12 }); fin("#s5-ram", 28.9, { y: 0, scale: 0.92 });
+      fin("#s5-dots", 33.4);
+      tl.fromTo("#s5-dotset i.on", { scale: 0.4 }, { scale: 1, duration: 0.35, ease: "back.out(2)", stagger: 0.05 }, 33.5);
+      out("#s5 .scene, #s5-badge", 37.4);
+      // S6 37.697 - 45.634
+      fin("#s6-badge", 37.8, { y: -12 }); fin("#s6-card", 37.8, { y: 0, x: -60 });
+      tl.fromTo("#s6-ring", { opacity: 0 }, { opacity: 0.5, duration: 0.6, ease: "sine.out" }, 38.2);
+      tl.fromTo("#s6-ring", { opacity: 0.5 }, { opacity: 1, duration: 0.8, ease: "sine.inOut", yoyo: true, repeat: 7, immediateRender: false }, 38.85);
+      fin("#s6-eb", 38.6);
+      fin("#s6-stat", 41.6); fin("#s6-dots", 41.8); fin("#s6-v", 42.4);
+      out("#s6 .scene, #s6-badge", 45.35);
+      // S7 45.634 - 54.636
+      fin("#s7-badge", 45.7, { y: -12 }); fin("#s7-card", 45.8, { y: 40 });
+      fin("#s7-img", 46.0, { y: 0, x: 80, scale: 0.9 });
+      fin("#s7-r1", 47.6); fin("#s7-r2", 51.2);
+      tl.to("#s7-img", { scale: 1.05, duration: 8, ease: "none" }, 46.5);
 
       window.__timelines["p2"] = tl;
     </script>

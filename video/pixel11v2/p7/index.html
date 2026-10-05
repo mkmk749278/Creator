@@ -12,6 +12,39 @@
       @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
       /* Part-specific styles go here. */
+      .model-badge, .eyebrow, .src, .chip, .tag-claim, .tag-measured, .tag-editorial { font-size: 30px; }
+      .model-badge { z-index: 5; }
+      .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,9,13,0.55) 0%, rgba(7,9,13,0) 30%, rgba(7,9,13,0) 60%, rgba(7,9,13,0.85) 100%); }
+      .stage3d { position: absolute; left: 1000px; top: 120px; width: 740px; height: 700px; perspective: 1400px; }
+      .stage3d img { width: 100%; height: 100%; }
+      .s1-copy { position: absolute; left: 130px; top: 230px; width: 820px; display: flex; flex-direction: column; gap: 28px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 16px; }
+      .chips .chip { color: var(--ink); background: rgba(7,9,13,0.6); }
+      .dots { display: flex; gap: 18px; }
+      .dot9 { width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--glass-edge); background: rgba(255,255,255,0.08); }
+      .dot9.g { background: var(--accent); border-color: var(--accent); }
+      .dot9.b { background: var(--bad); border-color: var(--bad); }
+      .dot9.n { background: #5b6478; border-color: #5b6478; }
+      .bignum { font-weight: 800; font-size: 200px; line-height: 0.95; letter-spacing: -0.04em; }
+      .of { font-size: 64px; font-weight: 700; color: var(--ink-dim); letter-spacing: -0.01em; }
+      .col { display: flex; flex-direction: column; gap: 26px; justify-content: center; }
+      .legend { display: flex; gap: 34px; font-size: 32px; font-weight: 600; color: var(--ink); }
+      .legend span::before { content: ""; display: inline-block; width: 22px; height: 22px; border-radius: 50%; margin-right: 12px; vertical-align: -2px; background: currentColor; }
+      .quote { position: absolute; left: 160px; right: 160px; top: 130px; padding: 60px 70px; }
+      .quote q { display: block; font-size: 58px; font-weight: 700; line-height: 1.22; letter-spacing: -0.01em; quotes: "\201C" "\201D"; }
+      .quote .who { margin-top: 30px; font-size: 34px; font-weight: 600; color: var(--accent); }
+      .qmark { position: absolute; left: 40px; top: -40px; font-size: 200px; font-weight: 800; color: var(--accent); opacity: 0.35; line-height: 1; }
+      .panel { padding: 44px 52px; display: flex; flex-direction: column; gap: 22px; }
+      .stack { display: flex; height: 92px; width: 100%; border-radius: 18px; overflow: hidden; gap: 6px; }
+      .stack div { height: 100%; display: grid; place-items: center; font-size: 34px; font-weight: 800; color: #0a0d14; }
+      .seg-b { background: var(--bad); } .seg-g { background: var(--accent); } .seg-n { background: #8a93a8; }
+      .note { display: flex; gap: 22px; align-items: center; padding: 30px 40px; border-left: 6px solid var(--warn); }
+      .note .t { font-size: 40px; font-weight: 700; }
+      .verdict { flex: 1; padding: 50px 56px; display: flex; flex-direction: column; gap: 28px; }
+      .verdict h3 { margin: 0; font-size: 92px; font-weight: 800; letter-spacing: -0.03em; }
+      .verdict li { font-size: 44px; font-weight: 600; line-height: 1.3; }
+      .verdict ul { margin: 0; padding-left: 40px; display: flex; flex-direction: column; gap: 18px; }
     </style>
   </head>
   <body>
@@ -19,7 +52,140 @@
       <div class="bg"></div>
       <div class="bg-vignette"></div>
 
-      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <!-- S1 reveal -->
+      <section class="clip" id="s1" data-start="0" data-duration="9.4" data-track-index="1">
+        <div id="s1-full" style="position:absolute;inset:0;">
+          <img class="full" id="s1-social" src="media/fold_social.jpg" alt="Pixel 11 Pro Fold" />
+          <div class="shade"></div>
+        </div>
+        <div id="s1-turn" style="position:absolute;inset:0;opacity:0;">
+          <div class="stage3d"><img class="phone-img" id="s1-obs" src="media/fold_obsidian.png" alt="Pixel 11 Pro Fold" /></div>
+          <div class="src" style="position:absolute;left:1000px;width:740px;top:822px;text-align:center;">Shown in Obsidian · Source: Google</div>
+          <div class="s1-copy">
+            <div class="eyebrow" id="s1-eb">Next up</div>
+            <h1 class="h1" id="s1-title">Pixel 11 Pro Fold</h1>
+            <div class="chips" id="s1-chips">
+              <span class="chip num">₹1,86,999</span><span class="chip">512GB only</span><span class="chip">Olive (India)</span>
+            </div>
+            <div class="tag-claim" id="s1-tag">Google India price and config</div>
+          </div>
+        </div>
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+      </section>
+
+      <!-- S2 IP68 8 of 9 -->
+      <section class="clip" id="s2" data-start="9.4" data-duration="8.5" data-track-index="1">
+        <div class="scene" style="gap:80px;align-items:center;">
+          <div class="col" style="flex:1;">
+            <div class="eyebrow" id="s2-eb">Biggest strength</div>
+            <div id="s2-num"><span class="bignum good num">8</span> <span class="of">of 9 outlets praised</span></div>
+            <div class="dots" id="s2-dots"><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 n"></div></div>
+            <div class="h2" id="s2-h">IP68 dust + water</div>
+            <div class="body" id="s2-sub">Only mainstream foldable with it</div>
+          </div>
+          <div style="width:520px;height:640px;position:relative;" id="s2-img"><img class="phone-img" src="media/fold_obsidian.png" style="width:100%;height:100%;" alt="" /></div>
+        </div>
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+      </section>
+
+      <!-- S3 quote -->
+      <section class="clip" id="s3" data-start="17.9" data-duration="8.85" data-track-index="1">
+        <div class="quote glass" id="s3-q">
+          <div class="qmark" data-layout-allow-overlap>“</div>
+          <q>this is the only mainstream foldable with an IP68 dust/water resistance rating</q>
+          <div class="who">— 9to5Google, Pixel 11 Pro Fold review</div>
+        </div>
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+      </section>
+
+      <!-- S4 battery -->
+      <section class="clip" id="s4" data-start="26.75" data-duration="7.75" data-track-index="1">
+        <div class="scene" style="flex-direction:column;gap:40px;padding-top:120px;">
+          <div class="eyebrow bad" id="s4-eb" style="color:var(--bad)">Weak spot: battery</div>
+          <div style="display:flex;gap:50px;">
+            <div class="glass panel" id="s4-a" style="flex:1.1;">
+              <div><span class="bignum bad num" style="font-size:150px">7</span> <span class="of">of 9 criticised</span></div>
+              <div class="stack"><div class="seg-b" style="flex:7">7</div><div class="seg-n" style="flex:1">1</div><div class="seg-g" style="flex:1">1</div></div>
+              <div class="legend"><span class="bad">criticised</span><span style="color:#8a93a8">mixed</span><span class="good">praised</span></div>
+            </div>
+            <div class="glass panel" id="s4-b" style="flex:1;justify-content:center;">
+              <div class="tag-measured">Same-test comparisons</div>
+              <div class="h2" style="font-size:56px;">Behind Razr Fold and Galaxy Z Fold 8 Ultra</div>
+              <div class="body">Compared only within the same test</div>
+            </div>
+          </div>
+        </div>
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+      </section>
+
+      <!-- S5 crease -->
+      <section class="clip" id="s5" data-start="34.5" data-duration="5.87" data-track-index="1">
+        <div class="scene" style="flex-direction:column;gap:40px;padding-top:120px;">
+          <div class="eyebrow" id="s5-eb">The crease</div>
+          <div class="glass panel" id="s5-a">
+            <div class="h2" style="font-size:60px;">7 of 9 outlets covered it</div>
+            <div class="stack" id="s5-stack"><div class="seg-b" style="flex:4">4</div><div class="seg-n" style="flex:2">2</div><div class="seg-g" style="flex:1">1</div></div>
+            <div class="legend"><span class="bad">clearly visible</span><span style="color:#8a93a8">mixed</span><span class="good">didn't mind (Droid Life)</span></div>
+          </div>
+          <div class="glass note" id="s5-note"><span class="t">A crease is best judged in person, under angled light.</span></div>
+        </div>
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+      </section>
+
+      <!-- S6 camera split -->
+      <section class="clip" id="s6" data-start="40.37" data-duration="10.43" data-track-index="1">
+        <div class="scene" style="flex-direction:column;gap:34px;padding-top:110px;">
+          <div id="s6-head" style="display:flex;align-items:center;gap:40px;">
+            <div class="h2" style="font-size:60px;">Camera: 2 praised · 2 criticised</div>
+            <div class="of" style="font-size:40px;">of 9 · 5 mixed</div>
+          </div>
+          <div class="dots" id="s6-dots"><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 b"></div><div class="dot9 b"></div><div class="dot9 n"></div><div class="dot9 n"></div><div class="dot9 n"></div><div class="dot9 n"></div><div class="dot9 n"></div></div>
+          <div style="display:flex;gap:40px;flex:1;">
+            <div class="glass panel" id="s6-q" style="flex:1.5;opacity:0;">
+              <q style="font-size:44px;font-weight:700;line-height:1.25;quotes:'\201C' '\201D';">If I were to choose a foldable (in the US) purely on camera, it’d have to be the Pixel.</q>
+              <div class="src" style="color:var(--accent)">— 9to5Google</div>
+            </div>
+            <div class="glass panel" id="s6-r" style="flex:1;justify-content:center;border-left:6px solid var(--bad);">
+              <div class="src">Android Authority</div>
+              <div class="h2" style="font-size:52px;">Portraits below par</div>
+            </div>
+          </div>
+        </div>
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+      </section>
+
+      <!-- S7 multitasking -->
+      <section class="clip" id="s7" data-start="50.8" data-duration="3.78" data-track-index="1">
+        <div class="scene" style="gap:60px;align-items:center;">
+          <div style="width:760px;height:720px;position:relative;" id="s7-img"><img class="phone-img" src="media/fold_obsidian.png" style="width:100%;height:100%;" alt="" /></div>
+          <div class="col" style="flex:1;">
+            <div class="eyebrow" id="s7-eb">Bright spot</div>
+            <div id="s7-num"><span class="bignum good num">6</span> <span class="of">of 9 praised</span></div>
+            <div class="dots" id="s7-dots"><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 g"></div><div class="dot9 n"></div><div class="dot9 b"></div><div class="dot9 b"></div></div>
+            <div class="h2" id="s7-h">Multitasking</div>
+          </div>
+        </div>
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+      </section>
+
+      <!-- S8 verdict -->
+      <section class="clip" id="s8" data-start="54.58" data-duration="8.595" data-track-index="1">
+        <div class="scene" style="flex-direction:column;gap:36px;padding-top:110px;">
+          <div class="eyebrow" id="s8-eb">Fold verdict</div>
+          <div style="display:flex;gap:40px;flex:1;">
+            <div class="glass verdict" id="s8-buy" style="border-top:8px solid var(--accent);">
+              <h3 class="good">Buy</h3>
+              <ul><li>Durability first</li><li>Pixel software fans</li></ul>
+            </div>
+            <div class="glass verdict" id="s8-skip" style="border-top:8px solid var(--bad);">
+              <h3 class="bad">Skip</h3>
+              <ul><li>Battery-first buyers</li><li>Gamers</li><li>Pixel 10 Pro Fold owners</li></ul>
+            </div>
+          </div>
+        </div>
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+      </section>
 
       <div id="hostbar"></div>
       <audio id="p7-voice" src="voice.wav" data-start="0" data-duration="63.175" data-track-index="10" data-volume="1"></audio>
@@ -30,6 +196,53 @@
       HF_hostbar(tl, window.HF_TIMINGS);
 
       // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+      const E = "power3.out";
+      // S1: full-bleed social reveal, then slow 3D turn of the product shot.
+      tl.fromTo("#s1-social", { scale: 1.12, opacity: 0 }, { scale: 1.02, opacity: 1, duration: 4.4, ease: "power2.out" }, 0);
+      tl.to("#s1-full", { opacity: 0, duration: 0.6, ease: "power1.inOut" }, 4.0);
+      tl.fromTo("#s1-turn", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.inOut" }, 4.0);
+      tl.fromTo("#s1-obs", { rotationY: -55, scale: 0.86, y: 30 }, { rotationY: 0, scale: 1, y: 0, duration: 5.2, ease: "power2.out" }, 4.0);
+      tl.fromTo(["#s1-eb", "#s1-title"], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: E }, 4.3);
+      tl.fromTo("#s1-chips .chip", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.35, ease: E }, 5.0);
+      tl.fromTo("#s1-tag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 6.2);
+      // S2
+      tl.fromTo("#s2-eb", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 9.5);
+      tl.fromTo("#s2-img", { opacity: 0, x: 80, rotation: 6 }, { opacity: 1, x: 0, rotation: 0, duration: 0.9, ease: E }, 9.5);
+      tl.fromTo("#s2-h", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 10.6);
+      tl.fromTo("#s2-sub", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 11.6);
+      tl.fromTo("#s2-num", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: E }, 14.6);
+      tl.fromTo("#s2-dots .dot9", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.07, ease: "back.out(2)" }, 14.8);
+      // S3 quote (upper area) while Maya reads it
+      tl.fromTo("#s3-q", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 18.1);
+      tl.to("#s3-q", { opacity: 0, duration: 0.25 }, 26.45);
+      // S4
+      tl.fromTo("#s4-eb", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 26.85);
+      tl.fromTo("#s4-a", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 28.4);
+      tl.fromTo("#s4-a .stack div", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.5, stagger: 0.12, ease: E }, 28.7);
+      tl.fromTo("#s4-b", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, 30.6);
+      // S5
+      tl.fromTo("#s5-eb", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 34.6);
+      tl.fromTo("#s5-a", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 35.0);
+      tl.fromTo("#s5-stack div", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.5, stagger: 0.15, ease: E }, 35.3);
+      tl.fromTo("#s5-note", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 37.4);
+      // S6: split header first, quote card only from when Leo starts the quote
+      tl.fromTo("#s6-head", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 40.5);
+      tl.fromTo("#s6-dots .dot9", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.06, ease: "back.out(2)" }, 40.8);
+      tl.fromTo("#s6-r", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, 41.6);
+      tl.fromTo("#s6-q", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 43.4);
+      tl.to("#s6-q", { opacity: 0, duration: 0.2 }, 50.6);
+      // S7
+      tl.fromTo("#s7-img", { opacity: 0, scale: 1.15, rotationY: 25 }, { opacity: 1, scale: 1, rotationY: 0, duration: 1.0, ease: E }, 50.85);
+      tl.fromTo("#s7-eb", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 50.95);
+      tl.fromTo("#s7-h", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 51.3);
+      tl.fromTo("#s7-num", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: E }, 52.6);
+      tl.fromTo("#s7-dots .dot9", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.05, ease: "back.out(2)" }, 52.7);
+      // S8
+      tl.fromTo("#s8-eb", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 54.7);
+      tl.fromTo("#s8-buy", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 55.6);
+      tl.fromTo("#s8-buy li", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.3, ease: E }, 56.0);
+      tl.fromTo("#s8-skip", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 58.4);
+      tl.fromTo("#s8-skip li", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.3, ease: E }, 58.8);
 
       window.__timelines["p7"] = tl;
     </script>

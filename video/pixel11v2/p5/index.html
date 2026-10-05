@@ -11,7 +11,69 @@
       @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-      /* Part-specific styles go here. */
+
+      .rv { opacity: 0; }
+      .badge-wrap { position: absolute; inset: 0; }
+      /* S1 */
+      .s1 { align-items: center; gap: 70px; }
+      .s1 .left { flex: 1; display: flex; flex-direction: column; gap: 34px; }
+      .s1 .img { width: 560px; height: 680px; }
+      .dots { display: flex; gap: 18px; }
+      .dot-o { width: 54px; height: 54px; border-radius: 50%; background: var(--accent); }
+      .dot-o.off { background: transparent; border: 4px solid var(--ink-dim); }
+      .s1 .stat { font-size: 52px; font-weight: 800; }
+      /* S2 battery panels */
+      .s2 { flex-direction: column; gap: 30px; padding-top: 110px; }
+      .panels { display: flex; gap: 48px; flex: 1; }
+      .panel { flex: 1; padding: 40px 38px; display: flex; flex-direction: column; gap: 22px; border-color: var(--glass-edge); }
+      .panel .who { font-size: 40px; font-weight: 800; }
+      .panel .cond { font-size: 32px; line-height: 1.3; color: var(--ink-dim); }
+      .panel .val { margin-top: auto; font-size: 104px; font-weight: 800; letter-spacing: -0.03em; color: var(--accent); }
+      .note { font-size: 32px; color: var(--warn); font-weight: 600; }
+      /* S3 summary */
+      .s3 { gap: 70px; align-items: center; }
+      .s3 .big { flex: 1.1; display: flex; flex-direction: column; gap: 22px; }
+      .s3 .big .h1 { font-size: 112px; }
+      .s3 .list { flex: 1; padding: 36px 44px; display: flex; flex-direction: column; gap: 24px; }
+      .row { display: flex; justify-content: space-between; gap: 24px; font-size: 32px; border-bottom: 1px solid var(--glass-edge); padding-bottom: 18px; }
+      .row:last-child { border-bottom: 0; padding-bottom: 0; }
+      .row .r { font-weight: 800; text-align: right; }
+      /* S4 pro */
+      .s4 { flex-direction: column; gap: 50px; padding-top: 120px; justify-content: center; }
+      .duo { display: flex; gap: 48px; }
+      .duo .panel { min-height: 380px; }
+      .duo .panel { padding: 44px; }
+      .duo .model { font-size: 56px; font-weight: 800; }
+      .duo .verdict { font-size: 40px; line-height: 1.3; font-weight: 600; }
+      /* S5 charging */
+      .s5 { flex-direction: column; gap: 36px; padding-top: 120px; }
+      .box { padding: 40px 50px; display: flex; gap: 40px; align-items: center; }
+      .box .items { display: flex; gap: 22px; flex-wrap: wrap; }
+      .item { font-size: 34px; font-weight: 600; padding: 14px 26px; border-radius: 18px; background: rgba(255,255,255,0.07); }
+      .item.no { color: var(--bad); border: 2px solid var(--bad); background: transparent; }
+      .bar-card { padding: 40px 50px; display: flex; flex-direction: column; gap: 22px; }
+      .track { position: relative; height: 64px; border-radius: 16px; background: rgba(255,255,255,0.08); }
+      .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 16px; background: var(--accent); }
+      .range { position: absolute; top: -10px; bottom: -10px; border-radius: 10px; border: 3px dashed var(--ink); }
+      .ticks { position: relative; height: 40px; font-size: 30px; color: var(--ink-dim); }
+      .ticks span { position: absolute; top: 0; }
+      .bar-head { display: flex; justify-content: space-between; align-items: baseline; }
+      .bar-head .big { font-size: 56px; font-weight: 800; }
+      /* S6 pro xl */
+      .s6 { gap: 60px; align-items: center; }
+      .s6 .col { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+      .warn-chip { align-self: flex-start; font-size: 44px; font-weight: 800; color: var(--warn); border: 3px solid var(--warn); border-radius: 999px; padding: 16px 36px; }
+      .s6 .img { width: 520px; height: 600px; }
+      .s6 .bar-card .big { font-size: 96px; font-weight: 800; color: var(--accent); }
+      .side-note { font-size: 30px; color: var(--ink-dim); }
+      /* S7 wireless */
+      .s7 { align-items: center; gap: 60px; }
+      .s7 .img { width: 760px; height: 600px; }
+      .s7 .col { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+      .good-chip { align-self: flex-start; font-size: 46px; font-weight: 800; color: var(--accent); border: 3px solid var(--accent); border-radius: 999px; padding: 16px 36px; }
+      .praise { font-size: 40px; font-weight: 700; }
+      .praise .n { color: var(--accent); }
+
     </style>
   </head>
   <body>
@@ -19,7 +81,139 @@
       <div class="bg"></div>
       <div class="bg-vignette"></div>
 
-      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <!-- S1: question + 9 of 10 -->
+      <section class="clip" id="s1" data-start="0" data-duration="6.05" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+        <div class="scene s1">
+          <div class="left">
+            <div class="eyebrow rv" id="s1-eye">Battery and charging</div>
+            <h1 class="h1 rv" id="s1-title">Will it last a day?</h1>
+            <div class="rv" id="s1-stat" style="display:flex;flex-direction:column;gap:20px">
+              <span class="tag-editorial">Outlet verdicts, base Pixel 11</span>
+              <div class="dots"><span class="dot-o"></span><span class="dot-o"></span><span class="dot-o"></span><span class="dot-o"></span><span class="dot-o"></span><span class="dot-o"></span><span class="dot-o"></span><span class="dot-o"></span><span class="dot-o"></span><span class="dot-o off"></span></div>
+              <div class="stat"><span class="good">9 of 10 outlets</span>: good battery</div>
+            </div>
+          </div>
+          <img class="phone-img img rv" id="s1-img" src="media/p11_frost.png" alt="Pixel 11" />
+        </div>
+      </section>
+
+      <!-- S2: three separate battery tests -->
+      <section class="clip" id="s2" data-start="6.05" data-duration="23.85" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+        <div class="scene s2">
+          <h2 class="h2 rv" id="s2-title">Three outlets, three different tests</h2>
+          <div class="panels">
+            <div class="panel glass rv" id="pa">
+              <span class="tag-measured">Measured by Tom's Guide</span>
+              <div class="who">Tom's Guide</div>
+              <div class="cond">Continuous web browsing over 5G until empty</div>
+              <div class="val num rv" id="pa-v">12h 45m</div>
+            </div>
+            <div class="panel glass rv" id="pb">
+              <span class="tag-measured">Measured by PCMag</span>
+              <div class="who">PCMag</div>
+              <div class="cond">YouTube streaming over Wi-Fi at full brightness</div>
+              <div class="val num rv" id="pb-v">19h 13m</div>
+            </div>
+            <div class="panel glass rv" id="pc">
+              <span class="tag-measured">Measured by The Guardian</span>
+              <div class="who">The Guardian</div>
+              <div class="cond">Light real-world use, time between charges, idle included</div>
+              <div class="val num rv" id="pc-v">~54h</div>
+            </div>
+          </div>
+          <div class="note rv" id="s2-note">Different tests: don't compare these numbers with each other</div>
+        </div>
+      </section>
+
+      <!-- S3: same-test vs Pixel 10 -->
+      <section class="clip" id="s3" data-start="29.9" data-duration="8.0" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+        <div class="scene s3">
+          <div class="big">
+            <div class="eyebrow rv" id="s3-eye">Same-test comparison vs Pixel 10</div>
+            <h1 class="h1 rv" id="s3-title">About the same</h1>
+            <p class="body rv" id="s3-sub" style="font-size:40px">Within a few percent either way, depending on the test</p>
+          </div>
+          <div class="list glass rv" id="s3-list">
+            <span class="tag-measured">Measured, each outlet vs its own Pixel 10</span>
+            <div class="row"><span>Tom's Guide</span><span class="r mid">28 min less</span></div>
+            <div class="row"><span>Android Headlines</span><span class="r good">17 min more</span></div>
+            <div class="row"><span>GSMArena</span><span class="r good">Better in every test</span></div>
+            <div class="row"><span>CNET</span><span class="r">Roughly equivalent</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S4: Pro and Pro XL -->
+      <section class="clip" id="s4" data-start="37.9" data-duration="6.4" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="scene s4">
+          <h2 class="h2 rv" id="s4-title">Year on year, each outlet's own test</h2>
+          <div class="duo">
+            <div class="panel glass rv" id="s4-a">
+              <span class="tag-measured">Measured by several outlets</span>
+              <div class="model">Pixel 11 Pro XL</div>
+              <div class="verdict good">Equal or better than Pixel 10 Pro XL in most tests</div>
+            </div>
+            <div class="panel glass rv" id="s4-b">
+              <span class="tag-measured">Measured by several outlets</span>
+              <div class="model">Pixel 11 Pro</div>
+              <div class="verdict mid">Depends on the test: flat in one lab, better in another</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S5: charging base + Pro -->
+      <section class="clip" id="s5" data-start="44.3" data-duration="8.65" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 + Pixel 11 Pro</div>
+        <div class="scene s5">
+          <h2 class="h2 rv" id="s5-title">Wired charging</h2>
+          <div class="box glass rv" id="s5-box">
+            <div class="eyebrow" style="font-size:30px">In the box</div>
+            <div class="items"><span class="item">Phone</span><span class="item">USB-C cable</span><span class="item">SIM tool</span><span class="item no">No charger</span></div>
+          </div>
+          <div class="bar-card glass rv" id="s5-bar">
+            <div class="bar-head"><span class="tag-measured">Measured by multiple outlets</span><span class="big">30 min &asymp; 50&ndash;60%</span></div>
+            <div class="track"><div class="fill" style="width:55%"></div><div class="range" style="left:50%;width:10%"></div></div>
+            <div class="ticks"><span style="left:calc(50% - 36px)">50%</span><span style="left:calc(60% - 10px)">60%</span><span style="right:0">Full in 80&ndash;98 min</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S6: Pro XL PPS caveat -->
+      <section class="clip" id="s6" data-start="52.95" data-duration="11.05" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro XL</div>
+        <div class="scene s6">
+          <div class="col">
+            <span class="tag-claim rv" id="s6-claim">Google claims 45W wired charging</span>
+            <div class="warn-chip rv" id="s6-warn">Needs a 21V PPS charger</div>
+            <div class="bar-card glass rv" id="s6-bar">
+              <span class="tag-measured">Measured by GSMArena &middot; Google 67W charger</span>
+              <div class="bar-head"><span class="big num">72%</span><span style="font-size:40px;font-weight:700">in 30 min</span></div>
+              <div class="track"><div class="fill" style="width:72%"></div></div>
+            </div>
+            <div class="rv" id="s6-note" style="display:flex;flex-direction:column;gap:8px"><span class="tag-measured">Measured by Android Authority</span><span class="side-note">67W charger without 21V PPS: topped out at 25W</span></div>
+          </div>
+          <img class="phone-img img rv" id="s6-img" src="media/pro_family.png" alt="Pixel 11 Pro family" />
+        </div>
+      </section>
+
+      <!-- S7: wireless -->
+      <section class="clip" id="s7" data-start="64.0" data-duration="5.86" data-track-index="1">
+        <div class="scene s7">
+          <img class="phone-img img rv" id="s7-img" src="media/p11_family.png" alt="Pixel 11 family" />
+          <div class="col">
+            <div class="eyebrow rv" id="s7-eye">Magnetic wireless charging</div>
+            <div class="good-chip rv" id="s7-chip">25W Qi2.2: no complaints</div>
+            <div class="praise rv" id="s7-p1"><span class="n">6 of 9</span> base-model outlets praised it</div>
+            <div class="praise rv" id="s7-p2"><span class="n">7 of 11</span> Pro outlets praised it</div>
+          </div>
+        </div>
+      </section>
 
       <div id="hostbar"></div>
       <audio id="p5-voice" src="voice.wav" data-start="0" data-duration="69.86" data-track-index="10" data-volume="1"></audio>
@@ -29,7 +223,46 @@
       const tl = gsap.timeline({ paused: true });
       HF_hostbar(tl, window.HF_TIMINGS);
 
-      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      const IN = (sel, t, extra) => tl.fromTo(sel, Object.assign({ opacity: 0, y: 28 }, extra && extra.from), Object.assign({ opacity: 1, y: 0, duration: 0.5, ease: "power3.out", immediateRender: false }, extra && extra.to), t);
+      const OUT = (sel, t) => tl.to(sel, { opacity: 0, duration: 0.3, ease: "power1.in" }, t);
+      // S1
+      IN("#s1-eye", 0.2); IN("#s1-title", 0.35); IN("#s1-img", 0.5, { from: { y: 0, scale: 0.94 }, to: { scale: 1, duration: 0.8 } });
+      IN("#s1-stat", 2.6);
+      tl.fromTo("#s1 .dot-o", { scale: 0.4 }, { scale: 1, duration: 0.3, stagger: 0.07, ease: "back.out(2)", immediateRender: false }, 2.65);
+      OUT("#s1 .scene", 5.75);
+      // S2: three separate panels, values fade in at final value as each is spoken
+      IN("#s2-title", 6.15); IN("#pa", 6.5); IN("#pb", 6.7); IN("#pc", 6.9);
+      IN("#s2-note", 8.6);
+      const hi = (id, t0, t1) => { tl.to(id, { borderColor: "#5ee1c2", duration: 0.3 }, t0); tl.to(id, { borderColor: "rgba(255,255,255,0.14)", duration: 0.3 }, t1); };
+      IN("#pa-v", 13.2, { from: { y: 0, scale: 0.92 }, to: { scale: 1 } }); hi("#pa", 11.4, 17.4);
+      IN("#pb-v", 19.6, { from: { y: 0, scale: 0.92 }, to: { scale: 1 } }); hi("#pb", 17.5, 24.4);
+      IN("#pc-v", 26.6, { from: { y: 0, scale: 0.92 }, to: { scale: 1 } }); hi("#pc", 24.5, 29.4);
+      OUT("#s2 .scene", 29.55);
+      // S3
+      IN("#s3-eye", 30.0); IN("#s3-title", 32.3); IN("#s3-sub", 32.7);
+      IN("#s3-list", 33.6, { from: { y: 0, x: 40 }, to: { x: 0 } });
+      tl.fromTo("#s3 .row", { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.25, immediateRender: false }, 33.9);
+      OUT("#s3 .scene", 37.55);
+      // S4
+      IN("#s4-title", 38.0); IN("#s4-a", 38.3, { from: { y: 0, x: -50 }, to: { x: 0 } }); IN("#s4-b", 41.0, { from: { y: 0, x: 50 }, to: { x: 0 } });
+      OUT("#s4 .scene", 43.95);
+      // S5
+      IN("#s5-title", 44.4); IN("#s5-box", 44.8);
+      tl.fromTo("#s5 .item", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.2, immediateRender: false }, 45.0);
+      IN("#s5-bar", 48.2);
+      tl.fromTo("#s5 .fill", { scaleX: 0.85, transformOrigin: "left center" }, { scaleX: 1, duration: 0.8, ease: "power2.out", immediateRender: false }, 48.3);
+      OUT("#s5 .scene", 52.6);
+      // S6
+      IN("#s6-img", 53.0, { from: { y: 0, scale: 0.94 }, to: { scale: 1, duration: 0.8 } });
+      IN("#s6-claim", 53.1); IN("#s6-warn", 54.4, { from: { y: 0, scale: 0.9 }, to: { ease: "back.out(2)" } });
+      IN("#s6-bar", 58.6);
+      tl.fromTo("#s6 .fill", { scaleX: 0.85, transformOrigin: "left center" }, { scaleX: 1, duration: 0.8, ease: "power2.out", immediateRender: false }, 58.7);
+      IN("#s6-note", 60.6);
+      OUT("#s6 .scene", 63.65);
+      // S7
+      IN("#s7-img", 64.1, { from: { y: 0, scale: 0.94 }, to: { scale: 1, duration: 0.8 } });
+      IN("#s7-eye", 64.2); IN("#s7-chip", 64.6); IN("#s7-p1", 66.0); IN("#s7-p2", 66.5);
 
       window.__timelines["p5"] = tl;
     </script>

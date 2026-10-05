@@ -11,7 +11,34 @@
       @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-      /* Part-specific styles go here. */
+
+      .S { position:absolute; inset:0; }
+      .smp { position:absolute; overflow:hidden; border-radius:14px; background:#000; box-shadow:0 30px 80px rgba(0,0,0,0.55); }
+      .smp img { display:block; width:100%; height:100%; object-fit:contain; }
+      .slab { position:absolute; display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+      .slab .sample-label { font-size:30px; line-height:1.25; padding:8px 16px; background:rgba(7,9,13,0.92); border:1px solid var(--glass-edge); }
+      .slab .snote { font-size:30px; line-height:1.25; color:var(--ink-dim); padding:0 16px; }
+      .slab .snote.w { color:var(--warn); font-weight:700; }
+      .hdr { position:absolute; left:130px; top:30px; font-size:40px; font-weight:800; }
+      .hdr .eyebrow { font-size:30px; margin-right:18px; }
+      .pane { position:absolute; display:flex; flex-direction:column; gap:18px; }
+      .big { font-weight:800; font-size:150px; line-height:0.95; letter-spacing:-0.04em; }
+      .mid-t { font-size:48px; font-weight:800; line-height:1.12; }
+      .txt { font-size:34px; line-height:1.3; color:var(--ink-dim); }
+      .tag-claim,.tag-measured,.tag-editorial { font-size:30px; }
+      .cnt { font-size:30px; color:var(--ink-dim); letter-spacing:0.04em; }
+      .bar { display:flex; height:92px; border-radius:18px; overflow:hidden; border:1px solid var(--glass-edge); }
+      .bar > div { height:100%; display:flex; align-items:center; justify-content:center; font-size:40px; font-weight:800; color:#0a0d14; }
+      .seg-g { background:var(--accent); } .seg-m { background:var(--warn); } .seg-b { background:var(--bad); } .seg-n { background:#5b6478; color:var(--ink) !important; }
+      .legend { display:flex; gap:40px; flex-wrap:wrap; font-size:32px; font-weight:600; }
+      .legend span { display:inline-flex; align-items:center; gap:12px; }
+      .legend i { width:22px; height:22px; border-radius:6px; display:inline-block; }
+      .card { position:absolute; padding:44px 52px; }
+      .rung { position:absolute; top:330px; display:flex; flex-direction:column; align-items:center; gap:14px; width:420px; }
+      .rung .x { font-size:120px; font-weight:800; letter-spacing:-0.03em; }
+      .rung .dotb { width:44px; height:44px; border-radius:50%; background:var(--accent); border:6px solid var(--bg); box-shadow:0 0 0 3px var(--accent); }
+      .rail { position:absolute; left:340px; right:340px; top:308px; height:8px; border-radius:4px; background:linear-gradient(90deg,var(--accent),var(--warn)); }
+      .chipl { font-size:30px; font-weight:700; padding:6px 18px; border-radius:999px; border:2px solid currentColor; }
     </style>
   </head>
   <body>
@@ -19,7 +46,187 @@
       <div class="bg"></div>
       <div class="bg-vignette"></div>
 
-      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <!-- S1 header 0-5.1 -->
+      <section class="clip" id="s1" data-start="0" data-duration="5.1" data-track-index="1"><div class="S">
+        <div class="pane a" style="left:130px;top:250px;width:820px;"><div class="eyebrow">Part 4</div><h1 class="h1">The camera</h1><p class="body">With Google's own sample photos</p></div>
+        <img class="phone-img a" src="media/pro_family.png" alt="Pixel 11 Pro family" style="position:absolute;left:960px;top:40px;width:900px;height:686px;">
+      </div></section>
+
+      <!-- S2 disclosure 5.1-8.6 -->
+      <section class="clip" id="s2" data-start="5.1" data-duration="3.5" data-track-index="1"><div class="S">
+        <div class="card glass a" style="left:260px;top:120px;width:1400px;">
+          <div class="tag-claim" style="margin-bottom:22px;">Before you look</div>
+          <div class="mid-t" style="margin-bottom:26px;">Next screens: Google-published samples.</div>
+          <div class="txt" style="margin-bottom:12px;">Model not stated by Google.</div>
+          <div class="txt">Chosen by Google to look good.</div>
+        </div>
+      </div></section>
+
+      <!-- S3 sample 08 8.6-13.8 -->
+      <section class="clip" id="s3" data-start="8.6" data-duration="5.2" data-track-index="1"><div class="S">
+        <div class="smp a" style="left:382px;top:30px;width:1156px;height:700px;"><img src="samples/08_p11pro-page_50mp-main-section_outfit-portrait.jpg" alt="Google sample: outfit portrait"></div>
+        <div class="slab a" style="left:382px;top:744px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | not stated | Source: Google sample</div><div class="snote">Google's card: 50 MP wide main camera</div></div>
+      </div></section>
+
+      <!-- S4 sample 10 13.8-17.75 -->
+      <section class="clip" id="s4" data-start="13.8" data-duration="3.95" data-track-index="1"><div class="S">
+        <div class="smp a" style="left:606px;top:30px;width:708px;height:700px;"><img src="samples/10_p11pro-page_48mp-ultrawide-section_low-angle-group.jpg" alt="Google sample: low-angle group"></div>
+        <div class="slab a" style="left:300px;top:744px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | not stated | Source: Google sample</div><div class="snote">Google's card: 48 MP ultrawide camera</div></div>
+      </div></section>
+
+      <!-- S5 sample 09 + 15 of 15 17.75-24.1 (Pro) -->
+      <section class="clip" id="s5" data-start="17.75" data-duration="6.35" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="smp a" style="left:130px;top:30px;width:708px;height:700px;"><img src="samples/09_p11pro-page_48mp-telephoto-section_portrait-colorful-wall.jpg" alt="Google sample: portrait at colourful wall"></div>
+        <div class="slab a" style="left:130px;top:744px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | not stated | Source: Google sample</div><div class="snote">Google's card: 48 MP telephoto</div></div>
+        <div class="pane b" style="left:930px;top:170px;width:860px;">
+          <div class="big good num">15 of 15</div>
+          <div class="mid-t">outlets praised everyday photos</div>
+          <div class="cnt">All 15 outlets that reviewed the Pros</div>
+        </div>
+      </div></section>
+
+      <!-- S6 base Pixel 11 bar 24.1-28.75 -->
+      <section class="clip" id="s6" data-start="24.1" data-duration="4.65" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+        <img class="phone-img a" src="media/p11_family.png" alt="Pixel 11 family" style="position:absolute;left:1160px;top:250px;width:640px;height:484px;">
+        <div class="pane a" style="left:130px;top:120px;width:960px;">
+          <div class="eyebrow">Everyday photos · base Pixel 11</div>
+          <div class="mid-t">5 of 8 outlets praised them</div>
+          <div class="bar b" style="width:960px;"><div class="seg-g" style="width:62.5%">5</div><div class="seg-m" style="width:37.5%">3</div></div>
+          <div class="legend b"><span><i class="seg-g"></i>5 praised</span><span><i class="seg-m"></i>3 mixed</span></div>
+          <div class="cnt b">8 outlets reviewed the base Pixel 11</div>
+        </div>
+      </div></section>
+
+      <!-- S7 sample 01 night 28.75-34.8 (Pro) -->
+      <section class="clip" id="s7" data-start="28.75" data-duration="6.05" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="smp a" style="left:130px;top:30px;width:528px;height:700px;"><img src="samples/01_instant-night-sight_portrait-under-stars.webp" alt="Google sample: portrait under the stars"></div>
+        <div class="slab a" style="left:130px;top:744px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | Instant Night Sight (named in alt text) | Source: Google sample</div></div>
+        <div class="pane c" style="left:760px;top:200px;width:1030px;">
+          <div class="big good num">11 of 11</div>
+          <div class="mid-t">Pro outlets: Night Sight is now faster</div>
+          <div class="cnt">11 Pro outlets covered night photos</div>
+        </div>
+      </div></section>
+
+      <!-- S8 selfie sample 11 34.8-40.9 -->
+      <section class="clip" id="s8" data-start="34.8" data-duration="6.1" data-track-index="1"><div class="S">
+        <div class="smp a" style="left:130px;top:30px;width:708px;height:700px;"><img src="samples/11_p11pro-page_42mp-front-section_selfie.jpg" alt="Google sample: selfie"></div>
+        <div class="slab a" style="left:130px;top:744px;"><div class="sample-label">Pixel 11 series (model not stated) | front camera (implied by Google's card) | not stated | Source: Google sample</div></div>
+        <div class="pane b" style="left:960px;top:200px;width:830px;">
+          <div class="tag-claim">Google claims</div>
+          <div class="big num">42 MP</div>
+          <div class="mid-t">front camera for selfies</div>
+          <div class="cnt">Shown on the Pixel 11 Pro store page</div>
+        </div>
+      </div></section>
+
+      <!-- S9 zoom ladder 40.9-45.3 (Pixel 11) -->
+      <section class="clip" id="s9" data-start="40.9" data-duration="4.4" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+        <div class="hdr a"><span class="eyebrow">Zoom ladder</span>Base Pixel 11</div>
+        <div class="rail r1"></div>
+        <div class="rung z1" style="left:130px;"><div class="dotb"></div><div class="x">1×</div><div class="txt">main camera</div></div>
+        <div class="rung z2" style="left:750px;"><div class="dotb"></div><div class="x good">5×</div><div class="txt">optical telephoto</div></div>
+        <div class="rung z3" style="left:1370px;"><div class="dotb" style="background:var(--warn);box-shadow:0 0 0 3px var(--warn);"></div><div class="x mid">30×</div><div class="txt">Super Zoom</div><div class="tag-claim">Google claims</div></div>
+      </div></section>
+
+      <!-- S10 samples 14/15 45.3-49.9 (Pixel 11) -->
+      <section class="clip" id="s10" data-start="45.3" data-duration="4.6" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+        <div class="hdr a"><span class="eyebrow">Super Zoom</span>Before → 30×</div>
+        <div class="smp a" style="left:300px;top:100px;width:520px;height:520px;"><img src="samples/14_p11-page_30x-zoom-video_frame-before.png" alt="Google demo frame before zoom"></div>
+        <div class="smp a" style="left:1000px;top:100px;width:520px;height:520px;"><img src="samples/15_p11-page_30x-zoom-video_frame-30x.png" alt="Google demo frame at 30x"></div>
+        <div class="slab a" style="left:300px;top:636px;width:640px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | not stated | Source: Google sample</div><div class="snote">Frame from Google demo video</div></div>
+        <div class="slab a" style="left:1000px;top:636px;width:700px;"><div class="sample-label">Pixel 11 series (model not stated) | 30x (Google's on-frame label) | not stated | Source: Google sample</div><div class="snote">Frame from Google demo video</div></div>
+      </div></section>
+
+      <!-- S11 sample 16 120x 49.9-58.1 (Pro) -->
+      <section class="clip" id="s11" data-start="49.9" data-duration="8.2" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="smp a" style="left:60px;top:30px;width:1246px;height:700px;"><img src="samples/16_p11pro-page_120x-pro-zoom-video_frame-120x-moon.png" alt="Google demo frame at 120x"></div>
+        <div class="slab a" style="left:60px;top:744px;"><div class="sample-label">Pixel 11 series (model not stated) | 120x (Google's on-frame label) | Pro Zoom (120x) | Source: Google sample</div></div>
+        <div class="pane b" style="left:1350px;top:150px;width:470px;">
+          <div class="mid-t mid">AI-reconstructed</div>
+          <div class="txt" style="color:var(--ink);">by Google's own description: past 30x, generative AI rebuilds the image</div>
+          <div class="cnt">Frame from Google demo video</div>
+        </div>
+      </div></section>
+
+      <!-- S12 bar 13 58.1-65.8 (Pro) -->
+      <section class="clip" id="s12" data-start="58.1" data-duration="7.7" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="pane a" style="left:130px;top:110px;width:1660px;">
+          <div class="eyebrow">120x zoom · reviewer verdicts</div>
+          <div class="mid-t"><span class="bad">8 of 13</span> Pro outlets criticised invented detail</div>
+          <div class="bar b" style="width:1660px;"><div class="seg-b" style="width:61.54%">8</div><div class="seg-m" style="width:30.77%">4</div><div class="seg-g" style="width:7.69%">1</div></div>
+          <div class="legend b"><span><i class="seg-b"></i>8 criticised</span><span><i class="seg-m"></i>4 mixed</span><span><i class="seg-g"></i>1 praised</span><span class="cnt">13 Pro outlets judged 120x</span></div>
+        </div>
+        <div class="card glass c" style="left:130px;top:560px;width:1100px;padding:26px 40px;">
+          <div class="tag-editorial" style="margin-bottom:8px;">Our editorial take</div>
+          <div class="mid-t" style="font-size:44px;">Use 120x for fun, not for evidence</div>
+        </div>
+      </div></section>
+
+      <!-- S13 Magic Capture 65.8-72.9 (Pro) -->
+      <section class="clip" id="s13" data-start="65.8" data-duration="7.1" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="card glass a" style="left:130px;top:110px;width:1660px;">
+          <div class="eyebrow" style="margin-bottom:14px;">Moving kids and pets</div>
+          <div class="h2" style="margin-bottom:12px;">Magic Capture</div>
+          <div class="mid-t" style="font-size:42px;margin-bottom:26px;">7 of 14 Pro outlets liked it</div>
+          <div class="bar b" style="width:1556px;"><div class="seg-g" style="width:50%">7</div><div class="seg-m" style="width:14.29%">2</div><div class="seg-b" style="width:7.14%">1</div><div class="seg-n" style="width:28.57%">4</div></div>
+          <div class="legend b" style="margin-top:22px;"><span><i class="seg-g"></i>7 praised</span><span><i class="seg-m"></i>2 mixed</span><span><i class="seg-b"></i>1 criticised</span><span><i class="seg-n"></i>4 neutral</span></div>
+        </div>
+        <div class="cnt c" style="position:absolute;left:130px;top:760px;">No Google still of a moving subject was available</div>
+      </div></section>
+
+      <!-- S14 Add Me 72.9-76.2 -->
+      <section class="clip" id="s14" data-start="72.9" data-duration="3.3" data-track-index="1"><div class="S">
+        <div class="hdr a"><span class="eyebrow">Add Me</span>Before → After, Google demo</div>
+        <div class="smp a" style="left:237px;top:100px;width:693px;height:520px;"><img src="samples/17_p11-page_add-me-video_frame-before.png" alt="Add Me demo frame before"></div>
+        <div class="smp a" style="left:990px;top:100px;width:693px;height:520px;"><img src="samples/18_p11-page_add-me-video_frame-after.png" alt="Add Me demo frame after"></div>
+        <div class="slab a" style="left:237px;top:636px;width:700px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | Add Me | Source: Google sample</div><div class="snote">Frame from Google demo video</div></div>
+        <div class="slab a" style="left:990px;top:636px;width:700px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | Add Me | Source: Google sample</div><div class="snote">Frame from Google demo video</div></div>
+      </div></section>
+
+      <!-- S15 Auto Best Take 76.2-79.6 -->
+      <section class="clip" id="s15" data-start="76.2" data-duration="3.4" data-track-index="1"><div class="S">
+        <div class="hdr a"><span class="eyebrow">Auto Best Take</span>Before → After, Google demo</div>
+        <div class="smp a" style="left:300px;top:100px;width:416px;height:520px;"><img src="samples/19_p11-page_auto-best-take-video_frame-before.png" alt="Auto Best Take demo frame before"></div>
+        <div class="smp a" style="left:1010px;top:100px;width:416px;height:520px;"><img src="samples/20_p11-page_auto-best-take-video_frame-after.png" alt="Auto Best Take demo frame after"></div>
+        <div class="slab a" style="left:300px;top:636px;width:680px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | not stated | Source: Google sample</div><div class="snote">Frame from Google demo video</div></div>
+        <div class="slab a" style="left:1010px;top:636px;width:680px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | not stated | Source: Google sample</div><div class="snote">Frame from Google demo video</div></div>
+      </div></section>
+
+      <!-- S16 video evidence 79.6-86.3 (Pro) -->
+      <section class="clip" id="s16" data-start="79.6" data-duration="6.7" data-track-index="1"><div class="S">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="card glass a" style="left:130px;top:110px;width:1660px;border-color:var(--warn);">
+          <div class="tag-claim" style="margin-bottom:14px;">Not enough evidence</div>
+          <div class="h2" style="margin-bottom:26px;">Video judged by 6 of 15 outlets</div>
+          <div class="bar b" style="width:1556px;"><div class="seg-g" style="width:40%">6</div><div class="seg-n" style="width:60%">9</div></div>
+          <div class="legend b" style="margin-top:22px;"><span><i class="seg-g"></i>6 judged video</span><span><i class="seg-n"></i>9 did not examine it</span></div>
+        </div>
+        <div class="mid-t c" style="position:absolute;left:130px;top:700px;font-size:40px;">Not examined is not the same as good.</div>
+      </div></section>
+
+      <!-- S17 takeaway 86.3-end -->
+      <section class="clip" id="s17" data-start="86.3" data-duration="7.246" data-track-index="1"><div class="S">
+        <div class="smp a" style="left:130px;top:50px;width:800px;height:600px;"><img src="samples/03_camera-looks-velvet_flower-closeup.webp" alt="Google sample: flower close-up"></div>
+        <div class="slab a" style="left:130px;top:664px;width:820px;"><div class="sample-label">Pixel 11 series (model not stated) | not stated | not stated | Source: Google sample</div><div class="snote">Google caption: Velvet Camera Look</div></div>
+        <div class="card glass b" style="left:1000px;top:50px;width:790px;padding:34px 44px;">
+          <div class="eyebrow" style="margin-bottom:10px;">Pixel 11</div>
+          <div class="mid-t" style="font-size:44px;">5x tele, excellent stills</div>
+        </div>
+        <div class="card glass c" style="left:1000px;top:300px;width:790px;padding:34px 44px;">
+          <div class="eyebrow" style="margin-bottom:10px;color:var(--leo);">Pro / Pro XL</div>
+          <div class="mid-t" style="font-size:44px;">+ better tele, faster Night Sight, 120x (AI)</div>
+        </div>
+      </div></section>
 
       <div id="hostbar"></div>
       <audio id="p4-voice" src="voice.wav" data-start="0" data-duration="93.546" data-track-index="10" data-volume="1"></audio>
@@ -29,7 +236,32 @@
       const tl = gsap.timeline({ paused: true });
       HF_hostbar(tl, window.HF_TIMINGS);
 
-      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      // Scene choreography: .a in at start, .b +0.5s, .c at a later beat; whole scene fades out at end.
+      const SC = [["s1",0,5.1],["s2",5.1,8.6],["s3",8.6,13.8],["s4",13.8,17.75],["s5",17.75,24.1],["s6",24.1,28.75],
+        ["s7",28.75,34.8],["s8",34.8,40.9],["s9",40.9,45.3],["s10",45.3,49.9],["s11",49.9,58.1],["s12",58.1,65.8],
+        ["s13",65.8,72.9],["s14",72.9,76.2],["s15",76.2,79.6],["s16",79.6,86.3],["s17",86.3,93.546]];
+      const CT = { s7: 31.8, s12: 60.6, s13: 69.4, s16: 83.0, s17: 89.0 };
+      SC.forEach(([id, s, e]) => {
+        const root = document.querySelector("#" + id + " .S");
+        const a = root.querySelectorAll(".a"), b = root.querySelectorAll(".b"), c = root.querySelectorAll(".c");
+        const badge = root.querySelector(".model-badge");
+        if (badge) tl.fromTo(badge, { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, s + 0.05);
+        if (a.length) tl.fromTo(a, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, s + 0.05);
+        if (b.length) tl.fromTo(b, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.12 }, s + 0.6);
+        if (c.length) tl.fromTo(c, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.12 }, CT[id] || s + 1.2);
+        if (e < 93) tl.to(root, { opacity: 0, duration: 0.25, ease: "power1.in" }, e - 0.25);
+      });
+      // Zoom ladder: rail draws, rungs land in order.
+      tl.fromTo("#s9 .r1", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.4, ease: "power2.inOut" }, 41.1);
+      tl.fromTo("#s9 .z1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, 41.1);
+      tl.fromTo("#s9 .z2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, 42.4);
+      tl.fromTo("#s9 .z3", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, 43.4);
+      // Bars grow left-to-right after the scene lands.
+      ["s6","s12","s13","s16"].forEach((id, i) => {
+        const t = [24.8, 58.9, 66.6, 80.4][i];
+        tl.fromTo("#" + id + " .bar > div", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "power3.out", stagger: 0.12 }, t);
+      });
 
       window.__timelines["p4"] = tl;
     </script>

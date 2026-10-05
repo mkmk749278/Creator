@@ -11,7 +11,59 @@
       @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-      /* Part-specific styles go here. */
+      .S { position:absolute; inset:0; }
+      :root { --india:#ff9933; --india-g:#2fbf5a; }
+      .model-badge { font-size:30px; }
+      .tag-claim,.tag-measured,.tag-editorial,.eyebrow { font-size:30px; }
+      .pane { position:absolute; display:flex; flex-direction:column; gap:18px; }
+      .card { position:absolute; padding:44px 52px; }
+      .big { font-weight:800; font-size:200px; line-height:0.9; letter-spacing:-0.05em; }
+      .mid-t { font-size:52px; font-weight:800; line-height:1.12; }
+      .txt { font-size:36px; line-height:1.3; color:var(--ink-dim); }
+      .txt b { color:var(--ink); }
+      .india-tag { display:inline-flex; align-items:center; gap:14px; font-size:30px; font-weight:800; letter-spacing:0.14em; padding:8px 22px 8px 12px; border-radius:999px; background:#1a1408; border:2px solid var(--india); color:#ffd2a3; }
+      .india-tag i { display:inline-flex; flex-direction:column; width:30px; height:30px; border-radius:50%; overflow:hidden; }
+      .india-tag i b { flex:1; } .india-tag i b:nth-child(1){background:var(--india);} .india-tag i b:nth-child(2){background:#fff;} .india-tag i b:nth-child(3){background:var(--india-g);}
+      .india-card { border:2px solid rgba(255,153,51,0.55); border-left:10px solid var(--india); }
+      .checked { display:inline-block; font-size:30px; font-weight:700; color:var(--ink); padding:6px 18px; border-radius:10px; background:rgba(255,255,255,0.08); border:1px dashed var(--glass-edge); }
+      .warn-card { border:3px solid var(--warn); background:rgba(255,179,92,0.08); }
+      .warn-head { font-size:30px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:var(--warn); }
+      .bad-card { border:3px solid var(--bad); background:rgba(255,107,122,0.07); }
+      /* S1 update timeline */
+      .rail { position:absolute; left:130px; width:1660px; top:600px; height:10px; border-radius:5px; background:rgba(255,255,255,0.12); }
+      .rail-fill { position:absolute; inset:0; border-radius:5px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); transform-origin:left center; }
+      .tick { position:absolute; top:578px; width:160px; margin-left:-80px; display:flex; flex-direction:column; align-items:center; gap:14px; }
+      .tick .d { width:34px; height:34px; border-radius:50%; background:var(--bg); border:5px solid var(--accent); }
+      .tick span { font-size:34px; font-weight:700; color:var(--ink-dim); }
+      .tick.end .d { background:var(--accent-2); border-color:var(--accent-2); width:44px; height:44px; margin-top:-5px; }
+      .tick.end span { color:var(--ink); font-size:40px; font-weight:800; }
+      /* dots */
+      .dots { display:grid; grid-template-columns:repeat(13, 80px); gap:22px; }
+      .dot2 { width:80px; height:80px; border-radius:50%; }
+      .dot2.g { background:var(--accent); } .dot2.n { background:transparent; border:4px solid #5b6478; }
+      .bar { display:flex; gap:10px; }
+      .bar > div { width:118px; height:110px; border-radius:16px; }
+      .bar .r { background:var(--bad); } .bar .n { background:transparent; border:4px solid #5b6478; }
+      /* table */
+      .tbl { position:absolute; border-collapse:separate; border-spacing:0 16px; }
+      .tbl td { font-size:44px; font-weight:700; padding:22px 40px; background:rgba(255,255,255,0.05); }
+      .tbl td:first-child { border-radius:18px 0 0 18px; } .tbl td:last-child { border-radius:0 18px 18px 0; text-align:right; }
+      .tbl tr.in td { background:rgba(255,153,51,0.12); border-top:2px solid var(--india); border-bottom:2px solid var(--india); }
+      .tbl tr.in td:first-child { border-left:2px solid var(--india); } .tbl tr.in td:last-child { border-right:2px solid var(--india); }
+      /* icons */
+      .icon-tile { position:absolute; top:200px; width:500px; height:520px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:22px; padding:44px 30px; }
+      .icon-tile svg { width:150px; height:150px; }
+      .icon-tile .t { font-size:42px; font-weight:800; line-height:1.15; }
+      .ok { font-size:34px; font-weight:800; color:var(--accent); }
+      .op { display:inline-block; font-size:34px; font-weight:700; padding:12px 30px; border-radius:16px; border:3px dashed var(--warn); color:var(--ink); }
+      /* map */
+      .map { position:absolute; left:130px; top:60px; width:820px; height:700px; border-radius:32px; overflow:hidden;
+        background-color:#0b111b; background-image:radial-gradient(rgba(255,255,255,0.16) 2px, transparent 2.5px); background-size:34px 34px; border:2px solid rgba(255,153,51,0.55); }
+      .pin { position:absolute; display:flex; align-items:center; gap:16px; }
+      .pin .p { width:38px; height:38px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:var(--india); box-shadow:0 0 0 8px rgba(255,153,51,0.25); }
+      .pin span { font-size:38px; font-weight:800; }
+      .stat { font-size:96px; font-weight:800; letter-spacing:-0.03em; line-height:1; }
+      .pimg { position:absolute; object-fit:contain; filter:drop-shadow(0 40px 60px rgba(0,0,0,0.6)); }
     </style>
   </head>
   <body>
@@ -19,7 +71,164 @@
       <div class="bg"></div>
       <div class="bg-vignette"></div>
 
-      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <!-- S1 7 years 0-7.54 -->
+      <section class="clip" id="s1" data-start="0" data-duration="7.54" data-track-index="1"><div class="S">
+        <div class="model-badge a"><span class="dot"></span>All Pixel 11 models</div>
+        <div class="pane a" style="left:130px;top:80px;width:1100px;">
+          <span class="tag-claim">Google claims</span>
+          <div class="big good">7 years</div>
+          <div class="mid-t">of OS + security updates</div>
+        </div>
+        <img class="pimg a" src="media/p11_family.png" alt="Pixel 11 family" style="left:1230px;top:90px;width:560px;height:440px;">
+        <div class="rail"><div class="rail-fill" id="s1fill"></div></div>
+        <div class="tick yr" style="left:130.0px;"><div class="d"></div><span>2026</span></div><div class="tick yr" style="left:367.1428571428571px;"><div class="d"></div><span>2027</span></div><div class="tick yr" style="left:604.2857142857142px;"><div class="d"></div><span>2028</span></div><div class="tick yr" style="left:841.4285714285714px;"><div class="d"></div><span>2029</span></div><div class="tick yr" style="left:1078.5714285714284px;"><div class="d"></div><span>2030</span></div><div class="tick yr" style="left:1315.7142857142858px;"><div class="d"></div><span>2031</span></div><div class="tick yr" style="left:1552.857142857143px;"><div class="d"></div><span>2032</span></div><div class="tick yr end" style="left:1790.0px;"><div class="d"></div><span>2033</span></div>
+        <div class="pane" id="s1clean" style="left:130px;top:710px;"><span class="chip good" style="font-size:32px;">Reviewers: the cleanest Android</span></div>
+      </div></section>
+
+      <!-- S2 Rambler dots 7.54-13.575 -->
+      <section class="clip" id="s2" data-start="7.54" data-duration="6.035" data-track-index="1"><div class="S">
+        <div class="model-badge a"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="pane a" style="left:130px;top:110px;">
+          <div class="eyebrow">Standout new feature</div>
+          <div class="h2">Rambler voice typing</div>
+        </div>
+        <div class="dots" style="position:absolute;left:130px;top:400px;"><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 g"></div><div class="dot2 n"></div><div class="dot2 n"></div></div>
+        <div class="pane a" style="left:130px;top:560px;"><div class="mid-t"><span class="good">11 of 13</span> Pro outlets praised it</div></div>
+      </div></section>
+
+      <!-- S3 Rambler in India 13.575-20.068 -->
+      <section class="clip" id="s3" data-start="13.575" data-duration="6.493" data-track-index="1"><div class="S">
+        <div class="card glass india-card a" style="left:130px;top:80px;width:1180px;">
+          <div style="display:flex;gap:24px;align-items:center;margin-bottom:30px;"><span class="india-tag"><i><b></b><b></b><b></b></i>INDIA</span><span class="tag-claim">Google says</span></div>
+          <div class="mid-t" style="margin-bottom:28px;">Rambler in India</div>
+          <div class="txt s3l" style="margin-bottom:18px;"><b>Hindi</b> + other supported Indian languages</div>
+          <div class="txt s3l2">Mixed-language: switch <b>mid-sentence</b></div>
+        </div>
+        <div class="card glass a" style="left:1370px;top:150px;width:420px;text-align:center;">
+          <div style="font-size:120px;font-weight:800;line-height:1.1;color:#ffd2a3;">अ</div>
+          <div style="font-size:60px;font-weight:800;line-height:1.1;margin-top:10px;">+ A</div>
+          <div class="txt" style="margin-top:16px;">in one sentence</div>
+        </div>
+      </div></section>
+
+      <!-- S4 Proactive 20.068-27.995 -->
+      <section class="clip" id="s4" data-start="20.068" data-duration="7.927" data-track-index="1"><div class="S">
+        <div class="model-badge a"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="pane a" style="left:130px;top:100px;">
+          <div class="eyebrow" style="color:var(--bad);">Weaker</div>
+          <div class="h2">Proactive Assistance</div>
+        </div>
+        <div class="bar" style="position:absolute;left:130px;top:320px;"><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="r"></div><div class="n"></div><div class="n"></div><div class="n"></div><div class="n"></div><div class="n"></div></div>
+        <div class="pane a" style="left:130px;top:460px;"><div class="mid-t"><span class="bad">6 of 11</span> Pro outlets: rarely shows up</div></div>
+        <div class="card glass india-card" id="s4india" style="left:130px;top:590px;padding:22px 34px;display:flex;gap:28px;align-items:center;">
+          <span class="india-tag"><i><b></b><b></b><b></b></i>INDIA</span><span style="font-size:40px;font-weight:800;">English only in India</span><span class="checked">Checked 5 Oct 2026</span>
+        </div>
+      </div></section>
+
+      <!-- S5 availability table 27.995-33.207 -->
+      <section class="clip" id="s5" data-start="27.995" data-duration="5.212" data-track-index="1"><div class="S">
+        <div class="pane a" style="left:130px;top:70px;">
+          <div class="eyebrow">Availability</div>
+          <div class="h2">Gemini tasks inside apps</div>
+        </div>
+        <span class="checked a" style="position:absolute;right:130px;top:90px;">Checked 5 Oct 2026</span>
+        <table class="tbl" style="left:130px;top:300px;width:1100px;">
+          <tr class="row"><td>United States</td><td class="good">✓ Available</td></tr>
+          <tr class="row"><td>South Korea</td><td class="good">✓ Available</td></tr>
+          <tr class="row in"><td>India</td><td class="bad">✗ Not available</td></tr>
+        </table>
+        <div class="pane a" style="left:1320px;top:340px;width:470px;"><span class="india-tag"><i><b></b><b></b><b></b></i>INDIA</span><div class="txt">India gets Rambler and Proactive Assistance, not this.</div></div>
+      </div></section>
+
+      <!-- S6 icon row 33.207-41.736 -->
+      <section class="clip" id="s6" data-start="33.207" data-duration="8.529" data-track-index="1"><div class="S">
+        <div class="model-badge a"><span class="dot"></span>All Pixel 11 models</div>
+        <div class="pane a" style="left:130px;top:60px;"><div class="eyebrow">Daily use</div><div class="mid-t">What reviewers liked</div></div>
+        <div class="icon-tile glass" id="ic1" style="left:130px;">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#5ee1c2" stroke-width="5" stroke-linecap="round"><path d="M30 70c0-25 6-42 20-42s20 17 20 42"/><path d="M40 80c0-20 2-38 10-38s10 18 10 38"/><path d="M50 56v30"/><path d="M20 55c0-28 12-45 30-45s30 17 30 45"/></svg>
+          <div class="t">Ultrasonic fingerprint</div><div class="ok">✓ Fast, reliable</div><div class="src" style="font-size:30px;">GSMArena</div>
+        </div>
+        <div class="icon-tile glass" id="ic2" style="left:710px;">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#5ee1c2" stroke-width="5" stroke-linecap="round"><path d="M14 30V16h14M72 16h14v14M86 70v14H72M28 84H14V70"/><circle cx="38" cy="42" r="3" fill="#5ee1c2"/><circle cx="62" cy="42" r="3" fill="#5ee1c2"/><path d="M36 62c8 8 20 8 28 0"/></svg>
+          <div class="t">Face unlock for banking apps</div><div class="ok">✓ Works for payments</div><div class="src" style="font-size:30px;">Android Authority</div>
+        </div>
+        <div class="icon-tile glass" id="ic3" style="left:1290px;">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#9aa8ff" stroke-width="5" stroke-linejoin="round"><path d="M28 12h32l16 16v60H28z"/><rect x="40" y="46" width="24" height="28" rx="3"/></svg>
+          <div class="t">Nano SIM + eSIM</div><div class="txt">Every model</div>
+        </div>
+      </div></section>
+
+      <!-- S7 modem not examined 41.736-49.52 -->
+      <section class="clip" id="s7" data-start="41.736" data-duration="7.784" data-track-index="1"><div class="S">
+        <div class="card glass a" style="left:130px;top:120px;width:700px;">
+          <div class="eyebrow" style="margin-bottom:26px;">New modem · US tests</div>
+          <div class="mid-t" style="margin-bottom:26px;">Did well in US tests</div>
+          <div class="txt" style="margin-bottom:14px;">Holds 5G better than Pixel 10</div>
+          <div class="txt">Downloads faster</div>
+        </div>
+        <div class="card warn-card" id="s7warn" style="left:890px;top:120px;width:900px;border-radius:32px;">
+          <div style="display:flex;gap:22px;align-items:center;margin-bottom:28px;"><span class="india-tag"><i><b></b><b></b><b></b></i>INDIA</span><span class="warn-head">⚠ Not examined in India</span></div>
+          <div class="mid-t" style="margin-bottom:40px;">Modem tested on US networks only</div>
+          <div style="display:flex;gap:22px;flex-wrap:wrap;"><span class="op">Jio: not tested</span><span class="op">Airtel: not tested</span><span class="op">Vi: not tested</span></div>
+        </div>
+      </div></section>
+
+      <!-- S8 bug card 49.52-56.731 -->
+      <section class="clip" id="s8" data-start="49.52" data-duration="7.211" data-track-index="1"><div class="S">
+        <div class="card bad-card a" style="left:130px;top:70px;width:1660px;height:300px;border-radius:32px;">
+          <div style="display:flex;gap:24px;align-items:center;margin-bottom:24px;"><span class="eyebrow" style="color:var(--bad);">Known bug</span><span class="checked">Checked 5 Oct 2026</span></div>
+          <div class="mid-t">Wi-Fi standby drain with some routers</div>
+          <div class="txt" style="margin-top:14px;">Not fixed as of 5 Oct · Google hasn't confirmed it</div>
+        </div>
+        <div class="card glass" id="s8a" style="left:130px;top:410px;width:800px;height:330px;">
+          <span class="tag-measured">Measured by Android Authority</span>
+          <div class="stat bad" style="margin-top:22px;">2.5–3%/h</div>
+          <div class="txt" style="margin-top:12px;">Idle drain on affected routers</div>
+        </div>
+        <div class="card glass" id="s8b" style="left:990px;top:410px;width:800px;height:330px;border:2px solid var(--accent);">
+          <span class="eyebrow">Fix: router set to Wi-Fi 5</span>
+          <div class="stat good" style="margin-top:22px;">about 1%/h</div>
+          <div class="txt" style="margin-top:12px;">Same Android Authority test</div>
+        </div>
+      </div></section>
+
+      <!-- S9 service map 56.731-64.151 -->
+      <section class="clip" id="s9" data-start="56.731" data-duration="7.42" data-track-index="1"><div class="S">
+        <div class="map a">
+          <div style="position:absolute;left:36px;top:30px;"><span class="india-tag"><i><b></b><b></b><b></b></i>INDIA</span></div>
+          <div class="pin" id="pin1" style="left:300px;top:150px;"><div class="p"></div><span>Delhi</span></div>
+          <div class="pin" id="pin2" style="left:120px;top:360px;"><div class="p"></div><span>Mumbai</span></div>
+          <div class="pin" id="pin3" style="left:340px;top:430px;"><div class="p"></div><span>Hyderabad</span></div>
+          <div class="pin" id="pin4" style="left:290px;top:570px;"><div class="p"></div><span>Bangalore</span></div>
+          <div class="src" style="position:absolute;right:30px;top:40px;font-size:30px;">Schematic, not to scale</div>
+        </div>
+        <div class="pane a" style="left:1020px;top:70px;width:770px;gap:10px;">
+          <div class="eyebrow" style="color:var(--india);">Service in India</div>
+          <div class="txt">4 Google Exclusive centres, open 7 days</div>
+        </div>
+        <div class="card glass s9s" style="left:1020px;top:270px;width:770px;padding:34px 44px;"><div class="stat">1-year</div><div class="txt" style="margin-top:14px;">warranty</div></div>
+        <div class="card glass s9s" style="left:1020px;top:520px;width:770px;padding:34px 44px;"><div class="stat">20+</div><div class="txt" style="margin-top:14px;">walk-in centres in India</div></div>
+      </div></section>
+
+      <!-- S10 offer 64.151-72.981 -->
+      <section class="clip" id="s10" data-start="64.151" data-duration="8.83" data-track-index="1"><div class="S">
+        <div class="pane a" style="left:130px;top:50px;"><div style="display:flex;gap:22px;align-items:center;"><span class="india-tag"><i><b></b><b></b><b></b></i>INDIA</span><span class="eyebrow">Launch offer · Google Store India</span><span class="checked">Checked 5 Oct 2026</span></div></div>
+        <div class="card glass a" style="left:130px;top:150px;width:1020px;height:590px;border:2px solid var(--accent);">
+          <div class="eyebrow" style="margin-bottom:18px;">Pixel 11 Pro · Pro XL · Pro Fold</div>
+          <div class="stat good">6 months</div>
+          <div class="mid-t" style="margin-top:8px;">Google AI Pro</div>
+          <div style="margin-top:18px;"><span class="tag-claim">Google's value: ₹11,700</span></div>
+          <div class="txt" style="margin-top:14px;">+ 3 months YouTube Premium</div>
+          <img class="pimg" src="media/pro_family.png" alt="Pixel 11 Pro family" style="right:30px;bottom:30px;width:330px;height:260px;">
+        </div>
+        <div class="card glass" id="s10b" style="left:1210px;top:150px;width:580px;height:590px;">
+          <div class="eyebrow" style="margin-bottom:18px;color:var(--ink-dim);">Pixel 11 (base)</div>
+          <div class="mid-t bad">No AI Pro</div>
+          <div class="txt" style="margin-top:18px;">3 months YouTube Premium only</div>
+          <img class="pimg" src="media/p11_frost.png" alt="Pixel 11 in Frost" style="left:150px;bottom:30px;width:280px;height:250px;">
+        </div>
+      </div></section>
 
       <div id="hostbar"></div>
       <audio id="p6-voice" src="voice.wav" data-start="0" data-duration="72.981" data-track-index="10" data-volume="1"></audio>
@@ -29,7 +238,38 @@
       const tl = gsap.timeline({ paused: true });
       HF_hostbar(tl, window.HF_TIMINGS);
 
-      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+      const SC = [["s1",0,7.54],["s2",7.54,13.575],["s3",13.575,20.068],["s4",20.068,27.995],["s5",27.995,33.207],
+        ["s6",33.207,41.736],["s7",41.736,49.52],["s8",49.52,56.731],["s9",56.731,64.151],["s10",64.151,72.981]];
+      const IN = (sel, t, extra) => tl.fromTo(sel, Object.assign({ opacity: 0, y: 26 }, extra && extra.from), Object.assign({ opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, extra && extra.to), t);
+      SC.forEach(([id, a, b]) => {
+        document.querySelectorAll("#" + id + " .a").forEach((el, i) => IN(el, a + 0.1 + i * 0.12));
+        if (id !== "s10") tl.to("#" + id + " .S", { opacity: 0, duration: 0.2, ease: "power1.in" }, b - 0.2);
+      });
+      // S1 timeline rail
+      tl.fromTo("#s1fill", { scaleX: 0 }, { scaleX: 1, duration: 2.4, ease: "power2.inOut" }, 0.6);
+      tl.fromTo("#s1 .yr", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.3, ease: "power2.out" }, 0.6);
+      IN("#s1clean", 5.0);
+      // S2 dots
+      tl.fromTo("#s2 .dot2", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, stagger: 0.08, ease: "back.out(2)" }, 9.0);
+      // S3 language lines
+      IN("#s3 .s3l", 15.6); IN("#s3 .s3l2", 17.6);
+      // S4 bar + India chip
+      tl.fromTo("#s4 .bar > div", { opacity: 0, scaleY: 0.3 }, { opacity: 1, scaleY: 1, duration: 0.3, stagger: 0.08, ease: "power2.out" }, 21.0);
+      IN("#s4india", 24.6, { from: { x: -40, y: 0 }, to: { x: 0 } });
+      // S5 table rows
+      tl.fromTo("#s5 .row", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.35, ease: "power3.out" }, 28.6);
+      // S6 icons
+      IN("#ic1", 34.4); IN("#ic2", 37.6); IN("#ic3", 39.6);
+      // S7 warn card
+      IN("#s7warn", 45.0, { from: { scale: 0.96, y: 0 }, to: { scale: 1 } });
+      tl.fromTo("#s7 .op", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.3 }, 46.9);
+      // S8 numbers fade in at final values
+      IN("#s8a", 51.6); IN("#s8b", 53.8);
+      // S9 pins, timed to the city names
+      [59.6, 60.5, 61.3, 62.6].forEach((t, i) => tl.fromTo("#pin" + (i + 1), { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "bounce.out" }, t));
+      tl.fromTo("#s9 .s9s", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.45, stagger: 1.0, ease: "power3.out" }, 57.6);
+      // S10 base model panel
+      IN("#s10b", 69.6);
 
       window.__timelines["p6"] = tl;
     </script>

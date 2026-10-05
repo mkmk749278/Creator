@@ -12,6 +12,64 @@
       @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
       @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
       /* Part-specific styles go here. */
+      .eyebrow { font-size: 30px; }
+      .model-badge { font-size: 30px; z-index: 5; }
+      .tag-editorial, .tag-claim, .tag-measured { font-size: 30px; }
+      .ico { width: 34px; height: 34px; flex: none; }
+      /* S1 cold open */
+      #s1 .scene { align-items: center; }
+      #s1 .title { position: relative; z-index: 2; width: 800px; display: flex; flex-direction: column; gap: 28px; }
+      #s1 .h1 { font-size: 100px; }
+      #s1 .h1 .q { color: var(--accent); }
+      #s1 .hero { position: absolute; right: 30px; top: 110px; width: 960px; height: 726px; object-fit: contain; }
+      /* Verdict cards */
+      .verdict .scene { align-items: center; gap: 70px; }
+      .vcard { position: relative; z-index: 2; padding: 56px 60px; display: flex; flex-direction: column; gap: 26px; width: 980px; }
+      .vcard .h2 { font-size: 76px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 24px; }
+      .vcard .h2 .who { color: var(--accent); }
+      .vcard .arrow { width: 64px; height: 64px; color: var(--ink-dim); }
+      .pills { display: flex; gap: 18px; flex-wrap: wrap; }
+      .pill { display: inline-flex; align-items: center; gap: 12px; font-size: 34px; font-weight: 700; padding: 14px 28px; border-radius: 999px; border: 2px solid currentColor; background: rgba(0,0,0,0.25); }
+      .pill.ok { color: var(--accent); } .pill.no { color: var(--bad); }
+      .pill span { color: var(--ink); }
+      .vimg { flex: 1; height: 720px; object-fit: contain; min-width: 0; }
+      #s3 .scene { flex-direction: row-reverse; }
+      #s3 .vimg { height: 640px; }
+      #s4 .vimg { height: 760px; }
+      /* S5 method */
+      #s5 .scene { flex-direction: column; justify-content: center; align-items: center; gap: 40px; text-align: center; }
+      .bignums { display: flex; align-items: baseline; gap: 60px; }
+      .bignum { display: flex; flex-direction: column; align-items: center; }
+      .bignum .n { font-size: 220px; font-weight: 800; line-height: 0.95; letter-spacing: -0.04em; }
+      .bignum .l { font-size: 44px; font-weight: 600; color: var(--ink-dim); }
+      .bignums .sep { width: 18px; height: 18px; border-radius: 50%; background: var(--accent); align-self: center; }
+      .method-note { display: flex; flex-direction: column; gap: 10px; font-size: 36px; color: var(--ink); }
+      .method-note .strong { font-weight: 800; color: var(--warn); }
+      /* S6 denominator */
+      #s6 .scene { flex-direction: column; justify-content: center; gap: 38px; }
+      #s6 .h2 { font-size: 96px; }
+      #s6 .h2 .of { color: var(--ink-dim); }
+      .dots { display: flex; gap: 26px; }
+      .dot { width: 72px; height: 72px; border-radius: 50%; border: 3px solid rgba(255,255,255,0.28); background: transparent; }
+      .dot .fill { width: 100%; height: 100%; border-radius: 50%; background: var(--accent); opacity: 0; }
+      .denom-cap { font-size: 38px; font-weight: 600; }
+      .denom-note { font-size: 32px; color: var(--ink-dim); }
+      /* S7 price table */
+      #s7 .scene { flex-direction: column; gap: 26px; padding-top: 70px; }
+      #s7 .h2 { font-size: 64px; }
+      .ptable { padding: 18px 40px; width: 1660px; }
+      .prow { position: relative; display: grid; grid-template-columns: 560px 520px 520px; align-items: center; height: 104px; border-bottom: 1px solid var(--glass-edge); }
+      .prow:last-child { border-bottom: 0; }
+      .prow.head { height: 76px; }
+      .prow.head > div { font-size: 30px; font-weight: 700; color: var(--ink-dim); letter-spacing: 0.04em; }
+      .prow .m { font-size: 40px; font-weight: 800; }
+      .prow .m small { font-size: 30px; font-weight: 600; color: var(--ink-dim); margin-left: 12px; }
+      .prow .v { font-size: 48px; font-weight: 800; }
+      .prow .fk { color: var(--accent); }
+      .prow.head .fk { color: var(--accent); }
+      .rowhl { position: absolute; left: -20px; right: -20px; top: 8px; bottom: 8px; border-radius: 18px; background: rgba(94,225,194,0.10); opacity: 0; }
+      .pfoot { display: flex; justify-content: space-between; width: 1660px; font-size: 30px; color: var(--ink-dim); }
+      .pfoot .warn { color: var(--warn); font-weight: 700; }
     </style>
   </head>
   <body>
@@ -19,7 +77,89 @@
       <div class="bg"></div>
       <div class="bg-vignette"></div>
 
-      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+      <!-- SCENES -->
+      <section id="s1" class="clip" data-start="0" data-duration="5.56" data-track-index="1">
+        <img class="hero phone-img" src="media/p11_family.png" alt="" />
+        <div class="scene">
+          <div class="title">
+            <div class="eyebrow">Consensus review · India</div>
+            <h1 class="h1">Pixel 11 lineup: <span class="q">should you buy one?</span></h1>
+          </div>
+        </div>
+      </section>
+
+      <section id="s2" class="clip verdict" data-start="5.56" data-duration="6.99" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11</div>
+        <div class="scene">
+          <div class="vcard glass">
+            <div class="eyebrow">Short answer · 1 of 3</div>
+            <h2 class="h2"><span>Most buyers</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h17M14 5l7 7-7 7"/></svg><span class="who">Pixel 11</span></h2>
+            <div class="pills"><div class="pill ok"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Camera</span></div><div class="pill ok"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Software</span></div><div class="pill no"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Heavy gaming</span></div></div>
+            <div class="tag-editorial">Our editorial verdict, from the reviews</div>
+          </div>
+          <img class="vimg phone-img" src="media/p11_frost.png" alt="" />
+        </div>
+      </section>
+
+      <section id="s3" class="clip verdict" data-start="12.55" data-duration="5.68" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro + Pro XL</div>
+        <div class="scene">
+          <div class="vcard glass">
+            <div class="eyebrow">Short answer · 2 of 3</div>
+            <h2 class="h2"><span>Camera-first</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h17M14 5l7 7-7 7"/></svg><span class="who">11 Pro / Pro XL</span></h2>
+            <div class="pills"><div class="pill ok"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Zoom</span></div><div class="pill ok"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Night</span></div><div class="pill no"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Price</span></div></div>
+            <div class="tag-editorial">Our editorial verdict, from the reviews</div>
+          </div>
+          <img class="vimg phone-img" src="media/pro_family.png" alt="" />
+        </div>
+      </section>
+
+      <section id="s4" class="clip verdict" data-start="18.23" data-duration="5.51" data-track-index="1">
+        <div class="model-badge"><span class="dot"></span>Pixel 11 Pro Fold</div>
+        <div class="scene">
+          <div class="vcard glass">
+            <div class="eyebrow">Short answer · 3 of 3</div>
+            <h2 class="h2"><span>Pro Fold</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h17M14 5l7 7-7 7"/></svg><span class="who">only if durability matters most</span></h2>
+            <div class="pills"><div class="pill ok"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span>IP68</span></div><div class="pill no"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Battery</span></div></div>
+            <div class="tag-editorial">Our editorial verdict, from the reviews</div>
+          </div>
+          <img class="vimg phone-img" src="media/fold_obsidian.png" alt="" />
+        </div>
+      </section>
+      <section id="s5" class="clip" data-start="23.74" data-duration="6.83" data-track-index="1">
+        <div class="scene">
+          <div class="eyebrow">How we made this</div>
+          <div class="bignums">
+            <div class="bignum b1"><div class="n num">35</div><div class="l">reviews</div></div>
+            <div class="sep"></div>
+            <div class="bignum b2"><div class="n num">20</div><div class="l">outlets</div></div>
+          </div>
+          <div class="method-note">
+            <div class="strong">We did not test these phones.</div>
+            <div>Every claim links to a review in the description.</div>
+          </div>
+        </div>
+      </section>
+      <section id="s6" class="clip" data-start="30.57" data-duration="6.2" data-track-index="1">
+        <div class="scene">
+          <div class="eyebrow">Example · how we count</div>
+          <h2 class="h2 num">13 <span class="of">of</span> 15 outlets</h2>
+          <div class="dots"><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div><div class="dot"><div class="fill"></div></div></div>
+          <div class="denom-cap">Only outlets that covered the topic are counted.</div>
+          <div class="denom-note">Tom's Guide, TechRadar &amp; Android Central share a parent company.</div>
+        </div>
+      </section>
+      <section id="s7" class="clip" data-start="36.77" data-duration="23.876" data-track-index="1">
+        <div class="scene">
+          <div class="eyebrow">India prices</div>
+          <h2 class="h2">What each Pixel 11 costs</h2>
+          <div class="ptable glass">
+            <div class="prow head"><div>Model</div><div>Google Store India list</div><div class="fk">Flipkart, 5 Oct 2026</div></div>
+            <div class="prow r0"><div class="rowhl"></div><div class="m">Pixel 11<small>256GB</small></div><div class="v num gs">₹89,999</div><div class="v num fk">₹77,999</div></div><div class="prow r1"><div class="rowhl"></div><div class="m">Pixel 11 Pro<small>256GB</small></div><div class="v num gs">₹1,19,999</div><div class="v num fk">₹1,09,999</div></div><div class="prow r2"><div class="rowhl"></div><div class="m">Pixel 11 Pro XL<small>256GB</small></div><div class="v num gs">₹1,34,999</div><div class="v num fk">₹1,24,999</div></div><div class="prow r3"><div class="rowhl"></div><div class="m">Pixel 11 Pro Fold<small>512GB only</small></div><div class="v num gs">₹1,86,999</div><div class="v num fk">₹1,76,999</div></div>
+          </div>
+          <div class="pfoot"><div class="warn">Prices change daily, check before buying.</div><div class="fksrc">Flipkart checked 5 Oct 2026</div></div>
+        </div>
+      </section>
 
       <div id="hostbar"></div>
       <audio id="p1-voice" src="voice.wav" data-start="0" data-duration="60.646" data-track-index="10" data-volume="1"></audio>
@@ -29,7 +169,56 @@
       const tl = gsap.timeline({ paused: true });
       HF_hostbar(tl, window.HF_TIMINGS);
 
-      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+      // Scene tweens (absolute times).
+      const IN = (sel, t, from, d) => tl.fromTo(sel, Object.assign({ opacity: 0 }, from || {}), { opacity: 1, x: 0, y: 0, scale: 1, duration: d || 0.6, ease: "power3.out", immediateRender: true }, t);
+      const OUT = (sel, t) => tl.to(sel, { opacity: 0, duration: 0.3, ease: "power1.in" }, t);
+      // S1 cold open: slow parallax on the family shot.
+      tl.fromTo("#s1 .hero", { opacity: 0, scale: 1.08, x: 60 }, { opacity: 1, scale: 1, x: 0, duration: 1.0, ease: "power2.out" }, 0);
+      tl.to("#s1 .hero", { x: -30, scale: 0.98, duration: 4.2, ease: "none" }, 1.0);
+      IN("#s1 .eyebrow", 0.3, { y: 20 });
+      IN("#s1 .h1", 0.5, { y: 40 }, 0.8);
+      OUT("#s1 .scene, #s1 .hero", 5.26);
+      // Verdict scenes
+      [["#s2", 5.56, 12.55], ["#s3", 12.55, 18.23], ["#s4", 18.23, 23.74]].forEach(([id, a, b], i) => {
+        const dir = i === 1 ? -1 : 1;
+        IN(id + " .model-badge", a + 0.05, { y: -16 }, 0.4);
+        IN(id + " .vcard", a + 0.1, { x: -60 * dir });
+        IN(id + " .vimg", a + 0.2, { x: 80 * dir, scale: 0.94 }, 0.8);
+        tl.to(id + " .vimg", { y: -16, duration: b - a - 1.2, ease: "sine.inOut" }, a + 1.0);
+        tl.fromTo(id + " .pill", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.35, ease: "back.out(1.6)", immediateRender: true }, a + 0.9);
+        IN(id + " .tag-editorial", a + 1.9, {}, 0.4);
+        OUT(id + " .scene, " + id + " .model-badge", b - 0.3);
+      });
+      // S5 method: final values fade in, never counted.
+      IN("#s5 .eyebrow", 23.8, { y: 16 }, 0.4);
+      IN("#s5 .b1", 24.0, { scale: 0.9 }, 0.5);
+      IN("#s5 .sep", 24.3, { scale: 0 }, 0.3);
+      IN("#s5 .b2", 24.5, { scale: 0.9 }, 0.5);
+      IN("#s5 .method-note", 25.3, { y: 20 });
+      OUT("#s5 .scene", 30.27);
+      // S6 denominator dots
+      IN("#s6 .eyebrow", 30.62, { y: 16 }, 0.4);
+      IN("#s6 .h2", 30.75, { y: 30 });
+      IN("#s6 .dots", 31.0, { y: 20 }, 0.4);
+      tl.fromTo("#s6 .dot:nth-child(-n+13) .fill", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, stagger: 0.09, ease: "back.out(2)", immediateRender: true }, 31.5);
+      IN("#s6 .denom-cap", 33.0, { y: 20 }, 0.5);
+      IN("#s6 .denom-note", 34.3, { y: 20 }, 0.5);
+      OUT("#s6 .scene", 36.47);
+      // S7 price table: values fade in at final value; Flipkart column added later.
+      IN("#s7 .eyebrow", 36.82, { y: 16 }, 0.4);
+      IN("#s7 .h2", 36.95, { y: 24 });
+      IN("#s7 .ptable", 37.2, { y: 30 });
+      [[37.9, 0], [41.8, 1], [45.6, 2], [49.7, 3]].forEach(([t, k]) => {
+        const r = "#s7 .r" + k;
+        IN(r + " .m", t, { x: -24 }, 0.4);
+        IN(r + " .gs", t + 0.15, {}, 0.45);
+        tl.fromTo(r + " .rowhl", { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: true }, t);
+        tl.to(r + " .rowhl", { opacity: 0, duration: 0.4 }, k === 3 ? 54.9 : t + 3.6);
+      });
+      IN("#s7 .head .fk", 55.2, { y: -14 }, 0.4);
+      tl.fromTo("#s7 .prow:not(.head) .fk", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.25, ease: "power3.out", immediateRender: true }, 55.5);
+      IN("#s7 .fksrc", 56.6, {}, 0.4);
+      IN("#s7 .pfoot .warn", 56.6, { y: 16 }, 0.5);
 
       window.__timelines["p1"] = tl;
     </script>
