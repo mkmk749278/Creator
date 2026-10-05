@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p2</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+
+      .col { display: flex; flex-direction: column; justify-content: center; }
+      .center { align-items: center; justify-content: center; text-align: center; }
+      .label-xl { font-weight: 800; font-size: 44px; letter-spacing: -0.01em; }
+      /* S1 chip + claims */
+      .chip-col { width: 700px; flex: none; align-items: center; gap: 18px; }
+      .chip-stage { position: relative; width: 640px; height: 470px; display: flex; align-items: center; justify-content: center; }
+      .chip-halo { position: absolute; left: 20px; top: 0; width: 600px; height: 470px; border-radius: 50%;
+        background: radial-gradient(closest-side, rgba(94,225,194,0.32), rgba(122,140,255,0.12) 55%, transparent 100%); }
+      .chip-img { position: relative; width: 560px; height: auto; display: block; filter: drop-shadow(0 40px 50px rgba(0,0,0,0.6)); }
+      .claims { flex: 1; padding: 54px 60px; gap: 40px; margin-left: 60px; }
+      .claim .row { display: flex; align-items: baseline; gap: 22px; margin-bottom: 14px; }
+      .claim .val { font-weight: 800; font-size: 64px; color: var(--accent); min-width: 190px; letter-spacing: -0.02em; }
+      .claim .desc { font-size: 34px; color: var(--ink); font-weight: 600; }
+      .track { height: 18px; border-radius: 9px; background: rgba(255,255,255,0.08); overflow: hidden; }
+      .fill { height: 100%; border-radius: 9px; background: linear-gradient(90deg, var(--accent-2), var(--accent)); transform-origin: 0 50%; }
+      /* S2/S3 design */
+      .design { align-items: center; gap: 80px; }
+      .ph-wrap { position: relative; flex: none; }
+      .frost { height: 730px; width: auto; }
+      .cam-box { position: absolute; left: 16px; top: 64px; width: 326px; height: 118px; border: 4px solid var(--accent); border-radius: 60px;
+        box-shadow: 0 0 0 8px rgba(94,225,194,0.18); }
+      .pointer { position: absolute; left: 342px; top: 121px; width: 360px; height: 4px; background: var(--accent); transform-origin: 0 50%; }
+      .pointer::after { content: ""; position: absolute; right: -10px; top: -8px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); }
+      .big-num { font-weight: 800; font-size: 200px; line-height: 0.9; letter-spacing: -0.05em; }
+      .profam { height: 640px; width: auto; }
+      .stat-tiles { gap: 28px; flex: 1; }
+      .tile { padding: 34px 44px; }
+      .tile .v { font-weight: 800; font-size: 96px; line-height: 1; letter-spacing: -0.03em; color: var(--accent); }
+      .tile .d { font-size: 34px; color: var(--ink); font-weight: 600; margin-top: 10px; }
+      /* S4 charging */
+      .charge { align-items: center; justify-content: center; gap: 60px; }
+      .ccard { width: 700px; height: 600px; padding: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 14px; }
+      .icon { position: relative; width: 220px; height: 220px; margin-bottom: 14px; }
+      .mag { position: absolute; border-radius: 50%; border: 6px solid var(--accent); }
+      .watt { font-weight: 800; font-size: 150px; line-height: 0.95; letter-spacing: -0.04em; }
+      .watt small { font-size: 80px; }
+      .cdesc { font-size: 36px; font-weight: 600; }
+      .ctag { font-size: 30px; color: var(--ink-dim); }
+      .pill { display: inline-block; font-size: 30px; font-weight: 600; padding: 10px 26px; border-radius: 999px; border: 2px solid currentColor; }
+      /* S5 HiLight card */
+      .card-frame { position: absolute; left: 260px; top: 40px; width: 1400px; height: 788px; border-radius: 36px; overflow: hidden;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.6); }
+      .card-frame img { position: absolute; left: 0; top: 0; width: 1400px; height: 788px; display: block; }
+      .hl-ring { position: absolute; border-radius: 80px; border: 10px solid currentColor; color: #ff2d8a; box-shadow: 0 0 40px currentColor, inset 0 0 30px currentColor; }
+      .hl-label { position: absolute; left: 28px; top: 28px; padding: 22px 36px; border-radius: 28px; background: rgba(7,9,13,0.88);
+        display: flex; align-items: center; gap: 22px; }
+      .hl-dot { width: 34px; height: 34px; border-radius: 50%; background: #ff2d8a; }
+      .hl-label .t { font-weight: 800; font-size: 60px; letter-spacing: -0.02em; }
+      .hl-label .s { font-size: 30px; color: var(--ink-dim); font-weight: 600; }
+      /* S6 fourteen */
+      .fourteen { align-items: center; gap: 70px; }
+      .f-left { position: relative; width: 600px; height: 600px; flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .f-ring { position: absolute; inset: 40px; border-radius: 50%; border: 12px solid var(--bad); }
+      .f-ring2 { position: absolute; inset: 0; border-radius: 50%; border: 4px solid var(--warn); }
+      .f-num { position: relative; font-weight: 800; font-size: 260px; line-height: 0.9; margin-top: 10px; letter-spacing: -0.06em; color: var(--bad); }
+      .f-sub { position: relative; text-align: center; font-size: 40px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; }
+      .f-right { flex: 1; position: relative; height: 640px; }
+      .outlets { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center; gap: 16px; }
+      .ol { font-size: 30px; font-weight: 600; padding: 12px 24px; border-radius: 999px; background: rgba(255,107,122,0.14); border: 1px solid rgba(255,107,122,0.55); }
+      .does { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+      .does .row { display: flex; gap: 20px; flex-wrap: wrap; }
+      .tag { font-size: 40px; font-weight: 800; padding: 18px 34px; border-radius: 24px; }
+      /* S7 quote */
+      .quote { width: 1400px; padding: 70px 90px; }
+      .qmark { font-weight: 800; font-size: 200px; line-height: 0.6; color: var(--bad); height: 90px; }
+      .qtext { font-weight: 800; font-size: 66px; line-height: 1.15; letter-spacing: -0.02em; }
+      .qtext em { font-style: normal; color: var(--bad); }
+      /* S8 features */
+      .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; width: 100%; margin-top: 40px; }
+      .ft { padding: 34px 38px; display: flex; flex-direction: column; gap: 10px; min-height: 236px; }
+      .ft .ic { width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; }
+      .ft .n { font-weight: 800; font-size: 46px; letter-spacing: -0.01em; }
+      .ft .d { font-size: 30px; color: var(--ink-dim); }
+      .ft.wide { grid-column: span 2; }
+      /* S9 seven */
+      .seven { align-items: center; justify-content: center; gap: 90px; }
+      .s-dial { position: relative; width: 560px; height: 560px; flex: none; }
+      .s-dial svg { position: absolute; inset: 0; }
+      .s-num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 320px; letter-spacing: -0.06em; color: var(--accent); }
+      /* S10 */
+      .recap { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1500px; margin-top: 44px; }
+      .rc { font-size: 34px; font-weight: 600; padding: 14px 30px; border-radius: 999px; background: rgba(94,225,194,0.10); border: 1px solid rgba(94,225,194,0.5); }
+      .rc.bad { background: rgba(255,107,122,0.10); border-color: rgba(255,107,122,0.55); text-decoration: line-through; }
+      .nextbar { width: 520px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transform-origin: 0 50%; margin-top: 36px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p2" data-start="0" data-width="1920" data-height="1080" data-duration="69.749">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+
+      <!-- S1: Tensor G6 + Google's claims (p2-01, p2-02) -->
+      <section id="s1" class="clip" data-start="0" data-duration="14.9" data-track-index="1">
+        <div class="scene" id="s1-scene" style="align-items:center">
+          <div class="col chip-col" id="s1-left">
+            <div class="chip-stage">
+              <div class="chip-halo" id="s1-halo"></div>
+              <img class="chip-img" id="s1-chip" src="media/tensor_g6.png" alt="Tensor G6 chip" />
+            </div>
+            <div class="eyebrow" id="s1-eb">First up: the chip</div>
+            <h1 class="h1" id="s1-title">Tensor G6</h1>
+          </div>
+          <div class="col glass claims" id="s1-panel">
+            <div class="eyebrow">Google's claims</div>
+            <div class="claim"><div class="row"><span class="val num" id="s1-v1">+0%</span><span class="desc">AI (TPU) compute</span></div><div class="track"><div class="fill" id="s1-b1"></div></div></div>
+            <div class="claim"><div class="row"><span class="val num" id="s1-v2">~0%</span><span class="desc">faster web browsing</span></div><div class="track"><div class="fill" id="s1-b2"></div></div></div>
+            <div class="claim"><div class="row"><span class="val num" id="s1-v3">0%</span><span class="desc">faster app launches</span></div><div class="track"><div class="fill" id="s1-b3"></div></div></div>
+            <div class="src">Google's figures, not independent tests</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S2: base model camera bar (p2-03 first half) -->
+      <section id="s2" class="clip" data-start="14.9" data-duration="4.8" data-track-index="1">
+        <div class="scene design" id="s2-scene" style="padding-left:200px">
+          <div class="ph-wrap" id="s2-ph">
+            <img class="phone-img frost" id="s2-img" src="media/p11_frost.png" alt="Pixel 11 in Frost" />
+            <div class="cam-box" id="s2-box"></div>
+            <div class="pointer" id="s2-ptr"></div>
+          </div>
+          <div class="col" id="s2-txt" style="gap:16px; padding-left:120px">
+            <div class="eyebrow">Pixel 11 design</div>
+            <div class="big-num num good" id="s2-num">0%</div>
+            <div class="h2">thinner camera bar</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S3: Pro screens (p2-03 second half) -->
+      <section id="s3" class="clip" data-start="19.7" data-duration="4.0" data-track-index="1">
+        <div class="scene design" id="s3-scene" style="gap:60px">
+          <div class="ph-wrap" id="s3-ph"><img class="phone-img profam" id="s3-img" src="media/pro_family.png" alt="Pixel 11 Pro family" /></div>
+          <div class="col stat-tiles">
+            <div class="eyebrow" id="s3-eb">Pro screens</div>
+            <div class="glass tile" id="s3-t1"><div class="v num">2×</div><div class="d">scratch resistance</div></div>
+            <div class="glass tile" id="s3-t2"><div class="v num" id="s3-nits">0</div><div class="d">nits peak brightness</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S4: charging (p2-04) -->
+      <section id="s4" class="clip" data-start="23.7" data-duration="9.7" data-track-index="1">
+        <div class="scene" style="flex-direction:column; align-items:center; gap:30px; padding-top:60px">
+          <div class="eyebrow" id="s4-eb">Charging</div>
+          <div class="charge" style="display:flex">
+            <div class="glass ccard" id="s4-c1">
+              <div class="icon" id="s4-mag">
+                <div class="mag" id="s4-m1" style="inset:0"></div>
+                <div class="mag" id="s4-m2" style="inset:30px; opacity:0.7"></div>
+                <div class="mag" id="s4-m3" style="inset:60px; opacity:0.45"></div>
+              </div>
+              <div class="watt num good"><span id="s4-w1">0</span><small>W</small></div>
+              <div class="cdesc">Qi2.2 magnetic wireless</div>
+              <div class="pill good" style="margin-top:6px">Pixelsnap</div>
+            </div>
+            <div class="glass ccard" id="s4-c2">
+              <div class="icon" id="s4-bolt"><svg width="220" height="220" viewBox="0 0 220 220"><circle cx="110" cy="110" r="100" fill="rgba(255,179,92,0.12)" stroke="#ffb35c" stroke-width="6"/><path d="M124 30 L62 124 H104 L92 190 L158 92 H114 Z" fill="#ffb35c"/></svg></div>
+              <div class="watt num mid"><span id="s4-w2">0</span><small>W</small></div>
+              <div class="cdesc">wired charging</div>
+              <div class="pill mid" style="margin-top:6px">Pro XL only</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S5: HiLight card (p2-05) -->
+      <section id="s5" class="clip" data-start="33.4" data-duration="4.4" data-track-index="1">
+        <div class="scene" id="s5-scene" style="padding:0">
+          <div class="card-frame" id="s5-frame">
+            <img id="s5-img" data-layout-allow-overflow src="media/pro_social.jpg" alt="Pixel 11 Pro in Canyon" />
+            <div class="hl-ring" id="s5-r1" style="left:470px; top:62px; width:346px; height:690px"></div>
+            <div class="hl-ring" id="s5-r2" style="left:440px; top:32px; width:406px; height:740px; border-width:4px; border-radius:100px; box-shadow:none"></div>
+            <div class="hl-label" id="s5-label">
+              <div class="hl-dot" id="s5-dot"></div>
+              <div><div class="t">HiLight</div><div class="s">Pro models only</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S6: Fourteen outlets (p2-06) -->
+      <section id="s6" class="clip" data-start="37.8" data-duration="9.7" data-track-index="1">
+        <div class="scene fourteen" id="s6-scene">
+          <div class="f-left" id="s6-left">
+            <div class="f-ring2" id="s6-r2"></div>
+            <div class="f-ring" id="s6-r1"></div>
+            <div class="f-num num" id="s6-num">0</div>
+            <div class="f-sub" id="s6-sub">outlets</div>
+          </div>
+          <div class="f-right">
+            <div class="outlets" id="s6-outlets">
+              <span class="ol">GSMArena</span><span class="ol">Trusted Reviews</span><span class="ol">TechCrunch</span>
+              <span class="ol">Android Central</span><span class="ol">TechRadar</span><span class="ol">Engadget</span>
+              <span class="ol">The Guardian</span><span class="ol">Gizmodo</span><span class="ol">Android Police</span>
+              <span class="ol">Tech Advisor</span><span class="ol">Stuff</span><span class="ol">Tom's Guide</span>
+              <span class="ol">Android Authority</span><span class="ol">Android Headlines</span>
+            </div>
+            <div class="does" id="s6-does">
+              <div class="h2" id="s6-h">HiLight does almost nothing <span class="bad">(yet)</span></div>
+              <div class="eyebrow" id="s6-eb" style="margin-top:10px">It lights up for</div>
+              <div class="row">
+                <span class="tag glass" id="s6-t1">Calls from favorites</span>
+                <span class="tag glass" id="s6-t2">Gemini</span>
+              </div>
+              <div class="row"><span class="tag bad" id="s6-t3" style="border:2px solid var(--bad)">…that's it.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S7: Stuff quote (p2-07) -->
+      <section id="s7" class="clip" data-start="47.5" data-duration="2.8" data-track-index="1">
+        <div class="scene center" style="align-items:center">
+          <div class="glass quote" id="s7-card">
+            <div class="qmark">“</div>
+            <div class="qtext" id="s7-q">Yes, that really is all it does and yes, it is <em>rather underwhelming.</em>”</div>
+            <div class="eyebrow" style="margin-top:34px; color:var(--ink)">Stuff <span class="src" style="font-size:26px; letter-spacing:0.1em">· Pixel 11 Pro XL review</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S8: software features (p2-08) -->
+      <section id="s8" class="clip" data-start="50.3" data-duration="6.5" data-track-index="1">
+        <div class="scene" style="flex-direction:column; justify-content:center">
+          <div class="eyebrow" id="s8-eb">On the software side</div>
+          <div class="feat-grid">
+            <div class="glass ft" id="s8-f1"><div class="ic" style="background:rgba(94,225,194,0.18)"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="11" y="3" width="12" height="20" rx="6" fill="#5ee1c2"/><path d="M6 16a11 11 0 0 0 22 0M17 27v5" stroke="#5ee1c2" stroke-width="3" fill="none"/></svg></div><div class="n">Rambler</div><div class="d">Voice dictation</div></div>
+            <div class="glass ft" id="s8-f2"><div class="ic" style="background:rgba(122,140,255,0.2)"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="3" y="8" width="28" height="20" rx="5" stroke="#9aa8ff" stroke-width="3" fill="none"/><circle cx="17" cy="18" r="5" fill="#9aa8ff"/></svg></div><div class="n">Magic Capture</div><div class="d">Camera feature</div></div>
+            <div class="glass ft" id="s8-f3"><div class="ic" style="background:rgba(255,179,92,0.18)"><svg width="34" height="34" viewBox="0 0 34 34"><circle cx="12" cy="14" r="8" fill="#ffb35c" opacity="0.9"/><circle cx="22" cy="14" r="8" fill="#ff6b7a" opacity="0.7"/><circle cx="17" cy="22" r="8" fill="#5ee1c2" opacity="0.7"/></svg></div><div class="n">Camera Looks</div><div class="d">Control over processing</div></div>
+            <div class="glass ft" id="s8-f4"><div class="ic" style="background:rgba(94,225,194,0.18)"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M4 8h16M12 4v4M7 8c1 6 5 10 11 12M17 8c-1 5-5 10-11 12" stroke="#5ee1c2" stroke-width="3" fill="none"/><path d="M19 30l6-14 6 14M21 25h8" stroke="#5ee1c2" stroke-width="3" fill="none"/></svg></div><div class="n">Live Translate</div><div class="d">Now with dubbing</div></div>
+            <div class="glass ft wide" id="s8-f5"><div class="ic" style="background:rgba(122,140,255,0.2)"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M17 2 C18 12 22 16 32 17 C22 18 18 22 17 32 C16 22 12 18 2 17 C12 16 16 12 17 2Z" fill="#9aa8ff"/></svg></div><div class="n">Gemini Intelligence</div><div class="d">Multistep tasks across 40+ apps</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S9: seven years (p2-09) -->
+      <section id="s9" class="clip" data-start="56.8" data-duration="4.8" data-track-index="1">
+        <div class="scene seven">
+          <div class="s-dial" id="s9-dial">
+            <svg width="560" height="560" viewBox="0 0 560 560">
+              <circle cx="280" cy="280" r="250" stroke="rgba(255,255,255,0.1)" stroke-width="22" fill="none"/>
+              <circle id="s9-arc" cx="280" cy="280" r="250" stroke="#5ee1c2" stroke-width="22" fill="none" stroke-linecap="round"
+                stroke-dasharray="1571" stroke-dashoffset="1571" transform="rotate(-90 280 280)"/>
+            </svg>
+            <div class="s-num num" id="s9-num">0</div>
+          </div>
+          <div class="col" style="gap:20px" id="s9-txt">
+            <div class="eyebrow">Every model</div>
+            <h1 class="h1" style="max-width:600px">years of updates</h1>
+            <div><span class="pill good" id="s9-pill">Nobody complained</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S10: recap + next (p2-10) -->
+      <section id="s10" class="clip" data-start="61.6" data-duration="8.149" data-track-index="1">
+        <div class="scene center" style="flex-direction:column; align-items:center">
+          <div class="col center" id="s10-a" style="position:absolute; left:130px; right:130px; top:0; bottom:0">
+            <div class="eyebrow">On paper</div>
+            <h2 class="h2" style="font-size:88px">A solid list.</h2>
+            <div class="recap" id="s10-recap">
+              <span class="rc">Tensor G6</span><span class="rc">Slimmer camera bar</span><span class="rc">3,600 nits</span>
+              <span class="rc">25W Qi2.2</span><span class="rc">Rambler</span><span class="rc">7 years of updates</span><span class="rc bad">HiLight</span>
+            </div>
+          </div>
+          <div class="col center" id="s10-b" style="position:absolute; left:130px; right:130px; top:0; bottom:0">
+            <div class="eyebrow" style="color:var(--accent-2)">Up next</div>
+            <h1 class="h1" id="s10-title">Display &amp; performance</h1>
+            <div class="nextbar" id="s10-bar"></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="hostbar"></div>
+      <audio id="p2-voice" src="voice.wav" data-start="0" data-duration="69.749" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p2","duration":69.749,"audio":"voice/p2.wav","lines":[{"id":"p2-01","speaker":"maya","text":"So, what did Google actually change? First up, the chip: Tensor G6.","start":0.5,"end":5.225},{"id":"p2-02","speaker":"leo","text":"Google claims 50% more AI compute, about 25% faster browsing and 15% faster app launches.","start":5.545,"end":14.616},{"id":"p2-03","speaker":"maya","text":"The base model's camera bar is 40% thinner, and Pro screens get twice the scratch resistance and 3,600 nits.","start":14.936,"end":23.499},{"id":"p2-04","speaker":"leo","text":"Wireless charging jumps to 25 watts with Qi2.2 magnets. And the Pro XL gets 45W wired.","start":23.819,"end":33.242},{"id":"p2-05","speaker":"maya","text":"And then there's HiLight. A colored notification light on the Pro models.","start":33.562,"end":37.637},{"id":"p2-06","speaker":"leo","text":"Fourteen outlets. Fourteen! Said it barely does anything yet. Calls from favorites, Gemini, and that's it.","start":37.957,"end":47.3},{"id":"p2-07","speaker":"maya","text":"Stuff called it “rather underwhelming.”","start":47.62,"end":49.962},{"id":"p2-08","speaker":"leo","text":"On the software side: Rambler dictation, Magic Capture, Camera Looks, and Live Translate dubbing.","start":50.282,"end":56.496},{"id":"p2-09","speaker":"maya","text":"Plus seven years of updates on every model. That one, nobody complained about.","start":56.816,"end":61.323},{"id":"p2-10","speaker":"leo","text":"Nope. So on paper, a solid list. The real question is how it holds up. Let's start with the screen.","start":61.643,"end":68.849}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+
+      const E = "power3.out";
+      const $ = (id) => document.getElementById(id);
+      function fadeIn(el, t, opts) { tl.fromTo(el, Object.assign({ opacity: 0, y: 30 }, (opts && opts.from) || {}), Object.assign({ opacity: 1, y: 0, duration: 0.6, ease: E }, (opts && opts.to) || {}), t); }
+      function sceneOut(el, t) { tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t); }
+      function count(el, to, t, dur, fmt) {
+        const o = { v: 0 };
+        tl.fromTo(o, { v: 0 }, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+      }
+      const r0 = (v) => String(Math.round(v));
+
+      // S1: chip floats in centred, slow 3D tilt, then slides left as Google's claims appear.
+      fadeIn($("s1-chip"), 0.25, { from: { y: 80, scale: 0.8, rotationX: 35, rotationY: -25, transformPerspective: 900 }, to: { duration: 1.4, scale: 1, rotationX: 20, rotationY: -14, transformPerspective: 900, ease: "expo.out" } });
+      tl.to($("s1-chip"), { rotationX: 6, rotationY: 16, duration: 12.5, ease: "sine.inOut" }, 1.65);
+      tl.fromTo($("s1-chip"), { y: 0 }, { y: -16, duration: 2.2, ease: "sine.inOut", repeat: 5, yoyo: true, immediateRender: false }, 1.65);
+      tl.fromTo($("s1-halo"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 1.6, ease: E }, 0.3);
+      tl.to($("s1-halo"), { scale: 1.12, opacity: 0.7, duration: 1.8, ease: "sine.inOut", repeat: 6, yoyo: true }, 1.9);
+      fadeIn($("s1-eb"), 0.9);
+      fadeIn($("s1-title"), 1.1, { from: { y: 40 } });
+      tl.fromTo($("s1-left"), { x: 480 }, { x: 0, duration: 1.1, ease: "power3.inOut" }, 5.1);
+      fadeIn($("s1-panel"), 5.5, { from: { x: 80, y: 0 }, to: { x: 0, duration: 0.9 } });
+      const bars = [["s1-b1", "s1-v1", 1, 50, "+", 6.6], ["s1-b2", "s1-v2", 0.5, 25, "~", 9.4], ["s1-b3", "s1-v3", 0.3, 15, "", 11.9]];
+      bars.forEach(([b, v, s, n, p, t]) => {
+        tl.fromTo($(b), { scaleX: 0 }, { scaleX: s, duration: 1.3, ease: "expo.out" }, t);
+        count($(v), n, t, 1.3, (x) => p + Math.round(x) + "%");
+      });
+      sceneOut($("s1-scene"), 14.5);
+
+      // S2: camera bar callout on the base model.
+      fadeIn($("s2-ph"), 14.95, { from: { x: -60, y: 0, scale: 0.94 }, to: { x: 0, scale: 1, duration: 0.9 } });
+      tl.fromTo([$("s2-img"), $("s2-ptr")], { y: 10 }, { y: -14, duration: 4.6, ease: "none" }, 14.95);
+      tl.fromTo($("s2-box"), { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 15.6);
+      tl.fromTo($("s2-box"), { y: 10 }, { y: -14, duration: 4.6, ease: "none", immediateRender: false }, 14.95);
+      tl.fromTo($("s2-ptr"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, 16.0);
+      fadeIn($("s2-txt"), 16.2, { from: { x: 40, y: 0 }, to: { x: 0 } });
+      count($("s2-num"), 40, 16.3, 1.4, (x) => Math.round(x) + "%");
+      sceneOut($("s2-scene"), 19.35);
+
+      // S3: Pro screens.
+      fadeIn($("s3-ph"), 19.75, { from: { x: -60, y: 0 }, to: { x: 0, duration: 0.9 } });
+      tl.fromTo($("s3-img"), { x: 0 }, { x: 24, duration: 3.9, ease: "none" }, 19.75);
+      fadeIn($("s3-eb"), 19.9);
+      fadeIn($("s3-t1"), 20.4, { from: { x: 60, y: 0 }, to: { x: 0 } });
+      fadeIn($("s3-t2"), 21.4, { from: { x: 60, y: 0 }, to: { x: 0 } });
+      count($("s3-nits"), 3600, 21.5, 1.4, (x) => Math.round(x).toLocaleString("en-US"));
+      sceneOut($("s3-scene"), 23.35);
+
+      // S4: charging cards.
+      fadeIn($("s4-eb"), 23.8);
+      fadeIn($("s4-c1"), 23.9, { from: { y: 60, scale: 0.95 }, to: { scale: 1, duration: 0.8 } });
+      ["s4-m1", "s4-m2", "s4-m3"].forEach((id, i) => {
+        tl.fromTo($(id), { scale: 0.4, opacity: 0 }, { scale: 1, opacity: [1, 0.7, 0.45][i], duration: 0.7, ease: "back.out(1.7)" }, 24.3 + i * 0.15);
+        tl.to($(id), { scale: 1.06, duration: 0.8, ease: "sine.inOut", repeat: 9, yoyo: true }, 25.2 + i * 0.2);
+      });
+      count($("s4-w1"), 25, 24.6, 1.4, r0);
+      tl.fromTo($("s4-c2"), { opacity: 0.0, y: 60, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: E }, 29.2);
+      tl.fromTo($("s4-bolt"), { scale: 0.5, rotation: -15 }, { scale: 1, rotation: 0, duration: 0.8, ease: "back.out(2)" }, 29.4);
+      count($("s4-w2"), 45, 29.5, 1.3, r0);
+      tl.to($("s4-bolt"), { scale: 1.06, duration: 0.5, ease: "sine.inOut", repeat: 5, yoyo: true }, 30.8);
+      sceneOut($("s4-c1").parentNode.parentNode, 33.0);
+
+      // S5: HiLight card with a pulsing colour ring.
+      tl.fromTo($("s5-frame"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.8, ease: E }, 33.45);
+      tl.fromTo($("s5-img"), { scale: 1.0 }, { scale: 1.06, duration: 4.4, ease: "none" }, 33.45);
+      const hlCols = ["#ff2d8a", "#00c9a0", "#4f5bff", "#ff7a00", "#ff2d8a", "#00c9a0", "#4f5bff"];
+      tl.fromTo($("s5-r1"), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.6, ease: E }, 34.0);
+      tl.fromTo($("s5-r2"), { opacity: 0, scale: 0.85 }, { opacity: 0.7, scale: 1, duration: 0.6, ease: E }, 34.15);
+      tl.to([$("s5-r1"), $("s5-r2")], { scale: 1.035, duration: 0.45, ease: "sine.inOut", repeat: 6, yoyo: true }, 34.6);
+      hlCols.forEach((c, i) => {
+        tl.to([$("s5-r1"), $("s5-r2")], { color: c, duration: 0.4, ease: "none" }, 34.6 + i * 0.45);
+        tl.to($("s5-dot"), { backgroundColor: c, duration: 0.4, ease: "none" }, 34.6 + i * 0.45);
+      });
+      fadeIn($("s5-label"), 34.3, { from: { x: -40, y: 0 }, to: { x: 0 } });
+      sceneOut($("s5-scene"), 37.45);
+
+      // S6: Fourteen! Count-up driven by outlet chips popping in.
+      fadeIn($("s6-left"), 37.85, { from: { y: 0, scale: 0.8 }, to: { scale: 1, duration: 0.7, ease: "back.out(1.6)" } });
+      const ols = Array.from(document.querySelectorAll("#s6-outlets .ol"));
+      ols.forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.6, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 38.1 + i * 0.12));
+      count($("s6-num"), 14, 38.1, 14 * 0.12 + 0.1, r0);
+      // "Fourteen!" punch.
+      tl.fromTo($("s6-num"), { scale: 1 }, { scale: 1.22, duration: 0.18, ease: "power2.out", repeat: 1, yoyo: true }, 39.45);
+      tl.fromTo($("s6-num"), { rotation: 0 }, { rotation: -6, duration: 0.07, ease: "none", repeat: 5, yoyo: true }, 39.5);
+      tl.fromTo($("s6-r1"), { scale: 0.9 }, { scale: 1.06, duration: 0.5, ease: "sine.inOut", repeat: 15, yoyo: true }, 38.4);
+      tl.fromTo($("s6-r2"), { scale: 1.04, opacity: 0.8 }, { scale: 0.96, opacity: 0.3, duration: 0.6, ease: "sine.inOut", repeat: 13, yoyo: true }, 38.4);
+      ["#ffb35c", "#ff6b7a", "#7a8cff", "#ff6b7a", "#ffb35c", "#ff6b7a"].forEach((c, i) => tl.to($("s6-r1"), { borderColor: c, duration: 0.4, ease: "none" }, 39.2 + i * 1.2));
+      tl.to($("s6-outlets"), { opacity: 0, y: -30, duration: 0.45, ease: "power2.in" }, 42.0);
+      fadeIn($("s6-h"), 42.4);
+      fadeIn($("s6-eb"), 43.3);
+      fadeIn($("s6-t1"), 43.6, { from: { y: 20, scale: 0.9 }, to: { scale: 1 } });
+      fadeIn($("s6-t2"), 44.6, { from: { y: 20, scale: 0.9 }, to: { scale: 1 } });
+      tl.fromTo($("s6-t3"), { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 45.4);
+      sceneOut($("s6-scene"), 47.15);
+
+      // S7: quote.
+      fadeIn($("s7-card"), 47.55, { from: { y: 40, scale: 0.96 }, to: { scale: 1, duration: 0.7 } });
+      sceneOut($("s7-card"), 49.95);
+
+      // S8: feature tiles, staggered to the spoken list.
+      fadeIn($("s8-eb"), 50.35);
+      [[1, 51.0], [2, 52.6], [3, 53.6], [4, 54.6], [5, 55.5]].forEach(([n, t]) =>
+        fadeIn($("s8-f" + n), t, { from: { y: 50, scale: 0.94 }, to: { scale: 1, duration: 0.7, ease: "expo.out" } }));
+      sceneOut($("s8-eb").parentNode, 56.45);
+
+      // S9: seven years.
+      fadeIn($("s9-dial"), 56.85, { from: { y: 0, scale: 0.85 }, to: { scale: 1, duration: 0.8 } });
+      tl.fromTo($("s9-arc"), { attr: { "stroke-dashoffset": 1571 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.8, ease: "power2.inOut" }, 57.0);
+      count($("s9-num"), 7, 57.0, 1.8, r0);
+      fadeIn($("s9-txt"), 57.4, { from: { x: 50, y: 0 }, to: { x: 0 } });
+      tl.fromTo($("s9-pill"), { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 59.4);
+      sceneOut($("s9-dial").parentNode, 61.25);
+
+      // S10: recap, then hand-off to the display section.
+      fadeIn($("s10-a"), 61.7);
+      Array.from(document.querySelectorAll("#s10-recap .rc")).forEach((el, i) =>
+        tl.fromTo(el, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 62.4 + i * 0.12));
+      tl.to($("s10-a"), { opacity: 0, y: -40, duration: 0.5, ease: "power2.in" }, 65.6);
+      fadeIn($("s10-b"), 66.2, { from: { y: 50 }, to: { duration: 0.8 } });
+      tl.fromTo($("s10-bar"), { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "expo.out" }, 66.6);
+
+      window.__timelines["p2"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p3</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+      .p3-chip { font-size: 30px; padding: 10px 26px; white-space: nowrap; }
+      .p3-src { font-size: 30px; color: var(--ink-dim); font-weight: 600; letter-spacing: 0.02em; }
+      .p3-wrap { position: relative; width: 100%; height: 100%; }
+
+      /* Score dial (reusable): .dial > svg ring + centre number */
+      .dial { position: relative; width: 460px; height: 460px; flex: none; }
+      .dial svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .dial .track { fill: none; stroke: rgba(255,255,255,0.09); stroke-width: 26; }
+      .dial .arc { fill: none; stroke-width: 26; stroke-linecap: round; }
+      .dial .centre { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .dial .val { font-weight: 800; font-size: 150px; line-height: 1; letter-spacing: -0.04em; }
+      .dial .of { font-size: 34px; font-weight: 600; color: var(--ink-dim); margin-top: 6px; }
+      .score-scene { align-items: center; gap: 110px; }
+      .score-copy { display: flex; flex-direction: column; gap: 26px; }
+
+      /* Stat scene */
+      .stat-scene { align-items: center; justify-content: space-between; }
+      .stat-col { display: flex; flex-direction: column; gap: 34px; width: 1020px; }
+      .bar-row { display: flex; flex-direction: column; gap: 14px; }
+      .bar-label { font-size: 36px; font-weight: 600; }
+      .bar { position: relative; width: 900px; height: 26px; border-radius: 13px; background: rgba(255,255,255,0.08); overflow: hidden; }
+      .bar .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 13px; transform-origin: 0 50%; }
+      .big-stat { font-weight: 800; font-size: 150px; line-height: 1; letter-spacing: -0.04em; color: var(--ink); }
+      .big-stat small { font-size: 56px; color: var(--accent); letter-spacing: 0; margin-left: 14px; }
+      .phone-box { width: 540px; height: 650px; display: flex; align-items: center; justify-content: center; }
+      .phone-box img { width: 540px; height: 650px; }
+
+      /* Quote card */
+      .quote-scene { flex-direction: column; justify-content: center; gap: 34px; }
+      .quote-card { padding: 56px 70px; max-width: 1500px; display: flex; flex-direction: column; gap: 28px; }
+      .quote-text { margin: 0; font-size: 58px; font-weight: 800; line-height: 1.18; letter-spacing: -0.015em; }
+      .quote-mark { color: var(--accent); }
+      .chips { display: flex; flex-wrap: wrap; gap: 16px 20px; }
+
+      /* Warning */
+      .warn-scene { flex-direction: column; justify-content: center; align-items: flex-start; gap: 40px; }
+      .warn-card { display: flex; align-items: center; gap: 44px; padding: 50px 64px; border-color: rgba(255,179,92,0.45); }
+      .warn-icon { width: 150px; height: 150px; flex: none; }
+      .warn-title { font-size: 64px; font-weight: 800; line-height: 1.1; margin: 0; }
+
+      /* Performance title */
+      .title-scene { align-items: center; justify-content: space-between; }
+      .chip-img { width: 700px; height: 505px; display: flex; align-items: center; justify-content: center; }
+      .chip-img img { width: 700px; height: 505px; }
+
+      /* Split */
+      .split-scene { flex-direction: column; justify-content: center; gap: 30px; }
+      .split { display: flex; gap: 40px; height: 560px; margin-top: 10px; }
+      .half { flex: 1 1 0; min-width: 0; padding: 46px 56px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+      .half .h2 { font-size: 58px; }
+      .half .q { margin: 0; font-size: 46px; font-weight: 600; line-height: 1.25; color: var(--ink); }
+      .half.goodb { border-color: rgba(94,225,194,0.45); }
+      .half.badb { border-color: rgba(255,107,122,0.45); }
+      .half.empty { border-style: dashed; align-items: center; justify-content: center; }
+      .waiting { font-size: 44px; font-weight: 600; color: var(--ink-dim); }
+      .vs { align-self: center; font-weight: 800; font-size: 40px; color: var(--ink-dim); flex: none; }
+
+      /* Heat */
+      .heat-scene { align-items: center; justify-content: center; gap: 80px; }
+      .thermo { width: 200px; height: 520px; flex: none; }
+
+      /* Takeaway */
+      .take-scene { flex-direction: column; justify-content: center; gap: 36px; }
+      .take-row { display: flex; gap: 40px; }
+      .take { flex: 1; padding: 50px 56px; display: flex; flex-direction: column; gap: 18px; }
+      .take .who { font-size: 34px; font-weight: 600; color: var(--ink-dim); letter-spacing: 0.06em; text-transform: uppercase; }
+      .take .what { font-size: 68px; font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; margin: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p3" data-start="0" data-width="1920" data-height="1080" data-duration="92.357">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- S1: Display score dial (p3-01) -->
+      <section class="clip" id="s1" data-start="0" data-duration="8.1" data-track-index="1">
+        <div class="scene score-scene" id="s1-in">
+          <div class="dial" id="s1-dial">
+            <svg viewBox="0 0 460 460"><circle class="track" cx="230" cy="230" r="200"/><circle class="arc" id="s1-arc" cx="230" cy="230" r="200" stroke="#5ee1c2" transform="rotate(-90 230 230)"/></svg>
+            <div class="centre"><div class="val num good" id="s1-val">0.0</div><div class="of">out of 10</div></div>
+          </div>
+          <div class="score-copy">
+            <div class="eyebrow s1-r">Consensus score</div>
+            <h1 class="h1 s1-r">Display</h1>
+            <div class="s1-r"><span class="chip p3-chip good">Strong agreement</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S2: brightness praise + nits (p3-02) -->
+      <section class="clip" id="s2" data-start="7.7" data-duration="8.5" data-track-index="2">
+        <div class="scene stat-scene" id="s2-in">
+          <div class="stat-col">
+            <div class="eyebrow s2-r">Bright, sharp, easy in sunlight</div>
+            <div class="bar-row s2-r">
+              <div class="bar-label"><span class="good num">10 outlets</span> praised the screen</div>
+              <div class="bar"><div class="fill" id="s2-bar" style="background: var(--accent)"></div></div>
+            </div>
+            <div class="s2-r"><div class="big-stat num"><span id="s2-nits">0</span><small>nits peak</small></div></div>
+            <div class="p3-src s2-r">Measured by Tom's Guide · Pixel 11</div>
+          </div>
+          <div class="phone-box"><img class="phone-img" id="s2-phone" src="media/p11_frost.png" alt="Pixel 11 in Frost" /></div>
+        </div>
+      </section>
+
+      <!-- S3: 60Hz quote (p3-03) -->
+      <section class="clip" id="s3" data-start="15.9" data-duration="8.6" data-track-index="1">
+        <div class="scene quote-scene" id="s3-in">
+          <div class="eyebrow s3-r">Two small catches</div>
+          <div class="chips s3-r"><span class="chip p3-chip mid">Base model: no LTPO</span><span class="chip p3-chip mid">60Hz by default</span></div>
+          <div class="glass quote-card s3-r">
+            <p class="quote-text"><span class="quote-mark">“</span>I don’t know why the display stays tuned to 60Hz out of the box or by default.<span class="quote-mark">”</span></p>
+            <div class="p3-src">9to5Google</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S4: PWM warning (p3-04) -->
+      <section class="clip" id="s4" data-start="24.2" data-duration="8.3" data-track-index="2">
+        <div class="scene warn-scene" id="s4-in">
+          <div class="eyebrow s4-r" style="color: var(--warn)">Flicker warning</div>
+          <div class="glass warn-card s4-r">
+            <svg class="warn-icon" viewBox="0 0 100 100"><path d="M50 8 L94 88 H6 Z" fill="none" stroke="#ffb35c" stroke-width="7" stroke-linejoin="round"/><rect x="46" y="36" width="8" height="28" rx="3" fill="#ffb35c"/><circle cx="50" cy="75" r="5" fill="#ffb35c"/></svg>
+            <div>
+              <p class="warn-title">Low-frequency PWM dimming</p>
+              <div style="margin-top: 20px"><span class="chip p3-chip mid">3 outlets</span></div>
+            </div>
+          </div>
+          <p class="body s4-r" style="font-size: 40px">Flicker-sensitive? Try before you buy.</p>
+        </div>
+      </section>
+
+      <!-- S5: Performance title (p3-05) -->
+      <section class="clip" id="s5" data-start="32.2" data-duration="4.9" data-track-index="1">
+        <div class="scene title-scene" id="s5-in">
+          <div style="display:flex; flex-direction:column; gap: 24px">
+            <div class="eyebrow s5-r">Next up</div>
+            <h1 class="h1 s5-r">Performance</h1>
+            <div class="p3-src s5-r">Tensor G6</div>
+          </div>
+          <div class="chip-img"><img class="phone-img" id="s5-chip" src="media/tensor_g6.png" alt="Tensor G6 chip" /></div>
+        </div>
+      </section>
+
+      <!-- S6: Performance dial (p3-06, p3-07) -->
+      <section class="clip" id="s6" data-start="36.8" data-duration="12.1" data-track-index="2">
+        <div class="scene score-scene" id="s6-in">
+          <div class="dial" id="s6-dial">
+            <svg viewBox="0 0 460 460"><circle class="track" cx="230" cy="230" r="200"/><circle class="arc" id="s6-arc" cx="230" cy="230" r="200" stroke="#ffb35c" transform="rotate(-90 230 230)"/></svg>
+            <div class="centre"><div class="val num mid" id="s6-val">0.0</div><div class="of">out of 10</div></div>
+          </div>
+          <div class="score-copy" style="max-width: 900px">
+            <div class="eyebrow s6-r">Consensus score</div>
+            <h1 class="h1 s6-r">Performance</h1>
+            <div class="s6-r"><span class="chip p3-chip mid">Mixed</span></div>
+            <p class="body s6-r" style="font-size: 38px; color: var(--ink)"><span class="bad">11 outlets:</span> weak GPU vs Snapdragon 8 Elite Gen 5 &amp; Apple A19</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- S7: Everyday vs gaming split (p3-08..p3-10) -->
+      <section class="clip" id="s7" data-start="48.7" data-duration="17.7" data-track-index="1">
+        <div class="scene split-scene" id="s7-in">
+          <div class="eyebrow s7-r">Tensor G6 in real life</div>
+          <div class="split">
+            <div class="glass half goodb" id="s7-left">
+              <div class="h2 good">Everyday use: smooth</div>
+              <div><span class="chip p3-chip good">11 outlets</span></div>
+              <p class="q">“the processor flies in daily use”</p>
+              <div class="p3-src">Trusted Reviews</div>
+            </div>
+            <div class="half" style="position: relative; padding: 0">
+              <div class="glass half empty" id="s7-empty" style="position:absolute; inset:0; opacity:0"><div class="waiting">Gaming?</div></div>
+              <div class="glass half badb" id="s7-right" style="position:absolute; inset:0; opacity:0">
+                <div class="h2 bad">Gaming: weak</div>
+                <p class="q">“The phone’s major downside is its pitifully bad gaming performance.”</p>
+                <div class="p3-src">Trusted Reviews</div>
+                <div id="s7-genshin" class="chips"><span class="chip p3-chip bad">Genshin Impact broken at launch</span><span class="chip p3-chip bad">3 outlets</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S8: Heat question (p3-11) -->
+      <section class="clip" id="s8" data-start="66.0" data-duration="4.5" data-track-index="2">
+        <div class="scene heat-scene" id="s8-in">
+          <svg class="thermo" viewBox="0 0 100 260">
+            <rect x="32" y="10" width="36" height="180" rx="18" fill="none" stroke="#f4f6fb" stroke-width="6"/>
+            <circle cx="50" cy="210" r="38" fill="none" stroke="#f4f6fb" stroke-width="6"/>
+            <circle cx="50" cy="210" r="26" fill="#ff6b7a"/>
+            <rect id="s8-mercury" x="42" y="40" width="16" height="170" rx="8" fill="#ff6b7a"/>
+          </svg>
+          <div style="display:flex; flex-direction:column; gap: 24px">
+            <div class="eyebrow s8-r">The Pixel curse</div>
+            <h1 class="h1 s8-r">What about heat?</h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- S9: Reviewers disagree (p3-12, p3-13) -->
+      <section class="clip" id="s9" data-start="70.1" data-duration="15.4" data-track-index="1">
+        <div class="scene split-scene" id="s9-in">
+          <div style="display:flex; align-items:center; gap: 28px" class="s9-r">
+            <span class="chip p3-chip mid">Reviewers disagree</span>
+            <span class="h2" style="font-size: 56px">Heat</span>
+          </div>
+          <div class="split">
+            <div class="glass half badb" id="s9-left">
+              <div class="h2 bad">Runs hot</div>
+              <p class="q">“I experienced laggy animations and overheating at times”</p>
+              <div class="p3-src">Android Authority</div>
+            </div>
+            <div class="vs" id="s9-vs">VS</div>
+            <div class="glass half goodb" id="s9-right">
+              <div class="h2 good">Runs cooler</div>
+              <p class="q">Measured ~6° cooler than Pixel 10</p>
+              <div class="p3-src">Android Headlines</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S10: Takeaway (p3-14) -->
+      <section class="clip" id="s10" data-start="85.2" data-duration="7.157" data-track-index="2">
+        <div class="scene take-scene" id="s10-in">
+          <div class="eyebrow s10-r">Performance takeaway</div>
+          <div class="take-row">
+            <div class="glass take badb s10-r" style="border-color: rgba(255,107,122,0.45)">
+              <div class="who">Gamers</div>
+              <p class="what bad">Look elsewhere</p>
+            </div>
+            <div class="glass take goodb s10-r" style="border-color: rgba(94,225,194,0.45)">
+              <div class="who">Everyone else</div>
+              <p class="what good">You won’t notice</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="hostbar"></div>
+      <audio id="p3-voice" src="voice.wav" data-start="0" data-duration="92.357" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p3","duration":92.357,"audio":"voice/p3.wav","lines":[{"id":"p3-01","speaker":"maya","text":"Display first, and this is the easy one. Our consensus score: 8.5 out of 10, and reviewers strongly agree.","start":0.5,"end":7.604},{"id":"p3-02","speaker":"leo","text":"Ten outlets called it bright, sharp and easy to see in sunlight. Tom's Guide measured 2,480 nits on the Pixel 11.","start":7.924,"end":15.851},{"id":"p3-03","speaker":"maya","text":"Two small catches. The base model has no LTPO, and ships at 60Hz by default. 9to5Google wasn't a fan.","start":16.171,"end":24.327},{"id":"p3-04","speaker":"leo","text":"And three outlets flagged low-frequency PWM dimming. If flicker bothers you, try before you buy.","start":24.647,"end":32.043},{"id":"p3-05","speaker":"maya","text":"Noted. Now… performance. Leo, I can see your face.","start":32.363,"end":36.675},{"id":"p3-06","speaker":"leo","text":"Because this is the weak spot. Five out of ten. Eleven outlets say the G6 GPU trails Snapdragon and Apple.","start":36.995,"end":46.733},{"id":"p3-07","speaker":"maya","text":"But day to day it's fine, right?","start":47.053,"end":48.637},{"id":"p3-08","speaker":"leo","text":"Day to day, yes. Eleven outlets called it smooth. Trusted Reviews said “the processor flies in daily use.”","start":48.957,"end":56.316},{"id":"p3-09","speaker":"maya","text":"And gaming?","start":56.636,"end":57.411},{"id":"p3-10","speaker":"leo","text":"Same review: “pitifully bad gaming performance.” And Genshin Impact was broken at launch. Google says a fix is coming.","start":57.731,"end":65.905},{"id":"p3-11","speaker":"maya","text":"Oof. What about heat? That's been the Pixel curse for years.","start":66.225,"end":69.998},{"id":"p3-12","speaker":"leo","text":"Here's our first big disagreement. Android Authority hit lag and overheating. Android Headlines measured six degrees cooler than Pixel 10.","start":70.318,"end":81.936},{"id":"p3-13","speaker":"maya","text":"So it depends who you ask. Maybe where you live, too.","start":82.256,"end":85.138},{"id":"p3-14","speaker":"leo","text":"Pretty much. If you game seriously, this isn't your phone. If you don't, you'll barely notice.","start":85.458,"end":91.457}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+      const CIRC = 2 * Math.PI * 200;
+
+      // Scene envelope: fade the inner .scene in at start, out before the clip ends.
+      function envelope(id, start, dur) {
+        const el = document.getElementById(id + "-in");
+        tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, start);
+        tl.to(el, { opacity: 0, duration: 0.4, ease: "power2.in" }, start + dur - 0.4);
+      }
+      // Staggered rise for reveal items.
+      function reveal(sel, at, stagger) {
+        tl.fromTo(sel, { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", stagger: stagger || 0.14 }, at);
+      }
+      // Reusable score dial: ring fills to score/10 while the number counts up.
+      function scoreDial(prefix, score, at) {
+        const arc = document.getElementById(prefix + "-arc");
+        const val = document.getElementById(prefix + "-val");
+        arc.setAttribute("stroke-dasharray", CIRC.toFixed(2));
+        arc.setAttribute("stroke-dashoffset", CIRC.toFixed(2));
+        const counter = { v: 0 };
+        tl.fromTo(prefix === "s1" ? "#s1-dial" : "#s6-dial", { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "expo.out" }, at - 0.3);
+        tl.fromTo(arc, { attr: { "stroke-dashoffset": CIRC } }, { attr: { "stroke-dashoffset": CIRC * (1 - score / 10) }, duration: 1.8, ease: "power3.out" }, at);
+        tl.fromTo(counter, { v: 0 }, { v: score, duration: 1.8, ease: "power3.out",
+          onUpdate: () => { val.textContent = counter.v.toFixed(1); } }, at);
+      }
+
+      // S1 Display dial
+      envelope("s1", 0, 8.1);
+      scoreDial("s1", 8.5, 0.6);
+      reveal(".s1-r", 0.5);
+      tl.fromTo("#s1-in .chip", { scale: 0.8 }, { scale: 1, duration: 0.5, ease: "back.out(2)", immediateRender: false }, 6.0);
+
+      // S2 Brightness
+      envelope("s2", 7.7, 8.5);
+      reveal(".s2-r", 7.9);
+      tl.fromTo("#s2-bar", { scaleX: 0 }, { scaleX: 10 / 15, duration: 1.4, ease: "power3.out" }, 8.3);
+      const nits = { v: 0 }, nitsEl = document.getElementById("s2-nits");
+      tl.fromTo(nits, { v: 0 }, { v: 2480, duration: 1.6, ease: "power2.out",
+        onUpdate: () => { nitsEl.textContent = Math.round(nits.v).toLocaleString("en-US"); } }, 11.8);
+      tl.fromTo("#s2-phone", { opacity: 0, x: 60, y: 20 }, { opacity: 1, x: 0, y: 0, duration: 1.0, ease: "power3.out" }, 8.0);
+      tl.fromTo("#s2-phone", { y: 0 }, { y: -24, duration: 7, ease: "none", immediateRender: false }, 9.0);
+
+      // S3 60Hz quote
+      envelope("s3", 15.9, 8.6);
+      reveal(".s3-r", 16.2, 0.9);
+      tl.fromTo("#s3-in .quote-card", { scale: 0.98 }, { scale: 1.02, duration: 7, ease: "none" }, 17.2);
+
+      // S4 PWM
+      envelope("s4", 24.2, 8.3);
+      reveal(".s4-r", 24.6, 0.35);
+      tl.fromTo("#s4-in .warn-icon", { scale: 0.6, rotation: -12 }, { scale: 1, rotation: 0, duration: 0.8, ease: "back.out(2)" }, 25.0);
+
+      // S5 Performance title
+      envelope("s5", 32.2, 4.9);
+      reveal(".s5-r", 32.5);
+      tl.fromTo("#s5-chip", { opacity: 0, scale: 0.8, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 1.2, ease: "expo.out" }, 32.6);
+      tl.fromTo("#s5-chip", { y: 0 }, { y: -20, duration: 3.5, ease: "none", immediateRender: false }, 33.6);
+
+      // S6 Performance dial
+      envelope("s6", 36.8, 12.1);
+      scoreDial("s6", 5.0, 37.3);
+      reveal(".s6-r", 37.1, 0.2);
+      tl.fromTo("#s6-in .body", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 41.6);
+
+      // S7 Split: everyday vs gaming
+      envelope("s7", 48.7, 17.7);
+      reveal(".s7-r", 48.9);
+      tl.fromTo("#s7-left", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 49.1);
+      tl.fromTo("#s7-left > *", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.9 }, 49.4);
+      tl.fromTo("#s7-empty", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 56.5);
+      tl.to("#s7-empty", { opacity: 0, duration: 0.4, ease: "power2.in" }, 57.7);
+      tl.fromTo("#s7-right", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 57.8);
+      tl.fromTo("#s7-genshin", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 61.6);
+
+      // S8 Heat
+      envelope("s8", 66.0, 4.5);
+      reveal(".s8-r", 66.3);
+      tl.fromTo("#s8-mercury", { scaleY: 0.1, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 2.2, ease: "power2.inOut" }, 66.4);
+      tl.fromTo("#s8-in .thermo", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 66.2);
+
+      // S9 Reviewers disagree
+      envelope("s9", 70.1, 15.4);
+      reveal(".s9-r", 70.3);
+      tl.fromTo("#s9-left", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 72.6);
+      tl.fromTo("#s9-vs", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2)" }, 75.6);
+      tl.fromTo("#s9-right", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 76.0);
+
+      // S10 Takeaway
+      envelope("s10", 85.2, 7.157);
+      reveal(".s10-r", 85.5, 0.5);
+
+      window.__timelines["p3"] = tl;
+    </script>
+  </body>
+</html>

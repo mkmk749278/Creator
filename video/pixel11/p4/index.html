@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p4</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+
+      /* Part-specific styles go here. */
+      .wrap { position: absolute; inset: 0; opacity: 0; }
+      .row { width: 100%; display: flex; align-items: center; gap: 80px; }
+      .col { display: flex; flex-direction: column; gap: 26px; }
+      .dial { position: relative; width: 440px; height: 440px; flex: none; }
+      .dial svg { position: absolute; inset: 0; width: 440px; height: 440px; }
+      .dial .track { fill: none; stroke: rgba(255,255,255,0.10); stroke-width: 26; }
+      .dial .arc { fill: none; stroke-width: 26; stroke-linecap: round; }
+      .dial .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .dial .val { font-weight: 800; font-size: 150px; letter-spacing: -0.04em; line-height: 1; }
+      .dial .of { font-size: 34px; color: var(--ink-dim); font-weight: 600; margin-top: 6px; }
+      .bigchip { display: inline-block; font-size: 32px; font-weight: 700; padding: 12px 28px; border-radius: 999px; border: 2px solid currentColor; align-self: flex-start; }
+      .frame { width: 780px; height: 483px; border-radius: 28px; overflow: hidden; border: 1px solid var(--glass-edge); box-shadow: 0 40px 100px rgba(0,0,0,0.55); flex: none; }
+      .frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .quote { padding: 60px 70px; max-width: 1400px; display: flex; flex-direction: column; gap: 30px; }
+      .qmark { font-size: 120px; line-height: 0.6; font-weight: 800; color: var(--accent); height: 50px; }
+      .qtext { margin: 0; font-size: 56px; line-height: 1.22; font-weight: 700; letter-spacing: -0.01em; }
+      .credit { font-size: 32px; font-weight: 600; color: var(--ink-dim); }
+      .credit b { color: var(--ink); }
+      .badge5 { width: 340px; height: 340px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--accent); color: #07090d; font-weight: 800; font-size: 170px; letter-spacing: -0.05em; box-shadow: 0 30px 90px rgba(0,0,0,0.5); flex: none; }
+      .split { width: 100%; display: flex; gap: 40px; align-items: stretch; }
+      .side { flex: 1; padding: 54px 56px; display: flex; flex-direction: column; gap: 22px; }
+      .side .lab { font-size: 62px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+      .side .who { font-size: 30px; color: var(--ink-dim); line-height: 1.4; }
+      .side .note { font-size: 40px; font-weight: 600; line-height: 1.3; }
+      .side.good { border-color: rgba(94,225,194,0.45); } .side.bad { border-color: rgba(255,107,122,0.45); }
+      .vs { align-self: center; font-size: 40px; font-weight: 800; color: var(--ink-dim); }
+      .stat { width: 100%; display: flex; flex-direction: column; gap: 16px; }
+      .stat .top { display: flex; justify-content: space-between; align-items: baseline; }
+      .stat .lbl { font-size: 38px; font-weight: 700; }
+      .stat .fig { font-size: 64px; font-weight: 800; color: var(--accent); }
+      .bar { height: 30px; border-radius: 15px; background: rgba(255,255,255,0.10); overflow: hidden; }
+      .bar i { display: block; height: 100%; width: 100%; border-radius: 15px; background: var(--accent); transform-origin: left center; }
+      .axis { display: flex; justify-content: space-between; font-size: 26px; color: var(--ink-dim); }
+      .pill { display: flex; align-items: center; gap: 36px; padding: 48px 60px; }
+      .pill .dot { width: 40px; height: 40px; border-radius: 50%; flex: none; }
+      .pill .t { font-size: 64px; font-weight: 800; letter-spacing: -0.01em; }
+      .pill .n { font-size: 40px; font-weight: 600; color: var(--ink-dim); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p4" data-start="0" data-width="1920" data-height="1080" data-duration="88.448">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <section class="clip" id="s1" data-start="0" data-duration="7.8" data-track-index="1">
+        <div class="wrap" id="w1"><div class="scene"><div class="row" style="gap:60px"><div class="dial"><svg viewBox="0 0 440 440"><circle class="track" cx="220" cy="220" r="190"/><circle id="arc1" class="arc" cx="220" cy="220" r="190" stroke="var(--accent)" stroke-dasharray="1193.8" stroke-dashoffset="1193.8" transform="rotate(-90 220 220)"/></svg><div class="center"><div id="val1" class="val num">0.0</div><div class="of">out of 10</div></div></div><div class="col" style="flex:1"><div class="eyebrow">Category score</div><h1 class="h1" id="t1">Camera</h1><div class="bigchip good" id="c1">Strong agreement</div></div><div class="frame" id="f1" style="width:700px;height:433px"><img src="media/pro_lifestyle.jpg" alt="Pixel 11 Pro lifestyle photo" id="i1" data-layout-allow-overflow></div></div></div></div>
+      </section>
+      <section class="clip" id="s2" data-start="7.8" data-duration="8.6" data-track-index="1">
+        <div class="wrap" id="w2"><div class="scene"><div class="col" style="width:100%;justify-content:center"><div class="bigchip good" id="c2">10 outlets: excellent photos</div><div class="glass quote" id="q2"><div class="qmark">“</div><p class="qtext">This time, the Pixel’s camera is stellar, and I don’t think you can get much better.</p><div class="credit">— <b>Android Police</b></div></div></div></div></div>
+      </section>
+      <section class="clip" id="s3" data-start="16.4" data-duration="7.1" data-track-index="1">
+        <div class="wrap" id="w3"><div class="scene"><div class="row"><div style="position:relative;width:620px;height:740px;flex:none"><img class="phone-img" id="ph3" src="media/p11_frost.png" alt="Pixel 11 in Frost" style="position:absolute;left:40px;top:40px;width:540px;height:650px"><div class="badge5" id="b3" style="position:absolute;right:-40px;top:20px">5×</div></div><div class="col" style="flex:1"><div class="eyebrow">Base Pixel 11</div><h2 class="h2" id="t3">5× telephoto</h2><div class="glass quote" id="q3" style="padding:40px 50px"><p class="qtext" style="font-size:46px">“This is a real differentiator for Google”</p><div class="credit">— <b>Engadget</b></div></div><div class="bigchip good" id="c3">4 outlets agree</div></div></div></div></div>
+      </section>
+      <section class="clip" id="s4" data-start="23.5" data-duration="3.9" data-track-index="1">
+        <div class="wrap" id="w4"><div class="scene"><div class="row"><div class="col" style="flex:1"><div class="eyebrow">Pixel 11 Pro &amp; Pro XL</div><h1 class="h1" id="t4">Faster Night Sight</h1><div class="bigchip good" id="c4">9 outlets noticed</div></div><img class="phone-img" id="ph4" src="media/pro_family.png" alt="Pixel 11 Pro family" style="width:760px;height:580px;flex:none"></div></div></div>
+      </section>
+      <section class="clip" id="s5" data-start="27.4" data-duration="14.2" data-track-index="1">
+        <div class="wrap" id="w5"><div class="scene"><div class="col" style="width:100%;gap:48px;justify-content:center"><div><div class="eyebrow mid">Reviewers disagree</div><h2 class="h2" id="t5">120× AI Pro Zoom</h2></div><div class="split"><div class="glass side good" id="l5"><div class="lab good">Impressive</div><div class="note">Tom’s Guide: clearer than Samsung’s 100×</div><div class="who">Tom’s Guide · Android Authority</div></div><div class="vs" id="v5">vs</div><div class="glass side bad" id="r5"><div class="lab bad">Fabricates detail</div><div class="note">Engadget: “uncanny” · 2 caught garbled text</div><div class="who">5 outlets: Engadget, Gizmodo, Android Headlines, TechRadar, Trusted Reviews</div></div></div></div></div></div>
+      </section>
+      <section class="clip" id="s6" data-start="41.6" data-duration="7.7" data-track-index="1">
+        <div class="wrap" id="w6"><div class="scene"><div class="col" style="width:100%;justify-content:center"><div class="eyebrow">Magic Capture</div><div class="glass quote" id="q6"><div class="qmark">“</div><p class="qtext">Magic Capture is currently a “nice to have” rather than a tool that I’d want to rely on.</p><div class="credit">— <b>CNET</b></div></div><div class="bigchip bad" id="c6">6 outlets: blurry frames on fast motion</div></div></div></div>
+      </section>
+      <section class="clip" id="s7" data-start="49.3" data-duration="5.3" data-track-index="1">
+        <div class="wrap" id="w7"><div class="scene"><div class="row"><div class="dial"><svg viewBox="0 0 440 440"><circle class="track" cx="220" cy="220" r="190"/><circle id="arc7" class="arc" cx="220" cy="220" r="190" stroke="var(--warn)" stroke-dasharray="1193.8" stroke-dashoffset="1193.8" transform="rotate(-90 220 220)"/></svg><div class="center"><div id="val7" class="val num">0.0</div><div class="of">out of 10</div></div></div><div class="col" style="flex:1"><div class="eyebrow">Category score</div><h1 class="h1" id="t7">Battery &amp; charging</h1><div class="bigchip mid" id="c7">Split verdict</div></div></div></div></div>
+      </section>
+      <section class="clip" id="s8" data-start="54.6" data-duration="11.7" data-track-index="1">
+        <div class="wrap" id="w8"><div class="scene"><div class="row" style="gap:70px"><img class="phone-img" id="ph8" src="media/p11_frost.png" alt="Pixel 11 in Frost" style="width:420px;height:504px;flex:none"><div class="col" style="flex:1;gap:44px"><div><div class="eyebrow">Pixel 11 battery tests</div><h2 class="h2" id="t8">The base model does great</h2></div><div class="stat" id="st8a"><div class="top"><div class="lbl">PCMag rundown test</div><div class="fig num" id="n8a">19h 13m</div></div><div class="bar"><i id="b8a"></i></div></div><div class="stat" id="st8b"><div class="top"><div class="lbl">The Guardian, light use</div><div class="fig num" id="n8b">~54h</div></div><div class="bar"><i id="b8b"></i></div></div><div class="axis" id="ax8"><span>0h</span><span>Hours on one charge</span><span>60h</span></div></div></div></div></div>
+      </section>
+      <section class="clip" id="s9" data-start="66.3" data-duration="10.4" data-track-index="1">
+        <div class="wrap" id="w9"><div class="scene"><div class="col" style="width:100%;gap:48px;justify-content:center"><div><div class="eyebrow mid">Reviewers disagree</div><h2 class="h2" id="t9">Pixel 11 Pro battery life</h2></div><div class="split"><div class="glass side good" id="l9"><div class="lab good">Up to two days</div><div class="note">Better efficiency despite smaller cells</div><div class="who">6 outlets: Android Authority, Android Headlines, Android Police, GSMArena, The Guardian, Trusted Reviews</div></div><div class="vs" id="v9">vs</div><div class="glass side bad" id="r9"><div class="lab bad">No better than Pixel 10 Pro</div><div class="note">Tom’s Guide measured the 11 Pro below the 10 Pro</div><div class="who">Tom’s Guide · Android Central · Stuff · Tech Advisor</div></div></div></div></div></div>
+      </section>
+      <section class="clip" id="s10" data-start="76.7" data-duration="11.748" data-track-index="1">
+        <div class="wrap" id="w10"><div class="scene"><div class="col" style="width:100%;justify-content:center;gap:40px"><div class="eyebrow">Charging</div><div class="glass pill" id="p10a"><div class="dot" style="background:var(--bad)"></div><div class="col" style="gap:6px"><div class="t bad">Slow wired charging</div><div class="n">7 outlets: misses Google’s claims</div></div></div><div class="glass pill" id="p10b"><div class="dot" style="background:var(--accent)"></div><div class="col" style="gap:6px"><div class="t good">25W Qi2.2 magnetic charging</div><div class="n">9 outlets loved it</div></div></div></div></div></div>
+      </section>
+
+      <div id="hostbar"></div>
+      <audio id="p4-voice" src="voice.wav" data-start="0" data-duration="88.448" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p4","duration":88.448,"audio":"voice/p4.wav","lines":[{"id":"p4-01","speaker":"maya","text":"Okay, my favorite part. Camera! 8.5 out of 10, strong agreement.","start":0.5,"end":5.761},{"id":"p4-02","speaker":"leo","text":"Go on, you've earned this one.","start":6.081,"end":7.617},{"id":"p4-03","speaker":"maya","text":"Ten outlets called the photos excellent. Android Police said “the Pixel's camera is stellar.”","start":7.937,"end":16.269},{"id":"p4-04","speaker":"leo","text":"And the base model keeps a 5x telephoto. Four outlets called it a real differentiator at this price.","start":16.589,"end":23.311},{"id":"p4-05","speaker":"maya","text":"And Night Sight got faster on the Pros. Nine outlets noticed.","start":23.631,"end":27.244},{"id":"p4-06","speaker":"leo","text":"Now, the AI zoom goes up to 120x. Tom's Guide thought it beat Samsung's 100x.","start":27.564,"end":34.837},{"id":"p4-07","speaker":"maya","text":"But five outlets said it invents detail. Engadget called it “uncanny,” and two caught it garbling text.","start":35.157,"end":41.461},{"id":"p4-08","speaker":"leo","text":"And Magic Capture? Six outlets said it grabs blurry frames on fast motion. CNET called it a “nice to have.”","start":41.781,"end":49.123},{"id":"p4-09","speaker":"maya","text":"Fair. Battery, then. This one's split: 6.5 out of 10.","start":49.443,"end":54.396},{"id":"p4-10","speaker":"leo","text":"The base Pixel 11 does great. PCMag got 19 hours 13 minutes. The Guardian, about 54 hours of light use.","start":54.716,"end":64.86},{"id":"p4-11","speaker":"maya","text":"And the Pros?","start":65.18,"end":66.089},{"id":"p4-12","speaker":"leo","text":"That's the fight. Six outlets say up to two days. Tom's Guide measured the 11 Pro below the 10 Pro.","start":66.409,"end":76.517},{"id":"p4-13","speaker":"maya","text":"Everyone agrees on one thing: wired charging is slow. Seven outlets said it misses Google's claims.","start":76.837,"end":83.384},{"id":"p4-14","speaker":"leo","text":"But the magnetic wireless charging? Nine outlets loved it.","start":83.704,"end":87.548}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens (absolute seconds, from HF_TIMINGS line starts).
+      const T = [0, 7.8, 16.4, 23.5, 27.4, 41.6, 49.3, 54.6, 66.3, 76.7, 88.448];
+      const E3 = "power3.out", EX = "expo.out";
+      for (let n = 1; n <= 10; n++) {
+        const s = T[n - 1], e = T[n];
+        tl.fromTo("#w" + n, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, s);
+        if (n < 10) tl.to("#w" + n, { opacity: 0, duration: 0.4, ease: "power2.in" }, e - 0.42);
+      }
+      const rise = (sel, t, d = 0.8) => tl.fromTo(sel, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: d, ease: E3 }, t);
+      const C = 1193.8;
+      function dialAnim(i, score, t) {
+        tl.fromTo("#arc" + i, { strokeDashoffset: C }, { strokeDashoffset: C * (1 - score / 10), duration: 1.8, ease: EX }, t);
+        const o = { v: 0 }, el = document.getElementById("val" + i);
+        tl.fromTo(o, { v: 0 }, { v: score, duration: 1.8, ease: EX, onUpdate: () => { el.textContent = o.v.toFixed(1); } }, t);
+        tl.fromTo("#val" + i, { scale: 0.85 }, { scale: 1, duration: 1.2, ease: E3 }, t);
+      }
+      // S1 camera dial
+      dialAnim(1, 8.5, 0.6);
+      rise("#t1", 0.5); rise("#c1", 2.6, 0.6); rise("#f1", 1.2, 1.0);
+      tl.fromTo("#i1", { scale: 1.12 }, { scale: 1.0, duration: 7.3, ease: "none" }, 0.5);
+      // S2 quote
+      rise("#c2", 8.0, 0.6); rise("#q2", 8.4, 1.0);
+      tl.fromTo("#q2", { scale: 1 }, { scale: 1.02, duration: 7.5, ease: "none" }, 8.6);
+      // S3 5x telephoto
+      tl.fromTo("#ph3", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: E3 }, 16.6);
+      tl.to("#ph3", { y: -20, duration: 6, ease: "none" }, 17.6);
+      tl.fromTo("#b3", { scale: 0.3, opacity: 0, rotation: -12 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.9, ease: "back.out(1.6)" }, 17.0);
+      rise("#t3", 16.8); rise("#q3", 19.4); rise("#c3", 20.6, 0.6);
+      // S4 night sight
+      rise("#t4", 23.7); rise("#c4", 25.0, 0.6);
+      tl.fromTo("#ph4", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 1.0, ease: E3 }, 23.8);
+      tl.to("#ph4", { x: -24, duration: 3, ease: "none" }, 24.8);
+      // S5 AI zoom split
+      rise("#t5", 27.6);
+      tl.fromTo("#l5", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: E3 }, 28.2);
+      tl.fromTo("#v5", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 34.8);
+      tl.fromTo("#r5", { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: E3 }, 35.2);
+      tl.to("#l5", { opacity: 0.55, duration: 0.6 }, 35.6);
+      // S6 Magic Capture
+      rise("#q6", 41.9, 1.0); rise("#c6", 43.0, 0.6);
+      tl.fromTo("#q6", { scale: 1 }, { scale: 1.02, duration: 6.5, ease: "none" }, 42.9);
+      // S7 battery dial
+      dialAnim(7, 6.5, 50.4);
+      rise("#t7", 49.6); rise("#c7", 51.9, 0.6);
+      // S8 stat bars (shared 0-60h axis)
+      rise("#t8", 54.8);
+      tl.fromTo("#ph8", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: E3 }, 54.8);
+      tl.to("#ph8", { y: -24, duration: 10, ease: "none" }, 55.8);
+      rise("#st8a", 56.6, 0.7); rise("#ax8", 56.6, 0.7);
+      tl.fromTo("#b8a", { scaleX: 0 }, { scaleX: 19.217 / 60, duration: 1.6, ease: EX }, 57.0);
+      rise("#st8b", 60.6, 0.7);
+      tl.fromTo("#b8b", { scaleX: 0 }, { scaleX: 54 / 60, duration: 1.8, ease: EX }, 61.0);
+      // S9 Pro battery split
+      rise("#t9", 66.5);
+      tl.fromTo("#l9", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: E3 }, 67.4);
+      tl.fromTo("#v9", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 70.4);
+      tl.fromTo("#r9", { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: E3 }, 70.6);
+      // S10 charging
+      tl.fromTo("#p10a", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: E3 }, 77.6);
+      tl.fromTo("#p10b", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: E3 }, 84.0);
+      tl.to("#p10a", { opacity: 0.6, duration: 0.6 }, 84.2);
+
+      window.__timelines["p4"] = tl;
+    </script>
+  </body>
+</html>

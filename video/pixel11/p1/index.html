@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p1</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+
+      .scene { font-family: "Inter", sans-serif; }
+      .word { display: inline-block; }
+      /* S1 title */
+      #s1 .scene { align-items: center; }
+      #s1 .copy { position: relative; z-index: 2; width: 980px; }
+      #s1 .h1 { font-size: 140px; line-height: 0.98; }
+      #s1 .h1 .accent { color: var(--accent); }
+      #s1 .tag { margin-top: 34px; font-size: 36px; color: var(--ink-dim); }
+      #s1 .fam { position: absolute; right: 30px; top: 110px; width: 800px; height: 605px; }
+      .rule-line { height: 4px; width: 220px; background: var(--accent); border-radius: 4px; transform-origin: left center; margin-bottom: 30px; }
+      /* S2 stats */
+      #s2 .scene { flex-direction: column; justify-content: center; align-items: center; }
+      #s2 .push { display: flex; flex-direction: column; align-items: center; gap: 56px; width: 100%; }
+      #s2 .stats { display: flex; gap: 60px; width: 100%; justify-content: center; }
+      #s2 .stat { width: 470px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+      #s2 .val { font-weight: 800; font-size: 210px; line-height: 1; letter-spacing: -0.04em; width: 470px; text-align: center; }
+      #s2 .stat:nth-child(3) .val { color: var(--accent-2); }
+      #s2 .lbl { font-weight: 700; font-size: 36px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); }
+      #s2 .bar { width: 320px; height: 6px; border-radius: 6px; background: rgba(255,255,255,0.10); overflow: hidden; }
+      #s2 .bar i { display: block; height: 100%; width: 100%; background: var(--accent); transform-origin: left center; }
+      #s2 .stat:nth-child(3) .bar i { background: var(--accent-2); }
+      /* S3 pillars */
+      #s3 .scene { flex-direction: column; justify-content: center; gap: 50px; }
+      #s3 .row { display: flex; gap: 40px; }
+      #s3 .pillar { flex: 1; height: 400px; padding: 48px 44px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; }
+      #s3 .pillar .top { position: absolute; left: 0; top: 0; right: 0; height: 8px; transform-origin: left center; }
+      #s3 .idx { font-weight: 800; font-size: 92px; line-height: 1; opacity: 0.9; }
+      #s3 .pt { font-weight: 800; font-size: 56px; line-height: 1.08; letter-spacing: -0.02em; }
+      #s3 .p1 .top, #s3 .p1 .idx { background: var(--accent); color: var(--accent); }
+      #s3 .p2 .top, #s3 .p2 .idx { background: var(--warn); color: var(--warn); }
+      #s3 .p3 .top, #s3 .p3 .idx { background: var(--accent-2); color: var(--accent-2); }
+      #s3 .idx { background: none !important; }
+      /* S4 date */
+      #s4 .scene { align-items: center; }
+      #s4 .copy { position: relative; z-index: 2; width: 860px; }
+      #s4 .h1 { font-size: 132px; }
+      #s4 .chips { display: flex; gap: 18px; margin-top: 38px; }
+      #s4 .chips .chip { font-size: 32px; padding: 12px 26px; color: var(--ink); border-color: var(--glass-edge); background: var(--glass); }
+      #s4 .chips .chip.hl { color: var(--accent); border-color: var(--accent); }
+      #s4 .fam { position: absolute; right: 10px; top: 80px; width: 860px; height: 650px; }
+      /* S5 lineup */
+      #s5 .scene { flex-direction: column; }
+      #s5 .zoom { display: flex; flex-direction: column; width: 100%; height: 100%; transform-origin: 50% 45%; }
+      #s5 .head { position: relative; height: 112px; }
+      #s5 .head .h2 { position: absolute; left: 0; top: 40px; font-size: 60px; }
+      #s5 .cards { display: flex; gap: 28px; margin-top: 26px; }
+      #s5 .card { position: relative; flex: 1; height: 540px; padding: 26px 28px; display: flex; flex-direction: column; }
+      #s5 .imgbox { position: relative; z-index: 0; height: 270px; display: flex; align-items: flex-end; justify-content: center; }
+      #s5 .imgbox img { max-width: 100%; max-height: 270px; }
+      #s5 .name { margin-top: 18px; font-weight: 700; font-size: 36px; letter-spacing: -0.01em; }
+      #s5 .faces { position: relative; height: 140px; margin-top: 8px; overflow: hidden; }
+      #s5 .face { position: absolute; left: 0; top: 0; right: 0; }
+      #s5 .price { font-weight: 800; font-size: 70px; line-height: 1.1; letter-spacing: -0.03em; font-family: "Inter", "DejaVu Sans", sans-serif; }
+      #s5 .face.in .price { font-size: 58px; color: var(--accent); }
+      #s5 .stor { font-size: 30px; color: var(--ink-dim); margin-top: 6px; }
+      #s5 .badge { z-index: 5; position: absolute; right: 14px; top: 16px; padding: 10px 20px; border-radius: 14px; background: var(--warn); color: #120c03; font-weight: 800; font-size: 36px; box-shadow: 0 14px 40px rgba(0,0,0,0.5); }
+      #s5 .foot { position: relative; height: 70px; margin-top: 28px; }
+      #s5 .note { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 18px; font-size: 36px; font-weight: 600; }
+      #s5 .note .dot { width: 16px; height: 16px; border-radius: 50%; background: var(--warn); }
+      #s5 .stchip { position: absolute; left: 0; top: 0; font-size: 36px; font-weight: 700; padding: 10px 28px; border-radius: 999px; border: 2px solid var(--accent); color: var(--accent); background: rgba(94,225,194,0.08); }
+      #s5 .stchip s { color: var(--ink-dim); text-decoration-thickness: 3px; }
+      /* S6 transition */
+      #s6 .scene { flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+      #s6 .h1 { font-size: 160px; }
+      #s6 .rule-line { margin: 30px auto 0; width: 360px; transform-origin: center; }
+      #s6 .chip-img { position: absolute; right: 150px; top: 150px; width: 300px; opacity: 0.0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p1" data-start="0" data-width="1920" data-height="1080" data-duration="70.868">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+
+      <section id="s1" class="clip" data-start="0" data-duration="5.8" data-track-index="1">
+        <div class="scene">
+          <img class="phone-img fam" src="media/p11_family.png" alt="Pixel 11 family" />
+          <div class="copy">
+            <div class="rule-line"></div>
+            <div class="eyebrow">A consensus review</div>
+            <h1 class="h1" style="margin-top:22px"><span class="word">Pixel</span> <span class="word">11:</span><br /><span class="word accent">The</span> <span class="word accent">Consensus</span></h1>
+            <p class="tag">What reviewers actually agree on.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="s2" class="clip" data-start="5.4" data-duration="11.1" data-track-index="1">
+        <div class="scene">
+          <div class="push">
+            <div class="eyebrow">The homework</div>
+            <div class="stats">
+              <div class="stat"><div class="val num" id="st1">0</div><div class="bar"><i></i></div><div class="lbl">Reviews</div></div>
+              <div class="stat"><div class="val num" id="st2">0</div><div class="bar"><i></i></div><div class="lbl">Outlets</div></div>
+              <div class="stat"><div class="val num" id="st3">+0</div><div class="bar"><i></i></div><div class="lbl">Fold reviews</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s3" class="clip" data-start="16.1" data-duration="6.5" data-track-index="1">
+        <div class="scene">
+          <div class="eyebrow">What you get</div>
+          <div class="row">
+            <div class="glass pillar p1"><div class="top"></div><div class="idx">01</div><div class="pt">Where they agree</div></div>
+            <div class="glass pillar p2"><div class="top"></div><div class="idx">02</div><div class="pt">Where they disagree</div></div>
+            <div class="glass pillar p3"><div class="top"></div><div class="idx">03</div><div class="pt">Who should buy</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s4" class="clip" data-start="22.2" data-duration="6.0" data-track-index="1">
+        <div class="scene">
+          <img class="phone-img fam" src="media/p11_family.png" alt="Pixel 11 family" />
+          <div class="copy">
+            <div class="eyebrow">Made by Google</div>
+            <h1 class="h1" style="margin-top:22px"><span class="word">12</span> <span class="word">Aug</span> <span class="word">2026</span></h1>
+            <div class="chips"><span class="chip">New York</span><span class="chip hl">4 phones</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s5" class="clip" data-start="27.8" data-duration="39.6" data-track-index="1">
+        <div class="scene">
+          <div class="zoom">
+            <div class="head">
+              <div class="eyebrow">The lineup</div>
+              <h2 class="h2 hus">US starting prices</h2>
+              <h2 class="h2 hin">India prices</h2>
+            </div>
+            <div class="cards">
+              <div class="glass card"><div class="badge">+$100</div><div class="imgbox"><img class="phone-img" src="media/p11_frost.png" alt="Pixel 11" style="max-height:250px" /></div><div class="name">Pixel 11</div>
+                <div class="faces"><div class="face us"><div class="price num" data-usd="899">$0</div><div class="stor">256GB</div></div><div class="face in"><div class="price num">₹89,999</div><div class="stor">256GB</div></div></div></div>
+              <div class="glass card"><div class="badge">+$100</div><div class="imgbox"><img class="phone-img" src="media/pro_family.png" alt="Pixel 11 Pro" style="max-height:220px" /></div><div class="name">Pixel 11 Pro</div>
+                <div class="faces"><div class="face us"><div class="price num" data-usd="1099">$0</div><div class="stor">256GB</div></div><div class="face in"><div class="price num">₹1,19,999</div><div class="stor">256GB</div></div></div></div>
+              <div class="glass card"><div class="badge">+$100</div><div class="imgbox"><img class="phone-img" src="media/pro_family.png" alt="Pixel 11 Pro XL" /></div><div class="name">Pixel 11 Pro XL</div>
+                <div class="faces"><div class="face us"><div class="price num" data-usd="1299">$0</div><div class="stor">256GB</div></div><div class="face in"><div class="price num">₹1,34,999</div><div class="stor">256GB</div></div></div></div>
+              <div class="glass card"><div class="badge">+$100</div><div class="imgbox"><img class="phone-img" src="media/fold_obsidian.png" alt="Pixel 11 Pro Fold" /></div><div class="name">Pixel 11 Pro Fold</div>
+                <div class="faces"><div class="face us"><div class="price num" data-usd="1899">$0</div><div class="stor">256GB</div></div><div class="face in"><div class="price num">₹1,86,999</div><div class="stor">512GB only</div></div></div></div>
+            </div>
+            <div class="foot">
+              <div class="note"><span class="dot"></span><span>11 outlets flagged the price rise</span></div>
+              <div class="stchip"><s>128GB</s> → 256GB base storage</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="s6" class="clip" data-start="67.0" data-duration="3.868" data-track-index="1">
+        <div class="scene">
+          <div class="eyebrow">Up next</div>
+          <h1 class="h1" style="margin-top:20px">What’s new</h1>
+          <div class="rule-line"></div>
+        </div>
+      </section>
+
+      <div id="hostbar"></div>
+      <audio id="p1-voice" src="voice.wav" data-start="0" data-duration="70.868" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p1","duration":70.868,"audio":"voice/p1.wav","lines":[{"id":"p1-01","speaker":"maya","text":"Okay Leo, be honest. How many Pixel 11 reviews did you actually read?","start":0.5,"end":5.244},{"id":"p1-02","speaker":"leo","text":"Twenty-four. From seventeen outlets. Plus nine more just for the Fold.","start":5.564,"end":10.644},{"id":"p1-03","speaker":"maya","text":"That's… a lot of reading. So you did the homework, so nobody watching has to.","start":10.964,"end":15.903},{"id":"p1-04","speaker":"leo","text":"Exactly. We show you what reviewers agree on, where they fight, and who should actually buy it.","start":16.223,"end":22.07},{"id":"p1-05","speaker":"maya","text":"Love it. Quick lineup check: Google announced four phones on August 12, in New York.","start":22.39,"end":27.643},{"id":"p1-06","speaker":"leo","text":"Pixel 11 at $899. Pixel 11 Pro at $1,099. Pro XL at $1,299. And the Pro Fold at $1,899.","start":27.963,"end":37.964},{"id":"p1-07","speaker":"maya","text":"And for India: ₹89,999 for the Pixel 11, all the way up to ₹1,86,999 for the Fold.","start":38.284,"end":49.372},{"id":"p1-08","speaker":"leo","text":"And notice? Every US price is $100 higher than last year. Eleven outlets called that out.","start":49.692,"end":57.165},{"id":"p1-09","speaker":"maya","text":"Ouch. But base storage doubled to 256GB, so… partly fair?","start":57.485,"end":62.446},{"id":"p1-10","speaker":"leo","text":"Partly. Hold that thought, because it comes back. A lot.","start":62.766,"end":66.8},{"id":"p1-11","speaker":"maya","text":"Fine! Then let's start with what's actually new.","start":67.12,"end":69.968}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+
+      const E = "power3.out";
+      const q = (sel) => document.querySelector(sel);
+      const qa = (sel) => Array.from(document.querySelectorAll(sel));
+      const fin = (targets, from, t, dur = 0.8, ease = E, extra = {}) =>
+        tl.fromTo(targets, from, Object.assign({ opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: dur, ease, immediateRender: true }, extra), t);
+      const fout = (sel, t, dur = 0.4) => tl.to(sel, { opacity: 0, duration: dur, ease: "power2.in" }, t);
+      function countUp(el, to, t, dur, fmt) {
+        const o = { v: 0 };
+        tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+      }
+
+      // S1 title (0 - 5.8)
+      fin("#s1 .fam", { opacity: 0, x: 120, y: 30, scale: 1.08 }, 0.1, 1.6, "expo.out");
+      tl.to("#s1 .fam", { x: -40, y: -10, scale: 0.98, duration: 4.1, ease: "none" }, 1.7);
+      tl.fromTo("#s1 .rule-line", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 0.2);
+      fin("#s1 .eyebrow", { opacity: 0, y: 16 }, 0.35, 0.7);
+      fin("#s1 .word", { opacity: 0, y: 70 }, 0.5, 1.0, "expo.out", { stagger: 0.12 });
+      fin("#s1 .tag", { opacity: 0, y: 20 }, 1.4, 0.8);
+      fout("#s1 .scene", 5.4);
+
+      // S2 stats (5.4 - 16.5)
+      fin("#s2 .eyebrow", { opacity: 0, y: 16 }, 5.5, 0.6);
+      const statT = [5.6, 7.3, 9.0];
+      qa("#s2 .stat").forEach((el, i) => {
+        fin(el, { opacity: 0, y: 50 }, statT[i], 0.9, "expo.out");
+        tl.fromTo(el.querySelector(".bar i"), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power2.out" }, statT[i] + 0.1);
+      });
+      countUp(q("#st1"), 24, 5.65, 1.4, (v) => String(v));
+      countUp(q("#st2"), 17, 7.35, 1.3, (v) => String(v));
+      countUp(q("#st3"), 9, 9.05, 1.1, (v) => "+" + v);
+      tl.fromTo("#s2 .push", { scale: 1 }, { scale: 1.07, duration: 5.6, ease: "power1.inOut" }, 10.9);
+      fout("#s2 .scene", 16.1);
+
+      // S3 pillars (16.1 - 22.6)
+      tl.set("#s3 .top", { scaleX: 0 }, 0);
+      fin("#s3 .eyebrow", { opacity: 0, y: 16 }, 16.2, 0.6);
+      [16.5, 17.9, 19.6].forEach((t, i) => {
+        const p = qa("#s3 .pillar")[i];
+        fin(p, { opacity: 0, y: 80, scale: 0.96 }, t, 0.9, "expo.out");
+        tl.fromTo(p.querySelector(".top"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.inOut", immediateRender: false }, t + 0.2);
+        fin(p.querySelector(".pt"), { opacity: 0, y: 24 }, t + 0.3, 0.7);
+      });
+      fout("#s3 .scene", 22.2);
+
+      // S4 date (22.2 - 28.2)
+      fin("#s4 .fam", { opacity: 0, y: 140, scale: 1.1 }, 22.25, 1.6, "expo.out");
+      tl.to("#s4 .fam", { y: -20, x: -30, scale: 1.02, duration: 4.3, ease: "none" }, 23.85);
+      fin("#s4 .eyebrow", { opacity: 0, y: 16 }, 22.4, 0.6);
+      fin("#s4 .word", { opacity: 0, y: 60 }, 22.55, 0.9, "expo.out", { stagger: 0.12 });
+      fin("#s4 .chip", { opacity: 0, y: 20 }, 24.4, 0.7, E, { stagger: 0.25 });
+      fout("#s4 .scene", 27.8);
+
+      // S5 lineup (27.8 - 67.4)
+      fin("#s5 .eyebrow", { opacity: 0, y: 16 }, 27.9, 0.6);
+      fin("#s5 .hus", { opacity: 0, y: 30 }, 28.0, 0.8);
+      tl.set("#s5 .hin", { opacity: 0 }, 0);
+      tl.set("#s5 .face.in", { y: 140, opacity: 0 }, 0);
+      tl.set("#s5 .badge", { opacity: 0 }, 0);
+      tl.set(["#s5 .note", "#s5 .stchip"], { opacity: 0 }, 0);
+      const cardT = [28.2, 30.5, 33.0, 35.4];
+      qa("#s5 .card").forEach((card, i) => {
+        const t = cardT[i];
+        fin(card, { opacity: 0, y: 90, scale: 0.94 }, t, 1.0, "expo.out");
+        const img = card.querySelector(".imgbox img");
+        // Parallax drift: each phone floats at its own speed for the whole scene.
+        tl.fromTo(img, { y: 0 }, { y: -14 - i * 5, duration: 67.4 - t, ease: "none" }, t);
+        const pr = card.querySelector(".face.us .price");
+        const usd = +pr.dataset.usd;
+        countUp(pr, usd, t + 0.25, 1.1, (v) => "$" + v.toLocaleString("en-US"));
+      });
+      // Flip to India prices (38.3), back to US (49.5)
+      tl.fromTo("#s5 .face.us", { y: 0, opacity: 1 }, { y: -140, opacity: 0, duration: 0.6, ease: "power3.inOut", stagger: 0.12, immediateRender: false }, 38.4);
+      tl.fromTo("#s5 .face.in", { y: 140, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.inOut", stagger: 0.12, immediateRender: false }, 38.4);
+      tl.to("#s5 .hus", { opacity: 0, y: -30, duration: 0.5, ease: "power2.in" }, 38.3);
+      tl.fromTo("#s5 .hin", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E, immediateRender: false }, 38.7);
+      tl.fromTo("#s5 .face.in", { y: 0, opacity: 1 }, { y: -140, opacity: 0, duration: 0.6, ease: "power3.inOut", stagger: 0.1, immediateRender: false }, 49.4);
+      tl.fromTo("#s5 .face.us", { y: 140, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.inOut", stagger: 0.1, immediateRender: false }, 49.4);
+      tl.to("#s5 .hin", { opacity: 0, y: -30, duration: 0.45, ease: "power2.in" }, 49.3);
+      tl.fromTo("#s5 .hus", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E, immediateRender: false }, 49.7);
+      // +$100 stamps (50.6+)
+      qa("#s5 .badge").forEach((b, i) => {
+        tl.fromTo(b, { opacity: 0, scale: 2.2, rotation: -18 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.45, ease: "power4.out", immediateRender: false }, 50.6 + i * 0.22);
+      });
+      tl.fromTo("#s5 .note", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: E, immediateRender: false }, 53.6);
+      tl.to("#s5 .note", { opacity: 0, y: -20, duration: 0.4, ease: "power2.in" }, 57.4);
+      tl.fromTo("#s5 .stchip", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: E, immediateRender: false }, 57.8);
+      // Settle: slight zoom out
+      tl.fromTo("#s5 .zoom", { scale: 1 }, { scale: 0.94, duration: 4.4, ease: "power2.inOut" }, 62.6);
+      fout("#s5 .scene", 67.0);
+
+      // S6 What's new (67.0 - end)
+      fin("#s6 .eyebrow", { opacity: 0, y: 16 }, 67.2, 0.6);
+      fin("#s6 .h1", { opacity: 0, y: 60, scale: 0.96 }, 67.35, 1.0, "expo.out");
+      tl.fromTo("#s6 .rule-line", { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "expo.out" }, 67.7);
+
+      window.__timelines["p1"] = tl;
+    </script>
+  </body>
+</html>

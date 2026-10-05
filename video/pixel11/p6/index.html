@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p6</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+      .stack { display: flex; flex-direction: column; gap: 22px; }
+      .scene.stack { justify-content: center; }
+      .row { display: flex; gap: 32px; }
+      .center { align-items: center; justify-content: center; }
+      .w { width: 100%; }
+      /* S1 title */
+      .s1 { align-items: center; gap: 60px; }
+      .s1 .txt { flex: 1; }
+      .s1 .ph { width: 520px; height: 680px; flex: none; }
+      .meter { width: 820px; height: 26px; border-radius: 999px; overflow: hidden; display: flex; background: rgba(255,255,255,0.08); }
+      .meter .y { width: 55.5%; height: 100%; background: var(--accent); transform-origin: left center; }
+      .meter .n { width: 44.5%; height: 100%; background: var(--bad); transform-origin: right center; }
+      .meter-lbl { display: flex; justify-content: space-between; width: 820px; font-size: 30px; font-weight: 600; }
+      /* Team columns */
+      .team { flex: 1; padding: 40px 48px; display: flex; flex-direction: column; gap: 20px; }
+      .team .t { font-size: 54px; font-weight: 800; letter-spacing: -0.02em; }
+      .item { display: flex; align-items: baseline; gap: 22px; font-size: 38px; font-weight: 600; color: var(--ink); }
+      .item .k { font-size: 48px; font-weight: 800; min-width: 170px; }
+      .item .o { color: var(--ink-dim); font-weight: 600; }
+      .team.yes { border-color: rgba(94,225,194,0.45); }
+      .team.no { border-color: rgba(255,107,122,0.45); }
+      .vs { align-self: center; font-size: 40px; font-weight: 800; color: var(--ink-dim); }
+      /* Big stat */
+      .big { font-size: 220px; font-weight: 800; line-height: 0.9; letter-spacing: -0.05em; }
+      .pill { display: inline-flex; gap: 18px; align-items: center; padding: 24px 40px; font-size: 44px; font-weight: 800; }
+      /* Quote */
+      .quote { font-size: 70px; font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; max-width: 1500px; }
+      .attrib { font-size: 34px; font-weight: 600; color: var(--ink-dim); }
+      /* Lists */
+      .list { flex: 1; padding: 40px 48px; display: flex; flex-direction: column; gap: 24px; }
+      .li { display: flex; align-items: center; gap: 24px; font-size: 44px; font-weight: 700; }
+      .li .mk { width: 54px; height: 54px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 30px; font-weight: 800; color: #0a0d14; }
+      .li .sub { font-size: 28px; font-weight: 600; color: var(--ink-dim); }
+      /* Alternatives */
+      .alt { flex: 1; padding: 40px 40px; display: flex; flex-direction: column; gap: 18px; min-height: 380px; }
+      .alt .n { font-size: 50px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+      .alt .vs2 { font-size: 30px; font-weight: 600; color: var(--accent-2); }
+      .alt .why { font-size: 32px; color: var(--ink-dim); line-height: 1.3; margin-top: auto; }
+      /* Scorecards */
+      .card { flex: 1; padding: 36px 40px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+      .card .m { font-size: 40px; font-weight: 800; }
+      .card .sc { font-size: 150px; font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
+      .card .sc small { font-size: 50px; color: var(--ink-dim); letter-spacing: 0; }
+      .card .v { font-size: 30px; line-height: 1.3; color: var(--ink-dim); }
+      .card .hl { position: absolute; inset: -3px; border-radius: 34px; border: 4px solid var(--accent); opacity: 0; }
+      .badge { align-self: flex-start; font-size: 28px; font-weight: 800; padding: 10px 22px; border-radius: 999px; background: var(--accent); color: #0a0d14; }
+      .foldline { font-size: 30px; font-weight: 600; color: var(--ink-dim); }
+      /* Picks */
+      .s8 { align-items: center; gap: 70px; }
+      .s8 .ph { width: 500px; height: 680px; flex: none; }
+      .tag { display: flex; align-items: center; gap: 28px; padding: 30px 44px; }
+      .tag .av { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; font-size: 40px; font-weight: 800; color: #0a0d14; flex: none; }
+      .tag .who2 { font-size: 26px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+      .tag .pk { font-size: 54px; font-weight: 800; letter-spacing: -0.02em; }
+      .tag .pk2 { font-size: 32px; font-weight: 600; color: var(--ink-dim); }
+      /* Credits */
+      .cr { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 40px; width: 100%; }
+      .cr div { font-size: 38px; font-weight: 600; color: var(--ink); }
+      /* End */
+      .endt { font-size: 120px; font-weight: 800; letter-spacing: -0.04em; text-align: center; }
+      .sub-btn { font-size: 40px; font-weight: 800; padding: 22px 56px; border-radius: 999px; background: var(--bad); color: #0a0d14; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p6" data-start="0" data-width="1920" data-height="1080" data-duration="109.169">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- S1: the $899 question -->
+      <section class="clip" id="c1" data-start="0" data-duration="7.05" data-track-index="1">
+        <div class="scene s1" id="s1">
+          <div class="txt stack">
+            <div class="eyebrow">The big question</div>
+            <h1 class="h1">Is the Pixel 11 worth <span class="good">$899</span>?</h1>
+            <div class="stack" style="gap:14px;margin-top:30px">
+              <div class="meter"><div class="y" id="s1y"></div><div class="n" id="s1n"></div></div>
+              <div class="meter-lbl"><span class="good">Yes · 5 outlets</span><span class="bad">No · 4 outlets</span></div>
+            </div>
+          </div>
+          <div class="ph" id="s1d"><img class="phone-img" id="s1ph" style="width:100%;height:100%" src="media/p11_frost.png" alt="Pixel 11 in Frost" /></div>
+        </div>
+      </section>
+
+      <!-- S2: Team YES vs Team NO -->
+      <section class="clip" id="c2" data-start="6.95" data-duration="19.65" data-track-index="2">
+        <div class="scene stack" id="s2">
+          <div class="eyebrow">Worth $899? Reviewers split</div>
+          <div class="row" style="margin-top:10px">
+            <div class="glass team yes" id="s2yes">
+              <div class="t good">Team YES</div>
+              <div class="item s2y"><span class="k good num">9/10</span><span>CNET · Editors' Choice</span></div>
+              <div class="item s2y"><span class="k good">Top pick</span><span>PCMag</span></div>
+              <div class="item s2y"><span class="k good">Best</span><span>under £900 · Guardian</span></div>
+              <div class="item s2y"><span class="k good num">92</span><span>Engadget</span></div>
+            </div>
+            <div class="vs" id="s2vs">vs</div>
+            <div class="glass team no" id="s2no">
+              <div class="t bad">Team NO</div>
+              <div class="item s2n"><span class="k bad num">3/5</span><span>Tom's Guide</span></div>
+              <div class="item s2n" style="font-size:34px;line-height:1.3"><span>“dependability alone is a difficult thing to sell for $899” <span class="o">· GSMArena</span></span></div>
+              <div class="item s2n"><span class="k bad num">7/10</span><span>Android Authority</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S3: price hike stat -->
+      <section class="clip" id="c3" data-start="26.5" data-duration="7.85" data-track-index="3">
+        <div class="scene stack center" id="s3" style="text-align:center">
+          <div class="eyebrow" style="color:var(--bad)">Pro &amp; Pro XL</div>
+          <div class="big bad num" id="s3n">12</div>
+          <div class="h2">outlets knocked the price</div>
+          <div class="glass pill" id="s3p" style="margin-top:24px"><span class="bad">+$100</span><span style="color:var(--ink-dim)">·</span><span>16GB → 12GB RAM</span></div>
+        </div>
+      </section>
+
+      <!-- S4: Android Central quote -->
+      <section class="clip" id="c4" data-start="34.25" data-duration="6.0" data-track-index="4">
+        <div class="scene stack" id="s4" style="justify-content:center">
+          <div class="eyebrow" style="color:var(--bad)">Put bluntly</div>
+          <div class="quote" id="s4q">“the reality is that these are <span class="bad">too expensive for what you get.</span>”</div>
+          <div class="attrib" id="s4a">— Android Central</div>
+        </div>
+      </section>
+
+      <!-- S5: Buy / Skip -->
+      <section class="clip" id="c5" data-start="40.15" data-duration="17.05" data-track-index="5">
+        <div class="scene stack" id="s5">
+          <div class="eyebrow">Who should buy one?</div>
+          <div class="row" style="margin-top:10px">
+            <div class="glass list" id="s5buy" style="border-color:rgba(94,225,194,0.45)">
+              <div class="h2 good" style="font-size:58px">Buy it</div>
+              <div class="li s5b"><span class="mk" style="background:var(--accent)">✓</span><span>Pixel 9 / 8 or older <span class="sub">· 8 outlets</span></span></div>
+              <div class="li s5b"><span class="mk" style="background:var(--accent)">✓</span><span>iPhone switchers</span></div>
+              <div class="li s5b"><span class="mk" style="background:var(--accent)">✓</span><span>Camera-first buyers</span></div>
+            </div>
+            <div class="glass list" id="s5skip" style="border-color:rgba(255,107,122,0.45)">
+              <div class="h2 bad" style="font-size:58px">Skip it</div>
+              <div class="li s5s"><span class="mk" style="background:var(--bad)">✕</span><span>Pixel 10 owners <span class="sub">· 7 outlets</span></span></div>
+              <div class="li s5s"><span class="mk" style="background:var(--bad)">✕</span><span>Mobile gamers</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S6: Alternatives (text only) -->
+      <section class="clip" id="c6" data-start="57.1" data-duration="13.75" data-track-index="6">
+        <div class="scene stack" id="s6">
+          <div class="eyebrow">Alternatives reviewers named</div>
+          <div class="row" style="margin-top:20px">
+            <div class="glass alt s6c"><div class="vs2">vs Pixel 11</div><div class="n">Galaxy S26</div><div class="why">Same price, much faster chip</div></div>
+            <div class="glass alt s6c"><div class="vs2">vs Pixel 11 Pro XL</div><div class="n">Galaxy S26 Ultra</div><div class="why">Same $1,299, far faster, 60W charging</div></div>
+            <div class="glass alt s6c"><div class="vs2">vs any Pixel 11</div><div class="n">Pixel 10 (discounted)</div><div class="why">Nearly the same features for less</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S7: Final scorecard -->
+      <section class="clip" id="c7" data-start="70.75" data-duration="16.4" data-track-index="7">
+        <div class="scene stack" id="s7">
+          <div class="eyebrow">Final consensus scores</div>
+          <div class="row" style="margin-top:10px">
+            <div class="glass card s7c" id="s7p11"><div class="hl" id="s7hl"></div>
+              <div class="m">Pixel 11</div>
+              <div class="sc num"><span class="good" id="sc1">0.0</span><small>/10</small></div>
+              <div class="v">Great camera and software, held back by GPU</div>
+              <div class="badge" id="s7badge">Value pick · 4 outlets: save $200 vs Pro</div>
+            </div>
+            <div class="glass card s7c" id="s7pro">
+              <div class="m">Pixel 11 Pro</div>
+              <div class="sc num"><span class="good" id="sc2">0.0</span><small>/10</small></div>
+              <div class="v">Best small camera phone, hard-to-justify upgrade</div>
+            </div>
+            <div class="glass card s7c" id="s7xl">
+              <div class="m">Pixel 11 Pro XL</div>
+              <div class="sc num"><span class="good" id="sc3">0.0</span><small>/10</small></div>
+              <div class="v">Superb screen and battery; trails Galaxy S26 Ultra</div>
+            </div>
+          </div>
+          <div class="foldline" id="s7fold">Pixel 11 Pro Fold: see Fold verdict · buy if Pixel fan</div>
+        </div>
+      </section>
+
+      <!-- S8: Host picks -->
+      <section class="clip" id="c8" data-start="87.05" data-duration="11.0" data-track-index="8">
+        <div class="scene s8" id="s8">
+          <div class="ph" id="s8d"><img class="phone-img" id="s8ph" style="width:100%;height:100%" src="media/p11_family.png" alt="Pixel 11 family" /></div>
+          <div class="stack" style="flex:1;gap:34px">
+            <div class="eyebrow">Our picks</div>
+            <div class="glass tag" id="s8m">
+              <div class="av" style="background:var(--maya)">M</div>
+              <div class="stack" style="gap:6px"><div class="who2" style="color:var(--maya)">Maya's pick</div><div class="pk">Pixel 11</div><div class="pk2">Great camera · software · 5x zoom</div></div>
+            </div>
+            <div class="glass tag" id="s8l">
+              <div class="av" style="background:var(--leo)">L</div>
+              <div class="stack" style="gap:6px"><div class="who2" style="color:var(--leo)">Leo's pick</div><div class="pk">Pixel 11</div><div class="pk2">Gamers: Galaxy S26</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- S9: Credits -->
+      <section class="clip" id="c9" data-start="97.95" data-duration="6.0" data-track-index="9">
+        <div class="scene stack" id="s9">
+          <div class="eyebrow">Sources · every review linked below</div>
+          <div class="cr" id="s9g" style="margin-top:24px">
+            <div>9to5Google</div><div>Android Authority</div><div>Android Central</div><div>Android Headlines</div>
+            <div>Android Police</div><div>BGR</div><div>CNET</div><div>Droid Life</div>
+            <div>Engadget</div><div>Gizmodo</div><div>GSMArena</div><div>PCMag</div>
+            <div>Stuff</div><div>Tech Advisor</div><div>TechCrunch</div><div>TechRadar</div>
+            <div>The Guardian</div><div>Tom's Guide</div><div>Trusted Reviews</div>
+          </div>
+          <div class="src" id="s9img" style="font-size:30px;margin-top:30px">Phone images: Google</div>
+        </div>
+      </section>
+
+      <!-- S10: End card -->
+      <section class="clip" id="c10" data-start="103.8" data-duration="5.369" data-track-index="11">
+        <div class="scene stack center" id="s10">
+          <div class="eyebrow" id="s10e">24 reviews · one verdict</div>
+          <div class="endt" id="s10t">Pixel 11 <span style="color:var(--accent)">·</span> The Consensus</div>
+          <div class="sub-btn" id="s10b" style="margin-top:30px">Subscribe</div>
+        </div>
+      </section>
+
+      <div id="hostbar"></div>
+      <audio id="p6-voice" src="voice.wav" data-start="0" data-duration="109.169" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p6","duration":109.169,"audio":"voice/p6.wav","lines":[{"id":"p6-01","speaker":"maya","text":"Alright, the big question. Is the base Pixel 11 worth $899? Reviewers are genuinely split.","start":0.5,"end":6.831},{"id":"p6-02","speaker":"leo","text":"Team yes: CNET gave it 9 out of 10 and Editors' Choice. PCMag's top pick. The Guardian: best phone under £900.","start":7.151,"end":17.631},{"id":"p6-03","speaker":"maya","text":"Team no: Tom's Guide gave it 3 out of 5. GSMArena said dependability alone is “a difficult thing to sell.”","start":17.951,"end":26.391},{"id":"p6-04","speaker":"leo","text":"Then the Pros. Twelve outlets knocked the price hike, and base RAM dropping from 16 to 12GB.","start":26.711,"end":34.08},{"id":"p6-05","speaker":"maya","text":"Android Central put it bluntly: “too expensive for what you get.” So who should actually buy one?","start":34.4,"end":39.999},{"id":"p6-06","speaker":"leo","text":"Got a Pixel 9, Pixel 8 or older? Eight outlets say upgrade. Same if you're leaving iPhone, or live for photos.","start":40.319,"end":49.698},{"id":"p6-07","speaker":"maya","text":"And skip it if you have a Pixel 10. Seven outlets say there's no reason to upgrade. Or if you're a serious gamer.","start":50.018,"end":57.023},{"id":"p6-08","speaker":"leo","text":"Alternatives reviewers named: Galaxy S26 at the same price with a much faster chip. S26 Ultra against the Pro XL. Or a discounted Pixel 10.","start":57.343,"end":70.632},{"id":"p6-09","speaker":"maya","text":"Okay, final scores. Pixel 11: 7.5. Pixel 11 Pro: 7.5. Pro XL: 7.5.","start":70.952,"end":79.013},{"id":"p6-10","speaker":"leo","text":"Same score, different reasons. Four outlets said most people should just get the base model and save $200.","start":79.333,"end":86.83},{"id":"p6-11","speaker":"maya","text":"So my pick? The Pixel 11. Great camera, great software, and you keep that 5x zoom.","start":87.15,"end":93.008},{"id":"p6-12","speaker":"leo","text":"Mine too, honestly. Unless you game. Then look at the Galaxy.","start":93.328,"end":97.795},{"id":"p6-13","speaker":"maya","text":"Which one would you pick? Tell us in the comments. Every source is linked in the description.","start":98.115,"end":103.579},{"id":"p6-14","speaker":"leo","text":"Twenty-four reviews, so you don't have to read them. See you next time!","start":103.899,"end":108.269}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+      const E = "power3.out";
+      function sceneIO(id, a, b) {
+        tl.fromTo(id, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: E }, a);
+        if (b != null) tl.to(id, { opacity: 0, y: -16, duration: 0.4, ease: "power2.in" }, b - 0.42);
+      }
+      function countUp(sel, to, t, dur, dec) {
+        const o = { v: 0 }; const el = document.querySelector(sel);
+        tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = o.v.toFixed(dec); } }, t);
+      }
+      // S1
+      sceneIO("#s1", 0.0, 7.0);
+      tl.fromTo("#s1ph", { opacity: 0, x: 80, scale: 0.96 }, { opacity: 1, x: 0, scale: 1, duration: 1.2, ease: "expo.out" }, 0.3);
+      tl.fromTo("#s1d", { y: 10 }, { y: -20, duration: 6.5, ease: "none" }, 0.3);
+      tl.fromTo("#s1y", { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: E }, 2.6);
+      tl.fromTo("#s1n", { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: E }, 2.9);
+      // S2
+      sceneIO("#s2", 7.0, 26.55);
+      tl.fromTo("#s2yes", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.7, ease: E }, 7.15);
+      [7.6, 10.6, 12.6, 15.2].forEach((t, i) => tl.fromTo(document.querySelectorAll(".s2y")[i], { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: E }, t));
+      tl.fromTo("#s2vs", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 17.8);
+      tl.fromTo("#s2no", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.7, ease: E }, 17.95);
+      tl.to("#s2yes", { opacity: 0.55, duration: 0.6 }, 18.2);
+      [18.4, 21.0, 24.2].forEach((t, i) => tl.fromTo(document.querySelectorAll(".s2n")[i], { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.5, ease: E }, t));
+      // S3
+      sceneIO("#s3", 26.55, 34.3);
+      countUp("#s3n", 12, 27.0, 1.4, 0);
+      tl.fromTo("#s3p", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 29.6);
+      // S4
+      sceneIO("#s4", 34.3, 40.15);
+      tl.fromTo("#s4q", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: E }, 34.6);
+      tl.fromTo("#s4a", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 35.6);
+      // S5
+      sceneIO("#s5", 40.2, 57.15);
+      tl.fromTo("#s5buy", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 40.3);
+      [41.0, 45.6, 47.7].forEach((t, i) => tl.fromTo(document.querySelectorAll(".s5b")[i], { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: E }, t));
+      tl.fromTo("#s5skip", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 50.0);
+      tl.to("#s5buy", { opacity: 0.55, duration: 0.6 }, 50.2);
+      [50.6, 55.0].forEach((t, i) => tl.fromTo(document.querySelectorAll(".s5s")[i], { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.5, ease: E }, t));
+      // S6
+      sceneIO("#s6", 57.15, 70.8);
+      [57.6, 62.6, 67.4].forEach((t, i) => tl.fromTo(document.querySelectorAll(".s6c")[i], { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: E }, t));
+      // S7
+      sceneIO("#s7", 70.8, 87.1);
+      [71.4, 71.6, 71.8].forEach((t, i) => tl.fromTo(document.querySelectorAll(".s7c")[i], { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: E }, t));
+      countUp("#sc1", 7.5, 73.4, 1.4, 1);
+      countUp("#sc2", 7.5, 75.4, 1.4, 1);
+      countUp("#sc3", 7.5, 77.3, 1.4, 1);
+      tl.fromTo("#s7fold", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 78.0);
+      tl.fromTo("#s7badge", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 82.0);
+      tl.fromTo("#s7hl", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 81.6);
+      tl.to(["#s7pro", "#s7xl"], { opacity: 0.45, duration: 0.6 }, 81.6);
+      tl.fromTo("#s7p11", { scale: 1 }, { scale: 1.03, duration: 0.8, ease: E }, 81.6);
+      // S8
+      sceneIO("#s8", 87.1, 98.0);
+      tl.fromTo("#s8ph", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 1.1, ease: "expo.out" }, 87.3);
+      tl.fromTo("#s8d", { y: 14 }, { y: -18, duration: 10.5, ease: "none" }, 87.2);
+      tl.fromTo("#s8m", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, 87.9);
+      tl.fromTo("#s8l", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, 93.4);
+      // S9
+      sceneIO("#s9", 98.0, 103.85);
+      tl.fromTo("#s9g div", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: E, stagger: 0.12 }, 98.3);
+      tl.fromTo("#s9g", { y: 20 }, { y: -10, duration: 5.4, ease: "none" }, 98.2);
+      tl.fromTo("#s9img", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 100.9);
+      // S10
+      sceneIO("#s10", 103.85, null);
+      tl.fromTo("#s10t", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 1.0, ease: "expo.out" }, 104.0);
+      tl.fromTo("#s10b", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 105.2);
+
+      window.__timelines["p6"] = tl;
+    </script>
+  </body>
+</html>
