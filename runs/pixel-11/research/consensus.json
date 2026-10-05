@@ -1,0 +1,4656 @@
+{
+  "phone": "Google Pixel 11 / Pixel 11 Pro / Pixel 11 Pro XL",
+  "launch": "2026-08-12",
+  "collected_on": "2026-10-01",
+  "scope": "Base Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL (Fold covered separately)",
+  "source_count": {
+    "reviews": 24,
+    "distinct_outlets": 17
+  },
+  "sources": [
+    {
+      "id": "tg11",
+      "outlet": "Tom's Guide",
+      "author": "John Velasco",
+      "model": "Pixel 11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "published": "2026-08-27",
+      "score": "3/5",
+      "verdict": "Lackluster upgrades that cost $100 more; capable AI phone but weak value vs Pixel 10."
+    },
+    {
+      "id": "tgpro",
+      "outlet": "Tom's Guide",
+      "author": "Tom Pritchard",
+      "model": "Pixel 11 Pro + Pro XL",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "published": "2026-08-19",
+      "score": "3/5",
+      "verdict": "Not bad phones, but minimal upgrades, mediocre battery and weak performance; a Pixel 10 Pro may be the better buy."
+    },
+    {
+      "id": "aa11",
+      "outlet": "Android Authority",
+      "author": "Brady Snyder",
+      "model": "Pixel 11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "published": "2026-09-24",
+      "score": "7/10",
+      "verdict": "Bigger upgrade than it looks, best software, but Tensor G6 overheating/stutter and gaming hold it back."
+    },
+    {
+      "id": "aapro",
+      "outlet": "Android Authority",
+      "author": "Joe Maring",
+      "model": "Pixel 11 Pro + Pro XL",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "published": "2026-09-05",
+      "score": "9/10",
+      "verdict": "Imperfect (HiLight, Proactive Assistance, charging) but absolutely worth buying for cameras, build and software."
+    },
+    {
+      "id": "gsm11",
+      "outlet": "GSMArena",
+      "author": "GSMArena team",
+      "model": "Pixel 11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "published": "2026-09",
+      "score": null,
+      "verdict": "Very good, dependable phone, but very little feels new and $899 is hard to justify vs competition."
+    },
+    {
+      "id": "gsmxl",
+      "outlet": "GSMArena",
+      "author": "GSMArena team",
+      "model": "Pixel 11 Pro XL",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+      "published": "2026-09",
+      "score": null,
+      "verdict": "Very good, solid phone worth considering, but at this price check the alternatives first."
+    },
+    {
+      "id": "trxl",
+      "outlet": "Trusted Reviews",
+      "author": "Henry Burrell",
+      "model": "Pixel 11 Pro XL",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "published": "2026-08-24",
+      "score": "4/5",
+      "verdict": "Google's big non-folding phone reaching full maturity; lovely design and display, very good cameras, but gaming is 'straight trash'."
+    },
+    {
+      "id": "tcxl",
+      "outlet": "TechCrunch",
+      "author": "Ivan Mehta",
+      "model": "Pixel 11 Pro XL",
+      "url": "https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/",
+      "published": "2026-08-22",
+      "score": null,
+      "verdict": "Snappier cameras and great Rambler can't hide an iterative upgrade."
+    },
+    {
+      "id": "acpro",
+      "outlet": "Android Central",
+      "author": "Nicholas Sutrich",
+      "model": "Pixel 11 Pro + Pro XL",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "published": "2026-08",
+      "score": "3/5",
+      "verdict": "Great new features (Magic Capture, Rambler) but less RAM, weak GPU, low PWM and higher price make it hard to recommend."
+    },
+    {
+      "id": "trpro",
+      "outlet": "TechRadar",
+      "author": "Jason Cipriani",
+      "model": "Pixel 11 Pro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "published": "2026-08",
+      "score": "4/5",
+      "verdict": "More of the same, and that's okay: refined, not a must-have for recent Pixel owners."
+    },
+    {
+      "id": "9to5",
+      "outlet": "9to5Google",
+      "author": "Damien Wilde",
+      "model": "Pixel 11",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "published": "2026-08-19",
+      "score": null,
+      "verdict": "Initial review: adequate but modest update that 'probably could have been a software update'.",
+      "note": "Initial (one-week) review, not final"
+    },
+    {
+      "id": "eng11",
+      "outlet": "Engadget",
+      "author": "Nathan Ingraham",
+      "model": "Pixel 11",
+      "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+      "published": "2026-08-19",
+      "score": "92/100 (9.2/10 in page schema)",
+      "verdict": "A lot of phone for a little more money; iterative but one of the best smartphones on the market."
+    },
+    {
+      "id": "engpro",
+      "outlet": "Engadget",
+      "author": "Cherlynn Low",
+      "model": "Pixel 11 Pro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "published": "2026-08-19",
+      "score": "9/10 (page schema)",
+      "verdict": "Very satisfying handset, arguably the best Android phone of its size and price, but AI goes a step too far and value slipped."
+    },
+    {
+      "id": "ah11",
+      "outlet": "Android Headlines",
+      "author": "Justin Diaz",
+      "model": "Pixel 11",
+      "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+      "published": "2026-09-14",
+      "score": null,
+      "verdict": "A smart phone for smart buyers: strong case over the Pro models on savings alone."
+    },
+    {
+      "id": "ahpro",
+      "outlet": "Android Headlines",
+      "author": "Alexander Maxham",
+      "model": "Pixel 11 Pro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "published": "2026-08-24",
+      "score": null,
+      "verdict": "Google finally fixed its biggest problem: cooler thermals, better modem and battery."
+    },
+    {
+      "id": "cnet11",
+      "outlet": "CNET",
+      "author": "Mike Sorrentino",
+      "model": "Pixel 11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "published": "2026-08-21",
+      "score": "9.0/10, Editors' Choice",
+      "verdict": "The most compelling case yet to switch from an iPhone; hard to see why you'd spend more on a Pro."
+    },
+    {
+      "id": "gu11",
+      "outlet": "The Guardian",
+      "author": "Samuel Gibbs",
+      "model": "Pixel 11",
+      "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+      "published": "2026-09-07",
+      "score": null,
+      "verdict": "Sets the bar for standard flagship phones; the best phone you can get under GBP 900."
+    },
+    {
+      "id": "gupro",
+      "outlet": "The Guardian",
+      "author": "Samuel Gibbs",
+      "model": "Pixel 11 Pro",
+      "url": "https://www.theguardian.com/technology/2026/sep/10/pixel-11-review-googles-best-pocket-camera-goes-customisable",
+      "published": "2026-09-10",
+      "score": null,
+      "verdict": "Google's best pocket camera; one of the very best smaller phones, not a massive upgrade."
+    },
+    {
+      "id": "guxl",
+      "outlet": "The Guardian",
+      "author": "Samuel Gibbs",
+      "model": "Pixel 11 Pro XL",
+      "url": "https://www.theguardian.com/technology/2026/sep/21/pixel-11-pro-xl-review-google-big-screen-superphone-camera-battery",
+      "published": "2026-09-21",
+      "score": null,
+      "verdict": "Great, massive phone with two-day battery, but falls short of Galaxy S26 Ultra on performance."
+    },
+    {
+      "id": "giz",
+      "outlet": "Gizmodo",
+      "author": "Raymond Wong",
+      "model": "Pixel 11 Pro + Pro XL",
+      "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+      "published": "2026-08-19",
+      "score": "3.5/5",
+      "verdict": "Still growing into their AI shoes; safe annual upgrades held back by Tensor G6 performance."
+    },
+    {
+      "id": "appro",
+      "outlet": "Android Police",
+      "author": "Andy Boxall",
+      "model": "Pixel 11 Pro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "published": "2026-09-03",
+      "score": "9/10",
+      "verdict": "Superb camera and software; a highly recommended purchase if you ignore the AI fluff."
+    },
+    {
+      "id": "tapro",
+      "outlet": "Tech Advisor",
+      "author": "Anyron Copeman",
+      "model": "Pixel 11 Pro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "published": "2026-09-18",
+      "score": "3.5/5",
+      "verdict": "Technical marvel with an incredible camera, but bugs, standby drain and useless HiLight: look elsewhere until updates land."
+    },
+    {
+      "id": "stuffxl",
+      "outlet": "Stuff",
+      "author": "Tom Morgan-Freelander",
+      "model": "Pixel 11 Pro XL",
+      "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+      "published": "2026-08-19",
+      "score": "5/5",
+      "verdict": "Google's best mobile effort to date, though not a huge annual upgrade and HiLight misses."
+    },
+    {
+      "id": "pcm11",
+      "outlet": "PCMag",
+      "author": "Florence Ion",
+      "model": "Pixel 11",
+      "url": "https://www.pcmag.com/reviews/google-pixel-11",
+      "published": "2026-08-25",
+      "score": "4.0/5 (Excellent)",
+      "verdict": "Best value of the Pixel 11 lineup and PCMag's top pick among them."
+    }
+  ],
+  "context_sources_not_counted": [
+    {
+      "outlet": "Tech Advisor",
+      "author": "Henry Burrell",
+      "model": "Pixel 11 Pro XL",
+      "url": "https://www.techadvisor.com/article/3233198/google-pixel-11-pro-xl-review.html",
+      "score": "4/5",
+      "note": "Same reviewer as Trusted Reviews Pro XL review; excluded from claim counts to avoid double-counting one person."
+    },
+    {
+      "outlet": "How-To Geek",
+      "author": "Joe Fedewa",
+      "model": "Pixel 11 series",
+      "url": "https://www.howtogeek.com/ive-owned-pixel-phones-for-8-years-the-pixel-11-really-isnt-as-bad-as-it-seems/",
+      "score": null,
+      "note": "Opinion piece, not a review. Argues the negative reception is overblown; upgrade makes sense from Pixel 9 or older, not from Pixel 10."
+    },
+    {
+      "outlet": "Notebookcheck (aggregator)",
+      "author": null,
+      "model": "Pixel 11 / 11 Pro / 11 Pro XL",
+      "url": "https://www.notebookcheck.net/Google-Pixel-11-Series-Reviews.1373146.0.html",
+      "score": "aggregate ~81% / ~80% / ~82% (page schema 81, 80.3, 82.1)",
+      "note": "Review aggregator, used only to discover review URLs; not counted as a source."
+    }
+  ],
+  "not_reachable": [
+    "PhoneArena Pixel 11 Pro XL / Pro reviews (HTTP 403)",
+    "Digital Trends Pixel 11 / 11 Pro reviews (HTTP 405)",
+    "CNN Underscored Pixel 11 / 11 Pro reviews (HTTP 403/451)",
+    "Mark Ellis Reviews pages (bot challenge)",
+    "91mobiles (HTTP 403)",
+    "The Verge, Wired, ZDNet: no Pixel 11 review found via search"
+  ],
+  "claims": [
+    {
+      "id": "c001",
+      "source": "Tom's Guide (John Velasco)",
+      "source_id": "tg11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "Much brighter display, measured 2,480 nits vs Pixel 10's 2,333",
+      "quote": "This OLED panel reaches a peak brightness of 2,480 nits, up from the Pixel 10’s 2,333-nit peak rating.",
+      "locator": "The ups > A much brighter display"
+    },
+    {
+      "id": "c002",
+      "source": "Tom's Guide (John Velasco)",
+      "source_id": "tg11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Gemini, Proactive Assistance and Rambler are practical, not gimmicks",
+      "quote": "Google’s AI features are built around practical utility rather than gimmicks.",
+      "locator": "The ups > Helpful AI features"
+    },
+    {
+      "id": "c003",
+      "source": "Tom's Guide (John Velasco)",
+      "source_id": "tg11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "design",
+      "sentiment": 1,
+      "claim": "Slimmer camera plateau, flush with official case",
+      "quote": "Google’s signature camera cutout gets a much-welcomed refinement this year",
+      "locator": "The ups > Thinner camera plateau"
+    },
+    {
+      "id": "c004",
+      "source": "Tom's Guide (John Velasco)",
+      "source_id": "tg11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": 1,
+      "claim": "New creator tools (Magic Capture, Camera Looks, Creator Suite)",
+      "quote": "despite the hardware remaining mostly unchanged this year, Google adds even more tools for creators",
+      "locator": "The ups > More Camera tools for creators"
+    },
+    {
+      "id": "c005",
+      "source": "Tom's Guide (John Velasco)",
+      "source_id": "tg11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Photos nearly identical to Pixel 10 in side-by-side tests",
+      "quote": "Side-by-side shots I’ve captured against the Pixel 10 look nearly identical across most everyday shooting scenarios",
+      "locator": "The downs > No major camera improvements"
+    },
+    {
+      "id": "c006",
+      "source": "Tom's Guide (John Velasco)",
+      "source_id": "tg11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "Tensor G6 only marginally faster; trails Galaxy S26 and iPhone 17",
+      "quote": "the Tensor G6 powering the Pixel 11 still trails its main rivals like the Galaxy S26 and iPhone 17.",
+      "locator": "The downs > Tensor G6 continues to underperform"
+    },
+    {
+      "id": "c007",
+      "source": "Tom's Guide (John Velasco)",
+      "source_id": "tg11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "12h45m in lab test, down from Pixel 10's 13h13m; charging stagnant",
+      "quote": "endurance stays firmly in place rather than taking a meaningful step forward",
+      "locator": "The downs > Flat battery life"
+    },
+    {
+      "id": "c008",
+      "source": "Tom's Guide (John Velasco)",
+      "source_id": "tg11",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": -2,
+      "claim": "$100 hike (12.5%) hard to justify; discounted Pixel 10 smarter buy",
+      "quote": "a hike that I think is hard to justify given how minimal the gains are.",
+      "locator": "The downs > $100 price hike"
+    },
+    {
+      "id": "c009",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "design",
+      "sentiment": 1,
+      "claim": "40% slimmer all-glass camera bar makes base model look most modern",
+      "quote": "the base model looked and felt more modern than the others.",
+      "locator": "The Pixel 11's design is surprisingly fresh"
+    },
+    {
+      "id": "c010",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "Still 8.6mm thick and 197g, heavy vs S26/iPhone 17",
+      "quote": "The Pixel 11 measures 8.6mm, and it’s thick and hefty for a base model.",
+      "locator": "The Pixel 11's design is surprisingly fresh"
+    },
+    {
+      "id": "c011",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "display",
+      "sentiment": -1,
+      "claim": "Same panel as Pixel 10; no LTPO; 120Hz off by default",
+      "quote": "I suspect many Pixel 11 owners will use their phone without realizing the screen is capped at 60Hz by default.",
+      "locator": "Design section, display paragraphs"
+    },
+    {
+      "id": "c012",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": -2,
+      "claim": "Lag and overheating in normal use; no vapor chamber on base model",
+      "quote": "I experienced laggy animations and overheating at times, and that isn’t what I expect from a $899 phone.",
+      "locator": "The Pixel 11's Tensor G6 chipset let me down"
+    },
+    {
+      "id": "c013",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Camera app disabled zoom/Creator Suite features due to heat",
+      "quote": "the Pixel 11 outright disabled certain camera features due to heat.",
+      "locator": "The Pixel 11's Tensor G6 chipset let me down"
+    },
+    {
+      "id": "c014",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": -2,
+      "claim": "Fortnite unplayable even at low settings",
+      "quote": "even at low settings, it was unplayable on the Pixel 11 — I had frame rate lows of 9 FPS",
+      "locator": "The Pixel 11's Tensor G6 chipset let me down"
+    },
+    {
+      "id": "c015",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "New MediaTek modem seems more reliable",
+      "quote": "the new MediaTek modem does seem to be a lot more reliable",
+      "locator": "Verdict: Should you buy it?"
+    },
+    {
+      "id": "c016",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "5+ hours screen-on time; all-day battery",
+      "quote": "Back to the good, the Pixel 11 is excellent on battery life.",
+      "locator": "Tensor G6 section, battery paragraph"
+    },
+    {
+      "id": "c017",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Best version of Android 17, seven-year support",
+      "quote": "The Pixel 11’s software is indeed the best version of Android 17.",
+      "locator": "Pixel software is Android 17, perfected"
+    },
+    {
+      "id": "c018",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": -1,
+      "claim": "Proactive Assistance appeared but never saved time",
+      "quote": "Proactive Assistance was there, but never in a way that saved me time.",
+      "locator": "Pixel software is Android 17, perfected"
+    },
+    {
+      "id": "c019",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Larger 48MP main sensor; accurate, less oversaturated processing",
+      "quote": "I’m pleased to report that the Pixel 11’s computational photography is nearly perfect.",
+      "locator": "The Pixel 11's new camera won me back"
+    },
+    {
+      "id": "c020",
+      "source": "Android Authority (Brady Snyder)",
+      "source_id": "aa11",
+      "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "$100 more yet less capable than same-price rivals",
+      "quote": "Why should you pay the same prices for Pixel phones that aren’t as capable as the competition?",
+      "locator": "Verdict: Should you buy it?"
+    },
+    {
+      "id": "c021",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "display",
+      "sentiment": 1,
+      "claim": "Sharp, bright, great HDR",
+      "quote": "It is sharp, very bright, looks great outdoors and has excellent HDR support.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c022",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "display",
+      "sentiment": -1,
+      "claim": "Basic 60/120Hz switching, not adaptive",
+      "quote": "its refresh rate implementation remains remarkably basic, switching only between 60Hz and 120Hz",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c023",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Substantial CPU gains; fast in daily use",
+      "quote": "the Pixel 11 feels perfectly fast and responsive in everyday use.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c024",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "GPU barely moved, no ray tracing",
+      "quote": "Unfortunately, GPU performance has barely moved; there is no hardware ray tracing",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c025",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": 1,
+      "claim": "Improves on predecessor in testing",
+      "quote": "the Pixel 11 makes great use of it and improves on its predecessor in our testing.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c026",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "30W wired charging is pedestrian",
+      "quote": "30W charging looks rather pedestrian next to much of the Android competition.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c027",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": 1,
+      "claim": "Solid, dependable camera; weak 2x, no ultrawide AF, soft tele beyond 5x",
+      "quote": "It may not have the most impressive camera hardware around, but the results are consistently dependable.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c028",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "design",
+      "sentiment": 1,
+      "claim": "Premium sturdy compact build",
+      "quote": "Premium, sturdy build and relatively compact dimensions.",
+      "locator": "Pros"
+    },
+    {
+      "id": "c029",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsm11",
+      "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": -2,
+      "claim": "Hard to justify $899 against competition",
+      "quote": "Unfortunately, dependability alone is a difficult thing to sell for $899/£879/€999.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c030",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsmxl",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "Outstanding display with dynamic refresh rate",
+      "quote": "Its display is outstanding with an incredibly dynamic refresh rate and HDR support.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c031",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsmxl",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "Battery life finally on par with Samsung and Apple",
+      "quote": "Battery life is finally on par with Samsung and Apple.",
+      "locator": "Pros"
+    },
+    {
+      "id": "c032",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsmxl",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "CPU throttles under sustained load; GPU behind",
+      "quote": "the CPU is quick to throttle down under sustained load and the graphics chip is far from the competition in its capabilities.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c033",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsmxl",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 1,
+      "claim": "Solid photos/videos day and night; zoom improved",
+      "quote": "It captured solid photos and videos day and night, even if it doesn't really shine by any metric.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c034",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsmxl",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Android 17 snappy, feature-rich",
+      "quote": "Android works and looks best on the Pixels, and that remains true for the 11 Pro XL.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c035",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsmxl",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "HiLight limited, not a notification light",
+      "quote": "it's not the notification light many had hoped it would be.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c036",
+      "source": "GSMArena (GSMArena team)",
+      "source_id": "gsmxl",
+      "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "Check alternatives first at this price",
+      "quote": "But at this price, you'd better check out the alternatives first.",
+      "locator": "Our verdict"
+    },
+    {
+      "id": "c037",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "3,600-nit top-tier 6.8in panel",
+      "quote": "With a peak brightness of 3,600 nits it really pops, and is truly a top-tier panel.",
+      "locator": "Screen"
+    },
+    {
+      "id": "c038",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": 1,
+      "claim": "Build quality matches iPhone 17 Pro",
+      "quote": "build quality is top tier, matching Apple’s iPhone 17 Pro for fit and finish.",
+      "locator": "Design"
+    },
+    {
+      "id": "c039",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "Very large and heavy (226g)",
+      "quote": "Beware if you don’t like big phones, as the Pixel 11 Pro XL is a whopper.",
+      "locator": "Design"
+    },
+    {
+      "id": "c040",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -2,
+      "claim": "HiLight is a gimmick",
+      "quote": "this is a not very useful gimmick",
+      "locator": "Design"
+    },
+    {
+      "id": "c041",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 1,
+      "claim": "Very good, but Chinese ultra flagships are better",
+      "quote": "Excellent cameras with 5x telephoto zoom, though still lags behind Chinese competition",
+      "locator": "Key Features"
+    },
+    {
+      "id": "c042",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": -2,
+      "claim": "120x Pro Zoom invents details",
+      "quote": "It’s a cynical feature that is trying hard to be useful when it simply isn’t needed.",
+      "locator": "Cameras"
+    },
+    {
+      "id": "c043",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Video washed out at default, behind iPhone",
+      "quote": "the video results are not befitting of a phone with ‘Pro’ in the product name.",
+      "locator": "Cameras"
+    },
+    {
+      "id": "c044",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Flies in daily use",
+      "quote": "the processor flies in daily use",
+      "locator": "Performance"
+    },
+    {
+      "id": "c045",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": -2,
+      "claim": "Very poor gaming; GPU far behind S26 Ultra",
+      "quote": "The phone’s major downside is its pitifully bad gaming performance.",
+      "locator": "Should you buy it?"
+    },
+    {
+      "id": "c046",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": 1,
+      "claim": "Excellent longevity, 30-40% left after heavy day",
+      "quote": "I found longevity to be excellent.",
+      "locator": "Battery Life"
+    },
+    {
+      "id": "c047",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "Measured 37% in 30 min vs Google's 75% claim",
+      "quote": "I hit 37% in 30 minutes with a Belkin 45W charger, which is far less than Google’s claim.",
+      "locator": "Battery Life"
+    },
+    {
+      "id": "c048",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Rambler genuinely impressive",
+      "quote": "It’s rare I’m genuinely impressed by an AI feature on a phone, but Rambler is excellent.",
+      "locator": "Software & AI"
+    },
+    {
+      "id": "c049",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": -1,
+      "claim": "Key Gemini Intelligence features US-only",
+      "quote": "many of the Gemini Intelligence features marketed are US-only at launch.",
+      "locator": "Final Thoughts"
+    },
+    {
+      "id": "c050",
+      "source": "Trusted Reviews (Henry Burrell)",
+      "source_id": "trxl",
+      "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "Higher price with only 12GB RAM base; S26 Ultra more performant",
+      "quote": "For the same £1279/$1299, the Galaxy S26 Ultra is much more performant.",
+      "locator": "Final Thoughts"
+    },
+    {
+      "id": "c051",
+      "source": "TechCrunch (Ivan Mehta)",
+      "source_id": "tcxl",
+      "url": "https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": 0,
+      "claim": "Looks almost identical to prior models",
+      "quote": "the Pixel 11 doesn’t look that different from prior models.",
+      "locator": "Intro"
+    },
+    {
+      "id": "c052",
+      "source": "TechCrunch (Ivan Mehta)",
+      "source_id": "tcxl",
+      "url": "https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Rambler a favourite, on par with top dictation tools",
+      "quote": "Rambler is one of my favorite new features on the Pixel 11 Pro XL.",
+      "locator": "Rambler"
+    },
+    {
+      "id": "c053",
+      "source": "TechCrunch (Ivan Mehta)",
+      "source_id": "tcxl",
+      "url": "https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": -1,
+      "claim": "Proactive suggestions inconsistent",
+      "quote": "Suggestions also don’t always show up.",
+      "locator": "Gemini updates"
+    },
+    {
+      "id": "c054",
+      "source": "TechCrunch (Ivan Mehta)",
+      "source_id": "tcxl",
+      "url": "https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 1,
+      "claim": "Faster capture and faster Night Sight",
+      "quote": "the camera app and capture feel snappy, and you can take photos faster.",
+      "locator": "Pixel's cameras are snappy"
+    },
+    {
+      "id": "c055",
+      "source": "TechCrunch (Ivan Mehta)",
+      "source_id": "tcxl",
+      "url": "https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "HiLight only for Gemini and favourite callers",
+      "quote": "a big limitation is that it only works when you activate Gemini or get phone calls from your favorite contacts, not texts.",
+      "locator": "HiLight is not really a highlight"
+    },
+    {
+      "id": "c056",
+      "source": "TechCrunch (Ivan Mehta)",
+      "source_id": "tcxl",
+      "url": "https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "No incentive to upgrade from last year",
+      "quote": "the new Pixels don’t incentivize gadget enthusiasts to upgrade from last year’s phone, despite being solid devices.",
+      "locator": "Price"
+    },
+    {
+      "id": "c057",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "value",
+      "sentiment": -2,
+      "claim": "Too expensive for what you get",
+      "quote": "the reality is that these are too expensive for what you get.",
+      "locator": "Starting off on the wrong foot"
+    },
+    {
+      "id": "c058",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "Battery life near-identical to Pixel 10 Pro; slower charging",
+      "quote": "our battery tests show near-identical battery life between equivalent Pixel 10 Pro and Pixel 11 Pro models.",
+      "locator": "Starting off on the wrong foot"
+    },
+    {
+      "id": "c059",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "GPU still lacks latest Vulkan API support",
+      "quote": "it still doesn't support the latest Vulkan API",
+      "locator": "Starting off on the wrong foot"
+    },
+    {
+      "id": "c060",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "New modem did not fix dropped calls",
+      "quote": "My calls get dropped in the same areas as the Pixel 10",
+      "locator": "Starting off on the wrong foot"
+    },
+    {
+      "id": "c061",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "display",
+      "sentiment": -2,
+      "claim": "Low-frequency PWM dimming bad for flicker-sensitive users",
+      "quote": "low-frequency PWM dimming continues to make its phones unusable for flicker-sensitive people year after year.",
+      "locator": "Starting off on the wrong foot"
+    },
+    {
+      "id": "c062",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Magic Capture standout; Instant Night Sight much faster",
+      "quote": "Instant Night Sight is the perfect execution of a feature Google has excelled at for years",
+      "locator": "Experience over performance"
+    },
+    {
+      "id": "c063",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Telephoto still behind most Chinese phones",
+      "quote": "Telephoto performance is somewhat disappointing, but it has its highlights.",
+      "locator": "Experience over performance"
+    },
+    {
+      "id": "c064",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Rambler and other Gemini features excellent",
+      "quote": "New Gemini features like Rambler are truly wonderful additions to the Android experience",
+      "locator": "Android Central Verdict"
+    },
+    {
+      "id": "c065",
+      "source": "Android Central (Nicholas Sutrich)",
+      "source_id": "acpro",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -2,
+      "claim": "HiLight mostly useless",
+      "quote": "while I had high hopes for HiLight, the feature is mostly useless.",
+      "locator": "Experience over performance"
+    },
+    {
+      "id": "c066",
+      "source": "TechRadar (Jason Cipriani)",
+      "source_id": "trpro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "No performance issues in daily use or casual gaming",
+      "quote": "I don’t have any issues with the Pixel 11 Pro’s performance.",
+      "locator": "Performance"
+    },
+    {
+      "id": "c067",
+      "source": "TechRadar (Jason Cipriani)",
+      "source_id": "trpro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "Brighter (3,600 nits outdoors), no complaints",
+      "quote": "You won’t have any display-related problems with the Pixel 11 Pro.",
+      "locator": "Display"
+    },
+    {
+      "id": "c068",
+      "source": "TechRadar (Jason Cipriani)",
+      "source_id": "trpro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": 1,
+      "claim": "Triple camera one of the best; Magic Capture fun",
+      "quote": "Magic Capture is fun, and the triple camera setup is one of the best.",
+      "locator": "Should you buy"
+    },
+    {
+      "id": "c069",
+      "source": "TechRadar (Jason Cipriani)",
+      "source_id": "trpro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "120x Pro Zoom is hit or miss, watercolor look",
+      "quote": "There’s a clear degradation of image quality and an increase in the AI-like look to the pictures the more you zoom.",
+      "locator": "Cameras"
+    },
+    {
+      "id": "c070",
+      "source": "TechRadar (Jason Cipriani)",
+      "source_id": "trpro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "battery",
+      "sentiment": 1,
+      "claim": "Lasts all day; Extreme Charging helps",
+      "quote": "Battery life is good enough to last all day",
+      "locator": "Two-minute review"
+    },
+    {
+      "id": "c071",
+      "source": "TechRadar (Jason Cipriani)",
+      "source_id": "trpro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "software_ai",
+      "sentiment": 1,
+      "claim": "Rambler a leap forward for dictation",
+      "quote": "Rambler feels like a leap forward for voice dictation",
+      "locator": "Software"
+    },
+    {
+      "id": "c072",
+      "source": "TechRadar (Jason Cipriani)",
+      "source_id": "trpro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "HiLight pointless right now",
+      "quote": "there’s really no point to it right now.",
+      "locator": "Design"
+    },
+    {
+      "id": "c073",
+      "source": "TechRadar (Jason Cipriani)",
+      "source_id": "trpro",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "$100 more for double storage, less RAM",
+      "quote": "$100 / £80 / AU$150 more for double the storage but half the memory.",
+      "locator": "Should you buy (cons)"
+    },
+    {
+      "id": "c074",
+      "source": "9to5Google (Damien Wilde)",
+      "source_id": "9to5",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "design",
+      "sentiment": 1,
+      "claim": "7g weight reduction noticeable; stronger Pixelsnap magnets",
+      "quote": "the weight reduction of around 7g is genuinely noticeable.",
+      "locator": "The less it changes..."
+    },
+    {
+      "id": "c075",
+      "source": "9to5Google (Damien Wilde)",
+      "source_id": "9to5",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "display",
+      "sentiment": -1,
+      "claim": "Ships at 60Hz by default",
+      "quote": "I don’t know why the display stays tuned to 60Hz out of the box or by default.",
+      "locator": "How fast do you want your phone?"
+    },
+    {
+      "id": "c076",
+      "source": "9to5Google (Damien Wilde)",
+      "source_id": "9to5",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": 0,
+      "claim": "Tensor G6 feels like G5 day to day",
+      "quote": "Even the new Tensor G6 chip feels identical to the G5 day-to-day.",
+      "locator": "How fast do you want your phone?"
+    },
+    {
+      "id": "c077",
+      "source": "9to5Google (Damien Wilde)",
+      "source_id": "9to5",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "Connection problems on 5G + VPN in some locations",
+      "quote": "my phone had some severe connection problems while connected to a VPN and a 5G network",
+      "locator": "How fast do you want your phone?"
+    },
+    {
+      "id": "c078",
+      "source": "9to5Google (Damien Wilde)",
+      "source_id": "9to5",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": 1,
+      "claim": "Impressive longevity, 6h+ screen-on",
+      "quote": "I’m getting impressive longevity despite not being a quantum leap.",
+      "locator": "How long is long enough for a battery?"
+    },
+    {
+      "id": "c079",
+      "source": "9to5Google (Damien Wilde)",
+      "source_id": "9to5",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "Charging slow even with Extreme Charging",
+      "quote": "it still feels so slow and outdated compared to the competition.",
+      "locator": "How long is long enough for a battery?"
+    },
+    {
+      "id": "c080",
+      "source": "9to5Google (Damien Wilde)",
+      "source_id": "9to5",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": 1,
+      "claim": "Rambler handles corrections well but text appears only at the end",
+      "quote": "it handles stutters, changes, and course corrections perfectly.",
+      "locator": "How fast do you want your phone?"
+    },
+    {
+      "id": "c081",
+      "source": "9to5Google (Damien Wilde)",
+      "source_id": "9to5",
+      "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "Good but expensive; wait for discounts",
+      "quote": "The Pixel 11 is a good phone but an expensive phone.",
+      "locator": "Initial thoughts"
+    },
+    {
+      "id": "c082",
+      "source": "Engadget (Nathan Ingraham)",
+      "source_id": "eng11",
+      "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "display",
+      "sentiment": 1,
+      "claim": "Same lovely 3,000-nit panel as Pixel 10",
+      "quote": "But for a phone in this price bracket, this thing looks great.",
+      "locator": "Hardware and display"
+    },
+    {
+      "id": "c083",
+      "source": "Engadget (Nathan Ingraham)",
+      "source_id": "eng11",
+      "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "5x telephoto is a real differentiator vs iPhone 17 and S26",
+      "quote": "This is a real differentiator for Google",
+      "locator": "Camera performance"
+    },
+    {
+      "id": "c084",
+      "source": "Engadget (Nathan Ingraham)",
+      "source_id": "eng11",
+      "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": 0,
+      "claim": "30x Super Zoom decent but soft on closer look",
+      "quote": "Just remember that these will likely be quick keepsakes that look fine on your phone screen but don't stand up to closer scrutiny.",
+      "locator": "Camera performance"
+    },
+    {
+      "id": "c085",
+      "source": "Engadget (Nathan Ingraham)",
+      "source_id": "eng11",
+      "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Proactive Intelligence among best features tested",
+      "quote": "being able to easily link things in messages to other apps is one of the best features I tried on the Pixel 11.",
+      "locator": "Software and AI tricks"
+    },
+    {
+      "id": "c086",
+      "source": "Engadget (Nathan Ingraham)",
+      "source_id": "eng11",
+      "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Fast and fluid for non-demanding user",
+      "quote": "In practice, the Pixel 11 is fast, fluid and kept up with everything that I wanted to do",
+      "locator": "Performance / battery"
+    },
+    {
+      "id": "c087",
+      "source": "Engadget (Nathan Ingraham)",
+      "source_id": "eng11",
+      "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "Nearly two days between charges",
+      "quote": "over the weekend I went from Saturday morning around 8AM until 7PM on Sunday without a charge.",
+      "locator": "Performance / battery"
+    },
+    {
+      "id": "c088",
+      "source": "Engadget (Nathan Ingraham)",
+      "source_id": "eng11",
+      "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": 0,
+      "claim": "Only real downside is iterative upgrade",
+      "quote": "The only real downside to the Pixel 11 is that it's quite the iterative upgrade.",
+      "locator": "Wrap up"
+    },
+    {
+      "id": "c089",
+      "source": "Engadget (Cherlynn Low)",
+      "source_id": "engpro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "design",
+      "sentiment": 1,
+      "claim": "Attractive, solid, doesn't wobble",
+      "quote": "The phone looks attractive, feels solid and has some respectable specs.",
+      "locator": "Hardware and display"
+    },
+    {
+      "id": "c090",
+      "source": "Engadget (Cherlynn Low)",
+      "source_id": "engpro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Night Sight faster than iPhone 17 Pro Max",
+      "quote": "In practice, I did find Night Sight to be a lot faster than the iPhone 17 Pro Max.",
+      "locator": "Instant Night Sight"
+    },
+    {
+      "id": "c091",
+      "source": "Engadget (Cherlynn Low)",
+      "source_id": "engpro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": -2,
+      "claim": "120x Pro Zoom results uncanny",
+      "quote": "My main problem with 120x Pro Zoom was in how uncanny the results were.",
+      "locator": "120x Pro Zoom is a bit too much"
+    },
+    {
+      "id": "c092",
+      "source": "Engadget (Cherlynn Low)",
+      "source_id": "engpro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Camera Looks lag Apple's Photographic Styles",
+      "quote": "I do think this is one area of photography where Google lags behind Apple",
+      "locator": "Camera Looks"
+    },
+    {
+      "id": "c093",
+      "source": "Engadget (Cherlynn Low)",
+      "source_id": "engpro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Rambler shines, incl. multilingual",
+      "quote": "My disappointment in HiLight was completely made up for by the efficacy of Rambler.",
+      "locator": "Rambler shines"
+    },
+    {
+      "id": "c094",
+      "source": "Engadget (Cherlynn Low)",
+      "source_id": "engpro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "HiLight usefulness very limited",
+      "quote": "But as it stands, the feature's usefulness is very limited.",
+      "locator": "HiLight is underwhelming right now"
+    },
+    {
+      "id": "c095",
+      "source": "Engadget (Cherlynn Low)",
+      "source_id": "engpro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Snappy; RAM cut not yet an issue",
+      "quote": "I did find the Pixel 11 Pro to be pretty snappy overall",
+      "locator": "Hardware and display"
+    },
+    {
+      "id": "c096",
+      "source": "Engadget (Cherlynn Low)",
+      "source_id": "engpro",
+      "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "$100 more and less RAM = poorer deal",
+      "quote": "the Pixel 11 Pro costs $100 more than its predecessor and has less RAM, making it seem like a poorer deal.",
+      "locator": "Wrap-up"
+    },
+    {
+      "id": "c097",
+      "source": "Android Headlines (Justin Diaz)",
+      "source_id": "ah11",
+      "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Thermals ~6 degrees cooler than Pixel 10 despite no vapor chamber",
+      "quote": "the temperatures after sustained use have dropped considerably compared to the Pixel 10.",
+      "locator": "Thermals"
+    },
+    {
+      "id": "c098",
+      "source": "Android Headlines (Justin Diaz)",
+      "source_id": "ah11",
+      "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "Genshin Impact won't run on PowerVR GPU",
+      "quote": "PowerVR GPU issues with Genshin Impact just like the other Pixel 11 series models",
+      "locator": "Cons"
+    },
+    {
+      "id": "c099",
+      "source": "Android Headlines (Justin Diaz)",
+      "source_id": "ah11",
+      "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "design",
+      "sentiment": 2,
+      "claim": "Best design in the business",
+      "quote": "Overall, this is a great design that remains the best in the business.",
+      "locator": "Design and Build Quality"
+    },
+    {
+      "id": "c100",
+      "source": "Android Headlines (Justin Diaz)",
+      "source_id": "ah11",
+      "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "Glossy back attracts fingerprints",
+      "quote": "the glossy finish grabs up fingerprints and smudges like a sponge sucks up water.",
+      "locator": "Design and Build Quality"
+    },
+    {
+      "id": "c101",
+      "source": "Android Headlines (Justin Diaz)",
+      "source_id": "ah11",
+      "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": 1,
+      "claim": "Lasts a full day, ~36% left",
+      "quote": "I’ve found that the phone serves my needs and is capable of lasting me throughout the day.",
+      "locator": "Battery Life and Charging"
+    },
+    {
+      "id": "c102",
+      "source": "Android Headlines (Justin Diaz)",
+      "source_id": "ah11",
+      "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Telephoto weaker than Pro models",
+      "quote": "Images from the telephoto lens do not look as good as the ones that come from the Pixel 11 Pro",
+      "locator": "Cons"
+    },
+    {
+      "id": "c103",
+      "source": "Android Headlines (Justin Diaz)",
+      "source_id": "ah11",
+      "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": 2,
+      "claim": "Strong case over Pro models on savings",
+      "quote": "there is a very strong case for suggesting the Pixel 11 over the other Pixel 11 series phones",
+      "locator": "Should you buy it?"
+    },
+    {
+      "id": "c104",
+      "source": "Android Headlines (Alexander Maxham)",
+      "source_id": "ahpro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "performance",
+      "sentiment": 2,
+      "claim": "11-degree cooler stress test than Pixel 10 Pro",
+      "quote": "Noticeably cooler thermals than the Pixel 10 Pro, an 11-degree drop in stress testing",
+      "locator": "Pros"
+    },
+    {
+      "id": "c105",
+      "source": "Android Headlines (Alexander Maxham)",
+      "source_id": "ahpro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "performance",
+      "sentiment": 2,
+      "claim": "MediaTek modem ~10% faster, better signal",
+      "quote": "New MediaTek modem delivers about 10% faster speeds and better signal than the Samsung modem it replaces",
+      "locator": "Pros"
+    },
+    {
+      "id": "c106",
+      "source": "Android Headlines (Alexander Maxham)",
+      "source_id": "ahpro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "battery",
+      "sentiment": 1,
+      "claim": "Outlasts Pixel 10 Pro XL, still tight vs iPhone",
+      "quote": "Battery life is a real improvement, outperforming even last year’s larger Pixel 10 Pro XL",
+      "locator": "Pros"
+    },
+    {
+      "id": "c107",
+      "source": "Android Headlines (Alexander Maxham)",
+      "source_id": "ahpro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "display",
+      "sentiment": -1,
+      "claim": "Low 540Hz PWM",
+      "quote": "We’re looking at 540Hz, which is incredibly low.",
+      "locator": "Display"
+    },
+    {
+      "id": "c108",
+      "source": "Android Headlines (Alexander Maxham)",
+      "source_id": "ahpro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "PowerVR GPU struggles with Genshin",
+      "quote": "PowerVR GPU still struggles with games like Genshin Impact",
+      "locator": "Cons"
+    },
+    {
+      "id": "c109",
+      "source": "Android Headlines (Alexander Maxham)",
+      "source_id": "ahpro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Pro Zoom hallucinates text",
+      "quote": "if you have any text in that image, you don’t want to use Pro Zoom.",
+      "locator": "Camera"
+    },
+    {
+      "id": "c110",
+      "source": "Android Headlines (Alexander Maxham)",
+      "source_id": "ahpro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "design",
+      "sentiment": 2,
+      "claim": "Best-looking Android phone",
+      "quote": "Best-looking Android phone on the market",
+      "locator": "Pros"
+    },
+    {
+      "id": "c111",
+      "source": "Android Headlines (Alexander Maxham)",
+      "source_id": "ahpro",
+      "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "$100 more and 4GB less RAM",
+      "quote": "$100 price increase over the Pixel 10 Pro, and you’re actually getting 4GB less RAM",
+      "locator": "Cons"
+    },
+    {
+      "id": "c112",
+      "source": "CNET (Mike Sorrentino)",
+      "source_id": "cnet11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Camera is the biggest reason to buy; impressive 5x and 30x",
+      "quote": "The Pixel 11’s camera is the biggest reason to consider getting it over rival phones.",
+      "locator": "Pixel 11 cameras, Magic Capture, Night Sight"
+    },
+    {
+      "id": "c113",
+      "source": "CNET (Mike Sorrentino)",
+      "source_id": "cnet11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Magic Capture only a nice-to-have",
+      "quote": "I feel like Magic Capture is currently a “nice to have” rather than a tool that I’d want to rely on.",
+      "locator": "Pixel 11 cameras, Magic Capture, Night Sight"
+    },
+    {
+      "id": "c114",
+      "source": "CNET (Mike Sorrentino)",
+      "source_id": "cnet11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "Fortnite struggles at Low/30fps",
+      "quote": "the Pixel 11 struggled running it on Low settings at 30 frames per second.",
+      "locator": "Pixel 11 processor"
+    },
+    {
+      "id": "c115",
+      "source": "CNET (Mike Sorrentino)",
+      "source_id": "cnet11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Everyday app use without issue",
+      "quote": "In my use, I could zip in and out of many apps and services without issue.",
+      "locator": "Pixel 11 processor"
+    },
+    {
+      "id": "c116",
+      "source": "CNET (Mike Sorrentino)",
+      "source_id": "cnet11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": 1,
+      "claim": "Ends days with 40-50%",
+      "quote": "I easily ended each day with 40-50% charge",
+      "locator": "Pixel 11 battery life"
+    },
+    {
+      "id": "c117",
+      "source": "CNET (Mike Sorrentino)",
+      "source_id": "cnet11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Live Translate dubbing jaw-dropping (some glitches)",
+      "quote": "Pixel-specific features like Live Translate are jaw-dropping",
+      "locator": "Pixel 11 software"
+    },
+    {
+      "id": "c118",
+      "source": "CNET (Mike Sorrentino)",
+      "source_id": "cnet11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "design",
+      "sentiment": 1,
+      "claim": "Lighter with 40% slimmer camera bar",
+      "quote": "Shaving off weight without actually compromising features is a feat in itself",
+      "locator": "Pixel 11 design"
+    },
+    {
+      "id": "c119",
+      "source": "CNET (Mike Sorrentino)",
+      "source_id": "cnet11",
+      "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": 2,
+      "claim": "Most iPhone-friendly Android, priced competitively",
+      "quote": "Google’s Pixel 11 is the most iPhone-friendly Android phone I’ve tested, and it’s priced competitively",
+      "locator": "The bottom line"
+    },
+    {
+      "id": "c120",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gu11",
+      "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "Crisp, super bright 120Hz OLED",
+      "quote": "The 6.3in OLED screen is crisp and super bright",
+      "locator": "Intro"
+    },
+    {
+      "id": "c121",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gu11",
+      "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Snappy; mid-level gaming fine",
+      "quote": "feels snappy in daily tasks and can handle mid-level gaming just fine.",
+      "locator": "Faster and more efficient Tensor G6 chip"
+    },
+    {
+      "id": "c122",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gu11",
+      "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "About 54 hours of light use",
+      "quote": "lasting about 54 hours of light use between charges",
+      "locator": "Faster and more efficient Tensor G6 chip"
+    },
+    {
+      "id": "c123",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gu11",
+      "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "AI tools second to none",
+      "quote": "Google’s AI tools are second to none",
+      "locator": "Verdict"
+    },
+    {
+      "id": "c124",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gu11",
+      "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": -1,
+      "claim": "Proactive suggestions don't work in WhatsApp/Signal",
+      "quote": "it doesn’t work in WhatsApp, Signal or other third-party apps I’ve tried",
+      "locator": "Android 17 with more proactive AI"
+    },
+    {
+      "id": "c125",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gu11",
+      "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "5x telephoto sets it apart",
+      "quote": "it is the 10.8MP 5x telephoto camera that sets it apart from the competition",
+      "locator": "Camera"
+    },
+    {
+      "id": "c126",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gu11",
+      "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": 2,
+      "claim": "Best phone under GBP 900",
+      "quote": "the Pixel 11 is the best phone you can get under £900.",
+      "locator": "Verdict"
+    },
+    {
+      "id": "c127",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gupro",
+      "url": "https://www.theguardian.com/technology/2026/sep/10/pixel-11-review-googles-best-pocket-camera-goes-customisable",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Arguably best phone photography; Night Sight up to 4.5x faster",
+      "quote": "You buy a Pro Pixel for the camera, which doesn’t disappoint with arguably the best photography on a phone at the moment.",
+      "locator": "Verdict"
+    },
+    {
+      "id": "c128",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gupro",
+      "url": "https://www.theguardian.com/technology/2026/sep/10/pixel-11-review-googles-best-pocket-camera-goes-customisable",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "Just shy of two days",
+      "quote": "Battery life is just shy of two days",
+      "locator": "Intro"
+    },
+    {
+      "id": "c129",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gupro",
+      "url": "https://www.theguardian.com/technology/2026/sep/10/pixel-11-review-googles-best-pocket-camera-goes-customisable",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "HiLight a wasted opportunity",
+      "quote": "But it doesn’t work for notifications of any other kind, so is a wasted opportunity.",
+      "locator": "Intro"
+    },
+    {
+      "id": "c130",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "gupro",
+      "url": "https://www.theguardian.com/technology/2026/sep/10/pixel-11-review-googles-best-pocket-camera-goes-customisable",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "Not a massive upgrade",
+      "quote": "It just isn’t a massive upgrade on the already excellent Pixel 11 or recent Pixel Pro models.",
+      "locator": "Verdict"
+    },
+    {
+      "id": "c131",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "guxl",
+      "url": "https://www.theguardian.com/technology/2026/sep/21/pixel-11-pro-xl-review-google-big-screen-superphone-camera-battery",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "Fantastic 6.8in OLED",
+      "quote": "a fantastic 6.8in OLED on the front",
+      "locator": "Intro"
+    },
+    {
+      "id": "c132",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "guxl",
+      "url": "https://www.theguardian.com/technology/2026/sep/21/pixel-11-pro-xl-review-google-big-screen-superphone-camera-battery",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "Longest-lasting current Pixel, ~2 days",
+      "quote": "The battery life is the longest of the current Pixels, lasting just about two days between charges",
+      "locator": "Intro"
+    },
+    {
+      "id": "c133",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "guxl",
+      "url": "https://www.theguardian.com/technology/2026/sep/21/pixel-11-pro-xl-review-google-big-screen-superphone-camera-battery",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "Wide and heavy, two-handed",
+      "quote": "It is wide and quite heavy, making it a two-hand phone most of the time",
+      "locator": "Verdict"
+    },
+    {
+      "id": "c134",
+      "source": "The Guardian (Samuel Gibbs)",
+      "source_id": "guxl",
+      "url": "https://www.theguardian.com/technology/2026/sep/21/pixel-11-pro-xl-review-google-big-screen-superphone-camera-battery",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "Falls short of Galaxy S26 Ultra for power users",
+      "quote": "falls short in performance and power-user features compared with Samsung’s Galaxy S26 Ultra.",
+      "locator": "Verdict"
+    },
+    {
+      "id": "c135",
+      "source": "Gizmodo (Raymond Wong)",
+      "source_id": "giz",
+      "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": 2,
+      "claim": "Handsome, more luxurious than iPhone 17 Pros",
+      "quote": "They’re handsome phones that look more elevated and luxurious than the utilitarian iPhone 17 Pros",
+      "locator": "Refined beauty"
+    },
+    {
+      "id": "c136",
+      "source": "Gizmodo (Raymond Wong)",
+      "source_id": "giz",
+      "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "More visible in sunlight than iPhone 17 Pros",
+      "quote": "I could see the screen on the Pixel 11 Pros more clearly compared to the iPhone 17 Pros",
+      "locator": "Refined beauty"
+    },
+    {
+      "id": "c137",
+      "source": "Gizmodo (Raymond Wong)",
+      "source_id": "giz",
+      "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "No gaming gains; gets warm fast under 3D games",
+      "quote": "The Pixel 11 Pros also get warm fast when they’re pushed hard for 3D games.",
+      "locator": "A more plugged-in Gemini"
+    },
+    {
+      "id": "c138",
+      "source": "Gizmodo (Raymond Wong)",
+      "source_id": "giz",
+      "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": -2,
+      "claim": "Genshin Impact unplayable (pink screen); Google promised fix",
+      "quote": "Some games like Genshin Impact were unplayable during my testing",
+      "locator": "A more plugged-in Gemini"
+    },
+    {
+      "id": "c139",
+      "source": "Gizmodo (Raymond Wong)",
+      "source_id": "giz",
+      "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": -1,
+      "claim": "UI latency; agentic tasks slower than doing it yourself",
+      "quote": "there’s still more latency than there should be from Google’s flagship devices.",
+      "locator": "A more plugged-in Gemini"
+    },
+    {
+      "id": "c140",
+      "source": "Gizmodo (Raymond Wong)",
+      "source_id": "giz",
+      "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 1,
+      "claim": "Solid cameras, grounded features",
+      "quote": "All of this is to say: The cameras on the Pixel 11 Pro and 11 Pro XL are solid.",
+      "locator": "Walking back from the AI Camera ledge"
+    },
+    {
+      "id": "c141",
+      "source": "Gizmodo (Raymond Wong)",
+      "source_id": "giz",
+      "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "value",
+      "sentiment": -1,
+      "claim": "Base 12GB RAM and G6 may not go the distance",
+      "quote": "the limited RAM on the base model and the Tensor G6 chip performance may not go the distance",
+      "locator": "More for less, unless it's AI"
+    },
+    {
+      "id": "c142",
+      "source": "Android Police (Andy Boxall)",
+      "source_id": "appro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Camera is a return to form, stellar",
+      "quote": "This time, the Pixel’s camera is stellar, and I don’t think you can get much better.",
+      "locator": "Google Pixel 11 Pro camera"
+    },
+    {
+      "id": "c143",
+      "source": "Android Police (Andy Boxall)",
+      "source_id": "appro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": -1,
+      "claim": "Camera Looks hidden and not better than standard",
+      "quote": "I haven’t found any situation where they make photos look better than standard.",
+      "locator": "Google Pixel 11 Pro camera"
+    },
+    {
+      "id": "c144",
+      "source": "Android Police (Andy Boxall)",
+      "source_id": "appro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "display",
+      "sentiment": 0,
+      "claim": "Good but S26 Ultra screen is brighter/better",
+      "quote": "it can’t match the stunning Galaxy S26 Ultra’s screen for brightness",
+      "locator": "Screen and performance"
+    },
+    {
+      "id": "c145",
+      "source": "Android Police (Andy Boxall)",
+      "source_id": "appro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Tensor G6 fine, no heat in Asphalt 9",
+      "quote": "How about the Tensor G6? It’s fine.",
+      "locator": "Screen and performance"
+    },
+    {
+      "id": "c146",
+      "source": "Android Police (Andy Boxall)",
+      "source_id": "appro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "About two days for this reviewer",
+      "quote": "It’s enough for just about two days between charges for me.",
+      "locator": "Battery life and charging"
+    },
+    {
+      "id": "c147",
+      "source": "Android Police (Andy Boxall)",
+      "source_id": "appro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "90 min to full, not fast",
+      "quote": "It takes a full 90 minutes to reach 100%, which is not very fast.",
+      "locator": "Battery life and charging"
+    },
+    {
+      "id": "c148",
+      "source": "Android Police (Andy Boxall)",
+      "source_id": "appro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "design",
+      "sentiment": -2,
+      "claim": "HiLight entirely useless",
+      "quote": "It’s entirely useless at the moment, and I haven’t thought about it once.",
+      "locator": "Design"
+    },
+    {
+      "id": "c149",
+      "source": "Android Police (Andy Boxall)",
+      "source_id": "appro",
+      "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "software_ai",
+      "sentiment": -1,
+      "claim": "AI beyond Gemini underwhelming",
+      "quote": "Outside of Gemini, Google’s AI is underwhelming and may only show up in specific circumstances.",
+      "locator": "Should you buy?"
+    },
+    {
+      "id": "c150",
+      "source": "Tech Advisor (Anyron Copeman)",
+      "source_id": "tapro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "display",
+      "sentiment": -1,
+      "claim": "240Hz PWM can trigger headaches for sensitive users",
+      "quote": "I’m disappointed that the Pixel 11 Pro is still stuck at a paltry 240Hz rate.",
+      "locator": "Display"
+    },
+    {
+      "id": "c151",
+      "source": "Tech Advisor (Anyron Copeman)",
+      "source_id": "tapro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "design",
+      "sentiment": -2,
+      "claim": "HiLight embarrassing",
+      "quote": "‘HiLight’ is the biggest anticlimax since Willy’s Chocolate Experience.",
+      "locator": "Design"
+    },
+    {
+      "id": "c152",
+      "source": "Tech Advisor (Anyron Copeman)",
+      "source_id": "tapro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Can't fault everyday performance",
+      "quote": "I honestly can’t fault it for everyday performance.",
+      "locator": "Performance"
+    },
+    {
+      "id": "c153",
+      "source": "Tech Advisor (Anyron Copeman)",
+      "source_id": "tapro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "Gaming mixed; stutters in Asphalt/Genshin at max",
+      "quote": "if you really care about mobile gaming, I’d highly recommend looking elsewhere",
+      "locator": "Performance"
+    },
+    {
+      "id": "c154",
+      "source": "Tech Advisor (Anyron Copeman)",
+      "source_id": "tapro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Wow moments; best point-and-shoot contender",
+      "quote": "When lighting is good, the Pixel 11 Pro’s camera generates ‘wow’ moments on a regular basis.",
+      "locator": "Cameras"
+    },
+    {
+      "id": "c155",
+      "source": "Tech Advisor (Anyron Copeman)",
+      "source_id": "tapro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "10-15% overnight standby drain",
+      "quote": "the 11 Pro loses between 10-15% charge overnight, almost without fail.",
+      "locator": "Battery"
+    },
+    {
+      "id": "c156",
+      "source": "Tech Advisor (Anyron Copeman)",
+      "source_id": "tapro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "30W wired feels glacial",
+      "quote": "Google has stuck with the same paltry 30W wired speeds, which feels glacial by modern standards.",
+      "locator": "Battery"
+    },
+    {
+      "id": "c157",
+      "source": "Tech Advisor (Anyron Copeman)",
+      "source_id": "tapro",
+      "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro"
+      ],
+      "category": "software_ai",
+      "sentiment": -2,
+      "claim": "Shipped with many bugs (freezes, forced reboot)",
+      "quote": "I’m just amazed that Google could ship a phone that’s so full of annoying software issues.",
+      "locator": "Software"
+    },
+    {
+      "id": "c158",
+      "source": "Stuff (Tom Morgan-Freelander)",
+      "source_id": "stuffxl",
+      "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "Among best flagship screens",
+      "quote": "That’s enough to put the Pixel 11 Pro XL up there with the best flagship phones for screen quality.",
+      "locator": "Has the display improved?"
+    },
+    {
+      "id": "c159",
+      "source": "Stuff (Tom Morgan-Freelander)",
+      "source_id": "stuffxl",
+      "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Top-tier point-and-shoot",
+      "quote": "for point-and-shoot ability, I have to put the new Pixel up there with the very best mainstream smartphones.",
+      "locator": "Rear cameras"
+    },
+    {
+      "id": "c160",
+      "source": "Stuff (Tom Morgan-Freelander)",
+      "source_id": "stuffxl",
+      "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "HiLight underwhelming",
+      "quote": "Yes, that really is all it does and yes, it is rather underwhelming.",
+      "locator": "What difference has HiLight made?"
+    },
+    {
+      "id": "c161",
+      "source": "Stuff (Tom Morgan-Freelander)",
+      "source_id": "stuffxl",
+      "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": 0,
+      "claim": "Charge-every-evening phone; 5G drain improved",
+      "quote": "This still feels like a “charge every evening” phone",
+      "locator": "Battery"
+    },
+    {
+      "id": "c162",
+      "source": "Stuff (Tom Morgan-Freelander)",
+      "source_id": "stuffxl",
+      "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": -1,
+      "claim": "Proactive Assistance surfaced nothing of note",
+      "quote": "after a week of testing I’ve yet to see it surface anything of note.",
+      "locator": "Software"
+    },
+    {
+      "id": "c163",
+      "source": "Stuff (Tom Morgan-Freelander)",
+      "source_id": "stuffxl",
+      "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": 1,
+      "claim": "Apps run seamlessly; games not top-tier",
+      "quote": "apps run seamlessly with no noticeable slowdown.",
+      "locator": "Performance"
+    },
+    {
+      "id": "c164",
+      "source": "Stuff (Tom Morgan-Freelander)",
+      "source_id": "stuffxl",
+      "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro XL"
+      ],
+      "category": "value",
+      "sentiment": 0,
+      "claim": "Best Google phone yet, price rise not fully justified",
+      "quote": "even if I don’t think it entirely justifies the year-on-year price increase.",
+      "locator": "Verdict"
+    },
+    {
+      "id": "c165",
+      "source": "PCMag (Florence Ion)",
+      "source_id": "pcm11",
+      "url": "https://www.pcmag.com/reviews/google-pixel-11",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "19h13m rundown, beats Pro by 6+ hours",
+      "quote": "The Pixel 11's 4,985mAh battery lasted 19 hours and 13 minutes in our battery rundown benchmark",
+      "locator": "Battery"
+    },
+    {
+      "id": "c166",
+      "source": "PCMag (Florence Ion)",
+      "source_id": "pcm11",
+      "url": "https://www.pcmag.com/reviews/google-pixel-11",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "display",
+      "sentiment": 1,
+      "claim": "Brightest screen in its price range",
+      "quote": "the Pixel 11 technically has the brightest screen in this price range.",
+      "locator": "Display"
+    },
+    {
+      "id": "c167",
+      "source": "PCMag (Florence Ion)",
+      "source_id": "pcm11",
+      "url": "https://www.pcmag.com/reviews/google-pixel-11",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "Graphics below Galaxy S26 series",
+      "quote": "not quite at the level you'll see with rival devices like the Galaxy S26 series.",
+      "locator": "Performance"
+    },
+    {
+      "id": "c168",
+      "source": "PCMag (Florence Ion)",
+      "source_id": "pcm11",
+      "url": "https://www.pcmag.com/reviews/google-pixel-11",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "software_ai",
+      "sentiment": 0,
+      "claim": "Gemini features half-baked but fun",
+      "quote": "half-baked-but-still-sorta-fun Gemini features",
+      "locator": "Verdict"
+    },
+    {
+      "id": "c169",
+      "source": "PCMag (Florence Ion)",
+      "source_id": "pcm11",
+      "url": "https://www.pcmag.com/reviews/google-pixel-11",
+      "model": "Pixel 11",
+      "applies_to": [
+        "Pixel 11"
+      ],
+      "category": "value",
+      "sentiment": 2,
+      "claim": "Best value of the lineup, top pick",
+      "quote": "the entry-level Pixel 11 is the best value of the lot and our top pick among the Pixel 11 lineup.",
+      "locator": "Intro"
+    },
+    {
+      "id": "c170",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": 2,
+      "claim": "Outstanding day-to-day; CoD Mobile runs well",
+      "quote": "Day-to-day performance from the G6 on the Pixel 11 Pro is outstanding.",
+      "locator": "Tensor G6 isn't a miracle chip"
+    },
+    {
+      "id": "c171",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": -1,
+      "claim": "Raw power and GPU well behind Snapdragon 8 Elite Gen 5",
+      "quote": "the Tensor G6 still lacks significant raw horsepower versus the competition.",
+      "locator": "Tensor G6 isn't a miracle chip"
+    },
+    {
+      "id": "c172",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": 2,
+      "claim": "Smaller cells but longer life thanks to efficiency",
+      "quote": "One aspect of the Tensor G6 that’s unquestionably better is efficiency.",
+      "locator": "Tensor G6 isn't a miracle chip"
+    },
+    {
+      "id": "c173",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": 2,
+      "claim": "MediaTek modem fixes connectivity complaints",
+      "quote": "after years of Pixel connectivity complaints, it seems to have done the trick.",
+      "locator": "Tensor G6 isn't a miracle chip"
+    },
+    {
+      "id": "c174",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": -2,
+      "claim": "Charging slow, confusing PPS requirements, heat in Extreme mode",
+      "quote": "Charging speeds on both phones are a mess",
+      "locator": "Should you buy the Pixel 11 Pro?"
+    },
+    {
+      "id": "c175",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -2,
+      "claim": "HiLight embarrassing at launch",
+      "quote": "the fact that this isn’t available out of the box is truly embarrassing.",
+      "locator": "The 3 biggest disappointments"
+    },
+    {
+      "id": "c176",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": -2,
+      "claim": "Proactive Assistance a dud",
+      "quote": "Proactive Assistance has proven genuinely useful not once.",
+      "locator": "The 3 biggest disappointments"
+    },
+    {
+      "id": "c177",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "Excellent, flawless 1-120Hz; scratch resistance holding up",
+      "quote": "Speaking of the display, it’s excellent.",
+      "locator": "Why I still love the Pixel 11 Pro"
+    },
+    {
+      "id": "c178",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "New telephoto so good he prefers it",
+      "quote": "The new telephoto sensor is so good that I almost prefer using it to the primary camera.",
+      "locator": "Another fantastic year of Pixel cameras"
+    },
+    {
+      "id": "c179",
+      "source": "Android Authority (Joe Maring)",
+      "source_id": "aapro",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Best Android experience of 2026",
+      "quote": "the Pixel 11 Pro offering the best Android smartphone experience in 2026.",
+      "locator": "Google's software is still Android at its best"
+    },
+    {
+      "id": "c180",
+      "source": "Tom's Guide (Tom Pritchard)",
+      "source_id": "tgpro",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro XL",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "display",
+      "sentiment": 2,
+      "claim": "Brightest phone tested: 2,877 nits (XL)",
+      "quote": "the Pixel 11 Pro XL has reclaimed that title, with peak brightness of 2,877 nits",
+      "locator": "Display"
+    },
+    {
+      "id": "c181",
+      "source": "Tom's Guide (Tom Pritchard)",
+      "source_id": "tgpro",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "Camera quality is the bright spot",
+      "quote": "While the Pixel 11 Pro misses the mark in a lot of areas, the camera quality is not one of them.",
+      "locator": "Cameras"
+    },
+    {
+      "id": "c182",
+      "source": "Tom's Guide (Tom Pritchard)",
+      "source_id": "tgpro",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "camera",
+      "sentiment": 2,
+      "claim": "120x zoom clearer than Samsung's 100x",
+      "quote": "The AI-enhanced 120x zoom is where Google's AI capabilities really shine",
+      "locator": "Cameras"
+    },
+    {
+      "id": "c183",
+      "source": "Tom's Guide (Tom Pritchard)",
+      "source_id": "tgpro",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "battery",
+      "sentiment": -1,
+      "claim": "Pro lasted 13h25m, worse than Pixel 10 Pro",
+      "quote": "The Pixel 11 Pro actually does worse than last year's Pixel 10 Pro",
+      "locator": "Battery"
+    },
+    {
+      "id": "c184",
+      "source": "Tom's Guide (Tom Pritchard)",
+      "source_id": "tgpro",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "performance",
+      "sentiment": -2,
+      "claim": "Far behind Samsung and Apple; GPU scores dropped",
+      "quote": "the Tensor G6 is still so far behind Samsung and Apple that it's almost as though Google isn't really trying.",
+      "locator": "Performance languishes"
+    },
+    {
+      "id": "c185",
+      "source": "Tom's Guide (Tom Pritchard)",
+      "source_id": "tgpro",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "software_ai",
+      "sentiment": 2,
+      "claim": "Rambler beats Gboard and iOS dictation",
+      "quote": "Rambler blows them both out of the water.",
+      "locator": "Software"
+    },
+    {
+      "id": "c186",
+      "source": "Tom's Guide (Tom Pritchard)",
+      "source_id": "tgpro",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "design",
+      "sentiment": -1,
+      "claim": "HiLight a gimmick",
+      "quote": "it comes across as a gimmick more than an actually useful feature.",
+      "locator": "HiLight"
+    },
+    {
+      "id": "c187",
+      "source": "Tom's Guide (Tom Pritchard)",
+      "source_id": "tgpro",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro",
+      "applies_to": [
+        "Pixel 11 Pro",
+        "Pixel 11 Pro XL"
+      ],
+      "category": "value",
+      "sentiment": -2,
+      "claim": "Pixel 10 Pro may be better purchase",
+      "quote": "the better purchase might actually be a Pixel 10 Pro",
+      "locator": "Verdict"
+    }
+  ],
+  "synthesis": {
+    "method": "Claims extracted from fetched review pages only (quotes verified verbatim against the fetched text). Category scores are editorial judgments on a 0-10 scale, anchored on the mean claim sentiment (-2..2) and the spread of praise vs criticism across independent outlets. Counts = number of distinct outlets. Joint Pro/Pro XL reviews count for both models.",
+    "categories": {
+      "display": {
+        "score": 8.5,
+        "agreement": "strong",
+        "basis": "Nearly every outlet that judged the screen called it bright/excellent (Android Police still rates the Galaxy S26 Ultra screen higher); Tom's Guide measured record brightness. Deductions: base model lacks LTPO and ships at 60Hz, and three outlets flag low-frequency PWM dimming.",
+        "sentiment_stats": {
+          "all": {
+            "n": 20,
+            "mean": 0.8,
+            "positive": 13,
+            "neutral": 1,
+            "negative": 6
+          },
+          "pixel_11": {
+            "n": 8,
+            "mean": 0.5,
+            "positive": 5,
+            "neutral": 0,
+            "negative": 3
+          },
+          "pro_models": {
+            "n": 12,
+            "mean": 1,
+            "positive": 8,
+            "neutral": 1,
+            "negative": 3
+          }
+        },
+        "top_praised": [
+          {
+            "point": "Very bright, sharp, vibrant OLED, easy to see in sunlight",
+            "count": 10,
+            "sources": [
+              "Tom's Guide (John Velasco)",
+              "GSMArena (GSMArena team)",
+              "Engadget (Nathan Ingraham)",
+              "The Guardian (Samuel Gibbs)",
+              "PCMag (Florence Ion)",
+              "Trusted Reviews (Henry Burrell)",
+              "GSMArena (GSMArena team)",
+              "TechRadar (Jason Cipriani)",
+              "Android Authority (Joe Maring)",
+              "Gizmodo (Raymond Wong)",
+              "Stuff (Tom Morgan-Freelander)",
+              "The Guardian (Samuel Gibbs)",
+              "Tom's Guide (Tom Pritchard)",
+              "Engadget (Cherlynn Low)"
+            ]
+          },
+          {
+            "point": "Scratch resistance holding up (Pro models)",
+            "count": 3,
+            "sources": [
+              "Android Authority (Joe Maring)",
+              "Gizmodo (Raymond Wong)",
+              "Engadget (Cherlynn Low)"
+            ]
+          }
+        ],
+        "top_criticisms": [
+          {
+            "point": "Base Pixel 11: no LTPO, basic 60/120Hz switching, 60Hz by default",
+            "count": 3,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "GSMArena (GSMArena team)",
+              "9to5Google (Damien Wilde)"
+            ]
+          },
+          {
+            "point": "Low-frequency PWM dimming bad for flicker-sensitive users",
+            "count": 3,
+            "sources": [
+              "Android Central (Nicholas Sutrich)",
+              "Android Headlines (Alexander Maxham)",
+              "Tech Advisor (Anyron Copeman)"
+            ]
+          },
+          {
+            "point": "Bezels thicker than rivals",
+            "count": 2,
+            "sources": [
+              "Android Headlines (Alexander Maxham)",
+              "Android Police (Andy Boxall)"
+            ]
+          }
+        ]
+      },
+      "camera": {
+        "score": 8.5,
+        "agreement": "strong (quality) / split (AI zoom, Looks)",
+        "basis": "Camera is the most consistently praised area: Pro models called best or near-best point-and-shoot by most, base model's 5x telephoto singled out as a class differentiator. Deductions for AI 120x zoom artifacts, Magic Capture misses, and video trailing iPhone.",
+        "sentiment_stats": {
+          "all": {
+            "n": 33,
+            "mean": 0.58,
+            "positive": 20,
+            "neutral": 1,
+            "negative": 12
+          },
+          "pixel_11": {
+            "n": 11,
+            "mean": 0.55,
+            "positive": 6,
+            "neutral": 1,
+            "negative": 4
+          },
+          "pro_models": {
+            "n": 22,
+            "mean": 0.59,
+            "positive": 14,
+            "neutral": 0,
+            "negative": 8
+          }
+        },
+        "top_praised": [
+          {
+            "point": "Excellent, dependable point-and-shoot stills",
+            "count": 10,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "GSMArena (GSMArena team)",
+              "CNET (Mike Sorrentino)",
+              "The Guardian (Samuel Gibbs)",
+              "The Guardian (Samuel Gibbs)",
+              "Android Police (Andy Boxall)",
+              "Tech Advisor (Anyron Copeman)",
+              "Android Authority (Joe Maring)",
+              "Tom's Guide (Tom Pritchard)",
+              "Stuff (Tom Morgan-Freelander)",
+              "Trusted Reviews (Henry Burrell)",
+              "Gizmodo (Raymond Wong)",
+              "GSMArena (GSMArena team)"
+            ]
+          },
+          {
+            "point": "5x telephoto a real differentiator on the base model",
+            "count": 4,
+            "sources": [
+              "Engadget (Nathan Ingraham)",
+              "The Guardian (Samuel Gibbs)",
+              "CNET (Mike Sorrentino)",
+              "Android Authority (Brady Snyder)"
+            ]
+          },
+          {
+            "point": "Faster (Instant) Night Sight on Pro models",
+            "count": 9,
+            "sources": [
+              "Android Central (Nicholas Sutrich)",
+              "Engadget (Cherlynn Low)",
+              "The Guardian (Samuel Gibbs)",
+              "TechCrunch (Ivan Mehta)",
+              "Gizmodo (Raymond Wong)",
+              "Tech Advisor (Anyron Copeman)",
+              "Tom's Guide (Tom Pritchard)",
+              "Android Headlines (Alexander Maxham)",
+              "Trusted Reviews (Henry Burrell)"
+            ]
+          },
+          {
+            "point": "Improved telephoto sensor on Pro models",
+            "count": 5,
+            "sources": [
+              "Android Authority (Joe Maring)",
+              "Stuff (Tom Morgan-Freelander)",
+              "Tom's Guide (Tom Pritchard)",
+              "Android Central (Nicholas Sutrich)",
+              "GSMArena (GSMArena team)"
+            ]
+          },
+          {
+            "point": "Camera Looks adds real control over processing",
+            "count": 4,
+            "sources": [
+              "Android Authority (Joe Maring)",
+              "The Guardian (Samuel Gibbs)",
+              "The Guardian (Samuel Gibbs)",
+              "Stuff (Tom Morgan-Freelander)",
+              "Gizmodo (Raymond Wong)"
+            ]
+          },
+          {
+            "point": "Magic Capture useful for kids/pets/events",
+            "count": 5,
+            "sources": [
+              "Android Central (Nicholas Sutrich)",
+              "TechRadar (Jason Cipriani)",
+              "Tech Advisor (Anyron Copeman)",
+              "9to5Google (Damien Wilde)",
+              "Tom's Guide (John Velasco)"
+            ]
+          }
+        ],
+        "top_criticisms": [
+          {
+            "point": "120x Pro Zoom gives uncanny / fabricated AI detail",
+            "count": 5,
+            "sources": [
+              "Engadget (Cherlynn Low)",
+              "Trusted Reviews (Henry Burrell)",
+              "Android Headlines (Alexander Maxham)",
+              "Gizmodo (Raymond Wong)",
+              "TechRadar (Jason Cipriani)"
+            ]
+          },
+          {
+            "point": "Magic Capture inconsistent, blurry on motion",
+            "count": 6,
+            "sources": [
+              "Trusted Reviews (Henry Burrell)",
+              "Gizmodo (Raymond Wong)",
+              "CNET (Mike Sorrentino)",
+              "TechCrunch (Ivan Mehta)",
+              "Engadget (Cherlynn Low)",
+              "Tech Advisor (Anyron Copeman)"
+            ]
+          },
+          {
+            "point": "Video quality / stabilisation could be better (Trusted: behind iPhone)",
+            "count": 2,
+            "sources": [
+              "Trusted Reviews (Henry Burrell)",
+              "GSMArena (GSMArena team)",
+              "GSMArena (GSMArena team)"
+            ]
+          },
+          {
+            "point": "Little change vs Pixel 10 hardware/results",
+            "count": 1,
+            "sources": [
+              "Tom's Guide (John Velasco)"
+            ]
+          },
+          {
+            "point": "Chinese ultra flagships have better camera hardware",
+            "count": 2,
+            "sources": [
+              "Trusted Reviews (Henry Burrell)",
+              "Android Central (Nicholas Sutrich)"
+            ]
+          }
+        ]
+      },
+      "battery": {
+        "score": 6.5,
+        "agreement": "split",
+        "basis": "Battery life splits: base Pixel 11 is mostly praised (PCMag 19h13m, Guardian ~54h light use) but Tom's Guide measured it slightly worse than Pixel 10; Pro/XL range from 'two days' (Guardian, Android Police) to 'worse than Pixel 10 Pro' (Tom's Guide). Wired charging criticised almost everywhere it was tested.",
+        "sentiment_stats": {
+          "all": {
+            "n": 27,
+            "mean": 0.52,
+            "positive": 16,
+            "neutral": 1,
+            "negative": 10
+          },
+          "pixel_11": {
+            "n": 11,
+            "mean": 0.82,
+            "positive": 8,
+            "neutral": 0,
+            "negative": 3
+          },
+          "pro_models": {
+            "n": 16,
+            "mean": 0.31,
+            "positive": 8,
+            "neutral": 1,
+            "negative": 7
+          }
+        },
+        "top_praised": [
+          {
+            "point": "All-day or better battery on the base Pixel 11",
+            "count": 8,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "GSMArena (GSMArena team)",
+              "Engadget (Nathan Ingraham)",
+              "The Guardian (Samuel Gibbs)",
+              "PCMag (Florence Ion)",
+              "CNET (Mike Sorrentino)",
+              "Android Headlines (Justin Diaz)",
+              "9to5Google (Damien Wilde)"
+            ]
+          },
+          {
+            "point": "Pro/XL efficiency gains: longer life despite smaller cells",
+            "count": 6,
+            "sources": [
+              "Android Authority (Joe Maring)",
+              "Android Headlines (Alexander Maxham)",
+              "GSMArena (GSMArena team)",
+              "The Guardian (Samuel Gibbs)",
+              "The Guardian (Samuel Gibbs)",
+              "Android Police (Andy Boxall)",
+              "Trusted Reviews (Henry Burrell)"
+            ]
+          },
+          {
+            "point": "25W Qi2.2 magnetic (Pixelsnap) wireless charging",
+            "count": 9,
+            "sources": [
+              "GSMArena (GSMArena team)",
+              "Android Authority (Brady Snyder)",
+              "PCMag (Florence Ion)",
+              "CNET (Mike Sorrentino)",
+              "The Guardian (Samuel Gibbs)",
+              "Trusted Reviews (Henry Burrell)",
+              "Android Authority (Joe Maring)",
+              "TechRadar (Jason Cipriani)",
+              "Tech Advisor (Anyron Copeman)",
+              "Stuff (Tom Morgan-Freelander)"
+            ]
+          }
+        ],
+        "top_criticisms": [
+          {
+            "point": "Slow wired charging; Google's fast-charge claims not met",
+            "count": 7,
+            "sources": [
+              "GSMArena (GSMArena team)",
+              "9to5Google (Damien Wilde)",
+              "Trusted Reviews (Henry Burrell)",
+              "Android Authority (Joe Maring)",
+              "Android Police (Andy Boxall)",
+              "Tech Advisor (Anyron Copeman)",
+              "Android Central (Nicholas Sutrich)"
+            ]
+          },
+          {
+            "point": "No real battery improvement (or a regression) vs Pixel 10 series",
+            "count": 2,
+            "sources": [
+              "Tom's Guide (John Velasco)",
+              "Tom's Guide (Tom Pritchard)",
+              "Android Central (Nicholas Sutrich)"
+            ]
+          },
+          {
+            "point": "Pro/XL still a charge-every-night phone vs best rivals",
+            "count": 3,
+            "sources": [
+              "Stuff (Tom Morgan-Freelander)",
+              "Android Headlines (Alexander Maxham)",
+              "Tech Advisor (Anyron Copeman)"
+            ]
+          },
+          {
+            "point": "Smaller batteries than last year on Pro/XL",
+            "count": 4,
+            "sources": [
+              "Android Central (Nicholas Sutrich)",
+              "Tom's Guide (Tom Pritchard)",
+              "Tech Advisor (Anyron Copeman)",
+              "Stuff (Tom Morgan-Freelander)"
+            ]
+          }
+        ]
+      },
+      "performance": {
+        "score": 5.0,
+        "agreement": "mixed",
+        "basis": "Near-unanimous: Tensor G6 is fine for everyday use but well behind Snapdragon 8 Elite Gen 5 and Apple A19 in raw and GPU power, with demanding games a weak spot (Genshin Impact broken at launch). Split on thermals and modem.",
+        "sentiment_stats": {
+          "all": {
+            "n": 35,
+            "mean": -0.09,
+            "positive": 16,
+            "neutral": 1,
+            "negative": 18
+          },
+          "pixel_11": {
+            "n": 15,
+            "mean": -0.27,
+            "positive": 6,
+            "neutral": 1,
+            "negative": 8
+          },
+          "pro_models": {
+            "n": 20,
+            "mean": 0.05,
+            "positive": 10,
+            "neutral": 0,
+            "negative": 10
+          }
+        },
+        "top_praised": [
+          {
+            "point": "Smooth everyday performance",
+            "count": 11,
+            "sources": [
+              "GSMArena (GSMArena team)",
+              "Engadget (Nathan Ingraham)",
+              "CNET (Mike Sorrentino)",
+              "The Guardian (Samuel Gibbs)",
+              "TechRadar (Jason Cipriani)",
+              "Engadget (Cherlynn Low)",
+              "Android Authority (Joe Maring)",
+              "Android Police (Andy Boxall)",
+              "Tech Advisor (Anyron Copeman)",
+              "Trusted Reviews (Henry Burrell)",
+              "Stuff (Tom Morgan-Freelander)",
+              "Android Headlines (Justin Diaz)",
+              "Android Headlines (Alexander Maxham)"
+            ]
+          },
+          {
+            "point": "Cooler thermals than Pixel 10",
+            "count": 1,
+            "sources": [
+              "Android Headlines (Justin Diaz)",
+              "Android Headlines (Alexander Maxham)"
+            ]
+          },
+          {
+            "point": "New MediaTek modem: better signal / reliability",
+            "count": 2,
+            "sources": [
+              "Android Authority (Joe Maring)",
+              "Android Headlines (Alexander Maxham)",
+              "Android Authority (Brady Snyder)"
+            ]
+          }
+        ],
+        "top_criticisms": [
+          {
+            "point": "Weak GPU / gaming far behind Snapdragon and Apple rivals",
+            "count": 11,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "Tom's Guide (John Velasco)",
+              "GSMArena (GSMArena team)",
+              "CNET (Mike Sorrentino)",
+              "PCMag (Florence Ion)",
+              "The Guardian (Samuel Gibbs)",
+              "The Guardian (Samuel Gibbs)",
+              "Trusted Reviews (Henry Burrell)",
+              "GSMArena (GSMArena team)",
+              "Tom's Guide (Tom Pritchard)",
+              "Android Central (Nicholas Sutrich)",
+              "Gizmodo (Raymond Wong)",
+              "Tech Advisor (Anyron Copeman)",
+              "Android Headlines (Alexander Maxham)",
+              "Android Headlines (Justin Diaz)",
+              "Android Authority (Joe Maring)"
+            ]
+          },
+          {
+            "point": "Genshin Impact unplayable/broken on PowerVR GPU at launch",
+            "count": 3,
+            "sources": [
+              "Gizmodo (Raymond Wong)",
+              "Android Headlines (Justin Diaz)",
+              "Android Headlines (Alexander Maxham)",
+              "Tech Advisor (Anyron Copeman)"
+            ]
+          },
+          {
+            "point": "Heat under load or stutter in real use",
+            "count": 3,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "Gizmodo (Raymond Wong)",
+              "GSMArena (GSMArena team)"
+            ]
+          },
+          {
+            "point": "12GB base RAM (down from 16GB on Pro/XL) a longevity worry",
+            "count": 6,
+            "sources": [
+              "Trusted Reviews (Henry Burrell)",
+              "Android Central (Nicholas Sutrich)",
+              "Gizmodo (Raymond Wong)",
+              "Android Police (Andy Boxall)",
+              "Tom's Guide (Tom Pritchard)",
+              "Engadget (Cherlynn Low)"
+            ]
+          },
+          {
+            "point": "Connectivity problems persisted for some",
+            "count": 2,
+            "sources": [
+              "Android Central (Nicholas Sutrich)",
+              "9to5Google (Damien Wilde)"
+            ]
+          }
+        ]
+      },
+      "software_ai": {
+        "score": 7.5,
+        "agreement": "mixed",
+        "basis": "Android 17 polish, 7-year updates and the new Rambler dictation are praised almost universally. Pulled down by Proactive Assistance rarely triggering, key Gemini features being US-only, and one reviewer hitting serious bugs.",
+        "sentiment_stats": {
+          "all": {
+            "n": 24,
+            "mean": 0.62,
+            "positive": 14,
+            "neutral": 1,
+            "negative": 9
+          },
+          "pixel_11": {
+            "n": 9,
+            "mean": 1,
+            "positive": 6,
+            "neutral": 1,
+            "negative": 2
+          },
+          "pro_models": {
+            "n": 15,
+            "mean": 0.4,
+            "positive": 8,
+            "neutral": 0,
+            "negative": 7
+          }
+        },
+        "top_praised": [
+          {
+            "point": "Rambler voice dictation excellent",
+            "count": 12,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "9to5Google (Damien Wilde)",
+              "Engadget (Nathan Ingraham)",
+              "The Guardian (Samuel Gibbs)",
+              "CNET (Mike Sorrentino)",
+              "Trusted Reviews (Henry Burrell)",
+              "TechCrunch (Ivan Mehta)",
+              "Android Central (Nicholas Sutrich)",
+              "TechRadar (Jason Cipriani)",
+              "Engadget (Cherlynn Low)",
+              "Tom's Guide (Tom Pritchard)",
+              "Android Authority (Joe Maring)",
+              "Tech Advisor (Anyron Copeman)",
+              "Android Police (Andy Boxall)",
+              "The Guardian (Samuel Gibbs)"
+            ]
+          },
+          {
+            "point": "Clean Android 17 + 7 years of updates; best Android software",
+            "count": 8,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "GSMArena (GSMArena team)",
+              "The Guardian (Samuel Gibbs)",
+              "GSMArena (GSMArena team)",
+              "Android Authority (Joe Maring)",
+              "Trusted Reviews (Henry Burrell)",
+              "CNET (Mike Sorrentino)",
+              "Tech Advisor (Anyron Copeman)",
+              "Stuff (Tom Morgan-Freelander)",
+              "Android Police (Andy Boxall)"
+            ]
+          },
+          {
+            "point": "Live Translate for video impressive",
+            "count": 4,
+            "sources": [
+              "CNET (Mike Sorrentino)",
+              "Android Central (Nicholas Sutrich)",
+              "Tom's Guide (Tom Pritchard)",
+              "Android Headlines (Justin Diaz)",
+              "Android Headlines (Alexander Maxham)"
+            ]
+          },
+          {
+            "point": "Proactive suggestions genuinely useful",
+            "count": 3,
+            "sources": [
+              "Engadget (Nathan Ingraham)",
+              "The Guardian (Samuel Gibbs)",
+              "Tom's Guide (John Velasco)"
+            ]
+          }
+        ],
+        "top_criticisms": [
+          {
+            "point": "Proactive Assistance rarely appears or helps",
+            "count": 7,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "Android Authority (Joe Maring)",
+              "TechRadar (Jason Cipriani)",
+              "Android Central (Nicholas Sutrich)",
+              "TechCrunch (Ivan Mehta)",
+              "Stuff (Tom Morgan-Freelander)",
+              "Android Headlines (Alexander Maxham)",
+              "Android Police (Andy Boxall)"
+            ]
+          },
+          {
+            "point": "Proactive/agentic Gemini features limited to some apps or US-only",
+            "count": 5,
+            "sources": [
+              "The Guardian (Samuel Gibbs)",
+              "Trusted Reviews (Henry Burrell)",
+              "Tech Advisor (Anyron Copeman)",
+              "Stuff (Tom Morgan-Freelander)",
+              "TechCrunch (Ivan Mehta)"
+            ]
+          },
+          {
+            "point": "Bugs / UI latency",
+            "count": 3,
+            "sources": [
+              "Tech Advisor (Anyron Copeman)",
+              "Gizmodo (Raymond Wong)",
+              "Android Authority (Brady Snyder)"
+            ]
+          },
+          {
+            "point": "Rambler text appears only after you stop talking",
+            "count": 3,
+            "sources": [
+              "9to5Google (Damien Wilde)",
+              "The Guardian (Samuel Gibbs)",
+              "Engadget (Nathan Ingraham)"
+            ]
+          }
+        ]
+      },
+      "design": {
+        "score": 7.5,
+        "agreement": "strong (build) / strong negative (HiLight)",
+        "basis": "Build quality and looks praised everywhere; base model's 40% slimmer camera bar liked. Almost every Pro reviewer calls the new HiLight LED useless or a gimmick; size/weight of XL and base thickness noted. HiLight criticism is counted here as a hardware feature.",
+        "sentiment_stats": {
+          "all": {
+            "n": 27,
+            "mean": -0.3,
+            "positive": 10,
+            "neutral": 1,
+            "negative": 16
+          },
+          "pixel_11": {
+            "n": 8,
+            "mean": 0.62,
+            "positive": 6,
+            "neutral": 0,
+            "negative": 2
+          },
+          "pro_models": {
+            "n": 19,
+            "mean": -0.68,
+            "positive": 4,
+            "neutral": 1,
+            "negative": 14
+          }
+        },
+        "top_praised": [
+          {
+            "point": "Premium build, attractive colours, no table wobble",
+            "count": 8,
+            "sources": [
+              "GSMArena (GSMArena team)",
+              "Android Headlines (Justin Diaz)",
+              "Android Headlines (Alexander Maxham)",
+              "Trusted Reviews (Henry Burrell)",
+              "Gizmodo (Raymond Wong)",
+              "Android Police (Andy Boxall)",
+              "Engadget (Cherlynn Low)",
+              "Android Authority (Joe Maring)",
+              "Tech Advisor (Anyron Copeman)"
+            ]
+          },
+          {
+            "point": "Base model's slimmer all-glass camera bar / lighter weight",
+            "count": 5,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "Tom's Guide (John Velasco)",
+              "CNET (Mike Sorrentino)",
+              "9to5Google (Damien Wilde)",
+              "The Guardian (Samuel Gibbs)"
+            ]
+          },
+          {
+            "point": "Built-in Pixelsnap magnets rare on Android",
+            "count": 5,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "CNET (Mike Sorrentino)",
+              "Android Authority (Joe Maring)",
+              "Trusted Reviews (Henry Burrell)",
+              "Tech Advisor (Anyron Copeman)",
+              "Stuff (Tom Morgan-Freelander)"
+            ]
+          }
+        ],
+        "top_criticisms": [
+          {
+            "point": "HiLight LED barely does anything (calls + Gemini only)",
+            "count": 14,
+            "sources": [
+              "GSMArena (GSMArena team)",
+              "Trusted Reviews (Henry Burrell)",
+              "TechCrunch (Ivan Mehta)",
+              "Android Central (Nicholas Sutrich)",
+              "TechRadar (Jason Cipriani)",
+              "Engadget (Cherlynn Low)",
+              "The Guardian (Samuel Gibbs)",
+              "The Guardian (Samuel Gibbs)",
+              "Gizmodo (Raymond Wong)",
+              "Android Police (Andy Boxall)",
+              "Tech Advisor (Anyron Copeman)",
+              "Stuff (Tom Morgan-Freelander)",
+              "Tom's Guide (Tom Pritchard)",
+              "Android Authority (Joe Maring)",
+              "Android Headlines (Alexander Maxham)"
+            ]
+          },
+          {
+            "point": "Thick/heavy (base) or huge/heavy (XL)",
+            "count": 4,
+            "sources": [
+              "Android Authority (Brady Snyder)",
+              "The Guardian (Samuel Gibbs)",
+              "Trusted Reviews (Henry Burrell)",
+              "The Guardian (Samuel Gibbs)",
+              "Stuff (Tom Morgan-Freelander)"
+            ]
+          },
+          {
+            "point": "Glossy surfaces collect fingerprints",
+            "count": 2,
+            "sources": [
+              "Android Headlines (Justin Diaz)",
+              "Trusted Reviews (Henry Burrell)"
+            ]
+          },
+          {
+            "point": "Looks almost identical to Pixel 10",
+            "count": 4,
+            "sources": [
+              "TechCrunch (Ivan Mehta)",
+              "9to5Google (Damien Wilde)",
+              "TechRadar (Jason Cipriani)",
+              "Engadget (Cherlynn Low)"
+            ]
+          }
+        ]
+      },
+      "value": {
+        "score": 5.0,
+        "agreement": "split (base) / strong negative (Pro, Pro XL)",
+        "basis": "Price rose $100 across the line while Pro/XL base RAM fell 16GB to 12GB: nearly every Pro/XL reviewer counts this against it. Base Pixel 11 splits sharply: CNET (9/10 Editors' Choice), PCMag (top pick), Guardian (best under GBP 900) vs Tom's Guide (3/5) and GSMArena ('difficult to justify').",
+        "sentiment_stats": {
+          "all": {
+            "n": 21,
+            "mean": -0.52,
+            "positive": 4,
+            "neutral": 2,
+            "negative": 15
+          },
+          "pixel_11": {
+            "n": 9,
+            "mean": 0.22,
+            "positive": 4,
+            "neutral": 1,
+            "negative": 4
+          },
+          "pro_models": {
+            "n": 12,
+            "mean": -1.08,
+            "positive": 0,
+            "neutral": 1,
+            "negative": 11
+          }
+        },
+        "top_praised": [
+          {
+            "point": "Base Pixel 11 is the value pick of the lineup",
+            "count": 5,
+            "sources": [
+              "CNET (Mike Sorrentino)",
+              "PCMag (Florence Ion)",
+              "The Guardian (Samuel Gibbs)",
+              "Android Headlines (Justin Diaz)",
+              "Android Authority (Brady Snyder)"
+            ]
+          },
+          {
+            "point": "Doubled base storage to 256GB softens the hike",
+            "count": 3,
+            "sources": [
+              "GSMArena (GSMArena team)",
+              "Android Authority (Brady Snyder)",
+              "Tom's Guide (Tom Pritchard)"
+            ]
+          }
+        ],
+        "top_criticisms": [
+          {
+            "point": "$100 price increase across the lineup",
+            "count": 11,
+            "sources": [
+              "Tom's Guide (John Velasco)",
+              "Android Authority (Brady Snyder)",
+              "Engadget (Nathan Ingraham)",
+              "TechCrunch (Ivan Mehta)",
+              "Android Central (Nicholas Sutrich)",
+              "TechRadar (Jason Cipriani)",
+              "Engadget (Cherlynn Low)",
+              "Android Authority (Joe Maring)",
+              "Android Headlines (Alexander Maxham)",
+              "The Guardian (Samuel Gibbs)",
+              "The Guardian (Samuel Gibbs)",
+              "Gizmodo (Raymond Wong)",
+              "Tom's Guide (Tom Pritchard)",
+              "Tech Advisor (Anyron Copeman)",
+              "Stuff (Tom Morgan-Freelander)"
+            ]
+          },
+          {
+            "point": "Less RAM for more money on Pro/XL",
+            "count": 9,
+            "sources": [
+              "Trusted Reviews (Henry Burrell)",
+              "TechCrunch (Ivan Mehta)",
+              "Android Central (Nicholas Sutrich)",
+              "TechRadar (Jason Cipriani)",
+              "Engadget (Cherlynn Low)",
+              "Android Authority (Joe Maring)",
+              "Android Headlines (Alexander Maxham)",
+              "Gizmodo (Raymond Wong)",
+              "Tom's Guide (Tom Pritchard)"
+            ]
+          },
+          {
+            "point": "No reason for Pixel 10 owners to upgrade",
+            "count": 7,
+            "sources": [
+              "Tom's Guide (John Velasco)",
+              "GSMArena (GSMArena team)",
+              "Android Authority (Joe Maring)",
+              "TechRadar (Jason Cipriani)",
+              "Android Headlines (Alexander Maxham)",
+              "Engadget (Nathan Ingraham)",
+              "TechCrunch (Ivan Mehta)"
+            ]
+          },
+          {
+            "point": "Hard to justify vs Samsung/Chinese rivals at the price",
+            "count": 5,
+            "sources": [
+              "GSMArena (GSMArena team)",
+              "Android Authority (Brady Snyder)",
+              "GSMArena (GSMArena team)",
+              "Trusted Reviews (Henry Burrell)",
+              "The Guardian (Samuel Gibbs)",
+              "Android Central (Nicholas Sutrich)"
+            ]
+          }
+        ]
+      }
+    },
+    "where_reviewers_disagree": [
+      {
+        "topic": "Base Pixel 11: is it worth $899?",
+        "sides": [
+          {
+            "position": "Yes, best value / recommended",
+            "summary": "CNET 9/10 Editors' Choice; PCMag top pick of the lineup; Guardian 'best phone under GBP 900'; Engadget 92.",
+            "sources": [
+              "CNET (Mike Sorrentino)",
+              "PCMag (Florence Ion)",
+              "The Guardian (Samuel Gibbs)",
+              "Engadget (Nathan Ingraham)",
+              "Android Headlines (Justin Diaz)"
+            ]
+          },
+          {
+            "position": "No, poor value after the $100 hike",
+            "summary": "Tom's Guide 3/5 says a discounted Pixel 10 is smarter; GSMArena calls the price 'difficult to justify'; Android Authority 7/10 asks why pay the same as more capable rivals.",
+            "sources": [
+              "Tom's Guide (John Velasco)",
+              "GSMArena (GSMArena team)",
+              "9to5Google (Damien Wilde)",
+              "Android Authority (Brady Snyder)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Base Pixel 11 heat and smoothness (no vapor chamber)",
+        "sides": [
+          {
+            "position": "Overheats and stutters",
+            "summary": "Android Authority: lag and overheating in everyday use (Phoenix heat), camera features disabled 'device is too warm', 46°C in stress test.",
+            "sources": [
+              "Android Authority (Brady Snyder)"
+            ]
+          },
+          {
+            "position": "Cooler and smooth",
+            "summary": "Android Headlines measured ~6 degrees cooler than Pixel 10; others report fast, fluid daily use.",
+            "sources": [
+              "Android Headlines (Justin Diaz)",
+              "GSMArena (GSMArena team)",
+              "CNET (Mike Sorrentino)",
+              "Engadget (Nathan Ingraham)",
+              "The Guardian (Samuel Gibbs)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Pro / Pro XL battery life",
+        "sides": [
+          {
+            "position": "Clearly better, up to two days",
+            "summary": "Efficiency gains despite smaller cells; GSMArena 'finally on par with Samsung and Apple'.",
+            "sources": [
+              "Android Authority (Joe Maring)",
+              "Android Headlines (Alexander Maxham)",
+              "GSMArena (GSMArena team)",
+              "The Guardian (Samuel Gibbs)",
+              "The Guardian (Samuel Gibbs)",
+              "Android Police (Andy Boxall)",
+              "Trusted Reviews (Henry Burrell)"
+            ]
+          },
+          {
+            "position": "No better or worse than Pixel 10 Pro",
+            "summary": "Tom's Guide measured 11 Pro below 10 Pro; Android Central near-identical; Tech Advisor 10-15% overnight standby drain; Stuff 'charge every evening'.",
+            "sources": [
+              "Tom's Guide (Tom Pritchard)",
+              "Android Central (Nicholas Sutrich)",
+              "Tech Advisor (Anyron Copeman)",
+              "Stuff (Tom Morgan-Freelander)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "120x AI Pro Zoom",
+        "sides": [
+          {
+            "position": "Impressive",
+            "summary": "Tom's Guide: clearer than Samsung's 100x; Android Authority impressed even at 30x-70x.",
+            "sources": [
+              "Tom's Guide (Tom Pritchard)",
+              "Android Authority (Joe Maring)"
+            ]
+          },
+          {
+            "position": "Uncanny / fabricates detail",
+            "summary": "Engadget 'uncanny', Trusted Reviews 'cynical', hallucinated text (Android Headlines, Gizmodo), TechRadar 'hit or miss'.",
+            "sources": [
+              "Engadget (Cherlynn Low)",
+              "Trusted Reviews (Henry Burrell)",
+              "Android Headlines (Alexander Maxham)",
+              "Gizmodo (Raymond Wong)",
+              "TechRadar (Jason Cipriani)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Pro gaming performance",
+        "sides": [
+          {
+            "position": "Fine for most games",
+            "summary": "TechRadar no issues incl. Fortnite; Android Authority CoD Mobile runs well; Android Police Asphalt smooth and cool.",
+            "sources": [
+              "TechRadar (Jason Cipriani)",
+              "Android Authority (Joe Maring)",
+              "Android Police (Andy Boxall)",
+              "Stuff (Tom Morgan-Freelander)"
+            ]
+          },
+          {
+            "position": "Poor for demanding titles",
+            "summary": "Trusted Reviews 'pitifully bad'; Genshin broken; GPU lacks latest Vulkan; GPU scores dropped vs Pixel 10 Pro (Tom's Guide).",
+            "sources": [
+              "Trusted Reviews (Henry Burrell)",
+              "Gizmodo (Raymond Wong)",
+              "Tech Advisor (Anyron Copeman)",
+              "Android Central (Nicholas Sutrich)",
+              "Tom's Guide (Tom Pritchard)",
+              "Android Headlines (Alexander Maxham)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "New MediaTek modem",
+        "sides": [
+          {
+            "position": "Fixed connectivity",
+            "summary": "Holds 5G longer, ~10% faster speeds.",
+            "sources": [
+              "Android Authority (Joe Maring)",
+              "Android Headlines (Alexander Maxham)",
+              "Android Authority (Brady Snyder)"
+            ]
+          },
+          {
+            "position": "No improvement / issues",
+            "summary": "Android Central still drops calls in same spots; 9to5Google hit 5G+VPN connection problems.",
+            "sources": [
+              "Android Central (Nicholas Sutrich)",
+              "9to5Google (Damien Wilde)"
+            ]
+          }
+        ]
+      }
+    ],
+    "problems_reported_by_multiple_reviewers": [
+      {
+        "issue": "Weak GPU / demanding-game performance (Tensor G6)",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Android Authority (Brady Snyder)",
+          "Tom's Guide (John Velasco)",
+          "GSMArena (GSMArena team)",
+          "CNET (Mike Sorrentino)",
+          "PCMag (Florence Ion)",
+          "The Guardian (Samuel Gibbs)",
+          "The Guardian (Samuel Gibbs)",
+          "Trusted Reviews (Henry Burrell)",
+          "GSMArena (GSMArena team)",
+          "Tom's Guide (Tom Pritchard)",
+          "Android Central (Nicholas Sutrich)",
+          "Gizmodo (Raymond Wong)",
+          "Tech Advisor (Anyron Copeman)",
+          "Android Headlines (Alexander Maxham)",
+          "Android Headlines (Justin Diaz)",
+          "Android Authority (Joe Maring)"
+        ],
+        "independent_outlets": 11
+      },
+      {
+        "issue": "HiLight LED does almost nothing at launch (calls from favourites + Gemini only)",
+        "models": [
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "GSMArena (GSMArena team)",
+          "Trusted Reviews (Henry Burrell)",
+          "TechCrunch (Ivan Mehta)",
+          "Android Central (Nicholas Sutrich)",
+          "TechRadar (Jason Cipriani)",
+          "Engadget (Cherlynn Low)",
+          "The Guardian (Samuel Gibbs)",
+          "The Guardian (Samuel Gibbs)",
+          "Gizmodo (Raymond Wong)",
+          "Android Police (Andy Boxall)",
+          "Tech Advisor (Anyron Copeman)",
+          "Stuff (Tom Morgan-Freelander)",
+          "Tom's Guide (Tom Pritchard)",
+          "Android Authority (Joe Maring)",
+          "Android Headlines (Alexander Maxham)"
+        ],
+        "independent_outlets": 14
+      },
+      {
+        "issue": "$100 price increase; Pro/XL base model cut from 16GB to 12GB RAM",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Tom's Guide (John Velasco)",
+          "Android Authority (Brady Snyder)",
+          "Engadget (Nathan Ingraham)",
+          "TechCrunch (Ivan Mehta)",
+          "Android Central (Nicholas Sutrich)",
+          "TechRadar (Jason Cipriani)",
+          "Engadget (Cherlynn Low)",
+          "Android Authority (Joe Maring)",
+          "Android Headlines (Alexander Maxham)",
+          "The Guardian (Samuel Gibbs)",
+          "The Guardian (Samuel Gibbs)",
+          "Gizmodo (Raymond Wong)",
+          "Tom's Guide (Tom Pritchard)",
+          "Tech Advisor (Anyron Copeman)",
+          "Stuff (Tom Morgan-Freelander)",
+          "Trusted Reviews (Henry Burrell)"
+        ],
+        "independent_outlets": 12
+      },
+      {
+        "issue": "Slow wired charging; real-world speeds below Google's claims",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "GSMArena (GSMArena team)",
+          "9to5Google (Damien Wilde)",
+          "Trusted Reviews (Henry Burrell)",
+          "Android Authority (Joe Maring)",
+          "Android Police (Andy Boxall)",
+          "Tech Advisor (Anyron Copeman)",
+          "Android Central (Nicholas Sutrich)"
+        ],
+        "independent_outlets": 7
+      },
+      {
+        "issue": "Proactive Assistance rarely triggers or helps",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Android Authority (Brady Snyder)",
+          "Android Authority (Joe Maring)",
+          "TechRadar (Jason Cipriani)",
+          "Android Central (Nicholas Sutrich)",
+          "TechCrunch (Ivan Mehta)",
+          "Stuff (Tom Morgan-Freelander)",
+          "Android Headlines (Alexander Maxham)",
+          "Android Police (Andy Boxall)"
+        ],
+        "independent_outlets": 7
+      },
+      {
+        "issue": "Genshin Impact broken/unplayable on the PowerVR GPU at launch (Google says a game fix is coming)",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Gizmodo (Raymond Wong)",
+          "Android Headlines (Justin Diaz)",
+          "Android Headlines (Alexander Maxham)",
+          "Tech Advisor (Anyron Copeman)"
+        ],
+        "independent_outlets": 3
+      },
+      {
+        "issue": "120x Pro Zoom produces AI-fabricated detail / garbled text",
+        "models": [
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Engadget (Cherlynn Low)",
+          "Trusted Reviews (Henry Burrell)",
+          "Android Headlines (Alexander Maxham)",
+          "Gizmodo (Raymond Wong)",
+          "TechRadar (Jason Cipriani)"
+        ],
+        "independent_outlets": 5
+      },
+      {
+        "issue": "Magic Capture picks blurry or wrong frames on fast motion",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Trusted Reviews (Henry Burrell)",
+          "Gizmodo (Raymond Wong)",
+          "CNET (Mike Sorrentino)",
+          "TechCrunch (Ivan Mehta)",
+          "Engadget (Cherlynn Low)",
+          "Tech Advisor (Anyron Copeman)"
+        ],
+        "independent_outlets": 6
+      },
+      {
+        "issue": "Headline Gemini Intelligence features US-only at launch",
+        "models": [
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Trusted Reviews (Henry Burrell)",
+          "Tech Advisor (Anyron Copeman)",
+          "Stuff (Tom Morgan-Freelander)",
+          "TechCrunch (Ivan Mehta)"
+        ],
+        "independent_outlets": 4
+      },
+      {
+        "issue": "Low-frequency PWM dimming (flicker-sensitive users)",
+        "models": [
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Android Central (Nicholas Sutrich)",
+          "Android Headlines (Alexander Maxham)",
+          "Tech Advisor (Anyron Copeman)"
+        ],
+        "independent_outlets": 3
+      },
+      {
+        "issue": "Base Pixel 11 screen ships at 60Hz / no LTPO",
+        "models": [
+          "Pixel 11"
+        ],
+        "sources": [
+          "Android Authority (Brady Snyder)",
+          "GSMArena (GSMArena team)",
+          "9to5Google (Damien Wilde)"
+        ],
+        "independent_outlets": 3
+      },
+      {
+        "issue": "Software bugs, lag or UI latency",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Tech Advisor (Anyron Copeman)",
+          "Gizmodo (Raymond Wong)",
+          "Android Authority (Brady Snyder)"
+        ],
+        "independent_outlets": 3
+      },
+      {
+        "issue": "Video quality / stabilisation could be better",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Trusted Reviews (Henry Burrell)",
+          "GSMArena (GSMArena team)",
+          "GSMArena (GSMArena team)"
+        ],
+        "independent_outlets": 2
+      },
+      {
+        "issue": "Heat under heavy load (gaming, stress, Extreme Charging)",
+        "models": [
+          "Pixel 11",
+          "Pixel 11 Pro",
+          "Pixel 11 Pro XL"
+        ],
+        "sources": [
+          "Android Authority (Brady Snyder)",
+          "Gizmodo (Raymond Wong)",
+          "Android Authority (Joe Maring)"
+        ],
+        "note": "Contested: Android Headlines measured cooler thermals than Pixel 10 on both base and Pro.",
+        "independent_outlets": 2
+      },
+      {
+        "issue": "Rambler shows text only after you stop speaking",
+        "models": [
+          "Pixel 11"
+        ],
+        "sources": [
+          "9to5Google (Damien Wilde)",
+          "The Guardian (Samuel Gibbs)",
+          "Engadget (Nathan Ingraham)"
+        ],
+        "independent_outlets": 3
+      }
+    ],
+    "who_should_buy": [
+      {
+        "who": "Owners of a Pixel 9 / Pixel 8 or older (2+ years old)",
+        "sources": [
+          "Tom's Guide (John Velasco)",
+          "GSMArena (GSMArena team)",
+          "Engadget (Nathan Ingraham)",
+          "TechRadar (Jason Cipriani)",
+          "Android Headlines (Alexander Maxham)",
+          "CNET (Mike Sorrentino)",
+          "Trusted Reviews (Henry Burrell)",
+          "Android Authority (Brady Snyder)"
+        ]
+      },
+      {
+        "who": "iPhone owners thinking of switching (Android Switch, Pixelsnap, AirDrop via Quick Share)",
+        "sources": [
+          "CNET (Mike Sorrentino)",
+          "Engadget (Nathan Ingraham)",
+          "TechRadar (Jason Cipriani)"
+        ]
+      },
+      {
+        "who": "People who buy for camera and point-and-shoot reliability",
+        "sources": [
+          "The Guardian (Samuel Gibbs)",
+          "Android Police (Andy Boxall)",
+          "Tech Advisor (Anyron Copeman)",
+          "Stuff (Tom Morgan-Freelander)",
+          "CNET (Mike Sorrentino)",
+          "Trusted Reviews (Henry Burrell)"
+        ]
+      },
+      {
+        "who": "Fans of clean Pixel software and 7-year support, keeping the phone for years",
+        "sources": [
+          "Android Authority (Brady Snyder)",
+          "GSMArena (GSMArena team)",
+          "Trusted Reviews (Henry Burrell)",
+          "Android Authority (Joe Maring)"
+        ]
+      },
+      {
+        "who": "Most buyers: pick the base Pixel 11 over the Pros to save $200",
+        "sources": [
+          "CNET (Mike Sorrentino)",
+          "PCMag (Florence Ion)",
+          "Android Headlines (Justin Diaz)",
+          "Android Authority (Brady Snyder)",
+          "Android Authority (Joe Maring)"
+        ]
+      },
+      {
+        "who": "Heavy Gemini users / parents (Magic Capture)",
+        "sources": [
+          "TechRadar (Jason Cipriani)"
+        ]
+      }
+    ],
+    "who_should_skip": [
+      {
+        "who": "Pixel 10 / Pixel 10 Pro (and 9 Pro) owners: no reason to upgrade",
+        "sources": [
+          "Tom's Guide (John Velasco)",
+          "GSMArena (GSMArena team)",
+          "Android Authority (Brady Snyder)",
+          "Android Authority (Joe Maring)",
+          "TechRadar (Jason Cipriani)",
+          "Android Headlines (Alexander Maxham)",
+          "Engadget (Nathan Ingraham)",
+          "Trusted Reviews (Henry Burrell)"
+        ]
+      },
+      {
+        "who": "Mobile gamers",
+        "sources": [
+          "Trusted Reviews (Henry Burrell)",
+          "CNET (Mike Sorrentino)",
+          "The Guardian (Samuel Gibbs)",
+          "The Guardian (Samuel Gibbs)",
+          "TechRadar (Jason Cipriani)",
+          "Tech Advisor (Anyron Copeman)",
+          "Android Headlines (Justin Diaz)"
+        ]
+      },
+      {
+        "who": "Buyers who want the fastest charging or biggest battery",
+        "sources": [
+          "GSMArena (GSMArena team)",
+          "Android Authority (Joe Maring)"
+        ]
+      },
+      {
+        "who": "Flicker/PWM-sensitive users",
+        "sources": [
+          "Android Central (Nicholas Sutrich)",
+          "Tech Advisor (Anyron Copeman)"
+        ]
+      },
+      {
+        "who": "UK/non-US buyers expecting all Gemini Intelligence features",
+        "sources": [
+          "Trusted Reviews (Henry Burrell)",
+          "Tech Advisor (Anyron Copeman)"
+        ]
+      }
+    ],
+    "alternatives_named_by_reviewers": [
+      {
+        "phone": "Samsung Galaxy S26",
+        "vs": "Pixel 11 / Pixel 11 Pro",
+        "why": "Same price, thinner/lighter, much faster chip; but no magnets and busier software",
+        "sources": [
+          "Android Authority (Brady Snyder)",
+          "GSMArena (GSMArena team)",
+          "CNET (Mike Sorrentino)",
+          "Tech Advisor (Anyron Copeman)"
+        ]
+      },
+      {
+        "phone": "Samsung Galaxy S26 Ultra",
+        "vs": "Pixel 11 Pro XL",
+        "why": "Same $1,299/GBP 1,279, far faster, 60W charging, S Pen; no magnets, heavier One UI",
+        "sources": [
+          "Trusted Reviews (Henry Burrell)",
+          "GSMArena (GSMArena team)",
+          "Android Authority (Joe Maring)",
+          "The Guardian (Samuel Gibbs)",
+          "Android Police (Andy Boxall)",
+          "Stuff (Tom Morgan-Freelander)"
+        ]
+      },
+      {
+        "phone": "Samsung Galaxy S26 Plus",
+        "vs": "Pixel 11 Pro",
+        "why": "Comparable starting price",
+        "sources": [
+          "TechRadar (Jason Cipriani)",
+          "Engadget (Cherlynn Low)"
+        ]
+      },
+      {
+        "phone": "Apple iPhone 17",
+        "vs": "Pixel 11",
+        "why": "Similar price/size, much faster A19; no telephoto",
+        "sources": [
+          "GSMArena (GSMArena team)",
+          "Tech Advisor (Anyron Copeman)"
+        ]
+      },
+      {
+        "phone": "Apple iPhone 17 Pro",
+        "vs": "Pixel 11 Pro",
+        "why": "Same tier, iOS",
+        "sources": [
+          "TechRadar (Jason Cipriani)",
+          "Android Police (Andy Boxall)"
+        ]
+      },
+      {
+        "phone": "Google Pixel 10 / 10 Pro / 10 Pro XL (discounted)",
+        "vs": "each Pixel 11 model",
+        "why": "Nearly the same features for less",
+        "sources": [
+          "Tom's Guide (John Velasco)",
+          "TechRadar (Jason Cipriani)",
+          "Tom's Guide (Tom Pritchard)",
+          "GSMArena (GSMArena team)"
+        ]
+      },
+      {
+        "phone": "Google Pixel 10a",
+        "vs": "Pixel 11 / Pro XL",
+        "why": "GBP 499/$499 budget Pixel experience",
+        "sources": [
+          "Trusted Reviews (Henry Burrell)",
+          "The Guardian (Samuel Gibbs)"
+        ]
+      },
+      {
+        "phone": "Xiaomi 17",
+        "vs": "Pixel 11",
+        "why": "Same size, much bigger battery, faster chip and charging",
+        "sources": [
+          "GSMArena (GSMArena team)"
+        ]
+      },
+      {
+        "phone": "Xiaomi 17 Ultra / vivo X300 Ultra / Oppo Find X9 Ultra",
+        "vs": "Pixel 11 Pro XL",
+        "why": "Better camera hardware, battery, charging",
+        "sources": [
+          "GSMArena (GSMArena team)",
+          "Trusted Reviews (Henry Burrell)",
+          "Android Police (Andy Boxall)"
+        ]
+      },
+      {
+        "phone": "vivo X300 / Oppo Reno16",
+        "vs": "Pixel 11",
+        "why": "Compact rivals with more ambitious cameras or bigger batteries",
+        "sources": [
+          "GSMArena (GSMArena team)"
+        ]
+      }
+    ],
+    "overall": {
+      "Pixel 11": {
+        "consensus_score": 7.5,
+        "published_score_average_out_of_10": 7.84,
+        "scored_reviews": 5,
+        "reviews": [
+          "Tom's Guide (John Velasco)",
+          "Android Authority (Brady Snyder)",
+          "GSMArena (GSMArena team)",
+          "9to5Google (Damien Wilde)",
+          "Engadget (Nathan Ingraham)",
+          "Android Headlines (Justin Diaz)",
+          "CNET (Mike Sorrentino)",
+          "The Guardian (Samuel Gibbs)",
+          "PCMag (Florence Ion)"
+        ],
+        "verdict": "A polished, dependable compact flagship with a great camera, strong battery and best-in-class software, held back by a weak GPU and a $100 price rise; the value pick of the lineup for anyone not coming from a Pixel 10."
+      },
+      "Pixel 11 Pro": {
+        "consensus_score": 7.5,
+        "published_score_average_out_of_10": 7.62,
+        "scored_reviews": 8,
+        "reviews": [
+          "Tom's Guide (Tom Pritchard)",
+          "Android Authority (Joe Maring)",
+          "Android Central (Nicholas Sutrich)",
+          "TechRadar (Jason Cipriani)",
+          "Engadget (Cherlynn Low)",
+          "Android Headlines (Alexander Maxham)",
+          "The Guardian (Samuel Gibbs)",
+          "Gizmodo (Raymond Wong)",
+          "Android Police (Andy Boxall)",
+          "Tech Advisor (Anyron Copeman)"
+        ],
+        "verdict": "Arguably the best small camera phone and the best Pixel software yet, but a $100 price rise, a 12GB RAM base model, weak gaming and a gimmicky HiLight make it an iterative, hard-to-justify upgrade."
+      },
+      "Pixel 11 Pro XL": {
+        "consensus_score": 7.5,
+        "published_score_average_out_of_10": 7.67,
+        "scored_reviews": 6,
+        "reviews": [
+          "Tom's Guide (Tom Pritchard)",
+          "Android Authority (Joe Maring)",
+          "GSMArena (GSMArena team)",
+          "Trusted Reviews (Henry Burrell)",
+          "TechCrunch (Ivan Mehta)",
+          "Android Central (Nicholas Sutrich)",
+          "The Guardian (Samuel Gibbs)",
+          "Gizmodo (Raymond Wong)",
+          "Stuff (Tom Morgan-Freelander)"
+        ],
+        "verdict": "A superb big screen, top-tier camera and the longest battery life of the current Pixels (Guardian), but at $1,299 it trails the same-priced Galaxy S26 Ultra on performance and charging; buy it for the Pixel experience, not the specs."
+      }
+    }
+  }
+}

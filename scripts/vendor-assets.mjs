@@ -8,12 +8,18 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const videoDir = join(root, "video");
 
-// Every direct child of video/ (and video/templates/) that has an index.html.
-const projects = [videoDir, join(videoDir, "templates")]
-  .filter(existsSync)
-  .flatMap((d) => readdirSync(d, { withFileTypes: true })
-    .filter((e) => e.isDirectory() && existsSync(join(d, e.name, "index.html")))
-    .map((e) => join(d, e.name)));
+// Every project dir (has index.html) up to two levels below video/.
+const skip = new Set(["vendor", "node_modules", "shared", "media"]);
+const projects = [];
+const walk = (d, depth) => {
+  for (const e of readdirSync(d, { withFileTypes: true })) {
+    if (!e.isDirectory() || skip.has(e.name) || e.name.startsWith("_")) continue;
+    const p = join(d, e.name);
+    if (existsSync(join(p, "index.html"))) projects.push(p);
+    else if (depth < 2) walk(p, depth + 1);
+  }
+};
+if (existsSync(videoDir)) walk(videoDir, 1);
 
 for (const project of projects) {
   const out = join(project, "vendor");

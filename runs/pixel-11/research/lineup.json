@@ -1,0 +1,464 @@
+{
+  "_meta": {
+    "compiled": "2026-10-01",
+    "method": "All facts from pages fetched on 2026-10-01 (WebSearch/WebFetch); nothing from model memory. Official Google pages preferred; GSMArena / press used for spec-sheet detail not on Google pages. Conflicts recorded in 'conflicts' fields.",
+    "caveats": [
+      "store.google.com spec/price pages render prices client-side and could not be read directly; US per-tier prices come from Android Authority and GSMArena, India prices from Beebom (citing Google Store India).",
+      "Google Store US phones page (store.google.com/us/category/phones) also lists Pixel 10a; no Pixel 11a was found in any source. Pixel 10a not researched further."
+    ]
+  },
+  "launch": {
+    "date": "2026-08-12",
+    "event": "Made by Google 2026 (in-person, New York, 6 PM ET; hosted by Trevor Noah per Engadget live blog)",
+    "preorder": "2026-08-12 (Google launch post; HiLight post says 2026-08-13)",
+    "on_sale": "2026-08-20",
+    "source_urls": [
+      "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-fold/",
+      "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-hilight/",
+      "https://9to5google.com/2026/07/07/made-by-google-2026-invite/",
+      "https://www.engadget.com/2235161/google-pixel-11-launch-2026-live-blog-updates/"
+    ]
+  },
+  "models": [
+    {
+      "name": "Pixel 11",
+      "price_usd": {
+        "256GB": 899,
+        "512GB": 1019
+      },
+      "price_inr": {
+        "12GB+256GB": 89999,
+        "12GB+512GB": 104999
+      },
+      "price_other": {
+        "GBP_from": 749,
+        "EUR_from": 839
+      },
+      "display": "6.3\" OLED ('Actua'), 1080x2424, 60-120Hz, HDR10+, 2000 nits HBM / 3000 nits peak, Gorilla Glass Victus 2",
+      "chip": "Google Tensor G6 + Titan M3",
+      "ram": "12GB",
+      "storage": [
+        "256GB",
+        "512GB"
+      ],
+      "battery_mah": 4985,
+      "battery_life_claim": "over 30 hours (Google/Engadget)",
+      "charging": "30W wired (55% in 30 min per GSMArena); 25W Qi2.2 magnetic wireless (Pixelsnap)",
+      "cameras": {
+        "main": "48MP f/1.7 24mm (Google: 56% more light sensitivity)",
+        "ultrawide": "13MP f/2.2 120deg",
+        "telephoto": "10.8MP f/3.1 5x optical, up to 30x Super Res Zoom",
+        "selfie": "10.5MP f/2.2",
+        "video": "4K24/30/60 rear"
+      },
+      "colors": [
+        "Frost",
+        "Pistachio",
+        "Hibiscus",
+        "Obsidian"
+      ],
+      "weight_g": 197,
+      "dimensions": "152.8 x 72 x 8.6 mm",
+      "ip_rating": "IP68",
+      "update_years": 7,
+      "notable_new_features": [
+        "Tensor G6",
+        "256GB base storage",
+        "25W Qi2.2 wireless",
+        "camera bar 40% thinner",
+        "Magic Capture",
+        "Camera Looks",
+        "Gemini Intelligence multistep tasks across 40+ apps",
+        "Rambler voice typing",
+        "Sign-to-Text (ASL)",
+        "Live Translate dubbing"
+      ],
+      "conflicts": [
+        "India start price: Beebom/91mobiles Rs 89,999 vs GSMArena listing Rs 104,999 (GSMArena figure matches the 512GB variant).",
+        "Engadget says a telephoto lens was 'added to base model'; Wikipedia's Pixel 10 page shows the Pixel 10 already had a 10.8MP 5x telephoto, so treat Engadget's claim as wrong."
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+          "what": "launch, $899 start price, Tensor G6, 48MP main + 5x tele/30x zoom, Qi2.2 25W, IP68, colors, 7 years updates"
+        },
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11_5g-14799.php",
+          "what": "display, RAM/storage, battery, charging, cameras, weight, dimensions, GBP/EUR price"
+        },
+        {
+          "url": "https://www.androidauthority.com/google-pixel-11-series-3693865/",
+          "what": "US price per storage tier, battery, charging"
+        },
+        {
+          "url": "https://www.engadget.com/2234844/google-pixel-11-announced-specs-availability/",
+          "what": "display refresh/brightness, 30h battery claim, camera details"
+        },
+        {
+          "url": "https://gadgets.beebom.com/news/india-pricing-for-google-pixel-11-11-pro-11-pro-xl-11-pro-fold-official",
+          "what": "India prices"
+        }
+      ]
+    },
+    {
+      "name": "Pixel 11 Pro",
+      "price_usd": {
+        "256GB": 1099,
+        "512GB": 1219,
+        "1TB": 1499
+      },
+      "price_inr": {
+        "12GB+256GB": 119999,
+        "16GB+512GB": 134999
+      },
+      "display": "6.3\" LTPO OLED ('Super Actua'), 1280x2856, 120Hz, HDR10+, 2400 nits HBM / 3600 nits peak; Google: 2x+ scratch resistance vs Pixel 10",
+      "chip": "Google Tensor G6 + Titan M3",
+      "ram": "12GB (256GB) / 16GB (512GB, 1TB)",
+      "storage": [
+        "256GB",
+        "512GB",
+        "1TB"
+      ],
+      "battery_mah": 4850,
+      "battery_life_claim": "30+ hours (9to5Google)",
+      "charging": "30W wired; 25W Qi2.2 magnetic wireless; reverse wired; bypass charging",
+      "cameras": {
+        "main": "50MP f/1.7 24mm 1/1.3\" (Google: new sensor)",
+        "ultrawide": "48MP f/1.7 123deg",
+        "telephoto": "48MP f/2.8 5x periscope, 120x Pro Zoom (Google: 30% more light sensitivity, Portrait Mode at 5x)",
+        "selfie": "42MP f/2.2"
+      },
+      "colors": [
+        "Canyon",
+        "Fog",
+        "Olive",
+        "Obsidian"
+      ],
+      "weight_g": 204,
+      "dimensions": "152.7 x 71.9 x 8.4 mm",
+      "ip_rating": "IP68",
+      "update_years": 7,
+      "notable_new_features": [
+        "HiLight colored LED notifications (Pro models only)",
+        "Instant Night Sight up to 4.5x faster (Pro/Pro XL)",
+        "all-matte finishes",
+        "6 months Google AI Pro included",
+        "Magic Capture",
+        "Camera Looks"
+      ],
+      "conflicts": [
+        "1TB US price: $1,499 (Android Authority) vs $1,449 (GSMArena price listing/search snippet). GSMArena's headline '$824.99' is a current retail/discount price, not launch MSRP.",
+        "Peak brightness: 3600 nits (Google, GSMArena) vs 3000 nits (9to5Google)."
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+          "what": "$1,099 start, Super Actua 3600 nits, telephoto 48MP/120x, Night Sight, colors, IP68, 7 years, AI Pro offer"
+        },
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11_pro_5g-14801.php",
+          "what": "dimensions, weight, display, RAM/storage, cameras, battery, charging"
+        },
+        {
+          "url": "https://www.androidauthority.com/google-pixel-11-series-3693865/",
+          "what": "US price per tier, RAM per tier, battery/charging"
+        },
+        {
+          "url": "https://9to5google.com/2026/08/12/pixel-11-pro-launches-for-1099/",
+          "what": "price, battery, colors, change vs Pixel 10 Pro"
+        },
+        {
+          "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-hilight/",
+          "what": "HiLight feature and availability"
+        },
+        {
+          "url": "https://gadgets.beebom.com/news/india-pricing-for-google-pixel-11-11-pro-11-pro-xl-11-pro-fold-official",
+          "what": "India prices"
+        }
+      ]
+    },
+    {
+      "name": "Pixel 11 Pro XL",
+      "price_usd": {
+        "256GB": 1299,
+        "512GB": 1419,
+        "1TB": 1649
+      },
+      "price_inr": {
+        "12GB+256GB": 134999,
+        "16GB+512GB": 149999
+      },
+      "price_other": {
+        "GBP_from": 1099,
+        "EUR_from": 1175
+      },
+      "display": "6.8\" LTPO OLED ('Super Actua'), 1344x2992, 120Hz, HDR10+, 2400 nits HBM / 3600 nits peak",
+      "chip": "Google Tensor G6 + Titan M3",
+      "ram": "12GB (256GB) / 16GB (512GB, 1TB)",
+      "storage": [
+        "256GB",
+        "512GB",
+        "1TB"
+      ],
+      "battery_mah": 5115,
+      "battery_life_claim": "30+ hours; '15 hours of battery life in 15 minutes' charge (Google)",
+      "charging": "45W wired (75% in 30 min per GSMArena); 25W Qi2.2 magnetic wireless; reverse wired; bypass charging",
+      "cameras": {
+        "main": "50MP f/1.7 24mm 1/1.3\"",
+        "ultrawide": "48MP f/1.7 123deg",
+        "telephoto": "48MP f/2.8 5x periscope, 120x Pro Zoom",
+        "selfie": "42MP f/2.2",
+        "video": "8K24/30, 4K24/30/60"
+      },
+      "colors": [
+        "Canyon",
+        "Fog",
+        "Olive",
+        "Obsidian"
+      ],
+      "weight_g": 226,
+      "dimensions": "162.7 x 76.5 x 8.5 mm",
+      "ip_rating": "IP68",
+      "update_years": 7,
+      "notable_new_features": [
+        "45W wired charging",
+        "HiLight",
+        "Instant Night Sight",
+        "6 months Google AI Pro"
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+          "what": "$1,299 start, fast-charge claim, Qi2.2, colors, 7 years"
+        },
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11_pro_xl_5g-14800.php",
+          "what": "full spec sheet, GBP/EUR price"
+        },
+        {
+          "url": "https://www.androidauthority.com/google-pixel-11-series-3693865/",
+          "what": "US price per tier, RAM per tier, charging"
+        },
+        {
+          "url": "https://gadgets.beebom.com/news/india-pricing-for-google-pixel-11-11-pro-11-pro-xl-11-pro-fold-official",
+          "what": "India prices"
+        }
+      ]
+    },
+    {
+      "name": "Pixel 11 Pro Fold",
+      "price_usd": {
+        "256GB": 1899,
+        "512GB": 2019,
+        "1TB": 2249
+      },
+      "price_inr": {
+        "16GB+512GB": 186999
+      },
+      "price_other": {
+        "GBP": {
+          "256GB": 1799,
+          "512GB": 1919,
+          "1TB": 2149
+        }
+      },
+      "display": "Inner 8.0\" foldable LTPO OLED 2076x2152 120Hz; cover 6.5\" OLED 1080x2342 120Hz (ceramic 'Super Actua' cover glass); both 3600 nits peak (Google: 20% brighter than last year)",
+      "chip": "Google Tensor G6 + Titan M3",
+      "ram": "16GB",
+      "storage": [
+        "256GB",
+        "512GB",
+        "1TB"
+      ],
+      "battery_mah": 4806,
+      "battery_life_claim": "over 24 hours (Google)",
+      "charging": "30W wired (50% in ~30 min); 25W Qi2.2 wireless (Google: 20% faster than Pixel 10 Pro Fold)",
+      "cameras": {
+        "main": "48MP f/1.7 (new, per Google)",
+        "ultrawide": "10.5MP f/2.2 127deg",
+        "telephoto": "10.8MP f/3.1 5x, up to 30x Super Zoom",
+        "selfie": "10MP inner + 10MP cover"
+      },
+      "colors": [
+        "Obsidian",
+        "Olive"
+      ],
+      "weight_g": 239,
+      "dimensions": "Folded 155.2 x 76 x 10.1 mm; unfolded 155.2 x 150.4 x 5 mm",
+      "ip_rating": "IP68",
+      "update_years": 7,
+      "notable_new_features": [
+        "gearless hinge",
+        "~10% lighter and ~1mm thinner than Pixel 10 Pro Fold",
+        "'3x more durable' (Google)",
+        "glass-fiber composite back",
+        "HiLight",
+        "Sign-to-Text on dual screens"
+      ],
+      "conflicts": [
+        "1TB US price $2,249 appears only in a 9to5Google search snippet; not confirmed on a fetched page (GSMArena lists 1TB only in GBP/EUR).",
+        "India: only 16GB+512GB listed by Beebom (Rs 1,86,999)."
+      ],
+      "sources": [
+        {
+          "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-fold/",
+          "what": "weight/thickness vs Pixel 10 Pro Fold, durability, hinge, 3600 nits, 48MP main, 30x zoom, charging, colors, IP68, 16GB RAM, battery life, availability"
+        },
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11_pro_fold-14874.php",
+          "what": "full spec sheet, dimensions, battery, USD 256/512 and GBP prices"
+        },
+        {
+          "url": "https://9to5google.com/2026/08/12/google-pixel-11-pro-fold-price-release-date-durability-details/",
+          "what": "$1,899 price, 239g, 10.1mm, cameras, battery"
+        },
+        {
+          "url": "https://gadgets.beebom.com/news/india-pricing-for-google-pixel-11-11-pro-11-pro-xl-11-pro-fold-official",
+          "what": "India price"
+        }
+      ]
+    }
+  ],
+  "whats_new_vs_pixel_10": [
+    {
+      "claim": "Tensor G6: 50% more TPU compute, ~25% faster web browsing, 15% faster app launches vs Tensor G5; Titan M3 security chip with post-quantum cryptography",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/"
+    },
+    {
+      "claim": "Tensor G6 process node is disputed: Android Central says 2nm, GSMArena lists 3nm",
+      "source_url": "https://www.androidcentral.com/phones/google-pixel-11 ; https://www.gsmarena.com/google_pixel_11_5g-14799.php"
+    },
+    {
+      "claim": "Camera bar 40% thinner",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/"
+    },
+    {
+      "claim": "Pro/Pro XL displays have 2x+ the scratch resistance of Pixel 10; up to 3600 nits",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/"
+    },
+    {
+      "claim": "Base storage rises from 128GB to 256GB on all three slab phones; US prices up accordingly ($899 / $1,099 / $1,299)",
+      "source_url": "https://www.androidauthority.com/google-pixel-11-series-3693865/"
+    },
+    {
+      "claim": "Pixel 11 Pro/Pro XL now start at 12GB RAM instead of 16GB",
+      "source_url": "https://www.androidauthority.com/google-pixel-11-series-3693865/"
+    },
+    {
+      "claim": "Qi2.2 25W wireless charging is new to Pixel 11 and Pixel 11 Pro (Pixel 10 had 15W Qi2 per Wikipedia)",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/ ; https://en.wikipedia.org/wiki/Pixel_10"
+    },
+    {
+      "claim": "Pixel 11 Pro XL wired charging is 45W",
+      "source_url": "https://www.gsmarena.com/google_pixel_11_pro_xl_5g-14800.php"
+    },
+    {
+      "claim": "Pro telephoto 48MP with 30% more light sensitivity; Instant Night Sight captures up to 4.5x faster (Pro/Pro XL)",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/"
+    },
+    {
+      "claim": "Pixel 11 main camera 48MP with 56% more light sensitivity",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/"
+    },
+    {
+      "claim": "Pro battery rating goes from 24 to 30+ hours",
+      "source_url": "https://9to5google.com/2026/08/12/pixel-11-pro-launches-for-1099/"
+    },
+    {
+      "claim": "HiLight colored rear LED notifications on Pixel 11 Pro, Pro XL and Pro Fold",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-hilight/"
+    },
+    {
+      "claim": "Pixel 11 Pro Fold ~10% lighter, ~1mm thinner, 3x more durable, gearless hinge, displays 20% brighter, wireless charging 20% faster than Pixel 10 Pro Fold",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-fold/"
+    },
+    {
+      "claim": "New software: Magic Capture, Camera Looks, Creator Suite, Rambler, Sign-to-Text, Live Translate dubbing, Gemini Intelligence across 40+ apps",
+      "source_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/"
+    }
+  ],
+  "official_images": [
+    {
+      "model": "Pixel 11 Pro",
+      "color": "Canyon",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Pixel_11_Launch_social.png",
+      "width": 3840,
+      "height": 2160,
+      "content_type": "image/png",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "notes": "hero/back; social card with 'Google' and 'Pixel 11 Pro' wordmarks on pink background (text baked in)"
+    },
+    {
+      "model": "Pixel 11",
+      "color": "Obsidian, Pistachio, Hibiscus, Frost",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Pixel_11_Family_Shot.png",
+      "width": 2400,
+      "height": 2400,
+      "content_type": "image/png",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "notes": "lineup group shot, backs, black background (16 MB)"
+    },
+    {
+      "model": "Pixel 11 Pro / Pro XL",
+      "color": "Obsidian, Olive, Fog, Canyon",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Pixel-11ProXL_Family-Shot.jpg",
+      "width": 2200,
+      "height": 1238,
+      "content_type": "image/jpeg",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "notes": "lineup group shot, backs, white background"
+    },
+    {
+      "model": "Pixel 11 Pro Fold",
+      "color": "Olive",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Pixel_11_Pro_Fold_Social.png",
+      "width": 2784,
+      "height": 1566,
+      "content_type": "image/png",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-fold/",
+      "notes": "hero, side/back; social card with wordmarks baked in"
+    },
+    {
+      "model": "Pixel 11 Pro Fold",
+      "color": "Obsidian",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/P11PF_Obsidian.jpg",
+      "width": 1920,
+      "height": 1080,
+      "content_type": "image/jpeg",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-fold/",
+      "notes": "back + opened inner display, white background"
+    },
+    {
+      "model": "Pixel 11 (alt text says 'a Google Pixel phone'; filename says Frost)",
+      "color": "Frost",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/NFG_Cubs_Frost.jpg",
+      "width": 1920,
+      "height": 1080,
+      "content_type": "image/jpeg",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "notes": "front and back view, white background"
+    },
+    {
+      "model": "Tensor G6",
+      "color": null,
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/TensorChip.jpg",
+      "width": 2100,
+      "height": 1181,
+      "content_type": "image/jpeg",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "notes": "chip render"
+    },
+    {
+      "model": "Pixel 11 Pro (lifestyle)",
+      "color": "Canyon",
+      "url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Grizzly---Vibe3_inline.width-2000.format-webp.webp",
+      "width": 2000,
+      "height": 1239,
+      "content_type": "webp (server sends application/octet-stream)",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "notes": "lifestyle: person in yellow jacket holding phone; contains a person, use with care"
+    }
+  ],
+  "official_images_notes": "All URLs downloaded and checked with ffprobe on 2026-10-01. original_images/ URLs return proper image/* content-types; /images/ resized webp variants return application/octet-stream but are valid WebP. Made_by_Google_2026_Collection image returned 403 and was excluded."
+}

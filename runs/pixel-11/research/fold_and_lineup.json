@@ -1,0 +1,2484 @@
+{
+  "meta": {
+    "phone": "Google Pixel 11 Pro Fold (+ Pixel 11 lineup questions)",
+    "launch": "2026-08-12",
+    "compiled": "2026-10-01",
+    "method": "Each page fetched directly (HTTP GET) and converted to text. Every quote was machine-checked as a verbatim substring of the fetched page text and is under 25 words. Excluded: hands-on/first-look pieces (Engadget hands-on, TechRadar first look, Android Central hands-on) and pre-launch comparisons (Android Central 'vs Pixel 10 Pro Fold', dated 2026-07-13). Category scores = 5 + 2.5 x mean claim sentiment, rounded to 0.5. Agreement compares sources with net-positive vs net-negative sentiment: strong >=75% on one side, mixed >=60%, otherwise split.",
+    "caveats": [
+      "Quotes are taken from page text that includes reader-facing material only; scores marked 'page structured data' come from the page's schema.org rating.",
+      "Battery capacity disagreement: most say 4,806 mAh; BGR states 4,750 mAh.",
+      "BGR's antenna-crack claim cites JerryRigEverything's test (a third party's video); do not show that footage.",
+      "Tech Advisor refers to an Apple foldable as 'iPhone Ultra' that is 'said to be' coming; this is treated as rumor and not used. Other reviews name it iPhone Duo.",
+      "Outlets The Verge, CNET, Wired, ZDNet, PCMag could not be searched with this tool (blocked); GSMArena and PhoneArena had no full Fold review in results.",
+      "Tom's Guide Fold review was fetched via its alternate URL (.../i-tried-the-pixel-11-pro-fold-and-its-more-ultra-than-samsungs-foldable-for-usd200-less); the canonical URL is recorded.",
+      "9to5Google's page schema carries a rating value of 4 but no score is stated in the article text, so it is recorded as unscored."
+    ]
+  },
+  "sources": [
+    {
+      "id": "9to5google",
+      "outlet": "9to5Google",
+      "author": "Ben Schoon",
+      "published": "2026-08-26",
+      "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+      "model": "Pixel 11 Pro Fold",
+      "score": null,
+      "verdict_paraphrase": "Not the best, far from 'bad' - a 'pretty good' foldable that only just keeps up with rivals; battery the main weak spot.",
+      "scope": "A+B"
+    },
+    {
+      "id": "techradar",
+      "outlet": "TechRadar",
+      "author": "Lance Ulanoff",
+      "published": "2026-08-20",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+      "model": "Pixel 11 Pro Fold",
+      "score": "4/5",
+      "verdict_paraphrase": "Best folding Pixel yet, but doesn't beat Samsung's best; not enough new to upgrade from Pixel 10 Pro Fold.",
+      "scope": "A+B"
+    },
+    {
+      "id": "tomsguide",
+      "outlet": "Tom's Guide",
+      "author": "John Velasco",
+      "published": "2026-08-19",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+      "model": "Pixel 11 Pro Fold",
+      "score": "4/5 (page structured data)",
+      "verdict_paraphrase": "Falling behind the foldable curve: neat AI and durable design, but trailing Tensor G6, negligible battery gains and app-scaling quirks.",
+      "scope": "A+B"
+    },
+    {
+      "id": "droidlife",
+      "outlet": "Droid Life",
+      "author": "Kellen",
+      "published": "2026-09-17",
+      "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+      "model": "Pixel 11 Pro Fold",
+      "score": null,
+      "verdict_paraphrase": "Good foldable that's feeling dated: great displays and hinge, but heavy, old shape, and a not-quite-Pro camera.",
+      "scope": "A+B"
+    },
+    {
+      "id": "techadvisor",
+      "outlet": "Tech Advisor",
+      "author": "Luke Baker",
+      "published": "2026-08-19",
+      "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+      "model": "Pixel 11 Pro Fold",
+      "score": "4/5",
+      "verdict_paraphrase": "Behind the times: lovely and well built with great software, but slower, thicker, bigger crease and smaller battery than rivals.",
+      "scope": "A+B"
+    },
+    {
+      "id": "bgr",
+      "outlet": "BGR",
+      "author": "Connor Jewiss",
+      "published": "2026-09-21",
+      "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+      "model": "Pixel 11 Pro Fold",
+      "score": null,
+      "verdict_paraphrase": "It won me over in the end: a well-rounded foldable with strong cameras and clean software; battery, charging and crease are the weak points.",
+      "scope": "A+B"
+    },
+    {
+      "id": "engadget",
+      "outlet": "Engadget",
+      "author": "Sam Rutherford",
+      "published": "2026-08-19",
+      "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+      "model": "Pixel 11 Pro Fold",
+      "score": "8.5/10",
+      "verdict_paraphrase": "Doing more but not quite enough: best cameras and smartest software among foldables, but chunky and outclassed by rivals.",
+      "scope": "A+B"
+    },
+    {
+      "id": "androidauthority",
+      "outlet": "Android Authority",
+      "author": "Robert Triggs",
+      "published": "2026-09-11",
+      "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+      "model": "Pixel 11 Pro Fold",
+      "score": "7/10 (page structured data)",
+      "verdict_paraphrase": "Beautifully built and polished, but $1,899 is hard to justify; rivals beat it on cameras, performance, battery; buy the Pixel 11 Pro XL instead.",
+      "scope": "A+B"
+    },
+    {
+      "id": "androidcentral",
+      "outlet": "Android Central",
+      "author": "Nicholas Sutrich",
+      "published": "2026-08-29",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+      "model": "Pixel 11 Pro Fold",
+      "score": "3.5/5 (page structured data)",
+      "verdict_paraphrase": "A solid upgrade over the Pixel 10 Pro Fold, but Tensor still lags, battery disappoints, sides are hard to open and PWM is poor.",
+      "scope": "A+B"
+    },
+    {
+      "id": "ac_pixel11pro",
+      "outlet": "Android Central",
+      "author": "Nicholas Sutrich",
+      "published": "2026-08-19",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro / Pro XL",
+      "score": "3/5",
+      "verdict_paraphrase": "Harder to recommend despite fun new Gemini features.",
+      "scope": "B"
+    },
+    {
+      "id": "ac_pixel11",
+      "outlet": "Android Central",
+      "author": "Derrek Lee",
+      "published": "2026-08-29",
+      "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-review",
+      "model": "Pixel 11",
+      "score": "4.5/5 (page structured data)",
+      "verdict_paraphrase": "A fun blend of social media and AI magic.",
+      "scope": "B"
+    },
+    {
+      "id": "tg_pixel11",
+      "outlet": "Tom's Guide",
+      "author": "John Velasco",
+      "published": "2026-08-27",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+      "model": "Pixel 11",
+      "score": "3/5",
+      "verdict_paraphrase": "Lackluster upgrades that cost $100 more.",
+      "scope": "B"
+    },
+    {
+      "id": "tg_pixel11pro",
+      "outlet": "Tom's Guide",
+      "author": "Tom Pritchard",
+      "published": "2026-08-19",
+      "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+      "model": "Pixel 11 Pro / Pro XL",
+      "score": "3/5",
+      "verdict_paraphrase": "A sprinkling of interesting features can't make up for offering little else.",
+      "scope": "B"
+    },
+    {
+      "id": "tr_pixel11pro",
+      "outlet": "TechRadar",
+      "author": "Jason Cipriani",
+      "published": "2026-09-03",
+      "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+      "model": "Pixel 11 Pro",
+      "score": "4/5",
+      "verdict_paraphrase": "Google has perfected the Pixel formula; not a must-have for recent Pixel owners.",
+      "scope": "B"
+    },
+    {
+      "id": "dt_pixel11pro",
+      "outlet": "Digital Trends",
+      "author": "Vikhyaat Vivek",
+      "published": "2026-09-15",
+      "url": "https://www.digitaltrends.com/phones/google-pixel-11-pro-review/",
+      "model": "Pixel 11 Pro",
+      "score": "8/10 (page structured data)",
+      "verdict_paraphrase": "Won me over despite Tensor G6 gaming and battery weaknesses.",
+      "scope": "B"
+    }
+  ],
+  "fold": {
+    "claims": [
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": 1,
+        "claim": "Only mainstream foldable with IP68; the improved hinge feels smooth and snappy so far.",
+        "quote": "Like last year, this is the only mainstream foldable with an IP68 dust/water resistance rating",
+        "locator": "9to5Google 2026-08-26 - Hardware | Quiet refinements, para 5"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Structural design flaws persist for a third generation.",
+        "quote": "there are still some glaring structural flaws in this design, for the third year in a row",
+        "locator": "9to5Google 2026-08-26 - Hardware | Quiet refinements, para 7"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Thinner, but one half is thinner than the other, leaving a ridge (reviewer calls it a non-issue).",
+        "quote": "Google opted to make one side thinner than the other, leading to an awkward profile",
+        "locator": "9to5Google 2026-08-26 - Hardware | Quiet refinements, para 2"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 1,
+        "claim": "Crease is usable and fades during use.",
+        "quote": "the crease mostly fades into the background when you’re actually using the device",
+        "locator": "9to5Google 2026-08-26 - Excellent displays, crease aside, para 3"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -1,
+        "claim": "No drastic crease improvement; will stick out as Samsung and others have solved it.",
+        "quote": "Google hasn’t made any drastic improvements here, but it’s completely usable and fine.",
+        "locator": "9to5Google 2026-08-26 - Excellent displays, crease aside, para 3"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": 1,
+        "claim": "Best foldable camera choice in the US for consistency, though Oppo/Honor/Motorola hardware is ahead.",
+        "quote": "If I were to choose a foldable (in the US) purely on camera, it’d have to be the Pixel.",
+        "locator": "9to5Google 2026-08-26 - Cameras | Consistent, but not class-leading, para 2"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -1,
+        "claim": "Battery decent but not very good; often ends the day in Battery Saver.",
+        "quote": "At this point, I’d call the Fold’s battery life decent, but still not very good.",
+        "locator": "9to5Google 2026-08-26 - Battery Life | Not as bad as I thought, para 1"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -1,
+        "claim": "Extreme Charging Mode helps the first ~50% but charging is still slower than rivals.",
+        "quote": "it’s still slower than the fast-charging setups found on other devices",
+        "locator": "9to5Google 2026-08-26 - 'Extreme' charging is pretty underwhelming, para 3"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": 1,
+        "claim": "Built-in Qi2 magnets are excellent on a foldable.",
+        "quote": "it’s so nice being on a phone with built-in Qi2 magnets, especially a foldable",
+        "locator": "9to5Google 2026-08-26 - 'Extreme' charging is pretty underwhelming – Qi2 isn't, para 4"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": 1,
+        "claim": "Tensor G6 flies day to day; heat management is the biggest improvement.",
+        "quote": "the biggest improvement I’ve seen is in heat management",
+        "locator": "9to5Google 2026-08-26 - Software & Performance, para 4"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": -1,
+        "claim": "Gaming performance remains a downside versus Snapdragon.",
+        "quote": "It’s no Snapdragon and gaming performance is very much still a downside",
+        "locator": "9to5Google 2026-08-26 - Software & Performance, para 4"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 2,
+        "claim": "New App Handles docked window is a standout third-app multitasking feature.",
+        "quote": "the best new multitasking feature I’ve seen on a foldable in a few years",
+        "locator": "9to5Google 2026-08-26 - Software & Performance, para 2"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 1,
+        "claim": "Google's AI is among the least intrusive on Android.",
+        "quote": "Google’s approach to AI is one of the least “in your face” ones",
+        "locator": "9to5Google 2026-08-26 - Somehow, one of the least 'in your face' AI phones, para 1"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "HiLight LED is pointless and makes the flashlight worse.",
+        "quote": "That’s because, frankly, it’s pointless.",
+        "locator": "9to5Google 2026-08-26 - Hardware | Quiet refinements, final para"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": 0,
+        "claim": "Not the best foldable but not bad; priced from $1,899.",
+        "quote": "The Pixel 11 Pro Fold isn’t the best, but it’s also not bad either.",
+        "locator": "9to5Google 2026-08-26 - Final Thoughts, last paras"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 1,
+        "claim": "Re-engineered hinge makes it nearly flat and reduces crease visibility.",
+        "quote": "That new hinge helps make the phone almost perfectly flat when open, and has helped to reduce the crease visibility",
+        "locator": "TechRadar 2026-08-20 - Design section, hinge para"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -1,
+        "claim": "Crease is still visible and can be felt.",
+        "quote": "though it is still visible and, yes, you can feel it when you run your finger over that area",
+        "locator": "TechRadar 2026-08-20 - Design section, hinge para"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 2,
+        "claim": "Both 3,600-nit screens excel in direct sunlight.",
+        "quote": "both the cover and main screens did an excellent job of shining through the sun",
+        "locator": "TechRadar 2026-08-20 - Display section"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": 2,
+        "claim": "Only foldable the reviewer knows with IP68; survived a fountain dunk.",
+        "quote": "this is the only foldable I know of that, with an IP68 rating, can withstand water and dust",
+        "locator": "TechRadar 2026-08-20 - Design section, durability para"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Lighter (239g) but still heavier than Galaxy Z Fold 8 and Z Fold 8 Ultra.",
+        "quote": "it's still not as light as the Z Fold 8 Ultra (215g) or the Z Fold 8 (201g)",
+        "locator": "TechRadar 2026-08-20 - Design section, dimensions para"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Heard a repeatable clicking sound from the flexible display when flexed (it eventually stopped).",
+        "quote": "I heard a clicking sound coming from the flexible display",
+        "locator": "TechRadar 2026-08-20 - Design section, hinge para 2"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": 1,
+        "claim": "Good camera system that satisfies casual photographers; clear camera winner over the Galaxy Z Fold 8.",
+        "quote": "Overall, I think this is a good camera system that should satisfy most casual photographers.",
+        "locator": "TechRadar 2026-08-20 - Cameras section, end"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": -1,
+        "claim": "Some shots grainy or flat, especially ultrawide; not always as good as iPhone 17 Pro Max / Z Fold 8 Ultra.",
+        "quote": "Some of the Pixel 11 Pro Fold photos are grainy or a bit flat, especially those from the ultrawide.",
+        "locator": "TechRadar 2026-08-20 - Cameras section, comparison paras"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": 1,
+        "claim": "Despite a smaller 4,806mAh cell: 24+ hours intermittent use; ~12 hours in lab rundown.",
+        "quote": "With intermittent use, I got more than 24 hours of battery life.",
+        "locator": "TechRadar 2026-08-20 - Battery section"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": 1,
+        "claim": "Tensor G6 benchmarks trail A19 Pro and Snapdragon 8 Elite Gen 5 but differences unnoticeable day to day.",
+        "quote": "in most day-to-day use scenarios you'll never notice the difference",
+        "locator": "TechRadar 2026-08-20 - Performance section"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 2,
+        "claim": "Cleanest, most unified Android interface with lots of Gemini.",
+        "quote": "Google's Pixels may be my favorite Android phones because they're the closest thing we have to a pure-play Android interface.",
+        "locator": "TechRadar 2026-08-20 - Software section, para 1"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "HiLight is a curiosity, not a reason to buy.",
+        "quote": "For now, though, it's more of a curiosity, and not necessarily a reason to buy or upgrade to this phone.",
+        "locator": "TechRadar 2026-08-20 - Software section, HiLight paras"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": 1,
+        "claim": "$100 more than last year but cheaper than the Galaxy Z Fold 8 Ultra.",
+        "quote": "still a relative bargain compared to the Galaxy Z Fold 8 Ultra",
+        "locator": "TechRadar 2026-08-20 - Score breakdown: Value"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": -1,
+        "claim": "Reviewer would still choose a Samsung foldable.",
+        "quote": "Overall, I would still choose a Samsung foldable over this",
+        "locator": "TechRadar 2026-08-20 - Verdict box"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 2,
+        "claim": "Brightest foldable screen Tom's Guide has lab-tested (2,982 nits measured).",
+        "quote": "the Pixel 11 Pro Fold features the brightest screen of any foldable phone that has passed through the Tom’s Guide labs",
+        "locator": "Tom's Guide 2026-08-19 - Display section, para 1"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -1,
+        "claim": "Wider bezels and a deeper crease than closest rivals.",
+        "quote": "the inner screen still exhibits a deeper crease",
+        "locator": "Tom's Guide 2026-08-19 - Design section, para 2"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -1,
+        "claim": "Cover screen lacks a proper StandBy mode in tent/tabletop.",
+        "quote": "the Pixel 11 Pro Fold fails to offer a proper StandBy mode on its cover screen",
+        "locator": "Tom's Guide 2026-08-19 - Display section, para 3"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": 2,
+        "claim": "IP68 is a durability win over IP48 Galaxy Z Fold 8 Ultra.",
+        "quote": "By retaining its rare IP68 rating, it offers superior dust-tight protection alongside submersion resistance",
+        "locator": "Tom's Guide 2026-08-19 - Design section, para 1"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Thicker than Samsung's Ultra; ergonomics a step behind.",
+        "quote": "It remains noticeably thicker in hand than Samsung's ultra-sleek powerhouse",
+        "locator": "Tom's Guide 2026-08-19 - Design section, para 2"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": -1,
+        "claim": "Low-light gains over the Pixel 10 Pro Fold are minimal; Razr Fold beats it at 30x zoom.",
+        "quote": "the differences between the Pixel 11 Pro Fold and Pixel 10 Pro Fold are minimal",
+        "locator": "Tom's Guide 2026-08-19 - Cameras section, low-light para"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": 1,
+        "claim": "Most accurate color and best cover-screen selfies versus Razr Fold and Z Fold 8 Ultra.",
+        "quote": "the Pixel 11 Pro Fold comfortably captures the most authentic snapshot of the floral arrangement above",
+        "locator": "Tom's Guide 2026-08-19 - Cameras section, color para"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -1,
+        "claim": "12h31m in battery test: only 15 minutes more than the Pixel 10 Pro Fold.",
+        "quote": "a modest 15-minute bump over the Pixel 10 Pro Fold",
+        "locator": "Tom's Guide 2026-08-19 - Battery section, para 1"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": 0,
+        "claim": "No charging improvement: same 30W wired / 25W wireless; 56% in 30 minutes.",
+        "quote": "it retains the same 30W wired and 25W wireless ratings",
+        "locator": "Tom's Guide 2026-08-19 - Battery section, para 2"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": -1,
+        "claim": "Tensor G6 trails A19 Pro and Snapdragon 8 Elite Gen 5 in benchmarks (GB6 2,687/7,381).",
+        "quote": "the Tensor G6, continues to trail behind key rivals powered by Apple’s A19 Pro and Qualcomm’s Snapdragon 8 Elite Gen 5",
+        "locator": "Tom's Guide 2026-08-19 - Performance section, para 1"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": 1,
+        "claim": "Real-world use is snappy; games ran smoothly.",
+        "quote": "day-to-day use exhibits snappy app launches, fluid split-screen multitasking, and effortless navigation across the UI",
+        "locator": "Tom's Guide 2026-08-19 - Performance section, para 2"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 2,
+        "claim": "Rambler dictation is a standout AI feature.",
+        "quote": "It has quickly become one of the phone's most underrated features",
+        "locator": "Tom's Guide 2026-08-19 - Software section, Rambler para"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "App scaling and cover-to-inner handoff still refresh apps.",
+        "quote": "Google still hasn't fully solved app scaling and layout consistency",
+        "locator": "Tom's Guide 2026-08-19 - Software section, quirks para"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": 1,
+        "claim": "Price hike, but still undercuts Razr Fold and Z Fold 8 Ultra.",
+        "quote": "it still manages to undercut key rivals like the Motorola Razr Fold and Galaxy Z Fold 8 Ultra",
+        "locator": "Tom's Guide 2026-08-19 - Price section"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": -1,
+        "claim": "Iterative update that struggles to impress at its price.",
+        "quote": "the Pixel 11 Pro Fold feels like an iterative update that struggles to truly impress",
+        "locator": "Tom's Guide 2026-08-19 - Verdict, final para"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 2,
+        "claim": "Both displays are excellent and colour-matched.",
+        "quote": "These displays are tuned so similarly, which is a bigger deal than you might think.",
+        "locator": "Droid Life 2026-09-17 - Displays para 2"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 1,
+        "claim": "Crease reduced versus previous years.",
+        "quote": "There’s still a crease, don’t get me wrong, but it’s just not as noticeable as the creases from previous years.",
+        "locator": "Droid Life 2026-09-17 - Displays para 3"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -1,
+        "claim": "Square inner display is awkward for video and apps.",
+        "quote": "the inner display isn’t really good at anything",
+        "locator": "Droid Life 2026-09-17 - Hardware section, shape paras"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": 1,
+        "claim": "Hinge is satisfying and build feels premium.",
+        "quote": "when fully open it beautifully clacks, and then it slaps back together with a satisfying clap",
+        "locator": "Droid Life 2026-09-17 - Hardware section, para 2"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -2,
+        "claim": "Bulky and heavy; feels a generation behind Samsung's Fold 8 models.",
+        "quote": "It’s just so thick, tanky, and sort of unpleasant to carry around for long periods of time.",
+        "locator": "Droid Life 2026-09-17 - Hardware section, complaints para"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": -1,
+        "claim": "Not a true Pro camera; telephoto weakest and no portrait mode on telephoto.",
+        "quote": "another $2,000 foldable that doesn’t have a true Pro camera",
+        "locator": "Droid Life 2026-09-17 - Camera section, final para"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -1,
+        "claim": "Mixed battery: 3 to 5.5 hours screen-on time from a smaller 4,806mAh cell.",
+        "quote": "my results have been pretty mixed, if not slightly disappointing",
+        "locator": "Droid Life 2026-09-17 - Battery life para 1"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "Few foldable-specific features; only two apps in split screen (Samsung allows three).",
+        "quote": "there aren’t a lot of special foldable features that might pull you in and keep you here",
+        "locator": "Droid Life 2026-09-17 - Software para 2"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": 0,
+        "claim": "Worth considering, but compare against Samsung's newest in person first.",
+        "quote": "I would highly recommend you get one in hand, at least next to Samsung’s newest before deciding",
+        "locator": "Droid Life 2026-09-17 - Conclusion"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -2,
+        "claim": "Crease improved over Pixel 10 Pro Fold but worse than every other foldable tested this year.",
+        "quote": "Every other foldable I have tested this year has done a better job of hiding the crease.",
+        "locator": "Tech Advisor 2026-08-19 - Display section, crease para"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 1,
+        "claim": "3,600-nit screens are the brightest foldable screens sold in the US.",
+        "quote": "That means these are the brightest screens of any foldable, but only if you count phones officially sold in the US.",
+        "locator": "Tech Advisor 2026-08-19 - Display section, para 1"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": 2,
+        "claim": "Build feels robust enough for daily life; IP68.",
+        "quote": "Gone are the days of super-fragile foldables; this feels like something that will handle the rigours of daily life.",
+        "locator": "Tech Advisor 2026-08-19 - Design & Build section"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Still one of the chunkiest foldables.",
+        "quote": "it’s still one of the chunkiest foldables around",
+        "locator": "Tech Advisor 2026-08-19 - Design & Build section, para 3"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Volume rocker too low for one-handed use.",
+        "quote": "The volume rocker is positioned pretty low down on the side of the phone",
+        "locator": "Tech Advisor 2026-08-19 - Design & Build section, design issue para"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": 1,
+        "claim": "New larger main sensor is better in low light; Camera Looks a big step forward.",
+        "quote": "The main sensor is definitely better at low-light capture",
+        "locator": "Tech Advisor 2026-08-19 - Cameras section"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": -1,
+        "claim": "No Log, APV, 8K or 4K/120; telephoto can't do Portrait mode.",
+        "quote": "the Pixel 11 Pro Fold is still sorely lacking Pro-level features",
+        "locator": "Tech Advisor 2026-08-19 - Cameras section, video para"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": 0,
+        "claim": "Smaller battery but same endurance (PCMark 13h12m).",
+        "quote": "Despite the smaller cell, the Pixel 11 Pro Fold lasts about the same amount of time as its predecessor.",
+        "locator": "Tech Advisor 2026-08-19 - Battery section"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -1,
+        "claim": "Most rivals last longer on a charge.",
+        "quote": "most of the competition lasts for longer on a charge",
+        "locator": "Tech Advisor 2026-08-19 - Battery section"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": -1,
+        "claim": "Smooth day to day, but demanding games need lowest settings; behind Snapdragon rivals.",
+        "quote": "it’s demonstrably less powerful than the competition, and that’s hard to excuse at such a lofty price if you’re a foldable gamer",
+        "locator": "Tech Advisor 2026-08-19 - Performance section"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "Only two apps side by side; basic versus Samsung, Oppo, Honor.",
+        "quote": "you can only have two apps side by side, which feels quite basic compared to what Samsung’s doing",
+        "locator": "Tech Advisor 2026-08-19 - Software section, multitasking"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 2,
+        "claim": "Rambler dictation is impressive.",
+        "quote": "It’s actually quite amazing.",
+        "locator": "Tech Advisor 2026-08-19 - Software section, Rambler"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": -1,
+        "claim": "Hard to justify unless a die-hard Pixel fan.",
+        "quote": "When it costs the same, or more, than its rivals, it’s hard to see the appeal unless you are a die-hard Pixel fan.",
+        "locator": "Tech Advisor 2026-08-19 - Our Verdict"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Reports that it still cracked along antenna lines in JerryRigEverything's test (third-party test, not BGR's).",
+        "quote": "the new phone still cracked along both antenna lines in JerryRigEverything's durability test, just like the 10 Pro Fold",
+        "locator": "BGR 2026-09-21 - Intro, para 2"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": 1,
+        "claim": "Ceramic cover and composite back unscathed after two weeks caseless.",
+        "quote": "the ceramic outer display and composite back came through without any scratches or scuffs",
+        "locator": "BGR 2026-09-21 - Design paras"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -2,
+        "claim": "Crease visible almost always and more noticeable than Galaxy Z Fold 8.",
+        "quote": "It's visible almost all of the time, and you can feel it under your finger as you swipe across the display.",
+        "locator": "BGR 2026-09-21 - Display section, crease para"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -1,
+        "claim": "Inner display less bright/punchy than outer.",
+        "quote": "noticeably less bright and less punchy than the outer display",
+        "locator": "BGR 2026-09-21 - Display section, inner display para"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -2,
+        "claim": "Battery is its most obvious weakness: 5 to 6 hours screen-on time.",
+        "quote": "Battery life, unfortunately, is the Pixel 11 Pro Fold's most obvious weakness.",
+        "locator": "BGR 2026-09-21 - Battery section, para 1"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -1,
+        "claim": "30W wired charging is slow; Extreme Charging is opt-in.",
+        "quote": "For a phone at this price, 30W charging is rather slow, and many rivals have moved well past it.",
+        "locator": "BGR 2026-09-21 - Battery section, charging para"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": 1,
+        "claim": "16GB RAM makes it the best multitasker in the Pixel 11 range; stayed cool.",
+        "quote": "the 11 Pro Fold stayed cool throughout extended use, even in warmer weather",
+        "locator": "BGR 2026-09-21 - Performance section"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": -1,
+        "claim": "Tensor G6 well behind Snapdragon for graphics; no ray tracing.",
+        "quote": "If playing games matters to you, this isn't the phone to buy",
+        "locator": "BGR 2026-09-21 - Performance section"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": 2,
+        "claim": "Among the best foldable cameras of 2026.",
+        "quote": "the results are among the best you'll get from a foldable phone in 2026",
+        "locator": "BGR 2026-09-21 - Camera section, para 1"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 1,
+        "claim": "Android 17 here is clean and restrained.",
+        "quote": "Android 17 on the Pixel 11 Pro Fold is clean, quick, and rather sensibly restrained.",
+        "locator": "BGR 2026-09-21 - Software section"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "HiLight does little and dims the flashlight.",
+        "quote": "It also costs you brightness in the flashlight, which is a poor trade-off for what could have been a genuinely useful feature.",
+        "locator": "BGR 2026-09-21 - Software section, HiLight para"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": 1,
+        "claim": "Solid option with real upgrades for people wanting a normal phone that becomes a tablet.",
+        "quote": "a solid option with real upgrades over last year's model",
+        "locator": "BGR 2026-09-21 - Conclusion, last para"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": 1,
+        "claim": "IP68 and ceramic cover offset the bulk.",
+        "quote": "what the Pixel 11 Pro Fold lacks in slenderness is offset by top-notch durability",
+        "locator": "Engadget 2026-08-19 - Design and displays section"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Still big and chunky vs Galaxy Z Fold 8, Z Fold 8 Ultra and Razr Fold.",
+        "quote": "the phone still feels big and chunky compared to its closest rivals",
+        "locator": "Engadget 2026-08-19 - Wrap-up"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 1,
+        "claim": "Rich, colorful displays, brighter at 3,600 nits.",
+        "quote": "both the 6.5-inch exterior and 8-inch interior OLED displays are rich and colorful",
+        "locator": "Engadget 2026-08-19 - Design and displays section"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": 2,
+        "claim": "Sharper and more detailed than all rivals tested.",
+        "quote": "Pics snapped in both bright and low light environments were consistently sharper and more detailed than what I got from all of its rivals",
+        "locator": "Engadget 2026-08-19 - Cameras section"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": -1,
+        "claim": "Only 30x zoom and lower-res telephoto/ultrawide vs Pixel 11 Pro.",
+        "quote": "that's still a far cry from the 120x magnification you get from the regular Pixel 11 Pro and Pro XL",
+        "locator": "Engadget 2026-08-19 - Cameras section, gripe para"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -1,
+        "claim": "Video rundown 27h09m, shorter than Razr Fold, Z Fold 8 and Z Fold 8 Ultra.",
+        "quote": "the P11PF lasted 27 hours and nine minutes, which is shorter than all of its rivals",
+        "locator": "Engadget 2026-08-19 - Battery life and charging section"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": 1,
+        "claim": "Wireless charging up from 15W to 25W.",
+        "quote": "Qi 2 wireless speeds have gotten a significant boost from 15 to 25 watts",
+        "locator": "Engadget 2026-08-19 - Battery life and charging section"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": 1,
+        "claim": "Never slow even with heavy multitasking; demanding games lag slightly.",
+        "quote": "the P11PF never felt slow or sluggish",
+        "locator": "Engadget 2026-08-19 - Performance section"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": -1,
+        "claim": "Framerates lag for demanding titles.",
+        "quote": "framerates still lag behind just a touch for more demanding titles",
+        "locator": "Engadget 2026-08-19 - Performance section"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 2,
+        "claim": "Smartest software of any foldable; bubbles helpful for multitasking.",
+        "quote": "Google's software experience is still the smartest of them all",
+        "locator": "Engadget 2026-08-19 - Wrap-up"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "HiLight not fully built out.",
+        "quote": "HiLight is an interesting idea, but it's not fully built out yet",
+        "locator": "Engadget 2026-08-19 - Wrap-up"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": -1,
+        "claim": "Not enough to entice shoppers outside the Pixel ecosystem.",
+        "quote": "I don't think Google has done enough to entice shoppers that aren't already entrenched in the Pixel ecosystem",
+        "locator": "Engadget 2026-08-19 - Wrap-up"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": 2,
+        "claim": "Immaculately built; IP68 for everyday life.",
+        "quote": "This is an immaculately built piece of hardware",
+        "locator": "Android Authority 2026-09-11 - Hardware, para 1"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -1,
+        "claim": "Crease readily visible off-angle, especially in dark mode.",
+        "quote": "It’s readily visible when viewed even slightly off-center, with reflections — and particularly dark mode — making it considerably more pronounced.",
+        "locator": "Android Authority 2026-09-11 - Hardware, crease para"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -1,
+        "claim": "1:1 inner screen disappointing for video.",
+        "quote": "I’ve found the 1:1 inner screen surprisingly disappointing for multimedia",
+        "locator": "Android Authority 2026-09-11 - Software/usage section"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -1,
+        "claim": "Full charge takes 80 minutes vs 52 for Razr Fold; loses rival battery tests.",
+        "quote": "Charging is another sore point, taking an agonizing 80 minutes to reach full capacity",
+        "locator": "Android Authority 2026-09-11 - Performance/battery para"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": 0,
+        "claim": "Real-world use usually lasts to bedtime.",
+        "quote": "Used like a regular phone for a good portion of the day, the battery generally gets me through to bedtime.",
+        "locator": "Android Authority 2026-09-11 - Performance/battery para"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": -2,
+        "claim": "GPU far off the pace; Pixel 10 Pro Fold beat it in 3DMark stress; Genshin glitches at launch.",
+        "quote": "Graphics performance from the new Tensor G6 processor is so far off the pace that it borders on parody",
+        "locator": "Android Authority 2026-09-11 - Performance para"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": -1,
+        "claim": "Consistent exposure but flat images; portrait mode below par.",
+        "quote": "Pixel’s portrait photography remains a below-par experience in my book.",
+        "locator": "Android Authority 2026-09-11 - Camera section"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 1,
+        "claim": "Potent multitasking when apps are optimized.",
+        "quote": "The Fold can genuinely be a potent multitasking machine.",
+        "locator": "Android Authority 2026-09-11 - Multitasking section"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "Large-screen app experience still hit-and-miss.",
+        "quote": "how hit-and-miss the large-screen experience remains",
+        "locator": "Android Authority 2026-09-11 - Multitasking section"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": -2,
+        "claim": "$1,899 hard to justify; buy Pixel 11 Pro XL instead.",
+        "quote": "its $1,899 price is hard to justify",
+        "locator": "Android Authority 2026-09-11 - Verdict summary"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": 1,
+        "claim": "Both displays now LTPO OLED at 3,600 nits.",
+        "quote": "Both displays are now LTPO OLEDs with the same 3600 nit brightness levels as the other Pixel 11 Pro models.",
+        "locator": "Android Central 2026-08-29 - Body, displays para"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "displays",
+        "sentiment": -2,
+        "claim": "Low PWM dimming rate is unusable for flicker-sensitive people.",
+        "quote": "making it impossible to use for anyone who is flicker-sensitive",
+        "locator": "Android Central 2026-08-29 - Problems para"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "hinge_durability",
+        "sentiment": -1,
+        "claim": "Flat sides make it hard to open.",
+        "quote": "This makes it harder to open than it should be; something you don't want on a folding phone!",
+        "locator": "Android Central 2026-08-29 - Design para"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": -1,
+        "claim": "Softer detail and messy portrait cutouts vs Pixel 11 Pro.",
+        "quote": "the cutouts around the subject are quite messy, similar to the Pixel 9 and 10 series",
+        "locator": "Android Central 2026-08-29 - Camera paras"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "cameras",
+        "sentiment": 1,
+        "claim": "Telephoto processing has a pleasing natural look.",
+        "quote": "that more natural look is a good one",
+        "locator": "Android Central 2026-08-29 - Camera paras, telephoto"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "performance",
+        "sentiment": -2,
+        "claim": "Tensor G6 ~30% slower than rivals, ~50% slower in gaming; lacks newer Vulkan features.",
+        "quote": "Tensor G6 might be 15% faster than G5, for instance, but it's still around 30% slower than rivals.",
+        "locator": "Android Central 2026-08-29 - Problems para"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "battery",
+        "sentiment": -2,
+        "claim": "Battery disappointing; charging slow even with Extreme Charging.",
+        "quote": "the battery life is disappointing on many levels",
+        "locator": "Android Central 2026-08-29 - Android Central Verdict"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": 1,
+        "claim": "Best multitasker in the Pixel family thanks to taskbar, 90:10 split and dock.",
+        "quote": "the best at multitasking in the Pixel family (though it's not as good as the Motorola Razr Fold)",
+        "locator": "Android Central 2026-08-29 - Features paras"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "software",
+        "sentiment": -1,
+        "claim": "Proactive Assistance and HiLight rarely useful.",
+        "quote": "I rarely saw Proactive Assistance give me any help",
+        "locator": "Android Central 2026-08-29 - Problems para"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "value",
+        "sentiment": -1,
+        "claim": "Tough to recommend unless you want a specific feature.",
+        "quote": "it's tough to recommend unless you really love a specific feature like Magic Capture or the new Creator Studio tools",
+        "locator": "Android Central 2026-08-29 - Closing para"
+      }
+    ],
+    "category_consensus": {
+      "displays": {
+        "label": "Displays & crease",
+        "score_0_10": 5.0,
+        "agreement": "split",
+        "sources_covering": 9,
+        "sources_net_positive": 3,
+        "sources_net_negative": 4,
+        "sources_neutral": 2,
+        "claims_praised": 9,
+        "claims_criticized": 11,
+        "claims_neutral": 0,
+        "summary": "Screens are bright (3,600 nits claimed; brightest foldable Tom's Guide has tested) and well matched, but the crease is still visible and easy to feel, and several reviewers (Tom's Guide, Tech Advisor, BGR, 9to5Google) say it is worse than Samsung and other rivals. The near-square inner screen is awkward for video. Android Central flags low-frequency PWM dimming."
+      },
+      "hinge_durability": {
+        "label": "Hinge, build & durability",
+        "score_0_10": 5.0,
+        "agreement": "mixed",
+        "sources_covering": 9,
+        "sources_net_positive": 2,
+        "sources_net_negative": 3,
+        "sources_neutral": 4,
+        "claims_praised": 8,
+        "claims_criticized": 11,
+        "claims_neutral": 0,
+        "summary": "IP68 is the most-praised feature, and the phone is 10% lighter (239 g). It is still thicker and heavier than the Galaxy Z Fold 8 and Fold 8 Ultra. Minor gripes: the uneven halves, flat sides that are hard to open, and a clicking display (TechRadar). BGR cites JerryRigEverything's antenna-line cracking."
+      },
+      "cameras": {
+        "label": "Cameras",
+        "score_0_10": 5.5,
+        "agreement": "mixed",
+        "sources_covering": 9,
+        "sources_net_positive": 3,
+        "sources_net_negative": 2,
+        "sources_neutral": 4,
+        "claims_praised": 7,
+        "claims_criticized": 7,
+        "claims_neutral": 0,
+        "summary": "Divided. Engadget, BGR and 9to5Google rate it among the best foldable cameras, and TechRadar says it clearly beats the Galaxy Z Fold 8. Others find images flat or soft, portrait cutouts messy, the telephoto weak, and the system short of the Pixel 11 Pro (no 120x zoom, no Pro video)."
+      },
+      "battery": {
+        "label": "Battery & charging",
+        "score_0_10": 3.5,
+        "agreement": "strong",
+        "sources_covering": 9,
+        "sources_net_positive": 1,
+        "sources_net_negative": 7,
+        "sources_neutral": 1,
+        "claims_praised": 3,
+        "claims_criticized": 10,
+        "claims_neutral": 3,
+        "summary": "Mostly negative. The battery shrank (4,806 mAh per most reviews; BGR says 4,750), endurance is flat or slightly worse than rivals, and 30W wired charging is slow. The upgrade to 25W Qi2.2 wireless with Pixelsnap magnets is widely praised."
+      },
+      "performance": {
+        "label": "Performance (Tensor G6)",
+        "score_0_10": 4.0,
+        "agreement": "strong",
+        "sources_covering": 8,
+        "sources_net_positive": 1,
+        "sources_net_negative": 3,
+        "sources_neutral": 4,
+        "claims_praised": 5,
+        "claims_criticized": 7,
+        "claims_neutral": 0,
+        "summary": "Smooth day to day and runs cooler than before, but Tensor G6 trails Snapdragon and Apple chips, especially in GPU and gaming."
+      },
+      "software": {
+        "label": "Software, AI & multitasking",
+        "score_0_10": 5.5,
+        "agreement": "strong",
+        "sources_covering": 9,
+        "sources_net_positive": 5,
+        "sources_net_negative": 1,
+        "sources_neutral": 3,
+        "claims_praised": 9,
+        "claims_criticized": 9,
+        "claims_neutral": 0,
+        "summary": "The clean Pixel software, Rambler and the new bubbles/App Handles multitasking are praised. Split-screen is still limited to two apps, app scaling is inconsistent, and HiLight is widely called pointless."
+      },
+      "value": {
+        "label": "Value",
+        "score_0_10": 4.0,
+        "agreement": "strong",
+        "sources_covering": 9,
+        "sources_net_positive": 1,
+        "sources_net_negative": 4,
+        "sources_neutral": 4,
+        "claims_praised": 3,
+        "claims_criticized": 6,
+        "claims_neutral": 2,
+        "summary": "$1,899 ($100 more) at the same price as the Galaxy Z Fold 8. Most reviewers say it is hard to justify unless you are a committed Pixel fan."
+      }
+    },
+    "multi_reviewer_problems": [
+      {
+        "problem": "Crease still visible/feelable; worse than Samsung and other rivals",
+        "sources": [
+          "techradar",
+          "tomsguide",
+          "techadvisor",
+          "bgr",
+          "androidauthority",
+          "9to5google"
+        ],
+        "counter": [
+          "Droid Life (says less noticeable than previous years)"
+        ],
+        "source_count": 6
+      },
+      {
+        "problem": "Thicker and heavier than Galaxy Z Fold 8 / Z Fold 8 Ultra",
+        "sources": [
+          "techradar",
+          "tomsguide",
+          "droidlife",
+          "techadvisor",
+          "engadget"
+        ],
+        "source_count": 5
+      },
+      {
+        "problem": "Tensor G6 trails rivals, especially GPU/gaming",
+        "sources": [
+          "9to5google",
+          "tomsguide",
+          "techadvisor",
+          "bgr",
+          "engadget",
+          "androidauthority",
+          "androidcentral"
+        ],
+        "counter": [
+          "TechRadar (differences unnoticeable day to day)"
+        ],
+        "source_count": 7
+      },
+      {
+        "problem": "Smaller battery; endurance flat or behind rivals",
+        "sources": [
+          "9to5google",
+          "droidlife",
+          "techadvisor",
+          "bgr",
+          "engadget",
+          "androidauthority",
+          "androidcentral",
+          "tomsguide"
+        ],
+        "counter": [
+          "TechRadar (24+ hrs intermittent use)"
+        ],
+        "source_count": 8
+      },
+      {
+        "problem": "Slow wired charging (30W; Extreme Charging underwhelming)",
+        "sources": [
+          "9to5google",
+          "bgr",
+          "androidauthority",
+          "androidcentral",
+          "tomsguide"
+        ],
+        "source_count": 5
+      },
+      {
+        "problem": "Cameras a step below Pixel 11 Pro (no 120x zoom, smaller tele/ultrawide sensors, no Pro video, no telephoto portrait)",
+        "sources": [
+          "droidlife",
+          "engadget",
+          "techadvisor",
+          "bgr",
+          "androidauthority",
+          "androidcentral"
+        ],
+        "source_count": 6
+      },
+      {
+        "problem": "HiLight LED does too little (and dims flashlight)",
+        "sources": [
+          "9to5google",
+          "techradar",
+          "techadvisor",
+          "bgr",
+          "engadget",
+          "androidcentral"
+        ],
+        "source_count": 6
+      },
+      {
+        "problem": "Limited multitasking / app scaling (2 apps only, letterboxing, refreshes)",
+        "sources": [
+          "droidlife",
+          "techadvisor",
+          "tomsguide",
+          "androidauthority"
+        ],
+        "source_count": 4
+      },
+      {
+        "problem": "Asymmetric halves leave a ridge when open (most call it minor)",
+        "sources": [
+          "9to5google",
+          "techadvisor",
+          "bgr",
+          "droidlife",
+          "androidcentral"
+        ],
+        "source_count": 5
+      },
+      {
+        "problem": "Near-square inner screen poor for video",
+        "sources": [
+          "droidlife",
+          "bgr",
+          "androidauthority"
+        ],
+        "source_count": 3
+      },
+      {
+        "problem": "$100 price increase to $1,899",
+        "sources": [
+          "techradar",
+          "tomsguide",
+          "droidlife",
+          "techadvisor",
+          "engadget",
+          "androidauthority",
+          "androidcentral"
+        ],
+        "source_count": 7
+      }
+    ],
+    "multi_reviewer_praise": [
+      {
+        "point": "IP68 dust/water rating (rare among foldables; Galaxy Z Fold 8 line is IP48)",
+        "sources": [
+          "9to5google",
+          "techradar",
+          "tomsguide",
+          "techadvisor",
+          "bgr",
+          "engadget",
+          "androidauthority",
+          "androidcentral"
+        ],
+        "source_count": 8
+      },
+      {
+        "point": "Brighter 3,600-nit displays",
+        "sources": [
+          "techradar",
+          "tomsguide",
+          "techadvisor",
+          "bgr",
+          "engadget",
+          "androidcentral",
+          "droidlife"
+        ],
+        "source_count": 7
+      },
+      {
+        "point": "Pixelsnap / Qi2.2 25W magnetic wireless charging",
+        "sources": [
+          "9to5google",
+          "techradar",
+          "tomsguide",
+          "techadvisor",
+          "bgr",
+          "engadget",
+          "droidlife",
+          "androidcentral"
+        ],
+        "source_count": 8
+      },
+      {
+        "point": "Rambler voice dictation",
+        "sources": [
+          "9to5google",
+          "tomsguide",
+          "techadvisor",
+          "engadget",
+          "bgr",
+          "androidcentral"
+        ],
+        "source_count": 6
+      },
+      {
+        "point": "Lighter (239 g, ~10% less) and slimmer bezels than Pixel 10 Pro Fold",
+        "sources": [
+          "techradar",
+          "engadget",
+          "techadvisor",
+          "bgr",
+          "droidlife",
+          "androidcentral"
+        ],
+        "source_count": 6
+      }
+    ],
+    "who_should_buy": [
+      {
+        "who": "Committed Pixel/Google-software fans who want a book-style foldable",
+        "sources": [
+          "androidauthority",
+          "techadvisor",
+          "engadget",
+          "techradar"
+        ]
+      },
+      {
+        "who": "Buyers who prioritise durability (IP68) and Qi2/MagSafe magnets",
+        "sources": [
+          "tomsguide",
+          "techradar",
+          "bgr",
+          "engadget"
+        ]
+      },
+      {
+        "who": "US buyers choosing a foldable mainly on camera consistency (vs Galaxy Z Fold 8)",
+        "sources": [
+          "9to5google",
+          "techradar",
+          "engadget",
+          "bgr"
+        ]
+      },
+      {
+        "who": "Owners of a Pixel 9 Pro Fold or older",
+        "sources": [
+          "techradar",
+          "9to5google"
+        ]
+      },
+      {
+        "who": "People who want a normal phone shape when closed that opens into a tablet",
+        "sources": [
+          "bgr"
+        ]
+      }
+    ],
+    "who_should_skip": [
+      {
+        "who": "Pixel 10 Pro Fold owners",
+        "sources": [
+          "techradar",
+          "techadvisor"
+        ]
+      },
+      {
+        "who": "Mobile gamers",
+        "sources": [
+          "techadvisor",
+          "bgr",
+          "androidauthority",
+          "androidcentral"
+        ]
+      },
+      {
+        "who": "Crease-averse buyers",
+        "sources": [
+          "techadvisor",
+          "bgr"
+        ]
+      },
+      {
+        "who": "Flicker (PWM)-sensitive users",
+        "sources": [
+          "androidcentral"
+        ]
+      },
+      {
+        "who": "Anyone wanting the thinnest/lightest foldable (Galaxy Z Fold 8 / Fold 8 Ultra)",
+        "sources": [
+          "techradar",
+          "engadget",
+          "droidlife"
+        ]
+      },
+      {
+        "who": "Photography-first buyers: Pixel 11 Pro / Pro XL shoot better for less",
+        "sources": [
+          "bgr",
+          "engadget",
+          "androidauthority",
+          "droidlife"
+        ]
+      }
+    ]
+  },
+  "lineup": {
+    "claims": [
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "tensor_g6",
+        "sentiment": -1,
+        "claim": "Fold: Tensor G6 trails A19 Pro and Snapdragon 8 Elite Gen 5 in benchmarks.",
+        "quote": "the Tensor G6, continues to trail behind key rivals powered by Apple’s A19 Pro and Qualcomm’s Snapdragon 8 Elite Gen 5",
+        "locator": "Tom's Guide 2026-08-19 - Fold review, Performance"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "tensor_g6",
+        "sentiment": -2,
+        "claim": "Fold: ~30% slower than rivals; gap ~50% in gaming.",
+        "quote": "That gap widens even further to around 50% slower in gaming",
+        "locator": "Android Central 2026-08-29 - Fold review, Problems para"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "tensor_g6",
+        "sentiment": -2,
+        "claim": "Fold: GPU so far behind it 'borders on parody'.",
+        "quote": "Graphics performance from the new Tensor G6 processor is so far off the pace that it borders on parody",
+        "locator": "Android Authority 2026-09-11 - Fold review, Performance"
+      },
+      {
+        "source": "9to5Google (Ben Schoon)",
+        "source_id": "9to5google",
+        "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "tensor_g6",
+        "sentiment": 1,
+        "claim": "Fold: heat management is the biggest improvement.",
+        "quote": "the biggest improvement I’ve seen is in heat management",
+        "locator": "9to5Google 2026-08-26 - Fold review, Software & Performance"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "tensor_g6",
+        "sentiment": 1,
+        "claim": "Fold stayed cool while the 11 Pro XL got hot under load.",
+        "quote": "the 11 Pro Fold stayed cool throughout extended use, even in warmer weather",
+        "locator": "BGR 2026-09-21 - Fold review, Performance"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "ac_pixel11pro",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "tensor_g6",
+        "sentiment": -2,
+        "claim": "Pixel 11 Pro: several years behind competitors overall.",
+        "quote": "overall performance still puts this chip several years behind the competition",
+        "locator": "Android Central 2026-08-19 - Body, downsides paras"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "ac_pixel11pro",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "tensor_g6",
+        "sentiment": -1,
+        "claim": "Pixel 11 Pro: no measurable battery-life gain vs Pixel 10 Pro despite efficiency claims.",
+        "quote": "our battery tests show near-identical battery life between equivalent Pixel 10 Pro and Pixel 11 Pro models",
+        "locator": "Android Central 2026-08-19 - Body, downsides paras"
+      },
+      {
+        "source": "Android Central (Derrek Lee)",
+        "source_id": "ac_pixel11",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-review",
+        "model": "Pixel 11",
+        "category": "tensor_g6",
+        "sentiment": -1,
+        "claim": "Pixel 11 (base) lacks the Pro's vapor chamber and gets warm when gaming.",
+        "quote": "It also doesn’t sport the same vapor chamber as the Pixel 11 Pro, so it does get quite warm when gaming.",
+        "locator": "Android Central 2026-08-29 - Performance para"
+      },
+      {
+        "source": "Tom's Guide (Tom Pritchard)",
+        "source_id": "tg_pixel11pro",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "tensor_g6",
+        "sentiment": -2,
+        "claim": "Pixel 11 Pro: CPU up vs G5 but graphics down; far behind Samsung and Apple.",
+        "quote": "the Tensor G6 is still so far behind Samsung and Apple that it's almost as though Google isn't really trying",
+        "locator": "Tom's Guide 2026-08-19 - Performance section"
+      },
+      {
+        "source": "Tom's Guide (Tom Pritchard)",
+        "source_id": "tg_pixel11pro",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "tensor_g6",
+        "sentiment": -2,
+        "claim": "Pixel 11 Pro: NPU scored poorly on Geekbench AI.",
+        "quote": "this is a really embarrassing result for a phone that doesn't have a lot else going for it",
+        "locator": "Tom's Guide 2026-08-19 - Performance section"
+      },
+      {
+        "source": "TechRadar (Jason Cipriani)",
+        "source_id": "tr_pixel11pro",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro",
+        "category": "tensor_g6",
+        "sentiment": 1,
+        "claim": "Pixel 11 Pro: daily tasks and gaming not an issue.",
+        "quote": "Performance during daily tasks and gaming isn't an issue, despite what Pixel naysayers may like to claim.",
+        "locator": "TechRadar 2026-09-03 - Two-minute review"
+      },
+      {
+        "source": "Digital Trends (Vikhyaat Vivek)",
+        "source_id": "dt_pixel11pro",
+        "url": "https://www.digitaltrends.com/phones/google-pixel-11-pro-review/",
+        "model": "Pixel 11 Pro",
+        "category": "tensor_g6",
+        "sentiment": 1,
+        "claim": "Pixel 11 Pro: better thermals than older Pixels.",
+        "quote": "It also behaves much better thermally than some older Pixels I’ve used, rarely becoming more than mildly warm during normal use.",
+        "locator": "Digital Trends 2026-09-15 - Performance section"
+      },
+      {
+        "source": "Digital Trends (Vikhyaat Vivek)",
+        "source_id": "dt_pixel11pro",
+        "url": "https://www.digitaltrends.com/phones/google-pixel-11-pro-review/",
+        "model": "Pixel 11 Pro",
+        "category": "tensor_g6",
+        "sentiment": -1,
+        "claim": "Pixel 11 Pro: ~29% drop in 3DMark stress test (34 to 43 C); mediocre gaming.",
+        "quote": "So the Tensor G6 is still excellent for everyday performance, but delivers mediocre flagship gaming performance.",
+        "locator": "Digital Trends 2026-09-15 - Performance section"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tg_pixel11",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+        "model": "Pixel 11",
+        "category": "tensor_g6",
+        "sentiment": -1,
+        "claim": "Pixel 11: battery test 12h45m, down from Pixel 10's 13h13m.",
+        "quote": "a step down from the 13 hours and 13 minutes posted by last year's Pixel 10",
+        "locator": "Tom's Guide 2026-08-27 - Battery section"
+      },
+      {
+        "source": "Tom's Guide (Tom Pritchard)",
+        "source_id": "tg_pixel11pro",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "tensor_g6",
+        "sentiment": -1,
+        "claim": "Pixel 11 Pro battery 13h25m, worse than Pixel 10 Pro (13h43m).",
+        "quote": "The Pixel 11 Pro actually does worse than last year's Pixel 10 Pro",
+        "locator": "Tom's Guide 2026-08-19 - Battery section"
+      },
+      {
+        "source": "TechRadar (Jason Cipriani)",
+        "source_id": "tr_pixel11pro",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro",
+        "category": "tensor_g6",
+        "sentiment": 1,
+        "claim": "Pixel 11 Pro: Google's 30-hour battery estimate mostly accurate.",
+        "quote": "Google estimates battery life at over 30 hours (up from 24 hours last year), and I'd say that's mostly accurate.",
+        "locator": "TechRadar 2026-09-03 - Battery section"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "ac_pixel11pro",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "ai_features",
+        "sentiment": 2,
+        "claim": "Magic Capture is genuinely magical.",
+        "quote": "feels like the first time the term \"Magic\" was correctly applied to one of Google's Gemini experiments.",
+        "locator": "Android Central 2026-08-19 - Features paras"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "ac_pixel11pro",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "ai_features",
+        "sentiment": -1,
+        "claim": "HiLight mostly useless; Proactive Intelligence did nothing of note.",
+        "quote": "Now, while I had high hopes for HiLight, the feature is mostly useless.",
+        "locator": "Android Central 2026-08-19 - Features paras"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "ac_pixel11pro",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "ai_features",
+        "sentiment": -1,
+        "claim": "Too many Pixel-exclusive features shared with other phones.",
+        "quote": "Google has simply given away too many Pixel-exclusive features to other phones (such as Gemini Automation and Rambler)",
+        "locator": "Android Central 2026-08-19 - Closing para"
+      },
+      {
+        "source": "Tom's Guide (Tom Pritchard)",
+        "source_id": "tg_pixel11pro",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "ai_features",
+        "sentiment": 2,
+        "claim": "Rambler beats Gboard and iOS 27 beta dictation.",
+        "quote": "Rambler blows them both out of the water.",
+        "locator": "Tom's Guide 2026-08-19 - Software section"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tg_pixel11",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+        "model": "Pixel 11",
+        "category": "ai_features",
+        "sentiment": 2,
+        "claim": "Gemini task automation and Rambler are practical, not gimmicks.",
+        "quote": "Google’s AI features are built around practical utility rather than gimmicks",
+        "locator": "Tom's Guide 2026-08-27 - AI section"
+      },
+      {
+        "source": "Android Central (Derrek Lee)",
+        "source_id": "ac_pixel11",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-review",
+        "model": "Pixel 11",
+        "category": "ai_features",
+        "sentiment": 2,
+        "claim": "Gemini proactive help felt genuinely useful.",
+        "quote": "You can find Gemini everywhere on the Pixel 11 if that’s what you want, and it actually feels more helpful than anything.",
+        "locator": "Android Central 2026-08-29 - Gemini paras"
+      },
+      {
+        "source": "TechRadar (Jason Cipriani)",
+        "source_id": "tr_pixel11pro",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro",
+        "category": "ai_features",
+        "sentiment": -1,
+        "claim": "Proactive Assistance not noticeable after a week.",
+        "quote": "I'm sure, eventually, maybe, perhaps, I'll see a recommendation and the promised magic will make sense, but right now: Meh.",
+        "locator": "TechRadar 2026-09-03 - Software section"
+      },
+      {
+        "source": "Digital Trends (Vikhyaat Vivek)",
+        "source_id": "dt_pixel11pro",
+        "url": "https://www.digitaltrends.com/phones/google-pixel-11-pro-review/",
+        "model": "Pixel 11 Pro",
+        "category": "ai_features",
+        "sentiment": 1,
+        "claim": "Rambler is the AI feature that stuck.",
+        "quote": "Google is throwing a lot of AI at the Pixel 11 series, but Rambler was easily the one that stuck with me.",
+        "locator": "Digital Trends 2026-09-15 - AI section"
+      },
+      {
+        "source": "Digital Trends (Vikhyaat Vivek)",
+        "source_id": "dt_pixel11pro",
+        "url": "https://www.digitaltrends.com/phones/google-pixel-11-pro-review/",
+        "model": "Pixel 11 Pro",
+        "category": "ai_features",
+        "sentiment": 0,
+        "claim": "AI features nice but none alone a reason to buy.",
+        "quote": "None of them would make me buy the Pixel 11 Pro by themselves.",
+        "locator": "Digital Trends 2026-09-15 - AI section"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "ai_features",
+        "sentiment": 2,
+        "claim": "Fold: Magic Capture is a perfect use of AI.",
+        "quote": "It's a perfect use of AI to capture wonderful moments you might otherwise miss",
+        "locator": "Android Central 2026-08-29 - Fold review, features"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "ai_features",
+        "sentiment": -1,
+        "claim": "Fold: Gemini's hands-off agent vision undercuts the need for a big screen.",
+        "quote": "A super-large screen conflicts with Gemini's increasingly hands-off approach.",
+        "locator": "Android Authority 2026-09-11 - Fold review, AI section"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "ai_features",
+        "sentiment": -1,
+        "claim": "Fold: only six months of free Google AI Pro.",
+        "quote": "you only get six months of complimentary Google AI Pro access before a monthly subscription kicks in",
+        "locator": "Tom's Guide 2026-08-19 - Fold review, Software, last para"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "update_policy",
+        "sentiment": 2,
+        "claim": "Seven years of OS and security updates, class-leading.",
+        "quote": "you still get class-leading support with seven full years of major Android OS and security updates",
+        "locator": "Tom's Guide 2026-08-19 - Fold review, Software"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "update_policy",
+        "sentiment": 2,
+        "claim": "Seven years matches the industry best.",
+        "quote": "As always, there are seven years of security and software patches, which matches the best in the industry",
+        "locator": "Tech Advisor 2026-08-19 - Fold review, Software"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "update_policy",
+        "sentiment": 2,
+        "claim": "Support through August 2033.",
+        "quote": "You also get 7 years of OS, security, and Pixel Drop updates, which will take support through to August 2033.",
+        "locator": "BGR 2026-09-21 - Fold review, Software"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "update_policy",
+        "sentiment": 2,
+        "claim": "7 years OS + security, plus Pixel Drops.",
+        "quote": "The Pixel 11 Pro Fold runs Android 17 out of the box and will get 7 years of both OS and security updates.",
+        "locator": "Droid Life 2026-09-17 - Fold review, Software para 1"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "vs_pixel_10",
+        "sentiment": -1,
+        "claim": "Fold: not enough new to upgrade from Pixel 10 Pro Fold; big leap from older.",
+        "quote": "there's not enough that's new here for me to recommend upgrading if you have the Pixel 10 Pro Fold",
+        "locator": "TechRadar 2026-08-20 - Fold review, Verdict"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "vs_pixel_10",
+        "sentiment": -1,
+        "claim": "Fold: buy a discounted Pixel 10 Pro Fold instead unless you want HiLight etc.",
+        "quote": "you may as well find the Pixel 10 Pro Fold for a lot less money",
+        "locator": "Tech Advisor 2026-08-19 - Fold review, Verdict"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "androidcentral",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "vs_pixel_10",
+        "sentiment": 1,
+        "claim": "Fold: a solid upgrade over the disappointing Pixel 10 Pro Fold.",
+        "quote": "The Pixel 11 Pro Fold is a solid upgrade over the disappointing Pixel 10 Pro Fold",
+        "locator": "Android Central 2026-08-29 - Fold review, Verdict"
+      },
+      {
+        "source": "BGR (Connor Jewiss)",
+        "source_id": "bgr",
+        "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "vs_pixel_10",
+        "sentiment": 1,
+        "claim": "Fold: Pixel 10 Pro Fold is cheaper but heavier with slower wireless charging and weaker main camera.",
+        "quote": "it comes with a heavier body, slower wireless charging, and a weaker main camera sensor",
+        "locator": "BGR 2026-09-21 - Fold review, alternatives"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "vs_pixel_10",
+        "sentiment": -1,
+        "claim": "Fold: low-light camera differences vs Pixel 10 Pro Fold minimal.",
+        "quote": "the differences between the Pixel 11 Pro Fold and Pixel 10 Pro Fold are minimal",
+        "locator": "Tom's Guide 2026-08-19 - Fold review, Cameras"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tg_pixel11",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+        "model": "Pixel 11",
+        "category": "vs_pixel_10",
+        "sentiment": -2,
+        "claim": "Pixel 11: not worth it for Pixel 10 owners; discounted Pixel 10 is smarter buy.",
+        "quote": "if you already own a Pixel 10, there simply aren't enough hardware gains here to justify the upgrade cost",
+        "locator": "Tom's Guide 2026-08-27 - Verdict"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tg_pixel11",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+        "model": "Pixel 11",
+        "category": "vs_pixel_10",
+        "sentiment": 1,
+        "claim": "Pixel 11: rewarding upgrade from Pixel 9 or older.",
+        "quote": "If you're currently holding onto a Pixel 9 or an older device, the Pixel 11 offers a rewarding step up",
+        "locator": "Tom's Guide 2026-08-27 - Verdict"
+      },
+      {
+        "source": "Tom's Guide (Tom Pritchard)",
+        "source_id": "tg_pixel11pro",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "vs_pixel_10",
+        "sentiment": -1,
+        "claim": "Pixel 11 Pro: a Pixel 10 Pro may be the better purchase.",
+        "quote": "the better purchase might actually be a Pixel 10 Pro",
+        "locator": "Tom's Guide 2026-08-19 - Verdict"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "ac_pixel11pro",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "vs_pixel_10",
+        "sentiment": 1,
+        "claim": "Pixel 11 Pro: notable camera upgrade over Pixel 10 Pro.",
+        "quote": "a very good camera upgrade year",
+        "locator": "Android Central 2026-08-19 - Camera paras"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "ac_pixel11pro",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "vs_pixel_10",
+        "sentiment": -1,
+        "claim": "Pixel 11 Pro: less base RAM, smaller battery.",
+        "quote": "you'll get less base RAM, a slightly smaller battery, and a GPU that's still not particularly capable",
+        "locator": "Android Central 2026-08-19 - Intro"
+      },
+      {
+        "source": "TechRadar (Jason Cipriani)",
+        "source_id": "tr_pixel11pro",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro",
+        "category": "vs_pixel_10",
+        "sentiment": 0,
+        "claim": "Pixel 11 Pro: not a must-have for recent owners; fine upgrade from Pixel 9 or older.",
+        "quote": "It's not a must-have for recent Pixel owners, but it makes for an intriguing upgrade",
+        "locator": "TechRadar 2026-09-03 - Verdict box"
+      },
+      {
+        "source": "TechRadar (Lance Ulanoff)",
+        "source_id": "techradar",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "rivals",
+        "sentiment": 1,
+        "claim": "Galaxy Z Fold 8 (same $1,899): Pixel is the clear camera winner.",
+        "quote": "When compared to the similarly priced Galaxy Z Fold 8, however, it's the clear camera winner",
+        "locator": "TechRadar 2026-08-20 - Fold review, intro"
+      },
+      {
+        "source": "Engadget (Sam Rutherford)",
+        "source_id": "engadget",
+        "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "rivals",
+        "sentiment": -1,
+        "claim": "Motorola Razr Fold: stylus support and bigger battery.",
+        "quote": "the Razr Fold offers built-in stylus support and a much bigger battery",
+        "locator": "Engadget 2026-08-19 - Fold review, wrap-up"
+      },
+      {
+        "source": "Android Authority (Robert Triggs)",
+        "source_id": "androidauthority",
+        "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "rivals",
+        "sentiment": -1,
+        "claim": "Motorola Razr Fold charges far faster.",
+        "quote": "just 52 minutes for the excellent Motorola Razr Fold",
+        "locator": "Android Authority 2026-09-11 - Fold review, battery para"
+      },
+      {
+        "source": "Tech Advisor (Luke Baker)",
+        "source_id": "techadvisor",
+        "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+        "model": "Pixel 11 Pro Fold",
+        "category": "rivals",
+        "sentiment": -1,
+        "claim": "Honor Magic V6 cameras ahead; Oppo Find N6 nearly eliminated crease.",
+        "quote": "The cameras are improved, but they can’t hold a candle to the Honor Magic V6",
+        "locator": "Tech Advisor 2026-08-19 - Fold review, conclusion"
+      },
+      {
+        "source": "Droid Life (Kellen)",
+        "source_id": "droidlife",
+        "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+        "model": "Pixel 11 Pro Fold",
+        "category": "rivals",
+        "sentiment": -1,
+        "claim": "Galaxy Z Fold 8 and Apple iPhone Duo use a wider, shorter shape reviewer prefers.",
+        "quote": "Samsung’s new Fold 8 brings a new, wider and shorter shape that Apple has also adopted with its iPhone Duo",
+        "locator": "Droid Life 2026-09-17 - Fold review, Hardware"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tomsguide",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+        "model": "Pixel 11 Pro Fold",
+        "category": "rivals",
+        "sentiment": 1,
+        "claim": "Galaxy Z Fold 8 Ultra: IP48 vs Pixel's IP68.",
+        "quote": "it’s ready for beach outings, unlike the IP48-rated Galaxy Z Fold 8 Ultra",
+        "locator": "Tom's Guide 2026-08-19 - Fold review, Design"
+      },
+      {
+        "source": "Tom's Guide (Tom Pritchard)",
+        "source_id": "tg_pixel11pro",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "rivals",
+        "sentiment": -1,
+        "claim": "Galaxy S26 Ultra and iPhone 17 Pro Max outlast Pixel 11 Pro XL (14h28m).",
+        "quote": "Galaxy S26 Ultra lasted 16 hours and 10 minutes, while the iPhone 17 Pro Max lasted even longer",
+        "locator": "Tom's Guide 2026-08-19 - Battery section"
+      },
+      {
+        "source": "Tom's Guide (Tom Pritchard)",
+        "source_id": "tg_pixel11pro",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "rivals",
+        "sentiment": -1,
+        "claim": "Galaxy S26 Ultra graphics scores roughly double the Pixels'.",
+        "quote": "the Galaxy's graphics benchmark scores are roughly double that of both new Pixels",
+        "locator": "Tom's Guide 2026-08-19 - Performance section"
+      },
+      {
+        "source": "Tom's Guide (John Velasco)",
+        "source_id": "tg_pixel11",
+        "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+        "model": "Pixel 11",
+        "category": "rivals",
+        "sentiment": -1,
+        "claim": "Pixel 11 trails Galaxy S26 and iPhone 17 in performance.",
+        "quote": "the Tensor G6 powering the Pixel 11 still trails its main rivals like the Galaxy S26 and iPhone 17",
+        "locator": "Tom's Guide 2026-08-27 - Performance section"
+      },
+      {
+        "source": "Digital Trends (Vikhyaat Vivek)",
+        "source_id": "dt_pixel11pro",
+        "url": "https://www.digitaltrends.com/phones/google-pixel-11-pro-review/",
+        "model": "Pixel 11 Pro",
+        "category": "rivals",
+        "sentiment": -1,
+        "claim": "Cheaper Galaxy S26 runs demanding games better.",
+        "quote": "the cheaper Galaxy S26 I tested could run the same game at around 60fps on its highest settings",
+        "locator": "Digital Trends 2026-09-15 - Performance section"
+      },
+      {
+        "source": "Digital Trends (Vikhyaat Vivek)",
+        "source_id": "dt_pixel11pro",
+        "url": "https://www.digitaltrends.com/phones/google-pixel-11-pro-review/",
+        "model": "Pixel 11 Pro",
+        "category": "rivals",
+        "sentiment": 0,
+        "claim": "iPhone 17 Pro the alternative for raw performance/video/Apple ecosystem.",
+        "quote": "The obvious alternative for buyers who prioritize raw performance, video, and Apple’s ecosystem",
+        "locator": "Digital Trends 2026-09-15 - Alternatives"
+      },
+      {
+        "source": "TechRadar (Jason Cipriani)",
+        "source_id": "tr_pixel11pro",
+        "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro",
+        "category": "rivals",
+        "sentiment": 0,
+        "claim": "Priced in line with Galaxy S26 Plus and iPhone 17 Pro.",
+        "quote": "the Pixel 11 Pro's starting price is in line with comparable smartphones like the Samsung Galaxy S26 Plus and Apple iPhone 17 Pro",
+        "locator": "TechRadar 2026-09-03 - Price section"
+      },
+      {
+        "source": "Android Central (Nicholas Sutrich)",
+        "source_id": "ac_pixel11pro",
+        "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+        "model": "Pixel 11 Pro / Pro XL",
+        "category": "rivals",
+        "sentiment": 1,
+        "claim": "Pixel 11 Pro telephoto slightly ahead of iPhone 17 Pro series.",
+        "quote": "it has a slight edge over the iPhone 17 Pro series",
+        "locator": "Android Central 2026-08-19 - Camera paras"
+      }
+    ],
+    "findings": [
+      {
+        "topic": "Tensor G6 performance/thermals/battery",
+        "finding": "Reviewers agree Tensor G6 trails Snapdragon 8 Elite Gen 5 and A19 Pro (Digital Trends adds that even the Galaxy S26's Exynos 2600 is faster), worst in GPU/gaming. TechRadar says daily use and gaming are fine. Tom's Guide measured lower 3DMark scores than the Pixel 10 Pro, and Android Central notes missing newer Vulkan support. Thermals are the bright spot: 9to5Google, BGR and Digital Trends report it runs cooler. Battery shows no clear efficiency gain (Tom's Guide, AC: flat or slightly worse than the Pixel 10 series).",
+        "sources": [
+          "tomsguide",
+          "tg_pixel11pro",
+          "tg_pixel11",
+          "androidcentral",
+          "ac_pixel11pro",
+          "androidauthority",
+          "dt_pixel11pro",
+          "9to5google",
+          "bgr",
+          "tr_pixel11pro"
+        ]
+      },
+      {
+        "topic": "New AI features",
+        "finding": "Rambler dictation is the most praised (TG, DT, TR, Engadget, Tech Advisor). Magic Capture is loved by AC, Engadget and TG, but BGR found it unreliable with low-resolution stills. Gemini task automation and proactive help are mixed: TG and AC Pixel 11 found them helpful, while TR and AC Pixel 11 Pro saw little. HiLight is widely dismissed. Tom's Guide notes only 6 months of free Google AI Pro.",
+        "sources": [
+          "tg_pixel11pro",
+          "tg_pixel11",
+          "dt_pixel11pro",
+          "tr_pixel11pro",
+          "ac_pixel11pro",
+          "ac_pixel11",
+          "androidcentral",
+          "tomsguide",
+          "engadget",
+          "bgr"
+        ]
+      },
+      {
+        "topic": "Update policy",
+        "finding": "7 years of OS and security updates plus Pixel Drops. Every reviewer who mentions it is positive (\"class-leading\"; BGR: support to August 2033).",
+        "sources": [
+          "tomsguide",
+          "techadvisor",
+          "bgr",
+          "droidlife"
+        ]
+      },
+      {
+        "topic": "vs Pixel 10",
+        "finding": "Most say don't upgrade from the Pixel 10 generation: hardware gains are small, prices are $100 higher and the Pro gets less base RAM. Upgrading from a Pixel 9 or older is worth it. Android Central is the outlier on the Fold, calling it a solid upgrade over the 'disappointing' Pixel 10 Pro Fold.",
+        "sources": [
+          "techradar",
+          "techadvisor",
+          "tg_pixel11",
+          "tg_pixel11pro",
+          "tr_pixel11pro",
+          "ac_pixel11pro",
+          "androidcentral",
+          "bgr",
+          "tomsguide"
+        ]
+      },
+      {
+        "topic": "Named rivals",
+        "finding": "Fold rivals: Samsung Galaxy Z Fold 8 (same price, lighter, wider shape, less crease, weaker camera, no telephoto), Galaxy Z Fold 8 Ultra (faster, lighter, IP48), Motorola Razr Fold (bigger battery, faster charging, stylus, sharper 30x zoom per TG), Apple iPhone Duo (wider shape, $1,999 per BGR), Honor Magic V6 and Oppo Find N6 (better hardware/crease). Slab rivals: Galaxy S26 / S26 Plus / S26 Ultra and iPhone 17 / 17 Pro / 17 Pro Max (faster; the S26 Ultra and 17 Pro Max last longer). No reviewer read named a OnePlus model.",
+        "sources": [
+          "techradar",
+          "engadget",
+          "androidauthority",
+          "techadvisor",
+          "droidlife",
+          "tomsguide",
+          "bgr",
+          "tg_pixel11pro",
+          "tg_pixel11",
+          "dt_pixel11pro",
+          "tr_pixel11pro",
+          "ac_pixel11pro"
+        ]
+      }
+    ]
+  }
+}

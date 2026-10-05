@@ -1,0 +1,60 @@
+/* Pixel 11 consensus video: shared theme. Tokens mirror config/brand.yaml. */
+
+:root {
+  --bg: #07090d;
+  --bg-2: #0e1320;
+  --ink: #f4f6fb;
+  --ink-dim: #a7b0c2;
+  --accent: #5ee1c2;
+  --accent-2: #7a8cff;
+  --warn: #ffb35c;
+  --bad: #ff6b7a;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-edge: rgba(255, 255, 255, 0.14);
+  --maya: #5ee1c2;
+  --leo: #9aa8ff;
+  /* Safe area: the host bar + captions own the bottom 210px. */
+  --safe-bottom: 220px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", sans-serif; }
+#root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
+
+/* Background: pre-rendered gradient image (cheap to capture) + soft vignette. */
+.bg { position: absolute; inset: 0; background: url("bg.jpg") center / cover no-repeat, var(--bg); }
+.bg-vignette { position: absolute; inset: 0; background: radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(0,0,0,0.55) 100%); }
+
+.clip { position: absolute; inset: 0; }
+.scene { position: absolute; left: 0; top: 0; width: 100%; height: calc(100% - var(--safe-bottom)); padding: 90px 130px 30px; display: flex; }
+.eyebrow { font-weight: 600; font-size: 24px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+.h1 { margin: 0; font-weight: 800; font-size: 104px; line-height: 1.02; letter-spacing: -0.03em; }
+.h2 { margin: 0; font-weight: 800; font-size: 68px; line-height: 1.08; letter-spacing: -0.02em; }
+.body { margin: 0; font-size: 34px; line-height: 1.4; color: var(--ink-dim); }
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: 32px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.num { font-variant-numeric: tabular-nums; }
+.good { color: var(--accent); } .mid { color: var(--warn); } .bad { color: var(--bad); }
+.chip { display: inline-block; font-size: 22px; font-weight: 600; padding: 8px 18px; border-radius: 999px; border: 1px solid currentColor; }
+.src { font-size: 20px; color: var(--ink-dim); letter-spacing: 0.04em; }
+.phone-img { display: block; object-fit: contain; filter: drop-shadow(0 50px 80px rgba(0,0,0,0.6)); }
+
+/* Host bar: two friends on the couch + live caption. */
+.hostbar { position: absolute; left: 0; right: 0; bottom: 0; height: var(--safe-bottom); padding: 0 130px 46px; display: flex; align-items: flex-end; gap: 36px; }
+.hosts { display: flex; gap: 16px; flex: none; }
+.host { position: relative; width: 132px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.host .avatar { position: relative; width: 88px; height: 88px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 38px; color: #0a0d14; }
+.host.maya .avatar { background: var(--maya); }
+.host.leo .avatar { background: var(--leo); }
+.host .ring { position: absolute; inset: -9px; border-radius: 50%; border: 3px solid currentColor; opacity: 0; }
+.host.maya .ring { color: var(--maya); } .host.leo .ring { color: var(--leo); }
+.host .name { font-size: 22px; font-weight: 600; color: var(--ink-dim); letter-spacing: 0.08em; }
+.captions { position: relative; flex: 1; height: 132px; }
+.cap { position: absolute; left: 0; bottom: 0; max-width: 1380px; font-size: 34px; line-height: 1.32; font-weight: 600; color: var(--ink); opacity: 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8); }
+.cap b { font-weight: 800; }
+.cap .who { font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; margin-right: 14px; }
+.cap.maya .who { color: var(--maya); } .cap.leo .who { color: var(--leo); }

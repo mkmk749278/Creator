@@ -1,0 +1,62 @@
+{
+  "source": "Google official launch posts (blog.google), downloaded 2026-10-01",
+  "ai_generated": false,
+  "items": [
+    {
+      "file": "pro_family.png",
+      "desc": "Pixel 11 Pro / Pro XL family (Obsidian, Olive, Fog, Canyon), background removed",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Pixel-11ProXL_Family-Shot.jpg",
+      "owner": "Google LLC",
+      "edits": "resized; background removal where noted"
+    },
+    {
+      "file": "fold_obsidian.png",
+      "desc": "Pixel 11 Pro Fold in Obsidian, background removed",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/P11PF_Obsidian.jpg",
+      "owner": "Google LLC",
+      "edits": "resized; background removal where noted"
+    },
+    {
+      "file": "p11_frost.png",
+      "desc": "Pixel 11 in Frost, background removed",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/NFG_Cubs_Frost.jpg",
+      "owner": "Google LLC",
+      "edits": "resized; background removal where noted"
+    },
+    {
+      "file": "tensor_g6.png",
+      "desc": "Tensor G6 chip render, background removed",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/TensorChip.jpg",
+      "owner": "Google LLC",
+      "edits": "resized; background removal where noted"
+    },
+    {
+      "file": "p11_family.png",
+      "desc": "Pixel 11 family (Obsidian, Pistachio, Hibiscus, Frost), background removed",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Pixel_11_Family_Shot.png",
+      "owner": "Google LLC",
+      "edits": "resized; background removal where noted"
+    },
+    {
+      "file": "pro_social.jpg",
+      "desc": "Pixel 11 Pro launch card (Canyon)",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Pixel_11_Launch_social.png",
+      "owner": "Google LLC",
+      "edits": "resized; background removal where noted"
+    },
+    {
+      "file": "fold_social.jpg",
+      "desc": "Pixel 11 Pro Fold launch card (Olive)",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Pixel_11_Pro_Fold_Social.png",
+      "owner": "Google LLC",
+      "edits": "resized; background removal where noted"
+    },
+    {
+      "file": "pro_lifestyle.jpg",
+      "desc": "Pixel 11 Pro lifestyle shot",
+      "source_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Grizzly---Vibe3_inline.width-2000.format-webp.webp",
+      "owner": "Google LLC",
+      "edits": "resized; background removal where noted"
+    }
+  ]
+}

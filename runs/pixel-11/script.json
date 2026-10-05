@@ -1,0 +1,576 @@
+{
+  "phone": "Google Pixel 11 lineup",
+  "slug": "pixel-11",
+  "language": "en",
+  "hosts": {
+    "maya": {
+      "label": "Maya",
+      "voice": "af_heart",
+      "speed": 1.0,
+      "persona": "camera-loving optimist"
+    },
+    "leo": {
+      "label": "Leo",
+      "voice": "am_michael",
+      "speed": 1.02,
+      "persona": "skeptical numbers guy, gamer"
+    }
+  },
+  "parts": [
+    {
+      "id": "p1",
+      "title": "Cold open + the lineup",
+      "lines": [
+        {
+          "id": "p1-01",
+          "speaker": "maya",
+          "text": "Okay Leo, be honest. How many Pixel 11 reviews did you actually read?",
+          "say": "Okay Leo, be honest. How many Pixel eleven reviews did you actually read?",
+          "beat": "Title: 'Pixel 11: The Consensus'. Lineup family image (media/p11_family.png) drifting in."
+        },
+        {
+          "id": "p1-02",
+          "speaker": "leo",
+          "text": "Twenty-four. From seventeen outlets. Plus nine more just for the Fold.",
+          "beat": "Big count-up stats: 24 reviews · 17 outlets · +9 Fold reviews."
+        },
+        {
+          "id": "p1-03",
+          "speaker": "maya",
+          "text": "That's… a lot of reading. So you did the homework, so nobody watching has to.",
+          "say": "That's... a lot of reading. So you did the homework, so nobody watching has to.",
+          "beat": "Keep stats, subtle push-in."
+        },
+        {
+          "id": "p1-04",
+          "speaker": "leo",
+          "text": "Exactly. We show you what reviewers agree on, where they fight, and who should actually buy it.",
+          "beat": "Three pillars cards: 'Where they agree' (accent) · 'Where they disagree' (warn) · 'Who should buy' (accent-2)."
+        },
+        {
+          "id": "p1-05",
+          "speaker": "maya",
+          "text": "Love it. Quick lineup check: Google announced four phones on August 12, in New York.",
+          "say": "Love it. Quick lineup check: Google announced four phones on August twelfth, in New York.",
+          "beat": "Date card 'Made by Google · 12 Aug 2026 · New York' + p11_family image."
+        },
+        {
+          "id": "p1-06",
+          "speaker": "leo",
+          "text": "Pixel 11 at $899. Pixel 11 Pro at $1,099. Pro XL at $1,299. And the Pro Fold at $1,899.",
+          "say": "Pixel eleven at eight ninety-nine. Pixel eleven Pro at ten ninety-nine. Pro XL at twelve ninety-nine. And the Pro Fold, at eighteen ninety-nine.",
+          "beat": "Four model cards appear one by one with US starting price (256GB): Pixel 11 $899 (p11_frost.png), 11 Pro $1,099 & 11 Pro XL $1,299 (pro_family.png), 11 Pro Fold $1,899 (fold_obsidian.png)."
+        },
+        {
+          "id": "p1-07",
+          "speaker": "maya",
+          "text": "And for India: ₹89,999 for the Pixel 11, all the way up to ₹1,86,999 for the Fold.",
+          "say": "And for our friends in India: eighty-nine thousand, nine ninety-nine rupees for the Pixel eleven, all the way up to one lakh, eighty-six thousand, nine ninety-nine for the Fold.",
+          "beat": "Same cards flip to India prices: Pixel 11 ₹89,999 · 11 Pro ₹1,19,999 · 11 Pro XL ₹1,34,999 · 11 Pro Fold ₹1,86,999 (512GB)."
+        },
+        {
+          "id": "p1-08",
+          "speaker": "leo",
+          "text": "And notice? Every US price is $100 higher than last year. Eleven outlets called that out.",
+          "say": "And notice something? Every US price is a hundred dollars higher than last year. Eleven outlets called that out.",
+          "beat": "'+$100' badge stamps onto every card; small text '11 outlets flagged the price rise'."
+        },
+        {
+          "id": "p1-09",
+          "speaker": "maya",
+          "text": "Ouch. But base storage doubled to 256GB, so… partly fair?",
+          "say": "Ouch. But base storage doubled to two fifty-six gigs, so... partly fair?",
+          "beat": "Chip '128GB → 256GB base storage'."
+        },
+        {
+          "id": "p1-10",
+          "speaker": "leo",
+          "text": "Partly. Hold that thought, because it comes back. A lot.",
+          "beat": "Cards settle; slight zoom out."
+        },
+        {
+          "id": "p1-11",
+          "speaker": "maya",
+          "text": "Fine! Then let's start with what's actually new.",
+          "beat": "Transition card: 'What's new'."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "What's new",
+      "lines": [
+        {
+          "id": "p2-01",
+          "speaker": "maya",
+          "text": "So, what did Google actually change? First up, the chip: Tensor G6.",
+          "say": "So, what did Google actually change? First up, the chip. Tensor G six.",
+          "beat": "Tensor G6 chip image (media/tensor_g6.png) floats in with a slow 3D tilt. Label 'Tensor G6'."
+        },
+        {
+          "id": "p2-02",
+          "speaker": "leo",
+          "text": "Google claims 50% more AI compute, about 25% faster browsing and 15% faster app launches.",
+          "say": "Google claims fifty percent more A.I. compute, about twenty-five percent faster web browsing, and fifteen percent faster app launches.",
+          "beat": "Three animated stat bars labelled 'Google's claims': +50% TPU compute · ~25% faster browsing · 15% faster app launches."
+        },
+        {
+          "id": "p2-03",
+          "speaker": "maya",
+          "text": "The base model's camera bar is 40% thinner, and Pro screens get twice the scratch resistance and 3,600 nits.",
+          "say": "The base model's camera bar is forty percent thinner, and the Pro screens get more than twice the scratch resistance, and up to thirty-six hundred nits.",
+          "beat": "Design beat: p11_frost.png with callout '40% thinner camera bar'; then pro_family.png with '2× scratch resistance · 3,600 nits'."
+        },
+        {
+          "id": "p2-04",
+          "speaker": "leo",
+          "text": "Wireless charging jumps to 25 watts with Qi2.2 magnets. And the Pro XL gets 45W wired.",
+          "say": "Wireless charging jumps to twenty-five watts, with Q i two point two magnets. And the Pro XL gets forty-five watt wired charging.",
+          "beat": "Charging icons: '25W Qi2.2 magnetic (Pixelsnap)' · 'Pro XL: 45W wired'."
+        },
+        {
+          "id": "p2-05",
+          "speaker": "maya",
+          "text": "And then there's HiLight. A colored notification light on the Pro models.",
+          "say": "And then there's high-light. A colored notification light, on the Pro models.",
+          "beat": "pro_social.jpg full-frame card (Pixel 11 Pro in Canyon) with a soft pulsing colored glow ring labelled 'HiLight'."
+        },
+        {
+          "id": "p2-06",
+          "speaker": "leo",
+          "text": "Fourteen outlets. Fourteen! Said it barely does anything yet. Calls from favorites, Gemini, and that's it.",
+          "say": "Fourteen outlets. Fourteen! Said it barely does anything yet. It lights up for calls from favorites, for Gemini, and that's basically it.",
+          "beat": "Big '14 outlets' count-up in bad color: 'HiLight does almost nothing (yet)'."
+        },
+        {
+          "id": "p2-07",
+          "speaker": "maya",
+          "text": "Stuff called it “rather underwhelming.”",
+          "say": "Stuff called it, quote, rather underwhelming.",
+          "beat": "Quote card: “Yes, that really is all it does and yes, it is rather underwhelming.” — Stuff."
+        },
+        {
+          "id": "p2-08",
+          "speaker": "leo",
+          "text": "On the software side: Rambler dictation, Magic Capture, Camera Looks, and Live Translate dubbing.",
+          "say": "On the software side: Rambler dictation, Magic Capture, Camera Looks, and Live Translate dubbing.",
+          "beat": "Feature chips grid: Rambler · Magic Capture · Camera Looks · Live Translate · Gemini Intelligence (multistep tasks, 40+ apps)."
+        },
+        {
+          "id": "p2-09",
+          "speaker": "maya",
+          "text": "Plus seven years of updates on every model. That one, nobody complained about.",
+          "beat": "Big '7 years of updates' badge, accent color."
+        },
+        {
+          "id": "p2-10",
+          "speaker": "leo",
+          "text": "Nope. So on paper, a solid list. The real question is how it holds up. Let's start with the screen.",
+          "beat": "Transition: 'Display & performance'."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Display + performance",
+      "lines": [
+        {
+          "id": "p3-01",
+          "speaker": "maya",
+          "text": "Display first, and this is the easy one. Our consensus score: 8.5 out of 10, and reviewers strongly agree.",
+          "say": "Display first, and this is the easy one. Our consensus score: eight point five out of ten. And reviewers strongly agree.",
+          "beat": "Score dial animates to 8.5/10 'Display' with chip 'Strong agreement'."
+        },
+        {
+          "id": "p3-02",
+          "speaker": "leo",
+          "text": "Ten outlets called it bright, sharp and easy to see in sunlight. Tom's Guide measured 2,480 nits on the Pixel 11.",
+          "say": "Ten outlets called it bright, sharp, and easy to see in sunlight. Tom's Guide measured twenty-four eighty nits on the Pixel eleven.",
+          "beat": "'10 outlets' praise bar + stat '2,480 nits peak (Tom's Guide, Pixel 11)'. p11_frost.png at side."
+        },
+        {
+          "id": "p3-03",
+          "speaker": "maya",
+          "text": "Two small catches. The base model has no LTPO, and ships at 60Hz by default. 9to5Google wasn't a fan.",
+          "say": "Two small catches. The base model has no L T P O, and it ships at sixty hertz by default. Nine to five Google wasn't a fan.",
+          "beat": "Quote card: “I don’t know why the display stays tuned to 60Hz out of the box or by default.” — 9to5Google."
+        },
+        {
+          "id": "p3-04",
+          "speaker": "leo",
+          "text": "And three outlets flagged low-frequency PWM dimming. If flicker bothers you, try before you buy.",
+          "say": "And three outlets flagged low frequency P W M dimming. So if screen flicker bothers you, try before you buy.",
+          "beat": "Warning chip: 'Low-frequency PWM dimming · 3 outlets'."
+        },
+        {
+          "id": "p3-05",
+          "speaker": "maya",
+          "text": "Noted. Now… performance. Leo, I can see your face.",
+          "say": "Noted. Now... performance. Leo, I can see your face.",
+          "beat": "Transition: 'Performance' with Tensor G6 image."
+        },
+        {
+          "id": "p3-06",
+          "speaker": "leo",
+          "text": "Because this is the weak spot. Five out of ten. Eleven outlets say the G6 GPU trails Snapdragon and Apple.",
+          "say": "Because this is the weak spot. Performance gets five out of ten. Eleven outlets say the G six graphics chip trails Snapdragon and Apple, by a lot.",
+          "beat": "Score dial 5.0/10 'Performance' chip 'Mixed'. '11 outlets: weak GPU vs Snapdragon 8 Elite Gen 5 & Apple A19'."
+        },
+        {
+          "id": "p3-07",
+          "speaker": "maya",
+          "text": "But day to day it's fine, right?",
+          "beat": "Hold."
+        },
+        {
+          "id": "p3-08",
+          "speaker": "leo",
+          "text": "Day to day, yes. Eleven outlets called it smooth. Trusted Reviews said “the processor flies in daily use.”",
+          "say": "Day to day, yes. Eleven outlets called it smooth. Trusted Reviews said, the processor flies in daily use.",
+          "beat": "Split screen: left 'Everyday use: smooth (11 outlets)' good color with the Trusted Reviews quote."
+        },
+        {
+          "id": "p3-09",
+          "speaker": "maya",
+          "text": "And gaming?",
+          "beat": "Right side empty, waiting."
+        },
+        {
+          "id": "p3-10",
+          "speaker": "leo",
+          "text": "Same review: “pitifully bad gaming performance.” And Genshin Impact was broken at launch. Google says a fix is coming.",
+          "say": "Same review. Pitifully bad gaming performance. And Genshin Impact was broken on it at launch. Google says a fix is coming.",
+          "beat": "Right side: 'Gaming: weak' bad color with quote “The phone’s major downside is its pitifully bad gaming performance.” — Trusted Reviews; chip 'Genshin Impact broken at launch (3 outlets)'."
+        },
+        {
+          "id": "p3-11",
+          "speaker": "maya",
+          "text": "Oof. What about heat? That's been the Pixel curse for years.",
+          "beat": "Thermometer icon."
+        },
+        {
+          "id": "p3-12",
+          "speaker": "leo",
+          "text": "Here's our first big disagreement. Android Authority hit lag and overheating. Android Headlines measured six degrees cooler than Pixel 10.",
+          "say": "And here's our first big disagreement. Android Authority hit lag and overheating on the base Pixel eleven. But Android Headlines measured it about six degrees cooler than the Pixel ten.",
+          "beat": "'Reviewers disagree: heat' split card: Android Authority 'laggy animations and overheating' vs Android Headlines '~6° cooler than Pixel 10'."
+        },
+        {
+          "id": "p3-13",
+          "speaker": "maya",
+          "text": "So it depends who you ask. Maybe where you live, too.",
+          "beat": "Hold split."
+        },
+        {
+          "id": "p3-14",
+          "speaker": "leo",
+          "text": "Pretty much. If you game seriously, this isn't your phone. If you don't, you'll barely notice.",
+          "beat": "Takeaway card: 'Gamers: look elsewhere · Everyone else: you won't notice'."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Camera + battery",
+      "lines": [
+        {
+          "id": "p4-01",
+          "speaker": "maya",
+          "text": "Okay, my favorite part. Camera! 8.5 out of 10, strong agreement.",
+          "say": "Okay, my favorite part. Camera! Eight point five out of ten, with strong agreement.",
+          "beat": "Score dial 8.5/10 'Camera' chip 'Strong'. pro_lifestyle.jpg as framed photo."
+        },
+        {
+          "id": "p4-02",
+          "speaker": "leo",
+          "text": "Go on, you've earned this one.",
+          "beat": "Hold."
+        },
+        {
+          "id": "p4-03",
+          "speaker": "maya",
+          "text": "Ten outlets called the photos excellent. Android Police said “the Pixel's camera is stellar.”",
+          "say": "Ten outlets called the photos excellent and dependable. Android Police said, the Pixel's camera is stellar, and I don't think you can get much better.",
+          "beat": "Quote card: “This time, the Pixel’s camera is stellar, and I don’t think you can get much better.” — Android Police. '10 outlets' chip."
+        },
+        {
+          "id": "p4-04",
+          "speaker": "leo",
+          "text": "And the base model keeps a 5x telephoto. Four outlets called it a real differentiator at this price.",
+          "say": "And the base model keeps a five x telephoto. Four outlets called that a real differentiator at this price.",
+          "beat": "Big '5×' telephoto badge on p11_frost.png; quote “This is a real differentiator for Google” — Engadget."
+        },
+        {
+          "id": "p4-05",
+          "speaker": "maya",
+          "text": "And Night Sight got faster on the Pros. Nine outlets noticed.",
+          "say": "And Night Sight got faster on the Pros. Nine outlets noticed.",
+          "beat": "'Faster Night Sight (Pro) · 9 outlets' with pro_family.png."
+        },
+        {
+          "id": "p4-06",
+          "speaker": "leo",
+          "text": "Now, the AI zoom goes up to 120x. Tom's Guide thought it beat Samsung's 100x.",
+          "say": "Now, the A.I. zoom goes all the way to one hundred twenty x. Tom's Guide thought it beat Samsung's hundred x.",
+          "beat": "Disagreement split begins: left 'Impressive' (Tom's Guide, Android Authority)."
+        },
+        {
+          "id": "p4-07",
+          "speaker": "maya",
+          "text": "But five outlets said it invents detail. Engadget called it “uncanny,” and two caught it garbling text.",
+          "say": "But five outlets said it invents detail. Engadget called it uncanny, and two outlets caught it garbling text.",
+          "beat": "Right 'Fabricates detail' (5 outlets: Engadget, Gizmodo, Android Headlines, TechRadar, Trusted Reviews)."
+        },
+        {
+          "id": "p4-08",
+          "speaker": "leo",
+          "text": "And Magic Capture? Six outlets said it grabs blurry frames on fast motion. CNET called it a “nice to have.”",
+          "say": "And Magic Capture? Six outlets said it grabs blurry frames on fast motion. CNET called it a nice to have.",
+          "beat": "Quote: “Magic Capture is currently a ‘nice to have’ rather than a tool that I’d want to rely on.” — CNET. Chip '6 outlets: blurry frames'."
+        },
+        {
+          "id": "p4-09",
+          "speaker": "maya",
+          "text": "Fair. Battery, then. This one's split: 6.5 out of 10.",
+          "say": "Fair. Battery, then. And this one is split. Six point five out of ten.",
+          "beat": "Score dial 6.5/10 'Battery & charging' chip 'Split'."
+        },
+        {
+          "id": "p4-10",
+          "speaker": "leo",
+          "text": "The base Pixel 11 does great. PCMag got 19 hours 13 minutes. The Guardian, about 54 hours of light use.",
+          "say": "The base Pixel eleven does great. PCMag got nineteen hours and thirteen minutes in their rundown test. The Guardian got about fifty-four hours of light use.",
+          "beat": "Two stat bars: 'PCMag rundown: 19h 13m' · 'Guardian: ~54h light use' (Pixel 11)."
+        },
+        {
+          "id": "p4-11",
+          "speaker": "maya",
+          "text": "And the Pros?",
+          "beat": "Hold."
+        },
+        {
+          "id": "p4-12",
+          "speaker": "leo",
+          "text": "That's the fight. Six outlets say up to two days. Tom's Guide measured the 11 Pro below the 10 Pro.",
+          "say": "That's the fight. Six outlets say up to two days. But Tom's Guide measured the eleven Pro below the ten Pro, and Android Central found it about the same.",
+          "beat": "Disagreement split: 'Up to two days' (6 outlets) vs 'No better than Pixel 10 Pro' (Tom's Guide, Android Central, Stuff, Tech Advisor)."
+        },
+        {
+          "id": "p4-13",
+          "speaker": "maya",
+          "text": "Everyone agrees on one thing: wired charging is slow. Seven outlets said it misses Google's claims.",
+          "say": "Everyone agrees on one thing though. Wired charging is slow. Seven outlets said real speeds miss Google's claims.",
+          "beat": "Bad chip 'Slow wired charging · 7 outlets'."
+        },
+        {
+          "id": "p4-14",
+          "speaker": "leo",
+          "text": "But the magnetic wireless charging? Nine outlets loved it.",
+          "beat": "Good chip '25W Qi2.2 magnetic charging · 9 outlets loved it'."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Software, AI + the Pro Fold",
+      "lines": [
+        {
+          "id": "p5-01",
+          "speaker": "maya",
+          "text": "Software and AI: 7.5 out of 10.",
+          "say": "Software and A.I. Seven point five out of ten.",
+          "beat": "Score dial 7.5/10 'Software & AI' chip 'Mixed'."
+        },
+        {
+          "id": "p5-02",
+          "speaker": "leo",
+          "text": "The star is Rambler, the new voice dictation. Twelve outlets praised it, more than any other new feature.",
+          "say": "The star is Rambler, the new voice dictation. Twelve outlets praised it. That's more than any other new feature this year.",
+          "beat": "'Rambler · praised by 12 outlets' hero stat, accent."
+        },
+        {
+          "id": "p5-03",
+          "speaker": "maya",
+          "text": "Dictation that people actually like? That's new.",
+          "beat": "Hold with playful wiggle on the stat."
+        },
+        {
+          "id": "p5-04",
+          "speaker": "leo",
+          "text": "Right? One catch: three outlets noticed the text only appears after you stop talking.",
+          "beat": "Small mid chip 'Text appears only after you stop speaking · 3 outlets'."
+        },
+        {
+          "id": "p5-05",
+          "speaker": "maya",
+          "text": "And Proactive Assistance?",
+          "say": "And Proactive Assistance?",
+          "beat": "Card 'Proactive Assistance'."
+        },
+        {
+          "id": "p5-06",
+          "speaker": "leo",
+          "text": "Seven outlets said it rarely shows up. And four flagged headline Gemini features as US-only at launch.",
+          "say": "Seven outlets said it rarely shows up, or helps. And four flagged that the headline Gemini features are U.S. only, at launch.",
+          "beat": "Two bad chips: 'Rarely triggers · 7 outlets' · 'Gemini Intelligence US-only at launch · 4 outlets'."
+        },
+        {
+          "id": "p5-07",
+          "speaker": "maya",
+          "text": "Which matters a lot if you're watching from India or the UK. Okay. The big one: the Pixel 11 Pro Fold.",
+          "say": "Which matters a lot if you're watching from India, or the U.K. Okay. Now the big one. The Pixel eleven Pro Fold.",
+          "beat": "Big reveal: fold_social.jpg full-frame, then cut to fold_obsidian.png."
+        },
+        {
+          "id": "p5-08",
+          "speaker": "leo",
+          "text": "$1,899 in the US, ₹1,86,999 in India. We read nine Fold reviews.",
+          "say": "Eighteen ninety-nine in the U.S., one lakh, eighty-six thousand, nine ninety-nine rupees in India. And we read nine Fold reviews.",
+          "beat": "Price chips '$1,899' · '₹1,86,999 (16GB + 512GB)' · '9 Fold reviews'."
+        },
+        {
+          "id": "p5-09",
+          "speaker": "maya",
+          "text": "The good: it's still the only mainstream foldable rated IP68. Eight reviewers praised that.",
+          "say": "The good: it's still the only mainstream foldable with an I P sixty-eight rating. Eight reviewers praised that.",
+          "beat": "Good chip 'IP68 · 8 reviewers'. Quote: “this is the only mainstream foldable with an IP68 dust/water resistance rating” — 9to5Google."
+        },
+        {
+          "id": "p5-10",
+          "speaker": "leo",
+          "text": "And the camera. Engadget found its photos sharper and more detailed than every rival they tested.",
+          "say": "And the camera. Engadget found its photos sharper and more detailed than every rival they tested.",
+          "beat": "Quote: “consistently sharper and more detailed than what I got from all of its rivals” — Engadget."
+        },
+        {
+          "id": "p5-11",
+          "speaker": "maya",
+          "text": "The bad: the crease. Six reviewers flagged it. Tech Advisor said every other foldable hides it better.",
+          "say": "The bad: the crease. Six reviewers flagged it. Tech Advisor said every other foldable they tested this year hides it better.",
+          "beat": "Bad chip 'Visible crease · 6 reviewers'. Quote: “Every other foldable I have tested this year has done a better job of hiding the crease.” — Tech Advisor."
+        },
+        {
+          "id": "p5-12",
+          "speaker": "leo",
+          "text": "Battery was the top complaint: eight reviewers. And Android Authority said the graphics “border on parody.”",
+          "say": "Battery was the top complaint, eight reviewers. And Android Authority said its graphics performance borders on parody.",
+          "beat": "Bad chips 'Battery · 8 reviewers'. Quote: “Graphics performance from the new Tensor G6 processor is so far off the pace that it borders on parody” — Android Authority."
+        },
+        {
+          "id": "p5-13",
+          "speaker": "maya",
+          "text": "So, Fold verdict?",
+          "beat": "Verdict card setup: two columns Buy / Skip."
+        },
+        {
+          "id": "p5-14",
+          "speaker": "leo",
+          "text": "Buy it if you're a Pixel fan who wants the toughest foldable and a great camera. Skip it if you own the 10 Pro Fold, or you game.",
+          "beat": "Buy: 'Pixel fans · want IP68 · camera-first foldable' | Skip: 'Pixel 10 Pro Fold owners · gamers · crease-sensitive'."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Who should buy + final verdict",
+      "lines": [
+        {
+          "id": "p6-01",
+          "speaker": "maya",
+          "text": "Alright, the big question. Is the base Pixel 11 worth $899? Reviewers are genuinely split.",
+          "say": "Alright, the big question. Is the base Pixel eleven worth eight ninety-nine? Reviewers are genuinely split.",
+          "beat": "Title 'Is the Pixel 11 worth $899?' with p11_frost.png. Split meter."
+        },
+        {
+          "id": "p6-02",
+          "speaker": "leo",
+          "text": "Team yes: CNET gave it 9 out of 10 and Editors' Choice. PCMag's top pick. The Guardian: best phone under £900.",
+          "say": "Team yes: CNET gave it nine out of ten, and an Editors' Choice. It's PCMag's top pick. And The Guardian called it the best phone under nine hundred pounds.",
+          "beat": "Team YES column (good): CNET 9/10 Editors' Choice · PCMag top pick · Guardian 'best under £900' · Engadget 92."
+        },
+        {
+          "id": "p6-03",
+          "speaker": "maya",
+          "text": "Team no: Tom's Guide gave it 3 out of 5. GSMArena said dependability alone is “a difficult thing to sell.”",
+          "say": "Team no: Tom's Guide gave it three out of five. And GSMArena said dependability alone is, a difficult thing to sell, at that price.",
+          "beat": "Team NO column (bad): Tom's Guide 3/5 · GSMArena quote “dependability alone is a difficult thing to sell for $899” · Android Authority 7/10."
+        },
+        {
+          "id": "p6-04",
+          "speaker": "leo",
+          "text": "Then the Pros. Twelve outlets knocked the price hike, and base RAM dropping from 16 to 12GB.",
+          "say": "Then the Pros. Twelve outlets knocked the price hike, and the base RAM dropping from sixteen to twelve gigs.",
+          "beat": "'12 outlets' bad stat: '+$100 and 16GB → 12GB RAM (Pro / Pro XL)'."
+        },
+        {
+          "id": "p6-05",
+          "speaker": "maya",
+          "text": "Android Central put it bluntly: “too expensive for what you get.” So who should actually buy one?",
+          "say": "Android Central put it bluntly. Too expensive for what you get. So, who should actually buy one?",
+          "beat": "Quote: “the reality is that these are too expensive for what you get.” — Android Central."
+        },
+        {
+          "id": "p6-06",
+          "speaker": "leo",
+          "text": "Got a Pixel 9, Pixel 8 or older? Eight outlets say upgrade. Same if you're leaving iPhone, or live for photos.",
+          "say": "If you've got a Pixel nine, a Pixel eight, or older? Eight outlets say go ahead and upgrade. Same if you're leaving an iPhone, or you live for photos.",
+          "beat": "BUY list (good): 'Pixel 9 / 8 or older (8 outlets)' · 'iPhone switchers' · 'Camera-first buyers'."
+        },
+        {
+          "id": "p6-07",
+          "speaker": "maya",
+          "text": "And skip it if you have a Pixel 10. Seven outlets say there's no reason to upgrade. Or if you're a serious gamer.",
+          "say": "And skip it if you have a Pixel ten. Seven outlets say there's no reason to upgrade. Or, if you're a serious mobile gamer.",
+          "beat": "SKIP list (bad): 'Pixel 10 owners (7 outlets)' · 'Mobile gamers'."
+        },
+        {
+          "id": "p6-08",
+          "speaker": "leo",
+          "text": "Alternatives reviewers named: Galaxy S26 at the same price with a much faster chip. S26 Ultra against the Pro XL. Or a discounted Pixel 10.",
+          "say": "Alternatives that reviewers named: the Galaxy S twenty-six, same price, much faster chip. The S twenty-six Ultra against the Pro XL. Or a discounted Pixel ten, for nearly the same phone.",
+          "beat": "Alternatives row (text cards only, no images): Galaxy S26 vs Pixel 11 · Galaxy S26 Ultra vs Pro XL · Discounted Pixel 10."
+        },
+        {
+          "id": "p6-09",
+          "speaker": "maya",
+          "text": "Okay, final scores. Pixel 11: 7.5. Pixel 11 Pro: 7.5. Pro XL: 7.5.",
+          "say": "Okay, final scores. Pixel eleven: seven and a half. Pixel eleven Pro: seven and a half. Pro XL: seven and a half.",
+          "beat": "Final scorecard: three model cards with big 7.5/10 each and one-line verdicts; Fold card shows 'See Fold verdict: buy if Pixel fan'."
+        },
+        {
+          "id": "p6-10",
+          "speaker": "leo",
+          "text": "Same score, different reasons. Four outlets said most people should just get the base model and save $200.",
+          "say": "Same score, different reasons. Four outlets said most people should just get the base model, and save two hundred dollars.",
+          "beat": "Highlight Pixel 11 card: 'Value pick · 4 outlets: save $200 vs Pro'."
+        },
+        {
+          "id": "p6-11",
+          "speaker": "maya",
+          "text": "So my pick? The Pixel 11. Great camera, great software, and you keep that 5x zoom.",
+          "say": "So, my pick? The Pixel eleven. Great camera, great software, and you keep that five x zoom.",
+          "beat": "'Maya's pick: Pixel 11' tag."
+        },
+        {
+          "id": "p6-12",
+          "speaker": "leo",
+          "text": "Mine too, honestly. Unless you game. Then look at the Galaxy.",
+          "beat": "'Leo's pick: Pixel 11 (gamers: Galaxy S26)' tag."
+        },
+        {
+          "id": "p6-13",
+          "speaker": "maya",
+          "text": "Which one would you pick? Tell us in the comments. Every source is linked in the description.",
+          "say": "Which one would you pick? Tell us in the comments. Every source we used is linked in the description.",
+          "beat": "Credits roll: all outlets (9to5Google, Android Authority, Android Central, Android Headlines, Android Police, BGR, CNET, Droid Life, Engadget, Gizmodo, GSMArena, PCMag, Stuff, Tech Advisor, TechCrunch, TechRadar, The Guardian, Tom's Guide, Trusted Reviews). Images: Google."
+        },
+        {
+          "id": "p6-14",
+          "speaker": "leo",
+          "text": "Twenty-four reviews, so you don't have to read them. See you next time!",
+          "beat": "End card: 'Pixel 11 · The Consensus' + 'Subscribe'."
+        }
+      ]
+    }
+  ]
+}
