@@ -14,3 +14,7 @@ runs/*/*
 !runs/*/manifest.json
 !runs/.gitkeep
 spike-out/
+# copied into each part by scripts/new_part.mjs
+video/pixel11/p*/media/
+video/pixel11/p*/shared/
+video/pixel11/p*/voice.wav
