@@ -1,0 +1,338 @@
+# Test conditions behind the heat, battery, brightness and charging findings
+
+Generated 2026-10-05. Source data: `test_conditions.json`. 'not stated' = the page does not say. Quotes are verbatim from the fetched pages.
+
+## Bounded conclusions (read these first)
+
+**Heat Base.** Android Authority vs Android Headlines (base Pixel 11): NOT directly comparable, and mostly not contradictory. Android Authority's 'overheats in everyday use' finding comes from outdoor real-world use in Phoenix, where the reviewer says 'temperatures above 100°F are normal'; the camera turned off zoom and Creator Suite features at the Phoenix Zoo. Android Headlines' 'cooler' finding is an indoor lab comparison with the Pixel 10 at an unstated ambient temperature. On the one shared test, the 3DMark Wild Life Extreme stress test, the two outlets measure different things. Android Authority gives a 46°C peak 'toward the end' of the run and calls it 'about on-par with the Pixel 10'. Android Headlines measures 'after it’s done' and gets 104.5°F (about 40°C), 6°F (about 3°C) below its own Pixel 10. Neither names the instrument or the ambient temperature. What can honestly be said: in stress tests the base Pixel 11 runs about the same as, or a few degrees cooler than, the Pixel 10 (two outlets, with a gap of 3°C or less). In very hot outdoor conditions, one reviewer's unit throttled camera features. Android Central and GSMArena add that it gets warm when gaming and showed 'no real improvement' in throttling. No outlet reported camera shutdowns at normal temperatures. Do not frame this as a fight: it is one hot-climate field report plus small lab differences.
+
+**Heat Pro.** Pro/Pro XL: no real conflict. Every number points the same way. Android Headlines measured 102.2°F vs 113.9°F for the Pixel 10 Pro, Digital Trends 34 to 43°C, and Android Authority 'below 45°C'; Android Police and Trusted Reviews report no overheating. The caveats: Android Headlines suspects lower temperatures partly come from heavier throttling (lower stress-test scores than the Pixel 10 Pro). Gizmodo's 'warm fast' in 3D games is subjective and from launch-day software. GSMArena's early Pro XL throttling disappeared after 'last-minute software updates' (Sept 5). Android Authority's heat complaint is about Extreme Charging, not workloads. Fair summary: the Pro models run cooler than the Pixel 10 Pros in the tests that measured them, partly by giving up sustained performance.
+
+**Battery Base.** Base Pixel 11 'mediocre' (Tom's Guide 12h45m, below Pixel 10) vs 'excellent' (PCMag 19h13m; Guardian ~54 h): NOT comparable. Tom's Guide runs continuous web browsing over 5G until empty. PCMag streams YouTube over Wi-Fi at full brightness. The Guardian reports light real-world use measured as time between charges, idle time included. Each figure is valid for its own test. Within-outlet comparisons are the only fair ones. Tom's Guide: slightly worse than Pixel 10 (-28 min, about -3.5%). Android Headlines (200-lux video loop): slightly better (+17 min). GSMArena: better 'in every one of our individual tests'. CNET: 'roughly equivalent'. Honest line: base Pixel 11 battery life is about the same as the Pixel 10, within a few percent either way depending on the test. Nine of the ten base outlets call it good in daily use.
+
+**Battery Base Vs Pro.** 'Base outlasts Pro by 6+ hours' (PCMag) is an outlier for that test. On their own tests, Tom's Guide has the Pro ahead (13h25m vs 12h45m) and Android Headlines has the Pro slightly ahead (23h20m vs 22h57m). The Guardian has the base model slightly ahead in real use. Say 'similar battery life', or name PCMag's full-brightness video test as the condition for its gap.
+
+**Battery Pro.** Pro/Pro XL year on year: Tom's Guide (and Android Central, which uses the same Future Labs data) says flat or slightly worse: Pro 13h25m vs 13h43m, Pro XL 14h28m vs 14h10m. Android Headlines (Pro +3h37m), GSMArena (Pro XL 15:45h, 'notable increase') and Android Authority (Pro XL ahead in 4 of 5 tests) say better. The tests differ (5G web browsing vs 200-lux video vs GSMArena's suite), and so do software and dates: Tom's Guide and Android Central published Aug 19; GSMArena's Pro XL review was updated Sept 5 after software updates. Honest line: the Pro XL is equal or better than the Pixel 10 Pro XL in most tests. The small Pro's result depends on the test (flat in one lab, much better in another). Count Tom's Guide and Android Central as one data source, not two.
+
+**Battery Fold.** Engadget's Fold 27h09m vs Tom's Guide 12h31m, Tech Advisor 13h12m and TechRadar ~12 h: NOT comparable. Engadget plays local video on the small cover screen; the others run web browsing or PCMark rundowns (TechRadar 'with screen smoothness on'; Tech Advisor at 200 nits). The rival comparisons agree: Engadget and Tom's Guide both put the Fold behind Razr Fold and Z Fold 8 Ultra, and Android Authority says it loses rival battery tests. Tech Advisor finds it equal to the Pixel 10 Pro Fold. Seven of nine Fold outlets criticise battery life. Honest line: Fold battery life is about the same as last year's and behind its main rivals in every same-test comparison.
+
+**Brightness.** Google's 3,000 nits (base) and 3,600 nits (Pro) figures are peak ratings, typically for small HDR highlights. Measured numbers depend on window size and mode, and only GSMArena states both. GSMArena's 10%-window auto peak reached ~2,800 (base, about 93% of the 3,000 rating) and 3,118 (Pro XL, about 87% of 3,600). Its full-screen (75%) auto results were ~2,100 (base) and 2,333 (Pro XL), and manual mode gave only ~1,250-1,310 on all models. Tom's Guide's 2,480 / 2,860 / 2,877 / 2,982 do not state their method, so they cannot be placed against Google's spec or GSMArena. Tech Advisor's 950 nits 'at max' looks like a manual-mode reading. Honest line: independent peak measurements land below Google's peak ratings (about 2,500-2,800 for the base, about 2,850-3,100 for the Pro XL), and the results vary with the test. GSMArena found base and Pro XL peak brightness on par with the Pixel 10 models, so the extra brightness over last year is mostly a spec-sheet change. Note: PCMag wrongly says the Pro screens are 3,300 nits.
+
+**Charging.** Pro XL 30-minute results range from 37% to 72%: the cause is the charger, not the phone. GSMArena used Google's 67W charger with PPS and got 72% (63 min to full). Android Authority says a '21V PPS charger' is required; a 67W Anker charger without 21V PPS 'topped out at 25W'. Henry Burrell's Belkin 45W gave 37%; whether that charger supports 21V PPS is not stated, so the cause is likely but unconfirmed. Tom's Guide and Android Central (54%) share Future Labs data and count as one result. No outlet reached Google's 75% claim. Base and Pro (30W) results cluster tightly: 50-60% in 30 min and 80-98 min to full. Android Authority's Fold '80 minutes' is consistent with Tom's Guide's 56% in 30 min; both are slower than Razr Fold and Z Fold 8 Ultra. Honest line: wired charging is unchanged from last year (Pixel 11, Pro, Fold), and the XL's 45W only shows up with a 21V-PPS charger.
+
+## Heat
+
+### H1 · Android Authority (Brady Snyder) · Pixel 11 (base, no vapor chamber)
+- Test: (a) Real-world: photographing at the Phoenix Zoo with Magic Capture, Creator Suite, 30x Super Zoom. (b) 3DMark Wild Life Extreme stress test.
+- Conditions: ambient: (a) outdoors in Phoenix; reviewer says 'temperatures above 100°F are normal for most of the year' (exact temperature on test day not stated). (b) not stated; location: Phoenix, Arizona; brightness: not stated; network: not stated; instrument: not stated
+- Duration: (a) not stated (b) standard 20-loop run, duration not stated · Software: Android 17 (build not stated); review published 2026-09-24 · Published: 2026-09-24
+- **Result:** (a) Camera app disabled zoom and Creator Suite features ('device is too warm'). (b) Peak 46°C 'toward the end of the stress test', 'about on-par with the Pixel 10'; Pixel 11 Pro models 'both came in below 45°C'.
+- "I live in the Phoenix desert, where temperatures above 100°F are normal for most of the year"
+- "This wasn’t overheating caused by a benchmark or stress test"
+- "topping out at 46°C toward the end of the stress test. This is about on-par with the Pixel 10’s performance"
+- "which both came in below 45°C"
+- https://www.androidauthority.com/google-pixel-11-review-3709371/
+
+### H2 · Android Headlines (Justin Diaz) · Pixel 11 (base)
+- Test: Three separate tests: Zenless Zone Zero (labelled 'Genshin Impact') maxed at 60fps for at least 1 hour; 3DMark Wild Life Extreme stress test, temperature 'measure[d] ... after it’s done'; 4K60 recording for 10 minutes.
+- Conditions: ambient: not stated; location: reviewer is in 'the Northwest' (US); test location not stated; brightness: not stated (Pro review by same outlet: max brightness for the game test); network: not stated; instrument: not stated
+- Duration: game >=1 h; stress test 20 loops; video 10 min · Software: Android 17 (build not stated) · Published: 2026-09-14
+- **Result:** Pixel 11 vs Pixel 10: stress test 104.5°F vs 110.5°F (-6°F, about -3.3°C); game 104°F vs 108.6°F; 4K60 98.9°F vs 99.7°F. Units °F come from the page's results chart (read via WebFetch); the article text says only 'about 6 degrees'.
+- "we run it through the 3DMark Wild Life Extreme Stress Test and then we measure the temperature after it’s done"
+- "a drop of 6 degrees in the Wild Life Extreme Stress Test"
+- "the temperatures after sustained use have dropped considerably compared to the Pixel 10"
+- https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html
+
+### H3 · Android Headlines (Alexander Maxham) · Pixel 11 Pro
+- Test: Same three tests: 3DMark WLE stress; Genshin Impact 1 hour 'at max brightness and max graphics'; 4K60 10 minutes.
+- Conditions: ambient: not stated as a number; tests 'done on separate days so they start at roughly the same ambient temperature'; location: not stated; brightness: max (game test); network: not stated; instrument: not stated
+- Duration: game 1 h; video 10 min · Software: Android 17 QPR1 · Published: 2026-08-24
+- **Result:** Stress test 102.2°F vs Pixel 10 Pro 113.9°F (-11.7°F, about -6.5°C; article says '11-degree'); Genshin 104.3°F vs 105.8°F; 4K60 98.2°F vs 98.7°F. Stress-test scores were LOWER than Pixel 10 Pro (best loop 2,956, low 1,973, 66.8% stability); reviewer suspects throttling.
+- "These are done on separate days so they start at roughly the same ambient temperature"
+- "We’re looking at an 11-degree difference year over year"
+- "I think Google is throttling it a bit, since the scores on that benchmark were lower than last year’s Pixel 10 Pro"
+- https://www.androidheadlines.com/google-pixel-11-pro-review
+
+### H4 · Digital Trends (Vikhyaat Vivek) · Pixel 11 Pro (12GB/256GB unit)
+- Test: 3DMark stress test (20 loops); daily use
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated; instrument: not stated (start/end temperatures as reported, likely from the benchmark's own readout, not confirmed)
+- Duration: 20 loops; battery fell 65% to 55% during the run · Software: Android 17 (build not stated) · Published: 2026-09-15
+- **Result:** 34°C to 43°C over the stress test; loop 1 11,063 -> loop 20 7,909 (about -29%). 'rarely becoming more than mildly warm during normal use'.
+- "Temperature rose from 34 degrees Celsius to 43 degrees Celsius, while the battery dropped from 65% to 55%"
+- "rarely becoming more than mildly warm during normal use"
+- https://www.digitaltrends.com/phones/google-pixel-11-pro-review/
+
+### H5 · GSMArena · Pixel 11 (base, 12GB/256GB)
+- Test: CPU/GPU throttling (stability) tests
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated; instrument: not stated
+- Duration: not stated · Software: Android 17; Sept 1 2026 security patch · Published: 2026-09-15
+- **Result:** 58% to 68% stability; no surface temperatures given.
+- "we found no real improvement since last year"
+- "58% to 68% stability"
+- "the phone never gets too uncomfortable to hold, even under unreasonable loads"
+- https://www.gsmarena.com/google_pixel_11-review-3000p4.php
+
+### H6 · GSMArena · Pixel 11 Pro XL
+- Test: CPU throttling test re-run after first results
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated; instrument: not stated
+- Duration: not stated · Software: Android 17; Sept 5 note credits 'last-minute software updates' (build not stated) · Published: 2026-09-04 (updated 2026-09-05)
+- **Result:** First run (~late Aug) showed poor sustained CPU; re-runs after updates showed 'no sign of the poor performance'; 71% stability in 3DMark stress, about Pixel 10 Pro XL level.
+- "Update, Sept 5"
+- "there is no sign of the poor performance we observed around a week ago"
+- "Google has been hard at work fine-tuning its devices with last-minute software updates"
+- https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p4.php
+
+### H7 · Gizmodo (Raymond Wong) · Pixel 11 Pro / Pro XL (16GB review units)
+- Test: Anecdotal 3D gaming (Asphalt: Legends, Genshin Impact)
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated; instrument: none (subjective)
+- Duration: not stated · Software: Android 17 at launch (review 2026-08-19); Genshin fix promised in a future game update · Published: 2026-08-19
+- **Result:** Warm fast under 3D games; no numbers.
+- "The Pixel 11 Pros also get warm fast when they’re pushed hard for 3D games"
+- https://gizmodo.com/google-pixel-11-pro-review-2000800535
+
+### H8 · Android Central (Derrek Lee) · Pixel 11 (base)
+- Test: Anecdotal gaming
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated; instrument: none (subjective)
+- Duration: not stated · Software: not stated · Published: 2026-08-29
+- **Result:** Gets quite warm when gaming; no numbers.
+- "so it does get quite warm when gaming"
+- https://www.androidcentral.com/phones/google-pixel/google-pixel-11-review
+
+### H9 · Android Police (Andy Boxall) · Pixel 11 Pro
+- Test: 3DMark WLE stress (20 min) + Asphalt 9 sessions
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated; instrument: none (subjective)
+- Duration: stress 20 min; game 30 min · Software: Android 17 (build not stated) · Published: 2026-09-03
+- **Result:** Best loop 3,325, 64% stability, 11% battery; 'never become hot to the touch'.
+- "the phone has never become hot to the touch"
+- "I have not experienced any reliability problems, no overheating"
+- https://www.androidpolice.com/google-pixel-11-pro-review/
+
+### H10 · Trusted Reviews (Henry Burrell) · Pixel 11 Pro XL
+- Test: Daily use
+- Conditions: ambient: not stated; location: UK-based reviewer; brightness: not stated; network: not stated; instrument: none (subjective)
+- Duration: not stated · Software: Android 17 (build not stated) · Published: 2026-08-24
+- **Result:** Rarely too hot except on a wireless charger.
+- "The Pixel rarely got too hot in my usage, apart from when it was on a wireless charger"
+- https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl
+
+### H11 · Android Authority (Joe Maring) · Pixel 11 Pro XL (charging)
+- Test: Extreme Charging Mode
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated; instrument: none (subjective)
+- Duration: not stated · Software: not stated · Published: 2026-09-05
+- **Result:** Heat during Extreme Charging flagged as concerning; no numbers.
+- "Even more concerning is the amount of heat the Pixel 11 Pro XL produces during Extreme Charging"
+- https://www.androidauthority.com/google-pixel-11-pro-review-3703549/
+
+### H12 · 9to5Google (Ben Schoon) / BGR (Connor Jewiss) · Pixel 11 Pro Fold
+- Test: Real-world use outdoors in summer
+- Conditions: ambient: 9to5: 'a hot weekend spent almost entirely outside' in 'a North Carolina summer' (temperature not stated); BGR: 'even in warmer weather' (not quantified); location: North Carolina (9to5); BGR testing included Berlin (location of thermal remark not stated); brightness: not stated; network: not stated; instrument: none (subjective)
+- Duration: not stated · Software: not stated · Published: 2026-08-26 / 2026-09-21
+- **Result:** Both say the Fold stayed cool. BGR adds the 11 Pro XL 'got hot under heavy loads' (a cross-model remark in a Fold review).
+- "the Pixel 11 Pro Fold has kept its cool remarkably well even through a hot weekend spent almost entirely outside"
+- "while the 11 Pro XL got hot under heavy loads, the 11 Pro Fold stayed cool throughout extended use, even in warmer weather"
+- https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/ ; https://www.bgr.com/2264491/pixel-11-pro-fold-review/
+
+## Battery
+
+### B1 · Tom's Guide (John Velasco) · Pixel 11
+- Test: Tom's Guide battery drain test (per the TG Pro review: 'continuous web browsing over a 5G connection')
+- Conditions: ambient: not stated; location: not stated; brightness: not stated on page; network: 5G (per TG method description in the Pro review)
+- Duration: until empty · Software: not stated · Published: 2026-08-27
+- **Result:** 12h45m (Pixel 10: 13h13m; Galaxy S26 11h28m; iPhone 17 12h47m)
+- "Its average time of 12 hours and 45 minutes is actually a step down from the 13 hours and 13 minutes posted by last year's Pixel 10"
+- https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review
+
+### B2 · Tom's Guide (Tom Pritchard) · Pixel 11 Pro and Pro XL
+- Test: Custom battery test: continuous web browsing over 5G
+- Conditions: ambient: not stated; location: not stated; brightness: not stated on page; network: 5G
+- Duration: until empty · Software: not stated · Published: 2026-08-19
+- **Result:** Pro 13h25m (Pixel 10 Pro 13h43m); Pro XL 14h28m (Pixel 10 Pro XL 14h10m; S26 Ultra 16h10m; iPhone 17 Pro Max 17h54m)
+- "our custom battery test, which involves continuous web browsing over a 5G connection"
+- Note: Android Central's Pro review uses 'Future Labs' data (same parent company) and reports 'near-identical battery life' to Pixel 10 Pro: likely the same lab runs, not an independent confirmation.
+- https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review
+
+### B3 · PCMag (Florence Ion) · Pixel 11 (and Pixel 11 Pro figure quoted)
+- Test: Battery rundown: YouTube streaming over Wi-Fi at full brightness
+- Conditions: ambient: not stated; location: not stated; brightness: full brightness; network: Wi-Fi
+- Duration: until empty · Software: not stated · Published: 2026-08-25
+- **Result:** Pixel 11 19h13m; Pixel 11 Pro 'exactly 13 hours'
+- "which involves streaming a YouTube video over Wi-Fi with the screen set to full brightness"
+- "That's more than six hours longer than the Pixel 11 Pro"
+- Note: PCMag attributes the gap to the base model's less power-hungry display; this full-brightness gap is not seen in other outlets' same-test Pixel 11 vs Pro comparisons (B1/B2, B5).
+- https://www.pcmag.com/reviews/google-pixel-11
+
+### B4 · The Guardian (Samuel Gibbs) · Pixel 11 / 11 Pro / 11 Pro XL
+- Test: Real-world use, time between charges
+- Conditions: ambient: not stated; location: UK; brightness: not stated; network: 'a mix of 5G and wifi'
+- Duration: multi-day · Software: Android 17 (build not stated) · Published: 2026-09-07/10/21
+- **Result:** Pixel 11: ~54 h of light use with 7+ h screen time; 11 Pro: 'just shy of two days' with ~7 h screen; 11 Pro XL: 'just about two days' with 6+ h screen ('slightly short of last year's XL model').
+- "lasting about 54 hours of light use between charges"
+- "actively using the screen for more than seven hours"
+- "just shy of two days"
+- https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android ; https://www.theguardian.com/technology/2026/sep/10/pixel-11-pro-review-googles-best-pocket-camera-goes-customisable ; https://www.theguardian.com/technology/2026/sep/21/pixel-11-pro-xl-review-google-big-screen-superphone-camera-battery
+
+### B5 · Android Headlines (Diaz; Maxham) · Pixel 11; Pixel 11 Pro
+- Test: 24-hour YouTube video loop from 100% to ~1%, after topping up ~1 h
+- Conditions: ambient: not stated; location: not stated; brightness: 'just shy of 200 lux using a lux meter' (Pro review: 'around 200lux (typically about 80-90% brightness'); network: not stated
+- Duration: until ~1% · Software: Pixel 11: not stated; Pro: Android 17 QPR1 · Published: 2026-09-14 / 2026-08-24
+- **Result:** Pixel 11 22h57m (Pixel 10 22h40m); Pixel 11 Pro 23h20m (Pixel 10 Pro 19h43m). Numbers from the results chart (WebFetch).
+- "make sure the brightness on the display is down to just shy of 200 lux using a lux meter we have"
+- "We let this video play until the phone is down to about 1%"
+- https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html ; https://www.androidheadlines.com/google-pixel-11-pro-review
+
+### B6 · GSMArena · Pixel 11 Pro XL; Pixel 11
+- Test: GSMArena Active Use Score test suite
+- Conditions: ambient: not stated; location: not stated; brightness: not stated on the review page; network: not stated
+- Duration: suite · Software: Android 17 (XL); Pixel 11 on Sept 1 2026 patch · Published: 2026-09-04 / 2026-09-15
+- **Result:** Pro XL Active Use Rating 15:45h, 'a notable increase over the Pixel 10 Pro XL'. Pixel 11: 'does better than its Pixel 10 predecessor in every one of our individual tests' (score not in page text).
+- "earned an Active Use Rating of 15:45h"
+- "It does better than its Pixel 10 predecessor in every one of our individual tests"
+- https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p3.php ; https://www.gsmarena.com/google_pixel_11-review-3000p3.php
+
+### B7 · Tech Advisor (Anyron Copeman; Luke Baker) · Pixel 11 Pro; Pixel 11 Pro Fold
+- Test: PCMark for Android battery test
+- Conditions: ambient: not stated; location: UK; brightness: Fold: 'screen set to suggested 200 nits brightness'; Pro: not stated; network: not stated
+- Duration: until empty · Software: Android 17 (build not stated) · Published: 2026-09-18 / 2026-08-19
+- **Result:** Pro 14h49m; Fold 13h12m (beat Pixel 10 Pro Fold by 11 min, 'within the margin of error'). Pro reviewer also reports '10-15%' overnight standby drain.
+- "PCMark 3.1 for Android battery test: 14 h 49 min"
+- "screen set to suggested 200 nits brightness"
+- https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html ; https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html
+
+### B8 · Engadget (Sam Rutherford) · Pixel 11 Pro Fold
+- Test: Local video rundown on the exterior (cover) display
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: local file (no network needed)
+- Duration: until empty · Software: not stated · Published: 2026-08-19
+- **Result:** 27h09m (Razr Fold 31:00, Z Fold 8 28:14, Z Fold 8 Ultra 32:11)
+- "our local video rundown test. When using the phone's exterior display, the P11PF lasted 27 hours and nine minutes"
+- https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/
+
+### B9 · TechRadar (Lance Ulanoff) · Pixel 11 Pro Fold
+- Test: Labs rundown with 'screen smoothness on' + intermittent real use
+- Conditions: ambient: not stated; location: New York; brightness: not stated; network: not stated
+- Duration: not stated · Software: Android 17 (build not stated) · Published: 2026-08-20
+- **Result:** Lab ~12 h; intermittent use 24+ h
+- "Our harsher Labs-based battery run-down test (with screen smoothness on) recorded about 12 hours"
+- https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review
+
+### B10 · Tom's Guide (John Velasco) · Pixel 11 Pro Fold
+- Test: TG custom battery drain test
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated
+- Duration: until empty · Software: not stated · Published: 2026-08-19
+- **Result:** 12h31m (Pixel 10 Pro Fold 12h16m; Razr Fold 14h44m; Z Fold 8 Ultra 14h33m)
+- "In our custom battery drain test, the Pixel 11 Pro Fold clocks an average time of 12 hours and 31 minutes"
+- https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review
+
+### B11 · CNET (Mike Sorrentino) · Pixel 11
+- Test: 45-min mixed endurance test; 3-hour YouTube stream at max brightness
+- Conditions: ambient: not stated; location: New York (photo walks); brightness: max (YouTube test); network: not stated
+- Duration: 45 min; 3 h · Software: not stated · Published: 2026-08-21
+- **Result:** 45-min test 100%->95% ('roughly equivalent to last year’s Pixel 10'); 3-h YouTube 100%->81% (slightly more drain than Galaxy S26 and iPhone 17). Daily: ended days with 40-50%.
+- "In our 45-minute endurance test, the Pixel 11’s battery depleted from 100% to 95%"
+- "During our 3-hour YouTube streaming test held at maximum display brightness, the Pixel 11 depleted from 100% to 81%"
+- https://www.cnet.com/tech/mobile/google-pixel-11-review/
+
+### B12 · Android Authority (Snyder; Maring; Triggs) · Pixel 11; Pixel 11 Pro/XL; Fold
+- Test: Real-world SOT + five internal battery benchmarks (Pro XL) + internal-display-only rival tests (Fold)
+- Conditions: ambient: not stated; location: Phoenix (Snyder); brightness: not stated; network: Pro: varies with '5G' time
+- Duration: not stated · Software: not stated · Published: 2026-09-24 / 09-05 / 09-11
+- **Result:** Pixel 11: 5+ h SOT using ~75% battery. 11 Pro: 4.5 to 6+ h SOT, ~20% left; Pro XL beats Pixel 10 Pro XL in 4 of 5 benchmarks. Fold: loses rival camera-capture and Zoom battery tests run on the internal display only.
+- "I regularly enjoyed more than five hours of screen-on time while using about 75% of my battery"
+- "the Pixel 11 Pro XL beats the Pixel 10 Pro XL in all but one of our five battery benchmarks"
+- "these are deliberately punishing tests conducted with the internal display exclusively"
+- https://www.androidauthority.com/google-pixel-11-review-3709371/ ; https://www.androidauthority.com/google-pixel-11-pro-review-3703549/ ; https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/
+
+### B13 · Other real-world reports · various
+- Test: Anecdotal screen-on time / time to bedtime
+- Conditions: ambient: not stated; location: not stated; brightness: not stated; network: not stated
+- Duration: not stated · Software: not stated · Published: various
+- **Result:** 9to5 Pixel 11: 'expect six hours as a minimum'; Engadget Pixel 11: Sat 8AM to Sun 7PM; Android Headlines Pixel 11: 6:30am-11pm ending ~36%; Android Police Pro: 4-6 h SOT, ~two days; Digital Trends Pro: 5-6 h SOT, 'I would not consider it a two-day phone'; Fold: Droid Life 3-5.5 h SOT, BGR 5-6 h SOT, 9to5 4-6 h SOT.
+- "expect six hours as a minimum if you have mixed use"
+- "I would not consider it a two-day phone"
+- "Battery observations are based on mixed real-world use rather than an isolated rundown test"
+- https://9to5google.com/2026/08/19/pixel-11-initial-review/ ; https://www.digitaltrends.com/phones/google-pixel-11-pro-review/
+
+## Brightness
+
+### D0 · Google spec (lineup.json; GSMArena spec pages) · all
+- Test: Manufacturer rating
+- Duration: - · Software: - · Published: -
+- **Result:** Pixel 11: 2,000 nits HBM / 3,000 nits peak. Pixel 11 Pro and Pro XL: 2,400 HBM / 3,600 peak. Fold: 3,600 peak on both screens.
+- "Google says the Pixel 11 can output 2,000 nits when the whole display is lit up and 3,000 nits peak"
+- https://www.gsmarena.com/google_pixel_11-review-3000p3.php
+
+### D1 · Tom's Guide · Pixel 11; Pro; Pro XL; Fold (main display)
+- Test: 'lab testing' peak brightness; window size, mode and instrument not stated on page
+- Conditions: ambient: not stated; mode: not stated; window: not stated
+- Duration: - · Software: not stated · Published: 2026-08-19/27
+- **Result:** Pixel 11 2,480 (Pixel 10 2,333); Pro 2,860; Pro XL 2,877 ('brightest phone we ever tested'); Fold main display 2,982
+- "This OLED panel reaches a peak brightness of 2,480 nits"
+- "the Pixel 11 Pro XL has reclaimed that title, with peak brightness of 2,877 nits"
+- "reaching a blinding peak brightness of 2,982 nits on its main 8-inch Super Actua Flex display"
+- https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review ; https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review ; https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review
+
+### D2 · GSMArena · Pixel 11; Pixel 11 Pro XL (Pixel 11 Pro manual figure from the same table)
+- Test: Standardised white-pattern test: manual 75% fill, auto 75% fill, peak auto 10% fill
+- Conditions: ambient: not stated; mode: manual and auto reported separately; window: 75% and 10%
+- Duration: - · Software: Android 17 · Published: 2026-09-15 / 2026-09-04
+- **Result:** Pixel 11: manual 1,307; auto ~2,100 (75%); peak ~2,800 (10%), 'Pretty much exactly what the Pixel 10 managed'. Pro XL: manual 1,286; auto 2,333; peak 3,118 (10%), 'on par with what the Pixel 10 Pro XL offers'. Pixel 11 Pro manual 1,251.
+- "got around 2,100 nits out of the Pixel 11 in a 75% window in auto mode and a peak of around 2,800 nits in a 10% window"
+- "We measured 2,333 nits of max automatic brightness"
+- "The peak brightness with a 10% white patch was 3,118 nits"
+- https://www.gsmarena.com/google_pixel_11-review-3000p3.php ; https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p3.php
+
+### D3 · Tech Advisor (Anyron Copeman) · Pixel 11 Pro
+- Test: Reviewer measurement 'at max' (mode/window/instrument not stated)
+- Conditions: ambient: UK heatwave sun (visibility comment); mode: not stated; window: not stated
+- Duration: - · Software: not stated · Published: 2026-09-18
+- **Result:** 950 nits
+- "with my recorded 950 nits at max"
+- Note: 950 is close to a manual-mode figure (GSMArena manual ~1,250-1,310), not a peak/HDR figure; not comparable to 3,600.
+- https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html
+
+## Charging
+
+### C1 · Pixel 11 (30W): several outlets · Pixel 11
+- Test: Wired charge from empty
+- Conditions: charger: varies (see result)
+- Duration: - · Software: - · Published: -
+- **Result:** Google claim 55% in 30 min (per GSMArena/AH). TG: 27%/15 min, 52%/30 min ('standard charger'). Guardian: 53%/30 min, <90 min to full ('30W or greater power adaptor'). GSMArena: 'almost 60%' in 30 min, full 1h20m (PD 3.0/PPS). PCMag: 50%/30 min, 90 min to full on 'a variable 22-25W charging brick'. Android Headlines: full 1h38m (charger not stated for base review).
+- "reaching just 27% in 15 minutes and 52% after 30 minutes using a standard charger"
+- "packing almost 60% charge in thirty minutes. A full charge takes an hour and twenty minutes"
+- "It took exactly 90 minutes to charge to 100% on a variable 22-25W charging brick"
+- https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review ; https://www.gsmarena.com/google_pixel_11-review-3000p3.php ; https://www.pcmag.com/reviews/google-pixel-11 ; https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android
+
+### C2 · Pixel 11 Pro (30W): several outlets · Pixel 11 Pro
+- Test: Wired charge from empty
+- Conditions: charger: varies
+- Duration: - · Software: - · Published: -
+- **Result:** TG and Android Central (both Future): 27%/15, 51%/30 (45W) - same data. Tech Advisor: 26%/15, 53%/30 ('supplied charger', though no charger ships in box). Guardian: 54%/30, ~90 min. Android Police: best 60%/30 'with my Anker charger', 90 min full. Android Authority: 86 min full (Pixel 10 Pro 87). Android Headlines: 1h18m with 'Google’s 67W USB-C charger'. TechRadar on 45W adapter: Extreme Charging ON 25%/15, 86%/60, <90 min; OFF 24%/15, 71%/60, 1h45m.
+- "15-minute charge (45W) 27% 27% 33% 27%"
+- "The best I achieved with my Anker charger was 60%"
+- "the 11 Pro taking 86 minutes to charge from 0-100%"
+- "we used Google’s 67W USB-C charger that is made for the Pixel"
+- "At the 15-minute mark, the 11 Pro reached 25%. At an hour, it was at 86%"
+- Note: Android Police quotes Google as saying 75% in 30 minutes for the Pro; Digital Trends' spec box says 'Up to 55% in about 30 minutes with 30W+ PPS charger'. The 75% figure is Google's Pro XL claim; treat AP's attribution as unverified.
+- https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review ; https://www.androidpolice.com/google-pixel-11-pro-review/ ; https://www.androidauthority.com/google-pixel-11-pro-review-3703549/ ; https://www.androidheadlines.com/google-pixel-11-pro-review ; https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review
+
+### C3 · Pixel 11 Pro XL (45W): several outlets · Pixel 11 Pro XL
+- Test: Wired charge from empty
+- Conditions: charger: varies; Android Authority: full speed needs a 21V PPS charger
+- Duration: - · Software: - · Published: -
+- **Result:** Google claim 75% in 30 min. GSMArena (Google 67W, PD/AVS/PPS): 41%/15, 72%/30, 63 min full, ~39.7W peak draw. Android Authority: 64 min full. TG / Android Central (Future, 45W): 27%/15, 54%/30. Henry Burrell (Trusted Reviews and Tech Advisor, Belkin 45W): 21%/15, 37%/30. Guardian: ~90 min ('45W or greater'). Stuff: 'around an hour'.
+- "We performed all our tests using Google's 67W dual-port charger, which supports USB Power Delivery, AVS, and PPS"
+- "It went from 1% to 41% in 15 minutes and reached 72% after 30 minutes"
+- "You still need a very specific 21V PPS charger to achieve full charging throughput"
+- "since it doesn’t have 21V PPS, it topped out at 25W"
+- "Charging with Belkin 45W charger from 0% in 30 minutes: 37%"
+- https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p3.php ; https://www.androidauthority.com/google-pixel-11-pro-review-3703549/ ; https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl ; https://www.techadvisor.com/article/3233198/google-pixel-11-pro-xl-review.html
+
+### C4 · Pixel 11 Pro Fold (30W) · Pixel 11 Pro Fold
+- Test: Wired charge from empty
+- Conditions: charger: TG 'compatible wired adapter'; Tech Advisor Ugreen Nexode 200W; AA not stated
+- Duration: - · Software: - · Published: -
+- **Result:** TG 29%/15, 56%/30 (Pixel 10 Pro Fold 28%/58%). Tech Advisor 28%/15, 57%/30. Android Authority 80 min to full vs 52 min Razr Fold.
+- "it reachess 29% in 15 minutes and climbs to 56% after 30 minutes"
+- "Charging with Ugreen Nexode 200W from 0% in 30 minutes – 57%"
+- "taking an agonizing 80 minutes to reach full capacity compared with just 52 minutes for the excellent Motorola Razr Fold"
+- https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review ; https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html ; https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/
+

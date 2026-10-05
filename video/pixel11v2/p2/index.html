@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p2</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p2" data-start="0" data-width="1920" data-height="1080" data-duration="54.636">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <div id="hostbar"></div>
+      <audio id="p2-voice" src="voice.wav" data-start="0" data-duration="54.636" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p2","duration":54.636,"audio":"voice/p2.wav","lines":[{"id":"p2-01","speaker":"maya","text":"So what changed from the Pixel 10? Start with what Google says.","start":0.5,"end":4.276},{"id":"p2-02","speaker":"leo","text":"Tensor G6: Google claims 50% more AI compute, 25% faster browsing and 15% faster app launches.","start":4.596,"end":15.157},{"id":"p2-03","speaker":"maya","text":"Every model now starts at 256GB, and wireless charging goes to 25 watts with magnets.","start":15.477,"end":22.442},{"id":"p2-04","speaker":"leo","text":"The base model's camera bar is 40% thinner. The Pros get brighter, tougher screens.","start":22.762,"end":28.45},{"id":"p2-05","speaker":"maya","text":"But the Pro and Pro XL now start with 12GB of RAM, down from 16. Ten of 15 Pro outlets criticised that.","start":28.77,"end":37.537},{"id":"p2-06","speaker":"leo","text":"And HiLight, the new notification light on the Pros. Thirteen of 15 outlets said it barely does anything.","start":37.857,"end":45.474},{"id":"p2-07","speaker":"maya","text":"As of October 5th it still only lights up for favourite contacts' calls and Gemini. A beta adds messages.","start":45.794,"end":53.736}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      window.__timelines["p2"] = tl;
+    </script>
+  </body>
+</html>

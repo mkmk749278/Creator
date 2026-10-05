@@ -1,0 +1,724 @@
+{
+ "generated": "2026-10-05",
+ "method": "Rows built from consensus.json + fold_and_lineup.json; every URL re-fetched 2026-10-05 (curl; Android Headlines/Digital Trends blocked curl, so earlier same-session copies plus WebFetch were used). Dates from page datePublished metadata. Software version recorded only if the page states it.",
+ "totals": {
+  "review_documents_counted": 35,
+  "distinct_outlets": 20,
+  "by_scope": {
+   "base": {
+    "documents": 10,
+    "outlets": 10
+   },
+   "pro": {
+    "documents": 16,
+    "outlets": 15
+   },
+   "fold": {
+    "documents": 9,
+    "outlets": 9
+   }
+  },
+  "per_model": {
+   "Pixel 11": {
+    "documents": 10,
+    "outlets": 10,
+    "outlet_names": [
+     "9to5Google",
+     "Android Authority",
+     "Android Central",
+     "Android Headlines",
+     "CNET",
+     "Engadget",
+     "GSMArena",
+     "PCMag",
+     "The Guardian",
+     "Tom's Guide"
+    ]
+   },
+   "Pixel 11 Pro": {
+    "documents": 11,
+    "outlets": 11,
+    "outlet_names": [
+     "Android Authority",
+     "Android Central",
+     "Android Headlines",
+     "Android Police",
+     "Digital Trends",
+     "Engadget",
+     "Gizmodo",
+     "Tech Advisor",
+     "TechRadar",
+     "The Guardian",
+     "Tom's Guide"
+    ]
+   },
+   "Pixel 11 Pro XL": {
+    "documents": 9,
+    "outlets": 9,
+    "outlet_names": [
+     "Android Authority",
+     "Android Central",
+     "GSMArena",
+     "Gizmodo",
+     "Stuff",
+     "TechCrunch",
+     "The Guardian",
+     "Tom's Guide",
+     "Trusted Reviews"
+    ]
+   },
+   "Pixel 11 Pro Fold": {
+    "documents": 9,
+    "outlets": 9,
+    "outlet_names": [
+     "9to5Google",
+     "Android Authority",
+     "Android Central",
+     "BGR",
+     "Droid Life",
+     "Engadget",
+     "Tech Advisor",
+     "TechRadar",
+     "Tom's Guide"
+    ]
+   }
+  },
+  "joint_pro_and_pro_xl_documents": [
+   "tgpro",
+   "aapro",
+   "acpro",
+   "giz"
+  ],
+  "outlets_with_more_than_one_document": {
+   "9to5Google": [
+    "9to5",
+    "f9to5"
+   ],
+   "Android Authority": [
+    "aa11",
+    "aapro",
+    "faa"
+   ],
+   "Android Central": [
+    "ac11",
+    "acpro",
+    "fac"
+   ],
+   "Android Headlines": [
+    "ah11",
+    "ahpro"
+   ],
+   "Engadget": [
+    "eng11",
+    "engpro",
+    "feng"
+   ],
+   "GSMArena": [
+    "gsm11",
+    "gsmxl"
+   ],
+   "Tech Advisor": [
+    "tapro",
+    "fta"
+   ],
+   "TechRadar": [
+    "trpro",
+    "ftr"
+   ],
+   "The Guardian": [
+    "gu11",
+    "gupro",
+    "guxl"
+   ],
+   "Tom's Guide": [
+    "tg11",
+    "tgpro",
+    "ftg"
+   ]
+  },
+  "excluded_documents": 1,
+  "note": "Previous files said 24 reviews / 17 outlets: that counted only consensus.json (slab phones). The full research set is 35 documents from 20 outlets: 24 slab reviews in consensus.json + 2 slab reviews only in fold_and_lineup.json (Android Central Pixel 11, Digital Trends Pixel 11 Pro) + 9 Fold reviews."
+ },
+ "corrections": [
+  "The Guardian Pixel 11 Pro URL in consensus.json (.../pixel-11-review-googles-best-pocket-camera-goes-customisable) returns 404; correct URL is .../sep/10/pixel-11-pro-review-googles-best-pocket-camera-goes-customisable.",
+  "Dates corrected from page metadata: TechRadar Pixel 11 Pro 2026-09-03 (consensus.json said '2026-08'); Android Central Pixel 11 Pro 2026-08-19; GSMArena Pixel 11 2026-09-15, Pro XL 2026-09-04.",
+  "Tom's Guide, TechRadar and Android Central are all Future plc titles (pages credit 'Future'; Android Central cites 'our parent company's Future Labs'). Tom's Guide and Android Central report identical Pro/Pro XL charging figures (51%/54% in 30 min): treat their lab numbers as ONE measurement, not two.",
+  "Henry Burrell's Pro XL review appears on both Trusted Reviews and Tech Advisor; counted once."
+ ],
+ "documents": [
+  {
+   "id": "tg11",
+   "outlet": "Tom's Guide",
+   "reviewer": "John Velasco",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-review",
+   "published": "2026-08-27",
+   "review_type": "full review",
+   "software_version": "not stated",
+   "published_score": "3/5",
+   "verdict": "Lackluster upgrades that cost $100 more; capable AI phone but weak value vs Pixel 10.",
+   "scope": "base"
+  },
+  {
+   "id": "aa11",
+   "outlet": "Android Authority",
+   "reviewer": "Brady Snyder",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.androidauthority.com/google-pixel-11-review-3709371/",
+   "published": "2026-09-24",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "7/10",
+   "verdict": "Bigger upgrade than it looks, best software, but Tensor G6 overheating/stutter and gaming hold it back.",
+   "scope": "base"
+  },
+  {
+   "id": "gsm11",
+   "outlet": "GSMArena",
+   "reviewer": "GSMArena team (no byline)",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+   "published": "2026-09-15",
+   "review_type": "full review (6-page lab review)",
+   "software_version": "Android 17; 'didn't take long for it to receive an OTA, putting it on the September 1 2026 security patch'",
+   "published_score": "none published",
+   "verdict": "Very good, dependable phone, but very little feels new and $899 is hard to justify vs competition.",
+   "scope": "base"
+  },
+  {
+   "id": "9to5",
+   "outlet": "9to5Google",
+   "reviewer": "Damien Wilde",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://9to5google.com/2026/08/19/pixel-11-initial-review/",
+   "published": "2026-08-19",
+   "review_type": "INITIAL review (about one week of use; title says 'Initial Review')",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "none published",
+   "verdict": "Adequate but modest update that 'probably could have been a software update'.",
+   "scope": "base"
+  },
+  {
+   "id": "eng11",
+   "outlet": "Engadget",
+   "reviewer": "Nathan Ingraham",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.engadget.com/2240042/google-pixel-11-review/",
+   "published": "2026-08-19",
+   "review_type": "full review; battery lab test not yet run at publication ('will update this review')",
+   "software_version": "not stated",
+   "published_score": "92/100 (9.2/10 in page schema)",
+   "verdict": "A lot of phone for a little more money; iterative but one of the best smartphones on the market.",
+   "scope": "base"
+  },
+  {
+   "id": "ah11",
+   "outlet": "Android Headlines",
+   "reviewer": "Justin Diaz",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.androidheadlines.com/2026/09/google-pixel-11-review-a-smart-phone-for-smart-buyers.html",
+   "published": "2026-09-14",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "none published",
+   "verdict": "A smart phone for smart buyers: strong case over the Pro models on savings alone.",
+   "scope": "base"
+  },
+  {
+   "id": "cnet11",
+   "outlet": "CNET",
+   "reviewer": "Mike Sorrentino",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.cnet.com/tech/mobile/google-pixel-11-review/",
+   "published": "2026-08-21",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "9.0/10, Editors' Choice",
+   "verdict": "Most compelling case yet to switch from an iPhone; hard to see why you'd spend more on a Pro.",
+   "scope": "base"
+  },
+  {
+   "id": "gu11",
+   "outlet": "The Guardian",
+   "reviewer": "Samuel Gibbs",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.theguardian.com/technology/2026/sep/07/pixel-11-review-google-flagship-phones-battery-cameras-android",
+   "published": "2026-09-07",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "none published",
+   "verdict": "Sets the bar for standard flagships; the best phone you can get under GBP 900.",
+   "scope": "base"
+  },
+  {
+   "id": "pcm11",
+   "outlet": "PCMag",
+   "reviewer": "Florence Ion",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.pcmag.com/reviews/google-pixel-11",
+   "published": "2026-08-25",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "4.0/5 (Excellent)",
+   "verdict": "Best value of the Pixel 11 lineup and PCMag's top pick among them.",
+   "scope": "base"
+  },
+  {
+   "id": "ac11",
+   "outlet": "Android Central",
+   "reviewer": "Derrek Lee",
+   "models": [
+    "Pixel 11"
+   ],
+   "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-review",
+   "published": "2026-08-29",
+   "review_type": "full review",
+   "software_version": "not stated",
+   "published_score": "4.5/5 (page structured data)",
+   "verdict": "A fun blend of social media and AI magic.",
+   "scope": "base"
+  },
+  {
+   "id": "tgpro",
+   "outlet": "Tom's Guide",
+   "reviewer": "Tom Pritchard",
+   "models": [
+    "Pixel 11 Pro",
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-pro-xl-review",
+   "published": "2026-08-19",
+   "review_type": "full review (joint Pro + Pro XL)",
+   "software_version": "not stated",
+   "published_score": "3/5",
+   "verdict": "Not bad phones, but minimal upgrades, mediocre battery and weak performance; a Pixel 10 Pro may be the better buy.",
+   "scope": "pro"
+  },
+  {
+   "id": "aapro",
+   "outlet": "Android Authority",
+   "reviewer": "Joe Maring",
+   "models": [
+    "Pixel 11 Pro",
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://www.androidauthority.com/google-pixel-11-pro-review-3703549/",
+   "published": "2026-09-05",
+   "review_type": "full review (joint; reviewer mainly used the 11 Pro)",
+   "software_version": "not stated (mentions Android 17 QPR2 betas as future)",
+   "published_score": "9/10",
+   "verdict": "Imperfect (HiLight, Proactive Assistance, charging) but absolutely worth buying for cameras, build and software.",
+   "scope": "pro"
+  },
+  {
+   "id": "gsmxl",
+   "outlet": "GSMArena",
+   "reviewer": "GSMArena team (no byline)",
+   "models": [
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://www.gsmarena.com/google_pixel_11_pro_xl-review-2994p6.php",
+   "published": "2026-09-04",
+   "review_type": "full review (6-page lab review), performance section updated Sept 5 after re-test",
+   "software_version": "Android 17 'out of the box'; Sept 5 update cites 'last-minute software updates' (build not stated)",
+   "published_score": "none published",
+   "verdict": "Very good, solid phone worth considering, but at this price check the alternatives first.",
+   "scope": "pro"
+  },
+  {
+   "id": "trxl",
+   "outlet": "Trusted Reviews",
+   "reviewer": "Henry Burrell",
+   "models": [
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://www.trustedreviews.com/reviews/google-pixel-11-pro-xl",
+   "published": "2026-08-24",
+   "review_type": "full review (UK-based; US-only Gemini features not testable)",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "4/5",
+   "verdict": "Big non-folding Pixel reaching maturity; lovely design and display, very good cameras, gaming poor.",
+   "scope": "pro"
+  },
+  {
+   "id": "tcxl",
+   "outlet": "TechCrunch",
+   "reviewer": "Ivan Mehta",
+   "models": [
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/",
+   "published": "2026-08-22",
+   "review_type": "full review after ~5 days ('I've just had the phone for five days')",
+   "software_version": "not stated",
+   "published_score": "none published",
+   "verdict": "Snappier cameras and great Rambler can't hide an iterative upgrade.",
+   "scope": "pro"
+  },
+  {
+   "id": "acpro",
+   "outlet": "Android Central",
+   "reviewer": "Nicholas Sutrich",
+   "models": [
+    "Pixel 11 Pro",
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-review",
+   "published": "2026-08-19",
+   "review_type": "full review (joint); battery/charging data credited to 'our parent company's Future Labs'",
+   "software_version": "not stated",
+   "published_score": "3/5",
+   "verdict": "Great new features (Magic Capture, Rambler) but less RAM, weak GPU, low PWM and higher price make it hard to recommend.",
+   "scope": "pro"
+  },
+  {
+   "id": "trpro",
+   "outlet": "TechRadar",
+   "reviewer": "Jason Cipriani",
+   "models": [
+    "Pixel 11 Pro"
+   ],
+   "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-review",
+   "published": "2026-09-03",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "4/5",
+   "verdict": "More of the same, and that's okay: refined, not a must-have for recent Pixel owners.",
+   "scope": "pro"
+  },
+  {
+   "id": "engpro",
+   "outlet": "Engadget",
+   "reviewer": "Cherlynn Low",
+   "models": [
+    "Pixel 11 Pro"
+   ],
+   "url": "https://www.engadget.com/2240038/google-pixel-11-pro-review-gemini-ai-camera-samples/",
+   "published": "2026-08-19",
+   "review_type": "full review; battery lab test not yet run at publication",
+   "software_version": "not stated",
+   "published_score": "9/10 (page schema)",
+   "verdict": "Very satisfying handset, arguably best Android phone of its size and price, but AI goes too far and value slipped.",
+   "scope": "pro"
+  },
+  {
+   "id": "ahpro",
+   "outlet": "Android Headlines",
+   "reviewer": "Alexander Maxham",
+   "models": [
+    "Pixel 11 Pro"
+   ],
+   "url": "https://www.androidheadlines.com/google-pixel-11-pro-review",
+   "published": "2026-08-24",
+   "review_type": "full review",
+   "software_version": "Android 17 QPR1 'out of the box'",
+   "published_score": "none published",
+   "verdict": "Google finally fixed its biggest problem: cooler thermals, better modem and battery.",
+   "scope": "pro"
+  },
+  {
+   "id": "gupro",
+   "outlet": "The Guardian",
+   "reviewer": "Samuel Gibbs",
+   "models": [
+    "Pixel 11 Pro"
+   ],
+   "url": "https://www.theguardian.com/technology/2026/sep/10/pixel-11-pro-review-googles-best-pocket-camera-goes-customisable",
+   "published": "2026-09-10",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "none published",
+   "verdict": "Google's best pocket camera; one of the very best smaller phones, not a massive upgrade.",
+   "scope": "pro"
+  },
+  {
+   "id": "guxl",
+   "outlet": "The Guardian",
+   "reviewer": "Samuel Gibbs",
+   "models": [
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://www.theguardian.com/technology/2026/sep/21/pixel-11-pro-xl-review-google-big-screen-superphone-camera-battery",
+   "published": "2026-09-21",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "none published",
+   "verdict": "Great, massive phone with two-day battery, but falls short of Galaxy S26 Ultra on performance.",
+   "scope": "pro"
+  },
+  {
+   "id": "giz",
+   "outlet": "Gizmodo",
+   "reviewer": "Raymond Wong",
+   "models": [
+    "Pixel 11 Pro",
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://gizmodo.com/google-pixel-11-pro-review-2000800535",
+   "published": "2026-08-19",
+   "review_type": "full review (joint); benchmarks pending at publication; review units had 16GB RAM",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "3.5/5",
+   "verdict": "Still growing into their AI shoes; safe annual upgrades held back by Tensor G6 performance.",
+   "scope": "pro"
+  },
+  {
+   "id": "appro",
+   "outlet": "Android Police",
+   "reviewer": "Andy Boxall",
+   "models": [
+    "Pixel 11 Pro"
+   ],
+   "url": "https://www.androidpolice.com/google-pixel-11-pro-review/",
+   "published": "2026-09-03",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "9/10",
+   "verdict": "Superb camera and software; highly recommended if you ignore the AI fluff.",
+   "scope": "pro"
+  },
+  {
+   "id": "tapro",
+   "outlet": "Tech Advisor",
+   "reviewer": "Anyron Copeman",
+   "models": [
+    "Pixel 11 Pro"
+   ],
+   "url": "https://www.techadvisor.com/article/3236030/google-pixel-11-pro-review.html",
+   "published": "2026-09-18",
+   "review_type": "full review (UK-based)",
+   "software_version": "Android 17 (build/patch not stated); reports many bugs during testing",
+   "published_score": "3.5/5",
+   "verdict": "Technical marvel with incredible camera, but bugs, standby drain and useless HiLight: look elsewhere until updates land.",
+   "scope": "pro"
+  },
+  {
+   "id": "stuffxl",
+   "outlet": "Stuff",
+   "reviewer": "Tom Morgan-Freelander",
+   "models": [
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://www.stuff.tv/review/google-pixel-11-pro-xl-review/",
+   "published": "2026-08-19",
+   "review_type": "full review (UK-based)",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "5/5",
+   "verdict": "Google's best mobile effort to date, though not a huge annual upgrade and HiLight misses.",
+   "scope": "pro"
+  },
+  {
+   "id": "dtpro",
+   "outlet": "Digital Trends",
+   "reviewer": "Vikhyaat Vivek",
+   "models": [
+    "Pixel 11 Pro"
+   ],
+   "url": "https://www.digitaltrends.com/phones/google-pixel-11-pro-review/",
+   "published": "2026-09-15",
+   "review_type": "full review; review unit 12GB/256GB; 'Battery observations are based on mixed real-world use rather than an isolated rundown test'",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "8/10 (page structured data)",
+   "verdict": "Won me over despite Tensor G6 gaming and battery weaknesses.",
+   "scope": "pro"
+  },
+  {
+   "id": "f9to5",
+   "outlet": "9to5Google",
+   "reviewer": "Ben Schoon",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://9to5google.com/2026/08/26/google-pixel-11-pro-fold-review/",
+   "published": "2026-08-26",
+   "review_type": "full review",
+   "software_version": "not stated",
+   "published_score": "none published (page schema 4, not in article text)",
+   "verdict": "Pretty good foldable that only just keeps up with rivals; battery the main weak spot.",
+   "scope": "fold"
+  },
+  {
+   "id": "ftr",
+   "outlet": "TechRadar",
+   "reviewer": "Lance Ulanoff",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://www.techradar.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+   "published": "2026-08-20",
+   "review_type": "full review (unit 'arrived late', shortened testing)",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "4/5",
+   "verdict": "Best folding Pixel yet, but doesn't beat Samsung's best; not enough new to upgrade from Pixel 10 Pro Fold.",
+   "scope": "fold"
+  },
+  {
+   "id": "ftg",
+   "outlet": "Tom's Guide",
+   "reviewer": "John Velasco",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-pixel-11-pro-fold-review",
+   "published": "2026-08-19",
+   "review_type": "full review",
+   "software_version": "not stated",
+   "published_score": "4/5 (page structured data)",
+   "verdict": "Falling behind the foldable curve: neat AI and durable design, but trailing Tensor G6 and negligible battery gains.",
+   "scope": "fold"
+  },
+  {
+   "id": "fdl",
+   "outlet": "Droid Life",
+   "reviewer": "Kellen",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://www.droid-life.com/2026/09/17/pixel-11-pro-fold-review-good-foldable-thats-feeling-dated/",
+   "published": "2026-09-17",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "none published",
+   "verdict": "Good foldable that's feeling dated: great displays and hinge, but heavy, old shape, not-quite-Pro camera.",
+   "scope": "fold"
+  },
+  {
+   "id": "fta",
+   "outlet": "Tech Advisor",
+   "reviewer": "Luke Baker",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://www.techadvisor.com/article/3214796/google-pixel-11-pro-fold-review.html",
+   "published": "2026-08-19",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "4/5",
+   "verdict": "Behind the times: lovely and well built, but slower, thicker, bigger crease and smaller battery than rivals.",
+   "scope": "fold"
+  },
+  {
+   "id": "fbgr",
+   "outlet": "BGR",
+   "reviewer": "Connor Jewiss",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://www.bgr.com/2264491/pixel-11-pro-fold-review/",
+   "published": "2026-09-21",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "none published",
+   "verdict": "Won me over in the end: well-rounded foldable; battery, charging and crease are the weak points.",
+   "scope": "fold"
+  },
+  {
+   "id": "feng",
+   "outlet": "Engadget",
+   "reviewer": "Sam Rutherford",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://www.engadget.com/2240020/google-pixel-11-pro-fold-review-more-but-not-enough/",
+   "published": "2026-08-19",
+   "review_type": "full review",
+   "software_version": "Android 17 (build/patch not stated)",
+   "published_score": "8.5/10",
+   "verdict": "Doing more but not quite enough: best cameras and smartest software among foldables, but chunky and outclassed.",
+   "scope": "fold"
+  },
+  {
+   "id": "faa",
+   "outlet": "Android Authority",
+   "reviewer": "Robert Triggs",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://www.androidauthority.com/google-pixel-11-pro-fold-review-3702073/",
+   "published": "2026-09-11",
+   "review_type": "full review",
+   "software_version": "not stated; notes 'a subsequent update appears to have resolved the glitching' (Genshin)",
+   "published_score": "7/10 (page structured data)",
+   "verdict": "Beautifully built, but $1,899 hard to justify; buy the Pixel 11 Pro XL instead.",
+   "scope": "fold"
+  },
+  {
+   "id": "fac",
+   "outlet": "Android Central",
+   "reviewer": "Nicholas Sutrich",
+   "models": [
+    "Pixel 11 Pro Fold"
+   ],
+   "url": "https://www.androidcentral.com/phones/google-pixel/google-pixel-11-pro-fold-review",
+   "published": "2026-08-29",
+   "review_type": "full review",
+   "software_version": "not stated",
+   "published_score": "3.5/5 (page structured data)",
+   "verdict": "Solid upgrade over the Pixel 10 Pro Fold, but Tensor lags, battery disappoints and PWM is poor.",
+   "scope": "fold"
+  }
+ ],
+ "excluded": [
+  {
+   "outlet": "Tech Advisor",
+   "reviewer": "Henry Burrell",
+   "models": [
+    "Pixel 11 Pro XL"
+   ],
+   "url": "https://www.techadvisor.com/article/3233198/google-pixel-11-pro-xl-review.html",
+   "date": "2026-09-11",
+   "score": "4/5",
+   "reason": "Same reviewer as the Trusted Reviews Pro XL review (identical charging figures 37% in 30 min with a Belkin 45W charger); counted once, under Trusted Reviews."
+  }
+ ],
+ "known_but_not_analysed": [
+  {
+   "outlet": "The Guardian",
+   "doc": "Pixel 11 Pro Fold review",
+   "url": "https://www.theguardian.com/technology/2026/sep/14/pixel-11-pro-fold-review-the-foldable-with-the-best-triple-camera",
+   "reason": "Found as an internal link on 2026-10-05; not in the research set, no claims extracted."
+  },
+  {
+   "outlet": "PCMag",
+   "doc": "Pixel 11 Pro review ('Same Compact Size, Big AI Upgrades')",
+   "url": "(page cached in scratch during earlier research; URL not recorded in research JSON)",
+   "reason": "Fetched earlier but never added to the research set."
+  },
+  {
+   "outlet": "PCMag",
+   "doc": "Pixel 11 Pro XL review ('Unmatched Gemini AI in a Refined Design')",
+   "url": "(as above)",
+   "reason": "Fetched earlier but never added to the research set."
+  },
+  {
+   "outlet": "ITdaily",
+   "doc": "Pixel 11 Pro review",
+   "url": "(as above)",
+   "reason": "Fetched earlier but never added to the research set."
+  },
+  {
+   "outlet": "PhoneArena / Digital Trends (Pixel 11) / CNN Underscored / Mark Ellis / 91mobiles",
+   "doc": "various",
+   "url": "-",
+   "reason": "Blocked (HTTP 403/405/451 or bot challenge) per consensus.json not_reachable."
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p6</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p6" data-start="0" data-width="1920" data-height="1080" data-duration="72.981">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <div id="hostbar"></div>
+      <audio id="p6-voice" src="voice.wav" data-start="0" data-duration="72.981" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p6","duration":72.981,"audio":"voice/p6.wav","lines":[{"id":"p6-01","speaker":"maya","text":"Software. Every Pixel 11 gets seven years of updates, and reviewers called it the cleanest Android.","start":0.5,"end":7.379},{"id":"p6-02","speaker":"leo","text":"The standout new feature is Rambler voice typing. Eleven of 13 Pro outlets praised it.","start":7.699,"end":13.415},{"id":"p6-03","speaker":"maya","text":"And for India: Google says it works in Hindi and other Indian languages, even switching mid-sentence.","start":13.735,"end":19.908},{"id":"p6-04","speaker":"leo","text":"Proactive Assistance is weaker: six of 11 Pro outlets said it rarely shows up. In India it's English only.","start":20.228,"end":27.843},{"id":"p6-05","speaker":"maya","text":"And Gemini doing tasks inside apps for you is US and Korea only right now.","start":28.163,"end":33.047},{"id":"p6-06","speaker":"leo","text":"Daily-use stuff reviewers liked: a fast ultrasonic fingerprint reader, and face unlock that works for banking apps.","start":33.367,"end":41.576},{"id":"p6-07","speaker":"maya","text":"Calls and 5G? The new modem did well in US tests, but no one tested it on Jio, Airtel or Vi.","start":41.896,"end":49.36},{"id":"p6-08","speaker":"leo","text":"Known bug: some routers cause overnight standby drain. Switching the router to Wi-Fi 5 helps.","start":49.68,"end":56.571},{"id":"p6-09","speaker":"maya","text":"Service: one-year warranty, and Google's own service centres in Delhi, Mumbai, Hyderabad and Bangalore.","start":56.891,"end":63.991},{"id":"p6-10","speaker":"leo","text":"Bonus: the Pro, Pro XL and Fold include six months of Google AI Pro. The base model doesn't.","start":64.311,"end":72.081}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      window.__timelines["p6"] = tl;
+    </script>
+  </body>
+</html>

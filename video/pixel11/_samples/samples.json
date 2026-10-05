@@ -1,0 +1,453 @@
+{
+  "generated": "2026-10-05",
+  "scope": "Google-published camera samples / feature demos for the Pixel 11 lineup (launched 12 Aug 2026)",
+  "usage_terms": {
+    "blog_google_image_library": "https://blog.google/press/ (redirects to https://blog.google/image-library/) states: \"Images on this page may be used for publication with credit: 'Source: Google.' For press inquiries, email press@google.com.\" The library currently lists no Pixel 11 assets, so this grant does not clearly cover the images below.",
+    "blog_post_and_store_pages": "No image-usage or licence terms were found on the pixel-11-features blog post or the Google Store product pages. Treat as Google copyright; credit 'Source: Google' on screen and confirm with press@google.com before relying on them.",
+    "store_footnotes": [
+      "camera-res: 'Reflects megapixels for camera sensor. Camera image resolution output may be less when using default settings.'",
+      "pro-zoom: 'Not available for all cameras, apps, or modes. Up to 120x results may vary.'",
+      "selfie-camera: 'Compared to other Pixel phone models. Reflects megapixels for camera sensor. ... Maximum field of view not available in all apps or modes.'"
+    ],
+    "no_simulation_disclaimer": "None of the source pages label these images as simulated or illustrative; none carry a 'shot on <model>' credit either."
+  },
+  "samples": [
+    {
+      "file": "01_instant-night-sight_portrait-under-stars.webp",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/InstantNightSight_Small.width-2000.format-webp.webp",
+      "caption_alt": "alt: \"Instant Night Sight capturing a man posing under the stars\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Section text: 'Instant Night Sight makes low-light photography better than ever on Pixel 11 Pro and Pixel 11 Pro XL.' The image itself is not attributed to a model.",
+      "lens_zoom": "not stated",
+      "mode": "Instant Night Sight (named in alt text)",
+      "processing_feature": "Instant Night Sight",
+      "viewer_questions": [
+        "night",
+        "portrait"
+      ],
+      "kind": "still",
+      "notes": "Largest rendition served (2000w request returns 1500x1987, so this is the uploaded size). Same photo also appears on the Pixel 11 Pro store page with alt 'Perfectly lit portrait of a person at dusk.' (lh3 ...MTyI29...=s0, 1132x1132 crop) and alt 'Perfectly lit portrait of a person at golden hour.' (lh3 ...hRQWAA...=s0, 1132x1416 crop, shown in the 'Instantly vivid night photography' card) - duplicates, not counted again.",
+      "pixels": "1500x1987",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "02_camera-looks-editorial_rock-climbing.webp",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pick_your_aesthetic_with_Camera_.width-1000.format-webp.webp",
+      "caption_alt": "caption: \"A climbing photo, customized with the Editorial Camera Look\" | alt: \"A rock climbing photo edited with Camera Looks\"",
+      "model": "Pixel 11 series (model not stated)",
+      "lens_zoom": "not stated",
+      "mode": "not stated",
+      "processing_feature": "Camera Looks: Editorial",
+      "viewer_questions": [
+        "features",
+        "motion (climber on wall, not explicitly an action shot)"
+      ],
+      "kind": "still",
+      "notes": "Largest rendition in page markup is 1000px wide; no original-file URL exposed. Section is about Pixel 11 Camera Looks; Google does not say which device took it.",
+      "pixels": "1000x1331",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "03_camera-looks-velvet_flower-closeup.webp",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pick_your_aesthetic_with_Camera_.width-1000.format-webp_WCBpwdS.webp",
+      "caption_alt": "caption: \"A close-up of a flower, finished with the Velvet Camera Look\" | alt: \"A flower photo edited with Camera Looks\"",
+      "model": "Pixel 11 series (model not stated)",
+      "lens_zoom": "not stated",
+      "mode": "not stated",
+      "processing_feature": "Camera Looks: Velvet",
+      "viewer_questions": [
+        "features",
+        "daylight"
+      ],
+      "kind": "still",
+      "notes": "1000px max rendition.",
+      "pixels": "1000x750",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "04_camera-looks-editorial_bugs-on-leaf.webp",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pick_your_aesthetic_with_Camera_.width-1000.format-webp_cPmo8Xa.webp",
+      "caption_alt": "caption: \"A detail shot of baby bugs on a leaf, paired with the Editorial Camera Look\" | alt: \"A photo of a leaf with bugs and eggs on it, edited with Camera Looks\"",
+      "model": "Pixel 11 series (model not stated)",
+      "lens_zoom": "not stated",
+      "mode": "not stated",
+      "processing_feature": "Camera Looks: Editorial",
+      "viewer_questions": [
+        "features"
+      ],
+      "kind": "still",
+      "notes": "1000px max rendition. Looks like close-up/macro but Google does not say macro.",
+      "pixels": "1000x749",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "05_camera-looks-editorial_architecture.webp",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pick_your_aesthetic_with_Camera_.width-1000.format-webp_nbOpqas.webp",
+      "caption_alt": "caption: \"An architecture photo, rendered with the Editorial Camera Look\" | alt: \"An architecture photo, edited with Camera Looks\"",
+      "model": "Pixel 11 series (model not stated)",
+      "lens_zoom": "not stated",
+      "mode": "not stated",
+      "processing_feature": "Camera Looks: Editorial",
+      "viewer_questions": [
+        "features",
+        "daylight"
+      ],
+      "kind": "still",
+      "notes": "1000px max rendition.",
+      "pixels": "1000x1331",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "06_camera-looks-velvet_child-on-escalator.webp",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pick_your_aesthetic_with_Camera_.width-1000.format-webp_snUCkTy.webp",
+      "caption_alt": "caption: \"An image of a child, styled with the Velvet Camera Look\" | alt: \"A photo of a child, edited with Camera Looks\"",
+      "model": "Pixel 11 series (model not stated)",
+      "lens_zoom": "not stated",
+      "mode": "not stated",
+      "processing_feature": "Camera Looks: Velvet",
+      "viewer_questions": [
+        "features",
+        "daylight"
+      ],
+      "kind": "still",
+      "notes": "1000px max rendition.",
+      "pixels": "1000x1330",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "07_camera-looks-editorial_clouds-sunset.webp",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pick_your_aesthetic_with_Camera_.width-1000.format-webp_xo5KQcF.webp",
+      "caption_alt": "caption: \"A picture of clouds, processed with the Editorial Camera Look\" | alt: \"A sunset photo, edited with Camera Looks\"",
+      "model": "Pixel 11 series (model not stated)",
+      "lens_zoom": "not stated",
+      "mode": "not stated",
+      "processing_feature": "Camera Looks: Editorial",
+      "viewer_questions": [
+        "features",
+        "backlit/high-contrast sky"
+      ],
+      "kind": "still",
+      "notes": "1000px max rendition.",
+      "pixels": "1000x750",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "08_p11pro-page_50mp-main-section_outfit-portrait.jpg",
+      "page_url": "https://store.google.com/product/pixel_11_pro?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/RdivIdsbMYAEe7gBxx9oyMABBMrxYmd8nESEnljbNV6sh-pLOhg-YTwmkM8Po8ZURUJd01QnCsTZRLcImQkd5DWIZ9kPkAyRQo8=s0",
+      "caption_alt": "alt: \"Crisp, colorful portrait of a person showing off the details in their outfit.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Shown on the Pixel 11 Pro & 11 Pro XL store page; no per-image 'shot on' credit.",
+      "lens_zoom": "not stated (image sits in the card headed '50 MP wide main camera.')",
+      "mode": "not stated",
+      "processing_feature": "not stated",
+      "viewer_questions": [
+        "daylight",
+        "portrait"
+      ],
+      "kind": "still",
+      "notes": "=s0 returns the uploaded file (desktop crop). Mobile crop also exists (lh3 ...OaQTFC...).",
+      "pixels": "2260x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "09_p11pro-page_48mp-telephoto-section_portrait-colorful-wall.jpg",
+      "page_url": "https://store.google.com/product/pixel_11_pro?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/P1hJyI659AZwvYXfj0hxgNogRnL3OD7gM5yQfrACwkn3eX5haN9fZWfj37X9BW11UqZ4dD1T2JwNCwBBcAdMxvZZE0iYqSZafxM=s0",
+      "caption_alt": "alt: \"Perfectly lit photo of a person standing in front of a colorful wall.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Pixel 11 Pro & 11 Pro XL store page; no per-image credit.",
+      "lens_zoom": "not stated (card headed '48 MP telephoto.'; zoom factor not given)",
+      "mode": "not stated",
+      "processing_feature": "not stated",
+      "viewer_questions": [
+        "portrait",
+        "zoom (lens implied by layout only)"
+      ],
+      "kind": "still",
+      "notes": "",
+      "pixels": "1384x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "10_p11pro-page_48mp-ultrawide-section_low-angle-group.jpg",
+      "page_url": "https://store.google.com/product/pixel_11_pro?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/GlH6fjJcWsBtI4H8Lei9nMIXJnpY7uoxVrC_5lrFLkVMo_UH42sC_5Zb3O_qEvxcXp7eYrbzwLdT93RujjAN5raZmMaGLenwM0k=s0",
+      "caption_alt": "alt: \"Low, wide angle photo of a posed group of people.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Pixel 11 Pro & 11 Pro XL store page; no per-image credit.",
+      "lens_zoom": "not stated (card headed '48 MP ultrawide camera.'; alt says 'wide angle')",
+      "mode": "not stated",
+      "processing_feature": "not stated",
+      "viewer_questions": [
+        "daylight",
+        "group"
+      ],
+      "kind": "still",
+      "notes": "",
+      "pixels": "1384x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "11_p11pro-page_42mp-front-section_selfie.jpg",
+      "page_url": "https://store.google.com/product/pixel_11_pro?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/3wugRGssEUVNlK_3UNt3hr95Vr3lGEbJNYOrt2-mBCNBl22a7MUsQz1-sub5elCULeVNmKbGCw7Jp15Lgb2rVRLj8ZjvA-0OgBue=s0",
+      "caption_alt": "alt: \"A person taking a selfie.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Pixel 11 Pro & 11 Pro XL store page; no per-image credit.",
+      "lens_zoom": "front camera implied by alt 'selfie' and card '42 MP front camera.'",
+      "mode": "not stated",
+      "processing_feature": "not stated",
+      "viewer_questions": [
+        "selfie",
+        "daylight/backlit sky"
+      ],
+      "kind": "still",
+      "notes": "",
+      "pixels": "1384x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "12_p11-page_night-section_person-lighting-campfire.jpg",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/jag_2o3HF9151nLo7Kh7GFNMrbwEmtwEjrM5HXksvyBcEKeJA8XmGuiH3JoDjbaX2ksT-HrskO5dq_puJLG_MwiDXukdXSbeBN28=s0",
+      "caption_alt": "alt: \"Perfectly lit photo of a person lighting a campfire at night.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Shown on the Pixel 11 (base model) store page in the card 'Brilliant photos, dusk to dawn. Night Sight takes crisp, clear photos...'; no per-image credit.",
+      "lens_zoom": "not stated",
+      "mode": "not stated for this image (card text is about Night Sight)",
+      "processing_feature": "not stated",
+      "viewer_questions": [
+        "night",
+        "portrait"
+      ],
+      "kind": "still",
+      "notes": "",
+      "pixels": "1824x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "13_p11profold-page_night-sight_campfire-lake.jpg",
+      "page_url": "https://store.google.com/product/pixel_11_pro_fold?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/7Uk0TOshXe6gsftfVwUaOzY7c54DDr2Cg4qVGRWwqvJfXnQF4mVM0qSgcdCNN64-w5t5QmCWTeiKeF-KDRsIDGJwToN22skoog=s0",
+      "caption_alt": "alt: \"A campfire after dark, with Night Sight showing sharp details of the fire, the people sitting nearby, and the surrounding trees.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Shown on the Pixel 11 Pro Fold store page, card 'Stunning photos and videos, long after dark.'; no per-image credit.",
+      "lens_zoom": "not stated",
+      "mode": "Night Sight (named in alt text)",
+      "processing_feature": "Night Sight",
+      "viewer_questions": [
+        "night"
+      ],
+      "kind": "still",
+      "notes": "",
+      "pixels": "1824x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "14_p11-page_30x-zoom-video_frame-before.png",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/440720d4-1403-47c1-a968-0c5a70ae1e35.mp4",
+      "caption_alt": "video aria-label: \"Zooming in for a clear crisp view of a person with a gray parrot on their shoulder.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Pixel 11 store page, section 'Get ridiculously close. Keep your photos crisp and clear from a distance with an upgraded 30x Super Zoom.'",
+      "lens_zoom": "not stated for this frame (intermediate frame of the zoom animation)",
+      "mode": "not stated",
+      "processing_feature": "Super Zoom (section)",
+      "viewer_questions": [
+        "zoom"
+      ],
+      "kind": "frame extracted at t=3.6s from Google demo video",
+      "notes": "Video is an edited marketing animation with graphic frame; the parrot is red/blue/yellow although the label says 'gray parrot'. 566px only.",
+      "pixels": "566x566",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "15_p11-page_30x-zoom-video_frame-30x.png",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/440720d4-1403-47c1-a968-0c5a70ae1e35.mp4",
+      "caption_alt": "same video as #14; Google's on-frame overlay text: \"30x\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Pixel 11 store page 30x Super Zoom section.",
+      "lens_zoom": "30x (Google's on-frame label)",
+      "mode": "not stated",
+      "processing_feature": "30x Super Zoom",
+      "viewer_questions": [
+        "zoom"
+      ],
+      "kind": "frame extracted (last frame) from Google demo video",
+      "notes": "566px only; '30x' text is burned in by Google.",
+      "pixels": "566x566",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "16_p11pro-page_120x-pro-zoom-video_frame-120x-moon.png",
+      "page_url": "https://store.google.com/product/pixel_11_pro?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/14fd810f-752a-4b2e-9ba7-024e9da5e5f0.mp4",
+      "caption_alt": "video label in page data: \"Zooming into a wide angle photo of a tulip field to show a crisp, detailed closeup of a tulip bunch.\" (label does NOT match content: video shows a sun/moon over a flower field ending on '120x'); on-frame overlay text: \"120x\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Pixel 11 Pro & Pro XL page, card 'Bring the moment to you with 120x zoom.' Google says Pro Zoom is exclusive to Pro and Pro XL.",
+      "lens_zoom": "120x (Google's on-frame label)",
+      "mode": "Pro Zoom (120x)",
+      "processing_feature": "Pro Zoom: Google says beyond 30x it 'uses generative AI to rebuild the distant image with new, detail-rich pixels' (store.google.com/magazine/pixel-super-res-zoom)",
+      "viewer_questions": [
+        "zoom"
+      ],
+      "kind": "frame extracted (last frame) from Google demo video",
+      "notes": "Must be labelled as AI-reconstructed per Google's own description. Footnote: 'Not available for all cameras, apps, or modes. Up to 120x results may vary.' Earlier frames show the same scene at lower zoom (no zoom labels except 120x).",
+      "pixels": "1392x782",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "17_p11-page_add-me-video_frame-before.png",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/3c1eee62-7363-4a3c-9e32-487826c9e95c.mp4",
+      "caption_alt": "video label: \"A person being added to a photo.\"; on-screen UI text: \"Take the first photo\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Pixel 11 store page, card 'Always have a spot in the photo. ... Add Me can blend the two photos together'.",
+      "lens_zoom": "not stated",
+      "mode": "Add Me",
+      "processing_feature": "Add Me (before)",
+      "viewer_questions": [
+        "features"
+      ],
+      "kind": "frame extracted at t=0.3s from Google demo video",
+      "notes": "UI hint overlay visible.",
+      "pixels": "1824x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "18_p11-page_add-me-video_frame-after.png",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/3c1eee62-7363-4a3c-9e32-487826c9e95c.mp4",
+      "caption_alt": "video label: \"A person being added to a photo.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "lens_zoom": "not stated",
+      "mode": "Add Me",
+      "processing_feature": "Add Me (after, merged result)",
+      "viewer_questions": [
+        "features"
+      ],
+      "kind": "frame extracted (last frame) from Google demo video",
+      "notes": "Composite result produced by the feature.",
+      "pixels": "1824x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "19_p11-page_auto-best-take-video_frame-before.png",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/2655093c-d466-45bf-b479-ae5500c44bf8.mp4",
+      "caption_alt": "video label: \"Gemini finds and replaces expressions for a group photo of everyone looking their best.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "model_note": "Pixel 11 store page, card 'Everyone really looks that good. ... Top Shot captures extra frames, then Auto Best Take combines them'.",
+      "lens_zoom": "not stated",
+      "mode": "not stated",
+      "processing_feature": "Auto Best Take (before)",
+      "viewer_questions": [
+        "features",
+        "daylight/group"
+      ],
+      "kind": "frame extracted at t=0.05s from Google demo video",
+      "notes": "",
+      "pixels": "1094x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    },
+    {
+      "file": "20_p11-page_auto-best-take-video_frame-after.png",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/2655093c-d466-45bf-b479-ae5500c44bf8.mp4",
+      "caption_alt": "video label: \"Gemini finds and replaces expressions for a group photo of everyone looking their best.\"",
+      "model": "Pixel 11 series (model not stated)",
+      "lens_zoom": "not stated",
+      "mode": "not stated",
+      "processing_feature": "Auto Best Take (after, faces replaced)",
+      "viewer_questions": [
+        "features"
+      ],
+      "kind": "frame extracted (last frame) from Google demo video",
+      "notes": "Edited composite by design.",
+      "pixels": "1094x1368",
+      "source": "Google (manufacturer sample, not an independent test)"
+    }
+  ],
+  "excluded": [
+    {
+      "what": "Pixel 11 Pro Fold tabletop selfie image",
+      "page_url": "https://store.google.com/product/pixel_11_pro_fold?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/YI1c4doBTFxYWPAAc-GAq_19F2f4znU_1VoL5GSlXLgxhStQ8ePvoSJpQkYgPLe_ofZLVNfeX-l0L38fBahqoZ612S4Q7qJDxg",
+      "alt": "Google Pixel 11 Pro Fold in tabletop mode, snapping a selfie of a person standing in a grand, classic interior with green hues.",
+      "reason": "Lifestyle shot showing the phone itself"
+    },
+    {
+      "what": "Pixel 11 'Your signature look' card image",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/y_7qNewRXmM8oWtS58nTqqZzcZ2Y73GZb8DDnJJ34BiAwJF8wYCUJjBMqfpDiUY3cMANNtzod0SOsn4rPwNTVNjThqDbZf5d4ec",
+      "alt": "(empty)",
+      "reason": "Phone UI mock-up (Creator Suite teleprompter on a phone render), not a camera sample"
+    },
+    {
+      "what": "Add Me poster image",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://lh3.googleusercontent.com/QKnsB3OkhsDGfvo6AewYYlixLUAAfV5OQyn-Z_NoqMiUnZYdohWBJo5d5NGaOMRZOiZiNb-LzzjhM0R8GYL2MYYZPg9KItXSKMI=s0",
+      "alt": "(empty)",
+      "reason": "112x112 thumbnail only; the video frames (#17/#18) are used instead"
+    },
+    {
+      "what": "Launch post images (blog.google .../google-pixel-11-pro-xl/)",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "image_url": "(several)",
+      "alt": "e.g. 'The back of Pixel 11 phones in Obsidian, Pistachio, Hibiscus and Frost.', 'Image of Tensor G6 Chip'",
+      "reason": "Product shots / lifestyle / chip render; no camera samples in that post"
+    },
+    {
+      "what": "Magic Capture post (blog.google .../pixel-11-magic-capture/)",
+      "page_url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-magic-capture/",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MagicCapture.max-1440x810.png",
+      "alt": "(hero) / video 'Shenaz Zack ... explains how Magic Capture works'",
+      "reason": "Only a hero graphic and an explainer video; no still sample output"
+    },
+    {
+      "what": "Store magazine 'How Pixel's AI Zoom...' zoom animation (goat, 30x UI)",
+      "page_url": "https://store.google.com/magazine/pixel-super-res-zoom?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/014a478b-76de-4360-ad4d-1e5b12cc8c2f.mp4",
+      "alt": "(no label)",
+      "reason": "Stylised motion-graphics animation (hand holding phone, whip-zoom blur); page covers Pixel 11/11 Pro/Fold/10a and the device is not identified"
+    },
+    {
+      "what": "Store Pixel 11 page video labelled 'parrot' (lg variant 137c8ee8)",
+      "page_url": "https://store.google.com/product/pixel_11?hl=en-US",
+      "image_url": "https://storage.googleapis.com/mannequin/blobs/137c8ee8-ca03-45bb-9b8a-d0c5fa35c587.mp4",
+      "alt": "Zooming in for a clear crisp view of a person with a gray parrot on their shoulder.",
+      "reason": "Content is actually a camera-bar product render (label mismatch)"
+    },
+    {
+      "what": "Complex x Google Pixel 'Culture in Focus' campaign images",
+      "page_url": "https://www.prnewswire.com/news-releases/complex-and-google-pixel-launch-culture-in-focus-an-editorial-fashion-campaign-capturing-11-years-of-style-on-the-new-google-pixel-11-302897289.html",
+      "image_url": "https://drive.google.com/drive/folders/1pw2mZWtTSn_RES7Cul8c_oNRa2WefLxe",
+      "alt": "e.g. 'Image captured by Justin French on a Google Pixel 11 for Google Pixel's \"Culture in Focus\" Campaign'",
+      "reason": "Release is issued by Complex, not Google; release states 'Final images were finished using third-party editing software.' Not downloaded"
+    },
+    {
+      "what": "DPReview / Yahoo / CNN / GSMArena / Android Central sample galleries",
+      "page_url": "https://www.dpreview.com/sample-galleries/google-pixel-pro-11-sample-gallery/",
+      "image_url": "-",
+      "alt": "-",
+      "reason": "Independent reviewers' copyrighted photos; not usable per project rules"
+    }
+  ],
+  "video_sources_saved": [
+    "p11-page_30x-zoom_parrot.mp4",
+    "p11-page_add-me.mp4",
+    "p11-page_auto-best-take.mp4",
+    "p11pro-page_120x-zoom_sun-moon.mp4",
+    "p11pro-page_magic-capture_demo.mp4",
+    "p11pro-page_pro-stable-video_skateboard.webm"
+  ]
+}

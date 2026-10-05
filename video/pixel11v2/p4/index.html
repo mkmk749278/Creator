@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p4</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p4" data-start="0" data-width="1920" data-height="1080" data-duration="93.546">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <div id="hostbar"></div>
+      <audio id="p4-voice" src="voice.wav" data-start="0" data-duration="93.546" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p4","duration":93.546,"audio":"voice/p4.wav","lines":[{"id":"p4-01","speaker":"maya","text":"The camera is why most people buy a Pixel. So let's look at actual photos.","start":0.5,"end":4.907},{"id":"p4-02","speaker":"leo","text":"First, a caveat. These are Google's own samples: best-case marketing shots, not independent tests.","start":5.227,"end":12.193},{"id":"p4-03","speaker":"maya","text":"They show what the camera can do. Reviewers tell us how often it actually does it.","start":12.513,"end":17.489},{"id":"p4-04","speaker":"leo","text":"Everyday photos: all 15 outlets that reviewed the Pros praised them. That's unanimous.","start":17.809,"end":23.854},{"id":"p4-05","speaker":"maya","text":"For the base Pixel 11, five of eight praised it, and three had mixed views.","start":24.174,"end":28.513},{"id":"p4-06","speaker":"leo","text":"Night photos: all 11 Pro outlets that covered it said Night Sight is now faster.","start":28.833,"end":34.534},{"id":"p4-07","speaker":"maya","text":"Selfies use a 42 megapixel front camera, according to Google. This is Google's own example.","start":34.854,"end":40.659},{"id":"p4-08","speaker":"leo","text":"Zoom. The base Pixel 11 has a 5x telephoto, and Google says up to 30x Super Zoom.","start":40.979,"end":49.675},{"id":"p4-09","speaker":"maya","text":"The Pros go to 120x. But Google says past 30x, generative AI rebuilds the image.","start":49.995,"end":57.921},{"id":"p4-10","speaker":"leo","text":"Eight of 13 Pro outlets criticised 120x zoom for invented detail. Only one praised it.","start":58.241,"end":65.585},{"id":"p4-11","speaker":"maya","text":"Moving kids and pets? Magic Capture tries to pick the best frame. Seven of 14 Pro outlets liked it.","start":65.905,"end":72.68},{"id":"p4-12","speaker":"leo","text":"Google's group-photo tricks, Add Me and Auto Best Take, look like this in its own demos.","start":72.999,"end":79.395},{"id":"p4-13","speaker":"maya","text":"Video? Only six of 15 Pro outlets actually judged it. So we can't call it good or bad.","start":79.715,"end":86.123},{"id":"p4-14","speaker":"leo","text":"Camera takeaway: Pixel photos are excellent. The Pros add better zoom and faster night shots.","start":86.443,"end":92.646}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      window.__timelines["p4"] = tl;
+    </script>
+  </body>
+</html>

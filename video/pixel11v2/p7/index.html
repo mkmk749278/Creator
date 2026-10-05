@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p7</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p7" data-start="0" data-width="1920" data-height="1080" data-duration="63.175">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <div id="hostbar"></div>
+      <audio id="p7-voice" src="voice.wav" data-start="0" data-duration="63.175" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p7","duration":63.175,"audio":"voice/p7.wav","lines":[{"id":"p7-01","speaker":"maya","text":"Now the Pixel 11 Pro Fold. ₹1,86,999, 512GB only, and only in Olive in India.","start":0.5,"end":9.233},{"id":"p7-02","speaker":"leo","text":"Its biggest strength: it's still the only mainstream foldable rated IP68. Eight of nine outlets praised that.","start":9.553,"end":17.744},{"id":"p7-03","speaker":"maya","text":"9to5Google: “this is the only mainstream foldable with an IP68 dust/water resistance rating.”","start":18.064,"end":26.589},{"id":"p7-04","speaker":"leo","text":"The weak spot is battery. Seven of nine criticised it, and it trailed rivals in every same-test comparison.","start":26.909,"end":34.374},{"id":"p7-05","speaker":"maya","text":"The crease: four of seven who covered it said it's visible. Droid Life didn't mind it.","start":34.694,"end":40.211},{"id":"p7-06","speaker":"leo","text":"Camera opinions split two against two. 9to5Google: “If I were to choose a foldable (in the US) purely on camera, it’d have to be the Pixel.”","start":40.531,"end":50.637},{"id":"p7-07","speaker":"maya","text":"Multitasking was a bright spot: six of nine praised it.","start":50.957,"end":54.418},{"id":"p7-08","speaker":"leo","text":"Fold verdict: buy it if durability matters most. Skip it if you want the longest battery or play games.","start":54.738,"end":62.275}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      window.__timelines["p7"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,642 @@
+{
+  "meta": {
+    "phone": "Google Pixel 11 series",
+    "launch_date": "2026-08-12",
+    "recheck_date": "2026-10-05",
+    "audience": "India first, UK second",
+    "method": "WebSearch + WebFetch; Google Store India pages fetched directly with curl and parsed (server-rendered text). Every fact below comes from a fetched page; no facts from model memory.",
+    "status_legend": {
+      "still_current": "launch claim still true",
+      "fixed": "problem resolved",
+      "partly_fixed": "part resolved, part open",
+      "changed": "facts differ from launch claim",
+      "unverified": "not confirmable from fetched sources",
+      "conflict": "fetched sources disagree"
+    }
+  },
+  "items": [
+    {
+      "id": 1,
+      "topic": "Genshin Impact on Tensor G6 PowerVR GPU",
+      "launch_claim": "Genshin Impact broken/unplayable on Pixel 11 (PowerVR GPU); Google says a game fix is coming.",
+      "status": "partly_fixed",
+      "summary": "The launch rendering bug (purple textures, unplayable) was fixed by a game-side patch per Android Authority (10 Sep). No Google GPU driver update for it was found. A new problem then showed up: heavy microstutter/jank in Genshin after the September patches, traced to ANGLE (default on). Workaround: Developer options > ANGLE Preferences > set Genshin to Native. Not fixed by Google as of 21 Sep. Genshin also still can't hold 60fps and the phone passes 40 C after 5 minutes.",
+      "video_wording": "Launch-week Genshin glitches were patched by the game in September, but performance is still weak and some owners see stutter.",
+      "sources": [
+        {
+          "url": "https://www.androidheadlines.com/2026/08/genshin-impact-graphics-issue-causes-unplayable-state-on-pixel-11.html",
+          "publisher": "Android Headlines",
+          "published": "2026-08",
+          "accessed": "2026-10-05",
+          "quote": "Launch-time report: unplayable graphics state on Pixel 11."
+        },
+        {
+          "url": "https://www.androidauthority.com/google-pixel-11-genshin-impact-3701959/",
+          "publisher": "Android Authority",
+          "published": "2026-08",
+          "accessed": "2026-10-05",
+          "quote": "Pixel 11 owners can't play Genshin Impact, but a fix is on the way (Google to Wired: fix expected in an upcoming Genshin update)."
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-gaming-test-3708496/",
+          "publisher": "Android Authority",
+          "published": "2026-09-10",
+          "accessed": "2026-10-05",
+          "quote": "I didn't spot any major graphical glitches in any of the games I played. A recent patch fixed the Genshin Impact issue",
+          "author": "Robert Triggs"
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-gaming-test-3708496/",
+          "publisher": "Android Authority",
+          "published": "2026-09-10",
+          "accessed": "2026-10-05",
+          "quote": "Genshin Impact is the exception, where the phone crept up to over 40°C after five minutes",
+          "author": "Robert Triggs"
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-gaming-stutter-genshin-impact-fix-3712770/",
+          "publisher": "Android Authority",
+          "published": "2026-09-21",
+          "accessed": "2026-10-05",
+          "quote": "Disabling ANGLE makes Genshin Impact far smoother on my Pixel 11 Pro XL.",
+          "author": "Robert Triggs"
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-gaming-stutter-genshin-impact-fix-3712770/",
+          "publisher": "Android Authority",
+          "published": "2026-09-21",
+          "accessed": "2026-10-05",
+          "quote": "Let's hope Google can address this problem in an update in the not-too-distant future.",
+          "author": "Robert Triggs"
+        }
+      ],
+      "conflicts": [
+        "Android Authority's 'Pixel 11 problems' page (last updated 2026-09-09) still lists Genshin as pending a developer fix; the 10 Sep gaming test says it is fixed. The later source wins."
+      ],
+      "gpu_driver_update": "None found. The September 2026 Pixel Update Bulletin lists a PowerVR-GPU security fix (CVE-2026-58731), but that is a security patch, not a game fix."
+    },
+    {
+      "id": 2,
+      "topic": "HiLight LED scope",
+      "launch_claim": "HiLight only lights for calls from favourites and for Gemini.",
+      "status": "still_current",
+      "summary": "Stable software is unchanged: Google Store India still describes HiLight as calls from favourite contacts + talking with Gemini. 'Messages from favorites' has appeared in Android 17 QPR2 Beta 6.1 (Pro, Pro XL, Pro Fold). Code also points to more colours. Google hasn't confirmed a date. Tech Advisor expects it around a December Pixel Drop. Reviewers say Google has promised to expand HiLight over time.",
+      "video_wording": "At launch HiLight only covers favourite callers and Gemini; message support is in beta and expected later this year.",
+      "sources": [
+        {
+          "url": "https://store.google.com/in/product/pixel_11_pro?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "When your phone is face down, HiLight gently alerts you with subtle glowing lights when your favourite contacts are calling or you are talking with Gemini."
+        },
+        {
+          "url": "https://www.droid-life.com/2026/09/29/new-pixel-11-hilight-features-messaging-is-here/",
+          "publisher": "Droid Life",
+          "published": "2026-09-29",
+          "accessed": "2026-10-05",
+          "quote": "When toggled on, assuming you have favorites set for HiLight, you'll see the color for that favorite glow when they message you.",
+          "author": "Kellen",
+          "note": "Android 17 QPR2 Beta 6.1 only; Pixel 11 Pro, Pro XL, Pro Fold"
+        },
+        {
+          "url": "https://www.techadvisor.com/article/3245659/pixel-hilight-will-get-upgrade-adding-new-features.html",
+          "publisher": "Tech Advisor",
+          "published": "2026-10-02",
+          "accessed": "2026-10-05",
+          "quote": "it's unclear which messaging apps it will support. It's possible it will be limited to Google Messages",
+          "author": "Chris Martin",
+          "note": "Found in code; possibly a December Pixel Drop; not confirmed by Google"
+        },
+        {
+          "url": "https://www.androidpolice.com/the-pixel-11-pros-notification-light-is-half-baked-and-google-knows-it/",
+          "publisher": "Android Police",
+          "published": "2026-08-19",
+          "accessed": "2026-10-05",
+          "quote": "Google says the functionality will expand over time",
+          "author": "Dhruv Bhutani"
+        }
+      ],
+      "conflicts": [
+        "Colour count differs: Tech Advisor says 5 current + 4 new colours; reporting summarised via search cites 9 colours in firmware. Both are from code, not stable."
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "AI features by region (India, UK) and language",
+      "launch_claim": "Gemini Intelligence / Proactive Assistance / Magic Cue-style features are US-only.",
+      "status": "changed",
+      "summary": "It isn't simply US-only. Here is the split by region. INDIA: Proactive Assistance (the Pixel 11 successor to Magic Cue: suggestions in chat apps and the Phone app, weather insights, At a Glance location suggestions) works on all Pixel 11 models in English only. Magic Cue is NOT listed for Pixel 11 in India; it is listed for Pixel 10 in India. Rambler voice typing (Gboard) supports Hindi 'and other supported Indian languages' and lets you switch languages mid-sentence. Gemini screen automation (multistep tasks inside apps) is US and Korea only, in English and Korean, and its help page lists Pixel 10 and Galaxy S26/Z8 but not Pixel 11. UK: Magic Cue IS available for Pixel 11 in the UK. Proactive Assistance is not offered in the UK or Ireland. All AI features need age 18+ and a personal Google account. Store footnotes say 'Available in select countries and languages'.",
+      "video_wording": "In India you get Proactive Assistance in English and Rambler with Hindi; app-automation tasks remain US-only.",
+      "sources": [
+        {
+          "url": "https://support.google.com/pixelphone/answer/17579905?hl=en",
+          "publisher": "Google Pixel Help (Proactive Assistance)",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "available on Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL, and Pixel 11 Pro Fold in these countries: Australia, Canada, India, Japan, Malaysia, Singapore, United States (English only; Japan Japanese)"
+        },
+        {
+          "url": "https://support.google.com/pixelphone/answer/16508057?hl=en",
+          "publisher": "Google Pixel Help (Magic Cue)",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Magic Cue | Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL, and Pixel 11 Pro Fold | United Kingdom"
+        },
+        {
+          "url": "https://support.google.com/pixelphone/answer/16508057?hl=en",
+          "publisher": "Google Pixel Help (Magic Cue)",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Pixel 11 devices outside of Ireland and the United Kingdom can use Proactive Assistance."
+        },
+        {
+          "url": "https://support.google.com/pixelphone/answer/17468539?hl=en",
+          "publisher": "Google Pixel Help (Rambler)",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Arabic, English, French, German, Hindi and other supported Indian languages, Italian, Japanese, Korean, Portuguese, Russian, Spanish"
+        },
+        {
+          "url": "https://support.google.com/pixelphone/answer/16940971?hl=en",
+          "publisher": "Google Pixel Help (Gemini tasks in apps)",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Be 18 or over and in the US or Korea... For now, screen automation is only available in English and Korean and for select apps."
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Available in select countries and languages to users aged 18+. Feature availability will vary"
+        }
+      ],
+      "conflicts": [
+        "The Gemini Intelligence blog (2026-05-12) gives no country limits, but the help pages above do. Use the help pages."
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "Sept/Oct 2026 updates: bugs, battery, standby drain, charging, thermals",
+      "launch_claim": "Bugs and standby drain at launch; updates promised.",
+      "status": "conflict",
+      "summary": "Pixel 11 got two hotfix OTAs: CD1A.260905.001.A1 (1 Sep) and .B1 (9-10 Sep), both at the 1 Sep 2026 patch level. Google's changelog only says 'fixes critical bugs and improves the performance and stability'. The September Pixel Drop / Android 17 QPR1 (15 Sep) added a fix for 'game lag, choppy framerates, and increased device temperatures' and a mobile-network fix. Sources CONFLICT on whether Pixel 11 got QPR1: 9to5Google and Android Authority's supported-phone list include Pixel 11, while Android Authority's changelog piece and Notebookcheck (16 Sep) say build CP3A.260905.009 went to Pixel 6-10 only. No official battery, standby or charging fix was found. The Wi-Fi standby drain (2.5-3%/h idle on some routers, such as Tenda, TP-Link Omada and Fritz!Box) is still unconfirmed by Google as of 21 Sep. Workaround: set the router to Wi-Fi 5, which brings it to about 1%/h. There is no October 2026 Pixel bulletin yet: the bulletin index lists September 2026 (published 15 Sep, page updated 30 Sep) as the latest. Android 17 QPR3 Beta 1 came out on 2 Oct.",
+      "video_wording": "September hotfixes landed, but there's no confirmed fix yet for standby drain; check for the October update.",
+      "sources": [
+        {
+          "url": "https://9to5google.com/2026/09/09/pixel-11-september-update-early/",
+          "publisher": "9to5Google",
+          "published": "2026-09-09",
+          "accessed": "2026-10-05",
+          "quote": "This update fixes critical bugs and improves the performance and stability of your device."
+        },
+        {
+          "url": "https://9to5google.com/2026/09/15/android-17-qpr1-pixel/",
+          "publisher": "9to5Google",
+          "published": "2026-09-15",
+          "accessed": "2026-10-05",
+          "quote": "Android 17 QPR1 is rolling out starting today for ... Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL, and Pixel 11 Pro Fold."
+        },
+        {
+          "url": "https://www.androidauthority.com/android-17-qpr1-update-september-pixel-drop-supported-phones-3711582/",
+          "publisher": "Android Authority",
+          "published": "2026-09-15",
+          "accessed": "2026-10-05",
+          "quote": "this is also the first Pixel Drop headed to Google's latest Pixel 11 series."
+        },
+        {
+          "url": "https://www.androidauthority.com/google-pixel-update-september-2026-3711639/",
+          "publisher": "Android Authority",
+          "published": "2026-09-15",
+          "accessed": "2026-10-05",
+          "quote": "Fix for an issue that causes game lag, choppy framerates, and increased device temperatures",
+          "author": "Stephen Schenck",
+          "note": "Says CP3A.260905.009 is for Pixel 6-10; Pixel 11 inclusion not confirmed"
+        },
+        {
+          "url": "https://www.notebookcheck.net/Google-left-the-Pixel-11-on-an-older-patch-level-than-the-Pixel-6.1400749.0.html",
+          "publisher": "Notebookcheck",
+          "published": "2026-09-16",
+          "accessed": "2026-10-05",
+          "quote": "Both updates have a September 1 security patch level, and by Google's own yardstick that falls short."
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-wifi-battery-drain-router-issue-3713311/",
+          "publisher": "Android Authority",
+          "published": "2026-09-21",
+          "accessed": "2026-10-05",
+          "quote": "Switching the same Tenda Wi-Fi 6 mesh system from Wi-Fi 6 to Wi-Fi 5 cut those Wi-Fi wakeups from about 135 per minute to 2.4.",
+          "author": "Hillary Keverenge"
+        },
+        {
+          "url": "https://source.android.com/docs/security/bulletin/pixel",
+          "publisher": "Android Open Source Project",
+          "published": "index page (Sep 2026 bulletin published 2026-09-15)",
+          "accessed": "2026-10-05",
+          "quote": "Latest listed bulletin is September 2026; no October 2026 bulletin."
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-problems-3702862/",
+          "publisher": "Android Authority",
+          "published": "2026-09-09 (last updated)",
+          "accessed": "2026-10-05",
+          "quote": "devices displaying a 5G indicator while lacking actual web access",
+          "note": "Open issues: boot loops after update, modem/5G no data, RCS, Android Auto"
+        }
+      ],
+      "conflicts": [
+        "Whether Pixel 11 received Android 17 QPR1 on 15 Sep: 9to5Google + AA supported list say yes; AA changelog + Notebookcheck say Pixel 11 stayed on CD1A, Sept 1 patch. Unresolved; do not state either as fact on screen."
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "India prices, offers and availability",
+      "launch_claim": "India prices Rs 89,999 / 1,19,999 / 1,34,999 / 1,86,999; 6 months free Google AI Pro.",
+      "status": "changed",
+      "summary": "List prices are unchanged on Google Store India. Flipkart (checked 5 Oct) sells below MRP. The AI Pro claim needs a correction: in India the 6 months of Google AI Pro (Rs 11,700 value) plus 3 months of YouTube Premium come only with the Pixel 11 Pro, Pro XL and Pro Fold, redeemable by 1 Nov 2027. The base Pixel 11 gets only 3 months of YouTube Premium (new users). Google Store India offers: HDFC/ICICI credit card instant cashback (up to Rs 7,000 on Pixel 11 and up to Rs 10,000 on Pro/XL/Fold, EMI purchases only, with a minimum spend), a Rs 9,000 exchange bonus via Cashify and no-cost EMI up to 12 months. India configurations: no 1TB model. Pixel 11 comes in 256/512GB with 12GB RAM. Pro/XL come in 256GB/12GB or 512GB/16GB. The Fold is sold only as 512GB/16GB in Olive. Pre-orders opened 12 Aug and sales started 20 Aug. Flipkart Big Billion Days effective prices are from secondary sources (not checked on Flipkart).",
+      "prices_inr": {
+        "pixel_11": {
+          "256GB_12GB_mrp": 89999,
+          "512GB_12GB_mrp": 104999,
+          "flipkart_selling_256": 77999,
+          "bbd_effective_256": 69999,
+          "colours_india": [
+            "Frost",
+            "Pistachio",
+            "Hibiscus",
+            "Obsidian"
+          ]
+        },
+        "pixel_11_pro": {
+          "256GB_12GB_mrp": 119999,
+          "512GB_16GB_mrp": 134999,
+          "flipkart_selling_256": 109999,
+          "bbd_effective_256": 103999,
+          "colours_india": [
+            "Canyon",
+            "Olive",
+            "Fog",
+            "Obsidian (matte)"
+          ]
+        },
+        "pixel_11_pro_xl": {
+          "256GB_12GB_mrp": 134999,
+          "512GB_16GB_mrp": 149999,
+          "flipkart_selling_256": 124999,
+          "flipkart_selling_512": 139999,
+          "bbd_effective_256": 118999,
+          "colours_india": [
+            "Canyon",
+            "Olive",
+            "Fog",
+            "Obsidian (matte)"
+          ]
+        },
+        "pixel_11_pro_fold": {
+          "512GB_16GB_mrp": 186999,
+          "flipkart_selling": 176999,
+          "bbd_effective": 170999,
+          "colours_india": [
+            "Olive"
+          ]
+        }
+      },
+      "google_store_india_offers": {
+        "pixel_11": {
+          "instant_cashback_max": 7000,
+          "cashback_min_txn": 58499,
+          "no_cost_emi_savings_max": 7990,
+          "exchange_bonus": 9000,
+          "headline": "Get up to Rs 23,990 in value",
+          "subscriptions": "3 months YouTube Premium (new users)"
+        },
+        "pixel_11_pro_and_xl": {
+          "instant_cashback_max": 10000,
+          "cashback_min_txn_pro": 77999,
+          "no_cost_emi_savings_max": 11414,
+          "exchange_bonus": 9000,
+          "headline": "Get up to Rs 30,414 in value",
+          "subscriptions": "6 months Google AI Pro + 3 months YouTube Premium"
+        },
+        "pixel_11_pro_fold": {
+          "instant_cashback_max": 10000,
+          "cashback_min_txn": 121549,
+          "no_cost_emi_savings_max": 14431,
+          "exchange_bonus": 9000,
+          "headline": "Get up to Rs 33,431 in value",
+          "subscriptions": "6 months Google AI Pro + 3 months YouTube Premium"
+        },
+        "banks": [
+          "HDFC Bank",
+          "ICICI Bank"
+        ],
+        "cashback_condition": "credit card EMI purchases",
+        "ai_pro_redeem_by": "2027-11-01 12:29 IST",
+        "ai_pro_after_trial": "Rs 1,950/month"
+      },
+      "sources": [
+        {
+          "url": "https://store.google.com/in/product/pixel_11?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Get up to ₹23,990 in value on Google Pixel 11. ... Instant cashback Up to ₹7,000 ... with your HDFC Bank or ICICI Bank credit card."
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Get YouTube Premium on us for 3 months."
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11_pro?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "The Google AI Pro plan offer is available to users with the purchase and activation of a Pixel 11 Pro, Pixel 11 Pro XL or Pixel 11 Pro Fold. Must be an Indian resident, 18 years or older."
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11_pro?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Redeem the offer by 1 November 2027 at 12:29 pm IST."
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11_pro_fold?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Get up to ₹33,431 in value on Google Pixel 11 Pro Fold."
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11_pro_specs?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Canyon / Olive / Fog / Obsidian (matte); 256 GB / 12 GB RAM; 512 GB ... / 16 GB RAM"
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11_pro_fold_specs?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Colours: Olive; 512 GB with Zoned UFS for faster performance / 16 GB RAM; ₹1,86,999"
+        },
+        {
+          "url": "https://blog.google/intl/en-in/products/hardware/the-pixel-11-series-your-most-personal-pixel-yet/",
+          "publisher": "Google India blog",
+          "published": "2026-08-12",
+          "accessed": "2026-10-05",
+          "quote": "six months of Google AI Pro, which includes higher usage for Gemini, 5TB of cloud storage, and Google Health Premium."
+        },
+        {
+          "url": "https://www.flipkart.com/google-pixel-11/p/itmc51935a8001b1",
+          "publisher": "Flipkart",
+          "published": "live listing",
+          "accessed": "2026-10-05",
+          "quote": "MRP ₹89,999; selling ₹77,999; 512GB ₹1,04,999; ₹12,000 bank offer"
+        },
+        {
+          "url": "https://www.flipkart.com/google-pixel-11-pro-canyon-256-gb/p/itm16cea00d9ac24",
+          "publisher": "Flipkart",
+          "published": "live listing",
+          "accessed": "2026-10-05",
+          "quote": "₹1,09,999 (MRP ₹1,19,999); 512GB ₹1,34,999; ₹10,000 bank offer"
+        },
+        {
+          "url": "https://www.flipkart.com/google-pixel-11-pro-xl-fog-256-gb/p/itm2f793bd842154",
+          "publisher": "Flipkart",
+          "published": "live listing",
+          "accessed": "2026-10-05",
+          "quote": "₹1,24,999 (MRP ₹1,34,999); 512GB ₹1,49,999"
+        },
+        {
+          "url": "https://www.flipkart.com/google-pixel-11-pro-fold-olive-512-gb/p/itmf29816f105784",
+          "publisher": "Flipkart",
+          "published": "live listing",
+          "accessed": "2026-10-05",
+          "quote": "₹1,76,999 (MRP ₹1,86,999); Olive only"
+        },
+        {
+          "url": "https://paidfreedroid.com/2026/09/google-pixel-11-flipkart-bbd-2026-price.html/amp",
+          "publisher": "PaidFreeDroid",
+          "published": "2026-09-25",
+          "accessed": "2026-10-05",
+          "quote": "BBD effective prices 69,999 / 1,03,999 / 1,18,999 / 1,70,999; Plus/Black 8 Oct, general 9 Oct",
+          "note": "secondary; effective price needs bank + exchange + SuperCoins"
+        },
+        {
+          "url": "https://iamabiker.com/avin/2026/flipkart-pixel-11-and-pixel-11-pro-deals-for-big-billion-days/",
+          "publisher": "iamabiker",
+          "published": "2026-09-29",
+          "accessed": "2026-10-05",
+          "quote": "Pixel 11 ₹20,000 off = ₹12,000 bank (ICICI, Axis) + ₹6,000 exchange + ₹2,000 SuperCoins",
+          "note": "secondary"
+        }
+      ],
+      "conflicts": [
+        "Beebom (2026-08-31) says AI Pro must be redeemed before 4 Sep 2026. Google Store India says redeem by 1 Nov 2027. The official store wins.",
+        "The Google India blog and Droid Life say AI Pro includes 5TB of storage; the Beebom summary said 5GB. Use the store/blog wording.",
+        "Flipkart flash prices change daily; re-check before publishing."
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "Practical items the video skipped",
+      "status": "new_info",
+      "findings": {
+        "weight_handling": "Pixel 11 weighs 197 g and is comfortable but has a slippery frame (GSMArena). Pro: 204 g, 'surprisingly hefty' for 6.3-inch, slippery. Pro XL: 226 g. Fold: 239 g (Google Store India).",
+        "buttons": "The power button sits above the volume rocker, an unusual layout (GSMArena, Pixel 11 and 11 Pro).",
+        "camera_bump": "Pixel 11: 'no wobble when you place the phone on a flat surface' (GSMArena). Pro: all camera hardware is now under one piece of glass (GSMArena).",
+        "speakers": "Stereo (the earpiece acts as the second speaker). HotHardware: 'pleasantly loud and clear'. GSMArena: 'the stereo speakers sound good'. No loudness measurement was found.",
+        "haptics": "HotHardware: 'Strong and precise thanks to a quality linear vibration motor.'",
+        "fingerprint": "Ultrasonic under-display reader. GSMArena: 'snappy and accurate' (11) and 'worked quickly and reliably' (11 Pro).",
+        "face_unlock": "Android Authority (26 Sep): secure enough to unlock sensitive apps and authenticate payments. It did not name the class.",
+        "modem_reception": "MediaTek M90 5G modem replaces Samsung Exynos 5400 (HotHardware). Android Authority tests: holds 5G where Pixel 10 Pro dropped to 4G, with faster downloads. Uploads trail the Galaxy S26 Ultra (61.6 vs 100.5 Mbps), but it 'no longer feels like the phone's obvious weak point'. Some owners report 5G showing with no data (AA problems page). All tests were on US/Canada networks; no India network test was found.",
+        "repairability": "JerryRigEverything teardown (via Android Police, 24 Aug): 'just as easy to repair as the previous Pixel models'. iFixit has Pixel 11 Pro / Pro Fold device pages; no iFixit score was found.",
+        "india_repair_warranty": "1-year warranty (Google Store India spec pages; Flipkart '1 year domestic warranty'). India has 20+ Pixel walk-in centres, including 4 Google Exclusive ones (Delhi, Mumbai, Hyderabad, Bangalore) open 7 days a week. Google says 9 in 10 phones are repaired in under 4 hours if handed in before 2 PM. Paid pickup/drop is available in Bangalore. Pixel Repair Mode keeps your data. No India Pixel Care+ was found.",
+        "esim_india": "Dual SIM (one nano SIM + eSIM) on all four models (Google Store India). Jio, Airtel and Vi offer eSIM in general, but no carrier page listing Pixel 11 was found (Airtel's Pixel eSIM page only lists models up to Pixel 7).",
+        "in_box": "Phone, 1 m USB-C to USB-C cable (USB 2.0) and SIM tool. No charger (Google Store India; HotHardware: 'no ... charger in the box'). HotHardware also says there is no reverse wireless charging.",
+        "india_network": "The India Pixel 11 page lists model GUJ0N with 5G Sub-6 bands 1/3/5/7/8/28/40/41/77/78 among others, and NavIC GNSS."
+      },
+      "sources": [
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11-review-3000p2.php",
+          "publisher": "GSMArena",
+          "published": "2026-09-15",
+          "accessed": "2026-10-05",
+          "quote": "It is of the fancier ultrasonic variety rather than an optical one. It works quite well and is both snappy and accurate."
+        },
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11-review-3000p2.php",
+          "publisher": "GSMArena",
+          "published": "2026-09-15",
+          "accessed": "2026-10-05",
+          "quote": "there is no wobble when you place the phone on a flat surface"
+        },
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+          "publisher": "GSMArena",
+          "published": "2026-09-15",
+          "accessed": "2026-10-05",
+          "quote": "Fast and reliable ultrasonic fingerprint reader."
+        },
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11_pro-review-2996p2.php",
+          "publisher": "GSMArena",
+          "published": "2026-09-06",
+          "accessed": "2026-10-05",
+          "quote": "surprisingly hefty for a 6.3-inch device, tipping the scales at 204 grams"
+        },
+        {
+          "url": "https://hothardware.com/reviews/google-pixel-11-series-review-tensor-g6-hilight-cameras-prices?page=2",
+          "publisher": "HotHardware",
+          "published": "2026-08-19",
+          "accessed": "2026-10-05",
+          "quote": "MediaTek's M90 5G modem, which is a vast improvement over Samsung's Exynos Modem 5400",
+          "author": "Myriam Joire"
+        },
+        {
+          "url": "https://hothardware.com/reviews/google-pixel-11-series-review-tensor-g6-hilight-cameras-prices?page=2",
+          "publisher": "HotHardware",
+          "published": "2026-08-19",
+          "accessed": "2026-10-05",
+          "quote": "Strong and precise thanks to a quality linear vibration motor.",
+          "author": "Myriam Joire"
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-mediatek-modem-test-vs-pixel-10-3700959/",
+          "publisher": "Android Authority",
+          "published": "2026-08-27",
+          "accessed": "2026-10-05",
+          "quote": "The Pixel 11 Pro retained 5G in situations where the Pixel 10 Pro dropped to 4G",
+          "author": "Sanuj Bhatia"
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-pro-modem-vs-galaxy-s26-ultra-3712761/",
+          "publisher": "Android Authority",
+          "published": "2026-09-23",
+          "accessed": "2026-10-05",
+          "quote": "no longer feels like the phone's obvious weak point",
+          "author": "Sanuj Bhatia"
+        },
+        {
+          "url": "https://www.androidauthority.com/pixel-11-pro-favorite-feature-face-unlock-why-3713749/",
+          "publisher": "Android Authority",
+          "published": "2026-09-26",
+          "accessed": "2026-10-05",
+          "quote": "Face Unlock gets a security boost from Google's Tensor chips, making it secure enough to unlock sensitive apps and authenticate mobile payments.",
+          "author": "Joe Maring"
+        },
+        {
+          "url": "https://www.androidpolice.com/pixel-11-teardown-worth-looking-at/",
+          "publisher": "Android Police",
+          "published": "2026-08-24",
+          "accessed": "2026-10-05",
+          "quote": "Perhaps the biggest news with this tear-down is that the phone is just as easy to repair as the previous Pixel models.",
+          "author": "Timi Cantisano"
+        },
+        {
+          "url": "https://store.google.com/in/magazine/google-pixel-phone-launch-deals?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "With 20+ Pixel walk-in centres across the country ... Our 4 Google Exclusive walk-in centres in Delhi, Mumbai, Hyderabad and Bangalore are open 7 days a week"
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11_specs?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Warranty 1 year; What's in the box: Google Pixel 11, 1 m USB-C to USB-C cable (USB 2.0, 2nd gen), SIM tool; Dual SIM (Single Nano SIM and eSIM)"
+        }
+      ],
+      "conflicts": [
+        "Android Authority (27 Aug) did not name the modem; HotHardware names it as MediaTek M90. Use 'MediaTek modem (M90 per HotHardware)'."
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "Official India specs: brightness, zoom, refresh rate",
+      "status": "still_current",
+      "summary": "Confirmed on store.google.com/in spec pages. Base Pixel 11: 6.3-inch 1080x2424 OLED, 60-120 Hz (not LTPO), up to 2,000 nits HDR and 3,000 nits peak, 'Super Zoom up to 30x', 5x optical telephoto (10.8 MP). Pixel 11 Pro and Pro XL: LTPO, 1-120 Hz, up to 2,400 nits HDR and 3,600 nits peak, 'Pro Zoom up to 120x', 48 MP 5x telephoto. Pro Fold: 1-120 Hz, 2,000 HDR and 3,600 peak, 'Super Zoom up to 30x'. Video zoom is 20x on all models.",
+      "specs": {
+        "pixel_11": {
+          "display": "6.3in 1080x2424 OLED 422ppi",
+          "refresh": "60–120 Hz",
+          "hdr_nits": 2000,
+          "peak_nits": 3000,
+          "max_zoom": "Super Zoom up to 30x",
+          "optical": "5x (10.8 MP tele)",
+          "video_zoom": "20x",
+          "weight_g": 197
+        },
+        "pixel_11_pro": {
+          "display": "6.3in 1280x2856 LTPO OLED 495ppi",
+          "refresh": "1–120 Hz",
+          "hdr_nits": 2400,
+          "peak_nits": 3600,
+          "max_zoom": "Pro Zoom up to 120x",
+          "optical": "5x (48 MP tele)",
+          "video_zoom": "Super Zoom Video up to 20x",
+          "weight_g": 204
+        },
+        "pixel_11_pro_xl": {
+          "display": "6.8in 1344x2992 LTPO OLED 486ppi",
+          "refresh": "1–120 Hz",
+          "hdr_nits": 2400,
+          "peak_nits": 3600,
+          "max_zoom": "Pro Zoom up to 120x",
+          "weight_g": 226
+        },
+        "pixel_11_pro_fold": {
+          "refresh": "1–120 Hz (both screens)",
+          "hdr_nits": 2000,
+          "peak_nits": 3600,
+          "max_zoom": "Super Zoom up to 30x",
+          "weight_g": 239
+        }
+      },
+      "sources": [
+        {
+          "url": "https://store.google.com/in/product/pixel_11_specs?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Smooth Display (60–120 Hz) ... Up to 2,000 nits (HDR) and up to 3,000 nits (peak brightness) ... Super Zoom up to 30x"
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11_pro_specs?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "LTPO OLED ... Smooth Display (1–120 Hz) ... Up to 2,400 nits (HDR) and up to 3,600 nits (peak brightness) ... Pro Zoom up to 120x"
+        },
+        {
+          "url": "https://store.google.com/in/product/pixel_11_pro_fold_specs?hl=en-IN",
+          "publisher": "Google Store India",
+          "published": "live page",
+          "accessed": "2026-10-05",
+          "quote": "Smooth Display (1–120 Hz) ... Up to 2,000 nits (HDR) and up to 3,600 nits (peak brightness) ... Super Zoom up to 30x"
+        },
+        {
+          "url": "https://www.gsmarena.com/google_pixel_11-review-3000p6.php",
+          "publisher": "GSMArena",
+          "published": "2026-09-15",
+          "accessed": "2026-10-05",
+          "quote": "Very basic 60/120Hz refresh rate implementation; high-refresh-rate gaming remains limited."
+        }
+      ]
+    }
+  ],
+  "what_changed_since_launch": [
+    "Genshin rendering bug was fixed by a game patch (by 10 Sep), but ANGLE-related stutter has appeared since (21 Sep).",
+    "HiLight messages-from-favourites is in QPR2 beta only; stable is unchanged.",
+    "Two Pixel 11 hotfix OTAs in September. Whether Pixel 11 got QPR1 is disputed between sources. No confirmed standby-drain or charging fix.",
+    "India AI Pro offer is Pro/XL/Fold only (6 months, redeem by 1 Nov 2027). Base Pixel 11 gets YouTube Premium for 3 months only.",
+    "Flipkart now sells about Rs 10,000-12,000 below MRP; Big Billion Days effective prices start at Rs 69,999."
+  ]
+}

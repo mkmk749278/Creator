@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p5</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p5" data-start="0" data-width="1920" data-height="1080" data-duration="69.86">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <div id="hostbar"></div>
+      <audio id="p5-voice" src="voice.wav" data-start="0" data-duration="69.86" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p5","duration":69.86,"audio":"voice/p5.wav","lines":[{"id":"p5-01","speaker":"maya","text":"Will it last a day? For the base Pixel 11, nine of 10 outlets said battery life is good.","start":0.5,"end":5.801},{"id":"p5-02","speaker":"leo","text":"But the hours you'll hear differ wildly, because each outlet runs a different test.","start":6.121,"end":11.114},{"id":"p5-03","speaker":"maya","text":"Tom's Guide browsed the web non-stop over 5G: 12 hours 45 minutes.","start":11.434,"end":17.258},{"id":"p5-04","speaker":"leo","text":"PCMag streamed YouTube on Wi-Fi at full brightness: 19 hours 13 minutes.","start":17.578,"end":24.268},{"id":"p5-05","speaker":"maya","text":"And The Guardian, in light real-world use, got about 54 hours between charges.","start":24.588,"end":29.699},{"id":"p5-06","speaker":"leo","text":"None of those numbers is your day. Compared with each outlet's own Pixel 10 result, it's about the same.","start":30.019,"end":37.688},{"id":"p5-07","speaker":"maya","text":"The Pro XL was equal or better than last year in most tests. The smaller Pro depends on the test.","start":38.008,"end":44.066},{"id":"p5-08","speaker":"leo","text":"Charging: no charger in the box. Pixel 11 and Pro reach about half to 60% in 30 minutes.","start":44.386,"end":52.797},{"id":"p5-09","speaker":"maya","text":"The Pro XL's 45 watt speed only works with a 21 volt PPS charger. With one, GSMArena got 72% in 30 minutes.","start":53.117,"end":63.762},{"id":"p5-10","speaker":"leo","text":"Magnetic wireless charging, though: no outlet that covered it complained.","start":64.082,"end":68.96}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      window.__timelines["p5"] = tl;
+    </script>
+  </body>
+</html>

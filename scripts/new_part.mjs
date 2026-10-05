@@ -15,6 +15,7 @@ const dir = join(videoDir, part);
 mkdirSync(dir, { recursive: true });
 cpSync(join(videoDir, "_shared"), join(dir, "shared"), { recursive: true });
 if (existsSync(join(videoDir, "_media"))) cpSync(join(videoDir, "_media"), join(dir, "media"), { recursive: true });
+if (existsSync(join(videoDir, "_samples"))) cpSync(join(videoDir, "_samples"), join(dir, "samples"), { recursive: true });
 cpSync(join(run, "voice", `${part}.wav`), join(dir, "voice.wav"));
 
 const index = join(dir, "index.html");

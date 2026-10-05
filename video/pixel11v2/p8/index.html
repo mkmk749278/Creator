@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p8</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p8" data-start="0" data-width="1920" data-height="1080" data-duration="70.897">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <div id="hostbar"></div>
+      <audio id="p8-voice" src="voice.wav" data-start="0" data-duration="70.897" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p8","duration":70.897,"audio":"voice/p8.wav","lines":[{"id":"p8-01","speaker":"maya","text":"So, which one should you buy? Here's our recommendation, by the kind of buyer you are.","start":0.5,"end":5.422},{"id":"p8-02","speaker":"leo","text":"Most people: the Pixel 11. Excellent photos and the same software, for ₹30,000 less than the Pro.","start":5.742,"end":13.664},{"id":"p8-03","speaker":"maya","text":"Camera lovers who zoom a lot: the Pixel 11 Pro. Better telephoto, faster Night Sight.","start":13.984,"end":19.514},{"id":"p8-04","speaker":"leo","text":"Big screen and the biggest battery: the Pro XL. Just budget for a 21 volt PPS charger.","start":19.834,"end":27.108},{"id":"p8-05","speaker":"maya","text":"Durability above all, in a foldable: the Pro Fold, at ₹1,86,999.","start":27.428,"end":34.911},{"id":"p8-06","speaker":"leo","text":"Who should skip? Serious mobile gamers, and anyone with a Pixel 10. Most reviewers who addressed upgrading said wait.","start":35.231,"end":43.084},{"id":"p8-07","speaker":"maya","text":"Reviewers point gamers to Samsung's Galaxy S26 series. Compare current Indian prices before you decide.","start":43.404,"end":50.526},{"id":"p8-08","speaker":"leo","text":"For context, published scores ranged widely: CNET gave the Pixel 11 9 out of 10. Tom's Guide gave it 3 out of 5.","start":50.846,"end":59.476},{"id":"p8-09","speaker":"maya","text":"That's 35 reviews from 20 outlets. Every source, with links, is in the description.","start":59.796,"end":64.829},{"id":"p8-10","speaker":"leo","text":"Which one are you getting? Tell us in the comments, and we'll see you in the next one.","start":65.149,"end":69.997}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      window.__timelines["p8"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Pixel 11 consensus: p3</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script src="shared/hostbar.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      /* Part-specific styles go here. */
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="p3" data-start="0" data-width="1920" data-height="1080" data-duration="89.701">
+      <div class="bg"></div>
+      <div class="bg-vignette"></div>
+
+      <!-- SCENES: one <section class="clip" data-start data-duration> per beat, synced to voice timings -->
+
+      <div id="hostbar"></div>
+      <audio id="p3-voice" src="voice.wav" data-start="0" data-duration="89.701" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      window.HF_TIMINGS = {"part":"p3","duration":89.701,"audio":"voice/p3.wav","lines":[{"id":"p3-01","speaker":"leo","text":"Question one: is the screen good? Reviewers mostly agree, yes.","start":0.5,"end":5.38},{"id":"p3-02","speaker":"maya","text":"Twelve of 14 Pro outlets praised it. For the base model, six of the seven that covered it.","start":5.7,"end":12.018},{"id":"p3-03","speaker":"leo","text":"One nuance. Google's brightness figures are peak ratings. Independent tests came in a bit lower.","start":12.338,"end":18.725},{"id":"p3-04","speaker":"maya","text":"Two catches on the base Pixel 11: it ships at 60 hertz, and it has no LTPO panel.","start":19.045,"end":26.145},{"id":"p3-05","speaker":"leo","text":"And if screen flicker bothers you, three Pro reviewers flagged low-frequency PWM dimming. Try one in a store first.","start":26.465,"end":34.541},{"id":"p3-06","speaker":"maya","text":"Question two: is it fast enough? For everyday use, yes.","start":34.861,"end":38.448},{"id":"p3-07","speaker":"leo","text":"Eleven of 13 Pro outlets and seven of 10 base-model outlets called daily use smooth.","start":38.768,"end":45.328},{"id":"p3-08","speaker":"maya","text":"Gaming is the weak spot. Seven of 13 Pro outlets criticised it, and five more had mixed feelings.","start":45.648,"end":51.382},{"id":"p3-09","speaker":"leo","text":"Genshin Impact was broken at launch. A game patch fixed that, but a new stutter appeared in September.","start":51.702,"end":59.113},{"id":"p3-10","speaker":"maya","text":"Workaround: Developer options, ANGLE preferences, set Genshin to native. Google hadn't fixed it yet.","start":59.433,"end":66.459},{"id":"p3-11","speaker":"leo","text":"What about heat? One reviewer in Phoenix, in desert heat, saw camera features shut off.","start":66.779,"end":72.687},{"id":"p3-12","speaker":"maya","text":"In lab stress tests it ran about the same as the Pixel 10, or a few degrees cooler. That's not a contradiction.","start":73.007,"end":81.067},{"id":"p3-13","speaker":"leo","text":"Takeaway: normal use, fine. Heavy gaming, or a very hot day outdoors, and it can struggle.","start":81.387,"end":88.801}]};
+      const tl = gsap.timeline({ paused: true });
+      HF_hostbar(tl, window.HF_TIMINGS);
+
+      // Scene tweens go here (absolute times in seconds, from HF_TIMINGS line starts).
+
+      window.__timelines["p3"] = tl;
+    </script>
+  </body>
+</html>
