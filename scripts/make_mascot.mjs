@@ -149,18 +149,119 @@ const svg = (mood) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 
 </svg>
 `;
 
+// ---- Plush-toy style: felt texture, stitched seams, nub limbs, embroidered eyes. ----
+const seam = (d, color = "rgba(0,0,0,0.28)") =>
+  `<path d="${d}" fill="none" stroke="${color}" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/>`;
+
+const plushEye = (cx, mood) => {
+  if (mood === "happy")
+    return `<path d="M${cx - 18} 226 Q${cx} 204 ${cx + 18} 226" fill="none" stroke="${C.ink}" stroke-width="9" stroke-linecap="round"/>`;
+  const ry = mood === "wow" ? 24 : mood === "meh" ? 12 : 21;
+  const look = mood === "thinking" ? 5 : 0;
+  // Embroidered: solid thread oval with a stitched highlight.
+  return `<ellipse cx="${cx + look}" cy="222" rx="${mood === "wow" ? 18 : 17}" ry="${ry}" fill="${C.ink}"/>
+    <path d="M${cx - 7 + look} ${222 - ry * 0.45} l7 -3" stroke="${C.white}" stroke-width="5" stroke-linecap="round"/>
+    ${mood === "meh" ? `<path d="M${cx - 20} 208 H${cx + 20}" stroke="${C.ink}" stroke-width="6" stroke-linecap="round"/>` : ""}`;
+};
+
+const plushMouth = (mood) => {
+  const st = `fill="none" stroke="${C.ink}" stroke-width="6" stroke-linecap="round"`;
+  if (mood === "happy" || mood === "hello") return `<path d="M186 262 Q200 278 214 262" ${st}/>`;
+  if (mood === "wow") return `<ellipse cx="200" cy="270" rx="9" ry="11" fill="${C.ink}"/>`;
+  if (mood === "thinking") return `<path d="M190 268 Q200 263 210 267" ${st}/>`;
+  return `<path d="M186 270 Q193 264 200 270 Q207 276 214 268" ${st}/>`;
+};
+
+// Raised nub for hello/happy, a nub on the chin for thinking, a resting nub otherwise.
+const plushFreeArm = (mood) => {
+  const nub = (x, y, rot) =>
+    `<g transform="rotate(${rot} ${x} ${y})"><ellipse cx="${x}" cy="${y}" rx="26" ry="44" fill="${C.hoodie}"/>
+      <ellipse cx="${x}" cy="${y - 30}" rx="20" ry="16" fill="${C.skin}"/>${seam(`M${x - 22} ${y - 18} Q${x} ${y - 10} ${x + 22} ${y - 18}`)}</g>`;
+  if (mood === "hello" || mood === "happy") return nub(92, 316, -40);
+  if (mood === "thinking") return nub(150, 318, 20);
+  return nub(112, 392, 200);
+};
+
+const plushSvg = (mood) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520" role="img" aria-label="Phone Consensus plush mascot, ${mood}">
+  <title>Consensus Kid plush (${mood})</title>
+  <defs>
+    <!-- Felt: fixed-seed noise multiplied over the fabric, so renders are deterministic. -->
+    <filter id="felt" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 -0.12" result="speck"/>
+      <feComposite in="speck" in2="SourceAlpha" operator="in" result="fuzz"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="fuzz"/></feMerge>
+    </filter>
+    <radialGradient id="puff" cx="0.38" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.35"/><stop offset="0.55" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.22"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="200" cy="496" rx="120" ry="14" fill="#000" opacity="0.3"/>
+  <g id="body" filter="url(#felt)">
+  <!-- nub legs -->
+  <ellipse cx="160" cy="468" rx="36" ry="28" fill="${C.pants}"/>
+  <ellipse cx="240" cy="468" rx="36" ry="28" fill="${C.pants}"/>
+  <ellipse cx="160" cy="478" rx="28" ry="14" fill="${C.skinShade}"/>
+  <ellipse cx="240" cy="478" rx="28" ry="14" fill="${C.skinShade}"/>
+  <!-- bean body -->
+  <path d="M120 360 Q122 316 200 312 Q278 316 280 360 Q292 440 252 464 Q200 478 148 464 Q108 440 120 360 Z" fill="${C.hoodie}"/>
+  <path d="M120 360 Q122 316 200 312 Q278 316 280 360 Q292 440 252 464 Q200 478 148 464 Q108 440 120 360 Z" fill="url(#puff)"/>
+  ${seam("M200 330 V462")}
+  <ellipse cx="200" cy="410" rx="44" ry="30" fill="${C.hoodieShade}"/>${seam("M160 404 Q200 376 240 404")}
+  <!-- sewn-in fabric tag -->
+  <path d="M276 404 l24 -6 l6 26 l-24 6 Z" fill="${C.white}"/><path d="M280 410 l18 -4" stroke="${brand.accent_2}" stroke-width="4"/>
+  <g id="free-arm">${plushFreeArm(mood)}</g>
+  <!-- phone nub holding a soft pillow-phone -->
+  <g transform="rotate(30 298 380)"><ellipse cx="298" cy="380" rx="26" ry="44" fill="${C.hoodie}"/></g>
+  <g transform="rotate(-10 318 360)">
+    <rect x="296" y="318" width="50" height="80" rx="18" fill="#343c5c"/>
+    <rect x="303" y="326" width="36" height="64" rx="12" fill="${brand.bg_2}"/>
+    ${seam("M300 322 H342 V394 H300 Z", "rgba(255,255,255,0.35)")}
+    <circle cx="321" cy="352" r="10" fill="${brand.accent}"/>
+  </g>
+  <ellipse cx="312" cy="388" rx="20" ry="17" fill="${C.skin}"/>
+  <!-- head -->
+  <g id="head">
+  <ellipse cx="200" cy="208" rx="142" ry="118" fill="${C.skin}"/>
+  <ellipse cx="200" cy="208" rx="142" ry="118" fill="url(#puff)"/>
+  <!-- felt hair cap with scalloped fringe -->
+  <path d="M62 196 Q58 92 200 86 Q342 92 338 196 Q322 168 300 172 Q290 150 262 160 Q246 140 224 156 Q200 138 176 156 Q154 140 138 160 Q110 150 100 172 Q78 168 62 196 Z" fill="${C.hair}"/>
+  ${seam("M100 166 Q110 150 138 156 Q154 138 176 150 Q200 132 224 150 Q246 138 262 156 Q290 146 300 166", "rgba(255,255,255,0.22)")}
+  <path d="M190 90 Q196 58 222 54 Q214 70 214 88 Z" fill="${C.hair}"/>
+  <!-- soft headphones -->
+  <path d="M68 196 Q62 64 200 62 Q338 64 332 196" fill="none" stroke="${C.phones}" stroke-width="20" stroke-linecap="round"/>
+  ${seam("M68 196 Q62 64 200 62 Q338 64 332 196", "rgba(255,255,255,0.4)")}
+  <ellipse cx="66" cy="214" rx="26" ry="38" fill="${C.phones}"/><ellipse cx="334" cy="214" rx="26" ry="38" fill="${C.phones}"/>
+  ${seam("M66 182 V246", "rgba(255,255,255,0.4)")}${seam("M334 182 V246", "rgba(255,255,255,0.4)")}
+  <!-- face -->
+  ${brows(mood).replaceAll('stroke-width="6"', 'stroke-width="8"')}
+  <g id="eye-l" class="eye">${plushEye(152, mood)}</g>
+  <g id="eye-r" class="eye">${plushEye(248, mood)}</g>
+  <ellipse cx="122" cy="256" rx="22" ry="13" fill="${C.blush}" opacity="0.6"/>
+  <ellipse cx="278" cy="256" rx="22" ry="13" fill="${C.blush}" opacity="0.6"/>
+  ${plushMouth(mood)}
+  ${badge(MOODS[mood])}
+  </g>
+  </g>
+</svg>
+`;
+
 const outDir = new URL("../video/assets/mascot/", import.meta.url);
 mkdirSync(outDir, { recursive: true });
 for (const mood of Object.keys(MOODS)) writeFileSync(new URL(`mascot-${mood}.svg`, outDir), svg(mood));
 
-// Phone-viewable contact sheet (render to PNG with headless Chromium).
-const sheet = `<!doctype html><meta charset="utf-8"><style>
+for (const mood of Object.keys(MOODS)) writeFileSync(new URL(`plush-${mood}.svg`, outDir), plushSvg(mood));
+
+// Phone-viewable contact sheets (render to PNG with headless Chromium).
+const sheet = (prefix) => `<!doctype html><meta charset="utf-8"><style>
 body{margin:0;background:${brand.bg};display:grid;grid-template-columns:repeat(${Object.keys(MOODS).length},1fr);gap:24px;padding:40px;width:1840px;height:1000px;align-items:center;font:600 34px sans-serif;color:${brand.ink}}
 figure{margin:0;background:${brand.bg_2};border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 0}
 img{width:320px}figcaption{margin-top:12px}</style>
-${Object.keys(MOODS).map((m) => `<figure><img src="mascot-${m}.svg"><figcaption>${m}</figcaption></figure>`).join("")}`;
-writeFileSync(new URL("contact-sheet.html", outDir), sheet);
-console.log(`wrote ${Object.keys(MOODS).length} moods to video/assets/mascot/`);
+${Object.keys(MOODS).map((m) => `<figure><img src="${prefix}-${m}.svg"><figcaption>${m}</figcaption></figure>`).join("")}`;
+writeFileSync(new URL("contact-sheet.html", outDir), sheet("mascot"));
+writeFileSync(new URL("contact-sheet-plush.html", outDir), sheet("plush"));
+console.log(`wrote ${Object.keys(MOODS).length} moods x 2 styles to video/assets/mascot/`);
 
 // HyperFrames composition: the "hello" mascot blinking and waving (6 s, loops cleanly).
 const animDir = new URL("../video/mascot/", import.meta.url);
