@@ -1,0 +1,363 @@
+{
+ "duration": 13.497,
+ "fps": 12,
+ "lines": [
+  {
+   "end": 3.533,
+   "mouth": [
+    {
+     "shape": "X",
+     "t": 0.6
+    },
+    {
+     "shape": "C",
+     "t": 0.683
+    },
+    {
+     "shape": "B",
+     "t": 0.933
+    },
+    {
+     "shape": "X",
+     "t": 1.017
+    },
+    {
+     "shape": "E",
+     "t": 1.35
+    },
+    {
+     "shape": "C",
+     "t": 1.517
+    },
+    {
+     "shape": "O",
+     "t": 1.6
+    },
+    {
+     "shape": "C",
+     "t": 1.683
+    },
+    {
+     "shape": "E",
+     "t": 1.85
+    },
+    {
+     "shape": "X",
+     "t": 2.017
+    },
+    {
+     "shape": "C",
+     "t": 2.1
+    },
+    {
+     "shape": "E",
+     "t": 2.433
+    },
+    {
+     "shape": "C",
+     "t": 2.6
+    },
+    {
+     "shape": "E",
+     "t": 2.683
+    },
+    {
+     "shape": "B",
+     "t": 2.85
+    },
+    {
+     "shape": "E",
+     "t": 3.017
+    },
+    {
+     "shape": "B",
+     "t": 3.1
+    },
+    {
+     "shape": "A",
+     "t": 3.183
+    },
+    {
+     "shape": "X",
+     "t": 3.35
+    }
+   ],
+   "shot": "two",
+   "speaker": "girl",
+   "start": 0.6,
+   "text": "Hey! Did you watch all the reviews of the new phone?",
+   "wave": true
+  },
+  {
+   "end": 6.953,
+   "mouth": [
+    {
+     "shape": "C",
+     "t": 3.883
+    },
+    {
+     "shape": "E",
+     "t": 4.05
+    },
+    {
+     "shape": "C",
+     "t": 4.217
+    },
+    {
+     "shape": "E",
+     "t": 4.3
+    },
+    {
+     "shape": "X",
+     "t": 4.383
+    },
+    {
+     "shape": "E",
+     "t": 4.467
+    },
+    {
+     "shape": "B",
+     "t": 4.55
+    },
+    {
+     "shape": "E",
+     "t": 4.8
+    },
+    {
+     "shape": "B",
+     "t": 4.883
+    },
+    {
+     "shape": "A",
+     "t": 4.967
+    },
+    {
+     "shape": "X",
+     "t": 5.05
+    },
+    {
+     "shape": "C",
+     "t": 5.467
+    },
+    {
+     "shape": "E",
+     "t": 5.633
+    },
+    {
+     "shape": "C",
+     "t": 5.717
+    },
+    {
+     "shape": "B",
+     "t": 5.8
+    },
+    {
+     "shape": "C",
+     "t": 5.883
+    },
+    {
+     "shape": "B",
+     "t": 6.05
+    },
+    {
+     "shape": "E",
+     "t": 6.217
+    },
+    {
+     "shape": "B",
+     "t": 6.383
+    },
+    {
+     "shape": "A",
+     "t": 6.55
+    },
+    {
+     "shape": "X",
+     "t": 6.633
+    },
+    {
+     "shape": "E",
+     "t": 6.8
+    },
+    {
+     "shape": "X",
+     "t": 6.883
+    }
+   ],
+   "shot": "boy",
+   "speaker": "boy",
+   "start": 3.883,
+   "text": "All fifteen of them. That's a lot of opinions."
+  },
+  {
+   "end": 9.185,
+   "mouth": [
+    {
+     "shape": "E",
+     "t": 7.303
+    },
+    {
+     "shape": "C",
+     "t": 7.386
+    },
+    {
+     "shape": "A",
+     "t": 7.636
+    },
+    {
+     "shape": "C",
+     "t": 7.72
+    },
+    {
+     "shape": "E",
+     "t": 7.803
+    },
+    {
+     "shape": "C",
+     "t": 7.886
+    },
+    {
+     "shape": "B",
+     "t": 8.053
+    },
+    {
+     "shape": "C",
+     "t": 8.136
+    },
+    {
+     "shape": "E",
+     "t": 8.22
+    },
+    {
+     "shape": "B",
+     "t": 8.386
+    },
+    {
+     "shape": "C",
+     "t": 8.47
+    },
+    {
+     "shape": "B",
+     "t": 8.553
+    },
+    {
+     "shape": "C",
+     "t": 8.72
+    },
+    {
+     "shape": "B",
+     "t": 8.803
+    },
+    {
+     "shape": "A",
+     "t": 8.886
+    },
+    {
+     "shape": "X",
+     "t": 9.053
+    }
+   ],
+   "shot": "girl",
+   "speaker": "girl",
+   "start": 7.303,
+   "text": "So, what do they actually agree on?"
+  },
+  {
+   "end": 12.497,
+   "mouth": [
+    {
+     "shape": "E",
+     "t": 9.535
+    },
+    {
+     "shape": "C",
+     "t": 9.701
+    },
+    {
+     "shape": "B",
+     "t": 9.785
+    },
+    {
+     "shape": "C",
+     "t": 10.035
+    },
+    {
+     "shape": "B",
+     "t": 10.201
+    },
+    {
+     "shape": "A",
+     "t": 10.285
+    },
+    {
+     "shape": "X",
+     "t": 10.368
+    },
+    {
+     "shape": "A",
+     "t": 10.868
+    },
+    {
+     "shape": "C",
+     "t": 10.951
+    },
+    {
+     "shape": "E",
+     "t": 11.035
+    },
+    {
+     "shape": "C",
+     "t": 11.201
+    },
+    {
+     "shape": "B",
+     "t": 11.368
+    },
+    {
+     "shape": "A",
+     "t": 11.535
+    },
+    {
+     "shape": "E",
+     "t": 11.618
+    },
+    {
+     "shape": "A",
+     "t": 11.701
+    },
+    {
+     "shape": "B",
+     "t": 11.785
+    },
+    {
+     "shape": "E",
+     "t": 11.868
+    },
+    {
+     "shape": "B",
+     "t": 12.035
+    },
+    {
+     "shape": "A",
+     "t": 12.118
+    },
+    {
+     "shape": "X",
+     "t": 12.201
+    },
+    {
+     "shape": "E",
+     "t": 12.285
+    },
+    {
+     "shape": "X",
+     "t": 12.368
+    }
+   ],
+   "shot": "two",
+   "speaker": "boy",
+   "start": 9.535,
+   "text": "Stick around. We'll show you, with receipts!"
+  }
+ ]
+}

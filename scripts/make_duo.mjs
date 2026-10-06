@@ -37,6 +37,32 @@ const fringe = (pts) =>
     })
     .join(" ");
 
+// Lip-sync mouth set: one group per shape, only `show` visible. Shapes follow the
+// common cartoon set: X rest, A slightly open, B open, C wide, O round, E wide/teeth.
+const MOUTH = "#c4434f";
+const TONGUE = "#ff8f99";
+const mouthSet = (id, cx, cy, rest, show) => {
+  const shapes = {
+    X: rest,
+    A: `<path d="M${cx - 11} ${cy} Q${cx} ${cy + 3} ${cx + 11} ${cy} Q${cx + 8} ${cy + 10} ${cx} ${cy + 11} Q${cx - 8} ${cy + 10} ${cx - 11} ${cy} Z" fill="${MOUTH}" ${ol}/>`,
+    B: `<path d="M${cx - 18} ${cy - 2} Q${cx} ${cy + 1} ${cx + 18} ${cy - 2} Q${cx + 15} ${cy + 24} ${cx} ${cy + 26} Q${cx - 15} ${cy + 24} ${cx - 18} ${cy - 2} Z" fill="${MOUTH}" ${ol}/>
+       <ellipse cx="${cx}" cy="${cy + 18}" rx="9" ry="5" fill="${TONGUE}"/>`,
+    C: `<path d="M${cx - 22} ${cy - 6} Q${cx} ${cy - 3} ${cx + 22} ${cy - 6} Q${cx + 19} ${cy + 30} ${cx} ${cy + 32} Q${cx - 19} ${cy + 30} ${cx - 22} ${cy - 6} Z" fill="${MOUTH}" ${ol}/>
+       <ellipse cx="${cx}" cy="${cy + 23}" rx="11" ry="6" fill="${TONGUE}"/>
+       <path d="M${cx - 15} ${cy - 1} H${cx + 15}" stroke="#fff" stroke-width="5" stroke-linecap="round"/>`,
+    O: `<ellipse cx="${cx}" cy="${cy + 10}" rx="10" ry="13" fill="${MOUTH}" ${ol}/>`,
+    E: `<path d="M${cx - 22} ${cy} Q${cx} ${cy + 4} ${cx + 22} ${cy} Q${cx + 18} ${cy + 14} ${cx} ${cy + 15} Q${cx - 18} ${cy + 14} ${cx - 22} ${cy} Z" fill="${MOUTH}" ${ol}/>
+       <path d="M${cx - 16} ${cy + 4} H${cx + 16}" stroke="#fff" stroke-width="5" stroke-linecap="round"/>`,
+    // Big open smile (the girl's default "happy" look).
+    H: `<path d="M${cx - 22} ${cy - 2} Q${cx} ${cy} ${cx + 22} ${cy - 2} Q${cx + 18} ${cy + 30} ${cx} ${cy + 32} Q${cx - 18} ${cy + 30} ${cx - 22} ${cy - 2} Z" fill="${MOUTH}" ${ol}/>
+       <path d="M${cx - 12} ${cy + 22} Q${cx} ${cy + 14} ${cx + 12} ${cy + 22} Q${cx + 6} ${cy + 30} ${cx} ${cy + 30} Q${cx - 6} ${cy + 30} ${cx - 12} ${cy + 22} Z" fill="${TONGUE}"/>
+       <path d="M${cx - 16} ${cy + 1} H${cx + 16}" stroke="#fff" stroke-width="5" stroke-linecap="round"/>`,
+  };
+  return `<g id="${id}">${Object.entries(shapes)
+    .map(([k, v]) => `<g class="m" data-shape="${k}"${k === show ? "" : ' opacity="0"'}>${v}</g>`)
+    .join("")}</g>`;
+};
+
 const shoe = (x, y) => `<path d="M${x - 30} ${y} Q${x - 32} ${y - 22} ${x - 6} ${y - 24} Q${x + 30} ${y - 22} ${x + 34} ${y} Z" fill="#6b3b26" ${ol}/>
   <path d="M${x - 18} ${y - 18} Q${x} ${y - 24} ${x + 16} ${y - 18}" stroke="#a0613f" stroke-width="4" fill="none" stroke-linecap="round"/>`;
 
@@ -57,6 +83,11 @@ const girl = (cx) => {
   <path d="M${x(0)} 528 V712" ${thin}/>
   <circle cx="${x(8)}" cy="580" r="5" fill="#7a4a24"/><circle cx="${x(8)}" cy="630" r="5" fill="#7a4a24"/><circle cx="${x(8)}" cy="680" r="5" fill="#7a4a24"/>
   <path d="M${x(-34)} 510 L${x(0)} 548 L${x(-6)} 512 Z M${x(34)} 510 L${x(0)} 548 L${x(6)} 512 Z" fill="#fff" ${ol}/>
+  <!-- resting arm (viewer left), hidden by default: the talk scene swaps it in for the wave -->
+  <g id="girl-arm-rest" opacity="0">
+    <path d="M${x(-78)} 532 Q${x(-120)} 600 ${x(-112)} 676 L${x(-80)} 680 Q${x(-84)} 610 ${x(-62)} 560 Z" fill="#f2c062" ${ol}/>
+    <circle cx="${x(-97)}" cy="690" r="18" fill="${SKIN}" ${ol}/>
+  </g>
   <!-- resting arm (viewer right) -->
   <path d="M${x(78)} 532 Q${x(120)} 600 ${x(112)} 676 L${x(80)} 680 Q${x(84)} 610 ${x(62)} 560 Z" fill="#f2c062" ${ol}/>
   <circle cx="${x(97)}" cy="690" r="18" fill="${SKIN}" ${ol}/>
@@ -80,9 +111,7 @@ const girl = (cx) => {
     <g id="girl-eyes">${eye(x(-54), 380, true, "girl")}${eye(x(54), 380, false, "girl")}</g>
     ${blush(x(-84), 432)}${blush(x(84), 432)}
     <circle cx="${x(0)}" cy="420" r="3" fill="${LINE}"/>
-    <path d="M${x(-22)} 444 Q${x(0)} 446 ${x(22)} 444 Q${x(18)} 476 ${x(0)} 478 Q${x(-18)} 476 ${x(-22)} 444 Z" fill="#c4434f" ${ol}/>
-    <path d="M${x(-12)} 468 Q${x(0)} 460 ${x(12)} 468 Q${x(6)} 476 ${x(0)} 476 Q${x(-6)} 476 ${x(-12)} 468 Z" fill="#ff8f99"/>
-    <path d="M${x(-16)} 447 H${x(16)}" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    ${mouthSet("girl-mouth", x(0), 446, `<path d="M${x(-16)} 450 Q${x(0)} 464 ${x(16)} 450" stroke="${LINE}" stroke-width="4" stroke-linecap="round" fill="none"/>`, "H")}
   </g>
   <!-- waving arm (viewer left), drawn over the head so the hand stays visible -->
   <g id="girl-arm">
@@ -126,7 +155,7 @@ const boy = (cx) => {
     <g id="boy-eyes">${eye(x(-54), 384, true, "boy", 7)}${eye(x(54), 384, false, "boy", 7)}</g>
     ${blush(x(-86), 436)}${blush(x(86), 436)}
     <circle cx="${x(0)}" cy="424" r="3" fill="${LINE}"/>
-    <path d="M${x(-20)} 452 Q${x(-10)} 462 ${x(0)} 452 Q${x(10)} 462 ${x(20)} 452" stroke="${LINE}" stroke-width="4" stroke-linecap="round" fill="none"/>
+    ${mouthSet("boy-mouth", x(0), 452, `<path d="M${x(-20)} 452 Q${x(-10)} 462 ${x(0)} 452 Q${x(10)} 462 ${x(20)} 452" stroke="${LINE}" stroke-width="4" stroke-linecap="round" fill="none"/>`, "X")}
   </g>
   <!-- arm holding a phone (viewer right), drawn over the head so it can be raised to wave -->
   <g id="boy-arm">

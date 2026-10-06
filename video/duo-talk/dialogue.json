@@ -1,0 +1,12 @@
+{
+  "hosts": {
+    "girl": { "voice": "af_heart", "speed": 1.05 },
+    "boy": { "voice": "am_michael", "speed": 1.0 }
+  },
+  "lines": [
+    { "speaker": "girl", "shot": "two", "wave": true, "text": "Hey! Did you watch all the reviews of the new phone?" },
+    { "speaker": "boy", "shot": "boy", "text": "All fifteen of them. That's a lot of opinions." },
+    { "speaker": "girl", "shot": "girl", "text": "So, what do they actually agree on?" },
+    { "speaker": "boy", "shot": "two", "text": "Stick around. We'll show you, with receipts!" }
+  ]
+}

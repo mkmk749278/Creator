@@ -20,6 +20,11 @@
   <path d="M285 528 V712" stroke="#3b2722" stroke-width="3" stroke-linecap="round" fill="none"/>
   <circle cx="293" cy="580" r="5" fill="#7a4a24"/><circle cx="293" cy="630" r="5" fill="#7a4a24"/><circle cx="293" cy="680" r="5" fill="#7a4a24"/>
   <path d="M251 510 L285 548 L279 512 Z M319 510 L285 548 L291 512 Z" fill="#fff" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- resting arm (viewer left), hidden by default: the talk scene swaps it in for the wave -->
+  <g id="girl-arm-rest" opacity="0">
+    <path d="M207 532 Q165 600 173 676 L205 680 Q201 610 223 560 Z" fill="#f2c062" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="188" cy="690" r="18" fill="#ffe3cf" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
   <!-- resting arm (viewer right) -->
   <path d="M363 532 Q405 600 397 676 L365 680 Q369 610 347 560 Z" fill="#f2c062" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
   <circle cx="382" cy="690" r="18" fill="#ffe3cf" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
@@ -63,9 +68,13 @@
   <path d="M189 437 l5 -10 M199 437 l5 -10 M209 437 l5 -10" stroke="#e86f7b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/><ellipse cx="369" cy="432" rx="24" ry="12" fill="#ff9fa6" opacity="0.55"/>
   <path d="M357 437 l5 -10 M367 437 l5 -10 M377 437 l5 -10" stroke="#e86f7b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
     <circle cx="285" cy="420" r="3" fill="#3b2722"/>
-    <path d="M263 444 Q285 446 307 444 Q303 476 285 478 Q267 476 263 444 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
-    <path d="M273 468 Q285 460 297 468 Q291 476 285 476 Q279 476 273 468 Z" fill="#ff8f99"/>
-    <path d="M269 447 H301" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    <g id="girl-mouth"><g class="m" data-shape="X" opacity="0"><path d="M269 450 Q285 464 301 450" stroke="#3b2722" stroke-width="4" stroke-linecap="round" fill="none"/></g><g class="m" data-shape="A" opacity="0"><path d="M274 446 Q285 449 296 446 Q293 456 285 457 Q277 456 274 446 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></g><g class="m" data-shape="B" opacity="0"><path d="M267 444 Q285 447 303 444 Q300 470 285 472 Q270 470 267 444 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+       <ellipse cx="285" cy="464" rx="9" ry="5" fill="#ff8f99"/></g><g class="m" data-shape="C" opacity="0"><path d="M263 440 Q285 443 307 440 Q304 476 285 478 Q266 476 263 440 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+       <ellipse cx="285" cy="469" rx="11" ry="6" fill="#ff8f99"/>
+       <path d="M270 445 H300" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g><g class="m" data-shape="O" opacity="0"><ellipse cx="285" cy="456" rx="10" ry="13" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></g><g class="m" data-shape="E" opacity="0"><path d="M263 446 Q285 450 307 446 Q303 460 285 461 Q267 460 263 446 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+       <path d="M269 450 H301" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g><g class="m" data-shape="H"><path d="M263 444 Q285 446 307 444 Q303 476 285 478 Q267 476 263 444 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+       <path d="M273 468 Q285 460 297 468 Q291 476 285 476 Q279 476 273 468 Z" fill="#ff8f99"/>
+       <path d="M269 447 H301" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g></g>
   </g>
   <!-- waving arm (viewer left), drawn over the head so the hand stays visible -->
   <g id="girl-arm">
@@ -127,7 +136,13 @@
   <path d="M622 441 l5 -10 M632 441 l5 -10 M642 441 l5 -10" stroke="#e86f7b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/><ellipse cx="806" cy="436" rx="24" ry="12" fill="#ff9fa6" opacity="0.55"/>
   <path d="M794 441 l5 -10 M804 441 l5 -10 M814 441 l5 -10" stroke="#e86f7b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
     <circle cx="720" cy="424" r="3" fill="#3b2722"/>
-    <path d="M700 452 Q710 462 720 452 Q730 462 740 452" stroke="#3b2722" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <g id="boy-mouth"><g class="m" data-shape="X"><path d="M700 452 Q710 462 720 452 Q730 462 740 452" stroke="#3b2722" stroke-width="4" stroke-linecap="round" fill="none"/></g><g class="m" data-shape="A" opacity="0"><path d="M709 452 Q720 455 731 452 Q728 462 720 463 Q712 462 709 452 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></g><g class="m" data-shape="B" opacity="0"><path d="M702 450 Q720 453 738 450 Q735 476 720 478 Q705 476 702 450 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+       <ellipse cx="720" cy="470" rx="9" ry="5" fill="#ff8f99"/></g><g class="m" data-shape="C" opacity="0"><path d="M698 446 Q720 449 742 446 Q739 482 720 484 Q701 482 698 446 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+       <ellipse cx="720" cy="475" rx="11" ry="6" fill="#ff8f99"/>
+       <path d="M705 451 H735" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g><g class="m" data-shape="O" opacity="0"><ellipse cx="720" cy="462" rx="10" ry="13" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></g><g class="m" data-shape="E" opacity="0"><path d="M698 452 Q720 456 742 452 Q738 466 720 467 Q702 466 698 452 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+       <path d="M704 456 H736" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g><g class="m" data-shape="H" opacity="0"><path d="M698 450 Q720 452 742 450 Q738 482 720 484 Q702 482 698 450 Z" fill="#c4434f" stroke="#3b2722" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+       <path d="M708 474 Q720 466 732 474 Q726 482 720 482 Q714 482 708 474 Z" fill="#ff8f99"/>
+       <path d="M704 453 H736" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g></g>
   </g>
   <!-- arm holding a phone (viewer right), drawn over the head so it can be raised to wave -->
   <g id="boy-arm">
