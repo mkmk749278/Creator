@@ -1,0 +1,74 @@
+name: Fetch video for study
+
+# Start from the GitHub app: Actions → "Fetch video for study" → Run workflow, paste a YouTube URL.
+# Results: the run's Summary page + an artifact with the MP4, frames and contact sheets.
+# For analysis only: never reuse other creators' footage in our videos (CLAUDE.md).
+#
+# YouTube blocks most datacenter IPs ("Sign in to confirm you're not a bot"). Two fixes:
+#  - Secret YT_COOKIES: cookies.txt (Netscape format) from a THROWAWAY Google account. See docs/fetch-video.md.
+#  - runner = self-hosted: run on the VPS runner instead of GitHub's.
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "YouTube URL"
+        type: string
+        required: true
+      frame_every:
+        description: "Seconds between extracted frames"
+        type: string
+        default: "2"
+      runner:
+        description: "Where to run"
+        type: choice
+        options: [ubuntu-24.04, self-hosted]
+        default: ubuntu-24.04
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  fetch:
+    runs-on: ${{ inputs.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install yt-dlp (pinned) and FFmpeg
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          python -m pip install "yt-dlp==2026.8.19"
+      - name: Fetch and extract frames
+        env:
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
+          URL: ${{ inputs.url }}
+          EVERY: ${{ inputs.frame_every }}
+        run: |
+          if [[ -n "$YT_COOKIES" ]]; then
+            printf '%s\n' "$YT_COOKIES" > "$RUNNER_TEMP/cookies.txt"
+            export YT_COOKIES_FILE="$RUNNER_TEMP/cookies.txt"
+          fi
+          set +e
+          scripts/fetch_video.sh "$URL" fetched "$EVERY"
+          status=$?
+          rm -f "$RUNNER_TEMP/cookies.txt"
+          cat fetched/fetch.log.md >> "$GITHUB_STEP_SUMMARY"
+          exit $status
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fetched-video
+          path: |
+            fetched/
+            !fetched/.cookies.txt
+          retention-days: 7
