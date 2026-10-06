@@ -12,6 +12,8 @@ This is separate from the Phone Consensus pipeline; nothing in `pipeline/` or `v
 | `04-fact-check.md` | Every factual claim with its status and the primary source to confirm |
 | `05-media-credits.md` | Licences and attribution for every clip and photo in the hook video, plus the YouTube description block |
 | `renders/chipgamble-hook.en.srt` | YouTube captions for the hook (the MP4 itself is gitignored) |
+| `06-full-credits.md` | Every source in the 10:49 master cut, with licences and the YouTube description block |
+| `../../video/chipgamble/` | Full-length documentary build: scene engine, part specs, tools (see its README) |
 | `../../video/chipgamble/hook/` | HyperFrames composition for the 50 s hook video (`prepare_media.sh` rebuilds its media) |
 
 ## Next steps (from your phone)
