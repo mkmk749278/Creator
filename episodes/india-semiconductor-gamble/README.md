@@ -10,6 +10,9 @@ This is separate from the Phone Consensus pipeline; nothing in `pipeline/` or `v
 | `02-storyboard.md` | Shot-by-shot cue tables with timecodes, motion, SFX and asset IDs, plus an asset list per act |
 | `03-packaging.md` | 5 titles, 4 thumbnail concepts, description opener, chapters, tags |
 | `04-fact-check.md` | Every factual claim with its status and the primary source to confirm |
+| `05-media-credits.md` | Licences and attribution for every clip and photo in the hook video, plus the YouTube description block |
+| `renders/chipgamble-hook.en.srt` | YouTube captions for the hook (the MP4 itself is gitignored) |
+| `../../video/chipgamble/hook/` | HyperFrames composition for the 50 s hook video (`prepare_media.sh` rebuilds its media) |
 
 ## Next steps (from your phone)
 1. Read `04-fact-check.md`. Confirm the three **Recent** rows (Micron production, ISM 2.0, Dholera dates) on PIB/newsrooms.
