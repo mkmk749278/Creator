@@ -1,0 +1,10 @@
+# generated part projects (rebuild with: python3 parts/<part>.py)
+p1/
+p2/
+p3/
+renders/
+# large media: re-fetch with tools/ (see README.md); small doc renders are kept
+assets/*.jpg
+assets/*_fg.png
+assets/*_fgraw.png
+shared/sfx/*.mp3

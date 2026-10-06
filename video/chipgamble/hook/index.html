@@ -13,10 +13,10 @@
       :root {
         --ink: #f4f1ea;
         --ink-dim: #b9b4a8;
-        --bg: #07090c;
-        --saffron: #ff9933;
-        --taiwan: #ff4d4f;
-        --chip: #39d6c4;
+        --bg: #111317;
+        --saffron: #F59E0B;
+        --taiwan: #EF4444;
+        --chip: #2DD4BF;
         --land: #1b2129;
         --land-edge: #2c3540;
       }
@@ -41,18 +41,18 @@
       /* S1: 2021 */
       #o-2021 { display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 120px 120px; box-sizing: border-box; gap: 6px; }
       #o-2021 .year { font-size: 260px; font-weight: 800; line-height: 0.9; letter-spacing: -0.04em; }
-      #o-2021 .eyebrow { opacity: 0; align-self: flex-start; font-size: 40px; background: rgba(7,9,12,0.8); padding: 10px 22px; }
+      #o-2021 .eyebrow { opacity: 0; align-self: flex-start; font-size: 40px; background: rgba(17,19,23,0.8); padding: 10px 22px; }
 
       /* S2: checklist */
       #o-checks { display: flex; flex-direction: column; justify-content: center; padding-left: 120px; gap: 26px; box-sizing: border-box; }
       .tag { display: inline-flex; align-items: center; gap: 22px; align-self: flex-start; font-size: 58px; font-weight: 800; letter-spacing: 0.04em;
-        padding: 18px 36px 18px 26px; background: rgba(7,9,12,0.82); border-left: 10px solid var(--chip); opacity: 0; }
+        padding: 18px 36px 18px 26px; background: rgba(17,19,23,0.82); border-left: 10px solid var(--chip); opacity: 0; }
       .tag .tick { color: var(--chip); }
 
       /* S3: unsold */
       #o-unsold { display: flex; align-items: center; justify-content: center; }
       .stamp { font-size: 230px; font-weight: 800; letter-spacing: 0.06em; color: var(--taiwan); border: 16px solid var(--taiwan);
-        padding: 6px 60px; background: rgba(7,9,12,0.35); opacity: 0; }
+        padding: 6px 60px; background: rgba(17,19,23,0.35); opacity: 0; }
 
       /* S4: why */
       #o-why { background: var(--bg); display: flex; align-items: center; justify-content: center; }
@@ -60,9 +60,9 @@
 
       /* S5: chip */
       #o-chip1 { display: flex; align-items: flex-end; padding: 0 0 130px 120px; box-sizing: border-box; }
-      #o-chip1 .lbl { font-size: 76px; font-weight: 800; opacity: 0; background: rgba(7,9,12,0.8); padding: 14px 34px; border-left: 10px solid var(--chip); }
+      #o-chip1 .lbl { font-size: 76px; font-weight: 800; opacity: 0; background: rgba(17,19,23,0.8); padding: 14px 34px; border-left: 10px solid var(--chip); }
       #o-chip2 { display: flex; flex-direction: column; justify-content: space-between; padding: 110px 120px 130px; box-sizing: border-box; }
-      #o-chip2 .big { align-self: flex-start; font-size: 88px; font-weight: 800; line-height: 1.02; opacity: 0; background: rgba(7,9,12,0.82); padding: 18px 38px; border-left: 10px solid var(--chip); }
+      #o-chip2 .big { align-self: flex-start; font-size: 88px; font-weight: 800; line-height: 1.02; opacity: 0; background: rgba(17,19,23,0.82); padding: 18px 38px; border-left: 10px solid var(--chip); }
       .price { align-self: flex-end; display: flex; align-items: baseline; gap: 18px; background: var(--saffron); color: #111; padding: 22px 44px;
         font-weight: 800; border-radius: 14px; opacity: 0; }
       .price .u { font-size: 54px; } .price .v { font-size: 150px; letter-spacing: -0.03em; line-height: 0.9; }
@@ -89,13 +89,13 @@
 
       /* S8: snap */
       #o-snap .line { position: absolute; top: 528px; height: 24px; width: 980px; border-radius: 12px;
-        background: linear-gradient(90deg, rgba(57,214,196,0.2), var(--chip)); box-shadow: 0 0 40px rgba(57,214,196,0.8); }
+        background: linear-gradient(90deg, rgba(45,212,191,0.2), var(--chip)); box-shadow: 0 0 40px rgba(45,212,191,0.8); }
       #o-snap .l1 { left: 0; }
-      #o-snap .l2 { left: 960px; background: linear-gradient(90deg, var(--chip), rgba(57,214,196,0.2)); }
+      #o-snap .l2 { left: 960px; background: linear-gradient(90deg, var(--chip), rgba(45,212,191,0.2)); }
       #o-snap .cap { position: absolute; left: 0; right: 0; top: 330px; display: flex; justify-content: center; opacity: 0; }
-      #o-snap .cap span { font-size: 52px; font-weight: 800; letter-spacing: 0.18em; background: rgba(7,9,12,0.82); padding: 14px 34px; }
+      #o-snap .cap span { font-size: 52px; font-weight: 800; letter-spacing: 0.18em; background: rgba(17,19,23,0.82); padding: 14px 34px; }
       #o-snap .flash { position: absolute; left: 860px; top: 440px; width: 200px; height: 200px; border-radius: 50%;
-        background: radial-gradient(circle, #fff 0%, rgba(255,77,79,0.9) 35%, rgba(255,77,79,0) 70%); opacity: 0; }
+        background: radial-gradient(circle, #fff 0%, rgba(239,68,68,0.9) 35%, rgba(239,68,68,0) 70%); opacity: 0; }
 
       /* S9: paralysis */
       #o-para { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
@@ -109,7 +109,7 @@
       #o-map-in .sub { font-size: 82px; font-weight: 800; letter-spacing: 0.2em; opacity: 0; }
 
       /* S12: ISM */
-      #o-ism { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; background: rgba(7,9,12,0.55); }
+      #o-ism { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; background: rgba(17,19,23,0.55); }
       #o-ism .t { font-size: 118px; font-weight: 800; letter-spacing: 0.02em; text-align: center; line-height: 1; }
       #o-ism .t span { display: inline-block; opacity: 0; }
       #o-ism .rule { width: 520px; height: 8px; background: var(--saffron); transform-origin: 50% 50%; }
@@ -123,7 +123,7 @@
       /* S14: title */
       #o-title { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 26px; }
       #o-title .bg { position: absolute; inset: 0; background: var(--bg); opacity: 0; }
-      #o-title .k { position: relative; font-size: 38px; background: rgba(7,9,12,0.85); padding: 12px 26px; font-weight: 600; letter-spacing: 0.4em; color: var(--saffron); opacity: 0; }
+      #o-title .k { position: relative; font-size: 38px; background: rgba(17,19,23,0.85); padding: 12px 26px; font-weight: 600; letter-spacing: 0.4em; color: var(--saffron); opacity: 0; }
       #o-title .t { position: relative; font-size: 150px; font-weight: 800; line-height: 0.95; text-align: center; letter-spacing: -0.02em; opacity: 0; }
       #o-title .t .amt { color: var(--saffron); }
     </style>
@@ -192,7 +192,7 @@
         <div class="mapwrap" id="mw-tw">
           <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
             <path class="land" id="land-a"></path>
-            <path id="twn-a" fill="#ff4d4f"></path>
+            <path id="twn-a" fill="#EF4444"></path>
             <circle class="ring" id="r1" cx="1631" cy="472" r="30"></circle>
             <circle class="ring" id="r2" cx="1631" cy="472" r="30"></circle>
           </svg>
@@ -234,7 +234,7 @@
           <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
             <path class="land" id="land-b"></path>
             <path id="twn-b" fill="#3a2226"></path>
-            <path id="ind-b" fill="#ff9933" opacity="0"></path>
+            <path id="ind-b" fill="#F59E0B" opacity="0"></path>
           </svg>
         </div>
         <div class="big">
@@ -349,7 +349,7 @@
       tl.fromTo("#l1", { x: 0, rotation: 0 }, { x: -420, rotation: -9, duration: 0.7, ease: "power3.out", immediateRender: false }, 30.46);
       tl.fromTo("#l2", { x: 0, rotation: 0 }, { x: 420, rotation: 11, duration: 0.7, ease: "power3.out", immediateRender: false }, 30.46);
       tl.fromTo("#flash", { opacity: 1, scale: 0.4 }, { opacity: 0, scale: 3, duration: 0.5, ease: "power2.out" }, 30.46);
-      tl.to("#snap-txt", { color: "#ff4d4f", duration: 0.1 }, 30.46);
+      tl.to("#snap-txt", { color: "#EF4444", duration: 0.1 }, 30.46);
 
       // S9 economy → paralysis freeze
       tl.fromTo("#w-crane", { filter: "grayscale(0)" }, { filter: "grayscale(0.85)", duration: 2.3, ease: "none", immediateRender: false }, 31.5);
