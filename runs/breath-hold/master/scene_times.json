@@ -1,0 +1,284 @@
+[
+ {
+  "id": "hook",
+  "type": "question",
+  "start": 0,
+  "dur": 6.3
+ },
+ {
+  "id": "limits",
+  "type": "ladder",
+  "start": 6.3,
+  "dur": 16.7
+ },
+ {
+  "id": "claim",
+  "type": "timer",
+  "start": 23,
+  "dur": 12.3
+ },
+ {
+  "id": "signs",
+  "type": "bullets",
+  "start": 35.3,
+  "dur": 7.1
+ },
+ {
+  "id": "trick",
+  "type": "compare",
+  "start": 42.4,
+  "dur": 6.5
+ },
+ {
+  "id": "live",
+  "type": "title",
+  "start": 48.9,
+  "dur": 7.3
+ },
+ {
+  "id": "who",
+  "type": "title",
+  "start": 56.2,
+  "dur": 10.3
+ },
+ {
+  "id": "dhalsim",
+  "type": "term",
+  "start": 66.5,
+  "dur": 7.1
+ },
+ {
+  "id": "silent",
+  "type": "title",
+  "start": 73.6,
+  "dur": 6.6
+ },
+ {
+  "id": "vigil",
+  "type": "vigil",
+  "start": 80.2,
+  "dur": 46.8
+ },
+ {
+  "id": "hold1",
+  "type": "hold",
+  "start": 127,
+  "dur": 4
+ },
+ {
+  "id": "silence",
+  "type": "title",
+  "start": 131,
+  "dur": 3.1
+ },
+ {
+  "id": "possible",
+  "type": "question",
+  "start": 134.1,
+  "dur": 5.65
+ },
+ {
+  "id": "ch2",
+  "type": "title",
+  "start": 139.75,
+  "dur": 4.95
+ },
+ {
+  "id": "myth",
+  "type": "compare",
+  "start": 144.7,
+  "dur": 8.5
+ },
+ {
+  "id": "co2",
+  "type": "lungs",
+  "start": 153.2,
+  "dur": 8.9
+ },
+ {
+  "id": "chemo",
+  "type": "chemo",
+  "start": 162.1,
+  "dur": 13
+ },
+ {
+  "id": "spasm",
+  "type": "lungs",
+  "start": 175.1,
+  "dur": 8.8
+ },
+ {
+  "id": "co2peak",
+  "type": "stat",
+  "start": 183.9,
+  "dur": 6.4
+ },
+ {
+  "id": "records",
+  "type": "records",
+  "start": 190.3,
+  "dur": 20.7
+ },
+ {
+  "id": "nooxy",
+  "type": "bullets",
+  "start": 211,
+  "dur": 8.5
+ },
+ {
+  "id": "how",
+  "type": "question",
+  "start": 219.5,
+  "dur": 6.6
+ },
+ {
+  "id": "patanjali",
+  "type": "bullets",
+  "start": 226.1,
+  "dur": 7.9
+ },
+ {
+  "id": "trataka",
+  "type": "term",
+  "start": 234,
+  "dur": 7.2
+ },
+ {
+  "id": "waves",
+  "type": "waves",
+  "start": 241.2,
+  "dur": 10.4
+ },
+ {
+  "id": "kevala",
+  "type": "term",
+  "start": 251.6,
+  "dur": 3.2
+ },
+ {
+  "id": "kvsp",
+  "type": "compare",
+  "start": 254.8,
+  "dur": 14.2
+ },
+ {
+  "id": "heart",
+  "type": "heart",
+  "start": 269,
+  "dur": 11
+ },
+ {
+  "id": "o2need",
+  "type": "stat",
+  "start": 280,
+  "dur": 4.9
+ },
+ {
+  "id": "micro",
+  "type": "term",
+  "start": 284.9,
+  "dur": 10.7
+ },
+ {
+  "id": "haridas",
+  "type": "history",
+  "start": 295.6,
+  "dur": 15.5
+ },
+ {
+  "id": "power",
+  "type": "title",
+  "start": 311.1,
+  "dur": 3.1
+ },
+ {
+  "id": "overnight",
+  "type": "question",
+  "start": 314.2,
+  "dur": 5.1
+ },
+ {
+  "id": "y35",
+  "type": "stat",
+  "start": 319.3,
+  "dur": 5.6
+ },
+ {
+  "id": "roots",
+  "type": "years",
+  "start": 324.9,
+  "dur": 12
+ },
+ {
+  "id": "kalari",
+  "type": "term",
+  "start": 336.9,
+  "dur": 10.4
+ },
+ {
+  "id": "regimen",
+  "type": "bullets",
+  "start": 347.3,
+  "dur": 12.1
+ },
+ {
+  "id": "legends",
+  "type": "title",
+  "start": 359.4,
+  "dur": 7.2
+ },
+ {
+  "id": "dhalsim2",
+  "type": "term",
+  "start": 366.6,
+  "dur": 7.2
+ },
+ {
+  "id": "message",
+  "type": "title",
+  "start": 373.8,
+  "dur": 6.3
+ },
+ {
+  "id": "rush",
+  "type": "bullets",
+  "start": 380.1,
+  "dur": 10.4
+ },
+ {
+  "id": "quote",
+  "type": "quote",
+  "start": 390.5,
+  "dur": 3
+ },
+ {
+  "id": "realpower",
+  "type": "compare",
+  "start": 393.5,
+  "dur": 7.6
+ },
+ {
+  "id": "superpower",
+  "type": "quote",
+  "start": 401.1,
+  "dur": 6.8
+ },
+ {
+  "id": "mindgame",
+  "type": "title",
+  "start": 407.9,
+  "dur": 7.9
+ },
+ {
+  "id": "ask",
+  "type": "question",
+  "start": 415.8,
+  "dur": 8.7
+ },
+ {
+  "id": "end",
+  "type": "endscreen",
+  "start": 424.5,
+  "dur": 12.46
+ }
+]

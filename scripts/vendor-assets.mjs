@@ -1,4 +1,4 @@
-// Copy pinned runtime assets (GSAP, Inter) from node_modules into each
+// Copy pinned runtime assets (GSAP, Inter, Noto Sans Telugu) from node_modules into each
 // HyperFrames project's vendor/ dir, so compositions never fetch from the
 // network at render time. Runs on `npm install` (postinstall).
 import { copyFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
@@ -28,6 +28,8 @@ for (const project of projects) {
   for (const w of [400, 600, 800]) {
     const f = `inter-latin-${w}-normal.woff2`;
     copyFileSync(join(root, "node_modules/@fontsource/inter/files", f), join(out, "fonts", f));
+    const te = `noto-sans-telugu-telugu-${w}-normal.woff2`;
+    copyFileSync(join(root, "node_modules/@fontsource/noto-sans-telugu/files", te), join(out, "fonts", te));
   }
 }
 console.log(`vendored gsap + Inter into ${projects.length} project(s)`);
