@@ -92,7 +92,10 @@ The phone-review content rules above do not apply here; these do:
 - **Shell**: never `pkill -f <pattern>` in the same command line that contains the pattern (it kills its own shell; use `[x]yz`
   bracket patterns). Never name a shell function after a command it calls (`cut(){ … | cut; }` forked ~1,500 shells and OOM-killed
   renders). If ffmpeg dies with an empty error, check `memory.failcnt`/`dmesg` for OOM and stray processes first.
-- **Deliver to the phone**: MP4 via SendUserFile (keep a ≤ ~150 MB 720p copy), the 1080p master plus `gofile` upload command for the VPS.
+- **Deliver to the phone**: SendUserFile caps files at 30 MB (send the contact sheet that way). Videos go to Gofile once `gofile.io`
+  is allowlisted: `srv=$(curl -s https://api.gofile.io/servers | jq -r '.data.servers[0].name')`, then
+  `curl -F file=@video.mp4 https://$srv.gofile.io/contents/uploadfile` → `data.downloadPage`. Upload the 1080p master and a 720p copy.
+- **Memory**: renders run in a ~14 GB memory cgroup; one render at a time, and delete stray background loops before rendering.
 
 ## Ground rules
 1. Ask before adding paid services, and report the expected cost per video.

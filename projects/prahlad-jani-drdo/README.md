@@ -48,6 +48,7 @@ Regenerate after text edits: `python3 tools/align_phrases.py phrases.v2.tsv <asr
 two `build_srt.py` commands.
 
 ## Status (2026-10-07): rendered
+- **Watch:** 1080p master https://gofile.io/d/RhYQQVZX · 720p phone copy https://gofile.io/d/QF0ZczPp (7:26, −13.9 LUFS)
 - `out/preview.mp4` (1080p, 7:27) is built from **73 sourced files**, every one logged with its licence in
   `media_manifest.csv`; `credits.md` is ready to paste into the YouTube description.
 - Sources used: Coverr (real hospital/lab/water footage), NASA (ISS, Earth, lab B-roll, ISS ultrasound), Wellcome Collection
