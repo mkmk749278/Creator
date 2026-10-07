@@ -54,6 +54,20 @@ holds the rules that apply to every change.
 - AI-generated abstract backgrounds are allowed, and must be logged in the credits file.
 - Every on-screen claim traces to `analysis.json`, then to a source locator (reviewer + timestamp or paragraph).
 
+## Narrated documentary videos (Be Practical with Kishore)
+Read `docs/documentary-playbook.md` before any new narrated video. It holds the lessons from the
+breath-hold video. The non-negotiables:
+- No slides, text cards, lists or blank backgrounds. Every frame is full-screen real media with
+  Ken Burns, cuts every 2.5–3.5 s, text only as ≤ 4-word lower-thirds, a corner timer or a credit line.
+- Real event footage first (Instagram reels, agency photos, official trailer). The picture must match
+  the words literally (no railway crowd for "the audience").
+- Science is explained with the animated canvas shots in `video/doc/_shared/anims.js`, not still images.
+- "Watch this clip" = pause the voice, play a short (3–5 s) original clip with its own sound.
+- Brand: banner intro, logo in the corner, logo end card (`assets/brand/`).
+- Engine: `video/doc/` (edl.mjs → make_registry.py → build.mjs). Transcribe Telugu in pause-cut
+  chunks, never VAD-batched. YouTube downloads are blocked here; ask the owner for the file.
+- Once the owner approves a cut, stop editing it.
+
 ## Ground rules
 1. Ask before adding paid services, and report the expected cost per video.
 2. Pin versions (npm, pip, actions, HyperFrames, `claude-code-action@v1`).
