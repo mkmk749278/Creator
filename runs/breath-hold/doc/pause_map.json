@@ -1,0 +1,21 @@
+{
+  "voice_duration": 424.96,
+  "video_duration": 435.96,
+  "pauses": [
+    {
+      "at": 127,
+      "len": 3,
+      "why": "live audio"
+    },
+    {
+      "at": 386.5,
+      "len": 3,
+      "why": "hold"
+    },
+    {
+      "at": 424.96,
+      "len": 5,
+      "why": "hold"
+    }
+  ]
+}

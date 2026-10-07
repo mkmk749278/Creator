@@ -4,7 +4,8 @@
 # compressor (bed ~18-23 dB below narration, swelling back up in the pauses).
 # Loudness: two-pass LINEAR normalisation to YouTube's -14 LUFS (one static gain
 # + peak limiter), so the pauses keep their contrast instead of being pumped up.
-# Usage: scripts/final_mix.sh OUT.mp4 VOICE.wav BED.wav part1.mp4 part2.mp4 ...
+# Usage: [LIVE=live.wav] scripts/final_mix.sh OUT.mp4 VOICE.wav BED.wav part1.mp4 part2.mp4 ...
+# LIVE: optional real-world audio (e.g. the conch in a voice pause), mixed on top at full presence.
 set -euo pipefail
 out="$1"; voice="$2"; bed="$3"; shift 3
 tmp=$(mktemp -d)
@@ -14,11 +15,15 @@ dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$tmp/video.mp4
 fo=$(echo "$dur - 1.5" | bc)
 
 # 1) mix voice + ducked bed
-ffmpeg -y -loglevel error -i "$voice" -i "$bed" -filter_complex "
+live_in=(); live_fc=""; n=2
+if [ -n "${LIVE:-}" ] && [ -f "$LIVE" ]; then
+  live_in=(-i "$LIVE"); live_fc="[2:a]aresample=48000,aformat=channel_layouts=stereo,volume=-14dB[lv];"; n=3
+fi
+ffmpeg -y -loglevel error -i "$voice" -i "$bed" "${live_in[@]}" -filter_complex "
   [0:a]aresample=48000,highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=8:release=150,aformat=channel_layouts=stereo,asplit=2[v][sc];
   [1:a]aresample=48000,aformat=channel_layouts=stereo,volume=-15dB[b];
   [b][sc]sidechaincompress=threshold=0.015:ratio=10:attack=30:release=600:makeup=1[bd];
-  [v][bd]amix=inputs=2:duration=first:normalize=0[a]" -map "[a]" -c:a pcm_f32le "$tmp/mix.wav"
+  $live_fc[v][bd]$([ $n -eq 3 ] && echo '[lv]')amix=inputs=$n:duration=first:normalize=0[a]" -map "[a]" -c:a pcm_f32le "$tmp/mix.wav"
 
 # 2) measure, then one linear gain to -14 LUFS; limiter catches peaks (-1.5 dBFS)
 I=$(ffmpeg -hide_banner -i "$tmp/mix.wav" -af ebur128 -f null - 2>&1 | grep -A2 "Integrated loudness" | grep "I:" | awk '{print $2}')

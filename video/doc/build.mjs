@@ -44,7 +44,12 @@ const resolve = (name, seen = new Set()) => {
   }
   // Owner footage present -> use only that. Otherwise licensed files, then fallback names.
   if (list.some((x) => x.owner)) list = list.filter((x) => x.owner);
-  if (!list.length) for (const f of e.fallback || []) { list = resolve(f, seen); if (list.length) break; }
+  // No owner file: own licensed files + every fallback name, interleaved for variety.
+  else {
+    const pools = [list, ...(e.fallback || []).map((f) => resolve(f, seen))].filter((p) => p.length);
+    list = [];
+    for (let i = 0; pools.some((p) => i < p.length); i++) for (const p of pools) if (i < p.length && !list.includes(p[i])) list.push(p[i]);
+  }
   return (avail[name] = list);
 };
 
@@ -97,7 +102,7 @@ for (const s of segs) {
 const live = [];
 for (const s of segs.filter((x) => x.live)) {
   const m = resolve(s.live)[0];
-  if (m && m.owner && m.isVid && hasAudio(m.abs)) live.push({ file: m.abs, at: r3(s.a), mediaStart: m.liveStart ?? Math.max(0, m.dur - s.len - 0.5), len: s.len });
+  if (m && (m.owner || m.liveAudio) && m.isVid && hasAudio(m.abs)) live.push({ file: m.abs, at: r3(s.a), mediaStart: m.liveStart ?? Math.max(0, Math.min(0.3, m.dur - s.len)), len: s.len });
 }
 if (live.length) {
   const args = ["-y", "-loglevel", "error", "-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=48000:cl=stereo"];
@@ -123,7 +128,7 @@ const fontFace = [400, 600, 800].map((w) =>
   `      @font-face { font-family: "Noto Sans Telugu"; font-weight: ${w}; src: url("vendor/fonts/noto-sans-telugu-telugu-${w}-normal.woff2") format("woff2"); }`).join("\n      ");
 const bounds = parts.map((p) => r3(shS(p))).concat([total]);
 const credits = new Map();
-let vid = 0;
+let vid = 0, shotNo = 0;
 for (let k = 0; k < bounds.length - 1; k++) {
   const id = `p${k + 1}`, t0 = bounds[k], t1 = bounds[k + 1], dur = r3(t1 - t0);
   const dir = join(here, id);
@@ -141,25 +146,34 @@ for (let k = 0; k < bounds.length - 1; k++) {
     if (m.isVid) return `<video id="v${++vid}" class="m" src="${fn}" muted playsinline data-move="${m.move}"${origin} data-start="${st}" data-duration="${d}" data-media-start="${m.mediaStart}" data-track-index="2" data-volume="0"${extra}></video>`;
     return `<img class="m" src="${fn}" alt="${esc(m.what || m.name)}" data-move="${m.move}"${origin}${extra} />`;
   };
+  const overs = [];
   const html = mine.map((s) => {
     const st = local(s.start), d = s.dur;
     const tagOf = (m) => (m.owner ? "" : m.archive ? `<div class="arch">${esc(m.archive)}</div>` : "") + (m.credit ? `<div class="cred">${esc(m.credit)}</div>` : "");
     if (s.split) {
       const [a, b] = s.split;
-      return `      <div class="shot split clip" data-start="${st}" data-duration="${d}" data-track-index="1">
-        <div class="half l">${mediaTag(a, st, d)}<div class="tag">${esc(s.tags[0].big)}<small>${esc(s.tags[0].small)}</small></div></div>
-        <div class="half r">${mediaTag(b, st, d)}<div class="tag">${esc(s.tags[1].big)}<small>${esc(s.tags[1].small)}</small></div></div>
+      const vids = a.isVid || b.isVid;
+      const timing = vids ? `data-vs="${st}" data-vd="${d}" style="visibility:hidden"` : `data-start="${st}" data-duration="${d}" data-track-index="1"`;
+      return `      <div id="${id}-s${++shotNo}" class="shot split${vids ? "" : " clip"}" ${timing}>
+        <div class="half l">${mediaTag(a, st, d)}${a.archive ? `<div class="arch" style="right:auto;left:24px">${esc(a.archive)}</div>` : ""}<div class="tag">${esc(s.tags[0].big)}<small>${esc(s.tags[0].small)}</small></div></div>
+        <div class="half r">${mediaTag(b, st, d)}${b.archive ? `<div class="arch">${esc(b.archive)}</div>` : ""}<div class="tag">${esc(s.tags[1].big)}<small>${esc(s.tags[1].small)}</small></div></div>
         <div class="grade"></div><div class="cred">${esc([a.credit, b.credit].filter(Boolean).join("  ·  "))}</div></div>`;
     }
     const m = s.media;
     if (m.credit) credits.set(m.credit, true);
     const fit = m.fit === "contain" ? " contain" : "";
     const fill = fit && !m.isVid ? `<img class="fill" src="media/${basename(m.abs)}" alt="" />` : "";
-    return `      <div class="shot${fit}${s.end ? " end" : ""} clip" data-start="${st}" data-duration="${d}" data-track-index="1">${fill}${mediaTag(m, st, d)}<div class="grade"></div>${tagOf(m)}</div>`;
+    const timing = m.isVid ? `data-vs="${st}" data-vd="${d}" style="visibility:hidden"` : `data-start="${st}" data-duration="${d}" data-track-index="1"`;
+    if (m.isVid && m.burned) return `      <div id="${id}-s${++shotNo}" class="shot" ${timing}>${mediaTag(m, st, d)}</div>`;
+    if (m.isVid) {  // renderer paints video frames over siblings: overlays go in a later layer
+      overs.push(`      <div class="vover" data-vs="${st}" data-vd="${d}" style="visibility:hidden"><div class="grade"></div>${tagOf(m)}</div>`);
+      return `      <div id="${id}-s${++shotNo}" class="shot${fit}${s.end ? " end" : ""}" ${timing}>${mediaTag(m, st, d)}</div>`;
+    }
+    return `      <div id="${id}-s${++shotNo}" class="shot${fit}${s.end ? " end" : ""} clip" ${timing}>${fill}${mediaTag(m, st, d)}<div class="grade"></div>${tagOf(m)}</div>`;
   }).join("\n");
   const l3html = l3s.filter((l) => l.start >= t0 && l.start < t1).map((l) => {
     const words = esc(l.text).split(" | ").join('<span class="sep">|</span>');
-    return `      <div class="l3${l.wide ? " wide" : ""}" data-start="${local(l.start)}" data-duration="${l.dur}"><div class="bar"></div><div class="t"${l.wide ? ' style="text-transform:none;font-size:46px"' : ""}>${words}</div></div>`;
+    return `      <div id="${id}-l3-${String(local(l.start)).replace(".", "_")}" class="l3${l.wide ? " wide" : ""}" data-start="${local(l.start)}" data-duration="${l.dur}"><div class="bar"></div><div class="t"${l.wide ? ' style="text-transform:none;font-size:46px"' : ""}>${words}</div></div>`;
   }).join("\n");
   const ptimer = { keys: tkeys.map(([t, c]) => [local(t), c]), windows: twins.filter(([a, b]) => b > t0 && a < t1).map(([a, b]) => [Math.max(0, local(a)), Math.min(dur, local(b))]),
     alarm: talarm.filter(([a, b]) => b > t0 && a < t1).map(([a, b]) => [Math.max(0, local(a)), Math.min(dur, local(b))]) };
@@ -181,6 +195,7 @@ for (let k = 0; k < bounds.length - 1; k++) {
     <!-- Generated by video/doc/build.mjs from edl.mjs + registry.json. Edit those, not this file. -->
     <div id="root" data-composition-id="${id}" data-start="0" data-width="1920" data-height="1080" data-duration="${dur}">
 ${html}
+${overs.join("\n")}
 ${l3html}
       <div class="timer"><span class="dot"></span><span class="v">00:00</span><span class="k">BREATH HOLD</span></div>
 ${end}

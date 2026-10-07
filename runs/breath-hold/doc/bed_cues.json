@@ -1,0 +1,67 @@
+{
+ "duration": 435.96,
+ "heartbeat": [
+  {
+   "start": 83.2,
+   "end": 126.7,
+   "bpm_from": 58,
+   "bpm_to": 96
+  },
+  {
+   "start": 152.2,
+   "end": 188.8,
+   "bpm_from": 70,
+   "bpm_to": 124
+  }
+ ],
+ "bowls": [
+  127.05,
+  233.2,
+  250.79999999999998,
+  389.6,
+  424.0
+ ],
+ "impacts": [
+  23.0,
+  127.0,
+  138.75,
+  218.5,
+  313.2
+ ],
+ "swells": [
+  {
+   "at": 23.0,
+   "dur": 3.0
+  },
+  {
+   "at": 127.0,
+   "dur": 4.0
+  },
+  {
+   "at": 389.5,
+   "dur": 2.5
+  }
+ ],
+ "sections": [
+  {
+   "start": 0,
+   "mood": "tense"
+  },
+  {
+   "start": 138.75,
+   "mood": "neutral"
+  },
+  {
+   "start": 218.5,
+   "mood": "calm"
+  },
+  {
+   "start": 313.2,
+   "mood": "neutral"
+  },
+  {
+   "start": 372.8,
+   "mood": "calm"
+  }
+ ]
+}

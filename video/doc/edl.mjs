@@ -31,9 +31,9 @@ export const beats = [
   { from: 207.0, to: 215.5, pool: ["vidyut_stage_trance"], move: "out" },
 
   // ── SCENE 3: THE YOGIC BLUEPRINT ─────────────────────────────── voice 215.5 – 310.2
-  { from: 215.5, to: 230.0, pool: ["patanjali_manuscript", "yogi_painting", "patanjali_manuscript"] },
-  { from: 230.0, to: 247.6, pool: ["candle", "vidyut_tears_macro", "yogi_painting", "anatomy_brain"] },
-  { from: 247.6, to: 265.0, pool: ["patanjali_manuscript", "yogi_painting", "patanjali_manuscript"] },
+  { from: 215.5, to: 230.0, pool: ["patanjali_manuscript", "yogi_painting", "yogi_photo", "yogi_painting"] },
+  { from: 230.0, to: 247.6, pool: ["candle", "vidyut_tears_macro", "yogi_photo", "candle", "yogi_painting"] },
+  { from: 247.6, to: 265.0, pool: ["yogi_painting", "patanjali_manuscript", "yogi_photo", "candle", "yogi_painting"] },
   { from: 265.0, to: 281.0, pool: ["anatomy_heart", "vidyut_tears_macro", "anatomy_heart"] },
   { from: 281.0, to: 291.6, pool: ["vidyut_tears_macro"], move: "face" },
   { from: 291.6, to: 307.1, pool: ["sadhu_haridas_1837", "ranjit_court", "haridas_book"], move: "pan" },

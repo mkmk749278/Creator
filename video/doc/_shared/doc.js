@@ -13,10 +13,17 @@
     face: [{ scale: 1.25 }, { scale: 1.45 }],          // tight push on a face
     pan: [{ scale: 1.25, xPercent: 9 }, { scale: 1.25, xPercent: -9 }], // wide horizontal pan (paintings)
     push: [{ scale: 1.0 }, { scale: 1.07 }],          // video: gentle push-in
+    none: [{ scale: 1.0 }, { scale: 1.0 }],           // licensed video with burned-in label
   };
   window.DOC_animate = function (tl, opts) {
     document.querySelectorAll(".shot").forEach((sh) => {
-      const t = +sh.dataset.start, d = +sh.dataset.duration;
+      const timed = sh.dataset.start != null;
+      const t = timed ? +sh.dataset.start : +sh.dataset.vs, d = timed ? +sh.dataset.duration : +sh.dataset.vd;
+      if (!timed) {  // video shot: untimed wrapper, shown only during its slot
+        tl.set(sh, { visibility: "hidden" }, 0);
+        tl.set(sh, { visibility: "visible" }, t);
+        tl.set(sh, { visibility: "hidden" }, t + d);
+      }
       sh.querySelectorAll(".m").forEach((m) => {
         const mv = MOVES[m.dataset.move || sh.dataset.move || (m.tagName === "VIDEO" ? "push" : "in")];
         if (m.dataset.origin) m.style.transformOrigin = m.dataset.origin;
@@ -26,6 +33,12 @@
       if (sh.dataset.fade) tl.fromTo(sh, { opacity: 0 }, { opacity: 1, duration: +sh.dataset.fade, ease: "none", immediateRender: false }, t);
       const tag = sh.querySelector(".tag");
       if (tag) tl.fromTo(tag, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: E, immediateRender: false }, t + 0.3);
+    });
+    document.querySelectorAll(".vover").forEach((o) => {
+      const t = +o.dataset.vs, d = +o.dataset.vd;
+      tl.set(o, { visibility: "hidden" }, 0);
+      tl.set(o, { visibility: "visible" }, t);
+      tl.set(o, { visibility: "hidden" }, t + d);
     });
     document.querySelectorAll(".l3").forEach((l) => {
       const t = +l.dataset.start, d = +l.dataset.duration;

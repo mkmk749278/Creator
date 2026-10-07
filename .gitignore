@@ -26,3 +26,11 @@ video/pixel11/_samples/video_sources/
 video/breathhold/p*/shared/
 video/breathhold/p*/voice.wav
 video/breathhold/p*/media/
+# owner footage is large; keep it out of git (README stays)
+assets/video/*
+assets/images/*
+assets/audio/*
+video/doc/p*/media/
+video/doc/p*/shared/
+video/doc/p*/voice.wav
+runs/breath-hold/doc/parts/

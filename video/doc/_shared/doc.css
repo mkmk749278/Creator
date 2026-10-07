@@ -53,3 +53,10 @@ body { margin: 0; background: #000; color: var(--ink); font-family: "Inter", "No
 .endcard { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; opacity: 0; }
 .endcard .h { font-size: 64px; font-weight: 800; text-shadow: var(--shadow); }
 .endcard .btn { font-size: 40px; font-weight: 800; padding: 18px 46px; border-radius: 14px; background: #ff2b3d; }
+
+/* Video frames are injected by the renderer; keep overlays above them. */
+.shot .m { z-index: 0; }
+.shot .grade { z-index: 2; }
+.shot .arch, .shot .cred, .shot.split .tag { z-index: 3; }
+.shot.split .half { z-index: 1; }
+.vover { position: absolute; inset: 0; pointer-events: none; }
