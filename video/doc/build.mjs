@@ -6,11 +6,11 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } fr
 import { execFileSync } from "node:child_process";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { beats, lowerThirds, timer, parts } from "./edl.mjs";
+import { beats, lowerThirds, timer, parts, voice, outDir } from "./edl.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "../..");
-const out = join(root, "runs/breath-hold/doc");
+const out = join(root, outDir || "runs/breath-hold/doc");
 mkdirSync(out, { recursive: true });
 const r3 = (x) => Math.round(x * 1000) / 1000;
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
@@ -18,7 +18,7 @@ const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 // ---------- pauses -> voice track with gaps (scripts/mix_master.py)
 const pauses = beats.filter((b) => b.pause != null).map((b) => ({ at: b.pause, len: b.len, why: b.live ? "live audio" : "hold" }));
 writeFileSync(join(out, "pauses.json"), JSON.stringify(pauses, null, 1));
-execFileSync(join(root, ".venv/bin/python"), [join(root, "scripts/mix_master.py"), join(root, "runs/breath-hold/voice/voiceover.mp3"), join(out, "pauses.json"), out]);
+execFileSync(join(root, ".venv/bin/python"), [join(root, "scripts/mix_master.py"), join(root, voice || "runs/breath-hold/voice/voiceover.mp3"), join(out, "pauses.json"), out]);
 const pmap = JSON.parse(readFileSync(join(out, "pause_map.json"), "utf8"));
 const shS = (t) => t + pauses.filter((p) => p.at <= t).reduce((a, p) => a + p.len, 0);  // start of a normal segment
 const shE = (t) => t + pauses.filter((p) => p.at < t).reduce((a, p) => a + p.len, 0);   // end of a segment / pause start
@@ -135,6 +135,7 @@ for (let k = 0; k < bounds.length - 1; k++) {
   rmSync(join(dir, "media"), { recursive: true, force: true });
   mkdirSync(join(dir, "media"), { recursive: true });
   cpSync(join(here, "_shared"), join(dir, "shared"), { recursive: true });
+  cpSync(join(root, "assets/brand/logo_square.png"), join(dir, "media/logo_square.png"));
   execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-ss", String(t0), "-t", String(dur), "-i", join(out, "voice_paused.wav"), "-ar", "48000", "-ac", "1", join(dir, "voice.wav")]);
   const mine = shots.filter((s) => s.start >= t0 - 1e-6 && s.start < t1 - 1e-6);
   const local = (x) => r3(x - t0);
@@ -149,7 +150,7 @@ for (let k = 0; k < bounds.length - 1; k++) {
   const overs = [];
   const html = mine.map((s) => {
     const st = local(s.start), d = s.dur;
-    const tagOf = (m) => (m.owner ? "" : m.archive ? `<div class="arch">${esc(m.archive)}</div>` : "") + (m.credit ? `<div class="cred">${esc(m.credit)}</div>` : "");
+    const tagOf = (m) => (!m.owner && m.archive ? `<div class="arch">${esc(m.archive)}</div>` : "") + (m.credit ? `<div class="cred">${esc(m.credit)}</div>` : "");
     if (s.split) {
       const [a, b] = s.split;
       const vids = a.isVid || b.isVid;
@@ -177,7 +178,7 @@ for (let k = 0; k < bounds.length - 1; k++) {
   }).join("\n");
   const ptimer = { keys: tkeys.map(([t, c]) => [local(t), c]), windows: twins.filter(([a, b]) => b > t0 && a < t1).map(([a, b]) => [Math.max(0, local(a)), Math.min(dur, local(b))]),
     alarm: talarm.filter(([a, b]) => b > t0 && a < t1).map(([a, b]) => [Math.max(0, local(a)), Math.min(dur, local(b))]) };
-  const end = endStart < t1 ? `      <div class="endcard" data-start="${local(Math.max(endStart, t0)) + 0.4}"><div class="h">నచ్చితే Like · Share</div><div class="btn">SUBSCRIBE</div></div>` : "";
+  const end = endStart < t1 ? `      <div class="endcard" data-start="${local(Math.max(endStart, t0)) + 0.4}"><img class="logo" src="media/logo_square.png" alt="" /><div class="h">నచ్చితే Like · Share</div><div class="btn">SUBSCRIBE</div></div>` : "";
   writeFileSync(join(dir, "index.html"), `<!doctype html>
 <html lang="te">
   <head>
@@ -197,6 +198,7 @@ for (let k = 0; k < bounds.length - 1; k++) {
 ${html}
 ${overs.join("\n")}
 ${l3html}
+      <img class="bug" src="media/logo_square.png" alt="Be Practical with Kishore" />
       <div class="timer"><span class="dot"></span><span class="v">00:00</span><span class="k">BREATH HOLD</span></div>
 ${end}
       <audio id="${id}-voice" src="voice.wav" data-start="0" data-duration="${dur}" data-track-index="10" data-volume="1"></audio>

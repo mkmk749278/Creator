@@ -1,0 +1,17 @@
+✓ using  assets/video/vidyut_stage_trance.mp4
+✓ using  assets/video/vidyut_tears_macro.mp4
+✓ using  assets/video/vidyut_stage_trance.mp4
+✓ using  assets/images/ians_event_435.jpg
+✓ using  assets/images/ians_event_437.jpg
+✓ using  assets/video/sf_dhalsim_arena.mp4
+✓ using  assets/video/sf_title.mp4
+✓ using  assets/video/sf_release.mp4
+✓ using  assets/brand/banner.png
+✗ missing  assets/video/vidyut_shankha.mp4  -> fallback: conch_sankha1.mp4, conch_sankha2.mp4
+✗ missing  assets/video/vidyut_kalari.mp4  -> fallback: kalari_01_kalaripayattu-fire-play.jpg, kalari_02_kalaripayattu.jpg, kalari_03_kalaripayattu.jpg
+✗ missing  assets/video/vidyut_workouts.mp4  -> fallback: kalari_01_kalaripayattu-fire-play.jpg, kalari_02_kalaripayattu.jpg, kalari_03_kalaripayattu.jpg
+✗ missing  assets/video/freediver_pool.mp4  -> fallback: 01_mifsud-record-validation.jpg, 04_freediver-two-safety-divers.jpg, 02_mifsud-record-souvenir.jpg
+✗ missing  assets/video/o2_mask_breathing.mp4  -> fallback: o2_48_operational-readiness-exercise.jpg, 04_freediver-two-safety-divers.jpg, o2_51_180712-n-mz309-019.jpg
+✗ missing  assets/video/city_rush_timelapse.mp4  -> fallback: city_rush_24_listen.jpg, mumbai_13_ohh-no-i-just-missed.jpg, city_rush_25_busy.jpg
+✗ missing  assets/images/sadhu_haridas_1837.jpg  -> fallback: 07_court-of-lahore-schoefft.jpg, 01_haridas-plate-honigberger-1852.jpg
+✗ missing  assets/images/patanjali_manuscript.jpg  -> fallback: 08_yogasutra-manuscript-pages.jpg

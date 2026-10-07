@@ -13,17 +13,29 @@ ROOT = Path(__file__).resolve().parents[2]
 MEDIA = ROOT / "video/breathhold/_media"
 
 OWNER = {
-    "vidyut_stage_trance": "assets/video/vidyut_stage_trance.mp4",
-    "vidyut_tears_macro": "assets/video/vidyut_tears_macro.mp4",
-    "vidyut_shivering": "assets/video/vidyut_shivering.mp4",
-    "vidyut_shankha": "assets/video/vidyut_shankha.mp4",
-    "vidyut_kalari": "assets/video/vidyut_kalari.mp4",
-    "vidyut_workouts": "assets/video/vidyut_workouts.mp4",
-    "freediver_pool": "assets/video/freediver_pool.mp4",
-    "o2_mask_breathing": "assets/video/o2_mask_breathing.mp4",
-    "city_rush_timelapse": "assets/video/city_rush_timelapse.mp4",
-    "sadhu_haridas_1837": "assets/images/sadhu_haridas_1837.jpg",
-    "patanjali_manuscript": "assets/images/patanjali_manuscript.jpg",
+    # name: [(file, credit, extra)] - event footage the owner cleared for use (credited on screen)
+    "vidyut_stage_trance": [("assets/video/vidyut_stage_trance.mp4", "Video: @thefilmihubofficial / @quickfilmi (Instagram)", {}),
+                            ("assets/video/vidyut_stage_closeup.mp4", "Video: @bollywoodbliss (Instagram)", {}),
+                            ("assets/images/ians_event_435.jpg", "Photo: IANS", {"origin": "50% 18%"}),
+                            ("assets/images/ians_event_439.jpg", "Photo: IANS", {"origin": "50% 18%"})],
+    "vidyut_tears_macro": [("assets/video/vidyut_tears_macro.mp4", "Video: @instantbollywood (Instagram)", {}),
+                           ("assets/video/vidyut_tears_macro2.mp4", "Video: @instantbollywood (Instagram)", {}),
+                           ("assets/video/vidyut_stage_closeup.mp4", "Video: @bollywoodbliss (Instagram)", {})],
+    "vidyut_shivering": [("assets/video/vidyut_stage_trance.mp4", "Video: @thefilmihubofficial / @quickfilmi (Instagram)", {})],
+    "vidyut_event_photo": [(f"assets/images/ians_event_{n}.jpg", "Photo: IANS", {"origin": "50% 18%"}) for n in (435, 436, 438, 439)],
+    "vidyut_shankha_photo": [("assets/images/ians_event_437.jpg", "Photo: IANS · Vidyut Jammwal blowing the shankha, Mumbai", {"origin": "55% 30%"})],
+    "sf_dhalsim": [("assets/video/sf_dhalsim_arena.mp4", "Street Fighter trailer · Paramount Pictures India / Legendary", {})],
+    "sf_title": [("assets/video/sf_title.mp4", "Street Fighter trailer · Paramount Pictures India / Legendary", {})],
+    "sf_release": [("assets/video/sf_release.mp4", "Street Fighter trailer · Paramount Pictures India / Legendary", {})],
+    "brand_banner": [("assets/brand/banner.png", "", {"fit": "contain"})],
+    "vidyut_shankha": [("assets/video/vidyut_shankha.mp4", "", {})],
+    "vidyut_kalari": [("assets/video/vidyut_kalari.mp4", "", {})],
+    "vidyut_workouts": [("assets/video/vidyut_workouts.mp4", "", {})],
+    "freediver_pool": [("assets/video/freediver_pool.mp4", "", {})],
+    "o2_mask_breathing": [("assets/video/o2_mask_breathing.mp4", "", {})],
+    "city_rush_timelapse": [("assets/video/city_rush_timelapse.mp4", "", {})],
+    "sadhu_haridas_1837": [("assets/images/sadhu_haridas_1837.jpg", "", {})],
+    "patanjali_manuscript": [("assets/images/patanjali_manuscript.jpg", "", {})],
 }
 # Stand-ins when the owner file is missing (all names are merged, in order).
 FALLBACK = {
@@ -63,8 +75,9 @@ def main():
     def add(name, entry):
         assets.setdefault(name, {"files": [], "fallback": FALLBACK.get(name, [])})["files"].append(entry)
 
-    for name, f in OWNER.items():
-        add(name, {"file": f, "credit": ""})
+    for name, files in OWNER.items():
+        for f, credit, extra in files:
+            add(name, {"file": f, "credit": credit, **extra})
     for topic, rules in SESSION.items():
         mf = MEDIA / topic / "manifest.json"
         if not mf.exists():

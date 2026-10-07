@@ -4,7 +4,21 @@
    "files": [
     {
      "file": "assets/video/vidyut_stage_trance.mp4",
-     "credit": ""
+     "credit": "Video: @thefilmihubofficial / @quickfilmi (Instagram)"
+    },
+    {
+     "file": "assets/video/vidyut_stage_closeup.mp4",
+     "credit": "Video: @bollywoodbliss (Instagram)"
+    },
+    {
+     "file": "assets/images/ians_event_435.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    },
+    {
+     "file": "assets/images/ians_event_439.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
     }
    ],
    "fallback": [
@@ -16,7 +30,15 @@
    "files": [
     {
      "file": "assets/video/vidyut_tears_macro.mp4",
-     "credit": ""
+     "credit": "Video: @instantbollywood (Instagram)"
+    },
+    {
+     "file": "assets/video/vidyut_tears_macro2.mp4",
+     "credit": "Video: @instantbollywood (Instagram)"
+    },
+    {
+     "file": "assets/video/vidyut_stage_closeup.mp4",
+     "credit": "Video: @bollywoodbliss (Instagram)"
     }
    ],
    "fallback": [
@@ -27,8 +49,8 @@
   "vidyut_shivering": {
    "files": [
     {
-     "file": "assets/video/vidyut_shivering.mp4",
-     "credit": ""
+     "file": "assets/video/vidyut_stage_trance.mp4",
+     "credit": "Video: @thefilmihubofficial / @quickfilmi (Instagram)"
     }
    ],
    "fallback": [
@@ -36,6 +58,78 @@
     "eyes",
     "press_crowd"
    ]
+  },
+  "vidyut_event_photo": {
+   "files": [
+    {
+     "file": "assets/images/ians_event_435.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    },
+    {
+     "file": "assets/images/ians_event_436.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    },
+    {
+     "file": "assets/images/ians_event_438.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    },
+    {
+     "file": "assets/images/ians_event_439.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    }
+   ],
+   "fallback": []
+  },
+  "vidyut_shankha_photo": {
+   "files": [
+    {
+     "file": "assets/images/ians_event_437.jpg",
+     "credit": "Photo: IANS · Vidyut Jammwal blowing the shankha, Mumbai",
+     "origin": "55% 30%"
+    }
+   ],
+   "fallback": []
+  },
+  "sf_dhalsim": {
+   "files": [
+    {
+     "file": "assets/video/sf_dhalsim_arena.mp4",
+     "credit": "Street Fighter trailer · Paramount Pictures India / Legendary"
+    }
+   ],
+   "fallback": []
+  },
+  "sf_title": {
+   "files": [
+    {
+     "file": "assets/video/sf_title.mp4",
+     "credit": "Street Fighter trailer · Paramount Pictures India / Legendary"
+    }
+   ],
+   "fallback": []
+  },
+  "sf_release": {
+   "files": [
+    {
+     "file": "assets/video/sf_release.mp4",
+     "credit": "Street Fighter trailer · Paramount Pictures India / Legendary"
+    }
+   ],
+   "fallback": []
+  },
+  "brand_banner": {
+   "files": [
+    {
+     "file": "assets/brand/banner.png",
+     "credit": "",
+     "fit": "contain"
+    }
+   ],
+   "fallback": []
   },
   "vidyut_shankha": {
    "files": [
@@ -723,16 +817,16 @@
    ],
    "fallback": []
   },
-  "anatomy_brain": {
-   "files": [],
-   "fallback": [
-    "anatomy_carotid"
-   ]
-  },
   "anatomy_heart": {
    "files": [],
    "fallback": [
     "anatomy_lungs"
+   ]
+  },
+  "anatomy_brain": {
+   "files": [],
+   "fallback": [
+    "anatomy_carotid"
    ]
   }
  }
