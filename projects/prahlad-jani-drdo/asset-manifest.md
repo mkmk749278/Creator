@@ -1,15 +1,15 @@
 # Step 1: asset manifest and download checklist
 
-Prahlad Jani & DRDO (Telugu, VO 4:44). Download everything into `projects/prahlad-jani-drdo/assets/` using exactly
+Prahlad Jani & DRDO (Telugu, VO v2 6:08; programme 6:14, or 6:46 with all three live clips). Download everything into `projects/prahlad-jani-drdo/assets/` using exactly
 these file names; `assemble.py` and `edl.csv` look for them. Log the URL, owner and licence of each file in
 `media_manifest.csv`. ★ = must-have; the cut falls back to the alternative named in the EDL if it is missing.
 
 | Asset ID | File Name | Description | Source Platform | Exact Search Query |
 | :--- | :--- | :--- | :--- | :--- |
 | ASSET_01 ★ | `jani_portrait_red.jpg` | Prahlad Jani portrait, red sari, nose ring (hi-res) | Wikimedia Commons | "Prahlad Jani" |
-| ASSET_02 ★ | `jani_news_2010.mp4` | 2010 news report: Jani in the Sterling Hospital room | YouTube | "Prahlad Jani 2010 Sterling Hospital Ahmedabad news" |
+| ASSET_02 ★ | `jani_news_2010.mp4` | 2010 news report: Jani in the Sterling Hospital room. **Also LIVE clip 1 (plays with its own audio)** | YouTube | "Prahlad Jani 2010 Sterling Hospital Ahmedabad news" |
 | ASSET_03 ★ | `jani_ap_archive.mp4` | AP/Reuters raw footage: yogi under observation, 2010 | YouTube (AP Archive) | "AP Archive India yogi no food water 2010" |
-| ASSET_04 ★ | `press_conf_shah.mp4` | Press conference: Dr. Sudhir Shah + DIPAS, May 2010 (real audio for the live pause) | YouTube | "Sudhir Shah Prahlad Jani press conference 2010" |
+| ASSET_04 ★ | `press_conf_shah.mp4` | Press conference: Dr. Sudhir Shah + DIPAS, May 2010. **LIVE clip 2: the real quote plays with its own audio** | YouTube | "Sudhir Shah Prahlad Jani press conference 2010" |
 | ASSET_05 | `jani_ashram_ambaji.mp4` | Jani at the Ambaji ashram/cave, devotees | YouTube | "Chunriwala Mataji Ambaji ashram" |
 | ASSET_06 | `headlines_2003_2010.png` | Headline crops: BBC 2003, Guardian/BBC 2010, obituary 2020 | News sites (screenshots) | "Prahlad Jani BBC 2010" · "Indian yogi claims no food water" |
 | ASSET_07 | `sterling_hospital_ext.jpg` | Sterling Hospital, Ahmedabad exterior | Wikimedia Commons / Google Images (CC filter) | "Sterling Hospital Ahmedabad" |
@@ -44,10 +44,14 @@ these file names; `assemble.py` and `edl.csv` look for them. Log the URL, owner 
 | ASSET_36 | `hud_overlay.mp4` | Medical HUD / data overlay, black bg (Layer 2) | Mixkit · Pixabay | "hud interface overlay black background" |
 | ASSET_37 | `film_grain.mp4` | 35 mm grain overlay (Layer 2) | Pixabay | "film grain overlay" |
 | ASSET_38 | `light_leak.mp4` | Light leak overlay (Layer 2) | Pixabay | "light leak overlay" |
+| ASSET_39 | `skeptic_view.mp4` | **LIVE clip 3 (optional, recommended):** 2010 TV interview/debate with a doctor or rationalist questioning the study | YouTube | "Prahlad Jani Sanal Edamaruku" · "Prahlad Jani fraud debate 2010" |
+| ASSET_40 | `channel_intro.mp4` | Your 3–4 s "Be Practical with Kishore" logo sting | Your own | (make once, reuse) |
 | AI_P1a–c | `ai_kidney_*.mp4` | Kidney healthy vs. dehydrated | Runway / Sora | see `3d-prompts.md` P1 |
 | AI_P2a–c | `ai_room_*.mp4` | Sealed-room wireframe, CCTV, valve | Runway / Sora | P2 |
 | AI_P3a–c | `ai_bladder_*.mp4` | Bladder, illustrative sonography, reabsorption | Runway / Sora | P3 |
 | AI_P5a | `ai_beaker.mp4` | Syringe into beaker, macro | Runway / Sora | P5 |
+| AI_P4a–b | `ai_autophagy.mp4`, `ai_mito_energy.mp4` | Autophagy, mitochondrial energy | Runway / Sora | P4 |
+| AI_P6a | `ai_glow_body.mp4` | Abstract glowing meditating figure (no likeness) | Runway / Sora | P6 |
 | AUD_01 ★ | `bgm_dark.mp3` | Dark investigative ambient pad | YouTube Audio Library | "ambient dark cinematic" |
 | AUD_02 ★ | `sfx_heartbeat_monitor.wav` | Monitor beeps | Pixabay SFX | "heart monitor beep" |
 | AUD_03 | `sfx_flatline.wav` | Flatline | Pixabay SFX | "flatline" |
@@ -76,5 +80,5 @@ From memory, so verify each point against a collected source before it goes on s
    possible. Phrase on-screen text as a claim ("he claimed", "doctors reported").
 
 A video that presents the claim as proven risks YouTube's medical-misinformation policy and could encourage
-viewers to try dry fasting, which is dangerous. Add one 6–10 s "what skeptics say" beat to the part-2 VO (after the bladder segment) and a
+viewers to try dry fasting, which is dangerous. The EDL has an optional LIVE slot for a real skeptic clip (`skeptic_view.mp4`, before the conclusion) and a
 short on-screen safety note in the outro: "Do not attempt prolonged fasting without water."

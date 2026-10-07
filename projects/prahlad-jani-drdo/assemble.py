@@ -39,6 +39,8 @@ GRADE = {  # colour grade per block (teal investigation / saffron subject / clin
     "B1": "colorbalance=rs=-0.04:bs=0.06:rm=-0.02:bm=0.04,eq=contrast=1.06:saturation=0.9",
     "B2": "colorbalance=rs=-0.03:bs=0.05:rm=-0.02:bm=0.03,eq=contrast=1.05:saturation=0.92",
     "B3": "colorbalance=rs=-0.02:gs=0.02:bs=0.05,eq=contrast=1.07:saturation=0.9",
+    "B4": "colorbalance=rs=0.03:gs=0.01:bs=-0.02:rm=0.02,eq=contrast=1.05:saturation=0.95",  # saffron: the science / yogic
+    "B5": "colorbalance=rs=0.02:bs=0.02,eq=contrast=1.04:saturation=0.95",
     "PAUSE": "eq=contrast=1.08:saturation=0.85",
     "LIVE": "eq=contrast=1.04:saturation=0.95",  # archival: light touch only
 }
@@ -59,8 +61,11 @@ def font():
     sys.exit("no font found (install fonts-dejavu)")
 
 
-def load_edl(path=None):
+def load_edl(path=None, keep_optional=False):
     rows = list(csv.DictReader(pathlib.Path(path or EDL).open(encoding="utf-8")))
+    # an optional LIVE clip that is not downloaded yet is left out (no dead air); rebuild SRTs after downloading
+    if not keep_optional:
+        rows = [r for r in rows if not (r.get("optional") == "yes" and resolve(r)[0] is None)]
     t = 0.0
     for r in rows:
         src_in, src_out = num(r.get("src_in")), num(r.get("src_out"))
