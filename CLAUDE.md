@@ -79,7 +79,9 @@ The phone-review content rules above do not apply here; these do:
   and `upload.wikimedia.org` (429 on the shared IP) fail; Gofile is blocked by the environment network policy (allowlist `gofile.io`,
   `*.gofile.io` first). **Working:** Coverr (`tools/fetch_assets.py search coverr`, skip `premium`/`temp`/AI clips), NASA Images API,
   Wellcome Collection API, Openverse (Flickr CC photos; Freesound CC0 audio previews), Internet Archive, Commons *search*.
-  Do YouTube/archival news on the VPS with `yt-dlp` + cookies. Check `https://en.wikipedia.org/...prop=pageimages` early: if a
+  **Dailymotion works with yt-dlp from the cloud** and its public search API (`api.dailymotion.com/videos?search=`) is the best
+  YouTube alternative for old news footage (found the 2010 ITN and Al Jazeera reports there). Then archive.org `youtube-*` mirrors.
+  Do YouTube itself on the VPS with `yt-dlp --cookies` (your own login); don't route around blocks with VPNs or proxies. Check `https://en.wikipedia.org/...prop=pageimages` early: if a
   subject has no free photo, plan for a credited article quote (flag it in `media_manifest.csv`).
 - **Contact-sheet every asset before use**: search results often mismatch (a "CCTV camera" search returned a box in grass).
 - **Telugu ASR**: Whisper large-v3 on ≤9 s windows cut at pauses (`silencedetect`), `condition_on_previous_text=False`; long windows
@@ -87,7 +89,9 @@ The phone-review content rules above do not apply here; these do:
 - **Render**: bitrate-cap every encode (temporal grain made a 3.4 GB 1080p file). Tall stills get the blurred-fill automatically;
   use `overlay=cctv` on real footage when no CCTV footage exists. Find real archival audio (e.g. a CC BY skeptic clip on archive.org)
   for `LIVE` rows instead of leaving them empty.
-- **Shell**: never `pkill -f <pattern>` in the same command line that contains the pattern (it kills its own shell).
+- **Shell**: never `pkill -f <pattern>` in the same command line that contains the pattern (it kills its own shell; use `[x]yz`
+  bracket patterns). Never name a shell function after a command it calls (`cut(){ … | cut; }` forked ~1,500 shells and OOM-killed
+  renders). If ffmpeg dies with an empty error, check `memory.failcnt`/`dmesg` for OOM and stray processes first.
 - **Deliver to the phone**: MP4 via SendUserFile (keep a ≤ ~150 MB 720p copy), the 1080p master plus `gofile` upload command for the VPS.
 
 ## Ground rules

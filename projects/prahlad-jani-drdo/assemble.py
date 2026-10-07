@@ -135,11 +135,17 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
         is_img = src.suffix.lower() in IMG_EXT
         cmd += ["-loop", "1", "-framerate", str(FPS)] if is_img else ["-ss", str(r["src_in"]), "-stream_loop", "-1"]
         cmd += ["-i", str(src)]
-        if r["motion"] == "none" and not is_img:  # play the real footage untouched (cover-fit only)
+        # 4:3 archive video and tall stills are shown whole, over a blurred, darkened copy of themselves
+        fit = aspect(src) < (1.3 if is_img else 1.5)
+        if r["motion"] == "none" and not is_img and not fit:  # play the real footage untouched (cover-fit only)
             base = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS}"
-        elif is_img and aspect(src) < 1.3:  # tall/square still: fit it over a blurred, darkened copy of itself
-            base = (f"split[bgi][fgi];[bgi]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
-                    f"boxblur=40:2,eq=brightness=-0.18:saturation=0.7[bgo];[fgi]scale=-2:{int(H * 2 * 0.92)}:flags=lanczos[fgo];"
+        elif r["motion"] == "none" and fit:
+            base = (f"fps={FPS},split[bgi][fgi];[bgi]scale=320:180:force_original_aspect_ratio=increase,crop=320:180,boxblur=12:2,"
+                    f"scale={W}:{H},eq=brightness=-0.18:saturation=0.7[bgo];[fgi]scale=-2:{H}:flags=lanczos[fgo];"
+                    f"[bgo][fgo]overlay=(W-w)/2:(H-h)/2,setsar=1")
+        elif fit:
+            base = (f"split[bgi][fgi];[bgi]scale=480:270:force_original_aspect_ratio=increase,crop=480:270,boxblur=12:2,"
+                    f"scale={W * 2}:{H * 2},eq=brightness=-0.18:saturation=0.7[bgo];[fgi]scale=-2:{int(H * 2 * 0.92)}:flags=lanczos[fgo];"
                     f"[bgo][fgo]overlay=(W-w)/2:(H-h)/2,setsar=1,{motion(r['motion'], W, H, n)}")
         else:
             base = (f"scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase:flags=lanczos,crop={W * 2}:{H * 2},"

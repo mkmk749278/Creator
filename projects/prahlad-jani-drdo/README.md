@@ -48,14 +48,15 @@ Regenerate after text edits: `python3 tools/align_phrases.py phrases.v2.tsv <asr
 two `build_srt.py` commands.
 
 ## Status (2026-10-07): rendered
-- `out/preview.mp4` (1080p, 6:30) is built from **58 sourced files**, every one logged with its licence in
+- `out/preview.mp4` (1080p, 7:27) is built from **73 sourced files**, every one logged with its licence in
   `media_manifest.csv`; `credits.md` is ready to paste into the YouTube description.
 - Sources used: Coverr (real hospital/lab/water footage), NASA (ISS, Earth, lab B-roll, ISS ultrasound), Wellcome Collection
   (anatomy engravings, Henry Tanner's 1880 fast, a yogi gouache), Flickr CC via Openverse (Ambaji, Ahmedabad, ECG, ICU, soldiers),
   Freesound CC0 (music + SFX), archive.org (James Randi, CC BY 3.0, as the LIVE skeptic clip), screenshots of Wikipedia and
   Sanal Edamaruku's article (credited quotes).
-- **Not sourced (blocked or paid):** the 2010 news report and press-conference footage (Reuters/AP archive; YouTube downloads
-  are blocked from the cloud). The two LIVE slots for them were removed; add them back from the VPS (see Live clips above).
+- **2010 footage:** ITN and Al Jazeera English reports (via Dailymotion re-uploads) supply the hospital room, the real CCTV
+  feed and the press conference. LIVE clips: ITN intro (1:54), G. Ilavazhagan of DIPAS (2:42), Dr. Sudhir Shah (5:52), James
+  Randi (6:52 approx.). ⚠️ News footage is copyrighted: short credited excerpts; licence (ITN Source / Al Jazeera) before monetising.
 - ⚠️ `jani_portrait_red.jpg` is a copyrighted press photo shown from Edamaruku's article with on-screen credit: licence it or
   replace it before monetising.
 

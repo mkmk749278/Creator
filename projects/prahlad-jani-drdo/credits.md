@@ -70,5 +70,20 @@ Voiceover: ElevenLabs (Bunty), Telugu. Script & edit: Be Practical with Kishore.
 
 ## ⚠️ Copyrighted, quoted under fair use (licence before monetising)
 
+- aj_cctv.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
+- aj_cctv2.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
+- aj_full.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
+- aj_ilavazhagan.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
+- aj_jani_close.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
+- aj_press_wide.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
+- aj_room.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
+- aj_room_wide.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
+- aj_shah.mp4: Al Jazeera English (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/x185tat
 - headline_edamaruku.jpg: Rationalist International · Screenshot of article (fair-use quotation, credited) · https://www.sanaledamaruku.com/post/india-s-man-who-lives-on-sunshine
+- itn_cctv.mp4: ITN (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/xdfqcq
+- itn_devotees.mp4: ITN (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/xdfqcq
+- itn_full.mp4: ITN (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/xdfqcq
+- itn_hospital_bed.mp4: ITN (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/xdfqcq
+- itn_jani_close.mp4: ITN (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/xdfqcq
+- itn_jani_close2.mp4: ITN (2010) · COPYRIGHTED news footage: short credited excerpt (fair use); licence before monetising · https://www.dailymotion.com/video/xdfqcq
 - jani_portrait_red.jpg: Unknown press photographer, as published by Rationalist International (sanaledamaruku.com), 28 May 2020 · COPYRIGHTED: quoted under fair use; licence before monetising · https://www.sanaledamaruku.com/post/india-s-man-who-lives-on-sunshine
