@@ -459,6 +459,78 @@
     }
   };
 
+  // ------------------------------------------------------------ real media
+  // Caption block shared by photo/footage: honest "what it shows" + credit.
+  const mediaText = (s) => `
+      <div class="mshade" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,9,15,0.55) 0%,rgba(6,9,15,0) 22%,rgba(6,9,15,0) 50%,rgba(6,9,15,0.88) 100%)"></div>
+      <div class="mtxt" style="position:absolute;left:140px;right:140px;bottom:110px;display:flex;flex-direction:column;gap:18px">
+        ${s.eyebrow ? `<div class="eyebrow">${s.eyebrow}</div>` : ""}
+        ${s.title ? `<div class="h2 te" style="font-size:${s.size || 76}px;text-shadow:0 4px 30px rgba(0,0,0,.7);max-width:1500px">${s.title}</div>` : ""}
+        ${s.sub ? `<p class="sub te" style="color:#e4e8f0;text-shadow:0 2px 16px rgba(0,0,0,.8);max-width:1400px">${s.sub}</p>` : ""}</div>
+      ${s.label ? `<div class="mlabel" style="position:absolute;left:140px;top:110px;font-size:26px;font-weight:600;color:#fff;background:rgba(6,9,15,0.72);padding:10px 18px;border-radius:10px">${s.label}</div>` : ""}
+      <div class="credit" style="position:absolute;right:40px;bottom:30px;font-size:22px;color:rgba(255,255,255,0.8);text-shadow:0 1px 6px #000;max-width:1200px;text-align:right">${s.credit || ""}</div>`;
+  const mediaIn = (el, s, tl, t) => {
+    el.querySelectorAll(".mtxt > *").forEach((c, i) => inn(tl, c, t + 0.4 + i * 0.4, { y: 24 }));
+    if (s.label) inn(tl, el.querySelector(".mlabel"), t + 0.3, { y: -10 });
+    inn(tl, el.querySelector(".credit"), t + 0.6, { y: 0 });
+  };
+  // Ken Burns move: s.move = "in" | "out" | "left" | "right" | "up"; s.fit = "cover" | "contain"
+  const kb = (tl, img, s, t) => {
+    const m = s.move || "in";
+    const from = { in: { scale: 1.0 }, out: { scale: 1.12 }, left: { scale: 1.1, xPercent: 3 }, right: { scale: 1.1, xPercent: -3 }, up: { scale: 1.1, yPercent: 3 } }[m];
+    const to = { in: { scale: 1.1 }, out: { scale: 1.0 }, left: { scale: 1.1, xPercent: -3 }, right: { scale: 1.1, xPercent: 3 }, up: { scale: 1.1, yPercent: -3 } }[m];
+    tl.fromTo(img, from, Object.assign({ duration: s.dur, ease: "none", immediateRender: false }, to), t);
+  };
+  B.photo = (el, s, tl, t) => {
+    const fit = s.fit || "cover";
+    el.innerHTML = `<div style="position:absolute;inset:0;background:#000;overflow:hidden">
+        ${fit === "contain" ? `<div style="position:absolute;inset:0;background:radial-gradient(80% 80% at 50% 45%,#1a2233,#05070b)"></div>` : ""}
+        <img class="ph" src="${s.img}" alt="${(s.alt || "").replace(/"/g, "")}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:${fit};object-position:${s.pos || "50% 35%"}"></div>
+      ${mediaText(s)}`;
+    inn(tl, el.firstElementChild, t, { scale: 1 }, 0.5);
+    kb(tl, el.querySelector(".ph"), s, t);
+    mediaIn(el, s, tl, t);
+  };
+  // Footage: the <video> is emitted statically by build.mjs as #v-<id> inside #vw-<id>; we adopt it.
+  B.footage = (el, s, tl, t) => {
+    el.innerHTML = `<div class="fbox" style="position:absolute;inset:0;background:#000;overflow:hidden"></div>${mediaText(s)}`;
+    const w = document.getElementById("vw-" + s.id);
+    if (w) { el.querySelector(".fbox").appendChild(w); w.style.display = "block"; }
+    inn(tl, el.firstElementChild, t, { scale: 1 }, 0.5);
+    if (w) tl.fromTo(w, { scale: 1.0 }, { scale: 1.06, duration: s.dur, ease: "none", immediateRender: false }, t);
+    mediaIn(el, s, tl, t);
+  };
+  // Split: framed photo on one side, text on the other (for paintings, documents, portraits).
+  B.split = (el, s, tl, t) => {
+    const right = s.side === "right";
+    el.innerHTML = `<div class="scene" style="align-items:center;gap:80px;flex-direction:${right ? "row-reverse" : "row"}">
+      <div class="frame" style="position:relative;flex:none;width:${s.w || 820}px;height:${s.h || 760}px;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 40px 120px rgba(0,0,0,.6);border:2px solid ${s.gold ? "rgba(232,194,122,0.5)" : "var(--glass-edge)"}">
+        <img class="ph" src="${s.img}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:${s.fit || "cover"};object-position:${s.pos || "50% 35%"}">
+        ${s.label ? `<div style="position:absolute;left:16px;top:16px;font-size:24px;font-weight:600;background:rgba(6,9,15,0.8);padding:8px 14px;border-radius:8px">${s.label}</div>` : ""}</div>
+      <div class="side" style="display:flex;flex-direction:column;gap:28px;max-width:${1640 - (s.w || 820) - 80}px">
+        ${s.eyebrow ? `<div class="eyebrow ${s.gold ? "gold" : ""}">${s.eyebrow}</div>` : ""}
+        ${s.big ? `<div class="num" style="font-size:150px;font-weight:800;line-height:1;color:var(--${s.color || "gold"})">${s.big}</div>` : ""}
+        <div class="h2 te" style="font-size:${s.size || 62}px">${s.title}</div>
+        ${(s.lines || []).map((l) => `<div class="te ln" style="font-size:38px;color:var(--ink-dim);line-height:1.35">${l}</div>`).join("")}
+        ${s.sub ? `<p class="sub te">${s.sub}</p>` : ""}</div></div>
+      <div class="credit" style="position:absolute;right:40px;bottom:30px;font-size:22px;color:rgba(255,255,255,0.75);max-width:1200px;text-align:right">${s.credit || ""}</div>`;
+    inn(tl, el.querySelector(".frame"), t + 0.1, { x: right ? 60 : -60 }, 0.8);
+    kb(tl, el.querySelector(".ph"), Object.assign({}, s, { move: s.move || "in" }), t);
+    el.querySelectorAll(".side > *").forEach((c, i) => inn(tl, c, t + (s.at ? (s.at[i] ?? 0.5 + i * 0.5) : 0.5 + i * 0.5), { x: right ? -40 : 40 }));
+    inn(tl, el.querySelector(".credit"), t + 0.8, { y: 0 });
+  };
+  // Credits roll: every media credit, scrolling.
+  B.credits = (el, s, tl, t) => {
+    el.innerHTML = `<div class="scene" style="flex-direction:column;justify-content:flex-start;overflow:hidden">
+      <div class="roll" style="display:flex;flex-direction:column;gap:14px">
+        <div class="h2" style="font-size:56px;margin-bottom:20px">${s.title || "Photo & video credits"}</div>
+        ${s.items.map((c) => `<div style="font-size:26px;color:var(--ink-dim);line-height:1.35">${c}</div>`).join("")}</div></div>`;
+    const roll = el.querySelector(".roll");
+    inn(tl, roll, t + 0.1, { y: 20 });
+    const travel = Math.max(0, s.items.length * 52 - 600);
+    if (travel) tl.fromTo(roll, { y: 0 }, { y: -travel, duration: s.dur - 2, ease: "none", immediateRender: false }, t + 1);
+  };
+
   // ------------------------------------------------------------ scenes builder
   window.HF_build = function (tl, scenes, opts) {
     const stage = document.getElementById("stage");

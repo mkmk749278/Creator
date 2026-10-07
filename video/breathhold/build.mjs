@@ -41,6 +41,19 @@ for (const [k, part] of parts.entries()) {
   execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-ss", String(t0), "-t", String(dur), "-i", join(master, "voice_paused.wav"),
     "-ar", "48000", "-ac", "1", join(dir, "voice.wav")]);
   const local = ss.map(({ vstart, vdur, ...s }) => ({ ...s, start: r3(vstart - t0), dur: vdur }));
+  // Real media: copy only the files this part uses; emit <video> tags statically so the
+  // renderer sees them before any script runs (scenes.js moves them into place).
+  const used = local.flatMap((s) => [s.img, s.video].filter(Boolean));
+  for (const f of used) {
+    const src = join(here, "_media", f.replace(/^media\//, ""));
+    if (!existsSync(src)) throw new Error(`${id}: missing media ${f}`);
+    mkdirSync(dirname(join(dir, f)), { recursive: true });
+    cpSync(src, join(dir, f));
+  }
+  const videos = local.filter((s) => s.video).map((s) =>
+    `      <div class="vwrap" id="vw-${s.id}" style="display:none;position:absolute;inset:0"><video id="v-${s.id}" src="${s.video}" muted playsinline ` +
+    `data-start="${s.start}" data-duration="${s.dur}" data-media-start="${s.videoStart || 0}" data-track-index="2" data-volume="0" ` +
+    `style="width:100%;height:100%;object-fit:${s.fit || "cover"}"></video></div>`).join("\n");
   writeFileSync(join(dir, "index.html"), `<!doctype html>
 <html lang="te">
   <head>
@@ -59,7 +72,9 @@ for (const [k, part] of parts.entries()) {
     <div id="root" data-composition-id="${id}" data-start="0" data-width="1920" data-height="1080" data-duration="${dur}">
       <div class="bg"></div>
       <div class="bg-vignette"></div>
-      <div id="stage"></div>
+      <div id="stage">
+${videos}
+      </div>
       <audio id="${id}-voice" src="voice.wav" data-start="0" data-duration="${dur}" data-track-index="10" data-volume="1"></audio>
     </div>
     <script>
