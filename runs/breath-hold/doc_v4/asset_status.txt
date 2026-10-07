@@ -3,6 +3,8 @@
 ✓ using  assets/video/vidyut_stage_trance.mp4
 ✓ using  assets/images/ians_event_435.jpg
 ✓ using  assets/images/ians_event_437.jpg
+✓ using  assets/video/vidyut_stage_trance.mp4
+✓ using  assets/video/vidyut_tears_macro.mp4
 ✓ using  assets/video/sf_dhalsim_arena.mp4
 ✓ using  assets/video/sf_title.mp4
 ✓ using  assets/video/sf_release.mp4
