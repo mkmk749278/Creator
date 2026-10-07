@@ -112,7 +112,7 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
         graph.append(f"[{k}:v]scale={W}:{H},format=rgba,colorchannelmixer=aa=0.22[hud]")
         graph.append(f"{cur}[hud]overlay=shortest=1[l1h]")
         cur, k = "[l1h]", k + 1
-    atmos = ["vignette=angle=PI/4.5", "noise=alls=7:allf=t"]
+    atmos = ["vignette=angle=PI/4.5", "noise=alls=4:allf=t"]
     if args.letterbox:
         bar = int((H - W / 2.35) / 2)
         atmos.append(f"drawbox=y=0:w=iw:h={bar}:color=black:t=fill,drawbox=y=ih-{bar}:w=iw:h={bar}:color=black:t=fill")
@@ -142,8 +142,9 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
         cur = "[l3]"
     out = tmp / f"{i:03d}.mp4"
     cmd += ["-filter_complex", ";".join(graph), "-map", cur, "-frames:v", str(n), "-r", str(FPS),
-            "-c:v", "libx264", "-preset", args.preset, "-crf", "18" if args.uhd else "20", "-pix_fmt", "yuv420p",
-            "-an", str(out)]
+            "-c:v", "libx264", "-preset", args.preset, "-crf", "18" if args.uhd else "20",
+            "-maxrate", "45M" if args.uhd else "12M", "-bufsize", "90M" if args.uhd else "24M",
+            "-pix_fmt", "yuv420p", "-an", str(out)]
     run(cmd)
     return out, src is None or fell_back
 
@@ -244,7 +245,8 @@ def main():
     vcodec = ["-c:v", "copy"]
     if args.burn_subs:
         vcodec = ["-vf", f"subtitles={HERE / 'subtitles.te.programme.srt'}:force_style='FontName=Noto Sans Telugu,"
-                  f"FontSize=20,Outline=1,MarginV=60'", "-c:v", "libx264", "-crf", "18", "-preset", args.preset]
+                  f"FontSize=20,Outline=1,MarginV=60'", "-c:v", "libx264", "-crf", "18", "-preset", args.preset,
+                  "-maxrate", "45M" if args.uhd else "12M", "-bufsize", "90M" if args.uhd else "24M"]
     if args.only:
         shutil.copy(tmp / "video.mp4", OUT / f"section_{lo}-{hi}.mp4")
         print("wrote", OUT / f"section_{lo}-{hi}.mp4")
