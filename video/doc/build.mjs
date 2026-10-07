@@ -71,7 +71,7 @@ const segs = beats.map((b) => b.pause != null
   : { ...b, a: shS(b.from), b: shE(b.to) });
 for (const s of segs) {
   const len = s.b - s.a;
-  const n = Math.max(1, Math.round(len / (s.split ? 3.6 : 3.0)));
+  const n = s.single ? 1 : Math.max(1, Math.round(len / (s.split ? 3.6 : 3.0)));
   const raw = Array.from({ length: n }, () => PATTERN[pi++ % PATTERN.length]);
   const k = len / raw.reduce((x, y) => x + y, 0);
   let t = s.a;
@@ -79,12 +79,13 @@ for (const s of segs) {
     const d = i === n - 1 ? s.b - t : r3(r * k);
     const shot = { start: r3(t), dur: r3(d), end: !!s.end };
     const mk = (name) => {
+      if (typeof name === "object" && name.anim) return { isAnim: true, anim: name.anim, opts: name.opts || {}, name: "anim:" + name.anim };
       const m = pick(name);
       const o = { ...m, name };
       if (m.isVid) {
         const span = Math.max(0.1, m.dur - d - 0.2);
         const c = (cursor[m.abs] = ((cursor[m.abs] ?? (m.start || 0)) ));
-        o.mediaStart = r3(c % span);
+        o.mediaStart = s.mediaStart != null ? s.mediaStart : r3(c % span);
         cursor[m.abs] = c + d + 1.7;
       }
       o.move = s.move || m.move || (m.isVid ? VMOVES : MOVES)[(shots.length + i) % (m.isVid ? VMOVES.length : MOVES.length)];
@@ -101,15 +102,15 @@ for (const s of segs) {
 // ---------- live audio track (owner footage only: real sound, never synthesised)
 const live = [];
 for (const s of segs.filter((x) => x.live)) {
-  const m = resolve(s.live)[0];
-  if (m && (m.owner || m.liveAudio) && m.isVid && hasAudio(m.abs)) live.push({ file: m.abs, at: r3(s.a), mediaStart: m.liveStart ?? Math.max(0, Math.min(0.3, m.dur - s.len)), len: s.len });
+  const m = resolve(s.live).find((x) => !s.liveFile || x.abs.endsWith(s.liveFile)) || resolve(s.live)[0];
+  if (m && (m.owner || m.liveAudio) && m.isVid && hasAudio(m.abs)) live.push({ file: m.abs, at: r3(s.a), mediaStart: s.mediaStart ?? m.liveStart ?? Math.max(0, Math.min(0.3, m.dur - s.len)), len: s.len, gain: s.liveGain ?? 0 });
 }
 if (live.length) {
   const args = ["-y", "-loglevel", "error", "-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=48000:cl=stereo"];
   let fc = "";
   live.forEach((l, i) => {
     args.push("-ss", String(l.mediaStart), "-t", String(l.len), "-i", l.file);
-    fc += `[${i + 1}:a]aresample=48000,aformat=channel_layouts=stereo,afade=t=in:d=0.08,afade=t=out:st=${l.len - 0.4}:d=0.4,adelay=${Math.round(l.at * 1000)}|${Math.round(l.at * 1000)}[l${i}];`;
+    fc += `[${i + 1}:a]aresample=48000,aformat=channel_layouts=stereo,volume=${l.gain}dB,afade=t=in:d=0.08,afade=t=out:st=${l.len - 0.4}:d=0.4,adelay=${Math.round(l.at * 1000)}|${Math.round(l.at * 1000)}[l${i}];`;
   });
   fc += `[0:a]${live.map((_, i) => `[l${i}]`).join("")}amix=inputs=${live.length + 1}:normalize=0:duration=first[o]`;
   execFileSync("ffmpeg", [...args, "-filter_complex", fc, "-map", "[o]", join(out, "live.wav")]);
@@ -161,6 +162,7 @@ for (let k = 0; k < bounds.length - 1; k++) {
         <div class="grade"></div><div class="cred">${esc([a.credit, b.credit].filter(Boolean).join("  ·  "))}</div></div>`;
     }
     const m = s.media;
+    if (m.isAnim) return `      <div id="${id}-s${++shotNo}" class="shot anim clip" data-start="${st}" data-duration="${d}" data-track-index="1" data-anim="${m.anim}" data-opts='${JSON.stringify(m.opts)}'><canvas class="cv" width="1920" height="1080"></canvas><div class="grade"></div></div>`;
     if (m.credit) credits.set(m.credit, true);
     const fit = m.fit === "contain" ? " contain" : "";
     const fill = fit && !m.isVid ? `<img class="fill" src="media/${basename(m.abs)}" alt="" />` : "";
@@ -176,7 +178,19 @@ for (let k = 0; k < bounds.length - 1; k++) {
     const words = esc(l.text).split(" | ").join('<span class="sep">|</span>');
     return `      <div id="${id}-l3-${String(local(l.start)).replace(".", "_")}" class="l3${l.wide ? " wide" : ""}" data-start="${local(l.start)}" data-duration="${l.dur}"><div class="bar"></div><div class="t"${l.wide ? ' style="text-transform:none;font-size:46px"' : ""}>${words}</div></div>`;
   }).join("\n");
-  const ptimer = { keys: tkeys.map(([t, c]) => [local(t), c]), windows: twins.filter(([a, b]) => b > t0 && a < t1).map(([a, b]) => [Math.max(0, local(a)), Math.min(dur, local(b))]),
+  const clipKeys = (() => {   // only this part's timer segments, clipped to [0, dur] (negative positions shift GSAP timelines)
+    const ks = tkeys.map(([t, c]) => [local(t), c]), out = [];
+    for (let i = 0; i < ks.length - 1; i++) {
+      const [a0, c0] = ks[i], [a1, c1] = ks[i + 1];
+      if (a1 <= 0 || a0 >= dur) continue;
+      const at = (x) => (a1 === a0 ? c0 : c0 + (c1 - c0) * (x - a0) / (a1 - a0));
+      const s0 = Math.max(0, a0), s1 = Math.min(dur, a1);
+      if (!out.length || out[out.length - 1][0] !== r3(s0)) out.push([r3(s0), Math.round(at(s0))]);
+      out.push([r3(s1), Math.round(at(s1))]);
+    }
+    return out;
+  })();
+  const ptimer = { keys: clipKeys, windows: twins.filter(([a, b]) => b > t0 && a < t1).map(([a, b]) => [Math.max(0, local(a)), Math.min(dur, local(b))]),
     alarm: talarm.filter(([a, b]) => b > t0 && a < t1).map(([a, b]) => [Math.max(0, local(a)), Math.min(dur, local(b))]) };
   const end = endStart < t1 ? `      <div class="endcard" data-start="${local(Math.max(endStart, t0)) + 0.4}"><img class="logo" src="media/logo_square.png" alt="" /><div class="h">నచ్చితే Like · Share</div><div class="btn">SUBSCRIBE</div></div>` : "";
   writeFileSync(join(dir, "index.html"), `<!doctype html>
@@ -187,6 +201,7 @@ for (let k = 0; k < bounds.length - 1; k++) {
     <title>16-minute breath hold: ${id}</title>
     <script src="vendor/gsap.min.js"></script>
     <link rel="stylesheet" href="shared/doc.css" />
+    <script src="shared/anims.js"></script>
     <script src="shared/doc.js"></script>
     <style>
       ${fontFace}
@@ -220,7 +235,7 @@ const status = owner.map((n) => `${resolve(n).some((x) => x.owner) ? "✓ using"
   (resolve(n).some((x) => x.owner) ? "" : `  -> fallback: ${resolve(n).map((x) => basename(x.abs)).slice(0, 3).join(", ") || "none"}`));
 writeFileSync(join(out, "asset_status.txt"), status.join("\n") + "\n");
 writeFileSync(join(out, "credits.txt"), [...credits.keys()].join("\n") + "\n");
-writeFileSync(join(out, "shots.json"), JSON.stringify(shots.map((s) => ({ start: s.start, dur: s.dur, media: s.media ? basename(s.media.abs) : s.split.map((m) => basename(m.abs)), live: s.live })), null, 0).replace(/\},\{/g, "},\n{"));
+writeFileSync(join(out, "shots.json"), JSON.stringify(shots.map((s) => ({ start: s.start, dur: s.dur, media: s.media ? (s.media.isAnim ? s.media.name : basename(s.media.abs)) : s.split.map((m) => basename(m.abs)), live: s.live })), null, 0).replace(/\},\{/g, "},\n{"));
 const lens = shots.map((s) => s.dur);
 console.log(`${shots.length} shots, ${Math.min(...lens).toFixed(2)}–${Math.max(...lens).toFixed(2)} s; live audio: ${live.length ? "yes" : "none (no owner clip with audio)"}`);
 console.log(status.join("\n"));

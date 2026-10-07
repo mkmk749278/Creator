@@ -34,6 +34,14 @@
       const tag = sh.querySelector(".tag");
       if (tag) tl.fromTo(tag, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: E, immediateRender: false }, t + 0.3);
     });
+    // Animated science shots: redraw the canvas from local time on every update.
+    document.querySelectorAll(".shot.anim").forEach((sh) => {
+      const t = +sh.dataset.start, d = +sh.dataset.duration, cv = sh.querySelector("canvas");
+      const ctx = cv.getContext("2d"), fn = window.DOC_ANIMS[sh.dataset.anim], o = JSON.parse(sh.dataset.opts || "{}");
+      const st = { v: 0 };
+      tl.fromTo(st, { v: 0 }, { v: d, duration: d, ease: "none", immediateRender: false, onUpdate: () => fn(ctx, st.v, d, o) }, t);
+      fn(ctx, 0, d, o);
+    });
     document.querySelectorAll(".vover").forEach((o) => {
       const t = +o.dataset.vs, d = +o.dataset.vd;
       tl.set(o, { visibility: "hidden" }, 0);

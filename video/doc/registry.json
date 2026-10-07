@@ -94,6 +94,24 @@
    ],
    "fallback": []
   },
+  "clip_stage": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_stage_trance.mp4",
+     "credit": "Video: @thefilmihubofficial / @quickfilmi (Instagram)"
+    }
+   ],
+   "fallback": []
+  },
+  "clip_tears": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_tears_macro.mp4",
+     "credit": "Video: @instantbollywood (Instagram)"
+    }
+   ],
+   "fallback": []
+  },
   "sf_dhalsim": {
    "files": [
     {
@@ -817,16 +835,16 @@
    ],
    "fallback": []
   },
-  "anatomy_heart": {
-   "files": [],
-   "fallback": [
-    "anatomy_lungs"
-   ]
-  },
   "anatomy_brain": {
    "files": [],
    "fallback": [
     "anatomy_carotid"
+   ]
+  },
+  "anatomy_heart": {
+   "files": [],
+   "fallback": [
+    "anatomy_lungs"
    ]
   }
  }

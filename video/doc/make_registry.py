@@ -24,6 +24,8 @@ OWNER = {
     "vidyut_shivering": [("assets/video/vidyut_stage_trance.mp4", "Video: @thefilmihubofficial / @quickfilmi (Instagram)", {})],
     "vidyut_event_photo": [(f"assets/images/ians_event_{n}.jpg", "Photo: IANS", {"origin": "50% 18%"}) for n in (435, 436, 438, 439)],
     "vidyut_shankha_photo": [("assets/images/ians_event_437.jpg", "Photo: IANS · Vidyut Jammwal blowing the shankha, Mumbai", {"origin": "55% 30%"})],
+    "clip_stage": [("assets/video/vidyut_stage_trance.mp4", "Video: @thefilmihubofficial / @quickfilmi (Instagram)", {})],
+    "clip_tears": [("assets/video/vidyut_tears_macro.mp4", "Video: @instantbollywood (Instagram)", {})],
     "sf_dhalsim": [("assets/video/sf_dhalsim_arena.mp4", "Street Fighter trailer · Paramount Pictures India / Legendary", {})],
     "sf_title": [("assets/video/sf_title.mp4", "Street Fighter trailer · Paramount Pictures India / Legendary", {})],
     "sf_release": [("assets/video/sf_release.mp4", "Street Fighter trailer · Paramount Pictures India / Legendary", {})],
