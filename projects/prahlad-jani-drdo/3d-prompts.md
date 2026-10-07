@@ -2,7 +2,7 @@
 
 These prompts produce **abstract anatomy, schematics and sci-art only**. Never use them to generate an
 image of Prahlad Jani, the doctors, the hospital or "archival" footage. Viewers must never mistake an AI shot
-for real evidence. Log every generated clip in `credits.md` (tool, prompt ID, date).
+for real evidence. Save each clip in `assets/` under the file name given, and log it in `credits.md` (tool, prompt ID, date).
 
 Global look (append to every prompt):
 > cinematic documentary, 16:9, 4K, shallow depth of field, volumetric light, film grain 3%, color grade deep
@@ -16,7 +16,7 @@ Target clip length: 4–6 s each (the EDL cuts every 2.5–3.5 s). Generate 2–
 ---
 
 ## P1: Kidney failure vs. normal filtration ("the 3-day rule")
-**EDL slots:** B1-03, B1-04 · **Accent:** toxic amber vs. clean cyan
+**Files:** `ai_kidney_healthy.mp4` (P1a), `ai_kidney_dehydrated.mp4` (P1b) · **EDL shots:** S003, S004, S064, S077 · **Accent:** toxic amber vs. clean cyan
 
 - **P1a (healthy):** Photorealistic macro cross-section of a human kidney, glowing cyan blood flowing through
   branching arterioles into nephron glomeruli, clear filtrate droplets forming, slow dolly forward through the
@@ -28,7 +28,7 @@ Target clip length: 4–6 s each (the EDL cuts every 2.5–3.5 s). Generate 2–
   scan line sweeping left to right converting healthy tissue to dry cracked tissue.
 
 ## P2: The sealed room surveillance grid
-**EDL slots:** B1-11, B2-04, B2-06 · **Accent:** clinical green + red REC
+**Files:** `ai_room_wireframe.mp4` (P2a), `ai_room_valve.mp4` (P2c) · **EDL shots:** S021, S026, S050, S052 · **Accent:** clinical green + red REC
 *Better built in HyperFrames/After Effects than AI-generated (exact, controllable). Prompt is a fallback.*
 
 - **P2a:** Isometric 3D architectural wireframe of a small hospital isolation room on a dark navy void: single
@@ -40,7 +40,7 @@ Target clip length: 4–6 s each (the EDL cuts every 2.5–3.5 s). Generate 2–
   droplets falling and stopping (illustrates "zero water connection").
 
 ## P3: The bladder anomaly (the ultrasound mystery)
-**EDL slots:** B3-01 to B3-04 · **Accent:** sonography grey-green + amber fluid
+**Files:** `ai_bladder_model.mp4` (P3a), `ai_sonography.mp4` (P3b), `ai_bladder_reabsorb.mp4` (P3c) · **EDL shots:** S075, S080, S082, S083, S084, S085 · **Accent:** sonography grey-green + amber fluid
 
 - **P3a:** Translucent 3D anatomical model of a human urinary bladder floating in dark space, faint amber
   fluid slowly pooling at the base, holographic medical-scan lines passing over it, slow orbit.
@@ -53,7 +53,7 @@ Target clip length: 4–6 s each (the EDL cuts every 2.5–3.5 s). Generate 2–
   physiology. The VO/on-screen text must say "the doctors' hypothesis".)*
 
 ## P4: Cellular autophagy & mitochondrial recycling
-**EDL slots:** B3-09 to B3-12 · **Accent:** bioluminescent gold/teal
+**EDL:** not in the current VO (autophagy segment, pending part 2) · **Accent:** bioluminescent gold/teal
 
 - **P4a:** Inside a human cell, cinematic micro-world: a double-membrane autophagosome engulfing a damaged
   mitochondrion and protein debris, then fusing with a glowing lysosome, contents dissolving into golden
@@ -64,14 +64,14 @@ Target clip length: 4–6 s each (the EDL cuts every 2.5–3.5 s). Generate 2–
   and vascular circuits glow (outro bridge, see P6).
 
 ## P5: Measured water (macro beaker)
-**EDL slot:** B2-08 · **Accent:** sterile white + clinical green
+**Files:** `ai_beaker.mp4` (P5a) · **EDL shots:** S057 · **Accent:** sterile white + clinical green
 
 - **P5a:** Extreme macro of single water droplets falling from a glass syringe into a graduated laboratory
   beaker, millilitre markings in sharp focus, sterile white light, slow motion 240fps look, clean.
 - **P5b:** A wet sponge being squeezed over a graduated cylinder, droplets counted, clinical lab bench.
 
 ## P6: Philosophical outro (glowing body)
-**EDL slot:** B3-15 · **Accent:** saffron to teal
+**EDL:** not in the current VO (outro, pending part 2) · **Accent:** saffron to teal
 
 - **P6a:** Wide cinematic shot of a translucent human figure seated in meditation posture against a dark
   cosmos, internal neural and vascular networks glowing saffron and teal, slow breathing pulse of light,
