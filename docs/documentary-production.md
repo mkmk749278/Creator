@@ -92,3 +92,16 @@ L→R pan), **overlay layer**, **kinetic text**, **sound design / ducking cues**
 ## Deliverables per video (all viewable on a phone)
 `asset-manifest.md` · `edl.csv` + `edl.md` · `subtitles.<lang>.srt` · `3d-prompts.md` · `assemble.py` ·
 preview MP4 (Actions artifact) · contact sheet PNG.
+
+## Lessons log
+### 2026-10 · Prahlad Jani & DRDO (Telugu, 6:30)
+- **Source reachability (cloud container):** see `CLAUDE.md` › Lessons. `tools/fetch_assets.py` encodes what works and logs
+  licences automatically; `tools/credits.py` turns the manifest into YouTube-description credits.
+- **What filled the gaps:** NASA lab B-roll (KSC CRS-21 payload prep) stood in for "scientists/lab"; NASA ISS tour/Earth views for
+  "astronauts/space"; Wellcome engravings for anatomy (blurred-fill, tagged "ENGRAVING · WELLCOME COLLECTION"); Wellcome photos of
+  Henry Tanner's 1880 fast as historical context; Coverr hospital footage with the CCTV look for the sealed room.
+- **What could not be sourced here:** the 2010 news footage and press conference (Reuters/AP archive, paid), DRDO imagery,
+  free photos of the subject. These need the VPS (yt-dlp with cookies) or a paid licence.
+- **Balance:** a real 16 s CC BY clip of James Randi (archive.org, May 2010) as the `LIVE` skeptic beat, with a Telugu caption.
+- **Process:** VO first (transcribe → phrases → align) → EDL from beats → fetch → contact sheet → map EDL to real files
+  (`assemble.py --check` must say 0 missing) → section renders of risky shots → full render → SRT rebuild → deliver.

@@ -79,8 +79,12 @@ def main():
     cues = [(shift(s, ps), shift(e, ps), t) for r in load(HERE / "transcript.te.tsv") for s, e, t in split(*r)
             if not skipped(s, ps)]
     for _, dur, _, start, sub in ps:  # captions for the live archival clips
-        if sub:
-            cues += split(start + 0.2, start + dur - 0.2, sub)
+        parts = [x.strip() for x in sub.split("|") if x.strip()]  # "|" = cue break
+        total, t = sum(map(len, parts)), start + 0.2
+        for part in parts:
+            d = (dur - 0.4) * len(part) / total
+            cues += split(t, t + d, part)
+            t += d
     cues.sort()
     lines = []
     for i, (s, e, t) in enumerate(cues, 1):

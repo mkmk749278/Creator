@@ -80,6 +80,13 @@ def num(v):
     return float(v) if v not in (None, "") else None
 
 
+def aspect(path):
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
+                        "-of", "csv=p=0", str(path)], capture_output=True, text=True)
+    w, h = map(int, r.stdout.strip().split(",")[:2])
+    return w / h
+
+
 def has_audio(path):
     r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index",
                         "-of", "csv=p=0", str(path)], capture_output=True, text=True)
@@ -130,6 +137,10 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
         cmd += ["-i", str(src)]
         if r["motion"] == "none" and not is_img:  # play the real footage untouched (cover-fit only)
             base = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS}"
+        elif is_img and aspect(src) < 1.3:  # tall/square still: fit it over a blurred, darkened copy of itself
+            base = (f"split[bgi][fgi];[bgi]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
+                    f"boxblur=40:2,eq=brightness=-0.18:saturation=0.7[bgo];[fgi]scale=-2:{int(H * 2 * 0.92)}:flags=lanczos[fgo];"
+                    f"[bgo][fgo]overlay=(W-w)/2:(H-h)/2,setsar=1,{motion(r['motion'], W, H, n)}")
         else:
             base = (f"scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase:flags=lanczos,crop={W * 2}:{H * 2},"
                     f"setsar=1,{motion(r['motion'], W, H, n)}")
@@ -143,6 +154,14 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
         graph.append(f"{cur}[hud]overlay=shortest=1[l1h]")
         cur, k = "[l1h]", k + 1
     atmos = ["vignette=angle=PI/4.5", "noise=alls=4:allf=t"]
+    if "cctv" in r["overlay"]:
+        u2 = H / 1080
+        atmos = ["hue=s=0", "colorchannelmixer=rr=0.55:gg=0.95:bb=0.6", "noise=alls=14:allf=t",
+                 f"drawgrid=w=iw:h={max(2, int(3 * u2))}:t=1:c=black@0.25", "vignette=angle=PI/3.5",
+                 f"drawtext=fontfile='{fontfile}':text='● REC':fontcolor=red:fontsize={int(34 * u2)}:x={int(60 * u2)}:y={int(50 * u2)}"
+                 f":alpha='if(lt(mod(t,1),0.6),1,0)'",
+                 f"drawtext=fontfile='{fontfile}':text='CAM 0{1 + int(r['start']) % 2}   %{{pts\\:hms}}':fontcolor=white@0.85:"
+                 f"fontsize={int(30 * u2)}:x=w-tw-{int(60 * u2)}:y={int(50 * u2)}"]
     if args.letterbox:
         bar = int((H - W / 2.35) / 2)
         atmos.append(f"drawbox=y=0:w=iw:h={bar}:color=black:t=fill,drawbox=y=ih-{bar}:w=iw:h={bar}:color=black:t=fill")
@@ -158,7 +177,7 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
             draws.append(f"drawtext=fontfile='{fontfile}':text='{esc(text)}':fontcolor=0xFFB020:fontsize={int(40 * u)}:"
                          f"x=w-{int(450 * u)}:y={int(70 * u)}:{alpha}")
         elif pos == "tag":
-            draws.append(f"drawtext=fontfile='{fontfile}':text='{esc(text)}':fontcolor=white@0.75:fontsize={int(24 * u)}:"
+            draws.append(f"drawtext=fontfile='{fontfile}':text='{esc(text)}':fontcolor=white@0.85:fontsize={int(27 * u)}:"
                          f"box=1:boxcolor=black@0.45:boxborderw={int(10 * u)}:x={pad}:y={int(56 * u)}")
         else:  # lower-third over a dark gradient scrim: amber rule + text sliding up
             cmd += ["-i", str(tmp / "scrim.png")]

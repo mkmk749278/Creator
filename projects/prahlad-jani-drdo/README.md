@@ -47,10 +47,21 @@ Add a new clip by adding a row (`type=LIVE`, `block=LIVE`, `motion=none`). Pick 
 Regenerate after text edits: `python3 tools/align_phrases.py phrases.v2.tsv <asr.json> transcript.te.tsv`, then the
 two `build_srt.py` commands.
 
+## Status (2026-10-07): rendered
+- `out/preview.mp4` (1080p, 6:30) is built from **58 sourced files**, every one logged with its licence in
+  `media_manifest.csv`; `credits.md` is ready to paste into the YouTube description.
+- Sources used: Coverr (real hospital/lab/water footage), NASA (ISS, Earth, lab B-roll, ISS ultrasound), Wellcome Collection
+  (anatomy engravings, Henry Tanner's 1880 fast, a yogi gouache), Flickr CC via Openverse (Ambaji, Ahmedabad, ECG, ICU, soldiers),
+  Freesound CC0 (music + SFX), archive.org (James Randi, CC BY 3.0, as the LIVE skeptic clip), screenshots of Wikipedia and
+  Sanal Edamaruku's article (credited quotes).
+- **Not sourced (blocked or paid):** the 2010 news report and press-conference footage (Reuters/AP archive; YouTube downloads
+  are blocked from the cloud). The two LIVE slots for them were removed; add them back from the VPS (see Live clips above).
+- ⚠️ `jani_portrait_red.jpg` is a copyrighted press photo shown from Edamaruku's article with on-screen credit: licence it or
+  replace it before monetising.
+
 ## Notes (read these)
-1. **Live-clip slots:** (1) after the 70-year claim, the 2010 news report (then "ఈ విషయం worldwide viral…");
-   (2) after "DRDO scientists official press meet పెట్టి…", the **real** Dr. Shah / DIPAS press-conference audio;
-   (3) optional, before the conclusion, a real skeptic interview for balance. VO pauses: after the sealed-room lock
+1. **Live clip:** before the conclusion, James Randi's real May 2010 comment (16 s, Telugu caption). Worth adding from the
+   VPS: the 2010 news report after the 70-year claim, and the real press-conference audio after "official press meet పెట్టి…". VO pauses: after the sealed-room lock
    (door latch) and after "biggest shock ఏంటో తెలుసా?" (heartbeat).
 2. **v2 fixed** the DRDO name and now says "నిజమో కాదో తేల్చడానికి" (to test whether it's true), which is better.
 3. **Accuracy (`asset-manifest.md` §D):** two VO lines go beyond the record. DRDO never issued an official verdict that

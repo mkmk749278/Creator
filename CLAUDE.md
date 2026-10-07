@@ -74,6 +74,22 @@ The phone-review content rules above do not apply here; these do:
   `LIVE` EDL rows stop the VO, play the original clip with its own audio for as long as needed, then the VO resumes where it stopped.
   `VO_PAUSE` rows are 2–4 s of real ambience. Breaks use real sound only.
 
+### Lessons from the first documentary (Prahlad Jani, Oct 2026): read before sourcing
+- **From this cloud container:** YouTube video downloads (googlevideo 403 / bot check), Pexels, Pixabay and Mixkit (Cloudflare 403)
+  and `upload.wikimedia.org` (429 on the shared IP) fail; Gofile is blocked by the environment network policy (allowlist `gofile.io`,
+  `*.gofile.io` first). **Working:** Coverr (`tools/fetch_assets.py search coverr`, skip `premium`/`temp`/AI clips), NASA Images API,
+  Wellcome Collection API, Openverse (Flickr CC photos; Freesound CC0 audio previews), Internet Archive, Commons *search*.
+  Do YouTube/archival news on the VPS with `yt-dlp` + cookies. Check `https://en.wikipedia.org/...prop=pageimages` early: if a
+  subject has no free photo, plan for a credited article quote (flag it in `media_manifest.csv`).
+- **Contact-sheet every asset before use**: search results often mismatch (a "CCTV camera" search returned a box in grass).
+- **Telugu ASR**: Whisper large-v3 on ≤9 s windows cut at pauses (`silencedetect`), `condition_on_previous_text=False`; long windows
+  truncate or loop. Hand-correct into `phrases.*.tsv`, then `tools/align_phrases.py` (word-timed cues). CPU runs ~0.2× real time.
+- **Render**: bitrate-cap every encode (temporal grain made a 3.4 GB 1080p file). Tall stills get the blurred-fill automatically;
+  use `overlay=cctv` on real footage when no CCTV footage exists. Find real archival audio (e.g. a CC BY skeptic clip on archive.org)
+  for `LIVE` rows instead of leaving them empty.
+- **Shell**: never `pkill -f <pattern>` in the same command line that contains the pattern (it kills its own shell).
+- **Deliver to the phone**: MP4 via SendUserFile (keep a ≤ ~150 MB 720p copy), the 1080p master plus `gofile` upload command for the VPS.
+
 ## Ground rules
 1. Ask before adding paid services, and report the expected cost per video.
 2. Pin versions (npm, pip, actions, HyperFrames, `claude-code-action@v1`).
