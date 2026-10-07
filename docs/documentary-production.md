@@ -77,6 +77,14 @@ L→R pan), **overlay layer**, **kinetic text**, **sound design / ducking cues**
 - Zero cards. Zero bullet points. Pure visual storytelling.
 
 ## Audio defaults
+- **The video is not locked to the VO length.** Programme = VO + every break. Two break types in the EDL:
+  - `LIVE`: the VO stops, the **original clip plays with its own audio** (press conference, news report, real
+    event sound) for `src_in`–`src_out`, then the VO resumes exactly where it stopped. Any length; keep the
+    picture untouched (`motion=none`/`push`) and credit the source in a lower-third. A Telugu translation goes in
+    the row's `subtitle` column and lands in the SRT.
+  - `VO_PAUSE`: 2–4 s of picture with ambience/SFX only.
+  `vo_skip` drops a stretch of VO after the break (e.g. a duplicated take). The pacing rule (cut every 2.5–4 s)
+  does not apply inside a LIVE clip; it applies again as soon as the VO resumes.
 - The voiceover leads. BGM sits at **−18 to −22 dB** under the VO, sidechain-ducked, and comes up only in VO pauses.
 - Live-audio pauses: 2–4 s of real ambience or archival speech.
 - Loudness target for YouTube: −14 LUFS integrated, −1 dBTP.

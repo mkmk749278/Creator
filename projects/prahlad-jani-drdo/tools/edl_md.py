@@ -1,9 +1,11 @@
 """Render edl.csv as edl.md (phone-readable table with programme timecodes)."""
-import csv
 import pathlib
+import sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-MOTION = {"zoom_in": "zoom 1.00→1.15", "zoom_out": "zoom 1.15→1.00", "pan_lr": "pan L→R", "pan_rl": "pan R→L"}
+sys.path.insert(0, str(HERE))
+from assemble import load_edl  # noqa: E402
+MOTION = {"none": "as shot", "push": "push 1.00→1.04", "zoom_in": "zoom 1.00→1.15", "zoom_out": "zoom 1.15→1.00", "pan_lr": "pan L→R", "pan_rl": "pan R→L"}
 NAMES = {"B1": "Block 1: the 3-day rule and the DRDO challenge", "B2": "Block 2: inside the sealed room",
          "B3": "Block 3: the ultrasound shock"}
 
@@ -12,14 +14,18 @@ def tc(t):
     return f"{int(t // 60):02d}:{t % 60:05.2f}"
 
 
-rows = list(csv.DictReader((HERE / "edl.csv").open(encoding="utf-8")))
+rows, _ = load_edl()
 t, block, out = 0.0, None, []
 out.append("# Step 2: scene and timeline map (EDL)\n")
 out.append("Generated from `edl.csv` by `tools/edl_md.py`; edit the CSV, not this file. **Prog** = final video time; "
            "**VO** = time in `voiceover.mp3`. Every shot gets grain + vignette (Layer 2); `+hud` adds the medical HUD.\n")
 for r in rows:
-    d = float(r["dur"])
-    if r["type"] == "VO_PAUSE":
+    d = r["dur"]
+    if r["type"] == "LIVE":
+        out.append(f"\n> **🎬 LIVE CLIP {tc(t)} ({d:.1f} s)**: VO stops at {r['vo_at']} s; `{r['asset']}` plays "
+                   f"{r['src_in']:.1f}–{r['src_in'] + d:.1f} s **with its own audio**, then the VO continues. "
+                   f"{('Caption: ' + r['subtitle'] + '. ') if r.get('subtitle') else ''}{r['note']}\n")
+    elif r["type"] == "VO_PAUSE":
         out.append(f"\n> **⏸ LIVE AUDIO PAUSE {tc(t)} ({d:.1f} s)**: VO stops at {r['vo_at']} s"
                    + (f", skips {r['vo_skip']} s of VO" if float(r['vo_skip'] or 0) else "")
                    + f". Picture: `{r['asset']}` ({MOTION[r['motion']]}). Audio: {r['sfx']}. {r['note']}\n")
@@ -35,7 +41,7 @@ for r in rows:
                    f"{MOTION[r['motion']]}{hud} | {txt} | {extra} |")
     t += d
 out.append(f"\n**Programme length: {tc(t)}** ({sum(r['type'] == 'SHOT' for r in rows)} shots, "
-           f"{sum(r['type'] == 'VO_PAUSE' for r in rows)} live-audio pauses).\n")
+           f"{sum(r['type'] == 'LIVE' for r in rows)} live clips, {sum(r['type'] == 'VO_PAUSE' for r in rows)} VO pauses).\n")
 out.append("""
 ## Audio cue sheet
 | Element | Level | Notes |

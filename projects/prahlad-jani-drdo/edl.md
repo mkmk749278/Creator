@@ -118,7 +118,7 @@ Generated from `edl.csv` by `tools/edl_md.py`; edit the CSV, not this file. **Pr
 > **⏸ LIVE AUDIO PAUSE 04:47.51 (4.0 s)**: VO stops at 283.96 s. Picture: `press_conf_shah.mp4` (zoom 1.00→1.15). Audio: press_conf_shah.mp4 (real audio). LIVE AUDIO PAUSE 4 s: real Dr. Shah press-conference audio only; if no clip, use monitor beeps
 
 
-**Programme length: 04:51.51** (91 shots, 3 live-audio pauses).
+**Programme length: 04:51.51** (91 shots, 0 live clips, 3 VO pauses).
 
 
 ## Audio cue sheet

@@ -5,8 +5,12 @@ Three layers on every shot (docs/documentary-production.md):
   2. atmosphere: film grain, edge vignette, optional HUD overlay (assets/hud_overlay.mp4), optional 2.35:1 bars
   3. kinetic accents: lower-third / corner timer / "ILLUSTRATION" tag over a dark gradient scrim
 
-Audio: VO leads; live-audio pauses are inserted as the EDL says (VO_PAUSE rows), BGM sits ~-20 dB and is
-side-chain ducked under the VO; SFX are placed from the `sfx` column; final loudness -14 LUFS / -1 dBTP.
+Audio: VO leads. The programme is NOT locked to the VO length: at each break row the VO stops and resumes
+afterwards, exactly where it stopped (minus any `vo_skip`):
+  LIVE      the original clip plays with its OWN audio (asset from src_in to src_out; length = src_out - src_in)
+  VO_PAUSE  2-4 s of picture + ambience/SFX only
+BGM sits ~-20 dB, side-chain ducked under all speech (VO + live clips); SFX come from the `sfx` column; final
+loudness -14 LUFS / -1 dBTP. `src_in` on a SHOT row picks where in the source clip the shot starts.
 
 A missing asset falls back to the EDL `fallback`, then to a moving placeholder labelled MISSING (preview only).
 
@@ -27,13 +31,16 @@ HERE = pathlib.Path(__file__).resolve().parent
 ASSETS = HERE / "assets"
 OUT = HERE / "out"
 VO_FILE = "voiceover.mp3"
+EDL = HERE / "edl.csv"
 FPS = 30
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
+BREAKS = {"LIVE", "VO_PAUSE"}  # rows that stop the VO
 GRADE = {  # colour grade per block (teal investigation / saffron subject / clinical)
     "B1": "colorbalance=rs=-0.04:bs=0.06:rm=-0.02:bm=0.04,eq=contrast=1.06:saturation=0.9",
     "B2": "colorbalance=rs=-0.03:bs=0.05:rm=-0.02:bm=0.03,eq=contrast=1.05:saturation=0.92",
     "B3": "colorbalance=rs=-0.02:gs=0.02:bs=0.05,eq=contrast=1.07:saturation=0.9",
     "PAUSE": "eq=contrast=1.08:saturation=0.85",
+    "LIVE": "eq=contrast=1.04:saturation=0.95",  # archival: light touch only
 }
 
 
@@ -52,14 +59,26 @@ def font():
     sys.exit("no font found (install fonts-dejavu)")
 
 
-def load_edl():
-    rows = list(csv.DictReader((HERE / "edl.csv").open(encoding="utf-8")))
+def load_edl(path=None):
+    rows = list(csv.DictReader(pathlib.Path(path or EDL).open(encoding="utf-8")))
     t = 0.0
     for r in rows:
-        r["dur"] = float(r["dur"])
+        src_in, src_out = num(r.get("src_in")), num(r.get("src_out"))
+        r["src_in"] = src_in or 0.0
+        r["dur"] = src_out - r["src_in"] if src_out else float(r["dur"])
         r["start"] = t  # programme time
         t += r["dur"]
     return rows, t
+
+
+def num(v):
+    return float(v) if v not in (None, "") else None
+
+
+def has_audio(path):
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index",
+                        "-of", "csv=p=0", str(path)], capture_output=True, text=True)
+    return bool(r.stdout.strip())
 
 
 def resolve(r):
@@ -77,7 +96,9 @@ def motion(kind, W, H, n):
     """zoompan expression for frame `on` in [0, n): zoom 1.00->1.15 or a pan at 1.12 zoom."""
     p = f"(on/{max(n - 1, 1)})"
     ease = f"(0.5-0.5*cos(PI*{p}))"
-    if kind == "zoom_in":
+    if kind == "push":  # barely-there drift for live archival clips
+        z, x, y = f"1+0.04*{ease}", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
+    elif kind == "zoom_in":
         z, x, y = f"1+0.15*{ease}", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
     elif kind == "zoom_out":
         z, x, y = f"1.15-0.15*{ease}", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
@@ -99,10 +120,14 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
         base = (f"drawtext=fontfile='{fontfile}':text='MISSING  {esc(r['asset'])}':fontcolor=white@0.5:"
                 f"fontsize={int(34 * u)}:x=(w-tw)/2:y=(h-th)/2")
     else:
-        cmd += (["-loop", "1", "-framerate", str(FPS)] if src.suffix.lower() in IMG_EXT else ["-stream_loop", "-1"])
+        is_img = src.suffix.lower() in IMG_EXT
+        cmd += ["-loop", "1", "-framerate", str(FPS)] if is_img else ["-ss", str(r["src_in"]), "-stream_loop", "-1"]
         cmd += ["-i", str(src)]
-        base = (f"scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase:flags=lanczos,crop={W * 2}:{H * 2},"
-                f"setsar=1,{motion(r['motion'], W, H, n)}")
+        if r["motion"] == "none" and not is_img:  # play the real footage untouched (cover-fit only)
+            base = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS}"
+        else:
+            base = (f"scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase:flags=lanczos,crop={W * 2}:{H * 2},"
+                    f"setsar=1,{motion(r['motion'], W, H, n)}")
     graph = [f"[0:v]{base},{GRADE.get(r['block'], GRADE['B1'])},format=yuv420p[l1]"]
     cur, k = "[l1]", 1
     # Layer 2: atmosphere (HUD at low opacity, vignette, grain, optional 2.35:1 bars)
@@ -158,14 +183,15 @@ def make_scrim(W, H, tmp):
 def build_audio(rows, total, tmp):
     vo = ASSETS / VO_FILE
     if not vo.exists():
-        sys.exit(f"missing {vo} (copy Prah_Combined_Voiceover.mp3 there)")
+        sys.exit(f"missing {vo} (copy the combined voiceover there)")
     inputs = ["-i", str(vo)]
     bgm = ASSETS / "bgm_dark.mp3"
     if bgm.exists():
         inputs += ["-stream_loop", "-1", "-i", str(bgm)]
-    # 1. VO with live-audio pauses inserted (and any vo_skip removed)
+    fmt = "aresample=48000,aformat=channel_layouts=stereo"
+    # 1. VO with a gap at every break row (VO resumes where it stopped, minus vo_skip)
     graph, pieces, cur = [], [], 0.0
-    for k, r in enumerate(r for r in rows if r["type"] == "VO_PAUSE"):
+    for k, r in enumerate(r for r in rows if r["type"] in BREAKS):
         at, skip = float(r["vo_at"]), float(r["vo_skip"] or 0)
         graph.append(f"[0:a]atrim={cur}:{at},asetpts=N/SR/TB[p{k}]")
         graph.append(f"anullsrc=r=44100:cl=mono,atrim=0:{r['dur']}[s{k}]")
@@ -173,17 +199,33 @@ def build_audio(rows, total, tmp):
         cur = at + skip
     graph.append(f"[0:a]atrim=start={cur},asetpts=N/SR/TB[pend]")
     pieces.append("[pend]")
-    graph.append(f"{''.join(pieces)}concat=n={len(pieces)}:v=0:a=1,aresample=48000,"
-                 f"aformat=channel_layouts=stereo,asplit=2[vo][vosc]")
-    layers = ["[vo]"]
-    # 2. BGM at -20 dB, side-chain ducked under the VO (comes up in the pauses)
+    graph.append(f"{''.join(pieces)}concat=n={len(pieces)}:v=0:a=1,{fmt}[vo]")
+    speech, fx = ["[vo]"], []
+    # 2. LIVE rows: the original clip's own audio, levelled to sit with the VO
+    for r in rows:
+        if r["type"] != "LIVE":
+            continue
+        src, _ = resolve(r)
+        if src is None or src.suffix.lower() in IMG_EXT or not has_audio(src):
+            print(f"  warning: {r['id']} LIVE clip {r['asset']} has no audio; leaving silence")
+            continue
+        idx = inputs.count("-i")
+        inputs += ["-i", str(src)]
+        d = r["dur"]
+        graph.append(f"[{idx}:a]atrim={r['src_in']}:{r['src_in'] + d},asetpts=N/SR/TB,loudnorm=I=-18:TP=-2,"
+                     f"afade=t=in:d=0.15,afade=t=out:st={max(0.0, d - 0.25)}:d=0.25,{fmt},"
+                     f"adelay={int(r['start'] * 1000)}:all=1[l{idx}]")
+        speech.append(f"[l{idx}]")
+    graph.append(f"{''.join(speech)}amix=inputs={len(speech)}:normalize=0:duration=longest,asplit=2[sp][spsc]")
+    layers = ["[sp]"]
+    # 3. BGM at -20 dB, side-chain ducked under all speech (comes up in VO_PAUSE breaks)
     if bgm.exists():
-        graph.append(f"[1:a]atrim=0:{total},volume=-20dB,aresample=48000,aformat=channel_layouts=stereo[bg]")
-        graph.append("[bg][vosc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[bgd]")
+        graph.append(f"[1:a]atrim=0:{total},volume=-20dB,{fmt}[bg]")
+        graph.append("[bg][spsc]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[bgd]")
         layers.append("[bgd]")
     else:
-        graph.append("[vosc]anullsink")
-    # 3. SFX and real pause audio at programme time
+        graph.append("[spsc]anullsink")
+    # 4. SFX / ambience at programme time
     for r in rows:
         for item in filter(None, (r["sfx"] or "").split(";")):
             name, _, rel = item.partition("@")
@@ -196,9 +238,9 @@ def build_audio(rows, total, tmp):
             pause = r["type"] == "VO_PAUSE"
             dur = r["dur"] if pause else 3.0
             graph.append(f"[{idx}:a]atrim=0:{dur},afade=t=out:st={max(0.0, dur - 0.3)}:d=0.3,"
-                         f"volume={'0dB' if pause else '-8dB'},aresample=48000,aformat=channel_layouts=stereo,"
-                         f"adelay={int(at * 1000)}:all=1[x{idx}]")
-            layers.append(f"[x{idx}]")
+                         f"volume={'0dB' if pause else '-8dB'},{fmt},adelay={int(at * 1000)}:all=1[x{idx}]")
+            fx.append(f"[x{idx}]")
+    layers += fx
     graph.append(f"{''.join(layers)}amix=inputs={len(layers)}:normalize=0:duration=longest,"
                  f"apad,atrim=0:{total},loudnorm=I=-14:TP=-1:LRA=11[a]")
     out = tmp / "mix.wav"
@@ -215,10 +257,13 @@ def main():
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--only", help="render shots a-b (1-based, preview a section)")
     ap.add_argument("--preset", default="veryfast")
+    ap.add_argument("--edl", default=str(EDL))
     args = ap.parse_args()
-    rows, total = load_edl()
+    rows, total = load_edl(args.edl)
     missing = sorted({r["asset"] for r in rows if resolve(r)[0] is None or resolve(r)[1]})
-    print(f"{len(rows)} shots, {total:.1f} s programme; {len(missing)} assets missing or on fallback")
+    live = sum(r["dur"] for r in rows if r["type"] in BREAKS)
+    print(f"{len(rows)} rows, {total:.1f} s programme ({live:.1f} s of it VO breaks / live clips); "
+          f"{len(missing)} assets missing or on fallback")
     for m in missing:
         print("  missing:", m)
     if args.check:

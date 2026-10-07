@@ -70,7 +70,9 @@ The phone-review content rules above do not apply here; these do:
   for B-roll; PubMed Central/Nature for figures; NASA/ESA; Wellcome Collection. Use AI generation only where no real asset exists.
 - **Guardrails:** log every asset with its licence in `media_manifest.csv`. Use short, commented, credited excerpts of third-party footage.
   AI shots never depict a real person or pose as evidence. Never synthesise a real person's voice or quote. Present claims as claims.
-- **Audio:** the VO leads; BGM at −18 to −22 dB, ducked; 2–4 s live-audio pauses use real sound only.
+- **Audio:** the VO leads; BGM at −18 to −22 dB, ducked under all speech. **The video is not locked to the VO length:**
+  `LIVE` EDL rows stop the VO, play the original clip with its own audio for as long as needed, then the VO resumes where it stopped.
+  `VO_PAUSE` rows are 2–4 s of real ambience. Breaks use real sound only.
 
 ## Ground rules
 1. Ask before adding paid services, and report the expected cost per video.
