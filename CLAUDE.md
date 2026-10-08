@@ -101,8 +101,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   An idle session's VM can be reclaimed mid-job.
 - Never `pkill -f <pattern>` in a command line containing the pattern; never name a shell function after a command it calls.
 - Bitrate-cap every encode. Large media stays out of git.
-- From this cloud container YouTube, Pexels, Pixabay and Mixkit downloads fail and `upload.wikimedia.org` rate-limits.
-  Working alternatives and the fallback chain: PLAYBOOK §8.
+- From this cloud container YouTube, Vimeo, Mixkit and the Pexels/Pixabay websites fail (their APIs work with a free key);
+  the Commons search API rate-limits (files load with a User-Agent and standard thumb widths). Tested sources and the
+  fallback chain: PLAYBOOK §8.
 
 ## Ground rules
 1. Ask before adding paid services, and report the expected cost per video.

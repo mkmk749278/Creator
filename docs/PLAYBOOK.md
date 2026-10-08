@@ -222,7 +222,110 @@ Remotion and MoviePy are not installed; ask before adding them.
 
 ## 8. Media sourcing
 
-<!-- filled from research: see below -->
+Tested from a cloud session on 2026-10-08 (HTTP status with `curl -L`; "yt" = `yt-dlp --simulate` worked). Sites change:
+re-test a source when it fails, and update this table. Licence rows marked ✱ need checking per item.
+
+### 8.1 What works from the cloud container
+| Need | Source | Access | Key? | Licence for a monetised YouTube channel | Status |
+|---|---|---|---|---|---|
+| News / event | **Dailymotion** | `api.dailymotion.com/videos?search=` + yt-dlp | no | uploader's copyright: short, credited excerpts | 200, yt (often 240–480p) |
+| News / event | **Internet Archive** | `advancedsearch.php` (`licenseurl:*`), `/metadata/<id>`, `/download/`; `youtube-*` mirrors | no | per item; Prelinger mostly PD/CC | 200, yt |
+| News / event | Instagram reels (official, news pages) | yt-dlp; wait between requests | no | uploader's copyright: credited excerpts | works, 429 after a burst |
+| News / event | Facebook public video | yt-dlp | no | uploader's copyright | yt |
+| News / event | News articles | `yt-dlp --simulate <article URL>` reveals embedded reels/YouTube IDs | no | — | works |
+| News / event | Agency galleries (e.g. IANS via socialnews.xyz) | WebFetch the gallery, curl the full-size `…F.jpg` | no | agency copyright: credit ✱ | works |
+| News / event | TV News Archive / GDELT TV | `archive.org/details/tv`, `api.gdeltproject.org/api/v2/tv/tv` | no | research use ✱ | 200 |
+| News / event | EU Audiovisual Service, UN AV Library | site | no | free with credit ✱ | 200 |
+| India | DD News, newsonair (AIR) pages | site | no | copyrighted ✱ | 200 |
+| India | ism.gov.in (SEMICON India gallery, press PDFs) | site | no | government, credit ✱ | used in chip gamble |
+| Space / science | **NASA Images** | `images-api.nasa.gov/search` → `collection.json` → `~orig.mp4` | no | public domain (no logos/endorsement) | 200 |
+| Space / science | NASA SVS | `svs.gsfc.nasa.gov/api/search/` | no | public domain | 200 |
+| Space / science | **ESA** | `esa.int/ESA_Multimedia`, `dlmultimedia.esa.int` | no | many CC BY-SA 3.0 IGO; some ESA Standard ✱ | 200 |
+| Space / science | **ESO** | `cdn.eso.org/videos/...` | no | CC BY 4.0 | 200 |
+| Science | **Europe PMC** | `ebi.ac.uk/europepmc/webservices/rest/search` | no | CC BY yes, CC BY-NC no | 200 |
+| Science | NCBI E-utilities (PMC) | `eutils.ncbi.nlm.nih.gov/.../esearch.fcgi?db=pmc` | optional | per article | 200 |
+| Science | **Wellcome Collection** | `api.wellcomecollection.org/catalogue/v2/images` + IIIF | no | **filter**: many are CC BY-NC | 200 |
+| Science | NIH 3D, CDC PHIL, NIH Flickr | site | no | mostly PD / CC0 / CC BY ✱ | 200 |
+| B-roll | **Coverr** | `projects/prahlad-jani-drdo/tools/fetch_assets.py search coverr` (skip premium/temp/AI) | no (API needs key) | Coverr licence, commercial OK | 200 |
+| B-roll | Vidsplay | site | no | free with attribution ✱ | 200 |
+| Photos | **Openverse** | `api.openverse.org/v1/images/?license_type=commercial` (`scripts/openverse_fetch.py`, page_size ≤ 20, download with curl) | no | CC0 / BY / BY-SA | 200 |
+| Photos | **Wikimedia Commons** | `scripts/commons_fetch.py`; files via `Special:FilePath/<name>?width=960` or `upload.wikimedia.org` thumbs at standard widths (250/500/960/1280/1920) with a descriptive User-Agent | no | per file (`extmetadata`) | files 200; **search API 429** at times |
+| Photos | Library of Congress | `loc.gov/photos/?q=…&fo=json`, `tile.loc.gov` | no | per item ("no known restrictions") | 200 |
+| Photos | Smithsonian Open Access | `api.si.edu/openaccess/api/v1.0/search` | free key (`DEMO_KEY` works) | CC0 items | 200 |
+| Photos | Met Museum | `collectionapi.metmuseum.org/.../objects/<id>` → `primaryImage` | no | CC0 when `isPublicDomain` | 200 (search endpoint 410) |
+| Photos | Rijksmuseum | `data.rijksmuseum.nl/search/collection` | no | CC0 / PD | 200 |
+| Photos | Europeana | `api.europeana.eu/record/v2/search.json?reusability=open` | free key (`api2demo`) | per item | 200 |
+| Audio | **Openverse audio** (Freesound previews) | `api.openverse.org/v1/audio/?license_type=commercial` | no | CC0 / BY | 200 |
+| Music | Incompetech | site | no | CC BY 4.0 | 200 |
+| Music | FreePD | site | no | CC0 | 200 |
+| Music | ccMixter, Free Music Archive | `ccmixter.org/api/query`, site | no | per track; many NC: skip those | 200 |
+| SFX | SoundBible | site | no | per clip ✱ | 200 |
+
+### 8.2 Reachable with a free key (add as environment secrets; recommended)
+Pexels (`api.pexels.com/videos/search`) and Pixabay (`pixabay.com/api/videos/`): commercial use OK; their websites 403
+here but the APIs answer. Unsplash (`api.unsplash.com`), Freesound (`freesound.org/apiv2`, CC0/BY/BY-NC per sound),
+DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email to Catalog_API@nara.gov).
+
+### 8.3 Blocked or not usable
+| Source | Why |
+|---|---|
+| YouTube downloads | Bot check / 403 from datacenter IPs (metadata still resolves, so list exact IDs and timestamps for the owner) |
+| Vimeo | yt-dlp now needs a login |
+| Mixkit assets, Videvo, Mazwai (now Freepik) | 403 |
+| C-SPAN, British Pathé, NOAA photo library, Sonniss, Musopen | 403 |
+| PIB, Prasar Bharati archive, Films Division/NFDC, USGS, Cell Image Library, ESA/Hubble CDN | timeout / 502 / TLS errors |
+| Gofile (delivery) | Blocked by the environment's network policy until `gofile.io`, `*.gofile.io` are allowlisted |
+| Piped / Invidious YouTube mirrors | Dead |
+| **Not allowed** even when reachable | Allen Institute (non-commercial, terms bar YouTube), JoVE and Science Photo Library (subscription/paid), **BBC Sound Effects** (RemArc: personal/educational only), AP Archive, Reuters, British Pathé (paid: ask first), anything NC or ND |
+
+### 8.4 Fallback chains (best first)
+- **News and event footage:** Dailymotion API + yt-dlp (search several uploads, keep the highest `height`) → archive.org
+  (`youtube-*` mirrors, TV News Archive) → official reels on Instagram/Facebook and agency galleries → official agency
+  sites (NASA, ESA, ESO, DD News, newsonair) → **owner fetches YouTube** on the VPS or phone (§8.5) → a credited article
+  quote, flagged in the manifest.
+- **India-specific footage:** Dailymotion → archive.org → DD News / newsonair pages → government galleries (ism.gov.in,
+  ministry sites) → owner fetches PIB, Prasar Bharati or DD YouTube clips from the phone (mobile IPs are rarely blocked).
+- **B-roll:** Coverr → NASA / ESA / ESO (space, Earth, labs) → Pexels and Pixabay APIs (with keys) → archive.org Prelinger
+  → owner downloads Mixkit/Videvo clips on the phone.
+- **Archival photos:** Commons (`Special:FilePath`, back off on 429) → Openverse → Library of Congress, Smithsonian, Met,
+  Rijksmuseum, Europeana → NARA (with a key). Check `https://en.wikipedia.org/w/api.php?...prop=pageimages` early: if a
+  subject has no free photo, plan a credited article quote.
+- **Science visuals:** HyperFrames animation first (house rule) → Europe PMC CC BY figures → Wellcome (CC BY/PD only) →
+  NIH 3D, CDC PHIL, NASA.
+- **Music:** YouTube Audio Library (owner downloads; free for monetised channels) → Incompetech (CC BY) / FreePD (CC0) →
+  ccMixter / FMA tracks without NC → `scripts/make_bed.py` synthesised bed.
+- **Sound effects:** Openverse audio (Freesound CC0/BY previews) → Freesound API with a token → SoundBible PD clips.
+
+### 8.5 Getting YouTube footage legitimately
+Never route around blocks with VPNs, proxies or alternative YouTube clients (the auto-mode permission check also blocks
+this). Use one of:
+1. **Fetch video workflow** (GitHub app → Actions → *Fetch video for study* → Run workflow → paste URL). The artifact has
+   `video.mp4`, timestamped frames and contact sheets. Needs the `YT_COOKIES` secret: create a **throwaway** Google account
+   (YouTube can flag accounts used for downloading; never the main or channel account), sign in at youtube.com in a
+   private window of a browser with add-ons (e.g. Firefox for Android), export `cookies.txt` (Netscape format), close the
+   window (stops cookie rotation), paste it into Settings → Secrets → Actions → `YT_COOKIES`. Re-export when runs fail
+   with the bot check again. Choose `runner: self-hosted` to run on the VPS (helps only if its IP isn't flagged).
+   The study workflow is **for analysing how other channels shoot**; their footage never goes in our videos.
+2. **Phone (Termux, mobile IP):**
+   ```bash
+   pkg install python ffmpeg nodejs && pip install "yt-dlp==2026.8.19"
+   yt-dlp --js-runtimes node -f "bv*[height<=720]+ba/b" -o "/sdcard/Download/%(id)s.%(ext)s" URL
+   ```
+   Then upload to Google Drive and give Claude the file name (sessions read Drive through the connector).
+
+### 8.6 Sourcing rules (and why)
+- **Contact-sheet every asset before use**, labelled. About a third of search results were wrong (Kathakali for
+  Kalaripayattu, tulips for "eyes", a box in grass for "CCTV camera", a bomb-blast photo).
+- **Filter licences in code, never by eye** (`license_type=commercial` on Openverse; Wellcome's first "heart" hit was
+  CC BY-NC). Verify each file's licence on its own page; one archive.org "public domain" freediving film was a mislabelled
+  re-upload.
+- **One sourcing session at a time** (§3): every session shares one IP, so parallel sourcing only multiplies 429s. Use
+  subagents for parallel *searching* on hosts that don't rate-limit.
+- Send a descriptive User-Agent with a contact address; download Flickr files with curl (its CDN 403s python-requests).
+- Images: JPEG q90, longest side ≤ 2400 px, ≥ 1200 px wide, original colours. Clips: MP4 H.264 1920×1080 (pad or scale,
+  never stretch), 30 fps, trimmed to the best 5–20 s; keep audio only for LIVE/diegetic use.
+- `what_it_shows` in the manifest must be literally true ("Vidyut Jammwal at the Commando 2 trailer launch, 2017", not
+  "the 2026 event").
 
 ## 9. Realistic animation
 
@@ -515,8 +618,8 @@ creator footage or AI product imagery; cost reported and under budget; all of it
 4. **Parallel production as the default** for any video over 5 minutes (§3), with a coordinator session. Add a SessionStart
    hook or environment setup script that runs `npm ci` and the pip installs, so each new session is ready in minutes.
 5. **Fix the media blocks at the source, legitimately:**
-   - Add free **Pexels and Pixabay API keys** as environment secrets (no cost; both licences allow YouTube use with no
-     attribution required, though we still credit).
+   - Add free **Pexels and Pixabay API keys** as environment secrets (free; both licences allow commercial YouTube use, and we
+     credit anyway). Also Unsplash and Freesound keys, and a NARA key by email (§8.2).
    - Allowlist `gofile.io` and `*.gofile.io` in the environment's network settings so videos can be delivered to the phone.
    - Use the **VPS** for YouTube (yt-dlp with a throwaway account's cookies) through the `Fetch video` workflow on the
      self-hosted runner, and extend it to take a list of URLs.
