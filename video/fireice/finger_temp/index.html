@@ -38,12 +38,12 @@
           <text id="hotT" x="1170" y="470" font-family="Inter" font-weight="800" font-size="24" fill="#ffb347">MONKS DURING TUMMO</text>
         </g>
       </svg>
-      <div class="sl" id="lf">FINGER</div><div class="sl" id="lt">TOE</div><div class="sl" id="lc">CHEST</div>
+      <div class="sl" id="lf">FINGER</div><div class="sl" id="lt">TOE</div><div class="sl" id="lc">NAVEL</div><div class="sl" id="lb">LOWER BACK</div>
       <div class="big mono" id="big">+0.0 °C<small id="bigs">FINGER &amp; TOE TEMPERATURE · PEAK RISE</small></div>
       <div class="scrim"></div>
-      <div class="lt" id="l1"><span class="rule" style="background:#8fdcff"></span>SENSITIVE THERMOMETERS<span class="sub">FINGERS · TOES · CHEST</span></div>
+      <div class="lt" id="l1"><span class="rule" style="background:#8fdcff"></span>SENSITIVE THERMOMETERS<span class="sub">FINGERS · TOES · NAVEL · LOWER BACK</span></div>
       <div class="lt" id="l2"><span class="rule"></span>HEAT FROM WITHIN<span class="sub" id="l2s">AS IF A CENTRAL HEATING SWITCHED ON</span></div>
-      <div class="tag" id="tag">ILLUSTRATIVE CURVE · PEAK FROM BENSON ET AL., NATURE 1982</div>
+      <div class="tag" id="tag">ILLUSTRATIVE CURVE · AS REPORTED</div>
       <div class="vignette"></div>
     </div>
     <script>
@@ -55,7 +55,7 @@
       FX.dust(tl, document.getElementById("snow"), { seed: 14, count: 70, dur: D, dir: 1, travel: 300, spread: 200 });
       const body = BODY.make(document.getElementById("cv"), { pose: "seat", x: 560, y: 880, scale: 1.05 });
       // sensors: finger (right hand), toe (foot), chest
-      const S = [["lf", 222, -112, 40, 20], ["lt", 70, -72, 40, 30], ["lc", -60, -360, -190, -30]];
+      const S = [["lf", 222, -112, 40, 20], ["lt", 70, -72, 40, 30], ["lc", 0, -215, -170, -10], ["lb", -112, -175, -260, 30]];
       const sg = document.getElementById("sensors");
       S.forEach(([id, bx, by, ox, oy], i) => {
         const [x, y] = body.at(bx, by);
@@ -64,8 +64,8 @@
           `<path d="M${x} ${y} Q ${x + ox * 2} ${y + 80} ${x + ox * 3} ${y + 160}" fill="none" stroke="rgba(143,220,255,0.55)" stroke-width="3"/>`;
         sg.appendChild(g);
         const el = document.getElementById(id); el.style.left = (x + ox) + "px"; el.style.top = (y + oy - 40) + "px";
-        tl.fromTo(g, { opacity: 0, scale: 0.3, transformOrigin: `${x}px ${y}px` }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.5)" }, 1.0 + i * 1.3);
-        tl.fromTo(el, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4 }, 1.2 + i * 1.3);
+        tl.fromTo(g, { opacity: 0, scale: 0.3, transformOrigin: `${x}px ${y}px` }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.5)" }, 1.0 + i * 1.1);
+        tl.fromTo(el, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4 }, 1.2 + i * 1.1);
         tl.to(el, { opacity: 0, duration: 0.4 }, 7.0);
       });
       document.getElementById("bigs").textContent = P.sub;
@@ -79,7 +79,7 @@
         document.getElementById("big").textContent = "";
         const v = P.riseC * rise;
         document.getElementById("big").innerHTML = (rise > 0.995 ? P.riseLabel : "+" + v.toFixed(1) + " °C") + `<small>${P.sub}</small>`;
-        document.getElementById("big").style.opacity = ss(t, 17.4, 17.8);
+        document.getElementById("big").style.display = "none";   // no number on screen: the VO's "8–17 °F" is wrong (fact-check C22)
       });
       tl.fromTo("#chart", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6 }, 7.2);
       FX.draw(tl, "#cold", 7.5, 3.6);

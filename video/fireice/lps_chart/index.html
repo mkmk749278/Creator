@@ -15,10 +15,11 @@
       .panel { position: absolute; left: 980px; top: 150px; width: 860px; }
       .row { margin-bottom: 44px; }
       .row .h { font-size: 30px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 14px; }
-      .row .h small { font-size: 20px; color: var(--ink-dim); letter-spacing: 0.1em; margin-left: 10px; }
+      .row .h small { display: block; font-size: 20px; color: var(--ink-dim); letter-spacing: 0.1em; margin-top: 4px; }
       .bar { position: relative; height: 46px; margin-bottom: 10px; }
       .bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; transform-origin: 0 50%; border-radius: 6px; }
       .bar span { position: absolute; left: 14px; top: 9px; font-size: 22px; font-weight: 800; letter-spacing: 0.08em; color: #06111c; }
+      .bar i#c2 + span { color: #ffb347; left: 90px; }
       .therm { position: absolute; left: 700px; top: 200px; font-weight: 800; text-align: right; }
       .therm b { display: block; font-size: 86px; line-height: 1; }
       .therm span { font-size: 22px; letter-spacing: 0.12em; color: var(--ink-dim); }
@@ -32,27 +33,27 @@
       <div class="particles" id="dust"></div>
       <canvas id="cv" width="960" height="1080"></canvas>
       <div class="flag" id="flag">TYPICAL VOLUNTEER<small>AFTER THE ENDOTOXIN INJECTION</small></div>
-      <div class="therm" id="therm"><b id="tv" class="mono">37.0°</b><span>BODY TEMP · ILLUSTRATIVE</span></div>
+      <div class="therm" id="therm" style="display:none"><b id="tv" class="mono">37.0°</b><span>BODY TEMP · ILLUSTRATIVE</span></div>
       <div class="panel" id="panel">
-        <div class="row" id="r1"><div class="h">ADRENALINE<small>IN THE BLOOD</small></div>
-          <div class="bar"><i id="a1" style="background:#9db3c7"></i><span>UNTRAINED</span></div>
+        <div class="row" id="r1"><div class="h">STRESS HORMONE<small>CORTISOL: HIGHER THAN IN 112 EARLIER VOLUNTEERS</small></div>
+          <div class="bar"><i id="a1" style="background:#9db3c7"></i><span>OTHER VOLUNTEERS</span></div>
           <div class="bar"><i id="a2" style="background:#ffb347"></i><span id="g2a">TRAINED BY HOF</span></div></div>
-        <div class="row" id="r2"><div class="h">INFLAMMATION<small>TNF-α · IL-6 · IL-8</small></div>
-          <div class="bar"><i id="b1" style="background:#9db3c7"></i><span>UNTRAINED</span></div>
+        <div class="row" id="r2"><div class="h">IMMUNE REACTION<small>ABOUT 50% LOWER IN HOF</small></div>
+          <div class="bar"><i id="b1" style="background:#9db3c7"></i><span>OTHER VOLUNTEERS</span></div>
           <div class="bar"><i id="b2" style="background:#ffb347"></i><span id="g2b">TRAINED BY HOF</span></div></div>
-        <div class="row" id="r3"><div class="h">FLU-LIKE SYMPTOMS</div>
-          <div class="bar"><i id="c1" style="background:#9db3c7"></i><span>UNTRAINED</span></div>
+        <div class="row" id="r3"><div class="h">FLU-LIKE SYMPTOMS<small>HARDLY ANY IN HOF</small></div>
+          <div class="bar"><i id="c1" style="background:#9db3c7"></i><span>OTHER VOLUNTEERS</span></div>
           <div class="bar"><i id="c2" style="background:#ffb347"></i><span id="g2c">TRAINED BY HOF</span></div></div>
       </div>
       <div class="scrim"></div>
-      <div class="lt" id="l1"><span class="rule" style="background:#ff4d4d"></span>FEVER · SHIVERING · HEADACHE<span class="sub">THE NORMAL REACTION</span></div>
-      <div class="lt" id="l2"><span class="rule"></span>A WEAKER IMMUNE REACTION<span class="sub" id="l2s">KOX ET AL., PNAS 2014</span></div>
-      <div class="tag" id="tag">ILLUSTRATIVE BARS · DIRECTION OF RESULTS, NOT EXACT VALUES</div>
+      <div class="lt" id="l1"><span class="rule" style="background:#ff4d4d"></span>FEVER · CHILLS · HEADACHE<span class="sub">THE NORMAL REACTION, FOR A FEW HOURS</span></div>
+      <div class="lt" id="l2"><span class="rule"></span>IMMUNE REACTION ~50% LOWER<span class="sub" id="l2s">RADBOUD UMC, 2011 · KOX ET AL. 2012</span></div>
+      <div class="tag" id="tag">ILLUSTRATIVE BARS · HOF'S OWN TEST, 2011</div>
       <div class="vignette"></div>
     </div>
     <script>
       // Parameters (from claims.csv): group label and bar lengths (relative, 0..1)
-      const P = { group: "TRAINED BY HOF", adr: [0.35, 0.9], infl: [0.85, 0.4], symp: [0.85, 0.35], fever: [37.0, 38.6] };
+      const P = { group: "WIM HOF", adr: [0.35, 0.9], infl: [0.9, 0.45], symp: [0.85, 0.08], fever: [37.0, 38.6] };
       ["g2a", "g2b", "g2c"].forEach(id => document.getElementById(id).textContent = P.group);
       const tl = gsap.timeline({ paused: true });
       const D = 12.2, { ss, lerp } = FX, r = FX.rng(9);

@@ -10,8 +10,34 @@
  ],
  "offsets": [
   0.0,
-  96.529,
-  192.893
+  93.32,
+  179.192
  ],
- "duration": 323.009
+ "duration": 304.626,
+ "cuts": {
+  "1": [
+   [
+    26.738,
+    29.947,
+    0.0,
+    "P1 L7 'absolute rule of medical science': no such rule (fact-check C04)"
+   ]
+  ],
+  "2": [
+   [
+    84.672,
+    95.164,
+    0.0,
+    "P2 L16-17 invented 'Harvard papers: undeniable proof' quote (C29)"
+   ]
+  ],
+  "3": [
+   [
+    102.523,
+    113.705,
+    6.5,
+    "P3 L23 'undeniable evidence' overclaim (C48); replaced by a 6.5 s skeptic beat"
+   ]
+  ]
+ }
 }

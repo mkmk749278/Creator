@@ -45,17 +45,17 @@
         </svg>
         <div class="steam" id="steam"></div>
       </div>
-      <div class="timer"><b id="tm" class="mono">00:00</b><span>MINUTES · TIME-LAPSE</span></div>
+      <div class="timer"><b id="tm" style="font-size:64px">TIME-LAPSE</b><span>ILLUSTRATIVE</span></div>
       <div class="bar"><div class="t" id="bt">SHEET WETNESS</div><div class="track"><div class="fill" id="bf"></div></div></div>
       <div class="scrim"></div>
-      <div class="lt" id="l1"><span class="rule" style="background:#8fdcff"></span>SHEETS SOAKED IN ICE-COLD WATER</div>
-      <div class="lt" id="l2"><span class="rule"></span>DRIED BY BODY HEAT<span class="sub" id="l2s">STEAM RISES WITHIN MINUTES</span></div>
+      <div class="lt" id="l1"><span class="rule" style="background:#8fdcff"></span>THE MONKS' WET-SHEET TEST<span class="sub">A TRADITION · FILMED BY BENSON'S TEAM IN 1985</span></div>
+      <div class="lt" id="l2"><span class="rule"></span>DRIED BY BODY HEAT<span class="sub" id="l2s">STEAM RISES AND THE SHEET DRIES</span></div>
       <div class="tag">ILLUSTRATION · RECONSTRUCTION</div>
       <div class="vignette"></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      const D = 13.6, MIN = 45, { ss, lerp } = FX, r = FX.rng(31);
+      const D = 13.6, { ss, lerp } = FX, r = FX.rng(31);
       FX.drift(tl, "#bg", D);
       FX.dust(tl, document.getElementById("snow"), { seed: 6, count: 60, dur: D, dir: 1, travel: 200, spread: 200 });
       const body = BODY.make(document.getElementById("cv"), { pose: "seat", x: 960, y: 900, scale: 1.12 });
@@ -85,8 +85,6 @@
           p.el.style.opacity = on ? (Math.sin(Math.PI * k) * (0.35 + 0.65 * heat)).toFixed(3) : 0;
           p.el.style.transform = `translate(${(p.x + p.drift * k).toFixed(1)}px, ${(p.y - 330 * k).toFixed(1)}px) scale(${(p.s * (0.6 + 1.4 * k)).toFixed(3)})`;
         });
-        const mins = MIN * ss(t, 6.6, 13.2);
-        document.getElementById("tm").textContent = String(Math.floor(mins)).padStart(2, "0") + ":" + String(Math.floor((mins % 1) * 60)).padStart(2, "0");
         document.getElementById("bf").style.transform = `scaleX(${(1 - dry).toFixed(3)})`;
       });
       tl.fromTo("#gh", { opacity: 0.2 }, { opacity: 1, duration: 5, ease: "sine.inOut" }, 7);

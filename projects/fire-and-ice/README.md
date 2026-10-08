@@ -8,7 +8,7 @@ Script by the owner (`script.md`, verbatim); VO in three ElevenLabs v4 takes (vo
 **Science & medical**, with a cold/heat accent pair. Palette: deep navy and graphite, surgical teal, ice blue `#8fdcff`,
 ember `#ff7a2f` / flame `#ffb347` (tokens in `video/fireice/_shared/theme.css`). Grades per block in `assemble.py`:
 `ICE` (cold open), `EMBER` (Tummo, Himalaya), `STEEL` (Wim Hof, science). Media stack: real Wim Hof footage (VICE 2016,
-DW 2021: short credited excerpts), the real 2012 Radboud endotoxin test footage, Commons photos (Hof in the ice box,
+DW 2021: short credited excerpts), real Radboud endotoxin-test footage (archive in VICE; date not verified, Hof's own test was 2011), Commons photos (Hof in the ice box,
 Harvard Medical School, a Tibetan Tummo mural, a Milarepa thangka, a brown-fat PET-CT), Pixabay B-roll (blizzards,
 Himalaya, monasteries, fire), and HyperFrames animation (`video/fireice/`): a canvas **thermal-camera figure**
 (`_shared/body.js`) for hypothermia, the Benson thermometers, wet sheets, Tummo breathing, brown fat switching on, and

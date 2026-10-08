@@ -45,17 +45,17 @@
           </g>
         </svg>
       </div>
-      <div class="hud"><b id="clk" class="mono">00</b><span>MINUTES IN −20 °C</span><b id="core" class="mono" style="font-size:64px">37.0°C</b><span>CORE BODY TEMPERATURE</span></div>
+      <div class="hud"><b id="core" class="mono">37.0°C</b><span>CORE BODY TEMPERATURE · ILLUSTRATIVE</span></div>
       <div class="scrim"></div>
-      <div class="stage-l" id="s1"><span class="rule" style="background:#8fdcff"></span><span id="s1t">5–10 MIN</span><small id="s1s">BLOOD VESSELS IN THE SKIN NARROW</small></div>
-      <div class="stage-l" id="s2"><span class="rule" style="background:#2f7fd3"></span><span id="s2t">~20 MIN</span><small id="s2s">HYPOTHERMIA: CORE BELOW 35 °C</small></div>
-      <div class="stage-l" id="s3"><span class="rule" style="background:#ff4d4d"></span><span id="s3t">~30 MIN</span><small id="s3s">THE HEART CAN STOP</small></div>
-      <div class="tag" id="tag">ILLUSTRATION · TIMELINE AS NARRATED</div>
+      <div class="stage-l" id="s1"><span class="rule" style="background:#8fdcff"></span><span id="s1t">BLOOD VESSELS NARROW</span><small id="s1s">WITHIN MINUTES: HEAT IS KEPT FOR THE CORE</small></div>
+      <div class="stage-l" id="s2"><span class="rule" style="background:#2f7fd3"></span><span id="s2t">HYPOTHERMIA</span><small id="s2s">CORE BELOW 35 °C</small></div>
+      <div class="stage-l" id="s3"><span class="rule" style="background:#ff4d4d"></span><span id="s3t">THE HEART CAN STOP</span><small id="s3s">CORE BELOW ABOUT 30 °C</small></div>
+      <div class="tag" id="tag">DRAMATISED · REAL TIMES VARY</div>
       <div class="vignette"></div>
     </div>
     <script>
       // Parameters (wording and numbers come from claims.csv)
-      const P = { minutes: [0, 10, 20, 30], core: [37.0, 36.6, 35.0, 28.0] };
+      const P = { core: [37.0, 36.6, 35.0, 30.0] };
       const tl = gsap.timeline({ paused: true });
       const D = 13.2, { ss, lerp } = FX;
       FX.drift(tl, "#bg", D);
@@ -73,11 +73,9 @@
         body.draw({ default: lerp(core, ext, 0.5), torso: core, head: core - 0.02, neck: core - 0.02, hips: core - 0.03, shoulders: lerp(core, ext, 0.3),
           armL: lerp(core, ext, 0.7), armR: lerp(core, ext, 0.7), handL: ext, handR: ext, legL: lerp(core, ext, 0.6), legR: lerp(core, ext, 0.6), footL: ext - 0.03, footR: ext - 0.03 },
           [], Math.round(t * 30));
-        const m = t < 3.6 ? lerp(P.minutes[0], P.minutes[1], ss(t, 0.2, 3.6)) : t < 9.1 ? lerp(P.minutes[1], P.minutes[2], ss(t, 3.8, 9.0)) : lerp(P.minutes[2], P.minutes[3], ss(t, 9.2, 12.6));
-        document.getElementById("clk").textContent = String(Math.floor(m)).padStart(2, "0");
         const c = t < 3.6 ? lerp(P.core[0], P.core[1], k1) : t < 9.1 ? lerp(P.core[1], P.core[2], k2) : lerp(P.core[2], P.core[3], k3);
         document.getElementById("core").textContent = c.toFixed(1) + "°C";
-        document.getElementById("core").style.color = c < 35 ? "#8fdcff" : "#f2f6fa";
+        document.getElementById("core").style.color = c < 31 ? "#ff6a5a" : c < 35 ? "#8fdcff" : "#f2f6fa";
         document.getElementById("vessel").setAttribute("height", (60 - 40 * k1).toFixed(1));
         document.getElementById("vessel").setAttribute("y", (530 + 20 * k1).toFixed(1));
         document.getElementById("ecg").setAttribute("d", ecgPath(k3));

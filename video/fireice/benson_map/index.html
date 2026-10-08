@@ -35,14 +35,14 @@
         <div class="pin" id="pA">BOSTON<small>HARVARD MEDICAL SCHOOL</small></div>
         <div class="pin" id="pB" style="color:#ffb347; text-align:left"><span id="destName">HIMALAYA, INDIA</span><small id="destSub">TUMMO MONKS</small></div>
       </div>
-      <div class="year mono" id="yr">1982</div>
+      <div class="year mono" id="yr">1982</div><div class="src" id="yrs" style="top:240px; font-size:24px">PAPER IN NATURE, JAN 1982 · FIELDWORK FEB 1981</div>
       <div class="scrim"></div>
       <div class="lt" id="l1"><span class="rule"></span><span id="ltMain">TO THE HIMALAYA</span><span class="sub" id="ltSub">BENSON'S RESEARCH TEAM</span></div>
       <div class="vignette"></div>
     </div>
     <script>
       // Parameters (set from claims.csv): destination, arc to use, year shown
-      const DEST = { arc: "arcDharamsala", pt: "dharamsala", name: "HIMALAYA, INDIA", sub: "TUMMO MONKS", year: "1982", lt: "TO THE HIMALAYA", ltSub: "BENSON'S RESEARCH TEAM" };
+      const DEST = { arc: "arcDharamsala", pt: "dharamsala", name: "UPPER DHARAMSALA, INDIA", sub: "TUMMO MONKS", year: "1982", lt: "TO THE HIMALAYA", ltSub: "BENSON'S RESEARCH TEAM" };
       const tl = gsap.timeline({ paused: true });
       const D = 5.6, M = window.MAP;
       document.getElementById("land").setAttribute("d", M.land);
@@ -77,6 +77,7 @@
       tl.to("#pA", { opacity: 0, duration: 0.4 }, 2.6);
       tl.fromTo("#pB", { opacity: 0, x: 72 }, { opacity: 1, x: 52, duration: 0.4 }, 4.0);
       tl.fromTo("#yr", { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0.4);
+      tl.fromTo("#yrs", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.8);
       tl.fromTo("#l1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 0.5);
       window.__timelines["benson-map"] = tl;
     </script>
