@@ -581,6 +581,30 @@ a temp-dir `npx` pulled an unpinned HyperFrames, hence the pinned-CLI rule.
 measurements, bare counts without denominators, paused zeros on count-ups, different tests on one scale, quote cards
 competing with captions, visual sameness. Fixes became rules in §16.
 
+**Fire and Ice (Tummo / Wim Hof, Telugu, 5:15 preview, Oct 2026).** One session, ~4 h wall clock (fact-check at max effort
+took 90 min in a subagent while sourcing, scenes and assembly ran). Lessons:
+- **Fact-check the script before the VO is recorded.** The VO arrived recorded; the check then found 17 wrong lines
+  (wrong year, place, person, an invented "research paper" quote, records, a mechanism). Without a re-record the only
+  honest options are cutting lines (`projects/fire-and-ice/tools/vomap.py`: cuts at line-slot boundaries, optional
+  silence inserted for an on-screen beat; EDL and SRT follow the map) and labelling the screen. *Why:* a re-record costs
+  minutes; a wrong claim on a public channel costs trust.
+- **Reusable thermal-camera figure** (`video/fireice/_shared/body.js`): body parts drawn as temperatures into a
+  low-res canvas field, blurred, palette-mapped (ironbow) and masked by a soft silhouette; one master clock tween
+  (`FX.clock`) redraws every frame from `t` alone. Looks like a real thermogram; renders at ~5 s per output second
+  (1080p, 4 workers). A flat-coloured SVG stick figure looked like a pictogram; drop that approach.
+- **Dailymotion has full broadcaster documentaries** (VICE "The Superhuman World of the Iceman", DW Euromaxx) with real
+  event footage (the Radboud endotoxin test), but only at 288p: usable as credited archive with `hqdn3d` + `unsharp`.
+- **Verify every third-party in-point with an exact `-ss` frame grab** before render: a 12 s overview sheet put a talk
+  show (burned subtitles) where it showed a snowy gorge. In shell loops run ffmpeg with `-nostdin` or it eats the list.
+- **Maps for an Indian audience: land only, no political borders.** Natural Earth draws de facto borders in Kashmir;
+  `video/fireice/benson_map/mkmap.mjs` uses `land-110m`.
+- **Telugu sensitivity:** "చండాలి" (Sanskrit caṇḍālī, a Tummo name) is heard as a caste insult; show the Sanskrit term
+  with a label and ask the owner.
+- Commons originals 429 under load; standard thumb widths (1920) with long back-off worked. Openverse audio `url`s are
+  full-length previews (one "ambience" was a 53-min file): check `duration` before downloading.
+- Cut review caught: near-black title beats (snow/embers on black), a black frame from a source fade-in, cover-cropped
+  people in 4:3 photos (pre-crop a 16:9 band), a mitochondria scene reused as a missing-photo fallback 20 s after itself.
+
 ---
 
 # Part C: Phone consensus review pipeline
