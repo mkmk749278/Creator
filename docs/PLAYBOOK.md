@@ -15,6 +15,7 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
 - Part C: Phone consensus pipeline. 16 Product and spec · 17 Claude in the pipeline · 18 Architecture and stages ·
   19 Control flow, secrets, evals · 20 Build phases · 21 Phase 0 measurements
 - Part D: 22 Recommendations
+- Part E: the owner's channel charter (verbatim)
 
 ---
 
@@ -129,6 +130,28 @@ The phone-review content rules (Part C) don't apply here.
 **Role:** executive documentary director and motion-graphics engineer, at the standard of Vox, MagnatesMedia, Polymatter,
 ColdFusion and Think Deep. **Goal:** turn a voiceover and a factual script into a cinematic, motion-heavy film. It must
 look like a broadcast documentary or investigative film, **never a slide deck, corporate presentation or photo slideshow**.
+
+**Owner's channel charter (2026-10-08, verbatim in Part E; it wins where it is stricter).** How it maps onto this playbook:
+- **Mission and voice:** the "super-channel" for Telugu viewers: hooks with emotional urgency, a dark cinematic sound, clear
+  chronology, Vox/Johnny Harris-style 2.5D visuals, and only peer-reviewed or primary legal sources. Narrator persona: the
+  street-smart elder brother (అన్నయ్య), conversational Telugu, never victim-blaming (blame the system, not the viewer).
+- **Four acts:** (1) visceral hook, 0:00–1:15, drone + ticking clock; (2) systemic betrayal / investigation, live-browsing
+  mock-ups and highlighters; (3) climax and shock reveal, with **1.5 s of total music silence before the core truth and a
+  braam/thud as the proof lands**; (4) practical defence: actionable, reassuring steps, warm outro. Science films map the
+  same way: myth → mechanism → the real evidence → what you can safely do. A "Trojan horse" hook: open on the popular
+  mystery, resolve it with verified truth (this pairs with §12: the fact-check decides what "truth" is).
+- **Citation tag on every factual claim:** a small bracket tag, e.g. `[NATURE (1982) | HARVARD MONK STUDY]`, bottom right
+  above the logo bug (`cite` column in `projects/fire-and-ice/assemble.py`).
+- **Bunty script format** (ElevenLabs): 5–6 blocks of 100–130 words, under 1,200 characters each; commas and full stops
+  only; no stage directions, `...`, `!`, quotes or dashes; numbers spelled in Telugu script; acronyms letter by letter in
+  Telugu script; common English terms transliterated. *Why (owner):* prevents skipped characters, buffer drops and
+  truncated takes. `scripts/align_script.py` still times these blocks (one sentence per TSV row).
+- **Sound matrix:** VO peaks −2 to −3 dB; BGM −24 to −26 dB under speech; −12 dB in pauses (0.5 s ramps); 0 (silence) for
+  1.5 s before reveals; impacts −6 to −8 dB; clicks/typing/whoosh −8 to −10 dB. Supersedes the −18 to −22 dB in §11.
+  Master stays −14 LUFS, −1 dBTP.
+- **Cadence:** focal change every 3.0–3.5 s (inside the 2.5–4 s rule).
+- **Engines:** the charter names FFmpeg and Python PIL/Matplotlib; HyperFrames (CLAUDE.md) stays the animation engine and
+  FFmpeg the assembler, both running in cloud sessions because the owner has no PC (Termux can still run `assemble.py`).
 
 ## 5. The look
 
@@ -483,7 +506,8 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 
 ## 11. Sound
 
-- **The VO leads.** BGM at −18 to −22 dB under the VO (bed at −15 dB with sidechain ducking lands ~20 dB under), ducked by
+- **The VO leads.** (Charter levels supersede: BGM −24 to −26 dB under speech, −12 dB in pauses; see Part B intro.)
+  BGM at −18 to −22 dB under the VO (bed at −15 dB with sidechain ducking lands ~20 dB under), ducked by
   the VO **and** live clip audio, rising only in pauses. Loop music with crossfades (`long_bed`), never an audible restart.
 - **The video is not locked to the VO length.** EDL break types:
   - **Diegetic cut:** when authentic footage appears, the VO stops and the asset's own sound plays for 2–6 s (a conch, a
@@ -758,3 +782,156 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 9. **Measure before adopting** any expensive effect: render a 2 s shard with and without it and log the cost in §15.
 10. **Fact-check as a separate pass** at `max` effort in a fresh context (as the phone pipeline already does), producing a
     claims table (claim → source URL → status) committed with each video, like `episodes/.../04-fact-check.md`.
+
+---
+
+# Part E: Owner's channel charter (verbatim, received 2026-10-08)
+
+Kept word for word so later sessions read the owner's own wording. How each point maps onto this playbook: Part B intro.
+
+#### CLAUDE DIRECTIVE: "BE PRACTICAL WITH KISHORE"
+#### THE DEFINITIVE PRODUCTION CHARTER & AUTOMATED DOCUMENTARY ENGINE
+
+#### 1. THE MISSION & CHANNEL MONOPOLY
+- Channel Identity: "Be Practical with Kishore" is the digital defense shield and ultimate investigative platform for Telugu audiences across Telangana, Andhra Pradesh, and the global diaspora.
+- The Core Problem in Telugu YouTube:
+  - Finance channels (Money Purse, Koushik Maridi) are either dry, slow, 30-minute boring classroom lectures or surface-level promotional summaries.
+  - Stock channels (Day Trader Telugu) isolate the common man with overly complex trading jargon.
+  - Mystery/Science channels (Think Deep) rely on unverified pop-science blogs and sensationalism.
+  - News/Explainer channels (VR Raja, NB Show) either rely on loud sensationalist yelling without deep research, or flat studio monologues.
+- The "Super-Channel" Solution:
+  "Be Practical with Kishore" eliminates the need for any other channel. It fuses:
+  1. The mass emotional urgency & scroll-stopping hooks of VR Raja.
+  2. The dark cinematic atmosphere, Hans Zimmer-style pulse, and audio ducking of Think Deep.
+  3. The structured chronological clarity of NB Show.
+  4. The 2.5D visual dynamism, animated live-browsing, and investigative depth of Vox & Johnny Harris.
+  5. An impenetrable moat of 100% peer-reviewed scientific papers (Nature, PNAS) and legal primary sources (Supreme Court rulings, RBI Master Directions).
+
+---
+
+#### 2. THE PSYCHOLOGICAL OPERATING SYSTEM (TELUGU VIEWER COGNITION)
+Every script, visual cue, and audio beat produced by Claude must be calibrated against the lived reality and deep psychological wiring of the Telugu middle-class:
+
+##### A. The Honor vs. Shame Axis ("పరువు & గౌరవం")
+- In Telugu culture, public humiliation (neighbors finding out about debt, relatives discovering EMI defaults, office colleagues getting recovery calls) triggers severe existential panic.
+- Core Rule: Never victim-blame the viewer. Never speak from an ivory tower.
+- Psychological Re-framing: Remove the viewer's personal guilt and channel their anger against predatory corporate systems:
+  "ఇది మీ తప్పు కాదు... ఈ కార్పొరేట్ సిస్టమ్ మిమ్మల్ని ట్రాప్ చేయడానికి పన్నిన పక్కా వ్యూహం. ఇప్పుడు ఆ ట్రాప్ ని లీగల్ గా ఎలా బద్దలు కొట్టాలో చూద్దాం."
+
+##### B. Regional Realities & Cultural Touchpoints
+- Address the authentic anxieties of:
+  - Hyderabad IT professionals trapped in lifestyle inflation, multiple credit cards, and tech layoffs.
+  - Coastal AP & Rayalaseema small business owners, traders, and agricultural families facing predatory private finance.
+  - Middle-class parents suffocating under education donations, gold mortgage interest, and real estate/HYDRAA anxieties.
+- Voice Persona: The fearless, fiercely intelligent, street-smart elder brother ("అన్నయ్య") who stands between the viewer and corporate predators. Not a professor. A battle-tested protector.
+
+##### C. Conversational Cadence (Natural Telugu Idioms)
+- Avoid textbook bookish Telugu (గ్రాంథిక భాష).
+- Use natural, punchy, conversational bridges:
+  "పచ్చి నిజం ఏంటంటే...", "తెరవెనుక అసలు మోసం ఇక్కడే ఉంది...", "మన నెత్తిమీద బండరాయిలా పడే ఆ ఒక్క క్లాజ్...", "కంటిమీద కునుకు లేకుండా చేసే ఈ చక్రవడ్డీ...".
+
+---
+
+#### 3. THE 4-ACT SCREENPLAY & EMOTIONAL CHOREOGRAPHY
+Every documentary must adhere to this 4-act structural cadence. Narration text, visual events, and audio tracks must move in perfect lockstep:
+
+##### ACT 1: THE VISCERAL HOOK (0:00 – 1:15)
+- Psychological Objective: Stop the scroll immediately, validate silent anxieties, create irresistible curiosity.
+- Narration Cadence: Rapid, high-urgency rhetorical questions delivered with raw empathy.
+- Visuals: Fast-paced, high-contrast imagery, dark UI frames, red alert stamps.
+- Audio: Low-end dark tension drone (sub-bass pulse) + ticking clock.
+
+##### ACT 2: THE SYSTEMIC BETRAYAL (1:15 – 4:00)
+- Psychological Objective: Expose the fine print, algorithms, and legal loopholes rigged against the common man. Righteous anger replaces helplessness.
+- Narration Cadence: Analytical, razor-sharp, investigative breakdown.
+- Visuals: Simulated live browsing (interactive portals, dynamic mouse cursors, typing SFX, yellow highlighters circling abusive clauses).
+- Audio: Minimalist pulsing synth (Investigation track), low-volume mechanical clicks.
+
+##### ACT 3: THE CLIMAX & SHOCK REVEAL (4:00 – 6:30)
+- Psychological Objective: Shatter common myths with undeniable, shocking proof.
+- The Dramatic Silence Rule: Right before the core truth is uttered (e.g., "అసలు బ్యాంక్ మిమ్మల్ని ఎందుకు అరెస్ట్ చేయలేదో తెలుసా?"), the background music must cut to ABSOLUTE ZERO SILENCE for 1.5 seconds.
+- Impact: Follow the silence immediately with a massive cinematic low-end thud/braam as the verifiable proof slams onto the screen.
+
+##### ACT 4: THE PRACTICAL DEFENSE & EMPOWERMENT (6:30 – Outro)
+- Psychological Objective: Hand the viewer actionable, step-by-step armor (legal sections, dispute templates, negotiation rules). Restore dignity and peace of mind.
+- Narration Cadence: Reassuring, commanding, victorious, and protective.
+- Visuals: Clean action checklists, official legal seals, calm resolution graphics.
+- Audio: Warm, reflective, hopeful cinematic piano/ambient outro.
+
+---
+
+#### 4. STRICT SCRIPT SANITIZATION (ELEVENLABS "BUNTY" VOICE ENGINE)
+To guarantee 100% flawless audio synthesis with the "Bunty" voice and prevent buffer drops, attention drift, character skips, and truncation:
+
+1. Zero Stage Directions in Text:
+   - Absolutely no `[Pause]`, `[Whisper]`, `[Music stops]`, or `(Tone: Serious)` inside the text string.
+2. Minimalist Punctuation:
+   - Use only commas (`,`) for natural breath pauses and full stops (`.`) for sentence endings.
+   - Strictly ban: ellipses (`...`), em-dashes (`--`), quotation marks (`"`), and exclamation points (`!`).
+3. Phonetic Telugu for Technical Terms & Numbers:
+   - Numbers: Always spell out phonetically in Telugu script (`ఫైవ్ థౌసండ్`, `ట్వెంటీ లాక్స్`, `వన్ హండ్రెడ్`). Never use raw digits (`5000`, `20L`).
+   - Decimals & Percentages: Avoid heavy consonant clusters like "పాయింట్ ఫైవ్". Write `అర శాతం` or `మూడు నుంచి నాలుగు శాతం`.
+   - Acronyms: Separate letters cleanly with spaces in Telugu script (`ఆర్ బి ఐ`, `హెచ్ డి ఎఫ్ సి`, `ఎన్ పి ఏ`, `సిబిల్`, `ఓ టి ఎస్`).
+   - Technical/Financial Vocabulary: Transliterate commonly understood English terms into Telugu script (`స్టేట్‌మెంట్`, `మినిమమ్ డ్యూ`, `అల్గారిథమ్`, `రికవరీ ఏజెంట్`).
+4. Strict Chunk Segmentation:
+   - Divide every script into 5 to 6 distinct modular blocks.
+   - Word count constraint: 100 to 130 words per block (under 1,200 characters).
+   - This ensures the model never experiences buffer exhaustion and completes every file cleanly.
+
+---
+
+#### 5. VISUAL AUTOMATION & MOTION STANDARDS (FFMPEG / PYTHON PIL)
+Never display boring talking-head monologues or flat static slides. Visuals must be dynamic, simulated, and cinematic:
+
+1. Simulated Live Browsing Engine:
+   - For web/app topics (e.g., Amazon/Flipkart sales, banking portals, CIBIL dashboards):
+   - Generate virtual dark-mode browser mockups (URL bar, navigation buttons).
+   - Render animated mouse cursor movement interpolating smoothly across the frame.
+   - Simulate live typing inside search fields accompanied by typewriter SFX.
+   - Simulate button clicks with expanding radial ripple rings and crisp click SFX.
+2. Dynamic Data & Charts (Bloomberg / Vox Style):
+   - Use Python PIL / Matplotlib to render animated line charts (e.g., price hike histories, compounding debt curves).
+   - Draw glowing lines dynamically across the timeline with synchronized digital meter SFX.
+3. The Journalistic Citation Overlay:
+   - Reinforce high credibility by placing minimalist, high-tech lower-third tags for every single factual, legal, or scientific claim:
+     `[RBI MASTER DIRECTION: DOR.STR.REC.4/2023]`
+     `[INDIAN CONTRACT ACT: SECTION 171]`
+     `[SUPREME COURT RULING: CRIMINAL VS CIVIL BREACH]`
+     `[NATURE (1982) | HARVARD MONK STUDY]`
+4. Pacing Cadence:
+   - Visual focal points must change every 3.0 to 3.5 seconds (slow 2.5D camera push, pan, yellow highlight reveal, or angle shift).
+
+---
+
+#### 6. MASTER SOUND DESIGN & AUDIO MIXING SPECIFICATIONS
+Sound design is 50% of retention. Claude must configure FFmpeg mixing commands according to this strict decibel matrix:
+
+| Audio Layer | Decibel (dB) Level | Behavior & Rules |
+| :--- | :--- | :--- |
+| Bunty Voiceover (VO) | `-2 dB` to `-3 dB` | Master anchor. Crisp, normalized, high-clarity speech. |
+| BGM Under Speech | `-24 dB` to `-26 dB` | Subtle, atmospheric bed. Must never compete with VO clarity. |
+| BGM Speech Pauses (Swells) | `-12 dB` | Smooth 0.5s ramp up during voice gaps to maintain cinematic tension. |
+| Climax Shock Point | `0 dB (Complete Silence)`| Instant 1.5s hard cut of music before major shocking facts. |
+| Cinematic Impacts (Braams/Thuds)| `-6 dB` to `-8 dB` | Heavy sub-bass drop following the silence window. |
+| Tactical SFX (Clicks/Typing/Whoosh)| `-8 dB` to `-10 dB`| Precise sync with cursor clicks, highlights, and transitions. |
+
+---
+
+#### 7. AUTONOMOUS END-TO-END EXECUTION WORKFLOW
+When the user supplies a topic and core hypothesis:
+
+##### Phase 1: Fact-Checking & The Trojan Horse Angle
+- Audit the subject. Map viral myths versus verified legal/scientific facts.
+- Design the "Trojan Horse Hook": Hook the viewer with the popular mystery, but resolve it using mind-bending, verified truth.
+
+##### Phase 2: Screenplay & Sanitized Blocks
+- Draft the emotionally gripping Telugu script following the 4-Act structure.
+- Sanitize the text strictly for ElevenLabs Bunty into 5–6 modular blocks.
+
+##### Phase 3: Visual & Audio Choreography
+- Generate the simulated web mockups, animated charts, and citation badges.
+- Map exact timestamps for music switches, audio ducking, and silence drops.
+
+##### Phase 4: Local Assembly & FFmpeg Rendering
+- Assemble the assets via FFmpeg on Android/Termux using low-overhead filtergraphs.
+- Output a production-ready, fully mastered 1080p MP4 file.
