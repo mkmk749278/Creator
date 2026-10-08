@@ -48,8 +48,8 @@ Regenerate after text edits: `python3 tools/align_phrases.py phrases.v2.tsv <asr
 two `build_srt.py` commands.
 
 ## Status (2026-10-08): v5 rendered at native 4K
-- **v5** (after owner review, see `review.md`): `out/master_4k.mp4`, 3840×2160, 7:26, −13.9 LUFS. Download links are in the session
-  report and the issue comment.
+- **v5** (after owner review, see `review.md`): `out/master_4k.mp4`, 3840×2160, 7:26, −13.9 LUFS. **4K: https://gofile.io/d/r646vHyu** ·
+  720p: https://gofile.io/d/pyR4zoMD
 - **New in v5:** Jani's face and name at 0:18; channel logo sting at 0:34 and end card at 6:04, plus a logo bug on every other shot;
   HyperFrames scenes in `video/prahlad/` (study timelines, vitals monitor with normal ranges, dehydration chart, metabolism dial,
   Three.js kidney, bladder (labelled hypothesis) and autophagy); "ILLUSTRATIVE FOOTAGE" labels on stock stand-ins; real 2010
