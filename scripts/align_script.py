@@ -12,12 +12,13 @@ for a quick listen.
   python3 scripts/align_script.py VOICE.mp3 SCRIPT.tsv --out projects/<slug>/align
 
 SCRIPT.tsv: one spoken line per row, tab-separated `te<TAB>en` (header optional; `en` optional, plain text works too).
+`te | en` with a pipe also works. ElevenLabs audio tags in [square brackets] are ignored (not spoken).
+Only each line's share of the text matters, not the audio's absolute length: boundaries snap to the audio's own pauses.
 Lines starting with `#` are ignored. Split long sentences into separate rows where you want subtitle cuts.
 Writes align.json (line, te, en, start, end, confidence), subtitles.te.srt, subtitles.en.srt (English text timed to
 the Telugu audio, one cue per line: no SOV/SVO drift) and align.md (lines to check by ear).
 """
 import argparse
-import csv
 import json
 import math
 import re
@@ -40,15 +41,25 @@ def silences(path, noise, d):
     return list(zip(starts, ends + [None] * (len(starts) - len(ends))))
 
 
+TAG = re.compile(r"\[[^\]]*\]")  # ElevenLabs v3/v4 audio tags like [excited], [pause]: in the text, not spoken
+
+
+def clean(text):
+    return re.sub(r"\s{2,}", " ", TAG.sub("", text)).strip()
+
+
 def read_script(path):
     rows = []
     with open(path, newline="") as f:
-        for r in csv.reader(f, delimiter="\t"):
+        for raw in f:
+            r = raw.rstrip("\n").split("\t") if "\t" in raw else [c for c in raw.rstrip("\n").split(" | ")]
             if not r or not r[0].strip() or r[0].lstrip().startswith("#"):
                 continue
             if not rows and [c.strip().lower() for c in r[:2]] in (["te", "en"], ["te"]):
                 continue
-            rows.append({"te": r[0].strip(), "en": r[1].strip() if len(r) > 1 else ""})
+            te, en = clean(r[0]), clean(r[1]) if len(r) > 1 else ""
+            if te:
+                rows.append({"te": te, "en": en})
     return rows
 
 
