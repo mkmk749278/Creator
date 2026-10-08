@@ -1,0 +1,20 @@
+{
+ "img_w": 1600,
+ "img_h": 2264,
+ "boxes": [
+  {
+   "phrase": "Micron Technology Inc. is establishing semiconductor manufacturing facility in Gujarat",
+   "x": 228,
+   "y": 2027,
+   "w": 1172,
+   "h": 44
+  },
+  {
+   "phrase": "Rs.22,516 crore.",
+   "x": 435,
+   "y": 2073,
+   "w": 234,
+   "h": 44
+  }
+ ]
+}

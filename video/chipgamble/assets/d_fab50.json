@@ -1,0 +1,13 @@
+{
+ "img_w": 1600,
+ "img_h": 900,
+ "boxes": [
+  {
+   "phrase": "Govt. of India (Pari passu/Upfront)",
+   "x": 63,
+   "y": 768,
+   "w": 549,
+   "h": 46
+  }
+ ]
+}
