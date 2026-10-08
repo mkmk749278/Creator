@@ -157,6 +157,8 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
         if r["asset"].startswith(("aj_", "itn_")):  # low-res 2010 archive: gentle sharpening after the upscale
             base += ",unsharp=5:5:0.6:5:5:0.0"
     grade = "null" if "hf" in r["overlay"].split("+") else GRADE.get(r["block"], GRADE["B1"])
+    if "lift" in r["overlay"].split("+"):  # under-exposed stock: open up the shadows before grading
+        grade = "eq=gamma=1.55:brightness=0.04:contrast=1.04:saturation=1.08," + grade
     graph = [f"[0:v]{base},{grade},format=yuv420p[l1]"]
     cur, k = "[l1]", 1
     # Layer 2: atmosphere (HUD at low opacity, vignette, grain, optional 2.35:1 bars)

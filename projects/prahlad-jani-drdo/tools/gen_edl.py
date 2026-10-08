@@ -30,6 +30,7 @@ SUB = {("itn_full.mp4", 12.4): "ప్రహ్లాద్ జానీని �
        ("aj_full.mp4", 88.7): "మనుషులు ఆహారం, నీరు లేకుండా ఎలా బ్రతుకుతున్నారో అర్థం చేసుకుంటే, | ఎక్కువ కాలం ఆహారం, నీరు లేకుండా జీవించేలా వ్యూహాలు రూపొందించడానికి అది మాకు సహాయపడొచ్చు.",
        ("aj_full.mp4", 27.7): "మనమంతా సైన్స్‌లో, బయాలజీలో ఒక అద్భుతాన్ని చూస్తున్నాం. | మాతాజీ ఈ హాస్పిటల్‌లో చేరి ఇప్పటికే 108 గంటలైంది. | ఆయన ఏమీ తినలేదు, ఒక్క చుక్క ద్రవం కూడా తాగలేదు. | అంతకంటే ముఖ్యంగా, ఒక్క చుక్క మూత్రం గానీ, మలం గానీ విసర్జించలేదు.",
        ("skeptic_view.mp4", 7.0): "కొన్ని నిజాలు ఎలాంటి సందేహం లేకుండా నిరూపితమయ్యాయి. | మనతో సహా ప్రతి జీవికి బ్రతకడానికి క్రమం తప్పకుండా ఆహారం, నీరు అవసరం. | దీనికి మినహాయింపులు లేవు. ఒక్కటి కూడా లేదు."}
+LIFT = {"doctor_scrub.mp4", "iv_room.mp4", "astronaut_iss.mp4"}  # under-exposed stock: lift shadows
 CCTV = {"aj_cctv.mp4", "aj_cctv2.mp4", "itn_cctv.mp4"}  # authentic monitor footage: no extra look needed
 
 # (block, listed_start, [(asset, secs|None, src_in)], [(rel_t, text, pos)], "sfx@rel;...", note)
@@ -57,10 +58,10 @@ B = [
     ("B2", 130.82, [("siachen_soldiers.jpg", None, 0), ("desert_soldiers.mp4", None, 0), ("indian_army.jpg", None, 0), ("astronaut_iss.mp4", None, 0)], [], "sfx_whoosh.wav@0", "Soldiers / extremes / space"),
     ("LIVE", 144.50, 88.7, 102.7, "aj_full.mp4", "G. ILAVAZHAGAN · DIPAS · 2010", ""),
     ("B2", 144.30, [("hf_timeline_a.mp4", None, 1.0)], [], "sfx_bass_hit.wav@0.2", "Study timeline"),
-    ("B2", 148.42, [("water_tap_close.mp4", None, 0), ("water_drop_macro.mp4", None, 0)], [(3.4, "ZERO WATER", "lower")], "", "Rule 1"),
+    ("B2", 148.42, [("water_tap_close.mp4", None, 14), ("water_drop_macro.mp4", None, 0)], [(3.4, "ZERO WATER", "lower")], "", "Rule 1"),
     ("B2", 155.42, [("aj_cctv.mp4", None, 1), ("itn_cctv.mp4", None, 3)], [(1.3, "2 CAMERAS · 24/7", "lower")], "", "Rule 2: real CCTV"),
     ("B2", 161.72, [("aj_room_wide.mp4", None, 0), ("doctor_scrub.mp4", None, 8)], [(1.2, "OBSERVER IN ROOM", "lower")], "", "Rule 3"),
-    ("B2", 169.84, [("lab_tubes.mp4", None, 6), ("lab_pipette.mp4", None, 8), ("water_drop_macro.mp4", None, 4), ("water_tap_close.mp4", None, 6), ("lab_cellplate.mp4", None, 0)],
+    ("B2", 169.84, [("lab_tubes.mp4", None, 6), ("lab_pipette.mp4", None, 8), ("water_drop_macro.mp4", None, 4), ("water_tap_close.mp4", None, 18), ("lab_cellplate.mp4", None, 0)],
      [(8.2, "MEASURED TO THE ML", "lower")], "", "Rule 4"),
     ("B2", 185.41, [("hf_timeline_b.mp4", None, 0.0)], [], "", "Day tracker: days 1–5"),
     ("B2", 190.50, [("hf_dehydration_chart.mp4", None, 0.3)], [], "sfx_clock.wav@0", "Expected collapse vs reported flat line"),
@@ -126,6 +127,8 @@ def main():
             overlay = "hf" if hf else "grain+vignette"
             if asset in ILLUS:
                 overlay += "+illus"
+            if asset in LIFT:
+                overlay += "+lift"
             if hf and asset in ("hf_logo_sting.mp4", "hf_end_card.mp4"):
                 overlay += "+nologo"
             txt, pos = (tx[0][1], tx[0][2]) if tx else ((CREDIT[asset], "tag") if asset in CREDIT and asset not in ILLUS else ("", ""))
