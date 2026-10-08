@@ -21,6 +21,7 @@ A missing asset falls back to the EDL `fallback`, then to a moving placeholder l
 """
 import argparse
 import csv
+import json
 import math
 import pathlib
 import shutil
@@ -358,7 +359,16 @@ def main():
     clips = []
     for i, r in enumerate(rows, 1):
         if lo <= i <= hi:
+            # per-shot cache: re-render only when the row, its source file or this script changed
+            src, _ = resolve(r)
+            key = json.dumps([{k: v for k, v in r.items() if k not in ("start", "note")}, W, H, args.letterbox,
+                              src.stat().st_mtime if src else None, pathlib.Path(__file__).stat().st_mtime], sort_keys=True, default=str)
+            clip, keyf = tmp / f"{i:03d}.mp4", tmp / f"{i:03d}.key"
+            if clip.exists() and keyf.exists() and keyf.read_text() == key:
+                clips.append(clip)
+                continue
             clip, _ = render_shot(i, r, W, H, args, fontfile, tmp)
+            keyf.write_text(key)
             clips.append(clip)
             print(f"  [{i}/{len(rows)}] {r['id']} {r['asset']} {r['dur']:.2f}s", flush=True)
     (tmp / "list.txt").write_text("".join(f"file '{c.name}'\n" for c in clips))
