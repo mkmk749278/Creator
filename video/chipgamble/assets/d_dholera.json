@@ -1,0 +1,13 @@
+{
+ "img_w": 1600,
+ "img_h": 900,
+ "boxes": [
+  {
+   "phrase": "Semicon City (Dholera, Gujarat)",
+   "x": 265,
+   "y": 14,
+   "w": 704,
+   "h": 61
+  }
+ ]
+}

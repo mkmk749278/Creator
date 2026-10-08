@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>The $10 Billion Chip Gamble: hook</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="assets/asia_map.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      :root {
+        --ink: #f4f1ea;
+        --ink-dim: #b9b4a8;
+        --bg: #111317;
+        --saffron: #F59E0B;
+        --taiwan: #EF4444;
+        --chip: #2DD4BF;
+        --land: #1b2129;
+        --land-edge: #2c3540;
+      }
+      html, body { margin: 0; background: var(--bg); }
+      body { color: var(--ink); font-family: "Inter", sans-serif; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
+
+      /* media layer */
+      .wrap { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
+      .wrap > img, .wrap > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .shade { position: absolute; inset: 0; background: #000; opacity: 0; }
+
+      /* overlay layer */
+      .ov { position: absolute; inset: 0; z-index: 5; }
+      .vignette { position: absolute; inset: 0; z-index: 8; pointer-events: none;
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%); }
+      .credit { position: absolute; right: 36px; bottom: 26px; font-size: 22px; font-weight: 400; color: rgba(244,241,234,0.72);
+        text-shadow: 0 1px 4px rgba(0,0,0,0.9); }
+      .eyebrow { font-size: 34px; font-weight: 600; letter-spacing: 0.32em; color: var(--saffron); }
+      .shadow { text-shadow: 0 4px 24px rgba(0,0,0,0.75); }
+
+      /* S1: 2021 */
+      #o-2021 { display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 120px 120px; box-sizing: border-box; gap: 6px; }
+      #o-2021 .year { font-size: 260px; font-weight: 800; line-height: 0.9; letter-spacing: -0.04em; }
+      #o-2021 .eyebrow { opacity: 0; align-self: flex-start; font-size: 40px; background: rgba(17,19,23,0.8); padding: 10px 22px; }
+
+      /* S2: checklist */
+      #o-checks { display: flex; flex-direction: column; justify-content: center; padding-left: 120px; gap: 26px; box-sizing: border-box; }
+      .tag { display: inline-flex; align-items: center; gap: 22px; align-self: flex-start; font-size: 58px; font-weight: 800; letter-spacing: 0.04em;
+        padding: 18px 36px 18px 26px; background: rgba(17,19,23,0.82); border-left: 10px solid var(--chip); opacity: 0; }
+      .tag .tick { color: var(--chip); }
+
+      /* S3: unsold */
+      #o-unsold { display: flex; align-items: center; justify-content: center; }
+      .stamp { font-size: 230px; font-weight: 800; letter-spacing: 0.06em; color: var(--taiwan); border: 16px solid var(--taiwan);
+        padding: 6px 60px; background: rgba(17,19,23,0.35); opacity: 0; }
+
+      /* S4: why */
+      #o-why { background: var(--bg); display: flex; align-items: center; justify-content: center; }
+      #o-why .q { font-size: 300px; font-weight: 800; letter-spacing: -0.03em; }
+
+      /* S5: chip */
+      #o-chip1 { display: flex; align-items: flex-end; padding: 0 0 130px 120px; box-sizing: border-box; }
+      #o-chip1 .lbl { font-size: 76px; font-weight: 800; opacity: 0; background: rgba(17,19,23,0.8); padding: 14px 34px; border-left: 10px solid var(--chip); }
+      #o-chip2 { display: flex; flex-direction: column; justify-content: space-between; padding: 110px 120px 130px; box-sizing: border-box; }
+      #o-chip2 .big { align-self: flex-start; font-size: 88px; font-weight: 800; line-height: 1.02; opacity: 0; background: rgba(17,19,23,0.82); padding: 18px 38px; border-left: 10px solid var(--chip); }
+      .price { align-self: flex-end; display: flex; align-items: baseline; gap: 18px; background: var(--saffron); color: #111; padding: 22px 44px;
+        font-weight: 800; border-radius: 14px; opacity: 0; }
+      .price .u { font-size: 54px; } .price .v { font-size: 150px; letter-spacing: -0.03em; line-height: 0.9; }
+
+      /* S6: stats */
+      #o-stats .eyebrow { font-size: 40px; }
+      #o-stats { display: flex; flex-direction: column; justify-content: center; padding-left: 140px; gap: 54px; box-sizing: border-box; }
+      .stat { display: flex; align-items: baseline; gap: 40px; opacity: 0; }
+      .stat .n { font-size: 210px; font-weight: 800; letter-spacing: -0.05em; line-height: 0.9; color: var(--taiwan); min-width: 560px; }
+      .stat .l { font-size: 56px; font-weight: 600; max-width: 900px; line-height: 1.1; }
+      .foot { position: absolute; left: 140px; bottom: 70px; font-size: 24px; color: var(--ink-dim); opacity: 0; }
+
+      /* maps */
+      .mapwrap { position: absolute; inset: 0; }
+      .mapwrap svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .map-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 45%, #10161d 0%, #06080b 75%); }
+      .land { fill: var(--land); stroke: var(--land-edge); stroke-width: 1.2; }
+      .ring { fill: none; stroke: var(--taiwan); stroke-width: 4; opacity: 0; }
+      .maplabel { position: absolute; font-size: 64px; font-weight: 800; letter-spacing: 0.14em; opacity: 0; }
+
+      /* S7b: Taiwan sat */
+      #o-twsat { display: flex; align-items: center; justify-content: flex-end; padding-right: 160px; box-sizing: border-box; }
+      #o-twsat .name { font-size: 170px; font-weight: 800; letter-spacing: 0.12em; color: var(--ink); opacity: 0; }
+
+      /* S8: snap */
+      #o-snap .line { position: absolute; top: 528px; height: 24px; width: 980px; border-radius: 12px;
+        background: linear-gradient(90deg, rgba(45,212,191,0.2), var(--chip)); box-shadow: 0 0 40px rgba(45,212,191,0.8); }
+      #o-snap .l1 { left: 0; }
+      #o-snap .l2 { left: 960px; background: linear-gradient(90deg, var(--chip), rgba(45,212,191,0.2)); }
+      #o-snap .cap { position: absolute; left: 0; right: 0; top: 330px; display: flex; justify-content: center; opacity: 0; }
+      #o-snap .cap span { font-size: 52px; font-weight: 800; letter-spacing: 0.18em; background: rgba(17,19,23,0.82); padding: 14px 34px; }
+      #o-snap .flash { position: absolute; left: 860px; top: 440px; width: 200px; height: 200px; border-radius: 50%;
+        background: radial-gradient(circle, #fff 0%, rgba(239,68,68,0.9) 35%, rgba(239,68,68,0) 70%); opacity: 0; }
+
+      /* S9: paralysis */
+      #o-para { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+      #o-para .tint { position: absolute; inset: 0; background: #7a0b10; mix-blend-mode: multiply; opacity: 0; }
+      #o-para .e { position: relative; opacity: 0; }
+      #o-para .w { position: relative; font-size: 210px; font-weight: 800; letter-spacing: 0.04em; opacity: 0; }
+
+      /* S11: India */
+      #o-map-in .big { position: absolute; left: 1170px; top: 360px; display: flex; flex-direction: column; gap: 4px; }
+      #o-map-in .amt { font-size: 180px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--saffron); opacity: 0; }
+      #o-map-in .sub { font-size: 82px; font-weight: 800; letter-spacing: 0.2em; opacity: 0; }
+
+      /* S12: ISM */
+      #o-ism { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; background: rgba(17,19,23,0.55); }
+      #o-ism .t { font-size: 118px; font-weight: 800; letter-spacing: 0.02em; text-align: center; line-height: 1; }
+      #o-ism .t span { display: inline-block; opacity: 0; }
+      #o-ism .rule { width: 520px; height: 8px; background: var(--saffron); transform-origin: 50% 50%; }
+      #o-ism .s { font-size: 40px; font-weight: 600; color: var(--ink-dim); opacity: 0; }
+
+      /* S13: power */
+      #o-power { display: flex; align-items: flex-end; padding: 0 0 130px 120px; box-sizing: border-box; }
+      #o-power .t { font-size: 104px; font-weight: 800; opacity: 0; }
+      #o-power .blackout { position: absolute; inset: 0; background: #000; opacity: 0; }
+
+      /* S14: title */
+      #o-title { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 26px; }
+      #o-title .bg { position: absolute; inset: 0; background: var(--bg); opacity: 0; }
+      #o-title .k { position: relative; font-size: 38px; background: rgba(17,19,23,0.85); padding: 12px 26px; font-weight: 600; letter-spacing: 0.4em; color: var(--saffron); opacity: 0; }
+      #o-title .t { position: relative; font-size: 150px; font-weight: 800; line-height: 0.95; text-align: center; letter-spacing: -0.02em; opacity: 0; }
+      #o-title .t .amt { color: var(--saffron); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="chipgamble-hook" data-start="0" data-width="1920" data-height="1080" data-duration="50.5">
+
+      <!-- ===== MEDIA LAYER (real photos + real footage) ===== -->
+      <div class="wrap" id="w-c1"><img id="m-c1" class="clip" src="media/carlot_c1.jpg" data-start="0" data-duration="3.66" data-track-index="0" alt="" /><div class="shade" id="sh-c1"></div></div>
+      <div class="wrap" id="w-c2"><img id="m-c2" class="clip" src="media/carlot_c2.jpg" data-start="3.66" data-duration="8.24" data-track-index="0" alt="" /></div>
+      <div class="wrap" id="w-st"><video id="m-st" class="clip" src="media/st_chips.mp4" muted playsinline data-start="12.96" data-duration="2.68" data-track-index="0"></video></div>
+      <div class="wrap" id="w-mcu"><img id="m-mcu" class="clip" src="media/mcu_die.jpg" data-start="15.64" data-duration="2.78" data-track-index="0" alt="" /></div>
+      <div class="wrap" id="w-die"><video id="m-die" class="clip" src="media/ibm_die.mp4" muted playsinline data-start="18.42" data-duration="5.86" data-track-index="0"></video><div class="shade" id="sh-die"></div></div>
+      <div class="wrap" id="w-tw"><img id="m-tw" class="clip" src="media/taiwan_sat.jpg" data-start="26.66" data-duration="2.08" data-track-index="0" alt="" /></div>
+      <div class="wrap" id="w-port"><video id="m-port" class="clip" src="media/port_top.mp4" muted playsinline data-start="28.74" data-duration="2.76" data-track-index="0"></video></div>
+      <div class="wrap" id="w-crane"><video id="m-crane" class="clip" src="media/port_crane.mp4" muted playsinline data-start="31.5" data-duration="2.34" data-track-index="0"></video></div>
+      <div class="wrap" id="w-freeze"><img id="m-freeze" class="clip" src="media/port_crane_last.jpg" data-start="33.84" data-duration="1.24" data-track-index="0" alt="" /></div>
+      <div class="wrap" id="w-yellow"><video id="m-yellow" class="clip" src="media/ibm_yellowfab.mp4" muted playsinline data-start="35.08" data-duration="1.64" data-track-index="0"></video></div>
+      <div class="wrap" id="w-corr"><video id="m-corr" class="clip" src="media/ibm_corridor.mp4" muted playsinline data-start="39.34" data-duration="2.64" data-track-index="0"></video></div>
+      <div class="wrap" id="w-pyl"><img id="m-pyl" class="clip" src="media/pylons_chennai.jpg" data-start="41.98" data-duration="3.44" data-track-index="0" alt="" /></div>
+      <div class="wrap" id="w-board"><video id="m-board" class="clip" src="media/ibm_board.mp4" muted playsinline data-start="45.42" data-duration="4.0" data-track-index="0"></video></div>
+
+      <!-- ===== OVERLAY LAYER (motion graphics) ===== -->
+      <section id="o-2021" class="ov clip" data-start="0" data-duration="3.66" data-track-index="2">
+        <div class="eyebrow shadow" id="e-2021">INDIA · CAR MAKERS</div>
+        <div class="year shadow" id="y-2021">2021</div>
+        <div class="credit">Representative image · Photo: Martina Nolte, CC BY-SA 3.0 de</div>
+      </section>
+
+      <section id="o-checks" class="ov clip" data-start="3.66" data-duration="5.74" data-track-index="2">
+        <div class="tag" id="t1"><span class="tick">✓</span>PAINTED</div>
+        <div class="tag" id="t2"><span class="tick">✓</span>UPHOLSTERED</div>
+        <div class="tag" id="t3"><span class="tick">✓</span>ASSEMBLED</div>
+        <div class="credit">Representative image · Photo: Martina Nolte, CC BY-SA 3.0 de</div>
+      </section>
+
+      <section id="o-unsold" class="ov clip" data-start="9.4" data-duration="2.5" data-track-index="2">
+        <div class="stamp" id="stamp">UNSOLD</div>
+      </section>
+
+      <section id="o-why" class="ov clip" data-start="11.9" data-duration="1.06" data-track-index="2">
+        <div class="q" id="why">WHY?</div>
+      </section>
+
+      <section id="o-chip1" class="ov clip" data-start="12.96" data-duration="2.68" data-track-index="2">
+        <div class="lbl shadow" id="chip1">A piece of silicon…</div>
+        <div class="credit">Footage: STMicroelectronics, CC BY 3.0</div>
+      </section>
+
+      <section id="o-chip2" class="ov clip" data-start="15.64" data-duration="2.78" data-track-index="2">
+        <div class="big shadow" id="chip2">Smaller than your fingernail</div>
+        <div class="price" id="price"><span class="u">UNDER</span><span class="v">$3</span></div>
+        <div class="credit">Microcontroller die: yellowcloud, CC BY 2.0</div>
+      </section>
+
+      <section id="o-stats" class="ov clip" data-start="18.42" data-duration="5.86" data-track-index="2">
+        <div class="eyebrow" id="st-e">MADE IN TAIWAN</div>
+        <div class="stat" id="s60"><div class="n">60%+</div><div class="l">of the world's contract-made chips</div></div>
+        <div class="stat" id="s90"><div class="n">90%+</div><div class="l">of the most advanced processors</div></div>
+        <div class="foot" id="st-f">Foundry-market share estimates: TrendForce; BCG &amp; SIA (2021)</div>
+        <div class="credit">Footage: IBM Research, CC BY 3.0</div>
+      </section>
+
+      <section id="o-map-tw" class="ov clip" data-start="24.28" data-duration="2.38" data-track-index="1">
+        <div class="map-bg"></div>
+        <div class="mapwrap" id="mw-tw">
+          <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <path class="land" id="land-a"></path>
+            <path id="twn-a" fill="#EF4444"></path>
+            <circle class="ring" id="r1" cx="1631" cy="472" r="30"></circle>
+            <circle class="ring" id="r2" cx="1631" cy="472" r="30"></circle>
+          </svg>
+        </div>
+        <div class="maplabel" id="lbl-one" style="left: 1080px; top: 640px;">ONE ISLAND</div>
+        <div class="credit">Map: Natural Earth (public domain)</div>
+      </section>
+
+      <section id="o-twsat" class="ov clip" data-start="26.66" data-duration="2.08" data-track-index="2">
+        <div class="name shadow" id="tw-name">TAIWAN</div>
+        <div class="credit">Image: NASA Terra / MODIS, public domain</div>
+      </section>
+
+      <section id="o-snap" class="ov clip" data-start="28.74" data-duration="2.76" data-track-index="2">
+        <div class="cap" id="snap-cap"><span id="snap-txt">GLOBAL CHIP SUPPLY CHAIN</span></div>
+        <div class="line l1" id="l1"></div>
+        <div class="line l2" id="l2"></div>
+        <div class="flash" id="flash"></div>
+        <div class="credit">Representative footage · FILMING CORK, CC BY 3.0</div>
+      </section>
+
+      <section id="o-econ" class="ov clip" data-start="31.5" data-duration="2.34" data-track-index="2">
+        <div class="credit">Representative footage · FILMING CORK, CC BY 3.0</div>
+      </section>
+
+      <section id="o-para" class="ov clip" data-start="33.84" data-duration="1.24" data-track-index="2">
+        <div class="tint" id="tint"></div>
+        <div class="eyebrow e shadow" id="para-e">THE GLOBAL ECONOMY</div>
+        <div class="w shadow" id="para-w">PARALYSED</div>
+      </section>
+
+      <section id="o-yellow" class="ov clip" data-start="35.08" data-duration="1.64" data-track-index="2">
+        <div class="credit">Footage: IBM Research, CC BY 3.0</div>
+      </section>
+
+      <section id="o-map-in" class="ov clip" data-start="36.72" data-duration="2.62" data-track-index="1">
+        <div class="map-bg"></div>
+        <div class="mapwrap" id="mw-in">
+          <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <path class="land" id="land-b"></path>
+            <path id="twn-b" fill="#3a2226"></path>
+            <path id="ind-b" fill="#F59E0B" opacity="0"></path>
+          </svg>
+        </div>
+        <div class="big">
+          <div class="amt shadow" id="amt">$10 BILLION</div>
+          <div class="sub shadow" id="amt-sub">GAMBLE</div>
+        </div>
+        <div class="credit">Map: Natural Earth (public domain)</div>
+      </section>
+
+      <section id="o-ism" class="ov clip" data-start="39.34" data-duration="2.64" data-track-index="2">
+        <div class="eyebrow" id="ism-e">LAUNCHED DECEMBER 2021</div>
+        <div class="t"><span id="ism1">INDIA</span> <span id="ism2">SEMICONDUCTOR</span> <span id="ism3">MISSION</span></div>
+        <div class="rule" id="ism-rule"></div>
+        <div class="s" id="ism-s">₹76,000 crore outlay</div>
+        <div class="credit">Footage: IBM Research, CC BY 3.0</div>
+      </section>
+
+      <section id="o-power" class="ov clip" data-start="41.98" data-duration="3.44" data-track-index="2">
+        <div class="blackout" id="blackout"></div>
+        <div class="t shadow" id="pw-t">Basic power grids</div>
+        <div class="credit">Photo: Aravindan Ganesan, CC BY 2.0</div>
+      </section>
+
+      <section id="o-title" class="ov clip" data-start="45.42" data-duration="5.08" data-track-index="2">
+        <div class="bg" id="ti-bg"></div>
+        <div class="k" id="ti-k">THE MOST COMPLEX FEAT IN ENGINEERING?</div>
+        <div class="t" id="ti-t">THE <span class="amt">$10 BILLION</span> CHIP GAMBLE</div>
+        <div class="credit" id="ti-c">Footage: IBM Research, CC BY 3.0</div>
+      </section>
+
+      <div class="vignette"></div>
+
+      <!-- ===== AUDIO ===== -->
+      <audio id="vo" src="voice.mp3" data-start="0" data-duration="48.85" data-track-index="10" data-volume="1"></audio>
+      <audio id="bed" src="sfx/drone.wav" data-start="0" data-duration="50.5" data-track-index="11" data-volume="0.16"></audio>
+      <audio id="sx-boom1" src="sfx/boom.wav" data-start="0.15" data-duration="1.6" data-track-index="12" data-volume="0.55"></audio>
+      <audio id="sx-wh1" src="sfx/whoosh.wav" data-start="3.25" data-duration="0.9" data-track-index="13" data-volume="0.35"></audio>
+      <audio id="sx-stamp" src="sfx/stamp.wav" data-start="10.95" data-duration="0.5" data-track-index="12" data-volume="0.7"></audio>
+      <audio id="sx-boom2" src="sfx/boom.wav" data-start="11.9" data-duration="1.6" data-track-index="14" data-volume="0.5"></audio>
+      <audio id="sx-boom3" src="sfx/boom.wav" data-start="17.28" data-duration="1.6" data-track-index="12" data-volume="0.55"></audio>
+      <audio id="sx-wh2" src="sfx/whoosh.wav" data-start="18.0" data-duration="0.9" data-track-index="13" data-volume="0.35"></audio>
+      <audio id="sx-wh3" src="sfx/whoosh.wav" data-start="23.9" data-duration="0.9" data-track-index="13" data-volume="0.35"></audio>
+      <audio id="sx-boom4" src="sfx/boom.wav" data-start="28.22" data-duration="1.6" data-track-index="12" data-volume="0.55"></audio>
+      <audio id="sx-snap" src="sfx/snap.wav" data-start="30.46" data-duration="0.4" data-track-index="14" data-volume="0.6"></audio>
+      <audio id="sx-boom5" src="sfx/boom.wav" data-start="33.84" data-duration="1.6" data-track-index="12" data-volume="0.6"></audio>
+      <audio id="sx-wh4" src="sfx/whoosh.wav" data-start="36.3" data-duration="0.9" data-track-index="13" data-volume="0.35"></audio>
+      <audio id="sx-boom6" src="sfx/boom.wav" data-start="37.98" data-duration="1.6" data-track-index="14" data-volume="0.55"></audio>
+      <audio id="sx-wh5" src="sfx/whoosh.wav" data-start="45.0" data-duration="0.9" data-track-index="13" data-volume="0.35"></audio>
+      <audio id="sx-boom7" src="sfx/boom.wav" data-start="47.88" data-duration="1.6" data-track-index="12" data-volume="0.6"></audio>
+    </div>
+
+    <script>
+      // Inline the Natural Earth geometry into both map scenes.
+      const M = window.ASIA_MAP;
+      for (const id of ["land-a", "land-b"]) document.getElementById(id).setAttribute("d", M.land);
+      document.getElementById("twn-a").setAttribute("d", M.TWN);
+      document.getElementById("twn-b").setAttribute("d", M.TWN);
+      document.getElementById("ind-b").setAttribute("d", M.IND);
+      // India also needs to appear as land in the Taiwan map.
+      const indA = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      indA.setAttribute("d", M.IND); indA.setAttribute("class", "land");
+      document.getElementById("land-a").after(indA);
+
+      const tl = gsap.timeline({ paused: true });
+      const pop = (sel, t, extra = {}) => tl.fromTo(sel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", ...extra }, t);
+
+      // S1 0–3.66: aerial of new-car lot, slow pull-out; "2021"
+      tl.fromTo("#w-c1", { scale: 1.18 }, { scale: 1.0, duration: 3.66, ease: "none" }, 0);
+      tl.fromTo("#y-2021", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.6, ease: "expo.out" }, 0.18);
+      pop("#e-2021", 1.6);
+
+      // S2 3.66–11.9: top-down rows of new cars, drift; checklist; then desaturate for UNSOLD
+      tl.fromTo("#w-c2", { scale: 1.06, x: 0 }, { scale: 1.2, x: -60, duration: 8.24, ease: "none" }, 3.66);
+      pop("#t1", 6.38, { duration: 0.35 });
+      pop("#t2", 7.32, { duration: 0.35 });
+      pop("#t3", 8.1, { duration: 0.35 });
+      tl.fromTo("#w-c2", { filter: "grayscale(0) brightness(1)" }, { filter: "grayscale(1) brightness(0.55)", duration: 0.8, ease: "power2.out", immediateRender: false }, 9.4);
+      tl.fromTo("#stamp", { opacity: 0, scale: 2.4, rotation: -14 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.22, ease: "power4.in" }, 10.76);
+      tl.to("#stamp", { x: 6, duration: 0.05, yoyo: true, repeat: 3 }, 10.98);
+
+      // S4 Why?
+      tl.fromTo("#why", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 11.92);
+
+      // S5 chips
+      tl.fromTo("#w-st", { scale: 1.0 }, { scale: 1.08, duration: 2.68, ease: "none" }, 12.96);
+      pop("#chip1", 13.9);
+      tl.fromTo("#w-mcu", { scale: 1.0 }, { scale: 1.3, duration: 2.78, ease: "power1.inOut" }, 15.64);
+      pop("#chip2", 15.7);
+      tl.fromTo("#price", { opacity: 0, scale: 1.6, rotation: 6 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.3, ease: "back.out(2.4)" }, 17.2);
+
+      // S6 stats over die footage
+      tl.fromTo("#sh-die", { opacity: 0 }, { opacity: 0.62, duration: 0.6 }, 18.42);
+      tl.fromTo("#w-die", { scale: 1.0 }, { scale: 1.12, duration: 5.86, ease: "none" }, 18.42);
+      pop("#st-e", 18.6);
+      tl.fromTo("#s60", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 19.2);
+      tl.fromTo("#s90", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 21.86);
+      tl.fromTo("#st-f", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 22.4);
+
+      // S7 map: zoom to Taiwan, pulse rings
+      tl.fromTo("#mw-tw", { scale: 1.0 }, { scale: 2.4, duration: 2.38, ease: "power2.inOut", transformOrigin: "1631px 472px" }, 24.28);
+      tl.fromTo("#r1", { opacity: 0.9, attr: { r: 20 } }, { opacity: 0, attr: { r: 150 }, duration: 1.0, ease: "power1.out" }, 25.25);
+      tl.fromTo("#r2", { opacity: 0.9, attr: { r: 20 } }, { opacity: 0, attr: { r: 150 }, duration: 1.0, ease: "power1.out" }, 25.75);
+      pop("#lbl-one", 25.3);
+      tl.fromTo("#w-tw", { scale: 1.25 }, { scale: 1.05, duration: 2.08, ease: "power2.out" }, 26.66);
+      tl.fromTo("#tw-name", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 28.1);
+
+      // S8 supply chain line, snaps on "snaps"
+      tl.fromTo("#w-port", { scale: 1.0 }, { scale: 1.1, duration: 2.76, ease: "none" }, 28.74);
+      tl.fromTo("#l1", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 28.8);
+      tl.fromTo("#l2", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 29.1);
+      pop("#snap-cap", 29.4);
+      tl.fromTo("#l1", { x: 0, rotation: 0 }, { x: -420, rotation: -9, duration: 0.7, ease: "power3.out", immediateRender: false }, 30.46);
+      tl.fromTo("#l2", { x: 0, rotation: 0 }, { x: 420, rotation: 11, duration: 0.7, ease: "power3.out", immediateRender: false }, 30.46);
+      tl.fromTo("#flash", { opacity: 1, scale: 0.4 }, { opacity: 0, scale: 3, duration: 0.5, ease: "power2.out" }, 30.46);
+      tl.to("#snap-txt", { color: "#EF4444", duration: 0.1 }, 30.46);
+
+      // S9 economy → paralysis freeze
+      tl.fromTo("#w-crane", { filter: "grayscale(0)" }, { filter: "grayscale(0.85)", duration: 2.3, ease: "none", immediateRender: false }, 31.5);
+      tl.fromTo("#w-crane", { scale: 1.0 }, { scale: 1.12, duration: 2.34, ease: "none" }, 31.5);
+      tl.set("#w-freeze", { filter: "grayscale(1) contrast(1.2)" }, 33.84);
+      tl.fromTo("#w-freeze", { scale: 1.12 }, { scale: 1.16, duration: 1.24, ease: "none" }, 33.84);
+      tl.fromTo("#tint", { opacity: 0 }, { opacity: 0.85, duration: 0.15 }, 33.84);
+      pop("#para-e", 33.86, { duration: 0.25 });
+      tl.fromTo("#para-w", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.out" }, 33.88);
+
+      // S10 cleanroom
+      tl.fromTo("#w-yellow", { scale: 1.12 }, { scale: 1.0, duration: 1.64, ease: "none" }, 35.08);
+
+      // S11 India map
+      tl.fromTo("#mw-in", { scale: 1.0 }, { scale: 1.45, duration: 2.62, ease: "power2.inOut", transformOrigin: "554px 494px" }, 36.72);
+      tl.fromTo("#ind-b", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 36.8);
+      tl.fromTo("#amt", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power4.out" }, 37.95);
+      pop("#amt-sub", 38.75);
+
+      // S12 Mission lockup
+      tl.fromTo("#w-corr", { scale: 1.0 }, { scale: 1.1, duration: 2.64, ease: "none" }, 39.34);
+      pop("#ism-e", 39.4);
+      pop("#ism1", 39.9, { duration: 0.35 });
+      pop("#ism2", 40.3, { duration: 0.35 });
+      pop("#ism3", 41.0, { duration: 0.35 });
+      tl.fromTo("#ism-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 41.1);
+      pop("#ism-s", 41.2);
+
+      // S13 power grid, flicker on "power grids" (deterministic steps)
+      tl.fromTo("#w-pyl", { scale: 1.05 }, { scale: 1.18, duration: 3.44, ease: "none" }, 41.98);
+      pop("#pw-t", 44.2);
+      [[44.66, 0.8], [44.74, 0.1], [44.82, 0.65], [44.9, 0.0], [45.02, 0.5], [45.1, 0.0]].forEach(([t, o]) =>
+        tl.set("#blackout", { opacity: o }, t));
+
+      // S14 end title
+      tl.fromTo("#w-board", { scale: 1.0 }, { scale: 1.15, duration: 4.0, ease: "none" }, 45.42);
+      pop("#ti-k", 46.3);
+      tl.fromTo("#ti-bg", { opacity: 0 }, { opacity: 0.78, duration: 0.6 }, 47.3);
+      tl.fromTo("#ti-t", { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.6, ease: "expo.out" }, 47.88);
+      tl.to("#ti-bg", { opacity: 1, duration: 1.0 }, 49.42);
+      tl.fromTo("#ti-c", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 49.3);
+
+      window.__timelines["chipgamble-hook"] = tl;
+    </script>
+  </body>
+</html>

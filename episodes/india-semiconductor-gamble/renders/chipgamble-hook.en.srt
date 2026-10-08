@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:03,640
+In 2021, car manufacturers across India had
+
+2
+00:00:03,660 --> 00:00:06,010
+parking lots full of brand new vehicles,
+
+3
+00:00:06,380 --> 00:00:08,730
+fully painted, upholstered, and assembled.
+
+4
+00:00:09,400 --> 00:00:11,370
+Yet, none of them could be sold.
+
+5
+00:00:11,900 --> 00:00:12,330
+Why?
+
+6
+00:00:12,960 --> 00:00:14,680
+Because they were missing a piece of silicon
+
+7
+00:00:14,700 --> 00:00:16,980
+smaller than your fingernail, costing less
+
+8
+00:00:17,000 --> 00:00:17,830
+than $3.
+
+9
+00:00:18,420 --> 00:00:21,300
+Today, over 60% of the world's microchips
+
+10
+00:00:21,320 --> 00:00:24,260
+and more than 90% of the most advanced processors
+
+11
+00:00:24,280 --> 00:00:27,080
+come from a single, geopolitically vulnerable
+
+12
+00:00:27,100 --> 00:00:28,550
+island, Taiwan.
+
+13
+00:00:28,740 --> 00:00:31,980
+If that supply chain ever snaps, the entire
+
+14
+00:00:32,000 --> 00:00:34,490
+global economy faces instant paralysis.
+
+15
+00:00:35,080 --> 00:00:37,160
+To break this vulnerability, India launched
+
+16
+00:00:37,180 --> 00:00:39,920
+an aggressive $10 billion gamble called the
+
+17
+00:00:39,940 --> 00:00:41,570
+India Semiconductor Mission.
+
+18
+00:00:41,980 --> 00:00:44,000
+Can an economy that historically struggled
+
+19
+00:00:44,020 --> 00:00:46,860
+with basic power grids pull off the most complex
+
+20
+00:00:46,880 --> 00:00:48,710
+engineering feat in human history?

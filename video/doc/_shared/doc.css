@@ -1,0 +1,67 @@
+/* Documentary engine: every frame is full-screen real media. Text is limited to
+   lower-thirds (≤ 4 words), a corner timer and a one-line credit. */
+:root {
+  --ink: #ffffff;
+  --accent: #ffcf5a;
+  --alarm: #ff5d6c;
+  --o2: #4fd1c5;
+  --shadow: 0 2px 18px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #000; color: var(--ink); font-family: "Inter", "Noto Sans Telugu", sans-serif; }
+#root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
+
+/* Shots */
+.shot { position: absolute; inset: 0; overflow: hidden; background: #000; }
+.shot .m { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform; }
+.shot.contain .m { object-fit: contain; }
+.shot.contain .fill { position: absolute; inset: -60px; width: calc(100% + 120px); height: calc(100% + 120px); object-fit: cover; opacity: 0.45; filter: blur(28px) brightness(0.6); }
+.shot.split .half { position: absolute; top: 0; bottom: 0; width: 50%; overflow: hidden; }
+.shot.split .half.l { left: 0; border-right: 3px solid #000; }
+.shot.split .half.r { right: 0; }
+.shot.split .half .m { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.shot.split .tag { position: absolute; left: 50%; bottom: 120px; transform: translateX(-50%); white-space: nowrap; font-size: 46px; font-weight: 800;
+  text-shadow: var(--shadow); letter-spacing: 0.02em; }
+.shot.split .tag small { display: block; font-size: 24px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.9; text-align: center; }
+.shot.end .m { filter: blur(14px) brightness(0.55); transform: scale(1.08); }
+
+/* Grade + vignette over all media (30% black gradient at the bottom for text) */
+.grade { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.55) 100%),
+              radial-gradient(130% 110% at 50% 45%, transparent 60%, rgba(0,0,0,0.45) 100%); }
+
+/* Lower-third: max 4 words */
+.l3 { position: absolute; left: 110px; bottom: 96px; display: flex; align-items: center; gap: 22px; opacity: 0; }
+.l3 .bar { width: 8px; height: 64px; background: var(--accent); border-radius: 4px; }
+.l3 .t { font-size: 50px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; text-shadow: var(--shadow); white-space: nowrap; }
+.l3 .t .sep { color: var(--accent); margin: 0 14px; }
+.l3.te .t { font-family: "Noto Sans Telugu", "Inter", sans-serif; text-transform: none; letter-spacing: 0; }
+
+/* Corner timer (semi-transparent pill) */
+.timer { position: absolute; right: 90px; bottom: 90px; display: flex; align-items: center; gap: 16px; padding: 14px 28px; border-radius: 999px;
+  background: rgba(0,0,0,0.38); border: 1px solid rgba(255,255,255,0.22); opacity: 0; }
+.timer .dot { width: 16px; height: 16px; border-radius: 50%; background: var(--alarm); }
+.timer .v { font-size: 52px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; text-shadow: var(--shadow); }
+.timer .k { font-size: 20px; font-weight: 700; letter-spacing: 0.18em; opacity: 0.85; }
+
+/* Small tags: archive notice (top-right) and per-shot credit (bottom-right) */
+.arch { position: absolute; right: 40px; top: 34px; font-size: 20px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 6px; background: rgba(0,0,0,0.45); }
+.cred { position: absolute; right: 40px; bottom: 26px; font-size: 17px; color: rgba(255,255,255,0.75); text-shadow: 0 1px 4px #000; max-width: 1100px; text-align: right; }
+
+/* End card */
+.endcard { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; opacity: 0; }
+.endcard .h { font-size: 64px; font-weight: 800; text-shadow: var(--shadow); }
+.endcard .btn { font-size: 40px; font-weight: 800; padding: 18px 46px; border-radius: 14px; background: #ff2b3d; }
+
+/* Video frames are injected by the renderer; keep overlays above them. */
+.shot .m { z-index: 0; }
+.shot .grade { z-index: 2; }
+.shot .arch, .shot .cred, .shot.split .tag { z-index: 3; }
+.shot.split .half { z-index: 1; }
+.vover { position: absolute; inset: 0; pointer-events: none; }
+
+/* Channel branding: small logo bug top-left, logo on the end card */
+.bug { position: absolute; left: 34px; top: 30px; width: 88px; height: 88px; border-radius: 12px; opacity: 0.85; box-shadow: 0 4px 18px rgba(0,0,0,0.5); }
+.endcard .logo { width: 220px; height: 220px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+.shot.anim .cv { position: absolute; inset: 0; width: 100%; height: 100%; }

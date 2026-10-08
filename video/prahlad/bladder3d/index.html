@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Bladder: the doctors' reabsorption hypothesis</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/jsm/" } }</script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .hyp { position: absolute; left: 64px; top: 56px; padding: 12px 20px; border-radius: 6px; font-size: 26px; font-weight: 800; letter-spacing: 0.1em;
+        color: #1a1200; background: var(--amber); }
+      .cap { position: absolute; left: 64px; bottom: 70px; width: 1100px; height: 140px; }
+      .cap .c { position: absolute; left: 0; bottom: 0; width: 1100px; }
+      .cap .rule { display: block; width: 90px; height: 5px; background: var(--yellow); margin-bottom: 16px; }
+      .cap .t { display: block; font-size: 46px; font-weight: 800; }
+      .cap .s { display: block; font-size: 28px; font-weight: 600; color: var(--ink-dim); margin-top: 8px; letter-spacing: 0.04em; }
+      .ff { position: absolute; right: 90px; top: 70px; display: flex; align-items: center; gap: 18px; font-size: 44px; font-weight: 800; color: var(--ink); }
+      .ff svg { width: 64px; height: 64px; display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="bladder3d" data-start="0" data-width="1920" data-height="1080" data-duration="12">
+      <canvas id="gl"></canvas>
+      <div class="hyp">DOCTORS' HYPOTHESIS · NOT ESTABLISHED SCIENCE</div>
+      <div class="ff" id="ff"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#f6f7fb" stroke-width="2"/><line id="hand" x1="12" y1="12" x2="12" y2="5" stroke="#ffd34d" stroke-width="2.4" stroke-linecap="round"/></svg>+ A FEW HOURS</div>
+      <div class="cap">
+        <div class="c" id="c1"><span class="rule"></span><span class="t">Scans showed a little urine forming</span><span class="s">Sonography every few hours</span></div>
+        <div class="c" id="c2"><span class="rule"></span><span class="t">Hours later, it was gone</span><span class="s">Claim: the bladder wall absorbed it back into the blood</span></div>
+      </div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#c1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 0.3);
+      tl.to("#c1", { opacity: 0, duration: 0.4 }, 4.3);
+      tl.fromTo("#ff", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.4 }, 4.2);
+      tl.fromTo("#hand", { rotation: 0, svgOrigin: "12 12" }, { rotation: 720, svgOrigin: "12 12", duration: 1.4, ease: "power1.inOut" }, 4.3);
+      tl.to("#ff", { opacity: 0, duration: 0.4 }, 6.0);
+      tl.fromTo("#c2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 5.6);
+      window.__timelines["bladder3d"] = tl;
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+      import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+      import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+      import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+      import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+
+      const root = document.getElementById("root");
+      const W = +root.dataset.width, H = +root.dataset.height, DUR = 12;
+      const rng = (s => () => { s = (s + 0x6d2b79f5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; })(9);
+      const smooth = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gl"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+      renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.localClippingEnabled = true;
+      const scene = new THREE.Scene();
+      { const c = document.createElement("canvas"); c.width = 1024; c.height = 576; const g = c.getContext("2d");
+        const gr = g.createRadialGradient(520, 260, 20, 512, 288, 640); gr.addColorStop(0, "#1d2c4f"); gr.addColorStop(0.5, "#0b1530"); gr.addColorStop(1, "#03060f");
+        g.fillStyle = gr; g.fillRect(0, 0, 1024, 576); const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; scene.background = tex; }
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+      const camera = new THREE.PerspectiveCamera(34, W / H, 0.1, 100);
+
+      const SY = 0.86;
+      const shape = (r) => { const g = new THREE.SphereGeometry(r, 128, 96); g.scale(1, SY, 0.95); return g; };
+      const wall = new THREE.Mesh(shape(1.2), new THREE.MeshPhysicalMaterial({ color: 0xffb3bd, roughness: 0.22, transmission: 0.88, thickness: 0.5, ior: 1.35,
+        clearcoat: 0.8, clearcoatRoughness: 0.2, transparent: true, opacity: 0.95, attenuationColor: new THREE.Color(0xff6f8a), attenuationDistance: 2.2 }));
+      const plane = new THREE.Plane(new THREE.Vector3(0, -1, 0), 0);
+      const fluidMat = new THREE.MeshPhysicalMaterial({ color: 0xffc43a, emissive: 0x4a2a00, emissiveIntensity: 0.6, roughness: 0.1, transmission: 0.35, thickness: 0.8, clippingPlanes: [plane], side: THREE.DoubleSide });
+      const fluid = new THREE.Mesh(shape(1.12), fluidMat);
+      const surf = new THREE.Mesh(new THREE.CircleGeometry(1, 96), new THREE.MeshPhysicalMaterial({ color: 0xffd36a, emissive: 0x5a3600, roughness: 0.05, transparent: true, opacity: 0.85, side: THREE.DoubleSide }));
+      surf.rotation.x = -Math.PI / 2;
+      const organ = new THREE.Group(); organ.add(wall, fluid, surf); scene.add(organ);
+      const vessel = (pts, r, col, op) => { const c = new THREE.CatmullRomCurve3(pts); organ.add(new THREE.Mesh(new THREE.TubeGeometry(c, 120, r, 16), new THREE.MeshPhysicalMaterial({ color: col, roughness: 0.6, transparent: op < 1, opacity: op, envMapIntensity: 0.4 }))); return c; };
+      vessel([new THREE.Vector3(-0.5, 0.95, -0.3), new THREE.Vector3(-1.1, 1.8, -0.5), new THREE.Vector3(-1.6, 3.2, -0.6)], 0.06, 0x9c5f55, 0.9);
+      vessel([new THREE.Vector3(0.5, 0.95, -0.3), new THREE.Vector3(1.1, 1.8, -0.5), new THREE.Vector3(1.6, 3.2, -0.6)], 0.06, 0x9c5f55, 0.9);
+      vessel([new THREE.Vector3(0, -1.0, 0), new THREE.Vector3(0, -1.6, 0.05), new THREE.Vector3(0, -2.6, 0.1)], 0.07, 0xa86a66, 0.9);
+
+      // capillary network hugging the wall
+      const caps = [];
+      const capMat = new THREE.MeshStandardMaterial({ color: 0xc81d2a, emissive: 0x5a0008, emissiveIntensity: 0.8, roughness: 0.4 });
+      for (let k = 0; k < 26; k++) {
+        const th0 = rng() * Math.PI * 2, ph0 = 0.35 + rng() * 2.4, pts = [];
+        for (let j = 0; j < 7; j++) { const th = th0 + j * (0.22 + rng() * 0.1), ph = ph0 + (rng() - 0.5) * 0.4;
+          pts.push(new THREE.Vector3(1.24 * Math.sin(ph) * Math.cos(th), 1.24 * SY * Math.cos(ph), 1.24 * 0.95 * Math.sin(ph) * Math.sin(th))); }
+        const c = new THREE.CatmullRomCurve3(pts); caps.push(c);
+        organ.add(new THREE.Mesh(new THREE.TubeGeometry(c, 80, 0.012 + rng() * 0.01, 8), capMat));
+      }
+
+      // reabsorbed droplets: leave the fluid, cross the wall, run away along a capillary
+      const P = 160;
+      const drops = new THREE.InstancedMesh(new THREE.SphereGeometry(0.03, 12, 10), new THREE.MeshStandardMaterial({ color: 0xffd25a, emissive: 0xffa000, emissiveIntensity: 2.2 }), P);
+      organ.add(drops);
+      const dseeds = Array.from({ length: P }, () => ({ t0: 5.2 + rng() * 5.3, th: rng() * Math.PI * 2, y: -0.2 - rng() * 0.6, cap: Math.floor(rng() * caps.length) }));
+
+      scene.add(new THREE.HemisphereLight(0xdfe8ff, 0x1a1020, 0.9));
+      const key = new THREE.DirectionalLight(0xffffff, 2.2); key.position.set(3, 4, 5); scene.add(key);
+      const rim = new THREE.DirectionalLight(0xff9fb0, 1.6); rim.position.set(-4, 1, -3); scene.add(rim);
+      const glow = new THREE.PointLight(0xffb020, 2.5, 6); glow.position.set(0, -0.4, 0); organ.add(glow);
+
+      const composer = new EffectComposer(renderer); composer.setSize(W, H);
+      composer.addPass(new RenderPass(scene, camera));
+      composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.5, 0.5, 0.8));
+      composer.addPass(new OutputPass());
+
+      const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(), a = new THREE.Vector3(), b = new THREE.Vector3();
+      // fluid level in local y: rises to -0.38 by 3.5 s, holds, drains to -1.0 between 5.6 and 11 s
+      const level = t => -1.05 + 0.67 * smooth(0.4, 3.5, t) - 0.62 * smooth(5.6, 11.0, t);
+      function renderAt(t) {
+        const L = level(t);
+        plane.constant = L;
+        const rr = 1.12 * Math.sqrt(Math.max(0, 1 - (L / (1.12 * SY)) ** 2));
+        surf.position.y = L; surf.scale.set(rr, rr * 0.95, 1); surf.visible = rr > 0.02;
+        glow.intensity = 2.5 * smooth(-1.0, -0.4, L);
+        const ang = 0.5 - 0.6 * t / DUR;
+        camera.position.set(Math.sin(ang) * 6.2, 0.9 - 0.25 * t / DUR, Math.cos(ang) * 6.2 - 0.5 * t / DUR);
+        camera.lookAt(0, -0.1, 0);
+        for (let i = 0; i < P; i++) {
+          const d = dseeds[i], u = (t - d.t0) / 1.6;
+          if (u <= 0 || u >= 1.6) { sc.setScalar(0); m4.compose(a.set(0, 0, 0), q, sc); drops.setMatrixAt(i, m4); continue; }
+          const start = a.set(0.75 * Math.cos(d.th), d.y, 0.75 * Math.sin(d.th));
+          let p;
+          if (u < 0.6) { const k = u / 0.6; p = start.clone().multiplyScalar(1 + 0.68 * k); }        // out through the wall
+          else { const k = Math.min(1, (u - 0.6) / 1.0); caps[d.cap].getPointAt(k, b); p = start.clone().multiplyScalar(1.68).lerp(b, smooth(0, 0.3, k)); }
+          sc.setScalar(1 - smooth(1.3, 1.6, u)); m4.compose(p, q, sc); drops.setMatrixAt(i, m4);
+        }
+        drops.instanceMatrix.needsUpdate = true;
+        composer.render();
+      }
+      window.addEventListener("hf-seek", ev => renderAt(ev.detail.time));
+      renderAt(window.__hfThreeTime || 0);
+    </script>
+  </body>
+</html>

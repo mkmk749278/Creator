@@ -1,0 +1,13 @@
+{
+ "img_w": 1600,
+ "img_h": 1131,
+ "boxes": [
+  {
+   "phrase": "total budget outlay of Rs.1,27,500 crore.",
+   "x": 701,
+   "y": 482,
+   "w": 381,
+   "h": 33
+  }
+ ]
+}

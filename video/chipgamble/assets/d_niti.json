@@ -1,0 +1,13 @@
+{
+ "img_w": 1600,
+ "img_h": 1131,
+ "boxes": [
+  {
+   "phrase": "high import dependence",
+   "x": 566,
+   "y": 408,
+   "w": 379,
+   "h": 46
+  }
+ ]
+}

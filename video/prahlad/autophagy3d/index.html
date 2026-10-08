@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Autophagy inside a cell</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/jsm/" } }</script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .steps { position: absolute; left: 64px; bottom: 70px; width: 1200px; height: 150px; }
+      .st { position: absolute; left: 0; bottom: 0; width: 1200px; }
+      .st .n { display: inline-block; width: 64px; height: 64px; border-radius: 50%; background: var(--yellow); color: var(--navy); font-size: 36px; font-weight: 800;
+        text-align: center; line-height: 64px; margin-right: 22px; vertical-align: middle; }
+      .st .t { display: inline-block; vertical-align: middle; font-size: 46px; font-weight: 800; }
+      .st .s { display: block; font-size: 28px; font-weight: 600; color: var(--ink-dim); margin: 12px 0 0 86px; letter-spacing: 0.04em; }
+      .scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 380px; background: linear-gradient(180deg, rgba(1,5,8,0) 0%, rgba(1,5,8,0.85) 70%); }
+      .nobel { position: absolute; right: 64px; top: 56px; font-size: 26px; font-weight: 800; letter-spacing: 0.12em; color: var(--yellow); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="autophagy3d" data-start="0" data-width="1920" data-height="1080" data-duration="12">
+      <canvas id="gl"></canvas>
+      <div class="tag">ILLUSTRATION · INSIDE A CELL</div>
+      <div class="nobel">AUTOPHAGY · NOBEL PRIZE 2016</div>
+      <div class="scrim"></div>
+      <div class="steps">
+        <div class="st" id="s1"><span class="n">1</span><span class="t">A damaged part of the cell</span><span class="s">e.g. a worn-out mitochondrion</span></div>
+        <div class="st" id="s2"><span class="n">2</span><span class="t">A membrane wraps around it</span><span class="s">forming an autophagosome</span></div>
+        <div class="st" id="s3"><span class="n">3</span><span class="t">A lysosome fuses with it</span><span class="s">digestive enzymes break it down</span></div>
+        <div class="st" id="s4"><span class="n">4</span><span class="t">Recycled into raw material and energy</span><span class="s">this happens during fasting, in every body</span></div>
+      </div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const show = (id, a, b) => { tl.fromTo(id, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, a); tl.to(id, { opacity: 0, y: -12, duration: 0.35 }, b); };
+      show("#s1", 0.3, 2.6); show("#s2", 2.9, 5.6); show("#s3", 5.9, 8.4);
+      tl.fromTo("#s4", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 8.7);
+      window.__timelines["autophagy3d"] = tl;
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+      import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+      import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+      import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+      import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+
+      const root = document.getElementById("root");
+      const W = +root.dataset.width, H = +root.dataset.height, DUR = 12;
+      const rng = (s => () => { s = (s + 0x6d2b79f5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; })(77);
+      const smooth = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gl"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      const scene = new THREE.Scene();
+      { const c = document.createElement("canvas"); c.width = 1024; c.height = 576; const g = c.getContext("2d");
+        const gr = g.createRadialGradient(520, 270, 10, 512, 288, 640); gr.addColorStop(0, "#0e3a3f"); gr.addColorStop(0.5, "#06191f"); gr.addColorStop(1, "#010508");
+        g.fillStyle = gr; g.fillRect(0, 0, 1024, 576); const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; scene.background = tex; }
+      scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+      scene.fog = new THREE.FogExp2(0x041518, 0.08);
+      const camera = new THREE.PerspectiveCamera(36, W / H, 0.1, 100);
+
+      // organic blob: icosphere with seeded wobble
+      const blob = (r, detail, amp, seed) => {
+        const g = new THREE.IcosahedronGeometry(r, detail), p = g.attributes.position, v = new THREE.Vector3();
+        for (let i = 0; i < p.count; i++) { v.fromBufferAttribute(p, i); const n = amp * Math.sin(v.x * 3.1 + seed) * Math.sin(v.y * 2.7 + seed * 2) * Math.sin(v.z * 3.3 + seed * 3); v.multiplyScalar(1 + n); p.setXYZ(i, v.x, v.y, v.z); }
+        g.computeVertexNormals(); return g;
+      };
+      // background organelles (depth + bokeh)
+      const bgMat = new THREE.MeshPhysicalMaterial({ color: 0x3fb8a8, roughness: 0.35, transmission: 0.6, thickness: 0.6, transparent: true, opacity: 0.55 });
+      for (let i = 0; i < 26; i++) { const m = new THREE.Mesh(blob(0.3 + rng() * 0.5, 6, 0.12, rng() * 9), bgMat); m.position.set((rng() - 0.5) * 16, (rng() - 0.5) * 9, -3 - rng() * 8); scene.add(m); }
+
+      // damaged mitochondrion: capsule with inner cristae folds
+      const mito = new THREE.Group(); scene.add(mito);
+      const mGeo = new THREE.CapsuleGeometry(0.42, 1.1, 16, 48); { const p = mGeo.attributes.position, v = new THREE.Vector3();
+        for (let i = 0; i < p.count; i++) { v.fromBufferAttribute(p, i); const n = 0.06 * Math.sin(v.y * 7) * Math.sin(v.x * 9 + 1); v.x *= 1 + n; v.z *= 1 + n; p.setXYZ(i, v.x, v.y, v.z); } mGeo.computeVertexNormals(); }
+      const mMat = new THREE.MeshPhysicalMaterial({ color: 0xc5652b, roughness: 0.45, clearcoat: 0.5, transmission: 0.25, thickness: 0.5, emissive: 0x2a0800 });
+      mito.add(new THREE.Mesh(mGeo, mMat));
+      const crMat = new THREE.MeshStandardMaterial({ color: 0xffa060, emissive: 0x5a1a00, roughness: 0.5 });
+      for (let k = 0; k < 7; k++) { const t = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.035, 10, 40, Math.PI * 1.3), crMat); t.position.y = -0.6 + k * 0.2; t.rotation.x = Math.PI / 2; t.rotation.z = k * 0.9; mito.add(t); }
+      mito.rotation.z = Math.PI / 2.4;
+
+      // phagophore: double membrane shells that close around the mitochondrion
+      const shellMat = (c, o) => new THREE.MeshPhysicalMaterial({ color: c, roughness: 0.15, transmission: 0.7, thickness: 0.3, transparent: true, opacity: o, side: THREE.DoubleSide, emissive: 0x062a33 });
+      const outer = new THREE.Mesh(new THREE.SphereGeometry(1.25, 96, 64, 0, Math.PI * 2, 0, Math.PI), shellMat(0x7fe8ff, 0.45));
+      const inner = new THREE.Mesh(new THREE.SphereGeometry(1.15, 96, 64, 0, Math.PI * 2, 0, Math.PI), shellMat(0x9ff3ff, 0.35));
+      scene.add(outer, inner);
+
+      // lysosome
+      const lyso = new THREE.Mesh(blob(0.55, 5, 0.05, 3), new THREE.MeshPhysicalMaterial({ color: 0xff5ac8, emissive: 0xd0108a, emissiveIntensity: 1.4, roughness: 0.2, transmission: 0.4, thickness: 0.5 }));
+      scene.add(lyso);
+
+      // recycled particles
+      const P = 150;
+      const parts = new THREE.InstancedMesh(new THREE.SphereGeometry(0.028, 10, 8), new THREE.MeshStandardMaterial({ color: 0xffe08a, emissive: 0xffb020, emissiveIntensity: 1.3 }), P);
+      scene.add(parts);
+      const pseeds = Array.from({ length: P }, () => { const d = new THREE.Vector3(rng() - 0.5, rng() - 0.5, rng() - 0.5).normalize(); return { d, sp: 1.2 + rng() * 2.8, t0: 8.6 + rng() * 0.8 }; });
+
+      scene.add(new THREE.HemisphereLight(0xbff6ff, 0x061014, 0.8));
+      const key = new THREE.DirectionalLight(0xffffff, 2.0); key.position.set(3, 5, 6); scene.add(key);
+      const fus = new THREE.PointLight(0xff4fc0, 0, 8); scene.add(fus);
+
+      const composer = new EffectComposer(renderer); composer.setSize(W, H);
+      composer.addPass(new RenderPass(scene, camera));
+      composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.42, 0.45, 0.82));
+      composer.addPass(new OutputPass());
+
+      const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(), p = new THREE.Vector3();
+      function renderAt(t) {
+        // camera: slow push and arc
+        const ang = -0.35 + 0.5 * t / DUR;
+        camera.position.set(Math.sin(ang) * (6.5 - 1.2 * t / DUR), 0.6, Math.cos(ang) * (6.5 - 1.2 * t / DUR));
+        camera.lookAt(0.2, 0, 0);
+        // damaged mitochondrion flickers and wobbles; dissolves after fusion
+        const flick = 0.5 + 0.5 * Math.sin(t * 13) * Math.sin(t * 7.3);
+        mMat.emissive.setRGB(0.25 * flick * (1 - smooth(7.5, 9, t)), 0.04, 0);
+        const dissolve = 1 - smooth(8.3, 9.3, t);
+        mito.scale.setScalar(Math.max(0.0001, dissolve));
+        mito.rotation.y = t * 0.25;
+        // membranes grow (thetaLength 0 → π) between 2.6 and 5.4 s, then shrink away with the contents
+        const grow = smooth(2.6, 5.4, t);
+        for (const [mesh, r] of [[outer, 1.25], [inner, 1.15]]) {
+          mesh.geometry.dispose();
+          mesh.geometry = new THREE.SphereGeometry(r, 96, 64, 0, Math.PI * 2, 0, Math.max(0.001, Math.PI * grow));
+          mesh.rotation.x = -Math.PI / 2; mesh.rotation.z = 0.3;
+          const k = 1 - 0.75 * smooth(8.4, 9.6, t); mesh.scale.setScalar(Math.max(0.0001, k));
+          mesh.visible = grow > 0.01 && t < 9.6;
+        }
+        // lysosome drifts in and fuses (5.6 → 8.2 s)
+        const arrive = smooth(5.6, 7.6, t), fuse = smooth(7.4, 8.4, t);
+        lyso.position.set(4.4 - 3.2 * arrive - 1.1 * fuse, -0.2 + 0.6 * arrive - 0.4 * fuse, 0.4);
+        lyso.scale.setScalar(Math.max(0.0001, (1 - 0.6 * fuse) * (1 - smooth(8.6, 9.4, t))));
+        fus.position.copy(lyso.position); fus.intensity = 18 * fuse * (1 - smooth(9, 10, t));
+        // burst into golden building blocks
+        for (let i = 0; i < P; i++) {
+          const s = pseeds[i], u = Math.max(0, t - s.t0);
+          const vis = smooth(s.t0, s.t0 + 0.2, t) * (1 - smooth(11.3, 12, t));
+          p.copy(s.d).multiplyScalar(0.3 + s.sp * (1 - Math.exp(-u * 0.9)));
+          p.y += 0.12 * Math.sin(u * 2 + i);
+          sc.setScalar(vis); m4.compose(p, q, sc); parts.setMatrixAt(i, m4);
+        }
+        parts.instanceMatrix.needsUpdate = true;
+        composer.render();
+      }
+      window.addEventListener("hf-seek", ev => renderAt(ev.detail.time));
+      renderAt(window.__hfThreeTime || 0);
+    </script>
+  </body>
+</html>

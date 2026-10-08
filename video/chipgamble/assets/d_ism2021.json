@@ -1,0 +1,13 @@
+{
+ "img_w": 1600,
+ "img_h": 2264,
+ "boxes": [
+  {
+   "phrase": "launched the Semicon India Programme in December 2021 with an outlay of INR 76,000",
+   "x": 312,
+   "y": 1381,
+   "w": 1207,
+   "h": 37
+  }
+ ]
+}

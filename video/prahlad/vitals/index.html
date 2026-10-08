@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Vitals monitor (illustrative, normal ranges)</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      .room { position: absolute; inset: 0; background: radial-gradient(90% 80% at 50% 45%, #1a2a44 0%, #0a1222 60%, #03060d 100%); }
+      .cam { position: absolute; inset: 0; }
+      .monitor { position: absolute; left: 230px; top: 150px; width: 1460px; height: 780px; border-radius: 28px;
+        background: linear-gradient(180deg, #2b3340, #161b24); box-shadow: 0 50px 120px rgba(0,0,0,0.7), inset 0 2px 0 rgba(255,255,255,0.08); }
+      .screen { position: absolute; left: 40px; top: 40px; right: 40px; bottom: 40px; border-radius: 14px; overflow: hidden;
+        background: radial-gradient(120% 120% at 30% 20%, #07140f 0%, #020604 70%); box-shadow: inset 0 0 60px rgba(0,0,0,0.9); }
+      .glare { position: absolute; inset: 0; background: linear-gradient(115deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 35%); }
+      .scan { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 2px, rgba(0,0,0,0) 2px 4px); }
+      .waves { position: absolute; left: 30px; top: 30px; width: 900px; height: 640px; }
+      .lbl { position: absolute; left: 0; font-size: 22px; font-weight: 800; letter-spacing: 0.12em; }
+      .panel { position: absolute; right: 30px; top: 30px; width: 400px; height: 640px; display: flex; flex-direction: column; gap: 14px; }
+      .cell { flex: 1; border-left: 2px solid rgba(255,255,255,0.08); padding-left: 24px; display: flex; flex-direction: column; justify-content: center; }
+      .cell .k { font-size: 22px; font-weight: 800; letter-spacing: 0.14em; opacity: 0.85; }
+      .cell .v { font-size: 90px; font-weight: 800; line-height: 1; }
+      .cell .u { font-size: 24px; font-weight: 600; opacity: 0.7; }
+      .ecg { color: #42f58d; } .spo { color: #4fd9ff; } .bp { color: #ff6f7d; } .rr { color: #ffd84d; }
+      .heart { display: inline-block; width: 40px; height: 40px; margin-left: 14px; vertical-align: middle; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="vitals" data-start="0" data-width="1920" data-height="1080" data-duration="10">
+      <div class="room"></div>
+      <div class="cam" id="cam">
+        <div class="monitor">
+          <div class="screen">
+            <svg class="waves" viewBox="0 0 900 640">
+              <text x="0" y="24" fill="#42f58d" font-size="22" font-weight="800" letter-spacing="2">II · ECG</text>
+              <path id="ecg" fill="none" stroke="#42f58d" stroke-width="4" stroke-linejoin="round" filter="url(#glow)" />
+              <text x="0" y="304" fill="#4fd9ff" font-size="22" font-weight="800" letter-spacing="2">PLETH · SpO2</text>
+              <path id="ple" fill="none" stroke="#4fd9ff" stroke-width="4" filter="url(#glow)" />
+              <text x="0" y="494" fill="#ffd84d" font-size="22" font-weight="800" letter-spacing="2">RESP</text>
+              <path id="rsp" fill="none" stroke="#ffd84d" stroke-width="4" filter="url(#glow)" />
+              <defs><filter id="glow" x="-5%" y="-30%" width="110%" height="160%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            </svg>
+            <div class="panel">
+              <div class="cell ecg"><div class="k">HR</div><div class="v">72<svg class="heart" id="heart" viewBox="0 0 24 24"><path fill="#42f58d" d="M12 21s-7.5-4.6-10-9.3C.6 8.6 2.6 4.5 6.4 4.5c2.1 0 3.6 1.2 4.4 2.5.8-1.3 2.3-2.5 4.4-2.5 3.8 0 5.8 4.1 4.4 7.2C19.5 16.4 12 21 12 21z"/></svg></div><div class="u">bpm</div></div>
+              <div class="cell bp"><div class="k">NIBP</div><div class="v">118/76</div><div class="u">mmHg</div></div>
+              <div class="cell spo"><div class="k">SpO2</div><div class="v">98</div><div class="u">%</div></div>
+              <div class="cell rr"><div class="k">RESP</div><div class="v">14</div><div class="u">/min</div></div>
+            </div>
+            <div class="scan"></div><div class="glare"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tag">ILLUSTRATIVE · NORMAL RANGES</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const W = 900, beat = 60 / 72, sweep = 3.2, pxPerSec = W / sweep;
+      const ecgY = (t) => { // one PQRST complex per beat
+        const p = (t % beat) / beat;
+        const g = (c, w, a) => a * Math.exp(-((p - c) ** 2) / (2 * w * w));
+        return 170 - (g(0.12, 0.025, 14) - g(0.27, 0.008, 18) + g(0.30, 0.010, 120) - g(0.33, 0.009, 34) + g(0.55, 0.045, 28));
+      };
+      const pleY = (t) => { const p = (t % beat) / beat; return 400 - 60 * Math.exp(-((p - 0.32) ** 2) / 0.012) - 22 * Math.exp(-((p - 0.58) ** 2) / 0.008); };
+      const rspY = (t) => 580 - 40 * Math.sin(2 * Math.PI * t * 14 / 60);
+      const build = (fn) => { let d = ""; for (let x = 0; x <= W; x += 2) { const t = x / pxPerSec; d += (x ? "L" : "M") + x + " " + fn(t).toFixed(1); } return d; };
+      for (const [id, fn] of [["ecg", ecgY], ["ple", pleY], ["rsp", rspY]]) {
+        const p = document.getElementById(id); p.setAttribute("d", build(fn));
+        const len = p.getTotalLength(); p.style.strokeDasharray = len;
+        const reps = Math.max(0, Math.floor(10 / sweep) - 1);
+        tl.fromTo(p, { strokeDashoffset: len }, { strokeDashoffset: 0, duration: sweep, ease: "none", repeat: reps }, 0);
+      }
+      tl.fromTo("#heart", { scale: 1 }, { scale: 1.35, duration: beat / 2, yoyo: true, repeat: Math.max(0, Math.floor(10 / (beat / 2)) - 1), ease: "power2.out", transformOrigin: "50% 50%" }, 0);
+      tl.fromTo("#cam", { scale: 1.0, x: 0, y: 0 }, { scale: 1.07, x: -50, y: -10, duration: 10, ease: "sine.inOut" }, 0);
+      window.__timelines["vitals"] = tl;
+    </script>
+  </body>
+</html>

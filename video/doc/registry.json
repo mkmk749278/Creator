@@ -1,0 +1,851 @@
+{
+ "assets": {
+  "vidyut_stage_trance": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_stage_trance.mp4",
+     "credit": "Video: @thefilmihubofficial / @quickfilmi (Instagram)"
+    },
+    {
+     "file": "assets/video/vidyut_stage_closeup.mp4",
+     "credit": "Video: @bollywoodbliss (Instagram)"
+    },
+    {
+     "file": "assets/images/ians_event_435.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    },
+    {
+     "file": "assets/images/ians_event_439.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    }
+   ],
+   "fallback": [
+    "vidyut_portrait",
+    "press_crowd"
+   ]
+  },
+  "vidyut_tears_macro": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_tears_macro.mp4",
+     "credit": "Video: @instantbollywood (Instagram)"
+    },
+    {
+     "file": "assets/video/vidyut_tears_macro2.mp4",
+     "credit": "Video: @instantbollywood (Instagram)"
+    },
+    {
+     "file": "assets/video/vidyut_stage_closeup.mp4",
+     "credit": "Video: @bollywoodbliss (Instagram)"
+    }
+   ],
+   "fallback": [
+    "vidyut_portrait",
+    "eyes"
+   ]
+  },
+  "vidyut_shivering": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_stage_trance.mp4",
+     "credit": "Video: @thefilmihubofficial / @quickfilmi (Instagram)"
+    }
+   ],
+   "fallback": [
+    "vidyut_portrait",
+    "eyes",
+    "press_crowd"
+   ]
+  },
+  "vidyut_event_photo": {
+   "files": [
+    {
+     "file": "assets/images/ians_event_435.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    },
+    {
+     "file": "assets/images/ians_event_436.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    },
+    {
+     "file": "assets/images/ians_event_438.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    },
+    {
+     "file": "assets/images/ians_event_439.jpg",
+     "credit": "Photo: IANS",
+     "origin": "50% 18%"
+    }
+   ],
+   "fallback": []
+  },
+  "vidyut_shankha_photo": {
+   "files": [
+    {
+     "file": "assets/images/ians_event_437.jpg",
+     "credit": "Photo: IANS · Vidyut Jammwal blowing the shankha, Mumbai",
+     "origin": "55% 30%"
+    }
+   ],
+   "fallback": []
+  },
+  "clip_stage": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_stage_trance.mp4",
+     "credit": "Video: @thefilmihubofficial / @quickfilmi (Instagram)"
+    }
+   ],
+   "fallback": []
+  },
+  "clip_tears": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_tears_macro.mp4",
+     "credit": "Video: @instantbollywood (Instagram)"
+    }
+   ],
+   "fallback": []
+  },
+  "sf_dhalsim": {
+   "files": [
+    {
+     "file": "assets/video/sf_dhalsim_arena.mp4",
+     "credit": "Street Fighter trailer · Paramount Pictures India / Legendary"
+    }
+   ],
+   "fallback": []
+  },
+  "sf_title": {
+   "files": [
+    {
+     "file": "assets/video/sf_title.mp4",
+     "credit": "Street Fighter trailer · Paramount Pictures India / Legendary"
+    }
+   ],
+   "fallback": []
+  },
+  "sf_release": {
+   "files": [
+    {
+     "file": "assets/video/sf_release.mp4",
+     "credit": "Street Fighter trailer · Paramount Pictures India / Legendary"
+    }
+   ],
+   "fallback": []
+  },
+  "brand_banner": {
+   "files": [
+    {
+     "file": "assets/brand/banner.png",
+     "credit": "",
+     "fit": "contain"
+    }
+   ],
+   "fallback": []
+  },
+  "vidyut_shankha": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_shankha.mp4",
+     "credit": ""
+    }
+   ],
+   "fallback": [
+    "conch_video"
+   ]
+  },
+  "vidyut_kalari": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_kalari.mp4",
+     "credit": ""
+    }
+   ],
+   "fallback": [
+    "kalari"
+   ]
+  },
+  "vidyut_workouts": {
+   "files": [
+    {
+     "file": "assets/video/vidyut_workouts.mp4",
+     "credit": ""
+    }
+   ],
+   "fallback": [
+    "kalari"
+   ]
+  },
+  "freediver_pool": {
+   "files": [
+    {
+     "file": "assets/video/freediver_pool.mp4",
+     "credit": ""
+    }
+   ],
+   "fallback": [
+    "mifsud",
+    "freediver"
+   ]
+  },
+  "o2_mask_breathing": {
+   "files": [
+    {
+     "file": "assets/video/o2_mask_breathing.mp4",
+     "credit": ""
+    }
+   ],
+   "fallback": [
+    "o2",
+    "freediver"
+   ]
+  },
+  "city_rush_timelapse": {
+   "files": [
+    {
+     "file": "assets/video/city_rush_timelapse.mp4",
+     "credit": ""
+    }
+   ],
+   "fallback": [
+    "city_rush",
+    "mumbai"
+   ]
+  },
+  "sadhu_haridas_1837": {
+   "files": [
+    {
+     "file": "assets/images/sadhu_haridas_1837.jpg",
+     "credit": ""
+    }
+   ],
+   "fallback": [
+    "court_painting",
+    "haridas_plate"
+   ]
+  },
+  "patanjali_manuscript": {
+   "files": [
+    {
+     "file": "assets/images/patanjali_manuscript.jpg",
+     "credit": ""
+    }
+   ],
+   "fallback": [
+    "yogasutra_ms"
+   ]
+  },
+  "vidyut_portrait": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/people/01_vidyut-portrait-2013.jpg",
+     "credit": "Photo: Bollywood Hungama, CC BY 3.0, via Wikimedia Commons",
+     "archive": "ARCHIVE PHOTO · 2013",
+     "what": "Head-and-shoulders portrait of Vidyut Jammwal at the launch of the Big RTL Thrill TV channel, March 2013",
+     "origin": "50% 30%"
+    },
+    {
+     "file": "video/breathhold/_media/people/02_vidyut-portrait-2012.jpg",
+     "credit": "Photo: Bollywood Hungama, CC BY 3.0, via Wikimedia Commons",
+     "archive": "ARCHIVE PHOTO · 2012",
+     "what": "Vidyut Jammwal at a party event in front of a sponsor backdrop, May 2012",
+     "origin": "50% 30%"
+    }
+   ],
+   "fallback": []
+  },
+  "haridas_plate": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/01_haridas-plate-honigberger-1852.jpg",
+     "credit": "'Haridas', Plate VII in J. M. Honigberger, Thirty-five Years in the East (London, 1852). Public domain. Scan: Wellesley College Library / In",
+     "archive": "ARCHIVE · 1852",
+     "what": "Lithograph portrait captioned 'Haridas', Plate VII of Honigberger's 1852 book: an illustration, not a photograph"
+    }
+   ],
+   "fallback": []
+  },
+  "haridas_book": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/02_honigberger-haridas-account-p127.jpg",
+     "credit": "J. M. Honigberger, Thirty-five Years in the East (London, 1852), p.127. Public domain. Scan: Wellesley College Library / Internet Archive",
+     "archive": "ARCHIVE · 1850s",
+     "what": "Scanned book page (p.127) where Honigberger begins the story of the faqueer buried alive at Lahore"
+    },
+    {
+     "file": "video/breathhold/_media/history/03_honigberger-title-page-1852.jpg",
+     "credit": "Title page, J. M. Honigberger, Thirty-five Years in the East (London, 1852). Public domain. Scan: Wellesley College Library / Internet Archi",
+     "archive": "ARCHIVE · 1850s",
+     "what": "Scanned title page, London: H. Baillière, 1852; Honigberger is styled 'late physician to the court of Lahore'"
+    },
+    {
+     "file": "video/breathhold/_media/history/04_braid-1850-wade-account-fakeer.jpg",
+     "credit": "James Braid, Observations on Trance (London, 1850), p.11. Public domain. Royal College of Physicians of Edinburgh / Internet Archive",
+     "archive": "ARCHIVE · 1850s",
+     "what": "Scanned page of Braid's 1850 book with Sir Claude Wade's eyewitness statement about the fakeer disinterred before Runjee"
+    }
+   ],
+   "fallback": [
+    "haridas_plate"
+   ]
+  },
+  "ranjit_court": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/05_lahore-fortress-1852-plate.jpg",
+     "credit": "'Fortress of the City of Lahore', Plate XV in J. M. Honigberger, Thirty-five Years in the East (London, 1852). Public domain. Scan: Wellesle",
+     "archive": "ARCHIVE · 1852",
+     "what": "Lithograph panorama of the north side of Lahore Fort and the Badshahi Mosque, with elephants and troops, published 1852"
+    },
+    {
+     "file": "video/breathhold/_media/history/06_ranjit-singh-and-successors-plate-1852.jpg",
+     "credit": "Plate I in J. M. Honigberger, Thirty-five Years in the East (London, 1852). Public domain. Scan: Wellesley College Library / Internet Archiv",
+     "archive": "ARCHIVE · 1852",
+     "what": "Lithograph plate of four portraits, captioned 'Maharajh Runjeet Sing' (top left) and three successors"
+    }
+   ],
+   "fallback": []
+  },
+  "court_painting": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/07_court-of-lahore-schoefft.jpg",
+     "credit": "August Schoefft, The Court of Lahore (c.1855), Princess Bamba Collection, Lahore Fort. Public domain, via Wikimedia Commons",
+     "archive": "PAINTING · 19TH C.",
+     "what": "Oil painting of Maharaja Ranjit Singh's court at Lahore Fort, painted in Vienna after sketches made in Lahore; an artwor"
+    }
+   ],
+   "fallback": []
+  },
+  "yogasutra_ms": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/08_yogasutra-manuscript-pages.jpg",
+     "credit": "Yogasutra manuscript pages, photo by Ms Sarah Welch, CC BY-SA 4.0, via Wikimedia Commons",
+     "archive": "MANUSCRIPT",
+     "what": "Three manuscript leaves of the Yoga Sutras of Patanjali with commentary; the uploader added blue verse labels (v2.1, v2."
+    }
+   ],
+   "fallback": []
+  },
+  "yogi_painting": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/09_yogin-chakras-manuscript-painting.jpg",
+     "credit": "Yogin with chakras, Indian manuscript painting, Wellcome Collection. Public domain, via Wikimedia Commons",
+     "archive": "PAINTING",
+     "what": "Indian manuscript painting of a seated yogin with the chakras and subtle-body channels drawn on the torso"
+    },
+    {
+     "file": "video/breathhold/_media/history/10_two-yogis-wellcome.jpg",
+     "credit": "Two yogis, Wellcome Collection V0045283, CC BY 4.0, via Wikimedia Commons",
+     "archive": "PAINTING",
+     "what": "Indian painting/print of two yogis on a tiger skin under a tree, one seated in meditation"
+    },
+    {
+     "file": "video/breathhold/_media/history/11_charpath-nath-manuscript-c1715.jpg",
+     "credit": "Charpath Nath, illustrated manuscript, c.1715, Wellcome Collection, CC BY 4.0, via Wikimedia Commons",
+     "archive": "PAINTING",
+     "what": "Manuscript illustration of the Nath yogi Charpath Nath standing under a tree, c.1715"
+    },
+    {
+     "file": "video/breathhold/_media/history/12_female-ascetics-lacma.jpg",
+     "credit": "Female Ascetics (Yoginis), c.1730, LACMA M.2011.156.4. Public domain, via Wikimedia Commons",
+     "archive": "PAINTING",
+     "what": "18th-century Indian miniature of two yoginis in a landscape, one seated on a deer skin"
+    }
+   ],
+   "fallback": []
+  },
+  "candle": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/13_candle-flame-closeup.jpg",
+     "credit": "Candle flame closeup, photo by domdomegg, CC BY 4.0, via Wikimedia Commons",
+     "archive": null,
+     "what": "Close-up photo of a single candle flame against a dark background"
+    },
+    {
+     "file": "video/breathhold/_media/history/14_monks-candlelight-meditation.jpg",
+     "credit": "Meditation and Candlelight, photo by Fahmi Widayat, CC BY-SA 4.0, via Wikimedia Commons",
+     "archive": null,
+     "what": "Rows of Buddhist monks seated in meditation with candles at night, Borobudur temple in the background"
+    },
+    {
+     "file": "video/breathhold/_media/ov/candle_72_meditation.jpg",
+     "credit": "\"Meditation\" · Nina Stawski · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Meditation"
+    },
+    {
+     "file": "video/breathhold/_media/ov/candle_73_candle.jpg",
+     "credit": "\"Candle\" · firemedic58 · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Candle"
+    },
+    {
+     "file": "video/breathhold/_media/ov/candle_74_merry-christmas.jpg",
+     "credit": "\"merry christmas\" · blacklord · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "merry christmas"
+    }
+   ],
+   "fallback": []
+  },
+  "yogi_photo": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/15_meditation-in-himalayas.jpg",
+     "credit": "Swamiji Meditation in Himalayas, photo by Aashishji, CC BY-SA 4.0, via Wikimedia Commons",
+     "archive": null,
+     "what": "A swami seated in meditation on a snowfield with Himalayan peaks behind, other people sitting nearby"
+    },
+    {
+     "file": "video/breathhold/_media/history/16_sannyasi-meditation-rishikesh.jpg",
+     "credit": "Sannyasi in yoga meditation, Rishikesh, photo by Ken Wieland, CC BY-SA 2.0, via Wikimedia Commons",
+     "archive": null,
+     "what": "An elderly sannyasi in orange sitting cross-legged in meditation on a wall above the Ganges, Rishikesh"
+    }
+   ],
+   "fallback": []
+  },
+  "conch": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/history/17_blowing-the-conch-thanjavur.jpg",
+     "credit": "Blowing the conch, photo by Brandvenkatr, CC BY-SA 4.0, via Wikimedia Commons",
+     "archive": "B-ROLL",
+     "what": "A temple worker blowing a shankha as puja begins at the Big Temple, Thanjavur"
+    },
+    {
+     "file": "video/breathhold/_media/history/18_sadhu-blowing-shankha-kolkata.jpg",
+     "credit": "Sadhu Blowing Shankha, photo by Biswarup Ganguly, CC BY 3.0, via Wikimedia Commons",
+     "archive": "B-ROLL",
+     "what": "A sadhu in an orange turban blowing a conch shell, close-up portrait"
+    }
+   ],
+   "fallback": []
+  },
+  "mifsud": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/science/01_mifsud-record-validation.jpg",
+     "credit": "Stéphane Mifsud validating his 11:35 static apnea world record by Stéphane Mifsud, CC BY-SA 4.0, via Wikimedia Commons",
+     "archive": "STÉPHANE MIFSUD",
+     "what": "Stéphane Mifsud at the moment of validating his 11 min 35 s static apnea world record, June 2009 (per the uploader, Mifs"
+    },
+    {
+     "file": "video/breathhold/_media/science/02_mifsud-record-souvenir.jpg",
+     "credit": "Stéphane Mifsud record souvenir photo by Stéphane Mifsud, CC BY-SA 4.0, via Wikimedia Commons",
+     "archive": "STÉPHANE MIFSUD",
+     "what": "Souvenir photo of Stéphane Mifsud after his 11:35 static apnea world record, June 2009"
+    },
+    {
+     "file": "video/breathhold/_media/science/03_mifsud-pool-training.jpg",
+     "credit": "Stéphane Mifsud training for static apnea by Franck Seguin, CC BY-SA 4.0, via Wikimedia Commons",
+     "archive": "STÉPHANE MIFSUD",
+     "what": "Stéphane Mifsud training in a pool at Hyères for a static apnea record attempt, April 2009 (a training session, not the "
+    }
+   ],
+   "fallback": []
+  },
+  "freediver": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/science/04_freediver-two-safety-divers.jpg",
+     "credit": "Freediver with two safety divers ascending by Tim Sheerman-Chase, CC BY 2.0, via Wikimedia Commons",
+     "archive": null,
+     "what": "A freediver ascending with two safety divers alongside, 2013 (unnamed divers, not a record attempt)"
+    },
+    {
+     "file": "video/breathhold/_media/science/05_freediver-breathe-up.jpg",
+     "credit": "Freediver breathing up before a dive by jayhem from Antibes, France, CC BY 2.0, via Wikimedia Commons",
+     "archive": null,
+     "what": "A freediver at the surface breathing up before a Constant Weight Without Fins dive, 2007 (normal air, not pure oxygen)"
+    },
+    {
+     "file": "video/breathhold/_media/science/06_monofin-freediver-pool.jpg",
+     "credit": "Monofin freediver swimming underwater in a pool by jayhem from Antibes, France, CC BY 2.0, via Wikimedia Commons",
+     "archive": null,
+     "what": "Freediver Chris Holmes swimming underwater with a monofin in a pool, a 133 m dynamic swim, 2009"
+    },
+    {
+     "file": "video/breathhold/_media/science/07_freediver-seabed.jpg",
+     "credit": "Freediver over a sandy seabed by Stanislav Stelmakhovich, CC0, via Wikimedia Commons",
+     "archive": null,
+     "what": "Underwater portrait of an unnamed male freediver moving across a sandy seabed, 2025"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_38_freediving-record-liv-s-104m-underwa.jpg",
+     "credit": "\"Freediving Record: Liv's 104m Underwater Swim\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Freediving Record: Liv's 104m Underwater Swim"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_39_freediving-fun-platform-surfing.jpg",
+     "credit": "\"Freediving Fun: Platform Surfing\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Freediving Fun: Platform Surfing"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_40_freediving-at-the-bells-dahab.jpg",
+     "credit": "\"Freediving at The Bells, Dahab\" · Lars Plougmann · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Freediving at The Bells, Dahab"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_41_freediving-competition-flying-girl.jpg",
+     "credit": "\"Freediving competition: Flying Girl\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Freediving competition: Flying Girl"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_42_freediving-the-ocean-into-the-light.jpg",
+     "credit": "\"Freediving the Ocean - Into the Light\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Freediving the Ocean - Into the Light"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_43_freediving-dynamic-without-fins.jpg",
+     "credit": "\"Freediving: dynamic without fins\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Freediving: dynamic without fins"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_44_freediving-competition-mandy-s-recor.jpg",
+     "credit": "\"Freediving Competition: Mandy's Record Swim\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Freediving Competition: Mandy's Record Swim"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_45_will-trubridge.jpg",
+     "credit": "\"Will Trubridge\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Will Trubridge"
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_46_liv-s-106m-record-swim.jpg",
+     "credit": "\"Liv's 106m Record Swim...\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Liv's 106m Record Swim..."
+    },
+    {
+     "file": "video/breathhold/_media/ov/freediver_47_freediving-competition-bi-fins.jpg",
+     "credit": "\"Freediving Competition: Bi-Fins\" · jayhem · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Freediving Competition: Bi-Fins"
+    }
+   ],
+   "fallback": []
+  },
+  "stopwatch": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/science/09_stopwatch-photo.jpg",
+     "credit": "Stopwatch by Srini297, CC BY-SA 4.0, via Wikimedia Commons",
+     "archive": null,
+     "what": "A handheld stopwatch, photographed 2021"
+    },
+    {
+     "file": "video/breathhold/_media/ov/press_crowd_37_bikanerenggcollege-sakshamagn09-niya.jpg",
+     "credit": "\"BikanerEnggCollege.SakshamaGN09.Niyam - 062\" · niyam bhushan · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "BikanerEnggCollege.SakshamaGN09.Niyam - 062"
+    }
+   ],
+   "fallback": []
+  },
+  "kalari": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/kalari_01_kalaripayattu-fire-play.jpg",
+     "credit": "\"Kalaripayattu Fire Play\" · Yogendra174 · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Kalaripayattu Fire Play"
+    },
+    {
+     "file": "video/breathhold/_media/ov/kalari_02_kalaripayattu.jpg",
+     "credit": "\"Kalaripayattu\" · Ashwin Kumar · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Kalaripayattu"
+    },
+    {
+     "file": "video/breathhold/_media/ov/kalari_03_kalaripayattu.jpg",
+     "credit": "\"Kalaripayattu\" · Ashwin Kumar · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Kalaripayattu"
+    },
+    {
+     "file": "video/breathhold/_media/ov/kalari_04_kalaripayattu.jpg",
+     "credit": "\"Kalaripayattu\" · andrew hyde · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Kalaripayattu"
+    },
+    {
+     "file": "video/breathhold/_media/ov/kalari_07_fighter.jpg",
+     "credit": "\"fighter\" · liketearsintherain · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "fighter"
+    },
+    {
+     "file": "video/breathhold/_media/ov/kalari_08_the-duel.jpg",
+     "credit": "\"The Duel\" · Enygmatic-Halycon · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "The Duel"
+    },
+    {
+     "file": "video/breathhold/_media/ov/kalari_09_mid-air-comat.jpg",
+     "credit": "\"Mid-Air Comat\" · Enygmatic-Halycon · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Mid-Air Comat"
+    },
+    {
+     "file": "video/breathhold/_media/ov/kalari_10_fighter-two.jpg",
+     "credit": "\"fighter two\" · liketearsintherain · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "fighter two"
+    },
+    {
+     "file": "video/breathhold/_media/ov/kalari_11_these-guys-were-fast-as-lightning.jpg",
+     "credit": "\"These guys were fast as lightning\" · Enygmatic-Halycon · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "These guys were fast as lightning"
+    }
+   ],
+   "fallback": []
+  },
+  "mumbai": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/mumbai_13_ohh-no-i-just-missed.jpg",
+     "credit": "\"ohh no! i just missed...\" · 2 million+ views. Humbled and thanks! · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "ohh no! i just missed..."
+    },
+    {
+     "file": "video/breathhold/_media/ov/mumbai_14_the-flood-gates-have-opened.jpg",
+     "credit": "\"The flood gates have opened!\" · 2 million+ views. Humbled and thanks! · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "The flood gates have opened!"
+    },
+    {
+     "file": "video/breathhold/_media/ov/mumbai_15_what-surprised-am-used-to-it.jpg",
+     "credit": "\"What... surprised? am used to it!\" · 2 million+ views. Humbled and thanks! · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "What... surprised? am used to it!"
+    },
+    {
+     "file": "video/breathhold/_media/ov/mumbai_16_have-to-wrestle-for-the-next-one.jpg",
+     "credit": "\"have to wrestle for the next one!\" · 2 million+ views. Humbled and thanks! · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "have to wrestle for the next one!"
+    },
+    {
+     "file": "video/breathhold/_media/ov/mumbai_17_aha-i-got-down.jpg",
+     "credit": "\"Aha! i got down...\" · 2 million+ views. Humbled and thanks! · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Aha! i got down..."
+    },
+    {
+     "file": "video/breathhold/_media/ov/mumbai_19_mumbai-traffic.jpg",
+     "credit": "\"Mumbai traffic\" · wallygrom · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Mumbai traffic"
+    },
+    {
+     "file": "video/breathhold/_media/ov/mumbai_20_mumbai-traffic.jpg",
+     "credit": "\"mumbai traffic\" · CommGlobalUG · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "mumbai traffic"
+    },
+    {
+     "file": "video/breathhold/_media/ov/mumbai_21_p1030279.jpg",
+     "credit": "\"P1030279\" · urbzoo · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "P1030279"
+    },
+    {
+     "file": "video/breathhold/_media/ov/mumbai_22_a-local-train.jpg",
+     "credit": "\"A local train\" · wallygrom · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "A local train"
+    }
+   ],
+   "fallback": []
+  },
+  "city_rush": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/city_rush_24_listen.jpg",
+     "credit": "\"Listen\" · Johan Larsson · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Listen"
+    },
+    {
+     "file": "video/breathhold/_media/ov/city_rush_25_busy.jpg",
+     "credit": "\"Busy\" · Street Photography candid · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "Busy"
+    },
+    {
+     "file": "video/breathhold/_media/ov/city_rush_27_the-conversation.jpg",
+     "credit": "\"the conversation\" · susanjanegolding · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "the conversation"
+    }
+   ],
+   "fallback": []
+  },
+  "press_crowd": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/press_crowd_35_bikanerenggcollege-sakshamagn09-niya.jpg",
+     "credit": "\"BikanerEnggCollege.SakshamaGN09.Niyam - 113\" · niyam bhushan · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "BikanerEnggCollege.SakshamaGN09.Niyam - 113"
+    },
+    {
+     "file": "video/breathhold/_media/ov/press_crowd_36_bikanerenggcollege-sakshamagn09-niya.jpg",
+     "credit": "\"BikanerEnggCollege.SakshamaGN09.Niyam - 078\" · niyam bhushan · CC BY 2.0 · flickr",
+     "archive": null,
+     "what": "BikanerEnggCollege.SakshamaGN09.Niyam - 078"
+    }
+   ],
+   "fallback": [
+    "mumbai"
+   ]
+  },
+  "o2": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/o2_48_operational-readiness-exercise.jpg",
+     "credit": "\"Operational readiness exercise\" · UNC - CFC - USFK · CC BY 2.0 · flickr",
+     "archive": "ILLUSTRATIVE",
+     "what": "Operational readiness exercise"
+    },
+    {
+     "file": "video/breathhold/_media/ov/o2_51_180712-n-mz309-019.jpg",
+     "credit": "\"180712-N-MZ309-019\" · CNE CNA C6F · PDM · flickr",
+     "archive": "ILLUSTRATIVE",
+     "what": "180712-N-MZ309-019"
+    }
+   ],
+   "fallback": []
+  },
+  "anatomy_lungs": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/anatomy_lungs_53_anatomy-of-the-lungs-and-heart.jpg",
+     "credit": "\"Anatomy of the lungs and heart\" · liverpoolhls · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Anatomy of the lungs and heart"
+    },
+    {
+     "file": "video/breathhold/_media/ov/anatomy_lungs_54_anatomy-of-the-lungs-and-heart.jpg",
+     "credit": "\"Anatomy of the lungs and heart\" · liverpoolhls · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Anatomy of the lungs and heart"
+    }
+   ],
+   "fallback": []
+  },
+  "anatomy_diaphragm": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/anatomy_diaphragm_57_identifier-anatomydescripti1887gray.jpg",
+     "credit": "\"Identifier: anatomydescripti1887gray (find matches\" · Unknown · CC0 · rawpixel",
+     "archive": "ILLUSTRATION",
+     "what": "Identifier: anatomydescripti1887gray (find matches)Title: Anatomy"
+    }
+   ],
+   "fallback": [
+    "anatomy_lungs"
+   ]
+  },
+  "anatomy_carotid": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/anatomy_carotid_59_surgery-carotid-subclavian-arteries.jpg",
+     "credit": "\"Surgery carotid subclavian arteries: two\" · Unknown · CC0 · rawpixel",
+     "archive": null,
+     "what": "Surgery carotid subclavian arteries: two"
+    },
+    {
+     "file": "video/breathhold/_media/ov/anatomy_carotid_60_identifier-elementsofanimal00ange-fi.jpg",
+     "credit": "\"Identifier: elementsofanimal00ange (find matches)T\" · Unknown · CC0 · rawpixel",
+     "archive": null,
+     "what": "Identifier: elementsofanimal00ange (find matches)Title: Elements"
+    }
+   ],
+   "fallback": [
+    "anatomy_lungs"
+   ]
+  },
+  "micro_blood": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/micro_blood_67_aspiration-of-blood-case-180.jpg",
+     "credit": "\"Aspiration of blood Case 180\" · Pulmonary Pathology · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Aspiration of blood Case 180"
+    },
+    {
+     "file": "video/breathhold/_media/ov/micro_blood_68_acute-intra-alveolar-hemorrhage.jpg",
+     "credit": "\"Acute intra-alveolar hemorrhage\" · Pulmonary Pathology · CC BY-SA 2.0 · flickr",
+     "archive": null,
+     "what": "Acute intra-alveolar hemorrhage"
+    }
+   ],
+   "fallback": []
+  },
+  "eyes": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/eyes_77_and-i-m-still-thinkin-bout-you.jpg",
+     "credit": "\"...And I'm Still Thinkin' 'Bout You\" · Sabrina Campagna Live Music Photographer · CC BY 2.0 · flickr",
+     "archive": "ILLUSTRATIVE",
+     "what": "...And I'm Still Thinkin' 'Bout You"
+    }
+   ],
+   "fallback": []
+  },
+  "conch_video": {
+   "files": [
+    {
+     "file": "video/breathhold/_media/ov/conch_sankha1.mp4",
+     "move": "none",
+     "liveAudio": true,
+     "credit": "Nani Ma B-roll: Sankha-blowing · Subhashish Panigrahi · CC BY-SA 4.0 · archive.org",
+     "burned": true
+    },
+    {
+     "file": "video/breathhold/_media/ov/conch_sankha2.mp4",
+     "move": "none",
+     "liveAudio": true,
+     "credit": "Nani Ma B-roll: Sankha-blowing · Subhashish Panigrahi · CC BY-SA 4.0 · archive.org",
+     "burned": true
+    }
+   ],
+   "fallback": []
+  },
+  "anatomy_brain": {
+   "files": [],
+   "fallback": [
+    "anatomy_carotid"
+   ]
+  },
+  "anatomy_heart": {
+   "files": [],
+   "fallback": [
+    "anatomy_lungs"
+   ]
+  }
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "img_w": 1600,
+ "img_h": 1131,
+ "boxes": [
+  {
+   "phrase": "twelve (12) manufacturing units",
+   "x": 384,
+   "y": 460,
+   "w": 312,
+   "h": 33
+  }
+ ]
+}
