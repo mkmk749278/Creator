@@ -12,7 +12,7 @@ For each beat in the EDL draft:
 1. **Library first:** `python3 scripts/library.py list` and `video/lib/` (HDRIs, models, beds, verified B-roll).
 2. **Real event footage next**, down the chain for its need (§8.4). Search several candidates; keep the highest
    resolution; note exact in/out points from 1 fps timecoded sheets.
-3. **Download** with the matching tool: `scripts/openverse_fetch.py`, `scripts/commons_fetch.py` (User-Agent, standard
+3. **Download** with the matching tool: `scripts/stock_fetch.py` (Pixabay video/photo B-roll; hides AI-generated items), `scripts/openverse_fetch.py`, `scripts/commons_fetch.py` (User-Agent, standard
    thumb widths), `projects/prahlad-jani-drdo/tools/fetch_assets.py` (Coverr, NASA, Wellcome), `scripts/fetch_media.py`
    (yt-dlp: Dailymotion, archive.org, Instagram, Facebook; YouTube works only some of the time from the cloud).
    YouTube blocked → list exact URLs and `@START-END` ranges for the owner to run in the **Fetch media for a video**
