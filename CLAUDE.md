@@ -87,6 +87,12 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   climax and shock reveal → practical defence); a "Trojan horse" hook (popular myth in, verified truth out); the "elder
   brother" voice, conversational Telugu, never victim-blaming; a journalistic citation tag (`[NATURE (1982) | HARVARD MONK
   STUDY]`) on every factual claim; 1.5 s of total music silence before each core reveal, then a low braam/thud.
+- **Channel, language and audience rules (PLAYBOOK §4a, from sourced research):** thumbnail promise on screen by 0:30;
+  chapters of 2–4 min; a fresh art direction per film (no template look); educated spoken Telugu, dialect-neutral, ban list
+  (చండాలం, కటిక చీకటి, caste names as adjectives); the mechanism is the villain, never the viewer; attribute contested
+  figures. Hard gates beside the fact-check: synthetic-content disclosure, health context (WHO/ICMR + skeptic), SEBI
+  education-only lane (no buy/sell calls, price data ≥ 30 days old, disclaimer), Press Council suicide norms.
+- **TTS:** ElevenLabs Telugu only on `eleven_v3`/`eleven_v4` with `language_code: "te"`; all TTS text in Telugu script.
 - **ElevenLabs "Bunty" script format:** 5–6 blocks of 100–130 words (< 1,200 characters); only commas and full stops (no
   `...`, `!`, quotes, dashes, stage directions); numbers, names and English terms in Telugu script (`ట్వెంటీ`,
   `ఆర్ బి ఐ`); acronyms letter by letter. Hand the owner re-record text in this format.

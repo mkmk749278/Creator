@@ -9,7 +9,7 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
 
 **Contents**
 - Part A: How we work. 1 Owner and delivery · 2 Claude models · 3 Parallel sessions · 4 Quality first
-- Part B: Documentaries. 5 The look · 6 Workflow and engines · 7 Script and voice · 8 Media sourcing ·
+- Part B: Documentaries. 4a Channel, language and audience rules · 5 The look · 6 Workflow and engines · 7 Script and voice · 8 Media sourcing ·
   9 Realistic animation · 10 HyperFrames · 11 Sound · 12 Facts, honesty and rights · 13 Render and deliver ·
   14 Pre-render review · 15 Lessons log
 - Part C: Phone consensus pipeline. 16 Product and spec · 17 Claude in the pipeline · 18 Architecture and stages ·
@@ -152,6 +152,97 @@ look like a broadcast documentary or investigative film, **never a slide deck, c
 - **Cadence:** focal change every 3.0–3.5 s (inside the 2.5–4 s rule).
 - **Engines:** the charter names FFmpeg and Python PIL/Matplotlib; HyperFrames (CLAUDE.md) stays the animation engine and
   FFmpeg the assembler, both running in cloud sessions because the owner has no PC (Termux can still run `assemble.py`).
+
+### 4a. Channel, language and audience rules (research, 2026-10-08)
+Distilled from `docs/research/reports/Telugu YouTube audience and style.md` (30 evidence-graded rules with sources; notes
+in `docs/research/research_notes/`). The charter stays in force; where the evidence disagrees, the owner decides (list at
+the end). *Why this exists:* the big Telugu channels already win on warmth, presence and volume; none shows sources on
+screen. Visible proof is this channel's edge, and it is what YouTube's satisfaction signals and policies reward.
+
+**The market (measured 2026-10-08).** Day Trader Telugu 2.7M subs and Money Purse 2.12M (7–8 uploads a week, 17–27 min
+daily shows); Kowshik Maridi's own channel 662K in about 8 months (the Boss Wallah audience followed his face); Think Deep
+2.24M, V R Raja 1.78M + 1.93M, NB Show 1.33M (1–2 uploads a day, 9–18 min). Every channel's all-time top videos are
+**evergreen** beginner explainers, mythology/science and "what happened that day" stories, not daily news. Viewers praise
+warmth, sincerity and the patient "tuition master"; they punish thumbnails the video contradicts, long intros ("video
+starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for views. Thumbnails share one template
+(AI-art scene, real face, 2–3 huge red/yellow words). No competitor shows a source on screen.
+
+**Hook, structure, pacing**
+- Deliver the thumbnail's promise on screen **by 0:30**, with no channel intro before it (YouTube's "intro" metric counts
+  viewers still watching at 30 s). Act 1 may run to 1:15 only if the payoff lands by 0:30. (Strong)
+- 8–12 min (longer if the story earns it) built as **3–5 chapters of 2–4 min**, each with its own question and payoff;
+  YouTube chapters in the description (00:00, at least three, each ≥ 10 s). (Moderate: viewing engagement medians cap
+  near 6 min in a 6.9M-session study; Telugu explainers of 10–18 min hold millions of views.)
+- Energetic delivery throughout; "reassuring" never means slow. Focus change every 3.0–3.5 s with continuous motion.
+- The 1.5 s silence + braam is **untested**: use it once or twice per film and check the retention curve at those
+  timestamps after publishing.
+- **Every film gets its own art direction** (palette, texture family, motif) and varied act lengths, so the four-act
+  engine never looks templated (YouTube's July 2025 "inauthentic content" rule demonetises mass-produced templates).
+- Prefer evergreen topics: money and prices, scams, disasters, mythology-vs-evidence, body and space science, financial
+  history (a Harshad Mehta story did 1.3M on Day Trader), plus a monthly "what changes from the 1st" explainer.
+
+**Voice and Telugu (scripts and TTS)**
+- ElevenLabs: Telugu works only on **`eleven_v3` / `eleven_v4` with `language_code: "te"`**; never Multilingual v2 or Flash
+  v2.5 (re-check the models page each project). A professional voice clone runs on v4.
+- All TTS text in **Telugu script**, English loanwords included (writing them in Telugu script cut code-mix word errors
+  from ~0.8 to ~0.2 in one study); Latin script appears only on screen. Acronyms as people say them: spaced letters
+  (ఆర్ బి ఐ) or a word (సిబిల్, ఇస్రో); gloss each once.
+- Keep the charter's punctuation ban; make dramatic pauses **in the edit** (`VO_PAUSE`, cut on the breath), not with
+  `...` (vendor guidance uses `...` for pauses; only an A/B on two blocks may change this).
+- One idea per sentence (about 8–15 words); no `;`, brackets, slashes, `&`, `#` or emoji in TTS text.
+- **Educated spoken Telugu** (TV-news register, Gidugu's vyavaharika): no grandhika endings (-ము, వచ్చెను, -బడు passives).
+  English only for technical or modern nouns, at most one English content word per clause, never an English clause.
+- **Dialect-neutral:** pan-regional words; never call one region's Telugu "pure" or another's "slang"; never a dialect for
+  comedy or villains; "మన తెలంగాణ, మన ఆంధ్ర" framing. Test new voices with listeners from both states.
+- **Ban list** (script, guests and clips): చండాలం and its forms; కటిక చీకటి (use కారు చీకటి); caste names as adjectives;
+  proverbs that insult disability or gender. Name a caste only if essential and sourced. At most one proverb per segment.
+  *Why:* SC/ST Atrocities Act cases have hit Telugu TV channels and a YouTuber over on-air caste remarks, and courts treat
+  social media as "public view".
+- Persona: the elder brother **and** the patient tuition teacher; warm, sincere, never yelling.
+
+**Audience: emotions and sensitivities**
+- Debt is mainstream, not shameful-rare: AP 43.7% and Telangana 37.2% of adults in debt (MoSPI 2020–21, highest in India);
+  Telangana had the most debt-linked suicides in 2022 (NCRB, 1,163). Shame is the collector's weapon (loan apps messaged
+  relatives and morphed photos). **Stories make the mechanism the villain, never the victim, and end with a practical
+  exit** (verified portals, helplines).
+- Steelman lived institutions (chits, gold loans, local lenders) with both sides' numbers; righteous anger targets
+  documented wrongdoing, not "corporates" in general. No moralising about IT workers' "lifestyle inflation" without data.
+- Suicide: Press Council of India / WHO norms: no method, place or victim images; "died by suicide"; a helpline on the end
+  card (verify the current Tele-MANAS number at the source before use).
+- Politics: attribute every contested figure ("NCRB says", "BRS claims"), show rival parties' numbers, no party colours or
+  symbols; stars' cases stay allegations.
+- Trust: 93% of investors rate finfluencers credible (SEBI survey 2025) and WhatsApp is the top misinformation source, so
+  visible sourcing reads as respect. For debunks, show the original claim with its real date and source, not just "FAKE".
+
+**Sources, packaging, distribution**
+- Citation tag on every claim (charter), a **timestamped source list in the description**, a `Correction: [timestamp]` line
+  for any error (YouTube shows a correction card), and the fact-check gate independent of polish. Sources: peer-reviewed
+  papers, court rulings and regulator texts, plus primary official statistics (NCRB, MoSPI, RBI), labelled as such.
+- Thumbnail: 2–4 large Telugu-script words, one concrete number or object, a real photo or footage frame, **delivered
+  literally in the film**. No AI images of real people, baked-in "views" badges or unrelated politicians. Title: a Telugu
+  hook plus English search keywords.
+- Test 2–3 genuinely different packages with Test & Compare (judged on watch-time share; desktop Studio only, so the
+  coordinator runs it).
+- Cut 9:16 Shorts from each film's scenes with the related-video link; seek mentions from large non-finance Telugu creators.
+
+**Compliance gates (hard, beside the fact-check)**
+- Synthetic content: answer "Altered content = Yes" for any realistic synthetic scene of a real event or place; label
+  browser mock-ups "SIMULATION" (no real-looking screenshots of real banks); illustrations "ILLUSTRATION". Cloning the
+  owner's own voice is exempt from disclosure.
+- Health: state the WHO/ICMR position, the mainstream view and a real skeptic beat; no realistic synthetic medical scenes.
+- Finance (SEBI finfluencer rules): education only, no buy/sell/hold or IPO apply/avoid calls on named securities, no return
+  promises; price charts of named stocks end at least 30 days before publishing (three months until the rule is
+  clarified); "Educational only, not SEBI-registered" on screen and in the description; no broker affiliate links.
+  Verify the circular texts on sebi.gov.in before the first finance film.
+
+**Open questions for the owner (evidence vs charter; the charter applies until decided)**
+1. Numbers: the charter writes English number words in Telugu script (ఫైవ్ థౌసండ్); viewers praised amounts said in
+   Telugu (ఐదు వేలు, ఇరవై లక్షలు). Telugu number words by default?
+2. Voice: the channel runs on its own trust in a face and voice; a clone of Kishore's own voice (or his recording) would
+   carry that and needs no AI disclosure. Keep "Bunty", or clone Kishore?
+3. Pauses: keep the `...` ban and pause in the edit (current rule), or allow `...` after an A/B test?
+4. Unknowns to settle by a 10-minute phone listen (YouTube blocked our scrapers): the competitors' music, voice speed and
+   first 30 seconds, three videos per channel.
 
 ## 5. The look
 
@@ -576,6 +667,8 @@ above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at
 - [ ] No near-black or dead frames; block changes dip to black; the music bed never restarts audibly.
 - [ ] Claims stay claims; a real skeptic or mainstream-science beat on health topics.
 - [ ] About −14 LUFS; subtitles rebuilt after any timing change.
+- [ ] Thumbnail promise shown by 0:30; chapters in the description; timestamped sources and citation tags on claims.
+- [ ] Compliance gates (§4a): synthetic disclosure, health context, SEBI education-only lane, PCI suicide norms, ban list.
 
 ## 15. Lessons log
 
