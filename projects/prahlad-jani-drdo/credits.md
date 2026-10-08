@@ -3,6 +3,19 @@
 Voiceover: ElevenLabs (Bunty), Telugu. Script & edit: Be Practical with Kishore.
 
 
+## Original animation (this channel)
+
+- hf_autophagy3d.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/autophagy3d/index.html
+- hf_bladder3d.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/bladder3d/index.html
+- hf_dehydration_chart.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/dehydration_chart/index.html
+- hf_end_card.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/end_card/index.html
+- hf_kidney3d.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/kidney3d/index.html
+- hf_logo_sting.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/logo_sting/index.html
+- hf_metabolism.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/metabolism/index.html
+- hf_timeline_a.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/timeline_a/index.html
+- hf_timeline_b.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/timeline_b/index.html
+- hf_vitals.mp4: Be Practical with Kishore (original HyperFrames/Three.js animation) · Original work · video/prahlad/vitals/index.html
+
 ## Creative Commons (attribution required)
 
 - ambaji_gabbar.jpg: Gujarat Tourist Guide · CC BY 2.0 · https://www.flickr.com/photos/gujarattouristguide/8290995138

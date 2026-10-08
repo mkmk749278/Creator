@@ -8,10 +8,11 @@ groups = {}
 for r in rows:
     key = "⚠️ Copyrighted, quoted under fair use (licence before monetising)" if "COPYRIGHTED" in r["licence"] or "fair-use" in r["licence"] else (
         "Public domain" if any(x in r["licence"].lower() for x in ("public domain", "pdm", "cc0")) else
-        "Coverr (free licence)" if r["owner"] == "Coverr" else "Creative Commons (attribution required)")
+        "Coverr (free licence)" if r["owner"] == "Coverr" else
+        "Original animation (this channel)" if r["licence"] == "Original work" else "Creative Commons (attribution required)")
     groups.setdefault(key, []).append(r)
 out = ["# Credits\n", "Voiceover: ElevenLabs (Bunty), Telugu. Script & edit: Be Practical with Kishore.\n"]
-for key in ["Creative Commons (attribution required)", "Public domain", "Coverr (free licence)",
+for key in ["Original animation (this channel)", "Creative Commons (attribution required)", "Public domain", "Coverr (free licence)",
             "⚠️ Copyrighted, quoted under fair use (licence before monetising)"]:
     if key in groups:
         out.append(f"\n## {key}\n")

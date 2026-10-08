@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Study timeline B: 15-day tracker</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      .photo { position: absolute; inset: -4%; background: url("media/bg.jpg") center / cover no-repeat; filter: blur(16px) brightness(0.42) saturate(0.7); }
+      .tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,10,24,0.5), rgba(11,21,48,0.88)); }
+      .head { position: absolute; left: 160px; top: 330px; font-size: 30px; font-weight: 800; letter-spacing: 0.18em; color: var(--yellow); }
+      .sub { position: absolute; left: 160px; top: 380px; font-size: 34px; font-weight: 600; color: var(--ink-dim); }
+      .bar { position: absolute; left: 160px; top: 620px; width: 1600px; height: 18px; border-radius: 9px; background: rgba(159,176,214,0.22); overflow: hidden; }
+      .fill { position: absolute; left: 0; top: 0; width: 1600px; height: 18px; background: linear-gradient(90deg, #5a7bc0, #ffd34d); transform-origin: 0 50%; }
+      .ticks { position: absolute; left: 160px; top: 660px; width: 1600px; height: 60px; }
+      .ticks span { position: absolute; top: 0; width: 60px; margin-left: -30px; text-align: center; font-size: 24px; font-weight: 600; color: rgba(159,176,214,0.8); }
+      .marker { position: absolute; left: 160px; top: 480px; width: 0; height: 0; }
+      .marker .bubble { position: absolute; left: -110px; top: 0; width: 220px; height: 82px; border-radius: 14px; text-align: center; background: var(--yellow); color: var(--navy); font-size: 44px; font-weight: 800; }
+      .marker .bubble span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; }
+      .marker .stem { position: absolute; left: -3px; top: 82px; width: 6px; height: 64px; background: var(--yellow); }
+      .ends { position: absolute; left: 160px; top: 740px; width: 1600px; font-size: 30px; font-weight: 800; }
+      .ends .a { position: absolute; left: 0; }
+      .ends .b { position: absolute; right: 0; }
+      .note { position: absolute; left: 160px; top: 860px; font-size: 32px; font-weight: 600; color: var(--ink); }
+      .note b { color: var(--yellow); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="timeline-b" data-start="0" data-width="1920" data-height="1080" data-duration="16">
+      <div class="photo" id="photo"></div>
+      <div class="tint"></div>
+      <div class="particles" id="dust"></div>
+      <div class="head">STERLING HOSPITAL, AHMEDABAD · 2010</div>
+      <div class="sub">15 days under 24-hour observation</div>
+      <div class="bar"><div class="fill" id="fill"></div></div>
+      <div class="ticks" id="ticks"></div>
+      <div class="marker" id="marker"><div class="bubble" id="day"></div><div class="stem"></div></div>
+      <div class="ends"><span class="a">22 APRIL</span><span class="b">6 MAY</span></div>
+      <div class="note">Reported by the hospital: <b>no food, no water, no urine</b></div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const ticks = document.getElementById("ticks");
+      for (let d = 1; d <= 15; d++) { const s = document.createElement("span"); s.textContent = d; s.style.left = ((d - 1) / 14 * 100) + "%"; ticks.appendChild(s); }
+      tl.fromTo("#photo", { scale: 1.0, x: 0 }, { scale: 1.1, x: -40, duration: 16, ease: "none" }, 0);
+      FX.dust(tl, document.getElementById("dust"), { seed: 33, count: 50, dur: 16 });
+      // 1 second per day: the shot can start at any offset (DAY 3 ≈ 2 s, DAY 10 ≈ 9 s, DAY 15 = 14 s)
+      tl.fromTo("#fill", { scaleX: 0 }, { scaleX: 1, duration: 14, ease: "none" }, 0);
+      tl.fromTo("#marker", { x: 0 }, { x: 1600, duration: 14, ease: "none" }, 0);
+      const day = document.getElementById("day");
+      const labels = [];
+      for (let d = 1; d <= 15; d++) { const s = document.createElement("span"); s.textContent = "DAY " + d; day.appendChild(s); labels.push(s); }
+      for (let d = 1; d <= 15; d++) {
+        tl.set(labels[d - 1], { opacity: 1 }, d - 1);
+        if (d > 1) tl.set(labels[d - 2], { opacity: 0 }, d - 1);
+        tl.fromTo("#marker .bubble", { scale: 1.15 }, { scale: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, d - 1);
+      }
+      window.__timelines["timeline-b"] = tl;
+    </script>
+  </body>
+</html>

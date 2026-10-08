@@ -105,3 +105,20 @@ preview MP4 (Actions artifact) · contact sheet PNG.
 - **Balance:** a real 16 s CC BY clip of James Randi (archive.org, May 2010) as the `LIVE` skeptic beat, with a Telugu caption.
 - **Process:** VO first (transcribe → phrases → align) → EDL from beats → fetch → contact sheet → map EDL to real files
   (`assemble.py --check` must say 0 missing) → section renders of risky shots → full render → SRT rebuild → deliver.
+
+## Pre-render review (every cut, before the final render)
+Contact-sheet the cut (`assemble.py` writes one) and go through it shot by shot. Write `review.md` with issue, shot IDs and fix.
+- [ ] Subject's face and name on screen within 20 s; the name lower-third reappears when the VO says the name.
+- [ ] Every frame's on-screen data agrees with the VO at that moment (numbers, monitors, headlines, dates).
+- [ ] Stand-in or stock footage near the real story is labelled "ILLUSTRATIVE FOOTAGE"; authentic footage carries its source credit.
+- [ ] No stock clip more than twice; no shot over 4 s except HyperFrames scenes and LIVE clips.
+- [ ] Science and data beats use animated scenes, labelled honestly (ILLUSTRATION, ILLUSTRATIVE CURVE, HYPOTHESIS).
+- [ ] Channel name in the VO means the logo is on screen; the film ends on the end card; the logo bug is present elsewhere.
+- [ ] No near-black or dead frames; section changes breathe (dip to black); the music bed never restarts audibly.
+- [ ] Claims stay claims; at least one real skeptic or mainstream-science beat on health topics.
+- [ ] Loudness about −14 LUFS; VO silent during LIVE clips; subtitles rebuilt after any timing change.
+
+### 2026-10 · v5 changes after owner review
+Logo sting and end card from the owner's banner; HyperFrames timeline, vitals, dehydration chart and metabolism dial; Three.js
+kidney, bladder (labelled hypothesis) and autophagy scenes; ILLUSTRATIVE FOOTAGE labels; 168/90 monitor photo removed; stock repeats
+capped; face and name at 0:18; native 4K master.

@@ -28,6 +28,16 @@ asset_id,file_name,url,owner,licence,downloaded,edl_slots,notes
 ,ecg_photo.jpg,https://www.flickr.com/photos/hendry/7301122070,Kai Hendry,CC BY 2.0,2026-10-07,,
 ,headline_edamaruku.jpg,https://www.sanaledamaruku.com/post/india-s-man-who-lives-on-sunshine,Rationalist International,"Screenshot of article (fair-use quotation, credited)",2026-10-07,,headline crop
 ,headline_wikipedia.jpg,https://en.wikipedia.org/wiki/Prahlad_Jani,Wikipedia contributors,CC BY-SA 4.0 (text),2026-10-07,,screenshot of article lead
+,hf_autophagy3d.mp4,video/prahlad/autophagy3d/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_bladder3d.mp4,video/prahlad/bladder3d/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_dehydration_chart.mp4,video/prahlad/dehydration_chart/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_end_card.mp4,video/prahlad/end_card/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_kidney3d.mp4,video/prahlad/kidney3d/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_logo_sting.mp4,video/prahlad/logo_sting/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_metabolism.mp4,video/prahlad/metabolism/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_timeline_a.mp4,video/prahlad/timeline_a/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_timeline_b.mp4,video/prahlad/timeline_b/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
+,hf_vitals.mp4,video/prahlad/vitals/index.html,Be Practical with Kishore (original HyperFrames/Three.js animation),Original work,2026-10-08,,rendered at native 4K by video/prahlad/render_4k.sh
 ,himalaya_leh.jpg,https://www.flickr.com/photos/priyamn/15185682179,priyam.n,CC BY 2.0,2026-10-07,,
 ,hospital_corridor.mp4,https://coverr.co/videos/coverr-walking-down-a-hallway-7053,Coverr,"Coverr License (free for commercial use, no attribution required)",2026-10-07,,
 ,hospital_entrance.mp4,https://coverr.co/videos/coverr-hospital-entrance-in-buenos-aires-8579,Coverr,"Coverr License (free for commercial use, no attribution required)",2026-10-07,,

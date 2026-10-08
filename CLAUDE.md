@@ -97,6 +97,28 @@ The phone-review content rules above do not apply here; these do:
   `curl -F file=@video.mp4 https://$srv.gofile.io/contents/uploadfile` → `data.downloadPage`. Upload the 1080p master and a 720p copy.
 - **Memory**: renders run in a ~14 GB memory cgroup; one render at a time, and delete stray background loops before rendering.
 
+### Lessons from owner review of cut v4 (Oct 2026): apply to every documentary
+- **Self-review before every render** with the checklist in `docs/documentary-production.md` › Pre-render review, and write
+  `review.md` (issue → shot IDs → fix). The owner's notes on v4 are now rules:
+  1. Show the subject's **face and name within the first 15–20 s** (lower-third "NAME · born–died").
+  2. Stock or stand-in footage that could be mistaken for the real event carries a permanent **"ILLUSTRATIVE FOOTAGE"** label
+     (`+illus` in the EDL overlay). Never give stock footage a CCTV/archival look; use that look only on authentic footage.
+  3. Check every frame for **on-screen data that contradicts the VO** (a monitor reading 168/90 under "vitals normal"). Replace it
+     with an honest, labelled HyperFrames graphic.
+  4. **No stock clip more than twice**; no filler space or lab footage. Use a timeline graphic for "when did what happen".
+  5. When the **channel name** is spoken, show the logo (sting); end on the **end card** (logo, subscribe, YouTube end-screen zones);
+     keep a small logo bug on every other shot.
+  6. **Science is explained with animated HyperFrames scenes**, never static images: Three.js (pinned `three`, vendored by
+     `scripts/vendor-assets.mjs`) for organs and cells, SVG/GSAP for charts, dials and timelines. Label each "ILLUSTRATION",
+     "ILLUSTRATIVE CURVE" or "HYPOTHESIS".
+- **HyperFrames inserts** live in `video/<project>/<scene>/` (copy `_shared/`), pass `npx hyperframes check`, get snapshots, then
+  render at native 4K with `video/prahlad/render_4k.sh` (`make_native_4k.mjs` + `render --workers 4`). WebGL reads the 4K size
+  from the root `data-width`. Speed on the cloud's software GPU: about 8 s of wall time per second of 2D, about 50 s per second of 3D.
+  Pitfalls: `tl.call` doesn't run on render seeks (use stacked elements and `tl.set`); an SVG filter on a perfectly vertical or
+  horizontal line renders nothing; no `letterSpacing` tweens; `@font-face` goes in each `index.html` with root-relative paths.
+- **4K FFmpeg assembly**: oversample Ken Burns 1.25x at 4K (2x is fine at 1080p); loop music with crossfades (`long_bed`), never a
+  hard restart; dip to black at block changes; sharpen 288p archive footage lightly after upscaling.
+
 ## Ground rules
 1. Ask before adding paid services, and report the expected cost per video.
 2. Pin versions (npm, pip, actions, HyperFrames, `claude-code-action@v1`).

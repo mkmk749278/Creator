@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Study timeline A</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      .photo { position: absolute; inset: -4%; background: url("media/bg.jpg") center / cover no-repeat; filter: blur(18px) brightness(0.45) saturate(0.7); }
+      .tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,10,24,0.55), rgba(11,21,48,0.85)); }
+      .track { position: absolute; left: 0; top: 0; width: 3000px; height: 100%; }
+      .line { position: absolute; left: 160px; top: 560px; width: 2700px; height: 6px; border-radius: 3px; background: linear-gradient(90deg, rgba(159,176,214,0.3), rgba(255,211,77,0.9)); transform-origin: 0 50%; }
+      .node { position: absolute; top: 540px; width: 520px; }
+      .node .pin { position: absolute; left: 0; top: 4px; width: 38px; height: 38px; border-radius: 50%; background: var(--navy); border: 6px solid var(--blue); box-sizing: border-box; }
+      .node .year { position: absolute; left: 0; top: -150px; font-size: 76px; font-weight: 800; color: var(--ink); }
+      .node .what { position: absolute; left: 0; top: 80px; width: 480px; font-size: 34px; font-weight: 600; color: var(--ink-dim); line-height: 1.25; }
+      .node.hot .pin { border-color: var(--yellow); background: var(--yellow); box-shadow: 0 0 40px rgba(255,211,77,0.9); }
+      .node.hot .year { color: var(--yellow); }
+      .node.hot .what { color: var(--ink); }
+      .head { position: absolute; left: 64px; top: 56px; font-size: 30px; font-weight: 800; letter-spacing: 0.18em; color: var(--yellow); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="timeline-a" data-start="0" data-width="1920" data-height="1080" data-duration="5">
+      <div class="photo" id="photo"></div>
+      <div class="tint"></div>
+      <div class="particles" id="dust"></div>
+      <div class="head" id="head">THE STORY SO FAR</div>
+      <div class="track" id="track">
+        <div class="line" id="line"></div>
+        <div class="node" id="n1" style="left:160px"><div class="pin"></div><div class="year">1929</div><div class="what">Born in Charada, Gujarat</div></div>
+        <div class="node" id="n2" style="left:780px"><div class="pin"></div><div class="year">1940</div><div class="what">Says he stops eating and drinking</div></div>
+        <div class="node" id="n3" style="left:1400px"><div class="pin"></div><div class="year">2003</div><div class="what">First study: 10 days, Sterling Hospital</div></div>
+        <div class="node hot" id="n4" style="left:2020px"><div class="pin"></div><div class="year">22 APR 2010</div><div class="what">DIPAS (DRDO) 15-day observation begins</div></div>
+      </div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#photo", { scale: 1.0 }, { scale: 1.08, duration: 5, ease: "none" }, 0);
+      FX.dust(tl, document.getElementById("dust"), { seed: 21, count: 45, dur: 5 });
+      tl.fromTo("#head", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 0.05);
+      tl.fromTo("#line", { scaleX: 0 }, { scaleX: 1, duration: 3.6, ease: "power1.inOut" }, 0.1);
+      // camera pans along the track so the 2010 node ends centred
+      tl.fromTo("#track", { x: 0 }, { x: -1160, duration: 4.2, ease: "power2.inOut" }, 0.3);
+      ["#n1", "#n2", "#n3", "#n4"].forEach((id, i) => {
+        const t0 = 0.2 + i * 0.95;
+        tl.fromTo(`${id} .pin`, { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(3)" }, t0);
+        tl.fromTo(`${id} .year`, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, t0 + 0.08);
+        tl.fromTo(`${id} .what`, { y: -16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, t0 + 0.2);
+      });
+      tl.fromTo("#n4 .pin", { boxShadow: "0 0 0px rgba(255,211,77,0)" }, { boxShadow: "0 0 70px rgba(255,211,77,1)", duration: 0.5, yoyo: true, repeat: 1, immediateRender: false }, 3.6);
+      window.__timelines["timeline-a"] = tl;
+    </script>
+  </body>
+</html>

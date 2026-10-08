@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Be Practical logo sting</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+    </style>
+    <style>
+      .stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .word { display: flex; gap: 0; font-weight: 800; font-size: 172px; line-height: 0.95; letter-spacing: -0.01em; }
+      .word .l { display: inline-block; }
+      .word .be { color: var(--ink); margin-right: 52px; }
+      .word .pr { color: var(--yellow); }
+      .with { font-size: 80px; font-weight: 800; margin-top: 8px; }
+      .tagline { font-size: 44px; font-weight: 400; margin-top: 26px; color: var(--ink); }
+      .langs { font-size: 34px; font-weight: 800; letter-spacing: 0.16em; margin-top: 22px; }
+      .circuit { position: absolute; top: 0; height: 100%; width: 400px; }
+      .circuit.left { left: 0; }
+      .circuit.right { right: 0; transform: scaleX(-1); }
+      .sweep { position: absolute; top: -20%; width: 260px; height: 140%; left: -20%;
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.16) 50%, rgba(255,255,255,0) 100%); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="logo-sting" data-start="0" data-width="1920" data-height="1080" data-duration="4.2">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-a"></div><div class="glow-b"></div></div>
+      <div class="particles" id="dust"></div>
+      <svg class="circuit left" viewBox="0 0 520 1080" id="cl">
+        <g fill="none" stroke-width="5" stroke-linecap="round">
+          <path class="ln" d="M0 420 H160" stroke="#ffd34d" />
+          <path class="ln" d="M0 480 H250" stroke="#5a7bc0" />
+          <path class="ln" d="M0 532 H270 C320 532 320 584 370 584 H420" stroke="#ffd34d" />
+          <path class="ln" d="M0 586 H200 C250 586 250 636 300 636 H360" stroke="#5a7bc0" />
+        </g>
+        <g><circle class="dot" cx="160" cy="420" r="14" fill="#ffd34d"/><circle class="dot" cx="250" cy="480" r="13" fill="#5a7bc0"/>
+           <circle class="dot" cx="420" cy="584" r="14" fill="#ffd34d"/><circle class="dot" cx="360" cy="636" r="13" fill="#5a7bc0"/></g>
+      </svg>
+      <svg class="circuit right" viewBox="0 0 520 1080" id="cr">
+        <g fill="none" stroke-width="5" stroke-linecap="round">
+          <path class="ln" d="M0 420 H160" stroke="#ffd34d" />
+          <path class="ln" d="M0 480 H250" stroke="#5a7bc0" />
+          <path class="ln" d="M0 532 H270 C320 532 320 584 370 584 H420" stroke="#ffd34d" />
+          <path class="ln" d="M0 586 H200 C250 586 250 636 300 636 H360" stroke="#5a7bc0" />
+        </g>
+        <g><circle class="dot" cx="160" cy="420" r="14" fill="#ffd34d"/><circle class="dot" cx="250" cy="480" r="13" fill="#5a7bc0"/>
+           <circle class="dot" cx="420" cy="584" r="14" fill="#ffd34d"/><circle class="dot" cx="360" cy="636" r="13" fill="#5a7bc0"/></g>
+      </svg>
+      <div class="stage">
+        <div class="word" id="word"><span class="be l">BE</span><span class="pr" id="pr"></span></div>
+        <div class="with" id="with">with Kishore</div>
+        <div class="tagline" id="tagline">Real questions. Simple explanations.</div>
+        <div class="langs" id="langs">TELUGU • ENGLISH</div>
+      </div>
+      <div class="sweep" id="sweep"></div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const pr = document.getElementById("pr");
+      for (const ch of "PRACTICAL") { const s = document.createElement("span"); s.className = "l"; s.textContent = ch; pr.appendChild(s); }
+      FX.drift(tl, "#bg", 4.2);
+      FX.dust(tl, document.getElementById("dust"), { seed: 7, count: 50, dur: 4.2 });
+      document.querySelectorAll(".ln").forEach((p, i) => {
+        const len = p.getTotalLength();
+        p.style.strokeDasharray = len;
+        tl.fromTo(p, { strokeDashoffset: len }, { strokeDashoffset: 0, duration: 0.9, ease: "power2.out" }, 0.05 + (i % 4) * 0.08);
+      });
+      tl.fromTo(".dot", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.35, ease: "back.out(2.5)", stagger: 0.05 }, 0.75);
+      tl.fromTo(".word .be", { y: 60, opacity: 0, filter: "blur(12px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "power3.out" }, 0.25);
+      tl.fromTo("#pr .l", { y: 80, opacity: 0, filter: "blur(14px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power3.out", stagger: 0.045 }, 0.4);
+      tl.fromTo("#with", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 1.05);
+      tl.fromTo("#tagline", { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" }, 1.4);
+      tl.fromTo("#langs", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.7);
+      tl.fromTo("#sweep", { x: 0 }, { x: 2600, duration: 1.1, ease: "power1.inOut" }, 1.9);
+      tl.fromTo(".stage", { scale: 1 }, { scale: 1.035, duration: 4.2, ease: "none" }, 0);
+      window.__timelines["logo-sting"] = tl;
+    </script>
+  </body>
+</html>

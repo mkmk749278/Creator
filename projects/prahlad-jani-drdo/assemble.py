@@ -31,6 +31,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 ASSETS = HERE / "assets"
 OUT = HERE / "out"
 VO_FILE = "voiceover.mp3"
+LOGO = HERE / "brand" / "logo_square.png"
 EDL = HERE / "edl.csv"
 FPS = 30
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
@@ -125,6 +126,8 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
     n = max(1, round(r["dur"] * FPS))
     src, fell_back = resolve(r)
     u = H / 1080  # UI scale
+    os_ = 2 if W <= 1920 else 1.25  # Ken Burns oversample: 2x at 1080p, 1.25x at 4K (memory/speed)
+    W2, H2 = int(W * os_) // 2 * 2, int(H * os_) // 2 * 2
     cmd = ["ffmpeg", "-y", "-loglevel", "error"]
     # Layer 1: full-screen base, always moving
     if src is None:
@@ -145,12 +148,15 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
                     f"[bgo][fgo]overlay=(W-w)/2:(H-h)/2,setsar=1")
         elif fit:
             base = (f"split[bgi][fgi];[bgi]scale=480:270:force_original_aspect_ratio=increase,crop=480:270,boxblur=12:2,"
-                    f"scale={W * 2}:{H * 2},eq=brightness=-0.18:saturation=0.7[bgo];[fgi]scale=-2:{int(H * 2 * 0.92)}:flags=lanczos[fgo];"
+                    f"scale={W2}:{H2},eq=brightness=-0.18:saturation=0.7[bgo];[fgi]scale=-2:{int(H2 * 0.92) // 2 * 2}:flags=lanczos[fgo];"
                     f"[bgo][fgo]overlay=(W-w)/2:(H-h)/2,setsar=1,{motion(r['motion'], W, H, n)}")
         else:
-            base = (f"scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase:flags=lanczos,crop={W * 2}:{H * 2},"
+            base = (f"scale={W2}:{H2}:force_original_aspect_ratio=increase:flags=lanczos,crop={W2}:{H2},"
                     f"setsar=1,{motion(r['motion'], W, H, n)}")
-    graph = [f"[0:v]{base},{GRADE.get(r['block'], GRADE['B1'])},format=yuv420p[l1]"]
+        if r["asset"].startswith(("aj_", "itn_")):  # low-res 2010 archive: gentle sharpening after the upscale
+            base += ",unsharp=5:5:0.6:5:5:0.0"
+    grade = "null" if "hf" in r["overlay"].split("+") else GRADE.get(r["block"], GRADE["B1"])
+    graph = [f"[0:v]{base},{grade},format=yuv420p[l1]"]
     cur, k = "[l1]", 1
     # Layer 2: atmosphere (HUD at low opacity, vignette, grain, optional 2.35:1 bars)
     hud = ASSETS / "hud_overlay.mp4"
@@ -160,6 +166,8 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
         graph.append(f"{cur}[hud]overlay=shortest=1[l1h]")
         cur, k = "[l1h]", k + 1
     atmos = ["vignette=angle=PI/4.5", "noise=alls=4:allf=t"]
+    if "hf" in r["overlay"].split("+"):  # HyperFrames scenes carry their own vignette and depth
+        atmos = ["noise=alls=2:allf=t"]
     if "cctv" in r["overlay"]:
         u2 = H / 1080
         atmos = ["hue=s=0", "colorchannelmixer=rr=0.55:gg=0.95:bb=0.6", "noise=alls=14:allf=t",
@@ -195,6 +203,26 @@ def render_shot(i, r, W, H, args, fontfile, tmp):
                          f"x={pad}:y='{y}':{alpha}:shadowcolor=black@0.6:shadowx=0:shadowy={int(3 * u)}")
         graph.append(f"{cur}{','.join(draws)}[l3]")
         cur = "[l3]"
+    # Layer 3b: disclosures, channel logo bug, section transitions
+    flags = r["overlay"].split("+")
+    if "nologo" not in flags and LOGO.exists():
+        cmd += ["-i", str(LOGO)]
+        sz = int(104 * u) // 2 * 2
+        graph.append(f"[{k}:v]scale={sz}:{sz},format=rgba,colorchannelmixer=aa=0.82[logo]")
+        graph.append(f"{cur}[logo]overlay=W-w-{int(44 * u)}:H-h-{int(40 * u)}[l4]")
+        cur, k = "[l4]", k + 1
+    post = []
+    if "illus" in flags:
+        post.append(f"drawtext=fontfile='{fontfile}':text='ILLUSTRATIVE FOOTAGE':fontcolor=white@0.9:fontsize={int(27 * u)}:"
+                    f"box=1:boxcolor=black@0.5:boxborderw={int(10 * u)}:x={int(64 * u)}:y={int(56 * u)}")
+    fx = (r.get("fx") or "").split("+")
+    if "fin" in fx:
+        post.append("fade=t=in:st=0:d=0.3")
+    if "fout" in fx:
+        post.append(f"fade=t=out:st={max(0.0, r['dur'] - 0.3):.3f}:d=0.3")
+    if post:
+        graph.append(f"{cur}{','.join(post)}[l5]")
+        cur = "[l5]"
     out = tmp / f"{i:03d}.mp4"
     cmd += ["-filter_complex", ";".join(graph), "-map", cur, "-frames:v", str(n), "-r", str(FPS),
             "-c:v", "libx264", "-preset", args.preset, "-crf", "18" if args.uhd else "20",
@@ -210,6 +238,25 @@ def make_scrim(W, H, tmp):
          "-frames:v", "1", str(tmp / "scrim.png")])
 
 
+def long_bed(src, total, tmp, xf=6.0):
+    """Repeat a music file with `xf`-second crossfades until it covers `total` seconds."""
+    d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)],
+                             capture_output=True, text=True).stdout)
+    reps = max(1, math.ceil((total - xf) / (d - xf)))
+    out = tmp / "bgm_long.wav"
+    if reps == 1:
+        return src
+    ins, chain = [], ""
+    for i in range(reps):
+        ins += ["-i", str(src)]
+    chain = "[0:a]"
+    for i in range(1, reps):
+        chain += f"[{i}:a]acrossfade=d={xf}:c1=tri:c2=tri" + (f"[x{i}];[x{i}]" if i < reps - 1 else "")
+    run(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", chain + "[a]" if reps > 1 else "anull",
+         "-map", "[a]", "-ar", "48000", str(out)])
+    return out
+
+
 def build_audio(rows, total, tmp):
     vo = ASSETS / VO_FILE
     if not vo.exists():
@@ -217,7 +264,8 @@ def build_audio(rows, total, tmp):
     inputs = ["-i", str(vo)]
     bgm = ASSETS / "bgm_dark.mp3"
     if bgm.exists():
-        inputs += ["-stream_loop", "-1", "-i", str(bgm)]
+        bgm = long_bed(bgm, total, tmp)  # crossfaded loop: no audible restart
+        inputs += ["-i", str(bgm)]
     fmt = "aresample=48000,aformat=channel_layouts=stereo"
     # 1. VO with a gap at every break row (VO resumes where it stopped, minus vo_skip)
     graph, pieces, cur = [], [], 0.0
