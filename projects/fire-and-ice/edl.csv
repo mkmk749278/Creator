@@ -10,7 +10,7 @@ S008,ICE,SHOT,,3.024,,26.923,29.947,,,broll/pixabay_252819.mp4,,none,grain+vigne
 S009,EMBER,SHOT,,2.019,,29.947,31.965,,,broll/pixabay_258658.mp4,,none,grain+vignette,,,audio/sfx_howl.mp3@0@-12,,,,,But... on that same minus-twenty-degree Himalayan snow...,P1 L8
 S010,EMBER,SHOT,,2.019,,31.965,33.984,,,broll/pixabay_199956.mp4,,none,grain+vignette,,,,,,,,,P1 L8
 S011,EMBER,SHOT,,3.242,,33.984,37.226,,,photos/milarepa_kailash.jpg,,zoom_in,grain+vignette,"MILAREPA, 'THE COTTON-CLAD' YOGI | TIBETAN PAINTING",,,,,,ART INSTITUTE OF CHICAGO · PUBLIC DOMAIN,what if monks sit for hours with nothing on but a thin cotton cloth?,P1 L9
-S012,EMBER,SHOT,,3.242,,37.226,40.468,,,photos/tummo_naropa.jpg,,pan_lr,grain+vignette,,,,,,,PHOTO: TANUMANASI · CC BY-SA 3.0,a modern Tummo practitioner meditating on snow,P1 L9
+S012,EMBER,SHOT,,3.242,,37.226,40.468,,,photos/tummo_naropa_crop.jpg,,zoom_in,grain+vignette,,,,,,,PHOTO: TANUMANASI · CC BY-SA 3.0,a modern Tummo practitioner meditating on snow (crop),P1 L9
 S013,EMBER,SHOT,,3.756,,40.468,44.224,,,hf/wet_sheet.mp4,,none,hf,,,,,,,,And if cloths soaked in ice water are draped over their bodies...,P1 L10
 S014,EMBER,SHOT,,2.998,,44.224,47.222,,,broll/pixabay_2344.mp4,,push,grain+vignette,,,audio/sfx_steam.mp3@0.2@-12,,,,,steam rising,P1 L11
 S015,EMBER,SHOT,,2.998,,47.222,50.220,9.600,,hf/wet_sheet.mp4,,none,hf,,,,,,,,,P1 L11
@@ -29,61 +29,60 @@ S027,STEEL,SHOT,,2.082,,79.835,81.917,116.000,,raw/dm_x7zlb64.mp4,,none,grain+vi
 S028,STEEL,SHOT,,2.469,,81.917,84.386,,,broll/pixabay_8625.mp4,,push,grain+vignette,,,audio/sfx_fire.mp3@0@-12,,,,,How can a fire blaze inside the human body in freezing snow?,P1 L19
 S029,STEEL,SHOT,,2.469,,84.386,86.856,128.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,Hof meditating on an ice floe,P1 L19
 S030,STEEL,SHOT,,1.984,,86.856,88.840,2181.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),archive: Hof meditating in the snow,P1 L20
-S031,STEEL,SHOT,,1.984,,88.840,90.824,1812.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P1 L20
-S032,STEEL,SHOT,,2.852,,90.824,93.677,,,broll/pixabay_6310.mp4,,push,grain+vignette,,,,,,,,Let us practically break down the science of fire and ice!,P1 L21
-S033,STEEL,SHOT,,2.852,,93.677,96.529,,,broll/pixabay_45595.mp4,,push,grain+vignette,FIRE & ICE | THE SCIENCE OF TUMMO,,audio/sfx_bowl_strike.mp3@3.6@-4,,,fout,,,P1 L21
+S031,STEEL,SHOT,,1.984,,88.840,90.824,2185.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"Hof, close",P1 L20
+S032,STEEL,SHOT,,2.852,,90.824,93.677,10.000,,broll/pixabay_345020.mp4,,none,grain+vignette,,,audio/sfx_ice_crack2.mp3@0.2@-10,,,,,Let us practically break down the science of fire and ice!,P1 L21
+S033,STEEL,SHOT,,2.852,,93.677,96.529,,,broll/pixabay_6758.mp4,,none,grain+vignette,FIRE & ICE | THE SCIENCE OF TUMMO,,audio/sfx_bowl_strike.mp3@3.6@-4,,,fout,,,P1 L21
 S034,EMBER,SHOT,,3.276,,96.529,99.805,,,photos/tummo_practice.jpg,,pan_rl,grain+vignette,TUMMO | 'INNER FIRE' MEDITATION,,audio/sfx_bowl.mp3@0@-14;audio/amb_monks_cut.wav@0@-10,,,fin,TIBETAN MURAL · PUBLIC DOMAIN,"The ancient secret behind this mystery is called... Tummo, or inner fire meditation.",P2 L1
 S035,EMBER,SHOT,,3.276,,99.805,103.081,1.000,,broll/pixabay_1429.mp4,,none,grain+vignette,,,,,,,,,P2 L1
 S036,EMBER,SHOT,,3.170,,103.081,106.250,4.000,,broll/pixabay_58.mp4,,none,grain+vignette,,,,,,,,"Handed down for thousands of years in the Tibetan Buddhist tradition, this practice is als",P2 L2
-S037,EMBER,SHOT,,3.170,,106.250,109.420,8.000,,broll/pixabay_1429.mp4,,none,grain+vignette,ALSO CALLED CHANDALI YOGA,,,,,,,,P2 L2
+S037,EMBER,SHOT,,3.170,,106.250,109.420,14.000,,broll/pixabay_175816.mp4,,none,grain+vignette,ALSO CALLED CHANDALI YOGA,,,,,,,monastery in the Indian Himalaya,P2 L2
 S038,EMBER,SHOT,,3.395,,109.420,112.815,9.000,,broll/pixabay_443.mp4,,none,grain+vignette,,,,,,,,"monk in a cave shrine, India",P2 L3
-S039,EMBER,SHOT,,3.395,,112.815,116.209,,,broll/pixabay_258657.mp4,,none,grain+vignette,,,,,,,,,P2 L3
+S039,EMBER,SHOT,,3.395,,112.815,116.209,,,photos/monk_path_dharamsala.jpg,,zoom_in,grain+vignette,,,,,,,PHOTO: ARTEMAS LIU · CC BY 2.0,"Tibetan monk on a mountain path, Dharamsala",P2 L3
 S040,EMBER,SHOT,,2.563,,116.209,118.772,,,photos/hms_1900s.jpg,,zoom_in,grain+vignette,,,,,,,POSTCARD · PUBLIC DOMAIN,"Hearing of this, a leading professor at Harvard Medical School, Dr. Herbert Benson...",P2 L4
 S041,EMBER,SHOT,,2.563,,118.772,121.335,,,photos/hms_gordon.jpg,,pan_lr,grain+vignette,DR. HERBERT BENSON | HARVARD MEDICAL SCHOOL,,,,,,PHOTO: CC BY-SA 4.0,,P2 L4
 S042,EMBER,SHOT,,4.937,,121.335,126.272,,,hf/benson_map.mp4,,none,hf,,,,,,,,went to the Himalayas himself with his research team in 1982.,P2 L5
 S043,EMBER,SHOT,,3.418,,126.272,129.690,,,broll/pixabay_175815.mp4,,none,grain+vignette,,,,,,,,"The scientists had one question... is this a real biological fact, or are they playing som",P2 L6
-S044,EMBER,SHOT,,3.418,,129.690,133.109,2.000,,broll/pixabay_443.mp4,,none,grain+vignette,,,,,,,,,P2 L6
+S044,EMBER,SHOT,,3.418,,129.690,133.109,,,photos/dharamsala_mystic.jpg,,pan_rl,grain+vignette,,,,,,,PHOTO: PRADYBHARADWAJ · CC BY-SA 4.0,"monk walking, Dharamsala",P2 L6
 S045,EMBER,SHOT,,11.515,,133.109,144.624,,,hf/finger_temp.mp4,,none,hf,,,,,,,,"They fixed highly sensitive digital thermometers to the monks' fingers, toes and chests. N",P2 L7-8
-S046,EMBER,SHOT,,3.002,,144.624,147.625,,,photos/tummo_naropa.jpg,,zoom_in,grain+vignette,,,,,,,PHOTO: TANUMANASI · CC BY-SA 3.0,But as soon as the monks began Tummo meditation... a wonder happened before the doctors' e,P2 L9
-S047,EMBER,SHOT,,3.002,,147.625,150.627,,,broll/pixabay_290916.mp4,,none,grain+vignette+illus,,,,,,,,,P2 L9
+S046,EMBER,SHOT,,3.002,,144.624,147.625,,,photos/tummo_naropa_crop.jpg,,zoom_out,grain+vignette,,,,,,,PHOTO: TANUMANASI · CC BY-SA 3.0,But as soon as the monks began Tummo meditation... a wonder happened before the doctors' e,P2 L9
+S047,EMBER,SHOT,,3.002,,147.625,150.627,0.600,,hf/tummo_spine.mp4,,none,hf,,,,,,,,,P2 L9
 S048,EMBER,SHOT,,13.525,,150.627,164.152,17.518,,hf/finger_temp.mp4,,none,hf,,,,,,,,The temperature of the monks' fingers rose steadily... by a full eight to seventeen degree,P2 L10-11
 S049,EMBER,SHOT,,3.265,,164.152,167.417,20.000,,broll/pixabay_252819.mp4,,none,grain+vignette,,,audio/sfx_ice_crack2.mp3@0@-10,,,,,"Unable to believe it, the scientists ran a more extreme test.",P2 L12
 S050,EMBER,SHOT,,3.558,,167.417,170.975,,,hf/wet_sheet.mp4,,none,hf,,,,,,,,They put wet cloths dipped in ice water on their shoulders.,P2 L13
 S051,EMBER,SHOT,,2.998,,170.975,173.973,432.500,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),an untrained man gasping in an icy canal,P2 L14
 S052,EMBER,SHOT,,7.228,,173.973,181.201,6.556,,hf/wet_sheet.mp4,,none,hf,,,audio/sfx_steam.mp3@0.5@-14,,,,,But within forty-five minutes... steam rose from the monks' bodies and the wet cloths drie,P2 L15
 S053,EMBER,SHOT,,2.875,,181.201,184.076,,,photos/hms_1900s.jpg,,zoom_in,grain+vignette,"BENSON ET AL. | NATURE, 1982",,,,,,POSTCARD · PUBLIC DOMAIN,The Harvard doctors wrote in their research papers:,P2 L16
-S054,EMBER,SHOT,,2.939,,184.076,187.015,,,broll/pixabay_85063.mp4,,push,grain+vignette,,,,,,,,this is undeniable proof that a person can control the human autonomic nervous system with,P2 L17
-S055,EMBER,SHOT,,2.939,,187.015,189.954,,,broll/pixabay_260163.mp4,,none,grain+vignette,,,,,,,,,P2 L17
-S056,EMBER,SHOT,,2.939,,189.954,192.893,,,photos/tummo_practice.jpg,,zoom_out,grain+vignette,,,,,,fout,,,P2 L17
-S057,STEEL,SHOT,,3.383,,192.893,196.276,49.500,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,fin,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"The man who proved this in the modern world, like a superhuman... Wim Hof, The Iceman.",P3 L1
-S058,STEEL,SHOT,,3.383,,196.276,199.660,32.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,WIM HOF | 'THE ICEMAN',,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,,P3 L1
-S059,STEEL,SHOT,,3.492,,199.660,203.152,,,photos/wimhof_2eight.jpg,,zoom_in,grain+vignette,,,,,,,PHOTO: STEFAN BRENDING · CC BY-SA 3.0 DE,"Wim Hof, holder of more than twenty-six Guinness World Records...",P3 L2
-S060,STEEL,SHOT,,3.070,,203.152,206.221,,,photos/wimhof_portrait.jpg,,pan_lr,grain+vignette,,,,,,,PHOTO: AAD VILLERIUS · CC BY-SA 2.0,"even after sitting two hours among blocks of ice, his core body temperature doesn't drop b",P3 L3
-S061,STEEL,SHOT,,3.070,,206.221,209.291,,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,Hof lowers himself into an ice barrel,P3 L3
-S062,STEEL,SHOT,,2.088,,209.291,211.379,615.500,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,"RADBOUD UNIVERSITY MEDICAL CENTRE | NIJMEGEN, NETHERLANDS",,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"In 2014, professors at Radboud University in the Netherlands",P3 L4
-S063,STEEL,SHOT,,2.088,,211.379,213.467,610.500,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P3 L4
-S064,STEEL,SHOT,,2.783,,213.467,216.250,543.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),injected Wim Hof's body with an E. coli toxin that causes a severe infection.,P3 L5
-S065,STEEL,SHOT,,2.783,,216.250,219.034,547.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P3 L5
-S066,STEEL,SHOT,,3.948,,219.034,222.982,,,hf/lps_chart.mp4,,none,hf,,,,,,,,"Inject it into a normal person and they get a high fever and shivering. But Wim Hof, throu",P3 L6-8
-S067,STEEL,SHOT,,2.467,,222.982,225.449,66.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,Hof doing his breathing exercise,P3 L6-8
-S068,STEEL,SHOT,,5.428,,225.449,230.877,6.415,,hf/lps_chart.mp4,,none,hf,,,,,,,,,P3 L6-8
-S069,STEEL,SHOT,,2.467,,230.877,233.344,577.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"Prof. Peter Pickkers, Radboud",P3 L6-8
-S070,STEEL,SHOT,,2.385,,233.344,235.729,4.000,,broll/pixabay_45595.mp4,,push,grain+vignette,,,,,,,,Now the real practical question:,P3 L9
-S071,STEEL,SHOT,,2.175,,235.729,237.904,371.700,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),Hof steps into an icy Amsterdam canal,P3 L10
-S072,STEEL,SHOT,,2.175,,237.904,240.080,375.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P3 L10
-S073,STEEL,SHOT,,3.365,,240.080,243.445,,,photos/bat_petct.jpg,hf/fat_cells.mp4,zoom_in,grain+vignette,BROWN FAT ON A PET-CT SCAN,,,,,,,"There is a secret behind it. That is... Brown Adipose Tissue, or Brown Fat!",P3 L11
-S074,STEEL,SHOT,,3.365,,243.445,246.810,,,photos/bat_histo.jpg,hf/mito.mp4,pan_lr,grain+vignette,,,,,,,,,P3 L11
-S075,STEEL,SHOT,,12.795,,246.810,259.605,,,hf/fat_cells.mp4,,none,hf,,,,,,,,"Our body has two kinds of fat. One is White Fat, which stores calories and makes us fat. T",P3 L12-14
-S076,STEEL,SHOT,,2.788,,259.605,262.393,,,hf/mito.mp4,,none,hf,,,,,,,,"These are like furnaces, tiny fire pits, inside our body!",P3 L15
-S077,STEEL,SHOT,,1.858,,262.393,264.251,,,broll/pixabay_6758.mp4,,none,grain+vignette,,,audio/sfx_fire.mp3@0@-12,,,,,,P3 L15
-S078,STEEL,SHOT,,8.330,,264.251,272.581,,,hf/brain_signal.mp4,,none,hf,,,,,,,,When we do deep breathing and special breathing methods... signals go out from the brain a,P3 L16-17
-S079,STEEL,SHOT,,3.838,,272.581,276.419,5.600,,hf/mito.mp4,,none,hf,,,,,,,,It turns calories directly into pure heat!,P3 L18
-S080,STEEL,SHOT,,8.911,,276.419,285.330,,,hf/nst.mp4,,none,hf,,,,,,,,"In science this is called non-shivering thermogenesis. That is, without the body shivering",P3 L19-20
-S081,EMBER,SHOT,,10.086,,285.330,295.416,,,hf/tummo_spine.mp4,,none,hf,,,,,,,,Yogis who practise Tummo use this breathing along with vase breathing and mental focus... ,P3 L21-22
-S082,STEEL,SHOT,,2.796,,295.416,298.212,2223.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"Tummo and the Wim Hof science are undeniable evidence that the mind can rule the body, tha",P3 L23
-S083,STEEL,SHOT,,2.796,,298.212,301.007,130.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,,P3 L23
-S084,STEEL,SHOT,,2.796,,301.007,303.803,,,photos/tummo_practice.jpg,,zoom_in,grain+vignette,,,,,,,TIBETAN MURAL · PUBLIC DOMAIN,,P3 L23
-S085,STEEL,SHOT,,2.796,,303.803,306.598,2248.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P3 L23
-S086,STEEL,SHOT,,3.419,,306.598,310.017,100.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,What do you think about this mystery of ice and fire?,P3 L24
-S087,STEEL,SHOT,,3.136,,310.017,313.153,6.000,,broll/pixabay_258657.mp4,,none,grain+vignette,,,,,,,,Be sure to tell us your opinion in the comments below.,P3 L25
-S088,STEEL,SHOT,,19.856,,313.153,333.009,,,hf/end_card.mp4,,none,hf+nologo,,,,,,fin,,"If you liked this video, like and share it. For more thrilling science and practical break",P3 L26-27
+S054,EMBER,SHOT,,4.409,,184.076,188.484,,,broll/pixabay_85063.mp4,,push,grain+vignette,,,,,,,,this is undeniable proof that a person can control the human autonomic nervous system with,P2 L17
+S055,EMBER,SHOT,,4.409,,188.484,192.893,,,photos/tummo_practice.jpg,,zoom_out,grain+vignette,,,,,,fout,,,P2 L17
+S056,STEEL,SHOT,,3.383,,192.893,196.276,50.200,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,fin,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"The man who proved this in the modern world, like a superhuman... Wim Hof, The Iceman.",P3 L1
+S057,STEEL,SHOT,,3.383,,196.276,199.660,32.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,WIM HOF | 'THE ICEMAN',,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,,P3 L1
+S058,STEEL,SHOT,,3.492,,199.660,203.152,,,photos/wimhof_2eight.jpg,,zoom_in,grain+vignette,,,,,,,PHOTO: STEFAN BRENDING · CC BY-SA 3.0 DE,"Wim Hof, holder of more than twenty-six Guinness World Records...",P3 L2
+S059,STEEL,SHOT,,3.070,,203.152,206.221,,,photos/wimhof_portrait.jpg,,pan_lr,grain+vignette,,,,,,,PHOTO: AAD VILLERIUS · CC BY-SA 2.0,"even after sitting two hours among blocks of ice, his core body temperature doesn't drop b",P3 L3
+S060,STEEL,SHOT,,3.070,,206.221,209.291,,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,Hof lowers himself into an ice barrel,P3 L3
+S061,STEEL,SHOT,,2.088,,209.291,211.379,615.500,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,"RADBOUD UNIVERSITY MEDICAL CENTRE | NIJMEGEN, NETHERLANDS",,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"In 2014, professors at Radboud University in the Netherlands",P3 L4
+S062,STEEL,SHOT,,2.088,,211.379,213.467,610.500,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P3 L4
+S063,STEEL,SHOT,,2.783,,213.467,216.250,543.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),injected Wim Hof's body with an E. coli toxin that causes a severe infection.,P3 L5
+S064,STEEL,SHOT,,2.783,,216.250,219.034,547.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P3 L5
+S065,STEEL,SHOT,,3.948,,219.034,222.982,,,hf/lps_chart.mp4,,none,hf,,,,,,,,"Inject it into a normal person and they get a high fever and shivering. But Wim Hof, throu",P3 L6-8
+S066,STEEL,SHOT,,2.467,,222.982,225.449,66.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,Hof doing his breathing exercise,P3 L6-8
+S067,STEEL,SHOT,,5.428,,225.449,230.877,6.415,,hf/lps_chart.mp4,,none,hf,,,,,,,,,P3 L6-8
+S068,STEEL,SHOT,,2.467,,230.877,233.344,577.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"Prof. Peter Pickkers, Radboud",P3 L6-8
+S069,STEEL,SHOT,,2.385,,233.344,235.729,8.000,,broll/pixabay_8625.mp4,,push,grain+vignette,,,,,,,,Now the real practical question:,P3 L9
+S070,STEEL,SHOT,,2.175,,235.729,237.904,371.700,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),Hof steps into an icy Amsterdam canal,P3 L10
+S071,STEEL,SHOT,,2.175,,237.904,240.080,375.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P3 L10
+S072,STEEL,SHOT,,3.365,,240.080,243.445,,,photos/bat_petct.jpg,hf/fat_cells.mp4,zoom_in,grain+vignette,BROWN FAT ON A PET-CT SCAN,,,,,,,"There is a secret behind it. That is... Brown Adipose Tissue, or Brown Fat!",P3 L11
+S073,STEEL,SHOT,,3.365,,243.445,246.810,,,photos/bat_cell.jpg,,zoom_in,grain+vignette,BROWN FAT CELL | 3D ILLUSTRATION,,,,,,ILLUSTRATION: SCIENTIFICANIMATIONS.COM · CC BY-SA 4.0,,P3 L11
+S074,STEEL,SHOT,,12.795,,246.810,259.605,,,hf/fat_cells.mp4,,none,hf,,,,,,,,"Our body has two kinds of fat. One is White Fat, which stores calories and makes us fat. T",P3 L12-14
+S075,STEEL,SHOT,,2.788,,259.605,262.393,,,hf/mito.mp4,,none,hf,,,,,,,,"These are like furnaces, tiny fire pits, inside our body!",P3 L15
+S076,STEEL,SHOT,,1.858,,262.393,264.251,,,broll/pixabay_6758.mp4,,none,grain+vignette,,,audio/sfx_fire.mp3@0@-12,,,,,,P3 L15
+S077,STEEL,SHOT,,8.330,,264.251,272.581,,,hf/brain_signal.mp4,,none,hf,,,,,,,,When we do deep breathing and special breathing methods... signals go out from the brain a,P3 L16-17
+S078,STEEL,SHOT,,3.838,,272.581,276.419,5.600,,hf/mito.mp4,,none,hf,,,,,,,,It turns calories directly into pure heat!,P3 L18
+S079,STEEL,SHOT,,8.911,,276.419,285.330,,,hf/nst.mp4,,none,hf,,,,,,,,"In science this is called non-shivering thermogenesis. That is, without the body shivering",P3 L19-20
+S080,EMBER,SHOT,,10.086,,285.330,295.416,,,hf/tummo_spine.mp4,,none,hf,,,,,,,,Yogis who practise Tummo use this breathing along with vase breathing and mental focus... ,P3 L21-22
+S081,STEEL,SHOT,,2.796,,295.416,298.212,2223.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),"Tummo and the Wim Hof science are undeniable evidence that the mind can rule the body, tha",P3 L23
+S082,STEEL,SHOT,,2.796,,298.212,301.007,130.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,,P3 L23
+S083,STEEL,SHOT,,2.796,,301.007,303.803,,,photos/tummo_practice.jpg,,zoom_in,grain+vignette,,,,,,,TIBETAN MURAL · PUBLIC DOMAIN,,P3 L23
+S084,STEEL,SHOT,,2.796,,303.803,306.598,2248.000,,raw/dm_x4ly2a2.mp4,,none,grain+vignette,,,,,,,VICE · THE SUPERHUMAN WORLD OF THE ICEMAN (2016),,P3 L23
+S085,STEEL,SHOT,,3.419,,306.598,310.017,100.000,,raw/dm_x7zlb64.mp4,,none,grain+vignette,,,,,,,DW EUROMAXX (2021) · FOOTAGE: WIM HOF METHOD,What do you think about this mystery of ice and fire?,P3 L24
+S086,STEEL,SHOT,,3.136,,310.017,313.153,8.000,,broll/pixabay_199956.mp4,,none,grain+vignette,,,,,,,,Be sure to tell us your opinion in the comments below.,P3 L25
+S087,STEEL,SHOT,,19.856,,313.153,333.009,,,hf/end_card.mp4,,none,hf+nologo,,,,,,fin,,"If you liked this video, like and share it. For more thrilling science and practical break",P3 L26-27

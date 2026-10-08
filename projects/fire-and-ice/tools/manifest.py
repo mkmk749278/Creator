@@ -46,6 +46,8 @@ def main():
         rows["photos/" + r["file"]] = dict(file="photos/" + r["file"], kind="image", what_it_shows=" ".join(r["desc"].split())[:160], source_page=r["page"], file_url="",
                                            author=r["author"], licence=r["licence"], licence_url=r["licence_url"],
                                            attribution=f"{r['author']} / Wikimedia Commons, {r['licence']}", edl_slots="", notes=f"{r['w']}x{r['h']}")
+    if "photos/tummo_naropa.jpg" in rows:   # derived crops keep the source's licence row
+        rows["photos/tummo_naropa_crop.jpg"] = dict(rows["photos/tummo_naropa.jpg"], file="photos/tummo_naropa_crop.jpg", notes="1280x720 crop of tummo_naropa.jpg")
     for m in MANUAL:
         rows[m[0]] = dict(zip(FIELDS, m))
     used = {}
