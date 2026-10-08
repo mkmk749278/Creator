@@ -29,3 +29,13 @@ in the hypothermia, finger-temperature, endotoxin and map scenes wait for `claim
 ## Cut 2 (2026-10-08): fixes verified
 Exact-frame grabs at each fixed timecode (`qa/cut2fix/sheet.jpg`): all 13 fixes in place; no near-black frames left
 outside dips; −14.0 LUFS. Still open: on-screen numbers wait for the fact-check (scenes re-render in about a minute each).
+
+## Cut 3 (2026-10-08): fact-check fallbacks applied: preview delivered
+5:15, 1080p, −14.0 LUFS, true peak −0.9 dBTP. 1080p https://gofile.io/d/PW7Pc1jk · 720p https://gofile.io/d/ynO1lgKD
+- Three VO lines cut (`tools/vomap.py`): "absolute rule" (P1), the invented "Harvard papers: undeniable proof" quote (P2),
+  "undeniable evidence" (P3, now a 6.5 s on-screen skeptic + water-safety beat).
+- No wrong number on screen; corrected facts as labels (see `fact-check.md` fallbacks). Reviewed all 18 sheets
+  (`qa/cut3/`): no dead or near-black frames except the 0.3 s fades into the end card; labels readable; semantic lock holds.
+- Gate: `scripts/claims_check.py` still fails (17 wrong, 1 unverified) because the recorded VO still says them. It passes
+  only after the owner re-records the lines listed in `fact-check.md`. This cut is a preview, not a final.
+- Known minor: true peak −0.9 dBTP (target −1.0); some VICE/DW footage is 288p upscaled (soft).
