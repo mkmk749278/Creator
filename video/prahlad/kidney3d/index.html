@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Kidney: filtration failing without water</title>
+    <script src="vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/jsm/" } }</script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      .backdrop { position: absolute; inset: 0; background: radial-gradient(80% 90% at 55% 45%, #3a0b12 0%, #1a0509 45%, #070103 100%); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .cap { position: absolute; left: 64px; bottom: 70px; width: 1000px; height: 140px; }
+      .cap .c { position: absolute; left: 0; bottom: 0; width: 1000px; }
+      .cap .rule { display: block; width: 90px; height: 5px; background: var(--yellow); margin-bottom: 16px; }
+      .cap .t { display: block; font-size: 46px; font-weight: 800; }
+      .cap .s { display: block; font-size: 28px; font-weight: 600; color: #f0c4c4; margin-top: 8px; letter-spacing: 0.04em; }
+      #c2 .t { color: #ffb03b; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="kidney3d" data-start="0" data-width="1920" data-height="1080" data-duration="8.5">
+      <div class="backdrop"></div>
+      <canvas id="gl"></canvas>
+      <div class="cap">
+        <div class="c" id="c1"><span class="rule"></span><span class="t">Healthy kidneys filter the blood</span><span class="s">Waste leaves the body as urine</span></div>
+        <div class="c" id="c2"><span class="rule"></span><span class="t">No water: filtration stops</span><span class="s">Toxins build up · organs fail in about 3–4 days</span></div>
+      </div>
+      <div class="tag">ILLUSTRATION</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#c1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.3);
+      tl.to("#c1", { opacity: 0, y: -10, duration: 0.4 }, 3.4);
+      tl.fromTo("#c2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 3.7);
+      window.__timelines["kidney3d"] = tl;
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+      import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+      import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+      import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+
+      const root = document.getElementById("root");
+      const W = +root.dataset.width, H = +root.dataset.height;
+      const DUR = 8.5, T_DRY = 3.5;
+      const rng = (s => () => { s = (s + 0x6d2b79f5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; })(42);
+      const smooth = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gl"), antialias: true, alpha: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+      renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(32, W / H, 0.1, 100);
+      { // crimson radial backdrop drawn inside the scene (bloom pipeline output is opaque)
+        const c = document.createElement("canvas"); c.width = 1024; c.height = 576;
+        const g = c.getContext("2d"), gr = g.createRadialGradient(560, 250, 20, 512, 288, 620);
+        gr.addColorStop(0, "#4a0d16"); gr.addColorStop(0.45, "#1d060a"); gr.addColorStop(1, "#050102");
+        g.fillStyle = gr; g.fillRect(0, 0, 1024, 576);
+        const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; scene.background = tex;
+      }
+
+      // --- kidney: a sphere sculpted into a bean, with low organic noise
+      const geo = new THREE.SphereGeometry(1, 180, 140);
+      const pos = geo.attributes.position, v = new THREE.Vector3();
+      for (let i = 0; i < pos.count; i++) {
+        v.fromBufferAttribute(pos, i);
+        let x = v.x * 0.64, y = v.y * 1.05, z = v.z * 0.46;
+        const notch = 0.36 * Math.exp(-(y * y) / 0.16) * smooth(-0.1, 0.55, x);  // hilum on the +x side
+        x -= notch;
+        const n = 0.018 * Math.sin(9 * v.x + 3) * Math.sin(11 * v.y) * Math.sin(7 * v.z + 1);
+        const len = Math.hypot(x, y, z) || 1;
+        pos.setXYZ(i, x + n * x / len, y + n * y / len, z + n * z / len);
+      }
+      geo.computeVertexNormals();
+      const healthy = new THREE.Color(0x9a1d26), dry = new THREE.Color(0x4f2410);
+      const kmat = new THREE.MeshPhysicalMaterial({ color: healthy.clone(), roughness: 0.38, clearcoat: 0.7, clearcoatRoughness: 0.3,
+        sheen: 1, sheenColor: new THREE.Color(0xff8a8a), sheenRoughness: 0.45, emissive: new THREE.Color(0x000000) });
+      const kidney = new THREE.Mesh(geo, kmat);
+      const organ = new THREE.Group(); organ.add(kidney); scene.add(organ);
+
+      // --- vessels and ureter
+      const tube = (pts, r, color, emissive = 0x000000, opacity = 1) => {
+        const curve = new THREE.CatmullRomCurve3(pts.map(p => new THREE.Vector3(...p)));
+        const m = new THREE.Mesh(new THREE.TubeGeometry(curve, 200, r, 24), new THREE.MeshPhysicalMaterial({ color, roughness: 0.25, clearcoat: 0.8,
+          emissive, emissiveIntensity: 0.25, transparent: opacity < 1, opacity, depthWrite: opacity >= 1 }));
+        organ.add(m); return curve;
+      };
+      const artery = tube([[3.4, 0.9, 0.3], [2.2, 0.55, 0.25], [1.0, 0.22, 0.12], [0.36, 0.1, 0.0]], 0.11, 0xe0505a, 0x300000, 0.38);
+      tube([[3.4, -0.25, -0.2], [2.2, -0.12, -0.15], [1.0, -0.05, -0.05], [0.36, -0.04, 0.0]], 0.105, 0x3c3f9e);
+      const ureter = tube([[0.34, -0.12, 0.05], [0.7, -0.6, 0.12], [0.85, -1.4, 0.1], [0.9, -2.6, 0.05]], 0.07, 0xf0d9a0, 0x221500, 0.45);
+
+      // --- blood cells streaming in (biconcave discs)
+      const prof = []; for (let i = 0; i <= 12; i++) { const r = i / 12; prof.push(new THREE.Vector2(r, 0.32 * Math.sqrt(Math.max(0, 1 - r * r)) * (0.35 + r * r))); }
+      const rbcGeo = new THREE.LatheGeometry(prof, 32); rbcGeo.scale(0.06, 0.06, 0.06);
+      const N = 220;
+      const rbc = new THREE.InstancedMesh(rbcGeo, new THREE.MeshPhysicalMaterial({ color: 0xd3202c, roughness: 0.3, clearcoat: 0.5, emissive: 0x3a0000 }), N);
+      const seeds = Array.from({ length: N }, () => ({ ph: rng(), ox: (rng() - 0.5) * 0.13, oy: (rng() - 0.5) * 0.13, rx: rng() * 6, ry: rng() * 6 }));
+      organ.add(rbc);
+      // flow distance s(t): full speed, then slowing to 15% after T_DRY (integrated numerically, deterministic)
+      const speed = t => 0.24 * (1 - 0.85 * smooth(T_DRY, T_DRY + 3, t));
+      const dist = []; { let s = 0; for (let k = 0; k <= DUR * 120; k++) { dist.push(s); s += speed(k / 120) / 120; } }
+      const distAt = t => dist[Math.min(dist.length - 1, Math.max(0, Math.round(t * 120)))];
+
+      // --- clean filtrate drops down the ureter (healthy phase only)
+      const F = 26;
+      const fil = new THREE.InstancedMesh(new THREE.SphereGeometry(0.03, 12, 10), new THREE.MeshStandardMaterial({ color: 0x9fe6ff, emissive: 0x3fbfff, emissiveIntensity: 1.2 }), F);
+      organ.add(fil);
+      const fseeds = Array.from({ length: F }, () => rng());
+
+      // --- urea crystals accumulating on the cortex
+      const C = 220;
+      const crys = new THREE.InstancedMesh(new THREE.OctahedronGeometry(0.035, 0), new THREE.MeshStandardMaterial({ color: 0xffb347, emissive: 0xff8a00, emissiveIntensity: 1.0, roughness: 0.3 }), C);
+      organ.add(crys);
+      const cseeds = [];
+      for (let i = 0; i < C; i++) {
+        const idx = Math.floor(rng() * pos.count);
+        const p = new THREE.Vector3().fromBufferAttribute(pos, idx);
+        const nrm = new THREE.Vector3().fromBufferAttribute(geo.attributes.normal, idx);
+        cseeds.push({ p: p.addScaledVector(nrm, 0.015), t0: T_DRY + 0.6 + rng() * 3.8, s: 0.6 + rng() * 0.9, r: rng() * 6 });
+      }
+
+      scene.add(new THREE.HemisphereLight(0xffd6d6, 0x2a0508, 1.3));
+      const key = new THREE.DirectionalLight(0xfff1e0, 2.6); key.position.set(3, 4, 5); scene.add(key);
+      const rim = new THREE.DirectionalLight(0x8fb4ff, 1.8); rim.position.set(-4, 2, -4); scene.add(rim);
+      const warn = new THREE.PointLight(0xff3020, 0, 8); warn.position.set(-1.5, 0.5, 2.5); scene.add(warn);
+
+      const composer = new EffectComposer(renderer);
+      composer.setSize(W, H);
+      composer.addPass(new RenderPass(scene, camera));
+      composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.45, 0.5, 0.78));
+      composer.addPass(new OutputPass());
+
+      const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), sc = new THREE.Vector3(), tmp = new THREE.Vector3();
+      function renderAt(t) {
+        const dryK = smooth(T_DRY, T_DRY + 3.5, t);
+        kmat.color.copy(healthy).lerp(dry, dryK);
+        kmat.emissive.setRGB(0.12 * dryK * (0.6 + 0.4 * Math.sin(t * 5)), 0.06 * dryK, 0);
+        warn.intensity = 6 * dryK * (0.7 + 0.3 * Math.sin(t * 5));
+        const ang = -0.45 + 0.5 * (t / DUR);
+        camera.position.set(Math.sin(ang) * 5.6 + 0.6, 0.35 - 0.1 * t / DUR, Math.cos(ang) * 5.6 - 0.25 * t / DUR);
+        camera.lookAt(0.55, -0.05, 0);
+        organ.rotation.y = 0.15 * Math.sin(t * 0.4);
+        const s = distAt(t);
+        for (let i = 0; i < N; i++) {
+          const sd = seeds[i], p = ((sd.ph + s) % 1 + 1) % 1;
+          artery.getPointAt(p, tmp);
+          tmp.x += sd.ox * 0.6; tmp.y += sd.oy * 0.6; tmp.z += (sd.ox - sd.oy) * 0.4;
+          e.set(sd.rx + t * 1.5, sd.ry + t, 0); q.setFromEuler(e);
+          const fade = smooth(0.0, 0.08, p) * (1 - smooth(0.9, 1.0, p));
+          sc.setScalar(fade);
+          m4.compose(tmp, q, sc); rbc.setMatrixAt(i, m4);
+        }
+        rbc.instanceMatrix.needsUpdate = true;
+        const flowOn = 1 - smooth(T_DRY - 0.3, T_DRY + 1.2, t);
+        for (let i = 0; i < F; i++) {
+          const p = (fseeds[i] + t * 0.3) % 1;
+          ureter.getPointAt(p, tmp);
+          sc.setScalar(flowOn * smooth(0, 0.1, p) * (1 - smooth(0.85, 1, p)));
+          m4.compose(tmp, q.identity(), sc); fil.setMatrixAt(i, m4);
+        }
+        fil.instanceMatrix.needsUpdate = true;
+        for (let i = 0; i < C; i++) {
+          const c = cseeds[i], g = smooth(c.t0, c.t0 + 0.5, t) * c.s;
+          e.set(c.r, c.r * 2 + t * 0.3, 0); q.setFromEuler(e);
+          sc.setScalar(g); m4.compose(c.p, q, sc); crys.setMatrixAt(i, m4);
+        }
+        crys.instanceMatrix.needsUpdate = true;
+        composer.render();
+      }
+      window.addEventListener("hf-seek", ev => renderAt(ev.detail.time));
+      renderAt(window.__hfThreeTime || 0);
+    </script>
+  </body>
+</html>

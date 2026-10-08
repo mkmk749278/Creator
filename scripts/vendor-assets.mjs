@@ -1,7 +1,7 @@
 // Copy pinned runtime assets (GSAP, Inter, Noto Sans Telugu) from node_modules into each
 // HyperFrames project's vendor/ dir, so compositions never fetch from the
 // network at render time. Runs on `npm install` (postinstall).
-import { copyFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
+import { copyFileSync, cpSync, existsSync, mkdirSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -30,6 +30,13 @@ for (const project of projects) {
     copyFileSync(join(root, "node_modules/@fontsource/inter/files", f), join(out, "fonts", f));
     const te = `noto-sans-telugu-telugu-${w}-normal.woff2`;
     copyFileSync(join(root, "node_modules/@fontsource/noto-sans-telugu/files", te), join(out, "fonts", te));
+  }
+  // Three.js (pinned in package.json) only for compositions that import it from vendor/three/.
+  if (readFileSync(join(project, "index.html"), "utf8").includes("vendor/three/")) {
+    const t = join(root, "node_modules/three");
+    mkdirSync(join(out, "three", "jsm"), { recursive: true });
+    for (const f of ["three.module.js", "three.core.js"]) copyFileSync(join(t, "build", f), join(out, "three", f));
+    for (const d of ["postprocessing", "shaders", "environments"]) cpSync(join(t, "examples/jsm", d), join(out, "three", "jsm", d), { recursive: true });
   }
 }
 console.log(`vendored gsap + Inter into ${projects.length} project(s)`);

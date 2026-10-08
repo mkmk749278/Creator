@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Dehydration curve vs reported flat vitals</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      .chart { position: absolute; left: 150px; top: 170px; width: 1620px; height: 760px; }
+      .ttl { position: absolute; left: 150px; top: 70px; font-size: 44px; font-weight: 800; }
+      .ttl small { display: block; font-size: 26px; font-weight: 600; color: var(--ink-dim); margin-top: 6px; letter-spacing: 0.04em; }
+      .lab { position: absolute; font-size: 30px; font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="dehydration-chart" data-start="0" data-width="1920" data-height="1080" data-duration="10">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-a"></div><div class="glow-b"></div><div class="grid"></div></div>
+      <div class="particles" id="dust"></div>
+      <div class="ttl">Without water, the body shuts down in days<small>Typical course vs. what the hospital reported (illustrative curve)</small></div>
+      <svg class="chart" viewBox="0 0 1620 760">
+        <defs><linearGradient id="dz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a64" stop-opacity="0.05"/><stop offset="1" stop-color="#ff5a64" stop-opacity="0.35"/></linearGradient>
+          <filter id="gl"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <rect id="zone" x="100" y="430" width="1460" height="260" fill="url(#dz)"/>
+        <text id="zoneT" x="1540" y="676" text-anchor="end" fill="#ff8a92" font-size="30" font-weight="800" font-family="Inter">ORGAN FAILURE ZONE</text>
+        <line x1="100" y1="690" x2="1560" y2="690" stroke="rgba(159,176,214,0.5)" stroke-width="3"/>
+        <line x1="100" y1="40" x2="100" y2="690" stroke="rgba(159,176,214,0.5)" stroke-width="3"/>
+        <g id="ticks" fill="#9fb0d6" font-size="26" font-weight="600" font-family="Inter"></g>
+        <text x="830" y="752" text-anchor="middle" fill="#9fb0d6" font-size="28" font-weight="800" font-family="Inter" letter-spacing="3">DAYS WITHOUT WATER</text>
+        <path id="typ" d="M100 110 C 200 125, 240 170, 300 260 C 345 330, 360 420, 390 560 L 405 640" fill="none" stroke="#ff5a64" stroke-width="8" stroke-linecap="round" filter="url(#gl)"/>
+        <g id="xmark" transform="translate(405 640)"><circle r="26" fill="#ff5a64"/><path d="M-11 -11 L11 11 M11 -11 L-11 11" stroke="#1a0004" stroke-width="6" stroke-linecap="round"/></g>
+        <path id="jani" d="M100 110 L1560 112" fill="none" stroke="#ffd34d" stroke-width="8" stroke-linecap="round" filter="url(#gl)"/>
+      </svg>
+      <div class="lab" id="lt" style="left:610px; top:610px; color:#ff8a92">Typical person: ~3–4 days</div>
+      <div class="lab" id="lj" style="left:1110px; top:220px; color:#ffd34d">Jani, as reported: stable for 15 days</div>
+      <div class="tag" style="top:auto; bottom:40px; left:auto; right:64px">ILLUSTRATIVE CURVE · NOT PATIENT DATA</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const ticks = document.getElementById("ticks");
+      for (let d = 0; d <= 15; d++) { const t = document.createElementNS("http://www.w3.org/2000/svg", "text"); t.setAttribute("x", 100 + d * (1460 / 15)); t.setAttribute("y", 724); t.setAttribute("text-anchor", "middle"); t.textContent = d; ticks.appendChild(t); }
+      FX.drift(tl, "#bg", 10);
+      FX.dust(tl, document.getElementById("dust"), { seed: 5, count: 40, dur: 10 });
+      const draw = (sel, at, dur) => { const p = document.querySelector(sel); const L = p.getTotalLength(); p.style.strokeDasharray = L; tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: 0, duration: dur, ease: "power1.inOut" }, at); };
+      tl.fromTo("#zone", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.2);
+      tl.fromTo("#zoneT", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.4);
+      draw("#typ", 0.5, 2.6);
+      tl.fromTo("#xmark", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.4, ease: "back.out(3)" }, 3.05);
+      tl.fromTo("#lt", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5 }, 3.2);
+      draw("#jani", 4.2, 4.2);
+      tl.fromTo("#lj", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, 6.8);
+      window.__timelines["dehydration-chart"] = tl;
+    </script>
+  </body>
+</html>

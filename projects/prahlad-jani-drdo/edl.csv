@@ -1,0 +1,104 @@
+id,block,type,vo_at,dur,vo_skip,vo_in,vo_out,src_in,src_out,asset,fallback,motion,overlay,text,text_pos,sfx,subtitle,optional,fx,note
+S001,B1,SHOT,,3.29,,0.0,3.29,,,dried_leaf.mp4,,pan_lr,grain+vignette,DAY 1 → 3 → 4,timer,sfx_clock.wav@0.0,,,fin,Hook
+S002,B1,SHOT,,3.29,,3.29,6.58,,,cracked_earth.jpg,,zoom_out,grain+vignette,,,,,,,
+S003,B1,SHOT,,8.41,,6.58,14.99,,,hf_kidney3d.mp4,,none,hf,,,sfx_bass_hit.wav@8.2,,,,3D: kidneys fail without water
+S004,B1,SHOT,,3.0,,14.99,17.99,,,iv_room.mp4,,zoom_in,grain+vignette+illus+lift,,,sfx_flatline.wav@2.9,,,,Flatline lands on 'కానీ'
+S005,B1,SHOT,,2.97,,17.99,20.95,3.0,,itn_jani_close.mp4,,pan_lr,grain+vignette,PRAHLAD JANI · 1929–2020,lower,sfx_whoosh.wav@0.0,,,,Face + name by 0:18
+S006,B1,SHOT,,2.97,,20.95,23.92,,,jani_portrait_red.jpg,,zoom_out,grain+vignette,PHOTO: VIA RATIONALIST INTERNATIONAL,tag,,,,,
+S007,B1,SHOT,,3.35,,23.92,27.27,,,headline_wikipedia.jpg,,pan_rl,grain+vignette,WIKIPEDIA,tag,sfx_whoosh.wav@0.0,,,,
+S008,B1,SHOT,,3.35,,27.27,30.62,,,abstinence_1669.jpg,,zoom_in,grain+vignette,LONDON 1669 · WELLCOME COLLECTION,tag,,,,,
+S009,B1,SHOT,,3.35,,30.62,33.97,,,headline_edamaruku.jpg,,pan_lr,grain+vignette,IMPOSSIBLE CLAIM,lower,,,,,
+S010,B1,SHOT,,3.94,,33.97,37.91,0.15,,hf_logo_sting.mp4,,none,hf+nologo,,,,,,,Channel logo sting
+S011,B1,SHOT,,3.43,,37.91,41.34,2,,india_drive.mp4,,pan_rl,grain+vignette,,,,,,,
+S012,B1,SHOT,,3.43,,41.34,44.78,,,aj_press_wide.mp4,,zoom_in,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S013,B1,SHOT,,3.43,,44.78,48.21,,,aj_ilavazhagan.mp4,,pan_lr,grain+vignette,DRDO,lower,sfx_bass_hit.wav@1.73,,,,
+S014,B1,SHOT,,3.43,,48.21,51.65,4,,doctor_scrub.mp4,,zoom_out,grain+vignette+illus+lift,,,,,,,
+S015,B1,SHOT,,3.43,,51.65,55.08,,,lab_hood.mp4,,pan_rl,grain+vignette+illus,40 DOCTORS,lower,,,,,
+S016,B1,SHOT,,3.19,,55.08,58.27,,,sterling_hospital_ext.jpg,,zoom_in,grain+vignette,AHMEDABAD · 2010,lower,,,,,
+S017,B1,SHOT,,3.19,,58.27,61.45,,,aj_room.mp4,,pan_lr,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S018,PAUSE,VO_PAUSE,61.45,2.5,0,,,,,aj_room_wide.mp4,,zoom_in,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,sfx_door_latch.wav@0.3;sfx_heartbeat_monitor.wav@0,,,,VO pause: door + monitor
+S019,B1,SHOT,,3.37,,61.45,64.82,,,aj_cctv.mp4,,pan_rl,grain+vignette,CCTV 24/7,lower,,,,,Real 2010 CCTV only
+S020,B1,SHOT,,3.37,,64.82,68.19,,,itn_cctv.mp4,,zoom_in,grain+vignette,ITN · 2010,tag,,,,,
+S021,B1,SHOT,,3.37,,68.19,71.56,,,aj_cctv2.mp4,,pan_lr,grain+vignette,15 DAYS,timer,,,,,
+S022,B1,SHOT,,3.37,,71.56,74.93,,,aj_room_wide.mp4,,zoom_out,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S023,B1,SHOT,,3.27,,74.93,78.2,,,itn_hospital_bed.mp4,,pan_rl,grain+vignette,ITN · 2010,tag,,,,,
+S024,B1,SHOT,,3.27,,78.2,81.48,,,aj_press_wide.mp4,,zoom_in,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S025,B1,SHOT,,3.27,,81.48,84.75,,,aj_jani_close.mp4,,pan_lr,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,sfx_bass_hit.wav@2.15,,,,
+S026,B1,SHOT,,3.27,,84.75,88.03,6,,aj_cctv2.mp4,,zoom_out,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S027,B1,SHOT,,3.27,,88.03,91.3,10,,lab_cellplate.mp4,,pan_rl,grain+vignette+illus,,,,,,,
+S028,B1,SHOT,,2.95,,91.3,94.25,1.0,,itn_jani_close2.mp4,,zoom_in,grain+vignette,ITN · 2010,tag,,,,,Name said in VO
+S029,B1,SHOT,,2.95,,94.25,97.21,1,,aj_jani_close.mp4,,pan_lr,grain+vignette,PRAHLAD JANI,lower,sfx_bass_hit.wav@0.95,,,fout,
+S030,B2,SHOT,,2.98,,97.21,100.19,,,itn_devotees.mp4,,zoom_out,grain+vignette,CHUNRIWALA MATAJI,lower,,,,fin,
+S031,B2,SHOT,,2.98,,100.19,103.17,,,ambaji_gabbar.jpg,,pan_rl,grain+vignette,"GABBAR HILL, AMBAJI",tag,,,,,
+S032,B2,SHOT,,2.98,,103.17,106.14,,,yogi_gouache.jpg,,zoom_in,grain+vignette,GOUACHE · WELLCOME COLLECTION,tag,,,,,
+S033,B2,SHOT,,2.98,,106.14,109.12,,,jani_portrait_red.jpg,,pan_lr,grain+vignette,70+ YEARS,lower,,,,,
+S034,B2,SHOT,,2.98,,109.12,112.1,,,jani_ashram_ambaji.jpg,,zoom_out,grain+vignette,"AMBAJI, GUJARAT",tag,,,,,
+S035,LIVE,LIVE,112.1,15.3,0,,,12.4,27.7,itn_full.mp4,,none,grain+vignette,NEWS REPORT · ITN · 2010,lower,,"ప్రహ్లాద్ జానీని కలవండి. ఆయన్ని మాతాజీ అని కూడా పిలుస్తారు, అంటే మాతృ దేవత. | ఆయన వయసు 82. | గత 70 ఏళ్లుగా తాను ఏమీ తినలేదు, తాగలేదు అని ఆయన చెప్తారు. | అది నిజమైతే, ఆయన జీవశాస్త్రాన్నే ధిక్కరిస్తున్నారు.",no,,Original clip with its own audio
+S036,B2,SHOT,,3.35,,112.1,115.44,3,,aj_ilavazhagan.mp4,,zoom_in,grain+vignette,DIPAS · DRDO,lower,,,,,
+S037,B2,SHOT,,3.35,,115.44,118.79,,,lab_scientist.mp4,,pan_lr,grain+vignette+illus,,,,,,,
+S038,B2,SHOT,,3.35,,118.79,122.13,,,sterling_hospital_ext.jpg,,zoom_out,grain+vignette,,,,,,,
+S039,B2,SHOT,,3.35,,122.13,125.48,,,aj_shah.mp4,,pan_rl,grain+vignette,DR. SUDHIR SHAH,lower,,,,,
+S040,B2,SHOT,,2.67,,125.48,128.15,,,lab_pipette.mp4,,zoom_in,grain+vignette+illus,,,,,,,
+S041,B2,SHOT,,2.67,,128.15,130.82,,,lab_tubes.mp4,,pan_lr,grain+vignette+illus,,,,,,,
+S042,B2,SHOT,,3.42,,130.82,134.24,,,siachen_soldiers.jpg,,zoom_out,grain+vignette,,,sfx_whoosh.wav@0.0,,,,Soldiers / extremes / space
+S043,B2,SHOT,,3.42,,134.24,137.66,,,desert_soldiers.mp4,,pan_rl,grain+vignette,,,,,,,
+S044,B2,SHOT,,3.42,,137.66,141.08,,,indian_army.jpg,,zoom_in,grain+vignette,,,,,,,
+S045,B2,SHOT,,3.42,,141.08,144.5,,,astronaut_iss.mp4,,pan_lr,grain+vignette+lift,NASA,tag,,,,,
+S046,LIVE,LIVE,144.5,14.0,0,,,88.7,102.7,aj_full.mp4,,none,grain+vignette,G. ILAVAZHAGAN · DIPAS · 2010,lower,,"మనుషులు ఆహారం, నీరు లేకుండా ఎలా బ్రతుకుతున్నారో అర్థం చేసుకుంటే, | ఎక్కువ కాలం ఆహారం, నీరు లేకుండా జీవించేలా వ్యూహాలు రూపొందించడానికి అది మాకు సహాయపడొచ్చు.",no,,Original clip with its own audio
+S047,B2,SHOT,,3.92,,144.5,148.42,1.0,,hf_timeline_a.mp4,,none,hf,,,sfx_bass_hit.wav@0.0,,,,Study timeline
+S048,B2,SHOT,,3.5,,148.42,151.92,14,,water_tap_close.mp4,,zoom_in,grain+vignette,ZERO WATER,lower,,,,,Rule 1
+S049,B2,SHOT,,3.5,,151.92,155.42,,,water_drop_macro.mp4,,pan_lr,grain+vignette,,,,,,,
+S050,B2,SHOT,,3.15,,155.42,158.57,1,,aj_cctv.mp4,,zoom_out,grain+vignette,2 CAMERAS · 24/7,lower,,,,,Rule 2: real CCTV
+S051,B2,SHOT,,3.15,,158.57,161.72,3,,itn_cctv.mp4,,pan_rl,grain+vignette,ITN · 2010,tag,,,,,
+S052,B2,SHOT,,4.06,,161.72,165.78,,,aj_room_wide.mp4,,zoom_in,grain+vignette,OBSERVER IN ROOM,lower,,,,,Rule 3
+S053,B2,SHOT,,4.06,,165.78,169.84,8,,doctor_scrub.mp4,,pan_lr,grain+vignette+illus+lift,,,,,,,
+S054,B2,SHOT,,3.11,,169.84,172.95,6,,lab_tubes.mp4,,zoom_out,grain+vignette+illus,,,,,,,Rule 4
+S055,B2,SHOT,,3.11,,172.95,176.07,8,,lab_pipette.mp4,,pan_rl,grain+vignette+illus,,,,,,,
+S056,B2,SHOT,,3.11,,176.07,179.18,4,,water_drop_macro.mp4,,zoom_in,grain+vignette,MEASURED TO THE ML,lower,,,,,
+S057,B2,SHOT,,3.11,,179.18,182.3,18,,water_tap_close.mp4,,pan_lr,grain+vignette,,,,,,,
+S058,B2,SHOT,,3.11,,182.3,185.41,,,lab_cellplate.mp4,,zoom_out,grain+vignette+illus,,,,,,,
+S059,B2,SHOT,,5.09,,185.41,190.5,,,hf_timeline_b.mp4,,none,hf,,,,,,,Day tracker: days 1–5
+S060,B2,SHOT,,9.37,,190.5,199.87,0.3,,hf_dehydration_chart.mp4,,none,hf,,,sfx_clock.wav@0.0,,,,Expected collapse vs reported flat line
+S061,B2,SHOT,,3.34,,199.87,203.21,4,,aj_jani_close.mp4,,pan_lr,grain+vignette,NO FATIGUE · NO WEAKNESS,lower,,,,,"Vitals: normal ranges, illustrative"
+S062,B2,SHOT,,9.5,,203.21,212.71,,,hf_vitals.mp4,,none,hf,,,,,,,
+S063,B2,SHOT,,5.0,,212.71,217.71,6.0,,hf_timeline_b.mp4,,none,hf,,,,,,,
+S064,B2,SHOT,,2.99,,217.71,220.7,2,,itn_jani_close2.mp4,,zoom_in,grain+vignette,ITN · 2010,tag,sfx_bass_hit.wav@2.9,,,,
+S065,B2,SHOT,,3.0,,220.7,223.7,2,,aj_cctv2.mp4,,pan_lr,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S066,PAUSE,VO_PAUSE,223.7,3.0,0,,,,,ultrasound_screen.jpg,,zoom_in,grain+vignette,NASA,tag,sfx_heartbeat_monitor.wav@0,,,,VO pause after 'biggest shock'
+S067,B3,SHOT,,2.75,,223.7,226.45,,,bladder_anatomy.jpg,,pan_rl,grain+vignette,THE BLADDER MYSTERY,lower,sfx_bass_hit.wav@0.0,,,fin,
+S068,B3,SHOT,,4.04,,226.45,230.49,,,kidney_anatomy.jpg,,zoom_in,grain+vignette,15 DAYS · NO URINE,lower,,,,,
+S069,B3,SHOT,,4.04,,230.49,234.53,3,,itn_hospital_bed.mp4,,pan_lr,grain+vignette,ITN · 2010,tag,,,,,
+S070,B3,SHOT,,4.04,,234.53,238.56,4,,aj_room.mp4,,zoom_out,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S071,B3,SHOT,,4.04,,238.56,242.6,,,ultrasound_screen.jpg,,pan_rl,grain+vignette,NASA,tag,,,,,
+S072,B3,SHOT,,4.04,,242.6,246.64,,,ultrasound_scan2.jpg,,zoom_in,grain+vignette,NASA,tag,,,,,
+S073,B3,SHOT,,12.0,,246.64,258.64,,,hf_bladder3d.mp4,,none,hf,,,sfx_bass_hit.wav@9.0,,,,3D: the bladder hypothesis
+S074,B3,SHOT,,3.19,,258.64,261.83,,,sonogram_scan.jpg,,zoom_out,grain+vignette,ILLUSTRATIVE SCAN,tag,,,,,
+S075,B3,SHOT,,3.19,,261.83,265.01,10,,lab_microscope.mp4,,pan_rl,grain+vignette+illus,,,,,,,
+S076,B3,SHOT,,3.19,,265.01,268.2,,,blood_sample.mp4,,zoom_in,grain+vignette+illus,,,,,,,
+S077,B3,SHOT,,3.65,,268.2,271.85,,,headline_wikipedia.jpg,,pan_lr,grain+vignette,WIKIPEDIA,tag,,,,,
+S078,B3,SHOT,,3.65,,271.85,275.5,2,,aj_press_wide.mp4,,zoom_out,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S079,B3,SHOT,,3.5,,275.5,279.0,12.5,,hf_timeline_b.mp4,,none,hf,,,,,,,Day 15
+S080,B3,SHOT,,3.87,,279.0,282.87,,,scale_weight.jpg,,zoom_in,grain+vignette,,,,,,,
+S081,B3,SHOT,,4.0,,282.87,286.87,3,,hf_vitals.mp4,,none,hf,,,,,,,
+S082,B3,SHOT,,3.87,,286.87,290.74,6,,itn_hospital_bed.mp4,,zoom_out,grain+vignette,ITN · 2010,tag,,,,fout,
+S083,B4,SHOT,,3.66,,290.74,294.39,,,aj_press_wide.mp4,,pan_rl,grain+vignette,PRESS MEET · MAY 2010,lower,,,,fin,
+S084,B4,SHOT,,3.66,,294.39,298.05,4,,aj_shah.mp4,,zoom_in,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S085,LIVE,LIVE,298.05,27.0,0,,,27.7,54.7,aj_full.mp4,,none,grain+vignette,DR. SUDHIR SHAH · STERLING HOSPITAL · 2010,lower,,"మనమంతా సైన్స్‌లో, బయాలజీలో ఒక అద్భుతాన్ని చూస్తున్నాం. | మాతాజీ ఈ హాస్పిటల్‌లో చేరి ఇప్పటికే 108 గంటలైంది. | ఆయన ఏమీ తినలేదు, ఒక్క చుక్క ద్రవం కూడా తాగలేదు. | అంతకంటే ముఖ్యంగా, ఒక్క చుక్క మూత్రం గానీ, మలం గానీ విసర్జించలేదు.",no,,Original clip with its own audio
+S086,B4,SHOT,,8.0,,298.05,306.05,,,hf_metabolism.mp4,,none,hf,,,sfx_bass_hit.wav@0.15,,,,Hypothesis: hypometabolism
+S087,B4,SHOT,,2.05,,306.05,308.1,,,incense.mp4,,pan_rl,grain+vignette,,,,,,,
+S088,B4,SHOT,,12.0,,308.1,320.1,,,hf_autophagy3d.mp4,,none,hf,,,,,,,3D: autophagy
+S089,B4,SHOT,,2.79,,320.1,322.89,18,,lab_microscope.mp4,,pan_lr,grain+vignette+illus,,,,,,,
+S090,B4,SHOT,,3.18,,322.89,326.07,,,yogi_gouache.jpg,,zoom_out,grain+vignette,GOUACHE · WELLCOME COLLECTION,tag,,,,,
+S091,B4,SHOT,,3.18,,326.07,329.25,5,,incense.mp4,,pan_rl,grain+vignette,,,,,,,
+S092,B4,SHOT,,3.18,,329.25,332.42,,,ambaji_gabbar.jpg,,zoom_in,grain+vignette,"GABBAR HILL, AMBAJI",tag,,,,,
+S093,B4,SHOT,,3.18,,332.42,335.6,,,himalaya_leh.jpg,,pan_lr,grain+vignette,,,,,,,
+S094,LIVE,LIVE,335.6,16.3,0,,,7.0,23.3,skeptic_view.mp4,,none,grain+vignette,JAMES RANDI · SKEPTIC · MAY 2010,lower,,"కొన్ని నిజాలు ఎలాంటి సందేహం లేకుండా నిరూపితమయ్యాయి. | మనతో సహా ప్రతి జీవికి బ్రతకడానికి క్రమం తప్పకుండా ఆహారం, నీరు అవసరం. | దీనికి మినహాయింపులు లేవు. ఒక్కటి కూడా లేదు.",no,,Original clip with its own audio
+S095,B4,SHOT,,2.77,,335.6,338.37,,,earth_window.mp4,,pan_rl,grain+vignette,NASA,tag,,,,,
+S096,B4,SHOT,,2.77,,338.37,341.14,1,,itn_jani_close2.mp4,,zoom_in,grain+vignette,ITN · 2010,tag,,,,,
+S097,B4,SHOT,,2.77,,341.14,343.91,5,,itn_jani_close.mp4,,pan_lr,grain+vignette,ITN · 2010,tag,,,,,
+S098,B4,SHOT,,2.77,,343.91,346.68,,,himalaya_leh.jpg,,zoom_out,grain+vignette,,,,,,fout,
+S099,B5,SHOT,,3.07,,346.68,349.75,4,,itn_devotees.mp4,,pan_rl,grain+vignette,ITN · 2010,tag,,,,fin,Your opinion?
+S100,B5,SHOT,,3.07,,349.75,352.82,,,jani_ashram_ambaji.jpg,,zoom_in,grain+vignette,"AMBAJI, GUJARAT",tag,,,,,
+S101,B5,SHOT,,3.07,,352.82,355.9,8,,aj_jani_close.mp4,,pan_lr,grain+vignette,AL JAZEERA ENGLISH · 2010,tag,,,,,
+S102,B5,SHOT,,3.07,,355.9,358.97,,,earth_sunrise.mp4,,zoom_out,grain+vignette,NASA,tag,,,,,
+S103,B5,SHOT,,9.59,,358.97,368.56,0.2,,hf_end_card.mp4,,none,hf+nologo,,,,,,fout,End card: logo + subscribe; YouTube end screen sits here

@@ -35,3 +35,7 @@ video/doc/p*/shared/
 video/doc/p*/voice.wav
 runs/breath-hold/doc/parts/
 assets/raw/
+# documentary projects: downloaded media stays local
+projects/*/assets/
+projects/*/out/
+video/prahlad_4k/
