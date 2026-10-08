@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Shivering vs non-shivering thermogenesis</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <script src="shared/body.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      canvas { position: absolute; left: 0; top: 0; width: 960px; height: 1080px; }
+      #cR { left: 960px; }
+      .head { position: absolute; top: 120px; width: 960px; text-align: center; font-size: 40px; font-weight: 800; letter-spacing: 0.06em; text-shadow: 0 3px 12px rgba(0,0,0,0.7); }
+      .head small { display: block; font-size: 24px; font-weight: 600; letter-spacing: 0.1em; color: var(--ink-dim); margin-top: 8px; }
+      .divider { position: absolute; left: 958px; top: 60px; bottom: 200px; width: 3px; background: linear-gradient(180deg, rgba(157,179,199,0), rgba(157,179,199,0.45), rgba(157,179,199,0)); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="nst" data-start="0" data-width="1920" data-height="1080" data-duration="8.6">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-c"></div><div class="glow-h" id="gh"></div><div class="grid"></div></div>
+      <div class="particles" id="snow"></div>
+      <canvas id="cL" width="960" height="1080"></canvas>
+      <canvas id="cR" width="960" height="1080"></canvas>
+      <div class="divider"></div>
+      <div class="head" id="hL" style="left:0; color:#8fdcff">SHIVERING<small>MUSCLES SHAKE TO MAKE HEAT</small></div>
+      <div class="head" id="hR" style="left:960px; color:#ffb347">NON-SHIVERING<small>BROWN FAT MAKES HEAT, BODY STAYS STILL</small></div>
+      <div class="scrim"></div>
+      <div class="lt" id="l1"><span class="rule"></span>NON-SHIVERING THERMOGENESIS<span class="sub">HEAT WITHOUT SHIVERING</span></div>
+      <div class="tag">ILLUSTRATION</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const D = 8.6, { ss } = FX, r = FX.rng(5);
+      FX.drift(tl, "#bg", D);
+      FX.dust(tl, document.getElementById("snow"), { seed: 8, count: 70, dur: D, dir: 1, travel: 220, spread: 200 });
+      const L = BODY.make(document.getElementById("cL"), { pose: "stand", x: 480, y: 900, scale: 1.0 });
+      const R = BODY.make(document.getElementById("cR"), { pose: "stand", x: 480, y: 900, scale: 1.0 });
+      const jit = Array.from({ length: 400 }, () => [(r() - 0.5) * 2, (r() - 0.5) * 2]);   // seeded shiver offsets per frame
+      const cL = document.getElementById("cL");
+      FX.clock(tl, D, t => {
+        const f = Math.round(t * 30), on = ss(t, 0.3, 1.0), right = ss(t, 1.0, 3.0), focus = ss(t, 3.5, 4.3);
+        const j = jit[f % 400];
+        cL.style.transform = `translate(${(j[0] * 7 * on).toFixed(1)}px, ${(j[1] * 3 * on).toFixed(1)}px)`;
+        const m = 0.36 + 0.14 * on;   // shivering: limbs and torso muscles warm a little, hands stay cold
+        L.draw({ default: 0.36, torso: m, armL: m, armR: m, legL: m, legR: m, shoulders: m, handL: 0.28, handR: 0.28, footL: 0.26, footR: 0.26, head: 0.42 }, [], f);
+        R.draw({ default: 0.36, torso: 0.4 + 0.12 * right, head: 0.44, neck: 0.4 + 0.15 * right, shoulders: 0.38 + 0.12 * right, handL: 0.3, handR: 0.3, footL: 0.28, footR: 0.28 },
+          [[-70, -468, 62], [70, -468, 62], [-120, -440, 52], [120, -440, 52], [0, -380, 58], [0, -300, 52], [-55, -230, 45], [55, -230, 45]]
+            .map(([x, y, rr]) => ({ x, y, r: rr * (1 + 0.25 * right), t: 0.62 + 0.34 * right, a: right })), f + 7);
+        cL.style.opacity = (1 - 0.55 * focus).toFixed(2);
+        document.getElementById("hL").style.opacity = (1 - 0.55 * focus).toFixed(2);
+      });
+      tl.fromTo(["#hL", "#hR"], { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.25 }, 0.2);
+      tl.fromTo("#cR", { scale: 1, transformOrigin: "50% 60%" }, { scale: 1.1, duration: 4.5, ease: "sine.inOut" }, 3.8);
+      tl.fromTo("#gh", { opacity: 0.3 }, { opacity: 1, duration: 3, ease: "sine.inOut" }, 2);
+      tl.fromTo("#l1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 0.5);
+      window.__timelines["nst"] = tl;
+    </script>
+  </body>
+</html>

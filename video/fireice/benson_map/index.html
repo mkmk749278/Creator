@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Benson's expedition: Boston to the Himalaya</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <script src="map.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #cam { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+      svg.stage { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: visible; }
+      .pin { position: absolute; text-align: center; font-weight: 800; font-size: 22px; letter-spacing: 0.06em; white-space: nowrap; text-shadow: 0 2px 10px rgba(0,0,0,0.9); }
+      .pin small { display: block; font-size: 14px; font-weight: 600; color: var(--ink-dim); letter-spacing: 0.1em; }
+      .year { position: absolute; right: 90px; top: 100px; font-size: 120px; font-weight: 800; color: var(--flame); text-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="benson-map" data-start="0" data-width="1920" data-height="1080" data-duration="5.6">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-c"></div><div class="glow-h"></div><div class="grid"></div></div>
+      <div id="cam">
+        <svg class="stage" id="svg" viewBox="0 0 1920 1080">
+          <path id="land" fill="#14303f" stroke="rgba(157,179,199,0.35)" stroke-width="1"/>
+          <radialGradient id="destGlow"><stop offset="0" stop-color="#ff7a2f" stop-opacity="0.5"/><stop offset="1" stop-color="#ff7a2f" stop-opacity="0"/></radialGradient>
+          <circle id="glowB" r="160" fill="url(#destGlow)"/>
+          <path id="arcG" fill="none" stroke="#ff7a2f" stroke-width="10" stroke-opacity="0.35" stroke-linecap="round"/>
+          <path id="arc" d="M116.2 447.4 L127.5 433.9 L139.2 420.5 L151.2 407.2 L163.4 394.0 L176.0 381.0 L188.9 368.1 L202.2 355.3 L215.8 342.8 L229.8 330.4 L244.2 318.2 L259.0 306.2 L274.2 294.5 L289.8 282.9 L305.9 271.6 L322.5 260.6 L339.6 249.9 L357.3 239.4 L375.5 229.3 L394.4 219.4 L413.9 210.0 L434.0 200.9 L454.9 192.2 L476.4 183.9 L498.8 176.1 L521.9 168.8 L545.8 162.0 L570.6 155.7 L596.1 150.0 L622.4 145.0 L649.4 140.6 L677.0 136.8 L705.2 133.8 L733.9 131.5 L763.0 130.0 L792.3 129.2 L821.6 129.3 L850.9 130.0 L879.9 131.6 L908.6 133.9 L936.8 136.9 L964.4 140.7 L991.4 145.1 L1017.6 150.2 L1043.0 155.9 L1067.7 162.1 L1091.6 169.0 L1114.6 176.3 L1136.9 184.1 L1158.4 192.4 L1179.2 201.1 L1199.3 210.2 L1218.7 219.7 L1237.5 229.5 L1255.7 239.7 L1273.3 250.1 L1290.3 260.9 L1306.9 271.9 L1322.9 283.2 L1338.5 294.8 L1353.6 306.5 L1368.3 318.5 L1382.7 330.7 L1396.6 343.1 L1410.1 355.7 L1423.3 368.4 L1436.2 381.3 L1448.7 394.3 L1461.0 407.5 L1472.9 420.8 L1484.5 434.2 L1495.8 447.8 L1506.9 461.4 L1517.6 475.1 L1528.2 488.9 L1538.4 502.8 L1548.5 516.8 L1558.2 530.8 L1567.8 544.9 L1577.1 559.0 L1586.2 573.2" fill="none" stroke="#ffb347" stroke-width="4" stroke-linecap="round"/>
+          <circle id="dotA" r="11" fill="#8fdcff"/><circle id="ringA" r="11" fill="none" stroke="#8fdcff" stroke-width="3"/>
+          <circle id="dotB" r="11" fill="#ffb347"/><circle id="ringB" r="11" fill="none" stroke="#ffb347" stroke-width="3"/>
+          <circle id="plane" r="9" fill="#fff"/>
+        </svg>
+        <div class="pin" id="pA">BOSTON<small>HARVARD MEDICAL SCHOOL</small></div>
+        <div class="pin" id="pB" style="color:#ffb347; text-align:left"><span id="destName">HIMALAYA, INDIA</span><small id="destSub">TUMMO MONKS</small></div>
+      </div>
+      <div class="year mono" id="yr">1982</div>
+      <div class="scrim"></div>
+      <div class="lt" id="l1"><span class="rule"></span><span id="ltMain">TO THE HIMALAYA</span><span class="sub" id="ltSub">BENSON'S RESEARCH TEAM</span></div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      // Parameters (set from claims.csv): destination, arc to use, year shown
+      const DEST = { arc: "arcDharamsala", pt: "dharamsala", name: "HIMALAYA, INDIA", sub: "TUMMO MONKS", year: "1982", lt: "TO THE HIMALAYA", ltSub: "BENSON'S RESEARCH TEAM" };
+      const tl = gsap.timeline({ paused: true });
+      const D = 5.6, M = window.MAP;
+      document.getElementById("land").setAttribute("d", M.land);
+      const A = M.pts.boston, Bp = M.pts[DEST.pt];
+      document.getElementById("arcG").setAttribute("d", M[DEST.arc]);
+      for (const [id, p] of [["dotA", A], ["ringA", A], ["dotB", Bp], ["ringB", Bp], ["glowB", Bp]]) { const c = document.getElementById(id); c.setAttribute("cx", p[0]); c.setAttribute("cy", p[1]); }
+      const place = (id, p) => { const el = document.getElementById(id); el.style.left = p[0] + "px"; el.style.top = (p[1] - 30) + "px"; };
+      place("pA", A); place("pB", Bp);
+      gsap.set("#pA", { xPercent: -50, yPercent: -100 });
+      gsap.set("#pB", { xPercent: 0, yPercent: -50, x: 52, y: 30 });
+      document.getElementById("destName").textContent = DEST.name; document.getElementById("destSub").textContent = DEST.sub;
+      document.getElementById("yr").textContent = DEST.year; document.getElementById("ltMain").textContent = DEST.lt; document.getElementById("ltSub").textContent = DEST.ltSub;
+      FX.drift(tl, "#bg", D);
+      // camera: close on Boston, pull out along the arc, settle on the Himalaya
+      const cam = (p, s) => ({ x: 960 - p[0] * s, y: 540 - p[1] * s, scale: s });
+      tl.fromTo("#cam", cam(A, 2.0), { ...cam([(A[0] + Bp[0]) / 2, (A[1] + Bp[1]) / 2 - 80], 1.0), duration: 2.2, ease: "power2.inOut" }, 0.2);
+      tl.to("#cam", { ...cam(Bp, 2.1), duration: 2.4, ease: "power2.inOut" }, 2.5);
+      const arc = document.getElementById("arc"), L = arc.getTotalLength(), plane = document.getElementById("plane");
+      const o = { k: 0 };
+      tl.fromTo(o, { k: 0 }, { k: 1, duration: 3.4, ease: "power1.inOut", onUpdate: () => {
+        const q = arc.getPointAtLength(o.k * L); plane.setAttribute("cx", q.x); plane.setAttribute("cy", q.y);
+        document.getElementById("arcG").style.strokeDasharray = `${o.k * L} ${L}`;
+      } }, 0.6);
+      tl.fromTo("#arc", { attr: { "stroke-dasharray": `0 ${L}` } }, { attr: { "stroke-dasharray": `${L} 0` }, duration: 3.4, ease: "power1.inOut" }, 0.6);
+      tl.fromTo("#ringA", { attr: { r: 11 }, opacity: 1 }, { attr: { r: 46 }, opacity: 0, duration: 1.0, repeat: 1 }, 0.1);
+      gsap.set(["#ringB", "#dotB", "#glowB"], { opacity: 0 });
+      tl.fromTo("#ringB", { attr: { r: 11 }, opacity: 1 }, { attr: { r: 46 }, opacity: 0, duration: 1.0, repeat: 1, immediateRender: false }, 3.9);
+      tl.set("#dotB", { opacity: 1 }, 3.9);
+      tl.fromTo("#glowB", { opacity: 0 }, { opacity: 1, duration: 1.2 }, 3.6);
+      tl.fromTo("#dotB", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.4, ease: "back.out(3)" }, 3.9);
+      tl.fromTo("#pA", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, 0.2);
+      tl.to("#pA", { opacity: 0, duration: 0.4 }, 2.6);
+      tl.fromTo("#pB", { opacity: 0, x: 72 }, { opacity: 1, x: 52, duration: 0.4 }, 4.0);
+      tl.fromTo("#yr", { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0.4);
+      tl.fromTo("#l1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 0.5);
+      window.__timelines["benson-map"] = tl;
+    </script>
+  </body>
+</html>

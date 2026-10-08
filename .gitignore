@@ -44,3 +44,6 @@ video/duo-talk/voice.wav
 
 # shared asset library: large files are re-fetched by scripts/library.py fetch
 library/_cache/
+video/fireice/*/shared/
+video/fireice/*/render.mp4
+video/fireice/*/render.log
