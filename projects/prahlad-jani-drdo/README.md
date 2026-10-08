@@ -47,19 +47,21 @@ Add a new clip by adding a row (`type=LIVE`, `block=LIVE`, `motion=none`). Pick 
 Regenerate after text edits: `python3 tools/align_phrases.py phrases.v2.tsv <asr.json> transcript.te.tsv`, then the
 two `build_srt.py` commands.
 
-## Status (2026-10-07): rendered
-- **Watch:** 1080p master https://gofile.io/d/RhYQQVZX · 720p phone copy https://gofile.io/d/QF0ZczPp (7:26, −13.9 LUFS)
-- `out/preview.mp4` (1080p, 7:27) is built from **73 sourced files**, every one logged with its licence in
-  `media_manifest.csv`; `credits.md` is ready to paste into the YouTube description.
-- Sources used: Coverr (real hospital/lab/water footage), NASA (ISS, Earth, lab B-roll, ISS ultrasound), Wellcome Collection
-  (anatomy engravings, Henry Tanner's 1880 fast, a yogi gouache), Flickr CC via Openverse (Ambaji, Ahmedabad, ECG, ICU, soldiers),
-  Freesound CC0 (music + SFX), archive.org (James Randi, CC BY 3.0, as the LIVE skeptic clip), screenshots of Wikipedia and
-  Sanal Edamaruku's article (credited quotes).
-- **2010 footage:** ITN and Al Jazeera English reports (via Dailymotion re-uploads) supply the hospital room, the real CCTV
-  feed and the press conference. LIVE clips: ITN intro (1:54), G. Ilavazhagan of DIPAS (2:42), Dr. Sudhir Shah (5:52), James
-  Randi (6:52 approx.). ⚠️ News footage is copyrighted: short credited excerpts; licence (ITN Source / Al Jazeera) before monetising.
-- ⚠️ `jani_portrait_red.jpg` is a copyrighted press photo shown from Edamaruku's article with on-screen credit: licence it or
-  replace it before monetising.
+## Status (2026-10-08): v5 rendered at native 4K
+- **v5** (after owner review, see `review.md`): `out/master_4k.mp4`, 3840×2160, 7:26, −13.9 LUFS. Download links are in the session
+  report and the issue comment.
+- **New in v5:** Jani's face and name at 0:18; channel logo sting at 0:34 and end card at 6:04, plus a logo bug on every other shot;
+  HyperFrames scenes in `video/prahlad/` (study timelines, vitals monitor with normal ranges, dehydration chart, metabolism dial,
+  Three.js kidney, bladder (labelled hypothesis) and autophagy); "ILLUSTRATIVE FOOTAGE" labels on stock stand-ins; real 2010
+  CCTV only; the 168/90 monitor photo removed; stock repeats capped at 2; dip-to-black at section changes; crossfaded music loop;
+  exposure lift on dark stock.
+- **Sources:** 2010 ITN and Al Jazeera reports (Dailymotion), Coverr, NASA, Wellcome, Flickr CC via Openverse, Freesound CC0,
+  archive.org (James Randi, CC BY 3.0), credited article screenshots, original HyperFrames/Three.js animation. 83 files, all in
+  `media_manifest.csv`; `credits.md` is ready to paste.
+- **Rebuild:** `video/prahlad/render_4k.sh` (scenes) → `python3 tools/gen_edl.py` → `python3 tools/build_srt.py --offset-map` →
+  `python3 assemble.py --4k`.
+- ⚠️ ITN and Al Jazeera footage and the Jani portrait are copyrighted (short, credited excerpts): licence them or replace them
+  before monetising.
 
 ## Notes (read these)
 1. **Live clip:** before the conclusion, James Randi's real May 2010 comment (16 s, Telugu caption). Worth adding from the

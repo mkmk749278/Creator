@@ -116,6 +116,10 @@ The phone-review content rules above do not apply here; these do:
   from the root `data-width`. Speed on the cloud's software GPU: about 8 s of wall time per second of 2D, about 50 s per second of 3D.
   Pitfalls: `tl.call` doesn't run on render seeks (use stacked elements and `tl.set`); an SVG filter on a perfectly vertical or
   horizontal line renders nothing; no `letterSpacing` tweens; `@font-face` goes in each `index.html` with root-relative paths.
+- **Long jobs**: a backgrounded Bash command is killed at its time limit (30 min by default), and the job dies with it. Start renders
+  with `nohup … &` and watch them with Monitor. `assemble.py` caches every shot (`out/tmp*/NNN.key`): re-runs only re-render changed
+  rows (the key includes the script's mtime, so editing `assemble.py` invalidates the whole cache). Full 4K film ≈ 45 min; 3D scenes
+  with transmission materials ≈ 30 min per 12 s.
 - **4K FFmpeg assembly**: oversample Ken Burns 1.25x at 4K (2x is fine at 1080p); loop music with crossfades (`long_bed`), never a
   hard restart; dip to black at block changes; sharpen 288p archive footage lightly after upscaling.
 
