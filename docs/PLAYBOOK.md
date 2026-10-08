@@ -215,17 +215,31 @@ Remotion and MoviePy are not installed; ask before adding them.
 
 ## 7. Script and voice
 
-- **Never re-transcribe when a script exists.** Align scenes to script paragraphs and `silencedetect` timestamps, then word
-  timings if needed. *Why:* Whisper on Telugu drops 20–30 s stretches and costs CPU hours; the script is already correct.
-- **When no script exists (Telugu VO):** Whisper large-v3 (`turbo` is acceptable since the text is hand-corrected) on
-  ≤ 9 s windows cut at pauses (`silencedetect -30dB d=0.25–0.3`), `language="te"`, `beam_size=5`,
-  `condition_on_previous_text=False`, no VAD. Long or VAD-batched windows truncate, loop or output Kannada script.
-  Consume the faster-whisper segment generator once (`list()`) before reading text and words. Write JSON after every chunk
-  so a killed job can resume. Hand-correct into `phrases.*.tsv` / `sentences*.tsv`, then
-  `projects/prahlad-jani-drdo/tools/align_phrases.py` for word-timed cues. CPU runs ~0.2× real time.
+- **Timing comes from silence detection + the script, never from Whisper** (owner's rule, Oct 2026). No Whisper for
+  transcription or translation. *Why:* Whisper on Telugu dropped 20–30 s stretches, looped, output Kannada script, hit
+  token limits and cost CPU hours; and machine translation re-orders Telugu's SOV clauses into English SVO, so translated
+  word timings drift out of sync with the picture. The script is already correct and in spoken order: only the line
+  timings are needed.
+- **Method: deterministic silence-to-script mapping** (`scripts/align_script.py VOICE.mp3 script.tsv --out <dir>`):
+  1. `silencedetect` (−30 dB, pauses ≥ 0.15 s) finds every pause.
+  2. The script is one spoken line per row: `te<TAB>en` (English optional). Split long sentences into rows where you want
+     subtitle cuts.
+  3. Lines map in order to runs of consecutive speech chunks. A plain chunk N → line N mapping drifts (breath-hold: 116
+     chunks at d=0.35 for 80 lines; some sentences pause mid-way, some have no pause between them), so a dynamic programme
+     picks which pauses are line boundaries: each line's speech time matches its share of the script's letters, longer
+     pauses and punctuation inside a line (where speakers pause) are preferred.
+  4. Output: `align.json` (line, start, end, te, en, confidence), `subtitles.te.srt`, `subtitles.en.srt` (English text on
+     the Telugu timing, one cue per line: no SOV/SVO drift), `align.md` (lines to check by ear).
+  5. Attach visuals to the line timestamps in the EDL (semantic lock, §5.1).
+- **Measured** on the breath-hold VO (7:05, 80 lines) against hand-checked speech onsets: all 80 lines in order, 75 starts
+  within 0.15 s, ends median 0.05 s off; the only real miss (a one-word sentence opener attached to the previous line,
+  0.94 s) was among the 9 lines flagged "check" (boundary that could sit one pause earlier or later). Listen to flagged
+  lines only, and fix by splitting or merging script rows, or `--min-pause`.
+- **No script?** Ask the owner for it (the owner writes or approves every VO script). Whisper only if the owner explicitly asks.
 - **Voice:** the owner's recording preferred (helps YouTube's review of AI-heavy content); ElevenLabs VO in short blocks so
   retakes are cheap. Never synthesise a real person's voice or quote.
-- **Subtitles:** `scripts/make_srt.py` (shifted by pauses); rebuild after any timing change. Telugu translations of LIVE
+- **Subtitles:** from `scripts/align_script.py` (te + en); `scripts/make_srt.py` shifts them for programme time when
+  breaks are inserted; rebuild after any timing change. Telugu translations of LIVE
   clips go in the EDL `subtitle` column.
 
 ## 8. Media sourcing

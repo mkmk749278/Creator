@@ -11,8 +11,9 @@ skip a step to save time (PLAYBOOK §4). Stop and report to the owner at each **
 1. **Project.** `projects/<slug>/` with `script.md` (owner's text verbatim), `voice/` (VO files), `README.md`
    (one paragraph + rebuild commands). Work on `main`.
 2. **Genre and look.** Pick the genre row in PLAYBOOK §5.3; write palette, media stack and accents into the README.
-3. **Timing.** Script exists → never transcribe: `silencedetect` the VO, map script paragraphs to pause boundaries.
-   No script → Telugu/English ASR per PLAYBOOK §7, hand-correct.
+3. **Timing.** `projects/<slug>/script.tsv` (one spoken line per row, `te<TAB>en`) →
+   `python3 scripts/align_script.py voice/<vo>.mp3 script.tsv --out align`; listen to the lines `align.md` flags. Never
+   Whisper (PLAYBOOK §7). No script → ask the owner for it.
 4. **Fact-check.** Run `/fact-check` in a fresh subagent at `max` effort → `claims.csv`; `python3 scripts/claims_check.py`
    must pass before anything goes on screen. **[report]** disputed/claim rows and any script fix needed.
 5. **Beats.** Split the script into beats of 2.5–4 s of picture each; for each beat write the literal visual (semantic lock),
