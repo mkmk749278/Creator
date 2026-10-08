@@ -223,7 +223,10 @@ Remotion and MoviePy are not installed; ask before adding them.
 - **Method: deterministic silence-to-script mapping** (`scripts/align_script.py VOICE.mp3 script.tsv --out <dir>`):
   1. `silencedetect` (−30 dB, pauses ≥ 0.15 s) finds every pause.
   2. The script is one spoken line per row: `te<TAB>en` (English optional). Split long sentences into rows where you want
-     subtitle cuts.
+     subtitle cuts. `te | en` works too, and ElevenLabs audio tags in `[brackets]` are ignored. The text
+     never needs to "match" the audio's length: only each line's share of the text is used, and every boundary snaps to
+     a real pause, so faster or slower reads and longer pauses don't matter. Missing or changed words only shift that
+     line, which gets flagged. ElevenLabs keeps the exact text of every generation under History: copy it from there.
   3. Lines map in order to runs of consecutive speech chunks. A plain chunk N → line N mapping drifts (breath-hold: 116
      chunks at d=0.35 for 80 lines; some sentences pause mid-way, some have no pause between them), so a dynamic programme
      picks which pauses are line boundaries: each line's speech time matches its share of the script's letters, longer
