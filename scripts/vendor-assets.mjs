@@ -5,6 +5,12 @@ import { copyFileSync, cpSync, existsSync, mkdirSync, readdirSync, readFileSync 
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+// three/examples/jsm/libs entries the loaders import (GLTF+Draco/KTX2/Meshopt, HDR/EXR, FBX, Lottie, fonts).
+const THREE_LIBS = [
+  "draco", "basis", "fflate.module.js", "ktx-parse.module.js", "zstddec.module.js", "meshopt_decoder.module.js",
+  "utif.module.js", "opentype.module.js", "lottie_canvas.module.js", "chevrotain.module.min.js", "potpack.module.js",
+];
+
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const videoDir = join(root, "video");
 
@@ -32,11 +38,37 @@ for (const project of projects) {
     copyFileSync(join(root, "node_modules/@fontsource/noto-sans-telugu/files", te), join(out, "fonts", te));
   }
   // Three.js (pinned in package.json) only for compositions that import it from vendor/three/.
-  if (readFileSync(join(project, "index.html"), "utf8").includes("vendor/three/")) {
+  // Copies every examples/jsm add-on (loaders, postprocessing, utils, ...) plus the small decoder libs
+  // the loaders need; the large demo libs (ammo, rhino3dm, ...) stay out.
+  const html = readFileSync(join(project, "index.html"), "utf8");
+  if (html.includes("vendor/three/")) {
     const t = join(root, "node_modules/three");
-    mkdirSync(join(out, "three", "jsm"), { recursive: true });
+    const jsm = join(t, "examples/jsm");
+    mkdirSync(join(out, "three", "jsm", "libs"), { recursive: true });
     for (const f of ["three.module.js", "three.core.js"]) copyFileSync(join(t, "build", f), join(out, "three", f));
-    for (const d of ["postprocessing", "shaders", "environments"]) cpSync(join(t, "examples/jsm", d), join(out, "three", "jsm", d), { recursive: true });
+    for (const e of readdirSync(jsm, { withFileTypes: true })) {
+      if (e.isDirectory() && e.name !== "libs") cpSync(join(jsm, e.name), join(out, "three", "jsm", e.name), { recursive: true });
+    }
+    for (const f of THREE_LIBS) cpSync(join(jsm, "libs", f), join(out, "three", "jsm", "libs", f), { recursive: true });
+  }
+  // pmndrs postprocessing + N8AO (import map: "postprocessing" -> ./vendor/pp/postprocessing.js).
+  if (html.includes("vendor/pp/")) {
+    mkdirSync(join(out, "pp"), { recursive: true });
+    copyFileSync(join(root, "node_modules/postprocessing/build/index.js"), join(out, "pp", "postprocessing.js"));
+    copyFileSync(join(root, "node_modules/n8ao/dist/N8AO.js"), join(out, "pp", "N8AO.js"));
+  }
+  // Shared asset library (library/manifest.csv): copy each "vendor/library/<kind>/<file>" the page references.
+  // Large files come from library/_cache/ (run `python3 scripts/library.py fetch` first).
+  for (const [, rel] of html.matchAll(/vendor\/library\/([\w.\-]+\/[\w.\-]+)/g)) {
+    const src = [join(root, "library", rel), join(root, "library", "_cache", rel)].find((p) => existsSync(p));
+    if (!src) throw new Error(`${project}: library file ${rel} missing (python3 scripts/library.py fetch)`);
+    mkdirSync(dirname(join(out, "library", rel)), { recursive: true });
+    copyFileSync(src, join(out, "library", rel));
+  }
+  // Seeded organic motion: createNoise3D(seededRandom).
+  if (html.includes("vendor/noise/")) {
+    mkdirSync(join(out, "noise"), { recursive: true });
+    copyFileSync(join(root, "node_modules/simplex-noise/dist/esm/simplex-noise.js"), join(out, "noise", "simplex-noise.js"));
   }
 }
 console.log(`vendored gsap + Inter into ${projects.length} project(s)`);

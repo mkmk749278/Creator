@@ -97,8 +97,9 @@ measurements in a session):**
 
 **Rules:** each session owns one folder and one branch (no merge conflicts); same effort and quality in every shard; media
 over 100 MB never goes in git (hand over by URL list and re-download, or a release asset/LFS after a test upload); archive
-sessions when done; 6–8 sessions is the sensible maximum. A fresh VM re-runs `npm ci` and pip installs, so add a
-SessionStart hook or environment setup script that caches them.
+sessions when done; 6–8 sessions is the sensible maximum. Every new session runs `.claude/hooks/session-start.sh`
+(npm install with vendoring, `.venv` with all extras, library fetch), so it is ready to render when it starts.
+The `/parallel-render` skill walks through the whole procedure.
 
 ## 4. Quality first: never trim effort for speed
 
@@ -269,7 +270,7 @@ DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email 
 ### 8.3 Blocked or not usable
 | Source | Why |
 |---|---|
-| YouTube downloads | Bot check / 403 from datacenter IPs (metadata still resolves, so list exact IDs and timestamps for the owner) |
+| YouTube downloads | **Intermittent**: bot check / 403 most of the time, but a 720p download worked on 2026-10-08. Try `scripts/fetch_media.py` once; on a bot check, hand the exact URLs and ranges to the owner (§8.5). Metadata always resolves |
 | Vimeo | yt-dlp now needs a login |
 | Mixkit assets, Videvo, Mazwai (now Freepik) | 403 |
 | C-SPAN, British Pathé, NOAA photo library, Sonniss, Musopen | 403 |
@@ -299,6 +300,10 @@ DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email 
 ### 8.5 Getting YouTube footage legitimately
 Never route around blocks with VPNs, proxies or alternative YouTube clients (the auto-mode permission check also blocks
 this). Use one of:
+0. **Fetch media for a video workflow** (for footage we will use: official channels, owner-cleared clips, CC). GitHub app →
+   Actions → *Fetch media for a video* → slug + URLs separated by spaces, `URL@01:10-01:24` for a range, runner
+   `self-hosted` for the VPS. The artifact has the MP4s, `fetched.csv` (title, uploader, licence) and timecoded contact
+   sheets; save it to Google Drive for the session. Same script locally: `scripts/fetch_media.py OUT URL ...`.
 1. **Fetch video workflow** (GitHub app → Actions → *Fetch video for study* → Run workflow → paste URL). The artifact has
    `video.mp4`, timestamped frames and contact sheets. Needs the `YT_COOKIES` secret: create a **throwaway** Google account
    (YouTube can flag accounts used for downloading; never the main or channel account), sign in at youtube.com in a
@@ -314,6 +319,8 @@ this). Use one of:
    Then upload to Google Drive and give Claude the file name (sessions read Drive through the connector).
 
 ### 8.6 Sourcing rules (and why)
+- **Fact-check before sourcing** (`/fact-check` → `claims.csv` → `scripts/claims_check.py`): sourcing for a claim that turns
+  out wrong wastes the most time.
 - **Contact-sheet every asset before use**, labelled. About a third of search results were wrong (Kathakali for
   Kalaripayattu, tulips for "eyes", a box in grass for "CCTV camera", a bomb-blast photo).
 - **Filter licences in code, never by eye** (`license_type=commercial` on Openverse; Wellcome's first "heart" hit was
@@ -326,6 +333,17 @@ this). Use one of:
   never stretch), 30 fps, trimmed to the best 5–20 s; keep audio only for LIVE/diegetic use.
 - `what_it_shows` in the manifest must be literally true ("Vidyut Jammwal at the Commando 2 trailer launch, 2017", not
   "the 2026 event").
+
+### 8.7 Shared asset library (`library/`)
+Licence-clean media reused across videos: HDRIs today; models, textures, music beds, stings and verified B-roll as they are
+found. `library/manifest.csv` is the record (id, kind, file, licence, licence URL, attribution, source page, sha256).
+Files ≤ 5 MB are committed under `library/<kind>/`; larger ones live in `library/_cache/` (gitignored) and come back with
+`python3 scripts/library.py fetch` (the session hook runs it). Add with `scripts/library.py add --kind … --id … --url …
+--title … --source-page … --author … --licence … --licence-url …`; it refuses non-commercial licences. `check` verifies
+every row. A composition uses an item by referencing `vendor/library/<kind>/<file>`. *Why:* sourcing is the one step
+parallel sessions can't speed up, so every licence-clean asset found once should never be searched for again.
+Current items: `hdri/` studio_small_09 (neutral studio), brown_photostudio_02 (warm, biography), kloofendal_48d_partly_cloudy_puresky
+(daylight sky), all Poly Haven CC0 at 1k.
 
 ## 9. Realistic animation
 
@@ -366,11 +384,47 @@ shots (others: 1080p render + Lanczos upscale, ~4× faster, unverified); `--qual
 `--workers 2–3` for WebGL (each worker is a Chrome with its own CPU renderer, within ~14 GB); limit transmission materials to
 one or two hero objects (each re-renders the scene; ~30 min per 12 s); split long scenes into time-offset compositions and
 render them in parallel sessions (§3), then `concat -c copy` with identical encoder settings.
+**Vendored stack (Oct 2026)** and the reference scene `video/lib/realism-proof/` that uses all of it: three 0.181.2 with
+every `examples/jsm` add-on (loaders: GLTF/Draco/KTX2/Meshopt, HDR/EXR; Lottie; utils), pmndrs `postprocessing` 6.39.5,
+`n8ao` 2.0.1, `simplex-noise` 4.0.3, all pinned in `package.json`. `scripts/vendor-assets.mjs` copies them into a project
+when its `index.html` mentions `vendor/three/`, `vendor/pp/` or `vendor/noise/`, plus any `vendor/library/<kind>/<file>`
+from the shared library (§8.7). Import map: `three`, `three/addons/` and `three/examples/jsm/` → `./vendor/three/…`,
+`postprocessing` → `./vendor/pp/postprocessing.js`, `n8ao` → `./vendor/pp/N8AO.js`, `simplex-noise` →
+`./vendor/noise/simplex-noise.js`. Lessons from the proof scene:
+- Async loads are safe: HyperFrames' Three adapter waits for `THREE.DefaultLoadingManager`, so HDRIs and models loaded with
+  the default manager are in place before frame 0 is captured.
+- Glossy surfaces show a 1k HDRI's pixels as blocks: keep roughness ≥ ~0.4 or use a 2k map for hero close-ups.
+- Translucency via `opacity` + `depthWrite: false`, not `transmission` (which re-renders the scene per object).
+- With pmndrs `postprocessing`, set `renderer.toneMapping = NoToneMapping` and tone-map in the effect pass (AgX); create the
+  renderer with `antialias: false, stencil: false, depth: false` and the composer with `HalfFloatType`.
+- Scenes read `window.BENCH` flags so `scripts/bench_render.py` can price each pass (results in §15).
+- **Measured (2026-10-08, 1080p, 3 workers, pinned CLI):** full stack 51.8 s of render per output second; without N8AO
+  26.6 (AO doubles the cost); without bloom 46.5 (bloom ~11%); bare scene 8.5. So: N8AO only on hero close-ups (bake or
+  fake contact shadows elsewhere); bloom and HDRI are cheap enough to keep everywhere.
+- `scripts/bench_render.py` and every render must use the repo's pinned CLI: `npx hyperframes` run outside the repo
+  silently fetches the latest release (0.8.140 on 2026-10-08) instead of 0.8.103.
 Three.js gotchas: module script with an importmap to `./vendor/three/`, GSAP timeline in a separate classic script;
 `preserveDrawingBuffer: true`, `setPixelRatio(1)`, size from `root.dataset.width`; bloom makes the canvas opaque, so draw
 the background inside the scene.
 Sources: hyperframes.heygen.com (runtimes-and-3d, cli, performance), github.com/N8python/n8ao, api.polyhaven.com,
 ambientcg.com, dbarchive.biosciencedbc.jp (BodyParts3D), z-anatomy.com, 3d.nih.gov, 3d-api.si.edu, nasa3d.arc.nasa.gov.
+
+### 9.1 Scene library contract (`video/lib/<scene>/`)
+Reusable, parameterised scenes that any documentary (and the unified engine, §22.1) can drop in. Every library scene:
+- **One folder, one composition:** `video/lib/<scene>/index.html` (+ `assets/` for small scene-specific files) and a short
+  `README.md`: what it shows, parameters, measured render cost, licence of every asset, a `preview.jpg` contact sheet.
+- **Parameters, not edits:** `index.html` loads `params.js` first (`window.SCENE = {...}`): duration, texts, numbers,
+  palette (genre tokens from §5.3), camera path, which highlight to show. All on-screen words come from `SCENE`, so the
+  engine or a session re-uses the scene by writing a new `params.js`; the root `data-duration` must equal
+  `SCENE.duration` (the engine rewrites both).
+- **Deterministic:** everything is `f(t)` with seeded noise; async assets only through Three's default loading manager.
+- **Honest labels:** a corner tag ("ILLUSTRATION", "ILLUSTRATIVE CURVE", "HYPOTHESIS") is on by default.
+- **Measured:** reads `window.BENCH` flags for its expensive passes; README records `scripts/bench_render.py` numbers at
+  1080p (and 4K for 3D hero scenes).
+- **Checked:** lint and check pass; snapshots looked at; a 1080p sample rendered with the pinned CLI.
+- New reusable assets (models, textures) go in `library/<kind>/` with a row for `library/manifest.csv` (sessions working
+  in parallel write their rows to `video/lib/<scene>/library_rows.csv`; the coordinator merges them).
+- No new npm/pip dependencies without the coordinator: propose them in the README.
 
 ## 10. HyperFrames (pinned `hyperframes@0.8.103`)
 
@@ -451,8 +505,10 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 
 ## 14. Pre-render review (every cut, before the final render)
 
-Contact-sheet the cut and go shot by shot; write `review.md` (issue → shot IDs → fix). Have Opus look at the sheets at
-`high` effort or above.
+Contact-sheet the cut (`scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --every 2`: 3×3 timecoded tiles, 1536 px)
+and go shot by shot; write `review.md` (issue → shot IDs → fix). In a session, read the sheets yourself at `high` effort or
+above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at `max` and writes `review.md`/`review.json`
+(exit 1 on blockers). Fact-check gate first: `scripts/claims_check.py projects/<slug>/claims.csv`. Skill: `/review-cut`.
 - [ ] ≥ 85% moving footage or animation; no unmoving still or flat frame over 1.5 s; no shot over 4 s except LIVE clips and
       HyperFrames scenes.
 - [ ] Every shot matches the exact words over it; the VO is silent under every diegetic or LIVE moment.
@@ -484,6 +540,10 @@ stock repeats capped, face and name at 0:18, native 4K master (full 4K film ≈ 
 **The $10 Billion Chip Gamble (English, 10:49).** Four HyperFrames parts timed word by word to the VO. Government photos and
 PDFs from ism.gov.in; Commons films cut with `cuts.txt`. The phrase-keyed engine made cuts land on words without manual
 timing; real documents with highlighter swipes carried the policy beats.
+
+**Foundation work (Oct 2026).** Realism stack vendored and proven (`video/lib/realism-proof`); measured pass costs (§9);
+contact-sheet labels verified within one frame; a YouTube download worked from the cloud once (blocks are intermittent);
+a temp-dir `npx` pulled an unpinned HyperFrames, hence the pinned-CLI rule.
 
 **Pixel 11 consensus review (v1→v2).** Review found: opinion counts presented as evidence, manufacturer figures shown as
 measurements, bare counts without denominators, paused zeros on count-ups, different tests on one scale, quote cards
@@ -604,6 +664,12 @@ creator footage or AI product imagery; cost reported and under budget; all of it
 # Part D
 
 ## 22. Recommendations (Oct 2026, in order of impact)
+
+**Status (2026-10-08):** done: 3 (vendored stack), 4 (session hook + `/parallel-render` skill), 5 in part (`Fetch media for
+a video` workflow; keys and Gofile allowlist wait on the owner), 6 (`scripts/contact_sheet.py`, `pipeline/review_cut.py`),
+7 (skills: `/new-documentary`, `/source-media`, `/fact-check`, `/review-cut`, `/parallel-render`, `/deliver`), 8
+(`library/`), 9 (`scripts/bench_render.py`), 10 (`/fact-check` + `scripts/claims_check.py`). In progress in parallel
+sessions: 1 (unified engine, `video/engine/`) and 2 (scene library, `video/lib/`).
 
 1. **One documentary engine.** Three engines grew up for three videos (§6). Merge them into one: the chip-gamble
    phrase-keyed scene engine (cuts land on words, parallax, maps, documents) + the Prahlad EDL break types (`LIVE`,

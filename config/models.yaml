@@ -15,6 +15,9 @@ tasks:
   composition:       { mode: agent,     effort: high }
   visual_qa:         { mode: agent,     effort: high }
   thumbnail_critique: { mode: api,      effort: high }
+  # documentaries (owner's rule: max effort for fact-checks and final reviews)
+  cut_review:        { mode: api,       effort: max }     # contact sheets + EDL vs PLAYBOOK §14
+  fact_check:        { mode: api,       effort: max }     # fresh context, claims table
 
 caching:
   ttl: 1h            # stages run minutes apart; 1h cache write $8/MTok, read $0.20/MTok

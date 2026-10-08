@@ -11,6 +11,8 @@ dependencies = [
 
 [project.optional-dependencies]
 collect = ["yt-dlp==2026.8.19"]
+# audio mixing, contact sheets and fetch helpers used by scripts/ and projects/*/tools
+media = ["numpy==2.5.3", "scipy==1.18.1", "soundfile==0.14.0", "requests==2.34.2", "pillow==12.3.0"]
 
 [tool.setuptools.packages.find]
 include = ["pipeline*"]

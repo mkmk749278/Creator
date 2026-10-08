@@ -1,7 +1,11 @@
 {
   "extraKnownMarketplaces": {
     "hyperframes": {
-      "source": { "source": "github", "repo": "heygen-com/hyperframes", "ref": "v0.8.103" }
+      "source": {
+        "source": "github",
+        "repo": "heygen-com/hyperframes",
+        "ref": "v0.8.103"
+      }
     }
   },
   "enabledPlugins": {
@@ -9,5 +13,17 @@
   },
   "env": {
     "HYPERFRAMES_NO_TELEMETRY": "1"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh"
+          }
+        ]
+      }
+    ]
   }
 }

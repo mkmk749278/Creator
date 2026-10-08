@@ -1,0 +1,82 @@
+name: Fetch media for a video
+
+# Start from the GitHub app: Actions → "Fetch media for a video" → Run workflow.
+# Paste URLs separated by spaces; add @START-END to take only a range, e.g.
+#   https://www.youtube.com/watch?v=ID@01:10-01:24 https://www.dailymotion.com/video/ID
+# Results: the run's Summary (what worked, licence per clip) + artifact "media-<slug>" with the MP4s, fetched.csv and
+# contact sheets. Save the artifact to Google Drive so a cloud session can read it (PLAYBOOK §8.5).
+# Only footage we may use: official channels, owner-cleared clips, CC licences. Credit every clip on screen.
+#
+# YouTube blocks GitHub's IPs: add the YT_COOKIES secret (throwaway account) or choose runner = self-hosted (VPS).
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Project slug (names the artifact)"
+        type: string
+        required: true
+      urls:
+        description: "URLs separated by spaces; URL@00:30-00:45 for a range"
+        type: string
+        required: true
+      max_height:
+        description: "Max video height"
+        type: choice
+        options: ["1080", "720", "2160"]
+        default: "1080"
+      runner:
+        description: "Where to run"
+        type: choice
+        options: [ubuntu-24.04, self-hosted]
+        default: ubuntu-24.04
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  fetch:
+    runs-on: ${{ inputs.runner }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install yt-dlp, Pillow (pinned) and FFmpeg
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core)
+          python -m pip install "yt-dlp==2026.8.19" "pillow==12.3.0"
+      - name: Fetch
+        env:
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
+          URLS: ${{ inputs.urls }}
+          MAXH: ${{ inputs.max_height }}
+        run: |
+          cookie_args=()
+          if [[ -n "$YT_COOKIES" ]]; then
+            printf '%s\n' "$YT_COOKIES" > "$RUNNER_TEMP/cookies.txt"
+            cookie_args=(--cookies "$RUNNER_TEMP/cookies.txt")
+          fi
+          read -ra list <<< "$URLS"
+          set +e
+          python scripts/fetch_media.py media "${list[@]}" --max-height "$MAXH" "${cookie_args[@]}"
+          status=$?
+          rm -f "$RUNNER_TEMP/cookies.txt"
+          cat media/fetch.log.md >> "$GITHUB_STEP_SUMMARY"
+          exit $status
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: media-${{ inputs.slug }}
+          path: |
+            media/
+            !media/*.info.json
+          retention-days: 14
