@@ -33,6 +33,13 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
 - **Once the owner approves a cut, stop editing it.** Deliver exactly that cut (upscale, captions), nothing more.
   *Why:* on breath-hold, slipping in further edits after approval cost a review round.
 - English first; keep all script and on-screen text i18n-ready (Telugu is already in use for the documentaries).
+- **Owner setup status (2026-10-08).** Done: cloud environment *Full Access* (Gofile, Dailymotion, NASA and the rest of §8.1
+  reachable); `PIXABAY_API_KEY` as an environment variable (verified from a new session: search, 4K download). Optional, add
+  only when a video needs it: `YT_COOKIES` repo secret (YouTube via the Fetch workflows), `UNSPLASH_ACCESS_KEY`,
+  `FREESOUND_TOKEN`, a NARA key, `ANTHROPIC_API_KEY` repo secret (only for API stages in GitHub Actions; cloud sessions
+  don't need it). Pexels has paused new keys. Keys go in the environment settings (Edit → Environment variables; network
+  secrets don't fit APIs that take the key in the URL, like Pixabay), never in chat or the repo. A new variable reaches
+  only sessions started after it was saved.
 
 ## 2. Claude models: what they can do and where we use them
 
@@ -276,7 +283,7 @@ DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email 
 | Mixkit assets, Videvo, Mazwai (now Freepik) | 403 |
 | C-SPAN, British Pathé, NOAA photo library, Sonniss, Musopen | 403 |
 | PIB, Prasar Bharati archive, Films Division/NFDC, USGS, Cell Image Library, ESA/Hubble CDN | timeout / 502 / TLS errors |
-| Gofile (delivery) | Blocked by the environment's network policy until `gofile.io`, `*.gofile.io` are allowlisted |
+| Gofile (delivery) | **Works** in the owner's *Full Access* environment (2026-10-08); blocked only in restricted network policies |
 | Piped / Invidious YouTube mirrors | Dead |
 | **Not allowed** even when reachable | Allen Institute (non-commercial, terms bar YouTube), JoVE and Science Photo Library (subscription/paid), **BBC Sound Effects** (RemArc: personal/educational only), AP Archive, Reuters, British Pathé (paid: ask first), anything NC or ND |
 
