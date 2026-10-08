@@ -245,10 +245,10 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
 3. Pauses: `...` allowed (see the voice rules above); the edit-made pause is the fallback when a take breaks.
 4. Competitor audio: the owner asked for other routes instead of a phone listen. Tried 2026-10-08: listings work from the
    cloud; media from the container and from GitHub's runners hit YouTube's bot check. A VPS-runner try was cancelled:
-   switching machines to dodge the block counts as routing around it (the auto-mode check stopped it). Open routes, both the owner's:
-   the `YT_COOKIES` secret from a throwaway account (§8.5), or Termux on the phone into Google Drive. Then run
-   `scripts/study_opening.py` on the first 90 s of the 18 picks (latest + two most-viewed per channel:
-   `docs/research/research_notes/Telugu YouTube audience and style/competitor_picks.tsv`) and add the numbers here.
+   switching machines to dodge the block counts as routing around it (the auto-mode check stopped it). **Owner's call:
+   skip the competitor measurement**; judge pacing, music and hooks from our own retention curves after publishing.
+   If it is ever wanted: `YT_COOKIES` (§8.5) or Termux, then `scripts/study_opening.py` on the 18 picks in
+   `docs/research/research_notes/Telugu YouTube audience and style/competitor_picks.tsv`.
 
 ## 5. The look
 
