@@ -81,7 +81,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   logo sting when the channel is named, logo bug elsewhere, end card last.
 - **Workflow:** (1) asset manifest → (2) EDL (timecode → asset → motion → overlay → text → sound cues) → (3) assembly code
   bound to the project's `assets/`. Self-review with the checklist in PLAYBOOK §14 and write `review.md` before every render.
-- **Never re-transcribe when a script exists**: align to script paragraphs and `silencedetect`. Telugu ASR method: §7.
+- **No Whisper** for transcription or translation: time the owner's script on the VO with `scripts/align_script.py`
+  (silencedetect + script mapping, te/en SRTs on the Telugu timing). No script → ask for it. Method and accuracy: §7.
 - **Audio:** the VO leads; BGM −18 to −22 dB, ducked under all speech; −14 LUFS two-pass linear. The video isn't locked to
   the VO: diegetic cuts (VO stops for 2–6 s of the asset's own sound), `LIVE` rows for real speech, `VO_PAUSE` ambience.
   Never talk over real dialogue.

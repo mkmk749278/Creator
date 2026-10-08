@@ -16,7 +16,7 @@ For each beat in the EDL draft:
    thumb widths), `projects/prahlad-jani-drdo/tools/fetch_assets.py` (Coverr, NASA, Wellcome), `scripts/fetch_media.py`
    (yt-dlp: Dailymotion, archive.org, Instagram, Facebook; YouTube works only some of the time from the cloud).
    YouTube blocked → list exact URLs and `@START-END` ranges for the owner to run in the **Fetch media for a video**
-   workflow (VPS runner or YT_COOKIES), and ask him to put the artifact in Google Drive. Never use VPNs, proxies or
+   workflow (VPS runner or YT_COOKIES), and ask the owner to put the artifact in Google Drive. Never use VPNs, proxies or
    alternative clients.
 4. **Licence in code:** commercial-use licences only (CC0, PD, CC BY, CC BY-SA, Pexels/Pixabay/Coverr/Unsplash licences);
    check each file's own page; NC/ND never. Third-party news/event clips: short, credited excerpts, owner-cleared.
