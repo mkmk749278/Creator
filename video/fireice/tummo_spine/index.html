@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Tummo: vase breathing and heat along the spine</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <script src="shared/body.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #cam { position: absolute; inset: 0; transform-origin: 50% 45%; }
+      canvas, svg.stage { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+      .temp { position: absolute; right: 90px; top: 120px; text-align: right; font-weight: 800; }
+      .temp b { display: block; font-size: 84px; line-height: 1; }
+      .temp span { font-size: 24px; letter-spacing: 0.12em; color: var(--ink-dim); }
+      .scale { position: absolute; right: 90px; top: 250px; width: 26px; height: 420px; border-radius: 4px;
+        background: linear-gradient(0deg, rgb(30,40,150), rgb(40,200,220), rgb(230,225,60), rgb(255,160,40), rgb(240,70,40), rgb(255,250,235)); }
+      .scale-l { position: absolute; right: 130px; font-size: 22px; font-weight: 800; color: var(--ink-dim); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="tummo-spine" data-start="0" data-width="1920" data-height="1080" data-duration="10.5">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-c"></div><div class="glow-h" id="gh"></div><div class="grid"></div></div>
+      <div class="particles" id="snow"></div>
+      <div id="cam">
+        <canvas id="cv" width="1920" height="1080"></canvas>
+        <svg class="stage" viewBox="0 0 1920 1080">
+          <defs><linearGradient id="chan" gradientUnits="userSpaceOnUse" x1="0" y1="860" x2="0" y2="140"><stop offset="0" stop-color="#fff2c0"/><stop offset="0.6" stop-color="#ffb347"/><stop offset="1" stop-color="#ff6a1f"/></linearGradient></defs>
+          <path id="chanP" d="M960 636 C 956 520, 964 400, 960 300 C 958 240, 962 200, 960 160" fill="none" stroke="url(#chan)" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
+          <ellipse id="belly" cx="960" cy="618" rx="104" ry="72" fill="none" stroke="#8fdcff" stroke-width="5" stroke-dasharray="10 9" opacity="0"/>
+        </svg>
+      </div>
+      <div class="temp"><b id="tv" class="mono">31.5°</b><span>SKIN HEAT · ILLUSTRATIVE</span></div>
+      <div class="scale" style="top:260px"></div><div class="scale-l" style="top:252px">HOT</div><div class="scale-l" style="top:655px">COLD</div>
+      <div class="scrim"></div>
+      <div class="lt" id="l1"><span class="rule"></span>VASE BREATHING<span class="sub">BREATH HELD LOW IN THE BELLY</span></div>
+      <div class="lt" id="l2"><span class="rule"></span>HEAT RISING UP THE SPINE<span class="sub">A VISUALISATION THE MEDITATOR HOLDS IN MIND</span></div>
+      <div class="tag">ILLUSTRATION</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const D = 10.5, { ss, lerp } = FX;
+      FX.drift(tl, "#bg", D);
+      FX.dust(tl, document.getElementById("snow"), { seed: 4, count: 70, dur: D, dir: 1, travel: 200, spread: 220 });
+      const body = BODY.make(document.getElementById("cv"), { pose: "seat", x: 960, y: 860, scale: 1.18 });
+      const chan = document.getElementById("chanP"), CL = chan.getTotalLength();
+      chan.style.strokeDasharray = CL;
+      FX.clock(tl, D, t => {
+        const breath = t < 5.9 ? 0.5 - 0.5 * Math.cos(Math.min(t - 0.6, 5.2) / 2.6 * Math.PI * 2) : 0;   // two slow belly breaths
+        const navel = ss(t, 3.2, 5.0), rise = ss(t, 5.9, 9.8), base = 0.33 + 0.04 * ss(t, 0, 5);
+        const warm = k => base + k;
+        body.draw({
+          torso: warm(0.38 * rise), shoulders: warm(0.34 * ss(t, 7, 9.6)), neck: warm(0.4 * ss(t, 7.6, 9.8)), head: warm(0.36 * ss(t, 8, 10.2)),
+          hips: warm(0.12 + 0.3 * navel), armL: warm(-0.03 + 0.26 * rise), armR: warm(-0.03 + 0.26 * rise), handL: warm(-0.08 + 0.22 * rise), handR: warm(-0.08 + 0.22 * rise),
+          legL: warm(0.02 + 0.16 * rise), legR: warm(0.02 + 0.16 * rise), footL: warm(-0.06 + 0.14 * rise), footR: warm(-0.06 + 0.14 * rise),
+        }, [
+          { x: 0, y: -205, r: 90 + 26 * breath + 40 * navel, t: 0.45 + 0.5 * navel, a: 0.25 + 0.75 * navel },
+          { x: 0, y: lerp(-205, -560, rise), r: 110, t: 0.95, a: rise > 0.01 && rise < 0.99 ? 0.85 : 0 },
+        ], Math.round(t * 30));
+        document.getElementById("tv").textContent = (31.5 + 0.3 * navel + 3.4 * rise).toFixed(1) + "°";
+        const bell = document.getElementById("belly");
+        bell.setAttribute("rx", 104 * (1 + 0.28 * breath)); bell.setAttribute("ry", 72 * (1 + 0.28 * breath));
+        bell.setAttribute("opacity", (0.9 * ss(t, 0.4, 0.9) * (1 - ss(t, 5.6, 6.0))).toFixed(2));
+        chan.style.strokeDashoffset = CL * (1 - rise);
+        chan.setAttribute("opacity", (0.95 * ss(t, 5.9, 6.3)).toFixed(2));
+      });
+      tl.fromTo("#gh", { opacity: 0.4 }, { opacity: 1, duration: 4, ease: "sine.inOut" }, 6);
+      tl.fromTo("#cam", { scale: 1.0, y: 20 }, { scale: 1.08, y: -10, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo("#l1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 0.4);
+      tl.to("#l1", { opacity: 0, y: -10, duration: 0.35 }, 5.7);
+      tl.fromTo("#l2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 6.2);
+      window.__timelines["tummo-spine"] = tl;
+    </script>
+  </body>
+</html>

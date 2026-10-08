@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Mitochondria: the cell's furnace (UCP1)</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      svg.stage { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+      .call { position: absolute; font-size: 30px; font-weight: 800; letter-spacing: 0.06em; color: var(--ice); text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+      .meter { position: absolute; right: 90px; top: 250px; width: 34px; height: 520px; border-radius: 17px; border: 3px solid rgba(242,246,250,0.6); background: rgba(3,8,15,0.5); overflow: hidden; }
+      .meter i { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; transform-origin: 50% 100%; background: linear-gradient(0deg, #ff4d1f, #ffb347 60%, #ffe08a); }
+      .meterlab { position: absolute; right: 60px; top: 790px; width: 100px; text-align: center; font-size: 24px; font-weight: 800; letter-spacing: 0.1em; color: var(--flame); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="mito" data-start="0" data-width="1920" data-height="1080" data-duration="12">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-h"></div><div class="glow-c"></div></div>
+      <div class="particles warm" id="dust"></div>
+      <div id="cam">
+        <svg class="stage" viewBox="0 0 1920 1080">
+          <defs>
+            <radialGradient id="matrix" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#ffcf7a"/><stop offset="0.45" stop-color="#ff7a2f"/><stop offset="1" stop-color="#7a1e08"/></radialGradient>
+            <linearGradient id="outer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9925a"/><stop offset="1" stop-color="#8a3414"/></linearGradient>
+            <radialGradient id="ring" cx="50%" cy="50%" r="50%"><stop offset="0.6" stop-color="#ffb347" stop-opacity="0"/><stop offset="0.85" stop-color="#ffb347" stop-opacity="0.75"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+            <clipPath id="inside"><path d="M560 300 H1360 A240 240 0 0 1 1360 780 H560 A240 240 0 0 1 560 300 Z"/></clipPath>
+          </defs>
+          <g id="mit">
+            <path d="M540 270 H1380 A270 270 0 0 1 1380 810 H540 A270 270 0 0 1 540 270 Z" fill="url(#outer)" opacity="0.95"/>
+            <path d="M560 300 H1360 A240 240 0 0 1 1360 780 H560 A240 240 0 0 1 560 300 Z" fill="#3a1206"/>
+            <g clip-path="url(#inside)">
+              <rect id="glow" x="300" y="280" width="1320" height="520" fill="url(#matrix)" opacity="0.35"/>
+              <path id="cristae" fill="none" stroke="#ffd2a8" stroke-width="10" stroke-linejoin="round" opacity="0.9"
+                d="M420 540 C420 420 470 330 520 330 L520 640 L600 640 L600 320 L680 320 L680 700 L760 700 L760 330 L840 330 L840 740 L920 740 L920 320 L1000 320 L1000 720 L1080 720 L1080 330 L1160 330 L1160 700 L1240 700 L1240 340 L1320 340 L1320 650 L1400 650 L1400 360 C1460 380 1500 460 1500 540"/>
+              <g id="embers"></g>
+              <g id="rings"></g>
+            </g>
+            <g id="ucps"></g>
+            <g id="protons"></g>
+          </g>
+          <g id="fuel"></g>
+        </svg>
+      </div>
+      <div class="call" id="c1" style="left:620px; top:170px">MITOCHONDRION</div>
+      <div class="call" id="c3" style="left:640px; top:240px; color:#8fdcff; font-size:26px">● PROTONS FLOW BACK IN</div>
+      <div class="call" id="c2" style="left:1000px; top:190px; color:#ffb347">UCP1 CHANNEL</div>
+      <div class="meter"><i id="heat"></i></div>
+      <div class="meterlab" id="ml">HEAT</div>
+      <div class="scrim"></div>
+      <div class="lt" id="l1"><span class="rule"></span>THE CELL'S FURNACE<span class="sub">MITOCHONDRIA IN BROWN FAT</span></div>
+      <div class="lt" id="l2"><span class="rule"></span>CALORIES → HEAT<span class="sub">UCP1 RELEASES THE ENERGY AS HEAT, NOT ATP</span></div>
+      <div class="tag">ILLUSTRATION · SIMPLIFIED</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const D = 12, r = FX.rng(77), NS = "http://www.w3.org/2000/svg";
+      FX.drift(tl, "#bg", D);
+      FX.dust(tl, document.getElementById("dust"), { seed: 9, count: 55, dur: D, travel: 160 });
+      tl.fromTo("#cam", { scale: 0.62, y: 30 }, { scale: 1.0, y: 0, duration: 4.0, ease: "power2.out" }, 0);
+      tl.to("#cam", { scale: 1.08, duration: 8, ease: "sine.inOut" }, 4);
+      tl.fromTo("#glow", { opacity: 0.25 }, { opacity: 0.95, duration: 2.6, ease: "sine.inOut" }, 1.0);
+      tl.to("#glow", { opacity: 0.7, duration: 1.2, yoyo: true, repeat: 5, ease: "sine.inOut" }, 3.6);
+      FX.draw(tl, "#cristae", 0.3, 2.4);
+      // embers rising inside the matrix (furnace)
+      const em = document.getElementById("embers");
+      for (let i = 0; i < 70; i++) {
+        const c = document.createElementNS(NS, "circle"), x = 440 + r() * 1060, y = 520 + r() * 300, s = 2 + r() * 5;
+        c.setAttribute("cx", x); c.setAttribute("cy", y); c.setAttribute("r", s); c.setAttribute("fill", r() < 0.5 ? "#ffe08a" : "#ffb347");
+        em.appendChild(c);
+        const at = r() * 2.5;
+        tl.fromTo(c, { y: 0, opacity: 0 }, { y: -(220 + r() * 260), opacity: 0.9, duration: 3 + r() * 2, ease: "none", yoyo: true, repeat: 2 }, 0.8 + at);
+      }
+      // UCP1 channels on the inner membrane (top edge of the matrix)
+      const ucpX = [640, 880, 1120, 1280];
+      const ucps = document.getElementById("ucps");
+      ucpX.forEach(x => {
+        const g = document.createElementNS(NS, "g");
+        g.innerHTML = `<rect x="${x - 18}" y="306" width="36" height="46" rx="10" fill="#ffb347" stroke="#fff1d0" stroke-width="3"/>` +
+          `<rect x="${x - 5}" y="306" width="10" height="46" fill="#3a1206"/>`;
+        ucps.appendChild(g);
+      });
+      tl.fromTo("#ucps g", { opacity: 0, scaleY: 0.2, transformOrigin: "50% 0%" }, { opacity: 1, scaleY: 1, duration: 0.4, stagger: 0.12, ease: "back.out(2)" }, 4.6);
+      // fuel: calories from a fat droplet stream into the mitochondrion
+      const fuel = document.getElementById("fuel");
+      for (let i = 0; i < 16; i++) {
+        const t = document.createElementNS(NS, "text");
+        t.textContent = "kcal"; t.setAttribute("font-family", "Inter"); t.setAttribute("font-weight", "800"); t.setAttribute("font-size", "30"); t.setAttribute("fill", "#ffe08a");
+        fuel.appendChild(t);
+        const at = 4.4 + i * 0.32;
+        tl.fromTo(t, { attr: { x: 80 + r() * 120, y: 420 + r() * 240 }, opacity: 0 }, { attr: { x: 480, y: 540 + (r() - 0.5) * 120 }, opacity: 1, duration: 1.1, ease: "power1.in" }, at);
+        tl.to(t, { opacity: 0, duration: 0.2 }, at + 1.05);
+      }
+      // protons slip back through UCP1; each one releases a ring of heat in the matrix
+      const pr = document.getElementById("protons"), rings = document.getElementById("rings");
+      for (let i = 0; i < 22; i++) {
+        const x = ucpX[i % 4], at = 5.2 + i * 0.29;
+        const p = document.createElementNS(NS, "circle");
+        p.setAttribute("r", 13); p.setAttribute("cx", x); p.setAttribute("fill", "#8fdcff"); p.setAttribute("stroke", "#fff"); p.setAttribute("stroke-width", "2");
+        pr.appendChild(p);
+        tl.fromTo(p, { attr: { cy: 270 }, opacity: 0 }, { attr: { cy: 380 }, opacity: 1, duration: 0.45, ease: "power1.in" }, at);
+        tl.to(p, { opacity: 0, duration: 0.15 }, at + 0.45);
+        const ring = document.createElementNS(NS, "circle");
+        ring.setAttribute("cx", x); ring.setAttribute("cy", 420); ring.setAttribute("r", 10); ring.setAttribute("fill", "url(#ring)");
+        rings.appendChild(ring);
+        tl.fromTo(ring, { attr: { r: 10 }, opacity: 0 }, { attr: { r: 210 }, opacity: 1, duration: 1.3, ease: "power2.out" }, at + 0.4);
+        tl.to(ring, { opacity: 0, duration: 0.5 }, at + 1.1);
+      }
+      tl.fromTo("#heat", { scaleY: 0.12 }, { scaleY: 0.92, duration: 6.4, ease: "power1.inOut" }, 5.2);
+      tl.fromTo([".meter", "#ml"], { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5 }, 4.8);
+      tl.fromTo("#c1", { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.5 }, 1.2);
+      tl.to("#c1", { opacity: 0, duration: 0.4 }, 4.4);
+      tl.fromTo("#c3", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 6.0);
+      tl.fromTo("#c2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5 }, 5.4);
+      tl.fromTo("#l1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 0.8);
+      tl.to("#l1", { opacity: 0, y: -10, duration: 0.35 }, 4.3);
+      tl.fromTo("#l2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 5.6);
+      window.__timelines["mito"] = tl;
+    </script>
+  </body>
+</html>

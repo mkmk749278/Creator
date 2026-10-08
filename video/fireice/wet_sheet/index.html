@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Wet sheets dried by body heat (reconstruction)</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <script src="shared/body.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #cam { position: absolute; inset: 0; transform-origin: 50% 45%; }
+      canvas, svg.stage { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+      .steam { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; pointer-events: none; }
+      .steam i { position: absolute; display: block; width: 160px; height: 160px; margin: -80px 0 0 -80px; border-radius: 50%;
+        background: radial-gradient(closest-side, rgba(235,245,255,0.55), rgba(235,245,255,0.18) 55%, rgba(235,245,255,0) 100%); }
+      .timer { position: absolute; right: 90px; top: 110px; text-align: right; font-weight: 800; }
+      .timer b { display: block; font-size: 96px; line-height: 1; }
+      .timer span { font-size: 24px; letter-spacing: 0.12em; color: var(--ink-dim); }
+      .bar { position: absolute; right: 90px; top: 290px; width: 360px; }
+      .bar .t { font-size: 24px; font-weight: 800; letter-spacing: 0.12em; color: var(--ice); margin-bottom: 10px; text-align: right; }
+      .bar .track { height: 18px; border-radius: 9px; background: rgba(157,179,199,0.2); overflow: hidden; }
+      .bar .fill { height: 100%; width: 100%; transform-origin: 0 50%; background: linear-gradient(90deg, #2f7fd3, #8fdcff); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="wet-sheet" data-start="0" data-width="1920" data-height="1080" data-duration="13.6">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-c"></div><div class="glow-h" id="gh"></div><div class="grid"></div></div>
+      <div class="particles" id="snow"></div>
+      <div id="cam">
+        <canvas id="cv" width="1920" height="1080"></canvas>
+        <svg class="stage" viewBox="0 0 1920 1080">
+          <defs>
+            <linearGradient id="wet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f86e0"/><stop offset="1" stop-color="#1f3f9a"/></linearGradient>
+            <linearGradient id="dry" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0a53a"/><stop offset="1" stop-color="#c8542a"/></linearGradient>
+          </defs>
+          <g id="sheet">
+            <path id="sheetW" d="M790 330 C 830 300, 900 296, 960 300 C 1020 296, 1090 300, 1130 330 C 1160 400, 1172 520, 1180 640 C 1110 660, 1040 650, 960 655 C 880 650, 810 660, 740 640 C 748 520, 760 400, 790 330 Z" fill="url(#wet)" opacity="0.92"/>
+            <path id="sheetD" d="M790 330 C 830 300, 900 296, 960 300 C 1020 296, 1090 300, 1130 330 C 1160 400, 1172 520, 1180 640 C 1110 660, 1040 650, 960 655 C 880 650, 810 660, 740 640 C 748 520, 760 400, 790 330 Z" fill="url(#dry)" opacity="0"/>
+            <path d="M840 360 C 850 450, 845 560, 830 640 M905 330 C 915 450, 912 560, 900 650 M1015 330 C 1005 450, 1008 560, 1020 650 M1080 360 C 1070 450, 1075 560, 1090 640" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="4"/>
+          </g>
+          <g id="drips"></g>
+        </svg>
+        <div class="steam" id="steam"></div>
+      </div>
+      <div class="timer"><b id="tm" style="font-size:64px">TIME-LAPSE</b><span>ILLUSTRATIVE</span></div>
+      <div class="bar"><div class="t" id="bt">SHEET WETNESS</div><div class="track"><div class="fill" id="bf"></div></div></div>
+      <div class="scrim"></div>
+      <div class="lt" id="l1"><span class="rule" style="background:#8fdcff"></span>THE MONKS' WET-SHEET TEST<span class="sub">A TRADITION · FILMED BY BENSON'S TEAM IN 1985</span></div>
+      <div class="lt" id="l2"><span class="rule"></span>DRIED BY BODY HEAT<span class="sub" id="l2s">STEAM RISES AND THE SHEET DRIES</span></div>
+      <div class="tag">ILLUSTRATION · RECONSTRUCTION</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const D = 13.6, { ss, lerp } = FX, r = FX.rng(31);
+      FX.drift(tl, "#bg", D);
+      FX.dust(tl, document.getElementById("snow"), { seed: 6, count: 60, dur: D, dir: 1, travel: 200, spread: 200 });
+      const body = BODY.make(document.getElementById("cv"), { pose: "seat", x: 960, y: 900, scale: 1.12 });
+      // steam puffs: each rises and swells over its own window; appear only once the sheet is warming
+      const steam = document.getElementById("steam"), puffs = [];
+      for (let i = 0; i < 46; i++) {
+        const el = document.createElement("i"); steam.appendChild(el);
+        puffs.push({ el, x: 800 + r() * 330, y: 360 + r() * 260, t0: 6.7 + r() * 6.2, life: 1.8 + r() * 1.6, drift: (r() - 0.5) * 120, s: 0.7 + r() * 0.9 });
+      }
+      const drips = document.getElementById("drips"), dl = [];
+      for (let i = 0; i < 10; i++) {
+        const c = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+        c.setAttribute("rx", 6); c.setAttribute("ry", 10); c.setAttribute("fill", "#8fdcff"); drips.appendChild(c);
+        dl.push({ c, x: 760 + r() * 400, t0: 1.4 + r() * 4.5 });
+      }
+      FX.clock(tl, D, t => {
+        const lay = ss(t, 0.3, 1.5), chill = ss(t, 1.2, 4.5) * (1 - ss(t, 6.6, 9)), heat = ss(t, 6.6, 12.8), dry = ss(t, 7.2, 13.0);
+        const base = 0.4 - 0.05 * chill + 0.32 * heat;
+        body.draw({ default: base, torso: base + 0.06, hips: base + 0.05, shoulders: base + 0.02, handL: base - 0.08, handR: base - 0.08, footL: base - 0.08, footR: base - 0.08, head: base + 0.04 },
+          [{ x: 0, y: -300, r: 170, t: 0.55 + 0.4 * heat, a: heat }], Math.round(t * 30));
+        gsap.set("#sheet", { y: lerp(-420, 0, lay), opacity: lay });
+        document.getElementById("sheetD").setAttribute("opacity", (0.95 * dry).toFixed(2));
+        document.getElementById("sheetW").setAttribute("opacity", (0.92 * (1 - 0.8 * dry)).toFixed(2));
+        dl.forEach(d => { const k = (t - d.t0) / 0.9; const on = k > 0 && k < 1 && t < 7; d.c.setAttribute("cx", d.x); d.c.setAttribute("cy", 640 + 260 * Math.max(0, k) * Math.max(0, k)); d.c.setAttribute("opacity", on ? 0.85 : 0); });
+        puffs.forEach(p => {
+          const k = (t - p.t0) / p.life, on = k > 0 && k < 1;
+          p.el.style.opacity = on ? (Math.sin(Math.PI * k) * (0.35 + 0.65 * heat)).toFixed(3) : 0;
+          p.el.style.transform = `translate(${(p.x + p.drift * k).toFixed(1)}px, ${(p.y - 330 * k).toFixed(1)}px) scale(${(p.s * (0.6 + 1.4 * k)).toFixed(3)})`;
+        });
+        document.getElementById("bf").style.transform = `scaleX(${(1 - dry).toFixed(3)})`;
+      });
+      tl.fromTo("#gh", { opacity: 0.2 }, { opacity: 1, duration: 5, ease: "sine.inOut" }, 7);
+      tl.fromTo("#cam", { scale: 1.0 }, { scale: 1.1, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo("#l1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 0.4);
+      tl.to("#l1", { opacity: 0, y: -10, duration: 0.35 }, 6.3);
+      tl.fromTo("#l2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 6.8);
+      window.__timelines["wet-sheet"] = tl;
+    </script>
+  </body>
+</html>

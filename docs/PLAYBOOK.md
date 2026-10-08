@@ -9,12 +9,13 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
 
 **Contents**
 - Part A: How we work. 1 Owner and delivery · 2 Claude models · 3 Parallel sessions · 4 Quality first
-- Part B: Documentaries. 5 The look · 6 Workflow and engines · 7 Script and voice · 8 Media sourcing ·
+- Part B: Documentaries. 4a Channel, language and audience rules · 5 The look · 6 Workflow and engines · 7 Script and voice · 8 Media sourcing ·
   9 Realistic animation · 10 HyperFrames · 11 Sound · 12 Facts, honesty and rights · 13 Render and deliver ·
   14 Pre-render review · 15 Lessons log
 - Part C: Phone consensus pipeline. 16 Product and spec · 17 Claude in the pipeline · 18 Architecture and stages ·
   19 Control flow, secrets, evals · 20 Build phases · 21 Phase 0 measurements
 - Part D: 22 Recommendations
+- Part E: the owner's channel charter (verbatim)
 
 ---
 
@@ -129,6 +130,125 @@ The phone-review content rules (Part C) don't apply here.
 **Role:** executive documentary director and motion-graphics engineer, at the standard of Vox, MagnatesMedia, Polymatter,
 ColdFusion and Think Deep. **Goal:** turn a voiceover and a factual script into a cinematic, motion-heavy film. It must
 look like a broadcast documentary or investigative film, **never a slide deck, corporate presentation or photo slideshow**.
+
+**Owner's channel charter (2026-10-08, verbatim in Part E; it wins where it is stricter).** How it maps onto this playbook:
+- **Mission and voice:** the "super-channel" for Telugu viewers: hooks with emotional urgency, a dark cinematic sound, clear
+  chronology, Vox/Johnny Harris-style 2.5D visuals, and only peer-reviewed or primary legal sources. Narrator persona: the
+  street-smart elder brother (అన్నయ్య), conversational Telugu, never victim-blaming (blame the system, not the viewer).
+- **Four acts:** (1) visceral hook, 0:00–1:15, drone + ticking clock; (2) systemic betrayal / investigation, live-browsing
+  mock-ups and highlighters; (3) climax and shock reveal, with **1.5 s of total music silence before the core truth and a
+  braam/thud as the proof lands**; (4) practical defence: actionable, reassuring steps, warm outro. Science films map the
+  same way: myth → mechanism → the real evidence → what you can safely do. A "Trojan horse" hook: open on the popular
+  mystery, resolve it with verified truth (this pairs with §12: the fact-check decides what "truth" is).
+- **Citation tag on every factual claim:** a small bracket tag, e.g. `[NATURE (1982) | HARVARD MONK STUDY]`, bottom right
+  above the logo bug (`cite` column in `projects/fire-and-ice/assemble.py`).
+- **Bunty script format** (ElevenLabs): 5–6 blocks of 100–130 words, under 1,200 characters each; commas and full stops
+  plus `...` for dramatic pauses (owner amended 2026-10-08); no stage directions, `!`, quotes or dashes; numbers as English
+  number words in Telugu script (ఫైవ్ థౌసండ్, owner confirmed 2026-10-08); acronyms letter by letter in Telugu script;
+  common English terms transliterated. *Why (owner):* prevents skipped characters, buffer drops and truncated takes.
+  `scripts/align_script.py` still times these blocks (one sentence per TSV row).
+- **Sound matrix:** VO peaks −2 to −3 dB; BGM −24 to −26 dB under speech; −12 dB in pauses (0.5 s ramps); 0 (silence) for
+  1.5 s before reveals; impacts −6 to −8 dB; clicks/typing/whoosh −8 to −10 dB. Supersedes the −18 to −22 dB in §11.
+  Master stays −14 LUFS, −1 dBTP.
+- **Cadence:** focal change every 3.0–3.5 s (inside the 2.5–4 s rule).
+- **Engines:** the charter names FFmpeg and Python PIL/Matplotlib; HyperFrames (CLAUDE.md) stays the animation engine and
+  FFmpeg the assembler, both running in cloud sessions because the owner has no PC (Termux can still run `assemble.py`).
+
+### 4a. Channel, language and audience rules (research, 2026-10-08)
+Distilled from `docs/research/reports/Telugu YouTube audience and style.md` (30 evidence-graded rules with sources; notes
+in `docs/research/research_notes/`). The charter stays in force; where the evidence disagrees, the owner decides (list at
+the end). *Why this exists:* the big Telugu channels already win on warmth, presence and volume; none shows sources on
+screen. Visible proof is this channel's edge, and it is what YouTube's satisfaction signals and policies reward.
+
+**The market (measured 2026-10-08).** Day Trader Telugu 2.7M subs and Money Purse 2.12M (7–8 uploads a week, 17–27 min
+daily shows); Kowshik Maridi's own channel 662K in about 8 months (the Boss Wallah audience followed his face); Think Deep
+2.24M, V R Raja 1.78M + 1.93M, NB Show 1.33M (1–2 uploads a day, 9–18 min). Every channel's all-time top videos are
+**evergreen** beginner explainers, mythology/science and "what happened that day" stories, not daily news. Viewers praise
+warmth, sincerity and the patient "tuition master"; they punish thumbnails the video contradicts, long intros ("video
+starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for views. Thumbnails share one template
+(AI-art scene, real face, 2–3 huge red/yellow words). No competitor shows a source on screen.
+
+**Hook, structure, pacing**
+- Deliver the thumbnail's promise on screen **by 0:30**, with no channel intro before it (YouTube's "intro" metric counts
+  viewers still watching at 30 s). Act 1 may run to 1:15 only if the payoff lands by 0:30. (Strong)
+- 8–12 min (longer if the story earns it) built as **3–5 chapters of 2–4 min**, each with its own question and payoff;
+  YouTube chapters in the description (00:00, at least three, each ≥ 10 s). (Moderate: viewing engagement medians cap
+  near 6 min in a 6.9M-session study; Telugu explainers of 10–18 min hold millions of views.)
+- Energetic delivery throughout; "reassuring" never means slow. Focus change every 3.0–3.5 s with continuous motion.
+- The 1.5 s silence + braam is **untested**: use it once or twice per film and check the retention curve at those
+  timestamps after publishing.
+- **Every film gets its own art direction** (palette, texture family, motif) and varied act lengths, so the four-act
+  engine never looks templated (YouTube's July 2025 "inauthentic content" rule demonetises mass-produced templates).
+- Prefer evergreen topics: money and prices, scams, disasters, mythology-vs-evidence, body and space science, financial
+  history (a Harshad Mehta story did 1.3M on Day Trader), plus a monthly "what changes from the 1st" explainer.
+
+**Voice and Telugu (scripts and TTS)**
+- ElevenLabs: Telugu works only on **`eleven_v3` / `eleven_v4` with `language_code: "te"`**; never Multilingual v2 or Flash
+  v2.5 (re-check the models page each project). A professional voice clone runs on v4.
+- All TTS text in **Telugu script**, English loanwords included (writing them in Telugu script cut code-mix word errors
+  from ~0.8 to ~0.2 in one study); Latin script appears only on screen. Acronyms as people say them: spaced letters
+  (ఆర్ బి ఐ) or a word (సిబిల్, ఇస్రో); gloss each once.
+- Dramatic pauses: `...` is allowed in TTS text (owner's decision, 2026-10-08; ElevenLabs' own guidance uses it for
+  pauses). Use it at real beats only (before a reveal, after a question), at most one per sentence. Listen to every take:
+  if a block skips or cuts words around a `...`, regenerate it with a comma there and make the pause in the edit
+  (`VO_PAUSE`). The other bans stand: no `!`, quotes, dashes or stage directions.
+- One idea per sentence (about 8–15 words); no `;`, brackets, slashes, `&`, `#` or emoji in TTS text.
+- **Educated spoken Telugu** (TV-news register, Gidugu's vyavaharika): no grandhika endings (-ము, వచ్చెను, -బడు passives).
+  English only for technical or modern nouns, at most one English content word per clause, never an English clause.
+- **Dialect-neutral:** pan-regional words; never call one region's Telugu "pure" or another's "slang"; never a dialect for
+  comedy or villains; "మన తెలంగాణ, మన ఆంధ్ర" framing. Test new voices with listeners from both states.
+- **Ban list** (script, guests and clips): చండాలం and its forms; కటిక చీకటి (use కారు చీకటి); caste names as adjectives;
+  proverbs that insult disability or gender. Name a caste only if essential and sourced. At most one proverb per segment.
+  *Why:* SC/ST Atrocities Act cases have hit Telugu TV channels and a YouTuber over on-air caste remarks, and courts treat
+  social media as "public view".
+- Persona: the elder brother **and** the patient tuition teacher; warm, sincere, never yelling.
+
+**Audience: emotions and sensitivities**
+- Debt is mainstream, not shameful-rare: AP 43.7% and Telangana 37.2% of adults in debt (MoSPI 2020–21, highest in India);
+  Telangana had the most debt-linked suicides in 2022 (NCRB, 1,163). Shame is the collector's weapon (loan apps messaged
+  relatives and morphed photos). **Stories make the mechanism the villain, never the victim, and end with a practical
+  exit** (verified portals, helplines).
+- Steelman lived institutions (chits, gold loans, local lenders) with both sides' numbers; righteous anger targets
+  documented wrongdoing, not "corporates" in general. No moralising about IT workers' "lifestyle inflation" without data.
+- Suicide: Press Council of India / WHO norms: no method, place or victim images; "died by suicide"; a helpline on the end
+  card (verify the current Tele-MANAS number at the source before use).
+- Politics: attribute every contested figure ("NCRB says", "BRS claims"), show rival parties' numbers, no party colours or
+  symbols; stars' cases stay allegations.
+- Trust: 93% of investors rate finfluencers credible (SEBI survey 2025) and WhatsApp is the top misinformation source, so
+  visible sourcing reads as respect. For debunks, show the original claim with its real date and source, not just "FAKE".
+
+**Sources, packaging, distribution**
+- Citation tag on every claim (charter), a **timestamped source list in the description**, a `Correction: [timestamp]` line
+  for any error (YouTube shows a correction card), and the fact-check gate independent of polish. Sources: peer-reviewed
+  papers, court rulings and regulator texts, plus primary official statistics (NCRB, MoSPI, RBI), labelled as such.
+- Thumbnail: 2–4 large Telugu-script words, one concrete number or object, a real photo or footage frame, **delivered
+  literally in the film**. No AI images of real people, baked-in "views" badges or unrelated politicians. Title: a Telugu
+  hook plus English search keywords.
+- Test 2–3 genuinely different packages with Test & Compare (judged on watch-time share; desktop Studio only, so the
+  coordinator runs it).
+- Cut 9:16 Shorts from each film's scenes with the related-video link; seek mentions from large non-finance Telugu creators.
+
+**Compliance gates (hard, beside the fact-check)**
+- Synthetic content: answer "Altered content = Yes" for any realistic synthetic scene of a real event or place; label
+  browser mock-ups "SIMULATION" (no real-looking screenshots of real banks); illustrations "ILLUSTRATION". Cloning the
+  owner's own voice is exempt from disclosure.
+- Health: state the WHO/ICMR position, the mainstream view and a real skeptic beat; no realistic synthetic medical scenes.
+- Finance (SEBI finfluencer rules): education only, no buy/sell/hold or IPO apply/avoid calls on named securities, no return
+  promises; price charts of named stocks end at least 30 days before publishing (three months until the rule is
+  clarified); "Educational only, not SEBI-registered" on screen and in the description; no broker affiliate links.
+  Verify the circular texts on sebi.gov.in before the first finance film.
+
+**Owner's decisions on the research questions (2026-10-08)**
+1. Numbers: keep the charter's English number words in Telugu script (ఫైవ్ థౌసండ్, ట్వెంటీ లాక్స్), not Telugu number
+   words. Decimals and percentages stay as the charter says (అర శాతం).
+2. Voice: keep ElevenLabs "Bunty". No clone of the owner's voice.
+3. Pauses: `...` allowed (see the voice rules above); the edit-made pause is the fallback when a take breaks.
+4. Competitor audio: the owner asked for other routes instead of a phone listen. Tried 2026-10-08: listings work from the
+   cloud; media from the container and from GitHub's runners hit YouTube's bot check. A VPS-runner try was cancelled:
+   switching machines to dodge the block counts as routing around it (the auto-mode check stopped it). **Owner's call:
+   skip the competitor measurement**; judge pacing, music and hooks from our own retention curves after publishing.
+   If it is ever wanted: `YT_COOKIES` (§8.5) or Termux, then `scripts/study_opening.py` on the 18 picks in
+   `docs/research/research_notes/Telugu YouTube audience and style/competitor_picks.tsv`.
 
 ## 5. The look
 
@@ -483,7 +603,8 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 
 ## 11. Sound
 
-- **The VO leads.** BGM at −18 to −22 dB under the VO (bed at −15 dB with sidechain ducking lands ~20 dB under), ducked by
+- **The VO leads.** (Charter levels supersede: BGM −24 to −26 dB under speech, −12 dB in pauses; see Part B intro.)
+  BGM at −18 to −22 dB under the VO (bed at −15 dB with sidechain ducking lands ~20 dB under), ducked by
   the VO **and** live clip audio, rising only in pauses. Loop music with crossfades (`long_bed`), never an audible restart.
 - **The video is not locked to the VO length.** EDL break types:
   - **Diegetic cut:** when authentic footage appears, the VO stops and the asset's own sound plays for 2–6 s (a conch, a
@@ -552,6 +673,8 @@ above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at
 - [ ] No near-black or dead frames; block changes dip to black; the music bed never restarts audibly.
 - [ ] Claims stay claims; a real skeptic or mainstream-science beat on health topics.
 - [ ] About −14 LUFS; subtitles rebuilt after any timing change.
+- [ ] Thumbnail promise shown by 0:30; chapters in the description; timestamped sources and citation tags on claims.
+- [ ] Compliance gates (§4a): synthetic disclosure, health context, SEBI education-only lane, PCI suicide norms, ban list.
 
 ## 15. Lessons log
 
@@ -580,6 +703,30 @@ a temp-dir `npx` pulled an unpinned HyperFrames, hence the pinned-CLI rule.
 **Pixel 11 consensus review (v1→v2).** Review found: opinion counts presented as evidence, manufacturer figures shown as
 measurements, bare counts without denominators, paused zeros on count-ups, different tests on one scale, quote cards
 competing with captions, visual sameness. Fixes became rules in §16.
+
+**Fire and Ice (Tummo / Wim Hof, Telugu, 5:15 preview, Oct 2026).** One session, ~4 h wall clock (fact-check at max effort
+took 90 min in a subagent while sourcing, scenes and assembly ran). Lessons:
+- **Fact-check the script before the VO is recorded.** The VO arrived recorded; the check then found 17 wrong lines
+  (wrong year, place, person, an invented "research paper" quote, records, a mechanism). Without a re-record the only
+  honest options are cutting lines (`projects/fire-and-ice/tools/vomap.py`: cuts at line-slot boundaries, optional
+  silence inserted for an on-screen beat; EDL and SRT follow the map) and labelling the screen. *Why:* a re-record costs
+  minutes; a wrong claim on a public channel costs trust.
+- **Reusable thermal-camera figure** (`video/fireice/_shared/body.js`): body parts drawn as temperatures into a
+  low-res canvas field, blurred, palette-mapped (ironbow) and masked by a soft silhouette; one master clock tween
+  (`FX.clock`) redraws every frame from `t` alone. Looks like a real thermogram; renders at ~5 s per output second
+  (1080p, 4 workers). A flat-coloured SVG stick figure looked like a pictogram; drop that approach.
+- **Dailymotion has full broadcaster documentaries** (VICE "The Superhuman World of the Iceman", DW Euromaxx) with real
+  event footage (the Radboud endotoxin test), but only at 288p: usable as credited archive with `hqdn3d` + `unsharp`.
+- **Verify every third-party in-point with an exact `-ss` frame grab** before render: a 12 s overview sheet put a talk
+  show (burned subtitles) where it showed a snowy gorge. In shell loops run ffmpeg with `-nostdin` or it eats the list.
+- **Maps for an Indian audience: land only, no political borders.** Natural Earth draws de facto borders in Kashmir;
+  `video/fireice/benson_map/mkmap.mjs` uses `land-110m`.
+- **Telugu sensitivity:** "చండాలి" (Sanskrit caṇḍālī, a Tummo name) is heard as a caste insult; show the Sanskrit term
+  with a label and ask the owner.
+- Commons originals 429 under load; standard thumb widths (1920) with long back-off worked. Openverse audio `url`s are
+  full-length previews (one "ambience" was a 53-min file): check `duration` before downloading.
+- Cut review caught: near-black title beats (snow/embers on black), a black frame from a source fade-in, cover-cropped
+  people in 4:3 photos (pre-crop a 16:9 band), a mitochondria scene reused as a missing-photo fallback 20 s after itself.
 
 ---
 
@@ -734,3 +881,157 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 9. **Measure before adopting** any expensive effect: render a 2 s shard with and without it and log the cost in §15.
 10. **Fact-check as a separate pass** at `max` effort in a fresh context (as the phone pipeline already does), producing a
     claims table (claim → source URL → status) committed with each video, like `episodes/.../04-fact-check.md`.
+
+---
+
+# Part E: Owner's channel charter (verbatim, received 2026-10-08)
+
+Kept word for word so later sessions read the owner's own wording. How each point maps onto this playbook: Part B intro.
+Owner's amendment (2026-10-08): `...` is now allowed for dramatic pauses (§4a); the rest of rule 4.2 stands.
+
+#### CLAUDE DIRECTIVE: "BE PRACTICAL WITH KISHORE"
+#### THE DEFINITIVE PRODUCTION CHARTER & AUTOMATED DOCUMENTARY ENGINE
+
+#### 1. THE MISSION & CHANNEL MONOPOLY
+- Channel Identity: "Be Practical with Kishore" is the digital defense shield and ultimate investigative platform for Telugu audiences across Telangana, Andhra Pradesh, and the global diaspora.
+- The Core Problem in Telugu YouTube:
+  - Finance channels (Money Purse, Koushik Maridi) are either dry, slow, 30-minute boring classroom lectures or surface-level promotional summaries.
+  - Stock channels (Day Trader Telugu) isolate the common man with overly complex trading jargon.
+  - Mystery/Science channels (Think Deep) rely on unverified pop-science blogs and sensationalism.
+  - News/Explainer channels (VR Raja, NB Show) either rely on loud sensationalist yelling without deep research, or flat studio monologues.
+- The "Super-Channel" Solution:
+  "Be Practical with Kishore" eliminates the need for any other channel. It fuses:
+  1. The mass emotional urgency & scroll-stopping hooks of VR Raja.
+  2. The dark cinematic atmosphere, Hans Zimmer-style pulse, and audio ducking of Think Deep.
+  3. The structured chronological clarity of NB Show.
+  4. The 2.5D visual dynamism, animated live-browsing, and investigative depth of Vox & Johnny Harris.
+  5. An impenetrable moat of 100% peer-reviewed scientific papers (Nature, PNAS) and legal primary sources (Supreme Court rulings, RBI Master Directions).
+
+---
+
+#### 2. THE PSYCHOLOGICAL OPERATING SYSTEM (TELUGU VIEWER COGNITION)
+Every script, visual cue, and audio beat produced by Claude must be calibrated against the lived reality and deep psychological wiring of the Telugu middle-class:
+
+##### A. The Honor vs. Shame Axis ("పరువు & గౌరవం")
+- In Telugu culture, public humiliation (neighbors finding out about debt, relatives discovering EMI defaults, office colleagues getting recovery calls) triggers severe existential panic.
+- Core Rule: Never victim-blame the viewer. Never speak from an ivory tower.
+- Psychological Re-framing: Remove the viewer's personal guilt and channel their anger against predatory corporate systems:
+  "ఇది మీ తప్పు కాదు... ఈ కార్పొరేట్ సిస్టమ్ మిమ్మల్ని ట్రాప్ చేయడానికి పన్నిన పక్కా వ్యూహం. ఇప్పుడు ఆ ట్రాప్ ని లీగల్ గా ఎలా బద్దలు కొట్టాలో చూద్దాం."
+
+##### B. Regional Realities & Cultural Touchpoints
+- Address the authentic anxieties of:
+  - Hyderabad IT professionals trapped in lifestyle inflation, multiple credit cards, and tech layoffs.
+  - Coastal AP & Rayalaseema small business owners, traders, and agricultural families facing predatory private finance.
+  - Middle-class parents suffocating under education donations, gold mortgage interest, and real estate/HYDRAA anxieties.
+- Voice Persona: The fearless, fiercely intelligent, street-smart elder brother ("అన్నయ్య") who stands between the viewer and corporate predators. Not a professor. A battle-tested protector.
+
+##### C. Conversational Cadence (Natural Telugu Idioms)
+- Avoid textbook bookish Telugu (గ్రాంథిక భాష).
+- Use natural, punchy, conversational bridges:
+  "పచ్చి నిజం ఏంటంటే...", "తెరవెనుక అసలు మోసం ఇక్కడే ఉంది...", "మన నెత్తిమీద బండరాయిలా పడే ఆ ఒక్క క్లాజ్...", "కంటిమీద కునుకు లేకుండా చేసే ఈ చక్రవడ్డీ...".
+
+---
+
+#### 3. THE 4-ACT SCREENPLAY & EMOTIONAL CHOREOGRAPHY
+Every documentary must adhere to this 4-act structural cadence. Narration text, visual events, and audio tracks must move in perfect lockstep:
+
+##### ACT 1: THE VISCERAL HOOK (0:00 – 1:15)
+- Psychological Objective: Stop the scroll immediately, validate silent anxieties, create irresistible curiosity.
+- Narration Cadence: Rapid, high-urgency rhetorical questions delivered with raw empathy.
+- Visuals: Fast-paced, high-contrast imagery, dark UI frames, red alert stamps.
+- Audio: Low-end dark tension drone (sub-bass pulse) + ticking clock.
+
+##### ACT 2: THE SYSTEMIC BETRAYAL (1:15 – 4:00)
+- Psychological Objective: Expose the fine print, algorithms, and legal loopholes rigged against the common man. Righteous anger replaces helplessness.
+- Narration Cadence: Analytical, razor-sharp, investigative breakdown.
+- Visuals: Simulated live browsing (interactive portals, dynamic mouse cursors, typing SFX, yellow highlighters circling abusive clauses).
+- Audio: Minimalist pulsing synth (Investigation track), low-volume mechanical clicks.
+
+##### ACT 3: THE CLIMAX & SHOCK REVEAL (4:00 – 6:30)
+- Psychological Objective: Shatter common myths with undeniable, shocking proof.
+- The Dramatic Silence Rule: Right before the core truth is uttered (e.g., "అసలు బ్యాంక్ మిమ్మల్ని ఎందుకు అరెస్ట్ చేయలేదో తెలుసా?"), the background music must cut to ABSOLUTE ZERO SILENCE for 1.5 seconds.
+- Impact: Follow the silence immediately with a massive cinematic low-end thud/braam as the verifiable proof slams onto the screen.
+
+##### ACT 4: THE PRACTICAL DEFENSE & EMPOWERMENT (6:30 – Outro)
+- Psychological Objective: Hand the viewer actionable, step-by-step armor (legal sections, dispute templates, negotiation rules). Restore dignity and peace of mind.
+- Narration Cadence: Reassuring, commanding, victorious, and protective.
+- Visuals: Clean action checklists, official legal seals, calm resolution graphics.
+- Audio: Warm, reflective, hopeful cinematic piano/ambient outro.
+
+---
+
+#### 4. STRICT SCRIPT SANITIZATION (ELEVENLABS "BUNTY" VOICE ENGINE)
+To guarantee 100% flawless audio synthesis with the "Bunty" voice and prevent buffer drops, attention drift, character skips, and truncation:
+
+1. Zero Stage Directions in Text:
+   - Absolutely no `[Pause]`, `[Whisper]`, `[Music stops]`, or `(Tone: Serious)` inside the text string.
+2. Minimalist Punctuation:
+   - Use only commas (`,`) for natural breath pauses and full stops (`.`) for sentence endings.
+   - Strictly ban: ellipses (`...`), em-dashes (`--`), quotation marks (`"`), and exclamation points (`!`).
+3. Phonetic Telugu for Technical Terms & Numbers:
+   - Numbers: Always spell out phonetically in Telugu script (`ఫైవ్ థౌసండ్`, `ట్వెంటీ లాక్స్`, `వన్ హండ్రెడ్`). Never use raw digits (`5000`, `20L`).
+   - Decimals & Percentages: Avoid heavy consonant clusters like "పాయింట్ ఫైవ్". Write `అర శాతం` or `మూడు నుంచి నాలుగు శాతం`.
+   - Acronyms: Separate letters cleanly with spaces in Telugu script (`ఆర్ బి ఐ`, `హెచ్ డి ఎఫ్ సి`, `ఎన్ పి ఏ`, `సిబిల్`, `ఓ టి ఎస్`).
+   - Technical/Financial Vocabulary: Transliterate commonly understood English terms into Telugu script (`స్టేట్‌మెంట్`, `మినిమమ్ డ్యూ`, `అల్గారిథమ్`, `రికవరీ ఏజెంట్`).
+4. Strict Chunk Segmentation:
+   - Divide every script into 5 to 6 distinct modular blocks.
+   - Word count constraint: 100 to 130 words per block (under 1,200 characters).
+   - This ensures the model never experiences buffer exhaustion and completes every file cleanly.
+
+---
+
+#### 5. VISUAL AUTOMATION & MOTION STANDARDS (FFMPEG / PYTHON PIL)
+Never display boring talking-head monologues or flat static slides. Visuals must be dynamic, simulated, and cinematic:
+
+1. Simulated Live Browsing Engine:
+   - For web/app topics (e.g., Amazon/Flipkart sales, banking portals, CIBIL dashboards):
+   - Generate virtual dark-mode browser mockups (URL bar, navigation buttons).
+   - Render animated mouse cursor movement interpolating smoothly across the frame.
+   - Simulate live typing inside search fields accompanied by typewriter SFX.
+   - Simulate button clicks with expanding radial ripple rings and crisp click SFX.
+2. Dynamic Data & Charts (Bloomberg / Vox Style):
+   - Use Python PIL / Matplotlib to render animated line charts (e.g., price hike histories, compounding debt curves).
+   - Draw glowing lines dynamically across the timeline with synchronized digital meter SFX.
+3. The Journalistic Citation Overlay:
+   - Reinforce high credibility by placing minimalist, high-tech lower-third tags for every single factual, legal, or scientific claim:
+     `[RBI MASTER DIRECTION: DOR.STR.REC.4/2023]`
+     `[INDIAN CONTRACT ACT: SECTION 171]`
+     `[SUPREME COURT RULING: CRIMINAL VS CIVIL BREACH]`
+     `[NATURE (1982) | HARVARD MONK STUDY]`
+4. Pacing Cadence:
+   - Visual focal points must change every 3.0 to 3.5 seconds (slow 2.5D camera push, pan, yellow highlight reveal, or angle shift).
+
+---
+
+#### 6. MASTER SOUND DESIGN & AUDIO MIXING SPECIFICATIONS
+Sound design is 50% of retention. Claude must configure FFmpeg mixing commands according to this strict decibel matrix:
+
+| Audio Layer | Decibel (dB) Level | Behavior & Rules |
+| :--- | :--- | :--- |
+| Bunty Voiceover (VO) | `-2 dB` to `-3 dB` | Master anchor. Crisp, normalized, high-clarity speech. |
+| BGM Under Speech | `-24 dB` to `-26 dB` | Subtle, atmospheric bed. Must never compete with VO clarity. |
+| BGM Speech Pauses (Swells) | `-12 dB` | Smooth 0.5s ramp up during voice gaps to maintain cinematic tension. |
+| Climax Shock Point | `0 dB (Complete Silence)`| Instant 1.5s hard cut of music before major shocking facts. |
+| Cinematic Impacts (Braams/Thuds)| `-6 dB` to `-8 dB` | Heavy sub-bass drop following the silence window. |
+| Tactical SFX (Clicks/Typing/Whoosh)| `-8 dB` to `-10 dB`| Precise sync with cursor clicks, highlights, and transitions. |
+
+---
+
+#### 7. AUTONOMOUS END-TO-END EXECUTION WORKFLOW
+When the user supplies a topic and core hypothesis:
+
+##### Phase 1: Fact-Checking & The Trojan Horse Angle
+- Audit the subject. Map viral myths versus verified legal/scientific facts.
+- Design the "Trojan Horse Hook": Hook the viewer with the popular mystery, but resolve it using mind-bending, verified truth.
+
+##### Phase 2: Screenplay & Sanitized Blocks
+- Draft the emotionally gripping Telugu script following the 4-Act structure.
+- Sanitize the text strictly for ElevenLabs Bunty into 5–6 modular blocks.
+
+##### Phase 3: Visual & Audio Choreography
+- Generate the simulated web mockups, animated charts, and citation badges.
+- Map exact timestamps for music switches, audio ducking, and silence drops.
+
+##### Phase 4: Local Assembly & FFmpeg Rendering
+- Assemble the assets via FFmpeg on Android/Termux using low-overhead filtergraphs.
+- Output a production-ready, fully mastered 1080p MP4 file.

@@ -1,0 +1,172 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 5.926,
+  "te": "ఈ మిస్టరీ వెనుక ఉన్న ప్రాచీన రహస్యం పేరు... Tummo, లేదా ఇన్నర్ ఫైర్ మెడిటేషన్.",
+  "en": "The ancient secret behind this mystery is called... Tummo, or inner fire meditation.",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.27,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.702,
+  "end": 12.438,
+  "te": "టిబెటన్ బౌద్ధ సంప్రదాయంలో వేల ఏళ్లుగా వస్తున్న ఈ సాధనను చండాలి యోగం అని కూడా పిలుస్తారు.",
+  "en": "Handed down for thousands of years in the Tibetan Buddhist tradition, this practice is also called Chandali yoga.",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.27,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 13.041,
+  "end": 19.269,
+  "te": "ఈ సాధన చేసే లామాలు మైనస్ డిగ్రీల చలిలో పర్వతాల గుహల్లో కేవలం పలుచని బట్టతో జీవిస్తారు.",
+  "en": "Lamas who practise it live in mountain caves in sub-zero cold, wearing only thin cloth.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.276,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 19.83,
+  "end": 24.659,
+  "te": "ఈ విషయం తెలుసుకున్న Harvard Medical School కు చెందిన ప్రముఖ ప్రొఫెసర్ Dr. Herbert Benson...",
+  "en": "Hearing of this, a leading professor at Harvard Medical School, Dr. Herbert Benson...",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.246,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 24.956,
+  "end": 29.325,
+  "te": "nineteen eighty-two లో తన రీసెర్చ్ టీమ్ తో కలిసి స్వయంగా హిమాలయాలకు వెళ్లారు.",
+  "en": "went to the Himalayas himself with his research team in 1982.",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.146,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 29.893,
+  "end": 36.052,
+  "te": "సైంటిస్టుల ఆలోచన ఒక్కటే... ఇది నిజంగా బయోలాజికల్ ఫ్యాక్టా లేక ఏదైనా ట్రిక్ ప్లే చేస్తున్నారా?",
+  "en": "The scientists had one question... is this a real biological fact, or are they playing some trick?",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.146,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 36.73,
+  "end": 43.447,
+  "te": "ఆ సాధువుల చేతి వేళ్లకు, కాళ్లకు, ఛాతీకి అత్యంత సెన్సిటివ్ డిజిటల్ థర్మామీటర్లను ఫిక్స్ చేశారు.",
+  "en": "They fixed highly sensitive digital thermometers to the monks' fingers, toes and chests.",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.547,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 43.977,
+  "end": 47.72,
+  "te": "సాధారణంగా తీవ్రమైన చలిలో చేతి వేళ్ల ఉష్ణోగ్రత పడిపోతుంది.",
+  "en": "Normally, in severe cold, finger temperature drops.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.202,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 48.245,
+  "end": 53.701,
+  "te": "కానీ ఆ సాధువులు Tummo ధ్యానం స్టార్ట్ చేయగానే... Doctors కళ్ల ముందే ఒక అద్భుతం జరిగింది!",
+  "en": "But as soon as the monks began Tummo meditation... a wonder happened before the doctors' eyes!",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.202,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 54.248,
+  "end": 61.101,
+  "te": "ఆ సాధువుల వేళ్ల ఉష్ణోగ్రత క్రమంగా పెరుగుతూ... ఏకంగా eight to seventeen degrees Fahrenheit పెరిగింది!",
+  "en": "The temperature of the monks' fingers rose steadily... by a full eight to seventeen degrees Fahrenheit!",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.629,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 61.587,
+  "end": 67.167,
+  "te": "గడ్డకట్టే చలిలో కూడా వాళ్ళ శరీరం లోపల సెంట్రల్ హీటింగ్ సిస్టమ్ లాంటి వేడి జనరేట్ అవుతోంది!",
+  "en": "Even in freezing cold, heat like a central heating system was being generated inside their bodies!",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.762,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 67.773,
+  "end": 70.576,
+  "te": "సైంటిస్టులు నమ్మలేక మరింత ఎక్స్ట్రీమ్ టెస్ట్ చేశారు.",
+  "en": "Unable to believe it, the scientists ran a more extreme test.",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 71.038,
+  "end": 74.114,
+  "te": "ఐస్ వాటర్ లో ముంచిన తడి బట్టలను వాళ్ళ భుజాల మీద వేశారు.",
+  "en": "They put wet cloths dipped in ice water on their shoulders.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 74.596,
+  "end": 77.127,
+  "te": "నార్మల్ మనిషి అయితే ఆ చలికి షాక్ లోకి వెళ్లిపోతాడు.",
+  "en": "A normal person would go into shock from that cold.",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.112,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 77.594,
+  "end": 84.244,
+  "te": "కానీ forty-five minutes లో... ఆ సాధువుల శరీరం నుంచి పొగలు వస్తూ, ఆ తడి బట్టలు పూర్తిగా ఆరిపోయాయి!",
+  "en": "But within forty-five minutes... steam rose from the monks' bodies and the wet cloths dried completely!",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.112,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 84.822,
+  "end": 87.163,
+  "te": "Harvard డాక్టర్లు తమ రీసెర్చ్ పేపర్స్ లో రాశారు:",
+  "en": "The Harvard doctors wrote in their research papers:",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 0.226,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 87.697,
+  "end": 94.914,
+  "te": "human autonomic nervous system ని మనిషి మైండ్ పవర్ తో స్వయంగా కంట్రోల్ చేయగలడు అనడానికి ఇది తిరుగులేని నిదర్శనం!",
+  "en": "this is undeniable proof that a person can control the human autonomic nervous system with the power of the mind!",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 3.017,
+  "confidence": "high"
+ }
+]

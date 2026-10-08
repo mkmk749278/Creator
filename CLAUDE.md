@@ -68,7 +68,7 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 ## Documentary rules (Be Practical with Kishore). Full spec: PLAYBOOK Part B
 - **A film, never a slide deck.** No full-screen text boxes, bullet lists, cards or question-mark graphics; no flat colour
   or plain gradient canvas. Text ≤ 15% of the screen: 2–4-word lower-thirds, dates/places/numbers, counters, a corner timer.
-- **Always moving:** cut, transition or pan every 2.5–4 s; no unmoving still or flat frame over 1.5 s; ≥ 85% of the runtime
+- **Always moving:** cut, transition or pan every 2.5–4 s (charter: aim for 3.0–3.5 s); no unmoving still or flat frame over 1.5 s; ≥ 85% of the runtime
   is moving footage or animation. Animate irreplaceable stills (parallax, particles, forensic magnifier, sliding collage).
 - **Three layers in every frame:** full-screen real footage or a moving photo; atmosphere (grain, ~30% vignette, light leaks,
   optional 2.35:1 bars, low-opacity HUD); kinetic accents in lower corners on a dark scrim.
@@ -83,7 +83,23 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   bound to the project's `assets/`. Self-review with the checklist in PLAYBOOK §14 and write `review.md` before every render.
 - **No Whisper** for transcription or translation: time the owner's script on the VO with `scripts/align_script.py`
   (silencedetect + script mapping, te/en SRTs on the Telugu timing). No script → ask for it. Method and accuracy: §7.
-- **Audio:** the VO leads; BGM −18 to −22 dB, ducked under all speech; −14 LUFS two-pass linear. The video isn't locked to
+- **Owner's channel charter (PLAYBOOK Part B intro, verbatim in Part E):** 4 acts (visceral hook → systemic betrayal →
+  climax and shock reveal → practical defence); a "Trojan horse" hook (popular myth in, verified truth out); the "elder
+  brother" voice, conversational Telugu, never victim-blaming; a journalistic citation tag (`[NATURE (1982) | HARVARD MONK
+  STUDY]`) on every factual claim; 1.5 s of total music silence before each core reveal, then a low braam/thud.
+- **Channel, language and audience rules (PLAYBOOK §4a, from sourced research):** thumbnail promise on screen by 0:30;
+  chapters of 2–4 min; a fresh art direction per film (no template look); educated spoken Telugu, dialect-neutral, ban list
+  (చండాలం, కటిక చీకటి, caste names as adjectives); the mechanism is the villain, never the viewer; attribute contested
+  figures. Hard gates beside the fact-check: synthetic-content disclosure, health context (WHO/ICMR + skeptic), SEBI
+  education-only lane (no buy/sell calls, price data ≥ 30 days old, disclaimer), Press Council suicide norms.
+- **TTS:** ElevenLabs Telugu only on `eleven_v3`/`eleven_v4` with `language_code: "te"`; all TTS text in Telugu script.
+- **ElevenLabs "Bunty" script format** (Bunty stays the channel voice; owner, 2026-10-08): 5–6 blocks of 100–130 words
+  (< 1,200 characters); commas, full stops and `...` for dramatic pauses only (no `!`, quotes, dashes, stage directions);
+  numbers as English number words in Telugu script (`ఫైవ్ థౌసండ్`), names and English terms in Telugu script; acronyms
+  letter by letter (`ఆర్ బి ఐ`). If a take breaks around `...`, use a comma and pause in the edit. Hand the owner
+  re-record text in this format.
+- **Audio:** the VO leads (peaks −2 to −3 dB); BGM −24 to −26 dB under speech, swelling to −12 dB in pauses with 0.5 s
+  ramps, silent for 1.5 s before reveals; impacts −6 to −8 dB, small SFX −8 to −10 dB; master −14 LUFS two-pass linear. The video isn't locked to
   the VO: diegetic cuts (VO stops for 2–6 s of the asset's own sound), `LIVE` rows for real speech, `VO_PAUSE` ambience.
   Never talk over real dialogue.
 - **Rights and honesty:** log every asset with its licence in `media_manifest.csv`; short, credited excerpts of third-party

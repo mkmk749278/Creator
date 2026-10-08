@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Unprotected body at −20 °C: the narrated timeline</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <script src="shared/body.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #cam { position: absolute; inset: 0; transform-origin: 50% 40%; }
+      canvas, svg.stage { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+      .hud { position: absolute; right: 90px; top: 110px; text-align: right; font-weight: 800; }
+      .hud b { display: block; font-size: 92px; line-height: 1; }
+      .hud span { display: block; font-size: 22px; letter-spacing: 0.14em; color: var(--ink-dim); margin: 6px 0 22px; }
+      .lt3 { position: absolute; left: 64px; bottom: 70px; }
+      .stage-l { position: absolute; left: 64px; bottom: 70px; font-size: 44px; font-weight: 800; text-shadow: 0 3px 12px rgba(0,0,0,0.7); }
+      .stage-l small { display: block; font-size: 26px; font-weight: 600; letter-spacing: 0.08em; color: var(--ink-dim); margin-top: 8px; }
+      .stage-l .rule { display: block; width: 90px; height: 5px; margin-bottom: 16px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="hypothermia" data-start="0" data-width="1920" data-height="1080" data-duration="13.2">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-c"></div><div class="grid"></div></div>
+      <div class="particles" id="snow"></div>
+      <div id="cam">
+        <canvas id="cv" width="1920" height="1080"></canvas>
+        <svg class="stage" viewBox="0 0 1920 1080">
+          <!-- magnifier on the hand: a blood vessel narrowing -->
+          <g id="mag" opacity="0">
+            <line id="magLine" x1="1150" y1="815" x2="1290" y2="640" stroke="rgba(242,246,250,0.6)" stroke-width="3"/>
+            <circle cx="1380" cy="560" r="130" fill="rgba(3,8,15,0.82)" stroke="#8fdcff" stroke-width="4"/>
+            <rect x="1265" y="520" width="230" height="80" rx="40" fill="#5a1414" opacity="0.6"/>
+            <rect id="vessel" x="1265" y="530" width="230" height="60" rx="30" fill="#e0453a"/>
+            <text x="1380" y="665" text-anchor="middle" font-family="Inter" font-weight="800" font-size="22" fill="#8fdcff" letter-spacing="2">BLOOD VESSEL</text>
+          </g>
+          <!-- ECG strip -->
+          <g id="ecgG" opacity="0" transform="translate(1170 800)">
+            <rect x="-10" y="-70" width="560" height="140" rx="10" fill="rgba(3,8,15,0.6)" stroke="rgba(157,179,199,0.35)"/>
+            <path id="ecg" fill="none" stroke="#45e39b" stroke-width="4" stroke-linejoin="round"/>
+            <text x="0" y="-80" font-family="Inter" font-weight="800" font-size="22" fill="#9db3c7" letter-spacing="2">HEART RHYTHM · ILLUSTRATIVE</text>
+          </g>
+        </svg>
+      </div>
+      <div class="hud"><b id="core" class="mono">37.0°C</b><span>CORE BODY TEMPERATURE · ILLUSTRATIVE</span></div>
+      <div class="scrim"></div>
+      <div class="stage-l" id="s1"><span class="rule" style="background:#8fdcff"></span><span id="s1t">BLOOD VESSELS NARROW</span><small id="s1s">WITHIN MINUTES: HEAT IS KEPT FOR THE CORE</small></div>
+      <div class="stage-l" id="s2"><span class="rule" style="background:#2f7fd3"></span><span id="s2t">HYPOTHERMIA</span><small id="s2s">CORE BELOW 35 °C</small></div>
+      <div class="stage-l" id="s3"><span class="rule" style="background:#ff4d4d"></span><span id="s3t">THE HEART CAN STOP</span><small id="s3s">CORE BELOW ABOUT 30 °C</small></div>
+      <div class="tag" id="tag">DRAMATISED · REAL TIMES VARY</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      // Parameters (wording and numbers come from claims.csv)
+      const P = { core: [37.0, 36.6, 35.0, 30.0] };
+      const tl = gsap.timeline({ paused: true });
+      const D = 13.2, { ss, lerp } = FX;
+      FX.drift(tl, "#bg", D);
+      FX.dust(tl, document.getElementById("snow"), { seed: 2, count: 110, dur: D, dir: 1, travel: 320, spread: 380, size: 6 });
+      const body = BODY.make(document.getElementById("cv"), { pose: "stand", x: 960, y: 900, scale: 1.0 });
+      // ECG: beats slow and flatten in the last stage
+      const ecgPath = k => {
+        let d = "M0 0", x = 0; const beat = 95 + 120 * k, amp = 1 - k;
+        while (x < 540) { d += ` L${x + 30} 0 L${x + 38} ${-10 * amp} L${x + 46} 0 L${x + 52} ${10 * amp} L${x + 58} ${-58 * amp} L${x + 64} ${22 * amp} L${x + 70} 0`; x += beat; }
+        return d + " L540 0";
+      };
+      FX.clock(tl, D, t => {
+        const k1 = ss(t, 0.3, 3.6), k2 = ss(t, 3.9, 9.0), k3 = ss(t, 9.3, 12.6);
+        const ext = 0.52 - 0.3 * k1 - 0.12 * k2 - 0.06 * k3, core = 0.62 - 0.05 * k1 - 0.3 * k2 - 0.18 * k3;
+        body.draw({ default: lerp(core, ext, 0.5), torso: core, head: core - 0.02, neck: core - 0.02, hips: core - 0.03, shoulders: lerp(core, ext, 0.3),
+          armL: lerp(core, ext, 0.7), armR: lerp(core, ext, 0.7), handL: ext, handR: ext, legL: lerp(core, ext, 0.6), legR: lerp(core, ext, 0.6), footL: ext - 0.03, footR: ext - 0.03 },
+          [], Math.round(t * 30));
+        const c = t < 3.6 ? lerp(P.core[0], P.core[1], k1) : t < 9.1 ? lerp(P.core[1], P.core[2], k2) : lerp(P.core[2], P.core[3], k3);
+        document.getElementById("core").textContent = c.toFixed(1) + "°C";
+        document.getElementById("core").style.color = c < 31 ? "#ff6a5a" : c < 35 ? "#8fdcff" : "#f2f6fa";
+        document.getElementById("vessel").setAttribute("height", (60 - 40 * k1).toFixed(1));
+        document.getElementById("vessel").setAttribute("y", (530 + 20 * k1).toFixed(1));
+        document.getElementById("ecg").setAttribute("d", ecgPath(k3));
+        document.getElementById("ecg").setAttribute("stroke", k3 > 0.85 ? "#ff4d4d" : "#45e39b");
+      });
+      tl.fromTo("#mag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.6);
+      tl.to("#mag", { opacity: 0, duration: 0.4 }, 3.7);
+      tl.fromTo("#ecgG", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 9.3);
+      tl.fromTo("#cam", { scale: 1.0, y: 0 }, { scale: 1.1, y: -20, duration: D, ease: "sine.inOut" }, 0);
+      [["#s1", 0.3, 3.7], ["#s2", 3.9, 9.1], ["#s3", 9.3, 99]].forEach(([id, a, b]) => {
+        tl.fromTo(id, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45 }, a);
+        if (b < D) tl.to(id, { opacity: 0, y: -10, duration: 0.3 }, b - 0.3);
+      });
+      window.__timelines["hypothermia"] = tl;
+    </script>
+  </body>
+</html>

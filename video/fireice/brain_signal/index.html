@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Breathing, brain signal, brown fat switches on</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <script src="shared/body.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #cam { position: absolute; inset: 0; transform-origin: 50% 40%; }
+      canvas, svg.stage { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+      .call { position: absolute; font-size: 28px; font-weight: 800; letter-spacing: 0.06em; text-shadow: 0 2px 10px rgba(0,0,0,0.85); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="brain-signal" data-start="0" data-width="1920" data-height="1080" data-duration="8.5">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-c"></div><div class="glow-h"></div><div class="grid"></div></div>
+      <div class="particles" id="dust"></div>
+      <div id="cam">
+        <canvas id="cv" width="1920" height="1080"></canvas>
+        <svg class="stage" id="svg" viewBox="0 0 1920 1080">
+          <g id="lungs" fill="none" stroke="#bfe9ff" stroke-width="4" opacity="0">
+            <path d="M940 330 C 900 330, 850 360, 830 430 C 805 520, 805 600, 830 640 C 860 660, 915 640, 935 600 C 945 520, 948 420, 940 330 Z"/>
+            <path d="M980 330 C 1020 330, 1070 360, 1090 430 C 1115 520, 1115 600, 1090 640 C 1060 660, 1005 640, 985 600 C 975 520, 972 420, 980 330 Z"/>
+            <path d="M960 250 L960 330 M960 330 L935 360 M960 330 L985 360"/>
+          </g>
+          <g id="nerves" fill="none" stroke="#8fdcff" stroke-width="5" stroke-linecap="round"></g>
+          <g id="pulses"></g>
+        </svg>
+      </div>
+      <div class="call" id="cb" style="left:1080px; top:60px; color:#8fdcff">BRAIN</div>
+      <div class="call" id="cf" style="left:1190px; top:300px; color:#ffb347">BROWN FAT DEPOTS<br/><span style="font-size:22px; color:#9db3c7">NECK · COLLARBONES · ALONG THE SPINE</span></div>
+      <div class="scrim"></div>
+      <div class="lt" id="l1"><span class="rule" style="background:#8fdcff"></span>DEEP BREATHING</div>
+      <div class="lt" id="l2"><span class="rule"></span>BROWN FAT SWITCHES ON<span class="sub" id="l2s">IN THE COLD, NERVE SIGNALS SWITCH IT ON</span></div>
+      <div class="tag" id="tag">ILLUSTRATION</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const D = 8.5, NS = "http://www.w3.org/2000/svg", { ss } = FX;
+      FX.drift(tl, "#bg", D);
+      FX.dust(tl, document.getElementById("dust"), { seed: 12, count: 45, dur: D });
+      // close-up on head and torso: standing figure, large
+      const body = BODY.make(document.getElementById("cv"), { pose: "stand", x: 960, y: 1240, scale: 1.55 });
+      const P = (x, y) => body.at(x, y);
+      // nerve paths from the brain down the spinal cord and out to the depots
+      const depots = [[-78, -468, 70], [78, -468, 70], [-128, -440, 60], [128, -440, 60], [0, -380, 60], [0, -300, 55]];
+      const nerves = document.getElementById("nerves"), pulses = document.getElementById("pulses");
+      const [bx, by] = P(0, -560);
+      depots.forEach(([dx, dy], i) => {
+        const [sx, sy] = P(0, -470), [ex, ey] = P(dx, dy);
+        const p = document.createElementNS(NS, "path");
+        p.setAttribute("d", `M${bx} ${by} C ${bx + 4} ${by + 60}, ${sx - 3} ${sy - 50}, ${sx} ${sy} Q ${(sx + ex) / 2} ${sy + 4}, ${ex} ${ey}`);
+        p.setAttribute("opacity", "0.85");
+        nerves.appendChild(p);
+        FX.draw(tl, p, 3.9 + i * 0.12, 0.9, "power1.in");
+        const L = p.getTotalLength();
+        for (let k = 0; k < 3; k++) {   // bright impulses travelling along each nerve
+          const c = document.createElementNS(NS, "circle");
+          c.setAttribute("r", 9); c.setAttribute("fill", "#ffffff"); c.setAttribute("opacity", "0");
+          pulses.appendChild(c);
+          const o = { s: 0 }, at = 4.1 + i * 0.12 + k * 0.45;
+          tl.fromTo(o, { s: 0 }, { s: 1, duration: 0.8, ease: "power1.in", onUpdate: () => { const q = p.getPointAtLength(o.s * L); c.setAttribute("cx", q.x); c.setAttribute("cy", q.y); c.setAttribute("opacity", o.s > 0.02 && o.s < 0.98 ? 1 : 0); } }, at);
+        }
+      });
+      FX.clock(tl, D, t => {
+        const br = t < 4 ? 0.5 - 0.5 * Math.cos(t / 1.85 * Math.PI * 2) : 0;   // two deep breaths
+        const brain = ss(t, 3.6, 4.3) * (1 - 0.5 * ss(t, 6.5, 8)), fat = ss(t, 5.0, 7.0);
+        const base = 0.34;
+        body.draw({ default: base, torso: base + 0.06 + 0.06 * br, head: base + 0.05, neck: base + 0.03, shoulders: base, armL: base - 0.04, armR: base - 0.04 },
+          [{ x: 0, y: -575, r: 95, t: 0.55 + 0.4 * brain, a: brain }, { x: 0, y: -330, r: 150, t: 0.5, a: 0.4 * br },
+           ...depots.map(([x, y, r]) => ({ x, y, r: r * (1 + 0.3 * fat), t: 0.6 + 0.38 * fat, a: fat }))], Math.round(t * 30));
+        const lg = document.getElementById("lungs");
+        lg.setAttribute("opacity", (0.85 * ss(t, 0.2, 0.6) * (1 - ss(t, 3.8, 4.2))).toFixed(2));
+        lg.setAttribute("transform", `translate(960 480) scale(${1 + 0.1 * br}) translate(-960 -480)`);
+      });
+      tl.fromTo("#cam", { scale: 1.0 }, { scale: 1.07, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo("#l1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 0.3);
+      tl.to("#l1", { opacity: 0, y: -10, duration: 0.35 }, 3.7);
+      tl.fromTo("#cb", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 3.9);
+      tl.fromTo("#l2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5 }, 4.3);
+      tl.fromTo("#cf", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.5 }, 5.6);
+      window.__timelines["brain-signal"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>White fat vs brown fat cells</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="shared/fx.js"></script>
+    <link rel="stylesheet" href="shared/theme.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+      svg.stage { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+      .lab { position: absolute; font-weight: 800; font-size: 50px; letter-spacing: 0.04em; text-shadow: 0 3px 14px rgba(0,0,0,0.7); }
+      .lab small { display: block; font-size: 28px; font-weight: 600; letter-spacing: 0.08em; color: var(--ink-dim); margin-top: 8px; }
+      .kcal { position: absolute; font-size: 30px; font-weight: 800; color: var(--hot); text-shadow: 0 0 10px rgba(255,200,90,0.8); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="fat-cells" data-start="0" data-width="1920" data-height="1080" data-duration="13">
+      <div class="bg" id="bg"><div class="base"></div><div class="glow-c"></div><div class="glow-h"></div></div>
+      <div class="particles" id="dust"></div>
+      <div id="cam">
+        <svg class="stage" viewBox="0 0 1920 1080">
+          <defs>
+            <radialGradient id="lipid" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#fff7d6"/><stop offset="0.65" stop-color="#f3dc92"/><stop offset="1" stop-color="#c9a24a"/></radialGradient>
+            <radialGradient id="cytoW" cx="50%" cy="50%" r="50%"><stop offset="0.86" stop-color="#e9d8a8" stop-opacity="0.35"/><stop offset="1" stop-color="#f6e7b8" stop-opacity="0.9"/></radialGradient>
+            <radialGradient id="cytoB" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#7a3a1c" stop-opacity="0.85"/><stop offset="0.8" stop-color="#5a2a14" stop-opacity="0.75"/><stop offset="1" stop-color="#c26a35" stop-opacity="0.95"/></radialGradient>
+            <radialGradient id="drop" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#fff6dc" stop-opacity="0.95"/><stop offset="0.6" stop-color="#e8c77a" stop-opacity="0.75"/><stop offset="1" stop-color="#a87a35" stop-opacity="0.8"/></radialGradient>
+            <radialGradient id="ghost" cx="50%" cy="50%" r="50%"><stop offset="0.7" stop-color="#9db3c7" stop-opacity="0.05"/><stop offset="0.95" stop-color="#9db3c7" stop-opacity="0.35"/><stop offset="1" stop-color="#9db3c7" stop-opacity="0"/></radialGradient>
+            <radialGradient id="nuc" cx="40%" cy="35%" r="65%"><stop offset="0" stop-color="#9fb8ff"/><stop offset="1" stop-color="#3c4f9a"/></radialGradient>
+            <radialGradient id="mito" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ff9a52"/><stop offset="0.7" stop-color="#b8461c"/><stop offset="1" stop-color="#6e2410"/></radialGradient>
+            <radialGradient id="warm" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff7a2f" stop-opacity="0.45"/><stop offset="1" stop-color="#ff7a2f" stop-opacity="0"/></radialGradient>
+            <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
+          </defs>
+          <g id="bgcells" opacity="0.35"></g>
+          <!-- WHITE adipocyte: one huge lipid droplet, thin rim, flattened nucleus -->
+          <g id="white" transform="translate(560 520)">
+            <circle r="330" fill="url(#cytoW)" stroke="#f8edc8" stroke-width="5" stroke-opacity="0.8"/>
+            <circle id="wdrop" r="300" fill="url(#lipid)"/>
+            <ellipse cx="-160" cy="-120" rx="70" ry="40" fill="#fff" opacity="0.35" filter="url(#soft)"/>
+            <ellipse id="wnuc" cx="-250" cy="190" rx="62" ry="24" transform="rotate(-38 -250 190)" fill="url(#nuc)"/>
+          </g>
+          <!-- BROWN adipocyte: many small droplets, central nucleus, mitochondria everywhere -->
+          <g id="brown" transform="translate(1390 520)">
+            <circle id="bglow" r="460" fill="url(#warm)" opacity="0"/>
+            <circle r="330" fill="url(#cytoB)" stroke="#e08a4c" stroke-width="5" stroke-opacity="0.85"/>
+            <g id="drops"></g>
+            <g id="mitos"></g>
+            <circle r="62" fill="url(#nuc)"/>
+          </g>
+        </svg>
+        <div id="kcals"></div>
+      </div>
+      <div class="scrim"></div>
+      <div class="lt" id="lw"><span class="rule" style="background:#f3dc92"></span>WHITE FAT<span class="sub">STORES CALORIES</span></div>
+      <div class="lt" id="lb" style="color:#ffb070"><span class="rule"></span>BROWN FAT<span class="sub">PACKED WITH MITOCHONDRIA</span></div>
+      <div class="tag">ILLUSTRATION · NOT TO SCALE</div>
+      <div class="vignette"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const D = 13, r = FX.rng(21), NS = "http://www.w3.org/2000/svg";
+      FX.drift(tl, "#bg", D);
+      FX.dust(tl, document.getElementById("dust"), { seed: 3, count: 50, dur: D });
+      // brown cell contents: small droplets on a jittered ring grid, mitochondria in the gaps
+      const drops = document.getElementById("drops"), mitos = document.getElementById("mitos");
+      const placed = [];
+      for (let i = 0; i < 400 && placed.length < 34; i++) {
+        const a = r() * Math.PI * 2, d = 90 + r() * 200, rad = 18 + r() * 20;
+        const x = Math.cos(a) * d, y = Math.sin(a) * d;
+        if (Math.hypot(x, y) + rad > 315) continue;
+        if (placed.some(p => Math.hypot(p[0] - x, p[1] - y) < p[2] + rad + 6)) continue;
+        placed.push([x, y, rad]);
+        const c = document.createElementNS(NS, "circle");
+        c.setAttribute("cx", x); c.setAttribute("cy", y); c.setAttribute("r", rad); c.setAttribute("fill", "url(#drop)"); c.setAttribute("opacity", "0.92");
+        drops.appendChild(c);
+      }
+      const mlist = [];
+      for (let i = 0; i < 600 && mlist.length < 90; i++) {
+        const a = r() * Math.PI * 2, d = 70 + r() * 245, x = Math.cos(a) * d, y = Math.sin(a) * d;
+        if (Math.hypot(x, y) > 312) continue;
+        if (placed.some(p => Math.hypot(p[0] - x, p[1] - y) < p[2] + 14)) continue;
+        if (mlist.some(m => Math.hypot(m.x - x, m.y - y) < 27)) continue;
+        const outer = document.createElementNS(NS, "g");
+        outer.setAttribute("transform", `translate(${x} ${y}) rotate(${(r() * 180).toFixed(1)})`);
+        const g = document.createElementNS(NS, "g");
+        g.setAttribute("class", "mt");
+        outer.appendChild(g);
+        g.innerHTML = `<ellipse rx="22" ry="10" fill="url(#mito)" stroke="#ffb27a" stroke-width="1.5"/>` +
+          `<path d="M-14 -6 Q-10 4 -6 -6 Q-2 4 2 -6 Q6 4 10 -6 Q13 2 15 -3" fill="none" stroke="#ffd2a8" stroke-width="1.6" opacity="0.8"/>`;
+        mitos.appendChild(outer);
+        mlist.push({ g, x, y, ph: r() * 6.28 });
+      }
+      // out-of-focus neighbour cells (depth), drifting slowly
+      const bgc = document.getElementById("bgcells");
+      for (let i = 0; i < 14; i++) {
+        const c = document.createElementNS(NS, "circle");
+        c.setAttribute("cx", r() * 1920); c.setAttribute("cy", r() * 1080); c.setAttribute("r", 120 + r() * 160); c.setAttribute("fill", "url(#ghost)");
+        bgc.appendChild(c);
+      }
+      tl.fromTo("#bgcells", { x: 0, y: 0 }, { x: -80, y: -25, duration: D, ease: "none" }, 0);
+      // calories flowing into the white droplet (stores, swells)
+      const kc = document.getElementById("kcals");
+      for (let i = 0; i < 9; i++) {
+        const el = document.createElement("div"); el.className = "kcal"; el.textContent = "kcal"; kc.appendChild(el);
+        const sx = 80 + r() * 200, sy = 150 + r() * 700, at = 2.9 + i * 0.42;
+        tl.fromTo(el, { x: sx, y: sy, opacity: 0, scale: 1 }, { x: 540, y: 500, opacity: 1, scale: 0.4, duration: 1.3, ease: "power2.in" }, at);
+        tl.to(el, { opacity: 0, duration: 0.15 }, at + 1.25);
+      }
+      // camera: start on white, pan to brown at ~7.7 s
+      tl.fromTo("#cam", { scale: 1.32, x: 420, y: 10 }, { scale: 1.22, x: 380, y: 0, duration: 7.4, ease: "sine.inOut" }, 0);
+      tl.to("#cam", { scale: 1.3, x: -470, y: 0, duration: 1.3, ease: "power3.inOut" }, 7.5);
+      tl.to("#cam", { scale: 1.42, x: -560, y: -20, duration: 4.2, ease: "sine.out" }, 8.8);
+      tl.fromTo("#white", { opacity: 0, scale: 0.85, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.9, ease: "power2.out" }, 0.1);
+      tl.fromTo("#brown", { opacity: 0 }, { opacity: 1, duration: 0.9 }, 0.4);
+      tl.fromTo("#wdrop", { scale: 0.97, transformOrigin: "0 0" }, { scale: 1.03, duration: 4, ease: "sine.inOut" }, 3);
+      tl.fromTo("#lw", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, 2.8);
+      tl.to("#lw", { opacity: 0, y: -10, duration: 0.35 }, 7.6);
+      tl.fromTo("#lb", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, 8.3);
+      tl.fromTo("#mitos .mt", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.5, stagger: { each: 0.03, from: "random" } }, 9.6);
+      tl.fromTo("#bglow", { opacity: 0 }, { opacity: 1, duration: 2.4, ease: "sine.inOut" }, 10.2);
+      // gentle organic wobble of mitochondria (pure function of t via finite tweens)
+      mlist.forEach((m, i) => tl.fromTo(m.g, { x: 0, y: 0 }, { x: Math.cos(m.ph) * 6, y: Math.sin(m.ph) * 6, duration: 2.2, ease: "sine.inOut", yoyo: true, repeat: 4 }, 0));
+      window.__timelines["fat-cells"] = tl;
+    </script>
+  </body>
+</html>
