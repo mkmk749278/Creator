@@ -47,3 +47,4 @@ library/_cache/
 video/fireice/*/shared/
 video/fireice/*/render.mp4
 video/fireice/*/render.log
+projects/*/out_*.log
