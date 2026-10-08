@@ -1,6 +1,6 @@
 # Prahlad Jani & DRDO: the 70-year food and water mystery (Telugu documentary)
 
-Follows `docs/documentary-production.md`. Source brief: the owner's handoff PDF.
+Follows `docs/PLAYBOOK.md` Part B. Source brief: the owner's handoff PDF.
 VO **v2**: three ElevenLabs Telugu (Bunty) takes joined into `assets/voiceover.mp3`, 6:08.6, mono 44.1 kHz
 (lead-in silence trimmed, levels matched, ~0.6 s natural gaps at the joins).
 

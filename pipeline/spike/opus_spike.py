@@ -1,4 +1,4 @@
-"""Phase 0: Opus 5.5 feasibility checks (HANDOFF §9).
+"""Phase 0: Opus 5.5 feasibility checks (docs/PLAYBOOK.md §20).
 
 1. Structured output via output_config.format (no forced tool_choice), Pydantic-validated.
 2. Prompt caching on a large source bundle placed in `system` with a 1h TTL:

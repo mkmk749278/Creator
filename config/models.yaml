@@ -3,7 +3,7 @@
 # with effort. Its API default is `medium`, so every task sets effort explicitly.
 model: claude-opus-5-5
 
-# Per-task routing (HANDOFF §3.3). mode: api | api_batch | agent
+# Per-task routing (docs/PLAYBOOK.md §17). mode: api | api_batch | agent
 tasks:
   source_filter:     { mode: api_batch, effort: low }
   claim_extraction:  { mode: api_batch, effort: medium }

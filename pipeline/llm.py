@@ -1,6 +1,6 @@
 """Thin wrapper over the Anthropic SDK used by every API stage.
 
-Opus 5.5 rules this module enforces (HANDOFF §3.1):
+Opus 5.5 rules this module enforces (docs/PLAYBOOK.md §2, §17):
 - thinking is always on: we never send `thinking`, and set depth with `effort`.
 - forced tool_choice is a 400: structured JSON comes from `output_config.format`,
   validated locally with Pydantic, retried once, then the stage fails loudly.

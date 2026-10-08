@@ -1,6 +1,6 @@
 """Step 3: assemble the documentary from edl.csv + ./assets/ with FFmpeg.
 
-Three layers on every shot (docs/documentary-production.md):
+Three layers on every shot (docs/PLAYBOOK.md §5.2):
   1. full-screen base: video or photo, always moving (Ken Burns zoom 1.00->1.15 or a pan)
   2. atmosphere: film grain, edge vignette, optional HUD overlay (assets/hud_overlay.mp4), optional 2.35:1 bars
   3. kinetic accents: lower-third / corner timer / "ILLUSTRATION" tag over a dark gradient scrim

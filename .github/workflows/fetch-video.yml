@@ -5,7 +5,7 @@ name: Fetch video for study
 # For analysis only: never reuse other creators' footage in our videos (CLAUDE.md).
 #
 # YouTube blocks most datacenter IPs ("Sign in to confirm you're not a bot"). Two fixes:
-#  - Secret YT_COOKIES: cookies.txt (Netscape format) from a THROWAWAY Google account. See docs/fetch-video.md.
+#  - Secret YT_COOKIES: cookies.txt (Netscape format) from a THROWAWAY Google account. See docs/PLAYBOOK.md §8.
 #  - runner = self-hosted: run on the VPS runner instead of GitHub's.
 
 on:
