@@ -143,9 +143,10 @@ look like a broadcast documentary or investigative film, **never a slide deck, c
 - **Citation tag on every factual claim:** a small bracket tag, e.g. `[NATURE (1982) | HARVARD MONK STUDY]`, bottom right
   above the logo bug (`cite` column in `projects/fire-and-ice/assemble.py`).
 - **Bunty script format** (ElevenLabs): 5–6 blocks of 100–130 words, under 1,200 characters each; commas and full stops
-  only; no stage directions, `...`, `!`, quotes or dashes; numbers spelled in Telugu script; acronyms letter by letter in
-  Telugu script; common English terms transliterated. *Why (owner):* prevents skipped characters, buffer drops and
-  truncated takes. `scripts/align_script.py` still times these blocks (one sentence per TSV row).
+  plus `...` for dramatic pauses (owner amended 2026-10-08); no stage directions, `!`, quotes or dashes; numbers as English
+  number words in Telugu script (ఫైవ్ థౌసండ్, owner confirmed 2026-10-08); acronyms letter by letter in Telugu script;
+  common English terms transliterated. *Why (owner):* prevents skipped characters, buffer drops and truncated takes.
+  `scripts/align_script.py` still times these blocks (one sentence per TSV row).
 - **Sound matrix:** VO peaks −2 to −3 dB; BGM −24 to −26 dB under speech; −12 dB in pauses (0.5 s ramps); 0 (silence) for
   1.5 s before reveals; impacts −6 to −8 dB; clicks/typing/whoosh −8 to −10 dB. Supersedes the −18 to −22 dB in §11.
   Master stays −14 LUFS, −1 dBTP.
@@ -187,8 +188,10 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
 - All TTS text in **Telugu script**, English loanwords included (writing them in Telugu script cut code-mix word errors
   from ~0.8 to ~0.2 in one study); Latin script appears only on screen. Acronyms as people say them: spaced letters
   (ఆర్ బి ఐ) or a word (సిబిల్, ఇస్రో); gloss each once.
-- Keep the charter's punctuation ban; make dramatic pauses **in the edit** (`VO_PAUSE`, cut on the breath), not with
-  `...` (vendor guidance uses `...` for pauses; only an A/B on two blocks may change this).
+- Dramatic pauses: `...` is allowed in TTS text (owner's decision, 2026-10-08; ElevenLabs' own guidance uses it for
+  pauses). Use it at real beats only (before a reveal, after a question), at most one per sentence. Listen to every take:
+  if a block skips or cuts words around a `...`, regenerate it with a comma there and make the pause in the edit
+  (`VO_PAUSE`). The other bans stand: no `!`, quotes, dashes or stage directions.
 - One idea per sentence (about 8–15 words); no `;`, brackets, slashes, `&`, `#` or emoji in TTS text.
 - **Educated spoken Telugu** (TV-news register, Gidugu's vyavaharika): no grandhika endings (-ము, వచ్చెను, -బడు passives).
   English only for technical or modern nouns, at most one English content word per clause, never an English clause.
@@ -235,14 +238,17 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
   clarified); "Educational only, not SEBI-registered" on screen and in the description; no broker affiliate links.
   Verify the circular texts on sebi.gov.in before the first finance film.
 
-**Open questions for the owner (evidence vs charter; the charter applies until decided)**
-1. Numbers: the charter writes English number words in Telugu script (ఫైవ్ థౌసండ్); viewers praised amounts said in
-   Telugu (ఐదు వేలు, ఇరవై లక్షలు). Telugu number words by default?
-2. Voice: the channel runs on its own trust in a face and voice; a clone of Kishore's own voice (or his recording) would
-   carry that and needs no AI disclosure. Keep "Bunty", or clone Kishore?
-3. Pauses: keep the `...` ban and pause in the edit (current rule), or allow `...` after an A/B test?
-4. Unknowns to settle by a 10-minute phone listen (YouTube blocked our scrapers): the competitors' music, voice speed and
-   first 30 seconds, three videos per channel.
+**Owner's decisions on the research questions (2026-10-08)**
+1. Numbers: keep the charter's English number words in Telugu script (ఫైవ్ థౌసండ్, ట్వెంటీ లాక్స్), not Telugu number
+   words. Decimals and percentages stay as the charter says (అర శాతం).
+2. Voice: keep ElevenLabs "Bunty". No clone of the owner's voice.
+3. Pauses: `...` allowed (see the voice rules above); the edit-made pause is the fallback when a take breaks.
+4. Competitor audio: the owner asked for other routes instead of a phone listen. Tried 2026-10-08: listings work from the
+   cloud; media from the container and from GitHub's runners hit YouTube's bot check. A VPS-runner try was cancelled:
+   switching machines to dodge the block counts as routing around it (the auto-mode check stopped it). Open routes, both the owner's:
+   the `YT_COOKIES` secret from a throwaway account (§8.5), or Termux on the phone into Google Drive. Then run
+   `scripts/study_opening.py` on the first 90 s of the 18 picks (latest + two most-viewed per channel:
+   `docs/research/research_notes/Telugu YouTube audience and style/competitor_picks.tsv`) and add the numbers here.
 
 ## 5. The look
 
@@ -881,6 +887,7 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 # Part E: Owner's channel charter (verbatim, received 2026-10-08)
 
 Kept word for word so later sessions read the owner's own wording. How each point maps onto this playbook: Part B intro.
+Owner's amendment (2026-10-08): `...` is now allowed for dramatic pauses (§4a); the rest of rule 4.2 stands.
 
 #### CLAUDE DIRECTIVE: "BE PRACTICAL WITH KISHORE"
 #### THE DEFINITIVE PRODUCTION CHARTER & AUTOMATED DOCUMENTARY ENGINE
