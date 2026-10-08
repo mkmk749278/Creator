@@ -1,0 +1,212 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 2.196,
+  "te": "మైనస్ twenty డిగ్రీల గడ్డకట్టే చలి...",
+  "en": "Minus twenty degrees of freezing cold...",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 2.716,
+  "end": 5.468,
+  "te": "చుట్టూ మంచు తుఫాను, ఎముకలు కొరికే గాలి.",
+  "en": "A snowstorm all around, a bone-biting wind.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 6.091,
+  "end": 11.207,
+  "te": "అలాంటి వాతావరణంలో ఒక నార్మల్ మనిషి బట్టలు లేకుండా బయటకు వస్తే ఏం జరుగుతుందో తెలుసా?",
+  "en": "In weather like that, do you know what happens if a normal person steps out without clothes?",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.526,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 11.737,
+  "end": 14.915,
+  "te": "just five to ten minutes లో రక్తనాళాలు కుంచించుకుపోతాయి.",
+  "en": "In just five to ten minutes, the blood vessels constrict.",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 2.595,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 15.531,
+  "end": 20.329,
+  "te": "twenty minutes దాటితే బాడీ టెంపరేచర్ ప్రమాదకరంగా పడిపోయి hypothermia వస్తుంది.",
+  "en": "After twenty minutes, body temperature drops dangerously and hypothermia sets in.",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.337,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 20.941,
+  "end": 26.288,
+  "te": "half an hour లో గుండె ఆగిపోయి human body ఒక మంచు బొమ్మలా గడ్డకట్టి చనిపోతుంది!",
+  "en": "Within half an hour, the heart stops and the body freezes like an ice doll and dies!",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.337,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 26.888,
+  "end": 29.392,
+  "te": "ఇది మెడికల్ సైన్స్ రాసిన absolute rule!",
+  "en": "This is an absolute rule written by medical science!",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.296,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 30.097,
+  "end": 33.708,
+  "te": "కానీ... అదే మైనస్ twenty డిగ్రీల హిమాలయాల మంచు మీద...",
+  "en": "But... on that same minus-twenty-degree Himalayan snow...",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.296,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 34.134,
+  "end": 40.095,
+  "te": "ఒంటిపై కేవలం ఒక చిన్న కాటన్ గుడ్డ తప్ప ఏమీ లేకుండా సాధువులు గంటల తరబడి కూర్చుంటే?",
+  "en": "what if monks sit for hours with nothing on but a thin cotton cloth?",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.392,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 40.618,
+  "end": 43.93,
+  "te": "పైగా వాళ్ళ ఒంటి మీద ఐస్ వాటర్ లో తడిపిన బట్టలు వేస్తే...",
+  "en": "And if cloths soaked in ice water are draped over their bodies...",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.392,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 44.374,
+  "end": 49.656,
+  "te": "ఆ తడి బట్టలు గడ్డకట్టడానికి బదులు, వాళ్ళ ఒంటి వేడికి ఆవిర్లు కక్కుతూ డ్రై అయిపోతే?",
+  "en": "what if, instead of freezing, those wet cloths steam and dry from their body heat?",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.371,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 50.37,
+  "end": 53.362,
+  "te": "హలో ఎవ్రీవన్, వెల్‌కమ్ టు Be Practical With Kishore!",
+  "en": "Hello everyone, welcome to Be Practical With Kishore!",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.371,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 53.971,
+  "end": 54.936,
+  "te": "ఇది ఏదో కథ కాదు...",
+  "en": "This is not just a story...",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 2.12,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 55.424,
+  "end": 63.532,
+  "te": "ప్రపంచ ప్రఖ్యాత Harvard University మెడికల్ సైంటిస్టులే స్వయంగా లడఖ్ కొండల్లో టెస్ట్ చేసి ప్రపంచం ముందు పెట్టిన absolute reality!",
+  "en": "It's an absolute reality that world-famous Harvard University medical scientists tested themselves in the hills of Ladakh and showed the world!",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.848,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 64.17,
+  "end": 67.138,
+  "te": "మరోవైపు యూరప్ లో Wim Hof అనే ఒక వ్యక్తి...",
+  "en": "Meanwhile in Europe, a man named Wim Hof...",
+  "speech_vs_text": 1.28,
+  "boundary_margin": 0.848,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 67.417,
+  "end": 70.689,
+  "te": "కేవలం షార్ట్ వేసుకుని ఆర్కిటిక్ సర్కిల్ మంచులో రన్ చేస్తాడు,",
+  "en": "runs through Arctic Circle snow wearing only shorts,",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 71.197,
+  "end": 75.38,
+  "te": "two hours పాటు స్వచ్ఛమైన ఐస్ క్యూబ్స్ ఉన్న బాక్స్ లో మెడ వరకు కూర్చుంటాడు,",
+  "en": "sits neck-deep in a box of pure ice cubes for two hours,",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 1.06,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 75.82,
+  "end": 81.559,
+  "te": "బ్లడ్ లోకి ప్రమాదకరమైన బ్యాక్టీరియాను ఎక్కించుకున్నా తన ఇంటర్నల్ హీట్ తో దాన్ని న్యూట్రలైజ్ చేస్తాడు!",
+  "en": "and even with dangerous bacteria injected into his blood, he neutralises it with his internal heat!",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.861,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 82.067,
+  "end": 86.534,
+  "te": "అసలు గడ్డకట్టే మంచులో మానవ శరీరం లోపల అగ్నిగుండం ఎలా రగులుతుంది?",
+  "en": "How can a fire blaze inside the human body in freezing snow?",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.861,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 87.006,
+  "end": 90.452,
+  "te": "మనిషి సంకల్పం బాడీ టెంపరేచర్ ని ఎలా కంట్రోల్ చేయగలదు?",
+  "en": "How can human willpower control body temperature?",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 90.974,
+  "end": 94.698,
+  "te": "Let us practically break down the science of fire and ice!",
+  "en": "Let us practically break down the science of fire and ice!",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ }
+]
