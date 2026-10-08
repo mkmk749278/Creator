@@ -3,20 +3,48 @@
 Applies to every documentary / explainer project under `projects/<slug>/` (for example `projects/prahlad-jani-drdo/`).
 It does **not** replace the phone-review rules in `CLAUDE.md`; those still govern `pipeline/`, `video/` and `runs/`.
 
-**Role:** senior documentary director and lead motion-graphics engineer, at the standard of Think Deep, Vox,
-MagnatesMedia and Polymatter. **Goal:** turn a voiceover and a factual script into a cinematic, high-retention
-timeline. Every video must look like an investigative documentary or film, **never a slide deck**.
+**Role:** executive documentary director and motion-graphics engineer for "Be Practical with Kishore", at the
+standard of Vox, MagnatesMedia, Polymatter, ColdFusion and Think Deep. **Goal:** turn a voiceover and a factual script
+into a cinematic, motion-heavy timeline. Every video must look like a broadcast documentary or investigative film,
+**never a slide deck, corporate presentation or photo slideshow**.
 
-## 1. Zero-tolerance negative rules
+## 1. Zero-tolerance rules
 
-1. **No presentation slides.** No full-screen text boxes, bullet lists, feature cards, or question-mark graphics on
-   flat backgrounds.
-2. **No empty canvas.** The canvas is never a flat colour, a plain CSS gradient or blank.
-3. **Text ≤ 15% of the screen**, and only for:
+1. **No presentation cards.** No full-screen text boxes, bullet lists, icon cards, summary slides, or question-mark
+   graphics on flat backgrounds.
+2. **No static canvas.** A motionless photo or a flat colour never stays on screen for more than **1.5 s**. The canvas
+   always has camera motion, particle atmosphere or live video. A plain CSS gradient never counts as a background.
+3. **85% real motion.** At least 85% of every timeline is moving video, screen recordings, kinetic data animation or
+   high-frame-rate B-roll. Stills are allowed only as authentic archival evidence, and always animated (§3).
+4. **Text ≤ 15% of the screen**, and only for:
    - minimal lower-thirds (2–4 words),
-   - important years, numbers or location titles,
-   - a sleek corner timer overlay.
-4. **Pacing.** Every shot, angle or asset cuts, transitions or pans every **2.5–4 s**.
+   - locations, dates and technical telemetry,
+   - numeric counters, timers and data meters.
+5. **Pacing.** Every shot, angle or asset cuts, transitions or pans every **2.5–4 s**.
+6. **No re-transcription.** When a script exists, never run Whisper or any speech-to-text. Align scenes to the script's
+   paragraphs and to `silencedetect` timestamps. Transcribe (see `CLAUDE.md` › Telugu ASR) only when no script exists.
+
+## 1a. Visual language by genre
+
+Pick the genre before sourcing; it decides palette, media stack and accents.
+
+| Genre | Palette | Media stack | Graphic accents |
+|---|---|---|---|
+| **Science & medical** | Deep navy, surgical teal, graphite | Electron-microscope loops, 3D anatomy, MRI/sonography, macro lab work, cell division | Focus callouts, animated yellow circles on the abnormality, telemetry grids |
+| **Biography & martial arts** | Warm amber, chiaroscuro, 35 mm grain | Raw training footage, press conferences, archival newsreels, slow-motion performance, cultural demonstrations | Split-screen comparisons, timecode counters, year stamps |
+| **Business & finance** | Terminal charcoal, holographic chart sweeps | Trading floors, HQ aerials, currency printing, shipping lanes, factory automation | Isometric data graphs, metric tickers, animated balance-sheet highlights (no full-screen text) |
+| **Tech, AI & digital mysteries** | Matte black, electric cyan, neon phosphor | Data centres, circuit-board macros, browser UI mock-ups, terminal sessions, wafer fabs | Terminal type, syntax-highlight overlays, network-node links |
+| **Philosophy, society & lifestyle** | Desaturated monochrome with a saturated hero subject | Fast-motion crowds, commuter platforms, pupil macros, solitary landscapes | Pacing contrast: extreme speed, then sudden stillness |
+
+## 1b. Making stills move
+
+When an authentic photo or document is irreplaceable, it never sits still:
+1. **2.5D parallax:** cut the subject from the background; foreground scales toward 1.15x while the background drifts
+   to 0.95x.
+2. **Atmosphere:** smoke, dust motes, light leaks or rain at ~15% opacity over the still.
+3. **Forensic magnifier:** on documents, scans or clippings, slide a magnifier or high-contrast zoom circle over the
+   exact line or date the VO is reading.
+4. **Moving contact sheet:** 3–4 archival angles slide into a collage one by one, every ~1.5 s, instead of one still.
 
 ## 2. Three-layer visual stack (every frame)
 
@@ -43,6 +71,10 @@ timeline. Every video must look like an investigative documentary or film, **nev
 - **Nature / ScienceDirect / PubMed Central**: published charts, sonography figures, ECGs, electron micrographs.
 - **NASA / ESA** (images.nasa.gov): 4K space and astronaut-training footage (public domain).
 - **Wellcome Collection**: historical medical illustrations and anatomical drawings.
+- **SEC EDGAR / company filings**: balance sheets, IPO filings, regulatory notices (business stories).
+
+What actually downloads from the cloud container differs from this list (YouTube, Pexels, Pixabay and Mixkit are
+blocked there): check `CLAUDE.md` › Lessons before sourcing, and use the VPS for YouTube.
 
 **D. AI-generated media (only when no real asset exists)**
 - For internal biology, legends or unfilmed experiments, write exact prompts for Midjourney / Sora / Runway.
@@ -85,6 +117,11 @@ L→R pan), **overlay layer**, **kinetic text**, **sound design / ducking cues**
   - `VO_PAUSE`: 2–4 s of picture with ambience/SFX only.
   `vo_skip` drops a stretch of VO after the break (e.g. a duplicated take). The pacing rule (cut every 2.5–4 s)
   does not apply inside a LIVE clip; it applies again as soon as the VO resumes.
+- **Diegetic cuts.** Whenever authentic footage appears, the narration stops completely and the asset's own sound
+  plays for 2–6 s (a conch, a press statement, a monitor alarm, a gavel, machinery). The VO resumes after the sound
+  peaks. Never talk over genuine live dialogue; real speech runs as a `LIVE` row for as long as it needs.
+- **1-to-1 semantic lock.** The picture shows exactly what the VO says at that second: kidneys or dehydration → renal
+  animation; CCTV isolation → a high-angle surveillance view; world records → the actual record attempt.
 - The voiceover leads. BGM sits at **−18 to −22 dB** under the VO, sidechain-ducked, and comes up only in VO pauses.
 - Live-audio pauses: 2–4 s of real ambience or archival speech.
 - Loudness target for YouTube: −14 LUFS integrated, −1 dBTP.
@@ -108,6 +145,8 @@ preview MP4 (Actions artifact) · contact sheet PNG.
 
 ## Pre-render review (every cut, before the final render)
 Contact-sheet the cut (`assemble.py` writes one) and go through it shot by shot. Write `review.md` with issue, shot IDs and fix.
+- [ ] At least 85% of the runtime is moving footage or animation; no unmoving still or flat frame lasts over 1.5 s.
+- [ ] Every shot matches the exact words spoken over it; the VO is silent under every diegetic or LIVE moment.
 - [ ] Subject's face and name on screen within 20 s; the name lower-third reappears when the VO says the name.
 - [ ] Every frame's on-screen data agrees with the VO at that moment (numbers, monitors, headlines, dates).
 - [ ] Stand-in or stock footage near the real story is labelled "ILLUSTRATIVE FOOTAGE"; authentic footage carries its source credit.

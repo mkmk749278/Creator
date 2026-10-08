@@ -74,7 +74,12 @@ The phone-review content rules above do not apply here; these do:
 - **It must look like a film, never a slide deck.** No full-screen text boxes, bullet lists, cards or question-mark graphics;
   never a flat colour or plain gradient canvas. Text stays under 15% of the screen: 2–4-word lower-thirds, years/numbers/places,
   a corner timer.
-- **Cut, transition or pan every 2.5–4 s.**
+- **Cut, transition or pan every 2.5–4 s.** No unmoving photo or flat frame over 1.5 s; at least 85% of the runtime is
+  moving footage or animation. Animate irreplaceable stills (2.5D parallax, particles, forensic magnifier, sliding collage).
+- **Genre sets the look** (science, biography, business, tech, society): palette, media stack and accents per
+  `docs/documentary-production.md` › 1a.
+- **Never re-transcribe when a script exists**: align to script paragraphs and `silencedetect` timestamps.
+- **Semantic lock:** every shot shows exactly what the VO says at that second.
 - **Three layers in every frame:** (1) full-screen real footage, or a photo with continuous Ken Burns motion (1.00→1.15 zoom or pan);
   (2) atmosphere: grain, ~30% vignette, optional 2.35:1 bars, light leaks, low-opacity HUD; (3) kinetic accents in lower corners on a dark scrim.
 - **Workflow:** (1) asset manifest table (ID, file name, description, platform, exact search query) → (2) EDL mapping timecode → asset →
@@ -85,7 +90,8 @@ The phone-review content rules above do not apply here; these do:
   AI shots never depict a real person or pose as evidence. Never synthesise a real person's voice or quote. Present claims as claims.
 - **Audio:** the VO leads; BGM at −18 to −22 dB, ducked under all speech. **The video is not locked to the VO length:**
   `LIVE` EDL rows stop the VO, play the original clip with its own audio for as long as needed, then the VO resumes where it stopped.
-  `VO_PAUSE` rows are 2–4 s of real ambience. Breaks use real sound only.
+  `VO_PAUSE` rows are 2–4 s of real ambience. Breaks use real sound only. Authentic footage gets a diegetic cut: the VO stops for
+  2–6 s of the asset's own sound; never talk over real dialogue.
 
 ### Lessons from the first documentary (Prahlad Jani, Oct 2026): read before sourcing
 - **From this cloud container:** YouTube video downloads (googlevideo 403 / bot check), Pexels, Pixabay and Mixkit (Cloudflare 403)
