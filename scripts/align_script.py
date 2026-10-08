@@ -16,9 +16,11 @@ SCRIPT.tsv: one spoken line per row, tab-separated `te<TAB>en` (header optional;
 Only each line's share of the text matters, not the audio's absolute length: boundaries snap to the audio's own pauses.
 Lines starting with `#` are ignored. Split long sentences into separate rows where you want subtitle cuts.
 Writes align.json (line, te, en, start, end, confidence), subtitles.te.srt, subtitles.en.srt (English text timed to
-the Telugu audio, one cue per line: no SOV/SVO drift) and align.md (lines to check by ear).
+the Telugu audio, one cue per line: no SOV/SVO drift; pauses up to --bridge keep the cue on screen), slots.csv (picture
+slots covering the whole timeline, cuts in the pauses, what each pause is for) and align.md (lines to check by ear).
 """
 import argparse
+import csv
 import json
 import math
 import re
@@ -178,7 +180,9 @@ def main():
     ap.add_argument("--min-pause", type=float, default=0.15, help="shortest pause that can be a line boundary (s)")
     ap.add_argument("--gap-bonus", type=float, default=0.35, help="preference for longer pauses as boundaries")
     ap.add_argument("--margin", type=float, default=0.05, help="flag lines whose boundary could move one pause")
-    ap.add_argument("--hold", type=float, default=0.25, help="keep each cue on screen this long into the next pause")
+    ap.add_argument("--hold", type=float, default=0.3, help="after a long pause's line, keep its cue this long (s)")
+    ap.add_argument("--bridge", type=float, default=1.0, help="pauses up to this long are bridged: cue stays to next line")
+    ap.add_argument("--prelap", type=float, default=0.15, help="picture cuts this long before the next line's speech")
     a = ap.parse_args()
     lines = read_script(a.script)
     if not lines:
@@ -192,16 +196,31 @@ def main():
         rows.append({"line": i, "start": s, "end": e, "te": l["te"], "en": l["en"], "speech_vs_text": ratio,
                      "boundary_margin": margin, "confidence": conf})
     (a.out / "align.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1))
-    # Cues hold a little into the following pause (never past the next line's start) so they don't flash off.
+    # Pauses between lines: subtitles bridge short ones (no blinking off and on); picture never stops (slots.csv).
     def cues(key):
         res = []
         for i, r in enumerate(rows):
             nxt = rows[i + 1]["start"] if i + 1 < len(rows) else total
-            res.append((r["start"], min(r["end"] + a.hold, nxt), r[key]))
+            end = nxt if nxt - r["end"] <= a.bridge else min(r["end"] + a.hold, nxt)
+            res.append((r["start"], end, r[key]))
         return res
     write_srt(a.out / "subtitles.te.srt", cues("te"))
     if any(r["en"] for r in rows):
         write_srt(a.out / "subtitles.en.srt", cues("en"))
+    # Picture slots cover the whole timeline: each line's shot runs until just before the next line speaks, so every
+    # cut lands in a pause ("cutting on the breath") and the new picture leads the voice by --prelap.
+    with open(a.out / "slots.csv", "w", newline="") as f:
+        out = csv.writer(f, lineterminator="\n")
+        out.writerow(["line", "picture_start", "picture_end", "speech_start", "speech_end", "pause_after", "pause_use", "en"])
+        for i, r in enumerate(rows):
+            nxt = rows[i + 1]["start"] if i + 1 < len(rows) else total
+            p_start = 0.0 if i == 0 else max(rows[i - 1]["end"], r["start"] - a.prelap)
+            p_end = total if i + 1 == len(rows) else max(r["end"], nxt - a.prelap)
+            pause = round(nxt - r["end"], 2) if i + 1 < len(rows) else 0.0
+            use = ("end" if i + 1 == len(rows) else "VO_PAUSE: ambience, diegetic sound or a held beat" if pause > a.bridge
+                   else "cut on the breath; music bed lifts, whoosh/impact on the cut")
+            out.writerow([r["line"], f"{p_start:.3f}", f"{p_end:.3f}", f"{r['start']:.3f}", f"{r['end']:.3f}", pause, use,
+                          r["en"]])
     check = [r for r in rows if r["confidence"] != "high"]
     md = [f"# Script alignment: {len(rows)} lines, {total:.1f} s audio", "",
           f"{len(rows) - len(check)} lines high confidence; {len(check)} to check by ear "

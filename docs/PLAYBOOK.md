@@ -233,7 +233,13 @@ Remotion and MoviePy are not installed; ask before adding them.
      pauses and punctuation inside a line (where speakers pause) are preferred.
   4. Output: `align.json` (line, start, end, te, en, confidence), `subtitles.te.srt`, `subtitles.en.srt` (English text on
      the Telugu timing, one cue per line: no SOV/SVO drift), `align.md` (lines to check by ear).
-  5. Attach visuals to the line timestamps in the EDL (semantic lock, §5.1).
+  5. Attach visuals with `slots.csv` (semantic lock, §5.1).
+- **Pauses between lines are never dead air** (hook of fire-and-ice: 20 pauses of 0.3–0.7 s, 11% of the runtime):
+  - *Picture:* `slots.csv` gives every line a picture slot that runs until 0.15 s before the next line speaks, so the
+    timeline has no holes and every cut lands in a pause ("cutting on the breath"), with the new shot leading the voice.
+  - *Subtitles:* pauses up to 1 s keep the cue on screen until the next line (no blinking); longer ones leave a short gap.
+  - *Sound:* the music bed lifts in each pause (it is ducked under speech) and whooshes or impacts land on the cuts.
+    Pauses over 1 s become `VO_PAUSE` beats (ambience, a diegetic sound, a held reaction shot, §11).
 - **Measured** on the breath-hold VO (7:05, 80 lines) against hand-checked speech onsets: all 80 lines in order, 75 starts
   within 0.15 s, ends median 0.05 s off; the only real miss (a one-word sentence opener attached to the previous line,
   0.94 s) was among the 9 lines flagged "check" (boundary that could sit one pause earlier or later). Listen to flagged
