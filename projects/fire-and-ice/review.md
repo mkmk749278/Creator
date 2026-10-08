@@ -25,3 +25,7 @@ at 1:05 when first named ✓ (the film's subject is a practice, so the monks/Tum
 "welcome to Be Practical" ✓, logo bug ✓, end card ✓ (20 s, end-screen zones, safety line), science animated and
 labelled ✓, stock repeats ≤ 2 ✓, credits on all third-party footage ✓, loudness ✓. Open: fact-check (on-screen numbers
 in the hypothermia, finger-temperature, endotoxin and map scenes wait for `claims.csv`).
+
+## Cut 2 (2026-10-08): fixes verified
+Exact-frame grabs at each fixed timecode (`qa/cut2fix/sheet.jpg`): all 13 fixes in place; no near-black frames left
+outside dips; −14.0 LUFS. Still open: on-screen numbers wait for the fact-check (scenes re-render in about a minute each).
