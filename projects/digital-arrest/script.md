@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **11:25** of speech (9,485 characters, 2 Bunty blocks), plus pauses and music beats.
+Estimated length: **11:58** of speech (9,919 characters, 2 Bunty blocks), plus pauses and music beats.
 
 ## 1 Hook
 
@@ -34,8 +34,8 @@ _You can't go anywhere. You can't tell anyone. You can't switch off the camera._
 🔊 Ticking clock enters
 
 **L05** · block 1  
-**ఆ క్షణం నుంచి మీరు ఒక జైలు లో ఉన్నారు. గోడలు లేని జైలు. మీ సొంత ఇంట్లో.**  
-_From that moment you are in a jail. A jail without walls. In your own home._  
+**ఆ క్షణం నుంచి మీరు ఒక జైలు లో ఉన్నారు. గోడలు లేని జైలు. అది కూడా మీ సొంత ఇంట్లో.**  
+_From that moment you are in a jail. A jail without walls. And that too, in your own home._  
 🎬 Wide living room, slow dolly back; a lone silhouette on a sofa lit only by the phone; vignette tightens.  
 🔊 Drone swells
 
@@ -67,15 +67,15 @@ _A judge, who knows the law better than anyone. If even he got trapped... how sa
 🔊 Drone
 
 **L10** · block 1  
-**ఈ వీడియో అయ్యేసరికి, ఈ స్కామ్ ని ఒక్క సెకండ్ లో గుర్తుపట్టే ఒక సింపుల్ నిజం మీకు తెలుస్తుంది.**  
-_By the end of this video you'll know one simple truth that exposes this scam in a second._  
+**ఈ వీడియో లాస్ట్ వరకు చూడండి. ఈ స్కామ్ ని ఒక్క సెకండ్ లో గుర్తుపట్టే ఒక సింపుల్ నిజం నేను మీకు చెప్తాను.**  
+_Watch this video to the end. I will tell you one simple truth that exposes this scam in a second._  
 🎬 Phone screen cracks into light; title treatment DIGITAL ARREST in lower third.  
 🔤 DIGITAL ARREST  
 🔊 Riser
 
 **L11** · block 1  
-**నమస్తే, బీ ప్రాక్టికల్ విత్ కిషోర్ కి వెల్కమ్. ఈ రోజు ఈ స్కామ్ ని పూర్తిగా ఓపెన్ చేద్దాం.**  
-_Hello, welcome to Be Practical with Kishore. Today let's open this scam up completely._  
+**నమస్తే అండి, బీ ప్రాక్టికల్ విత్ కిషోర్ కి వెల్కమ్. ఈ రోజు ఈ స్కామ్ ని పూర్తిగా ఓపెన్ చేద్దాం. ఇంకా సబ్స్క్రైబ్ చేయకపోతే, ఇప్పుడే చేసుకోండి.**  
+_Hello, welcome to Be Practical with Kishore. Today let's open this scam up completely. If you haven't subscribed yet, do it now._  
 🎬 Logo sting, then Kishore on camera (owner records ~5 s) or channel lower-third. Channel name must be on screen by 0:15–0:20 (logo bug at 0:15 even before this line).  
 🔤 BE PRACTICAL WITH KISHORE  
 🔊 Logo sting
@@ -96,8 +96,8 @@ _In 2024, in a single year, over one lakh twenty-three thousand digital arrest c
 🔊 Counter ticks
 
 **L14** · block 1  
-**అంటే రోజుకి త్రీ హండ్రెడ్ కి పైగా.**  
-_That's more than three hundred a day._  
+**అంటే రోజుకి త్రీ హండ్రెడ్ కి పైగా అన్నమాట.**  
+_That's more than three hundred a day, you see._  
 🎬 Calendar pages flipping fast; each page drops a cluster of dots.  
 🔤 300+ / DAY
 
@@ -114,7 +114,7 @@ _These are only the people who complained._
 🎬 Apartment block at night, lit windows; slow tilt; one window goes dark.
 
 **L17** · block 1  
-**ఇక్కడ ఒక గుడ్ న్యూస్ కూడా ఉంది. ట్వెంటీ ట్వెంటీ ఫైవ్ లో కంప్లైంట్స్ సగానికి పైగా తగ్గి, ఫిఫ్టీ ఎయిట్ థౌసండ్ కి వచ్చాయి.**  
+**ఇక్కడ ఒక గుడ్ న్యూస్ కూడా ఉందండి. ట్వెంటీ ట్వెంటీ ఫైవ్ లో కంప్లైంట్స్ సగానికి పైగా తగ్గి, ఫిఫ్టీ ఎయిట్ థౌసండ్ కి వచ్చాయి.**  
 _There is some good news too. In 2025 complaints fell by more than half, to fifty-eight thousand._  
 🎬 Animated bar falls from 2024 to 2025.  
 🔤 58,249 · 2025 [I4C STATUS REPORT | SUPREME COURT, AUG 2026]
@@ -126,7 +126,7 @@ _The reason, according to Home Ministry officials... awareness._
 🔤 AWARENESS WORKS [MHA OFFICIAL | THEPRINT, FEB 2026]
 
 **L19** · block 1  
-**అంటే ఈ స్కామ్ కి మందు ఒకటే. తెలుసుకోవడం.**  
+**సో, ఈ స్కామ్ కి మందు ఒకటే. తెలుసుకోవడం.**  
 _So this scam has one medicine: knowing._  
 🎬 Grandparents watching a phone together on a sofa (stock), warm practical light.
 
@@ -181,8 +181,8 @@ _Then a second man joins the line. Claiming to be a circle inspector, he says yo
 🔊 Second ring tone
 
 **L28** · block 1  
-**ఇక్కడ ఒక్క నిమిషం ఆలోచించండి. సుప్రీం కోర్ట్ ఇలా ఫోన్ లో వారెంట్లు పంపదని ఒక జడ్జి కి తెలుసు. కానీ భయం వేరే లెవెల్ లో పనిచేస్తుంది.**  
-_Stop and think for a minute. A judge knows the Supreme Court doesn't send warrants over the phone. But fear works on a different level._  
+**ఇక్కడ ఒక్క నిమిషం ఆలోచించండి. సుప్రీం కోర్ట్ ఇలా ఫోన్ లో వారెంట్లు పంపదని ఒక జడ్జి కి తెలుసు కదా. కానీ భయం వేరే లెవెల్ లో పనిచేస్తుంది.**  
+_Stop and think for a minute. A judge knows the Supreme Court doesn't send warrants over the phone, right? But fear works on a different level._  
 🎬 Freeze-frame; image desaturates; slow push on the fake warrant.  
 🔊 Music drops to a low pulse
 
@@ -229,8 +229,8 @@ _From February twenty-fifth to March second, in four transfers, he sent one cror
 🔊 Four whooshes
 
 **L36** · block 1  
-**రిఫండ్ రాలేదు. వాళ్ళు కాంటాక్ట్ లో లేరు. అప్పుడు అర్థమైంది.**  
-_The refund never came. They went silent. That's when it sank in._  
+**రిఫండ్ రాలేదు. వాళ్ళు కాంటాక్ట్ లో లేరు. అప్పుడు అర్థమైంది, ఇది స్కామ్ అని.**  
+_The refund never came. They went silent. That's when it sank in: it was a scam._  
 🎬 Call screen: CALL FAILED, repeated; slow fade.  
 🔊 Silence for 1 s
 
@@ -241,8 +241,8 @@ _He complained to the Malkajgiri cyber crime police._
 🔤 CCS MALKAJGIRI [PTI | 9 MAR 2026]
 
 **L38** · block 1  
-**ఇప్పుడు ఒక ప్రశ్న. ఇంత తెలిసిన మనిషి ఎలా నమ్మారు. జవాబు సింపుల్. ఆయన్ని ఆలోచించనివ్వలేదు.**  
-_Now a question. How did someone who knows so much believe it? The answer is simple. They never let him think._  
+**ఇప్పుడు మీకు ఒక డౌట్ రావొచ్చు. ఇంత తెలిసిన మనిషి ఎలా నమ్మారు అని. నాకు అనిపించేది ఏంటంటే, ఆయన్ని అసలు ఆలోచించనివ్వలేదు.**  
+_Now you might wonder how someone who knows so much could believe it. What I feel is, they never let him think at all._  
 🎬 Clock hands spinning; a figure surrounded by four ringing phones (animated silhouette).
 
 **L39** · block 1  
@@ -268,8 +268,8 @@ _Stage one: fear. A call comes, supposedly from a courier company, the telecom d
 🔤 STAGE 1 · FEAR
 
 **L42** · block 1  
-**మీ పేరు మీద వచ్చిన పార్సిల్ లో డ్రగ్స్ దొరికాయి, మీ సిమ్ తో క్రైమ్ జరిగింది, మీ అకౌంట్ లో మనీ లాండరింగ్ డబ్బు ఉంది. ఏదో ఒక స్టోరీ.**  
-_Drugs were found in a parcel in your name, a crime was committed with your SIM, there's laundered money in your account. Some story or other._  
+**మీ పేరు మీద వచ్చిన పార్సిల్ లో డ్రగ్స్ దొరికాయి, మీ సిమ్ తో క్రైమ్ జరిగింది, మీ అకౌంట్ లో మనీ లాండరింగ్ డబ్బు ఉంది. ఏదో ఒక స్టోరీ అన్నమాట.**  
+_Drugs were found in a parcel in your name, a crime was committed with your SIM, there's laundered money in your account. Some story or other, you see._  
 🎬 Courier box on a scanner belt (stock); X-ray look; SIM card; bank statement with a red highlighter sweep.
 
 **L43** · block 1  
@@ -285,7 +285,7 @@ _The Union Home Ministry itself said it: these gangs use studios that look like 
 🔤 FAKE SET · RECONSTRUCTION [MHA / I4C ALERT | MAY 2024]
 
 **L46** · block 1  
-**కొంతమందికి ఏకంగా ఫేక్ కోర్ట్ హియరింగ్ కూడా చూపిస్తారు.**  
+**కొంతమందికి అయితే ఏకంగా ఫేక్ కోర్ట్ హియరింగ్ కూడా చూపిస్తారు.**  
 _Some people are even shown a fake court hearing._  
 🎬 SIMULATION: video-call grid turning into a courtroom layout.  
 🔤 SIMULATION  
@@ -298,8 +298,8 @@ _For S P Oswal, chairman of the Vardhman Group in Ludhiana, they staged a fake S
 🔤 ₹7 CRORE · SEPT 2024 [BAR & BENCH | BUSINESS STANDARD]
 
 **L48** · block 1  
-**జడ్జి ఫేస్ కనిపించలేదు, కానీ సుత్తి కొట్టే సౌండ్ వినిపించింది అని ఆయనే చెప్పారు. తర్వాత స్టాంప్ వేసిన ఆర్డర్ వాట్సాప్ లో వచ్చింది. సెవెన్ క్రోర్స్ ట్రాన్స్ఫర్ చేశారు.**  
-_He said he couldn't see the judge's face, but heard a gavel banging. Then a stamped order arrived on WhatsApp. He transferred seven crore._  
+**జడ్జి ఫేస్ కనిపించలేదు, కానీ సుత్తి కొట్టే సౌండ్ వినిపించింది అని ఆయనే చెప్పారు. తర్వాత స్టాంప్ వేసిన ఆర్డర్ వాట్సాప్ లో వచ్చింది. సెవెన్ లాక్స్ కాదు, సెవెంటీ లాక్స్ కాదు, సెవెన్ క్రోర్స్ ట్రాన్స్ఫర్ చేశారు.**  
+_He said he couldn't see the judge's face, but heard a gavel banging. Then a stamped order arrived on WhatsApp. Not seven lakh, not seventy lakh: he transferred seven crore._  
 🎬 Black video tile labelled JUDGE with an audio waveform pulsing to gavel hits; stamped order slides in.  
 🔤 SIMULATION  
 🔊 Gavel ×3 (diegetic-style)
@@ -338,7 +338,7 @@ _In Hyderabad, a seventy-six-year-old retired doctor was kept in this kind of di
 🔊 Music almost silent
 
 **L55** · block 2  
-**స్టేజ్ త్రీ, డబ్బు. ఇక్కడ వాళ్ళు చాలా స్మూత్ గా, చాలా మర్యాదగా మాట్లాడతారు.**  
+**స్టేజ్ త్రీ, డబ్బు. ఇక్కడ వాళ్ళు చాలా స్మూత్ గా, చాలా మర్యాదగా మాట్లాడతారండి.**  
 _Stage three: money. Here they talk very smoothly, very politely._  
 🎬 Zone 3 lights; a calm uniformed silhouette leaning forward.  
 🔤 STAGE 3 · MONEY
@@ -356,8 +356,8 @@ _They promise everything comes back after verification. Some people are even mad
 🔤 ILLUSTRATION
 
 **L58** · block 2  
-**ఆ డబ్బు ఒక్క అకౌంట్ లో ఆగదు. వేరేవాళ్ళ పేర్ల మీద ఉన్న మ్యూల్ అకౌంట్స్ ద్వారా ఎన్నో లేయర్స్ లో తిరిగి, బయటకు వెళ్ళిపోతుంది.**  
-_That money doesn't stop in one account. It moves through layer after layer of mule accounts in other people's names, and out._  
+**సో, ఆ డబ్బు ఒక్క అకౌంట్ లో ఆగదు. వేరేవాళ్ళ పేర్ల మీద ఉన్న మ్యూల్ అకౌంట్స్ ద్వారా ఎన్నో లేయర్స్ లో తిరిగి, బయటకు వెళ్ళిపోతుంది.**  
+_So that money doesn't stop in one account. It moves through layer after layer of mule accounts in other people's names, and out._  
 🎬 Animated money-flow network: one node splits into dozens, branching off-screen.  
 🔤 MULE ACCOUNTS  
 🔊 Rapid ticks
@@ -377,8 +377,8 @@ _That's why once the money is gone, getting it back is very hard._
 ## 5 Law
 
 **L61** · block 2  
-**సరే. ఇప్పుడు ఈ మొత్తం స్కామ్ ని ఒక్క దెబ్బతో కూల్చేసే నిజం చెప్తాను.**  
-_Okay. Now I'll tell you the truth that brings this whole scam down in one blow._  
+**సరే. ఇప్పుడు ఈ మొత్తం స్కామ్ ని ఒక్క దెబ్బతో కూల్చేసే నిజం నేను మీకు చెప్తాను.**  
+_Okay. Now I will tell you the truth that brings this whole scam down in one blow._  
 🎬 Slow push into black.  
 🔊 VO_PAUSE: 1.5 s total music silence after this line
 
@@ -452,8 +452,8 @@ _Now notice this. The law says your family must be told. The scammer says don't 
 🔊 Hit on the shatter
 
 **L74** · block 2  
-**ఇంకో విషయం. ఏ పోలీస్ గానీ, ఏ కోర్ట్ గానీ, ఆర్ బి ఐ గానీ, వెరిఫికేషన్ కోసం మీ డబ్బు ట్రాన్స్ఫర్ చేయమని అడగరు. డబ్బు అడిగితే, అది హండ్రెడ్ పర్సెంట్ స్కామ్.**  
-_One more thing. No police, no court, not even the RBI, will ask you to transfer your money for verification. If they ask for money, it's a hundred percent scam._  
+**ఇంకో విషయం. ఏ పోలీస్ గానీ, ఏ కోర్ట్ గానీ, ఆర్ బి ఐ గానీ, వెరిఫికేషన్ కోసం మీ డబ్బు ట్రాన్స్ఫర్ చేయమని అడగరు. డబ్బు అడిగారు అంటే, అది హండ్రెడ్ పర్సెంట్ స్కామ్.**  
+_One more thing. No police, no court, not even the RBI, will ask you to transfer your money for verification. If they asked for money, it's a hundred percent scam._  
 🎬 The fake transfer screen from earlier, now with a big red X.  
 🔤 MONEY DEMAND = SCAM [RBI · I4C ADVISORIES]
 
@@ -479,8 +479,8 @@ _First. Cut the call. Immediately. No need to be polite, no need to argue._
 🔊 Click
 
 **L78** · block 2  
-**వాళ్ళు ఇచ్చిన నంబర్ కి కాల్ చేసి వెరిఫై చేయకండి. అది కూడా వాళ్ళ మనిషే. నంబర్ మీరే అఫీషియల్ వెబ్సైట్ నుంచి తీసుకోండి, లేదా నేరుగా పోలీస్ స్టేషన్ కి వెళ్ళండి.**  
-_Don't verify by calling a number they gave you. That's their person too. Get the number yourself from the official website, or go straight to the police station._  
+**వాళ్ళు ఇచ్చిన నంబర్ కి కాల్ చేసి వెరిఫై చేయకండి. అది కూడా వాళ్ళ మనిషే కదా. నంబర్ మీరే అఫీషియల్ వెబ్సైట్ నుంచి తీసుకోండి, లేదా నేరుగా పోలీస్ స్టేషన్ కి వెళ్ళండి.**  
+_Don't verify by calling a number they gave you. That's their own person too, right? Get the number yourself from the official website, or go straight to the police station._  
 🎬 A scribbled number crossed out; browser opening an official .gov.in page (simulation).  
 🔤 DON'T CALL THEIR NUMBER
 
@@ -582,9 +582,15 @@ _Share this video with your parents and the elders at home. One share could save
 🎬 Phone sharing to a family WhatsApp group (simulation, fictional names).  
 🔤 SHARE WITH ELDERS
 
+**L94b** · block 2  
+**మీకు గానీ, మీ వాళ్ళకి గానీ ఇలాంటి కాల్ ఎప్పుడైనా వచ్చిందా. కాల్ కట్ చేశారా, లేక భయపడ్డారా. కింద కామెంట్ లో చెప్పండి. మీ ఎక్స్పీరియన్స్ ఇంకొకరిని కాపాడొచ్చు.**  
+_Have you or your family ever got a call like this? Did you cut it, or did it scare you? Tell us in the comments. Your experience could save someone else._  
+🎬 Phone screen: comment box with a blinking cursor (simulation); warm light.  
+🔤 COMMENT: DID YOU GET THIS CALL?
+
 **L95** · block 2  
-**జాగ్రత్తగా ఉండండి. ధైర్యంగా ఉండండి. మళ్ళీ కలుద్దాం.**  
-_Stay careful. Stay brave. See you again._  
+**వీడియో నచ్చితే లైక్ చేసి, ఛానల్ ని సబ్స్క్రైబ్ చేసుకోండి. జాగ్రత్తగా ఉండండి, ధైర్యంగా ఉండండి. మళ్ళీ కలుద్దాం. జై హింద్.**  
+_If you liked the video, like it and subscribe to the channel. Stay careful, stay brave. See you again. Jai Hind._  
 🎬 End card: CALL 1930 · cybercrime.gov.in · channel logo.  
 🔤 CALL 1930 · cybercrime.gov.in  
 🔊 Piano resolves
