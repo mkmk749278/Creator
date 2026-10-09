@@ -320,6 +320,24 @@ Refined 2026-10-09 with the measured transcripts of 18 competitor videos (number
 - The topic sets the runtime (owner, 2026-10-09). The four acts are proportions, not timestamps: hook about 10–15%,
   betrayal 30–35%, reveal 20–25%, defence 25–30%. Cut anything that doesn't move the story; never pad to reach a length.
 
+**Grammar, clarity and pronunciation (owner review, 2026-10-09).** The first Digital Arrest script failed the owner's
+listen on three counts; each is now a lint rule in `tools/build_script.py`:
+- *Acronyms:* spaced letters are misread because single letters are also words (ఈ = "this", ఓ = "oh/a"): Bunty said
+  "ee D ni" and "oh tp lo". Write them as Telugu media do, as one word with long vowels: సీబీఐ, ఈడీ, ఓటీపీ, ఆర్బీఐ,
+  ఎఫ్ఐఆర్, ఐపీఎస్, బీఎన్ఎస్ఎస్, ఏపీకే, ఎఫ్డీ, ఐడీ, ఐఫోర్సీ (I4C), సీఈవో, యూఎన్, డీకే బసు; URLs as said
+  (సైబర్క్రైమ్ డాట్ గవ్ డాట్ ఇన్). Spell out an unpronounceable one instead (CFCFRMS → "ఈ సిస్టమ్ని ఐఫోర్సీ నడుపుతుంది").
+  Gloss each acronym once ("ఈడీ, అంటే ఎన్ఫోర్స్మెంట్ డైరెక్టరేట్").
+- *Questions:* end every real question with `?` (ఏముంటుంది?, తెలుసా?, ఎవరు?). A full stop makes Bunty read it flat.
+- *Case endings* join the noun (పెద్దమనిషికి, కేసులో, ఫ్యామిలీకి, జైలులో). Skip the ZWNJ after a virama (లైన్లోకి):
+  pronunciation is the same and it costs characters.
+- *Clarity:* every sentence has a subject and a verb; reported speech is framed (`… అని అంటాడు`); name the person when
+  "ఆయన/ఆమె" could point to two people; numbers stay English number words (సిక్స్ మంత్స్, not ఆరు నెలలు).
+
+**Emotion cues (eleven_v4, owner 2026-10-09).** Each line may carry one audio tag in the `emotion` column, from the list in
+`tools/build_script.py` (`[serious]`, `[tense]`, `[softly]`, `[sad]`, `[curious]`, `[shocked]`, `[urgent]`, `[firm]`,
+`[warmly]`, `[hopeful]`, `[empathetic]`, `[dramatic pause]` …). Tag only where the feeling changes. Tags count toward the
+5,000-character cap. Test block 1 first; if v4 reads a tag aloud, use the tag-free `bunty_blocks_clean.md`.
+
 **Read-aloud test (every block, before TTS):** say it out loud. If any sentence sounds like a newspaper, a textbook or a
 government notice, rewrite it. If you run out of breath, split it.
 
@@ -969,7 +987,8 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 
 # Part E: Owner's channel charter (verbatim, received 2026-10-08)
 
-> **Owner's amendments (2026-10-09), which win over the text below:** no fixed runtime or act timestamps (the topic sets
+> **Owner's amendments (2026-10-09), which win over the text below:** acronyms as one word (ఈడీ, ఓటీపీ), `?` on
+> questions and v4 emotion tags are allowed (§4b, CLAUDE.md); no fixed runtime or act timestamps (the topic sets
 > the length; acts are proportions, §4b); ElevenLabs blocks of 4,000–4,500 characters (cap 5,000), not 100–130 words;
 > narration is heavy Tenglish spoken Telugu (§4b). The `...` ban below was already lifted on 2026-10-08.
 

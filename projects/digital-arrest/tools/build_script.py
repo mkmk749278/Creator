@@ -22,28 +22,61 @@ BANNED = ["ఈ నేపథ్యంలో", "ఈ క్రమంలో", "అ�
           "చండాల", "కటిక చీకటి", "నువ్వు"]
 
 
+LETTERS = {"ఏ", "బి", "బీ", "సి", "సీ", "డి", "డీ", "ఈ", "ఎఫ్", "జి", "జీ", "హెచ్", "ఐ", "జె", "కె", "కే", "ఎల్", "ఎం", "ఎన్",
+           "ఓ", "పి", "పీ", "క్యూ", "ఆర్", "ఎస్", "టి", "టీ", "యు", "యూ", "వి", "వీ", "వై", "జెడ్", "ఎక్స్"}
+SUFFIXES = {"కి", "కు", "లో", "లోనే", "లోకి", "లోంచి", "ని", "ను", "తో", "గా", "నే", "లు", "ల", "ది", "కే"}
+QWORDS = ("తెలుసా", "ఏంటి", "ఎవరు", "ఏముంటుంది", "ఎందుకు", "ఏమిటి", "ఎలా", "వచ్చిందా", "చేశారా", "కదా", "ఏమనుకుంటాం")
+TAGS = {"[serious]", "[tense]", "[menacing]", "[slowly]", "[softly]", "[sighs]", "[dramatic pause]", "[intense]", "[curious]",
+        "[confident]", "[warmly]", "[shocked]", "[hopeful]", "[sad]", "[empathetic]", "[grave]", "[urgent]", "[firm]",
+        "[emphatic]", "[gently]", "[inspired]", "[whispers]"}
+
+
 def lint(row):
+    """Bunty format (CLAUDE.md, PLAYBOOK §4, §4b; owner 2026-10-09): Telugu script only; `?` on real questions; acronyms
+    written as one word as Telugu media spell them (ఈడీ, ఓటీపీ: spaced letters are misread, e.g. ఈ = 'this');
+    case endings joined to the noun (ఫ్యామిలీకి, not ఫ్యామిలీ కి); no ! quotes dashes brackets; ban list."""
     te, errs = row["te"], []
-    bad = re.findall(r"[^ఀ-౿\s,.‌‍]", te)
+    bad = re.findall(r"[^\u0C00-\u0C7F\s,.?\u200c\u200d]", te)
     if bad:
         errs.append(f"non-Telugu characters {sorted(set(bad))}")
+    toks = re.findall(r"[^\s,.?]+", te)
+    for a, b in zip(toks, toks[1:]):
+        if a in LETTERS and b in LETTERS:
+            errs.append(f"spaced acronym '{a} {b}': write it as one word (ఈడీ, ఓటీపీ, సీబీఐ)")
+            break
+    for m in re.finditer(r"(?<=[\u0C00-\u0C7F]) ([\u0C00-\u0C7F]+)(?=[\s,.?]|$)", te):
+        if m.group(1) in SUFFIXES:
+            errs.append(f"detached case ending ' {m.group(1)}': join it to the word before")
+            break
+    for sent in re.split(r"(?<=[.?])\s+", te):
+        words = re.findall(r"[^\s,.?]+", sent)
+        if sent.rstrip().endswith(".") and not sent.rstrip().endswith("...") and words and words[-1] in QWORDS:
+            errs.append(f"question ends with a full stop: '{sent.strip()[-30:]}'")
     for s in re.split(r"(?<=\.)\s", te):
         if s.count("...") > 1:
             errs.append("more than one ... in a sentence")
     errs += [f"banned word {w}" for w in BANNED if w in te]
+    tag = row.get("emotion", "").strip()
+    if tag and tag not in TAGS:
+        errs.append(f"unknown emotion tag {tag}")
     return errs
+
+
+def spoken(r, tags=True):
+    tag = r.get("emotion", "").strip()
+    return f"{tag} {r['te']}" if tags and tag else r["te"]
 
 
 def blocks_of(rows):
     """Fewest blocks that respect the 5,000 cap, sized near 4,250; cut at section ends near the ideal points."""
     import math
-    total = sum(len(r["te"]) + 1 for r in rows)
+    total = sum(len(spoken(r)) + 1 for r in rows)
     k = max(math.ceil(total / CAP), round(total / 4250), 1)
     ideal = [total * j / k for j in range(1, k)]
     pos, cuts = 0, []  # cumulative size after each line
     ends = []
     for i, r in enumerate(rows):
-        pos += len(r["te"]) + 1
+        pos += len(spoken(r)) + 1
         ends.append((i, pos, i + 1 < len(rows) and rows[i + 1]["section"] != r["section"]))
     for t in ideal:
         # prefer a section end within 450 chars of the ideal point, else the nearest line end
@@ -57,13 +90,14 @@ def blocks_of(rows):
     return out
 
 
-def block_text(block):
-    """Lines joined with spaces; a blank line between sections gives Bunty a natural paragraph pause."""
+def block_text(block, tags=True):
+    """Lines joined with spaces; a blank line between sections gives Bunty a natural paragraph pause. With tags, each
+    line's emotion cue (an ElevenLabs v4 audio tag in square brackets) goes in front of it."""
     paras, cur, sec = [], [], None
     for r in block:
         if sec is not None and r["section"] != sec:
             paras.append(" ".join(cur)); cur = []
-        cur.append(r["te"]); sec = r["section"]
+        cur.append(spoken(r, tags)); sec = r["section"]
     paras.append(" ".join(cur))
     return "\n\n".join(paras)
 
@@ -107,14 +141,22 @@ def main():
     total = sum(chars(b) for b in blocks)
     tsecs = sum(secs(b) for b in blocks)
     with open(HERE / "bunty_blocks.md", "w", encoding="utf-8") as f:
-        f.write(f"# Bunty blocks: {TITLE}\n\nPaste each block as one ElevenLabs generation (voice Bunty, `eleven_v3`/"
-                "`eleven_v4`, `language_code: te`). Listen to every take; if a block skips, repeats or drifts, regenerate "
-                "it, and send the files as `voice/block1.mp3`, `voice/block2.mp3`, ….\n\n")
+        f.write(f"# Bunty blocks: {TITLE}\n\nPaste each block as one ElevenLabs generation (voice Bunty, `eleven_v4`, "
+                "`language_code: te`). The [square-bracket] words are emotion cues (audio tags), not spoken text. Test "
+                "block 1 first: if Bunty reads a tag aloud, use `bunty_blocks_clean.md` instead. Listen to every take; if a "
+                "block skips, repeats or drifts, regenerate it, and send the files as `voice/block1.mp3`, "
+                "`voice/block2.mp3`, ….\n\n")
         for i, b in enumerate(blocks, 1):
             c = chars(b)
             f.write(f"## Block {i} · {c:,} characters · ~{mmss(secs(b))} · lines {b[0]['id']}–{b[-1]['id']}\n\n")
             f.write(block_text(b) + "\n\n")
         f.write(f"Total {total:,} characters, about {mmss(tsecs)} of speech.\n")
+    with open(HERE / "bunty_blocks_clean.md", "w", encoding="utf-8") as f:
+        f.write(f"# Bunty blocks without emotion tags: {TITLE}\n\nSame text as bunty_blocks.md minus the [tags]: use it if a "
+                "take reads a tag aloud or breaks around one.\n\n")
+        for i, b in enumerate(blocks, 1):
+            f.write(f"## Block {i} · {len(block_text(b, False)):,} characters · lines {b[0]['id']}–{b[-1]['id']}\n\n")
+            f.write(block_text(b, False) + "\n\n")
 
     with open(HERE / "script.md", "w", encoding="utf-8") as f:
         f.write(f"# {TITLE}: shooting script (Be Practical with Kishore)\n\n"
@@ -128,7 +170,8 @@ def main():
             if r["section"] != sec:
                 sec = r["section"]
                 f.write(f"\n## {sec}\n")
-            f.write(f"\n**{r['id']}** · block {r['block']}  \n**{r['te']}**  \n_{r['en']}_  \n🎬 {r['visual']}")
+            emo = f" · 🎭 {r['emotion']}" if r.get("emotion") else ""
+            f.write(f"\n**{r['id']}** · block {r['block']}{emo}  \n**{r['te']}**  \n_{r['en']}_  \n🎬 {r['visual']}")
             if r["onscreen"]:
                 f.write(f"  \n🔤 {r['onscreen']}")
             if r["sound"]:

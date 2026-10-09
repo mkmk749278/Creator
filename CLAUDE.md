@@ -97,14 +97,21 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   figures. Hard gates beside the fact-check: synthetic-content disclosure, health context (WHO/ICMR + skeptic), SEBI
   education-only lane (no buy/sell calls, price data ≥ 30 days old, disclaimer), Press Council suicide norms.
 - **TTS:** ElevenLabs Telugu only on `eleven_v3`/`eleven_v4` with `language_code: "te"`; all TTS text in Telugu script.
-- **ElevenLabs "Bunty" script format** (Bunty stays the channel voice; owner, 2026-10-08, block size 2026-10-09): blocks
-  of **4,000–4,500 characters** (hard cap 5,000, the `eleven_v3` per-request limit), as many as the script needs; commas, full stops and `...` for dramatic pauses only (no `!`, quotes, dashes, stage directions);
-  numbers as English number words in Telugu script (`ఫైవ్ థౌసండ్`), names and English terms in Telugu script; acronyms
-  letter by letter (`ఆర్ బి ఐ`). If a take breaks around `...`, use a comma and pause in the edit. Hand the owner
-  re-record text in this format.
+- **ElevenLabs "Bunty" script format** (Bunty stays the channel voice, now on `eleven_v4`; owner, 2026-10-08/09): blocks
+  of **4,000–4,500 characters** (hard cap 5,000), as many as the script needs; commas, full stops, `...` for dramatic
+  pauses and **`?` on every real question** (a full stop makes Bunty read a question flat). No `!`, quotes or dashes.
+  Numbers as English number words in Telugu script (`ఫైవ్ థౌసండ్`), names and English terms in Telugu script.
+  **Acronyms as one word, the way Telugu media spell them: సీబీఐ, ఈడీ, ఓటీపీ, ఆర్బీఐ, ఎఫ్ఐఆర్, ఐపీఎస్** (never spaced
+  letters: Bunty read `ఈ డి` as "this D" and `ఓ టి పి` as "oh tp"); gloss each once. **Case endings join the noun**
+  (ఫ్యామిలీకి, కేసులో, not ఫ్యామిలీ కి). **Emotion cues** are v4 audio tags in square brackets from the `emotion` column
+  (`[serious]`, `[softly]`, `[urgent]` …); the builder also writes a tag-free copy in case a take reads a tag aloud.
+  `tools/build_script.py` lints all of this. If a take breaks around `...`, use a comma and pause in the edit. Hand the
+  owner re-record text in this format.
 - **Talk, don't read** (owner, 2026-10-09): narration sounds like the owner talking to you, never like reading text aloud.
   Heavy Tenglish like NB Show (English words and short phrases where people really use them), మీరు + మనం address, spoken
-  verb forms, no newspaper words (ఈ నేపథ్యంలో, తద్వారా, కావున). Full guide: PLAYBOOK §4b.
+  verb forms, no newspaper words (ఈ నేపథ్యంలో, తద్వారా, కావున). **Clarity first:** full sentences with a subject and a
+  verb, a quoted speaker always framed (`… అని అంటాడు`, `… అని బెదిరిస్తారు`), say who "he/she" is when it could be
+  ambiguous, no verbless cinematic fragments except a deliberate one-line punch. Full guide: PLAYBOOK §4b.
 - **Audio:** the VO leads (peaks −2 to −3 dB); BGM −24 to −26 dB under speech, swelling to −12 dB in pauses with 0.5 s
   ramps, silent for 1.5 s before reveals; impacts −6 to −8 dB, small SFX −8 to −10 dB; master −14 LUFS two-pass linear. The video isn't locked to
   the VO: diegetic cuts (VO stops for 2–6 s of the asset's own sound), `LIVE` rows for real speech, `VO_PAUSE` ambience.
