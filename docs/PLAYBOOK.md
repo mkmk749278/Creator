@@ -135,14 +135,17 @@ look like a broadcast documentary or investigative film, **never a slide deck, c
 - **Mission and voice:** the "super-channel" for Telugu viewers: hooks with emotional urgency, a dark cinematic sound, clear
   chronology, Vox/Johnny Harris-style 2.5D visuals, and only peer-reviewed or primary legal sources. Narrator persona: the
   street-smart elder brother (అన్నయ్య), conversational Telugu, never victim-blaming (blame the system, not the viewer).
-- **Four acts:** (1) visceral hook, 0:00–1:15, drone + ticking clock; (2) systemic betrayal / investigation, live-browsing
+- **Four acts:** (1) visceral hook (the charter's 0:00–1:15; timings are now proportions, see §4b), drone + ticking clock; (2) systemic betrayal / investigation, live-browsing
   mock-ups and highlighters; (3) climax and shock reveal, with **1.5 s of total music silence before the core truth and a
   braam/thud as the proof lands**; (4) practical defence: actionable, reassuring steps, warm outro. Science films map the
   same way: myth → mechanism → the real evidence → what you can safely do. A "Trojan horse" hook: open on the popular
   mystery, resolve it with verified truth (this pairs with §12: the fact-check decides what "truth" is).
 - **Citation tag on every factual claim:** a small bracket tag, e.g. `[NATURE (1982) | HARVARD MONK STUDY]`, bottom right
   above the logo bug (`cite` column in `projects/fire-and-ice/assemble.py`).
-- **Bunty script format** (ElevenLabs): 5–6 blocks of 100–130 words, under 1,200 characters each; commas and full stops
+- **Bunty script format** (ElevenLabs): blocks of **4,000–4,500 characters**, hard cap 5,000 (owner, 2026-10-09: the
+  `eleven_v3` per-request limit; it replaces the charter's 100–130 words / 1,200 characters), as many blocks as the script
+  needs. Count characters, not words. Listen to every block: if one skips, repeats or drifts in tone, regenerate it, and if
+  that recurs, split the block at a paragraph; commas and full stops
   plus `...` for dramatic pauses (owner amended 2026-10-08); no stage directions, `!`, quotes or dashes; numbers as English
   number words in Telugu script (ఫైవ్ థౌసండ్, owner confirmed 2026-10-08); acronyms letter by letter in Telugu script;
   common English terms transliterated. *Why (owner):* prevents skipped characters, buffer drops and truncated takes.
@@ -155,6 +158,10 @@ look like a broadcast documentary or investigative film, **never a slide deck, c
   FFmpeg the assembler, both running in cloud sessions because the owner has no PC (Termux can still run `assemble.py`).
 
 ### 4a. Channel, language and audience rules (research, 2026-10-08)
+> **Owner's directive (2026-10-09): competitors are a reference, never a ceiling.** The channel studies (§4a, §4b) exist
+> only to understand natural spoken Telugu, tone and cadence. Never treat a competitor's depth, format or length as the
+> target: every film aims to outclass every existing video on its subject in research depth (primary sources, money
+> trails, data), narrative tension, visual storytelling and retention, at the Johnny Harris / Vox standard.
 Distilled from `docs/research/reports/Telugu YouTube audience and style.md` (30 evidence-graded rules with sources; notes
 in `docs/research/research_notes/`). The charter stays in force; where the evidence disagrees, the owner decides (list at
 the end). *Why this exists:* the big Telugu channels already win on warmth, presence and volume; none shows sources on
@@ -171,7 +178,8 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
 **Hook, structure, pacing**
 - Deliver the thumbnail's promise on screen **by 0:30**, with no channel intro before it (YouTube's "intro" metric counts
   viewers still watching at 30 s). Act 1 may run to 1:15 only if the payoff lands by 0:30. (Strong)
-- 8–12 min (longer if the story earns it) built as **3–5 chapters of 2–4 min**, each with its own question and payoff;
+- **No fixed length** (owner, 2026-10-09): the topic sets the runtime; every minute must earn its place. Built as
+  **chapters of 2–4 min**, each with its own question and payoff;
   YouTube chapters in the description (00:00, at least three, each ≥ 10 s). (Moderate: viewing engagement medians cap
   near 6 min in a 6.9M-session study; Telugu explainers of 10–18 min hold millions of views.)
 - Energetic delivery throughout; "reassuring" never means slow. Focus change every 3.0–3.5 s with continuous motion.
@@ -193,8 +201,9 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
   if a block skips or cuts words around a `...`, regenerate it with a comma there and make the pause in the edit
   (`VO_PAUSE`). The other bans stand: no `!`, quotes, dashes or stage directions.
 - One idea per sentence (about 8–15 words); no `;`, brackets, slashes, `&`, `#` or emoji in TTS text.
-- **Educated spoken Telugu** (TV-news register, Gidugu's vyavaharika): no grandhika endings (-ము, వచ్చెను, -బడు passives).
-  English only for technical or modern nouns, at most one English content word per clause, never an English clause.
+- **Spoken Telugu, heavy Tenglish** (owner, 2026-10-09; replaces the "one English word per clause" rule): talk the way
+  NB Show talks, English words and short phrases wherever people really say them. No grandhika endings (-ము, వచ్చెను,
+  -బడు passives). In TTS text every English word is still written in Telugu script. Full guide: §4b.
 - **Dialect-neutral:** pan-regional words; never call one region's Telugu "pure" or another's "slang"; never a dialect for
   comedy or villains; "మన తెలంగాణ, మన ఆంధ్ర" framing. Test new voices with listeners from both states.
 - **Ban list** (script, guests and clips): చండాలం and its forms; కటిక చీకటి (use కారు చీకటి); caste names as adjectives;
@@ -249,6 +258,91 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
    skip the competitor measurement**; judge pacing, music and hooks from our own retention curves after publishing.
    If it is ever wanted: `YT_COOKIES` (§8.5) or Termux, then `scripts/study_opening.py` on the 18 picks in
    `docs/research/research_notes/Telugu YouTube audience and style/competitor_picks.tsv`.
+   **2026-10-09:** the cloud was bot-blocked again; the owner chose Termux. `scripts/termux_study_picks.sh` fetches captions,
+   full audio and the first 3 min at 360p for the 18 picks, zips and uploads to Gofile (study only, never used in films).
+   **Measured the same day** (`competitor_measurements_2026-10-09.md` in the notes folder): Bunty's pace already matches
+   NB Show; the hits master at −12.6 to −14.3 LUFS; the biggest hits cut about every 3.7 s; nobody opens with a greeting.
+   The script-craft results are in §4b. (Gofile folders download from the cloud with headless Chromium: the API needs a
+   website token that only the page's own script produces.)
+
+### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
+*Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
+Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
+Refined 2026-10-09 with the measured transcripts of 18 competitor videos (numbers below are from that study).
+
+**Voice and register**
+- Write the way the owner would explain it to a younger cousin over chai: one idea per sentence, mostly 6–14 words, then
+  an occasional very short line for punch ("అదే ట్రాప్.").
+- **Heavy Tenglish, like NB Show:** English words and short phrases where Telugu people really use them (loan, EMI, bank,
+  actually, simple గా, full clarity, same thing, game changer). The sentence frame and the verbs stay Telugu. In the TTS
+  text every English word is in Telugu script (సింపుల్ గా, యాక్చువల్ గా); on screen Latin is fine.
+- **Address:** మీరు for the viewer, మనం for shared feelings, discoveries and the practical-defence act ("మనం ఇప్పుడు
+  చూద్దాం", "మనలో చాలామందికి ఇది జరిగింది"). Never నువ్వు.
+- **Spoken forms, not written ones:** చేస్తాం / వెళ్ళాడు / ఉంది కదా, not చేయుదుము / వెళ్ళెను. Banned newspaper
+  connectors: ఈ నేపథ్యంలో, ఈ క్రమంలో, అనంతరం, తద్వారా, కావున, సదరు, పేర్కొన్నారు, వెల్లడించారు. Say: తర్వాత, అందుకే,
+  అంటే, చెప్పారు, బయటపెట్టారు.
+- **Talk-markers** carry the feel of a conversation; use them, without repeating any one in back-to-back sentences:
+  అసలు, ఇక్కడే, చూడండి, కదా, అంటే, సరే, ఇప్పుడు ఏమైందంటే, ఒక్క నిమిషం, ఆలోచించండి, నిజం చెప్పాలంటే.
+- **Ask, then answer:** pose the question the viewer is thinking, pause, answer it ("మరి బ్యాంక్ ఎందుకు ఊరుకుంది?
+  ... ఎందుకంటే...").
+- **Glue words, measured** (per 1,000 words in the competitors' speech): కదా 5–9 (Kowshik, Money Purse, Day Trader),
+  సో 5–11, అంటే 4–13, అండి / -ండి 5–8 (NB Show, Kowshik, V R Raja), అన్నమాట up to 6.5 (Kowshik), నేను 1–6. Our first
+  script had almost none, which is exactly what makes text sound read. Aim for roughly 3–8 per 1,000 words each of కదా,
+  సో, అంటే and అండి, plus the narrator's own నేను ("నేను చెప్తాను", "నాకు అనిపించింది") a few times a film; never the same
+  marker in back-to-back sentences. Bunty reads Telugu script, so write them exactly as spoken.
+- **Devices that work:** repetition for a number ("టెన్ కాదు, ట్వెంటీ కాదు, సిక్స్టీ నైన్"); one named everyday example
+  (a person, a salary, a phone); a mid-film relevance turn ("ఇది మిమ్మల్ని డైరెక్ట్ గా ఎఫెక్ట్ చేస్తుంది"); an English line
+  followed by its Telugu meaning with అంటే.
+- **Pace:** Bunty already speaks at NB Show's pace (≈ 14.3 vs 14.0–14.4 characters/s); keep sentences short (NB Show's
+  median is 8–10 words) and let commas and `...` make the pauses (NB Show leaves 10–13 pauses of 0.8 s+ per minute).
+
+**How to start**
+- Never open with "నమస్కారం, ఈ రోజు మనం... గురించి తెలుసుకుందాం". None of the 18 measured videos opens with a greeting.
+  Open with one of the five patterns the hits use: a **cold-open story scene** (NB Show), a **bold claim with stakes**
+  (NB Show, Day Trader), the **myth everyone believes** (Think Deep), a **stakes list + promise** ("ఈ వీడియోలో పిన్ టు
+  పిన్ ఎక్స్ప్లెయిన్ చేస్తా, లాస్ట్ వరకు చూడండి", Kowshik) or a **question chain** ("అసలు ఇది ఏంటి? ఎలా వర్క్
+  అవుతుంది? ఎవరికి లాభం, ఎవరికి నష్టం? నష్టం ఎవరికో తెలుసా... మనకే", Kowshik). Name and greeting come right after the
+  hook (face and name within 15–20 s; NB Show flashes its name sting at 0:02), and the thumbnail's promise lands by 0:30.
+- Subscribe asks: Kowshik asks at 21–26 s and Money Purse at 22–33 s, right after the promise; Think Deep and NB Show only
+  at the end. One short ask right after the promise and one at the end is the common shape.
+
+**Emotion through words and rhythm** (Bunty takes no emotion tags, so the text carries the feeling)
+| Moment | How the text does it |
+|---|---|
+| Urgency (hook) | short sentences, direct questions, present tense ("ఇది మీకు కూడా జరగొచ్చు.") |
+| Empathy | name the feeling plainly, no blame ("ఇది మీ తప్పు కాదు. సిస్టమ్ అలా డిజైన్ చేశారు.") |
+| Righteous anger | concrete facts and numbers, then one short verdict line; anger at the mechanism, never the viewer |
+| Reveal | build with two or three short lines, `...`, then the truth in one plain sentence |
+| Reassurance (defence) | longer, calmer sentences, మనం, numbered practical steps said in speech ("ఫస్ట్ ఏం చేయాలంటే...") |
+| Outro | warm and personal, like ending a phone call with family; then an opinion question for the comments with concrete options (NB Show, Kowshik), like/subscribe, "మళ్ళీ కలుద్దాం" (Kowshik, NB Show and Day Trader all sign off with "జై హింద్") |
+
+**Length and structure**
+- The topic sets the runtime (owner, 2026-10-09). The four acts are proportions, not timestamps: hook about 10–15%,
+  betrayal 30–35%, reveal 20–25%, defence 25–30%. Cut anything that doesn't move the story; never pad to reach a length.
+
+**Grammar, clarity and pronunciation (owner review, 2026-10-09).** The first Digital Arrest script failed the owner's
+listen on three counts; each is now a lint rule in `tools/build_script.py`:
+- *Acronyms:* spaced letters are misread because single letters are also words (ఈ = "this", ఓ = "oh/a"): Bunty said
+  "ee D ni" and "oh tp lo". Write them as Telugu media do, as one word with long vowels: సీబీఐ, ఈడీ, ఓటీపీ, ఆర్బీఐ,
+  ఎఫ్ఐఆర్, ఐపీఎస్, బీఎన్ఎస్ఎస్, ఏపీకే, ఎఫ్డీ, ఐడీ, ఐఫోర్సీ (I4C), సీఈవో, యూఎన్, డీకే బసు; URLs as said
+  (సైబర్క్రైమ్ డాట్ గవ్ డాట్ ఇన్). Spell out an unpronounceable one instead (CFCFRMS → "ఈ సిస్టమ్ని ఐఫోర్సీ నడుపుతుంది").
+  Gloss each acronym once ("ఈడీ, అంటే ఎన్ఫోర్స్మెంట్ డైరెక్టరేట్").
+- *Questions:* end every real question with `?` (ఏముంటుంది?, తెలుసా?, ఎవరు?). A full stop makes Bunty read it flat.
+- *Case endings* join the noun (పెద్దమనిషికి, కేసులో, ఫ్యామిలీకి, జైలులో). Skip the ZWNJ after a virama (లైన్లోకి):
+  pronunciation is the same and it costs characters.
+- *Clarity:* every sentence has a subject and a verb; reported speech is framed (`… అని అంటాడు`); name the person when
+  "ఆయన/ఆమె" could point to two people; numbers stay English number words (సిక్స్ మంత్స్, not ఆరు నెలలు).
+
+**Emotion cues (eleven_v4, owner 2026-10-09).** Each line may carry one audio tag in the `emotion` column, from the list in
+`tools/build_script.py` (`[serious]`, `[tense]`, `[softly]`, `[sad]`, `[curious]`, `[shocked]`, `[urgent]`, `[firm]`,
+`[warmly]`, `[hopeful]`, `[empathetic]`, `[dramatic pause]` …). Tag only where the feeling changes. Tags count toward the
+5,000-character cap. Test block 1 first; if v4 reads a tag aloud, use the tag-free `bunty_blocks_clean.md`.
+
+**Read-aloud test (every block, before TTS):** say it out loud. If any sentence sounds like a newspaper, a textbook or a
+government notice, rewrite it. If you run out of breath, split it.
+
+**ElevenLabs blocks:** 4,000–4,500 characters each, cap 5,000 (`eleven_v3` limit); break at a natural paragraph or scene
+change, never mid-thought. Keep the punctuation rules in §4 (commas, full stops, `...`; no `!`, quotes, dashes or tags).
 
 ## 5. The look
 
@@ -334,6 +428,13 @@ beat edges; in `video/doc/` a pause beat (`{ pause: t, len }`) inserts silence, 
 Remotion and MoviePy are not installed; ask before adding them.
 
 ## 7. Script and voice
+**Estimating VO length before TTS (2026-10-09):** `scripts/estimate_vo.py SCRIPT [--srt est.srt]` gives each block's
+length, the total and estimated line cues, and flags blocks outside 4,000–4,500 characters or over 5,000. Bunty speaks
+about **14.3 characters per second** (spaces and punctuation included; ~123 words/min), so **4,000 characters ≈ 4:40 and
+4,500 ≈ 5:15**. Model fitted on fire-and-ice's 65 lines; held out, take totals land within 1%, lines ±0.5 s, starts
+drift up to ~3.5 s. Prahlad Jani ran ~13.5 c/s, so plan with ±7%. Use it to size acts and draft the EDL; final timings
+always come from `align_script.py` on the real VO. Re-fit the coefficients as more Bunty takes are aligned.
+
 
 - **Timing comes from silence detection + the script, never from Whisper** (owner's rule, Oct 2026). No Whisper for
   transcription or translation. *Why:* Whisper on Telugu dropped 20–30 s stretches, looped, output Kannada script, hit
@@ -734,7 +835,7 @@ took 90 min in a subagent while sourcing, scenes and assembly ran). Lessons:
 
 ## 16. Product and spec
 
-**Premise:** "We analysed what 15+ trusted reviewers said about this phone, so you don't have to." An 8–12 minute 4K video.
+**Premise:** "We analysed what 15+ trusted reviewers said about this phone, so you don't have to." A 4K video whose length the topic sets (owner, 2026-10-09).
 What makes it different: a consensus scorecard per category (display, camera, battery, performance, software, build, value);
 a "Where reviewers disagree" segment; "Problems reported by multiple reviewers"; who should buy, who should skip, better
 alternatives at the same price; every claim traceable to reviewer + video/article + timestamp.
@@ -885,6 +986,11 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 ---
 
 # Part E: Owner's channel charter (verbatim, received 2026-10-08)
+
+> **Owner's amendments (2026-10-09), which win over the text below:** acronyms as one word (ఈడీ, ఓటీపీ), `?` on
+> questions and v4 emotion tags are allowed (§4b, CLAUDE.md); no fixed runtime or act timestamps (the topic sets
+> the length; acts are proportions, §4b); ElevenLabs blocks of 4,000–4,500 characters (cap 5,000), not 100–130 words;
+> narration is heavy Tenglish spoken Telugu (§4b). The `...` ban below was already lifted on 2026-10-08.
 
 Kept word for word so later sessions read the owner's own wording. How each point maps onto this playbook: Part B intro.
 Owner's amendment (2026-10-08): `...` is now allowed for dramatic pauses (§4a); the rest of rule 4.2 stands.
