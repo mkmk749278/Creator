@@ -158,6 +158,10 @@ look like a broadcast documentary or investigative film, **never a slide deck, c
   FFmpeg the assembler, both running in cloud sessions because the owner has no PC (Termux can still run `assemble.py`).
 
 ### 4a. Channel, language and audience rules (research, 2026-10-08)
+> **Owner's directive (2026-10-09): competitors are a reference, never a ceiling.** The channel studies (§4a, §4b) exist
+> only to understand natural spoken Telugu, tone and cadence. Never treat a competitor's depth, format or length as the
+> target: every film aims to outclass every existing video on its subject in research depth (primary sources, money
+> trails, data), narrative tension, visual storytelling and retention, at the Johnny Harris / Vox standard.
 Distilled from `docs/research/reports/Telugu YouTube audience and style.md` (30 evidence-graded rules with sources; notes
 in `docs/research/research_notes/`). The charter stays in force; where the evidence disagrees, the owner decides (list at
 the end). *Why this exists:* the big Telugu channels already win on warmth, presence and volume; none shows sources on

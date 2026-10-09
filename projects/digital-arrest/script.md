@@ -1,6 +1,6 @@
 # Digital Arrest: shooting script (Be Practical with Kishore)
 
-Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
+Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
 Estimated length: **11:58** of speech (9,919 characters, 2 Bunty blocks), plus pauses and music beats.
 

@@ -15,6 +15,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
 TARGET, CAP = (4000, 4500), 5000
+TITLE = "Digital Arrest"
 sys.path.insert(0, str(HERE.parent.parent / "scripts"))
 from estimate_vo import line_seconds  # noqa: E402  (one timing model for every tool)
 BANNED = ["ఈ నేపథ్యంలో", "ఈ క్రమంలో", "అనంతరం", "తద్వారా", "కావున", "సదరు", "పేర్కొన్నారు", "వెల్లడించారు",
@@ -80,7 +81,13 @@ def mmss(s):
 
 
 def main():
+    global HERE
+    if len(sys.argv) > 1:  # optional: a folder holding its own script.full.tsv (e.g. v2/); outputs go there
+        HERE = Path(sys.argv[1]).resolve()
     rows = list(csv.DictReader(open(HERE / "script.full.tsv", encoding="utf-8"), delimiter="\t"))
+    global TITLE
+    if (HERE / "title.txt").exists():
+        TITLE = (HERE / "title.txt").read_text(encoding="utf-8").strip()
     problems = [(r["id"], e) for r in rows for e in lint(r)]
     for pid, e in problems:
         print(f"LINT {pid}: {e}")
@@ -100,7 +107,7 @@ def main():
     total = sum(chars(b) for b in blocks)
     tsecs = sum(secs(b) for b in blocks)
     with open(HERE / "bunty_blocks.md", "w", encoding="utf-8") as f:
-        f.write("# Bunty blocks: Digital Arrest\n\nPaste each block as one ElevenLabs generation (voice Bunty, `eleven_v3`/"
+        f.write(f"# Bunty blocks: {TITLE}\n\nPaste each block as one ElevenLabs generation (voice Bunty, `eleven_v3`/"
                 "`eleven_v4`, `language_code: te`). Listen to every take; if a block skips, repeats or drifts, regenerate "
                 "it, and send the files as `voice/block1.mp3`, `voice/block2.mp3`, ….\n\n")
         for i, b in enumerate(blocks, 1):
@@ -110,10 +117,10 @@ def main():
         f.write(f"Total {total:,} characters, about {mmss(tsecs)} of speech.\n")
 
     with open(HERE / "script.md", "w", encoding="utf-8") as f:
-        f.write("# Digital Arrest: shooting script (Be Practical with Kishore)\n\n"
+        f.write(f"# {TITLE}: shooting script (Be Practical with Kishore)\n\n"
                 "Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. "
                 "Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, "
-                "🔊 sound. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.\n\n"
+                "🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.\n\n"
                 f"Estimated length: **{mmss(tsecs)}** of speech ({total:,} characters, {len(blocks)} Bunty blocks), "
                 "plus pauses and music beats.\n")
         sec = None
@@ -126,6 +133,8 @@ def main():
                 f.write(f"  \n🔤 {r['onscreen']}")
             if r["sound"]:
                 f.write(f"  \n🔊 {r['sound']}")
+            if r.get("pacing"):
+                f.write(f"  \n⏱ {r['pacing']}")
             f.write("\n")
 
     for i, b in enumerate(blocks, 1):
