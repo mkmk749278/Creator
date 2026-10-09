@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **15:29** of speech (12,887 characters, 3 Bunty blocks), plus pauses and music beats.
+Estimated length: **15:39** of speech (12,989 characters, 3 Bunty blocks), plus pauses and music beats.
 
 ## 1 Cold open
 
@@ -55,16 +55,16 @@ _Days pass. He is at home. But in truth he is in a jail. A jail without walls._
 ⏱ Slow, 4 s shots; let the dread build
 
 **V007** · block 1  
-**ఫిబ్రవరి ట్వెంటీ ఫిఫ్త్ న ఫస్ట్ ట్రాన్స్ఫర్. తర్వాత ఇంకోటి. ఇంకోటి. మార్చ్ సెకండ్ కల్లా, ఫోర్ ట్రాన్స్ఫర్స్. మొత్తం వన్ క్రోర్ సిక్స్టీ సిక్స్ లాక్స్.**  
-_February twenty-fifth, the first transfer. Then another. And another. By March second, four transfers. One crore sixty-six lakh in total._  
-🎬 SIMULATION: four bank-transfer confirmations stack one by one; a large counter climbs to ₹1,66,00,000.  
-🔤 ₹1.66 CRORE · 4 TRANSFERS · 25 FEB–2 MAR  
+**ఫిబ్రవరి ట్వెంటీ ఫిఫ్త్ న ఫస్ట్ ట్రాన్స్ఫర్. తర్వాత ఇంకోటి. ఇంకోటి. మార్చ్ సెకండ్ కల్లా, మొత్తం వన్ క్రోర్ సిక్స్టీ సిక్స్ లాక్స్.**  
+_February twenty-fifth, the first transfer. Then another. And another. By March second, one crore sixty-six lakh in total._  
+🎬 SIMULATION: bank-transfer confirmations stack one by one; a large counter climbs to ₹1,66,00,000.  
+🔤 ₹1.66 CRORE · 25 FEB–2 MAR [THE420.IN · ETV BHARAT | MAR 2026]  
 🔊 One heavy whoosh per transfer, each lower than the last  
 ⏱ Accelerate: transfers 1–3 fast, hold on the total
 
 **V008** · block 1  
-**వెరిఫికేషన్ అయ్యాక మొత్తం వెనక్కి ఇస్తాం అన్నారు. ఆ డబ్బు ఇప్పటికీ రాలేదు.**  
-_They said everything would come back after verification. That money never came back._  
+**వెరిఫికేషన్ అయ్యాక మొత్తం వెనక్కి ఇస్తాం అన్నారు. రిఫండ్ రాలేదు.**  
+_They said everything would come back after verification. The refund never came._  
 🎬 The counter freezes; the phone screen goes dark; reflection of the silhouette in the black glass.  
 🔊 Music cuts to silence for 1 s  
 ⏱ Beat of silence before the reveal
@@ -140,24 +140,24 @@ _Two years later, by 2024, over one lakh twenty-three thousand. That's more than
 🔊 Rising tone
 
 **V018** · block 1  
-**ఆ ఒక్క ఏడాదిలో పోయిన డబ్బు ఎంతో తెలుసా... నైన్టీన్ హండ్రెడ్ ఎయిటీన్ క్రోర్స్.**  
-_Do you know how much was lost in that one year... nineteen hundred and eighteen crore._  
+**ఆ ఒక్క ఏడాదిలో పోయిన డబ్బు ఎంతో తెలుసా... నైన్టీన్ హండ్రెడ్ క్రోర్స్ కి పైగా.**  
+_Do you know how much was lost in that one year... over nineteen hundred crore._  
 🎬 A rupee counter races; camera pulls out to reveal the bars as a skyline.  
-🔤 ₹1,918 CRORE · 2024 [I4C DATA | THEPRINT, FEB 2026]  
+🔤 ₹1,935 CRORE · 2024 [MHA REPLY, RAJYA SABHA | MAR 2025]  
 🔊 Low hit  
 ⏱ Pause before the number
 
 **V019** · block 1  
-**ట్వెంటీ ట్వెంటీ టూ నుంచి ట్వెంటీ ట్వెంటీ ఫైవ్ వరకు, నాలుగేళ్ళలో, దాదాపు త్రీ థౌసండ్ క్రోర్స్. ఇది బిలియన్స్ లో దోపిడీ.**  
-_From 2022 to 2025, in four years, nearly three thousand crore. This is theft in the billions._  
+**ట్వెంటీ ట్వెంటీ టూ నుంచి ట్వెంటీ ట్వెంటీ ఫైవ్ వరకు, నాలుగేళ్ళలో, త్రీ థౌసండ్ క్రోర్స్ కి పైగా. ఇది బిలియన్స్ లో దోపిడీ.**  
+_From 2022 to 2025, in four years, over three thousand crore. This is theft in the billions._  
 🎬 The four bars stack into one tower; label flips from crore to billions of rupees.  
-🔤 ≈ ₹2,992 CR · 2022–25 [I4C DATA | THEPRINT]
+🔤 ₹3,000+ CR · 2022–25 [I4C DATA VIA THEPRINT · MHA]
 
 **V020** · block 1  
 **సరే, ఒక గుడ్ న్యూస్ కూడా ఉందండి. ట్వెంటీ ట్వెంటీ ఫైవ్ లో కంప్లైంట్స్ సగానికి పైగా తగ్గాయి. హోమ్ మినిస్ట్రీ అధికారులు చెప్తున్న కారణం... అవేర్నెస్.**  
 _Okay, there's some good news too. In 2025 complaints fell by more than half. The reason Home Ministry officials give... awareness._  
 🎬 2025 bar drops; a phone receives an awareness SMS (simulation).  
-🔤 58,249 · 2025 [I4C STATUS REPORT | SUPREME COURT] · AWARENESS WORKS [MHA OFFICIAL | THEPRINT]
+🔤 58,239 · 2025 [I4C STATUS REPORT | SUPREME COURT, AUG 2026] · AWARENESS WORKS [MHA OFFICIAL | THEPRINT]
 
 **V021** · block 1  
 **కానీ ఆట ఇంకా ఆగలేదు. ట్వెంటీ ట్వెంటీ సిక్స్ ఫస్ట్ సిక్స్ మంత్స్ లోనే సిక్స్టీన్ థౌసండ్ కి పైగా కంప్లైంట్స్. సో, ఇప్పుడు అసలు ప్రశ్న. ఇదంతా ఎవరు చేస్తున్నారు.**  
@@ -234,7 +234,7 @@ _Look at what CBI's Operation Chakra-V found: about eight lakh fifty thousand mu
 **ఇప్పుడు ఒక్క కేస్ లో డబ్బు ఎటు వెళ్ళిందో ఫాలో అవుదాం. లుధియానా, వర్ధమాన్ గ్రూప్ చైర్మన్ ఎస్ పి ఓస్వాల్ గారి నుంచి సెవెన్ క్రోర్స్.**  
 _Now let's follow the money in one case. Ludhiana: seven crore from S P Oswal, chairman of the Vardhman Group._  
 🎬 Money-trail map begins at Ludhiana (stock establishing shot, then map pin).  
-🔤 ₹7 CRORE · SEPT 2024 [BAR & BENCH | ED]  
+🔤 ₹7 CRORE · AUG 2024 [BAR & BENCH · BUSINESS STANDARD | OCT 2024]  
 🔊 Tick-tick tracking sound  
 ⏱ Follow-the-money sequence: one map move per line
 
@@ -313,10 +313,10 @@ _Step four: extraction. They called it financial verification. We have to check 
 🔤 STEP 4 · EXTRACTION · SIMULATION
 
 **V044** · block 2  
-**ఫిబ్రవరి ట్వెంటీ ఫిఫ్త్ నుంచి మార్చ్ సెకండ్ వరకు, ఫోర్ ట్రాన్స్ఫర్స్. రిఫండ్ రాలేదు. వాళ్ళు కాంటాక్ట్ లో లేరు. అప్పుడు అర్థమైంది. మల్కాజ్గిరి సైబర్ క్రైమ్ పోలీసులకు కంప్లైంట్ ఇచ్చారు.**  
-_From February twenty-fifth to March second, four transfers. No refund. They went silent. That's when he understood. He complained to the Malkajgiri cyber crime police._  
-🎬 Timeline fills to 2 MAR; four transfer arrows; then an Indian police station exterior in daylight (stock).  
-🔤 25 FEB–2 MAR · ₹1.66 CR · CCS MALKAJGIRI [THE420.IN · TNM | MAR 2026]
+**ఫిబ్రవరి ట్వెంటీ ఫిఫ్త్ నుంచి మార్చ్ సెకండ్ వరకు, కొన్ని ట్రాన్స్ఫర్స్ లో వన్ క్రోర్ సిక్స్టీ సిక్స్ లాక్స్. రిఫండ్ రాలేదు. అప్పుడు అర్థమైంది. ఆయన మల్కాజ్గిరి సైబర్ క్రైమ్ పోలీసులకు కంప్లైంట్ ఇచ్చారు.**  
+_From February twenty-fifth to March second, one crore sixty-six lakh in several transfers. No refund came. That is when he understood. He complained to the Malkajgiri cyber crime police._  
+🎬 Timeline fills to 2 MAR; transfer arrows; then an Indian police station exterior in daylight (stock).  
+🔤 25 FEB–2 MAR · ₹1.66 CR · CCS MALKAJGIRI [THE420.IN · ETV BHARAT · THE NEWS MINUTE | MAR 2026]
 
 **V045** · block 2  
 **ఇప్పుడు మీకు ఒక డౌట్ రావొచ్చు. ఇంత తెలిసిన మనిషి ఎలా నమ్మారు. దీనికి సైన్స్ ఆన్సర్ ఇస్తుంది.**  
@@ -364,10 +364,10 @@ _Pillar one: fake authority. The Home Ministry itself warned: these gangs use st
 🔤 PILLAR 1 · FAKE AUTHORITY [MHA / I4C ALERT | MAY 2024]
 
 **V052** · block 2  
-**హర్యానా అంబాలా లో ఒక వృద్ధ దంపతులకి, సుప్రీం కోర్ట్ పేరుతో, ఒక జడ్జి సంతకం ఫోర్జ్ చేసిన ఆర్డర్స్ చూపించారు. వన్ క్రోర్ ఫైవ్ లాక్స్ పోయాయి.**  
-_In Ambala, Haryana, an elderly couple was shown orders in the Supreme Court's name with a judge's forged signature. One crore five lakh, gone._  
+**హర్యానా అంబాలా లో ఒక వృద్ధ దంపతులకి, సుప్రీం కోర్ట్ పేరుతో, జడ్జి ల సంతకాలు ఫోర్జ్ చేసిన ఆర్డర్స్ చూపించారు. వన్ క్రోర్ ఫైవ్ లాక్స్ కి పైగా పోయాయి.**  
+_In Ambala, Haryana, an elderly couple was shown orders in the Supreme Court's name with judges' forged signatures. Over one crore five lakh, gone._  
 🎬 Ambala street (stock); forged signature magnified, ink strokes animate.  
-🔤 ₹1.05 CR · AMBALA [SUPREME COURT SUO MOTU | OCT 2025]
+🔤 ₹1.05 CR+ · AMBALA [SUPREME COURT SUO MOTU ORDER | 17 OCT 2025]
 
 **V053** · block 2  
 **ఆ కేస్ చూసి సుప్రీం కోర్ట్ నే ఆశ్చర్యపోయింది. కోర్ట్ పేరుతో ఫేక్ ఆర్డర్స్ అంటే, జనాలకి న్యాయవ్యవస్థ మీద ఉన్న నమ్మకం మీదే దాడి అని, సుమోటో గా కేస్ తీసుకుంది.**  
@@ -398,8 +398,8 @@ _In Hyderabad, a seventy-six-year-old retired doctor was held like this in 'digi
 ⏱ Slow; no graphics beyond the tag
 
 **V057** · block 2  
-**పిల్లర్ త్రీ. టెర్రర్. ఇప్పుడే అరెస్ట్ చేస్తాం. మీ పరువు పోతుంది. మీ కెరీర్ పోతుంది. ఆలోచించడానికి ఒక్క నిమిషం కూడా ఇవ్వరు. ఎందుకంటే ఆలోచిస్తే, వాళ్ళు ఓడిపోతారు.**  
-_Pillar three: terror. We'll arrest you right now. Your reputation is gone. Your career is gone. They don't give you a single minute to think. Because if you think, they lose._  
+**పిల్లర్ త్రీ. టెర్రర్. ఇప్పుడే అరెస్ట్ చేస్తాం. మీ పరువు, ప్రతిష్ఠ, అంతా పోతుంది. ఆలోచించడానికి ఒక్క నిమిషం కూడా ఇవ్వరు. ఎందుకంటే ఆలోచిస్తే, వాళ్ళు ఓడిపోతారు.**  
+_Pillar three: terror. We'll arrest you right now. Your reputation, your good name, all gone. They don't give you a single minute to think. Because if you think, they lose._  
 🎬 Rapid 1-s cuts: handcuffs on a table (stock), a newspaper headline mock-up blurred, a ticking stopwatch.  
 🔤 PILLAR 3 · TERROR  
 🔊 Stopwatch tick, accelerating  
@@ -430,7 +430,7 @@ _Okay. Now I'll tell you the truth that knocks down all four pillars in one blow
 **డిజిటల్ అరెస్ట్... అనేది మన చట్టంలో లేనే లేదు.**  
 _Digital arrest... simply does not exist in our law._  
 🎬 The words DIGITAL ARREST appear and are stamped through in red; the four pillars crack and fall.  
-🔤 DIGITAL ARREST — NOT IN LAW [BNSS 2023 | MHA / I4C]  
+🔤 DIGITAL ARREST — NOT IN LAW [BNSS 2023 | RAJASTHAN HIGH COURT, JAN 2025]  
 🔊 Braam / low thud as the stamp lands (−6 dB)  
 ⏱ The core reveal
 
@@ -478,10 +478,10 @@ _Four. Your relatives or a friend must be told immediately about your arrest and
 🔤 4 · FAMILY INFORMED [BNSS S.48] · MAGISTRATE IN 24 H [BNSS S.58]
 
 **V069** · block 3  
-**ఈ రూల్స్ కి పునాది సుప్రీం కోర్ట్ ఇచ్చిన డి కె బసు జడ్జిమెంట్. ఇప్పుడు అవి చట్టంలోనే ఉన్నాయి.**  
-_These rules stand on the Supreme Court's D K Basu judgment. Today they're written into the law itself._  
+**నేమ్ బ్యాడ్జ్, అరెస్ట్ మెమో, ఫ్యామిలీ కి చెప్పడం, ఈ రూల్స్ సుప్రీం కోర్ట్ ఇచ్చిన డి కె బసు జడ్జిమెంట్ నుంచి వచ్చాయి. ఇప్పుడు అవి చట్టంలోనే ఉన్నాయి. ట్వెంటీ ఫోర్ అవర్స్ రూల్ అయితే మన రాజ్యాంగంలోనే ఉంది.**  
+_The name badge, the arrest memo, telling your family: these rules came from the Supreme Court's D K Basu judgment. Today they are written into the law itself. And the twenty-four-hour rule is in our Constitution itself._  
 🎬 Typeset law-report title (not a fake scan).  
-🔤 [D.K. BASU v. STATE OF WEST BENGAL | 1996]
+🔤 [D.K. BASU v. STATE OF WEST BENGAL | 1996] · 24 H [CONSTITUTION ART. 22(2)]
 
 **V070** · block 3  
 **ఇప్పుడు ఒక్క నిమిషం గమనించండి. ఫ్యామిలీ కి చెప్పాలి అని చట్టం చెప్తుంది. ఫ్యామిలీ కి చెప్పొద్దు అని స్కామర్ చెప్తాడు. అక్కడే మీకు క్లియర్ గా తెలిసిపోతుంది.**  
@@ -495,7 +495,7 @@ _Now notice this for a minute. The law says your family must be told. The scamme
 **ఇంకో ముఖ్యమైన విషయం. ఏ పోలీస్ గానీ, ఏ కోర్ట్ గానీ, ఆర్ బి ఐ గానీ, మీరు నిర్దోషి అని ప్రూవ్ చేయడానికి డబ్బు ట్రాన్స్ఫర్ చేయమని అడగరు. డబ్బు అడిగారు అంటే, అది హండ్రెడ్ పర్సెంట్ స్కామ్.**  
 _One more important thing. No police, no court, not even the RBI, will ask you to transfer money to prove you're innocent. If they asked for money, it's a hundred percent scam._  
 🎬 The SECRET SUPERVISION transfer screen returns with a big red X.  
-🔤 MONEY DEMAND = SCAM [RBI · I4C ADVISORIES]
+🔤 MONEY DEMAND = SCAM [RBI · POLICE ADVISORIES]
 
 **V072** · block 3  
 **నిజానికి ఈ కేస్ లో క్రైమ్ చేసింది వాళ్ళే. జడ్జి గారి కేస్ లో పోలీసులు పెట్టిన సెక్షన్స్ చూడండి. చీటింగ్ బై పర్సనేషన్, ఫోర్జరీ, ఎక్స్టార్షన్.**  
