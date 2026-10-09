@@ -249,6 +249,8 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
    skip the competitor measurement**; judge pacing, music and hooks from our own retention curves after publishing.
    If it is ever wanted: `YT_COOKIES` (§8.5) or Termux, then `scripts/study_opening.py` on the 18 picks in
    `docs/research/research_notes/Telugu YouTube audience and style/competitor_picks.tsv`.
+   **2026-10-09:** the cloud was bot-blocked again; the owner chose Termux. `scripts/termux_study_picks.sh` fetches captions,
+   full audio and the first 3 min at 360p for the 18 picks, zips and uploads to Gofile (study only, never used in films).
 
 ## 5. The look
 
