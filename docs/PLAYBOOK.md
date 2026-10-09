@@ -256,11 +256,15 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
    `docs/research/research_notes/Telugu YouTube audience and style/competitor_picks.tsv`.
    **2026-10-09:** the cloud was bot-blocked again; the owner chose Termux. `scripts/termux_study_picks.sh` fetches captions,
    full audio and the first 3 min at 360p for the 18 picks, zips and uploads to Gofile (study only, never used in films).
+   **Measured the same day** (`competitor_measurements_2026-10-09.md` in the notes folder): Bunty's pace already matches
+   NB Show; the hits master at −12.6 to −14.3 LUFS; the biggest hits cut about every 3.7 s; nobody opens with a greeting.
+   The script-craft results are in §4b. (Gofile folders download from the cloud with headless Chromium: the API needs a
+   website token that only the page's own script produces.)
 
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
-This guide is the first version; refine it with the competitor transcript study (`scripts/termux_study_picks.sh`).
+Refined 2026-10-09 with the measured transcripts of 18 competitor videos (numbers below are from that study).
 
 **Voice and register**
 - Write the way the owner would explain it to a younger cousin over chai: one idea per sentence, mostly 6–14 words, then
@@ -277,11 +281,26 @@ This guide is the first version; refine it with the competitor transcript study 
   అసలు, ఇక్కడే, చూడండి, కదా, అంటే, సరే, ఇప్పుడు ఏమైందంటే, ఒక్క నిమిషం, ఆలోచించండి, నిజం చెప్పాలంటే.
 - **Ask, then answer:** pose the question the viewer is thinking, pause, answer it ("మరి బ్యాంక్ ఎందుకు ఊరుకుంది?
   ... ఎందుకంటే...").
+- **Glue words, measured** (per 1,000 words in the competitors' speech): కదా 5–9 (Kowshik, Money Purse, Day Trader),
+  సో 5–11, అంటే 4–13, అండి / -ండి 5–8 (NB Show, Kowshik, V R Raja), అన్నమాట up to 6.5 (Kowshik), నేను 1–6. Our first
+  script had almost none, which is exactly what makes text sound read. Aim for roughly 3–8 per 1,000 words each of కదా,
+  సో, అంటే and అండి, plus the narrator's own నేను ("నేను చెప్తాను", "నాకు అనిపించింది") a few times a film; never the same
+  marker in back-to-back sentences. Bunty reads Telugu script, so write them exactly as spoken.
+- **Devices that work:** repetition for a number ("టెన్ కాదు, ట్వెంటీ కాదు, సిక్స్టీ నైన్"); one named everyday example
+  (a person, a salary, a phone); a mid-film relevance turn ("ఇది మిమ్మల్ని డైరెక్ట్ గా ఎఫెక్ట్ చేస్తుంది"); an English line
+  followed by its Telugu meaning with అంటే.
+- **Pace:** Bunty already speaks at NB Show's pace (≈ 14.3 vs 14.0–14.4 characters/s); keep sentences short (NB Show's
+  median is 8–10 words) and let commas and `...` make the pauses (NB Show leaves 10–13 pauses of 0.8 s+ per minute).
 
 **How to start**
-- Never open with "నమస్కారం, ఈ రోజు మనం... గురించి తెలుసుకుందాం". Open mid-story: a person, a moment, a number or the
-  myth everyone believes ("టూ థౌసండ్ నైన్టీన్, హైదరాబాద్. రమేష్ ఫోన్ కి ఒక మెసేజ్ వచ్చింది."). Name and greeting come right
-  after the hook (face and name within 15–20 s), and the thumbnail's promise lands by 0:30.
+- Never open with "నమస్కారం, ఈ రోజు మనం... గురించి తెలుసుకుందాం". None of the 18 measured videos opens with a greeting.
+  Open with one of the five patterns the hits use: a **cold-open story scene** (NB Show), a **bold claim with stakes**
+  (NB Show, Day Trader), the **myth everyone believes** (Think Deep), a **stakes list + promise** ("ఈ వీడియోలో పిన్ టు
+  పిన్ ఎక్స్ప్లెయిన్ చేస్తా, లాస్ట్ వరకు చూడండి", Kowshik) or a **question chain** ("అసలు ఇది ఏంటి? ఎలా వర్క్
+  అవుతుంది? ఎవరికి లాభం, ఎవరికి నష్టం? నష్టం ఎవరికో తెలుసా... మనకే", Kowshik). Name and greeting come right after the
+  hook (face and name within 15–20 s; NB Show flashes its name sting at 0:02), and the thumbnail's promise lands by 0:30.
+- Subscribe asks: Kowshik asks at 21–26 s and Money Purse at 22–33 s, right after the promise; Think Deep and NB Show only
+  at the end. One short ask right after the promise and one at the end is the common shape.
 
 **Emotion through words and rhythm** (Bunty takes no emotion tags, so the text carries the feeling)
 | Moment | How the text does it |
@@ -291,7 +310,7 @@ This guide is the first version; refine it with the competitor transcript study 
 | Righteous anger | concrete facts and numbers, then one short verdict line; anger at the mechanism, never the viewer |
 | Reveal | build with two or three short lines, `...`, then the truth in one plain sentence |
 | Reassurance (defence) | longer, calmer sentences, మనం, numbered practical steps said in speech ("ఫస్ట్ ఏం చేయాలంటే...") |
-| Outro | warm and personal, like ending a phone call with family |
+| Outro | warm and personal, like ending a phone call with family; then an opinion question for the comments with concrete options (NB Show, Kowshik), like/subscribe, "మళ్ళీ కలుద్దాం" (Kowshik, NB Show and Day Trader all sign off with "జై హింద్") |
 
 **Length and structure**
 - The topic sets the runtime (owner, 2026-10-09). The four acts are proportions, not timestamps: hook about 10–15%,
