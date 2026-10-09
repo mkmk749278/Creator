@@ -387,6 +387,13 @@ beat edges; in `video/doc/` a pause beat (`{ pause: t, len }`) inserts silence, 
 Remotion and MoviePy are not installed; ask before adding them.
 
 ## 7. Script and voice
+**Estimating VO length before TTS (2026-10-09):** `scripts/estimate_vo.py SCRIPT [--srt est.srt]` gives each block's
+length, the total and estimated line cues, and flags blocks outside 4,000–4,500 characters or over 5,000. Bunty speaks
+about **14.3 characters per second** (spaces and punctuation included; ~123 words/min), so **4,000 characters ≈ 4:40 and
+4,500 ≈ 5:15**. Model fitted on fire-and-ice's 65 lines; held out, take totals land within 1%, lines ±0.5 s, starts
+drift up to ~3.5 s. Prahlad Jani ran ~13.5 c/s, so plan with ±7%. Use it to size acts and draft the EDL; final timings
+always come from `align_script.py` on the real VO. Re-fit the coefficients as more Bunty takes are aligned.
+
 
 - **Timing comes from silence detection + the script, never from Whisper** (owner's rule, Oct 2026). No Whisper for
   transcription or translation. *Why:* Whisper on Telugu dropped 20–30 s stretches, looped, output Kannada script, hit
