@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **11:23** of speech (9,460 characters, 2 Bunty blocks), plus pauses and music beats.
+Estimated length: **11:25** of speech (9,485 characters, 2 Bunty blocks), plus pauses and music beats.
 
 ## 1 Hook
 
@@ -252,7 +252,7 @@ _Fear, authority, isolation, time pressure. Put these four together and anyone, 
 🔤 FEAR · AUTHORITY · ISOLATION · TIME  
 🔊 Four pulses
 
-## 4 Playbook
+## 4a Playbook: fear
 
 **L40** · block 1  
 **ఇప్పుడు ఈ గ్యాంగ్ ప్లేబుక్ ని స్టెప్ బై స్టెప్ చూద్దాం. మూడు స్టేజెస్ ఉంటాయి.**  
@@ -310,7 +310,9 @@ _In Haryana, an elderly couple was shown orders in the Supreme Court's name with
 🎬 Ambala street (stock); forged signature magnified; Supreme Court building.  
 🔤 ₹1.05 CR · SUO MOTU, OCT 2025 [SUPREME COURT OF INDIA]
 
-**L50** · block 1  
+## 4b Playbook: isolation and money
+
+**L50** · block 2  
 **స్టేజ్ టూ, ఐసోలేషన్. ఇదే వీళ్ళ అసలు ఆయుధం.**  
 _Stage two: isolation. This is their real weapon._  
 🎬 Zone 2 lights; the figure in the model is enclosed by a glass box.  
@@ -413,8 +415,8 @@ _One. An arrest has to happen physically. The officer must actually touch or con
 🔤 1 · PHYSICAL ARREST [BNSS S.43]
 
 **L68** · block 2  
-**రెండు. అరెస్ట్ చేసే ఆఫీసర్ పేరు, క్లియర్ గా కనిపించేలా ఐడెంటిఫికేషన్ ఉండాలి.**  
-_Two. The arresting officer must carry clear, visible identification of their name._  
+**రెండు. అరెస్ట్ చేసే ఆఫీసర్ పేరు క్లియర్ గా కనిపించాలి, అంటే నేమ్ బ్యాడ్జ్ లాంటి ఐడెంటిఫికేషన్ ఉండాలి.**  
+_Two. The arresting officer's name must be clearly visible, meaning identification like a name badge._  
 🎬 Macro of a name badge on a uniform (stock).  
 🔤 2 · NAME VISIBLE [BNSS S.36]
 
