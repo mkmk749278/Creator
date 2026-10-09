@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **15:39** of speech (12,989 characters, 3 Bunty blocks), plus pauses and music beats.
+Estimated length: **15:45** of speech (13,049 characters, 3 Bunty blocks), plus pauses and music beats.
 
 ## 1 Cold open
 
@@ -10,7 +10,7 @@ Estimated length: **15:39** of speech (12,989 characters, 3 Bunty blocks), plus 
 **ఫిబ్రవరి ట్వెంటీ థర్డ్, ట్వెంటీ ట్వెంటీ సిక్స్. హైదరాబాద్, నేరేడ్మెట్.**  
 _February twenty-third, 2026. Neredmet, Hyderabad._  
 🎬 Black. A single amber lamp fades up on a quiet residential lane at dusk (stock, Hyderabad). Slow push toward one lit window.  
-🔤 23 FEB 2026 · NEREDMET, HYDERABAD  
+🔤 23 FEB 2026 · NEREDMET, HYDERABAD [TNM · ETV BHARAT | MAR 2026]  
 🔊 Low sub drone; distant traffic; a dog barks once  
 ⏱ Hold 3 s on black before the lamp; let the place breathe
 
@@ -18,7 +18,7 @@ _February twenty-third, 2026. Neredmet, Hyderabad._
 **ఒక ఇంట్లో ఫోన్ మోగుతుంది. అవతలి వైపు గొంతు చాలా సీరియస్ గా ఉంది. నేను సి బి ఐ సీనియర్ ఆఫీసర్ ని, నా పేరు దీపక్ కుమార్.**  
 _Inside one house, a phone rings. The voice on the other end is very serious. I am a senior CBI officer, my name is Deepak Kumar._  
 🎬 RECONSTRUCTION: an older man's hands lift a phone from a side table (no face). Caller ID shows only a number.  
-🔤 RECONSTRUCTION  
+🔤 RECONSTRUCTION [TNM · ETV BHARAT | MAR 2026]  
 🔊 Phone ring, then a hard cut to room tone  
 ⏱ Cut on the second ring
 
@@ -26,7 +26,7 @@ _Inside one house, a phone rings. The voice on the other end is very serious. I 
 **మీ ఆధార్ మీద ఇంకో సిమ్ తీసుకున్నారు. ఆ నంబర్స్ నుంచి ఆడవాళ్ళకి అసభ్యంగా కాల్స్ వెళ్తున్నాయి. బెంగళూరు లో మీ మీద ఎఫ్ ఐ ఆర్ రిజిస్టర్ అయింది.**  
 _Another SIM was taken on your Aadhaar. Obscene calls are going to women from those numbers. An FIR has been registered against you in Bengaluru._  
 🎬 Macro: an Aadhaar-style card (generic, fictional) with a SIM card sliding out of it, then duplicating; a fake FIR page slides under a forensic magnifier.  
-🔤 FAKE FIR · ILLUSTRATION  
+🔤 FAKE FIR · ILLUSTRATION [TNM · ETV BHARAT | MAR 2026]  
 🔊 Paper slide; magnifier glass clink  
 ⏱ Three beats, one per accusation
 
@@ -34,7 +34,7 @@ _Another SIM was taken on your Aadhaar. Obscene calls are going to women from th
 **కొద్దిసేపట్లో ఇంకో గొంతు. హ్యూమన్ ట్రాఫికింగ్ కేస్. సుప్రీం కోర్ట్ మీ మీద నాన్ బెయిలబుల్ వారెంట్ ఇష్యూ చేసింది.**  
 _Soon, another voice. A human-trafficking case. The Supreme Court has issued a non-bailable warrant against you._  
 🎬 SIMULATION: phone conference UI adds a second caller; a forged warrant with a Supreme Court-style header rises up, red seal lands.  
-🔤 SIMULATION · FORGED WARRANT  
+🔤 SIMULATION · FORGED WARRANT [TNM · ETV BHARAT | MAR 2026]  
 🔊 Seal stamp hit (−8 dB)  
 ⏱ Stamp lands exactly on 'వారెంట్'
 
@@ -42,7 +42,7 @@ _Soon, another voice. A human-trafficking case. The Supreme Court has issued a n
 **తర్వాత రూల్స్ వస్తాయి. ఇంట్లోంచి బయటకు వెళ్ళకూడదు. ఎవరికీ చెప్పకూడదు, ఫ్యామిలీ కి కూడా. వీడియో కాల్ లో మేము మిమ్మల్ని గమనిస్తూనే ఉంటాం.**  
 _Then come the rules. You can't leave the house. You can't tell anyone, not even family. We will keep watching you on video call._  
 🎬 Three hard cuts: door bolt sliding shut; family photo turned face-down; a phone propped against a glass, camera facing an empty chair, red REC dot.  
-🔤 REC ● DAY 1  
+🔤 REC ● DAY 1 [TNM · ETV BHARAT | MAR 2026]  
 🔊 Each cut a dry click; ticking clock enters  
 ⏱ Cut on each rule; REC counter starts
 
@@ -50,7 +50,7 @@ _Then come the rules. You can't leave the house. You can't tell anyone, not even
 **రోజులు గడుస్తాయి. ఆయన ఇంట్లోనే ఉన్నారు. కానీ నిజానికి ఆయన ఒక జైలు లో ఉన్నారు. గోడలు లేని జైలు.**  
 _Days pass. He is at home. But in truth he is in a jail. A jail without walls._  
 🎬 Time-lapse of window light crossing the room over several days (reconstruction); the REC counter ticks DAY 2, DAY 3; the empty chair is now occupied by a silhouette.  
-🔤 REC ● DAY 3 · RECONSTRUCTION  
+🔤 REC ● DAY 3 · RECONSTRUCTION [TNM · ETV BHARAT | MAR 2026]  
 🔊 Drone swells slowly  
 ⏱ Slow, 4 s shots; let the dread build
 
@@ -93,10 +93,10 @@ _This is no server hack. No password hack. They hacked only one thing... the hum
 ⏱ Glitch on 'హ్యాక్'; heartbeat starts
 
 **V012** · block 1  
-**సైకాలజిస్ట్ డేనియల్ గోల్మన్ దీనికి ఒక పేరు పెట్టారు. అమిగ్డలా హైజాక్. భయం వచ్చినప్పుడు, మెదడులో భయాన్ని కంట్రోల్ చేసే భాగం, ఆలోచించే భాగాన్ని పక్కకి నెట్టేస్తుంది.**  
-_Psychologist Daniel Goleman gave this a name: amygdala hijack. When fear strikes, the fear centre of the brain pushes the thinking part aside._  
+**సైకాలజిస్ట్ డేనియల్ గోల్మన్ దీనికి ఒక పేరు పెట్టారు. అమిగ్డలా హైజాక్. భయం వచ్చినప్పుడు, మెదడులో ప్రమాదాన్ని పసిగట్టే అలారం లాంటి భాగం, ఆలోచించే భాగాన్ని పక్కకి నెట్టేస్తుంది.**  
+_Psychologist Daniel Goleman gave this a name: amygdala hijack. When fear strikes, the brain's alarm, the part that senses danger, pushes the thinking part aside._  
 🎬 On the 3D brain, the amygdala glows red and pulses; the frontal lobe dims from cool blue to grey.  
-🔤 AMYGDALA HIJACK [DANIEL GOLEMAN | EMOTIONAL INTELLIGENCE, 1995] · ILLUSTRATION  
+🔤 AMYGDALA HIJACK [DANIEL GOLEMAN | EMOTIONAL INTELLIGENCE, 1995] · SIMPLIFIED ILLUSTRATION  
 🔊 Heartbeat speeds up  
 ⏱ Red glow peaks on 'పక్కకి నెట్టేస్తుంది'
 
@@ -118,18 +118,18 @@ _Hello, welcome to Be Practical with Kishore. If you haven't subscribed yet, do 
 ## 2 Scale and the syndicate
 
 **V015** · block 1  
-**ముందు ఈ స్కామ్ సైజ్ ఏంటో చూద్దాం. ఎందుకంటే ఇది ఒకరిద్దరి కథ కాదు.**  
-_First let's look at the size of this scam. Because this isn't the story of one or two people._  
+**ముందు ఈ స్కామ్ సైజ్ ఏంటో చూద్దాం.**  
+_First let's look at the size of this scam._  
 🎬 Chapter tag lower-left. A dark 3D map of India rises; complaint dots begin to light.  
 🔤 CHAPTER 1 · THE SCALE  
 🔊 Investigation synth pulse begins  
 ⏱ Steady 3 s cadence
 
 **V016** · block 1  
-**ట్వెంటీ ట్వెంటీ టూ లో, డిజిటల్ అరెస్ట్ కేసెస్ దాదాపు ఫార్టీ థౌసండ్. పోయిన డబ్బు నైన్టీ వన్ క్రోర్స్.**  
+**ట్వెంటీ ట్వెంటీ టూ లో, డిజిటల్ అరెస్ట్ కంప్లైంట్స్ దాదాపు ఫార్టీ థౌసండ్. పోయిన డబ్బు నైన్టీ వన్ క్రోర్స్.**  
 _In 2022 there were nearly forty thousand digital arrest cases. Money lost: ninety-one crore._  
 🎬 Animated bar chart builds year by year on the map's edge.  
-🔤 39,925 CASES · ₹91 CR · 2022 [I4C DATA | THEPRINT, FEB 2026]  
+🔤 39,925 COMPLAINTS · ₹91 CR · 2022 [MHA REPLY, RAJYA SABHA | MAR 2025]  
 🔊 Counter ticks
 
 **V017** · block 1  
@@ -157,7 +157,7 @@ _From 2022 to 2025, in four years, over three thousand crore. This is theft in t
 **సరే, ఒక గుడ్ న్యూస్ కూడా ఉందండి. ట్వెంటీ ట్వెంటీ ఫైవ్ లో కంప్లైంట్స్ సగానికి పైగా తగ్గాయి. హోమ్ మినిస్ట్రీ అధికారులు చెప్తున్న కారణం... అవేర్నెస్.**  
 _Okay, there's some good news too. In 2025 complaints fell by more than half. The reason Home Ministry officials give... awareness._  
 🎬 2025 bar drops; a phone receives an awareness SMS (simulation).  
-🔤 58,239 · 2025 [I4C STATUS REPORT | SUPREME COURT, AUG 2026] · AWARENESS WORKS [MHA OFFICIAL | THEPRINT]
+🔤 58,239 · 2025 [I4C STATUS REPORT | SUPREME COURT, AUG 2026] · AWARENESS HELPED, SAYS MHA OFFICIAL [THEPRINT | FEB 2026]
 
 **V021** · block 1  
 **కానీ ఆట ఇంకా ఆగలేదు. ట్వెంటీ ట్వెంటీ సిక్స్ ఫస్ట్ సిక్స్ మంత్స్ లోనే సిక్స్టీన్ థౌసండ్ కి పైగా కంప్లైంట్స్. సో, ఇప్పుడు అసలు ప్రశ్న. ఇదంతా ఎవరు చేస్తున్నారు.**  
@@ -194,8 +194,8 @@ _According to the UN Office on Drugs and Crime, scam centres like these make clo
 🔤 ~$40 BN/YEAR [UNODC | APR 2025]
 
 **V026** · block 1  
-**ఇంకో షాకింగ్ విషయం. అక్కడ ఫోన్ లో కూర్చునే వాళ్ళలో మన ఇండియన్స్ కూడా ఉన్నారు. జాబ్ ఇస్తాం అని తీసుకెళ్ళి, ఇరికించిన వాళ్ళు.**  
-_One more shocking thing. Among those sitting on the phones there are Indians too. People taken there with promises of a job, and trapped._  
+**అక్కడ ఫోన్ లో కూర్చునే వాళ్ళలో మన ఇండియన్స్ కూడా ఉన్నారు. జాబ్ ఇస్తాం అని తీసుకెళ్ళి, ఇరికించిన వాళ్ళు.**  
+_Among those sitting on the phones there are Indians too. People taken there with promises of a job, and trapped._  
 🎬 Airport departure board (stock), then a dark corridor of the compound model; one desk lights up.  
 🔊 Music thins out  
 ⏱ Slow down; this is the human turn
@@ -246,14 +246,14 @@ _According to the ED, the money went into mule accounts. From there it was withd
 🔊 Coin chime on the crypto turn
 
 **V034** · block 1  
-**మ్యూల్ అకౌంట్స్ సప్లై చేసిన వాళ్ళకి కమీషన్ కూడా క్రిప్టో లోనే. ఆ అకౌంట్స్ కంబోడియా, వియత్నాం లో ఉన్న వాళ్ళకి సప్లై చేశారని, నేపాల్ నుంచి ఓ టి పి లు చదివే యాప్ వాడారని ఈ డి ఆరోపిస్తోంది.**  
-_Even the commission for supplying mule accounts was paid in crypto. The ED alleges the accounts were supplied to people in Cambodia and Vietnam, and an app was used to read OTPs from Nepal._  
+**ఈ డి ఆరోపణ ప్రకారం, మ్యూల్ అకౌంట్స్ సప్లై చేసిన వాళ్ళకి కమీషన్ కూడా క్రిప్టో లోనే వచ్చింది. ఆ అకౌంట్స్ కంబోడియా, వియత్నాం లో ఉన్న వాళ్ళకి సప్లై చేశారని, నేపాల్ నుంచి ఓ టి పి లు చదివే యాప్ వాడారని కూడా ఈ డి చెప్తోంది.**  
+_According to the ED's allegations, even the commission for supplying mule accounts came in crypto. The ED also says the accounts were supplied to people in Cambodia and Vietnam, and that an app was used to read OTPs from Nepal._  
 🎬 Map lines draw to Cambodia, Vietnam and Nepal; an OTP SMS floats up from a phone and travels along the line.  
 🔤 CAMBODIA · VIETNAM · NEPAL · ALLEGATIONS [ED | OCT 2026]
 
 **V035** · block 1  
-**సో, ఒక్క కాల్ వెనకాల ఎంత పెద్ద నెట్వర్క్ ఉందో అర్థమైంది కదా. కాల్ చేసేవాడు ఒక దేశంలో. అకౌంట్స్ ఇంకో రాష్ట్రంలో. డబ్బు మాత్రం నిమిషాల్లో దేశం దాటిపోతుంది.**  
-_So you can see how big a network sits behind one call. The caller in one country. The accounts in another state. And the money leaves the country in minutes._  
+**సో, ఒక్క కాల్ వెనకాల ఎంత పెద్ద నెట్వర్క్ ఉందో అర్థమైంది కదా. కాల్ చేసేవాడు ఒక దేశంలో. అకౌంట్స్ ఇంకో రాష్ట్రంలో. డబ్బు నిమిషాల్లో మాయమై, తర్వాత దేశం దాటిపోతుంది.**  
+_So you can see how big a network sits behind one call. The caller in one country. The accounts in another state. The money vanishes within minutes, and then leaves the country._  
 🎬 Full map: all lines lit at once, then pulse outward and vanish off-frame.  
 🔊 Synth resolves  
 ⏱ Hold the full map 3 s
@@ -271,18 +271,19 @@ _Now let's open the judge's case step by step. In every step, watch which button
 **స్టెప్ వన్, ట్రిగ్గర్. వాళ్ళు ఎంచుకున్న ఆరోపణ చూడండి. డబ్బు గురించి కాదు. ఆడవాళ్ళకి అసభ్యంగా కాల్స్.**  
 _Step one: the trigger. Look at the accusation they chose. Not about money. Obscene calls to women._  
 🎬 Timeline marker on 23 FEB; the word TRIGGER appears in the lower corner.  
-🔤 STEP 1 · TRIGGER · 23 FEB
+🔤 STEP 1 · TRIGGER · 23 FEB [TNM · ETV BHARAT | MAR 2026]
 
 **V038** · block 2  
-**జీవితమంతా గౌరవంగా బతికిన ఒక పెద్దమనిషి కి, ఇంతకంటే అవమానం ఏముంటుంది. ఫస్ట్ కాల్ లోనే, భయంతో పాటు సిగ్గు కూడా. సిగ్గు ఉన్న చోట, మనిషి ఎవరికీ చెప్పడు.**  
-_For a gentleman who lived with dignity all his life, what could be more humiliating? From the very first call, fear plus shame. Where there's shame, a person tells no one._  
-🎬 Close on a framed nameplate and certificates on a wall (stock), slowly going out of focus.
+**జీవితమంతా గౌరవంగా బతికిన ఒక పెద్దమనిషి కి, ఇంతకంటే అవమానం ఏముంటుంది. ఫస్ట్ కాల్ లోనే, భయంతో పాటు సిగ్గు కూడా. సిగ్గు, పరువు భయం ఉన్న చోట, మనిషి ఎవరికీ చెప్పడానికి వెనకాడతాడు.**  
+_For a gentleman who lived with dignity all his life, what could be more humiliating? From the very first call, fear plus shame. Where there is shame and fear for one's reputation, a person hesitates to tell anyone._  
+🎬 Close on a framed nameplate and certificates on a wall (stock), slowly going out of focus.  
+🔤 [TNM · ETV BHARAT | MAR 2026]
 
 **V039** · block 2  
 **స్టెప్ టూ, అథారిటీ. ముందు సి బి ఐ ఆఫీసర్. తర్వాత సర్కిల్ ఇన్స్పెక్టర్. తర్వాత సుప్రీం కోర్ట్ వారెంట్. ఒక్కో కాల్ కి, అథారిటీ ఒక్కో మెట్టు పైకి.**  
 _Step two: authority. First a CBI officer. Then a circle inspector. Then a Supreme Court warrant. With each call, the authority climbs one more step._  
 🎬 Animated staircase of badges/seals (generic, fictional) rising step by step.  
-🔤 STEP 2 · AUTHORITY · ILLUSTRATION  
+🔤 STEP 2 · AUTHORITY · ILLUSTRATION [TNM · ETV BHARAT | MAR 2026]  
 🔊 A rising tone per step  
 ⏱ One step per title
 
@@ -290,27 +291,27 @@ _Step two: authority. First a CBI officer. Then a circle inspector. Then a Supre
 **తర్వాత వీడియో కాల్ లో ఒక మహిళ. సీనియర్ సి బి ఐ ఆఫీసర్ అని చెప్పుకుంది. ఆమె వాడిన పేరు, ఒక నిజమైన రిటైర్డ్ ఐ పి ఎస్ ఆఫీసర్ ది. ఆయన ఇంటర్నెట్ లో చెక్ చేసినా, ఆ పేరు నిజంగానే కనిపిస్తుంది.**  
 _Then, on a video call, a woman. She claimed to be a senior CBI officer. The name she used belongs to a real retired IPS officer. Even if he checked online, that name would really show up._  
 🎬 SIMULATION: video call with a uniformed woman, face fully blurred; a search-results page (simulation) shows a real-looking officer profile, blurred.  
-🔤 SIMULATION · REAL OFFICER'S NAME MISUSED
+🔤 SIMULATION · REAL OFFICER'S NAME MISUSED [TNM · ETV BHARAT | MAR 2026]
 
 **V041** · block 2  
 **స్క్రీన్ మీద ఒక సుప్రీం కోర్ట్ లెటర్ చూపించింది. మనీ లాండరింగ్, హ్యూమన్ ట్రాఫికింగ్, ఐడెంటిటీ థెఫ్ట్. ఒక జడ్జి కి సుప్రీం కోర్ట్ పేరు అంటే, అదే అత్యున్నత అథారిటీ.**  
 _She showed a Supreme Court letter on screen. Money laundering, human trafficking, identity theft. For a judge, the Supreme Court's name is the highest authority there is._  
 🎬 Forged letter in macro; three charge words stamp on; the letterhead glows.  
-🔤 FORGED LETTER · RECONSTRUCTION  
+🔤 FORGED LETTER · RECONSTRUCTION [TNM · ETV BHARAT | MAR 2026]  
 🔊 Three stamp hits
 
 **V042** · block 2  
 **స్టెప్ త్రీ, ఐసోలేషన్. ఎవరికీ చెప్పకూడదు. బయటకు వెళ్ళకూడదు. వీడియో లో నిఘా. ఆయనకి రెండో అభిప్రాయం అడిగే దారే లేకుండా చేశారు.**  
 _Step three: isolation. Tell no one. Don't go out. Surveillance on video. They removed every way for him to get a second opinion._  
 🎬 The room seen through a glass box (motif); the walls of the box solidify.  
-🔤 STEP 3 · ISOLATION  
+🔤 STEP 3 · ISOLATION [TNM · ETV BHARAT | MAR 2026]  
 🔊 Room tone muffles as if under glass
 
 **V043** · block 2  
 **స్టెప్ ఫోర్, ఎక్స్ట్రాక్షన్. ఫైనాన్షియల్ వెరిఫికేషన్ అన్నారు. మీ డబ్బు లీగల్ దో కాదో చెక్ చేయాలి. వెరిఫై అయ్యాక వెనక్కి ఇస్తాం.**  
 _Step four: extraction. They called it financial verification. We have to check whether your money is legal. Once verified, we'll return it._  
 🎬 SIMULATION: bank app; a VERIFICATION progress bar that crawls and never completes.  
-🔤 STEP 4 · EXTRACTION · SIMULATION
+🔤 STEP 4 · EXTRACTION · SIMULATION [TNM · ETV BHARAT | MAR 2026]
 
 **V044** · block 2  
 **ఫిబ్రవరి ట్వెంటీ ఫిఫ్త్ నుంచి మార్చ్ సెకండ్ వరకు, కొన్ని ట్రాన్స్ఫర్స్ లో వన్ క్రోర్ సిక్స్టీ సిక్స్ లాక్స్. రిఫండ్ రాలేదు. అప్పుడు అర్థమైంది. ఆయన మల్కాజ్గిరి సైబర్ క్రైమ్ పోలీసులకు కంప్లైంట్ ఇచ్చారు.**  
@@ -337,9 +338,10 @@ _According to research by Yale neuroscientist Amy Arnsten, stress we can't contr
 🔤 [ARNSTEN | NATURE REVIEWS NEUROSCIENCE, 2009] · ILLUSTRATION
 
 **V048** · block 2  
-**ఇప్పుడు ఆలోచించండి. ఒక గంట కాదు, ఒక రోజు కాదు. దాదాపు ఒక వారం, ఆగకుండా భయం. ఆ స్థితిలో చదువు, హోదా, అనుభవం, ఏదీ పనిచేయదు. అది వాళ్ళ బలహీనత కాదు. అది మెదడు బయాలజీ.**  
-_Now think. Not one hour, not one day. Nearly a week of fear without a break. In that state, education, status, experience, none of it works. That isn't their weakness. That's the biology of the brain._  
-🎬 The REC counter from the cold open runs DAY 1 → DAY 8 over the grey brain; it cracks at the end.  
+**ఇప్పుడు ఆలోచించండి. ఒక గంట కాదు, ఒక రోజు కాదు. రోజుల తరబడి, బెదిరింపులు, నిఘా, భయం. ఆ స్థితిలో చదువు, హోదా, అనుభవం కూడా మనల్ని కాపాడలేకపోవచ్చు. అది వాళ్ళ బలహీనత కాదు. అది మెదడు బయాలజీ.**  
+_Now think. Not one hour, not one day. Days on end of threats, surveillance and fear. In that state, even education, status and experience may not protect us. That isn't their weakness. That's the biology of the brain._  
+🎬 A calendar strip 23 FEB → 2 MAR flips day by day over the grey brain; the strip cracks at the end (RECONSTRUCTION).  
+🔤 23 FEB → 2 MAR · RECONSTRUCTION [THE420.IN · NEWSMETER | MAR 2026]  
 🔊 Heartbeat stops on 'బయాలజీ'  
 ⏱ Let the last sentence land in silence
 
@@ -370,7 +372,7 @@ _In Ambala, Haryana, an elderly couple was shown orders in the Supreme Court's n
 🔤 ₹1.05 CR+ · AMBALA [SUPREME COURT SUO MOTU ORDER | 17 OCT 2025]
 
 **V053** · block 2  
-**ఆ కేస్ చూసి సుప్రీం కోర్ట్ నే ఆశ్చర్యపోయింది. కోర్ట్ పేరుతో ఫేక్ ఆర్డర్స్ అంటే, జనాలకి న్యాయవ్యవస్థ మీద ఉన్న నమ్మకం మీదే దాడి అని, సుమోటో గా కేస్ తీసుకుంది.**  
+**ఆ కేస్ చూసి సుప్రీం కోర్ట్ నే నివ్వెరపోయింది. కోర్ట్ పేరుతో ఫేక్ ఆర్డర్స్ అంటే, జనాలకి న్యాయవ్యవస్థ మీద ఉన్న నమ్మకం మీదే దాడి అని, సుమోటో గా కేస్ తీసుకుంది.**  
 _Seeing that case, the Supreme Court itself was aghast. Fake orders in the court's name are an attack on people's trust in the justice system, it said, and took up the case on its own._  
 🎬 Supreme Court of India building (Commons), slow push.  
 🔤 SUO MOTU · OCT 2025 [SUPREME COURT OF INDIA]
@@ -386,7 +388,7 @@ _For Mr Oswal they went further and staged a fake Supreme Court hearing on Skype
 **పిల్లర్ టూ. ఐసోలేషన్. ఇరవై నాలుగు గంటలు కెమెరా ఆన్. ఓస్వాల్ గారికి నిద్రపోయేటప్పుడు కూడా స్కైప్ ఆన్ లో ఉంచమన్నారు.**  
 _Pillar two: isolation. Camera on twenty-four hours. Mr Oswal was told to keep Skype on even while he slept._  
 🎬 Bedside phone in darkness, lens facing the bed, REC dot glowing.  
-🔤 PILLAR 2 · ISOLATION · REC ● 47:12:09  
+🔤 PILLAR 2 · ISOLATION · REC ● 47:12:09 [TNM | OCT 2024]  
 🔊 Muffled room tone
 
 **V056** · block 2  
@@ -409,13 +411,13 @@ _Pillar three: terror. We'll arrest you right now. Your reputation, your good na
 **పిల్లర్ ఫోర్. డబ్బు. మీరు ఇన్నోసెంట్ అని ప్రూవ్ చేయాలంటే, డబ్బు ఒక సేఫ్ అకౌంట్ కి పంపాలి అంటారు. ఆర్ బి ఐ అకౌంట్, సీక్రెట్ సూపర్విజన్ అకౌంట్ అని పేర్లు. ఓస్వాల్ గారి కేస్ లో వాడిన పేరు ఇదే.**  
 _Pillar four: money. To prove you're innocent, send your money to a safe account, they say. They call it an RBI account, a secret supervision account. That was the name used in Mr Oswal's case._  
 🎬 SIMULATION: transfer screen, payee 'SECRET SUPERVISION A/C', then a red FAKE stamp.  
-🔤 PILLAR 4 · MONEY · SIMULATION
+🔤 PILLAR 4 · MONEY · SIMULATION [TNM · ETV BHARAT]
 
 **V059** · block 2  
 **కొంతమందితో ఎఫ్ డి లు కూడా బ్రేక్ చేయిస్తారు. పని అయ్యాక మొత్తం వెనక్కి వస్తుంది అని ప్రామిస్. ఆ ప్రామిస్ ఎప్పుడూ నెరవేరదు.**  
 _Some are even made to break their fixed deposits. The promise: everything comes back once it's done. That promise is never kept._  
 🎬 An FD certificate tears in slow motion (illustration).  
-🔤 ILLUSTRATION
+🔤 ILLUSTRATION [TNM · ETV BHARAT]
 
 ## 5 The legal shield
 
@@ -501,7 +503,7 @@ _One more important thing. No police, no court, not even the RBI, will ask you t
 **నిజానికి ఈ కేస్ లో క్రైమ్ చేసింది వాళ్ళే. జడ్జి గారి కేస్ లో పోలీసులు పెట్టిన సెక్షన్స్ చూడండి. చీటింగ్ బై పర్సనేషన్, ఫోర్జరీ, ఎక్స్టార్షన్.**  
 _In truth, the ones committing crimes here are them. Look at the sections police filed in the judge's case: cheating by personation, forgery, extortion._  
 🎬 The FIR section list types out on the teal screen.  
-🔤 BNS 319(2) · 338 · 308(2) · IT ACT 66C, 66D [TNM | MAR 2026]  
+🔤 BNS 316(2) · 318(4) · 319(2) · 338 · 308(2) · IT ACT 66C, 66D [THE NEWS MINUTE | MAR 2026]  
 🔊 Typewriter clicks
 
 ## 6 Golden hour protocol
@@ -537,7 +539,7 @@ _Don't call back a number they gave you to verify. That's their own person too, 
 **థర్డ్. మీ డబ్బుకి కవచం. ఏ అకౌంట్ కి డబ్బు పంపొద్దు. ఓ టి పి ఎవరికీ చెప్పొద్దు. వాళ్ళు చెప్పిన యాప్ ఏదీ ఇన్స్టాల్ చేయొద్దు. ఎనీడెస్క్, టీమ్ వ్యూయర్ లాంటి స్క్రీన్ షేర్ యాప్స్, వాట్సాప్ లో వచ్చే ఏ పి కె ఫైల్స్, అస్సలు వద్దు.**  
 _Third. A shield for your money. Don't send money to any account. Don't tell anyone your OTP. Don't install any app they tell you to. Screen-share apps like AnyDesk or TeamViewer, APK files that come on WhatsApp: absolutely not._  
 🎬 Three crossed icons in the lower corner: transfer, OTP, app install; an APK file icon shatters.  
-🔤 STEP 3 · NO MONEY · NO OTP · NO APPS [RBI ALERT 1/2019 · NPCI]  
+🔤 STEP 3 · NO MONEY · NO OTP · NO APPS [RBI ALERT 1/2019 · NPCI · POLICE ADVISORIES]  
 🔊 Three soft clicks
 
 **V078** · block 3  
@@ -548,8 +550,8 @@ _Fourth. If money is gone, this is the golden hour: the first hour. The faster y
 🔊 Clock ticks, brisk
 
 **V079** · block 3  
-**వెంటనే వన్ నైన్ త్రీ జీరో కి కాల్ చేయండి. నేషనల్ సైబర్ క్రైమ్ హెల్ప్లైన్. మీ కంప్లైంట్ బ్యాంకులకు వెళ్తుంది, డబ్బు చేరిన అకౌంట్స్ ని ఫ్రీజ్ చేయమని.**  
-_Call one-nine-three-zero immediately, the national cybercrime helpline. Your complaint goes to the banks, asking them to freeze the accounts the money reached._  
+**వెంటనే వన్ నైన్ త్రీ జీరో కి కాల్ చేయండి. నేషనల్ సైబర్ క్రైమ్ హెల్ప్లైన్. మీ కంప్లైంట్ బ్యాంకులకు వెళ్తుంది, డబ్బు చేరిన అకౌంట్స్ లో ఆ డబ్బుని హోల్డ్ చేయమని.**  
+_Call one-nine-three-zero immediately, the national cybercrime helpline. Your complaint goes to the banks, asking them to put that money on hold in the accounts it reached._  
 🎬 Keypad dialling 1930, macro; on the map the mule nodes freeze one by one and turn teal.  
 🔤 CALL 1930  
 🔊 Freeze sound on each node
@@ -558,7 +560,7 @@ _Call one-nine-three-zero immediately, the national cybercrime helpline. Your co
 **ఈ సిస్టమ్ పేరు సి ఎఫ్ సి ఎఫ్ ఆర్ ఎం ఎస్. ట్వెంటీ ట్వెంటీ సిక్స్ జూన్ వరకు, థర్టీ టూ లాక్స్ కి పైగా కంప్లైంట్స్ లో, ఎలెవెన్ థౌసండ్ క్రోర్స్ కి పైగా డబ్బు ఆపగలిగారు. అంటే, ఫాస్ట్ గా కాల్ చేస్తే, ఇది నిజంగా పనిచేస్తుంది.**  
 _This system is called CFCFRMS. Up to June 2026, across over thirty-two lakh complaints, they managed to hold over eleven thousand crore. So if you call fast, it really works._  
 🎬 Counter rises to ₹11,158 CR with the label HELD (NOT ALL REFUNDED).  
-🔤 ₹11,158 CR HELD · 32.8 LAKH COMPLAINTS · TO 30 JUN 2026 [MHA | LOK SABHA]
+🔤 ₹11,158 CR HELD (NOT ALL REFUNDED) · 32.8 LAKH COMPLAINTS · TO 30 JUN 2026 [MHA REPLY, LOK SABHA | AUG 2026]
 
 **V081** · block 3  
 **తర్వాత మీ బ్యాంక్ కి కాల్ చేసి అకౌంట్ బ్లాక్ చేయించండి. సైబర్ క్రైమ్ డాట్ జీ ఓ వీ డాట్ ఇన్ లో కంప్లైంట్ ఫైల్ చేయండి.**  
@@ -577,7 +579,7 @@ _Fifth. Protect the evidence. Keep screenshots exactly as they are, unedited. Ca
 **డబ్బు ఇంకా పోలేదు, కానీ ఇలాంటి కాల్ వచ్చింది అంటే, సంచార్ సాథీ లో చక్షు ద్వారా ఆ నంబర్ ని రిపోర్ట్ చేయండి. మీ ఒక్క రిపోర్ట్, ఇంకొకరికి వచ్చే కాల్ ని ఆపొచ్చు.**  
 _If no money is lost yet but you got a call like this, report that number through Chakshu on Sanchar Saathi. Your one report could stop the next person's call._  
 🎬 Screen recording of the real Sanchar Saathi Chakshu page.  
-🔤 sancharsaathi.gov.in · CHAKSHU
+🔤 sancharsaathi.gov.in · CHAKSHU [DoT · SANCHAR SAATHI]
 
 ## 7 Family and close
 
