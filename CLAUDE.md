@@ -2,7 +2,9 @@
 
 Two channels' worth of video work lives here:
 - **Be Practical with Kishore**: narrated documentaries and explainers (Telugu and English).
-- **Phone Consensus**: 8–12 minute 4K phone reviews built from what 15+ trusted reviewers said.
+- **Phone Consensus**: 4K phone reviews built from what 15+ trusted reviewers said.
+
+Video length on both channels is set by the topic, never by a fixed target (owner, 2026-10-09).
 
 This file holds the rules every session must follow. **`docs/PLAYBOOK.md` is the only other instruction file**: full specs,
 how-tos, measurements, the reason behind each rule, and recommendations. Read the parts that apply before starting work.
@@ -25,6 +27,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   sessions, keep media sourcing in one session (all sessions share one IP and one usage limit). Plan: PLAYBOOK §3.
 - Research deeply: real sources for every fact, real footage before stock, a contact sheet of every asset before use.
   When a source is blocked, work down the fallback chain in PLAYBOOK §8; never route around blocks with VPNs or proxies.
+  For **study and analysis data** (competitor transcripts, stats), the owner allows any source, including third-party
+  transcript sites (2026-10-09); none of that material goes into our films.
 
 ## Layout
 - `config/`: `models.yaml` (model, effort per task, budget, pricing), `brand.yaml`, `categories.yaml`, `sources.yaml`
@@ -93,11 +97,14 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   figures. Hard gates beside the fact-check: synthetic-content disclosure, health context (WHO/ICMR + skeptic), SEBI
   education-only lane (no buy/sell calls, price data ≥ 30 days old, disclaimer), Press Council suicide norms.
 - **TTS:** ElevenLabs Telugu only on `eleven_v3`/`eleven_v4` with `language_code: "te"`; all TTS text in Telugu script.
-- **ElevenLabs "Bunty" script format** (Bunty stays the channel voice; owner, 2026-10-08): 5–6 blocks of 100–130 words
-  (< 1,200 characters); commas, full stops and `...` for dramatic pauses only (no `!`, quotes, dashes, stage directions);
+- **ElevenLabs "Bunty" script format** (Bunty stays the channel voice; owner, 2026-10-08, block size 2026-10-09): blocks
+  of **4,000–4,500 characters** (hard cap 5,000, the `eleven_v3` per-request limit), as many as the script needs; commas, full stops and `...` for dramatic pauses only (no `!`, quotes, dashes, stage directions);
   numbers as English number words in Telugu script (`ఫైవ్ థౌసండ్`), names and English terms in Telugu script; acronyms
   letter by letter (`ఆర్ బి ఐ`). If a take breaks around `...`, use a comma and pause in the edit. Hand the owner
   re-record text in this format.
+- **Talk, don't read** (owner, 2026-10-09): narration sounds like the owner talking to you, never like reading text aloud.
+  Heavy Tenglish like NB Show (English words and short phrases where people really use them), మీరు + మనం address, spoken
+  verb forms, no newspaper words (ఈ నేపథ్యంలో, తద్వారా, కావున). Full guide: PLAYBOOK §4b.
 - **Audio:** the VO leads (peaks −2 to −3 dB); BGM −24 to −26 dB under speech, swelling to −12 dB in pauses with 0.5 s
   ramps, silent for 1.5 s before reveals; impacts −6 to −8 dB, small SFX −8 to −10 dB; master −14 LUFS two-pass linear. The video isn't locked to
   the VO: diegetic cuts (VO stops for 2–6 s of the asset's own sound), `LIVE` rows for real speech, `VO_PAUSE` ambience.

@@ -135,14 +135,17 @@ look like a broadcast documentary or investigative film, **never a slide deck, c
 - **Mission and voice:** the "super-channel" for Telugu viewers: hooks with emotional urgency, a dark cinematic sound, clear
   chronology, Vox/Johnny Harris-style 2.5D visuals, and only peer-reviewed or primary legal sources. Narrator persona: the
   street-smart elder brother (అన్నయ్య), conversational Telugu, never victim-blaming (blame the system, not the viewer).
-- **Four acts:** (1) visceral hook, 0:00–1:15, drone + ticking clock; (2) systemic betrayal / investigation, live-browsing
+- **Four acts:** (1) visceral hook (the charter's 0:00–1:15; timings are now proportions, see §4b), drone + ticking clock; (2) systemic betrayal / investigation, live-browsing
   mock-ups and highlighters; (3) climax and shock reveal, with **1.5 s of total music silence before the core truth and a
   braam/thud as the proof lands**; (4) practical defence: actionable, reassuring steps, warm outro. Science films map the
   same way: myth → mechanism → the real evidence → what you can safely do. A "Trojan horse" hook: open on the popular
   mystery, resolve it with verified truth (this pairs with §12: the fact-check decides what "truth" is).
 - **Citation tag on every factual claim:** a small bracket tag, e.g. `[NATURE (1982) | HARVARD MONK STUDY]`, bottom right
   above the logo bug (`cite` column in `projects/fire-and-ice/assemble.py`).
-- **Bunty script format** (ElevenLabs): 5–6 blocks of 100–130 words, under 1,200 characters each; commas and full stops
+- **Bunty script format** (ElevenLabs): blocks of **4,000–4,500 characters**, hard cap 5,000 (owner, 2026-10-09: the
+  `eleven_v3` per-request limit; it replaces the charter's 100–130 words / 1,200 characters), as many blocks as the script
+  needs. Count characters, not words. Listen to every block: if one skips, repeats or drifts in tone, regenerate it, and if
+  that recurs, split the block at a paragraph; commas and full stops
   plus `...` for dramatic pauses (owner amended 2026-10-08); no stage directions, `!`, quotes or dashes; numbers as English
   number words in Telugu script (ఫైవ్ థౌసండ్, owner confirmed 2026-10-08); acronyms letter by letter in Telugu script;
   common English terms transliterated. *Why (owner):* prevents skipped characters, buffer drops and truncated takes.
@@ -171,7 +174,8 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
 **Hook, structure, pacing**
 - Deliver the thumbnail's promise on screen **by 0:30**, with no channel intro before it (YouTube's "intro" metric counts
   viewers still watching at 30 s). Act 1 may run to 1:15 only if the payoff lands by 0:30. (Strong)
-- 8–12 min (longer if the story earns it) built as **3–5 chapters of 2–4 min**, each with its own question and payoff;
+- **No fixed length** (owner, 2026-10-09): the topic sets the runtime; every minute must earn its place. Built as
+  **chapters of 2–4 min**, each with its own question and payoff;
   YouTube chapters in the description (00:00, at least three, each ≥ 10 s). (Moderate: viewing engagement medians cap
   near 6 min in a 6.9M-session study; Telugu explainers of 10–18 min hold millions of views.)
 - Energetic delivery throughout; "reassuring" never means slow. Focus change every 3.0–3.5 s with continuous motion.
@@ -193,8 +197,9 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
   if a block skips or cuts words around a `...`, regenerate it with a comma there and make the pause in the edit
   (`VO_PAUSE`). The other bans stand: no `!`, quotes, dashes or stage directions.
 - One idea per sentence (about 8–15 words); no `;`, brackets, slashes, `&`, `#` or emoji in TTS text.
-- **Educated spoken Telugu** (TV-news register, Gidugu's vyavaharika): no grandhika endings (-ము, వచ్చెను, -బడు passives).
-  English only for technical or modern nouns, at most one English content word per clause, never an English clause.
+- **Spoken Telugu, heavy Tenglish** (owner, 2026-10-09; replaces the "one English word per clause" rule): talk the way
+  NB Show talks, English words and short phrases wherever people really say them. No grandhika endings (-ము, వచ్చెను,
+  -బడు passives). In TTS text every English word is still written in Telugu script. Full guide: §4b.
 - **Dialect-neutral:** pan-regional words; never call one region's Telugu "pure" or another's "slang"; never a dialect for
   comedy or villains; "మన తెలంగాణ, మన ఆంధ్ర" framing. Test new voices with listeners from both states.
 - **Ban list** (script, guests and clips): చండాలం and its forms; కటిక చీకటి (use కారు చీకటి); caste names as adjectives;
@@ -251,6 +256,52 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
    `docs/research/research_notes/Telugu YouTube audience and style/competitor_picks.tsv`.
    **2026-10-09:** the cloud was bot-blocked again; the owner chose Termux. `scripts/termux_study_picks.sh` fetches captions,
    full audio and the first 3 min at 360p for the 18 picks, zips and uploads to Gofile (study only, never used in films).
+
+### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
+*Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
+Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
+This guide is the first version; refine it with the competitor transcript study (`scripts/termux_study_picks.sh`).
+
+**Voice and register**
+- Write the way the owner would explain it to a younger cousin over chai: one idea per sentence, mostly 6–14 words, then
+  an occasional very short line for punch ("అదే ట్రాప్.").
+- **Heavy Tenglish, like NB Show:** English words and short phrases where Telugu people really use them (loan, EMI, bank,
+  actually, simple గా, full clarity, same thing, game changer). The sentence frame and the verbs stay Telugu. In the TTS
+  text every English word is in Telugu script (సింపుల్ గా, యాక్చువల్ గా); on screen Latin is fine.
+- **Address:** మీరు for the viewer, మనం for shared feelings, discoveries and the practical-defence act ("మనం ఇప్పుడు
+  చూద్దాం", "మనలో చాలామందికి ఇది జరిగింది"). Never నువ్వు.
+- **Spoken forms, not written ones:** చేస్తాం / వెళ్ళాడు / ఉంది కదా, not చేయుదుము / వెళ్ళెను. Banned newspaper
+  connectors: ఈ నేపథ్యంలో, ఈ క్రమంలో, అనంతరం, తద్వారా, కావున, సదరు, పేర్కొన్నారు, వెల్లడించారు. Say: తర్వాత, అందుకే,
+  అంటే, చెప్పారు, బయటపెట్టారు.
+- **Talk-markers** carry the feel of a conversation; use them, without repeating any one in back-to-back sentences:
+  అసలు, ఇక్కడే, చూడండి, కదా, అంటే, సరే, ఇప్పుడు ఏమైందంటే, ఒక్క నిమిషం, ఆలోచించండి, నిజం చెప్పాలంటే.
+- **Ask, then answer:** pose the question the viewer is thinking, pause, answer it ("మరి బ్యాంక్ ఎందుకు ఊరుకుంది?
+  ... ఎందుకంటే...").
+
+**How to start**
+- Never open with "నమస్కారం, ఈ రోజు మనం... గురించి తెలుసుకుందాం". Open mid-story: a person, a moment, a number or the
+  myth everyone believes ("టూ థౌసండ్ నైన్టీన్, హైదరాబాద్. రమేష్ ఫోన్ కి ఒక మెసేజ్ వచ్చింది."). Name and greeting come right
+  after the hook (face and name within 15–20 s), and the thumbnail's promise lands by 0:30.
+
+**Emotion through words and rhythm** (Bunty takes no emotion tags, so the text carries the feeling)
+| Moment | How the text does it |
+|---|---|
+| Urgency (hook) | short sentences, direct questions, present tense ("ఇది మీకు కూడా జరగొచ్చు.") |
+| Empathy | name the feeling plainly, no blame ("ఇది మీ తప్పు కాదు. సిస్టమ్ అలా డిజైన్ చేశారు.") |
+| Righteous anger | concrete facts and numbers, then one short verdict line; anger at the mechanism, never the viewer |
+| Reveal | build with two or three short lines, `...`, then the truth in one plain sentence |
+| Reassurance (defence) | longer, calmer sentences, మనం, numbered practical steps said in speech ("ఫస్ట్ ఏం చేయాలంటే...") |
+| Outro | warm and personal, like ending a phone call with family |
+
+**Length and structure**
+- The topic sets the runtime (owner, 2026-10-09). The four acts are proportions, not timestamps: hook about 10–15%,
+  betrayal 30–35%, reveal 20–25%, defence 25–30%. Cut anything that doesn't move the story; never pad to reach a length.
+
+**Read-aloud test (every block, before TTS):** say it out loud. If any sentence sounds like a newspaper, a textbook or a
+government notice, rewrite it. If you run out of breath, split it.
+
+**ElevenLabs blocks:** 4,000–4,500 characters each, cap 5,000 (`eleven_v3` limit); break at a natural paragraph or scene
+change, never mid-thought. Keep the punctuation rules in §4 (commas, full stops, `...`; no `!`, quotes, dashes or tags).
 
 ## 5. The look
 
@@ -736,7 +787,7 @@ took 90 min in a subagent while sourcing, scenes and assembly ran). Lessons:
 
 ## 16. Product and spec
 
-**Premise:** "We analysed what 15+ trusted reviewers said about this phone, so you don't have to." An 8–12 minute 4K video.
+**Premise:** "We analysed what 15+ trusted reviewers said about this phone, so you don't have to." A 4K video whose length the topic sets (owner, 2026-10-09).
 What makes it different: a consensus scorecard per category (display, camera, battery, performance, software, build, value);
 a "Where reviewers disagree" segment; "Problems reported by multiple reviewers"; who should buy, who should skip, better
 alternatives at the same price; every claim traceable to reviewer + video/article + timestamp.
@@ -887,6 +938,10 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 ---
 
 # Part E: Owner's channel charter (verbatim, received 2026-10-08)
+
+> **Owner's amendments (2026-10-09), which win over the text below:** no fixed runtime or act timestamps (the topic sets
+> the length; acts are proportions, §4b); ElevenLabs blocks of 4,000–4,500 characters (cap 5,000), not 100–130 words;
+> narration is heavy Tenglish spoken Telugu (§4b). The `...` ban below was already lifted on 2026-10-08.
 
 Kept word for word so later sessions read the owner's own wording. How each point maps onto this playbook: Part B intro.
 Owner's amendment (2026-10-08): `...` is now allowed for dramatic pauses (§4a); the rest of rule 4.2 stands.
