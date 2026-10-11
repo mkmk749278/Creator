@@ -62,7 +62,7 @@ def lint(row):
     return errs
 
 
-EN_QWORDS = ("right", "how", "why", "what", "who", "when", "where", "which")
+EN_QWORDS = ("right", "how", "why", "what", "who", "which")
 
 
 def lint_en(row):

@@ -275,6 +275,14 @@ India while the topics stay India-first. Rules:
 - **TTS text:** numbers and amounts as words ("thirty thousand rupees", "twenty twenty five"), acronyms as normal capitals
   (RBI, GST, EMI, CIBIL, UPI); no digits, `₹`, `!`, double quotes, dashes, brackets or `&`. Voice Bunty on `eleven_v4`
   with `language_code: "en"` (check the first block for accent and pace before generating the rest).
+- **Words a Class 8 student knows** (owner, 2026-10-11: "even simpler"): bill (not statement), last date (not due date,
+  after the first mention), free days (not interest-free period), loan or what you owe (not debt, outstanding), maths,
+  cancelled (not set aside), good things (not benefits). Explain any must-keep term once in plain words.
+- **Voice:** an Indian-accent English voice, not a US/UK narrator. Audition in ElevenLabs Voice Library (filter: English,
+  accent Indian, male) with the same first paragraph: Bunty in English first (channel continuity), then conversational
+  "elder brother" voices such as Aakash Aryan (Conversational and Steady), Aarav J (Cool and Wise Friend) and Rinoy
+  (Professional Narrator); avoid ad, ASMR and over-dramatic narrator styles for explainers. Owner picks by ear; record the
+  pick here.
 - **Files:** `lang.txt` = `en` in the project folder makes the `en` column of `script.full.tsv` the VO and the `te`
   column an optional Telugu dub; `tools/build_script.py` lints English VO (`lint_en`) and builds the blocks from it.
 - On-screen text, citation tags and the description were already English; nothing changes there.
