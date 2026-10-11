@@ -65,6 +65,15 @@ for (const project of projects) {
     mkdirSync(dirname(join(out, "library", rel)), { recursive: true });
     copyFileSync(src, join(out, "library", rel));
   }
+  // Handwriting font for whiteboard scenes (Kalam, OFL), only where a page asks for it.
+  if (html.includes("vendor/fonts/kalam-")) {
+    for (const w of [400, 700]) {
+      for (const sub of ["latin", "devanagari"]) { // devanagari subset carries the ₹ sign
+        const f = `kalam-${sub}-${w}-normal.woff2`;
+        copyFileSync(join(root, "node_modules/@fontsource/kalam/files", f), join(out, "fonts", f));
+      }
+    }
+  }
   // Seeded organic motion: createNoise3D(seededRandom).
   if (html.includes("vendor/noise/")) {
     mkdirSync(join(out, "noise"), { recursive: true });

@@ -298,17 +298,15 @@ follow a character. Every explainer mixes, in this order of preference:
 2. **BOARD**: every calculation is worked out live on a whiteboard in marker (hand-drawn SVG strokes revealed by
    stroke-dashoffset, a handwriting font, underlines, circles, a duster wipe), like a teacher explaining; never a static
    table.
-3. **TOON**: a recurring animated character (hand-authored flat vector, GSAP; never AI images, never a real person)
-   acts out every action the VO says (gets the bill, pays, swipes, worries, ages, escapes). The character is the
-   thread that carries viewers to the end.
+3. ~~TOON~~ **No animated character** (owner, 2026-10-11, after a first test: "cancel character, use any clip that
+   syncs to the situation"). Every action the VO says is a real clip (Pixabay API, Coverr, Commons, owner footage).
 4. **PROOF**: credited screen recordings of the real source page (bank, RBI, court, news) under a magnifier.
 5. **SIM**: labelled phone/bill simulations only where the viewer needs to see a screen.
 Plan these per line in `visual-plan.md` (time from `align/`), before sourcing and scene work.
 **Owner's review notes (2026-10-11):** (a) *common-sense fit*: show what the line is about in the film's context; for a
 money film that is the spend or the payment (card machine, bill, wallet), never the event itself (a wedding ritual for
-"a family function" was rejected). (b) *the character*: keep it simple (clean flat vector, few parts, no named persona
-needed) but every action smooth: eased GSAP tweens, anticipation and follow-through, overlapping parts, holds of at least
-0.3 s, no instant pose swaps or jerky pops.
+"a family function" was rejected). (b) *the character* was then dropped altogether (see 3). (c) *no foreign money*: drop clips
+showing dollars or euros in a rupee film (about half the "money/bills" stock results); prefer cards, phones, bills.
 
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
