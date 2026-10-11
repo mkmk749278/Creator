@@ -42,6 +42,7 @@ function extras(c) {
     "×": { w: Math.round(c * 0.7), s: [[c * 0.1, c * 0.6, c * 0.55, c * 0.15], [c * 0.55, c * 0.6, c * 0.1, c * 0.15]].map((s) => s.map(Math.round)) },
     "→": { w: Math.round(c * 1.1), s: [[c * 0.05, c * 0.4, c * 0.95, c * 0.4], [c * 0.7, c * 0.62, c * 0.97, c * 0.4, c * 0.7, c * 0.18]].map((s) => s.map(Math.round)) },
     "✓": { w: Math.round(c * 0.8), s: [[c * 0.05, c * 0.35, c * 0.3, c * 0.05, c * 0.75, c * 0.75]].map((s) => s.map(Math.round)) },
+    "≠": { w: Math.round(c * 0.8), s: [[c * 0.08, c * 0.52, c * 0.68, c * 0.52], [c * 0.08, c * 0.25, c * 0.68, c * 0.25], [c * 0.55, c * 0.72, c * 0.2, c * 0.05]].map((s) => s.map(Math.round)) },
     "…": { w: Math.round(c * 0.9), s: [0.15, 0.4, 0.65].map((f) => [c * f, c * 0.03, c * f + 4, c * 0.03]).map((s) => s.map(Math.round)) },
   };
 }

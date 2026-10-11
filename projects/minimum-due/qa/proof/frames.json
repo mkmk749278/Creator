@@ -1,0 +1,42 @@
+[
+ {
+  "sheet": 1,
+  "tile": 1,
+  "label": "icici_bill.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 2,
+  "label": "icici_interest.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 3,
+  "label": "icici_page.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 4,
+  "label": "icici_rate.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 5,
+  "label": "icici_table.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 6,
+  "label": "news_rent.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 7,
+  "label": "rbi_lost.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 8,
+  "label": "rbi_warning.png"
+ }
+]

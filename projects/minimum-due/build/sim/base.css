@@ -1,0 +1,20 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Inter, Arial, sans-serif; }
+body { width: 1920px; height: 1080px; background: radial-gradient(circle at 50% 40%, #2c3442, #12161d 75%); display: flex; align-items: center; justify-content: center; }
+.phone { width: 560px; height: 1000px; border-radius: 64px; background: #0d0f13; padding: 22px; box-shadow: 0 40px 80px rgba(0,0,0,.55), inset 0 0 0 3px #2a2f38; }
+.scr { width: 100%; height: 100%; border-radius: 46px; background: #f4f6f9; overflow: hidden; position: relative; }
+.bar { height: 56px; display: flex; justify-content: space-between; padding: 18px 34px; font-weight: 700; font-size: 20px; color: #222; }
+.app { padding: 26px 34px; }
+.h { font-size: 26px; font-weight: 800; color: #1b2433; margin-bottom: 22px; }
+.card { background: #fff; border-radius: 22px; padding: 26px; box-shadow: 0 4px 14px rgba(0,0,0,.06); margin-bottom: 20px; }
+.lab { font-size: 18px; color: #6b7480; font-weight: 700; letter-spacing: .06em; }
+.big { font-size: 58px; font-weight: 800; color: #1b2433; margin-top: 6px; }
+.mid { font-size: 40px; font-weight: 800; color: #c8102e; margin-top: 6px; }
+.sim { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; font-size: 15px; font-weight: 800; color: #8a929c; letter-spacing: .14em; }
+.note { position: absolute; top: 40px; left: 40px; right: 40px; }
+.notif { background: rgba(255,255,255,.96); border-radius: 22px; padding: 18px 22px; box-shadow: 0 10px 30px rgba(0,0,0,.25); font-size: 21px; color: #1b2433; }
+.opt { display: flex; align-items: center; gap: 18px; font-size: 26px; font-weight: 700; color: #1b2433; padding: 22px 0; border-bottom: 1px solid #e3e7ec; }
+.rad { width: 34px; height: 34px; border-radius: 50%; border: 4px solid #9aa3ad; }
+.rad.on { border-color: #13804a; background: radial-gradient(circle, #13804a 45%, #fff 50%); }
+.row { display: flex; justify-content: space-between; font-size: 24px; padding: 14px 0; border-bottom: 1px solid #e3e7ec; color: #1b2433; }
+.hl { background: rgba(255,230,0,.7); border-radius: 6px; padding: 2px 6px; }
+.warn { font-size: 21px; line-height: 1.45; color: #1b2433; }
