@@ -71,13 +71,13 @@ BOARDS = [
         dict(box="last", color=R, dur=0.6),
     ]),
     dict(id="b03_calendar", start=L("1.18")[0] - 0.2, end=L("1.21")[1] + 0.4, tag="ILLUSTRATION · OUR EXAMPLE", steps=[
-        dict(line=[220, 560, 1720, 560], at=L("1.18")[0] + 0.1, dur=0.6, color=K),
-        cx("Oct 5", 300, 650, L("1.18")[0] + 0.5, 0.5, 56, K), cx("Oct 25", 960, 650, L("1.18")[0] + 1.3, 0.6, 56, K),
-        cx("BILL ₹30,000", 760, 470, L("1.18")[0] + 2.0, 1.4, 54, B),
-        cx("Nov 14", 1600, 650, L("1.18")[0] + 3.6, 0.6, 56, R), cx("LAST DATE", 1520, 470, L("1.18")[0] + 4.4, 1.0, 46, R),
-        dict(line=[300, 760, 1600, 760], at=L("1.19")[0] + 0.3, dur=1.0, color=G, width=14),
-        w("Phone: 40 days interest free", 260, 870, L("1.19")[0] + 1.3, 1.6, 60, G),
-        w("Groceries: 25 days", 260, 970, L("1.19")[0] + 3.4, 1.2, 60, G),
+        dict(line=[220, 500, 1720, 500], at=L("1.18")[0] + 0.1, dur=0.6, color=K),
+        cx("Oct 5", 300, 590, L("1.18")[0] + 0.5, 0.5, 56, K), cx("Oct 25", 960, 590, L("1.18")[0] + 1.3, 0.6, 56, K),
+        cx("BILL ₹30,000", 760, 410, L("1.18")[0] + 2.0, 1.4, 54, B),
+        cx("Nov 14", 1600, 590, L("1.18")[0] + 3.6, 0.6, 56, R), cx("LAST DATE", 1520, 410, L("1.18")[0] + 4.4, 1.0, 46, R),
+        dict(line=[300, 690, 1600, 690], at=L("1.19")[0] + 0.3, dur=1.0, color=G, width=14),
+        w("Phone: 40 days interest free", 260, 800, L("1.19")[0] + 1.3, 1.6, 60, G),
+        w("Groceries: 25 days", 260, 900, L("1.19")[0] + 3.4, 1.2, 60, G),
         dict(erase=True, at=L("1.20")[0] - 0.2, dur=0.6),
         w("ONE CONDITION:", 260, 380, L("1.20")[0] + 0.4, 0.9, 110, R),
         w("pay the FULL bill by the last date", 260, 600, L("1.21")[0] + 0.3, 2.6, 80, K),
@@ -127,7 +127,7 @@ BOARDS = [
         dict(underline="last", color=R, dur=0.4),
     ]),
     dict(id="b07_crif", start=L("2.09")[0] - 0.2, end=L("2.09")[1] + 0.4, tag="CRIF HIGH MARK | MAR 2025", steps=[
-        w("Card bills unpaid 3 months to 1 year", 220, 300, L("2.09")[0] + 2.0, 3.0, 64, K),
+        w("Card bills unpaid 3 months to 1 year", 220, 300, L("2.09")[0] + 0.5, 3.2, 64, K),
         dict(bar=[340, 900, 240, 320], at=L("2.09")[0] + 5.2, dur=1.0, color=K),
         cx("a year before", 460, 980, L("2.09")[0] + 6.3, 1.0, 40, K),
         dict(bar=[900, 900, 240, 460], at=L("2.09")[0] + 7.4, dur=1.2, color=R),
@@ -184,6 +184,20 @@ BOARDS = [
         dict(tick=[1000, 360, 56], at=L("2.27")[0] + 3.0), w("bad CIBIL", 1090, 400, L("2.27")[0] + 3.2, 0.8, 72, G),
         dict(cross=[230, 470, 56], at=L("2.27")[0] + 4.4), w("NOT interest", 320, 530, L("2.27")[0] + 4.6, 1.0, 72, R),
         *flow(220, 840, 120, [("45%", L("2.28")[0] + 1.8, 0.7, R), ("18% GST", L("2.28")[0] + 4.0, 1.0, K), ("0 days", L("2.28")[0] + 6.6, 0.9, R)], gap=0.8),
+    ]),
+    # 1.31-1.32, the two board beats of the style sample, rebuilt on the measured layout (the sample's "₹1,981" ran off
+    # the board). T0 = where the sample shot starts in the film.
+    dict(id="b15_paid", start=L("1.30")[0] - 0.3 + 3.0, end=L("1.30")[0] - 0.3 + 9.6, tag=CALC, steps=[
+        w("You paid ₹1,500", 300, 340, L("1.30")[0] - 0.3 + 3.2, 1.9, 100, G),
+        dict(underline="last", color=G, dur=0.35),
+        w("Bank added ₹1,981", 300, 700, L("1.30")[0] - 0.3 + 5.8, 2.1, 90, R),
+        dict(circle="last", color=R, dur=0.7),
+    ]),
+    dict(id="b16_wentup", start=L("1.30")[0] - 0.3 + 12.0, end=L("1.30")[0] - 0.3 + 17.0, tag=CALC, steps=[
+        w("₹30,000", 260, 400, L("1.30")[0] - 0.3 + 12.2, 1.3, 140, K),
+        dict(arrow=[700, 450, 880, 630], at=L("1.30")[0] - 0.3 + 13.6, dur=0.45, color=R),
+        w("₹30,481", 880, 740, L("1.30")[0] - 0.3 + 14.15, 1.5, 120, R),
+        dict(underline="last", color=R, dur=0.4),
     ]),
     dict(id="b14_next", start=L("2.31")[0] - 0.2, end=L("2.31")[1] + 0.4, tag="", steps=[
         w("Next video:", 300, 420, L("2.31")[0] + 0.2, 1.0, 100, B),

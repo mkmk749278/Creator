@@ -832,7 +832,36 @@ above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at
 - [ ] Thumbnail promise shown by 0:30; chapters in the description; timestamped sources and citation tags on claims.
 - [ ] Compliance gates (§4a): synthetic disclosure, health context, SEBI education-only lane, PCI suicide norms, ban list.
 
+**Per-shot review, then whole-film review (owner, 2026-10-11).** *Why:* a 6-second contact sheet of the whole film hid
+problems that a shot-by-shot pass caught at once (unreadable proofs, a pop-up on a source page, a foreign supermarket).
+After every assembly, run the project's `review_shots.py` (3 frames per shot beside the VO words spoken over it, 8 shots
+per sheet), judge every shot against this checklist, write the findings and the lesson behind each one into `review.md`,
+fix, re-assemble, and review again until a round finds nothing worth fixing. Then judge the film as a whole (pacing,
+board vs real-footage balance, loudness) and refine once more.
+- [ ] **Proofs readable on a phone:** the highlighted words fill ≥ 1/3 of the frame width at the end of the push; shoot
+      source pages at 2× (`deviceScaleFactor: 2`) so a 2–2.5× zoom stays sharp; remove fixed/sticky layers (pop-ups,
+      "get notified" boxes, cookie bars) and ad slots before the screenshot.
+- [ ] **No board holds longer than ~16 s without a cut:** cut away at the duster moments (the board is blank there) to
+      real footage or a proof of the same idea; never leave an empty board on screen for more than ~1 s.
+- [ ] **Indian faces, places and money** in every stand-in (see §4a-3); a European street, shop or face is a reshoot.
+
 ## 15. Lessons log
+
+**Minimum Amount Due (English, 8:05, 2026-10-11, v1 → v2).** The per-shot review of v1 found:
+- **Proofs unreadable:** 1080p screenshots at a 1.1–1.8× zoom left the highlighted line about 10 px tall on a phone.
+  Fix: re-shoot at 2×, establish wide for about 2 s, push in to 1.6–2.5× on the saved highlight box, then pan along the row.
+- **Pop-ups and ads on source pages:** remove every fixed or sticky element before the screenshot.
+- **Foreign stock read as foreign:** a TABAK supermarket, a European teen and a European ATM queue. Pixabay searches for
+  "kirana", "UPI" and "Indian man phone" returned mostly European faces, cartoons and dollar animations. Wikimedia
+  Commons gave real Indian places: an HDFC branch in Hyderabad with Telugu signage, an HDFC ATM with an auto outside.
+  Search Commons by brand plus city.
+- **Boards held 20–42 s:** cut away at the duster moments to a relevant real clip or proof, and come back when the next
+  line starts.
+- **Weak hook picture:** "the full maths behind that small number" now shows flash-forwards of the maths boards instead of
+  generic shop clips.
+- **Loudness −14.8 LUFS:** `loudnorm linear=true` undershoots when the true peak would clip. Measure, apply the exact gain,
+  then a −1.5 dBFS limiter.
+- **Final mux crawled at 0.3× real time:** it rescaled the 4096 px logo PNG on every frame. Pre-scale overlays once.
 
 **Breath-hold (Vidyut Jammwal, Telugu, 7:17, v1→v5).** v1 was all text cards on gradients and was rejected as "a boring
 PowerPoint". What fixed it: full-screen real media, cuts every ~3 s, real event reels (Instagram via yt-dlp), agency photo

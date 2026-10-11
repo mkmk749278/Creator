@@ -23,10 +23,10 @@ window.SCENE = {
    "write": "Card bills unpaid 3 months to 1 year",
    "x": 220,
    "y": 300,
-   "at": 2.2,
+   "at": 0.7,
    "size": 45,
    "color": "black",
-   "dur": 3.0
+   "dur": 3.2
   },
   {
    "bar": [

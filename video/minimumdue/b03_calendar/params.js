@@ -22,9 +22,9 @@ window.SCENE = {
   {
    "line": [
     220,
-    560,
+    500,
     1720,
-    560
+    500
    ],
    "at": 0.3,
    "dur": 0.6,
@@ -33,7 +33,7 @@ window.SCENE = {
   {
    "write": "Oct 5",
    "x": 152,
-   "y": 650,
+   "y": 590,
    "at": 0.7,
    "dur": 0.5,
    "size": 56,
@@ -42,7 +42,7 @@ window.SCENE = {
   {
    "write": "Oct 25",
    "x": 781,
-   "y": 650,
+   "y": 590,
    "at": 1.5,
    "dur": 0.6,
    "size": 56,
@@ -51,7 +51,7 @@ window.SCENE = {
   {
    "write": "BILL ₹30,000",
    "x": 426,
-   "y": 470,
+   "y": 410,
    "at": 2.2,
    "dur": 1.4,
    "size": 54,
@@ -60,7 +60,7 @@ window.SCENE = {
   {
    "write": "Nov 14",
    "x": 1439,
-   "y": 650,
+   "y": 590,
    "at": 3.8,
    "dur": 0.6,
    "size": 56,
@@ -69,7 +69,7 @@ window.SCENE = {
   {
    "write": "LAST DATE",
    "x": 1261,
-   "y": 470,
+   "y": 410,
    "at": 4.6,
    "dur": 1.0,
    "size": 46,
@@ -78,9 +78,9 @@ window.SCENE = {
   {
    "line": [
     300,
-    760,
+    690,
     1600,
-    760
+    690
    ],
    "at": 6.98,
    "dur": 1.0,
@@ -90,7 +90,7 @@ window.SCENE = {
   {
    "write": "Phone: 40 days interest free",
    "x": 260,
-   "y": 870,
+   "y": 800,
    "at": 7.98,
    "size": 55,
    "color": "green",
@@ -99,7 +99,7 @@ window.SCENE = {
   {
    "write": "Groceries: 25 days",
    "x": 260,
-   "y": 970,
+   "y": 900,
    "at": 10.08,
    "size": 60,
    "color": "green",
