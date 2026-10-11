@@ -1,0 +1,372 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 3.344,
+  "te": "A message comes on your phone. Your credit card bill is ready.",
+  "en": "మీ ఫోన్కి ఒక మెసేజ్ వస్తుంది. మీ క్రెడిట్ కార్డ్ స్టేట్మెంట్ రెడీ.",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.25,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 3.863,
+  "end": 10.428,
+  "te": "It shows two numbers. Total amount due, thirty thousand rupees. Minimum amount due, only fifteen hundred.",
+  "en": "టూ నంబర్స్. టోటల్ అమౌంట్ డ్యూ, థర్టీ థౌసండ్. మినిమమ్ అమౌంట్ డ్యూ, జస్ట్ వన్ థౌసండ్ ఫైవ్ హండ్రెడ్.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.093,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 11.055,
+  "end": 21.715,
+  "te": "Salary has not come yet. So you think, I will pay only the minimum, right? No late fee. CIBIL score is safe. Many people think like this.",
+  "en": "సాలరీ ఇంకా రాలేదు. మినిమమ్ పే చేస్తే చాలు కదా? లేట్ ఫీ ఉండదు, సిబిల్ సేఫ్. చాలామంది ఇలానే థింక్ చేస్తారు.",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.093,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 22.368,
+  "end": 26.282,
+  "te": "But this is the real trap. ICICI Bank has put one example on its own website. Look.",
+  "en": "కానీ ఇదే రియల్ ట్రాప్. ఐసీఐసీఐ బ్యాంక్ తన వెబ్సైట్లోనే ఒక ఎగ్జాంపుల్ పెట్టింది, చూడండి.",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.117,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 26.915,
+  "end": 36.327,
+  "te": "One customer's bill was sixty nine thousand, six hundred and eighty eight rupees. On the last date, the customer paid sixty five thousand. That is almost the full bill.",
+  "en": "ఒక కస్టమర్ బిల్ సిక్స్టీ నైన్ థౌసండ్ సిక్స్ హండ్రెడ్ ఎయిటీ ఎయిట్. ఆ కస్టమర్ డ్యూ డేట్ రోజే సిక్స్టీ ఫైవ్ థౌసండ్ పే చేశారు. అంటే ఆల్మోస్ట్ ఫుల్ బిల్.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.108,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 36.791,
+  "end": 43.048,
+  "te": "But in the next bill, the bank added four thousand, three hundred and seventeen rupees for interest and GST.",
+  "en": "అయినా నెక్స్ట్ స్టేట్మెంట్లో ఇంట్రెస్ట్, జీఎస్టీ కలిపి, ఫోర్ థౌసండ్ త్రీ హండ్రెడ్ సెవెంటీన్ రూపీస్ ఛార్జ్ అయింది.",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.108,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 43.471,
+  "end": 49.071,
+  "te": "Only four thousand, six hundred and eighty eight was not paid. But the interest was almost the same. How?",
+  "en": "పెండింగ్ ఉన్నది ఫోర్ థౌసండ్ సిక్స్ హండ్రెడ్ ఎయిటీ ఎయిట్ మాత్రమే. ఇంట్రెస్ట్ ఆల్మోస్ట్ అంతే పడింది. ఎలా?",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.111,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 49.578,
+  "end": 56.188,
+  "te": "By the end of this video, you will understand the full maths behind that small number. In very simple words.",
+  "en": "ఈ వీడియో ఎండ్ అయ్యేసరికి, ఆ స్మాల్ నంబర్ వెనక ఉన్న ఫుల్ కాలిక్యులేషన్ మీకు సింపుల్గా అర్థమవుతుంది.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.111,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 56.6,
+  "end": 59.27,
+  "te": "Hello friends, welcome to Be Practical with Kishore.",
+  "en": "నమస్తే అండి. బీ ప్రాక్టికల్ విత్ కిషోర్కి వెల్కమ్.",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.207,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 59.767,
+  "end": 64.722,
+  "te": "First, the two numbers. Total amount due means the full money you have to pay the bank.",
+  "en": "ఫస్ట్ ఆ టూ నంబర్స్. టోటల్ అమౌంట్ డ్యూ అంటే, మీరు బ్యాంక్కి పే చేయాల్సిన ఫుల్ అమౌంట్.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.13,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 65.062,
+  "end": 73.128,
+  "te": "Minimum amount due is the small part you must pay to not be late. Most banks keep it near five percent of your bill, plus fees and GST.",
+  "en": "మినిమమ్ అమౌంట్ డ్యూ అంటే, ఓవర్డ్యూ కాకుండా ఉండాలంటే కనీసం పే చేయాల్సిన స్మాల్ పార్ట్. నార్మల్గా ఔట్స్టాండింగ్లో ఫైవ్ పర్సెంట్ చుట్టూ, ప్లస్ ఫీజులు, జీఎస్టీ లాంటివి.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.13,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 73.486,
+  "end": 77.135,
+  "te": "So for a thirty thousand bill, the minimum is about fifteen hundred.",
+  "en": "సో థర్టీ థౌసండ్ బిల్కి, మినిమమ్ దాదాపు వన్ థౌసండ్ ఫైవ్ హండ్రెడ్.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.162,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 77.574,
+  "end": 83.36,
+  "te": "Paying the minimum does two good things. No late fee. And the bank will not report you as late to CIBIL.",
+  "en": "మినిమమ్ పే చేస్తే టూ బెనిఫిట్స్ ఉన్నాయి. లేట్ ఫీ పడదు. సిబిల్కి పాస్ట్ డ్యూ అని రిపోర్ట్ వెళ్ళదు.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.153,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 83.796,
+  "end": 88.242,
+  "te": "But it does not stop interest. And you lose your interest free period.",
+  "en": "కానీ ఇంట్రెస్ట్ని మాత్రం స్టాప్ చేయదు. ఫ్రీ పీరియడ్ని కూడా సేవ్ చేయదు.",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.092,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 88.61,
+  "end": 95.086,
+  "te": "So remember this. The minimum amount is not a safety net... it is a switch that starts the interest meter.",
+  "en": "సో రిమెంబర్ చేసుకోండి. మినిమమ్ అమౌంట్ డ్యూ సేఫ్టీ నెట్ కాదు... అది ఇంట్రెస్ట్ మీటర్ని ఆన్ చేసే స్విచ్.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.092,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 95.469,
+  "end": 107.21,
+  "te": "From the day you use your card till the last date to pay, the bank does not charge any interest. This time is called the interest free period. It simply means, for these days, you pay zero interest.",
+  "en": "కార్డ్ స్వైప్ చేసిన డే నుంచి డ్యూ డేట్ వరకు, బ్యాంక్ ఇంట్రెస్ట్ ఛార్జ్ చేయదు. దీన్నే ఇంట్రెస్ట్ ఫ్రీ పీరియడ్ అంటారు.",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.179,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 107.624,
+  "end": 117.134,
+  "te": "Let's take an example. On October fifth, ten thousand for a phone. On the twelfth, fifteen thousand for a family function. On the twentieth, five thousand for groceries.",
+  "en": "ఒక ఎగ్జాంపుల్. అక్టోబర్ ఫిఫ్త్న ఫోన్ కోసం టెన్ థౌసండ్. ట్వెల్ఫ్త్న ఫంక్షన్ కోసం ఫిఫ్టీన్ థౌసండ్. ట్వెంటియత్న గ్రాసరీస్, ఫైవ్ థౌసండ్.",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 117.478,
+  "end": 123.492,
+  "te": "On October twenty fifth, the bill comes. Total, thirty thousand. Last date to pay, November fourteenth.",
+  "en": "అక్టోబర్ ట్వెంటీ ఫిఫ్త్న స్టేట్మెంట్ జనరేట్ అవుతుంది. టోటల్ థర్టీ థౌసండ్. డ్యూ డేట్, నవంబర్ ఫోర్టీన్త్.",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 123.963,
+  "end": 129.616,
+  "te": "So the phone money gets forty days interest free. The grocery money gets twenty five days interest free.",
+  "en": "అంటే ఫోన్ అమౌంట్కి ఫార్టీ డేస్, గ్రాసరీస్ అమౌంట్కి ట్వెంటీ ఫైవ్ డేస్, ఫ్రీ.",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.121,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 129.981,
+  "end": 131.445,
+  "te": "But there is one condition.",
+  "en": "కానీ దీనికి ఒక్క కండిషన్ ఉంది.",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.121,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 131.811,
+  "end": 138.093,
+  "te": "You must pay the full bill before the last date. Even one rupee less, and the interest free period is gone.",
+  "en": "డ్యూ డేట్ లోపల టోటల్ అమౌంట్ ఫుల్గా పే చేయాలి. ఒక్క రూపీ తక్కువైనా, ఆ ఫ్రీ పీరియడ్ పోతుంది.",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.299,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 138.493,
+  "end": 144.563,
+  "te": "This is in the RBI rules. If you do not pay the full bill, the bank can charge interest from the day you spent.",
+  "en": "ఇది ఆర్బీఐ రూల్స్లోనే ఉంది. ఫుల్గా పే చేయకపోతే, ట్రాన్సాక్షన్ డేట్ నుంచే ఇంట్రెస్ట్ ఛార్జ్ చేయొచ్చు.",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.299,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 145.012,
+  "end": 150.753,
+  "te": "On November fourteenth, you paid only the minimum, fifteen hundred. Now let's see what the bank does.",
+  "en": "నవంబర్ ఫోర్టీన్త్న మీరు మినిమమ్ వన్ థౌసండ్ ఫైవ్ హండ్రెడ్ పే చేశారు. ఇప్పుడు బ్యాంక్ ఏం చేస్తుందో చూద్దాం.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.133,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 151.142,
+  "end": 157.268,
+  "te": "Rule number one. Interest does not start from the last date. It starts from the day you spent the money.",
+  "en": "రూల్ నంబర్ వన్. ఇంట్రెస్ట్ డ్యూ డేట్ నుంచి కాదు. మీరు స్పెండ్ చేసిన డే నుంచి స్టార్ట్ అవుతుంది.",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.133,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 157.74,
+  "end": 166.771,
+  "te": "On the ten thousand for the phone, interest from October fifth. On the fifteen thousand, from October twelfth. On the five thousand, from October twentieth.",
+  "en": "ఫోన్ కోసం స్పెండ్ చేసిన టెన్ థౌసండ్ మీద, అక్టోబర్ ఫిఫ్త్ నుంచి ఇంట్రెస్ట్. ఫిఫ్టీన్ థౌసండ్ మీద, అక్టోబర్ ట్వెల్ఫ్త్ నుంచి. ఫైవ్ థౌసండ్ మీద, అక్టోబర్ ట్వెంటియత్ నుంచి.",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.091,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 167.359,
+  "end": 175.533,
+  "te": "How much interest? In banks like ICICI, three point seven five percent every month. That is forty five percent in a year.",
+  "en": "రేట్, ఐసీఐసీఐ లాంటి బ్యాంక్స్లో మంత్కి త్రీ పాయింట్ సెవెన్ ఫైవ్ పర్సెంట్. అంటే ఇయర్కి ఫార్టీ ఫైవ్ పర్సెంట్.",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.091,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 175.988,
+  "end": 180.177,
+  "te": "Rule number two. You pay interest even on the money you already paid.",
+  "en": "రూల్ నంబర్ టూ. మీరు పే చేసిన అమౌంట్ మీద కూడా ఇంట్రెస్ట్ పడుతుంది.",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.155,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 180.63,
+  "end": 188.035,
+  "te": "Till November fourteenth, interest on the full thirty thousand. Only after that, on the balance of twenty eight thousand five hundred.",
+  "en": "నవంబర్ ఫోర్టీన్త్ వరకు ఫుల్ థర్టీ థౌసండ్ మీద ఇంట్రెస్ట్. ఆ తర్వాతే రిమైనింగ్ ట్వెంటీ ఎయిట్ థౌసండ్ ఫైవ్ హండ్రెడ్ మీద.",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.118,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 188.399,
+  "end": 192.47,
+  "te": "Rule number three. On top of the interest, eighteen percent GST.",
+  "en": "రూల్ నంబర్ త్రీ. ఆ ఇంట్రెస్ట్ మీద జీఎస్టీ, ఎయిటీన్ పర్సెంట్.",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.118,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 192.935,
+  "end": 195.382,
+  "te": "On November twenty fifth, the next bill comes.",
+  "en": "నవంబర్ ట్వెంటీ ఫిఫ్త్న నెక్స్ట్ స్టేట్మెంట్ వస్తుంది.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.25,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 195.742,
+  "end": 201.977,
+  "te": "You paid fifteen hundred. The bank added interest and GST of one thousand, nine hundred and eighty one.",
+  "en": "మీరు పే చేసింది వన్ థౌసండ్ ఫైవ్ హండ్రెడ్. బ్యాంక్ ఛార్జ్ చేసిన ఇంట్రెస్ట్ ప్లస్ జీఎస్టీ, వన్ థౌసండ్ నైన్ హండ్రెడ్ ఎయిటీ వన్.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.25,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 202.356,
+  "end": 212.519,
+  "te": "So without spending even one new rupee, your bill went up from thirty thousand to thirty thousand, four hundred and eighty one. You paid money, and still your loan went up.",
+  "en": "అంటే ఒక్క న్యూ రూపీ స్పెండ్ చేయకపోయినా, మీ బ్యాలెన్స్ థర్టీ థౌసండ్ నుంచి థర్టీ థౌసండ్ ఫోర్ హండ్రెడ్ ఎయిటీ వన్కి పెరిగింది. పే చేసిన తర్వాత కూడా డెట్ పెరిగింది.",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.118,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 212.843,
+  "end": 217.982,
+  "te": "This is our own maths. But we used the same method ICICI shows on its website.",
+  "en": "ఇది మా కాలిక్యులేషన్. కానీ మెథడ్, ఐసీఐసీఐ తన వెబ్సైట్లో చూపించిందే.",
+  "speech_vs_text": 1.25,
+  "boundary_margin": 0.118,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 218.44,
+  "end": 231.343,
+  "te": "The same thing happened to the ICICI customer we saw at the start. Interest on the full bill till the day of payment. Then no interest free period for new shopping. That is how it became four thousand, three hundred and seventeen.",
+  "en": "స్టార్టింగ్లో చూసిన ఐసీఐసీఐ కస్టమర్కి కూడా ఇదే జరిగింది. పేమెంట్ డే వరకు ఫుల్ బిల్ మీద ఇంట్రెస్ట్, తర్వాత న్యూ పర్చేజెస్కి ఫ్రీ డేస్ లేవు. అందుకే ఫోర్ థౌసండ్ త్రీ హండ్రెడ్ సెవెంటీన్.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.147,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 231.812,
+  "end": 238.704,
+  "te": "Rule number four. Say on November fifteenth, you fill petrol with the same card. Will you get an interest free period for that?",
+  "en": "రూల్ నంబర్ ఫోర్. నవంబర్ ఫిఫ్టీన్త్న అదే కార్డ్తో పెట్రోల్ కొట్టించారు అనుకోండి. దానికి ఫ్రీ పీరియడ్ వస్తుందా?",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.009,
+  "confidence": "check"
+ },
+ {
+  "line": 36,
+  "start": 239.121,
+  "end": 244.672,
+  "te": "No. Till the old bill is fully paid, every new swipe gets interest from that same day.",
+  "en": "రాదు. ఓల్డ్ బ్యాలెన్స్ ఫుల్గా క్లియర్ అయ్యే వరకు, ప్రతి న్యూ స్వైప్ మీద, స్వైప్ చేసిన డే నుంచే ఇంట్రెస్ట్.",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.009,
+  "confidence": "check"
+ },
+ {
+  "line": 37,
+  "start": 244.965,
+  "end": 252.675,
+  "te": "So from the day you paid only the minimum, your card is not free any more. It has become a loan at forty five percent interest.",
+  "en": "అంటే మినిమమ్ పే చేసిన ఆ డే నుంచి, మీ కార్డ్ ఫ్రీ కార్డ్ కాదు. అది ఫార్టీ ఫైవ్ పర్సెంట్ ఇంట్రెస్ట్ ఉన్న లోన్గా మారిపోయింది.",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.328,
+  "confidence": "high"
+ }
+]

@@ -290,6 +290,21 @@ India while the topics stay India-first. Rules:
   column an optional Telugu dub; `tools/build_script.py` lints English VO (`lint_en`) and builds the blocks from it.
 - On-screen text, citation tags and the description were already English; nothing changes there.
 
+### 4a-3. Visual modes for explainers (owner, 2026-10-11)
+*Why (owner):* "not only slides": viewers stay to the end when they see real life, watch the maths being worked out and
+follow a character. Every explainer mixes, in this order of preference:
+1. **REAL**: real footage of what the VO names (stock via the Pixabay API, Commons, credited news); a real cutaway inside
+   any other shot that runs past ~4 s.
+2. **BOARD**: every calculation is worked out live on a whiteboard in marker (hand-drawn SVG strokes revealed by
+   stroke-dashoffset, a handwriting font, underlines, circles, a duster wipe), like a teacher explaining; never a static
+   table.
+3. **TOON**: a recurring animated character (hand-authored flat vector, GSAP; never AI images, never a real person)
+   acts out every action the VO says (gets the bill, pays, swipes, worries, ages, escapes). The character is the
+   thread that carries viewers to the end.
+4. **PROOF**: credited screen recordings of the real source page (bank, RBI, court, news) under a magnifier.
+5. **SIM**: labelled phone/bill simulations only where the viewer needs to see a screen.
+Plan these per line in `visual-plan.md` (time from `align/`), before sourcing and scene work.
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
