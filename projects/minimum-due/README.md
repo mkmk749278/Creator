@@ -13,7 +13,7 @@ ElevenLabs (Bunty, `eleven_v4`). Planned as part 1 of a credit-card series; part
 minimum".
 
 **Status (2026-10-11):** phase 1. **Script v2 (short):** the owner asked for shorter and simpler without losing the
-concept. 69 lines, ≈8:15 of speech, two Bunty blocks (≈3,750 / ≈3,450 characters; below the 4,000 target because the
+concept. 69 lines, ≈8:50 of speech, heavy Tenglish pass (owner, 2026-10-11), two Bunty blocks (3,943 / 3,786 characters; below the 4,000 target because the
 film is short, well under the 5,000 cap). Cut: scale/complaint/MoSPI data, court history detail, rotation detail, KFS
 and CMS steps, month-2 MAD numbers, the "one rupee short" aside. Kept: ICICI hook, the two numbers, free period and its
 condition, the four rules, ₹1,500 vs ₹1,981 reveal, 1- and 5-year cost, five practical steps. Line ids keep their v1
