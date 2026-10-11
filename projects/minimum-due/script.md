@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **8:15** of speech (7,207 characters, 2 Bunty blocks), plus pauses and music beats.
+Estimated length: **8:16** of speech (7,224 characters, 2 Bunty blocks), plus pauses and music beats.
 
 ## 1 Cold open
 
@@ -372,8 +372,8 @@ _But the debt doesn't drop by a single rupee. Only the due date moves to next mo
 🔤 DEBT: SAME · DUE DATE: +1 MONTH · + FEES
 
 **M078** · block 2  
-**పైగా ట్వెంటీ ట్వెంటీ ఫైవ్లో ఆర్బీఐ కొత్త రూల్స్ తర్వాత, ఫోన్పే, పేటీఎం, క్రెడ్ లాంటి యాప్స్ క్రెడిట్ కార్డ్ రెంట్ ఆప్షన్ని తీసేశాయి.**  
-_And after new RBI rules in 2025, apps like PhonePe, Paytm and CRED removed the credit-card rent option._  
+**ఇంకో విషయం. ట్వెంటీ ట్వెంటీ ఫైవ్లో ఆర్బీఐ కొత్త రూల్స్ తర్వాత, ఫోన్పే, పేటీఎం, క్రెడ్ లాంటి యాప్స్ క్రెడిట్ కార్డ్ రెంట్ ఆప్షన్ని తీసేశాయి.**  
+_One more thing. After new RBI rules in 2025, apps like PhonePe, Paytm and CRED removed the credit-card rent option._  
 🎬 Credited news headlines (Business Standard, MediaNama, Sep 2025) slide in as a moving collage.  
 🔤 RBI PA DIRECTIONS · 15 SEP 2025 [BUSINESS STANDARD · MEDIANAMA | SEP 2025]  
 🔊 Paper slides
@@ -468,8 +468,8 @@ _Remember three numbers. Forty-five percent interest. Eighteen percent GST on to
 ⏱ One stamp per number
 
 **M097** · block 2  
-**అది ఎమర్జెన్సీ బ్రేక్ లాంటిది. రోజూ వెళ్ళే దారి కాదు.**  
-_It's like an emergency brake. Not a road you take every day._  
+**మినిమమ్ అనేది ఎమర్జెన్సీ బ్రేక్ లాంటిది. రోజూ వెళ్ళే దారి కాదు.**  
+_The minimum is like an emergency brake. Not a road you take every day._  
 🎬 Real B-roll: a hand pulling a vehicle handbrake (stock), then an open road at sunrise.  
 🔊 Music lifts
 
