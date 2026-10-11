@@ -74,6 +74,11 @@ for (const project of projects) {
       }
     }
   }
+  // Whiteboard engine (video/lib/whiteboard): pen fonts, runtime and styles for pages that reference vendor/wb/.
+  if (html.includes("vendor/wb/")) {
+    mkdirSync(join(out, "wb"), { recursive: true });
+    for (const f of ["wb.js", "wb-fonts.js", "wb.css"]) copyFileSync(join(root, "video/lib/whiteboard", f), join(out, "wb", f));
+  }
   // Seeded organic motion: createNoise3D(seededRandom).
   if (html.includes("vendor/noise/")) {
     mkdirSync(join(out, "noise"), { recursive: true });

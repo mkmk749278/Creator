@@ -295,9 +295,10 @@ India while the topics stay India-first. Rules:
 follow a character. Every explainer mixes, in this order of preference:
 1. **REAL**: real footage of what the VO names (stock via the Pixabay API, Commons, credited news); a real cutaway inside
    any other shot that runs past ~4 s.
-2. **BOARD**: every calculation is worked out live on a whiteboard in marker (hand-drawn SVG strokes revealed by
-   stroke-dashoffset, a handwriting font, underlines, circles, a duster wipe), like a teacher explaining; never a static
-   table.
+2. **BOARD**: every calculation is worked out live on a whiteboard in marker, like a teacher explaining; never a static
+   table. Use the reusable engine **`video/lib/whiteboard`** (README): real handwriting from single-line pen fonts,
+   written stroke by stroke with the nib on the ink, shapes, duster, `params.js` per shot. *Why:* the first sample
+   wiped a font left to right with a gliding marker; the owner saw it was not writing ("outdated").
 3. ~~TOON~~ **No animated character** (owner, 2026-10-11, after a first test: "cancel character, use any clip that
    syncs to the situation"). Every action the VO says is a real clip (Pixabay API, Coverr, Commons, owner footage).
 4. **PROOF**: credited screen recordings of the real source page (bank, RBI, court, news) under a magnifier.

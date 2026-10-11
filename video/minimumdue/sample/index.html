@@ -3,119 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>Minimum Amount Due: style sample (whiteboard between real clips)</title>
+    <title>Whiteboard: marker handwriting scene</title>
     <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/wb/wb-fonts.js"></script>
+    <script src="vendor/wb/wb.js"></script>
+    <script src="params.js"></script>
+    <link rel="stylesheet" href="vendor/wb/wb.css" />
     <style>
       @font-face { font-family: "Inter"; font-weight: 700; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-      @font-face { font-family: "Kalam"; font-weight: 700; src: url("vendor/fonts/kalam-latin-700-normal.woff2") format("woff2"); }
-      @font-face { font-family: "Kalam"; font-weight: 700; src: url("vendor/fonts/kalam-devanagari-700-normal.woff2") format("woff2"); unicode-range: U+20B9; }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body { background: #111; }
-      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #111; font-family: Inter, Arial, sans-serif; }
-      .layer { position: absolute; inset: 0; }
-
-      /* whiteboard */
-      #board { background: #20262e; }
-      #bcam { position: absolute; inset: 0; transform-origin: 50% 50%; }
-      #surface { position: absolute; left: 70px; top: 50px; width: 1780px; height: 960px; border-radius: 14px;
-        background: linear-gradient(115deg, #fbfbf8 0%, #f1f2ee 38%, #ffffff 46%, #eef0ec 62%, #f7f7f3 100%);
-        box-shadow: 0 0 0 16px #b9bec5, 0 0 0 20px #8a9099, 0 30px 60px rgba(0,0,0,.45); }
-      #ghost { position: absolute; left: 160px; top: 640px; font: 700 70px Kalam; color: rgba(40,60,90,.06); transform: rotate(-3deg); }
-      .hand { position: absolute; font-family: Kalam, Inter, Arial; font-weight: 700; white-space: nowrap; line-height: 1; }
-      .hand span { display: inline-block; }
-      #ink { position: absolute; inset: 0; overflow: visible; }
-      #pen { position: absolute; left: 0; top: 0; width: 260px; height: 60px; transform-origin: 0 50%; }
-      .tag { position: absolute; right: 120px; bottom: 90px; font: 700 22px Inter, Arial; letter-spacing: .08em; color: #5b6573; background: rgba(255,255,255,.7); padding: 6px 12px; border-radius: 6px; }
-
-      /* atmosphere */
-      #grain { position: absolute; inset: -40px; width: 2000px; height: 1160px; opacity: .07; mix-blend-mode: multiply; }
-      .vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,.42) 100%); pointer-events: none; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #262c35; }
+      #grain { position: absolute; inset: -40px; width: 2000px; height: 1160px; opacity: .06; mix-blend-mode: multiply; pointer-events: none; }
+      .vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 58%, rgba(0,0,0,.38) 100%); pointer-events: none; }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="md-sample" data-start="0" data-width="1920" data-height="1080" data-duration="20">
-
-      <!-- whiteboard (real clips are composited over it in ffmpeg at 0-3.0, 9.6-12.0, 17.0-20) -->
-      <div class="layer" id="board">
-        <div id="bcam">
-          <div id="surface"></div>
-          <div class="hand" id="t1" style="left:260px; top:210px; font-size:120px; color:#1f8a52">You paid&nbsp;&nbsp;₹1,500</div>
-          <div class="hand" id="t2" style="left:260px; top:420px; font-size:120px; color:#c8102e">Bank added&nbsp;&nbsp;₹1,981</div>
-          <div class="hand" id="t3" style="left:300px; top:230px; font-size:150px; color:#1b2a41">₹30,000</div>
-          <div class="hand" id="t4" style="left:1060px; top:430px; font-size:150px; color:#c8102e">₹30,481</div>
-          
-          <svg id="ink" viewBox="0 0 1920 1080">
-            <path id="circ" d="M1040 470 C 1100 380, 1530 380, 1590 470 C 1640 560, 1180 600, 1060 540 C 1010 515, 1020 470, 1070 452" fill="none" stroke="#c8102e" stroke-width="9" stroke-linecap="round"/>
-            <path id="u1" d="M260 360 Q600 372 940 356" fill="none" stroke="#1f8a52" stroke-width="8" stroke-linecap="round"/>
-            <path id="arrow" d="M760 360 C 860 420, 930 470, 1020 500" fill="none" stroke="#c8102e" stroke-width="12" stroke-linecap="round"/>
-            <path id="head1" d="M985 455 L1030 505 L968 520" fill="none" stroke="#c8102e" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-            <path id="u2" d="M1060 620 Q1350 632 1640 612" fill="none" stroke="#c8102e" stroke-width="10" stroke-linecap="round"/>
-          </svg>
-          <svg id="pen" viewBox="0 0 260 60">
-            <path d="M0 30 L34 18 L34 42 Z" fill="#20262e"/>
-            <rect x="34" y="14" width="40" height="32" rx="4" fill="#ffffff" stroke="#9aa1aa" stroke-width="2"/>
-            <rect x="74" y="12" width="170" height="36" rx="12" fill="#c8102e" id="penBody"/>
-            <rect x="96" y="16" width="120" height="8" rx="4" fill="rgba(255,255,255,.35)"/>
-          </svg>
-        </div>
-        <div class="tag" id="tag">OUR CALCULATION · ICICI METHOD, 45% P.A.</div>
-      </div>
-
+    <div id="root" data-composition-id="whiteboard" data-start="0" data-width="1920" data-height="1080" data-duration="20">
+      <div id="stage"></div>
+      <div class="wb-tag" id="tag"></div>
       <canvas id="grain" width="500" height="290"></canvas>
       <div class="vig"></div>
     </div>
-
     <script>
-      const D = 20, tl = gsap.timeline({ paused: true });
-      const $ = (s) => document.querySelector(s);
-      // seeded film grain, shifted per frame from time only
-      (() => { const c = $("#grain"), x = c.getContext("2d"); let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+      const S = window.SCENE, D = S.duration, tl = gsap.timeline({ paused: true });
+      document.getElementById("root").dataset.duration = D;
+      const tag = document.getElementById("tag");
+      if (S.tag) tag.textContent = S.tag; else tag.remove();
+      // film grain: seeded, shifted from time only
+      (() => { const c = document.getElementById("grain"), x = c.getContext("2d"); let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
         const im = x.createImageData(500, 290); for (let i = 0; i < im.data.length; i += 4) { const v = 90 + r() * 165; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; }
         x.putImageData(im, 0, 0); })();
-      const gp = { t: 0 };
-      tl.to(gp, { t: D, duration: D, ease: "none", onUpdate: () => { const f = Math.floor(gp.t * 24) % 7; $("#grain").style.transform = `translate(${(f * 13) % 40 - 20}px, ${(f * 7) % 30 - 15}px) scale(4)`; } }, 0);
-
-      // REAL clips cover 0-3.0, 9.6-12.0 and 17.0-20 (composited in ffmpeg); the board runs underneath.
-      // ---- marker writing helper: wipe each line left to right with the pen riding the edge ----
-      function write(sel, at, dur, color) {
-        const el = $(sel), w = el.offsetWidth, h = el.offsetHeight, x0 = el.offsetLeft, y0 = el.offsetTop;
-        gsap.set(el, { clipPath: "inset(-20% 100% -20% 0)" });
-        tl.to(el, { clipPath: "inset(-20% 0% -20% 0)", duration: dur, ease: "none" }, at);
-        tl.set("#penBody", { attr: { fill: color } }, at);
-        tl.fromTo("#pen", { x: x0, y: y0 + h * 0.62, rotation: -32, autoAlpha: 1 }, { x: x0 + w, autoAlpha: 1, duration: dur, ease: "none", immediateRender: false }, at);
-        // small up-down wobble so the pen looks hand-held
-        tl.to("#pen", { y: "+=14", duration: dur / 6, ease: "sine.inOut", yoyo: true, repeat: 5 }, at);
+      const clock = { t: 0 };
+      tl.to(clock, { t: D, duration: D, ease: "none" }, 0);   // the timeline spans the whole scene
+      // camera keys
+      const stage = document.getElementById("stage"), cam = S.camera || [{ at: 0, scale: 1, x: 0, y: 0 }];
+      gsap.set(stage, { scale: cam[0].scale, x: cam[0].x, y: cam[0].y });
+      for (let i = 1; i < cam.length; i++) tl.to(stage, { scale: cam[i].scale, x: cam[i].x, y: cam[i].y, duration: cam[i].at - cam[i - 1].at, ease: "sine.inOut" }, cam[i - 1].at);
+      // board and steps
+      const b = WB.board(stage, { seed: S.seed || 1 });
+      for (const st of S.steps) {
+        const op = Object.assign({ font: S.font }, st);
+        if (st.write != null) b.write(st.write, op);
+        else if (st.underline === "last") b.underlineLast(op);
+        else if (st.circle === "last") b.circleLast(op);
+        else if (st.strike === "last") b.strikeLast(op);
+        else if (st.box === "last") b.boxLast(op);
+        else if (st.underline) b.underline(...st.underline, op);
+        else if (st.strike) b.strike(...st.strike, op);
+        else if (st.circle) b.circle(...st.circle, op);
+        else if (st.arrow) b.arrow(...st.arrow, op);
+        else if (st.box) b.box(...st.box, op);
+        else if (st.tick) b.tick(...st.tick, op);
+        else if (st.cross) b.cross(...st.cross, op);
+        else if (st.bar) b.bar(...st.bar, op);
+        else if (st.line) b.line(st.line, op);
+        else if (st.erase) b.erase(op);
       }
-      function draw(sel, at, dur) {
-        const p = $(sel), L = p.getTotalLength();
-        gsap.set(p, { strokeDasharray: L, strokeDashoffset: L, opacity: 0 });
-        tl.set(p, { opacity: 1 }, at);
-        tl.to(p, { strokeDashoffset: 0, duration: dur, ease: "power1.inOut" }, at);
-      }
-      gsap.set("#pen", { autoAlpha: 0 }); tl.set("#pen", { autoAlpha: 0, x: 0, y: 0 }, 0); tl.set("#bcam", { scale: 1, x: 0 }, 0);
-      gsap.set(["#t3", "#t4", "#t5", "#arrow", "#head1", "#u2"], { autoAlpha: 0 });
-      tl.fromTo("#bcam", { scale: 1.0 }, { scale: 1.05, duration: 6.6, ease: "sine.inOut" }, 3.0);
-
-      // ---- B: "You paid 1,500" (VO 3.1-5.2) / "bank added 1,981" (VO 6.4-9.4) ----
-      write("#t1", 3.3, 1.5, "#1f8a52");
-      draw("#u1", 4.9, 0.45);
-      write("#t2", 6.3, 1.9, "#c8102e");
-      draw("#circ", 8.4, 0.9);
-      tl.to("#pen", { x: "+=220", y: "+=160", rotation: -10, autoAlpha: 0, duration: 0.5, ease: "power2.in" }, 9.2);
-
-      // ---- D: 30,000 -> 30,481 (VO 12.0-16.6), then the line (16.6-17) ----
-      tl.set(["#t1", "#t2", "#u1", "#circ"], { autoAlpha: 0 }, 12.0).set(["#t3", "#t4", "#t5"], { autoAlpha: 1 }, 12.0).set(["#arrow", "#head1", "#u2"], { visibility: "visible" }, 12.0);
-      tl.fromTo("#bcam", { scale: 1.05, x: 0 }, { scale: 1.08, x: -30, duration: 5.0, ease: "sine.inOut", immediateRender: false }, 12.0);
-      write("#t3", 12.1, 1.3, "#1b2a41");
-      draw("#arrow", 13.5, 0.7); draw("#head1", 14.15, 0.25);
-      write("#t4", 14.4, 1.4, "#c8102e");
-      draw("#u2", 15.8, 0.4);
-
-      tl.to("#pen", { autoAlpha: 0, duration: 0.2 }, 16.95);
-
-
+      const grain = document.getElementById("grain");
+      b.attach(tl);
+      const prev = tl.eventCallback("onUpdate");
+      tl.eventCallback("onUpdate", function () { prev.apply(this, arguments); const f = Math.floor(tl.time() * 24) % 7; grain.style.transform = `translate(${(f * 13) % 40 - 20}px, ${(f * 7) % 30 - 15}px) scale(4)`; });
       window.__timelines = window.__timelines || {};
-      window.__timelines["md-sample"] = tl;
+      window.__timelines["whiteboard"] = tl;
     </script>
   </body>
 </html>
