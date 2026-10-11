@@ -265,6 +265,20 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
    The script-craft results are in §4b. (Gofile folders download from the cloud with headless Chromium: the API needs a
    website token that only the page's own script produces.)
 
+### 4a-2. English narration by default (owner, 2026-10-11)
+*Why:* the owner found Telugu-only films get low reach and fewer views; simple English widens the audience to all of
+India while the topics stay India-first. Rules:
+- **Simple Indian English**, not "international" English: words a school-educated Indian uses every day (pay, spend, bill,
+  money, salary, loan, interest, due date), lakh and crore, rupees; no idioms, no rare words, no American slang. One idea
+  per sentence, mostly 6–14 words. Same persona and craft as §4b (elder brother, talk don't read, ask then answer, `...`
+  before a reveal, `?` on questions, a mid-film relevance turn).
+- **TTS text:** numbers and amounts as words ("thirty thousand rupees", "twenty twenty five"), acronyms as normal capitals
+  (RBI, GST, EMI, CIBIL, UPI); no digits, `₹`, `!`, double quotes, dashes, brackets or `&`. Voice Bunty on `eleven_v4`
+  with `language_code: "en"` (check the first block for accent and pace before generating the rest).
+- **Files:** `lang.txt` = `en` in the project folder makes the `en` column of `script.full.tsv` the VO and the `te`
+  column an optional Telugu dub; `tools/build_script.py` lints English VO (`lint_en`) and builds the blocks from it.
+- On-screen text, citation tags and the description were already English; nothing changes there.
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.

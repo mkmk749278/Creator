@@ -62,6 +62,31 @@ def lint(row):
     return errs
 
 
+EN_QWORDS = ("right", "how", "why", "what", "who", "when", "where", "which")
+
+
+def lint_en(row):
+    """English VO (owner, 2026-10-11: English by default, simple words every Indian understands): no ! double quotes
+    dashes or brackets; `?` on real questions; amounts and numbers as words (no digits or ₹, so TTS reads them the
+    Indian way); at most one `...` per sentence. The VO text sits in row["te"] after main() swaps the columns."""
+    t, errs = row["te"], []
+    bad = re.findall(r"[!\"“”‘’—–\[\]()₹0-9#&;/]", t)
+    if bad:
+        errs.append(f"characters not allowed in English VO {sorted(set(bad))}")
+    if re.search(r"\s-\s|--", t):
+        errs.append("dash in English VO")
+    for sent in re.split(r"(?<=[.?])\s+", t):
+        w = re.findall(r"[A-Za-z']+", sent.lower())
+        if sent.rstrip().endswith(".") and not sent.rstrip().endswith("...") and w and (w[0] in EN_QWORDS[1:] or w[-1] == "right"):
+            errs.append(f"question ends with a full stop: '{sent.strip()[-30:]}'")
+        if sent.count("...") > 1:
+            errs.append("more than one ... in a sentence")
+    tag = row.get("emotion", "").strip()
+    if tag and tag not in TAGS:
+        errs.append(f"unknown emotion tag {tag}")
+    return errs
+
+
 def spoken(r, tags=True):
     tag = r.get("emotion", "").strip()
     return f"{tag} {r['te']}" if tags and tag else r["te"]
@@ -119,10 +144,16 @@ def main():
     if len(sys.argv) > 1:  # optional: a folder holding its own script.full.tsv (e.g. v2/); outputs go there
         HERE = Path(sys.argv[1]).resolve()
     rows = list(csv.DictReader(open(HERE / "script.full.tsv", encoding="utf-8"), delimiter="\t"))
+    # VO language: `lang.txt` = en makes the `en` column the narration and `te` the optional Telugu dub (owner,
+    # 2026-10-11: English VO by default). The views then show the VO first and the other language in italics.
+    lang = (HERE / "lang.txt").read_text().strip() if (HERE / "lang.txt").exists() else "te"
+    if lang == "en":
+        for r in rows:
+            r["te"], r["en"] = r["en"], r["te"]
     global TITLE
     if (HERE / "title.txt").exists():
         TITLE = (HERE / "title.txt").read_text(encoding="utf-8").strip()
-    problems = [(r["id"], e) for r in rows for e in lint(r)]
+    problems = [(r["id"], e) for r in rows for e in (lint_en(r) if lang == "en" else lint(r))]
     for pid, e in problems:
         print(f"LINT {pid}: {e}")
     blocks = blocks_of(rows)
@@ -142,7 +173,7 @@ def main():
     tsecs = sum(secs(b) for b in blocks)
     with open(HERE / "bunty_blocks.md", "w", encoding="utf-8") as f:
         f.write(f"# Bunty blocks: {TITLE}\n\nPaste each block as one ElevenLabs generation (voice Bunty, `eleven_v4`, "
-                "`language_code: te`). The [square-bracket] words are emotion cues (audio tags), not spoken text. Test "
+                "`language_code` = the VO language). The [square-bracket] words are emotion cues (audio tags), not spoken text. Test "
                 "block 1 first: if Bunty reads a tag aloud, use `bunty_blocks_clean.md` instead. Listen to every take; if a "
                 "block skips, repeats or drifts, regenerate it, and send the files as `voice/block1.mp3`, "
                 "`voice/block2.mp3`, ….\n\n")

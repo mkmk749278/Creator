@@ -1,4 +1,4 @@
-# Minimum Amount Due: the trap behind the smallest number on your credit card bill (Telugu explainer)
+# Minimum Amount Due: the trap behind the smallest number on your credit card bill (English explainer, Telugu dub text)
 
 Telugu explainer for *Be Practical with Kishore* on the credit card **Minimum Amount Due (MAD)**: what MAD really protects
 (late fee, "past due" credit reporting) and what it doesn't (interest); the interest-free period and its one condition;
@@ -12,13 +12,11 @@ owner's brief and reference spec (2026-10-11; the spec was used as a reference o
 ElevenLabs (Bunty, `eleven_v4`). Planned as part 1 of a credit-card series; part 2 = "when you can't pay even the
 minimum".
 
-**Status (2026-10-11):** phase 1. **Script v2 (short):** the owner asked for shorter and simpler without losing the
-concept. 69 lines, ≈8:50 of speech, heavy Tenglish pass (owner, 2026-10-11), two Bunty blocks (3,943 / 3,786 characters; below the 4,000 target because the
-film is short, well under the 5,000 cap). Cut: scale/complaint/MoSPI data, court history detail, rotation detail, KFS
-and CMS steps, month-2 MAD numbers, the "one rupee short" aside. Kept: ICICI hook, the two numbers, free period and its
-condition, the four rules, ₹1,500 vs ₹1,981 reveal, 1- and 5-year cost, five practical steps. Line ids keep their v1
-numbers (gaps are the cut lines) so `claims.csv` still maps; v1.1 is in git history (commit 5cb5d6e). Fact-check gate
-passes (63 claims, light re-check: only reused confirmed facts). Next: owner records the two blocks.
+**Status (2026-10-11):** phase 1. **Script v3, English VO** (owner: English narration by default, simple Indian English;
+`lang.txt` = `en`). 69 lines, ≈9 min of speech, two Bunty blocks (4,090 / 3,710 characters), lint clean. The `te` column
+keeps the Telugu (heavy Tenglish) text as an optional dub. Fact-check gate passes (63 claims; v3 changed wording only, no
+new facts). Line ids keep their v1 numbers so `claims.csv` maps. Next: owner records the two English blocks
+(`voice/block1.mp3`, `voice/block2.mp3`).
 
 ## Genre and look (PLAYBOOK §5.3, own art direction)
 **Business & finance × society.** Art direction "**the bill on the desk**": a paper-and-ink world instead of the usual

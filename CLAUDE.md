@@ -98,6 +98,12 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   (చండాలం, కటిక చీకటి, caste names as adjectives); the mechanism is the villain, never the viewer; attribute contested
   figures. Hard gates beside the fact-check: synthetic-content disclosure, health context (WHO/ICMR + skeptic), SEBI
   education-only lane (no buy/sell calls, price data ≥ 30 days old, disclaimer), Press Council suicide norms.
+- **Narration language: English by default** (owner, 2026-10-11; *why:* Telugu-only films reach too few viewers).
+  Simple, everyday Indian English that any Indian understands: short sentences, common words (pay, spend, money, bill,
+  salary), lakh/crore and rupees, no hard "international" vocabulary or idioms; the same warm elder-brother, talk-don't-read
+  voice. Numbers and amounts as words (`thirty thousand rupees`), no digits, `₹`, `!`, double quotes, dashes or brackets in
+  VO text; `?` on every real question. Put `en` in the project's `lang.txt`: the `en` column is then the VO and `te` an
+  optional Telugu dub; `tools/build_script.py` lints both. The Telugu rules below apply to Telugu films and dubs.
 - **TTS:** ElevenLabs Telugu only on `eleven_v3`/`eleven_v4` with `language_code: "te"`; all TTS text in Telugu script.
 - **ElevenLabs "Bunty" script format** (Bunty stays the channel voice, now on `eleven_v4`; owner, 2026-10-08/09): blocks
   of **4,000–4,500 characters** (hard cap 5,000), as many as the script needs; commas, full stops, `...` for dramatic
