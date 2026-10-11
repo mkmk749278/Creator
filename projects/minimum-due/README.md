@@ -12,9 +12,13 @@ owner's brief and reference spec (2026-10-11; the spec was used as a reference o
 ElevenLabs (Bunty, `eleven_v4`). Planned as part 1 of a credit-card series; part 2 = "when you can't pay even the
 minimum".
 
-**Status (2026-10-11):** phase 1. Script v1.1: 100 lines, ≈14:30 of speech, three Bunty blocks (4,162 / 4,246 /
-4,024 characters), lint clean; fact-check gate passed after fixes (`claims.csv`, `fact-check.md`). Next: the owner's
-script approval, then the owner records the three blocks. After that: timing, beats, sourcing, EDL and scenes.
+**Status (2026-10-11):** phase 1. **Script v2 (short):** the owner asked for shorter and simpler without losing the
+concept. 69 lines, ≈8:15 of speech, two Bunty blocks (≈3,750 / ≈3,450 characters; below the 4,000 target because the
+film is short, well under the 5,000 cap). Cut: scale/complaint/MoSPI data, court history detail, rotation detail, KFS
+and CMS steps, month-2 MAD numbers, the "one rupee short" aside. Kept: ICICI hook, the two numbers, free period and its
+condition, the four rules, ₹1,500 vs ₹1,981 reveal, 1- and 5-year cost, five practical steps. Line ids keep their v1
+numbers (gaps are the cut lines) so `claims.csv` still maps; v1.1 is in git history (commit 5cb5d6e). Fact-check gate
+passes (63 claims, light re-check: only reused confirmed facts). Next: owner records the two blocks.
 
 ## Genre and look (PLAYBOOK §5.3, own art direction)
 **Business & finance × society.** Art direction "**the bill on the desk**": a paper-and-ink world instead of the usual
