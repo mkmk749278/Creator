@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **14:28** of speech (12,417 characters, 3 Bunty blocks), plus pauses and music beats.
+Estimated length: **14:30** of speech (12,432 characters, 3 Bunty blocks), plus pauses and music beats.
 
 ## 1 Cold open
 
@@ -30,7 +30,7 @@ _Salary hasn't come yet. Paying the minimum is enough, right?_
 
 **M004** · block 1  
 **లేట్ ఫీజు ఉండదు, సిబిల్ పాడవదు, అంతా సేఫ్. చాలామంది ఇదే అనుకుంటారు.**  
-_No late fee, CIBIL stays clean, everything's safe. That's what most people think._  
+_No late fee, CIBIL stays clean, everything's safe. That's what many people think._  
 🎬 Three quick ticks stamp in beside the button: late fee, CIBIL, safe. The last tick flickers.  
 🔤 NO LATE FEE ✓ · CIBIL ✓ · SAFE ?  
 🔊 Three ticks; the third detunes  
@@ -100,14 +100,14 @@ _Basics first. What exactly are these two numbers on your statement?_
 **టోటల్ అమౌంట్ డ్యూ అంటే, ఈ స్టేట్మెంట్ నాటికి మీరు బ్యాంక్కి కట్టాల్సిన మొత్తం డబ్బు.**  
 _Total Amount Due is all the money you owe the bank as of this statement._  
 🎬 Highlighter swipe across TOTAL AMOUNT DUE; the figure lifts off the page in 2.5D.  
-🔤 TOTAL AMOUNT DUE [RBI CARD DIRECTIONS 2025 · PARA 23]  
+🔤 TOTAL AMOUNT DUE [RBI CARD DIRECTIONS 2025 · PARA 5]  
 🔊 Highlighter squeak
 
 **M014** · block 1  
 **మినిమమ్ అమౌంట్ డ్యూ అంటే, మీ బిల్లు ఓవర్డ్యూ కాకుండా ఉండాలంటే కనీసం కట్టాల్సిన ఒక చిన్న భాగం. ఆర్బీఐ రూల్స్లో దీని అర్థం ఇదే.**  
 _Minimum Amount Due is the small part you must pay, at the least, so the bill isn't treated as overdue. That's how the RBI rules define it._  
 🎬 Highlighter on MINIMUM AMOUNT DUE; a slice of the total bar breaks off and slides down.  
-🔤 MINIMUM = KEEPS YOU 'NOT OVERDUE' [RBI CARD DIRECTIONS 2025 · PARA 23]
+🔤 MINIMUM = KEEPS YOU 'NOT OVERDUE' [RBI CARD DIRECTIONS 2025 · PARA 5]
 
 **M015** · block 1  
 **చాలా బ్యాంకుల్లో ఇది మీ బాకీలో ఫైవ్ పర్సెంట్ చుట్టూ ఉంటుంది. దానికి ఈఎంఐలు, ఫీజులు, జీఎస్టీ లాంటివి కలుస్తాయి.**  
@@ -121,7 +121,7 @@ _In many banks it's around five percent of what you owe, plus things like EMIs, 
 **సో థర్టీ థౌసండ్ బిల్లుకి, మొదటి నెల మినిమమ్ దాదాపు వన్ థౌసండ్ ఫైవ్ హండ్రెడ్.**  
 _So for a thirty-thousand bill, the first month's minimum is about fifteen hundred._  
 🎬 ₹30,000 bar; a 5% sliver highlights and reads ₹1,500.  
-🔤 ₹30,000 × 5% = ₹1,500
+🔤 ₹30,000 × 5% = ₹1,500 [OUR CALCULATION · HDFC MAD FORMULA]
 
 **M017** · block 1  
 **ఇప్పుడు ఒక ముఖ్యమైన విషయం. మినిమమ్ కడితే రెండు లాభాలు నిజంగానే ఉన్నాయి.**  
@@ -142,10 +142,10 @@ _One more small thing. Pay the minimum and there's no default report, true. But 
 🔤 HIGH UTILISATION CAN LOWER YOUR SCORE [TRANSUNION CIBIL]
 
 **M020** · block 1 · 🎭 [firm]  
-**కానీ మినిమమ్ కాపాడేది ఈ రెండిటినే. వడ్డీ నుంచి మాత్రం ఒక్క రూపాయి కూడా కాపాడదు.**  
-_But the minimum protects only these two. From interest, it doesn't save a single rupee._  
+**కానీ మినిమమ్ కాపాడేది ఈ రెండిటినే. వడ్డీని మాత్రం ఆపదు. ఫ్రీ పీరియడ్ని కూడా కాపాడదు.**  
+_But the minimum protects only these two. It doesn't stop the interest. It doesn't save the free period either._  
 🎬 A third arrow labelled INTEREST flies straight past both shields and hits the bar.  
-🔤 INTEREST: NOT PROTECTED  
+🔤 INTEREST: NOT STOPPED  
 🔊 Arrow whistle; dull impact
 
 **M021** · block 1 · 🎭 [dramatic pause]  
@@ -168,7 +168,7 @@ _To understand this trap, we need to see why a credit card feels free in the fir
 **మీరు కార్డ్ స్వైప్ చేసిన రోజు నుంచి డ్యూ డేట్ వరకు, బ్యాంక్ వడ్డీ వేయదు. దీన్ని ఇంట్రెస్ట్ ఫ్రీ క్రెడిట్ పీరియడ్ అంటారు.**  
 _From the day you swipe until the due date, the bank charges no interest. This is called the interest-free credit period._  
 🎬 Real B-roll: a card tapped at a shop counter (stock, hands only) → match-cut to a green band stretching on the calendar from swipe day to due date.  
-🔤 INTEREST-FREE CREDIT PERIOD [RBI CARD DIRECTIONS 2025 · PARA 23]  
+🔤 INTEREST-FREE CREDIT PERIOD [RBI CARD DIRECTIONS 2025 · PARA 5]  
 🔊 Card-terminal beep
 
 **M024** · block 1  
@@ -266,7 +266,7 @@ _Rule number two. You pay interest even on the money you paid back._
 **మీరు నవంబర్ ఫోర్టీన్త్న కట్టిన వన్ థౌసండ్ ఫైవ్ హండ్రెడ్, ఆ రోజు వరకు బాకీలోనే ఉంది కదా? సో ఆ రోజు వరకు థర్టీ థౌసండ్ మొత్తం మీద వడ్డీ. ఆ తర్వాతే మిగిలిన ట్వెంటీ ఎయిట్ థౌసండ్ ఫైవ్ హండ్రెడ్ మీద.**  
 _The fifteen hundred you paid on November fourteenth was still owed until that day, right? So until that day, interest on the full thirty thousand. Only after that, on the remaining twenty-eight thousand five hundred._  
 🎬 Bar chart over time: ₹30,000 bar runs red until Nov 14, then steps down to ₹28,500 and keeps running red.  
-🔤 ₹30,000 TILL NOV 14 → ₹28,500 AFTER [ICICI BANK · INTEREST RATES PAGE | 2025]
+🔤 ₹30,000 TILL NOV 14 → ₹28,500 AFTER [OUR CALCULATION · ICICI METHOD]
 
 **M038** · block 1  
 **రూల్ నంబర్ త్రీ. ఆ వడ్డీ మీద జీఎస్టీ, ఎయిటీన్ పర్సెంట్.**  
@@ -283,26 +283,26 @@ _Now let's add it all up. On November twenty-fifth the next statement comes._
 🔊 Printer feed
 
 **M040** · block 2  
-**వడ్డీ, దాదాపు వన్ థౌసండ్ సిక్స్ హండ్రెడ్ ఫార్టీ ఫోర్. జీఎస్టీ, టూ హండ్రెడ్ నైన్టీ సిక్స్. మొత్తం, వన్ థౌసండ్ నైన్ హండ్రెడ్ ఫార్టీ.**  
-_Interest, about one thousand six hundred forty-four. GST, two hundred ninety-six. Total, one thousand nine hundred forty._  
-🎬 Line items type onto statement 2 one by one; a red total counts up to ₹1,940.  
-🔤 INTEREST ₹1,644 + GST ₹296 = ₹1,940 [OUR CALCULATION · ICICI METHOD, 45% P.A.]  
+**వడ్డీ, దాదాపు వన్ థౌసండ్ సిక్స్ హండ్రెడ్ సెవెంటీ నైన్. జీఎస్టీ, త్రీ హండ్రెడ్ టూ. మొత్తం, వన్ థౌసండ్ నైన్ హండ్రెడ్ ఎయిటీ వన్.**  
+_Interest, about one thousand six hundred seventy-nine. GST, three hundred two. Total, one thousand nine hundred eighty-one._  
+🎬 Line items type onto statement 2 one by one; a red total counts up to ₹1,981.  
+🔤 INTEREST ₹1,679 + GST ₹302 = ₹1,981 [OUR CALCULATION · ICICI METHOD, 45% P.A.]  
 🔊 Typewriter ticks; then music cuts to silence  
 ⏱ 1.5 s total music silence after this line
 
 **M041** · block 2 · 🎭 [dramatic pause]  
-**మీరు కట్టింది వన్ థౌసండ్ ఫైవ్ హండ్రెడ్. బ్యాంక్ వేసింది వన్ థౌసండ్ నైన్ హండ్రెడ్ ఫార్టీ.**  
-_You paid one thousand five hundred. The bank added one thousand nine hundred forty._  
-🎬 Silence. Two numbers side by side on black paper: ₹1,500 in green, ₹1,940 in red; the red one is bigger.  
-🔤 YOU PAID ₹1,500 · BANK ADDED ₹1,940 [OUR CALCULATION · ICICI METHOD, 45% P.A.]  
+**మీరు కట్టింది వన్ థౌసండ్ ఫైవ్ హండ్రెడ్. బ్యాంక్ వేసింది వన్ థౌసండ్ నైన్ హండ్రెడ్ ఎయిటీ వన్.**  
+_You paid one thousand five hundred. The bank added one thousand nine hundred eighty-one._  
+🎬 Silence. Two numbers side by side on black paper: ₹1,500 in green, ₹1,981 in red; the red one is bigger.  
+🔤 YOU PAID ₹1,500 · BANK ADDED ₹1,981 [OUR CALCULATION · ICICI METHOD, 45% P.A.]  
 🔊 Braam/low thud as the second number lands (−6 dB)  
-⏱ CORE REVEAL: braam on 'నైన్ హండ్రెడ్ ఫార్టీ'
+⏱ CORE REVEAL: braam on 'నైన్ హండ్రెడ్ ఎయిటీ వన్'
 
 **M042** · block 2 · 🎭 [shocked]  
-**అంటే ఒక్క కొత్త రూపాయి ఖర్చు పెట్టకపోయినా, మీ బాకీ థర్టీ థౌసండ్ నుంచి థర్టీ థౌసండ్ ఫోర్ హండ్రెడ్ ఫార్టీకి పెరిగింది. కట్టిన తర్వాత కూడా అప్పు పెరిగింది.**  
-_So without spending a single new rupee, your balance went from thirty thousand to thirty thousand four hundred forty. Even after paying, the debt grew._  
-🎬 The ₹30,000 bar grows to ₹30,440; the interest meter's needle jumps.  
-🔤 ₹30,000 → ₹30,440 [OUR CALCULATION · ICICI METHOD, 45% P.A.]  
+**అంటే ఒక్క కొత్త రూపాయి ఖర్చు పెట్టకపోయినా, మీ బాకీ థర్టీ థౌసండ్ నుంచి థర్టీ థౌసండ్ ఫోర్ హండ్రెడ్ ఎయిటీ వన్కి పెరిగింది. కట్టిన తర్వాత కూడా అప్పు పెరిగింది.**  
+_So without spending a single new rupee, your balance went from thirty thousand to thirty thousand four hundred eighty-one. Even after paying, the debt grew._  
+🎬 The ₹30,000 bar grows to ₹30,481; the interest meter's needle jumps.  
+🔤 ₹30,000 → ₹30,481 [OUR CALCULATION · ICICI METHOD, 45% P.A.]  
 🔊 Meter needle clunk
 
 **M043** · block 2  
@@ -325,8 +325,8 @@ _Not only that. The new purchases made afterwards got no free days either. All t
 🔊 Low hit
 
 **M046** · block 2  
-**ఇక రూల్ నంబర్ ఫోర్. ఇది చాలామందికి తెలియదు.**  
-_Now rule number four. Most people don't know this one._  
+**ఇక రూల్ నంబర్ ఫోర్. ఇది చాలా ముఖ్యం.**  
+_Now rule number four. This one is very important._  
 🎬 The timeline glides past Nov 14 to Nov 15.  
 🔤 RULE 4
 
@@ -353,10 +353,10 @@ _So from the day you paid only the minimum, your card is no longer a free card. 
 🔊 Low drone swells
 
 **M050** · block 2  
-**ఆ పెట్రోల్ ఫైవ్ థౌసండ్ కూడా కలిస్తే, నవంబర్ స్టేట్మెంట్ టోటల్ దాదాపు థర్టీ ఫైవ్ థౌసండ్ ఫైవ్ హండ్రెడ్. కొత్త మినిమమ్, దాదాపు టూ థౌసండ్ సిక్స్టీ సెవెన్. అదే నెలలో పడిన వడ్డీ, జీఎస్టీయే దాదాపు టూ థౌసండ్.**  
-_Add that five thousand of petrol, and the November statement total is about thirty-five thousand five hundred. The new minimum is about two thousand sixty-seven. The interest and GST charged that same month alone come to about two thousand._  
-🎬 Statement 2 total ₹35,513 types out; its MAD box reads ₹2,067, and beside it a red tag: that month's interest + GST ₹2,013.  
-🔤 TOTAL ₹35,513 · MINIMUM ₹2,067 · THAT MONTH'S INTEREST+GST ₹2,013 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]
+**ఆ పెట్రోల్ ఫైవ్ థౌసండ్ కూడా కలిస్తే, నవంబర్ స్టేట్మెంట్ టోటల్ దాదాపు థర్టీ ఫైవ్ థౌసండ్ ఫైవ్ హండ్రెడ్ సిక్స్టీ. కొత్త మినిమమ్, దాదాపు టూ థౌసండ్ ఎయిటీ ఫోర్. అదే నెలలో పడిన వడ్డీ, జీఎస్టీయే దాదాపు టూ థౌసండ్ సిక్స్టీ.**  
+_Add that five thousand of petrol, and the November statement total is about thirty-five thousand five hundred sixty. The new minimum is about two thousand eighty-four. The interest and GST charged that same month alone come to about two thousand sixty._  
+🎬 Statement 2 total ₹35,561 types out; its MAD box reads ₹2,084; beside it a red tag: that month's interest + GST ₹2,061.  
+🔤 TOTAL ₹35,561 · MINIMUM ₹2,084 · THAT MONTH'S INTEREST+GST ₹2,061 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]
 
 ## 5 Paying the minimum for years
 
@@ -374,8 +374,8 @@ _Here the RBI has set a rule. Even while you pay the minimum, the debt must not 
 🔤 NO NEGATIVE AMORTISATION [RBI CARD DIRECTIONS 2025 · PARA 23]
 
 **M053** · block 2  
-**ఇంకో రక్షణ కూడా ఉంది. కట్టని ఫీజులు, ట్యాక్సుల మీద బ్యాంక్ వడ్డీ వేయకూడదు. వడ్డీ మీ అసలు బాకీ మీద మాత్రమే.**  
-_There's one more protection. The bank must not charge interest on unpaid fees and taxes. Interest is only on your actual outstanding._  
+**ఇంకో రక్షణ కూడా ఉంది. కట్టని ఫీజులు, ట్యాక్సుల మీద బ్యాంక్ వడ్డీ వేయకూడదు.**  
+_There is one more protection. The bank must not charge interest on unpaid fees and taxes._  
 🎬 Highlighter on 'shall not be capitalized' in the RBI text; FEE and GST blocks are fenced off from the red meter.  
 🔤 NO INTEREST ON UNPAID FEES OR TAXES [RBI CARD DIRECTIONS 2025 · PARA 23]
 
@@ -391,29 +391,29 @@ _We did the math with the minimum-due formula HDFC has published, at a forty-fiv
 🔤 [HDFC BANK MAD FORMULA | JUN 2025]
 
 **M056** · block 2 · 🎭 [serious]  
-**మీరు కట్టే ప్రతి హండ్రెడ్ రూపీస్లో, దాదాపు సెవెంటీ ఫైవ్ రూపీస్ వడ్డీకి, జీఎస్టీకి వెళ్తాయి. అప్పు తీర్చడానికి వెళ్ళేది ట్వెంటీ ఫైవ్ రూపీస్ మాత్రమే.**  
-_Of every hundred rupees you pay, about seventy-five go to interest and GST. Only twenty-five go towards clearing the debt._  
-🎬 A ₹100 note splits: 75 flows into a bank vault labelled INTEREST + GST, 25 chips the debt bar.  
-🔤 ₹75 → INTEREST + GST · ₹25 → DEBT [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]  
+**మొదటి సంవత్సరంలో మీరు కట్టే ప్రతి హండ్రెడ్ రూపీస్లో, దాదాపు సెవెంటీ ఫోర్ రూపీస్ వడ్డీకి, జీఎస్టీకే పోతాయి. అప్పు తగ్గేది ట్వెంటీ సిక్స్ రూపీస్ మాత్రమే.**  
+_In the first year, of every hundred rupees you pay, about seventy-four go to interest and GST. The debt goes down by only twenty-six._  
+🎬 A ₹100 note splits: 74 flows into a bank vault labelled INTEREST + GST, 26 chips the debt bar.  
+🔤 YEAR 1: ₹74 → INTEREST + GST · ₹26 → DEBT [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]  
 🔊 Coin cascade
 
 **M057** · block 2  
-**థర్టీ థౌసండ్ బాకీతో మొదలుపెడితే, ఒక సంవత్సరం తర్వాత మీరు దాదాపు నైన్టీన్ థౌసండ్ ఫైవ్ హండ్రెడ్ కట్టేసి ఉంటారు. కానీ ఇంకా బాకీ, దాదాపు ట్వెంటీ ఫైవ్ థౌసండ్.**  
-_Start with a thirty-thousand balance. After one year you'll have paid about nineteen thousand five hundred. But you'll still owe about twenty-five thousand._  
-🎬 Two counters race as the year-wheel completes one turn: PAID climbs to ₹19,514, OWED falls only to ₹25,215.  
-🔤 YEAR 1 · PAID ₹19,514 · STILL OWE ₹25,215 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]  
+**థర్టీ థౌసండ్ బాకీతో మొదలుపెడితే, ఒక సంవత్సరం తర్వాత మీరు దాదాపు ట్వెంటీ థౌసండ్ కట్టేసి ఉంటారు. కానీ ఇంకా బాకీ, దాదాపు ట్వెంటీ ఫోర్ థౌసండ్ ఎయిట్ హండ్రెడ్.**  
+_Start with a thirty-thousand balance. After one year you'll have paid about twenty thousand. But you'll still owe about twenty-four thousand eight hundred._  
+🎬 Two counters race as the year-wheel completes one turn: PAID climbs to ₹19,987, OWED falls only to ₹24,771.  
+🔤 YEAR 1 · PAID ₹19,987 · STILL OWE ₹24,771 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]  
 🔊 Counter ticks
 
 **M058** · block 2 · 🎭 [shocked]  
-**ఫైవ్ ఇయర్స్ తర్వాత? మీరు కట్టింది దాదాపు సెవెంటీ వన్ థౌసండ్. అయినా ఇంకా బాకీ ఉంది, దాదాపు ట్వెల్వ్ థౌసండ్ సిక్స్ హండ్రెడ్.**  
-_After five years? You've paid about seventy-one thousand. Still, you owe about twelve thousand six hundred._  
-🎬 The wheel spins five times; PAID passes ₹71,026 while OWED sits at ₹12,584.  
-🔤 YEAR 5 · PAID ₹71,026 · STILL OWE ₹12,584 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]  
+**ఫైవ్ ఇయర్స్ తర్వాత? మీరు కట్టింది దాదాపు సెవెంటీ థౌసండ్. అయినా ఇంకా బాకీ ఉంది, దాదాపు థర్టీన్ థౌసండ్.**  
+_After five years? You've paid about seventy thousand. Still, you owe about thirteen thousand._  
+🎬 The wheel spins five times; PAID passes ₹69,896 while OWED sits at ₹12,956.  
+🔤 YEAR 5 · PAID ₹69,896 · STILL OWE ₹12,956 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]  
 🔊 Low hit
 
 **M059** · block 2  
-**థర్టీ థౌసండ్ అప్పుకి, సెవెంటీ వన్ థౌసండ్ కట్టి కూడా, అప్పు తీరలేదు. పూర్తిగా తీరడానికి టెన్ ఇయర్స్ కంటే ఎక్కువ పడుతుంది.**  
-_For a thirty-thousand debt, even after paying seventy-one thousand, the debt isn't cleared. Clearing it fully takes more than ten years._  
+**థర్టీ థౌసండ్ అప్పుకి, సెవెంటీ థౌసండ్ కట్టి కూడా, అప్పు తీరలేదు. పూర్తిగా తీరడానికి టెన్ ఇయర్స్ కంటే ఎక్కువ పడుతుంది.**  
+_For a thirty-thousand debt, even after paying seventy thousand, the debt isn't cleared. Clearing it fully takes more than ten years._  
 🎬 The OWED bar is still visible as the wheel keeps turning past year 10.  
 🔤 10+ YEARS TO CLEAR ₹30,000 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]
 
@@ -451,9 +451,9 @@ _The total that cardholders owe the banks is about two point nine eight lakh cro
 🔤 ₹2.98 LAKH CRORE OUTSTANDING [RBI BULLETIN | SEP 2026]
 
 **M065** · block 2  
-**ఇందులో నైన్టీ డేస్ దాటి కట్టకుండా ఉన్న డబ్బు ఎంతో తెలుసా? క్రిఫ్ హై మార్క్ డేటా ప్రకారం, మార్చ్ ట్వెంటీ ట్వెంటీ ఫైవ్ నాటికి, థర్టీ త్రీ థౌసండ్ ఎయిట్ హండ్రెడ్ ఎయిటీ సిక్స్ క్రోర్స్.**  
-_Do you know how much of it has gone unpaid for more than ninety days? According to CRIF High Mark data, as of March 2025, thirty-three thousand eight hundred eighty-six crore._  
-🎬 Part of the tower turns red from the base up.  
+**ఇంకో నంబర్ చూడండి. క్రిఫ్ హై మార్క్ డేటా ప్రకారం, మార్చ్ ట్వెంటీ ట్వెంటీ ఫైవ్ నాటికి, నైన్టీ వన్ నుంచి త్రీ హండ్రెడ్ సిక్స్టీ డేస్ వరకు కట్టకుండా ఉన్న కార్డ్ బాకీలు, థర్టీ త్రీ థౌసండ్ ఎయిట్ హండ్రెడ్ ఎయిటీ సిక్స్ క్రోర్స్.**  
+_Look at one more number. According to CRIF High Mark data, as of March 2025, card dues unpaid for ninety-one to three hundred sixty days stood at thirty-three thousand eight hundred eighty-six crore._  
+🎬 A separate red stack, dated MAR 2025, rises beside the tower (not a slice of it).  
 🔤 ₹33,886 CR · 91–360 DAYS OVERDUE [CRIF HIGH MARK | MAR 2025]  
 🔊 Low drone
 
@@ -572,9 +572,10 @@ _First. If you can, pay the entire Total Amount Due every month. If you set up a
 🔊 Toggle click
 
 **M083** · block 3  
-**అప్పుడు క్రెడిట్ కార్డ్ నిజంగానే ఫ్రీ. ఫార్టీ డేస్ దాకా వడ్డీ లేని అప్పు. అప్పుడు మీరు కార్డ్ని వాడుకుంటారు. కార్డ్ మిమ్మల్ని వాడుకోదు.**  
-_Then the credit card really is free. Up to forty days of interest-free credit. Then you use the card. The card doesn't use you._  
-🎬 The green bands from Chapter 2 re-form, unbroken.
+**అప్పుడు క్రెడిట్ కార్డ్ నిజంగానే ఫ్రీ. కార్డ్ని బట్టి, ఫిఫ్టీ డేస్ దాకా వడ్డీ లేని అప్పు. అప్పుడు మీరు కార్డ్ని వాడుకుంటారు. కార్డ్ మిమ్మల్ని వాడుకోదు.**  
+_Then the credit card really is free. Depending on the card, up to fifty days of interest-free credit. Then you use the card. The card doesn't use you._  
+🎬 The green bands from Chapter 2 re-form, unbroken.  
+🔤 UP TO 50 DAYS FREE (DEPENDS ON CARD) [HDFC BANK MITC | OCT 2026]
 
 **M084** · block 3  
 **సెకండ్. మొత్తం కట్టలేని నెలలో, కట్టగలిగినంత ఎక్కువ కట్టండి, డ్యూ డేట్ లోపలే. మినిమమ్ కంటే మాత్రం ఎప్పుడూ తక్కువ కట్టకండి.**  
@@ -616,16 +617,16 @@ _Fourth. If the balance is large, call the bank and ask whether there's an optio
 🔤 4 · ASK FOR AN EMI CONVERSION
 
 **M090** · block 3  
-**ఉదాహరణకి హెచ్డీఎఫ్సీ తన ఈఎంఐ పేజీలో, దాదాపు ట్వెల్వ్ నుంచి ట్వెంటీ ఫైవ్ పర్సెంట్ రేట్లు చూపించింది. ఫార్టీ ఫైవ్ పర్సెంట్ కంటే చాలా తక్కువ. కానీ ప్రాసెసింగ్ ఫీజు, జీఎస్టీ కూడా కలిపి లెక్క వేసుకున్నాకే ఓకే చెప్పండి. తెలియని లోన్ యాప్స్ జోలికి మాత్రం వెళ్ళకండి. అవి ఇంకా పెద్ద ట్రాప్.**  
-_For example, HDFC showed rates of roughly twelve to twenty-five percent on its EMI page. Much lower than forty-five percent. But say yes only after adding the processing fee and GST to the math. And stay away from unknown loan apps. They're an even bigger trap._  
-🎬 Two bars: 45% (red) vs 12–25% (amber); a small FEE + GST tag clips onto the amber bar.  
-🔤 ≈12–25% vs 45% · + FEE + GST [HDFC BANK SMARTEMI PAGE | APR–JUN 2025]
+**ఉదాహరణకి హెచ్డీఎఫ్సీ తన ఈఎంఐ పేజీలో, దాదాపు ఎలెవెన్ నుంచి ట్వెంటీ ఫైవ్ పర్సెంట్ రేట్లు చూపించింది. ఫార్టీ ఫైవ్ పర్సెంట్ కంటే చాలా తక్కువ. కానీ ప్రాసెసింగ్ ఫీజు, జీఎస్టీ కూడా కలిపి లెక్క వేసుకున్నాకే ఓకే చెప్పండి. తెలియని లోన్ యాప్స్ జోలికి మాత్రం వెళ్ళకండి. అవి ఇంకా పెద్ద ట్రాప్.**  
+_For example, HDFC showed rates of roughly eleven to twenty-five percent on its EMI page. Much lower than forty-five percent. But say yes only after adding the processing fee and GST to the math. And stay away from unknown loan apps. They're an even bigger trap._  
+🎬 Two bars: 45% (red) vs 11–25% (amber); a small FEE + GST tag clips onto the amber bar.  
+🔤 ≈11–25% vs 45% · + FEE + GST [HDFC BANK SMARTEMI PAGE | APR–JUN 2026]
 
 **M091** · block 3  
 **ఫిఫ్త్. మీ డ్యూ డేట్ జీతం రాకముందే వస్తుంటే, బిల్లింగ్ సైకిల్ మార్చమని బ్యాంక్ని అడగండి. ఆర్బీఐ రూల్ ప్రకారం, కనీసం ఒక్కసారి ఆ ఆప్షన్ ఇవ్వాలి.**  
 _Fifth. If your due date falls before your salary arrives, ask the bank to change your billing cycle. Under RBI rules, they must give you that option at least once._  
 🎬 Calendar: the DUE flag slides from before payday to just after it.  
-🔤 5 · MOVE THE DUE DATE AFTER PAYDAY [RBI CARD DIRECTIONS 2025 · PARA 23]  
+🔤 5 · MOVE THE DUE DATE AFTER PAYDAY [RBI CARD DIRECTIONS 2025 · PARA 29]  
 🔊 Calendar slide
 
 **M092** · block 3  

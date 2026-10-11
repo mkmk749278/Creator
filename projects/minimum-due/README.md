@@ -4,7 +4,7 @@ Telugu explainer for *Be Practical with Kishore* on the credit card **Minimum Am
 (late fee, "past due" credit reporting) and what it doesn't (interest); the interest-free period and its one condition;
 the four rules the bank's system applies once you pay less than the total (interest from each spend date, interest on
 the part you paid until the day you paid it, 18% GST, no free days on new spends); a worked ₹30,000 example in which
-paying the ₹1,500 minimum leaves you owing **more** (₹30,440); ICICI Bank's own published statement example (₹65,000
+paying the ₹1,500 minimum leaves you owing **more** (₹30,481); ICICI Bank's own published statement example (₹65,000
 of ₹69,688 paid, ₹4,317 interest + GST); what paying only the minimum costs over 1 and 5 years; the system (11.86 crore
 cards, ₹2.98 lakh crore outstanding, CRIF overdue data, Ombudsman complaints, the 2008 NCDRC cap and its 2024 Supreme
 Court reversal); why card rotation only postpones the debt; and six practical steps. Script written by Claude from the
@@ -12,9 +12,9 @@ owner's brief and reference spec (2026-10-11; the spec was used as a reference o
 ElevenLabs (Bunty, `eleven_v4`). Planned as part 1 of a credit-card series; part 2 = "when you can't pay even the
 minimum".
 
-**Status (2026-10-11):** phase 1. Script v1 written: 100 lines, ≈14:30 of speech, three Bunty blocks (4,151 / 4,249 /
-4,009 characters), lint clean. Next: the fact-check gate (`claims.csv`), the owner's script approval, then the owner
-records the three blocks. After that: timing, beats, sourcing, EDL and scenes.
+**Status (2026-10-11):** phase 1. Script v1.1: 100 lines, ≈14:30 of speech, three Bunty blocks (4,162 / 4,246 /
+4,024 characters), lint clean; fact-check gate passed after fixes (`claims.csv`, `fact-check.md`). Next: the owner's
+script approval, then the owner records the three blocks. After that: timing, beats, sourcing, EDL and scenes.
 
 ## Genre and look (PLAYBOOK §5.3, own art direction)
 **Business & finance × society.** Art direction "**the bill on the desk**": a paper-and-ink world instead of the usual
@@ -74,13 +74,14 @@ python3 scripts/claims_check.py projects/minimum-due/claims.csv
   when that is larger. HDFC MITC: a part payment makes the whole outstanding and all new transactions attract finance
   charges until the previous outstanding is repaid in full. SmartEMI page: IRR ≈ 11.88–24.84% (Apr–Jun 2025), ₹849 + GST
   processing fee.
-- **Our calculations** (`tools/mad_math.py`, ICICI method, 45% p.a., 18% GST): spends 5/12/20 Oct ₹10k/₹15k/₹5k,
-  statement 25 Oct, due 14 Nov, MAD ₹1,500 paid on 14 Nov, statement 25 Nov → interest ₹1,644.04 + GST ₹295.93 =
-  ₹1,939.97; balance ₹30,439.97. With ₹5,000 petrol on 15 Nov: total ₹35,512.71, HDFC-formula MAD ₹2,067.31, that
-  month's interest + GST ₹2,012.71. Paying ₹29,999 instead: interest + GST ₹1,483.91. MAD-only from ₹30,000 (HDFC
-  formula, 3.75% a month, no new spends): ~75.6% of each payment goes to interest + GST; after 12 months paid ₹19,514,
-  owe ₹25,215; after 60 months paid ₹71,026, owe ₹12,584; full payoff takes 10 years or more for any MAD floor up to ₹500
-  (15 years at a ₹200 floor).
+- **Our calculations** (`tools/mad_math.py`; ICICI method with the transaction day counted, HDFC MAD formula with the 5%
+  part rounded up to ₹10, 45% p.a., 18% GST, payments to GST then interest then principal, no interest on GST): spends
+  5/12/20 Oct ₹10k/₹15k/₹5k, statement 25 Oct, due 14 Nov, MAD ₹1,500 paid on 14 Nov, statement 25 Nov → interest
+  ₹1,679.18 + GST ₹302.25 = ₹1,981.43; balance ₹30,481.43. With ₹5,000 petrol on 15 Nov: total ₹35,561.44, MAD ₹2,084.46,
+  that month's interest + GST ₹2,061.44. Paying ₹29,999 instead: interest + GST ₹1,483.91. Paying the MAD instead of
+  nothing saves only ₹22 of interest. MAD-only, no new spends (the ₹1,500 is payment 1): after 12 payments paid ₹19,987,
+  owe ₹24,771 (about 74% of the money paid went to interest + GST); after 60 payments paid ₹69,896, owe ₹12,956; about
+  15.7 years to clear at a ₹200 floor (the film says "more than ten years").
 - **Scale.** 118.63 million cards in force, end-March 2026 (RBI data via [Mint, 1 May 2026](https://www.livemintmoney.com/personal-finance/credit-cards/total-number-of-credit-cards-hit-over-118-million-in-march-2026-shows-rbi-data-281777631894672.html));
   credit card outstanding ₹2,97,756 crore (RBI Bulletin, Sep 2026, Current Statistics table 4.5; the column's reference
   date must be confirmed); ₹33,886 crore 91–360 days overdue, +44% YoY, March 2025 (CRIF High Mark via
