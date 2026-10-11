@@ -2,11 +2,11 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **8:57** of speech (7,740 characters, 2 Bunty blocks), plus pauses and music beats.
+Estimated length: **9:10** of speech (7,651 characters, 2 Bunty blocks), plus pauses and music beats.
 
 ## 1 Cold open
 
-**M001** · block 1 · 🎭 [serious]  
+**M001** · block 1  
 **A message comes on your phone. Your credit card bill is ready.**  
 _మీ ఫోన్కి ఒక మెసేజ్ వస్తుంది. మీ క్రెడిట్ కార్డ్ స్టేట్మెంట్ రెడీ._  
 🎬 Macro: a phone face-down on a wooden table buzzes and turns over; lock screen shows a generic bank-style SMS (SIMULATION, no real bank name).  
@@ -22,14 +22,14 @@ _టూ నంబర్స్. టోటల్ అమౌంట్ డ్యూ, 
 🔊 Two soft clicks, one per number  
 ⏱ Rack focus lands on 'వన్ థౌసండ్ ఫైవ్ హండ్రెడ్'
 
-**M003** · block 1 · 🎭 [softly]  
+**M003** · block 1  
 **Salary has not come yet. So you think, I will pay only the minimum, right? No late fee. CIBIL score is safe. Many people think like this.**  
 _సాలరీ ఇంకా రాలేదు. మినిమమ్ పే చేస్తే చాలు కదా? లేట్ ఫీ ఉండదు, సిబిల్ సేఫ్. చాలామంది ఇలానే థింక్ చేస్తారు._  
 🎬 A thumb hovers over a 'Pay minimum' button (SIMULATION); calendar on the wall shows salary day still circled ahead.  
 🔤 NO LATE FEE ✓ · CIBIL ✓ · SAFE ?  
 🔊 Low pulse enters
 
-**M005** · block 1 · 🎭 [curious]  
+**M005** · block 1  
 **But this is the real trap. ICICI Bank has put one example on its own website. Look.**  
 _కానీ ఇదే రియల్ ట్రాప్. ఐసీఐసీఐ బ్యాంక్ తన వెబ్సైట్లోనే ఒక ఎగ్జాంపుల్ పెట్టింది, చూడండి._  
 🎬 Screen recording of the real ICICI Bank interest-rates page scrolling to its worked statement example (credited, short excerpt); forensic magnifier.  
@@ -43,7 +43,7 @@ _ఒక కస్టమర్ బిల్ సిక్స్టీ నైన్
 🔤 BILL ₹69,688 · PAID ₹65,000 (93%) [ICICI BANK · INTEREST RATES PAGE | 2025]  
 🔊 Counter ticks up to 93%
 
-**M007** · block 1 · 🎭 [shocked]  
+**M007** · block 1  
 **But in the next bill, the bank added four thousand, three hundred and seventeen rupees for interest and GST.**  
 _అయినా నెక్స్ట్ స్టేట్మెంట్లో ఇంట్రెస్ట్, జీఎస్టీ కలిపి, ఫోర్ థౌసండ్ త్రీ హండ్రెడ్ సెవెంటీన్ రూపీస్ ఛార్జ్ అయింది._  
 🎬 Magnifier slides to 'Interest Charges 3,658.65' and 'GST @ 18% 658.56'; they add up in red ink to ₹4,317.  
@@ -57,7 +57,7 @@ _పెండింగ్ ఉన్నది ఫోర్ థౌసండ్ స
 🎬 Split frame: ₹4,688 unpaid on the left, ₹4,317 charged on the right, both bars nearly equal height.  
 🔤 LEFT UNPAID ₹4,688 · CHARGED ₹4,317 [ICICI BANK · INTEREST RATES PAGE | 2025]
 
-**M010** · block 1 · 🎭 [confident]  
+**M010** · block 1  
 **By the end of this video, you will understand the full maths behind that small number. In very simple words.**  
 _ఈ వీడియో ఎండ్ అయ్యేసరికి, ఆ స్మాల్ నంబర్ వెనక ఉన్న ఫుల్ కాలిక్యులేషన్ మీకు సింపుల్గా అర్థమవుతుంది._  
 🎬 Fast flash-forward montage of scenes to come: the calendar timeline, red lines shooting back to spend dates, the year counter.  
@@ -65,7 +65,7 @@ _ఈ వీడియో ఎండ్ అయ్యేసరికి, ఆ స్�
 🔊 Rising whoosh into the logo sting  
 ⏱ Promise lands before 0:30
 
-**M011** · block 1 · 🎭 [warmly]  
+**M011** · block 1  
 **Hello friends, welcome to Be Practical with Kishore.**  
 _నమస్తే అండి. బీ ప్రాక్టికల్ విత్ కిషోర్కి వెల్కమ్._  
 🎬 Logo sting (channel banner), then the logo bug settles bottom right.  
@@ -101,14 +101,14 @@ _మినిమమ్ పే చేస్తే టూ బెనిఫిట్
 🔤 NO LATE FEE · NO 'PAST DUE' REPORT [RBI CARD DIRECTIONS 2025 · PARA 23]  
 🔊 Two metallic blocks
 
-**M020** · block 1 · 🎭 [firm]  
-**But it does not stop interest. And you lose your free days.**  
+**M020** · block 1  
+**But it does not stop interest. And you lose your interest free period.**  
 _కానీ ఇంట్రెస్ట్ని మాత్రం స్టాప్ చేయదు. ఫ్రీ పీరియడ్ని కూడా సేవ్ చేయదు._  
 🎬 A third arrow labelled INTEREST flies straight past both shields and hits the bar.  
 🔤 INTEREST: NOT STOPPED  
 🔊 Arrow whistle; dull impact
 
-**M021** · block 1 · 🎭 [dramatic pause]  
+**M021** · block 1  
 **So remember this. The minimum amount is not a safety net... it is a switch that starts the interest meter.**  
 _సో రిమెంబర్ చేసుకోండి. మినిమమ్ అమౌంట్ డ్యూ సేఫ్టీ నెట్ కాదు... అది ఇంట్రెస్ట్ మీటర్ని ఆన్ చేసే స్విచ్._  
 🎬 Film motif introduced: an analogue interest meter in the lower right corner; its needle wakes and starts to creep.  
@@ -119,7 +119,7 @@ _సో రిమెంబర్ చేసుకోండి. మినిమమ
 ## 3 The free-money deal
 
 **M023** · block 1  
-**From the day you use your card till the last date to pay, the bank does not charge interest. These are your free days.**  
+**From the day you use your card till the last date to pay, the bank does not charge any interest. This time is called the interest free period. It simply means, for these days, you pay zero interest.**  
 _కార్డ్ స్వైప్ చేసిన డే నుంచి డ్యూ డేట్ వరకు, బ్యాంక్ ఇంట్రెస్ట్ ఛార్జ్ చేయదు. దీన్నే ఇంట్రెస్ట్ ఫ్రీ పీరియడ్ అంటారు._  
 🎬 Real B-roll: a card tapped at a shop counter (stock, hands only) → match-cut to a green band stretching on the calendar from swipe day to due date.  
 🔤 INTEREST-FREE CREDIT PERIOD [RBI CARD DIRECTIONS 2025 · PARA 5]  
@@ -139,8 +139,8 @@ _అక్టోబర్ ట్వెంటీ ఫిఫ్త్న స్ట�
 🎬 The pins sum into a ₹30,000 bar; a STATEMENT flag plants at Oct 25, a DUE flag at Nov 14.  
 🔤 STATEMENT OCT 25 · DUE NOV 14 · ILLUSTRATION
 
-**M026** · block 1 · 🎭 [warmly]  
-**So the phone money gets forty free days. The grocery money gets twenty five free days.**  
+**M026** · block 1  
+**So the phone money gets forty days interest free. The grocery money gets twenty five days interest free.**  
 _అంటే ఫోన్ అమౌంట్కి ఫార్టీ డేస్, గ్రాసరీస్ అమౌంట్కి ట్వెంటీ ఫైవ్ డేస్, ఫ్రీ._  
 🎬 Green bands stretch from each pin to Nov 14 with day counters: 40 DAYS, 33 DAYS, 25 DAYS.  
 🔤 40 DAYS FREE · 25 DAYS FREE  
@@ -152,8 +152,8 @@ _కానీ దీనికి ఒక్క కండిషన్ ఉంది
 🎬 Push in on the bottom of the SIMULATION statement where a line of fine print sits.  
 🔊 Music thins
 
-**M028** · block 1 · 🎭 [firm]  
-**You must pay the full bill before the last date. Even one rupee less, and all the free days are gone.**  
+**M028** · block 1  
+**You must pay the full bill before the last date. Even one rupee less, and the interest free period is gone.**  
 _డ్యూ డేట్ లోపల టోటల్ అమౌంట్ ఫుల్గా పే చేయాలి. ఒక్క రూపీ తక్కువైనా, ఆ ఫ్రీ పీరియడ్ పోతుంది._  
 🎬 The three green bands shatter like glass, left to right.  
 🔤 PAY IN FULL OR LOSE IT [RBI CARD DIRECTIONS 2025 · PARA 23]  
@@ -176,7 +176,7 @@ _నవంబర్ ఫోర్టీన్త్న మీరు మిని�
 🔤 CHAPTER 3 · WHAT THE BANK'S COMPUTER DOES  
 🔊 Digital tap; success chime that sours
 
-**M031** · block 1 · 🎭 [serious]  
+**M031** · block 1  
 **Rule number one. Interest does not start from the last date. It starts from the day you spent the money.**  
 _రూల్ నంబర్ వన్. ఇంట్రెస్ట్ డ్యూ డేట్ నుంచి కాదు. మీరు స్పెండ్ చేసిన డే నుంచి స్టార్ట్ అవుతుంది._  
 🎬 A clock on the timeline spins backwards from Nov 14 into October.  
@@ -197,7 +197,7 @@ _రేట్, ఐసీఐసీఐ లాంటి బ్యాంక్స్
 🎬 Magnifier on the ICICI page line '3.75% per month i.e. 45% per annum' (credited screen recording).  
 🔤 3.75% A MONTH = 45% A YEAR [ICICI BANK · INTEREST RATES PAGE | 2025]
 
-**M036** · block 1 · 🎭 [curious]  
+**M036** · block 1  
 **Rule number two. You pay interest even on the money you already paid.**  
 _రూల్ నంబర్ టూ. మీరు పే చేసిన అమౌంట్ మీద కూడా ఇంట్రెస్ట్ పడుతుంది._  
 🎬 The ₹1,500 PAID chip is pulled back onto the timeline and turns red.  
@@ -223,7 +223,7 @@ _నవంబర్ ట్వెంటీ ఫిఫ్త్న నెక్స�
 🔤 STATEMENT 2 · NOV 25  
 🔊 Printer feed
 
-**M041** · block 1 · 🎭 [dramatic pause]  
+**M041** · block 1  
 **You paid fifteen hundred. The bank added interest and GST of one thousand, nine hundred and eighty one.**  
 _మీరు పే చేసింది వన్ థౌసండ్ ఫైవ్ హండ్రెడ్. బ్యాంక్ ఛార్జ్ చేసిన ఇంట్రెస్ట్ ప్లస్ జీఎస్టీ, వన్ థౌసండ్ నైన్ హండ్రెడ్ ఎయిటీ వన్._  
 🎬 Silence. Two numbers side by side on black paper: ₹1,500 in green, ₹1,981 in red; the red one is bigger.  
@@ -231,7 +231,7 @@ _మీరు పే చేసింది వన్ థౌసండ్ ఫై�
 🔊 Braam/low thud as the second number lands (−6 dB)  
 ⏱ 1.5 s music silence before; CORE REVEAL: braam on 'నైన్ హండ్రెడ్ ఎయిటీ వన్'
 
-**M042** · block 1 · 🎭 [shocked]  
+**M042** · block 1  
 **So without spending even one new rupee, your bill went up from thirty thousand to thirty thousand, four hundred and eighty one. You paid money, and still your loan went up.**  
 _అంటే ఒక్క న్యూ రూపీ స్పెండ్ చేయకపోయినా, మీ బ్యాలెన్స్ థర్టీ థౌసండ్ నుంచి థర్టీ థౌసండ్ ఫోర్ హండ్రెడ్ ఎయిటీ వన్కి పెరిగింది. పే చేసిన తర్వాత కూడా డెట్ పెరిగింది._  
 🎬 The ₹30,000 bar grows to ₹30,481; the interest meter's needle jumps.  
@@ -245,19 +245,19 @@ _ఇది మా కాలిక్యులేషన్. కానీ మె�
 🔤 SAME METHOD AS THE BANK'S OWN TABLE [ICICI BANK · INTEREST RATES PAGE | 2025]
 
 **M044** · block 1  
-**The same thing happened to the ICICI customer we saw at the start. Interest on the full bill till the day of payment. Then no free days for new shopping. That is how it became four thousand, three hundred and seventeen.**  
+**The same thing happened to the ICICI customer we saw at the start. Interest on the full bill till the day of payment. Then no interest free period for new shopping. That is how it became four thousand, three hundred and seventeen.**  
 _స్టార్టింగ్లో చూసిన ఐసీఐసీఐ కస్టమర్కి కూడా ఇదే జరిగింది. పేమెంట్ డే వరకు ఫుల్ బిల్ మీద ఇంట్రెస్ట్, తర్వాత న్యూ పర్చేజెస్కి ఫ్రీ డేస్ లేవు. అందుకే ఫోర్ థౌసండ్ త్రీ హండ్రెడ్ సెవెంటీన్._  
 🎬 Back to the ICICI page: magnifier slides down its interest table rows (22, 15 and 6 days on the three purchases; 69,688 until 30/09).  
 🔤 FULL BILL TILL PAYMENT DAY · NEW PURCHASES 0 FREE DAYS · ₹4,317 [ICICI BANK · INTEREST RATES PAGE | 2025]
 
-**M047** · block 1 · 🎭 [curious]  
-**Rule number four. Say on November fifteenth, you fill petrol with the same card. Will you get free days for that?**  
+**M047** · block 1  
+**Rule number four. Say on November fifteenth, you fill petrol with the same card. Will you get an interest free period for that?**  
 _రూల్ నంబర్ ఫోర్. నవంబర్ ఫిఫ్టీన్త్న అదే కార్డ్తో పెట్రోల్ కొట్టించారు అనుకోండి. దానికి ఫ్రీ పీరియడ్ వస్తుందా?_  
 🎬 Real B-roll: fuel nozzle into a bike tank at an Indian petrol pump (stock); a pin drops on Nov 15.  
 🔤 RULE 4 · NOV 15 · NEW SPEND  
 🔊 Pump click
 
-**M048** · block 1 · 🎭 [firm]  
+**M048** · block 1  
 **No. Till the old bill is fully paid, every new swipe gets interest from that same day.**  
 _రాదు. ఓల్డ్ బ్యాలెన్స్ ఫుల్గా క్లియర్ అయ్యే వరకు, ప్రతి న్యూ స్వైప్ మీద, స్వైప్ చేసిన డే నుంచే ఇంట్రెస్ట్._  
 🎬 A '40 DAYS FREE?' badge is stamped DENIED · 0 DAYS; a red meter starts instantly under the Nov 15 pin.  
@@ -265,7 +265,7 @@ _రాదు. ఓల్డ్ బ్యాలెన్స్ ఫుల్గా
 🔊 Stamp slam (−8 dB)  
 ⏱ Stamp on 'రాదు'
 
-**M049** · block 1 · 🎭 [serious]  
+**M049** · block 1  
 **So from the day you paid only the minimum, your card is not free any more. It has become a loan at forty five percent interest.**  
 _అంటే మినిమమ్ పే చేసిన ఆ డే నుంచి, మీ కార్డ్ ఫ్రీ కార్డ్ కాదు. అది ఫార్టీ ఫైవ్ పర్సెంట్ ఇంట్రెస్ట్ ఉన్న లోన్గా మారిపోయింది._  
 🎬 The plastic card on the desk slowly re-prints as a loan document (ILLUSTRATION).  
@@ -287,7 +287,7 @@ _ఆర్బీఐ రూల్ ప్రకారం, మినిమమ్ �
 🎬 Screen recording of the RBI text, highlighter on 'no negative amortization' (credited).  
 🔤 NO NEGATIVE AMORTISATION [RBI CARD DIRECTIONS 2025 · PARA 23]
 
-**M056** · block 2 · 🎭 [serious]  
+**M056** · block 2  
 **In the first year, out of every hundred rupees you pay, about seventy four rupees go to interest and GST. Only twenty six rupees cut your loan.**  
 _ఫస్ట్ ఇయర్లో మీరు పే చేసే ప్రతి హండ్రెడ్ రూపీస్లో, దాదాపు సెవెంటీ ఫోర్ రూపీస్ ఇంట్రెస్ట్కి, జీఎస్టీకే పోతాయి. డెట్ తగ్గేది ట్వెంటీ సిక్స్ రూపీస్ మాత్రమే._  
 🎬 A ₹100 note splits: 74 flows into a bank vault labelled INTEREST + GST, 26 chips the debt bar.  
@@ -295,14 +295,14 @@ _ఫస్ట్ ఇయర్లో మీరు పే చేసే ప్ర�
 🔊 Coin cascade
 
 **M057** · block 2  
-**Start with thirty thousand. After one year, you would have paid about twenty thousand. But you still owe about twenty four thousand, eight hundred.**  
+**Start with thirty thousand. After one year, you would have paid about twenty thousand. But about twenty four thousand, eight hundred is still pending.**  
 _థర్టీ థౌసండ్ బ్యాలెన్స్తో స్టార్ట్ చేస్తే, వన్ ఇయర్ తర్వాత మీరు దాదాపు ట్వెంటీ థౌసండ్ పే చేసి ఉంటారు. కానీ ఇంకా ఔట్స్టాండింగ్, దాదాపు ట్వెంటీ ఫోర్ థౌసండ్ ఎయిట్ హండ్రెడ్._  
 🎬 Two counters race as the year-wheel completes one turn: PAID climbs to ₹19,987, OWED falls only to ₹24,771.  
 🔤 YEAR 1 · PAID ₹19,987 · STILL OWE ₹24,771 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]  
 🔊 Counter ticks
 
-**M058** · block 2 · 🎭 [shocked]  
-**After five years? You have paid about seventy thousand. And you still owe about thirteen thousand.**  
+**M058** · block 2  
+**After five years? You have paid about seventy thousand. And still about thirteen thousand is pending.**  
 _ఫైవ్ ఇయర్స్ తర్వాత? మీరు పే చేసింది దాదాపు సెవెంటీ థౌసండ్. అయినా ఇంకా ఔట్స్టాండింగ్ ఉంది, దాదాపు థర్టీన్ థౌసండ్._  
 🎬 The wheel spins five times; PAID passes ₹69,896 while OWED sits at ₹12,956.  
 🔤 YEAR 5 · PAID ₹69,896 · STILL OWE ₹12,956 [OUR CALCULATION · HDFC MAD FORMULA, 45% P.A.]  
@@ -344,7 +344,7 @@ _ఫార్టీ ఫైవ్ పర్సెంట్ చాలా ఎక్
 🔤 30% CAP (NCDRC, 2008) SET ASIDE · SUPREME COURT, 20 DEC 2024 [HSBC v. AWAZ, 2024 INSC 1044]  
 🔊 Gavel-less low hit
 
-**M073** · block 2 · 🎭 [firm]  
+**M073** · block 2  
 **So what saves you is not that small number. It is knowing this maths.**  
 _అందుకే మిమ్మల్ని ప్రొటెక్ట్ చేసేది ఆ స్మాల్ నంబర్ కాదు. మీకు తెలిసిన కాలిక్యులేషన్._  
 🎬 The glowing MAD box dims; the formula from Chapter 3 lights up instead.  
@@ -378,7 +378,7 @@ _ఇంకో పాయింట్. ట్వెంటీ ట్వెంటీ
 🔤 RBI PA DIRECTIONS · 15 SEP 2025 [BUSINESS STANDARD · MEDIANAMA | SEP 2025]  
 🔊 Paper slides
 
-**M079** · block 2 · 🎭 [serious]  
+**M079** · block 2  
 **Taking cash from your credit card is even worse. There is a fee, and interest starts from the same day.**  
 _కార్డ్తో క్యాష్ విత్డ్రా చేస్తే ఇంకా డేంజర్. ఫీజు, ప్లస్ విత్డ్రా చేసిన డే నుంచే ఇంట్రెస్ట్._  
 🎬 Real B-roll: ATM keypad close-up (stock, hands only); a red meter starts the instant cash slides out.  
@@ -393,7 +393,7 @@ _సో రొటేషన్ సొల్యూషన్ కాదు. డె�
 
 ## 8 What we do instead
 
-**M081** · block 2 · 🎭 [warmly]  
+**M081** · block 2  
 **So what should we do? Five simple steps.**  
 _మరి మనం ఏం చేయాలి? సింపుల్గా ఫైవ్ పాయింట్స్._  
 🎬 Chapter tag. Palette shifts from ink-red to clean daylight; a warm desk lamp clicks on.  
@@ -408,7 +408,7 @@ _ఫస్ట్. పాజిబుల్ అయినప్పుడల్ల�
 🔊 Toggle click
 
 **M083** · block 2  
-**Then your card is really free. Up to fifty free days, depending on your card.**  
+**Then your card is really free. Up to fifty days interest free, depending on your card.**  
 _అప్పుడు కార్డ్ రియల్లీ ఫ్రీ. కార్డ్ని బట్టి ఫిఫ్టీ డేస్ వరకు ఇంట్రెస్ట్ ఉండదు._  
 🎬 The green bands from Chapter 2 re-form, unbroken.  
 🔤 UP TO 50 DAYS FREE (DEPENDS ON CARD) [HDFC BANK MITC | OCT 2026]
@@ -420,7 +420,7 @@ _సెకండ్. ఫుల్ అమౌంట్ పే చేయలేక�
 🔤 2 · PAY AS MUCH AS YOU CAN, NEVER BELOW MINIMUM
 
 **M085** · block 2  
-**Because interest on the money you pay stops that day. Pay more, and you pay less interest. And once you clear the full bill, your free days come back.**  
+**Because interest on the money you pay stops that day. Pay more, and you pay less interest. And once you clear the full bill, your interest free period comes back.**  
 _ఎందుకంటే పే చేసిన అమౌంట్ మీద ఇంట్రెస్ట్ ఆ డే నుంచే స్టాప్ అవుతుంది. ఎంత ఎక్కువ పే చేస్తే, అంత తక్కువ ఇంట్రెస్ట్. బ్యాలెన్స్ ఫుల్గా క్లియర్ చేస్తే, ఫ్రీ పీరియడ్ మళ్ళీ వస్తుంది._  
 🎬 The red meter slows as the slider moves; the two shields from Chapter 1 reappear.  
 🔤 MORE PAID = LESS INTEREST · CLEAR IT ALL → FREE PERIOD RETURNS [ICICI BANK · HDFC BANK MITC]
@@ -453,14 +453,14 @@ _ఒక సింపుల్ టెస్ట్. స్టేట్మెంట
 
 ## 9 Close
 
-**M095** · block 2 · 🎭 [warmly]  
+**M095** · block 2  
 **Remember. The minimum amount saves you from late fees and a bad CIBIL report. Not from interest.**  
 _రిమెంబర్ చేసుకోండి. మినిమమ్ అమౌంట్ డ్యూ లేట్ ఫీ నుంచి, సిబిల్ నుంచి ప్రొటెక్ట్ చేస్తుంది. ఇంట్రెస్ట్ నుంచి కాదు._  
 🎬 Recap: the two shields, then the interest arrow; fast and clean.  
 🔤 MINIMUM ≠ NO INTEREST
 
-**M096** · block 2 · 🎭 [firm]  
-**Remember three numbers. Forty five percent interest. Eighteen percent GST on top. And zero free days for new spending till the old bill is cleared.**  
+**M096** · block 2  
+**Remember three numbers. Forty five percent interest. Eighteen percent GST on top. And zero interest free days for new spending till the old bill is cleared.**  
 _త్రీ నంబర్స్ గుర్తు పెట్టుకోండి. ఫార్టీ ఫైవ్ పర్సెంట్ ఇంట్రెస్ట్. దాని మీద ఎయిటీన్ పర్సెంట్ జీఎస్టీ. బ్యాలెన్స్ ఉన్నంత వరకు న్యూ స్పెండ్స్కి, జీరో ఫ్రీ డేస్._  
 🎬 Three numbers stamp in the lower third one after another over a moving recap of the film's key shots.  
 🔤 45% · 18% GST · 0 FREE DAYS  
@@ -473,20 +473,20 @@ _మినిమమ్ అనేది ఎమర్జెన్సీ బ్ర�
 🎬 Real B-roll: a hand pulling a vehicle handbrake (stock), then an open road at sunrise.  
 🔊 Music lifts
 
-**M098** · block 2 · 🎭 [curious]  
+**M098** · block 2  
 **What do you pay every month? The full bill, or the minimum? Tell me in the comments.**  
 _మీరు ప్రతి మంత్ ఏది పే చేస్తున్నారు? టోటలా, మినిమమా? కామెంట్స్లో చెప్పండి._  
 🎬 Comment box with a blinking cursor (SIMULATION).  
 🔤 COMMENT: TOTAL, MINIMUM OR IN BETWEEN?
 
-**M099** · block 2 · 🎭 [serious]  
+**M099** · block 2  
 **In the next video, we will see what happens if you cannot pay even the minimum.**  
 _నెక్స్ట్ వీడియోలో, ఆ మినిమమ్ కూడా పే చేయలేని మంత్ వస్తే ఏమవుతుందో చూద్దాం._  
 🎬 The timeline rushes past a DUE flag into darkness; a small '+3 DAYS' marker glows.  
 🔤 NEXT: WHEN YOU CAN'T PAY EVEN THE MINIMUM  
 🔊 Sub riser
 
-**M100** · block 2 · 🎭 [warmly]  
+**M100** · block 2  
 **If this helped you, share it with one friend who uses a credit card. Subscribe to the channel. See you soon. Jai Hind.**  
 _యూస్ఫుల్ అనిపిస్తే, కార్డ్ యూజ్ చేసే ఒక్క ఫ్రెండ్కైనా షేర్ చేయండి. సబ్స్క్రైబ్ చేసుకోండి. మళ్ళీ కలుద్దాం. జై హింద్._  
 🎬 End card: logo, subscribe, next-video slot; 'Educational only, not financial advice' line.  

@@ -276,8 +276,11 @@ India while the topics stay India-first. Rules:
   (RBI, GST, EMI, CIBIL, UPI); no digits, `₹`, `!`, double quotes, dashes, brackets or `&`. Voice Bunty on `eleven_v4`
   with `language_code: "en"` (check the first block for accent and pace before generating the rest).
 - **Words a Class 8 student knows** (owner, 2026-10-11: "even simpler"): bill (not statement), last date (not due date,
-  after the first mention), free days (not interest-free period), loan or what you owe (not debt, outstanding), maths,
-  cancelled (not set aside), good things (not benefits). Explain any must-keep term once in plain words.
+  after the first mention), loan (not debt, outstanding), "still pending" (not owe), maths, cancelled (not set aside),
+  good things (not benefits). Keep the real term when viewers will meet it on their bill, and explain it once in plain
+  words ("interest free period: for these days, you pay zero interest").
+- **No emotion cues** in the blocks handed to the owner (owner, 2026-10-11): leave the `emotion` column empty; the words
+  and punctuation carry the feeling. Explain any must-keep term once in plain words.
 - **Voice:** an Indian-accent English voice, not a US/UK narrator. Audition in ElevenLabs Voice Library (filter: English,
   accent Indian, male) with the same first paragraph: Bunty in English first (channel continuity), then conversational
   "elder brother" voices such as Aakash Aryan (Conversational and Steady), Aarav J (Cool and Wise Friend) and Rinoy
