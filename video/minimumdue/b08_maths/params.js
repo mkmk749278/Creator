@@ -49,11 +49,11 @@ window.SCENE = {
   },
   {
    "write": "CARD ROTATION",
-   "x": -79,
+   "x": 145,
    "y": 600,
    "at": 6.45,
    "dur": 1.6,
-   "size": 130,
+   "size": 102,
    "color": "red"
   }
  ]

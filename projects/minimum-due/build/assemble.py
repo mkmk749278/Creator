@@ -2,10 +2,10 @@
 """Assemble the Minimum Amount Due preview (720p by default) from the shot list below.
 
 Every VO line has a picture (visual-plan.md); shots are rendered one by one to assets/shots/NNN.mp4 at the output size,
-joined, then mixed with the VO and a synthesised bed (scripts/make_bed.py). Re-running re-renders only missing shots
-(delete assets/shots to force). Usage: python3 projects/minimum-due/build/assemble.py [--height 720]
+joined, then mixed with the VO and a synthesised bed (scripts/make_bed.py). Re-running re-renders only shots whose spec or
+source changed. Usage: python3 projects/minimum-due/build/assemble.py [--height 720]
 """
-import argparse, json, subprocess, sys
+import argparse, hashlib, json, subprocess, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from timing import L, END
@@ -58,7 +58,7 @@ SHOTS = [
     S(L("2.07")[0] - 0.2, "still", src=SM / "sim_warning.png", zoom=(1.2, 1.7), focus=(0.5, 0.32), label="THE WARNING ON EVERY BILL", tag="RBI CARD DIRECTIONS 2025 · PARA 23(3)"),
     S(L("2.08")[0] - 0.2, "clip", src=BR / "pixabay_8698.mp4", ss=4.0, label="11.86 CRORE CREDIT CARDS", tag="RBI DATA | MAR 2026"),
     S(BOARD_AT["b07_crif"], "board", id="b07_crif"),
-    S(L("2.10")[0] - 0.2, "photo", src=CM / "supreme_court_03_inside-the-supreme-court-of-india-11-jpg.jpg", label="SUPREME COURT · 20 DEC 2024", tag="30% CAP SET ASIDE · HSBC v. AWAZ | PHOTO: PINAKPANI, CC BY-SA 4.0"),
+    S(L("2.10")[0] - 0.2, "photo", src=CM / "supreme_court_03_inside-the-supreme-court-of-india-11-jpg.jpg", alt=CM / "supreme_court_04_inside-the-supreme-court-of-india-12-jpg.jpg", label="SUPREME COURT · 20 DEC 2024", tag="30% CAP SET ASIDE · HSBC v. AWAZ | PHOTO: PINAKPANI, CC BY-SA 4.0"),
     S(BOARD_AT["b08_maths"], "board", id="b08_maths"),
     S(L("2.13")[0] - 0.2, "clip", src=BR / "coverr-friends-laughing-in-india-7824.mp4", ss=2.0, label="BORROW FROM A FRIEND"),
     S(BOARD_AT["b09_loop"], "board", id="b09_loop"),
@@ -174,17 +174,50 @@ def render(shot, dur, out, W, H):
         sys.exit("unknown kind " + k)
 
 
+def src_mtime(s):
+    f = BD / (s["id"] + ".mp4") if s["kind"] == "board" else s.get("src")
+    return f.stat().st_mtime if f and Path(f).exists() else 0
+
+
+def split_long(shots, end):
+    """A still never holds longer than ~4.5 s (charter: a cut every 2.5-4 s). Long proof/still/photo shots become
+    wide -> mid -> tight framings of the same page (or the next photo in `alt`)."""
+    out = []
+    for i, s in enumerate(shots):
+        nxt = shots[i + 1]["t"] if i + 1 < len(shots) else end
+        dur = nxt - s["t"]
+        if s["kind"] not in ("proof", "still", "photo") or dur <= 5.0:
+            out.append(s); continue
+        n = min(3, int(dur // 3.5) or 1)
+        if s["kind"] == "proof":
+            fx, fy = yellow_focus(s["src"])
+        else:
+            fx, fy = s.get("focus", (0.5, 0.5))
+        zooms = {"proof": [(1.0, 1.12), (1.25, 1.45), (1.6, 1.8)], "still": [(1.0, 1.15), (1.2, 1.4), (1.45, 1.7)],
+                 "photo": [(1.0, 1.1), (1.12, 1.25), (1.0, 1.1)]}[s["kind"]]
+        for j in range(n):
+            part = dict(s, t=round(s["t"] + dur * j / n, 2), kind="still", zoom=zooms[j],
+                        focus=(0.5 + (fx - 0.5) * (0.4 if j == 0 else 1.0), 0.5 + (fy - 0.5) * (0.4 if j == 0 else 1.0)))
+            if s["kind"] == "photo":
+                part["focus"] = (0.5, 0.5) if j == 0 else (0.42 + 0.16 * (j % 2), 0.5)
+                if j == 1 and s.get("alt"):
+                    part["src"] = s["alt"]
+            out.append(part)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=720)
     ap.add_argument("--skip-boards", action="store_true", help="render other shots while board renders are still running")
     a = ap.parse_args(); H = a.height; W = H * 16 // 9
     sd = A / f"shots{H}"; sd.mkdir(parents=True, exist_ok=True)
-    shots = sorted(SHOTS, key=lambda s: s["t"])
+    shots = split_long(sorted(SHOTS, key=lambda s: s["t"]), END)
     lst = []
     for i, s in enumerate(shots):
         end = shots[i + 1]["t"] if i + 1 < len(shots) else END
         dur = round(end - s["t"], 3)
-        out = sd / f"{i:03d}_{s['kind']}.mp4"
+        key = hashlib.sha1(json.dumps([s, dur, W, H, src_mtime(s)], default=str, sort_keys=True).encode()).hexdigest()[:8]
+        out = sd / f"{i:03d}_{s['kind']}_{key}.mp4"   # spec hash: an edited shot re-renders, the rest are reused
         if not out.exists():
             if a.skip_boards and s["kind"] == "board" and not (BD / (s["id"] + ".mp4")).exists():
                 print(f"{i:03d} skip board {s['id']}"); continue
@@ -209,16 +242,28 @@ def main():
         cues = {"duration": END + 1, "impacts": [L("1.31")[0] - 0.1, L("1.32")[0] + 9.5], "swells": [{"at": L("1.04")[0] - 2, "dur": 3}],
                 "sections": [{"start": 0, "mood": "tense"}, {"start": L("2.18")[0], "mood": "calm"}]}
         (A / "bed_cues.json").write_text(json.dumps(cues))
-        run([sys.executable, str(ROOT / "scripts/make_bed.py"), str(A / "bed_cues.json"), str(bed)])
+        run([str(ROOT / ".venv/bin/python") if (ROOT / ".venv/bin/python").exists() else sys.executable, str(ROOT / "scripts/make_bed.py"), str(A / "bed_cues.json"), str(bed)])
     rv = L("1.31")[0]
     duck = f"volume='if(between(t,{rv-1.6},{rv-0.1}),0,1)':eval=frame"
     out = A / f"minimum-due-preview-{H}p.mp4"
-    logo = ROOT / "assets/brand/logo_square.png"
-    run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-i", str(vo), "-i", str(bed), "-loop", "1", "-i", str(logo), "-filter_complex",
-         f"[3:v]scale={int(H*0.09)}:-2,format=rgba,colorchannelmixer=aa=0.85[lg];[0:v][lg]overlay=W-w-{int(H*0.04)}:{int(H*0.04)}:shortest=1:enable='not({bug_off})'[v];"
-         f"[2:a]volume=-25dB,{duck}[b];[1:a]volume=0dB[v1];[v1][b]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1:LRA=11[a]",
-         "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-b:v", "4M", "-maxrate", "5M", "-bufsize", "8M", "-pix_fmt", "yuv420p",
-         "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", "-t", f"{END:.2f}", str(out)])
+    logo = A / f"logo_bug_{H}.png"   # pre-scaled once: the brand PNG is large, and rescaling it per frame made the encode crawl
+    run(["ffmpeg", "-v", "error", "-y", "-i", str(ROOT / "assets/brand/logo_square.png"), "-vf",
+         f"scale={int(H*0.09)}:-2,format=rgba,colorchannelmixer=aa=0.85", str(logo)])
+    # audio: VO + ducked bed, then two-pass linear loudnorm to -14 LUFS (fast on its own; slow inside the video graph)
+    mix = A / "mix_raw.wav"
+    run(["ffmpeg", "-v", "error", "-y", "-i", str(vo), "-i", str(bed), "-filter_complex",
+         f"[1:a]volume=-25dB,{duck}[b];[0:a][b]amix=inputs=2:duration=longest:normalize=0[a]", "-map", "[a]", "-t", f"{END:.2f}", str(mix)])
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(mix), "-af", "loudnorm=I=-14:TP=-1:LRA=11:print_format=json", "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    m = json.loads(r[r.rindex("{"):r.rindex("}") + 1])
+    ln = (f"loudnorm=I=-14:TP=-1:LRA=11:linear=true:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+          f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}")
+    # video: logo bug (30 fps still, bounded) over the joined shots
+    run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-i", str(mix), "-loop", "1", "-framerate", "30", "-t", f"{END:.2f}", "-i", str(logo),
+         "-filter_complex", "[2:v]format=rgba[lg];"
+         f"[0:v][lg]overlay=W-w-{int(H*0.04)}:{int(H*0.04)}:enable='not({bug_off})'[v];[1:a]{ln},aresample=48000[a]",
+         "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast", "-b:v", "4M", "-maxrate", "5M", "-bufsize", "8M",
+         "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", "-t", f"{END:.2f}", str(out)])
     print("wrote", out)
 
 

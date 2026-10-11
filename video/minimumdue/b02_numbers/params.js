@@ -157,11 +157,11 @@ window.SCENE = {
    "dur": 0.9
   },
   {
-   "write": "Minimum ≠ safety net",
+   "write": "Minimum = safety net",
    "x": 260,
    "y": 420,
    "at": 30.24,
-   "size": 74,
+   "size": 73,
    "color": "black",
    "dur": 1.8
   },
@@ -171,11 +171,11 @@ window.SCENE = {
    "dur": 0.5
   },
   {
-   "write": "= interest switch ON",
+   "write": "Minimum = interest switch ON",
    "x": 260,
    "y": 700,
    "at": 33.04,
-   "size": 77,
+   "size": 53,
    "color": "red",
    "dur": 1.9
   },

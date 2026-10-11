@@ -41,11 +41,11 @@ window.SCENE = {
   },
   {
    "write": "5 simple steps",
-   "x": 112,
+   "x": 145,
    "y": 600,
    "at": 6.07,
    "dur": 1.4,
-   "size": 130,
+   "size": 125,
    "color": "green"
   }
  ]

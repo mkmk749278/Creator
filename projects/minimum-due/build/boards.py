@@ -36,7 +36,8 @@ def flow(x, y, size, parts, gap=0.45, maxw=None):
     return out
 
 
-def cx(text, centre, y, at, dur, size, color):
+def cx(text, centre, y, at, dur, size, color, maxw=1640):
+    size = min(size, int(size * maxw / width(text, size)))   # shrink to fit, like w()
     return dict(write=text, x=round(centre - width(text, size) / 2), y=y, at=at, dur=dur, size=size, color=color)
 
 
@@ -64,16 +65,16 @@ BOARDS = [
         dict(cross=[220, 770, 64], at=L("1.14")[0] + 2.4, color=R),
         w("Interest free period lost", 330, 830, L("1.14")[0] + 2.7, 1.6, 80, R),
         dict(erase=True, at=L("1.15")[0] + 0.1, dur=0.9),
-        w("Minimum ≠ safety net", 260, 420, L("1.15")[0] + 1.2, 1.8, 100, K),
+        w("Minimum = safety net", 260, 420, L("1.15")[0] + 1.2, 1.8, 100, K),
         dict(strike="last", at=L("1.15")[0] + 3.2, dur=0.5),
-        w("= interest switch ON", 260, 700, L("1.15")[0] + 4.0, 1.9, 100, R),
+        w("Minimum = interest switch ON", 260, 700, L("1.15")[0] + 4.0, 1.9, 100, R),
         dict(box="last", color=R, dur=0.6),
     ]),
     dict(id="b03_calendar", start=L("1.18")[0] - 0.2, end=L("1.21")[1] + 0.4, tag="ILLUSTRATION · OUR EXAMPLE", steps=[
         dict(line=[220, 560, 1720, 560], at=L("1.18")[0] + 0.1, dur=0.6, color=K),
         cx("Oct 5", 300, 650, L("1.18")[0] + 0.5, 0.5, 56, K), cx("Oct 25", 960, 650, L("1.18")[0] + 1.3, 0.6, 56, K),
-        cx("BILL ₹30,000", 940, 470, L("1.18")[0] + 2.0, 1.4, 54, B),
-        cx("Nov 14", 1600, 650, L("1.18")[0] + 3.6, 0.6, 56, R), cx("LAST DATE", 1540, 470, L("1.18")[0] + 4.4, 1.0, 52, R),
+        cx("BILL ₹30,000", 760, 470, L("1.18")[0] + 2.0, 1.4, 54, B),
+        cx("Nov 14", 1600, 650, L("1.18")[0] + 3.6, 0.6, 56, R), cx("LAST DATE", 1520, 470, L("1.18")[0] + 4.4, 1.0, 46, R),
         dict(line=[300, 760, 1600, 760], at=L("1.19")[0] + 0.3, dur=1.0, color=G, width=14),
         w("Phone: 40 days interest free", 260, 870, L("1.19")[0] + 1.3, 1.6, 60, G),
         w("Groceries: 25 days", 260, 970, L("1.19")[0] + 3.4, 1.2, 60, G),

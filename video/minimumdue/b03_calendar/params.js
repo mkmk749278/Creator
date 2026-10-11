@@ -50,7 +50,7 @@ window.SCENE = {
   },
   {
    "write": "BILL ₹30,000",
-   "x": 606,
+   "x": 426,
    "y": 470,
    "at": 2.2,
    "dur": 1.4,
@@ -68,11 +68,11 @@ window.SCENE = {
   },
   {
    "write": "LAST DATE",
-   "x": 1247,
+   "x": 1261,
    "y": 470,
    "at": 4.6,
    "dur": 1.0,
-   "size": 52,
+   "size": 46,
    "color": "red"
   },
   {
