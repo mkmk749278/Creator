@@ -112,7 +112,7 @@ The `/parallel-render` skill walks through the whole procedure.
 ## 4. Quality first: never trim effort for speed
 
 The owner's rule (Oct 2026): **accuracy and the best output matter more than speed.**
-- Run Claude at full strength: `high` or `xhigh` effort for building, `max` for fact-checks and final reviews. Never lower
+- Run Claude at full strength: `high` or `xhigh` effort for building, `max` for fact-checks (the lighter scope in §12) and final reviews. Never lower
   effort, skip a QA round, drop a fact-check or shrink research to finish sooner. *Why:* a wrong claim or a slide-like
   shot on a public channel costs more than an hour of compute.
 - Get speed from **parallelism** (§3), caching and pre-rendering expensive layers, never from doing less.
@@ -723,6 +723,17 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 - **Facts only from collected sources**, checked on the web before they go on screen. Where reports disagree (15 vs 16
   minutes), say "as reported" and note the other figure in the description. Present claims as claims; on health topics
   include the mainstream scientific view and at least one real skeptic beat.
+- **Lighter fact-check (owner, 2026-10-11).** *Why:* the full independent pass on Minimum Amount Due re-searched all ~95
+  claims from zero at `max` effort (plus a captcha-gated RBI PDF and a day-by-day rebuild of the math) and used most of
+  the 5-hour usage window; nearly every rule and bank term it checked was already sourced. Now:
+  1. **The writer logs sources while researching:** a draft `claims.csv` with every claim's exact URL and verbatim quote,
+     status `confirmed` only when the writer read the primary page (RBI/regulator text, the bank's own page, the court
+     report, the data release) or two independent reports. Anything else is marked `unverified` (weak).
+  2. **Strong rows are not re-researched.** The checker (fresh subagent, `max` effort) opens only the cited page to
+     confirm the quote and the number match, and spends real searching only on weak rows, all numbers and dates, our own
+     calculations (re-run the tool, check the method against the cited source) and on-screen tags.
+  3. **After a script edit, re-check only the changed lines.**
+  The gate (`scripts/claims_check.py`) and the rule "facts only from sources" are unchanged.
 - **Label unmeasured claims** (heart rate, "40–50% less oxygen") as narration claims or illustrations. Quotes verbatim only.
 - **Safety lines** (e.g. "don't try breath-holding without training") in the description and on the end card.
 - **Every asset logged** with its licence in `media_manifest.csv` (ID, URL, owner, licence, date, EDL slots);

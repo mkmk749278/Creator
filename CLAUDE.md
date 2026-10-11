@@ -23,6 +23,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 ## Quality first (owner's rule)
 - **Accuracy and the best output matter more than speed.** Never lower effort, skip QA or fact-check rounds, or shrink
   research to finish sooner. Use `high`/`xhigh` effort for building and `max` for fact-checks and final reviews.
+  Fact-checks are light (owner, 2026-10-11): re-verify only weak rows, numbers, our calculations and changed lines;
+  strong rows the writer sourced with URL + quote are only spot-opened (PLAYBOOK §12).
 - **Get speed from parallel cloud sessions** (each is its own 4 vCPU / 16 GB VM): split rendering and animation across
   sessions, keep media sourcing in one session (all sessions share one IP and one usage limit). Plan: PLAYBOOK §3.
 - Research deeply: real sources for every fact, real footage before stock, a contact sheet of every asset before use.
