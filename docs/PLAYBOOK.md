@@ -897,6 +897,8 @@ hour, then a session restart ended it with nothing saved; the owner asked why re
 into 2–4 narrow parallel researchers (one topic group each, ~15 min target), skip topics another file already covers,
 and make every researcher **append findings to its file after each item**, so a restart loses at most one item. Check on
 long background work every ~20 min instead of assuming it is still running.
+The fact-check then hit the account's usage limit mid-run (resets after a few hours): parallel max-effort checkers burn
+usage fast. Keep the write-as-you-go rule for checkers too, and on a limit stop resume from the saved rows.
 
 **Minimum Amount Due (English, 8:05, 2026-10-11, v1 → v2).** The per-shot review of v1 found:
 - **Proofs unreadable:** 1080p screenshots at a 1.1–1.8× zoom left the highlighted line about 10 px tall on a phone.

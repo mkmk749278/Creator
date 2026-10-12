@@ -43,9 +43,9 @@ row("C013", S2, "If the minimum stays unpaid for ninety days after the due date,
     "DESK: rubber stamp hits a file: NPA · DAY 91.", "NPA = BAD LOAN [RBI | IRAC NORMS]", "stamp thud")
 row("C014", S2, "Now here is something most people don't know. From that day, your unpaid card is also a loss for the bank.",
     "DESK: the bank's ledger page; a block of coins moves from PROFIT to a locked box.")
-row("C015", S2, "The bank must keep aside about a quarter of what you owe, from its own profit. That is why the calls get louder around this time.",
-    "DESK: about a quarter of the coins slide into the locked box.", "ABOUT 25% SET ASIDE [RBI | PROVISIONING RULES]", "latch click")
-row("C016", S2, "But listen carefully. Some people say interest stops after ninety days. It does not.",
+row("C015", S2, "The bank must keep aside at least a quarter of what you owe, from its own profit. That is one reason the pressure grows around this time.",
+    "DESK: about a quarter of the coins slide into the locked box.", "AT LEAST 25% SET ASIDE [RBI | PROVISIONING RULES]", "latch click")
+row("C016", S2, "But listen carefully. Some people say interest stops after ninety days. No rule says that.",
     "DOODLE: speech bubble INTEREST STOPS? gets a red cross.", "MYTH", "", "slow down")
 row("C017", S2, "The bank cannot count your unpaid interest as its income. But your bill can keep growing as per your card terms.",
     "DOODLE: meter on the bill keeps ticking.")
@@ -65,14 +65,14 @@ row("C023", S3, "Take two people. Ravi owes ten thousand rupees. Sunita owes one
 row("C024", S3, "Both pay the same interest. Three point seven five percent a month, plus eighteen percent GST on it.",
     "DOODLE: one interest arrow into each stack.", "3.75% A MONTH + 18% GST [HDFC · ICICI · SBI CARD · AXIS | 2026]")
 row("C025", S3, "But the late fee is not a percentage. It is a fixed amount by slab. On ten thousand, the late fee is seven hundred and fifty rupees. On one lakh, it is thirteen hundred.",
-    "DOODLE: a slab staircase; two price tags hang on it: ₹750 and ₹1,300.", "LATE FEE BY SLAB [HDFC BANK MITC | SEP 2026]", "pop × 2")
+    "DOODLE: a slab staircase; two price tags hang on it: ₹750 and ₹1,300.", "LATE FEE BY SLAB [HDFC BANK MITC | OCT 2026]", "pop × 2")
 row("C026", S3, "Seven hundred and fifty on ten thousand is seven and a half percent, every month, just as a fee. Thirteen hundred on one lakh is only one point three percent.",
     "DOODLE: two gauges: 7.5% (red) vs 1.3% (amber).", "7.5% vs 1.3% A MONTH")
 row("C027", S3, "After six months of paying nothing, Ravi's ten thousand becomes about nineteen thousand. Almost double.",
     "DESK: Ravi's stack grows coin by coin to ₹19,112; red coins mark the late fees.", "₹10,000 → ABOUT ₹19,100 IN 6 MONTHS", "clink run")
 row("C028", S3, "Sunita's one lakh becomes about one lakh thirty eight thousand.", "DESK: Sunita's stack grows to ₹1,38,371.", "₹1,00,000 → ABOUT ₹1,38,400")
-row("C029", S3, "For Ravi, two thirds of that jump is only late fees. So the smaller your bill, the harder the fees hit.",
-    "DESK: Ravi's red fee coins lift out: two thirds of the growth.", "2/3 OF THE JUMP = LATE FEES")
+row("C029", S3, "For Ravi, about two thirds of that jump is late fees and the GST on them. So the smaller your bill, the harder the fees hit.",
+    "DESK: Ravi's red fee coins lift out: two thirds of the growth.", "2/3 OF THE JUMP = LATE FEES + GST")
 row("C030", S3, "This is our own calculation, using one bank's published fees. Your bill will be different, but the shape is the same.",
     "DOODLE: small print card.", "OUR CALCULATION · tools/cpm_math.py · NOTHING PAID, NO NEW SPENDS")
 
@@ -80,23 +80,23 @@ S4 = "4 Who comes after you"
 row("C031", S4, "Now the real question. Who actually comes after you? And will anyone come to your house?",
     "REAL: an Indian apartment door; a doorbell.", "", "music dips")
 row("C032", S4, "In the first three months, it is mostly calls. Automated calls, SMS, WhatsApp. Many from big call centres in cities.",
-    "REAL: call-centre floor (stock, ILLUSTRATIVE FOOTAGE).", "1 TO 90 DAYS: CALLS [BANK OF BARODA | COLLECTION TENDER 2022]")
+    "REAL: call-centre floor (stock, ILLUSTRATIVE FOOTAGE).", "1 TO 90 DAYS: MOSTLY CALLS [BANK OF BARODA | COLLECTION TENDER 2022]")
 row("C033", S4, "Banks decide how hard to chase by two things. The days you are late, and the money at risk.",
     "DOODLE: a 2-axis grid: DAYS LATE × AMOUNT; heat grows to the top right.", "[RBL BANK | COLLECTION POLICY]")
 row("C034", S4, "After that, many banks hand your account to a recovery agency. And here is the business behind it.",
     "DESK: the bill file is passed across the desk to a folder marked AGENCY.")
 row("C035", S4, "Many agencies earn only when they collect. A percentage of what you pay. One public sector bank pays its agencies between seven and a half and fifteen percent on accounts up to one lakh.",
-    "DOODLE: a coin splits; a small slice goes to the agency.", "7.5–15% COMMISSION [PNB | AGENCY TENDER]")
+    "DOODLE: a coin splits; a small slice goes to the agency.", "7.5–15% COMMISSION [PNB | RECOVERY AGENCY POLICY 2021]")
 row("C036", S4, "Now see it from their side. If you owe ten thousand, the agency may earn about a thousand rupees. And only if you pay in full.",
     "DESK: ₹10,000 stack; about ₹1,000 lifts off.", "OUR ESTIMATE")
 row("C037", S4, "Now think about where you live. Say your card has your old room address in the city. But your family lives in a village, far away.",
     "DOODLE: map: a city dot and a village dot, a long road between them.")
-row("C038", S4, "Agencies usually work city by city, or district by district. In Andhra and Telangana, one card company's agency list names only Hyderabad, Warangal, Karimnagar, Vizag and Vijayawada.",
-    "DOODLE: AP + Telangana map; five city pins light up.", "[ONECARD | AGENCY LIST]")
+row("C038", S4, "Agencies usually work city by city, or district by district. In Andhra and Telangana, one card company's agency list names just six places. Hyderabad, Warangal, Karimnagar, Vizag, Vijayawada and Tirupati.",
+    "DOODLE: AP + Telangana map; six city pins light up.", "[ONECARD | AGENCY LIST]")
 row("C039", S4, "For a small amount, a long trip to a far village rarely pays for itself. So small dues mostly stay as calls and messages. That's not a rule. It's simple business.",
     "DOODLE: a fuel can + a day's wage vs a tiny commission coin.", "OUR ESTIMATE · NO BANK PUBLISHES A CUT-OFF")
 row("C040", S4, "For bigger amounts, it changes. Finding a person who moved is a paid job. One bank pays seven thousand five hundred rupees for each person traced. That's worth it only when the amount is big.",
-    "DOODLE: magnifier over the map; a pin found.", "₹7,500 PER PERSON TRACED [PNB | TENDER]")
+    "DOODLE: magnifier over the map; a pin found.", "₹7,500 PER PERSON TRACED [PNB | DETECTIVE AGENCY POLICY 2021]")
 
 S5 = "5 Court and the slab table"
 row("C041", S5, "What about court? Here again, the amount decides.", "DESK: a court file appears next to the stacks.")

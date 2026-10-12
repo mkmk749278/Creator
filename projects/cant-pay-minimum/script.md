@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **12:34** of speech (10,596 characters, 3 Bunty blocks), plus pauses and music beats.
+Estimated length: **12:38** of speech (10,653 characters, 3 Bunty blocks), plus pauses and music beats.
 
 ## 1 Hook
 
@@ -97,14 +97,14 @@ __
 🎬 DESK: the bank's ledger page; a block of coins moves from PROFIT to a locked box.
 
 **C015** · block 1  
-**The bank must keep aside about a quarter of what you owe, from its own profit. That is why the calls get louder around this time.**  
+**The bank must keep aside at least a quarter of what you owe, from its own profit. That is one reason the pressure grows around this time.**  
 __  
 🎬 DESK: about a quarter of the coins slide into the locked box.  
-🔤 ABOUT 25% SET ASIDE [RBI | PROVISIONING RULES]  
+🔤 AT LEAST 25% SET ASIDE [RBI | PROVISIONING RULES]  
 🔊 latch click
 
 **C016** · block 1  
-**But listen carefully. Some people say interest stops after ninety days. It does not.**  
+**But listen carefully. Some people say interest stops after ninety days. No rule says that.**  
 __  
 🎬 DOODLE: speech bubble INTEREST STOPS? gets a red cross.  
 🔤 MYTH  
@@ -163,7 +163,7 @@ __
 **But the late fee is not a percentage. It is a fixed amount by slab. On ten thousand, the late fee is seven hundred and fifty rupees. On one lakh, it is thirteen hundred.**  
 __  
 🎬 DOODLE: a slab staircase; two price tags hang on it: ₹750 and ₹1,300.  
-🔤 LATE FEE BY SLAB [HDFC BANK MITC | SEP 2026]  
+🔤 LATE FEE BY SLAB [HDFC BANK MITC | OCT 2026]  
 🔊 pop × 2
 
 **C026** · block 1  
@@ -186,10 +186,10 @@ __
 🔤 ₹1,00,000 → ABOUT ₹1,38,400
 
 **C029** · block 1  
-**For Ravi, two thirds of that jump is only late fees. So the smaller your bill, the harder the fees hit.**  
+**For Ravi, about two thirds of that jump is late fees and the GST on them. So the smaller your bill, the harder the fees hit.**  
 __  
 🎬 DESK: Ravi's red fee coins lift out: two thirds of the growth.  
-🔤 2/3 OF THE JUMP = LATE FEES
+🔤 2/3 OF THE JUMP = LATE FEES + GST
 
 **C030** · block 1  
 **This is our own calculation, using one bank's published fees. Your bill will be different, but the shape is the same.**  
@@ -209,7 +209,7 @@ __
 **In the first three months, it is mostly calls. Automated calls, SMS, WhatsApp. Many from big call centres in cities.**  
 __  
 🎬 REAL: call-centre floor (stock, ILLUSTRATIVE FOOTAGE).  
-🔤 1 TO 90 DAYS: CALLS [BANK OF BARODA | COLLECTION TENDER 2022]
+🔤 1 TO 90 DAYS: MOSTLY CALLS [BANK OF BARODA | COLLECTION TENDER 2022]
 
 **C033** · block 1  
 **Banks decide how hard to chase by two things. The days you are late, and the money at risk.**  
@@ -226,7 +226,7 @@ __
 **Many agencies earn only when they collect. A percentage of what you pay. One public sector bank pays its agencies between seven and a half and fifteen percent on accounts up to one lakh.**  
 __  
 🎬 DOODLE: a coin splits; a small slice goes to the agency.  
-🔤 7.5–15% COMMISSION [PNB | AGENCY TENDER]
+🔤 7.5–15% COMMISSION [PNB | RECOVERY AGENCY POLICY 2021]
 
 **C036** · block 2  
 **Now see it from their side. If you owe ten thousand, the agency may earn about a thousand rupees. And only if you pay in full.**  
@@ -240,9 +240,9 @@ __
 🎬 DOODLE: map: a city dot and a village dot, a long road between them.
 
 **C038** · block 2  
-**Agencies usually work city by city, or district by district. In Andhra and Telangana, one card company's agency list names only Hyderabad, Warangal, Karimnagar, Vizag and Vijayawada.**  
+**Agencies usually work city by city, or district by district. In Andhra and Telangana, one card company's agency list names just six places. Hyderabad, Warangal, Karimnagar, Vizag, Vijayawada and Tirupati.**  
 __  
-🎬 DOODLE: AP + Telangana map; five city pins light up.  
+🎬 DOODLE: AP + Telangana map; six city pins light up.  
 🔤 [ONECARD | AGENCY LIST]
 
 **C039** · block 2  
@@ -255,7 +255,7 @@ __
 **For bigger amounts, it changes. Finding a person who moved is a paid job. One bank pays seven thousand five hundred rupees for each person traced. That's worth it only when the amount is big.**  
 __  
 🎬 DOODLE: magnifier over the map; a pin found.  
-🔤 ₹7,500 PER PERSON TRACED [PNB | TENDER]
+🔤 ₹7,500 PER PERSON TRACED [PNB | DETECTIVE AGENCY POLICY 2021]
 
 ## 5 Court and the slab table
 
