@@ -6,8 +6,8 @@ desktop Studio.
 ## Files
 | What | Where |
 |---|---|
-| Video, 4K master (3840×2160, 30 fps, about 20 Mbps, −14 LUFS) | Gofile link in the session report; `assets/minimum-due-refined-master.mp4` |
-| 720p review copy | Gofile link in the session report |
+| Video, 4K master (3840×2160, 30 fps, 19.9 Mbps, −14.2 LUFS, 1.2 GB) | https://gofile.io/d/uube0Nlr (`assets/minimum-due-refined-master.mp4`) |
+| 720p review copy | https://gofile.io/d/oEbcC1mL |
 | Thumbnail, main | `thumbnail_A.jpg` (1280×720) — "PAID ONLY ₹1,500 · BILL WENT UP · ₹30,000 → ₹30,481" |
 | Thumbnail, test | `thumbnail_B.jpg` (1280×720) — "MINIMUM DUE TRAP? · 45% INTEREST" |
 | Title, description, chapters, tags, pinned comment | `description.md` |

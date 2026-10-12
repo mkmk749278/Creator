@@ -56,3 +56,22 @@ Phase 2 takes the whiteboard under 25%. After that come the 1080p master and the
 - This is a visual change, not a new fact-check. It uses the numbers and claims already checked in `claims.csv` and
   `fact-check.md`.
 - Cue sync is by phrase position, not word-level timing. It was checked visually, not by ear.
+
+## Master (2026-10-12, after the owner approved the refined cut)
+
+`assets/minimum-due-refined-master.mp4`: 3840×2160, 30 fps, 14,544 frames (identical to the approved cut), 8:04.8,
+19.9 Mbps, −14.2 LUFS, peak −0.8 dBFS. https://gofile.io/d/uube0Nlr
+
+- **Native 4K:** all 13 boards and the 3 money scenes, re-rendered by `build/render_4k.sh` with
+  `make_native_4k.mjs`, plus the source-page proofs (shot at 2×).
+- **Upscaled from 1080p:** the stock clips and the phone simulation stills. Pixabay and Coverr give 1080p (some
+  1440p); Commons photos are scaled from their originals.
+- **Cut unchanged:** no visual edits after the owner's approval.
+
+YouTube package: `youtube/`.
+- `description.md`: titles, description, chapters, sources, credits, tags, pinned comment.
+- `subtitles.en.srt`.
+- `UPLOAD.md`: the upload checklist.
+- `thumbnail_A.jpg` and `thumbnail_B.jpg`, in the channel's navy and gold theme.
+
+Phase 2 of the brief was not started; the owner approved the cut as it is.
