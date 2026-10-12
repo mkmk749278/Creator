@@ -23,6 +23,44 @@ CN = A / "commons_new"; BN = A / "broll_new"
 RENDER_V = 3   # bump when render() changes, so cached shots re-render
 
 
+# ---- refined cut (owner's visual-refinement brief, 2026-10-12; refine-plan.md) ----
+# Animated money-mechanics scenes (video/minimumdue/sNN_*, HyperFrames) replace board and filler stretches. Their
+# start times and lengths come from video/minimumdue/<id>/data.js (build/scene_data.py), renders are copied to assets/scenes/.
+SC = A / "scenes"
+
+
+def scene_meta(sid):
+    js = (ROOT / "video/minimumdue" / sid / "data.js").read_text()
+    d = json.loads(js[js.index("=") + 1:].strip().rstrip(";"))
+    return d["start"], d["start"] + d["duration"], d["cues"]
+
+
+def refined_shots(shots):
+    """v3's shot list with the Phase 1 windows replaced by the scenes; proofs stay as cutaways inside the timeline."""
+    s1, e1, _ = scene_meta("s01_pay")
+    s2, e2, c2 = scene_meta("s02_timeline")
+    s3, e3, _ = scene_meta("s03_allocation")
+    wins = ((s1, e1), (s2, e2), (s3, e3))
+    out = []
+    for i, x in enumerate(shots):   # drop shots inside a window; one that runs past its window resumes at the window's end
+        nxt = shots[i + 1]["t"] if i + 1 < len(shots) else END
+        w = next(((a, b) for a, b in wins if a <= x["t"] < b), None)
+        if w is None:
+            out.append(x)
+        elif nxt > w[1] + 0.5:
+            out.append(dict(x, t=round(w[1], 2)))
+    out += [
+        S(s1, "scene", id="s01_pay"),
+        S(s2, "scene", id="s02_timeline"),
+        S(L("1.22")[0] - 0.2, "proof", src=PR / "rbi_lost.png", label="IN THE RBI RULES", tag="RBI CARD DIRECTIONS 2025 · PARA 23(6)"),
+        S(L("1.22")[1] + 0.25, "scene", id="s02_timeline"),
+        S(s2 + c2["rate"] - 0.3, "proof", src=PR / "icici_rate.png", label="ICICI: 3.75% A MONTH", tag="ICICI BANK · INTEREST RATES PAGE | 2025"),
+        S(s2 + c2["year"] - 0.2, "scene", id="s02_timeline"),
+        S(s3, "scene", id="s03_allocation"),
+    ]
+    return sorted(out, key=lambda x: x["t"])
+
+
 def cutin(board, t, dur, shot):
     """A real cutaway inside a long board at film time t (the board keeps writing underneath; we return `dur` s later)."""
     return [dict(shot, t=round(t, 2)), S(t + dur, "board", id=board)]
@@ -195,10 +233,11 @@ def render(shot, dur, out, W, H):
         vf += overlays(W, H, lab, tag)
         run(["ffmpeg", "-v", "error", "-y", "-ss", str(shot.get("ss", 0)), "-t", f"{dur:.3f}", "-stream_loop", "-1", "-i", str(shot["src"]),
              "-vf", ",".join(vf), "-t", f"{dur:.3f}"] + enc + [str(out)])
-    elif k == "board":
-        off = shot.get("frm", shot["t"]) - BOARD_AT[shot["id"]]
+    elif k in ("board", "scene"):
+        base, folder = (BOARD_AT[shot["id"]], BD) if k == "board" else (scene_meta(shot["id"])[0], SC)
+        off = shot.get("frm", shot["t"]) - base
         vf = [f"scale={W}:{H}", "fps=30"] + overlays(W, H, lab, tag)
-        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(BD / (shot["id"] + ".mp4")), "-vf", ",".join(vf),
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(folder / (shot["id"] + ".mp4")), "-vf", ",".join(vf),
              "-t", f"{dur:.3f}"] + enc + [str(out)])
     elif k in ("still", "photo", "proof"):
         if k == "proof":
@@ -241,7 +280,7 @@ def render(shot, dur, out, W, H):
 
 
 def src_mtime(s):
-    f = BD / (s["id"] + ".mp4") if s["kind"] == "board" else s.get("src")
+    f = BD / (s["id"] + ".mp4") if s["kind"] == "board" else SC / (s["id"] + ".mp4") if s["kind"] == "scene" else s.get("src")
     return f.stat().st_mtime if f and Path(f).exists() else 0
 
 
@@ -293,9 +332,14 @@ def split_long(shots, end):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=720)
     ap.add_argument("--skip-boards", action="store_true", help="render other shots while board renders are still running")
+    ap.add_argument("--refined", action="store_true", help="the refined cut (refine-plan.md): scenes replace boards/filler")
     a = ap.parse_args(); H = a.height; W = H * 16 // 9
     sd = A / f"shots{H}"; sd.mkdir(parents=True, exist_ok=True)
-    shots = split_long(sorted(SHOTS, key=lambda s: s["t"]), END)
+    shots = sorted(SHOTS, key=lambda s: s["t"])
+    if a.refined:
+        shots = refined_shots(shots)
+    shots = split_long(shots, END)
+    tagname = "_refined" if a.refined else ""
     lst = []
     for i, s in enumerate(shots):
         end = shots[i + 1]["t"] if i + 1 < len(shots) else END
@@ -310,9 +354,9 @@ def main():
         lst.append(f"file '{out}'")
     if a.skip_boards:
         return
-    (sd / "list.txt").write_text("\n".join(lst) + "\n")
-    video = A / f"video{H}.mp4"
-    run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(sd / "list.txt"), "-c", "copy", str(video)])
+    (sd / f"list{tagname}.txt").write_text("\n".join(lst) + "\n")
+    video = A / f"video{H}{tagname}.mp4"
+    run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(sd / f"list{tagname}.txt"), "-c", "copy", str(video)])
     # logo bug top-right on every shot except sting and end card
     sting = next(s for s in shots if s["kind"] == "sting"); endc = shots[-1]
     i_s = shots.index(sting)
@@ -329,7 +373,7 @@ def main():
         run([str(ROOT / ".venv/bin/python") if (ROOT / ".venv/bin/python").exists() else sys.executable, str(ROOT / "scripts/make_bed.py"), str(A / "bed_cues.json"), str(bed)])
     rv = L("1.31")[0]
     duck = f"volume='if(between(t,{rv-1.6},{rv-0.1}),0,1)':eval=frame"
-    out = A / f"minimum-due-preview-{H}p.mp4"
+    out = A / (f"minimum-due-refined-preview-{H}p.mp4" if a.refined else f"minimum-due-preview-{H}p.mp4")
     logo = A / f"logo_bug_{H}.png"   # pre-scaled once: the brand PNG is large, and rescaling it per frame made the encode crawl
     run(["ffmpeg", "-v", "error", "-y", "-i", str(ROOT / "assets/brand/logo_square.png"), "-vf",
          f"scale={int(H*0.09)}:-2,format=rgba,colorchannelmixer=aa=0.85", str(logo)])

@@ -863,6 +863,24 @@ board vs real-footage balance, loudness) and refine once more.
   then a −1.5 dBFS limiter.
 - **Final mux crawled at 0.3× real time:** it rescaled the 4096 px logo PNG on every frame. Pre-scale overlays once.
 
+**Minimum Amount Due, refinement Phase 1 (2026-10-12, owner's brief).** About half the runtime was whiteboard, which
+read as repetitive. The fix was money mechanics as HyperFrames animation on the reusable kit `video/lib/fin`:
+- the phone payment with the remaining balance kept on screen;
+- one continuous timeline instead of a new board per rule;
+- a payment split with linked counters on the checked series.
+
+Rules learned:
+- **Numbers and cues are generated, never typed.** `build/scene_data.py` writes `data.js` from the calculation tool and
+  the VO alignment.
+- **Keep the bank's own example and our illustration visually separate,** with case labels.
+- **Show interest as accrual, then posting.** Never as a free-running counter.
+- **Inter's latin subset has no ₹ glyph.** Load latin-ext with a `unicode-range`.
+- **`ffmpeg -ss` before a still image writes nothing and still exits 0.** Check that the output exists.
+- **A second GSAP `fromTo` on the same element renders its start state at build time.** Pass `immediateRender: false`.
+- **Text swaps use stacked elements.** Not `tl.set` on `textContent`.
+- **When an edit replaces a window, a shot that runs past the window resumes at its end.** Don't drop it.
+- **Keep scene corners clear of the logo bug** that the final mux adds at the top right.
+
 **Breath-hold (Vidyut Jammwal, Telugu, 7:17, v1→v5).** v1 was all text cards on gradients and was rejected as "a boring
 PowerPoint". What fixed it: full-screen real media, cuts every ~3 s, real event reels (Instagram via yt-dlp), agency photo
 galleries (6000 px), the official trailer, canvas science animations, short "watch this" clips with their own sound.

@@ -65,6 +65,18 @@ for (const project of projects) {
     mkdirSync(dirname(join(out, "library", rel)), { recursive: true });
     copyFileSync(src, join(out, "library", rel));
   }
+  // Finance explainer kit (video/lib/fin) for pages that reference vendor/fin/.
+  if (html.includes("vendor/fin/")) {
+    mkdirSync(join(out, "fin"), { recursive: true });
+    for (const f of ["fin.js", "fin.css"]) copyFileSync(join(root, "video/lib/fin", f), join(out, "fin", f));
+  }
+  // Inter's latin-ext subset (₹ and other currency signs), only where a page asks for it.
+  if (html.includes("vendor/fonts/inter-latin-ext-")) {
+    for (const w of [400, 600, 800]) {
+      const f = `inter-latin-ext-${w}-normal.woff2`;
+      copyFileSync(join(root, "node_modules/@fontsource/inter/files", f), join(out, "fonts", f));
+    }
+  }
   // Handwriting font for whiteboard scenes (Kalam, OFL), only where a page asks for it.
   if (html.includes("vendor/fonts/kalam-")) {
     for (const w of [400, 700]) {

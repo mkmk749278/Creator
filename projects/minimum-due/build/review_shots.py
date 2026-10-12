@@ -30,10 +30,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--video", default=str(asm.A / "minimum-due-preview-720p.mp4"))
     ap.add_argument("--per", type=int, default=8)
+    ap.add_argument("--refined", action="store_true", help="review the refined cut (assemble.py --refined)")
     a = ap.parse_args()
-    shots = asm.split_long(sorted(asm.SHOTS, key=lambda s: s["t"]), END)
+    shots = sorted(asm.SHOTS, key=lambda s: s["t"])
+    shots = asm.split_long(asm.refined_shots(shots) if a.refined else shots, END)
+    if a.refined and a.video == str(asm.A / "minimum-due-preview-720p.mp4"):
+        a.video = str(asm.A / "minimum-due-refined-preview-720p.mp4")
     lines = vo_lines()
-    qa = P / "qa/review"; qa.mkdir(parents=True, exist_ok=True)
+    qa = P / ("qa/review_refined" if a.refined else "qa/review"); qa.mkdir(parents=True, exist_ok=True)
     tmp = Path(tempfile.mkdtemp())
     rows = []
     for i, s in enumerate(shots):
