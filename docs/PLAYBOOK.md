@@ -881,6 +881,15 @@ Rules learned:
 - **When an edit replaces a window, a shot that runs past the window resumes at its end.** Don't drop it.
 - **Keep scene corners clear of the logo bug** that the final mux adds at the top right.
 
+**Minimum Amount Due, 4K master (2026-10-12).**
+- **Native 4K boards:** `build/render_4k.sh` copies each scene with `make_native_4k.mjs` and sets the board pages'
+  pixel-sized `#root` to 100%. Without that, the zoom:2 stage is cropped to a quarter.
+- **Speed:** about 5 frames per second at 4K on 4 vCPU. 16 animations (about 6.5 minutes) took about 45 minutes.
+- **Detach renders with `setsid`:** a plain `nohup … &` render was cancelled ("parent exited") when the tool call
+  ended.
+- **4K assembly:** stills are oversampled 2× rather than 4× (4× means 15K-pixel frames), intermediates are capped at
+  30 Mbps and the master at 20 Mbps.
+
 **Breath-hold (Vidyut Jammwal, Telugu, 7:17, v1→v5).** v1 was all text cards on gradients and was rejected as "a boring
 PowerPoint". What fixed it: full-screen real media, cuts every ~3 s, real event reels (Instagram via yt-dlp), agency photo
 galleries (6000 px), the official trailer, canvas science animations, short "watch this" clips with their own sound.
