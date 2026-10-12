@@ -992,6 +992,9 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
     hands must come from the base clips. Veo's own Telugu speech changes voice between clips. Limits: he is never presented
     as Kishore or a real person; "Altered content = Yes" plus an "AI presenter" tag; never holds a product; ≤ ~20 s per
     stretch, cut A/B every 3–4 s; real footage and animation still carry the film.
+    *Measured 2026-10-12:* LatentSync 1.5 on Kaggle (T4, Python 3.10 venv via uv; Kaggle's image is Python 3.13) made 30 s
+    of 720p lip-sync in 46 min (setup ~2 min), redrawing only the mouth; gestures and expressions stay from the Veo clip.
+    Kaggle needs a phone-verified account for GPU and internet. Notebook: `projects/ai-presenter/kaggle/latentsync_run.py`.
 
 ---
 
