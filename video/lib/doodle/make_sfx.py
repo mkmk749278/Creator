@@ -85,8 +85,13 @@ SOUNDS = {"pop": (pop, -9), "whoosh": (whoosh, -12), "scribble": (scribble, -15)
 
 if __name__ == "__main__":
     js = open(sys.argv[1]).read()
-    dur = float(re.search(r"duration:\s*([\d.]+)", js).group(1))
-    cues = json.loads(re.search(r"sfx:\s*(\[\[.*?\]\])", js, re.S).group(1).replace("'", '"'))
+    m = re.search(r'"duration":\s*([\d.]+)', js)
+    if m:   # generated params.js: a JSON object after "window.SCENE ="
+        scene = json.loads(js[js.index("=") + 1:].strip().rstrip(";"))
+        dur, cues = float(scene["duration"]), scene.get("sfx", [])
+    else:   # hand-written params.js (the doodle sample)
+        dur = float(re.search(r"duration:\s*([\d.]+)", js).group(1))
+        cues = json.loads(re.search(r"sfx:\s*(\[\[.*?\]\])", js, re.S).group(1).replace("'", '"'))
     mix = np.zeros(int(dur * SR) + SR)
     for at, name in cues:
         fn, db = SOUNDS[name]; x = fn(); x = x / (np.max(np.abs(x)) + 1e-9) * 10 ** (db / 20)

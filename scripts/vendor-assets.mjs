@@ -102,6 +102,12 @@ for (const project of projects) {
     mkdirSync(join(out, "rough"), { recursive: true });
     copyFileSync(join(root, "node_modules/roughjs/bundled/rough.js"), join(out, "rough", "rough.js"));
   }
+  // Doodle kit (video/lib/doodle/doodle.js) for pages that reference vendor/doodle/.
+  if (html.includes("vendor/doodle/")) {
+    mkdirSync(join(out, "doodle"), { recursive: true });
+    copyFileSync(join(root, "video/lib/doodle/doodle.js"), join(out, "doodle", "doodle.js"));
+    copyFileSync(join(root, "video/lib/doodle/paper.jpg"), join(out, "doodle", "paper.jpg"));
+  }
   // Seeded organic motion: createNoise3D(seededRandom).
   if (html.includes("vendor/noise/")) {
     mkdirSync(join(out, "noise"), { recursive: true });

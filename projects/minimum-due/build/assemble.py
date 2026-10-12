@@ -16,11 +16,14 @@ ROOT = P.parents[1]
 A = P / "assets"
 BR, CM, PR, SM, BD = A / "broll", A / "commons", A / "proof", A / "sim", A / "boards"
 CI = A / "commons_in"
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"   # fallback only (end card)
+# Modern labels (owner, 2026-10-12: the old writing looked outdated): Bricolage Grotesque 800 (latin + latin-ext merged, so
+# the ₹ sign renders) for the label, JetBrains Mono 700 for source tags; build/make_fonts.py writes them from node_modules.
+LFONT, TFONT = P / "assets/fonts/Bricolage-800.ttf", P / "assets/fonts/JetBrainsMono-700.ttf"
 BOARD_AT = {b["id"]: b["start"] for b in BOARDS}
 ERASE = {b["id"]: [st["at"] for st in b["steps"] if st.get("erase")] for b in BOARDS}   # board erase times (film s)
 CN = A / "commons_new"; BN = A / "broll_new"
-RENDER_V = 3   # bump when render() changes, so cached shots re-render
+RENDER_V = 4   # bump when render() changes, so cached shots re-render (4: modern labels, doodle boards)
 
 
 # ---- refined cut (owner's visual-refinement brief, 2026-10-12; refine-plan.md) ----
@@ -58,6 +61,12 @@ def refined_shots(shots):
         S(s2 + c2["year"] - 0.2, "scene", id="s02_timeline"),
         S(s3, "scene", id="s03_allocation"),
     ]
+    # 1.08 "the full maths behind that small number": flash-forwards now come from the money scenes (the boards they
+    # used, b04/b06, are no longer in the refined cut)
+    for x in out:
+        if x["kind"] == "board" and x["id"] in ("b04_rules", "b06_slow"):
+            sid, frm = ("s02_timeline", s2 + c2["to30481"]) if x["id"] == "b04_rules" else ("s03_allocation", s3 + scene_meta("s03_allocation")[2]["twentysix"] - 1.5)
+            x.update(kind="scene", id=sid, frm=round(frm, 2))
     return sorted(out, key=lambda x: x["t"])
 
 
@@ -166,16 +175,28 @@ def esc(s):
     return s.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’").replace(",", "\\,").replace("%", "\\%")
 
 
+def text_w(txt, font, size):
+    from PIL import ImageFont
+    return ImageFont.truetype(str(font), size).getlength(txt)
+
+
 def overlays(W, H, label="", tag=""):
+    """Lower-left label: dark panel with a gold accent bar and Bricolage type; lower-right source tag: mono on a dim pill.
+    Sizes are measured with the same font files, so the panels fit the text exactly."""
     k = H / 1080
     f = []
     if label:
-        fs = int(40 * k)
-        f.append(f"drawtext=fontfile={FONT}:text='{esc(label)}':x={int(84*k)}:y={int(950*k)}:fontsize={fs}:fontcolor=white:"
-                 f"box=1:boxcolor=black@0.55:boxborderw={int(18*k)}")
+        fs = int(40 * k); pad = int(24 * k); h = int(72 * k); x0, y0 = int(84 * k), int(918 * k)
+        w = int(text_w(label, LFONT, fs)) + 2 * pad
+        f.append(f"drawbox=x={x0}:y={y0}:w={int(8 * k)}:h={h}:color=0xF6C453@1:t=fill")
+        f.append(f"drawbox=x={x0 + int(8 * k)}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.72:t=fill")
+        f.append(f"drawtext=fontfile={LFONT}:text='{esc(label)}':x={x0 + int(8 * k) + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white")
     if tag:
-        f.append(f"drawtext=fontfile={FONT}:text='{esc(tag)}':x=w-tw-{int(70*k)}:y=h-{int(64*k)}:fontsize={int(20*k)}:fontcolor=white@0.9:"
-                 f"box=1:boxcolor=black@0.45:boxborderw={int(8*k)}")
+        fs = int(19 * k); pad = int(12 * k); h = int(34 * k)
+        w = int(text_w(tag, TFONT, fs)) + 2 * pad
+        x0, y0 = W - w - int(64 * k), H - h - int(44 * k)
+        f.append(f"drawbox=x={x0}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.55:t=fill")
+        f.append(f"drawtext=fontfile={TFONT}:text='{esc(tag)}':x={x0 + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white@0.92")
     return f
 
 
@@ -287,6 +308,27 @@ def render(shot, dur, out, W, H):
         sys.exit("unknown kind " + k)
 
 
+def sfx_bus(shots, out):
+    """Doodle sound effects (assets/boards/<id>.sfx.wav, from video/lib/doodle/make_sfx.py) placed under each board shot at
+    the right offset into its scene; one 48 kHz stereo track for the whole film."""
+    import numpy as np, wave
+    sr = 48000; bus = np.zeros((int((END + 1) * sr), 2))
+    for i, x in enumerate(shots):
+        if x["kind"] != "board":
+            continue
+        f = A / "boards" / (x["id"] + ".sfx.wav")
+        if not f.exists():
+            continue
+        w = wave.open(str(f)); a = np.frombuffer(w.readframes(w.getnframes()), "<i2").astype(float).reshape(-1, 2) / 32768
+        nxt = shots[i + 1]["t"] if i + 1 < len(shots) else END
+        off = int((x.get("frm", x["t"]) - BOARD_AT[x["id"]]) * sr); n = int((nxt - x["t"]) * sr); at = int(x["t"] * sr)
+        seg = a[max(0, off): max(0, off) + n]
+        bus[at: at + len(seg)] += seg[: len(bus) - at]
+    with wave.open(str(out), "wb") as w:
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr)
+        w.writeframes((np.clip(bus, -1, 1) * 32767).astype("<i2").tobytes())
+
+
 def src_mtime(s):
     f = BD / (s["id"] + ".mp4") if s["kind"] == "board" else SC / (s["id"] + ".mp4") if s["kind"] == "scene" else s.get("src")
     return f.stat().st_mtime if f and Path(f).exists() else 0
@@ -391,8 +433,10 @@ def main():
          f"scale={int(H*0.09)}:-2,format=rgba,colorchannelmixer=aa=0.85", str(logo)])
     # audio: VO + ducked bed, then two-pass linear loudnorm to -14 LUFS (fast on its own; slow inside the video graph)
     mix = A / "mix_raw.wav"
-    run(["ffmpeg", "-v", "error", "-y", "-i", str(vo), "-i", str(bed), "-filter_complex",
-         f"[1:a]volume=-25dB,{duck}[b];[0:a][b]amix=inputs=2:duration=longest:normalize=0[a]", "-map", "[a]", "-t", f"{END:.2f}", str(mix)])
+    sfx = A / "sfx_bus.wav"
+    sfx_bus(shots, sfx)   # doodle sound effects (pop, whoosh, scribble, clink...) under the board shots
+    run(["ffmpeg", "-v", "error", "-y", "-i", str(vo), "-i", str(bed), "-i", str(sfx), "-filter_complex",
+         f"[1:a]volume=-25dB,{duck}[b];[2:a]aresample=48000[s];[0:a][b][s]amix=inputs=3:duration=first:normalize=0[a]", "-map", "[a]", "-t", f"{END:.2f}", str(mix)])
     # loudness: measure, apply the exact gain to -14 LUFS, then a brick-wall limiter at -1.5 dBFS for the few VO peaks.
     # (loudnorm linear=true silently undershoots, -14.8 LUFS on v1, when the gain would push true peak over the ceiling.)
     def integrated(f, af="anull"):
