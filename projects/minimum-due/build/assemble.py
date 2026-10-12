@@ -61,6 +61,13 @@ def refined_shots(shots):
     return sorted(out, key=lambda x: x["t"])
 
 
+def rate(H, mbps_720, cap=30):
+    """Bitrate flags scaled with picture area from a 720p figure, capped (every encode is bitrate-capped; a 4K master
+    at ~20 Mbps keeps the file uploadable, YouTube re-encodes anyway: PLAYBOOK §21)."""
+    b = min(cap, mbps_720 * (H / 720) ** 2)
+    return ["-b:v", f"{b:.0f}M", "-maxrate", f"{b * 1.2:.0f}M", "-bufsize", f"{b * 2:.0f}M"]
+
+
 def cutin(board, t, dur, shot):
     """A real cutaway inside a long board at film time t (the board keeps writing underneath; we return `dur` s later)."""
     return [dict(shot, t=round(t, 2)), S(t + dur, "board", id=board)]
@@ -186,8 +193,9 @@ def kb(W, H, dur, z0=1.0, z1=1.08, fx=0.5, fy=0.5, fx1=None, aspect=None):
             cfy = (fy - top) / vis
     ease = f"(0.5-0.5*cos(PI*on/{n}))"   # ease in-out: no jolt at the cut
     # cover-crop to 16:9 first (around the focus), else zoompan squashes 4:3 and portrait photos into the frame
-    pre = (f"scale={W*4}:{H*4}:force_original_aspect_ratio=increase,"
-           f"crop={W*4}:{H*4}:'max(0,min(iw-ow,iw*{fx}-ow/2))':'max(0,min(ih-oh,ih*{fy}-oh/2))'")
+    o = 4 if H <= 1080 else 2   # oversampling for smooth sub-pixel zooms (2x is enough at 4K, 4x would be 15K frames)
+    pre = (f"scale={W*o}:{H*o}:force_original_aspect_ratio=increase,"
+           f"crop={W*o}:{H*o}:'max(0,min(iw-ow,iw*{fx}-ow/2))':'max(0,min(ih-oh,ih*{fy}-oh/2))'")
     return (f"{pre},zoompan=z='{z0}+({z1}-{z0})*{ease}':"
             f"x='iw*({cfx}+({cfx1}-{cfx})*{ease})-iw/zoom/2':y='ih*{cfy}-ih/zoom/2':d={n+2}:s={W}x{H}:fps=30")
 
@@ -220,7 +228,7 @@ def yellow_focus(png):
 
 def render(shot, dur, out, W, H):
     k = shot["kind"]; lab, tag = shot.get("label", ""), shot.get("tag", "")
-    enc = ["-frames:v", str(round(dur * 30)), "-an", "-c:v", "libx264", "-preset", "veryfast", "-b:v", "5M", "-maxrate", "6M", "-bufsize", "10M", "-pix_fmt", "yuv420p", "-r", "30"]
+    enc = ["-frames:v", str(round(dur * 30)), "-an", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 5), "-pix_fmt", "yuv420p", "-r", "30"]
     if k in ("clip", "sample"):
         vf = [f"scale={int(W*1.08)}:{int(H*1.08)}:force_original_aspect_ratio=increase", f"crop={int(W*1.08)}:{int(H*1.08)}",
               f"scale=w='{int(W*1.08)}-{int(W*0.08)}*t/{dur:.2f}':h=-2:eval=frame", f"crop={W}:{H}", "fps=30"]
@@ -334,6 +342,9 @@ def main():
     ap.add_argument("--skip-boards", action="store_true", help="render other shots while board renders are still running")
     ap.add_argument("--refined", action="store_true", help="the refined cut (refine-plan.md): scenes replace boards/filler")
     a = ap.parse_args(); H = a.height; W = H * 16 // 9
+    global BD, SC
+    if H >= 2160:   # native 4K animation renders (build/render_4k.sh)
+        BD, SC = A / "boards4k", A / "scenes4k"
     sd = A / f"shots{H}"; sd.mkdir(parents=True, exist_ok=True)
     shots = sorted(SHOTS, key=lambda s: s["t"])
     if a.refined:
@@ -373,7 +384,8 @@ def main():
         run([str(ROOT / ".venv/bin/python") if (ROOT / ".venv/bin/python").exists() else sys.executable, str(ROOT / "scripts/make_bed.py"), str(A / "bed_cues.json"), str(bed)])
     rv = L("1.31")[0]
     duck = f"volume='if(between(t,{rv-1.6},{rv-0.1}),0,1)':eval=frame"
-    out = A / (f"minimum-due-refined-preview-{H}p.mp4" if a.refined else f"minimum-due-preview-{H}p.mp4")
+    out = A / ("minimum-due-refined-master.mp4" if a.refined and H >= 2160 else
+               f"minimum-due-refined-preview-{H}p.mp4" if a.refined else f"minimum-due-preview-{H}p.mp4")
     logo = A / f"logo_bug_{H}.png"   # pre-scaled once: the brand PNG is large, and rescaling it per frame made the encode crawl
     run(["ffmpeg", "-v", "error", "-y", "-i", str(ROOT / "assets/brand/logo_square.png"), "-vf",
          f"scale={int(H*0.09)}:-2,format=rgba,colorchannelmixer=aa=0.85", str(logo)])
@@ -398,7 +410,7 @@ def main():
     run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-i", str(mix), "-loop", "1", "-framerate", "30", "-t", f"{END:.2f}", "-i", str(logo),
          "-filter_complex", "[2:v]format=rgba[lg];"
          f"[0:v][lg]overlay=W-w-{int(H*0.04)}:{int(H*0.04)}:enable='not({bug_off})'[v];[1:a]{ln},aresample=48000[a]",
-         "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast", "-b:v", "4M", "-maxrate", "5M", "-bufsize", "8M",
+         "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 4, cap=20),
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", "-t", f"{END:.2f}", str(out)])
     print("wrote", out)
 

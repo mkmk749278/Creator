@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<!-- YouTube thumbnail, channel theme (assets/brand: navy, gold PRACTICAL, gold/blue circuit lines).
+     Variant from the URL hash: #A (paid ₹1,500, bill went up) or #B (minimum due trap). Shot by shoot.js at 2x. -->
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("../../../../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("../../../../node_modules/@fontsource/inter/files/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+  :root { --navy: #0b1530; --gold: #ffd34d; --blue: #4a6fa5; --red: #e5383b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: var(--navy); font-family: Inter, Arial, sans-serif; }
+  #t { position: relative; width: 1280px; height: 720px; overflow: hidden;
+    background: radial-gradient(ellipse at 30% 50%, #18295a 0%, #0b1530 60%, #070d1f 100%); }
+  svg.lines { position: absolute; inset: 0; }
+  .phone { position: absolute; width: 330px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.6)); }
+  .glow { position: absolute; border-radius: 30px; box-shadow: 0 0 60px 18px rgba(255, 211, 77, .55); }
+  .big { position: absolute; font-weight: 800; line-height: .95; letter-spacing: -.02em; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,.55); }
+  .gold { color: var(--gold); }
+  .pill { position: absolute; font-weight: 800; color: #fff; background: var(--red); border-radius: 18px; padding: 14px 26px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.45); letter-spacing: -.01em; }
+  .logo { position: absolute; right: 26px; bottom: 24px; width: 104px; height: 104px; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,.5); }
+  .arrow { position: absolute; }
+  body.B .logo { right: auto; left: 760px; }
+  .v { display: none; } body.A .vA, body.B .vB { display: block; }
+</style>
+</head>
+<body>
+<div id="t">
+  <!-- the banner's circuit lines: gold and blue, rounded bends, dot ends -->
+  <svg class="lines" viewBox="0 0 1280 720" fill="none" stroke-width="5" stroke-linecap="round">
+    <g stroke="#ffd34d"><path d="M0 70 H120" /><path d="M0 640 H70 Q100 640 115 615 L130 590 H170" /></g>
+    <g stroke="#4a6fa5"><path d="M0 110 H160" /><path d="M0 680 H120" /></g>
+    <g fill="#ffd34d" stroke="none"><circle cx="120" cy="70" r="9" /><circle cx="170" cy="590" r="9" /></g>
+    <g fill="#4a6fa5" stroke="none"><circle cx="160" cy="110" r="9" /><circle cx="120" cy="680" r="9" /></g>
+  </svg>
+
+  <!-- A: the phone on the left, the promise on the right -->
+  <div class="v vA">
+    <div class="glow" style="left: 92px; top: 214px; width: 290px; height: 92px;"></div>
+    <img class="phone" src="phone.png" style="left: 70px; top: 40px; height: 654px; transform: rotate(-5deg);" alt="" />
+    <div class="big" style="left: 470px; top: 66px; font-size: 92px;">PAID ONLY</div>
+    <div class="big gold" style="left: 466px; top: 166px; font-size: 210px;">₹1,500</div>
+    <div class="pill" style="left: 476px; top: 410px; font-size: 64px;">BILL WENT UP</div>
+    <svg class="arrow" viewBox="0 0 120 150" style="left: 1010px; top: 390px; width: 104px; height: 130px;">
+      <path d="M60 140 V30 M20 66 L60 22 L100 66" fill="none" stroke="#e5383b" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div class="big" style="left: 478px; top: 548px; font-size: 52px; color: #c9d4ea;">₹30,000 → <span class="gold">₹30,481</span></div>
+  </div>
+
+  <!-- B: the trap, phone on the right -->
+  <div class="v vB">
+    <div class="big" style="left: 70px; top: 80px; font-size: 128px;">MINIMUM</div>
+    <div class="big" style="left: 70px; top: 206px; font-size: 128px;">DUE</div>
+    <div class="big gold" style="left: 66px; top: 330px; font-size: 200px;">TRAP?</div>
+    <div class="pill" style="left: 78px; top: 576px; font-size: 54px;">45% INTEREST</div>
+    <div class="glow" style="left: 930px; top: 214px; width: 290px; height: 92px;"></div>
+    <img class="phone" src="phone.png" style="left: 900px; top: 40px; height: 654px; transform: rotate(5deg);" alt="" />
+  </div>
+
+  <img class="logo" src="logo.png" alt="Be Practical with Kishore" />
+</div>
+<script>document.body.className = (location.hash.slice(1) || "A");</script>
+</body>
+</html>
