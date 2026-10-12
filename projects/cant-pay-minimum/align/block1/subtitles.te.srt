@@ -1,0 +1,140 @@
+1
+00:00:00,000 --> 00:00:04,221
+A message comes on your phone. Your credit card payment is overdue.
+
+2
+00:00:04,221 --> 00:00:08,654
+Then another message. Then a call from a number you don't know.
+
+3
+00:00:08,654 --> 00:00:15,758
+In our last video, we saw how paying only the minimum keeps you in debt for years. Today, a harder question.
+
+4
+00:00:15,758 --> 00:00:18,314
+What if you cannot pay even that minimum?
+
+5
+00:00:18,314 --> 00:00:24,413
+Maybe your salary stopped. Maybe a hospital bill came first. It happens to good, honest people.
+
+6
+00:00:24,413 --> 00:00:30,932
+And then the fear starts. Will the police come home? Will they take my salary? Will my family find out?
+
+7
+00:00:30,932 --> 00:00:35,040
+Most people think there is one answer for everyone. There isn't.
+
+8
+00:00:35,040 --> 00:00:41,025
+Someone who owes ten thousand rupees and someone who owes ten lakh live two very different stories.
+
+9
+00:00:41,025 --> 00:00:46,149
+Today I will show you both. The rules on paper, and the reality on the ground.
+
+10
+00:00:46,149 --> 00:00:48,589
+Welcome to Be Practical with Kishore.
+
+11
+00:00:48,589 --> 00:00:54,189
+First, let's understand the clock. The day your last date passes, the bank starts counting.
+
+12
+00:00:54,189 --> 00:01:00,429
+Thirty days. Sixty days. Ninety days. The bank's system checks your account every single day.
+
+13
+00:01:00,429 --> 00:01:10,487
+If the minimum stays unpaid for ninety days after the due date, the bank must mark your card a bad loan. They call it an NPA. A non performing asset.
+
+14
+00:01:10,487 --> 00:01:17,283
+Now here is something most people don't know. From that day, your unpaid card is also a loss for the bank.
+
+15
+00:01:17,283 --> 00:01:25,142
+The bank must keep aside at least a quarter of what you owe, from its own profit. That is one reason the pressure grows around this time.
+
+16
+00:01:25,142 --> 00:01:31,075
+But listen carefully. Some people say interest stops after ninety days. No rule says that.
+
+17
+00:01:31,075 --> 00:01:37,657
+The bank cannot count your unpaid interest as its income. But your bill can keep growing as per your card terms.
+
+18
+00:01:37,657 --> 00:01:43,495
+There is a second clock too. Your CIBIL. Banks now update the credit bureaus every fifteen days.
+
+19
+00:01:43,495 --> 00:01:50,840
+The good part is, the bank must tell you before it reports you as a defaulter. And if you have a genuine dispute, it must wait.
+
+20
+00:01:50,840 --> 00:01:59,128
+In one case, a consumer commission held SBI Card at fault for reporting a customer to CIBIL without proper notice first.
+
+21
+00:01:59,128 --> 00:02:05,920
+And the card itself? At SBI Card, for example, it may be blocked from the very first missed payment.
+
+22
+00:02:05,920 --> 00:02:09,957
+Now the part nobody tells you. A small bill grows faster than a big bill.
+
+23
+00:02:09,957 --> 00:02:14,995
+Take two people. Ravi owes ten thousand rupees. Sunita owes one lakh. Both stop paying.
+
+24
+00:02:14,995 --> 00:02:20,849
+Both pay the same interest. Three point seven five percent a month, plus eighteen percent GST on it.
+
+25
+00:02:20,849 --> 00:02:31,014
+But the late fee is not a percentage. It is a fixed amount by slab. On ten thousand, the late fee is seven hundred and fifty rupees. On one lakh, it is thirteen hundred.
+
+26
+00:02:31,014 --> 00:02:41,487
+Seven hundred and fifty on ten thousand is seven and a half percent, every month, just as a fee. Thirteen hundred on one lakh is only one point three percent.
+
+27
+00:02:41,487 --> 00:02:47,986
+After six months of paying nothing, Ravi's ten thousand becomes about nineteen thousand. Almost double.
+
+28
+00:02:47,986 --> 00:02:51,821
+Sunita's one lakh becomes about one lakh thirty eight thousand.
+
+29
+00:02:51,821 --> 00:03:00,038
+For Ravi, about two thirds of that jump is late fees and the GST on them. So the smaller your bill, the harder the fees hit.
+
+30
+00:03:00,038 --> 00:03:07,169
+This is our own calculation, using one bank's published fees. Your bill will be different, but the shape is the same.
+
+31
+00:03:07,169 --> 00:03:13,157
+Now the real question. Who actually comes after you? And will anyone come to your house?
+
+32
+00:03:13,157 --> 00:03:21,454
+In the first three months, it is mostly calls. Automated calls, SMS, WhatsApp. Many from big call centres in cities.
+
+33
+00:03:21,454 --> 00:03:27,320
+Banks decide how hard to chase by two things. The days you are late, and the money at risk.
+
+34
+00:03:27,320 --> 00:03:33,462
+After that, many banks hand your account to a recovery agency. And here is the business behind it.
+
+35
+00:03:33,462 --> 00:03:45,071
+Many agencies earn only when they collect. A percentage of what you pay. One public sector bank pays its agencies between seven and a half and fifteen percent on accounts up to one lakh.
+
