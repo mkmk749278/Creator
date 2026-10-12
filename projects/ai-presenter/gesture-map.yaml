@@ -23,6 +23,9 @@ clips:
   G16: {intent: slow sad shake of the head, peak: null}
   G17: {intent: confident, sits back, relaxed authority, peak: null}
   G18: {intent: wide establishing shot, he settles into the chair, peak: null}
+  G19: {intent: namaste greeting (Telugu intro), peak: null}
+  G20: {intent: thumbs up, approval, peak: null}
+  G21: {intent: waves goodbye (outro), peak: null}
 
 emotion_to_clips:
   "[warmly]": [G14, G01, G11]
@@ -51,5 +54,33 @@ emotion_to_clips:
 
 # Structural uses, independent of the emotion cue
 film_open: G18
+greeting: G19
 hand_off_to_broll: G12
-outro: G14
+outro: G21
+
+# Library v1 from the owner's Flow batch "Oct 12 - 13_00.zip" (Drive folder Creator, 2026-10-12): camera A only, 1280x720,
+# 8 s, Veo sound (discarded). First and last frames match the rest still (SSIM 0.96-0.98), so any clip chains to any other.
+# Files keep Flow's names minus the _20261012140652 suffix; stored on Drive, never in git.
+library_v1:
+  G01: [Host_speaking_directly_to_camera, Man_explaining_topic_in_armchair]
+  G02: [Host_explaining_concept_with_ges…, Man_explaining_concept_gesturing]
+  G03: [Host_counting_on_fingers, Host_counting_points_with_fingers]
+  G04: [Host_pointing_downward_in_chair]
+  G05: [Man_speaking_in_armchair]
+  G06: [Host_confides_insider_secret]
+  G07: [Host_asks_rhetorical_question]
+  G08: [Host_expressing_surprise]
+  G09: [Host_raising_warning_finger]
+  G10: [Host_places_hand_on_heart]
+  G11: [Host_delivering_encouraging_message]
+  G12: [Host_gesturing_toward_screen]
+  G13: [Man_speaking_with_authoritative_…]
+  G14: [Host_welcoming_the_audience]
+  G15: [Host_contemplating_with_moustache]
+  G16: [Host_speaking_with_somber_reflec…]
+  G17: [Host_leaning_back_in_armchair]
+  G18: [Host_welcoming_in_podcast_studio]   # wide
+  G19: [Host_performing_Namaste_greeting]
+  G20: [Host_making_thumbs_up_gesture]
+  G21: [Host_waving_goodbye_on_camera]
+missing_v1: [all camera B (close-up) clips, 1080p downloads]
