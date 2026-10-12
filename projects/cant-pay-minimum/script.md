@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **12:20** of speech (10,392 characters, 3 Bunty blocks), plus pauses and music beats.
+Estimated length: **12:34** of speech (10,596 characters, 3 Bunty blocks), plus pauses and music beats.
 
 ## 1 Hook
 
@@ -271,7 +271,7 @@ __
 🔤 OUR ESTIMATE
 
 **C043** · block 2  
-**For bigger dues, card companies do use Lok Adalat. You get a notice for a settlement meeting, in your own city. In one real case, SBI Card took about one point eight lakh of card dues to a Lok Adalat in the customer's city, Indore.**  
+**For bigger dues, card companies do use Lok Adalat. You get a notice for a settlement meeting, usually in your own city. In one real case, SBI Card took about one point eight lakh of card dues to a Lok Adalat in the customer's city, Indore.**  
 __  
 🎬 PROOF: the Sajji Varghese order on indiankanoon.  
 🔤 LOK ADALAT · YOUR CITY [MP STATE CONSUMER COMMISSION | 2024]
@@ -282,21 +282,22 @@ __
 🎬 DOODLE: a table with two chairs and a handshake on paper.
 
 **C045** · block 2  
-**Some banks use arbitration. Be careful here. The Delhi High Court found one bank had about seventy six thousand awards where the bank alone picked the arbitrator, and said such an award cannot be enforced.**  
+**Some banks use arbitration. Be careful here. In the Delhi High Court, one bank admitted about seventy six thousand awards where the bank alone picked the arbitrator. The court said such an award is void and cannot be enforced. The bank can still try to recover in the proper way.**  
 __  
 🎬 PROOF: news report on the Delhi HC order.  
-🔤 [DELHI HIGH COURT | ARBITRATION RULING]
+🔤 [DELHI HIGH COURT (2026) | SHIKHA GHOSH v AXIS BANK]
 
 **C046** · block 2  
-**And the special bank court, the DRT, is only for dues of twenty lakh rupees or more. For most card dues, it is not even possible.**  
+**And the special bank tribunal, the DRT, is only for dues of twenty lakh rupees or more. For most card dues, it is not even possible.**  
 __  
 🎬 DOODLE: a tall bar at ₹20 lakh; most stacks sit far below it.  
 🔤 DRT: ₹20 LAKH+ [FINANCE MINISTRY | 2018]
 
 **C047** · block 2  
-**So let me put it simply, slab by slab.**  
+**So here is my practical reading, slab by slab. No bank publishes this.**  
 __  
 🎬 DESK: five stacks in a row: ₹10k, ₹50k, ₹1L, ₹2–5L, ₹10L+.  
+🔤 OUR ESTIMATE (held C047–C052)  
 ⏱ slab walk
 
 **C048** · block 2  
@@ -318,9 +319,9 @@ __
 🔤 ₹2 – 5 LAKH
 
 **C051** · block 2  
-**Ten lakh and above. Arbitration or a court case becomes worth the bank's money. Take it seriously from day one.**  
+**Ten lakh and above. A court case becomes worth the bank's money. Take it seriously from day one.**  
 __  
-🎬 DESK: ₹10L+ stack; tags: ARBITRATION · COURT.  
+🎬 DESK: ₹10L+ stack; tags: COURT CASE · TAKE IT SERIOUSLY.  
 🔤 ₹10 LAKH+
 
 **C052** · block 2  
@@ -348,10 +349,10 @@ __
 🔤 RIGHT OF SET-OFF [HDFC BANK | CARDMEMBER AGREEMENT]
 
 **C056** · block 2  
-**A national consumer commission upheld one bank taking fifty three thousand rupees from a savings account for card dues. And this year, in a loan case, the Kerala High Court said a bank's hold is not a court attachment, so the usual salary protection doesn't stop it.**  
+**The national consumer commission upheld one bank taking fifty three thousand rupees from a savings account for card dues. And in February twenty twenty six, in a loan case, the Kerala High Court said a bank's hold is not a court attachment, so the usual salary protection doesn't stop it.**  
 __  
-🎬 PROOF: two headlines, highlighter on the key lines.  
-🔤 [NCDRC VIA GOODRETURNS | 2019] [KERALA HIGH COURT | 2026]
+🎬 PROOF: the NCDRC order (indiankanoon) and the Kerala HC judgment, highlighter on the key lines.  
+🔤 [NCDRC (2019) | HDFC BANK v ANISH MUNJAL] [KERALA HIGH COURT (2026) | CANARA BANK v AGI KUMAR]
 
 **C057** · block 2  
 **But it is not unlimited. Only your money, only for your debt, only in that bank, and only up to what you owe. A bank where you owe nothing cannot touch your account.**  
@@ -361,10 +362,10 @@ __
 🔊 pop × 4
 
 **C058** · block 2  
-**And the bank only has to tell you within three days after it puts the hold. Not before.**  
+**And the bank does not have to warn you first. Some banks only promise to tell you within three days after the hold.**  
 __  
 🎬 DOODLE: a calendar with +3 days after a lock icon.  
-🔤 WITHIN 3 DAYS AFTER [BCSBI CODE | 2018]
+🔤 NO WARNING FIRST · SOME BANKS: TOLD WITHIN 3 DAYS [BANKS' CUSTOMER CODE | 2018]
 
 **C059** · block 2  
 **Trap two. Many products in one bank. RBI rules mark the borrower, not just one account.**  
@@ -414,7 +415,7 @@ __
 🔤 [SUPREME COURT (2019) | SATISHCHANDRA SHAH] [SUPREME COURT (2025) | KUKREJA]
 
 **C066** · block 3  
-**But two things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.**  
+**But a few things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.**  
 __  
 🎬 DOODLE: a cheque tears; an auto-debit mandate gets a red stamp.  
 🔤 CHEQUE BOUNCE · AUTO-DEBIT FAIL [NI ACT S.138 · PSS ACT S.25]
@@ -439,9 +440,9 @@ __
 🔤 [RBI | JUNE 2023 FRAMEWORK]
 
 **C070** · block 3  
-**SBI Card, for example, writes off an account after more than six missed payments. But you still owe it. And some old bad loans are sold to recovery companies for a small part of their value. Then they call you.**  
+**SBI Card, for example, writes off an account after more than six missed payments in a row. But you still owe it. And some old bad loans are sold to recovery companies for a small part of their value. Then they call you.**  
 __  
-🎬 DESK: the file moves into a box marked SOLD; the phone buzzes again.  
+🎬 DESK: a generic box of old files marked SOLD (no bank name); the phone buzzes again.  
 🔤 [SBI CARD | FAQ] [BANDHAN BANK | DEC 2025 FILING]
 
 ## 9 What to do
@@ -459,10 +460,10 @@ __
 🔤 1 · TALK BEFORE DAY 90
 
 **C073** · block 3  
-**Step two. Know the recovery rules. Calls only between eight in the morning and seven in the evening. No threats, no abuse, no calls to shame your family or friends. Anyone who comes home must show an ID card and the bank's authorisation letter.**  
+**Step two. Know the recovery rules. Calls only between eight in the morning and seven in the evening. No threats, no abuse, no calls to shame your family or friends. Anyone who comes home must carry an ID card and the bank's authorisation letter. Ask to see them.**  
 __  
 🎬 DOODLE: a clock 8 AM–7 PM; ID card and letter pop.  
-🔤 2 · 8 AM – 7 PM · ID + BANK LETTER [RBI | 2008 & 2022 CIRCULARS]
+🔤 2 · 8 AM – 7 PM · ID + BANK LETTER [RBI | RECOVERY AGENT RULES]
 
 **C074** · block 3  
 **If they break these rules, complain to the bank first. No answer in thirty days? Go to the RBI Ombudsman on the RBI complaint website. It is free. But since July twenty twenty six, you have only ninety days to do it. The RBI helpline is fourteen four four eight.**  
@@ -508,7 +509,7 @@ __
 ## 10 Close
 
 **C081** · block 3  
-**So, can they arrest you? Not just for being unable to pay. Can they take your salary? Only that same bank, and only up to what you owe. Will they come home? That depends on how much you owe, and where you live.**  
+**So, can they arrest you? Not just for being unable to pay. Can they take your salary? Without a court order, only that same bank, and only up to what you owe. Will they come home? That depends on how much you owe, and where you live.**  
 __  
 🎬 DESK: the three hook objects return and answer one by one.
 

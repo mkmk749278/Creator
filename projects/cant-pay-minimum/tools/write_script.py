@@ -102,22 +102,22 @@ S5 = "5 Court and the slab table"
 row("C041", S5, "What about court? Here again, the amount decides.", "DESK: a court file appears next to the stacks.")
 row("C042", S5, "To file a case, the bank pays court fees and a lawyer. On a small amount, that eats a big part of what it can recover. So a court case for ten thousand rarely makes sense for the bank.",
     "DOODLE: a scale: court costs on one side, ₹10,000 on the other.", "OUR ESTIMATE")
-row("C043", S5, "For bigger dues, card companies do use Lok Adalat. You get a notice for a settlement meeting, in your own city. In one real case, SBI Card took about one point eight lakh of card dues to a Lok Adalat in the customer's city, Indore.",
+row("C043", S5, "For bigger dues, card companies do use Lok Adalat. You get a notice for a settlement meeting, usually in your own city. In one real case, SBI Card took about one point eight lakh of card dues to a Lok Adalat in the customer's city, Indore.",
     "PROOF: the Sajji Varghese order on indiankanoon.", "LOK ADALAT · YOUR CITY [MP STATE CONSUMER COMMISSION | 2024]")
 row("C044", S5, "If you get such a notice, go. It is a chance to settle with a written record.", "DOODLE: a table with two chairs and a handshake on paper.")
-row("C045", S5, "Some banks use arbitration. Be careful here. The Delhi High Court found one bank had about seventy six thousand awards where the bank alone picked the arbitrator, and said such an award cannot be enforced.",
-    "PROOF: news report on the Delhi HC order.", "[DELHI HIGH COURT | ARBITRATION RULING]")
-row("C046", S5, "And the special bank court, the DRT, is only for dues of twenty lakh rupees or more. For most card dues, it is not even possible.",
+row("C045", S5, "Some banks use arbitration. Be careful here. In the Delhi High Court, one bank admitted about seventy six thousand awards where the bank alone picked the arbitrator. The court said such an award is void and cannot be enforced. The bank can still try to recover in the proper way.",
+    "PROOF: news report on the Delhi HC order.", "[DELHI HIGH COURT (2026) | SHIKHA GHOSH v AXIS BANK]")
+row("C046", S5, "And the special bank tribunal, the DRT, is only for dues of twenty lakh rupees or more. For most card dues, it is not even possible.",
     "DOODLE: a tall bar at ₹20 lakh; most stacks sit far below it.", "DRT: ₹20 LAKH+ [FINANCE MINISTRY | 2018]")
-row("C047", S5, "So let me put it simply, slab by slab.", "DESK: five stacks in a row: ₹10k, ₹50k, ₹1L, ₹2–5L, ₹10L+.", "", "", "slab walk")
+row("C047", S5, "So here is my practical reading, slab by slab. No bank publishes this.", "DESK: five stacks in a row: ₹10k, ₹50k, ₹1L, ₹2–5L, ₹10L+.", "OUR ESTIMATE (held C047–C052)", "", "slab walk")
 row("C048", S5, "Around ten thousand. Calls and messages, a blocked card and a bad mark on your CIBIL. A court case is unlikely, but the mark stays with you for years.",
     "DESK: camera stops at ₹10k; three small tags: CALLS · CARD BLOCKED · CIBIL.", "₹10,000")
 row("C049", S5, "Fifty thousand to one lakh. Calls, then an agency, maybe a visit if you live in a city they cover, and settlement or Lok Adalat notices.",
     "DESK: ₹50k–₹1L stacks; tags: AGENCY · MAYBE A VISIT · LOK ADALAT.", "₹50,000 – ₹1 LAKH")
 row("C050", S5, "Two to five lakh. Expect field visits, people tracing you if you moved, and legal notices.",
     "DESK: ₹2–5L stack; tags: VISITS · TRACING · NOTICES.", "₹2 – 5 LAKH")
-row("C051", S5, "Ten lakh and above. Arbitration or a court case becomes worth the bank's money. Take it seriously from day one.",
-    "DESK: ₹10L+ stack; tags: ARBITRATION · COURT.", "₹10 LAKH+")
+row("C051", S5, "Ten lakh and above. A court case becomes worth the bank's money. Take it seriously from day one.",
+    "DESK: ₹10L+ stack; tags: COURT CASE · TAKE IT SERIOUSLY.", "₹10 LAKH+")
 row("C052", S5, "Remember, these slabs are about what you owe to one bank. Other banks don't add it up. They only see it on your CIBIL.",
     "DOODLE: three bank buildings, each with its own stack; one CIBIL sheet connects them.", "PER BANK · OTHERS SEE YOUR CIBIL")
 
@@ -126,12 +126,12 @@ row("C053", S6, "Now, two traps that catch salaried people.", "DESK: a salary sl
 row("C054", S6, "Trap one. Your salary account is in the same bank as your card.", "DESK: a thread links the card and the salary passbook: same bank.")
 row("C055", S6, "Your card terms allow that bank to hold or take money from your account to cover what you owe. It is called the right of set off.",
     "PROOF: HDFC card agreement, set-off clause highlighted.", "RIGHT OF SET-OFF [HDFC BANK | CARDMEMBER AGREEMENT]")
-row("C056", S6, "A national consumer commission upheld one bank taking fifty three thousand rupees from a savings account for card dues. And this year, in a loan case, the Kerala High Court said a bank's hold is not a court attachment, so the usual salary protection doesn't stop it.",
-    "PROOF: two headlines, highlighter on the key lines.", "[NCDRC VIA GOODRETURNS | 2019] [KERALA HIGH COURT | 2026]")
+row("C056", S6, "The national consumer commission upheld one bank taking fifty three thousand rupees from a savings account for card dues. And in February twenty twenty six, in a loan case, the Kerala High Court said a bank's hold is not a court attachment, so the usual salary protection doesn't stop it.",
+    "PROOF: the NCDRC order (indiankanoon) and the Kerala HC judgment, highlighter on the key lines.", "[NCDRC (2019) | HDFC BANK v ANISH MUNJAL] [KERALA HIGH COURT (2026) | CANARA BANK v AGI KUMAR]")
 row("C057", S6, "But it is not unlimited. Only your money, only for your debt, only in that bank, and only up to what you owe. A bank where you owe nothing cannot touch your account.",
     "DOODLE: four checkmarks pop beside the passbook.", "UP TO WHAT YOU OWE · SAME BANK ONLY", "pop × 4")
-row("C058", S6, "And the bank only has to tell you within three days after it puts the hold. Not before.",
-    "DOODLE: a calendar with +3 days after a lock icon.", "WITHIN 3 DAYS AFTER [BCSBI CODE | 2018]")
+row("C058", S6, "And the bank does not have to warn you first. Some banks only promise to tell you within three days after the hold.",
+    "DOODLE: a calendar with +3 days after a lock icon.", "NO WARNING FIRST · SOME BANKS: TOLD WITHIN 3 DAYS [BANKS' CUSTOMER CODE | 2018]")
 row("C059", S6, "Trap two. Many products in one bank. RBI rules mark the borrower, not just one account.",
     "DESK: card, personal loan papers and an overdraft cheque book from one bank, tied with the same thread.", "[RBI | IRAC: BORROWER-WISE]")
 row("C060", S6, "So if your card at a bank becomes an NPA, your other loans at that same bank can be marked NPA too. To clean it, you must clear the overdue on all of them.",
@@ -147,22 +147,22 @@ row("C063", S7, "Now the biggest fear. Will the police arrest you? ...",
 row("C064", S7, "Here is the truth. Simply not being able to pay is not a crime.", "DESK: a gavel on the desk; warm light returns.", "NOT A CRIME BY ITSELF", "low hit")
 row("C065", S7, "The Supreme Court has said that not repaying a loan is not cheating, unless you planned to cheat from the very start. And in twenty twenty five, it said police and FIRs are not a way to recover money.",
     "PROOF: the two judgments, highlighter on the lines.", "[SUPREME COURT (2019) | SATISHCHANDRA SHAH] [SUPREME COURT (2025) | KUKREJA]")
-row("C066", S7, "But two things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.",
+row("C066", S7, "But a few things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.",
     "DOODLE: a cheque tears; an auto-debit mandate gets a red stamp.", "CHEQUE BOUNCE · AUTO-DEBIT FAIL [NI ACT S.138 · PSS ACT S.25]")
 row("C067", S7, "So never give a cheque you know will bounce. And if your auto debit will fail, talk to the bank before the date.", "DESK: a phone call to the bank, calendar date circled.")
 
 S8 = "8 Write-off myth"
 row("C068", S8, "One more myth. After six months, the bank writes it off. So it's gone, right?", "DOODLE: an eraser over the bill.", "MYTH")
 row("C069", S8, "No. A write off is the bank cleaning its own books. Your debt is not forgiven.", "DOODLE: the eraser stops; the bill is still there.", "[RBI | JUNE 2023 FRAMEWORK]")
-row("C070", S8, "SBI Card, for example, writes off an account after more than six missed payments. But you still owe it. And some old bad loans are sold to recovery companies for a small part of their value. Then they call you.",
-    "DESK: the file moves into a box marked SOLD; the phone buzzes again.", "[SBI CARD | FAQ] [BANDHAN BANK | DEC 2025 FILING]")
+row("C070", S8, "SBI Card, for example, writes off an account after more than six missed payments in a row. But you still owe it. And some old bad loans are sold to recovery companies for a small part of their value. Then they call you.",
+    "DESK: a generic box of old files marked SOLD (no bank name); the phone buzzes again.", "[SBI CARD | FAQ] [BANDHAN BANK | DEC 2025 FILING]")
 
 S9 = "9 What to do"
 row("C071", S9, "So what should you actually do? Five practical steps.", "DESK: daylight returns to the room; a clean notepad.", "", "hopeful bed in: Dreamer")
 row("C072", S9, "Step one. Don't hide. Call the bank before day ninety, and also write to them. Tell them what happened and what you can pay. Keep every message.",
     "DOODLE: phone + email + a folder of screenshots.", "1 · TALK BEFORE DAY 90")
-row("C073", S9, "Step two. Know the recovery rules. Calls only between eight in the morning and seven in the evening. No threats, no abuse, no calls to shame your family or friends. Anyone who comes home must show an ID card and the bank's authorisation letter.",
-    "DOODLE: a clock 8 AM–7 PM; ID card and letter pop.", "2 · 8 AM – 7 PM · ID + BANK LETTER [RBI | 2008 & 2022 CIRCULARS]")
+row("C073", S9, "Step two. Know the recovery rules. Calls only between eight in the morning and seven in the evening. No threats, no abuse, no calls to shame your family or friends. Anyone who comes home must carry an ID card and the bank's authorisation letter. Ask to see them.",
+    "DOODLE: a clock 8 AM–7 PM; ID card and letter pop.", "2 · 8 AM – 7 PM · ID + BANK LETTER [RBI | RECOVERY AGENT RULES]")
 row("C074", S9, "If they break these rules, complain to the bank first. No answer in thirty days? Go to the RBI Ombudsman on the RBI complaint website. It is free. But since July twenty twenty six, you have only ninety days to do it. The RBI helpline is fourteen four four eight.",
     "PROOF: cms.rbi.org.in home page.", "CMS.RBI.ORG.IN · 90 DAYS · 14448 [RBI | OMBUDSMAN SCHEME 2026]")
 row("C075", S9, "If someone threatens you, call one one two. If you get a fake link or a fake notice, call one nine three zero.",
@@ -179,7 +179,7 @@ row("C080", S9, "You can choose where your salary goes. But the debt doesn't go 
     "DOODLE: a path from the desk to a settlement letter.")
 
 S10 = "10 Close"
-row("C081", S10, "So, can they arrest you? Not just for being unable to pay. Can they take your salary? Only that same bank, and only up to what you owe. Will they come home? That depends on how much you owe, and where you live.",
+row("C081", S10, "So, can they arrest you? Not just for being unable to pay. Can they take your salary? Without a court order, only that same bank, and only up to what you owe. Will they come home? That depends on how much you owe, and where you live.",
     "DESK: the three hook objects return and answer one by one.")
 row("C082", S10, "The fear is real. But fear is also their tool. Knowledge is yours.", "DESK: lamp light warms; camera rises.", "", "music swell")
 row("C083", S10, "Tell me in the comments. Has a recovery agent ever called you or your family? What did they say?", "DOODLE: comment bubble.")
