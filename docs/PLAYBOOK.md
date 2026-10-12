@@ -983,8 +983,8 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 10. **Fact-check as a separate pass** at `max` effort in a fresh context (as the phone pipeline already does), producing a
     claims table (claim → source URL → status) committed with each video, like `episodes/.../04-fact-check.md`.
 11. **AI presenter (trial, owner approved the test 2026-10-12; not a standing rule yet).** An invented on-camera host
-    (a man of about 35, smart-casual, in a studio armchair) for openings, chapter bridges, the practical-defence act and
-    outros. Folder: `projects/ai-presenter/` (character bible, Flow prompts, `gesture-map.yaml`). Method: the owner makes
+    (a man of about 35 with a moustache, black shirt, grey armchair, podcast mic; reference `projects/ai-presenter/reference/rest_A.jpg`) for openings, chapter bridges, the practical-defence act and
+    outros. Folder: `projects/ai-presenter/` (character bible, one-paste `flow-agent-brief.md`, `gesture-map.yaml`). Method: the owner makes
     a gesture library once in Google Flow (Veo, from their subscription credits: silent 8 s clips, first frame = last frame
     = one rest still, two cameras); per film, Bunty's VO is lip-synced onto those clips with an open-source model
     (LatentSync or MuseTalk) on a free Kaggle GPU, and each line's emotion cue picks the clip. *Why:* Flow has no API, and Veo
