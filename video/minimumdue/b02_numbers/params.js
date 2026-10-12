@@ -163,7 +163,7 @@ window.SCENE = {
    "text": "₹0 late fee",
    "color": "green",
    "size": 56,
-   "at": 20.57,
+   "at": 20.52,
    "exit": 28.89
   },
   {

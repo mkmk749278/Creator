@@ -13,7 +13,7 @@ window.SCENE = {
    "color": "dim",
    "mono": true,
    "anchor": "middle",
-   "at": 0.6
+   "at": 0.1
   },
   {
    "kind": "bill",
@@ -29,7 +29,7 @@ window.SCENE = {
      "red"
     ]
    ],
-   "at": 1.87,
+   "at": 0.8,
    "dur": 0.7
   },
   {
@@ -45,11 +45,11 @@ window.SCENE = {
  ],
  "sfx": [
   [
-   0.6,
+   0.1,
    "pop"
   ],
   [
-   1.87,
+   0.8,
    "scribble"
   ],
   [
@@ -66,18 +66,18 @@ window.SCENE = {
    0
   ],
   [
-   0.4,
+   0.0,
    1.0,
    0,
    0,
    0.01
   ],
   [
-   0.42,
+   0.02,
    1.07,
    0.9,
    7.5,
-   4.44
+   4.84
   ]
  ]
 };

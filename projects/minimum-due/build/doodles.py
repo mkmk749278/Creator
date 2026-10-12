@@ -63,7 +63,7 @@ DOODLES[bid] = dict(kicker="OUR EXAMPLE · ₹30,000 BILL", tag="RBI CARD DIRECT
     ], e[1] - 0.25),
     *page([
         dict(kind="label", x=160, y=200, text="WHAT THE MINIMUM DOES", size=30, color="green", mono=True, at=back1 + 0.05),
-        dict(kind="tag", x=160, y=260, text="₹0 late fee", color="green", size=56, at=max(back1 + 0.2, P("1.13", "No late fee"))),
+        dict(kind="tag", x=160, y=260, text="₹0 late fee", color="green", size=56, at=back1 + 0.15),
         dict(kind="bill", x=160, y=470, w=520, h=220, title="CIBIL", rows=[["Payment", "ON TIME", "green"]], at=P("1.13", "report"), dur=0.7),
         dict(kind="badge", x=740, y=580, ok=True, at=P("1.13", "CIBIL")),
         dict(kind="label", x=1060, y=200, text="WHAT IT DOESN'T DO", size=30, color="red", mono=True, at=P("1.14", "But")),
@@ -85,8 +85,8 @@ DOODLES[bid] = dict(kicker="OUR EXAMPLE · ₹30,000 BILL", tag="RBI CARD DIRECT
 bid = "b05_newswipe"; e0 = ER[bid][0]; back = ret(bid, 0, 2.4)
 DOODLES[bid] = dict(kicker="TILL THE OLD BILL IS FULLY PAID", tag="HDFC BANK MITC · ICICI BANK", items=[
     *page([
-        dict(kind="pos", x=760, y=260, at=P("1.36", "Till")),
-        dict(kind="card", x=200, y=330, s=0.9, at=P("1.36", "Till") + 0.1,
+        dict(kind="pos", x=760, y=260, at=B[bid]["start"] + 0.05),
+        dict(kind="card", x=200, y=330, s=0.9, at=B[bid]["start"] + 0.15,
              moves=[dict(at=P("1.36", "every new swipe"), x=620, y=400, rot=-12, dur=0.45), dict(at=P("1.36", "swipe") + 0.4, x=200, y=330, rot=0, dur=0.5)]),
         dict(kind="calendar", x=1180, y=200, s=0.62, title="NOVEMBER", marks=[dict(day=15, color="red", text="NEW SWIPE")], at=P("1.36", "swipe"), dur=0.7),
         dict(kind="label", x=1380, y=650, text="interest from the same day", size=44, color="red", anchor="middle", at=P("1.36", "gets interest")),
@@ -100,12 +100,13 @@ DOODLES[bid] = dict(kicker="TILL THE OLD BILL IS FULLY PAID", tag="HDFC BANK MIT
 
 # 2.09 CRIF: card bills unpaid 3 months to 1 year, ₹33,886 crore in March 2025, +44% in a year
 DOODLES["b07_crif"] = dict(kicker="ALL OF INDIA", tag="CRIF HIGH MARK | MAR 2025", items=[
+    dict(kind="tag", x=700, y=430, text="CRIF High Mark", color="#1b2a41", size=60, sub="CREDIT BUREAU · INDIA", at=B["b07_crif"]["start"] + 0.1, exit=P("2.09", "credit card bills") - 0.1),
     dict(kind="label", x=960, y=180, text="card bills unpaid 3 months to 1 year", size=54, anchor="middle", at=P("2.09", "credit card bills")),
     dict(kind="bars", x=620, y=880, w=260, bars=[dict(x=0, h=330, color="#8a8f99", label="A YEAR BEFORE"),
                                                  dict(x=420, h=475, color="red", top="₹33,886 cr", label="MAR 2025")],
-         grow=[P("2.09", "the year before"), P("2.09", "thirty three")], at=P("2.09", "thirty three") - 0.3, dur=0.4, in_="pop"),
-    dict(kind="tag", x=1340, y=420, text="+44%", color="red", size=84, at=P("2.09", "forty four")),
-    dict(kind="arrow", x=770, y=520, to=[230, -40], bend=-0.2, color="red", at=P("2.09", "the year before") + 0.4, dur=0.5),
+         grow=[P("2.09", "forty four"), P("2.09", "thirty three")], at=P("2.09", "thirty three") - 0.3, dur=0.4, in_="pop"),
+    dict(kind="tag", x=1340, y=420, text="+44%", color="red", size=84, at=P("2.09", "more than")),
+    dict(kind="arrow", x=770, y=520, to=[230, -40], bend=-0.2, color="red", at=P("2.09", "percent more"), dur=0.5),
 ])
 
 # 2.11-2.12 knowing the maths saves you; card rotation
@@ -117,9 +118,9 @@ DOODLES[bid] = dict(tag="", items=[
         dict(kind="calc", x=1100, y=250, screen="45%", at=P("2.11", "It is knowing") - 0.1, dur=0.6),
         dict(kind="label", x=1230, y=760, text="knowing the maths", size=64, color="green", anchor="middle", hl="yel", at=P("2.11", "knowing")),
     ], e0 - 0.2),
-    dict(kind="card", x=845, y=228, s=0.55, in_="pop", at=P("2.12", "shortcut") - 0.2, color="#3b5bdb"),
-    dict(kind="card", x=1070, y=618, s=0.55, in_="pop", at=P("2.12", "shortcut"), color="#2a9d8f"),
-    dict(kind="card", x=620, y=618, s=0.55, in_="pop", at=P("2.12", "shortcut") + 0.2, color="#e76f51"),
+    dict(kind="card", x=845, y=228, s=0.55, in_="pop", at=P("2.12", "Some people"), color="#3b5bdb"),
+    dict(kind="card", x=1070, y=618, s=0.55, in_="pop", at=P("2.12", "use a"), color="#2a9d8f"),
+    dict(kind="card", x=620, y=618, s=0.55, in_="pop", at=P("2.12", "shortcut"), color="#e76f51"),
     dict(kind="loop", x=960, y=560, r=300, at=P("2.12", "They call"), dur=0.6, spin=[[0, 0], [P("2.12", "rotation"), 0], [B[bid]["end"], 140, 2.6]]),
     dict(kind="label", x=960, y=990, text="CARD ROTATION", size=64, color="red", anchor="middle", at=P("2.12", "card rotation")),
 ])
@@ -141,7 +142,7 @@ DOODLES[bid] = dict(tag="", items=[
         dict(kind="arrow", x=300, y=820, to=[1000, 0], color="dim", at=P("2.17", "pushes"), dur=1.6),
         dict(kind="label", x=960, y=260, text="pushed, not paid", size=72, color="red", anchor="middle", hl="yel", at=P("2.17", "pushes") + 0.4),
     ], e0 - 0.2),
-    dict(kind="label", x=960, y=300, text="5 simple steps", size=80, color="green", anchor="middle", at=P("2.18", "Five")),
+    dict(kind="label", x=960, y=300, text="what should we do", size=80, color="green", anchor="middle", at=ER[bid][0] + 0.2),
     *[dict(kind="sticky", x=170 + i * 330, y=440, w=280, h=200, n=i + 1, in_="pop", at=P("2.18", "Five") + 0.15 + 0.2 * i) for i in range(5)],
 ])
 
@@ -186,7 +187,7 @@ DOODLES[bid] = dict(shift=130, tag="HDFC BANK SMARTEMI PAGE | 2026 · RBI CARD D
 
 # 2.27-2.28 recap: the minimum saves you from late fee and bad CIBIL, not interest; three numbers
 DOODLES["b13_recap"] = dict(kicker="REMEMBER", tag="", items=[
-    *page([dict(kind="label", x=960, y=200, text="the minimum saves you from…", size=56, anchor="middle", at=P("2.27", "The minimum")),
+    *page([dict(kind="label", x=960, y=200, text="the minimum saves you from…", size=56, anchor="middle", at=B["b13_recap"]["start"] + 0.15),
            dict(kind="tag", x=170, y=330, text="late fee", color="#8a8f99", size=60, at=P("2.27", "late fees")),
            dict(kind="badge", x=330, y=560, ok=True, at=P("2.27", "late fees") + 0.3),
            dict(kind="bill", x=720, y=300, w=440, h=220, title="CIBIL", rows=[["Payment", "OK", "green"]], at=P("2.27", "bad CIBIL"), dur=0.5),
@@ -202,7 +203,7 @@ DOODLES["b13_recap"] = dict(kicker="REMEMBER", tag="", items=[
 
 # 2.31 next video: can't pay even the minimum
 DOODLES["b14_next"] = dict(tag="", items=[
-    dict(kind="label", x=960, y=200, text="NEXT VIDEO", size=34, color="dim", mono=True, anchor="middle", at=P("2.31", "next video")),
-    dict(kind="bill", x=620, y=260, w=680, h=240, title="CARD BILL", rows=[["Minimum amount due", "₹1,500", "red"]], at=P("2.31", "what happens"), dur=0.7),
+    dict(kind="label", x=960, y=200, text="NEXT VIDEO", size=34, color="dim", mono=True, anchor="middle", at=B["b14_next"]["start"] + 0.1),
+    dict(kind="bill", x=620, y=260, w=680, h=240, title="CARD BILL", rows=[["Minimum amount due", "₹1,500", "red"]], at=P("2.31", "next video") + 0.2, dur=0.7),
     dict(kind="stamp", x=960, y=640, text="UNPAID", size=96, rot=-8, in_="stamp", at=P("2.31", "cannot pay")),
 ])

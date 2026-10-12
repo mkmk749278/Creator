@@ -11,7 +11,7 @@ window.SCENE = {
    "text": "the minimum saves you from…",
    "size": 56,
    "anchor": "middle",
-   "at": 0.97,
+   "at": 0.15,
    "exit": 6.36
   },
   {
@@ -135,7 +135,7 @@ window.SCENE = {
  ],
  "sfx": [
   [
-   0.97,
+   0.15,
    "pop"
   ],
   [
@@ -192,18 +192,18 @@ window.SCENE = {
    0
   ],
   [
-   0.77,
+   0.0,
    1.0,
    0,
    0,
    0.01
   ],
   [
-   0.79,
+   0.02,
    1.07,
    -1.5,
    2.2,
-   5.54
+   6.31
   ],
   [
    6.72,

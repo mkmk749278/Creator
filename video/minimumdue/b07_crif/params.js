@@ -5,6 +5,17 @@ window.SCENE = {
  "kicker": "ALL OF INDIA",
  "items": [
   {
+   "kind": "tag",
+   "x": 700,
+   "y": 430,
+   "text": "CRIF High Mark",
+   "color": "#1b2a41",
+   "size": 60,
+   "sub": "CREDIT BUREAU · INDIA",
+   "at": 0.1,
+   "exit": 1.91
+  },
+  {
    "kind": "label",
    "x": 960,
    "y": 180,
@@ -34,7 +45,7 @@ window.SCENE = {
     }
    ],
    "grow": [
-    12.55,
+    10.07,
     4.33
    ],
    "at": 4.03,
@@ -48,7 +59,7 @@ window.SCENE = {
    "text": "+44%",
    "color": "red",
    "size": 84,
-   "at": 10.07
+   "at": 11.69
   },
   {
    "kind": "arrow",
@@ -60,14 +71,18 @@ window.SCENE = {
    ],
    "bend": -0.2,
    "color": "red",
-   "at": 12.95,
+   "at": 11.02,
    "dur": 0.5
   }
  ],
  "sfx": [
   [
-   2.01,
+   0.1,
    "pop"
+  ],
+  [
+   1.91,
+   "whoosh"
   ],
   [
    4.03,
@@ -82,12 +97,12 @@ window.SCENE = {
    "pop"
   ],
   [
-   12.55,
-   "pop"
+   11.02,
+   "scribble"
   ],
   [
-   12.95,
-   "scribble"
+   11.69,
+   "pop"
   ]
  ],
  "cam": [
@@ -99,18 +114,32 @@ window.SCENE = {
    0
   ],
   [
-   1.81,
+   0.0,
    1.0,
    0,
    0,
    0.01
   ],
   [
-   1.83,
+   0.02,
+   1.07,
+   7.7,
+   0.7,
+   1.86
+  ],
+  [
+   2.27,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   2.29,
    1.07,
    -5.3,
    -2.5,
-   12.47
+   12.01
   ]
  ]
 };

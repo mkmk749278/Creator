@@ -52,11 +52,11 @@ window.SCENE = {
    "kind": "label",
    "x": 960,
    "y": 300,
-   "text": "5 simple steps",
+   "text": "what should we do",
    "size": 80,
    "color": "green",
    "anchor": "middle",
-   "at": 6.5
+   "at": 4.97
   },
   {
    "kind": "sticky",
@@ -127,15 +127,19 @@ window.SCENE = {
    "whoosh"
   ],
   [
-   6.5,
+   4.97,
    "pop"
   ],
   [
-   6.85,
+   6.65,
    "pop"
   ],
   [
-   7.25,
+   7.05,
+   "pop"
+  ],
+  [
+   7.45,
    "pop"
   ]
  ],
@@ -162,18 +166,18 @@ window.SCENE = {
    4.3
   ],
   [
-   6.3,
+   4.93,
    1.0,
    0,
    0,
    0.01
   ],
   [
-   6.32,
+   4.95,
    1.07,
    -1.2,
    2.8,
-   1.64
+   3.01
   ]
  ]
 };
