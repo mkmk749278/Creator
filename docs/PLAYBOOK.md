@@ -317,6 +317,9 @@ says. Rules:
   bank's cost, what settlement looks like). Show the slab table on screen and say which slab the viewer is in.
 - **Follow the money on both sides.** Explain why the other side acts as it does: recovery agency commission, cost of a
   field visit, court fees and lawyer costs against the amount, write-off and sale to collectors.
+- **Every combination the viewer may have:** one card or several; several banks or several cards (plus a salary
+  account, FD or loan) at the same bank; add-on cards; card-to-card rotation. Say what changes in each: shared limits,
+  cross-default, set-off across accounts, other issuers cutting limits after a CIBIL hit, which bank chases first.
 - **Real-life logistics count:** where the agency is based (mostly cities) vs where the person lives (a village Aadhaar
   address, a moved communication address), calls vs visits, what a "legal notice" SMS really is.
 - **Rules still frame it:** state the RBI/legal rule first, then "but in real life…", and label each part: sourced fact,
