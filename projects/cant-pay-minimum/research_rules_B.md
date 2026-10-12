@@ -73,4 +73,54 @@ Researched 2026-10-12. Every fact quoted from a page opened in this session. Com
 
 ## B4. Where to complain
 
+**Big change found: the RBI Ombudsman scheme changed on 1 July 2026.** RB-IOS 2026 replaced RB-IOS 2021. Under the new scheme there is a **90-day** window to go to the Ombudsman (the old "one year" rule is for pre-July-2026 complaints only). Do not use the old 2021 numbers in the film.
+
+**B4.1 Step 1: complain to the bank first.** TRUE.
+- RBI FAQ, Reserve Bank - Integrated Ombudsman Scheme, 2026 (updated as on 1 Jul 2026), FAQ 17: "The complainant must first approach the concerned Regulated Entity." https://www.rbi.org.in/Scripts/FAQView.aspx?Id=153
+- Card MD 2022 para 13(b): agent communications must include a senior officer's contact details (B1). 2027 rule 454AA: banks must have "a dedicated mechanism for redressal of recovery related grievances" and list the grievance officer's contact in recovery communications (B1).
+
+**B4.2 Step 2: RBI Ombudsman if no reply in 30 days or you are unhappy with the reply; within 90 days after that; free.** TRUE.
+- Same FAQ page. "It comes into force with effect from July 1, 2026." / "RB-IOS, 2026 replaces the Reserve Bank - Integrated Ombudsman Scheme, 2021." FAQ 17: may approach the Ombudsman if no reply within 30 days (or longer period set by RBI/NPCI/card network rules) or if dissatisfied; "The complaint must be made to the RBI Ombudsman within 90 days from the date on which the above timeline expires." (or from the last communication from the entity, whichever is later; paraphrase). FAQ 16: filing before 30 days with no reply is not maintainable. FAQ 21: "There is no charge or fee for filing or resolving complaints under RB-IOS, 2026."
+- Where: FAQ 9: online at https://cms.rbi.org.in, email crpc@rbi.org.in, or post to "Centralised Receipt and Processing Centre, Reserve Bank of India, Central Vista, Sector 17, Chandigarh - 160017."
+- Compensation: FAQ 23: "up to Rs 3 lakh" for loss of time, expenses, harassment or mental anguish; FAQ 22: up to Rs 30 lakh for consequential loss. Whether agent harassment counts is not stated on the page (PARTLY: plausible as deficiency in service, but do not promise money).
+- Appeal: FAQ 31-32: only against an Award, within 30 days.
+- cms.rbi.org.in itself returned 503 / connection reset from this container on 2026-10-12; portal not opened directly.
+
+**B4.3 RBI helpline 14448.** TRUE.
+- Same FAQ, FAQ 10-11: "IVRS on Toll Free 14448" 24x7; staff "from 8:00 AM to 10:00 PM, Monday to Saturday except National Holidays", "in English, Hindi and ten regional languages." You cannot file a complaint by phone there; it guides and gives status.
+
+**B4.4 Sachet is for illegal deposit-taking / unregistered entities, not for your bank's recovery agents.** PARTLY (use only for unregistered lenders/apps).
+- RBI press release, 4 Aug 2016, "RBI Governor launches Website 'सचेत' to curb Illegal Collection of Deposits": the public can check entities "allowed to accept deposits", "file and track a complaint", and "share information regarding illegal acceptance of deposits by unscrupulous entities." https://rbi.org.in/commonman/English/Scripts/PressReleases.aspx?Id=1828
+- Search summaries (businesstoday 2022, not opened) say Sachet also took complaints against digital lending apps. sachet.rbi.org.in did not load from this container. For a credit card from a regular bank, the right route is bank then Ombudsman, not Sachet.
+
+**B4.5 Police: 112 for an emergency (threat, someone at your door); local police station for a written complaint.** TRUE for 112.
+- Ministry of Home Affairs ERSS page: single emergency number "112", "for reporting and addressing all kinds of emergencies from across the country." https://xn--i1b5bzbybhfo5c8b4bxh.xn--11b7cb3a6a.xn--h2brj9c/en/commoncontent/emergency-response-support-system-erss (MHA, opened 2026-10-12)
+- That threats/intimidation are themselves crimes under BNS: not opened in this session (UNVERIFIED section numbers; do not cite a BNS section on screen without checking).
+
+**B4.6 Cybercrime 1930 / cybercrime.gov.in for fake links, fake notices, money lost.** TRUE.
+- Kerala Police (Ernakulam Rural Cyber PS), 3 Aug 2023: "The helpline number 1930 is available 24 hours a day."; cybercrime.gov.in "allows direct reporting of online crimes, including financial frauds." https://ps.keralapolice.gov.in/ernakulamruralcyber-ps/notifications/National-Cyber-Crime-Reporting-Helpline-No-1930-3338
+- Amar Ujala 16 May 2026 (B3.2) also gives 1930 / cybercrime.gov.in for fake summons messages.
+
 ## Safe to say / Do not say
+
+**Safe to say**
+- Not paying your card bill is not, by itself, a crime. The Supreme Court said simply not being able to repay a loan is not cheating unless you meant to cheat from the very start (Satishchandra Shah, 2019).
+- The Supreme Court has said the police and an FIR are not a way to recover money in a money dispute (Shailesh Kumar, 2025; Kukreja, 2025).
+- What can become a criminal case: a bounced cheque, or a failed auto-debit / ECS / NACH for lack of money (Section 138 NI Act, Section 25 PSS Act), and lying or faking papers when you applied.
+- RBI rules: recovery calls only between 8 am and 7 pm; no threats, abuse, anonymous calls, or harassing or shaming your family, friends or referees; your privacy must be respected.
+- An agent must show an ID card and carry the bank's authorisation letter and a copy of the bank's notice; the bank must give you the agent's name and contact. The bank is responsible for what its agents do.
+- New, stricter RBI recovery rules were issued in August 2026 and start on 1 January 2027 (they name co-workers too, and stop lenders from reading your phone contacts and photos).
+- A lawyer's legal notice is not a court summons. A summons comes from a court and has a case number you can check yourself on the eCourts site with the 16-character CNR.
+- Banks send legal notices in bulk by SMS, email and WhatsApp; many are mass-produced. Read them, do not panic, do not ignore them.
+- Complain to the bank first. No reply in 30 days, or a bad reply: go to the RBI Ombudsman at cms.rbi.org.in, free, within 90 days. Help line 14448.
+- Threat or someone at your door: 112. Fake link, fake notice or money lost online: 1930 or cybercrime.gov.in.
+
+**Do not say**
+- "Police can never arrest you." (Say: not paying alone is not a crime. A bounced cheque or auto-debit, or fraud, is different.)
+- "A real summons never comes on WhatsApp or email." (BNSS 63 allows electronic summons with the court seal; say "check the case number yourself".)
+- "The new 2026 recovery rules are in force now." (They start 1 Jan 2027; today's rules are the 2008/2022 circulars and the Card MD 2022.)
+- "You have one year to go to the Ombudsman." (Since 1 Jul 2026 it is 90 days.)
+- "The Ombudsman will pay you up to three lakh for harassment." (Possible ceiling, not a promise; recovery harassment not named on the FAQ page.)
+- "Recovery agents cannot call between 7 pm and 10 am." (Mixes in the 10 am telemarketing rule; the recovery window is 8 am to 7 pm.)
+- "File on Sachet against your bank's agent." (Sachet is for illegal deposit-takers/unregistered entities.)
+- Any specific BNS section number for threats, or any credit-card-specific court case: not verified in this session.

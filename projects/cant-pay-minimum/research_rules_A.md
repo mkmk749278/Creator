@@ -100,8 +100,14 @@ each month), submitting within 7 days. So a missed payment can show on your repo
 **A3.2 Three-day grace before "past due" is reported.** **TRUE** (card directions para 23(5), Part 1 README; same text in
 the master circular, see A1.1). DPD itself still counts from the due date, so day 4 shows as DPD 4, not DPD 1.
 
-**A3.3 You get an SMS/email when the bank reports your default.** **TRUE** (where your number/email is on file). Note: the
-rule says *while* reporting, not *before*; do not say "the bank must warn you before".
+**A3.3 You must be told when the bank reports your default.** **TRUE.** Two layers:
+- Card-specific (stronger): RBI card directions 2025 (RBI/DOR/2025-26/155) para 36, via TaxGuru
+  https://taxguru.in/rbi/reserve-bank-india-commercial-banks-credit-cards-debit-cards-issuance-conduct-directions-2025.html
+  (opened 2026-10-12): before reporting default status to a CIC the issuer must follow its board-approved procedure and
+  "intimate the cardholder prior to reporting of the status"; with a pending dispute, "The disclosure / release of
+  information, particularly about the default, shall be made only after the dispute is settled."; the procedure must be
+  in the MITC. So for cards it is "warned before", not just "told after".
+- General (all lenders), SMS/email alert at the time of reporting:
 - RBI/2023-24/73, DoR.FIN.REC.49/20.16.003/2023-24, 26 Oct 2023, "Strengthening of customer service rendered by Credit
   Information Companies and Credit Institutions", para 2.1.2:
   https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12553 (opened 2026-10-12): "CIs shall send alerts through SMS/
@@ -146,4 +152,67 @@ lenders to keep data for at least seven years; it does not say it is deleted aft
 
 ## A4. RBI 2023 compromise settlement and technical write-off framework
 
+**A4.1 What the framework is.** RBI/2023-24/40, DOR.STR.REC.20/21.04.048/2023-24, 8 Jun 2023, "Framework for Compromise
+Settlements and Technical Write-offs", for commercial banks, co-op banks, AIFIs and NBFCs:
+https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12513 (opened 2026-10-12). Every lender must have a
+board-approved policy for both (scope/board policy per the circular; search summary of the same page, consistent with
+the fetch).
+
+**A4.2 Settlement = you pay less in cash, the bank gives up the rest.** **TRUE.** "any negotiated arrangement with the
+borrower to fully settle the claims of the RE against the borrower in cash"; it may involve "some sacrifice of the amount
+due from the borrower on the part of the REs with corresponding waiver of claims of the RE against the borrower to that
+extent." Clause 4: settlements are "without prejudice to any mutually agreed contractual provisions" (so the settlement
+letter's terms matter; get it in writing: practical point, our advice).
+
+**A4.3 A "technical write-off" does NOT cancel your debt.** **TRUE.** It is "written-off (fully or partially) by the RE
+only for accounting purposes", "without involving any waiver of claims against the borrower, and without prejudice to the
+recovery of the same." Plain words: the bank removes it from its books, not from your name. Calls and recovery can go on.
+
+**A4.4 Cooling period: no fresh loan from that lender for at least 12 months after a settlement.** **TRUE** (non-farm
+loans). Clause 11: "The cooling period in respect of exposures other than farm credit exposures shall be subject to a
+floor of 12 months." Lenders may set longer periods in their policy (search summary of the same page). Note: this binds
+the *settling* lender's new lending to you; other lenders decide from your bureau record ("settled"), see A3.7.
+
+**A4.5 Settlement does not stop a criminal case for fraud or wilful default.** **TRUE but rarely relevant to an ordinary
+card holder.** Clause 13: permitted "without prejudice to the criminal proceeding underway against such debtors."
+
+**A4.6 Bureau after settlement.** The 2023 framework does not mention credit bureaus (fetch of the RBI page). The 2025 card
+directions para 36 do: if a reported defaulter settles, the issuer "shall update the status with CIC within 30 days from
+the date of settlement." (TaxGuru copy, above). The status shown is typically "settled", not "closed" (A3.7).
+
+**A4.7 2025 card directions on write-off.** No text on write-off of card dues found in the TaxGuru copy of
+RBI/DOR/2025-26/155. Recovery rules there: Fair Practices Code (para 37), recovery agent's name and contact given to the
+cardholder "immediately upon assigning the agent" (para 38), "shall not resort to intimidation or harassment of any
+kind, either verbal or physical" (para 39). research_practical.md covers recovery practice; these are the rule citations.
+
 ## Safe to say / Do not say
+
+**Safe to say**
+- "Miss the minimum for ninety days after the due date, and the bank must mark your card a bad loan, an NPA." [RBI IRACP]
+- "The count starts on the due date itself; days one to thirty, thirty to sixty, sixty to ninety are warning stages the
+  bank tracks every day." [RBI circular, 12 Nov 2021]
+- "To come out of NPA you must clear all the arrears, not just a part." [RBI, 12 Nov 2021]
+- "Once it is a bad loan, the bank has to set aside about a quarter of what you owe from its own profit." (25% unsecured
+  sub-standard; frame as "about a quarter", long-standing rule, 2011 circular)
+- "The bank cannot count your unpaid interest as income. That does not mean the bill stops growing." (second sentence is
+  inference: no rule stops contractual charges)
+- "Banks now update the credit bureaus every fifteen days." [RBI, from 1 Jan 2025]
+- "The bank must tell you before it reports you as a defaulter, and must hold off while a genuine dispute is open." [card
+  directions para 36]
+- "You get one free full credit report a year from each bureau." [RBI Oct 2023]
+- "If a bureau or bank sits on your correction complaint for more than thirty days, they owe you one hundred rupees a
+  day." (only for wrong or stale data)
+- "The law makes bureaus keep these records for at least seven years."
+- "A write-off is the bank cleaning its books. Your debt is not forgiven." [RBI June 2023]
+- "After a settlement, the same lender must wait at least twelve months before giving you a fresh loan." [RBI June 2023]
+- "A settled account shows as settled, and every future lender sees it." (lender explainer; not a regulator's definition)
+
+**Do not say**
+- "Interest stops after ninety days" or "the debt freezes once it is NPA". No source.
+- "The record disappears after seven years." The law sets seven years as a minimum.
+- "Written off means forgiven" or "after write-off they cannot recover".
+- "The ₹100 a day is for any bureau complaint / for removing a default." It is for delayed correction of data.
+- "Settlement wipes your record clean" or "settled is as good as closed".
+- Exact NPA/provisioning paragraph numbers of the 2025 commercial-bank IRACP Directions (PDF captcha-blocked, unquoted).
+- "These rules will stay the same": new commercial-bank IRACP Directions take effect 1 Apr 2027 (contents unverified).
+- Day 180 as the write-off day: bank practice varies (see research_practical.md sec 4); no RBI rule found.
