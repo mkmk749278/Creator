@@ -802,7 +802,7 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
   `loudnorm` pumped silent pauses up to narration level.
 - **Pixabay music (owner, 2026-10-12):** our key has no music access and the site blocks scripts, so Claude shortlists
   tracks by reading their pages and the owner downloads them on the phone. **Only tracks whose page does not say
-  "Content ID Registered"**: on 2026-10-12, 14 of the 20 tracks checked were registered (all 11 hopeful pianos), and a
+  "Content ID Registered"**: on 2026-10-12, 15 of the 21 tracks checked were registered (all 11 hopeful pianos), and a
   registered track gets a YouTube claim that can take the ad money. One bed per act (tension → curious → hopeful), a
   sound effect on every doodle item. Shortlist and mood map: `projects/cant-pay-minimum/music.md`.
 - `scripts/make_bed.py` synthesises a royalty-free bed (drones, pads, heartbeat, bowls); `scripts/final_mix.sh` mixes.
