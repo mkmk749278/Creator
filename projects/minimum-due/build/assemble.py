@@ -247,7 +247,15 @@ def yellow_focus(png):
     return (sum(xs) / len(xs)) / w, (sum(ys) / len(ys)) / h
 
 
+# Stand-ins while Wikimedia Commons rate-limits a re-download (preview only; fetch_assets.py restores the real files).
+FALLBACK = {"supreme_court_03_inside-the-supreme-court-of-india-11-jpg.jpg": CM / "supreme_court_04_inside-the-supreme-court-of-india-12-jpg.jpg",
+            "bank_01_an-hdfc-bank-branch-jpg.jpg": CN / "bank_05_hdfc-bank-atm-jpg.jpg"}
+
+
 def render(shot, dur, out, W, H):
+    if shot.get("src") and not Path(shot["src"]).exists() and Path(shot["src"]).name in FALLBACK:
+        print("WARNING stand-in for missing", Path(shot["src"]).name, flush=True)
+        shot = dict(shot, src=FALLBACK[Path(shot["src"]).name])
     k = shot["kind"]; lab, tag = shot.get("label", ""), shot.get("tag", "")
     enc = ["-frames:v", str(round(dur * 30)), "-an", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 5), "-pix_fmt", "yuv420p", "-r", "30"]
     if k in ("clip", "sample"):
