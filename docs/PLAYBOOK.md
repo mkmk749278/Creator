@@ -467,7 +467,7 @@ When an authentic photo or document is irreplaceable:
 6. **Science is explained with animation, never still plates** (§9). Label each "ILLUSTRATION", "ILLUSTRATIVE CURVE" or
    "HYPOTHESIS". *Why:* anatomy plates and microscopy stills were rejected on breath-hold.
 
-### 5.6 The Money Table: our own look for money explainers (owner, 2026-10-12; proposed, awaiting the owner's pick)
+### 5.6 Desk + doodle: our own look for money explainers (owner, 2026-10-12: "mix both")
 *Why:* the owner called the whiteboard and its handwriting "outdated", then rejected the next idea (a dark glass-card
 FinTech dashboard from an outside spec) before it was built, and asked for our own best method, ultra realistic, no ceiling.
 **Research (2026-10-12):** 200 mid-video frames (YouTube auto-frames `i.ytimg.com/vi/<id>/maxres1-3.jpg`, study only) from
@@ -476,7 +476,12 @@ Wendover, Johnny Harris, Kurzgesagt and Think School videos. None used glass car
 read as template or AI looks. The strongest frames put information **into a real world**: a price tag on a product, a
 number pinned on an aerial map, a stamped paper document, a cutout photo in a real room. Vendor trend blogs (GDJ,
 Renderforest, Genesis, 2026) say the same: texture, physical materials and "made" over clean corporate vector.
-**The method:** money is shown as photoreal physical objects on one desk, rendered in Three.js inside HyperFrames
+**Owner's decision (2026-10-12): mix both.** The photoreal **desk** for the big moments (the hook, every reveal, the
+money that moves), the **doodle** mode (`video/lib/doodle`) for explaining: sketched objects and metaphors drawn on in
+Rough.js, items popping in with a sound each (pop, whoosh, scribble, rip, thud, clink; `make_sfx.py`), 2–3-word labels in
+clean type, no handwriting, no characters. *Why doodle:* the research of current doodle channels (Sprouts) showed the
+dated part of our whiteboard was the handwriting, not the drawing.
+**The desk method:** money is shown as photoreal physical objects on one desk, rendered in Three.js inside HyperFrames
 (`video/lib/moneytable`): a printed bill, a phone, metal coins that move (100 × ₹1 = ₹100, so a split is visible as two
 piles), printed tent cards, stamps, receipts, a wall calendar. **Words live on objects** (printed, engraved, on a screen),
 not pasted over the picture; one mono kicker + one bold line (Bricolage Grotesque 800, JetBrains Mono) is the only overlay.
@@ -795,6 +800,11 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
   Real archival audio (e.g. a CC BY clip on archive.org) beats an empty LIVE row.
 - **Loudness:** two-pass **linear** normalisation to −14 LUFS integrated, −1 dBTP (one gain + limiter). *Why:* single-pass
   `loudnorm` pumped silent pauses up to narration level.
+- **Pixabay music (owner, 2026-10-12):** our key has no music access and the site blocks scripts, so Claude shortlists
+  tracks by reading their pages and the owner downloads them on the phone. **Only tracks whose page does not say
+  "Content ID Registered"**: on 2026-10-12, 14 of the 20 tracks checked were registered (all 11 hopeful pianos), and a
+  registered track gets a YouTube claim that can take the ad money. One bed per act (tension → curious → hopeful), a
+  sound effect on every doodle item. Shortlist and mood map: `projects/cant-pay-minimum/music.md`.
 - `scripts/make_bed.py` synthesises a royalty-free bed (drones, pads, heartbeat, bowls); `scripts/final_mix.sh` mixes.
 
 ## 12. Facts, honesty and rights
