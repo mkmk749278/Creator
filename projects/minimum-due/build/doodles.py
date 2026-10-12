@@ -74,7 +74,7 @@ DOODLES[bid] = dict(kicker="OUR EXAMPLE · ₹30,000 BILL", tag="RBI CARD DIRECT
         dict(kind="label", x=1500, y=660, text="INTEREST-FREE", size=30, color="red", mono=True, at=P("1.14", "interest free period")),
         dict(kind="label", x=1500, y=730, text="period LOST", size=56, color="red", at=P("1.14", "period")),
     ], e[2] - 0.25),
-    dict(kind="net", x=160, y=330, text="a safety net?", at=P("1.15", "The minimum"), dur=0.9),
+    dict(kind="net", x=160, y=330, text="a safety net?", at=e[2] + 0.15, dur=1.2),
     dict(kind="cross", x=420, y=420, size=260, at=P("1.15", "not a safety"), dur=0.35),
     dict(kind="toggle", x=880, y=360, s=1.3, text="", at=P("1.15", "it is a switch") - 0.1, dur=0.5, onAt=P("1.15", "starts")),
     dict(kind="meter", x=1560, y=560, s=0.9, text="INTEREST", at=P("1.15", "starts"), dur=0.4, needle=[[0, -80], [P("1.15", "interest meter"), 60, 1.6]]),
