@@ -112,7 +112,7 @@ The `/parallel-render` skill walks through the whole procedure.
 ## 4. Quality first: never trim effort for speed
 
 The owner's rule (Oct 2026): **accuracy and the best output matter more than speed.**
-- Run Claude at full strength: `high` or `xhigh` effort for building, `max` for fact-checks and final reviews. Never lower
+- Run Claude at full strength: `high` or `xhigh` effort for building, `max` for fact-checks (the lighter scope in §12) and final reviews. Never lower
   effort, skip a QA round, drop a fact-check or shrink research to finish sooner. *Why:* a wrong claim or a slide-like
   shot on a public channel costs more than an hour of compute.
 - Get speed from **parallelism** (§3), caching and pre-rendering expensive layers, never from doing less.
@@ -264,6 +264,50 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
    NB Show; the hits master at −12.6 to −14.3 LUFS; the biggest hits cut about every 3.7 s; nobody opens with a greeting.
    The script-craft results are in §4b. (Gofile folders download from the cloud with headless Chromium: the API needs a
    website token that only the page's own script produces.)
+
+### 4a-2. English narration by default (owner, 2026-10-11)
+*Why:* the owner found Telugu-only films get low reach and fewer views; simple English widens the audience to all of
+India while the topics stay India-first. Rules:
+- **Simple Indian English**, not "international" English: words a school-educated Indian uses every day (pay, spend, bill,
+  money, salary, loan, interest, due date), lakh and crore, rupees; no idioms, no rare words, no American slang. One idea
+  per sentence, mostly 6–14 words. Same persona and craft as §4b (elder brother, talk don't read, ask then answer, `...`
+  before a reveal, `?` on questions, a mid-film relevance turn).
+- **TTS text:** numbers and amounts as words ("thirty thousand rupees", "twenty twenty five"), acronyms as normal capitals
+  (RBI, GST, EMI, CIBIL, UPI); no digits, `₹`, `!`, double quotes, dashes, brackets or `&`. Voice Bunty on `eleven_v4`
+  with `language_code: "en"` (check the first block for accent and pace before generating the rest).
+- **Words a Class 8 student knows** (owner, 2026-10-11: "even simpler"): bill (not statement), last date (not due date,
+  after the first mention), loan (not debt, outstanding), "still pending" (not owe), maths, cancelled (not set aside),
+  good things (not benefits). Keep the real term when viewers will meet it on their bill, and explain it once in plain
+  words ("interest free period: for these days, you pay zero interest").
+- **No emotion cues** in the blocks handed to the owner (owner, 2026-10-11): leave the `emotion` column empty; the words
+  and punctuation carry the feeling. Explain any must-keep term once in plain words.
+- **Voice:** an Indian-accent English voice, not a US/UK narrator. Audition in ElevenLabs Voice Library (filter: English,
+  accent Indian, male) with the same first paragraph: Bunty in English first (channel continuity), then conversational
+  "elder brother" voices such as Aakash Aryan (Conversational and Steady), Aarav J (Cool and Wise Friend) and Rinoy
+  (Professional Narrator); avoid ad, ASMR and over-dramatic narrator styles for explainers. Owner picks by ear; record the
+  pick here.
+- **Files:** `lang.txt` = `en` in the project folder makes the `en` column of `script.full.tsv` the VO and the `te`
+  column an optional Telugu dub; `tools/build_script.py` lints English VO (`lint_en`) and builds the blocks from it.
+- On-screen text, citation tags and the description were already English; nothing changes there.
+
+### 4a-3. Visual modes for explainers (owner, 2026-10-11)
+*Why (owner):* "not only slides": viewers stay to the end when they see real life, watch the maths being worked out and
+follow a character. Every explainer mixes, in this order of preference:
+1. **REAL**: real footage of what the VO names (stock via the Pixabay API, Commons, credited news); a real cutaway inside
+   any other shot that runs past ~4 s.
+2. **BOARD**: every calculation is worked out live on a whiteboard in marker, like a teacher explaining; never a static
+   table. Use the reusable engine **`video/lib/whiteboard`** (README): real handwriting from single-line pen fonts,
+   written stroke by stroke with the nib on the ink, shapes, duster, `params.js` per shot. *Why:* the first sample
+   wiped a font left to right with a gliding marker; the owner saw it was not writing ("outdated").
+3. ~~TOON~~ **No animated character** (owner, 2026-10-11, after a first test: "cancel character, use any clip that
+   syncs to the situation"). Every action the VO says is a real clip (Pixabay API, Coverr, Commons, owner footage).
+4. **PROOF**: credited screen recordings of the real source page (bank, RBI, court, news) under a magnifier.
+5. **SIM**: labelled phone/bill simulations only where the viewer needs to see a screen.
+Plan these per line in `visual-plan.md` (time from `align/`), before sourcing and scene work.
+**Owner's review notes (2026-10-11):** (a) *common-sense fit*: show what the line is about in the film's context; for a
+money film that is the spend or the payment (card machine, bill, wallet), never the event itself (a wedding ritual for
+"a family function" was rejected). (b) *the character* was then dropped altogether (see 3). (c) *no foreign money*: drop clips
+showing dollars or euros in a rupee film (about half the "money/bills" stock results); prefer cards, phones, bills.
 
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
@@ -723,6 +767,17 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 - **Facts only from collected sources**, checked on the web before they go on screen. Where reports disagree (15 vs 16
   minutes), say "as reported" and note the other figure in the description. Present claims as claims; on health topics
   include the mainstream scientific view and at least one real skeptic beat.
+- **Lighter fact-check (owner, 2026-10-11).** *Why:* the full independent pass on Minimum Amount Due re-searched all ~95
+  claims from zero at `max` effort (plus a captcha-gated RBI PDF and a day-by-day rebuild of the math) and used most of
+  the 5-hour usage window; nearly every rule and bank term it checked was already sourced. Now:
+  1. **The writer logs sources while researching:** a draft `claims.csv` with every claim's exact URL and verbatim quote,
+     status `confirmed` only when the writer read the primary page (RBI/regulator text, the bank's own page, the court
+     report, the data release) or two independent reports. Anything else is marked `unverified` (weak).
+  2. **Strong rows are not re-researched.** The checker (fresh subagent, `max` effort) opens only the cited page to
+     confirm the quote and the number match, and spends real searching only on weak rows, all numbers and dates, our own
+     calculations (re-run the tool, check the method against the cited source) and on-screen tags.
+  3. **After a script edit, re-check only the changed lines.**
+  The gate (`scripts/claims_check.py`) and the rule "facts only from sources" are unchanged.
 - **Label unmeasured claims** (heart rate, "40–50% less oxygen") as narration claims or illustrations. Quotes verbatim only.
 - **Safety lines** (e.g. "don't try breath-holding without training") in the description and on the end card.
 - **Every asset logged** with its licence in `media_manifest.csv` (ID, URL, owner, licence, date, EDL slots);
@@ -777,7 +832,63 @@ above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at
 - [ ] Thumbnail promise shown by 0:30; chapters in the description; timestamped sources and citation tags on claims.
 - [ ] Compliance gates (§4a): synthetic disclosure, health context, SEBI education-only lane, PCI suicide norms, ban list.
 
+**Per-shot review, then whole-film review (owner, 2026-10-11).** *Why:* a 6-second contact sheet of the whole film hid
+problems that a shot-by-shot pass caught at once (unreadable proofs, a pop-up on a source page, a foreign supermarket).
+After every assembly, run the project's `review_shots.py` (3 frames per shot beside the VO words spoken over it, 8 shots
+per sheet), judge every shot against this checklist, write the findings and the lesson behind each one into `review.md`,
+fix, re-assemble, and review again until a round finds nothing worth fixing. Then judge the film as a whole (pacing,
+board vs real-footage balance, loudness) and refine once more.
+- [ ] **Proofs readable on a phone:** the highlighted words fill ≥ 1/3 of the frame width at the end of the push; shoot
+      source pages at 2× (`deviceScaleFactor: 2`) so a 2–2.5× zoom stays sharp; remove fixed/sticky layers (pop-ups,
+      "get notified" boxes, cookie bars) and ad slots before the screenshot.
+- [ ] **No board holds longer than ~16 s without a cut:** cut away at the duster moments (the board is blank there) to
+      real footage or a proof of the same idea; never leave an empty board on screen for more than ~1 s.
+- [ ] **Indian faces, places and money** in every stand-in (see §4a-3); a European street, shop or face is a reshoot.
+
 ## 15. Lessons log
+
+**Minimum Amount Due (English, 8:05, 2026-10-11, v1 → v2).** The per-shot review of v1 found:
+- **Proofs unreadable:** 1080p screenshots at a 1.1–1.8× zoom left the highlighted line about 10 px tall on a phone.
+  Fix: re-shoot at 2×, establish wide for about 2 s, push in to 1.6–2.5× on the saved highlight box, then pan along the row.
+- **Pop-ups and ads on source pages:** remove every fixed or sticky element before the screenshot.
+- **Foreign stock read as foreign:** a TABAK supermarket, a European teen and a European ATM queue. Pixabay searches for
+  "kirana", "UPI" and "Indian man phone" returned mostly European faces, cartoons and dollar animations. Wikimedia
+  Commons gave real Indian places: an HDFC branch in Hyderabad with Telugu signage, an HDFC ATM with an auto outside.
+  Search Commons by brand plus city.
+- **Boards held 20–42 s:** cut away at the duster moments to a relevant real clip or proof, and come back when the next
+  line starts.
+- **Weak hook picture:** "the full maths behind that small number" now shows flash-forwards of the maths boards instead of
+  generic shop clips.
+- **Loudness −14.8 LUFS:** `loudnorm linear=true` undershoots when the true peak would clip. Measure, apply the exact gain,
+  then a −1.5 dBFS limiter.
+- **Final mux crawled at 0.3× real time:** it rescaled the 4096 px logo PNG on every frame. Pre-scale overlays once.
+
+**Minimum Amount Due, refinement Phase 1 (2026-10-12, owner's brief).** About half the runtime was whiteboard, which
+read as repetitive. The fix was money mechanics as HyperFrames animation on the reusable kit `video/lib/fin`:
+- the phone payment with the remaining balance kept on screen;
+- one continuous timeline instead of a new board per rule;
+- a payment split with linked counters on the checked series.
+
+Rules learned:
+- **Numbers and cues are generated, never typed.** `build/scene_data.py` writes `data.js` from the calculation tool and
+  the VO alignment.
+- **Keep the bank's own example and our illustration visually separate,** with case labels.
+- **Show interest as accrual, then posting.** Never as a free-running counter.
+- **Inter's latin subset has no ₹ glyph.** Load latin-ext with a `unicode-range`.
+- **`ffmpeg -ss` before a still image writes nothing and still exits 0.** Check that the output exists.
+- **A second GSAP `fromTo` on the same element renders its start state at build time.** Pass `immediateRender: false`.
+- **Text swaps use stacked elements.** Not `tl.set` on `textContent`.
+- **When an edit replaces a window, a shot that runs past the window resumes at its end.** Don't drop it.
+- **Keep scene corners clear of the logo bug** that the final mux adds at the top right.
+
+**Minimum Amount Due, 4K master (2026-10-12).**
+- **Native 4K boards:** `build/render_4k.sh` copies each scene with `make_native_4k.mjs` and sets the board pages'
+  pixel-sized `#root` to 100%. Without that, the zoom:2 stage is cropped to a quarter.
+- **Speed:** about 5 frames per second at 4K on 4 vCPU. 16 animations (about 6.5 minutes) took about 45 minutes.
+- **Detach renders with `setsid`:** a plain `nohup … &` render was cancelled ("parent exited") when the tool call
+  ended.
+- **4K assembly:** stills are oversampled 2× rather than 4× (4× means 15K-pixel frames), intermediates are capped at
+  30 Mbps and the master at 20 Mbps.
 
 **Breath-hold (Vidyut Jammwal, Telugu, 7:17, v1→v5).** v1 was all text cards on gradients and was rejected as "a boring
 PowerPoint". What fixed it: full-screen real media, cuts every ~3 s, real event reels (Instagram via yt-dlp), agency photo

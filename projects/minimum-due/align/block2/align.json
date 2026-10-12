@@ -1,0 +1,322 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 3.005,
+  "te": "Now, what if you pay only the minimum every month?",
+  "en": "ఇక ప్రతి మంత్ మినిమమ్ మాత్రమే పే చేస్తూ వెళ్తే ఏమవుతుంది?",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.293,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 3.477,
+  "end": 11.375,
+  "te": "RBI rules say your loan should not grow if you pay the minimum. So the loan does come down. But very, very slowly.",
+  "en": "ఆర్బీఐ రూల్ ప్రకారం, మినిమమ్ పే చేస్తుంటే డెట్ పెరగకూడదు. సో డెట్ తగ్గుతుంది. కానీ ఎంత స్లోగా?",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.172,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 11.819,
+  "end": 20.76,
+  "te": "In the first year, out of every hundred rupees you pay, about seventy four rupees go to interest and GST. Only twenty six rupees cut your loan.",
+  "en": "ఫస్ట్ ఇయర్లో మీరు పే చేసే ప్రతి హండ్రెడ్ రూపీస్లో, దాదాపు సెవెంటీ ఫోర్ రూపీస్ ఇంట్రెస్ట్కి, జీఎస్టీకే పోతాయి. డెట్ తగ్గేది ట్వెంటీ సిక్స్ రూపీస్ మాత్రమే.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.096,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 21.171,
+  "end": 29.352,
+  "te": "Start with thirty thousand. After one year, you would have paid about twenty thousand. But about twenty four thousand, eight hundred is still pending.",
+  "en": "థర్టీ థౌసండ్ బ్యాలెన్స్తో స్టార్ట్ చేస్తే, వన్ ఇయర్ తర్వాత మీరు దాదాపు ట్వెంటీ థౌసండ్ పే చేసి ఉంటారు. కానీ ఇంకా ఔట్స్టాండింగ్, దాదాపు ట్వెంటీ ఫోర్ థౌసండ్ ఎయిట్ హండ్రెడ్.",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.096,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 29.738,
+  "end": 35.437,
+  "te": "After five years? You have paid about seventy thousand. And still about thirteen thousand is pending.",
+  "en": "ఫైవ్ ఇయర్స్ తర్వాత? మీరు పే చేసింది దాదాపు సెవెంటీ థౌసండ్. అయినా ఇంకా ఔట్స్టాండింగ్ ఉంది, దాదాపు థర్టీన్ థౌసండ్.",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.199,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 35.834,
+  "end": 38.713,
+  "te": "To fully close it, it takes more than ten years.",
+  "en": "ఫుల్గా క్లియర్ అవ్వడానికి టెన్ ఇయర్స్ కంటే ఎక్కువ పడుతుంది.",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.267,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 39.053,
+  "end": 46.814,
+  "te": "That is why RBI makes banks print a warning on every bill. If you pay only the minimum, you will keep paying for years.",
+  "en": "అందుకే ప్రతి స్టేట్మెంట్లో ఆర్బీఐ ఒక వార్నింగ్ పెట్టించింది. మినిమమ్ మాత్రమే పే చేస్తే, రీపేమెంట్ ఇయర్స్ పాటు సాగుతుంది అని.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.267,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 47.254,
+  "end": 51.116,
+  "te": "India now has about eleven point eight six crore credit cards.",
+  "en": "ఇండియాలో ఇప్పుడు దాదాపు ఎలెవెన్ పాయింట్ ఎయిట్ సిక్స్ క్రోర్ క్రెడిట్ కార్డ్స్ ఉన్నాయి.",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.249,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 51.46,
+  "end": 65.185,
+  "te": "As per CRIF High Mark, credit card bills not paid for three months to one year were thirty three thousand, eight hundred and eighty six crore rupees, in March twenty twenty five. That is forty four percent more than the year before.",
+  "en": "క్రిఫ్ హై మార్క్ డేటా ప్రకారం, నైన్టీ వన్ నుంచి త్రీ హండ్రెడ్ సిక్స్టీ డేస్ పే చేయని కార్డ్ డ్యూస్, మార్చ్ ట్వెంటీ ట్వెంటీ ఫైవ్ నాటికి థర్టీ త్రీ థౌసండ్ ఎయిట్ హండ్రెడ్ ఎయిటీ సిక్స్ క్రోర్స్. వన్ ఇయర్లో ఫార్టీ ఫోర్ పర్సెంట్ పెరిగాయి.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.08,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 65.641,
+  "end": 78.113,
+  "te": "Forty five percent is too much, right? But in December twenty twenty four, the Supreme Court cancelled an old order that had put a thirty percent limit on credit card interest. So today, no court has put any limit.",
+  "en": "ఫార్టీ ఫైవ్ పర్సెంట్ చాలా ఎక్కువ కదా? కానీ ట్వెంటీ ట్వెంటీ ఫోర్ డిసెంబర్లో సుప్రీం కోర్ట్, క్రెడిట్ కార్డ్ ఇంట్రెస్ట్ మీద థర్టీ పర్సెంట్ లిమిట్ పెట్టిన ఓల్డ్ జడ్జ్మెంట్ని సెట్ అసైడ్ చేసింది. సో ఇప్పుడు కోర్ట్ పెట్టిన లిమిట్ ఏదీ లేదు.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.08,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 78.541,
+  "end": 82.833,
+  "te": "So what saves you is not that small number. It is knowing this maths.",
+  "en": "అందుకే మిమ్మల్ని ప్రొటెక్ట్ చేసేది ఆ స్మాల్ నంబర్ కాదు. మీకు తెలిసిన కాలిక్యులేషన్.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.205,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 83.188,
+  "end": 86.601,
+  "te": "Some people use a shortcut. They call it card rotation.",
+  "en": "కొంతమంది ఒక షార్ట్కట్ చెప్తారు. కార్డ్ రొటేషన్.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.238,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 87.014,
+  "end": 93.669,
+  "te": "Take money from a friend and pay the full bill. The next day, take the money out of the card as rent, and give it back to the friend.",
+  "en": "అంటే ఫ్రెండ్ దగ్గర మనీ తీసుకుని బిల్ పే చేయడం. నెక్స్ట్ డే కార్డ్ నుంచి రెంట్ పేరుతో విత్డ్రా చేసి, రిటర్న్ ఇవ్వడం.",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.238,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 94.062,
+  "end": 100.869,
+  "te": "But your loan does not come down even by one rupee. Only the last date moves to next month. And you pay a fee.",
+  "en": "కానీ డెట్ ఒక్క రూపీ కూడా తగ్గదు. డ్యూ డేట్ మాత్రమే నెక్స్ట్ మంత్కి షిఫ్ట్ అవుతుంది, ప్లస్ ఫీజు.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.128,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 101.239,
+  "end": 109.08,
+  "te": "Also, after new RBI rules in twenty twenty five, apps like PhonePe, Paytm and CRED stopped rent payment by credit card.",
+  "en": "ఇంకో పాయింట్. ట్వెంటీ ట్వెంటీ ఫైవ్లో ఆర్బీఐ న్యూ రూల్స్ తర్వాత, ఫోన్పే, పేటీఎం, క్రెడ్ లాంటి యాప్స్ క్రెడిట్ కార్డ్ రెంట్ ఆప్షన్ని రిమూవ్ చేశాయి.",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.128,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 109.442,
+  "end": 115.387,
+  "te": "Taking cash from your credit card is even worse. There is a fee, and interest starts from the same day.",
+  "en": "కార్డ్తో క్యాష్ విత్డ్రా చేస్తే ఇంకా డేంజర్. ఫీజు, ప్లస్ విత్డ్రా చేసిన డే నుంచే ఇంట్రెస్ట్.",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.363,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 115.72,
+  "end": 119.925,
+  "te": "So rotation is not a solution. It only pushes the loan to next month.",
+  "en": "సో రొటేషన్ సొల్యూషన్ కాదు. డెట్ని పోస్ట్పోన్ చేయడం మాత్రమే.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.532,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 120.39,
+  "end": 123.113,
+  "te": "So what should we do? Five simple steps.",
+  "en": "మరి మనం ఏం చేయాలి? సింపుల్గా ఫైవ్ పాయింట్స్.",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.164,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 123.463,
+  "end": 129.661,
+  "te": "One. When you can, pay the full bill. If you set auto pay, set it for the full amount, not the minimum.",
+  "en": "ఫస్ట్. పాజిబుల్ అయినప్పుడల్లా టోటల్ అమౌంట్ డ్యూ ఫుల్గా పే చేయండి. ఆటో డెబిట్ సెట్ చేస్తే, టోటల్ అమౌంట్కి సెట్ చేయండి, మినిమమ్కి కాదు.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.164,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 129.969,
+  "end": 135.016,
+  "te": "Then your card is really free. Up to fifty days interest free, depending on your card.",
+  "en": "అప్పుడు కార్డ్ రియల్లీ ఫ్రీ. కార్డ్ని బట్టి ఫిఫ్టీ డేస్ వరకు ఇంట్రెస్ట్ ఉండదు.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.128,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 135.402,
+  "end": 140.886,
+  "te": "Two. If you cannot pay the full bill, pay as much as you can. But never less than the minimum.",
+  "en": "సెకండ్. ఫుల్ అమౌంట్ పే చేయలేకపోతే, పాజిబుల్ అయినంత ఎక్కువ పే చేయండి. మినిమమ్ కంటే మాత్రం ఎప్పుడూ తక్కువ కాదు.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.128,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 141.194,
+  "end": 150.054,
+  "te": "Because interest on the money you pay stops that day. Pay more, and you pay less interest. And once you clear the full bill, your interest free period comes back.",
+  "en": "ఎందుకంటే పే చేసిన అమౌంట్ మీద ఇంట్రెస్ట్ ఆ డే నుంచే స్టాప్ అవుతుంది. ఎంత ఎక్కువ పే చేస్తే, అంత తక్కువ ఇంట్రెస్ట్. బ్యాలెన్స్ ఫుల్గా క్లియర్ చేస్తే, ఫ్రీ పీరియడ్ మళ్ళీ వస్తుంది.",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.139,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 150.511,
+  "end": 156.951,
+  "te": "Three. Till the bill is cleared, keep that card aside. Use UPI or a debit card for daily spending.",
+  "en": "థర్డ్. బ్యాలెన్స్ ఉన్నంత వరకు ఆ కార్డ్ని సైడ్లో పెట్టండి. డైలీ ఎక్స్పెన్సెస్కి యూపీఐ, డెబిట్ కార్డ్ యూజ్ చేయండి.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.032,
+  "confidence": "check"
+ },
+ {
+  "line": 24,
+  "start": 157.349,
+  "end": 171.641,
+  "te": "Four. If the bill is big, ask your bank to change it into EMI. For example, HDFC's EMI rates are about eleven to twenty five percent. Also check the fee and GST. And never take loans from unknown apps.",
+  "en": "ఫోర్త్. బ్యాలెన్స్ పెద్దదైతే, బ్యాంక్ని ఈఎంఐ ఆప్షన్ అడగండి. హెచ్డీఎఫ్సీ ఈఎంఐ రేట్స్ దాదాపు ఎలెవెన్ నుంచి ట్వెంటీ ఫైవ్ పర్సెంట్. ప్రాసెసింగ్ ఫీ, జీఎస్టీ కూడా కాలిక్యులేట్ చేసుకోండి. అన్నోన్ లోన్ యాప్స్ మాత్రం వద్దు.",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.032,
+  "confidence": "check"
+ },
+ {
+  "line": 25,
+  "start": 171.989,
+  "end": 180.092,
+  "te": "Five. If your last date comes before your salary, ask the bank to change your bill date. RBI rules say they must give you this option.",
+  "en": "ఫిఫ్త్. డ్యూ డేట్ సాలరీ కంటే ముందు వస్తుంటే, బిల్లింగ్ సైకిల్ చేంజ్ చేయమని అడగండి. ఆర్బీఐ రూల్ ప్రకారం, ఆ ఆప్షన్ ఇవ్వాలి.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.049,
+  "confidence": "check"
+ },
+ {
+  "line": 26,
+  "start": 180.45,
+  "end": 187.663,
+  "te": "One easy check. On your bill, look for the line called finance charges. If it is not zero, you are paying interest.",
+  "en": "ఒక సింపుల్ టెస్ట్. స్టేట్మెంట్లో ఫైనాన్స్ ఛార్జెస్ లైన్ చెక్ చేయండి. అక్కడ జీరో కాకపోతే, మీరు ఇంట్రెస్ట్ పే చేస్తున్నారు.",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.072,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 188.021,
+  "end": 193.831,
+  "te": "Remember. The minimum amount saves you from late fees and a bad CIBIL report. Not from interest.",
+  "en": "రిమెంబర్ చేసుకోండి. మినిమమ్ అమౌంట్ డ్యూ లేట్ ఫీ నుంచి, సిబిల్ నుంచి ప్రొటెక్ట్ చేస్తుంది. ఇంట్రెస్ట్ నుంచి కాదు.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.116,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 194.175,
+  "end": 203.434,
+  "te": "Remember three numbers. Forty five percent interest. Eighteen percent GST on top. And zero interest free days for new spending till the old bill is cleared.",
+  "en": "త్రీ నంబర్స్ గుర్తు పెట్టుకోండి. ఫార్టీ ఫైవ్ పర్సెంట్ ఇంట్రెస్ట్. దాని మీద ఎయిటీన్ పర్సెంట్ జీఎస్టీ. బ్యాలెన్స్ ఉన్నంత వరకు న్యూ స్పెండ్స్కి, జీరో ఫ్రీ డేస్.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.158,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 203.791,
+  "end": 209.287,
+  "te": "The minimum is like an emergency brake. Use it only in an emergency, not every month.",
+  "en": "మినిమమ్ అనేది ఎమర్జెన్సీ బ్రేక్ లాంటిది. డైలీ యూజ్ చేసే రూట్ కాదు.",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.102,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 209.63,
+  "end": 213.948,
+  "te": "What do you pay every month? The full bill, or the minimum? Tell me in the comments.",
+  "en": "మీరు ప్రతి మంత్ ఏది పే చేస్తున్నారు? టోటలా, మినిమమా? కామెంట్స్లో చెప్పండి.",
+  "speech_vs_text": 0.77,
+  "boundary_margin": 0.102,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 214.281,
+  "end": 218.574,
+  "te": "In the next video, we will see what happens if you cannot pay even the minimum.",
+  "en": "నెక్స్ట్ వీడియోలో, ఆ మినిమమ్ కూడా పే చేయలేని మంత్ వస్తే ఏమవుతుందో చూద్దాం.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.176,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 218.934,
+  "end": 225.294,
+  "te": "If this helped you, share it with one friend who uses a credit card. Subscribe to the channel. See you soon. Jai Hind.",
+  "en": "యూస్ఫుల్ అనిపిస్తే, కార్డ్ యూజ్ చేసే ఒక్క ఫ్రెండ్కైనా షేర్ చేయండి. సబ్స్క్రైబ్ చేసుకోండి. మళ్ళీ కలుద్దాం. జై హింద్.",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.176,
+  "confidence": "high"
+ }
+]

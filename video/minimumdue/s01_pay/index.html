@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Minimum Due: the bill and the minimum payment</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      #stage { position: absolute; inset: 0; }
+      #phone { left: 330px; top: 60px; }
+      #ok { position: absolute; left: 0; right: 0; top: 70px; bottom: 0; background: var(--paper); padding: 40px 26px 0; text-align: center; }
+      #ok .ring { width: 150px; height: 150px; margin: 30px auto 26px; border-radius: 50%; background: var(--green); color: #fff; padding: 30px; }
+      #ok .big { font: 800 58px/1.1 Inter, Arial, sans-serif; color: #15803d; }
+      #ok .small { font: 600 22px/1.3 Inter, Arial, sans-serif; color: var(--paper-dim); margin: 10px 0 34px; }
+      #ok .card { text-align: left; border-color: var(--blue); }
+      #ok .card .v { font-size: 64px; }
+      #minCard { border-color: var(--yellow) !important; }
+      #glow { position: absolute; left: 22px; right: 22px; top: 312px; height: 140px; border-radius: 26px; box-shadow: 0 0 0 8px var(--yellow-soft); }
+      .col { left: 980px; }
+      #touch, #ripple { left: 251px; top: 743px; }   /* centre of "Pay minimum" inside the phone */
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="s01_pay" data-start="0" data-width="1920" data-height="1080" data-duration="15.97">
+      <div class="fin-bg" style="background-image: url('img/desk.jpg')"></div>
+      <div class="fin-grade"></div>
+      <div id="stage">
+        <div id="phone" class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="status"><span>9:41</span><span>4G</span></div>
+            <div class="ui" id="bill">
+              <h3>Credit card bill</h3>
+              <div class="sub">Bill date 25 Oct · Our example</div>
+              <div class="card" style="border-color: var(--blue)"><div class="k">Total amount due</div><div class="v" style="color: #1d4ed8">₹30,000</div></div>
+              <div class="card" id="minCard"><div class="k">Minimum amount due</div><div class="v">₹1,500</div></div>
+              <div class="card"><div class="k">Last date to pay</div><div class="v" style="font-size: 36px">14 Nov</div></div>
+              <div class="btn line">Pay total ₹30,000</div>
+              <div class="btn solid" id="payMin">Pay minimum ₹1,500</div>
+            </div>
+            <div id="glow"></div>
+            <div id="ok" class="ui">
+              <div class="ring" id="okRing"></div>
+              <div class="big">₹1,500 paid</div>
+              <div class="small">Payment successful · 14 Nov</div>
+              <div class="card"><div class="k">Still pending</div><div class="v" style="color: #1d4ed8">₹28,500</div></div>
+            </div>
+            <div class="sim">SIMULATION</div>
+          </div>
+          <div class="ripple" id="ripple"></div>
+          <div class="touch" id="touch"></div>
+        </div>
+
+        <div class="callout col c-blue" id="coTotal" style="top: 150px"><span class="k">Total amount due</span>₹30,000</div>
+        <div class="callout col c-yellow" id="coMin" style="top: 380px"><span class="k">Minimum amount due</span>₹1,500</div>
+        <div class="callout col c-green" id="coPaid" style="top: 150px"><span class="k">You paid</span>₹1,500</div>
+        <div class="callout col c-blue" id="coLeft" style="top: 380px"><span class="k">Still pending</span>₹28,500</div>
+
+        <div class="chip col c-gold" id="chSalary" style="top: 650px"><span id="icClock"></span>Salary not in yet</div>
+        <div class="chip col c-green" id="chFee" style="top: 640px"><span id="icCheck1"></span>No late fee</div>
+        <div class="chip col c-green" id="chCibil" style="top: 770px"><span id="icCheck2"></span>CIBIL score safe</div>
+      </div>
+      <div class="fin-tag">Simulation · our example</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      $("okRing").innerHTML = FIN.icon("check");
+      $("icClock").innerHTML = FIN.icon("clock");
+      $("icCheck1").innerHTML = FIN.icon("check");
+      $("icCheck2").innerHTML = FIN.icon("check");
+      FIN.grain($("grain"));
+
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, at, from = { opacity: 0, y: 30 }) => tl.fromTo(el, from, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, at);
+      const out = (el, at) => tl.to(el, { opacity: 0, y: -16, duration: 0.35, ease: "power2.in" }, at);
+      const tapAt = C.tap + 0.15;
+
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.03, duration: D.duration, ease: "none" }, 0);
+      tl.fromTo($("phone"), { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0);
+      // the two numbers, as they are named
+      pop($("coTotal"), C.total - 0.1);
+      pop($("coMin"), C.minimum - 0.1);
+      tl.fromTo($("glow"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.minimum - 0.1);
+      tl.to($("glow"), { opacity: 0.35, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 3 }, C.minimum + 0.4);
+      // salary not in yet
+      pop($("chSalary"), C.salary);
+      out($("chSalary"), C.tap - 0.5);
+      // finger to the minimum button, tap, confirmation
+      tl.fromTo($("touch"), { opacity: 0, x: 70, y: 150 }, { opacity: 1, x: 0, y: 0, duration: 0.8, ease: "power2.inOut" }, tapAt - 0.9);
+      tl.to($("touch"), { scale: 0.85, duration: 0.12, yoyo: true, repeat: 1 }, tapAt);
+      tl.to($("payMin"), { backgroundColor: "#0b1730", scale: 0.97, duration: 0.12, yoyo: true, repeat: 1 }, tapAt);
+      tl.fromTo($("ripple"), { opacity: 0, scale: 0.6 }, { opacity: 0.9, duration: 0.01 }, tapAt - 0.01);
+      tl.fromTo($("ripple"), { opacity: 0.9, scale: 0.6 }, { scale: 2.6, opacity: 0, duration: 0.6, ease: "power2.out", immediateRender: false }, tapAt);
+      tl.to($("touch"), { opacity: 0, duration: 0.3 }, tapAt + 0.35);
+      tl.to($("glow"), { opacity: 0, duration: 0.2 }, tapAt + 0.2);
+      tl.to($("bill"), { opacity: 0, duration: 0.3 }, tapAt + 0.35);
+      tl.fromTo($("ok"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, tapAt + 0.35);
+      tl.fromTo($("okRing"), { scale: 0.4 }, { scale: 1, duration: 0.5, ease: "back.out(2)" }, tapAt + 0.45);
+      // the right column follows the money: paid, and what is still pending
+      out($("coTotal"), tapAt + 0.3); out($("coMin"), tapAt + 0.3);
+      pop($("coPaid"), tapAt + 0.6); pop($("coLeft"), tapAt + 0.9);
+      // what people think they are safe from
+      pop($("chFee"), C.latefee); pop($("chCibil"), C.cibil);
+      // hold the last frame to the scene's end
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+
+      FIN.attach(tl);
+      window.__timelines["s01_pay"] = tl;
+    </script>
+  </body>
+</html>

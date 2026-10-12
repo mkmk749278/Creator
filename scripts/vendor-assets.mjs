@@ -65,6 +65,32 @@ for (const project of projects) {
     mkdirSync(dirname(join(out, "library", rel)), { recursive: true });
     copyFileSync(src, join(out, "library", rel));
   }
+  // Finance explainer kit (video/lib/fin) for pages that reference vendor/fin/.
+  if (html.includes("vendor/fin/")) {
+    mkdirSync(join(out, "fin"), { recursive: true });
+    for (const f of ["fin.js", "fin.css"]) copyFileSync(join(root, "video/lib/fin", f), join(out, "fin", f));
+  }
+  // Inter's latin-ext subset (₹ and other currency signs), only where a page asks for it.
+  if (html.includes("vendor/fonts/inter-latin-ext-")) {
+    for (const w of [400, 600, 800]) {
+      const f = `inter-latin-ext-${w}-normal.woff2`;
+      copyFileSync(join(root, "node_modules/@fontsource/inter/files", f), join(out, "fonts", f));
+    }
+  }
+  // Handwriting font for whiteboard scenes (Kalam, OFL), only where a page asks for it.
+  if (html.includes("vendor/fonts/kalam-")) {
+    for (const w of [400, 700]) {
+      for (const sub of ["latin", "devanagari"]) { // devanagari subset carries the ₹ sign
+        const f = `kalam-${sub}-${w}-normal.woff2`;
+        copyFileSync(join(root, "node_modules/@fontsource/kalam/files", f), join(out, "fonts", f));
+      }
+    }
+  }
+  // Whiteboard engine (video/lib/whiteboard): pen fonts, runtime and styles for pages that reference vendor/wb/.
+  if (html.includes("vendor/wb/")) {
+    mkdirSync(join(out, "wb"), { recursive: true });
+    for (const f of ["wb.js", "wb-fonts.js", "wb.css"]) copyFileSync(join(root, "video/lib/whiteboard", f), join(out, "wb", f));
+  }
   // Seeded organic motion: createNoise3D(seededRandom).
   if (html.includes("vendor/noise/")) {
     mkdirSync(join(out, "noise"), { recursive: true });

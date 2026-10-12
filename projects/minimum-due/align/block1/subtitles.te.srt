@@ -1,0 +1,148 @@
+1
+00:00:00,000 --> 00:00:03,863
+A message comes on your phone. Your credit card bill is ready.
+
+2
+00:00:03,863 --> 00:00:11,055
+It shows two numbers. Total amount due, thirty thousand rupees. Minimum amount due, only fifteen hundred.
+
+3
+00:00:11,055 --> 00:00:22,368
+Salary has not come yet. So you think, I will pay only the minimum, right? No late fee. CIBIL score is safe. Many people think like this.
+
+4
+00:00:22,368 --> 00:00:26,915
+But this is the real trap. ICICI Bank has put one example on its own website. Look.
+
+5
+00:00:26,915 --> 00:00:36,791
+One customer's bill was sixty nine thousand, six hundred and eighty eight rupees. On the last date, the customer paid sixty five thousand. That is almost the full bill.
+
+6
+00:00:36,791 --> 00:00:43,471
+But in the next bill, the bank added four thousand, three hundred and seventeen rupees for interest and GST.
+
+7
+00:00:43,471 --> 00:00:49,578
+Only four thousand, six hundred and eighty eight was not paid. But the interest was almost the same. How?
+
+8
+00:00:49,578 --> 00:00:56,600
+By the end of this video, you will understand the full maths behind that small number. In very simple words.
+
+9
+00:00:56,600 --> 00:00:59,767
+Hello friends, welcome to Be Practical with Kishore.
+
+10
+00:00:59,767 --> 00:01:05,062
+First, the two numbers. Total amount due means the full money you have to pay the bank.
+
+11
+00:01:05,062 --> 00:01:13,486
+Minimum amount due is the small part you must pay to not be late. Most banks keep it near five percent of your bill, plus fees and GST.
+
+12
+00:01:13,486 --> 00:01:17,574
+So for a thirty thousand bill, the minimum is about fifteen hundred.
+
+13
+00:01:17,574 --> 00:01:23,796
+Paying the minimum does two good things. No late fee. And the bank will not report you as late to CIBIL.
+
+14
+00:01:23,796 --> 00:01:28,610
+But it does not stop interest. And you lose your interest free period.
+
+15
+00:01:28,610 --> 00:01:35,469
+So remember this. The minimum amount is not a safety net... it is a switch that starts the interest meter.
+
+16
+00:01:35,469 --> 00:01:47,624
+From the day you use your card till the last date to pay, the bank does not charge any interest. This time is called the interest free period. It simply means, for these days, you pay zero interest.
+
+17
+00:01:47,624 --> 00:01:57,478
+Let's take an example. On October fifth, ten thousand for a phone. On the twelfth, fifteen thousand for a family function. On the twentieth, five thousand for groceries.
+
+18
+00:01:57,478 --> 00:02:03,963
+On October twenty fifth, the bill comes. Total, thirty thousand. Last date to pay, November fourteenth.
+
+19
+00:02:03,963 --> 00:02:09,981
+So the phone money gets forty days interest free. The grocery money gets twenty five days interest free.
+
+20
+00:02:09,981 --> 00:02:11,811
+But there is one condition.
+
+21
+00:02:11,811 --> 00:02:18,493
+You must pay the full bill before the last date. Even one rupee less, and the interest free period is gone.
+
+22
+00:02:18,493 --> 00:02:25,012
+This is in the RBI rules. If you do not pay the full bill, the bank can charge interest from the day you spent.
+
+23
+00:02:25,012 --> 00:02:31,142
+On November fourteenth, you paid only the minimum, fifteen hundred. Now let's see what the bank does.
+
+24
+00:02:31,142 --> 00:02:37,740
+Rule number one. Interest does not start from the last date. It starts from the day you spent the money.
+
+25
+00:02:37,740 --> 00:02:47,359
+On the ten thousand for the phone, interest from October fifth. On the fifteen thousand, from October twelfth. On the five thousand, from October twentieth.
+
+26
+00:02:47,359 --> 00:02:55,988
+How much interest? In banks like ICICI, three point seven five percent every month. That is forty five percent in a year.
+
+27
+00:02:55,988 --> 00:03:00,630
+Rule number two. You pay interest even on the money you already paid.
+
+28
+00:03:00,630 --> 00:03:08,399
+Till November fourteenth, interest on the full thirty thousand. Only after that, on the balance of twenty eight thousand five hundred.
+
+29
+00:03:08,399 --> 00:03:12,935
+Rule number three. On top of the interest, eighteen percent GST.
+
+30
+00:03:12,935 --> 00:03:15,742
+On November twenty fifth, the next bill comes.
+
+31
+00:03:15,742 --> 00:03:22,356
+You paid fifteen hundred. The bank added interest and GST of one thousand, nine hundred and eighty one.
+
+32
+00:03:22,356 --> 00:03:32,843
+So without spending even one new rupee, your bill went up from thirty thousand to thirty thousand, four hundred and eighty one. You paid money, and still your loan went up.
+
+33
+00:03:32,843 --> 00:03:38,440
+This is our own maths. But we used the same method ICICI shows on its website.
+
+34
+00:03:38,440 --> 00:03:51,812
+The same thing happened to the ICICI customer we saw at the start. Interest on the full bill till the day of payment. Then no interest free period for new shopping. That is how it became four thousand, three hundred and seventeen.
+
+35
+00:03:51,812 --> 00:03:59,121
+Rule number four. Say on November fifteenth, you fill petrol with the same card. Will you get an interest free period for that?
+
+36
+00:03:59,121 --> 00:04:04,965
+No. Till the old bill is fully paid, every new swipe gets interest from that same day.
+
+37
+00:04:04,965 --> 00:04:12,918
+So from the day you paid only the minimum, your card is not free any more. It has become a loan at forty five percent interest.
+

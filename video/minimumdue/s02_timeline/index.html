@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Minimum Due: one continuous timeline (spends, bill, last date, payment, interest, next bill)</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      #stage, #tline { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+      #axis { left: 150px; top: 558px; width: 1620px; height: 5px; border-radius: 3px; background: rgba(244, 246, 251, .75); transform-origin: 0 50%; }
+      .tick { position: absolute; top: 550px; width: 2px; height: 20px; background: rgba(244, 246, 251, .45); }
+      .month { position: absolute; top: 590px; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: var(--ink-dim); }
+      .dot { position: absolute; top: 548px; width: 26px; height: 26px; margin-left: -13px; border-radius: 50%; border: 5px solid #0b1730; }
+      .dlab { position: absolute; top: 588px; width: 160px; margin-left: -80px; text-align: center; font: 800 28px/1 Inter, Arial, sans-serif; }
+      .buy { position: absolute; top: 250px; width: 184px; margin-left: -92px; border-radius: 16px; overflow: hidden; background: rgba(8, 12, 22, .9);
+        border: 3px solid var(--blue); box-shadow: 0 16px 30px rgba(0,0,0,.45); }
+      .buy img { display: block; width: 100%; height: 104px; object-fit: cover; }
+      .buy .amt { font: 800 36px/1 Inter, Arial, sans-serif; color: #8db8ff; padding: 12px 12px 4px; }
+      .buy .what { font: 600 22px/1.1 Inter, Arial, sans-serif; color: var(--ink); padding: 0 12px 12px; }
+      .stem { position: absolute; top: 470px; width: 3px; height: 82px; margin-left: -1px; background: var(--blue); transform-origin: 50% 0; }
+      .mark { position: absolute; top: 300px; width: 4px; height: 252px; margin-left: -2px; transform-origin: 50% 100%; }
+      .mlab { position: absolute; font: 800 34px/1.15 Inter, Arial, sans-serif; }
+      .mlab .k { display: block; font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-dim); }
+      .span { position: absolute; height: 10px; border-radius: 5px; transform-origin: 0 50%; }
+      .slab { position: absolute; font: 800 30px/1 Inter, Arial, sans-serif; white-space: nowrap; }
+      .rule { left: 64px; top: 128px; font: 800 38px/1 Inter, Arial, sans-serif; padding: 16px 24px; border-radius: 14px; background: rgba(8, 12, 22, .82);
+        border-left: 6px solid var(--red); }
+      .rule .n { color: #ff7b7b; margin-right: 14px; }
+      #bal { right: 190px; top: 34px; text-align: right; }   /* clear of the logo bug the final mux adds top-right */
+      #bal .k { display: block; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-dim); }
+      #balV { font: 800 72px/1.05 Inter, Arial, sans-serif; color: #8db8ff; }
+      #rate { right: 64px; top: 170px; font: 800 32px/1.15 Inter, Arial, sans-serif; text-align: right; padding: 14px 22px; border-radius: 14px;
+        background: rgba(8, 12, 22, .82); border: 2px solid rgba(239, 68, 68, .5); }
+      #rate .k { display: block; font: 600 20px/1.3 Inter, Arial, sans-serif; color: var(--ink-dim); }
+      .cond { position: absolute; left: 760px; font: 800 40px/1 Inter, Arial, sans-serif; padding: 20px 28px; border-radius: 16px; background: rgba(8, 12, 22, .86); }
+      .seg { position: absolute; bottom: 92px; background: rgba(239, 68, 68, .55); border-top: 4px solid var(--red); transform-origin: 50% 100%; }
+      .seglab { position: absolute; font: 800 26px/1 Inter, Arial, sans-serif; color: #ffd0d0; white-space: nowrap; }
+      #areaK { left: 150px; top: 806px; font: 600 22px/1 Inter, Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-dim); }
+      #ledger { left: 760px; top: 186px; width: 1000px; }
+      #ledger .row span:last-child { font-variant-numeric: tabular-nums; }
+      #up { left: 760px; top: 900px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="s02_timeline" data-start="0" data-width="1920" data-height="1080" data-duration="105.25">
+      <div class="fin-bg" style="background-image: url('img/desk.jpg')"></div>
+      <div class="fin-grade"></div>
+      <div id="stage">
+        <div class="fin-case" id="case">Our example · ₹30,000 card bill</div>
+        <div class="abs" id="bal"><span class="k">Card balance</span><span id="balV">₹0</span></div>
+        <div class="abs rule" id="rule1"><span class="n">RULE 1</span>Interest from the day you spent</div>
+        <div class="abs rule" id="rule2"><span class="n">RULE 2</span>Interest even on what you paid</div>
+        <div class="abs rule" id="rule3"><span class="n">RULE 3</span>+ 18% GST on the interest</div>
+        <div class="abs" id="rate"><span class="k">Rate in this example (ICICI)</span>3.75% a month = 45% a year</div>
+        <div id="tline">
+          <div class="abs" id="axis"></div>
+          <div id="ticks"></div>
+          <div id="items"></div>
+          <div class="abs" id="areaK">Money charged interest</div>
+          <div id="area"></div>
+        </div>
+        <div class="cond c-green" id="cond1" style="top: 790px">Pay the FULL ₹30,000 by 14 Nov</div>
+        <div class="cond c-red" id="cond2" style="top: 900px">₹1 less → interest free period gone</div>
+        <div class="ledger" id="ledger">
+          <div class="head">Next bill · 25 Nov · our calculation</div>
+          <div class="row" id="lr1"><span>Bill on 25 Oct</span><span class="c-blue" id="lv1"></span></div>
+          <div class="row" id="lr2"><span>You paid on 14 Nov</span><span class="c-green" id="lv2"></span></div>
+          <div class="row" id="lr3"><span>Interest</span><span class="c-red" id="lv3"></span></div>
+          <div class="row" id="lr4"><span>GST 18% on the interest</span><span class="c-red" id="lv4"></span></div>
+          <div class="row total" id="lr5"><span>Next bill</span><span class="c-yellow" id="lv5"></span></div>
+        </div>
+        <div class="chip c-red" id="up"><span id="icWarn"></span>You paid, and the loan still went up</div>
+      </div>
+      <div class="fin-tag" id="tag">Our calculation · ICICI method · 45% a year</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, N = D.n, $ = (id) => document.getElementById(id);
+      const X0 = 150, PX = 27;                                   // 1 Oct at x = 150, 27 px a day
+      const day = (m, d) => (m === 10 ? d - 1 : 30 + d);          // days after 1 Oct (Oct = 10, Nov = 11)
+      const X = (m, d) => X0 + PX * day(m, d);
+      const el = (tag, cls, css, html) => { const e = document.createElement(tag); if (cls) e.className = cls; Object.assign(e.style, css || {}); if (html != null) e.innerHTML = html; return e; };
+      const items = $("items"), area = $("area"), ticks = $("ticks");
+      $("icWarn").innerHTML = FIN.icon("warn");
+      FIN.grain($("grain"));
+
+      // axis ticks every 5 days + month names
+      for (let k = 0; k <= 60; k += 5) ticks.appendChild(el("div", "tick", { left: X0 + PX * k - 1 + "px" }));
+      ticks.appendChild(el("div", "month", { left: X0 + "px" }, "OCT"));
+      ticks.appendChild(el("div", "month", { left: X(11, 1) + "px" }, "NOV"));
+
+      // purchases (real thumbnails), dots and date labels
+      const BUY = [
+        { m: 10, d: 5, amt: 10000, what: "Phone", img: "img/buy_phone.jpg", at: C.oct5 },
+        { m: 10, d: 12, amt: 15000, what: "Family function", img: "img/buy_function.jpg", at: C.oct12 },
+        { m: 10, d: 20, amt: 5000, what: "Groceries", img: "img/buy_grocery.jpg", at: C.oct20 },
+      ];
+      for (const b of BUY) {
+        const x = X(b.m, b.d);
+        b.card = items.appendChild(el("div", "buy", { left: x + "px" }, `<img src="${b.img}" alt="" /><div class="amt">${FIN.inr(b.amt)}</div><div class="what">${b.what}</div>`));
+        b.stem = items.appendChild(el("div", "stem", { left: x + "px" }));
+        b.dot = items.appendChild(el("div", "dot", { left: x + "px", background: "var(--blue)" }));
+        b.lab = items.appendChild(el("div", "dlab c-blue", { left: x + "px" }, `Oct ${b.d}`));
+      }
+      // statement, last date, next statement
+      const mark = (x, color, lab, side, top) => {
+        const line = items.appendChild(el("div", "mark", { left: x + "px", background: color }));
+        const dot = items.appendChild(el("div", "dot", { left: x + "px", background: color }));
+        const l = items.appendChild(el("div", "mlab", Object.assign({ top: top + "px" }, side === "r" ? { left: x + 16 + "px" } : { right: 1920 - x + 16 + "px", textAlign: "right" }), lab));
+        return { line, dot, l };
+      };
+      const mS = mark(X(10, 25), "var(--ink-dim)", '<span class="k">Bill comes · 25 Oct</span><span id="billAmt">Total ₹30,000</span>', "r", 300);
+      const mD = mark(X(11, 14), "var(--red)", '<span class="k">Last date to pay</span><span class="c-red">14 Nov</span>', "r", 300);
+      const mN = mark(X(11, 25), "var(--gold)", '<span class="k">Next bill</span><span class="c-gold">25 Nov</span>', "l", 410);
+      const dS = items.appendChild(el("div", "dlab", { left: X(10, 25) + "px", color: "var(--ink-dim)" }, "Oct 25"));
+      const dD = items.appendChild(el("div", "dlab c-red", { left: X(11, 14) + "px" }, "Nov 14"));
+      const dN = items.appendChild(el("div", "dlab c-gold", { left: X(11, 25) + "px" }, "Nov 25"));
+
+      // the ₹1,500 payment on 14 Nov
+      const pay = items.appendChild(el("div", "chip c-green", { left: X(11, 14) - 400 + "px", top: "430px", fontSize: "34px", padding: "12px 20px 12px 14px" },
+        `${FIN.icon("pay")}Paid ${FIN.inr(N.mad)} (minimum)`));
+
+      // spans under the axis: interest-free first, then (rule 1) interest from the spend date
+      const due = X(11, 14), SP = [];
+      BUY.forEach((b, i) => {
+        const x = X(b.m, b.d), y = 690 + i * 46, p = N.per_purchase[i];
+        const span = items.appendChild(el("div", "span", { left: x + "px", top: y + "px", width: due - x + "px", background: "var(--green)" }));
+        const free = items.appendChild(el("div", "slab c-green", { left: x + 8 + "px", top: y - 32 + "px" },
+          i === 1 ? "" : `${FIN.inr(b.amt)} · ${p.days} days interest free`));
+        const intr = items.appendChild(el("div", "slab c-red", { left: x + 8 + "px", top: y - 32 + "px" }, `${FIN.inr(b.amt)} · interest from Oct ${b.d}`));
+        SP.push({ span, free, intr });
+      });
+
+      // money charged interest: the balance, day by day (rule 2), as a step area under the timeline
+      const BASE = 988, H30 = 190, hgt = (v) => (v / 30000) * H30;
+      const SEG = [
+        { a: X(10, 5), b: X(10, 12), v: 10000, lab: "₹10,000" },
+        { a: X(10, 12), b: X(10, 20), v: 25000, lab: "₹25,000" },
+        { a: X(10, 20), b: X(11, 14), v: 30000, lab: "on the full ₹30,000" },
+        { a: X(11, 14), b: X(11, 25), v: N.residual.amount, lab: "on ₹28,500" },
+      ];
+      for (const s of SEG) {
+        s.el = area.appendChild(el("div", "seg", { left: s.a + "px", width: s.b - s.a + "px", height: hgt(s.v) + "px", bottom: 1080 - BASE + "px" }));
+        s.l = area.appendChild(el("div", "seglab", { left: s.a + 10 + "px", top: BASE - hgt(s.v) + 12 + "px", fontSize: s.v < 26000 ? "22px" : "26px" }, s.lab));
+      }
+
+      // ledger values (numbers from tools/mad_math.py via data.js)
+      $("lv1").textContent = FIN.inr(N.total); $("lv2").textContent = "− " + FIN.inr(N.mad);
+      $("lv3").textContent = "+ " + FIN.inr(N.interest, 2); $("lv4").textContent = "+ " + FIN.inr(N.gst, 2);
+      $("lv5").textContent = FIN.inr(N.new_balance, 2);
+
+      // card balance: purchases add, the payment subtracts, the next bill adds interest + GST
+      const balK = FIN.keys([[0, 0], [C.oct5 + 0.2, 0], [C.oct5 + 0.7, 10000], [C.oct12 + 0.2, 10000], [C.oct12 + 0.7, 25000], [C.oct20 + 0.2, 25000],
+        [C.oct20 + 0.7, 30000], [C.minimum, 30000], [C.minimum + 0.6, 28500], [C.wentup, 28500], [C.wentup + 0.9, N.new_balance]]);
+      FIN.bind($("balV"), balK, (v) => (v === N.new_balance ? FIN.inr(v, 2) : FIN.inr(Math.round(v))));
+
+      // ---------------- timeline ----------------
+      const tl = gsap.timeline({ paused: true });
+      const show = (e, at, d = 0.45, from = { opacity: 0, y: 24 }) => tl.fromTo(e, from, { opacity: 1, y: 0, duration: d, ease: "power3.out" }, at);
+      const hide = (e, at, d = 0.4) => tl.to(e, { opacity: 0, duration: d, ease: "power2.in" }, at);
+
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.02, duration: D.duration, ease: "none" }, 0);
+      show($("case"), 0.1); show($("bal"), 0.3);
+      tl.fromTo($("axis"), { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "power2.inOut" }, 0.2);
+      tl.fromTo(ticks, { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.8);
+      for (const b of BUY) {   // each spend drops onto its date as it is named
+        show(b.card, b.at - 0.15, 0.5, { opacity: 0, y: -60 });
+        tl.fromTo(b.stem, { scaleY: 0 }, { scaleY: 1, duration: 0.35, ease: "power2.out" }, b.at + 0.25);
+        tl.fromTo(b.dot, { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.5)" }, b.at + 0.5);
+        show(b.lab, b.at + 0.5, 0.3);
+      }
+      // 1.18 the bill and the last date
+      tl.fromTo(mS.line, { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power2.out" }, C.stmt); show(mS.dot, C.stmt); show(mS.l, C.stmt + 0.2); show(dS, C.stmt + 0.2, 0.3);
+      tl.fromTo(mD.line, { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power2.out" }, C.due); show(mD.dot, C.due); show(mD.l, C.due + 0.2); show(dD, C.due + 0.2, 0.3);
+      // 1.19 interest-free spans grow to the last date
+      SP.forEach((s, i) => {
+        const at = i === 2 ? C.free25 : C.free40 + i * 0.35;
+        tl.fromTo(s.span, { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, at);
+        show(s.free, at + 0.4, 0.35);
+      });
+      // 1.20-1.21 the one condition
+      show($("cond1"), C.full - 0.1); show($("cond2"), C.onerupee);
+      SP.forEach((s) => tl.to(s.span, { opacity: 0.35, duration: 0.5 }, C.onerupee + 0.3));
+      hide($("cond1"), C.rbi + 0.3); hide($("cond2"), C.rbi + 0.3);   // the edit is on the RBI page here
+      // 1.23 the payment: only the minimum
+      show(pay, C.paid + 0.6, 0.5, { opacity: 0, y: -40 });
+      tl.fromTo(pay, { scale: 1 }, { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, C.minimum);
+      // 1.24-1.25 rule 1: interest from the day of each spend
+      show($("rule1"), C.rule1, 0.45, { opacity: 0, x: -40 });
+      SP.forEach((s, i) => {
+        const at = [C.i10, C.i15, C.i5][i];
+        tl.to(s.span, { opacity: 1, backgroundColor: "#ef4444", duration: 0.5 }, at);
+        hide(s.free, at, 0.25); show(s.intr, at + 0.2, 0.35);
+      });
+      // 1.26 the rate (the edit shows ICICI's own page first)
+      show($("rate"), C.year - 0.4);
+      // 1.27-1.28 rule 2: interest on the money as it stood each day
+      hide($("rule1"), C.rule2 - 0.4, 0.3); show($("rule2"), C.rule2, 0.4, { opacity: 0, x: -40 });
+      SP.forEach((s) => { tl.to([s.span, s.intr], { opacity: 0.3, duration: 0.5 }, C.till - 0.6); });
+      show($("areaK"), C.till - 0.4, 0.4);
+      SEG.slice(0, 3).forEach((s, i) => { tl.fromTo(s.el, { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: "power2.out" }, C.till + i * 0.35); show(s.l, C.till + i * 0.35 + 0.3, 0.3); });
+      tl.fromTo(SEG[3].el, { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power2.out" }, C.after + 0.4); show(SEG[3].l, C.after + 0.8, 0.3);
+      // 1.29 rule 3: GST
+      hide($("rule2"), C.rule3 - 0.4, 0.3); show($("rule3"), C.rule3, 0.4, { opacity: 0, x: -40 });
+      // 1.30-1.32 the next bill: the timeline steps back, the ledger adds it up
+      tl.fromTo(mN.line, { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power2.out" }, C.stmt2); show(mN.dot, C.stmt2); show(mN.l, C.stmt2 + 0.2); show(dN, C.stmt2 + 0.2, 0.3);
+      hide($("rule3"), C.stmt2 + 1.2); hide($("rate"), C.stmt2 + 1.2);
+      tl.to($("tline"), { opacity: 0.22, duration: 0.6 }, C.youpaid - 0.6);
+      hide([mS.l, mD.l, mN.l, pay, ticks, ...document.querySelectorAll(".dlab")], C.youpaid - 0.6, 0.4);   // the ledger takes their place
+      show($("ledger"), C.youpaid - 0.5, 0.5, { opacity: 0, x: 60 });
+      const rows = [[$("lr1"), C.youpaid - 0.3], [$("lr2"), C.youpaid + 0.5], [$("lr3"), C.added + 0.6], [$("lr4"), C.added + 1.6], [$("lr5"), C.to30481 - 0.4]];
+      for (const [r, at] of rows) show(r, at, 0.35, { opacity: 0, x: 30 });
+      tl.fromTo($("lr5"), { backgroundColor: "rgba(250, 204, 21, 0)" }, { backgroundColor: "rgba(250, 204, 21, .16)", duration: 0.5 }, C.to30481 + 0.3);
+      show($("up"), C.still, 0.45);
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+
+      FIN.attach(tl);
+      window.__timelines["s02_timeline"] = tl;
+    </script>
+  </body>
+</html>

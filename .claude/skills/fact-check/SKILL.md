@@ -8,6 +8,12 @@ description: Verify every factual claim in a documentary script against real sou
 Run in a **fresh context** (a subagent or separate session) at **`max` effort**: the checker must not inherit the writer's
 assumptions. The model's own memory is not a source (knowledge stops at June 2026).
 
+**Light scope (owner, 2026-10-11; PLAYBOOK §12):** start from the writer's draft `claims.csv`. Rows the writer marked
+`confirmed` with a primary URL + verbatim quote are strong: open the cited page once, confirm the quote and number, move
+on (no new searches). Spend real research only on weak rows (`unverified`, no URL/quote, secondary-only), every number
+and date, our own calculations (re-run the project tool, check the method against its source) and on-screen tags. After
+a script edit, check only the changed lines. If there is no draft `claims.csv`, do the full pass below.
+
 1. Split `projects/<slug>/script.md` into atomic claims: every number, date, name, quote, record, cause-and-effect and
    health statement. Mark `on_screen=yes` for claims that also appear as on-screen text.
 2. For each claim, search the web: primary source first (paper, official record, the person's own statement, government

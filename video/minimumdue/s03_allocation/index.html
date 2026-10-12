@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Minimum Due: where each payment goes, and the balance over the years</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+      #stage { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+      #chart { left: 0; top: 0; width: 1920px; height: 1080px; }
+      .ylab, .xlab { position: absolute; font: 600 24px/1 Inter, Arial, sans-serif; color: var(--ink-dim); }
+      .ylab { width: 150px; text-align: right; }
+      .xlab { width: 120px; margin-left: -60px; text-align: center; }
+      #rbi { left: 64px; top: 128px; font: 800 34px/1 Inter, Arial, sans-serif; padding: 16px 24px; border-radius: 14px; background: rgba(8, 12, 22, .82); border-left: 6px solid var(--gold); }
+      #rbi .n { color: var(--gold); margin-right: 12px; }
+      #slow { left: 760px; top: 380px; font: 800 44px/1 Inter, Arial, sans-serif; }
+      .panel { position: absolute; left: 1290px; width: 570px; }
+      .panel .k { display: block; font: 600 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 6px; }
+      .panel .v { font: 800 80px/1 Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+      #when { left: 1290px; top: 230px; font: 800 34px/1 Inter, Arial, sans-serif; color: var(--gold); }
+      #split { left: 1290px; top: 300px; width: 570px; }
+      #split .k { font: 600 28px/1.25 Inter, Arial, sans-serif; color: var(--ink); margin-bottom: 18px; }
+      #bar { position: relative; height: 110px; border-radius: 14px; overflow: hidden; background: var(--green); }
+      #bar .full { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 800 54px/1 Inter, Arial, sans-serif; color: #052e13; }
+      #bR, #bB { position: absolute; top: 0; bottom: 0; transform-origin: 0 50%; }
+      #bR { left: 0; width: 74%; background: var(--red); }
+      #bB { left: 74%; width: 26%; background: var(--blue); }
+      .blab { position: absolute; top: 200px; font: 800 44px/1.05 Inter, Arial, sans-serif; }
+      .blab small { display: block; font: 600 26px/1.2 Inter, Arial, sans-serif; color: var(--ink-dim); margin-top: 6px; }
+      #endLab { font: 800 34px/1.15 Inter, Arial, sans-serif; text-align: right; width: 300px; }
+      #ten { left: 1290px; top: 760px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="s03_allocation" data-start="0" data-width="1920" data-height="1080" data-duration="35.79">
+      <div class="fin-bg" style="background-image: url('img/desk.jpg')"></div>
+      <div class="fin-grade"></div>
+      <div id="stage">
+        <div class="fin-case" id="case">Our example · paying only the minimum</div>
+        <div class="abs" id="rbi"><span class="n">RBI RULE</span>The minimum must not let the loan grow</div>
+        <svg class="abs" id="chart" viewBox="0 0 1920 1080">
+          <g id="grid"></g>
+          <path id="areaP" fill="rgba(59,130,246,.16)" />
+          <path id="lineP" fill="none" stroke="#5b9bff" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" />
+          <line id="guide" stroke="rgba(250,204,21,.8)" stroke-width="3" stroke-dasharray="8 8" />
+          <circle id="mk" r="15" fill="#facc15" stroke="#0b1730" stroke-width="5" />
+        </svg>
+        <div id="labs"></div>
+        <div class="abs c-blue" id="slow">Comes down, very, very slowly</div>
+        <div class="abs" id="split">
+          <div class="k">Every ₹100 you pay in the first year</div>
+          <div id="bar"><div class="full">₹100</div><div id="bR"></div><div id="bB"></div></div>
+          <div class="blab c-red" style="left: 0">₹74<small>interest + GST</small></div>
+          <div class="blab c-blue" style="right: 0; text-align: right">₹26<small>cuts your loan</small></div>
+        </div>
+        <div class="abs" id="when"></div>
+        <div class="panel" id="pPaid" style="top: 300px"><span class="k">Paid so far</span><span class="v c-green" id="vPaid">₹0</span></div>
+        <div class="panel" id="pLeft" style="top: 500px"><span class="k">Still pending</span><span class="v c-blue" id="vLeft">₹30,000</span></div>
+        <div class="chip c-red" id="ten"><span id="icClock"></span>More than 10 years</div>
+        <div class="abs c-red" id="endLab"><span style="display: block">Year 10:</span><span style="display: block">still pending</span></div>
+      </div>
+      <div class="fin-tag">Our calculation · HDFC minimum formula · 45% a year</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, N = D.n, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      $("icClock").innerHTML = FIN.icon("clock");
+      // chart frame: 0-120 payments (10 years) across, ₹0-₹32,000 up
+      const L = 190, R = 1180, T = 250, B = 900, MMAX = 120, VMAX = 32000;
+      const cx = (m) => L + ((R - L) * m) / MMAX, cy = (v) => B - ((B - T) * v) / VMAX;
+      const S = {}; for (const [n, p, o] of N.series) S[n] = [p, o];
+      const at = (m) => {   // paid so far / still pending after m payments (linear between payments)
+        const a = Math.floor(m), b = Math.min(a + 1, MMAX), u = m - a, A = S[a] || S[MMAX], Bv = S[b] || A;
+        return [A[0] + (Bv[0] - A[0]) * u, A[1] + (Bv[1] - A[1]) * u];
+      };
+      // grid + axis labels
+      const NS = "http://www.w3.org/2000/svg", grid = $("grid"), labs = $("labs");
+      const svgEl = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return grid.appendChild(e); };
+      for (const v of [0, 10000, 20000, 30000]) {
+        svgEl("line", { x1: L, x2: R, y1: cy(v), y2: cy(v), stroke: v ? "rgba(244,246,251,.12)" : "rgba(244,246,251,.6)", "stroke-width": v ? 2 : 4 });
+        const d = document.createElement("div"); d.className = "ylab"; d.style.left = L - 170 + "px"; d.style.top = cy(v) - 12 + "px"; d.textContent = FIN.inr(v); labs.appendChild(d);
+      }
+      for (let y = 0; y <= 10; y++) {
+        svgEl("line", { x1: cx(y * 12), x2: cx(y * 12), y1: B, y2: B + 12, stroke: "rgba(244,246,251,.5)", "stroke-width": 3 });
+        if (y % 1 === 0 && (y <= 1 || y === 5 || y === 10 || y % 2 === 0)) {
+          const d = document.createElement("div"); d.className = "xlab"; d.style.left = cx(y * 12) + "px"; d.style.top = B + 24 + "px";
+          d.textContent = y === 0 ? "Start" : y === 10 ? "10 years" : y === 1 ? "1 year" : `${y}`; labs.appendChild(d);
+        }
+      }
+      // the line, drawn up to month `draw`, and the marker at month `mk` (both pure functions of time)
+      const drawK = FIN.keys([[0.8, 0], [C.slowly + 1.6, 12], [C.y5 + 0.3, 12], [C.paid5 + 1.6, 60], [C.ten, 60], [C.ten + 2.6, 120]]);
+      const mkK = FIN.keys([[C.start30, 0], [C.after1 + 0.3, 0], [C.pending1 - 0.1, 12], [C.y5 + 0.3, 12], [C.paid5 + 1.6, 60]]);
+      const path = (upto) => {
+        let d = `M ${cx(0)} ${cy(S[0][1])}`;
+        for (let m = 1; m <= Math.floor(upto); m++) d += ` L ${cx(m).toFixed(1)} ${cy(S[m][1]).toFixed(1)}`;
+        if (upto % 1) d += ` L ${cx(upto).toFixed(1)} ${cy(at(upto)[1]).toFixed(1)}`;
+        return d;
+      };
+      FIN.hook((t) => {
+        const up = drawK(t), m = mkK(t), p = path(up);
+        $("lineP").setAttribute("d", p);
+        $("areaP").setAttribute("d", `${p} L ${cx(up).toFixed(1)} ${B} L ${cx(0)} ${B} Z`);
+        const [, o] = at(m);
+        $("mk").setAttribute("cx", cx(m).toFixed(1)); $("mk").setAttribute("cy", cy(o).toFixed(1));
+        $("guide").setAttribute("x1", cx(m).toFixed(1)); $("guide").setAttribute("x2", cx(m).toFixed(1));
+        $("guide").setAttribute("y1", cy(o).toFixed(1)); $("guide").setAttribute("y2", B);
+      });
+      FIN.bind($("vPaid"), (t) => at(mkK(t))[0], (v) => FIN.inr(Math.round(v)));
+      FIN.bind($("vLeft"), (t) => at(mkK(t))[1], (v) => FIN.inr(Math.round(v)));
+      FIN.bind($("when"), (t) => mkK(t), (m) => (m < 0.5 ? "At the start" : m < 11.9 ? "" : m < 12.1 ? "After 1 year" : m < 59.9 ? "" : "After 5 years"));
+      // end-of-line label at year 10
+      $("endLab").style.left = cx(120) - 310 + "px"; $("endLab").style.top = cy(S[120][1]) + 26 + "px";
+
+      // ---------------- timeline ----------------
+      const tl = gsap.timeline({ paused: true });
+      const show = (e, t0, d = 0.45, from = { opacity: 0, y: 24 }) => tl.fromTo(e, from, { opacity: 1, y: 0, duration: d, ease: "power3.out" }, t0);
+      const hide = (e, t0, d = 0.4) => tl.to(e, { opacity: 0, duration: d, ease: "power2.in" }, t0);
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.02, duration: D.duration, ease: "none" }, 0);
+      show($("case"), 0.05); show($("rbi"), C.rbi, 0.45, { opacity: 0, x: -40 });
+      tl.fromTo([grid, labs], { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.3);
+      show($("slow"), C.slowly); hide($("slow"), C.y1 - 0.4); hide($("rbi"), C.y1 - 0.4);
+      tl.fromTo([$("mk"), $("guide")], { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.start30);
+      // 2.03 one ₹100 payment splits
+      show($("split"), C.hundred - 0.3);
+      tl.fromTo($("bR"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, C.seventy);
+      tl.fromTo($("split").querySelector(".blab.c-red"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.seventy + 0.5);
+      tl.fromTo($("bB"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, C.twentysix);
+      tl.fromTo($("split").querySelector(".blab.c-blue"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, C.twentysix + 0.3);
+      tl.to($("split").querySelector(".full"), { opacity: 0, duration: 0.3 }, C.seventy);
+      hide($("split"), C.start30 - 0.6);
+      // 2.04-2.05 linked counters follow the marker along the checked series
+      show($("when"), C.start30, 0.3); show($("pPaid"), C.start30); show($("pLeft"), C.start30 + 0.15);
+      // 2.06 more than ten years
+      show($("ten"), C.ten + 0.3); show($("endLab"), C.ten + 2.4, 0.4);
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+
+      FIN.attach(tl);
+      window.__timelines["s03_allocation"] = tl;
+    </script>
+  </body>
+</html>

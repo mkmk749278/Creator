@@ -1,0 +1,27 @@
+[
+ {
+  "sheet": 1,
+  "tile": 1,
+  "label": "sim_autopay_full.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 2,
+  "label": "sim_autopay_min.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 3,
+  "label": "sim_bill.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 4,
+  "label": "sim_finance.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 5,
+  "label": "sim_warning.png"
+ }
+]
