@@ -34,6 +34,13 @@ Sound effects on every doodle item (pop, whoosh, scribble, rip, thud, clink) at 
 **Rejected (Content ID Registered):** Atmosphere Pulse, Dark Minimal, Documentary Suspense, Dark Marimba, Documentary
 Cinematic, and all 11 hopeful piano tracks checked (Hopeful Warm Music, Hopeful ×4, From Silence, Ambient Piano, Hopeful
 Piano, Better Day, Piano Music, Main Title Hopeful).
-**Hopeful bed still open:** no Content-ID-free hopeful track found on Pixabay yet. Options: YouTube Studio → Audio Library
-(free, YouTube-safe; filter "Calm" / "Inspirational", attribution not required), or Incompetech (Kevin MacLeod, CC BY,
-reachable from the cloud, credit line in the description).
+**Hopeful bed (picked by Claude, owner's go-ahead 2026-10-12): Incompetech, Kevin MacLeod, CC BY 4.0** (not in Content
+ID; credit line required in the description):
+| Use | Track | Length | Why | File |
+|---|---|---|---|---|
+| Practical defence (main hopeful bed) | **Dreamer** | 3:24 | warm piano chords over soft percussion, 100 bpm; key analysis: clearly major (G, r 0.84); the composer calls it a background workhorse | `assets/music/incompetech_Dreamer.mp3` |
+| End card / quiet close (backup) | Promises to Keep | 5:04 | slow solo piano, "a little hopeful, a little sorrowful"; major (C, r 0.80), sparse, leaves room for the voice | `assets/music/incompetech_Promises_to_Keep.mp3` |
+Credit lines for the description:
+- "Dreamer" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License, http://creativecommons.org/licenses/by/4.0/
+- "Promises to Keep" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License, http://creativecommons.org/licenses/by/4.0/
+Source: https://incompetech.com/music/royalty-free/pieces.json (catalogue), files from incompetech.com/music/royalty-free/mp3-royaltyfree/.
