@@ -23,7 +23,7 @@ LFONT, TFONT = P / "assets/fonts/Bricolage-800.ttf", P / "assets/fonts/JetBrains
 BOARD_AT = {b["id"]: b["start"] for b in BOARDS}
 ERASE = {b["id"]: [st["at"] for st in b["steps"] if st.get("erase")] for b in BOARDS}   # board erase times (film s)
 CN = A / "commons_new"; BN = A / "broll_new"
-RENDER_V = 4   # bump when render() changes, so cached shots re-render (4: modern labels, doodle boards)
+RENDER_V = 5   # bump when render() changes, so cached shots re-render (4: modern labels, doodle boards)
 
 
 # ---- refined cut (owner's visual-refinement brief, 2026-10-12; refine-plan.md) ----
@@ -132,7 +132,7 @@ SHOTS = [
     S(L("1.33")[0] - 0.2, "proof", src=PR / "icici_table.png", label="SAME METHOD AS ICICI'S TABLE", tag="ICICI BANK · INTEREST RATES PAGE | 2025"),
     S(L("1.34")[0] + 0.2, "proof", src=PR / "icici_interest.png", label="₹4,317 EXPLAINED", tag="ICICI BANK · INTEREST RATES PAGE | 2025"),
     S(L("1.35")[0] - 0.2, "photo", src=CI / "petrol_pump_03_indian-oil-petrol-pump-at-chanchalguda-j.jpg", label="NOV 15 · PETROL ON THE SAME CARD", tag="PHOTO: WIKIMEDIA COMMONS, CC BY-SA 4.0"),
-    S(L("1.35")[0] + 3.6, "clip", src=BR / "pixabay_84222.mp4", ss=1.0, label="NEW SPEND"),
+    # (review 2026-10-12: the road-traffic clip here did not show "the same card"; the petrol-pump photo now runs on)
     S(BOARD_AT["b05_newswipe"], "board", id="b05_newswipe"),
     *cutaway("b05_newswipe", 0, S(0, "clip", src=BR / "coverr-online-shopping-with-credit-card.mp4", ss=8.0, label="YOUR CARD IS NOT FREE ANY MORE"), back=2.4),
     S(L("2.01")[0] - 0.3, "clip", src=BR / "pixabay_61621.mp4", ss=2.0, label="MONTH AFTER MONTH"),
@@ -172,7 +172,8 @@ def run(cmd):
 
 
 def esc(s):
-    return s.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’").replace(",", "\\,").replace("%", "\\%")
+    """Text for drawtext with expansion=none (so % is literal; '\%' with expansion on dropped whole labels, review 2026-10-12)."""
+    return s.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’").replace(",", "\\,")
 
 
 def text_w(txt, font, size):
@@ -190,13 +191,13 @@ def overlays(W, H, label="", tag=""):
         w = int(text_w(label, LFONT, fs)) + 2 * pad
         f.append(f"drawbox=x={x0}:y={y0}:w={int(8 * k)}:h={h}:color=0xF6C453@1:t=fill")
         f.append(f"drawbox=x={x0 + int(8 * k)}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.72:t=fill")
-        f.append(f"drawtext=fontfile={LFONT}:text='{esc(label)}':x={x0 + int(8 * k) + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white")
+        f.append(f"drawtext=fontfile={LFONT}:expansion=none:text='{esc(label)}':x={x0 + int(8 * k) + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white")
     if tag:
         fs = int(19 * k); pad = int(12 * k); h = int(34 * k)
         w = int(text_w(tag, TFONT, fs)) + 2 * pad
         x0, y0 = W - w - int(64 * k), H - h - int(44 * k)
         f.append(f"drawbox=x={x0}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.55:t=fill")
-        f.append(f"drawtext=fontfile={TFONT}:text='{esc(tag)}':x={x0 + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white@0.92")
+        f.append(f"drawtext=fontfile={TFONT}:expansion=none:text='{esc(tag)}':x={x0 + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white@0.92")
     return f
 
 
@@ -308,8 +309,8 @@ def render(shot, dur, out, W, H):
     elif k == "end":
         fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=8,eq=brightness=-0.25[bg];"
               f"[1:v]scale={int(W*0.5)}:-2[l];[bg][l]overlay=(W-w)/2:H*0.18,"
-              f"drawtext=fontfile={FONT}:text='SUBSCRIBE · NEXT\\: CANT PAY EVEN THE MINIMUM?':x=(w-tw)/2:y=h*0.72:fontsize={int(H*0.035)}:fontcolor=white,"
-              f"drawtext=fontfile={FONT}:text='Educational only · not financial advice':x=(w-tw)/2:y=h*0.80:fontsize={int(H*0.024)}:fontcolor=white@0.8")
+              f"drawtext=fontfile={LFONT}:expansion=none:text='SUBSCRIBE · NEXT\\: CAN’T PAY EVEN THE MINIMUM?':x=(w-tw)/2:y=h*0.72:fontsize={int(H*0.038)}:fontcolor=white,"
+              f"drawtext=fontfile={TFONT}:expansion=none:text='EDUCATIONAL ONLY · NOT FINANCIAL ADVICE':x=(w-tw)/2:y=h*0.80:fontsize={int(H*0.022)}:fontcolor=white@0.8")
         run(["ffmpeg", "-v", "error", "-y", "-ss", "2", "-stream_loop", "-1", "-i", str(BR / "pixabay_200435.mp4"), "-loop", "1", "-i", str(ROOT / "assets/brand/banner.png"),
              "-filter_complex", fc, "-t", f"{dur:.3f}"] + enc + [str(out)])
     else:
