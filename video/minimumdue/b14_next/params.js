@@ -13,7 +13,7 @@ window.SCENE = {
    "color": "dim",
    "mono": true,
    "anchor": "middle",
-   "at": 0.4
+   "at": 0.6
   },
   {
    "kind": "bill",
@@ -29,8 +29,8 @@ window.SCENE = {
      "red"
     ]
    ],
-   "at": 0.5,
-   "dur": 0.8
+   "at": 1.87,
+   "dur": 0.7
   },
   {
    "kind": "stamp",
@@ -40,17 +40,44 @@ window.SCENE = {
    "size": 96,
    "rot": -8,
    "in": "stamp",
-   "at": 2.8
+   "at": 2.97
   }
  ],
  "sfx": [
   [
-   0.4,
+   0.6,
    "pop"
   ],
   [
-   2.8,
+   1.87,
+   "scribble"
+  ],
+  [
+   2.97,
    "thud"
+  ]
+ ],
+ "cam": [
+  [
+   0,
+   1.0,
+   0,
+   0,
+   0
+  ],
+  [
+   0.4,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   0.42,
+   1.07,
+   0.9,
+   7.5,
+   4.44
   ]
  ]
 };

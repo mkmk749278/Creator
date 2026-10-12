@@ -23,9 +23,9 @@ window.SCENE = {
     ]
    ],
    "hlRow": 0,
-   "hlAt": 1.6,
-   "at": 0.4,
-   "dur": 1.2,
+   "hlAt": 2.0,
+   "at": 0.53,
+   "dur": 1.0,
    "exit": 13.41
   },
   {
@@ -35,7 +35,7 @@ window.SCENE = {
    "text": "= the full bill",
    "size": 62,
    "color": "blue",
-   "at": 3.0,
+   "at": 3.34,
    "exit": 13.41
   },
   {
@@ -44,7 +44,7 @@ window.SCENE = {
    "y": 533,
    "w": 1100,
    "h": 160,
-   "at": 8.29,
+   "at": 8.04,
    "dur": 0.5,
    "exit": 13.41
   },
@@ -52,21 +52,41 @@ window.SCENE = {
    "kind": "label",
    "x": 1260,
    "y": 560,
-   "text": "≈ 5% + fees + GST",
-   "size": 62,
+   "text": "≈ 5% of the bill",
+   "size": 58,
    "color": "red",
-   "at": 9.69,
+   "at": 10.84,
    "exit": 13.41
   },
   {
    "kind": "label",
    "x": 1260,
    "y": 640,
+   "text": "+ fees",
+   "size": 58,
+   "color": "red",
+   "at": 12.66,
+   "exit": 13.41
+  },
+  {
+   "kind": "label",
+   "x": 1470,
+   "y": 640,
+   "text": "+ GST",
+   "size": 58,
+   "color": "red",
+   "at": 13.28,
+   "exit": 13.41
+  },
+  {
+   "kind": "label",
+   "x": 1260,
+   "y": 716,
    "text": "MOST BANKS",
    "size": 28,
    "color": "dim",
    "mono": true,
-   "at": 9.89,
+   "at": 9.69,
    "exit": 13.41
   },
   {
@@ -78,8 +98,8 @@ window.SCENE = {
    "color": "#e8c35a",
    "label": "BILL ₹30,000",
    "labelColor": "ink",
-   "at": 14.02,
-   "dur": 0.9,
+   "at": 14.41,
+   "dur": 0.8,
    "exit": 17.42
   },
   {
@@ -90,14 +110,14 @@ window.SCENE = {
    "r": 95,
    "color": "red",
    "in": "pop",
-   "at": 14.92,
+   "at": 15.73,
    "moves": [
     {
-     "at": 15.52,
+     "at": 16.03,
      "x": 1300,
      "y": 520,
      "s": 1.5,
-     "dur": 0.8
+     "dur": 0.7
     }
    ],
    "exit": 17.42
@@ -110,7 +130,7 @@ window.SCENE = {
    "size": 96,
    "color": "red",
    "anchor": "middle",
-   "at": 16.12,
+   "at": 16.79,
    "exit": 17.42
   },
   {
@@ -122,7 +142,7 @@ window.SCENE = {
    "color": "dim",
    "mono": true,
    "anchor": "middle",
-   "at": 16.32,
+   "at": 17.09,
    "exit": 17.42
   },
   {
@@ -143,7 +163,7 @@ window.SCENE = {
    "text": "₹0 late fee",
    "color": "green",
    "size": 56,
-   "at": 20.5,
+   "at": 20.57,
    "exit": 28.89
   },
   {
@@ -160,8 +180,8 @@ window.SCENE = {
      "green"
     ]
    ],
-   "at": 22.0,
-   "dur": 0.8,
+   "at": 21.83,
+   "dur": 0.7,
    "exit": 28.89
   },
   {
@@ -169,7 +189,7 @@ window.SCENE = {
    "x": 740,
    "y": 580,
    "ok": true,
-   "at": 22.6,
+   "at": 23.38,
    "exit": 28.89
   },
   {
@@ -189,22 +209,22 @@ window.SCENE = {
    "y": 470,
    "s": 0.85,
    "text": "INTEREST KEEPS RUNNING",
-   "at": 24.43,
-   "dur": 0.7,
+   "at": 24.73,
+   "dur": 0.6,
    "needle": [
     [
      0,
      -80
     ],
     [
-     25.13,
+     25.69,
      -40,
-     1.2
+     1.0
     ],
     [
      28.74,
      50,
-     3.5
+     3.0
     ]
    ],
    "exit": 28.89
@@ -220,9 +240,9 @@ window.SCENE = {
     "to": 28,
     "color": "green"
    },
-   "at": 26.63,
-   "dur": 0.7,
-   "bandShatterAt": 27.63,
+   "at": 26.35,
+   "dur": 0.6,
+   "bandShatterAt": 27.25,
    "exit": 28.89
   },
   {
@@ -233,7 +253,7 @@ window.SCENE = {
    "size": 30,
    "color": "red",
    "mono": true,
-   "at": 27.73,
+   "at": 27.55,
    "exit": 28.89
   },
   {
@@ -243,7 +263,7 @@ window.SCENE = {
    "text": "period LOST",
    "size": 56,
    "color": "red",
-   "at": 27.83,
+   "at": 28.3,
    "exit": 28.89
   },
   {
@@ -251,17 +271,16 @@ window.SCENE = {
    "x": 160,
    "y": 330,
    "text": "a safety net?",
-   "at": 29.44,
-   "dur": 1.0,
-   "exit": 35.9
+   "at": 30.14,
+   "dur": 0.9
   },
   {
    "kind": "cross",
    "x": 420,
    "y": 420,
    "size": 260,
-   "at": 32.24,
-   "dur": 0.4
+   "at": 31.19,
+   "dur": 0.35
   },
   {
    "kind": "toggle",
@@ -269,9 +288,9 @@ window.SCENE = {
    "y": 360,
    "s": 1.3,
    "text": "",
-   "at": 32.64,
-   "dur": 0.6,
-   "onAt": 33.44
+   "at": 32.04,
+   "dur": 0.5,
+   "onAt": 33.65
   },
   {
    "kind": "meter",
@@ -279,17 +298,17 @@ window.SCENE = {
    "y": 560,
    "s": 0.9,
    "text": "INTEREST",
-   "at": 33.44,
-   "dur": 0.5,
+   "at": 33.65,
+   "dur": 0.4,
    "needle": [
     [
      0,
      -80
     ],
     [
-     33.64,
+     34.45,
      60,
-     1.8
+     1.6
     ]
    ]
   },
@@ -302,20 +321,20 @@ window.SCENE = {
    "color": "red",
    "anchor": "middle",
    "hl": "yel",
-   "at": 33.84
+   "at": 35.09
   }
  ],
  "sfx": [
   [
-   0.4,
+   0.53,
    "scribble"
   ],
   [
-   3.0,
+   3.34,
    "pop"
   ],
   [
-   8.29,
+   8.04,
    "scribble"
   ],
   [
@@ -323,23 +342,39 @@ window.SCENE = {
    "pop"
   ],
   [
+   10.84,
+   "pop"
+  ],
+  [
+   12.66,
+   "pop"
+  ],
+  [
+   13.28,
+   "pop"
+  ],
+  [
    13.41,
    "whoosh"
   ],
   [
-   14.02,
+   14.41,
    "clink"
   ],
   [
-   14.92,
+   15.73,
    "clink"
   ],
   [
-   15.52,
+   16.03,
    "whoosh"
   ],
   [
-   16.12,
+   16.79,
+   "pop"
+  ],
+  [
+   17.09,
    "pop"
   ],
   [
@@ -351,11 +386,11 @@ window.SCENE = {
    "pop"
   ],
   [
-   22.0,
+   21.83,
    "scribble"
   ],
   [
-   22.6,
+   23.38,
    "pop"
   ],
   [
@@ -363,15 +398,19 @@ window.SCENE = {
    "pop"
   ],
   [
-   24.43,
+   24.73,
    "scribble"
   ],
   [
-   26.63,
+   26.35,
    "scribble"
   ],
   [
-   27.73,
+   27.55,
+   "pop"
+  ],
+  [
+   28.3,
    "pop"
   ],
   [
@@ -379,28 +418,89 @@ window.SCENE = {
    "whoosh"
   ],
   [
-   29.44,
+   30.14,
    "scribble"
   ],
   [
-   32.24,
+   31.19,
    "thud"
   ],
   [
-   32.64,
+   32.04,
    "scribble"
   ],
   [
-   33.44,
+   33.65,
    "pop"
   ],
   [
-   33.84,
+   35.09,
    "pop"
+  ]
+ ],
+ "cam": [
+  [
+   0,
+   1.0,
+   0,
+   0,
+   0
   ],
   [
-   35.9,
-   "whoosh"
+   0.33,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   0.35,
+   1.07,
+   -17.5,
+   -1.5,
+   13.03
+  ],
+  [
+   14.21,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   14.23,
+   1.07,
+   -4.9,
+   -15.5,
+   3.16
+  ],
+  [
+   20.22,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   20.24,
+   1.07,
+   -2.3,
+   2.3,
+   8.62
+  ],
+  [
+   29.94,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   29.96,
+   1.07,
+   3.9,
+   -1.8,
+   5.93
   ]
  ]
 };

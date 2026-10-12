@@ -13,8 +13,8 @@ window.SCENE = {
     "Pay the",
     "FULL bill"
    ],
-   "at": 0.3,
-   "exit": 5.68
+   "at": 0.1,
+   "exit": 5.53
   },
   {
    "kind": "calendar",
@@ -27,10 +27,10 @@ window.SCENE = {
     "to": 30,
     "color": "green"
    },
-   "bandAt": 1.8,
-   "at": 0.8,
-   "dur": 0.8,
-   "exit": 5.68
+   "bandAt": 2.35,
+   "at": 0.99,
+   "dur": 0.7,
+   "exit": 5.53
   },
   {
    "kind": "tag",
@@ -40,8 +40,8 @@ window.SCENE = {
    "color": "green",
    "size": 56,
    "sub": "DEPENDS ON YOUR CARD",
-   "at": 2.4,
-   "exit": 5.68
+   "at": 2.71,
+   "exit": 5.53
   },
   {
    "kind": "sticky",
@@ -53,7 +53,7 @@ window.SCENE = {
     "Pay as much",
     "as you can"
    ],
-   "at": 5.93,
+   "at": 5.83,
    "exit": 11.12
   },
   {
@@ -61,17 +61,17 @@ window.SCENE = {
    "x": 620,
    "y": 520,
    "w": 1080,
-   "at": 6.43,
-   "dur": 0.7,
+   "at": 6.19,
+   "dur": 0.6,
    "knob": [
     [
      0,
      86
     ],
     [
-     7.23,
+     8.22,
      700,
-     1.4
+     1.2
     ]
    ],
    "exit": 11.12
@@ -84,7 +84,7 @@ window.SCENE = {
    "size": 52,
    "color": "red",
    "anchor": "middle",
-   "at": 9.03,
+   "at": 9.76,
    "exit": 11.12
   },
   {
@@ -94,7 +94,7 @@ window.SCENE = {
    "text": "pay more",
    "color": "green",
    "size": 72,
-   "at": 14.02
+   "at": 13.97
   },
   {
    "kind": "arrow",
@@ -105,7 +105,7 @@ window.SCENE = {
     90
    ],
    "color": "ink",
-   "at": 14.32,
+   "at": 14.6,
    "dur": 0.3
   },
   {
@@ -115,7 +115,7 @@ window.SCENE = {
    "text": "less interest",
    "color": "red",
    "size": 72,
-   "at": 14.52
+   "at": 14.9
   },
   {
    "kind": "calendar",
@@ -128,9 +128,9 @@ window.SCENE = {
     "to": 30,
     "color": "green"
    },
-   "bandAt": 17.22,
-   "at": 16.42,
-   "dur": 0.8
+   "bandAt": 19.06,
+   "at": 15.48,
+   "dur": 0.7
   },
   {
    "kind": "badge",
@@ -139,36 +139,36 @@ window.SCENE = {
    "ok": true,
    "text": "interest-free period back",
    "size": 46,
-   "at": 17.82
+   "at": 19.26
   }
  ],
  "sfx": [
   [
-   0.3,
+   0.1,
    "pop"
   ],
   [
-   0.8,
+   0.99,
    "scribble"
   ],
   [
-   2.4,
+   2.71,
    "pop"
   ],
   [
-   5.68,
+   5.53,
    "whoosh"
   ],
   [
-   5.93,
+   5.83,
    "pop"
   ],
   [
-   6.43,
+   6.19,
    "scribble"
   ],
   [
-   9.03,
+   9.76,
    "pop"
   ],
   [
@@ -176,24 +176,75 @@ window.SCENE = {
    "whoosh"
   ],
   [
-   14.02,
+   13.97,
    "pop"
   ],
   [
-   14.32,
+   14.6,
    "scribble"
   ],
   [
-   14.52,
+   14.9,
    "pop"
   ],
   [
-   16.42,
+   15.48,
    "scribble"
   ],
   [
-   17.82,
+   19.26,
    "pop"
+  ]
+ ],
+ "cam": [
+  [
+   0,
+   1.0,
+   0,
+   0,
+   0
+  ],
+  [
+   0.0,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   0.02,
+   1.07,
+   11.4,
+   12.1,
+   5.48
+  ],
+  [
+   5.89,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   5.91,
+   1.07,
+   15.4,
+   -1.4,
+   5.18
+  ],
+  [
+   13.77,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   13.79,
+   1.07,
+   18.9,
+   -1.4,
+   6.86
   ]
  ]
 };

@@ -263,7 +263,11 @@
       (S.items || []).forEach((it) => kit.place(it));
       const tag = document.getElementById("tag"); if (S.tag) tag.textContent = S.tag; else tag.remove();
       const kick = document.getElementById("kick"); if (S.kicker) kick.textContent = S.kicker; else kick.remove();
-      tl.fromTo("#cam", { scale: 1.0, x: 0 }, { scale: 1.03, x: S.drift || -16, duration: S.duration, ease: "sine.inOut" }, 0);
+      // camera: per-page keys from the generator (slow push toward each page's content, reset at page turns), else a drift
+      if (S.cam && S.cam.length) {
+        gsap.set("#cam", { scale: S.cam[0][1], x: S.cam[0][2], y: S.cam[0][3] });
+        S.cam.slice(1).forEach(([t, sc, x, y, d]) => tl.to("#cam", { scale: sc, x, y, duration: d || 0.01, ease: d > 0.5 ? "sine.inOut" : "none" }, t));
+      } else tl.fromTo("#cam", { scale: 1.0, x: 0 }, { scale: 1.03, x: S.drift || -16, duration: S.duration, ease: "sine.inOut" }, 0);
       tl.fromTo("#paper", { x: 0 }, { x: -12, duration: S.duration, ease: "none" }, 0);
       return tl;
     },

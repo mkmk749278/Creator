@@ -13,7 +13,7 @@ window.SCENE = {
     "Ask for",
     "EMI"
    ],
-   "at": 0.2,
+   "at": 0.1,
    "exit": 9.59
   },
   {
@@ -24,7 +24,7 @@ window.SCENE = {
    "color": "red",
    "size": 80,
    "sub": "CARD INTEREST",
-   "at": 1.0,
+   "at": 0.0,
    "exit": 9.59
   },
   {
@@ -35,7 +35,7 @@ window.SCENE = {
    "color": "green",
    "size": 80,
    "sub": "BANK EMI, E.G. HDFC",
-   "at": 2.4,
+   "at": 2.07,
    "exit": 9.59
   },
   {
@@ -46,7 +46,7 @@ window.SCENE = {
    "text": "+ fee + GST",
    "color": "amber",
    "size": 56,
-   "at": 4.6,
+   "at": 4.88,
    "exit": 9.59
   },
   {
@@ -70,8 +70,8 @@ window.SCENE = {
     },
     {}
    ],
-   "at": 6.6,
-   "dur": 0.6,
+   "at": 5.94,
+   "dur": 0.5,
    "exit": 9.59
   },
   {
@@ -79,7 +79,7 @@ window.SCENE = {
    "x": 1547,
    "y": 550,
    "size": 300,
-   "at": 7.2,
+   "at": 8.31,
    "dur": 0.3,
    "exit": 9.59
   },
@@ -91,7 +91,7 @@ window.SCENE = {
    "size": 40,
    "color": "red",
    "anchor": "middle",
-   "at": 7.4,
+   "at": 8.46,
    "exit": 9.59
   },
   {
@@ -119,8 +119,8 @@ window.SCENE = {
      "text": "SALARY"
     }
    ],
-   "at": 12.24,
-   "dur": 0.8
+   "at": 12.19,
+   "dur": 0.7
   },
   {
    "kind": "pin",
@@ -129,13 +129,13 @@ window.SCENE = {
    "color": "red",
    "text": "LAST DATE",
    "in": "pop",
-   "at": 12.84,
+   "at": 12.54,
    "moves": [
     {
-     "at": 12.64,
+     "at": 14.18,
      "x": 861,
      "y": 470,
-     "dur": 1.0
+     "dur": 0.9
     }
    ]
   },
@@ -147,7 +147,7 @@ window.SCENE = {
    "size": 52,
    "color": "blue",
    "anchor": "middle",
-   "at": 13.04
+   "at": 14.18
   },
   {
    "kind": "label",
@@ -158,36 +158,32 @@ window.SCENE = {
    "color": "dim",
    "mono": true,
    "anchor": "middle",
-   "at": 14.84
+   "at": 15.57
   }
  ],
  "sfx": [
   [
-   0.2,
+   0.0,
    "pop"
   ],
   [
-   1.0,
+   2.07,
    "pop"
   ],
   [
-   2.4,
+   4.88,
    "pop"
   ],
   [
-   4.6,
-   "pop"
-  ],
-  [
-   6.6,
+   5.94,
    "scribble"
   ],
   [
-   7.2,
+   8.31,
    "thud"
   ],
   [
-   7.4,
+   8.46,
    "pop"
   ],
   [
@@ -199,20 +195,53 @@ window.SCENE = {
    "pop"
   ],
   [
-   12.24,
-   "scribble"
-  ],
-  [
-   12.64,
-   "whoosh"
-  ],
-  [
-   12.84,
+   12.54,
    "pop"
   ],
   [
-   14.84,
+   14.18,
    "pop"
+  ],
+  [
+   15.57,
+   "pop"
+  ]
+ ],
+ "cam": [
+  [
+   0,
+   1.0,
+   0,
+   0,
+   0
+  ],
+  [
+   0.0,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   0.02,
+   1.07,
+   -8.6,
+   -6.7,
+   9.54
+  ],
+  [
+   11.89,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   11.91,
+   1.07,
+   -3.1,
+   -1.3,
+   6.6
   ]
  ]
 };

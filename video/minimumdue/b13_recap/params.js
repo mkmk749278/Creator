@@ -11,7 +11,7 @@ window.SCENE = {
    "text": "the minimum saves you from…",
    "size": 56,
    "anchor": "middle",
-   "at": 0.5,
+   "at": 0.97,
    "exit": 6.36
   },
   {
@@ -21,7 +21,7 @@ window.SCENE = {
    "text": "late fee",
    "color": "#8a8f99",
    "size": 60,
-   "at": 2.0,
+   "at": 2.8,
    "exit": 6.36
   },
   {
@@ -29,7 +29,7 @@ window.SCENE = {
    "x": 330,
    "y": 560,
    "ok": true,
-   "at": 2.4,
+   "at": 3.1,
    "exit": 6.36
   },
   {
@@ -46,8 +46,8 @@ window.SCENE = {
      "green"
     ]
    ],
-   "at": 3.0,
-   "dur": 0.6,
+   "at": 3.7,
+   "dur": 0.5,
    "exit": 6.36
   },
   {
@@ -55,7 +55,7 @@ window.SCENE = {
    "x": 940,
    "y": 600,
    "ok": true,
-   "at": 3.5,
+   "at": 4.27,
    "exit": 6.36
   },
   {
@@ -64,17 +64,17 @@ window.SCENE = {
    "y": 470,
    "s": 0.8,
    "text": "INTEREST",
-   "at": 4.4,
-   "dur": 0.5,
+   "at": 4.87,
+   "dur": 0.4,
    "needle": [
     [
      0,
      -80
     ],
     [
-     4.8,
+     5.66,
      40,
-     1.5
+     1.2
     ]
    ],
    "exit": 6.36
@@ -86,7 +86,7 @@ window.SCENE = {
    "ok": false,
    "text": "not this",
    "size": 44,
-   "at": 5.0,
+   "at": 5.46,
    "exit": 6.36
   },
   {
@@ -97,7 +97,7 @@ window.SCENE = {
    "size": 60,
    "anchor": "middle",
    "hl": "yel",
-   "at": 6.76
+   "at": 6.81
   },
   {
    "kind": "tag",
@@ -108,7 +108,7 @@ window.SCENE = {
    "color": "red",
    "size": 84,
    "sub": "INTEREST A YEAR",
-   "at": 8.16
+   "at": 7.85
   },
   {
    "kind": "tag",
@@ -119,7 +119,7 @@ window.SCENE = {
    "color": "amber",
    "size": 72,
    "sub": "ON TOP",
-   "at": 10.36
+   "at": 9.53
   },
   {
    "kind": "tag",
@@ -130,36 +130,36 @@ window.SCENE = {
    "color": "red",
    "size": 72,
    "sub": "FREE ON NEW SPENDS",
-   "at": 12.96
+   "at": 11.82
   }
  ],
  "sfx": [
   [
-   0.5,
+   0.97,
    "pop"
   ],
   [
-   2.0,
+   2.8,
    "pop"
   ],
   [
-   2.4,
+   3.1,
    "pop"
   ],
   [
-   3.0,
+   3.7,
    "scribble"
   ],
   [
-   3.5,
+   4.27,
    "pop"
   ],
   [
-   4.4,
+   4.87,
    "scribble"
   ],
   [
-   5.0,
+   5.46,
    "pop"
   ],
   [
@@ -167,20 +167,57 @@ window.SCENE = {
    "whoosh"
   ],
   [
-   6.76,
+   6.81,
    "pop"
   ],
   [
-   8.16,
+   7.85,
    "pop"
   ],
   [
-   10.36,
+   9.53,
    "pop"
   ],
   [
-   12.96,
+   11.82,
    "pop"
+  ]
+ ],
+ "cam": [
+  [
+   0,
+   1.0,
+   0,
+   0,
+   0
+  ],
+  [
+   0.77,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   0.79,
+   1.07,
+   -1.5,
+   2.2,
+   5.54
+  ],
+  [
+   6.72,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   6.74,
+   1.07,
+   3.0,
+   6.1,
+   9.24
   ]
  ]
 };

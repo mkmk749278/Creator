@@ -13,8 +13,8 @@ window.SCENE = {
    "text": "₹30,000",
    "sub": "LOAN · NOT ONE RUPEE LESS",
    "subColor": "red",
-   "at": 0.4,
-   "dur": 0.9
+   "at": 0.44,
+   "dur": 0.8
   },
   {
    "kind": "calendar",
@@ -28,8 +28,8 @@ window.SCENE = {
      "text": "LAST DATE"
     }
    ],
-   "at": 2.6,
-   "dur": 0.7
+   "at": 3.38,
+   "dur": 0.6
   },
   {
    "kind": "arrow",
@@ -40,7 +40,7 @@ window.SCENE = {
     0
    ],
    "color": "ink",
-   "at": 3.6,
+   "at": 3.99,
    "dur": 0.3
   },
   {
@@ -56,7 +56,7 @@ window.SCENE = {
     }
    ],
    "in": "pop",
-   "at": 3.9
+   "at": 4.24
   },
   {
    "kind": "tag",
@@ -65,29 +65,52 @@ window.SCENE = {
    "text": "+ fee",
    "color": "red",
    "size": 64,
-   "at": 5.6
+   "at": 6.49
   }
  ],
  "sfx": [
   [
-   0.4,
+   0.44,
    "scribble"
   ],
   [
-   2.6,
+   3.38,
    "scribble"
   ],
   [
-   3.6,
+   3.99,
    "scribble"
   ],
   [
-   3.9,
+   4.24,
    "pop"
   ],
   [
-   5.6,
+   6.49,
    "pop"
+  ]
+ ],
+ "cam": [
+  [
+   0,
+   1.0,
+   0,
+   0,
+   0
+  ],
+  [
+   0.24,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   0.26,
+   1.07,
+   -7.1,
+   2.5,
+   7.12
   ]
  ]
 };

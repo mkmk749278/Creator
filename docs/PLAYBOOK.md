@@ -859,6 +859,14 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 
 ## 14. Pre-render review (every cut, before the final render)
 
+**Audio-synced frame review, every cut, before the owner sees it (owner, 2026-10-12: "you can read images and videos
+frame by frame, so make every frame suit the audio; self-review every frame; give the best only").** Time the words
+(`projects/minimum-due/build/words.py`: pauses pinned to punctuation, words spread by length; no Whisper), place every
+animated item on the word that names it (`P(line, "phrase")`), give every page a slow camera move so nothing sits still,
+then run `build/review_av.py` (one frame per second with the words heard in that second) and read **every** sheet. Fix
+every frame that does not show what is being said, is empty, unreadable, covered or off-frame, rebuild, and review again.
+Only then send the cut, with the review summary.
+
 Contact-sheet the cut (`scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --every 2`: 3×3 timecoded tiles, 1536 px)
 and go shot by shot; write `review.md` (issue → shot IDs → fix). In a session, read the sheets yourself at `high` effort or
 above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at `max` and writes `review.md`/`review.json`

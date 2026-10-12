@@ -61,6 +61,25 @@ def sfx(items):
     return out
 
 
+def cam(items, dur, push=0.07):
+    """Camera keys: each page (items sharing a page-turn time) gets a slow push toward its content's centre, from the
+    page's first item to its turn; the camera resets during the page turn. No page ever sits still."""
+    turns = sorted({it["exit"] for it in items if it.get("exit") is not None and it["exit"] < dur - 0.3}) + [dur]
+    keys, t_prev = [[0, 1.0, 0, 0, 0]], 0.0
+    for turn in turns:
+        its = [it for it in items if (it.get("exit") if it.get("exit") is not None and it["exit"] < dur - 0.3 else dur) == turn]
+        if not its:
+            continue
+        t0 = max(t_prev, min(it["at"] for it in its) - 0.2)
+        xs = [it.get("x", 960) + (0 if it.get("anchor") == "middle" or it["kind"] in ("scale", "meter", "loop", "coins") else 150) for it in its]
+        ys = [it.get("y", 540) + (0 if it["kind"] in ("label", "scale", "meter", "loop") else 100) for it in its]
+        cx, cy = sum(xs) / len(xs), sum(ys) / len(ys)
+        keys.append([round(t0, 2), 1.0, 0, 0, 0.01])
+        keys.append([round(t0 + 0.02, 2), round(1 + push, 3), round(-(cx - 960) * push, 1), round(-(cy - 540) * push, 1), round(max(0.6, turn - t0 - 0.05), 2)])
+        t_prev = turn + 0.36   # page-turn exit lasts 0.35 s
+    return keys
+
+
 for bid, d in DOODLES.items():
     b = B[bid]; t0 = b["start"]; dur = round(b["end"] - t0, 2)
     items = [rel(it, t0, dur) for it in d["items"]]
@@ -69,7 +88,7 @@ for bid, d in DOODLES.items():
         for m in it.get("moves", []):
             if "y" in m:
                 m["y"] += d.get("shift", 0)
-    scene = dict(duration=dur, tag=d.get("tag", ""), kicker=d.get("kicker", ""), items=items, sfx=sfx(items))
+    scene = dict(duration=dur, tag=d.get("tag", ""), kicker=d.get("kicker", ""), items=items, sfx=sfx(items), cam=cam(items, dur))
     f = OUT / bid; f.mkdir(parents=True, exist_ok=True)
     for old in ("vendor/wb",):
         shutil.rmtree(f / old, ignore_errors=True)

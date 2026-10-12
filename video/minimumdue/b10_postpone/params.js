@@ -11,13 +11,13 @@ window.SCENE = {
    "w": 360,
    "h": 250,
    "text": "LOAN",
-   "at": 0.4,
-   "dur": 0.8,
+   "at": 0.42,
+   "dur": 0.7,
    "moves": [
     {
-     "at": 1.6,
+     "at": 2.95,
      "x": 1300,
-     "dur": 2.0,
+     "dur": 1.6,
      "ease": "power1.inOut"
     }
    ],
@@ -32,8 +32,8 @@ window.SCENE = {
     0
    ],
    "color": "dim",
-   "at": 1.6,
-   "dur": 2.0,
+   "at": 2.95,
+   "dur": 1.6,
    "exit": 4.57
   },
   {
@@ -45,7 +45,7 @@ window.SCENE = {
    "color": "red",
    "anchor": "middle",
    "hl": "yel",
-   "at": 2.8,
+   "at": 3.35,
    "exit": 4.57
   },
   {
@@ -56,7 +56,7 @@ window.SCENE = {
    "size": 80,
    "color": "green",
    "anchor": "middle",
-   "at": 6.07
+   "at": 6.5
   },
   {
    "kind": "sticky",
@@ -66,7 +66,7 @@ window.SCENE = {
    "h": 200,
    "n": 1,
    "in": "pop",
-   "at": 6.47
+   "at": 6.65
   },
   {
    "kind": "sticky",
@@ -76,7 +76,7 @@ window.SCENE = {
    "h": 200,
    "n": 2,
    "in": "pop",
-   "at": 6.69
+   "at": 6.85
   },
   {
    "kind": "sticky",
@@ -86,7 +86,7 @@ window.SCENE = {
    "h": 200,
    "n": 3,
    "in": "pop",
-   "at": 6.91
+   "at": 7.05
   },
   {
    "kind": "sticky",
@@ -96,7 +96,7 @@ window.SCENE = {
    "h": 200,
    "n": 4,
    "in": "pop",
-   "at": 7.13
+   "at": 7.25
   },
   {
    "kind": "sticky",
@@ -106,20 +106,20 @@ window.SCENE = {
    "h": 200,
    "n": 5,
    "in": "pop",
-   "at": 7.35
+   "at": 7.45
   }
  ],
  "sfx": [
   [
-   0.4,
+   0.42,
    "scribble"
   ],
   [
-   1.6,
+   2.95,
    "scribble"
   ],
   [
-   2.8,
+   3.35,
    "pop"
   ],
   [
@@ -127,20 +127,53 @@ window.SCENE = {
    "whoosh"
   ],
   [
-   6.07,
+   6.5,
    "pop"
   ],
   [
-   6.47,
+   6.85,
    "pop"
   ],
   [
-   6.91,
+   7.25,
    "pop"
+  ]
+ ],
+ "cam": [
+  [
+   0,
+   1.0,
+   0,
+   0,
+   0
   ],
   [
-   7.35,
-   "pop"
+   0.22,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   0.24,
+   1.07,
+   26.1,
+   -3.0,
+   4.3
+  ],
+  [
+   6.3,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   6.32,
+   1.07,
+   -1.2,
+   2.8,
+   1.64
   ]
  ]
 };
