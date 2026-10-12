@@ -1,0 +1,192 @@
+#!/usr/bin/env python3
+"""Writes script.full.tsv for Can't Pay Even the Minimum (v1, 2026-10-12) from the rows below, so the TSV never gets
+hand-broken tabs. Edit the rows here, run this, then tools/build_script.py.
+Columns: id, section, te (Telugu dub, filled later), en (the VO), emotion (empty, owner rule), visual, onscreen, sound,
+pacing. Visual modes: DESK (photoreal Money Table, video/lib/moneytable), DOODLE (video/lib/doodle), REAL (footage),
+PROOF (credited screen recording of the source). Every number comes from research_*.md or tools/cpm_math.py.
+"""
+import csv
+from pathlib import Path
+
+H = Path(__file__).resolve().parents[1]
+R = []
+
+
+def row(i, sec, en, visual="", onscreen="", sound="", pacing=""):
+    R.append(dict(id=i, section=sec, te="", en=en, emotion="", visual=visual, onscreen=onscreen, sound=sound, pacing=pacing))
+
+
+S1 = "1 Hook"
+row("C001", S1, "A message comes on your phone. Your credit card payment is overdue.",
+    "DESK: night desk, a phone lights up face up; SIMULATION SMS, no bank name.", "SIMULATION", "phone buzz on room tone", "cold open, no music 2 s")
+row("C002", S1, "Then another message. Then a call from a number you don't know.", "DESK: two more notifications stack; missed-call badge.", "", "buzz, buzz")
+row("C003", S1, "In our last video, we saw how paying only the minimum keeps you in debt for years. Today, a harder question.",
+    "REAL: 2 s flash of part 1 (the ₹100 split, desk).", "PART 1 · MINIMUM AMOUNT DUE", "tension bed in")
+row("C004", S1, "What if you cannot pay even that minimum?", "DESK: slow push to the overdue bill on the desk.", "", "", "beat")
+row("C005", S1, "Maybe your salary stopped. Maybe a hospital bill came first. It happens to good, honest people.",
+    "REAL: hospital corridor in India; a closed office shutter.", "")
+row("C006", S1, "And then the fear starts. Will the police come home? Will they take my salary? Will my family find out?",
+    "DOODLE: three questions as three objects: police cap, salary slip, family photo; each pops with a sound.", "", "pop × 3")
+row("C007", S1, "Most people think there is one answer for everyone. There isn't.", "DESK: one bill splits into five bills of different sizes.")
+row("C008", S1, "Someone who owes ten thousand rupees and someone who owes ten lakh live two very different stories.",
+    "DESK: two stacks side by side: a thin ₹10,000 stack and a tall ₹10 lakh stack.", "₹10,000 vs ₹10 LAKH", "", "thumbnail promise by 0:30")
+row("C009", S1, "Today I will show you both. The rules on paper, and the reality on the ground.",
+    "DOODLE: rule book on the left, a street on the right.", "RULES · REALITY")
+row("C010", S1, "Welcome to Be Practical with Kishore.", "Logo sting.", "", "sting")
+
+S2 = "2 The clock"
+row("C011", S2, "First, let's understand the clock. The day your last date passes, the bank starts counting.",
+    "DOODLE: wall calendar; due date circled; a counter DAY 1 starts.", "DAYS PAST DUE", "explaining bed in")
+row("C012", S2, "Thirty days. Sixty days. Ninety days. The bank's system checks your account every single day.",
+    "DOODLE: three stamps land on the calendar: 30, 60, 90 (thud each).", "[RBI | 12 NOV 2021 CIRCULAR]", "thud × 3")
+row("C013", S2, "If the minimum stays unpaid for ninety days after the due date, the bank must mark your card a bad loan. They call it an NPA. A non performing asset.",
+    "DESK: rubber stamp hits a file: NPA · DAY 91.", "NPA = BAD LOAN [RBI | IRAC NORMS]", "stamp thud")
+row("C014", S2, "Now here is something most people don't know. From that day, your unpaid card is also a loss for the bank.",
+    "DESK: the bank's ledger page; a block of coins moves from PROFIT to a locked box.")
+row("C015", S2, "The bank must keep aside about a quarter of what you owe, from its own profit. That is why the calls get louder around this time.",
+    "DESK: about a quarter of the coins slide into the locked box.", "ABOUT 25% SET ASIDE [RBI | PROVISIONING RULES]", "latch click")
+row("C016", S2, "But listen carefully. Some people say interest stops after ninety days. It does not.",
+    "DOODLE: speech bubble INTEREST STOPS? gets a red cross.", "MYTH", "", "slow down")
+row("C017", S2, "The bank cannot count your unpaid interest as its income. But your bill can keep growing as per your card terms.",
+    "DOODLE: meter on the bill keeps ticking.")
+row("C018", S2, "There is a second clock too. Your CIBIL. Banks now update the credit bureaus every fifteen days.",
+    "DOODLE: CIBIL report card; a 15-day tick.", "EVERY 15 DAYS [RBI | FROM 1 JAN 2025]")
+row("C019", S2, "The good part is, the bank must tell you before it reports you as a defaulter. And if you have a genuine dispute, it must wait.",
+    "DOODLE: envelope with a bell: NOTICE FIRST.", "[RBI | CARD DIRECTIONS 2025, PARA 36]")
+row("C020", S2, "In one case, a consumer commission held SBI Card at fault for reporting a customer to CIBIL without proper notice first.",
+    "PROOF: indiankanoon order, highlighter on the finding.", "[MP STATE CONSUMER COMMISSION | 2024]")
+row("C021", S2, "And the card itself? At SBI Card, for example, it may be blocked from the very first missed payment.",
+    "DESK: the card slides under a padlock.", "[SBI CARD | FAQ]")
+
+S3 = "3 Small bills grow faster"
+row("C022", S3, "Now the part nobody tells you. A small bill grows faster than a big bill.", "DESK: two stacks again.", "", "", "pause before")
+row("C023", S3, "Take two people. Ravi owes ten thousand rupees. Sunita owes one lakh. Both stop paying.",
+    "DESK: two name cards: RAVI ₹10,000 · SUNITA ₹1,00,000.", "OUR EXAMPLE")
+row("C024", S3, "Both pay the same interest. Three point seven five percent a month, plus eighteen percent GST on it.",
+    "DOODLE: one interest arrow into each stack.", "3.75% A MONTH + 18% GST [HDFC · ICICI · SBI CARD · AXIS | 2026]")
+row("C025", S3, "But the late fee is not a percentage. It is a fixed amount by slab. On ten thousand, the late fee is seven hundred and fifty rupees. On one lakh, it is thirteen hundred.",
+    "DOODLE: a slab staircase; two price tags hang on it: ₹750 and ₹1,300.", "LATE FEE BY SLAB [HDFC BANK MITC | SEP 2026]", "pop × 2")
+row("C026", S3, "Seven hundred and fifty on ten thousand is seven and a half percent, every month, just as a fee. Thirteen hundred on one lakh is only one point three percent.",
+    "DOODLE: two gauges: 7.5% (red) vs 1.3% (amber).", "7.5% vs 1.3% A MONTH")
+row("C027", S3, "After six months of paying nothing, Ravi's ten thousand becomes about nineteen thousand. Almost double.",
+    "DESK: Ravi's stack grows coin by coin to ₹19,112; red coins mark the late fees.", "₹10,000 → ABOUT ₹19,100 IN 6 MONTHS", "clink run")
+row("C028", S3, "Sunita's one lakh becomes about one lakh thirty eight thousand.", "DESK: Sunita's stack grows to ₹1,38,371.", "₹1,00,000 → ABOUT ₹1,38,400")
+row("C029", S3, "For Ravi, two thirds of that jump is only late fees. So the smaller your bill, the harder the fees hit.",
+    "DESK: Ravi's red fee coins lift out: two thirds of the growth.", "2/3 OF THE JUMP = LATE FEES")
+row("C030", S3, "This is our own calculation, using one bank's published fees. Your bill will be different, but the shape is the same.",
+    "DOODLE: small print card.", "OUR CALCULATION · tools/cpm_math.py · NOTHING PAID, NO NEW SPENDS")
+
+S4 = "4 Who comes after you"
+row("C031", S4, "Now the real question. Who actually comes after you? And will anyone come to your house?",
+    "REAL: an Indian apartment door; a doorbell.", "", "music dips")
+row("C032", S4, "In the first three months, it is mostly calls. Automated calls, SMS, WhatsApp. Many from big call centres in cities.",
+    "REAL: call-centre floor (stock, ILLUSTRATIVE FOOTAGE).", "1 TO 90 DAYS: CALLS [BANK OF BARODA | COLLECTION TENDER 2022]")
+row("C033", S4, "Banks decide how hard to chase by two things. The days you are late, and the money at risk.",
+    "DOODLE: a 2-axis grid: DAYS LATE × AMOUNT; heat grows to the top right.", "[RBL BANK | COLLECTION POLICY]")
+row("C034", S4, "After that, many banks hand your account to a recovery agency. And here is the business behind it.",
+    "DESK: the bill file is passed across the desk to a folder marked AGENCY.")
+row("C035", S4, "Many agencies earn only when they collect. A percentage of what you pay. One public sector bank pays its agencies between seven and a half and fifteen percent on accounts up to one lakh.",
+    "DOODLE: a coin splits; a small slice goes to the agency.", "7.5–15% COMMISSION [PNB | AGENCY TENDER]")
+row("C036", S4, "Now see it from their side. If you owe ten thousand, the agency may earn about a thousand rupees. And only if you pay in full.",
+    "DESK: ₹10,000 stack; about ₹1,000 lifts off.", "OUR ESTIMATE")
+row("C037", S4, "Now think about where you live. Say your card has your old room address in the city. But your family lives in a village, far away.",
+    "DOODLE: map: a city dot and a village dot, a long road between them.")
+row("C038", S4, "Agencies usually work city by city, or district by district. In Andhra and Telangana, one card company's agency list names only Hyderabad, Warangal, Karimnagar, Vizag and Vijayawada.",
+    "DOODLE: AP + Telangana map; five city pins light up.", "[ONECARD | AGENCY LIST]")
+row("C039", S4, "For a small amount, a long trip to a far village rarely pays for itself. So small dues mostly stay as calls and messages. That's not a rule. It's simple business.",
+    "DOODLE: a fuel can + a day's wage vs a tiny commission coin.", "OUR ESTIMATE · NO BANK PUBLISHES A CUT-OFF")
+row("C040", S4, "For bigger amounts, it changes. Finding a person who moved is a paid job. One bank pays seven thousand five hundred rupees for each person traced. That's worth it only when the amount is big.",
+    "DOODLE: magnifier over the map; a pin found.", "₹7,500 PER PERSON TRACED [PNB | TENDER]")
+
+S5 = "5 Court and the slab table"
+row("C041", S5, "What about court? Here again, the amount decides.", "DESK: a court file appears next to the stacks.")
+row("C042", S5, "To file a case, the bank pays court fees and a lawyer. On a small amount, that eats a big part of what it can recover. So a court case for ten thousand rarely makes sense for the bank.",
+    "DOODLE: a scale: court costs on one side, ₹10,000 on the other.", "OUR ESTIMATE")
+row("C043", S5, "For bigger dues, card companies do use Lok Adalat. You get a notice for a settlement meeting, in your own city. In one real case, SBI Card took about one point eight lakh of card dues to a Lok Adalat in the customer's city, Indore.",
+    "PROOF: the Sajji Varghese order on indiankanoon.", "LOK ADALAT · YOUR CITY [MP STATE CONSUMER COMMISSION | 2024]")
+row("C044", S5, "If you get such a notice, go. It is a chance to settle with a written record.", "DOODLE: a table with two chairs and a handshake on paper.")
+row("C045", S5, "Some banks use arbitration. Be careful here. The Delhi High Court found one bank had about seventy six thousand awards where the bank alone picked the arbitrator, and said such an award cannot be enforced.",
+    "PROOF: news report on the Delhi HC order.", "[DELHI HIGH COURT | ARBITRATION RULING]")
+row("C046", S5, "And the special bank court, the DRT, is only for dues of twenty lakh rupees or more. For most card dues, it is not even possible.",
+    "DOODLE: a tall bar at ₹20 lakh; most stacks sit far below it.", "DRT: ₹20 LAKH+ [FINANCE MINISTRY | 2018]")
+row("C047", S5, "So let me put it simply, slab by slab.", "DESK: five stacks in a row: ₹10k, ₹50k, ₹1L, ₹2–5L, ₹10L+.", "", "", "slab walk")
+row("C048", S5, "Around ten thousand. Calls and messages, a blocked card and a bad mark on your CIBIL. A court case is unlikely, but the mark stays with you for years.",
+    "DESK: camera stops at ₹10k; three small tags: CALLS · CARD BLOCKED · CIBIL.", "₹10,000")
+row("C049", S5, "Fifty thousand to one lakh. Calls, then an agency, maybe a visit if you live in a city they cover, and settlement or Lok Adalat notices.",
+    "DESK: ₹50k–₹1L stacks; tags: AGENCY · MAYBE A VISIT · LOK ADALAT.", "₹50,000 – ₹1 LAKH")
+row("C050", S5, "Two to five lakh. Expect field visits, people tracing you if you moved, and legal notices.",
+    "DESK: ₹2–5L stack; tags: VISITS · TRACING · NOTICES.", "₹2 – 5 LAKH")
+row("C051", S5, "Ten lakh and above. Arbitration or a court case becomes worth the bank's money. Take it seriously from day one.",
+    "DESK: ₹10L+ stack; tags: ARBITRATION · COURT.", "₹10 LAKH+")
+row("C052", S5, "Remember, these slabs are about what you owe to one bank. Other banks don't add it up. They only see it on your CIBIL.",
+    "DOODLE: three bank buildings, each with its own stack; one CIBIL sheet connects them.", "PER BANK · OTHERS SEE YOUR CIBIL")
+
+S6 = "6 Same bank traps"
+row("C053", S6, "Now, two traps that catch salaried people.", "DESK: a salary slip slides onto the desk.")
+row("C054", S6, "Trap one. Your salary account is in the same bank as your card.", "DESK: a thread links the card and the salary passbook: same bank.")
+row("C055", S6, "Your card terms allow that bank to hold or take money from your account to cover what you owe. It is called the right of set off.",
+    "PROOF: HDFC card agreement, set-off clause highlighted.", "RIGHT OF SET-OFF [HDFC BANK | CARDMEMBER AGREEMENT]")
+row("C056", S6, "A national consumer commission upheld one bank taking fifty three thousand rupees from a savings account for card dues. And this year, in a loan case, the Kerala High Court said a bank's hold is not a court attachment, so the usual salary protection doesn't stop it.",
+    "PROOF: two headlines, highlighter on the key lines.", "[NCDRC VIA GOODRETURNS | 2019] [KERALA HIGH COURT | 2026]")
+row("C057", S6, "But it is not unlimited. Only your money, only for your debt, only in that bank, and only up to what you owe. A bank where you owe nothing cannot touch your account.",
+    "DOODLE: four checkmarks pop beside the passbook.", "UP TO WHAT YOU OWE · SAME BANK ONLY", "pop × 4")
+row("C058", S6, "And the bank only has to tell you within three days after it puts the hold. Not before.",
+    "DOODLE: a calendar with +3 days after a lock icon.", "WITHIN 3 DAYS AFTER [BCSBI CODE | 2018]")
+row("C059", S6, "Trap two. Many products in one bank. RBI rules mark the borrower, not just one account.",
+    "DESK: card, personal loan papers and an overdraft cheque book from one bank, tied with the same thread.", "[RBI | IRAC: BORROWER-WISE]")
+row("C060", S6, "So if your card at a bank becomes an NPA, your other loans at that same bank can be marked NPA too. To clean it, you must clear the overdue on all of them.",
+    "DESK: the NPA stamp falls on every item tied by the thread.", "", "stamp thud × 3")
+row("C061", S6, "And cards from different banks? They don't share your accounts. But they all see your CIBIL. One default can make the others cut your limit.",
+    "DOODLE: three cards from three banks; a CIBIL sheet; scissors trim two limits.", "[SBI CARD | CREDIT POLICY]")
+row("C062", S6, "That's why paying one card with another is so dangerous. Some banks can even cancel a card used that way. When one card stops, the whole chain falls.",
+    "DOODLE: dominoes of cards fall.", "[ICICI BANK | CARD TERMS]", "domino clatter")
+
+S7 = "7 The big fear"
+row("C063", S7, "Now the biggest fear. Will the police arrest you? ...",
+    "DESK: the police-cap doodle from the hook appears on the desk, lit hard.", "", "1.5 s total silence, then low hit", "core reveal")
+row("C064", S7, "Here is the truth. Simply not being able to pay is not a crime.", "DESK: a gavel on the desk; warm light returns.", "NOT A CRIME BY ITSELF", "low hit")
+row("C065", S7, "The Supreme Court has said that not repaying a loan is not cheating, unless you planned to cheat from the very start. And in twenty twenty five, it said police and FIRs are not a way to recover money.",
+    "PROOF: the two judgments, highlighter on the lines.", "[SUPREME COURT (2019) | SATISHCHANDRA SHAH] [SUPREME COURT (2025) | KUKREJA]")
+row("C066", S7, "But two things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.",
+    "DOODLE: a cheque tears; an auto-debit mandate gets a red stamp.", "CHEQUE BOUNCE · AUTO-DEBIT FAIL [NI ACT S.138 · PSS ACT S.25]")
+row("C067", S7, "So never give a cheque you know will bounce. And if your auto debit will fail, talk to the bank before the date.", "DESK: a phone call to the bank, calendar date circled.")
+
+S8 = "8 Write-off myth"
+row("C068", S8, "One more myth. After six months, the bank writes it off. So it's gone, right?", "DOODLE: an eraser over the bill.", "MYTH")
+row("C069", S8, "No. A write off is the bank cleaning its own books. Your debt is not forgiven.", "DOODLE: the eraser stops; the bill is still there.", "[RBI | JUNE 2023 FRAMEWORK]")
+row("C070", S8, "SBI Card, for example, writes off an account after more than six missed payments. But you still owe it. And some old bad loans are sold to recovery companies for a small part of their value. Then they call you.",
+    "DESK: the file moves into a box marked SOLD; the phone buzzes again.", "[SBI CARD | FAQ] [BANDHAN BANK | DEC 2025 FILING]")
+
+S9 = "9 What to do"
+row("C071", S9, "So what should you actually do? Five practical steps.", "DESK: daylight returns to the room; a clean notepad.", "", "hopeful bed in: Dreamer")
+row("C072", S9, "Step one. Don't hide. Call the bank before day ninety, and also write to them. Tell them what happened and what you can pay. Keep every message.",
+    "DOODLE: phone + email + a folder of screenshots.", "1 · TALK BEFORE DAY 90")
+row("C073", S9, "Step two. Know the recovery rules. Calls only between eight in the morning and seven in the evening. No threats, no abuse, no calls to shame your family or friends. Anyone who comes home must show an ID card and the bank's authorisation letter.",
+    "DOODLE: a clock 8 AM–7 PM; ID card and letter pop.", "2 · 8 AM – 7 PM · ID + BANK LETTER [RBI | 2008 & 2022 CIRCULARS]")
+row("C074", S9, "If they break these rules, complain to the bank first. No answer in thirty days? Go to the RBI Ombudsman on the RBI complaint website. It is free. But since July twenty twenty six, you have only ninety days to do it. The RBI helpline is fourteen four four eight.",
+    "PROOF: cms.rbi.org.in home page.", "CMS.RBI.ORG.IN · 90 DAYS · 14448 [RBI | OMBUDSMAN SCHEME 2026]")
+row("C075", S9, "If someone threatens you, call one one two. If you get a fake link or a fake notice, call one nine three zero.",
+    "DOODLE: two big number tiles pop.", "112 · 1930")
+row("C076", S9, "Step three. Check every legal notice yourself. A lawyer's notice is not a court summons. A real court case has a case number. Type it yourself on the eCourts website. Never tap the link in the message.",
+    "PROOF: services.ecourts.gov.in CNR search.", "3 · CHECK THE CASE NUMBER YOURSELF [ECOURTS]")
+row("C077", S9, "Step four. If you settle, settle on paper. Get the settlement letter from the bank first. Pay only through the bank's own channel. Never cash to an agent.",
+    "DESK: a settlement letter on bank paper; a cash bundle slides away.", "4 · LETTER FIRST · NEVER CASH")
+row("C078", S9, "And know the cost. Your CIBIL will say settled, not closed. That bank won't lend to you for at least a year. Later, ask the bank what you must pay to clean that record.",
+    "DOODLE: CIBIL line SETTLED → CLOSED with a question mark.", "[RBI | JUNE 2023] [SBI CARD | FAQ]")
+row("C079", S9, "Step five. If you have many cards, plan the order. This is my practical view, not a rule. First, the bank where your salary sits, because that bank can touch your account. Next, the small bills, because fees grow them fastest. Then the rest.",
+    "DESK: cards arranged in order 1-2-3 under a lamp.", "5 · OUR SUGGESTED ORDER")
+row("C080", S9, "You can choose where your salary goes. But the debt doesn't go away. Use the breathing space to settle, not to run.",
+    "DOODLE: a path from the desk to a settlement letter.")
+
+S10 = "10 Close"
+row("C081", S10, "So, can they arrest you? Not just for being unable to pay. Can they take your salary? Only that same bank, and only up to what you owe. Will they come home? That depends on how much you owe, and where you live.",
+    "DESK: the three hook objects return and answer one by one.")
+row("C082", S10, "The fear is real. But fear is also their tool. Knowledge is yours.", "DESK: lamp light warms; camera rises.", "", "music swell")
+row("C083", S10, "Tell me in the comments. Has a recovery agent ever called you or your family? What did they say?", "DOODLE: comment bubble.")
+row("C084", S10, "If this helped, share it with one person who is scared right now. And subscribe to Be Practical with Kishore.", "End card.", "SUBSCRIBE")
+row("C085", S10, "This video is for education only. It is not legal or financial advice.", "End card text.", "EDUCATIONAL ONLY · NOT LEGAL OR FINANCIAL ADVICE")
+
+with open(H / "script.full.tsv", "w", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=["id", "section", "te", "en", "emotion", "visual", "onscreen", "sound", "pacing"], delimiter="\t")
+    w.writeheader(); w.writerows(R)
+print(len(R), "rows")
