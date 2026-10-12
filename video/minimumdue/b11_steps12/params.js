@@ -14,7 +14,7 @@ window.SCENE = {
     "FULL bill"
    ],
    "at": 0.3,
-   "exit": 5.43
+   "exit": 5.68
   },
   {
    "kind": "calendar",
@@ -30,7 +30,7 @@ window.SCENE = {
    "bandAt": 1.8,
    "at": 0.8,
    "dur": 0.8,
-   "exit": 5.43
+   "exit": 5.68
   },
   {
    "kind": "tag",
@@ -41,7 +41,7 @@ window.SCENE = {
    "size": 56,
    "sub": "DEPENDS ON YOUR CARD",
    "at": 2.4,
-   "exit": 5.43
+   "exit": 5.68
   },
   {
    "kind": "sticky",
@@ -53,7 +53,7 @@ window.SCENE = {
     "Pay as much",
     "as you can"
    ],
-   "at": 5.83,
+   "at": 5.93,
    "exit": 11.12
   },
   {
@@ -156,11 +156,11 @@ window.SCENE = {
    "pop"
   ],
   [
-   5.43,
+   5.68,
    "whoosh"
   ],
   [
-   5.83,
+   5.93,
    "pop"
   ],
   [
