@@ -77,6 +77,12 @@ for (const project of projects) {
       copyFileSync(join(root, "node_modules/@fontsource/inter/files", f), join(out, "fonts", f));
     }
   }
+  // Any other @fontsource file a page names as vendor/fonts/<file>.woff2 (Inter Tight, Bricolage Grotesque, JetBrains Mono…).
+  for (const [, f] of html.matchAll(/vendor\/fonts\/([\w-]+\.woff2)/g)) {
+    if (existsSync(join(out, "fonts", f))) continue;
+    const pkg = readdirSync(join(root, "node_modules/@fontsource")).find((p) => existsSync(join(root, "node_modules/@fontsource", p, "files", f)));
+    if (pkg) copyFileSync(join(root, "node_modules/@fontsource", pkg, "files", f), join(out, "fonts", f));
+  }
   // Handwriting font for whiteboard scenes (Kalam, OFL), only where a page asks for it.
   if (html.includes("vendor/fonts/kalam-")) {
     for (const w of [400, 700]) {

@@ -450,6 +450,24 @@ When an authentic photo or document is irreplaceable:
 6. **Science is explained with animation, never still plates** (§9). Label each "ILLUSTRATION", "ILLUSTRATIVE CURVE" or
    "HYPOTHESIS". *Why:* anatomy plates and microscopy stills were rejected on breath-hold.
 
+### 5.6 The Money Table: our own look for money explainers (owner, 2026-10-12; proposed, awaiting the owner's pick)
+*Why:* the owner called the whiteboard and its handwriting "outdated", then rejected the next idea (a dark glass-card
+FinTech dashboard from an outside spec) before it was built, and asked for our own best method, ultra realistic, no ceiling.
+**Research (2026-10-12):** 200 mid-video frames (YouTube auto-frames `i.ytimg.com/vi/<id>/maxres1-3.jpg`, study only) from
+recent PolyMatter, How Money Works, Economics Explained, Business Casual, Vox, WSJ, CNBC, The Economist, Cleo Abram,
+Wendover, Johnny Harris, Kurzgesagt and Think School videos. None used glass cards, neon dashboards or whiteboards; those
+read as template or AI looks. The strongest frames put information **into a real world**: a price tag on a product, a
+number pinned on an aerial map, a stamped paper document, a cutout photo in a real room. Vendor trend blogs (GDJ,
+Renderforest, Genesis, 2026) say the same: texture, physical materials and "made" over clean corporate vector.
+**The method:** money is shown as photoreal physical objects on one desk, rendered in Three.js inside HyperFrames
+(`video/lib/moneytable`): a printed bill, a phone, metal coins that move (100 × ₹1 = ₹100, so a split is visible as two
+piles), printed tent cards, stamps, receipts, a wall calendar. **Words live on objects** (printed, engraved, on a screen),
+not pasted over the picture; one mono kicker + one bold line (Bricolage Grotesque 800, JetBrains Mono) is the only overlay.
+Dark room, a warm practical pool of light (spot, soft shadow), walnut desk (Poly Haven CC0 PBR), HDRI reflections, ACES,
+vignette, slow breathing camera. Real Indian footage still carries every real-life beat (§4a-3); the desk replaces the
+BOARD mode. Every figure on an object still traces to `claims.csv` or the project's maths tool, with an OUR CALCULATION /
+SIMULATION tag. Avoid: glass cards, neon, gradient canvases, floating icon grids, handwriting.
+
 ## 6. Workflow and engines
 
 Every video follows three steps, and each produces a file the owner can read on a phone:
