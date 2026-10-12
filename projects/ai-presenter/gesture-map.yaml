@@ -1,0 +1,55 @@
+# Gesture library: base clips for the AI presenter, and which script emotion cues use them.
+# Each clip exists for camera A (medium, front) and camera B (close-up, 3/4 angle): files are <id>_A.mp4, <id>_B.mp4.
+# peak: seconds into the clip where the gesture lands (filled in after the clips are downloaded and checked).
+# Emotion cues are the ElevenLabs tags from build_script.py TAGS. A cue with several clips rotates through them so the
+# same gesture never repeats back to back.
+
+clips:
+  G01: {intent: calm explaining, small natural hand movement, peak: null}
+  G02: {intent: explaining with open palms, peak: null}
+  G03: {intent: counting points on his fingers (one, two, three), peak: null}
+  G04: {intent: one firm downward hand beat for emphasis, peak: null}
+  G05: {intent: leans in, serious, elbows on knees, peak: null}
+  G06: {intent: leans in and lowers his voice, confiding, peak: null}
+  G07: {intent: asking a real question, eyebrows up, palms up, peak: null}
+  G08: {intent: shocked reaction, slight recoil, eyes widen, peak: null}
+  G09: {intent: warning, raised index finger, peak: null}
+  G10: {intent: empathy, hand on chest, soft eyes, peak: null}
+  G11: {intent: hopeful, warm smile, open hands, peak: null}
+  G12: {intent: gestures toward the wall screen behind him (hand-off to B-roll), peak: null}
+  G13: {intent: intense, still, direct stare into the lens, peak: null}
+  G14: {intent: warm welcome smile and small nod (intro and outro), peak: null}
+  G15: {intent: thoughtful pause, slight head tilt, mouth closed, peak: null}
+  G16: {intent: slow sad shake of the head, peak: null}
+  G17: {intent: confident, sits back, relaxed authority, peak: null}
+  G18: {intent: wide establishing shot, he settles into the chair, peak: null}
+
+emotion_to_clips:
+  "[warmly]": [G14, G01, G11]
+  "[confident]": [G17, G02, G04]
+  "[gently]": [G01, G10]
+  "[serious]": [G05, G13, G02]
+  "[grave]": [G05, G16, G13]
+  "[tense]": [G13, G05]
+  "[menacing]": [G13]
+  "[urgent]": [G09, G04, G05]
+  "[firm]": [G04, G09]
+  "[emphatic]": [G04, G03, G09]
+  "[intense]": [G13, G05]
+  "[curious]": [G07, G15]
+  "[shocked]": [G08]
+  "[empathetic]": [G10, G01]
+  "[sad]": [G16, G10]
+  "[hopeful]": [G11, G14]
+  "[inspired]": [G11, G17]
+  "[softly]": [G06, G01]
+  "[whispers]": [G06]
+  "[slowly]": [G15, G01]
+  "[sighs]": [G16, G15]
+  "[dramatic pause]": [G15, G13]
+  default: [G01, G02, G17]
+
+# Structural uses, independent of the emotion cue
+film_open: G18
+hand_off_to_broll: G12
+outro: G14

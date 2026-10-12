@@ -982,6 +982,16 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 9. **Measure before adopting** any expensive effect: render a 2 s shard with and without it and log the cost in §15.
 10. **Fact-check as a separate pass** at `max` effort in a fresh context (as the phone pipeline already does), producing a
     claims table (claim → source URL → status) committed with each video, like `episodes/.../04-fact-check.md`.
+11. **AI presenter (trial, owner approved the test 2026-10-12; not a standing rule yet).** An invented on-camera host
+    (a man of about 35, smart-casual, in a studio armchair) for openings, chapter bridges, the practical-defence act and
+    outros. Folder: `projects/ai-presenter/` (character bible, Flow prompts, `gesture-map.yaml`). Method: the owner makes
+    a gesture library once in Google Flow (Veo, from their subscription credits: silent 8 s clips, first frame = last frame
+    = one rest still, two cameras); per film, Bunty's VO is lip-synced onto those clips with an open-source model
+    (LatentSync or MuseTalk) on a free Kaggle GPU, and each line's emotion cue picks the clip. *Why:* Flow has no API, and Veo
+    through the paid Gemini API breaks the zero-spend rule. Lip-sync models only redraw the mouth, so expressions and
+    hands must come from the base clips. Veo's own Telugu speech changes voice between clips. Limits: he is never presented
+    as Kishore or a real person; "Altered content = Yes" plus an "AI presenter" tag; never holds a product; ≤ ~20 s per
+    stretch, cut A/B every 3–4 s; real footage and animation still carry the film.
 
 ---
 
