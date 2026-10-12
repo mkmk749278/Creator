@@ -309,6 +309,20 @@ money film that is the spend or the payment (card machine, bill, wallet), never 
 "a family function" was rejected). (b) *the character* was then dropped altogether (see 3). (c) *no foreign money*: drop clips
 showing dollars or euros in a rupee film (about half the "money/bills" stock results); prefer cards, phones, bills.
 
+### 4a-4. Practical reality over paper rules (owner, 2026-10-12)
+*Why (owner):* the channel is "Be Practical": viewers need what really happens to them, not only what the RBI or the bank
+says. Rules:
+- **Split by the viewer's real situation.** Never treat one amount or one case as everyone's: ₹10,000, ₹1 lakh,
+  ₹2–5 lakh and ₹10 lakh+ play out differently (who calls, whether anyone visits, whether a court case is worth the
+  bank's cost, what settlement looks like). Show the slab table on screen and say which slab the viewer is in.
+- **Follow the money on both sides.** Explain why the other side acts as it does: recovery agency commission, cost of a
+  field visit, court fees and lawyer costs against the amount, write-off and sale to collectors.
+- **Real-life logistics count:** where the agency is based (mostly cities) vs where the person lives (a village Aadhaar
+  address, a moved communication address), calls vs visits, what a "legal notice" SMS really is.
+- **Rules still frame it:** state the RBI/legal rule first, then "but in real life…", and label each part: sourced fact,
+  bank/agency practice (with source), or our reasoning ("OUR ESTIMATE"). Never pass practice off as law, or a guess as
+  data. Never advise dodging a valid debt; the defence is knowing your rights and settling on paper.
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
