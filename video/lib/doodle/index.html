@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Doodle: sketched objects that pop in with sound</title>
+    <!--
+      Modern doodle mode (owner, 2026-10-12: "whiteboard animation ... adding items that sound"). Research: current doodle
+      channels (Sprouts) draw objects and metaphors, not handwriting; items pop in with a bounce and a sound effect; labels
+      are 2-3 words in clean type. Shapes are Rough.js (MIT) with a fixed seed, drawn stroke by stroke (dashoffset tweens on
+      one paused GSAP timeline: seek-safe). Sound cues live in params.js (SCENE.sfx) and are mixed in by the assembly.
+      Proof beat: every ₹100 paid on a minimum-only card = ₹74 interest + GST, ₹26 loan (OUR CALCULATION, mad_math.py).
+    -->
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/rough/rough.js"></script>
+    <script src="params.js"></script>
+    <style>
+      @font-face { font-family: "Bricolage"; font-weight: 800; src: url("vendor/fonts/bricolage-grotesque-latin-800-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Bricolage"; font-weight: 800; src: url("vendor/fonts/bricolage-grotesque-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+20B9, U+0100-024F; }
+      @font-face { font-family: "Mono"; font-weight: 700; src: url("vendor/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); }
+      html, body { margin: 0; background: #f3efe6; }
+      #root { position: relative; overflow: hidden; width: 1920px; height: 1080px; background: #f6f2ea; }
+      #paper { position: absolute; inset: -40px; background: url("paper.jpg") center / cover; }
+      #cam { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 50% 50%; }
+      svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+      .lbl { font-family: "Bricolage", sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+      .mono { font-family: "Mono", monospace; font-weight: 700; letter-spacing: .12em; }
+      .vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(60,40,20,.22) 100%); pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="doodle" data-start="0" data-width="1920" data-height="1080" data-duration="10">
+      <div id="paper"></div>
+      <div id="cam"><svg id="s" viewBox="0 0 1920 1080"></svg></div>
+      <div class="vig"></div>
+    </div>
+    <script>
+      const S = window.SCENE, svg = document.getElementById("s"), rc = rough.svg(svg), NS = "http://www.w3.org/2000/svg";
+      const INK = "#1f2430", RED = "#d62839", BLUE = "#2563eb", GREEN = "#2a9d8f", YEL = "#f6c453";
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: S.duration }, 0);
+      const el = (tag, attrs, parent = svg) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+      const group = (x, y, parent = svg) => { const g = el("g", {}, parent); g.dataset.x = x; g.dataset.y = y; gsap.set(g, { x, y }); return g; };
+      let seed = 7;
+      const R = (o = {}) => Object.assign({ seed: seed++, roughness: 1.4, bowing: 1.2, stroke: INK, strokeWidth: 3.2 }, o);
+      // draw-on: every stroked path in node grows along its length between t and t + dur (in order)
+      function drawOn(node, t, dur) {
+        const ps = [...node.querySelectorAll("path")].filter((p) => p.getAttribute("stroke") && p.getAttribute("stroke") !== "none");
+        const L = ps.map((p) => p.getTotalLength()), tot = L.reduce((a, b) => a + b, 0) || 1;
+        let acc = 0;
+        ps.forEach((p, i) => { p.style.strokeDasharray = L[i] + 1; gsap.set(p, { strokeDashoffset: L[i] + 1 });
+          tl.to(p, { strokeDashoffset: 0, duration: Math.max(0.02, dur * L[i] / tot), ease: "none" }, t + dur * acc / tot); acc += L[i]; });
+        node.querySelectorAll("path[fill]:not([fill=none])").forEach((p) => { gsap.set(p, { opacity: 0 }); tl.to(p, { opacity: 1, duration: 0.2 }, t + dur * 0.8); });
+      }
+      const pop = (node, t, from = 0.4) => { gsap.set(node, { scale: from, opacity: 0, transformOrigin: "50% 50%" }); tl.to(node, { scale: 1, opacity: 1, duration: 0.55, ease: "back.out(2.2)" }, t); };
+      const text = (str, x, y, size, color, cls = "lbl", anchor = "middle", parent = svg) => { const t = el("text", { x, y, "font-size": size, fill: color, class: cls, "text-anchor": anchor }, parent); t.textContent = str; return t; };
+
+      // ---- headline (typed, not handwritten) with a highlighter swipe ----
+      const head = group(0, 0);
+      const hl = el("rect", { x: 610, y: 82, width: 700, height: 76, fill: YEL, opacity: 0.75, rx: 6 }, head);
+      gsap.set(hl, { scaleX: 0, transformOrigin: "0% 50%" }); tl.to(hl, { scaleX: 1, duration: 0.45, ease: "power2.out" }, S.t.head + 0.25);
+      const ht = text(S.head, 960, 140, 72, INK, "lbl", "middle", head);
+      gsap.set(ht, { opacity: 0, y: 18 }); tl.to(ht, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, S.t.head);
+
+      // ---- the ₹100 note: two halves (74 % | 26 %) clipped along a torn edge ----
+      const NX = 960, NY = 360, NW = 520, NH = 250, cut = NW * 0.74;
+      const tear = [[cut, 0], [cut - 14, 30], [cut + 10, 62], [cut - 12, 98], [cut + 14, 132], [cut - 8, 168], [cut + 12, 204], [cut - 6, 250]];
+      const defs = el("defs", {});
+      const cpL = el("clipPath", { id: "cl" }, defs), cpR = el("clipPath", { id: "cr" }, defs);
+      el("polygon", { points: [[-20, -20], ...tear.map(([x, y]) => [x, y + (y === 0 ? -20 : y === 250 ? 20 : 0)]), [-20, 270]].map((p) => p.join(",")).join(" ") }, cpL);
+      el("polygon", { points: [[NW + 20, -20], ...tear.map(([x, y]) => [x, y + (y === 0 ? -20 : y === 250 ? 20 : 0)]), [NW + 20, 270]].map((p) => p.join(",")).join(" ") }, cpR);
+      const noteArt = (parent) => {
+        parent.appendChild(rc.rectangle(0, 0, NW, NH, R({ fill: "#cfe8d6", fillStyle: "hachure", hachureGap: 11, fillWeight: 1.6, seed: 101 })));
+        parent.appendChild(rc.rectangle(18, 18, NW - 36, NH - 36, R({ strokeWidth: 2, seed: 102 })));
+        parent.appendChild(rc.circle(NW - 110, NH / 2, 120, R({ fill: "#f6f2ea", fillStyle: "solid", seed: 103 })));
+        text("₹100", 40, 150, 104, INK, "lbl", "start", parent);
+      };
+      const halfL = group(NX - NW * 0.7, NY - NH * 0.7), halfR = group(NX - NW * 0.7, NY - NH * 0.7);
+      const inL = el("g", { "clip-path": "url(#cl)", transform: "scale(1.4)" }, halfL), inR = el("g", { "clip-path": "url(#cr)", transform: "scale(1.4)" }, halfR);
+      noteArt(inL); noteArt(inR);
+      // draw the note once: both halves share the same art, so draw-on both at the same time
+      drawOn(inL, S.t.note, 0.9); drawOn(inR, S.t.note, 0.9);
+      [inL, inR].forEach((g) => { const tx = g.querySelector("text"); gsap.set(tx, { opacity: 0 }); tl.to(tx, { opacity: 1, duration: 0.3 }, S.t.note + 0.7); });
+      // tear: halves pull apart and tilt
+      tl.to(halfL, { x: NX - NW * 0.7 - 50, rotation: -6, duration: 0.35, ease: "power3.out", transformOrigin: "100% 50%" }, S.t.tear);
+      tl.to(halfR, { x: NX - NW * 0.7 + 50, rotation: 8, duration: 0.35, ease: "power3.out", transformOrigin: "0% 50%" }, S.t.tear);
+
+      // ---- red sack (interest + GST) and blue jar (loan) ----
+      const sackG = group(290, 360), sack = el("g", { transform: "scale(1.55)" }, sackG);
+      sack.appendChild(rc.path("M 40 60 C -10 120, -10 300, 120 310 C 260 320, 280 140, 200 60 Z", R({ fill: RED, fillStyle: "hachure", hachureGap: 9, fillWeight: 2, stroke: INK, seed: 201 })));
+      sack.appendChild(rc.path("M 40 60 L 70 20 L 120 45 L 170 18 L 200 60", R({ seed: 202 })));
+      sack.appendChild(rc.line(55, 70, 190, 70, R({ strokeWidth: 5, seed: 203 })));
+      { const tx = text(S.sackAmt, 120, 230, 92, "#fff", "lbl", "middle", sack); Object.entries({ stroke: INK, "stroke-width": 10, "paint-order": "stroke", "stroke-linejoin": "round" }).forEach(([k, v]) => tx.setAttribute(k, v)); }
+      drawOn(sack, S.t.sack, 0.8); pop(sackG, S.t.sack, 0.85);
+      const sackLbl = text(S.sackLbl, 480, 930, 44, RED, "mono", "middle"); gsap.set(sackLbl, { opacity: 0, y: 14 }); tl.to(sackLbl, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, S.t.sackLbl);
+      const jarG = group(1330, 400), jar = el("g", { transform: "scale(1.55)" }, jarG);
+      jar.appendChild(rc.path("M 30 20 L 30 250 C 30 275, 50 280, 120 280 C 190 280, 210 275, 210 250 L 210 20", R({ fill: BLUE, fillStyle: "zigzag", hachureGap: 12, fillWeight: 1.6, seed: 301 })));
+      jar.appendChild(rc.rectangle(18, 0, 204, 26, R({ seed: 302 })));
+      { const tx = text(S.jarAmt, 120, 190, 80, "#fff", "lbl", "middle", jar); Object.entries({ stroke: INK, "stroke-width": 10, "paint-order": "stroke", "stroke-linejoin": "round" }).forEach(([k, v]) => tx.setAttribute(k, v)); }
+      drawOn(jar, S.t.jar, 0.8); pop(jarG, S.t.jar, 0.85);
+      const jarLbl = text(S.jarLbl, 1516, 930, 44, BLUE, "mono", "middle"); gsap.set(jarLbl, { opacity: 0, y: 14 }); tl.to(jarLbl, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, S.t.jarLbl);
+      // amounts inside the containers appear when the pieces land
+      [[sack, S.t.dropL + 0.45], [jar, S.t.dropR + 0.45]].forEach(([g, t]) => { const tx = g.querySelector("text"); gsap.set(tx, { opacity: 0 }); tl.to(tx, { opacity: 1, duration: 0.25 }, t); });
+
+      // ---- the pieces fly into the containers (arc via two tweens) and shrink in ----
+      tl.to(halfL, { x: 400, y: 380, rotation: -24, scale: 0.3, duration: 0.7, ease: "power2.in" }, S.t.dropL);
+      tl.to(halfL, { opacity: 0, duration: 0.12 }, S.t.dropL + 0.62);
+      tl.to(halfR, { x: 1290, y: 400, rotation: 20, scale: 0.3, duration: 0.7, ease: "power2.in" }, S.t.dropR);
+      tl.to(halfR, { opacity: 0, duration: 0.12 }, S.t.dropR + 0.62);
+      // landing squash
+      tl.to(sackG, { scaleY: 0.9, scaleX: 1.06, duration: 0.1, transformOrigin: "50% 100%" }, S.t.dropL + 0.66).to(sackG, { scaleY: 1, scaleX: 1, duration: 0.35, ease: "elastic.out(1.2,0.4)" });
+      tl.to(jarG, { scaleY: 0.92, scaleX: 1.05, duration: 0.1, transformOrigin: "50% 100%" }, S.t.dropR + 0.66).to(jarG, { scaleY: 1, scaleX: 1, duration: 0.35, ease: "elastic.out(1.2,0.4)" });
+
+      // ---- emphasis: a quick marker loop around the sack, then the source tag ----
+      const loop = rc.ellipse(480, 600, 560, 560, R({ stroke: RED, strokeWidth: 5, roughness: 2.2, seed: 401 }));
+      svg.appendChild(loop); drawOn(loop, S.t.loop, 0.5);
+      const tag = text(S.tag, 1860, 1056, 20, "#5b5e66", "mono", "end"); gsap.set(tag, { opacity: 0 }); tl.to(tag, { opacity: 1, duration: 0.4 }, 0.4);
+
+      // slow camera drift so the paper never sits still
+      tl.fromTo("#cam", { scale: 1.0, x: 0 }, { scale: 1.035, x: -18, duration: S.duration, ease: "sine.inOut" }, 0);
+      tl.fromTo("#paper", { x: 0 }, { x: -12, duration: S.duration, ease: "none" }, 0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["doodle"] = tl;
+    </script>
+  </body>
+</html>

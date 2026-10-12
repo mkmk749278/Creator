@@ -97,6 +97,11 @@ for (const project of projects) {
     mkdirSync(join(out, "wb"), { recursive: true });
     for (const f of ["wb.js", "wb-fonts.js", "wb.css"]) copyFileSync(join(root, "video/lib/whiteboard", f), join(out, "wb", f));
   }
+  // Rough.js (MIT): seeded hand-drawn SVG shapes for doodle scenes (video/lib/doodle).
+  if (html.includes("vendor/rough/")) {
+    mkdirSync(join(out, "rough"), { recursive: true });
+    copyFileSync(join(root, "node_modules/roughjs/bundled/rough.js"), join(out, "rough", "rough.js"));
+  }
   // Seeded organic motion: createNoise3D(seededRandom).
   if (html.includes("vendor/noise/")) {
     mkdirSync(join(out, "noise"), { recursive: true });
