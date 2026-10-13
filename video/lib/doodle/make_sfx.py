@@ -93,7 +93,7 @@ def tick():   # soft clock tick for counters
     return bp(noise(n), 2000, 6000) * env(n, 0.0005, 0.008)
 
 
-SOUNDS = {"buzz": (buzz, -11), "tick": (tick, -20), "pop": (pop, -9), "whoosh": (whoosh, -12), "scribble": (scribble, -15), "rip": (rip, -8),
+SOUNDS = {"buzz": (buzz, -11), "tick": (tick, -27), "pop": (pop, -9), "whoosh": (whoosh, -12), "scribble": (scribble, -15), "rip": (rip, -8),
           "thud": (thud, -7), "clink": (clink, -10), "squeak": (squeak, -14)}
 
 if __name__ == "__main__":

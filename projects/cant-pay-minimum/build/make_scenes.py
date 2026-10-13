@@ -39,7 +39,24 @@ def rel_item(it, t0, dur):
     return o
 
 
+CALM = {"ink": "#e6ebf1", "red": "#e59a8c", "green": "#86c9a8", "blue": "#93b8de", "amber": "#e3bd73", "paper": "#f4f1ea",
+        "dim": "#9ba8b6", "yel": "#7a6430", "note": "#f3e7bf", "paperInk": "#2a3440", "paperDim": "#6b7480", "paperEdge": "#c9b98d"}
+# owner, 2026-10-13: dark, calm colours (light ink on deep navy); notes and calendars stay paper with dark text
+BG = "navy"   # navy | charcoal | slate (scene_calm.html)
+# Sound (owner, 2026-10-13): no entry sounds (pop, whoosh, rip, scribble); only a few soft ticks, never over the voice.
+QUIET = {"tick"}
+
+
 def page_sfx(items):
+    """Only stamps get a soft tick; every other item enters silently."""
+    out = []
+    for it in items:
+        if (it.get("in") or it.get("in_")) == "stamp" and (not out or it["at"] - out[-1][0] > 1.5):
+            out.append([it["at"], "tick"])
+    return out
+
+
+def _old_page_sfx(items):
     cues = []
     for it in items:
         how = it.get("in") or ("draw" if it["kind"] in DRAWN else "pop")
@@ -96,8 +113,8 @@ def build(sid, d):
                 it["until"] = it.get("exit", dur)
         imgs = {it["src"][4:-4] for it in items if it["kind"] == "photo"}
         scene = dict(duration=dur, tag=d.get("tag", ""), kicker=d.get("kicker", ""), items=items,
-                     sfx=page_sfx(items) + [[r(t), s] for t, s in d.get("sfx", [])], cam=d.get("cam") or page_cam(items, dur))
-        tpl = ROOT / "video/lib/doodle/scene.html"
+                     sfx=sorted(page_sfx(items) + [[r(t), s] for t, s in d.get("sfx", []) if s in QUIET]), cam=d.get("cam") or page_cam(items, dur), palette=CALM, bg=BG)
+        tpl = ROOT / "video/lib/doodle/scene_calm.html"
     else:
         layers = [dict(L, src=f"img/{L['src']}.png", at=r(L.get("at", t0)), **({"out": r(L["out"])} if "out" in L else {})) for L in d["layers"]]
         imgs = {L["src"] for L in d["layers"]}
@@ -105,7 +122,7 @@ def build(sid, d):
                      cam=[[r(k[0]), *k[1:]] for k in d.get("cam", [])], shake=[[r(t), dd, a] for t, dd, a in d.get("shake", [])],
                      lower=[dict(x, at=r(x["at"]), **({"out": r(x["out"])} if x.get("out") is not None else {})) for x in d.get("lower", [])],
                      chips=[dict(x, at=r(x["at"]), **({"out": r(x["out"])} if x.get("out") is not None else {})) for x in d.get("chips", [])],
-                     sfx=sorted([r(t), s] for t, s in d.get("sfx", [])))
+                     sfx=sorted([r(t), s] for t, s in d.get("sfx", []) if s in QUIET))
         tpl = ROOT / "video/lib/plates/scene.html"
     for name in imgs:   # copy (not link: renders must not depend on the cache path)
         src, dst = props_lib.OUT / f"{name}.png", f / "img" / f"{name}.png"

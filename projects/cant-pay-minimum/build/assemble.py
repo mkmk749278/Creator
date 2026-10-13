@@ -178,7 +178,7 @@ def overlays(W, H, label="", tag=""):
     if label:
         fs = int(40 * k); pad = int(24 * k); h = int(72 * k); x0, y0 = int(84 * k), int(918 * k)
         w = int(text_w(label, LFONT, fs)) + 2 * pad
-        f.append(f"drawbox=x={x0}:y={y0}:w={int(8 * k)}:h={h}:color=0xF6C453@1:t=fill")
+        f.append(f"drawbox=x={x0}:y={y0}:w={int(8 * k)}:h={h}:color=0xE8C98A@1:t=fill")
         f.append(f"drawbox=x={x0 + int(8 * k)}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.72:t=fill")
         f.append(f"drawtext=fontfile={LFONT}:expansion=none:text='{esc(label)}':x={x0 + int(8 * k) + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white")
     if tag:
@@ -321,7 +321,7 @@ def sfx_bus(shots, out):
         bus[at: at + len(seg)] += seg[: len(bus) - at]
     sys.path.insert(0, str(ROOT / "video/lib/doodle"))
     import make_sfx   # the low impact after each reveal's silence (charter: braam/thud at -6 to -8 dB)
-    th = make_sfx.thud(); th = th / (np.max(np.abs(th)) + 1e-9) * 10 ** (-7 / 20)
+    th = make_sfx.thud(); th = th / (np.max(np.abs(th)) + 1e-9) * 10 ** (-14 / 20)
     for r in REVEALS:
         at = int((r - 0.02) * sr); bus[at: at + len(th)] += np.stack([th, th], 1)[: len(bus) - at]
     write_wav(out, bus)

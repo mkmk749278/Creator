@@ -50,7 +50,7 @@ window.SCENE = {
    "x": 760,
    "y": 180,
    "text": "ARREST? NOT FOR BEING UNABLE TO PAY",
-   "color": "#1f9d6b",
+   "color": "#86c9a8",
    "rot": -2
   },
   {
@@ -58,7 +58,7 @@ window.SCENE = {
    "x": 760,
    "y": 300,
    "text": "SALARY? SAME BANK, UP TO WHAT YOU OWE",
-   "color": "#e09f1f",
+   "color": "#e3bd73",
    "rot": -1
   },
   {
@@ -66,7 +66,7 @@ window.SCENE = {
    "x": 760,
    "y": 420,
    "text": "HOME VISIT? DEPENDS: AMOUNT, PLACE",
-   "color": "#2563eb",
+   "color": "#93b8de",
    "rot": -2
   }
  ],

@@ -45,14 +45,9 @@ window.SCENE = {
    "x": 620,
    "y": 430,
    "text": "NOT A CRIME BY ITSELF",
-   "color": "#1f9d6b",
+   "color": "#86c9a8",
    "rot": -3
   }
  ],
- "sfx": [
-  [
-   2.7,
-   "thud"
-  ]
- ]
+ "sfx": []
 };

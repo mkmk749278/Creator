@@ -203,72 +203,7 @@ window.SCENE = {
    "at": 48.1
   }
  ],
- "sfx": [
-  [
-   0.0,
-   "pop"
-  ],
-  [
-   2.07,
-   "pop"
-  ],
-  [
-   2.88,
-   "whoosh"
-  ],
-  [
-   5.75,
-   "rip"
-  ],
-  [
-   5.95,
-   "scribble"
-  ],
-  [
-   8.91,
-   "scribble"
-  ],
-  [
-   13.16,
-   "pop"
-  ],
-  [
-   34.1,
-   "whoosh"
-  ],
-  [
-   34.25,
-   "pop"
-  ],
-  [
-   35.55,
-   "pop"
-  ],
-  [
-   36.83,
-   "pop"
-  ],
-  [
-   37.81,
-   "pop"
-  ],
-  [
-   38.64,
-   "pop"
-  ],
-  [
-   40.5,
-   "pop"
-  ],
-  [
-   44.33,
-   "pop"
-  ],
-  [
-   48.1,
-   "pop"
-  ]
- ],
+ "sfx": [],
  "cam": [
   [
    0,
@@ -319,5 +254,20 @@ window.SCENE = {
    -2.4,
    15.61
   ]
- ]
+ ],
+ "palette": {
+  "ink": "#e6ebf1",
+  "red": "#e59a8c",
+  "green": "#86c9a8",
+  "blue": "#93b8de",
+  "amber": "#e3bd73",
+  "paper": "#f4f1ea",
+  "dim": "#9ba8b6",
+  "yel": "#7a6430",
+  "note": "#f3e7bf",
+  "paperInk": "#2a3440",
+  "paperDim": "#6b7480",
+  "paperEdge": "#c9b98d"
+ },
+ "bg": "navy"
 };

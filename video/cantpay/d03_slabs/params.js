@@ -146,7 +146,7 @@ window.SCENE = {
    "x": 1180,
    "y": 250,
    "text": "CALLS AND SMS",
-   "color": "#2563eb"
+   "color": "#93b8de"
   },
   {
    "at": 7.0,
@@ -154,7 +154,7 @@ window.SCENE = {
    "x": 1180,
    "y": 368,
    "text": "CARD BLOCKED",
-   "color": "#d62839"
+   "color": "#e59a8c"
   },
   {
    "at": 8.79,
@@ -162,7 +162,7 @@ window.SCENE = {
    "x": 1180,
    "y": 486,
    "text": "CIBIL MARK FOR YEARS",
-   "color": "#d62839"
+   "color": "#e59a8c"
   },
   {
    "at": 11.24,
@@ -170,7 +170,7 @@ window.SCENE = {
    "x": 1180,
    "y": 604,
    "text": "COURT: UNLIKELY",
-   "color": "#1f9d6b"
+   "color": "#86c9a8"
   },
   {
    "at": 19.09,
@@ -178,7 +178,7 @@ window.SCENE = {
    "x": 1180,
    "y": 250,
    "text": "CALLS, THEN AN AGENCY",
-   "color": "#2563eb"
+   "color": "#93b8de"
   },
   {
    "at": 19.64,
@@ -186,7 +186,7 @@ window.SCENE = {
    "x": 1180,
    "y": 368,
    "text": "VISIT IF IN THEIR CITY",
-   "color": "#e09f1f"
+   "color": "#e3bd73"
   },
   {
    "at": 22.04,
@@ -194,7 +194,7 @@ window.SCENE = {
    "x": 1180,
    "y": 486,
    "text": "LOK ADALAT NOTICES",
-   "color": "#d62839"
+   "color": "#e59a8c"
   },
   {
    "at": 27.59,
@@ -202,7 +202,7 @@ window.SCENE = {
    "x": 1180,
    "y": 250,
    "text": "FIELD VISITS",
-   "color": "#e09f1f"
+   "color": "#e3bd73"
   },
   {
    "at": 29.09,
@@ -210,7 +210,7 @@ window.SCENE = {
    "x": 1180,
    "y": 368,
    "text": "TRACING IF YOU MOVED",
-   "color": "#d62839"
+   "color": "#e59a8c"
   },
   {
    "at": 30.59,
@@ -218,7 +218,7 @@ window.SCENE = {
    "x": 1180,
    "y": 486,
    "text": "LEGAL NOTICES",
-   "color": "#d62839"
+   "color": "#e59a8c"
   },
   {
    "at": 32.69,
@@ -226,7 +226,7 @@ window.SCENE = {
    "x": 1180,
    "y": 250,
    "text": "COURT CASE: WORTH IT",
-   "color": "#d62839"
+   "color": "#e59a8c"
   },
   {
    "at": 34.59,
@@ -234,25 +234,8 @@ window.SCENE = {
    "x": 1180,
    "y": 368,
    "text": "ACT FROM DAY ONE",
-   "color": "#1f9d6b"
+   "color": "#86c9a8"
   }
  ],
- "sfx": [
-  [
-   5.31,
-   "whoosh"
-  ],
-  [
-   16.94,
-   "whoosh"
-  ],
-  [
-   25.26,
-   "whoosh"
-  ],
-  [
-   31.59,
-   "whoosh"
-  ]
- ]
+ "sfx": []
 };

@@ -14,26 +14,36 @@
       @font-face { font-family: "Bricolage"; font-weight: 800; src: url("vendor/fonts/bricolage-grotesque-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+20B9, U+2212, U+0100-024F; }
       @font-face { font-family: "Mono"; font-weight: 700; src: url("vendor/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); }
       @font-face { font-family: "Mono"; font-weight: 700; src: url("vendor/fonts/inter-tight-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+20B9; }
-      html, body { margin: 0; background: #f3efe6; }
-      #root { position: relative; overflow: hidden; width: 1920px; height: 1080px; background: #f6f2ea; }
-      #paper { position: absolute; inset: -40px; background: url("vendor/doodle/paper.jpg") center / cover; }
+      html, body { margin: 0; background: #0e1a2b; }
+      #root { position: relative; overflow: hidden; width: 1920px; height: 1080px; background: #0e1a2b; }
+      /* dark calm surface (owner, 2026-10-13: "darker side, dark blue or gray"): tone set by body[data-bg] */
+      :root { --a: #0e1a2b; --b: #16273d; --c: #1d3047; --g1: rgba(88,128,168,.35); --g2: rgba(70,110,120,.30); }
+      body[data-bg="charcoal"] { --a: #15171b; --b: #1e2126; --c: #262a30; --g1: rgba(140,150,165,.20); --g2: rgba(110,125,135,.18); }
+      body[data-bg="slate"] { --a: #17212b; --b: #1f2c38; --c: #283847; --g1: rgba(120,150,175,.28); --g2: rgba(95,130,140,.24); }
+      #bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--a) 0%, var(--b) 55%, var(--c) 100%); }
+      .glow { position: absolute; border-radius: 50%; filter: blur(100px); }
+      #g1 { left: -12%; top: -22%; width: 70%; height: 80%; background: radial-gradient(closest-side, var(--g1), transparent); }
+      #g2 { right: -14%; bottom: -26%; width: 72%; height: 82%; background: radial-gradient(closest-side, var(--g2), transparent); }
+      #paper { position: absolute; inset: -40px; background: url("vendor/doodle/paper.jpg") center / cover; mix-blend-mode: soft-light; opacity: .18; }
       #cam { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 50% 50%; }
       svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
       .lbl { font-family: "Bricolage", sans-serif; font-weight: 800; letter-spacing: -0.02em; }
       .mono { font-family: "Mono", monospace; font-weight: 700; letter-spacing: .08em; }
-      .vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(60,40,20,.22) 100%); pointer-events: none; }
-      #tag { position: absolute; right: 60px; bottom: 40px; font: 700 19px/1 "Mono", monospace; letter-spacing: .1em; color: #4b4f58; background: rgba(251,248,241,.85); padding: 8px 12px; border-radius: 6px; }
-      #kick { position: absolute; left: 60px; top: 46px; font: 700 22px/1 "Mono", monospace; letter-spacing: .12em; color: #d62839; }
+      .vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 45% 40%, rgba(0,0,0,0) 55%, rgba(0,0,0,.38) 100%); pointer-events: none; }
+      #tag { position: absolute; right: 60px; bottom: 40px; font: 700 19px/1 "Mono", monospace; letter-spacing: .1em; color: rgba(230,236,242,.85); background: rgba(8,14,22,.55); padding: 8px 12px; border-radius: 6px; }
+      #kick { position: absolute; left: 60px; top: 46px; font: 700 22px/1 "Mono", monospace; letter-spacing: .12em; color: #e3a08f; }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="doodle" data-start="0" data-width="1920" data-height="1080" data-duration="13.27">
+      <div id="bg"></div><div class="glow" id="g1"></div><div class="glow" id="g2"></div>
       <div id="paper"></div>
       <div id="cam"><svg id="s" viewBox="0 0 1920 1080"></svg></div>
       <div class="vig"></div>
       <div id="kick"></div>
       <div id="tag"></div>
     </div>
+    <script>document.body.dataset.bg = (window.SCENE && window.SCENE.bg) || "navy";</script>
     <script>window.__timelines = window.__timelines || {}; window.__timelines["doodle"] = Doodle.run(window.SCENE, "doodle");</script>
   </body>
 </html>

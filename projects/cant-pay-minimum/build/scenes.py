@@ -311,8 +311,8 @@ SCENES["p10_agency"] = dict(kind="page", start=L("C034")[0] - 0.25, end=L("C037"
 hx, hy = CITY["Hyderabad"]; vx, vy = CITY["village"]
 six = [("Hyderabad", "Hyderabad"), ("Warangal", "Warangal"), ("Karimnagar", "Karimnagar"), ("Vizag", "Vizag"), ("Vijayawada", "Vijayawada"), ("Tirupati", "Tirupati")]
 SCENES["p11_map"] = dict(kind="page", start=L("C037")[0] - 0.25, end=L("C041")[0] - 0.2, kicker="WHERE YOU LIVE", tag="ONECARD | REPAYMENT AGENCIES LIST", items=[
-    dict(kind="path", d=MAP["states"]["Telangana"], fill="#cfd6e4", label="TELANGANA", lx=1270, ly=240, at=L("C037")[0] - 0.2, dur=1.2),
-    dict(kind="path", d=MAP["states"]["Andhra Pradesh"], fill="#e9dcc3", label="ANDHRA PRADESH", lx=1530, ly=660, at=L("C037")[0] + 0.3, dur=1.4),
+    dict(kind="path", d=MAP["states"]["Telangana"], fill="#c9dad6", label="TELANGANA", lx=1270, ly=240, at=L("C037")[0] - 0.2, dur=1.2),
+    dict(kind="path", d=MAP["states"]["Andhra Pradesh"], fill="#efe2c9", label="ANDHRA PRADESH", lx=1530, ly=660, at=L("C037")[0] + 0.3, dur=1.4),
     dict(kind="pin", x=round(hx), y=round(hy), color="blue", at=P("C037", "old room")),
     dict(kind="label", x=round(hx - 40), y=round(hy - 30), text="CARD ADDRESS", size=30, mono=True, anchor="end", color="blue", at=P("C037", "old room") + 0.1),
     dict(kind="house", x=round(vx - 75), y=round(vy - 150), s=0.5, text="FAMILY · VILLAGE", at=P("C037", "village")),
@@ -395,12 +395,12 @@ SCENES["d03_slabs"] = dict(kind="desk", start=L("C047")[0] - 0.25, end=L("C052")
    lower=[dict(at=L("C047")[0], out=s0 - 0.3, k="MY PRACTICAL READING", t="Slab by slab"),
           dict(at=s0, out=s1 - 0.3, k="SLAB 1", t="Around ₹10,000"), dict(at=s1, out=s2 - 0.3, k="SLAB 2", t="₹50,000 to ₹1 lakh"),
           dict(at=s2, out=s3 - 0.3, k="SLAB 3", t="₹2 to ₹5 lakh"), dict(at=s3, k="SLAB 4", t="₹10 lakh and above")],
-   chips=[*chips("C048", [("Calls and", "CALLS AND SMS", "#2563eb"), ("a blocked", "CARD BLOCKED", "#d62839"), ("bad mark", "CIBIL MARK FOR YEARS", "#d62839"),
-                          ("court case is unlikely", "COURT: UNLIKELY", "#1f9d6b")], out=s1 - 0.3),
-          *chips("C049", [("then an agency", "CALLS, THEN AN AGENCY", "#2563eb"), ("maybe a visit", "VISIT IF IN THEIR CITY", "#e09f1f"),
-                          ("settlement", "LOK ADALAT NOTICES", "#d62839")], out=s2 - 0.3),
-          *chips("C050", [("field visits", "FIELD VISITS", "#e09f1f"), ("tracing", "TRACING IF YOU MOVED", "#d62839"), ("legal notices", "LEGAL NOTICES", "#d62839")], out=s3 - 0.3),
-          *chips("C051", [("court case", "COURT CASE: WORTH IT", "#d62839"), ("Take it seriously", "ACT FROM DAY ONE", "#1f9d6b")])],
+   chips=[*chips("C048", [("Calls and", "CALLS AND SMS", "#93b8de"), ("a blocked", "CARD BLOCKED", "#e59a8c"), ("bad mark", "CIBIL MARK FOR YEARS", "#e59a8c"),
+                          ("court case is unlikely", "COURT: UNLIKELY", "#86c9a8")], out=s1 - 0.3),
+          *chips("C049", [("then an agency", "CALLS, THEN AN AGENCY", "#93b8de"), ("maybe a visit", "VISIT IF IN THEIR CITY", "#e3bd73"),
+                          ("settlement", "LOK ADALAT NOTICES", "#e59a8c")], out=s2 - 0.3),
+          *chips("C050", [("field visits", "FIELD VISITS", "#e3bd73"), ("tracing", "TRACING IF YOU MOVED", "#e59a8c"), ("legal notices", "LEGAL NOTICES", "#e59a8c")], out=s3 - 0.3),
+          *chips("C051", [("court case", "COURT CASE: WORTH IT", "#e59a8c"), ("Take it seriously", "ACT FROM DAY ONE", "#86c9a8")])],
    sfx=[[t, "whoosh"] for t in (s0 - 0.3, s1 - 0.3, s2 - 0.3, s3 - 0.3)])
 
 # C052 Remember, these slabs are about what you owe to one bank. Other banks don't add it up. They only see it on your CIBIL.
@@ -497,7 +497,7 @@ SCENES["p16_chain"] = dict(kind="page", start=L("C061")[0] - 0.25, end=L("C063")
 # C065 The Supreme Court has said ...                                   (assemble.py: SC 2019 and 2025 proofs)
 SCENES["d04_truth"] = dict(kind="desk", start=L("C064")[0] - 0.25, end=L("C065")[0] + 2.5, tag="SUPREME COURT | 2019 · 2025", layers=[dict(src="deskA_off", at=0)],
     cam=[[0, 1.12, 0, 0], *push(0.0, 5.5, 1.0, (960, 540), s0=1.12)],
-    chips=[dict(at=P("C064", "not a crime"), x=620, y=430, text="NOT A CRIME BY ITSELF", color="#1f9d6b", rot=-3)],
+    chips=[dict(at=P("C064", "not a crime"), x=620, y=430, text="NOT A CRIME BY ITSELF", color="#86c9a8", rot=-3)],
     lower=[dict(at=P("C064", "Here is the truth"), k="THE TRUTH", t="Not being able to pay")], sfx=[[P("C064", "not a crime"), "thud"]])
 
 # C066 But a few things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.
@@ -659,7 +659,7 @@ SCENES["p24_step5"] = dict(kind="page", start=L("C079")[0] - 0.25, end=L("C081")
 # C082 The fear is real. But fear is also their tool. Knowledge is yours.
 SCENES["d05_recap"] = dict(kind="desk", start=L("C081")[0] - 0.25, end=L("C083")[0] - 0.2, tag="", layers=[dict(src="deskA_sms2", at=0), dict(src="deskA_off", at=L("C082")[0], fade=1.2)],
     cam=[[0, 1.0, 0, 0], *push(0.0, L("C083")[0] - L("C081")[0] + 0.25, 1.08, (760, 560))],
-    chips=[dict(at=P("C081", "Not just for"), x=760, y=180, text="ARREST? NOT FOR BEING UNABLE TO PAY", color="#1f9d6b", rot=-2),
-           dict(at=P("C081", "Without a court"), x=760, y=300, text="SALARY? SAME BANK, UP TO WHAT YOU OWE", color="#e09f1f", rot=-1),
-           dict(at=P("C081", "That depends"), x=760, y=420, text="HOME VISIT? DEPENDS: AMOUNT, PLACE", color="#2563eb", rot=-2)],
+    chips=[dict(at=P("C081", "Not just for"), x=760, y=180, text="ARREST? NOT FOR BEING UNABLE TO PAY", color="#86c9a8", rot=-2),
+           dict(at=P("C081", "Without a court"), x=760, y=300, text="SALARY? SAME BANK, UP TO WHAT YOU OWE", color="#e3bd73", rot=-1),
+           dict(at=P("C081", "That depends"), x=760, y=420, text="HOME VISIT? DEPENDS: AMOUNT, PLACE", color="#93b8de", rot=-2)],
     lower=[dict(at=P("C082", "Knowledge is yours"), k="BE PRACTICAL WITH KISHORE", t="Knowledge is yours")])

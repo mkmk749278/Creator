@@ -40,9 +40,9 @@
       },
       sticky(g, it) {  // numbered sticky note
         const w = it.w || 300, h = it.h || 220;
-        add(g, rc.rectangle(0, 0, w, h, R({ fill: C.note, fillStyle: "solid", strokeWidth: 2.4 })));
+        add(g, rc.rectangle(0, 0, w, h, R({ fill: C.note, fillStyle: "solid", strokeWidth: 2.4, stroke: C.paperEdge || C.ink })));
         text(g, String(it.n), 24, 84, 76, it.color || "green");
-        (it.lines || []).forEach((s, i) => text(g, s, 24, 136 + i * 40, 34, "ink"));
+        (it.lines || []).forEach((s, i) => text(g, s, 24, 136 + i * 40, 34, C.paperInk || "ink"));
       },
       badge(g, it) {   // tick or cross in a circle, label to the right
         const ok = it.ok !== false, c = ok ? C.green : C.red;
@@ -98,7 +98,7 @@
         if (it.band) { const bg = el("g", { class: "band" }, g);   // one strip per week row, so a long span covers the month
           for (let d = it.band.from; d <= it.band.to; d++) { const [x, y] = pos(d);
             el("rect", { x: x - 8, y: y - 40, width: cw - 2, height: 54, rx: 8, fill: col(it.band.color || "green"), opacity: 0.32 }, bg); } }
-        for (let d = 1; d <= (it.days || 30); d++) { const [x, y] = pos(d); text(g, String(d), x, y, 30, "dim", { mono: true }); }
+        for (let d = 1; d <= (it.days || 30); d++) { const [x, y] = pos(d); text(g, String(d), x, y, 30, C.paperDim || "dim", { mono: true }); }
         (it.marks || []).forEach((m) => { const [x, y] = pos(m.day);
           add(g, rc.circle(x + 20, y - 12, 68, R({ stroke: col(m.color || "red"), strokeWidth: 4 })));
           if (m.text) { text(g, m.text, x + 20, h + 46, 38, m.color || "red", { anchor: "middle", mono: true });
@@ -298,7 +298,7 @@
     run(S, id) {
       const svg = document.getElementById("s"), tl = gsap.timeline({ paused: true });
       tl.to({}, { duration: S.duration }, 0);
-      DUR = S.duration; const kit = Kit(svg, tl);
+      DUR = S.duration; if (S.palette) Object.assign(C, S.palette); const kit = Kit(svg, tl);
       seed = 11;
       (S.items || []).forEach((it) => kit.place(it));
       const tag = document.getElementById("tag"); if (S.tag) tag.textContent = S.tag; else tag.remove();
@@ -309,6 +309,9 @@
         S.cam.slice(1).forEach(([t, sc, x, y, d]) => tl.to("#cam", { scale: sc, x, y, duration: d || 0.01, ease: d > 0.5 ? "sine.inOut" : "none" }, t));
       } else tl.fromTo("#cam", { scale: 1.0, x: 0 }, { scale: 1.03, x: S.drift || -16, duration: S.duration, ease: "sine.inOut" }, 0);
       tl.fromTo("#paper", { x: 0 }, { x: -12, duration: S.duration, ease: "none" }, 0);
+      // calm template (scene_calm.html): soft light blobs drift slowly behind the page, f(t)
+      document.querySelectorAll(".glow").forEach((g, i) => tl.fromTo(g, { x: 0, y: 0 },
+        { x: (i ? -1 : 1) * 90, y: (i ? 1 : -1) * 50, duration: S.duration, ease: "sine.inOut" }, 0));
       return tl;
     },
   };
