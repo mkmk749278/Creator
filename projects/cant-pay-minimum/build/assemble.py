@@ -308,6 +308,11 @@ def sfx_bus(shots, out):
         off = int((x["t"] - scene_span(x["id"])[0]) * sr); n = int((nxt - x["t"]) * sr); at = int(x["t"] * sr)
         seg = a[max(0, off): max(0, off) + n]
         bus[at: at + len(seg)] += seg[: len(bus) - at]
+    sys.path.insert(0, str(ROOT / "video/lib/doodle"))
+    import make_sfx   # the low impact after each reveal's silence (charter: braam/thud at -6 to -8 dB)
+    th = make_sfx.thud(); th = th / (np.max(np.abs(th)) + 1e-9) * 10 ** (-7 / 20)
+    for r in REVEALS:
+        at = int((r - 0.02) * sr); bus[at: at + len(th)] += np.stack([th, th], 1)[: len(bus) - at]
     write_wav(out, bus)
 
 
