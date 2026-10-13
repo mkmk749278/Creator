@@ -198,7 +198,7 @@
       },
       pin(g, it) {
         add(g, rc.path("M 0 0 C -40 -40, -40 -100, 0 -100 C 40 -100, 40 -40, 0 0 Z", R({ fill: col(it.color || "red"), fillStyle: "solid" })));
-        if (it.text) { const w = it.text.length * 34 * 0.62 + 20;   // label on a paper chip to the right of the head
+        if (it.text) { const w = it.text.length * 34 * 0.69 + 26;   // label on a paper chip to the right of the head
           el("rect", { x: 40, y: -92, width: w, height: 46, rx: 8, fill: "#fbf8f1", stroke: col(it.color || "red"), "stroke-width": 2 }, g);
           text(g, it.text, 50, -58, 34, it.color || "red", { mono: true }); }
       },

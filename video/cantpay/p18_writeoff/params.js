@@ -103,10 +103,10 @@ window.SCENE = {
   {
    "kind": "arrow",
    "x": 1460,
-   "y": 820,
+   "y": 800,
    "to": [
     -430,
-    120
+    60
    ],
    "bend": -0.15,
    "color": "red",
@@ -115,9 +115,9 @@ window.SCENE = {
   {
    "kind": "box",
    "x": 600,
-   "y": 820,
+   "y": 760,
    "w": 420,
-   "h": 200,
+   "h": 180,
    "text": "RECOVERY CO.",
    "size": 44,
    "at": 19.97
@@ -125,7 +125,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 600,
-   "y": 1060,
+   "y": 1000,
    "text": "SOLD CHEAP · THEN THEY CALL YOU",
    "size": 30,
    "mono": true,
@@ -172,7 +172,7 @@ window.SCENE = {
    6.53,
    1.06,
    17.1,
-   -5.2,
+   -4.3,
    18.15
   ]
  ],
