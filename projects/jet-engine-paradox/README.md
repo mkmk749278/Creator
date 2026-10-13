@@ -10,11 +10,12 @@ Rolls-Royce's "200 degrees above melting point" and "a London bus on every blade
 for combat drones, DMRL's single-crystal blades, the AMCA's 120 kN engine with Safran still awaiting approval, and China's
 long road (Act 4 + verdict).
 
-**Status (2026-10-13): phase 1.** Script v1 written from the brief in the channel's simple Indian English (PLAYBOOK
-§4a-2): 90 lines, 2 voice blocks (4,264 / 4,076 characters), ≈ 9:50 of speech at the Bunty rate. The owner said runtime
-can vary from the brief's 10:30, so the length follows the story. Writer's `claims.csv` (47 rows) logged; independent
-fact-check running. Every change from the brief, with its reason: `brief/changes-from-brief.md`. Next: fact-check fixes,
-then the owner records or approves TTS of the two blocks (`voice/block1.mp3`, `voice/block2.mp3`).
+**Status (2026-10-13): phase 1 done.** Script v2: 90 lines, 2 voice blocks (4,307 / 4,177 characters), ≈ 10:05 of speech
+at the Bunty rate; the owner said runtime can vary from the brief's 10:30, so the length follows the story. Fact-check
+gate passes (66 claims: 63 confirmed, 2 disputed with the other figures for the description, 1 narrator's framing;
+`fact-check.md`). Every change from the brief, with its reason: `brief/changes-from-brief.md`. Next: the owner picks the
+"Akash" voice and records or approves TTS of the two blocks (`voice/block1.mp3`, `voice/block2.mp3`); re-check the
+fast-moving lines (J006, J017, J082, J073–J074, J011) right before render.
 
 ## Genre and look (PLAYBOOK §5.3, own art direction)
 **Tech × geopolitics** (the "tech" row, re-coloured with the owner's palette). Art direction **"The Hot Section"**: a

@@ -860,6 +860,16 @@ board vs real-footage balance, loudness) and refine once more.
 
 ## 15. Lessons log
 
+**Jet Engine Paradox (English, script phase, 2026-10-13).** The owner's brief came as a finished script from another
+AI tool. Of its ~40 facts, about 20 were wrong, out of date or unsourced. Some examples: "only four nations" (the brief's own Act 4
+names China), superalloys melting at 1,455 °C (that is pure nickel), "an elephant hanging from a soup spoon", AMCA engine
+110 kN (it is 120), jets that "cannot fly" (they fly; delivery is what's missing), and NavIC as a working system (only 3 of
+4 satellites). *Why it matters:* treat any pasted script as a draft brief. Research every line before the VO exists.
+Prefer the maker's own sourced comparison (Rolls-Royce: gas 200 °C above the alloy's melting point, a London bus per
+blade) over invented ones. Keep `brief/changes-from-brief.md` so the owner sees each change and its reason. Tavily
+rate-limits parallel calls (429): call it one at a time and fall back to WebSearch. The Commons search API timed out in
+a loop of 8 queries, so fetch exact `--titles` instead.
+
 **Minimum Amount Due (English, 8:05, 2026-10-11, v1 → v2).** The per-shot review of v1 found:
 - **Proofs unreadable:** 1080p screenshots at a 1.1–1.8× zoom left the highlighted line about 10 px tall on a phone.
   Fix: re-shoot at 2×, establish wide for about 2 s, push in to 1.6–2.5× on the saved highlight box, then pan along the row.

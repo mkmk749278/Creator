@@ -30,3 +30,18 @@ the sources say otherwise or could not support them. Sources are in `../claims.c
 | China "poured over forty billion dollars" | "Decades, and many failures" | No source for $40 bn. |
 | "Software architects write code for supercomputers" | Dropped | Vague; no clear claim to source. |
 | No channel intro | "Welcome to Be Practical with Kishore" after the 30-second hook | Channel rule: logo sting when the channel is named. |
+
+## Fact-check round (independent checker, 2026-10-13)
+| Line | Change | Why |
+|---|---|---|
+| J003 | NavIC replaced by **Mars on the first try** (2014) | NavIC can't give standalone positioning now: only 3 of 4 needed satellites work (Lok Sabha reply, Jul 2026). |
+| J009 | "the hardest machine" → "**one of** the hardest machines" | Superlative with no source. |
+| J017 | **14 of 99** engines sent; **close to thirty (29)** jets built | GE and HAL figures as of 7–10 Oct 2026. |
+| J026–J027 | Nine nuclear states, about ten launch states; "the main ones are" the five makers | "Many" overstated the gap; Ukraine also builds engines. |
+| J029 | 1986 = engineers **began planning**; sanction 1989 | 1986 was a study and a proposal (CAG). |
+| J033 | Dropped "India's heat and dust" | No reliable source. |
+| J037 | "**As reported**, about seventy" kN | Reports range from 65 to 78 kN. |
+| J055, J067, J086 | The **gas** is hotter than the metal's melting point | The metal itself is cooled below it. |
+| J070 | "for decades, no engine maker **shared it with India**" | "Nobody sells it" clashed with the Safran and Rolls-Royce offers. |
+| J083 | J-20 "used Russian engines **at first**" | The first-flight engine was never confirmed. |
+| J005, J034, J047, J085, J088 | Small precision edits (almost ready; almost from scratch; minutes, not hours; Dry Kaveri heading for certification) | Checker's optional suggestions, adopted. |

@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **9:54** of speech (8,340 characters, 2 Bunty blocks), plus pauses and music beats.
+Estimated length: **10:05** of speech (8,484 characters, 2 Bunty blocks), plus pauses and music beats.
 
 ## 0 Hook
 
@@ -21,10 +21,10 @@ __
 🔊 Low sub-bass swell
 
 **J003** · block 1  
-**India builds its own nuclear submarines. It runs its own satellite navigation system.**  
+**India builds its own nuclear submarines. It reached Mars on its very first try.**  
 __  
-🎬 REAL: INS Arihant at sea (Indian Navy / Commons); cut to NavIC satellite animation over India (ISRO).  
-🔤 NUCLEAR SUBMARINE · INS ARIHANT · NAVIC  
+🎬 REAL: INS Arihant at sea (Indian Navy / Commons); cut to ISRO Mars Orbiter Mission imagery (MOM image of Mars, ISRO).  
+🔤 NUCLEAR SUBMARINE · INS ARIHANT · MARS ORBITER 2014  
 ⏱ Montage, 3 s per shot
 
 **J004** · block 1  
@@ -36,7 +36,7 @@ __
 ⏱ Music out for 1.5 s before 'waiting'
 
 **J005** · block 1  
-**Painted. Radars fitted. Ready on paper.**  
+**Painted. Radars fitted. Almost ready.**  
 __  
 🎬 Three macro cuts: grey paint, radome, cockpit canopy (HAL / Aero India photos, animated).  
 🔊 Three metallic ticks
@@ -52,7 +52,7 @@ __
 **The biggest reason? They are waiting for an engine. An engine made in Lynn, Massachusetts, about thirteen thousand kilometres away.**  
 __  
 🎬 Kinetic globe (land only, no borders): an amber arc from Lynn, USA to Bengaluru; distance counter runs up.  
-🔤 LYNN, USA → BENGALURU · ~13,000 KM  
+🔤 LYNN, USA → BENGALURU · ~13,000 KM (OUR CALCULATION)  
 🔊 Whoosh along the arc
 
 **J008** · block 1  
@@ -64,7 +64,7 @@ __
 ⏱ Thumbnail promise by 0:30
 
 **J009** · block 1  
-**Welcome to Be Practical with Kishore. Today, the story of the hardest machine on Earth to build. Single crystal metal, broken promises, and a forty year fight to join one of the world's most closed clubs.**  
+**Welcome to Be Practical with Kishore. Today, the story of one of the hardest machines on Earth to build. Single crystal metal, broken promises, and a forty year fight to join one of the world's most closed clubs.**  
 __  
 🎬 Logo sting, then title card over a macro of a glowing turbine blade: THE JET ENGINE PARADOX.  
 🔤 THE JET ENGINE PARADOX  
@@ -119,10 +119,10 @@ __
 🔊 Paper rustle
 
 **J017** · block 1  
-**By October twenty twenty six, around ten engines had reached India. HAL says twenty seven airframes are built and waiting.**  
+**By October twenty twenty six, GE had sent only fourteen of the ninety nine engines. HAL says close to thirty jets are built and waiting.**  
 __  
-🎬 Counter pair: ENGINES RECEIVED ~10 vs AIRFRAMES BUILT 27; jets on the line pan.  
-🔤 ENGINES ~10 · AIRFRAMES 27
+🎬 Counter pair: ENGINES SENT 14 / 99 vs JETS BUILT 29; jets on the line pan.  
+🔤 ENGINES SENT: 14 OF 99 · JETS BUILT: 29
 
 **J018** · block 1  
 **Some testing work on radar and weapons is also still pending. But the engine has been the biggest hold up.**  
@@ -175,12 +175,12 @@ __
 ⏱ One-line verdict
 
 **J026** · block 1  
-**Many countries can build a nuclear bomb. Many can launch rockets into space.**  
+**Nine countries have nuclear bombs. About ten have put a satellite in space with their own rocket.**  
 __  
-🎬 Kinetic globe: dots light up for nuclear states, then for orbital launch states.
+🎬 Kinetic globe: 9 dots light up for nuclear-armed states, then about 10 for orbital launch states.
 
 **J027** · block 1  
-**But only a handful can design and build a modern fighter engine on their own. America, Russia, Britain, France. And, after decades of struggle, China.**  
+**But only a handful can design and build a modern fighter engine on their own. The main ones are America, Russia, Britain and France. And, after decades of struggle, China.**  
 __  
 🎬 Kinetic globe, land only: five countries glow amber one by one with their makers (GE · Pratt & Whitney · NPO Saturn · Rolls-Royce · Safran · Chinese state makers); India outlined, empty.  
 🔤 THE ENGINE CLUB  
@@ -195,10 +195,10 @@ __
 ## 2 The ghost of Kaveri
 
 **J029** · block 1  
-**In nineteen eighty six, India decided it would build its own fighter engine.**  
+**In nineteen eighty six, Indian engineers began planning their own fighter engine.**  
 __  
 🎬 Blueprint world: GTX-35VS Kaveri line drawing assembles stroke by stroke (ILLUSTRATION).  
-🔤 1986 · GTRE, BENGALURU  
+🔤 1986 · GTRE, BENGALURU · PROPOSAL  
 🔊 Pencil and drafting ambience  
 ⏱ Chapter 2 card
 
@@ -221,13 +221,13 @@ __
 🔤 TARGET: DEC 1996
 
 **J033** · block 1  
-**The goal was huge. An engine that gives eighty one kilonewtons of push with the afterburner on, and that works in India's heat and dust.**  
+**The goal was huge. An engine that gives eighty one kilonewtons of push with the afterburner on.**  
 __  
-🎬 ILLUSTRATION: thrust arrow grows to an 81 kN target line; sand and heat-shimmer particles hit the intake.  
+🎬 ILLUSTRATION: thrust arrow grows to an 81 kN target line.  
 🔤 TARGET THRUST 81 kN
 
 **J034** · block 1  
-**And India was building a brand new jet, the Tejas, at the same time. Both from zero. That doubled the risk.**  
+**And India was building a brand new jet, the Tejas, at the same time. Both almost from scratch. That doubled the risk.**  
 __  
 🎬 Split blueprint: Tejas airframe left, Kaveri engine right, both half-drawn and flickering.
 
@@ -245,10 +245,10 @@ __
 🔊 Heavy clunk
 
 **J037** · block 1  
-**It was meant to push eighty one kilonewtons. It reached only about seventy.**  
+**It was meant to push eighty one kilonewtons. As reported, it reached only about seventy.**  
 __  
-🎬 Thrust bar fills to 70.5 kN and stalls short of the 81 kN line.  
-🔤 81 kN TARGET · ~70.5 kN ACHIEVED
+🎬 Thrust bar fills to ~70 kN and stalls short of the 81 kN line.  
+🔤 81 kN TARGET · ~70 kN REPORTED
 
 **J038** · block 1  
 **And India had no facility to test a fighter engine in high altitude conditions.**  
@@ -311,7 +311,7 @@ __
 ⏱ Chapter 3 card
 
 **J047** · block 2  
-**A rocket engine fires for a few minutes. It carries its own oxygen. Then its job is done, and that stage falls away.**  
+**A rocket engine fires for minutes, not hours. It carries its own oxygen. Then its job is done, and that stage falls away.**  
 __  
 🎬 REAL: LVM3 launch and stage separation (ISRO footage).  
 🔤 ROCKET: MINUTES · USED ONCE
@@ -362,7 +362,7 @@ __
 🔊 Braam lands on 'melting point'
 
 **J055** · block 2  
-**Hotter than its own melting point. And still it does not melt. How?**  
+**The gas is hotter than the metal's melting point. And still the blade does not melt. How?**  
 __  
 🎬 Push into the glowing blade surface.
 
@@ -434,7 +434,7 @@ __
 🔤 PULL ON ONE BLADE ≈ A LONDON BUS
 
 **J067** · block 2  
-**Heat above melting point. A bus hanging from every blade. For thousands of hours.**  
+**Gas above the metal's melting point. A bus hanging from every blade. For thousands of hours.**  
 __  
 🎬 Fast triptych recap of the three images.  
 🔊 Three impacts
@@ -450,7 +450,7 @@ __
 🎬 REAL: precision casting and laser-drilling B-roll (industrial stock), engine test cell run.
 
 **J070** · block 2  
-**That knowledge is a closely guarded secret. Nobody sells it.**  
+**That knowledge is a closely guarded secret. For decades, no engine maker shared it with India.**  
 __  
 🎬 Close-up: a vault-like test cell door closes (stock).  
 🔊 Door thud
@@ -530,10 +530,10 @@ __
 🔤 AWAITING FINAL APPROVAL · OCT 2026
 
 **J083** · block 2  
-**China walked this same road. Its J twenty stealth fighter first flew on Russian engines. It took China decades, and many failures, to switch to engines of its own.**  
+**China walked this same road. Its J twenty stealth fighter used Russian engines at first. It took China decades, and many failures, to switch to engines of its own.**  
 __  
 🎬 REAL: J-20 photos (Commons); timeline AL-31F → WS-10C → WS-15.  
-🔤 J-20: AL-31F (RUSSIA) → WS-10C → WS-15
+🔤 J-20: RUSSIAN AL-31F → CHINESE WS-10C → WS-15
 
 ## 5 Verdict
 
@@ -544,12 +544,12 @@ __
 ⏱ Verdict
 
 **J085** · block 2  
-**Reaching the Moon needs you to master physics and rocket fuel for a few minutes.**  
+**Reaching the Moon needs rocket engines that work perfectly, but only for minutes at a time.**  
 __  
 🎬 Chandrayaan-3 descent replay, fast.
 
 **J086** · block 2  
-**A fighter engine needs you to master metal that survives above its melting point, spinning, for thousands of hours.**  
+**A fighter engine needs metal that lives in gas hotter than its own melting point, spinning, for thousands of hours.**  
 __  
 🎬 Blade glowing in the thermal look; rpm counter.
 
@@ -561,7 +561,7 @@ __
 🔊 Braam
 
 **J088** · block 2  
-**For forty years, India has been learning the hard way. Today, the Dry Kaveri is testing, the blade makers in Hyderabad are learning, and a new engine is on the drawing board.**  
+**For forty years, India has been learning the hard way. Today, the Dry Kaveri is heading for certification, the blade makers in Hyderabad are learning, and a new engine is on the drawing board.**  
 __  
 🎬 Montage: Dry Kaveri, DMRL blade, AMCA model; dawn light over a test cell.  
 🔊 Music swells
