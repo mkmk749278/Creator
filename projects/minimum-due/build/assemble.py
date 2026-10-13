@@ -274,7 +274,9 @@ def render(shot, dur, out, W, H):
     elif k in ("board", "scene"):
         base, folder = (BOARD_AT[shot["id"]], BD) if k == "board" else (scene_meta(shot["id"])[0], SC)
         off = shot.get("frm", shot["t"]) - base
-        vf = [f"scale={W}:{H}", "fps=30"] + overlays(W, H, lab, tag)
+        # hold the last frame if a window runs a few frames past the render's end (4K b05 is 0.11 s shorter than the
+        # window that uses it): a short shot would shift every later cut against the VO
+        vf = [f"scale={W}:{H}", "fps=30", "tpad=stop_mode=clone:stop_duration=2"] + overlays(W, H, lab, tag)
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(folder / (shot["id"] + ".mp4")), "-vf", ",".join(vf),
              "-t", f"{dur:.3f}"] + enc + [str(out)])
     elif k in ("still", "photo", "proof"):
