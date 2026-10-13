@@ -25,8 +25,20 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
 
 - **Kishore works only from an Android phone** (GitHub app, Termux, SSH to a VPS, the Claude app). No PC.
   *Why:* every step must run in a cloud session, GitHub Actions or the VPS, and every result must be viewable on a phone.
-- **Deliverables a phone can open:** a Gofile link for the MP4 (1080p ≈ 200–330 MB, 4K ≈ 1 GB), a contact sheet PNG/JPG,
-  the SRT and the YouTube description, sent with `SendUserFile` (30 MB cap per file). Report in plain words: what changed,
+- **Deliverables a phone can open:** a **Google Drive** link for the MP4 in the owner's `Creator` folder (1080p ≈ 200–330 MB,
+  4K ≈ 1 GB), a contact sheet PNG/JPG, the SRT and the YouTube description, sent with `SendUserFile` (30 MB cap per file).
+  **Google Drive replaces Gofile (owner, 2026-10-13).** *Why:* the owner already keeps a `Creator` folder there and opens it
+  in the Drive app on the phone; Gofile links expire and need a browser. How:
+  - Videos: `scripts/upload_gdrive.sh --sub <slug> FILE…` (pinned rclone, uploads to `Creator/<slug>/`, prints a view link).
+    The Google Drive connector can't carry video-sized files (content goes through the tool call), so the script needs
+    **`GDRIVE_RCLONE_TOKEN`**, a one-time setup on the phone: Termux → `pkg install rclone` → `rclone authorize "drive"`
+    → sign in with the Drive account that owns `Creator` in the browser that opens → copy the one-line JSON it prints →
+    Claude app → environment settings → Environment variables → `GDRIVE_RCLONE_TOKEN=<that line>`. New sessions pick it
+    up. Until it exists, deliver the MP4 with `scripts/upload_gofile.sh` and say so.
+  - Small text deliverables (description, SRT, `review.md`, `claims.csv`) can go up through the connector
+    (`create_file` with `parentId` = the Creator folder `1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M`, `disableConversionToGoogleType`).
+  - Owner footage and clips for a film: the owner drops them in `Creator/` (zips are fine); sessions read them with the
+    connector (`search_files` with `parentId`, `download_file_content`). Report in plain words: what changed,
   what is still a stand-in, any rights or Content ID risk.
 - **Git:** all work lands on `main`. *Why:* in Oct 2026 nine stale session branches hid finished work; one branch keeps
   everything findable. Parallel sessions (§3) each push to their own branch and folder, and the coordinator merges them
@@ -571,7 +583,8 @@ DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email 
 | Mixkit assets, Videvo, Mazwai (now Freepik) | 403 |
 | C-SPAN, British Pathé, NOAA photo library, Sonniss, Musopen | 403 |
 | PIB, Prasar Bharati archive, Films Division/NFDC, USGS, Cell Image Library, ESA/Hubble CDN | timeout / 502 / TLS errors |
-| Gofile (delivery) | **Works** in the owner's *Full Access* environment (2026-10-08); blocked only in restricted network policies |
+| Gofile (delivery) | Works in the *Full Access* environment, but **replaced by Google Drive** (owner, 2026-10-13; §1). Fallback only |
+| Google Drive API (`www.googleapis.com`) | **Reachable** (2026-10-13: 403 "unregistered caller" without a token, so the host is open); uploads need `GDRIVE_RCLONE_TOKEN` (§1) |
 | Piped / Invidious YouTube mirrors | Dead |
 | **Not allowed** even when reachable | Allen Institute (non-commercial, terms bar YouTube), JoVE and Science Photo Library (subscription/paid), **BBC Sound Effects** (RemArc: personal/educational only), AP Archive, Reuters, British Pathé (paid: ask first), anything NC or ND |
 
@@ -808,8 +821,8 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 - **Shell traps:** never `pkill -f <pattern>` in a command line that contains the pattern (it kills its own shell; use
   `[x]yz`). Never name a shell function after a command it calls (`cut(){ … | cut; }` forked ~1,500 shells and OOM-killed
   renders).
-- **Deliver:** `scripts/upload_gofile.sh` once `gofile.io` and `*.gofile.io` are allowlisted in the environment's network
-  settings; upload the master and a 720p copy. Commit sources, EDL, registry, transcripts, SRT and description; large
+- **Deliver:** `scripts/upload_gdrive.sh --sub <slug>` to the owner's Drive `Creator` folder (§1); upload the master and
+  a 720p copy. `scripts/upload_gofile.sh` only as a fallback while `GDRIVE_RCLONE_TOKEN` is missing. Commit sources, EDL, registry, transcripts, SRT and description; large
   footage stays out of git (`assets/video/*`, `assets/raw/`, `projects/*/assets/`, renders).
 
 ## 14. Pre-render review (every cut, before the final render)
@@ -1079,7 +1092,7 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 5. **Fix the media blocks at the source, legitimately:**
    - Add free **Pexels and Pixabay API keys** as environment secrets (free; both licences allow commercial YouTube use, and we
      credit anyway). Also Unsplash and Freesound keys, and a NARA key by email (§8.2).
-   - Allowlist `gofile.io` and `*.gofile.io` in the environment's network settings so videos can be delivered to the phone.
+   - ~~Allowlist Gofile~~ Deliver through Google Drive (owner, 2026-10-13): add `GDRIVE_RCLONE_TOKEN` (§1).
    - Use the **VPS** for YouTube (yt-dlp with a throwaway account's cookies) through the `Fetch video` workflow on the
      self-hosted runner, and extend it to take a list of URLs.
    - Ask the owner to drop must-have event footage in Google Drive; sessions can read it with the Drive connector.
