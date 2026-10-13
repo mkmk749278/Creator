@@ -535,9 +535,9 @@ SCENES["p18_writeoff"] = dict(kind="page", start=L("C068")[0] - 0.25, end=L("C07
     dict(kind="label", x=140, y=430, text="THE BANK'S BOOKS", size=72, at=P("C069", "own books")),
     dict(kind="label", x=140, y=540, text="NOT FORGIVEN", size=84, color="red", hl="yel", at=P("C069", "not forgiven")),
     dict(kind="label", x=140, y=680, text="YOU STILL OWE IT", size=56, at=P("C070", "still owe")),
-    dict(kind="arrow", x=1460, y=820, to=[-430, 120], bend=-0.15, color="red", at=P("C070", "are sold")),
-    dict(kind="box", x=600, y=820, w=420, h=200, text="RECOVERY CO.", size=44, at=P("C070", "recovery companies")),
-    dict(kind="label", x=600, y=1060, text="SOLD CHEAP · THEN THEY CALL YOU", size=30, mono=True, color="dim", at=P("C070", "small part")),
+    dict(kind="arrow", x=1460, y=800, to=[-430, 60], bend=-0.15, color="red", at=P("C070", "are sold")),
+    dict(kind="box", x=600, y=760, w=420, h=180, text="RECOVERY CO.", size=44, at=P("C070", "recovery companies")),
+    dict(kind="label", x=600, y=1000, text="SOLD CHEAP · THEN THEY CALL YOU", size=30, mono=True, color="dim", at=P("C070", "small part")),
 ])
 
 
