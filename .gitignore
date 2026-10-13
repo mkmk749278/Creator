@@ -53,3 +53,6 @@ video/**/work-*/
 video/minimumdue/*/render.mp4
 video/minimumdue/*/render.log
 .cache/
+video/jet-engine-paradox/A*/media/
+video/jet-engine-paradox/A*/render.log
+video/jet-engine-paradox/_libA/render_status.txt
