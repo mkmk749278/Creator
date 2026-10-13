@@ -60,3 +60,4 @@ video/jet-engine-paradox/A*/qa/
 # VO takes live in Google Drive (Creator/jet-engine-paradox/voice/), not git
 projects/jet-engine-paradox/voice/*.mp3
 video/jet-engine-paradox/_libA/links.txt
+projects/jet-engine-paradox/qa/
