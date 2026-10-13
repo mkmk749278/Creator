@@ -11,9 +11,10 @@ window.SCENE = {
    "y": 70,
    "w": 720,
    "h": 958,
-   "at": 0.05,
+   "at": 0.0,
    "in": "fade",
    "float": 0.6,
+   "opaque": true,
    "until": 2.6
   },
   {

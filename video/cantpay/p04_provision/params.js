@@ -11,48 +11,122 @@ window.SCENE = {
    "y": 190,
    "w": 520,
    "h": 692,
-   "at": 0.15,
+   "at": 0.0,
    "in": "drop",
    "float": 0.5,
-   "until": 14.7
+   "exit": 6.69,
+   "opaque": true,
+   "until": 6.69
+  },
+  {
+   "kind": "house",
+   "x": 1290,
+   "y": 250,
+   "s": 1.15,
+   "text": "YOUR BANK",
+   "at": 0.8,
+   "exit": 6.69
   },
   {
    "kind": "arrow",
    "x": 700,
-   "y": 560,
+   "y": 520,
    "to": [
-    300,
+    540,
     0
    ],
-   "bend": -0.15,
+   "bend": -0.12,
    "color": "red",
-   "at": 5.09
+   "at": 4.89,
+   "exit": 6.69
   },
   {
    "kind": "label",
-   "x": 1010,
-   "y": 470,
+   "x": 1460,
+   "y": 780,
    "text": "A LOSS FOR THE BANK",
-   "size": 58,
+   "size": 60,
+   "anchor": "middle",
    "color": "red",
-   "at": 5.56
+   "at": 5.56,
+   "exit": 6.69
+  },
+  {
+   "kind": "coins",
+   "x": 330,
+   "y": 700,
+   "n": 6,
+   "r": 70,
+   "color": "amber",
+   "in": "pop",
+   "at": 7.04
+  },
+  {
+   "kind": "coins",
+   "x": 520,
+   "y": 700,
+   "n": 6,
+   "r": 70,
+   "color": "amber",
+   "in": "pop",
+   "at": 7.14
+  },
+  {
+   "kind": "coins",
+   "x": 710,
+   "y": 700,
+   "n": 6,
+   "r": 70,
+   "color": "amber",
+   "in": "pop",
+   "at": 7.24
+  },
+  {
+   "kind": "coins",
+   "x": 900,
+   "y": 700,
+   "n": 6,
+   "r": 70,
+   "color": "amber",
+   "in": "pop",
+   "at": 7.34
+  },
+  {
+   "kind": "label",
+   "x": 615,
+   "y": 820,
+   "text": "WHAT YOU OWE",
+   "size": 34,
+   "mono": true,
+   "anchor": "middle",
+   "color": "dim",
+   "at": 7.24
+  },
+  {
+   "kind": "label",
+   "x": 1400,
+   "y": 420,
+   "text": "SET ASIDE FROM PROFIT",
+   "size": 40,
+   "mono": true,
+   "anchor": "middle",
+   "at": 7.47
   },
   {
    "kind": "box",
-   "x": 1080,
-   "y": 600,
-   "w": 520,
-   "h": 260,
-   "text": "BANK'S PROFIT",
-   "sub": "",
-   "at": 9.03,
+   "x": 1220,
+   "y": 470,
+   "w": 360,
+   "h": 250,
+   "text": " ",
+   "at": 7.47,
    "dur": 0.6
   },
   {
    "kind": "coins",
-   "x": 1210,
-   "y": 560,
-   "n": 4,
+   "x": 900,
+   "y": 700,
+   "n": 6,
    "r": 70,
    "color": "red",
    "text": "25%",
@@ -61,29 +135,28 @@ window.SCENE = {
    "at": 8.07,
    "moves": [
     {
-     "at": 9.43,
-     "x": 1340,
-     "y": 780,
-     "s": 0.9,
+     "at": 9.03,
+     "x": 1400,
+     "y": 690,
      "dur": 0.8
     }
    ]
   },
   {
    "kind": "label",
-   "x": 1010,
-   "y": 380,
-   "text": "SET ASIDE ≥ 25% OF WHAT YOU OWE",
-   "size": 40,
-   "mono": true,
-   "color": "ink",
-   "at": 7.47
+   "x": 1400,
+   "y": 820,
+   "text": "AT LEAST A QUARTER",
+   "size": 46,
+   "anchor": "middle",
+   "hl": "yel",
+   "at": 8.37
   },
   {
    "kind": "meter",
-   "x": 1700,
-   "y": 330,
-   "s": 0.55,
+   "x": 1720,
+   "y": 1000,
+   "s": 0.42,
    "text": "PRESSURE",
    "needle": [
     [
@@ -101,11 +174,15 @@ window.SCENE = {
  ],
  "sfx": [
   [
-   0.15,
+   0.0,
    "rip"
   ],
   [
-   5.09,
+   0.8,
+   "scribble"
+  ],
+  [
+   4.89,
    "scribble"
   ],
   [
@@ -113,19 +190,31 @@ window.SCENE = {
    "pop"
   ],
   [
-   7.47,
+   6.69,
+   "whoosh"
+  ],
+  [
+   7.04,
+   "clink"
+  ],
+  [
+   7.24,
    "pop"
+  ],
+  [
+   7.47,
+   "scribble"
   ],
   [
    8.07,
    "clink"
   ],
   [
-   9.03,
-   "scribble"
+   8.37,
+   "pop"
   ],
   [
-   9.43,
+   9.03,
    "whoosh"
   ],
   [
@@ -151,9 +240,23 @@ window.SCENE = {
   [
    0.02,
    1.06,
-   -3.2,
-   2.9,
-   14.65
+   0.1,
+   1.1,
+   6.64
+  ],
+  [
+   7.05,
+   1.0,
+   0,
+   0,
+   0.01
+  ],
+  [
+   7.07,
+   1.06,
+   -0.7,
+   -9.8,
+   7.6
   ]
  ]
 };

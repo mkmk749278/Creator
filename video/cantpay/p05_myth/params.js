@@ -5,12 +5,24 @@ window.SCENE = {
  "kicker": "MYTH VS RULE",
  "items": [
   {
+   "kind": "label",
+   "x": 960,
+   "y": 290,
+   "text": "SOME PEOPLE SAY",
+   "size": 40,
+   "mono": true,
+   "anchor": "middle",
+   "color": "dim",
+   "at": 0.0,
+   "exit": 5.84
+  },
+  {
    "kind": "sticky",
    "x": 700,
    "y": 330,
    "w": 520,
    "h": 300,
-   "n": "?",
+   "n": "",
    "lines": [
     "Interest stops",
     "after 90 days"
@@ -117,6 +129,10 @@ window.SCENE = {
  ],
  "sfx": [
   [
+   0.0,
+   "pop"
+  ],
+  [
    0.86,
    "pop"
   ],
@@ -162,18 +178,18 @@ window.SCENE = {
    0
   ],
   [
-   0.66,
+   0.0,
    1.0,
    0,
    0,
    0.01
   ],
   [
-   0.68,
+   0.02,
    1.06,
-   7.8,
-   6.9,
-   5.13
+   5.2,
+   9.6,
+   5.79
   ],
   [
    6.2,

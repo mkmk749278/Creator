@@ -11,10 +11,11 @@ window.SCENE = {
    "y": 250,
    "w": 640,
    "h": 430,
-   "at": 0.05,
+   "at": 0.0,
    "in": "drop",
    "float": 1.2,
    "exit": 4.01,
+   "opaque": true,
    "until": 4.01
   },
   {
@@ -89,7 +90,7 @@ window.SCENE = {
  ],
  "sfx": [
   [
-   0.05,
+   0.0,
    "rip"
   ],
   [

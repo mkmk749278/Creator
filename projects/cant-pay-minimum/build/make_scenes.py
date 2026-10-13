@@ -85,6 +85,12 @@ def build(sid, d):
     r = lambda t: round(min(dur, max(0.0, t - t0)), 2)
     if d["kind"] == "page":
         items = [rel_item(it, t0, dur) for it in d["items"]]
+        first = min(it["at"] for it in items)   # never open on an empty page: the opening items are there from the cut
+        for it in items:
+            if it["at"] - first < 0.5 and first < 1.2:
+                it["at"] = 0.0
+                if it["kind"] == "photo":
+                    it["opaque"] = True
         for it in items:
             if it.get("float") and "until" not in it:
                 it["until"] = it.get("exit", dur)

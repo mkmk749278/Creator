@@ -248,8 +248,9 @@
       if (how === "draw") { gsap.set(inner, { opacity: 1 }); drawOn(inner, t, it.dur || 0.8); }
       else if (how === "pop") { gsap.set(inner, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }); tl.to(inner, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, t); }
       else if (how === "stamp") { gsap.set(inner, { opacity: 0, scale: 1.8, transformOrigin: "50% 50%" }); tl.to(inner, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, t); }
-      else if (how === "drop") { gsap.set(inner, { opacity: 0, y: -70, scale: 1.07, rotation: it.dropRot ?? -4, transformOrigin: "50% 50%" });   // set down on the page
-        tl.to(inner, { opacity: 1, duration: 0.25, ease: "none" }, t); tl.to(inner, { y: 0, scale: 1, rotation: 0, duration: 0.75, ease: "power3.out" }, t); }
+      else if (how === "drop") { const op = it.opaque ? 1 : 0;   // set down on the page (opaque: already visible on the cut)
+        gsap.set(inner, { opacity: op, y: -70, scale: 1.07, rotation: it.dropRot ?? -4, transformOrigin: "50% 50%" });
+        if (!op) tl.to(inner, { opacity: 1, duration: 0.25, ease: "none" }, t); tl.to(inner, { y: 0, scale: 1, rotation: 0, duration: 0.75, ease: "power3.out" }, t); }
       else if (how === "fade") { gsap.set(inner, { opacity: 0 }); tl.to(inner, { opacity: 1, duration: it.fade || 0.5, ease: "none" }, t); }
       else if (how === "slide") { gsap.set(inner, { opacity: 0, x: it.from || -160 }); tl.to(inner, { opacity: 1, x: 0, duration: 0.6, ease: "expo.out" }, t); }
       const hl = inner.querySelector("rect.hl"); if (hl) { gsap.set(hl, { scaleX: 0, transformOrigin: "0% 50%" }); tl.to(hl, { scaleX: 1, duration: 0.4, ease: "power2.out" }, t + 0.15); }

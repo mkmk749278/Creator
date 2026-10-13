@@ -7,13 +7,13 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 960,
-   "y": 560,
+   "y": 120,
    "text": "A SMALL BILL GROWS FASTER",
-   "size": 92,
+   "size": 64,
    "anchor": "middle",
    "hl": "yel",
    "at": 1.77,
-   "exit": 3.94
+   "exit": 4.67
   },
   {
    "kind": "photo",
@@ -22,9 +22,10 @@ window.SCENE = {
    "y": 210,
    "w": 520,
    "h": 692,
-   "at": 4.72,
+   "at": 0.0,
    "in": "drop",
-   "exit": 35.37
+   "exit": 35.37,
+   "opaque": true
   },
   {
    "kind": "photo",
@@ -33,14 +34,15 @@ window.SCENE = {
    "y": 210,
    "w": 520,
    "h": 692,
-   "at": 6.07,
+   "at": 0.0,
    "in": "drop",
-   "exit": 35.37
+   "exit": 35.37,
+   "opaque": true
   },
   {
    "kind": "label",
    "x": 410,
-   "y": 170,
+   "y": 180,
    "text": "RAVI · ₹10,000",
    "size": 52,
    "anchor": "middle",
@@ -51,7 +53,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 1510,
-   "y": 170,
+   "y": 180,
    "text": "SUNITA · ₹1 LAKH",
    "size": 52,
    "anchor": "middle",
@@ -62,7 +64,7 @@ window.SCENE = {
   {
    "kind": "stamp",
    "x": 406,
-   "y": 534,
+   "y": 754,
    "text": "NOT PAID",
    "size": 56,
    "rot": -8,
@@ -73,7 +75,7 @@ window.SCENE = {
   {
    "kind": "stamp",
    "x": 1506,
-   "y": 534,
+   "y": 754,
    "text": "NOT PAID",
    "size": 56,
    "rot": -8,
@@ -84,7 +86,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 960,
-   "y": 420,
+   "y": 330,
    "text": "SAME",
    "size": 60,
    "anchor": "middle",
@@ -94,7 +96,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 960,
-   "y": 500,
+   "y": 405,
    "text": "3.75% a month",
    "size": 46,
    "anchor": "middle",
@@ -105,7 +107,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 960,
-   "y": 570,
+   "y": 470,
    "text": "+ 18% GST",
    "size": 46,
    "anchor": "middle",
@@ -138,7 +140,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 960,
-   "y": 700,
+   "y": 840,
    "text": "LATE FEE = FIXED SLAB",
    "size": 42,
    "anchor": "middle",
@@ -148,8 +150,8 @@ window.SCENE = {
   },
   {
    "kind": "tag",
-   "x": 506,
-   "y": 636,
+   "x": 630,
+   "y": 518,
    "text": "₹750",
    "color": "red",
    "at": 21.19,
@@ -157,8 +159,8 @@ window.SCENE = {
   },
   {
    "kind": "tag",
-   "x": 1546,
-   "y": 636,
+   "x": 890,
+   "y": 518,
    "text": "₹1,300",
    "color": "red",
    "at": 24.2,
@@ -167,9 +169,9 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 410,
-   "y": 1010,
+   "y": 950,
    "text": "7.5% A MONTH",
-   "size": 66,
+   "size": 62,
    "anchor": "middle",
    "hl": "yel",
    "color": "red",
@@ -179,9 +181,9 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 1510,
-   "y": 1010,
+   "y": 950,
    "text": "1.3% A MONTH",
-   "size": 66,
+   "size": 62,
    "anchor": "middle",
    "color": "blue",
    "at": 33.46,
@@ -308,7 +310,7 @@ window.SCENE = {
   {
    "kind": "split",
    "x": 510,
-   "y": 760,
+   "y": 700,
    "w": 900,
    "h": 100,
    "at": 47.07,
@@ -317,8 +319,7 @@ window.SCENE = {
     {
      "f": 0.68,
      "color": "red",
-     "label": "LATE FEES + GST",
-     "top": "2/3"
+     "label": "2/3 · LATE FEES + GST"
     },
     {
      "f": 0.32,
@@ -330,7 +331,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 960,
-   "y": 700,
+   "y": 665,
    "text": "RAVI'S EXTRA ₹9,112",
    "size": 34,
    "mono": true,
@@ -341,7 +342,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 960,
-   "y": 1010,
+   "y": 960,
    "text": "SMALLER BILL, HARDER HIT",
    "size": 56,
    "anchor": "middle",
@@ -361,24 +362,20 @@ window.SCENE = {
  ],
  "sfx": [
   [
+   0.0,
+   "rip"
+  ],
+  [
    1.77,
    "pop"
   ],
   [
-   3.94,
+   4.67,
    "whoosh"
-  ],
-  [
-   4.72,
-   "rip"
   ],
   [
    4.87,
    "pop"
-  ],
-  [
-   6.07,
-   "rip"
   ],
   [
    6.22,
@@ -476,22 +473,22 @@ window.SCENE = {
    1.59,
    1.06,
    -0.0,
-   -1.2,
-   2.32
+   25.2,
+   3.05
   ],
   [
-   4.52,
+   5.03,
    1.0,
    0,
    0,
    0.01
   ],
   [
-   4.54,
+   5.05,
    1.06,
-   -0.4,
-   -1.8,
-   30.8
+   1.6,
+   -1.7,
+   30.29
   ],
   [
    35.73,
@@ -504,7 +501,7 @@ window.SCENE = {
    35.75,
    1.06,
    9.0,
-   -5.7,
+   -4.8,
    25.52
   ]
  ]

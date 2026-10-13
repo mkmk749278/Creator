@@ -139,7 +139,9 @@ SCENES["p03_clock"] = dict(kind="page", start=L("C011")[0] - 0.25, end=L("C014")
          moves=[dict(at=t30, x=round(xs[30]), dur=0.6), dict(at=t60, x=round(xs[60]), dur=0.6), dict(at=t90, x=round(xs[90]), dur=0.6)]),
     dict(kind="counter", x=1295, y=520, size=190, anchor="middle", fmt="days", from_=0, label="DAYS PAST DUE", at=P("C011", "starts counting"),
          steps=[[P("C011", "starts counting") + 0.2, 3, 1.2], [t30, 30, 0.6], [t60, 60, 0.6], [t90, 90, 0.6], [t_npa - 0.4, 91, 0.2]]),
-    dict(kind="stamp", x=round(an(b, "center")[0]), y=round(an(b, "center")[1] + 40), text="NPA · DAY 91", size=78, rot=-12, in_="stamp", at=t_npa),
+    dict(kind="stamp", x=round(an(b, "center")[0] + 10), y=round(an(b, "center")[1] + 40), text="NPA · DAY 91", size=58, rot=-12, in_="stamp", at=t_npa),
+    dict(kind="loop", x=1295, y=470, r=200, color="blue", at=P("C012", "checks"), spin=[[0, 0], [P("C012", "checks"), 0, 0.01], [P("C012", "checks") + 0.05, 360, 3.0]], exit=P("C013", "If the") - 0.1),
+    dict(kind="label", x=1295, y=300, text="CHECKED EVERY DAY", size=40, mono=True, anchor="middle", color="blue", at=P("C012", "every single"), exit=P("C013", "If the") - 0.1),
     dict(kind="label", x=1295, y=960, text="BAD LOAN = NPA", size=64, anchor="middle", hl="yel", at=P("C013", "NPA")),
     dict(kind="label", x=1295, y=1030, text="NON-PERFORMING ASSET", size=30, mono=True, anchor="middle", color="dim", at=P("C013", "non performing")),
 ], sfx=[[P("C012", "every single") + k * 0.25, "tick"] for k in range(8)])
@@ -148,15 +150,22 @@ SCENES["p03_clock"] = dict(kind="page", start=L("C011")[0] - 0.25, end=L("C014")
 # C015 The bank must keep aside at least a quarter of what you owe, from its own profit. That is one reason the pressure
 #      grows around this time.
 b = photo("bill_ravi_overdue", 120, 190, 520, L("C014")[0] - 0.1, float=0.5)
+stacks = [dict(kind="coins", x=x, y=700, n=6, r=70, color="amber", in_="pop", at=L("C015")[0] + 0.1 * k) for k, x in enumerate((330, 520, 710, 900))]
 SCENES["p04_provision"] = dict(kind="page", start=L("C014")[0] - 0.25, end=L("C016")[0] - 0.2, kicker="THE BANK'S SIDE", tag="RBI | PROVISIONING RULES", items=[
-    b,
-    dict(kind="arrow", x=700, y=560, to=[300, 0], bend=-0.15, color="red", at=P("C014", "also a loss")),
-    dict(kind="label", x=1010, y=470, text="A LOSS FOR THE BANK", size=58, color="red", at=P("C014", "loss for")),
-    dict(kind="box", x=1080, y=600, w=520, h=260, text="BANK'S PROFIT", sub="", at=P("C015", "from its own"), dur=0.6),
-    dict(kind="coins", x=1210, y=560, n=4, r=70, color="red", text="25%", textColor="red", in_="pop", at=P("C015", "a quarter"),
-         moves=[dict(at=P("C015", "from its own") + 0.4, x=1340, y=780, s=0.9, dur=0.8)]),
-    dict(kind="label", x=1010, y=380, text="SET ASIDE ≥ 25% OF WHAT YOU OWE", size=40, mono=True, color="ink", at=P("C015", "keep aside")),
-    dict(kind="meter", x=1700, y=330, s=0.55, text="PRESSURE", needle=[[0, -70], [P("C015", "pressure"), 60, 1.2]], at=P("C015", "That is one")),
+    *page([
+        b,
+        dict(kind="house", x=1290, y=250, s=1.15, text="YOUR BANK", at=P("C014", "something most")),
+        dict(kind="arrow", x=700, y=520, to=[540, 0], bend=-0.12, color="red", at=P("C014", "also a loss") - 0.2),
+        dict(kind="label", x=1460, y=780, text="A LOSS FOR THE BANK", size=60, anchor="middle", color="red", at=P("C014", "loss for")),
+    ], L("C015")[0] - 0.35),
+    *stacks,
+    dict(kind="label", x=615, y=820, text="WHAT YOU OWE", size=34, mono=True, anchor="middle", color="dim", at=L("C015")[0] + 0.2),
+    dict(kind="label", x=1400, y=420, text="SET ASIDE FROM PROFIT", size=40, mono=True, anchor="middle", at=P("C015", "keep aside")),
+    dict(kind="box", x=1220, y=470, w=360, h=250, text=" ", at=P("C015", "keep aside"), dur=0.6),
+    dict(kind="coins", x=900, y=700, n=6, r=70, color="red", text="25%", textColor="red", in_="pop", at=P("C015", "a quarter"),
+         moves=[dict(at=P("C015", "from its own"), x=1400, y=690, dur=0.8)]),
+    dict(kind="label", x=1400, y=820, text="AT LEAST A QUARTER", size=46, anchor="middle", hl="yel", at=P("C015", "a quarter") + 0.3),
+    dict(kind="meter", x=1720, y=1000, s=0.42, text="PRESSURE", needle=[[0, -70], [P("C015", "pressure"), 60, 1.2]], at=P("C015", "That is one")),
 ])
 
 # C016 But listen carefully. Some people say interest stops after ninety days. No rule says that.
@@ -164,7 +173,8 @@ SCENES["p04_provision"] = dict(kind="page", start=L("C014")[0] - 0.25, end=L("C0
 b = photo("bill_ravi", 1150, 150, 520, L("C017")[0] - 0.1, float=0.5)
 SCENES["p05_myth"] = dict(kind="page", start=L("C016")[0] - 0.25, end=L("C018")[0] - 0.2, kicker="MYTH VS RULE", tag="RBI | IRAC NORMS · CARD TERMS", items=[
     *page([
-        dict(kind="sticky", x=700, y=330, w=520, h=300, n="?", lines=["Interest stops", "after 90 days"], color="dim", at=P("C016", "Some people")),
+        dict(kind="label", x=960, y=290, text="SOME PEOPLE SAY", size=40, mono=True, anchor="middle", color="dim", at=P("C016", "listen") - 0.2),
+        dict(kind="sticky", x=700, y=330, w=520, h=300, n="", lines=["Interest stops", "after 90 days"], color="dim", at=P("C016", "Some people")),
         dict(kind="stamp", x=960, y=520, text="MYTH", size=110, rot=-10, in_="stamp", at=P("C016", "No rule")),
     ], L("C017")[0] - 0.35),
     dict(kind="label", x=140, y=380, text="BANK'S BOOKS", size=34, mono=True, color="dim", at=P("C017", "The bank cannot")),
@@ -178,20 +188,20 @@ SCENES["p05_myth"] = dict(kind="page", start=L("C016")[0] - 0.25, end=L("C018")[
 
 # C018 There is a second clock too. Your CIBIL. Banks now update the credit bureaus every fifteen days.
 # C019 The good part is, the bank must tell you before it reports you as a defaulter. And if you have a genuine dispute, it must wait.
-rp = photo("report_ravi", 140, 120, 600, P("C018", "Your CIBIL") - 0.15, float=0.4)
-nt = photo("notice_prior", 150, 110, 610, P("C019", "tell you") - 0.15, float=0.4)
+rp = photo("report_ravi", 140, 120, 600, L("C018")[0] - 0.2, float=0.4)
+nt = photo("notice_prior", 150, 110, 610, L("C019")[0] - 0.2, float=0.4)
 SCENES["p06_cibil"] = dict(kind="page", start=L("C018")[0] - 0.25, end=L("C020")[0] - 0.2, kicker="THE SECOND CLOCK", tag="RBI | FROM 1 JAN 2025", items=[
     *page([
         rp,
         ring(rp, "acct0", P("C018", "Your CIBIL") + 0.6, pad=1.05, color="red"),
         dict(kind="calendar", x=930, y=230, s=1.15, title="EVERY MONTH", days=30, at=P("C018", "update"),
-             marks=[dict(day=15, color="red", text="UPDATE"), dict(day=30, color="red", text="UPDATE")]),
+             marks=[dict(day=15, color="red"), dict(day=30, color="red")]),
         dict(kind="label", x=1320, y=180, text="EVERY 15 DAYS", size=64, anchor="middle", hl="yel", at=P("C018", "every fifteen")),
     ], L("C019")[0] - 0.3),
     nt,
     dict(kind="badge", x=920, y=330, text="TELL YOU FIRST", at=P("C019", "before it reports")),
     dict(kind="sticky", x=880, y=560, w=420, h=230, n="!", lines=["Genuine dispute"], color="blue", at=P("C019", "genuine dispute")),
-    dict(kind="badge", x=1400, y=680, text="BANK MUST WAIT", at=P("C019", "it must wait")),
+    dict(kind="badge", x=920, y=880, text="BANK MUST WAIT", at=P("C019", "it must wait")),
 ])
 
 # C021 And the card itself? At SBI Card, for example, it may be blocked from the very first missed payment.
@@ -206,29 +216,28 @@ SCENES["p07_blocked"] = dict(kind="page", start=L("C021")[0] - 0.25, end=L("C022
 gr = {p: [round(M.grow(p, m)["total"]) for m in range(7)] for p in (10000, 100000)}
 r6, s6 = M.grow(10000, 6), M.grow(100000, 6)
 fee_share = (r6["fees"] * 1.18) / r6["extra"]            # late fees + their GST, share of Ravi's 6-month jump (0.68)
-br = photo("bill_ravi", 150, 210, 520, P("C023", "Ravi") - 0.15)
-bs = photo("bill_sunita", 1250, 210, 520, P("C023", "Sunita") - 0.15)
+br = photo("bill_ravi", 150, 210, 520, L("C022")[0] - 0.2)
+bs = photo("bill_sunita", 1250, 210, 520, L("C022")[0] - 0.05)
 t_late = P("C025", "seven hundred")
 t_1300 = P("C025", "thirteen hundred")
-n_r = dict(kind="label", x=round(br["x"] + br["w"] / 2), y=170, text="RAVI · ₹10,000", size=52, anchor="middle", color="blue", at=P("C023", "Ravi"))
-n_s = dict(kind="label", x=round(bs["x"] + bs["w"] / 2), y=170, text="SUNITA · ₹1 LAKH", size=52, anchor="middle", color="red", at=P("C023", "Sunita"))
+n_r = dict(kind="label", x=round(br["x"] + br["w"] / 2), y=180, text="RAVI · ₹10,000", size=52, anchor="middle", color="blue", at=P("C023", "Ravi"))
+n_s = dict(kind="label", x=round(bs["x"] + bs["w"] / 2), y=180, text="SUNITA · ₹1 LAKH", size=52, anchor="middle", color="red", at=P("C023", "Sunita"))
 SCENES["p08_ravi_sunita"] = dict(kind="page", start=L("C022")[0] - 0.25, end=L("C031")[0] - 0.2, kicker="SMALL BILL VS BIG BILL", tag="OUR CALCULATION · HDFC BANK MITC | OCT 2026", items=[
-    *page([dict(kind="label", x=960, y=560, text="A SMALL BILL GROWS FASTER", size=92, anchor="middle", hl="yel", at=P("C022", "A small bill"))],
-          L("C023")[0] - 0.35),
+        dict(kind="label", x=960, y=120, text="A SMALL BILL GROWS FASTER", size=64, anchor="middle", hl="yel", at=P("C022", "A small bill"), exit=P("C023", "Ravi") - 0.2),
     *page([
         br, bs, n_r, n_s,
-        dict(kind="stamp", x=round(an(br, "center")[0]), y=round(an(br, "row1")[1]), text="NOT PAID", size=56, rot=-8, in_="stamp", at=P("C023", "Both stop")),
-        dict(kind="stamp", x=round(an(bs, "center")[0]), y=round(an(bs, "row1")[1]), text="NOT PAID", size=56, rot=-8, in_="stamp", at=P("C023", "Both stop") + 0.15),
-        dict(kind="label", x=960, y=420, text="SAME", size=60, anchor="middle", at=P("C024", "same interest")),
-        dict(kind="label", x=960, y=500, text="3.75% a month", size=46, anchor="middle", color="ink", at=P("C024", "Three point")),
-        dict(kind="label", x=960, y=570, text="+ 18% GST", size=46, anchor="middle", color="ink", at=P("C024", "eighteen percent")),
+        dict(kind="stamp", x=round(an(br, "center")[0]), y=round(an(br, "row4")[1] + 130), text="NOT PAID", size=56, rot=-8, in_="stamp", at=P("C023", "Both stop")),
+        dict(kind="stamp", x=round(an(bs, "center")[0]), y=round(an(bs, "row4")[1] + 130), text="NOT PAID", size=56, rot=-8, in_="stamp", at=P("C023", "Both stop") + 0.15),
+        dict(kind="label", x=960, y=330, text="SAME", size=60, anchor="middle", at=P("C024", "same interest")),
+        dict(kind="label", x=960, y=405, text="3.75% a month", size=46, anchor="middle", color="ink", at=P("C024", "Three point")),
+        dict(kind="label", x=960, y=470, text="+ 18% GST", size=46, anchor="middle", color="ink", at=P("C024", "eighteen percent")),
         ring(br, "row2", P("C025", "fixed amount"), pad=1.06, color="red"),
         ring(bs, "row2", P("C025", "fixed amount") + 0.1, pad=1.06, color="red"),
-        dict(kind="label", x=960, y=700, text="LATE FEE = FIXED SLAB", size=42, anchor="middle", color="red", at=P("C025", "fixed amount")),
-        dict(kind="tag", x=round(an(br, "amt2")[0] - 60), y=round(an(br, "row2")[1] + 70), text="₹750", color="red", at=t_late),
-        dict(kind="tag", x=round(an(bs, "amt2")[0] - 120), y=round(an(bs, "row2")[1] + 70), text="₹1,300", color="red", at=t_1300),
-        dict(kind="label", x=round(br["x"] + br["w"] / 2), y=1010, text="7.5% A MONTH", size=66, anchor="middle", hl="yel", color="red", at=P("C026", "seven and a half")),
-        dict(kind="label", x=round(bs["x"] + bs["w"] / 2), y=1010, text="1.3% A MONTH", size=66, anchor="middle", color="blue", at=P("C026", "one point three")),
+        dict(kind="label", x=960, y=840, text="LATE FEE = FIXED SLAB", size=42, anchor="middle", color="red", at=P("C025", "fixed amount")),
+        dict(kind="tag", x=round(br["x"] + br["w"] - 40), y=round(an(br, "row2")[1] - 48), text="₹750", color="red", at=t_late),
+        dict(kind="tag", x=round(bs["x"] - 360), y=round(an(bs, "row2")[1] - 48), text="₹1,300", color="red", at=t_1300),
+        dict(kind="label", x=round(br["x"] + br["w"] / 2), y=950, text="7.5% A MONTH", size=62, anchor="middle", hl="yel", color="red", at=P("C026", "seven and a half")),
+        dict(kind="label", x=round(bs["x"] + bs["w"] / 2), y=950, text="1.3% A MONTH", size=62, anchor="middle", color="blue", at=P("C026", "one point three")),
     ], L("C027")[0] - 0.45),
     # C027–C030: six months later (1.5 s of silence before C027 in the mix)
     dict(kind="label", x=960, y=150, text="AFTER 6 MONTHS · NOTHING PAID", size=40, mono=True, anchor="middle", color="dim", at=L("C027")[0] - 0.1),
@@ -238,9 +247,9 @@ SCENES["p08_ravi_sunita"] = dict(kind="page", start=L("C022")[0] - 0.25, end=L("
     dict(kind="counter", x=1440, y=430, size=130, anchor="middle", from_=100000, label="SUNITA", labelColor="red", at=L("C028")[0] - 0.1,
          steps=[[P("C028", "becomes") - 0.2 + k * 0.4, v, 0.36] for k, v in enumerate(gr[100000][1:])]),
     dict(kind="label", x=1440, y=600, text=f"+{round(100 * s6['extra'] / 100000)}%", size=56, anchor="middle", color="blue", at=P("C028", "thirty eight")),
-    dict(kind="split", x=510, y=760, w=900, h=100, at=P("C029", "two thirds") - 0.1, dur=0.9,
-         parts=[dict(f=round(fee_share, 3), color="red", label="LATE FEES + GST", top="2/3"), dict(f=round(1 - fee_share, 3), color="dim", label="INTEREST + GST")]),
-    dict(kind="label", x=960, y=700, text=f"RAVI'S EXTRA {M.inr(r6['extra'])}", size=34, mono=True, anchor="middle", color="dim", at=P("C029", "For Ravi")),
-    dict(kind="label", x=960, y=1010, text="SMALLER BILL, HARDER HIT", size=56, anchor="middle", hl="yel", at=P("C029", "the smaller")),
+    dict(kind="split", x=510, y=700, w=900, h=100, at=P("C029", "two thirds") - 0.1, dur=0.9,
+         parts=[dict(f=round(fee_share, 3), color="red", label="2/3 · LATE FEES + GST"), dict(f=round(1 - fee_share, 3), color="dim", label="INTEREST + GST")]),
+    dict(kind="label", x=960, y=665, text=f"RAVI'S EXTRA {M.inr(r6['extra'])}", size=34, mono=True, anchor="middle", color="dim", at=P("C029", "For Ravi")),
+    dict(kind="label", x=960, y=960, text="SMALLER BILL, HARDER HIT", size=56, anchor="middle", hl="yel", at=P("C029", "the smaller")),
     dict(kind="label", x=60, y=1040, text="OUR CALCULATION · ONE BANK'S FEES · YOUR BILL WILL DIFFER", size=26, mono=True, color="dim", at=P("C030", "our own")),
 ])
