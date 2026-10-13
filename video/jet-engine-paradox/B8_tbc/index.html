@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B8 Ceramic heat shield</title>
+    <!-- Session B scene. Assets: vendor/library/hdri/studio_small_09_1k.hdr (Poly Haven, CC0). Shared code: lib.js (copied from ../_b_lib). -->
+    <link rel="stylesheet" href="jep.css" />
+    <script>
+      // HyperFrames polls window.__hf.buildReady; resolved by lib.js once HDRI/fonts are loaded and the first frame is drawn.
+      window.__hf = window.__hf || {}; window.__hf.buildReady = Object.assign(window.__hf.buildReady || {},
+        { jepScene: new Promise((r) => { window.__jepReady = r; }) });
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <style>
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; overflow: hidden; background: #0B0E14; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .jep-label { opacity: 0; white-space: nowrap; }
+      .lay { position: absolute; left: 0; top: 0; opacity: 0; display: flex; align-items: center; gap: 14px; white-space: nowrap;
+        font: 700 27px/1 var(--font); letter-spacing: 0.08em; color: var(--white); text-transform: uppercase; will-change: transform; }
+      .lay i { display: block; width: 46px; height: 3px; background: currentColor; }
+      .lay span { padding: 7px 12px 6px; background: rgba(11,14,20,0.66); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="B8_tbc" data-start="0" data-width="1920" data-height="1080" data-duration="3.66">
+      <canvas id="gl"></canvas>
+      <div class="lay" id="lg" style="color:#FDBA74"><i></i><span>Hot gas</span></div>
+      <div class="lay" id="lc" style="color:#F8FAFC"><i></i><span>Ceramic coating</span></div>
+      <div class="lay" id="lm" style="color:#CBD5E1"><i></i><span>Metal</span></div>
+      <div class="lay" id="la" style="color:#38BDF8"><i></i><span>Cooling air</span></div>
+      <div class="jep-label" id="l1">Thermal barrier coating</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#l1", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 1.25);
+      tl.to("#l1", { opacity: 1, duration: 0.01 }, 3.65);
+      window.__timelines["B8_tbc"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, makeEmbers, metalMaterial, Streaks, mulberry32, smr, inOut, outC, lerp, clamp, PAL, col } from "./lib.js";
+      const S = createStage({ fov: 30, bloom: 1.0, bloomThreshold: 0.95, envIntensity: 0.9, bg: { glowAmt: 0.16, glowScreen: [0.0, 0.5], glow: 0xff8a2a } });
+      const { scene, camera, W, H } = S;
+      lightRig(scene, { key: 1.6, rim: 1.0, fill: 0.55 });
+      const XW = 3.5, ZD = 1.4, yM0 = -0.75, yM1 = 0.0, yB1 = 0.04, yC1 = 0.36;
+      const bend = (g) => { const p = g.attributes.position; for (let i = 0; i < p.count; i++) p.setY(i, p.getY(i) - 0.035 * p.getX(i) * p.getX(i)); g.computeVertexNormals(); return g; };
+      const box = (y0, y1) => { const g = new THREE.BoxGeometry(XW, y1 - y0, ZD, 64, 1, 1); g.translate(0, (y0 + y1) / 2, 0);
+        const n = g.attributes.position.count; g.setAttribute("aSurf", new THREE.BufferAttribute(new Float32Array(n * 3).fill(99), 3)); g.setAttribute("aInt", new THREE.BufferAttribute(new Float32Array(n), 1)); return bend(g); };
+      const slab = new THREE.Group(); scene.add(slab);
+      const MM = metalMaterial(["HOLES"], { roughness: 0.45 }); MM.u.uHoles.value = 0;
+      slab.add(new THREE.Mesh(box(yM0, yM1), MM.mat));
+      const bond = new THREE.Mesh(box(yM1, yB1), new THREE.MeshPhysicalMaterial({ color: 0x6f6658, metalness: 0.8, roughness: 0.5 })); slab.add(bond);
+      // ceramic top coat: grows over the metal from left to right (front), rough white, columnar
+      const CU = { uFront: { value: -9 } };
+      const cerM = new THREE.MeshPhysicalMaterial({ color: 0xf1ede6, metalness: 0, roughness: 0.82, sheen: 0.3 });
+      cerM.onBeforeCompile = (sh) => { sh.uniforms.uFront = CU.uFront;
+        sh.vertexShader = sh.vertexShader.replace("#include <common>", "#include <common>\nvarying vec3 vO;").replace("#include <begin_vertex>", "#include <begin_vertex>\nvO = position;");
+        sh.fragmentShader = sh.fragmentShader.replace("#include <common>", "#include <common>\nvarying vec3 vO; uniform float uFront;")
+          .replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\nif (vO.x > uFront) discard;")
+          .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\ntotalEmissiveRadiance += vec3(1., .8, .55) * 2.5 * exp(-(uFront - vO.x) / .05);"); };
+      const cer = new THREE.Mesh(box(yB1, yC1), cerM); slab.add(cer);
+      // front cut face: the wall section with its temperature gradient (ironbow), steepest across the ceramic
+      const TU = { uFront: CU.uFront, uTherm: { value: 0 }, uT: { value: 0 } };
+      const fg = bend(new THREE.PlaneGeometry(XW, yC1 - yM0, 96, 48).translate(0, (yC1 + yM0) / 2, 0));
+      const face = new THREE.Mesh(fg, new THREE.ShaderMaterial({ uniforms: TU,
+        vertexShader: `varying vec3 vO; varying float vY0; void main(){ vO = position; vY0 = position.y + 0.035 * position.x * position.x; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+        fragmentShader: `uniform float uFront, uTherm, uT; varying vec3 vO; varying float vY0;
+          float h(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+          vec3 ironbow(float x){ x = clamp(x, 0., 1.); vec3 c = mix(vec3(.02, .0, .05), vec3(.30, .0, .35), smoothstep(.0, .22, x));
+            c = mix(c, vec3(.80, .10, .06), smoothstep(.18, .45, x)); c = mix(c, vec3(1., .42, .05), smoothstep(.42, .70, x));
+            c = mix(c, vec3(1., .80, .40), smoothstep(.68, .92, x)); return mix(c, vec3(1., 1., .92), smoothstep(.90, 1., x)); }
+          void main(){ float y = vY0; bool cer = vO.x < uFront;
+            if (y > ${yB1.toFixed(3)} && !cer) discard;
+            vec3 base;
+            if (y > ${yB1.toFixed(3)}) { float col = h(vec2(floor(vO.x * 140.), 1.)); base = vec3(.86, .84, .80) * (.82 + .2 * col) * (.9 + .1 * sin(y * 400.)); }
+            else if (y > ${yM1.toFixed(3)}) base = vec3(.32, .28, .22);
+            else base = vec3(.42, .42, .41) * (.85 + .15 * h(floor(vO.xy * 60.)));
+            float T;
+            if (cer) T = y > ${yB1.toFixed(3)} ? mix(.52, .98, (y - ${yB1.toFixed(3)}) / ${(yC1 - yB1).toFixed(3)}) : mix(.30, .52, (y - ${yM0.toFixed(3)}) / ${(yB1 - yM0).toFixed(3)});
+            else T = mix(.55, .86, (y - ${yM0.toFixed(3)}) / ${(yB1 - yM0).toFixed(3)});
+            vec3 th = ironbow(T) * (.6 + 1.1 * T);
+            float line = 1. - smoothstep(.0, .008, min(abs(y - ${yB1.toFixed(3)}), abs(y - ${yM1.toFixed(3)})));
+            gl_FragColor = vec4(mix(base * .62, th, uTherm) * (1. - .7 * line), 1.); }` }));
+      face.position.z = ZD / 2 + 0.002; slab.add(face);
+      // flows: hot gas over the top (amber), cooling air under the wall (cyan)
+      const rng = mulberry32(17), NG = 190, NA = 150;
+      const SG = new Streaks(NG), SA = new Streaks(NA); scene.add(SG.mesh, SA.mesh);
+      const G = Array.from({ length: NG }, () => ({ y: 0.5 + 1.3 * rng() * rng(), z: (rng() - 0.5) * ZD * 1.6, ph: rng(), s: 0.7 + 0.6 * rng(), c: col(rng() < 0.3 ? PAL.amberHot : PAL.amber, 1.5 + 2 * rng()) }));
+      const A = Array.from({ length: NA }, () => ({ y: -0.85 - 0.45 * rng(), z: (rng() - 0.5) * ZD * 1.3, ph: rng(), s: 0.7 + 0.6 * rng() }));
+      const cA = col(PAL.cyan, 2.4), a = new THREE.Vector3(), b = new THREE.Vector3();
+      const embers = makeEmbers({ count: 120, seed: 51, box: { min: [-4, 0.4, -3], size: [8, 2.5, 5] }, intensity: 2.2, speed: 0.6, dir: [1, 0, 0] });
+      scene.add(embers.points);
+      const labels = [["lg", 0.95, 0.3], ["lc", (yB1 + yC1) / 2, 1.0], ["lm", (yM0 + yM1) / 2, 0.45], ["la", -1.0, 0.6]].map(([id, y, t0]) => ({ el: document.getElementById(id), y, t0 }));
+      const v = new THREE.Vector3();
+      function renderAt(t) {
+        const k = inOut(t / 3.66);
+        camera.position.set(lerp(1.7, 1.3, k), lerp(1.3, 1.1, k), lerp(6.6, 6.0, k)); camera.lookAt(lerp(0.75, 0.65, k), -0.22, 0);
+        const cf = smr(t, 0.75, 1.75);
+        CU.uFront.value = cf > 0 ? lerp(-XW / 2 - 0.05, XW / 2 + 0.3, inOut(cf)) : -9;
+        TU.uTherm.value = 0.2 + 0.42 * smr(t, 0.2, 0.7);
+        for (let i = 0; i < NG; i++) { const q = G[i]; const x = -3 + ((t * 1.3 * q.s + q.ph * 6) % 6);
+          a.set(x - 0.32, q.y - 0.035 * x * x, q.z); b.set(x, q.y - 0.035 * x * x, q.z);
+          SG.set(i, a, b, 0.006, 0.45 * smr(x, -3, -2.2) * (1 - smr(x, 2.2, 3)), q.c, camera.position); }
+        for (let i = 0; i < NA; i++) { const q = A[i]; const x = -3 + ((t * 0.9 * q.s + q.ph * 6) % 6);
+          a.set(x - 0.22, q.y - 0.035 * x * x, q.z); b.set(x, q.y - 0.035 * x * x, q.z);
+          SA.set(i, a, b, 0.006, 0.8 * smr(x, -3, -2.2) * (1 - smr(x, 2.2, 3)), cA, camera.position); }
+        SG.commit(); SA.commit();
+        // layer labels sit just right of the section, tracking it on screen
+        camera.updateMatrixWorld();
+        for (const L of labels) { v.set(XW / 2 + 0.12, L.y - 0.035 * (XW * XW / 4), ZD / 2).project(camera);
+          const x = (v.x * 0.5 + 0.5) * W, y = (-v.y * 0.5 + 0.5) * H;
+          L.el.style.transform = `translate(${x.toFixed(1)}px, ${(y - 18).toFixed(1)}px)`; L.el.style.opacity = smr(t, L.t0, L.t0 + 0.3).toFixed(3); }
+        S.shimmer(0.8, [0.0, 0.05, 0.42, 0.5]);
+        embers.update(t);
+        S.render(t);
+      }
+      S.start(renderAt);
+    </script>
+  </body>
+</html>
