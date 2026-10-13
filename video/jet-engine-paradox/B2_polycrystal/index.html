@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B2 Many crystals, weak borders</title>
+    <!-- Session B scene. Assets: vendor/library/hdri/studio_small_09_1k.hdr (Poly Haven, CC0). Shared code: lib.js (copied from ../_b_lib). -->
+    <link rel="stylesheet" href="jep.css" />
+    <script>
+      // HyperFrames polls window.__hf.buildReady; resolved by lib.js once HDRI/fonts are loaded and the first frame is drawn.
+      window.__hf = window.__hf || {}; window.__hf.buildReady = Object.assign(window.__hf.buildReady || {},
+        { jepScene: new Promise((r) => { window.__jepReady = r; }) });
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <style>
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; overflow: hidden; background: #0B0E14; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .jep-label { opacity: 0; }
+      .jep-label.red { border-left-color: var(--red); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="B2_polycrystal" data-start="0" data-width="1920" data-height="1080" data-duration="5.68">
+      <canvas id="gl"></canvas>
+      <div class="jep-label" id="l1">Many crystals</div>
+      <div class="jep-label red" id="l2">Weak borders</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#l1", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 1.55);
+      tl.to("#l1", { opacity: 0, x: 24, duration: 0.3, ease: "power2.in" }, 2.95);
+      tl.fromTo("#l2", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 3.08);
+      tl.to("#l2", { opacity: 1, duration: 0.01 }, 5.67);
+      window.__timelines["B2_polycrystal"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, orbit, makeEmbers, grainMeshes, jitterSeeds, mulberry32, smr, inOut, lerp, PAL } from "./lib.js";
+      const S = createStage({ fov: 30, bloom: 1.0, bloomThreshold: 0.85, bg: { glowAmt: 0.12, glowScreen: [0.45, -0.3] }, envIntensity: 0.8 });
+      const { scene, camera } = S;
+      lightRig(scene, { key: 1.5, rim: 1.6, fill: 0.45 });
+      const mn = new THREE.Vector3(-1, -1, -1), mx = new THREE.Vector3(1, 1, 1);
+      const rng = mulberry32(31);
+      const seeds = jitterSeeds(3, 3, 3, mn, mx, 0.75, rng);
+      const shared = { uBoundary: { value: 0 }, uGroove: { value: 1 }, uEtch: { value: 0.0 }, uLineW: { value: 0.024 }, uT: { value: 0 }, uAtoms: { value: 1 } };
+      const G = grainMeshes(seeds, mn, mx, { seed: 8, latFreq: 25, shared });
+      G.group.rotation.set(0.0, 0, 0);
+      scene.add(G.group);
+      const embers = makeEmbers({ count: 140, seed: 3, box: { min: [-5, -3.5, -5], size: [10, 7, 7] }, sizeMin: 0.01, sizeMax: 0.05, intensity: 2.2, speed: 0.3 });
+      scene.add(embers.points);
+      const target = new THREE.Vector3();
+      function renderAt(t) {
+        shared.uT.value = t;
+        // camera: opens tight on the front face (micrograph), pulls back and orbits to a 3/4 view, then a slow push
+        const k = inOut(smr(t, 0, 2.7));
+        const az = lerp(0.12, 0.72, k) + 0.04 * t, el = lerp(0.06, 0.4, k);
+        const r = lerp(2.15, 6.6, k) - 0.35 * smr(t, 2.7, 5.68);
+        target.set(lerp(0.1, 0.0, k), lerp(0.05, -0.05, k), lerp(1.0, 0.0, k));
+        orbit(camera, target, r, az, el);
+        // borders turn red on "The borders" (2.85), grains part on "weak spots" (4.62)
+        const b = smr(t, 2.85, 3.6);
+        shared.uBoundary.value = b * (0.85 + 0.15 * Math.sin(t * 7.0));
+        shared.uGroove.value = 1 - 0.6 * b;
+        shared.uAtoms.value = lerp(1.0, 0.55, smr(t, 0.6, 2.0));
+        const e = 0.16 * inOut(smr(t, 4.4, 5.4));
+        for (const g of G.grains) g.mesh.position.copy(g.centroid).multiplyScalar(e);
+        G.group.rotation.y = 0.05 * t;
+        embers.update(t);
+        S.render(t);
+      }
+      S.start(renderAt);
+    </script>
+  </body>
+</html>
