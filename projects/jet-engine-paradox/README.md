@@ -58,6 +58,7 @@ digits, dashes, brackets, quotes or `!` in VO text (`tools/build_script.py` lint
 | `script.md`, `bunty_blocks.md`, `bunty_blocks_clean.md`, `script.tsv` | Built views (do not edit); blocks are voice-agnostic |
 | `claims.csv`, `fact-check.md` | Fact-check gate |
 | `brief/` | Owner's brief (PDF + text) and `changes-from-brief.md` |
+| `vo_blocks.html`, `tools/make_vo_page.py` | Voice blocks with one-tap Copy buttons (artifact https://claude.ai/artifact/GWqce7K9iXm3M9fptrR4hr); rebuild after `build_script.py` |
 
 ## Rebuild
 ```bash
