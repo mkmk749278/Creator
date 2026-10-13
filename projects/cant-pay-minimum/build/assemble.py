@@ -111,7 +111,7 @@ SHOTS = [
          S(0, "clip", src=BR / "pixabay_111161.mp4", ss=2.0, label="TRACING YOU IF YOU MOVED", tag="OUR ESTIMATE")),
     scene("p13_per_bank"),
     # ---------------- ACT 3: traps, the fear ----------------
-    S(L("C053")[0] - 0.25, "clip", src=BR / "pixabay_139848.mp4", ss=6.0, label="TWO TRAPS FOR SALARIED PEOPLE"),
+    S(L("C053")[0] - 0.25, "clip", src=BR / "pixabay_154195.mp4", ss=0.5, label="TWO TRAPS FOR SALARIED PEOPLE"),
     scene("p14_setoff", L("C054")[0] - 0.25),
     *cut("p14_setoff", L("C056")[0] - 0.15, P("C056", "And in February") - 0.15,
          S(0, "proof", src=PF / "kanoon_ncdrc_setoff_53k.png", label="₹53,000 TAKEN FOR CARD DUES", tag="NCDRC | VIA INDIAN KANOON")),
@@ -275,8 +275,9 @@ def render(shot, dur, out, W, H):
         run(["ffmpeg", "-v", "error", "-y", "-ss", "4", "-i", MD / "broll/pixabay_200431.mp4", "-loop", "1", "-i", ROOT / "assets/brand/banner.png",
              "-filter_complex", fc, "-t", f"{dur:.3f}"] + enc + [out])
     elif k == "end":
-        fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=8,eq=brightness=-0.25[bg];"
-              f"[1:v]scale={int(W*0.5)}:-2[l];[bg][l]overlay=(W-w)/2:H*0.18,"
+        fc = (f"[0:v]scale={int(W*1.12)}:{int(H*1.12)}:force_original_aspect_ratio=increase,crop={int(W*1.12)}:{int(H*1.12)},"
+              f"scale=w='{int(W*1.12)}-{int(W*0.12)}*t/{dur:.2f}':h=-2:eval=frame,crop={W}:{H},boxblur=8,eq=brightness=-0.25[bg];"
+              f"[1:v]scale={int(W*0.5)}:-2[l];[bg][l]overlay=(W-w)/2:H*0.18-{int(H*0.03)}*t/{dur:.2f},"
               f"drawtext=fontfile={LFONT}:expansion=none:text='SUBSCRIBE · BE PRACTICAL WITH KISHORE':x=(w-tw)/2:y=h*0.72:fontsize={int(H*0.038)}:fontcolor=white,"
               f"drawtext=fontfile={TFONT}:expansion=none:text='EDUCATION ONLY · NOT LEGAL OR FINANCIAL ADVICE':x=(w-tw)/2:y=h*0.80:fontsize={int(H*0.022)}:fontcolor=white@0.8")
         run(["ffmpeg", "-v", "error", "-y", "-ss", "2", "-stream_loop", "-1", "-i", BR / "pixabay_200435.mp4", "-loop", "1", "-i", ROOT / "assets/brand/banner.png",
