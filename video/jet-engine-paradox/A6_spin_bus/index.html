@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>A6 · Spin: 12,000 rpm and a London bus</title>
+    <!-- Session A, The Jet Engine Paradox. J065: the turbine disc spins up with motion blur, rpm counter climbs past 12,000
+         ("twelve thousand" +4.3 s). J066: time freezes; a stylised red double-decker (no branding) hangs by a cable from ONE
+         blade tip, the blade stretches a hair; label PULL ON ONE BLADE ≈ A LONDON BUS ("pull" +8.2 s, "London bus" +10.56 s).
+         The ≈ is an inline SVG (no vendored Inter subset carries U+2248).
+         Shared model + render stack: jepA.js (master in ../_libA/); HDRI vendor/library/hdri/studio_small_09_1k.hdr ; -->
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <link rel="stylesheet" href="jep.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #0B0E14; font-family: Inter, Arial, sans-serif; }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .scrim { position: absolute; left: -300px; bottom: -300px; width: 1500px; height: 700px;
+        background: radial-gradient(closest-side, rgba(5,6,10,0.7), rgba(5,6,10,0)); }
+      #gauge { position: absolute; left: 80px; bottom: 96px; width: 760px; height: 300px; }
+      #dial { position: absolute; left: 0; top: 0; width: 300px; height: 300px; }
+      #needle { position: absolute; left: 148px; top: 30px; width: 4px; height: 120px; background: var(--amber); border-radius: 2px;
+        transform-origin: 50% 100%; box-shadow: 0 0 12px rgba(249,115,22,0.8); }
+      #hub { position: absolute; left: 136px; top: 138px; width: 28px; height: 28px; border-radius: 50%; background: #1b2130; border: 3px solid var(--amber); }
+      #read { position: absolute; left: 320px; top: 92px; white-space: nowrap; }
+      #read .jep-num { font-size: 104px; display: inline-block; }
+      #gt { color: var(--amber); display: inline-block; width: 0; overflow: hidden; vertical-align: top; }
+      #read small { display: block; font: 800 30px/1 var(--font); letter-spacing: 0.22em; color: var(--dim); margin-top: 10px; }
+      #lbl { white-space: nowrap; }
+      #lbl svg { display: inline-block; width: 30px; height: 26px; margin: 0 6px; vertical-align: -2px; }
+      #freeze { position: absolute; inset: 0; background: #dbeafe; opacity: 0; mix-blend-mode: screen; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="A6_spin_bus" data-start="0" data-width="1920" data-height="1080" data-duration="12.39">
+      <canvas id="gl"></canvas>
+      <div class="scrim"></div>
+      <div id="freeze"></div>
+      <div id="gauge">
+        <svg id="dial" viewBox="0 0 300 300"><g id="ticks"></g>
+          <path id="arcBase" fill="none" stroke="rgba(248,250,252,0.18)" stroke-width="10" />
+          <path id="arcFill" fill="none" stroke="#F97316" stroke-width="10" stroke-linecap="round" />
+          <path id="arcRed" fill="none" stroke="#EF4444" stroke-width="10" /></svg>
+        <div id="needle"></div><div id="hub"></div>
+        <div id="read"><span class="jep-num" id="gt">&gt;&nbsp;</span><span class="jep-num" id="rpm">0</span><small>RPM</small></div>
+      </div>
+      <div class="jep-label" id="lbl">Pull on one blade<svg viewBox="0 0 30 26" aria-label="approximately"><path d="M3 9 C 8 3, 13 3, 15 7 S 22 11, 27 5 M3 20 C 8 14, 13 14, 15 18 S 22 22, 27 16" fill="none" stroke="#F8FAFC" stroke-width="3.6" stroke-linecap="round"/></svg>a London bus</div>
+    </div>
+    <script>
+      // dial: 240 degree sweep, 0 .. 15,000 rpm; red mark from 12,000
+      const C = 150, R = 118, A0 = -210, SWEEP = 240, MAX = 15000;
+      const pt = (deg, r) => [C + r * Math.cos(deg * Math.PI / 180), C + r * Math.sin(deg * Math.PI / 180)];
+      const arc = (v0, v1, r) => { const a = A0 + SWEEP * v0 / MAX, b = A0 + SWEEP * v1 / MAX, [x0, y0] = pt(a, r), [x1, y1] = pt(b, r);
+        return `M${x0} ${y0} A${r} ${r} 0 ${b - a > 180 ? 1 : 0} 1 ${x1} ${y1}`; };
+      document.getElementById("arcBase").setAttribute("d", arc(0, MAX, R));
+      document.getElementById("arcRed").setAttribute("d", arc(12000, MAX, R));
+      const tk = document.getElementById("ticks");
+      for (let v = 0; v <= MAX; v += 500) { const a = A0 + SWEEP * v / MAX, big = v % 2500 === 0, [x0, y0] = pt(a, R - 14), [x1, y1] = pt(a, R - (big ? 34 : 24));
+        const l = document.createElementNS("http://www.w3.org/2000/svg", "line"); l.setAttribute("x1", x0); l.setAttribute("y1", y0); l.setAttribute("x2", x1); l.setAttribute("y2", y1);
+        l.setAttribute("stroke", v >= 12000 ? "#EF4444" : "rgba(248,250,252,0.6)"); l.setAttribute("stroke-width", big ? 3 : 1.6); tk.appendChild(l); }
+      window.__A6dial = { arc, A0, SWEEP, MAX };
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#gauge", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+      tl.fromTo("#gt", { width: 0 }, { width: 96, duration: 0.35, ease: "power3.out" }, 4.5);
+      tl.to("#gauge", { opacity: 0, x: -30, duration: 0.45, ease: "power2.in" }, 7.25);
+      tl.fromTo("#freeze", { opacity: 0 }, { opacity: 0.35, duration: 0.05 }, 6.95);
+      tl.to("#freeze", { opacity: 0, duration: 0.7, ease: "power2.out" }, 7.0);
+      tl.fromTo("#lbl", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 8.1);
+      tl.to("#lbl", { x: 8, duration: 3.6, ease: "none" }, 8.7);
+      window.__timelines["A6_spin_bus"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, backdrop, buildHotSection, rotorBlur, makeBus, embers, setEnv, U, seg, ease, lerp, clamp, wob, aim, fmt, DIM } from "./jepA.js";
+      const st = createStage({ fov: 30 });
+      const { scene, camera } = st;
+      const bg = backdrop({ glowDir: [-0.3, 0.2, -1], glow: 0.6 }); scene.add(bg);
+      const L = lightRig(scene, { key: 1.0, rim: 4.0, fill: 0.2 });
+      L.key.position.set(3, 4, 5); L.rim.position.set(-3, 2, -3); L.rim2.position.set(3, -2, -3);
+      const hs = buildHotSection(scene, { combustor: false, casing: false, ngv: false });
+      hs.discMat.roughness = 0.62;
+      setEnv(scene, 0.28);
+      const blur = rotorBlur(hs, { K: 4, opacity: 0.4 });
+      // the hero blade (pointing straight down when time freezes) is a separate mesh so it can stretch a hair
+      const hero = new THREE.Mesh(hs.blade.geometry, hs.bladeMat);
+      const heroHolder = new THREE.Group(); heroHolder.rotation.z = Math.PI; heroHolder.add(hero); hero.position.y = DIM.R;
+      hs.rotor.add(heroHolder);
+      { const M = new THREE.Matrix4().makeScale(0, 0, 0); hs.ring.setMatrixAt(24, M); hs.ring.instanceMatrix.needsUpdate = true; }
+      // cable + spreader + straps + bus (hung from the hero blade tip, in engine space; the rotor is frozen then)
+      const tipY = -(DIM.R + DIM.H + 0.005);
+      const steel = new THREE.MeshPhysicalMaterial({ color: 0x8b8f96, metalness: 1, roughness: 0.35 });
+      const rig = new THREE.Group(); scene.add(rig);
+      const cable = new THREE.Mesh(new THREE.CylinderGeometry(0.006, 0.006, 1, 10), steel); rig.add(cable);
+      const clamp_ = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.035, 0.12), steel); rig.add(clamp_);
+      const bus = makeBus(); const busPiv = new THREE.Group(); busPiv.add(bus); rig.add(busPiv);
+      const { L: BL, H: BH, W: BW } = bus.userData.size;
+      bus.position.set(-BL / 2 + BL / 2, -BH, 0); bus.position.x = 0;
+      bus.children.forEach((c) => {}); // bus is centred on x already (boxes centred)
+      const straps = []; for (const [sx, sz] of [[-1, -1], [-1, 1], [1, -1], [1, 1]]) { const s = new THREE.Mesh(new THREE.CylinderGeometry(0.004, 0.004, 1, 6), steel); s.userData.c = [sx * BL * 0.42, sz * BW * 0.4]; busPiv.add(s); straps.push(s); }
+      const em = embers({ count: 200, box: [5, 4, 3], center: [0, -0.5, 0], size: 12 }); scene.add(em);
+      // angular speed (rad/s) and its integral, tabulated once (pure function of t)
+      const T_FREEZE = 6.98;
+      const omega = (t) => { if (t >= T_FREEZE) return 0; const up = 0.5 + 150 * Math.pow(seg(t, 0.3, 4.7, ease.lin), 2.2); const stop = 1 - seg(t, 6.72, T_FREEZE, ease.out); return up * stop; };
+      const DT = 1 / 600, N = Math.ceil(12.5 / DT), table = new Float64Array(N + 1);
+      for (let i = 1; i <= N; i++) table[i] = table[i - 1] + 0.5 * (omega((i - 1) * DT) + omega(i * DT)) * DT;
+      const pitch = (Math.PI * 2) / DIM.N;
+      const final = table[Math.min(N, Math.ceil(T_FREEZE / DT) + 2)];
+      const offset = Math.ceil(final / pitch) * pitch - final;   // so that at the freeze a blade (the hero) points straight down
+      const angleAt = (t) => { const f = clamp(t / DT, 0, N), i = Math.floor(f), r = f - i; return lerp(table[i], table[Math.min(N, i + 1)], r) + offset; };
+      const rpmEl = document.getElementById("rpm"), needle = document.getElementById("needle"), fill = document.getElementById("arcFill");
+      st.run((t) => {
+        const ang = angleAt(t), w = omega(t);
+        hs.spin(-ang);
+        blur.setBlur(-w, 1 - 0.35 * clamp(w / 60));
+        heroHolder.visible = true;
+        // counter: climbs to 12,000 on "twelve thousand", then reads > 12,000 (needle sits past the mark)
+        const climb = seg(t, 0.4, 4.45, (x) => 1 - Math.pow(1 - x, 1.6));
+        const shown = Math.round(12000 * climb / 10) * 10;
+        rpmEl.textContent = fmt(shown);
+        const nv = t < 4.45 ? 12000 * climb : 12000 + 650 * seg(t, 4.45, 5.2, ease.out) + 90 * Math.sin(t * 7.0) * seg(t, 4.6, 5.4);
+        const D = window.__A6dial; needle.style.transform = `rotate(${D.A0 + 90 + D.SWEEP * nv / D.MAX}deg)`;
+        fill.setAttribute("d", nv > 30 ? D.arc(0, Math.min(nv, D.MAX), 118) : "");
+        // freeze + hang: cable drops from the tip, bus swings in and settles (damped pendulum), blade stretches a hair
+        const drop = seg(t, 7.3, 8.6, ease.out), load = seg(t, 8.2, 9.4, ease.inOut2);
+        const cableLen = 1.05 * drop + 0.001;
+        rig.visible = t > 7.25;
+        const sw = 0.10 * Math.exp(-(t - 8.0) * 0.55) * Math.sin((t - 8.0) * 2.4) * (t > 8 ? 1 : 0);
+        cable.scale.y = cableLen; cable.position.set(0, tipY - cableLen / 2, 0);
+        clamp_.position.set(0, tipY + 0.005, 0);
+        busPiv.position.set(0, tipY - cableLen, 0); busPiv.rotation.z = sw; busPiv.rotation.y = 0.35;
+        bus.position.y = -0.18 - BH; bus.visible = drop > 0.6;
+        for (const s of straps) { const [cx, cz] = s.userData.c; const top = new THREE.Vector3(0, 0, 0), bot = new THREE.Vector3(cx, -0.18, cz);
+          const mid = top.clone().add(bot).multiplyScalar(0.5); s.position.copy(mid); s.scale.y = top.distanceTo(bot);
+          s.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), bot.clone().sub(top).normalize()); s.visible = bus.visible; }
+        hero.scale.y = 1 + 0.015 * load; hero.position.y = DIM.R + 0.002 * load;
+        rig.rotation.z = 0; rig.position.set(0, 0, 0);
+        // camera: front 3/4 of the whole disc, then (after the freeze) down to the hanging bus
+        const k1 = t / 7, down = seg(t, 7.1, 9.6, ease.inOut);
+        const pA = [2.2 - 0.6 * k1, 1.0 - 0.15 * k1, 6.6 - 0.7 * k1], lA = [-0.95, 0.0, 0];
+        const pB = [3.1 + 0.2 * seg(t, 9.6, 12.4, ease.lin), -1.85, 5.2], lB = [-1.25, -2.0, 0];
+        aim(camera, [lerp(pA[0], pB[0], down), lerp(pA[1], pB[1], down), lerp(pA[2], pB[2], down)], [lerp(lA[0], lB[0], down), lerp(lA[1], lB[1], down), lerp(lA[2], lB[2], down)]);
+        U.uHeat.value = 0.05 + 0.08 * clamp(w / 100);
+        // after the freeze the embers hang still in the air
+        U.uTime.value = t < T_FREEZE ? t : T_FREEZE + 0.03 * (t - T_FREEZE);
+        st.setShimmer(0.3, 0.5, 0.5, 0.4, 0.4);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>A4 · Combustor and hot gas</title>
+    <!-- Session A, The Jet Engine Paradox. Cutaway combustor: nozzles light, flame front fills the liner, hot gas streams through
+         the nozzle guide vanes and across the rotating blades (the A3 blade, now in its stage).
+         Shared model + render stack: jepA.js (master in ../_libA/); HDRI vendor/library/hdri/studio_small_09_1k.hdr ;
+         cues: "combustion chamber" +1.58 s, "burning fuel" +3.07 s, "storm of hot gas" +4.28 s. -->
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js",
+          "simplex-noise": "./vendor/noise/simplex-noise.js"
+      } }
+    </script>
+    <link rel="stylesheet" href="jep.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #0B0E14; font-family: Inter, Arial, sans-serif; }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .scrim { position: absolute; left: -260px; bottom: -260px; width: 1400px; height: 620px;
+        background: radial-gradient(closest-side, rgba(5,6,10,0.65), rgba(5,6,10,0)); }
+      #lbl { overflow: hidden; }
+      #lbl .bar { position: absolute; left: -4px; top: 0; bottom: 0; width: 4px; background: var(--amber); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="A4_combustor_flow" data-start="0" data-width="1920" data-height="1080" data-duration="5.63">
+      <canvas id="gl"></canvas>
+      <div class="scrim"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(".scrim", { opacity: 0.6 }, { opacity: 0.9, duration: 5.6, ease: "none" }, 0);
+      window.__timelines["A4_combustor_flow"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, backdrop, buildHotSection, gasStream, fireVolume, setEnv, embers, U, seg, ease, lerp, wob, aim } from "./jepA.js";
+      const st = createStage({ fov: 30 });
+      const { scene, camera } = st;
+      const bg = backdrop({ glowDir: [-0.4, 0.3, 0.3], glow: 0.5 }); scene.add(bg);
+      const L = lightRig(scene, { key: 0.35, rim: 2.4, fill: 0.08 });
+      L.key.position.set(-1, 5, 1); L.rim.position.set(3, 2.5, 2); L.rim2.position.set(2, -1, 4); L.fill.position.set(-4, 0, -3);
+      const hs = buildHotSection(scene, {}); setEnv(scene, 0.22);
+      const fv = fireVolume(); scene.add(fv);
+      const fire = new THREE.PointLight(0xff7a2a, 0, 6, 1.6); fire.position.set(0.5, 1.1, -1.8); scene.add(fire);
+      const fire2 = new THREE.PointLight(0xff9a40, 0, 5, 1.6); fire2.position.set(0.4, 1.2, -0.6); scene.add(fire2);
+      const gas = gasStream({ count: 2200, z0: -2.3, z1: 1.3, thetaRange: [0.05, Math.PI * 0.98] }); scene.add(gas);
+      st.run((t) => {
+        const ign = seg(t, 0.5, 2.2, ease.inOut2), front = seg(t, 1.6, 3.3, ease.inOut2), storm = seg(t, 2.6, 4.5, ease.inOut2);
+        fv.userData.mat.uniforms.uFront.value = lerp(-2.5, -0.6, front);
+        hs.flames.userData.mat.uniforms.uIgn.value = 0.05 + 1.0 * ign + 0.2 * front;
+        hs.spin(-0.15 - 1.4 * t - 0.6 * storm * (t - 2.6));
+        gas.material.uniforms.uFill.value = 0.08 + 0.92 * storm;
+        gas.material.uniforms.uAmt.value = 0.5 + 1.3 * storm;
+        U.uHeat.value = 0.02 + 0.05 * front + 0.05 * storm;
+        fire.intensity = 2.0 * ign + 2.5 * front; fire2.intensity = 1.6 * storm;
+        bg.material.uniforms.uGlow.value = 0.25 + 0.5 * front;
+        const k = ease.inOut2(t / 5.63);
+        aim(camera, [lerp(-2.9, -2.6, k), lerp(1.75, 1.55, k), lerp(-2.35, -0.55, k)], [0.1, lerp(1.25, 1.22, k), lerp(-1.75, -0.25, k)]);
+        st.setShimmer(0.5 + 0.5 * front, 0.45, 0.5, 0.35, 0.3);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>A8 · Verdict: metal in gas above its melting point</title>
+    <!-- Session A, The Jet Engine Paradox. Verdict: the A5 thermal blade spinning in its stage. The camera is locked to the
+         rotor, so the blade stays sharp while the vanes, gas and stage streak past; rpm and hours counters run. Calm, wide, final.
+         Cues: "hotter" +2.98 s, "spinning" +5.08 s, "for thousands of hours" +5.69 s.
+         Shared model + render stack: jepA.js (master in ../_libA/); HDRI vendor/library/hdri/studio_small_09_1k.hdr ; -->
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <link rel="stylesheet" href="jep.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #0B0E14; font-family: Inter, Arial, sans-serif; }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .scrim { position: absolute; left: -400px; bottom: -380px; width: 2200px; height: 860px;
+        background: radial-gradient(closest-side, rgba(5,6,10,0.82), rgba(5,6,10,0)); }
+      #gauge { position: absolute; left: 80px; bottom: 96px; width: 760px; height: 300px; }
+      #dial { position: absolute; left: 0; top: 0; width: 300px; height: 300px; }
+      #needle { position: absolute; left: 148px; top: 30px; width: 4px; height: 120px; background: var(--amber); border-radius: 2px;
+        transform-origin: 50% 100%; box-shadow: 0 0 12px rgba(249,115,22,0.8); }
+      #hub { position: absolute; left: 136px; top: 138px; width: 28px; height: 28px; border-radius: 50%; background: #1b2130; border: 3px solid var(--amber); }
+      #read { position: absolute; left: 320px; top: 92px; white-space: nowrap; }
+      #read .jep-num { font-size: 104px; display: inline-block; }
+      #gt { color: var(--amber); display: inline-block; width: 0; overflow: hidden; vertical-align: top; }
+      #read small { display: block; font: 800 30px/1 var(--font); letter-spacing: 0.22em; color: var(--dim); margin-top: 10px; }
+      #hrs { position: absolute; left: 1010px; bottom: 96px; white-space: nowrap; }
+      #hrs .jep-num { font-size: 104px; display: inline-block; }
+      #hrs small { display: block; font: 800 30px/1 var(--font); letter-spacing: 0.22em; color: var(--dim); margin-top: 10px; }
+      #plus { color: var(--amber); display: inline-block; width: 0; overflow: hidden; vertical-align: top; }
+      .rule { position: absolute; left: 960px; bottom: 120px; width: 2px; height: 160px; background: rgba(248,250,252,0.25); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="A8_verdict_blade" data-start="0" data-width="1920" data-height="1080" data-duration="7.31">
+      <canvas id="gl"></canvas>
+      <div class="scrim"></div>
+      <div id="gauge">
+        <svg id="dial" viewBox="0 0 300 300"><g id="ticks"></g>
+          <path id="arcBase" fill="none" stroke="rgba(248,250,252,0.18)" stroke-width="10" />
+          <path id="arcFill" fill="none" stroke="#F97316" stroke-width="10" stroke-linecap="round" />
+          <path id="arcRed" fill="none" stroke="#EF4444" stroke-width="10" /></svg>
+        <div id="needle"></div><div id="hub"></div>
+        <div id="read"><span class="jep-num" style="color:var(--amber)">&gt;&nbsp;</span><span class="jep-num">12,000</span><small>RPM</small></div>
+      </div>
+      <div class="rule" id="rule"></div>
+      <div id="hrs"><span class="jep-num" id="hv">0</span><span class="jep-num" id="plus">+</span><small>HOURS</small></div>
+    </div>
+    <script>
+      const C = 150, R = 118, A0 = -210, SWEEP = 240, MAX = 15000;
+      const pt = (deg, r) => [C + r * Math.cos(deg * Math.PI / 180), C + r * Math.sin(deg * Math.PI / 180)];
+      const arc = (v0, v1, r) => { const a = A0 + SWEEP * v0 / MAX, b = A0 + SWEEP * v1 / MAX, [x0, y0] = pt(a, r), [x1, y1] = pt(b, r);
+        return `M${x0} ${y0} A${r} ${r} 0 ${b - a > 180 ? 1 : 0} 1 ${x1} ${y1}`; };
+      document.getElementById("arcBase").setAttribute("d", arc(0, MAX, R));
+      document.getElementById("arcRed").setAttribute("d", arc(12000, MAX, R));
+      const tk = document.getElementById("ticks");
+      for (let v = 0; v <= MAX; v += 500) { const a = A0 + SWEEP * v / MAX, big = v % 2500 === 0, [x0, y0] = pt(a, R - 14), [x1, y1] = pt(a, R - (big ? 34 : 24));
+        const l = document.createElementNS("http://www.w3.org/2000/svg", "line"); l.setAttribute("x1", x0); l.setAttribute("y1", y0); l.setAttribute("x2", x1); l.setAttribute("y2", y1);
+        l.setAttribute("stroke", v >= 12000 ? "#EF4444" : "rgba(248,250,252,0.6)"); l.setAttribute("stroke-width", big ? 3 : 1.6); tk.appendChild(l); }
+      window.__A8dial = { arc, A0, SWEEP, MAX };
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#gauge", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 0.4);
+      tl.fromTo("#rule", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.5, ease: "power2.out" }, 1.0);
+      tl.fromTo("#hrs", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 1.1);
+      tl.fromTo("#plus", { width: 0 }, { width: 62, duration: 0.35, ease: "power3.out" }, 6.05);
+      window.__timelines["A8_verdict_blade"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, backdrop, buildHotSection, gasStream, filmParticles, ghostTrail, setEnv, U, seg, ease, lerp, clamp, wob, aim, fmt, DIM } from "./jepA.js";
+      const st = createStage({ fov: 26 });
+      const { scene, camera } = st;
+      const bg = backdrop({ glowDir: [0.2, 0.4, 0.6], glow: 0.5 }); scene.add(bg);
+      const L = lightRig(scene, { key: 0.5, rim: 2.6, fill: 0.1 });
+      const hs = buildHotSection(scene, { combustor: false, casing: false });
+      setEnv(scene, 0.35);
+      hs.group.children.filter((o) => o.geometry?.parameters?.height === 2.4).forEach((o) => o.removeFromParent());
+      // stator world (vanes, gas, backdrop) turns the other way around the locked rotor + camera
+      const stator = new THREE.Group(); scene.add(stator);
+      hs.group.remove(hs.ngv); stator.add(hs.ngv); 
+      const ngvBlur = ghostTrail(hs.ngv, stator, { K: 6, opacity: 0.3 });
+      const gas = gasStream({ count: 2600, z0: -1.4, z1: 1.1, size: 20 }); stator.add(gas);
+      const film = filmParticles(hs.blade, { perHole: 8 }); const holder = new THREE.Group(); holder.position.set(0, DIM.R, 0); holder.add(film); hs.rotor.add(holder);
+      const W = 2.4; // relative angular speed of the stage seen from the rotor (rad/s, visual)
+      const hv = document.getElementById("hv"), needle = document.getElementById("needle"), fill = document.getElementById("arcFill");
+      st.run((t) => {
+        U.uThermal.value = 1; U.uFilm.value = 1; U.uHeat.value = 0; hs.setHoleThermal(0.55); bg.material.uniforms.uHotBg.value = 0.8;
+        film.material.uniforms.uAmt.value = 1;
+        stator.rotation.z = W * t; ngvBlur.setSpread(-W / 30 * 0.9);
+        // counters: rpm sits past 12,000 with a live needle; hours run up to 4,000+ on "for thousands of hours"
+        const D = window.__A8dial, nv = 12000 + 600 * seg(t, 0.4, 1.4, ease.out) + 70 * Math.sin(t * 5.3) + 40 * Math.sin(t * 11.1);
+        needle.style.transform = `rotate(${D.A0 + 90 + D.SWEEP * nv / D.MAX}deg)`; fill.setAttribute("d", D.arc(0, nv, 118));
+        hv.textContent = fmt(Math.round(4000 * seg(t, 1.2, 6.0, (x) => 1 - Math.pow(1 - x, 2.2)) / 10) * 10);
+        // camera: from the A5 framing on the top blade, a slow calm pull back to a wide view of the stage
+        const k = seg(t, 0, 7.31, ease.inOut2);
+        aim(camera, [lerp(-2.6, -4.3, k), lerp(2.0, 2.5, k), lerp(1.9, 3.1, k)], [lerp(-0.35, -0.55, k), lerp(0.95, 0.65, k), -0.1], 0);
+        camera.fov = lerp(28, 30, k); camera.updateProjectionMatrix();
+        st.setShimmer(0.8, 0.5, 0.5, 0.45, 0.4);
+        st.fx.grain.uniforms.get("uGrain").value = 0.07;
+      });
+    </script>
+  </body>
+</html>
