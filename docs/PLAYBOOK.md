@@ -906,6 +906,14 @@ board vs real-footage balance, loudness) and refine once more.
 
 ## 15. Lessons log
 
+- **First real parallel 4K run (Minimum Due, 2026-10-13).** 3 render shards plus 1 assembler: about 2 h 35 min wall
+  clock end to end, including about 1 h of waiting for the shards. Native 4K renders ran at about 8× real time
+  (s02_timeline: 105 s in 14.7 min) on one 4 vCPU VM. Every file went over Litterbox (§3) and arrived with a matching md5.
+  Two lessons: doodle pages need `#root` stretched to 100% in the 4K copy (render_4k.sh), or the zoom:2 stage shows only
+  a quarter of the frame; and give every shot an exact frame count (`-frames:v`), because single dropped frames add up to
+  0.2 s of drift against the VO. All sessions share one usage limit: when it ran out at 02:30 UTC, every session paused
+  until the reset, so plan heavy runs around it.
+
 **Can't Pay Even the Minimum, research (2026-10-12).** One background researcher with 12 rule topics ran for over an
 hour, then a session restart ended it with nothing saved; the owner asked why research took so long. Now: split research
 into 2–4 narrow parallel researchers (one topic group each, ~15 min target), skip topics another file already covers,
