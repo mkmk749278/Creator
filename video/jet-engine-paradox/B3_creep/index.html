@@ -85,8 +85,8 @@
       const M = new THREE.Matrix4(), T1 = new THREE.Matrix4(), R1 = new THREE.Matrix4(), S1 = new THREE.Matrix4(), T0 = new THREE.Matrix4();
       const tgt = new THREE.Vector3();
       function renderAt(t) {
-        tgt.set(0.55, 0.05, 0);
-        orbit(camera, tgt, lerp(9.3, 10.1, inOut(t / 6.81)), lerp(-0.32, -0.12, inOut(t / 6.81)), lerp(0.3, 0.2, t / 6.81));
+        tgt.set(0.3, 0.25, 0);
+        orbit(camera, tgt, lerp(8.9, 9.6, inOut(t / 6.81)), lerp(-0.32, -0.12, inOut(t / 6.81)), lerp(0.3, 0.2, t / 6.81));
         const heat = smr(t, 0.45, 1.6);
         const force = smr(t, 1.05, 1.6);
         const e = 0.24 * inOut(smr(t, 1.9, 6.7));       // strain (exaggerated for the eye)
