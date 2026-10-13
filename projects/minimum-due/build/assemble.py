@@ -390,7 +390,7 @@ def split_long(shots, end):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=720)
-    ap.add_argument("--skip-boards", action="store_true", help="render other shots while board renders are still running")
+    ap.add_argument("--skip-boards", action="store_true", help="render other shots while board and scene renders are still running")
     ap.add_argument("--refined", action="store_true", help="the refined cut (refine-plan.md): scenes replace boards/filler")
     a = ap.parse_args(); H = a.height; W = H * 16 // 9
     global BD, SC
@@ -409,8 +409,8 @@ def main():
         key = hashlib.sha1(json.dumps([s, dur, W, H, src_mtime(s), RENDER_V], default=str, sort_keys=True).encode()).hexdigest()[:8]
         out = sd / f"{i:03d}_{s['kind']}_{key}.mp4"   # spec hash: an edited shot re-renders, the rest are reused
         if not out.exists():
-            if a.skip_boards and s["kind"] == "board" and not (BD / (s["id"] + ".mp4")).exists():
-                print(f"{i:03d} skip board {s['id']}"); continue
+            if a.skip_boards and s["kind"] in ("board", "scene") and not ((BD if s["kind"] == "board" else SC) / (s["id"] + ".mp4")).exists():
+                print(f"{i:03d} skip {s['kind']} {s['id']}"); continue
             render(s, dur, out, W, H)
         print(f"{i:03d} {s['t']:7.2f} {dur:6.2f} {s['kind']:6s} {s.get('label') or s.get('id') or ''}", flush=True)
         lst.append(f"file '{out}'")
