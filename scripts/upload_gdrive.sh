@@ -27,14 +27,31 @@ if [[ ! -x $RCLONE ]]; then
   (cd "$CACHE" && unzip -q -o rclone.zip && rm rclone.zip)
 fi
 
-export RCLONE_CONFIG_GD_TYPE=drive RCLONE_CONFIG_GD_SCOPE=drive RCLONE_CONFIG_GD_TOKEN="$GDRIVE_RCLONE_TOKEN"
+# The Claude app's environment-variable field strips the JSON's leading `{"access_token":"` and the trailing
+# `","expiry":"…"}` (seen 2026-10-13), leaving `ya29…","token_type":"Bearer","refresh_token":"1//…`. Rebuild the JSON;
+# only the refresh token matters (rclone refreshes an expired access token with its default client).
+TOKEN=$(python3 - <<'EOF'
+import json, os, re
+t = os.environ["GDRIVE_RCLONE_TOKEN"].strip()
+try:
+    json.loads(t); print(t)
+except ValueError:
+    rt = re.search(r'refresh_token"?\s*:\s*"?([^",}\s]+)', t)
+    at = re.match(r'[{\s"]*(?:access_token"?\s*:\s*"?)?(ya29[^",}\s]*)', t)
+    if not rt:
+        raise SystemExit("GDRIVE_RCLONE_TOKEN has no refresh_token; run rclone authorize again")
+    print(json.dumps({"access_token": at.group(1) if at else "", "token_type": "Bearer",
+                      "refresh_token": rt.group(1), "expiry": "2000-01-01T00:00:00Z"}))
+EOF
+)
+export RCLONE_CONFIG_GD_TYPE=drive RCLONE_CONFIG_GD_SCOPE=drive RCLONE_CONFIG_GD_TOKEN="$TOKEN"
 export RCLONE_CONFIG_GD_ROOT_FOLDER_ID="$FOLDER_ID" RCLONE_CONFIG=/dev/null
 DEST="gd:${SUB}"
 for f in "$@"; do
   name=$(basename "$f")
   "$RCLONE" copyto --drive-chunk-size 64M --retries 4 --low-level-retries 10 --stats-one-line --stats 30s \
     "$f" "$DEST/$name" >&2
-  # anyone with the link can view (the owner opens it on the phone; nothing is listed publicly)
-  link=$("$RCLONE" link "$DEST/$name")
-  echo "$name  $link"
+  # a private link: opens for the owner (signed in to Drive on the phone); no public sharing is added
+  id=$("$RCLONE" lsjson --stat --no-mimetype "$DEST/$name" | python3 -c 'import json,sys; print(json.load(sys.stdin)["ID"])')
+  echo "$name  https://drive.google.com/file/d/$id/view"
 done

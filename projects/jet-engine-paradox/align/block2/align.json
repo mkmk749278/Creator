@@ -1,0 +1,452 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 6.139,
+  "te": "First, a fair question. If ISRO can build rocket engines, why is a jet engine so much harder?",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.403,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.693,
+  "end": 14.787,
+  "te": "A rocket engine fires for minutes, not hours. It carries its own oxygen. Then its job is done, and that stage falls away.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.198,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 15.331,
+  "end": 21.881,
+  "te": "A fighter jet engine must breathe air. Humid sea air. Freezing mountain air. Desert dust.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.198,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 22.336,
+  "end": 27.874,
+  "te": "It must go from idle to full power in seconds, again and again, during hard turns.",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.201,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 28.305,
+  "end": 31.283,
+  "te": "And it must run for thousands of hours between overhauls.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.229,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 31.814,
+  "end": 36.245,
+  "te": "At the heart of it all is one small part. The high pressure turbine blade.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.441,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 36.83,
+  "end": 41.933,
+  "te": "It sits right behind the combustion chamber, where burning fuel makes a storm of hot gas.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.261,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 42.458,
+  "end": 44.024,
+  "te": "Now here is the shocking part.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.261,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 44.62,
+  "end": 51.738,
+  "te": "Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they are made of.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.212,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 52.301,
+  "end": 58.484,
+  "te": "The gas is hotter than the metal's melting point. And still the blade does not melt. How?",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.035,
+  "confidence": "check"
+ },
+ {
+  "line": 11,
+  "start": 59.05,
+  "end": 61.136,
+  "te": "The first secret is in the metal itself.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.035,
+  "confidence": "check"
+ },
+ {
+  "line": 12,
+  "start": 61.745,
+  "end": 66.956,
+  "te": "Normal metal is made of many tiny crystals. The borders between them are weak spots.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.321,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 67.418,
+  "end": 73.688,
+  "te": "Under heat and huge force, the metal slowly stretches along those borders. Engineers call it creep.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.196,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 74.237,
+  "end": 78.765,
+  "te": "So the best blades are grown as one single crystal. No borders at all.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.196,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 79.293,
+  "end": 83.658,
+  "te": "The metal is a nickel super alloy, with rare elements like rhenium mixed in.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.262,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 84.215,
+  "end": 85.869,
+  "te": "The second secret is air.",
+  "en": "",
+  "speech_vs_text": 1.25,
+  "boundary_margin": 0.708,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 86.402,
+  "end": 92.232,
+  "te": "Each blade is hollow, with tiny channels inside. Cooler air from the compressor is pushed through them.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.297,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 92.704,
+  "end": 98.162,
+  "te": "It comes out through rows of tiny holes, and covers the blade in a thin blanket of cooler air.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.25,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 98.658,
+  "end": 101.749,
+  "te": "And on top, a ceramic coating acts like a heat shield.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.199,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 102.325,
+  "end": 108.738,
+  "te": "Now add the spin. The disc holding these blades turns more than twelve thousand times every minute.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.199,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 109.213,
+  "end": 114.225,
+  "te": "Rolls-Royce says the pull on each blade is like the weight of a London bus hanging from it.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.214,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 114.713,
+  "end": 120.876,
+  "te": "Gas above the metal's melting point. A bus hanging from every blade. For thousands of hours.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.251,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 121.35,
+  "end": 125.358,
+  "te": "This is why so few countries can do it. You cannot just copy the drawing.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.251,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 125.724,
+  "end": 134.821,
+  "te": "The real knowledge is in how the metal is made, cast, drilled and tested. Countries learned it over decades of testing, and many failures.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.128,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 135.315,
+  "end": 141.026,
+  "te": "That knowledge is a closely guarded secret. For decades, no engine maker shared it with India.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.128,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 141.503,
+  "end": 144.351,
+  "te": "But the Kaveri story did not end in two thousand eight.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 1.013,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 144.764,
+  "end": 149.173,
+  "te": "GTRE took out the afterburner and made a simpler version. The Dry Kaveri.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 149.739,
+  "end": 154.904,
+  "te": "In tests in Russia, it gave about forty eight kilonewtons of push, a little more than its target.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 155.352,
+  "end": 159.619,
+  "te": "It is now chosen to power India's stealth combat drones, like the planned Ghatak.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.049,
+  "confidence": "check"
+ },
+ {
+  "line": 30,
+  "start": 159.907,
+  "end": 168.74,
+  "te": "Meanwhile, DRDO's metals lab in Hyderabad, DMRL, has learned to make single crystal turbine blades. First for a helicopter engine.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.049,
+  "confidence": "check"
+ },
+ {
+  "line": 31,
+  "start": 169.113,
+  "end": 175.005,
+  "te": "Those years of struggle were not wasted. They built the base India did not have in nineteen eighty six.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.107,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 175.419,
+  "end": 178.948,
+  "te": "But the next big fighter, the AMCA, needs much more.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.356,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 179.325,
+  "end": 183.12,
+  "te": "The first AMCA jets will use GE's F four one four engine.",
+  "en": "",
+  "speech_vs_text": 1.3,
+  "boundary_margin": 0.186,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 183.51,
+  "end": 191.196,
+  "te": "For later jets, India wants a new engine of about one hundred and twenty kilonewtons. And this time, it wants to own the design.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 191.567,
+  "end": 196.517,
+  "te": "In twenty twenty five, the government picked France's Safran to build it together with GTRE.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 36,
+  "start": 196.861,
+  "end": 201.469,
+  "te": "India's condition is clear. The design and the rights must belong to India.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.235,
+  "confidence": "high"
+ },
+ {
+  "line": 37,
+  "start": 201.814,
+  "end": 210.71,
+  "te": "As of now, that deal is still waiting for final approval. And in August twenty twenty six, Rolls-Royce and Reliance also offered to build an engine in India.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.063,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "start": 211.123,
+  "end": 221.22,
+  "te": "China walked this same road. Its J twenty stealth fighter used Russian engines at first. It took China decades, and many failures, to switch to engines of its own.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.063,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "start": 221.61,
+  "end": 223.18,
+  "te": "So let us come back to our question.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.353,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "start": 223.583,
+  "end": 228.608,
+  "te": "Reaching the Moon needs rocket engines that work perfectly, but only for minutes at a time.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.311,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "start": 228.929,
+  "end": 235.856,
+  "te": "A fighter engine needs metal that lives in gas hotter than its own melting point, spinning, for thousands of hours.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.127,
+  "confidence": "high"
+ },
+ {
+  "line": 42,
+  "start": 236.242,
+  "end": 240.401,
+  "te": "That is the jet engine paradox. The Moon was the easier problem.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.127,
+  "confidence": "high"
+ },
+ {
+  "line": 43,
+  "start": 240.867,
+  "end": 251.682,
+  "te": "For forty years, India has been learning the hard way. Today, the Dry Kaveri is heading for certification, the blade makers in Hyderabad are learning, and a new engine is on the drawing board.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.129,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "start": 252.082,
+  "end": 258.027,
+  "te": "Will the Safran partnership finally give India a fighter engine of its own? Or will politics stall it again? Tell me what you think in the comments.",
+  "en": "",
+  "speech_vs_text": 0.7,
+  "boundary_margin": 0.025,
+  "confidence": "check"
+ },
+ {
+  "line": 45,
+  "start": 258.377,
+  "end": 268.074,
+  "te": "If you like deep, researched stories like this, like, share it with a friend who loves defence tech, and subscribe. See you in the next one.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.025,
+  "confidence": "check"
+ }
+]

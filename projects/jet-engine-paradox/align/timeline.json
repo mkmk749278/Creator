@@ -1,0 +1,636 @@
+{
+ "block_gap": 1.5,
+ "block1_dur": 275.9575,
+ "lines": [
+  {
+   "id": "J001",
+   "section": "0 Hook",
+   "start": 0.0,
+   "end": 5.72,
+   "en": "August twenty three, twenty twenty three. India lands a spacecraft near the south pole of the Moon."
+  },
+  {
+   "id": "J002",
+   "section": "0 Hook",
+   "start": 6.26,
+   "end": 8.45,
+   "en": "No country had ever landed there before."
+  },
+  {
+   "id": "J003",
+   "section": "0 Hook",
+   "start": 9.1,
+   "end": 14.63,
+   "en": "India builds its own nuclear submarines. It reached Mars on its very first try."
+  },
+  {
+   "id": "J004",
+   "section": "0 Hook",
+   "start": 15.33,
+   "end": 20.48,
+   "en": "And yet... in hangars in Bengaluru and Nashik, brand new fighter jets are waiting."
+  },
+  {
+   "id": "J005",
+   "section": "0 Hook",
+   "start": 21.03,
+   "end": 23.84,
+   "en": "Painted. Radars fitted. Almost ready."
+  },
+  {
+   "id": "J006",
+   "section": "0 Hook",
+   "start": 24.36,
+   "end": 27.39,
+   "en": "But not one of these new jets has joined the Air Force yet."
+  },
+  {
+   "id": "J007",
+   "section": "0 Hook",
+   "start": 27.92,
+   "end": 35.59,
+   "en": "The biggest reason? They are waiting for an engine. An engine made in Lynn, Massachusetts, about thirteen thousand kilometres away."
+  },
+  {
+   "id": "J008",
+   "section": "0 Hook",
+   "start": 36.14,
+   "end": 41.97,
+   "en": "So here is the question. India landed on the Moon. Why can it not build its own fighter jet engine?"
+  },
+  {
+   "id": "J009",
+   "section": "0 Hook",
+   "start": 42.47,
+   "end": 55.78,
+   "en": "Welcome to Be Practical with Kishore. Today, the story of one of the hardest machines on Earth to build. Single crystal metal, broken promises, and a forty year fight to join one of the world's most closed clubs."
+  },
+  {
+   "id": "J010",
+   "section": "1 The chokepoint",
+   "start": 56.23,
+   "end": 60.61,
+   "en": "To understand why one engine matters so much, look at the Indian Air Force."
+  },
+  {
+   "id": "J011",
+   "section": "1 The chokepoint",
+   "start": 61.02,
+   "end": 66.41,
+   "en": "The Air Force is supposed to have forty two fighter squadrons. Today it has about twenty nine."
+  },
+  {
+   "id": "J012",
+   "section": "1 The chokepoint",
+   "start": 66.84,
+   "end": 71.54,
+   "en": "Old jets like the MiG twenty one have retired. New jets are needed, fast."
+  },
+  {
+   "id": "J013",
+   "section": "1 The chokepoint",
+   "start": 71.93,
+   "end": 82.36,
+   "en": "So in twenty twenty one, the government ordered eighty three Tejas Mark One A jets from Hindustan Aeronautics, HAL. In twenty twenty five, it ordered ninety seven more."
+  },
+  {
+   "id": "J014",
+   "section": "1 The chokepoint",
+   "start": 82.84,
+   "end": 90.84,
+   "en": "But HAL does not make the engine. Every one of these jets uses the F four zero four, made by GE Aerospace in America."
+  },
+  {
+   "id": "J015",
+   "section": "1 The chokepoint",
+   "start": 91.23,
+   "end": 97.02,
+   "en": "The engines were due from twenty twenty three. The first one came only in March twenty twenty five."
+  },
+  {
+   "id": "J016",
+   "section": "1 The chokepoint",
+   "start": 97.46,
+   "end": 102.68,
+   "en": "GE blamed problems in its supply chain. HAL put penalties on GE for the delay."
+  },
+  {
+   "id": "J017",
+   "section": "1 The chokepoint",
+   "start": 103.09,
+   "end": 112.39,
+   "en": "By October twenty twenty six, GE had sent only fourteen of the ninety nine engines. HAL says close to thirty jets are built and waiting."
+  },
+  {
+   "id": "J018",
+   "section": "1 The chokepoint",
+   "start": 112.79,
+   "end": 119.0,
+   "en": "Some testing work on radar and weapons is also still pending. But the engine has been the biggest hold up."
+  },
+  {
+   "id": "J019",
+   "section": "1 The chokepoint",
+   "start": 119.49,
+   "end": 124.09,
+   "en": "And a delay is only the small problem. The real danger is control."
+  },
+  {
+   "id": "J020",
+   "section": "1 The chokepoint",
+   "start": 124.6,
+   "end": 125.97,
+   "en": "India has been here before."
+  },
+  {
+   "id": "J021",
+   "section": "1 The chokepoint",
+   "start": 126.36,
+   "end": 130.28,
+   "en": "In May nineteen ninety eight, India tested nuclear weapons at Pokhran."
+  },
+  {
+   "id": "J022",
+   "section": "1 The chokepoint",
+   "start": 130.71,
+   "end": 134.57,
+   "en": "America answered with sanctions under a law called the Glenn Amendment."
+  },
+  {
+   "id": "J023",
+   "section": "1 The chokepoint",
+   "start": 134.89,
+   "end": 142.28,
+   "en": "Sales of the same GE F four zero four engines to India were stopped. American help on the Tejas flight controls also ended."
+  },
+  {
+   "id": "J024",
+   "section": "1 The chokepoint",
+   "start": 142.72,
+   "end": 146.93,
+   "en": "Indian engineers had to build the flight control system on their own. They did it."
+  },
+  {
+   "id": "J025",
+   "section": "1 The chokepoint",
+   "start": 147.29,
+   "end": 152.67,
+   "en": "The lesson was simple. If you do not own the engine, you do not fully own your fighter jet."
+  },
+  {
+   "id": "J026",
+   "section": "1 The chokepoint",
+   "start": 153.09,
+   "end": 158.49,
+   "en": "Nine countries have nuclear bombs. About ten have put a satellite in space with their own rocket."
+  },
+  {
+   "id": "J027",
+   "section": "1 The chokepoint",
+   "start": 158.8,
+   "end": 170.49,
+   "en": "But only a handful can design and build a modern fighter engine on their own. The main ones are America, Russia, Britain and France. And, after decades of struggle, China."
+  },
+  {
+   "id": "J028",
+   "section": "1 The chokepoint",
+   "start": 170.96,
+   "end": 176.65,
+   "en": "India tried to join this club. And that started one of the hardest engineering stories in its history."
+  },
+  {
+   "id": "J029",
+   "section": "2 The ghost of Kaveri",
+   "start": 177.19,
+   "end": 181.45,
+   "en": "In nineteen eighty six, Indian engineers began planning their own fighter engine."
+  },
+  {
+   "id": "J030",
+   "section": "2 The ghost of Kaveri",
+   "start": 181.9,
+   "end": 189.93,
+   "en": "The job went to the Gas Turbine Research Establishment, GTRE, a DRDO lab in Bengaluru. The engine was named Kaveri."
+  },
+  {
+   "id": "J031",
+   "section": "2 The ghost of Kaveri",
+   "start": 190.38,
+   "end": 196.76,
+   "en": "Full development was approved in March nineteen eighty nine, with a budget of about three hundred and eighty two crore rupees."
+  },
+  {
+   "id": "J032",
+   "section": "2 The ghost of Kaveri",
+   "start": 197.11,
+   "end": 200.25,
+   "en": "The plan was to finish by December nineteen ninety six."
+  },
+  {
+   "id": "J033",
+   "section": "2 The ghost of Kaveri",
+   "start": 200.6,
+   "end": 206.72,
+   "en": "The goal was huge. An engine that gives eighty one kilonewtons of push with the afterburner on."
+  },
+  {
+   "id": "J034",
+   "section": "2 The ghost of Kaveri",
+   "start": 207.09,
+   "end": 213.43,
+   "en": "And India was building a brand new jet, the Tejas, at the same time. Both almost from scratch. That doubled the risk."
+  },
+  {
+   "id": "J035",
+   "section": "2 The ghost of Kaveri",
+   "start": 213.88,
+   "end": 219.43,
+   "en": "When the Kaveri prototypes reached the test bench, the numbers did not add up."
+  },
+  {
+   "id": "J036",
+   "section": "2 The ghost of Kaveri",
+   "start": 219.86,
+   "end": 224.14,
+   "en": "It was meant to weigh eleven hundred kilos. It weighed twelve hundred and thirty five."
+  },
+  {
+   "id": "J037",
+   "section": "2 The ghost of Kaveri",
+   "start": 224.56,
+   "end": 229.92,
+   "en": "It was meant to push eighty one kilonewtons. As reported, it reached only about seventy."
+  },
+  {
+   "id": "J038",
+   "section": "2 The ghost of Kaveri",
+   "start": 230.28,
+   "end": 234.75,
+   "en": "And India had no facility to test a fighter engine in high altitude conditions."
+  },
+  {
+   "id": "J039",
+   "section": "2 The ghost of Kaveri",
+   "start": 235.12,
+   "end": 238.8,
+   "en": "So Indian engineers had to take the Kaveri to Russia for those tests."
+  },
+  {
+   "id": "J040",
+   "section": "2 The ghost of Kaveri",
+   "start": 239.16,
+   "end": 242.38,
+   "en": "The years went by. The Air Force could not wait for ever."
+  },
+  {
+   "id": "J041",
+   "section": "2 The ghost of Kaveri",
+   "start": 242.76,
+   "end": 252.25,
+   "en": "In September two thousand eight, the Kaveri was officially separated from the Tejas programme. The Tejas would fly with the American engine."
+  },
+  {
+   "id": "J042",
+   "section": "2 The ghost of Kaveri",
+   "start": 252.69,
+   "end": 259.74,
+   "en": "But GTRE did not stop. In twenty ten, a Kaveri flew for the first time, fitted to a Russian Ilyushin transport plane used as a flying test bed."
+  },
+  {
+   "id": "J043",
+   "section": "2 The ghost of Kaveri",
+   "start": 260.15,
+   "end": 263.18,
+   "en": "Twenty seven flights. Up to twelve kilometres high."
+  },
+  {
+   "id": "J044",
+   "section": "2 The ghost of Kaveri",
+   "start": 263.56,
+   "end": 270.83,
+   "en": "By twenty twelve, about two thousand crore rupees had been spent. The cost estimate had grown to over twenty eight hundred crore."
+  },
+  {
+   "id": "J045",
+   "section": "2 The ghost of Kaveri",
+   "start": 271.22,
+   "end": 275.75,
+   "en": "So why did it fail? To answer that, we need to go inside the engine."
+  },
+  {
+   "id": "J046",
+   "section": "3 The physics of hell",
+   "start": 277.46,
+   "end": 283.6,
+   "en": "First, a fair question. If ISRO can build rocket engines, why is a jet engine so much harder?"
+  },
+  {
+   "id": "J047",
+   "section": "3 The physics of hell",
+   "start": 284.15,
+   "end": 292.24,
+   "en": "A rocket engine fires for minutes, not hours. It carries its own oxygen. Then its job is done, and that stage falls away."
+  },
+  {
+   "id": "J048",
+   "section": "3 The physics of hell",
+   "start": 292.79,
+   "end": 299.34,
+   "en": "A fighter jet engine must breathe air. Humid sea air. Freezing mountain air. Desert dust."
+  },
+  {
+   "id": "J049",
+   "section": "3 The physics of hell",
+   "start": 299.79,
+   "end": 305.33,
+   "en": "It must go from idle to full power in seconds, again and again, during hard turns."
+  },
+  {
+   "id": "J050",
+   "section": "3 The physics of hell",
+   "start": 305.76,
+   "end": 308.74,
+   "en": "And it must run for thousands of hours between overhauls."
+  },
+  {
+   "id": "J051",
+   "section": "3 The physics of hell",
+   "start": 309.27,
+   "end": 313.7,
+   "en": "At the heart of it all is one small part. The high pressure turbine blade."
+  },
+  {
+   "id": "J052",
+   "section": "3 The physics of hell",
+   "start": 314.29,
+   "end": 319.39,
+   "en": "It sits right behind the combustion chamber, where burning fuel makes a storm of hot gas."
+  },
+  {
+   "id": "J053",
+   "section": "3 The physics of hell",
+   "start": 319.92,
+   "end": 321.48,
+   "en": "Now here is the shocking part."
+  },
+  {
+   "id": "J054",
+   "section": "3 The physics of hell",
+   "start": 322.08,
+   "end": 329.2,
+   "en": "Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they are made of."
+  },
+  {
+   "id": "J055",
+   "section": "3 The physics of hell",
+   "start": 329.76,
+   "end": 335.94,
+   "en": "The gas is hotter than the metal's melting point. And still the blade does not melt. How?"
+  },
+  {
+   "id": "J056",
+   "section": "3 The physics of hell",
+   "start": 336.51,
+   "end": 338.59,
+   "en": "The first secret is in the metal itself."
+  },
+  {
+   "id": "J057",
+   "section": "3 The physics of hell",
+   "start": 339.2,
+   "end": 344.41,
+   "en": "Normal metal is made of many tiny crystals. The borders between them are weak spots."
+  },
+  {
+   "id": "J058",
+   "section": "3 The physics of hell",
+   "start": 344.88,
+   "end": 351.15,
+   "en": "Under heat and huge force, the metal slowly stretches along those borders. Engineers call it creep."
+  },
+  {
+   "id": "J059",
+   "section": "3 The physics of hell",
+   "start": 351.69,
+   "end": 356.22,
+   "en": "So the best blades are grown as one single crystal. No borders at all."
+  },
+  {
+   "id": "J060",
+   "section": "3 The physics of hell",
+   "start": 356.75,
+   "end": 361.12,
+   "en": "The metal is a nickel super alloy, with rare elements like rhenium mixed in."
+  },
+  {
+   "id": "J061",
+   "section": "3 The physics of hell",
+   "start": 361.67,
+   "end": 363.33,
+   "en": "The second secret is air."
+  },
+  {
+   "id": "J062",
+   "section": "3 The physics of hell",
+   "start": 363.86,
+   "end": 369.69,
+   "en": "Each blade is hollow, with tiny channels inside. Cooler air from the compressor is pushed through them."
+  },
+  {
+   "id": "J063",
+   "section": "3 The physics of hell",
+   "start": 370.16,
+   "end": 375.62,
+   "en": "It comes out through rows of tiny holes, and covers the blade in a thin blanket of cooler air."
+  },
+  {
+   "id": "J064",
+   "section": "3 The physics of hell",
+   "start": 376.12,
+   "end": 379.21,
+   "en": "And on top, a ceramic coating acts like a heat shield."
+  },
+  {
+   "id": "J065",
+   "section": "3 The physics of hell",
+   "start": 379.78,
+   "end": 386.2,
+   "en": "Now add the spin. The disc holding these blades turns more than twelve thousand times every minute."
+  },
+  {
+   "id": "J066",
+   "section": "3 The physics of hell",
+   "start": 386.67,
+   "end": 391.68,
+   "en": "Rolls-Royce says the pull on each blade is like the weight of a London bus hanging from it."
+  },
+  {
+   "id": "J067",
+   "section": "3 The physics of hell",
+   "start": 392.17,
+   "end": 398.33,
+   "en": "Gas above the metal's melting point. A bus hanging from every blade. For thousands of hours."
+  },
+  {
+   "id": "J068",
+   "section": "3 The physics of hell",
+   "start": 398.81,
+   "end": 402.82,
+   "en": "This is why so few countries can do it. You cannot just copy the drawing."
+  },
+  {
+   "id": "J069",
+   "section": "3 The physics of hell",
+   "start": 403.18,
+   "end": 412.28,
+   "en": "The real knowledge is in how the metal is made, cast, drilled and tested. Countries learned it over decades of testing, and many failures."
+  },
+  {
+   "id": "J070",
+   "section": "3 The physics of hell",
+   "start": 412.77,
+   "end": 418.48,
+   "en": "That knowledge is a closely guarded secret. For decades, no engine maker shared it with India."
+  },
+  {
+   "id": "J071",
+   "section": "4 The turning point",
+   "start": 418.96,
+   "end": 421.81,
+   "en": "But the Kaveri story did not end in two thousand eight."
+  },
+  {
+   "id": "J072",
+   "section": "4 The turning point",
+   "start": 422.22,
+   "end": 426.63,
+   "en": "GTRE took out the afterburner and made a simpler version. The Dry Kaveri."
+  },
+  {
+   "id": "J073",
+   "section": "4 The turning point",
+   "start": 427.2,
+   "end": 432.36,
+   "en": "In tests in Russia, it gave about forty eight kilonewtons of push, a little more than its target."
+  },
+  {
+   "id": "J074",
+   "section": "4 The turning point",
+   "start": 432.81,
+   "end": 437.08,
+   "en": "It is now chosen to power India's stealth combat drones, like the planned Ghatak."
+  },
+  {
+   "id": "J075",
+   "section": "4 The turning point",
+   "start": 437.36,
+   "end": 446.2,
+   "en": "Meanwhile, DRDO's metals lab in Hyderabad, DMRL, has learned to make single crystal turbine blades. First for a helicopter engine."
+  },
+  {
+   "id": "J076",
+   "section": "4 The turning point",
+   "start": 446.57,
+   "end": 452.46,
+   "en": "Those years of struggle were not wasted. They built the base India did not have in nineteen eighty six."
+  },
+  {
+   "id": "J077",
+   "section": "4 The turning point",
+   "start": 452.88,
+   "end": 456.41,
+   "en": "But the next big fighter, the AMCA, needs much more."
+  },
+  {
+   "id": "J078",
+   "section": "4 The turning point",
+   "start": 456.78,
+   "end": 460.58,
+   "en": "The first AMCA jets will use GE's F four one four engine."
+  },
+  {
+   "id": "J079",
+   "section": "4 The turning point",
+   "start": 460.97,
+   "end": 468.65,
+   "en": "For later jets, India wants a new engine of about one hundred and twenty kilonewtons. And this time, it wants to own the design."
+  },
+  {
+   "id": "J080",
+   "section": "4 The turning point",
+   "start": 469.02,
+   "end": 473.97,
+   "en": "In twenty twenty five, the government picked France's Safran to build it together with GTRE."
+  },
+  {
+   "id": "J081",
+   "section": "4 The turning point",
+   "start": 474.32,
+   "end": 478.93,
+   "en": "India's condition is clear. The design and the rights must belong to India."
+  },
+  {
+   "id": "J082",
+   "section": "4 The turning point",
+   "start": 479.27,
+   "end": 488.17,
+   "en": "As of now, that deal is still waiting for final approval. And in August twenty twenty six, Rolls-Royce and Reliance also offered to build an engine in India."
+  },
+  {
+   "id": "J083",
+   "section": "4 The turning point",
+   "start": 488.58,
+   "end": 498.68,
+   "en": "China walked this same road. Its J twenty stealth fighter used Russian engines at first. It took China decades, and many failures, to switch to engines of its own."
+  },
+  {
+   "id": "J084",
+   "section": "5 Verdict",
+   "start": 499.07,
+   "end": 500.64,
+   "en": "So let us come back to our question."
+  },
+  {
+   "id": "J085",
+   "section": "5 Verdict",
+   "start": 501.04,
+   "end": 506.07,
+   "en": "Reaching the Moon needs rocket engines that work perfectly, but only for minutes at a time."
+  },
+  {
+   "id": "J086",
+   "section": "5 Verdict",
+   "start": 506.39,
+   "end": 513.31,
+   "en": "A fighter engine needs metal that lives in gas hotter than its own melting point, spinning, for thousands of hours."
+  },
+  {
+   "id": "J087",
+   "section": "5 Verdict",
+   "start": 513.7,
+   "end": 517.86,
+   "en": "That is the jet engine paradox. The Moon was the easier problem."
+  },
+  {
+   "id": "J088",
+   "section": "5 Verdict",
+   "start": 518.32,
+   "end": 529.14,
+   "en": "For forty years, India has been learning the hard way. Today, the Dry Kaveri is heading for certification, the blade makers in Hyderabad are learning, and a new engine is on the drawing board."
+  },
+  {
+   "id": "J089",
+   "section": "5 Verdict",
+   "start": 529.54,
+   "end": 535.48,
+   "en": "Will the Safran partnership finally give India a fighter engine of its own? Or will politics stall it again? Tell me what you think in the comments."
+  },
+  {
+   "id": "J090",
+   "section": "5 Verdict",
+   "start": 535.83,
+   "end": 545.53,
+   "en": "If you like deep, researched stories like this, like, share it with a friend who loves defence tech, and subscribe. See you in the next one."
+  }
+ ]
+}

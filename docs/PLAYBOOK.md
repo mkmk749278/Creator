@@ -35,6 +35,10 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
     → sign in with the Drive account that owns `Creator` in the browser that opens → copy the one-line JSON it prints →
     Claude app → environment settings → Environment variables → `GDRIVE_RCLONE_TOKEN=<that line>`. New sessions pick it
     up. Until it exists, deliver the MP4 with `scripts/upload_gofile.sh` and say so.
+    Two quirks (2026-10-13): the Claude app's environment field strips the JSON braces and the `access_token` key
+    and drops the `expiry`, so `upload_gdrive.sh` rebuilds the JSON from whatever is left (the refresh token is
+    enough). Links it prints are private file links; the owner opens them signed in. The script never turns on
+    "anyone with the link" sharing. The first two uploads (the VO blocks) did get link sharing before this fix.
   - Small text deliverables (description, SRT, `review.md`, `claims.csv`) can go up through the connector
     (`create_file` with `parentId` = the Creator folder `1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M`, `disableConversionToGoogleType`).
   - Owner footage and clips for a film: the owner drops them in `Creator/` (zips are fine); sessions read them with the

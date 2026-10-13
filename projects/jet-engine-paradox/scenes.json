@@ -1,0 +1,888 @@
+{
+ "A1_title_blade": {
+  "session": "A",
+  "title": "Title: hero turbine blade",
+  "start": 42.32,
+  "end": 56.08,
+  "duration": 13.76,
+  "lines": "J009-J009",
+  "cues": [
+   {
+    "id": "J009",
+    "at": 0.15,
+    "to": 13.46,
+    "vo": "Welcome to Be Practical with Kishore. Today, the story of one of the hardest machines on Earth to build. Single crystal metal, broken promises, and a forty year fight to join one of the world's most closed clubs.",
+    "onscreen": "THE JET ENGINE PARADOX",
+    "cite": ""
+   }
+  ],
+  "breaks": [],
+  "spec": "Macro of one single-crystal high-pressure turbine blade glowing amber-hot in darkness, slow orbit, ember particles, heat shimmer. From 'Today, the story of...' (cue +2.5 s) the title THE JET ENGINE PARADOX burns in (amber edge glow into Ceramic White) and holds to the end. Leave the first 2.5 s clean (logo sting is overlaid at assembly). Corner tag: ILLUSTRATION."
+ },
+ "A2_engine_dive": {
+  "session": "A",
+  "title": "Dive into the engine",
+  "start": 272.57,
+  "end": 278.81,
+  "duration": 6.24,
+  "lines": "J045-J045",
+  "cues": [
+   {
+    "id": "J045",
+    "at": 0.15,
+    "to": 4.68,
+    "vo": "So why did it fail? To answer that, we need to go inside the engine.",
+    "onscreen": "",
+    "cite": ""
+   }
+  ],
+  "breaks": [
+   {
+    "kind": "VO_PAUSE",
+    "at": 4.89,
+    "len": 1.5,
+    "note": "block gap: camera dives into the engine"
+   }
+  ],
+  "spec": "Cutaway military turbofan (low-bypass, afterburner) in the blueprint-to-real transition: starts as amber wireframe on titanium slate, solidifies into metal as the camera dives through the fan, compressor stages and combustor into the glowing hot section. Ends inside the turbine stage (this scene runs through the 1.5 s block gap). Tag: ILLUSTRATION."
+ },
+ "A3_blade_rise": {
+  "session": "A",
+  "title": "The high-pressure turbine blade",
+  "start": 312.62,
+  "end": 317.64,
+  "duration": 5.02,
+  "lines": "J051-J051",
+  "cues": [
+   {
+    "id": "J051",
+    "at": 0.15,
+    "to": 4.58,
+    "vo": "At the heart of it all is one small part. The high pressure turbine blade.",
+    "onscreen": "HIGH-PRESSURE TURBINE BLADE",
+    "cite": ""
+   }
+  ],
+  "breaks": [],
+  "spec": "One HP turbine blade (twisted airfoil, platform, fir-tree root, rows of film-cooling holes on the leading edge) rises out of darkness, amber rim light, slow 360 turn. Label HIGH-PRESSURE TURBINE BLADE (lower left). Tag: ILLUSTRATION."
+ },
+ "A4_combustor_flow": {
+  "session": "A",
+  "title": "Combustor and hot gas",
+  "start": 317.64,
+  "end": 323.27,
+  "duration": 5.63,
+  "lines": "J052-J052",
+  "cues": [
+   {
+    "id": "J052",
+    "at": 0.15,
+    "to": 5.25,
+    "vo": "It sits right behind the combustion chamber, where burning fuel makes a storm of hot gas.",
+    "onscreen": "",
+    "cite": "[NASA | ROLLS-ROYCE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Cutaway of the combustor annulus: fuel nozzles light, a flame front fills the liner, hot-gas particles stream through the nozzle guide vanes and across the rotating turbine blades (the blade from A3 now in its stage). Tag: ILLUSTRATION."
+ },
+ "A5_thermal_reveal": {
+  "session": "A",
+  "title": "Gas hotter than the metal's melting point (core reveal)",
+  "start": 323.27,
+  "end": 341.36,
+  "duration": 18.09,
+  "lines": "J053-J055",
+  "cues": [
+   {
+    "id": "J053",
+    "at": 0.15,
+    "to": 1.71,
+    "vo": "Now here is the shocking part.",
+    "onscreen": "",
+    "cite": ""
+   },
+   {
+    "id": "J054",
+    "at": 3.81,
+    "to": 10.93,
+    "vo": "Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they are made of.",
+    "onscreen": "GAS: UP TO 200 °C ABOVE THE METAL'S MELTING POINT",
+    "cite": "[ROLLS-ROYCE | 2012]"
+   },
+   {
+    "id": "J055",
+    "at": 11.49,
+    "to": 17.67,
+    "vo": "The gas is hotter than the metal's melting point. And still the blade does not melt. How?",
+    "onscreen": "",
+    "cite": ""
+   }
+  ],
+  "breaks": [
+   {
+    "kind": "VO_PAUSE",
+    "at": 2.01,
+    "len": 1.5,
+    "note": "1.5 s total music silence, braam lands on 'melting point' (core reveal)"
+   }
+  ],
+  "spec": "J053: hold on the blade in its stage, everything slows. Then 1.5 s of stillness (music silence). At J054 the view switches to a thermal-camera look (ironbow palette): a vertical temperature scale at the right with a line labelled ALLOY MELTING POINT; the GAS reading climbs past it and stops 200 degrees above (label: GAS UP TO 200 °C ABOVE THE METAL'S MELTING POINT, tag [ROLLS-ROYCE | 2012]). No absolute temperatures. J055: push into the blade surface; a second readout METAL stays below the line (cool cyan film visible), ending on the question. Tag: ILLUSTRATION."
+ },
+ "A6_spin_bus": {
+  "session": "A",
+  "title": "Spin: 12,000 rpm and a London bus",
+  "start": 384.63,
+  "end": 397.02,
+  "duration": 12.39,
+  "lines": "J065-J066",
+  "cues": [
+   {
+    "id": "J065",
+    "at": 0.15,
+    "to": 6.57,
+    "vo": "Now add the spin. The disc holding these blades turns more than twelve thousand times every minute.",
+    "onscreen": "> 12,000 RPM",
+    "cite": "[ROLLS-ROYCE | 2012]"
+   },
+   {
+    "id": "J066",
+    "at": 7.04,
+    "to": 12.05,
+    "vo": "Rolls-Royce says the pull on each blade is like the weight of a London bus hanging from it.",
+    "onscreen": "PULL ON ONE BLADE ≈ A LONDON BUS",
+    "cite": "[ROLLS-ROYCE | 2012]"
+   }
+  ],
+  "breaks": [],
+  "spec": "J065: the full turbine disc with its ring of blades spins up with motion blur; rpm counter climbs past 12,000 (> 12,000 RPM, tag [ROLLS-ROYCE | 2012]). J066: time freezes; a red double-decker bus silhouette (simple stylised low-poly, no branding) hangs by a cable from ONE blade tip, the blade bends a hair; label PULL ON ONE BLADE ≈ A LONDON BUS. Tag: ILLUSTRATION."
+ },
+ "A7_recap": {
+  "session": "A",
+  "title": "Recap triptych",
+  "start": 397.02,
+  "end": 403.66,
+  "duration": 6.64,
+  "lines": "J067-J067",
+  "cues": [
+   {
+    "id": "J067",
+    "at": 0.15,
+    "to": 6.31,
+    "vo": "Gas above the metal's melting point. A bus hanging from every blade. For thousands of hours.",
+    "onscreen": "",
+    "cite": ""
+   }
+  ],
+  "breaks": [],
+  "spec": "Three fast panels synced to the three phrases: (1) thermal blade with the melting-point line, (2) the bus hanging from a blade, (3) an hours counter spinning to 4,000+ beside the spinning disc. Panels slide in one by one with impacts, then merge into the single glowing blade."
+ },
+ "A8_verdict_blade": {
+  "session": "A",
+  "title": "Verdict: metal in gas above its melting point",
+  "start": 511.24,
+  "end": 518.55,
+  "duration": 7.31,
+  "lines": "J086-J086",
+  "cues": [
+   {
+    "id": "J086",
+    "at": 0.15,
+    "to": 7.07,
+    "vo": "A fighter engine needs metal that lives in gas hotter than its own melting point, spinning, for thousands of hours.",
+    "onscreen": "",
+    "cite": ""
+   }
+  ],
+  "breaks": [],
+  "spec": "The A5 thermal blade spinning in its stage (blurred disc behind), rpm counter and an hours counter running; calm, wide, final. Tag: ILLUSTRATION."
+ },
+ "B1_metal_zoom": {
+  "session": "B",
+  "title": "Into the metal",
+  "start": 341.36,
+  "end": 344.05,
+  "duration": 2.69,
+  "lines": "J056-J056",
+  "cues": [
+   {
+    "id": "J056",
+    "at": 0.15,
+    "to": 2.23,
+    "vo": "The first secret is in the metal itself.",
+    "onscreen": "",
+    "cite": ""
+   }
+  ],
+  "breaks": [],
+  "spec": "Continuous zoom from the blade surface into the metal: the surface dissolves into a microscope view where crystal grains appear. Tag: ILLUSTRATION."
+ },
+ "B2_polycrystal": {
+  "session": "B",
+  "title": "Many crystals, weak borders",
+  "start": 344.05,
+  "end": 349.73,
+  "duration": 5.68,
+  "lines": "J057-J057",
+  "cues": [
+   {
+    "id": "J057",
+    "at": 0.15,
+    "to": 5.36,
+    "vo": "Normal metal is made of many tiny crystals. The borders between them are weak spots.",
+    "onscreen": "MANY CRYSTALS · WEAK BORDERS",
+    "cite": "[UNIV. OF CAMBRIDGE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Polycrystalline metal: 3D Voronoi grains (each a slightly different metallic tint, atoms visible as a fine lattice at different orientations per grain). Grain boundaries glow Warning Red as 'weak spots'. Labels: MANY CRYSTALS, then WEAK BORDERS. Tag: ILLUSTRATION."
+ },
+ "B3_creep": {
+  "session": "B",
+  "title": "Creep",
+  "start": 349.73,
+  "end": 356.54,
+  "duration": 6.81,
+  "lines": "J058-J058",
+  "cues": [
+   {
+    "id": "J058",
+    "at": 0.15,
+    "to": 6.42,
+    "vo": "Under heat and huge force, the metal slowly stretches along those borders. Engineers call it creep.",
+    "onscreen": "CREEP",
+    "cite": "[UNIV. OF CAMBRIDGE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Heat (amber glow) and a pulling force (arrows) act on the grains; grains slide along the red boundaries and the sample stretches slowly; a small blade silhouette beside it lengthens. Label CREEP. Tag: ILLUSTRATION."
+ },
+ "B4_single_crystal": {
+  "session": "B",
+  "title": "One single crystal",
+  "start": 356.54,
+  "end": 361.6,
+  "duration": 5.06,
+  "lines": "J059-J059",
+  "cues": [
+   {
+    "id": "J059",
+    "at": 0.15,
+    "to": 4.68,
+    "vo": "So the best blades are grown as one single crystal. No borders at all.",
+    "onscreen": "SINGLE CRYSTAL",
+    "cite": "[UNIV. OF CAMBRIDGE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "The grains merge into one perfect, unbroken atomic lattice (FCC-style spheres in one orientation), a light sweep runs through it with no boundary anywhere; pull back to the blade shape cast as one crystal. Label SINGLE CRYSTAL. Tag: ILLUSTRATION."
+ },
+ "B5_alloy": {
+  "session": "B",
+  "title": "Nickel superalloy + rhenium",
+  "start": 361.6,
+  "end": 366.52,
+  "duration": 4.92,
+  "lines": "J060-J060",
+  "cues": [
+   {
+    "id": "J060",
+    "at": 0.15,
+    "to": 4.52,
+    "vo": "The metal is a nickel super alloy, with rare elements like rhenium mixed in.",
+    "onscreen": "NICKEL SUPERALLOY · + RHENIUM",
+    "cite": "[UNIV. OF CAMBRIDGE | PIB 2021]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Element tiles (Ni, Co, Cr, Al, Ta, W, Re) orbit the blade like a periodic-table recipe; Ni largest; Re pulses amber on 'rhenium'. Label NICKEL SUPERALLOY · + RHENIUM. Tag: ILLUSTRATION."
+ },
+ "B6_cooling_channels": {
+  "session": "B",
+  "title": "Air: the cooling channels",
+  "start": 366.52,
+  "end": 375.01,
+  "duration": 8.49,
+  "lines": "J061-J062",
+  "cues": [
+   {
+    "id": "J061",
+    "at": 0.15,
+    "to": 1.81,
+    "vo": "The second secret is air.",
+    "onscreen": "",
+    "cite": ""
+   },
+   {
+    "id": "J062",
+    "at": 2.34,
+    "to": 8.17,
+    "vo": "Each blade is hollow, with tiny channels inside. Cooler air from the compressor is pushed through them.",
+    "onscreen": "COOLING CHANNELS",
+    "cite": "[NASA | UNIV. OF CAMBRIDGE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "J061 'The second secret is air': the blade turns translucent (ghosted metal). J062: hollow interior revealed with serpentine cooling channels; cool compressor air (cyan #38BDF8 particles) enters at the root and snakes through. Label COOLING CHANNELS. Tag: ILLUSTRATION."
+ },
+ "B7_film_cooling": {
+  "session": "B",
+  "title": "Film cooling",
+  "start": 375.01,
+  "end": 380.97,
+  "duration": 5.96,
+  "lines": "J063-J063",
+  "cues": [
+   {
+    "id": "J063",
+    "at": 0.15,
+    "to": 5.61,
+    "vo": "It comes out through rows of tiny holes, and covers the blade in a thin blanket of cooler air.",
+    "onscreen": "FILM COOLING",
+    "cite": "[NASA | UNIV. OF CAMBRIDGE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Close-up on rows of tiny holes on the leading edge; cyan air jets out and lays a thin blanket that wraps the blade surface while hot amber gas flows over it. Label FILM COOLING. Tag: ILLUSTRATION."
+ },
+ "B8_tbc": {
+  "session": "B",
+  "title": "Ceramic heat shield",
+  "start": 380.97,
+  "end": 384.63,
+  "duration": 3.66,
+  "lines": "J064-J064",
+  "cues": [
+   {
+    "id": "J064",
+    "at": 0.15,
+    "to": 3.24,
+    "vo": "And on top, a ceramic coating acts like a heat shield.",
+    "onscreen": "THERMAL BARRIER COATING",
+    "cite": "[NASA | UNIV. OF CAMBRIDGE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Cross-section through the blade wall: layers labelled HOT GAS / CERAMIC COATING / METAL / COOLING AIR; a ceramic-white layer seals over the metal; a colour gradient shows the temperature dropping through the wall (no numbers). Label THERMAL BARRIER COATING. Tag: ILLUSTRATION."
+ },
+ "C1_empty_bay": {
+  "session": "C",
+  "title": "The empty engine bay",
+  "start": 15.18,
+  "end": 20.88,
+  "duration": 5.7,
+  "lines": "J004-J004",
+  "cues": [
+   {
+    "id": "J004",
+    "at": 0.15,
+    "to": 5.3,
+    "vo": "And yet... in hangars in Bengaluru and Nashik, brand new fighter jets are waiting.",
+    "onscreen": "TEJAS MK1A · HAL",
+    "cite": "[HAL | 2026]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Starts on a slot for the real hangar photo (params: background image, slow push) for the first ~2 s, then a precise amber wireframe of a single-engine delta-wing light fighter (generic, not a copy of HAL drawings) draws over it; the engine bay is a glowing empty cavity. Tag: ILLUSTRATION."
+ },
+ "C2_title_split": {
+  "session": "C",
+  "title": "Moon vs empty engine bay",
+  "start": 35.99,
+  "end": 42.32,
+  "duration": 6.33,
+  "lines": "J008-J008",
+  "cues": [
+   {
+    "id": "J008",
+    "at": 0.15,
+    "to": 5.98,
+    "vo": "So here is the question. India landed on the Moon. Why can it not build its own fighter jet engine?",
+    "onscreen": "INDIA LANDED ON THE MOON. WHY NOT A JET ENGINE?",
+    "cite": ""
+   }
+  ],
+  "breaks": [],
+  "spec": "Split frame: left a slot for the real Chandrayaan-3 image (param), right the empty-bay wireframe; on 'Why can it not build its own fighter jet engine?' the line INDIA LANDED ON THE MOON. WHY NOT A JET ENGINE? burns in across the seam."
+ },
+ "C3_sanctions_wireframe": {
+  "session": "C",
+  "title": "1998: engines and flight-control help cut off",
+  "start": 136.24,
+  "end": 144.07,
+  "duration": 7.83,
+  "lines": "J023-J023",
+  "cues": [
+   {
+    "id": "J023",
+    "at": 0.15,
+    "to": 7.54,
+    "vo": "Sales of the same GE F four zero four engines to India were stopped. American help on the Tejas flight controls also ended.",
+    "onscreen": "F404 SALES STOPPED · FLIGHT-CONTROL HELP ENDED",
+    "cite": "[AEROSPACEWEB | BUSINESS STANDARD]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Tejas prototype wireframe (same generic fighter, 1990s blueprint style); the engine block and a box labelled FLIGHT CONTROLS fade out with red STOPPED stamps. On-screen: F404 SALES STOPPED · FLIGHT-CONTROL HELP ENDED. Tag [AEROSPACEWEB | BUSINESS STANDARD]."
+ },
+ "C4_kaveri_blueprint": {
+  "session": "C",
+  "title": "1986: planning an engine",
+  "start": 178.54,
+  "end": 183.25,
+  "duration": 4.71,
+  "lines": "J029-J029",
+  "cues": [
+   {
+    "id": "J029",
+    "at": 0.15,
+    "to": 4.41,
+    "vo": "In nineteen eighty six, Indian engineers began planning their own fighter engine.",
+    "onscreen": "1986 · GTRE, BENGALURU · PROPOSAL",
+    "cite": "[CAG | 2010]"
+   }
+  ],
+  "breaks": [],
+  "spec": "1980s drafting-table blueprint: a GTX-35VS-style twin-spool afterburning turbofan side section draws itself stroke by stroke (generic, labelled ILLUSTRATION); stamp 1986 · GTRE, BENGALURU · PROPOSAL."
+ },
+ "C5_thrust_target": {
+  "session": "C",
+  "title": "Target: 81 kN",
+  "start": 201.95,
+  "end": 208.44,
+  "duration": 6.49,
+  "lines": "J033-J033",
+  "cues": [
+   {
+    "id": "J033",
+    "at": 0.15,
+    "to": 6.27,
+    "vo": "The goal was huge. An engine that gives eighty one kilonewtons of push with the afterburner on.",
+    "onscreen": "TARGET THRUST 81 kN",
+    "cite": "[DELHI DEFENCE REVIEW | 2017]"
+   }
+  ],
+  "breaks": [],
+  "spec": "The Kaveri blueprint; a thrust arrow grows out of the nozzle to a dashed target line TARGET THRUST 81 kN (tag [DELHI DEFENCE REVIEW | 2017])."
+ },
+ "C6_split_blueprint": {
+  "session": "C",
+  "title": "New jet and new engine at once",
+  "start": 208.44,
+  "end": 215.23,
+  "duration": 6.79,
+  "lines": "J034-J034",
+  "cues": [
+   {
+    "id": "J034",
+    "at": 0.15,
+    "to": 6.49,
+    "vo": "And India was building a brand new jet, the Tejas, at the same time. Both almost from scratch. That doubled the risk.",
+    "onscreen": "",
+    "cite": ""
+   }
+  ],
+  "breaks": [],
+  "spec": "Split blueprint: fighter airframe left, Kaveri engine right, both half-drawn and flickering, construction lines racing; on 'doubled the risk' both pulse red."
+ },
+ "C7_blueprint_tear": {
+  "session": "C",
+  "title": "Delinked, September 2008",
+  "start": 244.11,
+  "end": 254.04,
+  "duration": 9.93,
+  "lines": "J041-J041",
+  "cues": [
+   {
+    "id": "J041",
+    "at": 0.15,
+    "to": 9.64,
+    "vo": "In September two thousand eight, the Kaveri was officially separated from the Tejas programme. The Tejas would fly with the American engine.",
+    "onscreen": "SEP 2008 · KAVERI DELINKED FROM TEJAS",
+    "cite": "[SPS AVIATION | CAG 2010]"
+   }
+  ],
+  "breaks": [],
+  "spec": "First ~4 s: slot for the credited headline image (param) under a slow push; then the Kaveri blueprint tears away from the Tejas blueprint; a different engine block (labelled US ENGINE) slides into the airframe. On-screen SEP 2008 · KAVERI DELINKED FROM TEJAS."
+ },
+ "C8_dry_kaveri": {
+  "session": "C",
+  "title": "The Dry Kaveri",
+  "start": 427.07,
+  "end": 437.66,
+  "duration": 10.59,
+  "lines": "J072-J073",
+  "cues": [
+   {
+    "id": "J072",
+    "at": 0.15,
+    "to": 4.56,
+    "vo": "GTRE took out the afterburner and made a simpler version. The Dry Kaveri.",
+    "onscreen": "DRY KAVERI · NO AFTERBURNER",
+    "cite": "[JANE'S | PIB]"
+   },
+   {
+    "id": "J073",
+    "at": 5.13,
+    "to": 10.29,
+    "vo": "In tests in Russia, it gave about forty eight kilonewtons of push, a little more than its target.",
+    "onscreen": "~48.5 kN · TARGET 46 kN",
+    "cite": "[ORF | THE WEEK | 2026]"
+   }
+  ],
+  "breaks": [],
+  "spec": "J072: the afterburner section slides off the Kaveri blueprint; label DRY KAVERI · NO AFTERBURNER. J073: thrust bar fills past a 46 kN target line to ~48.5 kN (on-screen ~48.5 kN · TARGET 46 kN, tag [ORF | THE WEEK | 2026])."
+ },
+ "C9_amca_engines": {
+  "session": "C",
+  "title": "AMCA: F414 now, 120 kN later",
+  "start": 461.63,
+  "end": 473.87,
+  "duration": 12.24,
+  "lines": "J078-J079",
+  "cues": [
+   {
+    "id": "J078",
+    "at": 0.15,
+    "to": 3.95,
+    "vo": "The first AMCA jets will use GE's F four one four engine.",
+    "onscreen": "AMCA MK1 · GE F414",
+    "cite": "[NEW INDIAN EXPRESS | META-DEFENSE | 2026]"
+   },
+   {
+    "id": "J079",
+    "at": 4.34,
+    "to": 12.02,
+    "vo": "For later jets, India wants a new engine of about one hundred and twenty kilonewtons. And this time, it wants to own the design.",
+    "onscreen": "AMCA MK2 · 120 kN CLASS",
+    "cite": "[META-DEFENSE | AUG 2026]"
+   }
+  ],
+  "breaks": [],
+  "spec": "J078: twin-engine stealth fighter wireframe (generic, AMCA-like planform) with two engines labelled GE F414 (AMCA MK1 · GE F414). J079: those engines dissolve; a clean-sheet engine wireframe draws itself, label AMCA MK2 · 120 kN CLASS, then INDIAN DESIGN, INDIAN RIGHTS."
+ },
+ "D1_globe_lynn": {
+  "session": "D",
+  "title": "Lynn to Bengaluru",
+  "start": 27.77,
+  "end": 35.99,
+  "duration": 8.22,
+  "lines": "J007-J007",
+  "cues": [
+   {
+    "id": "J007",
+    "at": 0.15,
+    "to": 7.82,
+    "vo": "The biggest reason? They are waiting for an engine. An engine made in Lynn, Massachusetts, about thirteen thousand kilometres away.",
+    "onscreen": "LYNN, USA → BENGALURU · ~13,000 KM (OUR CALCULATION)",
+    "cite": "[GE AEROSPACE | OUR CALCULATION]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Land-only globe (no political borders, Natural Earth land, see video/fireice/benson_map/mkmap.mjs) on titanium slate, slow turn; amber great-circle arc from Lynn, USA to Bengaluru with a distance counter to ~13,000 KM; labels LYNN, USA and BENGALURU; tag (OUR CALCULATION) [GE AEROSPACE | OUR CALCULATION]."
+ },
+ "D2_squadrons": {
+  "session": "D",
+  "title": "42 vs 29 squadrons",
+  "start": 60.87,
+  "end": 66.69,
+  "duration": 5.82,
+  "lines": "J011-J011",
+  "cues": [
+   {
+    "id": "J011",
+    "at": 0.15,
+    "to": 5.54,
+    "vo": "The Air Force is supposed to have forty two fighter squadrons. Today it has about twenty nine.",
+    "onscreen": "SANCTIONED 42 · ACTUAL ~29",
+    "cite": "[THE WIRE | NEW INDIAN EXPRESS | 2026]"
+   }
+  ],
+  "breaks": [],
+  "spec": "42 squadron slots (fighter silhouettes in a grid); 29 fill amber, 13 stay empty and pulse red; counters SANCTIONED 42 · ACTUAL ~29; tag [THE WIRE | NEW INDIAN EXPRESS | 2026]."
+ },
+ "D3_orders": {
+  "session": "D",
+  "title": "83 + 97 = 180 jets",
+  "start": 71.78,
+  "end": 82.69,
+  "duration": 10.91,
+  "lines": "J013-J013",
+  "cues": [
+   {
+    "id": "J013",
+    "at": 0.15,
+    "to": 10.58,
+    "vo": "So in twenty twenty one, the government ordered eighty three Tejas Mark One A jets from Hindustan Aeronautics, HAL. In twenty twenty five, it ordered ninety seven more.",
+    "onscreen": "83 + 97 = 180 JETS",
+    "cite": "[MOD / PIB | 2021, 2025]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Two order stamps 2021: 83 and 2025: 97 drop in, sum counter to 180 JETS; fighter icons fill rows; tag [MOD / PIB | 2021, 2025]."
+ },
+ "D4_promise": {
+  "session": "D",
+  "title": "Promised 2023, first engine March 2025",
+  "start": 91.08,
+  "end": 97.31,
+  "duration": 6.23,
+  "lines": "J015-J015",
+  "cues": [
+   {
+    "id": "J015",
+    "at": 0.15,
+    "to": 5.94,
+    "vo": "The engines were due from twenty twenty three. The first one came only in March twenty twenty five.",
+    "onscreen": "PROMISED 2023 · FIRST ENGINE MAR 2025",
+    "cite": "[BLOOMBERG | GE AEROSPACE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Horizontal timeline 2021–2026: PROMISED 2023 marker, the delivery marker slides right to MAR 2025; the gap fills red; tag [BLOOMBERG | GE AEROSPACE]."
+ },
+ "D5_engines_jets": {
+  "session": "D",
+  "title": "14 of 99 engines, 29 jets",
+  "start": 102.94,
+  "end": 112.64,
+  "duration": 9.7,
+  "lines": "J017-J017",
+  "cues": [
+   {
+    "id": "J017",
+    "at": 0.15,
+    "to": 9.45,
+    "vo": "By October twenty twenty six, GE had sent only fourteen of the ninety nine engines. HAL says close to thirty jets are built and waiting.",
+    "onscreen": "ENGINES SENT: 14 OF 99 · JETS BUILT: 29",
+    "cite": "[GE AEROSPACE | NEW INDIAN EXPRESS | HAL CMD | OCT 2026]"
+   }
+  ],
+  "breaks": [],
+  "spec": "99 small engine icons, 14 light up amber (ENGINES SENT: 14 OF 99); beside them 29 jet icons waiting in grey (JETS BUILT: 29); tag [GE AEROSPACE | NEW INDIAN EXPRESS | HAL CMD | OCT 2026]."
+ },
+ "D6_bomb_space": {
+  "session": "D",
+  "title": "Nine nuclear states, about ten launchers",
+  "start": 154.44,
+  "end": 160.15,
+  "duration": 5.71,
+  "lines": "J026-J026",
+  "cues": [
+   {
+    "id": "J026",
+    "at": 0.15,
+    "to": 5.55,
+    "vo": "Nine countries have nuclear bombs. About ten have put a satellite in space with their own rocket.",
+    "onscreen": "",
+    "cite": "[SIPRI 2026 | AP 2022]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Land-only globe; big counter 9 (NUCLEAR-ARMED STATES) then ~10 (OWN ROCKET TO ORBIT) with abstract pulses on the globe (no country labels, no borders); tag [SIPRI 2026 | AP 2022]."
+ },
+ "D7_engine_club": {
+  "session": "D",
+  "title": "The engine club",
+  "start": 160.15,
+  "end": 172.31,
+  "duration": 12.16,
+  "lines": "J027-J027",
+  "cues": [
+   {
+    "id": "J027",
+    "at": 0.15,
+    "to": 11.84,
+    "vo": "But only a handful can design and build a modern fighter engine on their own. The main ones are America, Russia, Britain and France. And, after decades of struggle, China.",
+    "onscreen": "THE ENGINE CLUB",
+    "cite": "[KED GLOBAL | CLAWS]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Land-only globe: five glowing markers appear one by one as the VO names them, each with its makers: USA (GE · PRATT & WHITNEY), RUSSIA (UEC SATURN · KLIMOV), BRITAIN (ROLLS-ROYCE), FRANCE (SAFRAN), and after a beat CHINA (AECC). India outlined in faint amber, empty. Title THE ENGINE CLUB; tag [KED GLOBAL | CLAWS]."
+ },
+ "D8_russia_route": {
+  "session": "D",
+  "title": "No altitude test facility: to Russia",
+  "start": 231.63,
+  "end": 240.51,
+  "duration": 8.88,
+  "lines": "J038-J039",
+  "cues": [
+   {
+    "id": "J038",
+    "at": 0.15,
+    "to": 4.62,
+    "vo": "And India had no facility to test a fighter engine in high altitude conditions.",
+    "onscreen": "",
+    "cite": "[BUSINESS STANDARD 2009 | PIB 2015]"
+   },
+   {
+    "id": "J039",
+    "at": 4.99,
+    "to": 8.67,
+    "vo": "So Indian engineers had to take the Kaveri to Russia for those tests.",
+    "onscreen": "BENGALURU → RUSSIA",
+    "cite": "[PIB | 2012]"
+   }
+  ],
+  "breaks": [],
+  "spec": "J038: India on the land globe with a crossed-out altitude-chamber icon (NO HIGH-ALTITUDE TEST FACILITY). J039: amber arc Bengaluru → Moscow region (label CIAM · GROMOV, ZHUKOVSKY) with a crate icon travelling it; tag [BUSINESS STANDARD 2009 | PIB 2015]."
+ },
+ "D9_weight": {
+  "session": "D",
+  "title": "1,100 kg target, 1,235 kg actual",
+  "start": 221.21,
+  "end": 225.91,
+  "duration": 4.7,
+  "lines": "J036-J036",
+  "cues": [
+   {
+    "id": "J036",
+    "at": 0.15,
+    "to": 4.43,
+    "vo": "It was meant to weigh eleven hundred kilos. It weighed twelve hundred and thirty five.",
+    "onscreen": "1,100 KG TARGET · 1,235 KG ACTUAL",
+    "cite": "[CAG | 2010]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Precision scale / dial: needle swings past 1,100 KG TARGET to 1,235 KG ACTUAL; overweight band glows red; tag [CAG | 2010]."
+ },
+ "D10_thrust": {
+  "session": "D",
+  "title": "81 kN target, about 70 reported",
+  "start": 225.91,
+  "end": 231.63,
+  "duration": 5.72,
+  "lines": "J037-J037",
+  "cues": [
+   {
+    "id": "J037",
+    "at": 0.15,
+    "to": 5.51,
+    "vo": "It was meant to push eighty one kilonewtons. As reported, it reached only about seventy.",
+    "onscreen": "81 kN TARGET · ~70 kN REPORTED",
+    "cite": "[RAKSHA ANIRVEDA | DELHI DEFENCE REVIEW]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Thrust bar fills to ~70 kN and stalls short of the dashed 81 kN line; on-screen 81 kN TARGET · ~70 kN REPORTED; tag [RAKSHA ANIRVEDA | DELHI DEFENCE REVIEW]."
+ },
+ "D11_years": {
+  "session": "D",
+  "title": "The years went by",
+  "start": 240.51,
+  "end": 244.11,
+  "duration": 3.6,
+  "lines": "J040-J040",
+  "cues": [
+   {
+    "id": "J040",
+    "at": 0.15,
+    "to": 3.37,
+    "vo": "The years went by. The Air Force could not wait for ever.",
+    "onscreen": "",
+    "cite": ""
+   }
+  ],
+  "breaks": [],
+  "spec": "Mechanical flip-calendar years 1996 → 2008 flipping, dust motes in a dim test cell light."
+ },
+ "D12_cost": {
+  "session": "D",
+  "title": "₹382 crore → ₹2,839 crore",
+  "start": 264.91,
+  "end": 272.57,
+  "duration": 7.66,
+  "lines": "J044-J044",
+  "cues": [
+   {
+    "id": "J044",
+    "at": 0.15,
+    "to": 7.42,
+    "vo": "By twenty twelve, about two thousand crore rupees had been spent. The cost estimate had grown to over twenty eight hundred crore.",
+    "onscreen": "₹382 CR → ₹2,839 CR",
+    "cite": "[PIB | 2012]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Counter climbs ₹382 CR → ₹2,839 CR (estimate) with a second bar ₹1,996 CR SPENT BY 2012; tag [PIB | 2012]. Use latin-ext Inter for ₹."
+ },
+ "D13_hours": {
+  "session": "D",
+  "title": "Thousands of hours",
+  "start": 309.11,
+  "end": 312.62,
+  "duration": 3.51,
+  "lines": "J050-J050",
+  "cues": [
+   {
+    "id": "J050",
+    "at": 0.15,
+    "to": 3.13,
+    "vo": "And it must run for thousands of hours between overhauls.",
+    "onscreen": "JET ENGINE: THOUSANDS OF HOURS",
+    "cite": "[GE AEROSPACE]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Split counters: ROCKET: MINUTES (stops) vs JET ENGINE: THOUSANDS OF HOURS (spins to 4,000+); tag [GE AEROSPACE]."
+ },
+ "D14_paris_derby": {
+  "session": "D",
+  "title": "Safran picked; deal awaits approval",
+  "start": 473.87,
+  "end": 493.43,
+  "duration": 19.56,
+  "lines": "J080-J082",
+  "cues": [
+   {
+    "id": "J080",
+    "at": 0.15,
+    "to": 5.1,
+    "vo": "In twenty twenty five, the government picked France's Safran to build it together with GTRE.",
+    "onscreen": "SAFRAN + GTRE · SELECTED AUG 2025",
+    "cite": "[DEFENCE MINISTER | AUG 2025]"
+   },
+   {
+    "id": "J081",
+    "at": 5.45,
+    "to": 10.06,
+    "vo": "India's condition is clear. The design and the rights must belong to India.",
+    "onscreen": "FULL INDIAN IP",
+    "cite": "[RAKSHA ANIRVEDA | 2026]"
+   },
+   {
+    "id": "J082",
+    "at": 10.4,
+    "to": 19.3,
+    "vo": "As of now, that deal is still waiting for final approval. And in August twenty twenty six, Rolls-Royce and Reliance also offered to build an engine in India.",
+    "onscreen": "AWAITING FINAL APPROVAL · OCT 2026",
+    "cite": "[NEW INDIAN EXPRESS | AUG, OCT 2026]"
+   }
+  ],
+  "breaks": [],
+  "spec": "J080: land globe, amber arc Paris → Bengaluru, SAFRAN + GTRE · SELECTED AUG 2025. J081: label FULL INDIAN IP stamps. J082: status chip AWAITING FINAL APPROVAL · OCT 2026, then a second arc Derby, UK → India labelled ROLLS-ROYCE + RELIANCE · AUG 2026; tag [NEW INDIAN EXPRESS | AUG, OCT 2026]."
+ },
+ "D15_china": {
+  "session": "D",
+  "title": "China's road",
+  "start": 493.43,
+  "end": 503.92,
+  "duration": 10.49,
+  "lines": "J083-J083",
+  "cues": [
+   {
+    "id": "J083",
+    "at": 0.15,
+    "to": 10.25,
+    "vo": "China walked this same road. Its J twenty stealth fighter used Russian engines at first. It took China decades, and many failures, to switch to engines of its own.",
+    "onscreen": "J-20: RUSSIAN AL-31F → CHINESE WS-10C → WS-15",
+    "cite": "[THE DEFENSE POST 2021 | DEFENSE MAGAZINE 2026]"
+   }
+  ],
+  "breaks": [],
+  "spec": "Timeline over a slot for the J-20 photo (param): RUSSIAN AL-31F → CHINESE WS-10C → WS-15 as three engine chips lighting in turn, years axis without exact dates; tag [THE DEFENSE POST 2021 | DEFENSE MAGAZINE 2026]."
+ }
+}
