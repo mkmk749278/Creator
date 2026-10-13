@@ -277,8 +277,10 @@ def render(shot, dur, out, W, H):
         # hold the last frame if a window runs a few frames past the render's end (4K b05 is 0.11 s shorter than the
         # window that uses it): a short shot would shift every later cut against the VO
         vf = [f"scale={W}:{H}", "fps=30", "tpad=stop_mode=clone:stop_duration=2"] + overlays(W, H, lab, tag)
-        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(folder / (shot["id"] + ".mp4")), "-vf", ",".join(vf),
-             "-t", f"{dur:.3f}"] + enc + [str(out)])
+        # no -t here: after a seek between frames, -t dropped the last frame (6 shots 1 frame short at 4K, the cuts after
+        # them 0.2 s early by the end); tpad guarantees enough input, so -frames:v alone sets the exact length
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(folder / (shot["id"] + ".mp4")), "-vf", ",".join(vf)]
+            + enc + [str(out)])
     elif k in ("still", "photo", "proof"):
         if k == "proof":
             fx, fy = yellow_focus(shot["src"]); z = (1.25, 1.7)
