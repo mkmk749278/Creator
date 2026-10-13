@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B6 Air: the cooling channels</title>
+    <!-- Session B scene. Assets: vendor/library/hdri/studio_small_09_1k.hdr (Poly Haven, CC0). Shared code: lib.js (copied from ../_b_lib). -->
+    <link rel="stylesheet" href="jep.css" />
+    <script>
+      // HyperFrames polls window.__hf.buildReady; resolved by lib.js once HDRI/fonts are loaded and the first frame is drawn.
+      window.__hf = window.__hf || {}; window.__hf.buildReady = Object.assign(window.__hf.buildReady || {},
+        { jepScene: new Promise((r) => { window.__jepReady = r; }) });
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <style>
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; overflow: hidden; background: #0B0E14; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .jep-label { opacity: 0; white-space: nowrap; }
+      .jep-label.cool { border-left-color: var(--cyan); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="B6_cooling_channels" data-start="0" data-width="1920" data-height="1080" data-duration="8.49">
+      <canvas id="gl"></canvas>
+      <div class="jep-label cool" id="l1">Cooling channels</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#l1", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 3.95);
+      tl.to("#l1", { opacity: 1, duration: 0.01 }, 8.48);
+      window.__timelines["B6_cooling_channels"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, orbit, makeEmbers, buildBlade, ghostMaterial, buildChannels, channelMaterial, mulberry32, smr, inOut, lerp, clamp, PAL, col } from "./lib.js";
+      const S = createStage({ fov: 30, bloom: 1.1, bloomThreshold: 0.9, envIntensity: 0.9, bg: { glowAmt: 0.1, glowScreen: [0.45, -0.25], glow: 0xffa040 } });
+      const { scene, camera } = S;
+      lightRig(scene, { key: 1.6, rim: 1.4, fill: 0.5 });
+      // solid blade above the scan line, x-ray ghost below it
+      const B = buildBlade({ features: ["HOLES", "SCAN"] });
+      B.u.uScanDir.value = -1; B.u.uScanY.value = -9;
+      const GH = ghostMaterial();
+      const ghost = new THREE.Group();
+      for (const m of [B.airfoil, B.tip, B.platform, B.shank, B.root]) { const g = new THREE.Mesh(m.geometry, GH.mat); g.renderOrder = 5; ghost.add(g); }
+      const blade = new THREE.Group(); blade.add(B.group, ghost); scene.add(blade);
+      blade.position.y = -0.3;
+      // passages and the air that runs through them
+      const CH = buildChannels(B.BP);
+      const CM = channelMaterial();
+      const chan = new THREE.Group(); for (const tb of [...CH.tubes, ...CH.exitsTE]) { const m = new THREE.Mesh(tb.geo, CM.mat); m.renderOrder = 4; chan.add(m); }
+      blade.add(chan);
+      const NP = 1500, rng = mulberry32(61);
+      const parts = Array.from({ length: NP }, (_, i) => ({ p: CH.paths[i % CH.paths.length], ph: rng(), j: new THREE.Vector3(rng() - 0.5, rng() - 0.5, rng() - 0.5).multiplyScalar(0.03), s: 0.8 + rng() * 0.4 }));
+      const pg = new THREE.BufferGeometry(); const pp = new Float32Array(NP * 3), pa = new Float32Array(NP), ps = new Float32Array(NP);
+      pg.setAttribute("position", new THREE.BufferAttribute(pp, 3)); pg.setAttribute("aA", new THREE.BufferAttribute(pa, 1)); pg.setAttribute("aS", new THREE.BufferAttribute(ps, 1));
+      const pm = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { uC: { value: col(PAL.cyan, 3.2) } },
+        vertexShader: `attribute float aA; attribute float aS; varying float vA; void main(){ vA = aA; vec4 mv = modelViewMatrix * vec4(position, 1.); gl_Position = projectionMatrix * mv; gl_PointSize = clamp(aS * 44. / -mv.z, 2., 40.); }`,
+        fragmentShader: `uniform vec3 uC; varying float vA; void main(){ float r = length(gl_PointCoord - .5) * 2.; float a = smoothstep(1., 0., r); gl_FragColor = vec4(uC, a * a * vA); }` });
+      const air = new THREE.Points(pg, pm); air.frustumCulled = false; air.renderOrder = 6; blade.add(air);
+      const embers = makeEmbers({ count: 110, seed: 31, box: { min: [-4, -2.5, -4], size: [8, 5, 6] }, intensity: 2.0, speed: 0.35 });
+      scene.add(embers.points);
+      const tgt = new THREE.Vector3(), v3 = new THREE.Vector3();
+      const T0 = 4.4, SPEED = 1.75;
+      function renderAt(t) {
+        // camera: slow orbit around the pressure side, drifting in as the air arrives
+        const k = inOut(t / 8.49);
+        tgt.set(0.0, lerp(0.15, 0.25, k), 0);
+        orbit(camera, tgt, lerp(5.6, 4.4, k), lerp(-2.55, -2.05, k), lerp(0.2, 0.12, k));
+        // J061 'The second secret is air' -> x-ray scan runs root to tip; J062 the hollow inside is revealed
+        const scan = lerp(-1.0, 1.62, inOut(smr(t, 0.6, 2.6)));
+        B.u.uScanY.value = scan; GH.u.uScanY.value = scan; CM.u.uScanY.value = scan;
+        GH.u.uAlpha.value = 1; CM.u.uT.value = t;
+        // cool compressor air enters at the root and snakes through (front advances with the first particles)
+        const front = clamp((t - T0) * SPEED / 6.2);
+        CM.u.uFront.value = t < T0 ? -1 : front * 1.05;
+        for (let i = 0; i < NP; i++) {
+          const q = parts[i], L = q.p.path.len; const D = (t - T0) * SPEED * q.s - q.ph * L;
+          if (D < 0) { pa[i] = 0; continue; }
+          const u = (D % L) / L; q.p.path.at(u, v3).add(q.j);
+          pp[i * 3] = v3.x; pp[i * 3 + 1] = v3.y; pp[i * 3 + 2] = v3.z;
+          pa[i] = smr(u, 0.0, 0.03) * (1 - smr(u, 0.9, 1.0)) * (v3.y + 0.3 < scan + 0.3 || u > 0.9 ? 1 : 0); ps[i] = q.s;
+        }
+        pg.attributes.position.needsUpdate = true; pg.attributes.aA.needsUpdate = true; pg.attributes.aS.needsUpdate = true;
+        blade.rotation.y = 0.04 * t;
+        embers.update(t);
+        S.render(t);
+      }
+      S.start(renderAt);
+    </script>
+  </body>
+</html>

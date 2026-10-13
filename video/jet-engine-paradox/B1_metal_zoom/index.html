@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B1 Into the metal</title>
+    <!-- Session B scene. Assets: vendor/library/hdri/studio_small_09_1k.hdr (Poly Haven, CC0). Shared code: lib.js (copied from ../_b_lib). -->
+    <link rel="stylesheet" href="jep.css" />
+    <script>
+      // HyperFrames polls window.__hf.buildReady; resolved by lib.js once HDRI/fonts are loaded and the first frame is drawn.
+      window.__hf = window.__hf || {}; window.__hf.buildReady = Object.assign(window.__hf.buildReady || {},
+        { jepScene: new Promise((r) => { window.__jepReady = r; }) });
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <style>
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; overflow: hidden; background: #0B0E14; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="B1_metal_zoom" data-start="0" data-width="1920" data-height="1080" data-duration="2.69">
+      <canvas id="gl"></canvas>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#gl", { opacity: 1, duration: 2.69 }, 0);
+      window.__timelines["B1_metal_zoom"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, makeEmbers, buildBlade, grainMeshes, jitterSeeds, mulberry32, smr, inOut, lerp, logLerp } from "./lib.js";
+      const S = createStage({ fov: 30, near: 0.004, bloom: 0.9, bloomThreshold: 1.0, envIntensity: 0.9, bg: { glowAmt: 0.1, glowScreen: [0.45, -0.2], glow: 0xffa040 } });
+      const { scene, camera } = S;
+      lightRig(scene, { key: 1.6, rim: 1.4, fill: 0.5 });
+      const B = buildBlade({ features: ["HOLES", "DISSOLVE"] });
+      scene.add(B.group);
+      const embers = makeEmbers({ count: 110, seed: 21, box: { min: [-4, -2.5, -4], size: [8, 5, 6] }, intensity: 2.0, speed: 0.35 });
+      scene.add(embers.points);
+      // zoom target: mid-chord on the pressure side, clear of the hole rows
+      const [P, N] = B.surfAt(0.31, 0.78);
+      // under the surface: the metal's grain structure (same Voronoi grain shader as B2), facing out along the surface normal
+      const mn = new THREE.Vector3(-3.4, -2.6, -0.4), mx = new THREE.Vector3(3.4, 2.6, 0.4);
+      const shared = { uBoundary: { value: 0 }, uGroove: { value: 1 }, uLineW: { value: 0.014 }, uT: { value: 0 }, uDissR: B.u.uDissR };
+      const G = grainMeshes(jitterSeeds(15, 11, 1, mn, mx, 0.8, mulberry32(77)), mn, mx, { seed: 12, latFreq: 25, shared, features: ["BLOCK", "LATTICE", "REVEAL"] });
+      G.group.scale.setScalar(0.034);
+      { const xa = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), N).normalize(), ya = new THREE.Vector3().crossVectors(N, xa);
+        G.group.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(xa, ya, N)); }
+      G.group.position.copy(P).addScaledVector(N, -0.045 - 0.4 * 0.034);
+      B.group.add(G.group);
+      const side = new THREE.Vector3().crossVectors(N, new THREE.Vector3(0, 1, 0)).normalize();
+      const dir = new THREE.Vector3(), look = new THREE.Vector3();
+      function renderAt(t) {
+        const x = smr(t, 0.0, 2.55); const k = 0.45 * x + 0.55 * inOut(x);
+        const d = logLerp(3.4, 0.11, k);
+        // starts as a 3/4 view of the blade, ends looking straight down into the surface
+        const a = lerp(0.75, 0.0, inOut(smr(t, 0.0, 2.2)));
+        dir.copy(N).multiplyScalar(Math.cos(a)).addScaledVector(side, Math.sin(a)).addScaledVector(new THREE.Vector3(0, 1, 0), 0.18 * (1 - k)).normalize();
+        look.copy(P).add(new THREE.Vector3(0, -0.3, 0).multiplyScalar(1 - k));
+        camera.position.copy(P).addScaledVector(dir, d);
+        camera.up.set(Math.sin(0.25 * (1 - k)), Math.cos(0.25 * (1 - k)), 0);
+        camera.lookAt(look);
+        // grains resolve once they are big enough to see; the frame becomes a lit micrograph
+        // the surface burns away from the centre of frame and the grains underneath come into view
+        const g = smr(t, 1.45, 2.3);
+        B.u.uDissR.value = g > 0 ? lerp(0.0, 1.25, inOut(g)) : -1;
+        shared.uT.value = t; G.group.visible = g > 0;
+        S.vignette.darkness = lerp(0.42, 0.72, smr(t, 1.9, 2.6));
+        S.vignette.offset = lerp(0.3, 0.22, smr(t, 1.9, 2.6));
+        embers.u.uAmt.value = 1 - g;
+        embers.update(t);
+        S.render(t);
+      }
+      S.start(renderAt);
+    </script>
+  </body>
+</html>

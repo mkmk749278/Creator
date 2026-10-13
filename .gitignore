@@ -57,3 +57,5 @@ video/jet-engine-paradox/A*/media/
 video/jet-engine-paradox/A*/render.log
 video/jet-engine-paradox/_libA/render_status.txt
 video/jet-engine-paradox/A*/qa/
+# VO takes live in Google Drive (Creator/jet-engine-paradox/voice/), not git
+projects/jet-engine-paradox/voice/*.mp3

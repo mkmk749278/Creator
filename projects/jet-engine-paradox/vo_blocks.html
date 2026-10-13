@@ -37,6 +37,8 @@ code { font-family: var(--mono); }
 .text { padding: 6px 16px 14px; font-size: 1.02rem; line-height: 1.65; max-width: 65ch; }
 .text p { margin: 12px 0; }
 .raw { position: absolute; left: -9999px; width: 1px; height: 1px; }
+  .urls { font-family: var(--mono); font-size: .78rem; line-height: 1.5; word-break: break-all; }
+.note { font-size: .9rem; color: var(--muted); }
 .foot { font-size: .9rem; color: var(--muted); line-height: 1.55; }
 @media (prefers-reduced-motion: no-preference) { .copy { transition: background .15s; } }
 </style>
@@ -79,12 +81,21 @@ But the Kaveri story did not end in two thousand eight. GTRE took out the afterb
 
 So let us come back to our question. Reaching the Moon needs rocket engines that work perfectly, but only for minutes at a time. A fighter engine needs metal that lives in gas hotter than its own melting point, spinning, for thousands of hours. That is the jet engine paradox. The Moon was the easier problem. For forty years, India has been learning the hard way. Today, the Dry Kaveri is heading for certification, the blade makers in Hyderabad are learning, and a new engine is on the drawing board. Will the Safran partnership finally give India a fighter engine of its own? Or will politics stall it again? Tell me what you think in the comments. If you like deep, researched stories like this, like, share it with a friend who loves defence tech, and subscribe. See you in the next one.</textarea>
 </section>
+  
+<section class="block" aria-labelledby="hf">
+  <header>
+    <div><h2 id="hf">Footage to fetch</h2><p class="meta">GitHub app → Actions → Fetch media for a video · slug <code>jet-engine-paradox</code> · max_height 1080 · runner self-hosted</p></div>
+    <button type="button" class="copy" data-target="t9" id="b9">Copy URLs</button>
+  </header>
+  <div class="text" id="t9"><p class="urls">https://www.youtube.com/watch?v=DLA_64yz8Ss@33:00-46:00 https://www.youtube.com/watch?v=q2ueCg9bvvQ@25:00-50:00 https://www.youtube.com/watch?v=_io4f2I5-sY https://www.youtube.com/watch?v=KmbdhhXTq7Y https://www.youtube.com/watch?v=bYhSZ9uHO0U https://www.youtube.com/watch?v=52f1mQqaii8 https://www.youtube.com/watch?v=zCYBJtBaUXw https://www.youtube.com/watch?v=ryolgbuDNSg https://www.youtube.com/watch?v=YfQNVWn8aIc https://www.youtube.com/watch?v=HcskFT8ngSQ</p><p class="note">Ten short official clips: ISRO landing and launch, DRDO flying wing, Indian Air Force MiG-21 farewell, PIB and DD India Tejas, GE Aerospace engines. The list with what each one is for is in <code>fetch_list.md</code>.</p></div>
+  <textarea class="raw" id="r9" readonly aria-hidden="true" tabindex="-1">https://www.youtube.com/watch?v=DLA_64yz8Ss@33:00-46:00 https://www.youtube.com/watch?v=q2ueCg9bvvQ@25:00-50:00 https://www.youtube.com/watch?v=_io4f2I5-sY https://www.youtube.com/watch?v=KmbdhhXTq7Y https://www.youtube.com/watch?v=bYhSZ9uHO0U https://www.youtube.com/watch?v=52f1mQqaii8 https://www.youtube.com/watch?v=zCYBJtBaUXw https://www.youtube.com/watch?v=ryolgbuDNSg https://www.youtube.com/watch?v=YfQNVWn8aIc https://www.youtube.com/watch?v=HcskFT8ngSQ</textarea>
+</section>
   <p class="foot">Send the takes back as <code>block1.mp3</code> and <code>block2.mp3</code>: drop them in the Google Drive Creator folder or attach them in chat. The video is timed to the voice, so any pace is fine.</p>
 </main>
 <script>
 document.querySelectorAll('.copy').forEach(function (btn) {
   btn.addEventListener('click', function () {
-    var n = btn.dataset.target.slice(1), raw = document.getElementById('r' + n), label = 'Copy block ' + n;
+    var n = btn.dataset.target.slice(1), raw = document.getElementById('r' + n), label = btn.dataset.label || (btn.dataset.label = btn.textContent);
     function ok() { btn.textContent = 'Copied'; btn.classList.add('done'); setTimeout(function () { btn.textContent = label; btn.classList.remove('done'); }, 2200); }
     function fallback() {
       var r = document.createRange(); r.selectNodeContents(document.getElementById('t' + n));
