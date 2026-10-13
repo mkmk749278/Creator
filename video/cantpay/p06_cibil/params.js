@@ -34,7 +34,7 @@ window.SCENE = {
    "x": 930,
    "y": 230,
    "s": 1.15,
-   "title": "EVERY MONTH",
+   "title": "NOVEMBER",
    "days": 30,
    "at": 3.27,
    "marks": [

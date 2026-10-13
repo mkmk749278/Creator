@@ -110,7 +110,7 @@ window.SCENE = {
    "color": "amber",
    "label": "YOU OWE ₹10,000",
    "labelColor": "ink",
-   "at": 20.45,
+   "at": 18.5,
    "dur": 0.8
   },
   {
@@ -208,10 +208,6 @@ window.SCENE = {
   [
    18.4,
    "pop"
-  ],
-  [
-   20.45,
-   "clink"
   ],
   [
    21.06,

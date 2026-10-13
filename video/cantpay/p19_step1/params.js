@@ -15,7 +15,7 @@ window.SCENE = {
     "Don't hide"
    ],
    "color": "green",
-   "at": 2.41,
+   "at": 0.0,
    "exit": 3.98
   },
   {
@@ -29,7 +29,7 @@ window.SCENE = {
     "Know the rules"
    ],
    "color": "green",
-   "at": 2.56,
+   "at": 0.0,
    "exit": 3.98
   },
   {
@@ -43,7 +43,7 @@ window.SCENE = {
     "Check notices"
    ],
    "color": "green",
-   "at": 2.71,
+   "at": 0.55,
    "exit": 3.98
   },
   {
@@ -57,7 +57,7 @@ window.SCENE = {
     "Settle on paper"
    ],
    "color": "green",
-   "at": 2.86,
+   "at": 0.7,
    "exit": 3.98
   },
   {
@@ -71,7 +71,7 @@ window.SCENE = {
     "Plan the order"
    ],
    "color": "green",
-   "at": 3.01,
+   "at": 0.85,
    "exit": 3.98
   },
   {
@@ -197,15 +197,11 @@ window.SCENE = {
    "pop"
   ],
   [
-   2.41,
+   0.55,
    "pop"
   ],
   [
-   2.71,
-   "pop"
-  ],
-  [
-   3.01,
+   0.85,
    "pop"
   ],
   [

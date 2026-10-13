@@ -100,8 +100,8 @@ SCENES["p01_minimum"] = dict(kind="page", start=L("C004")[0] - 0.25, end=L("C005
 # C007 Most people think there is one answer for everyone. There isn't.
 # C008 Someone who owes ten thousand rupees and someone who owes ten lakh live two very different stories.
 c = photo("card_black", 640, 250, 640, L("C007")[0] - 0.2, float=1.2)
-r10k = photo("bill_ravi", 210, 120, 560, P("C008", "ten thousand") - 0.15)
-r10l = photo("bill_10l", 1150, 120, 560, P("C008", "ten lakh") - 0.15)
+r10k = photo("bill_ravi", 210, 120, 560, L("C008")[0] - 0.3)
+r10l = photo("bill_10l", 1150, 120, 560, L("C008")[0] - 0.15)
 SCENES["p02_two_stories"] = dict(kind="page", start=L("C007")[0] - 0.25, end=L("C009")[0] - 0.2, tag="SIMULATION", items=[
     *page([
         c,
@@ -149,8 +149,8 @@ SCENES["p03_clock"] = dict(kind="page", start=L("C011")[0] - 0.25, end=L("C014")
 # C014 Now here is something most people don't know. From that day, your unpaid card is also a loss for the bank.
 # C015 The bank must keep aside at least a quarter of what you owe, from its own profit. That is one reason the pressure
 #      grows around this time.
-b = photo("bill_ravi_overdue", 120, 190, 520, L("C014")[0] - 0.1, float=0.5)
-stacks = [dict(kind="coins", x=x, y=700, n=6, r=70, color="amber", in_="pop", at=L("C015")[0] + 0.1 * k) for k, x in enumerate((330, 520, 710, 900))]
+b = photo("bill_ravi_npa", 120, 190, 520, L("C014")[0] - 0.1, float=0.5)
+stacks = [dict(kind="coins", x=x, y=700, n=6, r=70, color="amber", in_="pop", at=L("C015")[0] + 0.1 * k) for k, x in enumerate((330, 520, 710))]
 SCENES["p04_provision"] = dict(kind="page", start=L("C014")[0] - 0.25, end=L("C016")[0] - 0.2, kicker="THE BANK'S SIDE", tag="RBI | PROVISIONING RULES", items=[
     *page([
         b,
@@ -165,7 +165,7 @@ SCENES["p04_provision"] = dict(kind="page", start=L("C014")[0] - 0.25, end=L("C0
     dict(kind="coins", x=900, y=700, n=6, r=70, color="red", text="25%", textColor="red", in_="pop", at=P("C015", "a quarter"),
          moves=[dict(at=P("C015", "from its own"), x=1400, y=690, dur=0.8)]),
     dict(kind="label", x=1400, y=820, text="AT LEAST A QUARTER", size=46, anchor="middle", hl="yel", at=P("C015", "a quarter") + 0.3),
-    dict(kind="meter", x=1720, y=1000, s=0.42, text="PRESSURE", needle=[[0, -70], [P("C015", "pressure"), 60, 1.2]], at=P("C015", "That is one")),
+    dict(kind="meter", x=1700, y=290, s=0.42, text="PRESSURE", needle=[[0, -70], [P("C015", "pressure"), 60, 1.2]], at=P("C015", "That is one")),
 ])
 
 # C016 But listen carefully. Some people say interest stops after ninety days. No rule says that.
@@ -194,7 +194,7 @@ SCENES["p06_cibil"] = dict(kind="page", start=L("C018")[0] - 0.25, end=L("C020")
     *page([
         rp,
         ring(rp, "acct0", P("C018", "Your CIBIL") + 0.6, pad=1.05, color="red"),
-        dict(kind="calendar", x=930, y=230, s=1.15, title="EVERY MONTH", days=30, at=P("C018", "update"),
+        dict(kind="calendar", x=930, y=230, s=1.15, title="NOVEMBER", days=30, at=P("C018", "update"),
              marks=[dict(day=15, color="red"), dict(day=30, color="red")]),
         dict(kind="label", x=1320, y=180, text="EVERY 15 DAYS", size=64, anchor="middle", hl="yel", at=P("C018", "every fifteen")),
     ], L("C019")[0] - 0.3),
@@ -234,8 +234,8 @@ SCENES["p08_ravi_sunita"] = dict(kind="page", start=L("C022")[0] - 0.25, end=L("
         ring(br, "row2", P("C025", "fixed amount"), pad=1.06, color="red"),
         ring(bs, "row2", P("C025", "fixed amount") + 0.1, pad=1.06, color="red"),
         dict(kind="label", x=960, y=840, text="LATE FEE = FIXED SLAB", size=42, anchor="middle", color="red", at=P("C025", "fixed amount")),
-        dict(kind="tag", x=round(br["x"] + br["w"] - 40), y=round(an(br, "row2")[1] - 48), text="₹750", color="red", at=t_late),
-        dict(kind="tag", x=round(bs["x"] - 360), y=round(an(bs, "row2")[1] - 48), text="₹1,300", color="red", at=t_1300),
+        dict(kind="tag", x=round(br["x"] + 90), y=round(an(br, "row2")[1] + 60), text="₹750", color="red", at=t_late),
+        dict(kind="tag", x=round(bs["x"] + 90), y=round(an(bs, "row2")[1] + 60), text="₹1,300", color="red", at=t_1300),
         dict(kind="label", x=round(br["x"] + br["w"] / 2), y=950, text="7.5% A MONTH", size=62, anchor="middle", hl="yel", color="red", at=P("C026", "seven and a half")),
         dict(kind="label", x=round(bs["x"] + bs["w"] / 2), y=950, text="1.3% A MONTH", size=62, anchor="middle", color="blue", at=P("C026", "one point three")),
     ], L("C027")[0] - 0.45),
@@ -292,7 +292,7 @@ SCENES["p10_agency"] = dict(kind="page", start=L("C034")[0] - 0.25, end=L("C037"
         dict(kind="label", x=930, y=890, text="ONE PUBLIC SECTOR BANK · UP TO ₹1 LAKH", size=28, mono=True, anchor="middle", color="dim", at=P("C035", "on accounts")),
     ], L("C036")[0] - 0.35),
     dict(kind="label", x=960, y=170, text="SEE IT FROM THEIR SIDE", size=44, mono=True, anchor="middle", color="dim", at=L("C036")[0] - 0.2),
-    dict(kind="coins", x=560, y=720, n=10, r=95, color="amber", label="YOU OWE ₹10,000", labelColor="ink", at=P("C036", "If you owe"), dur=0.8),
+    dict(kind="coins", x=560, y=720, n=10, r=95, color="amber", label="YOU OWE ₹10,000", labelColor="ink", at=L("C036")[0] - 0.1, dur=0.8),
     dict(kind="coins", x=560, y=720 - 9 * 14, n=1, r=95, color="red", in_="pop", at=P("C036", "the agency may"),
          moves=[dict(at=P("C036", "earn about") , x=1300, y=640, s=1.3, dur=0.8)]),
     dict(kind="label", x=1300, y=500, text="≈ ₹1,000", size=96, anchor="middle", color="red", at=P("C036", "a thousand rupees")),
@@ -316,7 +316,7 @@ SCENES["p11_map"] = dict(kind="page", start=L("C037")[0] - 0.25, end=L("C041")[0
     dict(kind="pin", x=round(hx), y=round(hy), color="blue", at=P("C037", "old room")),
     dict(kind="label", x=round(hx - 40), y=round(hy - 30), text="CARD ADDRESS", size=30, mono=True, anchor="end", color="blue", at=P("C037", "old room") + 0.1),
     dict(kind="house", x=round(vx - 75), y=round(vy - 150), s=0.5, text="FAMILY · VILLAGE", at=P("C037", "village")),
-    dict(kind="dash", x=round(hx), y=round(hy + 10), to=[round(vx - hx), round(vy - hy - 160)], bend=0.12, color="red", text="FAR AWAY", tx=-110, at=P("C037", "far away")),
+    dict(kind="dash", x=round(hx), y=round(hy + 10), to=[round(vx - hx), round(vy - hy - 160)], bend=0.12, color="red", text="FAR AWAY", tx=-150, ty=-40, at=P("C037", "far away")),
     dict(kind="label", x=120, y=330, text="AGENCIES WORK", size=44, mono=True, at=P("C038", "Agencies usually")),
     dict(kind="label", x=120, y=410, text="CITY BY CITY", size=64, at=P("C038", "city by city")),
     dict(kind="label", x=120, y=560, text="ONE CARD COMPANY'S LIST:", size=32, mono=True, color="dim", at=P("C038", "agency list")),
@@ -326,7 +326,7 @@ SCENES["p11_map"] = dict(kind="page", start=L("C037")[0] - 0.25, end=L("C041")[0
     dict(kind="label", x=120, y=830, text="SMALL DUES:", size=34, mono=True, color="dim", at=P("C039", "For a small")),
     dict(kind="label", x=120, y=910, text="CALLS AND MESSAGES", size=56, color="blue", at=P("C039", "calls and messages")),
     dict(kind="label", x=120, y=980, text="OUR ESTIMATE · NOT A RULE", size=28, mono=True, color="dim", at=P("C039", "not a rule")),
-    dict(kind="tag", x=round(vx + 40), y=round(vy + 40), text="₹7,500", sub="PER PERSON TRACED", color="red", at=P("C040", "seven thousand")),
+    dict(kind="tag", x=760, y=round(vy + 60), text="₹7,500", sub="PER PERSON TRACED", color="red", at=P("C040", "seven thousand")),
     dict(kind="ring", x=round(vx), y=round(vy - 60), w=230, h=230, color="red", at=P("C040", "Finding a person")),
 ])
 
@@ -389,7 +389,7 @@ s0, s1, s2, s3 = (L(c)[0] for c in ("C048", "C049", "C050", "C051"))
 SCENES["d03_slabs"] = dict(kind="desk", start=L("C047")[0] - 0.25, end=L("C052")[0] - 0.2, tag="OUR ESTIMATE · NO BANK PUBLISHES THIS", layers=[
     dict(src="slab_all", at=0), dict(src="slab0", at=s0 - 0.3, fade=0.5), dict(src="slab1", at=s1 - 0.3, fade=0.5),
     dict(src="slab2", at=s2 - 0.3, fade=0.5), dict(src="slab3", at=s3 - 0.3, fade=0.5),
-], cam=[[0, 1.0, 0, 0], *push(0.0, s0 - 0.3, 1.06, (960, 540)),
+], cam=[[0, 1.0, 0, 0], *push(0.0, s0 - 0.3, 1.2, (620, 520)),
         *push(s0 - 0.3, s1 - 0.3, 1.08, (760, 560)), *push(s1 - 0.3, s2 - 0.3, 1.08, (760, 560)),
         *push(s2 - 0.3, s3 - 0.3, 1.08, (760, 560)), *push(s3 - 0.3, L("C052")[0], 1.1, (760, 560))],
    lower=[dict(at=L("C047")[0], out=s0 - 0.3, k="MY PRACTICAL READING", t="Slab by slab"),
@@ -415,7 +415,7 @@ SCENES["p13_per_bank"] = dict(kind="page", start=L("C052")[0] - 0.25, end=L("C05
     rp2,
     *[dict(kind="arrow", x=x0, y=560, to=[dx, 170], bend=0.1 * (1 if dx < 0 else -1), color="red", at=P("C052", "They only see") + k * 0.12)
       for k, (x0, dx) in enumerate(((320, 470), (960, 0.1), (1600, -470)))],
-    dict(kind="label", x=960, y=1040, text="THEY ALL SEE YOUR CIBIL", size=48, anchor="middle", color="red", at=P("C052", "They only see")),
+    dict(kind="label", x=960, y=1000, text="THEY ALL SEE YOUR CIBIL", size=48, anchor="middle", color="red", at=P("C052", "They only see")),
 ])
 
 
@@ -502,7 +502,7 @@ SCENES["d04_truth"] = dict(kind="desk", start=L("C064")[0] - 0.25, end=L("C065")
 
 # C066 But a few things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.
 # C067 So never give a cheque you know will bounce. And if your auto debit will fail, talk to the bank before the date.
-chq = photo("cheque", 120, 170, 760, P("C066", "A cheque") - 0.2, float=0.4)
+chq = photo("cheque", 120, 170, 760, L("C066")[0] - 0.2, float=0.4)
 nach = photo("phone_nach", 1000, 120, 380, P("C066", "an auto debit") - 0.2, float=0.5)
 frm = photo("form_apply", 1440, 150, 400, P("C066", "lying") - 0.2, float=0.4)
 SCENES["p17_criminal"] = dict(kind="page", start=L("C066")[0] - 0.25, end=L("C068")[0] - 0.2, kicker="WHAT CAN BECOME A CASE", tag="NI ACT S.138 · PSS ACT S.25", items=[
@@ -526,8 +526,8 @@ wo = photo("report_wo", 1180, 120, 560, L("C069")[0] + 0.3, float=0.4)
 SCENES["p18_writeoff"] = dict(kind="page", start=L("C068")[0] - 0.25, end=L("C071")[0] - 0.2, kicker="MYTH VS RULE", tag="SBI CARD | FAQ · BANDHAN BANK | 2025", items=[
     *page([
         dict(kind="label", x=960, y=290, text="SOME PEOPLE SAY", size=40, mono=True, anchor="middle", color="dim", at=L("C068")[0] - 0.2),
-        dict(kind="sticky", x=680, y=330, w=560, h=300, n="", lines=["Written off", "= debt gone"], color="dim", at=P("C068", "One more myth")),
-        dict(kind="stamp", x=960, y=520, text="MYTH", size=110, rot=-10, in_="stamp", at=P("C068", "right")),
+        dict(kind="sticky", x=640, y=340, w=640, h=340, n="", lines=["Written off", "= debt gone"], color="dim", at=L("C068")[0] - 0.2, s=1.35),
+        dict(kind="stamp", x=1060, y=560, text="MYTH", size=110, rot=-10, in_="stamp", at=P("C068", "So it's")),
     ], L("C069")[0] + 0.15),
     wo,
     dict(kind="ring", x=round(an(wo, "status0")[0]), y=round(an(wo, "status0")[1] - 8), w=260, h=80, color="red", at=P("C069", "cleaning")),
@@ -537,7 +537,7 @@ SCENES["p18_writeoff"] = dict(kind="page", start=L("C068")[0] - 0.25, end=L("C07
     dict(kind="label", x=140, y=680, text="YOU STILL OWE IT", size=56, at=P("C070", "still owe")),
     dict(kind="arrow", x=1460, y=820, to=[-430, 120], bend=-0.15, color="red", at=P("C070", "are sold")),
     dict(kind="box", x=600, y=820, w=420, h=200, text="RECOVERY CO.", size=44, at=P("C070", "recovery companies")),
-    dict(kind="label", x=1090, y=1040, text="SOLD CHEAP · THEN THEY CALL YOU", size=30, mono=True, color="dim", at=P("C070", "small part")),
+    dict(kind="label", x=600, y=1060, text="SOLD CHEAP · THEN THEY CALL YOU", size=30, mono=True, color="dim", at=P("C070", "small part")),
 ])
 
 
@@ -549,7 +549,7 @@ pc = photo("phone_calling", 1000, 130, 400, P("C072", "Call the bank") - 0.2, fl
 lt = photo("letter_bank", 1420, 150, 420, P("C072", "write to them") - 0.2, float=0.4)
 SCENES["p19_step1"] = dict(kind="page", start=L("C071")[0] - 0.25, end=L("C073")[0] - 0.2, kicker="WHAT TO DO", tag="", items=[
     *page([*[dict(kind="sticky", x=180 + k * 330, y=380 + (k % 2) * 40, w=280, h=220, n=k + 1, lines=[t], color="green",
-                  at=P("C071", "Five practical") + k * 0.15) for k, t in enumerate(("Don't hide", "Know the rules", "Check notices", "Settle on paper", "Plan the order"))],
+                  at=L("C071")[0] + k * 0.15) for k, t in enumerate(("Don't hide", "Know the rules", "Check notices", "Settle on paper", "Plan the order"))],
            dict(kind="label", x=960, y=250, text="FIVE PRACTICAL STEPS", size=70, anchor="middle", at=L("C071")[0] - 0.2)],
           L("C072")[0] - 0.3),
     dict(kind="sticky", x=120, y=150, w=300, h=220, n=1, lines=["Don't hide"], color="green", at=L("C072")[0] - 0.2),
@@ -565,11 +565,12 @@ SCENES["p19_step1"] = dict(kind="page", start=L("C071")[0] - 0.25, end=L("C073")
 
 # C073 Step two. Know the recovery rules. Calls only between eight in the morning and seven in the evening. No threats, no abuse,
 #      no calls to shame your family or friends. Anyone who comes home must carry an ID card and the bank's authorisation letter. Ask to see them.
-idc = photo("id_agent", 1010, 170, 330, P("C073", "ID card") - 0.2, float=0.6)
-la = photo("letter_auth", 1400, 160, 440, P("C073", "authorisation letter") - 0.2, float=0.4)
+idc = photo("id_agent", 1010, 170, 330, L("C073")[0] - 0.1, float=0.6)
+la = photo("letter_auth", 1400, 160, 440, L("C073")[0] + 0.1, float=0.4)
 SCENES["p20_step2"] = dict(kind="page", start=L("C073")[0] - 0.25, end=L("C074")[0] - 0.2, kicker="STEP 2 · KNOW THE RULES", tag="RBI | 2008 & 2022 CIRCULARS", items=[
     dict(kind="sticky", x=120, y=120, w=300, h=220, n=2, lines=["Know the rules"], color="green", at=L("C073")[0] - 0.2),
     dict(kind="label", x=120, y=470, text="CALLS ONLY", size=40, mono=True, color="dim", at=P("C073", "Calls only")),
+    photo("phone_calling", 740, 330, 250, P("C073", "Calls only") - 0.2, float=0.6, exit=P("C073", "Anyone who") - 0.2),
     dict(kind="label", x=120, y=580, text="8 AM – 7 PM", size=110, color="green", at=P("C073", "eight in the")),
     *[dict(kind="badge", x=170, y=700 + k * 105, ok=False, text=t, size=46, at=P("C073", w)) for k, (w, t) in enumerate((("No threats", "NO THREATS"), ("no abuse", "NO ABUSE"), ("shame your", "NO SHAMING YOUR FAMILY")))],
     idc, la,
@@ -591,10 +592,12 @@ SCENES["p21_complain"] = dict(kind="page", start=L("C074")[0] - 0.25, end=L("C07
         dict(kind="label", x=1000, y=600, text="SINCE JULY 2026", size=30, mono=True, color="dim", at=P("C074", "since July")),
         dict(kind="label", x=1000, y=800, text="HELPLINE 14448", size=84, at=P("C074", "fourteen four")),
     ], L("C075")[0] - 0.3),
-    dict(kind="label", x=520, y=380, text="THREATS", size=56, anchor="middle", color="red", at=P("C075", "threatens")),
-    dict(kind="label", x=520, y=640, text="112", size=260, anchor="middle", at=P("C075", "one one two")),
-    dict(kind="label", x=1400, y=380, text="FAKE LINK OR NOTICE", size=56, anchor="middle", color="red", at=P("C075", "fake link")),
-    dict(kind="label", x=1400, y=640, text="1930", size=260, anchor="middle", at=P("C075", "one nine three")),
+    photo("phone_112", 230, 150, 360, L("C075")[0] - 0.2, float=0.6),
+    dict(kind="label", x=640, y=380, text="THREATS?", size=64, color="red", at=P("C075", "threatens")),
+    dict(kind="label", x=640, y=500, text="CALL 112", size=96, at=P("C075", "one one two")),
+    photo("phone_1930", 1340, 150, 360, P("C075", "fake link") - 0.2, float=0.6),
+    dict(kind="label", x=1290, y=700, text="FAKE LINK?", size=64, anchor="end", color="red", at=P("C075", "fake link")),
+    dict(kind="label", x=1290, y=820, text="CALL 1930", size=96, anchor="end", at=P("C075", "one nine three")),
     dict(kind="label", x=960, y=930, text="CYBER FRAUD HELPLINE · EMERGENCY 112", size=30, mono=True, anchor="middle", color="dim", at=P("C075", "one nine three") + 0.4),
 ])
 
@@ -614,15 +617,15 @@ SCENES["p22_step3"] = dict(kind="page", start=L("C076")[0] - 0.25, end=L("C077")
 
 # C077 Step four. If you settle, settle on paper. Get the settlement letter from the bank first. Pay only through the bank's own channel. Never cash to an agent.
 # C078 And know the cost. Your CIBIL will say settled, not closed. That bank won't lend to you for at least a year. Later, ask the bank what you must pay to clean that record.
-ls_ = photo("letter_settle", 150, 160, 520, P("C077", "settlement letter") - 0.3, float=0.4)
-up = photo("phone_upi", 760, 140, 380, P("C077", "own channel") - 0.3, float=0.5)
+ls_ = photo("letter_settle", 460, 160, 480, L("C077")[0] - 0.1, float=0.4)
+up = photo("phone_upi", 980, 140, 330, P("C077", "own channel") - 0.3, float=0.5)
 rs = photo("report_settled", 1180, 110, 560, L("C078")[0] - 0.2, float=0.4)
 SCENES["p23_step4"] = dict(kind="page", start=L("C077")[0] - 0.25, end=L("C079")[0] - 0.2, kicker="STEP 4 · SETTLE ON PAPER", tag="RBI | 2025 COMPROMISE RULES · EXPERIAN", items=[
     *page([
         dict(kind="sticky", x=120, y=150, w=300, h=220, n=4, lines=["Settle on paper"], color="green", at=L("C077")[0] - 0.2),
         ls_, up,
-        dict(kind="badge", x=1230, y=330, text="LETTER FIRST", size=48, at=P("C077", "settlement letter")),
-        dict(kind="badge", x=1230, y=460, text="BANK'S OWN CHANNEL", size=48, at=P("C077", "own channel")),
+        dict(kind="badge", x=1360, y=330, text="LETTER FIRST", size=48, at=P("C077", "settlement letter")),
+        dict(kind="badge", x=1360, y=460, text="OWN CHANNEL", size=48, at=P("C077", "own channel")),
         dict(kind="coins", x=1500, y=760, n=5, r=70, color="amber", label="CASH TO AN AGENT", labelColor="red", at=P("C077", "Never cash")),
         dict(kind="cross", x=1500, y=700, size=230, at=P("C077", "Never cash") + 0.2),
     ], L("C078")[0] - 0.35),
@@ -641,7 +644,7 @@ SCENES["p23_step4"] = dict(kind="page", start=L("C077")[0] - 0.25, end=L("C079")
 # C080 You can choose where your salary goes. But the debt doesn't go away. Use the breathing space to settle, not to run.
 o3 = [photo(n, 300 + k * 520, 330, 440, L("C079")[0] - 0.1 + k * 0.12, float=0.8, _w=w) for k, (n, w) in enumerate((("card_black", "First, the bank"), ("card_navy", "Next, the small"), ("card_maroon", "Then the rest")))]
 SCENES["p24_step5"] = dict(kind="page", start=L("C079")[0] - 0.25, end=L("C081")[0] - 0.2, kicker="STEP 5 · PLAN THE ORDER", tag="OUR SUGGESTED ORDER · NOT A RULE", items=[
-    dict(kind="sticky", x=60, y=60, w=240, h=190, n=5, lines=["Plan the order"], color="green", at=L("C079")[0] - 0.2),
+    dict(kind="sticky", x=60, y=100, w=280, h=190, n=5, lines=["Plan the order"], color="green", at=L("C079")[0] - 0.2),
     dict(kind="label", x=1800, y=200, text="MY PRACTICAL VIEW, NOT A RULE", size=30, mono=True, anchor="end", color="dim", at=P("C079", "my practical")),
     *o3,
     *[dict(kind="label", x=c["x"] + 220, y=300, text=n, size=110, anchor="middle", color="green", at=P("C079", c["_w"])) for c, n in zip(o3, ("1", "2", "3"))],

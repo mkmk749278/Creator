@@ -166,7 +166,7 @@ window.SCENE = {
   {
    "kind": "label",
    "x": 960,
-   "y": 1040,
+   "y": 1000,
    "text": "THEY ALL SEE YOUR CIBIL",
    "size": 48,
    "anchor": "middle",
@@ -219,7 +219,7 @@ window.SCENE = {
    0.02,
    1.06,
    -0.0,
-   4.4,
+   4.6,
    7.58
   ]
  ]

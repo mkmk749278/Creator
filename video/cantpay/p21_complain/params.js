@@ -105,41 +105,63 @@ window.SCENE = {
    "exit": 16.93
   },
   {
+   "kind": "photo",
+   "src": "img/phone_112.png",
+   "x": 230,
+   "y": 150,
+   "w": 360,
+   "h": 608,
+   "at": 17.03,
+   "in": "drop",
+   "float": 0.6,
+   "until": 24.2
+  },
+  {
    "kind": "label",
-   "x": 520,
+   "x": 640,
    "y": 380,
-   "text": "THREATS",
-   "size": 56,
-   "anchor": "middle",
+   "text": "THREATS?",
+   "size": 64,
    "color": "red",
    "at": 17.7
   },
   {
    "kind": "label",
-   "x": 520,
-   "y": 640,
-   "text": "112",
-   "size": 260,
-   "anchor": "middle",
+   "x": 640,
+   "y": 500,
+   "text": "CALL 112",
+   "size": 96,
    "at": 18.88
   },
   {
+   "kind": "photo",
+   "src": "img/phone_1930.png",
+   "x": 1340,
+   "y": 150,
+   "w": 360,
+   "h": 608,
+   "at": 20.55,
+   "in": "drop",
+   "float": 0.6,
+   "until": 24.2
+  },
+  {
    "kind": "label",
-   "x": 1400,
-   "y": 380,
-   "text": "FAKE LINK OR NOTICE",
-   "size": 56,
-   "anchor": "middle",
+   "x": 1290,
+   "y": 700,
+   "text": "FAKE LINK?",
+   "size": 64,
+   "anchor": "end",
    "color": "red",
    "at": 20.75
   },
   {
    "kind": "label",
-   "x": 1400,
-   "y": 640,
-   "text": "1930",
-   "size": 260,
-   "anchor": "middle",
+   "x": 1290,
+   "y": 820,
+   "text": "CALL 1930",
+   "size": 96,
+   "anchor": "end",
    "at": 22.75
   },
   {
@@ -204,6 +226,10 @@ window.SCENE = {
    "pop"
   ],
   [
+   20.55,
+   "rip"
+  ],
+  [
    20.75,
    "pop"
   ],
@@ -239,18 +265,18 @@ window.SCENE = {
    16.88
   ],
   [
-   17.5,
+   17.29,
    1.0,
    0,
    0,
    0.01
   ],
   [
-   17.52,
+   17.31,
    1.06,
-   -0.0,
-   -3.2,
-   6.65
+   -0.3,
+   -3.9,
+   6.86
   ]
  ]
 };

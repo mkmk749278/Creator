@@ -6,7 +6,7 @@ window.SCENE = {
  "items": [
   {
    "kind": "photo",
-   "src": "img/bill_ravi_overdue.png",
+   "src": "img/bill_ravi_npa.png",
    "x": 120,
    "y": 190,
    "w": 520,
@@ -82,16 +82,6 @@ window.SCENE = {
    "at": 7.24
   },
   {
-   "kind": "coins",
-   "x": 900,
-   "y": 700,
-   "n": 6,
-   "r": 70,
-   "color": "amber",
-   "in": "pop",
-   "at": 7.34
-  },
-  {
    "kind": "label",
    "x": 615,
    "y": 820,
@@ -154,8 +144,8 @@ window.SCENE = {
   },
   {
    "kind": "meter",
-   "x": 1720,
-   "y": 1000,
+   "x": 1700,
+   "y": 290,
    "s": 0.42,
    "text": "PRESSURE",
    "needle": [
@@ -254,8 +244,8 @@ window.SCENE = {
   [
    7.07,
    1.06,
-   -0.7,
-   -9.8,
+   -1.0,
+   -5.1,
    7.6
   ]
  ]

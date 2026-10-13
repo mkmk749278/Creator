@@ -18,10 +18,10 @@ window.SCENE = {
   },
   {
    "kind": "sticky",
-   "x": 680,
-   "y": 330,
-   "w": 560,
-   "h": 300,
+   "x": 640,
+   "y": 340,
+   "w": 640,
+   "h": 340,
    "n": "",
    "lines": [
     "Written off",
@@ -29,17 +29,18 @@ window.SCENE = {
    ],
    "color": "dim",
    "at": 0.0,
+   "s": 1.35,
    "exit": 6.15
   },
   {
    "kind": "stamp",
-   "x": 960,
-   "y": 520,
+   "x": 1060,
+   "y": 560,
    "text": "MYTH",
    "size": 110,
    "rot": -10,
    "in": "stamp",
-   "at": 5.18,
+   "at": 3.78,
    "exit": 6.15
   },
   {
@@ -123,8 +124,8 @@ window.SCENE = {
   },
   {
    "kind": "label",
-   "x": 1090,
-   "y": 1040,
+   "x": 600,
+   "y": 1060,
    "text": "SOLD CHEAP · THEN THEY CALL YOU",
    "size": 30,
    "mono": true,
@@ -138,7 +139,7 @@ window.SCENE = {
    "pop"
   ],
   [
-   5.18,
+   3.78,
    "thud"
   ],
   [
@@ -196,8 +197,8 @@ window.SCENE = {
   [
    0.02,
    1.06,
-   5.6,
-   9.6,
+   4.4,
+   8.6,
    6.1
   ],
   [
@@ -210,8 +211,8 @@ window.SCENE = {
   [
    6.53,
    1.06,
-   13.8,
-   -5.0,
+   17.1,
+   -5.2,
    18.15
   ]
  ]

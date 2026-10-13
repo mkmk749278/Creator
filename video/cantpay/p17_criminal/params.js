@@ -21,9 +21,10 @@ window.SCENE = {
    "y": 170,
    "w": 760,
    "h": 390,
-   "at": 1.55,
+   "at": 0.0,
    "in": "drop",
    "float": 0.4,
+   "opaque": true,
    "until": 17.52
   },
   {
@@ -108,10 +109,6 @@ window.SCENE = {
   [
    0.0,
    "pop"
-  ],
-  [
-   1.55,
-   "rip"
   ],
   [
    2.65,

@@ -49,7 +49,7 @@ SHOTS = [
     # ---------------- ACT 1: hook ----------------
     scene("d01_night"),
     *cut("d01_night", P("C003", "In our last") - 0.15, P("C003", "Today") - 0.25,
-         S(0, "clip", src=MD / "minimum-due-refined-preview-720p.mp4", ss=95.0, flat=True, label="PART 1 · MINIMUM AMOUNT DUE")),
+         S(0, "clip", src=MD / "minimum-due-refined-preview-720p.mp4", ss=130.0, flat=True, label="PART 1 · MINIMUM AMOUNT DUE")),
     scene("p01_minimum"),
     S(L("C005")[0] - 0.2, "clip", src=BR / "pixabay_262440.mp4", ss=3.0, label="MAYBE YOUR SALARY STOPPED"),
     S(P("C005", "Maybe a hospital") - 0.15, "clip", src=BR / "coverr_iv-in-hospital-room-5485.mp4", ss=2.0, label="A HOSPITAL BILL CAME FIRST"),
@@ -66,8 +66,6 @@ SHOTS = [
     *cut("p03_clock", P("C013", "If the minimum") - 0.1, P("C013", "the bank must") - 0.1,
          S(0, "proof", src=PF / "rbi_npa_90.png", tag="RBI | IRAC NORMS")),
     scene("p04_provision"),
-    *cut("p04_provision", P("C015", "profit") + 0.3, P("C015", "pressure") - 0.3,
-         S(0, "proof", src=PF / "rbi_provision_25.png", tag="RBI | PROVISIONING RULES")),
     scene("p05_myth"),
     scene("p06_cibil"),
     S(L("C020")[0] - 0.2, "proof", src=PF / "kanoon_sbi_cibil.png", label="SBI CARD HELD AT FAULT", tag="CONSUMER COMMISSION ORDER | VIA INDIAN KANOON"),
@@ -78,10 +76,11 @@ SHOTS = [
     *cut("p08_ravi_sunita", P("C025", "It is a fixed") - 0.1, P("C025", "On ten thousand") - 0.1,
          S(0, "proof", src=PF / "hdfc_mitc_late_fee.png", tag="HDFC BANK MITC | OCT 2026")),
     *cut("p08_ravi_sunita", P("C030", "using one") - 0.1, L("C031")[0] - 0.4,
-         S(0, "proof", src=PF / "hdfc_mitc_late_fee.png", label="OUR CALCULATION · ONE BANK'S FEES", tag="HDFC BANK MITC | OCT 2026")),
+         S(0, "proof", src=PF / "hdfc_mitc_late_fee.png", tag="HDFC BANK MITC | OCT 2026")),
     scene("d02_call"),
     S(L("C032")[0] - 0.2, "clip", src=BR / "pixabay_141672.mp4", ss=1.0, label="1 TO 90 DAYS: MOSTLY CALLS", tag="BANK OF BARODA | COLLECTION TENDER 2022"),
-    S(P("C032", "Many from") - 0.15, "clip", src=BR / "pixabay_370570.mp4", ss=3.0, label="BIG CALL CENTRES IN CITIES"),
+    S(P("C032", "SMS") - 0.2, "clip", src=BR / "pixabay_134872.mp4", ss=6.0, label="SMS, WHATSAPP"),
+    S(P("C032", "Many from") - 0.15, "clip", src=BR / "pixabay_262440.mp4", ss=9.0, label="BIG CALL CENTRES IN CITIES"),
     scene("p09_dials"),
     scene("p10_agency"),
     *cut("p10_agency", P("C035", "on accounts") + 0.6, L("C036")[0] - 0.3,
@@ -106,18 +105,23 @@ SHOTS = [
     *cut("p12_court", P("C045", "In the Delhi") - 0.1, P("C045", "void") - 0.5,
          S(0, "proof", src=PF / "bnb_76000_awards.png", tag="BAR AND BENCH | DELHI HIGH COURT")),
     scene("d03_slabs"),
+    *cut("d03_slabs", P("C049", "maybe a visit") - 0.1, P("C049", "and settlement") - 0.1,
+         S(0, "clip", src=BR / "pixabay_200435.mp4", ss=14.0, label="A VISIT, IF IN A CITY THEY COVER", tag="OUR ESTIMATE")),
+    *cut("d03_slabs", P("C050", "people tracing") - 0.1, P("C050", "and legal") - 0.1,
+         S(0, "clip", src=BR / "pixabay_111161.mp4", ss=2.0, label="TRACING YOU IF YOU MOVED", tag="OUR ESTIMATE")),
     scene("p13_per_bank"),
     # ---------------- ACT 3: traps, the fear ----------------
-    scene("p14_setoff"),
+    S(L("C053")[0] - 0.25, "clip", src=BR / "pixabay_139848.mp4", ss=6.0, label="TWO TRAPS FOR SALARIED PEOPLE"),
+    scene("p14_setoff", L("C054")[0] - 0.25),
     *cut("p14_setoff", L("C056")[0] - 0.15, P("C056", "And in February") - 0.15,
          S(0, "proof", src=PF / "kanoon_ncdrc_setoff_53k.png", label="₹53,000 TAKEN FOR CARD DUES", tag="NCDRC | VIA INDIAN KANOON")),
     *cut("p14_setoff", P("C056", "And in February") - 0.15, L("C057")[0] - 0.3,
          S(0, "proof", src=PF / "kanoon_kerala_hold.png", label="A HOLD IS NOT AN ATTACHMENT", tag="KERALA HIGH COURT | FEB 2026")),
     scene("p15_borrower"),
     scene("p16_chain"),
-    S(L("C063")[0] - 0.2, "clip", src=BR / "pixabay_28237.mp4", ss=2.0, label="WILL THE POLICE ARREST YOU?", bright=True),
+    S(L("C063")[0] - 0.2, "clip", src=BR / "pixabay_201109.mp4", ss=5.0, label="WILL THE POLICE ARREST YOU?", tag=TAG_ILL),
     scene("d04_truth"),
-    S(scene_span("d04_truth")[1], "proof", src=PF / "sc_2019_not_cheating.png", label="NOT REPAYING ≠ CHEATING", tag="SUPREME COURT | 2019"),
+    S(scene_span("d04_truth")[1], "proof", src=PF / "sc_2019_not_cheating.png", label="NOT REPAYING IS NOT CHEATING", tag="SUPREME COURT | 2019"),
     S(P("C065", "And in twenty") - 0.15, "proof", src=PF / "sc_2025_kukreja.png", label="POLICE ARE NOT RECOVERY AGENTS", tag="SUPREME COURT | 2025"),
     scene("p17_criminal"),
     scene("p18_writeoff"),
@@ -133,10 +137,16 @@ SHOTS = [
     *cut("p22_step3", P("C076", "Type it yourself") - 0.1, P("C076", "Never tap") - 0.15,
          S(0, "proof", src=PF / "ecourts_case_status.png", tag="ECOURTS SERVICES")),
     scene("p23_step4"),
+    *cut("p23_step4", P("C078", "won't lend") - 0.1, P("C078", "Later") - 0.2,
+         S(0, "clip", src=BR / "pixabay_95123.mp4", ss=10.0, label="NO NEW LOAN FROM THAT BANK FOR A YEAR")),
     scene("p24_step5"),
+    *cut("p24_step5", L("C080")[0] - 0.1, P("C080", "Use the") - 0.1,
+         S(0, "clip", src=BR / "pixabay_154195.mp4", ss=18.0, label="YOU CHOOSE WHERE YOUR SALARY GOES")),
     scene("d05_recap"),
+    *cut("d05_recap", P("C081", "Can they take") - 0.1, P("C081", "Without a court") + 0.6,
+         S(0, "clip", src=BR / "pixabay_271463.mp4", ss=2.0, label="CAN THEY TAKE YOUR SALARY?")),
     S(L("C083")[0] - 0.2, "clip", src=BR / "pixabay_134872.mp4", ss=1.0, label="HAS AN AGENT CALLED YOU? COMMENT"),
-    S(L("C084")[0] - 0.2, "clip", src=BR / "pixabay_154195.mp4", ss=4.0, label="SHARE IT WITH ONE PERSON"),
+    S(L("C084")[0] - 0.2, "clip", src=BR / "pixabay_202987.mp4", ss=2.0, label="SHARE IT WITH ONE PERSON"),
     S(P("C084", "And subscribe") - 0.2, "end"),
 ]
 
@@ -175,7 +185,7 @@ def overlays(W, H, label="", tag=""):
         fs = int(19 * k); pad = int(12 * k); h = int(34 * k)
         w = int(text_w(tag, TFONT, fs)) + 2 * pad
         x0, y0 = W - w - int(64 * k), H - h - int(44 * k)
-        f.append(f"drawbox=x={x0}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.55:t=fill")
+        f.append(f"drawbox=x={x0}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.85:t=fill")
         f.append(f"drawtext=fontfile={TFONT}:expansion=none:text='{esc(tag)}':x={x0 + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white@0.92")
     return f
 
@@ -206,16 +216,16 @@ def proof_box(png):
 def proof_parts(s, dur):
     """Establish (whose page) -> push in until the highlighted line reads on a phone -> pan along it on long holds."""
     x0, y0, x1, y1 = proof_box(s["src"]); cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
-    zt = max(1.6, min(2.6, 1 / max(0.38, (x1 - x0) * 1.4)))
+    zt = max(2.1, min(3.0, 1 / max(0.33, (x1 - x0) * 1.15)))
     if dur < 3.6:
-        return [dict(s, kind="still", zoom=(zt * 0.72, zt), focus=(cx, cy))]
+        return [dict(s, kind="still", zoom=(zt * 0.72, zt), focus=(cx, cy + 0.1 / zt))]
     a = min(2.0, max(1.3, dur * 0.28)); rest = dur - a
     parts = [dict(s, kind="still", zoom=(1.0, 1.06), focus=(0.5 + (cx - 0.5) * 0.3, 0.5 + (cy - 0.5) * 0.3)),
-             dict(s, t=round(s["t"] + a, 2), kind="still", zoom=(zt * 0.86, zt), focus=(cx, cy))]
+             dict(s, t=round(s["t"] + a, 2), kind="still", zoom=(zt * 0.86, zt), focus=(cx, cy + 0.1 / zt))]
     if rest > 4.8:
         half = 0.5 / zt
         p0, p1 = (x0 + half, x1 - half) if x1 - x0 > 2 * half else (cx - 0.1, cx + 0.04)
-        parts.append(dict(s, t=round(s["t"] + a + rest / 2, 2), kind="still", zoom=(zt, zt * 1.04), focus=(p0, cy), pan_to=p1))
+        parts.append(dict(s, t=round(s["t"] + a + rest / 2, 2), kind="still", zoom=(zt, zt * 1.04), focus=(p0, cy + 0.1 / zt), pan_to=p1))
     return parts
 
 

@@ -61,7 +61,8 @@ window.SCENE = {
    "bend": 0.12,
    "color": "red",
    "text": "FAR AWAY",
-   "tx": -110,
+   "tx": -150,
+   "ty": -40,
    "at": 7.26
   },
   {
@@ -180,8 +181,8 @@ window.SCENE = {
   },
   {
    "kind": "tag",
-   "x": 1164,
-   "y": 732,
+   "x": 760,
+   "y": 752,
    "text": "₹7,500",
    "sub": "PER PERSON TRACED",
    "color": "red",
@@ -297,7 +298,7 @@ window.SCENE = {
   [
    0.02,
    1.06,
-   7.0,
+   8.2,
    -1.4,
    46.71
   ]

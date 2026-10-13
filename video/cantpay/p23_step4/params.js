@@ -21,23 +21,24 @@ window.SCENE = {
   {
    "kind": "photo",
    "src": "img/letter_settle.png",
-   "x": 150,
+   "x": 460,
    "y": 160,
-   "w": 520,
-   "h": 692,
-   "at": 3.18,
+   "w": 480,
+   "h": 639,
+   "at": 0.0,
    "in": "drop",
    "float": 0.4,
    "exit": 9.83,
+   "opaque": true,
    "until": 9.83
   },
   {
    "kind": "photo",
    "src": "img/phone_upi.png",
-   "x": 760,
+   "x": 980,
    "y": 140,
-   "w": 380,
-   "h": 642,
+   "w": 330,
+   "h": 558,
    "at": 6.81,
    "in": "drop",
    "float": 0.5,
@@ -46,7 +47,7 @@ window.SCENE = {
   },
   {
    "kind": "badge",
-   "x": 1230,
+   "x": 1360,
    "y": 330,
    "text": "LETTER FIRST",
    "size": 48,
@@ -55,9 +56,9 @@ window.SCENE = {
   },
   {
    "kind": "badge",
-   "x": 1230,
+   "x": 1360,
    "y": 460,
-   "text": "BANK'S OWN CHANNEL",
+   "text": "OWN CHANNEL",
    "size": 48,
    "at": 7.11,
    "exit": 9.83
@@ -165,10 +166,6 @@ window.SCENE = {
    "pop"
   ],
   [
-   3.18,
-   "rip"
-  ],
-  [
    3.48,
    "pop"
   ],
@@ -235,8 +232,8 @@ window.SCENE = {
   [
    0.02,
    1.06,
-   -1.9,
-   3.5,
+   -8.3,
+   4.1,
    9.78
   ],
   [
