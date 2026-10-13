@@ -105,7 +105,13 @@ measurements in a session):**
 
 **Rules:** each session owns one folder and one branch (no merge conflicts); same effort and quality in every shard; media
 over 100 MB never goes in git (hand over by URL list and re-download, or a release asset/LFS after a test upload); archive
-sessions when done; 6–8 sessions is the sensible maximum. Every new session runs `.claude/hooks/session-start.sh`
+sessions when done; 6–8 sessions is the sensible maximum.
+**Handing large files between sessions (tested 2026-10-13):** Litterbox (catbox.moe's temporary host, ≤ 1 GB per file,
+kept 72 h) works both ways from the cloud: `curl -F reqtype=fileupload -F time=72h -F fileToUpload=@f.mp4
+https://litterbox.catbox.moe/resources/internals/api.php` prints a direct URL, `curl -L <url>` gets it back byte-identical
+(md5 checked). Commit `<file>.url` text (URL + md5) to the session's branch; the receiver fetches the branch and downloads.
+Gofile does not work for this: guests can upload, but the contents API answers `error-notPremium` and a direct download
+redirects. Gofile stays the owner's delivery link. Only our own renders and our own licensed assets go to Litterbox. Every new session runs `.claude/hooks/session-start.sh`
 (npm install with vendoring, `.venv` with all extras, library fetch), so it is ready to render when it starts.
 The `/parallel-render` skill walks through the whole procedure.
 
