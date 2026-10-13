@@ -205,6 +205,18 @@
       cross(g, it) { const s = it.size || 120; add(g, rc.path(`M ${-s / 2} ${-s / 2} L ${s / 2} ${s / 2} M ${s / 2} ${-s / 2} L ${-s / 2} ${s / 2}`, R({ stroke: C.red, strokeWidth: 9, roughness: 1.8 }))); },
       ring(g, it) { add(g, rc.ellipse(0, 0, it.w || 400, it.h || 260, R({ stroke: col(it.color || "red"), strokeWidth: 6, roughness: 2.2 }))); },
       strike(g, it) { add(g, rc.line(0, 0, it.w || 500, 0, R({ stroke: C.red, strokeWidth: 8, roughness: 1.6 }))); },
+      split(g, it) {   // one bar split into parts [{f, color, label}], drawn left to right
+        const W2 = it.w || 900, h = it.h || 110; let x = 0;
+        (it.parts || []).forEach((pt, i) => { const w = W2 * pt.f; const pg = el("g", { class: "part", "data-i": i }, g);
+          add(pg, rc.rectangle(x, 0, w, h, R({ fill: col(pt.color), fillStyle: "hachure", hachureGap: 9, fillWeight: 2.2 })));
+          if (pt.label) text(pg, pt.label, x + w / 2, h + 50, 34, pt.color, { anchor: "middle", mono: true });
+          if (pt.top) text(pg, pt.top, x + w / 2, -26, 56, pt.color, { anchor: "middle" }); x += w; });
+      },
+      counter(g, it) {  // a number that counts from `from` to `to` between at+0.1 and at+count (₹ and Indian grouping)
+        const t = text(g, "", 0, 0, it.size || 96, it.color, { anchor: it.anchor });
+        t.classList.add("counter"); t.dataset.fmt = it.fmt || "rs";
+        if (it.label) text(g, it.label, it.anchor === "middle" ? 0 : 4, (it.size || 96) * 0.5 + 18, 30, it.labelColor || "dim", { mono: true, anchor: it.anchor });
+      },
       photo(g, it) {   // photoreal prop still (video/lib/props, alpha PNG with its own shadow); w,h in page px
         const fl = el("g", { class: "float" }, g);
         el("image", { href: it.src, x: 0, y: 0, width: it.w, height: it.h, preserveAspectRatio: "xMidYMid meet" }, fl);
@@ -216,7 +228,7 @@
         for (let i = 0; i < 12; i++) add(g, rc.rectangle(26 + (i % 3) * 72, 130 + Math.floor(i / 3) * 60, 60, 46, R({ fill: "#e3e5ea", fillStyle: "solid", strokeWidth: 1.4 })));
       },
     };
-    const DRAWN = new Set(["bill", "coins", "card", "pos", "phone", "calendar", "meter", "toggle", "net", "scale", "bars", "arrow", "loop", "box", "contact", "house", "slider", "seesaw", "calc", "ring", "strike", "cross"]);
+    const DRAWN = new Set(["split", "bill", "coins", "card", "pos", "phone", "calendar", "meter", "toggle", "net", "scale", "bars", "arrow", "loop", "box", "contact", "house", "slider", "seesaw", "calc", "ring", "strike", "cross"]);
 
     // ---------- animation helpers ----------
     function drawOn(node, t, dur) {
@@ -257,6 +269,12 @@
         if (at == null) return; gsap.set(b, { scaleY: 0, opacity: 0, transformOrigin: "50% 100%" }); tl.to(b, { scaleY: 1, opacity: 1, duration: 0.7, ease: "back.out(1.4)" }, at); });
       if (it.bandShatterAt != null) { const b = inner.querySelector("g.band"); if (b) tl.to(b, { opacity: 0, scaleX: 0.2, duration: 0.35, ease: "power2.in", transformOrigin: "50% 50%" }, it.bandShatterAt); }
       if (it.bandAt != null) { const b = inner.querySelector("g.band"); if (b) { tl.set(b, { opacity: 0 }, 0); tl.fromTo(b, { opacity: 0, scaleX: 0.3, transformOrigin: "0% 50%" }, { opacity: 1, scaleX: 1, duration: 0.6, immediateRender: false }, it.bandAt); } }
+      if (it.kind === "counter") { const t = inner.querySelector("text.counter"), o = { v: it.from || 0 };
+        const fmt = (v) => { const n = Math.round(v); const sgn = n < 0 ? "−" : ""; const a = Math.abs(n).toLocaleString("en-IN");
+          return it.fmt === "days" ? `${n}` : it.fmt === "pct" ? `${(Math.round(v * 10) / 10).toFixed(it.dp ?? 1)}%` : `${sgn}₹${a}`; };
+        t.textContent = (it.prefix || "") + fmt(o.v) + (it.suffix || "");
+        (it.steps || [[it.at + 0.1, it.to, it.count || 1.5]]).forEach(([at, to, d]) => tl.to(o, { v: to, duration: d, ease: it.ease || "power1.inOut",
+          onUpdate: () => { t.textContent = (it.prefix || "") + fmt(o.v) + (it.suffix || ""); } }, at)); }
       if (it.float) { const f = inner.querySelector("g.float"); if (f) tl.fromTo(f, { rotation: -it.float / 2, y: 0, transformOrigin: "50% 50%" },   // slow living drift, f(t)
         { rotation: it.float / 2, y: -10, duration: Math.max(0.5, (it.until || it.exit || DUR) - t), ease: "sine.inOut" }, t); }
       if (it.exit != null) tl.to(outer, { opacity: 0, y: (it.y || 0) - 40, duration: 0.35, ease: "power2.in" }, it.exit);

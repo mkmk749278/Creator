@@ -3,7 +3,7 @@
 // to the prop and its shadow plus a margin). Pages are served from this folder (module scripts need http, not file://).
 import puppeteer from "puppeteer-core";
 import { createServer } from "node:http";
-import { readFileSync, existsSync, mkdirSync, statSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from "node:fs";
 import { extname, join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
@@ -34,16 +34,27 @@ for (const [name, spec] of Object.entries(specs)) {
   await page.goto(`http://127.0.0.1:${port}/index.html#${encodeURIComponent(JSON.stringify(spec))}`);
   await page.waitForFunction(() => window.__ready === true, { timeout: 240000 });
   const raw = join(outDir, `${name}.raw.png`);
+  writeFileSync(join(outDir, `${name}.anchors.raw.json`), JSON.stringify(await page.evaluate(() => window.__anchors || {})));
   await (await page.$("canvas")).screenshot({ path: raw, omitBackground: true });
   await page.close();
-  // crop to alpha bbox + 3% margin
+  // crop to alpha bbox + 3% margin (opaque desk plates stay whole); anchors move with the crop:
+  // <name>.json = {w, h, anchors: {name: [x, y]}} in the saved PNG's pixels
+  const araw = join(outDir, `${name}.anchors.raw.json`);
   execFileSync("python3", ["-c", `
-import sys
+import sys, json
 from PIL import Image
-im = Image.open(sys.argv[1]); bb = im.getchannel("A").point(lambda a: 255 if a > 6 else 0).getbbox()
-m = int(0.03 * max(im.size)); bb = (max(0, bb[0]-m), max(0, bb[1]-m), min(im.width, bb[2]+m), min(im.height, bb[3]+m))
-im.crop(bb).save(sys.argv[2]); print(sys.argv[2], im.crop(bb).size)
-`, raw, join(outDir, `${name}.png`)], { stdio: "inherit" });
+im = Image.open(sys.argv[1]); anc = json.load(open(sys.argv[3]))
+if "A" in im.getbands():
+    bb = im.getchannel("A").point(lambda a: 255 if a > 6 else 0).getbbox()
+    m = int(0.03 * max(im.size)); bb = (max(0, bb[0]-m), max(0, bb[1]-m), min(im.width, bb[2]+m), min(im.height, bb[3]+m))
+    im = im.crop(bb)
+else:
+    bb = (0, 0); im = im.convert("RGB")
+im.save(sys.argv[2])
+json.dump({"w": im.width, "h": im.height, "anchors": {k: [v[0] - bb[0], v[1] - bb[1]] for k, v in anc.items()}}, open(sys.argv[4], "w"), indent=0)
+print(sys.argv[2], im.size, len(anc), "anchors")
+`, raw, join(outDir, `${name}.png`), araw, join(outDir, `${name}.json`)], { stdio: "inherit" });
+  execFileSync("rm", ["-f", araw]);
   execFileSync("rm", ["-f", raw]);
 }
 await browser.close(); server.close();

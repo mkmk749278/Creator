@@ -51,11 +51,24 @@ function stamp(g, text, cx, cy, size, color = "#c0182b", rot = -12) {
   g.restore(); g.globalCompositeOperation = "source-over"; g.globalAlpha = 1;
 }
 
+// ---------- anchors: named points on a prop's print, projected to output pixels (annotations land exactly on them) ----------
+let PEND = [];                       // [name, u, v] in canvas fractions (v down), collected while a texture is drawn
+const ANCH = [];                     // [name, mesh, localPoint]
+const A = (name, px, py, TW, TH) => PEND.push([name, px / TW, py / TH]);
+const ARect = (name, x, y, w, h, TW, TH) => { A(name, x + w / 2, y + h / 2, TW, TH); A(name + ".tl", x, y, TW, TH); A(name + ".br", x + w, y + h, TW, TH); };
+function bindAnchors(mesh, toLocal) { for (const [n, u, v] of PEND) ANCH.push([n, mesh, toLocal(u, v)]); PEND = []; }
+function projectAnchors(prefix = "", out = {}) {
+  for (const [n, mesh, lp] of ANCH) { mesh.updateMatrixWorld(true); const w = mesh.localToWorld(lp.clone()).project(camera);
+    out[prefix + n] = [Math.round((w.x + 1) / 2 * W), Math.round((1 - w.y) / 2 * H)]; }
+  return out;
+}
+
 // ---------- renderer / scene ----------
 const PX = S.px || 3000, ASPECT = S.aspect || 1.5;
 const W = PX, H = Math.round(PX / ASPECT);
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
-renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.setClearColor(0x000000, 0);
+const DESK = S.type === "desk";
+const renderer = new THREE.WebGLRenderer({ antialias: !DESK, alpha: !DESK, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.setClearColor(0x000000, DESK ? 1 : 0);
 renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = S.exposure || 1.0;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap;
@@ -73,7 +86,7 @@ const fill = new THREE.DirectionalLight(LIGHT[1], 0.35); fill.position.set(60, 4
 
 // shadow-only floor + soft contact occlusion
 const floor = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), new THREE.ShadowMaterial({ opacity: S.shadow ?? 0.32 }));
-floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; if (!DESK) scene.add(floor);
 function contact(w, d, op = 0.45) {   // blurred dark ellipse right under the prop
   const [c, g] = mkCanvas(512, 512); const gr = g.createRadialGradient(256, 256, 0, 256, 256, 256);
   gr.addColorStop(0, `rgba(0,0,0,${op})`); gr.addColorStop(0.55, `rgba(0,0,0,${op * 0.55})`); gr.addColorStop(1, "rgba(0,0,0,0)");
@@ -116,6 +129,8 @@ function card(o) {
     gg.font = F(500, 40, "Mono"); gg.fillText("VALID THRU", 980, 1048); gg.font = F(500, 64, "Mono"); gg.fillText(o.expiry || "08/29", 1250, 1056);
     gg.font = F(500, 64, "Mono"); gg.fillText(o.name || "RAVI KUMAR", 140, 1160); };
   drawText(g, ink);
+  A("number", 140 + 760, 890, TW, TH); A("chip", cx + cw / 2, cy + ch / 2, TW, TH); A("name", 300, 1140, TW, TH); A("expiry", 1250, 1040, TW, TH);
+  A("tl", 0, 0, TW, TH); A("br", TW, TH, TW, TH); A("center", TW / 2, TH / 2, TW, TH);
   if (o.label) { g.font = F(800, 46, "Mono"); g.fillStyle = ink; g.globalAlpha = 0.7; textR(g, o.label, TW - 120, 1160); g.globalAlpha = 1; }
   // roughness/metal map: chip metal, print satin, card body glossy
   const [rc, rg] = mkCanvas(TW, TH); rg.fillStyle = `rgb(0,${dark ? 120 : 95},${o.metal ? 200 : 0})`; rg.fillRect(0, 0, TW, TH);
@@ -130,9 +145,10 @@ function card(o) {
   const uv = geo.attributes.uv, pos = geo.attributes.position;
   for (let i = 0; i < uv.count; i++) uv.setXY(i, (pos.getX(i) + w / 2) / w, (pos.getY(i) + h / 2) / h);
   const face = new THREE.MeshPhysicalMaterial({ map: tex(c), roughnessMap: tex(rc, false), metalnessMap: tex(rc, false), metalness: 1, roughness: 1,
-    bumpMap: tex(bc, false), bumpScale: 0.6, clearcoat: o.matte ? 0.15 : 0.85, clearcoatRoughness: o.matte ? 0.6 : 0.16 });
+    bumpMap: tex(bc, false), bumpScale: 0.6, clearcoat: o.matte ? 0 : 0.85, clearcoatRoughness: o.matte ? 0.6 : 0.16 });
   const edge = new THREE.MeshPhysicalMaterial({ color: dark ? 0xe9e6e0 : 0xd8d8d8, roughness: 0.45 });
   const m = new THREE.Mesh(geo, [face, edge]); m.castShadow = true; m.receiveShadow = true;
+  bindAnchors(m, (u, v) => new THREE.Vector3((u - 0.5) * w, (0.5 - v) * h, t / 2));
   m.rotation.x = -Math.PI / 2; m.position.y = t / 2 + 0.013;
   const grp = new THREE.Group(); grp.add(m, contact(w, h, 0.5)); grp.userData.size = [w, h]; return grp;
 }
@@ -152,6 +168,7 @@ function paperMesh(w, h, tc, opts = {}) {   // printed sheet with creases (fold 
   const bump = tex(nc, false); bump.wrapS = bump.wrapT = THREE.RepeatWrapping; bump.repeat.set(3, 3 * h / w);
   const mat = new THREE.MeshPhysicalMaterial({ map: tex(tc), roughness: 0.92, bumpMap: bump, bumpScale: 0.25, sheen: 0.25, sheenRoughness: 0.8, sheenColor: 0xffffff, side: THREE.DoubleSide });
   const m = new THREE.Mesh(geo, mat); m.rotation.x = -Math.PI / 2; m.castShadow = m.receiveShadow = true;
+  bindAnchors(m, (u, v) => { const i = Math.round(v * segY) * (segX + 1) + Math.round(u * segX); return new THREE.Vector3(p.getX(i), p.getY(i), p.getZ(i)); });
   const grp = new THREE.Group(); grp.add(m, contact(w, h, 0.3)); grp.userData.size = [w, h]; return grp;
 }
 
@@ -174,7 +191,7 @@ function bill(o) {
   // summary boxes
   const boxes = o.boxes || [["TOTAL AMOUNT DUE", "₹10,000"], ["MINIMUM AMOUNT DUE", "₹500"], ["PAYMENT DUE DATE", "05 NOV 2026"]];
   const bw = (TW - 2 * M - 2 * 40) / 3;
-  boxes.forEach(([k, v], i) => { const x = M + i * (bw + 40), y = 680; const hi = (o.hiBox ?? -1) === i;
+  boxes.forEach(([k, v], i) => { const x = M + i * (bw + 40), y = 680; const hi = (o.hiBox ?? -1) === i; ARect(`box${i}`, x, y, bw, 260, TW, TH);
     g.fillStyle = hi ? "#fff2c2" : "#eef0f4"; rrect(g, x, y, bw, 260, 18); g.fill();
     if (hi) { g.strokeStyle = "#e0a400"; g.lineWidth = 6; rrect(g, x, y, bw, 260, 18); g.stroke(); }
     g.fillStyle = "#6b7280"; g.font = F(500, 34, "Mono"); g.fillText(k, x + 36, y + 78);
@@ -183,18 +200,20 @@ function bill(o) {
   let y = 1120; g.fillStyle = "#111827"; g.font = F(800, 54, "Bricolage"); g.fillText(o.tableTitle || "THIS MONTH", M, y); y += 40;
   g.fillStyle = "#d1d5db"; g.fillRect(M, y, TW - 2 * M, 4); y += 110;
   for (const row of o.rows || [["Previous balance", "₹10,000"], ["Payments received", "₹0"], ["Late payment fee", "₹750"], ["Interest (3.75% a month)", "₹375"], ["GST 18% on fee + interest", "₹203"]]) {
-    const [a, b, hi] = row;
+    const [a, b, hi] = row; ARect(`row${(A.r = (A.r ?? -1) + 1)}`, M - 20, y - 76, TW - 2 * M + 40, 112, TW, TH); A(`amt${A.r}`, TW - M - 120, y - 20, TW, TH);
     if (hi) { g.fillStyle = "rgba(250,204,21,.45)"; g.fillRect(M - 20, y - 76, TW - 2 * M + 40, 112); }
     g.fillStyle = "#1f2937"; g.font = F(500, 56); g.fillText(a, M, y); g.font = F(800, 58); textR(g, b, TW - M, y);
     g.fillStyle = "#e5e7eb"; g.fillRect(M, y + 40, TW - 2 * M, 3); y += 150;
   }
-  if (o.total) { y += 20; g.fillStyle = "#111827"; g.font = F(800, 66, "Bricolage"); g.fillText(o.total[0], M, y); g.font = F(800, 84); textR(g, o.total[1], TW - M, y + 6); y += 120; }
+  A.r = -1;
+  if (o.total) { y += 20; ARect("total", M - 20, y - 70, TW - 2 * M + 40, 120, TW, TH); g.fillStyle = "#111827"; g.font = F(800, 66, "Bricolage"); g.fillText(o.total[0], M, y); g.font = F(800, 84); textR(g, o.total[1], TW - M, y + 6); y += 120; }
   // fine print
   g.fillStyle = "#c4c8ce"; g.font = F(500, 30, "Mono");   // fine print, greyed like small type
   for (let k = 0; k < 7; k++) { const yy = TH - 470 + k * 46; let x = M; const end = M + (TW - 2 * M) * (k === 6 ? 0.5 : 0.97);
     while (x < end) { const ww = 30 + rng() * 90; g.fillRect(x, yy, Math.min(ww, end - x), 11); x += ww + 14; } }
   g.fillText(o.foot || "SIMULATION · NOT A REAL BANK STATEMENT", M, TH - 90);
   if (o.stamp) stamp(g, o.stamp, TW * 0.66, o.stampY || 1880, 150, "#c0182b", -14);
+  A("stamp", TW * 0.66, o.stampY || 1880, TW, TH); A("tl", 0, 0, TW, TH); A("br", TW, TH, TW, TH); A("center", TW / 2, TH / 2, TW, TH); A("title", TW / 2, 150, TW, TH);
   return paperMesh(w, h, c, { folds: o.flat ? [] : [1 / 3, 2 / 3], foldAmp: 0.32 });
 }
 
@@ -204,7 +223,7 @@ function notice(o) {
   g.fillStyle = "#111827"; g.font = F(800, 64, "Bricolage"); g.fillText(o.from || "LAW CHAMBERS", M, 230);
   g.fillStyle = "#6b7280"; g.font = F(500, 34, "Mono"); g.fillText(o.fromLine || "ADVOCATES · HYDERABAD", M, 290);
   g.fillStyle = "#111827"; g.fillRect(M, 340, TW - 2 * M, 5);
-  g.font = F(800, 92, "Bricolage"); const head = o.head || "LEGAL NOTICE"; const hw = g.measureText(head).width; g.fillText(head, (TW - hw) / 2, 520);
+  g.font = F(800, 92, "Bricolage"); const head = o.head || "LEGAL NOTICE"; const hw = g.measureText(head).width; g.fillText(head, (TW - hw) / 2, 520); A("head", TW / 2, 490, TW, TH);
   g.font = F(500, 40, "Mono"); g.fillStyle = "#374151"; g.fillText(o.ref || "REF: CC/2026/0417", M, 640); textR(g, o.date || "DATE: 12 OCT 2026", TW - M, 640);
   let y = 800; g.font = F(500, 50); g.fillStyle = "#1f2937";
   for (const line of o.lines || ["To: Mr. Ravi Kumar", "Subject: Unpaid credit card dues", "", "Our client calls upon you to pay the outstanding", "amount within 15 days of this notice."]) {
@@ -213,7 +232,41 @@ function notice(o) {
   for (let k = 0; k < (o.bodyLines ?? 11); k++) { g.fillRect(M, y + k * 74, (TW - 2 * M) * (k % 4 === 3 ? 0.55 : 0.92 + 0.08 * rng()), 18); }
   g.fillStyle = "#6b7280"; g.font = F(500, 30, "Mono"); g.fillText("SIMULATION", M, TH - 90);
   if (o.stamp) stamp(g, o.stamp, TW * 0.64, o.stampY || 2350, 130, o.stampColor || "#1d3fb3", -10);
+  A("stamp", TW * 0.64, o.stampY || 2350, TW, TH); A("ref", TW / 2, 630, TW, TH); A("to", M + 300, 780, TW, TH); A("tl", 0, 0, TW, TH); A("br", TW, TH, TW, TH); A("center", TW / 2, TH / 2, TW, TH);
   return paperMesh(w, h, c, { folds: o.flat ? [] : [1 / 3, 2 / 3], foldAmp: 0.3 });
+}
+
+function report(o) {   // credit report page (fictional bureau layout): score dial, accounts with days-past-due cells
+  const w = 21, h = 29.7, TW = 2100, TH = 2970, M = 150;
+  const [c, g] = paperBase(TW, TH);
+  g.fillStyle = "#0f3d3e"; g.fillRect(0, 0, TW, 260);
+  g.fillStyle = "#fff"; g.font = F(800, 84, "Bricolage"); g.fillText(o.title || "CREDIT REPORT", M, 160);
+  g.font = F(500, 34, "Mono"); g.globalAlpha = 0.8; g.fillText(o.sub || "CONSUMER CREDIT INFORMATION · SIMULATION", M, 220); g.globalAlpha = 1;
+  g.fillStyle = "#374151"; g.font = F(500, 44, "Mono"); g.fillText(o.name || "RAVI KUMAR", M, 380); g.fillStyle = "#6b7280"; g.font = F(500, 34, "Mono"); g.fillText(o.date || "REPORT DATE  15 DEC 2026", M, 440);
+  // score dial
+  const cx = TW - 470, cy = 640, R = 260;
+  for (let k = 0; k < 60; k++) { const a0 = Math.PI + (k / 60) * Math.PI, a1 = a0 + Math.PI / 60 * 0.8; const col = k < 20 ? "#d62839" : k < 40 ? "#e09f1f" : "#1f9d6b";
+    g.strokeStyle = col; g.lineWidth = 46; g.beginPath(); g.arc(cx, cy, R, a0, a1); g.stroke(); }
+  const sc = o.score ?? 742, fr = (sc - 300) / 600, na = Math.PI + fr * Math.PI;
+  g.strokeStyle = "#111827"; g.lineWidth = 14; g.lineCap = "round"; g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + Math.cos(na) * (R - 60), cy + Math.sin(na) * (R - 60)); g.stroke();
+  g.fillStyle = "#111827"; g.font = F(800, 120); let s = String(sc); g.fillText(s, cx - g.measureText(s).width / 2, cy + 150);
+  g.fillStyle = "#6b7280"; g.font = F(500, 34, "Mono"); s = "CREDIT SCORE"; g.fillText(s, cx - g.measureText(s).width / 2, cy + 210); A("score", cx, cy + 100, TW, TH);
+  // accounts
+  let y = 1060; g.fillStyle = "#111827"; g.font = F(800, 56, "Bricolage"); g.fillText("ACCOUNTS", M, y); y += 30; g.fillStyle = "#d1d5db"; g.fillRect(M, y, TW - 2 * M, 4); y += 90;
+  g.fillStyle = "#6b7280"; g.font = F(500, 30, "Mono"); g.fillText("LENDER · TYPE", M, y); const months = o.months || ["JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  const cw = 150, x0 = TW - M - months.length * cw; months.forEach((m, i) => g.fillText(m, x0 + i * cw + 30, y)); y += 40;
+  (o.accounts || [{ lender: "BANK A", type: "CREDIT CARD", dpd: ["000", "000", "000", "030", "060", "090"] }, { lender: "BANK B", type: "CREDIT CARD", dpd: ["000", "000", "000", "000", "000", "000"] }]).forEach((a, k) => {
+    y += 30; g.fillStyle = "#1f2937"; g.font = F(800, 48); g.fillText(a.lender, M, y + 70); g.fillStyle = "#6b7280"; g.font = F(500, 32, "Mono"); g.fillText(a.type, M, y + 120);
+    a.dpd.forEach((d, i) => { const bad = d !== "000" && d !== "STD", col = d === "SET" || d === "WO" ? "#7c2d12" : bad ? (parseInt(d) >= 90 ? "#d62839" : "#e09f1f") : "#1f9d6b";
+      g.fillStyle = col; g.globalAlpha = bad ? 0.95 : 0.85; rrect(g, x0 + i * cw + 8, y + 22, cw - 16, 100, 14); g.fill(); g.globalAlpha = 1;
+      g.fillStyle = "#fff"; g.font = F(800, 42, "Mono"); g.fillText(d, x0 + i * cw + (cw - g.measureText(d).width) / 2, y + 88); A(`dpd${k}_${i}`, x0 + i * cw + cw / 2, y + 72, TW, TH); });
+    ARect(`acct${k}`, M - 20, y, TW - 2 * M + 40, 150, TW, TH);
+    if (a.status) { g.fillStyle = a.statusColor || "#d62839"; g.font = F(800, 40, "Mono"); g.fillText(a.status, M + 520, y + 120); A(`status${k}`, M + 600, y + 108, TW, TH); }
+    y += 190; g.fillStyle = "#e5e7eb"; g.fillRect(M, y - 20, TW - 2 * M, 3); });
+  g.fillStyle = "#c4c8ce"; for (let k = 0; k < 6; k++) { let x = M; const yy = TH - 420 + k * 46; while (x < TW - M) { const ww = 30 + rng() * 90; g.fillRect(x, yy, Math.min(ww, TW - M - x), 11); x += ww + 14; } }
+  g.fillStyle = "#9ca3af"; g.font = F(500, 30, "Mono"); g.fillText("SIMULATION · NOT A REAL CREDIT REPORT", M, TH - 90);
+  A("tl", 0, 0, TW, TH); A("br", TW, TH, TW, TH); A("center", TW / 2, TH / 2, TW, TH);
+  return paperMesh(w, h, c, { folds: [], curl: 0.5 });
 }
 
 function cheque(o) {
@@ -234,6 +287,7 @@ function cheque(o) {
   g.fillStyle = "#111827"; g.font = F(500, 52, "Mono"); g.fillText("⑈004821⑈ 500229017⑆ 000123⑈ 31", 200, TH - 70);
   g.font = F(500, 26, "Mono"); g.fillStyle = "#64748b"; textR(g, "SIMULATION", TW - 90, TH - 150);
   if (o.stamp) stamp(g, o.stamp, TW * 0.5, TH * 0.48, 120, "#c0182b", -8);
+  A("amount", TW - 345, 420, TW, TH); A("stamp", TW * 0.5, TH * 0.48, TW, TH); A("payee", 700, 270, TW, TH); A("tl", 0, 0, TW, TH); A("br", TW, TH, TW, TH); A("center", TW / 2, TH / 2, TW, TH);
   return paperMesh(w, h, c, { folds: [], curl: 0.6 });
 }
 
@@ -247,6 +301,7 @@ function phone(o) {
   g.fillStyle = "#000"; rrect(g, SW / 2 - 60, 40, 120, 120, 60); g.fill();   // punch-hole camera
   if ((o.screen || "sms") === "call") {
     g.fillStyle = "rgba(255,255,255,.75)"; g.font = F(500, 52); let s = o.callLabel || "Incoming call"; g.fillText(s, (SW - g.measureText(s).width) / 2, 520);
+    A("caller", SW / 2, 670, SW, SH); A("number", SW / 2, 800, SW, SH); A("accept", SW * 0.75, SH - 420, SW, SH); A("decline", SW * 0.25, SH - 420, SW, SH);
     g.fillStyle = "#fff"; g.font = F(800, 110); s = o.caller || "Unknown number"; g.fillText(s, (SW - g.measureText(s).width) / 2, 700);
     g.font = F(500, 64, "Mono"); s = o.number || "+91 9•••• •••21"; g.fillStyle = "rgba(255,255,255,.85)"; g.fillText(s, (SW - g.measureText(s).width) / 2, 820);
     g.fillStyle = "rgba(255,255,255,.12)"; g.beginPath(); g.arc(SW / 2, 1220, 180, 0, Math.PI * 2); g.fill();
@@ -261,7 +316,7 @@ function phone(o) {
   } else {
     g.fillStyle = "#fff"; g.font = F(500, 220); let s = o.clock || "10:42"; g.fillText(s, (SW - g.measureText(s).width) / 2, 480);
     g.font = F(500, 56); s = o.date || "Tuesday, 14 October"; g.fillStyle = "rgba(255,255,255,.85)"; g.fillText(s, (SW - g.measureText(s).width) / 2, 580);
-    let y = 760;
+    let y = 760; A.n = -1; A("clock", SW / 2, 400, SW, SH);
     for (const n of o.notes || [{ app: "Messages", when: "now", title: "AX-CARDSV", body: "Your credit card payment of Rs.500 is overdue. Pay now to avoid charges." }]) {
       const lines = []; g.font = F(500, 50); let cur = "";
       for (const word of n.body.split(" ")) { const tt = cur ? cur + " " + word : word; if (g.measureText(tt).width > SW - 260) { lines.push(cur); cur = word; } else cur = tt; } lines.push(cur);
@@ -271,10 +326,12 @@ function phone(o) {
       g.fillStyle = "#6b7280"; g.font = F(500, 40); g.fillText(n.app.toUpperCase(), 190, y + 90); textR(g, n.when, SW - 110, y + 90);
       g.fillStyle = "#111827"; g.font = F(800, 52); g.fillText(n.title, 100, y + 170);
       g.font = F(500, 50); g.fillStyle = "#1f2937"; lines.forEach((l, i) => g.fillText(l, 100, y + 240 + i * 66));
+      ARect(`note${(A.n = (A.n ?? -1) + 1)}`, 60, y, SW - 120, bh, SW, SH);
       y += bh + 34;
     }
   }
   g.fillStyle = "rgba(255,255,255,.7)"; rrect(g, SW / 2 - 200, SH - 60, 400, 14, 7); g.fill();
+  const off = o.screen === "off"; if (off) { g.fillStyle = "#030405"; g.fillRect(0, 0, SW, SH); }
   const scrTex = tex(c);
   const [ac, ag] = mkCanvas(SW, SH); const grp = new THREE.Group(); ag.fillStyle = "#000"; ag.fillRect(0, 0, SW, SH); ag.fillStyle = "#fff"; rrect(ag, 0, 0, SW, SH, 120); ag.fill();
   const rr = (W2, H2, R2) => { const sh = new THREE.Shape(); sh.moveTo(-W2 / 2 + R2, -H2 / 2); sh.lineTo(W2 / 2 - R2, -H2 / 2); sh.absarc(W2 / 2 - R2, -H2 / 2 + R2, R2, -Math.PI / 2, 0);
@@ -287,9 +344,11 @@ function phone(o) {
   const bez = 0.2, glassGeo = new THREE.ShapeGeometry(rr(w - 0.16, h - 0.16, r - 0.08), 32);
   const glass = new THREE.Mesh(glassGeo, new THREE.MeshPhysicalMaterial({ color: 0x050506, roughness: 0.05, clearcoat: 1, clearcoatRoughness: 0.03 }));
   glass.rotation.x = -Math.PI / 2; glass.position.y = d + 0.02; grp.add(glass);
+  A("tl", 0, 0, SW, SH); A("br", SW, SH, SW, SH); A("center", SW / 2, SH / 2, SW, SH);
   const screen = new THREE.Mesh(new THREE.PlaneGeometry(w - 2 * bez, h - 2 * bez), new THREE.MeshPhysicalMaterial({ map: scrTex, emissiveMap: scrTex, emissive: 0xffffff,
-    emissiveIntensity: o.glow ?? 0.85, color: 0x222222, roughness: 0.05, clearcoat: 1, clearcoatRoughness: 0.02, alphaMap: tex(ac, false), transparent: true }));
+    emissiveIntensity: off ? 0 : (o.glow ?? 0.85), color: 0x222222, roughness: 0.05, clearcoat: 1, clearcoatRoughness: 0.02, alphaMap: tex(ac, false), transparent: true }));
   screen.rotation.x = -Math.PI / 2; screen.position.y = d + 0.03; grp.add(screen);
+  bindAnchors(screen, (u, v) => new THREE.Vector3((u - 0.5) * (w - 2 * bez), (0.5 - v) * (h - 2 * bez), 0));
   // faint glare across the glass (what a real phone photo always has)
   const [gc, gg] = mkCanvas(512, 1024); const gl = gg.createLinearGradient(0, 0, 512, 1024);
   gl.addColorStop(0, "rgba(255,255,255,0)"); gl.addColorStop(0.38, "rgba(255,255,255,0)"); gl.addColorStop(0.47, "rgba(255,255,255,.10)"); gl.addColorStop(0.6, "rgba(255,255,255,.03)"); gl.addColorStop(1, "rgba(255,255,255,0)");
@@ -300,10 +359,62 @@ function phone(o) {
   grp.add(contact(w, h, 0.55)); grp.userData.size = [w, h]; return grp;
 }
 
+// ---------- desk plate (big moments): props on a walnut desk at night under a warm lamp, photographic DOF ----------
+async function buildDesk() {
+  const { EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, ToneMappingMode, VignetteEffect, DepthOfFieldEffect, NoiseEffect, BlendFunction } = await import("postprocessing");
+  const T = (m, srgb) => new Promise((ok) => new THREE.TextureLoader().load(`vendor/library/texture/american_walnut_veneer_${m}_4k.jpg`, (t) => {
+    t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(2.4, 1.5); t.anisotropy = 16; if (srgb) t.colorSpace = THREE.SRGBColorSpace; ok(t); }));
+  const [dm, nm, rm] = await Promise.all([T("diff", true), T("nor_gl"), T("rough")]);
+  const desk = new THREE.Mesh(new THREE.PlaneGeometry(260, 160), new THREE.MeshStandardMaterial({ map: dm, normalMap: nm, roughnessMap: rm, color: S.deskTint || 0x9a6a48, roughness: 0.8, envMapIntensity: 0.5 }));
+  desk.rotation.x = -Math.PI / 2; desk.receiveShadow = true; scene.add(desk);
+  scene.background = new THREE.Color(0x0a0705);
+  key.intensity = 0; fill.intensity = S.fill ?? 0.12; fill.color.set(0x9fb8ff);
+  const L = S.lamp || {};
+  const lamp = new THREE.SpotLight(L.color || 0xffc58a, L.power ?? 3.4, 0, L.angle ?? 0.62, 0.85, 0);
+  lamp.position.set(...(L.pos || [-48, 78, -30])); lamp.target.position.set(...(L.target || [4, 0, 6]));
+  lamp.castShadow = true; lamp.shadow.mapSize.set(4096, 4096); lamp.shadow.radius = 10; lamp.shadow.blurSamples = 25; lamp.shadow.bias = -0.0002; lamp.shadow.normalBias = 0.02;
+  Object.assign(lamp.shadow.camera, { near: 10, far: 300 }); scene.add(lamp, lamp.target);
+  for (const p of S.props || []) {
+    const g = ({ card, bill, notice, cheque, phone, report })[p.type](p); for (const a of ANCH) if (!a[0].includes(":")) a[0] = (p.id || p.type) + ":" + a[0];
+    g.position.set(p.at?.[0] || 0, p.lift || 0, p.at?.[1] || 0); g.rotation.y = (p.yaw || 0) * DEG; scene.add(g);
+    if (p.type === "phone" && p.screen !== "off") {   // the lit screen spills cool light on the desk
+      const pl = new THREE.PointLight(0xbcd0ff, p.spill ?? 60, 60, 2); pl.position.set(p.at?.[0] || 0, 0.5, p.at?.[1] || 0); scene.add(pl); }
+  }
+  if (S.mug) {   // ceramic mug: lathe profile, glossy glaze, dark tea inside
+    const pts = [[0, 0], [4.1, 0], [4.3, 0.4], [4.4, 9.6], [4.0, 9.6], [3.9, 0.9], [0, 0.9]].map(([x, y]) => new THREE.Vector2(x, y));
+    const mug = new THREE.Mesh(new THREE.LatheGeometry(pts, 96), new THREE.MeshPhysicalMaterial({ color: S.mug.color || 0xe9e4da, roughness: 0.22, clearcoat: 0.8, side: THREE.DoubleSide }));
+    const tea = new THREE.Mesh(new THREE.CircleGeometry(3.95, 64), new THREE.MeshPhysicalMaterial({ color: 0x3a1f0c, roughness: 0.05, clearcoat: 1 }));
+    tea.rotation.x = -Math.PI / 2; tea.position.y = 7.4;
+    const handle = new THREE.Mesh(new THREE.TorusGeometry(2.4, 0.55, 24, 64, Math.PI * 1.15), mug.material); handle.position.set(4.6, 4.8, 0); handle.rotation.z = -Math.PI * 0.57;
+    const mg = new THREE.Group(); mg.add(mug, tea, handle); mg.traverse((m) => { m.castShadow = m.receiveShadow = true; });
+    mg.position.set(S.mug.at[0], 0, S.mug.at[1]); mg.rotation.y = (S.mug.yaw || 0) * DEG; scene.add(mg);
+  }
+  if (S.pen) {
+    const pen = new THREE.Group(), mat = new THREE.MeshPhysicalMaterial({ color: 0x15171c, metalness: 0.4, roughness: 0.3, clearcoat: 1 });
+    const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 13, 32), mat); barrel.rotation.z = Math.PI / 2;
+    const tip = new THREE.Mesh(new THREE.ConeGeometry(0.5, 1.6, 32), new THREE.MeshStandardMaterial({ color: 0xc9c9cf, metalness: 1, roughness: 0.25 })); tip.rotation.z = -Math.PI / 2; tip.position.x = 7.3;
+    const clip = new THREE.Mesh(new THREE.BoxGeometry(5, 0.15, 0.3), tip.material); clip.position.set(-3.5, 0.55, 0);
+    pen.add(barrel, tip, clip); pen.traverse((m) => { m.castShadow = true; }); pen.position.set(S.pen.at[0], 0.52, S.pen.at[1]); pen.rotation.y = (S.pen.yaw || 0) * DEG; scene.add(pen);
+  }
+  const C = S.cam || {}; camera.fov = C.fov || 32; camera.near = 2; camera.far = 1200; camera.updateProjectionMatrix();
+  const look = new THREE.Vector3(...(C.look || [0, 0, 0])), el = (C.elev ?? 42) * DEG, az = (C.az ?? 0) * DEG, dist = C.dist || 95;
+  camera.position.set(look.x + Math.sin(az) * Math.cos(el) * dist, look.y + Math.sin(el) * dist, look.z + Math.cos(az) * Math.cos(el) * dist); camera.lookAt(look);
+  renderer.toneMapping = THREE.NoToneMapping;
+  const composer = new EffectComposer(renderer, { frameBufferType: THREE.HalfFloatType, multisampling: 4 });
+  composer.addPass(new RenderPass(scene, camera));
+  const dof = new DepthOfFieldEffect(camera, { worldFocusDistance: C.focus || dist, worldFocusRange: C.range || 22, bokehScale: (C.bokeh ?? 3) * W / 1920, resolutionScale: 0.5 });
+  composer.addPass(new EffectPass(camera, dof));
+  composer.addPass(new EffectPass(camera, new BloomEffect({ intensity: 0.35, luminanceThreshold: 0.8, mipmapBlur: true }),
+    new VignetteEffect({ darkness: 0.55, offset: 0.25 }), new ToneMappingEffect({ mode: ToneMappingMode.AGX })));
+  composer.setSize(W, H); composer.render();
+  window.__anchors = projectAnchors();
+}
+
 // ---------- build ----------
-Promise.all([fontsReady, new HDRLoader().loadAsync("vendor/library/hdri/studio_small_09_1k.hdr")]).then(([, hdr]) => {
-  const pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromEquirectangular(hdr).texture; scene.environmentIntensity = S.env ?? 0.9;
-  const prop = ({ card, bill, notice, cheque, phone })[S.type || "card"](S);
+Promise.all([fontsReady, new HDRLoader().loadAsync(`vendor/library/hdri/${DESK ? "small_empty_room_1" : "studio_small_09"}_1k.hdr`)]).then(async ([, hdr]) => {
+  const pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromEquirectangular(hdr).texture; scene.environmentIntensity = S.env ?? (DESK ? 0.22 : 0.9);
+  if (DESK) { await buildDesk(); window.__ready = true; return; }
+  const prop = ({ card, bill, notice, cheque, phone, report })[S.type || "card"](S);
   prop.rotation.y = (S.yaw || 0) * DEG; prop.rotation.z = (S.tilt || 0) * DEG; scene.add(prop);
   const [pw, ph] = prop.userData.size;
   const R = Math.hypot(pw, ph) / 2;
@@ -314,5 +425,6 @@ Promise.all([fontsReady, new HDRLoader().loadAsync("vendor/library/hdri/studio_s
   camera.position.set(Math.sin(az) * Math.cos(el) * dist, Math.sin(el) * dist, Math.cos(az) * Math.cos(el) * dist);
   camera.lookAt(0, 0, 0);
   renderer.render(scene, camera);
+  window.__anchors = projectAnchors();
   window.__ready = true;
 });

@@ -108,6 +108,11 @@ for (const project of projects) {
     copyFileSync(join(root, "video/lib/doodle/doodle.js"), join(out, "doodle", "doodle.js"));
     copyFileSync(join(root, "video/lib/doodle/paper.jpg"), join(out, "doodle", "paper.jpg"));
   }
+  // Plates kit (video/lib/plates/plates.js): desk scenes from photoreal stills, for pages that reference vendor/plates/.
+  if (html.includes("vendor/plates/")) {
+    mkdirSync(join(out, "plates"), { recursive: true });
+    copyFileSync(join(root, "video/lib/plates/plates.js"), join(out, "plates", "plates.js"));
+  }
   // Seeded organic motion: createNoise3D(seededRandom).
   if (html.includes("vendor/noise/")) {
     mkdirSync(join(out, "noise"), { recursive: true });

@@ -80,7 +80,20 @@ def squeak():
     return np.sin(2 * np.pi * np.cumsum(f) / SR) * bp(noise(n), 800, 3000) * 0.9 * np.sin(np.pi * t / t[-1])
 
 
-SOUNDS = {"pop": (pop, -9), "whoosh": (whoosh, -12), "scribble": (scribble, -15), "rip": (rip, -8),
+def buzz():   # phone vibrating on a wooden desk: ~170 Hz motor, rattle harmonics, a little wood knock
+    n = int(0.42 * SR); t = np.arange(n) / SR
+    motor = np.sign(np.sin(2 * np.pi * 172 * t)) * 0.5 + np.sin(2 * np.pi * 344 * t) * 0.3
+    rattle = bp(noise(n), 300, 2400) * (0.5 + 0.5 * np.sign(np.sin(2 * np.pi * 172 * t)))
+    shape = np.minimum(1, t / 0.02) * np.minimum(1, (t[-1] - t) / 0.04)
+    return lp(motor + rattle * 0.35, 0.35) * shape
+
+
+def tick():   # soft clock tick for counters
+    n = int(0.05 * SR)
+    return bp(noise(n), 2000, 6000) * env(n, 0.0005, 0.008)
+
+
+SOUNDS = {"buzz": (buzz, -11), "tick": (tick, -20), "pop": (pop, -9), "whoosh": (whoosh, -12), "scribble": (scribble, -15), "rip": (rip, -8),
           "thud": (thud, -7), "clink": (clink, -10), "squeak": (squeak, -14)}
 
 if __name__ == "__main__":
