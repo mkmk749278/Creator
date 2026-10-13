@@ -274,9 +274,13 @@ def render(shot, dur, out, W, H):
     elif k in ("board", "scene"):
         base, folder = (BOARD_AT[shot["id"]], BD) if k == "board" else (scene_meta(shot["id"])[0], SC)
         off = shot.get("frm", shot["t"]) - base
-        vf = [f"scale={W}:{H}", "fps=30"] + overlays(W, H, lab, tag)
-        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(folder / (shot["id"] + ".mp4")), "-vf", ",".join(vf),
-             "-t", f"{dur:.3f}"] + enc + [str(out)])
+        # hold the last frame if a window runs a few frames past the render's end (4K b05 is 0.11 s shorter than the
+        # window that uses it): a short shot would shift every later cut against the VO
+        vf = [f"scale={W}:{H}", "fps=30", "tpad=stop_mode=clone:stop_duration=2"] + overlays(W, H, lab, tag)
+        # no -t here: after a seek between frames, -t dropped the last frame (6 shots 1 frame short at 4K, the cuts after
+        # them 0.2 s early by the end); tpad guarantees enough input, so -frames:v alone sets the exact length
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(folder / (shot["id"] + ".mp4")), "-vf", ",".join(vf)]
+            + enc + [str(out)])
     elif k in ("still", "photo", "proof"):
         if k == "proof":
             fx, fy = yellow_focus(shot["src"]); z = (1.25, 1.7)
@@ -390,7 +394,7 @@ def split_long(shots, end):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=720)
-    ap.add_argument("--skip-boards", action="store_true", help="render other shots while board renders are still running")
+    ap.add_argument("--skip-boards", action="store_true", help="render other shots while board and scene renders are still running")
     ap.add_argument("--refined", action="store_true", help="the refined cut (refine-plan.md): scenes replace boards/filler")
     a = ap.parse_args(); H = a.height; W = H * 16 // 9
     global BD, SC
@@ -409,8 +413,8 @@ def main():
         key = hashlib.sha1(json.dumps([s, dur, W, H, src_mtime(s), RENDER_V], default=str, sort_keys=True).encode()).hexdigest()[:8]
         out = sd / f"{i:03d}_{s['kind']}_{key}.mp4"   # spec hash: an edited shot re-renders, the rest are reused
         if not out.exists():
-            if a.skip_boards and s["kind"] == "board" and not (BD / (s["id"] + ".mp4")).exists():
-                print(f"{i:03d} skip board {s['id']}"); continue
+            if a.skip_boards and s["kind"] in ("board", "scene") and not ((BD if s["kind"] == "board" else SC) / (s["id"] + ".mp4")).exists():
+                print(f"{i:03d} skip {s['kind']} {s['id']}"); continue
             render(s, dur, out, W, H)
         print(f"{i:03d} {s['t']:7.2f} {dur:6.2f} {s['kind']:6s} {s.get('label') or s.get('id') or ''}", flush=True)
         lst.append(f"file '{out}'")
