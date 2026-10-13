@@ -8,7 +8,7 @@
   const C = { ink: "#1f2430", red: "#d62839", green: "#1f9d6b", blue: "#2563eb", amber: "#e09f1f", paper: "#fbf8f1",
     dim: "#6b6f78", yel: "#f6c453", note: "#fff3b0" };
   const col = (c) => C[c] || c || C.ink;
-  let seed = 11;
+  let seed = 11, DUR = 10;
   const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
 
   function Kit(svg, tl) {
@@ -205,6 +205,10 @@
       cross(g, it) { const s = it.size || 120; add(g, rc.path(`M ${-s / 2} ${-s / 2} L ${s / 2} ${s / 2} M ${s / 2} ${-s / 2} L ${-s / 2} ${s / 2}`, R({ stroke: C.red, strokeWidth: 9, roughness: 1.8 }))); },
       ring(g, it) { add(g, rc.ellipse(0, 0, it.w || 400, it.h || 260, R({ stroke: col(it.color || "red"), strokeWidth: 6, roughness: 2.2 }))); },
       strike(g, it) { add(g, rc.line(0, 0, it.w || 500, 0, R({ stroke: C.red, strokeWidth: 8, roughness: 1.6 }))); },
+      photo(g, it) {   // photoreal prop still (video/lib/props, alpha PNG with its own shadow); w,h in page px
+        const fl = el("g", { class: "float" }, g);
+        el("image", { href: it.src, x: 0, y: 0, width: it.w, height: it.h, preserveAspectRatio: "xMidYMid meet" }, fl);
+      },
       calc(g, it) {
         add(g, rc.rectangle(0, 0, 260, 380, R({ fill: "#2b2f3a", fillStyle: "solid" })));
         add(g, rc.rectangle(20, 24, 220, 80, R({ fill: "#dfe8d0", fillStyle: "solid", strokeWidth: 2 })));
@@ -232,6 +236,9 @@
       if (how === "draw") { gsap.set(inner, { opacity: 1 }); drawOn(inner, t, it.dur || 0.8); }
       else if (how === "pop") { gsap.set(inner, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }); tl.to(inner, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, t); }
       else if (how === "stamp") { gsap.set(inner, { opacity: 0, scale: 1.8, transformOrigin: "50% 50%" }); tl.to(inner, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, t); }
+      else if (how === "drop") { gsap.set(inner, { opacity: 0, y: -70, scale: 1.07, rotation: it.dropRot ?? -4, transformOrigin: "50% 50%" });   // set down on the page
+        tl.to(inner, { opacity: 1, duration: 0.25, ease: "none" }, t); tl.to(inner, { y: 0, scale: 1, rotation: 0, duration: 0.75, ease: "power3.out" }, t); }
+      else if (how === "fade") { gsap.set(inner, { opacity: 0 }); tl.to(inner, { opacity: 1, duration: it.fade || 0.5, ease: "none" }, t); }
       else if (how === "slide") { gsap.set(inner, { opacity: 0, x: it.from || -160 }); tl.to(inner, { opacity: 1, x: 0, duration: 0.6, ease: "expo.out" }, t); }
       const hl = inner.querySelector("rect.hl"); if (hl) { gsap.set(hl, { scaleX: 0, transformOrigin: "0% 50%" }); tl.to(hl, { scaleX: 1, duration: 0.4, ease: "power2.out" }, t + 0.15); }
       const hr = inner.querySelector("rect[data-hlrow]"); if (hr) { gsap.set(hr, { scaleX: 0, transformOrigin: "0% 50%" }); tl.to(hr, { scaleX: 1, duration: 0.45, ease: "power2.out" }, it.hlAt != null ? it.hlAt : t + 0.6); }
@@ -250,6 +257,8 @@
         if (at == null) return; gsap.set(b, { scaleY: 0, opacity: 0, transformOrigin: "50% 100%" }); tl.to(b, { scaleY: 1, opacity: 1, duration: 0.7, ease: "back.out(1.4)" }, at); });
       if (it.bandShatterAt != null) { const b = inner.querySelector("g.band"); if (b) tl.to(b, { opacity: 0, scaleX: 0.2, duration: 0.35, ease: "power2.in", transformOrigin: "50% 50%" }, it.bandShatterAt); }
       if (it.bandAt != null) { const b = inner.querySelector("g.band"); if (b) { tl.set(b, { opacity: 0 }, 0); tl.fromTo(b, { opacity: 0, scaleX: 0.3, transformOrigin: "0% 50%" }, { opacity: 1, scaleX: 1, duration: 0.6, immediateRender: false }, it.bandAt); } }
+      if (it.float) { const f = inner.querySelector("g.float"); if (f) tl.fromTo(f, { rotation: -it.float / 2, y: 0, transformOrigin: "50% 50%" },   // slow living drift, f(t)
+        { rotation: it.float / 2, y: -10, duration: Math.max(0.5, (it.until || it.exit || DUR) - t), ease: "sine.inOut" }, t); }
       if (it.exit != null) tl.to(outer, { opacity: 0, y: (it.y || 0) - 40, duration: 0.35, ease: "power2.in" }, it.exit);
       return outer;
     }
@@ -260,7 +269,7 @@
     run(S, id) {
       const svg = document.getElementById("s"), tl = gsap.timeline({ paused: true });
       tl.to({}, { duration: S.duration }, 0);
-      const kit = Kit(svg, tl);
+      DUR = S.duration; const kit = Kit(svg, tl);
       seed = 11;
       (S.items || []).forEach((it) => kit.place(it));
       const tag = document.getElementById("tag"); if (S.tag) tag.textContent = S.tag; else tag.remove();
