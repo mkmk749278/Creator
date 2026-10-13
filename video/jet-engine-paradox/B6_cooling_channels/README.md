@@ -12,3 +12,4 @@ Cues (VO line timing; word cues inside a line are estimated by character positio
 - Code: `index.html` + `lib.js` (copy of `../_b_lib/lib.js`; edit there and run `../_b_lib/sync.sh`) + `jep.css` (copy of `../_shared/jep.css`).
 - Assets: `vendor/library/hdri/studio_small_09_1k.hdr` (Poly Haven, CC0). Everything else is procedural (no third-party models or textures).
 - Render: `npx hyperframes render --workers 3 --video-bitrate 24M --output B6_cooling_channels.mp4` (pinned 0.8.103).
+- Measured render (1080p, 3 workers, cloud VM 4 vCPU, software GL): 381 s wall for 8.49 s (45 s per output second).
