@@ -111,3 +111,24 @@ than 86866). Gap: no Indian person on a calm phone call.
 Gap: **no real UPI / QR / phone-payment footage** on Pixabay or Coverr (only green-screen cartoons, Apple Pay in a café,
 crypto graphics). The plan already shows C077 as a PAGE phone-screen prop (ours, `SIMULATION`); keep it that way.
 Never use a real UPI app's or bank's screen.
+
+## B11 · generic: bank branch, ATM, salaried workers commuting
+| File | What it shows | ss | dur | ILLUS | Notes |
+|---|---|---|---|---|---|
+| broll/pixabay_154195.mp4 (4K, 28 s) | Mumbai arterial road from a skywalk: morning traffic, black-and-yellow autos, a yellow school bus, flyover, apartment blocks | 12 | 5 | no | Salaried city life / commute. One hoarding is small and unreadable. |
+| broll/pixabay_271463.mp4 (4K, 16 s) | Indian woman worker in a blue uniform and hairnet at a machine on a textile factory floor | 2 | 5 | no | The blue-collar salary earner. Alternative to 262440 for "maybe your salary stopped". |
+| broll/pixabay_139848.mp4 (4K, 22 s) | Through the wire-mesh window of a moving Mumbai local train, tracks and scrub rushing past (soft focus) | 6 | 5 | no | Commute; also a "long trip" texture for C039. |
+| broll/pixabay_262440.mp4 | (see B02) Indian office worker at a laptop | 9 | 5 | no | Office worker. |
+
+Gap: **no Indian bank branch exterior and no ATM** on Pixabay or Coverr (only cartoons, US dollar counting, a Bank of
+America tower). Options: a Commons photo of a generic Indian bank street frontage with every logo blurred, or a PAGE prop
+(the plan's look already supports this).
+
+## Summary (2026-10-13)
+31 assets: 29 video clips (27 Pixabay, 2 Coverr) and 2 Commons photos. Every pick was checked on 2 s timecoded sheets of
+the downloaded file. Rejected after download: pixabay 7315 (black), 137186 (European office), 117 (soft). No AI-tagged
+item was used; the tool hides those.
+Strong (Indian, literal): B04 city streets, B06 village, B03 police (ILLUS), B07 Telangana High Court photos.
+Weak or missing: Indian family at home (none), Indian call-centre floor (none), highway/bus (none), ATM/bank branch
+(none), UPI payment (none, keep as a PAGE prop), knock at the door (none), an Indian person at night with a phone (hands
+only). For a real Indian BPO, bus or bank clip, the next step is an owner fetch of DD/PIB footage (PLAYBOOK §8.4).
