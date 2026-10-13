@@ -350,6 +350,7 @@ def music(out):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=720)
+    ap.add_argument("--skip-scenes", action="store_true", help="render footage/proof shots while scene renders are still running")
     a = ap.parse_args(); H = a.height; W = H * 16 // 9
     global SC
     if H >= 2160:
@@ -365,9 +366,13 @@ def main():
         key = hashlib.sha1(json.dumps([s, dur, W, H, src_mtime(s), RENDER_V], default=str, sort_keys=True).encode()).hexdigest()[:8]
         out = sd / f"{i:03d}_{s['kind']}_{key}.mp4"
         if not out.exists():
+            if a.skip_scenes and s["kind"] == "scene" and not (SC / (s["id"] + ".mp4")).exists():
+                continue
             render(s, dur, out, W, H)
         print(f"{i:03d} {s['t']:7.2f} {dur:6.2f} {s['kind']:6s} {s.get('id') or s.get('label') or ''}", flush=True)
         lst.append(f"file '{out}'")
+    if a.skip_scenes:
+        return
     (sd / "list.txt").write_text("\n".join(lst) + "\n")
     video = A / f"video{H}.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", sd / "list.txt", "-c", "copy", video])
