@@ -269,6 +269,29 @@ function report(o) {   // credit report page (fictional bureau layout): score di
   return paperMesh(w, h, c, { folds: [], curl: 0.5 });
 }
 
+function idcard(o) {   // PVC ID card, portrait, with a lanyard slot; silhouette only (never a real face)
+  const w = 5.4, h = 8.56, TW = 1080, TH = 1712;
+  const [c, g] = mkCanvas(TW, TH); g.fillStyle = "#fbfbf9"; g.fillRect(0, 0, TW, TH);
+  g.fillStyle = o.color || "#0f3d3e"; g.fillRect(0, 0, TW, 420); g.fillStyle = "#fff"; g.font = F(800, 64, "Bricolage"); g.fillText(o.org || "RECOVERY AGENCY", 70, 300);
+  g.fillStyle = "#d9dde3"; rrect(g, TW / 2 - 70, 90, 140, 30, 15); g.fill();
+  g.fillStyle = "#cfd6e4"; rrect(g, TW / 2 - 200, 500, 400, 470, 24); g.fill(); g.fillStyle = "#9aa6b8";
+  g.beginPath(); g.arc(TW / 2, 670, 105, 0, Math.PI * 2); g.fill(); g.beginPath(); g.ellipse(TW / 2, 930, 170, 120, 0, Math.PI, 0); g.fill();
+  g.fillStyle = "#111827"; g.font = F(800, 70); let t = o.name || "AGENT NAME"; g.fillText(t, (TW - g.measureText(t).width) / 2, 1110);
+  g.fillStyle = "#d62839"; g.font = F(800, 44, "Mono"); t = o.role || "AUTHORISED RECOVERY AGENT"; g.fillText(t, (TW - g.measureText(t).width) / 2, 1200);
+  g.fillStyle = "#6b7280"; g.font = F(500, 40, "Mono"); t = o.idno || "ID: RA-2026-0457"; g.fillText(t, (TW - g.measureText(t).width) / 2, 1290);
+  t = "SIMULATION"; g.font = F(500, 30, "Mono"); g.fillText(t, (TW - g.measureText(t).width) / 2, TH - 80);
+  A("name", TW / 2, 1090, TW, TH); A("center", TW / 2, TH / 2, TW, TH); A("tl", 0, 0, TW, TH); A("br", TW, TH, TW, TH);
+  const shape = new THREE.Shape(), r = 0.3; shape.moveTo(-w / 2 + r, -h / 2); shape.lineTo(w / 2 - r, -h / 2); shape.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r);
+  shape.lineTo(w / 2, h / 2 - r); shape.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2); shape.lineTo(-w / 2 + r, h / 2); shape.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r);
+  shape.lineTo(-w / 2, -h / 2 + r); shape.quadraticCurveTo(-w / 2, -h / 2, -w / 2 + r, -h / 2);
+  const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.076, bevelEnabled: true, bevelThickness: 0.01, bevelSize: 0.01, bevelSegments: 3, curveSegments: 16 });
+  const uv = geo.attributes.uv, pos = geo.attributes.position; for (let i = 0; i < uv.count; i++) uv.setXY(i, (pos.getX(i) + w / 2) / w, (pos.getY(i) + h / 2) / h);
+  const m = new THREE.Mesh(geo, [new THREE.MeshPhysicalMaterial({ map: tex(c), roughness: 0.4, clearcoat: 0.6, clearcoatRoughness: 0.25 }), new THREE.MeshStandardMaterial({ color: 0xeeeeee })]);
+  m.castShadow = m.receiveShadow = true; m.rotation.x = -Math.PI / 2; m.position.y = 0.05;
+  bindAnchors(m, (u, v) => new THREE.Vector3((u - 0.5) * w, (0.5 - v) * h, 0.076));
+  const grp = new THREE.Group(); grp.add(m, contact(w, h, 0.45)); grp.userData.size = [w, h]; return grp;
+}
+
 function cheque(o) {
   const w = 20.3, h = 9.2, TW = 2436, TH = Math.round(2436 * h / w);
   const [c, g] = mkCanvas(TW, TH);
@@ -299,13 +322,26 @@ function phone(o) {
   for (let k = 0; k < 5; k++) { const bx = SW * rng(), by = SH * rng(); const bl = g.createRadialGradient(bx, by, 0, bx, by, SW * 0.9); bl.addColorStop(0, "rgba(255,255,255,.08)"); bl.addColorStop(1, "rgba(255,255,255,0)"); g.fillStyle = bl; g.fillRect(0, 0, SW, SH); }
   g.fillStyle = "#fff"; g.font = F(500, 40); g.fillText(o.clock || "10:42", 90, 90); textR(g, "5G  ▮▮▮  82%", SW - 90, 90);
   g.fillStyle = "#000"; rrect(g, SW / 2 - 60, 40, 120, 120, 60); g.fill();   // punch-hole camera
-  if ((o.screen || "sms") === "call") {
+  if (o.screen === "app") {   // banking / payment app screen: title bar, big figure, rows, optional banner
+    const ap = o.app || {}; g.fillStyle = "#f4f6fa"; g.fillRect(0, 140, SW, SH - 140);
+    g.fillStyle = ap.color || "#1b2a41"; g.fillRect(0, 140, SW, 220); g.fillStyle = "#fff"; g.font = F(800, 64, "Bricolage"); g.fillText(ap.title || "MY BANK", 80, 280);
+    g.fillStyle = "#6b7280"; g.font = F(500, 44, "Mono"); g.fillText(ap.label || "AVAILABLE BALANCE", 80, 470); A("label", SW / 2, 450, SW, SH);
+    g.fillStyle = ap.bigColor || "#111827"; g.font = F(800, 150); g.fillText(ap.big || "₹0", 80, 640); A("big", SW / 2, 590, SW, SH);
+    if (ap.sub) { g.fillStyle = "#6b7280"; g.font = F(500, 44); g.fillText(ap.sub, 80, 720); }
+    let y = 860;
+    if (ap.banner) { g.fillStyle = ap.banner.color || "#d62839"; rrect(g, 60, y - 80, SW - 120, 150, 30); g.fill(); g.fillStyle = "#fff"; g.font = F(800, 56);
+      g.fillText(ap.banner.text, 110, y + 15); ARect("banner", 60, y - 80, SW - 120, 150, SW, SH); y += 160; }
+    (ap.rows || []).forEach(([a2, b2, c2], k) => { g.fillStyle = "#fff"; rrect(g, 60, y, SW - 120, 150, 26); g.fill();
+      g.fillStyle = "#1f2937"; g.font = F(500, 46); g.fillText(a2, 100, y + 92); g.fillStyle = c2 || "#111827"; g.font = F(800, 50); textR(g, b2, SW - 100, y + 92);
+      ARect(`row${k}`, 60, y, SW - 120, 150, SW, SH); y += 175; });
+  } else if ((o.screen || "sms") === "call") {
     g.fillStyle = "rgba(255,255,255,.75)"; g.font = F(500, 52); let s = o.callLabel || "Incoming call"; g.fillText(s, (SW - g.measureText(s).width) / 2, 520);
     A("caller", SW / 2, 670, SW, SH); A("number", SW / 2, 800, SW, SH); A("accept", SW * 0.75, SH - 420, SW, SH); A("decline", SW * 0.25, SH - 420, SW, SH);
     g.fillStyle = "#fff"; g.font = F(800, 110); s = o.caller || "Unknown number"; g.fillText(s, (SW - g.measureText(s).width) / 2, 700);
     g.font = F(500, 64, "Mono"); s = o.number || "+91 9•••• •••21"; g.fillStyle = "rgba(255,255,255,.85)"; g.fillText(s, (SW - g.measureText(s).width) / 2, 820);
     g.fillStyle = "rgba(255,255,255,.12)"; g.beginPath(); g.arc(SW / 2, 1220, 180, 0, Math.PI * 2); g.fill();
-    g.fillStyle = "rgba(255,255,255,.85)"; g.font = F(800, 150); s = o.initial || (o.caller ? o.caller[0] : "?"); if (/^unknown/i.test(o.caller || "Unknown")) s = "?"; g.fillText(s, (SW - g.measureText(s).width) / 2, 1275);
+    g.fillStyle = "rgba(255,255,255,.8)";   // generic person glyph (no question mark)
+    g.beginPath(); g.arc(SW / 2, 1175, 52, 0, Math.PI * 2); g.fill(); g.beginPath(); g.ellipse(SW / 2, 1300, 95, 70, 0, Math.PI, 0); g.fill();
     for (const [x, col, rot] of [[SW * 0.25, "#e5484d", 135], [SW * 0.75, "#2fb35a", 0]]) {
       g.fillStyle = col; g.beginPath(); g.arc(x, SH - 420, 120, 0, Math.PI * 2); g.fill();
       g.save(); g.translate(x, SH - 420 + 14); g.rotate(rot * DEG); g.strokeStyle = "#fff"; g.fillStyle = "#fff"; g.lineWidth = 26; g.lineCap = "round";
@@ -375,7 +411,7 @@ async function buildDesk() {
   lamp.castShadow = true; lamp.shadow.mapSize.set(4096, 4096); lamp.shadow.radius = 10; lamp.shadow.blurSamples = 25; lamp.shadow.bias = -0.0002; lamp.shadow.normalBias = 0.02;
   Object.assign(lamp.shadow.camera, { near: 10, far: 300 }); scene.add(lamp, lamp.target);
   for (const p of S.props || []) {
-    const g = ({ card, bill, notice, cheque, phone, report })[p.type](p); for (const a of ANCH) if (!a[0].includes(":")) a[0] = (p.id || p.type) + ":" + a[0];
+    const g = ({ card, bill, notice, cheque, phone, report, idcard })[p.type](p); for (const a of ANCH) if (!a[0].includes(":")) a[0] = (p.id || p.type) + ":" + a[0];
     g.position.set(p.at?.[0] || 0, p.lift || 0, p.at?.[1] || 0); g.rotation.y = (p.yaw || 0) * DEG; scene.add(g);
     if (p.type === "phone" && p.screen !== "off") {   // the lit screen spills cool light on the desk
       const pl = new THREE.PointLight(0xbcd0ff, p.spill ?? 60, 60, 2); pl.position.set(p.at?.[0] || 0, 0.5, p.at?.[1] || 0); scene.add(pl); }
@@ -414,7 +450,7 @@ async function buildDesk() {
 Promise.all([fontsReady, new HDRLoader().loadAsync(`vendor/library/hdri/${DESK ? "small_empty_room_1" : "studio_small_09"}_1k.hdr`)]).then(async ([, hdr]) => {
   const pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromEquirectangular(hdr).texture; scene.environmentIntensity = S.env ?? (DESK ? 0.22 : 0.9);
   if (DESK) { await buildDesk(); window.__ready = true; return; }
-  const prop = ({ card, bill, notice, cheque, phone, report })[S.type || "card"](S);
+  const prop = ({ card, bill, notice, cheque, phone, report, idcard })[S.type || "card"](S);
   prop.rotation.y = (S.yaw || 0) * DEG; prop.rotation.z = (S.tilt || 0) * DEG; scene.add(prop);
   const [pw, ph] = prop.userData.size;
   const R = Math.hypot(pw, ph) / 2;

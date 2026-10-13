@@ -253,3 +253,167 @@ SCENES["p08_ravi_sunita"] = dict(kind="page", start=L("C022")[0] - 0.25, end=L("
     dict(kind="label", x=960, y=960, text="SMALLER BILL, HARDER HIT", size=56, anchor="middle", hl="yel", at=P("C029", "the smaller")),
     dict(kind="label", x=60, y=1040, text="OUR CALCULATION · ONE BANK'S FEES · YOUR BILL WILL DIFFER", size=26, mono=True, color="dim", at=P("C030", "our own")),
 ])
+
+
+# =====================================================================================================================
+# ACT 2b: who comes after you, the agency business, distance, court, the slab walk
+import json as _json                     # noqa: E402
+MAP = _json.loads((Path(__file__).parent / "map_aptg.json").read_text())
+CITY = MAP["cities"]
+
+# C031 Now the real question. Who actually comes after you? And will anyone come to your house?
+t_who = P("C031", "Who actually")
+SCENES["d02_call"] = dict(kind="desk", start=L("C031")[0] - 0.25, end=L("C032")[0] - 0.2, tag="SIMULATION", layers=[dict(src="deskB_call", at=0)],
+    cam=[[0, 1.0, 0, 0], *push(L("C031")[0], L("C032")[0], 1.18, pa("deskB_call", "phone:center"))],
+    shake=[[L("C031")[0] + k * 1.1, 0.42, 6] for k in range(5)], sfx=[[L("C031")[0] + k * 1.1, "buzz"] for k in range(5)],
+    lower=[dict(at=P("C031", "will anyone"), k="THE REAL QUESTION", t="Will anyone come home?")])
+
+# C033 Banks decide how hard to chase by two things. The days you are late, and the money at risk.
+SCENES["p09_dials"] = dict(kind="page", start=L("C033")[0] - 0.25, end=L("C034")[0] - 0.2, kicker="HOW HARD THEY CHASE", tag="RBL BANK | COLLECTION POLICY", items=[
+    dict(kind="label", x=960, y=200, text="HOW HARD THEY CHASE", size=56, anchor="middle", at=L("C033")[0] - 0.2),
+    dict(kind="meter", x=600, y=640, s=1.15, text="DAYS LATE", needle=[[0, -80], [P("C033", "days you are") + 0.2, 55, 1.2]], at=L("C033")[0] - 0.2),
+    dict(kind="meter", x=1320, y=640, s=1.15, text="MONEY AT RISK", needle=[[0, -80], [P("C033", "money at risk") + 0.2, 55, 1.2]], at=L("C033")[0] - 0.1),
+    dict(kind="label", x=960, y=640, text="+", size=110, anchor="middle", at=P("C033", "and the")),
+])
+
+# C034 After that, many banks hand your account to a recovery agency. And here is the business behind it.
+# C035 Many agencies earn only when they collect. A percentage of what you pay. One public sector bank pays its agencies
+#      between seven and a half and fifteen percent on accounts up to one lakh.        (assemble.py: PNB proof over the slab line)
+# C036 Now see it from their side. If you owe ten thousand, the agency may earn about a thousand rupees. And only if you pay in full.
+bl = photo("bill_ravi_overdue", 120, 200, 470, L("C034")[0] - 0.2, float=0.4)
+af = photo("agency_file", 1270, 170, 520, P("C034", "recovery agency") - 0.2, float=0.4)
+SCENES["p10_agency"] = dict(kind="page", start=L("C034")[0] - 0.25, end=L("C037")[0] - 0.2, kicker="THE BUSINESS BEHIND IT", tag="PNB | RECOVERY AGENT POLICY", items=[
+    *page([
+        bl, af,
+        dict(kind="arrow", x=640, y=540, to=[580, 0], bend=-0.1, color="red", at=P("C034", "hand your account")),
+        dict(kind="label", x=930, y=470, text="HANDED OVER", size=44, anchor="middle", color="red", at=P("C034", "hand your account") + 0.2),
+        dict(kind="label", x=930, y=700, text="PAID ONLY WHEN THEY COLLECT", size=38, mono=True, anchor="middle", at=P("C035", "earn only")),
+        dict(kind="label", x=930, y=820, text="7.5% – 15%", size=110, anchor="middle", hl="yel", color="red", at=P("C035", "seven and a half")),
+        dict(kind="label", x=930, y=890, text="ONE PUBLIC SECTOR BANK · UP TO ₹1 LAKH", size=28, mono=True, anchor="middle", color="dim", at=P("C035", "on accounts")),
+    ], L("C036")[0] - 0.35),
+    dict(kind="label", x=960, y=170, text="SEE IT FROM THEIR SIDE", size=44, mono=True, anchor="middle", color="dim", at=L("C036")[0] - 0.2),
+    dict(kind="coins", x=560, y=720, n=10, r=95, color="amber", label="YOU OWE ₹10,000", labelColor="ink", at=P("C036", "If you owe"), dur=0.8),
+    dict(kind="coins", x=560, y=720 - 9 * 14, n=1, r=95, color="red", in_="pop", at=P("C036", "the agency may"),
+         moves=[dict(at=P("C036", "earn about") , x=1300, y=640, s=1.3, dur=0.8)]),
+    dict(kind="label", x=1300, y=500, text="≈ ₹1,000", size=96, anchor="middle", color="red", at=P("C036", "a thousand rupees")),
+    dict(kind="label", x=1300, y=820, text="FOR THE AGENCY", size=40, mono=True, anchor="middle", at=P("C036", "a thousand rupees") + 0.2),
+    dict(kind="badge", x=1150, y=930, ok=False, text="ONLY IF PAID IN FULL", size=44, at=P("C036", "only if you pay")),
+    dict(kind="label", x=60, y=1040, text="OUR ESTIMATE", size=26, mono=True, color="dim", at=P("C036", "may earn")),
+])
+
+# C037 Now think about where you live. Say your card has your old room address in the city. But your family lives in a village, far away.
+# C038 Agencies usually work city by city, or district by district. In Andhra and Telangana, one card company's agency list
+#      names just six places. Hyderabad, Warangal, Karimnagar, Vizag, Vijayawada and Tirupati.
+# C039 For a small amount, a long trip to a far village rarely pays for itself. So small dues mostly stay as calls and
+#      messages. That's not a rule. It's simple business.
+# C040 For bigger amounts, it changes. Finding a person who moved is a paid job. One bank pays seven thousand five hundred
+#      rupees for each person traced. That's worth it only when the amount is big.
+hx, hy = CITY["Hyderabad"]; vx, vy = CITY["village"]
+six = [("Hyderabad", "Hyderabad"), ("Warangal", "Warangal"), ("Karimnagar", "Karimnagar"), ("Vizag", "Vizag"), ("Vijayawada", "Vijayawada"), ("Tirupati", "Tirupati")]
+SCENES["p11_map"] = dict(kind="page", start=L("C037")[0] - 0.25, end=L("C041")[0] - 0.2, kicker="WHERE YOU LIVE", tag="ONECARD | REPAYMENT AGENCIES LIST", items=[
+    dict(kind="path", d=MAP["states"]["Telangana"], fill="#cfd6e4", label="TELANGANA", lx=1270, ly=240, at=L("C037")[0] - 0.2, dur=1.2),
+    dict(kind="path", d=MAP["states"]["Andhra Pradesh"], fill="#e9dcc3", label="ANDHRA PRADESH", lx=1530, ly=660, at=L("C037")[0] + 0.3, dur=1.4),
+    dict(kind="pin", x=round(hx), y=round(hy), color="blue", at=P("C037", "old room")),
+    dict(kind="label", x=round(hx - 40), y=round(hy - 30), text="CARD ADDRESS", size=30, mono=True, anchor="end", color="blue", at=P("C037", "old room") + 0.1),
+    dict(kind="house", x=round(vx - 75), y=round(vy - 150), s=0.5, text="FAMILY · VILLAGE", at=P("C037", "village")),
+    dict(kind="dash", x=round(hx), y=round(hy + 10), to=[round(vx - hx), round(vy - hy - 160)], bend=0.12, color="red", text="FAR AWAY", tx=-110, at=P("C037", "far away")),
+    dict(kind="label", x=120, y=330, text="AGENCIES WORK", size=44, mono=True, at=P("C038", "Agencies usually")),
+    dict(kind="label", x=120, y=410, text="CITY BY CITY", size=64, at=P("C038", "city by city")),
+    dict(kind="label", x=120, y=560, text="ONE CARD COMPANY'S LIST:", size=32, mono=True, color="dim", at=P("C038", "agency list")),
+    dict(kind="label", x=120, y=650, text="6 PLACES", size=110, color="red", at=P("C038", "six places")),
+    *[dict(kind="pin", x=round(CITY[c][0]), y=round(CITY[c][1]), color="red", text=c.upper(), at=P("C038", w)) for c, w in six if c != "Hyderabad"],
+    dict(kind="ring", x=round(hx), y=round(hy - 40), w=150, h=150, color="red", at=P("C038", "Hyderabad")),
+    dict(kind="label", x=120, y=830, text="SMALL DUES:", size=34, mono=True, color="dim", at=P("C039", "For a small")),
+    dict(kind="label", x=120, y=910, text="CALLS AND MESSAGES", size=56, color="blue", at=P("C039", "calls and messages")),
+    dict(kind="label", x=120, y=980, text="OUR ESTIMATE · NOT A RULE", size=28, mono=True, color="dim", at=P("C039", "not a rule")),
+    dict(kind="tag", x=round(vx + 40), y=round(vy + 40), text="₹7,500", sub="PER PERSON TRACED", color="red", at=P("C040", "seven thousand")),
+    dict(kind="ring", x=round(vx), y=round(vy - 60), w=230, h=230, color="red", at=P("C040", "Finding a person")),
+])
+
+# C041 What about court? Here again, the amount decides.
+# C042 To file a case, the bank pays court fees and a lawyer. On a small amount, that eats a big part of what it can recover.
+#      So a court case for ten thousand rarely makes sense for the bank.
+# C043 For bigger dues, card companies do use Lok Adalat. You get a notice for a settlement meeting, usually in your own city.
+#      In one real case, SBI Card took about one point eight lakh of card dues to a Lok Adalat in the customer's city, Indore.
+# C044 If you get such a notice, go. It is a chance to settle with a written record.
+# C045 Some banks use arbitration. Be careful here. In the Delhi High Court, one bank admitted about seventy six thousand awards
+#      where the bank alone picked the arbitrator. The court said such an award is void and cannot be enforced. The bank can
+#      still try to recover in the proper way.
+# C046 And the special bank tribunal, the DRT, is only for dues of twenty lakh rupees or more. For most card dues, it is not even possible.
+ln = photo("notice_lokadalat", 160, 120, 600, L("C043")[0] - 0.2, float=0.4)
+aw = photo("award", 160, 120, 600, L("C045")[0] - 0.2, float=0.4)
+cd = photo("card_navy", 1180, 380, 560, L("C046")[0] - 0.1, float=0.6)
+SCENES["p12_court"] = dict(kind="page", start=L("C041")[0] - 0.25, end=L("C047")[0] - 0.2, kicker="WHAT ABOUT COURT?", tag="", items=[
+    *page([
+        dict(kind="label", x=960, y=180, text="THE AMOUNT DECIDES", size=60, anchor="middle", hl="yel", at=P("C041", "the amount")),
+        dict(kind="scale", x=960, y=430, s=1.1, at=L("C041")[0] - 0.2, dur=0.9,
+             left=["COURT FEE + LAWYER", "WHAT IT COSTS", "red"], right=["₹10,000", "WHAT IT CAN RECOVER", "blue"],
+             tilt=[[0, 0], [P("C042", "court fees") + 0.3, -9, 0.8], [P("C042", "eats a big"), -13, 0.6]]),
+        dict(kind="label", x=960, y=980, text="A COURT CASE FOR ₹10,000 RARELY MAKES SENSE", size=44, anchor="middle", color="red", at=P("C042", "rarely makes")),
+    ], L("C043")[0] - 0.35),
+    *page([
+        ln,
+        dict(kind="label", x=900, y=360, text="BIGGER DUES:", size=34, mono=True, color="dim", at=L("C043")[0]),
+        dict(kind="label", x=900, y=450, text="LOK ADALAT", size=84, at=P("C043", "Lok Adalat")),
+        dict(kind="pin", x=1000, y=640, color="blue", text="YOUR OWN CITY", at=P("C043", "your own city")),
+        dict(kind="label", x=900, y=780, text="SBI CARD · ₹1.8 LAKH · INDORE", size=40, mono=True, at=P("C043", "In one real case")),
+        dict(kind="badge", x=950, y=930, text="GO. SETTLE ON RECORD", size=48, at=P("C044", "go")),
+    ], L("C045")[0] - 0.35),
+    *page([
+        aw,
+        dict(kind="label", x=900, y=330, text="ARBITRATION", size=72, at=L("C045")[0] - 0.1),
+        dict(kind="label", x=900, y=430, text="ABOUT 76,000 AWARDS", size=56, color="red", at=P("C045", "seventy six")),
+        dict(kind="label", x=900, y=490, text="ARBITRATOR PICKED BY THE BANK ALONE", size=30, mono=True, color="dim", at=P("C045", "picked the")),
+        dict(kind="stamp", x=round(an(aw, "center")[0]), y=round(an(aw, "center")[1] + 60), text="VOID", size=150, rot=-12, in_="stamp", at=P("C045", "void")),
+        dict(kind="label", x=900, y=640, text="CANNOT BE ENFORCED", size=52, at=P("C045", "cannot be")),
+        dict(kind="label", x=900, y=760, text="IT CAN STILL RECOVER THE PROPER WAY", size=30, mono=True, color="dim", at=P("C045", "still try")),
+    ], L("C046")[0] - 0.35),
+    dict(kind="label", x=140, y=300, text="DEBT RECOVERY TRIBUNAL", size=40, mono=True, color="dim", at=L("C046")[0] - 0.1),
+    dict(kind="label", x=140, y=420, text="DRT", size=150, at=P("C046", "DRT")),
+    dict(kind="label", x=140, y=560, text="₹20 LAKH OR MORE", size=72, hl="yel", color="red", at=P("C046", "twenty lakh")),
+    cd,
+    dict(kind="cross", x=1460, y=560, size=360, at=P("C046", "not even possible")),
+    dict(kind="label", x=1460, y=900, text="MOST CARD DUES", size=44, anchor="middle", at=P("C046", "For most")),
+])
+
+# C047 So here is my practical reading, slab by slab. No bank publishes this.
+# C048 Around ten thousand. Calls and messages, a blocked card and a bad mark on your CIBIL. A court case is unlikely, but the mark stays with you for years.
+# C049 Fifty thousand to one lakh. Calls, then an agency, maybe a visit if you live in a city they cover, and settlement or Lok Adalat notices.
+# C050 Two to five lakh. Expect field visits, people tracing you if you moved, and legal notices.
+# C051 Ten lakh and above. A court case becomes worth the bank's money. Take it seriously from day one.
+def chips(line, items, x=1180, y0=250, dy=118, out=None):
+    return [dict(at=P(line, w), out=out, x=x, y=y0 + k * dy, text=t, color=c) for k, (w, t, c) in enumerate(items)]
+
+
+s0, s1, s2, s3 = (L(c)[0] for c in ("C048", "C049", "C050", "C051"))
+SCENES["d03_slabs"] = dict(kind="desk", start=L("C047")[0] - 0.25, end=L("C052")[0] - 0.2, tag="OUR ESTIMATE · NO BANK PUBLISHES THIS", layers=[
+    dict(src="slab_all", at=0), dict(src="slab0", at=s0 - 0.3, fade=0.5), dict(src="slab1", at=s1 - 0.3, fade=0.5),
+    dict(src="slab2", at=s2 - 0.3, fade=0.5), dict(src="slab3", at=s3 - 0.3, fade=0.5),
+], cam=[[0, 1.0, 0, 0], *push(0.0, s0 - 0.3, 1.06, (960, 540)),
+        *push(s0 - 0.3, s1 - 0.3, 1.08, (760, 560)), *push(s1 - 0.3, s2 - 0.3, 1.08, (760, 560)),
+        *push(s2 - 0.3, s3 - 0.3, 1.08, (760, 560)), *push(s3 - 0.3, L("C052")[0], 1.1, (760, 560))],
+   lower=[dict(at=L("C047")[0], out=s0 - 0.3, k="MY PRACTICAL READING", t="Slab by slab"),
+          dict(at=s0, out=s1 - 0.3, k="SLAB 1", t="Around ₹10,000"), dict(at=s1, out=s2 - 0.3, k="SLAB 2", t="₹50,000 to ₹1 lakh"),
+          dict(at=s2, out=s3 - 0.3, k="SLAB 3", t="₹2 to ₹5 lakh"), dict(at=s3, k="SLAB 4", t="₹10 lakh and above")],
+   chips=[*chips("C048", [("Calls and", "CALLS AND SMS", "#2563eb"), ("a blocked", "CARD BLOCKED", "#d62839"), ("bad mark", "CIBIL MARK FOR YEARS", "#d62839"),
+                          ("court case is unlikely", "COURT: UNLIKELY", "#1f9d6b")], out=s1 - 0.3),
+          *chips("C049", [("then an agency", "CALLS, THEN AN AGENCY", "#2563eb"), ("maybe a visit", "VISIT IF IN THEIR CITY", "#e09f1f"),
+                          ("settlement", "LOK ADALAT NOTICES", "#d62839")], out=s2 - 0.3),
+          *chips("C050", [("field visits", "FIELD VISITS", "#e09f1f"), ("tracing", "TRACING IF YOU MOVED", "#d62839"), ("legal notices", "LEGAL NOTICES", "#d62839")], out=s3 - 0.3),
+          *chips("C051", [("court case", "COURT CASE: WORTH IT", "#d62839"), ("Take it seriously", "ACT FROM DAY ONE", "#1f9d6b")])],
+   sfx=[[t, "whoosh"] for t in (s0 - 0.3, s1 - 0.3, s2 - 0.3, s3 - 0.3)])
+
+# C052 Remember, these slabs are about what you owe to one bank. Other banks don't add it up. They only see it on your CIBIL.
+cs = [photo(n, x, 190, 400, L("C052")[0] - 0.2 + k * 0.12, float=0.8) for k, (n, x) in enumerate((("card_black", 120), ("card_navy", 760), ("card_maroon", 1400)))]
+rp2 = photo("report_ravi", 800, 560, 320, P("C052", "They only see") - 0.35)
+SCENES["p13_per_bank"] = dict(kind="page", start=L("C052")[0] - 0.25, end=L("C053")[0] - 0.2, kicker="ONE BANK AT A TIME", tag="", items=[
+    dict(kind="label", x=960, y=130, text="SLABS ARE PER BANK", size=60, anchor="middle", hl="yel", at=L("C052")[0] - 0.2),
+    *cs,
+    *[dict(kind="label", x=c["x"] + 200, y=500, text=t, size=34, mono=True, anchor="middle", at=c["at"] + 0.2) for c, t in zip(cs, ("BANK A", "BANK B", "BANK C"))],
+    *[dict(kind="label", x=x, y=360, text="+", size=110, anchor="middle", color="dim", at=P("C052", "Other banks")) for x in (640, 1280)],
+    *[dict(kind="cross", x=x, y=325, size=110, at=P("C052", "don't add") + k * 0.15) for k, x in enumerate((640, 1280))],
+    rp2,
+    *[dict(kind="arrow", x=x0, y=560, to=[dx, 170], bend=0.1 * (1 if dx < 0 else -1), color="red", at=P("C052", "They only see") + k * 0.12)
+      for k, (x0, dx) in enumerate(((320, 470), (960, 0.1), (1600, -470)))],
+    dict(kind="label", x=960, y=1040, text="THEY ALL SEE YOUR CIBIL", size=48, anchor="middle", color="red", at=P("C052", "They only see")),
+])

@@ -12,7 +12,7 @@ P = Path(__file__).resolve().parents[1]
 ROOT = P.parents[1]
 OUT = ROOT / "video/cantpay"
 SFX = P / "assets/scenes"
-DRAWN = {"split", "bill", "coins", "card", "pos", "phone", "calendar", "meter", "toggle", "net", "scale", "bars", "arrow", "loop", "box",
+DRAWN = {"path", "split", "bill", "coins", "card", "pos", "phone", "calendar", "meter", "toggle", "net", "scale", "bars", "arrow", "loop", "box",
          "contact", "house", "slider", "seesaw", "calc", "ring", "strike", "cross"}
 
 
@@ -103,8 +103,8 @@ def build(sid, d):
         imgs = {L["src"] for L in d["layers"]}
         scene = dict(duration=dur, tag=d.get("tag", ""), kicker=d.get("kicker", ""), layers=layers,
                      cam=[[r(k[0]), *k[1:]] for k in d.get("cam", [])], shake=[[r(t), dd, a] for t, dd, a in d.get("shake", [])],
-                     lower=[dict(x, at=r(x["at"]), **({"out": r(x["out"])} if "out" in x else {})) for x in d.get("lower", [])],
-                     chips=[dict(x, at=r(x["at"]), **({"out": r(x["out"])} if "out" in x else {})) for x in d.get("chips", [])],
+                     lower=[dict(x, at=r(x["at"]), **({"out": r(x["out"])} if x.get("out") is not None else {})) for x in d.get("lower", [])],
+                     chips=[dict(x, at=r(x["at"]), **({"out": r(x["out"])} if x.get("out") is not None else {})) for x in d.get("chips", [])],
                      sfx=sorted([r(t), s] for t, s in d.get("sfx", [])))
         tpl = ROOT / "video/lib/plates/scene.html"
     for name in imgs:   # copy (not link: renders must not depend on the cache path)

@@ -39,6 +39,19 @@ PROPS = {
     "notice_prior": dict(type="notice", yaw=0, elev=84, aspect=0.8, **{"from": "CARD SERVICES", "fromLine": "CUSTOMER NOTICE · SIMULATION"}, head="PRIOR NOTICE", ref="REF: CARD 4821 •••• 7730",
                          lines=["To: Mr. Ravi Kumar", "Subject: Reporting to credit bureaus", "", "Your card account is overdue. If it is not paid,",
                                 "it will be reported as a default after 7 days."], bodyLines=8),
+    "agency_file": dict(type="notice", yaw=0, elev=84, aspect=0.8, **{"from": "RECOVERY AGENCY", "fromLine": "COLLECTIONS · HYDERABAD · SIMULATION"},
+                        head="ACCOUNT ALLOCATION", ref="BATCH: OCT-2026 / 118", date="DATE: 02 DEC 2026",
+                        lines=["Customer: Ravi Kumar", "Card: 4821 •••• 7730", "Outstanding: ₹10,000", "Days past due: 95",
+                               "Agency fee: a share of what is collected"], bodyLines=5),
+    "notice_lokadalat": dict(type="notice", yaw=0, elev=84, aspect=0.8, **{"from": "LOK ADALAT", "fromLine": "PRE-LITIGATION SITTING · SIMULATION"},
+                             head="NOTICE TO APPEAR", ref="MATTER: CARD DUES", date="DATE: 14 DEC 2026",
+                             lines=["To: Mr. Ravi Kumar", "Venue: court complex, your city", "Time: 10:30 AM",
+                                    "Purpose: settlement of card dues"], bodyLines=6),
+    "award": dict(type="notice", yaw=0, elev=84, aspect=0.8, **{"from": "SOLE ARBITRATOR", "fromLine": "APPOINTED BY THE BANK · SIMULATION"},
+                  head="ARBITRAL AWARD", ref="CASE: CC/ARB/2026/0912", date="DATE: 20 NOV 2026",
+                  lines=["Claimant: the card company", "Respondent: Mr. Ravi Kumar", "", "The respondent shall pay the amount claimed."], bodyLines=7),
+    "card_maroon": dict(type="card", color="maroon", yaw=6, elev=62, aspect=1.5, number="5190 •••• •••• 2286", name="RAVI KUMAR"),
+    "card_teal": dict(type="card", color="teal", yaw=-4, elev=62, aspect=1.5, number="6011 •••• •••• 9054", name="RAVI KUMAR"),
     "card_black": dict(type="card", color="black", yaw=-8, elev=62, aspect=1.5),
     "card_navy": dict(type="card", color="navy", yaw=-8, elev=62, aspect=1.5),
     "phone_sms1": dict(type="phone", yaw=-4, elev=80, aspect=0.75, clock="11:48", date="Tuesday, 14 October", notes=[SMS1]),
@@ -64,12 +77,30 @@ PLATES = {
     "deskB_sms2": desk(DESK_B, dict(notes=[SMS2, SMS1])),
     "deskB_call": desk(DESK_B, dict(screen="call", caller="Unknown number", number="+91 9•••• •••21")),
 }
+# slab walk (C047-C051): four bills in a row on one desk; one overview camera and one camera per bill
+SLABS = [("₹10,000", "₹500"), ("₹75,000", "₹3,750"), ("₹3,50,000", "₹17,500"), ("₹12,00,000", "₹60,000")]
+SLAB_X = [-36, -12, 12, 36]
+
+
+def slab_desk(cam):
+    props = [dict(type="bill", id=f"bill{i}", at=[x, 0], yaw=[4, -3, 3, -4][i], flat=True, name="CARDHOLDER", cardno="CARD  •••• •••• •••• ••••",
+                  address="SIMULATION", boxes=[["TOTAL AMOUNT DUE", tot], ["MINIMUM AMOUNT DUE", mn], ["PAYMENT DUE DATE", "05 NOV 2026"]], hiBox=0,
+                  rows=[["Previous balance", tot], ["Payments received", "₹0"]]) for i, ((tot, mn), x) in enumerate(zip(SLABS, SLAB_X))]
+    return dict(type="desk", px=3840, aspect=1.7778, props=props, lamp={"pos": [-30, 95, -40], "target": [0, 0, 4], "power": 3.6, "angle": 0.8},
+                pen={"at": [-50, 22], "yaw": 20}, cam=cam)
+
+
+PLATES["slab_all"] = slab_desk({"elev": 62, "az": 0, "dist": 128, "look": [0, 0, 2], "fov": 34, "range": 70, "bokeh": 1.5})
+for i, x in enumerate(SLAB_X):
+    PLATES[f"slab{i}"] = slab_desk({"elev": 60, "az": 6, "dist": 52, "look": [x, 0, -3], "fov": 34, "range": 20, "bokeh": 2.5})
 ALL = {**PROPS, **PLATES}
 
 
+PROPS_V = 1   # bump when video/lib/props changes how existing props look (new prop types don't need a bump)
+
+
 def _hash(spec):
-    src = "".join((ROOT / "video/lib/props" / f).read_text() for f in ("props.js", "index.html"))
-    return hashlib.sha1((json.dumps(spec, sort_keys=True, ensure_ascii=False) + src).encode()).hexdigest()[:12]
+    return hashlib.sha1((json.dumps(spec, sort_keys=True, ensure_ascii=False) + str(PROPS_V)).encode()).hexdigest()[:12]
 
 
 def shoot(names=None):

@@ -205,6 +205,16 @@
       cross(g, it) { const s = it.size || 120; add(g, rc.path(`M ${-s / 2} ${-s / 2} L ${s / 2} ${s / 2} M ${s / 2} ${-s / 2} L ${-s / 2} ${s / 2}`, R({ stroke: C.red, strokeWidth: 9, roughness: 1.8 }))); },
       ring(g, it) { add(g, rc.ellipse(0, 0, it.w || 400, it.h || 260, R({ stroke: col(it.color || "red"), strokeWidth: 6, roughness: 2.2 }))); },
       strike(g, it) { add(g, rc.line(0, 0, it.w || 500, 0, R({ stroke: C.red, strokeWidth: 8, roughness: 1.6 }))); },
+      path(g, it) {    // any SVG path in page px (maps: build/map_aptg.json), drawn on with a light hachure fill
+        add(g, rc.path(it.d, R({ stroke: col(it.color || "ink"), strokeWidth: it.sw || 2.6, roughness: it.rough ?? 0.5, bowing: 0.2,
+          fill: it.fill ? col(it.fill) : undefined, fillStyle: it.fillStyle || "hachure", hachureGap: it.gap || 14, fillWeight: 1.1 })));
+        if (it.label) text(g, it.label, it.lx || 0, it.ly || 0, it.size || 34, it.labelColor || "dim", { mono: true, anchor: "middle" });
+      },
+      dash(g, it) {    // dashed route from (0,0) to `to`, with an optional mid label
+        const [dx, dy] = it.to; const p = el("path", { d: `M 0 0 Q ${dx / 2 - dy * (it.bend || 0)} ${dy / 2 + dx * (it.bend || 0)} ${dx} ${dy}`, fill: "none",
+          stroke: col(it.color || "red"), "stroke-width": 5, "stroke-dasharray": "14 12", "stroke-linecap": "round" }, g);
+        if (it.text) text(g, it.text, dx / 2 + (it.tx || 0), dy / 2 + (it.ty || -20), it.size || 36, it.color || "red", { anchor: "middle", mono: true });
+      },
       split(g, it) {   // one bar split into parts [{f, color, label}], drawn left to right
         const W2 = it.w || 900, h = it.h || 110; let x = 0;
         (it.parts || []).forEach((pt, i) => { const w = W2 * pt.f; const pg = el("g", { class: "part", "data-i": i }, g);
@@ -228,7 +238,7 @@
         for (let i = 0; i < 12; i++) add(g, rc.rectangle(26 + (i % 3) * 72, 130 + Math.floor(i / 3) * 60, 60, 46, R({ fill: "#e3e5ea", fillStyle: "solid", strokeWidth: 1.4 })));
       },
     };
-    const DRAWN = new Set(["split", "bill", "coins", "card", "pos", "phone", "calendar", "meter", "toggle", "net", "scale", "bars", "arrow", "loop", "box", "contact", "house", "slider", "seesaw", "calc", "ring", "strike", "cross"]);
+    const DRAWN = new Set(["path", "split", "bill", "coins", "card", "pos", "phone", "calendar", "meter", "toggle", "net", "scale", "bars", "arrow", "loop", "box", "contact", "house", "slider", "seesaw", "calc", "ring", "strike", "cross"]);
 
     // ---------- animation helpers ----------
     function drawOn(node, t, dur) {
