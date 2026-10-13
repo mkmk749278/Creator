@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:06,693
+First, a fair question. If ISRO can build rocket engines, why is a jet engine so much harder?
+
+2
+00:00:06,693 --> 00:00:15,331
+A rocket engine fires for minutes, not hours. It carries its own oxygen. Then its job is done, and that stage falls away.
+
+3
+00:00:15,331 --> 00:00:22,336
+A fighter jet engine must breathe air. Humid sea air. Freezing mountain air. Desert dust.
+
+4
+00:00:22,336 --> 00:00:28,305
+It must go from idle to full power in seconds, again and again, during hard turns.
+
+5
+00:00:28,305 --> 00:00:31,814
+And it must run for thousands of hours between overhauls.
+
+6
+00:00:31,814 --> 00:00:36,830
+At the heart of it all is one small part. The high pressure turbine blade.
+
+7
+00:00:36,830 --> 00:00:42,458
+It sits right behind the combustion chamber, where burning fuel makes a storm of hot gas.
+
+8
+00:00:42,458 --> 00:00:44,620
+Now here is the shocking part.
+
+9
+00:00:44,620 --> 00:00:52,301
+Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they are made of.
+
+10
+00:00:52,301 --> 00:00:59,050
+The gas is hotter than the metal's melting point. And still the blade does not melt. How?
+
+11
+00:00:59,050 --> 00:01:01,745
+The first secret is in the metal itself.
+
+12
+00:01:01,745 --> 00:01:07,418
+Normal metal is made of many tiny crystals. The borders between them are weak spots.
+
+13
+00:01:07,418 --> 00:01:14,237
+Under heat and huge force, the metal slowly stretches along those borders. Engineers call it creep.
+
+14
+00:01:14,237 --> 00:01:19,293
+So the best blades are grown as one single crystal. No borders at all.
+
+15
+00:01:19,293 --> 00:01:24,215
+The metal is a nickel super alloy, with rare elements like rhenium mixed in.
+
+16
+00:01:24,215 --> 00:01:26,402
+The second secret is air.
+
+17
+00:01:26,402 --> 00:01:32,704
+Each blade is hollow, with tiny channels inside. Cooler air from the compressor is pushed through them.
+
+18
+00:01:32,704 --> 00:01:38,658
+It comes out through rows of tiny holes, and covers the blade in a thin blanket of cooler air.
+
+19
+00:01:38,658 --> 00:01:42,325
+And on top, a ceramic coating acts like a heat shield.
+
+20
+00:01:42,325 --> 00:01:49,213
+Now add the spin. The disc holding these blades turns more than twelve thousand times every minute.
+
+21
+00:01:49,213 --> 00:01:54,713
+Rolls-Royce says the pull on each blade is like the weight of a London bus hanging from it.
+
+22
+00:01:54,713 --> 00:02:01,350
+Gas above the metal's melting point. A bus hanging from every blade. For thousands of hours.
+
+23
+00:02:01,350 --> 00:02:05,724
+This is why so few countries can do it. You cannot just copy the drawing.
+
+24
+00:02:05,724 --> 00:02:15,315
+The real knowledge is in how the metal is made, cast, drilled and tested. Countries learned it over decades of testing, and many failures.
+
+25
+00:02:15,315 --> 00:02:21,503
+That knowledge is a closely guarded secret. For decades, no engine maker shared it with India.
+
+26
+00:02:21,503 --> 00:02:24,764
+But the Kaveri story did not end in two thousand eight.
+
+27
+00:02:24,764 --> 00:02:29,739
+GTRE took out the afterburner and made a simpler version. The Dry Kaveri.
+
+28
+00:02:29,739 --> 00:02:35,352
+In tests in Russia, it gave about forty eight kilonewtons of push, a little more than its target.
+
+29
+00:02:35,352 --> 00:02:39,907
+It is now chosen to power India's stealth combat drones, like the planned Ghatak.
+
+30
+00:02:39,907 --> 00:02:49,113
+Meanwhile, DRDO's metals lab in Hyderabad, DMRL, has learned to make single crystal turbine blades. First for a helicopter engine.
+
+31
+00:02:49,113 --> 00:02:55,419
+Those years of struggle were not wasted. They built the base India did not have in nineteen eighty six.
+
+32
+00:02:55,419 --> 00:02:59,325
+But the next big fighter, the AMCA, needs much more.
+
+33
+00:02:59,325 --> 00:03:03,510
+The first AMCA jets will use GE's F four one four engine.
+
+34
+00:03:03,510 --> 00:03:11,567
+For later jets, India wants a new engine of about one hundred and twenty kilonewtons. And this time, it wants to own the design.
+
+35
+00:03:11,567 --> 00:03:16,861
+In twenty twenty five, the government picked France's Safran to build it together with GTRE.
+
+36
+00:03:16,861 --> 00:03:21,814
+India's condition is clear. The design and the rights must belong to India.
+
+37
+00:03:21,814 --> 00:03:31,123
+As of now, that deal is still waiting for final approval. And in August twenty twenty six, Rolls-Royce and Reliance also offered to build an engine in India.
+
+38
+00:03:31,123 --> 00:03:41,610
+China walked this same road. Its J twenty stealth fighter used Russian engines at first. It took China decades, and many failures, to switch to engines of its own.
+
+39
+00:03:41,610 --> 00:03:43,583
+So let us come back to our question.
+
+40
+00:03:43,583 --> 00:03:48,929
+Reaching the Moon needs rocket engines that work perfectly, but only for minutes at a time.
+
+41
+00:03:48,929 --> 00:03:56,242
+A fighter engine needs metal that lives in gas hotter than its own melting point, spinning, for thousands of hours.
+
+42
+00:03:56,242 --> 00:04:00,867
+That is the jet engine paradox. The Moon was the easier problem.
+
+43
+00:04:00,867 --> 00:04:12,082
+For forty years, India has been learning the hard way. Today, the Dry Kaveri is heading for certification, the blade makers in Hyderabad are learning, and a new engine is on the drawing board.
+
+44
+00:04:12,082 --> 00:04:18,377
+Will the Safran partnership finally give India a fighter engine of its own? Or will politics stall it again? Tell me what you think in the comments.
+
+45
+00:04:18,377 --> 00:04:28,356
+If you like deep, researched stories like this, like, share it with a friend who loves defence tech, and subscribe. See you in the next one.
+

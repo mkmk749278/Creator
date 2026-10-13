@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B7 Film cooling</title>
+    <!-- Session B scene. Assets: vendor/library/hdri/studio_small_09_1k.hdr (Poly Haven, CC0). Shared code: lib.js (copied from ../_b_lib). -->
+    <link rel="stylesheet" href="jep.css" />
+    <script>
+      // HyperFrames polls window.__hf.buildReady; resolved by lib.js once HDRI/fonts are loaded and the first frame is drawn.
+      window.__hf = window.__hf || {}; window.__hf.buildReady = Object.assign(window.__hf.buildReady || {},
+        { jepScene: new Promise((r) => { window.__jepReady = r; }) });
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <style>
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; overflow: hidden; background: #0B0E14; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .jep-label { opacity: 0; white-space: nowrap; }
+      .jep-label.cool { border-left-color: var(--cyan); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="B7_film_cooling" data-start="0" data-width="1920" data-height="1080" data-duration="5.96">
+      <canvas id="gl"></canvas>
+      <div class="jep-label cool" id="l1">Film cooling</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#l1", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 3.9);
+      tl.to("#l1", { opacity: 1, duration: 0.01 }, 5.95);
+      window.__timelines["B7_film_cooling"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, makeEmbers, buildBlade, Streaks, smoothPath, mulberry32, smr, inOut, lerp, clamp, PAL, col, SPAN } from "./lib.js";
+      const S = createStage({ fov: 30, near: 0.01, bloom: 1.1, bloomThreshold: 0.9, envIntensity: 0.9, bg: { glowAmt: 0.16, glowScreen: [-0.5, 0.0], glow: 0xff8a2a } });
+      const { scene, camera } = S;
+      lightRig(scene, { key: 1.5, rim: 1.6, fill: 0.5 });
+      const B = buildBlade({ features: ["HOLES", "HEAT"] });
+      B.u.uHeatSpread.value = -0.55; B.u.uHeatGain.value = 1.3;
+      scene.add(B.group);
+      // film: a thin shell just off the surface that spreads downstream from the hole rows
+      const fg = B.geo.clone(); { const p = fg.attributes.position, n = fg.attributes.normal; for (let i = 0; i < p.count; i++) p.setXYZ(i, p.getX(i) + n.getX(i) * 0.014, p.getY(i) + n.getY(i) * 0.014, p.getZ(i) + n.getZ(i) * 0.014); }
+      const FU = { uFront: { value: 0 }, uT: { value: 0 }, uC: { value: col(PAL.cyan, 1.0) }, uAmt: { value: 0 } };
+      const film = new THREE.Mesh(fg, new THREE.ShaderMaterial({ uniforms: FU, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+        vertexShader: `attribute vec3 aSurf; varying vec3 vS; varying vec3 vN; varying vec3 vV; void main(){ vS = aSurf; vec4 mv = modelViewMatrix * vec4(position, 1.); vV = -mv.xyz; vN = normalMatrix * normal; gl_Position = projectionMatrix * mv; }`,
+        fragmentShader: `uniform float uFront, uT, uAmt; uniform vec3 uC; varying vec3 vS; varying vec3 vN; varying vec3 vV;
+          float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+          float n2(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f); return mix(mix(h(i), h(i + vec2(1, 0)), f.x), mix(h(i + vec2(0, 1)), h(i + vec2(1, 1)), f.x), f.y); }
+          void main(){ float a = abs(vS.x); if (vS.x > 50.) discard;
+            float cov = 1. - smoothstep(uFront - .06, uFront, a);
+            float span = smoothstep(.04, .09, vS.y) * (1. - smoothstep(1.34, 1.4, vS.y));
+            float st = n2(vec2(a * 28. - uT * 5.5, vS.y * 70.)) * .6 + n2(vec2(a * 9. - uT * 3., vS.y * 22.)) * .4;
+            float f = pow(1. - abs(dot(normalize(vN), normalize(vV))), 1.5);
+            float al = cov * span * (.18 + .55 * st) * (.35 + .9 * f) * (1. - .5 * smoothstep(.4, .8, a)) * uAmt;
+            gl_FragColor = vec4(uC, al); }` }));
+      film.renderOrder = 3; B.foil.add(film);
+      // coolant jets out of every hole row on the leading edge region, bending downstream and hugging the surface
+      const rng = mulberry32(7), up = new THREE.Vector3(0, 1, 0);
+      const rows = [[-0.048, 0.068, 0.0], [0.0, 0.068, 0.5], [0.048, 0.068, 0.0], [0.17, 0.075, 0.25], [-0.15, 0.085, 0.5]];
+      const jets = [];
+      for (const [a0, sp, st] of rows) for (let y = (0.5 + st) * sp; y < 1.36; y += sp) {
+        if (y < 0.07) continue;
+        const side = a0 > 0.01 ? 1 : a0 < -0.01 ? -1 : (Math.round(y / sp) % 2 ? 1 : -1);
+        const [P0, N0] = B.surfAt(a0, y);
+        const ctrl = [P0.clone(), P0.clone().addScaledVector(N0, 0.03).addScaledVector(up, 0.012)];
+        for (const da of [0.04, 0.09, 0.16, 0.26, 0.4, 0.58, 0.8]) { const [P, Nn] = B.surfAt(a0 + side * da, y + 0.02 * da); ctrl.push(P.addScaledVector(Nn, 0.012 + 0.008 * da)); }
+        jets.push({ path: smoothPath(ctrl, 120), a0 });
+      }
+      // hot gas: streamlines come from upstream, split at the leading edge and run past outside the film
+      const gas = [];
+      for (let k = 0; k < 90; k++) {
+        const y = 0.1 + 1.24 * rng(), side = rng() < 0.5 ? -1 : 1, g = 0.035 + 0.25 * rng() * rng();
+        const [L0, NL] = B.surfAt(0, y);
+        const ctrl = [L0.clone().addScaledVector(NL, 1.9).add(new THREE.Vector3(0, 0, side * (0.02 + g * 0.6))), L0.clone().addScaledVector(NL, 0.9).add(new THREE.Vector3(0, 0, side * (0.03 + g)))];
+        for (const da of [0.05, 0.14, 0.3, 0.5, 0.75, 1.0]) { const [P, Nn] = B.surfAt(side * da, y); ctrl.push(P.addScaledVector(Nn, g + 0.03)); }
+        gas.push({ path: smoothPath(ctrl, 160) });
+      }
+      const NJ = jets.length * 5, NG = gas.length * 5;
+      const SJ = new Streaks(NJ), SG = new Streaks(NG);
+      SJ.mesh.renderOrder = 4; SG.mesh.renderOrder = 4; scene.add(SJ.mesh, SG.mesh);
+      const jp = Array.from({ length: NJ }, (_, i) => ({ j: jets[i % jets.length], ph: rng(), s: 0.8 + 0.4 * rng() }));
+      const gp = Array.from({ length: NG }, (_, i) => ({ g: gas[i % gas.length], ph: rng(), s: 0.8 + 0.4 * rng(), c: col(rng() < 0.3 ? PAL.amberHot : PAL.amber, 1.4 + 1.8 * rng()) }));
+      const cCool = col(PAL.cyan, 2.6);
+      const embers = makeEmbers({ count: 140, seed: 41, box: { min: [-3, -1, -3], size: [6, 4, 6] }, intensity: 2.2, speed: 0.5, dir: [1, 0, 0] });
+      scene.add(embers.points);
+      const h = new THREE.Vector3(), tl3 = new THREE.Vector3(), cam = new THREE.Vector3(), look = new THREE.Vector3();
+      const [LEc, NLc] = B.surfAt(0, 0.72);
+      const side3 = new THREE.Vector3().crossVectors(up, NLc).normalize();
+      function renderAt(t) {
+        // camera: macro on the leading-edge holes, then pulls back and swings round so the blanket reads along the side
+        const k = inOut(smr(t, 1.4, 5.96));
+        const d = lerp(0.75, 3.3, k), a = lerp(0.95, 1.25, k), el = lerp(0.12, 0.22, k);
+        cam.copy(NLc).multiplyScalar(Math.cos(a)).addScaledVector(side3, Math.sin(a)).multiplyScalar(Math.cos(el)).addScaledVector(up, Math.sin(el)).normalize();
+        look.copy(LEc).add(new THREE.Vector3(0.08 + 0.3 * k, 0.02 * k, 0));
+        camera.position.copy(look).addScaledVector(cam, d); camera.up.set(0, 1, 0); camera.lookAt(look);
+        const jetOn = smr(t, 0.75, 1.15), front = lerp(0.03, 0.8, inOut(smr(t, 2.5, 5.3)));
+        B.u.uT.value = t; B.u.uHoleCyan.value = 0.7 * jetOn;
+        B.u.uHeat.value = 0.62; B.u.uCool.value = smr(t, 2.4, 3.2); B.u.uCoolFront.value = front;
+        FU.uT.value = t; FU.uFront.value = front; FU.uAmt.value = smr(t, 2.3, 3.0);
+        // coolant streaks: travel range grows with the blanket
+        const reach = lerp(0.18, 1.0, smr(t, 1.0, 5.3));
+        for (let i = 0; i < NJ; i++) {
+          const q = jp[i]; const u = ((t - 0.75) * 0.55 * q.s + q.ph) % 1;
+          if (t < 0.75 + q.ph * 0.3 || u > reach) { SJ.hide(i); continue; }
+          q.j.path.at(u, h); q.j.path.at(Math.max(0, u - 0.07), tl3);
+          SJ.set(i, tl3, h, 0.0045, 0.9 * jetOn * (1 - smr(u, reach - 0.12, reach)), cCool, camera.position);
+        }
+        for (let i = 0; i < NG; i++) {
+          const q = gp[i]; const u = (t * 0.32 * q.s + q.ph) % 1;
+          q.g.path.at(u, h); q.g.path.at(Math.max(0, u - 0.05), tl3);
+          SG.set(i, tl3, h, 0.0045, 0.5 * smr(u, 0, 0.08) * (1 - smr(u, 0.85, 1)), q.c, camera.position);
+        }
+        SJ.commit(); SG.commit();
+        S.shimmer(0.7, [0.0, 0.1, 0.9, 1.0]);
+        embers.update(t);
+        S.render(t);
+      }
+      S.start(renderAt);
+    </script>
+  </body>
+</html>

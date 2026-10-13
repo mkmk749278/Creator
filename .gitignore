@@ -52,3 +52,6 @@ video/**/.render.hf-transaction-*/
 video/**/work-*/
 video/minimumdue/*/render.mp4
 video/minimumdue/*/render.log
+.cache/
+# VO takes live in Google Drive (Creator/jet-engine-paradox/voice/), not git
+projects/jet-engine-paradox/voice/*.mp3

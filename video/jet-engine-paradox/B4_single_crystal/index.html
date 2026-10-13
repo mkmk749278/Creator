@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B4 One single crystal</title>
+    <!-- Session B scene. Assets: vendor/library/hdri/studio_small_09_1k.hdr (Poly Haven, CC0). Shared code: lib.js (copied from ../_b_lib). -->
+    <link rel="stylesheet" href="jep.css" />
+    <script>
+      // HyperFrames polls window.__hf.buildReady; resolved by lib.js once HDRI/fonts are loaded and the first frame is drawn.
+      window.__hf = window.__hf || {}; window.__hf.buildReady = Object.assign(window.__hf.buildReady || {},
+        { jepScene: new Promise((r) => { window.__jepReady = r; }) });
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <style>
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; overflow: hidden; background: #0B0E14; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .jep-label { opacity: 0; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="B4_single_crystal" data-start="0" data-width="1920" data-height="1080" data-duration="5.06">
+      <canvas id="gl"></canvas>
+      <div class="jep-label" id="l1">Single crystal</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#l1", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 2.3);
+      tl.to("#l1", { opacity: 1, duration: 0.01 }, 5.05);
+      window.__timelines["B4_single_crystal"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, makeEmbers, buildBlade, grainMeshes, jitterSeeds, mulberry32, smr, inOut, lerp, logLerp, PAL, col } from "./lib.js";
+      const S = createStage({ fov: 30, near: 0.002, bloom: 1.0, bloomThreshold: 0.95, envIntensity: 0.85, bg: { glowAmt: 0.12, glowScreen: [0.45, -0.25], glow: 0xffa040 } });
+      const { scene, camera } = S;
+      lightRig(scene, { key: 1.5, rim: 1.4, fill: 0.5 });
+      const B = buildBlade({ features: ["HOLES", "DISSOLVE", "SWEEP"] });
+      B.u.uSweepN.value.set(0, 1, 0.15).normalize(); B.u.uSweepW.value = 0.07; B.u.uSweepCol.value.setHex(0xffc890).multiplyScalar(1.8);
+      scene.add(B.group);
+      const [P, N] = B.surfAt(0.31, 0.78);
+      const xa = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), N).normalize(), ya = new THREE.Vector3().crossVectors(N, xa);
+      // the B2 grain cube (same seeds), shrunk to grain scale and sitting just under the blade surface
+      const s = 0.04;
+      const mn = new THREE.Vector3(-1, -1, -1), mx = new THREE.Vector3(1, 1, 1);
+      const shared = { uBoundary: { value: 0.8 }, uGroove: { value: 1 }, uLineW: { value: 0.014 }, uT: { value: 0 }, uDissR: { value: 99 },
+        uSweepN: { value: new THREE.Vector3(1, 0.35, 0).normalize() }, uSweepPos: { value: -9 }, uSweepAmt: { value: 0 }, uSweepW: { value: 0.006 },
+        uSweepCol: { value: col(0xffd8a8, 2.6) } };
+      const G = grainMeshes(jitterSeeds(3, 3, 3, mn, mx, 0.75, mulberry32(31)), mn, mx, { seed: 8, latFreq: 25, shared, features: ["BLOCK", "LATTICE", "REVEAL", "SWEEP"] });
+      const cube = new THREE.Group(); cube.add(G.group); cube.scale.setScalar(s);
+      cube.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(xa, ya, N));
+      cube.position.copy(P).addScaledVector(N, -0.03 - s);
+      scene.add(cube);
+      const common = new THREE.Color(PAL.metal).multiplyScalar(0.95), q0 = new THREE.Quaternion(), qt = new THREE.Quaternion();
+      const micro = makeEmbers({ count: 120, seed: 14, box: { min: [-5, -4, -5], size: [10, 8, 10] }, intensity: 2.0, speed: 0.4, scale: 900 * s });
+      micro.points.scale.setScalar(s); micro.points.position.copy(cube.position); scene.add(micro.points);
+      const macro = makeEmbers({ count: 110, seed: 15, box: { min: [-4, -2.5, -4], size: [8, 5, 6] }, intensity: 2.0, speed: 0.35 });
+      scene.add(macro.points);
+      const C = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0), dir = new THREE.Vector3(), look = new THREE.Vector3();
+      const faceC = new THREE.Vector3().copy(cube.position).addScaledVector(N, s);   // centre of the cube's front face
+      const pBlade = new THREE.Vector3(0, 0.35, 0);
+      function renderAt(t) {
+        // 1) the grains merge: gaps close, lattices turn into one orientation, tints and borders fade
+        const kGap = inOut(smr(t, 0.05, 1.3)), kRot = inOut(smr(t, 0.25, 2.0)), kTint = smr(t, 0.6, 2.1);
+        for (const g of G.grains) {
+          g.mesh.position.copy(g.centroid).multiplyScalar(0.12 * (1 - kGap));
+          qt.copy(g.q).slerp(q0, kRot); g.u.uRot.value.setFromMatrix4(new THREE.Matrix4().makeRotationFromQuaternion(qt));
+          g.mat.color.copy(g.color).lerp(common, kTint); g.mat.roughness = lerp(g.mat.roughness, 0.3, kTint);
+        }
+        shared.uBoundary.value = 0.8 * (1 - smr(t, 1.1, 2.1));
+        shared.uGroove.value = 1 - smr(t, 1.3, 2.3);
+        shared.uT.value = t;
+        // 2) one unbroken lattice: a light sweep runs across it without a single break
+        shared.uSweepAmt.value = smr(t, 2.35, 2.55) * (1 - smr(t, 3.7, 3.95));
+        shared.uSweepPos.value = lerp(-2.4, 2.4, smr(t, 2.4, 3.9)) * s + faceC.dot(shared.uSweepN.value);
+        // camera: 3/4 orbit of the cube -> straight onto its face -> pull back out of the blade surface to the whole blade
+        const k1 = inOut(smr(t, 0.0, 2.6));
+        const a = lerp(0.85, 0.0, k1), el = lerp(0.42, 0.0, k1), d1 = lerp(6.4, 1.5, k1) * s;
+        dir.copy(N).multiplyScalar(Math.cos(a) * Math.cos(el)).addScaledVector(xa, Math.sin(a) * Math.cos(el)).addScaledVector(ya, Math.sin(el));
+        let camP = new THREE.Vector3().copy(faceC).addScaledVector(dir, d1); look.copy(faceC).lerp(cube.position, 1 - k1);
+        const k2 = smr(t, 3.0, 5.06);
+        if (k2 > 0) {
+          const e2 = inOut(k2), d2 = logLerp(1.5 * s, 4.9, 0.35 * k2 + 0.65 * e2);
+          const a2 = lerp(0, -0.55, e2);
+          dir.copy(N).multiplyScalar(Math.cos(a2)).addScaledVector(xa, Math.sin(a2)).addScaledVector(up, 0.12 * e2).normalize();
+          camP.copy(faceC).lerp(pBlade, e2 * 0.0).addScaledVector(dir, d2); look.copy(faceC).lerp(pBlade, smr(k2, 0.1, 0.9));
+        }
+        camera.position.copy(camP); camera.up.copy(ya).lerp(up, smr(t, 3.0, 4.5)).normalize(); camera.lookAt(look);
+        // 3) the blade surface closes over the crystal (reverse of B1), then a light sweep runs root to tip
+        const vis = t >= 3.0; B.group.visible = vis;
+        const kc = smr(t, 3.0, 3.9);
+        B.u.uDissR.value = vis ? lerp(1.3, -0.05, inOut(kc)) : -1;
+        if (kc >= 1) B.u.uDissR.value = -1;
+        shared.uDissR.value = vis ? B.u.uDissR.value : 99;
+        cube.visible = !(kc >= 1);
+        B.u.uSweepAmt.value = smr(t, 3.9, 4.15); B.u.uSweepPos.value = lerp(-0.9, 1.6, smr(t, 3.95, 5.06));
+        micro.u.uAmt.value = 1 - smr(t, 3.0, 3.6); macro.u.uAmt.value = smr(t, 3.4, 4.2);
+        micro.update(t); macro.update(t);
+        S.render(t);
+      }
+      S.start(renderAt);
+    </script>
+  </body>
+</html>

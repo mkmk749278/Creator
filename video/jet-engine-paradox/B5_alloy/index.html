@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B5 Nickel superalloy + rhenium</title>
+    <!-- Session B scene. Assets: vendor/library/hdri/studio_small_09_1k.hdr (Poly Haven, CC0). Shared code: lib.js (copied from ../_b_lib). -->
+    <link rel="stylesheet" href="jep.css" />
+    <script>
+      // HyperFrames polls window.__hf.buildReady; resolved by lib.js once HDRI/fonts are loaded and the first frame is drawn.
+      window.__hf = window.__hf || {}; window.__hf.buildReady = Object.assign(window.__hf.buildReady || {},
+        { jepScene: new Promise((r) => { window.__jepReady = r; }) });
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <style>
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; overflow: hidden; background: #0B0E14; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .jep-label { opacity: 0; white-space: nowrap; }
+      #re { color: var(--amber); opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="B5_alloy" data-start="0" data-width="1920" data-height="1080" data-duration="4.92">
+      <canvas id="gl"></canvas>
+      <div class="jep-label" id="l1">Nickel superalloy <span id="re">· + Rhenium</span></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#l1", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 1.1);
+      tl.fromTo("#re", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, 3.45);
+      tl.to("#l1", { opacity: 1, duration: 0.01 }, 4.91);
+      window.__timelines["B5_alloy"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, orbit, makeEmbers, buildBlade, metalMaterial, elementTile, smr, inOut, outC, lerp, clamp, PAL, col } from "./lib.js";
+      const S = createStage({ fov: 30, bloom: 1.0, bloomThreshold: 1.0, envIntensity: 0.9, bg: { glowAmt: 0.1, glowScreen: [0.5, -0.2], glow: 0xffa040 },
+        fonts: ["800 200px Inter", "600 60px Inter"] });
+      const { scene, camera } = S;
+      lightRig(scene, { key: 1.6, rim: 1.4, fill: 0.5 });
+      const B = buildBlade({ features: ["HOLES", "SWEEP"] });
+      B.u.uSweepN.value.set(0, 1, 0.2).normalize(); B.u.uSweepW.value = 0.12; B.u.uSweepCol.value.setHex(0xffb060).multiplyScalar(3.2);
+      scene.add(B.group);
+      B.group.position.y = -0.3;
+      // element tiles: Ni (base, largest), then the alloying elements; Re is the rare one the VO names
+      const EL = [["Ni", "Nickel", 1.55], ["Co", "Cobalt", 1], ["Cr", "Chromium", 1], ["Al", "Aluminium", 1], ["Ta", "Tantalum", 1],
+        ["W", "Tungsten", 1], ["Re", "Rhenium", 1]];
+      const tiles = EL.map(([sym, name, sc], i) => { const T = elementTile(sym, name, { hot: sym === "Re" }); T.base = sc; scene.add(T.group); return T; });
+      const embers = makeEmbers({ count: 120, seed: 9, box: { min: [-4, -2.5, -4], size: [8, 5, 6] }, intensity: 2.0, speed: 0.35 });
+      scene.add(embers.points);
+      const tgt = new THREE.Vector3(0, 0.12, 0), c = new THREE.Vector3();
+      function renderAt(t) {
+        orbit(camera, tgt, lerp(6.2, 5.5, inOut(t / 4.92)), 0.35 + 0.1 * t, lerp(0.16, 0.08, t / 4.92));
+        B.group.rotation.y = 2.75 + 0.2 * t;
+        const merge = inOut(smr(t, 3.95, 4.8));
+        for (let i = 0; i < tiles.length; i++) {
+          const T = tiles[i];
+          const appear = outC(smr(t, 0.15 + 0.14 * i, 0.75 + 0.14 * i));
+          const ph = -0.4 + (2 * Math.PI * i) / tiles.length + 0.38 * t + merge * 2.2;
+          const R = lerp(lerp(3.0, 1.9, appear), 0.1, merge);
+          const y = lerp(0.3 + 0.22 * Math.sin(ph * 2 + 0.6), 0.35, merge);
+          T.group.position.set(R * Math.cos(ph), y, R * Math.sin(ph));
+          T.group.lookAt(c.copy(camera.position).setY(lerp(y, camera.position.y, 0.4)));
+          let s = T.base * appear * (1 - 0.85 * merge);
+          let glow = 0;
+          if (EL[i][0] === "Ni") glow = smr(t, 0.95, 1.2) * (1 - smr(t, 1.6, 2.2));
+          if (EL[i][0] === "Re") { const p = smr(t, 3.42, 3.62) * (1 - smr(t, 4.3, 4.7)); glow = p * (0.75 + 0.25 * Math.sin(t * 14)); s *= 1 + 0.3 * p; }
+          T.group.scale.setScalar(Math.max(1e-3, s));
+          T.setGlow(glow, appear * (1 - smr(t, 4.5, 4.8)));
+        }
+        // the elements melt into the blade: light sweep runs up the metal
+        B.u.uSweepAmt.value = smr(t, 4.1, 4.3);
+        B.u.uSweepPos.value = lerp(-0.9, 1.25, smr(t, 4.15, 4.92));
+        embers.update(t);
+        S.render(t);
+      }
+      S.start(renderAt);
+    </script>
+  </body>
+</html>

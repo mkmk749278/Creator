@@ -1,0 +1,452 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 5.716,
+  "te": "August twenty three, twenty twenty three. India lands a spacecraft near the south pole of the Moon.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.494,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.256,
+  "end": 8.45,
+  "te": "No country had ever landed there before.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.325,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 9.097,
+  "end": 14.628,
+  "te": "India builds its own nuclear submarines. It reached Mars on its very first try.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.235,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 15.333,
+  "end": 20.478,
+  "te": "And yet... in hangars in Bengaluru and Nashik, brand new fighter jets are waiting.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 21.026,
+  "end": 23.838,
+  "te": "Painted. Radars fitted. Almost ready.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 24.359,
+  "end": 27.395,
+  "te": "But not one of these new jets has joined the Air Force yet.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.229,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 27.923,
+  "end": 35.585,
+  "te": "The biggest reason? They are waiting for an engine. An engine made in Lynn, Massachusetts, about thirteen thousand kilometres away.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.178,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 36.137,
+  "end": 41.968,
+  "te": "So here is the question. India landed on the Moon. Why can it not build its own fighter jet engine?",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.137,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 42.465,
+  "end": 55.777,
+  "te": "Welcome to Be Practical with Kishore. Today, the story of one of the hardest machines on Earth to build. Single crystal metal, broken promises, and a forty year fight to join one of the world's most closed clubs.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.137,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 56.225,
+  "end": 60.607,
+  "te": "To understand why one engine matters so much, look at the Indian Air Force.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.311,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 61.015,
+  "end": 66.409,
+  "te": "The Air Force is supposed to have forty two fighter squadrons. Today it has about twenty nine.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.311,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 66.845,
+  "end": 71.537,
+  "te": "Old jets like the MiG twenty one have retired. New jets are needed, fast.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.189,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 71.928,
+  "end": 82.358,
+  "te": "So in twenty twenty one, the government ordered eighty three Tejas Mark One A jets from Hindustan Aeronautics, HAL. In twenty twenty five, it ordered ninety seven more.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.161,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 82.837,
+  "end": 90.839,
+  "te": "But HAL does not make the engine. Every one of these jets uses the F four zero four, made by GE Aerospace in America.",
+  "en": "",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 0.161,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 91.229,
+  "end": 97.019,
+  "te": "The engines were due from twenty twenty three. The first one came only in March twenty twenty five.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.312,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 97.46,
+  "end": 102.683,
+  "te": "GE blamed problems in its supply chain. HAL put penalties on GE for the delay.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.315,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 103.093,
+  "end": 112.393,
+  "te": "By October twenty twenty six, GE had sent only fourteen of the ninety nine engines. HAL says close to thirty jets are built and waiting.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.306,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 112.786,
+  "end": 118.999,
+  "te": "Some testing work on radar and weapons is also still pending. But the engine has been the biggest hold up.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.27,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 119.489,
+  "end": 124.088,
+  "te": "And a delay is only the small problem. The real danger is control.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.238,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 124.599,
+  "end": 125.967,
+  "te": "India has been here before.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.238,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 126.365,
+  "end": 130.285,
+  "te": "In May nineteen ninety eight, India tested nuclear weapons at Pokhran.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.19,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 130.709,
+  "end": 134.572,
+  "te": "America answered with sanctions under a law called the Glenn Amendment.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.19,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 134.891,
+  "end": 142.283,
+  "te": "Sales of the same GE F four zero four engines to India were stopped. American help on the Tejas flight controls also ended.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.547,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 142.72,
+  "end": 146.928,
+  "te": "Indian engineers had to build the flight control system on their own. They did it.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.159,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 147.287,
+  "end": 152.671,
+  "te": "The lesson was simple. If you do not own the engine, you do not fully own your fighter jet.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.159,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 153.089,
+  "end": 158.493,
+  "te": "Nine countries have nuclear bombs. About ten have put a satellite in space with their own rocket.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.408,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 158.796,
+  "end": 170.492,
+  "te": "But only a handful can design and build a modern fighter engine on their own. The main ones are America, Russia, Britain and France. And, after decades of struggle, China.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.139,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 170.958,
+  "end": 176.647,
+  "te": "India tried to join this club. And that started one of the hardest engineering stories in its history.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.139,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 177.194,
+  "end": 181.453,
+  "te": "In nineteen eighty six, Indian engineers began planning their own fighter engine.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.361,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 181.904,
+  "end": 189.931,
+  "te": "The job went to the Gas Turbine Research Establishment, GTRE, a DRDO lab in Bengaluru. The engine was named Kaveri.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.158,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 190.38,
+  "end": 196.762,
+  "te": "Full development was approved in March nineteen eighty nine, with a budget of about three hundred and eighty two crore rupees.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.158,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 197.107,
+  "end": 200.253,
+  "te": "The plan was to finish by December nineteen ninety six.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.178,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 200.605,
+  "end": 206.715,
+  "te": "The goal was huge. An engine that gives eighty one kilonewtons of push with the afterburner on.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.178,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 207.09,
+  "end": 213.429,
+  "te": "And India was building a brand new jet, the Tejas, at the same time. Both almost from scratch. That doubled the risk.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.015,
+  "confidence": "check"
+ },
+ {
+  "line": 35,
+  "start": 213.877,
+  "end": 219.429,
+  "te": "When the Kaveri prototypes reached the test bench, the numbers did not add up.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.015,
+  "confidence": "check"
+ },
+ {
+  "line": 36,
+  "start": 219.857,
+  "end": 224.14,
+  "te": "It was meant to weigh eleven hundred kilos. It weighed twelve hundred and thirty five.",
+  "en": "",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 0.079,
+  "confidence": "high"
+ },
+ {
+  "line": 37,
+  "start": 224.561,
+  "end": 229.919,
+  "te": "It was meant to push eighty one kilonewtons. As reported, it reached only about seventy.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.432,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "start": 230.28,
+  "end": 234.746,
+  "te": "And India had no facility to test a fighter engine in high altitude conditions.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.432,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "start": 235.116,
+  "end": 238.796,
+  "te": "So Indian engineers had to take the Kaveri to Russia for those tests.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.32,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "start": 239.162,
+  "end": 242.382,
+  "te": "The years went by. The Air Force could not wait for ever.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.163,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "start": 242.761,
+  "end": 252.253,
+  "te": "In September two thousand eight, the Kaveri was officially separated from the Tejas programme. The Tejas would fly with the American engine.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.042,
+  "confidence": "check"
+ },
+ {
+  "line": 42,
+  "start": 252.691,
+  "end": 259.742,
+  "te": "But GTRE did not stop. In twenty ten, a Kaveri flew for the first time, fitted to a Russian Ilyushin transport plane used as a flying test bed.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.042,
+  "confidence": "check"
+ },
+ {
+  "line": 43,
+  "start": 260.154,
+  "end": 263.184,
+  "te": "Twenty seven flights. Up to twelve kilometres high.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "start": 263.561,
+  "end": 270.834,
+  "te": "By twenty twelve, about two thousand crore rupees had been spent. The cost estimate had grown to over twenty eight hundred crore.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 45,
+  "start": 271.223,
+  "end": 275.753,
+  "te": "So why did it fail? To answer that, we need to go inside the engine.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ }
+]

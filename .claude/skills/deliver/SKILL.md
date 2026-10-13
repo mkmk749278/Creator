@@ -5,9 +5,11 @@ description: Hand a finished or preview cut to the phone-only owner - upload lin
 
 # Deliver to the owner
 
-1. **Video:** `scripts/upload_gofile.sh <file>` for the master and a 720p copy (needs `gofile.io` and `*.gofile.io`
-   allowlisted in the environment's network settings). If upload is blocked, say so plainly and offer the alternatives
-   (GitHub Actions artifact from a render workflow, or Google Drive via the connector).
+1. **Video:** `scripts/upload_gdrive.sh --sub <slug> <file>…` for the master and a 720p copy: they land in the owner's
+   Google Drive `Creator/<slug>/` folder (owner, 2026-10-13: Drive replaces Gofile). Needs `GDRIVE_RCLONE_TOKEN`
+   (one-time phone setup, PLAYBOOK §1). If it is missing, say so plainly, give the setup steps, and fall back to
+   `scripts/upload_gofile.sh` for this delivery. Small text files (description, SRT, review) can also go to the
+   `Creator/<slug>/` folder with the Google Drive connector.
 2. **Files with `SendUserFile`** (30 MB cap): contact sheet(s), `review.md`, SRT, `description.md`.
 3. **Description:** title options, the summary, chapters, safety lines where relevant, and full credits from the manifest
    (`credits.py`), with disputed figures noted ("as reported; other reports say ...").
