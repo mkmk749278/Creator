@@ -417,3 +417,246 @@ SCENES["p13_per_bank"] = dict(kind="page", start=L("C052")[0] - 0.25, end=L("C05
       for k, (x0, dx) in enumerate(((320, 470), (960, 0.1), (1600, -470)))],
     dict(kind="label", x=960, y=1040, text="THEY ALL SEE YOUR CIBIL", size=48, anchor="middle", color="red", at=P("C052", "They only see")),
 ])
+
+
+# =====================================================================================================================
+# ACT 3: two traps, the police fear, write-off
+# C053 Now, two traps that catch salaried people.
+# C054 Trap one. Your salary account is in the same bank as your card.
+# C055 Your card terms allow that bank to hold or take money from your account to cover what you owe. It is called the right of set off.
+# C056 The national consumer commission upheld one bank taking fifty three thousand rupees from a savings account for card dues.
+#      And in February twenty twenty six, in a loan case, the Kerala High Court said a bank's hold is not a court attachment,
+#      so the usual salary protection doesn't stop it.            (assemble.py: NCDRC and Kerala HC proofs over C056)
+# C057 But it is not unlimited. Only your money, only for your debt, only in that bank, and only up to what you owe.
+#      A bank where you owe nothing cannot touch your account.
+# C058 And the bank does not have to warn you first. Some banks only promise to tell you within three days after the hold.
+ps = photo("phone_salary", 330, 150, 460, L("C054")[0] - 0.2, float=0.5)
+ph = photo("phone_hold", 330, 150, 460, P("C055", "hold or take") - 0.1, in_="fade", fade=0.3, float=0.5)
+cb = photo("card_black", 1150, 300, 520, P("C054", "same bank") - 0.1, float=0.8)
+SCENES["p14_setoff"] = dict(kind="page", start=L("C053")[0] - 0.25, end=L("C059")[0] - 0.2, kicker="TRAP ONE", tag="HDFC BANK | CARDMEMBER AGREEMENT", items=[
+    *page([dict(kind="label", x=960, y=470, text="TWO TRAPS", size=130, anchor="middle", at=L("C053")[0] - 0.2),
+           dict(kind="label", x=960, y=600, text="THAT CATCH SALARIED PEOPLE", size=52, mono=True, anchor="middle", color="red", at=P("C053", "salaried"))],
+          L("C054")[0] - 0.3),
+    ps, cb,
+    dict(kind="label", x=960, y=130, text="SAME BANK", size=72, anchor="middle", hl="yel", at=P("C054", "same bank")),
+    dict(kind="house", x=810, y=170, s=0.95, text="", at=P("C054", "same bank") + 0.1),
+    ph,
+    dict(kind="arrow", x=1140, y=560, to=[-300, 0], bend=0.1, color="red", at=P("C055", "hold or take")),
+    dict(kind="label", x=1180, y=860, text="RIGHT OF SET-OFF", size=60, color="red", at=P("C055", "right of set")),
+    dict(kind="label", x=1180, y=930, text="IN YOUR CARD TERMS", size=30, mono=True, color="dim", at=P("C055", "right of set") + 0.2),
+])
+s14 = SCENES["p14_setoff"]["items"]
+# C057-C058: the limits, on a fresh page (C056 runs under the proofs)
+lim = [("Only your money", "ONLY YOUR MONEY"), ("only for your debt", "ONLY FOR YOUR DEBT"), ("only in that bank", "ONLY IN THAT BANK"), ("only up to", "ONLY UP TO WHAT YOU OWE")]
+for it in s14:
+    it.setdefault("exit", L("C057")[0] - 0.35)
+s14 += [dict(kind="label", x=140, y=200, text="NOT UNLIMITED", size=72, hl="yel", at=L("C057")[0] - 0.2),
+        *[dict(kind="badge", x=200, y=330 + k * 120, text=t, size=50, at=P("C057", w)) for k, (w, t) in enumerate(lim)],
+        dict(kind="badge", x=200, y=820, ok=False, text="A BANK YOU OWE NOTHING: CAN'T TOUCH IT", size=40, at=P("C057", "A bank where")),
+        photo("phone_hold", 1320, 110, 380, L("C057")[0] - 0.1, float=0.5),
+        dict(kind="label", x=1510, y=830, text="NO WARNING FIRST", size=48, anchor="middle", color="red", at=P("C058", "does not have")),
+        dict(kind="label", x=1510, y=895, text="TOLD WITHIN 3 DAYS AFTER", size=34, mono=True, anchor="middle", at=P("C058", "within three"))]
+
+# C059 Trap two. Many products in one bank. RBI rules mark the borrower, not just one account.
+# C060 So if your card at a bank becomes an NPA, your other loans at that same bank can be marked NPA too. To clean it, you must clear the overdue on all of them.
+docs = [photo(n, x, 230, 470, L("C059")[0] + k * 0.25, float=0.4) for k, (n, x) in enumerate((("bill_ravi", 110), ("loan_personal", 725), ("loan_home", 1340)))]
+SCENES["p15_borrower"] = dict(kind="page", start=L("C059")[0] - 0.25, end=L("C061")[0] - 0.2, kicker="TRAP TWO", tag="RBI | IRAC NORMS", items=[
+    dict(kind="label", x=960, y=150, text="ONE BANK · MANY PRODUCTS", size=60, anchor="middle", hl="yel", at=L("C059")[0] - 0.2),
+    *docs,
+    dict(kind="label", x=960, y=1010, text="THE BORROWER IS MARKED, NOT ONE ACCOUNT", size=46, anchor="middle", color="red", at=P("C059", "mark the borrower")),
+    *[dict(kind="stamp", x=round(d["x"] + d["w"] / 2), y=round(d["y"] + d["h"] * 0.62), text="NPA", size=110, rot=-12, in_="stamp", at=t)
+      for d, t in zip(docs, (P("C060", "becomes an NPA"), P("C060", "other loans") + 0.2, P("C060", "marked NPA")))],
+    dict(kind="label", x=960, y=1010, text="CLEAR THE OVERDUE ON ALL OF THEM", size=46, anchor="middle", color="blue", hl="yel", at=P("C060", "clear the overdue")),
+])
+for it in SCENES["p15_borrower"]["items"]:
+    if it.get("text") == "THE BORROWER IS MARKED, NOT ONE ACCOUNT":
+        it["exit"] = P("C060", "clear the overdue") - 0.3
+
+# C061 And cards from different banks? They don't share your accounts. But they all see your CIBIL. One default can make the others cut your limit.
+# C062 That's why paying one card with another is so dangerous. Some banks can even cancel a card used that way. When one card stops, the whole chain falls.
+cards3 = [photo(n, x, 200, 420, L("C061")[0] - 0.2 + k * 0.12, float=0.8) for k, (n, x) in enumerate((("card_black", 120), ("card_navy", 750), ("card_maroon", 1380)))]
+SCENES["p16_chain"] = dict(kind="page", start=L("C061")[0] - 0.25, end=L("C063")[0] - 0.2, kicker="DIFFERENT BANKS", tag="ICICI BANK | CARD TERMS", items=[
+    *page([
+        *cards3,
+        *[dict(kind="label", x=c["x"] + 210, y=540, text=t, size=34, mono=True, anchor="middle", at=c["at"] + 0.2) for c, t in zip(cards3, ("BANK A", "BANK B", "BANK C"))],
+        dict(kind="label", x=960, y=700, text="THEY ALL SEE YOUR CIBIL", size=56, anchor="middle", at=P("C061", "they all see")),
+        dict(kind="cross", x=330, y=330, size=150, at=P("C061", "One default")),
+        *[dict(kind="label", x=c["x"] + 210, y=820, text="LIMIT CUT", size=46, anchor="middle", color="red", at=P("C061", "cut your limit") + k * 0.15)
+          for k, c in enumerate(cards3[1:])],
+    ], L("C062")[0] - 0.35),
+    *[photo(n, 160 + k * 420, 330 + (k % 2) * 40, 360, L("C062")[0] - 0.2 + k * 0.1, dropRot=-4 + 3 * k,
+            moves=[dict(at=P("C062", "the whole chain") + k * 0.12, rot=78, y=640, dur=0.5, ease="power2.in")])
+      for k, n in enumerate(("card_black", "card_navy", "card_maroon", "card_teal"))],
+    *[dict(kind="arrow", x=540 + k * 420, y=420, to=[0.1 + 30, 0], color="red", at=P("C062", "paying one card") + k * 0.2) for k in range(3)],
+    dict(kind="label", x=960, y=180, text="CARD PAYS CARD", size=64, anchor="middle", color="red", at=P("C062", "paying one card")),
+    dict(kind="label", x=960, y=1000, text="ONE STOPS, ALL FALL", size=64, anchor="middle", hl="yel", at=P("C062", "When one card")),
+], sfx=[[P("C062", "the whole chain") + k * 0.12 + 0.45, "thud"] for k in range(4)])
+
+# C063 Now the biggest fear. Will the police arrest you? ...          (assemble.py: door footage)
+# C064 Here is the truth. Simply not being able to pay is not a crime.  (1.5 s silence before C064 in the mix)
+# C065 The Supreme Court has said ...                                   (assemble.py: SC 2019 and 2025 proofs)
+SCENES["d04_truth"] = dict(kind="desk", start=L("C064")[0] - 0.25, end=L("C065")[0] + 2.5, tag="SUPREME COURT | 2019 · 2025", layers=[dict(src="deskA_off", at=0)],
+    cam=[[0, 1.12, 0, 0], *push(0.0, 5.5, 1.0, (960, 540), s0=1.12)],
+    chips=[dict(at=P("C064", "not a crime"), x=620, y=430, text="NOT A CRIME BY ITSELF", color="#1f9d6b", rot=-3)],
+    lower=[dict(at=P("C064", "Here is the truth"), k="THE TRUTH", t="Not being able to pay")], sfx=[[P("C064", "not a crime"), "thud"]])
+
+# C066 But a few things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.
+# C067 So never give a cheque you know will bounce. And if your auto debit will fail, talk to the bank before the date.
+chq = photo("cheque", 120, 170, 760, P("C066", "A cheque") - 0.2, float=0.4)
+nach = photo("phone_nach", 1000, 120, 380, P("C066", "an auto debit") - 0.2, float=0.5)
+frm = photo("form_apply", 1440, 150, 400, P("C066", "lying") - 0.2, float=0.4)
+SCENES["p17_criminal"] = dict(kind="page", start=L("C066")[0] - 0.25, end=L("C068")[0] - 0.2, kicker="WHAT CAN BECOME A CASE", tag="NI ACT S.138 · PSS ACT S.25", items=[
+    dict(kind="label", x=120, y=130, text="WHAT CAN BECOME A CRIMINAL CASE", size=44, mono=True, color="red", at=L("C066")[0] - 0.2),
+    chq,
+    dict(kind="stamp", x=round(an(chq, "center")[0]), y=round(an(chq, "center")[1]), text="BOUNCED", size=90, rot=-8, in_="stamp", at=P("C066", "bounces")),
+    nach,
+    dict(kind="cross", x=round(an(nach, "note0")[0]), y=round(an(nach, "note0")[1]), size=140, at=P("C066", "fails")),
+    frm,
+    dict(kind="ring", x=round(an(frm, "center")[0]), y=round(an(frm, "to")[1] + 70), w=360, h=70, color="red", at=P("C066", "lying") + 0.2),
+    dict(kind="label", x=1640, y=720, text="FALSE INFO", size=44, anchor="middle", color="red", at=P("C066", "lying") + 0.3),
+    dict(kind="badge", x=200, y=820, ok=False, text="NEVER GIVE A CHEQUE THAT WILL BOUNCE", size=42, at=P("C067", "never give")),
+    dict(kind="badge", x=200, y=940, text="AUTO-DEBIT WILL FAIL? TALK FIRST", size=42, at=P("C067", "talk to the bank")),
+])
+
+# C068 One more myth. After six months, the bank writes it off. So it's gone, right?
+# C069 No. A write off is the bank cleaning its own books. Your debt is not forgiven.
+# C070 SBI Card, for example, writes off an account after more than six missed payments in a row. But you still owe it.
+#      And some old bad loans are sold to recovery companies for a small part of their value. Then they call you.
+wo = photo("report_wo", 1180, 120, 560, L("C069")[0] + 0.3, float=0.4)
+SCENES["p18_writeoff"] = dict(kind="page", start=L("C068")[0] - 0.25, end=L("C071")[0] - 0.2, kicker="MYTH VS RULE", tag="SBI CARD | FAQ · BANDHAN BANK | 2025", items=[
+    *page([
+        dict(kind="label", x=960, y=290, text="SOME PEOPLE SAY", size=40, mono=True, anchor="middle", color="dim", at=L("C068")[0] - 0.2),
+        dict(kind="sticky", x=680, y=330, w=560, h=300, n="", lines=["Written off", "= debt gone"], color="dim", at=P("C068", "One more myth")),
+        dict(kind="stamp", x=960, y=520, text="MYTH", size=110, rot=-10, in_="stamp", at=P("C068", "right")),
+    ], L("C069")[0] + 0.15),
+    wo,
+    dict(kind="ring", x=round(an(wo, "status0")[0]), y=round(an(wo, "status0")[1] - 8), w=260, h=80, color="red", at=P("C069", "cleaning")),
+    dict(kind="label", x=140, y=330, text="WRITE-OFF =", size=44, mono=True, color="dim", at=P("C069", "A write off")),
+    dict(kind="label", x=140, y=430, text="THE BANK'S BOOKS", size=72, at=P("C069", "own books")),
+    dict(kind="label", x=140, y=540, text="NOT FORGIVEN", size=84, color="red", hl="yel", at=P("C069", "not forgiven")),
+    dict(kind="label", x=140, y=680, text="YOU STILL OWE IT", size=56, at=P("C070", "still owe")),
+    dict(kind="arrow", x=1460, y=820, to=[-430, 120], bend=-0.15, color="red", at=P("C070", "are sold")),
+    dict(kind="box", x=600, y=820, w=420, h=200, text="RECOVERY CO.", size=44, at=P("C070", "recovery companies")),
+    dict(kind="label", x=1090, y=1040, text="SOLD CHEAP · THEN THEY CALL YOU", size=30, mono=True, color="dim", at=P("C070", "small part")),
+])
+
+
+# =====================================================================================================================
+# ACT 4: the defence (Dreamer starts at C071)
+# C071 So what should you actually do? Five practical steps.
+# C072 Step one. Don't hide. Call the bank before day ninety, and also write to them. Tell them what happened and what you can pay. Keep every message.
+pc = photo("phone_calling", 1000, 130, 400, P("C072", "Call the bank") - 0.2, float=0.5)
+lt = photo("letter_bank", 1420, 150, 420, P("C072", "write to them") - 0.2, float=0.4)
+SCENES["p19_step1"] = dict(kind="page", start=L("C071")[0] - 0.25, end=L("C073")[0] - 0.2, kicker="WHAT TO DO", tag="", items=[
+    *page([*[dict(kind="sticky", x=180 + k * 330, y=380 + (k % 2) * 40, w=280, h=220, n=k + 1, lines=[t], color="green",
+                  at=P("C071", "Five practical") + k * 0.15) for k, t in enumerate(("Don't hide", "Know the rules", "Check notices", "Settle on paper", "Plan the order"))],
+           dict(kind="label", x=960, y=250, text="FIVE PRACTICAL STEPS", size=70, anchor="middle", at=L("C071")[0] - 0.2)],
+          L("C072")[0] - 0.3),
+    dict(kind="sticky", x=120, y=150, w=300, h=220, n=1, lines=["Don't hide"], color="green", at=L("C072")[0] - 0.2),
+    pc, lt,
+    dict(kind="arrow", x=130, y=760, to=[760, 0], at=P("C072", "before day") - 0.3, dur=0.5),
+    dict(kind="label", x=130, y=830, text="DAY 0", size=32, mono=True, color="dim", at=P("C072", "before day") - 0.2),
+    dict(kind="label", x=880, y=830, text="DAY 90", size=32, mono=True, anchor="end", color="red", at=P("C072", "before day")),
+    dict(kind="pin", x=420, y=750, color="green", text="CALL HERE", at=P("C072", "before day") + 0.2),
+    dict(kind="label", x=130, y=620, text="BEFORE DAY 90", size=72, color="green", at=P("C072", "before day")),
+    dict(kind="label", x=1250, y=980, text="KEEP EVERY MESSAGE", size=56, anchor="middle", hl="yel", at=P("C072", "Keep every")),
+    dict(kind="label", x=1250, y=900, text="WHAT HAPPENED · WHAT YOU CAN PAY", size=30, mono=True, anchor="middle", at=P("C072", "Tell them")),
+])
+
+# C073 Step two. Know the recovery rules. Calls only between eight in the morning and seven in the evening. No threats, no abuse,
+#      no calls to shame your family or friends. Anyone who comes home must carry an ID card and the bank's authorisation letter. Ask to see them.
+idc = photo("id_agent", 1010, 170, 330, P("C073", "ID card") - 0.2, float=0.6)
+la = photo("letter_auth", 1400, 160, 440, P("C073", "authorisation letter") - 0.2, float=0.4)
+SCENES["p20_step2"] = dict(kind="page", start=L("C073")[0] - 0.25, end=L("C074")[0] - 0.2, kicker="STEP 2 · KNOW THE RULES", tag="RBI | 2008 & 2022 CIRCULARS", items=[
+    dict(kind="sticky", x=120, y=120, w=300, h=220, n=2, lines=["Know the rules"], color="green", at=L("C073")[0] - 0.2),
+    dict(kind="label", x=120, y=470, text="CALLS ONLY", size=40, mono=True, color="dim", at=P("C073", "Calls only")),
+    dict(kind="label", x=120, y=580, text="8 AM – 7 PM", size=110, color="green", at=P("C073", "eight in the")),
+    *[dict(kind="badge", x=170, y=700 + k * 105, ok=False, text=t, size=46, at=P("C073", w)) for k, (w, t) in enumerate((("No threats", "NO THREATS"), ("no abuse", "NO ABUSE"), ("shame your", "NO SHAMING YOUR FAMILY")))],
+    idc, la,
+    dict(kind="label", x=1300, y=900, text="ASK TO SEE BOTH", size=64, anchor="middle", hl="yel", at=P("C073", "Ask to see")),
+])
+
+# C074 If they break these rules, complain to the bank first. No answer in thirty days? Go to the RBI Ombudsman on the RBI complaint website. It is free.
+#      But since July twenty twenty six, you have only ninety days to do it. The RBI helpline is fourteen four four eight.   (assemble.py: RBI FAQ proofs)
+# C075 If someone threatens you, call one one two. If you get a fake link or a fake notice, call one nine three zero.
+SCENES["p21_complain"] = dict(kind="page", start=L("C074")[0] - 0.25, end=L("C076")[0] - 0.2, kicker="IF THEY BREAK THE RULES", tag="RBI | OMBUDSMAN SCHEME 2026", items=[
+    *page([
+        dict(kind="label", x=960, y=150, text="IF THEY BREAK THE RULES", size=60, anchor="middle", hl="yel", at=L("C074")[0] - 0.2),
+        dict(kind="label", x=160, y=280, text="1. COMPLAIN TO THE BANK", size=56, at=P("C074", "complain to the bank")),
+        dict(kind="counter", x=330, y=480, size=150, fmt="days", from_=0, suffix=" DAYS", at=P("C074", "No answer"), steps=[[P("C074", "No answer") + 0.1, 30, 1.0]]),
+        dict(kind="label", x=160, y=640, text="NO ANSWER? →", size=44, mono=True, color="dim", at=P("C074", "No answer") + 0.6),
+        dict(kind="label", x=1000, y=280, text="2. RBI OMBUDSMAN", size=56, color="blue", at=P("C074", "RBI Ombudsman")),
+        dict(kind="label", x=1000, y=370, text="cms.rbi.org.in · FREE", size=44, mono=True, at=P("C074", "It is free")),
+        dict(kind="label", x=1000, y=520, text="WITHIN 90 DAYS", size=84, color="red", hl="yel", at=P("C074", "ninety days")),
+        dict(kind="label", x=1000, y=600, text="SINCE JULY 2026", size=30, mono=True, color="dim", at=P("C074", "since July")),
+        dict(kind="label", x=1000, y=800, text="HELPLINE 14448", size=84, at=P("C074", "fourteen four")),
+    ], L("C075")[0] - 0.3),
+    dict(kind="label", x=520, y=380, text="THREATS", size=56, anchor="middle", color="red", at=P("C075", "threatens")),
+    dict(kind="label", x=520, y=640, text="112", size=260, anchor="middle", at=P("C075", "one one two")),
+    dict(kind="label", x=1400, y=380, text="FAKE LINK OR NOTICE", size=56, anchor="middle", color="red", at=P("C075", "fake link")),
+    dict(kind="label", x=1400, y=640, text="1930", size=260, anchor="middle", at=P("C075", "one nine three")),
+    dict(kind="label", x=960, y=930, text="CYBER FRAUD HELPLINE · EMERGENCY 112", size=30, mono=True, anchor="middle", color="dim", at=P("C075", "one nine three") + 0.4),
+])
+
+# C076 Step three. Check every legal notice yourself. A lawyer's notice is not a court summons. A real court case has a case number.
+#      Type it yourself on the eCourts website. Never tap the link in the message.          (assemble.py: eCourts page)
+nl = photo("notice_legal", 170, 170, 540, L("C076")[0] - 0.2, float=0.4)
+sm = photo("summons", 1210, 170, 540, P("C076", "court summons") - 0.2, float=0.4)
+SCENES["p22_step3"] = dict(kind="page", start=L("C076")[0] - 0.25, end=L("C077")[0] - 0.2, kicker="STEP 3 · CHECK EVERY NOTICE", tag="ECOURTS SERVICES", items=[
+    nl, sm,
+    dict(kind="label", x=round(nl["x"] + nl["w"] / 2), y=130, text="LAWYER'S NOTICE", size=44, anchor="middle", at=P("C076", "A lawyer's")),
+    dict(kind="label", x=960, y=540, text="≠", size=180, anchor="middle", color="red", at=P("C076", "is not a court")),
+    dict(kind="label", x=round(sm["x"] + sm["w"] / 2), y=130, text="COURT SUMMONS", size=44, anchor="middle", at=P("C076", "court summons")),
+    dict(kind="ring", x=round(an(sm, "ref")[0]), y=round(an(sm, "ref")[1]), w=470, h=80, color="green", at=P("C076", "case number")),
+    dict(kind="label", x=960, y=1000, text="TYPE THE CASE NUMBER YOURSELF ON ECOURTS", size=44, anchor="middle", hl="yel", at=P("C076", "Type it yourself")),
+    dict(kind="badge", x=700, y=880, ok=False, text="NEVER TAP THE LINK", size=46, at=P("C076", "Never tap")),
+])
+
+# C077 Step four. If you settle, settle on paper. Get the settlement letter from the bank first. Pay only through the bank's own channel. Never cash to an agent.
+# C078 And know the cost. Your CIBIL will say settled, not closed. That bank won't lend to you for at least a year. Later, ask the bank what you must pay to clean that record.
+ls_ = photo("letter_settle", 150, 160, 520, P("C077", "settlement letter") - 0.3, float=0.4)
+up = photo("phone_upi", 760, 140, 380, P("C077", "own channel") - 0.3, float=0.5)
+rs = photo("report_settled", 1180, 110, 560, L("C078")[0] - 0.2, float=0.4)
+SCENES["p23_step4"] = dict(kind="page", start=L("C077")[0] - 0.25, end=L("C079")[0] - 0.2, kicker="STEP 4 · SETTLE ON PAPER", tag="RBI | 2025 COMPROMISE RULES · EXPERIAN", items=[
+    *page([
+        dict(kind="sticky", x=120, y=150, w=300, h=220, n=4, lines=["Settle on paper"], color="green", at=L("C077")[0] - 0.2),
+        ls_, up,
+        dict(kind="badge", x=1230, y=330, text="LETTER FIRST", size=48, at=P("C077", "settlement letter")),
+        dict(kind="badge", x=1230, y=460, text="BANK'S OWN CHANNEL", size=48, at=P("C077", "own channel")),
+        dict(kind="coins", x=1500, y=760, n=5, r=70, color="amber", label="CASH TO AN AGENT", labelColor="red", at=P("C077", "Never cash")),
+        dict(kind="cross", x=1500, y=700, size=230, at=P("C077", "Never cash") + 0.2),
+    ], L("C078")[0] - 0.35),
+    rs,
+    dict(kind="label", x=140, y=250, text="KNOW THE COST", size=44, mono=True, color="dim", at=L("C078")[0] - 0.2),
+    dict(kind="ring", x=round(an(rs, "status0")[0]), y=round(an(rs, "status0")[1] - 8), w=230, h=80, color="red", at=P("C078", "settled")),
+    dict(kind="ring", x=round(an(rs, "status1")[0]), y=round(an(rs, "status1")[1] - 8), w=230, h=80, color="green", at=P("C078", "not closed")),
+    dict(kind="label", x=140, y=380, text="SETTLED ≠ CLOSED", size=84, color="red", at=P("C078", "settled")),
+    dict(kind="label", x=140, y=560, text="NO LOAN FROM THAT BANK", size=52, at=P("C078", "won't lend")),
+    dict(kind="label", x=140, y=630, text="FOR AT LEAST A YEAR", size=40, mono=True, color="dim", at=P("C078", "at least a year")),
+    dict(kind="label", x=140, y=820, text="LATER: ASK WHAT CLEANS IT", size=52, color="blue", at=P("C078", "Later")),
+])
+
+# C079 Step five. If you have many cards, plan the order. This is my practical view, not a rule. First, the bank where your salary sits,
+#      because that bank can touch your account. Next, the small bills, because fees grow them fastest. Then the rest.
+# C080 You can choose where your salary goes. But the debt doesn't go away. Use the breathing space to settle, not to run.
+o3 = [photo(n, 300 + k * 520, 330, 440, L("C079")[0] - 0.1 + k * 0.12, float=0.8, _w=w) for k, (n, w) in enumerate((("card_black", "First, the bank"), ("card_navy", "Next, the small"), ("card_maroon", "Then the rest")))]
+SCENES["p24_step5"] = dict(kind="page", start=L("C079")[0] - 0.25, end=L("C081")[0] - 0.2, kicker="STEP 5 · PLAN THE ORDER", tag="OUR SUGGESTED ORDER · NOT A RULE", items=[
+    dict(kind="sticky", x=60, y=60, w=240, h=190, n=5, lines=["Plan the order"], color="green", at=L("C079")[0] - 0.2),
+    dict(kind="label", x=1800, y=200, text="MY PRACTICAL VIEW, NOT A RULE", size=30, mono=True, anchor="end", color="dim", at=P("C079", "my practical")),
+    *o3,
+    *[dict(kind="label", x=c["x"] + 220, y=300, text=n, size=110, anchor="middle", color="green", at=P("C079", c["_w"])) for c, n in zip(o3, ("1", "2", "3"))],
+    *[dict(kind="label", x=c["x"] + 220, y=720, text=t, size=40, anchor="middle", at=P("C079", c["_w"]) + 0.2) for c, t in zip(o3, ("SALARY BANK", "SMALL BILLS", "THE REST"))],
+    *[dict(kind="label", x=c["x"] + 220, y=780, text=t, size=26, mono=True, anchor="middle", color="dim", at=P("C079", c["_w"]) + 0.5) for c, t in zip(o3, ("CAN TOUCH YOUR ACCOUNT", "FEES GROW THEM FASTEST", ""))],
+    dict(kind="label", x=960, y=930, text="BREATHING SPACE: TO SETTLE, NOT TO RUN", size=52, anchor="middle", hl="yel", at=P("C080", "breathing space")),
+    dict(kind="label", x=960, y=1010, text="THE DEBT DOESN'T GO AWAY", size=34, mono=True, anchor="middle", color="red", at=P("C080", "debt doesn't")),
+])
+
+# C081 So, can they arrest you? Not just for being unable to pay. Can they take your salary? Without a court order, only that same bank,
+#      and only up to what you owe. Will they come home? That depends on how much you owe, and where you live.
+# C082 The fear is real. But fear is also their tool. Knowledge is yours.
+SCENES["d05_recap"] = dict(kind="desk", start=L("C081")[0] - 0.25, end=L("C083")[0] - 0.2, tag="", layers=[dict(src="deskA_sms2", at=0), dict(src="deskA_off", at=L("C082")[0], fade=1.2)],
+    cam=[[0, 1.0, 0, 0], *push(0.0, L("C083")[0] - L("C081")[0] + 0.25, 1.08, (760, 560))],
+    chips=[dict(at=P("C081", "Not just for"), x=760, y=180, text="ARREST? NOT FOR BEING UNABLE TO PAY", color="#1f9d6b", rot=-2),
+           dict(at=P("C081", "Without a court"), x=760, y=300, text="SALARY? SAME BANK, UP TO WHAT YOU OWE", color="#e09f1f", rot=-1),
+           dict(at=P("C081", "That depends"), x=760, y=420, text="HOME VISIT? DEPENDS: AMOUNT, PLACE", color="#2563eb", rot=-2)],
+    lower=[dict(at=P("C082", "Knowledge is yours"), k="BE PRACTICAL WITH KISHORE", t="Knowledge is yours")])
