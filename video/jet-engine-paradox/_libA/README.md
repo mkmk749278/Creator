@@ -45,3 +45,16 @@ Per-scene render times are in the session report.
 - A1 leaves 0–2.5 s clean for the logo sting.
 - A5 carries 2.35:1 bars from ~2.4 s (the core reveal); its label sits above the bottom bar.
 - `≈` in A6 is an inline SVG (Inter has no U+2248).
+
+## Renders (2026-10-13, 1080p30, 3 workers; Drive `Creator/jet-engine-paradox/scenes/A`)
+| Scene | Frames / duration | Render wall time |
+|---|---|---|
+| A1_title_blade | 413 / 13.77 s | 536 s |
+| A2_engine_dive | 188 / 6.27 s | 1314 s |
+| A3_blade_rise | 151 / 5.03 s | 217 s |
+| A4_combustor_flow | 169 / 5.63 s | 856 s |
+| A5_thermal_reveal | 543 / 18.10 s | 2066 s (restart overlap included) |
+| A6_spin_bus | 372 / 12.40 s | 697 s |
+| A7_recap | 200 / 6.67 s | 482 s |
+| A8_verdict_blade | 220 / 7.33 s | 752 s |
+Delivery files are re-encoded with `-crf 17 -maxrate 30M` (`finish.sh`); the raw renders are ~120 Mbps.
