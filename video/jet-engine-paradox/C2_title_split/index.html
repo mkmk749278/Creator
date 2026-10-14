@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C2 moon vs empty engine bay</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #photo { right: 960px; }
+      #q { position: absolute; left: 0; right: 0; bottom: 200px; text-align: center; }
+      #q .band { display: inline-block; padding: 16px 30px 14px; background: rgba(11,14,20,0.74); font: 800 50px/1.1 var(--font);
+        letter-spacing: 0.035em; color: var(--white); white-space: nowrap; }
+      #q .ch { display: inline-block; white-space: pre; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="c2-title-split" data-start="0" data-width="1920" data-height="1080" data-duration="6.33">
+      <div class="photo" id="photo" data-layout-allow-overflow><div class="photo-inner" id="photoInner"></div></div>
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+      <div id="q"><span class="band" id="band"></span></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration;
+      const inner = document.getElementById("photoInner");
+      if (SC.photo) { const im = document.createElement("img"); im.src = SC.photo; im.style.objectPosition = SC.photoPos; inner.appendChild(im); }
+      else { const ph = document.createElement("div"); ph.className = "slot-ph"; ph.setAttribute("data-layout-allow-occlusion", ""); ph.textContent = "PHOTO SLOT"; inner.appendChild(ph); }
+      const band = document.getElementById("band");
+      for (const c of SC.line) { const s = document.createElement("span"); s.className = "ch"; s.textContent = c; band.appendChild(s); }
+
+      const S = BP.Stage(document.getElementById("bp"), { seed: 23 });
+      const F = BP.fighter();
+      const g = (n) => BP.group(F.strokes, n);
+      const parts = [
+        ["fuse_long", 0.15, 1.6, 0.5], ["fuse_rings", 0.3, 1.8, 0.35], ["canopy", 0.7, 1.7, 0.5], ["wing", 0.5, 1.8, 0.6],
+        ["wing_detail", 1.1, 2.4, 0.3], ["fin", 0.9, 2.0, 0.5], ["intake", 1.2, 2.2, 0.5], ["probe", 0.2, 0.6, 1], ["bay", 1.7, 2.6, 0.35],
+      ].map(([n, a, b, ov]) => ({ s: g(n), a, b, ov, n }));
+      const bay = F.bay;
+      const cam = (t) => BP.camera({
+        target: BP.keys([[0, [8.0, 0.3, 0]], [D, [9.0, 0.3, 0]]], t),
+        yaw: BP.keys([[0, 128], [D, 112]], t), pitch: BP.keys([[0, 34], [D, 27]], t),
+        dist: BP.keys([[0, 38], [D, 31]], t), fov: 22, roll: BP.keys([[0, 2], [D, -2]], t), cx: 1385, cy: 475,
+      });
+      const right = (x) => x.rect(960, 0, 960, 1080);
+      function frame(t) {
+        const c = cam(t);
+        S.begin({ t, paper: 1, shift: [-t * 22, t * 5], clip: right, light: [1400 + t * 30, 380] });
+        const L = S.L, heads = [];
+        const anchors = [[0, 0, 0], [(bay.x0 + bay.x1) / 2, bay.yc, 0], [12.1, 3.15, 0]].map((p) => c.proj(p));
+        BP.construct(L, anchors, t, { alpha: 0.09, prog: (i) => BP.eout(0.2 + i * 0.2, 1.2 + i * 0.2, t) });
+        for (const P of parts) {
+          const p = BP.eio(P.a, P.b, t), isBay = P.n === "bay";
+          BP.draw(L, c, P.s, { prog: (i) => BP.seq(p, i, P.s.length, P.ov), heads, fog: [22, 44, 0.45], col: isBay ? BP.C.hot : BP.C.amber, w: isBay ? 1.4 : 1.25 });
+        }
+        const ga = BP.ss(2.2, 3.2, t) * (0.85 + 0.15 * Math.sin(t * 5.2));
+        for (let k = 0; k <= 6; k++) { const P = c.proj([bay.x0 + (bay.x1 - bay.x0) * (k / 6), bay.yc, 0]); if (P) BP.glow(L, P[0], P[1], 105, "rgba(249,115,22,0.55)", ga * 0.55); }
+        const A = c.proj([bay.x1, bay.yc, 0]); if (A) BP.glow(L, A[0], A[1], 80, "rgba(253,186,116,0.9)", ga * 0.7);
+        BP.pens(L, heads);
+        S.end();
+        // the seam: a hot vertical line with a soft glow, flickering slightly
+        const x = S.ctx, fl = 0.85 + 0.15 * BP.noise1(t * 9, 4);
+        x.save(); x.globalCompositeOperation = "lighter";
+        const gr = x.createLinearGradient(930, 0, 990, 0);
+        gr.addColorStop(0, "rgba(249,115,22,0)"); gr.addColorStop(0.5, `rgba(249,115,22,${0.35 * fl})`); gr.addColorStop(1, "rgba(249,115,22,0)");
+        x.fillStyle = gr; x.fillRect(930, 0, 60, 1080);
+        x.fillStyle = `rgba(255,236,214,${0.85 * fl})`; x.fillRect(959, 0, 2, 1080);
+        x.restore();
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#photoInner", { scale: 1.0, x: 0 }, { scale: 1.1, x: 24, duration: D, ease: "none" }, 0);
+      // the question burns in across the seam, letter by letter: hot amber glow cooling to white
+      const chars = band.querySelectorAll(".ch");
+      tl.fromTo("#band", { opacity: 0 }, { opacity: 1, duration: 0.25 }, SC.burnAt - 0.1);
+      tl.fromTo(chars, { opacity: 0, color: "#FDBA74", textShadow: "0 0 18px rgba(249,115,22,1), 0 0 4px rgba(255,220,180,1)" },
+        { opacity: 1, duration: 0.12, stagger: 0.022, ease: "none" }, SC.burnAt);
+      tl.to(chars, { color: "#F8FAFC", textShadow: "0 0 0px rgba(249,115,22,0), 0 0 0px rgba(255,220,180,0)", duration: 0.5, stagger: 0.022, ease: "power2.out" }, SC.burnAt + 0.18);
+      tl.fromTo("#q", { y: 8 }, { y: 0, duration: D - SC.burnAt, ease: "power1.out" }, SC.burnAt);
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c2-title-split"] = tl;
+    </script>
+  </body>
+</html>
