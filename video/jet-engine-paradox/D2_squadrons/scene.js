@@ -17,13 +17,13 @@ function renderAt(t) {
     const filled = s.i < S.actual;
     const f0 = T.fill0 + (s.i / S.actual) * (T.fill1 - T.fill0 - 0.25), fk = filled ? seg(t, f0, f0 + 0.25, E.out) : 0;
     if (filled) {
-      strokeK(g, p, SZ * JET_LEN, dk, { w: 2, color: HEX.line, alpha: 1 - fk });
+      fillP(g, p, "#2e3644", 0.7 * dk * (1 - fk)); strokeK(g, p, SZ * JET_LEN, dk, { w: 2.6, color: HEX.white, alpha: 0.9 * (1 - fk) });
       fillP(g, p, HEX.amber, 0.85 * fk); fillP(k, p, HEX.amber, 0.28 * fk);
       strokeK(k, p, SZ * JET_LEN, fk, { w: 2.2, color: HEX.hot, alpha: 0.9 });
     } else {
       // empty slots: after the fill, they turn red and pulse
       const r = seg(t, T.fill1 - 0.1, T.fill1 + 0.3, E.out), pulse = 0.55 + 0.45 * Math.cos((t - T.fill1) * 2 * Math.PI * 1.4);
-      strokeK(g, p, SZ * JET_LEN, dk, { w: 2, color: HEX.line, alpha: 1 - r });
+      fillP(g, p, "#2e3644", 0.7 * dk); strokeK(g, p, SZ * JET_LEN, dk, { w: 2.6, color: HEX.white, alpha: 0.9 * (1 - r) });
       strokeK(g, p, SZ * JET_LEN, dk, { w: 2.6, color: HEX.red, alpha: r });
       strokeK(k, p, SZ * JET_LEN, dk, { w: 3, color: HEX.red, alpha: r * 0.6 * pulse });
     }
