@@ -36,4 +36,4 @@ Short credited excerpts, credit burned top-left in the cut.
 | KmbdhhXTq7Y | DRDO INDIA | Same flight, DRDO logo | spare |
 | _io4f2I5-sY | ISRO | Mars orbit insertion simulation (400×308, labelled ILLUSTRATION) | J003 |
 | HcskFT8ngSQ | GE Aerospace | Interview film, engines only as small insets | not used |
-Missing: ISRO landing telecast DLA_64yz8Ss (33:00–46:00) for J001/J002 — ask the owner to re-run that one line.
+| DLA_64yz8Ss (33:00–46:00) | ISRO Official | Landing telecast: mission control, live descent simulation (labelled), touchdown celebration | J001, J002, C2 |

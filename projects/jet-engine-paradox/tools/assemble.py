@@ -47,11 +47,12 @@ F404B = CM / "General_Electric_F404_01_f404-turbojet-engine-on-uss-abraham-linc.
 IL76 = CM / "Il-76_with_a_Kaveri_engine.jpg"
 AMCA = CM / "AMCA_model_Aero_India_07_amca-model-displayed-during-aero-india-2.jpg"
 SHOTS = [
-    S(0.15, "pending", desc="ISRO · Chandrayaan-3 landing telecast: lander camera, control room", fetch=1),
-    S(L("J002"), "pending", desc="ISRO · lander image of the lunar surface", fetch=1),
+    S(0.15, "clip", src=YT / "DLA_64yz8Ss.mp4", ss=28, credit="ISRO · MISSION CONTROL · 23 AUG 2023"),
+    S(3.2, "clip", src=YT / "DLA_64yz8Ss.mp4", ss=486, crop=(0.0, 0.08, 1.0, 1.0), credit="ISRO · LIVE DESCENT SIMULATION", illus=True),
+    S(L("J002"), "clip", src=YT / "DLA_64yz8Ss.mp4", ss=763, credit="ISRO · TOUCHDOWN · 23 AUG 2023"),
     S(L("J003"), "pending", desc="INS Arihant at sea (Commons)"),
     S(L("J003") + 2.6, "clip", src=YT / "_io4f2I5-sY.mp4", ss=19, credit="ISRO · MOM SIMULATION", illus=True),
-    S(L("J005"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=130, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · HAL NASHIK 2025"),
+    S(L("J005"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=135.5, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · HAL NASHIK 2025"),
     S(L("J006"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=43, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · TEJAS MK1A"),
     S(L("J010"), "clip", src=YT / "zCYBJtBaUXw.mp4", ss=9, credit="INDIAN AIR FORCE"),
     S(L("J012"), "clip", src=YT / "52f1mQqaii8.mp4", ss=21, credit="INDIAN AIR FORCE · MIG-21 FINAL FLIGHT"),

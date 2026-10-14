@@ -1,7 +1,7 @@
 // C7_blueprint_tear parameters. photo: path of the credited headline image (first ~4 s); "" renders the PHOTO SLOT plate.
 window.SCENE = {
   duration: 9.93,
-  photo: "",                 // e.g. "assets/headline_2008.jpg"
+  photo: "assets/headline_2008.jpg",  // SPS Aviation: "delinked from the LCA programme in September 2008" (highlighted)
   photoPos: "50% 50%",
   label: "SEP 2008 · KAVERI DELINKED FROM TEJAS",
   usLead: "US ENGINE",

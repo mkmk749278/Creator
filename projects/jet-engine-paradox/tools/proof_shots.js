@@ -5,6 +5,7 @@
 const { chromium } = require(process.argv[2] + '/node_modules/playwright-core');
 const OUT = process.argv[3];
 const SHOTS = [
+  { id: 'sps_delinked', url: 'https://www.sps-aviation.com/story/?id=585', find: 'delinked from the LCA programme in September 2008' },
   { id: 'pib_2012', url: 'https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=90291', find: 'Rs.382.81 Crore', also: ['December 1996'] },
   { id: 'pib_2012_cost', url: 'https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=90291', find: 'Rs.2839 Crore', also: ['Rs.1996 Crore'] },
   { id: 'pib_2012_ftb', url: 'https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=90291', find: 'Twenty Seven flights for 57 hours duration' },
