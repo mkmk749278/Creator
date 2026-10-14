@@ -17,7 +17,7 @@ html, body { margin: 0; background: #0B0E14; }
 .jd-num { font-variant-numeric: tabular-nums; }
 .jd-big .n { display: block; }
 .jd-chip { position: absolute; white-space: nowrap; padding: 12px 20px 11px; background: rgba(11,14,20,0.78); border: 2px solid var(--amber);
-  font: 800 30px/1.1 var(--font); letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); visibility: hidden; }
+  font: 800 30px/1.1 var(--font); letter-spacing: 0.06em; color: var(--white); visibility: hidden; }  /* texts come uppercase from params; "kN" keeps its case */
 .jd-chip i { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--amber); margin-right: 14px; vertical-align: 2px; }
 .jd-stamp { position: absolute; white-space: nowrap; padding: 14px 28px 12px; border: 5px solid var(--amber); color: var(--amber-hot);
   font: 800 64px/1 var(--font); letter-spacing: 0.08em; text-transform: uppercase; background: rgba(11,14,20,0.55); visibility: hidden; }

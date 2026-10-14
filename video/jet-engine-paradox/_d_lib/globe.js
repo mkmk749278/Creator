@@ -90,6 +90,12 @@ const ARC_FRAG = `uniform float uProg; uniform float uTail; uniform vec3 uColor;
     float dash = mix(1.0, step(0.45, fract(s * 46.0 - uDashOff)), uDash);
     gl_FragColor = vec4(clamp(uColor * uInt * (body * dash + 3.0 * head), 0.0, 30.0), 1.0); }`;
 
+/** additive glowing line material for any geometry whose uv.x runs 0..1 along it (orbits, routes) */
+export function lineMaterial(color, k = 3.2) {
+  const u = { uProg: { value: 0 }, uTail: { value: 0 }, uColor: { value: col(color) }, uInt: { value: k }, uDash: { value: 0 }, uDashOff: { value: 0 } };
+  return { u, mat: new THREE.ShaderMaterial({ vertexShader: ARC_VERT, fragmentShader: ARC_FRAG, uniforms: u, ...ADD }) };
+}
+
 export class Arc {
   constructor(globe, a, b, { lift = 0.16, color = PAL.amber, width = 0.0042, glow = 3.2 } = {}) {
     this.g = globe; const A = dir(...a), B = dir(...b), ang = A.angleTo(B), N = 180; this.N = N;
