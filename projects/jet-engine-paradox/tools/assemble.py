@@ -108,10 +108,13 @@ SHOTS = [
 ]
 
 
+SCENE_CREDITS = {"D15_china": "J-20 · N509FZ · CC BY-SA 4.0"}   # real photos placed inside animated scenes
+
+
 def scene_shots():
     out = []
     for sid, s in SCENES.items():
-        out.append(dict(t=s["start"], kind="scene", id=sid, frm=s["start"], illus=True))
+        out.append(dict(t=s["start"], kind="scene", id=sid, frm=s["start"], illus=True, **({"credit": SCENE_CREDITS[sid]} if sid in SCENE_CREDITS else {})))
     return out
 
 
@@ -147,7 +150,7 @@ def kb(W, H, dur, z0, z1, fx, fy, ar):
 
 
 def render(s, dur, out, W, H):
-    enc = ["-frames:v", str(round(dur * 30)), "-an", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 8),
+    enc = ["-frames:v", str(round(dur * 30)), "-an", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 8, cap=50),
            "-pix_fmt", "yuv420p", "-r", "30"]
     k = s["kind"]
     if k == "scene" and not scene_file(s["id"]).exists():
@@ -155,7 +158,7 @@ def render(s, dur, out, W, H):
     if k == "scene":
         f = scene_file(s["id"])
         off = s.get("off", 0.0) if s.get("frm") is None else max(0.0, s["t"] - s["frm"])
-        vf = f"scale={W}:{H},fps=30,tpad=stop_mode=clone:stop_duration=30"
+        vf = f"scale={W}:{H}:flags=lanczos,fps=30,tpad=stop_mode=clone:stop_duration=30"
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{off:.3f}", "-i", str(f), "-vf", vf, "-t", f"{dur:.3f}"] + enc + [str(out)])
     elif k == "dissolve":   # push into scene a's last frame, then cross-dissolve into scene b's first frame (held) so b starts cleanly next
         fa, fb = scene_file(s["a"]), scene_file(s["b"])
@@ -167,7 +170,7 @@ def render(s, dur, out, W, H):
         fx, fy = s.get("focus", (0.5, 0.5))
         z0, z1 = s.get("zoom", (1.0, 1.5))
         fc = (f"[0:v]{kb(W, H, dur, z0, z1, fx, fy, W / H)},trim=duration={dur:.3f},setpts=PTS-STARTPTS[a];"
-              f"[1:v]scale={W}:{H},fps=30,trim=end_frame=1,tpad=stop_mode=clone:stop_duration={dur:.3f},setpts=PTS-STARTPTS[b];"
+              f"[1:v]scale={W}:{H}:flags=lanczos,fps=30,trim=end_frame=1,tpad=stop_mode=clone:stop_duration={dur:.3f},setpts=PTS-STARTPTS[b];"
               f"[a][b]xfade=transition=fade:duration={xd}:offset={dur - xd:.3f}")
         run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", str(last), "-i", str(fb),
              "-filter_complex", fc, "-t", f"{dur:.3f}"] + enc + [str(out)])
@@ -363,7 +366,7 @@ def main():
          f"[0:v][sg]overlay=(W-w)/2:(H-h)/2:enable='between(t,{t_sting:.2f},{t_sting + 2.7:.2f})'[v1];"
          f"[v1][2:v]overlay=W-w-{int(H*0.04)}:{int(H*0.04)}:enable='not(between(t,{t_sting:.2f},{t_sting + 2.7:.2f})+gte(t,{t_end:.2f}))'[v2];"
          f"[v2]{ov}[v];[1:a]{ln(gain)},aresample=48000[a]",
-         "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 8, cap=20),
+         "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "medium" if H >= 2160 else "veryfast", *rate(H, 8, cap=40 if H >= 2160 else 20),
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-t", f"{END:.2f}", str(out)])
     print("wrote", out)
 
