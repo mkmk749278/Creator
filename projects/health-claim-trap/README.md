@@ -9,11 +9,40 @@ IRDAI 60-month moratorium and the 1-hour and 3-hour cashless rules, the four-ste
 and grievance officer → Bima Bharosa → Insurance Ombudsman, with real CIO 2024-25 outcome data), and three rules to apply
 before buying or renewing.
 
-**Status (2026-10-14): phase 1.** Script v1.1 (fact-check fixes applied) is in simple Indian English VO (`lang.txt` = `en`): 80 lines, 2 blocks
-(4,490 and 4,500 characters), about 10:44 of speech, lint clean. Fact-check gate passes (45 claims). Telugu dub column empty for now. Draft `claims.csv` +
-independent fact-check (`fact-check.md`). Next: the owner approves the script changes, records `voice/block1.mp3` and
-`voice/block2.mp3` with ElevenLabs, then timing, sourcing and the EDL.
+**Status (2026-10-14): phase 1, script v2.** The owner sent "Master Handoff & Fixes" (`handoff/master-handoff-fixes.*`):
+their own rewrite of the VO in 4 chapter files, hyphen-spelled acronyms (I-R-D-A-I, T-P-A, c-i-o-i-n-s) so Akash does not
+say "Ir-dye", and audio cues `[sigh]`, `[pause]`, `[slight smile]`. v2 (`script.full.tsv`, ids E001–E064) keeps their
+text word for word except formatting (no `!`, quotes, long dashes) and 16 sentences corrected against `claims.csv`
+(list below; each is commented in `tools/make_tsv_v2.py`). 4 chapter blocks, 7,959 characters, about 9:23 of speech plus
+the two 3 s pauses and music beats; lint clean. v1.1 is kept in `v1/`. Next: the owner records
+`voice/bp-hlth01-ch1.mp3` … `ch4.mp3`, then timing, sourcing and the EDL.
 
+### v2: the owner's sentences changed, and why
+| Line | Owner's v2 text | Now | Source |
+|---|---|---|---|
+| E009 | a rule that makes **most** of these rejections illegal | makes **this exact** rejection illegal, once your policy has crossed five years | Moratorium covers non-disclosure after 60 months only (HC-08) |
+| E011 | get your money back **within sixty days** | get your money back | No source; Ombudsman closes 8 in 10 within three months (HC-27) |
+| E015 | a **private corporate agency** … let's be honest about corporate incentives | a company hired and paid by the insurance company | One TPA is owned by state insurers (HC-03b) |
+| E016 | TPA staff … default reaction … quick cashless denial letter | about seven out of every ten health claims are settled through T-P-As | No source for the old line; IRDAI annual report 2024-25: 69% (HC-35) |
+| E021 | But they use it anyway to deny your payout | in the first five years the company can still use it; after five years the rule changes | Non-disclosure is a lawful ground before 60 months (HC-08) |
+| E025 | a cut of about 37% **across your entire bill** | on those charges | Only room-linked charges are cut; medicines are exempt in every current wording (HC-09, HC-10) |
+| E033 | cannot question … non-disclosure **or pre-existing diseases** | non-disclosure, like an old disease you did not mention | The clause covers non-disclosure and misrepresentation (HC-08) |
+| E035 | proven **criminal** fraud … establish **in court** | proven fraud that the company has to establish | "except for established fraud"; no court in the rule (HC-36) |
+| E039 | officially uploads the **complete final bill** … within **exactly** three hours | sends the final discharge request … within three hours | Circular para 16: "receipt of discharge authorization request" (HC-15) |
+| E040 | any extra **room rent** | any extra amount | "the additional amount if any charged by the hospital" (HC-15) |
+| E048 | **Principal Nodal Officer, the P-N-O**; always quote the moratorium | Grievance Redressal Officer; quote it if your policy has crossed five years | PNO is a bank term; insurers name a Grievance Redressal Officer (HC-17) |
+| E050 | tracked directly by **government authorities** | tracked directly by the I-R-D-A-I | Bima Bharosa is IRDAI's portal (HC-18) |
+| E052 | do NOT go to a consumer court, do NOT hire a lawyer | you do NOT need a consumer court case or an expensive lawyer | Consumer court stays open to the policyholder (HC-30) |
+| E055 | the Ombudsman **resolved** over 32,000 | offices **received** over 32,000 | 32,503 received, 29,017 disposed (HC-25) |
+| E059 | **saving two thousand rupees** … can cost you sixty thousand | In our example, one bigger room cost almost sixty thousand rupees | No source for the premium saving; ₹59,625 is our worked example (HC-09) |
+| E060 | 5–15% … an add-on of **₹500–800 covers them completely** | **Reports say** 5–15% … some insurers sell an add-on; check its price and its limit | Estimates vary (HC-33b); no source for the price; riders have caps, e.g. ₹1,500 a year for up to ₹15,000 |
+
+Still in the owner's packaging, and wrong: title option 1 ("Why 80% … get rejected": IRDAI 2024-25 has about 8%
+repudiated, 87% settled), the description's "how TPAs profit from denial letters" and "within 60 days", and the
+thumbnail's "OVERTURN IT IN 60 DAYS". Option 2 or 3 is safe. BGM: the handoff repeats −18 to −22 dB; the charter's
+−24 to −26 dB is the stricter rule and stays unless the owner says otherwise.
+
+### v1 (for the record)
 ## What changed from the handoff (and why)
 The structure, voice and most lines are the owner's. These changes follow the sources (`claims.csv`):
 | Handoff | Script v1 | Why |
@@ -55,7 +84,7 @@ content = No (no realistic synthetic real events).
    CLAUDE.md still says Bunty is the channel voice. Using Akash for this film, as the handoff says, unless the owner
    says otherwise.
 2. **Studio presence:** the handoff wants Kishore on camera holding a discharge summary and the circular. Either the
-   owner films 3–4 short pieces to camera on the phone (H010–H011, H031, H076–H079), or the film stays faceless with
+   owner films 3–4 short pieces to camera on the phone (E010–E011, E028, E061–E064), or the film stays faceless with
    desk-and-document shots. AI images of the owner (the handoff's thumbnail prompt) are not allowed (§12); the thumbnail
    should use a real photo.
 3. **Headline split-screens** ("CASHLESS DENIED!", "INSURANCE SCAM!"): only real, credited headlines, never mock-ups that
@@ -64,12 +93,13 @@ content = No (no realistic synthetic real events).
 ## Files
 | File | What |
 |---|---|
-| `handoff/` | The owner's master handoff (PDF + text), verbatim |
+| `handoff/` | The owner's master handoff and the fixes version (PDF + text), verbatim |
+| `v1/` | Script v1.1 and its claims, before the owner's v2 |
 | `script.full.tsv` | **Single source**: id, section, te (dub, empty), en (VO), emotion (empty), visual, on-screen text, sound, pacing |
 | `script.md`, `bunty_blocks.md`, `bunty_blocks_clean.md`, `script.tsv` | Built views (do not edit) |
 | `tools/build_script.py` | Builds the views and lints the VO (copied from minimum-due) |
 | `tools/claim_math.py` | The room-rent maths and the CIO percentages, reproducible |
-| `tools/make_tsv.py`, `tools/draft_claims.py` | One-off generators of v1 and the draft claims (record only) |
+| `tools/make_tsv.py`, `tools/make_tsv_v2.py`, `tools/draft_claims.py` | One-off generators of v1, v2 and the draft claims (record only) |
 | `claims.csv`, `fact-check.md` | Fact-check gate (`/fact-check`, `scripts/claims_check.py`) |
 | `sources/` | Renders of the scanned CIO 2024-25 Statement H3 table used for the numbers |
 
