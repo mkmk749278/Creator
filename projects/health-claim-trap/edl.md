@@ -15,7 +15,7 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 | 8 | 44.98 | 1.49 | scene | e2_shock |  |  |
 | 9 | 46.47 | 3.70 | clip | pixabay_61298.mp4 | NIGHT · BANKS CLOSED | ILLUSTRATIVE FOOTAGE |
 | 10 | 50.17 | 1.57 | scene | e2_drain |  |  |
-| 11 | 51.74 | 1.52 | clip | pixabay_204420.mp4 | BORROW FROM RELATIVES | ILLUSTRATIVE FOOTAGE |
+| 11 | 51.74 | 1.52 | clip | pixabay_204421.mp4 | BORROW FROM RELATIVES | ILLUSTRATIVE FOOTAGE |
 | 12 | 53.26 | 4.98 | scene | e2_drain |  |  |
 | 13 | 58.24 | 2.80 | clip | coverr-old-man-looking-at-a-laptop-screen-5527.mp4 | WHY DID I PAY ALL THESE YEARS? | ILLUSTRATIVE FOOTAGE |
 | 14 | 61.04 | 3.57 | scene | e3_scale |  |  |
@@ -54,7 +54,7 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 | 47 | 332.26 | 2.15 | scene | e17_warroom |  |  |
 | 48 | 334.41 | 1.56 | clip | coverr-a-close-up-of-a-woman-praying-3047.mp4 | DO NOT PANIC | ILLUSTRATIVE FOOTAGE |
 | 49 | 335.97 | 4.97 | scene | e17_warroom |  |  |
-| 50 | 340.94 | 2.54 | clip | coverr-giving-cashier-a-credit-card-9719.mp4 | PAY IF YOU MUST | ILLUSTRATIVE FOOTAGE |
+| 50 | 340.94 | 2.54 | clip | coverr-transferring-card-details-5376.mp4 | PAY IF YOU MUST | ILLUSTRATIVE FOOTAGE |
 | 51 | 343.48 | 10.61 | scene | e17_warroom |  |  |
 | 52 | 354.09 | 3.20 | clip | pixabay_49809.mp4 | ASK YOUR DOCTOR FOR A LETTER | ILLUSTRATIVE FOOTAGE |
 | 53 | 357.29 | 10.67 | scene | e17_warroom |  |  |
