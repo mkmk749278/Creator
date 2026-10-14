@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C3 sanctions wireframe</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #lab { white-space: nowrap; }
+      #lab2 { display: inline-block; overflow: hidden; vertical-align: bottom; white-space: pre; }
+      .stamp { transform-origin: 50% 50%; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="c3-sanctions-wireframe" data-start="0" data-width="1920" data-height="1080" data-duration="7.83">
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+      <div class="lead white" id="leadE"></div>
+      <div class="lead white" id="leadB"></div>
+      <div class="stamp red" id="stE"></div>
+      <div class="stamp red" id="stB"></div>
+      <div class="jep-label" id="lab"><span id="lab1"></span><span id="lab2"></span></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration, $ = (id) => document.getElementById(id);
+      $("leadE").textContent = SC.engineLead; $("leadB").textContent = SC.boxLead;
+      $("stE").textContent = SC.stamp; $("stB").textContent = SC.stamp;
+      $("lab1").textContent = SC.label1; $("lab2").textContent = SC.label2;
+
+      const S = BP.Stage($("bp"), { seed: 31, paper: "#161A23" });
+      const F = BP.fighter(), E = BP.engineBlock(F.bay, { variant: 0 });
+      const g = (n) => BP.group(F.strokes, n);
+      const parts = [
+        ["fuse_long", 0.1, 1.3, 0.5], ["fuse_rings", 0.2, 1.5, 0.35], ["canopy", 0.5, 1.4, 0.5], ["wing", 0.3, 1.5, 0.6],
+        ["wing_detail", 0.8, 2.0, 0.3], ["fin", 0.6, 1.6, 0.5], ["intake", 0.9, 1.8, 0.5], ["probe", 0.1, 0.4, 1], ["bay", 1.0, 1.8, 0.35],
+      ].map(([n, a, b, ov]) => ({ s: g(n), a, b, ov }));
+      // flight-control computer box (generic, centre fuselage) and its wiring to the elevons and rudder
+      const bx = [5.0, 7.0], by = [-0.25, 0.45], bz = [-0.42, 0.42];
+      const boxPts = (() => { const [x0, x1] = bx, [y0, y1] = by, [z0, z1] = bz; const P = (x, y, z) => [x, y, z];
+        return [[P(x0, y1, z0), P(x1, y1, z0), P(x1, y1, z1), P(x0, y1, z1), P(x0, y1, z0)], [P(x0, y0, z0), P(x1, y0, z0), P(x1, y0, z1), P(x0, y0, z1), P(x0, y0, z0)],
+          [P(x0, y0, z0), P(x0, y1, z0)], [P(x1, y0, z0), P(x1, y1, z0)], [P(x1, y0, z1), P(x1, y1, z1)], [P(x0, y0, z1), P(x0, y1, z1)]]; })();
+      const BOX = boxPts.map((p) => BP.stroke(BP.subdiv(p, 3), { w: 1.6 }));
+      const wires = [[11.4, -0.06, 1.7], [11.1, -0.06, 3.3], [11.4, -0.06, -1.7], [11.1, -0.06, -3.3], [12.15, 2.2, 0]].map((q, i) =>
+        BP.stroke(BP.curve3([7.0, 0.1, (i % 2 ? 0.3 : -0.3) * (i < 2 ? 1 : -1)], [9.5, 0.2 + i * 0.05, q[2] * 0.4], q, 14), { w: 1.1, dash: [6, 6] }));
+      const boxC = [6.0, 0.1, 0], engC = [(F.bay.x0 + F.bay.x1) / 2, 0, 0];
+      const cam = (t) => BP.camera({
+        target: BP.keys([[0, [6.3, 0, 0.3]], [D, [6.9, 0, 0]]], t), yaw: BP.keys([[0, 26], [D, 6]], t), pitch: BP.keys([[0, 64], [D, 56]], t),
+        dist: BP.keys([[0, 33], [D, 27.5]], t), fov: 22, roll: BP.keys([[0, -14], [D, -8]], t), cx: 980, cy: 450,
+      });
+      const red = (a, b, t) => { const k = BP.ss(a, b, t); return `rgb(${Math.round(248 + (239 - 248) * k)},${Math.round(250 + (68 - 250) * k)},${Math.round(252 + (68 - 252) * k)})`; };
+      const placeLead = (el, P, off) => { if (!P) return null; const a = [P[0] + off[0], P[1] + off[1]]; BP.place(el, a[0], a[1] - 22); return [a[0], a[1]]; };
+      const placeStamp = (el, P, off) => { if (P) BP.place(el, P[0] + off[0], P[1] + off[1]); };
+      function frame(t) {
+        const c = cam(t);
+        S.begin({ t, paper: 1, shift: [-t * 20, t * 8], light: [820 + t * 30, 460] });
+        const L = S.L, heads = [];
+        BP.construct(L, [[0, 0, 0], engC, [12.1, 0, 4.1]].map((p) => c.proj(p)), t, { alpha: 0.08, prog: (i) => BP.eout(0.1 + i * 0.2, 1.1 + i * 0.2, t) });
+        for (const P of parts) { const p = BP.eio(P.a, P.b, t); BP.draw(L, c, P.s, { prog: (i) => BP.seq(p, i, P.s.length, P.ov), heads, fog: [22, 42, 0.5], w: 1.25 }); }
+        // engine block: white, turns red on "stopped", then fades and breaks away
+        const eDraw = BP.eio(1.0, 2.3, t), eOut = BP.ss(SC.tEngineStop + 0.45, SC.tEngineStop + 1.5, t);
+        if (eOut < 1) BP.draw(L, c, E.strokes, { prog: (i) => BP.seq(eDraw, i, E.strokes.length, 0.3), heads, col: red(SC.tEngineStop - 0.1, SC.tEngineStop + 0.2, t),
+          alpha: 0.95, w: 1.1, dissolve: eOut * 0.9, fog: [22, 42, 0.6] });
+        const eg = BP.ss(SC.tEngineStop - 0.1, SC.tEngineStop + 0.25, t) * (1 - eOut), Pe = c.proj(engC);
+        if (Pe) BP.glow(L, Pe[0], Pe[1], 190, "rgba(239,68,68,0.6)", eg * 0.6);
+        // flight-control box + wiring
+        const bDraw = BP.eio(4.3, 5.1, t), wDraw = BP.eio(4.7, 5.8, t), bOut = BP.ss(SC.tBoxStop + 0.35, SC.tBoxStop + 0.85, t);
+        const bcol = red(SC.tBoxStop - 0.1, SC.tBoxStop + 0.2, t);
+        if (bOut < 1) {
+          BP.draw(L, c, BOX, { prog: (i) => BP.seq(bDraw, i, BOX.length, 0.4), heads, col: bcol, alpha: 1 - bOut });
+          BP.draw(L, c, wires, { prog: (i) => BP.seq(wDraw, i, wires.length, 0.6), heads, col: bcol, alpha: 0.8 * (1 - bOut) });
+        }
+        const Pb = c.proj(boxC);
+        if (Pb) BP.glow(L, Pb[0], Pb[1], 150, "rgba(239,68,68,0.6)", BP.ss(SC.tBoxStop - 0.1, SC.tBoxStop + 0.2, t) * (1 - bOut) * 0.6);
+        // leader labels
+        const aE = placeLead($("leadE"), Pe, [130, -190]); if (eOut < 1) BP.leader(L, aE, Pe, BP.eio(1.6, 2.1, t), BP.C.white, 0.8 * (1 - BP.ss(SC.tEngineStop + 0.6, SC.tEngineStop + 1.0, t)));
+        const aB = placeLead($("leadB"), Pb, [-430, -170]); if (aB && bOut < 1) BP.leader(L, [aB[0] + 300, aB[1]], Pb, BP.eio(4.9, 5.4, t), BP.C.white, 0.8 * (1 - BP.ss(SC.tBoxStop + 0.4, SC.tBoxStop + 0.7, t)));
+        placeStamp($("stE"), Pe, [-60, 40]); placeStamp($("stB"), Pb, [-160, 60]);
+        BP.pens(L, heads);
+        S.end();
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#leadE", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 1.9);
+      tl.to("#leadE", { opacity: 0, duration: 0.4 }, SC.tEngineStop + 0.6);
+      tl.fromTo("#leadB", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 5.25);
+      tl.to("#leadB", { opacity: 0, duration: 0.3 }, SC.tBoxStop + 0.4);
+      for (const [id, at] of [["#stE", SC.tEngineStop], ["#stB", SC.tBoxStop]]) {
+        tl.fromTo(id, { opacity: 0, scale: 1.7, rotation: -14 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.16, ease: "power4.in" }, at);
+        tl.fromTo(id, { x: 0 }, { x: 6, duration: 0.08, yoyo: true, repeat: 1 }, at + 0.16);
+      }
+      tl.to("#stE", { opacity: 0.55, duration: 0.6 }, SC.tEngineStop + 1.6);
+      tl.fromTo("#lab", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, SC.tEngineStop + 0.05);
+      tl.fromTo("#lab2", { maxWidth: 0 }, { maxWidth: 820, duration: 0.6, ease: "power2.out" }, SC.tBoxStop + 0.05);
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c3-sanctions-wireframe"] = tl;
+    </script>
+  </body>
+</html>
