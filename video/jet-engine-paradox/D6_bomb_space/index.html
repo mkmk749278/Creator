@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>D6 Nine nuclear states, about ten launchers</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="params.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/jsm/", "postprocessing": "./vendor/pp/postprocessing.js" } }
+    </script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="jepd.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 400 800; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+20B9, U+0100-024F, U+2000-206F; }
+    </style>
+  </head>
+  <body>
+    <!-- land texture: vendor/library/geo/land_sdf_4k.png (Natural Earth land, no borders) -->
+    <div id="root" data-composition-id="d6-bomb-space" data-start="0" data-width="1920" data-height="1080" data-duration="5.71">
+      <canvas id="gl"></canvas>
+      <div id="ov"></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true }); tl.to({}, { duration: SCENE.duration });
+      window.__timelines[SCENE.id] = tl;
+    </script>
+    <script type="module" src="scene.js"></script>
+  </body>
+</html>
