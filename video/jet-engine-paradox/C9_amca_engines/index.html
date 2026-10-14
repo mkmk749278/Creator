@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C9 AMCA engines</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #l2b { display: block; overflow: hidden; }
+      #l2b span { display: block; font: 800 26px/1.3 var(--font); letter-spacing: 0.08em; color: var(--amber-hot); margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="c9-amca-engines" data-start="0" data-width="1920" data-height="1080" data-duration="12.24">
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+      <div class="lead white" id="lead"></div>
+      <div class="jep-label" id="lab1"></div>
+      <div class="jep-label keepcase" id="lab2"><span id="l2a"></span><span id="l2b"><span id="l2bt"></span></span></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration, $ = (id) => document.getElementById(id);
+      $("lab1").textContent = SC.label1; $("lead").textContent = SC.engineLead; $("l2a").textContent = SC.label2; $("l2bt").textContent = SC.label2b;
+      const S = BP.Stage($("bp"), { seed: 97 });
+      const A = BP.stealth();
+      const g = (n) => BP.group(A.strokes, n);
+      const parts = [
+        ["fuse_long", 0.1, 1.5, 0.5], ["fuse_rings", 0.2, 1.7, 0.35], ["canopy", 0.6, 1.6, 0.5], ["wing", 0.4, 1.7, 0.6],
+        ["wing_detail", 1.0, 2.3, 0.3], ["tail", 0.9, 1.9, 0.5], ["fin", 0.8, 1.9, 0.5], ["intake", 1.0, 2.0, 0.5], ["bays", 1.2, 2.2, 0.4],
+      ].map(([n, a, b, ov]) => ({ s: g(n), a, b, ov, n }));
+      const F414 = A.engines.map((e) => BP.engineBlock(e, { variant: 1 }).strokes).flat();
+      const NEW = A.engines.map((e) => BP.engineBlock(e, { variant: 2 }).strokes).flat();
+      const eC = A.engines.map((e) => [(e.x0 + e.x1) / 2, e.yc, e.zc]);
+      const cam = (t) => BP.camera({
+        target: BP.keys([[0, [9.2, 0, 0.2]], [SC.tDissolve, [10.2, 0, 0]], [9.0, [13.2, 0, 0]], [D, [13.6, 0, 0]]], t),
+        yaw: BP.keys([[0, 24], [SC.tDissolve, 16], [9.0, 30], [D, 36]], t), pitch: BP.keys([[0, 62], [SC.tDissolve, 58], [9.0, 46], [D, 42]], t),
+        dist: BP.keys([[0, 50], [SC.tDissolve, 45], [9.0, 25], [D, 22.5]], t), fov: 24, roll: BP.keys([[0, -16], [SC.tDissolve, -10], [D, -4]], t), cx: 960, cy: 440,
+      });
+      function frame(t) {
+        const c = cam(t);
+        S.begin({ t, paper: 1, shift: [-t * 20, t * 6], light: [900 + t * 20, 420] });
+        const L = S.L, heads = [];
+        BP.construct(L, [[0, 0, 0], eC[1], [16.95, 3.0, 2.3]].map((p) => c.proj(p)), t, { alpha: 0.08, prog: (i) => BP.eout(0.1 + i * 0.2, 1.1 + i * 0.2, t) });
+        for (const P of parts) {
+          const p = BP.eio(P.a, P.b, t);
+          BP.draw(L, c, P.s, { prog: (i) => BP.seq(p, i, P.s.length, P.ov), heads, fog: [c.dist - 6, c.dist + 14, 0.45], w: 1.2,
+            col: P.n === "bays" ? BP.C.hot : BP.C.amber, alpha: P.n === "bays" ? 0.6 : 1 });
+        }
+        // GE F414 pair: white, then dissolving into embers
+        const dz = BP.ss(SC.tDissolve, SC.tDissolve + 1.3, t);
+        if (dz < 1) BP.draw(L, c, F414, { prog: (i) => BP.seq(BP.eio(1.4, 2.7, t), i, F414.length, 0.3), heads, col: BP.C.white, w: 1.05, alpha: 0.95, dissolve: dz, fog: [c.dist - 6, c.dist + 14, 0.5] });
+        // the clean-sheet engine draws itself into both bays, then glows
+        const np = BP.eio(SC.tDissolve + 1.2, SC.tDissolve + 3.6, t);
+        BP.draw(L, c, NEW, { prog: (i) => BP.seq(np, i, NEW.length, 0.3), heads, col: BP.C.hot, w: 1.2, fog: [c.dist - 6, c.dist + 14, 0.55] });
+        const gl = BP.ss(SC.tLabel2 - 0.3, SC.tLabel2 + 0.8, t) * (0.85 + 0.15 * Math.sin(t * 4));
+        for (const q of eC) { const P = c.proj(q); if (P) BP.glow(L, P[0], P[1], 230, "rgba(249,115,22,0.5)", gl * 0.55); }
+        // leader to both F414s
+        const P0 = c.proj(eC[0]), P1 = c.proj(eC[1]);
+        if (P0 && P1 && dz < 1) {
+          const a = [Math.max(P0[0], P1[0]) + 140, Math.min(P0[1], P1[1]) - 200];
+          BP.place($("lead"), a[0], a[1] - 22);
+          const lp = BP.eio(SC.tLead - 0.1, SC.tLead + 0.4, t), la = 0.85 * (1 - BP.ss(SC.tDissolve - 0.1, SC.tDissolve + 0.3, t));
+          BP.leader(L, a, P0, lp, BP.C.white, la); BP.leader(L, a, P1, lp, BP.C.white, la);
+        }
+        BP.pens(L, heads);
+        S.end();
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#lab1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, SC.tLabel1);
+      tl.to("#lab1", { opacity: 0, x: -20, duration: 0.35 }, SC.tDissolve + 0.2);
+      tl.fromTo("#lead", { opacity: 0 }, { opacity: 1, duration: 0.3 }, SC.tLead + 0.2);
+      tl.to("#lead", { opacity: 0, duration: 0.3 }, SC.tDissolve);
+      tl.fromTo("#lab2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, SC.tLabel2);
+      tl.fromTo("#l2b", { maxHeight: 0, opacity: 0 }, { maxHeight: 60, opacity: 1, duration: 0.5, ease: "power2.out" }, SC.tLabel2b);
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c9-amca-engines"] = tl;
+    </script>
+  </body>
+</html>
