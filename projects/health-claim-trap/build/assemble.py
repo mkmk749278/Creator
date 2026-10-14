@@ -58,7 +58,7 @@ SHOTS = [
     S(at("E001", "thousands"), "clip", src=B(19627), ss=2.0, label="29.5 LAKH CLAIMS REJECTED IN A YEAR", tag="IRDAI ANNUAL REPORT | 2024-25"),
     SCN("s00_receipts"),
     S(at("E003"), "clip", src=C("iv-in-hospital-room-5485"), ss=1.0, label="AN EMERGENCY", tag=ILL),
-    S(at("E003", "admitted"), "clip", src=B(229071), ss=2.0, label="ADMITTED", tag=ILL),
+    S(at("E003", "admitted", k=1), "clip", src=B(229071), ss=2.0, label="ADMITTED", tag=ILL),
     S(at("E004"), "clip", src=B(26732), ss=2.0, label="9:00 PM · BILLING COUNTER", tag=ILL),
     S(at("E004", k=1), "clip", src=C("a-printer-at-work-in-the-office-5252"), ss=1.0, label="DISCHARGE PAPERS READY", tag=ILL),
     S(at("E004", k=2), "still", src=SM / "bill.png", zoom=(1.0, 1.9), label="BILL: ₹4,50,000", tag="SIMULATION"),
@@ -71,9 +71,9 @@ SHOTS = [
     SCN("s01b_overstamp"),
     S(L("E010")[0] - 0.25, "sting"),
     S(at("E011"), "clip", src=B(134434), ss=4.0, label="NO SHOUTING · NO SELLING"),
-    S(at("E011", "real"), "proof", src=PR / "mc_cover.png", label="THE REAL IRDAI RULES", tag="IRDAI MASTER CIRCULAR | 29 MAY 2024"),
-    S(at("E011", "who really"), "clip", src=B(142528), ss=1.0, label="WHO REALLY SAYS NO", tag=ILL),
-    S(at("E011", "step-by-step"), "still", src=SM / "claim_form.png", zoom=(1.0, 1.3), label="HOW TO GET YOUR MONEY BACK", tag="SIMULATION"),
+    S(at("E011", "real", k=1), "proof", src=PR / "mc_cover.png", label="THE REAL IRDAI RULES", tag="IRDAI MASTER CIRCULAR | 29 MAY 2024"),
+    S(at("E011", "who really", k=1), "clip", src=B(142528), ss=1.0, label="WHO REALLY SAYS NO", tag=ILL),
+    S(at("E011", "step-by-step", k=1), "still", src=SM / "claim_form.png", zoom=(1.0, 1.3), label="HOW TO GET YOUR MONEY BACK", tag="SIMULATION"),
     S(at("E012"), "clip", src=B(34258), ss=2.0, label="CHAPTER 2 · WHO SAYS NO"),
     # ---- 2 Who really says no ----
     S(at("E013"), "clip", src=B(40353), ss=2.0, label="WHO SAYS NO AT THE DESK?", tag=ILL),
@@ -101,7 +101,7 @@ SHOTS = [
     S(at("E027"), "still", src=SM / "letter_note.png", zoom=(1.2, 2.1), label="CASHLESS NO ≠ CLAIM NO", tag="AROGYA SANJEEVANI POLICY WORDING"),
     # ---- 3 The five year rule and the clock ----
     S(at("E028"), "proof", src=PR / "mc_ref.png", label="CHAPTER 3 · THE FIVE YEAR RULE", tag="IRDAI MASTER CIRCULAR | 29 MAY 2024"),
-    S(at("E029"), "clip", src=B(87146), ss=6.0, label="THE MORATORIUM PERIOD"),
+    S(at("E029"), "clip", src=C("hands-turning-pages-in-a-notebook-8881"), ss=8.0, label="THE MORATORIUM PERIOD"),
     SCN("s03_ring"),
     S(at("E032"), "proof", src=PR / "mc_para13.png", label="WHAT IT MEANS FOR YOU", tag="IRDAI MASTER CIRCULAR | PARA 13"),
     S(at("E034"), "clip", src=B(199442), ss=6.0, label="OLD HISTORY ≠ EXCUSE AFTER 5 YEARS", tag=ILL),
@@ -109,7 +109,7 @@ SHOTS = [
     S(at("E035", k=2), "clip", src=B(144015), ss=1.0, label="NOT A FORGOTTEN FEVER", tag=ILL),
     S(at("E036"), "clip", src=C("hands-turning-pages-in-a-notebook-8881"), ss=1.0, label="LIMITS, EXCLUSIONS STILL APPLY"),
     S(at("E036", "port"), "proof", src=PR / "mc_port.png", label="PORT: YOUR YEARS MOVE WITH YOU", tag="IRDAI MASTER CIRCULAR | PARA 13 NOTE"),
-    S(at("E036", "cancel"), "clip", src=B(349087), ss=6.0, label="CANCEL = COUNT RESETS TO ZERO"),
+    S(at("E036", "cancel", k=1), "clip", src=B(349087), ss=6.0, label="CANCEL = COUNT RESETS TO ZERO"),
     SCN("s03b_family"),
     SCN("s04_clock"),
     S(at("E040"), "proof", src=PR / "mc_wait.png", label="NO WAITING FOR DISCHARGE", tag="IRDAI MASTER CIRCULAR | PARA 16"),
@@ -142,7 +142,7 @@ SHOTS = [
     S(at("E059"), "clip", src=B(5457), ss=4.0, label="2 · NO ROOM RENT CAPPING"),
     S(BOARD_AT["b03_callback"], "board", id="b03_callback"),
     S(at("E060"), "clip", src=C("putting-medical-gloves-on-5311"), ss=1.0, label="3 · CONSUMABLES COVER"),
-    S(at("E060", k=1), "clip", src=B(65551), ss=2.0, label="5–15% OF A BILL · AS REPORTED", tag="OUTLOOK MONEY | BUSINESS STANDARD"),
+    S(at("E060", k=1, frac=0.35), "clip", src=B(65551), ss=2.0, label="5–15% OF A BILL · AS REPORTED", tag="OUTLOOK MONEY | BUSINESS STANDARD"),
     S(at("E060", k=2), "clip", src=B(143379), ss=2.0, label="CHECK THE PRICE AND THE LIMIT"),
     S(at("E061"), "clip", src=B(200431), ss=3.0, label="PEACE OF MIND"),
     S(at("E061", k=1), "scene", id="s03_ring", frm=scene_meta("s03_ring")[1] - 2.0, label="KNOW THE 5-YEAR RULE"),
@@ -209,7 +209,10 @@ def render(shot, dur, out, W, H):
     k = shot["kind"]; ov = overlays(W, H, shot.get("label", ""), shot.get("tag", ""), shot.get("step"))
     enc = ["-frames:v", str(round(dur * 30)), "-an", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 5), "-pix_fmt", "yuv420p", "-r", "30"]
     if k == "clip":
-        vf = [f"scale={int(W*1.08)}:{int(H*1.08)}:force_original_aspect_ratio=increase", f"crop={int(W*1.08)}:{int(H*1.08)}",
+        pz = 1.3 if shot.get("punch") else 1.08
+        px, py = shot.get("punch", (0.5, 0.5))
+        vf = [f"scale={int(W*pz)}:{int(H*pz)}:force_original_aspect_ratio=increase",
+              f"crop={int(W*1.08)}:{int(H*1.08)}:'(iw-ow)*{px}':'(ih-oh)*{py}'",
               f"scale=w='{int(W*1.08)}-{int(W*0.08)}*t/{dur:.2f}':h=-2:eval=frame", f"crop={W}:{H}", "fps=30",
               "eq=saturation=0.85:contrast=1.04", "vignette=PI/5"] + ov
         run(["ffmpeg", "-v", "error", "-y", "-ss", shot.get("ss", 0), "-stream_loop", "-1", "-i", shot["src"], "-vf", ",".join(vf),
@@ -258,19 +261,28 @@ def proof_parts(s, dur):
 
 
 def split_long(shots, end):
-    """No still holds past ~4.5 s: proofs get establish -> push -> pan; other stills get two framings."""
+    """Cadence (charter: a change every 2.5-4 s, nothing static over ~4.5 s): proofs get establish -> push -> pan;
+    any still or clip longer than ~5 s is cut into ~3.5 s framings (a camera punch to a different crop counts as a cut)."""
     out = []
     for i, s in enumerate(shots):
         nxt = shots[i + 1]["t"] if i + 1 < len(shots) else end
-        dur = nxt - s["t"]
-        if s["kind"] == "proof":
-            out += proof_parts(s, dur); continue
-        if s["kind"] == "still" and dur > 5.0:
-            z0, z1 = s.get("zoom", (1.0, 1.2))
-            mid = round(s["t"] + dur / 2, 2)
-            out += [dict(s, zoom=(z0, (z0 + z1) / 2)), dict(s, t=mid, zoom=((z0 + z1) / 2 * 1.05, z1 * 1.08))]
-            continue
-        out.append(s)
+        parts = proof_parts(s, nxt - s["t"]) if s["kind"] == "proof" else [s]
+        for j, p in enumerate(parts):
+            pend = parts[j + 1]["t"] if j + 1 < len(parts) else nxt
+            dur = pend - p["t"]
+            if p["kind"] not in ("still", "clip") or dur <= 5.0:
+                out.append(p); continue
+            n = max(2, round(dur / 3.6))
+            for m in range(n):
+                q = dict(p, t=round(p["t"] + dur * m / n, 2))
+                if p["kind"] == "clip":
+                    q["ss"] = p.get("ss", 0) + m * (dur / n + 1.2)
+                    if m % 2: q["punch"] = (0.35 + 0.3 * (m % 3 == 1), 0.42)
+                else:
+                    z0, z1 = p.get("zoom") or (1.0, 1.1)
+                    a, b = z0 + (z1 - z0) * m / n, z0 + (z1 - z0) * (m + 1) / n
+                    q["zoom"] = (a * (1.04 if m % 2 else 1.0), b * (1.04 if m % 2 else 1.0))
+                out.append(q)
     return out
 
 
