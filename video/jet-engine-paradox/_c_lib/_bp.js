@@ -294,7 +294,7 @@
     const RD = BP.rng(seed * 17 + 3);
     for (let i = 0; i < 70; i++) dust.push({ x: RD() * W, y: RD() * H, r: RD() < 0.85 ? 0.8 + RD() * 1.8 : 6 + RD() * 18, a: 0.05 + RD() * 0.22, vx: (RD() - 0.5) * 14, vy: -4 - RD() * 10, ph: RD() * 6.28 });
 
-    const S = { ctx, L, W, H, canvas };
+    const S = { ctx, L, W, H, canvas, paperCanvas: paperC };
     // begin a frame. o: t, paper (alpha), shift [x,y] camera drift in px (parallax source), zoom, grid alpha, light [x,y]
     S.begin = (f) => {
       S.f = f;
