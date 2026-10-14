@@ -10,6 +10,10 @@ const cP = el(st.overlay, "jd-chip", S.promised.label), cF = el(st.overlay, "jd-
 cF.style.borderColor = "var(--red)";
 function renderAt(t) {
   pn.begin(); const g = pn.g, k = pn.k;
+  // owner review 2026-10-14: fill the empty upper frame; a large faint year follows the delivery cursor (no new data)
+  const cur = t < T.slide0 ? S.promised.at : S.promised.at + (S.first.at - S.promised.at) * seg(t, T.slide0, T.slide1, E.inOut);
+  const wy = Math.floor(cur + 1e-6), wa = seg(t, T.promised - 0.2, T.promised + 0.6, E.out);
+  text(g, String(wy), 960 + 40 * Math.sin(t * 0.35), 440, { size: 300, weight: 800, color: HEX.white, align: "center", alpha: 0.4 * wa, track: 0.02 });
   const rk = seg(t, T.rail, T.rail + 1.0, E.out), x0 = X(S.years[0]) - 60, x1 = X(S.years[1]) + 60;
   line(g, x0, Y, x0 + (x1 - x0) * rk, Y, { w: 5, color: HEX.white, alpha: 0.75 });
   scale(g, (v) => [X(v), Y + 24, 0, 1], S.years[0], S.years[1], 1 / 12, 1, { len: 14, lenMaj: 40, k: rk, label: (v) => String(Math.round(v)), size: 44 });

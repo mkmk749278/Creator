@@ -10,14 +10,18 @@ Vetted on contact sheets (`assets/qa_broll/`, `assets/commons/`). Files live in 
 | pixabay_16160 | Dark stormy sea under heavy cloud, dusk | J048 "humid sea air" | keep (lift mid-tones) |
 | pixabay_7686 | Desert dunes; later a man and a dust devil | J048 "desert dust": first 40 % only (no person) | keep, trimmed |
 | pixabay_135849 | Welder in a dark workshop, sparks | J069 "made" | keep |
-| pixabay_18533, 34717 | Industrial laser cutting metal sheet | J069 "drilled" | keep |
+| pixabay_277105 | Indian foundry: gloved hands assembling wax patterns for investment (lost-wax) casting | J069 "cast" | keep, ILLUSTRATIVE FOOTAGE (generic casting, not turbine blades) |
+| pixabay_18533 | Industrial laser head cutting metal, sparks | J069 "drilled" | keep, ILLUSTRATIVE FOOTAGE |
+| pixabay_34717 | Industrial laser cutting metal sheet | — | replaced by 18533 (2026-10-14) |
 | pixabay_80355 | Hands checking a machined part on a gauge, Indian factory | J069 "tested" | keep |
 | pixabay_244334 | A fighter (F-16 type) in clouds, aerial | fallback only for J049 if no IAF clip | fallback, ILLUSTRATIVE FOOTAGE |
 | pixabay_52536 | Airliner (civil) fan close-up | — | drop: civil engine, wrong for a fighter beat |
+| pixabay_277104, 27916 | Wax melting pot; wood fire | — | drop: not metal casting |
 | pixabay_14096 | Green-screen F-16 render | — | drop: CGI, foreign jet |
 
 ## Commons (licence per file in `assets/commons/manifest*.json*`)
 GE F404 photos ×6 (US Navy PD; FA-50PH CC BY-SA 4.0), J-20 ×4, AMCA model at Aero India, Il-76 with a Kaveri engine.
+Licences checked 2026-10-14: AMCA model displayed during Aero India 2021 (FlyingDaggers45SQUADRON, CC BY-SA 4.0); Il-76 with a Kaveri engine (Ministry of Defence, GODL-India); F404 photos used (01, 05) US Navy / public domain.
 `assets/commons2/`: GTX-35VS Kaveri on display (Jagan Pillariseti, CC BY 3.0, credited on screen) → J030, J035.
 `assets/commons2/`: INS Arihant at sea (PMO, GODL-India; soft 1295 px frame, 2.6 s under grain) → J003.
 `video/jet-engine-paradox/D15_china/assets/j20.jpg`: J-20 at CCAS 2022 (N509FZ, CC BY-SA 4.0, Wikimedia Commons; credited on screen) → D15.
