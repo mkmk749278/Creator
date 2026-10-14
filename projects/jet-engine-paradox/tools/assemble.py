@@ -51,7 +51,7 @@ SHOTS = [
     S(L("J002"), "pending", desc="ISRO · lander image of the lunar surface", fetch=1),
     S(L("J003"), "pending", desc="INS Arihant at sea (Commons)"),
     S(L("J003") + 2.6, "clip", src=YT / "_io4f2I5-sY.mp4", ss=19, credit="ISRO · MOM SIMULATION", illus=True),
-    S(L("J005"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=130, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · HAL NASHIK 2025"),
+    S(L("J005"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=135.5, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · HAL NASHIK 2025"),
     S(L("J006"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=43, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · TEJAS MK1A"),
     S(L("J010"), "clip", src=YT / "zCYBJtBaUXw.mp4", ss=9, credit="INDIAN AIR FORCE"),
     S(L("J012"), "clip", src=YT / "52f1mQqaii8.mp4", ss=21, credit="INDIAN AIR FORCE · MIG-21 FINAL FLIGHT"),
