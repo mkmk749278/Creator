@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>The cashless denial letter</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="s01_letter" data-start="0" data-width="1920" data-height="1080" data-duration="15.48">
+      <div class="fin-bg" style="background-image: url('img/bg.jpg')"></div>
+      <div class="hc-grade"></div>
+      <div id="stage">
+<div style="position:absolute; left:-40px; right:-40px; top:760px; height:420px; background:linear-gradient(#3a2f26,#1c1612); box-shadow: 0 -20px 60px rgba(0,0,0,.6)"></div>
+        <div class="paper" id="letter" style="left: 560px; top: 70px; width: 800px; height: 960px; transform: rotate(-1.5deg)">
+          <div class="hd"><div class="co">SAMPLE HEALTH INSURANCE CO. LTD.</div><div class="sub">Third Party Administrator: Sample Health TPA</div></div>
+          <div class="bd">
+            <div class="t">Cashless authorisation: decision</div>
+            <div class="row"><span>Patient</span><b>R. K****</b></div>
+            <div class="row"><span>Hospital</span><b>Sample City Hospital</b></div>
+            <div class="row"><span>Policy in force since</span><b>2020</b></div>
+            <div class="row"><span>Amount requested</span><b>₹4,50,000</b></div>
+            <div class="row"><span>Decision</span><b style="color:#b91c1c">Cashless denied</b></div>
+            <div class="row" style="border:0"><span>Reason</span></div>
+            <div style="font-weight:600">Non-disclosure of pre-existing disease (hypertension) at proposal stage.</div>
+            <div class="note">You may submit the claim for reimbursement as per policy terms and conditions.</div>
+            <div class="note" style="margin-top: 40px">Authorised signatory · Claims team</div>
+          </div>
+          <div class="sim-mark" style="left: 210px; top: 560px">SIMULATION</div>
+        </div>
+        <div class="stamp red" id="stamp" style="left: 700px; top: 470px; transform: rotate(-12deg)">Cashless denied</div>
+        <div id="flash" style="position:absolute; inset:0; background: radial-gradient(ellipse at center, rgba(220,38,38,0) 40%, rgba(220,38,38,.45) 100%); opacity:0"></div>
+      </div>
+      <div class="fin-tag" id="tag">SIMULATION · ILLUSTRATIVE LETTER</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+
+      tl.fromTo($("letter"), { y: 700, rotation: 4 }, { y: 0, rotation: -1.5, duration: 1.1, ease: "power3.out" }, Math.max(0, C.hand - 0.4));
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.06, duration: C.stamp, ease: "none" }, 0);
+      tl.fromTo($("stamp"), { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.in" }, C.stamp);
+      tl.fromTo($("stage"), { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, C.stamp + 0.2);
+      tl.to($("stage"), { scale: 1.5, x: 0, y: 60, duration: 2.6, ease: "power2.inOut" }, C.drop - 0.3);
+      tl.fromTo($("flash"), { opacity: 0 }, { opacity: 1, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, C.drop);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["s01_letter"] = tl;
+    </script>
+  </body>
+</html>

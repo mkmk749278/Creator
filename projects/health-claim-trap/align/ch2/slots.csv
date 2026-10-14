@@ -1,0 +1,38 @@
+line,picture_start,picture_end,speech_start,speech_end,pause_after,pause_use,en
+1,0.000,3.906,0.000,3.558,0.5,"cut on the breath; music bed lifts, whoosh/impact on the cut",First... who actually says no to you at the hospital desk?
+2,3.906,10.169,4.056,9.949,0.37,"cut on the breath; music bed lifts, whoosh/impact on the cut",Most people think it's the insurance company sitting there evaluating your medical reports.
+3,10.169,12.841,10.319,12.523,0.47,"cut on the breath; music bed lifts, whoosh/impact on the cut","But in reality, it's a middleman called a T-P-A..."
+4,12.841,14.796,12.991,14.467,0.48,"cut on the breath; music bed lifts, whoosh/impact on the cut",Third Party Administrator.
+5,14.796,18.168,14.946,17.874,0.44,"cut on the breath; music bed lifts, whoosh/impact on the cut",Many think a T-P-A is a neutral government doctor.
+6,18.168,19.321,18.318,18.982,0.49,"cut on the breath; music bed lifts, whoosh/impact on the cut",It is not.
+7,19.321,25.218,19.471,24.953,0.41,"cut on the breath; music bed lifts, whoosh/impact on the cut",A T-P-A is a company hired and paid by the insurance company to process medical bills.
+8,25.218,30.455,25.368,30.193,0.41,"cut on the breath; music bed lifts, whoosh/impact on the cut","In India, about seven out of every ten health claims are settled through T-P-As."
+9,30.455,38.051,30.605,37.756,0.45,"cut on the breath; music bed lifts, whoosh/impact on the cut","Under I-R-D-A-I rules, no claim can be rejected without the approval of the insurance company's own claims review committee."
+10,38.051,42.055,38.201,41.492,0.71,"cut on the breath; music bed lifts, whoosh/impact on the cut",But here are the three excuses you will often see on these letters.
+11,42.055,43.501,42.205,43.224,0.43,"cut on the breath; music bed lifts, whoosh/impact on the cut",Excuse Number One.
+12,43.501,46.315,43.651,46.021,0.44,"cut on the breath; music bed lifts, whoosh/impact on the cut",Non-disclosure of pre-existing condition.
+13,46.315,49.379,46.465,49.045,0.48,"cut on the breath; music bed lifts, whoosh/impact on the cut",Suppose you were admitted for a broken leg or dengue.
+14,49.379,52.144,49.529,51.861,0.43,"cut on the breath; music bed lifts, whoosh/impact on the cut",A junior doctor writes one line in your notes.
+15,52.144,54.312,52.294,54.006,0.46,"cut on the breath; music bed lifts, whoosh/impact on the cut",Patient has mild blood pressure.
+16,54.312,56.381,54.462,56.125,0.41,"cut on the breath; music bed lifts, whoosh/impact on the cut",The reviewer sees that one line.
+17,56.381,59.912,56.531,59.699,0.36,"cut on the breath; music bed lifts, whoosh/impact on the cut","He opens your proposal form from five years ago, and says..."
+18,59.912,61.547,60.062,61.293,0.4,"cut on the breath; music bed lifts, whoosh/impact on the cut",You didn't declare blood pressure.
+19,61.547,63.200,61.697,62.711,0.64,"cut on the breath; music bed lifts, whoosh/impact on the cut",Cashless denied.
+20,63.200,67.615,63.350,67.285,0.48,"cut on the breath; music bed lifts, whoosh/impact on the cut",Wait... does blood pressure cause a broken leg or a dengue infection?
+21,67.615,68.805,67.765,68.498,0.46,"cut on the breath; music bed lifts, whoosh/impact on the cut",Of course not.
+22,68.805,73.015,68.955,72.787,0.38,"cut on the breath; music bed lifts, whoosh/impact on the cut","But in the first five years of your policy, the company can still use it."
+23,73.015,75.362,73.165,74.936,0.58,"cut on the breath; music bed lifts, whoosh/impact on the cut","After five years, the rule changes."
+24,75.362,76.741,75.512,76.495,0.4,"cut on the breath; music bed lifts, whoosh/impact on the cut",Excuse Number Two.
+25,76.741,78.623,76.891,78.291,0.48,"cut on the breath; music bed lifts, whoosh/impact on the cut",Not medically necessary.
+26,78.623,83.592,78.773,83.315,0.43,"cut on the breath; music bed lifts, whoosh/impact on the cut",They say your treatment could have been done as an outpatient visit without staying in hospital.
+27,83.592,85.166,83.742,84.937,0.38,"cut on the breath; music bed lifts, whoosh/impact on the cut",And Excuse Number Three.
+28,85.166,88.049,85.316,87.695,0.5,"cut on the breath; music bed lifts, whoosh/impact on the cut","Room rent limit, and proportionate deduction."
+29,88.049,93.724,88.199,93.426,0.45,"cut on the breath; music bed lifts, whoosh/impact on the cut","Say your policy allows a room of five thousand rupees a day, but you took an eight thousand rupee room."
+30,93.724,96.447,93.874,96.276,0.32,"cut on the breath; music bed lifts, whoosh/impact on the cut",They don't just deduct the three thousand rupee difference.
+31,96.447,103.117,96.597,102.804,0.46,"cut on the breath; music bed lifts, whoosh/impact on the cut","They pay only five out of every eight rupees... on the surgery, doctor, and nursing charges too."
+32,103.117,107.877,103.267,107.311,0.72,"cut on the breath; music bed lifts, whoosh/impact on the cut",That is a cut of about thirty-seven percent on those charges.
+33,107.877,113.041,108.027,112.735,0.46,"cut on the breath; music bed lifts, whoosh/impact on the cut","When a family sees that technical rejection letter, they feel completely helpless."
+34,113.041,115.452,113.191,115.091,0.51,"cut on the breath; music bed lifts, whoosh/impact on the cut",They think the door is closed forever.
+35,115.452,116.549,115.602,116.253,0.45,"cut on the breath; music bed lifts, whoosh/impact on the cut",It is not.
+36,116.549,119.882,116.699,119.696,0.34,"cut on the breath; music bed lifts, whoosh/impact on the cut",A cashless denial... is NOT a claim rejection.
+37,119.882,122.671,120.032,122.370,0.0,end,Your legal right to the money is still alive.

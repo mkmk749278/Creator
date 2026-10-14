@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>The moratorium: eight years to five</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="s03_ring" data-start="0" data-width="1920" data-height="1080" data-duration="13.66">
+      <div class="fin-bg" style="background-image: url('img/bg.jpg')"></div>
+      <div class="hc-grade"></div>
+      <div id="stage">
+
+        <svg viewBox="0 0 1920 1080" style="position:absolute; inset:0; width:1920px; height:1080px" fill="rgba(148,163,184,.55)"><path id="g0" d="M963.8 180.0 A320 320 0 0 1 977.1 180.5 L974.9 222.4 A278 278 0 0 0 963.3 222.0 Z" /><path id="g1" d="M984.8 181.0 A320 320 0 0 1 998.0 182.3 L993.0 224.0 A278 278 0 0 0 981.5 222.8 Z" /><path id="g2" d="M1005.6 183.3 A320 320 0 0 1 1018.7 185.4 L1011.0 226.7 A278 278 0 0 0 999.6 224.8 Z" /><path id="g3" d="M1026.2 186.9 A320 320 0 0 1 1039.1 189.9 L1028.7 230.6 A278 278 0 0 0 1017.5 228.0 Z" /><path id="g4" d="M1046.5 191.9 A320 320 0 0 1 1059.2 195.8 L1046.2 235.7 A278 278 0 0 0 1035.2 232.4 Z" /><path id="g5" d="M1066.5 198.2 A320 320 0 0 1 1078.9 202.9 L1063.3 241.9 A278 278 0 0 0 1052.5 237.8 Z" /><path id="g6" d="M1086.0 205.8 A320 320 0 0 1 1098.1 211.3 L1080.0 249.2 A278 278 0 0 0 1069.5 244.5 Z" /><path id="g7" d="M1105.0 214.7 A320 320 0 0 1 1116.7 221.0 L1096.1 257.6 A278 278 0 0 0 1085.9 252.2 Z" /><path id="g8" d="M1123.3 224.8 A320 320 0 0 1 1134.6 231.8 L1111.7 267.0 A278 278 0 0 0 1101.9 260.9 Z" /><path id="g9" d="M1141.0 236.1 A320 320 0 0 1 1151.7 243.8 L1126.6 277.4 A278 278 0 0 0 1117.2 270.7 Z" /><path id="g10" d="M1157.8 248.5 A320 320 0 0 1 1168.1 256.9 L1140.8 288.8 A278 278 0 0 0 1131.9 281.5 Z" /><path id="g11" d="M1173.9 262.0 A320 320 0 0 1 1183.5 271.0 L1154.2 301.1 A278 278 0 0 0 1145.8 293.2 Z" /><path id="g12" d="M1189.0 276.5 A320 320 0 0 1 1198.0 286.1 L1166.8 314.2 A278 278 0 0 0 1158.9 305.8 Z" /><path id="g13" d="M1203.1 291.9 A320 320 0 0 1 1211.5 302.2 L1178.5 328.1 A278 278 0 0 0 1171.2 319.2 Z" /><path id="g14" d="M1216.2 308.3 A320 320 0 0 1 1223.9 319.0 L1189.3 342.8 A278 278 0 0 0 1182.6 333.4 Z" /><path id="g15" d="M1228.2 325.4 A320 320 0 0 1 1235.2 336.7 L1199.1 358.1 A278 278 0 0 0 1193.0 348.3 Z" /><path id="g16" d="M1239.0 343.3 A320 320 0 0 1 1245.3 355.0 L1207.8 374.1 A278 278 0 0 0 1202.4 363.9 Z" /><path id="g17" d="M1248.7 361.9 A320 320 0 0 1 1254.2 374.0 L1215.5 390.5 A278 278 0 0 0 1210.8 380.0 Z" /><path id="g18" d="M1257.1 381.1 A320 320 0 0 1 1261.8 393.5 L1222.2 407.5 A278 278 0 0 0 1218.1 396.7 Z" /><path id="g19" d="M1264.2 400.8 A320 320 0 0 1 1268.1 413.5 L1227.6 424.8 A278 278 0 0 0 1224.3 413.8 Z" /><path id="g20" d="M1270.1 420.9 A320 320 0 0 1 1273.1 433.8 L1232.0 442.5 A278 278 0 0 0 1229.4 431.3 Z" /><path id="g21" d="M1274.6 441.3 A320 320 0 0 1 1276.7 454.4 L1235.2 460.4 A278 278 0 0 0 1233.3 449.0 Z" /><path id="g22" d="M1277.7 462.0 A320 320 0 0 1 1279.0 475.2 L1237.2 478.5 A278 278 0 0 0 1236.0 467.0 Z" /><path id="g23" d="M1279.5 482.9 A320 320 0 0 1 1280.0 496.2 L1238.0 496.7 A278 278 0 0 0 1237.6 485.1 Z" /><path id="g24" d="M1280.0 503.8 A320 320 0 0 1 1279.5 517.1 L1237.6 514.9 A278 278 0 0 0 1238.0 503.3 Z" /><path id="g25" d="M1279.0 524.8 A320 320 0 0 1 1277.7 538.0 L1236.0 533.0 A278 278 0 0 0 1237.2 521.5 Z" /><path id="g26" d="M1276.7 545.6 A320 320 0 0 1 1274.6 558.7 L1233.3 551.0 A278 278 0 0 0 1235.2 539.6 Z" /><path id="g27" d="M1273.1 566.2 A320 320 0 0 1 1270.1 579.1 L1229.4 568.7 A278 278 0 0 0 1232.0 557.5 Z" /><path id="g28" d="M1268.1 586.5 A320 320 0 0 1 1264.2 599.2 L1224.3 586.2 A278 278 0 0 0 1227.6 575.2 Z" /><path id="g29" d="M1261.8 606.5 A320 320 0 0 1 1257.1 618.9 L1218.1 603.3 A278 278 0 0 0 1222.2 592.5 Z" /><path id="g30" d="M1254.2 626.0 A320 320 0 0 1 1248.7 638.1 L1210.8 620.0 A278 278 0 0 0 1215.5 609.5 Z" /><path id="g31" d="M1245.3 645.0 A320 320 0 0 1 1239.0 656.7 L1202.4 636.1 A278 278 0 0 0 1207.8 625.9 Z" /><path id="g32" d="M1235.2 663.3 A320 320 0 0 1 1228.2 674.6 L1193.0 651.7 A278 278 0 0 0 1199.1 641.9 Z" /><path id="g33" d="M1223.9 681.0 A320 320 0 0 1 1216.2 691.7 L1182.6 666.6 A278 278 0 0 0 1189.3 657.2 Z" /><path id="g34" d="M1211.5 697.8 A320 320 0 0 1 1203.1 708.1 L1171.2 680.8 A278 278 0 0 0 1178.5 671.9 Z" /><path id="g35" d="M1198.0 713.9 A320 320 0 0 1 1189.0 723.5 L1158.9 694.2 A278 278 0 0 0 1166.8 685.8 Z" /><path id="g36" d="M1183.5 729.0 A320 320 0 0 1 1173.9 738.0 L1145.8 706.8 A278 278 0 0 0 1154.2 698.9 Z" /><path id="g37" d="M1168.1 743.1 A320 320 0 0 1 1157.8 751.5 L1131.9 718.5 A278 278 0 0 0 1140.8 711.2 Z" /><path id="g38" d="M1151.7 756.2 A320 320 0 0 1 1141.0 763.9 L1117.2 729.3 A278 278 0 0 0 1126.6 722.6 Z" /><path id="g39" d="M1134.6 768.2 A320 320 0 0 1 1123.3 775.2 L1101.9 739.1 A278 278 0 0 0 1111.7 733.0 Z" /><path id="g40" d="M1116.7 779.0 A320 320 0 0 1 1105.0 785.3 L1085.9 747.8 A278 278 0 0 0 1096.1 742.4 Z" /><path id="g41" d="M1098.1 788.7 A320 320 0 0 1 1086.0 794.2 L1069.5 755.5 A278 278 0 0 0 1080.0 750.8 Z" /><path id="g42" d="M1078.9 797.1 A320 320 0 0 1 1066.5 801.8 L1052.5 762.2 A278 278 0 0 0 1063.3 758.1 Z" /><path id="g43" d="M1059.2 804.2 A320 320 0 0 1 1046.5 808.1 L1035.2 767.6 A278 278 0 0 0 1046.2 764.3 Z" /><path id="g44" d="M1039.1 810.1 A320 320 0 0 1 1026.2 813.1 L1017.5 772.0 A278 278 0 0 0 1028.7 769.4 Z" /><path id="g45" d="M1018.7 814.6 A320 320 0 0 1 1005.6 816.7 L999.6 775.2 A278 278 0 0 0 1011.0 773.3 Z" /><path id="g46" d="M998.0 817.7 A320 320 0 0 1 984.8 819.0 L981.5 777.2 A278 278 0 0 0 993.0 776.0 Z" /><path id="g47" d="M977.1 819.5 A320 320 0 0 1 963.8 820.0 L963.3 778.0 A278 278 0 0 0 974.9 777.6 Z" /><path id="g48" d="M956.2 820.0 A320 320 0 0 1 942.9 819.5 L945.1 777.6 A278 278 0 0 0 956.7 778.0 Z" /><path id="g49" d="M935.2 819.0 A320 320 0 0 1 922.0 817.7 L927.0 776.0 A278 278 0 0 0 938.5 777.2 Z" /><path id="g50" d="M914.4 816.7 A320 320 0 0 1 901.3 814.6 L909.0 773.3 A278 278 0 0 0 920.4 775.2 Z" /><path id="g51" d="M893.8 813.1 A320 320 0 0 1 880.9 810.1 L891.3 769.4 A278 278 0 0 0 902.5 772.0 Z" /><path id="g52" d="M873.5 808.1 A320 320 0 0 1 860.8 804.2 L873.8 764.3 A278 278 0 0 0 884.8 767.6 Z" /><path id="g53" d="M853.5 801.8 A320 320 0 0 1 841.1 797.1 L856.7 758.1 A278 278 0 0 0 867.5 762.2 Z" /><path id="g54" d="M834.0 794.2 A320 320 0 0 1 821.9 788.7 L840.0 750.8 A278 278 0 0 0 850.5 755.5 Z" /><path id="g55" d="M815.0 785.3 A320 320 0 0 1 803.3 779.0 L823.9 742.4 A278 278 0 0 0 834.1 747.8 Z" /><path id="g56" d="M796.7 775.2 A320 320 0 0 1 785.4 768.2 L808.3 733.0 A278 278 0 0 0 818.1 739.1 Z" /><path id="g57" d="M779.0 763.9 A320 320 0 0 1 768.3 756.2 L793.4 722.6 A278 278 0 0 0 802.8 729.3 Z" /><path id="g58" d="M762.2 751.5 A320 320 0 0 1 751.9 743.1 L779.2 711.2 A278 278 0 0 0 788.1 718.5 Z" /><path id="g59" d="M746.1 738.0 A320 320 0 0 1 736.5 729.0 L765.8 698.9 A278 278 0 0 0 774.2 706.8 Z" /><path id="g60" d="M731.0 723.5 A320 320 0 0 1 722.0 713.9 L753.2 685.8 A278 278 0 0 0 761.1 694.2 Z" /><path id="g61" d="M716.9 708.1 A320 320 0 0 1 708.5 697.8 L741.5 671.9 A278 278 0 0 0 748.8 680.8 Z" /><path id="g62" d="M703.8 691.7 A320 320 0 0 1 696.1 681.0 L730.7 657.2 A278 278 0 0 0 737.4 666.6 Z" /><path id="g63" d="M691.8 674.6 A320 320 0 0 1 684.8 663.3 L720.9 641.9 A278 278 0 0 0 727.0 651.7 Z" /><path id="g64" d="M681.0 656.7 A320 320 0 0 1 674.7 645.0 L712.2 625.9 A278 278 0 0 0 717.6 636.1 Z" /><path id="g65" d="M671.3 638.1 A320 320 0 0 1 665.8 626.0 L704.5 609.5 A278 278 0 0 0 709.2 620.0 Z" /><path id="g66" d="M662.9 618.9 A320 320 0 0 1 658.2 606.5 L697.8 592.5 A278 278 0 0 0 701.9 603.3 Z" /><path id="g67" d="M655.8 599.2 A320 320 0 0 1 651.9 586.5 L692.4 575.2 A278 278 0 0 0 695.7 586.2 Z" /><path id="g68" d="M649.9 579.1 A320 320 0 0 1 646.9 566.2 L688.0 557.5 A278 278 0 0 0 690.6 568.7 Z" /><path id="g69" d="M645.4 558.7 A320 320 0 0 1 643.3 545.6 L684.8 539.6 A278 278 0 0 0 686.7 551.0 Z" /><path id="g70" d="M642.3 538.0 A320 320 0 0 1 641.0 524.8 L682.8 521.5 A278 278 0 0 0 684.0 533.0 Z" /><path id="g71" d="M640.5 517.1 A320 320 0 0 1 640.0 503.8 L682.0 503.3 A278 278 0 0 0 682.4 514.9 Z" /><path id="g72" d="M640.0 496.2 A320 320 0 0 1 640.5 482.9 L682.4 485.1 A278 278 0 0 0 682.0 496.7 Z" /><path id="g73" d="M641.0 475.2 A320 320 0 0 1 642.3 462.0 L684.0 467.0 A278 278 0 0 0 682.8 478.5 Z" /><path id="g74" d="M643.3 454.4 A320 320 0 0 1 645.4 441.3 L686.7 449.0 A278 278 0 0 0 684.8 460.4 Z" /><path id="g75" d="M646.9 433.8 A320 320 0 0 1 649.9 420.9 L690.6 431.3 A278 278 0 0 0 688.0 442.5 Z" /><path id="g76" d="M651.9 413.5 A320 320 0 0 1 655.8 400.8 L695.7 413.8 A278 278 0 0 0 692.4 424.8 Z" /><path id="g77" d="M658.2 393.5 A320 320 0 0 1 662.9 381.1 L701.9 396.7 A278 278 0 0 0 697.8 407.5 Z" /><path id="g78" d="M665.8 374.0 A320 320 0 0 1 671.3 361.9 L709.2 380.0 A278 278 0 0 0 704.5 390.5 Z" /><path id="g79" d="M674.7 355.0 A320 320 0 0 1 681.0 343.3 L717.6 363.9 A278 278 0 0 0 712.2 374.1 Z" /><path id="g80" d="M684.8 336.7 A320 320 0 0 1 691.8 325.4 L727.0 348.3 A278 278 0 0 0 720.9 358.1 Z" /><path id="g81" d="M696.1 319.0 A320 320 0 0 1 703.8 308.3 L737.4 333.4 A278 278 0 0 0 730.7 342.8 Z" /><path id="g82" d="M708.5 302.2 A320 320 0 0 1 716.9 291.9 L748.8 319.2 A278 278 0 0 0 741.5 328.1 Z" /><path id="g83" d="M722.0 286.1 A320 320 0 0 1 731.0 276.5 L761.1 305.8 A278 278 0 0 0 753.2 314.2 Z" /><path id="g84" d="M736.5 271.0 A320 320 0 0 1 746.1 262.0 L774.2 293.2 A278 278 0 0 0 765.8 301.1 Z" /><path id="g85" d="M751.9 256.9 A320 320 0 0 1 762.2 248.5 L788.1 281.5 A278 278 0 0 0 779.2 288.8 Z" /><path id="g86" d="M768.3 243.8 A320 320 0 0 1 779.0 236.1 L802.8 270.7 A278 278 0 0 0 793.4 277.4 Z" /><path id="g87" d="M785.4 231.8 A320 320 0 0 1 796.7 224.8 L818.1 260.9 A278 278 0 0 0 808.3 267.0 Z" /><path id="g88" d="M803.3 221.0 A320 320 0 0 1 815.0 214.7 L834.1 252.2 A278 278 0 0 0 823.9 257.6 Z" /><path id="g89" d="M821.9 211.3 A320 320 0 0 1 834.0 205.8 L850.5 244.5 A278 278 0 0 0 840.0 249.2 Z" /><path id="g90" d="M841.1 202.9 A320 320 0 0 1 853.5 198.2 L867.5 237.8 A278 278 0 0 0 856.7 241.9 Z" /><path id="g91" d="M860.8 195.8 A320 320 0 0 1 873.5 191.9 L884.8 232.4 A278 278 0 0 0 873.8 235.7 Z" /><path id="g92" d="M880.9 189.9 A320 320 0 0 1 893.8 186.9 L902.5 228.0 A278 278 0 0 0 891.3 230.6 Z" /><path id="g93" d="M901.3 185.4 A320 320 0 0 1 914.4 183.3 L920.4 224.8 A278 278 0 0 0 909.0 226.7 Z" /><path id="g94" d="M922.0 182.3 A320 320 0 0 1 935.2 181.0 L938.5 222.8 A278 278 0 0 0 927.0 224.0 Z" /><path id="g95" d="M942.9 180.5 A320 320 0 0 1 956.2 180.0 L956.7 222.0 A278 278 0 0 0 945.1 222.4 Z" /></svg>
+        <div class="big" id="t8" style="left:660px; top:420px; width:600px">8 years</div>
+        <div class="lab" id="m8" style="left:660px; top:530px; width:600px">96 months</div>
+        <div class="big" id="t5" style="left:660px; top:420px; width:600px; color:#38bdf8; opacity:0">5 years</div>
+        <div class="lab" id="m5" style="left:660px; top:530px; width:600px; opacity:0">60 months</div>
+        <div class="chip cyan" id="nob" style="left:760px; top:900px; opacity:0">No break in your policy</div>
+      </div>
+      <div class="fin-tag" id="tag">IRDAI INSURANCE PRODUCTS REGULATIONS | 2024</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.06, duration: D.duration, ease: "none" }, 0);
+      for (let i = 0; i < 96; i++) pop($("g" + i), 0.05 + i * 0.012, { opacity: 0, scale: 0.9, transformOrigin: "960px 500px" });
+      pop($("t8"), C.eight + 0.2); pop($("m8"), C.eight + 0.4);
+      for (let i = 60; i < 96; i++) tl.to($("g" + i), { opacity: 0, y: 140 + (i % 7) * 20, duration: 0.6, ease: "power2.in" }, C.down + (i - 60) * 0.03);
+      out($("t8"), C.five - 0.3); out($("m8"), C.five - 0.3);
+      tl.to($("t5"), { opacity: 1, duration: 0.4 }, C.five); tl.to($("m5"), { opacity: 1, duration: 0.4 }, C.five + 0.1);
+      for (let i = 0; i < 60; i++) tl.to($("g" + i), { fill: (i % 12 === 11) ? "#f8fafc" : "#0284c7", duration: 0.08 }, C.fill + i * 0.055);
+      pop($("nob"), C.fill + 2.6);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["s03_ring"] = tl;
+    </script>
+  </body>
+</html>

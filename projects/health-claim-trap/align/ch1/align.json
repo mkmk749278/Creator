@@ -1,0 +1,192 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 6.143,
+  "te": "Imagine this situation... it happens to thousands of middle-class families in India every single day.",
+  "en": "Imagine this situation... it happens to thousands of middle-class families in India every single day.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.312,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.864,
+  "end": 10.322,
+  "te": "You pay thirty-five thousand rupees every year for health insurance.",
+  "en": "You pay thirty-five thousand rupees every year for health insurance.",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.312,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 10.701,
+  "end": 13.799,
+  "te": "You renew it on time for five or six straight years.",
+  "en": "You renew it on time for five or six straight years.",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.889,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 14.308,
+  "end": 16.018,
+  "te": "You never miss a single payment.",
+  "en": "You never miss a single payment.",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.245,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 16.607,
+  "end": 18.342,
+  "te": "Then, an emergency hits.",
+  "en": "Then, an emergency hits.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.245,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 18.868,
+  "end": 20.877,
+  "te": "Your loved one is admitted to the hospital.",
+  "en": "Your loved one is admitted to the hospital.",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.461,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 21.485,
+  "end": 25.916,
+  "te": "Three days later, you are standing at the hospital billing counter at nine o'clock at night.",
+  "en": "Three days later, you are standing at the hospital billing counter at nine o'clock at night.",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.461,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 26.423,
+  "end": 27.663,
+  "te": "The discharge papers are ready.",
+  "en": "The discharge papers are ready.",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.186,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 28.242,
+  "end": 30.956,
+  "te": "Your bill is four point five lakh rupees.",
+  "en": "Your bill is four point five lakh rupees.",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.186,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 31.495,
+  "end": 41.843,
+  "te": "And the desk clerk looks up at you and hands you a printed letter saying, Sorry sir, your cashless claim was rejected by the T-P-A due to non-disclosure of a pre-existing disease.",
+  "en": "And the desk clerk looks up at you and hands you a printed letter saying, Sorry sir, your cashless claim was rejected by the T-P-A due to non-disclosure of a pre-existing disease.",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.464,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 43.767,
+  "end": 44.735,
+  "te": "Your heart drops.",
+  "en": "Your heart drops.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 1.997,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 45.18,
+  "end": 46.333,
+  "te": "Your family panics.",
+  "en": "Your family panics.",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.442,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 46.771,
+  "end": 57.95,
+  "te": "It's night time, the banks are closed, and you are forced to break your fixed deposits, borrow from relatives, or swipe an emergency credit card just to get your loved one out of the hospital.",
+  "en": "It's night time, the banks are closed, and you are forced to break your fixed deposits, borrow from relatives, or swipe an emergency credit card just to get your loved one out of the hospital.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.044,
+  "confidence": "check"
+ },
+ {
+  "line": 14,
+  "start": 58.544,
+  "end": 63.161,
+  "te": "And you wonder, why did I pay insurance all these years if they abandon me the moment I need them?",
+  "en": "And you wonder, why did I pay insurance all these years if they abandon me the moment I need them?",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.044,
+  "confidence": "check"
+ },
+ {
+  "line": 15,
+  "start": 64.912,
+  "end": 76.116,
+  "te": "What your insurance agent never told you... is that under official regulations in India, there is a legal rule that makes this exact denial illegal, once your policy has crossed five years.",
+  "en": "What your insurance agent never told you... is that under official regulations in India, there is a legal rule that makes this exact denial illegal, once your policy has crossed five years.",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.335,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 76.83,
+  "end": 78.719,
+  "te": "Welcome to Be Practical with Kishore.",
+  "en": "Welcome to Be Practical with Kishore.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.335,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 79.179,
+  "end": 84.026,
+  "te": "In this video, we are not going to shout, and we are not going to promote any insurance policies.",
+  "en": "In this video, we are not going to shout, and we are not going to promote any insurance policies.",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.187,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 84.602,
+  "end": 93.044,
+  "te": "Today, let's look at the real I-R-D-A-I rules, see who really says no, and learn the step-by-step way to get your money back.",
+  "en": "Today, let's look at the real I-R-D-A-I rules, see who really says no, and learn the step-by-step way to get your money back.",
+  "speech_vs_text": 1.23,
+  "boundary_margin": 0.187,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 93.668,
+  "end": 96.613,
+  "te": "Let's break it down... in plain, simple English.",
+  "en": "Let's break it down... in plain, simple English.",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.315,
+  "confidence": "high"
+ }
+]

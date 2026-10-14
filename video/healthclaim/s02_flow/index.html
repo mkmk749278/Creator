@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Who really says no: the TPA</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+.node { position: absolute; width: 210px; height: 210px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: var(--white); background: rgba(15,23,42,.88); border: 4px solid rgba(148,163,184,.5); box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+.arrow { position: absolute; height: 4px; background: repeating-linear-gradient(90deg, rgba(148,163,184,.8) 0 18px, transparent 18px 30px); }
+.arrow::after { content: ""; position: absolute; right: -6px; top: -9px; border: 11px solid transparent; border-left: 16px solid rgba(148,163,184,.9); }
+.doc { position: absolute; top: 380px; opacity: 0; }
+.pay { position: absolute; left: 1260px; top: 640px; opacity: 0; }
+.fi { position: absolute; top: 0; width: 90px; height: 120px; }
+
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="s02_flow" data-start="0" data-width="1920" data-height="1080" data-duration="26.84">
+      <div class="fin-bg" style="background-image: url('img/bg.jpg')"></div>
+      <div class="hc-grade"></div>
+      <div id="stage">
+
+        <div class="node" id="n0" style="left:145px; top:300px"><svg viewBox="0 0 48 48" width="104" height="104" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="15" r="8"/><path d="M8 42 C8 30 16 26 24 26 C32 26 40 30 40 42"/></svg></div>
+        <div class="lab" id="n0l" style="left:80px; top:530px; width:340px">Patient</div>
+        <div class="node" id="n1" style="left:615px; top:300px"><svg viewBox="0 0 48 48" width="104" height="104" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="10" width="32" height="32" rx="3"/><path d="M24 17 V35 M15 26 H33"/></svg></div>
+        <div class="lab" id="n1l" style="left:550px; top:530px; width:340px">Hospital</div>
+        <div class="node" id="n2" style="left:1085px; top:300px"><svg viewBox="0 0 48 48" width="104" height="104" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5 H30 L38 13 V43 H13 Z"/><path d="M30 5 V13 H38 M19 23 H32 M19 30 H32 M19 37 H27"/></svg></div>
+        <div class="lab" id="n2l" style="left:1020px; top:530px; width:340px">TPA</div>
+        <div class="node" id="n3" style="left:1555px; top:300px"><svg viewBox="0 0 48 48" width="104" height="104" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 L24 7 L42 18 Z"/><path d="M10 22 V36 M19 22 V36 M29 22 V36 M38 22 V36 M6 41 H42"/></svg></div>
+        <div class="lab" id="n3l" style="left:1490px; top:530px; width:340px">Insurance company</div><div class="arrow" id="a0" style="left:370px; top:403px; width:230px"></div><div class="arrow" id="a1" style="left:840px; top:403px; width:230px"></div><div class="arrow" id="a2" style="left:1310px; top:403px; width:230px"></div><div class="doc" id="d0"><svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#f8fafc" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5 H30 L38 13 V43 H13 Z"/><path d="M30 5 V13 H38 M19 23 H32 M19 30 H32 M19 37 H27"/></svg></div><div class="doc" id="d1"><svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#f8fafc" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5 H30 L38 13 V43 H13 Z"/><path d="M30 5 V13 H38 M19 23 H32 M19 30 H32 M19 37 H27"/></svg></div><div class="doc" id="d2"><svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#f8fafc" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5 H30 L38 13 V43 H13 Z"/><path d="M30 5 V13 H38 M19 23 H32 M19 30 H32 M19 37 H27"/></svg></div>
+        <div class="chip amber" id="mid" style="left:1030px; top:180px">Middleman</div>
+        <div class="lab" id="full" style="left:990px; top:580px; width:400px; color:#f59e0b">Third Party Administrator</div>
+        <div class="chip red" id="myth" style="left:900px; top:150px">Neutral govt doctor?</div>
+        <div id="strike" style="position:absolute; left:890px; top:183px; width:0; height:7px; background:#dc2626; border-radius:4px"></div>
+        <div class="pay" id="pay"><div class="arc"></div><div class="chip cyan" style="position:relative; left:0; top:0">Hired and paid by the insurer</div></div>
+        <div id="files" style="position:absolute; left:360px; top:740px; width:1200px; height:160px"></div>
+        <div class="chip amber" id="seven" style="left:600px; top:930px">7 in 10 claims settled via TPAs</div>
+      </div>
+      <div class="fin-tag" id="tag">IRDAI ANNUAL REPORT 2024-25 · IRDAI TPA REGULATIONS</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.05, duration: D.duration, ease: "none" }, 0);
+      ["n0", "n1", "n2", "n3"].forEach((id, i) => { pop($(id), 0.1 + i * 0.2, { opacity: 0, scale: 0.6 }); pop($(id + "l"), 0.3 + i * 0.2); });
+      ["a0", "a1", "a2"].forEach((id, i) => tl.fromTo($(id), { opacity: 0, scaleX: 0, transformOrigin: "0 50%" }, { opacity: 1, scaleX: 1, duration: 0.5 }, 0.5 + i * 0.2));
+      // files travel patient -> hospital -> TPA -> insurer, a pure function of time
+      const xs = [250, 720, 1190, 1660];
+      for (let k = 0; k < 3; k++) { const el = $("d" + k);
+        FIN.hook((t) => { if (t < 1.2) { el.style.opacity = 0; return; } const u = ((t - 1.2) / 4.5 + k / 3) % 1, seg = Math.floor(u * 3), f = u * 3 - seg;
+          el.style.opacity = Math.min(1, (t - 1.2) * 2) * (f < 0.12 ? f / 0.12 : f > 0.88 ? (1 - f) / 0.12 : 1);
+          el.style.left = (xs[seg] + 110 + (xs[seg + 1] - xs[seg] - 220) * f - 22) + "px"; }); }
+      tl.to($("n3"), { borderColor: "#38bdf8", boxShadow: "0 0 60px rgba(56,189,248,.6)", duration: 0.4 }, C.ins + 0.5);
+      tl.to($("n3"), { borderColor: "rgba(148,163,184,.5)", boxShadow: "0 20px 50px rgba(0,0,0,.5)", duration: 0.4 }, C.tpa - 0.3);
+      tl.to([$("n0"), $("n1"), $("n3")], { opacity: 0.45, duration: 0.4 }, C.tpa);
+      tl.to($("n2"), { borderColor: "#f59e0b", color: "#f59e0b", scale: 1.15, boxShadow: "0 0 80px rgba(245,158,11,.55)", duration: 0.45 }, C.tpa);
+      pop($("mid"), C.tpa + 0.1);
+      tl.to($("n2l"), { opacity: 0, duration: 0.2 }, C.full - 0.1); pop($("full"), C.full);
+      out($("mid"), C.myth - 0.4);
+      pop($("myth"), C.myth);
+      tl.fromTo($("strike"), { width: 0 }, { width: 470, duration: 0.3, ease: "power2.out" }, C.no + 0.1);
+      tl.to([$("myth"), $("strike")], { opacity: 0, duration: 0.4 }, C.no + 1.1);
+      tl.to($("n3"), { opacity: 1, borderColor: "#38bdf8", duration: 0.4 }, C.paid - 0.2);
+      pop($("pay"), C.paid);
+      // seven of ten claim files go through the TPA
+      const box = $("files");
+      for (let i = 0; i < 10; i++) { const f = document.createElement("div"); f.className = "fi"; f.style.left = (i * 120) + "px";
+        f.innerHTML = '<svg viewBox="0 0 48 48" width="90" height="90" fill="none" stroke="#94a3b8" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5 H30 L38 13 V43 H13 Z"/><path d="M30 5 V13 H38 M19 23 H32 M19 30 H32 M19 37 H27"/></svg>'; box.appendChild(f);
+        pop(f, C.seven + 0.1 + i * 0.08, { opacity: 0, y: 40 });
+        if (i < 7) tl.to(f, { color: "#f59e0b", duration: 0.2, onStart: null }, C.seven + 1.4 + i * 0.12);
+        if (i < 7) tl.to(f.querySelector("svg"), { stroke: "#f59e0b", duration: 0.2 }, C.seven + 1.4 + i * 0.12); }
+      out($("pay"), C.seven - 0.2);
+      pop($("seven"), C.seven + 2.4);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["s02_flow"] = tl;
+    </script>
+  </body>
+</html>

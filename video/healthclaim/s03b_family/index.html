@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Our family: six years</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+.mo { position: absolute; top: 400px; width: 18px; height: 70px; border-radius: 4px; background: rgba(148,163,184,.35); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="s03b_family" data-start="0" data-width="1920" data-height="1080" data-duration="11.3">
+      <div class="fin-bg" style="background-image: url('img/bg.jpg')"></div>
+      <div class="hc-grade"></div>
+      <div id="stage">
+<div class="mo" id="m0" style="left:140px"></div><div class="mo" id="m1" style="left:162px"></div><div class="mo" id="m2" style="left:184px"></div><div class="mo" id="m3" style="left:206px"></div><div class="mo" id="m4" style="left:228px"></div><div class="mo" id="m5" style="left:250px"></div><div class="mo" id="m6" style="left:272px"></div><div class="mo" id="m7" style="left:294px"></div><div class="mo" id="m8" style="left:316px"></div><div class="mo" id="m9" style="left:338px"></div><div class="mo" id="m10" style="left:360px"></div><div class="mo" id="m11" style="left:382px"></div><div class="mo" id="m12" style="left:404px"></div><div class="mo" id="m13" style="left:426px"></div><div class="mo" id="m14" style="left:448px"></div><div class="mo" id="m15" style="left:470px"></div><div class="mo" id="m16" style="left:492px"></div><div class="mo" id="m17" style="left:514px"></div><div class="mo" id="m18" style="left:536px"></div><div class="mo" id="m19" style="left:558px"></div><div class="mo" id="m20" style="left:580px"></div><div class="mo" id="m21" style="left:602px"></div><div class="mo" id="m22" style="left:624px"></div><div class="mo" id="m23" style="left:646px"></div><div class="mo" id="m24" style="left:668px"></div><div class="mo" id="m25" style="left:690px"></div><div class="mo" id="m26" style="left:712px"></div><div class="mo" id="m27" style="left:734px"></div><div class="mo" id="m28" style="left:756px"></div><div class="mo" id="m29" style="left:778px"></div><div class="mo" id="m30" style="left:800px"></div><div class="mo" id="m31" style="left:822px"></div><div class="mo" id="m32" style="left:844px"></div><div class="mo" id="m33" style="left:866px"></div><div class="mo" id="m34" style="left:888px"></div><div class="mo" id="m35" style="left:910px"></div><div class="mo" id="m36" style="left:932px"></div><div class="mo" id="m37" style="left:954px"></div><div class="mo" id="m38" style="left:976px"></div><div class="mo" id="m39" style="left:998px"></div><div class="mo" id="m40" style="left:1020px"></div><div class="mo" id="m41" style="left:1042px"></div><div class="mo" id="m42" style="left:1064px"></div><div class="mo" id="m43" style="left:1086px"></div><div class="mo" id="m44" style="left:1108px"></div><div class="mo" id="m45" style="left:1130px"></div><div class="mo" id="m46" style="left:1152px"></div><div class="mo" id="m47" style="left:1174px"></div><div class="mo" id="m48" style="left:1196px"></div><div class="mo" id="m49" style="left:1218px"></div><div class="mo" id="m50" style="left:1240px"></div><div class="mo" id="m51" style="left:1262px"></div><div class="mo" id="m52" style="left:1284px"></div><div class="mo" id="m53" style="left:1306px"></div><div class="mo" id="m54" style="left:1328px"></div><div class="mo" id="m55" style="left:1350px"></div><div class="mo" id="m56" style="left:1372px"></div><div class="mo" id="m57" style="left:1394px"></div><div class="mo" id="m58" style="left:1416px"></div><div class="mo" id="m59" style="left:1438px"></div><div class="mo" id="m60" style="left:1460px"></div><div class="mo" id="m61" style="left:1482px"></div><div class="mo" id="m62" style="left:1504px"></div><div class="mo" id="m63" style="left:1526px"></div><div class="mo" id="m64" style="left:1548px"></div><div class="mo" id="m65" style="left:1570px"></div><div class="mo" id="m66" style="left:1592px"></div><div class="mo" id="m67" style="left:1614px"></div><div class="mo" id="m68" style="left:1636px"></div><div class="mo" id="m69" style="left:1658px"></div><div class="mo" id="m70" style="left:1680px"></div><div class="mo" id="m71" style="left:1702px"></div>
+        <div class="lab" style="left:140px; top:330px; width:1310px; text-align:left" id="lm">Moratorium: 60 months</div>
+        <div class="lab" style="left:1460px; top:330px; width:300px; text-align:left; color:#facc15" id="ly">Year 6</div>
+        <div class="chip cyan" id="six" style="left:140px; top:520px">Our family: 6 years of continuous policy</div>
+        <div class="paper" id="mini" style="left:1080px; top:600px; width:560px; height:300px; transform: rotate(3deg)">
+          <div class="hd" style="padding:14px 22px"><div class="co" style="font-size:20px">CASHLESS AUTHORISATION</div></div>
+          <div class="bd" style="padding:16px 22px; font-size:20px">Reason: non-disclosure of pre-existing disease</div>
+          <div class="stamp red" style="left:40px; top:160px; font-size:38px; transform: rotate(-8deg)">Cashless denied</div>
+          <div class="sim-mark" style="left:120px; top:190px; font-size:16px">SIMULATION</div>
+        </div>
+        <div id="gstrike" style="position:absolute; left:1050px; top:760px; width:0; height:12px; background:#facc15; border-radius:6px; transform: rotate(-8deg); transform-origin: 0 50%"></div>
+        <div class="chip amber" id="against" style="left:140px; top:780px; color:#facc15; border-color:rgba(250,204,21,.6)">Against the IRDAI rule</div>
+      </div>
+      <div class="fin-tag" id="tag">IRDAI MASTER CIRCULAR | PARA 13</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.05, duration: D.duration, ease: "none" }, 0);
+      for (let i = 0; i < 72; i++) pop($("m" + i), 0.1 + i * 0.01, { opacity: 0, y: 20 });
+      for (let i = 0; i < 72; i++) tl.to($("m" + i), { background: i < 60 ? "#0284c7" : "#facc15", duration: 0.06 }, C.six + i * 0.022);
+      pop($("lm"), C.six + 0.3); pop($("ly"), C.six + 1.5); pop($("six"), C.six + 0.4);
+      pop($("mini"), C.letter, { opacity: 0, y: 200, rotation: 10 });
+      tl.fromTo($("gstrike"), { width: 0 }, { width: 620, duration: 0.35, ease: "power2.out" }, C.viol + 0.5);
+      pop($("against"), C.viol + 0.6);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["s03b_family"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>The three hour discharge clock</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="s04_clock" data-start="0" data-width="1920" data-height="1080" data-duration="24.83">
+      <div class="fin-bg" style="background-image: url('img/bg.jpg')"></div>
+      <div class="hc-grade"></div>
+      <div id="stage">
+
+        <svg id="clock" viewBox="-340 -340 680 680" style="position:absolute; left:180px; top:200px; width:680px; height:680px">
+          <circle r="320" fill="rgba(15,23,42,.9)" stroke="rgba(148,163,184,.6)" stroke-width="6" />
+          <path id="arcA" fill="rgba(245,158,11,.45)" d="" /><path id="arcR" fill="rgba(220,38,38,.55)" d="" />
+          <g stroke="#f8fafc" stroke-width="8" stroke-linecap="round"><line x1="0" y1="-300" x2="0" y2="-250" transform="rotate(0)" /><line x1="0" y1="-300" x2="0" y2="-270" transform="rotate(30)" /><line x1="0" y1="-300" x2="0" y2="-270" transform="rotate(60)" /><line x1="0" y1="-300" x2="0" y2="-250" transform="rotate(90)" /><line x1="0" y1="-300" x2="0" y2="-270" transform="rotate(120)" /><line x1="0" y1="-300" x2="0" y2="-270" transform="rotate(150)" /><line x1="0" y1="-300" x2="0" y2="-250" transform="rotate(180)" /><line x1="0" y1="-300" x2="0" y2="-270" transform="rotate(210)" /><line x1="0" y1="-300" x2="0" y2="-270" transform="rotate(240)" /><line x1="0" y1="-300" x2="0" y2="-250" transform="rotate(270)" /><line x1="0" y1="-300" x2="0" y2="-270" transform="rotate(300)" /><line x1="0" y1="-300" x2="0" y2="-270" transform="rotate(330)" /></g>
+          <line id="hand" x1="0" y1="20" x2="0" y2="-250" stroke="#f8fafc" stroke-width="12" stroke-linecap="round" />
+          <circle r="18" fill="#f59e0b" />
+        </svg>
+        <div class="chip" id="req" style="left:980px; top:240px">Discharge request sent</div>
+        <div class="chip amber" id="three" style="left:980px; top:380px">Final approval: within 3 hours</div>
+        <div class="chip cyan" id="wait" style="left:980px; top:520px">Patient should not be made to wait</div>
+        <div class="chip red" id="late" style="left:980px; top:660px">Later than 3 hours?</div>
+        <div class="chip cyan" id="pays" style="left:980px; top:800px">Extra charges: insurer pays, not you</div>
+        <div class="lab" id="clk" style="left:300px; top:900px; width:440px; font-size:30px; color:#f8fafc">9:00 PM</div>
+      </div>
+      <div class="fin-tag" id="tag">IRDAI MASTER CIRCULAR | PARA 16 · ILLUSTRATIVE TIMES</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.05, duration: D.duration, ease: "none" }, 0);
+      pop($("clock"), C.clock, { opacity: 0, scale: 0.7 }); pop($("clk"), C.clock + 0.3);
+      // clock reading in minutes after 9:00 PM (the hook's billing counter), a function of time: 180 at "three hours", 225 when late
+      const mins = FIN.keys([[C.req, 0], [C.three + 1.2, 180], [C.late, 180], [C.extra, 225]]);
+      const th = (m) => (270 + m / 2) * Math.PI / 180;   // clock angle from 12 o'clock, clockwise
+      const sector = (m0, m1) => { if (m1 <= m0 + 0.1) return "";
+        const p = (m) => [300 * Math.sin(th(m)), -300 * Math.cos(th(m))], [x0, y0] = p(m0), [x1, y1] = p(m1);
+        return `M0 0 L${x0.toFixed(1)} ${y0.toFixed(1)} A300 300 0 ${m1 - m0 > 360 ? 1 : 0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)} Z`; };
+      FIN.hook((t) => { const m = mins(t);
+        $("hand").setAttribute("transform", `rotate(${270 + m / 2})`);
+        $("arcA").setAttribute("d", sector(0, Math.min(m, 180)));
+        $("arcR").setAttribute("d", sector(180, Math.max(180, m)));
+        const h = 21 + Math.floor(m / 60), mm = Math.floor(m % 60), hh = h % 12 || 12;
+        $("clk").textContent = `${hh}:${String(mm).padStart(2, "0")} ${h >= 24 || h < 12 ? "AM" : "PM"}`; });
+      pop($("req"), C.req); pop($("three"), C.three); pop($("wait"), C.wait); pop($("late"), C.late); pop($("pays"), C.pays);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["s04_clock"] = tl;
+    </script>
+  </body>
+</html>
