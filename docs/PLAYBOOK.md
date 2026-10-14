@@ -119,6 +119,11 @@ measurements in a session):**
 | S4–S7 render shards | Each pulls assets, renders its EDL rows | `projects/<slug>/parts/N/part.mp4` |
 | S0 final | Concat (`ffmpeg -f concat -c copy`), music bed and ducking over the full length (never per part, to avoid seams), pre-render review, delivery | master MP4, contact sheet, SRT |
 
+**Measured (2026-10-13, Jet Engine Paradox):** four scene sessions plus the coordinator hit the account's
+**5-hour usage limit about 10 minutes after the scene sessions started**, before any of them had pushed anything.
+All five stopped until the reset. *So:* run at most two heavy sessions beside the coordinator. Have each session push
+code and upload renders after every finished scene, not at the end. Start the next pair only when the first pair is done.
+
 **Rules:** each session owns one folder and one branch (no merge conflicts); same effort and quality in every shard; media
 over 100 MB never goes in git (hand over by URL list and re-download, or a release asset/LFS after a test upload); archive
 sessions when done; 6–8 sessions is the sensible maximum. Every new session runs `.claude/hooks/session-start.sh`
@@ -873,6 +878,24 @@ Prefer the maker's own sourced comparison (Rolls-Royce: gas 200 °C above the al
 blade) over invented ones. Keep `brief/changes-from-brief.md` so the owner sees each change and its reason. Tavily
 rate-limits parallel calls (429): call it one at a time and fall back to WebSearch. The Commons search API timed out in
 a loop of 8 queries, so fetch exact `--titles` instead.
+
+**Jet Engine Paradox, 3D scene session A (2026-10-13, 8 Three.js scenes on one shared model set `_libA/jepA.js`).**
+Each of these cost a re-render or a wrong look:
+- **`setsid nohup` alone was not enough.** hyperframes 0.8.103 records every ancestor process at start and aborts
+  (`render_cancelled_parent_exited`) when any of them exits, even after `setsid`. Export `HYPERFRAMES_RENDER_DETACHED=1`
+  for detached renders (`video/jet-engine-paradox/_libA/render.sh`).
+- **`material.envMapIntensity` does nothing with `scene.environment`** (three r181 uses `scene.environmentIntensity`).
+  The scenes looked flat and cream-coloured until the scene-level value was set.
+- **White blobs that bloom were NaN/inf pixels**, not reflections. Clamp the shader output and zero NaNs
+  (`isnan`) before the HalfFloat composer.
+- **Software-GL cost (measured, 1080p, 3 workers, 1 s slice):** 4× MSAA in the composer 2.4× slower (use `FXAAEffect`);
+  seven translucent motion-blur copies of a 48-blade ring 2.5× slower (use 4, on the coarse ring LOD only); clearcoat
+  +16% (invisible at roughness 0.4); bloom + heat shimmer together ~20%. Final stack ≈ 2 s per frame per worker.
+- **Heat as a bare emissive turns metal into yellow plastic.** Glow only where the temperature field is high (leading
+  edge, tip) with a sharp ramp, and keep the metal reflections visible.
+- **Thermal view reads instantly when the background is the hot gas** (yellow/white in the ironbow ramp) and the cooled
+  blade sits darker (red/magenta) in front of it. Cooling-film cyan only right behind the holes, never as a wash.
+- **Inter's subsets have no `≈` (U+2248):** draw it as a small inline SVG in the label.
 
 **Minimum Amount Due (English, 8:05, 2026-10-11, v1 → v2).** The per-shot review of v1 found:
 - **Proofs unreadable:** 1080p screenshots at a 1.1–1.8× zoom left the highlighted line about 10 px tall on a phone.

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>A3 · The high-pressure turbine blade</title>
+    <!-- Session A, The Jet Engine Paradox. One HP turbine blade rises out of darkness, amber rim light, slow 360 turn.
+         Shared model + render stack: jepA.js (master in ../_libA/); HDRI vendor/library/hdri/studio_small_09_1k.hdr ; Label lands on "The high pressure turbine blade" (+2.66 s). -->
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js",
+          "simplex-noise": "./vendor/noise/simplex-noise.js"
+      } }
+    </script>
+    <link rel="stylesheet" href="jep.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #0B0E14; font-family: Inter, Arial, sans-serif; }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .scrim { position: absolute; left: -260px; bottom: -260px; width: 1400px; height: 620px;
+        background: radial-gradient(closest-side, rgba(5,6,10,0.65), rgba(5,6,10,0)); }
+      #lbl { overflow: hidden; }
+      #lbl .bar { position: absolute; left: -4px; top: 0; bottom: 0; width: 4px; background: var(--amber); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="A3_blade_rise" data-start="0" data-width="1920" data-height="1080" data-duration="5.02">
+      <canvas id="gl"></canvas>
+      <div class="scrim"></div>
+      <div class="jep-label" id="lbl"><span id="lblt">High-pressure turbine blade</span></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#lbl", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 2.6);
+      tl.fromTo("#lblt", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, 2.75);
+      tl.to("#lbl", { x: 6, duration: 1.6, ease: "none" }, 3.2);
+      window.__timelines["A3_blade_rise"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, backdrop, makeBlade, hotMetal, holeDecals, embers, U, seg, ease, lerp, wob, aim } from "./jepA.js";
+      const st = createStage({ fov: 30, bloom: { intensity: 0.8, threshold: 1.3, smoothing: 0.3, radius: 0.7 } });
+      const { scene, camera } = st;
+      const bg = backdrop({ glowDir: [-0.3, 0.1, -1], glow: 0.7 }); scene.add(bg);
+      const L = lightRig(scene, { key: 1.6, rim: 6.0, fill: 0.35 });
+      const blade = makeBlade();
+      const mat = hotMetal({ roughness: 0.4 });
+      const mesh = new THREE.Mesh(blade.geometry, mat);
+      const holes = holeDecals(blade.holes);
+      const pivot = new THREE.Group(); pivot.add(mesh, holes); scene.add(pivot);
+      const em = embers({ count: 140, box: [1.6, 1.2, 1.0], center: [0.05, 0.1, 0], size: 16 }); scene.add(em);
+      st.run((t) => {
+        const rise = seg(t, 0.0, 2.4, ease.out);
+        pivot.position.set(0.0, lerp(-0.55, 0.0, rise), 0);
+        pivot.rotation.y = -0.6 + Math.PI * 2 * seg(t, 0, 5.02, (x) => 0.55 * x + 0.45 * ease.inOut(x));
+        pivot.rotation.z = 0.04 * wob(t);
+        const reveal = seg(t, 0.0, 2.2, ease.inOut2);
+        L.rim.intensity = 6.0 * reveal; L.rim2.intensity = 3.6 * reveal; L.key.intensity = 0.2 + 2.0 * seg(t, 0.6, 2.8);
+        L.fill.intensity = 0.35 * reveal;
+        scene.environmentIntensity = 0.08 + 0.6 * seg(t, 0.4, 2.6);
+        U.uHeat.value = 0.02 + 0.04 * seg(t, 1.5, 5.0);
+        bg.material.uniforms.uGlow.value = 0.25 + 0.55 * reveal;
+        em.material.uniforms.uAmt.value = 0.6 * reveal;
+        const k = t / 5.02;
+        aim(camera, [Math.sin(0.15 + 0.1 * k) * lerp(1.62, 1.45, ease.inOut(k)), 0.12 + 0.05 * k, Math.cos(0.15 + 0.1 * k) * lerp(1.62, 1.45, ease.inOut(k))],
+          [-0.2, 0.09, 0], 0.0);
+        st.setShimmer(0.6, 0.6, 0.65, 0.25, 0.3);
+      });
+    </script>
+  </body>
+</html>
