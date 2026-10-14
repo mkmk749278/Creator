@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C1 empty engine bay</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="c1-empty-bay" data-start="0" data-width="1920" data-height="1080" data-duration="5.7">
+      <div class="photo" id="photo" data-layout-allow-overflow><div class="photo-inner" id="photoInner"></div></div>
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+      <div class="jep-label" id="lab"></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration;
+      // photo slot: real image if given, else the neutral PHOTO SLOT plate
+      const inner = document.getElementById("photoInner");
+      if (SC.photo) { const im = document.createElement("img"); im.src = SC.photo; im.style.objectPosition = SC.photoPos; inner.appendChild(im); }
+      else { const ph = document.createElement("div"); ph.className = "slot-ph"; ph.setAttribute("data-layout-allow-occlusion", ""); ph.textContent = "PHOTO SLOT"; inner.appendChild(ph); }
+      document.getElementById("lab").textContent = SC.label;
+
+      const S = BP.Stage(document.getElementById("bp"), { seed: 11 });
+      const F = BP.fighter();
+      const g = (n) => BP.group(F.strokes, n);
+      const parts = [ // group, start, end (s), overlap
+        ["fuse_long", 1.75, 3.3, 0.5], ["fuse_rings", 1.95, 3.5, 0.35], ["canopy", 2.35, 3.4, 0.5], ["wing", 2.2, 3.5, 0.6],
+        ["wing_detail", 2.9, 4.1, 0.3], ["fin", 2.6, 3.7, 0.5], ["intake", 2.9, 3.9, 0.5], ["probe", 1.8, 2.3, 1], ["bay", 3.55, 4.45, 0.35],
+      ].map(([n, a, b, ov]) => ({ s: g(n), a, b, ov, n }));
+      const bay = F.bay, bayC = [(bay.x0 + bay.x1) / 2, bay.yc, 0];
+      const cam = (t) => BP.camera({
+        target: BP.keys([[0, [7.6, 0.4, 0]], [D, [8.4, 0.2, 0]]], t),
+        yaw: BP.keys([[0, 38], [D, 24]], t), pitch: BP.keys([[0, 52], [D, 42]], t),
+        dist: BP.keys([[0, 36], [D, 29]], t), fov: 22, roll: BP.keys([[0, -3], [D, 1]], t), cy: 500,
+      });
+      function frame(t) {
+        const c = cam(t);
+        const wipe = BP.eio(1.55, 2.45, t) * 2000 - 40; // blueprint scans in over the photo from the left
+        const shift = [-(t * 26), t * 6];
+        S.begin({ t, paper: 0.84, shift, clip: (x) => x.rect(0, 0, Math.max(0, wipe), 1080), light: [700 + t * 40, 420] });
+        const L = S.L, heads = [];
+        // construction lines through nose, cockpit, bay and fin tip
+        const anchors = [[0, 0, 0], [3.7, 0.9, 0], bayC, [12.1, 3.15, 0]].map((p) => c.proj(p));
+        BP.construct(L, anchors, t, { alpha: 0.1 * (1 - BP.ss(4.2, 5.2, t) * 0.5), prog: (i) => BP.eout(1.8 + i * 0.18, 2.8 + i * 0.18, t) });
+        for (const P of parts) {
+          const p = BP.eio(P.a, P.b, t);
+          const isBay = P.n === "bay";
+          BP.draw(L, c, P.s, {
+            prog: (i) => BP.seq(p, i, P.s.length, P.ov), heads, fog: [12, 30, 0.45],
+            col: isBay ? BP.C.hot : BP.C.amber, w: isBay ? 1.4 : 1.25,
+            alpha: isBay ? 1 : 1 - BP.ss(4.3, 5.2, t) * 0.18,
+          });
+        }
+        // the empty cavity glows: soft light along the bay axis, breathing slowly
+        const ga = BP.ss(3.9, 4.9, t) * (0.85 + 0.15 * Math.sin(t * 5.2));
+        for (let k = 0; k <= 6; k++) {
+          const P = c.proj([bay.x0 + (bay.x1 - bay.x0) * (k / 6), bay.yc, 0]);
+          if (P) BP.glow(L, P[0], P[1], 120 + 30 * Math.sin(k + t), "rgba(249,115,22,0.55)", ga * 0.55);
+        }
+        const A = c.proj([bay.x0, bay.yc, 0]); if (A) BP.glow(L, A[0], A[1], 70, "rgba(253,186,116,0.9)", ga * 0.6);
+        // overall length dimension under the airframe
+        BP.dim(L, c.proj([-1.0, -1.1, 0]), c.proj([12.9, -1.1, 0]), 0, BP.eio(3.7, 4.7, t), BP.C.dim, 0.55);
+        BP.pens(L, heads);
+        S.end();
+        // scan line at the wipe front
+        if (wipe > 0 && wipe < 1940) {
+          const x = S.ctx; x.save(); x.globalCompositeOperation = "lighter";
+          const gr = x.createLinearGradient(wipe - 60, 0, wipe + 4, 0);
+          gr.addColorStop(0, "rgba(249,115,22,0)"); gr.addColorStop(1, "rgba(253,186,116,0.55)");
+          x.fillStyle = gr; x.fillRect(wipe - 60, 0, 64, 1080);
+          x.fillStyle = "rgba(255,240,220,0.9)"; x.fillRect(wipe, 0, 2, 1080); x.restore();
+        }
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#photoInner", { scale: 1.0 }, { scale: 1.1, duration: D, ease: "none" }, 0);
+      tl.fromTo("#lab", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 3.45);
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c1-empty-bay"] = tl;
+    </script>
+  </body>
+</html>

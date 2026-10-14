@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C6 split blueprint</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+  </head>
+  <body>
+    <div id="root" data-composition-id="c6-split-blueprint" data-start="0" data-width="1920" data-height="1080" data-duration="6.79">
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration;
+      const S = BP.Stage(document.getElementById("bp"), { seed: 61 });
+      const F = BP.fighter(), E = BP.engineSection();
+      const FS = F.strokes.map((s, i) => [BP.hash(i, 17), s]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+      const ES = E.strokes.filter((s) => s.g !== "drynoz").map((s, i) => [BP.hash(i, 29), s]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+      const camL = (t) => BP.camera({ target: [6.6, 0, 0.1], yaw: BP.keys([[0, 30], [D, 18]], t), pitch: BP.keys([[0, 66], [D, 58]], t),
+        dist: BP.keys([[0, 46], [D, 41]], t), fov: 24, roll: BP.keys([[0, -26], [D, -18]], t), cx: 480, cy: 530 });
+      const camR = (t) => BP.camera({ target: [2.15, 0, 0], yaw: BP.keys([[0, 34], [D, 22]], t), pitch: BP.keys([[0, 14], [D, 8]], t),
+        dist: BP.keys([[0, 11.2], [D, 10.2]], t), fov: 30, roll: BP.keys([[0, -3], [D, 1]], t), cx: 1440, cy: 530 });
+      const mix = (k) => `rgb(${Math.round(249 + (239 - 249) * k)},${Math.round(115 + (68 - 115) * k)},${Math.round(22 + (68 - 22) * k)})`;
+      function frame(t) {
+        S.begin({ t, paper: 1, shift: [-t * 24, t * 6], light: [960 + Math.sin(t * 0.6) * 200, 440] });
+        const L = S.L, heads = [];
+        // both drawings advance in fits and starts and never finish
+        const base = SC.drawn * BP.eio(0.1, 3.4, t);
+        const pL = base + 0.05 * BP.noise1(t * 2.3, 3), pR = base + 0.05 * BP.noise1(t * 2.1, 8);
+        const rk = BP.ss(SC.tRisk - 0.1, SC.tRisk + 0.2, t);
+        const pulse = rk * (0.55 + 0.45 * Math.max(Math.cos((t - SC.tRisk) * 7.5), 0) * Math.exp(-(t - SC.tRisk) * 0.6));
+        const col = mix(rk), fl = { t, amt: 0.65, rate: 16 };
+        const cl = camL(t), cr = camR(t);
+        // racing construction lines through key points on both drawings
+        BP.construct(L, [[0, 0, 0], [10.5, 0, 0], [12.1, 0, 4.1]].map((p) => cl.proj(p)), t, { alpha: 0.13, speed: 220, crossCol: col });
+        BP.construct(L, [[0.24, 0.46, 0], [2.15, 0.24, 0], [4.25, -0.38, 0]].map((p) => cr.proj(p)), t, { alpha: 0.13, speed: 260, crossCol: col });
+        L.save(); L.beginPath(); L.rect(0, 0, 958, 1080); L.clip();
+        BP.draw(L, cl, FS, { prog: (i) => BP.seq(pL, i, FS.length, 0.12), heads, fog: [30, 48, 0.5], w: 1.2, col, flicker: fl, alpha: 1 + pulse * 0.4 });
+        L.restore();
+        L.save(); L.beginPath(); L.rect(962, 0, 958, 1080); L.clip();
+        BP.draw(L, cr, ES, { prog: (i) => BP.seq(pR, i, ES.length, 0.1), heads, fog: [9, 13, 0.55], w: 1.15, col, flicker: fl, alphaFn: (i, s) => (s.mirror ? 0.82 : 1) });
+        L.restore();
+        for (const P of [cl.proj([7.5, 0, 0]), cr.proj([2.1, 0, 0])]) if (P) BP.glow(L, P[0], P[1], 330, "rgba(239,68,68,0.55)", pulse * 0.7);
+        BP.pens(L, heads, col);
+        // the divider between the two sheets
+        BP.line2(L, [960, 0], [960, 1080], rk > 0.5 ? BP.C.red : "#E2E8F0", 1.5, 0.35 + pulse * 0.5, [12, 8], t * 40);
+        S.end();
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c6-split-blueprint"] = tl;
+    </script>
+  </body>
+</html>

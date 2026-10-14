@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B3 Creep</title>
+    <!-- Session B scene. Assets: vendor/library/hdri/studio_small_09_1k.hdr (Poly Haven, CC0). Shared code: lib.js (copied from ../_b_lib). -->
+    <link rel="stylesheet" href="jep.css" />
+    <script>
+      // HyperFrames polls window.__hf.buildReady; resolved by lib.js once HDRI/fonts are loaded and the first frame is drawn.
+      window.__hf = window.__hf || {}; window.__hf.buildReady = Object.assign(window.__hf.buildReady || {},
+        { jepScene: new Promise((r) => { window.__jepReady = r; }) });
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js"
+      } }
+    </script>
+    <style>
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; overflow: hidden; background: #0B0E14; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .jep-label { opacity: 0; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="B3_creep" data-start="0" data-width="1920" data-height="1080" data-duration="6.81">
+      <canvas id="gl"></canvas>
+      <div class="jep-label" id="l1">Creep</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#l1", { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 5.4);
+      tl.to("#l1", { opacity: 1, duration: 0.01 }, 6.8);
+      window.__timelines["B3_creep"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, orbit, makeEmbers, buildBlade, grainMeshes, jitterSeeds, mulberry32, smr, inOut, outC, lerp, PAL, col } from "./lib.js";
+      const S = createStage({ fov: 30, bloom: 1.0, bloomThreshold: 0.95, envIntensity: 0.85, bg: { glowAmt: 0.14, glowScreen: [0.0, -0.55], glow: 0xff8a2a } });
+      const { scene, camera } = S;
+      const L = lightRig(scene, { key: 1.4, rim: 1.2, fill: 0.45 });
+      const heatLight = new THREE.PointLight(PAL.amber, 0, 12, 1.5); heatLight.position.set(-0.4, -1.6, 1.2); scene.add(heatLight);
+
+      // the sample: a bar of metal grains (rest length 3.6)
+      const mn = new THREE.Vector3(-1.8, -0.5, -0.45), mx = new THREE.Vector3(1.8, 0.5, 0.45);
+      const shared = { uBoundary: { value: 0 }, uGroove: { value: 1 }, uLineW: { value: 0.016 }, uT: { value: 0 },
+        uHeat: { value: 0 }, uHeatAxis: { value: new THREE.Vector3(0, -1, 0) }, uHeatOff: { value: -0.5 }, uHeatSpread: { value: 1.0 }, uHeatGain: { value: 1.25 } };
+      const G = grainMeshes(jitterSeeds(9, 3, 2, mn, mx, 0.8, mulberry32(5)), mn, mx, { seed: 23, latFreq: 25, shared, features: ["BLOCK", "LATTICE", "HEAT"] });
+      const rig = new THREE.Group(); rig.scale.setScalar(0.72); rig.position.set(-1.3, 0.05, 0); scene.add(rig);
+      const bar = new THREE.Group(); bar.add(G.group); rig.add(bar);
+      const r = mulberry32(99);
+      for (const g of G.grains) { g.mesh.matrixAutoUpdate = false; g.dy = r() - 0.5; g.rz = r() - 0.5; g.dz = r() - 0.5; }
+
+      // grips and pull arrows (white = force)
+      const gripM = new THREE.MeshPhysicalMaterial({ color: 0x3a3f48, metalness: 1, roughness: 0.38 });
+      const arrowM = new THREE.MeshStandardMaterial({ color: 0xf8fafc, emissive: 0xf8fafc, emissiveIntensity: 0.7, roughness: 0.4 });
+      function grip(sign) {
+        const g = new THREE.Group();
+        const body = new THREE.Mesh(new THREE.BoxGeometry(0.42, 1.34, 1.2), gripM); body.position.x = sign * 0.21; g.add(body);
+        const arrow = new THREE.Group();
+        const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.55, 24), arrowM); shaft.rotation.z = Math.PI / 2; shaft.position.x = sign * 0.275;
+        const head = new THREE.Mesh(new THREE.ConeGeometry(0.19, 0.36, 32), arrowM); head.rotation.z = -sign * Math.PI / 2; head.position.x = sign * 0.72;
+        arrow.add(shaft, head); arrow.position.x = sign * 0.45; g.add(arrow);
+        rig.add(g); return { g, arrow };
+      }
+      const gl = grip(-1), gr = grip(1);
+
+      // the blade beside it: it lengthens a little as the metal creeps
+      const B = buildBlade({ features: ["HOLES", "HEAT"] });
+      B.u.uHeatAxis.value.set(0, 1, 0); B.u.uHeatOff.value = 0.2; B.u.uHeatSpread.value = 1.4; B.u.uHeatGain.value = 1.4;
+      B.group.scale.setScalar(0.95); B.group.position.set(3.45, -0.85, -0.2); B.group.rotation.y = 2.5; scene.add(B.group);
+      const lineM = new THREE.MeshBasicMaterial({ color: col(0xf8fafc, 1.2), transparent: true, opacity: 0 });
+      const dashes = new THREE.Group();
+      for (let i = 0; i < 9; i++) { const d = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.02, 0.02), lineM); d.position.x = -0.8 + i * 0.2; dashes.add(d); }
+      dashes.position.set(3.45, -0.85 + 0.95 * 1.45, -0.2); scene.add(dashes);
+      const gapM = new THREE.MeshBasicMaterial({ color: col(PAL.red, 2.2), transparent: true, opacity: 0 });
+      const gap = new THREE.Mesh(new THREE.BoxGeometry(0.06, 1, 0.06), gapM); scene.add(gap);
+
+      const embers = makeEmbers({ count: 170, seed: 4, box: { min: [-5, -2.6, -3], size: [10, 5.2, 5] }, intensity: 2.6, speed: 0.45, sizeMax: 0.05 });
+      scene.add(embers.points);
+
+      const M = new THREE.Matrix4(), T1 = new THREE.Matrix4(), R1 = new THREE.Matrix4(), S1 = new THREE.Matrix4(), T0 = new THREE.Matrix4();
+      const tgt = new THREE.Vector3();
+      function renderAt(t) {
+        tgt.set(0.3, 0.25, 0);
+        orbit(camera, tgt, lerp(8.9, 9.6, inOut(t / 6.81)), lerp(-0.32, -0.12, inOut(t / 6.81)), lerp(0.3, 0.2, t / 6.81));
+        const heat = smr(t, 0.45, 1.6);
+        const force = smr(t, 1.05, 1.6);
+        const e = 0.24 * inOut(smr(t, 1.9, 6.7));       // strain (exaggerated for the eye)
+        shared.uT.value = t; shared.uHeat.value = 0.75 * heat;
+        shared.uBoundary.value = lerp(0.35 * heat, 1.0, smr(t, 3.4, 4.4)) * (0.88 + 0.12 * Math.sin(t * 6));
+        shared.uGroove.value = 1 - 0.5 * heat;
+        heatLight.intensity = 30 * heat;
+        for (const g of G.grains) {
+          const c = g.centroid;
+          // grains move apart along the pull and slide/rotate a little at their borders; the bar thins slightly
+          const nx = c.x * (1 + e), ny = c.y * (1 - 0.18 * e) + g.dy * 0.5 * e, nz = c.z * (1 - 0.18 * e) + g.dz * 0.3 * e;
+          T1.makeTranslation(nx, ny, nz); R1.makeRotationZ(g.rz * 0.9 * e); S1.makeScale(1 + 0.25 * e, 1 - 0.05 * e, 1 - 0.05 * e); T0.makeTranslation(-c.x, -c.y, -c.z);
+          g.mesh.matrix.copy(T1).multiply(R1).multiply(S1).multiply(T0);
+        }
+        const half = 1.8 * (1 + e);
+        gl.g.position.set(-half, 0, 0); gr.g.position.set(half, 0, 0);
+        const pulse = 0.06 * Math.sin(t * 5.5) * force;
+        for (const [G2, s] of [[gl, -1], [gr, 1]]) { G2.arrow.scale.setScalar(Math.max(0.001, outC(force))); G2.arrow.position.x = s * (0.45 + pulse + 0.25 * (1 - force)); }
+        arrowM.emissiveIntensity = 0.6 + 0.4 * force;
+        // blade: tip rises past its original height (dashed line); red bar shows the extra length
+        const grow = 0.15 * inOut(smr(t, 2.2, 6.7));
+        B.foil.scale.y = 1 + grow; B.u.uT.value = t; B.u.uHeat.value = 0.7 * heat;
+        lineM.opacity = smr(t, 2.0, 2.6);
+        const yTop0 = -0.85 + 0.95 * 1.45, yTop = -0.85 + 0.95 * 1.45 * (1 + grow);
+        gap.scale.y = Math.max(0.001, yTop - yTop0); gap.position.set(3.45 + 0.85, (yTop + yTop0) / 2, -0.2); gapM.opacity = smr(t, 2.8, 3.4);
+        S.shimmer(0.9 * heat, [0.15, 0.35, 0.75, 0.95]);
+        embers.update(t);
+        S.render(t);
+      }
+      S.start(renderAt);
+    </script>
+  </body>
+</html>

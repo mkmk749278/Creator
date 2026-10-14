@@ -1,0 +1,27 @@
+/* The Jet Engine Paradox: shared look ("The Hot Section"). Copy into each scene folder; do not edit per scene.
+   Palette from the owner's brief; cyan is reserved for air and cooling only. */
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 400 800; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2");
+  unicode-range: U+20B9, U+0100-024F, U+2000-206F; }
+:root {
+  --slate: #0B0E14;        /* base: deep titanium slate (never flat: always under grain/light/motion) */
+  --slate-2: #121826;      /* panels, blueprint paper */
+  --grid: rgba(248,250,252,0.07);   /* blueprint grid lines */
+  --amber: #F97316;        /* afterburner amber: India, heat, progress, primary line work */
+  --amber-hot: #FDBA74;    /* hottest highlights, glow cores */
+  --red: #EF4444;          /* warning red: gaps, delays, failure, weak spots */
+  --white: #F8FAFC;        /* ceramic white: text, coating */
+  --dim: #94A3B8;          /* secondary text */
+  --cyan: #38BDF8;         /* cooling air ONLY */
+  --font: "Inter", Arial, sans-serif;
+}
+/* in-scene label (2-4 words), lower-left, on a dark scrim; keep the bottom-right 520x170 px and top-right 260x160 px
+   clear: the assembler puts the citation tag, ILLUSTRATION tag and logo bug there */
+.jep-label { position: absolute; left: 96px; bottom: 120px; padding: 14px 22px 12px; background: rgba(11,14,20,0.72);
+  border-left: 4px solid var(--amber); font: 800 40px/1.1 var(--font); letter-spacing: 0.04em; color: var(--white);
+  text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.jep-label small { display: block; font: 600 22px/1.3 var(--font); letter-spacing: 0.08em; color: var(--dim); margin-top: 6px; }
+.jep-num { font: 800 120px/1 var(--font); color: var(--white); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.jep-num.amber { color: var(--amber); } .jep-num.red { color: var(--red); }

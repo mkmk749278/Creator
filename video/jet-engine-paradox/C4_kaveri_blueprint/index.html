@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C4 Kaveri blueprint</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #stamp { left: 96px; bottom: 120px; font-size: 36px; transform-origin: 0% 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="c4-kaveri-blueprint" data-start="0" data-width="1920" data-height="1080" data-duration="4.71">
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+      <div class="stamp" id="stamp" data-layout-allow-occlusion></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration;
+      document.getElementById("stamp").textContent = SC.stamp;
+      const S = BP.Stage(document.getElementById("bp"), { seed: 41 });
+      const E = BP.engineSection();
+      const g = (n) => BP.group(E.strokes, n);
+      const parts = [
+        ["center", 0.1, 0.6, 1], ["case", 0.15, 1.2, 0.5], ["ab_case", 0.6, 1.5, 0.5], ["rings", 0.4, 1.7, 0.5], ["ab_rings", 1.0, 2.0, 0.5],
+        ["fan", 0.7, 1.9, 0.3], ["hpc", 1.1, 2.3, 0.25], ["comb", 1.5, 2.5, 0.3], ["turb", 1.8, 2.8, 0.3], ["shaft", 2.0, 2.9, 0.4],
+        ["hatch", 2.2, 3.3, 0.15], ["ab", 2.4, 3.4, 0.3], ["ab_hatch", 2.6, 3.5, 0.15],
+      ].map(([n, a, b, ov]) => ({ s: g(n), a, b, ov, n }));
+      const cam = (t) => BP.camera({
+        target: BP.keys([[0, [2.05, 0.02, 0]], [D, [2.2, 0.0, 0]]], t), yaw: BP.keys([[0, 34], [D, 13]], t), pitch: BP.keys([[0, 15], [D, 6]], t),
+        dist: BP.keys([[0, 7.4], [D, 6.3]], t), fov: 30, roll: BP.keys([[0, -2], [D, 0.5]], t), cx: 990, cy: 470,
+      });
+      function frame(t) {
+        const c = cam(t);
+        S.begin({ t, paper: 1, shift: [-t * 34, t * 6], light: [900 + t * 40, 420] });
+        const L = S.L, heads = [];
+        BP.construct(L, [[0.24, 0.462, 0], [2.1, 0.24, 0], [4.25, -0.385, 0]].map((p) => c.proj(p)), t,
+          { alpha: 0.09, prog: (i) => BP.eout(0.1 + i * 0.25, 1.0 + i * 0.25, t) });
+        for (const P of parts) {
+          const p = BP.eio(P.a, P.b, t);
+          BP.draw(L, c, P.s, { prog: (i) => BP.seq(p, i, P.s.length, P.ov), heads, fog: [5.5, 8.5, 0.55], w: 1.15,
+            col: P.n === "center" ? BP.C.dim : BP.C.amber, alphaFn: (i, s) => (s.mirror ? 0.82 : 1) });
+        }
+        // dimensions: overall length below, casing diameter at the intake
+        BP.dim(L, c.proj([0.0, -0.62, 0]), c.proj([4.25, -0.62, 0]), 0, BP.eio(3.1, 3.9, t), BP.C.dim, 0.6);
+        BP.dim(L, c.proj([-0.12, 0.468, 0]), c.proj([-0.12, -0.468, 0]), 0, BP.eio(3.4, 4.2, t), BP.C.dim, 0.6);
+        // a faint warm glow where the combustor sits once it is drawn (the heart of the plan)
+        const Pc = c.proj([2.15, 0, 0]); if (Pc) BP.glow(L, Pc[0], Pc[1], 260, "rgba(249,115,22,0.35)", BP.ss(2.4, 3.6, t) * 0.5);
+        BP.pens(L, heads);
+        S.end();
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#stamp", { opacity: 0, scale: 1.6, rotation: -9 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.16, ease: "power4.in" }, SC.stampAt);
+      tl.fromTo("#stamp", { x: 0 }, { x: 5, duration: 0.07, yoyo: true, repeat: 1 }, SC.stampAt + 0.16);
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c4-kaveri-blueprint"] = tl;
+    </script>
+  </body>
+</html>

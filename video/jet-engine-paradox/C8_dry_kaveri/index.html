@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C8 Dry Kaveri</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      .tick { position: absolute; font: 600 22px/1 var(--font); color: var(--dim); font-variant-numeric: tabular-nums; transform: translateX(-50%); }
+      #tgtw { position: absolute; font: 800 20px/1 var(--font); letter-spacing: 0.14em; color: var(--white); }
+      #readout { position: absolute; font: 800 54px/1 var(--font); color: var(--white); font-variant-numeric: tabular-nums; white-space: nowrap; }
+      #readout small { font-size: 28px; color: var(--amber-hot); margin-left: 6px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="c8-dry-kaveri" data-start="0" data-width="1920" data-height="1080" data-duration="10.59">
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+      <div id="ticks"></div>
+      <div id="tgtw"></div>
+      <div id="readout"><span id="rv"></span><small>kN</small></div>
+      <div class="jep-label" id="lab1"></div>
+      <div class="jep-label keepcase" id="lab2"></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration, $ = (id) => document.getElementById(id);
+      $("lab1").textContent = SC.label1; $("lab2").textContent = SC.label2; $("tgtw").textContent = SC.targetWord;
+      // thrust bar geometry (screen px)
+      const BX0 = 300, BX1 = 1440, BY = 735, BH = 34, kx = (v) => BX0 + (BX1 - BX0) * (v / SC.scaleMax);
+      const tickEls = [];
+      for (let v = 0; v <= SC.scaleMax; v += 10) { const e = document.createElement("div"); e.className = "tick"; e.textContent = v; e.style.left = kx(v) + "px"; e.style.top = BY + BH + 22 + "px"; $("ticks").appendChild(e); tickEls.push(e); }
+      BP.place($("tgtw"), kx(SC.target) - 44, BY - 92);
+
+      const S = BP.Stage($("bp"), { seed: 83 });
+      const E = BP.engineSection();
+      const g = (n) => BP.group(E.strokes, n);
+      const core = BP.groups(E.strokes, ["center", "case", "hatch", "fan", "hpc", "comb", "turb", "shaft", "rings"]);
+      const AB = BP.groups(E.strokes, ["ab", "ab_case", "ab_hatch", "ab_rings"]);
+      const DRY = g("drynoz");
+      const cam = (t) => BP.camera({
+        target: BP.keys([[0, [2.2, 0, 0]], [SC.tSlide + 0.8, [2.2, 0, 0]], [SC.tSlide + 2.6, [1.6, 0, 0]], [D, [1.75, 0, 0]]], t),
+        yaw: BP.keys([[0, 22], [D, 9]], t), pitch: BP.keys([[0, 10], [D, 5]], t),
+        dist: BP.keys([[0, 7.0], [SC.tSlide + 2.6, 5.7], [D, 5.4]], t), fov: 30, roll: BP.keys([[0, -1.5], [D, 0.5]], t),
+        cx: 960, cy: BP.keys([[0, 470], [SC.tBar - 0.5, 470], [SC.tBar + 0.4, 360], [D, 355]], t),
+      });
+      function frame(t) {
+        const c = cam(t);
+        S.begin({ t, paper: 1, shift: [-t * 22, t * 4], light: [900 + t * 25, 420] });
+        const L = S.L, heads = [];
+        const rp = BP.eio(0, 0.9, t); // re-ink as the shot opens
+        BP.draw(L, c, core, { prog: (i) => BP.seq(rp, i, core.length, 0.6), heads, fog: [4.5, 8, 0.6], w: 1.15,
+          colFn: (i, s) => (s.g === "center" ? BP.C.dim : BP.C.amber), alphaFn: (i, s) => (s.mirror ? 0.82 : 1) });
+        // the afterburner section: flashes red as it unbolts, slides off aft and fades
+        const sl = BP.eio(SC.tSlide + 0.15, SC.tSlide + 1.6, t), fa = 1 - BP.ss(SC.tSlide + 0.9, SC.tSlide + 1.7, t);
+        if (fa > 0) {
+          const xf = BP.xf({ pos: [sl * 2.6, -sl * 0.25, 0], rz: -sl * 6, pivot: [0, 0, 0] });
+          const redK = BP.ss(SC.tSlide - 0.1, SC.tSlide + 0.15, t);
+          BP.draw(L, c, AB, { xf, prog: (i) => BP.seq(rp, i, AB.length, 0.6), heads, fog: [4.5, 8, 0.6], w: 1.15, alpha: fa,
+            col: redK > 0.5 ? BP.C.red : BP.C.amber, alphaFn: (i, s) => (s.mirror ? 0.82 : 1) });
+          // the cut line at the turbine exit
+          const A = c.proj([2.75, 0.5, 0]), B = c.proj([2.75, -0.5, 0]);
+          if (A && B) BP.line2(L, A, B, BP.C.red, 2, redK * (1 - BP.ss(SC.tSlide + 0.6, SC.tSlide + 1.2, t)), [10, 6], -t * 60);
+        }
+        BP.draw(L, c, DRY, { prog: (i) => BP.seq(BP.eio(SC.tSlide + 1.4, SC.tSlide + 2.2, t), i, DRY.length, 0.6), heads, w: 1.25, col: BP.C.hot });
+        const Pc = c.proj([2.15, 0, 0]); if (Pc) BP.glow(L, Pc[0], Pc[1], 230, "rgba(249,115,22,0.35)", 0.45);
+        // thrust bar instrument
+        const bk = BP.eout(SC.tBar, SC.tBar + 0.7, t);
+        if (bk > 0) {
+          L.save(); L.globalAlpha = bk; L.strokeStyle = "rgba(226,232,240,0.55)"; L.lineWidth = 1.5;
+          L.strokeRect(BX0, BY, (BX1 - BX0) * bk, BH);
+          for (let v = 0; v <= SC.scaleMax; v += 2) { const X = kx(v); if (X > BX0 + (BX1 - BX0) * bk) break; const big = v % 10 === 0; L.beginPath(); L.moveTo(X, BY + BH); L.lineTo(X, BY + BH + (big ? 14 : 7)); L.stroke(); }
+          L.restore();
+          // target line
+          const tk = BP.eout(SC.tBar + 0.6, SC.tBar + 1.2, t), X = kx(SC.target);
+          BP.line2(L, [X, BY + BH + 10], [X, BY + BH + 10 - (BH + 80) * tk], BP.C.white, 2, 0.9 * tk, [9, 6], 0);
+          // fill to the measured value
+          const fv = SC.value * BP.eio(SC.tFill, SC.tFill + 1.5, t), FX = kx(fv);
+          if (fv > 0.05) {
+            const gr = L.createLinearGradient(BX0, 0, FX, 0); gr.addColorStop(0, "rgba(249,115,22,0.55)"); gr.addColorStop(1, "rgba(253,186,116,0.95)");
+            L.fillStyle = gr; L.fillRect(BX0 + 3, BY + 3, FX - BX0 - 6, BH - 6);
+            BP.glow(L, FX, BY + BH / 2, 60, "rgba(253,186,116,0.9)", 0.6);
+            if (fv >= SC.target) BP.glow(L, X, BY + BH / 2, 90, "rgba(248,250,252,0.6)", 0.5 * (1 - BP.ss(0, 1, (fv - SC.target) / 2.5)) + 0.15);
+          }
+          BP.place($("readout"), Math.max(FX, BX0) + 18, BY - 4);
+          $("rv").textContent = (fv >= SC.value - 0.01 ? "~" : "") + fv.toFixed(1);
+        }
+        BP.pens(L, heads);
+        S.end();
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#lab1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, SC.tLabel1);
+      tl.to("#lab1", { opacity: 0, x: -20, duration: 0.3 }, SC.tLabel2 - 0.3);
+      tl.fromTo("#lab2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, SC.tLabel2);
+      tl.fromTo("#ticks", { opacity: 0 }, { opacity: 1, duration: 0.6 }, SC.tBar + 0.2);
+      tl.fromTo("#tgtw", { opacity: 0 }, { opacity: 1, duration: 0.4 }, SC.tBar + 1.0);
+      tl.fromTo("#readout", { opacity: 0 }, { opacity: 1, duration: 0.3 }, SC.tFill);
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c8-dry-kaveri"] = tl;
+    </script>
+  </body>
+</html>

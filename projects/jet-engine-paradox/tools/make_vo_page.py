@@ -27,6 +27,29 @@ for name, chars, lines, text in blocks:
   <textarea class="raw" id="r{n}" readonly aria-hidden="true" tabindex="-1">{html.escape(text)}</textarea>
 </section>""")
 
+urls = (HERE / "fetch_urls.txt").read_text().strip() if (HERE / "fetch_urls.txt").exists() else ""
+fetch_card = "" if not urls else f"""
+<section class="block" aria-labelledby="hf">
+  <header>
+    <div><h2 id="hf">Footage to fetch</h2><p class="meta">GitHub app → Actions → Fetch media for a video · slug <code>jet-engine-paradox</code> · max_height 1080 · runner self-hosted</p></div>
+    <button type="button" class="copy" data-target="t9" id="b9">Copy URLs</button>
+  </header>
+  <div class="text" id="t9"><p class="urls">{html.escape(urls)}</p><p class="note">Ten short official clips: ISRO landing and launch, DRDO flying wing, Indian Air Force MiG-21 farewell, PIB and DD India Tejas, GE Aerospace engines. The list with what each one is for is in <code>fetch_list.md</code>.</p></div>
+  <textarea class="raw" id="r9" readonly aria-hidden="true" tabindex="-1">{html.escape(urls)}</textarea>
+</section>"""
+
+termux = (HERE / "fetch_termux.sh").read_text().strip() if (HERE / "fetch_termux.sh").exists() else ""
+if termux:
+    fetch_card = f"""
+<section class="block" aria-labelledby="ht">
+  <header>
+    <div><h2 id="ht">Footage: fetch on your phone</h2><p class="meta">Termux · one paste · files land in Download/jep</p></div>
+    <button type="button" class="copy" data-target="t8" id="b8">Copy command</button>
+  </header>
+  <div class="text" id="t8"><p class="note">Open Termux on the phone (not the VPS), long-press, Paste, press Enter. It installs the tools, asks once for storage access (tap Allow), then downloads the ten official clips into <code>Download/jep</code>. When it finishes, open the Files or Drive app, select everything in <code>Download/jep</code> and upload it to Drive → <code>Creator/jet-engine-paradox/footage</code>. Then tell me.</p><p class="urls">{html.escape(termux)}</p></div>
+  <textarea class="raw" id="r8" readonly aria-hidden="true" tabindex="-1">{html.escape(termux)}</textarea>
+</section>""" + fetch_card
+
 page = f"""<title>Jet Engine VO Blocks</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -66,6 +89,8 @@ code {{ font-family: var(--mono); }}
 .text {{ padding: 6px 16px 14px; font-size: 1.02rem; line-height: 1.65; max-width: 65ch; }}
 .text p {{ margin: 12px 0; }}
 .raw {{ position: absolute; left: -9999px; width: 1px; height: 1px; }}
+  .urls {{ font-family: var(--mono); font-size: .78rem; line-height: 1.5; word-break: break-all; }}
+.note {{ font-size: .9rem; color: var(--muted); }}
 .foot {{ font-size: .9rem; color: var(--muted); line-height: 1.55; }}
 @media (prefers-reduced-motion: no-preference) {{ .copy {{ transition: background .15s; }} }}
 </style>
@@ -84,12 +109,13 @@ code {{ font-family: var(--mono); }}
     <div><dt>Speaker boost</dt><dd>On</dd></div>
   </dl>
   {''.join(cards)}
+  {fetch_card}
   <p class="foot">Send the takes back as <code>block1.mp3</code> and <code>block2.mp3</code>: drop them in the Google Drive Creator folder or attach them in chat. The video is timed to the voice, so any pace is fine.</p>
 </main>
 <script>
 document.querySelectorAll('.copy').forEach(function (btn) {{
   btn.addEventListener('click', function () {{
-    var n = btn.dataset.target.slice(1), raw = document.getElementById('r' + n), label = 'Copy block ' + n;
+    var n = btn.dataset.target.slice(1), raw = document.getElementById('r' + n), label = btn.dataset.label || (btn.dataset.label = btn.textContent);
     function ok() {{ btn.textContent = 'Copied'; btn.classList.add('done'); setTimeout(function () {{ btn.textContent = label; btn.classList.remove('done'); }}, 2200); }}
     function fallback() {{
       var r = document.createRange(); r.selectNodeContents(document.getElementById('t' + n));

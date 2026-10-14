@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>A2 · Dive into the engine</title>
+    <!-- Session A, The Jet Engine Paradox. Cutaway low-bypass military turbofan with afterburner (generic illustration):
+         amber blueprint wireframe on titanium slate that solidifies into metal (a sweep runs front to back) while the camera
+         dives through the fan, compressor stages and combustor into the glowing hot section; ends inside the turbine stage.
+         Cues: "To answer that" +1.48 s, "inside the engine" +3.48 s, block gap +4.89 s (camera still diving).
+         Shared model + render stack: jepA.js (master in ../_libA/); HDRI vendor/library/hdri/studio_small_09_1k.hdr ; -->
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js",
+          "simplex-noise": "./vendor/noise/simplex-noise.js"
+      } }
+    </script>
+    <link rel="stylesheet" href="jep.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      html, body { margin: 0; background: #0B0E14; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #0B0E14; font-family: Inter, Arial, sans-serif; }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .scrim { position: absolute; left: -260px; bottom: -260px; width: 1400px; height: 620px;
+        background: radial-gradient(closest-side, rgba(5,6,10,0.65), rgba(5,6,10,0)); }
+      #lbl { overflow: hidden; }
+      #lbl .bar { position: absolute; left: -4px; top: 0; bottom: 0; width: 4px; background: var(--amber); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="A2_engine_dive" data-start="0" data-width="1920" data-height="1080" data-duration="6.24">
+      <canvas id="gl"></canvas>
+      <div class="scrim" id="scrim"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#scrim", { opacity: 0.8 }, { opacity: 0.3, duration: 6.2, ease: "none" }, 0);
+      window.__timelines["A2_engine_dive"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, lightRig, backdrop, buildEngine, gasStream, setEnv, U, seg, ease, lerp, clamp, wob, aim } from "./jepA.js";
+      const st = createStage({ fov: 34, near: 0.03 });
+      const { scene, camera } = st;
+      const bg = backdrop({ glowDir: [0.3, 0.2, 1], glow: 0.4 }); scene.add(bg);
+      const L = lightRig(scene, { key: 1.2, rim: 3.5, fill: 0.3 });
+      L.key.position.set(-4, 6, -3); L.rim.position.set(4, 3, 6); L.rim2.position.set(3, -2, -6); L.fill.position.set(-5, -3, 2);
+      const E = buildEngine(scene);
+      setEnv(scene, 0.4);
+      const fire = new THREE.PointLight(0xff7a2a, 0, 5, 1.5); fire.position.set(0.3, 1.25, -1.7); scene.add(fire);
+      const fire2 = new THREE.PointLight(0xff9a40, 0, 4, 1.5); fire2.position.set(0.2, 1.25, -0.3); scene.add(fire2);
+      const gas = gasStream({ count: 1600, z0: -2.3, z1: 1.3, thetaRange: [0.05, Math.PI * 1.05], size: 22 }); scene.add(gas);
+      E.hs.flames.userData.mat.uniforms.uIgn.value = 1.3;
+      // camera keys: exterior 3/4 view, swing to the intake, then along the core annulus into the HP turbine stage
+      const keys = [
+        [0.0, [-15.5, 7.6, -15.0], [0, 0, -1.2]],
+        [2.3, [-10.5, 4.6, -17.0], [0, 0.4, -4.5]],
+        [3.4, [-5.6, 2.3, -14.8], [0, 0.5, -9.0]],
+        [4.2, [-3.0, 1.0, -11.4], [-0.4, 0.6, -7.0]],
+        [5.0, [-2.45, 0.65, -6.2], [-0.3, 0.65, -2.2]],
+        [5.6, [-2.15, 0.62, -2.8], [-0.1, 0.85, 0.2]],
+        [6.24, [-1.85, 0.78, -1.0], [0.05, 1.0, 0.15]],
+      ];
+      const curve = new THREE.CatmullRomCurve3(keys.map((k) => new THREE.Vector3(...k[1])), false, "centripetal");
+      const lcurve = new THREE.CatmullRomCurve3(keys.map((k) => new THREE.Vector3(...k[2])), false, "centripetal");
+      const uAt = (t) => { for (let i = 0; i < keys.length - 1; i++) if (t <= keys[i + 1][0]) { const f = (t - keys[i][0]) / (keys[i + 1][0] - keys[i][0]);
+        return (i + (i === keys.length - 2 ? ease.out(f) * 0.5 + f * 0.5 : f)) / (keys.length - 1); } return 1; };
+      st.run((t) => {
+        U.uSweepOn.value = 1; U.uSweep.value = lerp(-12.5, 9.5, seg(t, 0.35, 4.3, ease.inOut2));
+        bg.material.uniforms.uGrid.value = 1 - seg(t, 1.6, 3.6);
+        E.lineMat.uniforms.uAmt.value = 1 - seg(t, 4.6, 5.6);
+        for (const r of E.rotors) r.g.rotation.z = -(r.z < -8 ? 1.2 : 2.6) * t;
+        E.hs.spin(-2.2 * t);
+        if (E.hs.holes) E.hs.holes.visible = U.uSweep.value > 0.3;
+        gas.visible = U.uSweep.value > -0.5; gas.material.uniforms.uAmt.value = 0.9 * seg(t, 3.6, 4.6);
+        E.hs.flames.visible = U.uSweep.value > -1.0; E.hs.flames.userData.mat.uniforms.uAmt.value = seg(t, 3.0, 4.2);
+        fire.intensity = 3.5 * seg(t, 3.4, 4.6); fire2.intensity = 2.5 * seg(t, 4.8, 6.0);
+        U.uHeat.value = 0.05 + 0.25 * seg(t, 5.2, 6.24);
+        const u = uAt(t), p = curve.getPoint(u), l = lcurve.getPoint(u);
+        aim(camera, p.toArray(), l.toArray(), 0.04 * Math.sin(t * 0.8) * (1 - seg(t, 4, 5)));
+        camera.fov = lerp(30, 40, seg(t, 3.6, 5.0)); camera.updateProjectionMatrix();
+        st.setShimmer(0.6 * seg(t, 5.0, 6.0), 0.5, 0.5, 0.4, 0.4);
+      });
+    </script>
+  </body>
+</html>

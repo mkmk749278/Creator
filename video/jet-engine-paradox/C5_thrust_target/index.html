@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C5 thrust target</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      #tag { font-size: 40px; padding: 14px 22px 12px; border-left-width: 4px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="c5-thrust-target" data-start="0" data-width="1920" data-height="1080" data-duration="6.49">
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+      <div class="lead keepcase" id="tag"></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration, $ = (id) => document.getElementById(id);
+      $("tag").textContent = SC.tag;
+      const TX = 1600, TY0 = 300, TY1 = 760; // dashed target line (screen px)
+      BP.place($("tag"), TX - 470, TY0 - 110);
+      const S = BP.Stage($("bp"), { seed: 53 });
+      const E = BP.engineSection();
+      const all = E.strokes.filter((s) => s.g !== "drynoz");
+      const AB = BP.groups(E.strokes, ["ab", "ab_case", "ab_rings"]);
+      const cam = (t) => BP.camera({
+        target: BP.keys([[0, [2.0, 0, 0]], [D, [2.25, 0, 0]]], t), yaw: BP.keys([[0, 20], [D, 7]], t), pitch: BP.keys([[0, 9], [D, 3]], t),
+        dist: BP.keys([[0, 9.0], [D, 8.2]], t), fov: 30, roll: BP.keys([[0, -1.5], [D, 0.5]], t), cx: 640, cy: 530,
+      });
+      function frame(t) {
+        const c = cam(t);
+        S.begin({ t, paper: 1, shift: [-t * 26, t * 5], light: [800 + t * 40, 460] });
+        const L = S.L, heads = [];
+        const rp = BP.eio(0, 1.1, t);
+        BP.draw(L, c, all, { prog: (i) => BP.seq(rp, i, all.length, 0.6), heads, fog: [6.5, 10, 0.6], w: 1.15,
+          colFn: (i, s) => (s.g === "center" ? BP.C.dim : BP.C.amber), alphaFn: (i, s) => (s.mirror ? 0.82 : 1) });
+        // afterburner lights: the section runs hot and a flame plume grows from the nozzle
+        const ab = BP.ss(SC.tAB, SC.tAB + 0.5, t);
+        const N = c.proj([4.25, 0, 0]);
+        if (ab > 0) {
+          BP.draw(L, c, AB, { col: BP.C.hot, w: 1.7, alpha: ab, pen: false });
+          for (let k = 0; k <= 4; k++) { const P = c.proj([2.95 + k * 0.32, 0, 0]); if (P) BP.glow(L, P[0], P[1], 150, "rgba(249,115,22,0.6)", ab * 0.5); }
+          if (N) {
+            const fl = 1 + 0.08 * BP.noise1(t * 14, 2), len = 330 * ab * fl, h = 70 * ab;
+            L.save(); L.globalCompositeOperation = "lighter";
+            const gr = L.createLinearGradient(N[0], 0, N[0] + len, 0);
+            gr.addColorStop(0, "rgba(255,240,220,0.85)"); gr.addColorStop(0.25, "rgba(253,186,116,0.6)"); gr.addColorStop(1, "rgba(249,115,22,0)");
+            L.fillStyle = gr; L.beginPath(); L.moveTo(N[0], N[1] - h); L.quadraticCurveTo(N[0] + len * 0.5, N[1] - h * 0.55, N[0] + len, N[1]);
+            L.quadraticCurveTo(N[0] + len * 0.5, N[1] + h * 0.55, N[0], N[1] + h); L.closePath(); L.fill();
+            for (let d = 0; d < 4; d++) { const x = N[0] + ((t * 520 + d * 90) % 330) * ab; BP.glow(L, x, N[1], 34 - d * 4, "rgba(255,236,214,0.8)", ab * 0.35); } // shock diamonds
+            L.restore();
+          }
+        }
+        // dashed target line
+        const lk = BP.eout(SC.tLine, SC.tLine + 0.6, t);
+        if (lk > 0) {
+          const mid = (TY0 + TY1) / 2, hh = (TY1 - TY0) / 2 * lk;
+          BP.line2(L, [TX, mid - hh], [TX, mid + hh], BP.C.white, 2.5, 0.9, [16, 10], -t * 30);
+          for (const y of [mid - hh, mid + hh]) BP.line2(L, [TX - 16, y], [TX + 16, y], BP.C.white, 2.5, 0.9 * lk);
+        }
+        // thrust arrow from the nozzle exit to the target line
+        const ak = BP.eio(SC.tArrow, SC.tHit, t);
+        if (N && ak > 0) {
+          const x0 = N[0] + 26, x1 = BP.lerp(x0, TX - 6, ak), y = N[1], sh = 40, hd = 74;
+          L.save();
+          const gr = L.createLinearGradient(x0, 0, x1, 0); gr.addColorStop(0, "rgba(249,115,22,0.25)"); gr.addColorStop(1, "rgba(253,186,116,0.95)");
+          L.fillStyle = gr; L.beginPath(); L.moveTo(x0, y - sh / 2); L.lineTo(x1 - hd, y - sh / 2); L.lineTo(x1 - hd, y - sh); L.lineTo(x1, y); L.lineTo(x1 - hd, y + sh); L.lineTo(x1 - hd, y + sh / 2); L.lineTo(x0, y + sh / 2); L.closePath(); L.fill();
+          L.strokeStyle = BP.C.hot; L.lineWidth = 1.5; L.stroke();
+          L.restore();
+          for (let k = 0; k < 6; k++) { const xx = x0 + ((t * 380 + k * 70) % Math.max(1, x1 - hd - x0)); BP.line2(L, [xx, y - 3], [Math.min(xx + 30, x1 - hd), y - 3], "#FFF4E6", 2, 0.5); }
+          BP.glow(L, x1, y, 70, "rgba(253,186,116,0.9)", 0.5);
+          const hit = BP.ss(SC.tHit - 0.05, SC.tHit + 0.1, t) * (1 - BP.ss(SC.tHit + 0.2, SC.tHit + 1.0, t));
+          BP.glow(L, TX, y, 190, "rgba(248,250,252,0.7)", hit * 0.7);
+        }
+        BP.pens(L, heads);
+        S.end();
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#tag", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, SC.tTag);
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c5-thrust-target"] = tl;
+    </script>
+  </body>
+</html>

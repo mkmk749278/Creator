@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C7 blueprint tear</title>
+    <script src="params.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="_bp.js"></script>
+    <link rel="stylesheet" href="jep.css" />
+    <link rel="stylesheet" href="_c.css" />
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="c7-blueprint-tear" data-start="0" data-width="1920" data-height="1080" data-duration="9.93">
+      <div class="photo" id="photo" data-layout-allow-overflow><div class="photo-inner" id="photoInner"></div></div>
+      <canvas class="bp" id="bp" data-layout-allow-overflow></canvas>
+      <div class="vig"></div>
+      <div class="lead white" id="leadUS"></div>
+      <div class="jep-label" id="lab"></div>
+    </div>
+    <script>
+      const SC = window.SCENE, D = SC.duration, $ = (id) => document.getElementById(id);
+      const inner = $("photoInner");
+      if (SC.photo) { const im = document.createElement("img"); im.src = SC.photo; im.style.objectPosition = SC.photoPos; inner.appendChild(im); }
+      else { const ph = document.createElement("div"); ph.className = "slot-ph"; ph.setAttribute("data-layout-allow-occlusion", ""); ph.textContent = "PHOTO SLOT"; inner.appendChild(ph); }
+      $("lab").textContent = SC.label; $("leadUS").textContent = SC.usLead;
+
+      const S = BP.Stage($("bp"), { seed: 71 });
+      const F = BP.fighter();
+      const air = F.strokes.filter((s) => s.g !== "bay");
+      const bayS = BP.group(F.strokes, "bay");
+      const KAV = BP.engineBlock(F.bay, { variant: 2 }), US = BP.engineBlock(F.bay, { variant: 1 });
+      const mk = () => { const c = document.createElement("canvas"); c.width = 1920; c.height = 1080; return c; };
+      const FR = mk(), fr = FR.getContext("2d"), PT = mk(), pt = PT.getContext("2d");
+      const engC = [(F.bay.x0 + F.bay.x1) / 2, F.bay.yc, 0];
+      const cam = (t) => BP.camera({
+        target: BP.keys([[0, [7.4, 0.5, 0]], [D, [7.9, 0.4, 0]]], t), yaw: BP.keys([[0, 22], [D, 12]], t), pitch: BP.keys([[0, 30], [D, 24]], t),
+        dist: BP.keys([[0, 31], [D, 27]], t), fov: 24, roll: BP.keys([[0, -4], [D, -1]], t), cx: 960, cy: 470,
+      });
+      // jagged tear outline around the engine bay (screen space), seeded so it never changes shape
+      function tearPoly(c) {
+        let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+        for (const s of bayS) for (const q of s.p) { const P = c.proj(q); if (P) { x0 = Math.min(x0, P[0]); y0 = Math.min(y0, P[1]); x1 = Math.max(x1, P[0]); y1 = Math.max(y1, P[1]); } }
+        x0 -= 46; y0 -= 52; x1 += 46; y1 += 52;
+        const pts = [], corners = [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
+        let k = 0;
+        for (let e = 0; e < 4; e++) {
+          const a = corners[e], b = corners[(e + 1) % 4], l = Math.hypot(b[0] - a[0], b[1] - a[1]), n = Math.max(4, Math.round(l / 20));
+          const nx = -(b[1] - a[1]) / l, ny = (b[0] - a[0]) / l;
+          for (let i = 0; i < n; i++, k++) {
+            const u = i / n, j = (BP.hash(k, 9) - 0.5) * 18 + (BP.hash(k >> 2, 10) - 0.5) * 16;
+            pts.push([a[0] + (b[0] - a[0]) * u + nx * j, a[1] + (b[1] - a[1]) * u + ny * j]);
+          }
+        }
+        return { pts, c: [(x0 + x1) / 2, (y0 + y1) / 2] };
+      }
+      const pathPoly = (x, pts) => { x.beginPath(); pts.forEach((p, i) => (i ? x.lineTo(p[0], p[1]) : x.moveTo(p[0], p[1]))); x.closePath(); };
+      function frame(t) {
+        const c = cam(t);
+        const wipe = BP.eio(SC.wipeAt, SC.wipeAt + 0.8, t) * 2000 - 40;
+        S.begin({ t, paper: 1, shift: [-t * 18, t * 5], clip: (x) => x.rect(0, 0, Math.max(0, wipe), 1080), light: [820 + t * 25, 430] });
+        const L = S.L, heads = [];
+        const dp = BP.eio(SC.wipeAt - 0.1, SC.wipeAt + 1.2, t); // quick redraw as the scan passes
+        BP.draw(L, c, air, { prog: (i) => BP.seq(dp, i, air.length, 0.5), heads, fog: [22, 40, 0.5], w: 1.2 });
+        BP.draw(L, c, bayS, { prog: (i) => BP.seq(BP.eio(SC.wipeAt + 0.3, SC.wipeAt + 1.0, t), i, bayS.length, 0.5), heads, col: BP.C.hot, w: 1.2 });
+        const torn = t >= SC.tearAt;
+        if (!torn) {
+          BP.draw(L, c, KAV.strokes, { prog: (i) => BP.seq(BP.eio(SC.wipeAt + 0.4, SC.wipeAt + 1.3, t), i, KAV.strokes.length, 0.3), heads, col: BP.C.amber, w: 1.15 });
+          const Pe = c.proj(engC); if (Pe) BP.glow(L, Pe[0], Pe[1], 170, "rgba(249,115,22,0.5)", BP.ss(SC.wipeAt + 1.0, SC.wipeAt + 1.4, t) * 0.4);
+        }
+        BP.pens(L, heads);
+        S.end();
+        if (!torn) return;
+        const x = S.ctx, poly = tearPoly(c);
+        // the torn piece carries the Kaveri: render it onto the fragment layer at the original place
+        fr.setTransform(1, 0, 0, 1, 0, 0); fr.clearRect(0, 0, 1920, 1080);
+        fr.save(); pathPoly(fr, poly.pts); fr.clip();
+        fr.drawImage(S.canvas, 0, 0);
+        fr.lineCap = "round"; fr.shadowColor = "rgba(249,115,22,0.9)"; fr.shadowBlur = 6;
+        BP.draw(fr, c, KAV.strokes, { col: BP.C.amber, w: 1.15, pen: false });
+        fr.restore();
+        // the hole left behind
+        const k = BP.eio(SC.tearAt, SC.tearAt + 1.6, t), lift = BP.eout(SC.tearAt, SC.tearAt + 0.35, t);
+        x.save(); pathPoly(x, poly.pts); x.fillStyle = "#06080C"; x.fill();
+        x.lineWidth = 2; x.strokeStyle = `rgba(239,68,68,${0.9 * (1 - BP.ss(SC.tearAt + 0.3, SC.tearAt + 1.2, t)) + 0.25})`; x.stroke();
+        x.restore();
+        // the fragment lifts, turns and drifts away
+        const fa = 1 - BP.ss(SC.tearAt + 1.0, SC.tearAt + 1.6, t);
+        if (fa > 0) {
+          x.save();
+          x.globalAlpha = fa;
+          x.translate(poly.c[0] + k * 760, poly.c[1] + k * 330 - lift * 14);
+          x.rotate(k * 0.24);
+          const sc = 1 + lift * 0.04 - k * 0.12; x.scale(sc, sc);
+          x.translate(-poly.c[0], -poly.c[1]);
+          x.shadowColor = "rgba(0,0,0,0.7)"; x.shadowBlur = 40; x.shadowOffsetY = 18;
+          x.drawImage(FR, 0, 0);
+          x.shadowColor = "rgba(0,0,0,0)";
+          pathPoly(x, poly.pts); x.lineWidth = 1.5; x.strokeStyle = "rgba(248,250,252,0.55)"; x.stroke(); // torn paper fibres
+          x.restore();
+        }
+        // a new patch carrying the US engine slides in and seats in the hole
+        if (t >= SC.patchAt) {
+          const pk = BP.eout(SC.patchAt, SC.patchAt + 1.1, t), off = [(1 - pk) * 700, (1 - pk) * 260];
+          pt.setTransform(1, 0, 0, 1, 0, 0); pt.clearRect(0, 0, 1920, 1080);
+          pt.save(); pathPoly(pt, poly.pts); pt.clip();
+          pt.drawImage(S.paperCanvas, -80 - t * 2.7, -45 + t * 0.75); pt.fillStyle = "rgba(170,190,220,0.07)"; pt.fillRect(0, 0, 1920, 1080);
+          S.grid(pt, { shift: [-t * 18, t * 5] }, 1);
+          pt.lineCap = "round"; pt.shadowColor = "rgba(249,115,22,0.8)"; pt.shadowBlur = 6;
+          BP.draw(pt, c, air, { w: 1.2, pen: false, alpha: 0.95 });
+          BP.draw(pt, c, bayS, { col: BP.C.hot, w: 1.2, pen: false, alpha: 0.8 });
+          pt.shadowColor = "rgba(248,250,252,0.8)"; pt.shadowBlur = 5;
+          BP.draw(pt, c, US.strokes, { col: BP.C.white, w: 1.1, pen: false, prog: (i) => BP.seq(BP.eio(SC.patchAt + 0.6, SC.patchAt + 1.6, t), i, US.strokes.length, 0.35) });
+          pt.restore();
+          x.save(); x.globalAlpha = BP.ss(SC.patchAt, SC.patchAt + 0.3, t);
+          x.shadowColor = "rgba(0,0,0,0.6)"; x.shadowBlur = 30 * (1 - pk) + 6; x.shadowOffsetY = 10 * (1 - pk);
+          x.drawImage(PT, off[0], off[1]);
+          x.shadowColor = "rgba(0,0,0,0)";
+          x.translate(off[0], off[1]); pathPoly(x, poly.pts); x.lineWidth = 1.5; x.setLineDash([8, 6]); x.strokeStyle = "rgba(248,250,252,0.5)"; x.stroke();
+          x.restore();
+          // leader to the new engine
+          const Pe = c.proj(engC);
+          if (Pe && t >= SC.usLeadAt - 0.1) {
+            const a = [Pe[0] + 150, Pe[1] - 230];
+            BP.place($("leadUS"), a[0], a[1] - 22);
+            BP.leader(x, a, Pe, BP.eio(SC.usLeadAt - 0.1, SC.usLeadAt + 0.35, t), BP.C.white, 0.85);
+          }
+        }
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#photoInner", { scale: 1.0 }, { scale: 1.09, duration: SC.wipeAt + 1, ease: "none" }, 0);
+      tl.fromTo("#lab", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.4);
+      tl.fromTo("#leadUS", { opacity: 0 }, { opacity: 1, duration: 0.3 }, SC.usLeadAt + 0.2);
+      tl.to({}, { duration: D }, 0);
+      tl.eventCallback("onUpdate", () => frame(tl.time()));
+      window.addEventListener("hf-seek", (e) => frame(e.detail.time));
+      frame(0);
+      window.__timelines["c7-blueprint-tear"] = tl;
+    </script>
+  </body>
+</html>
