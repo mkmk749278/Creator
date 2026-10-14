@@ -1,0 +1,144 @@
+
+◆  Rendering D2_squadrons → /home/user/Creator/video/jet-engine-paradox/D2_squadrons/renders/D2_squadrons.mp4
+   30fps · standard · 3 workers
+   GPU: browser GPU (auto-detect)
+
+[?25l|
+•  Checking browser[1G[Jo  Checking browser[1G[Jo  Browser: cache
+[?25h[INFO] [Render] Pipeline started {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","platform":"linux","arch":"x64","nodeVersion":"v22.22.0","fps":{"num":30,"den":1},"format":"mp4","quality":"standard","browserGpuMode":"auto","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"pipeline","status":"checkpoint","elapsedMs":4,"message":"started","format":"mp4","quality":"standard","browserGpuMode":"auto","forceScreenshot":false,"protocolTimeoutMs":300000,"pageNavigationTimeoutMs":60000,"playerReadyTimeoutMs":45000,"requestedWorkers":3}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"compile","status":"start","elapsedMs":6,"needsAlpha":false}
+  █░░░░░░░░░░░░░░░░░░░░░░░░  5%  Compiling composition
+[INFO] [Compiler] Embedded local font file: vendor/fonts/inter-latin-600-normal.woff2 (24 KB → data URI)
+[INFO] [Compiler] Embedded local font file: vendor/fonts/inter-latin-800-normal.woff2 (24 KB → data URI)
+[INFO] [Compiler] Embedded local font file: vendor/fonts/inter-latin-ext-600-normal.woff2 (35 KB → data URI)
+[INFO] Compiled composition metadata {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","entryFile":"index.html","staticDuration":5.82,"width":1920,"height":1080,"videoCount":0,"audioCount":0,"renderModeHints":{"recommendScreenshot":false,"reasons":[]}}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"compile","status":"end","elapsedMs":68,"durationMs":62,"needsAlpha":false}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"compile","status":"checkpoint","elapsedMs":69,"message":"composition metadata resolved","width":1920,"height":1080,"videoCount":0,"audioCount":0,"imageCount":0,"deviceScaleFactor":1,"forceScreenshot":false,"compositionHash":"65ba86330890d214"}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"browser_probe","status":"start","elapsedMs":70,"forceScreenshot":false,"stagePhase":"calibrating"}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"browser_probe","status":"end","elapsedMs":83,"durationMs":13,"forceScreenshot":false,"stagePhase":"calibrating"}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"browser_probe","status":"checkpoint","elapsedMs":83,"message":"duration resolved","durationSeconds":5.82,"totalFrames":175,"compositionHash":"65ba86330890d214","beginFrameStalled":false}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"video_extract","status":"start","elapsedMs":84,"videoCount":0}
+  ██░░░░░░░░░░░░░░░░░░░░░░░  10%  Extracting video frames
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"video_extract","status":"end","elapsedMs":84,"durationMs":0,"videoCount":0}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"video_extract","status":"checkpoint","elapsedMs":86,"message":"frames resolved","videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0,"avgFramesPerExtractedVideo":null,"vfrPreflightCount":null,"vfrPreflightMs":null,"cacheHits":null,"cacheMisses":null,"transientRetries":null,"minVideoFrameCoverageRatio":null,"authoredTimedClipCount":1}
+[INFO] [Render] No HDR sources detected — rendering SDR {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521"}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"hdr_detection","status":"checkpoint","elapsedMs":87,"message":"resolved","requestedHdrMode":"auto","effectiveHdr":"sdr","nativeHdrVideoCount":0,"nativeHdrImageCount":0}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"audio_process","status":"start","elapsedMs":87,"audioCount":0}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"audio_process","status":"end","elapsedMs":87,"durationMs":0,"audioCount":0}
+  █████░░░░░░░░░░░░░░░░░░░░  20%  Processing audio tracks
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"file_server","status":"start","elapsedMs":87,"reused":false}
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Starting frame capture
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"file_server","status":"end","elapsedMs":98,"durationMs":11}
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Checking browser GPU
+[hyperframes] browserGpuMode probe → software (WebGL unavailable)
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"capture_calibration","status":"checkpoint","elapsedMs":488,"message":"skipped","requestedWorkers":3,"totalFrames":175,"htmlInCanvasDetected":false,"lowMemoryMode":false,"deInversionEligible":false,"deParallelRouterEligible":false}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"worker_resolution","status":"checkpoint","elapsedMs":490,"message":"resolved","workerCount":3}
+[INFO] [Render] Parallel beginframe capture will stream to the encoder (interleaved, 3 workers) instead of the disk path. Set HF_CAPTURE_PARALLEL_STREAM=false to disable. {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521"}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"worker_resolution","status":"checkpoint","elapsedMs":491,"message":"parallel beginframe capture routed to streaming"}
+[INFO] streaming-encode gate {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","enabled":true,"reason":"parallel_forced","configFlag":true,"durationCapEnabled":false,"outputFormat":"mp4","workerCount":3,"durationSeconds":5.82,"maxDurationSeconds":240}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"capture_strategy","status":"checkpoint","elapsedMs":491,"message":"resolved","workerCount":3,"forceScreenshot":false,"captureBeyondViewport":null,"useStreamingEncode":true,"useLayeredComposite":false,"usePageSideCompositing":false,"hasHdrContent":false,"hasShaderTransitions":false,"isPngSequence":false}
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"capture_streaming","status":"start","elapsedMs":492,"stagePhase":"capturing","workerCount":3,"forceScreenshot":false,"totalFrames":175,"framesCompleted":0,"captureMode":"beginframe","captureOperation":"beginFrame"}
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":0,"phase":"browser_launch","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"unknown","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":1,"phase":"browser_launch","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"unknown","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":2,"phase":"browser_launch","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"unknown","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Starting browsers (0/3 ready)
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, beginframe, gl=--use-gl=angle --use-angle=swiftshader, headlessShell=true, platform=linux)
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, beginframe, gl=--use-gl=angle --use-angle=swiftshader, headlessShell=true, platform=linux)
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, beginframe, gl=--use-gl=angle --use-angle=swiftshader, headlessShell=true, platform=linux)
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":2,"phase":"browser_probe","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"unknown","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Starting browsers (0/3 ready)
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":2,"phase":"session_init","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"HeadlessChrome/152.0.7977.30","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+[initSession:beginframe] warmup loop started (1ms)
+[initSession:beginframe] page.goto start (2ms)
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":0,"phase":"browser_probe","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"unknown","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":0,"phase":"session_init","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"HeadlessChrome/152.0.7977.30","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+[initSession:beginframe] warmup loop started (1ms)
+[initSession:beginframe] page.goto start (2ms)
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":1,"phase":"browser_probe","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"unknown","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":1,"phase":"session_init","browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"HeadlessChrome/152.0.7977.30","canvasDrawElement":"unknown","gpuBackend":"unknown"}
+[initSession:beginframe] warmup loop started (0ms)
+[initSession:beginframe] page.goto start (0ms)
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[initSession:beginframe] page.goto complete (836ms)
+[initSession:beginframe] GSAP proxy flush complete (877ms)
+[initSession:beginframe] page.goto complete (914ms)
+[initSession:beginframe] GSAP proxy flush complete (972ms)
+[initSession:beginframe] pollHfReady complete (1021ms)
+[initSession:beginframe] page.goto complete (891ms)
+[initSession:beginframe] pollSubCompositionTimelines complete (ready) (1057ms)
+[initSession:beginframe] applyVideoMetadataHints complete (1057ms)
+[initSession:beginframe] media + fonts + tailwind ready (1065ms)
+[initSession:beginframe] GSAP proxy flush complete (927ms)
+[initSession:beginframe] static-frame dedup: disabled (capture mode beginframe, not screenshot) (1098ms)
+[initSession:beginframe] pollHfReady complete (1176ms)
+[initSession:beginframe] pollSubCompositionTimelines complete (ready) (1181ms)
+[initSession:beginframe] applyVideoMetadataHints complete (1181ms)
+[initSession:beginframe] media + fonts + tailwind ready (1184ms)
+[initSession:beginframe] static-frame dedup: disabled (capture mode beginframe, not screenshot) (1209ms)
+[initSession:beginframe] pollHfReady complete (1130ms)
+[initSession:beginframe] pollSubCompositionTimelines complete (ready) (1134ms)
+[initSession:beginframe] applyVideoMetadataHints complete (1135ms)
+[initSession:beginframe] media + fonts + tailwind ready (1144ms)
+[initSession:beginframe] static-frame dedup: disabled (capture mode beginframe, not screenshot) (1164ms)
+[Browser:WARN] [.WebGL-0x1d5c00196000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":0,"phase":"frame_capture","frameIndex":0,"browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"HeadlessChrome/152.0.7977.30","canvasDrawElement":false,"gpuBackend":"unknown"}
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Starting browsers (1/3 ready)
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Streaming frame 1/175 (3 workers)
+[Browser:WARN] [.WebGL-0x2034001af200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":1,"phase":"frame_capture","frameIndex":1,"browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"HeadlessChrome/152.0.7977.30","canvasDrawElement":false,"gpuBackend":"unknown"}
+[Browser:WARN] [.WebGL-0x33fc001a6000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[INFO] [Render] Parallel capture worker phase {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","workerId":2,"phase":"frame_capture","frameIndex":2,"browserExecutable":"/root/.cache/hyperframes/chrome/chrome-headless-shell/linux-152.0.7977.30/chrome-headless-shell-linux64/chrome-headless-shell","browserVersion":"HeadlessChrome/152.0.7977.30","canvasDrawElement":false,"gpuBackend":"unknown"}
+[Browser:WARN] [.WebGL-0x1d5c00196000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[Browser:WARN] [.WebGL-0x2034001af200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  ██████░░░░░░░░░░░░░░░░░░░  26%  Streaming frame 2/175 (3 workers)
+[Browser:WARN] [.WebGL-0x33fc001a6000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[Browser:WARN] [.WebGL-0x2034001af200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  ██████░░░░░░░░░░░░░░░░░░░  27%  Streaming frame 5/175 (3 workers)
+[Browser:WARN] [.WebGL-0x33fc001a6000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[Browser:WARN] [.WebGL-0x1d5c00196000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+  ██████░░░░░░░░░░░░░░░░░░░  27%  Streaming frame 7/175 (3 workers)
+[Browser:WARN] [.WebGL-0x2034001af200]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+  ███████░░░░░░░░░░░░░░░░░░  28%  Streaming frame 8/175 (3 workers)
+[Browser:WARN] [.WebGL-0x33fc001a6000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[Browser:WARN] [.WebGL-0x1d5c00196000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+  ███████░░░░░░░░░░░░░░░░░░  28%  Streaming frame 9/175 (3 workers)
+  ███████░░░░░░░░░░░░░░░░░░  28%  Streaming frame 11/175 (3 workers)
+  ███████░░░░░░░░░░░░░░░░░░  29%  Streaming frame 12/175 (3 workers)
+  ███████░░░░░░░░░░░░░░░░░░  29%  Streaming frame 14/175 (3 workers)
+  ███████░░░░░░░░░░░░░░░░░░  30%  Streaming frame 17/175 (3 workers)
+  ███████░░░░░░░░░░░░░░░░░░  31%  Streaming frame 20/175 (3 workers)
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"capture_streaming","status":"checkpoint","elapsedMs":30493,"message":"stage still running","stagePhase":"capturing","workerCount":3,"forceScreenshot":false,"totalFrames":175,"framesCompleted":22,"captureMode":"beginframe","captureOperation":"beginFrame","heartbeatIndex":1,"stageElapsedMs":30001}
+  ████████░░░░░░░░░░░░░░░░░  32%  Streaming frame 23/175 (3 workers)
+  ████████░░░░░░░░░░░░░░░░░  33%  Streaming frame 26/175 (3 workers)
+  ████████░░░░░░░░░░░░░░░░░  34%  Streaming frame 29/175 (3 workers)
+  ████████░░░░░░░░░░░░░░░░░  35%  Streaming frame 31/175 (3 workers)
+  ████████░░░░░░░░░░░░░░░░░  35%  Streaming frame 32/175 (3 workers)
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 35/175 (3 workers)
+  █████████░░░░░░░░░░░░░░░░  37%  Streaming frame 37/175 (3 workers)
+  █████████░░░░░░░░░░░░░░░░  37%  Streaming frame 38/175 (3 workers)
+  █████████░░░░░░░░░░░░░░░░  37%  Streaming frame 39/175 (3 workers)
+  █████████░░░░░░░░░░░░░░░░  38%  Streaming frame 41/175 (3 workers)
+  █████████░░░░░░░░░░░░░░░░  39%  Streaming frame 44/175 (3 workers)
+  █████████░░░░░░░░░░░░░░░░  39%  Streaming frame 45/175 (3 workers)
+  █████████░░░░░░░░░░░░░░░░  39%  Streaming frame 46/175 (3 workers)
+  ██████████░░░░░░░░░░░░░░░  40%  Streaming frame 47/175 (3 workers)
+  ██████████░░░░░░░░░░░░░░░  40%  Streaming frame 48/175 (3 workers)
+  ██████████░░░░░░░░░░░░░░░  40%  Streaming frame 49/175 (3 workers)
+  ██████████░░░░░░░░░░░░░░░  41%  Streaming frame 50/175 (3 workers)
+  ██████████░░░░░░░░░░░░░░░  41%  Streaming frame 51/175 (3 workers)
+  ██████████░░░░░░░░░░░░░░░  41%  Streaming frame 52/175 (3 workers)
+  ██████████░░░░░░░░░░░░░░░  42%  Streaming frame 53/175 (3 workers)
+[INFO] [Render:trace] {"renderJobId":"e3e21b3c-ebd4-4117-abea-22d00cc3d521","phase":"capture_streaming","status":"checkpoint","elapsedMs":60496,"message":"stage still running","stagePhase":"capturing","workerCount":3,"forceScreenshot":false,"totalFrames":175,"framesCompleted":55,"captureMode":"beginframe","captureOperation":"beginFrame","heartbeatIndex":2,"stageElapsedMs":60004}
+  ██████████░░░░░░░░░░░░░░░  43%  Streaming frame 56/175 (3 workers)
+  ███████████░░░░░░░░░░░░░░  44%  Streaming frame 59/175 (3 workers)
+  ███████████░░░░░░░░░░░░░░  44%  Streaming frame 61/175 (3 workers)
+  ███████████░░░░░░░░░░░░░░  44%  Streaming frame 62/175 (3 workers)
+  ███████████░░░░░░░░░░░░░░  45%  Streaming frame 65/175 (3 workers)
+  ███████████░░░░░░░░░░░░░░  46%  Streaming frame 68/175 (3 workers)
+  ███████████░░░░░░░░░░░░░░  47%  Streaming frame 70/175 (3 workers)
+  ███████████░░░░░░░░░░░░░░  47%  Streaming frame 71/175 (3 workers)
+  ████████████░░░░░░░░░░░░░  48%  Streaming frame 74/175 (3 workers)
+  ████████████░░░░░░░░░░░░░  49%  Streaming frame 77/175 (3 workers)

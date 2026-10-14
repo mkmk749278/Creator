@@ -2,7 +2,7 @@
 // tools/sync.sh copies it into every D scene folder (scenes must be self-contained). Do not edit the copies.
 // Everything here is a pure function of the time t the scene passes in: seeded RNG, no clocks, no stepped state.
 import * as THREE from "three";
-import { EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, ToneMappingMode, Effect, BlendFunction } from "postprocessing";
+import { EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, ToneMappingMode, Effect, BlendFunction, FXAAEffect } from "postprocessing";
 
 export { THREE };
 export const PAL = { slate: 0x0B0E14, slate2: 0x121826, amber: 0xF97316, amberHot: 0xFDBA74, red: 0xEF4444,
@@ -56,7 +56,7 @@ class FilmEffect extends Effect {
       void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
         vec2 px = floor(uv * uRes);
         float n = hash(vec3(px, uFrame)) + hash(vec3(px + 17.0, uFrame + 3.0)) - 1.0;   // triangular grain
-        vec3 c = inputColor.rgb;
+        vec3 c = inputColor.rgb; if (any(isnan(c)) || any(isinf(c))) c = vec3(0.0);
         float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
         c += n * uGrain * (0.25 + 0.75 * sqrt(clamp(l, 0.0, 1.0)));
         vec2 q = (uv - 0.5) * vec2(uRes.x / uRes.y, 1.0);
@@ -72,9 +72,9 @@ const BG_VERT = `varying vec2 vUv; void main() { vUv = uv; gl_Position = vec4(po
 const BG_FRAG = /* glsl */`
   varying vec2 vUv; uniform float uTime; uniform vec2 uGlow; uniform float uGlowR; uniform vec3 uBase; uniform vec3 uLift;
   uniform vec3 uWarm; uniform float uGrid; uniform vec2 uShift; uniform vec2 uRes;
-  float h1(float n) { return fract(sin(n) * 43758.5453); }
-  float vn(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); float n = i.x + i.y * 157.0;
-    return mix(mix(h1(n), h1(n + 1.0), f.x), mix(h1(n + 157.0), h1(n + 158.0), f.x), f.y); }
+  float h2(vec2 p) { vec3 q = fract(vec3(p.xyx) * 0.1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }  // no sin(): precise on software GL
+  float vn(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
+    return mix(mix(h2(i), h2(i + vec2(1, 0)), f.x), mix(h2(i + vec2(0, 1)), h2(i + vec2(1, 1)), f.x), f.y); }
   void main() {
     vec2 p = vUv * uRes;
     vec2 q = (vUv - uGlow) * vec2(uRes.x / uRes.y, 1.0);
@@ -85,7 +85,7 @@ const BG_FRAG = /* glsl */`
     c *= 0.93 + 0.12 * br;
     // slow diagonal light sweep (warm)
     float sw = vUv.x * 0.8 + vUv.y * 0.35 - uTime * 0.035;
-    c += uWarm * 0.05 * exp(-pow((fract(sw) - 0.5) * 3.2, 2.0));
+    c += uWarm * 0.03 * exp(-pow((fract(sw) - 0.5) * 3.2, 2.0));
     // drafting grid (instrument scenes), drifts with the camera
     if (uGrid > 0.0) {
       vec2 gp = p + uShift;
@@ -117,7 +117,7 @@ export class Stage {
     // background plate
     const bg = opts.bg || {};
     this.bgU = { uTime: { value: 0 }, uGlow: { value: new THREE.Vector2(...(bg.glow || [0.6, 0.5])) }, uGlowR: { value: bg.glowR || 0.75 },
-      uBase: { value: col(bg.base || 0x0d1119) }, uLift: { value: col(bg.lift || 0x253043) }, uWarm: { value: col(0xffb27a) },
+      uBase: { value: col(bg.base || 0x0d1119) }, uLift: { value: col(bg.lift || 0x1c2433) }, uWarm: { value: col(0xffb27a) },
       uGrid: { value: bg.grid || 0 }, uShift: { value: new THREE.Vector2() }, uRes: { value: new THREE.Vector2(this.W, this.H) } };
     const bgm = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({ vertexShader: BG_VERT, fragmentShader: BG_FRAG,
       uniforms: this.bgU, depthWrite: false, depthTest: false }));
@@ -130,13 +130,15 @@ export class Stage {
       transparent: true, opacity: d.opacity ?? 0.5, depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true }));
     this.dust.frustumCulled = false; this.camera.add(this.dust); this.scene.add(this.camera);
     // post
-    this.composer = new EffectComposer(r, { frameBufferType: THREE.HalfFloatType, multisampling: B.msaa ?? (opts.msaa ?? 4) });
+    this.composer = new EffectComposer(r, { frameBufferType: THREE.HalfFloatType, multisampling: B.msaa ?? (opts.msaa ?? 0) });  // MSAA is 2.4x slower on software GL (PLAYBOOK §15): FXAA instead
     this.composer.addPass(new RenderPass(this.scene, this.camera));
     const fx = [];
     const bl = opts.bloom || {};
-    if (B.bloom !== 0) fx.push(this.bloom = new BloomEffect({ intensity: bl.intensity ?? 1.0, luminanceThreshold: bl.threshold ?? 0.55,
+    if (B.bloom !== 0) fx.push(this.bloom = new BloomEffect({ blendFunction: BlendFunction.ADD,  // default SCREEN goes negative on HDR (>1) pixels: dark bands
+      intensity: bl.intensity ?? 1.0, luminanceThreshold: bl.threshold ?? 0.55,
       luminanceSmoothing: bl.smoothing ?? 0.25, mipmapBlur: true, radius: bl.radius ?? 0.72 }));
-    fx.push(new ToneMappingEffect({ mode: ToneMappingMode.AGX }));
+    fx.push(new ToneMappingEffect({ mode: ToneMappingMode.NEUTRAL }));  // AgX outset matrix darkened the bg around saturated amber bloom
+    if (B.fxaa !== 0) fx.push(new FXAAEffect());
     fx.push(this.film = new FilmEffect({ grain: opts.grain ?? 0.045, vignette: opts.vignette ?? 0.3 }));
     this.composer.addPass(new EffectPass(this.camera, ...fx));
     this.composer.setSize(this.W, this.H);
@@ -166,7 +168,9 @@ export class Stage {
 }
 
 // ---------- DOM overlay helpers ----------
-export function el(parent, cls, html = "") { const e = document.createElement("div"); e.className = cls; e.innerHTML = html; parent.appendChild(e); return e; }
+/** Inter's vendored subsets have no "→" (U+2192): draw it as an inline SVG arrow */
+export const arrows = (h) => h.replace(/→/g, '<svg class="arr" viewBox="0 0 40 20"><path d="M2 10H34M24 2L36 10L24 18" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square"/></svg>');
+export function el(parent, cls, html = "") { const e = document.createElement("div"); e.className = cls; e.innerHTML = arrows(html); parent.appendChild(e); return e; }
 export function show(e, a, dx = 0, dy = 0, s = 1) {
   e.style.opacity = a.toFixed(3); e.style.visibility = a > 0.002 ? "visible" : "hidden";
   e.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px) scale(${s.toFixed(4)})`;
@@ -177,7 +181,7 @@ export function wipe(e, k) { e.style.clipPath = `inset(-20% ${(100 - 100 * clamp
 /** a map/instrument callout: anchor dot, hairline leader, title + sub */
 export class Callout {
   constructor(parent, { title, sub = "", side = 1, dx = 70, dy = -60, tone = "amber", cls = "" }) {
-    this.e = el(parent, `jd-call ${tone} ${cls}`, `<div class="lead"></div><div class="dot"></div><div class="txt"><b>${title}</b>${sub ? `<small>${sub}</small>` : ""}</div>`);
+    this.e = el(parent, `jd-call ${tone} ${cls}`, `<div class="lead"></div><div class="dot"></div><div class="txt"><b>${arrows(title)}</b>${sub ? `<small>${sub}</small>` : ""}</div>`);
     this.lead = this.e.querySelector(".lead"); this.txt = this.e.querySelector(".txt"); this.side = side; this.dx = dx; this.dy = dy;
     if (side < 0) this.txt.style.transform = "translate(-100%, -50%)";
   }
