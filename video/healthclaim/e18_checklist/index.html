@@ -91,7 +91,7 @@
       const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
 
-      for (let i = 1; i <= 3; i++) pop($("k" + i), C.q + 0.4 + i * 0.3, { opacity: 0, y: 60 });
+      for (let i = 1; i <= 3; i++) pop($("k" + i), 0.05 + (i - 1) * 0.25, { opacity: 0, y: 60 });
       tl.to([$("k2"), $("k3")], { opacity: 0.3, duration: 0.3 }, C.r1);
       tl.to($("k1"), { scale: 1.05, boxShadow: "0 0 60px rgba(56,189,248,.4)", duration: 0.3 }, C.r1);
       FIN.bind($("y1"), (t) => t > C.smoke + 0.8 ? 1 : 0, (v) => v ? "☑ Yes" : "☐"); FIN.bind($("y2"), (t) => t > C.smoke + 1.6 ? 1 : 0, (v) => v ? "☑ Yes" : "☐");

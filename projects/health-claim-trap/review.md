@@ -1,24 +1,39 @@
-# Review: health-claim-trap preview v1 (720p, 8:45)
+# Review: health-claim-trap preview v2 (720p, 8:45) — visual-engine upgrade
 
-Method: `scripts/contact_sheet.py --every 2` (263 frames, 30 sheets), each tile checked against the VO line at its
-timecode (`edl.md`, `script.md`), PLAYBOOK §14. Loudness: −14.2 LUFS integrated (target −14).
+Built to the owner's "Visual Engine Upgrade" spec (2026-10-14): every stock clip is replaced by programmatic HyperFrames
+scenes (`build/make_engines.py`, 23 compositions); the real IRDAI / CIO / Bima Bharosa pages run on a 3D document rig
+with a scan line. Method: `scripts/contact_sheet.py --every 2` (263 frames), each tile checked against the VO line at its
+timecode, PLAYBOOK §14. Loudness −14.2 LUFS integrated.
 
-## Fixed before sending (re-rendered)
-| Issue | Where | Fix |
+## Engine map
+| Time | Engine | Scenes |
 |---|---|---|
-| Stock night highway with skyscrapers (not India) under "thousands of families in India" and "banks are closed" | 0:02, 0:48 | Indian street (pixabay 3175), Indian rooftops at dusk (134434) |
-| Airport waiting-hall clips (runway visible) standing in for a hospital | 0:00, 3:30, 5:28, 5:32 | Rain on a night window (74585), nurse at monitors (40353), worried man on phone (204421) |
-| Ombudsman board: "Closed in 3 months: 78.5%" still being written at the cut | 7:29 | Written 0.6 s earlier and faster |
+| 0:00–1:17 | 1 isometric hospital cutaway + hook | e1_hospital (dive, ICU pulse, billing floor, ₹4,50,000 counter), e0_ledger (6 policy years, ₹2,10,000, 0 lapses), s01_letter (stamp), e2_shock (₹62,000 vs ₹3,88,000 short), e2_drain (FD · relative · card), e3_scale (6 years vs one letter), e1b_overstamp (laser slices stamp → 60-month moratorium) |
+| 1:19–3:46 | 2 x-ray rig + 3 bill slicer | e4_pillars (3 files), e5_funnel (69 of 100 claims via TPAs; "govt doctor" badge peels off), e6_lock + d_para17, e7_dossier (case sheet → laser thread → 2020 proposal form → denial; BP ≠ fracture; years 1–5 vs 6), e8_opd, e9_slicer (₹9,000 expected → ₹59,625 cut; medicines protected), e10_wall (wall → two lanes → circular as key) |
+| 3:46–5:28 | 4 moratorium shield + 5 stopwatch | e11_shield (96 months, 36 shatter, shield at month 60), d_para13 (core reveal), e12_history, e13_burden, e14_port, e15_impact (denial shatters on the shield), e16_stopwatch + d_para16 / d_para16b (3:00:00 → overtime; ₹4,000 delay charge moves to the insurer's fund) |
+| 5:28–7:37 | 6 war-room | e17_warroom (one 129 s panned board: 4 nodes, evidence pack, GRO email + 14-day ring, Bima Bharosa radar, 18 Ombudsman offices, CIO data 32,503 → 76%, award shield, ₹5,000/day meter), d_bima, d_cio, d_h3, d_50l |
+| 7:37–8:31 | checklist + cheat-sheet | e18_checklist (declare · no room cap · consumables), e19_cheatsheet ("screenshot this" card) |
+
+## Spec items changed for accuracy (claims.csv)
+₹59,625 total cut (VO says almost sixty thousand; spec's ₹90,000 would contradict it) · "company hired & paid by the
+insurer" (one TPA is state-owned) · no "algorithm" wording (no source) · "fraud the company must prove" (not "criminal")
+· "No lawyer needed" (not "lawyers banned, Rule 15") · "76% of settled or decided" · 18 offices, not 17 (CIO 2024-25) ·
+city constellation without an India outline · ₹62,000 / ₹3,88,000 / ₹4,000 labelled ILLUSTRATIVE · penalty "unless the
+insurer appeals".
+
+## Fixed after the first v2 pass (re-rendered)
+Blank first second and blank starts of the drain and checklist scenes; overstamp text clipped ("CASHLESS" only);
+7 s near-empty frame under "no shouting, no selling" (now two ✕ cards); leftover ghost folders in the dive; a red fragment
+visible before the shield impact; 26 s static framing on war-room node 4 and "0%" shown early (data panel now appears on
+cue, cities light one by one, camera drifts); war-room node views zoomed closer; cheat-sheet first block earlier.
 
 ## Checked and passing
-- Semantic lock: every line has a matching picture; proof pages highlight the exact words the VO reads (paras 13, 16, 17; cioins.co.in; Bima Bharosa; CIO Statement H3).
-- On-screen numbers match the VO and `claims.csv` (₹4,50,000; 37.5%; 32,503; 9,417 + 6,126 = 15,543 of 20,440 = 76%; 78.5%; ₹50 lakh; 3 hours; 14 days; 15–30 days).
-- Labels: SIMULATION on every made-up document; ILLUSTRATIVE FOOTAGE on stock stand-ins; OUR CALCULATION on the boards; citation tags bottom right.
-- Cadence: 137 shots, median 3.2 s; no still or clip over 5 s without a reframe; scenes and boards animate throughout.
-- No stock clip used more than twice. Logo sting at "Welcome to Be Practical with Kishore", logo bug elsewhere, end card last with "Educational only".
-- Owner's two 3 s VO silences (after "So, what does it mean for you?" and after "cioins.co.in"): picture keeps moving (proof push-in, site pan); music drops to silence for 1.5 s before the moratorium clause.
+Numbers match VO and claims.csv (fact-check gate passes, 54 rows); SIMULATION / ILLUSTRATIVE / OUR CALCULATION labels on
+every made-up document and number; citation tags on every rule; logo sting at the channel name, bug elsewhere, end card
+with "Educational only"; music silent 1.5 s before the moratorium clause; the two 3 s VO pauses carry moving pictures
+(the para-13 document rig and the cioins.co.in rig).
 
-## Known limits (not blockers; owner's call)
-- No real Indian hospital billing counter, TPA desk or night corridor exists in the free libraries; stand-ins are generic (mostly non-Indian) clinic footage, labelled ILLUSTRATIVE FOOTAGE. 3–4 phone clips from the owner (lobby, billing counter, no faces) would lift the hook.
-- Music is the synthesised bed; a YouTube Audio Library track can replace it at the final mix.
-- Preview is 720p; final is 1080p/4K after approval.
+## Owner's call
+The film is now almost entirely animated (no real-world footage except the official pages). The channel rules prefer
+real footage; the owner's spec asked for this. A few real shots (a hospital lobby at night, a billing counter) filmed on a
+phone could still open the film if wanted.

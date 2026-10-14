@@ -94,7 +94,7 @@
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
 
       tl.fromTo($("stage"), { scale: 1 }, { scale: 1.04, duration: D.duration, ease: "none" }, 0);
-      pop($("night"), C.banks);
+      pop($("night"), 0.05);
       pop($("p1"), C.fd - 0.2, { opacity: 0, y: 60 }); pop($("fdx"), C.fd + 0.6, { opacity: 0 });
       tl.to($("fdb"), { scaleX: 0.08, background: "#f87171", duration: 0.9 }, C.fd + 0.4);
       FIN.bind($("fd"), FIN.keys([[C.fd + 0.4, 150000], [C.fd + 1.3, 12000]]), (v) => FIN.inr(Math.round(v / 1000) * 1000));

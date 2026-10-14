@@ -102,7 +102,7 @@
         <div class="node3" id="n3b" style="left:4120px; top:1120px">IRDAI tracks it</div>
         <div class="glass" id="nolaw" style="left:1200px; top:1530px; width:620px; padding:26px">
           <div class="t-k" style="color:#4ade80">Insurance Ombudsman · 18 offices</div><div style="font:800 38px/1.35 Inter,Arial,sans-serif; margin-top:10px">No court case<br>No lawyer needed<br>Online · ₹0 fee</div></div>
-        <div class="glass" id="data" style="left:3180px; top:1550px; width:880px; padding:30px">
+        <div class="glass" id="data" style="left:3180px; top:1550px; width:880px; padding:30px; opacity:0">
           <div class="t-k">Health complaints · 2024-25</div>
           <div class="fr2" id="fn0"><div class="fb" style="width:100%; background:#334155"></div><span class="mono">32,503</span> received</div><div class="fr2" id="fn1"><div class="fb" style="width:89%; background:#475569"></div><span class="mono">29,017</span> closed</div><div class="fr2" id="fn2"><div class="fb" style="width:63%; background:#0369a1"></div><span class="mono">20,440</span> settled or decided</div><div class="fr2" id="fn3"><div class="fb" style="width:48%; background:#22c55e"></div><span class="mono">15,543</span> for the policyholder</div>
           <div class="big2"><span class="mono" id="pct" style="color:#4ade80">0%</span><span class="t-k" style="margin-left:16px">of settled or decided</span></div>
@@ -129,7 +129,7 @@
       const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
 
-      const kX = FIN.keys([[0, 126], [C.s1 - 0.3, 0], [C.s1 + 0.9, -89], [C.s2 - 0.4, -89], [C.s2 + 1.0, -1533], [C.s3 - 0.4, -1533], [C.s3 + 1.0, -2889], [C.s4 - 0.4, -2889], [C.s4 + 1.2, -807], [C.rec - 0.3, -867], [C.rec + 1.0, -2609], [C.aw - 0.3, -2609], [C.aw + 1.0, -1020], [D.duration, -1072]]), kY = FIN.keys([[0, 71], [C.s1 - 0.3, 0], [C.s1 + 0.9, -212], [C.s2 - 0.4, -212], [C.s2 + 1.0, 20], [C.s3 - 0.4, 20], [C.s3 + 1.0, -412], [C.s4 - 0.4, -412], [C.s4 + 1.2, -1200], [C.rec - 0.3, -1200], [C.rec + 1.0, -1362], [C.aw - 0.3, -1362], [C.aw + 1.0, -1470], [D.duration, -1499]]), kS = FIN.keys([[0, 0.38], [C.s1 - 0.3, 0.4], [C.s1 + 0.9, 0.95], [C.s2 - 0.4, 0.95], [C.s2 + 1.0, 0.9], [C.s3 - 0.4, 0.9], [C.s3 + 1.0, 0.95], [C.s4 - 0.4, 0.95], [C.s4 + 1.2, 0.72], [C.rec - 0.3, 0.72], [C.rec + 1.0, 0.95], [C.aw - 0.3, 0.95], [C.aw + 1.0, 0.6], [D.duration, 0.62]]);
+      const kX = FIN.keys([[0, 126], [C.s1 - 0.3, 0], [C.s1 + 0.9, -285], [C.s2 - 0.4, -353], [C.s2 + 1.0, -1706], [C.s3 - 0.4, -1783], [C.s3 + 1.0, -2986], [C.s4 - 0.4, -3043], [C.s4 + 1.2, -807], [C.rec - 0.3, -1204], [C.rec + 1.0, -2609], [C.aw - 0.3, -2609], [C.aw + 1.0, -1020], [D.duration, -1072]]), kY = FIN.keys([[0, 71], [C.s1 - 0.3, 0], [C.s1 + 0.9, -310], [C.s2 - 0.4, -357], [C.s2 + 1.0, -126], [C.s3 - 0.4, -178], [C.s3 + 1.0, -446], [C.s4 - 0.4, -498], [C.s4 + 1.2, -1200], [C.rec - 0.3, -1382], [C.rec + 1.0, -1362], [C.aw - 0.3, -1362], [C.aw + 1.0, -1470], [D.duration, -1499]]), kS = FIN.keys([[0, 0.38], [C.s1 - 0.3, 0.4], [C.s1 + 0.9, 1.15], [C.s2 - 0.4, 1.22], [C.s2 + 1.0, 1.05], [C.s3 - 0.4, 1.12], [C.s3 + 1.0, 1.05], [C.s4 - 0.4, 1.12], [C.s4 + 1.2, 0.72], [C.rec - 0.3, 0.86], [C.rec + 1.0, 0.95], [C.aw - 0.3, 0.95], [C.aw + 1.0, 0.6], [D.duration, 0.62]]);
       FIN.hook((t) => { $("world").style.transform = `scale(${kS(t)}) translate(${kX(t)}px, ${kY(t)}px)`;
         document.querySelectorAll(".halo").forEach((h, i) => { const u = ((t * 0.7 + i * 0.13) % 1); h.style.transform = `scale(${1 + u * 3})`; h.style.opacity = 1 - u; }); });
       pop($("dn"), C.dn); out($("dn"), C.four - 0.2); pop($("fs"), C.four); out($("fs"), C.s1 + 0.5);
@@ -143,7 +143,8 @@ tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease:
       tl.to($("ringw"), { opacity: 1, duration: 0.3 }, C.d14); tl.to($("ring14"), { strokeDashoffset: 0, duration: 2.0, ease: "none" }, C.d14 + 0.2);
       ["rad1", "rad2"].forEach((id, i) => { for (let k = 0; k < 4; k++) tl.fromTo($(id), { attr: { r: 40 }, opacity: 0.9 }, { attr: { r: 520 }, opacity: 0, duration: 1.6, ease: "power1.out", immediateRender: false }, C.bb + i * 0.8 + k * 1.6); });
       pop($("n3a"), C.bb + 2.5, { opacity: 0, y: 30 }); pop($("n3b"), C.track + 1.5, { opacity: 0, y: 30 });
-      tl.to($("cities"), { opacity: 1, duration: 0.8 }, C.s4 + 0.3);
+      tl.to($("cities"), { opacity: 1, duration: 0.8 }, C.s4 + 0.3); pop($("data"), C.rec, { opacity: 0, x: 60 });
+      for (let i = 0; i < 18; i++) tl.fromTo($("cy" + i), { opacity: 0 }, { opacity: 1, duration: 0.2 }, C.s4 + 0.4 + i * 0.12);
       for (let i = 0; i < 4; i++) tl.fromTo($("fn" + i).querySelector(".fb"), { scaleX: 0 }, { scaleX: 1, duration: 0.5 }, C.rec + 0.4 + i * (i < 2 ? 1.4 : 1.6));
       FIN.bind($("pct"), FIN.keys([[C.dec + 0.6, 0], [C.dec + 2.4, 76]]), (v) => Math.round(v) + "%");
       tl.fromTo($("gf"), { scaleX: 0 }, { scaleX: 1, duration: 1.2 }, C.three + 0.2);

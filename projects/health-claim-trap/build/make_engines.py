@@ -143,7 +143,7 @@ def e1_hospital():
       const cam = $("cam");
       const keyS = FIN.keys([[0, 0.5], [6, 0.7], [C.icu, 0.75], [C.icu + 1.6, 1.7], [C.bill - 0.2, 1.7], [C.bill + 1.8, 1.45], [D.duration, 1.55]]);
       const keyX = FIN.keys([[0, {wide[0]}], [C.icu, {wide[0] + 40}], [C.icu + 1.6, {a3[0]:.0f}], [C.bill - 0.2, {a3[0]:.0f}], [C.bill + 1.8, {a0[0]:.0f}], [D.duration, {a0b[0]:.0f}]]);
-      const keyY = FIN.keys([[0, 900], [5, {wide[1]}], [C.icu, {wide[1] + 20}], [C.icu + 1.6, {a3[1]:.0f}], [C.bill - 0.2, {a3[1]:.0f}], [C.bill + 1.8, {a0[1]:.0f}], [D.duration, {a0b[1]:.0f}]]);
+      const keyY = FIN.keys([[0, 380], [5, {wide[1]}], [C.icu, {wide[1] + 20}], [C.icu + 1.6, {a3[1]:.0f}], [C.bill - 0.2, {a3[1]:.0f}], [C.bill + 1.8, {a0[1]:.0f}], [D.duration, {a0b[1]:.0f}]]);
       FIN.hook((t) => {{ cam.setAttribute("transform", `scale(${{keyS(t)}}) translate(${{keyX(t)}} ${{keyY(t)}})`);
         $("pulse").setAttribute("stroke-dashoffset", String(-t * 260));
         // ICU telemetry line drawn from time only
@@ -238,7 +238,7 @@ def e2_drain():
 .card { margin-top: 28px; height: 250px; border-radius: 22px; padding: 30px; background: linear-gradient(135deg, #1e3a5f, #0f172a); border: 2px solid rgba(255,255,255,.18); }"""
     js = """
       tl.fromTo($("stage"), { scale: 1 }, { scale: 1.04, duration: D.duration, ease: "none" }, 0);
-      pop($("night"), C.banks);
+      pop($("night"), 0.05);
       pop($("p1"), C.fd - 0.2, { opacity: 0, y: 60 }); pop($("fdx"), C.fd + 0.6, { opacity: 0 });
       tl.to($("fdb"), { scaleX: 0.08, background: "#f87171", duration: 0.9 }, C.fd + 0.4);
       FIN.bind($("fd"), FIN.keys([[C.fd + 0.4, 150000], [C.fd + 1.3, 12000]]), (v) => FIN.inr(Math.round(v / 1000) * 1000));
@@ -285,13 +285,13 @@ def e4_pillars():
         <div class="glass fo" id="f{i}" style="left:{90 + i * 590}px">
           <div class="tab"></div><div style="font:800 120px/1 Inter,Arial,sans-serif; color:rgba(56,189,248,.35)">{n}</div>
           <div style="font:800 58px/1.1 Inter,Arial,sans-serif; margin-top:30px">{a}</div><div class="t-k" style="margin-top:22px; color:#38bdf8; font-size:28px">{b}</div></div>"""
-                   for i, (n, a, b) in enumerate(F)) + '<div class="chip" id="nos" style="left:690px; top:120px">No shouting · no selling</div>'
-    css = ".fo { top: 270px; width: 560px; height: 560px; padding: 46px; transform-style: preserve-3d; } .tab { position:absolute; left:30px; top:-30px; width:160px; height:34px; border-radius:10px 10px 0 0; background:rgba(56,189,248,.35); }"
+                   for i, (n, a, b) in enumerate(F)) + '<div class="glass nx" id="nos" style="left:300px"><div class="xx">✕</div><div class="nxt">No shouting</div></div><div class="glass nx" id="nos2" style="left:1020px"><div class="xx">✕</div><div class="nxt">No policy selling</div></div>'
+    css = ".nx { top: 300px; width: 600px; height: 420px; text-align: center; padding-top: 50px; } .xx { font: 800 170px/1 Inter,Arial,sans-serif; color: #f87171; } .nxt { margin-top: 30px; font: 800 56px/1 Inter,Arial,sans-serif; } .fo { top: 270px; width: 560px; height: 560px; padding: 46px; transform-style: preserve-3d; } .tab { position:absolute; left:30px; top:-30px; width:160px; height:34px; border-radius:10px 10px 0 0; background:rgba(56,189,248,.35); }"
     cues = dict(nos=s[0]["start"], real=at("E011", "real", k=1), who=at("E011", "who really", k=1), step=at("E011", "step-by-step", k=1), dive=L("E012")[0])
     js = """
-      pop($("nos"), C.nos + 0.3); out($("nos"), C.real - 0.3);
+      pop($("nos"), C.nos + 0.2, { opacity: 0, scale: 0.8 }); pop($("nos2"), C.nos + 1.6, { opacity: 0, scale: 0.8 }); out($("nos"), C.real - 0.3); out($("nos2"), C.real - 0.3);
       [C.real, C.who + 0.6, C.step].forEach((t, i) => pop($("f" + i), t, { opacity: 0, y: 120, rotationX: 55 }));
-      tl.to([$("f1"), $("f2")], { opacity: 0.25, duration: 0.4 }, C.dive);
+      tl.to([$("f1"), $("f2")], { opacity: 0, duration: 0.4 }, C.dive);
       tl.to($("stage"), { scale: 2.6, x: 1450, y: 150, duration: 1.8, ease: "power3.in" }, C.dive + 0.4);
       tl.to($("f0"), { opacity: 0, duration: 0.4 }, D.duration - 0.45);
 """
@@ -309,7 +309,7 @@ def e1b_overstamp():
           <div style="font:800 86px/1.05 Inter,Arial,sans-serif; color:#facc15; text-shadow:0 0 40px rgba(250,204,21,.6)">60-MONTH MORATORIUM</div>
           <div class="t-k" style="margin-top:22px; font-size:30px; color:#fde68a">After 5 years: not contestable for non-disclosure</div></div>"""
     css = """.stampx { position: absolute; left: 360px; top: 400px; width: 1200px; height: 270px; border: 14px solid #dc2626; border-radius: 22px; color: #dc2626;
-  font: 800 150px/242px Inter, Arial, sans-serif; text-align: center; letter-spacing: .04em; transform: rotate(-8deg); background: rgba(40,6,6,.4); }
+  font: 800 118px/242px Inter, Arial, sans-serif; text-align: center; letter-spacing: .02em; white-space: nowrap; transform: rotate(-8deg); background: rgba(40,6,6,.4); }
 #top { clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); } #bot { clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); }"""
     cues = dict(rule=at("E009", "legal rule"), illegal=at("E009", "illegal"), five=at("E009", "five years"))
     js = """
@@ -701,7 +701,7 @@ def e15_impact():
       tl.to($("pj"), { x: """ + f"{sx - 580:.0f}" + """, duration: 1.6, ease: "power2.in" }, C.letter + 0.5);
       tl.to($("pj"), { opacity: 0, scale: 0.4, duration: 0.15 }, C.letter + 2.1);
       for (let i = 0; i < 14; i++) tl.fromTo($("fr" + i), { opacity: 1, x: 0, y: 0, rotation: 0 },
-        { opacity: 0, x: -60 - (i * 37) % 260, y: ((i * 53) % 360) - 180, rotation: i * 70, duration: 1.0, ease: "power2.out" }, C.letter + 2.1);
+        { opacity: 0, x: -60 - (i * 37) % 260, y: ((i * 53) % 360) - 180, rotation: i * 70, duration: 1.0, ease: "power2.out", immediateRender: false }, C.letter + 2.1);
       tl.to($("sh"), { boxShadow: "0 0 140px 40px rgba(56,189,248,1)", duration: 0.15, yoyo: true, repeat: 1 }, C.letter + 2.1);
       tl.fromTo($("stage"), { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, C.letter + 2.1);
       pop($("v"), C.viol, { opacity: 0 });
@@ -847,7 +847,7 @@ def e17_warroom():
         <div class="node3" id="n3b" style="left:{N[3][0] + 220}px; top:{N[3][1] + 220}px">IRDAI tracks it</div>
         <div class="glass" id="nolaw" style="left:{N[4][0] - 1500}px; top:{N[4][1] - 420}px; width:620px; padding:26px">
           <div class="t-k" style="color:#4ade80">Insurance Ombudsman · 18 offices</div><div style="font:800 38px/1.35 Inter,Arial,sans-serif; margin-top:10px">No court case<br>No lawyer needed<br>Online · ₹0 fee</div></div>
-        <div class="glass" id="data" style="left:{N[4][0] + 480}px; top:{N[4][1] - 400}px; width:880px; padding:30px">
+        <div class="glass" id="data" style="left:{N[4][0] + 480}px; top:{N[4][1] - 400}px; width:880px; padding:30px; opacity:0">
           <div class="t-k">Health complaints · 2024-25</div>
           {"".join(f'<div class="fr2" id="fn{i}"><div class="fb" style="width:{w}%; background:{c}"></div><span class="mono">{v}</span> {t}</div>' for i, (w, c, v, t) in enumerate([
               (100, "#334155", "32,503", "received"), (89, "#475569", "29,017", "closed"), (63, "#0369a1", "20,440", "settled or decided"), (48, "#22c55e", "15,543", "for the policyholder")]))}
@@ -880,11 +880,11 @@ def e17_warroom():
     # camera: world point (x, y) centred at scale s  -> translate = screen_centre/s - point
     def camk(x, y, sc):
         return (960 / sc - x, 540 / sc - y)
-    keys = [("0", (2400, 1350, 0.38)), ("C.s1 - 0.3", (2400, 1350, 0.4)), ("C.s1 + 0.9", (N[1][0] + 400, N[1][1] + 80, 0.95)),
-            ("C.s2 - 0.4", (N[1][0] + 400, N[1][1] + 80, 0.95)), ("C.s2 + 1.0", (N[2][0] + 300, N[2][1] + 60, 0.9)),
-            ("C.s3 - 0.4", (N[2][0] + 300, N[2][1] + 60, 0.9)), ("C.s3 + 1.0", (N[3][0], N[3][1] + 80, 0.95)),
-            ("C.s4 - 0.4", (N[3][0], N[3][1] + 80, 0.95)), ("C.s4 + 1.2", (N[4][0] - 560, N[4][1], 0.72)),
-            ("C.rec - 0.3", (N[4][0] - 500, N[4][1], 0.72)), ("C.rec + 1.0", (N[4][0] + 920, N[4][1] - 20, 0.95)),
+    keys = [("0", (2400, 1350, 0.38)), ("C.s1 - 0.3", (2400, 1350, 0.4)), ("C.s1 + 0.9", (N[1][0] + 420, N[1][1] + 80, 1.15)),
+            ("C.s2 - 0.4", (N[1][0] + 440, N[1][1] + 100, 1.22)), ("C.s2 + 1.0", (N[2][0] + 320, N[2][1] + 120, 1.05)),
+            ("C.s3 - 0.4", (N[2][0] + 340, N[2][1] + 140, 1.12)), ("C.s3 + 1.0", (N[3][0], N[3][1] + 60, 1.05)),
+            ("C.s4 - 0.4", (N[3][0], N[3][1] + 80, 1.12)), ("C.s4 + 1.2", (N[4][0] - 560, N[4][1], 0.72)),
+            ("C.rec - 0.3", (N[4][0] - 380, N[4][1] + 60, 0.86)), ("C.rec + 1.0", (N[4][0] + 920, N[4][1] - 20, 0.95)),
             ("C.aw - 0.3", (N[4][0] + 920, N[4][1] - 20, 0.95)), ("C.aw + 1.0", (N[4][0] - 80, N[4][1] + 420, 0.6)), ("D.duration", (N[4][0] - 80, N[4][1] + 420, 0.62))]
     kx = ", ".join(f"[{t}, {camk(x, y, sc)[0]:.0f}]" for t, (x, y, sc) in keys)
     ky = ", ".join(f"[{t}, {camk(x, y, sc)[1]:.0f}]" for t, (x, y, sc) in keys)
@@ -904,7 +904,8 @@ def e17_warroom():
       tl.to($("ringw"), {{ opacity: 1, duration: 0.3 }}, C.d14); tl.to($("ring14"), {{ strokeDashoffset: 0, duration: 2.0, ease: "none" }}, C.d14 + 0.2);
       ["rad1", "rad2"].forEach((id, i) => {{ for (let k = 0; k < 4; k++) tl.fromTo($(id), {{ attr: {{ r: 40 }}, opacity: 0.9 }}, {{ attr: {{ r: 520 }}, opacity: 0, duration: 1.6, ease: "power1.out", immediateRender: false }}, C.bb + i * 0.8 + k * 1.6); }});
       pop($("n3a"), C.bb + 2.5, {{ opacity: 0, y: 30 }}); pop($("n3b"), C.track + 1.5, {{ opacity: 0, y: 30 }});
-      tl.to($("cities"), {{ opacity: 1, duration: 0.8 }}, C.s4 + 0.3);
+      tl.to($("cities"), {{ opacity: 1, duration: 0.8 }}, C.s4 + 0.3); pop($("data"), C.rec, {{ opacity: 0, x: 60 }});
+      for (let i = 0; i < 18; i++) tl.fromTo($("cy" + i), {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2 }}, C.s4 + 0.4 + i * 0.12);
       for (let i = 0; i < 4; i++) tl.fromTo($("fn" + i).querySelector(".fb"), {{ scaleX: 0 }}, {{ scaleX: 1, duration: 0.5 }}, C.rec + 0.4 + i * (i < 2 ? 1.4 : 1.6));
       FIN.bind($("pct"), FIN.keys([[C.dec + 0.6, 0], [C.dec + 2.4, 76]]), (v) => Math.round(v) + "%");
       tl.fromTo($("gf"), {{ scaleX: 0 }}, {{ scaleX: 1, duration: 1.2 }}, C.three + 0.2);
@@ -938,7 +939,7 @@ def e18_checklist():
     cues = dict(q=S("E057")["start"], r1=s58[0]["start"], disc=s58[1]["start"], smoke=s58[2]["start"], paper=s58[3]["start"],
                 r2=s59[0]["start"], nocap=s59[1]["start"], ex=s59[2]["start"], r3=s60[0]["start"], rep=s60[2]["start"], some=s60[3]["start"], chk=s60[4]["start"])
     js = """
-      for (let i = 1; i <= 3; i++) pop($("k" + i), C.q + 0.4 + i * 0.3, { opacity: 0, y: 60 });
+      for (let i = 1; i <= 3; i++) pop($("k" + i), 0.05 + (i - 1) * 0.25, { opacity: 0, y: 60 });
       tl.to([$("k2"), $("k3")], { opacity: 0.3, duration: 0.3 }, C.r1);
       tl.to($("k1"), { scale: 1.05, boxShadow: "0 0 60px rgba(56,189,248,.4)", duration: 0.3 }, C.r1);
       FIN.bind($("y1"), (t) => t > C.smoke + 0.8 ? 1 : 0, (v) => v ? "☑ Yes" : "☐"); FIN.bind($("y2"), (t) => t > C.smoke + 1.6 ? 1 : 0, (v) => v ? "☑ Yes" : "☐");
@@ -978,7 +979,7 @@ def e19_cheatsheet():
     cues = dict(peace=s61[0]["start"], five=s61[1]["start"], omb=s61[2]["start"], prot=s61[3]["start"], smart=S("E062")["start"])
     js = """
       tl.fromTo($("card"), { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, 0.1);
-      [C.peace + 1.5, C.five, C.omb - 0.4, C.omb + 0.5].forEach((t, i) => pop($("cb" + i), t, { opacity: 0, x: -30 }));
+      [C.peace + 0.4, C.five, C.omb - 0.4, C.omb + 0.5].forEach((t, i) => pop($("cb" + i), t, { opacity: 0, x: -30 }));
       pop($("ss"), C.prot, { opacity: 0, y: -20 });
       tl.to($("card"), { rotationX: 4, rotationZ: 0, scale: 1.04, duration: D.duration - 1, ease: "sine.inOut" }, 0.5);
 """

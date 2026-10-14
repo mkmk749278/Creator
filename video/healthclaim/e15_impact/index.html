@@ -92,7 +92,7 @@ tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease:
       tl.to($("pj"), { x: 917, duration: 1.6, ease: "power2.in" }, C.letter + 0.5);
       tl.to($("pj"), { opacity: 0, scale: 0.4, duration: 0.15 }, C.letter + 2.1);
       for (let i = 0; i < 14; i++) tl.fromTo($("fr" + i), { opacity: 1, x: 0, y: 0, rotation: 0 },
-        { opacity: 0, x: -60 - (i * 37) % 260, y: ((i * 53) % 360) - 180, rotation: i * 70, duration: 1.0, ease: "power2.out" }, C.letter + 2.1);
+        { opacity: 0, x: -60 - (i * 37) % 260, y: ((i * 53) % 360) - 180, rotation: i * 70, duration: 1.0, ease: "power2.out", immediateRender: false }, C.letter + 2.1);
       tl.to($("sh"), { boxShadow: "0 0 140px 40px rgba(56,189,248,1)", duration: 0.15, yoyo: true, repeat: 1 }, C.letter + 2.1);
       tl.fromTo($("stage"), { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, C.letter + 2.1);
       pop($("v"), C.viol, { opacity: 0 });

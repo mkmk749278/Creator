@@ -109,7 +109,7 @@ tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease:
       const cam = $("cam");
       const keyS = FIN.keys([[0, 0.5], [6, 0.7], [C.icu, 0.75], [C.icu + 1.6, 1.7], [C.bill - 0.2, 1.7], [C.bill + 1.8, 1.45], [D.duration, 1.55]]);
       const keyX = FIN.keys([[0, -380], [C.icu, -340], [C.icu + 1.6, -78], [C.bill - 0.2, -78], [C.bill + 1.8, -237], [D.duration, -233]]);
-      const keyY = FIN.keys([[0, 900], [5, -60], [C.icu, -40], [C.icu + 1.6, 91], [C.bill - 0.2, 91], [C.bill + 1.8, -203], [D.duration, -201]]);
+      const keyY = FIN.keys([[0, 380], [5, -60], [C.icu, -40], [C.icu + 1.6, 91], [C.bill - 0.2, 91], [C.bill + 1.8, -203], [D.duration, -201]]);
       FIN.hook((t) => { cam.setAttribute("transform", `scale(${keyS(t)}) translate(${keyX(t)} ${keyY(t)})`);
         $("pulse").setAttribute("stroke-dashoffset", String(-t * 260));
         // ICU telemetry line drawn from time only

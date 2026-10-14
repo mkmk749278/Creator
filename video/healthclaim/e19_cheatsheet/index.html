@@ -87,7 +87,7 @@
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
 
       tl.fromTo($("card"), { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, 0.1);
-      [C.peace + 1.5, C.five, C.omb - 0.4, C.omb + 0.5].forEach((t, i) => pop($("cb" + i), t, { opacity: 0, x: -30 }));
+      [C.peace + 0.4, C.five, C.omb - 0.4, C.omb + 0.5].forEach((t, i) => pop($("cb" + i), t, { opacity: 0, x: -30 }));
       pop($("ss"), C.prot, { opacity: 0, y: -20 });
       tl.to($("card"), { rotationX: 4, rotationZ: 0, scale: 1.04, duration: D.duration - 1, ease: "sine.inOut" }, 0.5);
 
