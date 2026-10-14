@@ -64,7 +64,7 @@ SHOTS = [
     S(L("J018"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=146, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · TEJAS MK1A FLIGHT"),
     S(L("J019"), "still", src=F404, zoom=(1.35, 1.7), focus=(0.55, 0.5), dark=True, illus=False),
     S(L("J020") - 1.5, "black"),
-    S(L("J020"), "pending", desc="Pokhran-II archive (Commons / Prasar Bharati)"),
+    S(L("J020"), "proof", src=PF / "goi_1998_pokhran.png", label="GOVT OF INDIA · PAPER LAID IN PARLIAMENT · MAY 1998"),
     S(L("J022"), "proof", src=PF / "crs_sanctions.png", label="US CONGRESSIONAL RESEARCH SERVICE · 2002"),
     S(L("J024"), "clip", src=YT / "ryolgbuDNSg.mp4", ss=25, crop=(0.06, 0.12, 1.0, 1.0), credit="PIB · TEJAS · AERO INDIA 2019"),
     S(L("J025"), "clip", src=YT / "52f1mQqaii8.mp4", ss=8.6, credit="INDIAN AIR FORCE"),
