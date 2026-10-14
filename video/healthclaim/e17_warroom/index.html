@@ -47,9 +47,9 @@
 .stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
 
 .bp { position: absolute; inset: -60px; background:
-  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+  repeating-linear-gradient(0deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, rgba(19,37,74,.35) 0%, rgba(11,21,48,.7) 50%, rgba(5,10,24,.92) 100%); }
 .glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
   border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
 .t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
@@ -72,7 +72,7 @@
     <div id="root" class="fin-root" data-composition-id="e17_warroom" data-start="0" data-width="1920" data-height="1080" data-duration="129.04">
       
       <div id="stage">
-<div class="bp" id="bp"></div>
+<div id="bimg" style="position:absolute; inset:-80px; background:url(img/back.jpg) center/cover; opacity:.6"></div><div class="bp" id="bp" style="opacity:.85"></div>
       <div id="world" style="position:absolute; left:0; top:0; width:4800px; height:2700px; transform-origin:0 0">
         <svg viewBox="0 0 4800 2700" style="position:absolute; inset:0; width:4800px; height:2700px"><line x1="974" y1="100" x2="2427" y2="100" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="2229" y1="240" x2="534" y2="240" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="1515" y1="380" x2="2473" y2="380" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="1941" y1="520" x2="2562" y2="520" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="2379" y1="660" x2="268" y2="660" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="2480" y1="800" x2="53" y2="800" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="3430" y1="940" x2="1921" y2="940" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="1062" y1="1080" x2="2256" y2="1080" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="959" y1="1220" x2="785" y2="1220" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="2937" y1="1360" x2="1926" y2="1360" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="2215" y1="1500" x2="3426" y2="1500" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="2251" y1="1640" x2="1951" y2="1640" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="1626" y1="1780" x2="2617" y2="1780" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="3526" y1="1920" x2="616" y2="1920" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="949" y1="2060" x2="2600" y2="2060" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="621" y1="2200" x2="3555" y2="2200" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="2142" y1="2340" x2="1597" y2="2340" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="3036" y1="2480" x2="62" y2="2480" stroke="rgba(56,189,248,.07)" stroke-width="3"/><line x1="2750" y1="2620" x2="3183" y2="2620" stroke="rgba(56,189,248,.07)" stroke-width="3"/><path id="tr1" d="M700 700 L1500 700 L1500 520 L2300 520" stroke="rgba(56,189,248,.18)" stroke-width="10" fill="none"/><path id="tr2" d="M2300 520 L3100 520 L3100 900 L3900 900" stroke="rgba(56,189,248,.18)" stroke-width="10" fill="none"/><path id="tr3" d="M3900 900 L3300 900 L3300 1950 L2700 1950" stroke="rgba(56,189,248,.18)" stroke-width="10" fill="none"/>
           <circle id="rad1" cx="3900" cy="900" r="40" fill="none" stroke="#38bdf8" stroke-width="5" opacity="0"/>
@@ -85,7 +85,11 @@
         <div class="glass" id="tmpl" style="left:790px; top:1040px; width:700px; padding:26px; opacity:0">
           <div class="t-k" style="color:#f59e0b">Doctor's letter · sample wording</div>
           <div style="font:600 28px/1.4 Inter,Arial,sans-serif; margin-top:12px">This patient needed in-patient admission for [diagnosis] because [clinical reason].</div></div>
-        <div class="glass" id="mail" style="left:2390px; top:320px; width:760px; padding:30px">
+        <div class="glass" id="rf" style="left:2390px; top:320px; width:760px; padding:30px; opacity:0">
+          <div class="t-k" style="color:#4ade80">Reimbursement claim · file it yourself</div>
+          <div class="ml rfr" id="rf0"><span style="color:#4ade80">✓</span> Claim form, signed</div><div class="ml rfr" id="rf1"><span style="color:#4ade80">✓</span> Final bill and payment receipt</div><div class="ml rfr" id="rf2"><span style="color:#4ade80">✓</span> Discharge summary and reports</div><div class="ml rfr" id="rf3"><span style="color:#4ade80">✓</span> Copy of the cashless denial letter</div>
+          <div style="font:800 48px/1 Inter,Arial,sans-serif; margin-top:22px; color:#f59e0b">Within 15–30 days</div></div>
+        <div class="glass" id="mail" style="left:2390px; top:320px; width:760px; padding:30px; opacity:0">
           <div class="t-k" style="color:#38bdf8">To: Grievance Redressal Officer</div>
           <div class="ml" id="ml0">Policy no · claim no · amount</div><div class="ml" id="ml1">Policy running since 2020 (over 5 years)</div>
           <div class="ml" id="ml2">IRDAI moratorium, para 13: not contestable for non-disclosure</div><div class="ml" id="ml3">Please review and settle</div></div>
@@ -128,6 +132,7 @@
       const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
       const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+tl.fromTo($("bimg"), { scale: 1.0, x: 0 }, { scale: 1.08, x: -40, duration: D.duration, ease: "none" }, 0);
 
       const kX = FIN.keys([[0, 126], [C.s1 - 0.3, 0], [C.s1 + 0.9, -285], [C.s2 - 0.4, -353], [C.s2 + 1.0, -1706], [C.s3 - 0.4, -1783], [C.s3 + 1.0, -2986], [C.s4 - 0.4, -3043], [C.s4 + 1.2, -807], [C.rec - 0.3, -1204], [C.rec + 1.0, -2609], [C.aw - 0.3, -2609], [C.aw + 1.0, -1020], [D.duration, -1072]]), kY = FIN.keys([[0, 71], [C.s1 - 0.3, 0], [C.s1 + 0.9, -310], [C.s2 - 0.4, -357], [C.s2 + 1.0, -126], [C.s3 - 0.4, -178], [C.s3 + 1.0, -446], [C.s4 - 0.4, -498], [C.s4 + 1.2, -1200], [C.rec - 0.3, -1382], [C.rec + 1.0, -1362], [C.aw - 0.3, -1362], [C.aw + 1.0, -1470], [D.duration, -1499]]), kS = FIN.keys([[0, 0.38], [C.s1 - 0.3, 0.4], [C.s1 + 0.9, 1.15], [C.s2 - 0.4, 1.22], [C.s2 + 1.0, 1.05], [C.s3 - 0.4, 1.12], [C.s3 + 1.0, 1.05], [C.s4 - 0.4, 1.12], [C.s4 + 1.2, 0.72], [C.rec - 0.3, 0.86], [C.rec + 1.0, 0.95], [C.aw - 0.3, 0.95], [C.aw + 1.0, 0.6], [D.duration, 0.62]]);
       FIN.hook((t) => { $("world").style.transform = `scale(${kS(t)}) translate(${kX(t)}px, ${kY(t)}px)`;
@@ -138,6 +143,9 @@ tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease:
       sl.forEach((t, i) => { tl.to($("sl" + i), { borderColor: "#4ade80", color: "#f8fafc", borderStyle: "solid", duration: 0.2 }, t); tl.to($("ck" + i), { opacity: 1, duration: 0.2 }, t); });
       pop($("tmpl"), C.doc + 0.4, { opacity: 0, y: 40 });
       ["tr1", "tr2", "tr3"].forEach((id, i) => tl.to($(id), { stroke: "#38bdf8", duration: 0.6 }, [C.s2, C.s3, C.s4][i] - 0.4));
+      pop($("rf"), C.s2 - 0.2, { opacity: 0, y: 40 });
+      for (let i = 0; i < 4; i++) pop($("rf" + i), C.s2 + 0.3 + i * 0.7, { opacity: 0, x: -20 });
+      tl.to($("rf"), { opacity: 0, y: -40, duration: 0.35 }, C.gro - 0.5); pop($("mail"), C.gro - 0.2, { opacity: 0, y: 40 });
       pop($("dl"), C.days, { opacity: 0, x: -40 });
       [C.gro, C.state, C.five, C.state + 6.5].forEach((t, i) => pop($("ml" + i), t, { opacity: 0, x: -20 }));
       tl.to($("ringw"), { opacity: 1, duration: 0.3 }, C.d14); tl.to($("ring14"), { strokeDashoffset: 0, duration: 2.0, ease: "none" }, C.d14 + 0.2);

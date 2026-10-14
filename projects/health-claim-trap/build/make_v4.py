@@ -226,7 +226,85 @@ def e23_cio():
             tag="CIOINS.CO.IN · SCREEN RECORDING (REPLAYED)")
 
 
-SCENES = [e21_india, e22_bima, e23_cio]
+# ---------------- e24: Ombudsman results on the India map (owner review of v3, 2026-10-14) ----------------
+def e24_results():
+    """E055-E056: tilted India map with 18 office beacons (CIO 2024-25 lists 18 offices, so 18, not 17), a 32,503 counter,
+    a large radial gauge to 76% of settled or decided cases, 78.5% closed in 3 months, then the ₹50 lakh binding award and
+    the ₹5,000/day late-payment meter (unless the insurer appeals). Replaces the H3 table scan and the 50-lakh page."""
+    sid = "e24_results"
+    s55 = sents("E055")
+    start, end = s55[0]["start"] - 0.2, S("E057")["start"] - 0.3
+    rings = india_paths()
+    d_of = lambda ring, z=0.0: "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in (cam(lo, la, z) for lo, la in ring)) + " Z"
+    top = "".join(f'<path d="{d_of(r)}"/>' for r in rings)
+    sides = "".join(f'<path d="{d_of(r, -14 * k / 6)}"/>' for k in range(1, 7) for r in rings)
+    pins = []
+    for i, (n, lo, la) in enumerate(CITIES):
+        x, y = cam(lo, la)
+        pins.append(f'<g class="pin" id="p{i}"><line x1="{x:.1f}" y1="{y:.1f}" x2="{x:.1f}" y2="{y - 120:.1f}" class="beam"/>'
+                    f'<circle cx="{x:.1f}" cy="{y:.1f}" r="9" class="dot"/><circle cx="{x:.1f}" cy="{y:.1f}" r="9" class="halo"/></g>')
+    R = 210; C2 = 2 * math.pi * R
+    body = f"""
+      <div id="map" style="position:absolute; left:-420px; top:40px; width:1920px; height:1080px; transform-origin:1010px 600px">
+        <svg viewBox="0 0 1920 1080" style="position:absolute; inset:0; width:1920px; height:1080px">
+          <defs><filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <g class="side">{sides}</g><g class="top">{top}</g><g class="rim" filter="url(#glow)">{top}</g><g>{"".join(pins)}</g></svg></div>
+      <div class="chip" id="c18" style="left:90px; top:110px; opacity:0; font-size:34px">18 Ombudsman offices · 2024-25</div>
+      <div class="glass" id="cnt" style="left:90px; top:860px; padding:20px 30px; opacity:0"><span class="t-v mono" id="n" style="font-size:72px">0</span>
+        <span class="t-k" style="margin-left:14px; font-size:26px">health complaints received</span></div>
+      <div id="right" style="position:absolute; left:1080px; top:90px; width:780px; height:900px">
+        <div id="gauge" style="position:absolute; inset:0; opacity:0">
+          <svg viewBox="0 0 600 600" style="position:absolute; left:90px; top:0; width:600px; height:600px">
+            <circle cx="300" cy="300" r="{R}" fill="rgba(2,6,15,.55)" stroke="rgba(148,163,184,.25)" stroke-width="44"/>
+            <circle id="arc" cx="300" cy="300" r="{R}" fill="none" stroke="#22c55e" stroke-width="44" stroke-linecap="round"
+              stroke-dasharray="{C2:.1f}" stroke-dashoffset="{C2:.1f}" transform="rotate(-90 300 300)" style="filter:drop-shadow(0 0 18px rgba(34,197,94,.8))"/>
+            <text id="pct" x="300" y="330" text-anchor="middle" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="150">0%</text>
+            <text x="300" y="390" text-anchor="middle" fill="#86efac" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="26" letter-spacing="3">FOR THE POLICYHOLDER</text></svg>
+          <div class="t-k" style="position:absolute; left:0; top:610px; width:780px; text-align:center; font-size:28px">of the health cases settled or decided</div>
+          <div class="glass" id="m3" style="left:40px; top:690px; width:700px; padding:24px 30px; opacity:0">
+            <div class="t-k" style="font-size:26px">Closed within 3 months</div>
+            <div style="display:flex; align-items:center; gap:24px; margin-top:12px"><div class="trk3"><div class="f3" id="f3"></div></div><span class="t-v mono" style="font-size:60px">78.5%</span></div></div></div>
+        <div id="award" style="position:absolute; inset:0; opacity:0">
+          <div class="glass" style="left:40px; top:40px; width:700px; padding:34px; border-color:rgba(250,204,21,.8)">
+            <div class="t-k" style="color:#facc15; font-size:28px">Ombudsman award</div>
+            <div class="t-v mono" style="font-size:110px; margin-top:8px">₹50 lakh</div><div class="t-k" style="font-size:26px">maximum · binding on the insurer</div></div>
+          <div class="glass" id="pen" style="left:40px; top:420px; width:700px; padding:34px; opacity:0; border-color:rgba(245,158,11,.8)">
+            <div class="t-k" style="color:#f59e0b; font-size:26px">Not paid in 30 days · penalty to you</div>
+            <div style="font:800 64px/1.15 Inter,Arial,sans-serif; margin-top:12px">Day <span class="mono" id="day">30</span></div>
+            <div class="t-v mono" id="pv" style="font-size:96px; color:#4ade80">₹0</div>
+            <div class="t-k" style="font-size:22px; margin-top:8px">₹5,000 a day · unless the insurer appeals</div></div></div>
+      </div>"""
+    css = """.side path { fill: #071226; stroke: rgba(56,189,248,.18); stroke-width: 1; }
+.top path { fill: rgba(19,37,74,.92); stroke: none; } .rim path { fill: none; stroke: #38bdf8; stroke-width: 2.6; }
+.beam { stroke: #facc15; stroke-width: 5; filter: drop-shadow(0 0 10px #facc15); } .dot { fill: #fde68a; }
+.halo { fill: none; stroke: #facc15; stroke-width: 3; transform-box: fill-box; transform-origin: center; }
+.trk3 { flex:1; height:30px; border-radius:15px; background:rgba(148,163,184,.25); overflow:hidden; } .f3 { width:78.5%; height:100%; background:#38bdf8; transform-origin:0 50%; transform:scaleX(0); }"""
+    s56 = S("E056")
+    cues = dict(rec=s55[0]["start"], num=at("E055", "thirty-two"), dec=s55[1]["start"], over=at("E055", "seventy-five", k=1), three=s55[2]["start"],
+                aw=s56["start"], bind=at("E056", "binding"))
+    js = f"""
+      tl.fromTo($("map"), {{ scale: 0.82, opacity: 0 }}, {{ scale: 0.92, opacity: 1, duration: 1.2, ease: "power2.out" }}, 0);
+      tl.to($("map"), {{ scale: 1.0, x: 30, duration: D.duration - 1.2, ease: "none" }}, 1.2);
+      for (let i = 0; i < 18; i++) tl.fromTo($("p" + i), {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }}, 0.4 + i * 0.18);
+      FIN.hook((t) => document.querySelectorAll(".halo").forEach((h, i) => {{ const u = (t * 0.8 + i * 0.11) % 1; h.style.transform = `scale(${{1 + u * 3.5}})`; h.style.opacity = 1 - u; }}));
+      pop($("c18"), 0.6); pop($("cnt"), C.rec + 1.0, {{ opacity: 0, y: 30 }});
+      FIN.bind($("n"), FIN.keys([[C.num - 0.2, 0], [C.num + 1.6, 32503]]), (v) => FIN.inr(Math.round(v)).slice(1));
+      tl.to($("gauge"), {{ opacity: 1, duration: 0.5 }}, C.dec - 0.4);
+      const g = FIN.keys([[C.dec, 0], [C.over + 1.0, 76]]);
+      FIN.bind($("pct"), g, (v) => Math.round(v) + "%");
+      FIN.hook((t) => $("arc").setAttribute("stroke-dashoffset", String({C2:.1f} * (1 - g(t) / 100))));
+      pop($("m3"), C.three, {{ opacity: 0, y: 40 }}); tl.to($("f3"), {{ scaleX: 1, duration: 1.0, ease: "power2.out" }}, C.three + 0.3);
+      tl.to($("gauge"), {{ opacity: 0, y: -40, duration: 0.4 }}, C.aw - 0.3); tl.to($("award"), {{ opacity: 1, duration: 0.4 }}, C.aw - 0.1);
+      pop($("pen"), C.bind - 0.4, {{ opacity: 0, y: 40 }});
+      const dk = FIN.keys([[C.bind, 30], [D.duration - 0.2, 56]]);
+      FIN.bind($("day"), dk, (v) => Math.round(v)); FIN.bind($("pv"), dk, (v) => FIN.inr(Math.max(0, Math.round(v) - 30) * 5000));
+"""
+    put(sid, bp_page(sid, "Ombudsman results", round(end - start, 2), body, js,
+                     tag="CIO ANNUAL REPORT 2024-25 · OMBUDSMAN RULES 2017, RULE 17 · IRDAI · OUR CALCULATION · MAP: DATAMEET, CC BY 4.0", css=css),
+        start, end - start, cues)
+
+
+SCENES = [e21_india, e22_bima, e23_cio, e24_results]
 if __name__ == "__main__":
     only = set(sys.argv[1:])
     for f in SCENES:

@@ -47,9 +47,9 @@
 .stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
 
 .bp { position: absolute; inset: -60px; background:
-  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+  repeating-linear-gradient(0deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, rgba(19,37,74,.35) 0%, rgba(11,21,48,.7) 50%, rgba(5,10,24,.92) 100%); }
 .glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
   border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
 .t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
@@ -68,7 +68,7 @@
     <div id="root" class="fin-root" data-composition-id="e10_wall" data-start="0" data-width="1920" data-height="1080" data-duration="21.46">
       
       <div id="stage">
-<div class="bp" id="bp"></div>
+<div id="bimg" style="position:absolute; inset:-80px; background:url(img/back.jpg) center/cover; opacity:.6"></div><div class="bp" id="bp" style="opacity:.85"></div>
       <div id="secA">
         <div class="node2" id="fam" style="left:140px; top:400px"><svg viewBox="0 0 48 48" width="110" height="110" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="15" r="8"/><path d="M8 42 C8 30 16 26 24 26 C32 26 40 30 40 42"/></svg><div class="t-k" style="margin-top:12px">Family</div></div>
         <div class="node2 cyanb" id="pool" style="left:1520px; top:400px"><svg viewBox="0 0 48 48" width="110" height="110" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 L24 7 L42 18 Z"/><path d="M10 22 V36 M19 22 V36 M29 22 V36 M38 22 V36 M6 41 H42"/></svg><div class="t-k" style="margin-top:12px; color:#38bdf8">₹4.5 lakh claim</div></div>
@@ -92,6 +92,7 @@
       const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
       const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+tl.fromTo($("bimg"), { scale: 1.0, x: 0 }, { scale: 1.08, x: -40, duration: D.duration, ease: "none" }, 0);
 
       pop($("fam"), 0.1, { opacity: 0, x: -60 }); pop($("pool"), 0.3, { opacity: 0, x: 60 });
       for (let i = 0; i < 3; i++) pop($("w" + i), C.fam + 0.6 + i * 0.4, { opacity: 0, y: -300 });

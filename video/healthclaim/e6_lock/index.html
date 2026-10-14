@@ -47,9 +47,9 @@
 .stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
 
 .bp { position: absolute; inset: -60px; background:
-  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+  repeating-linear-gradient(0deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, rgba(19,37,74,.35) 0%, rgba(11,21,48,.7) 50%, rgba(5,10,24,.92) 100%); }
 .glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
   border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
 .t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
@@ -66,7 +66,7 @@
     <div id="root" class="fin-root" data-composition-id="e6_lock" data-start="0" data-width="1920" data-height="1080" data-duration="4.85">
       
       <div id="stage">
-<div class="bp" id="bp"></div>
+<div id="bimg" style="position:absolute; inset:-80px; background:url(img/back.jpg) center/cover; opacity:.6"></div><div class="bp" id="bp" style="opacity:.85"></div>
       <div class="glass" style="left:200px; top:300px; width:560px; height:480px; padding:40px; text-align:center" id="desk">
         <div class="t-k">TPA desk</div><div style="color:#f59e0b; margin-top:30px"><svg viewBox="0 0 48 48" width="120" height="120" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5 H30 L38 13 V43 H13 Z"/><path d="M30 5 V13 H38 M19 23 H32 M19 30 H32 M19 37 H27"/></svg></div>
         <div id="btn" style="margin:40px auto 0; width:300px; padding:26px; border-radius:18px; background:#991b1b; font:800 44px/1 Inter,Arial,sans-serif; letter-spacing:.1em">REJECT</div></div>
@@ -86,6 +86,7 @@
       const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
       const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+tl.fromTo($("bimg"), { scale: 1.0, x: 0 }, { scale: 1.08, x: -40, duration: D.duration, ease: "none" }, 0);
 
       pop($("desk"), 0.1, { opacity: 0, x: -60 });
       tl.to($("btn"), { scale: 0.92, duration: 0.12, yoyo: true, repeat: 1 }, C.rule + 0.6);

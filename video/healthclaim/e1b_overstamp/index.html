@@ -47,9 +47,9 @@
 .stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
 
 .bp { position: absolute; inset: -60px; background:
-  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+  repeating-linear-gradient(0deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, rgba(19,37,74,.35) 0%, rgba(11,21,48,.7) 50%, rgba(5,10,24,.92) 100%); }
 .glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
   border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
 .t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
@@ -60,20 +60,30 @@
 .stampx { position: absolute; left: 360px; top: 400px; width: 1200px; height: 270px; border: 14px solid #dc2626; border-radius: 22px; color: #dc2626;
   font: 800 118px/242px Inter, Arial, sans-serif; text-align: center; letter-spacing: .02em; white-space: nowrap; transform: rotate(-8deg); background: rgba(40,6,6,.4); }
 #top { clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); } #bot { clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); }
+.ln { height:16px; margin-top:22px; border-radius:8px; background:rgba(51,65,85,.18); }
+.mo { flex:1; height:40px; border-radius:4px; background:rgba(250,204,21,.18); }
     </style>
   </head>
   <body>
     <div id="root" class="fin-root" data-composition-id="e1b_overstamp" data-start="0" data-width="1920" data-height="1080" data-duration="12.0">
       
       <div id="stage">
-<div class="bp" id="bp"></div>
+<div id="bimg" style="position:absolute; inset:-80px; background:url(img/back.jpg) center/cover; opacity:.6"></div><div class="bp" id="bp" style="opacity:.85"></div>
+        <div id="paper" style="position:absolute; left:410px; top:90px; width:1100px; height:900px; background:#f3efe6; border-radius:8px; box-shadow:0 40px 90px rgba(0,0,0,.7); transform:rotate(2deg); padding:60px 70px; color:#334155">
+          <div style="font:800 34px/1 Inter,Arial,sans-serif; letter-spacing:.08em; color:#0f172a">SAMPLE HEALTH INSURANCE CO. · CLAIM DECISION</div>
+          <div style="margin-top:18px; height:4px; background:#0f172a"></div>
+          <div style="font:600 28px/1.6 Inter,Arial,sans-serif; margin-top:30px">Policy in force since 2020 · Cashless request: hospitalisation<br>Decision: <b style="color:#b91c1c">not approved</b><br>Reason: non-disclosure of a pre-existing condition</div>
+          <div class="ln" style="width:92%"></div><div class="ln" style="width:84%"></div><div class="ln" style="width:88%"></div><div class="ln" style="width:60%"></div>
+          <div class="ln" style="width:90%; margin-top:260px"></div><div class="ln" style="width:40%"></div></div>
         <div class="stampx" id="top">CASHLESS DENIED</div><div class="stampx" id="bot">CASHLESS DENIED</div>
         <div id="laser" style="position:absolute; left:-200px; top:532px; width:2400px; height:8px; background:#38bdf8; box-shadow:0 0 30px 8px #38bdf8; opacity:0; transform:rotate(-8deg)"></div>
         <div id="core" style="position:absolute; left:360px; top:430px; width:1200px; text-align:center; opacity:0">
           <div style="font:800 86px/1.05 Inter,Arial,sans-serif; color:#facc15; text-shadow:0 0 40px rgba(250,204,21,.6)">60-MONTH MORATORIUM</div>
-          <div class="t-k" style="margin-top:22px; font-size:30px; color:#fde68a">After 5 years: not contestable for non-disclosure</div></div>
+          <div class="t-k" style="margin-top:22px; font-size:30px; color:#fde68a">After 5 years: not contestable for non-disclosure</div>
+          <div style="display:flex; gap:4px; margin:40px auto 0; width:1100px"><div class="mo" id="mo0"></div><div class="mo" id="mo1"></div><div class="mo" id="mo2"></div><div class="mo" id="mo3"></div><div class="mo" id="mo4"></div><div class="mo" id="mo5"></div><div class="mo" id="mo6"></div><div class="mo" id="mo7"></div><div class="mo" id="mo8"></div><div class="mo" id="mo9"></div><div class="mo" id="mo10"></div><div class="mo" id="mo11"></div><div class="mo" id="mo12"></div><div class="mo" id="mo13"></div><div class="mo" id="mo14"></div><div class="mo" id="mo15"></div><div class="mo" id="mo16"></div><div class="mo" id="mo17"></div><div class="mo" id="mo18"></div><div class="mo" id="mo19"></div><div class="mo" id="mo20"></div><div class="mo" id="mo21"></div><div class="mo" id="mo22"></div><div class="mo" id="mo23"></div><div class="mo" id="mo24"></div><div class="mo" id="mo25"></div><div class="mo" id="mo26"></div><div class="mo" id="mo27"></div><div class="mo" id="mo28"></div><div class="mo" id="mo29"></div><div class="mo" id="mo30"></div><div class="mo" id="mo31"></div><div class="mo" id="mo32"></div><div class="mo" id="mo33"></div><div class="mo" id="mo34"></div><div class="mo" id="mo35"></div><div class="mo" id="mo36"></div><div class="mo" id="mo37"></div><div class="mo" id="mo38"></div><div class="mo" id="mo39"></div><div class="mo" id="mo40"></div><div class="mo" id="mo41"></div><div class="mo" id="mo42"></div><div class="mo" id="mo43"></div><div class="mo" id="mo44"></div><div class="mo" id="mo45"></div><div class="mo" id="mo46"></div><div class="mo" id="mo47"></div><div class="mo" id="mo48"></div><div class="mo" id="mo49"></div><div class="mo" id="mo50"></div><div class="mo" id="mo51"></div><div class="mo" id="mo52"></div><div class="mo" id="mo53"></div><div class="mo" id="mo54"></div><div class="mo" id="mo55"></div><div class="mo" id="mo56"></div><div class="mo" id="mo57"></div><div class="mo" id="mo58"></div><div class="mo" id="mo59"></div></div>
+          <div class="t-k" style="margin-top:14px; color:#fde68a">60 months · your policy since 2020</div></div>
       </div>
-      <div class="fin-tag" id="tag">IRDAI INSURANCE PRODUCTS REGULATIONS | 2024</div>
+      <div class="fin-tag" id="tag">SIMULATED LETTER · IRDAI INSURANCE PRODUCTS REGULATIONS | 2024</div>
       <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
       <div class="fin-vig"></div>
     </div>
@@ -84,14 +94,18 @@
       const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
       const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+tl.fromTo($("bimg"), { scale: 1.0, x: 0 }, { scale: 1.08, x: -40, duration: D.duration, ease: "none" }, 0);
 
       pop($("top"), 0.1, { opacity: 0, scale: 1.4 }); pop($("bot"), 0.1, { opacity: 0, scale: 1.4 });
       tl.fromTo($("laser"), { opacity: 0, scaleX: 0, transformOrigin: "0 50%" }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.in" }, C.rule);
       tl.to($("top"), { y: -260, rotation: -14, opacity: 0.25, duration: 0.9, ease: "power2.out" }, C.illegal);
       tl.to($("bot"), { y: 260, rotation: -2, opacity: 0.25, duration: 0.9, ease: "power2.out" }, C.illegal);
       tl.to($("laser"), { opacity: 0, duration: 0.4 }, C.illegal + 0.4);
+      pop($("paper"), 0.05, { opacity: 0, y: 80, rotation: 6 });
+      tl.to($("paper"), { opacity: 0.18, scale: 0.94, duration: 0.8 }, C.illegal + 0.2);
       pop($("core"), C.illegal + 0.3, { opacity: 0, scale: 0.8 });
-      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.06, duration: D.duration, ease: "none" }, 0);
+      for (let i = 0; i < 60; i++) tl.to($("mo" + i), { background: "#facc15", boxShadow: "0 0 14px rgba(250,204,21,.7)", duration: 0.05 }, C.five + i * 0.04);
+      tl.fromTo($("stage"), { scale: 1.12, x: 40 }, { scale: 1.0, x: 0, duration: D.duration, ease: "power1.out" }, 0);
 
       tl.to({}, { duration: 0.01 }, D.duration - 0.01);
       FIN.attach(tl);

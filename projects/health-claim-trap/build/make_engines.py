@@ -17,9 +17,9 @@ from timing import L, sents
 
 BP = """
 .bp { position: absolute; inset: -60px; background:
-  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
-  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+  repeating-linear-gradient(0deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.06) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, rgba(19,37,74,.35) 0%, rgba(11,21,48,.7) 50%, rgba(5,10,24,.92) 100%); }
 .glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
   border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
 .t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
@@ -31,8 +31,14 @@ BP = """
 
 
 def bp_page(sid, title, dur, body, js, tag="", css="", ill=""):
-    """Blueprint backdrop (drifting grid) instead of a photo; grain + vignette from the shell."""
-    body = '<div class="bp" id="bp"></div>' + (f'<div class="ill">{ill}</div>' if ill else "") + body
+    """Blueprint grid over a blurred, slowly drifting hospital backdrop (owner review 2026-10-14: no flat blue voids);
+    grain + vignette from the shell."""
+    import shutil
+    d = OUT / sid / "img"; d.mkdir(parents=True, exist_ok=True)
+    shutil.copy(Path(__file__).resolve().parents[1] / "assets/owner/backdrop_blur.jpg", d / "back.jpg")
+    body = ('<div id="bimg" style="position:absolute; inset:-80px; background:url(img/back.jpg) center/cover; opacity:.6"></div>'
+            '<div class="bp" id="bp" style="opacity:.85"></div>' + (f'<div class="ill">{ill}</div>' if ill else "") + body)
+    js = 'tl.fromTo($("bimg"), { scale: 1.0, x: 0 }, { scale: 1.08, x: -40, duration: D.duration, ease: "none" }, 0);\n' + js
     js = 'tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);\n' + js
     html = page(sid, title, dur, body, js, tag=tag, bg="", css=BP + css)
     return html.replace('<div class="fin-bg" style="background-image: url(\'\')"></div>\n      <div class="hc-grade"></div>', "")
@@ -209,8 +215,8 @@ def e2_shock():
       tl.fromTo($("stage"), { scale: 1.08 }, { scale: 1, duration: D.duration, ease: "none" }, 0);
       pop($("bill"), 0.05, { opacity: 0, scale: 1.3 });
       ["r1", "r2"].forEach((id, i) => tl.fromTo($(id), { opacity: 0.9, scale: 1 }, { opacity: 0, scale: 40, duration: 1.4, ease: "power2.out" }, C.drop + i * 0.5));
-      pop($("bal"), C.drop + 0.4); pop($("gap"), C.panic - 0.2);
-      FIN.bind($("g"), FIN.keys([[C.panic - 0.1, 0], [C.panic + 0.9, 388000]]), (v) => FIN.inr(Math.round(v / 1000) * 1000));
+      pop($("bal"), 0.15, { opacity: 0, x: -60 }); pop($("gap"), 0.3, { opacity: 0, x: 60 });
+      FIN.bind($("g"), FIN.keys([[C.drop, 0], [C.drop + 1.2, 388000]]), (v) => FIN.inr(Math.round(v / 1000) * 1000));
 """
     put(sid, bp_page(sid, "The midnight shortfall", round(end - start, 2), body, js, tag="ILLUSTRATIVE FAMILY", css=css), start, end - start, cues)
 
@@ -303,14 +309,24 @@ def e1b_overstamp():
     sid = "e1b_overstamp"; s = S("E009")
     start, end = s["start"] - 0.3, s["end"] + 0.5
     body = """
+        <div id="paper" style="position:absolute; left:410px; top:90px; width:1100px; height:900px; background:#f3efe6; border-radius:8px; box-shadow:0 40px 90px rgba(0,0,0,.7); transform:rotate(2deg); padding:60px 70px; color:#334155">
+          <div style="font:800 34px/1 Inter,Arial,sans-serif; letter-spacing:.08em; color:#0f172a">SAMPLE HEALTH INSURANCE CO. · CLAIM DECISION</div>
+          <div style="margin-top:18px; height:4px; background:#0f172a"></div>
+          <div style="font:600 28px/1.6 Inter,Arial,sans-serif; margin-top:30px">Policy in force since 2020 · Cashless request: hospitalisation<br>Decision: <b style="color:#b91c1c">not approved</b><br>Reason: non-disclosure of a pre-existing condition</div>
+          <div class="ln" style="width:92%"></div><div class="ln" style="width:84%"></div><div class="ln" style="width:88%"></div><div class="ln" style="width:60%"></div>
+          <div class="ln" style="width:90%; margin-top:260px"></div><div class="ln" style="width:40%"></div></div>
         <div class="stampx" id="top">CASHLESS DENIED</div><div class="stampx" id="bot">CASHLESS DENIED</div>
         <div id="laser" style="position:absolute; left:-200px; top:532px; width:2400px; height:8px; background:#38bdf8; box-shadow:0 0 30px 8px #38bdf8; opacity:0; transform:rotate(-8deg)"></div>
         <div id="core" style="position:absolute; left:360px; top:430px; width:1200px; text-align:center; opacity:0">
           <div style="font:800 86px/1.05 Inter,Arial,sans-serif; color:#facc15; text-shadow:0 0 40px rgba(250,204,21,.6)">60-MONTH MORATORIUM</div>
-          <div class="t-k" style="margin-top:22px; font-size:30px; color:#fde68a">After 5 years: not contestable for non-disclosure</div></div>"""
+          <div class="t-k" style="margin-top:22px; font-size:30px; color:#fde68a">After 5 years: not contestable for non-disclosure</div>
+          <div style="display:flex; gap:4px; margin:40px auto 0; width:1100px">""" + "".join(f'<div class="mo" id="mo{i}"></div>' for i in range(60)) + """</div>
+          <div class="t-k" style="margin-top:14px; color:#fde68a">60 months · your policy since 2020</div></div>"""
     css = """.stampx { position: absolute; left: 360px; top: 400px; width: 1200px; height: 270px; border: 14px solid #dc2626; border-radius: 22px; color: #dc2626;
   font: 800 118px/242px Inter, Arial, sans-serif; text-align: center; letter-spacing: .02em; white-space: nowrap; transform: rotate(-8deg); background: rgba(40,6,6,.4); }
-#top { clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); } #bot { clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); }"""
+#top { clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); } #bot { clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); }
+.ln { height:16px; margin-top:22px; border-radius:8px; background:rgba(51,65,85,.18); }
+.mo { flex:1; height:40px; border-radius:4px; background:rgba(250,204,21,.18); }"""
     cues = dict(rule=at("E009", "legal rule"), illegal=at("E009", "illegal"), five=at("E009", "five years"))
     js = """
       pop($("top"), 0.1, { opacity: 0, scale: 1.4 }); pop($("bot"), 0.1, { opacity: 0, scale: 1.4 });
@@ -318,10 +334,13 @@ def e1b_overstamp():
       tl.to($("top"), { y: -260, rotation: -14, opacity: 0.25, duration: 0.9, ease: "power2.out" }, C.illegal);
       tl.to($("bot"), { y: 260, rotation: -2, opacity: 0.25, duration: 0.9, ease: "power2.out" }, C.illegal);
       tl.to($("laser"), { opacity: 0, duration: 0.4 }, C.illegal + 0.4);
+      pop($("paper"), 0.05, { opacity: 0, y: 80, rotation: 6 });
+      tl.to($("paper"), { opacity: 0.18, scale: 0.94, duration: 0.8 }, C.illegal + 0.2);
       pop($("core"), C.illegal + 0.3, { opacity: 0, scale: 0.8 });
-      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.06, duration: D.duration, ease: "none" }, 0);
+      for (let i = 0; i < 60; i++) tl.to($("mo" + i), { background: "#facc15", boxShadow: "0 0 14px rgba(250,204,21,.7)", duration: 0.05 }, C.five + i * 0.04);
+      tl.fromTo($("stage"), { scale: 1.12, x: 40 }, { scale: 1.0, x: 0, duration: D.duration, ease: "power1.out" }, 0);
 """
-    put(sid, bp_page(sid, "The moratorium core", round(end - start, 2), body, js, tag="IRDAI INSURANCE PRODUCTS REGULATIONS | 2024", css=css), start, end - start, cues)
+    put(sid, bp_page(sid, "The moratorium core", round(end - start, 2), body, js, tag="SIMULATED LETTER · IRDAI INSURANCE PRODUCTS REGULATIONS | 2024", css=css), start, end - start, cues)
 
 
 CH1 = [e1_hospital, e0_ledger, e2_shock, e2_drain, e3_scale, e1b_overstamp, e4_pillars]
@@ -503,17 +522,30 @@ def e8_opd():
       <div class="glass" id="opd" style="left:1020px; top:240px; width:740px; height:560px; padding:40px; border-color:rgba(220,38,38,.6)">
         <div class="t-k" style="color:#f87171">Claim reviewer</div><div style="font:800 52px/1.1 Inter,Arial,sans-serif; margin-top:16px">"Could be an OPD visit"</div>
         <div class="stamp red" id="nn" style="left:80px; top:300px; font-size:52px; transform:rotate(-8deg); opacity:0">Not necessary?</div></div>
-      <div class="glass" id="ex3" style="left:460px; top:380px; width:1000px; padding:44px; text-align:center; opacity:0; border-color:rgba(245,158,11,.7)">
-        <div class="t-k" style="color:#f59e0b">Excuse 3</div><div style="font:800 64px/1.15 Inter,Arial,sans-serif; margin-top:16px">Room rent limit · proportionate deduction</div></div>"""
+      <div id="ex3" style="position:absolute; inset:0; opacity:0">
+        <div class="chip amber" style="left:120px; top:110px; font-size:34px">Excuse 3 · room rent limit</div>
+        <div class="glass room" id="rA" style="left:160px; border-color:rgba(74,222,128,.7)"><div class="t-k" style="color:#4ade80">Room your policy allows</div>
+          <div class="bed"></div><div class="t-v mono" style="font-size:84px">₹5,000<span style="font-size:36px">/day</span></div></div>
+        <div class="glass room" id="rB" style="left:1000px; border-color:rgba(245,158,11,.8)"><div class="t-k" style="color:#f59e0b">Room you took</div>
+          <div class="bed wide"></div><div class="t-v mono" style="font-size:84px; color:#f59e0b">₹8,000<span style="font-size:36px">/day</span></div></div>
+        <div id="lim" style="position:absolute; left:100px; top:500px; width:1720px; height:6px; background:#f87171; box-shadow:0 0 24px 4px rgba(248,113,113,.8)"></div>
+        <div class="chip red" id="pd" style="left:640px; top:900px; opacity:0; font-size:38px">Proportionate deduction ↓ the whole bill</div></div>"""
     css = """.drip { position:relative; margin:40px 0 0 40px; width:90px; height:160px; border-radius:20px 20px 40px 40px; border:5px solid #94a3b8; }
-.drop { position:absolute; left:36px; top:150px; width:14px; height:20px; border-radius:50%; background:#38bdf8; }"""
+.drop { position:absolute; left:36px; top:150px; width:14px; height:20px; border-radius:50%; background:#38bdf8; }
+.room { top:260px; width:760px; height:580px; padding:40px; }
+.bed { margin:40px 0 50px; width:300px; height:150px; border-radius:18px; background:linear-gradient(#e2e8f0 0 30%, #38bdf8 30%); box-shadow:0 20px 40px rgba(0,0,0,.4); }
+.bed.wide { width:520px; background:linear-gradient(#e2e8f0 0 30%, #f59e0b 30%); }"""
     cues = dict(two=s22[0]["start"], nn=s22[1]["start"], opd=s22[2]["start"], three=s23[0]["start"], rr=s23[1]["start"])
     js = """
       pop($("ipd"), C.two, { opacity: 0, x: -60 }); pop($("opd"), C.nn - 0.2, { opacity: 0, x: 60 });
       FIN.hook((t) => { const u = (t * 1.3) % 1; $("drop").style.transform = `translateY(${u * 60}px)`; $("drop").style.opacity = 1 - u; });
       tl.fromTo($("nn"), { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.in" }, C.opd + 1.2);
-      tl.to([$("ipd"), $("opd")], { opacity: 0.12, scale: 0.9, duration: 0.4 }, C.three - 0.2);
-      pop($("ex3"), C.three, { opacity: 0, scale: 0.8 });
+      tl.to([$("ipd"), $("opd")], { opacity: 0, scale: 0.9, duration: 0.4 }, C.three - 0.3);
+      tl.to($("ex3"), { opacity: 1, duration: 0.3 }, C.three - 0.1);
+      pop($("rA"), C.three, { opacity: 0, y: 80 }); pop($("rB"), C.three + 0.5, { opacity: 0, y: 80 });
+      tl.fromTo($("lim"), { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.6, ease: "power2.in" }, C.rr);
+      tl.to($("rB"), { y: 60, rotation: 2, duration: 0.3, ease: "power4.in" }, C.rr + 0.6);
+      pop($("pd"), C.rr + 0.9, { opacity: 0, y: 40 });
       tl.fromTo($("stage"), { scale: 1 }, { scale: 1.05, duration: D.duration, ease: "none" }, 0);
 """
     put(sid, bp_page(sid, "Excuse two and three", round(end - start, 2), body, js, tag="SIMULATION · ILLUSTRATIVE CASE", css=css), start, end - start, cues)
@@ -621,6 +653,18 @@ def months_html(n, x0=120, x1=1800, y=520, h=90, pref="m"):
     return cells + ticks, w
 
 
+def emblem(idp, x, y, wpx=300, op=1):
+    """Titanium shield emblem: brushed-metal heater shield with the 60-month count."""
+    return f"""<svg id="{idp}" viewBox="0 0 200 240" style="position:absolute; left:{x:.0f}px; top:{y:.0f}px; width:{wpx}px; height:{wpx * 1.2:.0f}px; opacity:{op}; overflow:visible">
+      <defs><linearGradient id="{idp}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f5f9"/><stop offset=".35" stop-color="#94a3b8"/>
+        <stop offset=".55" stop-color="#e2e8f0"/><stop offset="1" stop-color="#475569"/></linearGradient>
+        <linearGradient id="{idp}c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#075985"/></linearGradient></defs>
+      <path d="M100 6 L190 36 C190 120 160 190 100 234 C40 190 10 120 10 36 Z" fill="url(#{idp}g)" stroke="#e2e8f0" stroke-width="4" style="filter:drop-shadow(0 0 24px rgba(56,189,248,.8))"/>
+      <path d="M100 26 L172 50 C172 118 148 174 100 210 C52 174 28 118 28 50 Z" fill="url(#{idp}c)"/>
+      <text x="100" y="128" text-anchor="middle" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="70">60</text>
+      <text x="100" y="162" text-anchor="middle" fill="#e0f2fe" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="3">MONTHS</text></svg>"""
+
+
 MC_CSS = """.mc { position:absolute; border-radius:3px; background:rgba(245,158,11,.35); }
 .yl { position:absolute; width:60px; margin-left:-30px; text-align:center; font:800 24px/1 Inter,Arial,sans-serif; color:#94a3b8; }
 .shield { position:absolute; width:46px; border-radius:10px; background:linear-gradient(#7dd3fc,#0284c7); box-shadow:0 0 60px 12px rgba(56,189,248,.65); }
@@ -630,41 +674,48 @@ MC_CSS = """.mc { position:absolute; border-radius:3px; background:rgba(245,158,
 def e11_shield():
     sid = "e11_shield"
     start, end = S("E029")["start"] - 0.25, L("E031")[1] + 0.35
-    cells, w = months_html(96)
+    cells, w = months_html(96, y=600, h=220)
     sx = 120 + 60 * w - 23
     body = cells + f"""
-      <div class="glass" id="lab" style="left:120px; top:220px; padding:22px 30px"><div class="t-k">Moratorium period</div><div class="t-v mono" id="yrs" style="font-size:72px">8 years</div></div>
-      <div class="shield" id="sh" style="left:{sx:.0f}px; top:380px; height:380px; opacity:0"><span>MONTH 60 · IRDAI 2024</span></div>
-      <div class="chip cyan" id="nb" style="left:120px; top:820px; opacity:0">60 continuous months · no break</div>"""
+      <div class="glass" id="lab" style="left:120px; top:150px; padding:26px 34px"><div class="t-k" style="font-size:28px">The moratorium period</div><div class="t-v mono" id="yrs" style="font-size:120px">8 years</div></div>
+      <div class="shield" id="sh" style="left:{sx:.0f}px; top:540px; height:340px; opacity:0"></div>
+      {emblem("emb", sx - 127, 150, 280, 0)}
+      <div class="chip cyan" id="nb" style="left:120px; top:900px; opacity:0; font-size:36px">60 continuous months · no break</div>"""
     s30 = sents("E030")
     cues = dict(mor=S("E029")["start"], eight=s30[0]["start"], down=at("E030", "brought it down", k=1), five=at("E030", "five years", k=1), sixty=S("E031")["start"])
     js = """
       pop($("lab"), C.mor, { opacity: 0, x: -40 });
       for (let i = 0; i < 96; i++) pop($("m" + i), C.mor + 0.2 + i * 0.012, { opacity: 0, y: 30 });
-      for (let i = 60; i < 96; i++) tl.to($("m" + i), { y: 260 + (i % 5) * 50, rotation: (i % 2 ? 40 : -30), opacity: 0, duration: 0.7, ease: "power2.in" }, C.down + (i - 60) * 0.025);
+      for (let i = 60; i < 96; i++) tl.to($("m" + i), { y: 220 + (i % 5) * 40, rotation: (i % 2 ? 40 : -30), opacity: 0, duration: 0.7, ease: "power2.in" }, C.down + (i - 60) * 0.025);
       FIN.bind($("yrs"), (t) => t < C.five ? 0 : 1, (v) => v ? "5 years" : "8 years");
       tl.to($("yrs"), { color: "#38bdf8", duration: 0.3 }, C.five);
       tl.fromTo($("sh"), { opacity: 0, y: -500 }, { opacity: 1, y: 0, duration: 0.45, ease: "power4.in" }, C.five + 0.1);
-      tl.fromTo($("stage"), { y: 0 }, { y: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, C.five + 0.55);
+      tl.fromTo($("emb"), { opacity: 0, y: -400, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power4.in" }, C.five + 0.2);
+      tl.fromTo($("stage"), { y: 0 }, { y: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, C.five + 0.7);
       for (let i = 0; i < 60; i++) tl.to($("m" + i), { background: "#0284c7", duration: 0.06 }, C.sixty + i * 0.05);
+      tl.to($("emb"), { scale: 1.08, duration: 0.4, yoyo: true, repeat: 1 }, C.sixty + 3.0);
       pop($("nb"), C.sixty + 1.0, { opacity: 0 });
-      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.04, duration: D.duration, ease: "none" }, 0);
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.05, duration: D.duration, ease: "none" }, 0);
 """
     put(sid, bp_page(sid, "The 60 month shield", round(end - start, 2), body, js, tag="IRDAI INSURANCE PRODUCTS REGULATIONS | 2024", css=MC_CSS), start, end - start, cues)
 
 
 def shield_world(n=72):
-    cells, w = months_html(n, y=560)
+    cells, w = months_html(n, y=660, h=120)
     sx = 120 + 60 * w - 23
     fx = 120 + 66 * w
     return cells + f"""
-      <div class="shield" id="sh" style="left:{sx:.0f}px; top:430px; height:350px"><span style="left:-330px; top:370px">MONTH 60 SHIELD</span></div>
-      <div class="fam" id="fam" style="left:{fx - 60:.0f}px; top:250px">{svg("person", 90)}<div class="t-k" style="margin-top:8px; color:#f8fafc">Year 6 · our family</div></div>""", sx, w
+      <div class="shield" id="sh" style="left:{sx:.0f}px; top:560px; height:300px"><span style="left:-330px; top:320px">MONTH 60 SHIELD</span></div>
+      {emblem("emb", sx - 147, 170, 300)}
+      <div class="fam" id="fam" style="left:{fx + 10:.0f}px; top:300px">{svg("person", 90)}<div class="t-k" style="margin-top:8px; color:#f8fafc">Year 6 · our family</div></div>""", sx, w
 
 
 FAM_CSS = MC_CSS + """.fam { position:absolute; width:220px; text-align:center; color:#38bdf8; padding:18px 0; border-radius:20px; background:rgba(15,23,42,.92); border:3px solid #38bdf8; }
 .proj { position:absolute; padding:18px 26px; border-radius:14px; background:#991b1b; color:#fff; font:800 32px/1 Inter,Arial,sans-serif; letter-spacing:.06em; box-shadow:0 0 40px rgba(220,38,38,.7); white-space:nowrap; }
-.frag { position:absolute; width:26px; height:26px; background:#ef4444; border-radius:4px; opacity:0; }"""
+.frag { position:absolute; width:46px; height:40px; background:#ef4444; clip-path:polygon(50% 0, 100% 100%, 0 80%); opacity:0; }
+.arrow { position:absolute; height:110px; padding:0 120px 0 40px; background:linear-gradient(90deg, rgba(153,27,27,.2), #b91c1c 40%, #dc2626);
+  clip-path:polygon(0 25%, calc(100% - 110px) 25%, calc(100% - 110px) 0, 100% 50%, calc(100% - 110px) 100%, calc(100% - 110px) 75%, 0 75%);
+  color:#fff; font:800 34px/110px Inter,Arial,sans-serif; letter-spacing:.06em; white-space:nowrap; filter:drop-shadow(0 0 30px rgba(220,38,38,.8)); }"""
 
 
 def _fill_js(n=72):
@@ -690,44 +741,74 @@ def e15_impact():
     sid = "e15_impact"; s = sents("E037")
     start, end = s[0]["start"] - 0.25, s[3]["end"] + 0.35
     world, sx, w = shield_world()
-    frags = "".join(f'<div class="frag" id="fr{i}" style="left:{sx - 40:.0f}px; top:640px"></div>' for i in range(14))
-    body = world + frags + '<div class="proj" id="pj" style="left:140px; top:620px">NON-DISCLOSURE DENIAL</div><div class="chip cyan" id="v" style="left:640px; top:880px; opacity:0">Against the IRDAI rule</div>'
+    hx, hy = sx - 130, 330                    # impact point: left face of the emblem
+    frags = "".join(f'<div class="frag" id="fr{i}" style="left:{hx:.0f}px; top:{hy:.0f}px"></div>' for i in range(24))
+    body = world + frags + f'''<div class="arrow" id="pj" style="left:-40px; top:{hy - 55:.0f}px; width:760px">TPA DENIAL · NON-DISCLOSURE</div>
+      <div class="glass" id="v" style="left:120px; top:900px; padding:18px 30px; opacity:0; border-color:rgba(56,189,248,.8)"><span class="t-v" style="font-size:44px; color:#38bdf8">Against the IRDAI rule</span></div>'''
     cues = dict(fam=s[0]["start"], six=s[1]["start"], letter=s[2]["start"], viol=s[3]["start"])
     js = """
       for (let i = 0; i < 72; i++) pop($("m" + i), 0.1 + i * 0.01, { opacity: 0 });
       for (let i = 0; i < 72; i++) tl.to($("m" + i), { background: i < 60 ? "#0284c7" : "rgba(56,189,248,.55)", duration: 0.05 }, C.six + i * 0.022);
       pop($("fam"), C.fam + 0.3, { opacity: 0, y: -40 }); pop($("sh"), C.six + 1.3, { opacity: 0, y: -300 });
-      tl.fromTo($("pj"), { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.4 }, C.letter);
-      tl.to($("pj"), { x: """ + f"{sx - 580:.0f}" + """, duration: 1.6, ease: "power2.in" }, C.letter + 0.5);
-      tl.to($("pj"), { opacity: 0, scale: 0.4, duration: 0.15 }, C.letter + 2.1);
-      for (let i = 0; i < 14; i++) tl.fromTo($("fr" + i), { opacity: 1, x: 0, y: 0, rotation: 0 },
-        { opacity: 0, x: -60 - (i * 37) % 260, y: ((i * 53) % 360) - 180, rotation: i * 70, duration: 1.0, ease: "power2.out", immediateRender: false }, C.letter + 2.1);
-      tl.to($("sh"), { boxShadow: "0 0 140px 40px rgba(56,189,248,1)", duration: 0.15, yoyo: true, repeat: 1 }, C.letter + 2.1);
-      tl.fromTo($("stage"), { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, C.letter + 2.1);
-      pop($("v"), C.viol, { opacity: 0 });
+      pop($("emb"), C.six + 1.4, { opacity: 0, y: -300, scale: 1.3 });
+      tl.fromTo($("pj"), { opacity: 0, x: -400 }, { opacity: 1, x: 0, duration: 0.4 }, C.letter);
+      tl.to($("pj"), { x: """ + f"{hx - 720 + 40:.0f}" + """, duration: 1.4, ease: "power3.in" }, C.letter + 0.5);
+      tl.to($("pj"), { opacity: 0, scaleX: 0.2, transformOrigin: "100% 50%", duration: 0.12 }, C.letter + 1.9);
+      for (let i = 0; i < 24; i++) tl.fromTo($("fr" + i), { opacity: 1, x: 0, y: 0, rotation: 0, scale: 1 },
+        { opacity: 0, x: -80 - (i * 47) % 520, y: ((i * 83) % 640) - 320, rotation: i * 95, scale: 0.6 + (i % 3) * 0.3, duration: 1.2, ease: "power2.out", immediateRender: false }, C.letter + 1.9);
+      tl.fromTo($("emb"), { scale: 1 }, { scale: 1.12, duration: 0.12, yoyo: true, repeat: 1, immediateRender: false }, C.letter + 1.9);
+      tl.to($("sh"), { boxShadow: "0 0 140px 40px rgba(56,189,248,1)", duration: 0.15, yoyo: true, repeat: 1 }, C.letter + 1.9);
+      tl.fromTo($("stage"), { x: 0 }, { x: 14, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, C.letter + 1.9);
+      pop($("v"), C.viol, { opacity: 0, y: 30 });
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.05, duration: D.duration, ease: "none" }, 0);
 """
     put(sid, bp_page(sid, "The shield impact", round(end - start, 2), body, js, tag="IRDAI MASTER CIRCULAR | PARA 13 · ILLUSTRATIVE FAMILY", css=FAM_CSS), start, end - start, cues)
+
+
+GLYPH = {
+    "thermo": '<path d="M20 8a4 4 0 0 1 8 0v20a8 8 0 1 1-8 0z"/><path d="M24 18v14"/>',
+    "ache": '<circle cx="24" cy="12" r="6"/><path d="M14 44V28a10 10 0 0 1 20 0v16"/><path d="M20 26l4 4 4-4"/>',
+    "pen": '<path d="M10 38l4-12 18-18 8 8-18 18z"/><path d="M28 12l8 8"/>',
+    "lens": '<circle cx="20" cy="20" r="12"/><path d="M29 29l12 12"/>',
+    "gavel": '<path d="M18 10l12 12M12 16l12 12M15 13l9-9 12 12-9 9z"/><path d="M27 25l14 14"/><path d="M6 42h20"/>',
+}
+
+
+def glyph(name, size=80, color="currentColor"):
+    return (f'<svg viewBox="0 0 48 48" width="{size}" height="{size}" fill="none" stroke="{color}" stroke-width="3.6" '
+            f'stroke-linecap="round" stroke-linejoin="round">{GLYPH[name]}</svg>')
 
 
 def e13_burden():
     sid = "e13_burden"; s = sents("E035")
     start, end = s[0]["start"] - 0.25, s[2]["end"] + 0.4
-    body = """
-      <div class="glass" id="ex" style="left:560px; top:120px; width:800px; padding:26px; text-align:center"><div class="t-k" style="color:#facc15">The only exception</div>
-        <div style="font:800 54px/1.1 Inter,Arial,sans-serif; margin-top:10px">Established fraud</div></div>
-      <div class="glass" id="ok" style="left:160px; top:400px; width:740px; height:420px; padding:40px; border-color:rgba(74,222,128,.6)">
-        <div class="t-k" style="color:#4ade80">Not fraud</div><div style="font:800 46px/1.3 Inter,Arial,sans-serif; margin-top:18px">A forgotten fever<br>An undiagnosed ache<br>An honest miss</div></div>
-      <div class="glass" id="fr" style="left:1020px; top:400px; width:740px; height:420px; padding:40px; border-color:rgba(220,38,38,.7)">
-        <div class="t-k" style="color:#f87171">Fraud</div><div style="font:800 46px/1.3 Inter,Arial,sans-serif; margin-top:18px">A deliberate lie<br>to deceive the insurer</div>
-        <div class="t-k" style="margin-top:40px; color:#f8fafc">The company must prove it</div></div>"""
+    honest = [("thermo", "A forgotten fever"), ("ache", "An undiagnosed ache"), ("pen", "An honest miss")]
+    body = f"""
+      <div id="ex" style="position:absolute; left:0; top:90px; width:1920px; text-align:center">
+        <div class="t-k" style="color:#facc15; font-size:30px">The only exception</div>
+        <div style="font:800 96px/1.05 Inter,Arial,sans-serif; margin-top:12px; color:#f8fafc">Proven fraud</div></div>
+      <div class="glass" id="ok" style="left:120px; top:340px; width:800px; height:600px; padding:40px; border-color:rgba(74,222,128,.7)">
+        <div class="t-k" style="color:#4ade80; font-size:30px">Not fraud · cannot be used after 5 years</div>
+        {"".join(f'<div class="hr" id="h{i}">{glyph(g, 78, "#4ade80")}<span>{t}</span></div>' for i, (g, t) in enumerate(honest))}</div>
+      <div class="glass" id="fr" style="left:1000px; top:340px; width:800px; height:600px; padding:40px; border-color:rgba(220,38,38,.8)">
+        <div class="t-k" style="color:#f87171; font-size:30px">Fraud · the company must prove it</div>
+        <div class="hr" style="margin-top:50px">{glyph("lens", 90, "#f87171")}<span>Active, deliberate lie</span></div>
+        <div class="hr">{glyph("gavel", 90, "#f87171")}<span>Burden of proof: the insurer</span></div>
+        <div class="seal" id="seal">PROOF<br>NEEDED</div></div>"""
+    css = """.hr { display:flex; align-items:center; gap:28px; margin-top:44px; font:800 50px/1.1 Inter,Arial,sans-serif; color:#f8fafc; }
+.seal { position:absolute; right:40px; bottom:40px; width:190px; height:190px; border-radius:50%; border:8px solid #dc2626; color:#dc2626; text-align:center;
+  font:800 34px/1.1 Inter,Arial,sans-serif; padding-top:52px; transform:rotate(-12deg); opacity:0; }"""
     cues = dict(one=s[0]["start"], est=s[1]["start"], notf=s[2]["start"], act=at("E035", "active", k=2))
     js = """
-      pop($("ex"), C.one, { opacity: 0, y: -40 });
-      tl.to($("ex"), { borderColor: "rgba(250,204,21,.8)", duration: 0.3 }, C.est);
-      pop($("ok"), C.notf, { opacity: 0, x: -60 }); pop($("fr"), C.act - 0.2, { opacity: 0, x: 60 });
-      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.04, duration: D.duration, ease: "none" }, 0);
+      pop($("ex"), 0.1, { opacity: 0, y: -40 });
+      pop($("ok"), C.one + 0.4, { opacity: 0, x: -80 }); pop($("fr"), C.one + 0.7, { opacity: 0, x: 80 });
+      for (let i = 0; i < 3; i++) pop($("h" + i), C.notf + i * 1.2, { opacity: 0, x: -40 });
+      tl.fromTo($("seal"), { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, C.est + 1.2);
+      tl.to($("fr"), { boxShadow: "0 0 80px rgba(220,38,38,.55)", duration: 0.4 }, C.act);
+      tl.to($("ok"), { boxShadow: "0 0 80px rgba(74,222,128,.45)", duration: 0.4 }, C.notf);
+      tl.fromTo($("stage"), { scale: 1.06 }, { scale: 1, duration: D.duration, ease: "none" }, 0);
 """
-    put(sid, bp_page(sid, "Burden of proof", round(end - start, 2), body, js, tag="IRDAI MASTER CIRCULAR | PARA 13 · STANDARD POLICY WORDING", css=""), start, end - start, cues)
+    put(sid, bp_page(sid, "Burden of proof", round(end - start, 2), body, js, tag="IRDAI MASTER CIRCULAR | PARA 13 · STANDARD POLICY WORDING", css=css), start, end - start, cues)
 
 
 def e14_port():
@@ -830,7 +911,11 @@ def e17_warroom():
         <div class="glass" id="tmpl" style="left:{N[1][0] + 90}px; top:{N[1][1] + 340}px; width:700px; padding:26px; opacity:0">
           <div class="t-k" style="color:#f59e0b">Doctor's letter · sample wording</div>
           <div style="font:600 28px/1.4 Inter,Arial,sans-serif; margin-top:12px">This patient needed in-patient admission for [diagnosis] because [clinical reason].</div></div>
-        <div class="glass" id="mail" style="left:{N[2][0] + 90}px; top:{N[2][1] - 200}px; width:760px; padding:30px">
+        <div class="glass" id="rf" style="left:{N[2][0] + 90}px; top:{N[2][1] - 200}px; width:760px; padding:30px; opacity:0">
+          <div class="t-k" style="color:#4ade80">Reimbursement claim · file it yourself</div>
+          {"".join(f'<div class="ml rfr" id="rf{i}"><span style="color:#4ade80">✓</span> {t}</div>' for i, t in enumerate(["Claim form, signed", "Final bill and payment receipt", "Discharge summary and reports", "Copy of the cashless denial letter"]))}
+          <div style="font:800 48px/1 Inter,Arial,sans-serif; margin-top:22px; color:#f59e0b">Within 15–30 days</div></div>
+        <div class="glass" id="mail" style="left:{N[2][0] + 90}px; top:{N[2][1] - 200}px; width:760px; padding:30px; opacity:0">
           <div class="t-k" style="color:#38bdf8">To: Grievance Redressal Officer</div>
           <div class="ml" id="ml0">Policy no · claim no · amount</div><div class="ml" id="ml1">Policy running since 2020 (over 5 years)</div>
           <div class="ml" id="ml2">IRDAI moratorium, para 13: not contestable for non-disclosure</div><div class="ml" id="ml3">Please review and settle</div></div>
@@ -899,6 +984,9 @@ def e17_warroom():
       sl.forEach((t, i) => {{ tl.to($("sl" + i), {{ borderColor: "#4ade80", color: "#f8fafc", borderStyle: "solid", duration: 0.2 }}, t); tl.to($("ck" + i), {{ opacity: 1, duration: 0.2 }}, t); }});
       pop($("tmpl"), C.doc + 0.4, {{ opacity: 0, y: 40 }});
       ["tr1", "tr2", "tr3"].forEach((id, i) => tl.to($(id), {{ stroke: "#38bdf8", duration: 0.6 }}, [C.s2, C.s3, C.s4][i] - 0.4));
+      pop($("rf"), C.s2 - 0.2, {{ opacity: 0, y: 40 }});
+      for (let i = 0; i < 4; i++) pop($("rf" + i), C.s2 + 0.3 + i * 0.7, {{ opacity: 0, x: -20 }});
+      tl.to($("rf"), {{ opacity: 0, y: -40, duration: 0.35 }}, C.gro - 0.5); pop($("mail"), C.gro - 0.2, {{ opacity: 0, y: 40 }});
       pop($("dl"), C.days, {{ opacity: 0, x: -40 }});
       [C.gro, C.state, C.five, C.state + 6.5].forEach((t, i) => pop($("ml" + i), t, {{ opacity: 0, x: -20 }}));
       tl.to($("ringw"), {{ opacity: 1, duration: 0.3 }}, C.d14); tl.to($("ring14"), {{ strokeDashoffset: 0, duration: 2.0, ease: "none" }}, C.d14 + 0.2);
