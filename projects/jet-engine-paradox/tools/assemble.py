@@ -51,7 +51,7 @@ SHOTS = [
     S(0.15, "clip", src=YT / "DLA_64yz8Ss.mp4", ss=28, credit="ISRO · MISSION CONTROL · 23 AUG 2023"),
     S(3.2, "clip", src=YT / "DLA_64yz8Ss.mp4", ss=486, crop=(0.0, 0.08, 1.0, 1.0), credit="ISRO · LIVE DESCENT SIMULATION", illus=True),
     S(L("J002"), "clip", src=YT / "DLA_64yz8Ss.mp4", ss=763, credit="ISRO · TOUCHDOWN · 23 AUG 2023"),
-    S(L("J003"), "pending", desc="INS Arihant at sea (Commons)"),
+    S(L("J003"), "still", src=A / "commons2" / "INS_Arihant_at_sea_(cropped).jpg", zoom=(1.0, 1.15), focus=(0.4, 0.5), dark=True, illus=False, credit="PMO · INS ARIHANT · 2018"),
     S(L("J003") + 2.6, "clip", src=YT / "_io4f2I5-sY.mp4", ss=19, credit="ISRO · MOM SIMULATION", illus=True),
     S(L("J005"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=135.5, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · HAL NASHIK 2025"),
     S(L("J006"), "clip", src=YT / "YfQNVWn8aIc.mp4", ss=43, crop=(0.08, 0.0, 0.92, 0.74), credit="DD INDIA · TEJAS MK1A"),

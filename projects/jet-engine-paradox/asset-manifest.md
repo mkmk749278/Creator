@@ -18,7 +18,8 @@ Vetted on contact sheets (`assets/qa_broll/`, `assets/commons/`). Files live in 
 
 ## Commons (licence per file in `assets/commons/manifest*.json*`)
 GE F404 photos ×6 (US Navy PD; FA-50PH CC BY-SA 4.0), J-20 ×4, AMCA model at Aero India, Il-76 with a Kaveri engine.
-`assets/commons2/`: GTX-35VS Kaveri on display (Jagan Pillariseti, CC BY 3.0, credited on screen) → J030.
+`assets/commons2/`: GTX-35VS Kaveri on display (Jagan Pillariseti, CC BY 3.0, credited on screen) → J030, J035.
+`assets/commons2/`: INS Arihant at sea (PMO, GODL-India; soft 1295 px frame, 2.6 s under grain) → J003.
 
 ## Proof pages (`assets/proof/`, `tools/proof_shots.js`)
 PIB 2012 (J031, J043), SPS Aviation 2008 (C7), Bloomberg 29 Oct 2024 supply-chain quote and headline (J016), US CRS RS20995 2002 (J022), PIB 26 Apr 2021 DMRL release (J075) and its blade photo (GoI press photo, credited PIB).
