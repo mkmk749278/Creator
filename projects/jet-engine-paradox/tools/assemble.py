@@ -73,7 +73,7 @@ SHOTS = [
     S(L("J030") + 2.8, "still", src=KAV, zoom=(1.5, 1.7), focus=(0.22, 0.52), illus=False, credit="KAVERI ENGINE · J. PILLARISETI · CC BY 3.0"),
     S(L("J030") + 5.6, "still", src=KAV, zoom=(1.6, 1.4), focus=(0.62, 0.42), illus=False, credit="KAVERI ENGINE · J. PILLARISETI · CC BY 3.0"),
     S(L("J031"), "proof", src=PF / "pib_2012.png", label="PIB · DEFENCE MINISTRY · 2012"),
-    S(L("J035"), "pending", desc="Kaveri on a ground test bed (Commons / DRDO)"),
+    S(L("J035"), "still", src=KAV, zoom=(1.7, 1.45), focus=(0.6, 0.55), dark=True, illus=False, credit="KAVERI PROTOTYPE · J. PILLARISETI · CC BY 3.0"),  # upgrade: GTRE test-cell footage (Feb 2026 afterburner run) if a telecast turns up
     S(L("J042"), "still", src=IL76, zoom=(1.0, 1.18), focus=(0.5, 0.5), illus=False),
     S(L("J043"), "proof", src=PF / "pib_2012_ftb.png"),
     S(L("J046"), "clip", src=YT / "q2ueCg9bvvQ.mp4", ss=636, credit="ISRO · LVM3-M4 LIFT-OFF 2023"),
