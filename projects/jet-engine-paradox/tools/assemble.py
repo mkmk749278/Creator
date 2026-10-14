@@ -45,6 +45,7 @@ def S(t, kind, **kw):
 F404 = CM / "General_Electric_F404_05_ge-f404-engine-jpg.jpg"
 F404B = CM / "General_Electric_F404_01_f404-turbojet-engine-on-uss-abraham-linc.jpg"
 IL76 = CM / "Il-76_with_a_Kaveri_engine.jpg"
+KAV = A / "commons2" / "GTX-35VS_Kaveri.jpg"
 AMCA = CM / "AMCA_model_Aero_India_07_amca-model-displayed-during-aero-india-2.jpg"
 SHOTS = [
     S(0.15, "clip", src=YT / "DLA_64yz8Ss.mp4", ss=28, credit="ISRO · MISSION CONTROL · 23 AUG 2023"),
@@ -68,7 +69,9 @@ SHOTS = [
     S(L("J024"), "clip", src=YT / "ryolgbuDNSg.mp4", ss=25, crop=(0.06, 0.12, 1.0, 1.0), credit="PIB · TEJAS · AERO INDIA 2019"),
     S(L("J025"), "clip", src=YT / "52f1mQqaii8.mp4", ss=8.6, credit="INDIAN AIR FORCE"),
     S(L("J028"), "pending", desc="Globe dissolves into a 1980s GTRE blueprint (reuse D7 tail + C4 head)"),
-    S(L("J030"), "pending", desc="Kaveri engine at Aero India (Commons)"),
+    S(L("J030"), "still", src=KAV, zoom=(1.0, 1.12), focus=(0.5, 0.5), illus=False, credit="KAVERI ENGINE · J. PILLARISETI · CC BY 3.0"),
+    S(L("J030") + 2.8, "still", src=KAV, zoom=(1.5, 1.7), focus=(0.22, 0.52), illus=False, credit="KAVERI ENGINE · J. PILLARISETI · CC BY 3.0"),
+    S(L("J030") + 5.6, "still", src=KAV, zoom=(1.6, 1.4), focus=(0.62, 0.42), illus=False, credit="KAVERI ENGINE · J. PILLARISETI · CC BY 3.0"),
     S(L("J031"), "proof", src=PF / "pib_2012.png", label="PIB · DEFENCE MINISTRY · 2012"),
     S(L("J035"), "pending", desc="Kaveri on a ground test bed (Commons / DRDO)"),
     S(L("J042"), "still", src=IL76, zoom=(1.0, 1.18), focus=(0.5, 0.5), illus=False),
