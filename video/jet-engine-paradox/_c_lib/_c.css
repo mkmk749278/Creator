@@ -5,7 +5,7 @@ html, body { margin: 0; background: var(--slate); }
 .photo-inner { position: absolute; inset: 0; transform-origin: 50% 50%; }
 .photo-inner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .slot-ph { position: absolute; left: 0; right: 0; top: 50%; margin-top: -20px; text-align: center; font: 600 30px/40px var(--font);
-  letter-spacing: 0.32em; color: rgba(248,250,252,0.32); }
+  letter-spacing: 0.32em; color: rgba(248,250,252,0.5); }
 canvas.bp { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
 .vig { position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(ellipse 75% 70% at 50% 48%, rgba(0,0,0,0) 55%, rgba(5,7,11,0.32) 82%, rgba(5,7,11,0.55) 100%); }
