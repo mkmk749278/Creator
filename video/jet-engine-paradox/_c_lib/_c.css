@@ -20,3 +20,4 @@ canvas.bp { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; 
 .stamp.red { color: var(--red); }
 .stamp small { display: block; font: 700 22px/1.3 var(--font); letter-spacing: 0.16em; margin-top: 4px; opacity: 0.85; }
 .jep-label .sw { display: inline-block; }
+.jep-label.keepcase, .lead.keepcase { text-transform: none; }  /* labels with units such as kN: words are already upper case */
