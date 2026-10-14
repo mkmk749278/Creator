@@ -879,6 +879,22 @@ blade) over invented ones. Keep `brief/changes-from-brief.md` so the owner sees 
 rate-limits parallel calls (429): call it one at a time and fall back to WebSearch. The Commons search API timed out in
 a loop of 8 queries, so fetch exact `--titles` instead.
 
+**Jet Engine Paradox, globe and data session D (2026-10-14, 15 scenes on `_d_lib/`: one land-only globe, one
+instrument kit).** Each of these cost a debugging round:
+- **pmndrs post chain: three ways to get dark halos around bright lines.** (1) `BloomEffect`'s default SCREEN blend goes
+  negative on HDR (>1) pixels: use `blendFunction: BlendFunction.ADD`. (2) `FXAAEffect` merged into the same
+  `EffectPass` after bloom re-samples the un-bloomed input: give FXAA (+ grain) its own pass. (3) AgX's outset matrix
+  darkened a cool background around saturated amber bloom: the data scenes use `ToneMappingMode.NEUTRAL`.
+- **Software GL breaks `fract(sin(x) * 43758.5)` hashes** for large x (streaks and blocks in noise): use the sin-free
+  `fract(p * vec3(.1031, .1030, .0973))` hash. Screen-space derivative bump (`dFdx` of noise) made blocky patches:
+  skip it on large, smooth surfaces.
+- **A globe without borders:** bake Natural Earth *land* into a signed distance field (`library/geo/land_sdf_4k.png`,
+  `bake_land.mjs`); the shader draws fill, a crisp anti-aliased coast and region tints from it at any zoom. Highlight a
+  country with its coast and a soft tint, never an outline (a land border is a political border).
+- **Canvas instruments in the 3D stage:** draw the dial/bars on a 1.5× canvas, show it as a plane (premultiplied alpha
+  or edges go dark) with a second additive "glow" canvas into bloom; DOM chips stay crisp on top. Inter has no "→":
+  inline SVG arrow. `.jd-chip` must not uppercase (`kN`).
+
 **Jet Engine Paradox, 3D scene session A (2026-10-13, 8 Three.js scenes on one shared model set `_libA/jepA.js`).**
 Each of these cost a re-render or a wrong look:
 - **`setsid nohup` alone was not enough.** hyperframes 0.8.103 records every ancestor process at start and aborts
