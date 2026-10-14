@@ -43,10 +43,7 @@ const GLOBE_FRAG = /* glsl */`
     vec3 V = normalize(cameraPosition - vW);
     // relief: noise bump inland (screen-space derivative bump)
     float hgt = (0.35 + 0.65 * fbm(n * 26.0)) * smoothstep(0.0, 14.0, sd);
-    vec3 dpx = dFdx(vW), dpy = dFdy(vW); float dhx = dFdx(hgt), dhy = dFdy(hgt);
-    vec3 r1 = cross(dpy, n), r2 = cross(n, dpx); float det = dot(dpx, r1);
-    vec3 nb0 = abs(det) * n - 0.006 * sign(det) * (dhx * r1 + dhy * r2); vec3 nb = dot(nb0, nb0) > 1e-12 ? normalize(nb0) : n;
-    float ndl = dot(mix(n, nb, land), uLight);
+    float ndl = dot(n, uLight);
     float lit = 0.32 + 0.68 * smoothstep(-0.35, 0.9, ndl);          // night side stays readable
     float fres = pow(1.0 - max(dot(n, V), 0.0), 2.6);
     // ocean
@@ -158,7 +155,7 @@ export class Globe {
     tex.wrapS = THREE.RepeatWrapping;
     this.light = new THREE.Vector3(-0.55, 0.55, 0.62).normalize();
     this.u = { uSdf: { value: tex }, uLight: { value: new THREE.Vector3() }, uRange: { value: range },
-      uLand: { value: col(0x262a33) }, uLandHi: { value: col(0x464c58) }, uOcean: { value: col(0x0c121c) }, uOceanHi: { value: col(0x1d2a3d) },
+      uLand: { value: col(0x343a47) }, uLandHi: { value: col(0x58606f) }, uOcean: { value: col(0x0c121c) }, uOceanHi: { value: col(0x1d2a3d) },
       uCoast: { value: col(0xd9dee6) }, uRim: { value: col(PAL.amber).multiplyScalar(0.55) },
       uSpot: { value: [0, 1, 2, 3].map(() => new THREE.Vector4(0, 1, 0, 0.1)) }, uSpotCol: { value: [0, 1, 2, 3].map(() => new THREE.Vector4(0, 0, 0, 0)) },
       uGrat: { value: 0.07 }, uBright: { value: 1 } };

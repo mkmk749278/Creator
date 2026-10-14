@@ -138,9 +138,12 @@ export class Stage {
       intensity: bl.intensity ?? 1.0, luminanceThreshold: bl.threshold ?? 0.55,
       luminanceSmoothing: bl.smoothing ?? 0.25, mipmapBlur: true, radius: bl.radius ?? 0.72 }));
     fx.push(new ToneMappingEffect({ mode: ToneMappingMode.NEUTRAL }));  // AgX outset matrix darkened the bg around saturated amber bloom
-    if (B.fxaa !== 0) fx.push(new FXAAEffect());
-    fx.push(this.film = new FilmEffect({ grain: opts.grain ?? 0.045, vignette: opts.vignette ?? 0.3 }));
     this.composer.addPass(new EffectPass(this.camera, ...fx));
+    // FXAA is a convolution: merged after bloom it re-sampled the un-bloomed input and left dark halos. Own pass.
+    const fx2 = [];
+    if (B.fxaa !== 0) fx2.push(new FXAAEffect());
+    fx2.push(this.film = new FilmEffect({ grain: opts.grain ?? 0.045, vignette: opts.vignette ?? 0.3 }));
+    this.composer.addPass(new EffectPass(this.camera, ...fx2));
     this.composer.setSize(this.W, this.H);
     this.film.uniforms.get("uRes").value.set(this.W, this.H);
     this.overlay = document.getElementById("ov");
