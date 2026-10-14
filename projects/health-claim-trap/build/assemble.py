@@ -170,6 +170,67 @@ SHOTS_V2 = [
 VERSION = "v2"
 
 
+# ---- v3 (owner, 2026-10-14: "we need to show emotions"): real clips on every human beat, matched to the line's
+# situation; the v2 engines carry the mechanics. Each insert (t0, t1, clip) cuts away from whatever runs at t0 and
+# returns to it at t1 (scenes are pure functions of film time, so the return lands mid-animation). ----
+I = lambda t0, t1, src, ss=1.0, label="", tag=ILL: (round(t0, 2), round(t1, 2), dict(kind="clip", src=src, ss=ss, label=label, tag=tag))
+INSERTS = [
+    I(0.0, 3.3, C("hospital-entrance-in-paris-1523"), 1.0, "IMAGINE THIS"),
+    I(3.3, scene_meta("e0_ledger")[0], C("hospital-entrance-in-buenos-aires-8579"), 2.0, "THOUSANDS OF FAMILIES · EVERY DAY"),
+    I(at("E003"), at("E003", k=1) + 0.4, C("mount-sinai-ambulance-7110"), 2.0, "AN EMERGENCY"),
+    I(at("E003", k=1) + 0.4, at("E004"), C("iv-in-hospital-room-5485"), 2.0, "ADMITTED"),
+    I(at("E006"), at("E006", k=1), B(272633), 1.0, "YOUR HEART DROPS"),
+    I(at("E007"), at("E007", "break your"), B(61298), 2.0, "NIGHT · BANKS CLOSED"),
+    I(at("E007", "borrow"), at("E007", "swipe"), B(204420), 2.0, "BORROW FROM RELATIVES"),
+    I(at("E008"), scene_meta("e3_scale")[0] + 2.8, C("old-man-looking-at-a-laptop-screen-5527"), 2.0, "WHY DID I PAY ALL THESE YEARS?"),
+    I(at("E013"), scene_meta("e5_funnel")[0] + 4.0, B(142528), 1.0, "WHO SAYS NO AT THE DESK?"),
+    I(at("E019"), at("E019", k=1), B(229071), 2.0, "A BROKEN LEG"),
+    I(at("E022", k=1), at("E022", k=2), B(143988), 0.5, "NOT MEDICALLY NECESSARY?"),
+    I(at("E026"), at("E026") + 2.8, B(272617), 2.0, "FEELING HELPLESS"),
+    I(at("E037"), at("E037", k=1), B(272633), 5.0, "OUR FAMILY AT THE COUNTER"),
+    I(at("E039"), at("E039") + 3.0, B(26732), 2.0, "DISCHARGE REQUEST SENT"),
+    I(at("E040"), at("E040") + 2.0, B(229069), 2.0, "THE PATIENT SHOULD NOT WAIT"),
+    I(at("E042"), at("E043"), C("a-woman-working-on-her-computer-late-at-night-3699"), 2.0, "CASHLESS DENIED TONIGHT?"),
+    I(at("E043", k=1), at("E043", k=2), C("a-close-up-of-a-woman-praying-3047"), 2.0, "DO NOT PANIC"),
+    I(at("E045"), at("E045", k=1), C("giving-cashier-a-credit-card-9719"), 1.0, "PAY IF YOU MUST"),
+    I(at("E046"), at("E046") + 3.2, B(49809), 2.0, "ASK YOUR DOCTOR FOR A LETTER"),
+    I(at("E048"), at("E048") + 3.0, B(3145), 2.0, "A CALM, FORMAL EMAIL"),
+    I(at("E057"), at("E058"), C("woman-sorting-out-her-bills-8376"), 2.0, "BEFORE YOU BUY"),
+    I(at("E058", k=1), at("E058", k=2), B(34258), 2.0, "DISCLOSE IN WRITING"),
+    I(at("E060", k=2), at("E060", k=2) + 2.6, C("putting-medical-gloves-on-5311"), 1.0, "GLOVES · MASKS · SYRINGES"),
+    I(at("E061"), at("E061") + 2.6, C("mother-and-daughter-hugging-each-other-7302"), 1.0, "PEACE OF MIND", ""),
+    I(at("E061") + 2.6, at("E061", k=1), B(151296), 2.0, "", ""),
+    I(at("E062"), at("E063"), C("an-adult-walking-hand-in-hand-with-a-child-at-sunset"), 0.5, "BE PRACTICAL", ""),
+]
+
+
+def v3_shots():
+    base = sorted(SHOTS_V2, key=lambda s: s["t"])
+    def active(t):
+        cur = None
+        for s in base:
+            if s["t"] <= t + 1e-6:
+                cur = s
+        return cur
+    out = [s for s in base if not any(t0 - 1e-6 <= s["t"] < t1 - 1e-6 for t0, t1, _ in INSERTS)]
+    for t0, t1, c in INSERTS:
+        out.append(dict(c, t=t0))
+        if not any(abs(s["t"] - t1) < 0.05 for s in out) and not any(abs(t0b - t1) < 0.05 for t0b, _, _ in INSERTS):
+            a = active(t1)
+            if a and a["kind"] == "scene":
+                out.append(dict(a, t=round(t1, 2)))
+    out = sorted(out, key=lambda s: s["t"])
+    clean = []
+    for i, s in enumerate(out):   # drop slivers: a shot under 0.4 s gives its time to the next shot
+        nxt = out[i + 1]["t"] if i + 1 < len(out) else END
+        if nxt - s["t"] < 0.4 and i + 1 < len(out):
+            out[i + 1] = dict(out[i + 1], t=s["t"]); continue
+        clean.append(s)
+    return clean
+
+
+VERSION = "v3"
+
 # ---------- rendering (adapted from projects/minimum-due/build/assemble.py) ----------
 def run(cmd):
     r = subprocess.run([str(c) for c in cmd], capture_output=True, text=True)
@@ -310,7 +371,8 @@ def src_mtime(s):
 
 
 def shot_list():
-    return split_long(sorted(SHOTS_V2 if VERSION == "v2" else SHOTS, key=lambda s: s["t"]), END)
+    lst = v3_shots() if VERSION == "v3" else (SHOTS_V2 if VERSION == "v2" else SHOTS)
+    return split_long(sorted(lst, key=lambda s: s["t"]), END)
 
 
 def write_edl(shots):
