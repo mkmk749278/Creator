@@ -1,0 +1,529 @@
+Copy and paste the entire document below directly into Claude to guide the complete video
+production, asset sourcing, motion graphics, and timeline assembly for Episode 1 of Be
+Practical with Kishore.
+
+
+Master Production Handoff: The Health Insurance
+Claim Rejection Trap
+Role for Claude: You are an elite documentary video director and senior visual editor (matching
+the production caliber of Think Deep, Vox, and Fern) for the channel Be Practical with
+Kishore.​
+Host & Lead Investigator: Kishore (Be Practical with Kishore)​
+Project Code: BP-HLTH-01-10M​
+Target Runtime: 11 minutes 15 seconds (~1,620 spoken words)​
+Editorial Core: Empathetic human grounds, everyday spoken English, and forensic,
+document-backed consumer defense.​
+Voice Engine Configuration: ElevenLabs V4 | Voice: Akash | Model: Eleven v4 Multilingual |
+Stability: 0.65 | Similarity: 0.85 | Style: 0.15 | Speaker Boost: ON
+
+
+
+
+1. Executive Editorial Matrix: What People Think Wrong vs. The
+Practical Reality
+           #            What the Public         Why That Is Wrong          The Real Human
+                        Thinks (The             (The Practical             Side We Forget
+                        Misconception)          Reality)
+
+           1            "If the TPA rejects     False: Cashless            At 9 PM in a hospital
+                        cashless at hospital    rejection is NOT           lobby, a family is
+                        discharge, my           claim rejection. It only   exhausted and
+                        insurance is useless    means the TPA              humiliated, forced to
+                        and I must pay out of   refused instant            arrange emergency
+                        pocket forever."        advance settlement.        gold loans or drain
+                                                You can file for           savings while their
+                                                reimbursement,             loved one is in a
+                                                escalate to the            wheelchair.
+                                                Grievance Officer,
+                                                and go to the
+                                                Ombudsman.
+#   What the Public         Why That Is Wrong         The Real Human
+    Thinks (The             (The Practical            Side We Forget
+    Misconception)          Reality)
+
+2   "The company can        False: Under the          People live in
+    reject my claim         IRDAI 5-Year              perpetual anxiety
+    anytime by digging      Moratorium Clause         thinking an
+    up any old medical      (Master Circular          undiagnosed
+    history from 10 years   2024), after 60           headache or minor
+    ago."                   continuous months of      fever from 5 years
+                            policy renewal, an        ago will wipe out their
+                            insurer legally           health coverage.
+                            CANNOT dispute or
+                            deny any claim on
+                            non-disclosure
+                            grounds, except
+                            proven deliberate
+                            fraud.
+
+3   "TPAs are neutral       False: Third-Party        Patients feel
+    government              Administrators            intimidated by
+    inspectors checking     (TPAs) are private        formal-looking
+    medical accuracy."      middleman agencies        medical rejection
+                            hired by insurers.        letters stamped with
+                            They operate under        complex technical
+                            volume-based              codes.
+                            processing metrics
+                            and issue automated
+                            rejection query letters
+                            to protect payout
+                            ratios.
+
+4   "Fighting an            False: The                Middle-class Indians
+    insurance company       Insurance                 give up legitimate ₹3
+    requires hiring a       Ombudsman                 Lakh claims because
+    high-court lawyer and   (cioins.co.in) is         they assume legal
+    waiting 5 years in      completely free,          battles cost more
+    consumer court."        requires zero             than the claim itself.
+                            lawyers, has awards
+                            binding on insurance
+                            companies, and
+                            settles over 75% of
+           #              What the Public           Why That Is Wrong         The Real Human
+                          Thinks (The               (The Practical            Side We Forget
+                          Misconception)            Reality)
+
+                                                    health disputes within
+                                                    60 days.
+
+           5              "Hospitals can take 8     False: IRDAI’s            Recovering patients
+                          hours to discharge a      Master Circular           sit trapped in hospital
+                          cashless patient and      strictly mandates that    corridors for hours
+                          bill them for the extra   insurers must             waiting for approval
+                          day."                     process discharge         emails while hospital
+                                                    authorization within 3    meter-charges run.
+                                                    hours. If delayed
+                                                    beyond 3 hours,
+                                                    hospital room rent
+                                                    charges are payable
+                                                    by the insurer, not the
+                                                    patient.
+
+
+
+
+2. Core Production Directives for Claude
+
+A. Deep Web Research & Media Sourcing
+Direct the video editor to retrieve and catalogue verified, high-resolution authentic assets:
+
+   1.​ Primary Regulatory & Legal Documents:
+          ●​ IRDAI Master Circular on Health Insurance Business (Ref:
+             IRDAI/HLT/REG/CIR/084/05/2024): Highlighting Section on the 5-Year
+             Moratorium Clause (reduced from 8 years) and the 1-Hour pre-auth / 3-Hour
+             discharge rule.
+          ●​ Council of Insurance Ombudsman (CIO) Annual Report (cioins.co.in): Case
+             disposal statistics showing over 75% relief rate for health insurance
+             policyholders.
+          ●​ Insurance Ombudsman Rules, 2017 (amended): Section 17 detailing the ₹50
+             Lakh compensation award limit.
+   2.​ Hospital & Clinical B-Roll:
+          ●​ Authentic b-roll of Indian hospital TPA insurance desks, discharge billing
+             counters, computer monitors processing TPA claim portals, and family members
+             waiting with medical files.
+        ●​ Macro shots of typical discharge summaries, medicine bills, and red rejection
+            stamp letters.
+  3.​ Government Portal UI Screen Records:
+        ●​ Clean 4K screen capture of the Bima Bharosa Portal (bimabharosa.irdai.gov.in)
+            grievance lodging interface.
+        ●​ Clean screen capture of the Insurance Ombudsman Complaint Portal
+            (cioins.co.in) showing the 4-step online filing form.
+
+
+B. Visual Engine & Motion Graphic Guidelines
+  ●​ Cut Rhythm: Pacing must stay dynamic—switch visual angles, camera punches, or
+     motion graphics every 2.5 to 3.5 seconds. Never hold a static graphic longer than 4
+     seconds.
+  ●​ Studio Presence: Kishore on camera in a warm, clean studio setting, holding an actual
+     hospital discharge summary and an IRDAI circular, speaking conversationally to the
+     viewer like a sensible friend.
+  ●​ Split-Screen Fact-Check Visuals:
+        ●​ Screen Left: Red-tinted viral despair headlines ("CASHLESS DENIED!",
+            "INSURANCE SCAM!").
+        ●​ Screen Right: Clean cyan/slate analytical document cards displaying the actual
+            law (IRDAI 5-Year Rule, Ombudsman Section 17).
+  ●​ Color Palette: Carbon Slate (#0F172A), Analytical Cyan (#0284C7), Amber Caution
+     (#F59E0B), Warning Crimson (#DC2626), Crisp White (#F8FAFC).
+
+
+C. Audio Architecture & ElevenLabs V4 Configuration
+  ●​ Voice Profile: ElevenLabs V4 Akash (warm, grounded, conversational English, zero
+     shouting).
+  ●​ Background Music (BGM): Modern investigative ambient synth, low-frequency acoustic
+     warmth. Keep BGM dialed strictly between -18 dB and -22 dB beneath voiceover
+     narration.
+  ●​ Dramatic Zero-Voiceover Pauses:
+         ●​ At 04:45: 3.0-second silence to highlight the IRDAI 5-Year Moratorium Clause on
+             screen.
+         ●​ At 08:35: 3.0-second silence to display the step-by-step Insurance Ombudsman
+             online portal.
+3. Timeline Breakdown & Scene-by-Scene Cue Sheet
+
+BLOCK 1: The Midnight Hospital Lobby Shock (00:00 – 01:25)
+  ●​ Voiceover Anchor: Imagine this scenario... it happens to thousands of Indian families
+     every single day... Let's talk about the health insurance trap.
+  ●​ Target Duration: 00:00 – 01:25
+  ●​ Visual Breakdown:
+         ●​ 00:00 - 00:25: Slow push-in on a tired father sitting on a hospital lobby bench
+             at 9 PM, holding a medical file with a red stamp: "CASHLESS REJECTED".
+         ●​ 00:25 - 00:55: Cut to Kishore in the studio holding a real discharge bill.
+             Graphic split screen: ₹35,000 yearly premium paid for 6 years vs. a ₹4.5 Lakh
+             claim rejected at the final minute.
+         ●​ 00:55 - 01:25: Center title reveal glowing in cyan typography: BE
+             PRACTICAL WITH KISHORE: The Health Insurance Claim Rejection Trap.
+  ●​ Emotional Hook: Giving voice to the viewer's deepest fear—paying insurance for years
+     only to be abandoned during an emergency.
+
+
+BLOCK 2: What Is a TPA? Why Do They Say No? (01:25 – 03:50)
+  ●​ Voiceover Anchor: First, let’s understand who actually rejects your claim... and the
+     secret game played behind the desk.
+  ●​ Target Duration: 01:25 – 03:50
+  ●​ Visual Breakdown:
+        ●​ 01:25 - 02:15: 3D animated flowchart explaining the middleman: Patient ➔
+            Hospital ➔ TPA (Third-Party Administrator) ➔ Insurance Company.
+        ●​ 02:15 - 03:00: Highlighting the three most common rejection excuses on
+            screen:
+                1.​ Non-disclosure of pre-existing condition
+                2.​ Investigative admission / not medically necessary
+                3.​ Proportionate room rent deduction.
+        ●​ 03:00 - 03:50: Doctor's prescription breakdown: How TPAs look for passing
+            mentions of "hypertension" or "mild diabetes" from casual doctor notes and claim
+            the whole disease was concealed.
+  ●​ What People Think Wrong: TPA is a neutral doctor → Reality: TPA is an outsourced
+     corporate cost-control agency.
+
+
+BLOCK 3: The Golden 5-Year Rule (IRDAI Master Circular) (03:50 – 06:15)
+  ●​ Voiceover Anchor: Now, here is the rule your insurance agent never told you... The
+     5-Year Moratorium Clause.
+  ●​ Target Duration: 03:50 – 06:15
+  ●​ Visual Breakdown:
+        ●​ 03:50 - 04:45: Virtual camera zooms dynamically into the IRDAI Master
+            Circular on Health Insurance Business (May 2024).
+        ●​ 04:45 - 05:25: Animated golden highlighter slides across the text: "After 60
+            continuous months of policy coverage, no policy or claim shall be
+            contested on grounds of non-disclosure or misstatement, except in proven
+            cases of established fraud."
+        ●​ 05:25 - 06:15: The 3-Hour Discharge Clock: Animating a countdown timer.
+            Insurers must approve final discharge within 3 hours. If delayed, extra room rent
+            is charged to the insurance company, NOT the patient.
+  ●​ Live Audio Pause: At 04:45 (3 seconds) of complete silence as the IRDAI 5-year
+     moratorium clause is highlighted in glowing gold.
+
+
+BLOCK 4: The 4-Step Battle Plan: How to Win Your Money Back (06:15 –
+08:50)
+  ●​ Voiceover Anchor: If your cashless is rejected at the desk, do not panic... Here is your
+     exact 4-step battle plan.
+  ●​ Target Duration: 06:15 – 08:50
+  ●​ Visual Breakdown:
+         ●​ 06:15 - 07:05: Step 1: Pay the initial bill on credit card/savings, collect every
+             single indoor case record (ICR), lab test, and doctor clinical justification
+             certificate.
+         ●​ 07:05 - 07:50: Step 2: File for reimbursement. If rejected, send a formal legal
+             email to the Principal Nodal Officer (PNO) of the insurance company.
+         ●​ 07:50 - 08:35: Step 3: Register a token on IRDAI's Bima Bharosa Portal.
+         ●​ 08:35 - 08:50: Step 4: The Insurance Ombudsman. Screen walkthrough of
+             the 4-step online form. No court fees, no advocates, binding award up to ₹50
+             Lakhs within 60 days.
+  ●​ Live Audio Pause: At 08:35 (3 seconds) showing the official cioins.co.in complaint filing
+     portal.
+
+
+BLOCK 5: The Honest Verdict & The Practical Checklist (08:50 – 11:15)
+  ●​ Voiceover Anchor: Let’s wrap this up with the practical truth every family needs to
+     remember...
+  ●​ Target Duration: 08:50 – 11:15
+  ●​ Visual Breakdown:
+        ●​ 08:50 - 09:40: Debunking the online panic: Why you should never cancel
+            your policy in anger after a rejection.
+        ●​ 09:40 - 10:35: The 3 Golden Rules before buying or renewing:
+               1.​ Always disclose lifestyle habits in writing (even smoking or thyroid)
+               2.​ Pick policies with 'No Room Rent Capping'
+                  3.​ Add a 'Consumables Rider' for ₹800/year to cover gloves and surgical
+                      kits.
+           ●​ 10:35 - 11:15: Studio wide-shot: Kishore delivering calm, empowering
+              closing advice. Subscribe card and comment prompt.
+
+
+
+
+4. ElevenLabs V4 Akash Audio Export Suite (Complete Phonetic
+Scripts)
+
+TRACK 0: The Hook (bp-hlth01-hook.mp3)
+Imagine this situation... it happens to thousands of middle-class families in India every single
+day.
+
+You pay thirty-five thousand rupees every year for health insurance. You renew it on time for five
+or six straight years. You never miss a single payment.
+
+Then, an emergency hits. Your loved one is admitted to the hospital.
+
+Three days later, you are standing at the hospital billing counter at nine o'clock at night. The
+discharge papers are ready. Your bill is four point five lakh rupees.
+
+And the desk clerk looks up at you and hands you a printed letter saying: "Sorry sir, your
+cashless claim was rejected by the TPA due to non-disclosure of a pre-existing disease."
+
+[sigh] Your heart drops. Your family panics.
+
+It's night time, the banks are closed, and you are forced to break your fixed deposits, borrow
+from relatives, or swipe an emergency credit card just to get your loved one out of the hospital.
+
+And you wonder: "Why did I pay insurance all these years if they abandon me the moment I
+need them?"
+
+[pause] What your insurance agent never told you... is that under official regulations in India,
+there is a legal rule that makes most of these rejections completely illegal.
+
+Welcome to Be Practical with Kishore.
+
+In this video, we are not going to shout, and we are not going to promote any insurance policies.
+Today, let’s look at the actual government circulars, how TPAs make money by rejecting claims,
+and the exact step-by-step process you can use to get your money back within sixty days.
+Let’s break it down... in plain, simple English.
+
+
+TRACK 1: Act 1 – The TPA Middleman Secret (bp-hlth01-act1.mp3)
+First... let’s understand who actually says "NO" to your claim at the hospital desk.
+
+Most people think it’s the insurance company sitting there evaluating your medical reports. But
+in reality, it’s a middleman called a TPA—a Third-Party Administrator.
+
+A TPA is a private corporate agency hired by the insurance company to process medical bills.
+And let's be honest about how corporate incentives work.
+
+TPAs handle thousands of files every single day. Their staff are under massive time pressure.
+And their default reaction to any expensive bill... is to issue an automated query or a quick
+cashless denial letter.
+
+Here are the three excuses they use most often:
+
+Excuse Number One: "Non-disclosure of pre-existing condition."
+
+Suppose you were admitted for a fractured leg or dengue fever. While taking your history, the
+junior resident doctor writes down in passing: "Patient has a history of mild blood pressure."
+
+The TPA reviewer sees that one word, searches your original proposal form from five years ago,
+and says: "Aha! You didn't declare high blood pressure when you bought the policy. Claim
+rejected!"
+
+Wait... does high blood pressure cause a fractured leg or a mosquito-borne fever? Of course
+not! But they use it anyway to deny your cashless payout.
+
+Excuse Number Two: "Investigative admission." They claim your treatment could have been
+done as an outpatient visit and you didn't need a hospital bed.
+
+And Excuse Number Three: "Proportionate room rent deduction." If your policy had a room rent
+limit of five thousand rupees, but you stayed in an eight thousand rupee deluxe room... they
+don't just deduct the three thousand rupee difference. They cut forty percent off your entire
+surgery, doctor fees, and nursing charges!
+
+[sigh] When a family sees that technical rejection letter, they feel completely helpless. They
+assume the door is closed forever.
+But here is the truth: A cashless rejection... is NOT a claim rejection. It only means the TPA
+refused to pay the hospital directly. Your legal right to the money is still alive.
+
+And here is the law that protects you.
+
+
+TRACK 2: Act 2 – The 5-Year Golden Rule (bp-hlth01-act2.mp3)
+Now, listen to this very carefully. This is the single most important rule every Indian policyholder
+must know.
+
+It is called the Moratorium Clause.
+
+Previously, this rule required eight continuous years. But under the landmark Master Circular
+issued by the insurance regulator, I-R-D-A-I... this period was officially reduced from eight years
+down to five years.
+
+That is sixty continuous months.
+
+What does this mean in plain English?
+
+It means if your health insurance policy has completed five continuous years of renewal without
+a break... the insurance company legally CANNOT question or reject your claim on grounds of
+non-disclosure or pre-existing diseases.
+
+Read that again: After five years, they cannot reject your claim because of an old medical
+history.
+
+The only single exception where they can deny a claim after five years... is if they can prove in a
+court of law that you committed active, deliberate criminal fraud. And the burden of proof is on
+the insurance company, not on you!
+
+[pause] Think about how powerful this is.
+
+If you have held a policy for five years, and the TPA rejects your claim saying you had an old
+health issue from years ago... their rejection letter is a direct violation of I-R-D-A-I regulations.
+
+And that’s not all. The regulator also introduced a strict Three-Hour Clock on hospital
+discharges.
+
+Under the new rules, the moment the hospital sends the final discharge bill to the insurer, the
+company has exactly three hours to approve the final cashless payment.
+If the insurance company makes the patient wait beyond three hours... any extra hospital room
+rent or nursing charges incurred during that delay must be paid by the insurance company, not
+by the patient!
+
+Most people never enforce this rule because they simply don't know it exists.
+
+
+TRACK 3: Act 3 – The 4-Step Battle Plan (bp-hlth01-act3.mp3)
+So, what should you do practically if your cashless approval is denied at the hospital counter
+tonight?
+
+Do not shout at the hospital staff, and do not panic. Follow this exact four-step battle plan.
+
+Step Number One: Secure the evidence before you leave.
+
+Pay the initial hospital bill through your savings or credit card. But before stepping out of the
+hospital, collect three critical documents:
+
+First: The complete Indoor Case Record—the I-C-R—and daily doctor notes.
+
+Second: All diagnostic lab reports and original pharmacy bills.
+
+And third: A signed Clinical Justification Certificate from your treating doctor stating clearly that
+hospital admission was medically necessary.
+
+Step Number Two: File for Reimbursement.
+
+Submit all your bills directly to the insurance company's portal within thirty days. If they reject
+your reimbursement claim again, immediately escalate the matter to the Principal Nodal
+Officer—the P-N-O—of the insurance company.
+
+Write a calm, formal email stating the policy number, the claim amount, and quote the I-R-D-A-I
+Five-Year Moratorium rule. Under the law, the insurance company has exactly fifteen days to
+resolve your grievance.
+
+Step Number Three: Register on Bima Bharosa.
+
+If the company ignores your email or sends another generic rejection, log into
+bimabharosa.irdai.gov.in—the official government grievance portal. File a formal complaint
+token. Every token on this portal is tracked directly by the regulator, and insurers face regulatory
+penalties if complaints remain unresolved.
+
+And Step Number Four: The Ultimate Secret Weapon... The Insurance Ombudsman.
+If thirty days pass and the company still refuses to pay... do NOT go to a consumer court, and
+do NOT hire an expensive lawyer.
+
+Go to the official website: c-i-o-i-n-s dot co dot in—the Insurance Ombudsman.
+
+The Ombudsman is a specialized judicial body created by the government exclusively to resolve
+insurance disputes.
+
+Filing an online complaint takes less than five minutes. It is completely free of charge. You do
+not need an advocate.
+
+And here is the best part: Over seventy-five percent of health claim disputes are decided in
+favor of the consumer! The Ombudsman has the power to award compensation up to fifty lakh
+rupees, and the award is legally binding on the insurance company within thirty days.
+
+That is how you fight corporate bureaucracy with legal common sense.
+
+
+TRACK 4: Act 4 – The Honest Verdict & Prevention
+(bp-hlth01-act4.mp3)
+Finally... let’s be practical about how you can prevent this headache before you even step into a
+hospital.
+
+Whenever you buy or renew your health insurance, remember these three golden rules:
+
+Rule Number One: Never hide anything on the proposal form, but always disclose it in writing.
+
+If you smoke occasionally, if you have mild thyroid, or if your parents take daily blood pressure
+medicine... declare it explicitly in the application.
+
+Yes, the company might charge a five percent extra loading fee, or put a two-year waiting
+period. But once it is declared on paper, they can never use it as an excuse to reject your claim
+later on.
+
+Rule Number Two: Always choose a policy with "No Room Rent Capping."
+
+Saving two thousand rupees a year on a policy with a room rent limit of one percent is the
+biggest trap in Indian health insurance. One single night in an executive room can cost you forty
+percent of your entire surgery payout through proportionate deductions. Always insist on a
+policy with zero room rent limits.
+
+And Rule Number Three: Add a "Consumables Rider."
+During any major surgery, thirty to forty thousand rupees of the bill consists of surgical gloves,
+PPE kits, gauze, and syringes. Standard policies exclude these under the non-medical expense
+list. Adding a consumables rider costs around five hundred to eight hundred rupees a year, but it
+ensures your bill is paid one hundred percent.
+
+[slight smile] Remember: You pay for health insurance so your family has peace of mind during
+life’s most vulnerable moments.
+
+Do not let corporate middleman letters intimidate you. Know the five-year rule. Use the
+Ombudsman. And always protect your hard-earned savings.
+
+Be smart. Be informed. And most importantly... always be practical.
+
+If this video helped you understand your rights, hit the subscribe button, share this with a family
+member who has health insurance, and drop your questions in the comments below.
+
+I’ll see you in the next deep dive.
+
+
+
+
+5. YouTube Metadata & Packaging Suite
+
+A. High-CTR Titles
+   ●​ Option 1 (Highest CTR): Why 80% of Health Insurance Claims Get Rejected in India
+      (And How to Overturn It)
+   ●​ Option 2: Cashless Claim Denied? The 5-Year Legal Rule Insurance Companies Hide
+   ●​ Option 3: How to Fight a Rejected Hospital Bill in India Without a Lawyer
+
+
+B. Video Description Block
+Did your hospital cashless claim get rejected by the TPA at discharge? Are you struggling to get
+your health insurance reimbursement approved?
+
+In this episode of Be Practical with Kishore, we cut through corporate fine print, confusing
+medical codes, and agent sales pitches to show you the cold, documented facts. We break
+down the new IRDAI 5-Year Moratorium Clause, explain how TPAs profit from denial letters,
+and walk you step-by-step through the Insurance Ombudsman process to reclaim your money
+within 60 days without spending a single rupee on lawyers.
+
+CHAPTER TIMESTAMPS:​
+00:00 - The Midnight Hospital Lobby Shock​
+01:25 - What is a TPA? The 3 Most Common Rejection Excuses​
+03:50 - The Golden 5-Year Rule (IRDAI Moratorium Master Circular)​
+05:25 - The 3-Hour Hospital Discharge Rule​
+06:15 - Step 1 & 2: Securing Hospital ICR Records & PNO Escalation​
+07:50 - Step 3: Bima Bharosa Grievance Filing​
+08:35 - Step 4: The Insurance Ombudsman Hack (cioins.co.in)​
+09:40 - 3 Golden Rules to Prevent Rejections Forever
+
+#BePracticalWithKishore #HealthInsurance #IRDAI #InsuranceClaimRejected
+#InsuranceOmbudsman #PersonalFinanceIndia #CashlessClaim #ConsumerRightsIndia
+
+
+C. Copy-Paste Tags
+Be Practical with Kishore, Kishore fact check, health insurance claim rejected India, TPA claim
+rejection reasons, IRDAI master circular 2024, moratorium period health insurance 5 years, how
+to fight rejected health insurance, Insurance Ombudsman process, cioins online complaint,
+Bima Bharosa portal, cashless claim rejected at hospital, proportionate room rent deduction, pre
+existing disease rejection fix, practical financial guide India
+
+
+D. Pinned Comment
+Have you or your family ever faced a sudden cashless rejection or hospital bill deduction?
+
+                    👇
+Share which insurance company or TPA it was and how you handled it below—let's help each
+other stay practical!
+
+
+E. Thumbnail Prompt (Ideogram / Midjourney / DALL-E)
+A clean, high-contrast YouTube documentary thumbnail in 16:9 ratio. On the left side: A realistic
+hospital discharge bill with an alarming red stamp: "CLAIM REJECTED". On the right side:
+Kishore looking directly into the camera with an open, confident, analytical expression, holding
+an official blue government document stamped "THE 5-YEAR LEGAL RULE". Dark navy
+background (#0B1530), high-contrast golden yellow text (#FED350): "OVERTURN IT IN 60
+DAYS". Ultra-clean, authoritative documentary aesthetic --ar 16:9
+
