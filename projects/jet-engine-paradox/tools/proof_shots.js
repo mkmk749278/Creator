@@ -1,21 +1,26 @@
 // Capture PROOF screenshots: open the real page, highlight the quoted text, screenshot the viewport (1920×1080 CSS px at
 // 2× = 3840×2160, so the edit can zoom 2–3× into the highlight and stay sharp). Fixed/sticky layers (pop-ups, cookie
 // bars, sticky headers) and ad slots are removed. <id>.json holds the highlight's box (fractions of the frame) for the zoom.
-// Usage: node proof_shots.js <playwright-core dir> <out dir>
+// Usage: node proof_shots.js <playwright-core dir> <out dir> [id,id,…]
 const { chromium } = require(process.argv[2] + '/node_modules/playwright-core');
 const OUT = process.argv[3];
+const ONLY = process.argv[4] ? process.argv[4].split(',') : null;
 const SHOTS = [
+  { id: 'sps_delinked', url: 'https://www.sps-aviation.com/story/?id=585', find: 'delinked from the LCA programme in September 2008' },
   { id: 'pib_2012', url: 'https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=90291', find: 'Rs.382.81 Crore', also: ['December 1996'] },
   { id: 'pib_2012_cost', url: 'https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=90291', find: 'Rs.2839 Crore', also: ['Rs.1996 Crore'] },
   { id: 'pib_2012_ftb', url: 'https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=90291', find: 'Twenty Seven flights for 57 hours duration' },
-  { id: 'nie_ge14', url: 'https://www.newindianexpress.com/india/2026/Oct/07/ge-aerospace-ships-four-more-engines-for-tejas-mk-1a-tally-reaches-14', find: 'x', headline: true },
-  { id: 'bloomberg_penalty', url: 'https://bnnbloomberg.ca/business/international/2024/10/29/india-to-slap-penalties-on-ge-over-fighter-jet-engines-delay', find: 'x', headline: true },
+  { id: 'nie_ge14', url: 'https://www.newindianexpress.com/india/2026/Oct/07/ge-aerospace-ships-four-more-engines-for-tejas-mk-1a-tally-reaches-14', find: 'principal bottleneck' },
+  { id: 'bloomberg_penalty', url: 'https://www.yahoo.com/news/india-slap-penalties-ge-over-093709318.html', find: 'x', headline: true },
+  { id: 'bloomberg_supply', url: 'https://www.yahoo.com/news/india-slap-penalties-ge-over-093709318.html', find: 'unprecedented supply chain pressures' },
+  { id: 'crs_sanctions', url: 'https://www.everycrsreport.com/files/20020211_RS20995_fec39ffc28f6ba3508a7c9096dfaad6cd284bc6b.html', find: 'sweeping U.S. economic sanctions' },
+  { id: 'pib_2021_dmrl', url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=1714134', find: 'single crystal blades technology' },
 ];
 (async () => {
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', headless: false, args: ['--no-sandbox', '--headless=new'] });
   const ctx = await b.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 2, userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36' });
   const pages = {};
-  for (const s of SHOTS) {
+  for (const s of SHOTS.filter(x => !ONLY || ONLY.includes(x.id))) {
     try {
       let p = pages[s.url];
       if (!p) { p = await ctx.newPage(); await p.goto(s.url, { waitUntil: 'domcontentloaded', timeout: 90000 }); await p.waitForTimeout(6000); pages[s.url] = p; }

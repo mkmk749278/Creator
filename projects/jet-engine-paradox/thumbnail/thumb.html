@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: Inter; font-weight: 800; src: url("../../../video/jet-engine-paradox/A1_title_blade/vendor/fonts/inter-latin-800-normal.woff2"); }
+@font-face { font-family: Inter; font-weight: 600; src: url("../../../video/jet-engine-paradox/A1_title_blade/vendor/fonts/inter-latin-600-normal.woff2"); }
+:root { --slate: #0B0E14; --amber: #F97316; --red: #EF4444; --white: #F8FAFC; }
+html, body { margin: 0; width: 1280px; height: 720px; overflow: hidden; background: var(--slate); }
+.t { position: relative; width: 1280px; height: 720px; overflow: hidden; font-family: Inter, sans-serif;
+  background: radial-gradient(ellipse 60% 75% at 80% 55%, rgba(249,115,22,.38), rgba(249,115,22,0) 70%),
+              radial-gradient(ellipse 45% 60% at 18% 40%, rgba(226,232,240,.10), rgba(0,0,0,0) 70%), var(--slate); }
+/* split: the Moon done (cool, left) vs the engine not done (hot, right) */
+.moon { position: absolute; left: 38px; top: 58px; width: 430px; height: 430px; border-radius: 50%;
+  background: url(pixabay_1869760.jpg) 50% 50%/176% no-repeat; box-shadow: 0 0 80px 10px rgba(226,232,240,.18); }
+.blade { position: absolute; right: -40px; top: -10px; height: 760px; filter: contrast(1.3) saturate(1.5) brightness(1.25);
+  -webkit-mask-image: radial-gradient(ellipse 60% 62% at 52% 48%, #000 55%, transparent 100%); }
+.lab { position: absolute; font-weight: 800; letter-spacing: -0.01em; line-height: .9; text-transform: uppercase;
+  text-shadow: 0 6px 24px rgba(0,0,0,.8); }
+.l1 { left: 60px; top: 515px; font-size: 112px; color: var(--white); }
+.l1 b { color: #22C55E; }
+.l2 { right: 44px; top: 430px; font-size: 118px; color: var(--white); text-align: right; }
+.l2 b { color: var(--red); }
+.vs { position: absolute; left: 540px; top: 300px; font-size: 64px; font-weight: 800; color: var(--amber);
+  text-shadow: 0 0 30px rgba(249,115,22,.7); }
+.kick { position: absolute; left: 520px; top: 40px; font-weight: 800; font-size: 46px; color: var(--white);
+  background: var(--red); padding: 10px 20px 12px; letter-spacing: .02em; transform: rotate(-2deg); }
+.logo { position: absolute; right: 22px; top: 18px; width: 96px; height: 96px; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,.6); }
+.bar { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: linear-gradient(90deg, #FF9933 0 33.3%, #F8FAFC 33.3% 66.6%, #138808 66.6%); }
+</style></head>
+<body><div class="t">
+  <div class="moon"></div>
+  <img class="blade" src="blade_crop.png">
+  <div class="kick">40 YEARS. WHY?</div>
+  <div class="vs">BUT</div>
+  <div class="lab l1">MOON <b>✓</b></div>
+  <div class="lab l2">JET<br>ENGINE <b>✗</b></div>
+  <img class="logo" src="logo.png">
+  <div class="bar"></div>
+</div></body></html>
