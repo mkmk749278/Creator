@@ -38,6 +38,18 @@ fetch_card = "" if not urls else f"""
   <textarea class="raw" id="r9" readonly aria-hidden="true" tabindex="-1">{html.escape(urls)}</textarea>
 </section>"""
 
+termux = (HERE / "fetch_termux.sh").read_text().strip() if (HERE / "fetch_termux.sh").exists() else ""
+if termux:
+    fetch_card = f"""
+<section class="block" aria-labelledby="ht">
+  <header>
+    <div><h2 id="ht">Footage: fetch on your phone</h2><p class="meta">Termux · one paste · files land in Download/jep</p></div>
+    <button type="button" class="copy" data-target="t8" id="b8">Copy command</button>
+  </header>
+  <div class="text" id="t8"><p class="note">Open Termux on the phone (not the VPS), long-press, Paste, press Enter. It installs the tools, asks once for storage access (tap Allow), then downloads the ten official clips into <code>Download/jep</code>. When it finishes, open the Files or Drive app, select everything in <code>Download/jep</code> and upload it to Drive → <code>Creator/jet-engine-paradox/footage</code>. Then tell me.</p><p class="urls">{html.escape(termux)}</p></div>
+  <textarea class="raw" id="r8" readonly aria-hidden="true" tabindex="-1">{html.escape(termux)}</textarea>
+</section>""" + fetch_card
+
 page = f"""<title>Jet Engine VO Blocks</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
