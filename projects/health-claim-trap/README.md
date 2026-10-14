@@ -12,15 +12,17 @@ before buying or renewing.
 **Status (2026-10-14): phase 1, script v2.** The owner sent "Master Handoff & Fixes" (`handoff/master-handoff-fixes.*`):
 their own rewrite of the VO in 4 chapter files, hyphen-spelled acronyms (I-R-D-A-I, T-P-A, c-i-o-i-n-s) so Akash does not
 say "Ir-dye", and audio cues `[sigh]`, `[pause]`, `[slight smile]`. v2 (`script.full.tsv`, ids E001–E064) keeps their
-text word for word except formatting (no `!`, quotes, long dashes) and 16 sentences corrected against `claims.csv`
-(list below; each is commented in `tools/make_tsv_v2.py`). 4 chapter blocks, 7,959 characters, about 9:23 of speech plus
+text word for word except formatting (no `!`, quotes, long dashes) and 19 sentences corrected (16 after the first check, 3 more after the v2 re-check) against `claims.csv`
+(list below; each is commented in `tools/make_tsv_v2.py`). 4 chapter blocks, about 8,000 characters and 9:25 of speech plus
 the two 3 s pauses and music beats; lint clean. v1.1 is kept in `v1/`. Next: the owner records
 `voice/bp-hlth01-ch1.mp3` … `ch4.mp3`, then timing, sourcing and the EDL.
 
 ### v2: the owner's sentences changed, and why
 | Line | Owner's v2 text | Now | Source |
 |---|---|---|---|
-| E009 | a rule that makes **most** of these rejections illegal | makes **this exact** rejection illegal, once your policy has crossed five years | Moratorium covers non-disclosure after 60 months only (HC-08) |
+| E009 | a rule that makes **most** of these rejections illegal | makes **this exact denial** illegal, once your policy has crossed five years | Moratorium covers non-disclosure after 60 months only (HC-08) |
+| E036 | Your normal policy limits still apply | limits **and exclusions** still apply | IRDAI's CIS format: after the moratorium a claim can still fail on proven fraud and permanent exclusions (HC-39) |
+| E047 | within fifteen to thirty days | … of discharge. Check your policy for your exact limit. | Limits differ by policy (HC-16) |
 | E011 | get your money back **within sixty days** | get your money back | No source; Ombudsman closes 8 in 10 within three months (HC-27) |
 | E015 | a **private corporate agency** … let's be honest about corporate incentives | a company hired and paid by the insurance company | One TPA is owned by state insurers (HC-03b) |
 | E016 | TPA staff … default reaction … quick cashless denial letter | about seven out of every ten health claims are settled through T-P-As | No source for the old line; IRDAI annual report 2024-25: 69% (HC-35) |
@@ -33,7 +35,7 @@ the two 3 s pauses and music beats; lint clean. v1.1 is kept in `v1/`. Next: the
 | E048 | **Principal Nodal Officer, the P-N-O**; always quote the moratorium | Grievance Redressal Officer; quote it if your policy has crossed five years | PNO is a bank term; insurers name a Grievance Redressal Officer (HC-17) |
 | E050 | tracked directly by **government authorities** | tracked directly by the I-R-D-A-I | Bima Bharosa is IRDAI's portal (HC-18) |
 | E052 | do NOT go to a consumer court, do NOT hire a lawyer | you do NOT need a consumer court case or an expensive lawyer | Consumer court stays open to the policyholder (HC-30) |
-| E055 | the Ombudsman **resolved** over 32,000 | offices **received** over 32,000 | 32,503 received, 29,017 disposed (HC-25) |
+| E055 | the Ombudsman **resolved** over 32,000; over 75% **of decided cases** | offices **received** over 32,000; **of the cases they settled or decided**, over 75% | 32,503 received, 29,017 disposed (HC-25); 76% counts mediated settlements, which the Rules do not call decisions (HC-40) |
 | E059 | **saving two thousand rupees** … can cost you sixty thousand | In our example, one bigger room cost almost sixty thousand rupees | No source for the premium saving; ₹59,625 is our worked example (HC-09) |
 | E060 | 5–15% … an add-on of **₹500–800 covers them completely** | **Reports say** 5–15% … some insurers sell an add-on; check its price and its limit | Estimates vary (HC-33b); no source for the price; riders have caps, e.g. ₹1,500 a year for up to ₹15,000 |
 

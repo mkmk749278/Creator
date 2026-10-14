@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **9:23** of speech (7,959 characters, 4 Bunty blocks), plus pauses and music beats.
+Estimated length: **9:29** of speech (8,045 characters, 4 Bunty blocks), plus pauses and music beats.
 
 ## 1 The midnight bill
 
@@ -64,10 +64,10 @@ __
 ⏱ Hold 1 s after the line
 
 **E009** · block 1 · 🎭 [pause]  
-**What your insurance agent never told you... is that under official regulations in India, there is a legal rule that makes this exact rejection illegal, once your policy has crossed five years.**  
+**What your insurance agent never told you... is that under official regulations in India, there is a legal rule that makes this exact denial illegal, once your policy has crossed five years.**  
 __  
-🎬 [v1 H009] The red CASHLESS DENIED stamp cracks; a cyan overstamp lands: NOT A CLAIM REJECTION (film motif, thumbnail promise by 0:30).  
-🔤 NOT A CLAIM REJECTION [AROGYA SANJEEVANI POLICY WORDING]  
+🎬 [v1 H009] The red CASHLESS DENIED stamp cracks; a cyan overstamp lands: NOT ALLOWED AFTER 5 YEARS (film motif, thumbnail promise by 0:30).  
+🔤 NOT ALLOWED AFTER 5 YEARS [IRDAI INSURANCE PRODUCTS REGULATIONS | 2024]  
 🔊 1.5 s music silence, then low braam  
 ⏱ Thumbnail promise must land before 0:30
 
@@ -89,7 +89,7 @@ __
 **Let's break it down... in plain, simple English.**  
 __  
 🎬 [v1 H012] Whip transition into the chapter card: 2-word chapter title in a lower third over corridor footage (no full-screen card).  
-🔤 CHAPTER 1 · WHO SAYS NO  
+🔤 CHAPTER 2 · WHO SAYS NO  
 🔊 Whoosh
 
 ## 2 Who really says no
@@ -124,7 +124,7 @@ __
 **E017** · block 2  
 **Under I-R-D-A-I rules, no claim can be rejected without the approval of the insurance company's own claims review committee. But here are the three excuses you will often see on these letters.**  
 __  
-🎬 [v1 H017] Highlighter on para 17(a) and 17(b) of the circular (credited PDF, magnifier).  
+🎬 [v1 H017] Highlighter on para 17(a) of the circular (credited PDF, magnifier): no claim repudiated without CRC approval.  
 🔤 REJECTION NEEDS COMMITTEE APPROVAL [IRDAI MASTER CIRCULAR | PARA 17]
 
 **E018** · block 2  
@@ -174,7 +174,7 @@ __
 **E025** · block 2  
 **They pay only five out of every eight rupees... on the surgery, doctor, and nursing charges too. That is a cut of about thirty-seven percent on those charges.**  
 __  
-🎬 [v1 H027] BOARD: 5 ÷ 8 = 62.5%, then the cut applied to surgery, doctor and nursing lines; the total cut grows to about sixty thousand while the room difference was nine thousand.  
+🎬 [v1 H027] BOARD: 5 ÷ 8 = 62.5%, then the cut applied to surgery, doctor and nursing lines; the total cut grows to about sixty thousand while the room difference was nine thousand. Keep a small green no-cut column with MEDICINES only (exempt in every current wording).  
 🔤 OUR CALCULATION · 37.5% CUT [AROGYA SANJEEVANI POLICY WORDING]  
 ⏱ Let the maths breathe: 1 s hold on the total
 
@@ -188,7 +188,7 @@ __
 **It is not. A cashless denial... is NOT a claim rejection. Your legal right to the money is still alive.**  
 __  
 🎬 [v1 H018] The red stamp from H005 again; it fades to grey while a cyan line reads REIMBURSEMENT STILL OPEN.  
-🔤 CASHLESS NO ≠ CLAIM NO
+🔤 CASHLESS NO ≠ CLAIM NO [AROGYA SANJEEVANI POLICY WORDING]
 
 ## 3 The five year rule and the clock
 
@@ -196,6 +196,7 @@ __
 **Now listen carefully. This may be the single most important rule in Indian health insurance.**  
 __  
 🎬 [v1 H031] Desk lamp clicks on over the printed master circular; slow push.  
+🔤 CHAPTER 3 · THE FIVE YEAR RULE  
 🔊 Lamp click
 
 **E029** · block 3  
@@ -245,9 +246,9 @@ __
 🔤 ONLY EXCEPTION · ESTABLISHED FRAUD
 
 **E036** · block 3  
-**Your normal policy limits still apply, and if you port your policy to another insurer, your years move with you. If you cancel and buy a new one, the count resets to zero.**  
+**Your normal policy limits and exclusions still apply, and if you port your policy to another insurer, your years move with you. If you cancel and buy a new one, the count resets to zero.**  
 __  
-🎬 [v1 H039] Two cyan cards slide in lower right: LIMITS STILL APPLY · PORT, DON'T CANCEL; real b-roll of a family reading papers at a dining table.  
+🎬 [v1 H039] Two cyan cards slide in lower right: LIMITS, EXCLUSIONS STILL APPLY · PORT, DON'T CANCEL; real b-roll of a family reading papers at a dining table.  
 🔤 PORT, DON'T CANCEL [IRDAI MASTER CIRCULAR | PARA 13 NOTE]
 
 **E037** · block 3  
@@ -266,7 +267,7 @@ __
 **E039** · block 3  
 **When the hospital sends the final discharge request to the insurance company, the company must give final approval within three hours.**  
 __  
-🎬 [v1 H042] Animated discharge clock: 1-HOUR ring for the cashless request, then a 3-HOUR countdown sweeping in amber.  
+🎬 [v1 H042] Animated discharge clock: a 3-HOUR countdown sweeping in amber over the billing counter footage.  
 🔤 3 HOURS [IRDAI MASTER CIRCULAR | PARA 16]
 
 **E040** · block 3  
@@ -287,7 +288,7 @@ __
 **So, what should you do if your cashless is denied at the counter tonight?**  
 __  
 🎬 [v1 H045] Chapter lower third over the night billing counter footage.  
-🔤 CHAPTER 3 · THE FOUR STEP PLAN  
+🔤 CHAPTER 4 · THE FOUR STEP PLAN  
 🔊 Whoosh
 
 **E043** · block 4  
@@ -318,7 +319,7 @@ __
 🔊 Pen scratch
 
 **E047** · block 4  
-**Step Two. File for reimbursement within fifteen to thirty days.**  
+**Step Two. File for reimbursement within fifteen to thirty days of discharge. Check your policy for your exact limit.**  
 __  
 🎬 [v1 H051] Step 2 lights; SIMULATION insurer claim form on a phone screen; a 30-day calendar strip.  
 🔤 2 · CLAIM REIMBURSEMENT · 15–30 DAYS [CHECK YOUR POLICY WORDING]
@@ -370,12 +371,12 @@ __
 🔤 FREE · ONLINE · NO LAWYER NEEDED [CIOINS.CO.IN]
 
 **E055** · block 4  
-**In the financial year twenty twenty-four to twenty-five, the Ombudsman offices received over thirty-two thousand health complaints. Over seventy-five percent of decided cases went in favor of the policyholder. And eight out of ten complaints were closed within three months.**  
+**In the financial year twenty twenty-four to twenty-five, the Ombudsman offices received over thirty-two thousand health complaints. Of the cases they settled or decided, over seventy-five percent went in favor of the policyholder. And eight out of ten complaints were closed within three months.**  
 __  
 🎬 [v1 H061] Animated counter climbs to 32,503 over a real photo of an Ombudsman office (if available) or the annual report cover.  
-🔤 32,503 RECEIVED · 76% FOR POLICYHOLDER · 8 IN 10 IN 3 MONTHS [CIO ANNUAL REPORT 2024-25 | STATEMENT H3] · OUR CALCULATION  
+🔤 32,503 RECEIVED · 76% OF SETTLED OR DECIDED · 8 IN 10 IN 3 MONTHS [CIO ANNUAL REPORT 2024-25 | STATEMENT H3] · OUR CALCULATION  
 🔊 Counter ticks  
-⏱ Cut to H062 BOARD (76%) and H063 bar inside this line
+⏱ Cut to H062 BOARD (76%; label: 15,543 of 20,440 settled or decided) and H063 bar inside this line
 
 **E056** · block 4  
 **The Ombudsman can award up to fifty lakh rupees, and the award is legally binding on the insurance company.**  
@@ -387,7 +388,7 @@ __
 **Finally... how do you prevent this before you even buy?**  
 __  
 🎬 [v1 H067] Chapter lower third; daylight now (art direction: night → day from this chapter).  
-🔤 CHAPTER 4 · BEFORE YOU BUY  
+🔤 BEFORE YOU BUY  
 🔊 Whoosh
 
 **E058** · block 4  
@@ -401,7 +402,7 @@ __
 **Rule Two. Choose a policy with No Room Rent Capping. In our example, one bigger room cost almost sixty thousand rupees through proportionate cuts.**  
 __  
 🎬 [v1 H073] BOARD callback: the 5 ÷ 8 maths from H027 flashes, the sixty-thousand cut circled again.  
-🔤 OUR CALCULATION · ~₹60,000 CUT (CALLBACK)  
+🔤 OUR CALCULATION · ~₹60,000 CUT  
 🔊 Marker squeak
 
 **E060** · block 4  
