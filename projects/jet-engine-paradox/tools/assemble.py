@@ -42,6 +42,7 @@ def S(t, kind, **kw):
 
 # ---- coordinator shots for lines no animated scene covers (visual column of script.full.tsv) ----
 # kind: clip(src, ss) | still(src, zoom, focus) | proof(src) | pending(desc) | scene(id, frm=program time to start from)
+#       | dissolve(a, b, xd, zoom, focus): push into scene a's last frame, then cross-dissolve into scene b's held first frame
 F404 = CM / "General_Electric_F404_05_ge-f404-engine-jpg.jpg"
 F404B = CM / "General_Electric_F404_01_f404-turbojet-engine-on-uss-abraham-linc.jpg"
 IL76 = CM / "Il-76_with_a_Kaveri_engine.jpg"
@@ -68,7 +69,7 @@ SHOTS = [
     S(L("J022"), "proof", src=PF / "crs_sanctions.png", label="US CONGRESSIONAL RESEARCH SERVICE · 2002"),
     S(L("J024"), "clip", src=YT / "ryolgbuDNSg.mp4", ss=25, crop=(0.06, 0.12, 1.0, 1.0), credit="PIB · TEJAS · AERO INDIA 2019"),
     S(L("J025"), "clip", src=YT / "52f1mQqaii8.mp4", ss=8.6, credit="INDIAN AIR FORCE"),
-    S(L("J028"), "pending", desc="Globe dissolves into a 1980s GTRE blueprint (reuse D7 tail + C4 head)"),
+    S(L("J028"), "dissolve", a="D7_engine_club", b="C4_kaveri_blueprint", xd=2.4, zoom=(1.0, 1.9), focus=(0.575, 0.72), illus=True),  # globe tail → C4's first frame; J029 runs C4 on
     S(L("J030"), "still", src=KAV, zoom=(1.0, 1.12), focus=(0.5, 0.5), illus=False, credit="KAVERI ENGINE · J. PILLARISETI · CC BY 3.0"),
     S(L("J030") + 2.8, "still", src=KAV, zoom=(1.5, 1.7), focus=(0.22, 0.52), illus=False, credit="KAVERI ENGINE · J. PILLARISETI · CC BY 3.0"),
     S(L("J030") + 5.6, "still", src=KAV, zoom=(1.6, 1.4), focus=(0.62, 0.42), illus=False, credit="KAVERI ENGINE · J. PILLARISETI · CC BY 3.0"),
@@ -156,6 +157,20 @@ def render(s, dur, out, W, H):
         off = s.get("off", 0.0) if s.get("frm") is None else max(0.0, s["t"] - s["frm"])
         vf = f"scale={W}:{H},fps=30,tpad=stop_mode=clone:stop_duration=30"
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{off:.3f}", "-i", str(f), "-vf", vf, "-t", f"{dur:.3f}"] + enc + [str(out)])
+    elif k == "dissolve":   # push into scene a's last frame, then cross-dissolve into scene b's first frame (held) so b starts cleanly next
+        fa, fb = scene_file(s["a"]), scene_file(s["b"])
+        if not (fa.exists() and fb.exists()):
+            return render(dict(kind="pending", desc=f"dissolve {s['a']} → {s['b']}"), dur, out, W, H)
+        last = out.with_suffix(".last.png")
+        run(["ffmpeg", "-v", "error", "-y", "-sseof", "-0.1", "-i", str(fa), "-frames:v", "1", "-update", "1", str(last)])
+        xd = s.get("xd", 2.0)
+        fx, fy = s.get("focus", (0.5, 0.5))
+        z0, z1 = s.get("zoom", (1.0, 1.5))
+        fc = (f"[0:v]{kb(W, H, dur, z0, z1, fx, fy, W / H)},trim=duration={dur:.3f},setpts=PTS-STARTPTS[a];"
+              f"[1:v]scale={W}:{H},fps=30,trim=end_frame=1,tpad=stop_mode=clone:stop_duration={dur:.3f},setpts=PTS-STARTPTS[b];"
+              f"[a][b]xfade=transition=fade:duration={xd}:offset={dur - xd:.3f}")
+        run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", str(last), "-i", str(fb),
+             "-filter_complex", fc, "-t", f"{dur:.3f}"] + enc + [str(out)])
     elif k == "clip":
         z = 1.08
         pre = []
