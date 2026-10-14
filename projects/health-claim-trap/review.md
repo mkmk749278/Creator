@@ -1,3 +1,43 @@
+# Review: health-claim-trap preview v5 (native 4K, 8:45) — owner's review of v3
+
+Method: 32-frame contact sheet at the owner's timestamps plus the new scenes, from the 2160p cut; every frame checked
+against the VO line at that second (PLAYBOOK §14); scene snapshots checked before the render.
+
+## Owner's points → what changed
+| Owner's point | v5 |
+|---|---|
+| 0:00 European street | Night waiting hall (pixabay 10874) → owner's AI cutaway (labelled) |
+| 0:13 stretcher rush | Ambulance (Coverr) → IV room at night. No Indian stretcher clip on reachable free sources: owner to supply |
+| 0:35 billing counter + printed bill | 9:00 PM counter clip → printer, hand lifts pages → SIMULATION bill (reframed on the total) → man reading a stamped letter (0:31) → letter scene |
+| 0:44 mother's panic | "Your heart drops" face close-up → worried woman on the phone ("your family panics"). Indian clip: owner to supply |
+| 0:48 corridor call to borrow | Man on the phone in the dark (204421), as v3 |
+| Void 0:45 | Covered by the two clips above (e2_shock no longer in the cut; its panels now show from frame 1 anyway) |
+| Void 1:08 | Stamp now on a SIMULATED paper denial letter; laser split; 60-month bar fills; camera push |
+| Void 3:02 | Real clinic clips across the whole "outpatient visit" line (143988 → 49815); Excuse 3 = two rooms ₹5,000 vs ₹8,000/day with the limit line |
+| Bill Guillotine −37.5% | e9 rebuilt: four towers (room, surgeon and doctor, nursing, medicines); three blades take 37.5% (OUR CALCULATION, VO "about thirty-seven percent"); medicines PROTECTED; total cut ₹59,625 |
+| Void 3:48 / 4:56 · Titanium Shield vs TPA arrow | Metal "60 MONTHS" shield emblem on a taller month bar; red "TPA DENIAL · NON-DISCLOSURE" arrow shatters on it |
+| Void 4:33 | Proven fraud: two full cards with icons, PROOF NEEDED seal |
+| 3-Hour Stopwatch | e16 now an analog dial: amber ring to 3:00:00, red overtime ring, ₹4,000 moves to the insurer's fund |
+| Void 6:04 | Reimbursement checklist card (within 15–30 days) before the grievance email |
+| 7:13 table scan | e24: tilted India map (DataMeet, CC BY 4.0) with **18** beacons, 32,503 counter, radial gauge to 76% "of the health cases settled or decided", 78.5% in 3 months, ₹50 lakh binding, ₹5,000/day meter to ₹1,30,000 "unless the insurer appeals" |
+| Keep 3:25 / 5:42 | Unchanged (272617; transferring-card-details) |
+
+Every engine scene now sits on a blurred, drifting hospital backdrop (owner's cutaway image, blurred) instead of a flat blue gradient.
+
+## Accuracy calls (claims.csv)
+17 beacons → 18: the CIO Annual Report 2024-25 lists 18 offices. "Consumer win rate" → "of the health cases settled or
+decided": the 76% is 15,543 of 20,440 settled-or-decided cases, not all complaints. −37.5% is our exact 3/8 calculation.
+
+## Fixed after the first v5 pass
+Printer shot was near-black (in-point moved to the hand lifting the pages); bill still cropped its labels (reframed);
+guillotine frame on the tall tower overlapped the header; citation tag overlapped tower values.
+
+## Still owed by the owner
+Five Indian clips swap in 1:1 at the same timecodes (INSERTS_V5 in build/assemble.py): night waiting room with son and
+medical file, stretcher rush, billing counter handing a printed bill, mother's panic close-up, corridor phone call.
+
+---
+
 # Review: health-claim-trap preview v2 (720p, 8:45) — visual-engine upgrade
 
 Built to the owner's "Visual Engine Upgrade" spec (2026-10-14): every stock clip is replaced by programmatic HyperFrames

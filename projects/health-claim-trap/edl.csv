@@ -6,7 +6,7 @@ n,start,end,dur,kind,asset,motion,label,tag,step
 4,19.07,21.29,2.22,clip,coverr-iv-in-hospital-room-5485.mp4,slow push 1.08,ADMITTED,ILLUSTRATIVE FOOTAGE,
 5,21.29,26.22,4.93,clip,pixabay_26732.mp4,slow push 1.08,9:00 PM · BILLING COUNTER,ILLUSTRATIVE FOOTAGE,
 6,26.22,28.04,1.82,clip,coverr-a-printer-at-work-in-the-office-5252.mp4,slow push 1.08,DISCHARGE PAPERS READY,ILLUSTRATIVE FOOTAGE,
-7,28.04,31.20,3.16,still,bill.png,"Ken Burns (1.0, 1.9)","BILL: ₹4,50,000",SIMULATION,
+7,28.04,31.20,3.16,still,bill.png,"Ken Burns (1.0, 1.45)","BILL: ₹4,50,000",SIMULATION,
 8,31.20,34.45,3.25,clip,pixabay_272633.mp4,slow push 1.08,A PRINTED LETTER,ILLUSTRATIVE FOOTAGE,
 9,34.45,43.57,9.12,scene,s01_letter,animated,,,
 10,43.57,44.98,1.41,clip,pixabay_61298.mp4,slow push 1.08,YOUR HEART DROPS,ILLUSTRATIVE FOOTAGE,
