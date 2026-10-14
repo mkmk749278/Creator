@@ -204,18 +204,19 @@ INSERTS = [
 ]
 
 
-def v3_shots():
-    base = sorted(SHOTS_V2, key=lambda s: s["t"])
+def v3_shots(base=None, inserts=None):
+    base = sorted(base or SHOTS_V2, key=lambda s: s["t"])
+    INSERTS_ = inserts or INSERTS
     def active(t):
         cur = None
         for s in base:
             if s["t"] <= t + 1e-6:
                 cur = s
         return cur
-    out = [s for s in base if not any(t0 - 1e-6 <= s["t"] < t1 - 1e-6 for t0, t1, _ in INSERTS)]
-    for t0, t1, c in INSERTS:
+    out = [s for s in base if not any(t0 - 1e-6 <= s["t"] < t1 - 1e-6 for t0, t1, _ in INSERTS_)]
+    for t0, t1, c in INSERTS_:
         out.append(dict(c, t=t0))
-        if not any(abs(s["t"] - t1) < 0.05 for s in out) and not any(abs(t0b - t1) < 0.05 for t0b, _, _ in INSERTS):
+        if not any(abs(s["t"] - t1) < 0.05 for s in out) and not any(abs(t0b - t1) < 0.05 for t0b, _, _ in INSERTS_):
             a = active(t1)
             if a and a["kind"] == "scene":
                 out.append(dict(a, t=round(t1, 2)))
@@ -229,7 +230,19 @@ def v3_shots():
     return clean
 
 
-VERSION = "v3"
+# ---- v4 (owner, 2026-10-14): opening at the hospital, owner's cutaway image into the reception, India map of the 18
+# Ombudsman offices, browser clips typing and opening the two portals, native 4K, full sound design (build/mix.py). ----
+OWN = A / "owner"
+INSERTS_V4 = [x for x in INSERTS if "buenos-aires" not in str(x[2]["src"])] + [
+    (3.3, round(scene_meta("e0_ledger")[0], 2), dict(kind="still", src=OWN / "hospital_cutaway.jpg", zoom=(1.0, 1.85), focus=(0.6, 0.76),
+                                                  label="THOUSANDS OF FAMILIES · EVERY DAY", tag="ILLUSTRATION · AI-GENERATED IMAGE")),
+]
+_drop = {"d_bima", "d_cio"}
+_v2 = [s for s in SHOTS_V2 if s.get("id") not in _drop and not (s.get("id") == "e17_warroom" and
+       any(abs(s["t"] - scene_meta(d)[1]) < 0.05 for d in _drop))]
+SHOTS_V4 = _v2 + [SC2("e22_bima"), SC2("e21_india"), SC2("e23_cio")]   # India map follows the Bima clip; CIO table follows the CIO clip
+
+VERSION = "v4"
 
 # ---------- rendering (adapted from projects/minimum-due/build/assemble.py) ----------
 def run(cmd):
@@ -371,7 +384,7 @@ def src_mtime(s):
 
 
 def shot_list():
-    lst = v3_shots() if VERSION == "v3" else (SHOTS_V2 if VERSION == "v2" else SHOTS)
+    lst = v3_shots(SHOTS_V4, INSERTS_V4) if VERSION == "v4" else v3_shots() if VERSION == "v3" else (SHOTS_V2 if VERSION == "v2" else SHOTS)
     return split_long(sorted(lst, key=lambda s: s["t"]), END)
 
 
@@ -400,6 +413,9 @@ def write_edl(shots):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=720); ap.add_argument("--edl", action="store_true")
     a = ap.parse_args(); H = a.height; W = H * 16 // 9
+    global SC
+    if H >= 2160:   # native 4K scene renders (build/render_4k.sh)
+        SC = A / "scenes4k"
     shots = shot_list()
     write_edl(shots)
     if a.edl:
@@ -437,11 +453,21 @@ def main():
         cj.write_text(json.dumps(cues))
         py = ROOT / ".venv/bin/python"
         run([py if py.exists() else sys.executable, ROOT / "scripts/make_bed.py", cj, bed])
-    # music: -25 dB under speech; 0 for 1.5 s before the core reveal (E033, the moratorium clause)
-    duck = f"volume='if(between(t,{reveal - 1.6},{reveal - 0.05}),0,1)':eval=frame"
-    mix = A / "mix_raw.wav"
-    run(["ffmpeg", "-v", "error", "-y", "-i", vo, "-i", bed, "-filter_complex",
-         f"[1:a]volume=-25dB,{duck}[b];[0:a][b]amix=inputs=2:duration=longest:normalize=0[a]", "-map", "[a]", "-t", f"{END:.2f}", mix])
+    # sound design (build/mix.py): ducked bed with pause swells, room tone, J/L-cut hospital ambience, whooshes, reveal
+    # riser + impact, stamps, typing/clicks on the browser clips, clock, heartbeat. Never digital silence.
+    import mix as M
+    from timing import SENT
+    hosp = ("hospital", "ambulance", "iv-in", "142528", "229071", "143988", "26732", "229069", "49809")
+    ins = [(t0, t1, any(h in str(c["src"]) for h in hosp) or "cutaway" in str(c["src"])) for t0, t1, c in
+           (INSERTS_V4 if VERSION == "v4" else INSERTS if VERSION == "v3" else [])]
+    sc = lambda sid: scene_meta(sid)[0]
+    cue = {"stamps": [sc("s01_letter") + 6.6, sc("e1b_overstamp") + 8.6],
+           "typing": [(sc("e22_bima") + 1.42, sc("e22_bima") + 4.36), (sc("e23_cio") + 1.54, sc("e23_cio") + 2.79)] if VERSION == "v4" else [],
+           "clicks": [sc("e22_bima") + 4.36, sc("e22_bima") + (sents("E050")[1]["start"] - sc("e22_bima")) + 1.5,
+                      sc("e23_cio") + 2.79, sents("E054")[1]["start"] + 0.3] if VERSION == "v4" else [],
+           "heart": [(L("E006")[0] - 0.3, L("E006")[1] + 0.6)]}
+    mix = M.build(shots, SENT, END, reveal, ins, cue, (scene_meta("e16_stopwatch")[0] + 3.0, scene_meta("e16_stopwatch")[1] - 1.0),
+                  A / "mix_raw.wav", vo, bed)
 
     def integrated(f, af="anull"):
         r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(f), "-af", f"{af},ebur128=peak=true", "-f", "null", "-"],

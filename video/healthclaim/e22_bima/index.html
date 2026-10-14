@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Browser: bimabharosa.irdai.gov.in</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+.bp { position: absolute; inset: -60px; background:
+  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+.glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
+  border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
+.t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.t-v { font: 800 56px/1.05 Inter, Arial, sans-serif; color: var(--white); }
+.mono { font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.ill { position: absolute; left: 64px; top: 48px; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #facc15;
+  background: rgba(2,6,15,.7); padding: 10px 14px; border-radius: 6px; border-left: 4px solid #facc15; }
+
+.win { position:absolute; left:90px; top:170px; width:1380px; height:870px; border-radius:16px; overflow:hidden; background:#f1f5f9;
+  box-shadow:0 50px 100px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.12); }
+.bar { height:96px; background:#dfe3ea; border-bottom:1px solid #c5ccd6; }
+.tabs { height:44px; display:flex; align-items:flex-end; padding-left:110px; } .tab { height:36px; width:330px; border-radius:10px 10px 0 0; background:#f8fafc; font:600 18px/36px Inter,Arial,sans-serif; padding-left:18px; color:#334155; }
+.dots { position:absolute; left:22px; top:16px; } .dots i { display:inline-block; width:14px; height:14px; border-radius:50%; margin-right:8px; }
+.omni { margin:6px 20px 0 140px; height:40px; border-radius:20px; background:#fff; display:flex; align-items:center; padding-left:18px; font:500 22px/40px Inter,Arial,sans-serif; color:#0f172a; }
+.lock { color:#16a34a; margin-right:12px; font-size:18px; } .caret { display:inline-block; width:2px; height:24px; background:#0f172a; margin-left:2px; }
+.load { position:absolute; left:0; top:94px; height:4px; width:100%; background:#0284c7; transform-origin:0 50%; transform:scaleX(0); }
+.vp { position:absolute; left:0; top:96px; right:0; bottom:0; overflow:hidden; background:#fff; }
+.vp img { position:absolute; left:0; top:0; width:1380px; }
+.side2 { position:absolute; left:1500px; top:300px; width:390px; } .side2 .chip { position:relative; display:inline-flex; white-space:normal; font-size:32px; line-height:1.2; margin-bottom:22px; opacity:0; }
+.cur { position:absolute; left:0; top:0; width:34px; height:34px; z-index:5; } .rip { position:absolute; left:0; top:0; width:60px; height:60px; margin:-30px 0 0 -30px; border-radius:50%; border:4px solid #0284c7; opacity:0; z-index:4; }
+.url { position:absolute; left:90px; width:1380px; top:52px; text-align:center; font:800 64px/1 Inter,Arial,sans-serif; color:#f8fafc; letter-spacing:.01em; }
+.url span { padding:10px 26px; border-radius:14px; background:rgba(2,132,199,.25); border:2px solid rgba(56,189,248,.7); }
+.hl { position:absolute; border:5px solid #facc15; border-radius:12px; box-shadow:0 0 30px rgba(250,204,21,.6); opacity:0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="e22_bima" data-start="0" data-width="1920" data-height="1080" data-duration="10.81">
+      
+      <div id="stage">
+<div class="bp" id="bp"></div>
+      <div class="url" id="big"><span id="bigt"></span></div>
+      <div class="win" id="win">
+        <div class="bar"><div class="dots"><i style="background:#ef4444"></i><i style="background:#f59e0b"></i><i style="background:#22c55e"></i></div>
+          <div class="tabs"><div class="tab" id="tabt">New tab</div></div>
+          <div class="omni"><span class="lock">🔒</span><span id="typed"></span><span class="caret" id="caret"></span></div></div>
+        <div class="load" id="load"></div>
+        <div class="vp" id="vp"><img id="pg" src="img/page.jpg" style="opacity:0"/><div class="hl" id="h0" style="left:77px; top:309px; width:390px; height:36px"></div></div>
+        <svg class="cur" id="cur" viewBox="0 0 24 24"><path d="M3 2 L3 20 L8 15 L11.5 22 L14.5 20.5 L11 13.8 L18 13.8 Z" fill="#fff" stroke="#0f172a" stroke-width="1.6"/></svg><div class="rip" id="rip"></div>
+      </div><div class="side2"><div class="chip cyan" id="k0">IRDAI's own complaint portal</div><br><div class="chip amber" id="k1">Tracked by IRDAI</div><br></div>
+      </div>
+      <div class="fin-tag" id="tag">BIMABHAROSA.IRDAI.GOV.IN · SCREEN RECORDING (REPLAYED)</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+
+      const URL_ = "bimabharosa.irdai.gov.in", TITLE = "Bima Bharosa | IRDAI";
+      pop($("win"), 0.05, { opacity: 0, y: 60, scale: 0.96 });
+      const typedK = FIN.keys([[C.type0, 0], [C.type1, URL_.length]]);
+      FIN.bind($("typed"), typedK, (v) => URL_.slice(0, Math.round(v)));
+      FIN.bind($("bigt"), typedK, (v) => URL_.slice(0, Math.round(v)) || " ");
+      FIN.hook((t) => { $("caret").style.opacity = t < C.load && Math.floor(t * 2) % 2 === 0 ? 1 : 0;
+        $("big").style.opacity = t < C.type0 ? 0 : 1; });
+      FIN.bind($("tabt"), (t) => t > C.load + 0.6 ? 1 : 0, (v) => v ? TITLE : "New tab");
+      tl.fromTo($("load"), { scaleX: 0, opacity: 1 }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, C.load);
+      tl.to($("load"), { opacity: 0, duration: 0.2 }, C.load + 0.85);
+      tl.fromTo($("pg"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, C.load + 0.4);
+      const sk = FIN.keys([[0, 0.0], [4.85, 0.0]]);
+      FIN.hook((t) => { const y = -sk(t); $("pg").style.transform = `translateY(${y}px)`;
+        document.querySelectorAll(".hl").forEach((h) => h.style.transform = `translateY(${y}px)`); });
+      const cx = FIN.keys([[0, 1200], [5.1499999999999995, 1200], [6.35, 272.3684210526316]]), cy = FIN.keys([[0, 700], [5.1499999999999995, 700], [6.35, 368.3684210526316]]);
+      FIN.hook((t) => { $("cur").style.transform = `translate(${cx(t)}px, ${cy(t)}px)`; $("cur").style.opacity = t > C.load + 1 ? 1 : 0; });
+      gsap.set($("rip"), { x: 272.3684210526316, y: 368.3684210526316 });
+      tl.fromTo($("rip"), { opacity: 1, scale: 0.4 }, { opacity: 0, scale: 2.4, duration: 0.6, ease: "power2.out", immediateRender: false }, 6.35);
+      tl.to($("h0"), { opacity: 1, duration: 0.3 }, 7.05);
+      pop($("k0"), 5.1499999999999995, { opacity: 0, x: 40 });pop($("k1"), 8.52, { opacity: 0, x: 40 });
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.03, duration: D.duration, ease: "none" }, 0);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["e22_bima"] = tl;
+    </script>
+  </body>
+</html>

@@ -5,7 +5,7 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 | # | Start | Dur | Kind | Asset | Lower third | Tag |
 |---|---|---|---|---|---|---|
 | 0 | 0.00 | 3.30 | clip | coverr-hospital-entrance-in-paris-1523.mp4 | IMAGINE THIS | ILLUSTRATIVE FOOTAGE |
-| 1 | 3.30 | 3.31 | clip | coverr-hospital-entrance-in-buenos-aires-8579.mp4 | THOUSANDS OF FAMILIES · EVERY DAY | ILLUSTRATIVE FOOTAGE |
+| 1 | 3.30 | 3.31 | still | hospital_cutaway.jpg | THOUSANDS OF FAMILIES · EVERY DAY | ILLUSTRATION · AI-GENERATED IMAGE |
 | 2 | 6.61 | 9.80 | scene | e0_ledger |  |  |
 | 3 | 16.41 | 2.66 | clip | coverr-mount-sinai-ambulance-7110.mp4 | AN EMERGENCY | ILLUSTRATIVE FOOTAGE |
 | 4 | 19.07 | 2.22 | clip | coverr-iv-in-hospital-room-5485.mp4 | ADMITTED | ILLUSTRATIVE FOOTAGE |
@@ -59,25 +59,24 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 | 52 | 354.09 | 3.20 | clip | pixabay_49809.mp4 | ASK YOUR DOCTOR FOR A LETTER | ILLUSTRATIVE FOOTAGE |
 | 53 | 357.29 | 10.67 | scene | e17_warroom |  |  |
 | 54 | 367.96 | 3.00 | clip | pixabay_3145.mp4 | A CALM, FORMAL EMAIL | ILLUSTRATIVE FOOTAGE |
-| 55 | 370.96 | 15.00 | scene | e17_warroom |  |  |
-| 56 | 385.96 | 6.38 | scene | d_bima |  |  |
-| 57 | 392.34 | 23.88 | scene | e17_warroom |  |  |
-| 58 | 416.22 | 6.25 | scene | d_cio |  |  |
-| 59 | 422.47 | 10.06 | scene | e17_warroom |  |  |
-| 60 | 432.53 | 4.20 | scene | d_h3 |  |  |
-| 61 | 436.73 | 13.34 | scene | e17_warroom |  |  |
-| 62 | 450.07 | 3.00 | scene | d_50l |  |  |
-| 63 | 453.07 | 3.69 | scene | e17_warroom |  |  |
-| 64 | 456.76 | 3.99 | clip | coverr-woman-sorting-out-her-bills-8376.mp4 | BEFORE YOU BUY | ILLUSTRATIVE FOOTAGE |
-| 65 | 460.75 | 0.91 | scene | e18_checklist |  |  |
-| 66 | 461.66 | 3.18 | clip | pixabay_34258.mp4 | DISCLOSE IN WRITING | ILLUSTRATIVE FOOTAGE |
-| 67 | 464.84 | 20.06 | scene | e18_checklist |  |  |
-| 68 | 484.90 | 2.60 | clip | coverr-putting-medical-gloves-on-5311.mp4 | GLOVES · MASKS · SYRINGES | ILLUSTRATIVE FOOTAGE |
-| 69 | 487.50 | 8.89 | scene | e18_checklist |  |  |
-| 70 | 496.39 | 2.70 | clip | coverr-mother-and-daughter-hugging-each-other-7302.mp4 | PEACE OF MIND |  |
-| 71 | 499.09 | 2.28 | clip | pixabay_151296.mp4 |  |  |
-| 72 | 501.37 | 5.27 | scene | e19_cheatsheet |  |  |
-| 73 | 506.64 | 4.27 | clip | coverr-an-adult-walking-hand-in-hand-with-a-child-at-sunset.mp4 | BE PRACTICAL |  |
-| 74 | 510.91 | 14.60 | end | end |  |  |
+| 55 | 370.96 | 21.85 | scene | e17_warroom |  |  |
+| 56 | 392.81 | 10.78 | scene | e22_bima |  |  |
+| 57 | 403.59 | 12.63 | scene | e21_india |  |  |
+| 58 | 416.22 | 16.31 | scene | e23_cio |  |  |
+| 59 | 432.53 | 4.20 | scene | d_h3 |  |  |
+| 60 | 436.73 | 13.34 | scene | e17_warroom |  |  |
+| 61 | 450.07 | 3.00 | scene | d_50l |  |  |
+| 62 | 453.07 | 3.69 | scene | e17_warroom |  |  |
+| 63 | 456.76 | 3.99 | clip | coverr-woman-sorting-out-her-bills-8376.mp4 | BEFORE YOU BUY | ILLUSTRATIVE FOOTAGE |
+| 64 | 460.75 | 0.91 | scene | e18_checklist |  |  |
+| 65 | 461.66 | 3.18 | clip | pixabay_34258.mp4 | DISCLOSE IN WRITING | ILLUSTRATIVE FOOTAGE |
+| 66 | 464.84 | 20.06 | scene | e18_checklist |  |  |
+| 67 | 484.90 | 2.60 | clip | coverr-putting-medical-gloves-on-5311.mp4 | GLOVES · MASKS · SYRINGES | ILLUSTRATIVE FOOTAGE |
+| 68 | 487.50 | 8.89 | scene | e18_checklist |  |  |
+| 69 | 496.39 | 2.70 | clip | coverr-mother-and-daughter-hugging-each-other-7302.mp4 | PEACE OF MIND |  |
+| 70 | 499.09 | 2.28 | clip | pixabay_151296.mp4 |  |  |
+| 71 | 501.37 | 5.27 | scene | e19_cheatsheet |  |  |
+| 72 | 506.64 | 4.27 | clip | coverr-an-adult-walking-hand-in-hand-with-a-child-at-sunset.mp4 | BE PRACTICAL |  |
+| 73 | 510.91 | 14.60 | end | end |  |  |
 
-75 shots, median 4.20 s, longest 26.60 s.
+74 shots, median 4.20 s, longest 26.60 s.
