@@ -152,6 +152,24 @@ SHOTS = [
 ]
 
 
+# ---- v2 (owner's visual-engine upgrade, 2026-10-14): programmatic scenes (build/make_engines.py) replace stock b-roll;
+# real source pages run on the 3D document rig (d_*). Scenes carry their own labels and citation tags. ----
+SC2 = lambda sid, t=None: S(scene_meta(sid)[0] if t is None else t, "scene", id=sid)
+SHOTS_V2 = [
+    SC2("e1_hospital"), SC2("e0_ledger"), SC2("e1_hospital", scene_meta("e0_ledger")[1]),
+    SC2("s01_letter"), SC2("e2_shock"), SC2("e2_drain"), SC2("e3_scale"), SC2("e1b_overstamp"),
+    S(L("E010")[0] - 0.25, "sting"),
+    SC2("e4_pillars"), SC2("e5_funnel"), SC2("e6_lock"), SC2("d_para17"), SC2("e7_dossier"), SC2("e8_opd"), SC2("e9_slicer"), SC2("e10_wall"),
+    SC2("e11_shield"), SC2("d_para13"), SC2("e12_history"), SC2("e13_burden"), SC2("e14_port"), SC2("e15_impact"),
+    SC2("e16_stopwatch"), SC2("d_para16"), SC2("e16_stopwatch", scene_meta("d_para16")[1]), SC2("d_para16b"), SC2("e16_stopwatch", scene_meta("d_para16b")[1]),
+    SC2("e17_warroom"), SC2("d_bima"), SC2("e17_warroom", scene_meta("d_bima")[1]), SC2("d_cio"), SC2("e17_warroom", scene_meta("d_cio")[1]),
+    SC2("d_h3"), SC2("e17_warroom", scene_meta("d_h3")[1]), SC2("d_50l"), SC2("e17_warroom", scene_meta("d_50l")[1]),
+    SC2("e18_checklist"), SC2("e19_cheatsheet"),
+    S(at("E063"), "end"),
+]
+VERSION = "v2"
+
+
 # ---------- rendering (adapted from projects/minimum-due/build/assemble.py) ----------
 def run(cmd):
     r = subprocess.run([str(c) for c in cmd], capture_output=True, text=True)
@@ -292,7 +310,7 @@ def src_mtime(s):
 
 
 def shot_list():
-    return split_long(sorted(SHOTS, key=lambda s: s["t"]), END)
+    return split_long(sorted(SHOTS_V2 if VERSION == "v2" else SHOTS, key=lambda s: s["t"]), END)
 
 
 def write_edl(shots):
@@ -336,7 +354,7 @@ def main():
         print(f"{i:03d} {s['t']:7.2f} {dur:6.2f} {s['kind']:6s} {s.get('label') or s.get('id') or ''}", flush=True)
         lst.append(f"file '{out}'")
     (sd / "list.txt").write_text("\n".join(lst) + "\n")
-    video = A / f"video{H}.mp4"
+    video = A / f"video{H}_{VERSION}.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", sd / "list.txt", "-c", "copy", video])
     # ---- audio: VO segments at their film times (the owner's two 3 s silences are the gaps) ----
     vo = A / "vo.wav"
@@ -349,7 +367,7 @@ def main():
     bed = A / "bed.wav"
     reveal = L("E033")[0]
     cues = {"duration": END + 1,
-            "impacts": [round(scene_meta("s01_letter")[0] + 6.6, 2), round(scene_meta("s01b_overstamp")[0] + 8.7, 2), round(reveal, 2)],
+            "impacts": [round(scene_meta("s01_letter")[0] + 6.6, 2), round(scene_meta("e1b_overstamp")[0] + 8.7, 2), round(reveal, 2)],
             "swells": [{"at": L("E009")[0] - 2, "dur": 3}],
             "sections": [{"start": 0, "mood": "tense"}, {"start": L("E042")[0], "mood": "neutral"}, {"start": L("E057")[0], "mood": "calm"}]}
     cj = A / "bed_cues.json"
@@ -378,7 +396,7 @@ def main():
     bug_off = f"between(t,{sting['t']},{shots[i_s+1]['t']})+gte(t,{endc['t']})"
     logo = A / f"logo_bug_{H}.png"
     run(["ffmpeg", "-v", "error", "-y", "-i", ROOT / "assets/brand/logo_square.png", "-vf", f"scale={int(H*0.09)}:-2,format=rgba,colorchannelmixer=aa=0.85", logo])
-    out = A / f"health-claim-trap-preview-{H}p.mp4"
+    out = A / f"health-claim-trap-preview-{VERSION}-{H}p.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-i", video, "-i", mix, "-loop", "1", "-framerate", "30", "-t", f"{END:.2f}", "-i", logo,
          "-filter_complex", "[2:v]format=rgba[lg];"
          f"[0:v][lg]overlay=W-w-{int(H*0.04)}:{int(H*0.04)}:enable='not({bug_off})'[v];[1:a]{ln},aresample=48000[a]",

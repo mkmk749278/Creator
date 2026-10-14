@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Isometric hospital cutaway</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+.bp { position: absolute; inset: -60px; background:
+  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+.glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
+  border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
+.t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.t-v { font: 800 56px/1.05 Inter, Arial, sans-serif; color: var(--white); }
+.mono { font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.ill { position: absolute; left: 64px; top: 48px; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #facc15;
+  background: rgba(2,6,15,.7); padding: 10px 14px; border-radius: 6px; border-left: 4px solid #facc15; }
+
+.floor .fl { fill: rgba(15,23,42,.92); stroke: rgba(56,189,248,.55); stroke-width: 2; }
+.floor .fr { fill: rgba(19,37,74,.92); stroke: rgba(56,189,248,.55); stroke-width: 2; }
+.floor .ft { fill: rgba(30,58,95,.6); stroke: rgba(56,189,248,.7); stroke-width: 2; }
+.win { fill: rgba(56,189,248,.16); stroke: none; }
+.hub .fl { fill: rgba(30,20,6,.9); stroke: rgba(245,158,11,.6); stroke-width: 2; } .hub .fr { fill: rgba(45,30,8,.9); stroke: rgba(245,158,11,.6); stroke-width: 2; }
+.hub .ft { fill: rgba(245,158,11,.25); stroke: rgba(245,158,11,.8); stroke-width: 2; } .hub .win { fill: rgba(245,158,11,.2); }
+
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="e1_hospital" data-start="0" data-width="1920" data-height="1080" data-duration="31.26">
+      
+      <div id="stage">
+<div class="bp" id="bp"></div><div class="ill">ILLUSTRATION</div>
+      <svg id="world" viewBox="-960 -700 1920 1080" style="position:absolute; inset:0; width:1920px; height:1080px">
+        <g id="cam">
+          <circle cx="-429" cy="-1179" r="2.0" fill="#cbd5e1" opacity="0.24"/><circle cx="208" cy="-1007" r="1.1" fill="#cbd5e1" opacity="0.45"/><circle cx="-1288" cy="-953" r="1.1" fill="#cbd5e1" opacity="0.25"/><circle cx="-126" cy="-639" r="1.2" fill="#cbd5e1" opacity="0.31"/><circle cx="482" cy="-542" r="1.9" fill="#cbd5e1" opacity="0.40"/><circle cx="1529" cy="-1263" r="2.4" fill="#cbd5e1" opacity="0.34"/><circle cx="-967" cy="-1206" r="1.5" fill="#cbd5e1" opacity="0.61"/><circle cx="-858" cy="-835" r="2.0" fill="#cbd5e1" opacity="0.39"/><circle cx="243" cy="-1250" r="1.1" fill="#cbd5e1" opacity="0.30"/><circle cx="641" cy="-958" r="1.5" fill="#cbd5e1" opacity="0.49"/><circle cx="-40" cy="-1060" r="2.3" fill="#cbd5e1" opacity="0.55"/><circle cx="-668" cy="-840" r="1.8" fill="#cbd5e1" opacity="0.64"/><circle cx="788" cy="-1070" r="2.6" fill="#cbd5e1" opacity="0.26"/><circle cx="-146" cy="-694" r="1.2" fill="#cbd5e1" opacity="0.44"/><circle cx="-1282" cy="-765" r="2.2" fill="#cbd5e1" opacity="0.49"/><circle cx="1226" cy="-1049" r="2.1" fill="#cbd5e1" opacity="0.50"/><circle cx="340" cy="-935" r="2.3" fill="#cbd5e1" opacity="0.67"/><circle cx="22" cy="-769" r="1.1" fill="#cbd5e1" opacity="0.55"/><circle cx="541" cy="-506" r="2.3" fill="#cbd5e1" opacity="0.34"/><circle cx="-243" cy="-765" r="1.0" fill="#cbd5e1" opacity="0.43"/><circle cx="-896" cy="-1206" r="1.1" fill="#cbd5e1" opacity="0.58"/><circle cx="-1012" cy="-1102" r="1.6" fill="#cbd5e1" opacity="0.64"/><circle cx="-1158" cy="-941" r="1.9" fill="#cbd5e1" opacity="0.64"/><circle cx="1058" cy="-609" r="1.4" fill="#cbd5e1" opacity="0.41"/><circle cx="-324" cy="-593" r="2.5" fill="#cbd5e1" opacity="0.28"/><circle cx="-871" cy="-1114" r="1.4" fill="#cbd5e1" opacity="0.44"/><circle cx="367" cy="-1090" r="1.0" fill="#cbd5e1" opacity="0.41"/><circle cx="-292" cy="-847" r="2.5" fill="#cbd5e1" opacity="0.55"/><circle cx="146" cy="-806" r="2.1" fill="#cbd5e1" opacity="0.23"/><circle cx="1299" cy="-676" r="2.4" fill="#cbd5e1" opacity="0.60"/><circle cx="-223" cy="-981" r="1.2" fill="#cbd5e1" opacity="0.52"/><circle cx="-1213" cy="-1246" r="1.3" fill="#cbd5e1" opacity="0.28"/><circle cx="-380" cy="-1258" r="1.0" fill="#cbd5e1" opacity="0.28"/><circle cx="-1096" cy="-1009" r="1.0" fill="#cbd5e1" opacity="0.64"/><circle cx="442" cy="-1181" r="1.4" fill="#cbd5e1" opacity="0.37"/><circle cx="-308" cy="-1202" r="2.4" fill="#cbd5e1" opacity="0.70"/><circle cx="-2" cy="-913" r="1.1" fill="#cbd5e1" opacity="0.25"/><circle cx="-372" cy="-1088" r="2.3" fill="#cbd5e1" opacity="0.28"/><circle cx="-1331" cy="-539" r="1.8" fill="#cbd5e1" opacity="0.27"/><circle cx="230" cy="-1278" r="1.8" fill="#cbd5e1" opacity="0.69"/><circle cx="1190" cy="-743" r="1.4" fill="#cbd5e1" opacity="0.38"/><circle cx="-899" cy="-682" r="1.9" fill="#cbd5e1" opacity="0.59"/><circle cx="-411" cy="-1122" r="2.3" fill="#cbd5e1" opacity="0.69"/><circle cx="1158" cy="-655" r="2.3" fill="#cbd5e1" opacity="0.57"/><circle cx="-720" cy="-886" r="1.6" fill="#cbd5e1" opacity="0.21"/><circle cx="-1316" cy="-1076" r="1.4" fill="#cbd5e1" opacity="0.55"/><circle cx="1470" cy="-942" r="2.5" fill="#cbd5e1" opacity="0.69"/><circle cx="1465" cy="-1008" r="1.4" fill="#cbd5e1" opacity="0.31"/><circle cx="-810" cy="-1137" r="2.0" fill="#cbd5e1" opacity="0.65"/><circle cx="1121" cy="-916" r="2.0" fill="#cbd5e1" opacity="0.60"/><circle cx="-1146" cy="-772" r="2.5" fill="#cbd5e1" opacity="0.59"/><circle cx="850" cy="-918" r="1.3" fill="#cbd5e1" opacity="0.59"/><circle cx="-402" cy="-659" r="2.6" fill="#cbd5e1" opacity="0.40"/><circle cx="-196" cy="-543" r="2.2" fill="#cbd5e1" opacity="0.29"/><circle cx="-1019" cy="-1179" r="2.4" fill="#cbd5e1" opacity="0.60"/><circle cx="-961" cy="-639" r="2.6" fill="#cbd5e1" opacity="0.53"/><circle cx="-349" cy="-861" r="1.2" fill="#cbd5e1" opacity="0.21"/><circle cx="1513" cy="-780" r="1.8" fill="#cbd5e1" opacity="0.67"/><circle cx="-99" cy="-603" r="2.3" fill="#cbd5e1" opacity="0.31"/><circle cx="-644" cy="-1066" r="1.4" fill="#cbd5e1" opacity="0.49"/><circle cx="-622" cy="-965" r="1.2" fill="#cbd5e1" opacity="0.66"/><circle cx="-339" cy="-933" r="1.9" fill="#cbd5e1" opacity="0.65"/><circle cx="-138" cy="-566" r="1.8" fill="#cbd5e1" opacity="0.47"/><circle cx="171" cy="-1285" r="1.7" fill="#cbd5e1" opacity="0.29"/><circle cx="-1388" cy="-661" r="1.3" fill="#cbd5e1" opacity="0.44"/><circle cx="776" cy="-855" r="1.5" fill="#cbd5e1" opacity="0.46"/><circle cx="266" cy="-673" r="1.2" fill="#cbd5e1" opacity="0.48"/><circle cx="-655" cy="-1078" r="2.2" fill="#cbd5e1" opacity="0.45"/><circle cx="285" cy="-692" r="2.5" fill="#cbd5e1" opacity="0.42"/><circle cx="438" cy="-896" r="1.8" fill="#cbd5e1" opacity="0.55"/><circle cx="-43" cy="-873" r="1.8" fill="#cbd5e1" opacity="0.67"/><circle cx="698" cy="-599" r="2.5" fill="#cbd5e1" opacity="0.33"/><circle cx="279" cy="-545" r="2.3" fill="#cbd5e1" opacity="0.27"/><circle cx="-1035" cy="-946" r="1.1" fill="#cbd5e1" opacity="0.32"/><circle cx="-1181" cy="-764" r="2.3" fill="#cbd5e1" opacity="0.65"/><circle cx="-937" cy="-727" r="2.1" fill="#cbd5e1" opacity="0.27"/><circle cx="1248" cy="-526" r="1.4" fill="#cbd5e1" opacity="0.68"/><circle cx="-205" cy="-910" r="2.6" fill="#cbd5e1" opacity="0.62"/><circle cx="-916" cy="-955" r="1.8" fill="#cbd5e1" opacity="0.37"/><circle cx="-813" cy="-1045" r="2.2" fill="#cbd5e1" opacity="0.21"/><circle cx="262" cy="-948" r="1.0" fill="#cbd5e1" opacity="0.37"/><circle cx="472" cy="-890" r="1.1" fill="#cbd5e1" opacity="0.69"/><circle cx="965" cy="-523" r="1.2" fill="#cbd5e1" opacity="0.33"/><circle cx="-1281" cy="-677" r="1.4" fill="#cbd5e1" opacity="0.26"/><circle cx="-133" cy="-571" r="2.3" fill="#cbd5e1" opacity="0.33"/><circle cx="-952" cy="-565" r="1.9" fill="#cbd5e1" opacity="0.55"/><circle cx="-1132" cy="-1254" r="2.1" fill="#cbd5e1" opacity="0.41"/><circle cx="-1183" cy="-549" r="2.0" fill="#cbd5e1" opacity="0.60"/><circle cx="-1149" cy="-615" r="1.1" fill="#cbd5e1" opacity="0.63"/><circle cx="-39" cy="-1029" r="1.9" fill="#cbd5e1" opacity="0.66"/>
+          <g stroke="rgba(56,189,248,.12)" stroke-width="2"><line x1="0" y1="-400" x2="1819" y2="650"/><line x1="-87" y1="-350" x2="1732" y2="700"/><line x1="-173" y1="-300" x2="1645" y2="750"/><line x1="-260" y1="-250" x2="1559" y2="800"/><line x1="-346" y1="-200" x2="1472" y2="850"/><line x1="-433" y1="-150" x2="1386" y2="900"/><line x1="-520" y1="-100" x2="1299" y2="950"/><line x1="-606" y1="-50" x2="1212" y2="1000"/><line x1="-693" y1="0" x2="1126" y2="1050"/><line x1="-779" y1="50" x2="1039" y2="1100"/><line x1="-866" y1="100" x2="953" y2="1150"/><line x1="-953" y1="150" x2="866" y2="1200"/><line x1="-1039" y1="200" x2="779" y2="1250"/><line x1="-1126" y1="250" x2="693" y2="1300"/><line x1="-1212" y1="300" x2="606" y2="1350"/><line x1="-1299" y1="350" x2="520" y2="1400"/><line x1="-1386" y1="400" x2="433" y2="1450"/><line x1="0" y1="-400" x2="-1472" y2="450"/><line x1="87" y1="-350" x2="-1386" y2="500"/><line x1="173" y1="-300" x2="-1299" y2="550"/><line x1="260" y1="-250" x2="-1212" y2="600"/><line x1="346" y1="-200" x2="-1126" y2="650"/><line x1="433" y1="-150" x2="-1039" y2="700"/><line x1="520" y1="-100" x2="-953" y2="750"/><line x1="606" y1="-50" x2="-866" y2="800"/><line x1="693" y1="0" x2="-779" y2="850"/><line x1="779" y1="50" x2="-693" y2="900"/><line x1="866" y1="100" x2="-606" y2="950"/><line x1="953" y1="150" x2="-520" y2="1000"/><line x1="1039" y1="200" x2="-433" y2="1050"/><line x1="1126" y1="250" x2="-346" y2="1100"/><line x1="1212" y1="300" x2="-260" y2="1150"/><line x1="1299" y1="350" x2="-173" y2="1200"/><line x1="1386" y1="400" x2="-87" y2="1250"/><line x1="1472" y1="450" x2="0" y2="1300"/><line x1="1559" y1="500" x2="87" y2="1350"/><line x1="1645" y1="550" x2="173" y2="1400"/><line x1="1732" y1="600" x2="260" y2="1450"/></g>
+          <path id="pipe" d="M320.4 335.0 L614.9 505.0 L727.5 440.0 L900.7 540.0" fill="none" stroke="rgba(56,189,248,.35)" stroke-width="10" stroke-linecap="round"/>
+          <path id="pulse" d="M320.4 335.0 L614.9 505.0 L727.5 440.0 L900.7 540.0" fill="none" stroke="#38bdf8" stroke-width="10" stroke-linecap="round" stroke-dasharray="30 170"/>
+          <g class="hub" id="hub"><polygon points="814.1,630.0 987.3,730.0 987.3,310.0 814.1,210.0" class="fl"/><polygon points="1160.5,630.0 987.3,730.0 987.3,310.0 1160.5,210.0" class="fr"/><polygon points="987.3,110.0 1160.5,210.0 987.3,310.0 814.1,210.0" class="ft"/><polygon points="829.7,613.0 864.3,633.0 864.3,269.0 829.7,249.0" class="win"/><polygon points="853.3,626.7 888.0,646.7 888.0,282.7 853.3,262.7" class="win"/><polygon points="877.0,640.3 911.6,660.3 911.6,296.3 877.0,276.3" class="win"/><polygon points="900.7,654.0 935.3,674.0 935.3,310.0 900.7,290.0" class="win"/><polygon points="924.3,667.7 959.0,687.7 959.0,323.7 924.3,303.7" class="win"/><polygon points="948.0,681.3 982.7,701.3 982.7,337.3 948.0,317.3" class="win"/><polygon points="1144.9,613.0 1110.2,633.0 1110.2,269.0 1144.9,249.0" class="win"/><polygon points="1109.4,633.5 1074.7,653.5 1074.7,289.5 1109.4,269.5" class="win"/><polygon points="1073.9,654.0 1039.2,674.0 1039.2,310.0 1073.9,290.0" class="win"/><polygon points="1038.4,674.5 1003.7,694.5 1003.7,330.5 1038.4,310.5" class="win"/></g>
+          <text x="987" y="180" text-anchor="middle" fill="#f59e0b" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="30" letter-spacing="3">TPA PROCESSING HUB</text>
+          <g class="floor f0" id="fl0"><polygon points="-329.1,190.0 155.9,470.0 155.9,358.0 -329.1,78.0" class="fl"/><polygon points="485.0,280.0 155.9,470.0 155.9,358.0 485.0,168.0" class="fr"/><polygon points="0.0,-112.0 485.0,168.0 155.9,358.0 -329.1,78.0" class="ft"/><polygon points="-313.5,173.0 -278.9,193.0 -278.9,137.0 -313.5,117.0" class="win"/><polygon points="-237.9,216.7 -203.2,236.7 -203.2,180.7 -237.9,160.7" class="win"/><polygon points="-162.2,260.3 -127.6,280.3 -127.6,224.3 -162.2,204.3" class="win"/><polygon points="-86.6,304.0 -52.0,324.0 -52.0,268.0 -86.6,248.0" class="win"/><polygon points="-11.0,347.7 23.7,367.7 23.7,311.7 -11.0,291.7" class="win"/><polygon points="64.7,391.3 99.3,411.3 99.3,355.3 64.7,335.3" class="win"/><polygon points="469.4,263.0 434.7,283.0 434.7,227.0 469.4,207.0" class="win"/><polygon points="394.9,306.0 360.3,326.0 360.3,270.0 394.9,250.0" class="win"/><polygon points="320.4,349.0 285.8,369.0 285.8,313.0 320.4,293.0" class="win"/><polygon points="246.0,392.0 211.3,412.0 211.3,356.0 246.0,336.0" class="win"/></g><g class="floor f1" id="fl1"><polygon points="-329.1,70.0 155.9,350.0 155.9,238.0 -329.1,-42.0" class="fl"/><polygon points="485.0,160.0 155.9,350.0 155.9,238.0 485.0,48.0" class="fr"/><polygon points="0.0,-232.0 485.0,48.0 155.9,238.0 -329.1,-42.0" class="ft"/><polygon points="-313.5,53.0 -278.9,73.0 -278.9,17.0 -313.5,-3.0" class="win"/><polygon points="-237.9,96.7 -203.2,116.7 -203.2,60.7 -237.9,40.7" class="win"/><polygon points="-162.2,140.3 -127.6,160.3 -127.6,104.3 -162.2,84.3" class="win"/><polygon points="-86.6,184.0 -52.0,204.0 -52.0,148.0 -86.6,128.0" class="win"/><polygon points="-11.0,227.7 23.7,247.7 23.7,191.7 -11.0,171.7" class="win"/><polygon points="64.7,271.3 99.3,291.3 99.3,235.3 64.7,215.3" class="win"/><polygon points="469.4,143.0 434.7,163.0 434.7,107.0 469.4,87.0" class="win"/><polygon points="394.9,186.0 360.3,206.0 360.3,150.0 394.9,130.0" class="win"/><polygon points="320.4,229.0 285.8,249.0 285.8,193.0 320.4,173.0" class="win"/><polygon points="246.0,272.0 211.3,292.0 211.3,236.0 246.0,216.0" class="win"/></g><g class="floor f2" id="fl2"><polygon points="-329.1,-50.0 155.9,230.0 155.9,118.0 -329.1,-162.0" class="fl"/><polygon points="485.0,40.0 155.9,230.0 155.9,118.0 485.0,-72.0" class="fr"/><polygon points="0.0,-352.0 485.0,-72.0 155.9,118.0 -329.1,-162.0" class="ft"/><polygon points="-313.5,-67.0 -278.9,-47.0 -278.9,-103.0 -313.5,-123.0" class="win"/><polygon points="-237.9,-23.3 -203.2,-3.3 -203.2,-59.3 -237.9,-79.3" class="win"/><polygon points="-162.2,20.3 -127.6,40.3 -127.6,-15.7 -162.2,-35.7" class="win"/><polygon points="-86.6,64.0 -52.0,84.0 -52.0,28.0 -86.6,8.0" class="win"/><polygon points="-11.0,107.7 23.7,127.7 23.7,71.7 -11.0,51.7" class="win"/><polygon points="64.7,151.3 99.3,171.3 99.3,115.3 64.7,95.3" class="win"/><polygon points="469.4,23.0 434.7,43.0 434.7,-13.0 469.4,-33.0" class="win"/><polygon points="394.9,66.0 360.3,86.0 360.3,30.0 394.9,10.0" class="win"/><polygon points="320.4,109.0 285.8,129.0 285.8,73.0 320.4,53.0" class="win"/><polygon points="246.0,152.0 211.3,172.0 211.3,116.0 246.0,96.0" class="win"/></g><g class="floor f3" id="fl3"><polygon points="-329.1,-170.0 155.9,110.0 155.9,-2.0 -329.1,-282.0" class="fl"/><polygon points="485.0,-80.0 155.9,110.0 155.9,-2.0 485.0,-192.0" class="fr"/><polygon points="0.0,-472.0 485.0,-192.0 155.9,-2.0 -329.1,-282.0" class="ft"/><polygon points="-313.5,-187.0 -278.9,-167.0 -278.9,-223.0 -313.5,-243.0" class="win"/><polygon points="-237.9,-143.3 -203.2,-123.3 -203.2,-179.3 -237.9,-199.3" class="win"/><polygon points="-162.2,-99.7 -127.6,-79.7 -127.6,-135.7 -162.2,-155.7" class="win"/><polygon points="-86.6,-56.0 -52.0,-36.0 -52.0,-92.0 -86.6,-112.0" class="win"/><polygon points="-11.0,-12.3 23.7,7.7 23.7,-48.3 -11.0,-68.3" class="win"/><polygon points="64.7,31.3 99.3,51.3 99.3,-4.7 64.7,-24.7" class="win"/><polygon points="469.4,-97.0 434.7,-77.0 434.7,-133.0 469.4,-153.0" class="win"/><polygon points="394.9,-54.0 360.3,-34.0 360.3,-90.0 394.9,-110.0" class="win"/><polygon points="320.4,-11.0 285.8,9.0 285.8,-47.0 320.4,-67.0" class="win"/><polygon points="246.0,32.0 211.3,52.0 211.3,-4.0 246.0,-24.0" class="win"/></g>
+          
+          <path id="ecg" d="" fill="none" stroke="#f87171" stroke-width="6" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <div class="glass" id="inv" style="left:1180px; top:250px; width:600px; padding:30px 36px; opacity:0">
+        <div class="t-k">Final bill · Sample City Hospital</div>
+        <div class="t-v mono" id="amt" style="font-size:88px; margin-top:14px">₹0</div>
+        <div class="t-k" style="margin-top:16px; color:#f59e0b">21:00 HRS · discharge papers ready</div>
+      </div>
+      <div class="chip amber" id="icu" style="left:1180px; top:200px; opacity:0">3F · Emergency · admitted</div>
+      <div class="chip amber" id="lab3" style="left:1180px; top:120px; opacity:0">ICU / WARD</div>
+      <div class="chip cyan" id="lab0" style="left:1180px; top:120px; opacity:0">1F · Billing · TPA desk</div>
+      </div>
+      <div class="fin-tag" id="tag">ILLUSTRATIVE · SAMPLE HOSPITAL</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+
+      const cam = $("cam");
+      const keyS = FIN.keys([[0, 0.5], [6, 0.7], [C.icu, 0.75], [C.icu + 1.6, 1.7], [C.bill - 0.2, 1.7], [C.bill + 1.8, 1.45], [D.duration, 1.55]]);
+      const keyX = FIN.keys([[0, -380], [C.icu, -340], [C.icu + 1.6, -78], [C.bill - 0.2, -78], [C.bill + 1.8, -237], [D.duration, -233]]);
+      const keyY = FIN.keys([[0, 900], [5, -60], [C.icu, -40], [C.icu + 1.6, 91], [C.bill - 0.2, 91], [C.bill + 1.8, -203], [D.duration, -201]]);
+      FIN.hook((t) => { cam.setAttribute("transform", `scale(${keyS(t)}) translate(${keyX(t)} ${keyY(t)})`);
+        $("pulse").setAttribute("stroke-dashoffset", String(-t * 260));
+        // ICU telemetry line drawn from time only
+        if (t > C.icu) { const [cx, cy] = [-62, -355]; let d = "";
+          for (let i = 0; i <= 60; i++) { const x = cx + i * 5, ph = (i + t * 30) % 20; const y = cy - (ph > 9 && ph < 11 ? 60 * Math.sin((ph - 9) * Math.PI) : 0) * (t < C.adm + 2 ? 1 : 0.5);
+            d += (i ? " L" : "M") + x.toFixed(1) + " " + y.toFixed(1); } $("ecg").setAttribute("d", d); } });
+      // ICU floor glows amber, billing floor cyan
+      tl.to("#fl3 .ft, #fl3 .fl, #fl3 .fr", { fill: "rgba(245,158,11,.55)", duration: 0.4, yoyo: true, repeat: 5 }, C.icu);
+      tl.to("#fl3 .win", { fill: "rgba(245,158,11,.75)", duration: 0.4 }, C.icu);
+      pop($("lab3"), C.icu + 0.3, { opacity: 0 }); pop($("icu"), C.adm);
+      out($("icu"), C.bill - 0.5); out($("lab3"), C.bill);
+      tl.to("#fl0 .win", { fill: "rgba(56,189,248,.8)", duration: 0.4 }, C.bill + 0.6);
+      tl.to("#fl0 .ft", { fill: "rgba(56,189,248,.45)", duration: 0.4 }, C.bill + 0.6);
+      pop($("lab0"), C.bill + 0.8, { opacity: 0 });
+      pop($("inv"), C.ready, { opacity: 0, y: 40, rotationY: -30 });
+      FIN.bind($("amt"), FIN.keys([[C.amt, 0], [C.amt_end, 450000]]), (v) => FIN.inr(Math.round(v / 1000) * 1000));
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["e1_hospital"] = tl;
+    </script>
+  </body>
+</html>

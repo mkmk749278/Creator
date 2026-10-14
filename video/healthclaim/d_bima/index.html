@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Document rig: bima_register</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="d_bima" data-start="0" data-width="1920" data-height="1080" data-duration="6.38">
+      <div style="position:absolute; inset:0; background:#0b1530"></div>
+      <div id="stage">
+
+      <div id="rig" style="position:absolute; left:0; top:0; width:1920px; height:1080px; transform-origin:518px 281px">
+        <img src="img/page.jpg" style="position:absolute; inset:0; width:1920px; height:1080px"/>
+        <div id="scan" style="position:absolute; left:290px; width:456px; top:212px; height:4px;
+          background:#38bdf8; box-shadow:0 0 24px 6px rgba(56,189,248,.8); opacity:0"></div>
+      </div>
+      <div id="spot" style="position:absolute; inset:0; background: radial-gradient(circle at 27.0% 26.0%, rgba(0,0,0,0) 18%, rgba(2,6,15,.55) 60%); opacity:0"></div>
+      </div>
+      
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+
+      tl.fromTo($("rig"), { rotationX: 16, rotationY: -10, scale: 0.92, transformPerspective: 1800 },
+        { rotationX: 0, rotationY: 0, scale: 3.00, duration: Math.min(2.6, D.duration * 0.55), ease: "power2.inOut" }, 0);
+      tl.to($("rig"), { scale: 3.18, x: -20, duration: Math.max(0.5, D.duration - 2.6), ease: "none" }, Math.min(2.6, D.duration * 0.55));
+      tl.to($("spot"), { opacity: 1, duration: 0.8 }, 0.6);
+      tl.fromTo($("scan"), { opacity: 0.95, y: 0 }, { y: 138, duration: 1.1, ease: "power1.inOut" }, Math.min(1.4, D.duration * 0.35));
+      tl.to($("scan"), { opacity: 0, duration: 0.3 }, Math.min(2.6, D.duration * 0.35 + 1.1));
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["d_bima"] = tl;
+    </script>
+  </body>
+</html>

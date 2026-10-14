@@ -869,6 +869,21 @@ board vs real-footage balance, loudness) and refine once more.
 
 ## 15. Lessons log
 
+**Health Claim Rejection Trap (English, 2026-10-14).** (1) The owner's handoffs (a full brief, a "fixes" rewrite, then a
+visual-engine spec) each carried unsourced numbers ("80% rejected", "60 days", "₹500–800 rider", "₹90,000 cut",
+"17 centres", "lawyers banned"). The two-pass fact-check (draft claims → independent max-effort subagent → re-check of
+changed lines only) caught them all before recording. *Why:* the VO is locked once recorded; fixing after costs a re-take.
+(2) The free stock libraries have no Indian hospital billing counter, TPA desk or night corridor; the first preview leaned
+on generic foreign clinic stock and the owner rejected it as filler. v2 replaced every stock clip with programmatic
+HyperFrames scenes (`projects/health-claim-trap/build/make_engines.py`: isometric SVG cutaway, document rig with a 3D tilt
+and scan line, bill slicer, moratorium timeline, discharge stopwatch, one 129 s war-room scene with a panned 4800×2700
+world). *Why:* for explainers about rules and money, a moving diagram carries more information than stock, and it
+renders at ~3.5 s per output second on the cloud VM (2D SVG/CSS, no WebGL). (3) Never draw India's outline from
+memory or an unofficial source (map-border law); show city nodes without the border. (4) In SVG built from Python,
+`class_` keyword attributes must strip the trailing underscore (a `class-` attribute rendered every face black).
+(5) A `pgrep -f "<pattern>"` wait loop launched with `bash -c "... <pattern> ..."` matches itself and never ends: wait on
+a PID or a `.done` file instead (CLAUDE.md trap; it cost 10 minutes of idle renders).
+
 **Jet Engine Paradox (English, script phase, 2026-10-13).** The owner's brief came as a finished script from another
 AI tool. Of its ~40 facts, about 20 were wrong, out of date or unsourced. Some examples: "only four nations" (the brief's own Act 4
 names China), superalloys melting at 1,455 °C (that is pure nickel), "an elephant hanging from a soup spoon", AMCA engine

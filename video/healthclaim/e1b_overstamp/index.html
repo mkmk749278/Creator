@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>The moratorium core</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+.bp { position: absolute; inset: -60px; background:
+  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+.glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
+  border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
+.t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.t-v { font: 800 56px/1.05 Inter, Arial, sans-serif; color: var(--white); }
+.mono { font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.ill { position: absolute; left: 64px; top: 48px; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #facc15;
+  background: rgba(2,6,15,.7); padding: 10px 14px; border-radius: 6px; border-left: 4px solid #facc15; }
+.stampx { position: absolute; left: 360px; top: 400px; width: 1200px; height: 270px; border: 14px solid #dc2626; border-radius: 22px; color: #dc2626;
+  font: 800 150px/242px Inter, Arial, sans-serif; text-align: center; letter-spacing: .04em; transform: rotate(-8deg); background: rgba(40,6,6,.4); }
+#top { clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); } #bot { clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="e1b_overstamp" data-start="0" data-width="1920" data-height="1080" data-duration="12.0">
+      
+      <div id="stage">
+<div class="bp" id="bp"></div>
+        <div class="stampx" id="top">CASHLESS DENIED</div><div class="stampx" id="bot">CASHLESS DENIED</div>
+        <div id="laser" style="position:absolute; left:-200px; top:532px; width:2400px; height:8px; background:#38bdf8; box-shadow:0 0 30px 8px #38bdf8; opacity:0; transform:rotate(-8deg)"></div>
+        <div id="core" style="position:absolute; left:360px; top:430px; width:1200px; text-align:center; opacity:0">
+          <div style="font:800 86px/1.05 Inter,Arial,sans-serif; color:#facc15; text-shadow:0 0 40px rgba(250,204,21,.6)">60-MONTH MORATORIUM</div>
+          <div class="t-k" style="margin-top:22px; font-size:30px; color:#fde68a">After 5 years: not contestable for non-disclosure</div></div>
+      </div>
+      <div class="fin-tag" id="tag">IRDAI INSURANCE PRODUCTS REGULATIONS | 2024</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+
+      pop($("top"), 0.1, { opacity: 0, scale: 1.4 }); pop($("bot"), 0.1, { opacity: 0, scale: 1.4 });
+      tl.fromTo($("laser"), { opacity: 0, scaleX: 0, transformOrigin: "0 50%" }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.in" }, C.rule);
+      tl.to($("top"), { y: -260, rotation: -14, opacity: 0.25, duration: 0.9, ease: "power2.out" }, C.illegal);
+      tl.to($("bot"), { y: 260, rotation: -2, opacity: 0.25, duration: 0.9, ease: "power2.out" }, C.illegal);
+      tl.to($("laser"), { opacity: 0, duration: 0.4 }, C.illegal + 0.4);
+      pop($("core"), C.illegal + 0.3, { opacity: 0, scale: 0.8 });
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.06, duration: D.duration, ease: "none" }, 0);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["e1b_overstamp"] = tl;
+    </script>
+  </body>
+</html>

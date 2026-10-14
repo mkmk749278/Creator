@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>The 60 month shield</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+.bp { position: absolute; inset: -60px; background:
+  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+.glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
+  border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
+.t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.t-v { font: 800 56px/1.05 Inter, Arial, sans-serif; color: var(--white); }
+.mono { font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.ill { position: absolute; left: 64px; top: 48px; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #facc15;
+  background: rgba(2,6,15,.7); padding: 10px 14px; border-radius: 6px; border-left: 4px solid #facc15; }
+.mc { position:absolute; border-radius:3px; background:rgba(245,158,11,.35); }
+.yl { position:absolute; width:60px; margin-left:-30px; text-align:center; font:800 24px/1 Inter,Arial,sans-serif; color:#94a3b8; }
+.shield { position:absolute; width:46px; border-radius:10px; background:linear-gradient(#7dd3fc,#0284c7); box-shadow:0 0 60px 12px rgba(56,189,248,.65); }
+.shield span { position:absolute; left:60px; top:-6px; white-space:nowrap; font:800 28px/1 Inter,Arial,sans-serif; letter-spacing:.08em; color:#38bdf8; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="e11_shield" data-start="0" data-width="1920" data-height="1080" data-duration="16.01">
+      
+      <div id="stage">
+<div class="bp" id="bp"></div><div class="mc" id="m0" style="left:120.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m1" style="left:137.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m2" style="left:155.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m3" style="left:172.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m4" style="left:190.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m5" style="left:207.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m6" style="left:225.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m7" style="left:242.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m8" style="left:260.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m9" style="left:277.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m10" style="left:295.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m11" style="left:312.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m12" style="left:330.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m13" style="left:347.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m14" style="left:365.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m15" style="left:382.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m16" style="left:400.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m17" style="left:417.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m18" style="left:435.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m19" style="left:452.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m20" style="left:470.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m21" style="left:487.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m22" style="left:505.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m23" style="left:522.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m24" style="left:540.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m25" style="left:557.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m26" style="left:575.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m27" style="left:592.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m28" style="left:610.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m29" style="left:627.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m30" style="left:645.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m31" style="left:662.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m32" style="left:680.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m33" style="left:697.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m34" style="left:715.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m35" style="left:732.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m36" style="left:750.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m37" style="left:767.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m38" style="left:785.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m39" style="left:802.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m40" style="left:820.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m41" style="left:837.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m42" style="left:855.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m43" style="left:872.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m44" style="left:890.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m45" style="left:907.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m46" style="left:925.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m47" style="left:942.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m48" style="left:960.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m49" style="left:977.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m50" style="left:995.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m51" style="left:1012.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m52" style="left:1030.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m53" style="left:1047.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m54" style="left:1065.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m55" style="left:1082.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m56" style="left:1100.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m57" style="left:1117.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m58" style="left:1135.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m59" style="left:1152.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m60" style="left:1170.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m61" style="left:1187.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m62" style="left:1205.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m63" style="left:1222.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m64" style="left:1240.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m65" style="left:1257.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m66" style="left:1275.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m67" style="left:1292.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m68" style="left:1310.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m69" style="left:1327.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m70" style="left:1345.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m71" style="left:1362.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m72" style="left:1380.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m73" style="left:1397.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m74" style="left:1415.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m75" style="left:1432.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m76" style="left:1450.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m77" style="left:1467.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m78" style="left:1485.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m79" style="left:1502.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m80" style="left:1520.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m81" style="left:1537.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m82" style="left:1555.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m83" style="left:1572.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m84" style="left:1590.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m85" style="left:1607.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m86" style="left:1625.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m87" style="left:1642.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m88" style="left:1660.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m89" style="left:1677.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m90" style="left:1695.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m91" style="left:1712.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m92" style="left:1730.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m93" style="left:1747.5px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m94" style="left:1765.0px; top:520px; width:14.5px; height:90px"></div><div class="mc" id="m95" style="left:1782.5px; top:520px; width:14.5px; height:90px"></div><div class="yl" style="left:225px; top:626px">Y1</div><div class="yl" style="left:435px; top:626px">Y2</div><div class="yl" style="left:645px; top:626px">Y3</div><div class="yl" style="left:855px; top:626px">Y4</div><div class="yl" style="left:1065px; top:626px">Y5</div><div class="yl" style="left:1275px; top:626px">Y6</div><div class="yl" style="left:1485px; top:626px">Y7</div><div class="yl" style="left:1695px; top:626px">Y8</div>
+      <div class="glass" id="lab" style="left:120px; top:220px; padding:22px 30px"><div class="t-k">Moratorium period</div><div class="t-v mono" id="yrs" style="font-size:72px">8 years</div></div>
+      <div class="shield" id="sh" style="left:1147px; top:380px; height:380px; opacity:0"><span>MONTH 60 · IRDAI 2024</span></div>
+      <div class="chip cyan" id="nb" style="left:120px; top:820px; opacity:0">60 continuous months · no break</div>
+      </div>
+      <div class="fin-tag" id="tag">IRDAI INSURANCE PRODUCTS REGULATIONS | 2024</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+
+      pop($("lab"), C.mor, { opacity: 0, x: -40 });
+      for (let i = 0; i < 96; i++) pop($("m" + i), C.mor + 0.2 + i * 0.012, { opacity: 0, y: 30 });
+      for (let i = 60; i < 96; i++) tl.to($("m" + i), { y: 260 + (i % 5) * 50, rotation: (i % 2 ? 40 : -30), opacity: 0, duration: 0.7, ease: "power2.in" }, C.down + (i - 60) * 0.025);
+      FIN.bind($("yrs"), (t) => t < C.five ? 0 : 1, (v) => v ? "5 years" : "8 years");
+      tl.to($("yrs"), { color: "#38bdf8", duration: 0.3 }, C.five);
+      tl.fromTo($("sh"), { opacity: 0, y: -500 }, { opacity: 1, y: 0, duration: 0.45, ease: "power4.in" }, C.five + 0.1);
+      tl.fromTo($("stage"), { y: 0 }, { y: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, C.five + 0.55);
+      for (let i = 0; i < 60; i++) tl.to($("m" + i), { background: "#0284c7", duration: 0.06 }, C.sixty + i * 0.05);
+      pop($("nb"), C.sixty + 1.0, { opacity: 0 });
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.04, duration: D.duration, ease: "none" }, 0);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["e11_shield"] = tl;
+    </script>
+  </body>
+</html>

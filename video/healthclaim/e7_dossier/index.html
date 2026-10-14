@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Excuse one: the x-ray rig</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+.bp { position: absolute; inset: -60px; background:
+  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+.glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
+  border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
+.t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.t-v { font: 800 56px/1.05 Inter, Arial, sans-serif; color: var(--white); }
+.mono { font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.ill { position: absolute; left: 64px; top: 48px; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #facc15;
+  background: rgba(2,6,15,.7); padding: 10px 14px; border-radius: 6px; border-left: 4px solid #facc15; }
+.clip { position:absolute; top:220px; width:480px; height:640px; padding:70px 40px; border-radius:20px; background:#f1ede4; box-shadow:0 40px 80px rgba(0,0,0,.6); }
+.clamp { position:absolute; left:160px; top:-26px; width:160px; height:56px; border-radius:12px; background:linear-gradient(#94a3b8,#475569); }
+.lines { margin-top:40px; height:300px; background: repeating-linear-gradient(0deg, transparent 0 44px, rgba(15,23,42,.12) 44px 46px); }
+.paper2 { position:absolute; padding:40px; border-radius:10px; background:#f4f1ea; color:#1f2937; box-shadow:0 40px 90px rgba(0,0,0,.7); overflow:hidden; }
+.row2 { font:600 30px/1.4 Inter,Arial,sans-serif; border-bottom:1px solid #d6d0c2; padding:12px 0; }
+.row2.sm { font-size:26px; display:flex; justify-content:space-between; } .row2.sm b { font-weight:800; }
+.hand2 { font: italic 44px/1.4 Georgia, serif; color:#1d3c8f; min-height:70px; margin-top:12px; }
+.gate { position:absolute; top:330px; width:520px; padding:60px 0; text-align:center; border-radius:24px; background:rgba(15,23,42,.9); border:3px solid rgba(148,163,184,.5); font:800 54px/1 Inter,Arial,sans-serif; color:#f8fafc; }
+.neq { position:absolute; left:880px; top:300px; width:160px; text-align:center; font:800 180px/1 Inter,Arial,sans-serif; color:#f87171; }
+.yc { flex:1; padding:22px 0; text-align:center; border-radius:10px; background:rgba(245,158,11,.25); font:800 26px/1 Inter,Arial,sans-serif; color:#f59e0b; }
+#y5 { background: rgba(56,189,248,.3); color:#38bdf8; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="e7_dossier" data-start="0" data-width="1920" data-height="1080" data-duration="37.28">
+      
+      <div id="stage">
+<div class="bp" id="bp"></div>
+      <div id="sec1"><div class="clip" id="k0" style="left:180px"><div class="clamp"></div>
+        <div class="t-k" style="color:#f87171">Excuse 1</div><div style="font:800 40px/1.15 Inter,Arial,sans-serif; margin-top:16px; color:#0f172a">Non-disclosure</div>
+        <div class="lines"></div></div><div class="clip" id="k1" style="left:740px"><div class="clamp"></div>
+        <div class="t-k" style="color:#f87171">Excuse 2</div><div style="font:800 40px/1.15 Inter,Arial,sans-serif; margin-top:16px; color:#0f172a">Not medically necessary</div>
+        <div class="lines"></div></div><div class="clip" id="k2" style="left:1300px"><div class="clamp"></div>
+        <div class="t-k" style="color:#f87171">Excuse 3</div><div style="font:800 40px/1.15 Inter,Arial,sans-serif; margin-top:16px; color:#0f172a">Room rent limit</div>
+        <div class="lines"></div></div></div>
+      <div id="sec2" style="opacity:0">
+        <div class="glass" id="xr" style="left:120px; top:180px; padding:20px"><svg viewBox="0 0 300 600" width="300" height="600"><defs><filter id="gl"><feGaussianBlur stdDeviation="3"/></filter></defs>
+  <rect width="300" height="600" fill="#020617"/><g fill="none" stroke="#cbd5e1" stroke-width="22" stroke-linecap="round" opacity=".85" filter="url(#gl)">
+  <path d="M130 40 C 120 160, 128 250, 132 290"/><path d="M140 330 C 150 420, 146 500, 150 570"/><path d="M190 60 C 185 200, 190 400, 196 560" stroke-width="12"/></g>
+  <path d="M110 300 L150 310 L128 322 L165 330" stroke="#f87171" stroke-width="5" fill="none"/></svg><div class="t-k" style="margin-top:10px">Fracture · right leg</div></div>
+        <div class="paper2" id="sheet" style="left:560px; top:140px; width:620px; height:780px; transform: perspective(1400px) rotateY(-10deg) rotateX(6deg)">
+          <div class="t-k" style="color:#334155">Case sheet · admission notes</div>
+          <div class="row2">Complaint: fall, right leg pain</div><div class="row2">Diagnosis: fracture, right tibia</div>
+          <div class="row2" style="margin-top:30px">Past history:</div><div class="hand2" id="typed"></div>
+          <div id="scan" style="position:absolute; left:0; right:0; top:0; height:6px; background:#f87171; box-shadow:0 0 24px #f87171; opacity:0"></div></div>
+        <div class="paper2" id="form" style="left:1260px; top:240px; width:560px; height:600px; opacity:0; transform: perspective(1400px) rotateY(12deg)">
+          <div class="t-k" style="color:#334155">Proposal form · 2020</div>
+          <div class="row2 sm">Diabetes <b>☐ Yes ☑ No</b></div><div class="row2 sm" id="htn">High blood pressure <b>☐ Yes ☑ No</b></div><div class="row2 sm">Thyroid <b>☐ Yes ☑ No</b></div>
+          <div id="ring" style="position:absolute; left:20px; top:138px; width:520px; height:70px; border:6px solid #f87171; border-radius:40px; opacity:0"></div>
+          <div class="stamp red" id="den" style="left:50px; top:380px; font-size:46px; transform:rotate(-10deg); opacity:0">Cashless denied</div></div>
+        <svg viewBox="0 0 1920 1080" style="position:absolute; inset:0; width:1920px; height:1080px; pointer-events:none">
+          <path id="thread" d="M1000 520 C 1150 380, 1200 330, 1300 420" stroke="#f87171" stroke-width="6" fill="none" style="filter: drop-shadow(0 0 10px #f87171)"/></svg>
+      </div>
+      <div id="sec3" style="opacity:0">
+        <div class="gate" style="left:220px">Mild BP</div><div class="neq" id="neq">≠</div><div class="gate" style="left:1180px">Broken leg · dengue</div>
+        <div class="glass" id="yrs" style="left:360px; top:720px; width:1200px; padding:26px 34px; opacity:0">
+          <div style="display:flex; gap:10px" id="ybar"><div class="yc" id="y0">Year 1</div><div class="yc" id="y1">Year 2</div><div class="yc" id="y2">Year 3</div><div class="yc" id="y3">Year 4</div><div class="yc" id="y4">Year 5</div><div class="yc" id="y5">Year 6</div></div>
+          <div class="t-k" style="margin-top:18px">Years 1–5: can be questioned · after 60 months: not for non-disclosure</div></div>
+      </div>
+      </div>
+      <div class="fin-tag" id="tag">SIMULATION · ILLUSTRATIVE CASE · IRDAI MASTER CIRCULAR | PARA 13</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+
+      for (let i = 0; i < 3; i++) pop($("k" + i), C.three + 0.2 + i * 0.4, { opacity: 0, y: 200, rotation: (i - 1) * 6 });
+      tl.to([$("k1"), $("k2")], { opacity: 0, duration: 0.3 }, C.one);
+      tl.to($("k0"), { scale: 1.2, x: 560, rotation: 0, duration: 0.8, ease: "power2.inOut" }, C.one);
+      tl.to($("sec1"), { opacity: 0, duration: 0.4 }, C.leg - 0.4); tl.to($("sec2"), { opacity: 1, duration: 0.4 }, C.leg - 0.3);
+      pop($("xr"), C.leg - 0.2, { opacity: 0, x: -80 }); pop($("sheet"), C.leg + 0.4, { opacity: 0, y: 80 });
+      const TXT = "k/c/o mild HTN (BP)";
+      FIN.bind($("typed"), FIN.keys([[C.doc + 0.4, 0], [C.bp + 1.2, TXT.length]]), (v) => TXT.slice(0, Math.round(v)));
+      tl.fromTo($("scan"), { opacity: 1, y: 0 }, { y: 470, duration: 1.0, ease: "none" }, C.rev);
+      tl.to($("typed"), { backgroundColor: "rgba(248,113,113,.3)", duration: 0.2 }, C.rev + 1.0);
+      tl.to($("scan"), { opacity: 0, duration: 0.2 }, C.rev + 1.1);
+      pop($("form"), C.form - 0.1, { opacity: 0, x: 80 });
+      const th = $("thread"), n = th.getTotalLength(); gsap.set(th, { strokeDasharray: n, strokeDashoffset: n });
+      tl.to(th, { strokeDashoffset: 0, duration: 0.7, ease: "power2.out" }, C.form + 0.4);
+      tl.to($("ring"), { opacity: 1, duration: 0.3 }, C.said);
+      tl.fromTo($("den"), { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.in" }, C.den);
+      tl.to($("sec2"), { opacity: 0, duration: 0.4 }, C.why - 0.3); tl.to($("sec3"), { opacity: 1, duration: 0.4 }, C.why - 0.2);
+      tl.fromTo($("neq"), { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, C.no - 0.2);
+      pop($("yrs"), C.five, { opacity: 0, y: 40 });
+      for (let i = 0; i < 5; i++) tl.to($("y" + i), { background: "rgba(245,158,11,.6)", duration: 0.1 }, C.five + 0.4 + i * 0.25);
+      tl.to($("y5"), { background: "rgba(56,189,248,.7)", color: "#f8fafc", boxShadow: "0 0 40px rgba(56,189,248,.7)", duration: 0.3 }, C.after);
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.04, duration: D.duration, ease: "none" }, 0);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["e7_dossier"] = tl;
+    </script>
+  </body>
+</html>

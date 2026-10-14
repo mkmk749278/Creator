@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>The discharge stopwatch</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="vendor/fin/fin.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+:root { --slate: #0f172a; --slate-2: #1e293b; --cyan: #0284c7; --cyan-hi: #38bdf8; --amber: #f59e0b; --crimson: #dc2626;
+  --white: #f8fafc; --dim: #94a3b8; --gold: #facc15; }
+#stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.hc-grade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(15,23,42,.55), rgba(2,6,15,.92) 75%); }
+.chip { position: absolute; display: flex; align-items: center; gap: 16px; padding: 16px 26px; border-radius: 14px;
+  font: 800 38px/1 Inter, Arial, sans-serif; letter-spacing: .02em; background: rgba(2, 6, 15, .82); border: 2px solid rgba(255,255,255,.14); color: var(--white); white-space: nowrap; }
+.chip.cyan { color: var(--cyan-hi); border-color: rgba(56,189,248,.55); }
+.chip.amber { color: var(--amber); border-color: rgba(245,158,11,.55); }
+.chip.red { color: #f87171; border-color: rgba(220,38,38,.6); }
+.chip.green { color: #4ade80; border-color: rgba(74,222,128,.5); }
+.chip svg { width: 44px; height: 44px; flex: none; }
+.lab { position: absolute; font: 600 24px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-align: center; }
+.big { position: absolute; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--white); text-align: center; letter-spacing: -.01em; }
+.sim-mark { position: absolute; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .3em; color: rgba(15,23,42,.18); transform: rotate(-24deg); }
+/* paper documents */
+.paper { position: absolute; background: #f4f1ea; color: #1f2937; border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,.65), 0 0 0 1px rgba(0,0,0,.2);
+  font: 400 22px/1.45 Inter, Arial, sans-serif; overflow: hidden; }
+.paper .hd { background: #e7e2d6; padding: 22px 34px; border-bottom: 3px solid #cbc3b1; }
+.paper .co { font: 800 26px/1.2 Inter, Arial, sans-serif; letter-spacing: .04em; color: #1e3a5f; }
+.paper .sub { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #6b7280; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+.paper .bd { padding: 26px 34px; }
+.paper .t { font: 800 25px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; color: #111827; }
+.paper .row { display: flex; justify-content: space-between; border-bottom: 1px solid #d6d0c2; padding: 8px 0; }
+.paper .row b { font-weight: 800; }
+.paper .note { font-size: 19px; color: #4b5563; margin-top: 16px; }
+.stamp { position: absolute; padding: 14px 30px; border: 9px solid currentColor; border-radius: 14px; font: 800 74px/1 Inter, Arial, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; mix-blend-mode: multiply; }
+.stamp.red { color: rgba(205, 30, 30, .9); }
+.stamp.cyan { color: rgba(2, 132, 199, .95); mix-blend-mode: normal; background: rgba(240, 249, 255, .82); }
+
+.bp { position: absolute; inset: -60px; background:
+  repeating-linear-gradient(0deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  repeating-linear-gradient(90deg, rgba(56,189,248,.055) 0 1px, transparent 1px 60px),
+  radial-gradient(ellipse at 50% 40%, #13254a 0%, #0b1530 45%, #050a18 100%); }
+.glass { position: absolute; background: linear-gradient(160deg, rgba(30,41,59,.82), rgba(15,23,42,.9)); border: 2px solid rgba(56,189,248,.35);
+  border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); color: var(--white); }
+.t-k { font: 600 22px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.t-v { font: 800 56px/1.05 Inter, Arial, sans-serif; color: var(--white); }
+.mono { font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.ill { position: absolute; left: 64px; top: 48px; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #facc15;
+  background: rgba(2,6,15,.7); padding: 10px 14px; border-radius: 6px; border-left: 4px solid #facc15; }
+.limit { margin:50px auto 0; width:640px; height:26px; border-radius:13px; background:rgba(148,163,184,.25); overflow:hidden; } .lf { width:100%; height:100%; background:#f59e0b; transform-origin:0 50%; transform:scaleX(0); }
+.colx { flex:1; height:420px; padding:24px; border-radius:16px; border:3px dashed rgba(148,163,184,.4); }
+.chg { position:absolute; left:80px; top:330px; width:310px; padding:22px; border-radius:14px; background:#991b1b; font:800 28px/1.25 Inter,Arial,sans-serif; text-align:center; opacity:0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="fin-root" data-composition-id="e16_stopwatch" data-start="0" data-width="1920" data-height="1080" data-duration="28.18">
+      
+      <div id="stage">
+<div class="bp" id="bp"></div>
+      <div class="glass" id="clk" style="left:120px; top:200px; width:820px; height:640px; padding:44px; text-align:center">
+        <div class="t-k">Since the discharge request</div><div class="mono" id="t" style="font:800 150px/1 Inter,Arial,sans-serif; margin-top:60px">00:00:00</div>
+        <div class="limit"><div class="lf" id="lf"></div></div><div class="t-k" id="st" style="margin-top:30px; color:#f59e0b">Final approval due within 3 hours</div></div>
+      <div class="glass" id="led" style="left:1000px; top:200px; width:800px; height:640px; padding:44px">
+        <div style="display:flex; gap:30px"><div class="colx" id="wal"><div class="t-k">Your wallet</div></div><div class="colx" id="fund" style="border-color:rgba(56,189,248,.6)"><div class="t-k" style="color:#38bdf8">Insurer's shareholders' fund</div><div class="t-k" style="margin-top:6px; font-size:18px">Para 16(b)</div></div></div>
+        <div class="chg" id="chg">Extra delay charge · ₹4,000</div></div>
+      <div class="chip amber" id="ask" style="left:640px; top:900px; opacity:0">Ask for the 3-hour rule</div>
+      </div>
+      <div class="fin-tag" id="tag">IRDAI MASTER CIRCULAR | PARA 16 · ILLUSTRATIVE AMOUNT</div>
+      <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
+      <div class="fin-vig"></div>
+    </div>
+    <script>
+      const D = window.DATA, C = D.cues, $ = (id) => document.getElementById(id);
+      FIN.grain($("grain"));
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t, from = { opacity: 0, y: 26 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+      const out = (el, t) => tl.to(el, { opacity: 0, duration: 0.35, ease: "power2.in" }, t);
+tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
+
+      pop($("clk"), C.clock, { opacity: 0, x: -60 }); pop($("led"), C.wait, { opacity: 0, x: 60 });
+      const secs = FIN.keys([[C.req, 0], [C.three + 1.0, 10800], [C.late, 10800], [C.extra + 0.6, 16200], [D.duration, 17400]]);
+      FIN.bind($("t"), secs, (v) => { const s = Math.floor(v), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
+        return [h, m, x].map((n) => String(n).padStart(2, "0")).join(":"); });
+      FIN.hook((t) => { const v = secs(t); $("lf").style.transform = `scaleX(${Math.min(1, v / 10800)})`;
+        const over = v > 10801; $("t").style.color = over ? "#f87171" : "#f8fafc"; $("lf").style.background = over ? "#dc2626" : "#f59e0b"; });
+      FIN.bind($("st"), (t) => secs(t) > 10801 ? 1 : 0, (v) => v ? "Over 3 hours: delay" : "Final approval due within 3 hours");
+      tl.to($("chg"), { opacity: 1, duration: 0.3 }, C.extra);
+      tl.to($("chg"), { x: 370, background: "#0284c7", duration: 1.0, ease: "power2.inOut" }, C.pays);
+      pop($("ask"), C.ask, { opacity: 0 });
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.03, duration: D.duration, ease: "none" }, 0);
+
+      tl.to({}, { duration: 0.01 }, D.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["e16_stopwatch"] = tl;
+    </script>
+  </body>
+</html>
