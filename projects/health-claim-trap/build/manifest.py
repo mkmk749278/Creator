@@ -42,6 +42,17 @@ for png in sorted((A / "sim").glob("*.png")):
     rows.append([png.name, "simulation", f"SIMULATION document ({png.stem}); no real hospital, insurer or TPA", "", "", "Be Practical with Kishore", "Own work", "", "", "3840", "2160", " ".join(slots.get(png.name, []))])
 for mp4 in sorted((A / "scenes").glob("*.mp4")):
     rows.append([mp4.name, "animation", f"HyperFrames scene video/healthclaim/{mp4.stem}", "", "", "Be Practical with Kishore", "Own work", "", "", "1920", "1080", " ".join(slots.get(mp4.stem, []))])
+SFX = [("whoosh_deep", "https://freesound.org/s/351256/"), ("whoosh_swish", "https://freesound.org/s/60026/"), ("whoosh_swipe", "https://freesound.org/s/60007/"),
+       ("hosp_amb", "https://freesound.org/s/614805/"), ("room_tone", "https://freesound.org/s/129443/"), ("riser", "https://freesound.org/s/244249/"),
+       ("impact_soft", "https://freesound.org/s/560156/"), ("typing", "https://freesound.org/s/379418/"), ("click", "https://freesound.org/s/208204/"),
+       ("heartbeat", "https://freesound.org/s/332821/"), ("clock", "https://freesound.org/s/459998/"), ("stamp", "https://freesound.org/s/683031/")]
+for n, u in SFX:
+    rows.append([f"sfx/{n}.mp3", "sfx", n.replace("_", " "), u, u, "Freesound user (via Openverse)", "CC0 1.0", "https://creativecommons.org/publicdomain/zero/1.0/", "", "", "", "sound design"])
+rows.append(["owner/hospital_cutaway.jpg", "illustration", "AI-generated isometric hospital cutaway supplied by the owner (no real place or person)", "", "", "Owner (AI-generated)", "Owner-supplied; labelled ILLUSTRATION · AI-GENERATED IMAGE", "", "", "1376", "768", "0:03-0:06"])
+rows.append(["geo/india-composite.geojson", "map data", "India boundary (Survey of India-based composite)", "https://github.com/datameet/maps/blob/master/Country/india-composite.geojson", "", "DataMeet India community", "CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/", "India boundaries by DataMeet India community (CC BY 4.0)", "", "", "e21_india"])
+for n, u in [("bima_full.png", "https://bimabharosa.irdai.gov.in/"), ("cio_full.png", "https://cioins.co.in/")]:
+    rows.append([f"web/{n}", "screen capture", f"Full-page capture of {u} (14 Oct 2026), replayed in a browser frame", u, u, "IRDAI" if "bima" in n else "Council for Insurance Ombudsmen",
+                 "Government/statutory site: credited short excerpt", "", "", "2880", "", "e22_bima / e23_cio"])
 rows.append(["banner.png / logo_square.png", "brand", "Channel logo sting, bug and end card", "", "", "Be Practical with Kishore", "Own work", "", "", "", "", ""])
 rows.append(["bed.wav", "music", "Synthesised music bed (scripts/make_bed.py, seeded, no samples)", "", "", "Be Practical with Kishore", "Own work", "", "", "", "", "whole film"])
 with open(P / "media_manifest.csv", "w", newline="") as fh:

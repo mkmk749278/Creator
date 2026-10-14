@@ -36,6 +36,8 @@ Documents shown as SIMULATION are made for this video; no real hospital, insurer
 Educational only, not insurance or legal advice. Read your own policy wording.
 
 CREDITS
-Footage: Pixabay (Hassas_Arts and other contributors, Pixabay Content License), Coverr (Coverr License). Music: synthesised for this channel.
+Footage: Pixabay (Hassas_Arts and other contributors, Pixabay Content License), Coverr (Coverr License). Sound effects: Freesound (CC0). Music: synthesised for this channel.
+Map: India boundaries by DataMeet India community (CC BY 4.0), https://github.com/datameet/maps. Hospital cutaway at 0:03 is an AI-generated illustration.
+Website screens: bimabharosa.irdai.gov.in (IRDAI), cioins.co.in (Council for Insurance Ombudsmen), captured 14 Oct 2026.
 
 #BePracticalWithKishore #HealthInsurance #IRDAI #CashlessClaim #InsuranceOmbudsman #ConsumerRightsIndia
