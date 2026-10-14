@@ -86,9 +86,10 @@ SHOTS = [
     S(L("J049"), "clip", src=YT / "ryolgbuDNSg.mp4", ss=9.4, crop=(0.06, 0.12, 1.0, 1.0), credit="PIB · TEJAS TAKE-OFF"),
     S(L("J049") + 3.2, "clip", src=YT / "zCYBJtBaUXw.mp4", ss=138, credit="INDIAN AIR FORCE"),
     S(L("J068"), "clip", src=BR / "pixabay_135849.mp4", ss=1),
-    S(L("J069"), "clip", src=BR / "pixabay_135849.mp4", ss=5),
-    S(L("J069") + 3.0, "clip", src=BR / "pixabay_34717.mp4", ss=6),
-    S(L("J069") + 6.0, "clip", src=BR / "pixabay_80355.mp4", ss=1),
+    S(L("J069"), "clip", src=BR / "pixabay_135849.mp4", ss=5),                                          # "made"
+    S(L("J069") + 2.0, "clip", src=BR / "pixabay_277105.mp4", ss=1, illus="ILLUSTRATIVE FOOTAGE"),     # "cast": lost-wax pattern assembly
+    S(L("J069") + 3.6, "clip", src=BR / "pixabay_18533.mp4", ss=0, illus="ILLUSTRATIVE FOOTAGE"),      # "drilled": laser head, sparks
+    S(L("J069") + 5.2, "clip", src=BR / "pixabay_80355.mp4", ss=1),                                     # "tested"
     S(L("J070"), "still", src=F404B, zoom=(1.4, 1.6), focus=(0.5, 0.45), dark=True, illus=False),
     S(L("J071"), "scene", id="C4_kaveri_blueprint", frm=None),
     S(L("J074"), "clip", src=YT / "bYhSZ9uHO0U.mp4", ss=1.5, credit="DRDO · FLYING-WING DEMONSTRATOR 2022"),
@@ -109,12 +110,13 @@ SHOTS = [
 
 
 SCENE_CREDITS = {"D15_china": "J-20 · N509FZ · CC BY-SA 4.0"}   # real photos placed inside animated scenes
+SCENE_REAL = {"D15_china"}   # a real photo fills the frame: no ILLUSTRATION tag
 
 
 def scene_shots():
     out = []
     for sid, s in SCENES.items():
-        out.append(dict(t=s["start"], kind="scene", id=sid, frm=s["start"], illus=True, **({"credit": SCENE_CREDITS[sid]} if sid in SCENE_CREDITS else {})))
+        out.append(dict(t=s["start"], kind="scene", id=sid, frm=s["start"], illus=sid not in SCENE_REAL, **({"credit": SCENE_CREDITS[sid]} if sid in SCENE_CREDITS else {})))
     return out
 
 
@@ -256,6 +258,18 @@ def build_vo(out):
         parts.append(f"[s{i}]")
     fc.append("".join(parts) + f"concat=n={len(parts)}:v=0:a=1,apad=whole_dur={END:.2f}")
     run(["ffmpeg", "-v", "error", "-y", "-i", str(joined), "-filter_complex", ";".join(fc), "-t", f"{END:.2f}", str(out)])
+    # DIEGETIC breaks: the on-screen clip's own sound fills the VO pause (charter; checked to be engine roar, not music)
+    for b in PROG["breaks"]:
+        if b["kind"] != "DIEGETIC":
+            continue
+        sh = [s for s in sorted(SHOTS, key=lambda s: s["t"]) if s["t"] <= b["vo_at"] + 0.01 and s["kind"] == "clip"][-1]
+        src_t, ln = sh.get("ss", 0) + (b["vo_at"] - sh["t"]), b["len"] + 0.5
+        tmp = out.with_suffix(".dieg.wav")
+        run(["ffmpeg", "-v", "error", "-y", "-i", str(out), "-ss", f"{src_t:.3f}", "-t", f"{ln:.3f}", "-i", str(sh["src"]), "-filter_complex",
+             f"[1:a]aresample=48000,aformat=channel_layouts=stereo,volume=0dB,afade=t=in:d=0.12,afade=t=out:st={ln - 0.45:.3f}:d=0.45,"
+             f"adelay={int(b['vo_at'] * 1000)}|{int(b['vo_at'] * 1000)}[d];[0:a]aformat=channel_layouts=stereo[v];"
+             f"[v][d]amix=inputs=2:duration=first:normalize=0", str(tmp)])
+        tmp.replace(out)
 
 
 def overlays(W, H, shots):
@@ -281,8 +295,10 @@ def overlays(W, H, shots):
             f.append(f"drawtext=fontfile={FONT_M}:text='{esc(s['credit'])}':x={int(W*0.035)}:y={int(H*0.045)}:"
                      f"fontsize={int(fs*0.8)}:fontcolor=0xF8FAFC@0.8:box=1:boxcolor=0x0B0E14@0.45:boxborderw={int(fs*0.35)}:"
                      f"enable='between(t,{s['t']:.2f},{end:.2f})'")
-        if s["kind"] == "scene" or s.get("illus"):
-            f.append(f"drawtext=fontfile={FONT_M}:text='ILLUSTRATION':x=w-tw-{int(W*0.035)}:y=h-{int(H*0.115)}:"
+        tag = s.get("illus", s["kind"] == "scene")
+        if tag:
+            tag = tag if isinstance(tag, str) else "ILLUSTRATION"   # stock stand-ins say ILLUSTRATIVE FOOTAGE
+            f.append(f"drawtext=fontfile={FONT_M}:text='{tag}':x=w-tw-{int(W*0.035)}:y=h-{int(H*0.115)}:"
                      f"fontsize={int(fs*0.85)}:fontcolor=0xF97316@0.9:enable='between(t,{s['t']:.2f},{end:.2f})'")
     return f
 
@@ -311,7 +327,9 @@ def main():
             continue
         src = scene_file(s["id"]) if s["kind"] == "scene" else s.get("src")
         mt = Path(src).stat().st_mtime if src and Path(src).exists() else 0
-        key = hashlib.sha1(json.dumps([s, dur, W, H, mt, RENDER_V], default=str, sort_keys=True).encode()).hexdigest()[:8]
+        srcs = [scene_file(s[k]) for k in ("id", "a", "b") if s["kind"] in ("scene", "dissolve") and k in s] + ([Path(s["src"])] if "src" in s else [])
+        stamp = [(f.stat().st_size, int(f.stat().st_mtime)) for f in srcs if f.exists()]   # a re-rendered source busts the cache
+        key = hashlib.sha1(json.dumps([s, dur, W, H, mt, RENDER_V, stamp], default=str, sort_keys=True).encode()).hexdigest()[:8]
         out = sd / f"{i:03d}_{s['kind']}_{key}.mp4"
         if not out.exists():
             render(s, dur, out, W, H)
@@ -323,20 +341,12 @@ def main():
 
     vo = A / "vo_program.wav"
     build_vo(vo)
-    bed = A / "bed.wav"
-    reveals = [b["start"] for b in PROG["breaks"] if b["kind"] == "VO_PAUSE" and b["after"] in ("J019", "J053")]
-    if not bed.exists():
-        cues = {"duration": END + 1, "impacts": [r + 1.5 for r in reveals], "swells": [{"at": L("J009") - 1, "dur": 3}],
-                "sections": [{"start": 0, "mood": "tense"}, {"start": L("J071"), "mood": "calm"}]}
-        (A / "bed_cues.json").write_text(json.dumps(cues))
-        py = ROOT / ".venv/bin/python"
-        run([str(py) if py.exists() else sys.executable, str(ROOT / "scripts/make_bed.py"), str(A / "bed_cues.json"), str(bed)])
-    silence = "+".join(f"between(t,{r:.2f},{r + 1.5:.2f})" for r in reveals)
+    # music: licensed tracks with charter levels, silences and thuds baked in (tools/music_bed.py, owner 2026-10-14)
+    bed = A / "music_bed.wav"
+    run([sys.executable, str(P / "tools" / "music_bed.py"), str(vo), str(bed)])
     mix = A / "mix_raw.wav"
     run(["ffmpeg", "-v", "error", "-y", "-i", str(vo), "-i", str(bed), "-filter_complex",
-         f"[1:a]volume=-25dB,volume='if({silence},0,1)':eval=frame[b];"
-         f"[b][0:a]sidechaincompress=threshold=0.03:ratio=4:attack=20:release=500[bd];"
-         f"[0:a][bd]amix=inputs=2:duration=first:normalize=0[a]", "-map", "[a]", "-t", f"{END:.2f}", str(mix)])
+         "[0:a][1:a]amix=inputs=2:duration=first:normalize=0[a]", "-map", "[a]", "-t", f"{END:.2f}", str(mix)])
 
     def integrated(f, af="anull"):
         r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(f), "-af", f"{af},ebur128=peak=true", "-f", "null", "-"],

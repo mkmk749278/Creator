@@ -13,13 +13,22 @@ const COLS = 20, X0 = 640, Y0 = 240, DX = 57, DY = 72, SZ = 50;
 const jets = Array.from({ length: S.total }, (_, i) => ({ x: X0 + (i % COLS) * DX, y: Y0 + Math.floor(i / COLS) * DY, i }));
 function renderAt(t) {
   pn.begin(); const g = pn.g, k = pn.k;
+  // owner review 2026-10-14: no frozen hold between the two orders; a light sweep runs across the 83 twice
+  const sw = seg(t, T.o1fill + 0.15, T.o2 - 0.1) * 2, swOn = sw > 0 && sw < 2, sx = X0 - 120 + (COLS * DX + 240) * (sw % 1);
+  if (swOn) {
+    const gr = k.createLinearGradient(sx - 90, 0, sx + 90, 0);
+    gr.addColorStop(0, "rgba(253,186,116,0)"); gr.addColorStop(0.5, "rgba(253,186,116,0.30)"); gr.addColorStop(1, "rgba(253,186,116,0)");
+    k.save(); k.fillStyle = gr; k.fillRect(sx - 90, Y0 - 40, 180, Math.ceil(O1.n / COLS) * DY + 30); k.restore();
+    line(g, sx, Y0 - 40, sx, Y0 - 10 + Math.ceil(O1.n / COLS) * DY, { w: 2, color: HEX.hot, alpha: 0.55 });
+  }
   for (const j of jets) {
     line(g, j.x - 7, j.y + 30, j.x + 7, j.y + 30, { w: 2, color: HEX.line, alpha: 0.6 * seg(t, 0.05 + (j.i % COLS) * 0.03, 0.4 + (j.i % COLS) * 0.03, E.out) });   // empty slot tick
     const first = j.i < O1.n, ii = first ? j.i / O1.n : (j.i - O1.n) / O2.n;
     const a = first ? T.o1 : T.o2, b = first ? T.o1fill : T.o2fill, t0 = a + ii * (b - a - 0.25), f = seg(t, t0, t0 + 0.25, E.out);
     if (f <= 0) continue;
     const p = jetPath(j.x, j.y + 8 * (1 - f), SZ);
-    if (first) { fillP(g, p, HEX.amber, 0.92 * f); fillP(k, p, HEX.amber, 0.22 * f * (0.7 + 0.3 * Math.cos(t * 2.4 + j.i * 0.37))); }
+    if (first) { const lit = swOn ? Math.exp(-(((j.x - sx) / 70) ** 2)) : 0;
+      fillP(g, p, lit > 0.05 ? HEX.hot : HEX.amber, 0.92 * f); fillP(k, p, HEX.amber, 0.22 * f * (0.7 + 0.3 * Math.cos(t * 2.4 + j.i * 0.37)) + 0.55 * lit); }
     else { fillP(g, p, HEX.white, 0.92 * f); fillP(k, p, HEX.hot, 0.25 * f * Math.exp(-(t - t0) * 1.5)); }
   }
   pn.end(t);
