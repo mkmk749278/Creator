@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **10:44** of speech (8,993 characters, 2 Bunty blocks), plus pauses and music beats.
+Estimated length: **10:44** of speech (8,990 characters, 2 Bunty blocks), plus pauses and music beats.
 
 ## 1 The midnight bill
 
@@ -67,7 +67,7 @@ __
 **Here is the truth. In most cases like this, the door is not closed. A cashless denial is not a claim rejection. And after five years of policy, there is a rule that stops this exact excuse.**  
 __  
 🎬 The red CASHLESS DENIED stamp cracks; a cyan overstamp lands: NOT A CLAIM REJECTION (film motif, thumbnail promise by 0:30).  
-🔤 NOT A CLAIM REJECTION [IRDAI MASTER CIRCULAR | 29 MAY 2024]  
+🔤 NOT A CLAIM REJECTION [AROGYA SANJEEVANI POLICY WORDING]  
 🔊 1.5 s music silence, then low braam  
 ⏱ Thumbnail promise must land before 0:30
 
@@ -108,7 +108,7 @@ __
 🔊 Soft data ticks on each arrow
 
 **H015** · block 1  
-**Many think a TPA is a neutral government doctor. It is not. A TPA is a private company. The insurance company hires it and pays it, to process your claim papers.**  
+**Many think a TPA is a neutral government doctor. It is not. A TPA is a company licensed by IRDAI. The insurance company hires it and pays it, to process your claim papers.**  
 __  
 🎬 Split screen: left, red-tinted myth tag 'NEUTRAL GOVT DOCTOR?' crossed out; right, cyan document card quoting the IRDAI TPA rule.  
 🔤 MYTH · NEUTRAL GOVT DOCTOR ✕ [IRDAI (TPA – HEALTH SERVICES) REGULATIONS]  
@@ -134,7 +134,7 @@ __
 🔤 CASHLESS NO ≠ CLAIM NO
 
 **H019** · block 1  
-**Now, the three reasons you will see most often on these letters.**  
+**Now, three reasons you will often see on these letters.**  
 __  
 🎬 Three case-file tabs slide in from the right, numbered 1 2 3 (kinetic accent in lower third).  
 🔤 3 COMMON REASONS  
@@ -160,7 +160,7 @@ __
 🔊 Paper rustle, soft thud
 
 **H023** · block 1  
-**Many families ask, does blood pressure cause a broken leg? It does not. But in the first five years of your policy, the company can still raise this question. After five years, the rule changes. We will come to that.**  
+**Many families ask, does blood pressure cause a broken leg? It does not. But in the first five years of your policy, the company can still raise this question. After five years, the rule changes.**  
 __  
 🎬 Leg X-ray light box (REAL b-roll) next to a BP cuff; a small 5-YEAR ring appears and pulses once (sets up chapter 3).  
 🔤 FIRST 5 YEARS · ⚠
@@ -188,14 +188,14 @@ __
 **They pay only five out of every eight rupees, on the surgery, doctor and nursing charges too. That is a cut of about thirty seven percent on those charges.**  
 __  
 🎬 BOARD: 5 ÷ 8 = 62.5%, then the cut applied to surgery, doctor and nursing lines; the total cut grows to about sixty thousand while the room difference was nine thousand.  
-🔤 OUR CALCULATION · 37.5% CUT [IRDAI PRODUCT FILING GUIDELINES | 2020]  
+🔤 OUR CALCULATION · 37.5% CUT [AROGYA SANJEEVANI POLICY WORDING]  
 ⏱ Let the maths breathe: 1 s hold on the total
 
 **H028** · block 1  
-**One good thing. IRDAI does not allow this cut on medicines, implants, tests and ICU charges. Check your bill for that.**  
+**One good thing. Many policies do not apply this cut to medicines, and some also leave out implants and tests. Check what your policy wording says, and check your bill.**  
 __  
-🎬 BOARD: medicines, implants, tests, ICU written in a green column with a tick each.  
-🔤 NO CUT · MEDICINES · IMPLANTS · TESTS · ICU
+🎬 BOARD: medicines written in a green column with a tick; implants and tests with a question mark (check your policy).  
+🔤 NO CUT ON MEDICINES · IMPLANTS, TESTS: CHECK YOUR POLICY [POLICY WORDING]
 
 **H029** · block 1  
 **When a family sees these letters, they feel helpless. They think the door is closed forever.**  
@@ -226,10 +226,10 @@ __
 🔊 Typewriter tick
 
 **H033** · block 1  
-**Earlier, this period was eight years. In May twenty twenty four, IRDAI brought it down from eight years to five years.**  
+**Earlier, this period was eight years. In twenty twenty four, IRDAI brought it down from eight years to five years.**  
 __  
 🎬 Animated calendar ring: 96 month segments, 36 fall away, 60 remain and glow cyan.  
-🔤 8 YEARS → 5 YEARS [IRDAI MASTER CIRCULAR | 29 MAY 2024]  
+🔤 8 YEARS → 5 YEARS [IRDAI INSURANCE PRODUCTS REGULATIONS | 2024]  
 🔊 Ticks per segment
 
 **H034** · block 1  
@@ -253,7 +253,7 @@ __
 ⏱ Core reveal of the film
 
 **H037** · block 1  
-**In simple words, after five years, an old health history cannot be used as an excuse called non disclosure.**  
+**So after five years, an old health history cannot be called non disclosure.**  
 __  
 🎬 The CASHLESS DENIED stamp from H005 slides under the clause and is struck through in gold.  
 🔤 OLD HISTORY ≠ EXCUSE AFTER 5 YEARS
@@ -271,14 +271,14 @@ __
 🔤 PORT, DON'T CANCEL [IRDAI MASTER CIRCULAR | PARA 13 NOTE]
 
 **H040** · block 2  
-**Now think about our family at the billing counter. Six years of policy. A rejection letter that says non disclosure. That excuse goes against the IRDAI rule.**  
+**Now think about our family at the billing counter. Six years of policy. A denial letter that says non disclosure. That excuse goes against the IRDAI rule.**  
 __  
 🎬 Callback: the night lobby shot from H001, the six receipts from H002, the stamp from H005 each flash once; the 60-month ring closes around them.  
 🔤 6 YEARS > 60 MONTHS  
 🔊 Low thud
 
 **H041** · block 2  
-**And there is one more rule. A clock.**  
+**And one more rule. A clock.**  
 __  
 🎬 Clock face materialises over the billing counter footage.  
 🔊 Clock tick returns
@@ -296,7 +296,7 @@ __
 🔤 DELAY COST · INSURER PAYS [IRDAI MASTER CIRCULAR | PARA 16(b)]
 
 **H044** · block 2  
-**Most people never use this rule, because nobody told them it exists.**  
+**So remember this rule, and ask for it at the discharge counter.**  
 __  
 🎬 Slow drift on a hospital corridor clock at night.  
 🔊 Music lifts to −12 dB
@@ -344,10 +344,10 @@ __
 🔊 Pen scratch
 
 **H051** · block 2  
-**Step two. File a reimbursement claim, within the time your policy gives. Usually about thirty days from discharge.**  
+**Step two. File a reimbursement claim quickly, within the time your policy gives. Some policies give only fifteen days from discharge, some give thirty.**  
 __  
 🎬 Step 2 lights; SIMULATION insurer claim form on a phone screen; a 30-day calendar strip.  
-🔤 2 · CLAIM REIMBURSEMENT · USUALLY 30 DAYS [CHECK YOUR POLICY WORDING]
+🔤 2 · CLAIM REIMBURSEMENT · 15–30 DAYS [CHECK YOUR POLICY WORDING]
 
 **H052** · block 2  
 **If they reject it, write to the company's grievance officer. Keep it calm and clear. Give your policy number, claim number and amount. If your policy has crossed five years, quote the moratorium rule.**  
@@ -383,7 +383,7 @@ __
 🔊 Low braam
 
 **H057** · block 2  
-**If the company rejects your complaint, or does not reply for thirty days, you do not need to start with a consumer court or an expensive lawyer.**  
+**If the company rejects your complaint, or does not reply for thirty days, you do not need a court case or an expensive lawyer.**  
 __  
 🎬 Real b-roll: a court building exterior, then a lawyer's desk; both slide away, replaced by a phone screen.
 
@@ -396,7 +396,7 @@ __
 ⏱ VO_PAUSE 3.0 s after this line (owner's 3 s silence): the 4-step online form plays in full
 
 **H059** · block 2  
-**The Ombudsman system was set up by the government, only to settle complaints between policyholders and insurance companies.**  
+**The Ombudsman system was set up by the government, to settle complaints of policyholders against insurance companies.**  
 __  
 🎬 Credited title page of the Insurance Ombudsman Rules, 2017 under the magnifier.  
 🔤 [INSURANCE OMBUDSMAN RULES, 2017]
@@ -428,10 +428,10 @@ __
 🔤 OUR CALCULATION · 8 IN 10 IN 3 MONTHS [CIO ANNUAL REPORT | 2024-25]
 
 **H064** · block 2  
-**The Ombudsman can award up to fifty lakh rupees. The award is binding on the insurance company. It must pay within thirty days, or pay a penalty of five thousand rupees for every day of delay, to you.**  
+**The Ombudsman can award up to fifty lakh rupees. The award is binding on the insurance company. Unless the company challenges the award, it must pay within thirty days, or pay you a penalty of five thousand rupees for every day of delay.**  
 __  
 🎬 Highlighter on master circular para 20 (30 days, ₹5,000 per day); cyan counters ₹50 LAKH · 30 DAYS · ₹5,000/DAY.  
-🔤 ₹50 LAKH · 30 DAYS · ₹5,000/DAY [IRDAI MASTER CIRCULAR | PARA 20]
+🔤 ₹50 LAKH [OMBUDSMAN RULES | RULE 17] · 30 DAYS · ₹5,000/DAY [IRDAI POLICYHOLDERS' INTERESTS MASTER CIRCULAR | 2024]
 
 **H065** · block 2  
 **And if you are not happy with the award, you can still go to a consumer court.**  
@@ -439,7 +439,7 @@ __
 🎬 Real b-roll: a consumer commission building exterior (credited).
 
 **H066** · block 2  
-**That is how you fight a big company. Not with anger. With the rules.**  
+**That is how you fight back. Not with anger. With the rules.**  
 __  
 🎬 The four steps glow together; slow push on a family walking out of a hospital in daylight.  
 🔊 Music resolves
@@ -473,7 +473,7 @@ __
 🔊 Pen ticks
 
 **H071** · block 2  
-**Yes, the company may charge a little extra, or add a waiting period. But once it is written in your form, it cannot later call it non disclosure.**  
+**Yes, the company may charge extra, or add a waiting period. But once it is written in your form, it cannot later call it non disclosure.**  
 __  
 🎬 The ticked form gets a cyan DECLARED stamp; a small waiting-period bar appears and then completes.  
 🔤 DECLARED = PROTECTED
@@ -498,10 +498,10 @@ __
 🔤 3 · CONSUMABLES COVER
 
 **H075** · block 2  
-**Gloves, masks, syringes and similar items are often not paid by a normal policy. They can be five to fifteen percent of a hospital bill. Many insurers sell an add on cover for this. Check the price before you buy.**  
+**Gloves, masks, syringes and similar items are often not paid by a normal policy. Reports say they can be five to fifteen percent of a hospital bill. Some insurers sell an add on cover for this. Check the price before you buy.**  
 __  
 🎬 Animated bill: the consumables lines highlight in amber, a 5–15% bracket appears beside them.  
-🔤 5–15% OF A BILL [INSURER AND BROKER GUIDES]
+🔤 5–15% OF A BILL · AS REPORTED [OUTLOOK MONEY | BUSINESS STANDARD]
 
 **H076** · block 2  
 **Remember, you pay for health insurance so your family has peace of mind in its weakest moment.**  
@@ -522,13 +522,13 @@ __
 🔊 Music swells to the end card
 
 **H079** · block 2  
-**If this video helped you, share it with one family member who has health insurance. Subscribe, and ask your questions in the comments.**  
+**If this helped you, share it with one family member who has health insurance. Subscribe, and ask your questions below.**  
 __  
 🎬 End card (assets/brand) with subscribe and end-screen zones; 'Educational only, not insurance advice. Read your policy wording.'  
 🔤 EDUCATIONAL ONLY · NOT INSURANCE ADVICE
 
 **H080** · block 2  
-**See you in the next one.**  
+**See you next time.**  
 __  
 🎬 End card holds.  
 🔊 Logo sting tail

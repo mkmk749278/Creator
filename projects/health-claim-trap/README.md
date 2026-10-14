@@ -9,8 +9,8 @@ IRDAI 60-month moratorium and the 1-hour and 3-hour cashless rules, the four-ste
 and grievance officer → Bima Bharosa → Insurance Ombudsman, with real CIO 2024-25 outcome data), and three rules to apply
 before buying or renewing.
 
-**Status (2026-10-14): phase 1.** Script v1 is in simple Indian English VO (`lang.txt` = `en`): 80 lines, 2 blocks
-(4,498 and 4,495 characters), about 10:45 of speech, lint clean. Telugu dub column empty for now. Draft `claims.csv` +
+**Status (2026-10-14): phase 1.** Script v1.1 (fact-check fixes applied) is in simple Indian English VO (`lang.txt` = `en`): 80 lines, 2 blocks
+(4,490 and 4,500 characters), about 10:44 of speech, lint clean. Fact-check gate passes (45 claims). Telugu dub column empty for now. Draft `claims.csv` +
 independent fact-check (`fact-check.md`). Next: the owner approves the script changes, records `voice/block1.mp3` and
 `voice/block2.mp3` with ElevenLabs, then timing, sourcing and the EDL.
 
@@ -24,9 +24,9 @@ The structure, voice and most lines are the owner's. These changes follow the so
 | "Only exception … prove in a court of law that you committed criminal fraud" | "Proven fraud … that the company has to establish" | The clause says "except for established fraud"; no court is mentioned |
 | "After five years they cannot reject your claim because of an old medical history" | adds: normal limits and exclusions still apply; port, don't cancel | The moratorium covers non-disclosure and misrepresentation only; ported credits count (para 13 note) |
 | TPAs "operate under volume-based metrics … to protect payout ratios" | TPA is a private company hired and paid by the insurer; IRDAI bars TPA pay linked to claims ratio; rejection needs the insurer's committee | The handoff claim had no source; IRDAI's own rule says the opposite about pay. Mechanism, not villain (§4a) |
-| Room rent: "they cut forty percent off your entire surgery, doctor fees, and nursing" | 5/8 paid on room-linked charges, about 37% cut; no cut on medicines, implants, tests, ICU | The exact maths, and IRDAI's 2020 exemptions |
-| Insurer resolves a grievance in "exactly fifteen days" | 14 days | IRDAI 2024 policyholder-protection rules (fact-check to confirm) |
-| Consumables rider "₹500–800 a year"; "₹30–40 thousand of the bill" | 5–15% of a bill; prices vary, check before buying | No source for the handoff numbers; guides give 5–15%; one insurer's rider is ₹1,500 a year |
+| Room rent: "they cut forty percent off your entire surgery, doctor fees, and nursing" | 5/8 paid on surgery, doctor and nursing too, about 37% cut; many policies exempt medicines, some also implants and tests: check your wording | The exact maths; IRDAI's 2020 exemptions were repealed in May 2024, so current policy wordings decide |
+| Insurer resolves a grievance in "exactly fifteen days" | 14 days | IRDAI Policyholders' Interests master circular, 5 Sep 2024 |
+| Consumables rider "₹500–800 a year"; "₹30–40 thousand of the bill" | "Reports say" 5–15% of a bill; some insurers sell an add-on | No source for the handoff numbers; guides give 5–15%; one insurer's rider is ₹1,500 a year |
 | "Ombudsman … decides within 60 days", "file online in less than five minutes" | removed | No source |
 | BGM −18 to −22 dB | −24 to −26 dB under speech | The charter's sound matrix (stricter) wins (PLAYBOOK Part B intro) |
 | 3.0 s VO silences at 04:45 and 08:35 | kept as `VO_PAUSE` 3.0 s after H035 and H058 | The owner asked; music still goes silent for 1.5 s before the core reveal (H036) |
@@ -90,7 +90,7 @@ python3 scripts/claims_check.py projects/health-claim-trap/claims.csv
   insurer 4,897; withdrawn 3,649; non-entertainable 4,928; disposed 29,017; within 3 months 22,791. The 2023-24 report
   gives 31,490 received, 10,140 / 6,235 / 4,125 (80% for the policyholder on the same method).
 - cioins.co.in: no fee; compensation up to ₹50 lakh; escalate if unresolved after 30 days; within one year.
-- IRDAI 2020 modified product-filing guidelines: no proportionate deduction on pharmacy and consumables, implants,
-  diagnostics, ICU.
+- Proportionate deduction method: current Arogya Sanjeevani wordings (Go Digit 2026, IFFCO-Tokio 2024). The IRDAI 2020
+  guidelines exempting pharmacy, implants, diagnostics and ICU were repealed by the 29 May 2024 master circular.
 - IRDAI annual report FY 2023-24 via Outlook Business, Moneylife and Business Standard: about 82% of health claims settled;
   ₹10,937 crore repudiated (9.34% by value).

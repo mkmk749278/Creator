@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Every number the film computes itself (on screen: OUR CALCULATION · ...). Run to re-derive them.
 
-1. Proportionate deduction (IRDAI 2020 product-filing guidelines: the cut applies only to room-linked "associated
-   medical expenses", never to pharmacy and consumables, implants and devices, diagnostics or ICU charges).
+1. Proportionate deduction, method as in current Arogya Sanjeevani policy wordings (Go Digit 2026: the cut applies to all
+   hospital expenses except pharmacy and consumables, implants and devices, diagnostics; some wordings exempt only medicines).
+   The IRDAI 2020 guidelines that set these exemptions were repealed by the 29 May 2024 master circular.
 2. Insurance Ombudsman outcomes for health insurance, FY 2024-25 (CIO Annual Report 2024-25, Statement H3, totals row,
    read from the scanned table on page 47 of the report).
 """
