@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<!-- YouTube thumbnail, channel theme (assets/brand: navy, gold PRACTICAL, gold/blue circuit lines).
+     Variant from the URL hash: #A (claim denied? the 5-year rule) or #B (₹4.5 lakh denied, 4 steps to get it back). Shot by shoot.js at 2x. -->
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("../../../../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("../../../../node_modules/@fontsource/inter/files/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+  :root { --navy: #0b1530; --gold: #ffd34d; --blue: #4a6fa5; --red: #e5383b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: var(--navy); font-family: Inter, Arial, sans-serif; }
+  #t { position: relative; width: 1280px; height: 720px; overflow: hidden;
+    background: radial-gradient(ellipse at 30% 50%, #18295a 0%, #0b1530 60%, #070d1f 100%); }
+  svg.lines { position: absolute; inset: 0; }
+  .phone { position: absolute; width: 330px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.6)); }
+  .glow { position: absolute; border-radius: 30px; box-shadow: 0 0 60px 18px rgba(255, 211, 77, .55); }
+  .big { position: absolute; font-weight: 800; line-height: .95; letter-spacing: -.02em; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,.55); }
+  .gold { color: var(--gold); }
+  .pill { position: absolute; font-weight: 800; color: #fff; background: var(--red); border-radius: 18px; padding: 14px 26px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.45); letter-spacing: -.01em; }
+  .logo { position: absolute; right: 26px; bottom: 24px; width: 104px; height: 104px; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,.5); }
+  .arrow { position: absolute; }
+  
+  .v { display: none; } body.A .vA, body.B .vB { display: block; }
+
+  .paper { position: absolute; width: 400px; height: 500px; background: #f3efe6; border-radius: 10px; padding: 34px 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.6); }
+  .ph { font-weight: 800; font-size: 30px; color: #0b1530; letter-spacing: .04em; border-bottom: 5px solid #0b1530; padding-bottom: 12px; }
+  .pl { height: 14px; border-radius: 7px; background: rgba(11,21,48,.18); margin-top: 20px; }
+  .stamp { position: absolute; font-weight: 800; font-size: 74px; line-height: 1; color: #e5383b; border: 9px solid #e5383b; border-radius: 16px;
+    padding: 14px 22px; transform: rotate(-12deg); background: rgba(255,255,255,.08); letter-spacing: .02em; text-align: center;
+    box-shadow: 0 0 0 4px rgba(229,56,59,.25); }
+  .shield { position: absolute; filter: drop-shadow(0 0 30px rgba(255,211,77,.6)); }
+  .steps { position: absolute; width: 400px; } .steps div { font-weight: 800; font-size: 44px; color: #fff; margin-bottom: 26px; display: flex; align-items: center; gap: 18px; }
+  .steps b { display: inline-block; width: 64px; height: 64px; border-radius: 50%; background: #ffd34d; color: #0b1530; text-align: center; line-height: 64px; font-size: 40px; }
+</style>
+</head>
+<body>
+<div id="t">
+  <!-- the banner's circuit lines: gold and blue, rounded bends, dot ends -->
+  <svg class="lines" viewBox="0 0 1280 720" fill="none" stroke-width="5" stroke-linecap="round">
+    <g stroke="#ffd34d"><path d="M0 70 H120" /><path d="M0 640 H70 Q100 640 115 615 L130 590 H170" /></g>
+    <g stroke="#4a6fa5"><path d="M0 110 H160" /><path d="M0 680 H120" /></g>
+    <g fill="#ffd34d" stroke="none"><circle cx="120" cy="70" r="9" /><circle cx="170" cy="590" r="9" /></g>
+    <g fill="#4a6fa5" stroke="none"><circle cx="160" cy="110" r="9" /><circle cx="120" cy="680" r="9" /></g>
+  </svg>
+
+  
+  <!-- A: the denial letter on the left, the hidden rule on the right -->
+  <div class="v vA">
+    <div class="paper" style="left: 70px; top: 120px; transform: rotate(-6deg);">
+      <div class="ph">CLAIM DECISION</div><div class="pl" style="width:88%"></div><div class="pl" style="width:76%"></div>
+      <div class="pl" style="width:82%"></div><div class="pl" style="width:58%"></div><div class="pl" style="width:84%; margin-top:120px"></div><div class="pl" style="width:40%"></div>
+      <div class="stamp" style="left: 18px; top: 200px; font-size: 62px;">CASHLESS<br>DENIED</div>
+    </div>
+    <div class="big" style="left: 520px; top: 64px; font-size: 96px;">CLAIM DENIED?</div>
+    <div class="big gold" style="left: 512px; top: 172px; font-size: 196px;">5-YEAR</div>
+    <div class="big gold" style="left: 516px; top: 352px; font-size: 150px;">RULE</div>
+    <div class="pill" style="left: 524px; top: 530px; font-size: 42px;">AGENTS NEVER TELL YOU</div>
+    <svg class="shield" viewBox="0 0 200 240" style="left: 935px; top: 330px; width: 170px; height: 204px;">
+      <defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset=".5" stop-color="#ffd34d"/><stop offset="1" stop-color="#b8860b"/></linearGradient></defs>
+      <path d="M100 6 L190 36 C190 120 160 190 100 234 C40 190 10 120 10 36 Z" fill="url(#sg)"/>
+      <path d="M100 26 L172 50 C172 118 148 174 100 210 C52 174 28 118 28 50 Z" fill="#0b1530"/>
+      <text x="100" y="128" text-anchor="middle" fill="#ffd34d" font-family="Inter" font-weight="800" font-size="72">60</text>
+      <text x="100" y="164" text-anchor="middle" fill="#fff" font-family="Inter" font-weight="800" font-size="18" letter-spacing="1">MONTHS</text></svg>
+  </div>
+
+  <!-- B: the ₹4.5 lakh bill denied, the way back -->
+  <div class="v vB">
+    <div class="big" style="left: 70px; top: 70px; font-size: 80px; color: #c9d4ea;">HOSPITAL BILL</div>
+    <div class="big" style="left: 64px; top: 170px; font-size: 150px;">₹4.5 LAKH</div>
+    <div class="stamp" style="left: 250px; top: 300px; font-size: 92px; transform: rotate(-10deg);">DENIED</div>
+    <div class="big gold" style="left: 66px; top: 480px; font-size: 112px;">GET IT BACK</div>
+    <div class="pill" style="left: 836px; top: 92px; font-size: 46px;">4 STEPS</div>
+    <div class="steps" style="left: 836px; top: 190px;">
+      <div><b>1</b>Papers</div><div><b>2</b>Grievance</div><div><b>3</b>Bima Bharosa</div><div><b>4</b>Ombudsman</div></div>
+  </div>
+
+  <img class="logo" src="logo.png" alt="Be Practical with Kishore" />
+</div>
+<script>document.body.className = (location.hash.slice(1) || "A");</script>
+</body>
+</html>

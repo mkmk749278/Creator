@@ -1,19 +1,33 @@
-# YouTube description (draft)
+# YouTube package (v5)
 
-Title (safe): Cashless Claim Denied? The 5-Year Legal Rule Insurance Companies Hide
+TITLE (pick one; A/B test the first two with the two thumbnails)
+1. Cashless Claim Denied? The 5-Year IRDAI Rule Agents Never Tell You   ← thumbnail A
+2. Health Insurance Claim Rejected? 4 Steps to Get Your Money Back      ← thumbnail B
+3. Hospital Said Cashless Denied? Know This IRDAI Rule Before You Pay
 
-Cashless denied at the hospital counter? It is not the end. In this video we read the real IRDAI rules: who actually says no to your claim, the 5-year moratorium rule, the 3-hour discharge rule, and the exact 4 steps to get your money back, all the way to the Insurance Ombudsman (free, no lawyer needed).
+THUMBNAILS: thumbnail_A.jpg (claim denied? 5-YEAR RULE, 60-month shield), thumbnail_B.jpg (₹4.5 lakh DENIED, get it back in 4 steps).
+Both promises are on screen early: the denial letter and stamp at 0:31, ₹4,50,000 bill at 0:28, the 5-year rule at 1:04.
 
-CHAPTERS
-0:00 The midnight bill
+DESCRIPTION (paste from here)
+
+Cashless denied at the hospital counter at 9 PM, with a ₹4.5 lakh bill? It is not the end. In this video we read the real IRDAI rules: who actually says no to your claim, the 5-year moratorium rule your agent never told you, the 3-hour discharge rule, and the exact 4 steps to get your money back, all the way to the Insurance Ombudsman (free, online, no lawyer needed).
+
+TIMESTAMPS
+0:00 The midnight bill: ₹4.5 lakh and "cashless denied"
+1:04 What your insurance agent never told you
 1:37 Who really says no? The TPA
-3:40 The 5-year moratorium rule
-4:59 The 3-hour discharge clock
-5:28 The 4-step plan: papers, reimbursement, Bima Bharosa, Ombudsman
+2:08 The 3 excuses: non-disclosure, "not necessary", room rent
+3:06 The room rent trap: a 37.5% cut on your whole bill
+3:46 The 5-year moratorium rule (60 months)
+4:59 The 3-hour discharge rule
+5:28 The 4-step plan when cashless is denied
+6:26 Step 3: Bima Bharosa, IRDAI's complaint portal
+6:43 Step 4: Insurance Ombudsman, 18 offices across India
+7:12 What the Ombudsman decided in 2024-25 (76%)
 7:37 3 rules before you buy or renew
+8:16 Remember this
 
 WHAT THE VIDEO DID NOT HAVE TIME FOR (all sourced)
-- The insurer must pay an Ombudsman award within 30 days, or pay you ₹5,000 a day, unless it challenges the award (IRDAI Policyholders' Interests Master Circular, 2024).
 - If you do not accept the award, you can still go to a consumer commission.
 - File with the Ombudsman within one year of the insurer's final reply (cioins.co.in).
 - If you increase your sum insured, the extra amount gets its own five-year count.
