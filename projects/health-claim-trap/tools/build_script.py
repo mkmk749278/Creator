@@ -28,7 +28,7 @@ SUFFIXES = {"కి", "కు", "లో", "లోనే", "లోకి", "ల�
 QWORDS = ("తెలుసా", "ఏంటి", "ఎవరు", "ఏముంటుంది", "ఎందుకు", "ఏమిటి", "ఎలా", "వచ్చిందా", "చేశారా", "కదా", "ఏమనుకుంటాం")
 TAGS = {"[serious]", "[tense]", "[menacing]", "[slowly]", "[softly]", "[sighs]", "[dramatic pause]", "[intense]", "[curious]",
         "[confident]", "[warmly]", "[shocked]", "[hopeful]", "[sad]", "[empathetic]", "[grave]", "[urgent]", "[firm]",
-        "[emphatic]", "[gently]", "[inspired]", "[whispers]"}
+        "[emphatic]", "[gently]", "[inspired]", "[whispers]", "[sigh]", "[pause]", "[slight smile]"}
 
 
 def lint(row):
@@ -93,6 +93,20 @@ def spoken(r, tags=True):
 
 
 def blocks_of(rows):
+    """Owner (handoff fixes, 2026-10-14): one ElevenLabs file per chapter (bp-hlth01-ch1.mp3 ...). Falls back to the
+    size-based split below only for a chapter over the 5,000 cap."""
+    out = []
+    for r in rows:
+        if out and out[-1][-1]["section"] == r["section"]:
+            out[-1].append(r)
+        else:
+            out.append([r])
+    if all(len(block_text(b)) <= CAP for b in out):
+        return out
+    return blocks_by_size(rows)
+
+
+def blocks_by_size(rows):
     """Fewest blocks that respect the 5,000 cap, sized near 4,250; cut at section ends near the ideal points."""
     import math
     total = sum(len(spoken(r)) + 1 for r in rows)
@@ -175,8 +189,8 @@ def main():
         f.write(f"# Bunty blocks: {TITLE}\n\nPaste each block as one ElevenLabs generation (voice Akash per the owner's handoff: Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on, "
                 "`language_code` = the VO language). The [square-bracket] words are emotion cues (audio tags), not spoken text. Test "
                 "block 1 first: if Bunty reads a tag aloud, use `bunty_blocks_clean.md` instead. Listen to every take; if a "
-                "block skips, repeats or drifts, regenerate it, and send the files as `voice/block1.mp3`, "
-                "`voice/block2.mp3`, ….\n\n")
+                "block skips, repeats or drifts, regenerate it, and send the files as `voice/bp-hlth01-ch1.mp3`, "
+                "`voice/bp-hlth01-ch2.mp3`, … (one per chapter block).\n\n")
         for i, b in enumerate(blocks, 1):
             c = chars(b)
             f.write(f"## Block {i} · {c:,} characters · ~{mmss(secs(b))} · lines {b[0]['id']}–{b[-1]['id']}\n\n")
