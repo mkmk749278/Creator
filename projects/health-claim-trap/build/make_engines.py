@@ -552,54 +552,71 @@ def e8_opd():
 
 
 def e9_slicer():
-    """E024-E025 bill slicer. Numbers from tools/claim_math.py: limit 5,000, room 8,000, 3 days; cut 37.5% on room-linked heads."""
+    """E024-E025 four-tower bill guillotine. Numbers from tools/claim_math.py: limit 5,000, room 8,000, 3 days; the
+    room-linked towers lose 3/8 (37.5%, OUR CALCULATION; VO "about thirty-seven percent"); medicines untouched."""
     sid = "e9_slicer"
     start, end = S("E024")["start"] - 0.25, L("E025")[1] + 0.35
     s24, s25 = sents("E024"), sents("E025")
-    rows = [("Room (3 days)", 24000, 15000, "cut"), ("Surgeon and doctor fees", 120000, 75000, "cut"), ("Nursing", 15000, 9375, "cut"),
-            ("Medicines and consumables", 121000, 121000, "safe"), ("Implants · tests", 75000, 75000, "check")]
-    mx = 121000
-    rh = "".join(f"""<div class="brow" id="r{i}"><div class="bl">{n}</div><div class="track"><div class="bar2 {k}" id="b{i}" style="width:{a / mx * 100:.1f}%"></div>
-        <div class="kept" id="kp{i}" style="width:{c / mx * 100:.1f}%"></div></div><div class="bv mono" id="v{i}">{inr(a)}</div>
-        <div class="tagx {k}" id="t{i}">{"−" + inr(a - c) if k == "cut" else ("PROTECTED · 0% CUT" if k == "safe" else "CHECK POLICY WORDING")}</div></div>"""
-                 for i, (n, a, c, k) in enumerate(rows))
+    towers = [("Room · 3 days", 24000, True), ("Surgeon and doctor", 120000, True), ("Nursing", 15000, True), ("Medicines", 121000, False)]
+    base, hmax, tw = 900, 470, 250
+    html = ""
+    for i, (n, v, cut) in enumerate(towers):
+        cx = 330 + i * 420; h = max(70, v / 121000 * hmax); hk = h * 0.625
+        col = "#0284c7" if cut else "#16a34a"
+        html += f"""<div class="tw" id="tw{i}" style="left:{cx - tw / 2:.0f}px; top:{base - h:.0f}px; width:{tw}px; height:{h:.0f}px">
+          <div class="keep" style="height:{hk if cut else h:.0f}px; background:linear-gradient({col}, {col}cc)"></div>
+          {f'<div class="slice" id="sl{i}" style="height:{h - hk:.0f}px; background:{col}"></div>' if cut else ''}
+</div>
+        <div class="tn" style="left:{cx - 200:.0f}px">{n}<div class="mono" id="tv{i}" style="font-size:36px; margin-top:8px; color:#f8fafc">{inr(v)}</div></div>"""
+        if cut:
+            ext = min(260, base - h - 300)
+            html += f"""<div class="gl" id="gl{i}" style="left:{cx - tw / 2 - 30:.0f}px; top:{base - h - ext:.0f}px; width:{tw + 60}px; height:{h - hk + ext:.0f}px">
+              <div class="post" style="left:0"></div><div class="post" style="right:0"></div><div class="blade" id="bl{i}"></div></div>
+            <div class="pc" id="pc{i}" style="left:{cx - 110:.0f}px; top:{base - h - ext - 70:.0f}px">−37.5%</div>"""
+        else:
+            html += f'<div class="chip green" id="safe" style="left:{cx - 200:.0f}px; top:{base - h - 110:.0f}px; opacity:0">PROTECTED · 0% CUT</div>'
     body = f"""
-      <div class="glass" id="tog" style="left:120px; top:90px; width:1680px; padding:24px 34px; display:flex; align-items:center; gap:40px">
-        <div><div class="t-k">Policy room limit</div><div class="t-v mono" style="font-size:46px">₹5,000/day</div></div>
+      <div class="glass" id="tog" style="left:120px; top:60px; width:1680px; padding:20px 34px; display:flex; align-items:center; gap:40px">
+        <div><div class="t-k">Policy room limit</div><div class="t-v mono" style="font-size:44px">₹5,000/day</div></div>
         <div class="sw"><div class="knob" id="knob"></div></div>
-        <div><div class="t-k">Room taken</div><div class="t-v mono" id="room" style="font-size:46px; color:#f59e0b">₹5,000/day</div></div>
-        <div style="margin-left:auto; text-align:right"><div class="t-k">You expect a cut of</div><div class="t-v mono" id="exp" style="font-size:46px; opacity:0">₹9,000?</div></div></div>
-      <div class="glass" id="bill" style="left:120px; top:290px; width:1680px; padding:30px 40px">{rh}</div>
-      <div id="blade"></div>
-      <div class="glass" id="tot" style="left:620px; top:900px; width:680px; padding:18px 30px; text-align:center; border-color:rgba(220,38,38,.7); opacity:0">
-        <span class="t-k">Total cut</span> <span class="t-v mono" id="cut" style="color:#f87171; font-size:60px; margin-left:16px">₹9,000</span></div>"""
-    css = """.brow { display:flex; align-items:center; gap:24px; height:104px; }
-.bl { width:420px; font:600 30px/1.2 Inter,Arial,sans-serif; } .track { position:relative; flex:1; height:40px; }
-.bar2, .kept { position:absolute; left:0; top:0; height:40px; border-radius:8px; } .bar2 { background:rgba(220,38,38,.55); } .kept { background:#0284c7; }
-.bar2.safe { background:#16a34a; } .bar2.check { background:#b45309; } .safe + .kept { background:#22c55e; } .check + .kept { background:#d97706; }
-.bv { width:180px; text-align:right; font:800 32px/1 Inter,Arial,sans-serif; } .tagx { width:340px; font:800 24px/1 Inter,Arial,sans-serif; letter-spacing:.06em; opacity:0; }
-.tagx.cut { color:#f87171; } .tagx.safe { color:#4ade80; } .tagx.check { color:#f59e0b; }
-.sw { width:120px; height:56px; border-radius:28px; background:#334155; position:relative; } .knob { position:absolute; left:6px; top:6px; width:44px; height:44px; border-radius:50%; background:#f8fafc; }
-#blade { position:absolute; left:100px; top:280px; width:1720px; height:8px; background:#f87171; box-shadow:0 0 30px 6px rgba(248,113,113,.8); opacity:0; }"""
+        <div><div class="t-k">Room taken</div><div class="t-v mono" id="room" style="font-size:44px; color:#f59e0b">₹5,000/day</div></div>
+        <div style="margin-left:auto; text-align:right"><div class="t-k">Total cut</div><div class="t-v mono" id="cut" style="font-size:56px; color:#f87171; opacity:0">₹9,000?</div></div></div>
+      <div id="floor" style="position:absolute; left:100px; top:{base}px; width:1720px; height:6px; background:rgba(148,163,184,.5)"></div>
+      {html}"""
+    css = """.tw { position:absolute; } .keep { position:absolute; left:0; right:0; bottom:0; border-radius:0 0 8px 8px; box-shadow:0 0 40px rgba(2,132,199,.35); }
+.slice { position:absolute; left:0; right:0; top:0; border-radius:8px 8px 0 0; }
+.tv { position:absolute; left:-40px; right:-40px; bottom:-150px; text-align:center; font:800 40px/1 Inter,Arial,sans-serif; color:#f8fafc; }
+.tn { position:absolute; top:914px; width:400px; text-align:center; font:800 28px/1 Inter,Arial,sans-serif; letter-spacing:.04em; color:#cbd5e1; }
+.gl { position:absolute; opacity:0; } .post { position:absolute; top:0; bottom:0; width:16px; background:linear-gradient(90deg,#64748b,#cbd5e1,#64748b); border-radius:4px; }
+.blade { position:absolute; left:16px; right:16px; top:0; height:60px; background:linear-gradient(170deg,#e2e8f0,#94a3b8 60%,#f87171 100%);
+  clip-path:polygon(0 0, 100% 0, 100% 40%, 0 100%); filter:drop-shadow(0 0 12px rgba(248,113,113,.7)); }
+.pc { position:absolute; width:220px; text-align:center; font:800 54px/1 Inter,Arial,sans-serif; color:#f87171; opacity:0; }
+.sw { width:120px; height:56px; border-radius:28px; background:#334155; position:relative; } .knob { position:absolute; left:6px; top:6px; width:44px; height:44px; border-radius:50%; background:#f8fafc; }"""
     cues = dict(lim=s24[0]["start"], took=at("E024", "eight thousand"), notjust=s24[1]["start"], five8=s25[0]["start"], surg=at("E025", "surgery"),
                 pct=s25[1]["start"])
     js = """
-      pop($("tog"), 0.1, { opacity: 0, y: -40 }); pop($("bill"), C.lim + 0.6, { opacity: 0, y: 40 });
-      for (let i = 0; i < 5; i++) gsap.set($("kp" + i), { opacity: 0 });
+      pop($("tog"), 0.1, { opacity: 0, y: -40 });
+      for (let i = 0; i < 4; i++) tl.fromTo($("tw" + i), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.6, ease: "power3.out" }, C.lim + 0.4 + i * 0.3);
       tl.to($("knob"), { x: 64, background: "#f59e0b", duration: 0.3 }, C.took);
       FIN.bind($("room"), FIN.keys([[C.took, 5000], [C.took + 0.5, 8000]]), (v) => FIN.inr(Math.round(v / 100) * 100) + "/day");
-      pop($("exp"), C.notjust - 0.3, { opacity: 0 }); pop($("tot"), C.notjust, { opacity: 0 });
-      tl.to($("exp"), { textDecoration: "line-through", color: "#94a3b8", duration: 0.2 }, C.notjust + 1.2);
-      // blade sweeps down the bill; room-linked rows shrink to 5/8
-      tl.fromTo($("blade"), { opacity: 1, y: 0 }, { y: 560, duration: 1.6, ease: "power1.inOut" }, C.five8 + 0.8);
-      tl.to($("blade"), { opacity: 0, duration: 0.3 }, C.five8 + 2.5);
-      [0, 1, 2].forEach((i) => { tl.to($("kp" + i), { opacity: 1, duration: 0.3 }, C.five8 + 0.9 + i * 0.3); pop($("t" + i), C.surg + i * 0.35, { opacity: 0 }); });
-      pop($("t3"), C.pct + 0.4, { opacity: 0 }); pop($("t4"), C.pct + 1.4, { opacity: 0 });
-      tl.to($("kp3"), { opacity: 1, duration: 0.3 }, C.pct + 0.4); tl.to($("kp4"), { opacity: 1, duration: 0.3 }, C.pct + 1.4);
-      FIN.bind($("cut"), FIN.keys([[C.five8 + 0.9, 9000], [C.pct + 0.6, 59625]]), (v) => FIN.inr(Math.round(v)));
-      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.03, duration: D.duration, ease: "none" }, 0);
+      pop($("cut"), C.notjust, { opacity: 0 });
+      [0, 1, 2].forEach((i) => tl.to($("gl" + i), { opacity: 1, duration: 0.3 }, C.five8 + 0.2 + i * 0.2));
+      const hit = [C.five8 + 1.4, C.surg + 0.6, C.surg + 1.6];
+      [0, 1, 2].forEach((i) => {
+        const g = $("gl" + i);
+        tl.fromTo($("bl" + i), { y: 0 }, { y: parseFloat(g.style.height) - 60, duration: 0.18, ease: "power4.in", immediateRender: false }, hit[i] - 0.18);
+        tl.to($("sl" + i), { background: "#dc2626", duration: 0.05 }, hit[i]);
+        tl.to($("sl" + i), { x: 140 + i * 20, y: -60, rotation: 28 + i * 8, opacity: 0, duration: 1.1, ease: "power2.out" }, hit[i] + 0.05);
+        tl.to($("bl" + i), { y: 0, duration: 0.5, ease: "power2.inOut" }, hit[i] + 0.5);
+        pop($("pc" + i), hit[i] + 0.1, { opacity: 0, y: 30, scale: 1.4 });
+        tl.fromTo($("stage"), { y: 0 }, { y: 8, duration: 0.04, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, hit[i]);
+      });
+      pop($("safe"), C.pct + 0.8, { opacity: 0, y: 30 });
+      FIN.bind($("cut"), FIN.keys([[C.notjust, 8999], [hit[0], 8999], [hit[0] + 0.01, 9000], [hit[1], 9000], [hit[1] + 0.3, 54000], [hit[2], 54000], [hit[2] + 0.3, 59625]]),
+        (v) => v < 9000 ? "₹9,000?" : FIN.inr(Math.round(v)));
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.04, duration: D.duration, ease: "none" }, 0);
 """
-    put(sid, bp_page(sid, "The proportionate deduction slicer", round(end - start, 2), body, js,
+    put(sid, bp_page(sid, "The four-tower bill guillotine", round(end - start, 2), body, js,
                      tag="OUR CALCULATION · ILLUSTRATIVE BILL · AROGYA SANJEEVANI POLICY WORDING", css=css), start, end - start, cues)
 
 
@@ -843,10 +860,18 @@ def e16_stopwatch():
     start, end = S("E038")["start"] - 0.25, L("E041")[1] + 0.35
     s40 = sents("E040")
     body = """
-      <div class="glass" id="clk" style="left:120px; top:200px; width:820px; height:640px; padding:44px; text-align:center">
-        <div class="t-k">Since the discharge request</div><div class="mono" id="t" style="font:800 150px/1 Inter,Arial,sans-serif; margin-top:60px">00:00:00</div>
-        <div class="limit"><div class="lf" id="lf"></div></div><div class="t-k" id="st" style="margin-top:30px; color:#f59e0b">Final approval due within 3 hours</div></div>
-      <div class="glass" id="led" style="left:1000px; top:200px; width:800px; height:640px; padding:44px">
+      <div class="glass" id="clk" style="left:100px; top:120px; width:860px; height:860px; padding:30px; text-align:center">
+        <div class="t-k">Since the discharge request</div>
+        <svg viewBox="0 0 600 600" style="width:600px; height:600px; margin-top:14px; overflow:visible">
+          <rect x="270" y="-22" width="60" height="30" rx="8" fill="#94a3b8"/><circle cx="300" cy="300" r="250" fill="rgba(2,6,15,.75)" stroke="#94a3b8" stroke-width="10"/>
+          <circle cx="300" cy="300" r="222" fill="none" stroke="rgba(148,163,184,.18)" stroke-width="26"/>
+          <circle id="ring" cx="300" cy="300" r="222" fill="none" stroke="#f59e0b" stroke-width="26" stroke-dasharray="1394.9" stroke-dashoffset="1394.9" transform="rotate(-90 300 300)"/>
+          <circle id="ring2" cx="300" cy="300" r="250" fill="none" stroke="#dc2626" stroke-width="14" stroke-dasharray="1570.8" stroke-dashoffset="1570.8" transform="rotate(-90 300 300)" style="filter:drop-shadow(0 0 14px rgba(220,38,38,.9))"/>
+          <line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(0 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(6 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(12 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(18 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(24 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(30 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(36 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(42 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(48 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(54 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(60 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(66 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(72 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(78 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(84 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(90 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(96 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(102 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(108 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(114 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(120 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(126 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(132 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(138 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(144 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(150 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(156 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(162 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(168 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(174 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(180 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(186 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(192 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(198 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(204 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(210 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(216 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(222 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(228 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(234 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(240 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(246 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(252 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(258 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(264 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(270 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(276 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(282 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(288 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(294 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(300 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(306 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(312 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(318 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(324 300 300)"/><line x1="300" y1="70" x2="300" y2="100" stroke="#f8fafc" stroke-width="6" transform="rotate(330 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(336 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(342 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(348 300 300)"/><line x1="300" y1="84" x2="300" y2="100" stroke="#64748b" stroke-width="3" transform="rotate(354 300 300)"/><text x="445" y="398" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="36">1H</text><text x="155" y="398" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="36">2H</text><text x="300" y="146" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="36">3H</text>
+          <line id="hand" x1="300" y1="330" x2="300" y2="96" stroke="#f87171" stroke-width="8" stroke-linecap="round"/><circle cx="300" cy="300" r="16" fill="#f87171"/></svg>
+        <div class="mono" id="t" style="font:800 84px/1 Inter,Arial,sans-serif; margin-top:-6px">00:00:00</div>
+        <div class="limit" style="display:none"><div class="lf" id="lf"></div></div><div class="t-k" id="st" style="margin-top:14px; color:#f59e0b; font-size:26px">Final approval due within 3 hours</div></div>
+      <div class="glass" id="led" style="left:1010px; top:200px; width:800px; height:640px; padding:44px">
         <div style="display:flex; gap:30px"><div class="colx" id="wal"><div class="t-k">Your wallet</div></div><div class="colx" id="fund" style="border-color:rgba(56,189,248,.6)"><div class="t-k" style="color:#38bdf8">Insurer's shareholders' fund</div><div class="t-k" style="margin-top:6px; font-size:18px">Para 16(b)</div></div></div>
         <div class="chg" id="chg">Extra delay charge · ₹4,000</div></div>
       <div class="chip amber" id="ask" style="left:640px; top:900px; opacity:0">Ask for the 3-hour rule</div>"""
@@ -861,6 +886,9 @@ def e16_stopwatch():
       FIN.bind($("t"), secs, (v) => { const s = Math.floor(v), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
         return [h, m, x].map((n) => String(n).padStart(2, "0")).join(":"); });
       FIN.hook((t) => { const v = secs(t); $("lf").style.transform = `scaleX(${Math.min(1, v / 10800)})`;
+        $("ring").setAttribute("stroke-dashoffset", String(1394.9 * (1 - Math.min(1, v / 10800))));
+        $("ring2").setAttribute("stroke-dashoffset", String(1570.8 * (1 - Math.min(1, Math.max(0, v - 10800) / 10800))));
+        $("hand").setAttribute("transform", `rotate(${(v / 10800) * 360} 300 300)`);
         const over = v > 10801; $("t").style.color = over ? "#f87171" : "#f8fafc"; $("lf").style.background = over ? "#dc2626" : "#f59e0b"; });
       FIN.bind($("st"), (t) => secs(t) > 10801 ? 1 : 0, (v) => v ? "Over 3 hours: delay" : "Final approval due within 3 hours");
       tl.to($("chg"), { opacity: 1, duration: 0.3 }, C.extra);

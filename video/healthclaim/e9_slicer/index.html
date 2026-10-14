@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>The proportionate deduction slicer</title>
+    <title>The four-tower bill guillotine</title>
     <script src="vendor/gsap.min.js"></script>
     <script src="vendor/fin/fin.js"></script>
     <script src="data.js"></script>
@@ -57,14 +57,15 @@
 .mono { font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
 .ill { position: absolute; left: 64px; top: 48px; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #facc15;
   background: rgba(2,6,15,.7); padding: 10px 14px; border-radius: 6px; border-left: 4px solid #facc15; }
-.brow { display:flex; align-items:center; gap:24px; height:104px; }
-.bl { width:420px; font:600 30px/1.2 Inter,Arial,sans-serif; } .track { position:relative; flex:1; height:40px; }
-.bar2, .kept { position:absolute; left:0; top:0; height:40px; border-radius:8px; } .bar2 { background:rgba(220,38,38,.55); } .kept { background:#0284c7; }
-.bar2.safe { background:#16a34a; } .bar2.check { background:#b45309; } .safe + .kept { background:#22c55e; } .check + .kept { background:#d97706; }
-.bv { width:180px; text-align:right; font:800 32px/1 Inter,Arial,sans-serif; } .tagx { width:340px; font:800 24px/1 Inter,Arial,sans-serif; letter-spacing:.06em; opacity:0; }
-.tagx.cut { color:#f87171; } .tagx.safe { color:#4ade80; } .tagx.check { color:#f59e0b; }
+.tw { position:absolute; } .keep { position:absolute; left:0; right:0; bottom:0; border-radius:0 0 8px 8px; box-shadow:0 0 40px rgba(2,132,199,.35); }
+.slice { position:absolute; left:0; right:0; top:0; border-radius:8px 8px 0 0; }
+.tv { position:absolute; left:-40px; right:-40px; bottom:-150px; text-align:center; font:800 40px/1 Inter,Arial,sans-serif; color:#f8fafc; }
+.tn { position:absolute; top:914px; width:400px; text-align:center; font:800 28px/1 Inter,Arial,sans-serif; letter-spacing:.04em; color:#cbd5e1; }
+.gl { position:absolute; opacity:0; } .post { position:absolute; top:0; bottom:0; width:16px; background:linear-gradient(90deg,#64748b,#cbd5e1,#64748b); border-radius:4px; }
+.blade { position:absolute; left:16px; right:16px; top:0; height:60px; background:linear-gradient(170deg,#e2e8f0,#94a3b8 60%,#f87171 100%);
+  clip-path:polygon(0 0, 100% 0, 100% 40%, 0 100%); filter:drop-shadow(0 0 12px rgba(248,113,113,.7)); }
+.pc { position:absolute; width:220px; text-align:center; font:800 54px/1 Inter,Arial,sans-serif; color:#f87171; opacity:0; }
 .sw { width:120px; height:56px; border-radius:28px; background:#334155; position:relative; } .knob { position:absolute; left:6px; top:6px; width:44px; height:44px; border-radius:50%; background:#f8fafc; }
-#blade { position:absolute; left:100px; top:280px; width:1720px; height:8px; background:#f87171; box-shadow:0 0 30px 6px rgba(248,113,113,.8); opacity:0; }
     </style>
   </head>
   <body>
@@ -72,25 +73,35 @@
       
       <div id="stage">
 <div id="bimg" style="position:absolute; inset:-80px; background:url(img/back.jpg) center/cover; opacity:.6"></div><div class="bp" id="bp" style="opacity:.85"></div>
-      <div class="glass" id="tog" style="left:120px; top:90px; width:1680px; padding:24px 34px; display:flex; align-items:center; gap:40px">
-        <div><div class="t-k">Policy room limit</div><div class="t-v mono" style="font-size:46px">₹5,000/day</div></div>
+      <div class="glass" id="tog" style="left:120px; top:60px; width:1680px; padding:20px 34px; display:flex; align-items:center; gap:40px">
+        <div><div class="t-k">Policy room limit</div><div class="t-v mono" style="font-size:44px">₹5,000/day</div></div>
         <div class="sw"><div class="knob" id="knob"></div></div>
-        <div><div class="t-k">Room taken</div><div class="t-v mono" id="room" style="font-size:46px; color:#f59e0b">₹5,000/day</div></div>
-        <div style="margin-left:auto; text-align:right"><div class="t-k">You expect a cut of</div><div class="t-v mono" id="exp" style="font-size:46px; opacity:0">₹9,000?</div></div></div>
-      <div class="glass" id="bill" style="left:120px; top:290px; width:1680px; padding:30px 40px"><div class="brow" id="r0"><div class="bl">Room (3 days)</div><div class="track"><div class="bar2 cut" id="b0" style="width:19.8%"></div>
-        <div class="kept" id="kp0" style="width:12.4%"></div></div><div class="bv mono" id="v0">₹24,000</div>
-        <div class="tagx cut" id="t0">−₹9,000</div></div><div class="brow" id="r1"><div class="bl">Surgeon and doctor fees</div><div class="track"><div class="bar2 cut" id="b1" style="width:99.2%"></div>
-        <div class="kept" id="kp1" style="width:62.0%"></div></div><div class="bv mono" id="v1">₹1,20,000</div>
-        <div class="tagx cut" id="t1">−₹45,000</div></div><div class="brow" id="r2"><div class="bl">Nursing</div><div class="track"><div class="bar2 cut" id="b2" style="width:12.4%"></div>
-        <div class="kept" id="kp2" style="width:7.7%"></div></div><div class="bv mono" id="v2">₹15,000</div>
-        <div class="tagx cut" id="t2">−₹5,625</div></div><div class="brow" id="r3"><div class="bl">Medicines and consumables</div><div class="track"><div class="bar2 safe" id="b3" style="width:100.0%"></div>
-        <div class="kept" id="kp3" style="width:100.0%"></div></div><div class="bv mono" id="v3">₹1,21,000</div>
-        <div class="tagx safe" id="t3">PROTECTED · 0% CUT</div></div><div class="brow" id="r4"><div class="bl">Implants · tests</div><div class="track"><div class="bar2 check" id="b4" style="width:62.0%"></div>
-        <div class="kept" id="kp4" style="width:62.0%"></div></div><div class="bv mono" id="v4">₹75,000</div>
-        <div class="tagx check" id="t4">CHECK POLICY WORDING</div></div></div>
-      <div id="blade"></div>
-      <div class="glass" id="tot" style="left:620px; top:900px; width:680px; padding:18px 30px; text-align:center; border-color:rgba(220,38,38,.7); opacity:0">
-        <span class="t-k">Total cut</span> <span class="t-v mono" id="cut" style="color:#f87171; font-size:60px; margin-left:16px">₹9,000</span></div>
+        <div><div class="t-k">Room taken</div><div class="t-v mono" id="room" style="font-size:44px; color:#f59e0b">₹5,000/day</div></div>
+        <div style="margin-left:auto; text-align:right"><div class="t-k">Total cut</div><div class="t-v mono" id="cut" style="font-size:56px; color:#f87171; opacity:0">₹9,000?</div></div></div>
+      <div id="floor" style="position:absolute; left:100px; top:900px; width:1720px; height:6px; background:rgba(148,163,184,.5)"></div>
+      <div class="tw" id="tw0" style="left:205px; top:807px; width:250px; height:93px">
+          <div class="keep" style="height:58px; background:linear-gradient(#0284c7, #0284c7cc)"></div>
+          <div class="slice" id="sl0" style="height:35px; background:#0284c7"></div>
+</div>
+        <div class="tn" style="left:130px">Room · 3 days<div class="mono" id="tv0" style="font-size:36px; margin-top:8px; color:#f8fafc">₹24,000</div></div><div class="gl" id="gl0" style="left:175px; top:547px; width:310px; height:295px">
+              <div class="post" style="left:0"></div><div class="post" style="right:0"></div><div class="blade" id="bl0"></div></div>
+            <div class="pc" id="pc0" style="left:220px; top:477px">−37.5%</div><div class="tw" id="tw1" style="left:625px; top:434px; width:250px; height:466px">
+          <div class="keep" style="height:291px; background:linear-gradient(#0284c7, #0284c7cc)"></div>
+          <div class="slice" id="sl1" style="height:175px; background:#0284c7"></div>
+</div>
+        <div class="tn" style="left:550px">Surgeon and doctor<div class="mono" id="tv1" style="font-size:36px; margin-top:8px; color:#f8fafc">₹1,20,000</div></div><div class="gl" id="gl1" style="left:595px; top:300px; width:310px; height:309px">
+              <div class="post" style="left:0"></div><div class="post" style="right:0"></div><div class="blade" id="bl1"></div></div>
+            <div class="pc" id="pc1" style="left:640px; top:230px">−37.5%</div><div class="tw" id="tw2" style="left:1045px; top:830px; width:250px; height:70px">
+          <div class="keep" style="height:44px; background:linear-gradient(#0284c7, #0284c7cc)"></div>
+          <div class="slice" id="sl2" style="height:26px; background:#0284c7"></div>
+</div>
+        <div class="tn" style="left:970px">Nursing<div class="mono" id="tv2" style="font-size:36px; margin-top:8px; color:#f8fafc">₹15,000</div></div><div class="gl" id="gl2" style="left:1015px; top:570px; width:310px; height:286px">
+              <div class="post" style="left:0"></div><div class="post" style="right:0"></div><div class="blade" id="bl2"></div></div>
+            <div class="pc" id="pc2" style="left:1060px; top:500px">−37.5%</div><div class="tw" id="tw3" style="left:1465px; top:430px; width:250px; height:470px">
+          <div class="keep" style="height:470px; background:linear-gradient(#16a34a, #16a34acc)"></div>
+          
+</div>
+        <div class="tn" style="left:1390px">Medicines<div class="mono" id="tv3" style="font-size:36px; margin-top:8px; color:#f8fafc">₹1,21,000</div></div><div class="chip green" id="safe" style="left:1390px; top:320px; opacity:0">PROTECTED · 0% CUT</div>
       </div>
       <div class="fin-tag" id="tag">OUR CALCULATION · ILLUSTRATIVE BILL · AROGYA SANJEEVANI POLICY WORDING</div>
       <canvas class="fin-grain" id="grain" width="500" height="290"></canvas>
@@ -105,20 +116,26 @@
 tl.fromTo($("bp"), { x: 0, y: 0 }, { x: -60, y: -30, duration: D.duration, ease: "none" }, 0);
 tl.fromTo($("bimg"), { scale: 1.0, x: 0 }, { scale: 1.08, x: -40, duration: D.duration, ease: "none" }, 0);
 
-      pop($("tog"), 0.1, { opacity: 0, y: -40 }); pop($("bill"), C.lim + 0.6, { opacity: 0, y: 40 });
-      for (let i = 0; i < 5; i++) gsap.set($("kp" + i), { opacity: 0 });
+      pop($("tog"), 0.1, { opacity: 0, y: -40 });
+      for (let i = 0; i < 4; i++) tl.fromTo($("tw" + i), { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, duration: 0.6, ease: "power3.out" }, C.lim + 0.4 + i * 0.3);
       tl.to($("knob"), { x: 64, background: "#f59e0b", duration: 0.3 }, C.took);
       FIN.bind($("room"), FIN.keys([[C.took, 5000], [C.took + 0.5, 8000]]), (v) => FIN.inr(Math.round(v / 100) * 100) + "/day");
-      pop($("exp"), C.notjust - 0.3, { opacity: 0 }); pop($("tot"), C.notjust, { opacity: 0 });
-      tl.to($("exp"), { textDecoration: "line-through", color: "#94a3b8", duration: 0.2 }, C.notjust + 1.2);
-      // blade sweeps down the bill; room-linked rows shrink to 5/8
-      tl.fromTo($("blade"), { opacity: 1, y: 0 }, { y: 560, duration: 1.6, ease: "power1.inOut" }, C.five8 + 0.8);
-      tl.to($("blade"), { opacity: 0, duration: 0.3 }, C.five8 + 2.5);
-      [0, 1, 2].forEach((i) => { tl.to($("kp" + i), { opacity: 1, duration: 0.3 }, C.five8 + 0.9 + i * 0.3); pop($("t" + i), C.surg + i * 0.35, { opacity: 0 }); });
-      pop($("t3"), C.pct + 0.4, { opacity: 0 }); pop($("t4"), C.pct + 1.4, { opacity: 0 });
-      tl.to($("kp3"), { opacity: 1, duration: 0.3 }, C.pct + 0.4); tl.to($("kp4"), { opacity: 1, duration: 0.3 }, C.pct + 1.4);
-      FIN.bind($("cut"), FIN.keys([[C.five8 + 0.9, 9000], [C.pct + 0.6, 59625]]), (v) => FIN.inr(Math.round(v)));
-      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.03, duration: D.duration, ease: "none" }, 0);
+      pop($("cut"), C.notjust, { opacity: 0 });
+      [0, 1, 2].forEach((i) => tl.to($("gl" + i), { opacity: 1, duration: 0.3 }, C.five8 + 0.2 + i * 0.2));
+      const hit = [C.five8 + 1.4, C.surg + 0.6, C.surg + 1.6];
+      [0, 1, 2].forEach((i) => {
+        const g = $("gl" + i);
+        tl.fromTo($("bl" + i), { y: 0 }, { y: parseFloat(g.style.height) - 60, duration: 0.18, ease: "power4.in", immediateRender: false }, hit[i] - 0.18);
+        tl.to($("sl" + i), { background: "#dc2626", duration: 0.05 }, hit[i]);
+        tl.to($("sl" + i), { x: 140 + i * 20, y: -60, rotation: 28 + i * 8, opacity: 0, duration: 1.1, ease: "power2.out" }, hit[i] + 0.05);
+        tl.to($("bl" + i), { y: 0, duration: 0.5, ease: "power2.inOut" }, hit[i] + 0.5);
+        pop($("pc" + i), hit[i] + 0.1, { opacity: 0, y: 30, scale: 1.4 });
+        tl.fromTo($("stage"), { y: 0 }, { y: 8, duration: 0.04, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, hit[i]);
+      });
+      pop($("safe"), C.pct + 0.8, { opacity: 0, y: 30 });
+      FIN.bind($("cut"), FIN.keys([[C.notjust, 8999], [hit[0], 8999], [hit[0] + 0.01, 9000], [hit[1], 9000], [hit[1] + 0.3, 54000], [hit[2], 54000], [hit[2] + 0.3, 59625]]),
+        (v) => v < 9000 ? "₹9,000?" : FIN.inr(Math.round(v)));
+      tl.fromTo($("stage"), { scale: 1 }, { scale: 1.04, duration: D.duration, ease: "none" }, 0);
 
       tl.to({}, { duration: 0.01 }, D.duration - 0.01);
       FIN.attach(tl);
