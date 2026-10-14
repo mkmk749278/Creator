@@ -54,8 +54,8 @@ SCN = lambda sid: S(scene_meta(sid)[0], "scene", id=sid)
 
 SHOTS = [
     # ---- 1 The midnight bill ----
-    S(0.0, "clip", src=B(10874), ss=1.0, label="9 PM · A HOSPITAL LOBBY", tag=ILL),
-    S(at("E001", "thousands"), "clip", src=B(19627), ss=2.0, label="29.5 LAKH CLAIMS REJECTED IN A YEAR", tag="IRDAI ANNUAL REPORT | 2024-25"),
+    S(0.0, "clip", src=B(74585), ss=1.0, label="IMAGINE THIS", tag=ILL),
+    S(at("E001", "thousands"), "clip", src=B(3175), ss=5.0, label="29.5 LAKH CLAIMS REJECTED IN A YEAR", tag="IRDAI ANNUAL REPORT | 2024-25"),
     SCN("s00_receipts"),
     S(at("E003"), "clip", src=C("iv-in-hospital-room-5485"), ss=1.0, label="AN EMERGENCY", tag=ILL),
     S(at("E003", "admitted", k=1), "clip", src=B(229071), ss=2.0, label="ADMITTED", tag=ILL),
@@ -63,7 +63,7 @@ SHOTS = [
     S(at("E004", k=1), "clip", src=C("a-printer-at-work-in-the-office-5252"), ss=1.0, label="DISCHARGE PAPERS READY", tag=ILL),
     S(at("E004", k=2), "still", src=SM / "bill.png", zoom=(1.0, 1.9), label="BILL: ₹4,50,000", tag="SIMULATION"),
     SCN("s01_letter"),
-    S(at("E007", "banks"), "clip", src=B(19627), ss=8.0, label="NIGHT · BANKS CLOSED"),
+    S(at("E007", "banks"), "clip", src=B(134434), ss=9.0, label="NIGHT · BANKS CLOSED"),
     S(at("E007", "break your"), "clip", src=B(202987), ss=2.0, label="BREAK THE FIXED DEPOSIT", tag=ILL),
     S(at("E007", "borrow"), "clip", src=B(204421), ss=3.0, label="BORROW FROM RELATIVES", tag=ILL),
     S(at("E007", "swipe"), "clip", src=C("transferring-card-details-5376"), ss=1.0, label="SWIPE A CREDIT CARD", tag=ILL),
@@ -97,7 +97,7 @@ SHOTS = [
     S(at("E025") + 2.6, "still", src=SM / "bill.png", zoom=(1.6, 1.9), focus=(0.5, 0.25), label="SURGERY · DOCTOR · NURSING", tag="SIMULATION"),
     S(at("E025") + 5.0, "board", id="b01_room"),
     S(at("E026"), "clip", src=B(212508), ss=2.0, label="FEELING HELPLESS", tag=ILL),
-    S(at("E026", k=1), "clip", src=B(1383), ss=1.0, label="THE DOOR IS CLOSED?", tag=ILL),
+    S(at("E026", k=1), "clip", src=B(74585), ss=7.0, label="THE DOOR IS CLOSED?", tag=ILL),
     S(at("E027"), "still", src=SM / "letter_note.png", zoom=(1.2, 2.1), label="CASHLESS NO ≠ CLAIM NO", tag="AROGYA SANJEEVANI POLICY WORDING"),
     # ---- 3 The five year rule and the clock ----
     S(at("E028"), "proof", src=PR / "mc_ref.png", label="CHAPTER 3 · THE FIVE YEAR RULE", tag="IRDAI MASTER CIRCULAR | 29 MAY 2024"),
@@ -117,8 +117,8 @@ SHOTS = [
     S(at("E040", "paid by", k=1) - 0.4, "proof", src=PR / "mc_para16b.png", label="INSURER PAYS FOR THE DELAY", tag="IRDAI MASTER CIRCULAR | PARA 16(b)"),
     S(at("E041"), "clip", src=B(26732), ss=6.0, label="ASK FOR THE 3-HOUR RULE"),
     # ---- 4 The four step plan and buyer rules ----
-    S(at("E042"), "clip", src=B(10874), ss=6.0, label="CHAPTER 4 · THE FOUR STEP PLAN", tag=ILL),
-    S(at("E043"), "clip", src=B(1383), ss=4.0, label="DON'T SHOUT · DON'T PANIC", tag=ILL, step=0),
+    S(at("E042"), "clip", src=B(40353), ss=8.0, label="CHAPTER 4 · THE FOUR STEP PLAN", tag=ILL),
+    S(at("E043"), "clip", src=B(204421), ss=8.0, label="DON'T SHOUT · DON'T PANIC", tag=ILL, step=0),
     S(at("E044"), "clip", src=B(87146), ss=10.0, label="1 · COLLECT YOUR PAPERS", step=1),
     S(at("E045"), "clip", src=C("giving-cashier-a-credit-card-9719"), ss=1.0, label="PAY THE BILL IF YOU MUST", tag=ILL, step=1),
     S(at("E045", "copies", k=1), "still", src=SM / "claim_form.png", zoom=(1.3, 1.8), focus=(0.5, 0.55), label="SUMMARY · BILL · REPORTS · DENIAL LETTER", tag="SIMULATION", step=1),
@@ -137,7 +137,7 @@ SHOTS = [
     S(at("E055"), "proof", src=PR / "cio_h3.png", label="32,503 HEALTH COMPLAINTS · 2024-25", tag="CIO ANNUAL REPORT 2024-25 | STATEMENT H3", step=4),
     S(BOARD_AT["b02_ombud"], "board", id="b02_ombud", step=4),
     S(at("E056"), "proof", src=PR / "cio_50lakh.png", label="AWARD UP TO ₹50 LAKH · BINDING", tag="INSURANCE OMBUDSMAN RULES | RULE 17", step=4),
-    S(at("E057"), "clip", src=B(3175), ss=2.0, label="BEFORE YOU BUY"),
+    S(at("E057"), "clip", src=B(1643), ss=8.0, label="BEFORE YOU BUY"),
     S(at("E058"), "still", src=SM / "proposal_declared.png", zoom=(1.0, 1.7), label="1 · DISCLOSE IN WRITING", tag="SIMULATION"),
     S(at("E059"), "clip", src=B(5457), ss=4.0, label="2 · NO ROOM RENT CAPPING"),
     S(BOARD_AT["b03_callback"], "board", id="b03_callback"),

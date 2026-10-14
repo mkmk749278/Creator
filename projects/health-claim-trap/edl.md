@@ -4,8 +4,8 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 
 | # | Start | Dur | Kind | Asset | Lower third | Tag |
 |---|---|---|---|---|---|---|
-| 0 | 0.00 | 2.28 | clip | pixabay_10874.mp4 | 9 PM · A HOSPITAL LOBBY | ILLUSTRATIVE FOOTAGE |
-| 1 | 2.28 | 4.33 | clip | pixabay_19627.mp4 | 29.5 LAKH CLAIMS REJECTED IN A YEAR | IRDAI ANNUAL REPORT | 2024-25 |
+| 0 | 0.00 | 2.28 | clip | pixabay_74585.mp4 | IMAGINE THIS | ILLUSTRATIVE FOOTAGE |
+| 1 | 2.28 | 4.33 | clip | pixabay_3175.mp4 | 29.5 LAKH CLAIMS REJECTED IN A YEAR | IRDAI ANNUAL REPORT | 2024-25 |
 | 2 | 6.61 | 9.80 | scene | s00_receipts |  |  |
 | 3 | 16.41 | 3.15 | clip | coverr-iv-in-hospital-room-5485.mp4 | AN EMERGENCY | ILLUSTRATIVE FOOTAGE |
 | 4 | 19.56 | 1.73 | clip | pixabay_229071.mp4 | ADMITTED | ILLUSTRATIVE FOOTAGE |
@@ -13,7 +13,7 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 | 6 | 26.22 | 1.82 | clip | coverr-a-printer-at-work-in-the-office-5252.mp4 | DISCHARGE PAPERS READY | ILLUSTRATIVE FOOTAGE |
 | 7 | 28.04 | 3.16 | still | bill.png | BILL: ₹4,50,000 | SIMULATION |
 | 8 | 31.20 | 16.64 | scene | s01_letter |  |  |
-| 9 | 47.84 | 2.33 | clip | pixabay_19627.mp4 | NIGHT · BANKS CLOSED |  |
+| 9 | 47.84 | 2.33 | clip | pixabay_134434.mp4 | NIGHT · BANKS CLOSED |  |
 | 10 | 50.17 | 1.57 | clip | pixabay_202987.mp4 | BREAK THE FIXED DEPOSIT | ILLUSTRATIVE FOOTAGE |
 | 11 | 51.74 | 1.52 | clip | pixabay_204421.mp4 | BORROW FROM RELATIVES | ILLUSTRATIVE FOOTAGE |
 | 12 | 53.26 | 2.54 | clip | coverr-transferring-card-details-5376.mp4 | SWIPE A CREDIT CARD | ILLUSTRATIVE FOOTAGE |
@@ -55,7 +55,7 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 | 48 | 198.83 | 6.43 | board | b01_room |  |  |
 | 49 | 205.26 | 2.58 | clip | pixabay_212508.mp4 | FEELING HELPLESS | ILLUSTRATIVE FOOTAGE |
 | 50 | 207.84 | 2.59 | clip | pixabay_212508.mp4 | FEELING HELPLESS | ILLUSTRATIVE FOOTAGE |
-| 51 | 210.43 | 2.41 | clip | pixabay_1383.mp4 | THE DOOR IS CLOSED? | ILLUSTRATIVE FOOTAGE |
+| 51 | 210.43 | 2.41 | clip | pixabay_74585.mp4 | THE DOOR IS CLOSED? | ILLUSTRATIVE FOOTAGE |
 | 52 | 212.84 | 3.84 | still | letter_note.png | CASHLESS NO ≠ CLAIM NO | AROGYA SANJEEVANI POLICY WORDING |
 | 53 | 216.68 | 3.83 | still | letter_note.png | CASHLESS NO ≠ CLAIM NO | AROGYA SANJEEVANI POLICY WORDING |
 | 54 | 220.51 | 1.72 | still | mc_ref.png | CHAPTER 3 · THE FIVE YEAR RULE | IRDAI MASTER CIRCULAR | 29 MAY 2024 |
@@ -85,9 +85,9 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 | 78 | 319.63 | 1.30 | still | mc_para16b.png | INSURER PAYS FOR THE DELAY | IRDAI MASTER CIRCULAR | PARA 16(b) |
 | 79 | 320.93 | 3.13 | still | mc_para16b.png | INSURER PAYS FOR THE DELAY | IRDAI MASTER CIRCULAR | PARA 16(b) |
 | 80 | 324.06 | 3.86 | clip | pixabay_26732.mp4 | ASK FOR THE 3-HOUR RULE |  |
-| 81 | 327.92 | 4.34 | clip | pixabay_10874.mp4 | CHAPTER 4 · THE FOUR STEP PLAN | ILLUSTRATIVE FOOTAGE |
-| 82 | 332.26 | 2.75 | clip | pixabay_1383.mp4 | DON'T SHOUT · DON'T PANIC | ILLUSTRATIVE FOOTAGE |
-| 83 | 335.01 | 2.75 | clip | pixabay_1383.mp4 | DON'T SHOUT · DON'T PANIC | ILLUSTRATIVE FOOTAGE |
+| 81 | 327.92 | 4.34 | clip | pixabay_40353.mp4 | CHAPTER 4 · THE FOUR STEP PLAN | ILLUSTRATIVE FOOTAGE |
+| 82 | 332.26 | 2.75 | clip | pixabay_204421.mp4 | DON'T SHOUT · DON'T PANIC | ILLUSTRATIVE FOOTAGE |
+| 83 | 335.01 | 2.75 | clip | pixabay_204421.mp4 | DON'T SHOUT · DON'T PANIC | ILLUSTRATIVE FOOTAGE |
 | 84 | 337.76 | 3.18 | clip | pixabay_87146.mp4 | 1 · COLLECT YOUR PAPERS |  |
 | 85 | 340.94 | 4.94 | clip | coverr-giving-cashier-a-credit-card-9719.mp4 | PAY THE BILL IF YOU MUST | ILLUSTRATIVE FOOTAGE |
 | 86 | 345.88 | 4.11 | still | claim_form.png | SUMMARY · BILL · REPORTS · DENIAL LETTER | SIMULATION |
@@ -124,7 +124,7 @@ Generated from `build/assemble.py` (the shot list is the EDL). Times are film se
 | 117 | 440.13 | 9.94 | board | b02_ombud |  |  |
 | 118 | 450.07 | 1.90 | still | cio_50lakh.png | AWARD UP TO ₹50 LAKH · BINDING | INSURANCE OMBUDSMAN RULES | RULE 17 |
 | 119 | 451.97 | 4.89 | still | cio_50lakh.png | AWARD UP TO ₹50 LAKH · BINDING | INSURANCE OMBUDSMAN RULES | RULE 17 |
-| 120 | 456.86 | 3.89 | clip | pixabay_3175.mp4 | BEFORE YOU BUY |  |
+| 120 | 456.86 | 3.89 | clip | pixabay_1643.mp4 | BEFORE YOU BUY |  |
 | 121 | 460.75 | 3.75 | still | proposal_declared.png | 1 · DISCLOSE IN WRITING | SIMULATION |
 | 122 | 464.50 | 3.74 | still | proposal_declared.png | 1 · DISCLOSE IN WRITING | SIMULATION |
 | 123 | 468.24 | 3.75 | still | proposal_declared.png | 1 · DISCLOSE IN WRITING | SIMULATION |

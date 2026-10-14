@@ -28,7 +28,7 @@ BOARDS = [
         dict(write="= 15,543 of 20,440", x=200, y=540, size=90, color="black", dur=1.5),
         dict(write="→ 76%", x=200, y=720, size=130, color="blue", dur=0.8),
         dict(underline="last", color="blue", dur=0.35),
-        dict(write="Closed in 3 months: 78.5%", x=200, y=930, size=76, color="black", at=s55[2]["start"] + 0.1, dur=1.8),
+        dict(write="Closed in 3 months: 78.5%", x=200, y=930, size=76, color="black", at=s55[2]["start"] - 0.5, dur=1.3),
         dict(underline="last", color="green", dur=0.5),
     ]),
     dict(id="b03_callback", start=B3, end=L("E059")[1] + 0.4, tag="OUR CALCULATION · ILLUSTRATIVE EXAMPLE", steps=[

@@ -1,6 +1,6 @@
 n,start,end,dur,kind,asset,motion,label,tag,step
-0,0.00,2.28,2.28,clip,pixabay_10874.mp4,slow push 1.08,9 PM · A HOSPITAL LOBBY,ILLUSTRATIVE FOOTAGE,
-1,2.28,6.61,4.33,clip,pixabay_19627.mp4,slow push 1.08,29.5 LAKH CLAIMS REJECTED IN A YEAR,IRDAI ANNUAL REPORT | 2024-25,
+0,0.00,2.28,2.28,clip,pixabay_74585.mp4,slow push 1.08,IMAGINE THIS,ILLUSTRATIVE FOOTAGE,
+1,2.28,6.61,4.33,clip,pixabay_3175.mp4,slow push 1.08,29.5 LAKH CLAIMS REJECTED IN A YEAR,IRDAI ANNUAL REPORT | 2024-25,
 2,6.61,16.41,9.80,scene,s00_receipts,animated,,,
 3,16.41,19.56,3.15,clip,coverr-iv-in-hospital-room-5485.mp4,slow push 1.08,AN EMERGENCY,ILLUSTRATIVE FOOTAGE,
 4,19.56,21.29,1.73,clip,pixabay_229071.mp4,slow push 1.08,ADMITTED,ILLUSTRATIVE FOOTAGE,
@@ -8,7 +8,7 @@ n,start,end,dur,kind,asset,motion,label,tag,step
 6,26.22,28.04,1.82,clip,coverr-a-printer-at-work-in-the-office-5252.mp4,slow push 1.08,DISCHARGE PAPERS READY,ILLUSTRATIVE FOOTAGE,
 7,28.04,31.20,3.16,still,bill.png,"Ken Burns (1.0, 1.9)","BILL: ₹4,50,000",SIMULATION,
 8,31.20,47.84,16.64,scene,s01_letter,animated,,,
-9,47.84,50.17,2.33,clip,pixabay_19627.mp4,slow push 1.08,NIGHT · BANKS CLOSED,,
+9,47.84,50.17,2.33,clip,pixabay_134434.mp4,slow push 1.08,NIGHT · BANKS CLOSED,,
 10,50.17,51.74,1.57,clip,pixabay_202987.mp4,slow push 1.08,BREAK THE FIXED DEPOSIT,ILLUSTRATIVE FOOTAGE,
 11,51.74,53.26,1.52,clip,pixabay_204421.mp4,slow push 1.08,BORROW FROM RELATIVES,ILLUSTRATIVE FOOTAGE,
 12,53.26,55.80,2.54,clip,coverr-transferring-card-details-5376.mp4,slow push 1.08,SWIPE A CREDIT CARD,ILLUSTRATIVE FOOTAGE,
@@ -50,7 +50,7 @@ n,start,end,dur,kind,asset,motion,label,tag,step
 48,198.83,205.26,6.43,board,b01_room,marker writes,,,
 49,205.26,207.84,2.58,clip,pixabay_212508.mp4,slow push 1.08,FEELING HELPLESS,ILLUSTRATIVE FOOTAGE,
 50,207.84,210.43,2.59,clip,pixabay_212508.mp4,slow push 1.08,FEELING HELPLESS,ILLUSTRATIVE FOOTAGE,
-51,210.43,212.84,2.41,clip,pixabay_1383.mp4,slow push 1.08,THE DOOR IS CLOSED?,ILLUSTRATIVE FOOTAGE,
+51,210.43,212.84,2.41,clip,pixabay_74585.mp4,slow push 1.08,THE DOOR IS CLOSED?,ILLUSTRATIVE FOOTAGE,
 52,212.84,216.68,3.84,still,letter_note.png,"Ken Burns (1.2, 1.65)",CASHLESS NO ≠ CLAIM NO,AROGYA SANJEEVANI POLICY WORDING,
 53,216.68,220.51,3.83,still,letter_note.png,"Ken Burns (1.716, 2.184)",CASHLESS NO ≠ CLAIM NO,AROGYA SANJEEVANI POLICY WORDING,
 54,220.51,222.23,1.72,still,mc_ref.png,"Ken Burns (1.0, 1.08)",CHAPTER 3 · THE FIVE YEAR RULE,IRDAI MASTER CIRCULAR | 29 MAY 2024,
@@ -80,9 +80,9 @@ n,start,end,dur,kind,asset,motion,label,tag,step
 78,319.63,320.93,1.30,still,mc_para16b.png,"Ken Burns (1.0, 1.08)",INSURER PAYS FOR THE DELAY,IRDAI MASTER CIRCULAR | PARA 16(b),
 79,320.93,324.06,3.13,still,mc_para16b.png,"Ken Burns (2.5600000000000005, 3.2)",INSURER PAYS FOR THE DELAY,IRDAI MASTER CIRCULAR | PARA 16(b),
 80,324.06,327.92,3.86,clip,pixabay_26732.mp4,slow push 1.08,ASK FOR THE 3-HOUR RULE,,
-81,327.92,332.26,4.34,clip,pixabay_10874.mp4,slow push 1.08,CHAPTER 4 · THE FOUR STEP PLAN,ILLUSTRATIVE FOOTAGE,
-82,332.26,335.01,2.75,clip,pixabay_1383.mp4,slow push 1.08,DON'T SHOUT · DON'T PANIC,ILLUSTRATIVE FOOTAGE,0
-83,335.01,337.76,2.75,clip,pixabay_1383.mp4,slow push 1.08,DON'T SHOUT · DON'T PANIC,ILLUSTRATIVE FOOTAGE,0
+81,327.92,332.26,4.34,clip,pixabay_40353.mp4,slow push 1.08,CHAPTER 4 · THE FOUR STEP PLAN,ILLUSTRATIVE FOOTAGE,
+82,332.26,335.01,2.75,clip,pixabay_204421.mp4,slow push 1.08,DON'T SHOUT · DON'T PANIC,ILLUSTRATIVE FOOTAGE,0
+83,335.01,337.76,2.75,clip,pixabay_204421.mp4,slow push 1.08,DON'T SHOUT · DON'T PANIC,ILLUSTRATIVE FOOTAGE,0
 84,337.76,340.94,3.18,clip,pixabay_87146.mp4,slow push 1.08,1 · COLLECT YOUR PAPERS,,1
 85,340.94,345.88,4.94,clip,coverr-giving-cashier-a-credit-card-9719.mp4,slow push 1.08,PAY THE BILL IF YOU MUST,ILLUSTRATIVE FOOTAGE,1
 86,345.88,349.99,4.11,still,claim_form.png,"Ken Burns (1.3, 1.55)",SUMMARY · BILL · REPORTS · DENIAL LETTER,SIMULATION,1
@@ -119,7 +119,7 @@ n,start,end,dur,kind,asset,motion,label,tag,step
 117,440.13,450.07,9.94,board,b02_ombud,marker writes,,,4
 118,450.07,451.97,1.90,still,cio_50lakh.png,"Ken Burns (1.0, 1.08)",AWARD UP TO ₹50 LAKH · BINDING,INSURANCE OMBUDSMAN RULES | RULE 17,4
 119,451.97,456.86,4.89,still,cio_50lakh.png,"Ken Burns (2.5600000000000005, 3.2)",AWARD UP TO ₹50 LAKH · BINDING,INSURANCE OMBUDSMAN RULES | RULE 17,4
-120,456.86,460.75,3.89,clip,pixabay_3175.mp4,slow push 1.08,BEFORE YOU BUY,,
+120,456.86,460.75,3.89,clip,pixabay_1643.mp4,slow push 1.08,BEFORE YOU BUY,,
 121,460.75,464.50,3.75,still,proposal_declared.png,"Ken Burns (1.0, 1.2333333333333334)",1 · DISCLOSE IN WRITING,SIMULATION,
 122,464.50,468.24,3.74,still,proposal_declared.png,"Ken Burns (1.2826666666666668, 1.5253333333333332)",1 · DISCLOSE IN WRITING,SIMULATION,
 123,468.24,471.99,3.75,still,proposal_declared.png,"Ken Burns (1.4666666666666666, 1.6999999999999997)",1 · DISCLOSE IN WRITING,SIMULATION,

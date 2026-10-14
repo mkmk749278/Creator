@@ -63,8 +63,8 @@ window.SCENE = {
    "y": 930,
    "size": 76,
    "color": "black",
-   "at": 6.55,
-   "dur": 1.8
+   "at": 5.95,
+   "dur": 1.3
   },
   {
    "underline": "last",
