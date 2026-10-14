@@ -179,7 +179,8 @@ INSERTS = [
     I(3.3, scene_meta("e0_ledger")[0], C("hospital-entrance-in-buenos-aires-8579"), 2.0, "THOUSANDS OF FAMILIES · EVERY DAY"),
     I(at("E003"), at("E003", k=1) + 0.4, C("mount-sinai-ambulance-7110"), 2.0, "AN EMERGENCY"),
     I(at("E003", k=1) + 0.4, at("E004"), C("iv-in-hospital-room-5485"), 2.0, "ADMITTED"),
-    I(at("E006"), at("E006", k=1), B(272633), 1.0, "YOUR HEART DROPS"),
+    I(scene_meta("s01_letter")[0], at("E005", frac=0.3), B(272633), 1.0, "A PRINTED LETTER"),
+    I(at("E006"), at("E006", k=1), B(61298), 10.0, "YOUR HEART DROPS"),
     I(at("E007"), at("E007", "break your"), B(61298), 2.0, "NIGHT · BANKS CLOSED"),
     I(at("E007", "borrow"), at("E007", "swipe"), B(204421), 5.0, "BORROW FROM RELATIVES"),
     I(at("E008"), scene_meta("e3_scale")[0] + 2.8, C("old-man-looking-at-a-laptop-screen-5527"), 2.0, "WHY DID I PAY ALL THESE YEARS?"),
@@ -243,6 +244,32 @@ _v2 = [s for s in SHOTS_V2 if s.get("id") not in _drop and not (s.get("id") == "
 SHOTS_V4 = _v2 + [SC2("e22_bima"), SC2("e21_india"), SC2("e23_cio")]   # India map follows the Bima clip; CIO table follows the CIO clip
 
 VERSION = "v4"
+
+# ---- v5 (owner's review of v3, 2026-10-14): real footage through the first minute (no animation voids), the OPD clip
+# held across the whole "outpatient" line, e24 (India results map, 76% gauge, penalty meter) replaces the H3 table scan
+# and the 50-lakh page. Indian hospital clips the owner sends later swap in here 1:1 (same t0/t1). ----
+_v4_open = ("hospital-entrance-in-paris", "mount-sinai", "iv-in-hospital-room", "pixabay_272633", "pixabay_143988")
+INSERTS_V5 = [x for x in INSERTS_V4 if not any(k in str(x[2]["src"]) for k in _v4_open) or
+              (x[0] > 100 and "pixabay_272633" in str(x[2]["src"]))] + [
+    I(0.0, 3.3, B(10874), 2.0, "IMAGINE THIS · NIGHT"),
+    I(at("E003"), at("E003", k=1) + 0.4, C("mount-sinai-ambulance-7110"), 2.0, "AN EMERGENCY"),
+    I(at("E003", k=1) + 0.4, at("E004"), C("iv-in-hospital-room-5485"), 2.0, "ADMITTED"),
+    I(at("E004"), at("E004", k=1), B(26732), 2.0, "9:00 PM · BILLING COUNTER"),
+    I(at("E004", k=1), at("E004", k=2), C("a-printer-at-work-in-the-office-5252"), 1.0, "DISCHARGE PAPERS READY"),
+    (round(at("E004", k=2), 2), round(scene_meta("s01_letter")[0], 2),
+     dict(kind="still", src=SM / "bill.png", zoom=(1.0, 1.9), label="BILL: ₹4,50,000", tag="SIMULATION")),
+    I(scene_meta("s01_letter")[0], at("E005", frac=0.3), B(272633), 1.0, "A PRINTED LETTER"),
+    I(at("E006"), at("E006", k=1), B(61298), 10.0, "YOUR HEART DROPS"),
+    I(at("E006", k=1), scene_meta("e2_drain")[0], C("worried-woman-talking-on-phone-in-city"), 2.0, "YOUR FAMILY PANICS"),
+    I(at("E022", k=1), at("E022", k=2) + 1.0, B(143988), 0.0, "NOT MEDICALLY NECESSARY?"),
+    I(at("E022", k=2) + 1.0, at("E022", k=2) + (sents("E022")[2]["end"] - sents("E022")[2]["start"]) + 0.05, B(49815), 1.0, "COULD IT BE AN OPD VISIT?"),
+]
+INSERTS_V5 = [(t0, t1, dict(c, src=B(134434), ss=9.0)) if "pixabay_61298" in str(c["src"]) and abs(t0 - at("E007")) < 0.05 else (t0, t1, c)
+              for t0, t1, c in INSERTS_V5]
+_drop5 = {"e1_hospital", "e2_shock", "d_h3", "d_50l"}
+SHOTS_V5 = [s for s in SHOTS_V4 if s.get("id") not in _drop5 and not (s.get("id") == "e17_warroom" and
+            any(abs(s["t"] - scene_meta(d)[1]) < 0.05 for d in ("d_h3", "d_50l")))] + [SC2("e24_results")]
+VERSION = "v5"
 
 # ---------- rendering (adapted from projects/minimum-due/build/assemble.py) ----------
 def run(cmd):
@@ -384,7 +411,7 @@ def src_mtime(s):
 
 
 def shot_list():
-    lst = v3_shots(SHOTS_V4, INSERTS_V4) if VERSION == "v4" else v3_shots() if VERSION == "v3" else (SHOTS_V2 if VERSION == "v2" else SHOTS)
+    lst = v3_shots(SHOTS_V5, INSERTS_V5) if VERSION == "v5" else v3_shots(SHOTS_V4, INSERTS_V4) if VERSION == "v4" else v3_shots() if VERSION == "v3" else (SHOTS_V2 if VERSION == "v2" else SHOTS)
     return split_long(sorted(lst, key=lambda s: s["t"]), END)
 
 
@@ -457,14 +484,16 @@ def main():
     # riser + impact, stamps, typing/clicks on the browser clips, clock, heartbeat. Never digital silence.
     import mix as M
     from timing import SENT
-    hosp = ("hospital", "ambulance", "iv-in", "142528", "229071", "143988", "26732", "229069", "49809")
+    hosp = ("hospital", "ambulance", "iv-in", "142528", "229071", "143988", "26732", "229069", "49809", "10874", "printer", "bill.png")
     ins = [(t0, t1, any(h in str(c["src"]) for h in hosp) or "cutaway" in str(c["src"])) for t0, t1, c in
-           (INSERTS_V4 if VERSION == "v4" else INSERTS if VERSION == "v3" else [])]
+           (INSERTS_V5 if VERSION == "v5" else INSERTS_V4 if VERSION == "v4" else INSERTS if VERSION == "v3" else [])]
     sc = lambda sid: scene_meta(sid)[0]
-    cue = {"stamps": [sc("s01_letter") + 6.6, sc("e1b_overstamp") + 8.6],
-           "typing": [(sc("e22_bima") + 1.42, sc("e22_bima") + 4.36), (sc("e23_cio") + 1.54, sc("e23_cio") + 2.79)] if VERSION == "v4" else [],
+    v45 = VERSION in ("v4", "v5")
+    cue = {"stamps": [sc("s01_letter") + 6.6, sc("e1b_overstamp") + 8.6] +
+                     ([sc("e15_impact") + 5.20 + 1.9, sc("e13_burden") + 2.57 + 1.2] if VERSION == "v5" else []),
+           "typing": [(sc("e22_bima") + 1.42, sc("e22_bima") + 4.36), (sc("e23_cio") + 1.54, sc("e23_cio") + 2.79)] if v45 else [],
            "clicks": [sc("e22_bima") + 4.36, sc("e22_bima") + (sents("E050")[1]["start"] - sc("e22_bima")) + 1.5,
-                      sc("e23_cio") + 2.79, sents("E054")[1]["start"] + 0.3] if VERSION == "v4" else [],
+                      sc("e23_cio") + 2.79, sents("E054")[1]["start"] + 0.3] if v45 else [],
            "heart": [(L("E006")[0] - 0.3, L("E006")[1] + 0.6)]}
     mix = M.build(shots, SENT, END, reveal, ins, cue, (scene_meta("e16_stopwatch")[0] + 3.0, scene_meta("e16_stopwatch")[1] - 1.0),
                   A / "mix_raw.wav", vo, bed)

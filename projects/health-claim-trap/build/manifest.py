@@ -28,6 +28,8 @@ for line in (A / "pixabay_get.log").read_text().splitlines():
         pid = f[0][8:-4]
         f[2] = WHAT.get(pid, "Pixabay clip")
         rows.append(f + [" ".join(slots.get(f[0], []))])
+for f in sorted((A / "broll").glob("coverr-*.mp4")):   # every Coverr clip on disk (v3-v5 inserts too)
+    COVERR.setdefault(f.stem, f.stem[7:].rsplit("-", 1)[0].replace("-", " ").capitalize() if f.stem[-1].isdigit() else f.stem[7:].replace("-", " ").capitalize())
 for k, v in COVERR.items():
     rows.append([k + ".mp4", "video", v, "https://coverr.co/videos/" + k, f"https://cdn.coverr.co/videos/{k}/1080p.mp4", "Coverr", "Coverr License",
                  "https://coverr.co/license", "Coverr", "1920", "1080", " ".join(slots.get(k + ".mp4", []))])
@@ -40,7 +42,7 @@ for png in sorted((A / "proof").glob("*.png")):
     rows.append([png.name, "proof", src[0] + "; highlight added", src[1], src[1], src[2], "Government/statutory document: credited short excerpt", "", src[2], "3840", "2160", " ".join(slots.get(png.name, []))])
 for png in sorted((A / "sim").glob("*.png")):
     rows.append([png.name, "simulation", f"SIMULATION document ({png.stem}); no real hospital, insurer or TPA", "", "", "Be Practical with Kishore", "Own work", "", "", "3840", "2160", " ".join(slots.get(png.name, []))])
-for mp4 in sorted((A / "scenes").glob("*.mp4")):
+for mp4 in sorted({m.name: m for m in [*(A / "scenes").glob("*.mp4"), *(A / "scenes4k").glob("*.mp4"), *[A / "scenes" / (d.name + ".mp4") for d in (P.parents[1] / "video/healthclaim").iterdir() if d.is_dir()]]}.values()):
     rows.append([mp4.name, "animation", f"HyperFrames scene video/healthclaim/{mp4.stem}", "", "", "Be Practical with Kishore", "Own work", "", "", "1920", "1080", " ".join(slots.get(mp4.stem, []))])
 SFX = [("whoosh_deep", "https://freesound.org/s/351256/"), ("whoosh_swish", "https://freesound.org/s/60026/"), ("whoosh_swipe", "https://freesound.org/s/60007/"),
        ("hosp_amb", "https://freesound.org/s/614805/"), ("room_tone", "https://freesound.org/s/129443/"), ("riser", "https://freesound.org/s/244249/"),
