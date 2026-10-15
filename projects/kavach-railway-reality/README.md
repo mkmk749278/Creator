@@ -15,8 +15,14 @@ open loop ("around the eight minute mark"), forensic dissection, a three-step ci
 PIB/CRS, Rail Madad 139), outro with "Jai Hind". 61 lines, 3 voice blocks, 10,402 characters: ≈ 12:26 by the estimator,
 ≈ 11:10 at the measured English Akash rate (×0.9). Views: `screenplay.md` (TIME | AUDIO | VISUAL + SFX), `script.md`,
 `bunty_blocks.md` (paste-ready). v1.1 history: `brief/changes-from-brief.md`. Fact-check gate passes (81 claims: 75 confirmed, 6 claim): `claims.csv`,
-`fact-check.md`. Next: owner approves v2 and records the blocks (`voice/block1.mp3` …); then check the open-loop minute
-against `align/`.
+`fact-check.md`.
+
+**VO recorded (2026-10-15):** Akash "Confident and Natural", eleven_v4: `voice/block1.mp3` 3:24, `block2.mp3` 3:38,
+`block3.mp3` 3:47 = **10:49**. Timed with `align_script.py` (`align/block1-3/`): speech-to-text ratio 0.85–1.18 on every
+line (nothing skipped or doubled); 20 of 61 boundaries flagged as one-pause-ambiguous for a listen. Raw-VO times: open
+loop 0:47, payoff starts 7:02 ("the question I promised"), Balasore answer 7:35, Kanchanjunga 8:08, action plan 9:27.
+The line promises "around the eight minute mark": the edit's pauses (logo sting, 1.5 s silences, diegetic breaks) must
+land the payoff at ~7:30–8:15, or re-record that one sentence. Next: beats, sourcing, EDL.
 
 ## Genre and look (PLAYBOOK §5.3, own art direction)
 **Tech × society investigation.** Art direction **"Signal Room"**: the film moves between three worlds.
