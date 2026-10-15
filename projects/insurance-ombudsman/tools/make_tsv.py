@@ -24,11 +24,11 @@ L = [
     # same bill, same SIMULATION documents and the four-step staircase, no contradiction of Episode 01's advice.
     # was: "In our last video, we saw what to do when the hospital desk rejects your cashless claim at nine o'clock at night."
     (C1, "Imagine you are standing at a hospital billing counter at nine o'clock at night. The bill is four and a half lakh rupees, and your cashless claim, where the insurance company pays the hospital directly, has just been denied. We told this story in our last video.",
-     "Glimpse from Episode 01's final cut (2–4 s): the counter, then its SIMULATION bill ₹4,50,000 and the red CASHLESS DENIED stamp (same design).",
+     "Episode 01 glimpses (tools/cut_glimpses.sh): g1_counter → g2_bill (₹4,50,000) → g3_denied (CASHLESS DENIED stamp), each with a FROM EPISODE 1 corner tag.",
      "FROM EPISODE 1 · SIMULATION", "Hospital room tone; logo bug from 0:02", "Cold open, no music for 2 s"),
     # new line: the four steps from Episode 01 (E044-E056), so a new viewer knows where this film starts
     (C1, "Here is what you need to know from it. A cashless denial is not the end of your claim. You can pay the hospital, and claim the money back later. And if the company still says no, there is a four-step plan. Collect your papers. File for reimbursement and write to the grievance officer. Register on Bima Bharosa. And step four, the Insurance Ombudsman.",
-     "Episode 01's four-step staircase rises lower left; steps 1 to 4 light in turn; step 4 stays lit.", "STEP 4: INSURANCE OMBUDSMAN · FREE", "Four soft ticks", ""),
+     "Episode 01 glimpses on each step: g4_step1 (papers) → g5_step2 (GRO email, 14 days) → g6_step3_bima → g7_step4_cio; then the four-step staircase holds lower left with step 4 lit.", "STEP 4: INSURANCE OMBUDSMAN · FREE", "Four soft ticks", ""),
     # was: "You paid the bill from your pocket ..." (owner's line, kept)
     (C1, "So you paid the bill from your pocket, collected your hospital papers, came home, and filed for reimbursement.",
      "F01 phone and card insert, PX15 rupee notes; F09 papers to keyboard match cut.", ILL, "Card beep, paper rustle", ""),

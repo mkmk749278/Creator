@@ -47,7 +47,11 @@ pack or the CIO pages could not support was rewritten; each change is commented 
 you are standing at a hospital billing counter…"), O002 teaches what is needed from Episode 01 (cashless denial is not
 the end; pay and claim back; the four steps), and every term is glossed on first use. Episode 01 is a pointer ("we
 told this story in our last video"), never required. **Glimpses:** 2–4 s shots from Episode 01's final cut under O001–O002
-(counter, the CASHLESS DENIED letter, the staircase), labelled `FROM EPISODE 1`.
+(counter, the CASHLESS DENIED letter, the staircase), labelled `FROM EPISODE 1`. Cut by `tools/cut_glimpses.sh` from
+the owner's Episode 01 v5 cut (Drive `English/health-claim-trap/health-claim-trap-preview-v5-2160p.mp4`, 8:45, 4K) into
+`assets/episode1/glimpses/`: g1_counter 21.4 s, g2_bill 28.05 s, g3_denied 38.4 s (O001); g4_step1 344 s,
+g5_step2 383 s, g6_step3_bima 399.5 s, g7_step4_cio 419 s (O002). Their own credits (Pixabay, Coverr, website captures)
+carry over from Episode 01's `media_manifest.csv`.
 
 Episode 02 continues Episode 01 as one story; checked against Episode 01's recorded script (`../health-claim-trap/script.full.tsv`)
 and its published description:
