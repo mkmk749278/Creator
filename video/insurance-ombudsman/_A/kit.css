@@ -35,3 +35,15 @@ body { background: #05080e; }
 .bar { height: 14px; border-radius: 7px; background: rgba(28, 37, 51, .16); margin: 14px 0; }
 .sim-wm { position: absolute; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .32em; color: rgba(28, 37, 51, .6); transform: rotate(-20deg); }
 .mote { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 236, 200, .55); filter: blur(1px); }
+/* revision v2: real, readable document text (no grey bars). All documents are SIMULATION, invented names. */
+.dk { color: #1c2533; font-family: Inter, Arial, sans-serif; }
+.dk-lh { font: 800 26px/1.15 Inter, Arial, sans-serif; color: #14263B; letter-spacing: .01em; }
+.dk-sub { font: 600 15px/1.3 Inter, Arial, sans-serif; color: #5b6473; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.dk-rule { height: 3px; background: #14263B; margin: 16px 0 14px; opacity: .8; }
+.dk-ref { display: flex; justify-content: space-between; font: 600 17px/1.4 Inter, Arial, sans-serif; color: #3e4757; }
+.dk-t { font: 800 21px/1.3 Inter, Arial, sans-serif; color: #14263B; margin: 14px 0 10px; }
+.dk-p { font: 400 22px/1.45 Inter, Arial, sans-serif; color: #1c2533; margin: 6px 0; }
+.dk-row { display: flex; justify-content: space-between; gap: 20px; font: 600 22px/1.3 Inter, Arial, sans-serif; padding: 8px 0; border-bottom: 1px solid rgba(28, 37, 51, .16); }
+.dk-row b { font-weight: 800; }
+.dk-sig { font: 600 19px/1.3 Inter, Arial, sans-serif; color: #3e4757; margin-top: 18px; }
+.dk-hl { background: rgba(255, 219, 89, .6); border-radius: 4px; padding: 0 4px; margin: 0 -4px; }

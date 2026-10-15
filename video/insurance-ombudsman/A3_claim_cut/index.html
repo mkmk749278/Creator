@@ -45,13 +45,24 @@ body { background: #05080e; }
 .bar { height: 14px; border-radius: 7px; background: rgba(28, 37, 51, .16); margin: 14px 0; }
 .sim-wm { position: absolute; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .32em; color: rgba(28, 37, 51, .6); transform: rotate(-20deg); }
 .mote { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 236, 200, .55); filter: blur(1px); }
+/* revision v2: real, readable document text (no grey bars). All documents are SIMULATION, invented names. */
+.dk { color: #1c2533; font-family: Inter, Arial, sans-serif; }
+.dk-lh { font: 800 26px/1.15 Inter, Arial, sans-serif; color: #14263B; letter-spacing: .01em; }
+.dk-sub { font: 600 15px/1.3 Inter, Arial, sans-serif; color: #5b6473; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.dk-rule { height: 3px; background: #14263B; margin: 16px 0 14px; opacity: .8; }
+.dk-ref { display: flex; justify-content: space-between; font: 600 17px/1.4 Inter, Arial, sans-serif; color: #3e4757; }
+.dk-t { font: 800 21px/1.3 Inter, Arial, sans-serif; color: #14263B; margin: 14px 0 10px; }
+.dk-p { font: 400 22px/1.45 Inter, Arial, sans-serif; color: #1c2533; margin: 6px 0; }
+.dk-row { display: flex; justify-content: space-between; gap: 20px; font: 600 22px/1.3 Inter, Arial, sans-serif; padding: 8px 0; border-bottom: 1px solid rgba(28, 37, 51, .16); }
+.dk-row b { font-weight: 800; }
+.dk-sig { font: 600 19px/1.3 Inter, Arial, sans-serif; color: #3e4757; margin-top: 18px; }
+.dk-hl { background: rgba(255, 219, 89, .6); border-radius: 4px; padding: 0 4px; margin: 0 -4px; }
 
 /* A3: G01 Claim Deduction as a paper strip on a daylight desk (₹4,50,000 bill, ₹1,20,000 paid, ₹3,30,000 cut). */
 #stage { position: absolute; inset: 0; transform-origin: 50% 46%; }
-#letter { left: 610px; top: 150px; width: 700px; height: 860px; padding: 64px 60px; }
-#letter .hd { height: 26px; width: 46%; border-radius: 6px; background: rgba(20, 38, 59, .55); margin-bottom: 30px; }
-#letter .bar.w1 { width: 92%; } #letter .bar.w2 { width: 78%; } #letter .bar.w3 { width: 85%; } #letter .bar.w4 { width: 60%; }
-#letter .box { margin-top: 36px; height: 170px; border: 3px solid rgba(28, 37, 51, .18); border-radius: 8px; }
+#letter { left: 580px; top: 170px; width: 760px; height: 760px; padding: 56px 58px; }
+.srow { font: 600 20px/1.2 Inter, Arial, sans-serif; color: #2b3443; white-space: nowrap; margin-bottom: 16px; }
+.srow.h { font-weight: 800; color: #14263B; letter-spacing: .02em; }
 /* the bill strip: 1500 x 190, split at 400 px (₹1,20,000 of ₹4,50,000 = 26.7%) */
 .strip { position: absolute; left: 210px; top: 400px; width: 1500px; height: 190px; padding: 30px 40px; }
 .strip .row { display: flex; gap: 22px; margin-bottom: 18px; }
@@ -73,24 +84,30 @@ body { background: #05080e; }
         <div class="grade"></div>
         <div class="leak" id="leak" style="left: -500px; top: -700px"></div>
         <div id="stage">
-          <div class="paper" id="letter">
-            <div class="hd"></div>
-            <div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div><div class="bar w4"></div><div class="bar w1"></div><div class="bar w3"></div>
-            <div class="box"></div>
-            <div class="bar w2"></div><div class="bar w4"></div>
-            <div class="sim-wm" data-layout-allow-occlusion style="left: 220px; top: 520px">SIMULATION</div>
+          <div class="paper dk" id="letter" data-layout-allow-overlap>
+            <div class="dk-lh">Sample Health Insurance Co. Ltd.</div><div class="dk-sub">Claims Department · Hyderabad</div>
+            <div class="dk-rule"></div>
+            <div class="dk-ref"><span>Policy No. SHI-4471-0926</span><span>Claim No. CLM-2408-55217</span></div>
+            <div class="dk-t">Claim settlement advice · CLM-2408-55217</div>
+            <div class="dk-p">Dear R. Kumar, your claim has been processed.</div>
+            <div class="dk-row"><span>Amount claimed</span><b>₹4,50,000</b></div>
+            <div class="dk-row"><span>Amount approved</span><b>₹1,20,000</b></div>
+            <div class="dk-row"><span>Amount disallowed</span><b>₹3,30,000</b></div>
+            <div class="dk-p" style="margin-top: 14px">Reason: deductions as per policy terms and conditions.</div>
+            <div class="dk-sig">Claims Department<br />Sample Health Insurance Co. Ltd.</div>
+            <div class="sim-wm" data-layout-allow-occlusion style="left: 420px; top: 660px">SIMULATION</div>
           </div>
           <div id="stripWrap">
             <div class="paper strip" id="pA">
-              <div class="row"><i style="width: 120px"></i><i style="width: 160px"></i><i style="width: 300px"></i><i style="width: 220px"></i><i style="width: 260px"></i><i style="width: 140px"></i></div>
-              <div class="row"><i style="width: 200px"></i><i style="width: 90px"></i><i style="width: 240px"></i><i style="width: 330px"></i><i style="width: 180px"></i></div>
-              <div class="row"><i style="width: 150px"></i><i style="width: 210px"></i><i style="width: 170px"></i><i style="width: 280px"></i><i style="width: 300px"></i></div>
+              <div class="srow h">Sample City Hospital · Itemised bill · Patient: R. Kumar · Claim No. CLM-2408-55217</div>
+              <div class="srow">Room charges · Surgeon fees · OT charges · Anaesthesia · ICU charges · Medicines · Doctor visits</div>
+              <div class="srow">Consumables · Investigations · Nursing charges · Diet · Pharmacy · Registration · Discharge</div>
               <div id="fillA"></div>
             </div>
             <div class="paper strip" id="pB">
-              <div class="row"><i style="width: 120px"></i><i style="width: 160px"></i><i style="width: 300px"></i><i style="width: 220px"></i><i style="width: 260px"></i><i style="width: 140px"></i></div>
-              <div class="row"><i style="width: 200px"></i><i style="width: 90px"></i><i style="width: 240px"></i><i style="width: 330px"></i><i style="width: 180px"></i></div>
-              <div class="row"><i style="width: 150px"></i><i style="width: 210px"></i><i style="width: 170px"></i><i style="width: 280px"></i><i style="width: 300px"></i></div>
+              <div class="srow h">Sample City Hospital · Itemised bill · Patient: R. Kumar · Claim No. CLM-2408-55217</div>
+              <div class="srow">Room charges · Surgeon fees · OT charges · Anaesthesia · ICU charges · Medicines · Doctor visits</div>
+              <div class="srow">Consumables · Investigations · Nursing charges · Diet · Pharmacy · Registration · Discharge</div>
               <div id="tintB"></div>
             </div>
           </div>
@@ -191,7 +208,7 @@ IO.caseFile = (svg, id, s = 1) => {
       // the letter: "rejects your claim all over again... or worse" -> it slides in, then away for the bill
       tl.fromTo($("letter"), { y: 520, rotation: 5, opacity: 0 }, { y: 0, rotation: -1.6, opacity: 1, duration: 1.2, ease: "power3.out" }, 0.05);
       tl.to($("letter"), { y: -40, rotation: -2.4, duration: 2.8, ease: "none" }, 1.25);
-      tl.to($("letter"), { y: -120, x: -520, rotation: -9, scale: 0.86, opacity: 0.35, filter: "blur(6px)", duration: 1.0, ease: "power2.inOut" }, T.worse);
+      tl.to($("letter"), { y: -120, x: -560, rotation: -9, scale: 0.86, opacity: 0.4, filter: "blur(4px)", duration: 1.0, ease: "power2.inOut" }, T.worse);
       // the bill strip lands
       tl.fromTo($("stripWrap"), { x: 1900, rotation: 3, opacity: 0 }, { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, T.bill - 0.35);
       tl.fromTo($("lBill"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, T.bill);

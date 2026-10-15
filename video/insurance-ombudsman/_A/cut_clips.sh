@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Cut each scene's full render into one clip per VO window (window + 0.25 s handle each side) and make a
-# 4-frame contact sheet per clip. Output: ../_A/out/ (gitignored via *.mp4/*.jpg rules).
+# 4-frame contact sheet per clip. ONLY="A3_claim_cut_O005 ..." limits it to the named clips. Output: ../_A/out/ (gitignored via *.mp4/*.jpg rules).
 set -euo pipefail
 cd "$(dirname "$0")/.."; OUT=_A/out; mkdir -p $OUT
 FONT=$(fc-match -f '%{file}' "DejaVu Sans:bold" 2>/dev/null || true)
 clip() { # scene id start dur
   local s=$1 id=$2 ss=$3 d=$4 o="$OUT/${1}_${2}.mp4" n
+  if [[ -n ${ONLY:-} && " $ONLY " != *" ${1}_${2} "* ]]; then return; fi
   [[ -f $s/renders/full.mp4 ]] || { echo "skip $s (no render)"; return; }
   n=$(python3 -c "print(round($d*30))")
   ffmpeg -v error -y -i $s/renders/full.mp4 -ss "$ss" -frames:v "$n" -an -c:v libx264 -preset slow -crf 18 -maxrate 12M -bufsize 24M \
@@ -27,7 +28,10 @@ clip A4_email_stamp O004 0 3.27
 clip A4_email_stamp O025 3.27 6.11
 clip A4_email_stamp O026 9.34 3.66
 clip A5_bima_tracker O017 0 23.54
-if [[ -f A1_staircase_corner/renders/full.mov ]]; then
+clip A6_gro_email O029 0 7.19
+clip A6_gro_email O030 7.15 14.96
+clip A6_gro_email O031 22.07 4.42
+if [[ -z ${ONLY:-} && -f A1_staircase_corner/renders/full.mov ]]; then
   cp A1_staircase_corner/renders/full.mov $OUT/A1_staircase_corner.mov
   # preview of the alpha clip over a mid-grey plate, for the contact sheet
   ffmpeg -v error -y -f lavfi -i color=c=0x556070:s=1920x1080:r=30:d=6 -i $OUT/A1_staircase_corner.mov -filter_complex "[0][1]overlay=shortest=1" -c:v libx264 -crf 20 -pix_fmt yuv420p $OUT/.a1corner_prev.mp4

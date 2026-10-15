@@ -45,6 +45,18 @@ body { background: #05080e; }
 .bar { height: 14px; border-radius: 7px; background: rgba(28, 37, 51, .16); margin: 14px 0; }
 .sim-wm { position: absolute; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .32em; color: rgba(28, 37, 51, .6); transform: rotate(-20deg); }
 .mote { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 236, 200, .55); filter: blur(1px); }
+/* revision v2: real, readable document text (no grey bars). All documents are SIMULATION, invented names. */
+.dk { color: #1c2533; font-family: Inter, Arial, sans-serif; }
+.dk-lh { font: 800 26px/1.15 Inter, Arial, sans-serif; color: #14263B; letter-spacing: .01em; }
+.dk-sub { font: 600 15px/1.3 Inter, Arial, sans-serif; color: #5b6473; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.dk-rule { height: 3px; background: #14263B; margin: 16px 0 14px; opacity: .8; }
+.dk-ref { display: flex; justify-content: space-between; font: 600 17px/1.4 Inter, Arial, sans-serif; color: #3e4757; }
+.dk-t { font: 800 21px/1.3 Inter, Arial, sans-serif; color: #14263B; margin: 14px 0 10px; }
+.dk-p { font: 400 22px/1.45 Inter, Arial, sans-serif; color: #1c2533; margin: 6px 0; }
+.dk-row { display: flex; justify-content: space-between; gap: 20px; font: 600 22px/1.3 Inter, Arial, sans-serif; padding: 8px 0; border-bottom: 1px solid rgba(28, 37, 51, .16); }
+.dk-row b { font-weight: 800; }
+.dk-sig { font: 600 19px/1.3 Inter, Arial, sans-serif; color: #3e4757; margin-top: 18px; }
+.dk-hl { background: rgba(255, 219, 89, .6); border-radius: 4px; padding: 0 4px; margin: 0 -4px; }
 
 /* A2: one continuous scene for O006-O010 (film 59.85-109.13; local = film - 59.85). Clips are cut per VO window. */
 #stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
@@ -73,10 +85,13 @@ body { background: #05080e; }
 #clockL i { position: absolute; left: 50%; bottom: 50%; width: 4px; margin-left: -2px; border-radius: 2px; background: rgba(20, 15, 10, .85); transform-origin: 50% 100%; }
 /* right room: an unbranded agreement, a % sign */
 #inR { background: radial-gradient(ellipse at 50% 20%, #5b5a52, #22221e 70%); }
-#agree { left: 40px; top: 150px; width: 220px; height: 300px; padding: 26px 22px; }
-#agree .bar { height: 9px; margin: 9px 0; }
-#pct { position: absolute; left: 0; right: 0; top: 160px; text-align: center; font: 800 150px/1 Inter, Arial, sans-serif; color: var(--yellow); text-shadow: 0 8px 24px rgba(0,0,0,.45); }
-#sig { position: absolute; left: 36px; top: 395px; width: 160px; height: 50px; overflow: visible; }
+#agree { left: 40px; top: 100px; width: 252px; height: 380px; padding: 22px 20px; }
+#agree .ag-t { font: 800 14px/1.25 Inter, Arial, sans-serif; color: #14263B; letter-spacing: .02em; }
+#agree .ag-rule { height: 2px; background: #14263B; margin: 10px 0; opacity: .8; }
+#agree .ag-p { font: 400 13.5px/1.45 Inter, Arial, sans-serif; color: #1c2533; margin: 5px 0; }
+#feeHl { border-radius: 3px; padding: 1px 3px; margin: 0 -3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+#pct { position: absolute; left: 175px; right: 0; top: 372px; text-align: center; font: 800 96px/1 Inter, Arial, sans-serif; color: var(--yellow); text-shadow: 0 8px 24px rgba(0,0,0,.45); }
+#sig { position: absolute; left: 112px; top: 312px; width: 140px; height: 44px; overflow: visible; }
 /* centre: the third door */
 #inC { background: radial-gradient(ellipse at 50% 40%, #f0fffb, #8cf0dc 45%, #59DCC3 100%); }
 .door .leaf.plain { background: linear-gradient(#18304a, #172d46 60%, #152a42); box-shadow: none; }
@@ -86,14 +101,14 @@ body { background: #05080e; }
 /* beyond the door: the desk and three papers */
 #beyond { position: absolute; inset: 0; opacity: 0; }
 #desk { position: absolute; inset: 0; transform-origin: 50% 40%; }
-.doc { position: absolute; top: 150px; width: 360px; height: 450px; padding: 44px 40px; }
-#d1 { left: 230px; } #d2 { left: 780px; } #d3 { left: 1330px; }
+.doc { position: absolute; top: 110px; width: 430px; height: 540px; padding: 44px 40px; }
+#d1 { left: 170px; } #d2 { left: 745px; } #d3 { left: 1320px; }
 .seal { position: absolute; right: 36px; bottom: 40px; width: 120px; height: 120px; border-radius: 50%; border: 6px solid var(--teal); color: #1e8f7c; display: flex; align-items: center; justify-content: center; }
 .seal svg { width: 64px; height: 64px; }
 .tick { position: absolute; right: 40px; bottom: 44px; width: 100px; height: 100px; color: #1e8f7c; }
 .cal { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 26px; }
-.cal i { display: block; height: 42px; border-radius: 6px; background: rgba(28, 37, 51, .1); }
-.cal i.l { background: var(--yellow); opacity: 0; }
+.cal i { display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 6px; background: rgba(28, 37, 51, .1); font: 600 20px/1 Inter, Arial, sans-serif; font-style: normal; color: #3e4757; }
+.cal i.l { font-weight: 800; }
 .clk { position: absolute; right: 36px; top: 34px; width: 66px; height: 66px; color: #b08a00; }
 .chip.c1, .chip.c2, .chip.c3 { left: 64px; }
 .c1 { bottom: 232px; color: var(--teal); } .c2 { bottom: 148px; color: var(--teal); } .c3 { bottom: 64px; color: var(--yellow); }
@@ -125,10 +140,14 @@ body { background: #05080e; }
             <!-- right door: the recovery service -->
             <div class="door" id="doorR" style="left: 1250px">
               <div class="in" id="inR">
-                <div class="paper" id="agree">
-                  <div class="bar" style="width: 60%; height: 14px; background: rgba(20,38,59,.45)"></div>
-                  <div class="bar" style="width: 94%"></div><div class="bar" style="width: 82%"></div><div class="bar" style="width: 90%"></div><div class="bar" style="width: 70%"></div><div class="bar" style="width: 86%"></div><div class="bar" style="width: 64%"></div>
-                  <div class="sim-wm" data-layout-allow-occlusion style="left: 40px; top: 236px; font-size: 18px">SIMULATION</div>
+                <div class="paper dk" id="agree" data-layout-allow-overlap>
+                  <div class="ag-t">CLAIM RECOVERY SERVICE AGREEMENT</div>
+                  <div class="ag-rule"></div>
+                  <div class="ag-p">Client: <b>R. Kumar</b></div>
+                  <div class="ag-p">Claim: <b>₹3,30,000</b></div>
+                  <div class="ag-p ag-fee"><span id="feeHl">Service fee: <b>20% of the amount recovered + GST as applicable</b></span></div>
+                  <div class="ag-p" style="margin-top: 26px">Signature ________________</div>
+                  <div class="sim-wm" data-layout-allow-occlusion style="left: 6px; top: 300px; font-size: 12px">SIMULATION</div>
                 </div>
                 <svg id="sig" viewBox="0 0 160 50"><path id="sigP" d="M4 34 C 20 6, 30 46, 44 24 S 64 10, 72 30 S 96 40, 104 18 S 130 36, 156 22" fill="none" stroke="#1c2533" stroke-width="3.5" stroke-linecap="round"/></svg>
                 <div id="pct" data-layout-allow-occlusion>%</div>
@@ -148,13 +167,28 @@ body { background: #05080e; }
         <div id="beyond">
           <div class="grade"></div>
           <div id="desk">
-            <div class="paper doc" id="d1"><div class="bar" style="width: 60%; height: 18px; background: rgba(20,38,59,.45)"></div><div class="bar" style="width: 90%"></div><div class="bar" style="width: 76%"></div><div class="bar" style="width: 84%"></div><div class="bar" style="width: 66%"></div>
+            <div class="paper doc dk" id="d1" data-layout-allow-overlap>
+              <div class="dk-lh" style="font-size: 22px">COMPLAINT FORM</div><div class="dk-sub">Insurance Ombudsman</div>
+              <div class="dk-rule"></div>
+              <div class="dk-row" style="font-size: 21px"><span>Complainant</span><b>R. Kumar</b></div>
+              <div class="dk-row" style="font-size: 21px"><span>Claim No.</span><b>CLM-2408-55217</b></div>
+              <div class="dk-row" style="font-size: 21px"><span>Relief sought</span><b>₹3,30,000</b></div>
+              <div class="dk-row" style="font-size: 22px; border: 0; margin-top: 10px"><span>Fee</span><b>Nil</b></div>
+              <div class="sim-wm" data-layout-allow-occlusion style="left: 30px; top: 470px; font-size: 16px">SIMULATION</div>
               <svg class="tick" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path id="tickP" d="M10 25 L20 35 L38 13"/></svg></div>
-            <div class="paper doc" id="d2"><div class="bar" style="width: 50%; height: 18px; background: rgba(20,38,59,.45)"></div><div class="bar" style="width: 92%"></div><div class="bar" style="width: 80%"></div><div class="bar" style="width: 88%"></div><div class="bar" style="width: 72%"></div><div class="bar" style="width: 60%"></div>
+            <div class="paper doc dk" id="d2" data-layout-allow-overlap>
+              <div class="dk-sub" style="color: #14263B; font-weight: 800">Office of the Insurance Ombudsman, Hyderabad</div>
+              <div class="dk-lh" style="font-size: 22px; margin-top: 8px">AWARD under Rule 17</div>
+              <div class="dk-rule"></div>
+              <div class="dk-ref" style="font-size: 18px"><span>Complaint No. HYD-H-2026-0471</span></div>
+              <div class="dk-p" style="font-size: 22px; margin-top: 10px">The insurer shall pay ₹3,30,000 to the complainant within 30 days of receipt of this award.</div>
+              <div class="sim-wm" data-layout-allow-occlusion style="left: 30px; top: 470px; font-size: 16px">SIMULATION</div>
               <div class="seal" id="seal"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 20 L26 8 L34 16 L22 28 Z"/><path d="M24 22 L40 38"/><path d="M8 42 H30"/></svg></div></div>
-            <div class="paper doc" id="d3"><div class="bar" style="width: 46%; height: 18px; background: rgba(20,38,59,.45)"></div>
+            <div class="paper doc dk" id="d3" data-layout-allow-overlap>
+              <div class="dk-lh" style="font-size: 22px">Award payment</div><div class="dk-sub">Days late</div>
               <svg class="clk" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"><circle cx="24" cy="24" r="17"/><path d="M24 14 V24 L31 29"/></svg>
-              <div class="cal" id="cal"></div></div>
+              <div class="cal" id="cal"></div>
+              <div class="sim-wm" data-layout-allow-occlusion style="left: 30px; top: 480px; font-size: 16px">SIMULATION</div></div>
           </div>
           <div class="scrim"></div>
           <div class="chip c1" id="c1">${IO_ICON_zero}FREE TO FILE <span class="src">&nbsp;[CIO FAQ]</span></div>
@@ -251,7 +285,7 @@ IO.caseFile = (svg, id, s = 1) => {
       for (const [k, n] of [["c1", "zero"], ["c2", "gavel"], ["c3", "clock"]]) $(k).innerHTML = $(k).innerHTML.replace(/\$\{IO_ICON_\w+\}/, IO.icon(n));
       // files that stack in the left room, the calendar's 20 day cells
       for (let i = 0; i < 9; i++) { const d = document.createElement("div"); d.className = "slab"; d.style.top = (510 - i * 34) + "px"; d.style.left = (40 + ((i * 37) % 13) - 6) + "px"; $("files").appendChild(d); }
-      for (let i = 0; i < 20; i++) { const c = document.createElement("i"); if (i >= 8 && i < 18) c.className = "l"; $("cal").appendChild(c); }
+      for (let i = 0; i < 20; i++) { const c = document.createElement("i"); c.textContent = String(i + 1); if (i < 10) c.className = "l"; $("cal").appendChild(c); }
       FIN.grain($("grain"));
       IO.motes($("corridor"), 30, 41, { x: 100, y: 120, w: 1700, h: 860 }, 0.7);
       IO.drift($("stage"), 5, 6);
@@ -284,9 +318,11 @@ IO.caseFile = (svg, id, s = 1) => {
       tl.to($("simTag"), { opacity: 1, duration: 0.4 }, T.ads);
       tl.fromTo($("agree"), { y: 140, rotation: 6, opacity: 0 }, { y: 0, rotation: -2, opacity: 1, duration: 0.8, ease: "power3.out", immediateRender: false }, T.ads + 0.6);
       tl.fromTo($("sigP"), { attr: { "stroke-dasharray": "260 260", "stroke-dashoffset": 260 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.0, ease: "power1.inOut" }, T.promise);
+      tl.fromTo($("feeHl"), { backgroundColor: "rgba(255, 219, 89, 0)" }, { backgroundColor: "rgba(255, 219, 89, .75)", duration: 0.4 }, T.pct - 0.15);
       tl.fromTo($("pct"), { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.in", immediateRender: false }, T.pct);
       tl.fromTo($("doorR"), { x: 0 }, { x: 5, duration: 0.04, yoyo: true, repeat: 5, ease: "none", immediateRender: false }, T.pct + 0.25);
-      cam(T.ads + 1.0, T.stop - T.ads - 1.0, 1.8, -792, -60, "sine.inOut");
+      cam(T.ads + 0.9, 1.6, 2.3, -1060, -230, "sine.inOut");
+      cam(T.ads + 2.5, T.stop - T.ads - 2.5, 2.38, -1100, -240, "none");
       // ---- O009: stop; both doors dim; a third one opens in teal ----
       tl.set($("simTag"), { opacity: 0 }, T.stop);
       cam(T.stop, 0.5, 1.02, 0, 0, "power3.out");
@@ -320,7 +356,7 @@ IO.caseFile = (svg, id, s = 1) => {
       tl.fromTo($("seal"), { scale: 2.2, opacity: 0, rotation: -20 }, { scale: 1, opacity: 1, rotation: -8, duration: 0.25, ease: "power4.in" }, T.binds + 1.6);
       tl.fromTo($("d2"), { x: 0 }, { x: 4, duration: 0.04, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, T.binds + 1.85);
       doc($("d3"), T.late - 0.5); chip($("c3"), T.late);
-      document.querySelectorAll("#cal i.l").forEach((c, i) => tl.to(c, { opacity: 1, duration: 0.2 }, T.late + 0.6 + i * 0.32));
+      document.querySelectorAll("#cal i.l").forEach((c, i) => tl.fromTo(c, { backgroundColor: "rgba(28, 37, 51, 0.1)" }, { backgroundColor: "rgba(255, 219, 89, 1)", duration: 0.2 }, T.late + 0.6 + i * 0.32));
       // ease the papers toward the chips' story: push in on the penalty
       tl.to($("desk"), { x: -160, duration: D - T.late, ease: "sine.inOut" }, T.late);
       tl.to({}, { duration: 0.01 }, D - 0.01);

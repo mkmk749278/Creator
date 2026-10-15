@@ -45,6 +45,18 @@ body { background: #05080e; }
 .bar { height: 14px; border-radius: 7px; background: rgba(28, 37, 51, .16); margin: 14px 0; }
 .sim-wm { position: absolute; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .32em; color: rgba(28, 37, 51, .6); transform: rotate(-20deg); }
 .mote { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 236, 200, .55); filter: blur(1px); }
+/* revision v2: real, readable document text (no grey bars). All documents are SIMULATION, invented names. */
+.dk { color: #1c2533; font-family: Inter, Arial, sans-serif; }
+.dk-lh { font: 800 26px/1.15 Inter, Arial, sans-serif; color: #14263B; letter-spacing: .01em; }
+.dk-sub { font: 600 15px/1.3 Inter, Arial, sans-serif; color: #5b6473; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; }
+.dk-rule { height: 3px; background: #14263B; margin: 16px 0 14px; opacity: .8; }
+.dk-ref { display: flex; justify-content: space-between; font: 600 17px/1.4 Inter, Arial, sans-serif; color: #3e4757; }
+.dk-t { font: 800 21px/1.3 Inter, Arial, sans-serif; color: #14263B; margin: 14px 0 10px; }
+.dk-p { font: 400 22px/1.45 Inter, Arial, sans-serif; color: #1c2533; margin: 6px 0; }
+.dk-row { display: flex; justify-content: space-between; gap: 20px; font: 600 22px/1.3 Inter, Arial, sans-serif; padding: 8px 0; border-bottom: 1px solid rgba(28, 37, 51, .16); }
+.dk-row b { font-weight: 800; }
+.dk-sig { font: 600 19px/1.3 Inter, Arial, sans-serif; color: #3e4757; margin-top: 18px; }
+.dk-hl { background: rgba(255, 219, 89, .6); border-radius: 4px; padding: 0 4px; margin: 0 -4px; }
 
 /* A5: O017 (film 158.72-182.26). A complaint ticket goes from the phone to the insurer's tray; the regulator's record
    follows it. No portal UI is imitated: the phone shows an abstract ticket only. */
@@ -55,26 +67,33 @@ body { background: #05080e; }
 #screen .notch { position: absolute; left: 50%; top: 10px; width: 96px; height: 28px; margin-left: -48px; border-radius: 16px; background: #0d1119; }
 .tk { position: absolute; left: 22px; right: 22px; border-radius: 20px; background: #fff; padding: 20px 22px; box-shadow: 0 4px 14px rgba(20, 38, 59, .12); border-left: 8px solid var(--teal); }
 .tk .bar { height: 12px; margin: 10px 0; }
-#tk1 { top: 110px; } #tk2 { top: 300px; border-left-color: var(--mist); }
+#tk1 { top: 80px; } #tk2 { top: 470px; border-left-color: var(--mist); }
+.tk .t1 { font: 800 24px/1.2 Inter, Arial, sans-serif; color: #14263B; }
+.tk .t2 { font: 800 19px/1.3 Inter, Arial, sans-serif; color: #1e8f7c; margin: 4px 0 8px; }
+.tk .t3 { font: 400 20px/1.35 Inter, Arial, sans-serif; color: #1c2533; }
+.tk .t4 { font: 800 20px/1.4 Inter, Arial, sans-serif; color: #14263B; margin-top: 8px; padding-top: 8px; border-top: 1px solid #d3dae5; }
 #tray { position: absolute; left: 1230px; top: 600px; width: 520px; height: 330px; }
 #tray .back { position: absolute; left: 30px; top: 0; width: 460px; height: 250px; border-radius: 8px; background: linear-gradient(#2a3f58, #1a2a3e); }
 #tray .front { position: absolute; left: 0; bottom: 0; width: 520px; height: 150px; border-radius: 10px; background: linear-gradient(#34506f, #1e3249);
   box-shadow: 0 30px 60px rgba(0,0,0,.5), inset 0 2px 0 rgba(255,255,255,.12); }
-#tray .doc { position: absolute; width: 400px; height: 220px; border-radius: 4px; }
-#cutPiece { position: absolute; left: 110px; top: 40px; width: 330px; height: 70px; background: var(--coral); opacity: .9; border-radius: 3px;
+#tray .doc { position: absolute; width: 400px; height: 220px; border-radius: 4px; padding: 18px 22px; }
+#cutPiece span { display: block; padding: 20px 0 0 40px; font: 800 24px/1 Inter, Arial, sans-serif; color: #3a0d10; }
+#cutPiece { position: absolute; left: 110px; top: 70px; width: 330px; height: 70px; background: var(--coral); opacity: .9; border-radius: 3px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 3% 80%, 0 60%, 4% 40%, 0 20%); }
-#ledger { left: 1250px; top: 110px; width: 470px; height: 380px; padding: 40px 40px; }
-#ledger .row { position: relative; height: 40px; border-bottom: 2px solid rgba(28, 37, 51, .12); display: flex; align-items: center; gap: 16px; }
-#ledger .row i { display: block; height: 12px; border-radius: 6px; background: rgba(28, 37, 51, .2); }
-#ourRow { position: absolute; left: 30px; right: 30px; top: 197px; height: 44px; border-radius: 6px; background: rgba(89, 220, 195, .38); transform-origin: 0 50%; }
-#pDot { position: absolute; left: 40px; top: 211px; width: 16px; height: 16px; border-radius: 50%; background: #1e8f7c; }
-#ticket { position: absolute; left: 0; top: 0; width: 160px; height: 96px; padding: 16px 18px; border-left: 8px solid var(--teal); }
-#ticket .bar { height: 10px; margin: 8px 0; }
-#reply { position: absolute; left: 0; top: 0; width: 140px; height: 84px; padding: 14px 16px; border-left: 8px solid var(--mist); }
-#reply .bar { height: 10px; margin: 8px 0; }
+#ledger { left: 1230px; top: 90px; width: 520px; height: 410px; padding: 34px 34px; }
+#ledger .row { position: relative; border-bottom: 2px solid rgba(28, 37, 51, .12); display: flex; align-items: center; gap: 16px; }
+#ledger .row { height: 44px; font: 600 18px/1 Inter, Arial, sans-serif; color: #1c2533; gap: 14px; }
+#ledger .row span:first-child { width: 150px; font-variant-numeric: tabular-nums; } #ledger .row span:nth-child(2) { width: 70px; color: #5b6473; }
+#ledger .row .st { flex: 1; text-align: right; font-weight: 800; color: #14263B; white-space: nowrap; }
+#ledger .lh { font: 800 21px/1 Inter, Arial, sans-serif; color: #14263B; letter-spacing: .06em; text-transform: uppercase; height: 44px; border-bottom: 3px solid #14263B; }
+#ourRow { position: absolute; left: 26px; right: 26px; top: 210px; height: 44px; mix-blend-mode: multiply; border-radius: 6px; background: rgba(89, 220, 195, .38); transform-origin: 0 50%; }
+#pDot { position: absolute; left: 36px; top: 224px; width: 16px; height: 16px; border-radius: 50%; background: #1e8f7c; }
+#ticket { position: absolute; left: 0; top: 0; width: 180px; height: 96px; padding: 12px 16px; border-left: 8px solid var(--teal); }
+#ticket .tt { font: 800 16px/1.2 Inter, Arial, sans-serif; color: #14263B; } #ticket .tn { font: 600 15px/1.3 Inter, Arial, sans-serif; color: #1c2533; margin-top: 4px; }
+#reply { position: absolute; left: 610px; top: 560px; width: 620px; height: 330px; padding: 30px 34px; }
 #paths { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
 #gavel { position: absolute; left: 820px; top: 330px; width: 280px; height: 280px; }
-#order { left: 790px; top: 230px; width: 360px; height: 470px; padding: 48px 44px; }
+#order { left: 790px; top: 230px; width: 380px; height: 470px; padding: 44px 40px; outline: 4px dashed rgba(184, 199, 217, .8); outline-offset: 8px; }
 #seal { position: absolute; right: 40px; bottom: 44px; width: 120px; height: 120px; border-radius: 50%; border: 5px dashed rgba(28, 37, 51, .35); }
 #cap { left: 64px; bottom: 64px; gap: 0; }
 #cap .a { color: var(--teal); }
@@ -90,30 +109,44 @@ body { background: #05080e; }
         <div class="leak" id="leak" style="left: -600px; top: -800px"></div>
         <div id="stage">
           <div id="phone"><div id="screen"><div class="notch"></div>
-            <div class="tk" id="tk1"><div class="bar" style="width: 60%; background: rgba(20,38,59,.45)"></div><div class="bar" style="width: 90%"></div><div class="bar" style="width: 72%"></div></div>
-            <div class="tk" id="tk2"><div class="bar" style="width: 50%; background: rgba(20,38,59,.35)"></div><div class="bar" style="width: 84%"></div></div>
+            <div class="tk dk" id="tk1" data-layout-allow-overlap>
+              <div class="t1">Bima Bharosa</div>
+              <div class="t2">Complaint registered</div>
+              <div class="t3">Token No. 26-0915-4471</div>
+              <div class="t3">Category: Health · Claim</div>
+              <div class="t3">Forwarded to: Sample Health Insurance Co. Ltd.</div>
+              <div class="t4" id="tkSt">Status: Attended to by insurer</div>
+            </div>
+            <div class="tk dk" id="tk2"><div class="t3"><b>Reply from insurer</b></div><div class="t3">Our decision stands.</div></div>
           </div></div>
-          <div class="paper" id="ledger">
-            <div class="row"><i style="width: 90px"></i><i style="width: 160px"></i><i style="width: 70px"></i></div>
-            <div class="row"><i style="width: 120px"></i><i style="width: 110px"></i><i style="width: 90px"></i></div>
-            <div class="row"><i style="width: 80px"></i><i style="width: 170px"></i><i style="width: 60px"></i></div>
-            <div class="row"><i style="width: 110px"></i><i style="width: 130px"></i><i style="width: 80px"></i></div>
-            <div class="row"><i style="width: 95px"></i><i style="width: 150px"></i><i style="width: 70px"></i></div>
-            <div class="row"><i style="width: 130px"></i><i style="width: 100px"></i><i style="width: 85px"></i></div>
+          <div class="paper" id="ledger" data-layout-allow-overlap>
+            <div class="lh">Complaint record</div>
+            <div class="row"><span>26-0915-4402</span><span>Health</span><span class="st">Closed</span></div>
+            <div class="row"><span>26-0915-4417</span><span>Motor</span><span class="st">Attended to</span></div>
+            <div class="row"><span>26-0915-4439</span><span>Life</span><span class="st">Open</span></div>
+            <div class="row"><span>26-0915-4471</span><span>Health</span><span class="st">Attended to by insurer</span></div>
+            <div class="row"><span>26-0915-4488</span><span>Health</span><span class="st">Open</span></div>
+            <div class="row"><span>26-0915-4493</span><span>Travel</span><span class="st">Closed</span></div>
             <div id="ourRow"></div><div id="pDot"></div>
           </div>
-          <div id="tray"><div class="back"></div>
-            <div class="paper doc" style="left: 60px; top: 10px; transform: rotate(3deg)"></div>
-            <div class="paper doc" style="left: 80px; top: 30px; transform: rotate(-4deg)"></div>
-            <div id="cutPiece"></div>
+          <div id="tray" data-layout-allow-overlap><div class="back"></div>
+            <div class="paper doc dk" style="left: 60px; top: 10px; transform: rotate(3deg)"><div class="dk-sub" style="color:#14263B">Sample Health Insurance Co. Ltd.</div><div class="dk-t" style="font-size:18px">Policy No. SHI-4471-0926</div></div>
+            <div class="paper doc dk" style="left: 80px; top: 30px; transform: rotate(-4deg)"><div class="dk-sub" style="color:#14263B">Claims Department</div><div class="dk-t" style="font-size:18px">Claim No. CLM-2408-55217</div></div>
+            <div id="cutPiece"><span>Disallowed ₹3,30,000</span></div>
             <div class="front"></div></div>
           <svg id="paths" viewBox="0 0 1920 1080">
             <path id="route" d="M 560 520 C 820 520, 1050 900, 1440 690" fill="none" stroke="#B8C7D9" stroke-width="5" stroke-dasharray="2 16" stroke-linecap="round" opacity="0"/>
             <path id="track" d="M 1480 480 C 1560 540, 1560 600, 1490 680" fill="none" stroke="#59DCC3" stroke-width="7" stroke-dasharray="3 14" stroke-linecap="round" opacity="0"/>
             <path id="trackB" d="M 1300 470 C 1150 560, 1000 700, 1000 760" fill="none" stroke="#59DCC3" stroke-width="5" stroke-dasharray="3 14" stroke-linecap="round" opacity="0"/>
           </svg>
-          <div class="paper" id="ticket"><div class="bar" style="width: 70%; background: rgba(20,38,59,.45)"></div><div class="bar" style="width: 92%"></div><div class="bar" style="width: 64%"></div></div>
-          <div class="paper" id="reply"><div class="bar" style="width: 64%; background: rgba(20,38,59,.4)"></div><div class="bar" style="width: 90%"></div></div>
+          <div class="paper dk" id="ticket"><div class="tt">Bima Bharosa</div><div class="tn">Token No.<br />26-0915-4471</div></div>
+          <div class="paper dk" id="reply" data-layout-allow-overlap>
+            <div class="dk-lh" style="font-size: 23px">Sample Health Insurance Co. Ltd.</div><div class="dk-sub">Reply · Bima Bharosa Token No. 26-0915-4471</div>
+            <div class="dk-rule"></div>
+            <div class="dk-p">Dear R. Kumar, we have reviewed your complaint. The deduction was made as per the policy. Our decision stands.</div>
+            <div class="dk-sig">Grievance Cell</div>
+            <div class="sim-wm" data-layout-allow-occlusion style="left: 400px; top: 250px">SIMULATION</div>
+          </div>
           <svg id="gavel" viewBox="0 0 280 280">
             <g fill="#B8C7D9" opacity=".92">
               <g transform="rotate(-32 140 130)">
@@ -125,9 +158,11 @@ body { background: #05080e; }
             </g>
             <path id="strike" d="M 30 250 L 250 30" stroke="#F5F7FB" stroke-width="14" stroke-linecap="round" fill="none"/>
           </svg>
-          <div class="paper" id="order">
-            <div class="bar" style="width: 56%; height: 20px; background: rgba(20,38,59,.5)"></div>
-            <div class="bar" style="width: 92%"></div><div class="bar" style="width: 80%"></div><div class="bar" style="width: 88%"></div><div class="bar" style="width: 66%"></div><div class="bar" style="width: 84%"></div>
+          <div class="paper dk" id="order" data-layout-allow-overlap>
+            <div class="dk-t" style="font-size: 26px; margin-top: 0">ORDER</div>
+            <div class="dk-p">Pay the claim of R. Kumar</div>
+            <div class="dk-p">Claim No. CLM-2408-55217</div>
+            <div class="dk-sig">Seal:</div>
             <div id="seal"></div>
           </div>
         </div>
@@ -221,12 +256,12 @@ IO.caseFile = (svg, id, s = 1) => {
       const route = $("route"), rLen = route.getTotalLength();
       const P = (u) => route.getPointAtLength(u * rLen);
       // the ticket rides the route: position is a pure function of the proxy's u
-      const ride = { u: 0 }, back = { u: 1 };
+      const ride = { u: 0 };
       FIN.hook(() => { const p = P(ride.u); $("ticket").style.transform = `translate(${(p.x - 80).toFixed(1)}px, ${(p.y - 48).toFixed(1)}px) rotate(${(-6 + 10 * ride.u).toFixed(2)}deg)`;
-        const q = P(back.u); $("reply").style.transform = `translate(${(q.x - 70).toFixed(1)}px, ${(q.y - 42).toFixed(1)}px) rotate(${(4 - 8 * back.u).toFixed(2)}deg)`; });
+      });
       const tl = gsap.timeline({ paused: true });
       const pop = (el, t, from = { opacity: 0, y: 30 }) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.5, ease: "power3.out", immediateRender: false }, t);
-      gsap.set(["#ticket", "#reply", "#gavel", "#order", "#cap", "#ourRow", "#pDot"], { opacity: 0 });
+      gsap.set(["#tkSt", "#ticket", "#reply", "#gavel", "#order", "#cap", "#ourRow", "#pDot"], { opacity: 0 });
       gsap.set("#capB", { width: 0 }); gsap.set("#cutPiece", { rotation: -7 });
 
       // camera: a slow drift across the desk, a lean in for "NOT a court", back out for the route
@@ -243,9 +278,9 @@ IO.caseFile = (svg, id, s = 1) => {
       // "on the regulator's record": our row is written into the ledger
       tl.fromTo($("ourRow"), { opacity: 1, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "power2.inOut", immediateRender: false }, T.record + 1.2);
       // "the company has to answer it": a reply comes back to the phone
-      tl.to($("reply"), { opacity: 1, duration: 0.25 }, T.answer);
-      tl.fromTo(back, { u: 1 }, { u: 0.02, duration: 1.4, ease: "power2.inOut", immediateRender: false }, T.answer);
-      tl.to($("reply"), { opacity: 0, duration: 0.3 }, T.answer + 1.35);
+      tl.fromTo($("reply"), { opacity: 0, x: 520, y: 80, scale: 0.4, rotation: 4 }, { opacity: 1, x: 0, y: 0, scale: 1, rotation: -1.5, duration: 0.6, ease: "power3.out", immediateRender: false }, T.answer - 0.2);
+      tl.to($("reply"), { opacity: 0, x: -520, y: -60, scale: 0.35, duration: 0.45, ease: "power2.in" }, T.court - 0.35);
+      tl.to($("tkSt"), { opacity: 1, duration: 0.3 }, T.answer + 0.4);
       tl.fromTo($("tk2"), { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, T.answer + 1.3);
       // "But Bima Bharosa is NOT a court": the gavel appears and is struck through
       tl.fromTo($("gavel"), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out", immediateRender: false }, T.court + 0.1);
