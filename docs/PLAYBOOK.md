@@ -316,6 +316,12 @@ India while the topics stay India-first. Rules:
   column an optional Telugu dub; `tools/build_script.py` lints English VO (`lint_en`) and builds the blocks from it.
 - On-screen text, citation tags and the description were already English; nothing changes there.
 
+**Recording blocks in the chat (owner, 2026-10-15).** When a script is locked or a block changes, the reply itself carries
+every block as its own fenced code block, ready to paste into ElevenLabs: a heading line above each (block number, length,
+voice and settings, the file name to save as `voice/<code>-chN.mp3`), and nothing but the spoken text inside the fence.
+*Why:* the owner works on a phone; a code block has a one-tap copy button, while a Drive `.md` or the repo needs opening,
+selecting and scrolling. Drive and `bunty_blocks.md` stay as the record.
+
 ### 4a-3. Visual modes for explainers (owner, 2026-10-11)
 *Why (owner):* "not only slides": viewers stay to the end when they see real life, watch the maths being worked out and
 follow a character. Every explainer mixes, in this order of preference:
