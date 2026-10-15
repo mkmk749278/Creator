@@ -9,9 +9,14 @@ started, money, the slowest step), and then the reveal: Balasore (false green fr
 for sure) vs Kanchanjunga (failed signals and broken backup rules: where Kavach could really help). Verdict: three
 questions to ask of any viral Kavach post.
 
-**Status (2026-10-15): phase 1 in progress.** Script v1.1: 126 lines, 3 voice blocks (4,075–4,177 characters),
-≈ 14:50 at the estimator's rate. Fact-check gate passes (82 claims: 76 confirmed, 5 claim, 1 disputed). Every change from the handoff and why: `brief/changes-from-brief.md`. Fact-check:
-`claims.csv`, `fact-check.md`. Next: owner approves the script, then records the blocks (`voice/block1.mp3` …).
+**Status (2026-10-15): phase 1, script v2.** Rewritten in the owner's new English style (PLAYBOOK §4a-4, guide in
+Part F): elder-brother voice, phonetic acronyms for Akash (R-D-S-O, R-F-I-D, U-H-F, S-I-L, H-B-L, P-I-B), hook with an
+open loop ("around the eight minute mark"), forensic dissection, a three-step citizen's action plan (check forwards, read
+PIB/CRS, Rail Madad 139), outro with "Jai Hind". 66 lines, 3 voice blocks, 11,057 characters: ≈ 13:16 by the estimator,
+≈ 12:00 at the measured English Akash rate (×0.9). Views: `screenplay.md` (TIME | AUDIO | VISUAL + SFX), `script.md`,
+`bunty_blocks.md` (paste-ready). v1.1 history: `brief/changes-from-brief.md`. Fact-check of the v2 changes: `claims.csv`,
+`fact-check.md`. Next: owner approves v2 and records the blocks (`voice/block1.mp3` …); then check the open-loop minute
+against `align/`.
 
 ## Genre and look (PLAYBOOK §5.3, own art direction)
 **Tech × society investigation.** Art direction **"Signal Room"**: the film moves between three worlds.
@@ -25,18 +30,19 @@ Palette (owner's handoff): Carbon Slate `#0F172A` (base), Signal Cyan `#0284C7` 
 Engines from the handoff: H1 hardware X-ray, H2 braking curve, H3 fog split, H4 rollout funnel, H5 Balasore logic gate,
 H6 Kanchanjunga simulation. All animation labelled ILLUSTRATION / SIMULATION; our maths labelled ILLUSTRATIVE.
 Recurring motifs: the four-link chain; the braking curve drawn ahead of the train; the two viral myths (hook → stamped
-in Act 4 → dissolved in the verdict). Silence: 1.5 s before K103 ("Here is the honest answer").
+in the crash section → dissolved in the outro). Silence: 1.5 s before V057 ("Here's the honest answer").
 
 ## Voice
 Handoff: **Akash**, ElevenLabs v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on. English rules: numbers as
-words, no digits, dashes, brackets, quotes or `!` (lint in `tools/build_script.py`).
+words, no digits, brackets, quotes or `!`; `—` allowed; letter acronyms hyphenated; never 3+ very short sentences in a
+row (lint in `tools/build_script.py`).
 
 ## Files and rebuild
 | File | What |
 |---|---|
 | `script.full.tsv` | **Single source**: id, section, te (dub, empty), en VO, emotion (empty), visual, on-screen, sound, pacing, cite |
-| `tools/make_tsv.py` | One-time v1 author helper (do not re-run after edits to the TSV) |
-| `script.md`, `bunty_blocks.md`, `bunty_blocks_clean.md`, `script.tsv` | Built views (do not edit) |
+| `tools/make_tsv.py`, `tools/make_tsv_v2.py` | One-time v1 / v2 author helpers (do not re-run after edits to the TSV) |
+| `screenplay.md`, `script.md`, `bunty_blocks.md`, `bunty_blocks_clean.md`, `script.tsv` | Built views (do not edit) |
 | `claims.csv`, `fact-check.md` | Fact-check gate |
 | `brief/` | Owner's handoff + audits (PDF and text) and `changes-from-brief.md` |
 

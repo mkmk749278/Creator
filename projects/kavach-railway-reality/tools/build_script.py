@@ -63,18 +63,28 @@ def lint(row):
 
 
 EN_QWORDS = ("right", "how", "why", "what", "who", "which")
+# Acronyms the voice should say as a word (PLAYBOOK §4a-4); every other capital acronym must be hyphenated (R-D-S-O).
+EN_WORD_ACRONYMS = {"ISRO", "OK", "I"}
 
 
 def lint_en(row):
-    """English VO (owner, 2026-10-11: English by default, simple words every Indian understands): no ! double quotes
-    dashes or brackets; `?` on real questions; amounts and numbers as words (no digits or ₹, so TTS reads them the
-    Indian way); at most one `...` per sentence. The VO text sits in row["te"] after main() swaps the columns."""
+    """English VO (owner 2026-10-11 and 2026-10-15, PLAYBOOK §4a-2, §4a-4): no ! double quotes or brackets; `—` allowed
+    for mid-thought pivots, but no spaced hyphen or `--`; `?` on real questions; numbers and amounts as words (no digits
+    or ₹); at most one `...` per sentence; acronyms said letter by letter are written with hyphens for Akash (R-D-S-O,
+    R-F-I-D), so a bare capital acronym fails; no lecture openers. The VO text sits in row["te"] after main() swaps
+    the columns."""
     t, errs = row["te"], []
-    bad = re.findall(r"[!\"“”‘’—–\[\]()₹0-9#&;/]", t)
+    bad = re.findall(r"[!\"“”‘’–\[\]()₹0-9#&;/]", t)
     if bad:
         errs.append(f"characters not allowed in English VO {sorted(set(bad))}")
     if re.search(r"\s-\s|--", t):
-        errs.append("dash in English VO")
+        errs.append("spaced hyphen in English VO: use — for a pivot")
+    for tok in re.findall(r"\b[A-Z]{2,}\b", t):
+        if tok not in EN_WORD_ACRONYMS:
+            errs.append(f"bare acronym {tok}: write it for the voice (e.g. {'-'.join(tok)})")
+    for opener in ("now let us", "let us understand", "in this video we", "first, one thing must be clear"):
+        if opener in t.lower():
+            errs.append(f"lecture opener '{opener}' (PLAYBOOK §4a-4)")
     for sent in re.split(r"(?<=[.?])\s+", t):
         w = re.findall(r"[A-Za-z']+", sent.lower())
         if sent.rstrip().endswith(".") and not sent.rstrip().endswith("...") and w and (w[0] in EN_QWORDS[1:] or w[-1] == "right"):
@@ -85,6 +95,22 @@ def lint_en(row):
     if tag and tag not in TAGS:
         errs.append(f"unknown emotion tag {tag}")
     return errs
+
+
+def short_runs(rows):
+    """PLAYBOOK §4a-4: never 3+ very short sentences (< 6 words) in a row: Akash drops pitch at every full stop."""
+    out, run = [], []
+    for r in rows:
+        for sent in re.split(r"(?<=[.?])\s+", r["te"].strip()):
+            if not sent:
+                continue
+            if len(re.findall(r"[A-Za-z0-9'-]+", sent)) < 6:
+                run.append(r["id"])
+                if len(run) == 3:
+                    out.append((r["id"], f"three very short sentences in a row ({', '.join(dict.fromkeys(run))}): join or vary them"))
+            else:
+                run = []
+    return out
 
 
 def spoken(r, tags=True):
@@ -154,6 +180,8 @@ def main():
     if (HERE / "title.txt").exists():
         TITLE = (HERE / "title.txt").read_text(encoding="utf-8").strip()
     problems = [(r["id"], e) for r in rows for e in (lint_en(r) if lang == "en" else lint(r))]
+    if lang == "en":
+        problems += short_runs(rows)
     for pid, e in problems:
         print(f"LINT {pid}: {e}")
     blocks = blocks_of(rows)
@@ -172,7 +200,7 @@ def main():
     total = sum(chars(b) for b in blocks)
     tsecs = sum(secs(b) for b in blocks)
     with open(HERE / "bunty_blocks.md", "w", encoding="utf-8") as f:
-        f.write(f"# Bunty blocks: {TITLE}\n\nPaste each block as one ElevenLabs generation (voice Akash per the owner's brief, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on; "
+        f.write(f"# Bunty blocks: {TITLE}\n\nPaste each block as one ElevenLabs generation (voice Akash, ElevenLabs v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on; "
                 "`language_code` = the VO language). The [square-bracket] words are emotion cues (audio tags), not spoken text. Test "
                 "block 1 first: if Bunty reads a tag aloud, use `bunty_blocks_clean.md` instead. Listen to every take; if a "
                 "block skips, repeats or drifts, regenerate it, and send the files as `voice/block1.mp3`, "
@@ -210,6 +238,28 @@ def main():
             if r.get("pacing"):
                 f.write(f"  \n⏱ {r['pacing']}")
             f.write("\n")
+
+    with open(HERE / "screenplay.md", "w", encoding="utf-8") as f:
+        f.write(f"# {TITLE}: screenplay (Be Practical with Kishore)\n\nBuilt from `script.full.tsv` by `tools/build_script.py` "
+                "(PLAYBOOK §4a-4). Times are estimates at the voice rate until the VO is recorded and aligned; `align/` then wins.\n\n"
+                "| TIME / SCENE | AUDIO VOICEOVER (AKASH) | VISUAL FORENSICS & SOUND DESIGN |\n|---|---|---|\n")
+        t0, sec = 0.0, None
+        for r in rows:
+            d = line_seconds(r["te"])
+            scene = f"**{r['section']}**<br>" if r["section"] != sec else ""
+            sec = r["section"]
+            vis = f"[VISUAL] {r['visual']}"
+            if r["onscreen"]:
+                vis += f"<br>[TEXT] {r['onscreen']}"
+            if r.get("pacing"):
+                vis += f"<br>[ACTION] {r['pacing']}"
+            if r["sound"]:
+                vis += f"<br>[SFX] {r['sound']}"
+            if r.get("cite"):
+                vis += f"<br>[CITE] {r['cite']}"
+            cell = lambda s: s.replace("|", "\\|")
+            f.write(f"| {scene}{mmss(t0)}–{mmss(t0 + d)}<br>{r['id']} | {cell(r['te'])} | {cell(vis)} |\n")
+            t0 += d
 
     for i, b in enumerate(blocks, 1):
         c = chars(b)

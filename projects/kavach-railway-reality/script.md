@@ -2,774 +2,476 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **14:52** of speech (12,369 characters, 3 Bunty blocks), plus pauses and music beats.
+Estimated length: **13:16** of speech (11,057 characters, 3 Bunty blocks), plus pauses and music beats.
 
-## 0 Hook: the cab at night
+## 1 Hook and open loop
 
-**K001** · block 1  
-**Two o'clock at night. Inside a locomotive cab, the loco pilot is watching the dark track ahead.**  
+**V001** · block 1  
+**It's two in the morning on a night train... the lights are off, the A-C is humming, and your whole family is asleep on the berths.**  
 __  
-🎬 REAL: night locomotive cab POV, rain on the windscreen, wiper sweeping; the pilot's hand on the controller.  
-🔊 Cold open: cab hum, rail clatter, no music 2 s  
-⏱ Cold open
+🎬 REAL: sleeper coach at night, blue night lamp, curtains swaying, a child asleep on a lower berth (Indian stock).  
+🔊 Cold open: coach rattle, A-C hum, no music  
+⏱ Slow dolly down the aisle
 
-**K002** · block 1  
-**Behind that cab, hundreds of families are fast asleep.**  
+**V002** · block 1  
+**Up front, one loco pilot is staring into the dark — watching for a signal that might be red.**  
 __  
-🎬 REAL: sleeper coach at night, blue night lamp, berths, a child asleep (stock, no faces of real victims).  
-🔊 Low drone enters
+🎬 REAL: night locomotive cab POV, rain on the windscreen, wiper sweeping; distant signal glow.  
+🔊 Wiper thunk, rail clatter  
+⏱ Push in on the windscreen
 
-**K003** · block 1  
-**Every time a train crash happens in India, the same fight starts online.**  
+**V003** · block 1  
+**Then one morning there's news of a train crash, and by lunchtime your family WhatsApp group is on fire.**  
 __  
-🎬 REAL: news archive of a derailment site (credited, short excerpt) cutting to a phone feed scrolling.  
-🔊 Notification pings, layered
+🎬 SIM: phone lock screen on a kitchen table, WhatsApp family group previews stacking up (generic names, no real accounts).  
+🔊 Phone buzz on wood, pings layering  
+⏱ Notifications stack every beat
 
-**K004** · block 1  
-**One side says the government never bothered to install safety technology.**  
+**V004** · block 1  
+**One forward says the government never bothered with safety, and another says India already has Kavach, so crashes should be impossible now.**  
 __  
-🎬 SIM: phone feed, generic posts (no real accounts) reading NO KAVACH? WHY?  
-🔤 MYTH 1
+🎬 SIM: two forwards side by side: NO KAVACH? WHY? and KAVACH = ZERO ACCIDENTS.  
+🔤 MYTH 1 · MYTH 2  
+🔊 Two notification tones  
+⏱ Split screen slides apart
 
-**K005** · block 1  
-**The other side says Kavach is a magic shield, and crashes are now impossible.**  
+**V005** · block 1  
+**Both forwards are playing with your fear — and both are missing what really happens on the track.**  
 __  
-🎬 SIM: phone feed, posts reading KAVACH = ZERO ACCIDENTS.  
-🔤 MYTH 2
+🎬 Both forwards crack like glass; push through the crack into a dark track bed at night.  
+🔊 Glass crack, sub drop  
+⏱ Crash zoom through the crack
 
-**K006** · block 1  
-**Both sides are playing with your feelings. And both are missing the real story.**  
+**V006** · block 1  
+**Welcome to Be Practical with Kishore.**  
 __  
-🎬 Both feeds freeze and crack; push through the crack into a dark track bed.  
-🔊 Glass crack, sub drop
-
-**K007** · block 1  
-**So today, let us do this properly. What does Kavach really do?**  
-__  
-🎬 REAL: Kavach-equipped WAP-7 crossing at speed (Ministry of Railways media).  
-⏱ Question lines: one shot each
-
-**K008** · block 1  
-**Why can't a train just stop like a car?**  
-__  
-🎬 REAL: wheel on rail macro, sparks under braking.
-
-**K009** · block 1  
-**Why is it working on only a small part of our tracks?**  
-__  
-🎬 ILLUSTRATION: India rail map, a thin glowing strand among grey lines.
-
-**K010** · block 1  
-**And the hardest question... would Kavach have saved Balasore? Would it have saved the Kanchanjunga Express?**  
-__  
-🎬 REAL: credited news stills of Bahanaga Bazar and Rangapani wreck sites under a forensic magnifier.  
-🔤 BALASORE 2023 · KANCHANJUNGA 2024  
-🔊 Heartbeat thud
-
-**K011** · block 1  
-**Hi everyone, welcome to Be Practical with Kishore.**  
-__  
-🎬 Kishore on camera / channel face card; logo sting.  
+🎬 Kishore on camera / channel face card over the track bed; logo sting.  
 🔤 BE PRACTICAL WITH KISHORE  
 🔊 Logo sting  
 ⏱ Face and name by 0:20
 
-**K012** · block 1  
-**No shouting and no politics. We will use the railway's own documents, simple physics and the official accident inquiry findings.**  
+**V007** · block 1  
+**Today we'll open the railway's own documents, do the braking maths together, and read the official accident inquiries.**  
 __  
-🎬 PROOF: RDSO specification cover, CRS abstract cover, PIB release, each under the magnifier.  
+🎬 PROOF: R-D-S-O spec cover, CRS abstract cover, PIB release, each sliding in on paper texture under a highlighter sweep.  
 🔤 RDSO · CRS · PIB  
-🔊 Paper slide
+🔊 Paper slides, highlighter squeak  
+⏱ Document push-ins
 
-## 1 What Kavach really is
-
-**K013** · block 1  
-**First, the biggest myth. Kavach is not an app, and it is not a software update.**  
+**V008** · block 1  
+**And around the eight minute mark, I'll show you the exact finding in the inquiry reports that settles the hardest question of all... would Kavach have saved Balasore, and would it have saved the Kanchanjunga Express?**  
 __  
-🎬 SIM: an app icon labelled KAVACH dissolves into steel hardware.  
-🔤 NOT AN APP
+🎬 REAL: credited news stills of Bahanaga Bazar and Rangapani wreck sites under a forensic magnifier; a small minute counter ticks toward 8:00.  
+🔤 BALASORE 2023 · KANCHANJUNGA 2024  
+🔊 Heartbeat thud, riser  
+⏱ OPEN LOOP: re-check the minute against align/ before render
 
-**K014** · block 1  
-**You cannot switch it on across the country overnight.**  
+## 2 What Kavach really is
+
+**V009** · block 1  
+**Let's start with what Kavach actually is — because it isn't an app, and nobody can switch it on across India overnight.**  
 __  
-🎬 ILLUSTRATION: a big switch flipped; nothing on the map lights up.  
-🔊 Switch clack, silence
+🎬 SIM: an app icon labelled KAVACH dissolves into steel hardware; a big switch flips and nothing on the India map lights up.  
+🔤 NOT AN APP  
+🔊 Switch clack, silence  
+⏱ Icon-to-hardware morph
 
-**K015** · block 1  
-**Kavach is India's own Automatic Train Protection system. In simple words, it watches the train's speed and the signals ahead.**  
+**V010** · block 1  
+**Kavach is India's own Automatic Train Protection system. It watches the train's speed and the signals ahead, and if the train goes too fast or is about to pass a red signal, it warns the loco pilot... then brakes by itself if nothing changes.**  
 __  
-🎬 ILLUSTRATION (Engine 1, hardware X-ray): a train on a 3D track; speed and signal readouts float above the cab.  
-🔤 AUTOMATIC TRAIN PROTECTION
+🎬 ILLUSTRATION (Engine 1, hardware X-ray): a train on a 3D track; permitted speed and the next signal float above the cab; WARNING flashes. Then the brake command flows into the brake pipe and the speed dial falls.  
+🔤 AUTOMATIC TRAIN PROTECTION  
+🔊 Cab buzzer  
+⏱ Orbit around the loco
 
-**K016** · block 1  
-**If the train goes too fast, or is about to pass a red signal, Kavach first warns the loco pilot.**  
+**V012** · block 1  
+**In March twenty twenty two, in a test in Telangana with the Railway Minister on board, Kavach stopped two engines running towards each other on the same line, about three hundred and eighty metres apart.**  
 __  
-🎬 REAL: Kavach cab display (LP-OCIP) close-up, warning; credited railway media.  
-🔤 WARNING  
-🔊 Cab buzzer
+🎬 REAL: March 2022 Kavach head-on trial footage (Ministry of Railways / PIB), credited.  
+🔤 KAVACH TRIAL · 4 MAR 2022 · 380 M APART  
+⏱ Cut on the stop
 
-**K017** · block 1  
-**If the train still does not slow down, Kavach applies the brakes by itself.**  
-__  
-🎬 ILLUSTRATION: brake command flows from the Kavach box to the brake pipe; speed dial falls.  
-🔤 AUTO BRAKE  
-🔊 Air hiss
-
-**K018** · block 1  
-**In March twenty twenty two, the Railway Minister rode in a railway engine during a Kavach test in Telangana. Kavach stopped two engines running towards each other on the same line, about three hundred and eighty metres apart.**  
-__  
-🎬 REAL: March 2022 Kavach head-on trial footage (Ministry of Railways / PIB release), credited.  
-🔤 KAVACH TRIAL · 4 MAR 2022 · 380 M APART
-
-**K019** · block 1  
-**It looked like magic. But Kavach is not one machine. It is a chain, and it works only when every link is in place.**  
+**V013** · block 1  
+**It looks like magic on video. But Kavach is a chain of four links, and it only protects you when every link is in place.**  
 __  
 🎬 ILLUSTRATION: four glowing links snap together around a train.  
-🔊 Metal chain clink
+🔊 Metal chain clink  
+⏱ Links snap in one by one
 
-**K020** · block 1  
-**Link one is on the track. Small RFID tags are fixed on the concrete sleepers.**  
+**V014** · block 1  
+**Link one sits on the track — small R-F-I-D tags fixed to the concrete sleepers, which a reader under the engine reads as it passes, so the train knows exactly where it is and on which line.**  
 __  
-🎬 REAL: RFID tag on a PSC sleeper (railway media); Engine 1 X-ray marks it.  
-🔤 LINK 1 · RFID TAG
+🎬 REAL: RFID tag on a PSC sleeper (railway media); Engine 1 X-ray shows the under-chassis reader passing over it, tag ID and track ID popping up.  
+🔤 LINK 1 · RFID TAG  
+🔊 Soft ping per tag  
+⏱ Low tracking shot along the sleepers
 
-**K021** · block 1  
-**The reader under the engine reads each tag as it passes over it.**  
+**V015** · block 1  
+**People say there's one tag every kilometre. Actually, one kilometre is only the longest gap allowed — near signals, points and stations the tags crowd together, and on one stretch of about ninety six kilometres between Vadodara and Ahmedabad, the railway fixed two thousand eight hundred and seventy two of them.**  
 __  
-🎬 ILLUSTRATION: under-chassis reader passes over a tag; the tag answers with its ID.  
-🔤 RFID TAG  
-🔊 Soft ping
+🎬 ILLUSTRATION: evenly spaced dots get a red cross, then cluster around a signal and a turnout; BOARD: 2,872 ÷ 96 ≈ 30 per km over a map of the stretch.  
+🔤 MAX GAP 1 KM · 96 KM · 2,872 TAGS  
+🔊 Stamp thud  
+⏱ Dots regroup
 
-**K022** · block 1  
-**Each tag tells the train where it is, and on which track.**  
+**V017** · block 1  
+**Link two is the station. A Kavach computer there reads the signals, the points and which tracks are occupied, straight from the station's own signalling system — called interlocking. Remember that word.**  
 __  
-🎬 ILLUSTRATION: tag ID, track ID and location pop as small labels.  
-🔤 LOCATION · TRACK ID
+🎬 REAL: station relay room / Kavach equipment (railway media); ILLUSTRATION: interlocking panel lines feed into the Kavach box; the word INTERLOCKING stays lit.  
+🔤 LINK 2 · INTERLOCKING  
+🔊 Single low note  
+⏱ Highlighter on INTERLOCKING
 
-**K023** · block 1  
-**People say there is one tag every kilometre. That is not the full picture.**  
+**V018** · block 1  
+**Link three is the radio. Tall towers along the line carry messages between the station and the engine over a U-H-F safety radio... it's not your mobile network, and it's not five G.**  
 __  
-🎬 ILLUSTRATION: evenly spaced dots on a line, a red cross over them.
+🎬 REAL: Kavach lattice tower beside the track (railway media); radio pulses animate to the cab; a 5G badge greys out.  
+🔤 LINK 3 · UHF DATA RADIO  
+🔊 Radio chirps  
+⏱ Tilt up the tower
 
-**K024** · block 1  
-**One kilometre is the longest gap allowed. Near signals, points and stations, there are many more tags.**  
+**V019** · block 1  
+**And link four rides inside the engine — a Kavach computer, R-F-I-D readers, wheel speed sensors, a screen for the loco pilot, and a link to the brakes.**  
 __  
-🎬 ILLUSTRATION: dots cluster thickly around a signal and a turnout.  
-🔤 MAX GAP 1 KM
+🎬 ILLUSTRATION (Engine 1): the loco shell peels away layer by layer; each part labels in.  
+🔤 LINK 4 · LOCO KAVACH  
+⏱ Exploded view
 
-**K025** · block 1  
-**On one stretch of about ninety six kilometres, between Vadodara and Ahmedabad, the railway fixed two thousand eight hundred and seventy two tags. That is about thirty tags for every kilometre.**  
+**V020** · block 1  
+**The electronics are built to S-I-L four, the highest safety level in railway signalling. Some posts say that means Kavach can fail only once in a billion hours... that's only half the story, because it's a strict limit for each safety function of the electronics, not a promise that no train will ever crash.**  
 __  
-🎬 BOARD: 2,872 ÷ 96 ≈ 30 worked on the whiteboard, over a map of the stretch.  
-🔤 96 KM · 2,872 TAGS  
-🔊 Marker squeak
+🎬 REAL: R-D-S-O Lucknow campus / Indian engineers at a test bench (credited railway media). Then SIM: viral post ONE FAILURE IN A BILLION HOURS stamped HALF THE STORY.  
+🔤 SIL-4 · HALF THE STORY  
+🔊 Warm swell  
+⏱ Slow push
 
-**K026** · block 1  
-**Link two is the station. A Kavach computer at the station reads the signals, the points, and which tracks have a train on them.**  
+**V022** · block 1  
+**Some posts say that means Kavach can fail only once in a billion hours. That's only half the story — S-I-L four is a strict limit on dangerous failures for each safety function of the electronics, not a promise that no train will ever crash.**  
 __  
-🎬 REAL: station Kavach equipment room / relay room (railway media).  
-🔤 LINK 2 · STATION KAVACH
+🎬 SIM: viral post ONE FAILURE IN A BILLION HOURS stamped HALF THE STORY; ILLUSTRATION: the target lights one box in the chain, not the whole railway.  
+🔤 HALF THE STORY  
+🔊 Stamp thud  
+⏱ Stamp lands
 
-**K027** · block 1  
-**It reads all this from the station's own signalling system, called interlocking. Remember this word. It will matter a lot later.**  
+**V024** · block 1  
+**In July twenty twenty four, R-D-S-O, the railway's design body in Lucknow, approved version four point zero. It brought better location accuracy, clearer signal information in big yards, fibre links between stations, and a direct link to electronic interlocking.**  
 __  
-🎬 ILLUSTRATION: interlocking panel lines feed into the Kavach box; the word INTERLOCKING stays lit.  
-🔤 INTERLOCKING  
-🔊 Single low note
+🎬 PROOF: PIB text naming the approval under the magnifier; four upgrade icons click onto the chain.  
+🔤 KAVACH 4.0 · RDSO · 16 JUL 2024  
+🔊 Four clicks  
+⏱ Icons click in
 
-**K028** · block 1  
-**Link three is radio. Tall towers along the line carry messages between the station and the engine.**  
+## 3 The physics of stopping
+
+**V025** · block 2  
+**Because steel wheels on a steel rail have very little grip, a train is enormously heavy, and when the brakes go on, the air pressure has to change all the way down the brake pipe to the last coach.**  
 __  
-🎬 REAL: Kavach lattice tower beside the track (railway media); radio pulses animate to the cab.  
-🔤 LINK 3 · RADIO
+🎬 REAL: locomotive approaching head-on, low angle; cut to a car braking on an Indian road.  
+🔊 Music drops to bass  
+⏱ Head-on low angle
 
-**K029** · block 1  
-**Kavach's safety radio works in the UHF band. It is not your mobile network, and it is not five G.**  
+**V026** · block 2  
+**Because steel wheels on a steel rail have very little grip, and a train is enormously heavy and very long. When the brakes go on, the air pressure has to change all the way down the brake pipe, from the engine to the last coach.**  
 __  
-🎬 ILLUSTRATION: radio band dial; UHF lit, a 5G badge greyed out.  
-🔤 UHF DATA RADIO
-
-**K030** · block 1  
-**Optical fibre cables along the track join the stations together.**  
-__  
-🎬 REAL: OFC trenching beside railway track (railway media).  
-🔤 OPTICAL FIBRE
-
-**K031** · block 1  
-**Link four is inside the engine. A Kavach computer, RFID readers, speed sensors on the wheels, a screen for the loco pilot, and a link to the brakes.**  
-__  
-🎬 ILLUSTRATION (Engine 1): loco shell peels away layer by layer; each part labels in.  
-🔤 LINK 4 · LOCO KAVACH
-
-**K033** · block 1  
-**It is built to the highest safety level used for railway electronics, called SIL four.**  
-__  
-🎬 PROOF: SIL-4 band shown on a standards page under the magnifier.  
-🔤 SIL-4
-
-**K034** · block 1  
-**Some videos say this means Kavach can fail only once in a billion hours. That is only half the story.**  
-__  
-🎬 SIM: a viral post reading ONE FAILURE IN A BILLION HOURS, stamped MISLEADING.  
-🔊 Stamp thud
-
-**K035** · block 1  
-**SIL four is a very strict limit on dangerous failures, set for each safety function of the electronics. It is a design target, not a promise that no train will ever crash.**  
-__  
-🎬 ILLUSTRATION: the target applies to one box in the chain, not to the whole railway.
-
-**K036** · block 1  
-**And Kavach can only act on the information it gets. Keep that in mind.**  
-__  
-🎬 ILLUSTRATION: data arrow from interlocking into Kavach glows, then holds.  
-🔊 Drone holds
-
-**K037** · block 1  
-**In July twenty twenty four, RDSO, the railway's design body in Lucknow, approved Kavach version four point zero.**  
-__  
-🎬 PROOF: RDSO / PIB text naming the approval under the magnifier.  
-🔤 KAVACH 4.0 · RDSO · 16 JUL 2024
-
-**K038** · block 1  
-**It brought better location accuracy, better signal information in big yards, fibre links between stations, and a direct link to electronic interlocking.**  
-__  
-🎬 ILLUSTRATION: four upgrade icons click onto the chain.
-
-## 2 The physics of stopping
-
-**K039** · block 1  
-**Now, simple physics. Many people ask me, if the loco pilot sees danger, why can't the train just stop?**  
-__  
-🎬 REAL: locomotive approaching head-on, low angle.  
-🔊 Music drops to bass
-
-**K040** · block 1  
-**Because a train is not a car. Steel wheels on a steel rail have very little grip.**  
-__  
-🎬 REAL: car braking on a road vs wheel on rail, split screen.
-
-**K041** · block 1  
-**And a train is very heavy, and very long.**  
-__  
-🎬 REAL: aerial of a long passenger rake on a curve.
-
-**K042** · block 1  
-**When the brakes are applied, the air pressure has to change all along the brake pipe, from the engine to the last coach. That takes time.**  
-__  
-🎬 ILLUSTRATION: air-pressure wave travels down the brake pipe coach by coach.  
+🎬 REAL: wheel on rail macro with sparks; ILLUSTRATION: an air-pressure wave travels down the brake pipe coach by coach.  
 🔤 BRAKE PIPE  
-🔊 Air rush
+🔊 Air rush  
+⏱ Wave runs the length of the rake
 
-**K043** · block 1  
-**Here is a real number, from the railway's own training notes.**  
+**V027** · block 2  
+**Here's a real number from the railway's own training notes. A Vande Bharat running at one hundred and thirty kilometres per hour needs about six hundred and fifty metres to stop... even with its emergency brakes.**  
 __  
-🎬 PROOF: IRIMEE Vande Bharat trainset presentation, braking table under the magnifier.  
-🔤 INDIAN RAILWAYS DATA
+🎬 PROOF: IRIMEE Vande Bharat braking table under the magnifier; REAL: Vande Bharat at speed; ILLUSTRATION (Engine 2): speed falls along a 654 m track ruler.  
+🔤 VANDE BHARAT · 130 KM/H · EMERGENCY BRAKE 654 M  
+🔊 Long brake squeal  
+⏱ Ruler draws ahead of the train
 
-**K044** · block 1  
-**A Vande Bharat train running at one hundred and thirty kilometres per hour.**  
-__  
-🎬 REAL: Vande Bharat at speed.  
-🔤 VANDE BHARAT · 130 KM/H
-
-**K045** · block 2  
-**Even with its emergency brakes, it needs about six hundred and fifty metres to stop. That is more than half a kilometre.**  
-__  
-🎬 ILLUSTRATION (Engine 2, braking curve): speed falls along a 654 m track ruler.  
-🔤 EMERGENCY BRAKE · 654 M  
-🔊 Long brake squeal
-
-**K046** · block 2  
-**At that speed, the train covers about thirty six metres every second.**  
+**V028** · block 2  
+**Now picture a loaded goods train — five thousand tonnes at seventy five kilometres per hour. Its brakes build up slowly, and simple maths with fair guesses gives more than nine hundred metres to stop.**  
 __  
 🎬 BOARD: 130 ÷ 3.6 ≈ 36 m per second.  
 🔤 36 M EVERY SECOND  
-🔊 Marker
+🔊 Marker  
+⏱ Maths written live
 
-**K048** · block 2  
-**Now think about a loaded goods train. Five thousand tonnes, at seventy five kilometres per hour.**  
-__  
-🎬 REAL: loaded freight train, long rake of wagons.  
-🔤 5,000 T · 75 KM/H
-
-**K049** · block 2  
-**Goods trains build up brake force slowly. With simple maths and fair guesses, it needs more than nine hundred metres to stop.**  
-__  
-🎬 BOARD: d = v·t + v²/2a worked live; ≈ 930 m. Label ILLUSTRATIVE MODEL.  
-🔤 ≈ 930 M · ILLUSTRATIVE  
-🔊 Marker
-
-**K050** · block 2  
+**V030** · block 2  
 **Put it on a slope going down, one in a hundred, and the same maths gives almost one thousand three hundred metres.**  
 __  
-🎬 BOARD: gradient term added; ≈ 1,280 m.  
+🎬 BOARD: gradient term added; ≈ 1,280 m; the track ruler tilts and stretches.  
 🔤 1 IN 100 DOWN · ≈ 1,280 M  
-🔊 Marker
+🔊 Marker  
+⏱ Ruler tilts
 
-**K051** · block 2  
-**And if speed goes up from one hundred and thirty to one hundred and sixty, the braking distance does not grow a little. It grows by about half.**  
+**V031** · block 2  
+**Now add a December night in north India, with thick fog on the tracks.**  
 __  
-🎬 BOARD: (160/130)² ≈ 1.5 worked out; curve stretches.  
-🔤 +50%
+🎬 BOARD: (160/130)² ≈ 1.5; Engine 2 curve stretches.  
+🔤 +50%  
+🔊 Hit  
+⏱ Curve stretches
 
-**K052** · block 2  
-**That is why speed is the dangerous part.**  
+**V032** · block 2  
+**Now add a December night in north India, with thick fog sitting on the tracks. On eyes alone, the maths simply doesn't work.**  
 __  
-🎬 REAL: speedometer needle in a cab climbing.  
-🔊 Hit
+🎬 REAL: dense winter fog over a north Indian track at night.  
+🔊 Music thins to wind  
+⏱ Slow drift through fog
 
-**K053** · block 2  
-**Now, add winter fog.**  
+**V034** · block 2  
+**This is where Kavach changes the game. It doesn't wait for anyone to see the red signal — it already knows how far away it is, shows it on the screen inside the cab, and brakes early while there's still enough room.**  
 __  
-🎬 REAL: dense winter fog over a north Indian track at dawn.  
-🔊 Music thins to wind
+🎬 REAL: loco pilot peering into fog (stock).  
+🔤 ILLUSTRATIVE FOOTAGE  
+⏱ Hold on the eyes
 
-**K054** · block 2  
-**Suppose the loco pilot can see a signal only fifty metres ahead.**  
+**V035** · block 2  
+**This is exactly where Kavach changes the game. It doesn't wait for anyone to see the red signal — it already knows the signal ahead and how far away it is, shows it on the screen inside the cab, works out when braking must begin, and brakes early while there's still enough room.**  
 __  
-🎬 ILLUSTRATION (Engine 3, fog split): a signal appears out of fog at 50 m.  
-🔤 VISIBILITY 50 M · EXAMPLE
+🎬 ILLUSTRATION (Engine 3 right half + Engine 2): cab display shows the aspect and target distance long before it is visible; the braking curve is drawn ahead of the train and the Kavach brake point lands well before the signal.  
+🔤 TARGET DISTANCE  
+🔊 Digital sweep  
+⏱ Curve draws ahead
 
-**K055** · block 2  
-**At one hundred and ten kilometres per hour, the train crosses those fifty metres in less than two seconds.**  
+**V036** · block 2  
+**But it can't cancel physics. If danger appears closer than the stopping distance, even Kavach can't stop the train in time.**  
 __  
-🎬 BOARD: 50 ÷ 30.6 ≈ 1.6 s; a stopwatch runs out.  
-🔤 ≈ 1.6 S  
-🔊 Clock tick
+🎬 ILLUSTRATION: an obstacle appears inside the curve; the zone turns crimson.  
+🔊 Low thud  
+⏱ Red wash
 
-**K056** · block 2  
-**Even an alert person needs a second or two just to react. And then the train still needs hundreds of metres to stop.**  
+**V038** · block 2  
+**So why isn't it on every track yet? Look at the size of the job. Indian Railways runs about sixty nine thousand route kilometres, and in March twenty twenty five it had about sixteen thousand diesel and electric engines.**  
 __  
-🎬 ILLUSTRATION: reaction gap then stopping distance laid on the track; the stop lands far past the signal.
+🎬 ILLUSTRATION (Engine 4): national rail map draws in grey across India; REAL: loco shed with rows of engines.  
+🔤 69,439 ROUTE KM · ≈ 16,000 LOCOS · MAR 2025  
+⏱ Rack focus to the signal
 
-**K057** · block 2  
-**So if safety depends only on human eyes, the maths does not work.**  
+## 4 The rollout reality
+
+**V040** · block 2  
+**Look at the size of the job first. Indian Railways runs about sixty nine thousand route kilometres, and in March twenty twenty five it had about sixteen thousand diesel and electric engines.**  
 __  
-🎬 REAL: loco pilot peering into fog (stock, ILLUSTRATIVE FOOTAGE).  
-🔤 ILLUSTRATIVE FOOTAGE
+🎬 ILLUSTRATION: map lines draw across India; REAL: loco shed with rows of engines.  
+🔤 69,439 ROUTE KM · ≈ 16,000 LOCOS · MAR 2025  
+⏱ Map then shed
 
-**K058** · block 2  
-**Kavach changes the question. It does not wait for the loco pilot to see the red signal.**  
+**V041** · block 2  
+**By the end of July twenty twenty six, the newest Kavach was working on two thousand six hundred and thirty three route kilometres, on parts of the Delhi Mumbai and Delhi Howrah routes — two of the busiest in the country.**  
 __  
-🎬 ILLUSTRATION (Engine 3): right half of split: cab display shows the signal aspect long before it is visible.
+🎬 ILLUSTRATION (Engine 4): two corridors glow cyan; labels 1,423 km and 1,210 km.  
+🔤 KAVACH 4.0 · 2,633 RKM · 31 JUL 2026  
+⏱ Corridors light up
 
-**K059** · block 2  
-**It already knows the signal ahead and how far away it is, and shows it on a screen inside the cab.**  
+**V042** · block 2  
+**And here's the trap in most headlines. Track fitted with equipment, seven thousand seven hundred and twenty six kilometres, engines fitted, six thousand two hundred and ninety, and track where work has only started, twenty one thousand seven hundred and ninety four kilometres... but fitted isn't working, and work started isn't protected.**  
 __  
-🎬 REAL: Kavach cab display showing target distance and permitted speed.  
-🔤 TARGET DISTANCE
+🎬 SIM: headlines blurred except the numbers; funnel tiers fill FITTED 7,726 · LOCOS 6,290 · WORK STARTED 21,794, then narrow to the thin working stream; stamp FITTED ≠ WORKING.  
+🔤 FITTED 7,726 · LOCOS 6,290 · WORK STARTED 21,794 · FITTED ≠ WORKING  
+🔊 Three ticks, stamp  
+⏱ Funnel fills tier by tier
 
-**K060** · block 2  
-**It works out when braking must begin. If the train does not slow down in time, Kavach brakes early, while there is still enough distance.**  
+**V045** · block 2  
+**The money is moving too — the yearly Kavach budget rose from about one thousand one hundred crore rupees to about one thousand six hundred and seventy crore in twenty twenty five twenty six.**  
 __  
-🎬 ILLUSTRATION (Engine 2): braking curve drawn ahead of the train; Kavach brake point well before the signal.
+🎬 Funnel narrows to the thin working stream; stamp FITTED ≠ WORKING.  
+🔤 ₹1,112.57 CR → ₹1,673.19 CR  
+🔊 Stamp  
+⏱ Stamp lands
 
-**K061** · block 2  
-**But Kavach cannot cancel physics. If danger appears closer than the stopping distance, even Kavach cannot stop the train in time.**  
+**V048** · block 2  
+**But money alone doesn't make it work. Every station's signalling data has to be checked, every engine type wired to its own brakes, the radio has to reach every yard, and then it's all tested and retested before a single kilometre is called working.**  
 __  
-🎬 ILLUSTRATION: obstacle appears inside the curve; red zone.  
-🔊 Low thud
+🎬 REAL: signalling technicians at a relay rack; ILLUSTRATION (flowchart): survey → data → loco fitment → radio → integrated trials looping back on failure → COMMISSIONED.  
+🔤 COMMISSIONED  
+⏱ Box drawn
 
-**K062** · block 2  
-**How often do trains pass a red signal by mistake? The Commission of Railway Safety noted two hundred and eight such cases in five years, from April twenty nineteen to March twenty twenty four.**  
+**V050** · block 2  
+**Suppliers are the other bottleneck. For years, just three Indian companies made Kavach — Medha, H-B-L and Kernex — and a newer one, Quadrant Future Tek, told the stock exchange it got permission for passenger trials only in May twenty twenty six.**  
 __  
-🎬 PROOF: CRS abstract page under the magnifier; counter rolls to 208.  
-🔤 208 SPAD CASES · 2019–2024  
-🔊 Counter ticks
+🎬 PROOF: official list naming the three firms, then the company's exchange filing under the magnifier; stamp NOT FINAL APPROVAL.  
+🔤 MEDHA · HBL · KERNEX · PASSENGER TRIALS ≠ FINAL APPROVAL  
+🔊 Loop whoosh  
+⏱ Loop cycles twice
 
-**K063** · block 2  
-**Twelve of them ended in a collision.**  
+**V052** · block 2  
+**Newer ones are in trials now. Quadrant Future Tek told the stock exchange in May twenty twenty six that it got permission for passenger trials, which is a step, not final approval.**  
 __  
-🎬 Counter splits: 12 turns red.  
-🔤 12 COLLISIONS  
-🔊 Hit
+🎬 PROOF: company stock-exchange filing under the magnifier; stamp NOT FINAL APPROVAL.  
+🔤 PASSENGER TRIALS ≠ FINAL APPROVAL  
+🔊 Stamp  
+⏱ Highlighter on the line
 
-**K064** · block 2  
-**This is exactly the kind of human mistake Kavach is built to catch.**  
-__  
-🎬 REAL: red signal at night, train slowing.
+## 5 Two crashes, two failures
 
-## 3 The rollout reality
-
-**K065** · block 2  
-**So if Kavach is this useful, why is it not on every track today?**  
-__  
-🎬 ILLUSTRATION (Engine 4, rollout funnel): national map, grey.
-
-**K066** · block 2  
-**Did the government refuse to spend money? Let us look at the numbers.**  
-__  
-🎬 PROOF: PIB release page under magnifier.
-
-**K067** · block 2  
-**First, the size of the job. Indian Railways has about sixty nine thousand route kilometres.**  
-__  
-🎬 ILLUSTRATION: map lines draw in across India.  
-🔤 69,439 ROUTE KM · MAR 2025
-
-**K068** · block 2  
-**That counts each route once. Count every parallel line, and the running track is more than one lakh eleven thousand kilometres.**  
-__  
-🎬 ILLUSTRATION: single lines split into double and quadruple lines.  
-🔤 1,11,641 RUNNING TRACK KM
-
-**K069** · block 2  
-**And in March twenty twenty five, there were about sixteen thousand diesel and electric engines.**  
-__  
-🎬 REAL: loco shed with rows of engines.  
-🔤 ≈ 16,000 LOCOS · MAR 2025
-
-**K070** · block 2  
-**Now, the progress. By the end of July twenty twenty six, the newest Kavach version was working on two thousand six hundred and thirty three route kilometres.**  
-__  
-🎬 ILLUSTRATION (Engine 4): two corridors glow on the map.  
-🔤 KAVACH 4.0 · 2,633 RKM · 31 JUL 2026
-
-**K071** · block 2  
-**That is on parts of the Delhi Mumbai and Delhi Howrah routes, two of the busiest in the country.**  
-__  
-🎬 Map labels: 1,423 km Delhi–Mumbai group, 1,210 km Delhi–Howrah group.  
-🔤 1,423 + 1,210
-
-**K072** · block 2  
-**An older version also runs on about one thousand four hundred and sixty five kilometres in South Central Railway. Parts of it are now being upgraded.**  
-__  
-🎬 Map: SCR section glows in a second colour; upgrade arrow on Malkajgiri–Kamareddi.  
-🔤 VERSION 3.2 · 1,465 RKM
-
-**K073** · block 2  
-**So even if you count both, Kavach is working on well under a tenth of the network.**  
-__  
-🎬 BOARD: (2,633 + 1,465) ÷ 69,439 < 10%.  
-🔤 UNDER 10%  
-🔊 Marker
-
-**K074** · block 2  
-**And here is the trap in many news posts. Different numbers mean different things.**  
-__  
-🎬 SIM: three headlines with big numbers, each blurred except the number.
-
-**K075** · block 2  
-**Track where equipment is fitted, seven thousand seven hundred and twenty six kilometres.**  
-__  
-🎬 Funnel tier 2.  
-🔤 FITTED · 7,726 RKM
-
-**K076** · block 2  
-**Engines fitted with Kavach, six thousand two hundred and ninety.**  
-__  
-🎬 REAL: loco Kavach cabinet being fitted in a shed.  
-🔤 LOCOS FITTED · 6,290
-
-**K077** · block 2  
-**Track where work has started, twenty one thousand seven hundred and ninety four kilometres.**  
-__  
-🎬 Funnel tier 3 (widest).  
-🔤 WORK STARTED · 21,794 RKM
-
-**K078** · block 2  
-**Fitted is not the same as working. And work started is not the same as protected.**  
-__  
-🎬 Funnel narrows to the thin working stream.  
-🔤 FITTED ≠ WORKING  
-🔊 Hit
-
-**K079** · block 2  
-**So, is money the problem? The yearly Kavach budget went from about one thousand one hundred crore rupees in twenty twenty four twenty five, to about one thousand six hundred and seventy crore the next year.**  
-__  
-🎬 ILLUSTRATION: two budget bars rise.  
-🔤 ₹1,112.57 CR → ₹1,673.19 CR
-
-**K080** · block 2  
-**By June twenty twenty six, about three thousand eight hundred and seventy five crore rupees had been spent on Kavach in total.**  
-__  
-🎬 Bar fills to cumulative.  
-🔤 ≈ ₹3,875 CR SPENT · TILL JUN 2026
-
-**K081** · block 2  
-**Now some rough maths. The government's estimate is about fifty lakh rupees per kilometre for the track side, and about eighty lakh rupees per engine.**  
-__  
-🎬 BOARD: ₹50 lakh/km · ₹80 lakh/loco written up.  
-🔊 Marker
-
-**K082** · block 2  
-**Fifty lakh per kilometre, for about sixty nine thousand kilometres, comes to nearly thirty five thousand crore rupees.**  
-__  
-🎬 BOARD: 69,439 × 0.5 cr ≈ ₹34,700 cr.  
-🔤 ≈ ₹34,700 CR  
-🔊 Marker
-
-**K083** · block 2  
-**Eighty lakh per engine, for sixteen thousand engines, adds about twelve thousand eight hundred crore more.**  
-__  
-🎬 BOARD: 16,058 × 0.8 cr ≈ ₹12,846 cr.  
-🔤 ≈ ₹12,800 CR  
-🔊 Marker
-
-**K084** · block 2  
-**This is rough maths, not an official bill. But it shows you the size of the job.**  
-__  
-🎬 BOARD: ROUGH MATHS boxed.  
-🔤 ROUGH MATHS
-
-**K085** · block 2  
-**And it is not only about buying boxes. They must all be made to work together.**  
-__  
-🎬 REAL: signalling technicians at a relay rack.
-
-**K086** · block 2  
-**Every station's signalling data must be entered and checked. Every type of engine must be wired to its own brakes.**  
-__  
-🎬 ILLUSTRATION (flowchart): survey → data → loco fitment.
-
-**K087** · block 3  
-**Radio must cover every curve and every yard. Then everything is tested together, fixed, and tested again, before a single kilometre is called working.**  
-__  
-🎬 ILLUSTRATION (flowchart): integrated trials loop back on failure; only then COMMISSIONED.  
-🔤 COMMISSIONED
-
-**K088** · block 3  
-**So the slowest step sets the speed of the whole rollout.**  
-__  
-🎬 Flowchart bottleneck box pulses.
-
-**K089** · block 3  
-**Suppliers matter too. For years, three Indian companies supplied Kavach, Medha, HBL and Kernex.**  
-__  
-🎬 PROOF: SCR Kavach overview listing the three firms.  
-🔤 MEDHA · HBL · KERNEX
-
-**K090** · block 3  
-**New companies are trying to join. One of them, Quadrant Future Tek, told the stock exchange in May twenty twenty six that it got permission for passenger trials. That is a step, not final approval.**  
-__  
-🎬 PROOF: company stock-exchange filing under magnifier.  
-🔤 PASSENGER TRIALS ≠ FINAL APPROVAL
-
-## 4 Two crashes, two failures
-
-**K091** · block 3  
-**Now, the two most painful questions.**  
+**V053** · block 3  
+**Now, the question I promised you at the start.**  
 __  
 🎬 Black frame, slow fade up on twisted coaches (credited archive).  
-🔊 Music out
+🔊 Music out  
+⏱ Fade up
 
-**K092** · block 3  
-**Would Kavach have stopped Balasore? And would it have saved the Kanchanjunga Express?**  
+**V054** · block 3  
+**Case one. Bahanaga Bazar, near Balasore in Odisha, June two, twenty twenty three. The Coromandel Express is coming in at about one hundred and twenty eight kilometres per hour, on a green signal for the main line.**  
 __  
-🎬 Split screen: Balasore and Rangapani archive stills.
+🎬 REAL: credited archive of the Bahanaga Bazar site; map pin; ILLUSTRATION (Engine 5, logic gate): station layout, train arrow on the up main line, home signal turns green.  
+🔤 BAHANAGA BAZAR · 2 JUN 2023 · ≈ 128 KM/H  
+⏱ Satellite-style zoom to the station
 
-**K093** · block 3  
-**Case one. Bahanaga Bazar station, near Balasore in Odisha. June two, twenty twenty three.**  
+**V055** · block 3  
+**But the crossover ahead is set towards the loop line... where a goods train is standing.**  
 __  
-🎬 REAL: credited archive of the Bahanaga Bazar site; map pin.  
-🔤 BAHANAGA BAZAR · 2 JUN 2023
+🎬 Engine 5: crossover 17A/B swings to the loop; the parked goods train is highlighted. ILLUSTRATION.  
+🔤 CROSSOVER 17A/B → LOOP  
+🔊 Low hit  
+⏱ Points swing
 
-**K094** · block 3  
-**The Coromandel Express was coming in at about one hundred and twenty eight kilometres per hour.**  
+**V056** · block 3  
+**The official inquiry found lapses in signalling circuit work done at the station. Close to three hundred people lost their lives.**  
 __  
-🎬 ILLUSTRATION (Engine 5, logic gate): station layout, train arrow on the up main line.  
-🔤 ≈ 128 KM/H
-
-**K095** · block 3  
-**The signal showed green, for the main line.**  
-__  
-🎬 Engine 5: home signal turns green.  
-🔤 GREEN · MAIN LINE
-
-**K096** · block 3  
-**But the crossover ahead was set towards the loop line, where a goods train was standing.**  
-__  
-🎬 Engine 5: crossover 17A/B swings to the loop; parked goods train highlighted. ILLUSTRATION.  
-🔤 CROSSOVER 17A/B → LOOP
-
-**K097** · block 3  
-**The official inquiry found lapses in signalling circuit work done at the station.**  
-__  
-🎬 PROOF: CRS abstract finding under magnifier.
-
-**K098** · block 3  
-**Close to three hundred people lost their lives.**  
-__  
-🎬 Slow push on candles / memorial still (credited); no victims shown.  
-🔊 Silence  
+🎬 PROOF: CRS abstract finding under the magnifier, highlighter on the line; then a slow push on a memorial / candles still (credited), no victims shown.  
+🔊 Silence under the second sentence  
 ⏱ Hold
 
-**K099** · block 3  
+**V057** · block 3  
 **So, would Kavach have stopped it?**  
 __  
-🎬 Engine 5: a Kavach box appears on the loco; question mark avoided, the box pulses.  
-🔊 Total silence 1.5 s after this line  
-⏱ 1.5 s music silence
+🎬 Engine 5: a Kavach box appears on the loco and pulses.  
+🔊 Total music silence 1.5 s after this line, then a low braam  
+⏱ 1.5 s silence
 
-**K100** · block 3  
-**Here is the honest answer. Nobody can say yes or no for sure.**  
+**V058** · block 3  
+**Remember interlocking? At Balasore, the signalling system itself was showing a false green, and fed that same wrong information, Kavach could have believed the line was clear too.**  
 __  
 🎬 Kishore / dark track bed.  
 🔊 Low braam  
 ⏱ Reveal
 
-**K101** · block 3  
-**Remember, Kavach reads the signals and the points from the station's interlocking.**  
-__  
-🎬 Engine 5: interlocking feed lights up into Kavach.  
-🔤 INTERLOCKING
-
-**K102** · block 3  
-**At Balasore, the signalling system itself was showing a false green. If Kavach was given the same wrong information, it could also believe the line was clear.**  
+**V059** · block 3  
+**A safety computer can't correct wrong information it trusts. Kavach does have a few checks of its own, but no public study has shown whether they would have acted in time there.**  
 __  
 🎬 Engine 5: the false green travels down the wire into Kavach, which shows green too. ILLUSTRATION.  
-🔤 SAME INPUT · SAME ANSWER?
+🔤 SAME INPUT · SAME ANSWER?  
+🔊 Digital echo  
+⏱ Signal flows along the wire
 
-**K103** · block 3  
-**A safety computer cannot correct wrong information that it trusts.**  
+**V060** · block 3  
+**A safety computer can't correct wrong information that it trusts. Kavach does have a few checks of its own, like knowing from the tags which line the train is really on, but no public study has shown whether those would have acted in time there.**  
 __  
-🎬 Engine 5: both channels agree on the wrong input; gate opens.
+🎬 Engine 5: both channels agree on the wrong input; tag reads appear on the loop line, dotted and uncertain.  
+🔤 UNTESTED COUNTERFACTUAL  
+⏱ Dotted overlay
 
-**K104** · block 3  
-**Kavach does have some extra checks of its own, like knowing from the tags which track the train is really on. Whether those checks would have acted in time there, no public study has shown.**  
+**V061** · block 3  
+**Case two. Rangapani, near New Jalpaiguri in north Bengal, June seventeen, twenty twenty four. The automatic signals had failed, so trains were moving on a paper authority, at a slow, careful speed.**  
 __  
-🎬 Engine 5: tag reads appear on the loop line, dotted, uncertain.  
-🔤 UNTESTED COUNTERFACTUAL
+🎬 The two forwards from the hook return, both stamped BEYOND THE EVIDENCE.  
+🔤 BEYOND THE EVIDENCE  
+🔊 Stamp  
+⏱ Stamps land
 
-**K105** · block 3  
-**So people who say Kavach would surely have saved Balasore, and people who say it surely could not, are both going beyond the evidence.**  
+**V062** · block 3  
+**The inquiry found the goods train was handed the wrong form, T-A nine one two instead of T-D nine one two, with no caution order, missing walkie talkies, and training that wasn't good enough... failures of the system, not just one loco pilot.**  
 __  
-🎬 The two viral posts from the hook return, both stamped BEYOND THE EVIDENCE.  
-🔊 Stamp
+🎬 REAL: credited archive of the Rangapani site; map pin; ILLUSTRATION (Engine 6): a row of automatic signals goes dark; a generic paper authority slides in (no copy of a real form).  
+🔤 RANGAPANI · 17 JUN 2024 · SIGNALS FAILED  
+🔊 Power-down  
+⏱ Signals blink out
 
-**K106** · block 3  
-**Case two. Between Rangapani and Chatterhat, near New Jalpaiguri in north Bengal. June seventeen, twenty twenty four.**  
+**V063** · block 3  
+**The inquiry found the goods train was handed the wrong form, T-A nine one two instead of T-D nine one two. There was no caution order, the walkie talkies were missing, and the training wasn't good enough.**  
 __  
-🎬 REAL: credited archive of the Rangapani site; map pin.  
-🔤 RANGAPANI · 17 JUN 2024
+🎬 ILLUSTRATION: two distinct labels T/A 912 and T/D 912, the wrong one highlighted; three items tick red: caution order, walkie-talkie, training.  
+🔤 T/A 912 ≠ T/D 912  
+🔊 Three hits  
+⏱ Ticks land one by one
 
-**K107** · block 3  
-**The automatic signals on this stretch had failed.**  
+**V064** · block 3  
+**Here, Kavach could have made a real difference. With both trains fitted and the section working, it could have held the goods train to the allowed movement and a slow speed past those failed signals.**  
 __  
-🎬 ILLUSTRATION (Engine 6): a row of automatic signals goes dark.  
-🔤 SIGNALS FAILED  
-🔊 Power-down
+🎬 Engine 6: freight speed trace climbs to 78, collision marked at about 40; map overlay shows no Kavach line here.  
+🔤 78 KM/H → ≈ 40 KM/H · NO KAVACH HERE  
+🔊 Impact  
+⏱ Trace climbs
 
-**K108** · block 3  
-**When that happens, trains move on a paper authority, at a slow and careful speed.**  
+**V065** · block 3  
+**And that famous claim that Kavach always locks the speed at exactly fifteen? Fifteen is the rule loco pilots follow at failed signals — what Kavach enforces depends on its data and settings, so don't take that number as a promise.**  
 __  
-🎬 ILLUSTRATION: a generic paper authority slides in (no copy of a real form).  
-🔤 PAPER AUTHORITY  
-🔊 Paper
-
-**K109** · block 3  
-**The inquiry found the goods train was given the wrong form, T A nine one two, instead of T D nine one two.**  
-__  
-🎬 ILLUSTRATION: two distinct labels T/A 912 and T/D 912; the wrong one highlighted.  
-🔤 T/A 912 ≠ T/D 912
-
-**K110** · block 3  
-**No caution order was given. Walkie talkies were missing. And training was not good enough.**  
-__  
-🎬 Three items tick red: caution order, walkie-talkie, training.  
-🔊 Three hits
-
-**K111** · block 3  
-**The goods train reached seventy eight kilometres per hour, and hit the Kanchanjunga Express from behind at about forty.**  
-__  
-🎬 Engine 6: freight speed trace climbs to 78, collision marked at ~40.  
-🔤 78 KM/H → ≈ 40 KM/H  
-🔊 Impact
-
-**K112** · block 3  
-**There was no working Kavach on that section.**  
-__  
-🎬 Engine 6: map overlay, no Kavach line here.  
-🔤 NO KAVACH HERE
-
-**K113** · block 3  
-**Here, Kavach could have made a real difference.**  
-__  
-🎬 Engine 6 rewinds; a Kavach box appears on both locos. SIMULATION.  
+🎬 Engine 6 rewinds; a Kavach box appears on both locos; freight speed is held low and the braking curve stops it short. SIMULATION.  
 🔤 SIMULATION  
-🔊 Rewind whoosh
+🔊 Rewind whoosh  
+⏱ Rewind
 
-**K114** · block 3  
-**If both trains were fitted and the section was working, Kavach could have enforced the allowed movement and a slow speed past the failed signals.**  
+**V067** · block 3  
+**Two crashes, two different failures. At Balasore the signalling information itself was wrong, at Kanchanjunga the backup rules broke down — and Kavach is strongest against the second kind.**  
 __  
-🎬 Engine 6: freight speed held low; braking curve stops it short. SIMULATION.
+🎬 Engine 6: the three red ticks return around the station building.  
+⏱ Ticks pulse
 
-**K115** · block 3  
-**Some videos say Kavach would always lock the speed at exactly fifteen kilometres per hour. That fifteen is the rule loco pilots follow at failed signals. Kavach enforces the limits its data and settings give it, so do not take that number as a promise.**  
+**V068** · block 3  
+**Two crashes, two different failures. At Balasore, the signalling information itself was wrong. At Kanchanjunga, the backup rules for failed signals broke down — and Kavach is strongest against the second kind, while the fix for the first has to start in the signalling room.**  
 __  
-🎬 SIM: viral claim card stamped DEPENDS ON MODE.  
-🔤 DEPENDS ON SET-UP
+🎬 Side-by-side comparison: two columns, two icons; then REAL: a technician testing a relay rack.  
+🔤 WRONG INPUT · BROKEN BACKUP  
+⏱ Columns slide in
 
-**K116** · block 3  
-**And this was not just one loco pilot's mistake. The inquiry found failures in the paperwork, the communication and the training.**  
+## 6 Your action plan
+
+**V069** · block 3  
+**So what can you actually do with all this? Three things.**  
 __  
-🎬 Engine 6: the three red ticks return around the station building.
+🎬 REAL: dawn, a train crossing a bridge; three step markers appear in a lower corner.  
+🔊 Warm music returns  
+⏱ Steps appear
 
-**K117** · block 3  
-**So, two crashes, two different failures. At Balasore, the signalling information itself was wrong. At Kanchanjunga, the backup rules for failed signals broke down.**  
+**V070** · block 3  
+**One. When a Kavach forward lands in your family group, ask three questions before sharing it — is the number about fitted equipment or Kavach that's working, which date is it from, and was the problem a human mistake or wrong signalling data?**  
 __  
-🎬 Side-by-side comparison: two columns, two icons.  
-🔤 WRONG INPUT · BROKEN BACKUP
+🎬 SIM: the WhatsApp forward from the hook; three question chips pop beside it one by one.  
+🔤 1 · FITTED OR WORKING? · WHICH DATE? · HUMAN OR SIGNAL DATA?  
+🔊 Chip pops  
+⏱ Chips pop on each question
 
-**K118** · block 3  
-**Kavach is strongest against the second kind. Against the first, the fix has to start in the signalling room.**  
+**V071** · block 3  
+**Two. Read the real thing instead. The railway ministry posts Kavach progress in press releases on the P-I-B website, and the Commission of Railway Safety puts its inquiry findings on its own website, free to read.**  
 __  
-🎬 REAL: technician testing a relay rack.
+🎬 PROOF: screen recording of the PIB release page and the CRS website abstracts page (credited), highlighter on the Kavach paragraph.  
+🔤 2 · PIB.GOV.IN · CRS.GOV.IN  
+🔊 Click, page turn  
+⏱ Screen recording scroll
 
-## 5 The practical verdict
-
-**K119** · block 3  
-**So, what is the practical truth?**  
+**V072** · block 3  
+**Three. If you see something unsafe on a train or at a station, report it to Rail Madad by calling one three nine, or through the Rail Madad app.**  
 __  
-🎬 REAL: dawn, a train crossing a bridge.  
-🔊 Warm music returns
+🎬 REAL: phone dialling 139 on a platform; Rail Madad app screen (credited).  
+🔤 3 · RAIL MADAD · 139  
+🔊 Dial tone  
+⏱ Phone push-in
 
-**K120** · block 3  
-**Kavach is not magic. And it is not useless.**  
+## 7 Outro
+
+**V073** · block 3  
+**Kavach isn't magic, and it isn't useless. It's an Indian-built safety layer that brakes early when a human slips... as long as the engine is fitted, the track section is working, the signalling data is right, and there's enough room to stop.**  
 __  
-🎬 The two myths from the hook fade out.
+🎬 The two myths from the hook fade out; the four links from Act 2 relight one by one: ENGINE · TRACK · DATA · DISTANCE.  
+🔤 ENGINE · TRACK · DATA · DISTANCE  
+⏱ Links relight
 
-**K121** · block 3  
-**It is a strong extra layer. It brakes early when a human makes a speed or signal mistake.**  
+**V074** · block 3  
+**Real safety isn't built on slogans. It's built by engineers and track crews doing careful, boring work right, every single day — and citizens who understand that keep the system accountable.**  
 __  
-🎬 Engine 2 curve, Kavach brake point.
+🎬 REAL: track maintenance gang at work at sunrise; relay room; a Kavach loco rolling out at dawn.  
+🔊 Music swells  
+⏱ Sunrise montage
 
-**K122** · block 3  
-**But it needs four things to work. A fitted engine, a working track section, correct signalling data, and enough distance to stop.**  
+**V075** · block 3  
+**Tell me in the comments: which route do you travel most, and do you know if Kavach is working on it yet?**  
 __  
-🎬 The four links from Act 1 relight one by one.  
-🔤 ENGINE · TRACK · DATA · DISTANCE
+🎬 Pinned-comment card in a lower corner over a moving map.  
+🔤 WHICH ROUTE DO YOU TRAVEL?  
+⏱ Map drift
 
-**K123** · block 3  
-**Next time you see a viral post about Kavach, ask three simple questions.**  
-__  
-🎬 REAL: hand scrolling a phone on a station platform.
-
-**K124** · block 3  
-**One. Is this number about fitted equipment, or about Kavach that is actually working?**  
-__  
-🎬 Card 1 in a lower corner.  
-🔤 1 · FITTED OR WORKING?
-
-**K125** · block 3  
-**Two. Which date is this number from?**  
-__  
-🎬 Card 2.  
-🔤 2 · WHICH DATE?
-
-**K126** · block 3  
-**Three. Was the problem a human mistake, or wrong information from the signalling system?**  
-__  
-🎬 Card 3.  
-🔤 3 · HUMAN OR SIGNAL DATA?
-
-**K127** · block 3  
-**Real safety is not built on slogans. It is built on careful, boring engineering, done right every single day.**  
-__  
-🎬 REAL: track maintenance gang at work at sunrise; relay room.
-
-**K128** · block 3  
-**If someone you love travels by train, share this video with them. Be smart, be informed, and always... be practical.**  
+**V076** · block 3  
+**If someone you love travels by train, share this with them. Know the facts, stay practical... Jai Hind.**  
 __  
 🎬 Logo bug, end card.  
 🔊 End sting  

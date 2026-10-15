@@ -75,7 +75,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 ## Documentary rules (Be Practical with Kishore). Full spec: PLAYBOOK Part B
 - **A film, never a slide deck.** No full-screen text boxes, bullet lists, cards or question-mark graphics; no flat colour
   or plain gradient canvas. Text ≤ 15% of the screen: 2–4-word lower-thirds, dates/places/numbers, counters, a corner timer.
-- **Always moving:** cut, transition or pan every 2.5–4 s (charter: aim for 3.0–3.5 s); no unmoving still or flat frame over 1.5 s; ≥ 85% of the runtime
+- **Always moving:** a visual reset every 3.5–5.0 s (owner, 2026-10-15: angle shift, document push-in, kinetic callout);
+  the shot itself never stops moving: no unmoving still or flat frame over 1.5 s; ≥ 85% of the runtime
   is moving footage or animation. Animate irreplaceable stills (parallax, particles, forensic magnifier, sliding collage).
 - **Three layers in every frame:** full-screen real footage or a moving photo; atmosphere (grain, ~30% vignette, light leaks,
   optional 2.35:1 bars, low-opacity HUD); kinetic accents in lower corners on a dark scrim.
@@ -91,7 +92,7 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - **No Whisper** for transcription or translation: time the owner's script on the VO with `scripts/align_script.py`
   (silencedetect + script mapping, te/en SRTs on the Telugu timing). No script → ask for it. Method and accuracy: §7.
 - **Owner's channel charter (PLAYBOOK Part B intro, verbatim in Part E):** 4 acts (visceral hook → systemic betrayal →
-  climax and shock reveal → practical defence); a "Trojan horse" hook (popular myth in, verified truth out); the "elder
+  climax and shock reveal → practical defence; English films use the 2026-10-15 structure below); a "Trojan horse" hook (popular myth in, verified truth out); the "elder
   brother" voice, conversational Telugu, never victim-blaming; a journalistic citation tag (`[NATURE (1982) | HARVARD MONK
   STUDY]`) on every factual claim; 1.5 s of total music silence before each core reveal, then a low braam/thud.
 - **Channel, language and audience rules (PLAYBOOK §4a, from sourced research):** thumbnail promise on screen by 0:30;
@@ -100,11 +101,21 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   figures. Hard gates beside the fact-check: synthetic-content disclosure, health context (WHO/ICMR + skeptic), SEBI
   education-only lane (no buy/sell calls, price data ≥ 30 days old, disclaimer), Press Council suicide norms.
 - **Narration language: English by default** (owner, 2026-10-11; *why:* Telugu-only films reach too few viewers).
-  Simple, everyday Indian English that any Indian understands: short sentences, common words (pay, spend, money, bill,
-  salary), lakh/crore and rupees, no hard "international" vocabulary or idioms; the same warm elder-brother, talk-don't-read
-  voice. Numbers and amounts as words (`thirty thousand rupees`), no digits, `₹`, `!`, double quotes, dashes or brackets in
-  VO text; `?` on every real question; no emotion cues (empty `emotion` column, owner 2026-10-11). Put `en` in the project's `lang.txt`: the `en` column is then the VO and `te` an
+  Simple, everyday Indian English that any Indian understands: common words (pay, spend, money, bill, salary),
+  lakh/crore and rupees, no hard "international" vocabulary or idioms; the same warm elder-brother, talk-don't-read
+  voice. Numbers and amounts as words (`thirty thousand rupees`), no digits, `₹`, `!`, double quotes or brackets in
+  VO text; `—` allowed for mid-thought pivots; `?` on every real question; no emotion cues (empty `emotion` column, owner 2026-10-11). Put `en` in the project's `lang.txt`: the `en` column is then the VO and `te` an
   optional Telugu dub; `tools/build_script.py` lints both. The Telugu rules below apply to Telugu films and dubs.
+- **English films: owner's production guide (2026-10-15; PLAYBOOK §4a-4, verbatim in Part F).** *Why:* earlier scripts
+  sounded like a news reader. Voice = a street-smart elder brother talking across a table; no lecture openers ("Now let us
+  understand…", "In this video we will…"); mix short punches with flowing sentences (never 3+ very short sentences in a
+  row), `...` before a number or reveal, `—` for pivots. **Phonetics for Akash:** letter acronyms hyphenated (R-B-I,
+  E-M-I, N-P-A, R-D-S-O), `Sibill`, `Ray-rah`, `Loke Uh-daa-lut`; the lint fails bare capital acronyms. **Structure,
+  8–12 min:** lived-reality hook with an **open loop in the first 60 s** naming the minute of the payoff (must be true in
+  the final cut) → forensic dissection (what they tell you vs what the document says) → citizen's action plan with
+  verified helplines → outro tying it to India's strength, a pinned-comment question, "Know your rights. Stay practical.
+  Jai Hind." Never cynical about India: celebrate its engineering, examine the bottleneck honestly. Every script ships a
+  `screenplay.md` (TIME | AUDIO | VISUAL + ACTION + SFX). No stock of anonymous office workers typing.
 - **TTS:** ElevenLabs Telugu only on `eleven_v3`/`eleven_v4` with `language_code: "te"`; all TTS text in Telugu script.
 - **ElevenLabs "Bunty" script format** (Bunty stays the channel voice, now on `eleven_v4`; owner, 2026-10-08/09): blocks
   of **4,000–4,500 characters** (hard cap 5,000), as many as the script needs; commas, full stops, `...` for dramatic
