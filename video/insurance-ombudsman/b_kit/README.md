@@ -22,8 +22,8 @@ python3 ../b_kit/split.py . B1.full.mp4 clips/  # <scene>_<Oxxx>.mp4 per window 
 pixel is generated here (CC0 / own work).
 
 ## Notes for the coordinator
-- B1/O020 shows "20% + GST" written on the agreement and B3/O057 has no text: the VO says the first, and the spec gives
-  no on-screen text for the second.
+- B3/O057 has no on-screen text besides its documents, because the spec gives none. (In v1, B1/O020 had a handwritten
+  "20% + GST"; v2 highlights the agreement's own fee line instead.)
 - B3/O057 is also listed under C4_binding_award: use one of the two.
 - The odometer in B3 counts each new day in the last 15% of that day, so every frame you hold on shows an exact multiple of ₹5,000.
 
