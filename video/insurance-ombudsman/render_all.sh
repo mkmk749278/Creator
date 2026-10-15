@@ -4,7 +4,7 @@
 set -uo pipefail
 cd "$(dirname "$0")"
 mkdir -p renders
-for s in ${SCENES:-C1_filing_stepper C2_offices_board C3_document_slots C4_binding_award C5_proof_magnifier}; do
+for s in ${SCENES:-C1_filing_stepper C2_offices_board C3_document_slots C4_binding_award C5_proof_magnifier C6_hearing}; do
   echo "== $s start $(date +%T)"
   ( cd "$s" && npx hyperframes render --workers 4 --quality looks --output "../renders/$s.master.mp4" ) || { echo "== $s FAILED"; continue; }
   echo "== $s done $(date +%T)"

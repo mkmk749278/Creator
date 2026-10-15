@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C6 hearing</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="shared/io.js"></script>
+    <script src="windows.js"></script>
+    <link rel="stylesheet" href="shared/io.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+#scene { position: absolute; inset: 0; perspective: 2600px; }
+#cam { position: absolute; inset: 0; transform-origin: 960px 540px; }
+/* the hearing screen: an illustrated schematic of an official online hearing (no real people, no real app) */
+#app { position: absolute; left: 110px; top: 70px; width: 1700px; height: 940px; border-radius: 18px; overflow: hidden; background: #e9edf3;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.08), 0 50px 110px rgba(0,0,0,.6); }
+#title { position: absolute; left: 0; right: 0; top: 0; height: 74px; background: #14263B; color: #F5F7FB; display: flex; align-items: center; gap: 16px;
+  padding: 0 30px; font: 600 26px/1 Inter, Arial, sans-serif; white-space: nowrap; }
+#title .em { width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--teal); flex: none; position: relative; }
+#title .em::after { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: var(--teal); }
+#title b { font-weight: 800; }
+#title .live { margin-left: auto; display: flex; align-items: center; gap: 10px; font: 800 20px/1 Inter, Arial, sans-serif; letter-spacing: .12em; color: #FF7D80; }
+#title .live i { width: 14px; height: 14px; border-radius: 50%; background: #FF7D80; }
+#bar2 { position: absolute; left: 0; right: 0; top: 74px; height: 70px; background: #dfe4ec; display: flex; align-items: center; padding: 0 30px; }
+#toggle { position: relative; margin-left: auto; display: flex; height: 48px; border-radius: 24px; background: #fff; box-shadow: inset 0 0 0 2px #c3cbd6; font: 800 22px/48px Inter, Arial, sans-serif; color: #172231; }
+#toggle span { position: relative; z-index: 2; padding: 0 26px; }
+#knob { position: absolute; z-index: 1; left: 0; top: 0; height: 48px; width: 150px; border-radius: 24px; background: var(--teal); }
+#tlabel { font: 600 20px/1 Inter, Arial, sans-serif; color: #1a2029; letter-spacing: .06em; margin-right: 16px; }
+.tile { position: absolute; top: 172px; width: 520px; height: 390px; border-radius: 16px; overflow: hidden; background: #1b2633; }
+.tile svg.person { position: absolute; inset: 0; width: 520px; height: 390px; }
+.tile .name { position: absolute; left: 14px; bottom: 14px; padding: 9px 14px; border-radius: 8px; background: rgba(8,14,24,.82); color: #F5F7FB; font: 800 21px/1 Inter, Arial, sans-serif; white-space: nowrap; }
+.tile .name.top { top: 14px; bottom: auto; }
+.tile .ring { position: absolute; inset: 0; border-radius: 16px; box-shadow: inset 0 0 0 6px var(--yellow); opacity: 0; }
+.tile .conn { position: absolute; inset: 0; background: #1b2633; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  color: #B8C7D9; font: 600 22px/1 Inter, Arial, sans-serif; letter-spacing: .06em; }
+.tile .conn svg { width: 64px; height: 64px; }
+#caps { position: absolute; left: 0; right: 0; top: 600px; height: 230px; }
+.q { position: absolute; left: 50%; width: 1100px; margin-left: -550px; text-align: center; padding: 16px 26px; border-radius: 14px; background: #14263B; color: #F5F7FB;
+  font: 800 38px/1.15 Inter, Arial, sans-serif; box-shadow: 0 14px 30px rgba(0,0,0,.25); }
+.q i { font-style: normal; color: var(--yellow); margin-right: 14px; }
+#ctrl { position: absolute; left: 0; right: 0; bottom: 0; height: 92px; background: #dfe4ec; display: flex; align-items: center; justify-content: center; gap: 26px; }
+#ctrl i { width: 58px; height: 58px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px #c3cbd6; display: flex; align-items: center; justify-content: center; }
+#ctrl i svg { width: 30px; height: 30px; }
+#ctrl i.end { background: #FF7D80; box-shadow: none; width: 84px; border-radius: 29px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="C6_hearing" data-start="0" data-width="1920" data-height="1080" data-duration="16.2667">
+      <div class="io-plate" id="plate-wrap"><video id="plate" class="clip" src="media/plate.mp4" muted playsinline data-start="0" data-duration="16.2667" data-track-index="0"></video></div>
+      <div class="io-grade"></div>
+      <div id="scene"><div id="cam">
+        <div id="app">
+          <div id="title"><div class="em"></div><span><b>Office of the Insurance Ombudsman, Hyderabad</b> · Online hearing · Complaint No. HYD-H-2026-0471</span><div class="live"><i></i>LIVE</div></div>
+          <div id="bar2"><div id="tlabel">HEARING</div><div id="toggle"><div id="knob"></div><span id="tg-a">In person</span><span id="tg-b">Online</span></div></div>
+          <div id="tiles"></div>
+          <div id="caps">
+            <div class="q" id="q1"><i>1</i>When did you buy the policy?</div>
+            <div class="q" id="q2"><i>2</i>Why were you in the hospital?</div>
+            <div class="q" id="q3"><i>3</i>How much did the company cut?</div>
+          </div>
+          <div id="ctrl">
+            <i><svg viewBox="0 0 30 30" fill="none" stroke="#14263B" stroke-width="3" stroke-linecap="round"><rect x="10" y="3" width="10" height="16" rx="5"/><path d="M5 14 a10 10 0 0 0 20 0 M15 24 V28"/></svg></i>
+            <i><svg viewBox="0 0 30 30" fill="none" stroke="#14263B" stroke-width="3" stroke-linejoin="round"><rect x="3" y="8" width="17" height="14" rx="3"/><path d="M20 13 L27 9 V21 L20 17 Z"/></svg></i>
+            <i class="end"><svg viewBox="0 0 30 30" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"><path d="M4 18 C 10 10, 20 10, 26 18"/></svg></i>
+          </div>
+        </div>
+      </div></div>
+      <div class="io-key" id="io-key"></div><div class="io-fill"></div><div class="io-leak" id="io-leak"></div><div class="io-dust" id="io-dust"></div>
+      <canvas class="io-grain" id="grain" width="500" height="290"></canvas>
+      <div class="io-vig"></div>
+      <div id="tag" class="io-tag clip" data-start="0" data-duration="16.2667" data-track-index="3">ILLUSTRATION</div>
+    </div>
+    <script>
+      const W = window.WIN, $ = IO.$, sec = {};
+      for (const s of W.sections) sec[s.id] = s.start;
+      const S = (id, t) => sec[id] + t;
+      const SKIN = "#b9825a", SKIN2 = "#a8714b", SKIN3 = "#c48d63";
+      // flat illustrated people (invented; no photos, no religious markers). Head group bobs, eyes blink, mouth talks: all f(t).
+      const person = (id, o) => `
+        <svg class="person" viewBox="0 0 520 390">
+          ${o.bg}
+          <g id="${id}-body">
+            <path d="M120 390 C 130 300, 190 282, 260 282 C 330 282, 390 300, 400 390 Z" fill="${o.top}"/>
+            ${o.under || ""}
+            <path d="M238 252 h44 v40 c-6 10 -38 10 -44 0 Z" fill="${o.skin}" />
+            ${o.front || ""}
+          </g>
+          <g id="${id}-head">
+            <ellipse cx="260" cy="196" rx="62" ry="74" fill="${o.skin}"/>
+            <ellipse cx="199" cy="204" rx="10" ry="16" fill="${o.skin}"/><ellipse cx="321" cy="204" rx="10" ry="16" fill="${o.skin}"/>
+            ${o.hair}
+            <g id="${id}-eyes"><ellipse cx="237" cy="200" rx="6" ry="7" fill="#1b1410"/><ellipse cx="283" cy="200" rx="6" ry="7" fill="#1b1410"/></g>
+            <path d="M226 186 q11 -7 22 0 M272 186 q11 -7 22 0" fill="none" stroke="${o.brow}" stroke-width="5" stroke-linecap="round"/>
+            <path d="M260 206 q-5 18 -2 22 q5 3 9 0" fill="none" stroke="${SKIN2}" stroke-width="3.5" stroke-linecap="round"/>
+            ${o.extra || ""}
+            <g id="${id}-mouth" transform="translate(260 244)"><ellipse cx="0" cy="0" rx="15" ry="5" fill="#6a2d22"/></g>
+          </g>
+          ${o.fg || ""}
+        </svg>`;
+      const officeBg = `<rect width="520" height="390" fill="#cdbfa6"/><rect x="0" y="0" width="520" height="40" fill="#bfae92"/>
+        <g fill="#8a6f4e"><rect x="30" y="70" width="140" height="10"/><rect x="30" y="150" width="140" height="10"/><rect x="350" y="70" width="140" height="10"/><rect x="350" y="150" width="140" height="10"/></g>
+        <g><rect x="38" y="36" width="14" height="34" fill="#1f4e6b"/><rect x="54" y="42" width="12" height="28" fill="#7a2e2e"/><rect x="68" y="34" width="16" height="36" fill="#2f5a3b"/><rect x="86" y="40" width="12" height="30" fill="#b08a3c"/>
+          <rect x="358" y="116" width="14" height="34" fill="#7a2e2e"/><rect x="374" y="120" width="12" height="30" fill="#1f4e6b"/><rect x="388" y="112" width="16" height="38" fill="#b08a3c"/><rect x="406" y="118" width="14" height="32" fill="#2f5a3b"/></g>`;
+      const homeBg = `<rect width="520" height="390" fill="#c9d6cf"/><rect x="330" y="40" width="150" height="170" fill="#eaf2f4" stroke="#f6f1e6" stroke-width="10"/><path d="M405 40 V210 M330 125 H480" stroke="#f6f1e6" stroke-width="8"/>
+        <rect x="30" y="250" width="110" height="140" fill="#b9c7bf"/><circle cx="85" cy="230" r="34" fill="#6f9a72"/><rect x="72" y="250" width="26" height="40" fill="#8a6f4e"/>`;
+      const corpBg = `<rect width="520" height="390" fill="#c7d0dc"/><rect x="0" y="0" width="520" height="150" fill="#b4c0cf"/><g stroke="#a3b0c2" stroke-width="6"><path d="M90 0 V150 M200 0 V150 M310 0 V150 M420 0 V150"/></g>
+        <rect x="380" y="180" width="110" height="80" rx="6" fill="#e9eef4"/><rect x="392" y="196" width="60" height="8" fill="#9aa8ba"/><rect x="392" y="214" width="80" height="8" fill="#9aa8ba"/>`;
+      const TILES = [
+        { id: "omb", name: "Insurance Ombudsman", x: 55, html: person("omb", { bg: officeBg, skin: SKIN, brow: "#d9d4cc", top: "#26303d",
+            under: `<path d="M226 282 L260 340 L294 282 Z" fill="#f4f1ea"/><path d="M252 290 L268 290 L264 350 L260 356 L256 350 Z" fill="#6b2430"/>`,
+            hair: `<path d="M197 214 C 190 150, 214 116, 262 112 C 310 116, 334 150, 325 214 L 318 214 C 318 186, 314 170, 306 162 C 296 168, 286 160, 276 166 C 266 156, 254 164, 244 158 C 234 166, 224 160, 214 166 C 206 176, 204 194, 204 214 Z" fill="#9c958c"/>
+              <g fill="none" stroke="#7b746b" stroke-width="3" stroke-linecap="round"><path d="M222 132 q14 -8 30 -6 M268 124 q18 2 32 14 M214 150 q6 -12 18 -18 M300 146 q10 6 14 18"/></g>`,
+            extra: `<g fill="none" stroke="#2a2f36" stroke-width="4"><circle cx="237" cy="200" r="17"/><circle cx="283" cy="200" r="17"/><path d="M254 200 H266"/></g><path d="M240 232 q20 6 40 0" fill="none" stroke="#e6e1d8" stroke-width="7" stroke-linecap="round"/>`,
+            fg: `<rect x="0" y="348" width="520" height="42" fill="#6e4a2c"/><rect x="0" y="344" width="520" height="8" fill="#82593a"/>
+                 <g id="plate"><path d="M286 330 L500 330 L510 372 L276 372 Z" fill="#14263B"/><text x="393" y="358" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="20" fill="#FFDB59">Insurance Ombudsman</text></g>` }) },
+        { id: "cmp", name: "Complainant · R. Kumar", x: 590, html: person("cmp", { bg: homeBg, skin: SKIN3, brow: "#1b1410", top: "#7fa6c9",
+            under: `<path d="M232 282 L260 312 L288 282 L280 278 L260 298 L240 278 Z" fill="#9fc0dc"/><g fill="#5f86a8"><circle cx="260" cy="330" r="4"/><circle cx="260" cy="356" r="4"/></g>`,
+            hair: `<path d="M198 190 C 192 130, 232 112, 266 114 C 304 116, 330 140, 322 190 C 318 166, 300 150, 270 148 C 240 148, 214 156, 198 190 Z" fill="#1b1410"/>`,
+            extra: `<path d="M240 228 q20 8 40 0 q-6 6 -20 6 q-14 0 -20 -6 Z" fill="#1b1410"/>` }) },
+        { id: "ins", name: "Insurer's representative", x: 1125, html: person("ins", { bg: corpBg, skin: SKIN, brow: "#2a1d16", top: "#1f2d45",
+            under: `<path d="M228 282 L260 326 L292 282 Z" fill="#e8edf3"/><path d="M228 282 L244 330 L260 326 Z M292 282 L276 330 L260 326 Z" fill="#17233a"/>`,
+            hair: `<path d="M196 200 C 190 132, 228 112, 262 112 C 298 112, 334 134, 326 200 C 320 168, 302 146, 262 144 C 226 146, 204 168, 196 200 Z" fill="#2a1d16"/><path d="M314 196 C 336 220, 334 262, 316 280 C 326 250, 322 222, 314 196 Z" fill="#2a1d16"/>`,
+            extra: `<circle cx="203" cy="222" r="4" fill="#d9c27a"/><circle cx="317" cy="222" r="4" fill="#d9c27a"/>` }) },
+      ];
+      const spin = `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="none" stroke="#3a4a5e" stroke-width="7"/><path class="arc" d="M32 8 a24 24 0 0 1 24 24" fill="none" stroke="#59DCC3" stroke-width="7" stroke-linecap="round"/></svg>`;
+      TILES.forEach((T) => {
+        const d = document.createElement("div"); d.className = "tile"; d.id = "tile-" + T.id; d.style.left = T.x + "px";
+        d.innerHTML = `${T.html}<div class="ring" id="ring-${T.id}"></div><div class="conn" id="conn-${T.id}">${spin}Connecting…</div><div class="name${T.id === "omb" ? " top" : ""}">${T.name}</div>`;
+        $("tiles").appendChild(d);
+      });
+      // when each participant joins (O050: "The Ombudsman (0.3) hears both sides, you (2.4) and the company (3.0)")
+      const JOIN = { omb: 0.45, cmp: 2.45, ins: 3.05 };
+      // who talks when (mouth): the complainant explains in O053 while each question is on screen
+      const Q = [S("O053", 4.27), S("O053", 5.83), S("O053", 7.31)], QE = [S("O053", 5.45), S("O053", 7.0), S("O053", 8.95)];
+      const talk = { omb: [[S("O053", 0.3), S("O053", 1.2)]], cmp: Q.map((q, i) => [q + 0.15, QE[i]]), ins: [] };
+      const rng = FIN.rng(6);
+      const blinks = {}; for (const T of TILES) { blinks[T.id] = []; let b = 0.6 + rng() * 2; while (b < 17) { blinks[T.id].push(b); b += 2.2 + rng() * 2.5; } }
+      FIN.hook((t) => {
+        for (const T of TILES) {
+          const head = $(T.id + "-head"), body = $(T.id + "-body"), ph = T.x * 0.01;
+          head.setAttribute("transform", `translate(${(Math.sin(t * 0.9 + ph) * 3).toFixed(2)} ${(Math.sin(t * 1.3 + ph) * 2.2).toFixed(2)}) rotate(${(Math.sin(t * 0.7 + ph) * 1.4).toFixed(2)} 260 250)`);
+          body.setAttribute("transform", `translate(0 ${(Math.sin(t * 1.3 + ph) * 1.2).toFixed(2)})`);
+          const bl = blinks[T.id].some((b) => t >= b && t < b + 0.12);
+          $(T.id + "-eyes").setAttribute("transform", bl ? "translate(0 200) scale(1 0.12) translate(0 -200)" : "");
+          const on = talk[T.id].some(([a, b]) => t >= a && t < b);
+          const m = on ? 0.6 + 1.6 * Math.abs(Math.sin(t * 13 + ph)) : 0.55;
+          $(T.id + "-mouth").setAttribute("transform", `translate(260 244) scale(1 ${m.toFixed(3)})`);
+          const c = $("conn-" + T.id), j = JOIN[T.id], u = IO.lin(t, j, j + 0.35);
+          c.style.opacity = (1 - u).toFixed(3);
+          c.querySelector(".arc").setAttribute("transform", `rotate(${(t * 400) % 360} 32 32)`);
+        }
+      });
+      const tl = gsap.timeline({ paused: true });
+      // O050 — "The Ombudsman hears both sides (0.25–2.2), you and the company (2.36–3.55). The hearing can be in person (3.9–5.4),
+      //         or online by video (5.52–6.79)."
+      tl.fromTo("#cam", { scale: 1.1, x: 0, y: 30, rotationX: 4 }, { scale: 1.0, x: 0, y: 0, rotationX: 0, duration: 2.4, ease: "power2.out" }, 0);
+      tl.fromTo("#ring-cmp", { opacity: 0 }, { opacity: 1, duration: 0.25 }, S("O050", 2.4));
+      tl.to("#ring-cmp", { opacity: 0, duration: 0.3 }, S("O050", 3.0));
+      tl.fromTo("#ring-ins", { opacity: 0 }, { opacity: 1, duration: 0.25 }, S("O050", 3.0));
+      tl.to("#ring-ins", { opacity: 0, duration: 0.3 }, S("O050", 3.6));
+      tl.fromTo("#bar2", { opacity: 0.0 }, { opacity: 1, duration: 0.3 }, S("O050", 3.75));
+      tl.fromTo("#toggle", { scale: 0.85 }, { scale: 1, duration: 0.35, ease: "back.out(2)" }, S("O050", 3.85));
+      tl.fromTo("#knob", { x: 0, width: 150 }, { x: 0, width: 150, duration: 0.05 }, S("O050", 3.85));
+      tl.to("#knob", { x: 150, width: 112, duration: 0.45, ease: "power3.inOut" }, S("O050", 5.6));
+      tl.to("#cam", { scale: 1.14, x: -150, y: 80, duration: 1.1, ease: "power2.inOut" }, S("O050", 3.7));
+      tl.to("#cam", { scale: 1.18, x: -190, y: 95, duration: 1.4, ease: "none" }, S("O050", 4.8));
+      tl.fromTo("#toggle", { boxShadow: "inset 0 0 0 2px #c3cbd6, 0 0 0 0 rgba(89,220,195,0)" }, { boxShadow: "inset 0 0 0 2px #c3cbd6, 0 0 0 10px rgba(89,220,195,.35)", duration: 0.3, yoyo: true, repeat: 1 }, S("O050", 5.6));
+      tl.to("#cam", { scale: 1.06, x: 0, y: 20, duration: 0.6, ease: "power2.inOut" }, S("O050", 6.3));
+      // O053 — "You don't need fancy legal words (0.25–2.0). Explain your case simply (2.32–3.88). When did you buy the policy? (4.27)
+      //         Why were you in the hospital? (5.83) And how much did the company cut? (7.31)"
+      tl.fromTo("#cam", { scale: 1.06, x: 0, y: 20 }, { scale: 1.3, x: 0, y: 134, duration: 3.6, ease: "power1.inOut" }, S("O053", 0));
+      tl.to("#cam", { scale: 1.12, x: 0, y: -67, duration: 0.7, ease: "power2.inOut" }, S("O053", 3.8));
+      tl.to("#cam", { scale: 1.16, x: 0, y: -80, duration: 4.6, ease: "none" }, S("O053", 4.5));
+      [0, 1, 2].forEach((i) => {
+        const id = "#q" + (i + 1);
+        tl.fromTo(id, { opacity: 0, y: 190, scale: 0.94 }, { opacity: 1, y: 150, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, Q[i]);
+        for (let k = i + 1; k < 3; k++) tl.to(id, { y: 150 - (k - i) * 76, backgroundColor: k - i === 1 ? "#24364d" : "#2c3e55", scale: 0.92, duration: 0.3, ease: "power2.out" }, Q[k]);
+        tl.fromTo("#ring-cmp", { opacity: 0 }, { opacity: 1, duration: 0.2 }, Q[i]);
+        tl.to("#ring-cmp", { opacity: 0, duration: 0.25 }, QE[i] - 0.05);
+      });
+      IO.atmos({ duration: W.duration, seed: 12, leaks: [S("O053", 0.05)] });
+      tl.to({}, { duration: 0.01 }, W.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["C6_hearing"] = tl;
+    </script>
+  </body>
+</html>

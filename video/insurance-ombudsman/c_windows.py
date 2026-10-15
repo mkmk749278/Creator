@@ -17,6 +17,8 @@ SCENES = {  # scene folder -> [(clip name, VO id, film start, film end)]; O047 i
     "C5_proof_magnifier": [("C5_proof_magnifier_O018", "O018", 182.57, 193.38), ("C5_proof_magnifier_O022", "O022", 219.61, 231.38),
                            ("C5_proof_magnifier_O027", "O027", 258.60, 269.40), ("C5_proof_magnifier_O035", "O035", 324.69, 331.49),
                            ("C5_proof_magnifier_O036", "O036", 331.90, 335.69), ("C5_proof_magnifier_O037", "O037", 336.09, 347.88)],
+    # revision v2 (owner, 2026-10-15): illustrated online hearing
+    "C6_hearing": [("C6_hearing_O050", "O050", 415.05, 421.59), ("C6_hearing_O053", "O053", 441.35, 450.03)],
 }
 sent = {}
 for r in csv.DictReader(open(TIMING)):

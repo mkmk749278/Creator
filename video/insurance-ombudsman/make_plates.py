@@ -14,10 +14,12 @@ PLAN = {
     "C3_document_slots": [("F07_7685212.mp4", 0.0, 0.95)],
     "C4_binding_award": [("F08_8725953.mp4", 0.0, 0.4), ("F09_6406171.mp4", 0.0, 0.9)],
     "C5_proof_magnifier": [("F09_6406171.mp4", 0.0, 0.6), ("F07_7685212.mp4", 2.0, 0.75)],
+    "C6_hearing": [("F10_8480684.mp4", 18.0, 0.9)],
 }
 GRADE = "gblur=sigma=16,eq=brightness=-0.04:saturation=0.82,colorbalance=rs=.05:gs=.01:bs=-.05:rm=.04:bm=-.04"
 XF = 0.6
 for scene, segs in PLAN.items():
+    if len(sys.argv) > 2 and scene not in sys.argv[2:]: continue
     need = W[scene]["duration"] + 0.5
     out = HERE / scene / "media" / "plate.mp4"; out.parent.mkdir(parents=True, exist_ok=True)
     ins, chains = [], []
