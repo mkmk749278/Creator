@@ -1,0 +1,472 @@
+{
+ "C1_filing_stepper": {
+  "frames": 633,
+  "duration": 21.1,
+  "sections": [
+   {
+    "clip": "C1_filing_stepper_O039",
+    "id": "O039",
+    "film_start": 352.01,
+    "film_end": 356.93,
+    "frame0": 0,
+    "frames": 163,
+    "start": 0.0,
+    "dur": 5.4333,
+    "sentences": [
+     [
+      0.25,
+      5.17,
+      "Open your browser and go to the official website, c-i-o-i-n-s dot co dot in."
+     ]
+    ]
+   },
+   {
+    "clip": "C1_filing_stepper_O040",
+    "id": "O040",
+    "film_start": 357.13,
+    "film_end": 362.51,
+    "frame0": 163,
+    "frames": 177,
+    "start": 5.4333,
+    "dur": 5.9,
+    "sentences": [
+     [
+      0.25,
+      5.63,
+      "Choose Register Complaint, and verify your mobile number with an O-T-P."
+     ]
+    ]
+   },
+   {
+    "clip": "C1_filing_stepper_O048",
+    "id": "O048",
+    "film_start": 403.56,
+    "film_end": 412.8,
+    "frame0": 340,
+    "frames": 293,
+    "start": 11.3333,
+    "dur": 9.7667,
+    "sentences": [
+     [
+      0.25,
+      3.56,
+      "Check every detail, tick the declaration, and submit."
+     ],
+     [
+      3.88,
+      6.83,
+      "Your complaint is verified first, and then registered."
+     ],
+     [
+      7.22,
+      9.49,
+      "Save the acknowledgement and your complaint number."
+     ]
+    ]
+   }
+  ]
+ },
+ "C2_offices_board": {
+  "frames": 467,
+  "duration": 15.5667,
+  "sections": [
+   {
+    "clip": "C2_offices_board_O041",
+    "id": "O041",
+    "film_start": 362.93,
+    "film_end": 377.97,
+    "frame0": 0,
+    "frames": 467,
+    "start": 0.0,
+    "dur": 15.5667,
+    "sentences": [
+     [
+      0.25,
+      2.33,
+      "Then you choose your Ombudsman office."
+     ],
+     [
+      2.67,
+      9.31,
+      "There are eighteen offices across India, in cities like Hyderabad, Bengaluru, Mumbai, Delhi and Kolkata."
+     ],
+     [
+      9.7,
+      15.29,
+      "You pick the one that covers the place where you live, or the insurance company's branch that handled your policy."
+     ]
+    ]
+   }
+  ]
+ },
+ "C3_document_slots": {
+  "frames": 772,
+  "duration": 25.7333,
+  "sections": [
+   {
+    "clip": "C3_document_slots_O042",
+    "id": "O042",
+    "film_start": 378.38,
+    "film_end": 380.8,
+    "frame0": 0,
+    "frames": 88,
+    "start": 0.0,
+    "dur": 2.9333,
+    "sentences": [
+     [
+      0.25,
+      2.67,
+      "Before you submit, keep these documents ready."
+     ]
+    ]
+   },
+   {
+    "clip": "C3_document_slots_O043",
+    "id": "O043",
+    "film_start": 381.24,
+    "film_end": 383.62,
+    "frame0": 88,
+    "frames": 87,
+    "start": 2.9333,
+    "dur": 2.9,
+    "sentences": [
+     [
+      0.25,
+      0.54,
+      "One."
+     ],
+     [
+      0.86,
+      2.63,
+      "A copy of your insurance policy."
+     ]
+    ]
+   },
+   {
+    "clip": "C3_document_slots_O044",
+    "id": "O044",
+    "film_start": 384.06,
+    "film_end": 387.8,
+    "frame0": 175,
+    "frames": 128,
+    "start": 5.8333,
+    "dur": 4.2667,
+    "sentences": [
+     [
+      0.25,
+      0.45,
+      "Two."
+     ],
+     [
+      0.81,
+      3.99,
+      "The hospital discharge summary and the itemised final bill."
+     ]
+    ]
+   },
+   {
+    "clip": "C3_document_slots_O045",
+    "id": "O045",
+    "film_start": 388.22,
+    "film_end": 391.22,
+    "frame0": 303,
+    "frames": 105,
+    "start": 10.1,
+    "dur": 3.5,
+    "sentences": [
+     [
+      0.25,
+      0.49,
+      "Three."
+     ],
+     [
+      0.85,
+      3.25,
+      "The company's rejection or deduction letter."
+     ]
+    ]
+   },
+   {
+    "clip": "C3_document_slots_O046",
+    "id": "O046",
+    "film_start": 391.66,
+    "film_end": 395.09,
+    "frame0": 408,
+    "frames": 118,
+    "start": 13.6,
+    "dur": 3.9333,
+    "sentences": [
+     [
+      0.25,
+      0.52,
+      "Four."
+     ],
+     [
+      0.86,
+      3.68,
+      "A copy of the complaint you sent to the insurance company."
+     ]
+    ]
+   },
+   {
+    "clip": "C3_document_slots_O047",
+    "id": "O047",
+    "film_start": 395.48,
+    "film_end": 403.15,
+    "frame0": 526,
+    "frames": 246,
+    "start": 17.5333,
+    "dur": 8.2,
+    "sentences": [
+     [
+      0.25,
+      0.79,
+      "And five."
+     ],
+     [
+      1.15,
+      3.84,
+      "Your I-D and address proof, and a photograph."
+     ],
+     [
+      4.3,
+      7.92,
+      "Each file can be a P-D-F or a J-P-G, up to ten M-B."
+     ]
+    ]
+   }
+  ]
+ },
+ "C4_binding_award": {
+  "frames": 1183,
+  "duration": 39.4333,
+  "sections": [
+   {
+    "clip": "C4_binding_award_O010",
+    "id": "O010",
+    "film_start": 89.72,
+    "film_end": 108.88,
+    "frame0": 0,
+    "frames": 590,
+    "start": 0.0,
+    "dur": 19.6667,
+    "sentences": [
+     [
+      0.25,
+      3.93,
+      "Today, we open that door fully, from start to finish."
+     ],
+     [
+      4.39,
+      6.74,
+      "Filing a complaint costs zero rupees."
+     ],
+     [
+      7.15,
+      11.11,
+      "If the Ombudsman passes an award, it is binding on the insurance company."
+     ],
+     [
+      11.45,
+      19.41,
+      "And if the company does not challenge the award, but pays it late, it has to pay you a penalty of five thousand rupees for every day of delay."
+     ]
+    ]
+   },
+   {
+    "clip": "C4_binding_award_O052",
+    "id": "O052",
+    "film_start": 436.69,
+    "film_end": 440.9,
+    "frame0": 590,
+    "frames": 142,
+    "start": 19.6667,
+    "dur": 4.7333,
+    "sentences": [
+     [
+      0.25,
+      4.46,
+      "If there is no settlement, the Ombudsman decides the case, and passes an award."
+     ]
+    ]
+   },
+   {
+    "clip": "C4_binding_award_O056",
+    "id": "O056",
+    "film_start": 462.79,
+    "film_end": 468.85,
+    "frame0": 732,
+    "frames": 197,
+    "start": 24.4,
+    "dur": 6.5667,
+    "sentences": [
+     [
+      0.25,
+      0.65,
+      "First."
+     ],
+     [
+      0.97,
+      6.31,
+      "Under Rule seventeen, when the Ombudsman passes an award, it is binding on the insurance company."
+     ]
+    ]
+   },
+   {
+    "clip": "C4_binding_award_O057",
+    "id": "O057",
+    "film_start": 469.28,
+    "film_end": 477.22,
+    "frame0": 929,
+    "frames": 254,
+    "start": 30.9667,
+    "dur": 8.4667,
+    "sentences": [
+     [
+      0.25,
+      2.63,
+      "Wait... what if you are NOT happy with the award?"
+     ],
+     [
+      3.04,
+      4.27,
+      "You don't have to accept it."
+     ],
+     [
+      4.7,
+      8.19,
+      "Other legal remedies, like the consumer forum, may still be open to you."
+     ]
+    ]
+   }
+  ]
+ },
+ "C5_proof_magnifier": {
+  "frames": 1765,
+  "duration": 58.8333,
+  "sections": [
+   {
+    "clip": "C5_proof_magnifier_O018",
+    "id": "O018",
+    "film_start": 182.57,
+    "film_end": 193.38,
+    "frame0": 0,
+    "frames": 340,
+    "start": 0.0,
+    "dur": 11.3333,
+    "sentences": [
+     [
+      0.25,
+      2.2,
+      "That is why step four exists."
+     ],
+     [
+      2.65,
+      11.06,
+      "The body that can pass a binding award in your case... is the Insurance Ombudsman, which works under the Insurance Ombudsman Rules, twenty seventeen."
+     ]
+    ]
+   },
+   {
+    "clip": "C5_proof_magnifier_O022",
+    "id": "O022",
+    "film_start": 219.61,
+    "film_end": 231.38,
+    "frame0": 340,
+    "frames": 369,
+    "start": 11.3333,
+    "dur": 12.3,
+    "sentences": [
+     [
+      0.25,
+      2.24,
+      "And here is what they may not tell you."
+     ],
+     [
+      2.69,
+      12.02,
+      "Under Rule fourteen of the Insurance Ombudsman Rules, the complaint is made by you, the person with the grievance, or through your legal heir, nominee or assignee."
+     ]
+    ]
+   },
+   {
+    "clip": "C5_proof_magnifier_O027",
+    "id": "O027",
+    "film_start": 258.6,
+    "film_end": 269.4,
+    "frame0": 709,
+    "frames": 339,
+    "start": 23.6333,
+    "dur": 11.3,
+    "sentences": [
+     [
+      0.25,
+      7.33,
+      "In twenty twenty-four to twenty-five alone, seventeen hundred and fifteen health complaints were turned away for this one reason."
+     ],
+     [
+      7.75,
+      11.05,
+      "The person had not complained to the insurance company first."
+     ]
+    ]
+   },
+   {
+    "clip": "C5_proof_magnifier_O035",
+    "id": "O035",
+    "film_start": 324.69,
+    "film_end": 331.49,
+    "frame0": 1048,
+    "frames": 219,
+    "start": 34.9333,
+    "dur": 7.3,
+    "sentences": [
+     [
+      0.25,
+      7.05,
+      "From that day, you have one year to file your complaint with the Ombudsman, for compensation of up to fifty lakh rupees."
+     ]
+    ]
+   },
+   {
+    "clip": "C5_proof_magnifier_O036",
+    "id": "O036",
+    "film_start": 331.9,
+    "film_end": 335.69,
+    "frame0": 1267,
+    "frames": 129,
+    "start": 42.2333,
+    "dur": 4.3,
+    "sentences": [
+     [
+      0.25,
+      4.04,
+      "That limit was raised to fifty lakh rupees in November twenty twenty-three."
+     ]
+    ]
+   },
+   {
+    "clip": "C5_proof_magnifier_O037",
+    "id": "O037",
+    "film_start": 336.09,
+    "film_end": 347.88,
+    "frame0": 1396,
+    "frames": 369,
+    "start": 46.5333,
+    "dur": 12.3,
+    "sentences": [
+     [
+      0.25,
+      2.13,
+      "And remember one strict condition."
+     ],
+     [
+      2.51,
+      12.04,
+      "The Ombudsman cannot take your complaint if the same dispute is already pending, or already decided, in any court, consumer forum, or arbitration."
+     ]
+    ]
+   }
+  ]
+ }
+}

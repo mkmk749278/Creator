@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C3 document slots</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="shared/io.js"></script>
+    <script src="windows.js"></script>
+    <link rel="stylesheet" href="shared/io.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+#scene { position: absolute; inset: 0; perspective: 2600px; }
+#cam { position: absolute; inset: 0; transform-origin: 960px 540px; }
+/* the upload step of the filing schematic (labelled ILLUSTRATION; not the real portal) */
+#tray { position: absolute; left: 70px; top: 70px; width: 1780px; height: 640px; border-radius: 20px; background: #eef1f6; box-shadow: 0 50px 110px rgba(0,0,0,.55); }
+.rail { position: absolute; left: 120px; right: 120px; top: 34px; height: 80px; }
+.rail .line { position: absolute; left: 40px; right: 40px; top: 26px; height: 6px; background: #cfd6e0; border-radius: 3px; }
+.rail .fill { position: absolute; left: 40px; top: 26px; height: 6px; width: 1020px; background: var(--teal); border-radius: 3px; }
+.step { position: absolute; top: 0; width: 220px; margin-left: -110px; text-align: center; }
+.step .n { width: 58px; height: 58px; margin: 0 auto; border-radius: 50%; background: #fff; border: 5px solid #cfd6e0; color: #3d4756; font: 800 24px/48px Inter, Arial, sans-serif; }
+.step .n.done { background: var(--teal); border-color: var(--teal); color: #0B1422; }
+.step .n.on { border-color: var(--teal); color: #0B1422; box-shadow: 0 0 0 8px rgba(89,220,195,.25); }
+.step .l { margin-top: 8px; font: 600 20px/1.2 Inter, Arial, sans-serif; color: #2f3a48; }
+.slot { position: absolute; top: 160px; width: 300px; height: 380px; border-radius: 18px; border: 4px dashed #b8c2cf; background: #f7f9fc; }
+.slot.full { border-style: solid; border-color: var(--teal); background: #eafaf6; }
+.slot .num { position: absolute; left: 16px; top: 12px; font: 800 30px/1 Inter, Arial, sans-serif; color: #7a5c08; }
+.slot .ok { position: absolute; right: 12px; top: 10px; width: 46px; height: 46px; }
+.slot .bar { position: absolute; left: 20px; right: 20px; bottom: 16px; height: 8px; border-radius: 4px; background: #d9e0e8; overflow: hidden; }
+.slot .bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; background: var(--teal); transform-origin: 0 50%; }
+.ft { position: absolute; z-index: 5; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .1em; color: #fff; background: #14263b; padding: 8px 12px; border-radius: 6px; box-shadow: 0 6px 14px rgba(0,0,0,.35); }
+.cap { position: absolute; top: 556px; width: 300px; text-align: center; font: 800 25px/1.2 Inter, Arial, sans-serif; color: #172231; }
+/* paper documents (SIMULATION content, invented numbers) */
+.doc { position: absolute; width: 230px; height: 300px; padding: 18px 18px; font: 400 12px/1.4 Inter, Arial, sans-serif; }
+.doc .hd { height: 34px; margin: -18px -18px 14px; background: #14263b; color: #f5f7fb; font: 800 13px/34px Inter, Arial, sans-serif; letter-spacing: .1em; padding: 0 14px; }
+.doc .t { font: 800 16px/1.2 Inter, Arial, sans-serif; color: #172231; letter-spacing: .04em; margin-bottom: 8px; }
+.doc .ln { height: 7px; border-radius: 4px; background: #d5ccba; margin: 9px 0; }
+.doc .ln.cut { background: rgba(255,125,128,.75); }
+.doc .row { display: flex; justify-content: space-between; border-bottom: 1px dashed #cbbfa6; padding: 4px 0; }
+.doc .row i { display: block; height: 6px; width: 40%; border-radius: 3px; background: #d5ccba; margin-top: 3px; }
+.doc .row b { display: block; height: 6px; width: 22%; border-radius: 3px; background: #bfb39a; margin-top: 3px; }
+.idc { position: absolute; width: 230px; height: 146px; border-radius: 12px; background: linear-gradient(135deg, #e9eef6, #d4deea); box-shadow: 0 16px 30px rgba(0,0,0,.4); padding: 14px; }
+.idc .av { position: absolute; left: 14px; top: 36px; width: 70px; height: 90px; border-radius: 8px; background: #9fb0c4; overflow: hidden; }
+.idc .av::before { content: ""; position: absolute; left: 20px; top: 14px; width: 30px; height: 30px; border-radius: 50%; background: #e9eef6; }
+.idc .av::after { content: ""; position: absolute; left: 8px; top: 50px; width: 54px; height: 50px; border-radius: 27px 27px 0 0; background: #e9eef6; }
+.idc .k { position: absolute; left: 98px; top: 14px; font: 800 12px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #14263b; }
+.idc .ln { position: absolute; left: 98px; height: 7px; border-radius: 4px; background: #9fb0c4; }
+.photo { position: absolute; width: 118px; height: 150px; background: #f4efe4; padding: 8px; box-shadow: 0 14px 26px rgba(0,0,0,.4); }
+.photo .av { position: relative; width: 100%; height: 100%; background: #8ea3ba; overflow: hidden; }
+.photo .av::before { content: ""; position: absolute; left: 32px; top: 22px; width: 38px; height: 38px; border-radius: 50%; background: #e9eef6; }
+.photo .av::after { content: ""; position: absolute; left: 14px; top: 70px; width: 74px; height: 70px; border-radius: 37px 37px 0 0; background: #e9eef6; }
+#desk { position: absolute; left: 0; right: 0; top: 760px; height: 400px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="C3_document_slots" data-start="0" data-width="1920" data-height="1080" data-duration="25.7333">
+      <div class="io-plate" id="plate-wrap"><video id="plate" class="clip" src="media/plate.mp4" muted playsinline data-start="0" data-duration="25.7333" data-track-index="0"></video></div>
+      <div class="io-grade"></div>
+      <div id="scene"><div id="cam">
+        <div id="tray">
+          <div class="rail"><div class="line"></div><div class="fill"></div>
+            <div class="step" style="left:40px"><div class="n done">✓</div><div class="l">Register</div></div>
+            <div class="step" style="left:550px"><div class="n done">✓</div><div class="l">Details</div></div>
+            <div class="step" style="left:1060px"><div class="n on">3</div><div class="l">Upload</div></div>
+            <div class="step" style="left:1500px"><div class="n">4</div><div class="l">Review</div></div>
+          </div>
+          <div id="slots"></div>
+        </div>
+        <div id="desk"></div>
+      </div></div>
+      <div class="io-key" id="io-key"></div><div class="io-fill"></div><div class="io-leak" id="io-leak"></div><div class="io-dust" id="io-dust"></div>
+      <canvas class="io-grain" id="grain" width="500" height="290"></canvas>
+      <div class="io-vig"></div>
+      <div id="lt" class="io-lt clip" data-start="17.5333" data-duration="8.2" data-track-index="2"><div class="main" id="t-fmt">PDF / JPG · MAX 10 MB EACH</div><div class="src" id="t-src">[CIOINS.CO.IN]</div></div>
+      <div id="tag" class="io-tag clip" data-start="0" data-duration="25.7333" data-track-index="3">ILLUSTRATION</div>
+    </div>
+    <script>
+      const W = window.WIN, $ = IO.$, sec = {};
+      for (const s of W.sections) sec[s.id] = s.start;
+      const S = (id, t) => sec[id] + t;
+      // five upload slots, in VO order (scenes.md C3 + O047 "G05 extra slot")
+      const SLOTS = [
+        { cap: "Insurance policy" },
+        { cap: "Discharge summary · Itemised bill" },
+        { cap: "Rejection / deduction letter" },
+        { cap: "Your complaint to the insurer" },
+        { cap: "ID + address proof · Photo" },
+      ];
+      const SX = (i) => 70 + 56 + i * 336;   // slot left in tray -> 126, 462, ...
+      SLOTS.forEach((s, i) => {
+        const d = document.createElement("div"); d.className = "slot"; d.id = "slot" + i; d.style.left = 56 + i * 336 + "px";
+        d.innerHTML = `<div class="num">${i + 1}</div><svg class="ok" id="ok${i}" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#59DCC3"/><path d="M13 25 L21 33 L36 16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="bar"><i id="bar${i}"></i></div>`;
+        $("slots").appendChild(d);
+        const c = document.createElement("div"); c.className = "cap"; c.style.left = 56 + i * 336 + "px"; c.textContent = s.cap; c.id = "cap" + i; c.setAttribute("data-layout-allow-overflow", ""); $("slots").appendChild(c);
+      });
+      // documents (simulation): built on the desk, then flown into their slot
+      const D = (id, cls, html, x, y, r) => { const e = document.createElement("div"); e.id = id; e.className = cls; e.innerHTML = html;
+        e.style.left = x + "px"; e.style.top = y + "px"; e.setAttribute("data-layout-ignore", ""); $("cam").appendChild(e); return { id: "#" + id, x, y, r }; };
+      const lines = (n, cut = -1) => Array.from({ length: n }, (_, k) => `<div class="ln${k === cut ? " cut" : ""}" style="width:${[92, 80, 88, 70, 84, 60, 90, 76][k % 8]}%"></div>`).join("");
+      const rows = (n) => Array.from({ length: n }, () => `<div class="row"><i></i><b></b></div>`).join("");
+      const docs = [
+        D("d0", "paper doc", `<div class="hd">HEALTH POLICY</div><div class="t">POLICY SCHEDULE</div><div style="font:600 11px/1 Inter;color:#5d6876">POLICY NO. HX-4471-0926</div>${lines(7)}`, 140, 790, -8),
+        D("d1a", "paper doc", `<div class="hd">HOSPITAL</div><div class="t">DISCHARGE SUMMARY</div>${lines(8)}`, 470, 800, 5),
+        D("d1b", "paper doc", `<div class="hd">HOSPITAL</div><div class="t">FINAL BILL · ITEMISED</div>${rows(10)}`, 640, 820, -4),
+        D("d2", "paper doc", `<div class="hd">INSURANCE COMPANY</div><div class="t">CLAIM DECISION</div>${lines(3)}${lines(1, 0)}${lines(4)}`, 900, 795, 7),
+        D("d3", "paper doc", `<div class="hd">EMAIL · SENT</div><div class="t">TO: GRIEVANCE OFFICER</div><div style="font:600 11px/1.3 Inter;color:#5d6876">SUBJECT: COMPLAINT ABOUT MY CLAIM</div>${lines(7)}`, 1180, 805, -6),
+        D("d4a", "idc", `<div class="av"></div><div class="k">ID CARD</div><div class="ln" style="top:40px;width:110px"></div><div class="ln" style="top:58px;width:90px"></div><div class="ln" style="top:96px;width:116px;background:#7d8fa6"></div>`, 1450, 830, 6),
+        D("d4b", "paper doc", `<div class="hd">ADDRESS PROOF</div><div class="t">UTILITY BILL</div>${lines(6)}`, 1600, 800, -5),
+        D("d4c", "photo", `<div class="av"></div>`, 1700, 880, 9),
+      ];
+      SLOTS.forEach((_, i) => { const f = document.createElement("div"); f.className = "ft"; f.id = "ft" + i; f.textContent = i === 4 ? "JPG" : "PDF";
+        f.style.left = SX(i) + 210 + "px"; f.style.top = 70 + 160 + 300 + "px"; $("cam").appendChild(f); });
+      IO.texturePapers();
+      const tl = gsap.timeline({ paused: true });
+      docs.forEach((d) => tl.fromTo(d.id, { y: 260, rotation: d.r, scale: 0.9 }, { y: 0, rotation: d.r, scale: 0.9, duration: 0.8, ease: "power3.out" }, 0.15 + (d.x / 1700) * 0.6));
+      // fly a document into slot i at time t (target offset dx,dy inside the slot)
+      const fly = (d, i, t, dx = 0, dy = 0, rot = 0, sc = 1) => {
+        const tx = SX(i) + 35 + dx - d.x, ty = 70 + 160 + 40 + dy - d.y;
+        tl.to(d.id, { x: tx, y: ty - 120, rotation: rot - 6, scale: sc * 1.15, duration: 0.42, ease: "power2.out" }, t);
+        tl.to(d.id, { y: ty, rotation: rot, scale: sc, duration: 0.25, ease: "power2.in" }, t + 0.42);
+      };
+      const done = (i, t) => {
+        tl.fromTo("#bar" + i, { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power1.inOut" }, t);
+        tl.fromTo("#ok" + i, { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.3, ease: "back.out(2.5)" }, t + 0.6);
+        tl.fromTo("#slot" + i, { borderColor: "#b8c2cf", backgroundColor: "#f7f9fc" }, { borderColor: "#59DCC3", backgroundColor: "#eafaf6", borderStyle: "solid", duration: 0.2 }, t + 0.6);
+      };
+      SLOTS.forEach((_, i) => { tl.fromTo("#bar" + i, { scaleX: 0 }, { scaleX: 0, duration: 0.01 }, 0); tl.fromTo("#ok" + i, { scale: 0 }, { scale: 0, duration: 0.01 }, 0);
+        tl.fromTo("#ft" + i, { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0); });
+      // O043 "One. A copy of your insurance policy." (One 3.18; policy 3.79–5.56)
+      fly(docs[0], 0, S("O043", 0.95), 0, 0, -2); done(0, S("O043", 1.65));
+      // O044 "Two. The hospital discharge summary (6.64–8.3) and the itemised final bill (8.3–9.82)."
+      fly(docs[1], 1, S("O044", 0.85), -14, -6, -3, 0.94); fly(docs[2], 1, S("O044", 2.6), 16, 10, 3, 0.94); done(1, S("O044", 3.3));
+      // O045 "Three. The company's rejection or deduction letter." (10.95–13.35)
+      fly(docs[3], 2, S("O045", 0.95), 0, 0, 2); done(2, S("O045", 1.65));
+      // O046 "Four. A copy of the complaint you sent to the insurance company." (14.46–17.28)
+      fly(docs[4], 3, S("O046", 0.95), 0, 0, -2); done(3, S("O046", 1.65));
+      // O047 "And five (17.79–18.33). Your I-D (≈18.8) and address proof (≈19.7), and a photograph (20.57–21.37).
+      //       Each file can be a P-D-F or a J-P-G, up to ten M-B (21.83–25.45)."
+      fly(docs[5], 4, S("O047", 1.2), 0, 140, -4, 1);
+      fly(docs[6], 4, S("O047", 2.0), 34, -20, 3, 0.86);
+      fly(docs[7], 4, S("O047", 3.05), 150, 110, 6, 0.9);
+      done(4, S("O047", 3.75));
+      SLOTS.forEach((_, i) => tl.fromTo("#ft" + i, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, S("O047", 4.35 + i * 0.12)));
+      tl.fromTo("#t-fmt", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, S("O047", 4.3));
+      tl.fromTo("#t-src", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, S("O047", 4.5));
+      // camera: wide on "keep these documents ready", then ride the slots as each is named, pull back for the file rule
+      const focus = (i, t, d = 0.7, s = 1.42) => { const cx = SX(i) + 150, cy = 70 + 160 + 230;
+        tl.to("#cam", { scale: s, x: (960 - cx) * s, y: (540 - cy) * s, duration: d, ease: "power2.inOut" }, t); };
+      tl.fromTo("#cam", { scale: 1.06, x: 0, y: 20 }, { scale: 1.0, x: 0, y: 0, duration: 2.9, ease: "power1.inOut" }, 0);
+      focus(0, S("O043", 0.15)); focus(1, S("O044", 0.1)); focus(2, S("O045", 0.1)); focus(3, S("O046", 0.1)); focus(4, S("O047", 0.15));
+      tl.to("#cam", { scale: 1.0, x: 0, y: 60, duration: 1.0, ease: "power2.inOut" }, S("O047", 4.1));
+      tl.to("#cam", { scale: 1.05, x: 0, y: 70, duration: 3.1, ease: "none" }, S("O047", 5.1));
+      // slow drift inside each focus hold
+      IO.atmos({ duration: W.duration, seed: 4, leaks: [S("O043", 0.05), S("O045", 0.05), S("O047", 0.05)] });
+      tl.to({}, { duration: 0.01 }, W.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["C3_document_slots"] = tl;
+    </script>
+  </body>
+</html>
