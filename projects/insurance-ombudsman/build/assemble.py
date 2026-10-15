@@ -16,6 +16,7 @@ P = Path(__file__).resolve().parents[1]
 ROOT = P.parents[1]
 A = P / "assets"
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+RENDER_V = {"glimpse": 2, "sting": 2, "end": 2}
 ILL, SIM, CALC, EP1 = "ILLUSTRATIVE FOOTAGE", "SIMULATION", "OUR CALCULATION", "FROM EPISODE 1"
 GAP = 1.5                      # music beat between the two VO takes (timing.csv uses the same)
 VO = [(P / "voice/bp-hlth02-ch1.mp3", 0.0), (P / "voice/bp-hlth02-ch2-4.mp3", 130.85 + GAP)]
@@ -256,8 +257,10 @@ def render(shot, dur, out, W, H):
         run(["ffmpeg", "-v", "error", "-y", "-ss", shot.get("ss", 0), "-stream_loop", "-1", "-i", shot["src"], "-vf", ",".join(vf),
              "-t", f"{dur:.3f}"] + enc + [out])
     elif k == "glimpse":   # Episode 01 shots: played as cut, last frame held if the slot is longer
-        run(["ffmpeg", "-v", "error", "-y", "-i", shot["src"], "-vf",
-             ",".join([f"scale={W}:{H}", "fps=30", "tpad=stop_mode=clone:stop_duration=5"] + ov), "-t", f"{dur:.3f}"] + enc + [out])
+        # slow push-in over the whole slot, so a glimpse shorter than its slot never freezes on its held last frame
+        vf = [f"scale={W}:{H}", "fps=30", "tpad=stop_mode=clone:stop_duration=5", f"scale={int(W*1.12)}:{int(H*1.12)}",
+              f"scale=w='{int(W*1.0)}+{int(W*0.12)}*t/{dur:.2f}':h=-2:eval=frame", f"crop={W}:{H}"] + ov
+        run(["ffmpeg", "-v", "error", "-y", "-i", shot["src"], "-vf", ",".join(vf), "-t", f"{dur:.3f}"] + enc + [out])
     elif k == "scene":
         if not Path(shot["src"]).exists():
             return placeholder(shot, dur, out, W, H, enc)
@@ -279,7 +282,7 @@ def render(shot, dur, out, W, H):
                   f"[1:v]scale={int(W*0.5)}:-2[l];[bg][l]overlay=(W-w)/2:H*0.18,"
                   f"drawtext=fontfile={FONT}:text='SUBSCRIBE · SHARE WITH YOUR FAMILY':x=(w-tw)/2:y=h*0.70:fontsize={int(H*0.035)}:fontcolor=white,"
                   f"drawtext=fontfile={FONT}:text='Educational only · not legal advice · read your policy wording':x=(w-tw)/2:y=h*0.78:fontsize={int(H*0.024)}:fontcolor=white@0.85")
-        run(["ffmpeg", "-v", "error", "-y", "-ss", "2", "-stream_loop", "-1", "-i", bg, "-loop", "1", "-i", ROOT / "assets/brand/banner.png",
+        run(["ffmpeg", "-v", "error", "-y", "-ss", "2", "-stream_loop", "-1", "-i", bg, "-loop", "1", "-i", A / "brand_banner_english.png",
              "-filter_complex", fc, "-t", f"{dur:.3f}"] + enc + [out])
     else:
         sys.exit("unknown kind " + k)
@@ -347,6 +350,12 @@ def main():
     parts = []
     for i, (s, d) in enumerate(zip(shots, durs)):
         spec = json.dumps({k: str(v) for k, v in s.items()}, sort_keys=True) + f"{d:.3f}{H}"
+        # renderer-code versions: the cache keys on shot settings, so a change to how a kind renders must bump it here
+        # (2026-10-15: glimpse push-in; English banner on sting/end; expansion=none for labels with %)
+        if s["kind"] in RENDER_V:
+            spec += f"v{RENDER_V[s['kind']]}"
+        if "%" in s.get("label", "") + s.get("tag", ""):
+            spec += "pct2"
         if s["kind"] == "scene" and Path(s["src"]).exists():
             spec += str(Path(s["src"]).stat().st_mtime)
         f = out / f"{i:03d}_{hashlib.md5(spec.encode()).hexdigest()[:10]}.mp4"
