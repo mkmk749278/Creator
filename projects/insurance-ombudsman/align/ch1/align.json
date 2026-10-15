@@ -1,0 +1,302 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 4.242,
+  "te": "Imagine you are standing at a hospital billing counter at nine o'clock at night.",
+  "en": "Imagine you are standing at a hospital billing counter at nine o'clock at night.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.423,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 4.682,
+  "end": 12.876,
+  "te": "The bill is four and a half lakh rupees, and your cashless claim, where the insurance company pays the hospital directly, has just been denied.",
+  "en": "The bill is four and a half lakh rupees, and your cashless claim, where the insurance company pays the hospital directly, has just been denied.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.376,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 13.347,
+  "end": 15.138,
+  "te": "We told this story in our last video.",
+  "en": "We told this story in our last video.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.376,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 15.686,
+  "end": 17.198,
+  "te": "Here is what you need to know from it.",
+  "en": "Here is what you need to know from it.",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 0.991,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 17.617,
+  "end": 20.309,
+  "te": "A cashless denial is not the end of your claim.",
+  "en": "A cashless denial is not the end of your claim.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.231,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 20.735,
+  "end": 23.673,
+  "te": "You can pay the hospital, and claim the money back later.",
+  "en": "You can pay the hospital, and claim the money back later.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.231,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 24.057,
+  "end": 27.253,
+  "te": "And if the company still says no, there is a four-step plan.",
+  "en": "And if the company still says no, there is a four-step plan.",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.199,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 27.728,
+  "end": 28.656,
+  "te": "Collect your papers.",
+  "en": "Collect your papers.",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.199,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 29.063,
+  "end": 31.964,
+  "te": "File for reimbursement and write to the grievance officer.",
+  "en": "File for reimbursement and write to the grievance officer.",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 32.311,
+  "end": 33.96,
+  "te": "Register on Bima Bharosa.",
+  "en": "Register on Bima Bharosa.",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 0.449,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 34.421,
+  "end": 36.894,
+  "te": "And step four, the Insurance Ombudsman.",
+  "en": "And step four, the Insurance Ombudsman.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.449,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 37.298,
+  "end": 43.211,
+  "te": "So you paid the bill from your pocket, collected your hospital papers, came home, and filed for reimbursement.",
+  "en": "So you paid the bill from your pocket, collected your hospital papers, came home, and filed for reimbursement.",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.395,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 43.732,
+  "end": 46.496,
+  "te": "Three weeks later, an email lands in your inbox.",
+  "en": "Three weeks later, an email lands in your inbox.",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.395,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 46.921,
+  "end": 59.633,
+  "te": "Either the insurance company rejects your claim all over again... or worse, out of your four and a half lakh rupee bill, they approve just one lakh twenty thousand, and cut the remaining three lakh thirty thousand rupees.",
+  "en": "Either the insurance company rejects your claim all over again... or worse, out of your four and a half lakh rupee bill, they approve just one lakh twenty thousand, and cut the remaining three lakh thirty thousand rupees.",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.308,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 60.096,
+  "end": 64.024,
+  "te": "At that moment, many families think they only have two choices.",
+  "en": "At that moment, many families think they only have two choices.",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.308,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 64.485,
+  "end": 64.995,
+  "te": "Choice one.",
+  "en": "Choice one.",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.504,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 65.519,
+  "end": 70.845,
+  "te": "Hire a lawyer, go to consumer court, and wait, often for a long time, for a verdict.",
+  "en": "Hire a lawyer, go to consumer court, and wait, often for a long time, for a verdict.",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.014,
+  "confidence": "check"
+ },
+ {
+  "line": 18,
+  "start": 71.115,
+  "end": 72.212,
+  "te": "Or choice two.",
+  "en": "Or choice two.",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.014,
+  "confidence": "check"
+ },
+ {
+  "line": 19,
+  "start": 72.694,
+  "end": 82.797,
+  "te": "Answer one of those ads for a private claim recovery service, which promises to fight your case, but some ask for twenty percent or more of the money they recover as their fee.",
+  "en": "Answer one of those ads for a private claim recovery service, which promises to fight your case, but some ask for twenty percent or more of the money they recover as their fee.",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.472,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 83.173,
+  "end": 84.062,
+  "te": "Stop right there.",
+  "en": "Stop right there.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 1.16,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 84.468,
+  "end": 87.479,
+  "te": "Before you pick either door, there is a third one.",
+  "en": "Before you pick either door, there is a third one.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.897,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 87.9,
+  "end": 89.289,
+  "te": "Step four of that plan.",
+  "en": "Step four of that plan.",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.232,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 89.725,
+  "end": 93.403,
+  "te": "Today, we open that door fully, from start to finish.",
+  "en": "Today, we open that door fully, from start to finish.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.209,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 93.862,
+  "end": 96.213,
+  "te": "Filing a complaint costs zero rupees.",
+  "en": "Filing a complaint costs zero rupees.",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.209,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 96.624,
+  "end": 100.576,
+  "te": "If the Ombudsman passes an award, it is binding on the insurance company.",
+  "en": "If the Ombudsman passes an award, it is binding on the insurance company.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.398,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 100.923,
+  "end": 108.884,
+  "te": "And if the company does not challenge the award, but pays it late, it has to pay you a penalty of five thousand rupees for every day of delay.",
+  "en": "And if the company does not challenge the award, but pays it late, it has to pay you a penalty of five thousand rupees for every day of delay.",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.251,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 109.232,
+  "end": 111.223,
+  "te": "Welcome to Be Practical with Kishore.",
+  "en": "Welcome to Be Practical with Kishore.",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.251,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 111.562,
+  "end": 123.821,
+  "te": "Today, I will show you one common mistake that gets complaints turned away at the door, how to file on the official website step by step, what happens at the hearing, and what the company must do after it loses.",
+  "en": "Today, I will show you one common mistake that gets complaints turned away at the door, how to file on the official website step by step, what happens at the hearing, and what the company must do after it loses.",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.688,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 124.157,
+  "end": 126.952,
+  "te": "All without paying a single rupee to middlemen.",
+  "en": "All without paying a single rupee to middlemen.",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.162,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 127.358,
+  "end": 130.653,
+  "te": "Let's break it down... in plain, simple English.",
+  "en": "Let's break it down... in plain, simple English.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.162,
+  "confidence": "high"
+ }
+]

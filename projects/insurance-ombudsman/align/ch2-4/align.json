@@ -1,0 +1,1042 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 7.857,
+  "te": "First... step three, Bima Bharosa, the online complaint portal of the insurance regulator, the I-R-D-A-I.",
+  "en": "First... step three, Bima Bharosa, the online complaint portal of the insurance regulator, the I-R-D-A-I.",
+  "speech_vs_text": 1.22,
+  "boundary_margin": 0.934,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 8.353,
+  "end": 9.133,
+  "te": "It often works.",
+  "en": "It often works.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.178,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 9.617,
+  "end": 12.588,
+  "te": "But if it does not work for you, do not stop there.",
+  "en": "But if it does not work for you, do not stop there.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.178,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 13.031,
+  "end": 16.579,
+  "te": "You register on Bima Bharosa, upload your papers, and wait.",
+  "en": "You register on Bima Bharosa, upload your papers, and wait.",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.193,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 17.021,
+  "end": 22.44,
+  "te": "Many people then get the same rejection letter from the insurance company again, and the complaint is closed.",
+  "en": "Many people then get the same rejection letter from the insurance company again, and the complaint is closed.",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.21,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 22.87,
+  "end": 25.948,
+  "te": "And you think, even the government portal could not help me.",
+  "en": "And you think, even the government portal could not help me.",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.21,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 26.619,
+  "end": 27.099,
+  "te": "Here is why.",
+  "en": "Here is why.",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 3.222,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 27.604,
+  "end": 29.229,
+  "te": "Bima Bharosa is useful.",
+  "en": "Bima Bharosa is useful.",
+  "speech_vs_text": 1.32,
+  "boundary_margin": 1.819,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 29.602,
+  "end": 33.706,
+  "te": "Your complaint goes on the regulator's record, and the company has to answer it.",
+  "en": "Your complaint goes on the regulator's record, and the company has to answer it.",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.041,
+  "confidence": "check"
+ },
+ {
+  "line": 10,
+  "start": 34.216,
+  "end": 36.841,
+  "te": "But Bima Bharosa is NOT a court.",
+  "en": "But Bima Bharosa is NOT a court.",
+  "speech_vs_text": 1.42,
+  "boundary_margin": 0.041,
+  "confidence": "check"
+ },
+ {
+  "line": 11,
+  "start": 37.202,
+  "end": 44.043,
+  "te": "Your complaint goes to the same insurance company that cut your claim, and the I-R-D-A-I tracks how the company handles it.",
+  "en": "Your complaint goes to the same insurance company that cut your claim, and the I-R-D-A-I tracks how the company handles it.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.327,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 44.466,
+  "end": 49.665,
+  "te": "Bima Bharosa does not decide your claim, and it does not pass an order telling the company to pay you.",
+  "en": "Bima Bharosa does not decide your claim, and it does not pass an order telling the company to pay you.",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.327,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 50.222,
+  "end": 52.173,
+  "te": "That is why step four exists.",
+  "en": "That is why step four exists.",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.225,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 52.623,
+  "end": 61.026,
+  "te": "The body that can pass a binding award in your case... is the Insurance Ombudsman, which works under the Insurance Ombudsman Rules, twenty seventeen.",
+  "en": "The body that can pass a binding award in your case... is the Insurance Ombudsman, which works under the Insurance Ombudsman Rules, twenty seventeen.",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.197,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 61.509,
+  "end": 63.009,
+  "te": "Now, back to the second door.",
+  "en": "Now, back to the second door.",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.197,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 63.434,
+  "end": 65.113,
+  "te": "Private claim recovery companies.",
+  "en": "Private claim recovery companies.",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 1.703,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 65.589,
+  "end": 68.122,
+  "te": "Suppose your three lakh thirty thousand rupees is stuck.",
+  "en": "Suppose your three lakh thirty thousand rupees is stuck.",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.347,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 68.726,
+  "end": 75.104,
+  "te": "A recovery agency tells you, sign our agreement, and if we get your money back, give us twenty percent plus G-S-T.",
+  "en": "A recovery agency tells you, sign our agreement, and if we get your money back, give us twenty percent plus G-S-T.",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.334,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 75.528,
+  "end": 79.376,
+  "te": "Twenty percent of three lakh thirty thousand is sixty-six thousand rupees.",
+  "en": "Twenty percent of three lakh thirty thousand is sixty-six thousand rupees.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.16,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 79.737,
+  "end": 86.896,
+  "te": "Add eighteen percent G-S-T, and it is seventy-seven thousand eight hundred and eighty rupees out of your family's medical savings.",
+  "en": "Add eighteen percent G-S-T, and it is seventy-seven thousand eight hundred and eighty rupees out of your family's medical savings.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.16,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 87.263,
+  "end": 89.248,
+  "te": "And here is what they may not tell you.",
+  "en": "And here is what they may not tell you.",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 89.698,
+  "end": 99.034,
+  "te": "Under Rule fourteen of the Insurance Ombudsman Rules, the complaint is made by you, the person with the grievance, or through your legal heir, nominee or assignee.",
+  "en": "Under Rule fourteen of the Insurance Ombudsman Rules, the complaint is made by you, the person with the grievance, or through your legal heir, nominee or assignee.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 99.415,
+  "end": 103.778,
+  "te": "The form is the same free form on the official website that you can fill in yourself.",
+  "en": "The form is the same free form on the official website that you can fill in yourself.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.302,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 104.289,
+  "end": 107.566,
+  "te": "And never share your passwords or O-T-Ps with anyone.",
+  "en": "And never share your passwords or O-T-Ps with anyone.",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.121,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 107.996,
+  "end": 112.285,
+  "te": "So before you sign any agreement and give away a share of your money, remember.",
+  "en": "So before you sign any agreement and give away a share of your money, remember.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.121,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 112.789,
+  "end": 116.253,
+  "te": "You can do this yourself online, for zero rupees.",
+  "en": "You can do this yourself online, for zero rupees.",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 116.503,
+  "end": 117.583,
+  "te": "Now listen carefully.",
+  "en": "Now listen carefully.",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 118.101,
+  "end": 122.107,
+  "te": "You cannot jump straight to the Ombudsman on the day your claim is rejected.",
+  "en": "You cannot jump straight to the Ombudsman on the day your claim is rejected.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.216,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 122.568,
+  "end": 125.732,
+  "te": "If you do, your complaint can be turned away at the door.",
+  "en": "If you do, your complaint can be turned away at the door.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.216,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 126.253,
+  "end": 133.334,
+  "te": "In twenty twenty-four to twenty-five alone, seventeen hundred and fifteen health complaints were turned away for this one reason.",
+  "en": "In twenty twenty-four to twenty-five alone, seventeen hundred and fifteen health complaints were turned away for this one reason.",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.161,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 133.747,
+  "end": 137.048,
+  "te": "The person had not complained to the insurance company first.",
+  "en": "The person had not complained to the insurance company first.",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.161,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 137.418,
+  "end": 140.725,
+  "te": "Under Rule fourteen, you must follow a two-step clock.",
+  "en": "Under Rule fourteen, you must follow a two-step clock.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.167,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 141.203,
+  "end": 142.112,
+  "te": "Clock step one.",
+  "en": "Clock step one.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.328,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 142.601,
+  "end": 144.314,
+  "te": "This is step two of our plan.",
+  "en": "This is step two of our plan.",
+  "speech_vs_text": 1.2,
+  "boundary_margin": 0.328,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 144.803,
+  "end": 151.486,
+  "te": "Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.",
+  "en": "Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.112,
+  "confidence": "high"
+ },
+ {
+  "line": 36,
+  "start": 151.951,
+  "end": 159.367,
+  "te": "Every insurer has to show its grievance officer's details on its website, and the Ombudsman's website lists their email addresses too.",
+  "en": "Every insurer has to show its grievance officer's details on its website, and the Ombudsman's website lists their email addresses too.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.112,
+  "confidence": "high"
+ },
+ {
+  "line": 37,
+  "start": 159.814,
+  "end": 166.409,
+  "te": "Send one calm, formal email with your policy number, your claim number, and why their deduction is wrong.",
+  "en": "Send one calm, formal email with your policy number, your claim number, and why their deduction is wrong.",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.195,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "start": 166.869,
+  "end": 169.36,
+  "te": "Keep a copy of that email and every reply.",
+  "en": "Keep a copy of that email and every reply.",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.23,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "start": 169.785,
+  "end": 170.794,
+  "te": "You will need them later.",
+  "en": "You will need them later.",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 0.23,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "start": 171.213,
+  "end": 176.753,
+  "te": "Under the I-R-D-A-I rules, the company should resolve your grievance within fourteen days.",
+  "en": "Under the I-R-D-A-I rules, the company should resolve your grievance within fourteen days.",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.352,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "start": 177.201,
+  "end": 178.094,
+  "te": "Clock step two.",
+  "en": "Clock step two.",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 42,
+  "start": 178.612,
+  "end": 181.293,
+  "te": "Wait for their reply, or wait one month.",
+  "en": "Wait for their reply, or wait one month.",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 43,
+  "start": 181.814,
+  "end": 191.923,
+  "te": "The moment the company rejects your complaint, or you are not happy with its reply, or one month passes with no reply at all... the door to the Ombudsman opens.",
+  "en": "The moment the company rejects your complaint, or you are not happy with its reply, or one month passes with no reply at all... the door to the Ombudsman opens.",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.146,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "start": 192.337,
+  "end": 199.144,
+  "te": "From that day, you have one year to file your complaint with the Ombudsman, for compensation of up to fifty lakh rupees.",
+  "en": "From that day, you have one year to file your complaint with the Ombudsman, for compensation of up to fifty lakh rupees.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.146,
+  "confidence": "high"
+ },
+ {
+  "line": 45,
+  "start": 199.549,
+  "end": 203.337,
+  "te": "That limit was raised to fifty lakh rupees in November twenty twenty-three.",
+  "en": "That limit was raised to fifty lakh rupees in November twenty twenty-three.",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.22,
+  "confidence": "high"
+ },
+ {
+  "line": 46,
+  "start": 203.738,
+  "end": 205.617,
+  "te": "And remember one strict condition.",
+  "en": "And remember one strict condition.",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.226,
+  "confidence": "high"
+ },
+ {
+  "line": 47,
+  "start": 205.995,
+  "end": 215.528,
+  "te": "The Ombudsman cannot take your complaint if the same dispute is already pending, or already decided, in any court, consumer forum, or arbitration.",
+  "en": "The Ombudsman cannot take your complaint if the same dispute is already pending, or already decided, in any court, consumer forum, or arbitration.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.1,
+  "confidence": "high"
+ },
+ {
+  "line": 48,
+  "start": 215.842,
+  "end": 219.242,
+  "te": "So, how do you actually file, and what happens next?",
+  "en": "So, how do you actually file, and what happens next?",
+  "speech_vs_text": 1.23,
+  "boundary_margin": 0.1,
+  "confidence": "high"
+ },
+ {
+  "line": 49,
+  "start": 219.657,
+  "end": 224.584,
+  "te": "Open your browser and go to the official website, c-i-o-i-n-s dot co dot in.",
+  "en": "Open your browser and go to the official website, c-i-o-i-n-s dot co dot in.",
+  "speech_vs_text": 1.29,
+  "boundary_margin": 0.04,
+  "confidence": "check"
+ },
+ {
+  "line": 50,
+  "start": 224.78,
+  "end": 230.163,
+  "te": "Choose Register Complaint, and verify your mobile number with an O-T-P.",
+  "en": "Choose Register Complaint, and verify your mobile number with an O-T-P.",
+  "speech_vs_text": 1.32,
+  "boundary_margin": 0.04,
+  "confidence": "check"
+ },
+ {
+  "line": 51,
+  "start": 230.58,
+  "end": 232.664,
+  "te": "Then you choose your Ombudsman office.",
+  "en": "Then you choose your Ombudsman office.",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.651,
+  "confidence": "high"
+ },
+ {
+  "line": 52,
+  "start": 233.003,
+  "end": 239.644,
+  "te": "There are eighteen offices across India, in cities like Hyderabad, Bengaluru, Mumbai, Delhi and Kolkata.",
+  "en": "There are eighteen offices across India, in cities like Hyderabad, Bengaluru, Mumbai, Delhi and Kolkata.",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.301,
+  "confidence": "high"
+ },
+ {
+  "line": 53,
+  "start": 240.031,
+  "end": 245.618,
+  "te": "You pick the one that covers the place where you live, or the insurance company's branch that handled your policy.",
+  "en": "You pick the one that covers the place where you live, or the insurance company's branch that handled your policy.",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.301,
+  "confidence": "high"
+ },
+ {
+  "line": 54,
+  "start": 246.028,
+  "end": 248.451,
+  "te": "Before you submit, keep these documents ready.",
+  "en": "Before you submit, keep these documents ready.",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.493,
+  "confidence": "high"
+ },
+ {
+  "line": 55,
+  "start": 248.887,
+  "end": 249.176,
+  "te": "One.",
+  "en": "One.",
+  "speech_vs_text": 1.49,
+  "boundary_margin": 2.614,
+  "confidence": "check"
+ },
+ {
+  "line": 56,
+  "start": 249.498,
+  "end": 251.273,
+  "te": "A copy of your insurance policy.",
+  "en": "A copy of your insurance policy.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 57,
+  "start": 251.71,
+  "end": 251.909,
+  "te": "Two.",
+  "en": "Two.",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 58,
+  "start": 252.274,
+  "end": 255.451,
+  "te": "The hospital discharge summary and the itemised final bill.",
+  "en": "The hospital discharge summary and the itemised final bill.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 59,
+  "start": 255.871,
+  "end": 256.112,
+  "te": "Three.",
+  "en": "Three.",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 60,
+  "start": 256.472,
+  "end": 258.866,
+  "te": "The company's rejection or deduction letter.",
+  "en": "The company's rejection or deduction letter.",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 61,
+  "start": 259.308,
+  "end": 259.582,
+  "te": "Four.",
+  "en": "Four.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 62,
+  "start": 259.922,
+  "end": 262.74,
+  "te": "A copy of the complaint you sent to the insurance company.",
+  "en": "A copy of the complaint you sent to the insurance company.",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 63,
+  "start": 263.134,
+  "end": 263.671,
+  "te": "And five.",
+  "en": "And five.",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 2.338,
+  "confidence": "high"
+ },
+ {
+  "line": 64,
+  "start": 264.026,
+  "end": 266.717,
+  "te": "Your I-D and address proof, and a photograph.",
+  "en": "Your I-D and address proof, and a photograph.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.287,
+  "confidence": "high"
+ },
+ {
+  "line": 65,
+  "start": 267.18,
+  "end": 270.804,
+  "te": "Each file can be a P-D-F or a J-P-G, up to ten M-B.",
+  "en": "Each file can be a P-D-F or a J-P-G, up to ten M-B.",
+  "speech_vs_text": 1.49,
+  "boundary_margin": 0.08,
+  "confidence": "check"
+ },
+ {
+  "line": 66,
+  "start": 271.212,
+  "end": 274.516,
+  "te": "Check every detail, tick the declaration, and submit.",
+  "en": "Check every detail, tick the declaration, and submit.",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.08,
+  "confidence": "high"
+ },
+ {
+  "line": 67,
+  "start": 274.839,
+  "end": 277.787,
+  "te": "Your complaint is verified first, and then registered.",
+  "en": "Your complaint is verified first, and then registered.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 68,
+  "start": 278.178,
+  "end": 280.454,
+  "te": "Save the acknowledgement and your complaint number.",
+  "en": "Save the acknowledgement and your complaint number.",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 0.391,
+  "confidence": "high"
+ },
+ {
+  "line": 69,
+  "start": 280.946,
+  "end": 282.34,
+  "te": "Now, what happens next?",
+  "en": "Now, what happens next?",
+  "speech_vs_text": 1.2,
+  "boundary_margin": 1.402,
+  "confidence": "high"
+ },
+ {
+  "line": 70,
+  "start": 282.696,
+  "end": 285.996,
+  "te": "The Ombudsman hears both sides, you and the company.",
+  "en": "The Ombudsman hears both sides, you and the company.",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.13,
+  "confidence": "high"
+ },
+ {
+  "line": 71,
+  "start": 286.358,
+  "end": 289.236,
+  "te": "The hearing can be in person, or online by video.",
+  "en": "The hearing can be in person, or online by video.",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.13,
+  "confidence": "high"
+ },
+ {
+  "line": 72,
+  "start": 289.59,
+  "end": 292.667,
+  "te": "Many complaints end in mediation under Rule sixteen.",
+  "en": "Many complaints end in mediation under Rule sixteen.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.97,
+  "confidence": "high"
+ },
+ {
+  "line": 73,
+  "start": 293.035,
+  "end": 297.836,
+  "te": "The Ombudsman suggests a fair settlement, and if both sides agree, the case closes.",
+  "en": "The Ombudsman suggests a fair settlement, and if both sides agree, the case closes.",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.189,
+  "confidence": "high"
+ },
+ {
+  "line": 74,
+  "start": 298.135,
+  "end": 303.959,
+  "te": "In twenty twenty-four to twenty-five, about one in three health complaints that were closed, ended this way.",
+  "en": "In twenty twenty-four to twenty-five, about one in three health complaints that were closed, ended this way.",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.152,
+  "confidence": "high"
+ },
+ {
+  "line": 75,
+  "start": 304.339,
+  "end": 308.551,
+  "te": "If there is no settlement, the Ombudsman decides the case, and passes an award.",
+  "en": "If there is no settlement, the Ombudsman decides the case, and passes an award.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.152,
+  "confidence": "high"
+ },
+ {
+  "line": 76,
+  "start": 308.999,
+  "end": 310.754,
+  "te": "You don't need fancy legal words.",
+  "en": "You don't need fancy legal words.",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 2.131,
+  "confidence": "high"
+ },
+ {
+  "line": 77,
+  "start": 311.073,
+  "end": 312.632,
+  "te": "Explain your case simply.",
+  "en": "Explain your case simply.",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 78,
+  "start": 313.018,
+  "end": 314.162,
+  "te": "When did you buy the policy?",
+  "en": "When did you buy the policy?",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 79,
+  "start": 314.576,
+  "end": 315.74,
+  "te": "Why were you in the hospital?",
+  "en": "Why were you in the hospital?",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 80,
+  "start": 316.061,
+  "end": 317.683,
+  "te": "And how much did the company cut?",
+  "en": "And how much did the company cut?",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 81,
+  "start": 318.06,
+  "end": 319.382,
+  "te": "And how long does it take?",
+  "en": "And how long does it take?",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 2.493,
+  "confidence": "high"
+ },
+ {
+  "line": 82,
+  "start": 319.856,
+  "end": 327.156,
+  "te": "Of the health complaints the Ombudsman closed in twenty twenty-four to twenty-five, about eight out of ten were closed within three months.",
+  "en": "Of the health complaints the Ombudsman closed in twenty twenty-four to twenty-five, about eight out of ten were closed within three months.",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.718,
+  "confidence": "high"
+ },
+ {
+  "line": 83,
+  "start": 327.502,
+  "end": 329.973,
+  "te": "And here is why this law is built for you.",
+  "en": "And here is why this law is built for you.",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.718,
+  "confidence": "high"
+ },
+ {
+  "line": 84,
+  "start": 330.445,
+  "end": 330.837,
+  "te": "First.",
+  "en": "First.",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 1.547,
+  "confidence": "high"
+ },
+ {
+  "line": 85,
+  "start": 331.165,
+  "end": 336.503,
+  "te": "Under Rule seventeen, when the Ombudsman passes an award, it is binding on the insurance company.",
+  "en": "Under Rule seventeen, when the Ombudsman passes an award, it is binding on the insurance company.",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.194,
+  "confidence": "high"
+ },
+ {
+  "line": 86,
+  "start": 336.929,
+  "end": 339.314,
+  "te": "Wait... what if you are NOT happy with the award?",
+  "en": "Wait... what if you are NOT happy with the award?",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.194,
+  "confidence": "high"
+ },
+ {
+  "line": 87,
+  "start": 339.72,
+  "end": 340.952,
+  "te": "You don't have to accept it.",
+  "en": "You don't have to accept it.",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 2.856,
+  "confidence": "high"
+ },
+ {
+  "line": 88,
+  "start": 341.378,
+  "end": 344.867,
+  "te": "Other legal remedies, like the consumer forum, may still be open to you.",
+  "en": "Other legal remedies, like the consumer forum, may still be open to you.",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 89,
+  "start": 345.296,
+  "end": 345.932,
+  "te": "And second.",
+  "en": "And second.",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 3.096,
+  "confidence": "high"
+ },
+ {
+  "line": 90,
+  "start": 346.251,
+  "end": 355.081,
+  "te": "Under the I-R-D-A-I health master circular of twenty twenty-four, the insurance company must carry out the award within thirty days of receiving it.",
+  "en": "Under the I-R-D-A-I health master circular of twenty twenty-four, the insurance company must carry out the award within thirty days of receiving it.",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 91,
+  "start": 355.413,
+  "end": 365.638,
+  "te": "If it is late, and it has not challenged the award within those thirty days, it must pay you a penalty of five thousand rupees for every day of delay, on top of any interest that is due.",
+  "en": "If it is late, and it has not challenged the award within those thirty days, it must pay you a penalty of five thousand rupees for every day of delay, on top of any interest that is due.",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 92,
+  "start": 366.041,
+  "end": 368.792,
+  "te": "Ten days late, that is fifty thousand rupees.",
+  "en": "Ten days late, that is fifty thousand rupees.",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.194,
+  "confidence": "high"
+ },
+ {
+  "line": 93,
+  "start": 369.04,
+  "end": 372.093,
+  "te": "Thirty days late, one lakh fifty thousand rupees.",
+  "en": "Thirty days late, one lakh fifty thousand rupees.",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.194,
+  "confidence": "high"
+ },
+ {
+  "line": 94,
+  "start": 372.603,
+  "end": 382.153,
+  "te": "And in December twenty twenty-four, the Bombay High Court heard the case of a senior citizen who had won an Ombudsman award, but was not paid for more than three years.",
+  "en": "And in December twenty twenty-four, the Bombay High Court heard the case of a senior citizen who had won an Ombudsman award, but was not paid for more than three years.",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.16,
+  "confidence": "high"
+ },
+ {
+  "line": 95,
+  "start": 382.516,
+  "end": 394.921,
+  "te": "The court ordered the insurance company to pay the award with interest, plus one lakh rupees in costs, and said the costs and interest should be recovered from the officers responsible, after an inquiry.",
+  "en": "The court ordered the insurance company to pay the award with interest, plus one lakh rupees in costs, and said the costs and interest should be recovered from the officers responsible, after an inquiry.",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.16,
+  "confidence": "high"
+ },
+ {
+  "line": 96,
+  "start": 395.426,
+  "end": 397.817,
+  "te": "That is the power of knowing your rights.",
+  "en": "That is the power of knowing your rights.",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.215,
+  "confidence": "high"
+ },
+ {
+  "line": 97,
+  "start": 398.193,
+  "end": 402.082,
+  "te": "You don't need connections, and you don't need to pay twenty percent to middlemen.",
+  "en": "You don't need connections, and you don't need to pay twenty percent to middlemen.",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.62,
+  "confidence": "high"
+ },
+ {
+  "line": 98,
+  "start": 402.547,
+  "end": 403.196,
+  "te": "Be smart.",
+  "en": "Be smart.",
+  "speech_vs_text": 1.43,
+  "boundary_margin": 3.764,
+  "confidence": "check"
+ },
+ {
+  "line": 99,
+  "start": 403.565,
+  "end": 404.375,
+  "te": "Be informed.",
+  "en": "Be informed.",
+  "speech_vs_text": 1.25,
+  "boundary_margin": 0.878,
+  "confidence": "high"
+ },
+ {
+  "line": 100,
+  "start": 404.871,
+  "end": 406.798,
+  "te": "And always... be practical.",
+  "en": "And always... be practical.",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 101,
+  "start": 407.343,
+  "end": 412.804,
+  "te": "In our next episode, we look at consumables, the gloves, masks and syringes on your bill.",
+  "en": "In our next episode, we look at consumables, the gloves, masks and syringes on your bill.",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 102,
+  "start": 413.236,
+  "end": 421.831,
+  "te": "We will open a five lakh rupee hospital bill, line by line, look at what we pay for these consumables, and what the government's price rules say about them.",
+  "en": "We will open a five lakh rupee hospital bill, line by line, look at what we pay for these consumables, and what the government's price rules say about them.",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.404,
+  "confidence": "high"
+ },
+ {
+  "line": 103,
+  "start": 422.321,
+  "end": 426.654,
+  "te": "Hit the subscribe button, share this video with your family, and drop your questions below.",
+  "en": "Hit the subscribe button, share this video with your family, and drop your questions below.",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.404,
+  "confidence": "high"
+ },
+ {
+  "line": 104,
+  "start": 427.063,
+  "end": 428.542,
+  "te": "I'll see you in the next video.",
+  "en": "I'll see you in the next video.",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.779,
+  "confidence": "high"
+ }
+]
