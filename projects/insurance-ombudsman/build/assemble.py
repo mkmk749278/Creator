@@ -98,6 +98,7 @@ SHOTS = [
     PX("PX08", at(19), 1.0, "2 · A CLAIM RECOVERY SERVICE"),
     F("F08", at(19, 0.55), 1.0, "20% OR MORE OF YOUR MONEY"),
     SC("A2_three_doors", "O009"),
+    SC("A1_staircase", "O009", t=at(22)),
     SC("A2_three_doors", "O010"),
     WP("cio", at(24), "FILING IS FREE", "CIO FAQ"),
     SC("C4_binding_award", "O010", t=at(25)),
@@ -138,7 +139,7 @@ SHOTS = [
     WP("cio", at(66), "GRO DETAILS: INSURER + CIOINS.CO.IN", "CIOINS.CO.IN", focus=(0.5, 0.05), zoom=(1.2, 1.6)),
     PX("PX14", at(67), 1.0, "ONE CALM, FORMAL EMAIL"),
     F("F09", at(67, 0.5), 10.0, "POLICY NO · CLAIM NO · WHY IT IS WRONG"),
-    F("F07", at(68), 2.0, "KEEP EVERY COPY"),
+    S(at(68), "clip", src=B(3176), ss=5.0, label="KEEP EVERY COPY", tag=ILL),
     SC("B2_two_step_clock", "O032"),
     SC("B2_two_step_clock", "O033"),
     SC("B2_two_step_clock", "O034"),
@@ -187,7 +188,7 @@ SHOTS = [
     S(at(131), "clip", src=B(63241), ss=2.0, label="NEXT · CONSUMABLES", tag=ILL),
     S(at(131, 0.6), "clip", src=B(151857), ss=1.0, label="GLOVES · MASKS · SYRINGES", tag=ILL),
     S(at(132), "clip", src=B(67764), ss=4.0, label="A ₹5 LAKH BILL, LINE BY LINE", tag=ILL),
-    F("F07", at(132, 0.55), 12.0, "WHAT THE PRICE RULES SAY", tag=ILL),
+    F("F19", at(132, 0.55), 3.0, "WHAT THE PRICE RULES SAY", tag=ILL),
     S(at(133), "end"),
 ]
 
@@ -332,7 +333,7 @@ def write_edl(shots):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=1080); ap.add_argument("--edl", action="store_true")
+    ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=1080); ap.add_argument("--edl", action="store_true"); ap.add_argument("--shots-only", action="store_true")
     a = ap.parse_args()
     shots = shot_list(); write_edl(shots)
     durs = [(shots[i + 1]["t"] if i + 1 < len(shots) else END) - s["t"] for i, s in enumerate(shots)]
@@ -350,6 +351,8 @@ def main():
         if not f.exists():
             render(s, d, f, W, H)
         parts.append(f)
+    if a.shots_only:
+        print("shots rendered"); return
     lst = out / "list.txt"; lst.write_text("".join(f"file '{p}'\n" for p in parts))
     silent = A / f"picture_{H}.mp4"
     # one pass over the joined picture: logo bug (top right), fine film grain
@@ -357,7 +360,7 @@ def main():
     fc = (f"[0:v]noise=alls=5:allf=t[v];[1:v]scale={int(H*0.075)}:-2,format=rgba,colorchannelmixer=aa=0.8[l];"
           f"[v][l]overlay=W-w-{int(H*0.045)}:{int(H*0.045)}")
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-loop", "1", "-i", logo, "-filter_complex", fc,
-         "-t", f"{END:.3f}", "-c:v", "libx264", "-preset", "medium", *rate(H, 5), "-pix_fmt", "yuv420p", "-r", "30", silent])
+         "-t", f"{END:.3f}", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 5), "-pix_fmt", "yuv420p", "-r", "30", silent])
     print("picture:", silent)
 
 
