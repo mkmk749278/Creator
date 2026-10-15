@@ -64,3 +64,9 @@ projects/jet-engine-paradox/qa/
 # thumbnail inputs are regenerated from assets (thumb.html + thumbnail.jpg are kept)
 projects/jet-engine-paradox/thumbnail/*.png
 projects/jet-engine-paradox/thumbnail/pixabay_*.jpg
+video/insurance-ombudsman/*/media/
+video/insurance-ombudsman/*/render.log
+video/insurance-ombudsman/_A/render_status.txt
+video/insurance-ombudsman/_A/*.jpg
+video/insurance-ombudsman/_A/out/
+*.mov
