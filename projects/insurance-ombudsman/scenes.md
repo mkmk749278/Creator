@@ -1,5 +1,7 @@
 # Scene specs: The Insurance Ombudsman (generated from timing.csv; film time = ch1 + 1.5 s + ch2-4)
 
+**Correction (S0, 2026-10-15):** C3_document_slots also covers **O047** (395.5–403.1, the fifth document and PDF / JPG · MAX 10 MB EACH); C1_filing_stepper renders **O048** (403.6–412.8, submit → verified → registered → acknowledgement), not O047.
+
 ## A1_staircase (session A)
 Four-step staircase (Episode 01 motif, rebuilt in this film's palette): steps 1-4 light in turn, step 4 stays lit; then step 4 turns into the third door (hand-off to A2). Also a 6 s loop-free corner version (lower left) for chapter 2-3 callbacks.
 
