@@ -18,7 +18,7 @@ No voiceover was supplied: the owner records `voice/bp-hlth02-ch1.mp3` … `ch4.
 fact-check fixes are in.
 
 ## Script v1: what changed from the owner's text, and why
-The structure, order and voice are the owner's (65 lines, 4 chapters, one ElevenLabs block per chapter, ≈ 10:10 of
+The structure, order and voice are the owner's (65 lines, 4 chapters, one ElevenLabs block per chapter, ≈ 10:30 of
 speech). Formatting follows the English VO lint (no `!`, quotes, dashes or digits; hyphen-spelled acronyms as the owner
 wrote them; the `[sigh]`/`[pause]`/`[slight smile]` cues moved to the pacing column). Every claim the owner's own asset
 pack or the CIO pages could not support was rewritten; each change is commented in `tools/make_tsv.py`:
@@ -43,15 +43,21 @@ pack or the CIO pages could not support was rewritten; each change is commented 
 | Next episode: hospitals **violate** price caps (O063) | "the price caps the government has set on some of them" | No allegation in a teaser |
 
 ## Series continuity (owner, 2026-10-15; PLAYBOOK §4a-4)
+**Stands alone:** a viewer who never saw Episode 01 understands everything. The film opens on the situation ("Imagine
+you are standing at a hospital billing counter…"), O002 teaches what is needed from Episode 01 (cashless denial is not
+the end; pay and claim back; the four steps), and every term is glossed on first use. Episode 01 is a pointer ("we
+told this story in our last video"), never required. **Glimpses:** 2–4 s shots from Episode 01's final cut under O001–O002
+(counter, the CASHLESS DENIED letter, the staircase), labelled `FROM EPISODE 1`.
+
 Episode 02 continues Episode 01 as one story; checked against Episode 01's recorded script (`../health-claim-trap/script.full.tsv`)
 and its published description:
 | Episode 01 said | Episode 02 |
 |---|---|
 | 9 PM billing counter, ₹4,50,000 bill, cashless denied, six-year policy (E001–E007) | O001 recap with the same SIMULATION bill and red stamp; all amounts derive from ₹4.5 lakh |
-| Four steps: papers → reimbursement + GRO (14 days) → Bima Bharosa → Ombudsman (E044–E056) | O002 recap on the same staircase motif; O009 "remember step four"; O029 "this is step two from our last video" |
+| Four steps: papers → reimbursement + GRO (14 days) → Bima Bharosa → Ombudsman (E044–E056) | O002 recap on the same staircase motif; O009 "step four of that plan"; O029 "this is step two of our plan" |
 | Bima Bharosa = IRDAI's portal, complaints tracked by IRDAI (E050) | O014–O018: useful, on the regulator's record, but not a court; that is why step four exists |
-| Ombudsman: free, online, no lawyer, 18 offices, ₹50 lakh, binding; 76%; 8 in 10 within 3 months (E052–E056) | same facts, same sources; O010 "last time we had one minute for it"; O054 reuses "8 in 10 within three months" as the honest answer to "60 days" |
-| Rule three: consumables (E060) | O064 teases Episode 03 as "rule three from our first video" |
+| Ombudsman: free, online, no lawyer, 18 offices, ₹50 lakh, binding; 76%; 8 in 10 within 3 months (E052–E056) | same facts, same sources; O054 reuses "8 in 10 within three months" as the honest answer to "60 days" |
+| Rule three: consumables (E060) | O064 teases Episode 03 in its own words (consumables) |
 | Title B / thumbnail B: "4 Steps to Get Your Money Back" | working title "… Step 4: The Insurance Ombudsman" |
 
 ## Genre and look (PLAYBOOK §5.3, its own art direction)
@@ -68,13 +74,11 @@ portal and directory, and Bima Bharosa (focused excerpts); SIMULATION emails, le
 hospital or agency names; invented numbers). Every computed number carries `OUR CALCULATION`. "Educational only, not
 legal advice" on the end card and in the description. YouTube altered content = No.
 
-## Open questions for the owner
-1. **Voice:** the directive names ElevenLabs **Akash** (v4, stability 0.65, similarity 0.85, style 0.15, speaker
-   boost), as in Episode 01. Using Akash unless the owner says otherwise.
-2. **Host clips:** the pack has no Kishore footage. 3–4 short phone clips to camera (O010–O011, O061–O064) would help;
-   otherwise the film stays faceless.
-3. **CIO tutorial video** (`S09`): reference only, no reuse licence. A fresh screen capture of cioins.co.in's public
-   pages is safer.
+## Owner decisions (2026-10-15)
+1. **Voice: Akash** (ElevenLabs v4, stability 0.65, similarity 0.85, style 0.15, speaker boost), as in Episode 01.
+2. **Faceless:** no host clips; desk, phone, document and footage shots carry the film.
+3. Still open: the CIO tutorial video (`S09`) is reference only (no reuse licence); a fresh capture of cioins.co.in's
+   public pages is used instead.
 
 ## Files
 | File | What |

@@ -881,12 +881,18 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
    on, not reset. Worked examples derive from the earlier numbers.
 3. **Never contradict earlier advice.** If episode 1 said "step 3: Bima Bharosa", episode 2 explains why step 3 alone is
    not the end; it does not call it a mistake. Facts both films state use the same source and wording (claims rows reused).
-4. **No "nobody tells you" about something we already told them.** Open with a 15–25 s recap ("In our last video …"),
-   name the step we are opening, then go deeper than last time.
+4. **Every episode stands alone (owner, 2026-10-15: "even with the second video they need to understand everything;
+   no need to watch" the first).** Open on the situation itself ("Imagine you are standing at …"), then a 15–25 s recap
+   that teaches what the viewer needs from the earlier film; the earlier film is a pointer ("we told this story in our
+   last video"), never a requirement. Gloss every term on first use as if new (cashless, Bima Bharosa, GRO); no "as we
+   saw last time", "remember step four" or "rule three from our first video". No "nobody tells you" about something we
+   already told them.
+4b. **Glimpses:** 2–4 s shots from the earlier film's final cut in the recap (labelled `FROM EPISODE 1`), so returning
+   viewers recognise the story and new ones see it.
 5. **Recurring motifs** (the four-step staircase, the same SIMULATION letter design) tie the episodes together; each
    film still gets its own art direction for its new parts (§4a).
-6. **Callbacks both ways:** link back ("step two from our last video") and tease the next episode from an earlier promise
-   (episode 1's rule three, consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
+6. **Callbacks without dependence:** link back through the recap ("step two of our plan") and tease the next episode in
+   its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
 
 ## 15. Lessons log
 

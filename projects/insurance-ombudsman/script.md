@@ -2,20 +2,20 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **10:10** of speech (8,279 characters, 4 Bunty blocks), plus pauses and music beats.
+Estimated length: **10:32** of speech (8,576 characters, 4 Bunty blocks), plus pauses and music beats.
 
 ## 1 The rejection email and the two doors
 
 **O001** · block 1  
-**In our last video, you were standing at a hospital billing counter at nine o'clock at night. A four and a half lakh rupee bill, and your cashless claim was denied.**  
+**Imagine you are standing at a hospital billing counter at nine o'clock at night. The bill is four and a half lakh rupees, and your cashless claim, where the insurance company pays the hospital directly, has just been denied. We told this story in our last video.**  
 __  
-🎬 Episode 01 reprise: F05 counter hands, then Episode 01's SIMULATION bill ₹4,50,000 and the red CASHLESS DENIED stamp (same design).  
-🔤 PREVIOUSLY · SIMULATION  
+🎬 Glimpse from Episode 01's final cut (2–4 s): the counter, then its SIMULATION bill ₹4,50,000 and the red CASHLESS DENIED stamp (same design).  
+🔤 FROM EPISODE 1 · SIMULATION  
 🔊 Hospital room tone; logo bug from 0:02  
 ⏱ Cold open, no music for 2 s
 
 **O002** · block 1  
-**We learned that a cashless denial is not a claim rejection, and we made a four-step plan. Collect your papers. File for reimbursement and write to the grievance officer. Register on Bima Bharosa. And step four, the Insurance Ombudsman.**  
+**Here is what you need to know from it. A cashless denial is not the end of your claim. You can pay the hospital, and claim the money back later. And if the company still says no, there is a four-step plan. Collect your papers. File for reimbursement and write to the grievance officer. Register on Bima Bharosa. And step four, the Insurance Ombudsman.**  
 __  
 🎬 Episode 01's four-step staircase rises lower left; steps 1 to 4 light in turn; step 4 stays lit.  
 🔤 STEP 1 · 2 · 3 · 4  
@@ -60,7 +60,7 @@ __
 🔤 SIMULATION
 
 **O009** · block 1  
-**Stop right there. Before you pick either door, remember step four from our last video.**  
+**Stop right there. Before you pick either door, there is a third one. Step four of that plan.**  
 __  
 🎬 Both doors dim; the lit step 4 of the staircase becomes a third door opening in teal light (ILLUSTRATION).  
 🔤 STEP 4  
@@ -68,7 +68,7 @@ __
 ⏱ [pause] before the line (owner's cue)
 
 **O010** · block 1  
-**Last time, we had only one minute for it. Today, we open that door fully. Filing a complaint costs zero rupees. If the Ombudsman passes an award, it is binding on the insurance company. And if the company pays that award late, it has to pay you a penalty of five thousand rupees for every day of delay.**  
+**Today, we open that door fully, from start to finish. Filing a complaint costs zero rupees. If the Ombudsman passes an award, it is binding on the insurance company. And if the company pays that award late, it has to pay you a penalty of five thousand rupees for every day of delay.**  
 __  
 🎬 G04 Binding Award panel reveal; S01 Rules p11 push-in on the award clause.  
 🔤 FREE TO FILE · AWARD BINDS THE INSURER · ₹5,000 / DAY LATE [IRDAI HEALTH MASTER CIRCULAR | 2024]
@@ -76,7 +76,7 @@ __
 **O011** · block 1  
 **Welcome to Be Practical with Kishore.**  
 __  
-🎬 Logo sting; owner's host clip if supplied.  
+🎬 Logo sting over F14 Hyderabad (faceless film, owner 2026-10-15).  
 🔊 Logo sting
 
 **O012** · block 1  
@@ -93,7 +93,7 @@ __
 ## 2 Bima Bharosa, the Ombudsman and the middleman
 
 **O014** · block 2  
-**First... step three, Bima Bharosa. Many families stop there, and here is why that is not enough.**  
+**First... step three, Bima Bharosa, the online complaint portal of the insurance regulator, the I-R-D-A-I. Many families stop there, and here is why that is not enough.**  
 __  
 🎬 Staircase: step 3 lights; S07 Bima Bharosa home page push-in (the same capture as Episode 01).  
 🔤 STEP 3 · bimabharosa.irdai.gov.in
@@ -183,7 +183,7 @@ __
 🔤 THE TWO-STEP CLOCK
 
 **O029** · block 3  
-**Clock step one. This is step two from our last video. Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.**  
+**Clock step one. This is step two of our plan. Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.**  
 __  
 🎬 F09 typing; an illustrative email builds: policy number, claim number, amount, reason (invented numbers).  
 🔤 SIMULATION  
@@ -329,7 +329,7 @@ __
 🎬 F07 / F19 hand crop over papers.
 
 **O054** · block 4  
-**And how long does it take? As we saw last time, about eight out of ten complaints were closed within three months.**  
+**And how long does it take? In twenty twenty-four to twenty-five, about eight out of ten health complaints were closed within three months.**  
 __  
 🎬 A calendar strip fills to three months; 8 of 10 files close.  
 🔤 8 IN 10 WITHIN 3 MONTHS [CIO ANNUAL REPORT | 2024–25]
@@ -389,7 +389,7 @@ __
 🎬 Logo.
 
 **O064** · block 4  
-**In our next episode, we go back to rule three from our first video, consumables. We will open a five lakh rupee hospital bill, line by line, look at what we pay for surgical consumables, and the price caps the government has set on some of them.**  
+**In our next episode, we look at consumables, the gloves, masks and syringes on your bill. We will open a five lakh rupee hospital bill, line by line, look at what we pay for surgical consumables, and the price caps the government has set on some of them.**  
 __  
 🎬 F13 detail, bill close-up (SIMULATION).  
 🔤 NEXT EPISODE

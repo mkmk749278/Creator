@@ -101,7 +101,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   figures. Hard gates beside the fact-check: synthetic-content disclosure, health context (WHO/ICMR + skeptic), SEBI
   education-only lane (no buy/sell calls, price data ≥ 30 days old, disclaimer), Press Council suicide norms.
 - **Series continuity (owner, 2026-10-15):** a film that continues an earlier one reads the earlier script first, keeps its
-  family, numbers and documents, never contradicts its advice, opens with a short recap and calls back (PLAYBOOK §4a-4).
+  family, numbers and documents, never contradicts its advice, and still stands alone: a short recap with glimpses teaches what the earlier film said,
+  so no one has to watch it first (PLAYBOOK §4a-4).
 - **Narration language: English by default** (owner, 2026-10-11; *why:* Telugu-only films reach too few viewers).
   Simple, everyday Indian English that any Indian understands: short sentences, common words (pay, spend, money, bill,
   salary), lakh/crore and rupees, no hard "international" vocabulary or idioms; the same warm elder-brother, talk-don't-read

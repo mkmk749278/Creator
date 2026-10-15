@@ -17,16 +17,17 @@ ILL = "ILLUSTRATIVE FOOTAGE"
 
 # (section, en, visual, onscreen, sound, pacing)
 L = [
-    # Series continuity (owner, 2026-10-15: "maintain natural flow ... look at the first video"): Episode 01
+    # Series continuity (owner, 2026-10-15: "maintain natural flow ... look at the first video"; then: "give glimpses of
+    # the first video, but even with the second video they need to understand everything; no need to watch"): Episode 01
     # (projects/health-claim-trap) left a family at a hospital counter at 9 PM with a ₹4.5 lakh bill and a denied
     # cashless claim, and gave a four-step plan ending at the Ombudsman. Episode 02 is step four, opened up: same family,
     # same bill, same SIMULATION documents and the four-step staircase, no contradiction of Episode 01's advice.
     # was: "In our last video, we saw what to do when the hospital desk rejects your cashless claim at nine o'clock at night."
-    (C1, "In our last video, you were standing at a hospital billing counter at nine o'clock at night. A four and a half lakh rupee bill, and your cashless claim was denied.",
-     "Episode 01 reprise: F05 counter hands, then Episode 01's SIMULATION bill ₹4,50,000 and the red CASHLESS DENIED stamp (same design).",
-     "PREVIOUSLY · SIMULATION", "Hospital room tone; logo bug from 0:02", "Cold open, no music for 2 s"),
+    (C1, "Imagine you are standing at a hospital billing counter at nine o'clock at night. The bill is four and a half lakh rupees, and your cashless claim, where the insurance company pays the hospital directly, has just been denied. We told this story in our last video.",
+     "Glimpse from Episode 01's final cut (2–4 s): the counter, then its SIMULATION bill ₹4,50,000 and the red CASHLESS DENIED stamp (same design).",
+     "FROM EPISODE 1 · SIMULATION", "Hospital room tone; logo bug from 0:02", "Cold open, no music for 2 s"),
     # new line: the four steps from Episode 01 (E044-E056), so a new viewer knows where this film starts
-    (C1, "We learned that a cashless denial is not a claim rejection, and we made a four-step plan. Collect your papers. File for reimbursement and write to the grievance officer. Register on Bima Bharosa. And step four, the Insurance Ombudsman.",
+    (C1, "Here is what you need to know from it. A cashless denial is not the end of your claim. You can pay the hospital, and claim the money back later. And if the company still says no, there is a four-step plan. Collect your papers. File for reimbursement and write to the grievance officer. Register on Bima Bharosa. And step four, the Insurance Ombudsman.",
      "Episode 01's four-step staircase rises lower left; steps 1 to 4 light in turn; step 4 stays lit.", "STEP 1 · 2 · 3 · 4", "Four soft ticks", ""),
     # was: "You paid the bill from your pocket ..." (owner's line, kept)
     (C1, "So you paid the bill from your pocket, collected your hospital papers, came home, and filed for reimbursement.",
@@ -53,17 +54,17 @@ L = [
     # was: "[pause] Stop right there. Both of those choices are a trap." (a court can be the right remedy; the film offers
     # a third door instead of calling the court a trap)
     # was: "[pause] Stop right there. Both of those choices are a trap." (a court can be the right remedy)
-    (C1, "Stop right there. Before you pick either door, remember step four from our last video.",
+    (C1, "Stop right there. Before you pick either door, there is a third one. Step four of that plan.",
      "Both doors dim; the lit step 4 of the staircase becomes a third door opening in teal light (ILLUSTRATION).", "STEP 4",
      "Music out 1.5 s before, then a low thud", "[pause] before the line (owner's cue)"),
     # was: "What nobody tells you... is that the Government of India created a special judicial weapon where filing costs
     # zero rupees, the verdict is one hundred percent binding ... a mandatory penalty of five thousand rupees for every
     # single day of delay" (Episode 01 already introduced the Ombudsman, so "nobody tells you" would contradict it; the
     # award binds the insurer only; the penalty is per IRDAI FAQ 45 / master circular para 20)
-    (C1, "Last time, we had only one minute for it. Today, we open that door fully. Filing a complaint costs zero rupees. If the Ombudsman passes an award, it is binding on the insurance company. And if the company pays that award late, it has to pay you a penalty of five thousand rupees for every day of delay.",
+    (C1, "Today, we open that door fully, from start to finish. Filing a complaint costs zero rupees. If the Ombudsman passes an award, it is binding on the insurance company. And if the company pays that award late, it has to pay you a penalty of five thousand rupees for every day of delay.",
      "G04 Binding Award panel reveal; S01 Rules p11 push-in on the award clause.",
      "FREE TO FILE · AWARD BINDS THE INSURER · ₹5,000 / DAY LATE [IRDAI HEALTH MASTER CIRCULAR | 2024]", "", ""),
-    (C1, "Welcome to Be Practical with Kishore.", "Logo sting; owner's host clip if supplied.", "", "Logo sting", ""),
+    (C1, "Welcome to Be Practical with Kishore.", "Logo sting over F14 Hyderabad (faceless film, owner 2026-10-15).", "", "Logo sting", ""),
     # was: "Today, let's unlock the Insurance Ombudsman. I will show you the exact mistake that got seventeen hundred
     # families thrown out last year, the portal to use, and how to get your money back in sixty days without giving a
     # single rupee to middlemen." (1,715 not verified at table level; no 60-day outcome: Rule 17 gives three months)
@@ -74,7 +75,7 @@ L = [
     # was: "First... let's clear up the single biggest confusion on the internet. When your claim is rejected, many people
     # tell you: Go file a complaint on the Bima Bharosa portal!" (Episode 01 made Bima Bharosa step three, so this film
     # must not call it a mistake; it explains why step three alone is not the end)
-    (C2, "First... step three, Bima Bharosa. Many families stop there, and here is why that is not enough.",
+    (C2, "First... step three, Bima Bharosa, the online complaint portal of the insurance regulator, the I-R-D-A-I. Many families stop there, and here is why that is not enough.",
      "Staircase: step 3 lights; S07 Bima Bharosa home page push-in (the same capture as Episode 01).", "STEP 3 · bimabharosa.irdai.gov.in", "", ""),
     # was: "Ten days later, you get the exact same copy-paste rejection letter ... and the case is marked closed!"
     # (kept as a common experience, not a promise of what always happens)
@@ -120,7 +121,7 @@ L = [
     (C3, "Under Rule fourteen, you must follow a two-step clock.", "G03 Process Clocks: two dials appear.", "THE TWO-STEP CLOCK", "", ""),
     # was: "Clock Step One: Write to the insurance company's Grievance Redressal Officer, the G-R-O." (Rule 14(3)(a):
     # a representation to the insurer; the GRO is the practical address)
-    (C3, "Clock step one. This is step two from our last video. Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.",
+    (C3, "Clock step one. This is step two of our plan. Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.",
      "F09 typing; an illustrative email builds: policy number, claim number, amount, reason (invented numbers).", "SIMULATION", "Keyboard", ""),
     (C3, "Every insurer publishes its grievance officer's email on its website. Send one calm, formal email with your policy number, your claim number, and why their deduction is wrong.", "", "", "", ""),
     (C3, "Keep a copy of that email and every reply. You will need them later.", "F07/F10 the email, the reply and the bills drop into one folder.", "", "", ""),
@@ -178,7 +179,7 @@ L = [
     (C4, "You don't need fancy legal words. Explain your case simply. When did you buy the policy? Why were you in the hospital? And how much did the company cut?",
      "F07 / F19 hand crop over papers.", "", "", ""),
     # new line, the honest answer to the owner's "sixty days": the same CIO 2024-25 figure Episode 01 used (E055)
-    (C4, "And how long does it take? As we saw last time, about eight out of ten complaints were closed within three months.",
+    (C4, "And how long does it take? In twenty twenty-four to twenty-five, about eight out of ten health complaints were closed within three months.",
      "A calendar strip fills to three months; 8 of 10 files close.", "8 IN 10 WITHIN 3 MONTHS [CIO ANNUAL REPORT | 2024–25]", "", ""),
     (C4, "And here is why this law is built for you.", "", "", "", ""),
     # was: "Under Rule Seventeen ... it is one hundred percent legally binding on the insurance company!"
@@ -210,7 +211,7 @@ L = [
     (C4, "Be smart. Be informed. And always... be practical.", "Logo.", "", "", ""),
     # was: "expose how hospitals inflate surgical consumables, and the exact government price caps they violate" (no
     # allegation in a teaser; NPPA caps exist only for some items)
-    (C4, "In our next episode, we go back to rule three from our first video, consumables. We will open a five lakh rupee hospital bill, line by line, look at what we pay for surgical consumables, and the price caps the government has set on some of them.",
+    (C4, "In our next episode, we look at consumables, the gloves, masks and syringes on your bill. We will open a five lakh rupee hospital bill, line by line, look at what we pay for surgical consumables, and the price caps the government has set on some of them.",
      "F13 detail, bill close-up (SIMULATION).", "NEXT EPISODE", "", ""),
     (C4, "Hit the subscribe button, share this video with your family, and drop your questions below. I'll see you in the next video.",
      "End card.", "EDUCATIONAL ONLY · NOT LEGAL ADVICE", "", ""),
