@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **10:32** of speech (8,576 characters, 4 Bunty blocks), plus pauses and music beats.
+Estimated length: **10:58** of speech (8,961 characters, 4 Bunty blocks), plus pauses and music beats.
 
 ## 1 The rejection email and the two doors
 
@@ -18,7 +18,7 @@ __
 **Here is what you need to know from it. A cashless denial is not the end of your claim. You can pay the hospital, and claim the money back later. And if the company still says no, there is a four-step plan. Collect your papers. File for reimbursement and write to the grievance officer. Register on Bima Bharosa. And step four, the Insurance Ombudsman.**  
 __  
 🎬 Episode 01's four-step staircase rises lower left; steps 1 to 4 light in turn; step 4 stays lit.  
-🔤 STEP 1 · 2 · 3 · 4  
+🔤 STEP 4: INSURANCE OMBUDSMAN · FREE  
 🔊 Four soft ticks
 
 **O003** · block 1  
@@ -37,24 +37,24 @@ __
 ⏱ [sigh] beat before the line (owner's cue)
 
 **O005** · block 1  
-**Either the insurance company rejects your claim all over again... or worse, out of your four and a half lakh rupee bill, they approve just one lakh twenty thousand, and silently cut the remaining three lakh thirty thousand rupees.**  
+**Either the insurance company rejects your claim all over again... or worse, out of your four and a half lakh rupee bill, they approve just one lakh twenty thousand, and cut the remaining three lakh thirty thousand rupees.**  
 __  
 🎬 G01 Claim Deduction (amounts re-set to Episode 01's bill): total, approved part fills, the cut peels away in coral.  
 🔤 ₹4,50,000 BILL · ₹1,20,000 PAID · ₹3,30,000 CUT · EXAMPLE  
 🔊 Small transient on the cut
 
 **O006** · block 1  
-**At that moment, most middle-class families think they only have two choices.**  
+**At that moment, many families think they only have two choices.**  
 __  
 🎬 A dim corridor splits into two doors (ILLUSTRATION).
 
 **O007** · block 1  
-**Choice one. Hire a lawyer, go to consumer court, pay the fees, and wait, often for a long time, for a verdict.**  
+**Choice one. Hire a lawyer, go to consumer court, and wait, often for a long time, for a verdict.**  
 __  
 🎬 Left door: F02 paper detail, case files stacking (no dusty five-year court graphic).
 
 **O008** · block 1  
-**Or choice two. Answer one of those ads for a private claim recovery service, which promises to fight your case, but some ask for as much as twenty percent of the money they recover as their fee.**  
+**Or choice two. Answer one of those ads for a private claim recovery service, which promises to fight your case, but some ask for twenty percent or more of the money they recover as their fee.**  
 __  
 🎬 Right door: F08 a hand signing an unbranded agreement; phone ad frame (SIMULATION, no real brand).  
 🔤 SIMULATION
@@ -68,10 +68,10 @@ __
 ⏱ [pause] before the line (owner's cue)
 
 **O010** · block 1  
-**Today, we open that door fully, from start to finish. Filing a complaint costs zero rupees. If the Ombudsman passes an award, it is binding on the insurance company. And if the company pays that award late, it has to pay you a penalty of five thousand rupees for every day of delay.**  
+**Today, we open that door fully, from start to finish. Filing a complaint costs zero rupees. If the Ombudsman passes an award, it is binding on the insurance company. And if the company does not challenge the award, but pays it late, it has to pay you a penalty of five thousand rupees for every day of delay.**  
 __  
 🎬 G04 Binding Award panel reveal; S01 Rules p11 push-in on the award clause.  
-🔤 FREE TO FILE · AWARD BINDS THE INSURER · ₹5,000 / DAY LATE [IRDAI HEALTH MASTER CIRCULAR | 2024]
+🔤 FREE TO FILE [CIO FAQ] · AWARD BINDS THE INSURER [RULE 17] · ₹5,000 / DAY LATE [IRDAI HEALTH MASTER CIRCULAR | 2024]
 
 **O011** · block 1  
 **Welcome to Be Practical with Kishore.**  
@@ -80,7 +80,7 @@ __
 🔊 Logo sting
 
 **O012** · block 1  
-**Today, I will show you the one mistake that gets complaints turned away at the door, how to file on the official website step by step, what happens at the hearing, and what the company must do after it loses. All without paying a single rupee to middlemen.**  
+**Today, I will show you one common mistake that gets complaints turned away at the door, how to file on the official website step by step, what happens at the hearing, and what the company must do after it loses. All without paying a single rupee to middlemen.**  
 __  
 🎬 Quick preview: RETURNED stamp, cioins.co.in typed, a hearing frame, the ₹5,000 meter (F09, F12, G06).
 
@@ -93,10 +93,10 @@ __
 ## 2 Bima Bharosa, the Ombudsman and the middleman
 
 **O014** · block 2  
-**First... step three, Bima Bharosa, the online complaint portal of the insurance regulator, the I-R-D-A-I. Many families stop there, and here is why that is not enough.**  
+**First... step three, Bima Bharosa, the online complaint portal of the insurance regulator, the I-R-D-A-I. It often works. But if it does not work for you, do not stop there.**  
 __  
 🎬 Staircase: step 3 lights; S07 Bima Bharosa home page push-in (the same capture as Episode 01).  
-🔤 STEP 3 · bimabharosa.irdai.gov.in
+🔤 STEP 3 · bimabharosa.irdai.gov.in · 63% SETTLED FOR THE POLICYHOLDER, 2025–26 [IRDAI CONSULTATION PAPER | 2026]
 
 **O015** · block 2  
 **You register on Bima Bharosa, upload your papers, and wait. Many people then get the same rejection letter from the insurance company again, and the complaint is closed.**  
@@ -111,19 +111,19 @@ __
 🔤 ILLUSTRATIVE FOOTAGE
 
 **O017** · block 2  
-**Here is why. Bima Bharosa is useful. Your complaint goes on the regulator's record, and the company has to answer it. But Bima Bharosa is NOT a court. Your complaint goes to the same insurance company that cut your claim, and the I-R-D-A-I tracks how the company handles it. Bima Bharosa does not decide your claim, and it cannot pass an order telling the company to pay you.**  
+**Here is why. Bima Bharosa is useful. Your complaint goes on the regulator's record, and the company has to answer it. But Bima Bharosa is NOT a court. Your complaint goes to the same insurance company that cut your claim, and the I-R-D-A-I tracks how the company handles it. Bima Bharosa does not decide your claim, and it does not pass an order telling the company to pay you.**  
 __  
 🎬 Animated ticket travels from the phone to the insurer's inbox; an IRDAI tracker follows it (ILLUSTRATION).  
 🔤 TRACKS · DOES NOT DECIDE [BIMA BHAROSA | IRDAI]
 
 **O018** · block 2  
-**That is why step four exists. The body that can pass a binding award in your case... is the Insurance Ombudsman, set up under the Insurance Ombudsman Rules, twenty seventeen.**  
+**That is why step four exists. The body that can pass a binding award in your case... is the Insurance Ombudsman, which works under the Insurance Ombudsman Rules, twenty seventeen.**  
 __  
 🎬 S03 FAQ → S01 Rules cover push-in, gold highlighter.  
 🔤 [INSURANCE OMBUDSMAN RULES | 2017]
 
 **O019** · block 2  
-**Now, look at the second trap. Private claim recovery companies.**  
+**Now, back to the second door. Private claim recovery companies.**  
 __  
 🎬 F08 agreement on a desk.  
 🔤 ILLUSTRATIVE FOOTAGE
@@ -138,7 +138,7 @@ __
 **Twenty percent of three lakh thirty thousand is sixty-six thousand rupees. Add eighteen percent G-S-T, and it is seventy-seven thousand eight hundred and eighty rupees out of your family's medical savings.**  
 __  
 🎬 G02: fee splits off, GST joins last.  
-🔤 ₹66,000 FEE + 18% GST = ₹77,880 · OUR CALCULATION  
+🔤 ₹66,000 FEE + 18% GST (ASSUMED) = ₹77,880 · OUR CALCULATION  
 🔊 Coin tick per figure
 
 **O022** · block 2  
@@ -172,9 +172,10 @@ __
 🔊 Stamp thud
 
 **O027** · block 3  
-**Every year, many complaints are not even taken up, because one basic step was missed.**  
+**In twenty twenty-four to twenty-five alone, seventeen hundred and fifteen health complaints were turned away for this one reason. The person had not complained to the insurance company first.**  
 __  
-🎬 
+🎬 Files stack and bounce off the closed door (ILLUSTRATION); the CIO table H8 row under a magnifier.  
+🔤 1,715 HEALTH COMPLAINTS TURNED AWAY · NO COMPLAINT TO THE INSURER FIRST [CIO ANNUAL REPORT 2024–25 | STATEMENT H8]
 
 **O028** · block 3  
 **Under Rule fourteen, you must follow a two-step clock.**  
@@ -190,7 +191,7 @@ __
 🔊 Keyboard
 
 **O030** · block 3  
-**Every insurer publishes its grievance officer's email on its website. Send one calm, formal email with your policy number, your claim number, and why their deduction is wrong.**  
+**Every insurer has to show its grievance officer's details on its website, and the Ombudsman's website lists their email addresses too. Send one calm, formal email with your policy number, your claim number, and why their deduction is wrong.**  
 __  
 🎬 
 
@@ -232,7 +233,7 @@ __
 **And remember one strict condition. The Ombudsman cannot take your complaint if the same dispute is already pending, or already decided, in any court, consumer forum, or arbitration.**  
 __  
 🎬 S01 Rules p9 crop: pending OR disposed of.  
-🔤 PENDING OR DECIDED ELSEWHERE = NOT ALLOWED [RULE 14(3)]
+🔤 PENDING OR DECIDED ELSEWHERE = NOT ALLOWED [RULE 14(5)]
 
 ## 4 Filing, the hearing and the award
 
@@ -307,21 +308,21 @@ __
 🎬 
 
 **O050** · block 4  
-**Many complaints end in mediation under Rule sixteen. The Ombudsman suggests a fair settlement, and if both sides agree, the case closes. Last year, about one in three health complaints that were closed, ended this way.**  
+**The Ombudsman hears both sides, you and the company. The hearing can be in person, or online by video.**  
+__  
+🎬 F12 / PX13 hearing on a laptop, labelled; F11 detail.  
+🔤 ILLUSTRATIVE HEARING
+
+**O051** · block 4  
+**Many complaints end in mediation under Rule sixteen. The Ombudsman suggests a fair settlement, and if both sides agree, the case closes. In twenty twenty-four to twenty-five, about one in three health complaints that were closed, ended this way.**  
 __  
 🎬 Two document cards slide together (ILLUSTRATION); S01 Rules p10 crop.  
 🔤 ≈ 1 IN 3 · OUR CALCULATION [CIO ANNUAL REPORT | 2024–25]
 
-**O051** · block 4  
-**Often, once the Ombudsman's notice reaches the insurer, the company agrees to pay before any hearing takes place.**  
-__  
-🎬 
-
 **O052** · block 4  
-**If there is no settlement, there is a hearing. It can be in person, or online by video.**  
+**If there is no settlement, the Ombudsman decides the case, and passes an award.**  
 __  
-🎬 F12 hearing room, labelled; F11 detail.  
-🔤 ILLUSTRATIVE HEARING
+🎬 G04 award panel; S01 Rules p11 award clause.
 
 **O053** · block 4  
 **You don't need fancy legal words. Explain your case simply. When did you buy the policy? Why were you in the hospital? And how much did the company cut?**  
@@ -329,10 +330,10 @@ __
 🎬 F07 / F19 hand crop over papers.
 
 **O054** · block 4  
-**And how long does it take? In twenty twenty-four to twenty-five, about eight out of ten health complaints were closed within three months.**  
+**And how long does it take? Of the health complaints the Ombudsman closed in twenty twenty-four to twenty-five, about eight out of ten were closed within three months.**  
 __  
 🎬 A calendar strip fills to three months; 8 of 10 files close.  
-🔤 8 IN 10 WITHIN 3 MONTHS [CIO ANNUAL REPORT | 2024–25]
+🔤 8 IN 10 CLOSED CASES · UNDER 3 MONTHS [CIO ANNUAL REPORT | 2024–25]
 
 **O055** · block 4  
 **And here is why this law is built for you.**  
@@ -358,10 +359,10 @@ __
 🔤 30 DAYS FROM RECEIPT [IRDAI HEALTH MASTER CIRCULAR | 2024]
 
 **O059** · block 4  
-**If it is late, it must pay you a penalty of five thousand rupees for every day of delay, on top of any interest that is due.**  
+**If it is late, and it has not challenged the award within those thirty days, it must pay you a penalty of five thousand rupees for every day of delay, on top of any interest that is due.**  
 __  
 🎬 G06 Delay Penalty: deadline marker.  
-🔤 ₹5,000 / DAY [IRDAI HEALTH FAQ 45]  
+🔤 ₹5,000 / DAY · NOT IF CHALLENGED IN 30 DAYS [IRDAI HEALTH FAQ 45 · POLICYHOLDERS' INTERESTS MASTER CIRCULAR | 2024]  
 🔊 Small transient
 
 **O060** · block 4  
@@ -372,7 +373,7 @@ __
 🔊 Ticks
 
 **O061** · block 4  
-**And in December twenty twenty-four, in one case where a policyholder was made to fight for years, the Bombay High Court ordered the insurance company to pay costs, and said the money should be recovered from the officers responsible, after an inquiry.**  
+**And in December twenty twenty-four, the Bombay High Court heard the case of a senior citizen who had won an Ombudsman award, but was not paid for more than three years. The court ordered the insurance company to pay the award with interest, plus one lakh rupees in costs, and said the costs and interest should be recovered from the officers responsible, after an inquiry.**  
 __  
 🎬 Court exterior still with slow push (credited), judgment text crop.  
 🔤 [BHARAT HIRJI DEDHIA v. UNION OF INDIA | BOMBAY HC | 2024]
@@ -389,7 +390,7 @@ __
 🎬 Logo.
 
 **O064** · block 4  
-**In our next episode, we look at consumables, the gloves, masks and syringes on your bill. We will open a five lakh rupee hospital bill, line by line, look at what we pay for surgical consumables, and the price caps the government has set on some of them.**  
+**In our next episode, we look at consumables, the gloves, masks and syringes on your bill. We will open a five lakh rupee hospital bill, line by line, look at what we pay for these consumables, and what the government's price rules say about them.**  
 __  
 🎬 F13 detail, bill close-up (SIMULATION).  
 🔤 NEXT EPISODE
