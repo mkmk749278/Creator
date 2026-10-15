@@ -631,7 +631,7 @@ re-test a source when it fails, and update this table. Licence rows marked ✱ n
 | Photos | Met Museum | `collectionapi.metmuseum.org/.../objects/<id>` → `primaryImage` | no | CC0 when `isPublicDomain` | 200 (search endpoint 410) |
 | Photos | Rijksmuseum | `data.rijksmuseum.nl/search/collection` | no | CC0 / PD | 200 |
 | Photos | Europeana | `api.europeana.eu/record/v2/search.json?reusability=open` | free key (`api2demo`) | per item | 200 |
-| Audio | **Openverse audio** (Freesound previews) | `api.openverse.org/v1/audio/?license_type=commercial` | no | CC0 / BY | 200 |
+| Audio | **Openverse audio** (Freesound previews) | `api.openverse.org/v1/audio/?license_type=commercial` | no | CC0 / BY | search 200; **`cdn.freesound.org` previews 403 from the cloud (2026-10-15)**: synthesise UI SFX in the mixer, take rail sound from clip audio, or the owner downloads |
 | Music | Incompetech | site | no | CC BY 4.0 | 200 |
 | Music | FreePD | site | no | CC0 | 200 |
 | Music | ccMixter, Free Music Archive | `ccmixter.org/api/query`, site | no | per track; many NC: skip those | 200 |
@@ -1086,6 +1086,10 @@ took 90 min in a subagent while sourcing, scenes and assembly ran). Lessons:
 - **Owner's handoff briefs can carry unverified "facts"** (Kavach: "one tag every km", "40 m towers every 2–3 km",
   "100% saved", "Kavach would NOT have prevented Balasore"): the owner's own audit files rejected them. Check every brief
   line against the audits/sources first and list each change with its reason in `brief/changes-from-brief.md`.
+- **Five scene sessions + two sourcing agents + the coordinator hit the account's five-hour usage limit ~10 minutes
+  after launch** (Kavach, 2026-10-15): every session and agent stopped with "session limit" and had to be resumed by
+  message after the reset. All sessions share one usage limit, so parallelism spends it faster; launch 3 sessions at a
+  time, tell each to commit and push after every finished scene, and resume with `send_message` after a reset.
 - **Indian Railways servers (rdso.indianrailways.gov.in, indianrailways.gov.in, sr.indianrailways.gov.in) reset
   connections from the cloud container**, archive copies too. Use PIB, Sansad, CRS (crs.gov.in works) and IRIMEE copies,
   or ask the owner to open a PDF on the phone; keep a verified fallback line ready (2026-10-15).
