@@ -76,7 +76,7 @@
 | 70 | 5:09.40 | 4.61 | scene | B2_two_step_clock_O033.mp4 |  |  |
 | 71 | 5:14.01 | 10.53 | scene | B2_two_step_clock_O034.mp4 |  |  |
 | 72 | 5:24.54 | 7.21 | scene | B2_two_step_clock_O035.mp4 |  |  |
-| 73 | 5:31.75 | 4.19 | still | cio_complaint_full.png | RAISED TO ₹50 LAKH · NOV 2023 | GAZETTE G.S.R. 828(E) | 2023 |
+| 73 | 5:31.75 | 4.19 | scene | C5_proof_magnifier_O036.mp4 |  |  |
 | 74 | 5:35.94 | 12.1 | scene | C5_proof_magnifier_O037.mp4 |  |  |
 | 75 | 5:48.04 | 3.82 | clip | 6985332.mp4 | HOW DO YOU FILE? | ILLUSTRATIVE FOOTAGE |
 | 76 | 5:51.86 | 5.12 | scene | C1_filing_stepper_O039.mp4 |  |  |
