@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B2 two-step clock: write to the insurer, then one month</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="kit/kit.js"></script>
+    <link rel="stylesheet" href="kit/kit.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+/* a dial is a round paper card with printed day ticks; the yellow arc is the days that have run */
+.dial { position: absolute; width: 520px; height: 520px; border-radius: 50%; }
+.dial.paper { border-radius: 50%; }
+.dial svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.dial .num { position: absolute; left: 0; right: 0; top: 318px; text-align: center; font: 800 46px/1 Inter, Arial, sans-serif; color: rgba(27,37,51,.55); }
+.dial .ctr { position: absolute; left: 0; right: 0; top: 200px; text-align: center; font: 800 80px/1 Inter, Arial, sans-serif; color: var(--ink); letter-spacing: -.01em; white-space: nowrap; }
+.dial .ctr small { display: block; font: 800 34px/1 Inter, Arial, sans-serif; letter-spacing: .12em; color: #7a5a00; margin-top: 10px; }
+.link { position: absolute; height: 0; border-top: 5px dashed rgba(255,219,89,.75); }
+
+/* letters and pictograms for the three branches */
+.env { position: absolute; width: 230px; height: 150px; }
+.env svg, .pict svg { width: 100%; height: 100%; }
+.reply { width: 210px; height: 270px; padding: 34px 26px; }
+.reply .rule { height: 8px; margin-bottom: 14px; }
+.mark { position: absolute; left: 50%; top: 52%; width: 120px; height: 120px; margin: -60px 0 0 -60px; }
+.tray { position: absolute; width: 230px; height: 150px; border: 5px dashed rgba(184,199,217,.7); border-radius: 14px; }
+.branch { position: absolute; height: 5px; background: rgba(184,199,217,.55); transform-origin: 0 50%; border-radius: 3px; }
+
+/* the door (teal): a doorway cut in dark card; the leaf swings open on its left hinge */
+.doorway { position: absolute; width: 250px; height: 420px; background: #07101b; border-radius: 6px 6px 0 0;
+  box-shadow: inset 0 0 0 8px #1d3450, 0 30px 60px rgba(0,0,0,.55); perspective: 900px; overflow: visible; }
+.doorway .glow { position: absolute; inset: 8px; background: radial-gradient(ellipse at 50% 70%, #bff7ec 0%, #59dcc3 35%, rgba(89,220,195,.25) 80%); }
+.doorway .leaf { position: absolute; inset: 8px; background: linear-gradient(90deg, #22405f, #1a3350); transform-origin: 0 50%; border-radius: 3px;
+  box-shadow: inset 0 0 0 4px rgba(89,220,195,.35); }
+.doorway .knob { position: absolute; right: 22px; top: 52%; width: 18px; height: 18px; border-radius: 50%; background: var(--teal); }
+.spill { position: absolute; width: 900px; height: 520px; background: radial-gradient(ellipse at 0% 50%, rgba(89,220,195,.42), rgba(89,220,195,0) 70%);
+  transform-origin: 0 50%; mix-blend-mode: screen; }
+
+/* O035: the two separate markers */
+.ruler { position: absolute; height: 74px; display: flex; gap: 6px; }
+.ruler i { display: block; width: 62px; height: 100%; border-radius: 4px; background: rgba(255,219,89,.9); box-shadow: 0 6px 14px rgba(0,0,0,.35); }
+.flag { position: absolute; font: 800 64px/1 Inter, Arial, sans-serif; white-space: nowrap; padding: 16px 24px; border-radius: 10px; background: rgba(6,10,18,.8); }
+.flag.y { color: var(--yellow); border-left: 7px solid var(--yellow); }
+.flag.t { color: var(--teal); border-left: 7px solid var(--teal); }
+.capbar { position: absolute; width: 74px; height: 440px; border-radius: 8px; background: rgba(6,10,18,.55); border: 3px solid rgba(89,220,195,.6); overflow: hidden; }
+.capbar .fill { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; background: linear-gradient(0deg, #2a8f7d, #59dcc3); transform-origin: 50% 100%; }
+.capline { position: absolute; height: 6px; background: var(--teal); box-shadow: 0 0 14px rgba(89,220,195,.8); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="k-root" data-composition-id="B2_two_step_clock" data-start="0" data-width="1920" data-height="1080" data-duration="32.333">
+
+      <!-- O028: two dials, one after the other -->
+      <div class="seg" id="s0">
+        <div class="cam" id="cam0"><div class="desk"></div><div class="light" id="lt0"></div>
+          <div class="paper dial" id="d0a" style="left:250px; top:230px" data-dial="14" data-n="1"></div>
+          <div class="link" id="lk0" style="left:800px; top:490px; width:320px"></div>
+          <div class="paper dial" id="d0b" style="left:1150px; top:230px" data-dial="30" data-n="2"></div>
+        </div>
+        <div class="dof"></div>
+        <div class="lt y" id="lt0a" style="left:64px; bottom:44px">THE TWO-STEP CLOCK</div>
+      </div>
+
+      <!-- O032: clock step one, the insurer has 14 days to resolve -->
+      <div class="seg" id="s1">
+        <div class="cam" id="cam1"><div class="desk"></div><div class="light" id="lt1"></div>
+          <div class="paper dial" id="d1b" style="left:1500px; top:300px; opacity:.75" data-dial="30" data-n="2"></div>
+          <div class="paper dial" id="d1a" style="left:620px; top:250px" data-dial="14" data-n="1" data-ctr="14 DAYS"></div>
+          <div class="env" id="env1" style="left:250px; top:600px">
+            <svg viewBox="0 0 230 150"><rect x="3" y="3" width="224" height="144" rx="8" fill="#f2ecdf" stroke="#c9bfa9" stroke-width="3" /><path d="M5 8 L115 88 L225 8" fill="none" stroke="#b5aa93" stroke-width="4" /></svg>
+          </div>
+        </div>
+        <div class="dof"></div>
+        <div class="tag"><b>[IRDAI POLICYHOLDERS' INTERESTS MASTER CIRCULAR | 2024]</b></div>
+      </div>
+
+      <!-- O033: clock step two, wait for the reply or one month -->
+      <div class="seg" id="s2">
+        <div class="cam" id="cam2"><div class="desk"></div><div class="light" id="lt2"></div>
+          <div class="paper dial" id="d2a" style="left:-120px; top:300px; opacity:.6" data-dial="14" data-n="1" data-full="1"></div>
+          <div class="paper dial" id="d2b" style="left:700px; top:250px" data-dial="30" data-n="2" data-ctr="1 MONTH"></div>
+        </div>
+        <div class="dof"></div>
+        <div class="tag"><i>[RULE 14(3)]</i></div>
+      </div>
+
+      <!-- O034: rejected, not happy, or no reply in a month: the door opens -->
+      <div class="seg" id="s3">
+        <div class="cam" id="cam3"><div class="desk"></div><div class="light" id="lt3"></div>
+          <div class="paper dial" id="d3" style="left:90px; top:300px; transform: scale(.78)" data-dial="30" data-n="2"></div>
+          <div class="branch" id="br1" style="left:600px; top:560px; width:400px; transform: rotate(-24deg)"></div>
+          <div class="branch" id="br2" style="left:600px; top:560px; width:370px"></div>
+          <div class="branch" id="br3" style="left:600px; top:560px; width:400px; transform: rotate(24deg)"></div>
+          <div class="paper reply" id="rp1" style="left:880px; top:120px; transform: rotate(-4deg)">
+            <div class="rule" style="width:60%; background:rgba(27,37,51,.4)"></div><div class="rule"></div><div class="rule" style="width:85%"></div><div class="rule"></div><div class="rule" style="width:70%"></div>
+            <svg class="mark" viewBox="0 0 48 48" fill="none" stroke="#2b3a52" stroke-width="5" stroke-linecap="round"><path d="M12 12 L36 36 M36 12 L12 36" /></svg>
+          </div>
+          <div class="paper reply" id="rp2" style="left:930px; top:420px; transform: rotate(3deg)">
+            <div class="rule" style="width:60%; background:rgba(27,37,51,.4)"></div><div class="rule"></div><div class="rule" style="width:85%"></div><div class="rule"></div><div class="rule" style="width:70%"></div>
+            <svg class="mark" viewBox="0 0 48 48" fill="none" stroke="#2b3a52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 22 V8 C16 6 18 5 20 6 L23 14 C24 17 26 20 30 20 H37 C40 20 41 23 40 25 L37 37 C36 40 34 41 31 41 H16 M8 22 H16 V42 H8 Z" transform="rotate(180 24 24)" /></svg>
+          </div>
+          <div class="tray" id="tr3" style="left:900px; top:820px"></div>
+          <div class="paper dial" id="d3m" style="left:1170px; top:780px; width:200px; height:200px" data-dial="30" data-small="1"></div>
+          <div class="spill" id="sp3" style="left:1580px; top:290px"></div>
+          <div class="doorway" id="dw3" style="left:1450px; top:330px"><div class="glow"></div><div class="leaf" id="lf3"><div class="knob"></div></div></div>
+        </div>
+        <div class="dof"></div>
+      </div>
+
+      <!-- O035: from that day, two separate markers: 1 YEAR to file, compensation UP TO ₹50 LAKH -->
+      <div class="seg" id="s4">
+        <div class="cam" id="cam4"><div class="desk"></div><div class="light" id="lt4"></div>
+          <div class="spill" id="sp4" style="left:300px; top:150px; width:1300px; height:700px"></div>
+          <div class="doorway" style="left:120px; top:300px"><div class="glow"></div><div class="leaf" style="transform: rotateY(-72deg)"><div class="knob"></div></div></div>
+          <div class="ruler" id="ru4" style="left:470px; top:660px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="flag y" id="fy4" style="left:470px; top:770px">1 YEAR</div>
+          <div class="capbar" id="cb4" style="left:1500px; top:230px"><div class="fill" id="cf4"></div></div>
+          <div class="capline" id="cl4" style="left:1470px; top:228px; width:134px"></div>
+          <div class="flag t" id="ft4" style="left:1150px; top:100px">UP TO ₹50 LAKH</div>
+        </div>
+        <div class="dof"></div>
+        <div class="tag"><i>[CIO FAQ]</i></div>
+      </div>
+
+      <canvas class="dust" id="dust" width="1920" height="1080"></canvas>
+      <canvas class="grain" id="grain" width="500" height="290"></canvas>
+      <div class="vig"></div>
+    </div>
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const L = K.layout([{ id: "O028", ws: 269.77, we: 273.07 }, { id: "O032", ws: 303.56, we: 309.10 }, { id: "O033", ws: 309.55, we: 313.64 },
+                          { id: "O034", ws: 314.16, we: 324.27 }, { id: "O035", ws: 324.69, we: 331.49 }]);
+      const DUR = K.total(L);
+      K.grain($("grain")); K.dust($("dust"));
+
+      // build every dial: n day ticks around a paper card, an arc for the days run, a hand
+      const P = (a, r) => [(r * Math.sin(a)).toFixed(1), (-r * Math.cos(a)).toFixed(1)];
+      const arcD = (f, r) => { if (f <= 0.001) return ""; if (f >= 0.999) return `M0 ${-r} A${r} ${r} 0 1 1 -0.1 ${-r} Z`;
+        const [x, y] = P(f * 6.2832, r); return `M0 0 L0 ${-r} A${r} ${r} 0 ${f > 0.5 ? 1 : 0} 1 ${x} ${y} Z`; };
+      document.querySelectorAll("[data-dial]").forEach((d) => {
+        const n = +d.dataset.dial, small = d.dataset.small;
+        let ticks = ""; for (let i = 0; i < n; i++) { const a = i / n * 6.2832, [x1, y1] = P(a, 222), [x2, y2] = P(a, i % (n === 14 ? 7 : 5) === 0 ? 192 : 204);
+          ticks += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" />`; }
+        d.innerHTML = `<svg viewBox="-260 -260 520 520"><circle r="246" fill="none" stroke="rgba(27,37,51,.25)" stroke-width="3" />
+          <path class="arc" d="${d.dataset.full ? arcD(1, 232) : ""}" fill="rgba(255,205,60,.62)" style="mix-blend-mode:multiply" />
+          <g stroke="rgba(27,37,51,.7)" stroke-width="${small ? 7 : 5}" stroke-linecap="round">${ticks}</g>
+          ${small ? "" : '<line class="hand" x1="0" y1="18" x2="0" y2="-176" stroke="#14263b" stroke-width="10" stroke-linecap="round" />'}
+          <circle class="cap" r="${small ? 16 : 14}" fill="#14263b" /></svg>` +
+          (d.dataset.n ? `<div class="num">${d.dataset.n}</div>` : "") +
+          (d.dataset.ctr ? `<div class="ctr" style="opacity:0">${d.dataset.ctr}</div>` : "");
+      });
+      const dialAt = (d, f) => { d.querySelector(".arc").setAttribute("d", arcD(f, 232)); const h = d.querySelector(".hand");
+        if (h) h.setAttribute("transform", `rotate(${(f * 360).toFixed(2)})`); };
+
+      const tl = gsap.timeline({ paused: true });
+      L.forEach((s, i) => { tl.set($("s" + i), { visibility: "visible" }, s.off); if (i < L.length - 1) tl.set($("s" + i), { visibility: "hidden" }, s.off + s.len);
+        tl.fromTo($("lt" + i), { x: 0, y: 0 }, { x: 50, y: 12, duration: s.len, ease: "none" }, s.off); });
+
+      // ---- O028 ----
+      { const v = L[0].v, s = L[0];
+        tl.fromTo($("cam0"), { scale: 1.0 }, { scale: 1.06, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("d0a"), { y: 700, rotation: -20 }, { y: 0, rotation: 0, duration: 0.8, ease: "power3.out" }, s.off);
+        tl.fromTo($("d0b"), { y: 700, rotation: 20 }, { y: 0, rotation: 0, duration: 0.8, ease: "power3.out" }, s.off + 0.2);
+        tl.fromTo($("lk0"), { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, v(271.2));
+        tl.fromTo($("lt0a"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(272.1));     // "two-step clock"
+        const f = K.keys([[s.off, 0], [s.off + s.len, 0.12]]); K.hook((t) => { dialAt($("d0a"), f(t)); });
+      }
+      // ---- O032 ----
+      { const v = L[1].v, s = L[1];
+        tl.fromTo($("cam1"), { scale: 1.02, x: 60 }, { scale: 1.08, x: 0, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("env1"), { x: -500, rotation: -18 }, { x: 0, rotation: -6, duration: 0.9, ease: "power3.out" }, v(304.0));        // the complaint goes in
+        tl.to($("env1"), { x: 300, y: -120, scale: 0.6, opacity: 0, duration: 0.7, ease: "power2.in" }, v(305.6));                      // into the insurer's clock
+        const f = K.keys([[v(306.1), 0], [v(308.9), 1]]); K.hook((t) => dialAt($("d1a"), f(t)));                                        // "within fourteen days"
+        tl.fromTo($("d1a").querySelector(".ctr"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, v(308.2));
+        tl.to([$("d1a").querySelector(".hand"), $("d1a").querySelector(".cap")], { opacity: 0, duration: 0.25 }, v(308.2));   // the count replaces the hand
+      }
+      // ---- O033 ----
+      { const v = L[2].v, s = L[2];
+        tl.fromTo($("cam2"), { scale: 1.04, x: 220 }, { scale: 1.07, x: 0, duration: 1.2, ease: "power2.inOut" }, s.off);              // pan to dial 2
+        tl.to($("cam2"), { scale: 1.1, duration: s.len - 1.2, ease: "none" }, s.off + 1.2);
+        const f = K.keys([[v(311.0), 0], [v(313.5), 1]]); K.hook((t) => dialAt($("d2b"), f(t)));                                        // "wait one month"
+        tl.fromTo($("d2b").querySelector(".ctr"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, v(312.95));
+        tl.to([$("d2b").querySelector(".hand"), $("d2b").querySelector(".cap")], { opacity: 0, duration: 0.25 }, v(312.95));   // the count replaces the hand
+      }
+      // ---- O034 ----
+      { const v = L[3].v, s = L[3];
+        tl.fromTo($("cam3"), { scale: 1.0, x: 0 }, { scale: 1.08, x: -60, duration: s.len, ease: "none" }, s.off);
+        const grow = (el, t) => tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, t);
+        const land = (el, t, rot) => tl.fromTo(el, { opacity: 0, y: -60, scale: 1.12 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "power3.out" }, t);
+        grow($("br1"), v(314.4)); land($("rp1"), v(315.0));                                         // "rejects your complaint"
+        tl.fromTo($("rp1").querySelector(".mark"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, v(315.6));
+        grow($("br2"), v(316.7)); land($("rp2"), v(317.1));                                         // "not happy with its reply"
+        tl.fromTo($("rp2").querySelector(".mark"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, v(317.7));
+        grow($("br3"), v(319.0)); land($("tr3"), v(319.3)); land($("d3m"), v(319.5));                // "one month passes with no reply"
+        const fm = K.keys([[v(319.6), 0], [v(321.4), 1]]); K.hook((t) => dialAt($("d3m"), fm(t)));
+        dialAt($("d3"), 1);
+        // all three branches lead to one door, which opens (teal)
+        tl.to([$("rp1"), $("rp2"), $("tr3"), $("d3m")], { opacity: 0.35, duration: 0.5 }, v(322.0));
+        tl.to([$("br1"), $("br2"), $("br3")], { backgroundColor: "rgba(89,220,195,.9)", duration: 0.4 }, v(322.1));
+        tl.fromTo($("dw3"), { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, v(321.6));
+        tl.fromTo($("lf3"), { rotationY: 0 }, { rotationY: -72, duration: 1.3, ease: "power2.inOut" }, v(322.9));   // "...opens"
+        tl.fromTo($("sp3"), { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 1.4, ease: "power2.out" }, v(323.1));
+      }
+      // ---- O035 ----
+      { const v = L[4].v, s = L[4];
+        tl.fromTo($("cam4"), { scale: 1.06, x: 80 }, { scale: 1.0, x: -40, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("sp4"), { opacity: 0.6 }, { opacity: 0.9, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("ru4").children, { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.25, stagger: 0.09, ease: "power2.out" }, v(325.7));   // "one year"
+        tl.fromTo($("fy4"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(326.1));
+        tl.fromTo($("cb4"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, v(328.8));
+        tl.fromTo($("cf4"), { scaleY: 0 }, { scaleY: 1, duration: 1.2, ease: "power2.out" }, v(329.0));                                              // "up to fifty lakh"
+        tl.fromTo($("cl4"), { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35 }, v(330.0));
+        tl.fromTo($("ft4"), { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(330.0));
+      }
+      tl.to({}, { duration: 0.01 }, DUR - 0.01);
+      K.attach(tl);
+      window.__timelines["B2_two_step_clock"] = tl;
+    </script>
+  </body>
+</html>
