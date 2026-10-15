@@ -4,7 +4,7 @@ Explainer for *Be Practical with Kishore* from the owner's handoff (`brief/owner
 the owner's two audits (`brief/technical-audit-2026-10-15.md`, `brief/research-dossier.md`). Every train crash restarts
 the same online fight: "no Kavach" vs "Kavach makes crashes impossible". The film opens in a night cab (hook), shows what
 Kavach physically is (tags, station computer, radio, loco unit; SIL-4 without the myth), works out the stopping physics
-on the board (RDSO's 940 m at 130 km/h, fog, 208 SPADs), audits the rollout numbers (commissioned vs fitted vs work
+on the board (Vande Bharat's 654 m from 130 km/h, freight maths, fog, 208 SPADs), audits the rollout numbers (commissioned vs fitted vs work
 started, money, the slowest step), and then the reveal: Balasore (false green from the signalling itself: nobody can say
 for sure) vs Kanchanjunga (failed signals and broken backup rules: where Kavach could really help). Verdict: three
 questions to ask of any viral Kavach post.
