@@ -67,7 +67,9 @@ def SC(name, oid, t=None, **kw):
 
 
 def GL(n, t, label):
-    return S(t, "glimpse", src=G(n), label=label, tag=EP1)
+    """Episode 01 shots carry their own burned-in lower third, so ours is kept as a note only (label_note) and the
+    FROM EPISODE 1 tag goes top left, clear of Episode 01's footer."""
+    return S(t, "glimpse", src=G(n), label_note=label, tag=EP1, tag_top=True)
 
 
 def WP(n, t, label, tag, focus=(0.5, 0.3), zoom=(1.0, 1.35)):
@@ -79,7 +81,7 @@ SHOTS = [
     GL("g1_counter", 0.0, "9 PM · BILLING COUNTER"),
     GL("g2_bill", at(2), "BILL: ₹4,50,000"),
     GL("g3_denied", at(2, 0.5), "CASHLESS DENIED"),
-    S(at(3), "still", src=THUMB1, zoom=(1.0, 1.25), focus=(0.5, 0.5), label="EPISODE 1 · THE FOUR STEPS", tag=EP1),
+    S(at(3), "still", src=THUMB1, zoom=(1.0, 1.06), focus=(0.5, 0.5), label="EPISODE 1 · THE FOUR STEPS", tag=EP1),
     F("F05", at(5), 2.0, "NOT THE END OF YOUR CLAIM"),
     PX("PX07", at(6), 2.0, "PAY NOW · CLAIM IT BACK"),
     SC("A1_staircase", "O002", t=at(7)),
@@ -136,7 +138,7 @@ SHOTS = [
     SC("B2_two_step_clock", "O028"),
     F("F09", at(63), 6.0, "CLOCK STEP 1 · PLAN STEP 2"),
     F("F10", at(65), 1.0, "COMPLAIN IN WRITING TO THE GRO"),
-    WP("cio", at(66), "GRO DETAILS: INSURER + CIOINS.CO.IN", "CIOINS.CO.IN", focus=(0.5, 0.05), zoom=(1.2, 1.6)),
+    S(at(66), "still", src=A / "web" / "cio_gro_blur.png", zoom=(1.0, 1.25), focus=(0.5, 0.3), label="GRO LIST ON CIOINS.CO.IN", tag="CIOINS.CO.IN · GRIEVANCE REDRESSAL OFFICERS"),
     PX("PX14", at(67), 1.0, "ONE CALM, FORMAL EMAIL"),
     F("F09", at(67, 0.5), 10.0, "POLICY NO · CLAIM NO · WHY IT IS WRONG"),
     S(at(68), "clip", src=B(3176), ss=5.0, label="KEEP EVERY COPY", tag=ILL),
@@ -201,7 +203,7 @@ def run(cmd):
 
 
 def esc(s):
-    return s.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’").replace(",", "\\,").replace("%", "\\%")
+    return s.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’").replace(",", "\\,")
 
 
 def rate(H, mbps_720, cap=30):
@@ -209,15 +211,15 @@ def rate(H, mbps_720, cap=30):
     return ["-b:v", f"{b:.0f}M", "-maxrate", f"{b * 1.2:.0f}M", "-bufsize", f"{b * 2:.0f}M"]
 
 
-def overlays(W, H, label="", tag=""):
+def overlays(W, H, label="", tag="", tag_top=False):
     """Lower-third label (teal bar, the Ombudsman colour) and the corner citation/tag; palette from the owner's G01-G08."""
     k = H / 1080; f = []
     if label:
         f.append(f"drawbox=x={int(70*k)}:y={int(938*k)}:w={int(8*k)}:h={int(64*k)}:color=0x59dcc3@1:t=fill")
-        f.append(f"drawtext=fontfile={FONT}:text='{esc(label)}':x={int(96*k)}:y={int(950*k)}:fontsize={int(40*k)}:fontcolor=0xf5f7fb:"
+        f.append(f"drawtext=fontfile={FONT}:text='{esc(label)}':x={int(96*k)}:y={int(950*k)}:fontsize={int(40*k)}:fontcolor=0xf5f7fb:expansion=none:"
                  f"box=1:boxcolor=0x0b1422@0.72:boxborderw={int(16*k)}")
     if tag:
-        f.append(f"drawtext=fontfile={FONT}:text='{esc(tag)}':x=w-tw-{int(70*k)}:y=h-{int(64*k)}:fontsize={int(20*k)}:fontcolor=white@0.9:"
+        f.append(f"drawtext=fontfile={FONT}:text='{esc(tag)}':x={int(70*k)}:y={int(56*k)}:fontsize={int(26*k)}:fontcolor=0xffdb59:box=1:boxcolor=0x0b1422@0.75:boxborderw={int(10*k)}:expansion=none") if tag_top else f.append(f"drawtext=fontfile={FONT}:text='{esc(tag)}':x=w-tw-{int(70*k)}:y=h-{int(64*k)}:fontsize={int(20*k)}:fontcolor=white@0.9:expansion=none:"
                  f"box=1:boxcolor=0x0b1422@0.6:boxborderw={int(8*k)}")
     return f
 
@@ -242,7 +244,7 @@ def placeholder(shot, dur, out, W, H, enc):
 
 
 def render(shot, dur, out, W, H):
-    k = shot["kind"]; ov = overlays(W, H, shot.get("label", ""), shot.get("tag", ""))
+    k = shot["kind"]; ov = overlays(W, H, shot.get("label", ""), shot.get("tag", ""), shot.get("tag_top", False))
     enc = ["-frames:v", str(round(dur * 30)), "-an", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 5), "-pix_fmt", "yuv420p", "-r", "30"]
     if k == "clip":
         pz = 1.3 if shot.get("punch") else 1.08
@@ -348,8 +350,10 @@ def main():
         if s["kind"] == "scene" and Path(s["src"]).exists():
             spec += str(Path(s["src"]).stat().st_mtime)
         f = out / f"{i:03d}_{hashlib.md5(spec.encode()).hexdigest()[:10]}.mp4"
-        if not f.exists():
-            render(s, d, f, W, H)
+        if not f.exists():   # render to a temp name, rename when complete: an interrupted render never poisons the cache
+            tmp = f.with_name("tmp_" + f.name)
+            render(s, d, tmp, W, H)
+            tmp.rename(f)
         parts.append(f)
     if a.shots_only:
         print("shots rendered"); return

@@ -4,17 +4,17 @@
 
 | # | start | dur | kind | source | label | tag |
 |---|---|---|---|---|---|---|
-| 1 | 0:00.00 | 4.53 | glimpse | g1_counter.mp4 | 9 PM · BILLING COUNTER | FROM EPISODE 1 |
-| 2 | 0:04.53 | 4.25 | glimpse | g2_bill.mp4 | BILL: ₹4,50,000 | FROM EPISODE 1 |
-| 3 | 0:08.78 | 4.42 | glimpse | g3_denied.mp4 | CASHLESS DENIED | FROM EPISODE 1 |
+| 1 | 0:00.00 | 4.53 | glimpse | g1_counter.mp4 |  | FROM EPISODE 1 |
+| 2 | 0:04.53 | 4.25 | glimpse | g2_bill.mp4 |  | FROM EPISODE 1 |
+| 3 | 0:08.78 | 4.42 | glimpse | g3_denied.mp4 |  | FROM EPISODE 1 |
 | 4 | 0:13.20 | 4.27 | still | thumbnail_B.jpg | EPISODE 1 · THE FOUR STEPS | FROM EPISODE 1 |
 | 5 | 0:17.47 | 3.11 | clip | F05_30510691.mp4 | NOT THE END OF YOUR CLAIM | ILLUSTRATIVE FOOTAGE |
 | 6 | 0:20.58 | 3.33 | clip | 7567651.mp4 | PAY NOW · CLAIM IT BACK | ILLUSTRATIVE FOOTAGE |
 | 7 | 0:23.91 | 3.67 | scene | A1_staircase_O002.mp4 |  |  |
-| 8 | 0:27.58 | 1.33 | glimpse | g4_step1.mp4 | 1 · COLLECT YOUR PAPERS | FROM EPISODE 1 |
-| 9 | 0:28.91 | 3.25 | glimpse | g5_step2.mp4 | 2 · REIMBURSEMENT + GRIEVANCE OFFICER | FROM EPISODE 1 |
-| 10 | 0:32.16 | 2.11 | glimpse | g6_step3_bima.mp4 | 3 · BIMA BHAROSA | FROM EPISODE 1 |
-| 11 | 0:34.27 | 2.88 | glimpse | g7_step4_cio.mp4 | 4 · INSURANCE OMBUDSMAN | FROM EPISODE 1 |
+| 8 | 0:27.58 | 1.33 | glimpse | g4_step1.mp4 |  | FROM EPISODE 1 |
+| 9 | 0:28.91 | 3.25 | glimpse | g5_step2.mp4 |  | FROM EPISODE 1 |
+| 10 | 0:32.16 | 2.11 | glimpse | g6_step3_bima.mp4 |  | FROM EPISODE 1 |
+| 11 | 0:34.27 | 2.88 | glimpse | g7_step4_cio.mp4 |  | FROM EPISODE 1 |
 | 12 | 0:37.15 | 3.4 | clip | F01_7567655.mp4 | PAID FROM YOUR POCKET | ILLUSTRATIVE FOOTAGE |
 | 13 | 0:40.55 | 3.03 | clip | F09_6406171.mp4 | FILED FOR REIMBURSEMENT | ILLUSTRATIVE FOOTAGE |
 | 14 | 0:43.58 | 3.19 | scene | A4_email_stamp_O004.mp4 |  |  |
@@ -67,8 +67,8 @@
 | 61 | 4:33.40 | 3.6 | clip | F09_6406171.mp4 | CLOCK STEP 1 · PLAN STEP 2 | ILLUSTRATIVE FOOTAGE |
 | 62 | 4:37.00 | 3.57 | clip | F10_8480684.mp4 | COMPLAIN IN WRITING TO THE GRO | ILLUSTRATIVE FOOTAGE |
 | 63 | 4:40.57 | 3.58 | clip | F10_8480684.mp4 | COMPLAIN IN WRITING TO THE GRO | ILLUSTRATIVE FOOTAGE |
-| 64 | 4:44.15 | 3.93 | still | cio_full.png | GRO DETAILS: INSURER + CIOINS.CO.IN | CIOINS.CO.IN |
-| 65 | 4:48.08 | 3.93 | still | cio_full.png | GRO DETAILS: INSURER + CIOINS.CO.IN | CIOINS.CO.IN |
+| 64 | 4:44.15 | 3.93 | still | cio_gro_blur.png | GRO LIST ON CIOINS.CO.IN | CIOINS.CO.IN · GRIEVANCE REDRESSAL OFFICERS |
+| 65 | 4:48.08 | 3.93 | still | cio_gro_blur.png | GRO LIST ON CIOINS.CO.IN | CIOINS.CO.IN · GRIEVANCE REDRESSAL OFFICERS |
 | 66 | 4:52.01 | 3.45 | clip | 6985332.mp4 | ONE CALM, FORMAL EMAIL | ILLUSTRATIVE FOOTAGE |
 | 67 | 4:55.46 | 3.61 | clip | F09_6406171.mp4 | POLICY NO · CLAIM NO · WHY IT IS WRONG | ILLUSTRATIVE FOOTAGE |
 | 68 | 4:59.07 | 4.34 | clip | pixabay_3176.mp4 | KEEP EVERY COPY | ILLUSTRATIVE FOOTAGE |

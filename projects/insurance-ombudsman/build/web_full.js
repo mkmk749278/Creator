@@ -1,7 +1,7 @@
 // Full-page screenshots of the two complaint portals for the browser-clip scenes (1440 px wide, 2x).
 const { chromium } = require('/opt/node-tools/node_modules/playwright-core');
 const OUT = process.argv[2];
-const SITES = [['bima', 'https://bimabharosa.irdai.gov.in/'], ['cio', 'https://cioins.co.in/'], ['cio_complaint', 'https://cioins.co.in/Complaint'], ['cio_offices', 'https://cioins.co.in/Ombudsman']];
+const SITES = [['bima', 'https://bimabharosa.irdai.gov.in/'], ['cio', 'https://cioins.co.in/'], ['cio_complaint', 'https://cioins.co.in/Complaint'], ['cio_offices', 'https://cioins.co.in/Ombudsman'], ['cio_gro', 'https://cioins.co.in/GRONonLife']];
 (async () => {
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2,

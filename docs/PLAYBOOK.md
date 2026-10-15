@@ -902,6 +902,19 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
 
 ## 15. Lessons log
 
+**Insurance Ombudsman (English, 2026-10-15).** (1) A shot cache keyed on "file exists" was poisoned by a render cut
+off when the session was resumed: one shot file had no moov atom, and the concat demuxer froze the whole film from
+5:13 to the end on the last good frame. Fix in `projects/insurance-ombudsman/build/assemble.py`: render each shot to
+`tmp_<name>` and rename only when complete; after any interrupted run, ffprobe every cached shot and delete failures.
+*Why:* a frozen half-film passes every timing check and is only caught by looking at the sheets. (2) drawtext silently
+drops a label containing `%` (text expansion); use `expansion=none` instead of escaping. (3) Never `pkill -f` in the
+same command that later starts the process the pattern matches: it killed its own shell twice. (4) Glimpses from an
+earlier film already carry its lower thirds; overlaying ours doubled them, so they get only a top-left
+`FROM EPISODE 1` tag. (5) Parallel scene sessions (A/B/C, PLAYBOOK §3) delivered 43 frame-exact clips in about
+75 minutes while the coordinator sourced, cut and mixed; specs generated from the real VO timing (`scenes.md`) meant
+every clip dropped in at its window with no retiming.
+
+
 **Health Claim Rejection Trap (English, 2026-10-14).** (1) The owner's handoffs (a full brief, a "fixes" rewrite, then a
 visual-engine spec) each carried unsourced numbers ("80% rejected", "60 days", "₹500–800 rider", "₹90,000 cut",
 "17 centres", "lawyers banned"). The two-pass fact-check (draft claims → independent max-effort subagent → re-check of
