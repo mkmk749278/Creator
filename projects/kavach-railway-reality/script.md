@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **12:20** of speech (10,325 characters, 3 Bunty blocks), plus pauses and music beats.
+Estimated length: **12:26** of speech (10,402 characters, 3 Bunty blocks), plus pauses and music beats.
 
 ## 1 Hook and open loop
 
@@ -14,7 +14,7 @@ __
 ⏱ Slow dolly down the aisle
 
 **V002** · block 1  
-**Up front, one loco pilot is staring into the dark — watching for a signal that might be red.**  
+**Up front, the loco pilot is staring into the dark — watching for a signal that might be red.**  
 __  
 🎬 REAL: night locomotive cab POV, rain on the windscreen, wiper sweeping; distant signal glow.  
 🔊 Wiper thunk, rail clatter  
@@ -51,7 +51,7 @@ __
 ⏱ Face and name by 0:20
 
 **V007** · block 1  
-**Today we'll open the railway's own documents, do the braking maths together, and read the official accident inquiries.**  
+**Today we'll open the railway's own documents, do the braking maths together, and read what the official accident inquiries found.**  
 __  
 🎬 PROOF: R-D-S-O spec cover, CRS abstract cover, PIB release, each sliding in on paper texture under a highlighter sweep.  
 🔤 RDSO · CRS · PIB  
@@ -225,7 +225,7 @@ __
 ⏱ Stopwatch runs out
 
 **V029** · block 2  
-**This is where Kavach changes the game. It doesn't wait for anyone to see the red signal — it already knows how far away it is, shows it on the screen inside the cab, and brakes early while there's still enough room.**  
+**This is where Kavach changes the game. It doesn't wait for anyone to see the red signal — it already knows how far away it is, shows it on the screen inside the cab, and if the loco pilot doesn't slow down, brakes early while there's still enough room.**  
 __  
 🎬 ILLUSTRATION (Engine 3 right half + Engine 2): cab display shows the aspect and target distance long before it is visible; the braking curve is drawn ahead of the train and the Kavach brake point lands well before the signal.  
 🔤 TARGET DISTANCE  
@@ -283,7 +283,7 @@ __
 **The money is moving too — the yearly Kavach budget rose from about one thousand one hundred crore rupees to about one thousand six hundred and seventy crore in twenty twenty five twenty six.**  
 __  
 🎬 ILLUSTRATION: two budget bars rise.  
-🔤 ₹1,112.57 CR → ₹1,673.19 CR  
+🔤 ₹1,112.57 CR (2024–25) → ₹1,673.19 CR (2025–26)  
 🔊 Cash-register latch  
 ⏱ Bars rise
 
@@ -372,7 +372,7 @@ __
 ⏱ Stamps land
 
 **V048** · block 3  
-**Case two. Rangapani, near New Jalpaiguri in north Bengal, June seventeen, twenty twenty four. The automatic signals had failed, so trains were moving on a paper authority, at a slow, careful speed.**  
+**Case two. Rangapani, near New Jalpaiguri in north Bengal, June seventeen, twenty twenty four. The automatic signals had failed, so trains had to move on a paper authority, at a slow, careful speed.**  
 __  
 🎬 REAL: credited archive of the Rangapani site; map pin; ILLUSTRATION (Engine 6): a row of automatic signals goes dark; a generic paper authority slides in (no copy of a real form).  
 🔤 RANGAPANI · 17 JUN 2024 · SIGNALS FAILED  
@@ -404,7 +404,7 @@ __
 ⏱ Rewind
 
 **V052** · block 3  
-**And that famous claim that Kavach always locks the speed at exactly fifteen? Fifteen is the rule loco pilots follow at failed signals — what Kavach enforces depends on its data and settings, so don't take that number as a promise.**  
+**And what about the claim that Kavach always locks the speed at exactly fifteen kilometres per hour? Fifteen is the speed loco pilots must follow at failed signals — what Kavach enforces depends on its data and settings, so don't take that number as a promise.**  
 __  
 🎬 SIM: viral claim card stamped DEPENDS ON SET-UP.  
 🔤 DEPENDS ON SET-UP  

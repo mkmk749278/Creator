@@ -12,9 +12,9 @@ questions to ask of any viral Kavach post.
 **Status (2026-10-15): phase 1, script v2.** Rewritten in the owner's new English style (PLAYBOOK §4a-4, guide in
 Part F): elder-brother voice, phonetic acronyms for Akash (R-D-S-O, R-F-I-D, U-H-F, S-I-L, H-B-L, P-I-B), hook with an
 open loop ("around the eight minute mark"), forensic dissection, a three-step citizen's action plan (check forwards, read
-PIB/CRS, Rail Madad 139), outro with "Jai Hind". 61 lines, 3 voice blocks, 10,325 characters: ≈ 12:20 by the estimator,
-≈ 11:05 at the measured English Akash rate (×0.9). Views: `screenplay.md` (TIME | AUDIO | VISUAL + SFX), `script.md`,
-`bunty_blocks.md` (paste-ready). v1.1 history: `brief/changes-from-brief.md`. Fact-check of the v2 changes: `claims.csv`,
+PIB/CRS, Rail Madad 139), outro with "Jai Hind". 61 lines, 3 voice blocks, 10,402 characters: ≈ 12:26 by the estimator,
+≈ 11:10 at the measured English Akash rate (×0.9). Views: `screenplay.md` (TIME | AUDIO | VISUAL + SFX), `script.md`,
+`bunty_blocks.md` (paste-ready). v1.1 history: `brief/changes-from-brief.md`. Fact-check gate passes (81 claims: 75 confirmed, 6 claim): `claims.csv`,
 `fact-check.md`. Next: owner approves v2 and records the blocks (`voice/block1.mp3` …); then check the open-loop minute
 against `align/`.
 
