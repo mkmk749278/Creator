@@ -1,9 +1,10 @@
 # The Insurance Ombudsman (Episode 02, project code BP-HLTH-02-10M; English VO)
 
-English explainer for *Be Practical with Kishore*, the sequel to `projects/health-claim-trap` (Episode 01). A
-reimbursement claim comes back rejected or cut (₹4 lakh bill, ₹1.2 lakh paid). Families see two doors, a lawyer and
-consumer court or a paid claim-recovery service; the film opens a third: the Insurance Ombudsman. It explains why Bima
-Bharosa tracks but does not decide, who may file (Rule 14), the two-step clock (write to the insurer, then one month),
+English explainer for *Be Practical with Kishore*, **step 4 of Episode 01's plan, opened up** (sequel to
+`projects/health-claim-trap`). The same family: cashless denied at 9 PM on a ₹4.5 lakh bill, they paid, filed for
+reimbursement, and the claim comes back cut (₹1.2 lakh paid, ₹3.3 lakh cut). Families see two doors, a lawyer and
+consumer court or a paid claim-recovery service; the film opens the third: the Insurance Ombudsman. It explains why
+Bima Bharosa (Episode 01's step 3) is useful but does not decide, who may file (Rule 14), the two-step clock (write to the insurer, then one month),
 the one-year window and the ₹50 lakh limit, the bar on disputes pending or decided elsewhere, filing on cioins.co.in
 (18 offices, documents, verification), mediation and the hearing, the award that binds only the insurer, the 30-day
 compliance rule and the ₹5,000-a-day penalty, and the Bombay High Court's Dedhia judgment.
@@ -17,7 +18,7 @@ No voiceover was supplied: the owner records `voice/bp-hlth02-ch1.mp3` … `ch4.
 fact-check fixes are in.
 
 ## Script v1: what changed from the owner's text, and why
-The structure, order and voice are the owner's (64 lines, 4 chapters, one ElevenLabs block per chapter, ≈ 9:30 of
+The structure, order and voice are the owner's (65 lines, 4 chapters, one ElevenLabs block per chapter, ≈ 10:10 of
 speech). Formatting follows the English VO lint (no `!`, quotes, dashes or digits; hyphen-spelled acronyms as the owner
 wrote them; the `[sigh]`/`[pause]`/`[slight smile]` cues moved to the pacing column). Every claim the owner's own asset
 pack or the CIO pages could not support was rewritten; each change is commented in `tools/make_tsv.py`:
@@ -28,7 +29,8 @@ pack or the CIO pages could not support was rewritten; each change is commented 
 | Lawyer fees **₹50,000**, **five years** (O006) | "pay the fees, and wait, often for a long time" | No source for either number |
 | Both choices are **a trap** (O008) | "there is a third door" | A court can be the right remedy |
 | **1,715** families thrown out (O011, O027) | "the one mistake that gets complaints thrown out" | Count and cause not verified at table level (fact-check may restore it) |
-| 20% + GST = **nearly ₹90,000** (O020) | ₹80,000 + 18% GST = ₹94,400, labelled OUR CALCULATION | Arithmetic |
+| ₹4 lakh bill, ₹2.8 lakh cut; 20% + GST = **nearly ₹90,000** | Episode 01's ₹4.5 lakh bill, ₹3.3 lakh cut; 20% = ₹66,000 + 18% GST = ₹77,880, OUR CALCULATION | Same family as Episode 01; arithmetic |
+| "What nobody tells you … the Government set up the Ombudsman"; Bima Bharosa "the biggest confusion" | recap of Episode 01's four steps; "step four, opened fully"; Bima Bharosa is useful but not a court | Episode 01 already introduced both and made Bima Bharosa step 3 |
 | Recovery firms **not allowed**; contracts **void** under s.23 Contract Act (O021–O023) | Rule 14(1): you, or your legal heir, nominee or assignee, file; the form is free | No decision found for the blanket s.23 claim; not every service is a scam |
 | Write to the **GRO**; wait **30 days** | write to the insurer, best of all its GRO; one month | Rule 14(3) wording |
 | **17** offices, assigned **automatically** by address proof (O040) | **18** offices; you choose by residence or insurer branch | Thane opened 27 Dec 2024; the portal asks you to choose |
@@ -40,13 +42,25 @@ pack or the CIO pages could not support was rewritten; each change is commented 
 | Bombay HC: penalties **from officers' salaries** (O060) | one case; costs recovered from the officers responsible, after an inquiry | Dedhia, 9 Dec 2024, was case-specific |
 | Next episode: hospitals **violate** price caps (O063) | "the price caps the government has set on some of them" | No allegation in a teaser |
 
+## Series continuity (owner, 2026-10-15; PLAYBOOK §4a-4)
+Episode 02 continues Episode 01 as one story; checked against Episode 01's recorded script (`../health-claim-trap/script.full.tsv`)
+and its published description:
+| Episode 01 said | Episode 02 |
+|---|---|
+| 9 PM billing counter, ₹4,50,000 bill, cashless denied, six-year policy (E001–E007) | O001 recap with the same SIMULATION bill and red stamp; all amounts derive from ₹4.5 lakh |
+| Four steps: papers → reimbursement + GRO (14 days) → Bima Bharosa → Ombudsman (E044–E056) | O002 recap on the same staircase motif; O009 "remember step four"; O029 "this is step two from our last video" |
+| Bima Bharosa = IRDAI's portal, complaints tracked by IRDAI (E050) | O014–O018: useful, on the regulator's record, but not a court; that is why step four exists |
+| Ombudsman: free, online, no lawyer, 18 offices, ₹50 lakh, binding; 76%; 8 in 10 within 3 months (E052–E056) | same facts, same sources; O010 "last time we had one minute for it"; O054 reuses "8 in 10 within three months" as the honest answer to "60 days" |
+| Rule three: consumables (E060) | O064 teases Episode 03 as "rule three from our first video" |
+| Title B / thumbnail B: "4 Steps to Get Your Money Back" | working title "… Step 4: The Insurance Ombudsman" |
+
 ## Genre and look (PLAYBOOK §5.3, its own art direction)
 **Society × business & finance**, a fresh direction from Episode 01's "file at night": **"the third door"**. Daylight
 Indian home and desk, the case file and a phone as the protagonists; the law appears as warm paper documents under a
 forensic magnifier. Palette taken from the owner's pack graphics (G01–G08 SVGs): night navy `#0B1422` / `#14263B` (base),
 signal yellow `#FFDB59` (the clocks, the money, our calculations), teal `#59DCC3` (the Ombudsman route, the rules),
 paper white `#F5F7FB` and mist `#B8C7D9` (text), coral `#FF7D80` only for the cut amount and the RETURNED stamp. Fine grain, 30% vignette. Motifs: the **three doors**
-(hook, O005–O008), the **two-step clock** dials (G03, chapter 3), the **document slots** (G05), the **₹5,000 meter**
+(hook, O006–O009; the third door is Episode 01's lit step 4), the **two-step clock** dials (G03, chapter 3), the **document slots** (G05), the **₹5,000 meter**
 counting days late (G06; no salary-attachment graphic).
 Media stack: the owner's Pexels footage (F01–F20, PX01–PX15; ILLUSTRATIVE FOOTAGE on people and hospitals), the owner's
 eight graphics animated in HyperFrames (static PNGs only as layout), credited captures of the Rules PDF, CIO FAQ,

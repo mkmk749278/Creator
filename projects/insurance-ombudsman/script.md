@@ -1,82 +1,90 @@
-# Health Insurance Claim Rejected? File an Ombudsman Complaint Without Lawyer Fees: shooting script (Be Practical with Kishore)
+# Health Insurance Claim Rejected Again? Step 4: The Insurance Ombudsman (Free, No Lawyer Fees): shooting script (Be Practical with Kishore)
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **9:29** of speech (7,714 characters, 4 Bunty blocks), plus pauses and music beats.
+Estimated length: **10:10** of speech (8,279 characters, 4 Bunty blocks), plus pauses and music beats.
 
 ## 1 The rejection email and the two doors
 
 **O001** · block 1  
-**In our last video, we saw what to do when the hospital desk rejects your cashless claim at nine o'clock at night.**  
+**In our last video, you were standing at a hospital billing counter at nine o'clock at night. A four and a half lakh rupee bill, and your cashless claim was denied.**  
 __  
-🎬 F14 Hyderabad establishing 2 s, cut to F05 reception hands (recap, not a real refusal).  
-🔤 ILLUSTRATIVE FOOTAGE  
-🔊 City night ambience; logo bug from 0:02  
+🎬 Episode 01 reprise: F05 counter hands, then Episode 01's SIMULATION bill ₹4,50,000 and the red CASHLESS DENIED stamp (same design).  
+🔤 PREVIOUSLY · SIMULATION  
+🔊 Hospital room tone; logo bug from 0:02  
 ⏱ Cold open, no music for 2 s
 
 **O002** · block 1  
-**You paid the bill from your pocket, collected your hospital papers, came home, and filed for reimbursement.**  
+**We learned that a cashless denial is not a claim rejection, and we made a four-step plan. Collect your papers. File for reimbursement and write to the grievance officer. Register on Bima Bharosa. And step four, the Insurance Ombudsman.**  
 __  
-🎬 F01 phone and card insert, F18 rupee detail; F09 papers to keyboard match cut.  
+🎬 Episode 01's four-step staircase rises lower left; steps 1 to 4 light in turn; step 4 stays lit.  
+🔤 STEP 1 · 2 · 3 · 4  
+🔊 Four soft ticks
+
+**O003** · block 1  
+**So you paid the bill from your pocket, collected your hospital papers, came home, and filed for reimbursement.**  
+__  
+🎬 F01 phone and card insert, PX15 rupee notes; F09 papers to keyboard match cut.  
 🔤 ILLUSTRATIVE FOOTAGE  
 🔊 Card beep, paper rustle
 
-**O003** · block 1  
+**O004** · block 1  
 **Three weeks later, an email lands in your inbox.**  
 __  
-🎬 F01 phone in hand; an unbranded rejection email slides in (SIMULATION, no insurer logo).  
+🎬 PX06/F01 phone in hand; an unbranded email slides in (SIMULATION, no insurer logo).  
 🔤 SIMULATION  
 🔊 Notification ping  
 ⏱ [sigh] beat before the line (owner's cue)
 
-**O004** · block 1  
-**Either the insurance company rejects your claim all over again... or worse, out of a four lakh rupee hospital bill, they approve just one lakh twenty thousand, and silently cut the remaining two lakh eighty thousand rupees.**  
+**O005** · block 1  
+**Either the insurance company rejects your claim all over again... or worse, out of your four and a half lakh rupee bill, they approve just one lakh twenty thousand, and silently cut the remaining three lakh thirty thousand rupees.**  
 __  
-🎬 G01 Claim Deduction: total bill, approved part fills, the cut part peels away in red.  
-🔤 ₹4,00,000 BILL · ₹1,20,000 PAID · ₹2,80,000 CUT · EXAMPLE  
+🎬 G01 Claim Deduction (amounts re-set to Episode 01's bill): total, approved part fills, the cut peels away in coral.  
+🔤 ₹4,50,000 BILL · ₹1,20,000 PAID · ₹3,30,000 CUT · EXAMPLE  
 🔊 Small transient on the cut
 
-**O005** · block 1  
+**O006** · block 1  
 **At that moment, most middle-class families think they only have two choices.**  
 __  
 🎬 A dim corridor splits into two doors (ILLUSTRATION).
 
-**O006** · block 1  
+**O007** · block 1  
 **Choice one. Hire a lawyer, go to consumer court, pay the fees, and wait, often for a long time, for a verdict.**  
 __  
 🎬 Left door: F02 paper detail, case files stacking (no dusty five-year court graphic).
 
-**O007** · block 1  
+**O008** · block 1  
 **Or choice two. Answer one of those ads for a private claim recovery service, which promises to fight your case, but some ask for as much as twenty percent of the money they recover as their fee.**  
 __  
 🎬 Right door: F08 a hand signing an unbranded agreement; phone ad frame (SIMULATION, no real brand).  
 🔤 SIMULATION
 
-**O008** · block 1  
-**Stop right there. Before you pick either door, there is a third one.**  
+**O009** · block 1  
+**Stop right there. Before you pick either door, remember step four from our last video.**  
 __  
-🎬 Both doors dim; a third door opens in cyan light (ILLUSTRATION).  
+🎬 Both doors dim; the lit step 4 of the staircase becomes a third door opening in teal light (ILLUSTRATION).  
+🔤 STEP 4  
 🔊 Music out 1.5 s before, then a low thud  
 ⏱ [pause] before the line (owner's cue)
 
-**O009** · block 1  
-**What nobody tells you... is that the Government of India set up the Insurance Ombudsman. Filing a complaint costs zero rupees. If the Ombudsman passes an award, it is binding on the insurance company. And if the company pays that award late, it has to pay you a penalty of five thousand rupees for every day of delay.**  
+**O010** · block 1  
+**Last time, we had only one minute for it. Today, we open that door fully. Filing a complaint costs zero rupees. If the Ombudsman passes an award, it is binding on the insurance company. And if the company pays that award late, it has to pay you a penalty of five thousand rupees for every day of delay.**  
 __  
 🎬 G04 Binding Award panel reveal; S01 Rules p11 push-in on the award clause.  
 🔤 FREE TO FILE · AWARD BINDS THE INSURER · ₹5,000 / DAY LATE [IRDAI HEALTH MASTER CIRCULAR | 2024]
 
-**O010** · block 1  
+**O011** · block 1  
 **Welcome to Be Practical with Kishore.**  
 __  
 🎬 Logo sting; owner's host clip if supplied.  
 🔊 Logo sting
 
-**O011** · block 1  
-**Today, let's unlock the Insurance Ombudsman. I will show you the one mistake that gets complaints thrown out at the door, the official website to use, and how to file it yourself, without paying a single rupee to middlemen.**  
-__  
-🎬 Quick preview: closed door stamp, cioins.co.in typed, hands on keyboard (F09).
-
 **O012** · block 1  
+**Today, I will show you the one mistake that gets complaints turned away at the door, how to file on the official website step by step, what happens at the hearing, and what the company must do after it loses. All without paying a single rupee to middlemen.**  
+__  
+🎬 Quick preview: RETURNED stamp, cioins.co.in typed, a hearing frame, the ₹5,000 meter (F09, F12, G06).
+
+**O013** · block 1  
 **Let's break it down... in plain, simple English.**  
 __  
 🎬 Title card over F14.  
@@ -84,19 +92,14 @@ __
 
 ## 2 Bima Bharosa, the Ombudsman and the middleman
 
-**O013** · block 2  
-**First... let's clear up the single biggest confusion on the internet.**  
-__  
-🎬 F01 scrolling a phone (crop).
-
 **O014** · block 2  
-**When your claim is rejected, many people tell you to go and file a complaint on the Bima Bharosa portal.**  
+**First... step three, Bima Bharosa. Many families stop there, and here is why that is not enough.**  
 __  
-🎬 S07 Bima Bharosa home page push-in (credited source capture).  
-🔤 bimabharosa.irdai.gov.in
+🎬 Staircase: step 3 lights; S07 Bima Bharosa home page push-in (the same capture as Episode 01).  
+🔤 STEP 3 · bimabharosa.irdai.gov.in
 
 **O015** · block 2  
-**So you go to Bima Bharosa, upload your papers, and wait. Many people then get the same rejection letter from the insurance company again, and the complaint is closed.**  
+**You register on Bima Bharosa, upload your papers, and wait. Many people then get the same rejection letter from the insurance company again, and the complaint is closed.**  
 __  
 🎬 The same unbranded letter returns (SIMULATION); no fabricated portal screenshot.  
 🔤 SIMULATION
@@ -104,17 +107,17 @@ __
 **O016** · block 2  
 **And you think, even the government portal could not help me.**  
 __  
-🎬 F07 a man at a desk, head down (crop).  
+🎬 PX05 a man in a dim room, head in hand.  
 🔤 ILLUSTRATIVE FOOTAGE
 
 **O017** · block 2  
-**Here is why that happened. Bima Bharosa is NOT a court. It is the regulator's grievance tracking system, run by the I-R-D-A-I. Your complaint goes to the same insurance company that rejected your claim, and the regulator tracks how the company handles it. Bima Bharosa does not decide your claim, and it cannot pass an order telling the company to pay you.**  
+**Here is why. Bima Bharosa is useful. Your complaint goes on the regulator's record, and the company has to answer it. But Bima Bharosa is NOT a court. Your complaint goes to the same insurance company that cut your claim, and the I-R-D-A-I tracks how the company handles it. Bima Bharosa does not decide your claim, and it cannot pass an order telling the company to pay you.**  
 __  
-🎬 Animated ticket travels from the phone back to the insurer's inbox; an IRDAI eye watches (ILLUSTRATION).  
+🎬 Animated ticket travels from the phone to the insurer's inbox; an IRDAI tracker follows it (ILLUSTRATION).  
 🔤 TRACKS · DOES NOT DECIDE [BIMA BHAROSA | IRDAI]
 
 **O018** · block 2  
-**The body that can pass a binding award in your case... is the Insurance Ombudsman, set up under the Insurance Ombudsman Rules, twenty seventeen.**  
+**That is why step four exists. The body that can pass a binding award in your case... is the Insurance Ombudsman, set up under the Insurance Ombudsman Rules, twenty seventeen.**  
 __  
 🎬 S03 FAQ → S01 Rules cover push-in, gold highlighter.  
 🔤 [INSURANCE OMBUDSMAN RULES | 2017]
@@ -126,16 +129,16 @@ __
 🔤 ILLUSTRATIVE FOOTAGE
 
 **O020** · block 2  
-**Suppose your four lakh rupee claim is stuck. A recovery agency tells you, sign our agreement, and if we get your money back, give us twenty percent plus G-S-T.**  
+**Suppose your three lakh thirty thousand rupees is stuck. A recovery agency tells you, sign our agreement, and if we get your money back, give us twenty percent plus G-S-T.**  
 __  
-🎬 G02 Commission Example: the claim strip.  
+🎬 G02 Commission Example (re-set to ₹3,30,000): the claim strip.  
 🔤 EXAMPLE
 
 **O021** · block 2  
-**Twenty percent of four lakh is eighty thousand rupees. Add eighteen percent G-S-T, and it is ninety-four thousand four hundred rupees out of your family's medical savings.**  
+**Twenty percent of three lakh thirty thousand is sixty-six thousand rupees. Add eighteen percent G-S-T, and it is seventy-seven thousand eight hundred and eighty rupees out of your family's medical savings.**  
 __  
 🎬 G02: fee splits off, GST joins last.  
-🔤 ₹80,000 FEE + 18% GST = ₹94,400 · OUR CALCULATION  
+🔤 ₹66,000 FEE + 18% GST = ₹77,880 · OUR CALCULATION  
 🔊 Coin tick per figure
 
 **O022** · block 2  
@@ -180,7 +183,7 @@ __
 🔤 THE TWO-STEP CLOCK
 
 **O029** · block 3  
-**Clock step one. Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.**  
+**Clock step one. This is step two from our last video. Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.**  
 __  
 🎬 F09 typing; an illustrative email builds: policy number, claim number, amount, reason (invented numbers).  
 🔤 SIMULATION  
@@ -326,66 +329,72 @@ __
 🎬 F07 / F19 hand crop over papers.
 
 **O054** · block 4  
+**And how long does it take? As we saw last time, about eight out of ten complaints were closed within three months.**  
+__  
+🎬 A calendar strip fills to three months; 8 of 10 files close.  
+🔤 8 IN 10 WITHIN 3 MONTHS [CIO ANNUAL REPORT | 2024–25]
+
+**O055** · block 4  
 **And here is why this law is built for you.**  
 __  
 🎬 
 
-**O055** · block 4  
+**O056** · block 4  
 **First. Under Rule seventeen, when the Ombudsman passes an award, it is binding on the insurance company.**  
 __  
 🎬 G04 insurer panel locks.  
 🔤 [RULE 17 | INSURANCE OMBUDSMAN RULES]
 
-**O056** · block 4  
+**O057** · block 4  
 **Wait... what if you are NOT happy with the award? You don't have to accept it. Other legal remedies, like the consumer forum, may still be open to you.**  
 __  
 🎬 G04 complainant panel: other remedies.  
 ⏱ [pause] before Wait (owner's rhythm)
 
-**O057** · block 4  
+**O058** · block 4  
 **And second. Under the I-R-D-A-I health master circular of twenty twenty-four, the insurance company must carry out the award within thirty days of receiving it.**  
 __  
 🎬 S01 Rules p11 / S06 FAQ crop; G06 receipt-date marker.  
 🔤 30 DAYS FROM RECEIPT [IRDAI HEALTH MASTER CIRCULAR | 2024]
 
-**O058** · block 4  
+**O059** · block 4  
 **If it is late, it must pay you a penalty of five thousand rupees for every day of delay, on top of any interest that is due.**  
 __  
 🎬 G06 Delay Penalty: deadline marker.  
 🔤 ₹5,000 / DAY [IRDAI HEALTH FAQ 45]  
 🔊 Small transient
 
-**O059** · block 4  
+**O060** · block 4  
 **Ten days late, that is fifty thousand rupees. Thirty days late, one lakh fifty thousand rupees.**  
 __  
 🎬 G06 counter: 1, 10, 30 days late.  
 🔤 10 DAYS = ₹50,000 · 30 DAYS = ₹1,50,000 · OUR CALCULATION  
 🔊 Ticks
 
-**O060** · block 4  
+**O061** · block 4  
 **And in December twenty twenty-four, in one case where a policyholder was made to fight for years, the Bombay High Court ordered the insurance company to pay costs, and said the money should be recovered from the officers responsible, after an inquiry.**  
 __  
 🎬 Court exterior still with slow push (credited), judgment text crop.  
 🔤 [BHARAT HIRJI DEDHIA v. UNION OF INDIA | BOMBAY HC | 2024]
 
-**O061** · block 4  
+**O062** · block 4  
 **That is the power of knowing your rights. You don't need connections, and you don't need to pay twenty percent to middlemen.**  
 __  
 🎬 F14 Hyderabad dusk.  
 ⏱ [slight smile] (owner's cue)
 
-**O062** · block 4  
+**O063** · block 4  
 **Be smart. Be informed. And always... be practical.**  
 __  
 🎬 Logo.
 
-**O063** · block 4  
-**In our next episode, we will open a five lakh rupee hospital bill, line by line, look at what we pay for surgical consumables, and the price caps the government has set on some of them.**  
+**O064** · block 4  
+**In our next episode, we go back to rule three from our first video, consumables. We will open a five lakh rupee hospital bill, line by line, look at what we pay for surgical consumables, and the price caps the government has set on some of them.**  
 __  
 🎬 F13 detail, bill close-up (SIMULATION).  
 🔤 NEXT EPISODE
 
-**O064** · block 4  
+**O065** · block 4  
 **Hit the subscribe button, share this video with your family, and drop your questions below. I'll see you in the next video.**  
 __  
 🎬 End card.  

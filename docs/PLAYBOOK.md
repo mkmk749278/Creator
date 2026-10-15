@@ -872,6 +872,22 @@ board vs real-footage balance, loudness) and refine once more.
       real footage or a proof of the same idea; never leave an empty board on screen for more than ~1 s.
 - [ ] **Indian faces, places and money** in every stand-in (see §4a-3); a European street, shop or face is a reshoot.
 
+### 4a-4. Series continuity for connected films (owner, 2026-10-15)
+When a film continues an earlier one (Health Claim Trap → Insurance Ombudsman), it plays as the next episode of one
+story, never a fresh start. *Why:* the owner: "when we have connected topics we should not confuse the audience"; a
+viewer who saw episode 1 notices a changed bill, and a newcomer needs ten seconds of where we are.
+1. **Read the earlier film first:** its `script.full.tsv` (what was actually recorded), `youtube/description.md` and EDL.
+2. **Same story world:** the same family, amounts and documents (the ₹4,50,000 bill, the CASHLESS DENIED stamp), carried
+   on, not reset. Worked examples derive from the earlier numbers.
+3. **Never contradict earlier advice.** If episode 1 said "step 3: Bima Bharosa", episode 2 explains why step 3 alone is
+   not the end; it does not call it a mistake. Facts both films state use the same source and wording (claims rows reused).
+4. **No "nobody tells you" about something we already told them.** Open with a 15–25 s recap ("In our last video …"),
+   name the step we are opening, then go deeper than last time.
+5. **Recurring motifs** (the four-step staircase, the same SIMULATION letter design) tie the episodes together; each
+   film still gets its own art direction for its new parts (§4a).
+6. **Callbacks both ways:** link back ("step two from our last video") and tease the next episode from an earlier promise
+   (episode 1's rule three, consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
+
 ## 15. Lessons log
 
 **Health Claim Rejection Trap (English, 2026-10-14).** (1) The owner's handoffs (a full brief, a "fixes" rewrite, then a
