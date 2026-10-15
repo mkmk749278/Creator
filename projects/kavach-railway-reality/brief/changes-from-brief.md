@@ -40,9 +40,9 @@ v1.1 facts and changes the telling:
 | Short declarative lines, "Now, simple physics.", "Let us look at the numbers." | Elder-brother voice: flowing sentences mixed with short punches, `...` before numbers, `—` for pivots | Guide §2–3: stacked short sentences make Akash drop pitch at every full stop; lecture openers banned |
 | Plain capitals RDSO, RFID, UHF, SIL, HBL | R-D-S-O, R-F-I-D, U-H-F, S-I-L, H-B-L, P-I-B, T-A / T-D nine one two, A-C | Guide's phonetic table; lint fails bare acronyms |
 | Cold open in a cab, then the debate | Lived reality: a night train with your family asleep, then the crash news blowing up the family WhatsApp group | Guide §2 and §6 Act 1 |
-| No open loop | "Around the eight minute mark, I'll show you…" (payoff at ≈ 7:40–8:00 at the English rate) | Guide §6: open loop in the first 60 s; minute re-checked after alignment |
+| No open loop | "Around the eight minute mark, I'll show you…" (payoff at ≈ 7:10–8:20 at the English rate) | Guide §6: open loop in the first 60 s; minute re-checked after alignment |
 | Five sections, verdict with three questions | Hook → dissection (Kavach, physics, rollout, two crashes) → three-step action plan (check forwards, read PIB and CRS yourself, report unsafe things to Rail Madad 139) → outro | Guide §6 structure |
 | No India-pride beat | "a system designed in India, by Indian engineers and Indian companies" + "Indian-built safety layer" | Guide §1: celebrate Indian engineering while examining the bottleneck |
 | Sign-off "Be smart, be informed, and always... be practical." | "Know the facts, stay practical... Jai Hind." + pinned question: which route do you travel, does it have Kavach yet? | Guide §6 outro (adapted "rights" → "facts" for this topic) |
-| ≈ 14:50, 126 lines | ≈ 12:00 (13:16 by the estimator × 0.9 measured English rate), 66 lines | Guide: 8–12 min. Cut: national cost maths, version 4.0 feature list, slope sentence, separate engine/tag lines merged |
+| ≈ 14:50, 126 lines | ≈ 11:05 (12:20 by the estimator × 0.9 measured English rate), 61 lines | Guide: 8–12 min. Cut: national cost maths, version 4.0 feature list, slope sentence, separate engine/tag lines merged |
 | 2.5–4 s cadence in the visual notes | Visual reset every 3.5–5 s; every line has VISUAL, ACTION and SFX in `screenplay.md` | Guide §5 |
