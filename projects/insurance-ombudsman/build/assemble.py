@@ -67,6 +67,12 @@ def SC(name, oid, t=None, **kw):
     return S(w0 - 0.15 if t is None else t, "scene", src=A / "scenes" / f"{name}_{oid}.mp4", base=w0 - 0.25, name=f"{name} · {oid}", **kw)
 
 
+def CV(name, t, label, tag="ILLUSTRATION · CANVA TEMPLATE", ss=0.0):
+    """A Canva video template the owner picked (revision v2, owner 2026-10-15: 'use video templates'), exported as MP4."""
+    f = A / "canva" / f"{name}.mp4"
+    return S(t, "clip", src=f, ss=ss, label=label, tag=tag) if f.exists() else S(t, "scene", src=f, base=0, name=f"CANVA {name}", label=label)
+
+
 def GL(n, t, label):
     """Episode 01 shots carry their own burned-in lower third, so ours is kept as a note only (label_note) and the
     FROM EPISODE 1 tag goes top left, clear of Episode 01's footer."""
@@ -83,7 +89,7 @@ SHOTS = [
     GL("g2_bill", at(2), "BILL: ₹4,50,000"),
     GL("g3_denied", at(2, 0.5), "CASHLESS DENIED"),
     S(at(3), "still", src=THUMB1, zoom=(1.0, 1.06), focus=(0.5, 0.5), label="EPISODE 1 · THE FOUR STEPS", tag=EP1),
-    F("F05", at(5), 2.0, "NOT THE END OF YOUR CLAIM"),
+    CV("IO-1", at(5), "NOT THE END OF YOUR CLAIM"),
     PX("PX07", at(6), 2.0, "PAY NOW · CLAIM IT BACK"),
     SC("A1_staircase", "O002", t=at(7)),
     GL("g4_step1", at(8), "1 · COLLECT YOUR PAPERS"),
@@ -110,7 +116,7 @@ SHOTS = [
     S(at(27), "sting"),
     PX("PX05", at(28), 2.0, "ONE COMMON MISTAKE"),
     S(at(28, 0.33), "clip", src=B(169446), ss=2.0, label="FILING, STEP BY STEP", tag=ILL),
-    PX("PX13", at(28, 0.58), 1.0, "THE HEARING", tag="ILLUSTRATIVE HEARING"),
+    SC("C6_hearing", "O050", t=at(28, 0.58)),
     PX("PX15", at(28, 0.8), 4.0, "AFTER THE COMPANY LOSES"),
     F("F08", at(29), 4.0, "₹0 TO MIDDLEMEN"),
     F("F15", at(30), 2.0, "LET'S BREAK IT DOWN", tag=""),
@@ -121,7 +127,7 @@ SHOTS = [
     PX("PX08", at(35), 5.0, "THE SAME REPLY AGAIN"),
     PX("PX05", at(36), 8.0, "EVEN THE GOVERNMENT PORTAL?"),
     SC("A5_bima_tracker", "O017"),
-    S(at(40), "clip", src=B(17257), ss=5.0, label="BIMA BHAROSA IS NOT A COURT", tag=ILL),
+    WP("bima", at(40), "BIMA BHAROSA IS NOT A COURT", "BIMABHAROSA.IRDAI.GOV.IN", focus=(0.7, 0.35), zoom=(1.3, 1.5)),
     SC("A5_bima_tracker", "O017", t=at(41)),
     SC("C5_proof_magnifier", "O018"),
     F("F08", at(45), 2.0, "BACK TO THE SECOND DOOR"),
@@ -137,12 +143,11 @@ SHOTS = [
     SC("A4_email_stamp", "O026"),
     SC("C5_proof_magnifier", "O027"),
     SC("B2_two_step_clock", "O028"),
-    F("F09", at(63), 6.0, "CLOCK STEP 1 · PLAN STEP 2"),
-    F("F10", at(65), 1.0, "COMPLAIN IN WRITING TO THE GRO"),
+    SC("A6_gro_email", "O029"),
+    SC("A6_gro_email", "O030"),
     S(at(66), "still", src=A / "web" / "cio_gro_blur.png", zoom=(1.0, 1.25), focus=(0.5, 0.3), label="GRO LIST ON CIOINS.CO.IN", tag="CIOINS.CO.IN · GRIEVANCE REDRESSAL OFFICERS"),
-    PX("PX14", at(67), 1.0, "ONE CALM, FORMAL EMAIL"),
-    F("F09", at(67, 0.5), 10.0, "POLICY NO · CLAIM NO · WHY IT IS WRONG"),
-    S(at(68), "clip", src=B(3176), ss=5.0, label="KEEP EVERY COPY", tag=ILL),
+    SC("A6_gro_email", "O030", t=at(67)),
+    SC("A6_gro_email", "O031"),
     SC("B2_two_step_clock", "O032"),
     SC("B2_two_step_clock", "O033"),
     SC("B2_two_step_clock", "O034"),
@@ -150,7 +155,7 @@ SHOTS = [
     SC("C5_proof_magnifier", "O036"),
     SC("C5_proof_magnifier", "O037"),
     # ---- 4 Filing, the hearing and the award ----
-    PX("PX14", at(78), 4.0, "HOW DO YOU FILE?"),
+    CV("IO-2", at(78), "HOW DO YOU FILE?"),
     SC("C1_filing_stepper", "O039"),
     SC("C1_filing_stepper", "O040"),
     SC("C2_offices_board", "O041"),
@@ -162,15 +167,11 @@ SHOTS = [
     SC("C3_document_slots", "O046"),
     SC("C3_document_slots", "O047"),
     SC("C1_filing_stepper", "O048"),
-    PX("PX10", at(99), 1.0, "WHAT HAPPENS NEXT?"),
-    F("F12", at(100), 1.0, "BOTH SIDES ARE HEARD", tag="ILLUSTRATIVE HEARING"),
-    PX("PX11", at(101), 1.0, "IN PERSON OR BY VIDEO", tag="ILLUSTRATIVE HEARING"),
+    CV("IO-3", at(99), "WHAT HAPPENS NEXT?"),
+    SC("C6_hearing", "O050"),
     SC("B4_time_stats", "O051"),
     SC("C4_binding_award", "O052"),
-    PX("PX14", at(106), 6.0, "NO LEGAL WORDS NEEDED", tag="ILLUSTRATIVE HEARING"),
-    PX("PX12", at(108), 2.0, "WHEN DID YOU BUY THE POLICY?", tag="ILLUSTRATIVE HEARING"),
-    PX("PX01", at(109), 2.0, "WHY WERE YOU IN HOSPITAL?"),
-    F("F17", at(110), 4.0, "HOW MUCH DID THEY CUT?"),
+    SC("C6_hearing", "O053"),
     SC("B4_time_stats", "O054"),
     F("F14", at(113), 1.0, "BUILT FOR YOU", tag=""),
     SC("C4_binding_award", "O056"),
@@ -182,16 +183,16 @@ SHOTS = [
       tag="BHARAT HIRJI DEDHIA v. UNION OF INDIA | BOMBAY HC | 2024"),
     S(at(124, 0.45), "still", src=CM("bhc_02"), zoom=(1.05, 1.25), focus=(0.5, 0.4), label="UNPAID FOR OVER 3 YEARS",
       tag="BHARAT HIRJI DEDHIA v. UNION OF INDIA | BOMBAY HC | 2024"),
-    S(at(125), "clip", src=B(17257), ss=3.0, label="AWARD + INTEREST + ₹1 LAKH COSTS", tag="BOMBAY HC | 9 DEC 2024"),
-    S(at(125, 0.5), "still", src=CM("bhc_01"), zoom=(1.0, 1.3), focus=(0.6, 0.45), label="RECOVERED FROM THE OFFICERS, AFTER AN INQUIRY",
+    S(at(125), "still", src=CM("bhc_01"), zoom=(1.0, 1.15), focus=(0.5, 0.5), label="AWARD + INTEREST + ₹1 LAKH COSTS", tag="BOMBAY HC | 9 DEC 2024"),
+    S(at(125, 0.5), "still", src=CM("bhc_03"), zoom=(1.3, 1.5), focus=(0.6, 0.3), label="RECOVERED FROM THE OFFICERS, AFTER AN INQUIRY",
       tag="BHARAT HIRJI DEDHIA v. UNION OF INDIA | BOMBAY HC | 2024"),
-    PX("PX10", at(126), 4.0, "THE POWER OF KNOWING YOUR RIGHTS", tag=""),
+    CV("IO-4", at(126), "THE POWER OF KNOWING YOUR RIGHTS"),
     F("F14", at(127), 4.0, "NO CONNECTIONS · NO 20% FEES", tag=""),
     S(at(128), "sting"),
     S(at(131), "clip", src=B(63241), ss=2.0, label="NEXT · CONSUMABLES", tag=ILL),
     S(at(131, 0.6), "clip", src=B(151857), ss=1.0, label="GLOVES · MASKS · SYRINGES", tag=ILL),
     S(at(132), "clip", src=B(67764), ss=4.0, label="A ₹5 LAKH BILL, LINE BY LINE", tag=ILL),
-    F("F19", at(132, 0.55), 3.0, "WHAT THE PRICE RULES SAY", tag=ILL),
+    CV("IO-5", at(132, 0.55), "WHAT THE PRICE RULES SAY"),
     S(at(133), "end"),
 ]
 
