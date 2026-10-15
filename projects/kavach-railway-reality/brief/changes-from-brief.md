@@ -12,8 +12,8 @@ channel's simple Indian English (PLAYBOOK §4a-2) and these facts were changed b
 | Dual vital computer + Doppler radar | Two channels that must agree (2-out-of-2); speed sensors on the wheels | Doppler radar on every loco is not in the retrieved RDSO material. |
 | SIL-4 = "less than one in a billion hours" | SIL-4 is a strict target per safety function of the electronics, not a no-crash promise | The 10⁻⁹–10⁻⁸ per hour band is per function; not an accident rate. |
 | "Certified by Italcertifer, Italy" (golden seal) | Dropped | No primary certificate retrieved for every OEM. |
-| LHB 130 km/h: 917.9 m human vs 834.9 m Kavach; "sensors react in 0.2 s" | RDSO test: **940 m** at 130 km/h, full service brake, 24 LHB + WAP-7; Kavach's gain is braking **early** | The 917.9/834.9 pair has no source; RDSO LH/EO/VAR/78 does. |
-| Vande Bharat stopping not given | Design rule: emergency stop from 160 in **< 1,250 m** | ICF MD SPEC-398. |
+| LHB 130 km/h: 917.9 m human vs 834.9 m Kavach; "sensors react in 0.2 s" | Vande Bharat: **about 650 m** (654 m) from 130 km/h with emergency brakes; Kavach's gain is braking **early** | The 917.9/834.9 pair has no source. RDSO's 940 m LHB certificate is blocked from the cloud; 654 m is from an IRIMEE slide we read. |
+| Vande Bharat stopping not given | Dropped for now (ICF spec < 1,250 m from 160 could not be opened) | Restore if the owner confirms. |
 | Freight: "912.8 m" / "over 960 m"; valves 15–25 s | Labelled rough maths: > 900 m flat, ≈ 1,280 m on a 1-in-100 down slope | No measured trial found; our calculation, shown on the whiteboard. |
 | Fog: "less than 50 m" fact; human reaction "2.5 s" fact | "Suppose 50 m" (example); "a second or two" | Scenarios, not measurements. |
 | "Cab signalling is the only real answer" | Kavach brakes early on the signal it already knows; it cannot cancel physics | Overclaim removed. |

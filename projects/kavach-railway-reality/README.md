@@ -9,8 +9,8 @@ started, money, the slowest step), and then the reveal: Balasore (false green fr
 for sure) vs Kanchanjunga (failed signals and broken backup rules: where Kavach could really help). Verdict: three
 questions to ask of any viral Kavach post.
 
-**Status (2026-10-15): phase 1 in progress.** Script v1: 128 lines, 3 voice blocks (~4,100–4,200 characters each),
-≈ 15 min at the estimator's rate. Every change from the handoff and why: `brief/changes-from-brief.md`. Fact-check:
+**Status (2026-10-15): phase 1 in progress.** Script v1.1: 126 lines, 3 voice blocks (4,075–4,177 characters),
+≈ 14:50 at the estimator's rate. Fact-check gate passes (82 claims: 76 confirmed, 5 claim, 1 disputed). Every change from the handoff and why: `brief/changes-from-brief.md`. Fact-check:
 `claims.csv`, `fact-check.md`. Next: owner approves the script, then records the blocks (`voice/block1.mp3` …).
 
 ## Genre and look (PLAYBOOK §5.3, own art direction)

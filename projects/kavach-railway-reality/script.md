@@ -2,7 +2,7 @@
 
 Built from `script.full.tsv` by `tools/build_script.py`; edit the TSV, not this file. Each line: **Telugu VO** (what Bunty says), English meaning, then 🎬 picture, 🔤 on-screen text, 🔊 sound, ⏱ pacing. Tags: SIMULATION / RECONSTRUCTION / ILLUSTRATION mark anything that is not real footage.
 
-Estimated length: **14:57** of speech (12,442 characters, 3 Bunty blocks), plus pauses and music beats.
+Estimated length: **14:52** of speech (12,369 characters, 3 Bunty blocks), plus pauses and music beats.
 
 ## 0 Hook: the cab at night
 
@@ -75,7 +75,7 @@ __
 ⏱ Face and name by 0:20
 
 **K012** · block 1  
-**No shouting and no politics. We will use the railway's own documents, simple physics and the official accident reports.**  
+**No shouting and no politics. We will use the railway's own documents, simple physics and the official accident inquiry findings.**  
 __  
 🎬 PROOF: RDSO specification cover, CRS abstract cover, PIB release, each under the magnifier.  
 🔤 RDSO · CRS · PIB  
@@ -116,10 +116,10 @@ __
 🔊 Air hiss
 
 **K018** · block 1  
-**In March twenty twenty two, the Railway Minister rode in a test train in Telangana. Kavach stopped two trains running towards each other on the same line.**  
+**In March twenty twenty two, the Railway Minister rode in a railway engine during a Kavach test in Telangana. Kavach stopped two engines running towards each other on the same line, about three hundred and eighty metres apart.**  
 __  
 🎬 REAL: March 2022 Kavach head-on trial footage (Ministry of Railways / PIB release), credited.  
-🔤 KAVACH TRIAL · MARCH 2022
+🔤 KAVACH TRIAL · 4 MAR 2022 · 380 M APART
 
 **K019** · block 1  
 **It looked like magic. But Kavach is not one machine. It is a chain, and it works only when every link is in place.**  
@@ -134,10 +134,10 @@ __
 🔤 LINK 1 · RFID TAG
 
 **K021** · block 1  
-**These tags have no battery and no power cable. The reader under the engine wakes them up as it passes.**  
+**The reader under the engine reads each tag as it passes over it.**  
 __  
-🎬 ILLUSTRATION: under-chassis reader passes over a tag; a radio field ring lights the tag.  
-🔤 PASSIVE TAG  
+🎬 ILLUSTRATION: under-chassis reader passes over a tag; the tag answers with its ID.  
+🔤 RFID TAG  
 🔊 Soft ping
 
 **K022** · block 1  
@@ -158,7 +158,7 @@ __
 🔤 MAX GAP 1 KM
 
 **K025** · block 1  
-**On one stretch of about ninety six kilometres near Ahmedabad, the railway fixed two thousand eight hundred and seventy two tags. That is about thirty tags for every kilometre.**  
+**On one stretch of about ninety six kilometres, between Vadodara and Ahmedabad, the railway fixed two thousand eight hundred and seventy two tags. That is about thirty tags for every kilometre.**  
 __  
 🎬 BOARD: 2,872 ÷ 96 ≈ 30 worked on the whiteboard, over a map of the stretch.  
 🔤 96 KM · 2,872 TAGS  
@@ -196,16 +196,10 @@ __
 🔤 OPTICAL FIBRE
 
 **K031** · block 1  
-**Link four is inside the engine. A Kavach computer, two RFID readers, speed sensors on the wheels, a screen for the loco pilot, and a link to the brakes.**  
+**Link four is inside the engine. A Kavach computer, RFID readers, speed sensors on the wheels, a screen for the loco pilot, and a link to the brakes.**  
 __  
 🎬 ILLUSTRATION (Engine 1): loco shell peels away layer by layer; each part labels in.  
 🔤 LINK 4 · LOCO KAVACH
-
-**K032** · block 1  
-**Inside that computer, two separate channels check every decision. Both must agree before the train is allowed to move.**  
-__  
-🎬 ILLUSTRATION: two parallel logic channels, both must light green before a gate opens.  
-🔤 2-OUT-OF-2
 
 **K033** · block 1  
 **It is built to the highest safety level used for railway electronics, called SIL four.**  
@@ -214,13 +208,13 @@ __
 🔤 SIL-4
 
 **K034** · block 1  
-**Some videos say this means one failure in a billion hours. That is not what it means.**  
+**Some videos say this means Kavach can fail only once in a billion hours. That is only half the story.**  
 __  
 🎬 SIM: a viral post reading ONE FAILURE IN A BILLION HOURS, stamped MISLEADING.  
 🔊 Stamp thud
 
 **K035** · block 1  
-**SIL four is a very strict target for each safety function of the electronics. It is not a promise that no train will ever crash.**  
+**SIL four is a very strict limit on dangerous failures, set for each safety function of the electronics. It is a design target, not a promise that no train will ever crash.**  
 __  
 🎬 ILLUSTRATION: the target applies to one box in the chain, not to the whole railway.
 
@@ -267,22 +261,22 @@ __
 🔊 Air rush
 
 **K043** · block 1  
-**Here is a real number, from an RDSO test certificate.**  
+**Here is a real number, from the railway's own training notes.**  
 __  
-🎬 PROOF: RDSO certificate LH/EO/VAR/78 cover under the magnifier.  
-🔤 RDSO TEST · 2020
+🎬 PROOF: IRIMEE Vande Bharat trainset presentation, braking table under the magnifier.  
+🔤 INDIAN RAILWAYS DATA
 
 **K044** · block 1  
-**Twenty four loaded LHB coaches with one WAP seven engine, running at one hundred and thirty kilometres per hour on flat, straight track.**  
+**A Vande Bharat train running at one hundred and thirty kilometres per hour.**  
 __  
-🎬 REAL: WAP-7 hauling an LHB rake at speed.  
-🔤 24 LHB + WAP-7 · 130 KM/H
+🎬 REAL: Vande Bharat at speed.  
+🔤 VANDE BHARAT · 130 KM/H
 
 **K045** · block 2  
-**With a full service brake, it needed nine hundred and forty metres to stop. Almost one whole kilometre.**  
+**Even with its emergency brakes, it needs about six hundred and fifty metres to stop. That is more than half a kilometre.**  
 __  
-🎬 ILLUSTRATION (Engine 2, braking curve): speed falls along a 940 m track ruler.  
-🔤 940 M  
+🎬 ILLUSTRATION (Engine 2, braking curve): speed falls along a 654 m track ruler.  
+🔤 EMERGENCY BRAKE · 654 M  
 🔊 Long brake squeal
 
 **K046** · block 2  
@@ -291,12 +285,6 @@ __
 🎬 BOARD: 130 ÷ 3.6 ≈ 36 m per second.  
 🔤 36 M EVERY SECOND  
 🔊 Marker
-
-**K047** · block 2  
-**For Vande Bharat at one hundred and sixty, the railway's own design rule says an emergency stop must take less than one thousand two hundred and fifty metres.**  
-__  
-🎬 REAL: Vande Bharat at speed; spec page under magnifier.  
-🔤 VANDE BHARAT · 160 KM/H · < 1,250 M
 
 **K048** · block 2  
 **Now think about a loaded goods train. Five thousand tonnes, at seventy five kilometres per hour.**  
@@ -383,7 +371,7 @@ __
 🔊 Low thud
 
 **K062** · block 2  
-**How often do trains pass a red signal by mistake? The Commission of Railway Safety counted two hundred and eight such cases in five years, from April twenty nineteen to March twenty twenty four.**  
+**How often do trains pass a red signal by mistake? The Commission of Railway Safety noted two hundred and eight such cases in five years, from April twenty nineteen to March twenty twenty four.**  
 __  
 🎬 PROOF: CRS abstract page under the magnifier; counter rolls to 208.  
 🔤 208 SPAD CASES · 2019–2024  
@@ -426,10 +414,10 @@ __
 🔤 1,11,641 RUNNING TRACK KM
 
 **K069** · block 2  
-**And there are about sixteen thousand diesel and electric engines.**  
+**And in March twenty twenty five, there were about sixteen thousand diesel and electric engines.**  
 __  
 🎬 REAL: loco shed with rows of engines.  
-🔤 ≈ 16,000 LOCOS
+🔤 ≈ 16,000 LOCOS · MAR 2025
 
 **K070** · block 2  
 **Now, the progress. By the end of July twenty twenty six, the newest Kavach version was working on two thousand six hundred and thirty three route kilometres.**  
@@ -524,12 +512,12 @@ __
 🎬 BOARD: ROUGH MATHS boxed.  
 🔤 ROUGH MATHS
 
-**K085** · block 3  
-**Still, the hardest part is not buying boxes. It is making them all work together.**  
+**K085** · block 2  
+**And it is not only about buying boxes. They must all be made to work together.**  
 __  
 🎬 REAL: signalling technicians at a relay rack.
 
-**K086** · block 3  
+**K086** · block 2  
 **Every station's signalling data must be entered and checked. Every type of engine must be wired to its own brakes.**  
 __  
 🎬 ILLUSTRATION (flowchart): survey → data → loco fitment.
@@ -552,7 +540,7 @@ __
 🔤 MEDHA · HBL · KERNEX
 
 **K090** · block 3  
-**New companies are trying to join. One of them, Quadrant Future Tek, got permission for passenger trials in May twenty twenty six. That is a step, not final approval.**  
+**New companies are trying to join. One of them, Quadrant Future Tek, told the stock exchange in May twenty twenty six that it got permission for passenger trials. That is a step, not final approval.**  
 __  
 🎬 PROOF: company stock-exchange filing under magnifier.  
 🔤 PASSENGER TRIALS ≠ FINAL APPROVAL
@@ -707,10 +695,10 @@ __
 🎬 Engine 6: freight speed held low; braking curve stops it short. SIMULATION.
 
 **K115** · block 3  
-**Some videos say Kavach would lock the speed at exactly fifteen kilometres per hour, every time. That depends on the mode and the rules set. The documents do not promise it so simply.**  
+**Some videos say Kavach would always lock the speed at exactly fifteen kilometres per hour. That fifteen is the rule loco pilots follow at failed signals. Kavach enforces the limits its data and settings give it, so do not take that number as a promise.**  
 __  
 🎬 SIM: viral claim card stamped DEPENDS ON MODE.  
-🔤 DEPENDS ON MODE
+🔤 DEPENDS ON SET-UP
 
 **K116** · block 3  
 **And this was not just one loco pilot's mistake. The inquiry found failures in the paperwork, the communication and the training.**  

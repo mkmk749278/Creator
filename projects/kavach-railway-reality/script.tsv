@@ -10,30 +10,29 @@ Why can't a train just stop like a car?
 Why is it working on only a small part of our tracks?	
 And the hardest question... would Kavach have saved Balasore? Would it have saved the Kanchanjunga Express?	
 Hi everyone, welcome to Be Practical with Kishore.	
-No shouting and no politics. We will use the railway's own documents, simple physics and the official accident reports.	
+No shouting and no politics. We will use the railway's own documents, simple physics and the official accident inquiry findings.	
 First, the biggest myth. Kavach is not an app, and it is not a software update.	
 You cannot switch it on across the country overnight.	
 Kavach is India's own Automatic Train Protection system. In simple words, it watches the train's speed and the signals ahead.	
 If the train goes too fast, or is about to pass a red signal, Kavach first warns the loco pilot.	
 If the train still does not slow down, Kavach applies the brakes by itself.	
-In March twenty twenty two, the Railway Minister rode in a test train in Telangana. Kavach stopped two trains running towards each other on the same line.	
+In March twenty twenty two, the Railway Minister rode in a railway engine during a Kavach test in Telangana. Kavach stopped two engines running towards each other on the same line, about three hundred and eighty metres apart.	
 It looked like magic. But Kavach is not one machine. It is a chain, and it works only when every link is in place.	
 Link one is on the track. Small RFID tags are fixed on the concrete sleepers.	
-These tags have no battery and no power cable. The reader under the engine wakes them up as it passes.	
+The reader under the engine reads each tag as it passes over it.	
 Each tag tells the train where it is, and on which track.	
 People say there is one tag every kilometre. That is not the full picture.	
 One kilometre is the longest gap allowed. Near signals, points and stations, there are many more tags.	
-On one stretch of about ninety six kilometres near Ahmedabad, the railway fixed two thousand eight hundred and seventy two tags. That is about thirty tags for every kilometre.	
+On one stretch of about ninety six kilometres, between Vadodara and Ahmedabad, the railway fixed two thousand eight hundred and seventy two tags. That is about thirty tags for every kilometre.	
 Link two is the station. A Kavach computer at the station reads the signals, the points, and which tracks have a train on them.	
 It reads all this from the station's own signalling system, called interlocking. Remember this word. It will matter a lot later.	
 Link three is radio. Tall towers along the line carry messages between the station and the engine.	
 Kavach's safety radio works in the UHF band. It is not your mobile network, and it is not five G.	
 Optical fibre cables along the track join the stations together.	
-Link four is inside the engine. A Kavach computer, two RFID readers, speed sensors on the wheels, a screen for the loco pilot, and a link to the brakes.	
-Inside that computer, two separate channels check every decision. Both must agree before the train is allowed to move.	
+Link four is inside the engine. A Kavach computer, RFID readers, speed sensors on the wheels, a screen for the loco pilot, and a link to the brakes.	
 It is built to the highest safety level used for railway electronics, called SIL four.	
-Some videos say this means one failure in a billion hours. That is not what it means.	
-SIL four is a very strict target for each safety function of the electronics. It is not a promise that no train will ever crash.	
+Some videos say this means Kavach can fail only once in a billion hours. That is only half the story.	
+SIL four is a very strict limit on dangerous failures, set for each safety function of the electronics. It is a design target, not a promise that no train will ever crash.	
 And Kavach can only act on the information it gets. Keep that in mind.	
 In July twenty twenty four, RDSO, the railway's design body in Lucknow, approved Kavach version four point zero.	
 It brought better location accuracy, better signal information in big yards, fibre links between stations, and a direct link to electronic interlocking.	
@@ -41,12 +40,11 @@ Now, simple physics. Many people ask me, if the loco pilot sees danger, why can'
 Because a train is not a car. Steel wheels on a steel rail have very little grip.	
 And a train is very heavy, and very long.	
 When the brakes are applied, the air pressure has to change all along the brake pipe, from the engine to the last coach. That takes time.	
-Here is a real number, from an RDSO test certificate.	
-Twenty four loaded LHB coaches with one WAP seven engine, running at one hundred and thirty kilometres per hour on flat, straight track.	
+Here is a real number, from the railway's own training notes.	
+A Vande Bharat train running at one hundred and thirty kilometres per hour.	
 ---
-With a full service brake, it needed nine hundred and forty metres to stop. Almost one whole kilometre.	
+Even with its emergency brakes, it needs about six hundred and fifty metres to stop. That is more than half a kilometre.	
 At that speed, the train covers about thirty six metres every second.	
-For Vande Bharat at one hundred and sixty, the railway's own design rule says an emergency stop must take less than one thousand two hundred and fifty metres.	
 Now think about a loaded goods train. Five thousand tonnes, at seventy five kilometres per hour.	
 Goods trains build up brake force slowly. With simple maths and fair guesses, it needs more than nine hundred metres to stop.	
 Put it on a slope going down, one in a hundred, and the same maths gives almost one thousand three hundred metres.	
@@ -61,14 +59,14 @@ Kavach changes the question. It does not wait for the loco pilot to see the red 
 It already knows the signal ahead and how far away it is, and shows it on a screen inside the cab.	
 It works out when braking must begin. If the train does not slow down in time, Kavach brakes early, while there is still enough distance.	
 But Kavach cannot cancel physics. If danger appears closer than the stopping distance, even Kavach cannot stop the train in time.	
-How often do trains pass a red signal by mistake? The Commission of Railway Safety counted two hundred and eight such cases in five years, from April twenty nineteen to March twenty twenty four.	
+How often do trains pass a red signal by mistake? The Commission of Railway Safety noted two hundred and eight such cases in five years, from April twenty nineteen to March twenty twenty four.	
 Twelve of them ended in a collision.	
 This is exactly the kind of human mistake Kavach is built to catch.	
 So if Kavach is this useful, why is it not on every track today?	
 Did the government refuse to spend money? Let us look at the numbers.	
 First, the size of the job. Indian Railways has about sixty nine thousand route kilometres.	
 That counts each route once. Count every parallel line, and the running track is more than one lakh eleven thousand kilometres.	
-And there are about sixteen thousand diesel and electric engines.	
+And in March twenty twenty five, there were about sixteen thousand diesel and electric engines.	
 Now, the progress. By the end of July twenty twenty six, the newest Kavach version was working on two thousand six hundred and thirty three route kilometres.	
 That is on parts of the Delhi Mumbai and Delhi Howrah routes, two of the busiest in the country.	
 An older version also runs on about one thousand four hundred and sixty five kilometres in South Central Railway. Parts of it are now being upgraded.	
@@ -84,13 +82,13 @@ Now some rough maths. The government's estimate is about fifty lakh rupees per k
 Fifty lakh per kilometre, for about sixty nine thousand kilometres, comes to nearly thirty five thousand crore rupees.	
 Eighty lakh per engine, for sixteen thousand engines, adds about twelve thousand eight hundred crore more.	
 This is rough maths, not an official bill. But it shows you the size of the job.	
----
-Still, the hardest part is not buying boxes. It is making them all work together.	
+And it is not only about buying boxes. They must all be made to work together.	
 Every station's signalling data must be entered and checked. Every type of engine must be wired to its own brakes.	
+---
 Radio must cover every curve and every yard. Then everything is tested together, fixed, and tested again, before a single kilometre is called working.	
 So the slowest step sets the speed of the whole rollout.	
 Suppliers matter too. For years, three Indian companies supplied Kavach, Medha, HBL and Kernex.	
-New companies are trying to join. One of them, Quadrant Future Tek, got permission for passenger trials in May twenty twenty six. That is a step, not final approval.	
+New companies are trying to join. One of them, Quadrant Future Tek, told the stock exchange in May twenty twenty six that it got permission for passenger trials. That is a step, not final approval.	
 Now, the two most painful questions.	
 Would Kavach have stopped Balasore? And would it have saved the Kanchanjunga Express?	
 Case one. Bahanaga Bazar station, near Balasore in Odisha. June two, twenty twenty three.	
@@ -115,7 +113,7 @@ The goods train reached seventy eight kilometres per hour, and hit the Kanchanju
 There was no working Kavach on that section.	
 Here, Kavach could have made a real difference.	
 If both trains were fitted and the section was working, Kavach could have enforced the allowed movement and a slow speed past the failed signals.	
-Some videos say Kavach would lock the speed at exactly fifteen kilometres per hour, every time. That depends on the mode and the rules set. The documents do not promise it so simply.	
+Some videos say Kavach would always lock the speed at exactly fifteen kilometres per hour. That fifteen is the rule loco pilots follow at failed signals. Kavach enforces the limits its data and settings give it, so do not take that number as a promise.	
 And this was not just one loco pilot's mistake. The inquiry found failures in the paperwork, the communication and the training.	
 So, two crashes, two different failures. At Balasore, the signalling information itself was wrong. At Kanchanjunga, the backup rules for failed signals broke down.	
 Kavach is strongest against the second kind. Against the first, the fix has to start in the signalling room.	
