@@ -51,6 +51,14 @@ for g in sorted((P / "assets" / "episode1" / "glimpses").glob("g*.mp4")):
                      source_page="projects/health-claim-trap", file_url="", author="Be Practical with Kishore",
                      licence="Own work (third-party layers credited in Episode 01 media_manifest.csv)", licence_url="",
                      attribution="Episode 01", width="3840", height="2160", edl_slots="O001-O002"))
+for name, raw, what in (("IO-1", "hospital_corporate", "Clinic helpdesk worker with a headset (Canva video template)"),
+                        ("IO-2", "office_computer", "Hands typing on a laptop; the cioins.co.in grievance page composited on the screen (Canva template + our capture)"),
+                        ("IO-3", "office_computer", "Laptop loading spinner while typing (Canva video template)"),
+                        ("IO-5", "medical_white_blue", "Doctor explaining papers to a patient, cropped from a Canva video template")):
+    rows.append(dict(file=f"canva/{name}.mp4", kind="video", what_it_shows=what, source_page=f"Canva template export by the owner ({raw})",
+                     file_url="", author="Canva Pro (owner's account)", licence="Canva Content License (Pro)",
+                     licence_url="https://www.canva.com/policies/content-license-agreement/", attribution="Canva",
+                     width="1920", height="1080", edl_slots=name))
 with open(P / "media_manifest.csv", "w", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=COLS); w.writeheader(); w.writerows(rows)
 print(len(rows), "rows")

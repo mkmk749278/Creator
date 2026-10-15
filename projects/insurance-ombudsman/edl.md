@@ -8,7 +8,7 @@
 | 2 | 0:04.53 | 4.25 | glimpse | g2_bill.mp4 |  | FROM EPISODE 1 |
 | 3 | 0:08.78 | 4.42 | glimpse | g3_denied.mp4 |  | FROM EPISODE 1 |
 | 4 | 0:13.20 | 4.27 | still | thumbnail_B.jpg | EPISODE 1 · THE FOUR STEPS | FROM EPISODE 1 |
-| 5 | 0:17.47 | 3.11 | scene | IO-1.mp4 | NOT THE END OF YOUR CLAIM |  |
+| 5 | 0:17.47 | 3.11 | clip | IO-1.mp4 | NOT THE END OF YOUR CLAIM | ILLUSTRATION · CANVA TEMPLATE |
 | 6 | 0:20.58 | 3.33 | clip | 7567651.mp4 | PAY NOW · CLAIM IT BACK | ILLUSTRATIVE FOOTAGE |
 | 7 | 0:23.91 | 3.67 | scene | A1_staircase_O002.mp4 |  |  |
 | 8 | 0:27.58 | 1.33 | glimpse | g4_step1.mp4 |  | FROM EPISODE 1 |
@@ -75,7 +75,7 @@
 | 69 | 5:24.54 | 7.21 | scene | B2_two_step_clock_O035.mp4 |  |  |
 | 70 | 5:31.75 | 4.19 | scene | C5_proof_magnifier_O036.mp4 |  |  |
 | 71 | 5:35.94 | 12.1 | scene | C5_proof_magnifier_O037.mp4 |  |  |
-| 72 | 5:48.04 | 3.82 | scene | IO-2.mp4 | HOW DO YOU FILE? |  |
+| 72 | 5:48.04 | 3.82 | clip | IO-2.mp4 | HOW DO YOU FILE? | ILLUSTRATION · CANVA TEMPLATE |
 | 73 | 5:51.86 | 5.12 | scene | C1_filing_stepper_O039.mp4 |  |  |
 | 74 | 5:56.98 | 5.8 | scene | C1_filing_stepper_O040.mp4 |  |  |
 | 75 | 6:02.78 | 9.45 | scene | C2_offices_board_O041.mp4 |  |  |
@@ -88,7 +88,7 @@
 | 82 | 6:31.51 | 3.82 | scene | C3_document_slots_O046.mp4 |  |  |
 | 83 | 6:35.33 | 8.08 | scene | C3_document_slots_O047.mp4 |  |  |
 | 84 | 6:43.41 | 9.74 | scene | C1_filing_stepper_O048.mp4 |  |  |
-| 85 | 6:53.15 | 1.75 | scene | IO-3.mp4 | WHAT HAPPENS NEXT? |  |
+| 85 | 6:53.15 | 1.75 | clip | IO-3.mp4 | WHAT HAPPENS NEXT? | ILLUSTRATION · CANVA TEMPLATE |
 | 86 | 6:54.90 | 6.89 | scene | C6_hearing_O050.mp4 |  |  |
 | 87 | 7:01.79 | 14.75 | scene | B4_time_stats_O051.mp4 |  |  |
 | 88 | 7:16.54 | 4.66 | scene | C4_binding_award_O052.mp4 |  |  |
@@ -107,11 +107,11 @@
 | 101 | 8:37.89 | 3.18 | still | bhc_01_bombay-the-high-court-from-afar-2006-jpg.jpg | AWARD + INTEREST + ₹1 LAKH COSTS | BOMBAY HC | 9 DEC 2024 |
 | 102 | 8:41.07 | 3.28 | still | bhc_03_bombay-high-court-maidan-mumbai-maharash.jpg | RECOVERED FROM THE OFFICERS, AFTER AN INQUIRY | BHARAT HIRJI DEDHIA v. UNION OF INDIA | BOMBAY HC | 2024 |
 | 103 | 8:44.35 | 3.28 | still | bhc_03_bombay-high-court-maidan-mumbai-maharash.jpg | RECOVERED FROM THE OFFICERS, AFTER AN INQUIRY | BHARAT HIRJI DEDHIA v. UNION OF INDIA | BOMBAY HC | 2024 |
-| 104 | 8:47.63 | 2.76 | scene | IO-4.mp4 | THE POWER OF KNOWING YOUR RIGHTS |  |
+| 104 | 8:47.63 | 2.76 | clip | F15_35758005.mp4 | THE POWER OF KNOWING YOUR RIGHTS |  |
 | 105 | 8:50.39 | 4.36 | clip | F14_15612409.mp4 | NO CONNECTIONS · NO 20% FEES |  |
 | 106 | 8:54.75 | 4.79 | sting | sting |  |  |
 | 107 | 8:59.54 | 3.43 | clip | pixabay_63241.mp4 | NEXT · CONSUMABLES | ILLUSTRATIVE FOOTAGE |
 | 108 | 9:02.97 | 2.47 | clip | pixabay_151857.mp4 | GLOVES · MASKS · SYRINGES | ILLUSTRATIVE FOOTAGE |
 | 109 | 9:05.44 | 4.87 | clip | pixabay_67764.mp4 | A ₹5 LAKH BILL, LINE BY LINE | ILLUSTRATIVE FOOTAGE |
-| 110 | 9:10.31 | 4.21 | scene | IO-5.mp4 | WHAT THE PRICE RULES SAY |  |
+| 110 | 9:10.31 | 4.21 | clip | IO-5.mp4 | WHAT THE PRICE RULES SAY | ILLUSTRATION · CANVA TEMPLATE |
 | 111 | 9:14.52 | 10.87 | end | end |  |  |

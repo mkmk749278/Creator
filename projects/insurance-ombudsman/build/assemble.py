@@ -186,7 +186,7 @@ SHOTS = [
     S(at(125), "still", src=CM("bhc_01"), zoom=(1.0, 1.15), focus=(0.5, 0.5), label="AWARD + INTEREST + ₹1 LAKH COSTS", tag="BOMBAY HC | 9 DEC 2024"),
     S(at(125, 0.5), "still", src=CM("bhc_03"), zoom=(1.3, 1.5), focus=(0.6, 0.3), label="RECOVERED FROM THE OFFICERS, AFTER AN INQUIRY",
       tag="BHARAT HIRJI DEDHIA v. UNION OF INDIA | BOMBAY HC | 2024"),
-    CV("IO-4", at(126), "THE POWER OF KNOWING YOUR RIGHTS"),
+    F("F15", at(126), 6.0, "THE POWER OF KNOWING YOUR RIGHTS", tag=""),
     F("F14", at(127), 4.0, "NO CONNECTIONS · NO 20% FEES", tag=""),
     S(at(128), "sting"),
     S(at(131), "clip", src=B(63241), ss=2.0, label="NEXT · CONSUMABLES", tag=ILL),
