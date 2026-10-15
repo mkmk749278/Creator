@@ -31,16 +31,7 @@
 .gstchip small { font: 600 24px/1 Inter, Arial, sans-serif; color: var(--mist); letter-spacing: .06em; }
 
 /* the unbranded agreement */
-.agree { width: 600px; height: 800px; padding: 64px 56px; }
-.agree .lh { width: 240px; height: 26px; background: rgba(27,37,51,.55); border-radius: 4px; margin-bottom: 14px; }
-.agree .lh2 { width: 160px; height: 12px; background: rgba(27,37,51,.25); border-radius: 4px; margin-bottom: 52px; }
-.agree .ttl { width: 330px; height: 18px; background: rgba(27,37,51,.45); border-radius: 4px; margin: 0 auto 40px; }
-.agree .clause { position: relative; margin: 16px 0 30px; height: 64px; }
-.agree .hl { position: absolute; left: -10px; top: 2px; height: 60px; width: 508px; background: rgba(255,219,89,.55); transform-origin: 0 50%; mix-blend-mode: multiply; }
-.agree .pct { position: absolute; left: 6px; top: 6px; font: 800 52px/1 Inter, Arial, sans-serif; color: #1d3f8a; letter-spacing: .01em; white-space: nowrap; }
-.agree .sigbox { position: absolute; left: 56px; right: 56px; bottom: 92px; height: 70px; border-radius: 6px; }
-.agree .sigline { position: absolute; left: 56px; width: 260px; bottom: 92px; height: 3px; background: rgba(27,37,51,.6); }
-.agree .x { position: absolute; left: 30px; bottom: 98px; font: 800 30px/1 Inter, Arial, sans-serif; color: rgba(27,37,51,.6); }
+.agree { width: 600px; height: 700px; }
 .ring { position: absolute; border: 5px solid var(--yellow); border-radius: 10px; box-shadow: 0 0 22px rgba(255,219,89,.5); }
 
 /* bulldog clip pinning the stuck money */
@@ -55,23 +46,18 @@
       <div class="seg" id="s0">
         <div class="cam" id="cam0">
           <div class="desk"></div><div class="light" id="lt0"></div>
-          <div class="paper agree" data-layout-allow-overflow id="ag0" style="left:1130px; top:120px; transform: rotate(5deg)">
-            <div class="lh"></div><div class="lh2"></div><div class="ttl"></div>
-            <div class="rule"></div><div class="rule" style="width:92%"></div><div class="rule" style="width:96%"></div>
-            <div class="clause"><div class="hl" id="hl0"></div><div class="pct" id="pct0a">20%</div><div class="pct" id="pct0b" style="left:136px">+ GST</div></div>
-            <div class="rule"></div><div class="rule" style="width:88%"></div><div class="rule" style="width:94%"></div><div class="rule" style="width:70%"></div>
-            <div class="x" data-layout-allow-occlusion>×</div><div class="sigline"></div>
-            <div class="ring" id="sig0" style="left:22px; bottom:70px; width:320px; height:74px"></div>
-          </div>
-          <div class="paper strip" id="st0" style="left:150px; top:600px; transform: rotate(-3deg)">
+          <div class="paper strip" id="st0" style="left:60px; top:700px; transform: rotate(-3deg)">
             <div class="band"></div><div class="guil"></div><div class="amt">₹3,30,000</div>
           </div>
-          <svg class="clip" id="clip0" viewBox="0 0 150 120" style="left:230px; top:560px">
+          <svg class="clip" id="clip0" viewBox="0 0 150 120" style="left:140px; top:660px">
             <defs><linearGradient id="m0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a5566" /><stop offset=".5" stop-color="#1c2330" /><stop offset="1" stop-color="#0d1118" /></linearGradient></defs>
             <path d="M18 96 L132 96 L124 40 L26 40 Z" fill="url(#m0)" stroke="#5d6a7c" stroke-width="2" />
             <path d="M40 42 C40 6, 110 6, 110 42" fill="none" stroke="#9aa6b6" stroke-width="7" stroke-linecap="round" />
             <path d="M26 46 L124 46" stroke="rgba(255,255,255,.25)" stroke-width="3" />
           </svg>
+          <div class="paper agree" data-layout-allow-overflow id="ag0" data-doc="D2" style="left:1240px; top:110px; transform: rotate(3deg)">
+            <div class="ring" id="sig0" style="left:30px; bottom:30px; width:340px; height:54px"></div>
+          </div>
         </div>
         <div class="dof"></div>
         <div class="tag" id="tag0">EXAMPLE</div>
@@ -81,9 +67,7 @@
       <div class="seg" id="s1">
         <div class="cam" id="cam1">
           <div class="desk"></div><div class="light" id="lt1"></div>
-          <div class="paper agree" data-layout-allow-overflow style="left:1380px; top:-260px; transform: rotate(9deg); opacity:.85">
-            <div class="lh"></div><div class="lh2"></div><div class="ttl"></div><div class="rule"></div><div class="rule"></div><div class="rule"></div>
-          </div>
+          <div class="paper agree" data-layout-allow-overflow data-doc="D2" style="left:1380px; top:-300px; transform: rotate(9deg); opacity:.85"></div>
           <div id="grp1" style="position:absolute; left:250px; top:330px; width:1240px; height:236px">
             <div class="paper strip" id="st1" style="left:0; top:0; width:992px">
               <div class="band"></div><div class="guil" style="right:0; border-right:0; border-radius:4px 0 0 4px"></div><div class="amt" id="amt1">₹3,30,000</div>
@@ -104,12 +88,8 @@
       <div class="seg" id="s2">
         <div class="cam" id="cam2">
           <div class="desk"></div><div class="light" id="lt2"></div>
-          <div class="paper agree" data-layout-allow-overflow id="ag2" style="left:1300px; top:90px; transform: rotate(6deg)">
-            <div class="lh"></div><div class="lh2"></div><div class="ttl"></div>
-            <div class="rule"></div><div class="rule" style="width:92%"></div><div class="rule" style="width:96%"></div><div class="rule"></div><div class="rule" style="width:88%"></div>
-            <div class="rule" style="width:94%"></div><div class="rule" style="width:70%"></div>
-            <div class="x" data-layout-allow-occlusion>×</div><div class="sigline"></div>
-            <div class="ring" id="sig2" style="left:22px; bottom:70px; width:320px; height:74px"></div>
+          <div class="paper agree" data-layout-allow-overflow id="ag2" data-doc="D2" style="left:1290px; top:90px; transform: rotate(4deg)">
+            <div class="ring" id="sig2" style="left:30px; bottom:30px; width:340px; height:54px"></div>
           </div>
           <div id="grp2" style="position:absolute; left:150px; top:400px; width:1240px; height:236px">
             <div class="paper strip" id="st2" style="left:0; top:0; width:992px">
@@ -135,7 +115,7 @@
       // VO windows (film seconds, projects/insurance-ombudsman/scenes.md); each clip = window + 0.25 s handle each side
       const L = K.layout([{ id: "O020", ws: 197.94, we: 207.45 }, { id: "O021", ws: 207.88, we: 219.25 }, { id: "O024", ws: 240.35, we: 248.60 }]);
       const DUR = K.total(L);
-      K.grain($("grain")); K.dust($("dust"));
+      K.fillDocs(); K.grain($("grain")); K.dust($("dust"));
       const tl = gsap.timeline({ paused: true });
       L.forEach((s, i) => { tl.set($("s" + i), { visibility: "visible" }, s.off); if (i < L.length - 1) tl.set($("s" + i), { visibility: "hidden" }, s.off + s.len);
         tl.fromTo($("lt" + i), { x: 0, y: 0 }, { x: 60, y: 14, duration: s.len, ease: "none" }, s.off); });
@@ -143,16 +123,15 @@
 
       // ---- O020 ----
       { const v = L[0].v, s = L[0];
-        tl.fromTo($("cam0"), { scale: 1.0, x: 0, y: 0 }, { scale: 1.07, x: -40, y: -16, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("cam0"), { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: -40, y: -16, duration: v(205.2) - s.off, ease: "none" }, s.off);
         tl.fromTo($("st0"), { y: 520, rotation: -9 }, { y: 0, rotation: -3, duration: 0.9, ease: "power3.out" }, s.off);
         tl.fromTo($("clip0"), { opacity: 0, y: -90, scale: 1.25 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "power4.in" }, v(199.75));   // "is stuck"
         tl.fromTo($("st0"), { x: 0 }, { x: 0, keyframes: [{ x: 6, duration: 0.05 }, { x: -4, duration: 0.06 }, { x: 0, duration: 0.08 }] }, v(200.1));
         tl.fromTo($("ag0"), { x: 900, rotation: 14 }, { x: 0, rotation: 5, duration: 0.8, ease: "power3.out" }, v(201.0));            // "a recovery agency"
         tl.fromTo($("sig0"), { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, v(202.75));   // "sign our agreement"
         tl.to($("sig0"), { opacity: 0, duration: 0.4 }, v(204.6));
-        tl.fromTo($("hl0"), { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: "power2.inOut" }, v(205.3));
-        pop($("pct0a"), v(205.75), { opacity: 0, scale: 1.3 }, 0.3);                                                                    // "twenty percent"
-        pop($("pct0b"), v(206.7), { opacity: 0, scale: 1.3 }, 0.3);                                                                     // "plus G-S-T"
+        tl.fromTo($("ag0").querySelector(".hl"), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power1.inOut" }, v(205.5));          // "twenty percent plus G-S-T": the fee line
+        tl.to($("cam0"), { x: -260, y: -20, scale: 1.14, duration: 1.6, ease: "power2.inOut" }, v(205.2));                               // lean in to read it
         pop($("tag0"), s.off + 0.4, { opacity: 0 });
       }
       // ---- O021 ----
@@ -183,6 +162,7 @@
         tl.set($("pc2"), { x: 130, y: 300, rotation: 10 }, s.off);
         tl.fromTo($("sig2"), { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.35 }, v(240.5));                         // "before you sign any agreement"
         tl.to($("pc2"), { x: 330, y: 250, rotation: 16, duration: 1.4, ease: "power2.inOut" }, v(241.4));                              // "give away a share"
+        tl.fromTo($("ag2").querySelector(".hl"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power1.inOut" }, v(241.6));          // the fee line
         tl.to($("sig2"), { opacity: 0, duration: 0.3 }, v(244.1));
         tl.to($("ag2"), { x: 800, rotation: 16, opacity: 0, duration: 0.8, ease: "power2.in" }, v(245.0));                             // "you can do this yourself"
         tl.to($("pc2"), { x: 0, y: 0, rotation: 0, duration: 1.0, ease: "power3.inOut" }, v(245.3));                                  // the fee folds back

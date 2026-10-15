@@ -27,9 +27,9 @@
 /* letters and pictograms for the three branches */
 .env { position: absolute; width: 230px; height: 150px; }
 .env svg, .pict svg { width: 100%; height: 100%; }
-.reply { width: 210px; height: 270px; padding: 34px 26px; }
-.reply .rule { height: 8px; margin-bottom: 14px; }
-.mark { position: absolute; left: 50%; top: 52%; width: 120px; height: 120px; margin: -60px 0 0 -60px; }
+.reply { width: 330px; height: 360px; }
+.reply .dx { padding: 34px 26px; }
+.mark { position: absolute; right: 22px; bottom: 18px; width: 84px; height: 84px; }
 .tray { position: absolute; width: 230px; height: 150px; border: 5px dashed rgba(184,199,217,.7); border-radius: 14px; }
 .branch { position: absolute; height: 5px; background: rgba(184,199,217,.55); transform-origin: 0 50%; border-radius: 3px; }
 
@@ -98,12 +98,10 @@
           <div class="branch" id="br1" style="left:600px; top:560px; width:400px; transform: rotate(-24deg)"></div>
           <div class="branch" id="br2" style="left:600px; top:560px; width:370px"></div>
           <div class="branch" id="br3" style="left:600px; top:560px; width:400px; transform: rotate(24deg)"></div>
-          <div class="paper reply" id="rp1" style="left:880px; top:120px; transform: rotate(-4deg)">
-            <div class="rule" style="width:60%; background:rgba(27,37,51,.4)"></div><div class="rule"></div><div class="rule" style="width:85%"></div><div class="rule"></div><div class="rule" style="width:70%"></div>
+          <div class="paper reply" id="rp1" data-doc="REJ" style="left:860px; top:60px; transform: rotate(-4deg)">
             <svg class="mark" viewBox="0 0 48 48" fill="none" stroke="#2b3a52" stroke-width="5" stroke-linecap="round"><path d="M12 12 L36 36 M36 12 L12 36" /></svg>
           </div>
-          <div class="paper reply" id="rp2" style="left:930px; top:420px; transform: rotate(3deg)">
-            <div class="rule" style="width:60%; background:rgba(27,37,51,.4)"></div><div class="rule"></div><div class="rule" style="width:85%"></div><div class="rule"></div><div class="rule" style="width:70%"></div>
+          <div class="paper reply" id="rp2" data-doc="REPLY" style="left:920px; top:440px; transform: rotate(3deg)">
             <svg class="mark" viewBox="0 0 48 48" fill="none" stroke="#2b3a52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 22 V8 C16 6 18 5 20 6 L23 14 C24 17 26 20 30 20 H37 C40 20 41 23 40 25 L37 37 C36 40 34 41 31 41 H16 M8 22 H16 V42 H8 Z" transform="rotate(180 24 24)" /></svg>
           </div>
           <div class="tray" id="tr3" style="left:900px; top:820px"></div>
@@ -138,7 +136,7 @@
       const L = K.layout([{ id: "O028", ws: 269.77, we: 273.07 }, { id: "O032", ws: 303.56, we: 309.10 }, { id: "O033", ws: 309.55, we: 313.64 },
                           { id: "O034", ws: 314.16, we: 324.27 }, { id: "O035", ws: 324.69, we: 331.49 }]);
       const DUR = K.total(L);
-      K.grain($("grain")); K.dust($("dust"));
+      K.fillDocs(); K.grain($("grain")); K.dust($("dust"));
 
       // build every dial: n day ticks around a paper card, an arc for the days run, a hand
       const P = (a, r) => [(r * Math.sin(a)).toFixed(1), (-r * Math.cos(a)).toFixed(1)];

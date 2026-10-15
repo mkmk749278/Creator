@@ -26,3 +26,10 @@ pixel is generated here (CC0 / own work).
   no on-screen text for the second.
 - B3/O057 is also listed under C4_binding_award: use one of the two.
 - The odometer in B3 counts each new day in the last 15% of that day, so every frame you hold on shows an exact multiple of ₹5,000.
+
+## Revision v2 (owner's notes, 2026-10-15; `projects/insurance-ombudsman/revision-v2.md`)
+No blank paper: every document shows real, readable SIMULATION text from one invented family and claim. The texts live in
+`kit.js` `K.DOCS` (D2 agreement, D5 complaint, D6 insurer reply, D7 award, D8 recommendation, plus two grievance replies),
+and any element with `data-doc="<key>"` is filled at load. B1 highlights the D2 fee line on "twenty percent plus GST".
+B3 stamps D7 with RECEIVED 15 SEP 2026 on "receiving it". B4 ticks both "agreed" lines on D8, then "Case closed".
+The B2 O034 reply letters and B4's month pages ("MONTH 1–3") also lost their grey bars.

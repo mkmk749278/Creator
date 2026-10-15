@@ -15,10 +15,10 @@
 @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
 @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
 
-.doc { width: 400px; height: 520px; padding: 52px 42px; }
+.doc { width: 400px; height: 430px; }
 .doc .lh { width: 170px; height: 20px; background: rgba(27,37,51,.5); border-radius: 4px; margin-bottom: 40px; }
 .doc .rule { height: 8px; margin-bottom: 15px; }
-.settle { width: 440px; height: 580px; padding: 56px 46px; box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 30px 60px rgba(0,0,0,.55), 0 0 0 5px rgba(89,220,195,.85); }
+.settle { width: 440px; height: 480px; box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 30px 60px rgba(0,0,0,.55), 0 0 0 5px rgba(89,220,195,.85); }
 .settle .lh { width: 200px; height: 20px; background: rgba(27,37,51,.5); border-radius: 4px; margin: 0 auto 44px; }
 .tick { position: absolute; bottom: 60px; width: 120px; height: 70px; border-bottom: 3px solid rgba(27,37,51,.5); }
 .tick svg { position: absolute; left: 22px; bottom: 6px; width: 70px; height: 70px; }
@@ -33,6 +33,7 @@
   box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 30px 60px rgba(0,0,0,.55); transform-origin: 50% 0; }
 /* three month pages */
 .month { width: 440px; height: 380px; padding: 46px 34px 30px; }
+.month .mlab { font: 800 24px/1 Inter, Arial, sans-serif; letter-spacing: .12em; color: #1e3a5f; margin-bottom: 20px; }
 .month .lh { width: 130px; height: 16px; background: rgba(27,37,51,.45); border-radius: 4px; margin-bottom: 26px; }
 .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; }
 .grid i { display: block; height: 40px; border-radius: 4px; background: rgba(27,37,51,.08); }
@@ -46,17 +47,9 @@
       <!-- O051: mediation under Rule 16; about one in three closed health complaints ended this way -->
       <div class="seg" id="s0">
         <div class="cam" id="cam0"><div class="desk"></div><div class="light" id="lt0"></div>
-          <div class="paper doc" id="dA" style="left:120px; top:250px; transform: rotate(-5deg)">
-            <div class="lh"></div><div class="rule"></div><div class="rule" style="width:90%"></div><div class="rule"></div><div class="rule" style="width:75%"></div><div class="rule"></div><div class="rule" style="width:85%"></div>
-          </div>
-          <div class="paper doc" id="dB" style="left:1400px; top:250px; transform: rotate(5deg)">
-            <div class="lh" style="margin-left:auto"></div><div class="rule"></div><div class="rule" style="width:90%"></div><div class="rule"></div><div class="rule" style="width:75%"></div><div class="rule"></div><div class="rule" style="width:85%"></div>
-          </div>
-          <div class="paper settle" id="dS" style="left:740px; top:200px">
-            <div class="lh"></div><div class="rule"></div><div class="rule" style="width:92%"></div><div class="rule"></div><div class="rule" style="width:80%"></div><div class="rule" style="width:95%"></div>
-            <div class="tick" style="left:46px"><svg id="tk1" viewBox="0 0 48 48" fill="none" stroke="#1f8f7b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 25 L19 36 L40 12" /></svg></div>
-            <div class="tick" style="right:46px"><svg id="tk2" viewBox="0 0 48 48" fill="none" stroke="#1f8f7b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 25 L19 36 L40 12" /></svg></div>
-          </div>
+          <div class="paper doc" id="dA" data-doc="D5" style="left:120px; top:320px; transform: rotate(-5deg)"></div>
+          <div class="paper doc" id="dB" data-doc="D6" style="left:1400px; top:320px; transform: rotate(5deg)"></div>
+          <div class="paper settle" id="dS" data-doc="D8" style="left:740px; top:290px"></div>
           <div class="bigfold" id="bf0" style="left:680px; top:280px"></div>
           <div id="row0" style="position:absolute; left:0; top:0">
             <div class="fold hi" id="f0a" style="left:730px; top:360px; width:280px; height:210px"></div>
@@ -72,9 +65,9 @@
       <!-- O054: about 8 in 10 closed health complaints were closed within three months -->
       <div class="seg" id="s1">
         <div class="cam" id="cam1"><div class="desk"></div><div class="light" id="lt1"></div>
-          <div class="paper month" id="m1" style="left:100px; top:420px; transform: rotate(-1.5deg)"><div class="lh"></div><div class="grid"></div></div>
-          <div class="paper month" id="m2" style="left:570px; top:420px; transform: rotate(1deg)"><div class="lh"></div><div class="grid"></div></div>
-          <div class="paper month" id="m3" style="left:1040px; top:420px; transform: rotate(-.5deg)"><div class="lh"></div><div class="grid"></div></div>
+          <div class="paper month" data-m="1" id="m1" style="left:100px; top:420px; transform: rotate(-1.5deg)"><div class="mlab"></div><div class="grid"></div></div>
+          <div class="paper month" data-m="2" id="m2" style="left:570px; top:420px; transform: rotate(1deg)"><div class="mlab"></div><div class="grid"></div></div>
+          <div class="paper month" data-m="3" id="m3" style="left:1040px; top:420px; transform: rotate(-.5deg)"><div class="mlab"></div><div class="grid"></div></div>
           <div class="zone" id="zn1" style="left:80px; top:400px; width:1420px; height:420px"></div>
           <div id="files1"></div>
         </div>
@@ -91,7 +84,8 @@
       const $ = (id) => document.getElementById(id);
       const L = K.layout([{ id: "O051", ws: 421.94, we: 436.31 }, { id: "O054", ws: 450.41, we: 459.51 }]);
       const DUR = K.total(L);
-      K.grain($("grain")); K.dust($("dust"));
+      K.fillDocs(); K.grain($("grain")); K.dust($("dust"));
+      document.querySelectorAll("[data-m]").forEach((m) => { m.querySelector(".mlab").textContent = "MONTH " + m.dataset.m; });
 
       // month grids (35 cells) and ten case folders for O054
       const cells = [];
@@ -112,11 +106,12 @@
         tl.to($("dA"), { x: 230, rotation: -3, duration: 2.2, ease: "sine.inOut" }, v(422.6));          // "end in mediation": the two sides move toward each other
         tl.to($("dB"), { x: -230, rotation: 3, duration: 2.2, ease: "sine.inOut" }, v(422.6));
         tl.fromTo($("dS"), { y: -1100, rotation: 6 }, { y: 0, rotation: 0, duration: 0.9, ease: "power3.out" }, v(425.4));   // "suggests a fair settlement"
-        tl.fromTo($("tk1"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, v(428.0));   // "both sides"
-        tl.fromTo($("tk2"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, v(428.45));  // "agree"
+        tl.fromTo($("dS").querySelector("[data-tick='1']"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, v(428.0));   // "both sides"
+        tl.fromTo($("dS").querySelector("[data-tick='2']"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, v(428.45));  // "agree"
         tl.to([$("dA"), $("dB")], { x: (i) => (i ? -560 : 560), y: 40, rotation: 0, scale: 0.85, opacity: 0, duration: 0.6, ease: "power2.in" }, v(429.0));
-        tl.fromTo($("bf0"), { opacity: 0, scaleY: -0.2 }, { opacity: 1, scaleY: 1, duration: 0.55, ease: "power3.out" }, v(429.4));  // "the case closes"
-        tl.to($("dS"), { opacity: 0, duration: 0.2 }, v(429.9));
+        tl.fromTo($("dS").querySelector("[data-closed]"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3 }, v(429.3));   // "the case closes"
+        tl.fromTo($("bf0"), { opacity: 0, scaleY: -0.2 }, { opacity: 1, scaleY: 1, duration: 0.55, ease: "power3.out" }, v(429.75));  // "the case closes"
+        tl.to($("dS"), { opacity: 0, duration: 0.2 }, v(430.2));
         // the closed file becomes one of three closed health complaints
         tl.to($("bf0"), { x: 50, y: 80, width: 280, height: 210, duration: 0.7, ease: "power3.inOut" }, v(430.5));
         tl.set($("bf0"), { opacity: 0 }, v(431.2));

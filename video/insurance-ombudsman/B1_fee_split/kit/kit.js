@@ -42,6 +42,53 @@
         g.globalAlpha = Math.min(1, 1.8 * p.a * lit) * (0.6 + 0.4 * Math.sin(t * 0.9 + p.ph)); g.fillStyle = "#ffe7c2";
         g.beginPath(); g.arc(x, y, p.s, 0, 6.2832); g.fill(); } });
   };
+
+  // revision v2: the documents of one family and one claim (projects/insurance-ombudsman/revision-v2.md), all SIMULATION and
+  // invented. Any element with data-doc="<key>" is filled with that document at load.
+  const SIM = '<div class="sim">SIMULATION</div>';
+  K.DOCS = {
+    D2: SIM + `<div class="ttl" style="margin-top:14px">CLAIM RECOVERY SERVICE AGREEMENT</div>
+      <div class="ref">Agreement No. CRS-2026-0412 · Hyderabad · 12 Sep 2026</div><hr>
+      <div class="row">Client: <b>R. Kumar</b></div>
+      <div class="row">Claim No.: <b>CLM-2408-55217</b></div>
+      <div class="row">Claim: <b>₹3,30,000</b></div>
+      <div class="key"><span class="hl"></span><span style="position:relative">Service fee: 20% of the amount recovered + GST as applicable</span></div>
+      <div class="small">1. The agency will prepare and follow up the client's claim papers.</div>
+      <div class="small">2. The fee is payable on the amount recovered.</div>
+      <div class="small">3. This agreement is valid for 12 months.</div>
+      <div class="sign">Signature<u></u></div>`,
+    D5: SIM + `<div class="org" style="margin-top:16px">Complaint to the Insurance Ombudsman, Hyderabad</div>
+      <div class="ref" style="margin-top:8px">Complaint No. HYD-H-2026-0471</div><hr>
+      <div class="row">Complainant: <b>R. Kumar</b></div>
+      <div class="row">Against: <b>Sample Health Insurance Co. Ltd.</b></div>
+      <div class="row">Relief sought: <b>₹3,30,000</b></div>`,
+    D6: SIM + `<div class="org" style="margin-top:16px">Sample Health Insurance Co. Ltd.</div>
+      <div class="ttl">Reply of the insurer</div>
+      <div class="ref">Complaint No. HYD-H-2026-0471</div><hr>
+      <div class="row">The deduction was made under the policy terms.</div>`,
+    D7: SIM + `<div class="org" style="margin-top:16px">Office of the Insurance Ombudsman, Hyderabad</div>
+      <div class="ttl" style="margin-top:16px">AWARD under Rule 17</div>
+      <div class="ref">Complaint No. HYD-H-2026-0471<br>R. Kumar v. Sample Health Insurance Co. Ltd.</div><hr>
+      <div class="key" style="font-weight:600"><span class="hl"></span><span style="position:relative">The insurer shall pay <b>₹3,30,000</b> to the complainant within 30 days of receipt of this award.</span></div>
+      <div class="small" style="margin-top:14px">Hyderabad · 10 Sep 2026</div>
+      <div class="sign" style="bottom:70px">Insurance Ombudsman</div>`,
+    D8: SIM + `<div class="ttl" style="margin-top:16px">RECOMMENDATION<br>under Rule 16</div>
+      <div class="ref">Complaint No. HYD-H-2026-0471</div><hr>
+      <div class="row">Settlement offered: <b>₹2,60,000</b></div>
+      <div class="row" style="margin-top:22px">Complainant: agreed <span class="ok" data-tick="1">✓</span></div>
+      <div class="row">Insurer: agreed <span class="ok" data-tick="2">✓</span></div>
+      <div class="key" data-closed style="color:#1f8f7b">Case closed</div>`,
+    REJ: SIM + `<div class="org" style="margin-top:14px; font-size:15px">Sample Health Insurance Co. Ltd.</div>
+      <div class="ref" style="font-size:14px; margin:6px 0 8px">Reply to grievance · CLM-2408-55217</div><hr style="margin:6px 0 10px">
+      <div class="row" style="font-size:22px">Your grievance has been examined. It is not accepted.</div>`,
+    REPLY: SIM + `<div class="org" style="margin-top:14px; font-size:15px">Sample Health Insurance Co. Ltd.</div>
+      <div class="ref" style="font-size:14px; margin:6px 0 8px">Reply to grievance · CLM-2408-55217</div><hr style="margin:6px 0 10px">
+      <div class="row" style="font-size:20px">We have reviewed your complaint. The deduction was made as per the policy. Our decision stands.</div>`,
+  };
+  K.fillDocs = () => document.querySelectorAll("[data-doc]").forEach((el) => {
+    const d = document.createElement("div"); d.className = "dx"; d.innerHTML = K.DOCS[el.dataset.doc]; el.prepend(d);
+    // papers lie rotated on the desk, so their line boxes overlap as rectangles: tell the layout audit this is intended
+    d.querySelectorAll("*").forEach((n) => n.setAttribute("data-layout-allow-overlap", "")); });
   K.attach = (tl) => { tl.eventCallback("onUpdate", () => K.render(tl.time())); K.render(0); };
   window.K = K;
 })();
