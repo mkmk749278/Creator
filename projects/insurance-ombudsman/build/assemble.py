@@ -143,7 +143,7 @@ SHOTS = [
     SC("A4_email_stamp", "O026"),
     SC("C5_proof_magnifier", "O027"),
     SC("B2_two_step_clock", "O028"),
-    SC("A6_gro_email", "O029"),
+    SC("A6_gro_email", "O029", push=True),   # its last 3.7 s hold one typed line: a slow push keeps it moving
     SC("A6_gro_email", "O030"),
     S(at(66), "still", src=A / "web" / "cio_gro_blur.png", zoom=(1.0, 1.25), focus=(0.5, 0.3), label="GRO LIST ON CIOINS.CO.IN", tag="CIOINS.CO.IN · GRIEVANCE REDRESSAL OFFICERS"),
     SC("A6_gro_email", "O030", t=at(67)),
@@ -266,8 +266,9 @@ def render(shot, dur, out, W, H):
         if not Path(shot["src"]).exists():
             return placeholder(shot, dur, out, W, H, enc)
         off = shot.get("frm", shot["t"]) - shot["base"]
+        push = [f"scale=w='{W}+{int(W*0.08)}*t/{dur:.2f}':h=-2:eval=frame", f"crop={W}:{H}"] if shot.get("push") else []
         run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", shot["src"],
-             "-vf", ",".join([f"scale={W}:{H}", "fps=30", "tpad=stop_mode=clone:stop_duration=5"] + ov), "-t", f"{dur:.3f}"] + enc + [out])
+             "-vf", ",".join([f"scale={W}:{H}", "fps=30", "tpad=stop_mode=clone:stop_duration=5"] + push + ov), "-t", f"{dur:.3f}"] + enc + [out])
     elif k == "still":
         fx, fy = shot.get("focus", (0.5, 0.5))
         z = shot.get("zoom") or (1.0, 1.06)

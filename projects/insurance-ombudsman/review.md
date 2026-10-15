@@ -1,3 +1,19 @@
+# Review v2 (owner's notes on v1, 2026-10-15)
+
+Sheets: `runs/insurance-ombudsman/qa4/` (every 2 s). Audio −14.3 LUFS. freezedetect: one 3.7 s hold at 4:40 (A6 O029,
+last typed line) → slow push added.
+
+| Owner's note | What changed |
+|---|---|
+| Real footage not good; court not matching | Classical-columns stock removed; court lines use only the three real Bombay High Court photos; Bima Bharosa "not a court" cuts to its own portal |
+| Video calls look like friends chatting | All video-call stock removed; new animated official hearing (C6): Ombudsman with nameplate, complainant R. Kumar, insurer's representative, the three questions on their words |
+| No religious persons | PX10/PX11/PX12 (turbans), PX14 (cap), PX13, F12, F05, F19 removed |
+| Many blank white papers | Every document now carries readable SIMULATION text: settlement letter/email, agency agreement (20% + GST line), Bima Bharosa ticket and reply, GRO email typed line by line (new A6), complaint, insurer's reply, Rule 16 recommendation, Rule 17 award, review screen, acknowledgement, the five upload documents |
+| Use Canva video templates | Owner's three Canva exports: IO-1 clinic helpdesk (cashless denial not the end), IO-2 laptop with the real cioins.co.in grievance page composited on its screen (how to file), IO-3 loading spinner (what happens next), IO-5 doctor with papers, cropped clear of the template's text card (next episode) |
+
+Minor, for the owner: the two Canva people clips are non-Indian actors (no religious markers); "the power of knowing your
+rights" uses the Hyderabad street until a template for it is sent.
+
 # Review: The Insurance Ombudsman, 1080p preview
 
 Cut: `projects/insurance-ombudsman/assets/insurance-ombudsman-preview-1080p.mp4` (9:25, 118 shots, mean 4.8 s;
