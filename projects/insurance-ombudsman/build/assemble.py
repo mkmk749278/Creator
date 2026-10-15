@@ -144,7 +144,7 @@ SHOTS = [
     SC("B2_two_step_clock", "O033"),
     SC("B2_two_step_clock", "O034"),
     SC("B2_two_step_clock", "O035"),
-    WP("cio_complaint", at(75), "RAISED TO ₹50 LAKH · NOV 2023", "GAZETTE G.S.R. 828(E) | 2023", focus=(0.5, 0.75), zoom=(1.3, 1.7)),
+    SC("C5_proof_magnifier", "O036"),
     SC("C5_proof_magnifier", "O037"),
     # ---- 4 Filing, the hearing and the award ----
     PX("PX14", at(78), 4.0, "HOW DO YOU FILE?"),
