@@ -287,3 +287,28 @@ All new VO sentences pass the English VO lint in `tools/build_script.py`.
     - Other devices, consumables included, are limited to a 10% yearly price rise.
     - So O064 must change (change 8).
 16. **GST 18%:** the arithmetic is right. The rate is our assumption, so label it (change 3).
+
+## v1.3 re-check (2026-10-15)
+
+Light scope (PLAYBOOK §12): I compared v1.3 (`script.full.tsv`, md5 `50df2912`) with v1.2 (git HEAD) field by field
+and re-checked only the 22 lines that changed. All other lines are unchanged.
+- **All 8 required changes are in, word for word:** O010, O014 (with the 63% tag), O021, O037, O050–O052, O054, O059,
+  O064. Every VO line passes `lint_en`.
+- **Optionals applied, all still supported by their sources:**
+  - O002 on-screen `STEP 4: INSURANCE OMBUDSMAN · FREE`. This also brings the thumbnail promise forward, to about 0:20–0:40.
+  - O005 drops "silently"; O006 says "many families"; O007 drops "pay the fees".
+  - O008 "twenty percent or more"; O010 split tags; O012 "one common mistake".
+  - O017 "does not pass"; O018 "which works under"; O019 "back to the second door".
+  - O027 uses 1,715 with the H8 tag; O030 GRO wording; O061 the sharper Dedhia line.
+- **`claims.csv`:** rows updated to quote the v1.3 text and line ids.
+  - Mediation now sits at O051 (IO-28, IO-29), the hearing at O050 and the award at O052 (IO-27).
+  - The "REQUIRED CHANGE" notes now read "applied in v1.3".
+  - Every on-screen tag cited in a claim exists in the file.
+- **Gate:** `37 claims: confirmed 37`, passed, and it now describes the script as it stands.
+- **Still open (optional, not applied):**
+  - O035 condonation line.
+  - O037 "already closed".
+  - O041 "office you are complaining against".
+  - A spoken "You don't need a lawyer".
+  - The 76%-online line.
+  - Moving O053 after O050.
