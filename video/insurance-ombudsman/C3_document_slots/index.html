@@ -40,6 +40,13 @@
 .doc { position: absolute; width: 230px; height: 300px; padding: 18px 18px; font: 400 12px/1.4 Inter, Arial, sans-serif; }
 .doc .hd { height: 34px; margin: -18px -18px 14px; background: #14263b; color: #f5f7fb; font: 800 13px/34px Inter, Arial, sans-serif; letter-spacing: .1em; padding: 0 14px; }
 .doc .t { font: 800 16px/1.2 Inter, Arial, sans-serif; color: #172231; letter-spacing: .04em; margin-bottom: 8px; }
+.doc .tx { font: 400 11.5px/1.36 Inter, Arial, sans-serif; color: #232a33; margin: 4px 0; }
+.doc .kv2 { display: flex; justify-content: space-between; gap: 8px; font: 600 11.5px/1.3 Inter, Arial, sans-serif; color: #232a33; border-bottom: 1px dashed #cbbfa6; padding: 3px 0; }
+.doc .kv2 b { font-weight: 800; color: #111a26; text-align: right; }
+.doc .kv2.cut b { color: #c2353a; }
+.doc .kv2.tot { border-bottom: 0; border-top: 2px solid #8a7f6a; font-weight: 800; }
+.doc .sm { position: absolute; left: 18px; bottom: 10px; font: 700 9px/1 Inter, Arial, sans-serif; letter-spacing: .2em; color: #4a525c; }
+.idc .tx { position: absolute; left: 98px; font: 600 11px/1.25 Inter, Arial, sans-serif; color: #172231; }
 .doc .ln { height: 7px; border-radius: 4px; background: #d5ccba; margin: 9px 0; }
 .doc .ln.cut { background: rgba(255,125,128,.75); }
 .doc .row { display: flex; justify-content: space-between; border-bottom: 1px dashed #cbbfa6; padding: 4px 0; }
@@ -106,13 +113,13 @@
       const lines = (n, cut = -1) => Array.from({ length: n }, (_, k) => `<div class="ln${k === cut ? " cut" : ""}" style="width:${[92, 80, 88, 70, 84, 60, 90, 76][k % 8]}%"></div>`).join("");
       const rows = (n) => Array.from({ length: n }, () => `<div class="row"><i></i><b></b></div>`).join("");
       const docs = [
-        D("d0", "paper doc", `<div class="hd">HEALTH POLICY</div><div class="t">POLICY SCHEDULE</div><div style="font:600 11px/1 Inter;color:#5d6876">POLICY NO. HX-4471-0926</div>${lines(7)}`, 140, 790, -8),
-        D("d1a", "paper doc", `<div class="hd">HOSPITAL</div><div class="t">DISCHARGE SUMMARY</div>${lines(8)}`, 470, 800, 5),
-        D("d1b", "paper doc", `<div class="hd">HOSPITAL</div><div class="t">FINAL BILL · ITEMISED</div>${rows(10)}`, 640, 820, -4),
-        D("d2", "paper doc", `<div class="hd">INSURANCE COMPANY</div><div class="t">CLAIM DECISION</div>${lines(3)}${lines(1, 0)}${lines(4)}`, 900, 795, 7),
-        D("d3", "paper doc", `<div class="hd">EMAIL · SENT</div><div class="t">TO: GRIEVANCE OFFICER</div><div style="font:600 11px/1.3 Inter;color:#5d6876">SUBJECT: COMPLAINT ABOUT MY CLAIM</div>${lines(7)}`, 1180, 805, -6),
-        D("d4a", "idc", `<div class="av"></div><div class="k">ID CARD</div><div class="ln" style="top:40px;width:110px"></div><div class="ln" style="top:58px;width:90px"></div><div class="ln" style="top:96px;width:116px;background:#7d8fa6"></div>`, 1450, 830, 6),
-        D("d4b", "paper doc", `<div class="hd">ADDRESS PROOF</div><div class="t">UTILITY BILL</div>${lines(6)}`, 1600, 800, -5),
+        D("d0", "paper doc", `<div class="hd">SAMPLE HEALTH INSURANCE</div><div class="t">POLICY SCHEDULE</div><div class="kv2 "><span>Policy No.</span><b>SHI-4471-0926</b></div><div class="kv2 "><span>Policyholder</span><b>R. Kumar</b></div><div class="kv2 "><span>City</span><b>Hyderabad</b></div><div class="kv2 "><span>Insured members</span><b>4</b></div><div class="kv2 "><span>Room rent limit</span><b>None</b></div><div class="tx">Family health policy. Renewed every year.</div><div class="sm">SIMULATION</div>`, 140, 790, -8),
+        D("d1a", "paper doc", `<div class="hd">SAMPLE CITY HOSPITAL</div><div class="t">DISCHARGE SUMMARY</div><div class="kv2 "><span>Patient</span><b>R. Kumar</b></div><div class="kv2 "><span>Hospital No.</span><b>SCH-77214</b></div><div class="kv2 "><span>Ward</span><b>General</b></div><div class="kv2 "><span>At discharge</span><b>Stable</b></div><div class="tx">Advice: rest, medicines as prescribed, review after 7 days.</div><div class="sm">SIMULATION</div>`, 470, 800, 5),
+        D("d1b", "paper doc", `<div class="hd">SAMPLE CITY HOSPITAL</div><div class="t">FINAL BILL · ITEMISED</div><div class="kv2 "><span>Room charges</span><b>₹96,000</b></div><div class="kv2 "><span>Doctor fees</span><b>₹58,000</b></div><div class="kv2 "><span>Medicines</span><b>₹1,12,000</b></div><div class="kv2 "><span>Investigations</span><b>₹74,000</b></div><div class="kv2 "><span>Procedure</span><b>₹88,000</b></div><div class="kv2 "><span>Consumables</span><b>₹22,000</b></div><div class="kv2 tot"><span>Total</span><b>₹4,50,000</b></div><div class="sm">SIMULATION</div>`, 640, 820, -4),
+        D("d2", "paper doc", `<div class="hd">SAMPLE HEALTH INSURANCE</div><div class="t">CLAIM SETTLEMENT ADVICE</div><div class="tx">CLM-2408-55217 · Dear R. Kumar, your claim has been processed.</div><div class="kv2 "><span>Amount claimed</span><b>₹4,50,000</b></div><div class="kv2 "><span>Amount approved</span><b>₹1,20,000</b></div><div class="kv2 cut"><span>Amount disallowed</span><b>₹3,30,000</b></div><div class="tx">Reason: deductions as per policy terms and conditions. Claims Department</div><div class="sm">SIMULATION</div>`, 900, 795, 7),
+        D("d3", "paper doc", `<div class="hd">EMAIL · SENT</div><div class="tx"><b>To:</b> gro@samplehealth.example<br/><b>Subject:</b> Grievance: partial settlement of claim CLM-2408-55217</div><div class="tx">Dear Grievance Redressal Officer, I write about my health claim. Policy No. SHI-4471-0926. Claim No. CLM-2408-55217. Hospital bill: ₹4,50,000. Paid: ₹1,20,000. Cut: ₹3,30,000. The deduction is wrong because my policy has no room-rent limit. Please review and pay the balance. R. Kumar</div><div class="sm">SIMULATION</div>`, 1180, 805, -6),
+        D("d4a", "idc", `<div class="av"></div><div class="k">IDENTITY CARD</div><div class="tx" style="top:38px">R. Kumar</div><div class="tx" style="top:58px">Hyderabad</div><div class="tx" style="top:96px">ID XXXX-XX-4471</div>`, 1450, 830, 6),
+        D("d4b", "paper doc", `<div class="hd">ELECTRICITY BILL</div><div class="t">ADDRESS PROOF</div><div class="kv2 "><span>Name</span><b>R. Kumar</b></div><div class="kv2 "><span>Consumer No.</span><b>4471-0926-01</b></div><div class="tx">Flat 12, Sample Nagar, Hyderabad 500001</div><div class="kv2 "><span>Amount due</span><b>₹1,240</b></div><div class="sm">SIMULATION</div>`, 1600, 800, -5),
         D("d4c", "photo", `<div class="av"></div>`, 1700, 880, 9),
       ];
       SLOTS.forEach((_, i) => { const f = document.createElement("div"); f.className = "ft"; f.id = "ft" + i; f.textContent = i === 4 ? "JPG" : "PDF";
