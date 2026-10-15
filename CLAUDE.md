@@ -14,7 +14,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - The owner (Kishore) works **only from an Android phone**: GitHub app, Claude app, Termux, SSH to a VPS. No PC.
   Everything runs in cloud sessions, GitHub Actions or the VPS. Results must be viewable on a phone (MP4 link, contact
   sheet, issue comment, run summary). **Deliver videos to the owner's Google Drive `Creator` folder**
-  (`scripts/upload_gdrive.sh`, needs `GDRIVE_RCLONE_TOKEN`), not Gofile (owner, 2026-10-13; PLAYBOOK §1).
+  (`scripts/upload_gdrive.sh`, needs `GDRIVE_RCLONE_TOKEN`), not Gofile (owner, 2026-10-13; PLAYBOOK §1), in
+  `Creator/<English|Telugu>/<slug>/`: one folder per video, nothing loose in `Creator/` (owner, 2026-10-15).
 - **All work lands on `main`.** Parallel sessions use their own branch and folder; the coordinator merges them into `main`
   the same day. Sessions can't delete branches: tell the owner which ones to delete.
 - Build in phases. At the end of each phase, stop and report what was built, what was measured and what is left.

@@ -1,0 +1,686 @@
+[
+  {
+    "id": "F01",
+    "platform": "Pexels",
+    "asset_id": 7567655,
+    "title": "man paying bills using smartphone",
+    "source_url": "https://www.pexels.com/video/man-paying-bills-using-smartphone-7567655/",
+    "download_url": "https://www.pexels.com/download/video/7567655/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Pocket payment insert",
+    "chapter": "CH1",
+    "local_file": "footage/F01_7567655.mp4",
+    "status": "downloaded",
+    "bytes": 4939949,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "11.800000"
+      }
+    },
+    "duration_seconds": 11.8,
+    "width": 1920,
+    "height": 1080,
+    "orientation": "landscape",
+    "editor_note": "Primary household insert; keep the same actor only within this shot. No actual claim rejection shown."
+  },
+  {
+    "id": "F02",
+    "platform": "Pexels",
+    "asset_id": 6963962,
+    "title": "couple checking their bills",
+    "source_url": "https://www.pexels.com/video/couple-checking-their-bills-6963962/",
+    "download_url": "https://www.pexels.com/download/video/6963962/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Household financial stress; generic fallback",
+    "chapter": "CH1",
+    "local_file": "footage/F02_6963962.mp4",
+    "status": "downloaded",
+    "bytes": 11358955,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "18.560000"
+      }
+    },
+    "duration_seconds": 18.56,
+    "width": 1920,
+    "height": 1080,
+    "orientation": "landscape",
+    "editor_note": "Generic non-Indian household fallback. Prefer hand/paper crops; avoid a full-face continuity jump."
+  },
+  {
+    "id": "F03",
+    "platform": "Pexels",
+    "asset_id": 7125836,
+    "title": "man talking on cellphone while looking at a document",
+    "source_url": "https://www.pexels.com/video/man-talking-on-cellphone-while-looking-at-a-document-7125836/",
+    "download_url": "https://www.pexels.com/download/video/7125836/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Insurer call / papers",
+    "chapter": "CH1 CH3",
+    "local_file": "footage/F03_7125836.mp4",
+    "status": "downloaded",
+    "bytes": 16822981,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 2160,
+          "height": 3840,
+          "r_frame_rate": "24000/1001"
+        }
+      ],
+      "format": {
+        "duration": "10.010000"
+      }
+    },
+    "duration_seconds": 10.01,
+    "width": 2160,
+    "height": 3840,
+    "orientation": "portrait",
+    "editor_note": "Portrait fallback. Use inside a designed phone window, not a stretched landscape frame."
+  },
+  {
+    "id": "F04",
+    "platform": "Pexels",
+    "asset_id": 6998178,
+    "title": "a couple at a reception area in a clinic",
+    "source_url": "https://www.pexels.com/video/a-couple-at-a-reception-area-in-a-clinic-6998178/",
+    "download_url": "https://www.pexels.com/download/video/6998178/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Clinic reception context",
+    "chapter": "CH1",
+    "local_file": "footage/F04_6998178.mp4",
+    "status": "downloaded",
+    "bytes": 10671580,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "24.680000"
+      }
+    },
+    "duration_seconds": 24.68,
+    "width": 1080,
+    "height": 1920,
+    "orientation": "portrait",
+    "editor_note": "Portrait clinic reception. Supporting insert; no claim-specific allegation."
+  },
+  {
+    "id": "F05",
+    "platform": "Pexels",
+    "asset_id": 30510691,
+    "title": "healthcare reception interaction at clinic",
+    "source_url": "https://www.pexels.com/video/healthcare-reception-interaction-at-clinic-30510691/",
+    "download_url": "https://www.pexels.com/download/video/30510691/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Reception / document interaction",
+    "chapter": "CH1",
+    "local_file": "footage/F05_30510691.mp4",
+    "status": "downloaded",
+    "bytes": 21847109,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 3840,
+          "height": 2160,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "12.520000"
+      }
+    },
+    "duration_seconds": 12.52,
+    "width": 3840,
+    "height": 2160,
+    "orientation": "landscape",
+    "editor_note": "Landscape generic clinic. Useful hands / counter interaction; not verified Indian location."
+  },
+  {
+    "id": "F06",
+    "platform": "Pexels",
+    "asset_id": 6130119,
+    "title": "doctor checking the patient",
+    "source_url": "https://www.pexels.com/video/doctor-checking-the-patient-6130119/",
+    "download_url": "https://www.pexels.com/download/video/6130119/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Medical context; no claim-specific allegation",
+    "chapter": "CH1",
+    "local_file": "footage/F06_6130119.mp4",
+    "status": "downloaded",
+    "bytes": 9190319,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "codec_name": "aac",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "12.351667"
+      }
+    },
+    "duration_seconds": 12.352,
+    "width": 1920,
+    "height": 1080,
+    "orientation": "landscape",
+    "editor_note": "Generic hospital context. Crop medical details; do not portray the people as an actual denied-claim family."
+  },
+  {
+    "id": "F07",
+    "platform": "Pexels",
+    "asset_id": 7685212,
+    "title": "person signing on the documents",
+    "source_url": "https://www.pexels.com/video/person-signing-on-the-documents-7685212/",
+    "download_url": "https://www.pexels.com/download/video/7685212/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Signing document insert",
+    "chapter": "CH2 CH4",
+    "local_file": "footage/F07_7685212.mp4",
+    "status": "downloaded",
+    "bytes": 11355194,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "24000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "25.321667"
+      }
+    },
+    "duration_seconds": 25.322,
+    "width": 1920,
+    "height": 1080,
+    "orientation": "landscape",
+    "editor_note": "Good document-signing close-up. Text is generic; replace or defocus if legible."
+  },
+  {
+    "id": "F08",
+    "platform": "Pexels",
+    "asset_id": 8725953,
+    "title": "person signing a document",
+    "source_url": "https://www.pexels.com/video/person-signing-a-document-8725953/",
+    "download_url": "https://www.pexels.com/download/video/8725953/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Contract close-up",
+    "chapter": "CH2",
+    "local_file": "footage/F08_8725953.mp4",
+    "status": "downloaded",
+    "bytes": 21464858,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 3840,
+          "height": 2160,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "8.160000"
+      }
+    },
+    "duration_seconds": 8.16,
+    "width": 3840,
+    "height": 2160,
+    "orientation": "landscape",
+    "editor_note": "Good neutral contract insert. Do not associate identifiable people with alleged fraud."
+  },
+  {
+    "id": "F09",
+    "platform": "Pexels",
+    "asset_id": 6406171,
+    "title": "close up shot of a person typing on the laptop",
+    "source_url": "https://www.pexels.com/video/close-up-shot-of-a-person-typing-on-the-laptop-6406171/",
+    "download_url": "https://www.pexels.com/download/video/6406171/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "GRO email typing",
+    "chapter": "CH3",
+    "local_file": "footage/F09_6406171.mp4",
+    "status": "downloaded",
+    "bytes": 11761733,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "17.880000"
+      }
+    },
+    "duration_seconds": 17.88,
+    "width": 1920,
+    "height": 1080,
+    "orientation": "landscape",
+    "editor_note": "Preferred landscape keyboard insert for GRO email."
+  },
+  {
+    "id": "F10",
+    "platform": "Pexels",
+    "asset_id": 8480684,
+    "title": "close up video of a person typing on a laptop",
+    "source_url": "https://www.pexels.com/video/close-up-video-of-a-person-typing-on-a-laptop-8480684/",
+    "download_url": "https://www.pexels.com/download/video/8480684/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Filing / typing insert",
+    "chapter": "CH4",
+    "local_file": "footage/F10_8480684.mp4",
+    "status": "downloaded",
+    "bytes": 21857897,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        },
+        {
+          "codec_name": "aac",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "38.655000"
+      }
+    },
+    "duration_seconds": 38.655,
+    "width": 1920,
+    "height": 1080,
+    "orientation": "landscape",
+    "editor_note": "Alternate keyboard insert. Avoid repeating the same action too often."
+  },
+  {
+    "id": "F11",
+    "platform": "Pexels",
+    "asset_id": 4052865,
+    "title": "man having a video call on his laptop",
+    "source_url": "https://www.pexels.com/video/man-having-a-video-call-on-his-laptop-4052865/",
+    "download_url": "https://www.pexels.com/download/video/4052865/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Illustrative video hearing",
+    "chapter": "CH4",
+    "local_file": "footage/F11_4052865.mp4",
+    "status": "downloaded",
+    "bytes": 16013264,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 3840,
+          "height": 2160,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "14.560000"
+      }
+    },
+    "duration_seconds": 14.56,
+    "width": 3840,
+    "height": 2160,
+    "orientation": "landscape",
+    "editor_note": "Illustrative video-call actor, not an actual Ombudsman. Prefer F12 screen-side angle."
+  },
+  {
+    "id": "F12",
+    "platform": "Pexels",
+    "asset_id": 6414248,
+    "title": "man having a video call on his laptop",
+    "source_url": "https://www.pexels.com/video/man-having-a-video-call-on-his-laptop-6414248/",
+    "download_url": "https://www.pexels.com/download/video/6414248/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Screen-side video call insert",
+    "chapter": "CH4",
+    "local_file": "footage/F12_6414248.mp4",
+    "status": "downloaded",
+    "bytes": 20366239,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 3840,
+          "height": 2160,
+          "r_frame_rate": "24000/1001"
+        }
+      ],
+      "format": {
+        "duration": "10.093417"
+      }
+    },
+    "duration_seconds": 10.093,
+    "width": 3840,
+    "height": 2160,
+    "orientation": "landscape",
+    "editor_note": "Preferred call insert. Replace screen with a clearly labelled illustrative hearing design if needed."
+  },
+  {
+    "id": "F13",
+    "platform": "Pexels",
+    "asset_id": 9346258,
+    "title": "family celebrating together",
+    "source_url": "https://www.pexels.com/video/family-celebrating-together-9346258/",
+    "download_url": "https://www.pexels.com/download/video/9346258/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Indian family; warm ending only",
+    "chapter": "CH4",
+    "local_file": "footage/F13_9346258.mp4",
+    "status": "downloaded",
+    "bytes": 21882729,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 2160,
+          "height": 3840,
+          "r_frame_rate": "24000/1001"
+        }
+      ],
+      "format": {
+        "duration": "10.010000"
+      }
+    },
+    "duration_seconds": 10.01,
+    "width": 2160,
+    "height": 3840,
+    "orientation": "portrait",
+    "editor_note": "India-tagged family celebration; portrait and festive decor. Optional warm detail only, not claim payout evidence."
+  },
+  {
+    "id": "F14",
+    "platform": "Pexels",
+    "asset_id": 15612409,
+    "title": "time lapse of moving clouds over the financial district in hyderabad india",
+    "source_url": "https://www.pexels.com/video/time-lapse-of-moving-clouds-over-the-financial-district-in-hyderabad-india-15612409/",
+    "download_url": "https://www.pexels.com/download/video/15612409/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Hyderabad establishing shot",
+    "chapter": "CH1 CH4",
+    "local_file": "footage/F14_15612409.mp4",
+    "status": "downloaded",
+    "bytes": 7186612,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "9.433333"
+      }
+    },
+    "duration_seconds": 9.433,
+    "width": 1920,
+    "height": 1080,
+    "orientation": "landscape",
+    "editor_note": "Preferred verified Hyderabad establishing timelapse; use 2-3 seconds."
+  },
+  {
+    "id": "F15",
+    "platform": "Pexels",
+    "asset_id": 35758005,
+    "title": "bustling street scene in hyderabad india",
+    "source_url": "https://www.pexels.com/video/bustling-street-scene-in-hyderabad-india-35758005/",
+    "download_url": "https://www.pexels.com/download/video/35758005/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Hyderabad street establishing",
+    "chapter": "CH1",
+    "local_file": "footage/F15_35758005.mp4",
+    "status": "downloaded",
+    "bytes": 33780975,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 3840,
+          "height": 2160,
+          "r_frame_rate": "60000/1001"
+        }
+      ],
+      "format": {
+        "duration": "20.520500"
+      }
+    },
+    "duration_seconds": 20.52,
+    "width": 3840,
+    "height": 2160,
+    "orientation": "landscape",
+    "editor_note": "Verified Hyderabad street; use 2 seconds, avoid holding on unrelated business signs."
+  },
+  {
+    "id": "F16",
+    "platform": "Pexels",
+    "asset_id": 7652109,
+    "title": "man walking in the office",
+    "source_url": "https://www.pexels.com/video/man-walking-in-the-office-7652109/",
+    "download_url": "https://www.pexels.com/download/video/7652109/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Corporate paperwork insert",
+    "chapter": "CH2 CH3",
+    "local_file": "footage/F16_7652109.mp4",
+    "status": "downloaded",
+    "bytes": 30254707,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 2160,
+          "height": 3840,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "codec_name": "aac",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "10.601667"
+      }
+    },
+    "duration_seconds": 10.602,
+    "width": 2160,
+    "height": 3840,
+    "orientation": "portrait",
+    "editor_note": "Portrait office insert. Optional background or split-screen panel only."
+  },
+  {
+    "id": "F17",
+    "platform": "Pexels",
+    "asset_id": 31593748,
+    "title": "Efficient Indian Rupee Money Counting Machine in Action",
+    "source_url": "https://www.pexels.com/video/efficient-indian-rupee-money-counting-machine-in-action-31593748/",
+    "download_url": "https://www.pexels.com/download/video/31593748/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Indian cash insert",
+    "chapter": "CH1 CH2",
+    "local_file": "footage/F17_31593748.mp4",
+    "status": "downloaded",
+    "bytes": 4967027,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1"
+        }
+      ],
+      "format": {
+        "duration": "10.000000"
+      }
+    },
+    "duration_seconds": 10.0,
+    "width": 1920,
+    "height": 1080,
+    "orientation": "landscape",
+    "editor_note": "Current-series Indian \u20b9100 counting-machine insert. Neutral financial processing; not evidence of claim payout."
+  },
+  {
+    "id": "F18",
+    "platform": "Pexels",
+    "asset_id": 19498134,
+    "title": "indian money india note",
+    "source_url": "https://www.pexels.com/video/indian-money-india-note-19498134/",
+    "download_url": "https://www.pexels.com/download/video/19498134/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Indian rupee hands insert",
+    "chapter": "CH1 CH4",
+    "local_file": "footage/F18_19498134.mp4",
+    "status": "downloaded",
+    "bytes": 5253500,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "6.911667"
+      }
+    },
+    "duration_seconds": 6.912,
+    "width": 1080,
+    "height": 1920,
+    "orientation": "portrait",
+    "editor_note": "Indian currency insert; avoid repeating the counting action from F17."
+  },
+  {
+    "id": "F19",
+    "platform": "Pexels",
+    "asset_id": 5453379,
+    "title": "doctor writing on paper",
+    "source_url": "https://www.pexels.com/video/doctor-writing-on-paper-5453379/",
+    "download_url": "https://www.pexels.com/download/video/5453379/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Medical paperwork insert; crop hands",
+    "chapter": "CH1 CH4",
+    "local_file": "footage/F19_5453379.mp4",
+    "status": "downloaded",
+    "bytes": 20111927,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 3840,
+          "height": 2160,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "18.960000"
+      }
+    },
+    "duration_seconds": 18.96,
+    "width": 3840,
+    "height": 2160,
+    "orientation": "landscape",
+    "editor_note": "Medical writing details; use hands and paper, not an alleged insurer character."
+  },
+  {
+    "id": "F20",
+    "platform": "Pexels",
+    "asset_id": 6130538,
+    "title": "doctor writing in paper",
+    "source_url": "https://www.pexels.com/video/doctor-writing-in-paper-6130538/",
+    "download_url": "https://www.pexels.com/download/video/6130538/",
+    "license_url": "https://www.pexels.com/license/",
+    "usage": "Medical records insert",
+    "chapter": "CH1 CH4",
+    "local_file": "footage/F20_6130538.mp4",
+    "status": "downloaded",
+    "bytes": 11546536,
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "codec_name": "aac",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "20.436667"
+      }
+    },
+    "duration_seconds": 20.437,
+    "width": 1080,
+    "height": 1920,
+    "orientation": "portrait",
+    "editor_note": "Medical record insert; neutral context only."
+  }
+]

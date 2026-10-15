@@ -29,7 +29,12 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
   4K ≈ 1 GB), a contact sheet PNG/JPG, the SRT and the YouTube description, sent with `SendUserFile` (30 MB cap per file).
   **Google Drive replaces Gofile (owner, 2026-10-13).** *Why:* the owner already keeps a `Creator` folder there and opens it
   in the Drive app on the phone; Gofile links expire and need a browser. How:
-  - Videos: `scripts/upload_gdrive.sh --sub <slug> FILE…` (pinned rclone, uploads to `Creator/<slug>/`, prints a view link).
+  - **Drive layout (owner, 2026-10-15):** `Creator/English/<slug>/` and `Creator/Telugu/<slug>/`, one folder per video
+    (the channel is the film's narration language, `lang.txt`); channel art in `<Channel>/_Channel/`; material for both
+    channels in `Creator/_Shared (both channels)/`. Nothing loose in `Creator/`. *Why:* the owner runs two channels and
+    finds a film's files on the phone by channel, then by video. Folder names are the repo slugs.
+  - Videos: `scripts/upload_gdrive.sh --sub <Channel>/<slug> FILE…` (pinned rclone, uploads to `Creator/<Channel>/<slug>/`,
+    prints a view link), e.g. `--sub English/insurance-ombudsman`.
     The Google Drive connector can't carry video-sized files (content goes through the tool call), so the script needs
     **`GDRIVE_RCLONE_TOKEN`**, a one-time setup on the phone: Termux → `pkg install rclone` → `rclone authorize "drive"`
     → sign in with the Drive account that owns `Creator` in the browser that opens → copy the one-line JSON it prints →
@@ -41,7 +46,7 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
     "anyone with the link" sharing. The first two uploads (the VO blocks) did get link sharing before this fix.
   - Small text deliverables (description, SRT, `review.md`, `claims.csv`) can go up through the connector
     (`create_file` with `parentId` = the Creator folder `1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M`, `disableConversionToGoogleType`).
-  - Owner footage and clips for a film: the owner drops them in `Creator/` (zips are fine); sessions read them with the
+  - Owner footage and clips for a film: the owner drops them in `Creator/<Channel>/<slug>/` (zips are fine); sessions read them with the
     connector (`search_files` with `parentId`, `download_file_content`). Report in plain words: what changed,
   what is still a stand-in, any rights or Content ID risk.
 - **Git:** all work lands on `main`. *Why:* in Oct 2026 nine stale session branches hid finished work; one branch keeps
@@ -830,7 +835,7 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 - **Shell traps:** never `pkill -f <pattern>` in a command line that contains the pattern (it kills its own shell; use
   `[x]yz`). Never name a shell function after a command it calls (`cut(){ … | cut; }` forked ~1,500 shells and OOM-killed
   renders).
-- **Deliver:** `scripts/upload_gdrive.sh --sub <slug>` to the owner's Drive `Creator` folder (§1); upload the master and
+- **Deliver:** `scripts/upload_gdrive.sh --sub <Channel>/<slug>` to the owner's Drive `Creator` folder (§1); upload the master and
   a 720p copy. `scripts/upload_gofile.sh` only as a fallback while `GDRIVE_RCLONE_TOKEN` is missing. Commit sources, EDL, registry, transcripts, SRT and description; large
   footage stays out of git (`assets/video/*`, `assets/raw/`, `projects/*/assets/`, renders).
 

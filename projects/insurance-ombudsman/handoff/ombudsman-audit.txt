@@ -1,0 +1,1367 @@
+Forensic Statutory and Empirical Audit:
+The Insurance Ombudsman Mechanism
+and Health Insurance Dispute
+Jurisprudence in India
+Executive Forensic Summary and Structural
+Architecture
+An exhaustive forensic audit of the Indian insurance dispute resolution ecosystem reveals a
+profound structural asymmetry between how health insurance claims are rejected by insurers
+and how those rejections are adjudicated when escalated to the Insurance Ombudsman.
+Originally instituted under the Redressal of Public Grievances Rules, 1998 (notified on 11
+November 1998) and now governed by the Insurance Ombudsman Rules, 2017—promulgated
+by the Central Government under Section 24 of the Insurance Regulatory and Development
+Authority Act, 1999 (41 of 1999) vide Gazette Notification G.S.R. 413(E) dated 25 April 2017,
+and amended in 2018, 2021, and 2023—the Insurance Ombudsman functions not merely as a
+conciliatory mediator, but at the final stage of proceedings as a statutory, quasi-judicial tribunal
+empowered to pass binding financial decrees against insurers up to ₹50 Lakhs.
+Despite the potency of this zero-cost statutory forum, empirical disclosures from the Council for
+Insurance Ombudsmen (CIO) Annual Reports for FY 2023–24 and FY 2024–25 demonstrate
+that retail policyholders routinely forfeit their rights due to three systemic failures. First,
+aggrieved consumers frequently confuse the regulator's administrative tracking portal, IRDAI
+Bima Bharosa, with the quasi-judicial Insurance Ombudsman, remaining trapped in a loop of
+automated insurer responses that carry zero adjudicatory weight. Second, complainants trigger
+fatal procedural dismissals under Rule 14(3) by bypassing the insurer's internal Grievance
+Redressal Officer (GRO) or miscalculating the one-year statutory limitation clock. Third,
+vulnerable families surrender 15% to 25% of their hospital indemnity payouts to unregulated
+private claim-recovery startups that possess zero legal locus standi to file complaints or argue
+inside an Ombudsman hearing.
+Furthermore, a rigorous statutory fact-check uncovers four critical legal nuances that require
+exact precision in investigative reporting. First, while widely misreported by secondary portals as
+a 2021 amendment, the maximum compensation ceiling under the proviso to Rule 17(3)(ii) was
+actually raised from ₹30 Lakhs to ₹50 Lakhs on 9 November 2023 via the Insurance
+Ombudsman (Amendment) Rules, 2023, notified as G.S.R. 828(E). Second, in the IRDAI Master
+Circular on Health Insurance Business dated 29 May 2024 (carrying the exact official reference
+IRDAI/HLT/CIR/PRO/84/5/2024), Chapter I, Paragraph 20 codifies the mandatory ₹5,000 per
+day penalty for non-implementation of an Ombudsman award beyond 30 days; however,
+Paragraph 14 of that specific circular deals with No Claim Bonus (NCB), whereas customer
+grievances are addressed in Paragraph 19 of the Health Circular, and the statutory 14-day GRO
+resolution deadline is formally mandated under the IRDAI (Protection of Policyholders' Interests,
+Operations and Allied Matters of Insurers) Regulations, 2024 and the Master Circular on
+Protection of Policyholders' Interests, 2024 dated 5 September 2024. Third, while the
+Ombudsman mechanism historically barred advocates from representing either party to
+preserve informal parity—a restriction frequently misattributed in secondary commentary to Rule
+15, Rule 16(5), or Rule 17(5) despite the 2017 Rules simply omitting any provision for legal
+counsel—a landmark judgment delivered on 16 July 2026 by a Division Bench of the Karnataka
+High Court in Office of the Insurance Ombudsman v. Respondent (W.A. No. 1534 of 2026,
+neutral citation 2026:KHC:32548-DB) established that once mediation fails under Rule 16 and
+proceedings enter the adjudicatory stage under Rule 17, the Ombudsman acts as a
+quasi-judicial arbitrator taking evidence, thereby attracting Section 30 of the Advocates Act,
+1961 and entitling a policyholder to engage an enrolled advocate. Fourth, on 25 November
+2025, the Ministry of Finance issued the Draft Insurance Ombudsman (Amendment) Rules,
+2025 (G.S.R. 864(E)) for public consultation, proposing an internal IRDAI Appellate Authority
+under proposed Rule 17A and specific sub-limits for consequential loss (₹20 Lakh) and mental
+harassment (₹1 Lakh) within the ₹50 Lakh cap; however, until notified in final form in the Official
+Gazette, the extant 2017 Rules as amended through 9 November 2023 remain the binding law
+of the land.
+
+Deliverable 1: Statutory and Regulatory Verification
+Matrix
+The following verification matrix audits every target clause across the Insurance Ombudsman
+Rules, 2017 (incorporating the 2018, 2021, and 2023 Gazette Amendments) and the 2024
+IRDAI Master Circulars, providing exact rule citations, official Gazette and circular identifiers,
+verbatim statutory language, and forensic verification findings.
+Audit Target /       Governing Statute Exact Rule /           Verbatim Statutory Forensic
+Legal Proposition / Gazette / Circular Clause Number          / Regulatory Text & Verification Status
+                     Reference                                Operational
+                                                              Mechanics
+Pecuniary            Insurance           Rule 17(3) Proviso "Provided that the VERIFIED (With
+Jurisdiction Cap Ombudsman               (i) & (ii) read with Ombudsman           Date Correction):
+(₹50 Lakhs)          Rules, 2017, as     Rule 13(1)           shall,— (i) not     Cap is ₹50 Lakhs
+                     amended by                               award any           across all
+                     Notification G.S.R.                      compensation in personal/group
+                     828(E) dated                             excess of the loss retail claims,
+                     09.11.2023                               suffered by the     enacted via the
+                                                              complainant as a 2023 Amendment
+                                                              direct              (09.11.2023), not
+                                                              consequence of 2021.
+                                                              the cause of
+                                                              action; or (ii) not
+                                                              award
+                                                              compensation
+                                                              exceeding rupees
+                                                              fifty lakhs
+                                                              (including relevant
+                                                              expenses, if any)."
+Audit Target /    Governing Statute Exact Rule /      Verbatim Statutory Forensic
+Legal Proposition / Gazette / Circular Clause Number  / Regulatory Text & Verification Status
+                  Reference                           Operational
+                                                      Mechanics
+                                                      (Word "fifty"
+                                                      substituted for
+                                                      "thirty" w.e.f.
+                                                      09.11.2023).
+Locus Standi &    Insurance        Rule 14(1) read "Any person who VERIFIED:
+Prohibition on    Ombudsman        with Rule          has a grievance Exhaustive
+Commercial        Rules, 2017, as  4(1)(h)-(i) & Rule against an insurer enumeration limits
+Middlemen         amended by       13                 [or insurance         filing strictly to the
+                  G.S.R. 147(E)                       broker], may          policyholder, legal
+                  dated 02.03.2021                    himself or through heirs, nominee, or
+                                                      his legal heirs,      valid assignee.
+                                                      nominee or            Commercial
+                                                      assignee, make a recovery agents
+                                                      complaint in          have zero locus
+                                                      writing to the        standi.
+                                                      Insurance
+                                                      Ombudsman
+                                                      within whose
+                                                      territorial
+                                                      jurisdiction the
+                                                      branch or office of
+                                                      the insurer... or the
+                                                      residential address
+                                                      or place of
+                                                      residence of the
+                                                      complainant is
+                                                      located."
+Mandatory         Insurance        Rule 14(3)(a)      "No complaint to VERIFIED:
+Prerequisite:     Ombudsman                           the Insurance         Mandatory
+Written           Rules, 2017                         Ombudsman shall statutory
+Grievance to                                          lie unless— (a) the threshold.
+Insurer's GRO                                         complainant has Skipping this
+                                                      made a                caused 1,715
+                                                      representation in health complaints
+                                                      writing or through to be rejected at
+                                                      electronic mail or the threshold in FY
+                                                      online through        2024–25.
+                                                      website of the
+                                                      insurer or
+                                                      insurance broker
+                                                      concerned to the
+                                                      insurer or
+                                                      insurance broker
+Audit Target /    Governing Statute Exact Rule /        Verbatim Statutory Forensic
+Legal Proposition / Gazette / Circular Clause Number    / Regulatory Text & Verification Status
+                  Reference                             Operational
+                                                        Mechanics
+                                                        named in the
+                                                        complaint..."
+Waiting Window Insurance            Rule                Complaint lies only VERIFIED:
+to Unlock         Ombudsman         14(3)(a)(i)–(iii)   if: (i) the           Unlocked
+Ombudsman (30 Rules, 2017                               insurer/broker has immediately upon
+Days / 1 Month or                                       rejected the          receiving a
+Rejection)                                              complaint; or (ii) rejection/unsatisfa
+                                                        the complainant ctory GRO reply,
+                                                        has not received OR upon expiry of
+                                                        any reply within a 1 month (30
+                                                        period of one         days) of silence
+                                                        month after the       from the insurer.
+                                                        insurer/broker
+                                                        received his
+                                                        representation; or
+                                                        (iii) the
+                                                        complainant is not
+                                                        satisfied with the
+                                                        reply given to him
+                                                        by the
+                                                        insurer/broker.
+Limitation        Insurance         Rule 14(3)(b) &     Complaint must be VERIFIED: Strict
+Window to File    Ombudsman         Rule 14(4)          made within one 1-year limitation
+Complaint (1      Rules, 2017                           year: (i) after the period from GRO
+Year) &                                                 order of the insurer rejection or expiry
+Condonation                                             rejecting the         of the 1-month
+                                                        representation is waiting window,
+                                                        received; or (ii)     extendable for
+                                                        after receipt of      sufficient cause
+                                                        decision of the       under Rule 14(4).
+                                                        insurer which is
+                                                        not to the
+                                                        satisfaction of the
+                                                        complainant; or (iii)
+                                                        after expiry of one
+                                                        month from the
+                                                        date of sending
+                                                        the written
+                                                        representation to
+                                                        the insurer if the
+                                                        insurer fails to
+                                                        furnish reply. Rule
+                                                        14(4) empowers
+Audit Target /    Governing Statute Exact Rule /    Verbatim Statutory Forensic
+Legal Proposition / Gazette / Circular Clause Number/ Regulatory Text & Verification Status
+                  Reference                         Operational
+                                                    Mechanics
+                                                    the Ombudsman
+                                                    to condone delay
+                                                    for recorded
+                                                    reasons.
+Bar on            Insurance       Rule 14(3)(c)–(d) No complaint shall VERIFIED:
+Concurrent        Ombudsman                         lie unless the       Complete bar
+Proceedings       Rules, 2017                       complaint is not in against lis
+(Consumer / Civil                                   respect of the       pendens or res
+Court)                                              same subject         judicata if a
+                                                    matter on which DCDRC/SCDRC/C
+                                                    proceedings are ivil Court case is
+                                                    pending before or already filed.
+                                                    disposed of by any
+                                                    court, consumer
+                                                    forum/commission,
+                                                    or arbitrator.
+Procedure,        Insurance       Rule 15(1)–(5) & "15. Insurance        NUANCED /
+Fairness & Bar Ombudsman          Section 30 of     Ombudsman to act UPDATED BY
+on Legal          Rules, 2017     Advocates Act, fairly and              2026 HC RULING:
+Practitioners /   (G.S.R. 147(E), 1961              equitably.—(1) The While
+Advocates         2021) & WA No.                    Ombudsman may, administrative
+                  1534 of 2026                      if he deems fit,     rules bar lawyers
+                  (2026:KHC:32548                   allow the            for both sides to
+                  -DB)                              complainant to       preserve parity,
+                                                    adopt a procedure the Karnataka HC
+                                                    other than under held in July 2026
+                                                    sub-rule (1) or      that enrolled
+                                                    sub-rule (2) of rule Advocates have a
+                                                    14..." Rule 15(4) right under Sec. 30
+                                                    mandates "a          of the Advocates
+                                                    reasonable           Act to represent
+                                                    opportunity of       complainants at
+                                                    being heard." The the Rule 17
+                                                    Rules make no        adjudicatory stage.
+                                                    provision for
+                                                    lawyers, and
+                                                    administrative
+                                                    rules barred
+                                                    advocates for both
+                                                    sides.
+Mediation /       Insurance       Rule 16(1)–(3)    "16. Complaints      VERIFIED:
+Recommendation Ombudsman                            settled through      Three-part
+Procedure &       Rules, 2017                       mediation by         mediation clock: 1
+Audit Target /    Governing Statute Exact Rule /       Verbatim Statutory Forensic
+Legal Proposition / Gazette / Circular Clause Number   / Regulatory Text & Verification Status
+                  Reference                            Operational
+                                                       Mechanics
+Clocks                                                 Insurance             month for
+                                                       Ombudsman.—(1) recommendation +
+                                                       Where a complaint 15 days for
+                                                       is settled through complainant
+                                                       mediation, the        acceptance + 15
+                                                       Ombudsman shall days for insurer
+                                                       make a                compliance.
+                                                       recommendation
+                                                       which it thinks fair
+                                                       in the
+                                                       circumstances of
+                                                       the case, within
+                                                       one month of the
+                                                       date of receipt of
+                                                       mutual written
+                                                       consent..."
+                                                       Complainant has
+                                                       15 days to accept
+                                                       in writing as full
+                                                       and final (Rule
+                                                       16(2)); insurer has
+                                                       15 days from
+                                                       receipt to comply
+                                                       (Rule 16(3)).
+Asymmetric        Insurance         Rule 17(1)–(8)     "17(4) The            VERIFIED: 100%
+Binding Award     Ombudsman                            Ombudsman shall binding on the
+Doctrine &        Rules, 2017                          finalise its findings insurer within 30
+30-Day            (G.S.R. 147(E),                      and pass an award days under Rule
+Compliance        2021 & G.S.R.                        within a period of 17(6) & (8), while
+                  828(E), 2023)                        three months of       leaving a
+                                                       the receipt of all dissatisfied
+                                                       requirements from policyholder
+                                                       the complainant." completely free to
+                                                       "17(6) The            approach
+                                                       insurer... shall      Consumer
+                                                       comply with the       Commissions.
+                                                       award within thirty
+                                                       days of the receipt
+                                                       of the award and
+                                                       intimate
+                                                       compliance of the
+                                                       same to the
+                                                       Ombudsman and
+Audit Target /    Governing Statute Exact Rule /        Verbatim Statutory Forensic
+Legal Proposition / Gazette / Circular Clause Number    / Regulatory Text & Verification Status
+                  Reference                             Operational
+                                                        Mechanics
+                                                        upload the details
+                                                        in the complaints
+                                                        management
+                                                        system." "17(8)
+                                                        The award of
+                                                        Insurance
+                                                        Ombudsman shall
+                                                        be binding on the
+                                                        insurers..."
+Mandatory        IRDAI Master       Chapter I,          "20)                 VERIFIED: Exact
+₹5,000/Day Delay Circular on Health Paragraph 20        Implementation of reference number
+Penalty on       Insurance          (also reinforced in Ombudsman            is
+Insurers         Business           PPHI Master         Award: The           IRDAI/HLT/CIR/PR
+                 (29.05.2024), Ref: Circular,           Insurer is required O/84/5/2024.
+                 IRDAI/HLT/CIR/P 05.09.2024)            to comply with the Penalty of
+                 RO/84/5/2024                           award of the         ₹5,000/day is
+                                                        Insurance            payable directly to
+                                                        Ombudsman            the complainant
+                                                        within 30 days of after Day 30.
+                                                        receipt of award by
+                                                        the Insurer. In
+                                                        case the Insurer
+                                                        does not honour
+                                                        the ombudsman
+                                                        award, a penalty of
+                                                        Rs. 5000/- per day
+                                                        shall be payable to
+                                                        the complainant."
+Additional Penal Insurance          Rule 17(7) & PPHI "In case the claim VERIFIED:
+Interest (Bank   Ombudsman          Master Circular is not settled within Applies in addition
+Rate + 2%)       Rules, 2017 &      2024                the specified        to the ₹5,000/day
+                 IRDAI Master                           timelines, then the penalty.
+                 Circular on PPHI                       claimant is entitled Complainants
+                 (05.09.2024)                           for interest at bank must ensure the
+                                                        rate plus 2 percent Award explicitly
+                                                        from the date of     records interest to
+                                                        receipt of           prevent insurer
+                                                        intimation till the evasion.
+                                                        date of payment.
+                                                        Such interest shall
+                                                        be paid by the
+                                                        insurers suo-moto
+                                                        along with the
+Audit Target /    Governing Statute Exact Rule /     Verbatim Statutory Forensic
+Legal Proposition / Gazette / Circular Clause Number / Regulatory Text & Verification Status
+                  Reference                          Operational
+                                                     Mechanics
+                                                     claim amount."
+14-Day Statutory IRDAI (Protection PPHI Master       Immediate written VERIFIED (With
+GRO Resolution of Policyholders' Circular 2024 & acknowledgement Paragraph
+Deadline         Interests)        Para 19 of Health upon receipt of      Correction): In
+                 Regulations, 2024 Master Circular   grievance; final     the Health Circular
+                 & PPHI Master     (29.05.2024)      resolution/rejection (29.05.2024), Para
+                 Circular                            letter within 14     14 is No Claim
+                 (05.09.2024)                        days from date of Bonus and Para
+                                                     receipt of           19 is Grievances;
+                                                     complaint, along the 14-day clock is
+                                                     with details of the governed by the
+                                                     jurisdictional       PPHI Regulations
+                                                     Insurance            & Master Circular
+                                                     Ombudsman if         2024.
+                                                     unresolved/rejecte
+                                                     d.
+Deep-Dive Statutory Analysis of the Primary Audit Targets
+Scope, Pecuniary Jurisdiction, and Locus Standi (Rule 13, Rule 14(1), and Rule
+17(3))
+
+Under Rule 13(1) of the Insurance Ombudsman Rules, 2017 (as amended by the Insurance
+Ombudsman (Amendment) Rules, 2021, G.S.R. 147(E) dated 2 March 2021), the Ombudsman
+is vested with jurisdiction to receive and consider complaints alleging "deficiency in performance
+required of an insurer (including its agents and intermediaries) or an insurance broker" across
+nine enumerated grounds, prominently including delay in settlement of claims beyond regulatory
+timelines under clause (a) and any partial or total repudiation of claims by a life, general, or
+health insurer under clause (b). In addition, Rule 13(4) creates an independent referral pathway
+whereby the Central Government or the IRDAI ("Authority") may at any time refer a complaint or
+dispute relating to insurance matters specified in sub-rule (1) to the Insurance Ombudsman,
+which must then be entertained and adjudicated as if it were a complaint instituted under Rule
+14.
+The monetary jurisdiction of the forum is governed by the proviso to Rule 17(3). While the
+Ombudsman can entertain a dispute where the underlying policy sum insured is substantial,
+Rule 17(3)(ii) caps the maximum compensation the Ombudsman can award at ₹50,00,000 (₹50
+Lakhs), including relevant expenses, if any. Simultaneously, Rule 17(3)(i) imposes a strict
+indemnity ceiling, dictating that the Ombudsman shall "not award any compensation in excess
+of the loss suffered by the complainant as a direct consequence of the cause of action". Under
+the original 2017 Rules, the pecuniary cap stood at ₹30 Lakhs; it was elevated to ₹50 Lakhs on
+9 November 2023 when the Ministry of Finance (Department of Financial Services) notified the
+Insurance Ombudsman (Amendment) Rules, 2023 vide G.S.R. 828(E), substituting the word
+"fifty" for "thirty" in Rule 17(3) proviso clause (ii).
+Regarding locus standi, Rule 4(1)(h) and (i) read with Rule 14(1) confines the Ombudsman's
+remit to insurance policies taken on "personal lines" (in an individual capacity), group insurance
+policies, micro-insurance, and policies issued to sole proprietorships or micro-enterprises. Under
+Rule 14(1), a written complaint may be made only by the aggrieved policyholder himself, or
+through his legal heirs, nominee, or assignee. Because this statutory enumeration is exhaustive,
+third-party commercial claim-recovery agencies, unregulated middlemen, and corporate
+intermediaries are statutorily excluded from filing complaints in their own name or acting as
+authorized complainants before the forum.
+
+The Prerequisite Gates of Rule 14 and the Limitation Trap
+
+An Insurance Ombudsman does not possess plenary original jurisdiction to accept direct walk-in
+complaints immediately after a hospital cashless denial or reimbursement repudiation. Rule
+14(3) erects strict jurisdictional gates that must be satisfied sequentially before a petition
+becomes maintainable. Under Rule 14(3)(a), no complaint to the Insurance Ombudsman shall
+lie unless the complainant has first made a formal representation in writing, through electronic
+mail, or online through the website of the insurer or insurance broker concerned. Empirical data
+from the CIO Annual Report 2024–25 proves that bypassing this initial step is the single most
+common procedural failure: 1,715 health insurance complaints were summarily turned away by
+Ombudsman offices in 2024–25 solely because the policyholder approached the Ombudsman
+without first lodging a written grievance with the insurer.
+Once the written representation is submitted to the insurer's Grievance Redressal Officer
+(GRO), the interplay between IRDAI's internal grievance rules and the Ombudsman Rules
+becomes critical. While IRDAI's Protection of Policyholders' Interests (PPHI) framework
+obligates the insurer's GRO to resolve a grievance within 14 days, Rule 14(3)(a) of the
+Insurance Ombudsman Rules stipulates that the Ombudsman gateway unlocks upon the
+earliest of three events: the insurer rejects the representation, the complainant receives a reply
+from the insurer with which they are not satisfied, or a period of one month (30 days) elapses
+after the insurer received the representation without any reply being furnished. Consequently, if
+an insurer responds on Day 5 or Day 14 upholding its repudiation, the policyholder does not
+need to wait 30 days and can file before the Ombudsman immediately upon receiving that
+unsatisfactory reply. Only when the insurer remains completely silent must the policyholder wait
+for the full one-month (30-day) window to expire before approaching the Ombudsman.
+From the moment that gateway unlocks, Rule 14(3)(b) imposes a strict one-year limitation clock.
+The complaint must be filed within one year from the date of receipt of the insurer's rejection
+order, the date of receipt of an unsatisfactory decision, or the expiry of one month from the date
+of sending the written representation if the insurer failed to reply. Reading the wrong start date
+off the file is where many complainants forfeit their claim. However, if a distressed family misses
+this 365-day window due to prolonged medical treatment or bereavement, Rule 14(4) empowers
+the Ombudsman to condone the delay and entertain a time-barred complaint if satisfied that the
+complainant was prevented by sufficient cause from filing within time, for reasons recorded in
+writing. Finally, Rule 14(3)(c) and (d) enforce an absolute bar against parallel or prior litigation,
+stipulating that the complaint cannot be in respect of the same subject matter on which
+proceedings are pending before or have already been disposed of by any Civil Court, Consumer
+Dispute Redressal Commission (DCDRC, SCDRC, or NCDRC), or arbitrator.
+
+Rule 15, the Traditional Bar on Advocates, and the Landmark July 2026 Karnataka
+High Court Judgment
+A major point of confusion in consumer literature concerns the exact statutory source of the ban
+on lawyers during Ombudsman hearings. Several secondary commentary portals erroneously
+cite "Rule 15", "Rule 16(5)", or "Rule 17(5)" as containing a verbatim prohibition on legal
+practitioners. A forensic reading of the Gazette text of the Insurance Ombudsman Rules, 2017
+demonstrates that Rule 15 is titled "Insurance Ombudsman to act fairly and equitably" and
+contains five sub-rules governing hearing procedure and evidentiary discovery. Rule 15(1)
+permits the Ombudsman, if he deems fit, to allow a complainant to adopt a procedure other than
+under Rule 14(1) or (2) for making a complaint after notifying the parties (with the Draft
+Amendment Rules, 2025 proposing a proviso mandating complaint registration within one
+working day of receipt). Rule 15(2) vests the Ombudsman with the power to ask the parties for
+additional supporting documents, collect factual information relating to the dispute available with
+the insurer or broker, and make such information available to the parties concerned. Rule 15(3)
+empowers the Ombudsman to obtain the opinion of professional experts if the disposal of a
+case so warrants. Rule 15(4) mandates that the Ombudsman shall dispose of a complaint only
+after giving the parties to the dispute a reasonable opportunity of being heard. Rule 15(5),
+inserted via the 2021 Amendment (G.S.R. 147(E)), empowers the Ombudsman to conduct
+hearings via video-conferencing suo-moto or on a request from the complainant.
+In statutory reality, the 2017 Rules made no affirmative provision for engaging a lawyer, and
+during the institutional formulation of the Ombudsman mechanism (modeled alongside the
+Banking Ombudsman Scheme, 2006), an administrative mandate was enforced whereby
+neither the complainant nor the insurer was permitted to be represented by an advocate. The
+official legal rationale advanced by the Council for Insurance Ombudsmen for this prohibition is
+twofold: first, to keep the forum summary, informal, and free of litigation costs; and second, to
+preserve procedural parity, preventing deep-pocketed insurance companies from deploying
+senior corporate counsel to overwhelm unrepresented retail policyholders on technicalities.
+Consequently, in standard proceedings, the policyholder presents their case in person or via
+video link, and the insurer is represented strictly by its own internal officers.
+On 27 March 2026 (in W.P. No. 26221 of 2024, neutral citation 2026:KHC:17542) and affirmed
+on 16 July 2026 by a Division Bench of the Karnataka High Court in Office of the Insurance
+Ombudsman (Karnataka) v. Respondent (W.A. No. 1534 of 2026, neutral citation
+2026:KHC:32548-DB), this administrative ban was successfully challenged by a policyholder.
+The Division Bench dissected the 2017 Rules into two distinct stages: Stage I (Rules 14 to 16),
+which is voluntary, informal, and conciliatory (mediation); and Stage II (Rule 17), which is
+triggered when mediation fails and requires the Ombudsman to adjudicate the dispute and pass
+a reasoned Award based on pleadings and evidence. Relying on the Bombay High Court's
+precedent in Aditya Birla Sun Life Insurance Co. Ltd. v. Insurance Ombudsman (2022 SCC
+OnLine Bom 1673), the Karnataka High Court held that when the Ombudsman acts under Rule
+17, he functions as a quasi-judicial tribunal and arbitrator legally authorized to take and
+appreciate evidence. This directly triggers Section 30 of the Advocates Act, 1961, which grants
+enrolled advocates an overriding statutory right to practice before any tribunal or person legally
+authorized to take evidence. The Court concluded that in complex claim repudiations involving
+intricate medical records, policy exclusions, and technical evidence, denying legal assistance
+seriously prejudices the consumer, and held that a complainant cannot be denied the right to be
+represented by an advocate during Rule 17 adjudicatory proceedings.
+
+The Asymmetric Binding Award Doctrine (Rule 17) vs. Mediation (Rule 16)
+
+The transition from Rule 16 (Mediation) to Rule 17 (Award) represents the core architectural
+lever of the Insurance Ombudsman system. Under Rule 16(1), where both parties give mutual
+written consent for mediation, the Ombudsman issues a recommendation that it deems fair in
+the circumstances of the case within one month of receiving such consent, transmitting copies
+to both the complainant and the insurer. Under Rule 16(2), if the recommendation is acceptable
+to the complainant, the complainant must send a communication in writing within 15 days of
+receipt stating clearly that they accept the settlement as "full and final". Once the policyholder
+signs that full-and-final acceptance, the Ombudsman transmits it to the insurer, which must
+comply within 15 days of receipt and inform the Ombudsman of its compliance under Rule
+16(3). An operational gap exists in the 2017 Rules if an insurer fails to honour a mediated
+recommendation after the complainant has signed acceptance; the Draft Amendment Rules
+circulated in November 2025 explicitly acknowledge this gap by proposing to let a complainant
+in that position return to the Ombudsman for a binding Award under Rule 17.
+If mediation fails or the policyholder refuses an inadequate compromise under Rule 16, the
+Ombudsman proceeds to Stage II under Rule 17(1) to pass a formal Award based on the
+pleadings and evidence brought on record. Under Rule 17(2), as amended by G.S.R. 828(E) on
+9 November 2023, the Award must be in writing and duly signed in person or digitally by the
+Insurance Ombudsman with stated reasons for passing such award. Under Rule 17(4), the
+Ombudsman must finalize its findings and pass the Award within a period of three months (90
+days) from the receipt of all requirements from the complainant. The crowning consumer
+protection of this stage lies in the asymmetric binding doctrine created by Rule 17(6) and Rule
+17(8): Rule 17(8) explicitly states that "the award of Insurance Ombudsman shall be binding on
+the insurers [or insurance broker, as the case may be]", naming nobody else, while Rule 17(6)
+obligates the insurer to comply with the Award within 30 days of receipt, intimate compliance to
+the Ombudsman, and upload the details in the complaints management system. Because the
+Award constrains only the insurer, a policyholder who is dissatisfied with an Ombudsman Award
+is not bound by it and retains full legal recourse to reject the outcome and file a fresh complaint
+before the Consumer Disputes Redressal Commission (DCDRC, SCDRC, or NCDRC) or a Civil
+Court.
+
+The ₹5,000/Day Penalty and Penal Interest (IRDAI 2024 Master Circulars)
+
+Prior to May 2024, recalcitrant insurers frequently delayed implementing binding Ombudsman
+awards beyond the 30-day statutory window under Rule 17(6), calculating that the only financial
+consequence was modest annual interest under Rule 17(7). On 29 May 2024, IRDAI closed this
+enforcement gap by issuing the Master Circular on Health Insurance Business
+(IRDAI/HLT/CIR/PRO/84/5/2024). Chapter I, Paragraph 20 of the Master Circular explicitly
+mandates that the insurer is required to comply with the award of the Insurance Ombudsman
+within 30 days of receipt of the award by the insurer, and in case the insurer does not honour
+the Ombudsman award, a penalty of ₹5,000 per day shall be payable to the complainant.
+This ₹5,000 per day default penalty—which accumulates to ₹1,50,000 per month of delay—was
+subsequently reinforced across all insurance lines via the IRDAI Master Circular on Protection of
+Policyholders' Interests, 2024 dated 5 September 2024. Furthermore, this daily penalty operates
+in addition to the mandatory penal interest at the prevailing RBI Bank Rate plus 2% prescribed
+under Rule 17(7) and the PPHI Master Circular 2024, which accrues from the date of receipt of
+claim intimation or the last necessary document until the date of actual payment and must be
+paid suo-moto by the insurer. However, forensic review of post-award disputes reveals a critical
+operational trap: when an Ombudsman award merely directs the insurer to "review/settle the
+claim deductions as per policy terms and conditions" without explicitly recording the interest
+direction in the Award text, insurers routinely refuse to pay the Bank Rate plus 2% interest
+suo-moto, claiming that the Award letter contains no provision for interest. Policyholders must
+therefore explicitly include a written prayer for penal interest at Bank Rate plus 2% under Rule
+17(7) and the PPHI Master Circular 2024 in their initial complaint and oral hearing submissions,
+and seek immediate clarification from the Ombudsman office if the final Award omits the interest
+clause.
+
+Deliverable 2: Statutory Timeline and Escalation Clock
+Flowchart
+Navigating a health insurance dispute requires strict adherence to overlapping regulatory and
+statutory clocks. Under Chapter I, Paragraphs 9 and 10 of the IRDAI Master Circular on Health
+Insurance Business dated 29 May 2024, every insurer must strive to achieve 100% cashless
+claim settlement, decide initial cashless authorization requests within 1 hour of receipt, and
+grant final discharge authorization within 3 hours of receiving the discharge request from the
+hospital. In no case may the policyholder be made to wait at the hospital for discharge, and if
+the insurer delays beyond 3 hours, any additional amount charged by the hospital must be
+borne by the insurer directly from its shareholders' fund. Furthermore, under the 29 May 2024
+Master Circular, no health insurance claim can be repudiated by a Third-Party Administrator
+(TPA) on its own signature; every rejection requires the formal approval of the insurer's Product
+Management Committee (PMC) or Claims Review Committee (CRC), and no policy or claim is
+contestable on grounds of non-disclosure or misrepresentation (except established fraud) after
+completion of the 60-month continuous coverage Moratorium Period under Paragraph 13. Once
+a claim is rejected or subjected to partial deductions in reimbursement (where the standard
+settlement window is 30 days under the PPHI regulations), the escalation clock shifts to the
+insurer's GRO under the PPHI Master Circular 2024 and subsequently to the Insurance
+Ombudsman under Rules 14 to 17 of the Insurance Ombudsman Rules, 2017.
+
+Forensic Chronology and Statutory Day-Count Table
+The table below details each chronological phase of a health insurance claim escalation,
+contrasting the insurer's statutory obligations against the policyholder's procedural rights and
+deadlines.
+Chronological       Statutory Clock / Governing Rule / Legal Trigger &          Critical Forensic
+Stage               Day Count            Circular Clause     Operational        Trap / Consumer
+                                                             Mechanics          Safeguard
+Stage 1:            1 Hour (Initial      IRDAI Health        Insurer must       Trap: Accepting
+Cashless            Cashless) 3 Hours Master Circular        authorize cashless an oral denial at
+Discharge &         (Discharge) 30       (29.05.2024), Ch. discharge within 3 the hospital TPA
+Claim               Days                 I, Para 9 & 10;     hours; delay       desk or treating a
+Repudiation         (Reimbursement) PPHI Master              charges beyond 3 TPA query letter
+                                         Circular            hours must be      as final without
+                                         (05.09.2024)        borne by insurer demanding the
+                                                             from shareholders' formal insurer
+                                                             funds. Every       repudiation letter
+                                                             rejection requires citing the exact
+Chronological      Statutory Clock /   Governing Rule /   Legal Trigger &    Critical Forensic
+Stage              Day Count           Circular Clause    Operational        Trap / Consumer
+                                                          Mechanics          Safeguard
+                                                          PMC or CRC         policy clause.
+                                                          (Product
+                                                          Management /
+                                                          Claims Review
+                                                          Committee)
+                                                          approval; a TPA
+                                                          cannot reject a
+                                                          claim on its own
+                                                          signature.
+Stage 2: Written   Day 0 (Trigger)     Rule 14(3)(a),     Policyholder sends Trap: Calling
+Grievance to       Immediate           Ombudsman          a formal written   customer care
+Insurer's GRO      Acknowledgement Rules 2017; PPHI representation to helplines or
+                                       Master Circular    the insurer's      emailing the TPA
+                                       (05.09.2024)       designated         instead of the
+                                                          Grievance          insurer's GRO.
+                                                          Redressal Officer Skipping a written
+                                                          (GRO) via email or GRO
+                                                          portal. Insurer    representation
+                                                          must issue an      caused 1,715
+                                                          immediate written health
+                                                          acknowledgement complaints to be
+                                                          with a tracking    rejected in FY
+                                                          number and officer 2024–25.
+                                                          name.
+Stage 3: Insurer   14 Days (from       PPHI Regulations The GRO must         Safeguard:
+GRO Resolution     receipt of GRO      2024 & PPHI        issue a final      Insurers often
+Window             email)              Master Circular    resolution or      insert a boilerplate
+                                       (05.09.2024); Para reasoned rejection clause claiming
+                                       19, Health Master within 14 calendar the complaint will
+                                       Circular           days. If           be "deemed
+                                                          unresolved or      closed" if the
+                                                          rejected, the GRO customer does not
+                                                          letter must        reply within 60
+                                                          mandatorily state days/8 weeks; this
+                                                          the address and internal closure
+                                                          contact details of does not
+                                                          the jurisdictional extinguish the
+                                                          Insurance          statutory 1-year
+                                                          Ombudsman.         Ombudsman
+                                                                             window.
+Stage 4:           Immediate (upon Rule                   If the GRO rejects Trap: Filing before
+Ombudsman          GRO                 14(3)(a)(i)–(iii), the grievance or the Ombudsman
+Gateway Unlock     rejection/reply) OR Insurance          sends an           on Day 15 when
+                   1 Month / 30 Days Ombudsman            unsatisfactory     the GRO has not
+Chronological      Statutory Clock /   Governing Rule /  Legal Trigger &        Critical Forensic
+Stage              Day Count           Circular Clause   Operational            Trap / Consumer
+                                                         Mechanics              Safeguard
+                  (if GRO is silent) Rules, 2017         reply within 14        yet replied. If the
+                                                         days, the              GRO is silent, the
+                                                         Ombudsman              complainant must
+                                                         gateway unlocks wait the full 1
+                                                         immediately upon month (30 days)
+                                                         receipt of that        before lodging the
+                                                         reply. If the GRO Ombudsman
+                                                         fails to reply, the complaint.
+                                                         gateway unlocks
+                                                         on Day 31 (expiry
+                                                         of 1 month from
+                                                         the GRO
+                                                         representation).
+Stage 5:          1 Year (365 Days) Rule                 The online             Safeguard: If the
+Ombudsman         (Extendable via    14(3)(b)(i)–(iii) & complaint              1-year clock is
+Filing Limitation Rule 14(4))        Rule 14(4),         (cioins.co.in) or      missed, the
+Window                               Insurance           physical Annex         complainant
+                                     Ombudsman           VI-A must be filed should file a formal
+                                     Rules, 2017         within 1 year from: application
+                                                         (i) receipt of the     seeking
+                                                         GRO rejection          condonation of
+                                                         order, (ii) receipt of delay under Rule
+                                                         an unsatisfactory 14(4) detailing
+                                                         decision, or (iii)     medical or
+                                                         expiry of 1 month personal hardship.
+                                                         from the date the
+                                                         representation was
+                                                         sent if no reply
+                                                         was received.
+Stage 6A:         1 Month            Rule 16(1), 16(2) Upon mutual              Trap: Signing a
+Consensual        (Recommendation & 16(3), Insurance written consent to Rule 16(2)
+Mediation Track ) + 15 Days          Ombudsman           mediate, the           acceptance forfeits
+                  (Acceptance) + 15 Rules, 2017          Ombudsman              the right to claim
+                  Days                                   issues a fair          the remaining
+                  (Compliance)                           recommendation disputed balance
+                                                         within 1 month.        in Consumer
+                                                         Complainant has Court, as it is a
+                                                         15 days to accept "full and final"
+                                                         in writing as "full consensual
+                                                         and final". Insurer settlement.
+                                                         then has 15 days
+                                                         from receipt of
+                                                         acceptance to pay
+                                                         and report
+Chronological      Statutory Clock /   Governing Rule /  Legal Trigger &      Critical Forensic
+Stage              Day Count           Circular Clause   Operational          Trap / Consumer
+                                                         Mechanics            Safeguard
+                                                         compliance.
+Stage 6B:        3 Months (90         Rule 17(1)–(5) & Where mediation Safeguard: Under
+Quasi-Judicial   Days) (from          (8), Insurance     fails, the           the July 2026
+Award Track      receipt of all       Ombudsman          Ombudsman            Karnataka HC
+                 requirements)        Rules, 2017 (as    conducts an          judgment (WA No.
+                                      amended            oral/VC hearing      1534 of 2026),
+                                      09.11.2023)        (Rule 15(4)-(5))     complainants may
+                                                         and passes a         invoke Sec. 30 of
+                                                         reasoned, signed the Advocates Act
+                                                         written Award up to be represented
+                                                         to ₹50 Lakhs         by an Advocate at
+                                                         within 3 months of the Rule 17 stage.
+                                                         receiving all
+                                                         requirements.
+                                                         Binding only on
+                                                         the insurer (Rule
+                                                         17(8)).
+Stage 7: Insurer 30 Days (from        Rule 17(6),        Insurer must pay Safeguard: If
+Award Payout     insurer's receipt of Ombudsman          the awarded          dissatisfied with
+Window           Award)               Rules 2017; Ch. I, amount to the        the Award, the
+                                      Para 20, Health    complainant within policyholder is not
+                                      Master Circular    30 days of           bound and can
+                                      (29.05.2024)       receiving the        immediately file a
+                                                         Award, intimate      petition before the
+                                                         compliance to the Consumer
+                                                         Ombudsman, and Commission
+                                                         upload payment (DCDRC/SCDRC).
+                                                         proof to the
+                                                         Complaints
+                                                         Management
+                                                         System (CMS).
+Stage 8:         Day 31 Onwards Ch. I, Para 20,          If the insurer fails Trap: Insurers
+Post-30-Day      (Daily               Health Master      to honour the        often evade the
+Default & Penal Compounding           Circular           Award within 30 Bank Rate + 2%
+Enforcement      Penalty + Annual (29.05.2024); Rule days (without            interest if the
+                 Interest)            17(7) & PPHI       obtaining an         Ombudsman
+                                      Master Circular    appellate/High       Award does not
+                                      (05.09.2024)       Court stay), it must explicitly mention
+                                                         pay the              interest. Always
+                                                         complainant a        demand that
+                                                         mandatory penalty interest be
+                                                         of ₹5,000 per day expressly written
+                                                         of delay PLUS        into the Award.
+                                                         penal interest at
+Chronological      Statutory Clock /   Governing Rule /    Legal Trigger & Critical Forensic
+Stage              Day Count           Circular Clause     Operational     Trap / Consumer
+                                                           Mechanics       Safeguard
+                                                           RBI Bank Rate +
+                                                           2%.
+Deliverable 3: Empirical Audit of CIO Annual Reports,
+the 17 Regional Centres, and Citation Dossier
+An empirical audit of the Council for Insurance Ombudsmen (CIO) Annual Reports for FY
+2023–24 and FY 2024–25—compiled and submitted to the Central Government and IRDAI after
+30 June and before 30 September each year pursuant to Rule 18(2) of the Insurance
+Ombudsman Rules, 2017—exposes the scale and anatomy of India's health insurance
+repudiation crisis.
+
+Forensic Verification of CIO Annual Report Metrics (Statement H3 and
+All-India Performance)
+A granular cross-examination of the CIO Annual Report 2024–25 and CIO Annual Report
+2023–24 establishes the exact statistical trajectory of health insurance disputes in India. Across
+all 17 Regional Offices of the Insurance Ombudsman in FY 2024–25, a total of 53,102 fresh
+complaints were received across all lines of insurance, representing a continued climb from the
+52,575 complaints received in FY 2023–24. Health insurance alone accounted for 32,655 fresh
+complaints received during FY 2024–25, comprising 61.5% of all insurance grievances filed
+nationwide. When combined with the 4,930 health complaints pending at the start of the
+financial year on 1 April 2024, the Ombudsman system faced a total health dispute workload of
+37,585 complaints in FY 2024–25, out of which 29,156 health complaints were disposed of
+during the year and 8,429 remained pending as of 31 March 2025.
+Within the CIO's cause-wise classification of health insurance grievances (Statement H3),
+exactly 32,503 health complaints were classified during FY 2024–25. Out of these 32,503
+classified health complaints, 27,575 complaints (84.84%) fell within the Ombudsman's statutory
+remit as entertainable disputes. Among those 27,575 entertainable health complaints, 26,507
+complaints—representing an overwhelming 96.13%—concerned a single cause of action: partial
+or total refusal/repudiation of a health insurance claim. By contrast, all other health complaint
+categories combined—including delays in claim settlement, premium disputes, policy servicing,
+and non-issuance of policies—accounted for only 1,068 complaints (3.87%). The remaining
+4,928 classified health complaints (15.16%) were found to be outside the Ombudsman's remit or
+non-entertainable, including 1,715 health complaints that were summarily turned away because
+the policyholder had skipped the mandatory prerequisite of submitting a written complaint to the
+insurer's GRO first under Rule 14(3)(a).
+To evaluate disposal outcomes and the consumer relief rate accurately, the CIO tracks
+complaint resolution across the "RAW" framework—Recommendation (Mediation under Rule
+16), Award (Adjudication under Rule 17), and Withdrawal—alongside Non-Entertainable
+threshold rejections. In the audited FY 2023–24 dataset, out of 49,705 total complaints disposed
+of across all 17 centres, 12,855 were dismissed as non-entertainable (a 50% reduction in
+non-entertainable dismissals compared to the prior year) and 36,850 were resolved as
+entertainable complaints. Out of those 36,850 entertainable disposals, 15,528 complaints
+(42.14%) were redressed by way of recommendation through mediation under Rule
+16—marking a 169.16% surge in mediated settlements year-over-year, with major centres such
+as Delhi, Chandigarh, and Bengaluru resolving over 50% of their entertainable complaints via
+mediation. When non-entertainable threshold rejections (such as the 1,715 complainants who
+skipped the GRO) are excluded and the denominator is restricted strictly to entertainable health
+complaints adjudicated on merits, every complaint settled via Rule 16 mediation (~42% to 45%)
+represents a consensual payout in favour of the policyholder, while the remaining complaints
+decided via Rule 17 Awards divide between Awards granting full or partial financial relief and
+Awards upholding the insurer's repudiation. Combining Rule 16 mediated settlements with Rule
+17 Awards favouring the policyholder yields the ~76% consumer relief rate benchmark
+documented in institutional insurance studies.
+Similarly, the 90-day (three-month) disposal velocity metric under Rule 17(4) reflects the
+divergence between overall multi-line disposal speed and health-specific caseload congestion.
+In FY 2023–24, across all 17 centres and all lines of insurance, the CIO achieved an audited
+90-day disposal velocity of nearly 87% from the date of registration, driven by digital
+transformation in which nearly 40% of complaints were registered online, 72% were heard and
+disposed of via online video-conferencing, and 100% of Awards were digitally signed. In FY
+2024–25, however, the surge of 32,655 fresh health complaints outpaced the 29,156 health
+disposals—expanding closing health pendency from 4,930 to 8,429 cases—which moderated
+the 90-day disposal velocity in the health insurance segment to the ~78.5% operational
+benchmark.
+
+Complete Directory and Territorial Jurisdiction of the 17 Regional
+Insurance Ombudsman Centres
+Under Rule 11 and Rule 14(1) of the Insurance Ombudsman Rules, 2017, the Council for
+Insurance Ombudsmen maintains 17 Regional Centres across India. Crucially, Rule 14(1) (as
+amended in 2021) grants the policyholder a dual-choice territorial rule: a complaint may be filed
+before the Ombudsman within whose territorial jurisdiction either the branch or office of the
+insurer or broker complained against is located, or the residential address or place of residence
+of the complainant is located. Consequently, a retail policyholder can always file at the regional
+centre covering their home residence and never needs to litigate in the city of the insurer's
+corporate headquarters. (Additionally, the Draft Amendment Rules, 2025 propose amending
+Rule 11(2) to empower the CIO to allot online complaints to any Insurance Ombudsman
+nationwide based on relative workload).
+#                   Centre Location Official CIO Email Registered Office Statutory Territorial
+                                        ID (@cioins.co.in) Address &           Jurisdiction (States
+                                                            Telephone          / Union Territories /
+                                                                               Districts)
+1                   Ahmedabad           bimalokpal.ahmed Jeevan Prakash Gujarat, Dadra &
+                                        abad@cioins.co.in Building, 6th Floor, Nagar Haveli,
+                                                            Tilak Marg, Relief Daman and Diu.
+                                                            Road, Ahmedabad
+                                                            – 380 001 (Tel:
+                                                            079-25501201/02/
+                                                            05/06)
+2                   Bengaluru           bimalokpal.bengal Jeevan Soudha        State of
+#   Centre Location   Official CIO Email Registered Office Statutory Territorial
+                      ID (@cioins.co.in) Address &          Jurisdiction (States
+                                         Telephone          / Union Territories /
+                                                            Districts)
+                      uru@cioins.co.in Building, PID No. Karnataka.
+                                         57-27-N-19,
+                                         Ground Floor,
+                                         19/19, 24th Main
+                                         Road, JP Nagar,
+                                         1st Phase,
+                                         Bengaluru – 560
+                                         078 (Tel:
+                                         080-26652048/49)
+3   Bhopal            bimalokpal.bhopal 1st Floor, Jeevan Madhya Pradesh
+                      @cioins.co.in      Shikha, 60-B,      and Chhattisgarh.
+                                         Hoshangabad
+                                         Road, Opp.
+                                         Gayatri Mandir,
+                                         Bhopal – 462 011
+                                         (Tel:
+                                         0755-2769201/02)
+4   Bhubaneswar       bimalokpal.bhuban 62, Forest Park, State of Odisha.
+                      eswar@cioins.co.i Bhubaneswar –
+                      n                  751 009 (Tel:
+                                         0674-2596461/55)
+5   Chandigarh        bimalokpal.chandi S.C.O. No. 101, Punjab, Haryana
+                      garh@cioins.co.in 102 & 103, 2nd      (excluding
+                                         Floor, Batra       Gurugram,
+                                         Building, Sector   Faridabad,
+                                         17-D, Chandigarh Sonepat, and
+                                         – 160 017 (Tel:    Bahadurgarh),
+                                         0172-4646394 /     Himachal Pradesh,
+                                         2706468)           UTs of Jammu &
+                                                            Kashmir, Ladakh,
+                                                            and Chandigarh.
+6   Chennai           bimalokpal.chenna Fatima Akhtar       Tamil Nadu,
+                      i@cioins.co.in     Court, 4th Floor, Puducherry Town
+                                         453, Anna Salai, and Karaikal (part
+                                         Teynampet,         of UT of
+                                         Chennai – 600 018 Puducherry).
+                                         (Tel:
+                                         044-24333668/78)
+7   Delhi             bimalokpal.delhi@ 2/2 A, Universal NCT of Delhi and
+                      cioins.co.in       Insurance          4 NCR Districts of
+                                         Building, Asaf Ali Haryana:
+                                         Road, New Delhi – Gurugram,
+                                         110 002 (Tel:      Faridabad,
+#    Centre Location   Official CIO Email Registered Office Statutory Territorial
+                       ID (@cioins.co.in) Address &          Jurisdiction (States
+                                          Telephone          / Union Territories /
+                                                             Districts)
+                                          011-23232481 /     Sonepat, and
+                                          23237539)          Bahadurgarh.
+8    Guwahati          bimalokpal.guwah Jeevan Nivesh,       Assam,
+                       ati@cioins.co.in   5th Floor, Nr.     Meghalaya,
+                                          Panbazar Over      Manipur, Mizoram,
+                                          Bridge, S.S. Road, Arunachal
+                                          Guwahati – 781     Pradesh,
+                                          001 (Tel:          Nagaland, and
+                                          0361-2632204/260 Tripura.
+                                          2205)
+9    Hyderabad         bimalokpal.hydera 6-2-46, 1st Floor, Andhra Pradesh,
+                       bad@cioins.co.in Moin Court, Lane Telangana, Yanam
+                                          Opp. Saleem        (part of UT of
+                                          Function Palace, Puducherry).
+                                          A.C. Guards,
+                                          Lakdi-Ka-Pool,
+                                          Hyderabad – 500
+                                          004 (Tel:
+                                          040-23312122 /
+                                          67504123)
+10   Jaipur            bimalokpal.jaipur Jeevan Nidhi – II State of
+                       @cioins.co.in      Bldg., Ground      Rajasthan.
+                                          Floor, Bhawani
+                                          Singh Marg, Jaipur
+                                          – 302 005 (Tel:
+                                          0141-2740363/798
+                                          )
+11   Kochi             bimalokpal.ernakul 10th Floor, Jeevan Kerala,
+     (Ernakulam)       am[span_515](star Prakash, LIC        Lakshadweep, and
+                       t_span)[span_515] Building, Opp.      Mahe (part of UT
+                       (end_span)[span_ Maharaja's           of Puducherry).
+                       535](start_span)[s College, M.G.
+                       pan_535](end_spa Road, Ernakulam,
+                       n)@cioins.co.in    Kochi – 682 011
+                                          (Tel:
+                                          0484-2358759 /
+                                          2359338)
+12   Kolkata           b[span_516](start_ Hindustan Bldg. West Bengal,
+                       span)[span_516](e Annexe, 7th Floor, Sikkim, and
+                       nd_span)[span_53 4, C.R. Avenue, Andaman &
+                       6](start_span)[spa Kolkata – 700 072 Nicobar Islands.
+                       n_536](end_span)i (Tel:
+                       malokpal.kolkata 033-22124339/40/
+#    Centre Location   Official CIO Email Registered Office Statutory Territorial
+                       ID (@cioins.co.in) Address &         Jurisdiction (States
+                                          Telephone         / Union Territories /
+                                                            Districts)
+                       @cioins.co.in      41)
+13   Lucknow           bimalokpal.luckno 6th Floor, Jeevan Central, Eastern
+                       w@c[span_517](st Bhawan, Phase-II, & Bundelkhand
+                       art_span)[span_51 Nawal Kishore      Districts of UP:
+                       7](end_span)[span Road, Hazratganj, Lalitpur, Jhansi,
+                       _537](start_span)[ Lucknow – 226     Mahoba,
+                       span_537](end_sp 001 (Tel:           Hamirpur, Banda,
+                       an)ioins.co.in     0522-4002082 /    Chitrakoot,
+                                          2231330/31)       Prayagraj
+                                                            (Allahabad),
+                                                            Mirzapur,
+                                                            Sonbhadra,
+                                                            Fatehpur,
+                                                            Pratapgarh,
+                                                            Jaunpur, Varanasi,
+                                                            Ghazipur, Jalaun,
+                                                            Kanpur, Lucknow,
+                                                            Unnao, Sitapur,
+                                                            Lakhimpur,
+                                                            Bahraich,
+                                                            Barabanki,
+                                                            Raebareli,
+                                                            Shravasti, Gonda,
+                                                            Ayodhya
+                                                            (Faizabad),
+                                                            Amethi,
+                                                            Kaushambi,
+                                                            Balrampur, Basti,
+                                                            Ambedkarnagar,
+                                                            Sultanpur,
+                                                            Maharajganj,
+                                                            Santkabirnagar,
+                                                            Azamgarh,
+                                                            Kushinagar,
+                                                            Gorakhpur, Deoria,
+                                                            Mau, Chandauli,
+                                                            Ballia,
+                                                            Siddharthnagar.
+14   Mumbai            bimalokpal.mumba 3rd Floor, Jeevan Goa and Mumbai
+                       i@cioins.co.in     Seva Annexe, S.V. Metropolitan
+                                          Road, Santacruz Region (excluding
+                                          (W), Mumbai –     Navi Mumbai &
+                                          400 054 (Tel:     Thane).
+#                   Centre Location      Official CIO Email Registered Office Statutory Territorial
+                                         ID (@cioins.co.in) Address &          Jurisdiction (States
+                                                            Telephone          / Union Territories /
+                                                                               Districts)
+                                                            022-69038800 /
+                                                            26106552)
+15                  Noida                bimalokpal.noid[sp Bhagwan Sahai      State of
+                                         an_520](start_spa Palace, 4th Floor, Uttarakhand and
+                                         n)[span_520](end_ Main Road, Naya Western UP
+                                         span)[span_540](s Bans, Sector 15, Districts (all
+                                         tart_span)[span_5 Dist: Gautam        districts of UP not
+                                         40](end_span)a@ Buddh Nagar,          covered under
+                                         cioins.co.in       Noida, U.P. – 201 Lucknow, including
+                                                            301 (Tel:          Noida/Gautam
+                                                            0120-2514250/52/ Buddh Nagar,
+                                                            53)                Ghaziabad,
+                                                                               Meerut, Agra,
+                                                                               Aligarh, Bareilly,
+                                                                               Moradabad,
+                                                                               Saharanpur,
+                                                                               Mathura, etc.).
+16                  Patna                bimalokpal.patna 2nd Floor, Lalit     States of Bihar
+                                         @cioins.co.in      Bhawan / 1st       and Jharkhand.
+                                                            Floor, Kalpana
+                                                            Arcade Bldg.,
+                                                            Bazar Samiti
+                                                            Road, Bahadurpur,
+                                                            Patna – 800 006
+                                                            (Tel:
+                                                            0612-2680952)
+17                  Pune                 bimalokpal.pune@ Jeevan Darshan State of
+                                         cioins.co.in       Bldg., 3rd Floor, Maharashtra
+                                                            C.T.S. Nos. 195 to (including Navi
+                                                            198, N.C. Kelkar Mumbai and
+                                                            Road, Narayan      Thane, but
+                                                            Peth, Pune – 411 excluding Mumbai
+                                                            030 (Tel:          Metropolitan
+                                                            020-41312555)      Region).
+Official Statutory, Regulatory, and Empirical Evidence Dossier
+To facilitate on-screen verification during investigative broadcast production, the following table
+compiles the primary statutory notifications, regulatory circulars, annual report archives, and
+judicial orders audited in this report, along with their direct official URLs.
+Document Category         Official Instrument Title Issuing Authority &        Direct Official
+                          & Reference Number Date                              Document / Portal URL
+Consolidated              The Insurance             Ministry of Finance        https://www.cioins.co.in
+Principal Rules           Ombudsman Rules,          (Dept. of Financial        /notification/Insurance
+Document Category     Official Instrument Title Issuing Authority &    Direct Official
+                      & Reference Number Date                          Document / Portal URL
+(Amended till Nov     2017 (incorporating       Services), Updated     %20Ombudsman%20R
+2023)                 G.S.R. 413(E) of 2017, 09.11.2023                ules,%202017(%20as
+                      G.S.R. 785(E) of 2018,                           %20amended%20till%2
+                      G.S.R. 147(E) & 334(E)                           009.11.2023).pdf
+                      of 2021, and G.S.R.
+                      828(E) of 2023)
+2023 Gazette          The Insurance             Ministry of Finance    https://www.cioins.co.in
+Amendment (₹50        Ombudsman                 (DFS), 9 November      /notification/Insurance
+Lakh Cap & Digital    (Amendment) Rules, 2023                          %20Ombudsman(Ame
+Awards)               2023, Notification                               ndment)%20Rules,%20
+                      G.S.R. 828(E)                                    2023.pdf
+2025 Draft Gazette    Draft Insurance           Ministry of Finance    https://financialservices
+Amendment Rules       Ombudsman                 (DFS), 25 November     .gov.in/sites/default/files
+                      (Amendment) Rules, 2025                          /2025-12/G-S-R-864e-2
+                      2025, Notification                               5-11-2025-for-public-co
+                      G.S.R. 864(E)                                    nsultation.pdf
+IRDAI Health          Master Circular on        Insurance Regulatory   https://www.actuariesin
+Insurance Master      IRDAI (Insurance          and Development        dia.org/sites/default/file
+Circular (2024)       Products) Regulations Authority of India         s/inline-files/5.%20Mast
+                      2024 – Health             (IRDAI), 29 May 2024   er%20Circular%20on%
+                      Insurance (Master                                20Health%20Insurance
+                      Circular on Health                               %20Business%202024.
+                      Insurance Business),                             pdf
+                      Ref:
+                      IRDAI/HLT/CIR/PRO/8
+                      4/5/2024
+IRDAI Protection of   Master Circular on        IRDAI, 5 September     https://www.caalley.co
+Policyholders'        Protection of             2024                   m/irdai_mc/MC_Protect
+Interests Master      Policyholders' Interests,                        ion_of_Policyholders_in
+Circular (2024)       2024 (Governing                                  terests_2024.pdf
+                      14-day GRO TAT, Bank
+                      Rate + 2% interest, and
+                      Award compliance)
+CIO Annual Reports    Council for Insurance Council for Insurance      Portal:
+Portal & Audited      Ombudsmen (CIO)           Ombudsmen (CIO),       https://www.cioins.co.in
+Reports               Consolidated Annual Mumbai                       /AnnualReports
+                      Reports (2022–23,                                2023–24 PDF:
+                      2023–24, and                                     https://cioins.co.in/annu
+                      2024–25)                                         alreports/AnnualReport
+                                                                       2023-2024.pdf Online
+                                                                       Filing:
+                                                                       https://cioins.co.in/Com
+                                                                       plaint/Online
+IRDAI Bima Bharosa IRDAI Bima Bharosa IRDAI Consumer                   https://bimabharosa.ird
+Portal             Grievance Registration Affairs Dept.                ai.gov.in/
+Document Category    Official Instrument Title Issuing Authority &    Direct Official
+                     & Reference Number Date                          Document / Portal URL
+                     & Tracking System
+Landmark 2026 High Office of the Insurance High Court of              https://www.livelaw.in/p
+Court Judgment on Ombudsman                    Karnataka at Bengaluru df_upload/2026/07/16/1
+Advocates in Rule 17 (Karnataka) v.            (Division Bench), 16   7-687275.pdf
+Hearings             Respondent, W.A. No. July 2026
+                     1534 of 2026 (affirming
+                     W.P. No. 26221 of
+                     2024,
+                     2026:KHC:17542),
+                     Neutral Citation:
+                     2026:KHC:32548-DB
+Comparative Institutional Audit: Bima Bharosa vs.
+Insurance Ombudsman and the Private Recovery
+Middleman Trap
+Bima Bharosa (IRDAI) vs. Insurance Ombudsman (CIO): Why Bima
+Bharosa Cannot Order Payouts
+A pervasive misconception among Indian policyholders is that lodging a complaint on IRDAI's
+Bima Bharosa portal (https://bimabharosa.irdai.gov.in/) or calling the IRDAI toll-free helpline
+(155255 or 1800 4254 732) initiates an independent regulatory investigation or adjudication by
+IRDAI officers. In legal and architectural reality, Bima Bharosa and the Insurance Ombudsman
+occupy entirely different statutory planes. Bima Bharosa is an administrative grievance-tracking
+system maintained by the regulator that operates as a two-way electronic mirror integrated with
+the internal Complaint Management Systems (ICMS) of individual insurance companies. When
+a policyholder registers a complaint on Bima Bharosa, the portal does not assign an IRDAI
+adjudicator to hear the dispute; instead, it automatically routes the electronic ticket directly back
+to the grievance cell of the very same insurance company that rejected the claim. Because the
+insurer is effectively asked to grade its own homework, the company's grievance officer routinely
+copies and pastes the original repudiation clause into the Bima Bharosa response field and
+marks the ticket closed by certifying under internal PPHI protocols that "the company has
+discharged its contractual, statutory and regulatory obligations". Bima Bharosa possesses zero
+quasi-judicial authority, conducts no hearings, takes no evidence, and cannot pass a binding
+financial payment order on an individual claim. Its true strategic value for a consumer is strictly
+instrumental: filing on Bima Bharosa generates an indisputable, regulator-timestamped proof of
+written representation to the insurer's GRO, satisfying Gate 1 under Rule 14(3)(a) and starting
+the 14-day GRO / 30-day Ombudsman unlocking clock.
+Institutional Dimension           IRDAI Bima Bharosa                Insurance Ombudsman
+                                  (bimabharosa.irdai.gov.in)        (cioins.co.in)
+Statutory Origin & Governing Administrative grievance               Independent quasi-judicial
+Law                               tracking portal (formerly IGMS) tribunal / statutory arbitrator
+                                  established under IRDAI's         constituted by the Central
+                                  supervisory mandate (Section Government under Section 24
+Institutional Dimension         IRDAI Bima Bharosa              Insurance Ombudsman
+                                (bimabharosa.irdai.gov.in)      (cioins.co.in)
+                                14, IRDAI Act, 1999 & PPHI      of the IRDAI Act, 1999 read
+                                Regulations, 2024).             with the Insurance
+                                                                Ombudsman Rules, 2017.
+Backend Workflow & Ticket Acts strictly as a two-way            Independent complaint
+Routing                      electronic mirror and              registration on the Council for
+                             pass-through router. When a Insurance Ombudsmen (CIO)
+                             complainant files on Bima          CMS portal (cioins.co.in).
+                             Bharosa, the ticket is             Assigned to one of the 17
+                             automatically transmitted          Regional Insurance
+                             directly back into the internal Ombudsmen (senior civil
+                             Grievance Management               servants/industry heads
+                             System (ICMS/CMS) of the           appointed under Rule 7 & 7A).
+                             very same insurance
+                             company that rejected the
+                             claim.
+Why It Produces "Copy-Paste" Because Bima Bharosa routes The Ombudsman does not
+Responses                    the complaint back to the          accept the insurer's unilateral
+                             insurer's internal Grievance       closure. Under Rule 15(2), the
+                             Cell, the insurer's officer simply Ombudsman compels
+                             reviews their own prior            production of the underwriting
+                             rejection, pastes the same         file and hospital records, holds
+                             policy exclusion clause into the an oral/video hearing under
+                             portal, and closes the ticket by Rule 15(4)–(5), and
+                             certifying that "the company       independently evaluates
+                             has discharged its contractual, medical nexus and policy
+                             statutory and regulatory           clauses.
+                             obligations".
+Adjudicatory & Financial     Zero quasi-judicial authority. Full quasi-judicial authority
+Enforcement Power            Bima Bharosa conducts no           under Rule 17. Passes
+                             hearings, examines no              reasoned Awards up to ₹50
+                             witnesses or medical experts, Lakhs that are 100% legally
+                             and cannot pass binding            binding on the insurer within
+                             financial payment orders or 30 days (Rule 17(6) & (8)),
+                             awards on individual disputed enforced by a ₹5,000/day
+                             claims.                            penalty (Para 20, Health
+                                                                Master Circular 2024) and
+                                                                Bank Rate + 2% penal
+                                                                interest.
+Strategic Role in the        Serves exclusively as a Tier-1 / Serves as the Tier-3 binding
+Escalation Chain             Tier-2 timestamped conduit adjudicatory forum once the
+                             to satisfy Gate 1 (Rule            insurer's GRO (directly or via
+                             14(3)(a))—proving that the         Bima Bharosa) rejects the
+                             policyholder submitted a written grievance or fails to respond
+                             grievance to the insurer's GRO within 30 days.
+                             and starting the 14-day / 30-day
+Institutional Dimension          IRDAI Bima Bharosa               Insurance Ombudsman
+                                 (bimabharosa.irdai.gov.in)       (cioins.co.in)
+                                 clock.
+Forensic Audit of Private "Claim Recovery Startups" and Middleman
+Commissions (15%–25%)
+Across India's metropolitan healthcare hubs, a burgeoning cottage industry of private "claim
+settlement startups" and commercial recovery agencies targets distressed families whose health
+insurance claims have been rejected, demanding 15% to 25% of the recovered claim amount as
+a success fee or commission. A forensic audit under the Insurance Ombudsman Rules, 2017,
+the Advocates Act, 1961, and the Indian Contract Act, 1872 exposes the legal invalidity of their
+representation claims. Under Rule 14(1) of the Insurance Ombudsman Rules, 2017, a complaint
+can only be instituted by the aggrieved policyholder "himself or through his legal heirs, nominee
+or assignee". A commercial claim-recovery company operating on a contingency fee agreement
+is neither a legal heir, a nominee, nor a bona fide assignee of an indemnity health insurance
+policy. Inside the hearing room—or during virtual video hearings conducted under Rule
+15(5)—private recovery agents, commercial consultants, and corporate middlemen are strictly
+prohibited from appearing or arguing on behalf of the policyholder.
+Crucially, the July 2026 Karnataka High Court Division Bench judgment in Office of the
+Insurance Ombudsman v. Respondent (WA No. 1534 of 2026 / 2026:KHC:32548-DB) does not
+confer any legitimacy upon private claim-recovery companies. That judgment carved out a right
+of legal representation at the Rule 17 adjudicatory stage strictly on the strength of Section 30 of
+the Advocates Act, 1961, which applies exclusively to natural persons enrolled as Advocates
+with a State Bar Council—who are themselves strictly prohibited by Bar Council of India Rules
+(Part VI, Chapter II, Section II, Rule 20) from charging contingency fees or percentages of
+litigation recoveries. Private limited companies and commercial middlemen are not enrolled
+Advocates under the Advocates Act, 1961, meaning they remain completely barred from
+representing complainants before the Insurance Ombudsman. Consequently, in operational
+practice, private recovery agencies engage in ghost-filing: they extract 15% to 25% of the
+family's hospital reimbursement solely to type a draft GRO email and upload documents onto
+the 100% free cioins.co.in portal using the policyholder's own login credentials, while the
+policyholder must still personally attend the hearing and answer the Ombudsman's questions.
+Furthermore, any contract, engagement letter, or Power of Attorney in which a private
+commercial company promises to represent, appear for, or plead on behalf of a policyholder
+before the Insurance Ombudsman is legally unenforceable under Section 23 of the Indian
+Contract Act, 1872. Under Section 23, the consideration or object of an agreement is unlawful if
+it is forbidden by law, or is of such a nature that, if permitted, it would defeat the provisions of
+any law, or is opposed to public policy. Because non-advocate third-party representation before
+the Ombudsman is barred by Rule 14(1) of the Insurance Ombudsman Rules, 2017 and violates
+the monopoly of legal practice before tribunals reserved to enrolled advocates under Sections
+29, 30, and 33 of the Advocates Act, 1961, any contractual covenant to represent a consumer
+before the Ombudsman is void ab initio under Sections 23 and 24 of the Indian Contract Act,
+1872. Even when disguised as back-end documentation consultancy, extracting a 15% to 25%
+cut of medical indemnity funds from a distressed patient for accessing a statutory forum
+explicitly designed by the Central Government to be free of cost and free of
+middlemen—particularly when induced by misleading claims of institutional
+influence—constitutes an unconscionable bargain and an "unfair trade practice" under the
+Consumer Protection Act, 2019, a danger explicitly flagged in insurer PPHI policies issued
+under the 2024 IRDAI Master Circular.
+
+Deliverable 4: Risk and Exception Audit (High Court
+Writ Challenges Under Article 226 and 227)
+While Rule 17(8) of the Insurance Ombudsman Rules, 2017 declares that "The award of
+Insurance Ombudsman shall be binding on the insurers", investigative accuracy requires
+auditing the exact constitutional exceptions under which an insurance company can legally
+challenge or seek to quash an Ombudsman Award, as well as how Indian High Courts treat
+such challenges.
+
+Absence of Statutory Appeal vs. Extraordinary Constitutional Writ
+Jurisdiction
+Under the extant Insurance Ombudsman Rules, 2017 (as amended till 9 November 2023), there
+is no statutory appellate authority and no provision for an ordinary appeal by an insurer against
+an Award passed under Rule 17. While the Draft Insurance Ombudsman (Amendment) Rules,
+2025 (notified for public consultation via G.S.R. 864(E) on 25 November 2025) proposed
+creating a multi-bench internal Appellate Authority constituted by IRDAI under proposed Rule
+17A where either party could appeal within 30 days of receiving the Award, that draft proposal
+does not govern until notified as final law in the Official Gazette. Similarly, an insurance
+company cannot file an appeal or complaint before the Consumer Disputes Redressal
+Commissions against an Ombudsman Award, as an insurer is a service provider and not a
+"consumer" under the Consumer Protection Act, 2019.
+However, because judicial review by constitutional courts is an inviolable part of the Basic
+Structure of the Constitution of India, no subordinate legislation such as Rule 17(8) can oust the
+extraordinary jurisdiction of the High Courts under Article 226 (Power to issue certain Writs) and
+Article 227 (Power of Superintendence over all Courts and Tribunals). As confirmed by the
+Bombay High Court in Aditya Birla Sun Life Insurance Co. Ltd. v. Insurance Ombudsman (2022
+SCC OnLine Bom 1673) and the Karnataka High Court Division Bench in WA No. 1534 of 2026
+(2026:KHC:32548-DB), because the Insurance Ombudsman functions as a quasi-judicial
+tribunal when adjudicating a dispute under Rule 17, an aggrieved insurer can file a Writ Petition
+under Article 226 and Article 227 before the jurisdictional High Court seeking a Writ of Certiorari
+to quash the Award.
+
+The Strict Legal Threshold for High Court Interference and Recent
+Judicial Crackdowns (2024–2025)
+Crucially, a High Court exercising writ or supervisory jurisdiction under Articles 226 and 227
+does not sit as a regular court of first appeal to re-appreciate medical evidence, re-weigh factual
+findings, or substitute its own view of a plausible interpretation of the policy for that of the
+Ombudsman. An insurer's writ petition will be dismissed unless the insurer satisfies a narrow
+public-law threshold by demonstrating one of three defects: (1) patent lack or excess of
+jurisdiction (ultra vires), such as passing an Award exceeding the ₹50 Lakh statutory ceiling
+under Rule 17(3)(ii), awarding more than the direct consequential loss under Rule 17(3)(i),
+entertaining a commercial policy outside personal/group lines under Rule 4(1)(h)–(i), or
+adjudicating a matter already pending in a Consumer Commission in breach of Rule 14(3)(c);
+(2) violation of the principles of natural justice, such as failing to afford the insurer a reasonable
+opportunity of being heard under Rule 15(4); or (3) perversity, fraud, or patent illegality apparent
+on the face of the record, such as passing a wholly unreasoned order in violation of Rule 17(2)
+or rendering a finding based on no evidence whatsoever.
+In practice, insurers have frequently attempted to subvert the 30-day compliance deadline under
+Rule 17(6) and evade the ₹5,000/day penalty by filing defective or dilatory Writ Petitions in High
+Courts. Two landmark decisions from the Bombay High Court demonstrate the judiciary's severe
+crackdown on such tactics. In Bharat Hirji Dedhia v. Union of India & The Oriental Insurance Co.
+Ltd. (Bombay High Court, W.P. No. 2903 of 2021 & W.P. No. 706 of 2024, decided on 10
+December 2024), a 70-year-old senior citizen underwent coronary artery disease treatment
+costing ₹27,13,582, against which Oriental Insurance offered only ₹5,81,466. On 3 May 2021,
+the Insurance Ombudsman passed an Award directing Oriental Insurance to pay the full
+₹27,13,582. Oriental Insurance defied the 30-day compliance mandate of Rule 17(6), falsely
+assured the senior citizen by email on 17 June 2021 that payment was being processed,
+and—only after the senior citizen filed Writ Petition No. 2903 of 2021 to enforce the
+Award—lodged a counter-Writ Petition (W.P. No. 706 of 2024) contending that the hospital
+charges violated "reasonable and customary" clauses and that paying the Award would waste
+"public monies". Worse still, the insurer left its Writ Petition lying under registry objections for
+three years until December 2024 without ever moving for or obtaining an interim stay. The
+Division Bench of the Bombay High Court held that mere filing of a Writ Petition without securing
+an interim stay within a reasonable period does not suspend the binding 30-day compliance
+mandate of Rule 17(6) and Rule 17(8). Terming the insurer's conduct "gross," "insincere and
+hypocritical," and a deliberate harassment of a senior citizen, the Court dismissed the insurer's
+Writ Petition, enforced the Ombudsman's Award of ₹27,13,582 with 7% interest from 1 July
+2021, imposed ₹1,00,000 in exemplary costs, and directed Oriental Insurance to conduct an
+internal inquiry to identify the officers responsible for delaying compliance and recover both the
+7% delay interest and the ₹1,00,000 exemplary costs personally from those officers' salaries.
+Similarly, in TATA AIG General Insurance Co. Ltd. v. Vinay Sah, Insurance Ombudsman, Pune &
+Anr. (Bombay High Court, Neutral Citation: 2025:BHC-AS:37359-DB / 2025 SCC OnLine Bom
+3134, decided on 3 September 2025), TATA AIG filed an Article 226 Writ Petition challenging a
+₹27,00,000 Award passed by the Insurance Ombudsman, Pune in favour of a widow whose
+husband died of sudden cardiac arrest under a home-loan Group Credit Secure policy. Justice
+Sandeep V. Marne dismissed the insurer's Writ Petition and upheld the ₹27 Lakh Award in full,
+condemning the conduct of the insurer and the housing finance intermediary as "far from bona
+fide," noting that the Court could have imposed heavy costs for a refusal that forced a widow to
+litigate for four years, and ordering full disbursement within four weeks. Under the 2024 Master
+Circular framework, an insurer is exempted from the ₹5,000/day default penalty only if it actively
+exercises a valid legal challenge within the 30-day compliance window and formally intimates
+the policyholder; as established in Bharat Hirji Dedhia, merely lodging a dormant writ petition in
+the High Court registry without clearing objections or obtaining a judicial stay order exposes
+both the insurer and its defaulting officers to full statutory and personal financial liability.
+
+Strategic Synthesis for Investigative Production
+To ensure bulletproof legal accuracy for Episode 2 of "Be Practical with Kishore", the
+investigative narrative should anchor its script around five verified statutory pillars. First, attribute
+every statutory weapon to its exact legal instrument: credit the ₹50 Lakh Award ceiling to Rule
+17(3)(ii) of the Insurance Ombudsman Rules, 2017 as amended by Notification G.S.R. 828(E)
+dated 9 November 2023; credit the ₹5,000/day default penalty to Chapter I, Paragraph 20 of the
+IRDAI Master Circular on Health Insurance Business dated 29 May 2024
+(IRDAI/HLT/CIR/PRO/84/5/2024); and credit the 14-day GRO resolution deadline and Bank
+Rate plus 2% penal interest to the IRDAI (Protection of Policyholders' Interests) Regulations,
+2024 and the PPHI Master Circular dated 5 September 2024, read alongside Paragraph 19 of
+the Health Master Circular and Rule 17(7) of the Ombudsman Rules. Second, highlight the
+Gate-1 procedural trap using the CIO Annual Report 2024–25 numbers: out of 32,503 classified
+health complaints, 27,575 were within remit (with 96.13% or 26,507 involving claim rejections),
+yet 1,715 families were turned away at the threshold simply because they failed to send a
+written representation to the insurer's GRO first under Rule 14(3)(a). Third, demystify Bima
+Bharosa (bimabharosa.irdai.gov.in) as a pass-through ticket router with zero quasi-judicial
+power to order payouts, instructing viewers to use it strictly to generate a timestamped GRO
+receipt before filing on cioins.co.in. Fourth, dismantle the 15% to 25% middleman commission
+racket by demonstrating that private claim-recovery companies have zero locus standi under
+Rule 14(1) and that their representation contracts are void under Section 23 of the Indian
+Contract Act, 1872, while contrasting them with the landmark 16 July 2026 Karnataka High
+Court Division Bench ruling (WA No. 1534 of 2026 / 2026:KHC:32548-DB) confirming that
+policyholders facing complex medical repudiations at the Rule 17 adjudicatory stage have a
+statutory right under Section 30 of the Advocates Act, 1961 to engage a licensed Advocate.
+Finally, equip viewers with the December 2024 Bombay High Court precedent in Bharat Hirji
+Dedhia (WP No. 2903 of 2021), proving that when an insurance company defies an
+Ombudsman Award beyond 30 days without obtaining an active High Court stay, the judiciary
+will not only enforce the Award with interest and ₹5,000/day penalties, but can order the
+recovery of delay interest and exemplary costs directly from the personal salaries of the
+defaulting insurance officers.
+
+Works cited
+
+1. Insurance Ombudsman: Complaint Procedure And Awards - iPleaders,
+https://blog.ipleaders.in/insurance-ombudsman-complaint-procedure-and-awards/ 2. Why
+Health Insurance Claims Get Rejected in India (2026 Data),
+https://www.globalnewsview.com/why-health-insurance-claims-get-rejected 3. Office Of The
+Insurance vs Sri M V Narasimha Prasad on 1 July, 2026,
+https://indiankanoon.org/doc/109181513/ 4. Insurance Ombudsman Rules Amendment 2023 |
+PDF - Scribd,
+https://www.scribd.com/document/825938057/Insurance-Ombudsman-Amendment-Rules-2023
+5. Annual Report for 2022-23 - Insurance Ombudsman,
+https://cioins.co.in/annualreports/Final%20Annual%20Report%202022-23.pdf 6. Annual Report
+2023 - 2024 - Insurance Ombudsman,
+https://cioins.co.in/annualreports/AnnualReport2023-2024.pdf 7. LIC Customer Care Numbers,
+Branch Timings & Complaint Guide,
+https://licsodho.in/blog/lic-customer-care-branch-timings-complaint-ombudsman-guide 8.
+PROTECTION OF POLICYHOLDERS' INTEREST AND GRIEVANCE,
+https://www.bhartiaxa.com/sites/default/files/2025-07/policy-for-protection-of-interests-of-policyh
+olders_V13.pdf 9. Grievance redressal process - Kiwi Insurance,
+https://www.kiwiinsurance.com/grievance-redressal/ 10. Insurance Ombudsman Rules, 2017( as
+amended till 09.11.2023).pdf,
+https://www.cioins.co.in/notification/Insurance%20Ombudsman%20Rules,%202017(%20as%20
+amended%20till%2009.11.2023).pdf 11. Sri M V Narasimha Prasad vs Office Of The Insurance
+Ombudsman, https://indiankanoon.org/doc/10240587/ 12. Life Insurance Corporation of India,
+https://licindia.in/documents/20121/134266/Annexure+IV+Policy+for+Protection+of+Interest+of+
+Policyholders+2024.pdf/b875dbae-a55a-4e6b-0760-6f9f7af9ed49?t=1736834788054 13. Health
+Claim Rejected as Experimental / Unproven Treatment? How,
+https://bimahaq.com/experimental-treatment-claim-rejected 14. Reconsidration Documents All |
+PDF | Insurance | Policy - Scribd,
+https://www.scribd.com/document/1057777772/Reconsidration-Documents-All 15. Master
+Circular on Health Insurance Business,
+https://www.actuariesindia.org/sites/default/files/inline-files/5.%20Master%20Circular%20on%20
+Health%20Insurance%20Business%202024.pdf 16. Master Circular on Protection of
+Policyholders' Interests, 2024,
+https://elpee.co.in/assets/uploads/Notice/pdf/2024_09_05_-_IRDAI_Master_Circular_on_Protect
+ion_of_Policyholders_interests_2024_%282%29.pdf 17. Insurance Claim Repudiation Guide:
+Section 45 & Ombudsman,
+https://gstmunshi.com/blog/life-insurance-claim-repudiation-ombudsman-complaint-process-guid
+e 18. WA No. 1534 of 2026 - LiveLaw,
+https://www.livelaw.in/pdf_upload/2026/07/16/17-687275.pdf 19. Draft Insurance Ombudsman
+Rules 2025: Key Changes You Must,
+https://taxguru.in/finance/draft-insurance-ombudsman-amendmentrules-2025-key-changes.html
+20. Draft Insurance Ombudsman (Amendment) Rules 2025 - Legal 500,
+https://www.legal500.com/intelligence/india/insurance/draft-insurance-ombudsman-amendment-
+rules-2025-a-shift-from-conciliation-to-adjudication 21. जित्त मंत्रालय (जित्तीय सेिाएं जिभाग)
+अजधसच   ू ना न,
+https://financialservices.gov.in/sites/default/files/2025-12/G-S-R-864e-25-11-2025-for-public-con
+sultation.pdf 22. Insurance Ombudsman (amendment) Rules, 2021, India-legitquest,
+https://www.legitquest.com/act/insurance-ombudsman-amendment-rules-2021/9747 23. Section
+13 in The Insurance Ombudsman Rules, 2017, https://indiankanoon.org/doc/18278507/ 24.
+HDFC Ergo General Insurance Company Limited Policy on,
+https://customer-portal-assets.hdfcergo.com/documents/PPHIPolicy-V1.9(1)-14133981369.pdf
+25. Address & Contact Details of Ombudsmen Centres - Aviva India,
+https://www.avivaindia.com/sites/default/files/OMBUDSMAN%20LIST-MARCH.pdf 26. STAR
+HEALTH AND ALLIED INSURANCE COMPANY LTD,
+https://www.casemine.com/judgement/in/6740d285c407520f6189c257 27. 'Insurance
+Ombudsman' - Resolution of Grievances - Taxmann,
+https://www.taxmann.com/research/fema-banking-insurance/top-story/105010000000024083/in
+surance-ombudsman-resolution-of-grievances-experts-opinion 28. M.V. Narasimha Prasad vs
+Office Of The Insurance Ombudsman,
+https://supremetoday.ai/doc/judgement/INDKAR00000196277 29. Insurance Ombudsman:
+Should policyholders be allowed ... - Mint,
+https://www.livemint.com/money/karnataka-hc-lawyers-insurance-ombudsman-policyholder-right
+s-claims-disputes-11779686412965.html 30. Bombay High Court Directs Oriental Insurance to
+Pay Rs ... - Raw Law,
+https://rawlaw.in/bombay-high-court-directs-oriental-insurance-to-pay-rs-2713582-with-interest-f
+or-harassing-senior-citizen-by-defying-insurance-ombudsmans-award-orders-exemplary-costs-a
+nd-inquiry-agains/ 31. Bharat Hirji Dedhia, Vs. Union of India - Caseon,
+https://www.caseon.in/case/bharat-hirji-dedhia-vs-union-of-india 32. Interest after ombudsman |
+Forum - Beshak, https://www.beshak.org/forum/post/interest-after-ombudsman/ 33. IRDAI's
+Health Insurance Master Circular: The Cashless ... - Oquilia,
+https://www.oquilia.com/news/irdai-health-master-circular-cashless 34. IRDA master Circular
+29052024 VBRA kvn,
+https://www.vbra.in/upload/IRDA%20master%20Circular%2029052024%20VBRA%20kvn.pdf
+35. Insurance Surety Bond Claim and Invocation in India - Axitrust,
+https://www.axitrust.com/blog/insurance-surety-bond-claim-invocation-india 36. Death Claim -
+Insurance Ombudsman, https://cioins.co.in/LIC/deathclaim/DeathClaim-Book8.pdf 37. THE
+JOURNAL - of Insurance Institute of India,
+https://www.insuranceinstituteofindia.com/documents/6454111/6454445/The+Journal+Dec-17.p
+df/fa61cd8f-c08d-47e9-9e96-7d48c3b9fffa 38. Ombudsman contact details.cdr - Aditya Birla
+Health Insurance, https://www.adityabirlahealthinsurance.com/assets/pdf/20210611T130702.pdf
+39. Insurance Ombudsman - Kshema General Insurance, https://kshema.co/ombudsman/ 40.
+Insurance Ombudsman(Amendment) Rules, 2023.pdf,
+https://www.cioins.co.in/notification/Insurance%20Ombudsman(Amendment)%20Rules,%20202
+3.pdf 41. Madras High Court: Contractual relations between private,
+https://www.vaishlaw.com/madras-high-court-contractual-relations-between-private-institutions-p
+erforming-public-functions-and-individuals-can-be-enforced-under-article-226-of-the-constitution
+-of-india/ 42. Birla Sun Life Insurance Company ... vs 1.The ... - Indian Kanoon,
+https://indiankanoon.org/doc/39526333/ 43. Bom HC on insurance claim by Tata AIG to widow -
+SCC Online,
+https://www.scconline.com/blog/post/2025/09/10/bom-hc-on-insurance-claim-by-tata-aig-to-wido
+w/ 44. Resources - Tuli & Co, https://www.tuli.co.in/resources-and-publication.php 45. Conduct
+Far From Bona-Fide: Bombay High Court Upholds,
+https://www.verdictum.in/court-updates/high-courts/bombay-high-court/tata-aig-general-insuranc
+e-co-ltd-v-vinay-sah-insurance-ombudsman-2025-bhc-as-37359-db-award-to-widow-1590673
+
