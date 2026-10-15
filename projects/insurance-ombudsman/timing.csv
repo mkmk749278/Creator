@@ -1,0 +1,135 @@
+id,film_start,film_end,sentence
+O001,0.0,4.24,Imagine you are standing at a hospital billing counter at nine o'clock at night.
+O001,4.68,12.88,"The bill is four and a half lakh rupees, and your cashless claim, where the insurance company pays the hospital directly, has just been denied."
+O001,13.35,15.14,We told this story in our last video.
+O002,15.69,17.2,Here is what you need to know from it.
+O002,17.62,20.31,A cashless denial is not the end of your claim.
+O002,20.73,23.67,"You can pay the hospital, and claim the money back later."
+O002,24.06,27.25,"And if the company still says no, there is a four-step plan."
+O002,27.73,28.66,Collect your papers.
+O002,29.06,31.96,File for reimbursement and write to the grievance officer.
+O002,32.31,33.96,Register on Bima Bharosa.
+O002,34.42,36.89,"And step four, the Insurance Ombudsman."
+O003,37.3,43.21,"So you paid the bill from your pocket, collected your hospital papers, came home, and filed for reimbursement."
+O004,43.73,46.5,"Three weeks later, an email lands in your inbox."
+O005,46.92,59.63,"Either the insurance company rejects your claim all over again... or worse, out of your four and a half lakh rupee bill, they approve just one lakh twenty thousand, and cut the remaining three lakh thirty thousand rupees."
+O006,60.1,64.02,"At that moment, many families think they only have two choices."
+O007,64.48,65.0,Choice one.
+O007,65.52,70.84,"Hire a lawyer, go to consumer court, and wait, often for a long time, for a verdict."
+O008,71.11,72.21,Or choice two.
+O008,72.69,82.8,"Answer one of those ads for a private claim recovery service, which promises to fight your case, but some ask for twenty percent or more of the money they recover as their fee."
+O009,83.17,84.06,Stop right there.
+O009,84.47,87.48,"Before you pick either door, there is a third one."
+O009,87.9,89.29,Step four of that plan.
+O010,89.72,93.4,"Today, we open that door fully, from start to finish."
+O010,93.86,96.21,Filing a complaint costs zero rupees.
+O010,96.62,100.58,"If the Ombudsman passes an award, it is binding on the insurance company."
+O010,100.92,108.88,"And if the company does not challenge the award, but pays it late, it has to pay you a penalty of five thousand rupees for every day of delay."
+O011,109.23,111.22,Welcome to Be Practical with Kishore.
+O012,111.56,123.82,"Today, I will show you one common mistake that gets complaints turned away at the door, how to file on the official website step by step, what happens at the hearing, and what the company must do after it loses."
+O012,124.16,126.95,All without paying a single rupee to middlemen.
+O013,127.36,130.65,"Let's break it down... in plain, simple English."
+O014,132.35,140.21,"First... step three, Bima Bharosa, the online complaint portal of the insurance regulator, the I-R-D-A-I."
+O014,140.7,141.48,It often works.
+O014,141.97,144.94,"But if it does not work for you, do not stop there."
+O015,145.38,148.93,"You register on Bima Bharosa, upload your papers, and wait."
+O015,149.37,154.79,"Many people then get the same rejection letter from the insurance company again, and the complaint is closed."
+O016,155.22,158.3,"And you think, even the government portal could not help me."
+O017,158.97,159.45,Here is why.
+O017,159.95,161.58,Bima Bharosa is useful.
+O017,161.95,166.06,"Your complaint goes on the regulator's record, and the company has to answer it."
+O017,166.57,169.19,But Bima Bharosa is NOT a court.
+O017,169.55,176.39,"Your complaint goes to the same insurance company that cut your claim, and the I-R-D-A-I tracks how the company handles it."
+O017,176.82,182.01,"Bima Bharosa does not decide your claim, and it does not pass an order telling the company to pay you."
+O018,182.57,184.52,That is why step four exists.
+O018,184.97,193.38,"The body that can pass a binding award in your case... is the Insurance Ombudsman, which works under the Insurance Ombudsman Rules, twenty seventeen."
+O019,193.86,195.36,"Now, back to the second door."
+O019,195.78,197.46,Private claim recovery companies.
+O020,197.94,200.47,Suppose your three lakh thirty thousand rupees is stuck.
+O020,201.08,207.45,"A recovery agency tells you, sign our agreement, and if we get your money back, give us twenty percent plus G-S-T."
+O021,207.88,211.73,Twenty percent of three lakh thirty thousand is sixty-six thousand rupees.
+O021,212.09,219.25,"Add eighteen percent G-S-T, and it is seventy-seven thousand eight hundred and eighty rupees out of your family's medical savings."
+O022,219.61,221.6,And here is what they may not tell you.
+O022,222.05,231.38,"Under Rule fourteen of the Insurance Ombudsman Rules, the complaint is made by you, the person with the grievance, or through your legal heir, nominee or assignee."
+O023,231.76,236.13,The form is the same free form on the official website that you can fill in yourself.
+O023,236.64,239.92,And never share your passwords or O-T-Ps with anyone.
+O024,240.35,244.63,"So before you sign any agreement and give away a share of your money, remember."
+O024,245.14,248.6,"You can do this yourself online, for zero rupees."
+O025,248.85,249.93,Now listen carefully.
+O025,250.45,254.46,You cannot jump straight to the Ombudsman on the day your claim is rejected.
+O026,254.92,258.08,"If you do, your complaint can be turned away at the door."
+O027,258.6,265.68,"In twenty twenty-four to twenty-five alone, seventeen hundred and fifteen health complaints were turned away for this one reason."
+O027,266.1,269.4,The person had not complained to the insurance company first.
+O028,269.77,273.07,"Under Rule fourteen, you must follow a two-step clock."
+O029,273.55,274.46,Clock step one.
+O029,274.95,276.66,This is step two of our plan.
+O029,277.15,283.84,"Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O."
+O030,284.3,291.72,"Every insurer has to show its grievance officer's details on its website, and the Ombudsman's website lists their email addresses too."
+O030,292.16,298.76,"Send one calm, formal email with your policy number, your claim number, and why their deduction is wrong."
+O031,299.22,301.71,Keep a copy of that email and every reply.
+O031,302.13,303.14,You will need them later.
+O032,303.56,309.1,"Under the I-R-D-A-I rules, the company should resolve your grievance within fourteen days."
+O033,309.55,310.44,Clock step two.
+O033,310.96,313.64,"Wait for their reply, or wait one month."
+O034,314.16,324.27,"The moment the company rejects your complaint, or you are not happy with its reply, or one month passes with no reply at all... the door to the Ombudsman opens."
+O035,324.69,331.49,"From that day, you have one year to file your complaint with the Ombudsman, for compensation of up to fifty lakh rupees."
+O036,331.9,335.69,That limit was raised to fifty lakh rupees in November twenty twenty-three.
+O037,336.09,337.97,And remember one strict condition.
+O037,338.35,347.88,"The Ombudsman cannot take your complaint if the same dispute is already pending, or already decided, in any court, consumer forum, or arbitration."
+O038,348.19,351.59,"So, how do you actually file, and what happens next?"
+O039,352.01,356.93,"Open your browser and go to the official website, c-i-o-i-n-s dot co dot in."
+O040,357.13,362.51,"Choose Register Complaint, and verify your mobile number with an O-T-P."
+O041,362.93,365.01,Then you choose your Ombudsman office.
+O041,365.35,371.99,"There are eighteen offices across India, in cities like Hyderabad, Bengaluru, Mumbai, Delhi and Kolkata."
+O041,372.38,377.97,"You pick the one that covers the place where you live, or the insurance company's branch that handled your policy."
+O042,378.38,380.8,"Before you submit, keep these documents ready."
+O043,381.24,381.53,One.
+O043,381.85,383.62,A copy of your insurance policy.
+O044,384.06,384.26,Two.
+O044,384.62,387.8,The hospital discharge summary and the itemised final bill.
+O045,388.22,388.46,Three.
+O045,388.82,391.22,The company's rejection or deduction letter.
+O046,391.66,391.93,Four.
+O046,392.27,395.09,A copy of the complaint you sent to the insurance company.
+O047,395.48,396.02,And five.
+O047,396.38,399.07,"Your I-D and address proof, and a photograph."
+O047,399.53,403.15,"Each file can be a P-D-F or a J-P-G, up to ten M-B."
+O048,403.56,406.87,"Check every detail, tick the declaration, and submit."
+O048,407.19,410.14,"Your complaint is verified first, and then registered."
+O048,410.53,412.8,Save the acknowledgement and your complaint number.
+O049,413.3,414.69,"Now, what happens next?"
+O050,415.05,418.35,"The Ombudsman hears both sides, you and the company."
+O050,418.71,421.59,"The hearing can be in person, or online by video."
+O051,421.94,425.02,Many complaints end in mediation under Rule sixteen.
+O051,425.38,430.19,"The Ombudsman suggests a fair settlement, and if both sides agree, the case closes."
+O051,430.49,436.31,"In twenty twenty-four to twenty-five, about one in three health complaints that were closed, ended this way."
+O052,436.69,440.9,"If there is no settlement, the Ombudsman decides the case, and passes an award."
+O053,441.35,443.1,You don't need fancy legal words.
+O053,443.42,444.98,Explain your case simply.
+O053,445.37,446.51,When did you buy the policy?
+O053,446.93,448.09,Why were you in the hospital?
+O053,448.41,450.03,And how much did the company cut?
+O054,450.41,451.73,And how long does it take?
+O054,452.21,459.51,"Of the health complaints the Ombudsman closed in twenty twenty-four to twenty-five, about eight out of ten were closed within three months."
+O055,459.85,462.32,And here is why this law is built for you.
+O056,462.79,463.19,First.
+O056,463.51,468.85,"Under Rule seventeen, when the Ombudsman passes an award, it is binding on the insurance company."
+O057,469.28,471.66,Wait... what if you are NOT happy with the award?
+O057,472.07,473.3,You don't have to accept it.
+O057,473.73,477.22,"Other legal remedies, like the consumer forum, may still be open to you."
+O058,477.65,478.28,And second.
+O058,478.6,487.43,"Under the I-R-D-A-I health master circular of twenty twenty-four, the insurance company must carry out the award within thirty days of receiving it."
+O059,487.76,497.99,"If it is late, and it has not challenged the award within those thirty days, it must pay you a penalty of five thousand rupees for every day of delay, on top of any interest that is due."
+O060,498.39,501.14,"Ten days late, that is fifty thousand rupees."
+O060,501.39,504.44,"Thirty days late, one lakh fifty thousand rupees."
+O061,504.95,514.5,"And in December twenty twenty-four, the Bombay High Court heard the case of a senior citizen who had won an Ombudsman award, but was not paid for more than three years."
+O061,514.87,527.27,"The court ordered the insurance company to pay the award with interest, plus one lakh rupees in costs, and said the costs and interest should be recovered from the officers responsible, after an inquiry."
+O062,527.78,530.17,That is the power of knowing your rights.
+O062,530.54,534.43,"You don't need connections, and you don't need to pay twenty percent to middlemen."
+O063,534.9,535.55,Be smart.
+O063,535.91,536.73,Be informed.
+O063,537.22,539.15,And always... be practical.
+O064,539.69,545.15,"In our next episode, we look at consumables, the gloves, masks and syringes on your bill."
+O064,545.59,554.18,"We will open a five lakh rupee hospital bill, line by line, look at what we pay for these consumables, and what the government's price rules say about them."
+O065,554.67,559.0,"Hit the subscribe button, share this video with your family, and drop your questions below."
+O065,559.41,560.89,I'll see you in the next video.
