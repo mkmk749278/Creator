@@ -913,6 +913,14 @@ Contact-sheet the cut (`scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --
 and go shot by shot; write `review.md` (issue → shot IDs → fix). In a session, read the sheets yourself at `high` effort or
 above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at `max` and writes `review.md`/`review.json`
 (exit 1 on blockers). Fact-check gate first: `scripts/claims_check.py projects/<slug>/claims.csv`. Skill: `/review-cut`.
+**Independent viewer review (owner, 2026-10-16).** *Why:* "even if you review yourself you mostly consider CLAUDE.md and
+the playbook; an independent session should review independently, as a general audience." After our own review, open
+**one** cloud session **without the repo attached** (`create_session` with no `source_url`, so no CLAUDE.md, playbook or
+skills load). Give it only what a viewer gets: a Drive download link (`https://drive.google.com/uc?export=download&id=<id>`)
+to the cut, with the VO laid in (build the program VO from `align/program.json`), and the narration text with reel
+timecodes. Ask for a blunt verdict, a per-scene score table (what's wrong, frame time, fix) and the top 10 fixes. It
+judges clarity, pace, phone legibility, slide-look and what looks wrong; we check its claims against the sources and
+rules before changing anything. Read its answer with `list_events`, then archive the session.
 - [ ] ≥ 85% moving footage or animation; no unmoving still or flat frame over 1.5 s; no shot over 4 s except LIVE clips and
       HyperFrames scenes.
 - [ ] Every shot matches the exact words over it; the VO is silent under every diegetic or LIVE moment.
