@@ -92,7 +92,7 @@ JS = """
   cnt("nL", 6290, tEn - 0.2);
   tl.fromTo("#bandA", { opacity: 0, scale: 0.9, svgOrigin: `${CX} ${yA1}` }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" }, tW - 0.1);
   tl.to("#kmscale", { opacity: 1, duration: 0.5 }, tW + 0.4);
-  cnt("nA", 21794, tWn - 0.2, 1.5);
+  cnt("nA", 21794, tW + 0.1, Math.max(1.5, tWn - tW + 0.9));
   tl.fromTo("#bandC", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tB - 0.5);
   tl.fromTo("#pC", { attr: { height: 0 } }, { attr: { height: yC1 - yC0 }, duration: 0.9, ease: "power2.inOut" }, tB - 0.5);
   tl.fromTo("#stamp", { opacity: 0, scale: 1.6, rotation: -14 }, { opacity: 0.94, scale: 1, rotation: -8, duration: 0.28, ease: "power4.in" }, tB + 0.5);

@@ -75,16 +75,24 @@ JS = """
   const tP = at("V014", "People say"), tA = at("V014", "Actually"), tG = at("V014", "longest gap"), tN = at("V014", "near signals"), tC = at("V014", "crowd together"),
         tS = at("V014", "on one stretch"), t96 = at("V014", "ninety six"), tV = at("V014", "Vadodara"), tR = at("V014", "the railway fixed"), tT = at("V014", "two thousand eight");
   tl.from("#tracks, #ruler", { opacity: 0, duration: 0.6 }, 0);
-  even.forEach((g, k) => tl.from(g, { opacity: 0, scale: 0, svgOrigin: `${X0 + k * KM} ${Y}`, duration: 0.3, ease: "back.out(2)" }, 0.3 + k * 0.18));
   tl.from("#mythg text", { opacity: 0, y: 10, duration: 0.5 }, 0.4);
   tl.to("#mstrike", { attr: { x2: 860 }, duration: 0.35, ease: "power2.in" }, tA);
   tl.to("#mythg", { opacity: 0.45, duration: 0.4 }, tA + 0.4);
   tl.to("#gapdim", { opacity: 1, duration: 0.4 }, tG - 0.2);
   tl.to(fSig, { opacity: 1, duration: 0.4 }, tN - 0.2); tl.to(fPts, { opacity: 1, duration: 0.4 }, tN + 0.5); tl.to(fStn, { opacity: 1, duration: 0.4 }, tN + 1.2);
   // the tags crowd together near each feature
-  ex.forEach((g, i) => tl.fromTo(g, { opacity: 0, scale: 0, svgOrigin: `${extra[i]} ${Y}` }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, tN + 0.3 + (i / ex.length) * (tC - tN + 0.2)));
-  // the even tags beyond 1 km slide into the clusters
-  [2, 3, 4, 5, 6].forEach((k, j) => { const tgt = [SX - 70, PX - 70, PX + 70, ST0 + 60, ST1 - 40][j]; tl.to(even[k], { attr: { transform: `translate(${tgt} ${Y})` }, duration: 1.0, ease: "power2.inOut" }, tN + 0.4 + j * 0.25); });
+  // tag motion as a pure function of time (no GSAP transforms on the tags: seeks in render workers broke them)
+  const backOut = (u) => { const c = 2, c3 = c + 1; return 1 + c3 * Math.pow(u - 1, 3) + c * Math.pow(u - 1, 2); };
+  const cl = (u) => Math.min(1, Math.max(0, u)), io = (u) => u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
+  const tgts = { 2: SX - 70, 3: PX - 70, 4: PX + 70, 5: ST0 + 60, 6: ST1 - 40 };
+  const tagState = () => { const t = tclk.t;
+    even.forEach((g, k) => { const u = cl((t - (0.3 + k * 0.18)) / 0.3), sc = u <= 0 ? 0.001 : backOut(u);
+      let x = X0 + k * KM; if (tgts[k] != null) { const j = k - 2, m = io(cl((t - (tN + 0.4 + j * 0.25)) / 1.0)); x = x + (tgts[k] - x) * m; }
+      g.setAttribute("transform", `translate(${x} ${Y}) scale(${sc})`); g.setAttribute("opacity", u > 0 ? 1 : 0); });
+    ex.forEach((g, i) => { const t0 = tN + 0.3 + (i / ex.length) * (tC - tN + 0.2), u = cl((t - t0) / 0.25);
+      g.setAttribute("transform", `translate(${extra[i]} ${Y}) scale(${u <= 0 ? 0.001 : backOut(u)})`); g.setAttribute("opacity", u > 0 ? 1 : 0); }); };
+  const tclk = { t: 0 }; tagState();
+  tl.to(tclk, { t: D, duration: D, ease: "none", onUpdate: tagState }, 0);
   tl.fromTo("#tags", { opacity: 1 }, { opacity: 0.6, duration: 0.25, yoyo: true, repeat: 3 }, tC);
   tl.fromTo("#w1", { transformOrigin: "960px 560px", scale: 1.0 }, { scale: 1.05, duration: tS, ease: "sine.inOut" }, 0);
   // part 2: whip pan to the board
