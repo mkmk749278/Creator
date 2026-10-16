@@ -54,7 +54,7 @@ Two repo-less viewer reviews were run. Review 2 is triaged in `qa/viewer_review_
 for the 3D work are in PLAYBOOK §9.4.
 
 Viewer review 3 (on the voiced reel v1) is triaged in `qa/viewer_review_3.md`, which lists the fixes made and the work
-still open. All 46 scenes were then rendered in native 4K (`_tools/render_4k.sh`), and reel v2 4K is on Drive.
+still open. All 46 scenes were then rendered in native 4K (`_tools/render_4k.sh`), and reel v2 4K (8:34, 34 Mbit/s) is on Drive: https://drive.google.com/file/d/1DXKmxqbsnzdCb9i-7r-Rd2YW1Q0JZi3h/view
 
 Next steps:
 1. Make the phone-size text bigger across the scenes, and do the 3D model pass (both listed in `qa/viewer_review_3.md`).
