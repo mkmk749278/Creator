@@ -53,10 +53,12 @@ row (lint in `tools/build_script.py`).
 Two repo-less viewer reviews were run. Review 2 is triaged in `qa/viewer_review_2.md`; every accepted fix is in. Lessons
 for the 3D work are in PLAYBOOK §9.4.
 
+Viewer review 3 (on the voiced reel v1) is triaged in `qa/viewer_review_3.md`, which lists the fixes made and the work
+still open. All 46 scenes were then rendered in native 4K (`_tools/render_4k.sh`), and reel v2 4K is on Drive.
+
 Next steps:
-1. Run viewer review 3 on the full voiced reel.
-2. Fix what holds up.
-3. Do the EDL and assembly with the real footage and documents.
+1. Make the phone-size text bigger across the scenes, and do the 3D model pass (both listed in `qa/viewer_review_3.md`).
+2. Do the EDL and assembly with the real footage and documents.
 
 ## Files and rebuild
 | File | What |

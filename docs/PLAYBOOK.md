@@ -862,6 +862,13 @@ relay racks, RFID tag, lattice tower, X-ray loco parts). Each item below cost a 
   every schematic. Signals stand to the left of the line (left-hand running).
 - **Physics on screen must add up:** a "next signal 40 m" readout at 100 km/h shows a train running the red; size the
   scene from the stopping distance first (A1: brake 470 m short at 108 km/h, 1.1 m/s²).
+- **Native 4K of a WebGL scene (Kavach, 2026-10-16):** `make_native_4k.mjs` sets the root to 3840×2160, so a renderer
+  sized from `data-width` draws a true 4K buffer: ~12 s a frame (3× the 1080p cost) and DOM pins placed at 4K coordinates
+  inside the 2× zoom stage (wrong place). `video/kavach-railway-reality/_tools/render_4k.sh` keeps the WebGL buffer at
+  1920×1080 in the copy, so the canvas is scaled 2× while text and SVG render at true 4K: ~3.8 s a frame with 2 workers
+  (a 15 s 3D scene ≈ 20–38 min); 2D scenes run at ~0.5 s a frame. The whole 46-scene, 8:34 film took ~3.5 h on one VM.
+  Raw scene MP4s come out at ~100 Mbit/s; the reel re-encode caps at 40 Mbit/s. The queue is resumable (`.done`
+  markers): after a VM pause, start the same list again.
 - Render cost: about 4 s per frame at 1080p, 3 workers (shadows + bloom + FXAA + grain), so a 15 s 3D scene takes ~30 min.
 
 ## 10. HyperFrames (pinned `hyperframes@0.8.103`)
