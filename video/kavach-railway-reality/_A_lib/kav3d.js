@@ -183,7 +183,8 @@ export function createStage({ fov = 35, near = 0.05, far = 2000, sky = "dusk", e
   };
   /** world position → CSS pixels; returns {x, y, z} (z > 1 means behind the camera) */
   const v = new THREE.Vector3();
-  st.project = (p) => { v.copy(p).project(camera); return { x: (v.x * 0.5 + 0.5) * W, y: (-v.y * 0.5 + 0.5) * H, z: v.z }; };
+  // fresh camera matrices before projecting: seeks jump, so the last rendered frame's camera would be wrong
+  st.project = (p) => { camera.updateMatrixWorld(); v.copy(p).project(camera); return { x: (v.x * 0.5 + 0.5) * W, y: (-v.y * 0.5 + 0.5) * H, z: v.z }; };
   /** place a DOM element (absolutely positioned at left/top 0) at a world point, with a pixel offset */
   st.pin = (el, p, dx = 0, dy = 0) => { if (!el) return; const s = st.project(p); el.style.transform = `translate(${(s.x + dx).toFixed(1)}px, ${(s.y + dy).toFixed(1)}px)`;
     el.style.visibility = s.z < 1 ? "visible" : "hidden"; return s; };
@@ -540,12 +541,12 @@ export function buildTower(M, { h = 40, base = 6, top = 1.2 } = {}) {
   g.position.y = -0.75; g.userData = { lamp, top: new THREE.Vector3(0, h - 1.0, 0), h }; return g;
 }
 /** small Indian wayside station building with the front wall and roof cut away (relay room inside) */
-export function buildStationRoom(M, { w = 9, d = 6, h = 3.6 } = {}) {
+export function buildStationRoom(M, { w = 9, d = 6, h = 3.6, right = true } = {}) {
   const g = new THREE.Group();
   const wallM = new THREE.MeshStandardMaterial({ color: 0xe2c27a, roughness: 0.9 }), trimM = new THREE.MeshStandardMaterial({ color: 0x7a2a1e, roughness: 0.8 }), floorM = new THREE.MeshStandardMaterial({ color: 0x8c8a84, roughness: 0.85 });
   const fl = new THREE.Mesh(new THREE.BoxGeometry(w, 0.2, d), floorM); fl.position.y = 0.1; fl.receiveShadow = true; g.add(fl);
   const back = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.25), wallM); back.position.set(0, h / 2 + 0.2, -d / 2); back.receiveShadow = true; g.add(back);
-  for (const sx of [-1, 1]) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.25, h, d), wallM); s.position.set(sx * w / 2, h / 2 + 0.2, 0); s.receiveShadow = s.castShadow = true; g.add(s); }
+  for (const sx of right ? [-1, 1] : [-1]) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.25, h, d), wallM); s.position.set(sx * w / 2, h / 2 + 0.2, 0); s.receiveShadow = s.castShadow = true; g.add(s); }
   const trim = new THREE.Mesh(new THREE.BoxGeometry(w + 0.3, 0.3, 0.3), trimM); trim.position.set(0, h + 0.2, -d / 2); g.add(trim);
   const cut = new THREE.Mesh(new THREE.BoxGeometry(w + 0.3, 0.3, 0.3), trimM); cut.position.set(0, 0.35, d / 2); g.add(cut);
   const lamp = new THREE.PointLight(0xfff1d6, 6, 14, 1.6); lamp.position.set(0, h - 0.2, 0); g.add(lamp);
