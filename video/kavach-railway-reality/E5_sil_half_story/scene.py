@@ -20,7 +20,8 @@ CSS = """
   #sil { position: absolute; left: 1100px; top: 170px; font: 800 150px/1 Inter, Arial, sans-serif; color: #38BDF8; opacity: 0; text-shadow: 0 0 40px rgba(56,189,248,0.35); }
   #sil small { display: block; font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: #E0F2FE; margin-top: 10px; }
   #chain { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; }
-  .stampx { font-size: 54px; }
+  .stampx { font-size: 58px; text-align: center; line-height: 1.05; }
+  #posts .fwd { padding-bottom: 170px; }
 """
 ROWS = [("SIL 4", "10⁻⁹ ≤ THR < 10⁻⁸", "s4"), ("SIL 3", "10⁻⁸ ≤ THR < 10⁻⁷", ""), ("SIL 2", "10⁻⁷ ≤ THR < 10⁻⁶", ""), ("SIL 1", "10⁻⁶ ≤ THR < 10⁻⁵", "")]
 PAGE = ('<div class="h">RAILWAY APPLICATIONS · SAFETY INTEGRITY</div><div class="sh">SAFETY INTEGRITY LEVELS (SIL) · ILLUSTRATIVE PAGE</div>'
@@ -34,7 +35,7 @@ BODY = f"""  <div id="desk"></div>
   <div class="pinl" id="lensp" style="position:absolute;left:0;top:0"><div id="lens"><div class="page" id="pg2">{PAGE}</div></div></div>
   <div id="sil">SIL-4<small>HIGHEST SAFETY LEVEL</small></div>
   <div id="posts"></div>
-  <div class="stampx" id="st" style="left:1150px; top:480px; opacity:0">HALF THE STORY</div>
+  <div class="stampx" id="st" style="left:1250px; top:500px; opacity:0">HALF THE<br>STORY</div>
   <svg id="chain" viewBox="0 0 1920 1080" data-layout-allow-overflow></svg>"""
 JS = """
   const t4 = at("V019", "S-I-L four"), tH = at("V019", "the highest safety"), tP = at("V019", "Some posts say"), tB = at("V019", "once in a billion"),
