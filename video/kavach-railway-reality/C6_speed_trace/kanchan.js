@@ -14,14 +14,12 @@ window.buildKanchan = function (opts = {}) {
     for (let i = 0; i < n; i++) s += `<rect class="${cls}" x="${x0 + i * (len + gap)}" y="${y - 15}" width="${len}" height="30" rx="6" fill="${fill}" stroke="${stroke}" stroke-width="2"/>`;
     return s;
   };
+  // automatic signals, Indian style (white post, black head, hooded lamps, white "A" disc); one lit lamp each (.lamp-on)
   let sigs = "";
   SIGX.forEach((x, i) => {
-    sigs += `<g class="asig" transform="translate(${x} ${Y - 30})">
-      <line x1="0" y1="0" x2="0" y2="-96" stroke="#5B6B86" stroke-width="6"/>
-      <rect x="-22" y="-206" width="44" height="112" rx="10" fill="#0B1220" stroke="#5B6B86" stroke-width="3"/>
-      <circle cx="0" cy="-186" r="12" fill="#3A1414"/><circle cx="0" cy="-150" r="12" fill="#3A2E10"/><circle cx="0" cy="-114" r="12" fill="#10331D"/>
-      <circle class="lamp-on" cx="0" cy="${i % 2 ? -150 : -114}" r="12" fill="${i % 2 ? "#FBBF24" : "#4ADE80"}" filter="url(#glow)"/>
-      <text x="0" y="-222" text-anchor="middle" class="tlabel lbl" style="font-size:18px">AUTO ${i + 1}</text></g>`;
+    const lit = i % 2 ? "y2" : "g";
+    sigs += `<g class="asig">${window.indianSignal(x, Y - 26, { id: "as" + i, plate: String(i + 1), auto: true, scale: 0.85 })
+      .replace(`id="as${i}-${lit}" class="lit"`, `id="as${i}-${lit}" class="lit lamp-on"`).replace(/(class="lit lamp-on"[^>]*?)opacity="0"/, "$1opacity=\"1\"")}</g>`;
   });
   svg.innerHTML = `
   <defs>
@@ -35,7 +33,7 @@ window.buildKanchan = function (opts = {}) {
     <g id="t-up">${track(`M -600 ${Y_UP} L 2600 ${Y_UP}`, 0.55)}</g>
     <g id="t-dn">${track(`M -600 ${Y} L 2600 ${Y}`)}</g>
     <text x="1400" y="${Y + 70}" class="tlabel lbl">DN LINE</text>
-    <text x="1400" y="${Y_UP + 70}" class="tlabel lbl" opacity="0.6">UP LINE</text>
+    <text x="900" y="${Y_UP + 70}" class="tlabel lbl" opacity="0.6">UP LINE</text>
     <g id="sigs">${sigs}</g>
     <g id="pass"><g id="pass-k" opacity="0"></g>
       ${rake(0, 9, 70, 8, Y, "url(#trainP)", "#38BDF8", "pc")}

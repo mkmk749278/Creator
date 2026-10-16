@@ -38,7 +38,7 @@ JS = """
   tl.fromTo("#cols", { transformOrigin: "50% 50%", scale: 1.0 }, { scale: 1.05, duration: D, ease: "sine.inOut" }, 0);
   tl.from("#div", { attr: { y2: 190 }, duration: 0.8, ease: "power2.out" }, 0.1);
   const tB = at("V053", "At Balasore"), tK = at("V053", "at Kanchanjunga"), tS = at("V053", "Kavach is strongest");
-  tl.from("#L", { opacity: 0, x: -40, duration: 0.7, ease: "power3.out" }, Math.max(0.3, tB - 0.6));
+  tl.from("#L", { opacity: 0, x: -40, duration: 0.7, ease: "power3.out" }, 0.15);
   const p = document.getElementById("lwire"), L = p.getTotalLength(), o = { u: 0 }, pk = document.getElementById("lpk");
   const place = () => { const q = p.getPointAtLength(o.u * L); pk.setAttribute("cx", q.x); pk.setAttribute("cy", q.y); };
   tl.to(o, { u: 1, duration: 1.2, ease: "power1.inOut", repeat: 4, onUpdate: place }, tB);

@@ -30,7 +30,7 @@
   #chart { position: absolute; left: 620px; top: 540px; width: 1080px; height: 356px; }
   .ax { font: 600 20px Inter, Arial, sans-serif; fill: #94A3B8; letter-spacing: 0.08em; }
   .big { font: 800 40px Inter, Arial, sans-serif; fill: #F8FAFC; }
-  #flash { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: radial-gradient(circle at 50% 30%, rgba(220,38,38,0.5), rgba(220,38,38,0) 45%); opacity: 0; }
+  #flash { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: radial-gradient(circle at 1290px 400px, rgba(254,202,202,0.75), rgba(220,38,38,0.4) 12%, rgba(220,38,38,0) 32%); opacity: 0; }
 
 </style>
 
@@ -64,6 +64,7 @@
 <script src="vendor/gsap.min.js"></script>
 <script src="cues.js"></script>
 <script src="kav.js"></script>
+<script src="indsig.js"></script>
 <script src="kanchan.js"></script>
 <script>
   const D = CUES.duration;
@@ -72,7 +73,7 @@
   tl.from('#hud', { opacity: 0, duration: 0.8 }, 0.3); tl.to('#hud .dot', { opacity: 0.25, duration: 0.5, yoyo: true, repeat: Math.max(1, Math.floor(D) - 1), ease: 'sine.inOut' }, 0.4);
 
   const S = buildKanchan();
-  tl.set(".asig .lamp-on", { opacity: 0 }, 0); tl.set(".asig rect", { attr: { stroke: "#7F1D1D" } }, 0); tl.set(".lbl", { opacity: 0 }, 0);
+  tl.set(".asig .lamp-on", { opacity: 0 }, 0); tl.set(".asig rect", { attr: { stroke: "#7F1D1D" } }, 0); tl.set(".lbl", { opacity: 0 }, 0); tl.set(".asig text", { opacity: 0 }, 0);
   tl.fromTo("#world", { transformOrigin: "50% 50%", scale: 0.95, x: 0, y: -150 }, { scale: 1.0, x: -30, y: -160, duration: D, ease: "sine.inOut" }, 0);
   const t78 = at("V050", "seventy eight"), tHit = at("V050", "hit the Kanchanjunga"), t40 = at("V050", "at about forty"), tNo = at("V050", "And there was no working Kavach");
   // goods train closes the gap: fast run, braking late, contact at tHit + ~1.2 s (no wreck shown)
@@ -104,8 +105,8 @@
   // the Kavach coverage that is not there: a dashed cyan bracket along the DN line, struck through in crimson
   const NSs = "http://www.w3.org/2000/svg", nk = document.createElementNS(NSs, "g"); nk.setAttribute("id", "nok");
   nk.innerHTML = `<path id="nkb" d="M 120 ${S.Y + 52} L 120 ${S.Y + 70} L 1800 ${S.Y + 70.5} L 1800 ${S.Y + 52}" fill="none" stroke="#38BDF8" stroke-width="4" stroke-dasharray="12 10"/>
-    <text x="960" y="${S.Y + 112}" text-anchor="middle" style="font: 800 26px Inter, Arial, sans-serif; letter-spacing: 0.16em; fill: #7DD3FC">KAVACH</text>
-    <line id="nks" x1="880" y1="${S.Y + 103}" x2="1040" y2="${S.Y + 103.5}" stroke="#DC2626" stroke-width="6" stroke-linecap="round"/>`;
+    <text x="960" y="${S.Y + 124}" text-anchor="middle" style="font: 800 44px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #F87171">NO KAVACH ON THIS SECTION</text>
+    <line id="nks" x1="660" y1="${S.Y + 108}" x2="1260" y2="${S.Y + 108.5}" stroke="#DC2626" stroke-width="0" stroke-linecap="round"/>`;
   S.q("#world").appendChild(nk);
   tl.set("#nok", { opacity: 0 }, 0);
   tl.to("#nok", { opacity: 1, duration: 0.4 }, tNo);

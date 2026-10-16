@@ -39,18 +39,21 @@
 <script src="vendor/gsap.min.js"></script>
 <script src="cues.js"></script>
 <script src="kav.js"></script>
+<script src="indsig.js"></script>
 <script src="balasore.js"></script>
 <script>
   const S = buildBalasore(), D = CUES.duration;
   const tl = gsap.timeline({ paused: true });
   const dash = (sel) => { const p = S.q(sel), L = p.getTotalLength(); p.setAttribute("stroke-dasharray", L); p.setAttribute("stroke-dashoffset", L); return L; };
   // camera: slow push-in and drift, then a pan toward the points on "crossover"
-  tl.fromTo("#world", { transformOrigin: "50% 50%", scale: 1.18, x: 160, y: 80 }, { scale: 1.26, x: 60, y: 60, duration: at("V041", "But the crossover"), ease: "sine.inOut" }, 0);
-  tl.to("#world", { scale: 1.42, x: 90, y: 110, duration: D - at("V041", "But the crossover"), ease: "sine.inOut" }, at("V041", "But the crossover"));
+  tl.fromTo("#world", { transformOrigin: "50% 50%", scale: 1.12, x: 140, y: 70 }, { scale: 1.2, x: 60, y: 80, duration: at("V041", "But the crossover"), ease: "sine.inOut" }, 0);
+  tl.to("#world", { scale: 1.28, x: 40, y: 90, duration: D - at("V041", "But the crossover"), ease: "sine.inOut" }, at("V041", "But the crossover"));
   tl.fromTo("#sweep", { x: 0 }, { x: 3200, duration: D, ease: "none" }, 0);
   // the diagram draws in (first ~2.5 s are under the coordinator's archive cut, so it keeps moving behind it)
-  tl.from("#t-down, #t-main", { opacity: 0, duration: 1.2, stagger: 0.3 }, 0.1);
-  tl.from("#t-xover, #t-loop, #t-xout, #platform", { opacity: 0, duration: 1.0, stagger: 0.25 }, 0.9);
+  tl.from("#t-down, #t-main, #t-dloop", { opacity: 0, duration: 1.2, stagger: 0.3 }, 0.1);
+  tl.from("#goods2 rect", { opacity: 0, x: 30, duration: 0.5, stagger: 0.05 }, 1.8);
+  tl.fromTo("#bnc", { x: 400 }, { x: -700, duration: D, ease: "none" }, 0);
+  tl.from("#t-xover, #t-loop, #t-xout", { opacity: 0, duration: 1.0, stagger: 0.25 }, 0.9);
   tl.from("#goods rect", { opacity: 0, x: 30, duration: 0.5, stagger: 0.06 }, 1.6);
   tl.from("#signal", { opacity: 0, y: 20, duration: 0.7 }, 2.0);
   tl.from("#hud", { opacity: 0, duration: 0.8 }, 0.4);
@@ -62,8 +65,9 @@
   tl.fromTo("#speed", { x: -200, opacity: 0 }, { x: 668, duration: (CUES.cues.V040.to - tIn) + 0.4, ease: "none" }, tIn - 0.4);
   tl.to("#speed", { opacity: 1, duration: 0.4 }, at("V040", "one hundred and twenty eight"));
   // signal: red -> green for the main line; the promised route lights along the main
-  tl.to("#lamp-r-on", { opacity: 0, duration: 0.15 }, tSig);
-  tl.to("#lamp-g-on", { opacity: 1, duration: 0.2 }, tSig + 0.1);
+  // the home signal showed green for the main line all along (CRS); it pulses when the narration names it
+  tl.set("#lamp-g-on", { opacity: 1 }, 0);
+  tl.fromTo("#lamp-g-on", { attr: { r: 12.6 } }, { attr: { r: 17 }, duration: 0.3, yoyo: true, repeat: 3 }, tSig);
   const Lm = dash("#route-main");
   tl.set("#route-main", { opacity: 0.9 }, tSig + 0.2);
   tl.to("#route-main", { attr: { "stroke-dashoffset": 0 }, duration: 0.9, ease: "power2.out" }, tSig + 0.2);

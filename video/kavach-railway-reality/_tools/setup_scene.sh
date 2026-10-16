@@ -4,7 +4,7 @@
 set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/../../.." && pwd); V=$ROOT/video/kavach-railway-reality; id=$1; lib=${2:-}
 mkdir -p "$V/$id"
-cp "$V/_shared/kav.css" "$V/_shared/kav.js" "$V/_shared/slate.jpg" "$V/$id/"
+cp "$V/_shared/kav.css" "$V/_shared/kav.js" "$V/_shared/indsig.js" "$V/_shared/slate.jpg" "$V/$id/"
 [ -n "$lib" ] && cp -r "$V/$lib/." "$V/$id/"
 python3 "$ROOT/projects/kavach-railway-reality/tools/scene_params.py" "$id" >/dev/null
 [ -f "$V/$id/index.html" ] && (cd "$ROOT" && node scripts/vendor-assets.mjs >/dev/null) || true

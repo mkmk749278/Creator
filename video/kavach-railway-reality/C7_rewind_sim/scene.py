@@ -12,7 +12,7 @@ BODY = """  <svg id="schem" viewBox="0 0 1920 1080" data-layout-allow-overflow><
   <div class="kav-label" id="lab1">Simulation<small>BOTH TRAINS FITTED · SECTION WORKING</small></div>"""
 JS = """
   const S = buildKanchan();
-  tl.set(".asig .lamp-on", { opacity: 0 }, 0); tl.set(".asig rect", { attr: { stroke: "#7F1D1D" } }, 0); tl.set(".lbl", { opacity: 0 }, 0);
+  tl.set(".asig .lamp-on", { opacity: 0 }, 0); tl.set(".asig rect", { attr: { stroke: "#7F1D1D" } }, 0); tl.set(".lbl", { opacity: 0 }, 0); tl.set(".asig text", { opacity: 0 }, 0);
   tl.fromTo("#world", { transformOrigin: "50% 50%", scale: 1.15, x: 40, y: 60 }, { scale: 1.24, x: -40, y: 50, duration: D, ease: "sine.inOut" }, 0);
   // open on C6's last frame (contact), then rewind fast with scan lines
   tl.set("#pass", { x: 1322 }, 0); tl.set("#goods", { x: 1418 }, 0);
@@ -51,4 +51,15 @@ JS = """
   tl.to("#cvg", { opacity: 1, duration: 0.3 }, tH + 1.0);
   tl.to(cv, { attr: { "stroke-dashoffset": 0 }, duration: 1.4, ease: "power2.out" }, tH + 1.0);
   tl.to("#lab1", { opacity: 1, duration: 0.6 }, 1.8);
+  // live speed tag on the goods train: 78 km/h in the real run, held slow here (what Kavach enforces depends on its set-up)
+  const tag = document.createElementNS(NSs, "g"); tag.setAttribute("id", "gtag");
+  tag.innerHTML = `<rect x="-300" y="${S.Y - 120}" width="300" height="62" rx="12" fill="rgba(15,23,42,0.94)" stroke="#38BDF8" stroke-width="3"/>
+    <text id="gt1" x="-150" y="${S.Y - 78}" text-anchor="middle" style="font: 800 30px Inter, Arial, sans-serif; fill: #FCA5A5">78 KM/H</text>
+    <line id="gts" x1="-218" y1="${S.Y - 88}" x2="-218" y2="${S.Y - 88}" stroke="#DC2626" stroke-width="5"/>
+    <text id="gt2" x="-150" y="${S.Y - 78}" text-anchor="middle" style="font: 800 30px Inter, Arial, sans-serif; fill: #7DD3FC" opacity="0">HELD SLOW</text>`;
+  S.q("#goods").appendChild(tag);
+  tl.fromTo("#gtag", { opacity: 0 }, { opacity: 1, duration: 0.3 }, tF);
+  tl.to("#gts", { attr: { x2: -82 }, duration: 0.3 }, tH);
+  tl.to("#gt1, #gts", { opacity: 0, duration: 0.3 }, tH + 0.5);
+  tl.to("#gt2", { opacity: 1, duration: 0.3 }, tH + 0.6);
 """

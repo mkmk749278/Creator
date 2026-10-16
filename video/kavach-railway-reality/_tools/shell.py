@@ -67,6 +67,7 @@ html = f"""<!doctype html>
 <script src="vendor/gsap.min.js"></script>
 <script src="cues.js"></script>
 <script src="kav.js"></script>
+<script src="indsig.js"></script>
 {libs}
 <script>
   const D = CUES.duration;

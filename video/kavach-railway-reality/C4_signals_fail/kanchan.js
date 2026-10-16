@@ -14,14 +14,12 @@ window.buildKanchan = function (opts = {}) {
     for (let i = 0; i < n; i++) s += `<rect class="${cls}" x="${x0 + i * (len + gap)}" y="${y - 15}" width="${len}" height="30" rx="6" fill="${fill}" stroke="${stroke}" stroke-width="2"/>`;
     return s;
   };
+  // automatic signals, Indian style (white post, black head, hooded lamps, white "A" disc); one lit lamp each (.lamp-on)
   let sigs = "";
   SIGX.forEach((x, i) => {
-    sigs += `<g class="asig" transform="translate(${x} ${Y - 30})">
-      <line x1="0" y1="0" x2="0" y2="-96" stroke="#5B6B86" stroke-width="6"/>
-      <rect x="-22" y="-206" width="44" height="112" rx="10" fill="#0B1220" stroke="#5B6B86" stroke-width="3"/>
-      <circle cx="0" cy="-186" r="12" fill="#3A1414"/><circle cx="0" cy="-150" r="12" fill="#3A2E10"/><circle cx="0" cy="-114" r="12" fill="#10331D"/>
-      <circle class="lamp-on" cx="0" cy="${i % 2 ? -150 : -114}" r="12" fill="${i % 2 ? "#FBBF24" : "#4ADE80"}" filter="url(#glow)"/>
-      <text x="0" y="-222" text-anchor="middle" class="tlabel" style="font-size:18px">AUTO ${i + 1}</text></g>`;
+    const lit = i % 2 ? "y2" : "g";
+    sigs += `<g class="asig">${window.indianSignal(x, Y - 26, { id: "as" + i, plate: String(i + 1), auto: true, scale: 0.85 })
+      .replace(`id="as${i}-${lit}" class="lit"`, `id="as${i}-${lit}" class="lit lamp-on"`).replace(/(class="lit lamp-on"[^>]*?)opacity="0"/, "$1opacity=\"1\"")}</g>`;
   });
   svg.innerHTML = `
   <defs>
@@ -34,18 +32,18 @@ window.buildKanchan = function (opts = {}) {
       ${Array.from({length: 22}, (_, i) => `<line x1="-400" y1="${-200 + i * 70}" x2="2600" y2="${-200 + i * 70}" stroke="rgba(148,163,184,0.07)"/>`).join("")}</g>
     <g id="t-up">${track(`M -600 ${Y_UP} L 2600 ${Y_UP}`, 0.55)}</g>
     <g id="t-dn">${track(`M -600 ${Y} L 2600 ${Y}`)}</g>
-    <text x="1400" y="${Y + 70}" class="tlabel">DN LINE</text>
-    <text x="1400" y="${Y_UP + 70}" class="tlabel" opacity="0.6">UP LINE</text>
+    <text x="1400" y="${Y + 70}" class="tlabel lbl">DN LINE</text>
+    <text id="lbl-up" x="900" y="${Y_UP + 70}" class="tlabel lbl" opacity="0.6">UP LINE</text>
     <g id="sigs">${sigs}</g>
     <g id="pass"><g id="pass-k" opacity="0"></g>
       ${rake(0, 9, 70, 8, Y, "url(#trainP)", "#38BDF8", "pc")}
       <path d="M 702 ${Y - 16} L 760 ${Y - 16} Q 784 ${Y} 760 ${Y + 16} L 702 ${Y + 16} Z" fill="#F8FAFC" stroke="#38BDF8" stroke-width="2"/>
-      <text x="-24" y="${Y - 34}" text-anchor="end" class="tlabel" style="fill:#BAE6FD">KANCHANJUNGA EXPRESS</text></g>
+      <text x="-24" y="${Y - 34}" text-anchor="end" class="tlabel lbl" style="fill:#BAE6FD">KANCHANJUNGA EXPRESS</text></g>
     <g id="goods">
       ${rake(-1460, 12, 96, 10, Y, "#5A2620", "#DC2626", "gw")}
       ${Array.from({length: 12}, (_, i) => `<rect x="${-1452 + i * 106}" y="${Y - 11}" width="80" height="22" rx="2" fill="#9A3B2E" opacity="0.9"/>`).join("")}
       <path d="M -190 ${Y - 17} L -120 ${Y - 17} Q -96 ${Y} -120 ${Y + 17} L -190 ${Y + 17} Z" fill="#1F7A3E" stroke="#4ADE80" stroke-width="2"/>
-      <text x="-110" y="${Y - 34}" text-anchor="end" class="tlabel" style="fill:#FCA5A5">GOODS TRAIN · CONTAINERS</text></g>
+      <text x="-110" y="${Y - 34}" text-anchor="end" class="tlabel lbl" style="fill:#FCA5A5">GOODS TRAIN · CONTAINERS</text></g>
   </g>`;
   const q = (s) => svg.querySelector(s);
   return { svg, q, Y, Y_UP, SIGX };
