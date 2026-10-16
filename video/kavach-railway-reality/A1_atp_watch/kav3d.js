@@ -10,7 +10,7 @@ import * as THREE from "three";
 import { HDRLoader } from "three/addons/loaders/HDRLoader.js";
 import { mergeGeometries, mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
-import { EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, ToneMappingMode, VignetteEffect, VignetteTechnique, Effect, FXAAEffect } from "postprocessing";
+import { EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, ToneMappingMode, VignetteEffect, VignetteTechnique, Effect, FXAAEffect, BlendFunction } from "postprocessing";
 
 export { THREE };
 window.THREE = window.THREE || THREE;   // HyperFrames' Three adapter waits on window.THREE.DefaultLoadingManager
@@ -96,14 +96,16 @@ function makeTextures() {
 // ------------------------------------------------------------------------------------------------ post effects
 class GrainEffect extends Effect {
   constructor() {
-    super("GrainEffect", `uniform float uT, uGrain;
+    super("GrainEffect", `uniform float uT, uGrain, uVig;
       float h2(vec2 p){ vec3 p3 = fract(vec3(p.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
       void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor){
         vec2 px = uv * resolution; float fr = floor(uT * 30.0 + 0.5);
         float n = h2(px + fr * vec2(37.0, 17.0)) + h2(px * 1.7 + fr * vec2(11.0, 53.0)) - 1.0;
         vec3 c = inputColor.rgb; float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
-        c += n * uGrain * (0.25 + 1.6 * l * (1.0 - l)); outputColor = vec4(c, inputColor.a); }`,
-      { uniforms: new Map([["uT", new THREE.Uniform(0)], ["uGrain", new THREE.Uniform(0.04)]]) });
+        c += n * uGrain * (0.25 + 1.6 * l * (1.0 - l));
+        vec2 q = (uv - 0.5) * vec2(1.0, 0.82); float r = length(q) * 1.55;   // smooth radial vignette (no hard ellipse edge)
+        c *= 1.0 - uVig * smoothstep(0.35, 1.15, r); outputColor = vec4(max(c, 0.0), inputColor.a); }`,
+      { uniforms: new Map([["uT", new THREE.Uniform(0)], ["uGrain", new THREE.Uniform(0.04)], ["uVig", new THREE.Uniform(0.5)]]) });
   }
 }
 
@@ -155,10 +157,11 @@ export function createStage({ fov = 35, near = 0.05, far = 2000, sky = "dusk", e
   const hemi = new THREE.HemisphereLight(new THREE.Color(P.hemiS), new THREE.Color(P.hemiG), P.hemiI); scene.add(hemi);
   const composer = new EffectComposer(renderer, { frameBufferType: THREE.HalfFloatType });
   composer.addPass(new RenderPass(scene, camera));
-  const bloomFx = new BloomEffect({ intensity: bloom.intensity, luminanceThreshold: bloom.threshold, luminanceSmoothing: bloom.smoothing, mipmapBlur: true, radius: bloom.radius });
-  const vig = new VignetteEffect({ technique: VignetteTechnique.ESKIL, darkness: vignette, offset: 0.45 }), tone = new ToneMappingEffect({ mode: ToneMappingMode.ACES_FILMIC });
+  const bloomFx = new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: bloom.intensity, luminanceThreshold: bloom.threshold, luminanceSmoothing: bloom.smoothing, mipmapBlur: false, kernelSize: 4 });   // the mipmap blur left dark halos on SwiftShader; Kawase does not
+  const vig = new VignetteEffect({ technique: VignetteTechnique.ESKIL, darkness: vignette, offset: 0.45 }), tone = new ToneMappingEffect({ mode: ToneMappingMode.AGX });   // ACES pushed saturated cyan bloom below zero (dark halos); AgX does not
   const gr = new GrainEffect(); gr.uniforms.get("uGrain").value = grain;
-  composer.addPass(new EffectPass(camera, bloomFx, vig, tone, new FXAAEffect(), gr));
+  gr.uniforms.get("uVig").value = vignette;
+  composer.addPass(new EffectPass(camera, bloomFx, tone, new FXAAEffect(), gr));
   composer.setSize(W, H);
   const sunDir = new THREE.Vector3(...P.sun).normalize();
   const st = { root, W, H, DUR, renderer, scene, camera, sun, hemi, dome, preset: P, fx: { bloom: bloomFx, vig, grain: gr } };
@@ -180,7 +183,8 @@ export function createStage({ fov = 35, near = 0.05, far = 2000, sky = "dusk", e
   };
   /** world position → CSS pixels; returns {x, y, z} (z > 1 means behind the camera) */
   const v = new THREE.Vector3();
-  st.project = (p) => { v.copy(p).project(camera); return { x: (v.x * 0.5 + 0.5) * W, y: (-v.y * 0.5 + 0.5) * H, z: v.z }; };
+  // fresh camera matrices before projecting: seeks jump, so the last rendered frame's camera would be wrong
+  st.project = (p) => { camera.updateMatrixWorld(); v.copy(p).project(camera); return { x: (v.x * 0.5 + 0.5) * W, y: (-v.y * 0.5 + 0.5) * H, z: v.z }; };
   /** place a DOM element (absolutely positioned at left/top 0) at a world point, with a pixel offset */
   st.pin = (el, p, dx = 0, dy = 0) => { if (!el) return; const s = st.project(p); el.style.transform = `translate(${(s.x + dx).toFixed(1)}px, ${(s.y + dy).toFixed(1)}px)`;
     el.style.visibility = s.z < 1 ? "visible" : "hidden"; return s; };
@@ -444,7 +448,7 @@ export function buildLoco(M0) {
   const screen = new THREE.Mesh(new THREE.BoxGeometry(0.36, 0.3, 0.06), glowMat(0x38bdf8)); screen.position.set(-0.55, 2.55, 0.85); screen.rotation.x = -0.5; g.add(screen);
   const linkPts = [new THREE.Vector3(0.55, 1.65, 3.4), new THREE.Vector3(0.55, 1.35, 3.8), new THREE.Vector3(0.3, 1.0, 4.0), new THREE.Vector3(0.3, 0.95, 5.8)];
   const brake = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(linkPts), 24, 0.04, 6), glowMat(0x38bdf8)); g.add(brake);
-  const bpipe = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, L - 0.4, 6).rotateX(Math.PI / 2), glowMat(0x38bdf8)); bpipe.position.set(0.95, 0.92, L / 2); g.add(bpipe);
+  const bpipe = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, L - 0.4, 6).rotateX(Math.PI / 2), glowMat(0x38bdf8)); bpipe.position.set(1.6, 0.86, L / 2); g.add(bpipe);   // shown outside the skirt so the brake pipe can be seen (illustration)
   // X-ray: shell fades to a ghost with cyan edges
   const edgeMat = new THREE.LineBasicMaterial({ color: 0x5fd4ff, transparent: true, opacity: 0, fog: false });
   const edges = new THREE.LineSegments(new THREE.EdgesGeometry(bgeo, 25), edgeMat); g.add(edges);
@@ -453,7 +457,7 @@ export function buildLoco(M0) {
   g.userData = {
     L, wheels: B.flatMap((b) => b.wheels), blocks: B.flatMap((b) => b.blocks), blockMat: M.blockHot, domes, bogies: B,
     parts: { computer: { g: comp, glow: cglow }, readers, sensors, screen, brake, bpipe },
-    xray(k) { ghostMats.forEach((m) => { m.opacity = lerp(1, 0.06, k); m.depthWrite = k < 0.5; }); edgeMat.opacity = 0.8 * k; },
+    xray(k) { ghostMats.forEach((m) => { m.opacity = lerp(1, 0.16, k); m.depthWrite = k < 0.5; }); edgeMat.opacity = 0.9 * k; },
     setS(s) { for (const w of this.wheels) w.rotation.x = -s / WR_LOCO; },
   };
   g.userData.xray(0);
@@ -480,7 +484,7 @@ export function buildCoach(M0) {
   for (const z of [0.12, L - 0.12]) { const gw = new THREE.Mesh(new THREE.BoxGeometry(1.2, 2.3, 0.3), M.bogie); gw.position.set(0, 2.3, z); g.add(gw); }
   const B = [bogie(M, { axles: 2, pitch: 2.56, r: WR_COACH, frameY: 0.62 }), bogie(M, { axles: 2, pitch: 2.56, r: WR_COACH, frameY: 0.62 })];
   B[0].g.position.z = L / 2 - 7.45; B[1].g.position.z = L / 2 + 7.45; g.add(B[0].g, B[1].g);
-  const bpipe = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, L - 0.2, 6).rotateX(Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0x1a1d20, emissive: new THREE.Color(0x38bdf8), emissiveIntensity: 0 })); bpipe.position.set(0.95, 0.72, L / 2); g.add(bpipe);
+  const bpipe = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, L - 0.2, 6).rotateX(Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0x1a1d20, emissive: new THREE.Color(0x38bdf8), emissiveIntensity: 0 })); bpipe.position.set(1.66, 0.74, L / 2); g.add(bpipe);
   g.userData = { L, wheels: B.flatMap((b) => b.wheels), blocks: B.flatMap((b) => b.blocks), bpipe, setS(s) { for (const w of this.wheels) w.rotation.x = -s / WR_COACH; } };
   return g;
 }
@@ -537,12 +541,12 @@ export function buildTower(M, { h = 40, base = 6, top = 1.2 } = {}) {
   g.position.y = -0.75; g.userData = { lamp, top: new THREE.Vector3(0, h - 1.0, 0), h }; return g;
 }
 /** small Indian wayside station building with the front wall and roof cut away (relay room inside) */
-export function buildStationRoom(M, { w = 9, d = 6, h = 3.6 } = {}) {
+export function buildStationRoom(M, { w = 9, d = 6, h = 3.6, right = true } = {}) {
   const g = new THREE.Group();
   const wallM = new THREE.MeshStandardMaterial({ color: 0xe2c27a, roughness: 0.9 }), trimM = new THREE.MeshStandardMaterial({ color: 0x7a2a1e, roughness: 0.8 }), floorM = new THREE.MeshStandardMaterial({ color: 0x8c8a84, roughness: 0.85 });
   const fl = new THREE.Mesh(new THREE.BoxGeometry(w, 0.2, d), floorM); fl.position.y = 0.1; fl.receiveShadow = true; g.add(fl);
   const back = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.25), wallM); back.position.set(0, h / 2 + 0.2, -d / 2); back.receiveShadow = true; g.add(back);
-  for (const sx of [-1, 1]) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.25, h, d), wallM); s.position.set(sx * w / 2, h / 2 + 0.2, 0); s.receiveShadow = s.castShadow = true; g.add(s); }
+  for (const sx of right ? [-1, 1] : [-1]) { const s = new THREE.Mesh(new THREE.BoxGeometry(0.25, h, d), wallM); s.position.set(sx * w / 2, h / 2 + 0.2, 0); s.receiveShadow = s.castShadow = true; g.add(s); }
   const trim = new THREE.Mesh(new THREE.BoxGeometry(w + 0.3, 0.3, 0.3), trimM); trim.position.set(0, h + 0.2, -d / 2); g.add(trim);
   const cut = new THREE.Mesh(new THREE.BoxGeometry(w + 0.3, 0.3, 0.3), trimM); cut.position.set(0, 0.35, d / 2); g.add(cut);
   const lamp = new THREE.PointLight(0xfff1d6, 6, 14, 1.6); lamp.position.set(0, h - 0.2, 0); g.add(lamp);
@@ -569,10 +573,16 @@ export function ringPulse({ color = 0x38bdf8, r0 = 0.2, r1 = 6, thick = 0.06 } =
 /** a chain link (stadium torus) for the "four links" motif */
 export function chainLink({ color = 0x38bdf8, size = 1 } = {}) {
   const s = new THREE.Shape(), r = 0.35 * size, l = 0.55 * size; s.absarc(-l / 2, 0, r, Math.PI / 2, Math.PI * 1.5); s.absarc(l / 2, 0, r, -Math.PI / 2, Math.PI / 2);
-  const pts = s.getPoints(48).map((p) => new THREE.Vector3(p.x, p.y, 0)); pts.push(pts[0].clone());
+  const pts = s.getPoints(48).map((p) => new THREE.Vector3(p.x, p.y, 0)).filter((p, i, a) => i === 0 || p.distanceTo(a[i - 1]) > 1e-4);
+  if (pts.length > 1 && pts[0].distanceTo(pts[pts.length - 1]) < 1e-4) pts.pop();   // no zero-length segment (NaN normals bloom into black blobs)
   const geo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 96, 0.07 * size, 10, true);
-  const mat = new THREE.MeshStandardMaterial({ color: 0x0e2a3a, emissive: new THREE.Color(color), emissiveIntensity: 0, metalness: 0.6, roughness: 0.3, transparent: true, opacity: 1 });
-  const m = new THREE.Mesh(geo, mat); m.userData.light = (k) => { mat.emissiveIntensity = 3.5 * k; }; return m;
+  // unlit shader glow (a lit/fogged material bloomed into dark halos on the software renderer); a soft rim keeps the 3D read
+  const mat = new THREE.ShaderMaterial({ uniforms: { uC: { value: new THREE.Color(color) }, uK: { value: 0 } },
+    vertexShader: `varying vec3 vN; varying vec3 vV; void main(){ vec4 mv = modelViewMatrix * vec4(position, 1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }`,
+    fragmentShader: `uniform vec3 uC; uniform float uK; varying vec3 vN; varying vec3 vV;
+      void main(){ float ln = length(vN); float f = ln > 1e-4 ? clamp(abs(dot(vN / ln, normalize(vV))), 0.0, 1.0) : 1.0; vec3 base = vec3(0.03, 0.09, 0.13);
+        gl_FragColor = vec4(base * (0.4 + 0.6 * f) + uC * uK * (0.55 + 0.45 * f), 1.0); }` });
+  const m = new THREE.Mesh(geo, mat); m.userData.light = (k) => { mat.uniforms.uK.value = 2.6 * k; }; return m;
 }
 /** sparks at the brake blocks: seeded points whose positions are a pure function of t */
 export function sparks({ n = 600, color = 0xffb060 } = {}) {
@@ -603,4 +613,44 @@ export function dmiTexture() {
     g.fillText(warn > 0 ? "Signal at Danger · Reduce Speed" : `Signal in ${String(Math.round(sd)).padStart(4, "0")} m`, 12, 347);
     tex.needsUpdate = true; };
   tex.userData.redraw({}); return tex;
+}
+
+// ------------------------------------------------------------------------------------------------ RFID tag + the four-link rig
+/** RFID tag after TCAS_RFID_Tag.jpg: grey metal/FRP box with rounded corners, yellow triangle and printed ID on top,
+ *  two stainless clamps wrapping the sleeper; place on a sleeper centre (x across the track) */
+export function buildRFIDTag(M) {
+  const g = new THREE.Group();
+  const box = new THREE.Mesh(new RoundedBoxGeometry(0.46, 0.075, 0.17, 3, 0.02), new THREE.MeshStandardMaterial({ color: 0xaeb4ba, roughness: 0.35, metalness: 0.75 }));
+  box.position.y = 0.0375; box.castShadow = true; g.add(box);
+  const top = new THREE.Mesh(new THREE.PlaneGeometry(0.44, 0.15), new THREE.MeshStandardMaterial({ map: TEX.tagTop, roughness: 0.4, metalness: 0.5 }));
+  top.rotation.x = -Math.PI / 2; top.position.y = 0.0757; g.add(top);
+  const steel = new THREE.MeshStandardMaterial({ color: 0xd0d4d8, roughness: 0.25, metalness: 1 });
+  for (const sx of [-0.15, 0.15]) for (const sz of [-1, 1]) { const c = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.25, 0.008), steel); c.position.set(sx, -0.08, sz * 0.13); g.add(c); }
+  const glow = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.09, 0.2), new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false })); glow.position.y = 0.04; g.add(glow);
+  g.userData = { glow }; return g;
+}
+export const sleeperZ = (z0, target) => z0 + (Math.round((target - z0) / 0.6 - 0.5) + 0.5) * 0.6;
+export const SLEEPER_TOP = -0.172 - 0.012;
+/**
+ * The four-link rig shared by A2, A7, A9: track (RFID tag on a sleeper ahead of the train), the station relay room with
+ * interlocking racks and the station Kavach cabinet, a lattice radio tower, and the train (loco cab). P holds the four
+ * link anchors in world space: track, station, tower, cab.
+ */
+export function buildRig(M, S, { coaches = 2, trees = true } = {}) {
+  const Z0 = -260;
+  S.add(buildGround(M));
+  S.add(buildTrack(M, { cx: 0, z0: Z0, z1: 140 }), buildTrack(M, { cx: 5.3, z0: Z0, z1: 140 }));
+  S.add(buildOHE(M, { cx: 0, mx: -3.4, z0: Z0, z1: 140, phase: 25 }), buildOHE(M, { cx: 5.3, mx: 8.7, z0: Z0, z1: 140, phase: 55 }));
+  if (trees) S.add(buildTrees({ clear: 34, n: 420 }));
+  const train = buildTrain(M, { coaches }); train.userData.place(0, 0); S.add(train);
+  const zt = sleeperZ(Z0, -9); const tag = buildRFIDTag(M); tag.position.set(0, SLEEPER_TOP, zt); S.add(tag);
+  // station relay room, open side toward a camera ahead of the train (rotated half a turn); racks and cabinet inside
+  const room = buildStationRoom(M, { w: 9, d: 6, h: 3.6 }); room.position.set(-12, -0.75, 6); room.rotation.y = Math.PI; S.add(room);
+  const racks = [0, 1, 2].map((i) => { const r = buildRelayRack(M, { seed: i + 2 }); r.position.set(-3.3 + i * 1.15, 0.2, -2.6); room.add(r); return r; });
+  const cab = buildStationKavach(M); cab.position.set(2.6, 0.2, -2.4); room.add(cab);
+  const tower = buildTower(M, { h: 30, base: 5, top: 1.1 }); tower.position.set(14, -0.75, 34); S.add(tower);
+  room.updateMatrixWorld(true);
+  const P = { track: new THREE.Vector3(0, SLEEPER_TOP + 0.9, zt), station: room.localToWorld(new THREE.Vector3(-1, 4.6, 0)), tower: new THREE.Vector3(14, 25.5, 34), cab: new THREE.Vector3(0, 5.6, 1.4),
+    rack: room.localToWorld(new THREE.Vector3(-2.15, 1.6, -2.3)), kav: room.localToWorld(new THREE.Vector3(2.6, 1.2, -2.0)) };
+  return { train, loco: train.userData.loco, tag, room, racks, cab, tower, P, zt };
 }

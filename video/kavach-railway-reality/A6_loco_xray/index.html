@@ -73,7 +73,8 @@
   window.A6T = { tI, tC, tR, tW, tS, tB, tP: [tC, tR, tW, tS, tB] };
   tl.to("#lab1", { opacity: 1, duration: 0.5 }, 0.3); tl.to("#lab1", { opacity: 0, duration: 0.4 }, tC - 0.3);
   window.A6T.tP.forEach((t, i) => { tl.fromTo("#c" + i, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, t + 0.1);
-    if (i < 4) tl.to("#c" + i, { opacity: 0.55, duration: 0.3 }, window.A6T.tP[i + 1] - 0.1); });
+    if (i < 3) tl.to("#c" + i, { opacity: 0.55, duration: 0.3 }, window.A6T.tP[i + 1] - 0.1); });
+  tl.to(["#c0", "#c1", "#c2", "#c3"], { opacity: 0, duration: 0.3 }, tB - 0.1);
 
   window.__timelines = window.__timelines || {};
   window.__timelines["A6_loco_xray"] = tl;

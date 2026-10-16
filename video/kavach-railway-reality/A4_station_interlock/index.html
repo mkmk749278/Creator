@@ -130,7 +130,7 @@
     c.kav.userData.glow.material.opacity = 0.28 * seg(t, T.tK, T.tK + 0.5) + 0.4 * seg(t, T.tF + 1.2, T.tF + 1.6);
     c.racks.forEach((r) => r.userData.leds.forEach((led, i) => { led.visible = Math.sin(t * 3 + i * 1.7) > -0.6; }));
     c.plateM.emissiveIntensity = 0.04 + 2.3 * seg(t, T.tI, T.tI + 0.6);
-    st.pin($("pS"), new THREE.Vector3(6.9, 6.7, -9), 0, -12); st.pin($("pP"), new THREE.Vector3(7.6, 0.5, -1), 0, -30);
+    st.pin($("pS"), new THREE.Vector3(6.9, 4.6, -9), 120, 30); st.pin($("pP"), new THREE.Vector3(7.6, 0.5, -1), 0, -30);
     st.pin($("pT"), new THREE.Vector3(9, 1.0, -40), 0, -30); st.pin($("pK"), new THREE.Vector3(2.8, 1.4, -2.4), 0, -70);
   });
 </script>
