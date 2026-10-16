@@ -1,0 +1,90 @@
+TITLE = "A3 Link one: RFID tags on the sleepers"
+BG = "none"
+CSS = """
+  #gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+  #vig, #sweep { display: none; }
+  .pin { position: absolute; left: 0; top: 0; }
+  .chip { padding: 10px 16px; border-radius: 10px; background: rgba(8,20,36,0.88); border: 2px solid #38BDF8; font: 800 28px Inter, Arial, sans-serif;
+    letter-spacing: 0.08em; color: #E0F2FE; white-space: nowrap; opacity: 0; box-shadow: 0 0 24px rgba(56,189,248,0.35); }
+  .chip b { color: #7DD3FC; font-weight: 800; margin-right: 10px; }
+  #map { position: absolute; left: 1180px; top: 150px; width: 640px; height: 330px; opacity: 0; }
+  #tag { position: absolute; right: 60px; top: 56px; font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: rgba(248,250,252,0.9); border: 2px solid rgba(248,250,252,0.5); background: rgba(15,23,42,0.55); padding: 6px 12px; }
+  #lab1 { bottom: 120px; }
+"""
+BODY = """  <canvas id="gl" width="1920" height="1080"></canvas>
+  <div class="pin" id="pA"><div class="chip" id="cA" style="margin-left:-300px; margin-top:-150px"><b>TAG ID</b>4C1A</div></div>
+  <div class="pin" id="pB"><div class="chip" id="cB" style="margin-left:40px; margin-top:-150px"><b>TRACK</b>UP LINE</div></div>
+  <svg id="map" viewBox="0 0 640 330" data-layout-allow-overflow>
+    <rect x="0" y="0" width="640" height="330" rx="18" fill="rgba(8,20,36,0.9)" stroke="#38BDF8" stroke-width="2"/>
+    <text x="28" y="46" style="font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.16em; fill: #7DD3FC">TRAIN'S POSITION</text>
+    <line x1="40" y1="150" x2="600" y2="150.3" stroke="#475569" stroke-width="10" stroke-linecap="round"/>
+    <line id="upl" x1="40" y1="220" x2="600" y2="220.3" stroke="#64748B" stroke-width="10" stroke-linecap="round"/>
+    <text x="40" y="128" style="font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8">DN LINE</text>
+    <text id="upt" x="40" y="262" style="font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8">UP LINE</text>
+    <g fill="#94A3B8" style="font: 800 18px Inter, Arial, sans-serif">
+      <line x1="120" y1="236" x2="120" y2="246" stroke="#94A3B8" stroke-width="2"/><text x="104" y="300">111</text>
+      <line x1="320" y1="236" x2="320" y2="246" stroke="#94A3B8" stroke-width="2"/><text x="304" y="300">112</text>
+      <line x1="520" y1="236" x2="520" y2="246" stroke="#94A3B8" stroke-width="2"/><text x="504" y="300">113</text></g>
+    <g id="mpin"><path d="M 400 220 C 380 190, 372 176, 372 166 A 28 28 0 1 1 428 166 C 428 176, 420 190, 400 220 Z" fill="#38BDF8" stroke="#E0F2FE" stroke-width="3"/>
+      <circle cx="400" cy="164" r="10" fill="#0B2540"/></g>
+    <text id="kmt" x="440" y="190" style="font: 800 28px Inter, Arial, sans-serif; fill: #F8FAFC" opacity="0">KM 112.4</text>
+  </svg>
+  <div class="kav-label" id="lab1">Link 1 · RFID tag<small>FIXED TO A CONCRETE SLEEPER</small></div>
+  <div id="tag">ILLUSTRATION</div>"""
+JS = """
+  const tT = at("V013", "small R-F-I-D"), tR = at("V013", "a reader under"), tP = at("V013", "reads as it passes"), tW = at("V013", "exactly where"), tL = at("V013", "on which line");
+  window.A3T = { tT, tR, tP, tW, tL };
+  tl.to("#lab1", { opacity: 1, duration: 0.5 }, tT - 0.6);
+  tl.to("#lab1", { opacity: 0, duration: 0.4 }, tP - 0.4);
+  tl.fromTo("#cA", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, tP + 0.25);
+  tl.fromTo("#cB", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, tP + 0.55);
+  tl.fromTo("#map", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, tW - 0.3);
+  tl.fromTo("#mpin", { y: -120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "bounce.out" }, tW + 0.2);
+  tl.to("#kmt", { opacity: 1, duration: 0.3 }, tW + 0.6);
+  tl.to("#upl", { attr: { stroke: "#38BDF8" }, duration: 0.3 }, tL);
+  tl.to("#upt", { fill: "#7DD3FC", duration: 0.3 }, tL);
+  tl.fromTo("#upl", { attr: { "stroke-width": 10 } }, { attr: { "stroke-width": 16 }, duration: 0.3, yoyo: true, repeat: 1 }, tL);
+"""
+MODULE = r"""
+  import { THREE, createStage, mats, buildTrack, buildGround, buildTrees, buildStones, buildLoco, buildRFIDTag, ringPulse, sleeperZ, SLEEPER_TOP, seg, lerp, clamp, ease, aim, camPath } from "./kav3d.js";
+  const st = createStage({ sky: "dusk", fov: 38, near: 0.03 });
+  const T = window.A3T, D = st.DUR, $ = (id) => document.getElementById(id);
+  const Z0 = -80, ZT = sleeperZ(Z0, 0), V = 5, READ_DZ = 1.7;          // reader sits 1.7 m behind the nose
+  const zNose = (t) => ZT - READ_DZ + V * (T.tP + 0.2 - t);           // the reader is over the tag at tP + 0.2
+  st.run((st) => {
+    const M = mats(), S = st.scene;
+    S.add(buildGround(M), buildTrack(M, { cx: 0, z0: Z0, z1: 80 }), buildTrack(M, { cx: 5.3, z0: Z0, z1: 80 }), buildTrees({ clear: 16 }));
+    S.add(buildStones(M, { z0: ZT - 6, z1: ZT + 14, n: 3200 }));
+    const tag = buildRFIDTag(M); tag.position.set(0, SLEEPER_TOP, ZT); S.add(tag);
+    // km post beside the line (white concrete with black figures)
+    const kc = document.createElement("canvas"); kc.width = 128; kc.height = 128; const kg = kc.getContext("2d"); kg.fillStyle = "#EDEDE8"; kg.fillRect(0, 0, 128, 128);
+    kg.fillStyle = "#111"; kg.font = "800 56px Inter, Arial"; kg.textAlign = "center"; kg.fillText("112", 64, 84);
+    const kt = new THREE.CanvasTexture(kc); kt.colorSpace = THREE.SRGBColorSpace;
+    const km = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.5, 0.12), [M.white, M.white, M.white, M.white, new THREE.MeshStandardMaterial({ map: kt, roughness: 0.8 }), M.white]);
+    km.position.set(-2.3, -0.5, ZT - 1.2); km.castShadow = true; S.add(km);
+    const loco = buildLoco(M); S.add(loco);
+    const rings = [0, 1, 2].map(() => { const r = ringPulse({ r0: 0.15, r1: 1.4, thick: 0.035 }); r.rotation.x = -Math.PI / 2; r.position.set(0, SLEEPER_TOP + 0.09, ZT); S.add(r); return r; });
+    const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.3, 0.32, 24, 1, true), new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+    beam.position.set(0, SLEEPER_TOP + 0.24, ZT); S.add(beam);
+    // camera: low dolly along the sleepers to the tag, then aside to watch the engine roll over it, then a slow rise
+    const cam = camPath([
+      [0.0, [0.25, 0.42, ZT + 9.0], [0, -0.05, ZT - 2.0]],
+      [T.tT + 1.6, [0.2, 0.36, ZT + 1.6], [0, -0.12, ZT - 0.2]],
+      [T.tR - 0.6, [4.6, 0.95, ZT + 3.4], [0, 0.25, ZT]],
+      [T.tP + 0.4, [7.6, 1.05, ZT + 0.3], [0, 0.55, ZT]],
+      [D, [8.4, 1.8, ZT - 1.4], [0, 0.6, ZT]],
+    ]);
+    return { loco, tag, rings, beam, cam };
+  }, (t, c) => {
+    const { p, l } = c.cam(t); aim(st.camera, p, l); st.follow(0, 0, ZT, 12);
+    st.camera.fov = lerp(38, 34, seg(t, T.tR - 0.6, T.tP + 0.4)); st.camera.updateProjectionMatrix();
+    const zn = zNose(t); c.loco.position.set(0, 0, zn); c.loco.userData.setS(-zn);
+    c.loco.userData.xray(seg(t, T.tR - 0.6, T.tR + 0.5));
+    for (const r of c.loco.userData.parts.readers) r.material.emissiveIntensity = 3.0 * seg(t, T.tR - 0.2, T.tR + 0.4);
+    // the reader's field wakes the tag: three rings, a short beam and a glow while it is overhead
+    const over = clamp(1 - Math.abs(t - (T.tP + 0.2)) / 0.9);
+    c.rings.forEach((r, i) => r.userData.at((t - (T.tP - 0.3 + i * 0.35)) / 0.9));
+    c.beam.material.opacity = 0.55 * over; c.tag.userData.glow.material.opacity = 0.6 * Math.max(over, 0.6 * seg(t, T.tP + 1.0, T.tP + 1.4) * (1 - seg(t, T.tW, T.tW + 1)));
+    const tp = c.tag.getWorldPosition(new THREE.Vector3()); st.pin($("pA"), tp); st.pin($("pB"), tp);
+  });
+"""

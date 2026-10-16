@@ -1,0 +1,182 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 6.172,
+  "te": "Now, if Kavach can see the red signal, why can't the loco pilot just slam the brakes, the way you would in a car?",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.384,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.723,
+  "end": 18.552,
+  "te": "Because steel wheels on a steel rail have very little grip, a train is enormously heavy, and when the brakes go on, the air pressure has to change all the way down the brake pipe to the last coach.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.223,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 19.049,
+  "end": 30.741,
+  "te": "Here's a real number from the railway's own training notes. A Vande Bharat running at one hundred and thirty kilometres per hour needs about six hundred and fifty metres to stop... even with its emergency brakes.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.081,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 31.21,
+  "end": 35.511,
+  "te": "At that speed, it covers about thirty six metres every single second.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.081,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 35.979,
+  "end": 48.001,
+  "te": "Now picture a loaded goods train — five thousand tonnes at seventy five kilometres per hour. Its brakes build up slowly, and simple maths with fair guesses gives more than nine hundred metres to stop.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.164,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 48.486,
+  "end": 56.335,
+  "te": "And if you push the speed from one hundred and thirty to one hundred and sixty, the braking distance doesn't grow by a little... it grows by about half.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.196,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 56.95,
+  "end": 61.033,
+  "te": "Now add a December night in north India, with thick fog on the tracks.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.267,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 61.436,
+  "end": 78.229,
+  "te": "Suppose the loco pilot can see a signal only fifty metres ahead. At one hundred and ten kilometres per hour, the train crosses those fifty metres in less than two seconds — and even an alert person needs a second or two just to react. On eyes alone, the maths simply doesn't work.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.174,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 78.667,
+  "end": 93.049,
+  "te": "This is where Kavach changes the game. It doesn't wait for anyone to see the red signal — it already knows how far away it is, shows it on the screen inside the cab, and if the loco pilot doesn't slow down, brakes early while there's still enough room.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.026,
+  "confidence": "check"
+ },
+ {
+  "line": 10,
+  "start": 93.39,
+  "end": 100.464,
+  "te": "But it can't cancel physics. If danger appears closer than the stopping distance, even Kavach can't stop the train in time.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.026,
+  "confidence": "check"
+ },
+ {
+  "line": 11,
+  "start": 100.968,
+  "end": 114.658,
+  "te": "And how often does a train pass a red signal by mistake? The Commission of Railway Safety noted two hundred and eight such cases in five years, from April twenty nineteen to March twenty twenty four... and twelve of them ended in a collision.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.097,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 115.075,
+  "end": 128.395,
+  "te": "So why isn't it on every track yet? Look at the size of the job. Indian Railways runs about sixty nine thousand route kilometres, and in March twenty twenty five it had about sixteen thousand diesel and electric engines.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.097,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 128.778,
+  "end": 141.273,
+  "te": "By the end of July twenty twenty six, the newest Kavach was working on two thousand six hundred and thirty three route kilometres, on parts of the Delhi Mumbai and Delhi Howrah routes — two of the busiest in the country.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.083,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 141.534,
+  "end": 151.633,
+  "te": "Add the older version on about one thousand four hundred and sixty five kilometres in South Central Railway, and Kavach is still working on well under a tenth of the network.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.083,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 152.137,
+  "end": 173.169,
+  "te": "And here's the trap in most headlines. Track fitted with equipment, seven thousand seven hundred and twenty six kilometres, engines fitted, six thousand two hundred and ninety, and track where work has only started, twenty one thousand seven hundred and ninety four kilometres... but fitted isn't working, and work started isn't protected.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.004,
+  "confidence": "check"
+ },
+ {
+  "line": 16,
+  "start": 173.628,
+  "end": 186.512,
+  "te": "The money is moving too — the yearly Kavach budget rose from about one thousand one hundred crore rupees to about one thousand six hundred and seventy crore in twenty twenty five twenty six.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.004,
+  "confidence": "check"
+ },
+ {
+  "line": 17,
+  "start": 187.002,
+  "end": 200.792,
+  "te": "But money alone doesn't make it work. Every station's signalling data has to be checked, every engine type wired to its own brakes, the radio has to reach every yard, and then it's all tested and retested before a single kilometre is called working.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.003,
+  "confidence": "check"
+ },
+ {
+  "line": 18,
+  "start": 201.297,
+  "end": 217.511,
+  "te": "Suppliers are the other bottleneck. For years, just three Indian companies made Kavach — Medha, H-B-L and Kernex — and a newer one, Quadrant Future Tek, told the stock exchange it got permission for passenger trials only in May twenty twenty six.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.003,
+  "confidence": "check"
+ }
+]

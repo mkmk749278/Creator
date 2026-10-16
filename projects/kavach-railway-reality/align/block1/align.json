@@ -1,0 +1,202 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 7.663,
+  "te": "It's two in the morning on a night train... the lights are off, the A-C is humming, and your whole family is asleep on the berths.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 8.336,
+  "end": 14.095,
+  "te": "Up front, the loco pilot is staring into the dark — watching for a signal that might be red.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 14.803,
+  "end": 21.109,
+  "te": "Then one morning there's news of a train crash, and by lunchtime your family WhatsApp group is on fire.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.309,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 21.595,
+  "end": 29.423,
+  "te": "One forward says the government never bothered with safety, and another says India already has Kavach, so crashes should be impossible now.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.313,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 29.894,
+  "end": 35.422,
+  "te": "Both forwards are playing with your fear — and both are missing what really happens on the track.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.313,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 36.068,
+  "end": 38.081,
+  "te": "Welcome to Be Practical with Kishore.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.521,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 38.555,
+  "end": 46.133,
+  "te": "Today we'll open the railway's own documents, do the braking maths together, and read what the official accident inquiries found.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.204,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 46.692,
+  "end": 59.499,
+  "te": "And around the eight minute mark, I'll show you what the official inquiry reports actually found — and the honest answer to the hardest question of all... could Kavach have saved Balasore, or the Kanchanjunga Express?",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.204,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 60.159,
+  "end": 67.54,
+  "te": "Let's start with what Kavach actually is — because it isn't an app, and nobody can switch it on across India overnight.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.218,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 68.123,
+  "end": 82.753,
+  "te": "Kavach is India's own Automatic Train Protection system. It watches the train's speed and the signals ahead, and if the train goes too fast or is about to pass a red signal, it warns the loco pilot... then brakes by itself if nothing changes.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.169,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 83.263,
+  "end": 96.726,
+  "te": "In March twenty twenty two, in a test in Telangana with the Railway Minister on board, Kavach stopped two engines running towards each other on the same line, about three hundred and eighty metres apart.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.034,
+  "confidence": "check"
+ },
+ {
+  "line": 12,
+  "start": 97.214,
+  "end": 102.835,
+  "te": "It looks like magic on video. But Kavach is a chain of four links, and it only protects you when every link is in place.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.034,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 103.328,
+  "end": 115.272,
+  "te": "Link one sits on the track — small R-F-I-D tags fixed to the concrete sleepers, which a reader under the engine reads as it passes, so the train knows exactly where it is and on which line.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.049,
+  "confidence": "check"
+ },
+ {
+  "line": 14,
+  "start": 115.723,
+  "end": 135.473,
+  "te": "People say there's one tag every kilometre. Actually, one kilometre is only the longest gap allowed — near signals, points and stations the tags crowd together, and on one stretch of about ninety six kilometres between Vadodara and Ahmedabad, the railway fixed two thousand eight hundred and seventy two of them.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.045,
+  "confidence": "check"
+ },
+ {
+  "line": 15,
+  "start": 136.108,
+  "end": 150.309,
+  "te": "Link two is the station. A Kavach computer there reads the signals, the points and which tracks are occupied, straight from the station's own signalling system — called interlocking. Remember that word.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.027,
+  "confidence": "check"
+ },
+ {
+  "line": 16,
+  "start": 150.827,
+  "end": 160.514,
+  "te": "Link three is the radio. Tall towers along the line carry messages between the station and the engine over a U-H-F safety radio... it's not your mobile network, and it's not five G.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.027,
+  "confidence": "check"
+ },
+ {
+  "line": 17,
+  "start": 160.938,
+  "end": 171.573,
+  "te": "And link four rides inside the engine — a Kavach computer, R-F-I-D readers, wheel speed sensors, a screen for the loco pilot, and a link to the brakes.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.092,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 171.958,
+  "end": 179.84,
+  "te": "Think about that for a second — this is a system designed in India, by Indian engineers and Indian companies, for Indian tracks.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.065,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 180.19,
+  "end": 198.71,
+  "te": "The electronics are built to S-I-L four, the highest safety level in railway signalling. Some posts say that means Kavach can fail only once in a billion hours... that's only half the story, because it's a strict limit for each safety function of the electronics, not a promise that no train will ever crash.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.065,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 199.057,
+  "end": 204.011,
+  "te": "So keep this one in your pocket... Kavach can only act on the information it's given.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.234,
+  "confidence": "high"
+ }
+]

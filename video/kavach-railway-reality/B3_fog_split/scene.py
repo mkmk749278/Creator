@@ -1,0 +1,85 @@
+TITLE = "B3 Fog: 50 m in about 1.6 s"
+LIBS = ["fogview.js"]
+BG = "none"
+CSS = """
+  #fog { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  #watch { position: absolute; left: 1560px; top: 150px; width: 240px; height: 240px; opacity: 0; }
+  #wnum { position: absolute; left: 1520px; top: 404px; width: 320px; text-align: center; font: 800 60px Inter, Arial, sans-serif; color: #F8FAFC; font-variant-numeric: tabular-nums; opacity: 0; background: rgba(15,23,42,0.88); border-radius: 14px; padding: 6px 0; }
+  #react { position: absolute; left: 110px; top: 560px; width: 620px; height: 150px; opacity: 0; overflow: visible; }
+  .rl { font: 800 28px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #E2E8F0; }
+  #dim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  #flash { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #F8FAFC; opacity: 0; }
+  #replay { position: absolute; left: 110px; top: 150px; padding: 10px 20px; border-radius: 10px; background: rgba(15,23,42,0.88); border: 2px solid #F59E0B; font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: #FCD34D; opacity: 0; }
+  #late { position: absolute; left: 600px; top: 470px; font-size: 76px; opacity: 0; white-space: nowrap; background: rgba(15,23,42,0.88); color: #F87171; }
+"""
+BODY = """  <canvas id="fog" width="1920" height="1080"></canvas>
+  <img id="fogimg" src="fog.png" alt="" style="display:none" />
+  <svg id="dim" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+    <g id="dimg" opacity="0"><circle id="ring" cx="925" cy="423" r="34" fill="none" stroke="#F87171" stroke-width="4"/><line x1="895" y1="405" x2="780" y2="360" stroke="#F59E0B" stroke-width="3"/>
+      <rect x="470" y="300" width="310" height="110" rx="12" fill="rgba(15,23,42,0.88)" stroke="#F59E0B" stroke-width="2"/>
+      <text x="492" y="352" style="font: 800 46px Inter, Arial, sans-serif; fill: #FCD34D">50 M</text>
+      <text x="494" y="390" style="font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #FDE68A">CAN SEE THIS FAR</text></g>
+  </svg>
+  <svg id="watch" viewBox="0 0 220 220">
+    <circle cx="110" cy="110" r="96" fill="rgba(15,23,42,0.85)" stroke="#F8FAFC" stroke-width="5"/>
+    <path id="arc" d="M 110 110" fill="rgba(245,158,11,0.35)"/>
+    <line id="hand" x1="110" y1="110" x2="110" y2="26" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="110" cy="110" r="9" fill="#F8FAFC"/></svg>
+  <div id="wnum">0.0 s</div>
+  <div id="replay">REPLAY · WITH REACTION TIME</div>
+  <svg id="react" viewBox="0 0 620 150">
+    <rect x="-18" y="-10" width="656" height="170" rx="16" fill="rgba(15,23,42,0.88)"/><text x="0" y="30" class="rl">HUMAN REACTION · 1–2 S</text>
+    <rect x="0" y="50" width="620" height="44" rx="10" fill="rgba(15,23,42,0.85)" stroke="#64748B" stroke-width="2"/>
+    <rect id="rfill" x="2" y="52" width="0" height="40" rx="8" fill="#F59E0B"/>
+    <line id="pmark" x1="0" y1="42" x2="0.3" y2="104" stroke="#DC2626" stroke-width="5" opacity="0"/>
+    <text id="ptxt" x="616" y="138" text-anchor="end" class="rl" style="fill:#FCA5A5" opacity="0">SIGNAL ALREADY PASSED</text></svg>
+  <div id="flash" data-layout-allow-occlusion></div>
+  <div class="kav-stamp" id="late">TOO LATE ON EYES ALONE</div>
+  <div class="kav-label amber" id="lab1" style="bottom: 270px">110 km/h in fog<small>50 M IN ≈ 1.6 S</small></div>"""
+JS = """
+  const FV = FogView(document.getElementById("fog"), document.getElementById("fogimg"));
+  const V = 110 / 3.6;                                        // 30.6 m/s
+  const tS = at("V028", "Suppose"), t50 = at("V028", "fifty metres ahead"), tC = at("V028", "the train crosses"), tR = at("V028", "even an alert person"), tE = at("V028", "On eyes alone");
+  const st = { travel: 0, zsig: 400, t: 0, cab: true };
+  const draw = () => FV.draw(st);
+  const clock = { t: 0 };
+  tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: () => { st.t = clock.t; draw(); } }, 0);
+  // 1) running in fog; the signal resolves at the visibility limit and the picture freezes at 50 m
+  tl.to(st, { travel: V * (t50 + 0.4), duration: t50 + 0.4, ease: "none", onUpdate: draw }, 0);
+  tl.fromTo(st, { zsig: 50 + V * 1.6 }, { zsig: 50, duration: 1.6, ease: "none", onUpdate: draw }, t50 + 0.4 - 1.6);
+  tl.to("#dimg", { opacity: 1, duration: 0.4 }, t50 + 0.4);
+  tl.fromTo("#ring", { attr: { r: 60 }, opacity: 0 }, { attr: { r: 34 }, opacity: 1, duration: 0.5, ease: "power2.out" }, t50 + 0.4);
+  tl.to("#lab1", { opacity: 1, duration: 0.5 }, t50 + 0.4);
+  // 2) real time: 50 m at 110 km/h; the stopwatch stops at about 1.6 s
+  const T = 50 / V, sw = { s: 0 };
+  const watch = () => {
+    const a = (sw.s / 2) * 2 * Math.PI, x = 110 + 84 * Math.sin(a), y = 110 - 84 * Math.cos(a);
+    document.getElementById("hand").setAttribute("x2", x); document.getElementById("hand").setAttribute("y2", y);
+    document.getElementById("arc").setAttribute("d", sw.s <= 0 ? "M 110 110" : `M 110 110 L 110 26 A 84 84 0 ${a > Math.PI ? 1 : 0} 1 ${x} ${y} Z`);
+    document.getElementById("wnum").textContent = `${sw.s.toFixed(1)} s`;
+  };
+  watch();
+  tl.to("#watch, #wnum", { opacity: 1, duration: 0.3 }, tC - 0.4);
+  tl.to("#dimg", { opacity: 0, duration: 0.3 }, tC + 0.1);
+  tl.to(st, { zsig: 50 - V * 2.2, travel: V * (t50 + 0.4) + V * 2.2, duration: 2.2, ease: "none", onUpdate: draw }, tC + 0.2);
+  tl.to(sw, { s: T, duration: T, ease: "none", onUpdate: watch }, tC + 0.2);
+  tl.to("#wnum", { color: "#FCD34D", duration: 0.2 }, tC + 0.2 + T);
+  tl.to(st, { travel: "+=" + (V * (tR - tC - 2.6)), duration: Math.max(0.3, tR - tC - 2.6), ease: "none", onUpdate: draw }, tC + 2.4);
+  // 3) replay: a reaction of a second or two is still running when the signal has gone past
+  tl.to("#flash", { opacity: 0.6, duration: 0.06 }, tR - 0.1).to("#flash", { opacity: 0, duration: 0.3 }, tR - 0.04);
+  tl.set(st, { zsig: 50, onUpdate: draw }, tR);
+  tl.to("#watch, #wnum", { opacity: 0, duration: 0.2 }, tR);
+  tl.to("#react, #replay", { opacity: 1, duration: 0.3 }, tR);
+  tl.to("#lab1", { opacity: 0, duration: 0.2 }, tR - 0.2);
+  tl.to("#replay", { opacity: 0, duration: 0.3 }, tE - 0.3);
+  tl.to(st, { zsig: 50 - V * 2.4, travel: "+=" + V * 2.4, duration: 2.4, ease: "none", onUpdate: draw }, tR + 0.1);
+  tl.to("#rfill", { attr: { width: 616 }, duration: 2.0, ease: "none" }, tR + 0.1);
+  const px = 616 * (T / 2.0);
+  tl.set("#pmark", { attr: { x1: px, x2: px + 0.3 } }, 0); 
+  tl.to("#pmark, #ptxt", { opacity: 1, duration: 0.15 }, tR + 0.1 + T);
+  tl.to(st, { travel: "+=" + V * Math.max(0.3, D - tR - 2.5), duration: Math.max(0.3, D - tR - 2.5), ease: "none", onUpdate: draw }, tR + 2.5);
+  // 4) on eyes alone, the maths does not work
+  tl.fromTo("#late", { opacity: 0, scale: 1.5, rotation: -14 }, { opacity: 0.95, scale: 1, rotation: -6, duration: 0.3, ease: "power4.in" }, tE);
+    tl.to("#react", { opacity: 0, duration: 0.3 }, tE);
+  draw();
+"""

@@ -16,7 +16,7 @@ skip a step to save time (PLAYBOOK §4). Stop and report to the owner at each **
    Whisper (PLAYBOOK §7). No script → ask the owner for it.
 4. **Fact-check.** Run `/fact-check` in a fresh subagent at `max` effort → `claims.csv`; `python3 scripts/claims_check.py`
    must pass before anything goes on screen. **[report]** disputed/claim rows and any script fix needed.
-5. **Beats.** Split the script into beats of 2.5–4 s of picture each; for each beat write the literal visual (semantic lock),
+5. **Beats.** Split the script into beats of 3.5–5 s of picture each (owner, 2026-10-15); for each beat write the literal visual (semantic lock),
    the kind (real footage / animated scene / moving still), and LIVE / diegetic / VO_PAUSE breaks.
 6. **Sourcing.** `/source-media` (one session only) → `asset-manifest.md`, `media_manifest.csv`, contact sheets.
    Prefer the shared library (`python3 scripts/library.py list`) and `video/lib/` scenes before new work.

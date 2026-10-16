@@ -1,0 +1,67 @@
+[
+ {
+  "sheet": 1,
+  "tile": 1,
+  "label": "crs_balasore_128.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 2,
+  "label": "crs_balasore_cause.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 3,
+  "label": "crs_balasore_green.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 4,
+  "label": "crs_balasore_title.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 5,
+  "label": "crs_kj_78.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 6,
+  "label": "crs_kj_caution.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 7,
+  "label": "crs_kj_failure.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 8,
+  "label": "crs_kj_lapses.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 9,
+  "label": "crs_kj_ta912.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 1,
+  "label": "crs_kj_title.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 2,
+  "label": "crs_spad.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 3,
+  "label": "irimee_654.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 4,
+  "label": "nse_quadrant.png"
+ }
+]

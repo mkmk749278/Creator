@@ -1,0 +1,72 @@
+1
+00:00:00,000 --> 00:00:06,723
+Now, if Kavach can see the red signal, why can't the loco pilot just slam the brakes, the way you would in a car?
+
+2
+00:00:06,723 --> 00:00:19,049
+Because steel wheels on a steel rail have very little grip, a train is enormously heavy, and when the brakes go on, the air pressure has to change all the way down the brake pipe to the last coach.
+
+3
+00:00:19,049 --> 00:00:31,210
+Here's a real number from the railway's own training notes. A Vande Bharat running at one hundred and thirty kilometres per hour needs about six hundred and fifty metres to stop... even with its emergency brakes.
+
+4
+00:00:31,210 --> 00:00:35,979
+At that speed, it covers about thirty six metres every single second.
+
+5
+00:00:35,979 --> 00:00:48,486
+Now picture a loaded goods train — five thousand tonnes at seventy five kilometres per hour. Its brakes build up slowly, and simple maths with fair guesses gives more than nine hundred metres to stop.
+
+6
+00:00:48,486 --> 00:00:56,950
+And if you push the speed from one hundred and thirty to one hundred and sixty, the braking distance doesn't grow by a little... it grows by about half.
+
+7
+00:00:56,950 --> 00:01:01,436
+Now add a December night in north India, with thick fog on the tracks.
+
+8
+00:01:01,436 --> 00:01:18,667
+Suppose the loco pilot can see a signal only fifty metres ahead. At one hundred and ten kilometres per hour, the train crosses those fifty metres in less than two seconds — and even an alert person needs a second or two just to react. On eyes alone, the maths simply doesn't work.
+
+9
+00:01:18,667 --> 00:01:33,390
+This is where Kavach changes the game. It doesn't wait for anyone to see the red signal — it already knows how far away it is, shows it on the screen inside the cab, and if the loco pilot doesn't slow down, brakes early while there's still enough room.
+
+10
+00:01:33,390 --> 00:01:40,968
+But it can't cancel physics. If danger appears closer than the stopping distance, even Kavach can't stop the train in time.
+
+11
+00:01:40,968 --> 00:01:55,075
+And how often does a train pass a red signal by mistake? The Commission of Railway Safety noted two hundred and eight such cases in five years, from April twenty nineteen to March twenty twenty four... and twelve of them ended in a collision.
+
+12
+00:01:55,075 --> 00:02:08,778
+So why isn't it on every track yet? Look at the size of the job. Indian Railways runs about sixty nine thousand route kilometres, and in March twenty twenty five it had about sixteen thousand diesel and electric engines.
+
+13
+00:02:08,778 --> 00:02:21,534
+By the end of July twenty twenty six, the newest Kavach was working on two thousand six hundred and thirty three route kilometres, on parts of the Delhi Mumbai and Delhi Howrah routes — two of the busiest in the country.
+
+14
+00:02:21,534 --> 00:02:32,137
+Add the older version on about one thousand four hundred and sixty five kilometres in South Central Railway, and Kavach is still working on well under a tenth of the network.
+
+15
+00:02:32,137 --> 00:02:53,628
+And here's the trap in most headlines. Track fitted with equipment, seven thousand seven hundred and twenty six kilometres, engines fitted, six thousand two hundred and ninety, and track where work has only started, twenty one thousand seven hundred and ninety four kilometres... but fitted isn't working, and work started isn't protected.
+
+16
+00:02:53,628 --> 00:03:07,002
+The money is moving too — the yearly Kavach budget rose from about one thousand one hundred crore rupees to about one thousand six hundred and seventy crore in twenty twenty five twenty six.
+
+17
+00:03:07,002 --> 00:03:21,297
+But money alone doesn't make it work. Every station's signalling data has to be checked, every engine type wired to its own brakes, the radio has to reach every yard, and then it's all tested and retested before a single kilometre is called working.
+
+18
+00:03:21,297 --> 00:03:37,731
+Suppliers are the other bottleneck. For years, just three Indian companies made Kavach — Medha, H-B-L and Kernex — and a newer one, Quadrant Future Tek, told the stock exchange it got permission for passenger trials only in May twenty twenty six.
+

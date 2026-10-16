@@ -1,0 +1,232 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 2.35,
+  "te": "Now, the question I promised you at the start.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.234,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 3.01,
+  "end": 15.948,
+  "te": "Case one. Bahanaga Bazar, near Balasore in Odisha, June two, twenty twenty three. The Coromandel Express is coming in at about one hundred and twenty eight kilometres per hour, on a green signal for the main line.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.134,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 16.513,
+  "end": 21.619,
+  "te": "But the crossover ahead is set towards the loop line... where a goods train is standing.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.134,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 22.281,
+  "end": 29.756,
+  "te": "The official inquiry found lapses in signalling circuit work done at the station. Close to three hundred people lost their lives.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.209,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 30.315,
+  "end": 32.384,
+  "te": "So, would Kavach have stopped it?",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.199,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 32.888,
+  "end": 36.951,
+  "te": "Here's the honest answer — nobody can say yes or no for sure.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.083,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 37.49,
+  "end": 47.652,
+  "te": "Remember interlocking? At Balasore, the signalling system itself was showing a false green, and fed that same wrong information, Kavach could have believed the line was clear too.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.042,
+  "confidence": "check"
+ },
+ {
+  "line": 8,
+  "start": 48.069,
+  "end": 57.725,
+  "te": "A safety computer can't correct wrong information it trusts. Kavach does have a few checks of its own, but no public study has shown whether they would have acted in time there.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.042,
+  "confidence": "check"
+ },
+ {
+  "line": 9,
+  "start": 58.17,
+  "end": 65.753,
+  "te": "So the forward saying Kavach would surely have saved Balasore, and the one saying it surely couldn't, are both going beyond the evidence.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 66.426,
+  "end": 79.218,
+  "te": "Case two. Rangapani, near New Jalpaiguri in north Bengal, June seventeen, twenty twenty four. The automatic signals had failed, so trains had to move on a paper authority, at a slow, careful speed.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 79.714,
+  "end": 92.086,
+  "te": "The inquiry found the goods train was handed the wrong form, T-A nine one two instead of T-D nine one two, with no caution order, missing walkie talkies, and training that wasn't good enough... failures of the system, not just one loco pilot.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.12,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 92.682,
+  "end": 102.555,
+  "te": "The goods train reached seventy eight kilometres per hour and hit the Kanchanjunga Express from behind at about forty. And there was no working Kavach on that section.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.02,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 103.009,
+  "end": 116.965,
+  "te": "Here, Kavach could have made a real difference. With both trains fitted and the section working, it could have held the goods train to the allowed movement and a slow speed past those failed signals.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.02,
+  "confidence": "check"
+ },
+ {
+  "line": 14,
+  "start": 117.418,
+  "end": 132.791,
+  "te": "And what about the claim that Kavach always locks the speed at exactly fifteen kilometres per hour? Fifteen is the speed loco pilots must follow at failed signals — what Kavach enforces depends on its data and settings, so don't take that number as a promise.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.062,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 133.194,
+  "end": 145.123,
+  "te": "Two crashes, two different failures. At Balasore the signalling information itself was wrong, at Kanchanjunga the backup rules broke down — and Kavach is strongest against the second kind.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.062,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 145.586,
+  "end": 148.954,
+  "te": "So what can you actually do with all this? Three things.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.037,
+  "confidence": "check"
+ },
+ {
+  "line": 17,
+  "start": 149.411,
+  "end": 164.343,
+  "te": "One. When a Kavach forward lands in your family group, ask three questions before sharing it — is the number about fitted equipment or Kavach that's working, which date is it from, and was the problem a human mistake or wrong signalling data?",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.037,
+  "confidence": "check"
+ },
+ {
+  "line": 18,
+  "start": 164.834,
+  "end": 177.489,
+  "te": "Two. Read the real thing instead. The railway ministry posts Kavach progress in press releases on the P-I-B website, and the Commission of Railway Safety puts its inquiry findings on its own website, free to read.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.019,
+  "confidence": "check"
+ },
+ {
+  "line": 19,
+  "start": 177.914,
+  "end": 186.53,
+  "te": "Three. If you see something unsafe on a train or at a station, report it to Rail Madad by calling one three nine, or through the Rail Madad app.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.019,
+  "confidence": "check"
+ },
+ {
+  "line": 20,
+  "start": 187.004,
+  "end": 201.404,
+  "te": "Kavach isn't magic, and it isn't useless. It's an Indian-built safety layer that brakes early when a human slips... as long as the engine is fitted, the track section is working, the signalling data is right, and there's enough room to stop.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.127,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 201.982,
+  "end": 214.553,
+  "te": "Real safety isn't built on slogans. It's built by engineers and track crews doing careful, boring work right, every single day — and citizens who understand that keep the system accountable.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.115,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 215.007,
+  "end": 220.186,
+  "te": "Tell me in the comments: which route do you travel most, and do you know if Kavach is working on it yet?",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.115,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 220.623,
+  "end": 226.748,
+  "te": "If someone you love travels by train, share this with them. Know the facts, stay practical... Jai Hind.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.554,
+  "confidence": "high"
+ }
+]

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>C3 Same wrong input</title>
+<style>
+  @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 400 800; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2");
+    unicode-range: U+20B9, U+0100-024F, U+2000-206F, U+2190-21FF, U+2248, U+2260; }
+</style>
+<link rel="stylesheet" href="kav.css" />
+<style>
+  html, body { margin: 0; background: #0F172A; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #0F172A url(slate.jpg) center/cover; font-family: Inter, Arial, sans-serif; }
+  #schem { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+  .tlabel { font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
+  .tlabel.amber { fill: #F59E0B; } .tlabel.red { fill: #F87171; }
+  .tnum { font: 800 30px Inter, Arial, sans-serif; fill: #F8FAFC; letter-spacing: 0.02em; }
+  #sweep { position: absolute; top: -200px; left: -900px; width: 700px; height: 1480px; transform: rotate(14deg);
+    background: linear-gradient(90deg, rgba(56,189,248,0), rgba(56,189,248,0.07), rgba(56,189,248,0)); }
+  #grain { position: absolute; inset: 0; background: url(grain.png); mix-blend-mode: overlay; opacity: 0.9; pointer-events: none; }
+  #vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%); }
+  .kav-label { opacity: 0; }
+  #panel { position: absolute; left: 1150px; top: 210px; width: 680px; height: 640px; }
+  .plab { font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
+  .pbig { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #F8FAFC; }
+  #hud { position: absolute; left: 96px; top: 72px; font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: rgba(248,250,252,0.72); }
+  #hud .dot { display: inline-block; width: 12px; height: 12px; border-radius: 6px; background: #DC2626; margin-right: 14px; vertical-align: 1px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="C3_false_green" data-start="0" data-width="1920" data-height="1080" data-duration="20.68">
+  <svg id="schem" viewBox="0 0 1920 1080" data-layout-allow-overflow></svg>
+  <div id="sweep" data-layout-allow-occlusion></div>
+  <div id="vig" data-layout-allow-occlusion></div>
+  <svg id="panel" viewBox="0 0 680 640" data-layout-allow-overflow>
+    <rect x="2" y="2" width="676" height="636" rx="22" fill="rgba(11,18,32,0.92)" stroke="#38BDF8" stroke-width="3"/>
+    <text x="40" y="62" class="plab" fill="#7DD3FC">WHAT KAVACH IS TOLD</text>
+    <g id="inpt"><rect x="40" y="96" width="600" height="70" rx="12" fill="#1F2A1C" stroke="#4ADE80" stroke-width="3"/>
+      <circle cx="84" cy="131" r="16" fill="#4ADE80"/><text x="120" y="142" class="pbig">STATION SAYS: LINE CLEAR</text></g>
+    <path id="w-a" d="M 340 166 L 340 250" stroke="#4ADE80" stroke-width="5" fill="none"/>
+    <path id="w-b" d="M 340 166 L 340 166" stroke="#4ADE80" stroke-width="5" fill="none"/>
+    <g id="ch-a"><rect x="80" y="250" width="520" height="130" rx="14" fill="#0B2540" stroke="#38BDF8" stroke-width="3"/>
+      <text x="340" y="300" text-anchor="middle" class="plab">KAVACH COMPUTER</text><text id="ok-a" x="340" y="350" text-anchor="middle" class="pbig" opacity="0">NO REASON TO BRAKE</text></g>
+    <g id="ch-b"><rect x="0" y="0" width="0" height="0" fill="none"/><text id="ok-b" x="0" y="0" opacity="0"></text></g>
+    <path id="w-out" d="M 340 380 L 340 470" stroke="#4ADE80" stroke-width="5" fill="none"/>
+    <g id="gate"><rect x="180" y="470" width="320" height="16" fill="#334155"/>
+      <rect id="gate-l" x="180" y="490" width="158" height="22" rx="4" fill="#94A3B8"/><rect id="gate-r" x="342" y="490" width="158" height="22" rx="4" fill="#94A3B8"/>
+      <text id="gate-t" x="340" y="580" text-anchor="middle" class="pbig" fill="#4ADE80" opacity="0">TRAIN ALLOWED ON</text></g>
+  </svg>
+  <div class="kav-label" id="lab1">Same wrong information<small>WHAT THE SIGNALLING SAID</small></div>
+  <div class="kav-label amber" id="lab2">Not proven either way<small>NO PUBLIC STUDY</small></div>
+  <div id="hud"><span class="dot"></span>02.06.2023 · 18:56 · BAHANAGA BAZAR</div>
+
+</div>
+<script src="vendor/gsap.min.js"></script>
+<script src="cues.js"></script>
+<script src="kav.js"></script>
+<script src="indsig.js"></script>
+<script src="balasore.js"></script>
+<script>
+  const S = buildBalasore(), D = CUES.duration;
+  const tl = gsap.timeline({ paused: true });
+  balasoreEndState(tl, S);
+  const K = addKavachBadge(S);
+  // interlocking cabinet + its wires to the signal and to Kavach (generic; ILLUSTRATION)
+  const NS = "http://www.w3.org/2000/svg", ix = 150, iy = 250;
+  const cab = document.createElementNS(NS, "g"); cab.setAttribute("id", "cab");
+  let relays = ""; for (let r = 0; r < 3; r++) for (let c = 0; c < 8; c++) relays += `<rect class="relay" x="${ix + 24 + c * 30}" y="${iy + 62 + r * 26}" width="20" height="14" rx="3" fill="#1E293B"/>`;
+  cab.innerHTML = `<rect x="${ix}" y="${iy}" width="290" height="160" rx="12" fill="#0B1220" stroke="#5B6B86" stroke-width="3"/>
+    <text x="${ix + 145}" y="${iy + 40}" text-anchor="middle" style="font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.16em; fill: #CBD5E1">INTERLOCKING</text><text x="${ix + 145}" y="${iy + 150}" text-anchor="middle" style="font: 800 18px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8">STATION SIGNALLING</text>${relays}
+    <g id="bad" opacity="0"><rect x="${ix + 24 + 5 * 30 - 4}" y="${iy + 62 + 26 - 4}" width="28" height="22" rx="4" fill="#DC2626" stroke="#FCA5A5" stroke-width="2"/>
+      <path d="M ${ix + 24 + 5 * 30 + 3} ${iy + 62 + 26 + 1} l 14 12 M ${ix + 24 + 5 * 30 + 17} ${iy + 62 + 26 + 1} l -14 12" stroke="#FFF" stroke-width="3"/>
+      <circle cx="${ix + 24 + 5 * 30 + 10}" cy="${iy + 62 + 26 + 7}" r="26" fill="none" stroke="#F87171" stroke-width="3"/>
+      <text x="${ix + 185}" y="${iy + 200}" text-anchor="middle" style="font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #F87171">FAULTY CIRCUIT CHANGE</text></g>
+    <path id="wire-sig" d="M ${ix + 290} ${iy + 50} L 600 ${iy + 50.4}" fill="none" stroke="#475569" stroke-width="4"/>
+    <path id="wire-kav" d="M ${ix + 290} ${iy + 130} L 740 ${iy + 130.4} L 740.4 ${K.by + 27} L ${K.bx - 80} ${K.by + 27.4}" fill="none" stroke="#475569" stroke-width="4"/>
+    <circle id="pk1" r="11" fill="#4ADE80" stroke="#DC2626" stroke-width="4" opacity="0"/>
+    <circle id="pk2" r="11" fill="#4ADE80" stroke="#DC2626" stroke-width="4" opacity="0"/>
+    <g id="tags" opacity="0"><circle cx="${K.bx}" cy="${K.by + 27}" r="95" fill="none" stroke="#FCD34D" stroke-width="3" stroke-dasharray="8 8"/>
+      <text x="${K.bx + 110}" y="${K.by - 100}" style="font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #FCD34D">KAVACH’S OWN CHECKS</text><text x="${K.bx + 110}" y="${K.by - 70}" style="font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #FCD34D">UNTESTED HERE</text></g>`;
+  S.q("#world").insertBefore(cab, S.q("#signal"));
+  const along = (pk, path, t0, dur) => {  // move a packet along a wire path as a pure function of time
+    const p = S.q(path), L = p.getTotalLength(), o = { u: 0 };
+    tl.set(pk, { opacity: 1 }, t0);
+    tl.to(o, { u: 1, duration: dur, ease: "power1.inOut", onUpdate: () => { const q = p.getPointAtLength(o.u * L); S.q(pk).setAttribute("cx", q.x); S.q(pk).setAttribute("cy", q.y); } }, t0);
+    tl.set(pk, { opacity: 0 }, t0 + dur + 0.05);
+  };
+  // camera: schematic sits left; at V046 it slides further left and dims under the panel
+  tl.fromTo("#world", { transformOrigin: "50% 50%", scale: 1.05, x: 60, y: -10 }, { scale: 1.12, x: 20, y: -20, duration: CUES.cues.V046.at, ease: "sine.inOut" }, 0);
+  tl.to("#world", { scale: 1.0, x: -100, y: -20, opacity: 0.55, duration: 1.2, ease: "power2.inOut" }, CUES.cues.V046.at - 0.3);
+  tl.to("#world", { scale: 1.03, x: -130, duration: at("V046", "Kavach does have a few checks") - CUES.cues.V046.at - 0.9, ease: "sine.inOut" }, CUES.cues.V046.at + 0.9);
+  tl.fromTo("#sweep", { x: 0 }, { x: 3200, duration: D, ease: "none" }, 0);
+  tl.set("#hud .dot", { opacity: 1 }, 0);
+  // V045: "Remember interlocking?" the cabinet lights; a false green goes to the signal, then the same into Kavach
+  const t0 = CUES.cues.V045.at;
+  tl.from("#cab", { opacity: 0, duration: 0.6 }, t0);
+  tl.to(".relay", { attr: { fill: "#4ADE80" }, duration: 0.15, stagger: { each: 0.04, from: "random" } }, t0 + 0.4);
+  tl.to("#cab rect:first-child", { attr: { stroke: "#F8FAFC" }, duration: 0.3, yoyo: true, repeat: 3 }, t0 + 0.3);
+  const tFalse = at("V045", "showing a false green");
+  // the wrong input sits inside interlocking: a faulty signalling-circuit alteration (CRS Accident III)
+  tl.to("#bad", { opacity: 1, duration: 0.3 }, tFalse - 0.6);
+  tl.fromTo("#bad circle", { attr: { r: 18 }, opacity: 1 }, { attr: { r: 40 }, opacity: 0, duration: 0.8, repeat: 2 }, tFalse - 0.6);
+  tl.to("#wire-sig", { attr: { stroke: "#4ADE80" }, duration: 0.4 }, tFalse);
+  along("#pk1", "#wire-sig", tFalse, 1.4);
+  tl.to("#lamp-g-on", { opacity: 0.35, duration: 0.18, yoyo: true, repeat: 5 }, tFalse + 1.4);
+  const tSame = at("V045", "fed that same wrong information");
+  tl.to("#lab1", { opacity: 1, duration: 0.6 }, tSame);
+  tl.to("#wire-kav", { attr: { stroke: "#4ADE80" }, duration: 0.4 }, tSame);
+  along("#pk2", "#wire-kav", tSame, 1.6);
+  const tClear = at("V045", "believed the line was clear");
+  tl.to("#kbadge rect", { attr: { stroke: "#4ADE80" }, duration: 0.4 }, tClear);
+  tl.to("#kbadge line", { attr: { stroke: "#4ADE80" }, duration: 0.4 }, tClear);
+  tl.fromTo("#kring", { attr: { r: 54 }, opacity: 0.8, stroke: "#4ADE80" }, { attr: { r: 120 }, opacity: 0, duration: 1.2, repeat: 1 }, tClear);
+  // V046: inside Kavach, both channels agree on the same wrong input and the gate opens
+  const t1 = CUES.cues.V046.at;
+  tl.to("#lab1", { opacity: 0, duration: 0.4 }, t1);
+  tl.from("#panel", { opacity: 0, x: 80, duration: 0.8, ease: "power3.out" }, t1 + 0.1);
+  tl.from("#inpt", { opacity: 0, y: -20, duration: 0.5 }, t1 + 0.7);
+  tl.from("#w-a, #w-b", { attr: { d: "M 210 166 L 210 166" }, duration: 0.5, stagger: 0.1 }, t1 + 1.2);
+  tl.to("#ok-a", { opacity: 1, duration: 0.3 }, t1 + 1.8);
+  tl.to("#ok-b", { opacity: 1, duration: 0.3 }, t1 + 2.1);
+  tl.to("#ch-a rect, #ch-b rect", { attr: { stroke: "#4ADE80" }, duration: 0.3 }, t1 + 2.1);
+  tl.from("#w-out", { opacity: 0, duration: 0.4 }, t1 + 2.5);
+  tl.to("#gate-l", { x: -150, duration: 0.8, ease: "power2.inOut" }, t1 + 2.9);
+  tl.to("#gate-r", { x: 150, duration: 0.8, ease: "power2.inOut" }, t1 + 2.9);
+  tl.to("#gate-t", { opacity: 1, duration: 0.4 }, t1 + 3.4);
+  const tChecks = at("V046", "Kavach does have a few checks");
+  tl.to("#tags", { opacity: 1, duration: 0.5 }, tChecks);
+  tl.fromTo("#tags circle", { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": -96 }, duration: D - tChecks, ease: "none" }, tChecks);
+  tl.to("#panel", { x: 760, opacity: 0, duration: 0.9, ease: "power2.in" }, tChecks - 0.2);
+  tl.to("#world", { opacity: 1, scale: 1.12, x: 20, y: 60, duration: D - tChecks, ease: "sine.inOut" }, tChecks - 0.2);
+  const tNo = at("V046", "no public study");
+  tl.to("#lab2", { opacity: 1, duration: 0.6 }, tNo);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["C3_false_green"] = tl;
+</script>
+</body>
+</html>

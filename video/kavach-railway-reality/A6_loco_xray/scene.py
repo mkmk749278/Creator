@@ -1,0 +1,63 @@
+TITLE = "A6 Link four: Kavach inside the engine"
+BG = "none"
+CSS = """
+  #gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+  #vig, #sweep { display: none; }
+  .pin { position: absolute; left: 0; top: 0; }
+  .ctr { position: absolute; left: 0; top: -60px; width: var(--w); margin-left: calc(var(--w) / -2); }
+  .chip { white-space: nowrap; box-sizing: border-box; text-align: center; padding: 8px 14px; border-radius: 10px; background: rgba(8,20,36,0.88);
+    border: 2px solid #38BDF8; font: 800 26px Inter, Arial, sans-serif; letter-spacing: 0.1em; color: #F8FAFC; opacity: 0; }
+  #tag { position: absolute; right: 60px; top: 56px; font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: rgba(248,250,252,0.9); border: 2px solid rgba(248,250,252,0.5); background: rgba(15,23,42,0.55); padding: 6px 12px; }
+"""
+BODY = """  <canvas id="gl" width="1920" height="1080"></canvas>
+  <div class="pin" id="q0"><div class="ctr" style="--w:340px"><div class="chip" id="c0">KAVACH COMPUTER</div></div></div>
+  <div class="pin" id="q1"><div class="ctr" style="--w:300px"><div class="chip" id="c1">RFID READER</div></div></div>
+  <div class="pin" id="q2"><div class="ctr" style="--w:380px"><div class="chip" id="c2">WHEEL SPEED SENSOR</div></div></div>
+  <div class="pin" id="q3"><div class="ctr" style="--w:280px"><div class="chip" id="c3">CAB SCREEN</div></div></div>
+  <div class="pin" id="q4"><div class="ctr" style="--w:280px"><div class="chip" id="c4">BRAKE LINK</div></div></div>
+  <div class="kav-label" id="lab1">Link 4 · Loco Kavach<small>INSIDE THE ENGINE</small></div>
+  <div id="tag">ILLUSTRATION</div>"""
+JS = """
+  const tI = at("V017", "rides inside"), tC = at("V017", "a Kavach computer"), tR = at("V017", "R-F-I-D readers"), tW = at("V017", "wheel speed"), tS = at("V017", "a screen"), tB = at("V017", "a link to the brakes");
+  window.A6T = { tI, tC, tR, tW, tS, tB, tP: [tC, tR, tW, tS, tB] };
+  tl.to("#lab1", { opacity: 1, duration: 0.5 }, 0.3); tl.to("#lab1", { opacity: 0, duration: 0.4 }, tC - 0.3);
+  window.A6T.tP.forEach((t, i) => { tl.fromTo("#c" + i, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, t + 0.1);
+    if (i < 3) tl.to("#c" + i, { opacity: 0.55, duration: 0.3 }, window.A6T.tP[i + 1] - 0.1); });
+  tl.to(["#c0", "#c1", "#c2", "#c3"], { opacity: 0, duration: 0.3 }, tB - 0.1);
+"""
+MODULE = r"""
+  import { THREE, createStage, mats, buildTrack, buildGround, buildLoco, seg, lerp, clamp, ease, aim, camPath } from "./kav3d.js";
+  const st = createStage({ sky: "void", fov: 38, bloom: { intensity: 1.0, threshold: 0.8, smoothing: 0.3 } });
+  const T = window.A6T, D = st.DUR, $ = (id) => document.getElementById(id);
+  const V3 = (x, y, z) => new THREE.Vector3(x, y, z);
+  st.run((st) => {
+    const M = mats(), S = st.scene;
+    S.add(buildGround(M), buildTrack(M, { cx: 0, z0: -60, z1: 80 }));
+    const loco = buildLoco(M); S.add(loco);
+    const key = new THREE.DirectionalLight(0xdfe8ff, 1.2); key.position.set(10, 12, -10); S.add(key);
+    const rim = new THREE.DirectionalLight(0x5fd4ff, 1.4); rim.position.set(-8, 6, 14); S.add(rim);
+    const cam = camPath([
+      [0.0, [8.5, 4.2, -9], [0, 2.0, 5]],
+      [T.tC, [6.4, 3.1, -4.6], [0.4, 1.9, 3.4]],
+      [T.tR, [5.4, 0.85, -3.6], [0, 0.45, 2.2]],
+      [T.tW + 0.3, [4.8, 0.95, 0.4], [1.0, 0.55, 3.2]],
+      [T.tS, [3.6, 3.5, -2.8], [-0.4, 2.55, 1.0]],
+      [T.tB, [8.0, 3.0, -3.8], [0.4, 1.3, 6]],
+      [D, [11.5, 3.6, -1.5], [0.4, 1.2, 8.5]],
+    ]);
+    const P = loco.userData.parts;
+    const anchors = [V3(0.55, 2.5, 3.4), V3(0, 0.22, 1.7), V3(1.27, 0.55, 2.65), V3(-0.55, 2.8, 0.85), V3(0.45, 1.2, 4.6)];
+    return { loco, P, cam, anchors };
+  }, (t, c) => {
+    const { p, l } = c.cam(t); aim(st.camera, p, l); st.follow(0, 1, 8, 16);
+    c.loco.position.set(0, 0, 0);
+    c.loco.userData.xray(seg(t, T.tI - 0.1, T.tI + 1.4));
+    const on = (i) => seg(t, T.tP[i], T.tP[i] + 0.4), keep = (i) => 1 - 0.5 * seg(t, (T.tP[i + 1] || 99) - 0.1, (T.tP[i + 1] || 99) + 0.3);
+    c.P.computer.glow.material.emissiveIntensity = 2.5 * on(0) * keep(0); c.P.computer.glow.material.opacity = 0.35 * on(0) * keep(0);
+    c.P.readers.forEach((r) => r.material.emissiveIntensity = 3.0 * on(1) * keep(1));
+    c.P.sensors.forEach((r) => r.material.emissiveIntensity = 3.0 * on(2) * keep(2));
+    c.P.screen.material.emissiveIntensity = 3.0 * on(3) * keep(3);
+    const b = on(4); c.P.brake.material.emissiveIntensity = 3.0 * b; c.P.bpipe.material.emissiveIntensity = 2.0 * seg(t, T.tB + 0.3, T.tB + 1.2);
+    c.anchors.forEach((a, i) => st.pin($("q" + i), a));
+  });
+"""

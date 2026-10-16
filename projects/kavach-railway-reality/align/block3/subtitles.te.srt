@@ -1,0 +1,92 @@
+1
+00:00:00,000 --> 00:00:03,010
+Now, the question I promised you at the start.
+
+2
+00:00:03,010 --> 00:00:16,513
+Case one. Bahanaga Bazar, near Balasore in Odisha, June two, twenty twenty three. The Coromandel Express is coming in at about one hundred and twenty eight kilometres per hour, on a green signal for the main line.
+
+3
+00:00:16,513 --> 00:00:22,281
+But the crossover ahead is set towards the loop line... where a goods train is standing.
+
+4
+00:00:22,281 --> 00:00:30,315
+The official inquiry found lapses in signalling circuit work done at the station. Close to three hundred people lost their lives.
+
+5
+00:00:30,315 --> 00:00:32,888
+So, would Kavach have stopped it?
+
+6
+00:00:32,888 --> 00:00:37,490
+Here's the honest answer — nobody can say yes or no for sure.
+
+7
+00:00:37,490 --> 00:00:48,069
+Remember interlocking? At Balasore, the signalling system itself was showing a false green, and fed that same wrong information, Kavach could have believed the line was clear too.
+
+8
+00:00:48,069 --> 00:00:58,170
+A safety computer can't correct wrong information it trusts. Kavach does have a few checks of its own, but no public study has shown whether they would have acted in time there.
+
+9
+00:00:58,170 --> 00:01:06,426
+So the forward saying Kavach would surely have saved Balasore, and the one saying it surely couldn't, are both going beyond the evidence.
+
+10
+00:01:06,426 --> 00:01:19,714
+Case two. Rangapani, near New Jalpaiguri in north Bengal, June seventeen, twenty twenty four. The automatic signals had failed, so trains had to move on a paper authority, at a slow, careful speed.
+
+11
+00:01:19,714 --> 00:01:32,682
+The inquiry found the goods train was handed the wrong form, T-A nine one two instead of T-D nine one two, with no caution order, missing walkie talkies, and training that wasn't good enough... failures of the system, not just one loco pilot.
+
+12
+00:01:32,682 --> 00:01:43,009
+The goods train reached seventy eight kilometres per hour and hit the Kanchanjunga Express from behind at about forty. And there was no working Kavach on that section.
+
+13
+00:01:43,009 --> 00:01:57,418
+Here, Kavach could have made a real difference. With both trains fitted and the section working, it could have held the goods train to the allowed movement and a slow speed past those failed signals.
+
+14
+00:01:57,418 --> 00:02:13,194
+And what about the claim that Kavach always locks the speed at exactly fifteen kilometres per hour? Fifteen is the speed loco pilots must follow at failed signals — what Kavach enforces depends on its data and settings, so don't take that number as a promise.
+
+15
+00:02:13,194 --> 00:02:25,586
+Two crashes, two different failures. At Balasore the signalling information itself was wrong, at Kanchanjunga the backup rules broke down — and Kavach is strongest against the second kind.
+
+16
+00:02:25,586 --> 00:02:29,411
+So what can you actually do with all this? Three things.
+
+17
+00:02:29,411 --> 00:02:44,834
+One. When a Kavach forward lands in your family group, ask three questions before sharing it — is the number about fitted equipment or Kavach that's working, which date is it from, and was the problem a human mistake or wrong signalling data?
+
+18
+00:02:44,834 --> 00:02:57,914
+Two. Read the real thing instead. The railway ministry posts Kavach progress in press releases on the P-I-B website, and the Commission of Railway Safety puts its inquiry findings on its own website, free to read.
+
+19
+00:02:57,914 --> 00:03:07,004
+Three. If you see something unsafe on a train or at a station, report it to Rail Madad by calling one three nine, or through the Rail Madad app.
+
+20
+00:03:07,004 --> 00:03:21,982
+Kavach isn't magic, and it isn't useless. It's an Indian-built safety layer that brakes early when a human slips... as long as the engine is fitted, the track section is working, the signalling data is right, and there's enough room to stop.
+
+21
+00:03:21,982 --> 00:03:35,007
+Real safety isn't built on slogans. It's built by engineers and track crews doing careful, boring work right, every single day — and citizens who understand that keep the system accountable.
+
+22
+00:03:35,007 --> 00:03:40,623
+Tell me in the comments: which route do you travel most, and do you know if Kavach is working on it yet?
+
+23
+00:03:40,623 --> 00:03:47,082
+If someone you love travels by train, share this with them. Know the facts, stay practical... Jai Hind.
+

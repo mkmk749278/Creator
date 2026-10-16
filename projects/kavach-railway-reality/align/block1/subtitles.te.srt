@@ -1,0 +1,80 @@
+1
+00:00:00,000 --> 00:00:08,336
+It's two in the morning on a night train... the lights are off, the A-C is humming, and your whole family is asleep on the berths.
+
+2
+00:00:08,336 --> 00:00:14,803
+Up front, the loco pilot is staring into the dark — watching for a signal that might be red.
+
+3
+00:00:14,803 --> 00:00:21,595
+Then one morning there's news of a train crash, and by lunchtime your family WhatsApp group is on fire.
+
+4
+00:00:21,595 --> 00:00:29,894
+One forward says the government never bothered with safety, and another says India already has Kavach, so crashes should be impossible now.
+
+5
+00:00:29,894 --> 00:00:36,068
+Both forwards are playing with your fear — and both are missing what really happens on the track.
+
+6
+00:00:36,068 --> 00:00:38,555
+Welcome to Be Practical with Kishore.
+
+7
+00:00:38,555 --> 00:00:46,692
+Today we'll open the railway's own documents, do the braking maths together, and read what the official accident inquiries found.
+
+8
+00:00:46,692 --> 00:01:00,159
+And around the eight minute mark, I'll show you what the official inquiry reports actually found — and the honest answer to the hardest question of all... could Kavach have saved Balasore, or the Kanchanjunga Express?
+
+9
+00:01:00,159 --> 00:01:08,123
+Let's start with what Kavach actually is — because it isn't an app, and nobody can switch it on across India overnight.
+
+10
+00:01:08,123 --> 00:01:23,263
+Kavach is India's own Automatic Train Protection system. It watches the train's speed and the signals ahead, and if the train goes too fast or is about to pass a red signal, it warns the loco pilot... then brakes by itself if nothing changes.
+
+11
+00:01:23,263 --> 00:01:37,214
+In March twenty twenty two, in a test in Telangana with the Railway Minister on board, Kavach stopped two engines running towards each other on the same line, about three hundred and eighty metres apart.
+
+12
+00:01:37,214 --> 00:01:43,328
+It looks like magic on video. But Kavach is a chain of four links, and it only protects you when every link is in place.
+
+13
+00:01:43,328 --> 00:01:55,723
+Link one sits on the track — small R-F-I-D tags fixed to the concrete sleepers, which a reader under the engine reads as it passes, so the train knows exactly where it is and on which line.
+
+14
+00:01:55,723 --> 00:02:16,108
+People say there's one tag every kilometre. Actually, one kilometre is only the longest gap allowed — near signals, points and stations the tags crowd together, and on one stretch of about ninety six kilometres between Vadodara and Ahmedabad, the railway fixed two thousand eight hundred and seventy two of them.
+
+15
+00:02:16,108 --> 00:02:30,827
+Link two is the station. A Kavach computer there reads the signals, the points and which tracks are occupied, straight from the station's own signalling system — called interlocking. Remember that word.
+
+16
+00:02:30,827 --> 00:02:40,938
+Link three is the radio. Tall towers along the line carry messages between the station and the engine over a U-H-F safety radio... it's not your mobile network, and it's not five G.
+
+17
+00:02:40,938 --> 00:02:51,958
+And link four rides inside the engine — a Kavach computer, R-F-I-D readers, wheel speed sensors, a screen for the loco pilot, and a link to the brakes.
+
+18
+00:02:51,958 --> 00:03:00,190
+Think about that for a second — this is a system designed in India, by Indian engineers and Indian companies, for Indian tracks.
+
+19
+00:03:00,190 --> 00:03:19,057
+The electronics are built to S-I-L four, the highest safety level in railway signalling. Some posts say that means Kavach can fail only once in a billion hours... that's only half the story, because it's a strict limit for each safety function of the electronics, not a promise that no train will ever crash.
+
+20
+00:03:19,057 --> 00:03:24,278
+So keep this one in your pocket... Kavach can only act on the information it's given.
+

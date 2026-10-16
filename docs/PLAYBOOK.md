@@ -16,6 +16,7 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
   19 Control flow, secrets, evals · 20 Build phases · 21 Phase 0 measurements
 - Part D: 22 Recommendations
 - Part E: the owner's channel charter (verbatim)
+- Part F: the owner's production handoff guide and style examples for English films (verbatim, 2026-10-15)
 
 ---
 
@@ -156,7 +157,8 @@ look like a broadcast documentary or investigative film, **never a slide deck, c
 - **Mission and voice:** the "super-channel" for Telugu viewers: hooks with emotional urgency, a dark cinematic sound, clear
   chronology, Vox/Johnny Harris-style 2.5D visuals, and only peer-reviewed or primary legal sources. Narrator persona: the
   street-smart elder brother (అన్నయ్య), conversational Telugu, never victim-blaming (blame the system, not the viewer).
-- **Four acts:** (1) visceral hook (the charter's 0:00–1:15; timings are now proportions, see §4b), drone + ticking clock; (2) systemic betrayal / investigation, live-browsing
+- **Four acts** (for English films the owner's 2026-10-15 structure in §4a-4 replaces this: lived-reality hook + open loop →
+  forensic dissection → citizen's action plan → outro): (1) visceral hook (the charter's 0:00–1:15; timings are now proportions, see §4b), drone + ticking clock; (2) systemic betrayal / investigation, live-browsing
   mock-ups and highlighters; (3) climax and shock reveal, with **1.5 s of total music silence before the core truth and a
   braam/thud as the proof lands**; (4) practical defence: actionable, reassuring steps, warm outro. Science films map the
   same way: myth → mechanism → the real evidence → what you can safely do. A "Trojan horse" hook: open on the popular
@@ -174,7 +176,7 @@ look like a broadcast documentary or investigative film, **never a slide deck, c
 - **Sound matrix:** VO peaks −2 to −3 dB; BGM −24 to −26 dB under speech; −12 dB in pauses (0.5 s ramps); 0 (silence) for
   1.5 s before reveals; impacts −6 to −8 dB; clicks/typing/whoosh −8 to −10 dB. Supersedes the −18 to −22 dB in §11.
   Master stays −14 LUFS, −1 dBTP.
-- **Cadence:** focal change every 3.0–3.5 s (inside the 2.5–4 s rule).
+- **Cadence:** visual reset every **3.5–5.0 s** (owner, 2026-10-15, §4a-4; replaces the charter's 3.0–3.5 s and the 2.5–4 s rule).
 - **Engines:** the charter names FFmpeg and Python PIL/Matplotlib; HyperFrames (CLAUDE.md) stays the animation engine and
   FFmpeg the assembler, both running in cloud sessions because the owner has no PC (Termux can still run `assemble.py`).
 
@@ -203,7 +205,7 @@ starts 2:32"), one-sided framing (the chit-fund backlash) and news made late for
   **chapters of 2–4 min**, each with its own question and payoff;
   YouTube chapters in the description (00:00, at least three, each ≥ 10 s). (Moderate: viewing engagement medians cap
   near 6 min in a 6.9M-session study; Telugu explainers of 10–18 min hold millions of views.)
-- Energetic delivery throughout; "reassuring" never means slow. Focus change every 3.0–3.5 s with continuous motion.
+- Energetic delivery throughout; "reassuring" never means slow. Visual reset every 3.5–5.0 s with continuous motion (owner, 2026-10-15).
 - The 1.5 s silence + braam is **untested**: use it once or twice per film and check the retention curve at those
   timestamps after publishing.
 - **Every film gets its own art direction** (palette, texture family, motif) and varied act lengths, so the four-act
@@ -294,7 +296,8 @@ India while the topics stay India-first. Rules:
   per sentence, mostly 6–14 words. Same persona and craft as §4b (elder brother, talk don't read, ask then answer, `...`
   before a reveal, `?` on questions, a mid-film relevance turn).
 - **TTS text:** numbers and amounts as words ("thirty thousand rupees", "twenty twenty five"), acronyms as normal capitals
-  (RBI, GST, EMI, CIBIL, UPI); no digits, `₹`, `!`, double quotes, dashes, brackets or `&`. Voice Bunty on `eleven_v4`
+  written phonetically for the voice (§4a-4: R-B-I, E-M-I, Sibill); no digits, `₹`, `!`, double quotes, brackets or `&`;
+  em-dashes `—` are allowed for mid-thought pivots (owner, 2026-10-15). Voice Bunty on `eleven_v4`
   with `language_code: "en"` (check the first block for accent and pace before generating the rest).
 - **Words a Class 8 student knows** (owner, 2026-10-11: "even simpler"): bill (not statement), last date (not due date,
   after the first mention), loan (not debt, outstanding), "still pending" (not owe), maths, cancelled (not set aside),
@@ -311,15 +314,83 @@ India while the topics stay India-first. Rules:
   column an optional Telugu dub; `tools/build_script.py` lints English VO (`lint_en`) and builds the blocks from it.
 - On-screen text, citation tags and the description were already English; nothing changes there.
 
+### 4a-4. Owner's production guide for English films (2026-10-15)
+The owner's *Production & Scriptwriting Handoff* and *Style Comparison* (verbatim in Part F) set the standard for every
+English (Akash) film. They win over §4a-2 and the Part B charter where they differ. *Why (owner):* earlier English
+scripts sounded like "a news reader / textbook drone": stacked short sentences made Akash drop pitch at every full stop,
+lines like "Now let us understand…" sounded like a lecture, and raw acronyms were misread (`CIBIL` → "civil").
+
+**Voice: the practical elder brother, talking across a table.**
+- Never news-reader openers: "Now let us come to…", "First, one thing must be clear…", "Let us understand the maths in
+  very simple words…", "In this video we will examine…".
+- Lived Indian reality as the way in: salary day, WhatsApp family groups, auto rides, UPI, a police station, a bank
+  branch, a night train. Acknowledge fear and confusion without talking down.
+- **Sentence variety:** mix short punches with longer, flowing thoughts. Never three or more very short sentences in a
+  row (the lint flags runs of 3+ sentences under 6 words). Use `...` where the listener needs half a second for a number
+  or a reveal, `—` for a mid-thought pivot, `?` on every question.
+- **Not cynical, not preachy:** never hopeless about India and never bashing its systems. Celebrate Indian engineering and
+  capability, and examine the bottleneck honestly; the citizen who understands the system makes the country stronger.
+
+**Phonetics for Akash (mandatory in VO text):** `Sibill` (CIBIL), `Loke Uh-daa-lut` (Lok Adalat), `Ray-rah` (RERA),
+and letter acronyms with hyphens: `R-B-I`, `E-M-I`, `N-P-A`, `G-S-T`, `B-N-S-S`, `F-I-R`, `T-P-A`. Apply the same to
+any acronym said letter by letter (R-D-S-O, R-F-I-D, C-R-S, L-H-B). Acronyms people say as a word stay as words (Isro,
+Kavach). The English lint fails any bare capital acronym that is not on the project's word list. Amounts: the guide
+allows `₹65,000` or `65 thousand rupees`; we keep **number words** in VO text ("sixty five thousand rupees") because
+digits and lakh/crore grouping have been read the Western way.
+
+**Structure (3 acts + outro, 8–12 min unless the topic truly needs more):**
+1. **Lived-reality hook and open loop (0:00–~1:15):** an immediate Indian scenario, the popular myth (Trojan horse), and
+   an **open loop inside the first 60 s** that names when the payoff comes ("around the eight minute mark, I will show
+   you…"). The promised minute must be true in the final cut: check it against `align/` and fix the line if the edit
+   moves it. Promise only what the film delivers (§12).
+2. **Forensic dissection (~1:15–7:00):** the mechanism step by step; "what they tell you" vs "what the official document
+   actually says"; real cases (court orders, CAG, inquiry reports). The 1.5 s silence + braam before the core reveal stays.
+3. **Citizen's action plan (~7:00–10:30):** numbered steps the viewer can do (document → written escalation → statutory
+   remedy), with **verified** helpline numbers and portals (each one is a claim row in `claims.csv`).
+4. **Outro (~10:30–11:30):** connect the personal answer back to India's collective strength; one pinned-comment
+   question; sign-off **"Know your rights. Stay practical. Jai Hind."** (adapt the first phrase to the topic if it
+   doesn't fit).
+
+**Visual direction (four pillars):** (1) document forensics: the real circular / order / report on paper texture,
+yellow-orange kinetic highlighter on the clause, rubber stamps (`[VIOLATION]`, `[MANDATORY 60 DAYS]`); (2) interactive
+maths models: never state a calculation, simulate it (dynamic ledger, balance bar turning green to red; worked sums as animated
+HyperFrames simulations, not the whiteboard: see §4a-3 BOARD, owner 2026-10-16); (3) real geospatial and photographic evidence: satellite zooms, archive newspaper scans, official
+press releases; (4) pacing: a visual reset every **3.5–5.0 s**, and **no unmotivated stock of anonymous office workers
+typing**. Labels for illustrations, simulations and stand-ins (§5, §12) still apply.
+
+**Script format:** every script ships a **screenplay view** (`screenplay.md`, built by `tools/build_script.py`):
+`[TIME / SCENE] | [AUDIO VOICEOVER – AKASH] | [VISUAL FORENSICS & SOUND DESIGN]`, with `[VISUAL]`, `[ACTION]` and `[SFX]`
+for every scene, plus the paste-ready voice blocks.
+
+**Checklist before handing over a script** (the guide's §7): phonetics done; sounds like an elder brother, not a lecturer;
+varied rhythm with `...` and `—`; every scene has visual forensics and SFX; open loop in the first 60 s; honours India
+while telling the uncompromising truth. Facts still come only from `claims.csv` (§12): a style example in Part F is a
+model of tone, never a source (its numbers are not verified).
+
+**India maps (owner, 2026-10-16: "India map not good and accurate").** Draw India with its official boundary, never
+land-only shapes that merge it with its neighbours: Natural Earth's India point-of-view countries
+(`ne_10m_admin_0_countries_ind.geojson`, public domain) gives the outline India officially shows (full Jammu & Kashmir
+and Ladakh, Arunachal Pradesh, Andaman & Nicobar and Lakshadweep kept even when tiny). Fill India, glow its edge, dim the
+neighbours, state lines faint. Rail network: DataMeet Indian Railways (`github.com/datameet/railways`, CC0)
+stop sequences, consecutive stops under 35 km apart joined (≈ 71,700 km against 69,439 route km); route corridors over
+that graph (Delhi–Mumbai 1,377 km, Delhi–Howrah 1,440 km, both within 1% of the real distances). Natural Earth's own
+railroads layer is too sparse (≈ 41,000 km). Overpass (OSM) is blocked from the cloud container. Builder:
+`video/kavach-railway-reality/_D_tools/build_map.py`. Keep the whole country in frame unless a zoom is the point.
+
 ### 4a-3. Visual modes for explainers (owner, 2026-10-11)
 *Why (owner):* "not only slides": viewers stay to the end when they see real life, watch the maths being worked out and
 follow a character. Every explainer mixes, in this order of preference:
 1. **REAL**: real footage of what the VO names (stock via the Pixabay API, Commons, credited news); a real cutaway inside
    any other shot that runs past ~4 s.
-2. **BOARD**: every calculation is worked out live on a whiteboard in marker, like a teacher explaining; never a static
-   table. Use the reusable engine **`video/lib/whiteboard`** (README): real handwriting from single-line pen fonts,
-   written stroke by stroke with the nib on the ink, shapes, duster, `params.js` per shot. *Why:* the first sample
-   wiped a font left to right with a gliding marker; the owner saw it was not writing ("outdated").
+2. **MATHS AS ANIMATION** (owner, 2026-10-16, replaces BOARD): "Don't use that white board maths, use HyperFrames
+   animations, but it should not look like a text slide; as much high-quality animation as possible for crystal-clear
+   understanding." Every calculation is shown as the thing it describes, moving to scale: a train covering 36 m per
+   tick of a stopwatch (not "130 ÷ 3.6"); a stop drawn as amber and crimson zones under a speed curve with a real-time
+   readout and a TIME-LAPSE chip; a count filling a strip with a magnifier on one km; a 10×10 grid of 1% squares
+   against a dashed "one tenth" row. Numbers ride on the picture as counters and dimension brackets; the sum itself
+   appears at most once, small, in a lower-third (`OUR CALCULATION · …`). `video/lib/whiteboard` stays in the repo
+   for other uses but is not used for maths unless the owner asks. *Why:* the whiteboard read as a text slide.
+   Examples: `video/kavach-railway-reality/D1`, `D2`, `D3`, `D6`.
 3. ~~TOON~~ **No animated character** (owner, 2026-10-11, after a first test: "cancel character, use any clip that
    syncs to the situation"). Every action the VO says is a real clip (Pixabay API, Coverr, Commons, owner footage).
 4. **PROOF**: credited screen recordings of the real source page (bank, RBI, court, news) under a magnifier.
@@ -420,7 +491,9 @@ change, never mid-thought. Keep the punctuation rules in §4 (commas, full stops
    Stills are for authentic archival evidence only, and always animated (§5.4).
 4. **Text ≤ 15% of the screen**, only as 2–4-word lower-thirds, locations/dates/telemetry, counters, timers and meters, or a
    one-line credit. Never paragraphs or lists.
-5. **Cut, transition or pan every 2.5–4 s.** *Why:* retention; long holds read as a slideshow. Exceptions: LIVE clips and
+5. **Visual reset every 3.5–5.0 s** (owner, 2026-10-15: a camera-angle shift, document push-in, kinetic callout or icon
+   pop; was 2.5–4 s). *Why:* retention; long holds read as a slideshow, while cuts faster than the VO's thought felt
+   choppy. The shot itself never stops moving (rule 2). Exceptions: LIVE clips and
    HyperFrames explainer scenes.
 6. **Semantic lock:** every shot shows exactly what the VO says at that second (kidneys → renal animation, "CCTV
    isolation" → a high-angle surveillance view, "world record" → the actual attempt). *Why:* breath-hold showed a railway
@@ -573,7 +646,7 @@ re-test a source when it fails, and update this table. Licence rows marked ✱ n
 | Photos | Met Museum | `collectionapi.metmuseum.org/.../objects/<id>` → `primaryImage` | no | CC0 when `isPublicDomain` | 200 (search endpoint 410) |
 | Photos | Rijksmuseum | `data.rijksmuseum.nl/search/collection` | no | CC0 / PD | 200 |
 | Photos | Europeana | `api.europeana.eu/record/v2/search.json?reusability=open` | free key (`api2demo`) | per item | 200 |
-| Audio | **Openverse audio** (Freesound previews) | `api.openverse.org/v1/audio/?license_type=commercial` | no | CC0 / BY | 200 |
+| Audio | **Openverse audio** (Freesound previews) | `api.openverse.org/v1/audio/?license_type=commercial` | no | CC0 / BY | search 200; **`cdn.freesound.org` previews 403 from the cloud (2026-10-15)**: synthesise UI SFX in the mixer, take rail sound from clip audio, or the owner downloads |
 | Music | Incompetech | site | no | CC BY 4.0 | 200 |
 | Music | FreePD | site | no | CC0 | 200 |
 | Music | ccMixter, Free Music Archive | `ccmixter.org/api/query`, site | no | per track; many NC: skip those | 200 |
@@ -745,6 +818,59 @@ Reusable, parameterised scenes that any documentary (and the unified engine, §2
   in parallel write their rows to `video/lib/<scene>/library_rows.csv`; the coordinator merges them).
 - No new npm/pip dependencies without the coordinator: propose them in the README.
 
+### 9.2 Design from real photos first (owner, 2026-10-16)
+*Why (owner):* "Before design anything observe the real photos first, accordingly you can make it realistic design."
+The independent viewer review of the Kavach scenes found a generic "cab display" placeholder, a made-up screen layout,
+signals that did not look Indian and a three-track Balasore layout when the real one has four. Before any scene that
+draws real-world things, gather references (Commons categories via `list=categorymembers`, the files a Wikipedia article
+uses via `prop=images`, PIB photos, the owner), keep them in the project's `assets/ref/`, contact-sheet them into
+`qa/ref/`, and write `design-reference.md` (element → reference file → what to copy). Then draw from it: the real
+screen layout and labels, the real livery and colours, the real signal heads and plates, the real track arrangement.
+Commons: the search API rate-limits (429); category listings, `prop=images` and `Special:FilePath/<name>?width=960`
+files with a descriptive User-Agent and 8–45 s gaps worked. Example: `projects/kavach-railway-reality/design-reference.md`.
+
+### 9.3 Owner's CPU-only production guide (2026-10-16): what we use and why
+The owner shared "Claude Code in Cloud Sessions: Master CPU-Only Production Playbook". Mapping:
+- **FFmpeg virtual camera** (`zoompan`, `crop`, `overlay`, `vignette`): **use**. Documents, PIB pages and real photos
+  get eased push-ins and pans in FFmpeg at assembly (cheap, real time); grain and vignette are added there too (§9).
+- **Remotion**: not added. HyperFrames (pinned) is the same idea (Chromium + JS timeline → MP4 on CPU) and every
+  scene, check and render tool here is built on it; a second engine would split the look and the checks.
+- **Manim / Matplotlib / OpenCV**: not needed for the current films; braking curves, counters and charts are HyperFrames
+  SVG scenes that share the film's look. Pillow + FFmpeg cover stills and contact sheets.
+- **Client-side WebGL (send the owner an HTML file)**: not usable for a film, because the MP4 must contain the 3D.
+  Three.js scenes render in the cloud on SwiftShader (≈ 27 s per output second without N8AO, §9), which is affordable.
+- **No Blender Cycles, no local video diffusion, no heavy physics bakes**: already our rule.
+- **yt-dlp clips**: used when YouTube answers from the container; never routed around blocks (CLAUDE.md).
+- **Akash V4 takes under 1,500 characters**: the guide's limit for English Akash takes, against our 4,000–4,500 for Bunty.
+  Apply to the next English script's voice blocks and confirm with the owner.
+
+### 9.4 3D railway world: lessons from the Kavach A scenes (2026-10-16)
+`video/kavach-railway-reality/_A_lib/kav3d.js` is a reusable Three.js railway world built from reference photos
+(broad-gauge track on PSC sleepers, WAP-style loco, LHB coaches, Indian 4-aspect signal, OHE, station Kavach cabinet,
+relay racks, RFID tag, lattice tower, X-ray loco parts). Each item below cost a build:
+- **Bloom on SwiftShader:** pmndrs `BloomEffect` with `mipmapBlur: true` left dark halos around bright objects; Kawase
+  (`mipmapBlur: false, kernelSize: 4`) does not. **ACES** tone mapping pushed saturated cyan bloom below zero (red/green
+  channels clip to 0, a dark ring); use **AgX**. `VignetteEffect` showed a hard elliptical edge on smooth skies; use a
+  smoothstep radial vignette in the grain pass instead.
+- **DOM labels pinned to 3D points:** call `camera.updateMatrixWorld()` before `Vector3.project()`. Three refreshes the
+  view matrix only at render time, and seeks jump, so labels otherwise use the previous frame's camera (off by ~150 px).
+- **GSAP clears the CSS `translate` property** on elements it transforms. Centre a pinned chip with a static wrapper
+  (fixed width, negative margin), never with `translate` or `xPercent` on the animated element.
+- **HyperFrames waits on `window.THREE.DefaultLoadingManager`:** set `window.THREE` and bracket async setup (fonts for
+  canvas textures, HDRI) with `itemStart`/`itemEnd`.
+- **Indian signal lamp order is Y, G, Y, R from the top: red is the bottom lamp,** on the post, in cab-screen icons and in
+  every schematic. Signals stand to the left of the line (left-hand running).
+- **Physics on screen must add up:** a "next signal 40 m" readout at 100 km/h shows a train running the red; size the
+  scene from the stopping distance first (A1: brake 470 m short at 108 km/h, 1.1 m/s²).
+- **Native 4K of a WebGL scene (Kavach, 2026-10-16):** `make_native_4k.mjs` sets the root to 3840×2160, so a renderer
+  sized from `data-width` draws a true 4K buffer: ~12 s a frame (3× the 1080p cost) and DOM pins placed at 4K coordinates
+  inside the 2× zoom stage (wrong place). `video/kavach-railway-reality/_tools/render_4k.sh` keeps the WebGL buffer at
+  1920×1080 in the copy, so the canvas is scaled 2× while text and SVG render at true 4K: ~3.8 s a frame with 2 workers
+  (a 15 s 3D scene ≈ 20–38 min); 2D scenes run at ~0.5 s a frame. The whole 46-scene, 8:34 film took ~3.5 h on one VM.
+  Raw scene MP4s come out at ~100 Mbit/s; the reel re-encode caps at 40 Mbit/s. The queue is resumable (`.done`
+  markers): after a VM pause, start the same list again.
+- Render cost: about 4 s per frame at 1080p, 3 workers (shadows + bloom + FXAA + grain), so a 15 s 3D scene takes ~30 min.
+
 ## 10. HyperFrames (pinned `hyperframes@0.8.103`)
 
 Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
@@ -840,9 +966,19 @@ Contact-sheet the cut (`scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --
 and go shot by shot; write `review.md` (issue → shot IDs → fix). In a session, read the sheets yourself at `high` effort or
 above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at `max` and writes `review.md`/`review.json`
 (exit 1 on blockers). Fact-check gate first: `scripts/claims_check.py projects/<slug>/claims.csv`. Skill: `/review-cut`.
+**Independent viewer review (owner, 2026-10-16).** *Why:* "even if you review yourself you mostly consider CLAUDE.md and
+the playbook; an independent session should review independently, as a general audience." After our own review, open
+**one** cloud session **without the repo attached** (`create_session` with no `source_url`, so no CLAUDE.md, playbook or
+skills load). Give it only what a viewer gets: a Drive download link (`https://drive.google.com/uc?export=download&id=<id>`)
+to the cut, with the VO laid in (build the program VO from `align/program.json`), and the narration text with reel
+timecodes. Ask for a blunt verdict, a per-scene score table (what's wrong, frame time, fix) and the top 10 fixes. It
+judges clarity, pace, phone legibility, slide-look and what looks wrong; we check its claims against the sources and
+rules before changing anything. Read its answer with `list_events`, then archive the session.
 - [ ] ≥ 85% moving footage or animation; no unmoving still or flat frame over 1.5 s; no shot over 4 s except LIVE clips and
       HyperFrames scenes.
 - [ ] Every shot matches the exact words over it; the VO is silent under every diegetic or LIVE moment.
+- [ ] English films (§4a-4): the open loop's promised minute matches the cut; a visual reset every 3.5–5 s; no stock
+  of anonymous office workers typing; acronyms in the VO were said correctly (listen, don't assume).
 - [ ] Face and name on screen within 20 s; name lower-third returns when the VO says the name.
 - [ ] Every frame's on-screen data agrees with the VO (numbers, monitors, headlines, dates).
 - [ ] Stand-ins labelled "ILLUSTRATIVE FOOTAGE"; authentic footage carries its source credit.
@@ -1020,6 +1156,19 @@ took 90 min in a subagent while sourcing, scenes and assembly ran). Lessons:
   full-length previews (one "ambience" was a 53-min file): check `duration` before downloading.
 - Cut review caught: near-black title beats (snow/embers on black), a black frame from a source fade-in, cover-cropped
   people in 4:3 photos (pre-crop a 16:9 band), a mitochondria scene reused as a missing-photo fallback 20 s after itself.
+- **English (Akash) takes run ~10% faster than `estimate_vo.py`** (fitted on Telugu Bunty): jet-engine-paradox's two
+  aligned blocks were 544 s real vs 605 s estimated (0.90×). Multiply English estimates by ~0.9 when planning length and
+  the open-loop minute, until the estimator gets an English fit (2026-10-15).
+- **Owner's handoff briefs can carry unverified "facts"** (Kavach: "one tag every km", "40 m towers every 2–3 km",
+  "100% saved", "Kavach would NOT have prevented Balasore"): the owner's own audit files rejected them. Check every brief
+  line against the audits/sources first and list each change with its reason in `brief/changes-from-brief.md`.
+- **Five scene sessions + two sourcing agents + the coordinator hit the account's five-hour usage limit ~10 minutes
+  after launch** (Kavach, 2026-10-15): every session and agent stopped with "session limit" and had to be resumed by
+  message after the reset. All sessions share one usage limit, so parallelism spends it faster; launch 3 sessions at a
+  time, tell each to commit and push after every finished scene, and resume with `send_message` after a reset.
+- **Indian Railways servers (rdso.indianrailways.gov.in, indianrailways.gov.in, sr.indianrailways.gov.in) reset
+  connections from the cloud container**, archive copies too. Use PIB, Sansad, CRS (crs.gov.in works) and IRIMEE copies,
+  or ask the owner to open a PDF on the phone; keep a verified fallback line ready (2026-10-15).
 
 ---
 
@@ -1333,3 +1482,288 @@ When the user supplies a topic and core hypothesis:
 ##### Phase 4: Local Assembly & FFmpeg Rendering
 - Assemble the assets via FFmpeg on Android/Termux using low-overhead filtergraphs.
 - Output a production-ready, fully mastered 1080p MP4 file.
+
+# Part F: Owner's production handoff guide and style examples (verbatim, received 2026-10-15)
+
+Kept word for word. How each point maps onto this playbook: §4a-4 (which notes where we keep a stricter rule, e.g.
+number words in VO text and fact-checked numbers only).
+
+## F.1 Production & scriptwriting handoff guide
+
+# Master Production & Scriptwriting Handoff for Claude
+## Channel: Be Practical with Kishore | Voice Engine: ElevenLabs (Akash V4)
+
+> **How to Use This Document:** Copy and paste this entire document directly into Claude as your primary System Prompt / Instruction Set before generating scripts, outlines, or visual storyboards for *Be Practical with Kishore*.
+
+---
+
+## 1. Channel Identity & Audience Ethos
+
+* **Channel Name:** Be Practical with Kishore
+* **Core Mission:** Demystifying complex Indian financial traps, civic rights, legal protections, and industrial engineering paradoxes through forensic documentary storytelling.
+* **Target Audience:** 100% Indian citizens—salaried professionals, middle-class households, youth, small business owners, and families navigating modern Indian consumer and legal systems.
+* **National Sentiment & Ethos:**
+  * **Not Cynical, Not Preachy:** Never sound hopeless about India. We do not bash Indian systems; we empower Indian citizens to navigate them intelligently.
+  * **Curiosity & National Pride:** Connect every topic to India’s growth story. When an Indian citizen understands their rights (RBI rules, BNSS, RERA), the entire nation becomes stronger and more accountable. In macro stories (Semiconductors, ISRO, Railways, Defense), celebrate Indian engineering brilliance while critically examining industrial bottlenecks.
+
+---
+
+## 2. Voice & Tone: Killing the "News Reader" Drone
+
+### The Problem
+Previous scripts sounded like formal textbook chapters or dry news broadcasts:
+* ❌ *"Now let us come to the biggest fear..."*
+* ❌ *"First, one thing must be clear..."*
+* ❌ *"Let us understand the maths in very simple words..."*
+* ❌ *"In this video we will examine eight points..."*
+
+### The New Standard: The "Practical Elder Brother / Trusted Guide"
+Kishore is not a news anchor reading a teleprompter; he is a sharp, street-smart, legally sound friend talking to you across a table.
+* **Conversational Phrasing:** Use natural Indian English rhythms, conversational bridges, and relatable daily experiences (salary day on the 1st or 5th, WhatsApp family groups, auto rides, UPI payments, local police stations, bank branch visits).
+* **Direct Emotional Connection:** Acknowledge fear, confusion, and frustration without patronizing.
+* **Spoken-Word Sentence Variety:** Mix short, punchy statements with longer rhythmic observations. Never write five 4-word sentences back-to-back—this causes ElevenLabs to produce a robotic, repetitive downward inflection.
+
+---
+
+## 3. ElevenLabs Akash V4: Voice Optimization & Audio Rules
+
+Because the channel uses ElevenLabs **Akash**, the script MUST be optimized specifically for speech synthesis. Raw written text creates fatal pronunciation errors and monotonic cadence.
+
+### Mandatory Phonetic Substitution Table
+Always write these terms phonetically in the final voiceover script:
+
+| Intended Term | NEVER Write in Script | ALWAYS Write for Akash | Why |
+| :--- | :--- | :--- | :--- |
+| **CIBIL Score** | `CIBIL` | `Sib-ill` or `Sibill` | Akash pronounces `CIBIL` as the English word *"civil"*, destroying credibility. |
+| **Lok Adalat** | `Lok Adalat` | `Loke Uh-daa-lut` | Prevents garbled pronunciation of legal terms. |
+| **NPA** | `NPA` | `N-P-A` | Prevents the model from slurring it into one syllable. |
+| **EMI** | `EMI` | `E-M-I` | Ensures clean letter-by-letter spacing. |
+| **GST** | `GST` | `G-S-T` | Crisp institutional pronunciation. |
+| **RBI** | `RBI` | `R-B-I` | Avoids swallowing the acronym. |
+| **BNSS** | `BNSS` | `B-N-S-S` | Clear statutory articulation. |
+| **RERA** | `RERA` | `Ray-rah` | Standard Indian legal cadence. |
+| **FIR** | `FIR` | `F-I-R` | Prevents reading as the word "fur". |
+| **TPA (Insurance)** | `TPA` | `T-P-A` | Third-party administrator clarity. |
+| **Rupee Amounts** | `Rs 65000` or `65k` | `₹65,000` or `65 thousand rupees` | Natural speech flow. |
+
+### Punctuation-Based Breath & Cadence Control
+* **The Dramatic Pause (`...`):** Insert ellipses when the listener needs half a second to process a shocking number or revelation.
+* **The Mid-Thought Pivot (`—`):** Use em-dashes instead of commas to create natural conversational hesitation.
+* **Question Marks with Hooks:** End questions naturally to force upward vocal inflection.
+* **Eliminate Monotony:** Never stack short, choppy sentences. Blend short punches with flowing thoughts.
+
+---
+
+## 4. Crystal-Clear Audio Script Comparison
+
+### Example 1: Explaining Credit Card Debt & Non-Performing Assets
+
+#### ❌ OLD WAY (News Reader / Textbook Drone)
+> "Now let us understand the payment timeline. If the minimum amount due is not paid for ninety days from the due date, under Reserve Bank of India rules the account becomes an NPA, which means Non-Performing Asset. This means the bank categorizes it as a bad loan. Does this mean you do not have to pay? No, it does not cancel your debt. Now let us look at the late fee calculation."
+
+*Why it fails:* Cold, academic, repetitive sentence cadence. Sounds like reading an RBI annual report.
+
+#### ✅ NEW WAY (Human, Relatable, Formatted for Akash)
+> "Here is what happens on day 90... that no branch manager will ever admit to your face.
+> 
+> When your bill crosses that 90-day mark, the bank doesn’t just tag your file as an N-P-A—a Non-Performing Asset. Behind the scenes, strict R-B-I rules kick in... forcing that bank to take 25% of your entire pending balance straight out of their own quarterly profits, and lock it away in a provision vault. 
+> 
+> Think about that for a second. 
+> 
+> The sudden flood of aggressive calls? The urgent recovery messages at 8:01 in the morning? It’s not happening because you committed a crime. It’s happening because your single unpaid card is literally punching a hole in that bank manager’s balance sheet."
+
+---
+
+### Example 2: The India Semiconductor Mission (Curiosity & National Pride)
+
+#### ❌ OLD WAY (Generic Corporate Explainer)
+> "In 2021 India launched the India Semiconductor Mission with an incentive of ten billion dollars. India designs twenty percent of the world's chips in Bengaluru. But India does not manufacture them. Therefore, the government is funding Tata and Micron to build fabs in Gujarat and Assam."
+
+*Why it fails:* Bland list of facts; zero emotional stakes or cinematic intrigue.
+
+#### ✅ NEW WAY (Cinematic, Forensic, Proud & Grounded)
+> "Walk into any technology park in Bengaluru, Hyderabad, or Noida tonight... and look up at those glowing glass towers. 
+> 
+> Inside, Indian engineers are designing the most advanced microchips on planet Earth—routing microscopic power lines for Apple, Nvidia, and Qualcomm. Almost 20% of the world’s chip brains are born right here on our soil. 
+> 
+> But here is the heartbreaking paradox: once our engineers hit 'Send', those digital blueprints fly across undersea cables to factories in Taiwan and South Korea. We design the brains... but we don’t own the hands. And when global supply chains snapped, our own car factories sat frozen with finished vehicles waiting for a three-dollar piece of imported silicon. 
+> 
+> Today, in the red soil of Dholera and the industrial corridors of Assam, that 40-year curse is finally being broken."
+
+---
+
+## 5. Visual Direction: Ending the "Stock B-Roll Wallpaper"
+
+Claude must script videos in a **Dual-Column Screenplay Format** featuring three dedicated visual tracks:
+
+```markdown
+========================================================================================
+[TIME / SCENE] | [AUDIO VOICEOVER - AKASH]           | [VISUAL FORENSICS & SOUND DESIGN]
+========================================================================================
+[00:00 - 00:15]| "You swipe your card for groceries... | [VISUAL]: Ultra-realistic kinetic UI
+               | and think you have 50 days free.    | simulation of an HDFC/ICICI mobile 
+               | But look at what happens on day 51." | banking statement.
+               |                                     | [ACTION]: Dynamic camera zoom-in. 
+               |                                     | Animated fluorescent yellow highlighter 
+               |                                     | sweeps across line item: "Finance Charges".
+               |                                     | [SFX]: High-frequency digital UI 'blip' + 
+               |                                     | metallic cash register latch snap.
+```
+
+### The 4 Visual Pillars of "Be Practical"
+1. **Document Forensics:**
+   * Actual RBI circulars, Supreme Court orders, and IRDAI gazette notifications displayed with real paper textures.
+   * Kinetic highlighter effects (yellow/orange) isolating specific legal clauses.
+   * Bold rubber stamps: `[VIOLATION]`, `[ILLEGAL DEMAND]`, `[MANDATORY 60 DAYS]`.
+2. **Interactive Mathematical Models:**
+   * Never just state a calculation—simulate it.
+   * Show a dynamic digital ledger: Principal (₹30,000) $\rightarrow$ Late Fee (₹750) $\rightarrow$ Interest (₹1,125) $\rightarrow$ 18% GST (₹337). An interactive balance bar turns from green to alarming red.
+3. **Real Geospatial & Photographic Evidence:**
+   * Satellite imagery (Google Earth Studio) zooming into Dholera SIR, Sanand Micron facility, or Bengaluru storm water drains (Rajakaluves).
+   * Archival newspaper scans and verified official press releases rather than anonymous stock video clips.
+4. **Pacing Rules:**
+   * Visual reset every **3.5 to 5.0 seconds** (camera angle shift, document push-in, kinetic text callout, or icon pop).
+   * Zero unmotivated stock video clips of anonymous corporate workers typing on laptops.
+
+---
+
+## 6. Video Structure: The 3-Act Retention Formula (8–12 Minutes)
+
+All future scripts produced by Claude must adhere strictly to this structural blueprint:
+
+* **Act 1: The Lived-Reality Hook & The Open Loop (0:00 – 01:15)**
+  * Establish an immediate, visceral Indian scenario (an unexpected WhatsApp threat, an inflated hospital bill, an imported defense component).
+  * Introduce the **High-Stakes Open Loop**: *"At minute 06:40, I will give you the exact statutory clause that forces the bank to reverse this charge immediately."*
+* **Act 2: The Forensic Dissection & The Hidden Trap (01:15 – 07:00)**
+  * Break down the math, law, or engineering mechanism step-by-step.
+  * Contrast *"What they tell you"* vs. *"What the official gazette actually says"*.
+  * Use real case precedents (Consumer Court orders, High Court rulings, CAG audit findings).
+* **Act 3: The Citizen’s Action Plan & Tactical Counter-Moves (07:00 – 10:30)**
+  * Actionable, step-by-step roadmap: Step 1 (Document), Step 2 (Official Written Escalation), Step 3 (Statutory Ombudsman / Legal Remedy).
+  * Specific helpline numbers (14448 for RBI, 1930 for Cyber Crime, 112 for Police).
+* **Outro: National Pride, Community Question & Call to Action (10:30 – 11:30)**
+  * Connect the personal solution back to the collective strength of India.
+  * Pinned-comment question that drives authentic discussion.
+  * Reminder: *"Know your rights. Stay practical. Jai Hind."*
+
+---
+
+## 7. Claude Quality Checklist Before Delivering Any Script
+
+Before presenting a finished script, Claude must verify:
+- [ ] Are all Indian financial and legal terms spelled phonetically for ElevenLabs Akash (`Sib-ill`, `N-P-A`, `Loke Uh-daa-lut`)?
+- [ ] Does the script read like a natural, caring elder brother or practical legal advocate rather than an academic lecturer?
+- [ ] Are sentences structured with diverse rhythms, conversational pauses (`...`), and mid-thought breaks (`—`)?
+- [ ] Does every single scene include precise visual forensic direction (documents, highlighters, UI mockups, maps) and specific SFX cues?
+- [ ] Is there an upfront open loop within the first 60 seconds?
+- [ ] Does the video honor and inspire love for India while delivering rigorous, uncompromising truth?
+
+## F.2 Style comparison examples
+
+# Style Comparison & Script Samples: Before vs. After
+## Voice Engine: ElevenLabs (Akash V4) | Channel: Be Practical with Kishore
+
+This reference showcases how to transform dry, news-reader scripts into conversational, human, India-centric investigative narratives.
+
+---
+
+### Case Study 1: Financial & Civic Defense
+**Topic:** Pillar 3 — Recovery Agent Harassment & RBI Rights
+
+#### ❌ Current Style ("News Reader / Textbook Drone")
+*Taken directly from recent upload patterns:*
+> "A message comes on your phone your credit card payment is overdue. In our last video we saw how paying only the minimum keeps you in debt. Today a harder question: what if you cannot pay even that minimum? Many people think there is one answer for everyone, there isn't. Someone who owes ten thousand rupees and someone who owes ten lakh live two very different stories. Under the rules, recovery calls are permitted only between eight in the morning and seven in the evening. If recovery agents violate these rules, you can file a complaint with the Reserve Bank of India Ombudsman."
+
+**Why It Fails:**
+1. **Robotic Cadence:** Monotonous sentence structure causes ElevenLabs Akash to drop pitch repetitively at every period.
+2. **Cold Delivery:** Sounds like a legal textbook being read aloud; fails to connect with the visceral panic of an Indian citizen facing harassment.
+3. **Phonetic Traps:** Acronyms like `RBI` and `CIBIL` are mispronounced as "arbitrary letters" or "civil".
+
+---
+
+#### ✅ Upgraded Style ("Human Elder Brother / Forensic Legal Guide")
+*Written specifically with breath markers, emotional stakes, and ElevenLabs Akash phonetics:*
+
+```markdown
+[VOICEOVER - AKASH V4]
+Your phone buzzes on the table... It's an unknown 10-digit number. 
+
+You look at it, and your stomach sinks—because you already know who it is. 
+
+30 calls yesterday. 40 calls today. And then comes that WhatsApp message from a so-called "field executive": *"We are coming to your house today at 4 PM. Keep the cash ready or face police action."*
+
+Look at me for a second... Take a deep breath. 
+
+If you are going through this right now, I want you to know one thing: missing an E-M-I does not make you a criminal. And you do not have to live in fear inside your own home.
+
+Today, I’m not just going to give you sympathy—I’m going to give you the law. 
+
+At minute 05:20, I will show you the exact R-B-I Fair Practices circular... along with a ready-to-send 3-line legal email that forces the bank to pull their agents back within 24 hours. 
+
+You owe the money... yes. But you never sold your dignity. Let’s look at the facts.
+```
+
+**Visual Forensics & SFX Layer for this Scene:**
+* **Visual:** Realistic mockup of an Indian smartphone lock screen displaying 14 missed calls and a threatening WhatsApp preview from *"Recovery Team - Urgent"*.
+* **Action:** Camera smoothly pushes in. The screen dims, and an authentic official PDF of the **RBI Master Direction on Fair Practices Code** slides into frame. An animated neon-yellow highlighter underlines the statutory operating hours: `8:00 AM to 7:00 PM`.
+* **Sound Design:** 
+  * Subtle, jarring phone vibration buzz on wood (`bzzz... bzzz...`).
+  * Deep sub-bass drop when mentioning the WhatsApp threat.
+  * Instant, dead silence when Kishore says: *"Take a deep breath."*
+
+---
+
+### Case Study 2: National Engineering & Industrial Curiosity
+**Topic:** Pillar 6 — Indian Semiconductor & High-Tech Manufacturing
+
+#### ❌ Current Style ("Generic Corporate Explainer")
+> "In 2021 car manufacturers across India had parking lots full of brand new vehicles. Yet none of them could be sold because they were missing a piece of silicon smaller than your fingernail. Today over 60 percent of the world's microchips come from Taiwan. To break this vulnerability, India launched a 10 billion dollar incentive package. Many people ask if Indian manufacturing can achieve the precision required to compete with TSMC."
+
+**Why It Fails:**
+1. **Informational without Intrigue:** Recites statistics without cinematic imagery.
+2. **Missing Emotional Stakes:** Treats India’s industrial journey like a dry government press release.
+
+---
+
+#### ✅ Upgraded Style ("Cinematic Pride & Relentless Investigation")
+*Evokes curiosity, national pride, and engineering reality:*
+
+```markdown
+[VOICEOVER - AKASH V4]
+In late 2021, something completely bizarre was happening outside car factories across Pune, Chennai, and Gurugram. 
+
+Thousands of brand-new SUVs and sedans were rolling off assembly lines—sparkling paint, plush leather seats, fully built engines... 
+
+And yet, not a single one could be delivered to waiting customers. They were parked in dusty open fields by the thousands. 
+
+Why? Because each of those 15-lakh-rupee machines was waiting for a single chip... smaller than a child's fingernail, costing less than three dollars. 
+
+And every single one of those chips had to travel 4,000 kilometers across the sea from a tiny island called Taiwan.
+
+Think about the absurdity of this: our Indian engineers in Bengaluru and Hyderabad design almost 20% of the world’s most powerful microprocessors. We have the finest software brains on the planet. 
+
+So why couldn't a nation that landed a spacecraft on the South Pole of the Moon make a simple three-dollar microcontroller?
+
+Today, in the industrial heartlands of Dholera, Gujarat and Jagi Road, Assam, that answer is being built in concrete and steel. But between the grand speeches and the actual chips... lies a brutal engineering gauntlet that nobody is talking about. 
+
+Here is the untold story of India’s 10-billion-dollar semiconductor gamble.
+```
+
+**Visual Forensics & SFX Layer for this Scene:**
+* **Visual:** High-resolution satellite zoom (Google Earth Studio) swooping from the auto hubs of Pune to the sea-lanes of the Taiwan Strait, landing directly on an isometric 3D blueprint of the Tata-PSMC Dholera cleanroom facility.
+* **Action:** Dynamic split-screen comparing Chandrayaan-3 landing telemetry against the atomic precision of an Extreme Ultraviolet (EUV) lithography mirror.
+* **Sound Design:** 
+  * Industrial machinery hum layered with high-tech digital sweeps.
+  * Cinematic riser building tension until the beat drops on *"Here is the untold story"*.
+
+---
+
+### Core Upgrades Summary Table
+
+| Dimension | Previous Channel Output | Upgraded Benchmark |
+| :--- | :--- | :--- |
+| **Speaker Persona** | Distant, clinical news reporter | Empathetic elder brother / fearless civic advocate |
+| **ElevenLabs Optimization** | Raw text, leading to `CIBIL` $\rightarrow$ "civil" errors | Full phonetic dictionary (`Sib-ill`, `N-P-A`, `Ray-rah`) |
+| **Vocal Inflection** | Monotonous pitch drops at every period | Dynamic sentence length, dramatic pauses (`...`), em-dashes (`—`) |
+| **Visual Architecture** | Anonymous stock videos of people at desks | Real government gazettes, court orders, kinetic math models, satellite maps |
+| **India-Centric Angle** | Generic consumer advice | Grounded in Indian middle-class life, celebrating Indian capability while solving real systemic pain |
