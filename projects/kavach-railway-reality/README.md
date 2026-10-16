@@ -29,7 +29,7 @@ land the payoff at ~7:30–8:15, or re-record that one sentence. Next: beats, so
 1. **Real world** (night cabs, fog, tracks, sheds, archive of the two crash sites, credited and short).
 2. **Telemetry world** (the machine's view): Kavach cab-display grammar: target distance, permitted speed, braking curve
    drawn ahead of the train, signal aspects on carbon slate; the 3D hardware X-ray of the loco and track.
-3. **Board and proof world**: maths worked live on `video/lib/whiteboard`; RDSO, CRS and PIB pages under the forensic magnifier.
+3. **Maths and proof world**: maths as to-scale animation (no whiteboard, owner 2026-10-16); RDSO, CRS and PIB pages under the forensic magnifier.
 
 Palette (owner's handoff): Carbon Slate `#0F172A` (base), Signal Cyan `#0284C7` (Kavach, data, radio), Amber Caution
 `#F59E0B` (warnings, our calculations), Danger Crimson `#DC2626` (failure, collision), Crisp White `#F8FAFC` (text).

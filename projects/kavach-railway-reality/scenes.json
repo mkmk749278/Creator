@@ -521,11 +521,11 @@
    }
   ],
   "breaks": [],
-  "spec": "First half: evenly spaced dots along a line get a red cross; then the dots regroup, clustering thickly around a signal and a turnout (`MAX GAP 1 KM`). Second half: WHITEBOARD (video/lib/whiteboard) over a faint map of the Vadodara–Ahmedabad stretch: write `96 km · 2,872 tags`, then `2,872 ÷ 96 ≈ 30 per km`, circle 30. On-screen `MAX GAP 1 KM · 96 KM · 2,872 TAGS`."
+  "spec": "First half: evenly spaced dots along a line get a red cross; then the dots regroup, clustering thickly around a signal and a turnout (`MAX GAP 1 KM`). Second half (animated, no whiteboard; owner 2026-10-16): whip pan to a 96 km Vadodara–Ahmedabad strip that fills with 2,872 amber tags (counter), then a lens magnifies 1 km: ≈ 30 tags. On-screen `MAX GAP 1 KM · 96 KM · 2,872 TAGS`."
  },
  "D2_board_speed": {
   "session": "D",
-  "title": "Board: 130 ÷ 3.6 ≈ 36 m every second",
+  "title": "130 km/h = 36 m every second",
   "start": 241.84,
   "end": 246.61,
   "duration": 4.77,
@@ -541,11 +541,11 @@
    }
   ],
   "breaks": [],
-  "spec": "WHITEBOARD: write `130 km/h ÷ 3.6 ≈ 36 m/s`, underline 36, write `every second`. Tag: OUR CALCULATION."
+  "spec": "Real time, real scale: a trainset at 130 km/h passes a post every second, 36 m brackets light up, stopwatch and metres counter. Lower-third `130 KM/H · OUR CALCULATION 130 ÷ 3.6 ≈ 36 M/S`."
  },
  "D3_board_freight": {
   "session": "D",
-  "title": "Board: freight ≈ 930 m (illustrative model)",
+  "title": "Freight ≈ 930 m (illustrative model)",
   "start": 246.61,
   "end": 259.11,
   "duration": 12.5,
@@ -561,7 +561,7 @@
    }
   ],
   "breaks": [],
-  "spec": "WHITEBOARD as a ledger: `5,000 t · 75 km/h = 20.8 m/s`; `delay 10 s → 208 m`; `braking v²/2a, a = 0.30 → 723 m`; `total ≈ 930 m`, boxed, with ILLUSTRATIVE MODEL written small. Tag: OUR CALCULATION."
+  "spec": "Close tracking shot of a loaded goods train at 75 km/h pulls out (time-lapse) to a 1 km ruler: the brake application travels back along the wagons, amber zone `≈ 208 m` (brakes build up, 10 s) then crimson `≈ 723 m` under a speed curve, total bracket `≈ 930 m`; readouts km/h, metres, real seconds. Tag: OUR CALCULATION."
  },
  "D4_network_size": {
   "session": "D",
@@ -621,7 +621,7 @@
    }
   ],
   "breaks": [],
-  "spec": "Same map: a South Central Railway section glows in a second colour (amber-cyan); then WHITEBOARD inset: `(2,633 + 1,465) ÷ 69,439 < 10%`. On-screen `VERSION 3.2 · 1,465 RKM · UNDER 10%`."
+  "spec": "Same map: a South Central Railway section glows in a second colour (amber-cyan); then a 10×10 grid (1 square = 1% of the network) lights ≈ 5.9% against a dashed ONE TENTH row. On-screen `VERSION 3.2 · 1,465 RKM · UNDER 10%`."
  },
  "D7_funnel": {
   "session": "D",

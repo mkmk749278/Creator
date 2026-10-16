@@ -7,7 +7,7 @@ after a scene's lines are included. `cues` give each line's time *inside* the sc
 to the words without reading the alignment. Break scenes (title, chapter cards) have their own fixed durations.
 
 Sessions: A = 3D hardware world (Three.js), B = braking and fog telemetry, C = crash forensics, D = rollout data and
-whiteboard maths, E = phone UI, stamps, title and chapter cards. Everything else (real footage, documents under the
+animated maths, E = phone UI, stamps, title and chapter cards. Everything else (real footage, documents under the
 magnifier, the end card) is the coordinator's (visual-plan.md). On-screen text comes from script.full.tsv (fact-checked):
 sessions must not change it.
 
@@ -129,17 +129,19 @@ SCENES = {
         "torn paper slip); on 'Kavach is strongest against the second kind' the right column gets a cyan shield. "
         "On-screen `WRONG INPUT · BROKEN BACKUP`."),
 
-    # ---------- D: rollout data and whiteboard maths ----------
+    # ---------- D: rollout data and animated maths ----------
     "D1_tag_spacing": ("D", "V014", "V014", "Max gap 1 km; 2,872 tags on 96 km",
         "First half: evenly spaced dots along a line get a red cross; then the dots regroup, clustering thickly around a "
-        "signal and a turnout (`MAX GAP 1 KM`). Second half: WHITEBOARD (video/lib/whiteboard) over a faint map of the "
-        "Vadodara–Ahmedabad stretch: write `96 km · 2,872 tags`, then `2,872 ÷ 96 ≈ 30 per km`, circle 30. On-screen "
+        "signal and a turnout (`MAX GAP 1 KM`). Second half (animated, no whiteboard; owner 2026-10-16): whip pan to a 96 km "
+        "Vadodara–Ahmedabad strip that fills with 2,872 amber tags (counter), then a lens magnifies 1 km: ≈ 30 tags. On-screen "
         "`MAX GAP 1 KM · 96 KM · 2,872 TAGS`."),
-    "D2_board_speed": ("D", "V024", "V024", "Board: 130 ÷ 3.6 ≈ 36 m every second",
-        "WHITEBOARD: write `130 km/h ÷ 3.6 ≈ 36 m/s`, underline 36, write `every second`. Tag: OUR CALCULATION."),
-    "D3_board_freight": ("D", "V025", "V025", "Board: freight ≈ 930 m (illustrative model)",
-        "WHITEBOARD as a ledger: `5,000 t · 75 km/h = 20.8 m/s`; `delay 10 s → 208 m`; `braking v²/2a, a = 0.30 → 723 m`; "
-        "`total ≈ 930 m`, boxed, with ILLUSTRATIVE MODEL written small. Tag: OUR CALCULATION."),
+    "D2_board_speed": ("D", "V024", "V024", "130 km/h = 36 m every second",
+        "Real time, real scale: a trainset at 130 km/h passes a post every second, 36 m brackets light up, stopwatch and "
+        "metres counter. Lower-third `130 KM/H · OUR CALCULATION 130 ÷ 3.6 ≈ 36 M/S`."),
+    "D3_board_freight": ("D", "V025", "V025", "Freight ≈ 930 m (illustrative model)",
+        "Close tracking shot of a loaded goods train at 75 km/h pulls out (time-lapse) to a 1 km ruler: the brake "
+        "application travels back along the wagons, amber zone `≈ 208 m` (brakes build up, 10 s) then crimson `≈ 723 m` "
+        "under a speed curve, total bracket `≈ 930 m`; readouts km/h, metres, real seconds. Tag: OUR CALCULATION."),
     "D4_network_size": ("D", "V032", "V032", "The size of the job",
         "Land-only India map (no political borders), carbon slate; the rail network draws in as thin grey lines across "
         "the country; counters land on the words: 69,439 ROUTE KM, then ≈ 16,000 LOCOS · MAR 2025. On-screen "
@@ -149,8 +151,8 @@ SCENES = {
         "Same map; two corridors glow cyan: Delhi → Mumbai (label 1,423 KM GROUP) and Delhi → Howrah (1,210 KM GROUP); "
         "counter to 2,633. On-screen `KAVACH 4.0 · 2,633 RKM · 31 JUL 2026`."),
     "D6_under_tenth": ("D", "V034", "V034", "Plus the older version: under a tenth",
-        "Same map: a South Central Railway section glows in a second colour (amber-cyan); then WHITEBOARD inset: "
-        "`(2,633 + 1,465) ÷ 69,439 < 10%`. On-screen `VERSION 3.2 · 1,465 RKM · UNDER 10%`."),
+        "Same map: a South Central Railway section glows in a second colour (amber-cyan); then a 10×10 grid "
+        "(1 square = 1% of the network) lights ≈ 5.9% against a dashed ONE TENTH row. On-screen `VERSION 3.2 · 1,465 RKM · UNDER 10%`."),
     "D7_funnel": ("D", "V035", "V035", "Fitted ≠ working",
         "Three headline strips slide in, blurred except their numbers; then a funnel: WORK STARTED 21,794 (widest), "
         "FITTED 7,726, LOCOS 6,290, narrowing to the thin cyan WORKING stream; stamp `FITTED ≠ WORKING` lands on "

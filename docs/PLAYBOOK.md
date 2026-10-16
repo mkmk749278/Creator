@@ -353,8 +353,8 @@ digits and lakh/crore grouping have been read the Western way.
 
 **Visual direction (four pillars):** (1) document forensics: the real circular / order / report on paper texture,
 yellow-orange kinetic highlighter on the clause, rubber stamps (`[VIOLATION]`, `[MANDATORY 60 DAYS]`); (2) interactive
-maths models: never state a calculation, simulate it (dynamic ledger, balance bar turning green to red; the whiteboard
-engine for worked sums); (3) real geospatial and photographic evidence: satellite zooms, archive newspaper scans, official
+maths models: never state a calculation, simulate it (dynamic ledger, balance bar turning green to red; worked sums as animated
+HyperFrames simulations, not the whiteboard: see §4a-3 BOARD, owner 2026-10-16); (3) real geospatial and photographic evidence: satellite zooms, archive newspaper scans, official
 press releases; (4) pacing: a visual reset every **3.5–5.0 s**, and **no unmotivated stock of anonymous office workers
 typing**. Labels for illustrations, simulations and stand-ins (§5, §12) still apply.
 
@@ -372,10 +372,15 @@ model of tone, never a source (its numbers are not verified).
 follow a character. Every explainer mixes, in this order of preference:
 1. **REAL**: real footage of what the VO names (stock via the Pixabay API, Commons, credited news); a real cutaway inside
    any other shot that runs past ~4 s.
-2. **BOARD**: every calculation is worked out live on a whiteboard in marker, like a teacher explaining; never a static
-   table. Use the reusable engine **`video/lib/whiteboard`** (README): real handwriting from single-line pen fonts,
-   written stroke by stroke with the nib on the ink, shapes, duster, `params.js` per shot. *Why:* the first sample
-   wiped a font left to right with a gliding marker; the owner saw it was not writing ("outdated").
+2. **MATHS AS ANIMATION** (owner, 2026-10-16, replaces BOARD): "Don't use that white board maths, use HyperFrames
+   animations, but it should not look like a text slide; as much high-quality animation as possible for crystal-clear
+   understanding." Every calculation is shown as the thing it describes, moving to scale: a train covering 36 m per
+   tick of a stopwatch (not "130 ÷ 3.6"); a stop drawn as amber and crimson zones under a speed curve with a real-time
+   readout and a TIME-LAPSE chip; a count filling a strip with a magnifier on one km; a 10×10 grid of 1% squares
+   against a dashed "one tenth" row. Numbers ride on the picture as counters and dimension brackets; the sum itself
+   appears at most once, small, in a lower-third (`OUR CALCULATION · …`). `video/lib/whiteboard` stays in the repo
+   for other uses but is not used for maths unless the owner asks. *Why:* the whiteboard read as a text slide.
+   Examples: `video/kavach-railway-reality/D1`, `D2`, `D3`, `D6`.
 3. ~~TOON~~ **No animated character** (owner, 2026-10-11, after a first test: "cancel character, use any clip that
    syncs to the situation"). Every action the VO says is a real clip (Pixabay API, Coverr, Commons, owner footage).
 4. **PROOF**: credited screen recordings of the real source page (bank, RBI, court, news) under a magnifier.

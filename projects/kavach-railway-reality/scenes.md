@@ -109,15 +109,15 @@ Two columns: left WRONG INPUT (a crimson false green feeding a box), right BROKE
 ## Session D: 9 scenes, 123.9 s
 
 ### D1_tag_spacing · Max gap 1 km; 2,872 tags on 96 km · 20.39 s (program 120.57–140.96, lines V014-V014)
-First half: evenly spaced dots along a line get a red cross; then the dots regroup, clustering thickly around a signal and a turnout (`MAX GAP 1 KM`). Second half: WHITEBOARD (video/lib/whiteboard) over a faint map of the Vadodara–Ahmedabad stretch: write `96 km · 2,872 tags`, then `2,872 ÷ 96 ≈ 30 per km`, circle 30. On-screen `MAX GAP 1 KM · 96 KM · 2,872 TAGS`.
+First half: evenly spaced dots along a line get a red cross; then the dots regroup, clustering thickly around a signal and a turnout (`MAX GAP 1 KM`). Second half (animated, no whiteboard; owner 2026-10-16): whip pan to a 96 km Vadodara–Ahmedabad strip that fills with 2,872 amber tags (counter), then a lens magnifies 1 km: ≈ 30 tags. On-screen `MAX GAP 1 KM · 96 KM · 2,872 TAGS`.
 - +0.15–19.90 V014: “People say there's one tag every kilometre. Actually, one kilometre is only the longest gap allowed — near signals, points and stations the tags crowd together, and on one stretch of about ninety six kilometres between Vadodara and Ahmedabad, the railway fixed two thousand eight hundred and seventy two of them.” · on-screen `MAX GAP 1 KM · 96 KM · 2,872 TAGS` · cite (assembler) [RDSO | TAN 2025 · PIB | 30 DEC 2025]
 
-### D2_board_speed · Board: 130 ÷ 3.6 ≈ 36 m every second · 4.77 s (program 241.84–246.61, lines V024-V024)
-WHITEBOARD: write `130 km/h ÷ 3.6 ≈ 36 m/s`, underline 36, write `every second`. Tag: OUR CALCULATION.
+### D2_board_speed · 130 km/h = 36 m every second · 4.77 s (program 241.84–246.61, lines V024-V024)
+Real time, real scale: a trainset at 130 km/h passes a post every second, 36 m brackets light up, stopwatch and metres counter. Lower-third `130 KM/H · OUR CALCULATION 130 ÷ 3.6 ≈ 36 M/S`.
 - +0.15–4.45 V024: “At that speed, it covers about thirty six metres every single second.” · on-screen `36 M EVERY SECOND` · cite (assembler) [OUR CALCULATION]
 
-### D3_board_freight · Board: freight ≈ 930 m (illustrative model) · 12.50 s (program 246.61–259.11, lines V025-V025)
-WHITEBOARD as a ledger: `5,000 t · 75 km/h = 20.8 m/s`; `delay 10 s → 208 m`; `braking v²/2a, a = 0.30 → 723 m`; `total ≈ 930 m`, boxed, with ILLUSTRATIVE MODEL written small. Tag: OUR CALCULATION.
+### D3_board_freight · Freight ≈ 930 m (illustrative model) · 12.50 s (program 246.61–259.11, lines V025-V025)
+Close tracking shot of a loaded goods train at 75 km/h pulls out (time-lapse) to a 1 km ruler: the brake application travels back along the wagons, amber zone `≈ 208 m` (brakes build up, 10 s) then crimson `≈ 723 m` under a speed curve, total bracket `≈ 930 m`; readouts km/h, metres, real seconds. Tag: OUR CALCULATION.
 - +0.15–12.17 V025: “Now picture a loaded goods train — five thousand tonnes at seventy five kilometres per hour. Its brakes build up slowly, and simple maths with fair guesses gives more than nine hundred metres to stop.” · on-screen `5,000 T · 75 KM/H · ≈ 930 M · ILLUSTRATIVE` · cite (assembler) [OUR CALCULATION]
 
 ### D4_network_size · The size of the job · 13.71 s (program 327.20–340.91, lines V032-V032)
@@ -129,7 +129,7 @@ Same map; two corridors glow cyan: Delhi → Mumbai (label 1,423 KM GROUP) and D
 - +0.15–12.64 V033: “By the end of July twenty twenty six, the newest Kavach was working on two thousand six hundred and thirty three route kilometres, on parts of the Delhi Mumbai and Delhi Howrah routes — two of the busiest in the country.” · on-screen `KAVACH 4.0 · 2,633 RKM · 31 JUL 2026` · cite (assembler) [PIB | 05 AUG 2026]
 
 ### D6_under_tenth · Plus the older version: under a tenth · 10.60 s (program 353.66–364.26, lines V034-V034)
-Same map: a South Central Railway section glows in a second colour (amber-cyan); then WHITEBOARD inset: `(2,633 + 1,465) ÷ 69,439 < 10%`. On-screen `VERSION 3.2 · 1,465 RKM · UNDER 10%`.
+Same map: a South Central Railway section glows in a second colour (amber-cyan); then a 10×10 grid (1 square = 1% of the network) lights ≈ 5.9% against a dashed ONE TENTH row. On-screen `VERSION 3.2 · 1,465 RKM · UNDER 10%`.
 - +0.15–10.25 V034: “Add the older version on about one thousand four hundred and sixty five kilometres in South Central Railway, and Kavach is still working on well under a tenth of the network.” · on-screen `VERSION 3.2 · 1,465 RKM · UNDER 10%` · cite (assembler) [PIB | 05 AUG 2026 · OUR CALCULATION]
 
 ### D7_funnel · Fitted ≠ working · 21.50 s (program 364.26–385.76, lines V035-V035)

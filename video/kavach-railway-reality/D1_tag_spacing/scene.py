@@ -1,0 +1,149 @@
+TITLE = "D1 Tag spacing"
+LIBS = []
+CSS = """
+  #part1 { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+  #part2 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform: translateX(1920px); }
+  .stn { font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #F8FAFC; }
+  .dimt { font: 800 56px Inter, Arial, sans-serif; fill: #38BDF8; font-variant-numeric: tabular-nums; }
+  .cnt { font: 800 120px Inter, Arial, sans-serif; fill: #FCD34D; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .cntu { font: 800 28px Inter, Arial, sans-serif; letter-spacing: 0.16em; fill: #94A3B8; }
+  .lens { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #F8FAFC; }
+  .tlabel { font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
+  .myth { font: 800 44px Inter, Arial, sans-serif; letter-spacing: 0.06em; fill: #F8FAFC; }
+  .gap { font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #FCD34D; }
+"""
+BODY = """  <svg id="part1" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+    <defs><filter id="glow" filterUnits="userSpaceOnUse" x="-400" y="-400" width="2800" height="1900"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <g id="w1">
+      <g id="grid"></g>
+      <g id="tracks"></g>
+      <g id="feat"></g>
+      <g id="ruler"></g>
+      <g id="tags"></g>
+      <g id="gapdim" opacity="0"></g>
+      <g id="mythg"><text x="120" y="250" class="myth">THE MYTH: ONE TAG EVERY KM</text>
+        <line id="mstrike" x1="110" y1="236" x2="110" y2="236.5" stroke="#EF4444" stroke-width="8" stroke-linecap="round"/></g>
+    </g>
+  </svg>
+  <svg id="part2" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+    <defs><clipPath id="rev"><rect id="revr" x="0" y="0" width="0" height="1080"/></clipPath>
+      <clipPath id="lensc"><circle cx="0" cy="0" r="200"/></clipPath>
+      <filter id="glow2" filterUnits="userSpaceOnUse" x="-200" y="-200" width="2400" height="1500"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <g id="p2"></g>
+  </svg>"""
+JS = """
+  const NS = "http://www.w3.org/2000/svg", $ = (id) => document.getElementById(id);
+  const mk = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+  for (let i = 0; i < 32; i++) mk("line", { x1: i * 70, y1: 0, x2: i * 70 + 0.3, y2: 1080, stroke: "rgba(148,163,184,0.06)" }, $("grid"));
+  for (let i = 0; i < 16; i++) mk("line", { x1: 0, y1: i * 70, x2: 1920, y2: i * 70 + 0.3, stroke: "rgba(148,163,184,0.06)" }, $("grid"));
+  const Y = 560, KM = 280, X0 = 120;
+  const track = (d, dim = 1) => { mk("path", { d, fill: "none", stroke: "#2B3A57", "stroke-width": 34, "stroke-dasharray": "5 11", opacity: 0.9 * dim }, $("tracks"));
+    mk("path", { d, fill: "none", stroke: "#9FB0C8", "stroke-width": 17, opacity: 0.85 * dim }, $("tracks")); mk("path", { d, fill: "none", stroke: "#13203A", "stroke-width": 10 }, $("tracks")); };
+  track(`M -100 ${Y} L 2020 ${Y + 0.4}`);
+  // features: home signal, a set of points onto a loop, a station platform
+  const fSig = mk("g", { opacity: 0 }, $("feat")), fPts = mk("g", { opacity: 0 }, $("feat")), fStn = mk("g", { opacity: 0 }, $("feat"));
+  const SX = 760, PX = 1180, ST0 = 1480, ST1 = 1840;
+  mk("line", { x1: SX, y1: Y - 30, x2: SX + 0.3, y2: Y - 130, stroke: "#5B6B86", "stroke-width": 7 }, fSig);
+  mk("rect", { x: SX - 24, y: Y - 250, width: 48, height: 124, rx: 11, fill: "#0B1220", stroke: "#5B6B86", "stroke-width": 3 }, fSig);
+  mk("circle", { cx: SX, cy: Y - 228, r: 13, fill: "#3A1414" }, fSig); mk("circle", { cx: SX, cy: Y - 189, r: 13, fill: "#FBBF24", filter: "url(#glow)" }, fSig); mk("circle", { cx: SX, cy: Y - 150, r: 13, fill: "#10331D" }, fSig);
+  mk("text", { x: SX + 40, y: Y - 180, class: "tlabel" }, fSig).textContent = "SIGNAL";
+  const loopD = `M ${PX} ${Y} L ${PX + 160} ${Y - 150} L 2020 ${Y - 150.4}`;
+  const lp = mk("g", { opacity: 1 }, fPts); { const old = $("tracks"); }
+  [["#2B3A57", 34, "5 11", 0.9], ["#9FB0C8", 17, "", 0.85], ["#13203A", 10, "", 1]].forEach(([c, w, da, o]) => mk("path", { d: loopD, fill: "none", stroke: c, "stroke-width": w, "stroke-dasharray": da || "none", opacity: o }, lp));
+  mk("text", { x: PX + 20, y: Y + 70, class: "tlabel" }, fPts).textContent = "POINTS";
+  mk("rect", { x: ST0, y: Y + 40, width: ST1 - ST0, height: 56, rx: 4, fill: "#1C2A45", stroke: "#2E4268", "stroke-width": 2 }, fStn);
+  mk("text", { x: (ST0 + ST1) / 2, y: Y + 77, "text-anchor": "middle", class: "tlabel" }, fStn).textContent = "STATION";
+  // km ruler
+  for (let k = 0; k <= 6; k++) { const x = X0 + k * KM; mk("line", { x1: x, y1: Y + 130, x2: x + 0.3, y2: Y + 152, stroke: "#94A3B8", "stroke-width": 3 }, $("ruler"));
+    mk("text", { x, y: Y + 190, "text-anchor": "middle", class: "tlabel" }, $("ruler")).textContent = k + " KM"; }
+  mk("line", { x1: X0, y1: Y + 130, x2: X0 + 6 * KM, y2: Y + 130.4, stroke: "#475569", "stroke-width": 2 }, $("ruler"));
+  // tags: amber RFID tags laid between the rails
+  const tag = (x, y = Y) => { const g = mk("g", { transform: `translate(${x} ${y})` }, $("tags"));
+    mk("rect", { x: -15, y: -10, width: 30, height: 20, rx: 3, fill: "#F59E0B", stroke: "#78350F", "stroke-width": 2 }, g); return g; };
+  const even = Array.from({ length: 7 }, (_, k) => tag(X0 + k * KM));
+  // the clustered layout (illustrative spacing): many near the signal, the points and the station
+  const r = mulberry32(14), extra = [];
+  const near = (c, n, spread) => { for (let i = 0; i < n; i++) extra.push(c + (i - (n - 1) / 2) * spread + (r() - 0.5) * 8); };
+  near(SX, 6, 26); near(PX, 5, 28); near((ST0 + ST1) / 2, 8, 40);
+  const ex = extra.map((x) => tag(x)); ex.forEach((g) => g.setAttribute("opacity", 0));
+  // max-gap dimension between the two plain-line tags at 0 and 1 km
+  const gy = Y - 70;
+  mk("line", { x1: X0, y1: gy, x2: X0 + KM, y2: gy + 0.4, stroke: "#FCD34D", "stroke-width": 3 }, $("gapdim"));
+  mk("path", { d: `M ${X0 + 14} ${gy - 9} L ${X0} ${gy} L ${X0 + 14} ${gy + 9} M ${X0 + KM - 14} ${gy - 9} L ${X0 + KM} ${gy} L ${X0 + KM - 14} ${gy + 9}`, fill: "none", stroke: "#FCD34D", "stroke-width": 3 }, $("gapdim"));
+  mk("text", { x: X0 + KM / 2, y: gy - 22, "text-anchor": "middle", class: "gap" }, $("gapdim")).textContent = "MAX GAP 1 KM";
+
+  const tP = at("V014", "People say"), tA = at("V014", "Actually"), tG = at("V014", "longest gap"), tN = at("V014", "near signals"), tC = at("V014", "crowd together"),
+        tS = at("V014", "on one stretch"), t96 = at("V014", "ninety six"), tV = at("V014", "Vadodara"), tR = at("V014", "the railway fixed"), tT = at("V014", "two thousand eight");
+  tl.from("#tracks, #ruler", { opacity: 0, duration: 0.6 }, 0);
+  even.forEach((g, k) => tl.from(g, { opacity: 0, scale: 0, svgOrigin: `${X0 + k * KM} ${Y}`, duration: 0.3, ease: "back.out(2)" }, 0.3 + k * 0.18));
+  tl.from("#mythg text", { opacity: 0, y: 10, duration: 0.5 }, 0.4);
+  tl.to("#mstrike", { attr: { x2: 860 }, duration: 0.35, ease: "power2.in" }, tA);
+  tl.to("#mythg", { opacity: 0.45, duration: 0.4 }, tA + 0.4);
+  tl.to("#gapdim", { opacity: 1, duration: 0.4 }, tG - 0.2);
+  tl.to(fSig, { opacity: 1, duration: 0.4 }, tN - 0.2); tl.to(fPts, { opacity: 1, duration: 0.4 }, tN + 0.5); tl.to(fStn, { opacity: 1, duration: 0.4 }, tN + 1.2);
+  // the tags crowd together near each feature
+  ex.forEach((g, i) => tl.fromTo(g, { opacity: 0, scale: 0, svgOrigin: `${extra[i]} ${Y}` }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, tN + 0.3 + (i / ex.length) * (tC - tN + 0.2)));
+  // the even tags beyond 1 km slide into the clusters
+  [2, 3, 4, 5, 6].forEach((k, j) => { const tgt = [SX - 70, PX - 70, PX + 70, ST0 + 60, ST1 - 40][j]; tl.to(even[k], { attr: { transform: `translate(${tgt} ${Y})` }, duration: 1.0, ease: "power2.inOut" }, tN + 0.4 + j * 0.25); });
+  tl.fromTo("#tags", { opacity: 1 }, { opacity: 0.6, duration: 0.25, yoyo: true, repeat: 3 }, tC);
+  tl.fromTo("#w1", { transformOrigin: "960px 560px", scale: 1.0 }, { scale: 1.05, duration: tS, ease: "sine.inOut" }, 0);
+  // part 2: whip pan to the board
+  tl.to("#part1", { x: -1920, duration: 0.8, ease: "power3.inOut" }, tS - 0.5);
+  tl.fromTo("#part2", { x: 1920 }, { x: 0, duration: 0.8, ease: "power3.inOut" }, tS - 0.5);
+  // ---- part 2: the 96 km Vadodara-Ahmedabad stretch with its 2,872 tags (PIB 30 Dec 2025). Tag positions are
+  // illustrative (clustered near stations and signals, never more than 1 km apart); the total is exact.
+  const P2 = $("p2"), SX0 = 160, SX1 = 1760, SY = 600, KMX = (SX1 - SX0) / 96, XK = (km) => SX0 + km * KMX;
+  const strip = mk("g", {}, P2);
+  const railD = `M ${SX0} ${SY} L ${SX1} ${SY + 0.4}`;
+  const railP = mk("path", { d: railD, fill: "none", stroke: "#9FB0C8", "stroke-width": 12 }, strip);
+  mk("path", { d: railD, fill: "none", stroke: "#13203A", "stroke-width": 6 }, strip);
+  const ends = [[0, "VADODARA", "start"], [96, "AHMEDABAD", "end"]].map(([km, n, an]) => { const g = mk("g", { opacity: 0 }, P2);
+    mk("circle", { cx: XK(km), cy: SY, r: 16, fill: "#0B1220", stroke: "#F8FAFC", "stroke-width": 5 }, g);
+    mk("text", { x: XK(km) + (an === "start" ? -16 : 16), y: SY - 46, "text-anchor": an, class: "stn" }, g).textContent = n; return g; });
+  const mids = [19, 37, 55, 74].map((km) => mk("circle", { cx: XK(km), cy: SY, r: 9, fill: "#0B1220", stroke: "#94A3B8", "stroke-width": 3, opacity: 0 }, P2));
+  // tags: stations get dense clusters, signals small ones, plus a baseline; 2,872 in all
+  const rr = mulberry32(2872), kms = [], gauss = () => { let u = 0; for (let i = 0; i < 6; i++) u += rr(); return u - 3; };
+  for (const st of [0, 19, 37, 55, 74, 96]) for (let i = 0; i < 120; i++) kms.push(Math.min(96, Math.max(0, st + gauss() * 0.9)));
+  for (let k = 0; k < 64; k++) { const c = 0.8 + k * 1.5 + rr() * 0.4; for (let i = 0; i < 12; i++) kms.push(Math.min(96, Math.max(0, c + gauss() * 0.12))); }
+  while (kms.length < 2872) kms.push(rr() * 96);
+  kms.sort((x, y) => x - y);
+  const tg = mk("g", { "clip-path": "url(#rev)" }, P2);
+  for (const km of kms) mk("rect", { x: XK(km) - 1, y: SY - 13, width: 2, height: 26, fill: "#F59E0B", opacity: 0.32 }, tg);
+  // dimension and counter
+  const dim = mk("g", { opacity: 0 }, P2), dy = SY + 90;
+  mk("path", { d: `M ${SX0} ${dy - 16} L ${SX0} ${dy} L ${SX1} ${dy + 0.4} L ${SX1} ${dy - 16}`, fill: "none", stroke: "#38BDF8", "stroke-width": 3 }, dim);
+  mk("text", { x: (SX0 + SX1) / 2, y: dy + 70, "text-anchor": "middle", class: "dimt" }, dim).textContent = "96 km";
+  const cg = mk("g", { opacity: 0 }, P2);
+  const cnt = mk("text", { x: SX0, y: 330, class: "cnt" }, cg); cnt.textContent = "0";
+  mk("text", { x: SX0 + 6, y: 392, class: "cntu" }, cg).textContent = "RFID TAGS FIXED";
+  // magnifier on one kilometre: about 30 tags (our calculation: 2,872 / 96 = 29.9)
+  const LKM = 60, LX = 1250, LY = 320, lens = mk("g", { opacity: 0 }, P2);
+  const sel = mk("rect", { x: XK(LKM), y: SY - 22, width: KMX, height: 44, fill: "none", stroke: "#F8FAFC", "stroke-width": 3 }, lens);
+  mk("path", { d: `M ${XK(LKM)} ${SY - 22} L ${LX - 150} ${LY + 132} M ${XK(LKM + 1)} ${SY - 22} L ${LX + 150} ${LY + 132}`, stroke: "rgba(248,250,252,0.45)", "stroke-width": 2, fill: "none" }, lens);
+  const lgo = mk("g", { transform: `translate(${LX} ${LY})` }, lens), lg = mk("g", {}, lgo);
+  mk("circle", { cx: 0, cy: 0, r: 200, fill: "#0B1220" }, lg);
+  const inner = mk("g", { "clip-path": "url(#lensc)" }, lg);
+  for (let i = 0; i < 34; i++) mk("rect", { x: -200 + i * 12, y: -62, width: 7, height: 124, fill: "#334155" }, inner);
+  mk("line", { x1: -210, y1: -44, x2: 210, y2: -43.6, stroke: "#9FB0C8", "stroke-width": 9 }, inner); mk("line", { x1: -210, y1: 44, x2: 210, y2: 44.4, stroke: "#9FB0C8", "stroke-width": 9 }, inner);
+  const lt = []; const r2 = mulberry32(30);
+  for (let i = 0; i < 30; i++) { const x = -186 + (i + 0.2 + r2() * 0.6) * (372 / 30); lt.push(mk("rect", { x: x - 5, y: -16, width: 10, height: 32, rx: 2, fill: "#F59E0B", stroke: "#78350F", "stroke-width": 1.5, opacity: 0 }, inner)); }
+  mk("circle", { cx: 0, cy: 0, r: 200, fill: "none", stroke: "#F8FAFC", "stroke-width": 6, filter: "url(#glow2)" }, lg);
+  const lcap = mk("text", { x: LX, y: LY - 226, "text-anchor": "middle", class: "lens" }, lens); lcap.textContent = "1 KM · ≈ 30 TAGS";
+  // part 2 timing
+  const rl = railP.getTotalLength(); railP.setAttribute("stroke-dasharray", rl); railP.setAttribute("stroke-dashoffset", rl);
+  tl.to(railP, { attr: { "stroke-dashoffset": 0 }, duration: 1.1, ease: "power2.inOut" }, tS + 0.3);
+  tl.to(ends[0], { opacity: 1, duration: 0.4 }, tS + 0.3); tl.to(ends[1], { opacity: 1, duration: 0.4 }, tS + 1.2);
+  mids.forEach((m, i) => tl.to(m, { opacity: 1, duration: 0.3 }, tS + 0.5 + i * 0.2));
+  tl.to(dim, { opacity: 1, duration: 0.5 }, t96 - 0.2);
+  for (const e of ends) tl.fromTo(e.querySelector("circle"), { attr: { r: 16 } }, { attr: { r: 24 }, duration: 0.3, yoyo: true, repeat: 1 }, tV);
+  tl.to(ends[1].querySelector("circle"), { attr: { r: 24 }, duration: 0.3, yoyo: true, repeat: 1 }, tV + 0.9);
+  tl.to(cg, { opacity: 1, duration: 0.4 }, tR - 0.2);
+  const tFill0 = tR, tFill1 = Math.min(D - 2.6, tT + 1.6), rv = { x: SX0 - 2 };
+  tl.to(rv, { x: SX1 + 2, duration: tFill1 - tFill0, ease: "power1.inOut", onUpdate: () => { $("revr").setAttribute("width", rv.x);
+    let n = 0, lo = 0, hi = kms.length; while (lo < hi) { const m = (lo + hi) >> 1; if (XK(kms[m]) <= rv.x) lo = m + 1; else hi = m; } n = lo; cnt.textContent = n.toLocaleString("en-IN"); } }, tFill0);
+  tl.fromTo(lens, { opacity: 0 }, { opacity: 1, duration: 0.4 }, tFill1 + 0.1);
+  tl.fromTo(lg, { scale: 0.2, x: XK(LKM) + KMX / 2 - LX, y: SY - LY }, { scale: 1, x: 0, y: 0, duration: 0.6, ease: "back.out(1.4)" }, tFill1 + 0.1);
+  lt.forEach((r, i) => tl.to(r, { opacity: 1, duration: 0.08 }, tFill1 + 0.6 + i * 0.03));
+  tl.fromTo("#p2", { transformOrigin: "960px 560px", scale: 1.0 }, { scale: 1.04, duration: D - tS, ease: "sine.inOut" }, tS);
+
+"""
