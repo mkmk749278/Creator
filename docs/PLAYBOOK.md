@@ -844,6 +844,26 @@ The owner shared "Claude Code in Cloud Sessions: Master CPU-Only Production Play
 - **Akash V4 takes under 1,500 characters**: the guide's limit for English Akash takes, against our 4,000–4,500 for Bunty.
   Apply to the next English script's voice blocks and confirm with the owner.
 
+### 9.4 3D railway world: lessons from the Kavach A scenes (2026-10-16)
+`video/kavach-railway-reality/_A_lib/kav3d.js` is a reusable Three.js railway world built from reference photos
+(broad-gauge track on PSC sleepers, WAP-style loco, LHB coaches, Indian 4-aspect signal, OHE, station Kavach cabinet,
+relay racks, RFID tag, lattice tower, X-ray loco parts). Each item below cost a build:
+- **Bloom on SwiftShader:** pmndrs `BloomEffect` with `mipmapBlur: true` left dark halos around bright objects; Kawase
+  (`mipmapBlur: false, kernelSize: 4`) does not. **ACES** tone mapping pushed saturated cyan bloom below zero (red/green
+  channels clip to 0, a dark ring); use **AgX**. `VignetteEffect` showed a hard elliptical edge on smooth skies; use a
+  smoothstep radial vignette in the grain pass instead.
+- **DOM labels pinned to 3D points:** call `camera.updateMatrixWorld()` before `Vector3.project()`. Three refreshes the
+  view matrix only at render time, and seeks jump, so labels otherwise use the previous frame's camera (off by ~150 px).
+- **GSAP clears the CSS `translate` property** on elements it transforms. Centre a pinned chip with a static wrapper
+  (fixed width, negative margin), never with `translate` or `xPercent` on the animated element.
+- **HyperFrames waits on `window.THREE.DefaultLoadingManager`:** set `window.THREE` and bracket async setup (fonts for
+  canvas textures, HDRI) with `itemStart`/`itemEnd`.
+- **Indian signal lamp order is Y, G, Y, R from the top: red is the bottom lamp,** on the post, in cab-screen icons and in
+  every schematic. Signals stand to the left of the line (left-hand running).
+- **Physics on screen must add up:** a "next signal 40 m" readout at 100 km/h shows a train running the red; size the
+  scene from the stopping distance first (A1: brake 470 m short at 108 km/h, 1.1 m/s²).
+- Render cost: about 4 s per frame at 1080p, 3 workers (shadows + bloom + FXAA + grain), so a 15 s 3D scene takes ~30 min.
+
 ## 10. HyperFrames (pinned `hyperframes@0.8.103`)
 
 Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
