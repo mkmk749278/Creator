@@ -64,3 +64,4 @@ projects/jet-engine-paradox/qa/
 # thumbnail inputs are regenerated from assets (thumb.html + thumbnail.jpg are kept)
 projects/jet-engine-paradox/thumbnail/*.png
 projects/jet-engine-paradox/thumbnail/pixabay_*.jpg
+video/kavach-railway-reality/_tools/queue*.log
