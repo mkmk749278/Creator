@@ -1,0 +1,119 @@
+TITLE = "A1 Kavach watches speed and signals, warns, then brakes"
+BG = "none"
+CSS = """
+  #gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+  .pin { position: absolute; left: 0; top: 0; will-change: transform; }
+  #tele { width: 400px; margin-left: -200px; margin-top: -250px; }
+  #tele .box { background: rgba(8,20,36,0.82); border: 2px solid rgba(56,189,248,0.9); border-radius: 14px; padding: 14px 18px 12px;
+    box-shadow: 0 0 34px rgba(56,189,248,0.28); font-family: Inter, Arial, sans-serif; color: #E0F2FE; opacity: 0; }
+  #vig, #sweep { display: none; }
+  #tele .row + .row { margin-top: 8px; }
+  #tele .row { display: flex; align-items: baseline; justify-content: space-between; }
+  #tele .k { font: 800 15px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: #7DD3FC; }
+  #tele .v { font: 800 46px/1 Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; color: #F8FAFC; }
+  #tele .v small { font: 800 18px Inter, Arial, sans-serif; color: #94A3B8; margin-left: 4px; }
+  #tele .bar { height: 8px; border-radius: 4px; background: rgba(148,163,184,0.25); margin: 8px 0 10px; position: relative; overflow: hidden; }
+  #tele .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: #22C55E; }
+  #tele .bar b { position: absolute; top: -3px; bottom: -3px; width: 4px; background: #F8FAFC; }
+  #tele .sig { display: flex; align-items: center; gap: 14px; }
+  #tele .head { width: 26px; height: 74px; border-radius: 13px; background: #050607; border: 2px solid #CBD5E1; display: flex; flex-direction: column; align-items: center; justify-content: space-around; padding: 3px 0; box-sizing: border-box; }
+  #tele .head span { width: 13px; height: 13px; border-radius: 50%; background: #111; }
+  #tele .warn { margin-top: 10px; padding: 6px 10px; border-radius: 8px; background: #B45309; color: #FFF7ED; font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.12em; text-align: center; opacity: 0; display: none; }
+  #tele .brk { margin-top: 10px; padding: 6px 10px; border-radius: 8px; background: #0369A1; color: #F0F9FF; font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.12em; text-align: center; display: none; }
+  #lead { position: absolute; left: 0; top: 0; width: 2px; height: 120px; margin-left: -1px; margin-top: -120px; background: linear-gradient(rgba(56,189,248,0.9), rgba(56,189,248,0)); opacity: 0; }
+  #tag { position: absolute; right: 60px; top: 56px; font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: rgba(248,250,252,0.9); border: 2px solid rgba(248,250,252,0.5); background: rgba(15,23,42,0.55); padding: 6px 12px; }
+"""
+BODY = """  <canvas id="gl" width="1920" height="1080"></canvas>
+  <div class="pin" id="leadPin"><div id="lead"></div></div>
+  <div class="pin" id="tele"><div class="box" id="teleBox">
+    <div class="row"><span class="k">SPEED</span><span class="k">PERMITTED <span id="vp">110</span></span></div>
+    <div class="row"><span class="v" id="vv">108<small>KM/H</small></span></div>
+    <div class="bar"><i id="vbar"></i><b id="vmark"></b></div>
+    <div class="sig"><div class="head"><span id="l0"></span><span id="l1"></span><span id="l2"></span><span id="l3"></span></div>
+      <div><div class="k">NEXT SIGNAL</div><div class="v" id="sd" style="font-size:40px">900<small>M</small></div></div></div>
+    <div class="warn" id="warn">WARNING · SLOW DOWN</div>
+    <div class="brk" id="brk">KAVACH BRAKING</div>
+  </div></div>
+  <div class="kav-label" id="lab1">Automatic Train Protection<small>KAVACH · MADE IN INDIA</small></div>
+  <div id="tag">ILLUSTRATION</div>"""
+JS = """
+  const tW = at("V010", "watches"), tF = at("V010", "too fast"), tR = at("V010", "about to pass a red"), tWn = at("V010", "it warns"), tB = at("V010", "then brakes by itself");
+  window.A1T = { tW, tF, tR, tWn, tB };
+  tl.to("#lab1", { opacity: 1, duration: 0.6 }, 0.6);
+  tl.to("#lab1", { opacity: 0, duration: 0.4 }, tW - 0.2);
+  tl.fromTo("#teleBox", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, tW);
+  tl.fromTo("#lead", { opacity: 0 }, { opacity: 1, duration: 0.4 }, tW);
+  tl.to("#teleBox", { borderColor: "rgba(245,158,11,0.95)", boxShadow: "0 0 40px rgba(245,158,11,0.45)", duration: 0.3 }, tF + 0.3);
+  tl.set("#warn", { display: "block" }, tWn);
+  tl.set("#warn", { display: "none" }, tB);
+  for (let i = 0; i < 4; i++) tl.to("#warn", { opacity: 1, duration: 0.12 }, tWn + i * 0.42).to("#warn", { opacity: 0.35, duration: 0.2 }, tWn + i * 0.42 + 0.22);
+  tl.to("#warn", { opacity: 0, duration: 0.15 }, tB - 0.05);
+  tl.set("#brk", { display: "block" }, tB);
+  tl.to("#teleBox", { borderColor: "rgba(56,189,248,0.95)", boxShadow: "0 0 40px rgba(56,189,248,0.4)", duration: 0.3 }, tB);
+"""
+MODULE = r"""
+  import { THREE, createStage, mats, buildTrack, buildGround, buildTrees, buildOHE, buildSignal, buildTrain, sparks, flowLine, seg, lerp, clamp, ease, aim, camPath } from "./kav3d.js";
+  const st = createStage({ sky: "dusk", fov: 34 });
+  const T = window.A1T, D = st.DUR, $ = (id) => document.getElementById(id);
+  // motion: 108 km/h until Kavach brakes at tB, then about 1.1 m/s^2 (illustration)
+  const V0 = 30, AB = 1.1;
+  const sAt = (t) => t < T.tB ? V0 * t : V0 * T.tB + V0 * (t - T.tB) - 0.5 * AB * (t - T.tB) ** 2;
+  const vAt = (t) => t < T.tB ? V0 : Math.max(0, V0 - AB * (t - T.tB));
+  // signal turns red at tF, about 600 m ahead; Kavach's permitted speed follows a braking curve to the signal; the pilot
+  // does not slow, Kavach warns, then brakes at tB with about 470 m left and stops short (all illustrative)
+  const Z0 = 0, SIG = -(sAt(T.tB) + 470), AC = 0.8, MARGIN = 60;
+  const vpAt = (left, t) => t < T.tF - 0.2 ? 110 : Math.min(110, Math.sqrt(2 * AC * Math.max(0, left - MARGIN)) * 3.6);
+  const tC1 = T.tF - 0.35, tC2 = T.tWn - 0.25;      // cut to the signal, cut back to the train
+  st.run((st) => {
+    const M = mats(), S = st.scene;
+    S.add(buildGround(M));
+    S.add(buildTrack(M, { cx: 0, z0: -900, z1: 220 }), buildTrack(M, { cx: 5.3, z0: -900, z1: 220 }));
+    S.add(buildOHE(M, { cx: 0, mx: -3.4, z0: -900, z1: 220, phase: 40 }), buildOHE(M, { cx: 5.3, mx: 8.7, z0: -900, z1: 220, phase: 40 }));
+    S.add(buildTrees({ clear: 18, z0: -1100 }));
+    const sig = buildSignal(M, { x: -2.5, z: SIG, plate: true }); S.add(sig);
+    const train = buildTrain(M, { coaches: 4 }); S.add(train);
+    const loco = train.userData.loco, sp = sparks({ n: 700 }); S.add(sp);
+    const pulse = flowLine([new THREE.Vector3(0.55, 2.0, 3.4), new THREE.Vector3(0.9, 1.5, 3.9), new THREE.Vector3(1.4, 1.0, 4.2), new THREE.Vector3(1.4, 0.9, 6.6)], { radius: 0.05, base: 0 });
+    loco.add(pulse);
+    // train-relative camera: 3/4 front orbit, rise behind the cab; after the signal shot: behind the cab, then down to the bogie
+    const camA = camPath([[0.0, [11, 2.6, -24], [0, 2.4, 6]], [3.4, [9.5, 3.4, -15], [0, 2.6, 6]], [6.4, [4.8, 7.8, 30], [-1, 3.6, -80]], [tC1, [4.4, 7.4, 27], [-1.2, 3.8, -110]]]);
+    const camB = camPath([[tC2, [7.4, 3.0, -17], [0, 2.4, 5]], [T.tB - 0.5, [6.4, 1.7, -5], [0, 1.0, 5.5]], [T.tB + 0.3, [5.4, 1.35, -0.8], [0, 0.7, 6.5]], [D, [4.3, 0.95, 1.4], [0, 0.6, 7.2]]]);
+    // the signal shot: low beside the signal, looking back down the line at the train (long lens)
+    const camS = camPath([[tC1, [-7.5, 3.4, SIG + 30], [-2.5, 5.0, SIG]], [tC2, [-6.6, 4.0, SIG + 21], [-2.5, 5.2, SIG]]]);
+    const ring = new THREE.Mesh(new THREE.RingGeometry(0.95, 1.05, 48), new THREE.MeshBasicMaterial({ color: 0xff3b2a, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, fog: false }));
+    S.add(ring);
+    return { train, loco, sig, sp, pulse, camA, camB, camS, ring };
+  }, (t, c) => {
+    const s = sAt(t), v = vAt(t), zN = Z0 - s, left = zN - SIG;
+    c.train.userData.place(zN, s);
+    let fov = 34;
+    if (t < tC1) { const { p, l } = c.camA(t); p.z += zN; l.z += zN; aim(st.camera, p, l, 0.01 * Math.sin(t * 1.3)); fov = lerp(34, 30, seg(t, 3.4, 6.4)); st.follow(0, 2, zN + 14, 34); }
+    else if (t < tC2) { const { p, l } = c.camS(t); aim(st.camera, p, l); fov = lerp(24, 20, seg(t, tC1, tC2, ease.lin)); st.follow(-2, 3, SIG + 10, 30); }
+    else { const { p, l } = c.camB(t); p.z += zN; l.z += zN; aim(st.camera, p, l, 0.008 * Math.sin(t * 1.7)); fov = lerp(32, 46, seg(t, tC2, T.tB + 0.3)); st.follow(0, 2, zN + 10, 26); }
+    st.camera.fov = fov; st.camera.updateProjectionMatrix();
+    // signal: double yellow until the aspect drops to red just after the cut; a red ring pulses on "red signal"
+    const red = seg(t, T.tF - 0.2, T.tF + 0.05, ease.lin);
+    c.sig.userData.set([1 - red, 0, 1 - red, red]);
+    const rp = c.sig.userData.lampWorld(3); c.ring.position.copy(rp).add(new THREE.Vector3(0, 0, 0.3)); c.ring.lookAt(st.camera.position);
+    const kr = clamp((t - T.tR) / 1.1); const rs = 0.5 + 2.2 * kr; c.ring.scale.set(rs, rs, rs); c.ring.material.opacity = kr > 0 && kr < 1 ? 0.9 * (1 - kr) : 0;
+    // Kavach braking: pulse down the brake link, hot brake blocks, sparks
+    const kb = seg(t, T.tB, T.tB + 0.7, ease.lin);
+    c.pulse.userData.set(Math.max(0, kb - 0.35), kb, t >= T.tB ? 1 : 0);
+    const hot = seg(t, T.tB + 0.4, T.tB + 1.5);
+    c.loco.userData.blockMat.emissiveIntensity = 4 * hot;
+    const em = c.loco.userData.blocks.filter((b, i) => i % 2 === 0).map((b) => b.getWorldPosition(new THREE.Vector3()).setY(0.05));
+    c.sp.userData.at(t, em, 0.9 * hot);
+    // telemetry: above the cab on train shots, fixed at the left on the signal shot; never over the frame centre
+    const vp = Math.round(vpAt(left, t)), kmh = v * 3.6;
+    let tx = 300, ty = 380;
+    if (t < tC1 || t >= tC2) { const a = st.project(new THREE.Vector3(0, 4.6, zN + 1.0)); if (a.z < 1) { tx = clamp(a.x, 300, 640); ty = clamp(a.y, 340, 760); } }
+    $("tele").style.transform = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px)`;
+    $("lead").style.visibility = t >= tC1 && t < tC2 ? "hidden" : "visible";
+    st.pin($("leadPin"), new THREE.Vector3(0, 4.6, zN + 1.0));
+    $("vv").firstChild.nodeValue = String(Math.round(kmh)); $("vp").textContent = vp;
+    $("vbar").style.width = `${clamp(kmh / 160) * 100}%`; $("vbar").style.background = kmh > vp + 1 ? "#F59E0B" : "#22C55E"; $("vmark").style.left = `${clamp(vp / 160) * 100}%`;
+    $("sd").firstChild.nodeValue = String(Math.max(0, Math.round(left / 10) * 10));
+    const lamp = (i, col) => { $("l" + i).style.background = col; };
+    lamp(0, red < 0.5 ? "#FACC15" : "#111"); lamp(1, "#111"); lamp(2, red < 0.5 ? "#FACC15" : "#111"); lamp(3, red >= 0.5 ? "#EF4444" : "#111");
+  });
+"""

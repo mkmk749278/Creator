@@ -23,7 +23,8 @@ importmap = """<script type="importmap">
   { "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/jsm/",
     "three/examples/jsm/": "./vendor/three/jsm/", "postprocessing": "./vendor/pp/postprocessing.js",
     "n8ao": "./vendor/pp/N8AO.js", "simplex-noise": "./vendor/noise/simplex-noise.js" } }
-</script>""" if spec.get("MODULE") else ""
+</script>
+<!-- kav3d.js loads vendor/library/hdri/kloofendal_48d_partly_cloudy_puresky_1k.hdr -->""" if spec.get("MODULE") else ""
 html = f"""<!doctype html>
 <html lang="en">
 <head>
