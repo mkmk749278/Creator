@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C4 binding award</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="shared/io.js"></script>
+    <script src="windows.js"></script>
+    <link rel="stylesheet" href="shared/io.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+.sec { position: absolute; inset: 0; }
+.part { position: absolute; inset: 0; }
+.cam { position: absolute; inset: 0; transform-origin: 960px 540px; }
+/* beat a: the third door */
+#wall { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, #26384d, #101c2b 60%, #0a121d); }
+#wall .tex { opacity: .35; mix-blend-mode: overlay; }
+#doorframe { position: absolute; left: 700px; top: 120px; width: 520px; height: 900px; background: #0e1824;
+  box-shadow: 0 0 0 26px #2b2a2a, 0 0 0 30px #4a3f33, 0 40px 80px rgba(0,0,0,.6); perspective: 1600px; }
+#beyond { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, #f4fffc 0%, #b9f3e6 25%, #59dcc3 55%, #1e5c58 100%); }
+#door { position: absolute; inset: 0; transform-origin: 0 50%; background: linear-gradient(90deg, #5a3a22, #6e4a2c 40%, #5b3b23);
+  box-shadow: inset 0 0 0 14px rgba(0,0,0,.18), inset 0 0 60px rgba(0,0,0,.4); }
+#door .pnl { position: absolute; left: 60px; right: 60px; border: 6px solid rgba(0,0,0,.22); border-radius: 6px; box-shadow: inset 0 0 18px rgba(0,0,0,.35); }
+#door .knob { position: absolute; right: 44px; top: 470px; width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ffe8a8, #b58a3c 60%, #5d4318); }
+#rays { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; mix-blend-mode: screen; opacity: 0;
+  background: linear-gradient(180deg, rgba(89,220,195,0) 0%, rgba(160,240,225,.35) 100%);
+  clip-path: polygon(700px 1020px, 1220px 1020px, 1700px 1080px, 220px 1080px); }
+#glow { position: absolute; left: 460px; top: -60px; width: 1000px; height: 1200px; border-radius: 50%; mix-blend-mode: screen; opacity: 0;
+  background: radial-gradient(closest-side, rgba(170,245,230,.55), rgba(89,220,195,.18) 50%, rgba(89,220,195,0)); }
+#whiteout { position: absolute; inset: 0; background: #eafff9; opacity: 0; }
+/* paper documents */
+.doc { width: 760px; height: 980px; padding: 56px 64px; font: 400 22px/1.5 Inter, Arial, sans-serif; }
+.doc .org { font: 800 20px/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; color: #2b3a4d; text-transform: uppercase; }
+.doc .ttl { font: 800 52px/1.1 Inter, Arial, sans-serif; letter-spacing: .04em; color: #111a26; margin: 26px 0 10px; }
+.doc .ref { font: 600 20px/1.4 Inter, Arial, sans-serif; color: #3d4652; letter-spacing: .04em; }
+.doc .rule { height: 3px; background: #c9bfa9; margin: 26px 0; }
+.doc .ln { height: 14px; border-radius: 7px; background: #d5ccba; margin: 18px 0; }
+.doc .fld { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #d3c9b5; padding: 14px 0; font: 600 26px/1.2 Inter, Arial, sans-serif; color: #3a4554; }
+.doc .fld b { font: 800 40px/1 Inter, Arial, sans-serif; color: #127a69; }
+.doc .kv { display: flex; gap: 14px; font: 400 22px/1.3 Inter, Arial, sans-serif; color: #2b3440; padding: 8px 0; border-bottom: 1px solid #ddd3c0; }
+.doc .kv span { width: 190px; flex: none; font-weight: 600; color: #4d5866; }
+.doc .kv b { font-weight: 800; color: #111a26; }
+.doc .body { font: 600 30px/1.38 Inter, Arial, sans-serif; color: #111a26; margin-top: 26px; }
+.doc .sigl { position: absolute; left: 64px; bottom: 96px; width: 330px; border-top: 2px solid #6b7280; padding-top: 8px; font: 600 18px/1.2 Inter, Arial, sans-serif; color: #262d36; }
+.small .kv span { width: 150px; }
+.small .org { line-height: 1.4; }
+.small .ref { line-height: 1.4; margin-bottom: 4px; }
+.small .body { font-size: 24px; margin-top: 16px; }
+.small .sigl { left: 44px; bottom: 70px; width: 260px; }
+.small .sim { left: 44px; bottom: 30px; }
+.doc .ttl.mid { font-size: 34px; line-height: 1.15; margin: 16px 0 8px; }
+.doc .sig { position: absolute; left: 64px; bottom: 120px; width: 300px; height: 90px; }
+.doc .sim { position: absolute; left: 64px; bottom: 40px; font: 600 16px/1 Inter, Arial, sans-serif; letter-spacing: .2em; color: #2f353d; }
+.seal { position: absolute; width: 190px; height: 190px; }
+.small { width: 520px; height: 680px; padding: 40px 44px; }
+.small .ttl { font-size: 34px; margin: 16px 0 8px; }
+/* calendar pad */
+#cal { position: absolute; left: 1100px; top: 210px; width: 520px; height: 600px; perspective: 1800px; }
+#cal .base { position: absolute; inset: 40px 0 0 0; background: #2b3440; border-radius: 16px; box-shadow: 0 40px 80px rgba(0,0,0,.55); }
+#cal .pg { position: absolute; left: 18px; right: 18px; top: 58px; height: 520px; background: #f4efe4; border-radius: 6px; transform-origin: 50% 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,.2); backface-visibility: hidden; }
+#cal .pg .h { position: absolute; top: 0; left: 0; right: 0; height: 90px; background: #14263b; border-radius: 6px 6px 0 0; color: var(--yellow);
+  font: 800 30px/90px Inter, Arial, sans-serif; letter-spacing: .14em; text-align: center; }
+#cal .pg .n { font: 800 230px/1 Inter, Arial, sans-serif; color: #172231; margin-top: 70px; }
+#cal .pg.due .h { color: var(--teal); }
+#cal .pg.due .n { font-size: 120px; color: #127a69; }
+#cal .rings { position: absolute; left: 70px; right: 70px; top: 30px; height: 50px; display: flex; justify-content: space-between; }
+#cal .rings i { width: 22px; height: 56px; border-radius: 11px; background: linear-gradient(90deg, #6b7380, #d6dbe2 50%, #6b7380); }
+.coin { position: absolute; left: 1640px; top: 640px; padding: 14px 22px; border-radius: 40px; background: #1a2533; border: 3px solid var(--yellow);
+  color: var(--yellow); font: 800 34px/1 Inter, Arial, sans-serif; white-space: nowrap; box-shadow: 0 16px 30px rgba(0,0,0,.5); }
+/* folders (G04 layout: insurer | complainant) */
+.folder { position: absolute; top: 170px; width: 820px; height: 800px; }
+.folder .back { position: absolute; inset: 40px 0 0 0; background: linear-gradient(160deg, #d8b878, #c9a463); border-radius: 10px; box-shadow: 0 40px 90px rgba(0,0,0,.55); }
+.folder .tab { position: absolute; left: 40px; top: 0; width: 330px; height: 64px; background: #d8b878; border-radius: 12px 12px 0 0;
+  font: 800 28px/64px Inter, Arial, sans-serif; letter-spacing: .14em; text-align: center; color: #14263b; }
+.folder .tab.ins { box-shadow: inset 0 -6px 0 var(--teal); }
+.folder .tab.cmp { box-shadow: inset 0 -6px 0 var(--yellow); }
+.folder .note { position: absolute; left: 60px; right: 60px; top: 470px; font: 800 38px/1.15 Inter, Arial, sans-serif; color: #14263b; }
+.clip-crop { position: absolute; overflow: hidden; border-radius: 3px; box-shadow: 0 20px 40px rgba(0,0,0,.45); background: #fff; }
+.clip-crop img { position: absolute; display: block; }
+.clip-crop .warm { position: absolute; inset: 0; background: #efe3cc; mix-blend-mode: multiply; opacity: .55; }
+.clip-crop .hl { position: absolute; background: var(--hl); mix-blend-mode: multiply; transform-origin: 0 50%; border-radius: 4px; }
+.lock { position: absolute; width: 170px; height: 210px; }
+.band { position: absolute; height: 34px; background: var(--teal); box-shadow: 0 6px 16px rgba(0,0,0,.4); transform-origin: 0 50%; }
+.route { position: absolute; }
+.shade { position: absolute; inset: 0; background: rgba(11, 20, 34, .62); border-radius: 10px; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="C4_binding_award" data-start="0" data-width="1920" data-height="1080" data-duration="39.4333">
+      <div class="io-plate" id="plate-wrap"><video id="plate" class="clip" src="media/plate.mp4" muted playsinline data-start="0" data-duration="39.4333" data-track-index="0"></video></div>
+      <div class="io-grade"></div>
+
+      <!-- ===== O010: door opens -> free to file -> award binds -> late days ===== -->
+      <div id="s-O010" class="sec clip" data-start="0" data-duration="19.6667" data-track-index="1">
+        <div class="part" id="a-door">
+          <div class="cam" id="door-cam">
+            <div id="wall" class="paper-free"></div>
+            <div id="glow"></div>
+            <div id="doorframe"><div id="beyond"></div>
+              <div id="door"><div class="pnl" style="top:60px;height:330px"></div><div class="pnl" style="top:440px;height:400px"></div><div class="knob"></div></div>
+            </div>
+            <div id="rays"></div>
+          </div>
+          <div id="whiteout"></div>
+        </div>
+        <div class="part" id="b-desk">
+          <div class="cam" id="desk-cam">
+            <div class="paper doc" id="form" style="left:580px; top:60px">
+              <div class="org">Filed online · cioins.co.in</div>
+              <div class="ttl mid">COMPLAINT TO THE INSURANCE OMBUDSMAN, HYDERABAD</div>
+              <div class="ref">COMPLAINT NO. HYD-H-2026-0471</div>
+              <div class="rule"></div>
+              <div class="kv"><span>Complainant</span><b>R. Kumar, Hyderabad</b></div>
+              <div class="kv"><span>Against</span><b>Sample Health Insurance Co. Ltd.</b></div>
+              <div class="kv"><span>Policy No.</span><b>SHI-4471-0926</b></div>
+              <div class="kv"><span>Claim No.</span><b>CLM-2408-55217</b></div>
+              <div class="kv"><span>Relief sought</span><b>₹3,30,000</b></div>
+              <div class="fld" style="margin-top:30px">FILING FEE <b id="fee">₹0</b></div>
+              <div class="sim">SIMULATION</div>
+            </div>
+            <div class="paper doc" id="award1" style="left:560px; top:50px">
+              <div class="org">Office of the Insurance Ombudsman, Hyderabad</div>
+              <div class="ttl">AWARD</div>
+              <div class="ref">UNDER RULE 17 · COMPLAINT NO. HYD-H-2026-0471</div>
+              <div class="rule"></div>
+              <div class="kv"><span>Complainant</span><b>R. Kumar, Hyderabad</b></div>
+              <div class="kv"><span>Insurer</span><b>Sample Health Insurance Co. Ltd.</b></div>
+              <div class="kv"><span>Claim No.</span><b>CLM-2408-55217</b></div>
+              <div class="body">The insurer shall pay <span style="background:rgba(255,219,89,.6);padding:0 4px">₹3,30,000</span> to the complainant within 30 days of receipt of this award.</div>
+              <div class="sigl">Insurance Ombudsman, Hyderabad</div>
+              <svg class="sig" viewBox="0 0 300 90"><path id="sig1" d="M10 60 C40 10, 60 80, 90 40 S140 20, 150 55 S200 70, 220 30 S260 50, 290 45" fill="none" stroke="#1d2b4a" stroke-width="4" stroke-linecap="round"/></svg>
+              <svg class="seal" id="seal1" viewBox="0 0 190 190" style="right:70px; bottom:90px"><g fill="none" stroke="#127a69" stroke-width="5"><circle cx="95" cy="95" r="84"/><circle cx="95" cy="95" r="64" stroke-dasharray="6 7"/><path d="M95 52 L106 82 L138 82 L112 101 L122 132 L95 113 L68 132 L78 101 L52 82 L84 82 Z" fill="rgba(18,122,105,.18)"/></g></svg>
+              <div class="sim">SIMULATION</div>
+            </div>
+            <div class="band" id="band1" style="left:520px; top:870px; width:840px"></div>
+            <svg class="lock" id="lock1" viewBox="0 0 170 210" style="left:1270px; top:770px"><path id="sh1" d="M45 100 V60 a40 40 0 0 1 80 0 V100" fill="none" stroke="#c9d6e3" stroke-width="18"/><rect x="18" y="92" width="134" height="110" rx="16" fill="#59DCC3"/><circle cx="85" cy="140" r="14" fill="#0B1422"/><rect x="79" y="146" width="12" height="30" rx="5" fill="#0B1422"/></svg>
+            <div id="cal"><div class="base"></div>
+              <div class="pg" id="pg5"><div class="h">DAYS LATE</div><div class="n">5</div></div>
+              <div class="pg" id="pg4"><div class="h">DAYS LATE</div><div class="n">4</div></div>
+              <div class="pg" id="pg3"><div class="h">DAYS LATE</div><div class="n">3</div></div>
+              <div class="pg" id="pg2"><div class="h">DAYS LATE</div><div class="n">2</div></div>
+              <div class="pg" id="pg1"><div class="h">DAYS LATE</div><div class="n">1</div></div>
+              <div class="pg due" id="pg0"><div class="h">AWARD</div><div class="n">DUE</div></div>
+              <div class="rings"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="coin" id="coin1">+₹5,000</div><div class="coin" id="coin2">+₹5,000</div><div class="coin" id="coin3">+₹5,000</div>
+            <div class="coin" id="coin4">+₹5,000</div><div class="coin" id="coin5">+₹5,000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== O052: no settlement -> the Ombudsman decides and passes an award ===== -->
+      <div id="s-O052" class="sec clip" data-start="19.6667" data-duration="4.7333" data-track-index="1">
+        <div class="cam" id="o52-cam">
+          <div class="paper doc small" id="p-you" data-layout-ignore style="left:240px; top:250px"><div class="org">To the Insurance Ombudsman, Hyderabad</div><div class="ttl">COMPLAINT</div><div class="ref">NO. HYD-H-2026-0471</div><div class="rule"></div>
+            <div class="kv"><span>Complainant</span><b>R. Kumar</b></div><div class="kv"><span>Against</span><b>Sample Health Insurance Co. Ltd.</b></div><div class="kv"><span>Relief sought</span><b>₹3,30,000</b></div><div class="sigl">R. Kumar</div><div class="sim">SIMULATION</div></div>
+          <div class="paper doc small" id="p-ins" style="left:1160px; top:250px"><div class="org">Sample Health Insurance Co. Ltd.</div><div class="ttl">REPLY</div><div class="ref">REPLY OF THE INSURER · COMPLAINT NO. HYD-H-2026-0471</div><div class="rule"></div>
+            <div class="body">The deduction was made under the policy terms.</div><div class="sigl">For Sample Health Insurance Co. Ltd.</div><div class="sim">SIMULATION</div></div>
+          <div class="paper doc" id="award2" style="left:580px; top:60px">
+            <div class="org">Office of the Insurance Ombudsman, Hyderabad</div>
+            <div class="ttl">AWARD</div>
+            <div class="ref">UNDER RULE 17 · COMPLAINT NO. HYD-H-2026-0471</div>
+            <div class="rule"></div>
+            <div class="kv"><span>Complainant</span><b>R. Kumar, Hyderabad</b></div>
+            <div class="kv"><span>Insurer</span><b>Sample Health Insurance Co. Ltd.</b></div>
+            <div class="kv"><span>Claim No.</span><b>CLM-2408-55217</b></div>
+            <div class="body">The insurer shall pay <span style="background:rgba(255,219,89,.6);padding:0 4px">₹3,30,000</span> to the complainant within 30 days of receipt of this award.</div>
+            <div class="sigl">Insurance Ombudsman, Hyderabad</div>
+            <svg class="sig" viewBox="0 0 300 90"><path id="sig2" d="M10 60 C40 10, 60 80, 90 40 S140 20, 150 55 S200 70, 220 30 S260 50, 290 45" fill="none" stroke="#1d2b4a" stroke-width="4" stroke-linecap="round"/></svg>
+            <svg class="seal" id="seal2" viewBox="0 0 190 190" style="right:70px; bottom:90px"><g fill="none" stroke="#127a69" stroke-width="5"><circle cx="95" cy="95" r="84"/><circle cx="95" cy="95" r="64" stroke-dasharray="6 7"/><path d="M95 52 L106 82 L138 82 L112 101 L122 132 L95 113 L68 132 L78 101 L52 82 L84 82 Z" fill="rgba(18,122,105,.18)"/></g></svg>
+            <div class="sim">SIMULATION</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== O056 + O057: G04 folders, insurer bound (Rule 17(8)) | complainant: other remedies may remain ===== -->
+      <div id="s-O056" class="sec clip" data-start="24.4" data-duration="15.0333" data-track-index="1">
+        <div class="cam" id="g4-cam">
+          <div class="folder" id="f-ins" style="left:120px">
+            <div class="back"></div><div class="tab ins">INSURER</div>
+            <div class="clip-crop" id="crop8" style="left:30px; top:120px; width:760px; height:300px">
+              <img src="img/rules_p11.jpg" width="1191" height="1684" style="left:-130px; top:-645px" alt="" />
+              <div class="warm"></div>
+              <div class="hl" id="hl8a" style="left:6px; top:113px; width:744px; height:36px"></div>
+            </div>
+            <div class="note" id="n-ins">Award is binding.</div>
+          </div>
+          <div class="band" id="band2" style="left:150px; top:770px; width:760px"></div>
+          <svg class="lock" id="lock2" viewBox="0 0 170 210" style="left:720px; top:660px"><path id="sh2" d="M45 100 V60 a40 40 0 0 1 80 0 V100" fill="none" stroke="#c9d6e3" stroke-width="18"/><rect x="18" y="92" width="134" height="110" rx="16" fill="#59DCC3"/><circle cx="85" cy="140" r="14" fill="#0B1422"/><rect x="79" y="146" width="12" height="30" rx="5" fill="#0B1422"/></svg>
+          <div class="folder" id="f-cmp" style="left:1000px">
+            <div class="back"></div><div class="tab cmp">COMPLAINANT</div>
+            <div class="paper doc small" id="award3" data-layout-ignore style="left:50px; top:96px; width:490px; height:450px; padding:30px 36px; transform-origin: 0 0">
+              <div class="org">Your copy</div><div class="ttl" style="margin:10px 0 6px">AWARD</div><div class="ref" style="font-size:17px">UNDER RULE 17 · NO. HYD-H-2026-0471</div>
+              <div class="body" style="font-size:23px">The insurer shall pay ₹3,30,000 to the complainant within 30 days of receipt of this award.</div><div class="sim" style="left:36px; bottom:24px">SIMULATION</div></div>
+            <svg class="lock" id="lock3" viewBox="0 0 170 210" style="left:560px; top:180px"><path d="M45 100 V60 a40 40 0 0 1 80 0 V40" fill="none" stroke="#c9d6e3" stroke-width="18" transform="translate(0,-30)"/><rect x="18" y="92" width="134" height="110" rx="16" fill="#FFDB59"/><circle cx="85" cy="140" r="14" fill="#0B1422"/><rect x="79" y="146" width="12" height="30" rx="5" fill="#0B1422"/></svg>
+            <svg class="route" id="route" viewBox="0 0 300 260" style="left:470px; top:380px; width:300px; height:260px">
+              <path id="rpath" d="M20 20 C 120 30, 120 150, 200 170" fill="none" stroke="#FFDB59" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 14"/>
+              <g id="forum" transform="translate(196 120)"><path d="M0 40 L45 12 L90 40 Z" fill="#14263b"/><rect x="8" y="44" width="10" height="56" fill="#14263b"/><rect x="40" y="44" width="10" height="56" fill="#14263b"/><rect x="72" y="44" width="10" height="56" fill="#14263b"/><rect x="0" y="102" width="90" height="12" fill="#14263b"/></g>
+            </svg>
+            <div class="note" id="n-cmp" style="top:560px">Other legal remedies may remain available.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="io-key" id="io-key"></div><div class="io-fill"></div><div class="io-leak" id="io-leak"></div><div class="io-dust" id="io-dust"></div>
+      <canvas class="io-grain" id="grain" width="500" height="290"></canvas>
+      <div class="io-vig"></div>
+
+      <!-- on-screen text exactly as scenes.md -->
+      <div id="lt-a" class="io-lt clip" data-start="4.2" data-duration="2.95" data-track-index="2"><div class="main" id="t-free">FREE TO FILE</div><div class="src">[CIO FAQ]</div></div>
+      <div id="lt-b" class="io-lt clip" data-start="7.15" data-duration="4.4" data-track-index="2"><div class="main" id="t-bind">AWARD BINDS THE INSURER</div><div class="src">[RULE 17]</div></div>
+      <div id="lt-c" class="io-lt clip" data-start="15.6" data-duration="4.0667" data-track-index="2"><div class="main y" id="t-day"><b>₹5,000</b> / DAY LATE</div><div class="src">[IRDAI HEALTH MASTER CIRCULAR | 2024]</div></div>
+      <div id="lt-d" class="io-lt clip" data-start="25.3" data-duration="5.6667" data-track-index="2"><div class="src" id="t-r17">[RULE 17 | INSURANCE OMBUDSMAN RULES]</div></div>
+      <div id="tag-a" class="io-tag clip" data-start="0" data-duration="19.6667" data-track-index="3">ILLUSTRATION</div>
+      <div id="tag-b" class="io-tag clip" data-start="19.6667" data-duration="4.7333" data-track-index="3">ILLUSTRATION</div>
+      <div id="tag-c" class="io-tag clip" data-start="24.4" data-duration="15.0333" data-track-index="3">ILLUSTRATION</div>
+    </div>
+    <script>
+      const W = window.WIN, $ = IO.$, sec = {};
+      for (const s of W.sections) sec[s.id] = s.start;
+      const S = (id, t) => sec[id] + t;
+      IO.texturePapers();
+      IO.atmos({ duration: W.duration, seed: 9, leaks: [S("O010", 3.6), S("O052", 0.05), S("O056", 0.05), S("O057", 0.2)] });
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t) => tl.fromTo(el, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, t);
+      const thump = (el, t, from = 1.6) => tl.fromTo(el, { opacity: 0, scale: from, rotation: -8 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.28, ease: "power4.in" }, t);
+      const draw = (path, t, d) => { const L = path.getTotalLength(); tl.fromTo(path, { strokeDasharray: L, strokeDashoffset: L }, { strokeDashoffset: 0, duration: d, ease: "power1.inOut" }, t); };
+
+      // --- O010 a: "Today, we open that door fully, from start to finish." (0.25–3.93) — the third door opens, we go through
+      tl.fromTo("#door", { rotationY: 0 }, { rotationY: -78, duration: 2.4, ease: "power2.inOut" }, S("O010", 0.4));
+      tl.fromTo("#glow", { opacity: 0.15 }, { opacity: 1, duration: 2.4, ease: "power1.in" }, S("O010", 0.4));
+      tl.fromTo("#rays", { opacity: 0 }, { opacity: 1, duration: 2.0 }, S("O010", 0.8));
+      tl.fromTo("#door-cam", { scale: 1, x: 0, y: 0 }, { scale: 1.12, duration: 1.8, ease: "none" }, S("O010", 0));
+      tl.to("#door-cam", { scale: 3.4, y: 60, duration: 2.0, ease: "power3.in" }, S("O010", 1.8));
+      tl.fromTo("#whiteout", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.in" }, S("O010", 3.55));
+      tl.fromTo("#a-door", { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.out" }, S("O010", 3.95));
+      // --- b: "Filing a complaint costs zero rupees." (4.39–6.74)
+      tl.fromTo("#b-desk", { opacity: 0 }, { opacity: 1, duration: 0.1 }, S("O010", 3.85));
+      tl.fromTo("#form", { y: 900, rotation: 6 }, { y: 0, rotation: -2, duration: 0.9, ease: "power3.out" }, S("O010", 3.9));
+      tl.fromTo("#fee", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, S("O010", 5.6));
+      tl.fromTo("#desk-cam", { scale: 1.0, x: 0, y: 0 }, { scale: 1.08, x: -20, duration: 3.2, ease: "none" }, S("O010", 3.9));
+      // --- c: "If the Ombudsman passes an award (7.15–9.0), it is binding on the insurance company (9.13–11.1)."
+      tl.fromTo("#award1", { x: -1500, rotation: -10 }, { x: 0, rotation: 1.5, duration: 0.9, ease: "power3.out" }, S("O010", 7.0));
+      tl.to("#form", { opacity: 0, duration: 0.3 }, S("O010", 7.6));
+      draw($("sig1"), S("O010", 7.8), 0.7);
+      thump("#seal1", S("O010", 8.6));
+      tl.fromTo("#band1", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, S("O010", 9.5));
+      tl.fromTo("#lock1", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, S("O010", 9.6));
+      tl.fromTo("#sh1", { y: -26 }, { y: 0, duration: 0.18, ease: "power4.in" }, S("O010", 10.1));
+      tl.to("#desk-cam", { scale: 1.16, x: 30, y: -10, duration: 4.0, ease: "none" }, S("O010", 7.1));
+      // --- d: "And if the company does not challenge the award (11.45–13.8), but pays it late (13.8–15.1), it has to pay you a
+      //        penalty of five thousand rupees (15.1–17.6) for every day of delay (17.6–19.4)."
+      tl.to(["#award1", "#band1", "#lock1"], { x: "-=430", y: -70, scale: 0.84, duration: 1.0, ease: "power2.inOut" }, S("O010", 11.3));
+      tl.to("#desk-cam", { scale: 1.0, x: -60, y: 0, duration: 1.2, ease: "power2.inOut" }, S("O010", 11.3));
+      tl.fromTo("#cal", { x: 900, rotation: 4 }, { x: 0, rotation: -1, duration: 1.0, ease: "power3.out" }, S("O010", 11.6));
+      const flips = [14.4, 17.7, 18.3, 18.85, 19.35];
+      for (let i = 1; i <= 5; i++) tl.fromTo(`#pg${i}`, { opacity: 0 }, { opacity: 1, duration: 0.05 }, S("O010", flips[i - 1] - 0.2));
+      flips.forEach((f, i) => {
+        tl.fromTo(`#pg${i}`, { rotationX: 0 }, { rotationX: 160, opacity: 0, duration: 0.45, ease: "power2.in" }, S("O010", f - 0.2));
+        tl.fromTo(`#coin${i + 1}`, { opacity: 0, x: -340, y: 0, scale: 0.6 }, { opacity: 1, x: 0, y: -i * 74, scale: 1, duration: 0.5, ease: "power3.out" }, S("O010", Math.max(f, i === 0 ? 16.6 : f)));
+      });
+      tl.to("#desk-cam", { scale: 1.1, x: -160, y: -30, duration: 7.5, ease: "none" }, S("O010", 12.4));
+      pop("#t-free", 4.45); pop("#t-bind", 7.2); pop("#t-day", 15.65);
+
+      // --- O052: "If there is no settlement (0.25–1.7), the Ombudsman decides the case (1.97–3.4), and passes an award (3.47–4.2)."
+      tl.fromTo("#p-you", { x: -700, rotation: -6 }, { x: 160, rotation: -2, duration: 1.0, ease: "power3.out" }, S("O052", 0.0));
+      tl.fromTo("#p-ins", { x: 700, rotation: 6 }, { x: -160, rotation: 2, duration: 1.0, ease: "power3.out" }, S("O052", 0.0));
+      tl.to("#p-you", { x: -40, rotation: -5, duration: 0.6, ease: "power2.inOut" }, S("O052", 1.5));
+      tl.to("#p-ins", { x: 40, rotation: 5, duration: 0.6, ease: "power2.inOut" }, S("O052", 1.5));
+      tl.fromTo("#award2", { y: -1200, rotation: 8 }, { y: 0, rotation: -1, duration: 0.8, ease: "power3.out" }, S("O052", 2.0));
+      draw($("sig2"), S("O052", 2.9), 0.6);
+      thump("#seal2", S("O052", 3.6));
+      tl.fromTo("#o52-cam", { scale: 1.04 }, { scale: 1.14, duration: 4.8, ease: "none" }, S("O052", 0));
+
+      // --- O056: "First (0.25–0.65). Under Rule seventeen (1.0–2.35), when the Ombudsman passes an award (2.35–4.3),
+      //            it is binding on the insurance company (4.34–6.3)."  Insurer folder; Rule 17(8) crop; lock at "binding"
+      tl.fromTo("#g4-cam", { scale: 1.0, x: 0, y: 0 }, { scale: 1.32, x: 330, y: 40, duration: 2.2, ease: "power2.inOut" }, S("O056", 0.0));
+      tl.to("#g4-cam", { scale: 1.42, x: 380, y: 30, duration: 4.3, ease: "none" }, S("O056", 2.2));
+      tl.fromTo("#f-ins", { y: 40 }, { y: 0, duration: 0.6 }, S("O056", 0));
+      tl.fromTo("#crop8", { y: 30, rotation: -3, opacity: 0 }, { y: 0, rotation: -1, opacity: 1, duration: 0.6, ease: "power3.out" }, S("O056", 0.9));
+      tl.fromTo("#hl8a", { scaleX: 0 }, { scaleX: 1, duration: 1.9, ease: "none" }, S("O056", 4.3));
+      tl.fromTo("#n-ins", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4 }, S("O056", 4.8));
+      tl.fromTo("#band2", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, S("O056", 4.9));
+      tl.fromTo("#lock2", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, S("O056", 5.0));
+      tl.fromTo("#sh2", { y: -26 }, { y: 0, duration: 0.18, ease: "power4.in" }, S("O056", 5.45));
+      pop("#t-r17", S("O056", 1.0));
+      // --- O057: "Wait... (0.25) what if you are NOT happy with the award? (0.9–2.7) You don't have to accept it. (3.0–4.3)
+      //            Other legal remedies (4.7–5.9), like the consumer forum (5.9–6.9), may still be open to you (–8.2)."
+      tl.to("#g4-cam", { scale: 1.36, x: -420, y: 30, duration: 0.9, ease: "power3.inOut" }, S("O057", 0.4));
+      tl.fromTo("#award3", { rotation: -2, x: 0 }, { rotation: -9, x: -20, y: 10, duration: 0.7, ease: "power2.out" }, S("O057", 3.2));
+      tl.fromTo("#lock3", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, S("O057", 3.4));
+      tl.fromTo("#n-cmp", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45 }, S("O057", 4.75));
+      tl.fromTo("#route", { opacity: 0 }, { opacity: 1, duration: 0.05 }, S("O057", 5.3));
+      draw($("rpath"), S("O057", 5.3), 1.0);
+      tl.fromTo("#forum", { opacity: 0, scale: 0.7, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, S("O057", 6.1));
+      tl.to("#g4-cam", { scale: 1.44, x: -470, y: 10, duration: 7.0, ease: "none" }, S("O057", 1.3));
+
+      tl.to({}, { duration: 0.01 }, W.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["C4_binding_award"] = tl;
+    </script>
+  </body>
+</html>

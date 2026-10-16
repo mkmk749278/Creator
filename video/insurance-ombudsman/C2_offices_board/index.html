@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C2 offices board</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="shared/io.js"></script>
+    <script src="windows.js"></script>
+    <link rel="stylesheet" href="shared/io.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+#scene { position: absolute; inset: 0; perspective: 2400px; }
+#cam { position: absolute; inset: 0; transform-origin: 960px 540px; }
+#board { position: absolute; left: 150px; top: 110px; width: 1620px; height: 770px; border-radius: 18px;
+  background: linear-gradient(180deg, #1a232f, #111821 60%, #0d131b); box-shadow: 0 0 0 10px #252e3a, 0 0 0 13px #0a0f15, 0 60px 120px rgba(0,0,0,.6); }
+#board::before { content: ""; position: absolute; inset: 0; border-radius: 18px; pointer-events: none;
+  background: linear-gradient(115deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 30%), radial-gradient(ellipse at 20% 0%, rgba(255,214,150,.10), rgba(0,0,0,0) 60%); }
+#hdr { position: absolute; left: 40px; top: 28px; height: 74px; display: flex; gap: 8px; }
+.rivet { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #8892a0, #2b323c); }
+.row { position: absolute; height: 84px; display: flex; align-items: center; gap: 16px; }
+.lamp { width: 26px; height: 26px; border-radius: 50%; background: #3a3220; box-shadow: inset 0 2px 4px rgba(0,0,0,.6); flex: none; }
+.cells { display: flex; gap: 4px; }
+.cell { position: relative; width: 38px; height: 62px; border-radius: 5px; background: linear-gradient(180deg, #232b36 0%, #1b222c 49%, #10151c 51%, #19202a 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), 0 3px 4px rgba(0,0,0,.5); overflow: hidden; }
+.cell span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 800 35px/1 Inter, Arial, sans-serif; color: #e9eef5; }
+.cell::after { content: ""; position: absolute; left: 0; right: 0; top: 30px; height: 2px; background: rgba(0,0,0,.65); }
+.big .cell { width: 52px; height: 74px; }
+.big .cell::after { top: 36px; }
+.big .cell span { font-size: 52px; color: var(--yellow); }
+.sel { position: absolute; border: 5px solid var(--yellow); border-radius: 12px; box-shadow: 0 0 30px rgba(255,219,89,.35); }
+.pin { position: absolute; width: 96px; height: 96px; border-radius: 50%; background: #F5F7FB; box-shadow: 0 16px 34px rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; }
+.pin svg { width: 56px; height: 56px; }
+#links { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="C2_offices_board" data-start="0" data-width="1920" data-height="1080" data-duration="15.5667">
+      <div class="io-plate" id="plate-wrap"><video id="plate" class="clip" src="media/plate.mp4" muted playsinline data-start="0" data-duration="15.5667" data-track-index="0"></video></div>
+      <div class="io-grade"></div>
+      <div id="scene">
+        <div id="cam">
+          <div id="board">
+            <div id="hdr" class="big"></div>
+            <div id="rows"></div>
+            <div class="sel" id="sel"></div>
+            <i class="rivet" style="left:14px;top:14px"></i><i class="rivet" style="right:14px;top:14px"></i><i class="rivet" style="left:14px;bottom:14px"></i><i class="rivet" style="right:14px;bottom:14px"></i>
+          </div>
+          <svg id="links"><path id="lk1" d="" fill="none" stroke="#FFDB59" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 12"/><path id="lk2" d="" fill="none" stroke="#59DCC3" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 12"/></svg>
+          <div class="pin" id="pin-home"><svg viewBox="0 0 48 48" fill="none" stroke="#0B1422" stroke-width="4.5" stroke-linejoin="round"><path d="M7 23 L24 9 L41 23 V40 H7 Z"/><path d="M19 40 V29 H29 V40"/></svg></div>
+          <div class="pin" id="pin-branch"><svg viewBox="0 0 48 48" fill="none" stroke="#0B1422" stroke-width="4.5" stroke-linejoin="round"><path d="M9 41 V13 H31 V41"/><path d="M31 21 H40 V41"/><path d="M5 41 H44 M15 19 H19 M23 19 H25 M15 26 H19 M23 26 H25 M15 33 H19 M23 33 H25"/></svg></div>
+        </div>
+      </div>
+      <div class="io-key" id="io-key"></div><div class="io-fill"></div><div class="io-leak" id="io-leak"></div><div class="io-dust" id="io-dust"></div>
+      <canvas class="io-grain" id="grain" width="500" height="290"></canvas>
+      <div class="io-vig"></div>
+      <div id="lt" class="io-lt clip" data-start="0" data-duration="15.5667" data-track-index="2"><div class="main" id="t-main">18 OMBUDSMAN OFFICES</div><div class="src" id="t-src">[CIO OFFICE DIRECTORY]</div></div>
+    </div>
+    <script>
+      const W = window.WIN, $ = IO.$, sec = W.sections[0];
+      // 18 office names in the order of the owner's G08 graphic (CIO directory, cioins.co.in/Ombudsman, checked 15 Oct 2026)
+      const CITIES = ["AHMEDABAD", "BENGALURU", "BHOPAL", "BHUBANESWAR", "CHANDIGARH", "CHENNAI", "DELHI", "GUWAHATI", "HYDERABAD",
+        "JAIPUR", "KOCHI", "KOLKATA", "LUCKNOW", "MUMBAI", "NOIDA", "PATNA", "PUNE", "THANE"];
+      // lamps light on the spoken names (VO pauses): Hyderabad ≈5.5, Bengaluru ≈6.5, Mumbai ≈7.5, Delhi ≈8.7, Kolkata ≈9.05, then all 18
+      const LIT = { HYDERABAD: 5.5, BENGALURU: 6.55, MUMBAI: 7.55, DELHI: 8.72, KOLKATA: 9.05 };
+      const ALL = 9.35;
+      const AZ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const rng = FIN.rng(18), rows = [], flaps = [];
+      const colX = [44, 584, 1124], rowY = [130, 232, 334, 436, 538, 640];
+      CITIES.forEach((c, i) => {
+        const r = document.createElement("div"); r.className = "row"; r.style.left = colX[i % 3] + "px"; r.style.top = rowY[Math.floor(i / 3)] + "px";
+        const lamp = document.createElement("div"); lamp.className = "lamp"; r.appendChild(lamp);
+        const cells = document.createElement("div"); cells.className = "cells"; r.appendChild(cells);
+        const spans = [];
+        for (let k = 0; k < 11; k++) {
+          const cell = document.createElement("div"); cell.className = "cell"; const sp = document.createElement("span"); cell.appendChild(sp); cells.appendChild(cell);
+          // each cell flips through seeded letters and settles; row stagger + left-to-right ripple
+          const settle = 0.5 + Math.floor(i / 3) * 0.22 + (i % 3) * 0.12 + k * 0.07 + rng() * 0.25, n = 5 + Math.floor(rng() * 6);
+          const seq = []; for (let j = 0; j < n; j++) seq.push(AZ[Math.floor(rng() * 26)]); seq.push(c[k] || " ");
+          flaps.push({ sp, settle, seq, step: 0.075 });
+          spans.push(sp);
+        }
+        $("rows").appendChild(r);
+        rows.push({ c, r, lamp, spans, lit: LIT[c] !== undefined ? LIT[c] : ALL + (i * 7 % 18) * 0.03 });
+      });
+      // header counter: two flaps settle on 1 and 8 as the VO says "eighteen offices" (≈3.0–3.6)
+      ["1", "8"].forEach((d, k) => {
+        const cell = document.createElement("div"); cell.className = "cell"; const sp = document.createElement("span"); cell.appendChild(sp); $("hdr").appendChild(cell);
+        const seq = []; for (let j = 0; j < 7; j++) seq.push(String(Math.floor(rng() * 10))); seq.push(d);
+        flaps.push({ sp, settle: 3.15 + k * 0.12, seq, step: 0.06 });
+      });
+      FIN.hook((t) => {
+        for (const f of flaps) {
+          const t0 = f.settle - f.step * (f.seq.length - 1);
+          let idx = Math.floor((t - t0) / f.step); idx = Math.max(-1, Math.min(f.seq.length - 1, idx));
+          const ch = idx < 0 ? " " : f.seq[idx];
+          if (f.sp.textContent !== ch) f.sp.textContent = ch;
+          const ph = (t - t0) / f.step - Math.floor((t - t0) / f.step), flipping = t >= t0 && t < f.settle + f.step;
+          f.sp.style.transform = flipping ? `scaleY(${(0.35 + 0.65 * Math.abs(Math.cos(Math.PI * ph))).toFixed(3)})` : "none";
+        }
+        for (const R of rows) {
+          const on = IO.ramp(t, R.lit, R.lit + 0.25), hot = R.c === "HYDERABAD" ? 1 : 0;
+          R.lamp.style.background = on > 0 ? `radial-gradient(circle at 40% 35%, #eafffa, ${hot ? "#59DCC3" : "#59DCC3"} 55%, #1f6e62)` : "#3a3220";
+          R.lamp.style.boxShadow = on > 0 ? `0 0 ${(22 * on).toFixed(1)}px rgba(89,220,195,${(0.9 * on).toFixed(2)}), inset 0 2px 4px rgba(0,0,0,.3)` : "inset 0 2px 4px rgba(0,0,0,.6)";
+          const col = on > 0.5 && LIT[R.c] !== undefined ? "#b8fff0" : "#e9eef5";
+          for (const sp of R.spans) if (sp.style.color !== col) sp.style.color = col;
+        }
+      });
+      // camera: angled close on the board, push to Hyderabad as it is named, ride the named cities, pull back for all 18
+      const hyd = rows[8], cell = (R) => ({ x: 150 + parseFloat(R.r.style.left) + 230, y: 110 + parseFloat(R.r.style.top) + 42 });
+      const tl = gsap.timeline({ paused: true });
+      const camTo = (R, s, t, d, rot = 0) => { const p = cell(R); tl.to("#cam", { x: (960 - p.x) * s, y: (540 - p.y) * s, scale: s, rotationY: rot, duration: d, ease: "power2.inOut" }, t); };
+      tl.fromTo("#cam", { scale: 1.18, x: 120, y: 40, rotationY: 14 }, { scale: 1.06, x: 40, y: 10, rotationY: 8, duration: 3.6, ease: "power1.inOut" }, 0);
+      tl.to("#cam", { scale: 1.0, x: 0, y: 0, rotationY: 4, duration: 1.6, ease: "power1.inOut" }, 3.6);
+      camTo(hyd, 1.5, 5.15, 0.75, 0);
+      camTo(rows[1], 1.42, 6.25, 0.6, 2);
+      camTo(rows[13], 1.42, 7.25, 0.6, 2);
+      camTo(rows[6], 1.42, 8.35, 0.55, 0);
+      camTo(rows[11], 1.42, 8.9, 0.45, -2);
+      tl.to("#cam", { x: 0, y: 0, scale: 1.0, rotationY: 0, duration: 0.9, ease: "power2.inOut" }, 9.35);
+      // "You pick the one that covers the place where you live (9.95–12.0), or the insurance company's branch (12.28–15.3)"
+      const hp = cell(hyd);
+      const selL = parseFloat(hyd.r.style.left) - 16, selT = parseFloat(hyd.r.style.top) - 4;
+      Object.assign($("sel").style, { left: selL + "px", top: selT + "px", width: "520px", height: "92px" });
+      tl.fromTo("#sel", { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 10.6);
+      const homeP = { x: 1860, y: 900 }, brP = { x: 1860, y: 300 };
+      Object.assign($("pin-home").style, { left: homeP.x - 48 + "px", top: homeP.y - 48 + "px" });
+      Object.assign($("pin-branch").style, { left: brP.x - 48 + "px", top: brP.y - 48 + "px" });
+      $("lk1").setAttribute("d", `M${homeP.x - 30} ${homeP.y - 40} C ${homeP.x - 40} ${hp.y + 60}, ${hp.x + 330} ${hp.y + 20}, ${hp.x + 296} ${hp.y + 14}`);
+      $("lk2").setAttribute("d", `M${brP.x - 30} ${brP.y + 40} C ${brP.x - 40} ${hp.y - 40}, ${hp.x + 330} ${hp.y - 20}, ${hp.x + 296} ${hp.y - 14}`);
+      tl.fromTo("#pin-home", { opacity: 0, y: 80, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, 10.2);
+      const L1 = $("lk1").getTotalLength(), L2 = $("lk2").getTotalLength();
+      tl.fromTo("#lk1", { strokeDasharray: `${L1} ${L1}`, strokeDashoffset: L1 }, { strokeDashoffset: 0, duration: 0.8, ease: "power2.out" }, 10.45);
+      tl.fromTo("#pin-branch", { opacity: 0, y: 80, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, 12.5);
+      tl.fromTo("#lk2", { strokeDasharray: `${L2} ${L2}`, strokeDashoffset: L2 }, { strokeDashoffset: 0, duration: 0.8, ease: "power2.out" }, 12.75);
+      tl.to("#cam", { scale: 1.05, x: -40, y: -6, duration: 5.4, ease: "none" }, 10.2);
+      tl.fromTo("#t-main", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 3.1);
+      tl.fromTo("#t-src", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 3.4);
+      tl.to("#lt", { opacity: 0, duration: 0.25 }, 5.0);
+      tl.to("#lt", { opacity: 1, duration: 0.4 }, 9.7);
+      IO.atmos({ duration: W.duration, seed: 3, plateDx: 40, leaks: [0.05, 9.4] });
+      tl.to({}, { duration: 0.01 }, W.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["C2_offices_board"] = tl;
+    </script>
+  </body>
+</html>
