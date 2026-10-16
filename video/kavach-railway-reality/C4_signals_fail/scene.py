@@ -20,6 +20,8 @@ BODY = """  <svg id="schem" viewBox="0 0 1920 1080" data-layout-allow-overflow><
   <div class="kav-label red" id="lab2">Signals failed<small>AUTOMATIC BLOCK SIGNALLING</small></div>"""
 JS = """
   const S = buildKanchan();
+  // keep the express label inside the frame: anchor it at the rear of the rake
+  { const t = S.q("#pass text"); t.setAttribute("x", "10"); t.setAttribute("text-anchor", "start"); }
   tl.set("#pass", { x: 1150 }, 0);
   tl.set("#goods", { x: -200 }, 0);
   tl.fromTo("#world", { transformOrigin: "50% 50%", scale: 1.16, x: 60, y: 70 }, { scale: 1.24, x: -40, y: 60, duration: D, ease: "sine.inOut" }, 0);

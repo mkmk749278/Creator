@@ -32,7 +32,7 @@ window.buildKanchan = function (opts = {}) {
       ${Array.from({length: 22}, (_, i) => `<line x1="-400" y1="${-200 + i * 70}" x2="2600" y2="${-200 + i * 70}" stroke="rgba(148,163,184,0.07)"/>`).join("")}</g>
     <g id="t-up">${track(`M -600 ${Y_UP} L 2600 ${Y_UP}`, 0.55)}</g>
     <g id="t-dn">${track(`M -600 ${Y} L 2600 ${Y}`)}</g>
-    <text x="1000" y="${Y + 70}" class="tlabel lbl">DN LINE</text>
+    <text id="lbl-dn" x="1000" y="${Y + 70}" class="tlabel lbl">DN LINE</text>
     <text id="lbl-up" x="900" y="${Y_UP + 70}" class="tlabel lbl" opacity="0.6">UP LINE</text>
     <g id="sigs">${sigs}</g>
     <g id="pass"><g id="pass-k" opacity="0"></g>

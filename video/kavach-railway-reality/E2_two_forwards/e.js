@@ -80,15 +80,15 @@
       Object.assign(c.style, { left: x + "px", top: y + "px", transform: `rotate(${rot}deg)` }); if (id) c.id = id; return c;
     },
     /** seeded glass-crack paths radiating from (cx, cy) inside an svg; returns path elements (stroke-dash ready) */
-    crack(svg, cx, cy, seed = 5, n = 11, R = 520) {
+    crack(svg, cx, cy, seed = 5, n = 11, R = 520, col = "rgba(255,255,255,0.92)") {
       const NS = "http://www.w3.org/2000/svg", r = mulberry32(seed), out = [];
       for (let i = 0; i < n; i++) { const a = (i / n) * 6.283 + r() * 0.4; let x = cx, y = cy, d = `M ${cx} ${cy}`;
         const L = R * (0.5 + r() * 0.6), steps = 7; for (let k = 1; k <= steps; k++) { const rr = (L * k) / steps; const aa = a + (r() - 0.5) * 0.5; x = cx + Math.cos(aa) * rr; y = cy + Math.sin(aa) * rr; d += ` L ${x.toFixed(1)} ${y.toFixed(1)}`; }
-        const p = document.createElementNS(NS, "path"); p.setAttribute("d", d); p.setAttribute("fill", "none"); p.setAttribute("stroke", "rgba(255,255,255,0.92)"); p.setAttribute("stroke-width", 2.5 + r() * 2);
+        const p = document.createElementNS(NS, "path"); p.setAttribute("d", d); p.setAttribute("fill", "none"); p.setAttribute("stroke", col); p.setAttribute("stroke-width", 2.5 + r() * 2);
         p.setAttribute("stroke-linecap", "round"); svg.appendChild(p); out.push(p); }
       for (let ring = 1; ring <= 3; ring++) { const p = document.createElementNS(NS, "path"); let d = ""; const rad = ring * R * 0.16;
         for (let k = 0; k <= 14; k++) { const a = (k / 14) * 6.283, rr = rad * (0.8 + r() * 0.4); d += `${k ? "L" : "M"} ${(cx + Math.cos(a) * rr).toFixed(1)} ${(cy + Math.sin(a) * rr).toFixed(1)} `; }
-        p.setAttribute("d", d); p.setAttribute("fill", "none"); p.setAttribute("stroke", "rgba(255,255,255,0.7)"); p.setAttribute("stroke-width", 1.6); svg.appendChild(p); out.push(p); }
+        p.setAttribute("d", d); p.setAttribute("fill", "none"); p.setAttribute("stroke", col); p.setAttribute("stroke-opacity", 0.75); p.setAttribute("stroke-width", 1.6); svg.appendChild(p); out.push(p); }
       out.forEach((p) => { const L = p.getTotalLength(); p.setAttribute("stroke-dasharray", L); p.setAttribute("stroke-dashoffset", L); p.dataset.len = L; });
       return out;
     },

@@ -44,7 +44,7 @@ JS = """
   cv.setAttribute("fill", "none"); cv.setAttribute("stroke", "#38BDF8"); cv.setAttribute("stroke-width", "5");
   const cvg = document.createElementNS(NSs, "g"); cvg.setAttribute("id", "cvg"); cvg.appendChild(cv);
   cvg.insertAdjacentHTML("beforeend", `<line x1="300" y1="${S.Y - 40}" x2="300" y2="${S.Y + 36}" stroke="#38BDF8" stroke-width="4"/>
-    <text x="290" y="${S.Y + 46}" text-anchor="end" style="font: 800 26px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #7DD3FC">STOPS SHORT</text>`);
+    <text x="290" y="${S.Y + 46}" text-anchor="end" style="font: 800 26px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #7DD3FC">ROOM TO STOP</text>`);
   S.q("#goods").appendChild(cvg);
   const Lc = cv.getTotalLength(); cv.setAttribute("stroke-dasharray", Lc); cv.setAttribute("stroke-dashoffset", Lc);
   tl.set("#cvg", { opacity: 0, x: -96 }, 0);
@@ -57,7 +57,7 @@ JS = """
     <text id="gt1" x="-150" y="${S.Y - 90}" text-anchor="middle" style="font: 800 30px Inter, Arial, sans-serif; fill: #FCA5A5">78 KM/H</text>
     <line id="gts" x1="-218" y1="${S.Y - 100}" x2="-218" y2="${S.Y - 100}" stroke="#DC2626" stroke-width="5"/>
     <g id="gt2" opacity="0"><text x="-150" y="${S.Y - 100}" text-anchor="middle" style="font: 800 32px Inter, Arial, sans-serif; fill: #7DD3FC">HELD SLOW</text>
-      <text x="-150" y="${S.Y - 70}" text-anchor="middle" style="font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #E0F2FE">RULE: MAX 15 KM/H</text></g>`;
+      <text x="-150" y="${S.Y - 70}" text-anchor="middle" style="font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.08em; fill: #E0F2FE">TO A SET LIMIT</text></g>`;
   S.q("#goods").appendChild(tag);
   tl.fromTo("#gtag", { opacity: 0 }, { opacity: 1, duration: 0.3 }, tF);
   tl.to("#gts", { attr: { x2: -82 }, duration: 0.3 }, tH);

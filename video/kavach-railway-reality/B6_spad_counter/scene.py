@@ -15,6 +15,9 @@ BODY = """  <svg id="tlx" viewBox="0 0 1920 1080" data-layout-allow-overflow>
     <g id="ticks"></g>
     <text x="160" y="700" class="ax" style="fill:#CBD5E1">EACH MARK = ONE CASE</text>
     <text x="160" y="870" class="ax">APR 2019</text><text x="1760" y="870" text-anchor="end" class="ax">MAR 2024</text>
+    <line id="yb" x1="160" y1="900" x2="160" y2="900.3" stroke="#38BDF8" stroke-width="8" stroke-linecap="round" opacity="0"/>
+    <text id="y5" x="960" y="960" text-anchor="middle" class="ax" style="fill:#E0F2FE; font-size:36px" opacity="0">FIVE YEARS</text>
+    <g class="yr" opacity="0"><line x1="400" y1="806" x2="400.3" y2="834" stroke="#7DD3FC" stroke-width="4"/><text x="400" y="870" text-anchor="middle" class="ax" style="fill:#7DD3FC">2020</text></g><g class="yr" opacity="0"><line x1="720" y1="806" x2="720.3" y2="834" stroke="#7DD3FC" stroke-width="4"/><text x="720" y="870" text-anchor="middle" class="ax" style="fill:#7DD3FC">2021</text></g><g class="yr" opacity="0"><line x1="1040" y1="806" x2="1040.3" y2="834" stroke="#7DD3FC" stroke-width="4"/><text x="1040" y="870" text-anchor="middle" class="ax" style="fill:#7DD3FC">2022</text></g><g class="yr" opacity="0"><line x1="1360" y1="806" x2="1360.3" y2="834" stroke="#7DD3FC" stroke-width="4"/><text x="1360" y="870" text-anchor="middle" class="ax" style="fill:#7DD3FC">2023</text></g>
     <g id="g12" opacity="0"><text x="1160" y="560" class="c12">12</text><text x="1172" y="610" class="cl" style="fill:#FCA5A5">ENDED IN A COLLISION</text></g>
   </svg>"""
 JS = """
@@ -38,5 +41,12 @@ JS = """
   tl.from("#tlx > line, #tlx > text.ax", { opacity: 0, duration: 0.4, stagger: 0.1 }, 0.1);
   [...red].forEach((i, k) => tl.to(ticks[i], { attr: { stroke: "#EF4444", "stroke-width": 6 }, duration: 0.2 }, t12 + k * 0.08));
   tl.to("#g12", { opacity: 1, duration: 0.5 }, t12 + 0.3);
+  // "in five years, from April 2019 to March 2024": a bar sweeps the five years and each new year lights as it passes
+  const tFv = at("V031", "in five years"), tM = at("V031", "March twenty");
+  tl.to("#y5", { opacity: 1, duration: 0.4 }, tFv);
+  tl.set("#yb", { opacity: 1 }, tY - 0.1);
+  tl.to("#yb", { attr: { x2: 1760 }, duration: tM + 0.6 - tY, ease: "none" }, tY);
+  document.querySelectorAll("#tlx .yr").forEach((y, k) => tl.to(y, { opacity: 1, duration: 0.2 }, tY + (tM + 0.6 - tY) * (240 + 320 * k) / 1600));
+  tl.fromTo("#tlx > text.ax:nth-of-type(3)", { scale: 1 }, { scale: 1.12, transformOrigin: "160px 860px", duration: 0.25, yoyo: true, repeat: 1 }, tY);
   tl.fromTo("#tlx", { transformOrigin: "50% 50%", scale: 1.0 }, { scale: 1.04, duration: D, ease: "sine.inOut" }, 0);
 """

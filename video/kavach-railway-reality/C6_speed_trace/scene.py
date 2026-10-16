@@ -24,7 +24,7 @@ BODY = """  <svg id="schem" viewBox="0 0 1920 1080" data-layout-allow-overflow><
     <text id="t78" x="440" y="88" class="big" opacity="0">78 KM/H</text>
     <text id="t40" x="830" y="180" class="big" style="fill:#FCA5A5" opacity="0">≈ 40</text>
   </svg>
-  <div class="kav-label red" id="lab1">78 km/h → ≈ 40 km/h<small>GOODS TRAIN · AT IMPACT</small></div>
+  <div class="kav-label red" id="lab1">78 km/h<span id="l40" style="opacity:0"> → ≈ 40 km/h</span><small>GOODS TRAIN · <span id="lsub">TOP SPEED</span></small></div>
   <div class="kav-label red" id="lab2">No Kavach here<small>ON THAT SECTION</small></div>"""
 JS = """
   const S = buildKanchan();
@@ -56,6 +56,9 @@ JS = """
   tl.fromTo("#impr", { attr: { r: 16 }, opacity: 1 }, { attr: { r: 60 }, opacity: 0, duration: 0.9, repeat: 2 }, t40 + 0.2);
   tl.to("#t40", { opacity: 1, duration: 0.3 }, t40 + 0.2);
   tl.to("#lab1", { opacity: 1, duration: 0.5 }, t78);
+  // the impact speed is revealed only at the impact
+  tl.to("#l40", { opacity: 1, duration: 0.3 }, t40 + 0.2);
+  tl.set("#lsub", { textContent: "AT IMPACT" }, t40 + 0.2);
   tl.to("#lab1", { opacity: 0, duration: 0.3 }, tNo - 0.2);
   tl.to("#lab2", { opacity: 1, duration: 0.5 }, tNo);
   tl.to("#chart", { opacity: 0.45, duration: 0.6 }, tNo);
