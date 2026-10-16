@@ -82,6 +82,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   optional 2.35:1 bars, low-opacity HUD); kinetic accents in lower corners on a dark scrim.
 - **Genre sets the look** (science, biography, business, tech, society): PLAYBOOK §5.3.
 - **Semantic lock:** every shot shows exactly what the VO says at that second. Real event footage before stock.
+- **Design from real photos first** (owner, 2026-10-16): before drawing any hardware, train, signal, track or screen, collect
+  real reference photos, make a contact sheet and copy their look (colours, shapes, labels, layout). PLAYBOOK §9.2.
 - **Maths is animated, never written** (owner, 2026-10-16): no whiteboard sums or text-slide equations; show each
   calculation as moving, to-scale HyperFrames animation (counters, brackets, zones, magnifiers). PLAYBOOK §4a-3.
 - **Science is explained with animated HyperFrames scenes** (Three.js for organs and cells, SVG/GSAP for charts, dials,

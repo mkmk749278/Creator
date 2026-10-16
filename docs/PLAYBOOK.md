@@ -818,6 +818,17 @@ Reusable, parameterised scenes that any documentary (and the unified engine, §2
   in parallel write their rows to `video/lib/<scene>/library_rows.csv`; the coordinator merges them).
 - No new npm/pip dependencies without the coordinator: propose them in the README.
 
+### 9.2 Design from real photos first (owner, 2026-10-16)
+*Why (owner):* "Before design anything observe the real photos first, accordingly you can make it realistic design."
+The independent viewer review of the Kavach scenes found a generic "cab display" placeholder, a made-up screen layout,
+signals that did not look Indian and a three-track Balasore layout when the real one has four. Before any scene that
+draws real-world things, gather references (Commons categories via `list=categorymembers`, the files a Wikipedia article
+uses via `prop=images`, PIB photos, the owner), keep them in the project's `assets/ref/`, contact-sheet them into
+`qa/ref/`, and write `design-reference.md` (element → reference file → what to copy). Then draw from it: the real
+screen layout and labels, the real livery and colours, the real signal heads and plates, the real track arrangement.
+Commons: the search API rate-limits (429); category listings, `prop=images` and `Special:FilePath/<name>?width=960`
+files with a descriptive User-Agent and 8–45 s gaps worked. Example: `projects/kavach-railway-reality/design-reference.md`.
+
 ## 10. HyperFrames (pinned `hyperframes@0.8.103`)
 
 Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:

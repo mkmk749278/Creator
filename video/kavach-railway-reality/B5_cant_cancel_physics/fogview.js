@@ -45,12 +45,12 @@ window.FogView = function (canvas, fogImg) {
     // the signal (post right of the track); red aspect lit
     if (s.zsig > 0.9 && s.zsig < 150) {
       const z = s.zsig, [px, py] = P(2.3, 0, z), [hx, hy] = P(2.3, 5.2, z), sc = F / z;
-      ctx.strokeStyle = mix([46, 50, 56], z); ctx.lineWidth = Math.max(1.5, 0.18 * sc); ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(hx, hy); ctx.stroke();
+      ctx.strokeStyle = mix([46, 50, 56], z * 0.7); ctx.lineWidth = Math.max(1.5, 0.18 * sc); ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(hx, hy); ctx.stroke();
       const w = 0.55 * sc, h = 1.4 * sc;
-      ctx.fillStyle = mix([18, 20, 26], z); ctx.fillRect(hx - w / 2, hy - h, w, h);
-      const lr = 0.16 * sc, ly = hy - h + 0.25 * sc, vis = 1 - fogK(z) * 0.9;
-      const glow = ctx.createRadialGradient(hx, ly, 0, hx, ly, lr * 6); glow.addColorStop(0, `rgba(255,70,60,${0.9 * vis})`); glow.addColorStop(1, "rgba(255,70,60,0)");
-      ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(hx, ly, lr * 6, 0, 7); ctx.fill();
+      ctx.fillStyle = mix([18, 20, 26], z * 0.7); ctx.fillRect(hx - w / 2, hy - h, w, h);
+      const lr = 0.16 * sc, ly = hy - h + 0.25 * sc, vis = Math.min(1, Math.max(0, (64 - z) / 16));   // a lit lamp cuts through fog: it resolves at about 50-60 m
+      const glow = ctx.createRadialGradient(hx, ly, 0, hx, ly, lr * 9); glow.addColorStop(0, `rgba(255,70,60,${0.9 * vis})`); glow.addColorStop(1, "rgba(255,70,60,0)");
+      ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(hx, ly, lr * 9, 0, 7); ctx.fill();
       ctx.fillStyle = `rgba(255,110,100,${vis})`; ctx.beginPath(); ctx.arc(hx, ly, lr, 0, 7); ctx.fill();
     }
     // drifting fog banks (tileable texture), two layers at different speeds
