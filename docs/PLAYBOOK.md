@@ -367,6 +367,16 @@ varied rhythm with `...` and `—`; every scene has visual forensics and SFX; op
 while telling the uncompromising truth. Facts still come only from `claims.csv` (§12): a style example in Part F is a
 model of tone, never a source (its numbers are not verified).
 
+**India maps (owner, 2026-10-16: "India map not good and accurate").** Draw India with its official boundary, never
+land-only shapes that merge it with its neighbours: Natural Earth's India point-of-view countries
+(`ne_10m_admin_0_countries_ind.geojson`, public domain) gives the outline India officially shows (full Jammu & Kashmir
+and Ladakh, Arunachal Pradesh, Andaman & Nicobar and Lakshadweep kept even when tiny). Fill India, glow its edge, dim the
+neighbours, state lines faint. Rail network: DataMeet Indian Railways (`github.com/datameet/railways`, CC0)
+stop sequences, consecutive stops under 35 km apart joined (≈ 71,700 km against 69,439 route km); route corridors over
+that graph (Delhi–Mumbai 1,377 km, Delhi–Howrah 1,440 km, both within 1% of the real distances). Natural Earth's own
+railroads layer is too sparse (≈ 41,000 km). Overpass (OSM) is blocked from the cloud container. Builder:
+`video/kavach-railway-reality/_D_tools/build_map.py`. Keep the whole country in frame unless a zoom is the point.
+
 ### 4a-3. Visual modes for explainers (owner, 2026-10-11)
 *Why (owner):* "not only slides": viewers stay to the end when they see real life, watch the maths being worked out and
 follow a character. Every explainer mixes, in this order of preference:

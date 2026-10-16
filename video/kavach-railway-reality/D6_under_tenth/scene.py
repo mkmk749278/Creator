@@ -17,7 +17,7 @@ BODY = """  <svg id="map" viewBox="0 0 1920 1080" data-layout-allow-overflow></s
   <svg id="waf" viewBox="0 0 640 540" data-layout-allow-overflow><g id="wg"></g></svg>"""
 JS = """
   const Mp = buildMap(document.getElementById("map"));
-  tl.fromTo("#mworld", { transformOrigin: "880px 560px", scale: 1.14, x: -150, y: -70 }, { scale: 1.2, x: -330, y: -150, duration: D, ease: "sine.inOut" }, 0);
+  tl.fromTo("#mworld", { transformOrigin: "880px 560px", scale: 1.05, x: -150, y: -30 }, { scale: 1.06, x: -250, y: -30, duration: D, ease: "sine.inOut" }, 0);
   tl.set("#rails", { opacity: 0.45 }, 0);
   for (const k of ["delhi", "mumbai", "ahmedabad", "howrah"]) tl.set(Mp.P[k], { opacity: 1 }, 0);
   for (const k of ["dm", "va", "dh"]) tl.set([Mp.C[k].glow, Mp.C[k].core], { opacity: 0.75 }, 0);

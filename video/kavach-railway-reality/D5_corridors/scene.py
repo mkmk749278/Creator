@@ -20,7 +20,7 @@ BODY = """  <svg id="map" viewBox="0 0 1920 1080" data-layout-allow-overflow></s
 JS = """
   const Mp = buildMap(document.getElementById("map"));
   // continue D4's framing, then drift towards the corridors
-  tl.fromTo("#mworld", { transformOrigin: "880px 560px", scale: 1.02, x: -150, y: 0 }, { scale: 1.14, x: -150, y: -70, duration: D, ease: "sine.inOut" }, 0);
+  tl.fromTo("#mworld", { transformOrigin: "880px 560px", scale: 1.02, x: -150, y: 0 }, { scale: 1.05, x: -150, y: -30, duration: D, ease: "sine.inOut" }, 0);
   tl.set("#rails", { opacity: 0.45 }, 0);
   for (const k of ["scr1", "scr2", "scr3", "scr4"]) tl.set([Mp.C[k].glow, Mp.C[k].core], { opacity: 0 }, 0);
   const tStart = at("V033", "newest Kavach"), tN = at("V033", "two thousand six hundred"), tDM = at("V033", "Delhi Mumbai"), tDH = at("V033", "Delhi Howrah"), tBusy = at("V033", "two of the busiest");
@@ -42,7 +42,7 @@ JS = """
     document.getElementById("mworld").appendChild(g); return g;
   };
   label("lab-dm", "ahmedabad", -60, -110, "end", "DELHI → MUMBAI", "1,423 KM GROUP");
-  label("lab-dh", "howrah", 40, 30, "start", "DELHI → HOWRAH", "1,210 KM GROUP");
+  label("lab-dh", "howrah", 30, 110, "start", "DELHI → HOWRAH", "1,210 KM GROUP");
   tl.fromTo("#lab-dm", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tDM);
   tl.fromTo("#lab-dh", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tDH + 0.3);
   // busiest: a pulse travels both corridors

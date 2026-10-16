@@ -17,10 +17,11 @@ JS = """
   tl.fromTo("#mworld", { transformOrigin: "880px 560px", scale: 0.96, x: -120 }, { scale: 1.02, x: -150, duration: D, ease: "sine.inOut" }, 0);
   tl.set("#corr", { opacity: 0 }, 0);
   tl.from("#land", { opacity: 0, duration: 1.0 }, 0.1);
+  tl.fromTo("#indedge", { opacity: 0.4 }, { opacity: 1, duration: 1.2 }, 0.4);
   // the network grows outwards from Delhi over the first half of the line
   const tJ = at("V032", "Look at the size"), t69 = at("V032", "sixty nine thousand"), t16 = at("V032", "sixteen thousand");
   const n = Mp.rl.length, span = Math.max(2.5, t69 - tJ + 1.5);
-  Mp.rl.forEach((p, i) => { Mp.prep(p); tl.to(p, { attr: { "stroke-dashoffset": 0 }, duration: 0.9, ease: "power1.out" }, tJ - 0.6 + span * i / n); });
+  Mp.rl.forEach((p, i) => tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, tJ - 0.6 + span * i / n));
   const fmt = (v) => Math.round(v).toLocaleString("en-IN");
   const a = { v: 0 }, b = { v: 0 };
   tl.to("#b1", { opacity: 1, duration: 0.4 }, t69 - 0.2);
