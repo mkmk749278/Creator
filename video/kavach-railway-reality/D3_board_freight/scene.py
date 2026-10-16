@@ -83,13 +83,13 @@ JS = """
   E("line", { x1: XW(0), y1: RY - 60, x2: XW(0) + 0.3, y2: cy0, stroke: "#F59E0B", "stroke-width": 2.5, "stroke-dasharray": "8 8" }, brk);
   // ---- readouts and intro chips ----
   const rdg = E("g", { opacity: 0 }, R);
-  [["sp", 96, "KM/H"], ["dm", 330, "METRES"], ["ts", 564, "SECONDS"]].forEach(([id, x, u]) => { E("text", { id, x, y: 150, class: "rd" }, rdg).textContent = "0"; E("text", { x, y: 182, class: "ru" }, rdg).textContent = u; });
-  const tlp = E("text", { x: 800, y: 150, class: "ru", fill: "#7DD3FC", opacity: 0 }, rdg); tlp.textContent = "▶▶ TIME-LAPSE";
+  [["sp", 96, "KM/H"], ["dm", 330, "METRES"]].forEach(([id, x, u]) => { E("text", { id, x, y: 150, class: "rd" }, rdg).textContent = "0"; E("text", { x, y: 182, class: "ru" }, rdg).textContent = u; });
+  const tlp = E("text", { x: 580, y: 150, class: "ru", fill: "#7DD3FC", opacity: 0 }, rdg); tlp.textContent = "▶▶ TIME-LAPSE";
   const chips = E("g", { opacity: 0 }, R);
   E("rect", { x: 96, y: 160, width: 420, height: 74, rx: 12, fill: "rgba(15,23,42,0.88)", stroke: "#F59E0B", "stroke-width": 2 }, chips);
   E("text", { x: 306, y: 210, "text-anchor": "middle", class: "chipt" }, chips).textContent = "5,000 T · 75 KM/H";
   // ---- time map: presentation t -> real seconds tau (brake at tau = 0); rate ramps 1 -> K while the camera pulls out (zoom = Z0 / rate) ----
-  const K = 13, Z0 = 13, tA = 3.9, tB = 5.9, rate = (t) => t < tA ? 1 : t > tB ? K : 1 + (K - 1) * (0.5 - 0.5 * Math.cos(Math.PI * (t - tA) / (tB - tA)));
+  const K = 13, Z0 = 13, tA = 2.9, tB = 5.9, rate = (t) => t < tA ? 1 : t > tB ? K : 1 + (K - 1) * (0.5 - 0.5 * Math.cos(Math.PI * (t - tA) / (tB - tA)));
   const N = 400, cum = [0]; for (let i = 1; i <= N; i++) { const a = (i - 1) * D / N, b = i * D / N; cum.push(cum[i - 1] + (b - a) * (rate(a) + rate(b)) / 2); }
   const tauB = (() => { const i = Math.round(tB / D * N); return cum[i]; })();          // real time elapsed when the brakes go on
   const tau = (t) => { const f = Math.min(N, t / D * N), i = Math.floor(f); return (cum[i] + (cum[Math.min(N, i + 1)] - cum[i]) * (f - i)) - tauB; };
@@ -111,7 +111,7 @@ JS = """
     if (s > 0) { const a1 = Math.min(d, D1); c1.setAttribute("d", curve(0, Math.max(0.1, a1))); z1.setAttribute("d", curve(0, Math.max(0.1, a1)) + ` L ${XW(a1)} ${cy0} L ${XW(0)} ${cy0} Z`);
       if (d > D1) { c2.setAttribute("d", curve(D1, d)); z2.setAttribute("d", curve(D1, d) + ` L ${XW(d)} ${cy0} L ${XW(D1)} ${cy0} Z`); } else { c2.setAttribute("d", "M 0 0"); z2.setAttribute("d", "M 0 0"); } }
     else { c1.setAttribute("d", "M 0 0"); z1.setAttribute("d", "M 0 0"); c2.setAttribute("d", "M 0 0"); z2.setAttribute("d", "M 0 0"); }
-    $("sp").textContent = Math.round(v * 3.6); $("dm").textContent = Math.max(0, Math.round(d)); $("ts").textContent = Math.max(0, Math.round(s));
+    $("sp").textContent = Math.round(v * 3.6); $("dm").textContent = Math.max(0, Math.round(d));
   };
   place();
   tl.to(st, { t: D, duration: D, ease: "none", onUpdate: place }, 0);

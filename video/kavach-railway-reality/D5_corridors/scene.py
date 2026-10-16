@@ -26,15 +26,20 @@ JS = """
   const tStart = at("V033", "newest Kavach"), tN = at("V033", "two thousand six hundred"), tDM = at("V033", "Delhi Mumbai"), tDH = at("V033", "Delhi Howrah"), tBusy = at("V033", "two of the busiest");
   const draw = (k, t, dur) => { for (const p of [Mp.C[k].glow, Mp.C[k].core]) { Mp.prep(p); tl.to(p, { attr: { "stroke-dashoffset": 0 }, duration: dur, ease: "power1.inOut" }, t); } };
   ["delhi"].forEach((k) => tl.to(Mp.P[k], { opacity: 1, duration: 0.3 }, tStart - 0.5));
-  draw("dm", Math.min(tDM - 1.2, tN - 0.3), 2.4); draw("va", Math.min(tDM - 1.2, tN - 0.3) + 1.8, 0.8);
-  draw("dh", tDH - 1.0, 2.2);
+  // the whole corridor faintly (dashed), then only the commissioned sections light up (PIB 05 Aug 2026 table)
+  for (const k of ["dm", "dh"]) { tl.set(Mp.C[k].glow, { opacity: 0 }, 0); tl.set(Mp.C[k].core, { opacity: 0, attr: { "stroke-dasharray": "7 7", "stroke-width": 4, stroke: "#F59E0B" } }, 0); }
+  const t1 = Math.min(tDM - 1.2, tN - 0.3);
+  tl.to(Mp.C.dm.core, { opacity: 0.9, duration: 0.5 }, t1 - 0.4); tl.to(Mp.C.dh.core, { opacity: 0.9, duration: 0.5 }, tDH - 1.4);
+  const on = (k, t, dur) => { tl.set(Mp.C[k].glow, { opacity: 0.25 }, t); tl.set(Mp.C[k].core, { opacity: 1 }, t); draw(k, t, dur); };
+  on("w_dm", t1, 2.4); on("va", t1 + 1.8, 0.8);
+  ["w_d1", "w_d2", "w_d3", "w_d4", "w_d5", "w_d6", "w_d7"].forEach((k, i) => on(k, tDH - 1.0 + i * 0.28, k === "w_d1" ? 1.4 : 0.7));
   ["mumbai", "ahmedabad"].forEach((k) => tl.to(Mp.P[k], { opacity: 1, duration: 0.3 }, Math.min(tDM - 1.2, tN - 0.3) + 2.2));
   tl.to(Mp.P.howrah, { opacity: 1, duration: 0.3 }, tDH + 1.1);
   // labels live inside the map group so they ride the camera move
   const NS = "http://www.w3.org/2000/svg";
   const label = (id, k, dx, dy, anchor, t1, t2) => {
     const [x, y] = Mp.M.pts[k], g = document.createElementNS(NS, "g"); g.setAttribute("id", id); g.setAttribute("opacity", 0);
-    const w = 400, h = 70, rx = anchor === "end" ? x + dx - w : x + dx;
+    const w = Math.max(400, t1.length * 25 + 40), h = 70, rx = anchor === "end" ? x + dx - w : x + dx;
     g.innerHTML = `<line x1="${x}" y1="${y}" x2="${anchor === "end" ? rx + w : rx}" y2="${y + dy + h / 2 + 0.4}" stroke="#38BDF8" stroke-width="2"/>
       <rect x="${rx}" y="${y + dy}" width="${w}" height="${h}" rx="8" fill="rgba(8,20,38,0.9)" stroke="#38BDF8" stroke-width="2"/>
       <text x="${rx + 20}" y="${y + dy + 47}" style="font: 800 32px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #7DD3FC">${t1}</text>
@@ -42,11 +47,14 @@ JS = """
     document.getElementById("mworld").appendChild(g); return g;
   };
   label("lab-dm", "ahmedabad", -60, -110, "end", "DELHI → MUMBAI", "");
+  label("lab-gap", "gaya", -40, 120, "end", "GAPS NOT YET WORKING", "");
+  document.querySelector("#lab-gap text").style.fill = "#FCD34D"; document.querySelector("#lab-gap rect").setAttribute("stroke", "#F59E0B"); document.querySelector("#lab-gap line").setAttribute("stroke", "#F59E0B");
   label("lab-dh", "howrah", 30, 110, "start", "DELHI → HOWRAH", "");
   tl.fromTo("#lab-dm", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tDM);
   tl.fromTo("#lab-dh", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tDH + 0.3);
+  tl.fromTo("#lab-gap", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tBusy + 0.4);
   // busiest: a pulse travels both corridors
-  for (const k of ["dm", "dh"]) tl.fromTo(Mp.C[k].glow, { attr: { "stroke-width": 12 }, opacity: 0.25 }, { attr: { "stroke-width": 22 }, opacity: 0.5, duration: 0.6, yoyo: true, repeat: 1, ease: "sine.inOut" }, tBusy);
+  for (const k of ["w_dm", "w_d1", "w_d6", "w_d7"]) tl.fromTo(Mp.C[k].glow, { attr: { "stroke-width": 12 }, opacity: 0.25 }, { attr: { "stroke-width": 22 }, opacity: 0.5, duration: 0.6, yoyo: true, repeat: 1, ease: "sine.inOut" }, tBusy);
   const a = { v: 0 };
   tl.to("#b1", { opacity: 1, duration: 0.4 }, tN - 0.3);
   tl.to(a, { v: 2633, duration: 1.8, ease: "power2.out", onUpdate: () => document.getElementById("n1").textContent = Math.round(a.v).toLocaleString("en-IN") }, tN - 0.3);

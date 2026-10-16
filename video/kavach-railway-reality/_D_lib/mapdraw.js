@@ -24,6 +24,7 @@ window.buildMap = function (svg) {
   for (const k in M.corr) {
     const glow = path(M.corr[k], { fill: "none", stroke: "#38BDF8", "stroke-width": 12, "stroke-linecap": "round", "stroke-linejoin": "round", opacity: 0.25 }, corr);
     const core = path(M.corr[k], { fill: "none", stroke: "#7DD3FC", "stroke-width": 4.5, "stroke-linecap": "round", "stroke-linejoin": "round" }, corr);
+    if (k.startsWith("w_")) { glow.setAttribute("opacity", 0); core.setAttribute("opacity", 0); }   // working sections: scenes turn them on
     C[k] = { glow, core };
   }
   const dots = g("dots", world), P = {};

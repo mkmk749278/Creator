@@ -20,7 +20,8 @@ JS = """
   tl.fromTo("#mworld", { transformOrigin: "880px 560px", scale: 1.05, x: -150, y: -30 }, { scale: 1.06, x: -250, y: -30, duration: D, ease: "sine.inOut" }, 0);
   tl.set("#rails", { opacity: 0.45 }, 0);
   for (const k of ["delhi", "mumbai", "ahmedabad", "howrah"]) tl.set(Mp.P[k], { opacity: 1 }, 0);
-  for (const k of ["dm", "va", "dh"]) tl.set([Mp.C[k].glow, Mp.C[k].core], { opacity: 0.75 }, 0);
+  for (const k of ["dm", "dh"]) { tl.set(Mp.C[k].glow, { opacity: 0 }, 0); tl.set(Mp.C[k].core, { opacity: 0.35, attr: { "stroke-dasharray": "6 8", "stroke-width": 2.5 } }, 0); }
+  for (const k of ["w_dm", "va", "w_d1", "w_d2", "w_d3", "w_d4", "w_d5", "w_d6", "w_d7"]) { tl.set(Mp.C[k].glow, { opacity: 0.3 }, 0); tl.set(Mp.C[k].core, { opacity: 0.9 }, 0); }
   const tO = at("V034", "older version"), tN = at("V034", "one thousand four hundred"), tS = at("V034", "South Central"), tK = at("V034", "and Kavach"), tU = at("V034", "well under");
   ["scr1", "scr2", "scr3", "scr4"].forEach((k, i) => {
     const { glow, core } = Mp.C[k];

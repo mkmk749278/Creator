@@ -27,5 +27,7 @@ JS = """
   tl.to("#b1", { opacity: 1, duration: 0.4 }, t69 - 0.2);
   tl.to(a, { v: 69439, duration: 1.6, ease: "power2.out", onUpdate: () => document.getElementById("n1").textContent = fmt(a.v) }, t69 - 0.2);
   tl.to("#b2", { opacity: 1, duration: 0.4 }, t16 - 0.2);
-  tl.to(b, { v: 16000, duration: 1.4, ease: "power2.out", onUpdate: () => document.getElementById("n2").textContent = (b.v >= 15999.5 ? "≈ " : "") + fmt(b.v) }, t16 - 0.2);
+  // a rounded figure: shown whole (a count-up through exact-looking values would read as false precision)
+  tl.set("#n2", { textContent: "≈ 16,000" }, 0);
+  tl.fromTo("#n2", { scale: 0.85, transformOrigin: "0% 50%" }, { scale: 1, duration: 0.6, ease: "back.out(2)" }, t16 - 0.2);
 """

@@ -8,8 +8,8 @@ CSS = """
   .strip img { display: block; width: 1500px; height: auto; }
   .strip .src { position: absolute; right: 14px; top: -34px; font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.14em; color: #CBD5E1; background: rgba(15,23,42,0.9); padding: 4px 10px; border-radius: 6px; }
   #s1 { left: 150px; top: 250px; transform: rotate(-1.2deg); } #s2 { left: 200px; top: 440px; transform: rotate(0.8deg); } #s3 { left: 170px; top: 630px; transform: rotate(-0.6deg); }
-  #stamp { left: 1190px; top: 585px; font-size: 52px; opacity: 0; white-space: nowrap; }
-  #loco { position: absolute; left: 1490px; top: 250px; width: 360px; opacity: 0; }
+  #stamp { left: 1180px; top: 700px; font-size: 56px; opacity: 0; white-space: nowrap; }
+  #loco { position: absolute; left: 1330px; top: 650px; width: 360px; opacity: 0; }
   #loco .k { font: 800 96px Inter, Arial, sans-serif; color: #F8FAFC; font-variant-numeric: tabular-nums; line-height: 1; margin-top: 18px; }
   #loco .u { font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: #94A3B8; margin-top: 10px; }
 """
@@ -22,20 +22,21 @@ BODY = """  <svg id="fn" viewBox="0 0 1920 1080" data-layout-allow-overflow>
       <clipPath id="streamclip"><rect id="streamrect" x="0" y="0" width="0" height="0"/></clipPath>
     </defs>
     <g id="world">
-      <g id="ghost" opacity="0"><path id="gA" fill="none" stroke="rgba(148,163,184,0.22)" stroke-width="2" stroke-dasharray="6 8"/><path id="gB" fill="none" stroke="rgba(148,163,184,0.22)" stroke-width="2" stroke-dasharray="6 8"/><rect id="gC" fill="none" stroke="rgba(148,163,184,0.22)" stroke-width="2" stroke-dasharray="6 8"/></g>
-      <g id="bandA" opacity="0"><path id="pA" fill="url(#hatch)" stroke="#F59E0B" stroke-width="3" stroke-dasharray="14 10"/>
-        <text id="lA" class="bl" text-anchor="middle" fill="#FCD34D">WORK STARTED</text>
-        <text id="nA" class="bn" text-anchor="middle" fill="#F8FAFC">0</text></g>
-      <g id="bandB" opacity="0"><path id="pB" fill="url(#steel)" stroke="#94A3B8" stroke-width="2"/>
-        <text id="lB" class="bl" text-anchor="middle" fill="#E2E8F0">FITTED</text>
-        <text id="nB" class="bn" text-anchor="middle" fill="#F8FAFC">0</text></g>
-      <g id="bandC" opacity="0"><rect id="pC" fill="url(#cy)" filter="url(#glow)"/>
+      <text id="kmu" class="ax" x="150" y="226" opacity="0" style="font-size:24px">BAR LENGTH = ROUTE KM, TO SCALE</text>
+      <g id="bandA" opacity="0"><rect id="gA" x="150" y="250" height="150" rx="10" fill="none" stroke="rgba(148,163,184,0.3)" stroke-width="2" stroke-dasharray="6 8"/>
+        <rect id="pA" x="150" y="250" width="0" height="150" rx="10" fill="url(#hatch)" stroke="#F59E0B" stroke-width="3" stroke-dasharray="14 10"/>
+        <text id="lA" class="bl" x="180" y="306" fill="#FCD34D">WORK STARTED</text>
+        <text id="nA" class="bn" x="180" y="378" fill="#F8FAFC">0</text></g>
+      <g id="bandB" opacity="0"><rect id="pB" x="150" y="470" width="0" height="150" rx="10" fill="url(#steel)" stroke="#94A3B8" stroke-width="2"/>
+        <text id="lB" class="bl" x="180" y="526" fill="#E2E8F0">TRACK FITTED</text>
+        <text id="nB" class="bn" x="180" y="598" fill="#F8FAFC">0</text></g>
+      <g id="bandC" opacity="0"><rect id="pC" x="150" y="690" width="0" height="150" rx="10" fill="url(#cy)" filter="url(#glow)"/>
+        <rect id="pC2" x="150" y="690" width="0" height="150" rx="10" fill="#B45309" opacity="0.85"/>
         <g id="flow" clip-path="url(#streamclip)"></g>
-        <text id="lC" class="bl" fill="#7DD3FC">KAVACH 4.0 WORKING</text>
+        <text id="lC" class="bl" fill="#7DD3FC">WORKING</text>
         <text id="nC" class="bn" fill="#F8FAFC">2,633</text>
-        <text id="sC" class="ax" fill="#94A3B8">ROUTE KM · 31 JUL 2026</text></g>
-      <g id="kmscale" opacity="0"><text id="kmu" class="ax">WIDTH = ROUTE KM</text></g>
-      <g id="prot" opacity="0"><text id="tprot" class="bl" fill="#F87171">NOT YET PROTECTED</text></g>
+        <text id="sC" class="ax" fill="#CBD5E1" style="font-size:24px">KAVACH 4.0 · 31 JUL 2026</text>
+        <text id="sC2" class="ax" fill="#FCD34D" style="font-size:24px">+ 1,465 OLDER VERSION 3.2</text></g>
     </g>
   </svg>
   <div class="strip" id="s1"><div class="src">PIB · 05 AUG 2026</div><img src="pib_row7726.jpg" alt="PIB release: Installation of Track side equipment 7,726 RKm"/></div>
@@ -55,23 +56,17 @@ BODY = """  <svg id="fn" viewBox="0 0 1920 1080" data-layout-allow-overflow>
   </div>
   <div class="kav-stamp" id="stamp">FITTED ≠ WORKING</div>"""
 JS = """
-  // funnel widths are to scale: 1,300 px = 21,794 route km (PIB 05 Aug 2026 figures)
-  const S = 1300 / 21794, CX = 760, wA = 21794 * S, wB = 7726 * S, wC = 2633 * S;
-  const yA0 = 250, yA1 = 450, yB0 = 470, yB1 = 670, yC0 = 690, yC1 = 960;
-  const trap = (y0, y1, w0, w1) => `M ${CX - w0 / 2} ${y0} L ${CX + w0 / 2} ${y0} L ${CX + w1 / 2} ${y1} L ${CX - w1 / 2} ${y1} Z`;
+  // bars to scale: 1,500 px = 21,794 route km (PIB 05 Aug 2026 figures); working = Kavach 4.0 2,633 + version 3.2 1,465 (D6)
+  const S = 1500 / 21794, X0 = 150, wA = 21794 * S, wB = 7726 * S, wC = 2633 * S, wC2 = 1465 * S, yC0 = 690, yC1 = 840;
   const $ = (id) => document.getElementById(id), set = (id, a) => { for (const k in a) $(id).setAttribute(k, a[k]); };
-  set("pA", { d: trap(yA0, yA1, wA, wB) }); set("lA", { x: CX, y: yA0 + 62 }); set("nA", { x: CX, y: yA0 + 136 });
-  set("pB", { d: trap(yB0, yB1, wB, wC) }); set("lB", { x: CX, y: yB0 + 56 }); set("nB", { x: CX, y: yB0 + 126 });
-  set("gA", { d: trap(yA0, yA1, wA, wB) }); set("gB", { d: trap(yB0, yB1, wB, wC) }); set("gC", { x: CX - wC / 2, y: yC0, width: wC, height: yC1 - yC0, rx: 6 });
-  set("pC", { x: CX - wC / 2, y: yC0, width: wC, height: yC1 - yC0, rx: 6 });
-  set("streamrect", { x: CX - wC / 2, y: yC0, width: wC, height: yC1 - yC0 });
-  set("lC", { x: CX + wC / 2 + 36, y: yC0 + 50 }); set("nC", { x: CX + wC / 2 + 36, y: yC0 + 120 }); set("sC", { x: CX + wC / 2 + 40, y: yC0 + 160 });
-  set("kmu", { x: CX - wA / 2, y: yA0 - 22 }); set("tprot", { x: CX + wA / 2 - 360, y: yA0 - 22 });
-  // particles flowing down the working stream (positions are a pure function of time)
+  set("gA", { width: wA }); set("streamrect", { x: X0, y: yC0, width: wC, height: yC1 - yC0 });
+  set("lC", { x: X0 + wC + wC2 + 36, y: yC0 + 44 }); set("nC", { x: X0 + wC + wC2 + 36, y: yC0 + 112 }); set("sC", { x: X0 + wC + wC2 + 40, y: yC0 + 146 });
+  set("sC2", { x: X0 + wC + wC2 + 40, y: yC0 + 178 });
+  // particles flowing along the working bar (pure function of time)
   const NS = "http://www.w3.org/2000/svg", flow = $("flow"), r = mulberry32(35), parts = [];
-  for (let i = 0; i < 26; i++) { const c = document.createElementNS(NS, "rect"); c.setAttribute("width", 6); c.setAttribute("height", 26); c.setAttribute("rx", 3); c.setAttribute("fill", "#E0F2FE"); flow.appendChild(c); parts.push({ c, x: CX - wC / 2 + 12 + r() * (wC - 30), ph: r(), sp: 140 + r() * 80 }); }
+  for (let i = 0; i < 18; i++) { const c = document.createElementNS(NS, "rect"); c.setAttribute("width", 26); c.setAttribute("height", 6); c.setAttribute("rx", 3); c.setAttribute("fill", "#E0F2FE"); flow.appendChild(c); parts.push({ c, y: yC0 + 14 + r() * (yC1 - yC0 - 30), ph: r(), sp: 120 + r() * 80 }); }
   const fl = { t: 0 };
-  tl.to(fl, { t: D, duration: D, ease: "none", onUpdate: () => { for (const p of parts) { const y = yC0 + ((p.ph * 300 + fl.t * p.sp) % (yC1 - yC0 + 30)) - 30; p.c.setAttribute("x", p.x); p.c.setAttribute("y", y); p.c.setAttribute("opacity", 0.55); } } }, 0);
+  tl.to(fl, { t: D, duration: D, ease: "none", onUpdate: () => { for (const p of parts) { const x = X0 + ((p.ph * 300 + fl.t * p.sp) % (wC + 30)) - 30; p.c.setAttribute("x", x); p.c.setAttribute("y", p.y); p.c.setAttribute("opacity", 0.55); } } }, 0);
 
   const tH = at("V035", "here's the trap"), tF = at("V035", "Track fitted"), tFn = at("V035", "seven thousand seven"), tE = at("V035", "engines fitted"),
         tEn = at("V035", "six thousand two"), tW = at("V035", "track where work"), tWn = at("V035", "twenty one thousand"),
@@ -80,22 +75,24 @@ JS = """
   ["#s1", "#s2", "#s3"].forEach((s, i) => { tl.fromTo(s, { x: -900, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, Math.max(0.1, tH - 0.6) + i * 0.3);
     tl.to(s, { x: "+=60", duration: tF - tH + 0.3, ease: "none" }, tH + i * 0.3); });
   tl.to(["#s1", "#s2", "#s3"], { opacity: 0, y: -30, duration: 0.45, stagger: 0.08 }, tF - 0.35);
-  // 2) fitted band, 3) engines, 4) work-started band (widest), 5) the thin working stream + stamp, 6) not protected
+  // 2) fitted bar grows, 3) engines, 4) work-started bar (longest), 5) the short working bar + stamp, 6) not protected
   const cnt = (id, v, t, d = 1.3) => { const o = { v: 0 }; tl.to(o, { v, duration: d, ease: "power2.out", onUpdate: () => $(id).textContent = Math.round(o.v).toLocaleString("en-IN") }, t); };
-  tl.to("#ghost", { opacity: 1, duration: 0.8 }, tF - 0.6);
-  tl.fromTo("#bandB", { opacity: 0, scale: 0.92, svgOrigin: `${CX} ${yB0}` }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, tF - 0.1);
-  cnt("nB", 7726, tFn - 0.2);
+  tl.to("#kmu", { opacity: 1, duration: 0.5 }, tF);
+  tl.to("#bandB", { opacity: 1, duration: 0.3 }, tF - 0.1);
+  tl.to("#pB", { attr: { width: wB }, duration: tFn - tF + 1.0, ease: "power2.out" }, tF); cnt("nB", 7726, tF, tFn - tF + 1.0);
   tl.fromTo("#loco", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, tE - 0.2);
   cnt("nL", 6290, tEn - 0.2);
-  tl.fromTo("#bandA", { opacity: 0, scale: 0.9, svgOrigin: `${CX} ${yA1}` }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" }, tW - 0.1);
-  tl.to("#kmscale", { opacity: 1, duration: 0.5 }, tW + 0.4);
-  cnt("nA", 21794, tW + 0.1, Math.max(1.5, tWn - tW + 0.9));
-  tl.fromTo("#bandC", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tB - 0.5);
-  tl.fromTo("#pC", { attr: { height: 0 } }, { attr: { height: yC1 - yC0 }, duration: 0.9, ease: "power2.inOut" }, tB - 0.5);
+  tl.to("#bandA", { opacity: 1, duration: 0.3 }, tW - 0.1);
+  tl.to("#pA", { attr: { width: wA }, duration: Math.max(1.5, tWn - tW + 0.9), ease: "power2.out" }, tW + 0.1); cnt("nA", 21794, tW + 0.1, Math.max(1.5, tWn - tW + 0.9));
+  tl.to("#loco", { opacity: 0, duration: 0.4 }, tB - 0.9);
+  tl.to("#bandC", { opacity: 1, duration: 0.3 }, tB - 0.5);
+  tl.to("#pC", { attr: { width: wC }, duration: 0.8, ease: "power2.out" }, tB - 0.5);
+  tl.to("#pC2", { attr: { x: X0 + wC, width: wC2 }, duration: 0.6, ease: "power2.out" }, tB + 0.1);
   tl.fromTo("#stamp", { opacity: 0, scale: 1.6, rotation: -14 }, { opacity: 0.94, scale: 1, rotation: -8, duration: 0.28, ease: "power4.in" }, tB + 0.5);
   tl.fromTo("#world", { x: 0 }, { x: 6, duration: 0.05, yoyo: true, repeat: 3 }, tB + 0.78);
-  tl.to("#prot", { opacity: 1, duration: 0.4 }, tP);
+  // "work started isn't protected": the started bar's label turns red; one stamp stays the only punchline
+  tl.to("#lA", { textContent: "WORK STARTED · NOT YET PROTECTED", fill: "#F87171", duration: 0.01 }, tP);
   tl.to("#pA", { attr: { "stroke-dashoffset": -96 }, duration: D - tP, ease: "none" }, tP);
-  tl.to("#bandA", { opacity: 0.55, duration: 0.6 }, tP + 0.2);
-  tl.fromTo("#fn", { transformOrigin: "760px 560px", scale: 1.0 }, { scale: 1.05, duration: D, ease: "sine.inOut" }, 0);
+  tl.to("#bandA", { opacity: 0.75, duration: 0.6 }, tP + 0.2);
+  tl.fromTo("#fn", { transformOrigin: "760px 560px", scale: 1.0 }, { scale: 1.04, duration: D, ease: "sine.inOut" }, 0);
 """

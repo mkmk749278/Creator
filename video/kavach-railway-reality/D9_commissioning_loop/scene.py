@@ -98,5 +98,5 @@ JS = """
   tl.to(endDot, { attr: { stroke: "#38BDF8", fill: "#0B2540", r: 28 }, duration: 0.3 }, tC);
   tl.fromTo("#comm", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, tC);
   // camera: tilted board, slow track right, settle on the end
-  tl.fromTo("#fl", { rotationX: 12, scale: 1.12, x: 90, y: 40 }, { rotationX: 8, scale: 1.14, x: -20, y: 20, duration: D, ease: "sine.inOut" }, 0);
+  tl.fromTo("#fl", { rotationX: 12, scale: 1.4, x: 300, y: 120 }, { rotationX: 8, scale: 1.36, x: 90, y: 110, duration: D, ease: "sine.inOut" }, 0);
 """

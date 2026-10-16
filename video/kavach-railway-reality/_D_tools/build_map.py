@@ -124,11 +124,27 @@ C = {  # lon, lat (station areas)
     "dhanbad": (86.43, 23.80), "howrah": (88.34, 22.58),
     "secunderabad": (78.50, 17.44), "wadi": (76.99, 17.06), "vikarabad": (77.90, 17.34), "bidar": (77.52, 17.91),
     "nanded": (77.32, 19.15), "kazipet": (79.53, 18.00), "dhone": (77.87, 15.40),
+    # end stations of the Kavach 4.0 sections commissioned by 31.07.26 (PIB PRID 2294805 table; DataMeet coordinates)
+    "tkj": (77.238, 28.628), "pwl": (77.342, 28.152), "nagda": (75.417, 23.456), "virar": (72.812, 19.454),
+    "cyz": (77.459, 28.628), "tdl": (78.233, 27.208), "sfg": (81.790, 25.440), "lko": (80.925, 26.831),
+    "mzp": (82.570, 25.134), "bbu": (83.619, 25.173), "ssm": (84.019, 24.956), "pes": (84.418, 24.845),
+    "smnd": (85.656, 24.345), "nmg": (86.076, 23.932), "cam": (86.575, 23.763), "bwn": (87.870, 23.250),
 }
 corr = {
     "dm": route([C[k] for k in ("delhi", "mathura", "kota", "ratlam", "vadodara", "surat", "mumbai")]),
     "va": route([C["vadodara"], C["ahmedabad"]]),
-    "dh": route([C[k] for k in ("delhi", "kanpur", "prayagraj", "ddu", "gaya", "dhanbad", "howrah")]),
+    "dh": route([C[k] for k in ("delhi", "tdl", "kanpur", "sfg", "mzp", "ddu", "bbu", "ssm", "pes", "gaya", "smnd", "nmg", "cam", "bwn", "howrah")]),
+    # working (commissioned) Kavach 4.0 sections only: Delhi-Mumbai Tilak Bridge..Virar (1,327) + Vadodara-Ahmedabad (96);
+    # Delhi-Howrah: Chipyana-Tundla-Kanpur-Subedarganj 563, Kanpur-Lucknow 71, Mirzapur-DDU 64, DDU-Bhabua Road 50,
+    # Sasaram-Pheser 43, Gaya-Sarmatanr-Nimiaghat 159, Chhota Ambana-Bardhaman-Howrah 260
+    "w_dm": route([C[k] for k in ("tkj", "pwl", "mathura", "kota", "nagda", "ratlam", "vadodara", "surat", "virar")]),
+    "w_d1": route([C[k] for k in ("cyz", "tdl", "kanpur", "sfg")]),
+    "w_d2": route([C["kanpur"], C["lko"]]),
+    "w_d3": route([C["mzp"], C["ddu"]]),
+    "w_d4": route([C["ddu"], C["bbu"]]),
+    "w_d5": route([C["ssm"], C["pes"]]),
+    "w_d6": route([C[k] for k in ("gaya", "smnd", "nmg")]),
+    "w_d7": route([C[k] for k in ("cam", "bwn", "howrah")]),
     "scr1": route([C["wadi"], C["secunderabad"], C["kazipet"]]),
     "scr2": route([C["vikarabad"], C["bidar"]]),
     "scr3": route([C["secunderabad"], C["nanded"]]),

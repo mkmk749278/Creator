@@ -1,10 +1,10 @@
 TITLE = "D8 Kavach budget"
 CSS = """
   #bg { position: absolute; inset: 0; width: 1920px; height: 1080px; }
-  .ax { font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
+  .ax { font: 800 26px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
   .yr { font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #CBD5E1; }
   .amt { font: 800 76px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
-  .cr { font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8; }
+  .cr { font: 800 28px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8; }
   .ttl { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.2em; fill: #38BDF8; }
   .dl { font: 800 44px Inter, Arial, sans-serif; fill: #F59E0B; letter-spacing: 0.02em; }
 """
@@ -37,6 +37,7 @@ JS = """
   for (let v = 0; v <= 1750; v += 250) { const y = BASE - v * K; const l = document.createElementNS(NS, "line"); l.setAttribute("x1", 300); l.setAttribute("x2", 1500); l.setAttribute("y1", y + 0.4); l.setAttribute("y2", y);
     l.setAttribute("stroke", v ? "rgba(148,163,184,0.12)" : "#64748B"); l.setAttribute("stroke-width", v ? 1.5 : 3); grid.appendChild(l);
     if (v) { const t = document.createElementNS(NS, "text"); t.setAttribute("x", 290); t.setAttribute("y", y + 7); t.setAttribute("text-anchor", "end"); t.setAttribute("class", "ax"); t.textContent = v.toLocaleString("en-IN"); grid.appendChild(t); } }
+  const yl = document.createElementNS(NS, "text"); yl.setAttribute("x", 290); yl.setAttribute("y", BASE - 1750 * K - 34); yl.setAttribute("text-anchor", "end"); yl.setAttribute("class", "ax"); yl.textContent = "₹ CRORE"; grid.appendChild(yl);
   set("r1", { x: X1, width: BW, y: BASE, height: 0 }); set("r2", { x: X2, width: BW, y: BASE, height: 0 });
   set("r1c", { x: X1, width: BW, y: BASE - h1, height: h1 }); set("r2c", { x: X2, width: BW, y: BASE - h2, height: h2 });
   
@@ -53,9 +54,10 @@ JS = """
   // bars rise while the sentence builds to each number; the big figure is the rounded one the narration says, the exact
   // allocation sits under it (PIB Mar 2025: Rs 1,112.57 cr for 2024-25; Rajya Sabha Aug 2025: Rs 1,673.19 cr for 2025-26)
   const grow = (r, h, a, k, v, t, d, exact) => { tl.to(r, { attr: { y: BASE - h, height: h }, duration: d, ease: "power2.out" }, t);
-    tl.to(a.parentNode, { opacity: 1, duration: 0.3 }, t); const o = { v: 0 }; k.textContent = exact;
-    tl.fromTo(a.parentNode, { y: h }, { y: 0, duration: d, ease: "power2.out" }, t);
-    tl.to(o, { v, duration: d, ease: "power2.out", onUpdate: () => a.textContent = fmt(o.v) }, t); };
+    // the label shows only the final rounded figure and rides up with the bar top (no count through wrong values)
+    a.textContent = fmt(v).replace(" CR", ""); k.textContent = "CRORE";
+    tl.to(a.parentNode, { opacity: 1, duration: 0.3 }, t + d * 0.5);
+    tl.fromTo(a.parentNode, { y: h }, { y: 0, duration: d, ease: "power2.out" }, t); };
   grow("#r1", h1, $("a1"), $("k1"), 1100, at("V036", "the yearly"), t1 + 0.4 - at("V036", "the yearly"), "EXACT ₹1,112.57 CR");
   grow("#r2", h2, $("a2"), $("k2"), 1670, t2 - 1.4, 2.0, "EXACT ₹1,673.19 CR");
   tl.to("#cap1", { opacity: 1, duration: 0.4 }, t2 + 1.0);
