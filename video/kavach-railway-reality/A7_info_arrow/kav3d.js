@@ -448,7 +448,7 @@ export function buildLoco(M0) {
   const screen = new THREE.Mesh(new THREE.BoxGeometry(0.36, 0.3, 0.06), glowMat(0x38bdf8)); screen.position.set(-0.55, 2.55, 0.85); screen.rotation.x = -0.5; g.add(screen);
   const linkPts = [new THREE.Vector3(0.55, 1.65, 3.4), new THREE.Vector3(0.55, 1.35, 3.8), new THREE.Vector3(0.3, 1.0, 4.0), new THREE.Vector3(0.3, 0.95, 5.8)];
   const brake = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(linkPts), 24, 0.04, 6), glowMat(0x38bdf8)); g.add(brake);
-  const bpipe = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, L - 0.4, 6).rotateX(Math.PI / 2), glowMat(0x38bdf8)); bpipe.position.set(0.95, 0.92, L / 2); g.add(bpipe);
+  const bpipe = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, L - 0.4, 6).rotateX(Math.PI / 2), glowMat(0x38bdf8)); bpipe.position.set(1.6, 0.86, L / 2); g.add(bpipe);   // shown outside the skirt so the brake pipe can be seen (illustration)
   // X-ray: shell fades to a ghost with cyan edges
   const edgeMat = new THREE.LineBasicMaterial({ color: 0x5fd4ff, transparent: true, opacity: 0, fog: false });
   const edges = new THREE.LineSegments(new THREE.EdgesGeometry(bgeo, 25), edgeMat); g.add(edges);
@@ -484,7 +484,7 @@ export function buildCoach(M0) {
   for (const z of [0.12, L - 0.12]) { const gw = new THREE.Mesh(new THREE.BoxGeometry(1.2, 2.3, 0.3), M.bogie); gw.position.set(0, 2.3, z); g.add(gw); }
   const B = [bogie(M, { axles: 2, pitch: 2.56, r: WR_COACH, frameY: 0.62 }), bogie(M, { axles: 2, pitch: 2.56, r: WR_COACH, frameY: 0.62 })];
   B[0].g.position.z = L / 2 - 7.45; B[1].g.position.z = L / 2 + 7.45; g.add(B[0].g, B[1].g);
-  const bpipe = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, L - 0.2, 6).rotateX(Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0x1a1d20, emissive: new THREE.Color(0x38bdf8), emissiveIntensity: 0 })); bpipe.position.set(0.95, 0.72, L / 2); g.add(bpipe);
+  const bpipe = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, L - 0.2, 6).rotateX(Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0x1a1d20, emissive: new THREE.Color(0x38bdf8), emissiveIntensity: 0 })); bpipe.position.set(1.66, 0.74, L / 2); g.add(bpipe);
   g.userData = { L, wheels: B.flatMap((b) => b.wheels), blocks: B.flatMap((b) => b.blocks), bpipe, setS(s) { for (const w of this.wheels) w.rotation.x = -s / WR_COACH; } };
   return g;
 }
