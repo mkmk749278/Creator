@@ -1,0 +1,101 @@
+TITLE = "D9 Commissioning loop"
+CSS = """
+  #persp { position: absolute; inset: 0; perspective: 1800px; }
+  #fl { position: absolute; inset: 0; width: 1920px; height: 1080px; transform-origin: 50% 60%; }
+  .st { font: 800 32px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #E2E8F0; }
+  .sub { font: 800 21px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #7C8BA1; }
+  .big { font: 800 64px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #E0F2FE; }
+"""
+BODY = """  <div id="persp"><svg id="fl" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+    <defs>
+      <filter id="glow" filterUnits="userSpaceOnUse" x="-200" y="-200" width="2400" height="1500"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <g id="grid"></g>
+    <g id="tracks"></g>
+    <g id="lit"></g>
+    <g id="stations"></g>
+    <g id="token"><rect x="-46" y="-17" width="70" height="34" rx="7" fill="#F8FAFC" stroke="#38BDF8" stroke-width="3"/>
+      <path d="M 24 -17 L 36 -17 Q 52 0 36 17 L 24 17 Z" fill="#F8FAFC" stroke="#38BDF8" stroke-width="3"/>
+      <rect x="-34" y="-9" width="44" height="18" rx="3" fill="#0B2540"/><circle cx="44" cy="0" r="4.5" fill="#FDE68A" filter="url(#glow)"/></g>
+    <g id="comm" opacity="0"><rect x="1260" y="330" width="540" height="96" rx="14" fill="rgba(2,132,199,0.18)" stroke="#38BDF8" stroke-width="4" filter="url(#glow)"/>
+      <text x="1530" y="395" text-anchor="middle" class="big" style="font-size:46px">COMMISSIONED</text></g>
+  </svg></div>"""
+JS = """
+  const NS = "http://www.w3.org/2000/svg", $ = (id) => document.getElementById(id);
+  const mk = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+  for (let i = 0; i < 40; i++) mk("line", { x1: -200 + i * 70, y1: -100, x2: -200 + i * 70 + 0.3, y2: 1300, stroke: "rgba(148,163,184,0.06)" }, $("grid"));
+  for (let i = 0; i < 22; i++) mk("line", { x1: -200, y1: -100 + i * 70, x2: 2600, y2: -100 + i * 70 + 0.3, stroke: "rgba(148,163,184,0.06)" }, $("grid"));
+  const Y = 530, XS = [300, 610, 920, 1230], XC = 1530;   // SIGNAL DATA, LOCO BRAKES, RADIO, TEST -> COMMISSIONED
+  const MAIN = `M 60 ${Y} L ${XC} ${Y + 0.4}`;
+  const LOOP = `M ${XS[3]} ${Y} C ${XS[3] - 40} ${Y + 120}, ${XS[3] - 170} ${Y + 250}, ${XS[3]} ${Y + 262} C ${XS[3] + 170} ${Y + 250}, ${XS[3] + 40} ${Y + 120}, ${XS[3]} ${Y + 0.5}`;
+  const track = (d) => { mk("path", { d, fill: "none", stroke: "#2B3A57", "stroke-width": 30, "stroke-dasharray": "5 11", opacity: 0.9 }, $("tracks"));
+    mk("path", { d, fill: "none", stroke: "#9FB0C8", "stroke-width": 15, opacity: 0.85 }, $("tracks")); mk("path", { d, fill: "none", stroke: "#13203A", "stroke-width": 9 }, $("tracks")); };
+  track(MAIN); track(LOOP);
+  // lit route behind the token (cyan), drawn by dashoffset
+  const litMain = mk("path", { d: MAIN, fill: "none", stroke: "#38BDF8", "stroke-width": 6, filter: "url(#glow)", "stroke-linecap": "round" }, $("lit"));
+  const pMain = mk("path", { d: MAIN, fill: "none", stroke: "none" }, $("lit")), pLoop = mk("path", { d: LOOP, fill: "none", stroke: "none" }, $("lit"));
+  const LM = pMain.getTotalLength(), LL = pLoop.getTotalLength();
+  litMain.setAttribute("stroke-dasharray", LM); litMain.setAttribute("stroke-dashoffset", LM);
+  const names = [["SIGNAL DATA", "EVERY STATION"], ["LOCO BRAKES", "EVERY ENGINE TYPE"], ["RADIO", "EVERY YARD"], ["TEST", ""]];
+  const st = names.map(([n, s], i) => { const g = mk("g", { opacity: 0 }, $("stations")), x = XS[i];
+    const ring = mk("circle", { cx: x, cy: Y, r: 30, fill: "#0B1220", stroke: "#64748B", "stroke-width": 5 }, g);
+    const mark = mk("path", { d: `M ${x - 12} ${Y + 1} L ${x - 3} ${Y + 11} L ${x + 14} ${Y - 10}`, fill: "none", stroke: "#38BDF8", "stroke-width": 6, "stroke-linecap": "round", opacity: 0 }, g);
+    const t = mk("text", { x, y: Y - 64, "text-anchor": "middle", class: "st" }, g); t.textContent = n;
+    if (s) { const u = mk("text", { x, y: Y - 34 - 0, "text-anchor": "middle", class: "sub" }, g); u.textContent = s; t.setAttribute("y", Y - 76); u.setAttribute("y", Y - 46); }
+    return { g, ring, mark, x }; });
+  const cross = mk("g", { opacity: 0 }, $("stations"));
+  mk("path", { d: `M ${XS[3] - 12} ${Y - 12} L ${XS[3] + 12} ${Y + 12} M ${XS[3] + 12} ${Y - 12} L ${XS[3] - 12} ${Y + 12}`, stroke: "#F87171", "stroke-width": 6, "stroke-linecap": "round" }, cross);
+  const fixT = mk("text", { x: XS[3], y: Y + 312, "text-anchor": "middle", class: "st", fill: "#FCD34D", opacity: 0 }, $("stations")); fixT.textContent = "FIX · RETEST";
+  fixT.style.fill = "#FCD34D";
+  const endDot = mk("circle", { cx: XC, cy: Y, r: 22, fill: "#0B1220", stroke: "#64748B", "stroke-width": 5 }, $("stations"));
+  // radio ripples at RADIO
+  const rip = [0, 1, 2].map(() => mk("circle", { cx: XS[2], cy: Y, r: 30, fill: "none", stroke: "#38BDF8", "stroke-width": 3, opacity: 0 }, $("stations")));
+
+  const tM = at("V037", "But money"), tSD = at("V037", "signalling data"), tLB = at("V037", "engine type"), tRA = at("V037", "the radio"),
+        tT = at("V037", "tested and") - 0.8, tRT = at("V037", "retested"), tW = at("V037", "called working");
+  st.forEach((s, i) => tl.fromTo(s.g, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.2 + i * 0.25));
+  tl.from("#tracks", { opacity: 0, duration: 0.8 }, 0);
+  // token kinematics: a pure function of a single progress clock (main-line distance s, loop laps)
+  const segs = [];                   // [t0, t1, kind, from, to] ; kind 'm' = main line distance, 'l' = loop fraction
+  const xToS = (x) => x - 60;
+  const arrive = tLoopStart => 0;
+  segs.push([0.0, tSD, "m", 0, xToS(XS[0])]);
+  segs.push([tSD + 0.5, tLB, "m", xToS(XS[0]), xToS(XS[1])]);
+  segs.push([tLB + 0.5, tRA, "m", xToS(XS[1]), xToS(XS[2])]);
+  segs.push([tRA + 0.6, tT, "m", xToS(XS[2]), xToS(XS[3])]);
+  const lap = 0.7;
+  segs.push([tT + 0.3, tT + 0.3 + lap, "l", 0, 1]);
+  segs.push([tT + 0.55 + lap, tT + 0.55 + 2 * lap, "l", 0, 1]);
+  const tPass = tT + 0.8 + 2 * lap;
+  segs.push([tPass + 0.15, tPass + 1.0, "m", xToS(XS[3]), xToS(XC)]);
+  const ease = (u) => u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
+  const tok = $("token"), clock = { t: 0 };
+  const place = (t) => {
+    let kind = "m", v = 0;
+    for (const [a, b, k, f, to] of segs) { if (t >= a) { kind = k; const u = Math.min(1, (t - a) / (b - a)); v = f + (to - f) * ease(u); } }
+    // between segments the token holds the last value; a loop segment that finished returns to the TEST point
+    let p, q;
+    if (kind === "m") { p = pMain.getPointAtLength(v); q = pMain.getPointAtLength(Math.min(LM, v + 2)); litMain.setAttribute("stroke-dashoffset", LM - v); }
+    else { const d = v * LL; p = pLoop.getPointAtLength(d); q = pLoop.getPointAtLength(Math.min(LL, d + 2)); if (d >= LL - 2) { q = { x: p.x + 2, y: p.y }; } }
+    const ang = Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI;
+    tok.setAttribute("transform", `translate(${p.x} ${p.y}) rotate(${ang})`);
+  };
+  tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: () => place(clock.t) }, 0);
+  place(0);
+  // station checks
+  [tSD, tLB, tRA].forEach((t, i) => { tl.to(st[i].ring, { attr: { stroke: "#38BDF8" }, duration: 0.2 }, t); tl.to(st[i].mark, { opacity: 1, duration: 0.2 }, t + 0.1);
+    tl.fromTo(st[i].ring, { attr: { r: 30 } }, { attr: { r: 36 }, duration: 0.2, yoyo: true, repeat: 1 }, t); });
+  rip.forEach((c, k) => tl.fromTo(c, { attr: { r: 30 }, opacity: 0.8 }, { attr: { r: 150 }, opacity: 0, duration: 1.2, ease: "power1.out" }, tRA - 0.2 + k * 0.4));
+  // TEST: fail, loop (fix), fail, loop, pass
+  const fail = (t) => { tl.to(st[3].ring, { attr: { stroke: "#EF4444" }, duration: 0.1 }, t); tl.to(cross, { opacity: 1, duration: 0.1 }, t);
+    tl.to(cross, { opacity: 0, duration: 0.15 }, t + 0.3); tl.to(st[3].ring, { attr: { stroke: "#64748B" }, duration: 0.2 }, t + 0.3); };
+  fail(tT); fail(tT + 0.3 + lap);
+  tl.to(fixT, { opacity: 1, duration: 0.3 }, tT + 0.4);
+  tl.to(st[3].ring, { attr: { stroke: "#38BDF8" }, duration: 0.2 }, tPass); tl.to(st[3].mark, { opacity: 1, duration: 0.2 }, tPass + 0.05);
+  tl.to(fixT, { opacity: 0.4, duration: 0.4 }, tPass);
+  const tC = tPass + 1.0;
+  tl.to(endDot, { attr: { stroke: "#38BDF8", fill: "#0B2540", r: 28 }, duration: 0.3 }, tC);
+  tl.fromTo("#comm", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, tC);
+  // camera: tilted board, slow track right, settle on the end
+  tl.fromTo("#fl", { rotationX: 12, scale: 1.12, x: 90, y: 40 }, { rotationX: 8, scale: 1.14, x: -20, y: 20, duration: D, ease: "sine.inOut" }, 0);
+"""

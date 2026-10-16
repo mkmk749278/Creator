@@ -62,8 +62,10 @@ for f in land["features"]:
             xs = [p[0] for p in ring]; ys = [p[1] for p in ring]
             if max(xs) < 55 or min(xs) > 110 or max(ys) < -2 or min(ys) > 45:
                 continue
-            pp = [proj(max(50, min(115, x)), max(-5, min(48, y))) for x, y in ring]
-            pp = dp(pp, 0.6)
+            pp = [proj(max(25, min(150, x)), max(-30, min(62, y))) for x, y in ring]
+            # closed ring: start and end coincide, so split at the farthest point before simplifying
+            k = max(range(len(pp)), key=lambda i: (pp[i][0] - pp[0][0]) ** 2 + (pp[i][1] - pp[0][1]) ** 2)
+            pp = dp(pp[:k + 1], 0.6) + dp(pp[k:], 0.6)[1:]
             if len(pp) < 4: continue
             bx = [p[0] for p in pp]; by = [p[1] for p in pp]
             if max(bx) < -400 or min(bx) > W + 400 or max(by) < -400 or min(by) > H + 400: continue

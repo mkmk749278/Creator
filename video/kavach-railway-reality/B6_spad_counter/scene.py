@@ -1,0 +1,40 @@
+TITLE = "B6 208 red-signal passings, 12 collisions"
+CSS = """
+  #tlx { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+  .ax { font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
+  .cnt { font: 800 220px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .cl { font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #CBD5E1; }
+  .c12 { font: 800 120px Inter, Arial, sans-serif; fill: #F87171; font-variant-numeric: tabular-nums; }
+"""
+BODY = """  <svg id="tlx" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+    <defs><filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <g id="lamp" transform="translate(1540 300)">
+      <rect x="-60" y="-150" width="120" height="300" rx="26" fill="#0B1220" stroke="#5B6B86" stroke-width="5"/>
+      <circle cx="0" cy="-90" r="40" fill="#3A1414"/><circle id="lred" cx="0" cy="-90" r="40" fill="#EF4444" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="40" fill="#3A2E10"/><circle cx="0" cy="90" r="40" fill="#10331D"/></g>
+    <text id="cnt" x="140" y="520" class="cnt">0</text>
+    <text x="150" y="610" class="cl">RED SIGNALS PASSED BY MISTAKE</text>
+    <line x1="160" y1="820" x2="1760" y2="820.4" stroke="#475569" stroke-width="3"/>
+    <g id="ticks"></g>
+    <text x="160" y="870" class="ax">APR 2019</text><text x="1760" y="870" text-anchor="end" class="ax">MAR 2024</text>
+    <g id="g12" opacity="0"><text x="1160" y="560" class="c12">12</text><text x="1172" y="610" class="cl" style="fill:#FCA5A5">ENDED IN A COLLISION</text></g>
+  </svg>"""
+JS = """
+  // 208 cases over five years (CRS Abstracts 2024-25): one tick each, placed by a seeded RNG (spacing illustrative)
+  const r = mulberry32(208), g = document.getElementById("ticks"), NS = "http://www.w3.org/2000/svg", ticks = [];
+  const xs = Array.from({ length: 208 }, () => 170 + r() * 1580).sort((a, b) => a - b);
+  const red = new Set(); while (red.size < 12) red.add(Math.floor(r() * 208));
+  xs.forEach((x, i) => { const l = document.createElementNS(NS, "line"); const h = 30 + r() * 60;
+    l.setAttribute("x1", x); l.setAttribute("x2", x + 0.3); l.setAttribute("y1", 818); l.setAttribute("y2", 818 - h);
+    l.setAttribute("stroke", "#94A3B8"); l.setAttribute("stroke-width", 3); l.setAttribute("opacity", 0); g.appendChild(l); ticks.push(l); });
+  const tQ = at("V031", "The Commission"), tN = at("V031", "two hundred and eight"), tY = at("V031", "from April"), t12 = at("V031", "and twelve of them");
+  tl.from("#lamp", { opacity: 0, x: 40, duration: 0.7, ease: "power3.out" }, 0.2);
+  tl.to("#lred", { opacity: 0.45, duration: 0.6, yoyo: true, repeat: Math.floor((D - 0.6) / 0.6), ease: "sine.inOut" }, 0.6);
+  const c = { n: 0 }, cnt = document.getElementById("cnt");
+  tl.to(c, { n: 208, duration: Math.max(1.5, tY - tN + 1.2), ease: "power2.out", onUpdate: () => {
+    const n = Math.round(c.n); cnt.textContent = n; ticks.forEach((l, i) => l.setAttribute("opacity", i < n ? 0.85 : 0)); } }, tN - 0.3);
+  tl.from("#cnt, .cl", { opacity: 0, duration: 0.5 }, tQ);
+  [...red].forEach((i, k) => tl.to(ticks[i], { attr: { stroke: "#EF4444", "stroke-width": 6 }, duration: 0.2 }, t12 + k * 0.08));
+  tl.to("#g12", { opacity: 1, duration: 0.5 }, t12 + 0.3);
+  tl.fromTo("#tlx", { transformOrigin: "50% 50%", scale: 1.0 }, { scale: 1.04, duration: D, ease: "sine.inOut" }, 0);
+"""
