@@ -4,7 +4,7 @@ const OUT = process.argv[2];
 const SITES = [['bima', 'https://bimabharosa.irdai.gov.in/'], ['cio', 'https://cioins.co.in/'], ['cio_complaint', 'https://cioins.co.in/Complaint'], ['cio_offices', 'https://cioins.co.in/Ombudsman'], ['cio_gro', 'https://cioins.co.in/GRONonLife']];
 (async () => {
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
-  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2,
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 3,
     userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36' });
   for (const [id, url] of SITES) {
     const p = await ctx.newPage();

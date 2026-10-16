@@ -33,6 +33,16 @@
 #ph { position: absolute; left: 76px; color: #8a94a3; font-weight: 400; }
 #load { position: absolute; left: 0; top: 124px; height: 4px; background: var(--teal); transform-origin: 0 50%; }
 #page { position: absolute; left: 0; right: 0; top: 128px; bottom: 0; }
+/* new-tab page under the address bar while the URL is typed (review fix: no blank white window) */
+#ntp { position: absolute; left: 0; right: 0; top: 128px; bottom: 0; padding: 26px 60px; font-family: Inter, Arial, sans-serif; color: #172231; }
+#ntp .h { padding-left: 230px; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .12em; color: #4a5565; margin-bottom: 22px; }
+#ntp .tiles { display: flex; gap: 22px; margin-bottom: 44px; padding-left: 230px; }
+#ntp .tile { width: 96px; text-align: center; font: 600 22px/1.2 Inter, Arial, sans-serif; color: #3d4756; }
+#ntp .tile b { display: block; width: 84px; height: 84px; margin: 0 auto 12px; border-radius: 22px; background: #fff; box-shadow: inset 0 0 0 2px #cfd6e0;
+  font: 800 36px/84px Inter, Arial, sans-serif; color: #14263B; }
+#ntp .row { margin-left: 230px; display: flex; gap: 18px; align-items: center; padding: 16px 0; border-bottom: 2px solid #dfe4ec; font: 600 26px/1.2 Inter, Arial, sans-serif; max-width: 1180px; }
+#ntp .row i { width: 30px; height: 30px; border-radius: 8px; background: #cfd6e0; flex: none; }
+#ntp .row span { color: #4a5565; font-weight: 400; margin-left: auto; font-size: 22px; }
 .rail { position: absolute; left: 90px; right: 90px; top: 46px; height: 90px; }
 .rail .line { position: absolute; left: 40px; right: 40px; top: 30px; height: 6px; background: #cfd6e0; border-radius: 3px; }
 .rail .fill { position: absolute; left: 40px; top: 30px; height: 6px; background: var(--teal); border-radius: 3px; width: 0; }
@@ -108,6 +118,14 @@
             <div id="bar"><svg viewBox="0 0 24 24" fill="none" stroke="#127a69" stroke-width="2.6" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11 V8 a4 4 0 0 1 8 0 V11"/></svg>
               <span id="url"></span><i id="caret"></i><span id="ph">Search or type a web address</span></div>
             <div id="load"></div>
+          </div>
+          <div id="ntp">
+            <div class="h">SHORTCUTS</div>
+            <div class="tiles"><div class="tile"><b>M</b></div><div class="tile"><b>N</b></div><div class="tile"><b>B</b></div><div class="tile"><b>W</b></div></div>
+            <div class="h">RECENTLY VISITED</div>
+            <div class="row"><i></i>Sample Health Insurance · Grievance redressal<span>samplehealth.example</span></div>
+            <div class="row"><i></i>Mail · Sent · Grievance: partial settlement of claim<span>mail</span></div>
+            <div class="row"><i></i>Sample City Hospital · Patient portal<span>samplecityhospital.example</span></div>
           </div>
           <div id="page">
             <div class="rail"><div class="line"></div><div class="fill" id="fill"></div>
@@ -207,6 +225,7 @@
       tl.fromTo("#load", { scaleX: 0, width: "100%", opacity: 1 }, { scaleX: 1, duration: 0.5, ease: "power2.in" }, 5.15);
       tl.to("#load", { opacity: 0, duration: 0.2 }, 5.65);
       tl.to("#page", { opacity: 1, duration: 0.35 }, 5.4);
+      tl.to("#ntp", { opacity: 0, duration: 0.25 }, 5.2);
       tl.fromTo("#t-url", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 4.6);
       // O040 — "Choose Register Complaint (5.68–6.6), and verify your mobile number (6.96–9.3) with an O-T-P (≈10.1–11.0)."
       tl.to("#cam", { scale: 1.0, x: -60, y: 0, duration: 1.0, ease: "power2.inOut" }, 5.2);

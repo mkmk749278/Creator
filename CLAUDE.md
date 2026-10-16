@@ -144,8 +144,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - Every on-screen claim traces to `analysis.json`, then to a source locator (reviewer + timestamp or paragraph).
 
 ## Cloud session traps (each cost a render)
-- Backgrounded commands die at ~30 min: start renders with `setsid nohup … < /dev/null & disown` (plain `nohup … &` lets
-  HyperFrames cancel with `render_cancelled_parent_exited` when the tool call ends), watch with Monitor, one render per session.
+- Backgrounded commands die at ~30 min: start renders with `HYPERFRAMES_RENDER_DETACHED=1 setsid nohup … < /dev/null & disown`
+  (without the variable HyperFrames cancels with `render_cancelled_parent_exited` when the tool call ends), watch with Monitor, one render per session.
   An idle session's VM can be reclaimed mid-job.
 - Never `pkill -f <pattern>` in a command line containing the pattern; never name a shell function after a command it calls.
 - Bitrate-cap every encode. Large media stays out of git.

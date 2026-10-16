@@ -16,7 +16,7 @@ P = Path(__file__).resolve().parents[1]
 ROOT = P.parents[1]
 A = P / "assets"
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-RENDER_V = {"glimpse": 2, "sting": 2, "end": 2}
+RENDER_V = {"glimpse": 2, "sting": 3, "end": 3}
 ILL, SIM, CALC, EP1 = "ILLUSTRATIVE FOOTAGE", "SIMULATION", "OUR CALCULATION", "FROM EPISODE 1"
 GAP = 1.5                      # music beat between the two VO takes (timing.csv uses the same)
 VO = [(P / "voice/bp-hlth02-ch1.mp3", 0.0), (P / "voice/bp-hlth02-ch2-4.mp3", 130.85 + GAP)]
@@ -45,7 +45,7 @@ PREG = {r["id"]: OWN / "Pexels_India_Only" / r["local_file"] for r in csv.DictRe
 B = lambda n: A / "broll" / f"pixabay_{n}.mp4"
 G = lambda n: A / "episode1" / "glimpses" / f"{n}.mp4"
 WEB = lambda n: A / "web" / f"{n}_full.png"
-CM = lambda n: next((A / "commons").glob(f"{n}_*"))
+CM = lambda n: next((A / "commons").glob(f"{n}_*"), A / "commons" / f"{n}_MISSING")
 THUMB1 = ROOT / "projects/health-claim-trap/youtube/thumbnail_B.jpg"
 
 
@@ -105,12 +105,11 @@ SHOTS = [
     PX("PX09", at(17), 2.0, "1 · A LAWYER AND CONSUMER COURT"),
     SC("A2_three_doors", "O008"),
     PX("PX08", at(19), 1.0, "2 · A CLAIM RECOVERY SERVICE"),
-    F("F08", at(19, 0.55), 1.0, "20% OR MORE OF YOUR MONEY"),
+    SC("A2_three_doors", "O008", t=at(19, 0.55)),   # review v3: the agreement's highlighted 20% fee line (was F08, its 3rd use)
     SC("A2_three_doors", "O009"),
     SC("A1_staircase", "O009", t=at(22)),
     SC("A2_three_doors", "O010"),
-    WP("cio", at(24), "FILING IS FREE", "CIO FAQ"),
-    SC("C4_binding_award", "O010", t=at(25)),
+    SC("C4_binding_award", "O010", t=at(24)),       # review v3: FREE TO FILE (fee ₹0) on "costs zero rupees" (was the CIO home page)
     PX("PX15", at(26), 1.0, "₹5,000 A DAY IF PAID LATE", tag="IRDAI HEALTH MASTER CIRCULAR | 2024"),
     F("F17", at(26, 0.55), 1.0, "UNLESS THE AWARD IS CHALLENGED", tag="IRDAI POLICYHOLDERS' INTERESTS MASTER CIRCULAR | 2024"),
     S(at(27), "sting"),
@@ -124,13 +123,14 @@ SHOTS = [
     WP("bima", at(31), "STEP 3 · BIMA BHAROSA", "63% SETTLED FOR THE POLICYHOLDER, 2025–26 [IRDAI CONSULTATION PAPER | 2026]", focus=(0.3, 0.3)),
     F("F01", at(33), 4.0, "IF IT DOES NOT WORK, DON'T STOP"),
     S(at(34), "clip", src=B(3176), ss=1.0, label="UPLOAD YOUR PAPERS · WAIT", tag=ILL),
-    PX("PX08", at(35), 5.0, "THE SAME REPLY AGAIN"),
+    GL("g3_denied", at(35), "THE SAME REJECTION AGAIN"),
+    PX("PX08", at(35, 0.5), 5.0, "COMPLAINT CLOSED"),
     PX("PX05", at(36), 8.0, "EVEN THE GOVERNMENT PORTAL?"),
     SC("A5_bima_tracker", "O017"),
     WP("bima", at(40), "BIMA BHAROSA IS NOT A COURT", "BIMABHAROSA.IRDAI.GOV.IN", focus=(0.7, 0.35), zoom=(1.3, 1.5)),
     SC("A5_bima_tracker", "O017", t=at(41)),
     SC("C5_proof_magnifier", "O018"),
-    F("F08", at(45), 2.0, "BACK TO THE SECOND DOOR"),
+    SC("A2_three_doors", "O008", t=at(45), frm=win("O008")[0] - 0.1),   # review v3: door two -> the agreement (was F08)
     SC("B1_fee_split", "O020"),
     SC("B1_fee_split", "O021"),
     PX("PX09", at(51), 6.0, "WHAT THEY MAY NOT TELL YOU"),
@@ -145,7 +145,7 @@ SHOTS = [
     SC("B2_two_step_clock", "O028"),
     SC("A6_gro_email", "O029", push=True),   # its last 3.7 s hold one typed line: a slow push keeps it moving
     SC("A6_gro_email", "O030"),
-    S(at(66), "still", src=A / "web" / "cio_gro_blur.png", zoom=(1.0, 1.25), focus=(0.5, 0.3), label="GRO LIST ON CIOINS.CO.IN", tag="CIOINS.CO.IN · GRIEVANCE REDRESSAL OFFICERS"),
+    S(at(66, 0.56), "still", src=A / "web" / "cio_gro_blur.png", zoom=(1.0, 1.2), focus=(0.5, 0.35), label="GRO EMAILS ON CIOINS.CO.IN", tag="CIOINS.CO.IN · GRIEVANCE REDRESSAL OFFICERS · NAMES BLURRED"),
     SC("A6_gro_email", "O030", t=at(67)),
     SC("A6_gro_email", "O031"),
     SC("B2_two_step_clock", "O032"),
@@ -159,7 +159,7 @@ SHOTS = [
     SC("C1_filing_stepper", "O039"),
     SC("C1_filing_stepper", "O040"),
     SC("C2_offices_board", "O041"),
-    WP("cio_offices", at(83), "THE OFFICE FOR YOUR AREA", "CIO OFFICE DIRECTORY", focus=(0.5, 0.25)),
+    WP("cio_offices_hyd", at(83), "THE OFFICE FOR YOUR AREA", "CIO OFFICE DIRECTORY", focus=(0.35, 0.5), zoom=(1.0, 1.3)),
     SC("C3_document_slots", "O042"),
     SC("C3_document_slots", "O043"),
     SC("C3_document_slots", "O044"),
@@ -189,7 +189,7 @@ SHOTS = [
     F("F15", at(126), 6.0, "THE POWER OF KNOWING YOUR RIGHTS", tag=""),
     F("F14", at(127), 4.0, "NO CONNECTIONS · NO 20% FEES", tag=""),
     S(at(128), "sting"),
-    S(at(131), "clip", src=B(63241), ss=2.0, label="NEXT · CONSUMABLES", tag=ILL),
+    S(at(131), "still", src=A / "episode1" / "bill_consumables.png", zoom=(1.0, 1.25), focus=(0.45, 0.32), label="NEXT · CONSUMABLES", tag=EP1),
     S(at(131, 0.6), "clip", src=B(151857), ss=1.0, label="GLOVES · MASKS · SYRINGES", tag=ILL),
     S(at(132), "clip", src=B(67764), ss=4.0, label="A ₹5 LAKH BILL, LINE BY LINE", tag=ILL),
     CV("IO-5", at(132, 0.55), "WHAT THE PRICE RULES SAY"),
@@ -275,7 +275,7 @@ def render(shot, dur, out, W, H):
         vf = [kb(W, H, dur, z[0], z[1], fx, fy, shot.get("pan_to"), shot.get("top", False)), "vignette=PI/6"] + ov
         run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", shot["src"], "-vf", ",".join(vf), "-t", f"{dur:.3f}"] + enc + [out])
     elif k in ("sting", "end"):
-        bg = FREG["F14"]
+        bg = PREG["PX04"]   # review v3: was F14, which also plays twice as a clip
         if k == "sting":
             fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},eq=brightness=-0.15[bg];"
                   f"[1:v]scale={int(W*0.62)}:-2,format=rgba,fade=t=in:st=0:d=0.5:alpha=1[l];[bg][l]overlay=(W-w)/2:(H-h)/2")

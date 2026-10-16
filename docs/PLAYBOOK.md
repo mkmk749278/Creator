@@ -914,6 +914,20 @@ earlier film already carry its lower thirds; overlaying ours doubled them, so th
 75 minutes while the coordinator sourced, cut and mixed; specs generated from the real VO timing (`scenes.md`) meant
 every clip dropped in at its window with no retiming.
 
+**Insurance Ombudsman v3, independent review + 4K (2026-10-16).** A fresh session reviewed v2 shot by shot
+(`build/review_shots.py`) and found what the authors' own pass missed: (1) a stock clip on screen three times (F08),
+because `split_long` and reuses across chapters hid it; count clip *sources*, not shot rows, before each render.
+(2) An edit that cuts away from a scene can hide the scene's own beat: the coordinator's GRO-list still covered the
+first 8 s of A6 O030, so the insurer page that A6 built for "every insurer has to show its GRO details" never
+appeared. When a still is laid over a scene window, check what the scene shows under it. (3) "No blank paper" includes
+screens: an email compose window or a new browser tab held for 5-10 s reads as a white slide; fill it with the
+context the VO implies (the quoted settlement email, recent visits). (4) Show the family's own city on a directory
+page (Hyderabad, not the default first tab). (5) A label that names a number must not stay up while a counter rolls
+past it. (6) Canva templates can be re-exported at 4K through the Canva connector (`export-design`, `mp4`,
+`horizontal_4k`); keep the crop/composite steps in a script (`tools/make_canva.py`) so a rebuild never depends on
+files that lived only in a dead session. (7) A detached render script still needs `HYPERFRAMES_RENDER_DETACHED=1`
+(also in this log, below); `setsid nohup` alone was cancelled within seconds.
+
 
 **Health Claim Rejection Trap (English, 2026-10-14).** (1) The owner's handoffs (a full brief, a "fixes" rewrite, then a
 visual-engine spec) each carried unsourced numbers ("80% rejected", "60 days", "₹500–800 rider", "₹90,000 cut",

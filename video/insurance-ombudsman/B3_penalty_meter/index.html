@@ -198,8 +198,12 @@
         K.hook((t) => { m3(d(t)); light(c3, 30, d(t)); });
         tl.set($("l3b"), { display: "none" }, s.off);
         tl.fromTo($("lt3a"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(499.8));   // "fifty thousand rupees"
-        tl.set($("l3a"), { display: "none" }, v(502.75)); tl.set($("l3b"), { display: "inline" }, v(502.75));            // "one lakh fifty thousand"
-        tl.fromTo($("l3b"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, v(502.75));
+        // review fix: the 10-day label leaves when the drums roll on ("Thirty days late", 501.39) and the 30-day label lands
+        // with the drums at 30, so the label never disagrees with the meter
+        tl.to($("lt3a"), { opacity: 0, duration: 0.2 }, v(501.4));
+        tl.set($("l3a"), { display: "none" }, v(502.9)); tl.set($("l3b"), { display: "inline" }, v(502.9));             // drums at 30
+        tl.to($("lt3a"), { opacity: 1, duration: 0.3 }, v(502.9));
+        tl.fromTo($("l3b"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, v(502.9));
       }
       tl.to({}, { duration: 0.01 }, DUR - 0.01);
       K.attach(tl);

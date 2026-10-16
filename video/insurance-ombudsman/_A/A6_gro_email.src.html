@@ -30,6 +30,11 @@
 #body .ln { min-height: 37px; }
 #body .gap { height: 14px; }
 .hl { border-radius: 6px; padding: 0 4px; margin: 0 -4px; }
+/* the settlement email being answered, quoted under the draft (review fix: no blank white window in O029) */
+#quote { position: absolute; left: 40px; right: 80px; top: 320px; padding: 18px 0 0 22px; border-left: 4px solid #c9d2df; font: 400 23px/1.5 Inter, Arial, sans-serif; color: #3e4757; }
+#quote .qh { font: 600 21px/1.4 Inter, Arial, sans-serif; color: #4a5565; margin-bottom: 8px; }
+#quote b { color: #14263B; }
+#quote .cut { color: #b4383b; font-weight: 800; }
 #att { display: flex; gap: 12px; margin-top: 16px; }
 .pill { font: 600 19px/1 Inter, Arial, sans-serif; color: #14263B; background: #fff; border: 2px solid #c9d2df; border-radius: 10px; padding: 10px 14px; white-space: nowrap; }
 #send { position: absolute; right: 40px; bottom: 30px; font: 800 24px/1 Inter, Arial, sans-serif; color: #0B1422; background: var(--teal); border-radius: 12px; padding: 16px 34px; }
@@ -91,6 +96,13 @@
                   <div class="ln" id="b6"></div>
                   <div class="ln" id="b7"></div><div class="gap"></div>
                   <div class="ln" id="b8"></div>
+                </div>
+                <div id="quote">
+                  <div class="qh">Claims Department, Sample Health Insurance Co. Ltd. wrote:</div>
+                  <b>Claim settlement advice · CLM-2408-55217</b><br>
+                  Dear R. Kumar, your claim has been processed.<br>
+                  Amount claimed: ₹4,50,000 · Amount approved: ₹1,20,000 · <span class="cut">Amount disallowed: ₹3,30,000</span><br>
+                  Reason: deductions as per policy terms and conditions.
                 </div>
                 <div id="att"><span class="pill">policy.pdf</span><span class="pill">discharge-summary.pdf</span><span class="pill">itemised-bill.pdf</span><span class="pill">settlement-letter.pdf</span></div>
                 <div id="send">Send</div>
@@ -173,13 +185,14 @@
       tl.fromTo($("b0"), { backgroundColor: "rgba(89, 220, 195, 0)" }, { backgroundColor: "rgba(89, 220, 195, .35)", duration: 0.4, yoyo: true, repeat: 1, repeatDelay: 0.8 }, 5.89);
       // O030: the insurer's grievance page opens over the mail
       tl.fromTo($("web"), { opacity: 0, y: 60, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 7.4);
-      tl.fromTo($("mailHl"), { backgroundColor: "rgba(255, 219, 89, 0)" }, { backgroundColor: "rgba(255, 219, 89, .6)", duration: 0.4 }, 11.65);
+      tl.fromTo($("mailHl"), { backgroundColor: "rgba(255, 219, 89, 0)" }, { backgroundColor: "rgba(255, 219, 89, .6)", duration: 0.4 }, 9.2);
       tl.to($("web"), { opacity: 0, y: -40, scale: 0.97, duration: 0.45, ease: "power2.in" }, 13.75);
       tl.to($("compose"), { opacity: 0, duration: 0.3 }, 7.6);
       tl.to($("compose"), { opacity: 1, duration: 0.3 }, 13.95);
       // "Send one calm, formal email": the body types; highlights land on their words
       const hl = (id, t, c) => tl.fromTo($(id), { backgroundColor: "rgba(0,0,0,0)" }, { backgroundColor: c, duration: 0.3 }, t);
       hl("hlP", 16.45, "rgba(89, 220, 195, .35)"); hl("hlC", 17.55, "rgba(89, 220, 195, .35)"); hl("hlW", 19.2, "rgba(255, 219, 89, .5)");
+      tl.to($("quote"), { opacity: 0, y: 30, duration: 0.4, ease: "power2.in" }, 14.9);
       tl.to($("att"), { opacity: 1, duration: 0.25 }, 21.98);
       // O031 "Keep a copy": Send, then the sent mail, the reply and the bill go into My claim file
       tl.fromTo($("send"), { scale: 1 }, { scale: 0.92, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut" }, T.sent - 0.1);
