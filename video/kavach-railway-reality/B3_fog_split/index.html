@@ -30,7 +30,7 @@
   #fog { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
   #watch { position: absolute; left: 1560px; top: 150px; width: 240px; height: 240px; opacity: 0; }
   #wnum { position: absolute; left: 1520px; top: 404px; width: 320px; text-align: center; font: 800 60px Inter, Arial, sans-serif; color: #F8FAFC; font-variant-numeric: tabular-nums; opacity: 0; background: rgba(15,23,42,0.88); border-radius: 14px; padding: 6px 0; }
-  #react { position: absolute; left: 110px; top: 700px; width: 620px; height: 150px; opacity: 0; overflow: visible; }
+  #react { position: absolute; left: 110px; top: 560px; width: 620px; height: 150px; opacity: 0; overflow: visible; }
   .rl { font: 800 28px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #E2E8F0; }
   #dim { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
   #flash { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; background: #F8FAFC; opacity: 0; }
@@ -65,7 +65,7 @@
     <text id="ptxt" x="616" y="138" text-anchor="end" class="rl" style="fill:#FCA5A5" opacity="0">SIGNAL ALREADY PASSED</text></svg>
   <div id="flash" data-layout-allow-occlusion></div>
   <div class="kav-stamp" id="late">TOO LATE ON EYES ALONE</div>
-  <div class="kav-label amber" id="lab1">110 km/h in fog<small>50 M IN ≈ 1.6 S</small></div>
+  <div class="kav-label amber" id="lab1" style="bottom: 270px">110 km/h in fog<small>50 M IN ≈ 1.6 S</small></div>
   <div id="sweep" data-layout-allow-occlusion></div>
   <div id="vig" data-layout-allow-occlusion></div>
   
@@ -84,7 +84,7 @@
   const FV = FogView(document.getElementById("fog"), document.getElementById("fogimg"));
   const V = 110 / 3.6;                                        // 30.6 m/s
   const tS = at("V028", "Suppose"), t50 = at("V028", "fifty metres ahead"), tC = at("V028", "the train crosses"), tR = at("V028", "even an alert person"), tE = at("V028", "On eyes alone");
-  const st = { travel: 0, zsig: 400, t: 0 };
+  const st = { travel: 0, zsig: 400, t: 0, cab: true };
   const draw = () => FV.draw(st);
   const clock = { t: 0 };
   tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: () => { st.t = clock.t; draw(); } }, 0);

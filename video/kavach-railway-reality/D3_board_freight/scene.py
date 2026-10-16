@@ -2,12 +2,12 @@ TITLE = "D3 A goods train needs about 930 m"
 LIBS = ["tele.js"]
 CSS = """
   #tele { position: absolute; inset: 0; width: 1920px; height: 1080px; }
-  .ax { font: 800 22px Inter, Arial, sans-serif; fill: #94A3B8; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
+  .ax { font: 800 26px Inter, Arial, sans-serif; fill: #94A3B8; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
   .zl { font: 800 26px Inter, Arial, sans-serif; letter-spacing: 0.1em; }
   .zn { font: 800 46px Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
   .tot { font: 800 72px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; }
   .rd { font: 800 54px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; }
-  .ru { font: 800 20px Inter, Arial, sans-serif; fill: #94A3B8; letter-spacing: 0.16em; }
+  .ru { font: 800 24px Inter, Arial, sans-serif; fill: #94A3B8; letter-spacing: 0.16em; }
   .chipt { font: 800 34px Inter, Arial, sans-serif; fill: #F8FAFC; letter-spacing: 0.04em; }
 """
 BODY = """  <svg id="tele" viewBox="0 0 1920 1080" data-layout-allow-overflow>
@@ -31,13 +31,13 @@ JS = """
   // ---- world (metres; drawn through one transform): track, masts, loco + 58 wagons ----
   const trk = E("g", {}, W);
   E("line", { x1: -3000, y1: 0.6, x2: 1400, y2: 0.62, stroke: "#94A3B8", "stroke-width": 0.18 }, trk);
-  E("line", { x1: -3000, y1: 1.0, x2: 1400, y2: 1.02, stroke: "#334155", "stroke-width": 0.5, "stroke-dasharray": "0.25 0.35" }, trk);
-  for (let m = -3000; m < 1400; m += 60) { E("line", { x1: m, y1: 0.4, x2: m + 0.01, y2: -7.5, stroke: "#334155", "stroke-width": 0.3 }, trk); E("line", { x1: m, y1: -7.2, x2: m + 2.2, y2: -7.21, stroke: "#334155", "stroke-width": 0.18 }, trk); }
+  E("line", { x1: -3000, y1: 1.0, x2: 1400, y2: 1.02, stroke: "#5B6472", "stroke-width": 0.5, "stroke-dasharray": "0.25 0.35" }, trk);
+  for (let m = -3000; m < 1400; m += 30) { E("line", { x1: m, y1: 0.4, x2: m + 0.01, y2: -7.5, stroke: "#334155", "stroke-width": 0.3 }, trk); E("line", { x1: m, y1: -7.2, x2: m + 2.2, y2: -7.21, stroke: "#334155", "stroke-width": 0.18 }, trk); }
   E("line", { x1: -3000, y1: -6.4, x2: 1400, y2: -6.41, stroke: "rgba(148,163,184,0.4)", "stroke-width": 0.06 }, trk);
   const train = E("g", {}, W), blocks = [];
   // loco (WAG-9-like freight electric, generic): nose at x = 0 of the train group
-  E("path", { d: "M -20 -3.9 L -1.2 -3.9 L 0 -2.8 L 0 -0.6 L -20 -0.6 Z", fill: "#7F1D1D", stroke: "#FCA5A5", "stroke-width": 0.08 }, train);
-  E("rect", { x: -20, y: -2.0, width: 20, height: 0.35, fill: "#FDE68A" }, train);
+  E("path", { d: "M -20 -3.9 L -1.2 -3.9 L 0 -2.8 L 0 -0.6 L -20 -0.6 Z", fill: "#2F6B3A", stroke: "#86EFAC", "stroke-width": 0.06 }, train);   // WAG-9: green with yellow bands
+  E("rect", { x: -20, y: -2.2, width: 20, height: 0.22, fill: "#FACC15" }, train); E("rect", { x: -20, y: -1.6, width: 20, height: 0.22, fill: "#FACC15" }, train);
   E("rect", { x: -2.6, y: -3.4, width: 1.6, height: 1.0, rx: 0.1, fill: "#0F2A4A" }, train);
   E("path", { d: "M -14 -3.9 L -12.5 -4.9 L -11 -3.9", fill: "none", stroke: "#94A3B8", "stroke-width": 0.1 }, train);
   for (const x of [-17.5, -16, -14.5, -5.5, -4, -2.5]) { E("circle", { cx: x, cy: -0.1, r: 0.55, fill: "#1E293B", stroke: "#64748B", "stroke-width": 0.08 }, train); blocks.push([E("rect", { x: x - 0.75, y: -0.45, width: 0.22, height: 0.7, fill: "#F97316", opacity: 0 }, train), -x]); }

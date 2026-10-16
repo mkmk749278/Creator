@@ -31,14 +31,11 @@
   .ax { font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
   .bl { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.14em; }
   .bn { font: 800 64px Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
-  .strip { position: absolute; width: 760px; height: 118px; background: linear-gradient(180deg, #F4F1EA, #E7E2D6); border-radius: 4px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.45); overflow: hidden; }
-  .strip .blur { position: absolute; left: 26px; top: 22px; width: 470px; filter: blur(5px); }
-  .strip .blur i { display: block; height: 16px; background: #3B3B3B; border-radius: 3px; margin-bottom: 14px; }
-  .strip .num { position: absolute; right: 26px; top: 26px; font: 800 58px Inter, Arial, sans-serif; color: #111827; letter-spacing: -0.01em; }
-  .strip .unit { font-size: 26px; letter-spacing: 0.1em; margin-left: 8px; color: #374151; }
-  #s1 { left: 160px; top: 200px; transform: rotate(-2deg); } #s2 { left: 420px; top: 400px; transform: rotate(1.5deg); } #s3 { left: 240px; top: 600px; transform: rotate(-1deg); }
-  #stamp { left: 1150px; top: 640px; font-size: 54px; opacity: 0; white-space: nowrap; }
+  .strip { position: absolute; padding: 16px 18px 12px; background: #FBFAF7; border-radius: 4px; box-shadow: 0 18px 40px rgba(0,0,0,0.5); opacity: 0; }
+  .strip img { display: block; width: 1500px; height: auto; }
+  .strip .src { position: absolute; right: 14px; top: -34px; font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.14em; color: #CBD5E1; background: rgba(15,23,42,0.9); padding: 4px 10px; border-radius: 6px; }
+  #s1 { left: 150px; top: 250px; transform: rotate(-1.2deg); } #s2 { left: 200px; top: 440px; transform: rotate(0.8deg); } #s3 { left: 170px; top: 630px; transform: rotate(-0.6deg); }
+  #stamp { left: 1190px; top: 585px; font-size: 52px; opacity: 0; white-space: nowrap; }
   #loco { position: absolute; left: 1490px; top: 250px; width: 360px; opacity: 0; }
   #loco .k { font: 800 96px Inter, Arial, sans-serif; color: #F8FAFC; font-variant-numeric: tabular-nums; line-height: 1; margin-top: 18px; }
   #loco .u { font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.16em; color: #94A3B8; margin-top: 10px; }
@@ -66,16 +63,16 @@
         <text id="nB" class="bn" text-anchor="middle" fill="#F8FAFC">0</text></g>
       <g id="bandC" opacity="0"><rect id="pC" fill="url(#cy)" filter="url(#glow)"/>
         <g id="flow" clip-path="url(#streamclip)"></g>
-        <text id="lC" class="bl" fill="#7DD3FC">WORKING</text>
+        <text id="lC" class="bl" fill="#7DD3FC">KAVACH 4.0 WORKING</text>
         <text id="nC" class="bn" fill="#F8FAFC">2,633</text>
-        <text id="sC" class="ax" fill="#94A3B8">KAVACH 4.0 · ROUTE KM</text></g>
+        <text id="sC" class="ax" fill="#94A3B8">ROUTE KM · 31 JUL 2026</text></g>
       <g id="kmscale" opacity="0"><text id="kmu" class="ax">WIDTH = ROUTE KM</text></g>
       <g id="prot" opacity="0"><text id="tprot" class="bl" fill="#F87171">NOT YET PROTECTED</text></g>
     </g>
   </svg>
-  <div class="strip" id="s1"><div class="blur"><i style="width:96%"></i><i style="width:78%"></i><i style="width:60%"></i></div><div class="num">7,726<span class="unit">KM</span></div></div>
-  <div class="strip" id="s2"><div class="blur"><i style="width:88%"></i><i style="width:94%"></i><i style="width:52%"></i></div><div class="num">6,290<span class="unit">LOCOS</span></div></div>
-  <div class="strip" id="s3"><div class="blur"><i style="width:92%"></i><i style="width:70%"></i><i style="width:84%"></i></div><div class="num">21,794<span class="unit">KM</span></div></div>
+  <div class="strip" id="s1"><div class="src">PIB · 05 AUG 2026</div><img src="pib_row7726.jpg" alt="PIB release: Installation of Track side equipment 7,726 RKm"/></div>
+  <div class="strip" id="s2"><div class="src">PIB · 05 AUG 2026</div><img src="pib_row6290.jpg" alt="PIB release: Provision of Kavach in Loco 6,290 Nos."/></div>
+  <div class="strip" id="s3"><div class="src">PIB · 05 AUG 2026</div><img src="pib_line21794.jpg" alt="PIB release: work taken up on 21,794 RKM"/></div>
   <div id="loco">
     <svg width="360" height="120" viewBox="0 0 360 120" data-layout-allow-overflow>
       <path d="M20 30 L250 30 C300 30 330 55 340 92 L20 92 Z" fill="#1E293B" stroke="#94A3B8" stroke-width="3"/>
@@ -125,13 +122,13 @@
   const tH = at("V035", "here's the trap"), tF = at("V035", "Track fitted"), tFn = at("V035", "seven thousand seven"), tE = at("V035", "engines fitted"),
         tEn = at("V035", "six thousand two"), tW = at("V035", "track where work"), tWn = at("V035", "twenty one thousand"),
         tB = at("V035", "but fitted"), tP = at("V035", "work started isn't");
-  // 1) headline strips slide in (text blurred, numbers sharp), then leave
+  // 1) the real PIB lines behind the headline numbers slide in, then leave
   ["#s1", "#s2", "#s3"].forEach((s, i) => { tl.fromTo(s, { x: -900, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, Math.max(0.1, tH - 0.6) + i * 0.3);
     tl.to(s, { x: "+=60", duration: tF - tH + 0.3, ease: "none" }, tH + i * 0.3); });
   tl.to(["#s1", "#s2", "#s3"], { opacity: 0, y: -30, duration: 0.45, stagger: 0.08 }, tF - 0.35);
   // 2) fitted band, 3) engines, 4) work-started band (widest), 5) the thin working stream + stamp, 6) not protected
   const cnt = (id, v, t, d = 1.3) => { const o = { v: 0 }; tl.to(o, { v, duration: d, ease: "power2.out", onUpdate: () => $(id).textContent = Math.round(o.v).toLocaleString("en-IN") }, t); };
-  tl.to("#ghost", { opacity: 1, duration: 0.8 }, tF - 0.3);
+  tl.to("#ghost", { opacity: 1, duration: 0.8 }, tF - 0.6);
   tl.fromTo("#bandB", { opacity: 0, scale: 0.92, svgOrigin: `${CX} ${yB0}` }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, tF - 0.1);
   cnt("nB", 7726, tFn - 0.2);
   tl.fromTo("#loco", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, tE - 0.2);

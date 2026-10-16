@@ -18,7 +18,7 @@ BODY = """  <div id="persp"><svg id="fl" viewBox="0 0 1920 1080" data-layout-all
       <path d="M 24 -17 L 36 -17 Q 52 0 36 17 L 24 17 Z" fill="#F8FAFC" stroke="#38BDF8" stroke-width="3"/>
       <rect x="-34" y="-9" width="44" height="18" rx="3" fill="#0B2540"/><circle cx="44" cy="0" r="4.5" fill="#FDE68A" filter="url(#glow)"/></g>
     <g id="comm" opacity="0"><rect x="1260" y="330" width="540" height="96" rx="14" fill="rgba(2,132,199,0.18)" stroke="#38BDF8" stroke-width="4" filter="url(#glow)"/>
-      <text x="1530" y="395" text-anchor="middle" class="big" style="font-size:46px">COMMISSIONED</text></g>
+      <text x="1530" y="395" text-anchor="middle" class="big" style="font-size:52px">WORKING</text></g>
   </svg></div>"""
 JS = """
   const NS = "http://www.w3.org/2000/svg", $ = (id) => document.getElementById(id);
@@ -27,7 +27,8 @@ JS = """
   for (let i = 0; i < 22; i++) mk("line", { x1: -200, y1: -100 + i * 70, x2: 2600, y2: -100 + i * 70 + 0.3, stroke: "rgba(148,163,184,0.06)" }, $("grid"));
   const Y = 530, XS = [300, 610, 920, 1230], XC = 1530;   // SIGNAL DATA, LOCO BRAKES, RADIO, TEST -> COMMISSIONED
   const MAIN = `M 60 ${Y} L ${XC} ${Y + 0.4}`;
-  const LOOP = `M ${XS[3]} ${Y} C ${XS[3] - 40} ${Y + 120}, ${XS[3] - 170} ${Y + 250}, ${XS[3]} ${Y + 262} C ${XS[3] + 170} ${Y + 250}, ${XS[3] + 40} ${Y + 120}, ${XS[3]} ${Y + 0.5}`;
+  // fix-and-retest siding: a wide, flat oval loop below the line (leaves after TEST, rejoins before it)
+  const LOOP = `M ${XS[3]} ${Y} C ${XS[3] + 120} ${Y}, ${XS[3] + 170} ${Y + 150}, ${XS[3]} ${Y + 150} L ${XS[3] - 160} ${Y + 150} C ${XS[3] - 330} ${Y + 150}, ${XS[3] - 280} ${Y + 0.5}, ${XS[3] - 160} ${Y + 0.5} L ${XS[3]} ${Y + 0.5}`;
   const track = (d) => { mk("path", { d, fill: "none", stroke: "#2B3A57", "stroke-width": 30, "stroke-dasharray": "5 11", opacity: 0.9 }, $("tracks"));
     mk("path", { d, fill: "none", stroke: "#9FB0C8", "stroke-width": 15, opacity: 0.85 }, $("tracks")); mk("path", { d, fill: "none", stroke: "#13203A", "stroke-width": 9 }, $("tracks")); };
   track(MAIN); track(LOOP);
@@ -45,7 +46,7 @@ JS = """
     return { g, ring, mark, x }; });
   const cross = mk("g", { opacity: 0 }, $("stations"));
   mk("path", { d: `M ${XS[3] - 12} ${Y - 12} L ${XS[3] + 12} ${Y + 12} M ${XS[3] + 12} ${Y - 12} L ${XS[3] - 12} ${Y + 12}`, stroke: "#F87171", "stroke-width": 6, "stroke-linecap": "round" }, cross);
-  const fixT = mk("text", { x: XS[3], y: Y + 312, "text-anchor": "middle", class: "st", fill: "#FCD34D", opacity: 0 }, $("stations")); fixT.textContent = "FIX · RETEST";
+  const fixT = mk("text", { x: XS[3] - 80, y: Y + 205, "text-anchor": "middle", class: "st", fill: "#FCD34D", opacity: 0 }, $("stations")); fixT.textContent = "FIX · RETEST";
   fixT.style.fill = "#FCD34D";
   const endDot = mk("circle", { cx: XC, cy: Y, r: 22, fill: "#0B1220", stroke: "#64748B", "stroke-width": 5 }, $("stations"));
   // radio ripples at RADIO

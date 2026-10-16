@@ -829,6 +829,21 @@ screen layout and labels, the real livery and colours, the real signal heads and
 Commons: the search API rate-limits (429); category listings, `prop=images` and `Special:FilePath/<name>?width=960`
 files with a descriptive User-Agent and 8–45 s gaps worked. Example: `projects/kavach-railway-reality/design-reference.md`.
 
+### 9.3 Owner's CPU-only production guide (2026-10-16): what we use and why
+The owner shared "Claude Code in Cloud Sessions: Master CPU-Only Production Playbook". Mapping:
+- **FFmpeg virtual camera** (`zoompan`, `crop`, `overlay`, `vignette`): **use**. Documents, PIB pages and real photos
+  get eased push-ins and pans in FFmpeg at assembly (cheap, real time); grain and vignette are added there too (§9).
+- **Remotion**: not added. HyperFrames (pinned) is the same idea (Chromium + JS timeline → MP4 on CPU) and every
+  scene, check and render tool here is built on it; a second engine would split the look and the checks.
+- **Manim / Matplotlib / OpenCV**: not needed for the current films; braking curves, counters and charts are HyperFrames
+  SVG scenes that share the film's look. Pillow + FFmpeg cover stills and contact sheets.
+- **Client-side WebGL (send the owner an HTML file)**: not usable for a film, because the MP4 must contain the 3D.
+  Three.js scenes render in the cloud on SwiftShader (≈ 27 s per output second without N8AO, §9), which is affordable.
+- **No Blender Cycles, no local video diffusion, no heavy physics bakes**: already our rule.
+- **yt-dlp clips**: used when YouTube answers from the container; never routed around blocks (CLAUDE.md).
+- **Akash V4 takes under 1,500 characters**: the guide's limit for English Akash takes, against our 4,000–4,500 for Bunty.
+  Apply to the next English script's voice blocks and confirm with the owner.
+
 ## 10. HyperFrames (pinned `hyperframes@0.8.103`)
 
 Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:

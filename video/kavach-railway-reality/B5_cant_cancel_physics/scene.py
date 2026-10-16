@@ -5,7 +5,7 @@ CSS = """
   .fl { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.1em; }
   .big { font: 800 56px Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
   .chip { font: 800 34px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; }
-  #flash { position: absolute; inset: 0; background: radial-gradient(circle at 1050px 600px, rgba(254,202,202,0.95), rgba(220,38,38,0.35) 30%, rgba(0,0,0,0) 60%); opacity: 0; }
+  #flash { position: absolute; inset: 0; background: radial-gradient(circle at 1050px 540px, rgba(254,202,202,0.95), rgba(220,38,38,0.35) 30%, rgba(0,0,0,0) 60%); opacity: 0; }
 """
 BODY = """  <svg id="full" viewBox="0 0 1920 1080" data-layout-allow-overflow></svg>
   <div id="flash" data-layout-allow-occlusion></div>
@@ -29,15 +29,18 @@ JS = """
   E("path", { d: `M ${X(0)} ${dy - 16} L ${X(0)} ${dy} L ${X(DD)} ${dy + 0.4} L ${X(DD)} ${dy - 16}`, fill: "none", stroke: "#F87171", "stroke-width": 4 }, dang);
   E("text", { x: X(DD / 2), y: dy + 50, "text-anchor": "middle", class: "fl", fill: "#FCA5A5" }, dang).textContent = "DANGER ONLY 250 M AWAY";
   const obs = E("g", { opacity: 0 }, cam);
-  E("rect", { x: X(DD) + 2, y: RY - 90, width: 46, height: 88, rx: 6, fill: "#DC2626", stroke: "#FCA5A5", "stroke-width": 3 }, obs);
-  E("text", { x: X(DD) + 64, y: RY - 36, class: "fl", fill: "#FCA5A5" }, obs).textContent = "DANGER";
+  // a wagon left standing on the line (BOXN open wagon, brown, after the Commons freight photos)
+  E("rect", { x: X(DD) + 2, y: RY - 46, width: 150, height: 40, rx: 3, fill: "#6B3A26", stroke: "#3F2416", "stroke-width": 2 }, obs);
+  for (let i = 1; i < 6; i++) E("line", { x1: X(DD) + 2 + i * 25, y1: RY - 44, x2: X(DD) + 2.3 + i * 25, y2: RY - 8, stroke: "#4A2A1B", "stroke-width": 3 }, obs);
+  for (const dx of [22, 44, 108, 130]) E("circle", { cx: X(DD) + dx, cy: RY - 2, r: 9, fill: "#1E293B", stroke: "#64748B", "stroke-width": 2 }, obs);
+  E("text", { x: X(DD) + 168, y: RY - 20, class: "fl", fill: "#FCA5A5" }, obs).textContent = "WAGON ON THE LINE";
   const train = KT.trainset(cam, "tr", RY);
   const chipG = E("g", {}, cam);
   E("rect", { x: -190, y: RY - 150, width: 210, height: 60, rx: 12, fill: "rgba(15,23,42,0.92)", stroke: "#38BDF8", "stroke-width": 2 }, chipG);
   const chip = E("text", { x: -85, y: RY - 108, "text-anchor": "middle", class: "chip" }, chipG); chip.textContent = "110 km/h";
   const hit = E("g", { opacity: 0 }, cam);
-  E("rect", { x: X(DD / 2) - 300, y: RY + 230, width: 600, height: 96, rx: 14, fill: "rgba(15,23,42,0.92)", stroke: "#F87171", "stroke-width": 3 }, hit);
-  E("text", { x: X(DD / 2), y: RY + 297, "text-anchor": "middle", class: "big", fill: "#F87171" }, hit).textContent = "HITS AT ≈ 75 KM/H";
+  E("rect", { x: X(DD / 2) - 300, y: RY - 400, width: 600, height: 96, rx: 14, fill: "rgba(15,23,42,0.92)", stroke: "#F87171", "stroke-width": 3 }, hit);
+  E("text", { x: X(DD / 2), y: RY - 333, "text-anchor": "middle", class: "big", fill: "#F87171" }, hit).textContent = "HITS AT ≈ 75 KM/H";
   const tD = at("V030", "If danger appears"), tC = at("V030", "even Kavach");
   const tB = tD + 0.25, TP = Math.max(1.6, tC + 0.9 - tB);          // presentation time from braking to impact
   const st = { t: 0 }, place = () => {
@@ -59,5 +62,5 @@ JS = """
   tl.fromTo("#cam", { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 5 }, tI);
   tl.to(hit, { opacity: 1, duration: 0.3 }, tI + 0.1);
   tl.to("#lab1", { opacity: 1, duration: 0.5 }, tB + 0.3);
-  tl.fromTo("#cam", { scale: 1.08, transformOrigin: "960px 600px" }, { scale: 1.14, duration: D, ease: "sine.inOut" }, 0);
+  tl.fromTo("#cam", { scale: 1.08, svgOrigin: "960 560" }, { scale: 1.14, svgOrigin: "960 560", duration: D, ease: "sine.inOut" }, 0);
 """

@@ -54,5 +54,8 @@ JS = """
   tl.to([tenth, tenthT], { opacity: 1, duration: 0.4 }, tU - 0.2);
   tl.fromTo(tenth, { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": -68 }, duration: D - tU, ease: "none" }, tU);
   tl.to(res, { opacity: 1, duration: 0.4 }, tU + 0.5);
+  tl.to("#waf", { x: -620, y: -222, scale: 1.45, transformOrigin: "0px 0px", duration: 0.8, ease: "power3.inOut" }, tU - 0.2);
+  tl.to("#map", { opacity: 0.25, duration: 0.6 }, tU - 0.2);
+  tl.to(["#panel", "#scrim"], { opacity: 0, duration: 0.4 }, tU - 0.3);
 
 """

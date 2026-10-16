@@ -2,9 +2,9 @@ TITLE = "B1 Vande Bharat: 654 m from 130 km/h"
 LIBS = ["tele.js"]
 CSS = """
   #tele { position: absolute; inset: 0; width: 1920px; height: 1080px; }
-  .ax { font: 600 20px Inter, Arial, sans-serif; fill: #94A3B8; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; }
+  .ax { font: 800 26px Inter, Arial, sans-serif; fill: #94A3B8; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; }
   .chip { font: 800 30px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; }
-  .big { font: 800 64px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; }
+  .big { font: 800 96px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; }
 """
 BODY = """  <svg id="tele" viewBox="0 0 1920 1080" data-layout-allow-overflow></svg>
   <div class="kav-label amber" id="lab1">Vande Bharat · 130 km/h<small>EMERGENCY BRAKE · 654 M</small></div>"""
@@ -17,7 +17,8 @@ JS = """
   const pt = E("circle", { r: 10, fill: "#F59E0B", opacity: 0 }, cam);
   const stopG = E("g", { id: "stopG", opacity: 0 }, cam);
   E("line", { x1: C.X(654), y1: 360, x2: C.X(654) + 0.3, y2: 736, stroke: "#F59E0B", "stroke-width": 3, "stroke-dasharray": "8 8" }, stopG);
-  const big = E("text", { x: C.X(654) - 26, y: 560, "text-anchor": "end", class: "big" }, stopG); big.textContent = "654 m";
+  const big = E("text", { x: C.X(654) - 26, y: 500, "text-anchor": "end", class: "big" }, stopG); big.textContent = "654 m";
+  const bsub = E("text", { x: C.X(654) - 30, y: 560, "text-anchor": "end", class: "ax", fill: "#FCD34D" }, stopG); bsub.textContent = "TO STOP FROM 130 KM/H";
   const brk = E("g", { id: "brk", opacity: 0 }, cam);
   E("line", { x1: C.X(0), y1: 360, x2: C.X(0) + 0.3, y2: 736, stroke: "#38BDF8", "stroke-width": 3, "stroke-dasharray": "8 8" }, brk);
   const bt = E("text", { x: C.X(0) + 14, y: 400, class: "ax", fill: "#7DD3FC" }, brk); bt.textContent = "EMERGENCY BRAKE";
@@ -30,7 +31,7 @@ JS = """
   tl.from("#chart", { opacity: 0, y: 30, duration: 0.8, ease: "power3.out" }, 0.2);
   tl.from(".ruler line", { opacity: 0, duration: 0.25, stagger: 0.02 }, 0.4);
   // physics: approach at 130 km/h to scale on the ruler (36.1 m/s), brake on "needs about", constant deceleration to 654 m
-  const PXM = (C.X(700) - C.X(0)) / 700, tB = at("V023", "needs about") - 0.2, T = Math.min(5.6, CUES.cues.V023.to + 0.1 - tB);
+  const PXM = (C.X(700) - C.X(0)) / 700, tB = at("V023", "A Vande Bharat"), T = 5.6;
   const pos = { d: -36.1 * tB }, place = () => {
     const d = pos.d, x = C.X(d);
     train.setAttribute("transform", `translate(${x} 0)`); chipG.setAttribute("transform", `translate(${x} 0)`);
@@ -45,6 +46,6 @@ JS = """
   tl.to(u, { k: 1, duration: T, ease: "none", onUpdate: () => { pos.d = 654 * (1 - Math.pow(1 - u.k, 2)); place(); } }, tB);
   tl.set(pt, { opacity: 1 }, tB);
   tl.to("#brk", { opacity: 1, duration: 0.3 }, tB);
-  tl.to("#stopG", { opacity: 1, duration: 0.5 }, tB + T - 0.2);
+  tl.fromTo("#stopG", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, at("V023", "six hundred") - 0.2);
   tl.to("#lab1", { opacity: 1, duration: 0.6 }, at("V023", "A Vande Bharat"));
 """

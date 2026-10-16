@@ -42,15 +42,20 @@ window.FogView = function (canvas, fogImg) {
     }
     // contact wire
     ctx.strokeStyle = "rgba(60,64,70,0.5)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(...P(0.1, 5.6, 1.5)); ctx.lineTo(...P(0.1, 5.6, 300)); ctx.stroke();
-    // the signal (post right of the track); red aspect lit
+    // the signal (Indian colour-light, after Commons photos): white post, black backplate, four hooded lamps, red lit
     if (s.zsig > 0.9 && s.zsig < 150) {
-      const z = s.zsig, [px, py] = P(2.3, 0, z), [hx, hy] = P(2.3, 5.2, z), sc = F / z;
-      ctx.strokeStyle = mix([46, 50, 56], z * 0.7); ctx.lineWidth = Math.max(1.5, 0.18 * sc); ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(hx, hy); ctx.stroke();
-      const w = 0.55 * sc, h = 1.4 * sc;
-      ctx.fillStyle = mix([18, 20, 26], z * 0.7); ctx.fillRect(hx - w / 2, hy - h, w, h);
-      const lr = 0.16 * sc, ly = hy - h + 0.25 * sc, vis = Math.min(1, Math.max(0, (64 - z) / 16));   // a lit lamp cuts through fog: it resolves at about 50-60 m
-      const glow = ctx.createRadialGradient(hx, ly, 0, hx, ly, lr * 9); glow.addColorStop(0, `rgba(255,70,60,${0.9 * vis})`); glow.addColorStop(1, "rgba(255,70,60,0)");
-      ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(hx, ly, lr * 9, 0, 7); ctx.fill();
+      const z = s.zsig, [px, py] = P(2.3, 0, z), [hx, hy] = P(2.3, 5.6, z), sc = F / z;
+      ctx.strokeStyle = mix([214, 218, 222], z * 0.7); ctx.lineWidth = Math.max(1.5, 0.16 * sc); ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(hx, hy); ctx.stroke();
+      const w = 0.5 * sc, h = 1.9 * sc;
+      ctx.fillStyle = mix([14, 15, 18], z * 0.7); ctx.fillRect(hx - w / 2, hy - h, w, h);
+      ctx.fillStyle = mix([240, 240, 240], z * 0.7); ctx.fillRect(hx - w * 0.3, hy + 0.1 * sc, w * 0.6, 0.28 * sc);     // number plate
+      const lr = 0.13 * sc, vis = Math.min(1, Math.max(0, (64 - z) / 16));  // a lit lamp cuts through fog: it resolves at about 50-60 m
+      for (let i = 0; i < 4; i++) { const ly = hy - h + (0.3 + i * 0.43) * sc;
+        ctx.fillStyle = mix(i === 0 ? [40, 12, 12] : [22, 22, 24], z * 0.7); ctx.beginPath(); ctx.arc(hx, ly, lr, 0, 7); ctx.fill();
+        ctx.strokeStyle = mix([8, 8, 9], z * 0.7); ctx.lineWidth = Math.max(1, 0.06 * sc); ctx.beginPath(); ctx.arc(hx, ly, lr * 1.25, Math.PI * 1.05, Math.PI * 1.95); ctx.stroke(); }
+      const ly = hy - h + 0.3 * sc;
+      const glow = ctx.createRadialGradient(hx, ly, 0, hx, ly, lr * 10); glow.addColorStop(0, `rgba(255,70,60,${0.9 * vis})`); glow.addColorStop(1, "rgba(255,70,60,0)");
+      ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(hx, ly, lr * 10, 0, 7); ctx.fill();
       ctx.fillStyle = `rgba(255,110,100,${vis})`; ctx.beginPath(); ctx.arc(hx, ly, lr, 0, 7); ctx.fill();
     }
     // drifting fog banks (tileable texture), two layers at different speeds
@@ -62,8 +67,19 @@ window.FogView = function (canvas, fogImg) {
         ctx.globalAlpha = 1;
       }
     }
-    // cab window frame
-    ctx.strokeStyle = "rgb(10,12,16)"; ctx.lineWidth = 70; ctx.strokeRect(0, 0, W, H);
+    // cab: grey window frame with vertical protective bars and the console below (after the PIB cab photo)
+    if (s.cab) {
+      ctx.fillStyle = "rgba(60,66,74,0.92)";
+      for (const f of [0.15, 0.32, 0.68, 0.85]) { const x = W * f; ctx.fillRect(x - 7, 0, 14, H); }
+      let gg = ctx.createLinearGradient(0, 0, 0, 90); gg.addColorStop(0, "#2B3036"); gg.addColorStop(1, "#4B525B");
+      ctx.fillStyle = gg; ctx.fillRect(0, 0, W, 70);
+      gg = ctx.createLinearGradient(0, H - 230, 0, H); gg.addColorStop(0, "#6B7380"); gg.addColorStop(0.08, "#565D67"); gg.addColorStop(1, "#2C3036");
+      ctx.fillStyle = gg; ctx.beginPath(); ctx.moveTo(0, H - 200); ctx.lineTo(W, H - 230); ctx.lineTo(W, H); ctx.lineTo(0, H); ctx.fill();
+      ctx.fillStyle = "#3A4048"; ctx.fillRect(0, 0, 46, H); ctx.fillRect(W - 46, 0, 46, H);
+      for (let i = 0; i < 4; i++) { const gx = 170 + i * 120, gy = H - 110; ctx.fillStyle = "#1A1D21"; ctx.beginPath(); ctx.arc(gx, gy, 44, 0, 7); ctx.fill();
+        ctx.strokeStyle = "#C9CED6"; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(gx, gy, 38, 0, 7); ctx.stroke();
+        ctx.strokeStyle = "#F3F4F6"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(gx, gy); ctx.lineTo(gx + 26 * Math.cos(-2.2 + i * 0.5), gy + 26 * Math.sin(-2.2 + i * 0.5)); ctx.stroke(); }
+    } else { ctx.strokeStyle = "rgb(10,12,16)"; ctx.lineWidth = 70; ctx.strokeRect(0, 0, W, H); }
     const vg = ctx.createRadialGradient(CX, H * 0.48, H * 0.25, CX, H * 0.5, H * 0.8); vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(0,0,0,0.55)");
     ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
   }

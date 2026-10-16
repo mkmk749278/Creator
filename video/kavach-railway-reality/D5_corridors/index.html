@@ -80,15 +80,15 @@
   const NS = "http://www.w3.org/2000/svg";
   const label = (id, k, dx, dy, anchor, t1, t2) => {
     const [x, y] = Mp.M.pts[k], g = document.createElementNS(NS, "g"); g.setAttribute("id", id); g.setAttribute("opacity", 0);
-    const w = 330, h = 66, rx = anchor === "end" ? x + dx - w : x + dx;
+    const w = 400, h = 70, rx = anchor === "end" ? x + dx - w : x + dx;
     g.innerHTML = `<line x1="${x}" y1="${y}" x2="${anchor === "end" ? rx + w : rx}" y2="${y + dy + h / 2 + 0.4}" stroke="#38BDF8" stroke-width="2"/>
       <rect x="${rx}" y="${y + dy}" width="${w}" height="${h}" rx="8" fill="rgba(8,20,38,0.9)" stroke="#38BDF8" stroke-width="2"/>
-      <text x="${rx + 16}" y="${y + dy + 28}" style="font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #7DD3FC">${t1}</text>
+      <text x="${rx + 20}" y="${y + dy + 47}" style="font: 800 32px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #7DD3FC">${t1}</text>
       <text x="${rx + 16}" y="${y + dy + 54}" style="font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #E0F2FE">${t2}</text>`;
     document.getElementById("mworld").appendChild(g); return g;
   };
-  label("lab-dm", "ahmedabad", -60, -110, "end", "DELHI → MUMBAI", "1,423 KM GROUP");
-  label("lab-dh", "howrah", 30, 110, "start", "DELHI → HOWRAH", "1,210 KM GROUP");
+  label("lab-dm", "ahmedabad", -60, -110, "end", "DELHI → MUMBAI", "");
+  label("lab-dh", "howrah", 30, 110, "start", "DELHI → HOWRAH", "");
   tl.fromTo("#lab-dm", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tDM);
   tl.fromTo("#lab-dh", { opacity: 0 }, { opacity: 1, duration: 0.5 }, tDH + 0.3);
   // busiest: a pulse travels both corridors

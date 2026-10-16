@@ -4,7 +4,7 @@ CSS = """
   .ax { font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
   .yr { font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #CBD5E1; }
   .amt { font: 800 76px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
-  .cr { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8; }
+  .cr { font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8; }
   .ttl { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.2em; fill: #38BDF8; }
   .dl { font: 800 44px Inter, Arial, sans-serif; fill: #F59E0B; letter-spacing: 0.02em; }
 """
@@ -19,8 +19,8 @@ BODY = """  <svg id="bg" viewBox="0 0 1920 1080" data-layout-allow-overflow>
     <g id="world">
       <g id="grid"></g>
       <text x="300" y="180" class="ttl">KAVACH · YEARLY ALLOCATION</text>
-      <g id="bar1"><rect id="r1" fill="url(#b1)" stroke="#94A3B8" stroke-width="2"/><rect id="s1" fill="url(#scan)" clip-path="url(#c1)"/></g>
-      <g id="bar2"><rect id="r2" fill="url(#b2)" stroke="#7DD3FC" stroke-width="2" filter="url(#glow)"/><rect id="s2" fill="url(#scan)" clip-path="url(#c2)"/></g>
+      <g id="bar1"><rect id="r1" fill="url(#b1)" stroke="#94A3B8" stroke-width="2"/></g>
+      <g id="bar2"><rect id="r2" fill="url(#b2)" stroke="#7DD3FC" stroke-width="2" filter="url(#glow)"/></g>
       <line id="cap1" stroke="#CBD5E1" stroke-width="3" stroke-dasharray="10 8" opacity="0"/>
       <g id="v1" opacity="0"><text id="a1" class="amt">₹0</text><text id="k1" class="cr">CRORE</text></g>
       <g id="v2" opacity="0"><text id="a2" class="amt">₹0</text><text id="k2" class="cr">CRORE</text></g>
@@ -39,7 +39,7 @@ JS = """
     if (v) { const t = document.createElementNS(NS, "text"); t.setAttribute("x", 290); t.setAttribute("y", y + 7); t.setAttribute("text-anchor", "end"); t.setAttribute("class", "ax"); t.textContent = v.toLocaleString("en-IN"); grid.appendChild(t); } }
   set("r1", { x: X1, width: BW, y: BASE, height: 0 }); set("r2", { x: X2, width: BW, y: BASE, height: 0 });
   set("r1c", { x: X1, width: BW, y: BASE - h1, height: h1 }); set("r2c", { x: X2, width: BW, y: BASE - h2, height: h2 });
-  set("s1", { x: X1, width: BW, height: 80, y: BASE }); set("s2", { x: X2, width: BW, height: 80, y: BASE });
+  
   set("y1", { x: X1 + BW / 2, y: BASE + 54 }); set("y2", { x: X2 + BW / 2, y: BASE + 54 });
   set("a1", { x: X1 - 10, y: BASE - h1 - 70 }); set("k1", { x: X1 - 6, y: BASE - h1 - 28 });
   set("a2", { x: X2 - 10, y: BASE - h2 - 70 }); set("k2", { x: X2 - 6, y: BASE - h2 - 28 });
@@ -47,19 +47,18 @@ JS = """
   const ax = X2 + BW + 70, ya = BASE - h1, yb = BASE - h2 + 8;
   set("darr", { d: `M ${ax} ${ya} L ${ax + 0.4} ${yb + 24}` }); set("dhead", { d: `M ${ax - 14} ${yb + 26} L ${ax} ${yb} L ${ax + 14} ${yb + 26} Z` });
   set("dtx", { x: ax + 28, y: (ya + yb) / 2 + 16 });
-  const fmt = (v) => "₹" + v.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const fmt = (v) => "≈ ₹" + (Math.round(v / 10) * 10).toLocaleString("en-IN") + " CR";
   const tM = at("V036", "The money"), t1 = at("V036", "one thousand one hundred"), t2 = at("V036", "one thousand six hundred"), tY = at("V036", "in twenty twenty five");
   tl.from(["#grid", ".ttl", "#y1", "#y2"], { opacity: 0, duration: 0.8, stagger: 0.1 }, 0.1);
-  const grow = (r, h, a, k, v, t) => { tl.to(r, { attr: { y: BASE - h, height: h }, duration: 1.4, ease: "power3.out" }, t);
-    tl.to(a.parentNode, { opacity: 1, duration: 0.3 }, t); const o = { v: 0 };
-    tl.fromTo(a.parentNode, { y: h }, { y: 0, duration: 1.4, ease: "power3.out" }, t);
-    tl.to(o, { v, duration: 1.4, ease: "power3.out", onUpdate: () => a.textContent = fmt(o.v) }, t); };
-  grow("#r1", h1, $("a1"), $("k1"), 1112.57, Math.max(0.8, t1 - 0.5));
-  grow("#r2", h2, $("a2"), $("k2"), 1673.19, t2 - 0.4);
+  // bars rise while the sentence builds to each number; the big figure is the rounded one the narration says, the exact
+  // allocation sits under it (PIB Mar 2025: Rs 1,112.57 cr for 2024-25; Rajya Sabha Aug 2025: Rs 1,673.19 cr for 2025-26)
+  const grow = (r, h, a, k, v, t, d, exact) => { tl.to(r, { attr: { y: BASE - h, height: h }, duration: d, ease: "power2.out" }, t);
+    tl.to(a.parentNode, { opacity: 1, duration: 0.3 }, t); const o = { v: 0 }; k.textContent = exact;
+    tl.fromTo(a.parentNode, { y: h }, { y: 0, duration: d, ease: "power2.out" }, t);
+    tl.to(o, { v, duration: d, ease: "power2.out", onUpdate: () => a.textContent = fmt(o.v) }, t); };
+  grow("#r1", h1, $("a1"), $("k1"), 1100, at("V036", "the yearly"), t1 + 0.4 - at("V036", "the yearly"), "EXACT ₹1,112.57 CR");
+  grow("#r2", h2, $("a2"), $("k2"), 1670, t2 - 1.4, 2.0, "EXACT ₹1,673.19 CR");
   tl.to("#cap1", { opacity: 1, duration: 0.4 }, t2 + 1.0);
   tl.fromTo("#delta", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.5 }, Math.min(tY, D - 2.6));
-  // scan light sweeping up each bar (finite repeats)
-  tl.fromTo("#s1", { attr: { y: BASE } }, { attr: { y: BASE - h1 - 80 }, duration: 1.6, repeat: Math.floor((D - t1) / 2.2), repeatDelay: 0.6, ease: "none" }, t1 + 0.8);
-  tl.fromTo("#s2", { attr: { y: BASE } }, { attr: { y: BASE - h2 - 80 }, duration: 1.8, repeat: Math.max(0, Math.floor((D - t2 - 1.0) / 2.4)), repeatDelay: 0.6, ease: "none" }, t2 + 1.0);
   tl.fromTo("#world", { transformOrigin: "900px 600px", scale: 1.0, x: 0 }, { scale: 1.06, x: -30, duration: D, ease: "sine.inOut" }, 0);
 """

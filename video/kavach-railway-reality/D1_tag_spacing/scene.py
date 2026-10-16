@@ -8,7 +8,7 @@ CSS = """
   .cnt { font: 800 120px Inter, Arial, sans-serif; fill: #FCD34D; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
   .cntu { font: 800 28px Inter, Arial, sans-serif; letter-spacing: 0.16em; fill: #94A3B8; }
   .lens { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #F8FAFC; }
-  .tlabel { font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
+  .tlabel { font: 800 30px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
   .myth { font: 800 44px Inter, Arial, sans-serif; letter-spacing: 0.06em; fill: #F8FAFC; }
   .gap { font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #FCD34D; }
 """
@@ -136,7 +136,7 @@ JS = """
   const lt = []; const r2 = mulberry32(30);
   for (let i = 0; i < 30; i++) { const x = -186 + (i + 0.2 + r2() * 0.6) * (372 / 30); lt.push(mk("rect", { x: x - 5, y: -16, width: 10, height: 32, rx: 2, fill: "#F59E0B", stroke: "#78350F", "stroke-width": 1.5, opacity: 0 }, inner)); }
   mk("circle", { cx: 0, cy: 0, r: 200, fill: "none", stroke: "#F8FAFC", "stroke-width": 6, filter: "url(#glow2)" }, lg);
-  const lcap = mk("text", { x: LX, y: LY - 226, "text-anchor": "middle", class: "lens" }, lens); lcap.textContent = "1 KM · ≈ 30 TAGS";
+  const lcap = mk("text", { x: LX, y: LY - 226, "text-anchor": "middle", class: "lens" }, lens); lcap.textContent = "ON AVERAGE: 1 KM ≈ 30 TAGS";
   // part 2 timing
   const rl = railP.getTotalLength(); railP.setAttribute("stroke-dasharray", rl); railP.setAttribute("stroke-dashoffset", rl);
   tl.to(railP, { attr: { "stroke-dashoffset": 0 }, duration: 1.1, ease: "power2.inOut" }, tS + 0.3);

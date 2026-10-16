@@ -28,7 +28,7 @@
   .kav-label { opacity: 0; }
 
   #tlx { position: absolute; inset: 0; width: 1920px; height: 1080px; }
-  .ax { font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
+  .ax { font: 800 28px Inter, Arial, sans-serif; letter-spacing: 0.14em; fill: #94A3B8; }
   .cnt { font: 800 220px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
   .cl { font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #CBD5E1; }
   .c12 { font: 800 120px Inter, Arial, sans-serif; fill: #F87171; font-variant-numeric: tabular-nums; }
@@ -39,7 +39,7 @@
 <body>
 <div id="root" data-composition-id="B6_spad_counter" data-start="0" data-width="1920" data-height="1080" data-duration="15.6">
   <svg id="tlx" viewBox="0 0 1920 1080" data-layout-allow-overflow>
-    <defs><filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <defs><filter id="glow" filterUnits="userSpaceOnUse" x="-2000" y="-2000" width="5000" height="5000"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
     <g id="lamp" transform="translate(1540 300)">
       <rect x="-60" y="-150" width="120" height="300" rx="26" fill="#0B1220" stroke="#5B6B86" stroke-width="5"/>
       <circle cx="0" cy="-90" r="40" fill="#3A1414"/><circle id="lred" cx="0" cy="-90" r="40" fill="#EF4444" filter="url(#glow)"/>
@@ -74,12 +74,13 @@
     l.setAttribute("x1", x); l.setAttribute("x2", x + 0.3); l.setAttribute("y1", 818); l.setAttribute("y2", 818 - h);
     l.setAttribute("stroke", "#94A3B8"); l.setAttribute("stroke-width", 3); l.setAttribute("opacity", 0); g.appendChild(l); ticks.push(l); });
   const tQ = at("V031", "The Commission"), tN = at("V031", "two hundred and eight"), tY = at("V031", "from April"), t12 = at("V031", "and twelve of them");
-  tl.from("#lamp", { opacity: 0, x: 40, duration: 0.7, ease: "power3.out" }, 0.2);
+  tl.from("#lamp", { opacity: 0, x: 40, duration: 0.5, ease: "power3.out" }, 0);
   tl.to("#lred", { opacity: 0.45, duration: 0.6, yoyo: true, repeat: Math.floor((D - 0.6) / 0.6), ease: "sine.inOut" }, 0.6);
   const c = { n: 0 }, cnt = document.getElementById("cnt");
   tl.to(c, { n: 208, duration: Math.max(1.5, tY - tN + 1.2), ease: "power2.out", onUpdate: () => {
     const n = Math.round(c.n); cnt.textContent = n; ticks.forEach((l, i) => l.setAttribute("opacity", i < n ? 0.85 : 0)); } }, tN - 0.3);
   tl.from("#cnt, .cl", { opacity: 0, duration: 0.5 }, tQ);
+  tl.from("#tlx > line, #tlx > text.ax", { opacity: 0, duration: 0.6, stagger: 0.15 }, 0.3);
   [...red].forEach((i, k) => tl.to(ticks[i], { attr: { stroke: "#EF4444", "stroke-width": 6 }, duration: 0.2 }, t12 + k * 0.08));
   tl.to("#g12", { opacity: 1, duration: 0.5 }, t12 + 0.3);
   tl.fromTo("#tlx", { transformOrigin: "50% 50%", scale: 1.0 }, { scale: 1.04, duration: D, ease: "sine.inOut" }, 0);

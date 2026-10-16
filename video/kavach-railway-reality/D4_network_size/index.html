@@ -73,7 +73,7 @@
   tl.to("#b1", { opacity: 1, duration: 0.4 }, t69 - 0.2);
   tl.to(a, { v: 69439, duration: 1.6, ease: "power2.out", onUpdate: () => document.getElementById("n1").textContent = fmt(a.v) }, t69 - 0.2);
   tl.to("#b2", { opacity: 1, duration: 0.4 }, t16 - 0.2);
-  tl.to(b, { v: 16000, duration: 1.4, ease: "power2.out", onUpdate: () => document.getElementById("n2").textContent = "≈ " + fmt(b.v) }, t16 - 0.2);
+  tl.to(b, { v: 16000, duration: 1.4, ease: "power2.out", onUpdate: () => document.getElementById("n2").textContent = (b.v >= 15999.5 ? "≈ " : "") + fmt(b.v) }, t16 - 0.2);
 
   window.__timelines = window.__timelines || {};
   window.__timelines["D4_network_size"] = tl;
