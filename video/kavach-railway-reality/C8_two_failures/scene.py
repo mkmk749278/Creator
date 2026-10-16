@@ -1,0 +1,50 @@
+TITLE = "C8 Two crashes, two failures"
+CSS = """
+  #cols { position: absolute; inset: 0; }
+  .ct { font: 800 54px Inter, Arial, sans-serif; letter-spacing: 0.04em; fill: #F8FAFC; }
+  .cs { font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.18em; fill: #94A3B8; }
+"""
+BODY = """  <svg id="cols" viewBox="0 0 1920 1080" data-layout-allow-overflow>
+    <defs><filter id="glow" filterUnits="userSpaceOnUse" x="-200" y="-200" width="2400" height="1500"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <line id="div" x1="960" y1="190" x2="960.5" y2="860" stroke="#334155" stroke-width="3"/>
+    <g id="L">
+      <text x="520" y="230" text-anchor="middle" class="cs">BALASORE · 2023</text>
+      <g transform="translate(400 330)">
+        <rect x="-26" y="0" width="52" height="132" rx="12" fill="#0B1220" stroke="#5B6B86" stroke-width="3"/>
+        <circle cx="0" cy="24" r="15" fill="#3A1414"/><circle cx="0" cy="66" r="15" fill="#3A2E10"/><circle cx="0" cy="108" r="15" fill="#4ADE80" filter="url(#glow)"/>
+        <line x1="0" y1="132" x2="0" y2="200" stroke="#5B6B86" stroke-width="7"/></g>
+      <path id="lwire" d="M 430 438 L 560 438 L 560 400 L 600 400" fill="none" stroke="#DC2626" stroke-width="5"/>
+      <circle id="lpk" cx="430" cy="438" r="10" fill="#4ADE80" stroke="#DC2626" stroke-width="4"/>
+      <rect x="600" y="360" width="190" height="80" rx="12" fill="#0B1220" stroke="#DC2626" stroke-width="4"/>
+      <text x="695" y="410" text-anchor="middle" class="cs" style="fill:#FCA5A5">LOGIC</text>
+      <text x="520" y="640" text-anchor="middle" class="ct">WRONG INPUT</text>
+      <text x="520" y="690" text-anchor="middle" class="cs">THE SIGNALLING DATA ITSELF</text>
+    </g>
+    <g id="R">
+      <text x="1400" y="230" text-anchor="middle" class="cs">KANCHANJUNGA · 2024</text>
+""" + "".join(f'<g transform="translate({1250 + k * 110} 330)"><rect x="-22" y="0" width="44" height="112" rx="10" fill="#0B1220" stroke="#7F1D1D" stroke-width="3"/><circle cx="0" cy="20" r="12" fill="#2A1010"/><circle cx="0" cy="56" r="12" fill="#2A2410"/><circle cx="0" cy="92" r="12" fill="#0E2416"/></g>' for k in range(3)) + """
+      <g transform="translate(1400 488) rotate(-6) scale(0.9)"><g id="slip">
+        <path d="M -110 -60 L 110 -60 L 110 0 L 96 12 L 110 26 L 110 60 L -110 60 Z" fill="#EDE6D3"/>
+        <path d="M -80 -30 L 70 -30 M -80 -8 L 50 -8 M -80 14 L 60 14" stroke="rgba(59,51,38,0.3)" stroke-width="8" stroke-linecap="round"/></g></g>
+      <text x="1400" y="640" text-anchor="middle" class="ct">BROKEN BACKUP</text>
+      <text x="1400" y="690" text-anchor="middle" class="cs">RULES FOR FAILED SIGNALS</text>
+    </g>
+    <g id="shield" opacity="0" filter="url(#glow)">
+      <path d="M 1400 256 L 1610 318 L 1610 440 C 1610 520, 1505 568, 1400 592 C 1295 568, 1190 520, 1190 440 L 1190 318 Z" fill="rgba(2,132,199,0.10)" stroke="#38BDF8" stroke-width="6"/>
+      <text x="1400" y="760" text-anchor="middle" class="cs" style="fill:#7DD3FC;font-size:26px">KAVACH IS STRONGEST HERE</text>
+    </g>
+  </svg>"""
+JS = """
+  tl.fromTo("#cols", { transformOrigin: "50% 50%", scale: 1.0 }, { scale: 1.05, duration: D, ease: "sine.inOut" }, 0);
+  tl.from("#div", { attr: { y2: 190 }, duration: 0.8, ease: "power2.out" }, 0.1);
+  const tB = at("V053", "At Balasore"), tK = at("V053", "at Kanchanjunga"), tS = at("V053", "Kavach is strongest");
+  tl.from("#L", { opacity: 0, x: -40, duration: 0.7, ease: "power3.out" }, Math.max(0.3, tB - 0.6));
+  const p = document.getElementById("lwire"), L = p.getTotalLength(), o = { u: 0 }, pk = document.getElementById("lpk");
+  const place = () => { const q = p.getPointAtLength(o.u * L); pk.setAttribute("cx", q.x); pk.setAttribute("cy", q.y); };
+  tl.to(o, { u: 1, duration: 1.2, ease: "power1.inOut", repeat: 4, onUpdate: place }, tB);
+  tl.from("#R", { opacity: 0, x: 40, duration: 0.7, ease: "power3.out" }, tK - 0.5);
+  tl.to("#slip", { rotation: 4, x: 8, y: -6, svgOrigin: "0 0", duration: 3, ease: "sine.inOut" }, tK);
+  tl.to("#L", { opacity: 0.4, duration: 0.6 }, tS);
+  tl.fromTo("#shield", { opacity: 0, scale: 0.9, svgOrigin: "1400 420" }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.6)" }, tS);
+  tl.to("#shield path", { attr: { "stroke-width": 9 }, duration: 0.8, yoyo: true, repeat: 3, ease: "sine.inOut" }, tS + 0.8);
+"""
