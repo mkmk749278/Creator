@@ -1,4 +1,4 @@
-TITLE = "B1 Vande Bharat: 654 m from 130 km/h"
+TITLE = "B1 Vande Bharat: about 650 m from 130 km/h"
 LIBS = ["tele.js"]
 CSS = """
   #tele { position: absolute; inset: 0; width: 1920px; height: 1080px; }
@@ -7,7 +7,7 @@ CSS = """
   .big { font: 800 96px Inter, Arial, sans-serif; fill: #F8FAFC; font-variant-numeric: tabular-nums; }
 """
 BODY = """  <svg id="tele" viewBox="0 0 1920 1080" data-layout-allow-overflow></svg>
-  <div class="kav-label amber" id="lab1">Vande Bharat · 130 km/h<small>EMERGENCY BRAKE · 654 M</small></div>"""
+  <div class="kav-label amber" id="lab1">Vande Bharat · 130 km/h<small>EMERGENCY BRAKE · ≈ 650 M</small></div>"""
 JS = """
   const svg = document.getElementById("tele"), E = KT.el;
   const cam = E("g", { id: "cam" }, svg);
@@ -17,7 +17,7 @@ JS = """
   const pt = E("circle", { r: 10, fill: "#F59E0B", opacity: 0 }, cam);
   const stopG = E("g", { id: "stopG", opacity: 0 }, cam);
   E("line", { x1: C.X(654), y1: 360, x2: C.X(654) + 0.3, y2: 736, stroke: "#F59E0B", "stroke-width": 3, "stroke-dasharray": "8 8" }, stopG);
-  const big = E("text", { x: C.X(654) - 26, y: 500, "text-anchor": "end", class: "big" }, stopG); big.textContent = "654 m";
+  const big = E("text", { x: C.X(654) - 26, y: 500, "text-anchor": "end", class: "big" }, stopG); big.textContent = "≈ 650 m";
   const bsub = E("text", { x: C.X(654) - 30, y: 560, "text-anchor": "end", class: "ax", fill: "#FCD34D" }, stopG); bsub.textContent = "TO STOP FROM 130 KM/H";
   const brk = E("g", { id: "brk", opacity: 0 }, cam);
   E("line", { x1: C.X(0), y1: 360, x2: C.X(0) + 0.3, y2: 736, stroke: "#38BDF8", "stroke-width": 3, "stroke-dasharray": "8 8" }, brk);
@@ -34,7 +34,7 @@ JS = """
   const PXM = (C.X(700) - C.X(0)) / 700, tB = at("V023", "A Vande Bharat"), T = 5.6;
   const pos = { d: -36.1 * tB }, place = () => {
     const d = pos.d, x = C.X(d);
-    train.setAttribute("transform", `translate(${x} 0)`); chipG.setAttribute("transform", `translate(${x} 0)`);
+    train.setAttribute("transform", `translate(${x} 0)`); chipG.setAttribute("transform", `translate(${Math.max(x, 330)} 0)`);   // the chip never leaves the frame
     const v = d <= 0 ? 130 : 130 * Math.sqrt(Math.max(0, 1 - d / 654));
     chip.textContent = `${Math.round(v)} km/h`;
     if (d > 0) { const kk = 1 - Math.sqrt(Math.max(0, 1 - d / 654)); curve.setAttribute("d", KT.stopPath(C, 130, 654, 120).split("L").slice(0, Math.max(1, Math.round(120 * kk) + 1)).join("L")); pt.setAttribute("cx", x); pt.setAttribute("cy", C.Yv(v)); }

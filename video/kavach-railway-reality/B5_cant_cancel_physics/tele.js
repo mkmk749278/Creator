@@ -31,19 +31,28 @@ window.KT = (function () {
     for (let i = 0; i <= n; i++) { const d = D * (1 - Math.pow(1 - i / n, 2)), v = v0 * Math.sqrt(Math.max(0, 1 - d / D)); s += `${i ? "L" : "M"} ${C.X(d).toFixed(1)} ${C.Yv(v).toFixed(1)} `; }
     return s;
   }
-  // side-on train: aerodynamic trainset nose (Vande Bharat-like, generic, no livery text) + cars to the left
+  // side-on Vande Bharat trainset after the reference photo (Vande_Bharat_Express_train.jpg): white body, dark window
+  // band, blue stripe under the windows, long sloped nose with a big dark windscreen, grey skirt; no livery text
   function trainset(svg, id, y, cars = 5, carLen = 150) {
-    const g = el("g", { id }, svg);
+    const g = el("g", { id }, svg), H = 56;
+    const wheels = (x0, w) => { for (const dx of [18, 40, w - 40, w - 18]) el("circle", { cx: x0 + dx, cy: y + 1, r: 6, fill: "#334155", stroke: "#94A3B8", "stroke-width": 1.5 }, g); };
     for (let i = 0; i < cars; i++) {
-      const x = -carLen * (i + 1) - 8 * i - 150;
-      el("rect", { x, y: y - 46, width: carLen, height: 46, rx: 8, fill: "#E2E8F0", stroke: "#94A3B8", "stroke-width": 2 }, g);
-      el("rect", { x: x + 14, y: y - 36, width: carLen - 28, height: 12, rx: 4, fill: "#1E3A5F" }, g);
-      el("rect", { x, y: y - 10, width: carLen, height: 6, fill: "#0284C7" }, g);
+      const x = -carLen * (i + 1) - 6 * i - 160;
+      el("rect", { x, y: y - H, width: carLen, height: H - 4, rx: 7, fill: "#F1F5F9", stroke: "#94A3B8", "stroke-width": 1.5 }, g);
+      el("rect", { x: x + 6, y: y - H + 12, width: carLen - 12, height: 15, rx: 3, fill: "#16233A" }, g);
+      for (let k = 1; k < 5; k++) el("rect", { x: x + 6 + k * (carLen - 12) / 5 - 1.5, y: y - H + 12, width: 3, height: 15, fill: "#E2E8F0" }, g);
+      el("rect", { x: x + 2, y: y - H + 30, width: carLen - 4, height: 7, fill: "#1E4FA3" }, g);
+      el("rect", { x: x + 10, y: y - H + 8, width: 12, height: 36, rx: 2, fill: "none", stroke: "#94A3B8", "stroke-width": 1.5 }, g);
+      el("rect", { x, y: y - 8, width: carLen, height: 6, fill: "#64748B" }, g);
+      wheels(x, carLen);
     }
-    el("path", { d: `M -150 ${y - 46} L -40 ${y - 46} C 10 ${y - 46}, 34 ${y - 18}, 40 ${y} L -150 ${y} Z`, fill: "#F1F5F9", stroke: "#94A3B8", "stroke-width": 2 }, g);
-    el("path", { d: `M -60 ${y - 40} C -20 ${y - 40}, 8 ${y - 30}, 18 ${y - 18} L -60 ${y - 18} Z`, fill: "#0F2A4A" }, g);
-    el("rect", { x: -150, y: y - 10, width: 186, height: 6, fill: "#0284C7" }, g);
-    el("circle", { cx: 30, cy: y - 8, r: 5, fill: "#FDE68A" }, g);
+    el("path", { d: `M -160 ${y - H} L -70 ${y - H} C -10 ${y - H}, 36 ${y - 34}, 64 ${y - 8} L 64 ${y - 2} L -160 ${y - 2} Z`, fill: "#F8FAFC", stroke: "#94A3B8", "stroke-width": 1.5 }, g);
+    el("path", { d: `M -64 ${y - H + 5} C -18 ${y - H + 6}, 16 ${y - 40}, 36 ${y - 26} L -44 ${y - 26} Z`, fill: "#0F1C30" }, g);
+    el("path", { d: `M -160 ${y - H + 30} L 30 ${y - H + 30} C 40 ${y - 22}, 48 ${y - 18}, 54 ${y - 14} L -160 ${y - 19} Z`, fill: "#1E4FA3" }, g);
+    el("rect", { x: -160, y: y - 8, width: 214, height: 6, fill: "#64748B" }, g);
+    el("rect", { x: -150, y: y - H + 12, width: 50, height: 15, rx: 3, fill: "#16233A" }, g);
+    el("circle", { cx: 52, cy: y - 9, r: 4, fill: "#FDE68A" }, g);
+    wheels(-160, 150);
     return g;
   }
   function rail(svg, y, x0 = -200, x1 = 2200) {

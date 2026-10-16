@@ -56,7 +56,7 @@ window.KDMI = function (svg) {
   el("rect", { x: 40, y: 572, width: 680, height: 124, rx: 10, fill: "#9CA3AF", stroke: "#6B7280", "stroke-width": 3 });
   [["COMMON", "#2B2D31"], ["ACK/CANCEL", "#2563EB"], ["SOS", "#DC2626"]].forEach(([l, c], i) => { const x = 160 + i * 220;
     el("circle", { cx: x, cy: 622, r: 30, fill: c, stroke: "#E5E7EB", "stroke-width": 4 }); tx(x, 682, l, "dmiB", null, "middle"); });
-  const ASP = { R: ["#EF4444", 0], Y: ["#FACC15", 1], YY: ["#FACC15", 1], G: ["#22C55E", 3] };
+  const ASP = { R: ["#EF4444", 3], Y: ["#FACC15", 2], YY: ["#FACC15", 2], G: ["#22C55E", 1] };   // lamps top to bottom: Y, G, Y, R (Indian 4-aspect)
   function set(s) {
     perm.setAttribute("d", arc(0, Math.max(1, s.vp), R + 6));
     const a = ang(s.v); needle.setAttribute("x2", cx + 100 * Math.sin(a)); needle.setAttribute("y2", cy - 100 * Math.cos(a));

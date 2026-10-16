@@ -7,7 +7,7 @@ CSS = """
   .big { font: 800 96px Inter, Arial, sans-serif; fill: #F59E0B; font-variant-numeric: tabular-nums; }
 """
 BODY = """  <svg id="tele" viewBox="0 0 1920 1080" data-layout-allow-overflow></svg>
-  <div class="kav-label amber" id="lab1">+50%<small>130 → 160 KM/H · SAME BRAKES</small></div>"""
+  <div class="kav-label amber" id="lab1">Same brakes<small>130 → 160 KM/H</small></div>"""
 JS = """
   const svg = document.getElementById("tele"), E = KT.el;
   const cam = E("g", { id: "cam" }, svg);
@@ -19,11 +19,10 @@ JS = """
   const t160 = E("text", { x: C.X(0) + 20, y: C.Yv(160) - 18, class: "tag", fill: "#FCD34D" }, cam); t160.textContent = "160 KM/H";
   const br = E("g", { id: "br", opacity: 0 }, cam);
   E("path", { d: `M ${C.X(D130)} ${C.Yv(0) + 66} L ${C.X(D130)} ${C.Yv(0) + 90} L ${C.X(D160)} ${C.Yv(0) + 90.5} L ${C.X(D160)} ${C.Yv(0) + 66}`, fill: "none", stroke: "#F59E0B", "stroke-width": 4 }, br);
-  E("path", { d: `M ${(C.X(D130) + C.X(D160)) / 2} ${C.Yv(0) + 66} L ${(C.X(D130) + C.X(D160)) / 2 + 60} ${C.Yv(130) + 40}`, fill: "none", stroke: "#F59E0B", "stroke-width": 2, "stroke-dasharray": "6 6" }, br);
-  const bt = E("text", { x: (C.X(D130) + C.X(D160)) / 2 + 60, y: C.Yv(130) + 20, "text-anchor": "middle", class: "big" }, br); bt.textContent = "+50%";
+  const bt = E("text", { x: (C.X(D130) + C.X(D160)) / 2 - 40, y: C.Yv(0) + 186, "text-anchor": "middle", class: "big" }, br); bt.textContent = "+50%";
   const e130 = E("g", { opacity: 0 }, cam), e160 = E("g", { opacity: 0 }, cam);
-  E("circle", { cx: C.X(D130), cy: C.Yv(0), r: 10, fill: "#38BDF8" }, e130); E("text", { x: C.X(D130), y: C.Yv(0) - 24, "text-anchor": "middle", class: "tag", fill: "#7DD3FC" }, e130).textContent = "≈ 650 m";
-  E("circle", { cx: C.X(D160), cy: C.Yv(0), r: 10, fill: "#F59E0B" }, e160); E("text", { x: C.X(D160), y: C.Yv(0) - 24, "text-anchor": "middle", class: "tag", fill: "#FCD34D" }, e160).textContent = "≈ 990 m";
+  E("circle", { cx: C.X(D130), cy: C.Yv(0), r: 10, fill: "#38BDF8" }, e130); E("text", { x: C.X(D130) + 20, y: C.Yv(0) - 18, class: "tag", fill: "#7DD3FC" }, e130).textContent = "≈ 650 m";
+  E("circle", { cx: C.X(D160), cy: C.Yv(0), r: 10, fill: "#F59E0B" }, e160); E("text", { x: C.X(D160) + 20, y: C.Yv(0) - 18, class: "tag", fill: "#FCD34D" }, e160).textContent = "≈ 990 m";
   const dash = (p) => { const L = p.getTotalLength(); p.setAttribute("stroke-dasharray", L); p.setAttribute("stroke-dashoffset", L); return L; };
   dash(c130); dash(c160);
   tl.fromTo("#cam", { transformOrigin: "50% 50%", scale: 1.0, x: 20 }, { scale: 1.06, x: -30, duration: D, ease: "sine.inOut" }, 0);
@@ -37,6 +36,6 @@ JS = """
   tl.to(e160, { opacity: 1, duration: 0.3 }, at("V026", "to one hundred and sixty") + 1.8);
   const tH = at("V026", "it grows by about half");
   tl.fromTo("#br", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, at("V026", "doesn't grow"));
-  tl.fromTo(bt, { opacity: 0, scale: 0.6, svgOrigin: `${(C.X(D130) + C.X(D160)) / 2 + 60} ${C.Yv(130)}` }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, tH - 0.3);
+  tl.fromTo(bt, { opacity: 0, scale: 0.6, svgOrigin: `${(C.X(D130) + C.X(D160)) / 2 - 40} ${C.Yv(0) + 150}` }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, tH - 0.3);
   tl.to("#lab1", { opacity: 1, duration: 0.5 }, tH + 0.2);
 """
