@@ -32,18 +32,18 @@ window.buildKanchan = function (opts = {}) {
       ${Array.from({length: 22}, (_, i) => `<line x1="-400" y1="${-200 + i * 70}" x2="2600" y2="${-200 + i * 70}" stroke="rgba(148,163,184,0.07)"/>`).join("")}</g>
     <g id="t-up">${track(`M -600 ${Y_UP} L 2600 ${Y_UP}`, 0.55)}</g>
     <g id="t-dn">${track(`M -600 ${Y} L 2600 ${Y}`)}</g>
-    <text x="1400" y="${Y + 70}" class="tlabel lbl">DN LINE</text>
+    <text id="lbl-dn" x="1000" y="${Y + 70}" class="tlabel lbl">DN LINE</text>
     <text id="lbl-up" x="900" y="${Y_UP + 70}" class="tlabel lbl" opacity="0.6">UP LINE</text>
     <g id="sigs">${sigs}</g>
     <g id="pass"><g id="pass-k" opacity="0"></g>
       ${rake(0, 9, 70, 8, Y, "url(#trainP)", "#38BDF8", "pc")}
       <path d="M 702 ${Y - 16} L 760 ${Y - 16} Q 784 ${Y} 760 ${Y + 16} L 702 ${Y + 16} Z" fill="#F8FAFC" stroke="#38BDF8" stroke-width="2"/>
-      <text x="-24" y="${Y - 34}" text-anchor="end" class="tlabel lbl" style="fill:#BAE6FD">KANCHANJUNGA EXPRESS</text></g>
+      <text x="380" y="${Y + 56}" text-anchor="middle" class="tlabel lbl" style="fill:#BAE6FD; font-size:26px">KANCHANJUNGA EXPRESS</text></g>
     <g id="goods">
       ${rake(-1460, 12, 96, 10, Y, "#5A2620", "#DC2626", "gw")}
       ${Array.from({length: 12}, (_, i) => `<rect x="${-1452 + i * 106}" y="${Y - 11}" width="80" height="22" rx="2" fill="#9A3B2E" opacity="0.9"/>`).join("")}
       <path d="M -190 ${Y - 17} L -120 ${Y - 17} Q -96 ${Y} -120 ${Y + 17} L -190 ${Y + 17} Z" fill="#1F7A3E" stroke="#4ADE80" stroke-width="2"/>
-      <text x="-110" y="${Y - 34}" text-anchor="end" class="tlabel lbl" style="fill:#FCA5A5">GOODS TRAIN · CONTAINERS</text></g>
+      <text x="-130" y="${Y + 56}" text-anchor="end" class="tlabel lbl" style="fill:#FCA5A5; font-size:26px">GOODS TRAIN · CONTAINERS</text></g>
   </g>`;
   const q = (s) => svg.querySelector(s);
   return { svg, q, Y, Y_UP, SIGX };

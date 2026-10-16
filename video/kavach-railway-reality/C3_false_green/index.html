@@ -70,7 +70,11 @@
   const cab = document.createElementNS(NS, "g"); cab.setAttribute("id", "cab");
   let relays = ""; for (let r = 0; r < 3; r++) for (let c = 0; c < 8; c++) relays += `<rect class="relay" x="${ix + 24 + c * 30}" y="${iy + 62 + r * 26}" width="20" height="14" rx="3" fill="#1E293B"/>`;
   cab.innerHTML = `<rect x="${ix}" y="${iy}" width="290" height="160" rx="12" fill="#0B1220" stroke="#5B6B86" stroke-width="3"/>
-    <text x="${ix + 145}" y="${iy + 40}" text-anchor="middle" style="font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.16em; fill: #CBD5E1">INTERLOCKING</text><text x="${ix + 145}" y="${iy + 150}" text-anchor="middle" style="font: 800 15px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8">STATION SIGNALLING</text>${relays}
+    <text x="${ix + 145}" y="${iy + 40}" text-anchor="middle" style="font: 800 22px Inter, Arial, sans-serif; letter-spacing: 0.16em; fill: #CBD5E1">INTERLOCKING</text><text x="${ix + 145}" y="${iy + 150}" text-anchor="middle" style="font: 800 18px Inter, Arial, sans-serif; letter-spacing: 0.12em; fill: #94A3B8">STATION SIGNALLING</text>${relays}
+    <g id="bad" opacity="0"><rect x="${ix + 24 + 5 * 30 - 4}" y="${iy + 62 + 26 - 4}" width="28" height="22" rx="4" fill="#DC2626" stroke="#FCA5A5" stroke-width="2"/>
+      <path d="M ${ix + 24 + 5 * 30 + 3} ${iy + 62 + 26 + 1} l 14 12 M ${ix + 24 + 5 * 30 + 17} ${iy + 62 + 26 + 1} l -14 12" stroke="#FFF" stroke-width="3"/>
+      <circle cx="${ix + 24 + 5 * 30 + 10}" cy="${iy + 62 + 26 + 7}" r="26" fill="none" stroke="#F87171" stroke-width="3"/>
+      <text x="${ix + 185}" y="${iy + 200}" text-anchor="middle" style="font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.1em; fill: #F87171">FAULTY CIRCUIT CHANGE</text></g>
     <path id="wire-sig" d="M ${ix + 290} ${iy + 50} L 600 ${iy + 50.4}" fill="none" stroke="#475569" stroke-width="4"/>
     <path id="wire-kav" d="M ${ix + 290} ${iy + 130} L 740 ${iy + 130.4} L 740.4 ${K.by + 27} L ${K.bx - 80} ${K.by + 27.4}" fill="none" stroke="#475569" stroke-width="4"/>
     <circle id="pk1" r="11" fill="#4ADE80" stroke="#DC2626" stroke-width="4" opacity="0"/>
@@ -96,6 +100,9 @@
   tl.to(".relay", { attr: { fill: "#4ADE80" }, duration: 0.15, stagger: { each: 0.04, from: "random" } }, t0 + 0.4);
   tl.to("#cab rect:first-child", { attr: { stroke: "#F8FAFC" }, duration: 0.3, yoyo: true, repeat: 3 }, t0 + 0.3);
   const tFalse = at("V045", "showing a false green");
+  // the wrong input sits inside interlocking: a faulty signalling-circuit alteration (CRS Accident III)
+  tl.to("#bad", { opacity: 1, duration: 0.3 }, tFalse - 0.6);
+  tl.fromTo("#bad circle", { attr: { r: 18 }, opacity: 1 }, { attr: { r: 40 }, opacity: 0, duration: 0.8, repeat: 2 }, tFalse - 0.6);
   tl.to("#wire-sig", { attr: { stroke: "#4ADE80" }, duration: 0.4 }, tFalse);
   along("#pk1", "#wire-sig", tFalse, 1.4);
   tl.to("#lamp-g-on", { opacity: 0.35, duration: 0.18, yoyo: true, repeat: 5 }, tFalse + 1.4);

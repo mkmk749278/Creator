@@ -51,10 +51,10 @@
   tl.fromTo("#sweep", { x: 0 }, { x: 3200, duration: D, ease: "none" }, 0);
   // the diagram draws in (first ~2.5 s are under the coordinator's archive cut, so it keeps moving behind it)
   tl.from("#t-down, #t-main, #t-dloop", { opacity: 0, duration: 1.2, stagger: 0.3 }, 0.1);
-  tl.from("#goods2 rect", { opacity: 0, x: 30, duration: 0.5, stagger: 0.05 }, 1.8);
+  tl.from("#goods2 rect, #goods2 line", { opacity: 0, x: 30, duration: 0.5, stagger: 0.05 }, 1.8);
   tl.fromTo("#bnc", { x: 400 }, { x: -700, duration: D, ease: "none" }, 0);
   tl.from("#t-xover, #t-loop, #t-xout", { opacity: 0, duration: 1.0, stagger: 0.25 }, 0.9);
-  tl.from("#goods rect", { opacity: 0, x: 30, duration: 0.5, stagger: 0.06 }, 1.6);
+  tl.from("#goods rect, #goods line", { opacity: 0, x: 30, duration: 0.5, stagger: 0.06 }, 1.6);
   tl.from("#signal", { opacity: 0, y: 20, duration: 0.7 }, 2.0);
   tl.from("#hud", { opacity: 0, duration: 0.8 }, 0.4);
   tl.to("#hud .dot", { opacity: 0.25, duration: 0.5, yoyo: true, repeat: Math.floor(D / 1.0) - 1, ease: "sine.inOut" }, 0.5);
@@ -85,6 +85,7 @@
   tl.to("#lab2", { opacity: 1, duration: 0.6, ease: "power2.out" }, tX + 1.0);
   tl.to("#coro", { x: 828, duration: D - tX, ease: "power1.out" }, tX);
   tl.to("#speed", { x: 828, duration: D - tX, ease: "power1.out" }, tX);
+  tl.to("#speed", { opacity: 0, duration: 0.4 }, tX + 1.0);
   tl.to("#goods rect", { attr: { stroke: "#F87171" }, duration: 0.3, stagger: 0.04 }, tG);
   tl.to("#goods", { opacity: 0.55, duration: 0.45, yoyo: true, repeat: 5, ease: "sine.inOut" }, tG);
   tl.to("#goods-label", { opacity: 1, duration: 0.5 }, tG + 0.2);

@@ -12,7 +12,7 @@ BODY = """  <svg id="schem" viewBox="0 0 1920 1080" data-layout-allow-overflow><
   <svg id="chart" viewBox="0 0 1000 330" data-layout-allow-overflow>
     <rect x="0" y="0" width="1000" height="330" rx="16" fill="rgba(11,18,32,0.9)" stroke="#334155" stroke-width="2"/>
     <text x="30" y="44" class="ax">GOODS TRAIN SPEED</text>
-    <text x="970" y="44" text-anchor="end" class="ax" style="font-size:16px">SHAPE ILLUSTRATIVE · CRS FIGURES</text>
+    <text x="970" y="44" text-anchor="end" class="ax" style="font-size:22px">SHAPE ILLUSTRATIVE · CRS FIGURES</text>
     <line x1="80" y1="290" x2="960" y2="290" stroke="#475569" stroke-width="2"/>
     <line x1="80" y1="290" x2="80" y2="70" stroke="#475569" stroke-width="2"/>
     <line id="g78" x1="80" y1="103" x2="960" y2="103" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.6"/>
@@ -34,11 +34,13 @@ JS = """
   // goods train closes the gap: fast run, braking late, contact at tHit + ~1.2 s (no wreck shown)
   tl.set("#pass", { x: 1300 }, 0);
 
-  tl.fromTo("#goods", { x: 300 }, { x: 1140, duration: tHit - 0.3, ease: "power1.in" }, 0);
-  tl.to("#goods", { x: 1300 + 96, duration: 1.35, ease: "power2.out" }, tHit - 0.3);
-  tl.to("#pass", { x: 1322, duration: 0.6, ease: "power2.out" }, tHit + 1.05);
-  tl.to("#goods", { x: 1322 + 96, duration: 0.6, ease: "power2.out" }, tHit + 1.05);
-  tl.to("#flash", { opacity: 1, duration: 0.08 }, tHit + 1.05).to("#flash", { opacity: 0, duration: 0.9 }, tHit + 1.15);
+  // contact lands exactly when the trace reaches "about forty" (tC)
+  const tC = t40 + 0.2;
+  tl.fromTo("#goods", { x: 300 }, { x: 1140, duration: tC - 1.65, ease: "power1.in" }, 0);
+  tl.to("#goods", { x: 1300 + 96, duration: 1.65, ease: "power2.out" }, tC - 1.65);
+  tl.to("#pass", { x: 1322, duration: 0.6, ease: "power2.out" }, tC);
+  tl.to("#goods", { x: 1322 + 96, duration: 0.6, ease: "power2.out" }, tC);
+  tl.to("#flash", { opacity: 1, duration: 0.08 }, tC).to("#flash", { opacity: 0, duration: 0.9 }, tC + 0.1);
   // speed trace drawn in step with the VO; dot rides the path as a pure function of time
   tl.from("#chart", { opacity: 0, y: 40, duration: 0.7, ease: "power3.out" }, 0.2);
   const p = document.getElementById("trace"), L = p.getTotalLength(); p.setAttribute("stroke-dasharray", L); p.setAttribute("stroke-dashoffset", L);

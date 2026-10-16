@@ -6,9 +6,9 @@ CSS = """
     background: #EDE6D3; border-radius: 6px; box-shadow: 0 18px 40px rgba(0,0,0,0.5); color: #3B3326; padding: 26px 30px; box-sizing: border-box; }
   #slip h4 { margin: 0 0 16px; font: 800 26px Inter, Arial, sans-serif; letter-spacing: 0.12em; color: #2B2418; }
   #slip .ln { height: 10px; background: rgba(59,51,38,0.25); border-radius: 5px; margin: 13px 0; }
-  #rule { position: absolute; left: 1430px; top: 790px; width: 420px; padding: 16px 20px; background: rgba(15,23,42,0.92); border: 2px solid #F59E0B; border-radius: 12px; opacity: 0;
-    font: 800 30px/1.25 Inter, Arial, sans-serif; color: #F8FAFC; }
-  #rule small { display: block; font: 800 20px Inter, Arial, sans-serif; letter-spacing: 0.12em; color: #FCD34D; margin-bottom: 8px; }
+  #rule { position: absolute; left: 1180px; top: 190px; width: 600px; padding: 20px 26px; background: rgba(15,23,42,0.92); border: 2px solid #F59E0B; border-radius: 12px; opacity: 0;
+    font: 800 40px/1.2 Inter, Arial, sans-serif; color: #F8FAFC; }
+  #rule small { display: block; font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.12em; color: #FCD34D; margin-bottom: 8px; }
   #slip .stamp { position: absolute; right: 28px; bottom: 22px; width: 96px; height: 96px; border-radius: 50%;
     border: 5px double rgba(185,28,28,0.75); transform: rotate(12deg); }
 """
@@ -37,7 +37,7 @@ JS = """
   tl.to(".asig rect", { attr: { stroke: "#7F1D1D" }, duration: 0.6 }, tF + 1.6);
   tl.to("#lab2", { opacity: 1, duration: 0.6 }, tF + 0.6);
   const tP = at("V048", "on a paper authority");
-  tl.to("#lbl-up", { opacity: 0, duration: 0.3 }, tP - 0.6);
+  tl.to("#lbl-up, #lbl-dn", { opacity: 0, duration: 0.3 }, tP - 0.6);
   tl.from("#slip", { opacity: 0, y: 60, rotation: 4, duration: 0.8, ease: "power3.out" }, tP - 0.3);
   // both trains creep forward slowly from "paper authority" to the end
   tl.to("#pass", { x: 1260, duration: D - tP, ease: "none" }, tP);

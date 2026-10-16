@@ -89,7 +89,9 @@
   const p = document.getElementById("lwire"), L = p.getTotalLength(), o = { u: 0 }, pk = document.getElementById("lpk");
   const place = () => { const q = p.getPointAtLength(o.u * L); pk.setAttribute("cx", q.x); pk.setAttribute("cy", q.y); };
   tl.to(o, { u: 1, duration: 1.2, ease: "power1.inOut", repeat: 4, onUpdate: place }, tB);
-  tl.from("#R", { opacity: 0, x: 40, duration: 0.7, ease: "power3.out" }, tK - 0.5);
+  tl.fromTo("#R", { opacity: 0, x: 40 }, { opacity: 0.45, x: 0, duration: 0.7, ease: "power3.out" }, 0.35);
+  tl.to("#R", { opacity: 1, duration: 0.5 }, tK - 0.3);
+  tl.to("#L", { opacity: 0.6, duration: 0.5 }, tK - 0.3);
   tl.to("#slip", { rotation: 4, x: 8, y: -6, svgOrigin: "0 0", duration: 3, ease: "sine.inOut" }, tK);
   tl.to("#L", { opacity: 0.4, duration: 0.6 }, tS);
   tl.fromTo("#shield", { opacity: 0, scale: 0.9, svgOrigin: "1400 420" }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.6)" }, tS);

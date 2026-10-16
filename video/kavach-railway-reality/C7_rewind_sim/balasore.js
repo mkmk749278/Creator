@@ -26,6 +26,17 @@ window.buildBalasore = function () {
     for (let i = 0; i < n; i++) s += `<rect x="${x0 + i * (len + gap)}" y="${y - 15}" width="${len}" height="30" rx="7" fill="${fill}" stroke="${stroke}" stroke-width="2"/>`;
     return s + "</g>";
   };
+  // goods train: open (BOXN-style) wagons with ribbed sides behind a green WAG-9 with yellow bands, loco at the Howrah end
+  const wagons = (x0, n, y, fill, rib, id) => {
+    let s = `<g id="${id}">`;
+    for (let i = 0; i < n; i++) { const x = x0 + i * 57;
+      s += `<rect x="${x}" y="${y - 14}" width="50" height="28" rx="2" fill="${fill}" stroke="#1A1410" stroke-width="2"/>`;
+      for (let k = 1; k < 5; k++) s += `<line x1="${x + k * 10}" y1="${y - 12}" x2="${x + k * 10}" y2="${y + 12}" stroke="${rib}" stroke-width="2"/>`; }
+    const lx = x0 + n * 57;
+    s += `<rect x="${lx}" y="${y - 16}" width="66" height="32" rx="5" fill="#1F7A3E" stroke="#0F3D20" stroke-width="2"/>
+      <rect x="${lx}" y="${y - 3}" width="66" height="6" fill="#FACC15"/><rect x="${lx + 50}" y="${y - 12}" width="12" height="24" rx="3" fill="#0B1220"/>`;
+    return s + "</g>";
+  };
   svg.innerHTML = `
   <defs>
     <filter id="glow" filterUnits="userSpaceOnUse" x="-600" y="-400" width="3400" height="2000"><feGaussianBlur stdDeviation="7" result="b"/>
@@ -61,9 +72,10 @@ window.buildBalasore = function () {
       <circle r="8" fill="#F59E0B"/>
     </g>
     <text id="pts-label" x="${X_PTS + 30}" y="${Y_MAIN + 62}" class="tlabel amber" opacity="0">17A/B</text>
-    ${rake(1130, 9, 50, 7, Y_LOOP, "url(#wagon)", "#DC2626", "goods")}
+    ${wagons(1130, 9, Y_LOOP, "#6E3B24", "#4A2616", "goods")}
     <text id="goods-label" x="1130" y="${Y_LOOP + 58}" class="tlabel red" opacity="0">GOODS TRAIN · STANDING</text>
-    ${rake(1130, 9, 50, 7, Y_DLOOP, "url(#wagon)", "#7C2D12", "goods2")}
+    ${wagons(1130, 9, Y_DLOOP, "#2F4A73", "#203452", "goods2")}
+    <text x="1460" y="${Y_DLOOP + 50}" class="tlabel" style="font-size:20px" opacity="0.7">GOODS TRAIN</text>
     <g id="bnc">${rake(1500, 10, 74, 8, Y_DOWN, "url(#trainB)", "#93C5FD", "bnc-rake")}
       <path d="M 1500 ${Y_DOWN - 16} L 1440 ${Y_DOWN - 16} Q 1416 ${Y_DOWN} 1440 ${Y_DOWN + 16} L 1500 ${Y_DOWN + 16} Z" fill="#D9C27A" stroke="#F8FAFC" stroke-width="2"/>
       <text x="1420" y="${Y_DOWN - 30}" class="tlabel" style="font-size:18px" opacity="0.85">BENGALURU–HOWRAH EXP ←</text></g>
@@ -74,9 +86,10 @@ window.buildBalasore = function () {
     <g id="coro">${rake(-1180, 12, 74, 8, Y_MAIN, "url(#trainC)", "#FCA5A5", "coro-rake")}
       <path d="M -180 ${Y_MAIN - 16} L -120 ${Y_MAIN - 16} Q -96 ${Y_MAIN} -120 ${Y_MAIN + 16} L -180 ${Y_MAIN + 16} Z" fill="#D9C27A" stroke="#F8FAFC" stroke-width="2"/>
       <circle cx="-108" cy="${Y_MAIN}" r="5" fill="#FDE68A" filter="url(#glow)"/>
+      <text x="-200" y="${Y_MAIN + 50}" text-anchor="end" class="tlabel" style="font-size:26px; fill:#FCA5A5">COROMANDEL EXPRESS →</text>
     </g>
-    <g id="speed" opacity="0"><rect x="-300" y="${Y_MAIN + 40}" width="210" height="58" rx="8" fill="rgba(15,23,42,0.85)" stroke="#38BDF8" stroke-width="2"/>
-      <text x="-195" y="${Y_MAIN + 81}" text-anchor="middle" class="tnum">≈ 128 KM/H</text></g>
+    <g id="speed" opacity="0"><rect x="-70" y="${Y_MAIN + 36}" width="230" height="62" rx="8" fill="rgba(15,23,42,0.88)" stroke="#38BDF8" stroke-width="2"/>
+      <text x="45" y="${Y_MAIN + 79}" text-anchor="middle" class="tnum" style="font-size:34px">≈ 128 KM/H</text></g>
   </g>`;
   const q = (s) => svg.querySelector(s);
   return { svg, q, Y_MAIN, Y_LOOP, Y_DOWN, Y_DLOOP, X_PTS };
