@@ -43,6 +43,21 @@ Handoff: **Akash**, ElevenLabs v4, stability 0.65, similarity 0.85, style 0.15, 
 words, no digits, brackets, quotes or `!`; `—` allowed; letter acronyms hyphenated; never 3+ very short sentences in a
 row (lint in `tools/build_script.py`).
 
+**Animated scenes (2026-10-16): all 46 built in this session** (`video/kavach-railway-reality/<scene>/`).
+- A1–A9: a 3D railway world (`_A_lib/kav3d.js`), drawn from the reference photos (`design-reference.md`).
+- B1–B6: braking, fog and the cab screen.
+- C1–C8: the Balasore and Kanchanjunga schematics.
+- D1–D9: the India map and the rollout numbers.
+- E1–E14: the phone chat, forwards and stamps, the title and the chapter cards.
+
+Two repo-less viewer reviews were run. Review 2 is triaged in `qa/viewer_review_2.md`; every accepted fix is in. Lessons
+for the 3D work are in PLAYBOOK §9.4.
+
+Next steps:
+1. Run viewer review 3 on the full voiced reel.
+2. Fix what holds up.
+3. Do the EDL and assembly with the real footage and documents.
+
 ## Files and rebuild
 | File | What |
 |---|---|
