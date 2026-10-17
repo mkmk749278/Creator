@@ -34,7 +34,7 @@ def main():
     for oid, f0, n in secs:
         clip = OUT / f"{scene}_{oid}.mp4"; tmp = clip.with_name("tmp_" + clip.name)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(render), "-vf", f"trim=start_frame={f0}:end_frame={f0 + n},setpts=PTS-STARTPTS",
-                        "-an", "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-maxrate", "40M", "-bufsize", "80M", "-pix_fmt", "yuv420p",
+                        "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "17", "-maxrate", "40M", "-bufsize", "80M", "-pix_fmt", "yuv420p",
                         "-r", str(FPS), "-movflags", "+faststart", str(tmp)], check=True)
         tmp.rename(clip)
         got = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=width,height,nb_frames", "-of", "csv=p=0", str(clip)],
