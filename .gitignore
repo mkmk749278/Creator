@@ -74,3 +74,8 @@ video/insurance-ombudsman/_A/out/
 *.mov
 video/insurance-ombudsman/_4k/
 video/insurance-ombudsman/render_4k.log
+video/minimumdue/*/paper.jpg
+projects/minimum-due/qa/review_av/
+projects/*/qa/scenes/
+projects/*/qa/sourcing/
+projects/*/qa/review_av/

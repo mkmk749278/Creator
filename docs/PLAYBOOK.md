@@ -132,7 +132,13 @@ code and upload renders after every finished scene, not at the end. Start the ne
 
 **Rules:** each session owns one folder and one branch (no merge conflicts); same effort and quality in every shard; media
 over 100 MB never goes in git (hand over by URL list and re-download, or a release asset/LFS after a test upload); archive
-sessions when done; 6–8 sessions is the sensible maximum. Every new session runs `.claude/hooks/session-start.sh`
+sessions when done; 6–8 sessions is the sensible maximum.
+**Handing large files between sessions (tested 2026-10-13):** Litterbox (catbox.moe's temporary host, ≤ 1 GB per file,
+kept 72 h) works both ways from the cloud: `curl -F reqtype=fileupload -F time=72h -F fileToUpload=@f.mp4
+https://litterbox.catbox.moe/resources/internals/api.php` prints a direct URL, `curl -L <url>` gets it back byte-identical
+(md5 checked). Commit `<file>.url` text (URL + md5) to the session's branch; the receiver fetches the branch and downloads.
+Gofile does not work for this: guests can upload, but the contents API answers `error-notPremium` and a direct download
+redirects. Gofile stays the owner's delivery link. Only our own renders and our own licensed assets go to Litterbox. Every new session runs `.claude/hooks/session-start.sh`
 (npm install with vendoring, `.venv` with all extras, library fetch), so it is ready to render when it starts.
 The `/parallel-render` skill walks through the whole procedure.
 
@@ -571,6 +577,23 @@ views**; at 4 minutes it needs about 60,000; at a typical 1 subscriber per 100�
 finance and education RPM is commonly quoted at ₹50–150 per 1,000 views (agency estimates; English above regional
 languages; October–December higher), so **1 lakh views ≈ ₹5,000–15,000**. Plan from the real RPM in Studio once known.
 
+### 4a-8. Practical reality over paper rules (owner, 2026-10-12)
+*Why (owner):* the channel is "Be Practical": viewers need what really happens to them, not only what the RBI or the bank
+says. Rules:
+- **Split by the viewer's real situation.** Never treat one amount or one case as everyone's: ₹10,000, ₹1 lakh,
+  ₹2–5 lakh and ₹10 lakh+ play out differently (who calls, whether anyone visits, whether a court case is worth the
+  bank's cost, what settlement looks like). Show the slab table on screen and say which slab the viewer is in.
+- **Follow the money on both sides.** Explain why the other side acts as it does: recovery agency commission, cost of a
+  field visit, court fees and lawyer costs against the amount, write-off and sale to collectors.
+- **Every combination the viewer may have:** one card or several; several banks or several cards (plus a salary
+  account, FD or loan) at the same bank; add-on cards; card-to-card rotation. Say what changes in each: shared limits,
+  cross-default, set-off across accounts, other issuers cutting limits after a CIBIL hit, which bank chases first.
+- **Real-life logistics count:** where the agency is based (mostly cities) vs where the person lives (a village Aadhaar
+  address, a moved communication address), calls vs visits, what a "legal notice" SMS really is.
+- **Rules still frame it:** state the RBI/legal rule first, then "but in real life…", and label each part: sourced fact,
+  bank/agency practice (with source), or our reasoning ("OUR ESTIMATE"). Never pass practice off as law, or a guess as
+  data. Never advise dodging a valid debt; the defence is knowing your rights and settling on paper.
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
@@ -719,6 +742,29 @@ When an authentic photo or document is irreplaceable:
    0:25–0:45 is where our retention fell (jet engine: 47% → 33%).
 6. **Science is explained with animation, never still plates** (§9). Label each "ILLUSTRATION", "ILLUSTRATIVE CURVE" or
    "HYPOTHESIS". *Why:* anatomy plates and microscopy stills were rejected on breath-hold.
+
+### 5.6 Desk + doodle: our own look for money explainers (owner, 2026-10-12: "mix both")
+*Why:* the owner called the whiteboard and its handwriting "outdated", then rejected the next idea (a dark glass-card
+FinTech dashboard from an outside spec) before it was built, and asked for our own best method, ultra realistic, no ceiling.
+**Research (2026-10-12):** 200 mid-video frames (YouTube auto-frames `i.ytimg.com/vi/<id>/maxres1-3.jpg`, study only) from
+recent PolyMatter, How Money Works, Economics Explained, Business Casual, Vox, WSJ, CNBC, The Economist, Cleo Abram,
+Wendover, Johnny Harris, Kurzgesagt and Think School videos. None used glass cards, neon dashboards or whiteboards; those
+read as template or AI looks. The strongest frames put information **into a real world**: a price tag on a product, a
+number pinned on an aerial map, a stamped paper document, a cutout photo in a real room. Vendor trend blogs (GDJ,
+Renderforest, Genesis, 2026) say the same: texture, physical materials and "made" over clean corporate vector.
+**Owner's decision (2026-10-12): mix both.** The photoreal **desk** for the big moments (the hook, every reveal, the
+money that moves), the **doodle** mode (`video/lib/doodle`) for explaining: sketched objects and metaphors drawn on in
+Rough.js, items popping in with a sound each (pop, whoosh, scribble, rip, thud, clink; `make_sfx.py`), 2–3-word labels in
+clean type, no handwriting, no characters. *Why doodle:* the research of current doodle channels (Sprouts) showed the
+dated part of our whiteboard was the handwriting, not the drawing.
+**The desk method:** money is shown as photoreal physical objects on one desk, rendered in Three.js inside HyperFrames
+(`video/lib/moneytable`): a printed bill, a phone, metal coins that move (100 × ₹1 = ₹100, so a split is visible as two
+piles), printed tent cards, stamps, receipts, a wall calendar. **Words live on objects** (printed, engraved, on a screen),
+not pasted over the picture; one mono kicker + one bold line (Bricolage Grotesque 800, JetBrains Mono) is the only overlay.
+Dark room, a warm practical pool of light (spot, soft shadow), walnut desk (Poly Haven CC0 PBR), HDRI reflections, ACES,
+vignette, slow breathing camera. Real Indian footage still carries every real-life beat (§4a-3); the desk replaces the
+BOARD mode. Every figure on an object still traces to `claims.csv` or the project's maths tool, with an OUR CALCULATION /
+SIMULATION tag. Avoid: glass cards, neon, gradient canvases, floating icon grids, handwriting.
 
 ## 6. Workflow and engines
 
@@ -1084,6 +1130,11 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
   Real archival audio (e.g. a CC BY clip on archive.org) beats an empty LIVE row.
 - **Loudness:** two-pass **linear** normalisation to −14 LUFS integrated, −1 dBTP (one gain + limiter). *Why:* single-pass
   `loudnorm` pumped silent pauses up to narration level.
+- **Pixabay music (owner, 2026-10-12):** our key has no music access and the site blocks scripts, so Claude shortlists
+  tracks by reading their pages and the owner downloads them on the phone. **Only tracks whose page does not say
+  "Content ID Registered"**: on 2026-10-12, 15 of the 21 tracks checked were registered (all 11 hopeful pianos), and a
+  registered track gets a YouTube claim that can take the ad money. One bed per act (tension → curious → hopeful), a
+  sound effect on every doodle item. Shortlist and mood map: `projects/cant-pay-minimum/music.md`.
 - `scripts/make_bed.py` synthesises a royalty-free bed (drones, pads, heartbeat, bowls); `scripts/final_mix.sh` mixes.
 
 ## 12. Facts, honesty and rights
@@ -1166,6 +1217,14 @@ closing the session keeps `main` complete and stops idle sessions using the shar
    tell the owner which branch to delete, then archive the session (`archive_session`).
 
 ## 14. Pre-render review (every cut, before the final render)
+
+**Audio-synced frame review, every cut, before the owner sees it (owner, 2026-10-12: "you can read images and videos
+frame by frame, so make every frame suit the audio; self-review every frame; give the best only").** Time the words
+(`projects/minimum-due/build/words.py`: pauses pinned to punctuation, words spread by length; no Whisper), place every
+animated item on the word that names it (`P(line, "phrase")`), give every page a slow camera move so nothing sits still,
+then run `build/review_av.py` (one frame per second with the words heard in that second) and read **every** sheet. Fix
+every frame that does not show what is being said, is empty, unreadable, covered or off-frame, rebuild, and review again.
+Only then send the cut, with the review summary.
 
 Contact-sheet the cut (`scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --every 2`: 3×3 timecoded tiles, 1536 px)
 and go shot by shot; write `review.md` (issue → shot IDs → fix). In a session, read the sheets yourself at `high` effort or
@@ -1319,6 +1378,22 @@ Each of these cost a re-render or a wrong look:
 - **Thermal view reads instantly when the background is the hot gas** (yellow/white in the ironbow ramp) and the cooled
   blade sits darker (red/magenta) in front of it. Cooling-film cyan only right behind the holes, never as a wash.
 - **Inter's subsets have no `≈` (U+2248):** draw it as a small inline SVG in the label.
+
+- **First real parallel 4K run (Minimum Due, 2026-10-13).** 3 render shards plus 1 assembler: about 2 h 35 min wall
+  clock end to end, including about 1 h of waiting for the shards. Native 4K renders ran at about 8× real time
+  (s02_timeline: 105 s in 14.7 min) on one 4 vCPU VM. Every file went over Litterbox (§3) and arrived with a matching md5.
+  Two lessons: doodle pages need `#root` stretched to 100% in the 4K copy (render_4k.sh), or the zoom:2 stage shows only
+  a quarter of the frame; and give every shot an exact frame count (`-frames:v`), because single dropped frames add up to
+  0.2 s of drift against the VO. All sessions share one usage limit: when it ran out at 02:30 UTC, every session paused
+  until the reset, so plan heavy runs around it.
+
+**Can't Pay Even the Minimum, research (2026-10-12).** One background researcher with 12 rule topics ran for over an
+hour, then a session restart ended it with nothing saved; the owner asked why research took so long. Now: split research
+into 2–4 narrow parallel researchers (one topic group each, ~15 min target), skip topics another file already covers,
+and make every researcher **append findings to its file after each item**, so a restart loses at most one item. Check on
+long background work every ~20 min instead of assuming it is still running.
+The fact-check then hit the account's usage limit mid-run (resets after a few hours): parallel max-effort checkers burn
+usage fast. Keep the write-as-you-go rule for checkers too, and on a limit stop resume from the saved rows.
 
 **Minimum Amount Due (English, 8:05, 2026-10-11, v1 → v2).** The per-shot review of v1 found:
 - **Proofs unreadable:** 1080p screenshots at a 1.1–1.8× zoom left the highlighted line about 10 px tall on a phone.

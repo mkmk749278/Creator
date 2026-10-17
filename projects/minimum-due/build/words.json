@@ -1,0 +1,9893 @@
+[
+{
+"line": "1.01",
+"i": 0,
+"word": "A",
+"start": 0.0,
+"end": 0.11
+},
+{
+"line": "1.01",
+"i": 1,
+"word": "message",
+"start": 0.11,
+"end": 0.47
+},
+{
+"line": "1.01",
+"i": 2,
+"word": "comes",
+"start": 0.47,
+"end": 0.75
+},
+{
+"line": "1.01",
+"i": 3,
+"word": "on",
+"start": 0.75,
+"end": 0.91
+},
+{
+"line": "1.01",
+"i": 4,
+"word": "your",
+"start": 0.91,
+"end": 1.14
+},
+{
+"line": "1.01",
+"i": 5,
+"word": "phone.",
+"start": 1.14,
+"end": 1.42
+},
+{
+"line": "1.01",
+"i": 6,
+"word": "Your",
+"start": 1.86,
+"end": 2.1
+},
+{
+"line": "1.01",
+"i": 7,
+"word": "credit",
+"start": 2.1,
+"end": 2.42
+},
+{
+"line": "1.01",
+"i": 8,
+"word": "card",
+"start": 2.42,
+"end": 2.66
+},
+{
+"line": "1.01",
+"i": 9,
+"word": "bill",
+"start": 2.66,
+"end": 2.9
+},
+{
+"line": "1.01",
+"i": 10,
+"word": "is",
+"start": 2.9,
+"end": 3.06
+},
+{
+"line": "1.01",
+"i": 11,
+"word": "ready.",
+"start": 3.06,
+"end": 3.34
+},
+{
+"line": "1.02",
+"i": 0,
+"word": "It",
+"start": 3.86,
+"end": 4.03
+},
+{
+"line": "1.02",
+"i": 1,
+"word": "shows",
+"start": 4.03,
+"end": 4.34
+},
+{
+"line": "1.02",
+"i": 2,
+"word": "two",
+"start": 4.34,
+"end": 4.55
+},
+{
+"line": "1.02",
+"i": 3,
+"word": "numbers.",
+"start": 4.55,
+"end": 4.96
+},
+{
+"line": "1.02",
+"i": 4,
+"word": "Total",
+"start": 5.42,
+"end": 5.74
+},
+{
+"line": "1.02",
+"i": 5,
+"word": "amount",
+"start": 5.74,
+"end": 6.11
+},
+{
+"line": "1.02",
+"i": 6,
+"word": "due,",
+"start": 6.11,
+"end": 6.34
+},
+{
+"line": "1.02",
+"i": 7,
+"word": "thirty",
+"start": 6.56,
+"end": 6.87
+},
+{
+"line": "1.02",
+"i": 8,
+"word": "thousand",
+"start": 6.87,
+"end": 7.26
+},
+{
+"line": "1.02",
+"i": 9,
+"word": "rupees.",
+"start": 7.26,
+"end": 7.56
+},
+{
+"line": "1.02",
+"i": 10,
+"word": "Minimum",
+"start": 7.97,
+"end": 8.4
+},
+{
+"line": "1.02",
+"i": 11,
+"word": "amount",
+"start": 8.4,
+"end": 8.78
+},
+{
+"line": "1.02",
+"i": 12,
+"word": "due,",
+"start": 8.78,
+"end": 9.01
+},
+{
+"line": "1.02",
+"i": 13,
+"word": "only",
+"start": 9.34,
+"end": 9.61
+},
+{
+"line": "1.02",
+"i": 14,
+"word": "fifteen",
+"start": 9.61,
+"end": 10.02
+},
+{
+"line": "1.02",
+"i": 15,
+"word": "hundred.",
+"start": 10.02,
+"end": 10.43
+},
+{
+"line": "1.03",
+"i": 0,
+"word": "Salary",
+"start": 11.05,
+"end": 11.4
+},
+{
+"line": "1.03",
+"i": 1,
+"word": "has",
+"start": 11.4,
+"end": 11.61
+},
+{
+"line": "1.03",
+"i": 2,
+"word": "not",
+"start": 11.61,
+"end": 11.83
+},
+{
+"line": "1.03",
+"i": 3,
+"word": "come",
+"start": 11.83,
+"end": 12.08
+},
+{
+"line": "1.03",
+"i": 4,
+"word": "yet.",
+"start": 12.08,
+"end": 12.3
+},
+{
+"line": "1.03",
+"i": 5,
+"word": "So",
+"start": 12.7,
+"end": 12.83
+},
+{
+"line": "1.03",
+"i": 6,
+"word": "you",
+"start": 12.83,
+"end": 13.0
+},
+{
+"line": "1.03",
+"i": 7,
+"word": "think,",
+"start": 13.0,
+"end": 13.25
+},
+{
+"line": "1.03",
+"i": 8,
+"word": "I",
+"start": 13.65,
+"end": 13.78
+},
+{
+"line": "1.03",
+"i": 9,
+"word": "will",
+"start": 13.78,
+"end": 14.07
+},
+{
+"line": "1.03",
+"i": 10,
+"word": "pay",
+"start": 14.07,
+"end": 14.31
+},
+{
+"line": "1.03",
+"i": 11,
+"word": "only",
+"start": 14.31,
+"end": 14.6
+},
+{
+"line": "1.03",
+"i": 12,
+"word": "the",
+"start": 14.6,
+"end": 14.83
+},
+{
+"line": "1.03",
+"i": 13,
+"word": "minimum,",
+"start": 14.83,
+"end": 15.28
+},
+{
+"line": "1.03",
+"i": 14,
+"word": "right?",
+"start": 15.66,
+"end": 16.39
+},
+{
+"line": "1.03",
+"i": 15,
+"word": "No",
+"start": 16.66,
+"end": 16.94
+},
+{
+"line": "1.03",
+"i": 16,
+"word": "late",
+"start": 16.94,
+"end": 17.38
+},
+{
+"line": "1.03",
+"i": 17,
+"word": "fee.",
+"start": 17.38,
+"end": 17.74
+},
+{
+"line": "1.03",
+"i": 18,
+"word": "CIBIL",
+"start": 18.22,
+"end": 18.53
+},
+{
+"line": "1.03",
+"i": 19,
+"word": "score",
+"start": 18.53,
+"end": 18.83
+},
+{
+"line": "1.03",
+"i": 20,
+"word": "is",
+"start": 18.83,
+"end": 18.99
+},
+{
+"line": "1.03",
+"i": 21,
+"word": "safe.",
+"start": 18.99,
+"end": 19.25
+},
+{
+"line": "1.03",
+"i": 22,
+"word": "Many",
+"start": 19.37,
+"end": 19.79
+},
+{
+"line": "1.03",
+"i": 23,
+"word": "people",
+"start": 19.79,
+"end": 20.37
+},
+{
+"line": "1.03",
+"i": 24,
+"word": "think",
+"start": 20.37,
+"end": 20.86
+},
+{
+"line": "1.03",
+"i": 25,
+"word": "like",
+"start": 20.86,
+"end": 21.29
+},
+{
+"line": "1.03",
+"i": 26,
+"word": "this.",
+"start": 21.29,
+"end": 21.71
+},
+{
+"line": "1.04",
+"i": 0,
+"word": "But",
+"start": 22.37,
+"end": 22.55
+},
+{
+"line": "1.04",
+"i": 1,
+"word": "this",
+"start": 22.55,
+"end": 22.78
+},
+{
+"line": "1.04",
+"i": 2,
+"word": "is",
+"start": 22.78,
+"end": 22.92
+},
+{
+"line": "1.04",
+"i": 3,
+"word": "the",
+"start": 22.92,
+"end": 23.1
+},
+{
+"line": "1.04",
+"i": 4,
+"word": "real",
+"start": 23.1,
+"end": 23.33
+},
+{
+"line": "1.04",
+"i": 5,
+"word": "trap.",
+"start": 23.33,
+"end": 23.55
+},
+{
+"line": "1.04",
+"i": 6,
+"word": "ICICI",
+"start": 23.55,
+"end": 23.82
+},
+{
+"line": "1.04",
+"i": 7,
+"word": "Bank",
+"start": 23.82,
+"end": 24.04
+},
+{
+"line": "1.04",
+"i": 8,
+"word": "has",
+"start": 24.04,
+"end": 24.22
+},
+{
+"line": "1.04",
+"i": 9,
+"word": "put",
+"start": 24.22,
+"end": 24.41
+},
+{
+"line": "1.04",
+"i": 10,
+"word": "one",
+"start": 24.41,
+"end": 24.59
+},
+{
+"line": "1.04",
+"i": 11,
+"word": "example",
+"start": 24.59,
+"end": 24.94
+},
+{
+"line": "1.04",
+"i": 12,
+"word": "on",
+"start": 24.94,
+"end": 25.08
+},
+{
+"line": "1.04",
+"i": 13,
+"word": "its",
+"start": 25.08,
+"end": 25.26
+},
+{
+"line": "1.04",
+"i": 14,
+"word": "own",
+"start": 25.26,
+"end": 25.44
+},
+{
+"line": "1.04",
+"i": 15,
+"word": "website.",
+"start": 25.44,
+"end": 25.79
+},
+{
+"line": "1.04",
+"i": 16,
+"word": "Look.",
+"start": 26.15,
+"end": 26.28
+},
+{
+"line": "1.05",
+"i": 0,
+"word": "One",
+"start": 26.91,
+"end": 27.12
+},
+{
+"line": "1.05",
+"i": 1,
+"word": "customer's",
+"start": 27.12,
+"end": 27.6
+},
+{
+"line": "1.05",
+"i": 2,
+"word": "bill",
+"start": 27.6,
+"end": 27.85
+},
+{
+"line": "1.05",
+"i": 3,
+"word": "was",
+"start": 27.85,
+"end": 28.06
+},
+{
+"line": "1.05",
+"i": 4,
+"word": "sixty",
+"start": 28.06,
+"end": 28.36
+},
+{
+"line": "1.05",
+"i": 5,
+"word": "nine",
+"start": 28.36,
+"end": 28.61
+},
+{
+"line": "1.05",
+"i": 6,
+"word": "thousand,",
+"start": 28.61,
+"end": 29.05
+},
+{
+"line": "1.05",
+"i": 7,
+"word": "six",
+"start": 29.05,
+"end": 29.26
+},
+{
+"line": "1.05",
+"i": 8,
+"word": "hundred",
+"start": 29.26,
+"end": 29.65
+},
+{
+"line": "1.05",
+"i": 9,
+"word": "and",
+"start": 29.65,
+"end": 29.85
+},
+{
+"line": "1.05",
+"i": 10,
+"word": "eighty",
+"start": 29.85,
+"end": 30.2
+},
+{
+"line": "1.05",
+"i": 11,
+"word": "eight",
+"start": 30.2,
+"end": 30.5
+},
+{
+"line": "1.05",
+"i": 12,
+"word": "rupees.",
+"start": 30.5,
+"end": 30.84
+},
+{
+"line": "1.05",
+"i": 13,
+"word": "On",
+"start": 31.18,
+"end": 31.32
+},
+{
+"line": "1.05",
+"i": 14,
+"word": "the",
+"start": 31.32,
+"end": 31.5
+},
+{
+"line": "1.05",
+"i": 15,
+"word": "last",
+"start": 31.5,
+"end": 31.73
+},
+{
+"line": "1.05",
+"i": 16,
+"word": "date,",
+"start": 31.73,
+"end": 31.95
+},
+{
+"line": "1.05",
+"i": 17,
+"word": "the",
+"start": 32.24,
+"end": 32.48
+},
+{
+"line": "1.05",
+"i": 18,
+"word": "customer",
+"start": 32.48,
+"end": 32.97
+},
+{
+"line": "1.05",
+"i": 19,
+"word": "paid",
+"start": 32.97,
+"end": 33.26
+},
+{
+"line": "1.05",
+"i": 20,
+"word": "sixty",
+"start": 33.26,
+"end": 33.6
+},
+{
+"line": "1.05",
+"i": 21,
+"word": "five",
+"start": 33.6,
+"end": 33.89
+},
+{
+"line": "1.05",
+"i": 22,
+"word": "thousand.",
+"start": 33.89,
+"end": 34.38
+},
+{
+"line": "1.05",
+"i": 23,
+"word": "That",
+"start": 34.7,
+"end": 34.98
+},
+{
+"line": "1.05",
+"i": 24,
+"word": "is",
+"start": 34.98,
+"end": 35.16
+},
+{
+"line": "1.05",
+"i": 25,
+"word": "almost",
+"start": 35.16,
+"end": 35.54
+},
+{
+"line": "1.05",
+"i": 26,
+"word": "the",
+"start": 35.54,
+"end": 35.77
+},
+{
+"line": "1.05",
+"i": 27,
+"word": "full",
+"start": 35.77,
+"end": 36.05
+},
+{
+"line": "1.05",
+"i": 28,
+"word": "bill.",
+"start": 36.05,
+"end": 36.33
+},
+{
+"line": "1.06",
+"i": 0,
+"word": "But",
+"start": 36.79,
+"end": 36.98
+},
+{
+"line": "1.06",
+"i": 1,
+"word": "in",
+"start": 36.98,
+"end": 37.13
+},
+{
+"line": "1.06",
+"i": 2,
+"word": "the",
+"start": 37.13,
+"end": 37.33
+},
+{
+"line": "1.06",
+"i": 3,
+"word": "next",
+"start": 37.33,
+"end": 37.56
+},
+{
+"line": "1.06",
+"i": 4,
+"word": "bill,",
+"start": 37.56,
+"end": 37.8
+},
+{
+"line": "1.06",
+"i": 5,
+"word": "the",
+"start": 38.14,
+"end": 38.38
+},
+{
+"line": "1.06",
+"i": 6,
+"word": "bank",
+"start": 38.38,
+"end": 38.67
+},
+{
+"line": "1.06",
+"i": 7,
+"word": "added",
+"start": 38.67,
+"end": 39.02
+},
+{
+"line": "1.06",
+"i": 8,
+"word": "four",
+"start": 39.02,
+"end": 39.31
+},
+{
+"line": "1.06",
+"i": 9,
+"word": "thousand,",
+"start": 39.31,
+"end": 39.82
+},
+{
+"line": "1.06",
+"i": 10,
+"word": "three",
+"start": 39.82,
+"end": 40.17
+},
+{
+"line": "1.06",
+"i": 11,
+"word": "hundred",
+"start": 40.17,
+"end": 40.62
+},
+{
+"line": "1.06",
+"i": 12,
+"word": "and",
+"start": 40.62,
+"end": 40.86
+},
+{
+"line": "1.06",
+"i": 13,
+"word": "seventeen",
+"start": 40.86,
+"end": 41.42
+},
+{
+"line": "1.06",
+"i": 14,
+"word": "rupees",
+"start": 41.42,
+"end": 41.82
+},
+{
+"line": "1.06",
+"i": 15,
+"word": "for",
+"start": 41.82,
+"end": 42.06
+},
+{
+"line": "1.06",
+"i": 16,
+"word": "interest",
+"start": 42.06,
+"end": 42.57
+},
+{
+"line": "1.06",
+"i": 17,
+"word": "and",
+"start": 42.57,
+"end": 42.81
+},
+{
+"line": "1.06",
+"i": 18,
+"word": "GST.",
+"start": 42.81,
+"end": 43.05
+},
+{
+"line": "1.07",
+"i": 0,
+"word": "Only",
+"start": 43.47,
+"end": 43.69
+},
+{
+"line": "1.07",
+"i": 1,
+"word": "four",
+"start": 43.69,
+"end": 43.91
+},
+{
+"line": "1.07",
+"i": 2,
+"word": "thousand,",
+"start": 43.91,
+"end": 44.3
+},
+{
+"line": "1.07",
+"i": 3,
+"word": "six",
+"start": 44.3,
+"end": 44.48
+},
+{
+"line": "1.07",
+"i": 4,
+"word": "hundred",
+"start": 44.48,
+"end": 44.82
+},
+{
+"line": "1.07",
+"i": 5,
+"word": "and",
+"start": 44.82,
+"end": 45.0
+},
+{
+"line": "1.07",
+"i": 6,
+"word": "eighty",
+"start": 45.0,
+"end": 45.31
+},
+{
+"line": "1.07",
+"i": 7,
+"word": "eight",
+"start": 45.31,
+"end": 45.57
+},
+{
+"line": "1.07",
+"i": 8,
+"word": "was",
+"start": 45.57,
+"end": 45.75
+},
+{
+"line": "1.07",
+"i": 9,
+"word": "not",
+"start": 45.75,
+"end": 45.93
+},
+{
+"line": "1.07",
+"i": 10,
+"word": "paid.",
+"start": 45.93,
+"end": 46.15
+},
+{
+"line": "1.07",
+"i": 11,
+"word": "But",
+"start": 46.31,
+"end": 46.49
+},
+{
+"line": "1.07",
+"i": 12,
+"word": "the",
+"start": 46.49,
+"end": 46.68
+},
+{
+"line": "1.07",
+"i": 13,
+"word": "interest",
+"start": 46.68,
+"end": 47.06
+},
+{
+"line": "1.07",
+"i": 14,
+"word": "was",
+"start": 47.06,
+"end": 47.25
+},
+{
+"line": "1.07",
+"i": 15,
+"word": "almost",
+"start": 47.25,
+"end": 47.55
+},
+{
+"line": "1.07",
+"i": 16,
+"word": "the",
+"start": 47.55,
+"end": 47.73
+},
+{
+"line": "1.07",
+"i": 17,
+"word": "same.",
+"start": 47.73,
+"end": 47.96
+},
+{
+"line": "1.07",
+"i": 18,
+"word": "How?",
+"start": 48.13,
+"end": 49.07
+},
+{
+"line": "1.08",
+"i": 0,
+"word": "By",
+"start": 49.58,
+"end": 49.77
+},
+{
+"line": "1.08",
+"i": 1,
+"word": "the",
+"start": 49.77,
+"end": 50.01
+},
+{
+"line": "1.08",
+"i": 2,
+"word": "end",
+"start": 50.01,
+"end": 50.25
+},
+{
+"line": "1.08",
+"i": 3,
+"word": "of",
+"start": 50.25,
+"end": 50.44
+},
+{
+"line": "1.08",
+"i": 4,
+"word": "this",
+"start": 50.44,
+"end": 50.74
+},
+{
+"line": "1.08",
+"i": 5,
+"word": "video,",
+"start": 50.74,
+"end": 51.09
+},
+{
+"line": "1.08",
+"i": 6,
+"word": "you",
+"start": 51.09,
+"end": 51.33
+},
+{
+"line": "1.08",
+"i": 7,
+"word": "will",
+"start": 51.33,
+"end": 51.63
+},
+{
+"line": "1.08",
+"i": 8,
+"word": "understand",
+"start": 51.63,
+"end": 52.25
+},
+{
+"line": "1.08",
+"i": 9,
+"word": "the",
+"start": 52.25,
+"end": 52.49
+},
+{
+"line": "1.08",
+"i": 10,
+"word": "full",
+"start": 52.49,
+"end": 52.79
+},
+{
+"line": "1.08",
+"i": 11,
+"word": "maths",
+"start": 52.79,
+"end": 53.14
+},
+{
+"line": "1.08",
+"i": 12,
+"word": "behind",
+"start": 53.14,
+"end": 53.55
+},
+{
+"line": "1.08",
+"i": 13,
+"word": "that",
+"start": 53.55,
+"end": 53.84
+},
+{
+"line": "1.08",
+"i": 14,
+"word": "small",
+"start": 53.84,
+"end": 54.19
+},
+{
+"line": "1.08",
+"i": 15,
+"word": "number.",
+"start": 54.19,
+"end": 54.6
+},
+{
+"line": "1.08",
+"i": 16,
+"word": "In",
+"start": 54.95,
+"end": 55.14
+},
+{
+"line": "1.08",
+"i": 17,
+"word": "very",
+"start": 55.14,
+"end": 55.44
+},
+{
+"line": "1.08",
+"i": 18,
+"word": "simple",
+"start": 55.44,
+"end": 55.84
+},
+{
+"line": "1.08",
+"i": 19,
+"word": "words.",
+"start": 55.84,
+"end": 56.19
+},
+{
+"line": "1.09",
+"i": 0,
+"word": "Hello",
+"start": 56.6,
+"end": 56.86
+},
+{
+"line": "1.09",
+"i": 1,
+"word": "friends,",
+"start": 56.86,
+"end": 57.2
+},
+{
+"line": "1.09",
+"i": 2,
+"word": "welcome",
+"start": 57.45,
+"end": 57.84
+},
+{
+"line": "1.09",
+"i": 3,
+"word": "to",
+"start": 57.84,
+"end": 58.0
+},
+{
+"line": "1.09",
+"i": 4,
+"word": "Be",
+"start": 58.0,
+"end": 58.16
+},
+{
+"line": "1.09",
+"i": 5,
+"word": "Practical",
+"start": 58.16,
+"end": 58.63
+},
+{
+"line": "1.09",
+"i": 6,
+"word": "with",
+"start": 58.63,
+"end": 58.88
+},
+{
+"line": "1.09",
+"i": 7,
+"word": "Kishore.",
+"start": 58.88,
+"end": 59.27
+},
+{
+"line": "1.10",
+"i": 0,
+"word": "First,",
+"start": 59.77,
+"end": 60.15
+},
+{
+"line": "1.10",
+"i": 1,
+"word": "the",
+"start": 60.3,
+"end": 60.51
+},
+{
+"line": "1.10",
+"i": 2,
+"word": "two",
+"start": 60.51,
+"end": 60.72
+},
+{
+"line": "1.10",
+"i": 3,
+"word": "numbers.",
+"start": 60.72,
+"end": 61.12
+},
+{
+"line": "1.10",
+"i": 4,
+"word": "Total",
+"start": 61.57,
+"end": 61.87
+},
+{
+"line": "1.10",
+"i": 5,
+"word": "amount",
+"start": 61.87,
+"end": 62.21
+},
+{
+"line": "1.10",
+"i": 6,
+"word": "due",
+"start": 62.21,
+"end": 62.41
+},
+{
+"line": "1.10",
+"i": 7,
+"word": "means",
+"start": 62.41,
+"end": 62.71
+},
+{
+"line": "1.10",
+"i": 8,
+"word": "the",
+"start": 62.71,
+"end": 62.91
+},
+{
+"line": "1.10",
+"i": 9,
+"word": "full",
+"start": 62.91,
+"end": 63.16
+},
+{
+"line": "1.10",
+"i": 10,
+"word": "money",
+"start": 63.16,
+"end": 63.45
+},
+{
+"line": "1.10",
+"i": 11,
+"word": "you",
+"start": 63.45,
+"end": 63.66
+},
+{
+"line": "1.10",
+"i": 12,
+"word": "have",
+"start": 63.66,
+"end": 63.91
+},
+{
+"line": "1.10",
+"i": 13,
+"word": "to",
+"start": 63.91,
+"end": 64.06
+},
+{
+"line": "1.10",
+"i": 14,
+"word": "pay",
+"start": 64.06,
+"end": 64.27
+},
+{
+"line": "1.10",
+"i": 15,
+"word": "the",
+"start": 64.27,
+"end": 64.47
+},
+{
+"line": "1.10",
+"i": 16,
+"word": "bank.",
+"start": 64.47,
+"end": 64.72
+},
+{
+"line": "1.11",
+"i": 0,
+"word": "Minimum",
+"start": 65.06,
+"end": 65.52
+},
+{
+"line": "1.11",
+"i": 1,
+"word": "amount",
+"start": 65.52,
+"end": 65.92
+},
+{
+"line": "1.11",
+"i": 2,
+"word": "due",
+"start": 65.92,
+"end": 66.16
+},
+{
+"line": "1.11",
+"i": 3,
+"word": "is",
+"start": 66.16,
+"end": 66.35
+},
+{
+"line": "1.11",
+"i": 4,
+"word": "the",
+"start": 66.35,
+"end": 66.59
+},
+{
+"line": "1.11",
+"i": 5,
+"word": "small",
+"start": 66.59,
+"end": 66.94
+},
+{
+"line": "1.11",
+"i": 6,
+"word": "part",
+"start": 66.94,
+"end": 67.24
+},
+{
+"line": "1.11",
+"i": 7,
+"word": "you",
+"start": 67.24,
+"end": 67.48
+},
+{
+"line": "1.11",
+"i": 8,
+"word": "must",
+"start": 67.48,
+"end": 67.78
+},
+{
+"line": "1.11",
+"i": 9,
+"word": "pay",
+"start": 67.78,
+"end": 68.02
+},
+{
+"line": "1.11",
+"i": 10,
+"word": "to",
+"start": 68.02,
+"end": 68.21
+},
+{
+"line": "1.11",
+"i": 11,
+"word": "not",
+"start": 68.21,
+"end": 68.45
+},
+{
+"line": "1.11",
+"i": 12,
+"word": "be",
+"start": 68.45,
+"end": 68.64
+},
+{
+"line": "1.11",
+"i": 13,
+"word": "late.",
+"start": 68.64,
+"end": 68.94
+},
+{
+"line": "1.11",
+"i": 14,
+"word": "Most",
+"start": 69.26,
+"end": 69.5
+},
+{
+"line": "1.11",
+"i": 15,
+"word": "banks",
+"start": 69.5,
+"end": 69.78
+},
+{
+"line": "1.11",
+"i": 16,
+"word": "keep",
+"start": 69.78,
+"end": 70.02
+},
+{
+"line": "1.11",
+"i": 17,
+"word": "it",
+"start": 70.02,
+"end": 70.17
+},
+{
+"line": "1.11",
+"i": 18,
+"word": "near",
+"start": 70.17,
+"end": 70.41
+},
+{
+"line": "1.11",
+"i": 19,
+"word": "five",
+"start": 70.41,
+"end": 70.65
+},
+{
+"line": "1.11",
+"i": 20,
+"word": "percent",
+"start": 70.65,
+"end": 71.01
+},
+{
+"line": "1.11",
+"i": 21,
+"word": "of",
+"start": 71.01,
+"end": 71.16
+},
+{
+"line": "1.11",
+"i": 22,
+"word": "your",
+"start": 71.16,
+"end": 71.4
+},
+{
+"line": "1.11",
+"i": 23,
+"word": "bill,",
+"start": 71.4,
+"end": 71.64
+},
+{
+"line": "1.11",
+"i": 24,
+"word": "plus",
+"start": 71.89,
+"end": 72.23
+},
+{
+"line": "1.11",
+"i": 25,
+"word": "fees",
+"start": 72.23,
+"end": 72.57
+},
+{
+"line": "1.11",
+"i": 26,
+"word": "and",
+"start": 72.57,
+"end": 72.85
+},
+{
+"line": "1.11",
+"i": 27,
+"word": "GST.",
+"start": 72.85,
+"end": 73.13
+},
+{
+"line": "1.12",
+"i": 0,
+"word": "So",
+"start": 73.49,
+"end": 73.65
+},
+{
+"line": "1.12",
+"i": 1,
+"word": "for",
+"start": 73.65,
+"end": 73.86
+},
+{
+"line": "1.12",
+"i": 2,
+"word": "a",
+"start": 73.86,
+"end": 73.98
+},
+{
+"line": "1.12",
+"i": 3,
+"word": "thirty",
+"start": 73.98,
+"end": 74.33
+},
+{
+"line": "1.12",
+"i": 4,
+"word": "thousand",
+"start": 74.33,
+"end": 74.77
+},
+{
+"line": "1.12",
+"i": 5,
+"word": "bill,",
+"start": 74.77,
+"end": 75.03
+},
+{
+"line": "1.12",
+"i": 6,
+"word": "the",
+"start": 75.3,
+"end": 75.51
+},
+{
+"line": "1.12",
+"i": 7,
+"word": "minimum",
+"start": 75.51,
+"end": 75.9
+},
+{
+"line": "1.12",
+"i": 8,
+"word": "is",
+"start": 75.9,
+"end": 76.06
+},
+{
+"line": "1.12",
+"i": 9,
+"word": "about",
+"start": 76.06,
+"end": 76.36
+},
+{
+"line": "1.12",
+"i": 10,
+"word": "fifteen",
+"start": 76.36,
+"end": 76.75
+},
+{
+"line": "1.12",
+"i": 11,
+"word": "hundred.",
+"start": 76.75,
+"end": 77.14
+},
+{
+"line": "1.13",
+"i": 0,
+"word": "Paying",
+"start": 77.57,
+"end": 77.75
+},
+{
+"line": "1.13",
+"i": 1,
+"word": "the",
+"start": 77.75,
+"end": 77.86
+},
+{
+"line": "1.13",
+"i": 2,
+"word": "minimum",
+"start": 77.86,
+"end": 78.06
+},
+{
+"line": "1.13",
+"i": 3,
+"word": "does",
+"start": 78.06,
+"end": 78.2
+},
+{
+"line": "1.13",
+"i": 4,
+"word": "two",
+"start": 78.2,
+"end": 78.3
+},
+{
+"line": "1.13",
+"i": 5,
+"word": "good",
+"start": 78.3,
+"end": 78.44
+},
+{
+"line": "1.13",
+"i": 6,
+"word": "things.",
+"start": 78.44,
+"end": 78.62
+},
+{
+"line": "1.13",
+"i": 7,
+"word": "No",
+"start": 78.76,
+"end": 78.96
+},
+{
+"line": "1.13",
+"i": 8,
+"word": "late",
+"start": 78.96,
+"end": 79.26
+},
+{
+"line": "1.13",
+"i": 9,
+"word": "fee.",
+"start": 79.26,
+"end": 79.51
+},
+{
+"line": "1.13",
+"i": 10,
+"word": "And",
+"start": 79.85,
+"end": 80.14
+},
+{
+"line": "1.13",
+"i": 11,
+"word": "the",
+"start": 80.14,
+"end": 80.42
+},
+{
+"line": "1.13",
+"i": 12,
+"word": "bank",
+"start": 80.42,
+"end": 80.77
+},
+{
+"line": "1.13",
+"i": 13,
+"word": "will",
+"start": 80.77,
+"end": 81.12
+},
+{
+"line": "1.13",
+"i": 14,
+"word": "not",
+"start": 81.12,
+"end": 81.4
+},
+{
+"line": "1.13",
+"i": 15,
+"word": "report",
+"start": 81.4,
+"end": 81.87
+},
+{
+"line": "1.13",
+"i": 16,
+"word": "you",
+"start": 81.87,
+"end": 82.16
+},
+{
+"line": "1.13",
+"i": 17,
+"word": "as",
+"start": 82.16,
+"end": 82.38
+},
+{
+"line": "1.13",
+"i": 18,
+"word": "late",
+"start": 82.38,
+"end": 82.73
+},
+{
+"line": "1.13",
+"i": 19,
+"word": "to",
+"start": 82.73,
+"end": 82.95
+},
+{
+"line": "1.13",
+"i": 20,
+"word": "CIBIL.",
+"start": 82.95,
+"end": 83.36
+},
+{
+"line": "1.14",
+"i": 0,
+"word": "But",
+"start": 83.8,
+"end": 84.08
+},
+{
+"line": "1.14",
+"i": 1,
+"word": "it",
+"start": 84.08,
+"end": 84.3
+},
+{
+"line": "1.14",
+"i": 2,
+"word": "does",
+"start": 84.3,
+"end": 84.64
+},
+{
+"line": "1.14",
+"i": 3,
+"word": "not",
+"start": 84.64,
+"end": 84.92
+},
+{
+"line": "1.14",
+"i": 4,
+"word": "stop",
+"start": 84.92,
+"end": 85.26
+},
+{
+"line": "1.14",
+"i": 5,
+"word": "interest.",
+"start": 85.26,
+"end": 85.85
+},
+{
+"line": "1.14",
+"i": 6,
+"word": "And",
+"start": 86.12,
+"end": 86.34
+},
+{
+"line": "1.14",
+"i": 7,
+"word": "you",
+"start": 86.34,
+"end": 86.57
+},
+{
+"line": "1.14",
+"i": 8,
+"word": "lose",
+"start": 86.57,
+"end": 86.84
+},
+{
+"line": "1.14",
+"i": 9,
+"word": "your",
+"start": 86.84,
+"end": 87.12
+},
+{
+"line": "1.14",
+"i": 10,
+"word": "interest",
+"start": 87.12,
+"end": 87.59
+},
+{
+"line": "1.14",
+"i": 11,
+"word": "free",
+"start": 87.59,
+"end": 87.87
+},
+{
+"line": "1.14",
+"i": 12,
+"word": "period.",
+"start": 87.87,
+"end": 88.24
+},
+{
+"line": "1.15",
+"i": 0,
+"word": "So",
+"start": 88.61,
+"end": 88.76
+},
+{
+"line": "1.15",
+"i": 1,
+"word": "remember",
+"start": 88.76,
+"end": 89.18
+},
+{
+"line": "1.15",
+"i": 2,
+"word": "this.",
+"start": 89.18,
+"end": 89.43
+},
+{
+"line": "1.15",
+"i": 3,
+"word": "The",
+"start": 89.71,
+"end": 89.91
+},
+{
+"line": "1.15",
+"i": 4,
+"word": "minimum",
+"start": 89.91,
+"end": 90.28
+},
+{
+"line": "1.15",
+"i": 5,
+"word": "amount",
+"start": 90.28,
+"end": 90.6
+},
+{
+"line": "1.15",
+"i": 6,
+"word": "is",
+"start": 90.6,
+"end": 90.76
+},
+{
+"line": "1.15",
+"i": 7,
+"word": "not",
+"start": 90.76,
+"end": 90.95
+},
+{
+"line": "1.15",
+"i": 8,
+"word": "a",
+"start": 90.95,
+"end": 91.06
+},
+{
+"line": "1.15",
+"i": 9,
+"word": "safety",
+"start": 91.06,
+"end": 91.39
+},
+{
+"line": "1.15",
+"i": 10,
+"word": "net...",
+"start": 91.39,
+"end": 91.58
+},
+{
+"line": "1.15",
+"i": 11,
+"word": "it",
+"start": 91.71,
+"end": 91.94
+},
+{
+"line": "1.15",
+"i": 12,
+"word": "is",
+"start": 91.94,
+"end": 92.18
+},
+{
+"line": "1.15",
+"i": 13,
+"word": "a",
+"start": 92.18,
+"end": 92.35
+},
+{
+"line": "1.15",
+"i": 14,
+"word": "switch",
+"start": 92.35,
+"end": 92.85
+},
+{
+"line": "1.15",
+"i": 15,
+"word": "that",
+"start": 92.85,
+"end": 93.22
+},
+{
+"line": "1.15",
+"i": 16,
+"word": "starts",
+"start": 93.22,
+"end": 93.72
+},
+{
+"line": "1.15",
+"i": 17,
+"word": "the",
+"start": 93.72,
+"end": 94.02
+},
+{
+"line": "1.15",
+"i": 18,
+"word": "interest",
+"start": 94.02,
+"end": 94.66
+},
+{
+"line": "1.15",
+"i": 19,
+"word": "meter.",
+"start": 94.66,
+"end": 95.09
+},
+{
+"line": "1.16",
+"i": 0,
+"word": "From",
+"start": 95.47,
+"end": 95.6
+},
+{
+"line": "1.16",
+"i": 1,
+"word": "the",
+"start": 95.6,
+"end": 95.71
+},
+{
+"line": "1.16",
+"i": 2,
+"word": "day",
+"start": 95.71,
+"end": 95.81
+},
+{
+"line": "1.16",
+"i": 3,
+"word": "you",
+"start": 95.81,
+"end": 95.92
+},
+{
+"line": "1.16",
+"i": 4,
+"word": "use",
+"start": 95.92,
+"end": 96.02
+},
+{
+"line": "1.16",
+"i": 5,
+"word": "your",
+"start": 96.02,
+"end": 96.15
+},
+{
+"line": "1.16",
+"i": 6,
+"word": "card",
+"start": 96.15,
+"end": 96.28
+},
+{
+"line": "1.16",
+"i": 7,
+"word": "till",
+"start": 96.28,
+"end": 96.41
+},
+{
+"line": "1.16",
+"i": 8,
+"word": "the",
+"start": 96.41,
+"end": 96.52
+},
+{
+"line": "1.16",
+"i": 9,
+"word": "last",
+"start": 96.52,
+"end": 96.65
+},
+{
+"line": "1.16",
+"i": 10,
+"word": "date",
+"start": 96.65,
+"end": 96.78
+},
+{
+"line": "1.16",
+"i": 11,
+"word": "to",
+"start": 96.78,
+"end": 96.86
+},
+{
+"line": "1.16",
+"i": 12,
+"word": "pay,",
+"start": 96.86,
+"end": 96.96
+},
+{
+"line": "1.16",
+"i": 13,
+"word": "the",
+"start": 97.08,
+"end": 97.4
+},
+{
+"line": "1.16",
+"i": 14,
+"word": "bank",
+"start": 97.4,
+"end": 97.78
+},
+{
+"line": "1.16",
+"i": 15,
+"word": "does",
+"start": 97.78,
+"end": 98.17
+},
+{
+"line": "1.16",
+"i": 16,
+"word": "not",
+"start": 98.17,
+"end": 98.49
+},
+{
+"line": "1.16",
+"i": 17,
+"word": "charge",
+"start": 98.49,
+"end": 99.02
+},
+{
+"line": "1.16",
+"i": 18,
+"word": "any",
+"start": 99.02,
+"end": 99.34
+},
+{
+"line": "1.16",
+"i": 19,
+"word": "interest.",
+"start": 99.34,
+"end": 100.01
+},
+{
+"line": "1.16",
+"i": 20,
+"word": "This",
+"start": 100.15,
+"end": 100.4
+},
+{
+"line": "1.16",
+"i": 21,
+"word": "time",
+"start": 100.4,
+"end": 100.65
+},
+{
+"line": "1.16",
+"i": 22,
+"word": "is",
+"start": 100.65,
+"end": 100.81
+},
+{
+"line": "1.16",
+"i": 23,
+"word": "called",
+"start": 100.81,
+"end": 101.16
+},
+{
+"line": "1.16",
+"i": 24,
+"word": "the",
+"start": 101.16,
+"end": 101.37
+},
+{
+"line": "1.16",
+"i": 25,
+"word": "interest",
+"start": 101.37,
+"end": 101.8
+},
+{
+"line": "1.16",
+"i": 26,
+"word": "free",
+"start": 101.8,
+"end": 102.06
+},
+{
+"line": "1.16",
+"i": 27,
+"word": "period.",
+"start": 102.06,
+"end": 102.4
+},
+{
+"line": "1.16",
+"i": 28,
+"word": "It",
+"start": 102.53,
+"end": 102.74
+},
+{
+"line": "1.16",
+"i": 29,
+"word": "simply",
+"start": 102.74,
+"end": 103.19
+},
+{
+"line": "1.16",
+"i": 30,
+"word": "means,",
+"start": 103.19,
+"end": 103.58
+},
+{
+"line": "1.16",
+"i": 31,
+"word": "for",
+"start": 103.93,
+"end": 104.12
+},
+{
+"line": "1.16",
+"i": 32,
+"word": "these",
+"start": 104.12,
+"end": 104.41
+},
+{
+"line": "1.16",
+"i": 33,
+"word": "days,",
+"start": 104.41,
+"end": 104.65
+},
+{
+"line": "1.16",
+"i": 34,
+"word": "you",
+"start": 104.95,
+"end": 105.37
+},
+{
+"line": "1.16",
+"i": 35,
+"word": "pay",
+"start": 105.37,
+"end": 105.8
+},
+{
+"line": "1.16",
+"i": 36,
+"word": "zero",
+"start": 105.8,
+"end": 106.31
+},
+{
+"line": "1.16",
+"i": 37,
+"word": "interest.",
+"start": 106.31,
+"end": 107.21
+},
+{
+"line": "1.17",
+"i": 0,
+"word": "Let's",
+"start": 107.62,
+"end": 107.85
+},
+{
+"line": "1.17",
+"i": 1,
+"word": "take",
+"start": 107.85,
+"end": 108.09
+},
+{
+"line": "1.17",
+"i": 2,
+"word": "an",
+"start": 108.09,
+"end": 108.24
+},
+{
+"line": "1.17",
+"i": 3,
+"word": "example.",
+"start": 108.24,
+"end": 108.6
+},
+{
+"line": "1.17",
+"i": 4,
+"word": "On",
+"start": 109.0,
+"end": 109.17
+},
+{
+"line": "1.17",
+"i": 5,
+"word": "October",
+"start": 109.17,
+"end": 109.58
+},
+{
+"line": "1.17",
+"i": 6,
+"word": "fifth,",
+"start": 109.58,
+"end": 109.9
+},
+{
+"line": "1.17",
+"i": 7,
+"word": "ten",
+"start": 110.1,
+"end": 110.29
+},
+{
+"line": "1.17",
+"i": 8,
+"word": "thousand",
+"start": 110.29,
+"end": 110.68
+},
+{
+"line": "1.17",
+"i": 9,
+"word": "for",
+"start": 110.68,
+"end": 110.87
+},
+{
+"line": "1.17",
+"i": 10,
+"word": "a",
+"start": 110.87,
+"end": 110.97
+},
+{
+"line": "1.17",
+"i": 11,
+"word": "phone.",
+"start": 110.97,
+"end": 111.24
+},
+{
+"line": "1.17",
+"i": 12,
+"word": "On",
+"start": 111.64,
+"end": 111.78
+},
+{
+"line": "1.17",
+"i": 13,
+"word": "the",
+"start": 111.78,
+"end": 111.96
+},
+{
+"line": "1.17",
+"i": 14,
+"word": "twelfth,",
+"start": 111.96,
+"end": 112.3
+},
+{
+"line": "1.17",
+"i": 15,
+"word": "fifteen",
+"start": 112.52,
+"end": 112.89
+},
+{
+"line": "1.17",
+"i": 16,
+"word": "thousand",
+"start": 112.89,
+"end": 113.31
+},
+{
+"line": "1.17",
+"i": 17,
+"word": "for",
+"start": 113.31,
+"end": 113.51
+},
+{
+"line": "1.17",
+"i": 18,
+"word": "a",
+"start": 113.51,
+"end": 113.62
+},
+{
+"line": "1.17",
+"i": 19,
+"word": "family",
+"start": 113.62,
+"end": 113.95
+},
+{
+"line": "1.17",
+"i": 20,
+"word": "function.",
+"start": 113.95,
+"end": 114.37
+},
+{
+"line": "1.17",
+"i": 21,
+"word": "On",
+"start": 114.74,
+"end": 114.88
+},
+{
+"line": "1.17",
+"i": 22,
+"word": "the",
+"start": 114.88,
+"end": 115.05
+},
+{
+"line": "1.17",
+"i": 23,
+"word": "twentieth,",
+"start": 115.05,
+"end": 115.47
+},
+{
+"line": "1.17",
+"i": 24,
+"word": "five",
+"start": 115.78,
+"end": 116.03
+},
+{
+"line": "1.17",
+"i": 25,
+"word": "thousand",
+"start": 116.03,
+"end": 116.45
+},
+{
+"line": "1.17",
+"i": 26,
+"word": "for",
+"start": 116.45,
+"end": 116.66
+},
+{
+"line": "1.17",
+"i": 27,
+"word": "groceries.",
+"start": 116.66,
+"end": 117.13
+},
+{
+"line": "1.18",
+"i": 0,
+"word": "On",
+"start": 117.48,
+"end": 117.64
+},
+{
+"line": "1.18",
+"i": 1,
+"word": "October",
+"start": 117.64,
+"end": 118.04
+},
+{
+"line": "1.18",
+"i": 2,
+"word": "twenty",
+"start": 118.04,
+"end": 118.39
+},
+{
+"line": "1.18",
+"i": 3,
+"word": "fifth,",
+"start": 118.39,
+"end": 118.69
+},
+{
+"line": "1.18",
+"i": 4,
+"word": "the",
+"start": 118.82,
+"end": 119.04
+},
+{
+"line": "1.18",
+"i": 5,
+"word": "bill",
+"start": 119.04,
+"end": 119.3
+},
+{
+"line": "1.18",
+"i": 6,
+"word": "comes.",
+"start": 119.3,
+"end": 119.61
+},
+{
+"line": "1.18",
+"i": 7,
+"word": "Total,",
+"start": 119.93,
+"end": 120.28
+},
+{
+"line": "1.18",
+"i": 8,
+"word": "thirty",
+"start": 120.49,
+"end": 120.8
+},
+{
+"line": "1.18",
+"i": 9,
+"word": "thousand.",
+"start": 120.8,
+"end": 121.19
+},
+{
+"line": "1.18",
+"i": 10,
+"word": "Last",
+"start": 121.58,
+"end": 121.84
+},
+{
+"line": "1.18",
+"i": 11,
+"word": "date",
+"start": 121.84,
+"end": 122.11
+},
+{
+"line": "1.18",
+"i": 12,
+"word": "to",
+"start": 122.11,
+"end": 122.27
+},
+{
+"line": "1.18",
+"i": 13,
+"word": "pay,",
+"start": 122.27,
+"end": 122.49
+},
+{
+"line": "1.18",
+"i": 14,
+"word": "November",
+"start": 122.66,
+"end": 123.04
+},
+{
+"line": "1.18",
+"i": 15,
+"word": "fourteenth.",
+"start": 123.04,
+"end": 123.49
+},
+{
+"line": "1.19",
+"i": 0,
+"word": "So",
+"start": 123.96,
+"end": 124.11
+},
+{
+"line": "1.19",
+"i": 1,
+"word": "the",
+"start": 124.11,
+"end": 124.31
+},
+{
+"line": "1.19",
+"i": 2,
+"word": "phone",
+"start": 124.31,
+"end": 124.6
+},
+{
+"line": "1.19",
+"i": 3,
+"word": "money",
+"start": 124.6,
+"end": 124.88
+},
+{
+"line": "1.19",
+"i": 4,
+"word": "gets",
+"start": 124.88,
+"end": 125.13
+},
+{
+"line": "1.19",
+"i": 5,
+"word": "forty",
+"start": 125.13,
+"end": 125.41
+},
+{
+"line": "1.19",
+"i": 6,
+"word": "days",
+"start": 125.41,
+"end": 125.65
+},
+{
+"line": "1.19",
+"i": 7,
+"word": "interest",
+"start": 125.65,
+"end": 126.07
+},
+{
+"line": "1.19",
+"i": 8,
+"word": "free.",
+"start": 126.07,
+"end": 126.31
+},
+{
+"line": "1.19",
+"i": 9,
+"word": "The",
+"start": 126.45,
+"end": 126.69
+},
+{
+"line": "1.19",
+"i": 10,
+"word": "grocery",
+"start": 126.69,
+"end": 127.15
+},
+{
+"line": "1.19",
+"i": 11,
+"word": "money",
+"start": 127.15,
+"end": 127.5
+},
+{
+"line": "1.19",
+"i": 12,
+"word": "gets",
+"start": 127.5,
+"end": 127.8
+},
+{
+"line": "1.19",
+"i": 13,
+"word": "twenty",
+"start": 127.8,
+"end": 128.21
+},
+{
+"line": "1.19",
+"i": 14,
+"word": "five",
+"start": 128.21,
+"end": 128.51
+},
+{
+"line": "1.19",
+"i": 15,
+"word": "days",
+"start": 128.51,
+"end": 128.81
+},
+{
+"line": "1.19",
+"i": 16,
+"word": "interest",
+"start": 128.81,
+"end": 129.32
+},
+{
+"line": "1.19",
+"i": 17,
+"word": "free.",
+"start": 129.32,
+"end": 129.62
+},
+{
+"line": "1.20",
+"i": 0,
+"word": "But",
+"start": 129.98,
+"end": 130.2
+},
+{
+"line": "1.20",
+"i": 1,
+"word": "there",
+"start": 130.2,
+"end": 130.52
+},
+{
+"line": "1.20",
+"i": 2,
+"word": "is",
+"start": 130.52,
+"end": 130.7
+},
+{
+"line": "1.20",
+"i": 3,
+"word": "one",
+"start": 130.7,
+"end": 130.92
+},
+{
+"line": "1.20",
+"i": 4,
+"word": "condition.",
+"start": 130.92,
+"end": 131.44
+},
+{
+"line": "1.21",
+"i": 0,
+"word": "You",
+"start": 131.81,
+"end": 132.03
+},
+{
+"line": "1.21",
+"i": 1,
+"word": "must",
+"start": 132.03,
+"end": 132.3
+},
+{
+"line": "1.21",
+"i": 2,
+"word": "pay",
+"start": 132.3,
+"end": 132.52
+},
+{
+"line": "1.21",
+"i": 3,
+"word": "the",
+"start": 132.52,
+"end": 132.75
+},
+{
+"line": "1.21",
+"i": 4,
+"word": "full",
+"start": 132.75,
+"end": 133.02
+},
+{
+"line": "1.21",
+"i": 5,
+"word": "bill",
+"start": 133.02,
+"end": 133.29
+},
+{
+"line": "1.21",
+"i": 6,
+"word": "before",
+"start": 133.29,
+"end": 133.66
+},
+{
+"line": "1.21",
+"i": 7,
+"word": "the",
+"start": 133.66,
+"end": 133.88
+},
+{
+"line": "1.21",
+"i": 8,
+"word": "last",
+"start": 133.88,
+"end": 134.15
+},
+{
+"line": "1.21",
+"i": 9,
+"word": "date.",
+"start": 134.15,
+"end": 134.42
+},
+{
+"line": "1.21",
+"i": 10,
+"word": "Even",
+"start": 134.78,
+"end": 135.08
+},
+{
+"line": "1.21",
+"i": 11,
+"word": "one",
+"start": 135.08,
+"end": 135.33
+},
+{
+"line": "1.21",
+"i": 12,
+"word": "rupee",
+"start": 135.33,
+"end": 135.69
+},
+{
+"line": "1.21",
+"i": 13,
+"word": "less,",
+"start": 135.69,
+"end": 136.0
+},
+{
+"line": "1.21",
+"i": 14,
+"word": "and",
+"start": 136.24,
+"end": 136.45
+},
+{
+"line": "1.21",
+"i": 15,
+"word": "the",
+"start": 136.45,
+"end": 136.65
+},
+{
+"line": "1.21",
+"i": 16,
+"word": "interest",
+"start": 136.65,
+"end": 137.09
+},
+{
+"line": "1.21",
+"i": 17,
+"word": "free",
+"start": 137.09,
+"end": 137.34
+},
+{
+"line": "1.21",
+"i": 18,
+"word": "period",
+"start": 137.34,
+"end": 137.68
+},
+{
+"line": "1.21",
+"i": 19,
+"word": "is",
+"start": 137.68,
+"end": 137.84
+},
+{
+"line": "1.21",
+"i": 20,
+"word": "gone.",
+"start": 137.84,
+"end": 138.09
+},
+{
+"line": "1.22",
+"i": 0,
+"word": "This",
+"start": 138.49,
+"end": 138.81
+},
+{
+"line": "1.22",
+"i": 1,
+"word": "is",
+"start": 138.81,
+"end": 139.01
+},
+{
+"line": "1.22",
+"i": 2,
+"word": "in",
+"start": 139.01,
+"end": 139.21
+},
+{
+"line": "1.22",
+"i": 3,
+"word": "the",
+"start": 139.21,
+"end": 139.47
+},
+{
+"line": "1.22",
+"i": 4,
+"word": "RBI",
+"start": 139.47,
+"end": 139.72
+},
+{
+"line": "1.22",
+"i": 5,
+"word": "rules.",
+"start": 139.72,
+"end": 140.1
+},
+{
+"line": "1.22",
+"i": 6,
+"word": "If",
+"start": 140.38,
+"end": 140.44
+},
+{
+"line": "1.22",
+"i": 7,
+"word": "you",
+"start": 140.44,
+"end": 140.52
+},
+{
+"line": "1.22",
+"i": 8,
+"word": "do",
+"start": 140.52,
+"end": 140.58
+},
+{
+"line": "1.22",
+"i": 9,
+"word": "not",
+"start": 140.58,
+"end": 140.66
+},
+{
+"line": "1.22",
+"i": 10,
+"word": "pay",
+"start": 140.66,
+"end": 140.73
+},
+{
+"line": "1.22",
+"i": 11,
+"word": "the",
+"start": 140.73,
+"end": 140.81
+},
+{
+"line": "1.22",
+"i": 12,
+"word": "full",
+"start": 140.81,
+"end": 140.9
+},
+{
+"line": "1.22",
+"i": 13,
+"word": "bill,",
+"start": 140.9,
+"end": 141.0
+},
+{
+"line": "1.22",
+"i": 14,
+"word": "the",
+"start": 141.12,
+"end": 141.39
+},
+{
+"line": "1.22",
+"i": 15,
+"word": "bank",
+"start": 141.39,
+"end": 141.72
+},
+{
+"line": "1.22",
+"i": 16,
+"word": "can",
+"start": 141.72,
+"end": 142.0
+},
+{
+"line": "1.22",
+"i": 17,
+"word": "charge",
+"start": 142.0,
+"end": 142.45
+},
+{
+"line": "1.22",
+"i": 18,
+"word": "interest",
+"start": 142.45,
+"end": 143.02
+},
+{
+"line": "1.22",
+"i": 19,
+"word": "from",
+"start": 143.02,
+"end": 143.35
+},
+{
+"line": "1.22",
+"i": 20,
+"word": "the",
+"start": 143.35,
+"end": 143.62
+},
+{
+"line": "1.22",
+"i": 21,
+"word": "day",
+"start": 143.62,
+"end": 143.9
+},
+{
+"line": "1.22",
+"i": 22,
+"word": "you",
+"start": 143.9,
+"end": 144.17
+},
+{
+"line": "1.22",
+"i": 23,
+"word": "spent.",
+"start": 144.17,
+"end": 144.56
+},
+{
+"line": "1.23",
+"i": 0,
+"word": "On",
+"start": 145.01,
+"end": 145.17
+},
+{
+"line": "1.23",
+"i": 1,
+"word": "November",
+"start": 145.17,
+"end": 145.62
+},
+{
+"line": "1.23",
+"i": 2,
+"word": "fourteenth,",
+"start": 145.62,
+"end": 146.16
+},
+{
+"line": "1.23",
+"i": 3,
+"word": "you",
+"start": 146.16,
+"end": 146.37
+},
+{
+"line": "1.23",
+"i": 4,
+"word": "paid",
+"start": 146.37,
+"end": 146.63
+},
+{
+"line": "1.23",
+"i": 5,
+"word": "only",
+"start": 146.63,
+"end": 146.89
+},
+{
+"line": "1.23",
+"i": 6,
+"word": "the",
+"start": 146.89,
+"end": 147.1
+},
+{
+"line": "1.23",
+"i": 7,
+"word": "minimum,",
+"start": 147.1,
+"end": 147.5
+},
+{
+"line": "1.23",
+"i": 8,
+"word": "fifteen",
+"start": 147.74,
+"end": 148.09
+},
+{
+"line": "1.23",
+"i": 9,
+"word": "hundred.",
+"start": 148.09,
+"end": 148.45
+},
+{
+"line": "1.23",
+"i": 10,
+"word": "Now",
+"start": 148.84,
+"end": 149.08
+},
+{
+"line": "1.23",
+"i": 11,
+"word": "let's",
+"start": 149.08,
+"end": 149.38
+},
+{
+"line": "1.23",
+"i": 12,
+"word": "see",
+"start": 149.38,
+"end": 149.62
+},
+{
+"line": "1.23",
+"i": 13,
+"word": "what",
+"start": 149.62,
+"end": 149.92
+},
+{
+"line": "1.23",
+"i": 14,
+"word": "the",
+"start": 149.92,
+"end": 150.16
+},
+{
+"line": "1.23",
+"i": 15,
+"word": "bank",
+"start": 150.16,
+"end": 150.45
+},
+{
+"line": "1.23",
+"i": 16,
+"word": "does.",
+"start": 150.45,
+"end": 150.75
+},
+{
+"line": "1.24",
+"i": 0,
+"word": "Rule",
+"start": 151.14,
+"end": 151.4
+},
+{
+"line": "1.24",
+"i": 1,
+"word": "number",
+"start": 151.4,
+"end": 151.77
+},
+{
+"line": "1.24",
+"i": 2,
+"word": "one.",
+"start": 151.77,
+"end": 151.98
+},
+{
+"line": "1.24",
+"i": 3,
+"word": "Interest",
+"start": 152.37,
+"end": 152.86
+},
+{
+"line": "1.24",
+"i": 4,
+"word": "does",
+"start": 152.86,
+"end": 153.14
+},
+{
+"line": "1.24",
+"i": 5,
+"word": "not",
+"start": 153.14,
+"end": 153.37
+},
+{
+"line": "1.24",
+"i": 6,
+"word": "start",
+"start": 153.37,
+"end": 153.7
+},
+{
+"line": "1.24",
+"i": 7,
+"word": "from",
+"start": 153.7,
+"end": 153.98
+},
+{
+"line": "1.24",
+"i": 8,
+"word": "the",
+"start": 153.98,
+"end": 154.21
+},
+{
+"line": "1.24",
+"i": 9,
+"word": "last",
+"start": 154.21,
+"end": 154.49
+},
+{
+"line": "1.24",
+"i": 10,
+"word": "date.",
+"start": 154.49,
+"end": 154.77
+},
+{
+"line": "1.24",
+"i": 11,
+"word": "It",
+"start": 155.14,
+"end": 155.29
+},
+{
+"line": "1.24",
+"i": 12,
+"word": "starts",
+"start": 155.29,
+"end": 155.63
+},
+{
+"line": "1.24",
+"i": 13,
+"word": "from",
+"start": 155.63,
+"end": 155.88
+},
+{
+"line": "1.24",
+"i": 14,
+"word": "the",
+"start": 155.88,
+"end": 156.08
+},
+{
+"line": "1.24",
+"i": 15,
+"word": "day",
+"start": 156.08,
+"end": 156.28
+},
+{
+"line": "1.24",
+"i": 16,
+"word": "you",
+"start": 156.28,
+"end": 156.48
+},
+{
+"line": "1.24",
+"i": 17,
+"word": "spent",
+"start": 156.48,
+"end": 156.78
+},
+{
+"line": "1.24",
+"i": 18,
+"word": "the",
+"start": 156.78,
+"end": 156.98
+},
+{
+"line": "1.24",
+"i": 19,
+"word": "money.",
+"start": 156.98,
+"end": 157.27
+},
+{
+"line": "1.25",
+"i": 0,
+"word": "On",
+"start": 157.74,
+"end": 157.88
+},
+{
+"line": "1.25",
+"i": 1,
+"word": "the",
+"start": 157.88,
+"end": 158.06
+},
+{
+"line": "1.25",
+"i": 2,
+"word": "ten",
+"start": 158.06,
+"end": 158.24
+},
+{
+"line": "1.25",
+"i": 3,
+"word": "thousand",
+"start": 158.24,
+"end": 158.62
+},
+{
+"line": "1.25",
+"i": 4,
+"word": "for",
+"start": 158.62,
+"end": 158.8
+},
+{
+"line": "1.25",
+"i": 5,
+"word": "the",
+"start": 158.8,
+"end": 158.98
+},
+{
+"line": "1.25",
+"i": 6,
+"word": "phone,",
+"start": 158.98,
+"end": 159.25
+},
+{
+"line": "1.25",
+"i": 7,
+"word": "interest",
+"start": 159.5,
+"end": 159.75
+},
+{
+"line": "1.25",
+"i": 8,
+"word": "from",
+"start": 159.75,
+"end": 159.89
+},
+{
+"line": "1.25",
+"i": 9,
+"word": "October",
+"start": 159.89,
+"end": 160.11
+},
+{
+"line": "1.25",
+"i": 10,
+"word": "fifth.",
+"start": 160.11,
+"end": 160.28
+},
+{
+"line": "1.25",
+"i": 11,
+"word": "On",
+"start": 160.41,
+"end": 160.48
+},
+{
+"line": "1.25",
+"i": 12,
+"word": "the",
+"start": 160.48,
+"end": 160.58
+},
+{
+"line": "1.25",
+"i": 13,
+"word": "fifteen",
+"start": 160.58,
+"end": 160.76
+},
+{
+"line": "1.25",
+"i": 14,
+"word": "thousand,",
+"start": 160.76,
+"end": 160.97
+},
+{
+"line": "1.25",
+"i": 15,
+"word": "from",
+"start": 161.42,
+"end": 161.68
+},
+{
+"line": "1.25",
+"i": 16,
+"word": "October",
+"start": 161.68,
+"end": 162.07
+},
+{
+"line": "1.25",
+"i": 17,
+"word": "twelfth.",
+"start": 162.07,
+"end": 162.47
+},
+{
+"line": "1.25",
+"i": 18,
+"word": "On",
+"start": 162.79,
+"end": 162.96
+},
+{
+"line": "1.25",
+"i": 19,
+"word": "the",
+"start": 162.96,
+"end": 163.18
+},
+{
+"line": "1.25",
+"i": 20,
+"word": "five",
+"start": 163.18,
+"end": 163.45
+},
+{
+"line": "1.25",
+"i": 21,
+"word": "thousand,",
+"start": 163.45,
+"end": 163.92
+},
+{
+"line": "1.25",
+"i": 22,
+"word": "from",
+"start": 164.32,
+"end": 164.87
+},
+{
+"line": "1.25",
+"i": 23,
+"word": "October",
+"start": 164.87,
+"end": 165.72
+},
+{
+"line": "1.25",
+"i": 24,
+"word": "twentieth.",
+"start": 165.72,
+"end": 166.77
+},
+{
+"line": "1.26",
+"i": 0,
+"word": "How",
+"start": 167.36,
+"end": 167.54
+},
+{
+"line": "1.26",
+"i": 1,
+"word": "much",
+"start": 167.54,
+"end": 167.75
+},
+{
+"line": "1.26",
+"i": 2,
+"word": "interest?",
+"start": 167.75,
+"end": 168.13
+},
+{
+"line": "1.26",
+"i": 3,
+"word": "In",
+"start": 168.46,
+"end": 168.74
+},
+{
+"line": "1.26",
+"i": 4,
+"word": "banks",
+"start": 168.74,
+"end": 169.26
+},
+{
+"line": "1.26",
+"i": 5,
+"word": "like",
+"start": 169.26,
+"end": 169.7
+},
+{
+"line": "1.26",
+"i": 6,
+"word": "ICICI,",
+"start": 169.7,
+"end": 170.22
+},
+{
+"line": "1.26",
+"i": 7,
+"word": "three",
+"start": 170.57,
+"end": 170.78
+},
+{
+"line": "1.26",
+"i": 8,
+"word": "point",
+"start": 170.78,
+"end": 170.99
+},
+{
+"line": "1.26",
+"i": 9,
+"word": "seven",
+"start": 170.99,
+"end": 171.2
+},
+{
+"line": "1.26",
+"i": 10,
+"word": "five",
+"start": 171.2,
+"end": 171.39
+},
+{
+"line": "1.26",
+"i": 11,
+"word": "percent",
+"start": 171.39,
+"end": 171.66
+},
+{
+"line": "1.26",
+"i": 12,
+"word": "every",
+"start": 171.66,
+"end": 171.88
+},
+{
+"line": "1.26",
+"i": 13,
+"word": "month.",
+"start": 171.88,
+"end": 172.09
+},
+{
+"line": "1.26",
+"i": 14,
+"word": "That",
+"start": 172.26,
+"end": 172.7
+},
+{
+"line": "1.26",
+"i": 15,
+"word": "is",
+"start": 172.7,
+"end": 172.98
+},
+{
+"line": "1.26",
+"i": 16,
+"word": "forty",
+"start": 172.98,
+"end": 173.49
+},
+{
+"line": "1.26",
+"i": 17,
+"word": "five",
+"start": 173.49,
+"end": 173.93
+},
+{
+"line": "1.26",
+"i": 18,
+"word": "percent",
+"start": 173.93,
+"end": 174.61
+},
+{
+"line": "1.26",
+"i": 19,
+"word": "in",
+"start": 174.61,
+"end": 174.89
+},
+{
+"line": "1.26",
+"i": 20,
+"word": "a",
+"start": 174.89,
+"end": 175.09
+},
+{
+"line": "1.26",
+"i": 21,
+"word": "year.",
+"start": 175.09,
+"end": 175.53
+},
+{
+"line": "1.27",
+"i": 0,
+"word": "Rule",
+"start": 175.99,
+"end": 176.14
+},
+{
+"line": "1.27",
+"i": 1,
+"word": "number",
+"start": 176.14,
+"end": 176.36
+},
+{
+"line": "1.27",
+"i": 2,
+"word": "two.",
+"start": 176.36,
+"end": 176.48
+},
+{
+"line": "1.27",
+"i": 3,
+"word": "You",
+"start": 176.6,
+"end": 176.88
+},
+{
+"line": "1.27",
+"i": 4,
+"word": "pay",
+"start": 176.88,
+"end": 177.17
+},
+{
+"line": "1.27",
+"i": 5,
+"word": "interest",
+"start": 177.17,
+"end": 177.76
+},
+{
+"line": "1.27",
+"i": 6,
+"word": "even",
+"start": 177.76,
+"end": 178.11
+},
+{
+"line": "1.27",
+"i": 7,
+"word": "on",
+"start": 178.11,
+"end": 178.33
+},
+{
+"line": "1.27",
+"i": 8,
+"word": "the",
+"start": 178.33,
+"end": 178.61
+},
+{
+"line": "1.27",
+"i": 9,
+"word": "money",
+"start": 178.61,
+"end": 179.02
+},
+{
+"line": "1.27",
+"i": 10,
+"word": "you",
+"start": 179.02,
+"end": 179.3
+},
+{
+"line": "1.27",
+"i": 11,
+"word": "already",
+"start": 179.3,
+"end": 179.83
+},
+{
+"line": "1.27",
+"i": 12,
+"word": "paid.",
+"start": 179.83,
+"end": 180.18
+},
+{
+"line": "1.28",
+"i": 0,
+"word": "Till",
+"start": 180.63,
+"end": 180.87
+},
+{
+"line": "1.28",
+"i": 1,
+"word": "November",
+"start": 180.87,
+"end": 181.3
+},
+{
+"line": "1.28",
+"i": 2,
+"word": "fourteenth,",
+"start": 181.3,
+"end": 181.81
+},
+{
+"line": "1.28",
+"i": 3,
+"word": "interest",
+"start": 182.05,
+"end": 182.49
+},
+{
+"line": "1.28",
+"i": 4,
+"word": "on",
+"start": 182.49,
+"end": 182.65
+},
+{
+"line": "1.28",
+"i": 5,
+"word": "the",
+"start": 182.65,
+"end": 182.86
+},
+{
+"line": "1.28",
+"i": 6,
+"word": "full",
+"start": 182.86,
+"end": 183.11
+},
+{
+"line": "1.28",
+"i": 7,
+"word": "thirty",
+"start": 183.11,
+"end": 183.45
+},
+{
+"line": "1.28",
+"i": 8,
+"word": "thousand.",
+"start": 183.45,
+"end": 183.89
+},
+{
+"line": "1.28",
+"i": 9,
+"word": "Only",
+"start": 184.3,
+"end": 184.61
+},
+{
+"line": "1.28",
+"i": 10,
+"word": "after",
+"start": 184.61,
+"end": 184.97
+},
+{
+"line": "1.28",
+"i": 11,
+"word": "that,",
+"start": 184.97,
+"end": 185.28
+},
+{
+"line": "1.28",
+"i": 12,
+"word": "on",
+"start": 185.56,
+"end": 185.71
+},
+{
+"line": "1.28",
+"i": 13,
+"word": "the",
+"start": 185.71,
+"end": 185.9
+},
+{
+"line": "1.28",
+"i": 14,
+"word": "balance",
+"start": 185.9,
+"end": 186.27
+},
+{
+"line": "1.28",
+"i": 15,
+"word": "of",
+"start": 186.27,
+"end": 186.42
+},
+{
+"line": "1.28",
+"i": 16,
+"word": "twenty",
+"start": 186.42,
+"end": 186.74
+},
+{
+"line": "1.28",
+"i": 17,
+"word": "eight",
+"start": 186.74,
+"end": 187.02
+},
+{
+"line": "1.28",
+"i": 18,
+"word": "thousand",
+"start": 187.02,
+"end": 187.43
+},
+{
+"line": "1.28",
+"i": 19,
+"word": "five",
+"start": 187.43,
+"end": 187.66
+},
+{
+"line": "1.28",
+"i": 20,
+"word": "hundred.",
+"start": 187.66,
+"end": 188.03
+},
+{
+"line": "1.29",
+"i": 0,
+"word": "Rule",
+"start": 188.4,
+"end": 188.63
+},
+{
+"line": "1.29",
+"i": 1,
+"word": "number",
+"start": 188.63,
+"end": 188.94
+},
+{
+"line": "1.29",
+"i": 2,
+"word": "three.",
+"start": 188.94,
+"end": 189.21
+},
+{
+"line": "1.29",
+"i": 3,
+"word": "On",
+"start": 189.65,
+"end": 189.81
+},
+{
+"line": "1.29",
+"i": 4,
+"word": "top",
+"start": 189.81,
+"end": 190.01
+},
+{
+"line": "1.29",
+"i": 5,
+"word": "of",
+"start": 190.01,
+"end": 190.17
+},
+{
+"line": "1.29",
+"i": 6,
+"word": "the",
+"start": 190.17,
+"end": 190.36
+},
+{
+"line": "1.29",
+"i": 7,
+"word": "interest,",
+"start": 190.36,
+"end": 190.79
+},
+{
+"line": "1.29",
+"i": 8,
+"word": "eighteen",
+"start": 191.11,
+"end": 191.68
+},
+{
+"line": "1.29",
+"i": 9,
+"word": "percent",
+"start": 191.68,
+"end": 192.2
+},
+{
+"line": "1.29",
+"i": 10,
+"word": "GST.",
+"start": 192.2,
+"end": 192.47
+},
+{
+"line": "1.30",
+"i": 0,
+"word": "On",
+"start": 192.94,
+"end": 193.1
+},
+{
+"line": "1.30",
+"i": 1,
+"word": "November",
+"start": 193.1,
+"end": 193.55
+},
+{
+"line": "1.30",
+"i": 2,
+"word": "twenty",
+"start": 193.55,
+"end": 193.9
+},
+{
+"line": "1.30",
+"i": 3,
+"word": "fifth,",
+"start": 193.9,
+"end": 194.2
+},
+{
+"line": "1.30",
+"i": 4,
+"word": "the",
+"start": 194.36,
+"end": 194.57
+},
+{
+"line": "1.30",
+"i": 5,
+"word": "next",
+"start": 194.57,
+"end": 194.83
+},
+{
+"line": "1.30",
+"i": 6,
+"word": "bill",
+"start": 194.83,
+"end": 195.08
+},
+{
+"line": "1.30",
+"i": 7,
+"word": "comes.",
+"start": 195.08,
+"end": 195.38
+},
+{
+"line": "1.31",
+"i": 0,
+"word": "You",
+"start": 195.74,
+"end": 195.94
+},
+{
+"line": "1.31",
+"i": 1,
+"word": "paid",
+"start": 195.94,
+"end": 196.17
+},
+{
+"line": "1.31",
+"i": 2,
+"word": "fifteen",
+"start": 196.17,
+"end": 196.54
+},
+{
+"line": "1.31",
+"i": 3,
+"word": "hundred.",
+"start": 196.54,
+"end": 196.91
+},
+{
+"line": "1.31",
+"i": 4,
+"word": "The",
+"start": 197.27,
+"end": 197.53
+},
+{
+"line": "1.31",
+"i": 5,
+"word": "bank",
+"start": 197.53,
+"end": 197.84
+},
+{
+"line": "1.31",
+"i": 6,
+"word": "added",
+"start": 197.84,
+"end": 198.21
+},
+{
+"line": "1.31",
+"i": 7,
+"word": "interest",
+"start": 198.21,
+"end": 198.75
+},
+{
+"line": "1.31",
+"i": 8,
+"word": "and",
+"start": 198.75,
+"end": 199.0
+},
+{
+"line": "1.31",
+"i": 9,
+"word": "GST",
+"start": 199.0,
+"end": 199.26
+},
+{
+"line": "1.31",
+"i": 10,
+"word": "of",
+"start": 199.26,
+"end": 199.46
+},
+{
+"line": "1.31",
+"i": 11,
+"word": "one",
+"start": 199.46,
+"end": 199.71
+},
+{
+"line": "1.31",
+"i": 12,
+"word": "thousand,",
+"start": 199.71,
+"end": 200.25
+},
+{
+"line": "1.31",
+"i": 13,
+"word": "nine",
+"start": 200.25,
+"end": 200.56
+},
+{
+"line": "1.31",
+"i": 14,
+"word": "hundred",
+"start": 200.56,
+"end": 201.04
+},
+{
+"line": "1.31",
+"i": 15,
+"word": "and",
+"start": 201.04,
+"end": 201.3
+},
+{
+"line": "1.31",
+"i": 16,
+"word": "eighty",
+"start": 201.3,
+"end": 201.72
+},
+{
+"line": "1.31",
+"i": 17,
+"word": "one.",
+"start": 201.72,
+"end": 201.98
+},
+{
+"line": "1.32",
+"i": 0,
+"word": "So",
+"start": 202.36,
+"end": 202.56
+},
+{
+"line": "1.32",
+"i": 1,
+"word": "without",
+"start": 202.56,
+"end": 203.05
+},
+{
+"line": "1.32",
+"i": 2,
+"word": "spending",
+"start": 203.05,
+"end": 203.59
+},
+{
+"line": "1.32",
+"i": 3,
+"word": "even",
+"start": 203.59,
+"end": 203.91
+},
+{
+"line": "1.32",
+"i": 4,
+"word": "one",
+"start": 203.91,
+"end": 204.16
+},
+{
+"line": "1.32",
+"i": 5,
+"word": "new",
+"start": 204.16,
+"end": 204.42
+},
+{
+"line": "1.32",
+"i": 6,
+"word": "rupee,",
+"start": 204.42,
+"end": 204.8
+},
+{
+"line": "1.32",
+"i": 7,
+"word": "your",
+"start": 205.02,
+"end": 205.2
+},
+{
+"line": "1.32",
+"i": 8,
+"word": "bill",
+"start": 205.2,
+"end": 205.38
+},
+{
+"line": "1.32",
+"i": 9,
+"word": "went",
+"start": 205.38,
+"end": 205.56
+},
+{
+"line": "1.32",
+"i": 10,
+"word": "up",
+"start": 205.56,
+"end": 205.67
+},
+{
+"line": "1.32",
+"i": 11,
+"word": "from",
+"start": 205.67,
+"end": 205.85
+},
+{
+"line": "1.32",
+"i": 12,
+"word": "thirty",
+"start": 205.85,
+"end": 206.09
+},
+{
+"line": "1.32",
+"i": 13,
+"word": "thousand",
+"start": 206.09,
+"end": 206.4
+},
+{
+"line": "1.32",
+"i": 14,
+"word": "to",
+"start": 206.4,
+"end": 206.51
+},
+{
+"line": "1.32",
+"i": 15,
+"word": "thirty",
+"start": 206.51,
+"end": 206.75
+},
+{
+"line": "1.32",
+"i": 16,
+"word": "thousand,",
+"start": 206.75,
+"end": 207.06
+},
+{
+"line": "1.32",
+"i": 17,
+"word": "four",
+"start": 207.34,
+"end": 207.76
+},
+{
+"line": "1.32",
+"i": 18,
+"word": "hundred",
+"start": 207.76,
+"end": 208.42
+},
+{
+"line": "1.32",
+"i": 19,
+"word": "and",
+"start": 208.42,
+"end": 208.77
+},
+{
+"line": "1.32",
+"i": 20,
+"word": "eighty",
+"start": 208.77,
+"end": 209.34
+},
+{
+"line": "1.32",
+"i": 21,
+"word": "one.",
+"start": 209.34,
+"end": 209.69
+},
+{
+"line": "1.32",
+"i": 22,
+"word": "You",
+"start": 210.06,
+"end": 210.28
+},
+{
+"line": "1.32",
+"i": 23,
+"word": "paid",
+"start": 210.28,
+"end": 210.56
+},
+{
+"line": "1.32",
+"i": 24,
+"word": "money,",
+"start": 210.56,
+"end": 210.88
+},
+{
+"line": "1.32",
+"i": 25,
+"word": "and",
+"start": 211.1,
+"end": 211.31
+},
+{
+"line": "1.32",
+"i": 26,
+"word": "still",
+"start": 211.31,
+"end": 211.61
+},
+{
+"line": "1.32",
+"i": 27,
+"word": "your",
+"start": 211.61,
+"end": 211.86
+},
+{
+"line": "1.32",
+"i": 28,
+"word": "loan",
+"start": 211.86,
+"end": 212.11
+},
+{
+"line": "1.32",
+"i": 29,
+"word": "went",
+"start": 212.11,
+"end": 212.36
+},
+{
+"line": "1.32",
+"i": 30,
+"word": "up.",
+"start": 212.36,
+"end": 212.52
+},
+{
+"line": "1.33",
+"i": 0,
+"word": "This",
+"start": 212.84,
+"end": 213.16
+},
+{
+"line": "1.33",
+"i": 1,
+"word": "is",
+"start": 213.16,
+"end": 213.37
+},
+{
+"line": "1.33",
+"i": 2,
+"word": "our",
+"start": 213.37,
+"end": 213.63
+},
+{
+"line": "1.33",
+"i": 3,
+"word": "own",
+"start": 213.63,
+"end": 213.9
+},
+{
+"line": "1.33",
+"i": 4,
+"word": "maths.",
+"start": 213.9,
+"end": 214.28
+},
+{
+"line": "1.33",
+"i": 5,
+"word": "But",
+"start": 214.59,
+"end": 214.85
+},
+{
+"line": "1.33",
+"i": 6,
+"word": "we",
+"start": 214.85,
+"end": 215.04
+},
+{
+"line": "1.33",
+"i": 7,
+"word": "used",
+"start": 215.04,
+"end": 215.35
+},
+{
+"line": "1.33",
+"i": 8,
+"word": "the",
+"start": 215.35,
+"end": 215.6
+},
+{
+"line": "1.33",
+"i": 9,
+"word": "same",
+"start": 215.6,
+"end": 215.91
+},
+{
+"line": "1.33",
+"i": 10,
+"word": "method",
+"start": 215.91,
+"end": 216.33
+},
+{
+"line": "1.33",
+"i": 11,
+"word": "ICICI",
+"start": 216.33,
+"end": 216.69
+},
+{
+"line": "1.33",
+"i": 12,
+"word": "shows",
+"start": 216.69,
+"end": 217.06
+},
+{
+"line": "1.33",
+"i": 13,
+"word": "on",
+"start": 217.06,
+"end": 217.25
+},
+{
+"line": "1.33",
+"i": 14,
+"word": "its",
+"start": 217.25,
+"end": 217.5
+},
+{
+"line": "1.33",
+"i": 15,
+"word": "website.",
+"start": 217.5,
+"end": 217.98
+},
+{
+"line": "1.34",
+"i": 0,
+"word": "The",
+"start": 218.44,
+"end": 218.65
+},
+{
+"line": "1.34",
+"i": 1,
+"word": "same",
+"start": 218.65,
+"end": 218.92
+},
+{
+"line": "1.34",
+"i": 2,
+"word": "thing",
+"start": 218.92,
+"end": 219.22
+},
+{
+"line": "1.34",
+"i": 3,
+"word": "happened",
+"start": 219.22,
+"end": 219.68
+},
+{
+"line": "1.34",
+"i": 4,
+"word": "to",
+"start": 219.68,
+"end": 219.84
+},
+{
+"line": "1.34",
+"i": 5,
+"word": "the",
+"start": 219.84,
+"end": 220.06
+},
+{
+"line": "1.34",
+"i": 6,
+"word": "ICICI",
+"start": 220.06,
+"end": 220.37
+},
+{
+"line": "1.34",
+"i": 7,
+"word": "customer",
+"start": 220.37,
+"end": 220.82
+},
+{
+"line": "1.34",
+"i": 8,
+"word": "we",
+"start": 220.82,
+"end": 220.98
+},
+{
+"line": "1.34",
+"i": 9,
+"word": "saw",
+"start": 220.98,
+"end": 221.2
+},
+{
+"line": "1.34",
+"i": 10,
+"word": "at",
+"start": 221.2,
+"end": 221.37
+},
+{
+"line": "1.34",
+"i": 11,
+"word": "the",
+"start": 221.37,
+"end": 221.58
+},
+{
+"line": "1.34",
+"i": 12,
+"word": "start.",
+"start": 221.58,
+"end": 221.89
+},
+{
+"line": "1.34",
+"i": 13,
+"word": "Interest",
+"start": 222.3,
+"end": 222.75
+},
+{
+"line": "1.34",
+"i": 14,
+"word": "on",
+"start": 222.75,
+"end": 222.91
+},
+{
+"line": "1.34",
+"i": 15,
+"word": "the",
+"start": 222.91,
+"end": 223.13
+},
+{
+"line": "1.34",
+"i": 16,
+"word": "full",
+"start": 223.13,
+"end": 223.39
+},
+{
+"line": "1.34",
+"i": 17,
+"word": "bill",
+"start": 223.39,
+"end": 223.65
+},
+{
+"line": "1.34",
+"i": 18,
+"word": "till",
+"start": 223.65,
+"end": 223.91
+},
+{
+"line": "1.34",
+"i": 19,
+"word": "the",
+"start": 223.91,
+"end": 224.12
+},
+{
+"line": "1.34",
+"i": 20,
+"word": "day",
+"start": 224.12,
+"end": 224.33
+},
+{
+"line": "1.34",
+"i": 21,
+"word": "of",
+"start": 224.33,
+"end": 224.5
+},
+{
+"line": "1.34",
+"i": 22,
+"word": "payment.",
+"start": 224.5,
+"end": 224.9
+},
+{
+"line": "1.34",
+"i": 23,
+"word": "Then",
+"start": 225.23,
+"end": 225.27
+},
+{
+"line": "1.34",
+"i": 24,
+"word": "no",
+"start": 225.27,
+"end": 225.29
+},
+{
+"line": "1.34",
+"i": 25,
+"word": "interest",
+"start": 225.29,
+"end": 225.35
+},
+{
+"line": "1.34",
+"i": 26,
+"word": "free",
+"start": 225.35,
+"end": 225.38
+},
+{
+"line": "1.34",
+"i": 27,
+"word": "period",
+"start": 225.38,
+"end": 225.43
+},
+{
+"line": "1.34",
+"i": 28,
+"word": "for",
+"start": 225.43,
+"end": 225.46
+},
+{
+"line": "1.34",
+"i": 29,
+"word": "new",
+"start": 225.46,
+"end": 225.49
+},
+{
+"line": "1.34",
+"i": 30,
+"word": "shopping.",
+"start": 225.49,
+"end": 225.55
+},
+{
+"line": "1.34",
+"i": 31,
+"word": "That",
+"start": 225.73,
+"end": 226.02
+},
+{
+"line": "1.34",
+"i": 32,
+"word": "is",
+"start": 226.02,
+"end": 226.21
+},
+{
+"line": "1.34",
+"i": 33,
+"word": "how",
+"start": 226.21,
+"end": 226.46
+},
+{
+"line": "1.34",
+"i": 34,
+"word": "it",
+"start": 226.46,
+"end": 226.65
+},
+{
+"line": "1.34",
+"i": 35,
+"word": "became",
+"start": 226.65,
+"end": 227.05
+},
+{
+"line": "1.34",
+"i": 36,
+"word": "four",
+"start": 227.05,
+"end": 227.35
+},
+{
+"line": "1.34",
+"i": 37,
+"word": "thousand,",
+"start": 227.35,
+"end": 227.87
+},
+{
+"line": "1.34",
+"i": 38,
+"word": "three",
+"start": 228.21,
+"end": 228.89
+},
+{
+"line": "1.34",
+"i": 39,
+"word": "hundred",
+"start": 228.89,
+"end": 229.77
+},
+{
+"line": "1.34",
+"i": 40,
+"word": "and",
+"start": 229.77,
+"end": 230.24
+},
+{
+"line": "1.34",
+"i": 41,
+"word": "seventeen.",
+"start": 230.24,
+"end": 231.34
+},
+{
+"line": "1.35",
+"i": 0,
+"word": "Rule",
+"start": 231.81,
+"end": 232.06
+},
+{
+"line": "1.35",
+"i": 1,
+"word": "number",
+"start": 232.06,
+"end": 232.4
+},
+{
+"line": "1.35",
+"i": 2,
+"word": "four.",
+"start": 232.4,
+"end": 232.65
+},
+{
+"line": "1.35",
+"i": 3,
+"word": "Say",
+"start": 233.04,
+"end": 233.27
+},
+{
+"line": "1.35",
+"i": 4,
+"word": "on",
+"start": 233.27,
+"end": 233.46
+},
+{
+"line": "1.35",
+"i": 5,
+"word": "November",
+"start": 233.46,
+"end": 233.95
+},
+{
+"line": "1.35",
+"i": 6,
+"word": "fifteenth,",
+"start": 233.95,
+"end": 234.51
+},
+{
+"line": "1.35",
+"i": 7,
+"word": "you",
+"start": 234.51,
+"end": 234.74
+},
+{
+"line": "1.35",
+"i": 8,
+"word": "fill",
+"start": 234.74,
+"end": 235.03
+},
+{
+"line": "1.35",
+"i": 9,
+"word": "petrol",
+"start": 235.03,
+"end": 235.43
+},
+{
+"line": "1.35",
+"i": 10,
+"word": "with",
+"start": 235.43,
+"end": 235.71
+},
+{
+"line": "1.35",
+"i": 11,
+"word": "the",
+"start": 235.71,
+"end": 235.95
+},
+{
+"line": "1.35",
+"i": 12,
+"word": "same",
+"start": 235.95,
+"end": 236.24
+},
+{
+"line": "1.35",
+"i": 13,
+"word": "card.",
+"start": 236.24,
+"end": 236.53
+},
+{
+"line": "1.35",
+"i": 14,
+"word": "Will",
+"start": 236.88,
+"end": 237.08
+},
+{
+"line": "1.35",
+"i": 15,
+"word": "you",
+"start": 237.08,
+"end": 237.24
+},
+{
+"line": "1.35",
+"i": 16,
+"word": "get",
+"start": 237.24,
+"end": 237.4
+},
+{
+"line": "1.35",
+"i": 17,
+"word": "an",
+"start": 237.4,
+"end": 237.53
+},
+{
+"line": "1.35",
+"i": 18,
+"word": "interest",
+"start": 237.53,
+"end": 237.87
+},
+{
+"line": "1.35",
+"i": 19,
+"word": "free",
+"start": 237.87,
+"end": 238.07
+},
+{
+"line": "1.35",
+"i": 20,
+"word": "period",
+"start": 238.07,
+"end": 238.34
+},
+{
+"line": "1.35",
+"i": 21,
+"word": "for",
+"start": 238.34,
+"end": 238.5
+},
+{
+"line": "1.35",
+"i": 22,
+"word": "that?",
+"start": 238.5,
+"end": 238.7
+},
+{
+"line": "1.36",
+"i": 0,
+"word": "No.",
+"start": 239.12,
+"end": 239.44
+},
+{
+"line": "1.36",
+"i": 1,
+"word": "Till",
+"start": 239.81,
+"end": 240.09
+},
+{
+"line": "1.36",
+"i": 2,
+"word": "the",
+"start": 240.09,
+"end": 240.33
+},
+{
+"line": "1.36",
+"i": 3,
+"word": "old",
+"start": 240.33,
+"end": 240.56
+},
+{
+"line": "1.36",
+"i": 4,
+"word": "bill",
+"start": 240.56,
+"end": 240.84
+},
+{
+"line": "1.36",
+"i": 5,
+"word": "is",
+"start": 240.84,
+"end": 241.02
+},
+{
+"line": "1.36",
+"i": 6,
+"word": "fully",
+"start": 241.02,
+"end": 241.36
+},
+{
+"line": "1.36",
+"i": 7,
+"word": "paid,",
+"start": 241.36,
+"end": 241.64
+},
+{
+"line": "1.36",
+"i": 8,
+"word": "every",
+"start": 241.89,
+"end": 242.22
+},
+{
+"line": "1.36",
+"i": 9,
+"word": "new",
+"start": 242.22,
+"end": 242.46
+},
+{
+"line": "1.36",
+"i": 10,
+"word": "swipe",
+"start": 242.46,
+"end": 242.8
+},
+{
+"line": "1.36",
+"i": 11,
+"word": "gets",
+"start": 242.8,
+"end": 243.08
+},
+{
+"line": "1.36",
+"i": 12,
+"word": "interest",
+"start": 243.08,
+"end": 243.58
+},
+{
+"line": "1.36",
+"i": 13,
+"word": "from",
+"start": 243.58,
+"end": 243.86
+},
+{
+"line": "1.36",
+"i": 14,
+"word": "that",
+"start": 243.86,
+"end": 244.15
+},
+{
+"line": "1.36",
+"i": 15,
+"word": "same",
+"start": 244.15,
+"end": 244.44
+},
+{
+"line": "1.36",
+"i": 16,
+"word": "day.",
+"start": 244.44,
+"end": 244.67
+},
+{
+"line": "1.37",
+"i": 0,
+"word": "So",
+"start": 244.97,
+"end": 245.13
+},
+{
+"line": "1.37",
+"i": 1,
+"word": "from",
+"start": 245.13,
+"end": 245.39
+},
+{
+"line": "1.37",
+"i": 2,
+"word": "the",
+"start": 245.39,
+"end": 245.6
+},
+{
+"line": "1.37",
+"i": 3,
+"word": "day",
+"start": 245.6,
+"end": 245.81
+},
+{
+"line": "1.37",
+"i": 4,
+"word": "you",
+"start": 245.81,
+"end": 246.02
+},
+{
+"line": "1.37",
+"i": 5,
+"word": "paid",
+"start": 246.02,
+"end": 246.28
+},
+{
+"line": "1.37",
+"i": 6,
+"word": "only",
+"start": 246.28,
+"end": 246.53
+},
+{
+"line": "1.37",
+"i": 7,
+"word": "the",
+"start": 246.53,
+"end": 246.74
+},
+{
+"line": "1.37",
+"i": 8,
+"word": "minimum,",
+"start": 246.74,
+"end": 247.14
+},
+{
+"line": "1.37",
+"i": 9,
+"word": "your",
+"start": 247.39,
+"end": 247.67
+},
+{
+"line": "1.37",
+"i": 10,
+"word": "card",
+"start": 247.67,
+"end": 247.95
+},
+{
+"line": "1.37",
+"i": 11,
+"word": "is",
+"start": 247.95,
+"end": 248.13
+},
+{
+"line": "1.37",
+"i": 12,
+"word": "not",
+"start": 248.13,
+"end": 248.36
+},
+{
+"line": "1.37",
+"i": 13,
+"word": "free",
+"start": 248.36,
+"end": 248.64
+},
+{
+"line": "1.37",
+"i": 14,
+"word": "any",
+"start": 248.64,
+"end": 248.87
+},
+{
+"line": "1.37",
+"i": 15,
+"word": "more.",
+"start": 248.87,
+"end": 249.15
+},
+{
+"line": "1.37",
+"i": 16,
+"word": "It",
+"start": 249.5,
+"end": 249.69
+},
+{
+"line": "1.37",
+"i": 17,
+"word": "has",
+"start": 249.69,
+"end": 249.94
+},
+{
+"line": "1.37",
+"i": 18,
+"word": "become",
+"start": 249.94,
+"end": 250.36
+},
+{
+"line": "1.37",
+"i": 19,
+"word": "a",
+"start": 250.36,
+"end": 250.5
+},
+{
+"line": "1.37",
+"i": 20,
+"word": "loan",
+"start": 250.5,
+"end": 250.81
+},
+{
+"line": "1.37",
+"i": 21,
+"word": "at",
+"start": 250.81,
+"end": 251.0
+},
+{
+"line": "1.37",
+"i": 22,
+"word": "forty",
+"start": 251.0,
+"end": 251.37
+},
+{
+"line": "1.37",
+"i": 23,
+"word": "five",
+"start": 251.37,
+"end": 251.67
+},
+{
+"line": "1.37",
+"i": 24,
+"word": "percent",
+"start": 251.67,
+"end": 252.15
+},
+{
+"line": "1.37",
+"i": 25,
+"word": "interest.",
+"start": 252.15,
+"end": 252.68
+},
+{
+"line": "2.01",
+"i": 0,
+"word": "Now,",
+"start": 253.5,
+"end": 253.86
+},
+{
+"line": "2.01",
+"i": 1,
+"word": "what",
+"start": 254.01,
+"end": 254.28
+},
+{
+"line": "2.01",
+"i": 2,
+"word": "if",
+"start": 254.28,
+"end": 254.46
+},
+{
+"line": "2.01",
+"i": 3,
+"word": "you",
+"start": 254.46,
+"end": 254.69
+},
+{
+"line": "2.01",
+"i": 4,
+"word": "pay",
+"start": 254.69,
+"end": 254.91
+},
+{
+"line": "2.01",
+"i": 5,
+"word": "only",
+"start": 254.91,
+"end": 255.19
+},
+{
+"line": "2.01",
+"i": 6,
+"word": "the",
+"start": 255.19,
+"end": 255.42
+},
+{
+"line": "2.01",
+"i": 7,
+"word": "minimum",
+"start": 255.42,
+"end": 255.85
+},
+{
+"line": "2.01",
+"i": 8,
+"word": "every",
+"start": 255.85,
+"end": 256.17
+},
+{
+"line": "2.01",
+"i": 9,
+"word": "month?",
+"start": 256.17,
+"end": 256.5
+},
+{
+"line": "2.02",
+"i": 0,
+"word": "RBI",
+"start": 256.98,
+"end": 257.23
+},
+{
+"line": "2.02",
+"i": 1,
+"word": "rules",
+"start": 257.23,
+"end": 257.58
+},
+{
+"line": "2.02",
+"i": 2,
+"word": "say",
+"start": 257.58,
+"end": 257.83
+},
+{
+"line": "2.02",
+"i": 3,
+"word": "your",
+"start": 257.83,
+"end": 258.13
+},
+{
+"line": "2.02",
+"i": 4,
+"word": "loan",
+"start": 258.13,
+"end": 258.43
+},
+{
+"line": "2.02",
+"i": 5,
+"word": "should",
+"start": 258.43,
+"end": 258.84
+},
+{
+"line": "2.02",
+"i": 6,
+"word": "not",
+"start": 258.84,
+"end": 259.09
+},
+{
+"line": "2.02",
+"i": 7,
+"word": "grow",
+"start": 259.09,
+"end": 259.39
+},
+{
+"line": "2.02",
+"i": 8,
+"word": "if",
+"start": 259.39,
+"end": 259.58
+},
+{
+"line": "2.02",
+"i": 9,
+"word": "you",
+"start": 259.58,
+"end": 259.83
+},
+{
+"line": "2.02",
+"i": 10,
+"word": "pay",
+"start": 259.83,
+"end": 260.08
+},
+{
+"line": "2.02",
+"i": 11,
+"word": "the",
+"start": 260.08,
+"end": 260.32
+},
+{
+"line": "2.02",
+"i": 12,
+"word": "minimum.",
+"start": 260.32,
+"end": 260.79
+},
+{
+"line": "2.02",
+"i": 13,
+"word": "So",
+"start": 261.14,
+"end": 261.32
+},
+{
+"line": "2.02",
+"i": 14,
+"word": "the",
+"start": 261.32,
+"end": 261.56
+},
+{
+"line": "2.02",
+"i": 15,
+"word": "loan",
+"start": 261.56,
+"end": 261.85
+},
+{
+"line": "2.02",
+"i": 16,
+"word": "does",
+"start": 261.85,
+"end": 262.14
+},
+{
+"line": "2.02",
+"i": 17,
+"word": "come",
+"start": 262.14,
+"end": 262.42
+},
+{
+"line": "2.02",
+"i": 18,
+"word": "down.",
+"start": 262.42,
+"end": 262.71
+},
+{
+"line": "2.02",
+"i": 19,
+"word": "But",
+"start": 263.16,
+"end": 263.49
+},
+{
+"line": "2.02",
+"i": 20,
+"word": "very,",
+"start": 263.49,
+"end": 263.91
+},
+{
+"line": "2.02",
+"i": 21,
+"word": "very",
+"start": 263.91,
+"end": 264.32
+},
+{
+"line": "2.02",
+"i": 22,
+"word": "slowly.",
+"start": 264.32,
+"end": 264.88
+},
+{
+"line": "2.03",
+"i": 0,
+"word": "In",
+"start": 265.32,
+"end": 265.46
+},
+{
+"line": "2.03",
+"i": 1,
+"word": "the",
+"start": 265.46,
+"end": 265.64
+},
+{
+"line": "2.03",
+"i": 2,
+"word": "first",
+"start": 265.64,
+"end": 265.89
+},
+{
+"line": "2.03",
+"i": 3,
+"word": "year,",
+"start": 265.89,
+"end": 266.11
+},
+{
+"line": "2.03",
+"i": 4,
+"word": "out",
+"start": 266.27,
+"end": 266.49
+},
+{
+"line": "2.03",
+"i": 5,
+"word": "of",
+"start": 266.49,
+"end": 266.66
+},
+{
+"line": "2.03",
+"i": 6,
+"word": "every",
+"start": 266.66,
+"end": 266.98
+},
+{
+"line": "2.03",
+"i": 7,
+"word": "hundred",
+"start": 266.98,
+"end": 267.4
+},
+{
+"line": "2.03",
+"i": 8,
+"word": "rupees",
+"start": 267.4,
+"end": 267.78
+},
+{
+"line": "2.03",
+"i": 9,
+"word": "you",
+"start": 267.78,
+"end": 268.0
+},
+{
+"line": "2.03",
+"i": 10,
+"word": "pay,",
+"start": 268.0,
+"end": 268.22
+},
+{
+"line": "2.03",
+"i": 11,
+"word": "about",
+"start": 268.54,
+"end": 268.92
+},
+{
+"line": "2.03",
+"i": 12,
+"word": "seventy",
+"start": 268.92,
+"end": 269.42
+},
+{
+"line": "2.03",
+"i": 13,
+"word": "four",
+"start": 269.42,
+"end": 269.74
+},
+{
+"line": "2.03",
+"i": 14,
+"word": "rupees",
+"start": 269.74,
+"end": 270.18
+},
+{
+"line": "2.03",
+"i": 15,
+"word": "go",
+"start": 270.18,
+"end": 270.38
+},
+{
+"line": "2.03",
+"i": 16,
+"word": "to",
+"start": 270.38,
+"end": 270.58
+},
+{
+"line": "2.03",
+"i": 17,
+"word": "interest",
+"start": 270.58,
+"end": 271.14
+},
+{
+"line": "2.03",
+"i": 18,
+"word": "and",
+"start": 271.14,
+"end": 271.4
+},
+{
+"line": "2.03",
+"i": 19,
+"word": "GST.",
+"start": 271.4,
+"end": 271.66
+},
+{
+"line": "2.03",
+"i": 20,
+"word": "Only",
+"start": 272.17,
+"end": 272.46
+},
+{
+"line": "2.03",
+"i": 21,
+"word": "twenty",
+"start": 272.46,
+"end": 272.84
+},
+{
+"line": "2.03",
+"i": 22,
+"word": "six",
+"start": 272.84,
+"end": 273.08
+},
+{
+"line": "2.03",
+"i": 23,
+"word": "rupees",
+"start": 273.08,
+"end": 273.46
+},
+{
+"line": "2.03",
+"i": 24,
+"word": "cut",
+"start": 273.46,
+"end": 273.69
+},
+{
+"line": "2.03",
+"i": 25,
+"word": "your",
+"start": 273.69,
+"end": 273.98
+},
+{
+"line": "2.03",
+"i": 26,
+"word": "loan.",
+"start": 273.98,
+"end": 274.26
+},
+{
+"line": "2.04",
+"i": 0,
+"word": "Start",
+"start": 274.67,
+"end": 274.77
+},
+{
+"line": "2.04",
+"i": 1,
+"word": "with",
+"start": 274.77,
+"end": 274.86
+},
+{
+"line": "2.04",
+"i": 2,
+"word": "thirty",
+"start": 274.86,
+"end": 274.98
+},
+{
+"line": "2.04",
+"i": 3,
+"word": "thousand.",
+"start": 274.98,
+"end": 275.13
+},
+{
+"line": "2.04",
+"i": 4,
+"word": "After",
+"start": 275.24,
+"end": 275.5
+},
+{
+"line": "2.04",
+"i": 5,
+"word": "one",
+"start": 275.5,
+"end": 275.68
+},
+{
+"line": "2.04",
+"i": 6,
+"word": "year,",
+"start": 275.68,
+"end": 275.9
+},
+{
+"line": "2.04",
+"i": 7,
+"word": "you",
+"start": 276.31,
+"end": 276.49
+},
+{
+"line": "2.04",
+"i": 8,
+"word": "would",
+"start": 276.49,
+"end": 276.76
+},
+{
+"line": "2.04",
+"i": 9,
+"word": "have",
+"start": 276.76,
+"end": 276.99
+},
+{
+"line": "2.04",
+"i": 10,
+"word": "paid",
+"start": 276.99,
+"end": 277.22
+},
+{
+"line": "2.04",
+"i": 11,
+"word": "about",
+"start": 277.22,
+"end": 277.48
+},
+{
+"line": "2.04",
+"i": 12,
+"word": "twenty",
+"start": 277.48,
+"end": 277.8
+},
+{
+"line": "2.04",
+"i": 13,
+"word": "thousand.",
+"start": 277.8,
+"end": 278.19
+},
+{
+"line": "2.04",
+"i": 14,
+"word": "But",
+"start": 278.33,
+"end": 278.55
+},
+{
+"line": "2.04",
+"i": 15,
+"word": "about",
+"start": 278.55,
+"end": 278.87
+},
+{
+"line": "2.04",
+"i": 16,
+"word": "twenty",
+"start": 278.87,
+"end": 279.23
+},
+{
+"line": "2.04",
+"i": 17,
+"word": "four",
+"start": 279.23,
+"end": 279.5
+},
+{
+"line": "2.04",
+"i": 18,
+"word": "thousand,",
+"start": 279.5,
+"end": 279.96
+},
+{
+"line": "2.04",
+"i": 19,
+"word": "eight",
+"start": 280.09,
+"end": 280.63
+},
+{
+"line": "2.04",
+"i": 20,
+"word": "hundred",
+"start": 280.63,
+"end": 281.33
+},
+{
+"line": "2.04",
+"i": 21,
+"word": "is",
+"start": 281.33,
+"end": 281.62
+},
+{
+"line": "2.04",
+"i": 22,
+"word": "still",
+"start": 281.62,
+"end": 282.15
+},
+{
+"line": "2.04",
+"i": 23,
+"word": "pending.",
+"start": 282.15,
+"end": 282.85
+},
+{
+"line": "2.05",
+"i": 0,
+"word": "After",
+"start": 283.24,
+"end": 283.57
+},
+{
+"line": "2.05",
+"i": 1,
+"word": "five",
+"start": 283.57,
+"end": 283.84
+},
+{
+"line": "2.05",
+"i": 2,
+"word": "years?",
+"start": 283.84,
+"end": 284.17
+},
+{
+"line": "2.05",
+"i": 3,
+"word": "You",
+"start": 284.46,
+"end": 284.66
+},
+{
+"line": "2.05",
+"i": 4,
+"word": "have",
+"start": 284.66,
+"end": 284.9
+},
+{
+"line": "2.05",
+"i": 5,
+"word": "paid",
+"start": 284.9,
+"end": 285.14
+},
+{
+"line": "2.05",
+"i": 6,
+"word": "about",
+"start": 285.14,
+"end": 285.43
+},
+{
+"line": "2.05",
+"i": 7,
+"word": "seventy",
+"start": 285.43,
+"end": 285.8
+},
+{
+"line": "2.05",
+"i": 8,
+"word": "thousand.",
+"start": 285.8,
+"end": 286.21
+},
+{
+"line": "2.05",
+"i": 9,
+"word": "And",
+"start": 286.46,
+"end": 286.69
+},
+{
+"line": "2.05",
+"i": 10,
+"word": "still",
+"start": 286.69,
+"end": 287.03
+},
+{
+"line": "2.05",
+"i": 11,
+"word": "about",
+"start": 287.03,
+"end": 287.36
+},
+{
+"line": "2.05",
+"i": 12,
+"word": "thirteen",
+"start": 287.36,
+"end": 287.84
+},
+{
+"line": "2.05",
+"i": 13,
+"word": "thousand",
+"start": 287.84,
+"end": 288.33
+},
+{
+"line": "2.05",
+"i": 14,
+"word": "is",
+"start": 288.33,
+"end": 288.51
+},
+{
+"line": "2.05",
+"i": 15,
+"word": "pending.",
+"start": 288.51,
+"end": 288.94
+},
+{
+"line": "2.06",
+"i": 0,
+"word": "To",
+"start": 289.33,
+"end": 289.51
+},
+{
+"line": "2.06",
+"i": 1,
+"word": "fully",
+"start": 289.51,
+"end": 289.86
+},
+{
+"line": "2.06",
+"i": 2,
+"word": "close",
+"start": 289.86,
+"end": 290.2
+},
+{
+"line": "2.06",
+"i": 3,
+"word": "it,",
+"start": 290.2,
+"end": 290.38
+},
+{
+"line": "2.06",
+"i": 4,
+"word": "it",
+"start": 290.52,
+"end": 290.71
+},
+{
+"line": "2.06",
+"i": 5,
+"word": "takes",
+"start": 290.71,
+"end": 291.05
+},
+{
+"line": "2.06",
+"i": 6,
+"word": "more",
+"start": 291.05,
+"end": 291.34
+},
+{
+"line": "2.06",
+"i": 7,
+"word": "than",
+"start": 291.34,
+"end": 291.63
+},
+{
+"line": "2.06",
+"i": 8,
+"word": "ten",
+"start": 291.63,
+"end": 291.87
+},
+{
+"line": "2.06",
+"i": 9,
+"word": "years.",
+"start": 291.87,
+"end": 292.21
+},
+{
+"line": "2.07",
+"i": 0,
+"word": "That",
+"start": 292.55,
+"end": 292.81
+},
+{
+"line": "2.07",
+"i": 1,
+"word": "is",
+"start": 292.81,
+"end": 292.98
+},
+{
+"line": "2.07",
+"i": 2,
+"word": "why",
+"start": 292.98,
+"end": 293.19
+},
+{
+"line": "2.07",
+"i": 3,
+"word": "RBI",
+"start": 293.19,
+"end": 293.4
+},
+{
+"line": "2.07",
+"i": 4,
+"word": "makes",
+"start": 293.4,
+"end": 293.71
+},
+{
+"line": "2.07",
+"i": 5,
+"word": "banks",
+"start": 293.71,
+"end": 294.02
+},
+{
+"line": "2.07",
+"i": 6,
+"word": "print",
+"start": 294.02,
+"end": 294.32
+},
+{
+"line": "2.07",
+"i": 7,
+"word": "a",
+"start": 294.32,
+"end": 294.44
+},
+{
+"line": "2.07",
+"i": 8,
+"word": "warning",
+"start": 294.44,
+"end": 294.84
+},
+{
+"line": "2.07",
+"i": 9,
+"word": "on",
+"start": 294.84,
+"end": 295.01
+},
+{
+"line": "2.07",
+"i": 10,
+"word": "every",
+"start": 295.01,
+"end": 295.32
+},
+{
+"line": "2.07",
+"i": 11,
+"word": "bill.",
+"start": 295.32,
+"end": 295.58
+},
+{
+"line": "2.07",
+"i": 12,
+"word": "If",
+"start": 295.73,
+"end": 295.8
+},
+{
+"line": "2.07",
+"i": 13,
+"word": "you",
+"start": 295.8,
+"end": 295.88
+},
+{
+"line": "2.07",
+"i": 14,
+"word": "pay",
+"start": 295.88,
+"end": 295.97
+},
+{
+"line": "2.07",
+"i": 15,
+"word": "only",
+"start": 295.97,
+"end": 296.07
+},
+{
+"line": "2.07",
+"i": 16,
+"word": "the",
+"start": 296.07,
+"end": 296.16
+},
+{
+"line": "2.07",
+"i": 17,
+"word": "minimum,",
+"start": 296.16,
+"end": 296.32
+},
+{
+"line": "2.07",
+"i": 18,
+"word": "you",
+"start": 296.68,
+"end": 297.16
+},
+{
+"line": "2.07",
+"i": 19,
+"word": "will",
+"start": 297.16,
+"end": 297.75
+},
+{
+"line": "2.07",
+"i": 20,
+"word": "keep",
+"start": 297.75,
+"end": 298.33
+},
+{
+"line": "2.07",
+"i": 21,
+"word": "paying",
+"start": 298.33,
+"end": 299.13
+},
+{
+"line": "2.07",
+"i": 22,
+"word": "for",
+"start": 299.13,
+"end": 299.62
+},
+{
+"line": "2.07",
+"i": 23,
+"word": "years.",
+"start": 299.62,
+"end": 300.31
+},
+{
+"line": "2.08",
+"i": 0,
+"word": "India",
+"start": 300.75,
+"end": 301.12
+},
+{
+"line": "2.08",
+"i": 1,
+"word": "now",
+"start": 301.12,
+"end": 301.38
+},
+{
+"line": "2.08",
+"i": 2,
+"word": "has",
+"start": 301.38,
+"end": 301.64
+},
+{
+"line": "2.08",
+"i": 3,
+"word": "about",
+"start": 301.64,
+"end": 302.01
+},
+{
+"line": "2.08",
+"i": 4,
+"word": "eleven",
+"start": 302.01,
+"end": 302.44
+},
+{
+"line": "2.08",
+"i": 5,
+"word": "point",
+"start": 302.44,
+"end": 302.81
+},
+{
+"line": "2.08",
+"i": 6,
+"word": "eight",
+"start": 302.81,
+"end": 303.19
+},
+{
+"line": "2.08",
+"i": 7,
+"word": "six",
+"start": 303.19,
+"end": 303.44
+},
+{
+"line": "2.08",
+"i": 8,
+"word": "crore",
+"start": 303.44,
+"end": 303.82
+},
+{
+"line": "2.08",
+"i": 9,
+"word": "credit",
+"start": 303.82,
+"end": 304.25
+},
+{
+"line": "2.08",
+"i": 10,
+"word": "cards.",
+"start": 304.25,
+"end": 304.62
+},
+{
+"line": "2.09",
+"i": 0,
+"word": "As",
+"start": 304.96,
+"end": 305.18
+},
+{
+"line": "2.09",
+"i": 1,
+"word": "per",
+"start": 305.18,
+"end": 305.46
+},
+{
+"line": "2.09",
+"i": 2,
+"word": "CRIF",
+"start": 305.46,
+"end": 305.81
+},
+{
+"line": "2.09",
+"i": 3,
+"word": "High",
+"start": 305.81,
+"end": 306.16
+},
+{
+"line": "2.09",
+"i": 4,
+"word": "Mark,",
+"start": 306.16,
+"end": 306.5
+},
+{
+"line": "2.09",
+"i": 5,
+"word": "credit",
+"start": 306.77,
+"end": 307.03
+},
+{
+"line": "2.09",
+"i": 6,
+"word": "card",
+"start": 307.03,
+"end": 307.22
+},
+{
+"line": "2.09",
+"i": 7,
+"word": "bills",
+"start": 307.22,
+"end": 307.45
+},
+{
+"line": "2.09",
+"i": 8,
+"word": "not",
+"start": 307.45,
+"end": 307.6
+},
+{
+"line": "2.09",
+"i": 9,
+"word": "paid",
+"start": 307.6,
+"end": 307.79
+},
+{
+"line": "2.09",
+"i": 10,
+"word": "for",
+"start": 307.79,
+"end": 307.95
+},
+{
+"line": "2.09",
+"i": 11,
+"word": "three",
+"start": 307.95,
+"end": 308.17
+},
+{
+"line": "2.09",
+"i": 12,
+"word": "months",
+"start": 308.17,
+"end": 308.43
+},
+{
+"line": "2.09",
+"i": 13,
+"word": "to",
+"start": 308.43,
+"end": 308.55
+},
+{
+"line": "2.09",
+"i": 14,
+"word": "one",
+"start": 308.55,
+"end": 308.71
+},
+{
+"line": "2.09",
+"i": 15,
+"word": "year",
+"start": 308.71,
+"end": 308.9
+},
+{
+"line": "2.09",
+"i": 16,
+"word": "were",
+"start": 308.9,
+"end": 309.09
+},
+{
+"line": "2.09",
+"i": 17,
+"word": "thirty",
+"start": 309.09,
+"end": 309.35
+},
+{
+"line": "2.09",
+"i": 18,
+"word": "three",
+"start": 309.35,
+"end": 309.57
+},
+{
+"line": "2.09",
+"i": 19,
+"word": "thousand,",
+"start": 309.57,
+"end": 309.9
+},
+{
+"line": "2.09",
+"i": 20,
+"word": "eight",
+"start": 310.25,
+"end": 310.43
+},
+{
+"line": "2.09",
+"i": 21,
+"word": "hundred",
+"start": 310.43,
+"end": 310.67
+},
+{
+"line": "2.09",
+"i": 22,
+"word": "and",
+"start": 310.67,
+"end": 310.8
+},
+{
+"line": "2.09",
+"i": 23,
+"word": "eighty",
+"start": 310.8,
+"end": 311.01
+},
+{
+"line": "2.09",
+"i": 24,
+"word": "six",
+"start": 311.01,
+"end": 311.13
+},
+{
+"line": "2.09",
+"i": 25,
+"word": "crore",
+"start": 311.13,
+"end": 311.32
+},
+{
+"line": "2.09",
+"i": 26,
+"word": "rupees,",
+"start": 311.32,
+"end": 311.53
+},
+{
+"line": "2.09",
+"i": 27,
+"word": "in",
+"start": 311.65,
+"end": 311.9
+},
+{
+"line": "2.09",
+"i": 28,
+"word": "March",
+"start": 311.9,
+"end": 312.38
+},
+{
+"line": "2.09",
+"i": 29,
+"word": "twenty",
+"start": 312.38,
+"end": 312.92
+},
+{
+"line": "2.09",
+"i": 30,
+"word": "twenty",
+"start": 312.92,
+"end": 313.47
+},
+{
+"line": "2.09",
+"i": 31,
+"word": "five.",
+"start": 313.47,
+"end": 313.87
+},
+{
+"line": "2.09",
+"i": 32,
+"word": "That",
+"start": 314.13,
+"end": 314.56
+},
+{
+"line": "2.09",
+"i": 33,
+"word": "is",
+"start": 314.56,
+"end": 314.83
+},
+{
+"line": "2.09",
+"i": 34,
+"word": "forty",
+"start": 314.83,
+"end": 315.35
+},
+{
+"line": "2.09",
+"i": 35,
+"word": "four",
+"start": 315.35,
+"end": 315.78
+},
+{
+"line": "2.09",
+"i": 36,
+"word": "percent",
+"start": 315.78,
+"end": 316.45
+},
+{
+"line": "2.09",
+"i": 37,
+"word": "more",
+"start": 316.45,
+"end": 316.88
+},
+{
+"line": "2.09",
+"i": 38,
+"word": "than",
+"start": 316.88,
+"end": 317.31
+},
+{
+"line": "2.09",
+"i": 39,
+"word": "the",
+"start": 317.31,
+"end": 317.67
+},
+{
+"line": "2.09",
+"i": 40,
+"word": "year",
+"start": 317.67,
+"end": 318.1
+},
+{
+"line": "2.09",
+"i": 41,
+"word": "before.",
+"start": 318.1,
+"end": 318.69
+},
+{
+"line": "2.10",
+"i": 0,
+"word": "Forty",
+"start": 319.14,
+"end": 319.44
+},
+{
+"line": "2.10",
+"i": 1,
+"word": "five",
+"start": 319.44,
+"end": 319.69
+},
+{
+"line": "2.10",
+"i": 2,
+"word": "percent",
+"start": 319.69,
+"end": 320.07
+},
+{
+"line": "2.10",
+"i": 3,
+"word": "is",
+"start": 320.07,
+"end": 320.23
+},
+{
+"line": "2.10",
+"i": 4,
+"word": "too",
+"start": 320.23,
+"end": 320.44
+},
+{
+"line": "2.10",
+"i": 5,
+"word": "much,",
+"start": 320.44,
+"end": 320.69
+},
+{
+"line": "2.10",
+"i": 6,
+"word": "right?",
+"start": 320.69,
+"end": 320.98
+},
+{
+"line": "2.10",
+"i": 7,
+"word": "But",
+"start": 321.3,
+"end": 321.52
+},
+{
+"line": "2.10",
+"i": 8,
+"word": "in",
+"start": 321.52,
+"end": 321.69
+},
+{
+"line": "2.10",
+"i": 9,
+"word": "December",
+"start": 321.69,
+"end": 322.17
+},
+{
+"line": "2.10",
+"i": 10,
+"word": "twenty",
+"start": 322.17,
+"end": 322.54
+},
+{
+"line": "2.10",
+"i": 11,
+"word": "twenty",
+"start": 322.54,
+"end": 322.91
+},
+{
+"line": "2.10",
+"i": 12,
+"word": "four,",
+"start": 322.91,
+"end": 323.18
+},
+{
+"line": "2.10",
+"i": 13,
+"word": "the",
+"start": 323.38,
+"end": 323.61
+},
+{
+"line": "2.10",
+"i": 14,
+"word": "Supreme",
+"start": 323.61,
+"end": 324.04
+},
+{
+"line": "2.10",
+"i": 15,
+"word": "Court",
+"start": 324.04,
+"end": 324.36
+},
+{
+"line": "2.10",
+"i": 16,
+"word": "cancelled",
+"start": 324.36,
+"end": 324.89
+},
+{
+"line": "2.10",
+"i": 17,
+"word": "an",
+"start": 324.89,
+"end": 325.07
+},
+{
+"line": "2.10",
+"i": 18,
+"word": "old",
+"start": 325.07,
+"end": 325.29
+},
+{
+"line": "2.10",
+"i": 19,
+"word": "order",
+"start": 325.29,
+"end": 325.62
+},
+{
+"line": "2.10",
+"i": 20,
+"word": "that",
+"start": 325.62,
+"end": 325.89
+},
+{
+"line": "2.10",
+"i": 21,
+"word": "had",
+"start": 325.89,
+"end": 326.12
+},
+{
+"line": "2.10",
+"i": 22,
+"word": "put",
+"start": 326.12,
+"end": 326.35
+},
+{
+"line": "2.10",
+"i": 23,
+"word": "a",
+"start": 326.35,
+"end": 326.47
+},
+{
+"line": "2.10",
+"i": 24,
+"word": "thirty",
+"start": 326.47,
+"end": 326.85
+},
+{
+"line": "2.10",
+"i": 25,
+"word": "percent",
+"start": 326.85,
+"end": 327.28
+},
+{
+"line": "2.10",
+"i": 26,
+"word": "limit",
+"start": 327.28,
+"end": 327.6
+},
+{
+"line": "2.10",
+"i": 27,
+"word": "on",
+"start": 327.6,
+"end": 327.78
+},
+{
+"line": "2.10",
+"i": 28,
+"word": "credit",
+"start": 327.78,
+"end": 328.15
+},
+{
+"line": "2.10",
+"i": 29,
+"word": "card",
+"start": 328.15,
+"end": 328.43
+},
+{
+"line": "2.10",
+"i": 30,
+"word": "interest.",
+"start": 328.43,
+"end": 328.91
+},
+{
+"line": "2.10",
+"i": 31,
+"word": "So",
+"start": 329.18,
+"end": 329.38
+},
+{
+"line": "2.10",
+"i": 32,
+"word": "today,",
+"start": 329.38,
+"end": 329.75
+},
+{
+"line": "2.10",
+"i": 33,
+"word": "no",
+"start": 329.95,
+"end": 330.14
+},
+{
+"line": "2.10",
+"i": 34,
+"word": "court",
+"start": 330.14,
+"end": 330.5
+},
+{
+"line": "2.10",
+"i": 35,
+"word": "has",
+"start": 330.5,
+"end": 330.75
+},
+{
+"line": "2.10",
+"i": 36,
+"word": "put",
+"start": 330.75,
+"end": 331.0
+},
+{
+"line": "2.10",
+"i": 37,
+"word": "any",
+"start": 331.0,
+"end": 331.25
+},
+{
+"line": "2.10",
+"i": 38,
+"word": "limit.",
+"start": 331.25,
+"end": 331.61
+},
+{
+"line": "2.11",
+"i": 0,
+"word": "So",
+"start": 332.04,
+"end": 332.22
+},
+{
+"line": "2.11",
+"i": 1,
+"word": "what",
+"start": 332.22,
+"end": 332.51
+},
+{
+"line": "2.11",
+"i": 2,
+"word": "saves",
+"start": 332.51,
+"end": 332.85
+},
+{
+"line": "2.11",
+"i": 3,
+"word": "you",
+"start": 332.85,
+"end": 333.08
+},
+{
+"line": "2.11",
+"i": 4,
+"word": "is",
+"start": 333.08,
+"end": 333.26
+},
+{
+"line": "2.11",
+"i": 5,
+"word": "not",
+"start": 333.26,
+"end": 333.5
+},
+{
+"line": "2.11",
+"i": 6,
+"word": "that",
+"start": 333.5,
+"end": 333.78
+},
+{
+"line": "2.11",
+"i": 7,
+"word": "small",
+"start": 333.78,
+"end": 334.12
+},
+{
+"line": "2.11",
+"i": 8,
+"word": "number.",
+"start": 334.12,
+"end": 334.51
+},
+{
+"line": "2.11",
+"i": 9,
+"word": "It",
+"start": 334.9,
+"end": 335.08
+},
+{
+"line": "2.11",
+"i": 10,
+"word": "is",
+"start": 335.08,
+"end": 335.26
+},
+{
+"line": "2.11",
+"i": 11,
+"word": "knowing",
+"start": 335.26,
+"end": 335.7
+},
+{
+"line": "2.11",
+"i": 12,
+"word": "this",
+"start": 335.7,
+"end": 335.99
+},
+{
+"line": "2.11",
+"i": 13,
+"word": "maths.",
+"start": 335.99,
+"end": 336.33
+},
+{
+"line": "2.12",
+"i": 0,
+"word": "Some",
+"start": 336.69,
+"end": 336.91
+},
+{
+"line": "2.12",
+"i": 1,
+"word": "people",
+"start": 336.91,
+"end": 337.22
+},
+{
+"line": "2.12",
+"i": 2,
+"word": "use",
+"start": 337.22,
+"end": 337.4
+},
+{
+"line": "2.12",
+"i": 3,
+"word": "a",
+"start": 337.4,
+"end": 337.5
+},
+{
+"line": "2.12",
+"i": 4,
+"word": "shortcut.",
+"start": 337.5,
+"end": 337.89
+},
+{
+"line": "2.12",
+"i": 5,
+"word": "They",
+"start": 338.02,
+"end": 338.41
+},
+{
+"line": "2.12",
+"i": 6,
+"word": "call",
+"start": 338.41,
+"end": 338.8
+},
+{
+"line": "2.12",
+"i": 7,
+"word": "it",
+"start": 338.8,
+"end": 339.04
+},
+{
+"line": "2.12",
+"i": 8,
+"word": "card",
+"start": 339.04,
+"end": 339.43
+},
+{
+"line": "2.12",
+"i": 9,
+"word": "rotation.",
+"start": 339.43,
+"end": 340.1
+},
+{
+"line": "2.13",
+"i": 0,
+"word": "Take",
+"start": 340.51,
+"end": 340.74
+},
+{
+"line": "2.13",
+"i": 1,
+"word": "money",
+"start": 340.74,
+"end": 341.02
+},
+{
+"line": "2.13",
+"i": 2,
+"word": "from",
+"start": 341.02,
+"end": 341.26
+},
+{
+"line": "2.13",
+"i": 3,
+"word": "a",
+"start": 341.26,
+"end": 341.36
+},
+{
+"line": "2.13",
+"i": 4,
+"word": "friend",
+"start": 341.36,
+"end": 341.68
+},
+{
+"line": "2.13",
+"i": 5,
+"word": "and",
+"start": 341.68,
+"end": 341.88
+},
+{
+"line": "2.13",
+"i": 6,
+"word": "pay",
+"start": 341.88,
+"end": 342.07
+},
+{
+"line": "2.13",
+"i": 7,
+"word": "the",
+"start": 342.07,
+"end": 342.26
+},
+{
+"line": "2.13",
+"i": 8,
+"word": "full",
+"start": 342.26,
+"end": 342.5
+},
+{
+"line": "2.13",
+"i": 9,
+"word": "bill.",
+"start": 342.5,
+"end": 342.73
+},
+{
+"line": "2.13",
+"i": 10,
+"word": "The",
+"start": 343.06,
+"end": 343.26
+},
+{
+"line": "2.13",
+"i": 11,
+"word": "next",
+"start": 343.26,
+"end": 343.5
+},
+{
+"line": "2.13",
+"i": 12,
+"word": "day,",
+"start": 343.5,
+"end": 343.7
+},
+{
+"line": "2.13",
+"i": 13,
+"word": "take",
+"start": 343.93,
+"end": 344.17
+},
+{
+"line": "2.13",
+"i": 14,
+"word": "the",
+"start": 344.17,
+"end": 344.36
+},
+{
+"line": "2.13",
+"i": 15,
+"word": "money",
+"start": 344.36,
+"end": 344.64
+},
+{
+"line": "2.13",
+"i": 16,
+"word": "out",
+"start": 344.64,
+"end": 344.84
+},
+{
+"line": "2.13",
+"i": 17,
+"word": "of",
+"start": 344.84,
+"end": 344.99
+},
+{
+"line": "2.13",
+"i": 18,
+"word": "the",
+"start": 344.99,
+"end": 345.18
+},
+{
+"line": "2.13",
+"i": 19,
+"word": "card",
+"start": 345.18,
+"end": 345.42
+},
+{
+"line": "2.13",
+"i": 20,
+"word": "as",
+"start": 345.42,
+"end": 345.57
+},
+{
+"line": "2.13",
+"i": 21,
+"word": "rent,",
+"start": 345.57,
+"end": 345.81
+},
+{
+"line": "2.13",
+"i": 22,
+"word": "and",
+"start": 345.98,
+"end": 346.14
+},
+{
+"line": "2.13",
+"i": 23,
+"word": "give",
+"start": 346.14,
+"end": 346.33
+},
+{
+"line": "2.13",
+"i": 24,
+"word": "it",
+"start": 346.33,
+"end": 346.45
+},
+{
+"line": "2.13",
+"i": 25,
+"word": "back",
+"start": 346.45,
+"end": 346.64
+},
+{
+"line": "2.13",
+"i": 26,
+"word": "to",
+"start": 346.64,
+"end": 346.76
+},
+{
+"line": "2.13",
+"i": 27,
+"word": "the",
+"start": 346.76,
+"end": 346.91
+},
+{
+"line": "2.13",
+"i": 28,
+"word": "friend.",
+"start": 346.91,
+"end": 347.17
+},
+{
+"line": "2.14",
+"i": 0,
+"word": "But",
+"start": 347.56,
+"end": 347.8
+},
+{
+"line": "2.14",
+"i": 1,
+"word": "your",
+"start": 347.8,
+"end": 348.08
+},
+{
+"line": "2.14",
+"i": 2,
+"word": "loan",
+"start": 348.08,
+"end": 348.37
+},
+{
+"line": "2.14",
+"i": 3,
+"word": "does",
+"start": 348.37,
+"end": 348.66
+},
+{
+"line": "2.14",
+"i": 4,
+"word": "not",
+"start": 348.66,
+"end": 348.89
+},
+{
+"line": "2.14",
+"i": 5,
+"word": "come",
+"start": 348.89,
+"end": 349.18
+},
+{
+"line": "2.14",
+"i": 6,
+"word": "down",
+"start": 349.18,
+"end": 349.47
+},
+{
+"line": "2.14",
+"i": 7,
+"word": "even",
+"start": 349.47,
+"end": 349.75
+},
+{
+"line": "2.14",
+"i": 8,
+"word": "by",
+"start": 349.75,
+"end": 349.94
+},
+{
+"line": "2.14",
+"i": 9,
+"word": "one",
+"start": 349.94,
+"end": 350.17
+},
+{
+"line": "2.14",
+"i": 10,
+"word": "rupee.",
+"start": 350.17,
+"end": 350.51
+},
+{
+"line": "2.14",
+"i": 11,
+"word": "Only",
+"start": 350.84,
+"end": 350.97
+},
+{
+"line": "2.14",
+"i": 12,
+"word": "the",
+"start": 350.97,
+"end": 351.08
+},
+{
+"line": "2.14",
+"i": 13,
+"word": "last",
+"start": 351.08,
+"end": 351.22
+},
+{
+"line": "2.14",
+"i": 14,
+"word": "date",
+"start": 351.22,
+"end": 351.35
+},
+{
+"line": "2.14",
+"i": 15,
+"word": "moves",
+"start": 351.35,
+"end": 351.51
+},
+{
+"line": "2.14",
+"i": 16,
+"word": "to",
+"start": 351.51,
+"end": 351.6
+},
+{
+"line": "2.14",
+"i": 17,
+"word": "next",
+"start": 351.6,
+"end": 351.73
+},
+{
+"line": "2.14",
+"i": 18,
+"word": "month.",
+"start": 351.73,
+"end": 351.89
+},
+{
+"line": "2.14",
+"i": 19,
+"word": "And",
+"start": 352.01,
+"end": 352.52
+},
+{
+"line": "2.14",
+"i": 20,
+"word": "you",
+"start": 352.52,
+"end": 353.04
+},
+{
+"line": "2.14",
+"i": 21,
+"word": "pay",
+"start": 353.04,
+"end": 353.56
+},
+{
+"line": "2.14",
+"i": 22,
+"word": "a",
+"start": 353.56,
+"end": 353.85
+},
+{
+"line": "2.14",
+"i": 23,
+"word": "fee.",
+"start": 353.85,
+"end": 354.37
+},
+{
+"line": "2.15",
+"i": 0,
+"word": "Also,",
+"start": 354.74,
+"end": 355.06
+},
+{
+"line": "2.15",
+"i": 1,
+"word": "after",
+"start": 355.06,
+"end": 355.44
+},
+{
+"line": "2.15",
+"i": 2,
+"word": "new",
+"start": 355.44,
+"end": 355.7
+},
+{
+"line": "2.15",
+"i": 3,
+"word": "RBI",
+"start": 355.7,
+"end": 355.97
+},
+{
+"line": "2.15",
+"i": 4,
+"word": "rules",
+"start": 355.97,
+"end": 356.35
+},
+{
+"line": "2.15",
+"i": 5,
+"word": "in",
+"start": 356.35,
+"end": 356.55
+},
+{
+"line": "2.15",
+"i": 6,
+"word": "twenty",
+"start": 356.55,
+"end": 356.99
+},
+{
+"line": "2.15",
+"i": 7,
+"word": "twenty",
+"start": 356.99,
+"end": 357.43
+},
+{
+"line": "2.15",
+"i": 8,
+"word": "five,",
+"start": 357.43,
+"end": 357.75
+},
+{
+"line": "2.15",
+"i": 9,
+"word": "apps",
+"start": 358.09,
+"end": 358.43
+},
+{
+"line": "2.15",
+"i": 10,
+"word": "like",
+"start": 358.43,
+"end": 358.76
+},
+{
+"line": "2.15",
+"i": 11,
+"word": "PhonePe,",
+"start": 358.76,
+"end": 359.28
+},
+{
+"line": "2.15",
+"i": 12,
+"word": "Paytm",
+"start": 359.42,
+"end": 359.79
+},
+{
+"line": "2.15",
+"i": 13,
+"word": "and",
+"start": 359.79,
+"end": 360.04
+},
+{
+"line": "2.15",
+"i": 14,
+"word": "CRED",
+"start": 360.04,
+"end": 360.36
+},
+{
+"line": "2.15",
+"i": 15,
+"word": "stopped",
+"start": 360.36,
+"end": 360.84
+},
+{
+"line": "2.15",
+"i": 16,
+"word": "rent",
+"start": 360.84,
+"end": 361.15
+},
+{
+"line": "2.15",
+"i": 17,
+"word": "payment",
+"start": 361.15,
+"end": 361.64
+},
+{
+"line": "2.15",
+"i": 18,
+"word": "by",
+"start": 361.64,
+"end": 361.84
+},
+{
+"line": "2.15",
+"i": 19,
+"word": "credit",
+"start": 361.84,
+"end": 362.27
+},
+{
+"line": "2.15",
+"i": 20,
+"word": "card.",
+"start": 362.27,
+"end": 362.58
+},
+{
+"line": "2.16",
+"i": 0,
+"word": "Taking",
+"start": 362.94,
+"end": 363.21
+},
+{
+"line": "2.16",
+"i": 1,
+"word": "cash",
+"start": 363.21,
+"end": 363.41
+},
+{
+"line": "2.16",
+"i": 2,
+"word": "from",
+"start": 363.41,
+"end": 363.61
+},
+{
+"line": "2.16",
+"i": 3,
+"word": "your",
+"start": 363.61,
+"end": 363.81
+},
+{
+"line": "2.16",
+"i": 4,
+"word": "credit",
+"start": 363.81,
+"end": 364.08
+},
+{
+"line": "2.16",
+"i": 5,
+"word": "card",
+"start": 364.08,
+"end": 364.28
+},
+{
+"line": "2.16",
+"i": 6,
+"word": "is",
+"start": 364.28,
+"end": 364.4
+},
+{
+"line": "2.16",
+"i": 7,
+"word": "even",
+"start": 364.4,
+"end": 364.6
+},
+{
+"line": "2.16",
+"i": 8,
+"word": "worse.",
+"start": 364.6,
+"end": 364.84
+},
+{
+"line": "2.16",
+"i": 9,
+"word": "There",
+"start": 364.98,
+"end": 365.23
+},
+{
+"line": "2.16",
+"i": 10,
+"word": "is",
+"start": 365.23,
+"end": 365.37
+},
+{
+"line": "2.16",
+"i": 11,
+"word": "a",
+"start": 365.37,
+"end": 365.47
+},
+{
+"line": "2.16",
+"i": 12,
+"word": "fee,",
+"start": 365.47,
+"end": 365.65
+},
+{
+"line": "2.16",
+"i": 13,
+"word": "and",
+"start": 365.94,
+"end": 366.26
+},
+{
+"line": "2.16",
+"i": 14,
+"word": "interest",
+"start": 366.26,
+"end": 366.94
+},
+{
+"line": "2.16",
+"i": 15,
+"word": "starts",
+"start": 366.94,
+"end": 367.47
+},
+{
+"line": "2.16",
+"i": 16,
+"word": "from",
+"start": 367.47,
+"end": 367.86
+},
+{
+"line": "2.16",
+"i": 17,
+"word": "the",
+"start": 367.86,
+"end": 368.18
+},
+{
+"line": "2.16",
+"i": 18,
+"word": "same",
+"start": 368.18,
+"end": 368.57
+},
+{
+"line": "2.16",
+"i": 19,
+"word": "day.",
+"start": 368.57,
+"end": 368.89
+},
+{
+"line": "2.17",
+"i": 0,
+"word": "So",
+"start": 369.22,
+"end": 369.44
+},
+{
+"line": "2.17",
+"i": 1,
+"word": "rotation",
+"start": 369.44,
+"end": 370.04
+},
+{
+"line": "2.17",
+"i": 2,
+"word": "is",
+"start": 370.04,
+"end": 370.25
+},
+{
+"line": "2.17",
+"i": 3,
+"word": "not",
+"start": 370.25,
+"end": 370.54
+},
+{
+"line": "2.17",
+"i": 4,
+"word": "a",
+"start": 370.54,
+"end": 370.69
+},
+{
+"line": "2.17",
+"i": 5,
+"word": "solution.",
+"start": 370.69,
+"end": 371.29
+},
+{
+"line": "2.17",
+"i": 6,
+"word": "It",
+"start": 371.58,
+"end": 371.73
+},
+{
+"line": "2.17",
+"i": 7,
+"word": "only",
+"start": 371.73,
+"end": 371.97
+},
+{
+"line": "2.17",
+"i": 8,
+"word": "pushes",
+"start": 371.97,
+"end": 372.31
+},
+{
+"line": "2.17",
+"i": 9,
+"word": "the",
+"start": 372.31,
+"end": 372.5
+},
+{
+"line": "2.17",
+"i": 10,
+"word": "loan",
+"start": 372.5,
+"end": 372.75
+},
+{
+"line": "2.17",
+"i": 11,
+"word": "to",
+"start": 372.75,
+"end": 372.9
+},
+{
+"line": "2.17",
+"i": 12,
+"word": "next",
+"start": 372.9,
+"end": 373.14
+},
+{
+"line": "2.17",
+"i": 13,
+"word": "month.",
+"start": 373.14,
+"end": 373.43
+},
+{
+"line": "2.18",
+"i": 0,
+"word": "So",
+"start": 373.89,
+"end": 374.07
+},
+{
+"line": "2.18",
+"i": 1,
+"word": "what",
+"start": 374.07,
+"end": 374.36
+},
+{
+"line": "2.18",
+"i": 2,
+"word": "should",
+"start": 374.36,
+"end": 374.76
+},
+{
+"line": "2.18",
+"i": 3,
+"word": "we",
+"start": 374.76,
+"end": 374.95
+},
+{
+"line": "2.18",
+"i": 4,
+"word": "do?",
+"start": 374.95,
+"end": 375.13
+},
+{
+"line": "2.18",
+"i": 5,
+"word": "Five",
+"start": 375.52,
+"end": 375.82
+},
+{
+"line": "2.18",
+"i": 6,
+"word": "simple",
+"start": 375.82,
+"end": 376.25
+},
+{
+"line": "2.18",
+"i": 7,
+"word": "steps.",
+"start": 376.25,
+"end": 376.61
+},
+{
+"line": "2.19",
+"i": 0,
+"word": "One.",
+"start": 376.96,
+"end": 377.25
+},
+{
+"line": "2.19",
+"i": 1,
+"word": "When",
+"start": 377.58,
+"end": 377.83
+},
+{
+"line": "2.19",
+"i": 2,
+"word": "you",
+"start": 377.83,
+"end": 378.03
+},
+{
+"line": "2.19",
+"i": 3,
+"word": "can,",
+"start": 378.03,
+"end": 378.23
+},
+{
+"line": "2.19",
+"i": 4,
+"word": "pay",
+"start": 378.44,
+"end": 378.64
+},
+{
+"line": "2.19",
+"i": 5,
+"word": "the",
+"start": 378.64,
+"end": 378.83
+},
+{
+"line": "2.19",
+"i": 6,
+"word": "full",
+"start": 378.83,
+"end": 379.08
+},
+{
+"line": "2.19",
+"i": 7,
+"word": "bill.",
+"start": 379.08,
+"end": 379.32
+},
+{
+"line": "2.19",
+"i": 8,
+"word": "If",
+"start": 379.6,
+"end": 379.78
+},
+{
+"line": "2.19",
+"i": 9,
+"word": "you",
+"start": 379.78,
+"end": 380.02
+},
+{
+"line": "2.19",
+"i": 10,
+"word": "set",
+"start": 380.02,
+"end": 380.25
+},
+{
+"line": "2.19",
+"i": 11,
+"word": "auto",
+"start": 380.25,
+"end": 380.53
+},
+{
+"line": "2.19",
+"i": 12,
+"word": "pay,",
+"start": 380.53,
+"end": 380.76
+},
+{
+"line": "2.19",
+"i": 13,
+"word": "set",
+"start": 380.96,
+"end": 381.16
+},
+{
+"line": "2.19",
+"i": 14,
+"word": "it",
+"start": 381.16,
+"end": 381.31
+},
+{
+"line": "2.19",
+"i": 15,
+"word": "for",
+"start": 381.31,
+"end": 381.51
+},
+{
+"line": "2.19",
+"i": 16,
+"word": "the",
+"start": 381.51,
+"end": 381.71
+},
+{
+"line": "2.19",
+"i": 17,
+"word": "full",
+"start": 381.71,
+"end": 381.95
+},
+{
+"line": "2.19",
+"i": 18,
+"word": "amount,",
+"start": 381.95,
+"end": 382.28
+},
+{
+"line": "2.19",
+"i": 19,
+"word": "not",
+"start": 382.46,
+"end": 382.64
+},
+{
+"line": "2.19",
+"i": 20,
+"word": "the",
+"start": 382.64,
+"end": 382.82
+},
+{
+"line": "2.19",
+"i": 21,
+"word": "minimum.",
+"start": 382.82,
+"end": 383.16
+},
+{
+"line": "2.20",
+"i": 0,
+"word": "Then",
+"start": 383.47,
+"end": 383.77
+},
+{
+"line": "2.20",
+"i": 1,
+"word": "your",
+"start": 383.77,
+"end": 384.07
+},
+{
+"line": "2.20",
+"i": 2,
+"word": "card",
+"start": 384.07,
+"end": 384.37
+},
+{
+"line": "2.20",
+"i": 3,
+"word": "is",
+"start": 384.37,
+"end": 384.56
+},
+{
+"line": "2.20",
+"i": 4,
+"word": "really",
+"start": 384.56,
+"end": 384.97
+},
+{
+"line": "2.20",
+"i": 5,
+"word": "free.",
+"start": 384.97,
+"end": 385.27
+},
+{
+"line": "2.20",
+"i": 6,
+"word": "Up",
+"start": 385.62,
+"end": 385.8
+},
+{
+"line": "2.20",
+"i": 7,
+"word": "to",
+"start": 385.8,
+"end": 385.98
+},
+{
+"line": "2.20",
+"i": 8,
+"word": "fifty",
+"start": 385.98,
+"end": 386.32
+},
+{
+"line": "2.20",
+"i": 9,
+"word": "days",
+"start": 386.32,
+"end": 386.6
+},
+{
+"line": "2.20",
+"i": 10,
+"word": "interest",
+"start": 386.6,
+"end": 387.09
+},
+{
+"line": "2.20",
+"i": 11,
+"word": "free,",
+"start": 387.09,
+"end": 387.37
+},
+{
+"line": "2.20",
+"i": 12,
+"word": "depending",
+"start": 387.62,
+"end": 388.0
+},
+{
+"line": "2.20",
+"i": 13,
+"word": "on",
+"start": 388.0,
+"end": 388.12
+},
+{
+"line": "2.20",
+"i": 14,
+"word": "your",
+"start": 388.12,
+"end": 388.32
+},
+{
+"line": "2.20",
+"i": 15,
+"word": "card.",
+"start": 388.32,
+"end": 388.52
+},
+{
+"line": "2.21",
+"i": 0,
+"word": "Two.",
+"start": 388.9,
+"end": 389.11
+},
+{
+"line": "2.21",
+"i": 1,
+"word": "If",
+"start": 389.46,
+"end": 389.61
+},
+{
+"line": "2.21",
+"i": 2,
+"word": "you",
+"start": 389.61,
+"end": 389.8
+},
+{
+"line": "2.21",
+"i": 3,
+"word": "cannot",
+"start": 389.8,
+"end": 390.12
+},
+{
+"line": "2.21",
+"i": 4,
+"word": "pay",
+"start": 390.12,
+"end": 390.32
+},
+{
+"line": "2.21",
+"i": 5,
+"word": "the",
+"start": 390.32,
+"end": 390.51
+},
+{
+"line": "2.21",
+"i": 6,
+"word": "full",
+"start": 390.51,
+"end": 390.74
+},
+{
+"line": "2.21",
+"i": 7,
+"word": "bill,",
+"start": 390.74,
+"end": 390.98
+},
+{
+"line": "2.21",
+"i": 8,
+"word": "pay",
+"start": 391.27,
+"end": 391.49
+},
+{
+"line": "2.21",
+"i": 9,
+"word": "as",
+"start": 391.49,
+"end": 391.67
+},
+{
+"line": "2.21",
+"i": 10,
+"word": "much",
+"start": 391.67,
+"end": 391.94
+},
+{
+"line": "2.21",
+"i": 11,
+"word": "as",
+"start": 391.94,
+"end": 392.11
+},
+{
+"line": "2.21",
+"i": 12,
+"word": "you",
+"start": 392.11,
+"end": 392.34
+},
+{
+"line": "2.21",
+"i": 13,
+"word": "can.",
+"start": 392.34,
+"end": 392.56
+},
+{
+"line": "2.21",
+"i": 14,
+"word": "But",
+"start": 392.83,
+"end": 393.03
+},
+{
+"line": "2.21",
+"i": 15,
+"word": "never",
+"start": 393.03,
+"end": 393.32
+},
+{
+"line": "2.21",
+"i": 16,
+"word": "less",
+"start": 393.32,
+"end": 393.57
+},
+{
+"line": "2.21",
+"i": 17,
+"word": "than",
+"start": 393.57,
+"end": 393.81
+},
+{
+"line": "2.21",
+"i": 18,
+"word": "the",
+"start": 393.81,
+"end": 394.01
+},
+{
+"line": "2.21",
+"i": 19,
+"word": "minimum.",
+"start": 394.01,
+"end": 394.39
+},
+{
+"line": "2.22",
+"i": 0,
+"word": "Because",
+"start": 394.69,
+"end": 394.9
+},
+{
+"line": "2.22",
+"i": 1,
+"word": "interest",
+"start": 394.9,
+"end": 395.14
+},
+{
+"line": "2.22",
+"i": 2,
+"word": "on",
+"start": 395.14,
+"end": 395.22
+},
+{
+"line": "2.22",
+"i": 3,
+"word": "the",
+"start": 395.22,
+"end": 395.33
+},
+{
+"line": "2.22",
+"i": 4,
+"word": "money",
+"start": 395.33,
+"end": 395.5
+},
+{
+"line": "2.22",
+"i": 5,
+"word": "you",
+"start": 395.5,
+"end": 395.61
+},
+{
+"line": "2.22",
+"i": 6,
+"word": "pay",
+"start": 395.61,
+"end": 395.72
+},
+{
+"line": "2.22",
+"i": 7,
+"word": "stops",
+"start": 395.72,
+"end": 395.88
+},
+{
+"line": "2.22",
+"i": 8,
+"word": "that",
+"start": 395.88,
+"end": 396.02
+},
+{
+"line": "2.22",
+"i": 9,
+"word": "day.",
+"start": 396.02,
+"end": 396.13
+},
+{
+"line": "2.22",
+"i": 10,
+"word": "Pay",
+"start": 396.24,
+"end": 396.86
+},
+{
+"line": "2.22",
+"i": 11,
+"word": "more,",
+"start": 396.86,
+"end": 397.63
+},
+{
+"line": "2.22",
+"i": 12,
+"word": "and",
+"start": 397.95,
+"end": 398.02
+},
+{
+"line": "2.22",
+"i": 13,
+"word": "you",
+"start": 398.02,
+"end": 398.1
+},
+{
+"line": "2.22",
+"i": 14,
+"word": "pay",
+"start": 398.1,
+"end": 398.17
+},
+{
+"line": "2.22",
+"i": 15,
+"word": "less",
+"start": 398.17,
+"end": 398.26
+},
+{
+"line": "2.22",
+"i": 16,
+"word": "interest.",
+"start": 398.26,
+"end": 398.42
+},
+{
+"line": "2.22",
+"i": 17,
+"word": "And",
+"start": 398.59,
+"end": 398.75
+},
+{
+"line": "2.22",
+"i": 18,
+"word": "once",
+"start": 398.75,
+"end": 398.94
+},
+{
+"line": "2.22",
+"i": 19,
+"word": "you",
+"start": 398.94,
+"end": 399.1
+},
+{
+"line": "2.22",
+"i": 20,
+"word": "clear",
+"start": 399.1,
+"end": 399.33
+},
+{
+"line": "2.22",
+"i": 21,
+"word": "the",
+"start": 399.33,
+"end": 399.48
+},
+{
+"line": "2.22",
+"i": 22,
+"word": "full",
+"start": 399.48,
+"end": 399.68
+},
+{
+"line": "2.22",
+"i": 23,
+"word": "bill,",
+"start": 399.68,
+"end": 399.87
+},
+{
+"line": "2.22",
+"i": 24,
+"word": "your",
+"start": 400.15,
+"end": 400.62
+},
+{
+"line": "2.22",
+"i": 25,
+"word": "interest",
+"start": 400.62,
+"end": 401.43
+},
+{
+"line": "2.22",
+"i": 26,
+"word": "free",
+"start": 401.43,
+"end": 401.89
+},
+{
+"line": "2.22",
+"i": 27,
+"word": "period",
+"start": 401.89,
+"end": 402.53
+},
+{
+"line": "2.22",
+"i": 28,
+"word": "comes",
+"start": 402.53,
+"end": 403.08
+},
+{
+"line": "2.22",
+"i": 29,
+"word": "back.",
+"start": 403.08,
+"end": 403.55
+},
+{
+"line": "2.23",
+"i": 0,
+"word": "Three.",
+"start": 404.01,
+"end": 404.28
+},
+{
+"line": "2.23",
+"i": 1,
+"word": "Till",
+"start": 404.66,
+"end": 404.87
+},
+{
+"line": "2.23",
+"i": 2,
+"word": "the",
+"start": 404.87,
+"end": 405.05
+},
+{
+"line": "2.23",
+"i": 3,
+"word": "bill",
+"start": 405.05,
+"end": 405.27
+},
+{
+"line": "2.23",
+"i": 4,
+"word": "is",
+"start": 405.27,
+"end": 405.4
+},
+{
+"line": "2.23",
+"i": 5,
+"word": "cleared,",
+"start": 405.4,
+"end": 405.74
+},
+{
+"line": "2.23",
+"i": 6,
+"word": "keep",
+"start": 406.01,
+"end": 406.31
+},
+{
+"line": "2.23",
+"i": 7,
+"word": "that",
+"start": 406.31,
+"end": 406.61
+},
+{
+"line": "2.23",
+"i": 8,
+"word": "card",
+"start": 406.61,
+"end": 406.92
+},
+{
+"line": "2.23",
+"i": 9,
+"word": "aside.",
+"start": 406.92,
+"end": 407.27
+},
+{
+"line": "2.23",
+"i": 10,
+"word": "Use",
+"start": 407.48,
+"end": 407.76
+},
+{
+"line": "2.23",
+"i": 11,
+"word": "UPI",
+"start": 407.76,
+"end": 408.04
+},
+{
+"line": "2.23",
+"i": 12,
+"word": "or",
+"start": 408.04,
+"end": 408.26
+},
+{
+"line": "2.23",
+"i": 13,
+"word": "a",
+"start": 408.26,
+"end": 408.42
+},
+{
+"line": "2.23",
+"i": 14,
+"word": "debit",
+"start": 408.42,
+"end": 408.82
+},
+{
+"line": "2.23",
+"i": 15,
+"word": "card",
+"start": 408.82,
+"end": 409.17
+},
+{
+"line": "2.23",
+"i": 16,
+"word": "for",
+"start": 409.17,
+"end": 409.45
+},
+{
+"line": "2.23",
+"i": 17,
+"word": "daily",
+"start": 409.45,
+"end": 409.86
+},
+{
+"line": "2.23",
+"i": 18,
+"word": "spending.",
+"start": 409.86,
+"end": 410.45
+},
+{
+"line": "2.24",
+"i": 0,
+"word": "Four.",
+"start": 410.85,
+"end": 411.19
+},
+{
+"line": "2.24",
+"i": 1,
+"word": "If",
+"start": 411.5,
+"end": 411.67
+},
+{
+"line": "2.24",
+"i": 2,
+"word": "the",
+"start": 411.67,
+"end": 411.88
+},
+{
+"line": "2.24",
+"i": 3,
+"word": "bill",
+"start": 411.88,
+"end": 412.14
+},
+{
+"line": "2.24",
+"i": 4,
+"word": "is",
+"start": 412.14,
+"end": 412.3
+},
+{
+"line": "2.24",
+"i": 5,
+"word": "big,",
+"start": 412.3,
+"end": 412.52
+},
+{
+"line": "2.24",
+"i": 6,
+"word": "ask",
+"start": 412.83,
+"end": 413.02
+},
+{
+"line": "2.24",
+"i": 7,
+"word": "your",
+"start": 413.02,
+"end": 413.25
+},
+{
+"line": "2.24",
+"i": 8,
+"word": "bank",
+"start": 413.25,
+"end": 413.49
+},
+{
+"line": "2.24",
+"i": 9,
+"word": "to",
+"start": 413.49,
+"end": 413.63
+},
+{
+"line": "2.24",
+"i": 10,
+"word": "change",
+"start": 413.63,
+"end": 413.95
+},
+{
+"line": "2.24",
+"i": 11,
+"word": "it",
+"start": 413.95,
+"end": 414.1
+},
+{
+"line": "2.24",
+"i": 12,
+"word": "into",
+"start": 414.1,
+"end": 414.33
+},
+{
+"line": "2.24",
+"i": 13,
+"word": "EMI.",
+"start": 414.33,
+"end": 414.52
+},
+{
+"line": "2.24",
+"i": 14,
+"word": "For",
+"start": 414.64,
+"end": 414.81
+},
+{
+"line": "2.24",
+"i": 15,
+"word": "example,",
+"start": 414.81,
+"end": 415.12
+},
+{
+"line": "2.24",
+"i": 16,
+"word": "HDFC's",
+"start": 415.38,
+"end": 415.87
+},
+{
+"line": "2.24",
+"i": 17,
+"word": "EMI",
+"start": 415.87,
+"end": 416.21
+},
+{
+"line": "2.24",
+"i": 18,
+"word": "rates",
+"start": 416.21,
+"end": 416.7
+},
+{
+"line": "2.24",
+"i": 19,
+"word": "are",
+"start": 416.7,
+"end": 417.03
+},
+{
+"line": "2.24",
+"i": 20,
+"word": "about",
+"start": 417.03,
+"end": 417.52
+},
+{
+"line": "2.24",
+"i": 21,
+"word": "eleven",
+"start": 417.52,
+"end": 418.09
+},
+{
+"line": "2.24",
+"i": 22,
+"word": "to",
+"start": 418.09,
+"end": 418.35
+},
+{
+"line": "2.24",
+"i": 23,
+"word": "twenty",
+"start": 418.35,
+"end": 418.91
+},
+{
+"line": "2.24",
+"i": 24,
+"word": "five",
+"start": 418.91,
+"end": 419.33
+},
+{
+"line": "2.24",
+"i": 25,
+"word": "percent.",
+"start": 419.33,
+"end": 419.96
+},
+{
+"line": "2.24",
+"i": 26,
+"word": "Also",
+"start": 420.26,
+"end": 420.33
+},
+{
+"line": "2.24",
+"i": 27,
+"word": "check",
+"start": 420.33,
+"end": 420.41
+},
+{
+"line": "2.24",
+"i": 28,
+"word": "the",
+"start": 420.41,
+"end": 420.47
+},
+{
+"line": "2.24",
+"i": 29,
+"word": "fee",
+"start": 420.47,
+"end": 420.53
+},
+{
+"line": "2.24",
+"i": 30,
+"word": "and",
+"start": 420.53,
+"end": 420.58
+},
+{
+"line": "2.24",
+"i": 31,
+"word": "GST.",
+"start": 420.58,
+"end": 420.64
+},
+{
+"line": "2.24",
+"i": 32,
+"word": "And",
+"start": 420.95,
+"end": 421.39
+},
+{
+"line": "2.24",
+"i": 33,
+"word": "never",
+"start": 421.39,
+"end": 422.03
+},
+{
+"line": "2.24",
+"i": 34,
+"word": "take",
+"start": 422.03,
+"end": 422.58
+},
+{
+"line": "2.24",
+"i": 35,
+"word": "loans",
+"start": 422.58,
+"end": 423.22
+},
+{
+"line": "2.24",
+"i": 36,
+"word": "from",
+"start": 423.22,
+"end": 423.76
+},
+{
+"line": "2.24",
+"i": 37,
+"word": "unknown",
+"start": 423.76,
+"end": 424.6
+},
+{
+"line": "2.24",
+"i": 38,
+"word": "apps.",
+"start": 424.6,
+"end": 425.14
+},
+{
+"line": "2.25",
+"i": 0,
+"word": "Five.",
+"start": 425.49,
+"end": 425.82
+},
+{
+"line": "2.25",
+"i": 1,
+"word": "If",
+"start": 426.21,
+"end": 426.38
+},
+{
+"line": "2.25",
+"i": 2,
+"word": "your",
+"start": 426.38,
+"end": 426.65
+},
+{
+"line": "2.25",
+"i": 3,
+"word": "last",
+"start": 426.65,
+"end": 426.92
+},
+{
+"line": "2.25",
+"i": 4,
+"word": "date",
+"start": 426.92,
+"end": 427.19
+},
+{
+"line": "2.25",
+"i": 5,
+"word": "comes",
+"start": 427.19,
+"end": 427.51
+},
+{
+"line": "2.25",
+"i": 6,
+"word": "before",
+"start": 427.51,
+"end": 427.88
+},
+{
+"line": "2.25",
+"i": 7,
+"word": "your",
+"start": 427.88,
+"end": 428.15
+},
+{
+"line": "2.25",
+"i": 8,
+"word": "salary,",
+"start": 428.15,
+"end": 428.52
+},
+{
+"line": "2.25",
+"i": 9,
+"word": "ask",
+"start": 428.84,
+"end": 429.04
+},
+{
+"line": "2.25",
+"i": 10,
+"word": "the",
+"start": 429.04,
+"end": 429.23
+},
+{
+"line": "2.25",
+"i": 11,
+"word": "bank",
+"start": 429.23,
+"end": 429.48
+},
+{
+"line": "2.25",
+"i": 12,
+"word": "to",
+"start": 429.48,
+"end": 429.63
+},
+{
+"line": "2.25",
+"i": 13,
+"word": "change",
+"start": 429.63,
+"end": 429.96
+},
+{
+"line": "2.25",
+"i": 14,
+"word": "your",
+"start": 429.96,
+"end": 430.2
+},
+{
+"line": "2.25",
+"i": 15,
+"word": "bill",
+"start": 430.2,
+"end": 430.44
+},
+{
+"line": "2.25",
+"i": 16,
+"word": "date.",
+"start": 430.44,
+"end": 430.68
+},
+{
+"line": "2.25",
+"i": 17,
+"word": "RBI",
+"start": 431.02,
+"end": 431.25
+},
+{
+"line": "2.25",
+"i": 18,
+"word": "rules",
+"start": 431.25,
+"end": 431.59
+},
+{
+"line": "2.25",
+"i": 19,
+"word": "say",
+"start": 431.59,
+"end": 431.82
+},
+{
+"line": "2.25",
+"i": 20,
+"word": "they",
+"start": 431.82,
+"end": 432.11
+},
+{
+"line": "2.25",
+"i": 21,
+"word": "must",
+"start": 432.11,
+"end": 432.4
+},
+{
+"line": "2.25",
+"i": 22,
+"word": "give",
+"start": 432.4,
+"end": 432.68
+},
+{
+"line": "2.25",
+"i": 23,
+"word": "you",
+"start": 432.68,
+"end": 432.91
+},
+{
+"line": "2.25",
+"i": 24,
+"word": "this",
+"start": 432.91,
+"end": 433.2
+},
+{
+"line": "2.25",
+"i": 25,
+"word": "option.",
+"start": 433.2,
+"end": 433.59
+},
+{
+"line": "2.26",
+"i": 0,
+"word": "One",
+"start": 433.95,
+"end": 434.19
+},
+{
+"line": "2.26",
+"i": 1,
+"word": "easy",
+"start": 434.19,
+"end": 434.48
+},
+{
+"line": "2.26",
+"i": 2,
+"word": "check.",
+"start": 434.48,
+"end": 434.82
+},
+{
+"line": "2.26",
+"i": 3,
+"word": "On",
+"start": 434.94,
+"end": 434.94
+},
+{
+"line": "2.26",
+"i": 4,
+"word": "your",
+"start": 434.94,
+"end": 434.94
+},
+{
+"line": "2.26",
+"i": 5,
+"word": "bill,",
+"start": 434.94,
+"end": 434.95
+},
+{
+"line": "2.26",
+"i": 6,
+"word": "look",
+"start": 435.26,
+"end": 435.64
+},
+{
+"line": "2.26",
+"i": 7,
+"word": "for",
+"start": 435.64,
+"end": 435.95
+},
+{
+"line": "2.26",
+"i": 8,
+"word": "the",
+"start": 435.95,
+"end": 436.25
+},
+{
+"line": "2.26",
+"i": 9,
+"word": "line",
+"start": 436.25,
+"end": 436.63
+},
+{
+"line": "2.26",
+"i": 10,
+"word": "called",
+"start": 436.63,
+"end": 437.14
+},
+{
+"line": "2.26",
+"i": 11,
+"word": "finance",
+"start": 437.14,
+"end": 437.72
+},
+{
+"line": "2.26",
+"i": 12,
+"word": "charges.",
+"start": 437.72,
+"end": 438.31
+},
+{
+"line": "2.26",
+"i": 13,
+"word": "If",
+"start": 438.63,
+"end": 438.81
+},
+{
+"line": "2.26",
+"i": 14,
+"word": "it",
+"start": 438.81,
+"end": 439.0
+},
+{
+"line": "2.26",
+"i": 15,
+"word": "is",
+"start": 439.0,
+"end": 439.18
+},
+{
+"line": "2.26",
+"i": 16,
+"word": "not",
+"start": 439.18,
+"end": 439.42
+},
+{
+"line": "2.26",
+"i": 17,
+"word": "zero,",
+"start": 439.42,
+"end": 439.71
+},
+{
+"line": "2.26",
+"i": 18,
+"word": "you",
+"start": 439.95,
+"end": 440.16
+},
+{
+"line": "2.26",
+"i": 19,
+"word": "are",
+"start": 440.16,
+"end": 440.37
+},
+{
+"line": "2.26",
+"i": 20,
+"word": "paying",
+"start": 440.37,
+"end": 440.72
+},
+{
+"line": "2.26",
+"i": 21,
+"word": "interest.",
+"start": 440.72,
+"end": 441.16
+},
+{
+"line": "2.27",
+"i": 0,
+"word": "Remember.",
+"start": 441.52,
+"end": 441.91
+},
+{
+"line": "2.27",
+"i": 1,
+"word": "The",
+"start": 442.29,
+"end": 442.51
+},
+{
+"line": "2.27",
+"i": 2,
+"word": "minimum",
+"start": 442.51,
+"end": 442.93
+},
+{
+"line": "2.27",
+"i": 3,
+"word": "amount",
+"start": 442.93,
+"end": 443.31
+},
+{
+"line": "2.27",
+"i": 4,
+"word": "saves",
+"start": 443.31,
+"end": 443.63
+},
+{
+"line": "2.27",
+"i": 5,
+"word": "you",
+"start": 443.63,
+"end": 443.85
+},
+{
+"line": "2.27",
+"i": 6,
+"word": "from",
+"start": 443.85,
+"end": 444.12
+},
+{
+"line": "2.27",
+"i": 7,
+"word": "late",
+"start": 444.12,
+"end": 444.4
+},
+{
+"line": "2.27",
+"i": 8,
+"word": "fees",
+"start": 444.4,
+"end": 444.67
+},
+{
+"line": "2.27",
+"i": 9,
+"word": "and",
+"start": 444.67,
+"end": 444.89
+},
+{
+"line": "2.27",
+"i": 10,
+"word": "a",
+"start": 444.89,
+"end": 445.02
+},
+{
+"line": "2.27",
+"i": 11,
+"word": "bad",
+"start": 445.02,
+"end": 445.24
+},
+{
+"line": "2.27",
+"i": 12,
+"word": "CIBIL",
+"start": 445.24,
+"end": 445.56
+},
+{
+"line": "2.27",
+"i": 13,
+"word": "report.",
+"start": 445.56,
+"end": 445.93
+},
+{
+"line": "2.27",
+"i": 14,
+"word": "Not",
+"start": 446.19,
+"end": 446.45
+},
+{
+"line": "2.27",
+"i": 15,
+"word": "from",
+"start": 446.45,
+"end": 446.78
+},
+{
+"line": "2.27",
+"i": 16,
+"word": "interest.",
+"start": 446.78,
+"end": 447.33
+},
+{
+"line": "2.28",
+"i": 0,
+"word": "Remember",
+"start": 447.68,
+"end": 448.13
+},
+{
+"line": "2.28",
+"i": 1,
+"word": "three",
+"start": 448.13,
+"end": 448.44
+},
+{
+"line": "2.28",
+"i": 2,
+"word": "numbers.",
+"start": 448.44,
+"end": 448.84
+},
+{
+"line": "2.28",
+"i": 3,
+"word": "Forty",
+"start": 449.17,
+"end": 449.47
+},
+{
+"line": "2.28",
+"i": 4,
+"word": "five",
+"start": 449.47,
+"end": 449.73
+},
+{
+"line": "2.28",
+"i": 5,
+"word": "percent",
+"start": 449.73,
+"end": 450.12
+},
+{
+"line": "2.28",
+"i": 6,
+"word": "interest.",
+"start": 450.12,
+"end": 450.56
+},
+{
+"line": "2.28",
+"i": 7,
+"word": "Eighteen",
+"start": 450.85,
+"end": 451.39
+},
+{
+"line": "2.28",
+"i": 8,
+"word": "percent",
+"start": 451.39,
+"end": 451.88
+},
+{
+"line": "2.28",
+"i": 9,
+"word": "GST",
+"start": 451.88,
+"end": 452.14
+},
+{
+"line": "2.28",
+"i": 10,
+"word": "on",
+"start": 452.14,
+"end": 452.34
+},
+{
+"line": "2.28",
+"i": 11,
+"word": "top.",
+"start": 452.34,
+"end": 452.6
+},
+{
+"line": "2.28",
+"i": 12,
+"word": "And",
+"start": 452.91,
+"end": 453.14
+},
+{
+"line": "2.28",
+"i": 13,
+"word": "zero",
+"start": 453.14,
+"end": 453.41
+},
+{
+"line": "2.28",
+"i": 14,
+"word": "interest",
+"start": 453.41,
+"end": 453.88
+},
+{
+"line": "2.28",
+"i": 15,
+"word": "free",
+"start": 453.88,
+"end": 454.15
+},
+{
+"line": "2.28",
+"i": 16,
+"word": "days",
+"start": 454.15,
+"end": 454.43
+},
+{
+"line": "2.28",
+"i": 17,
+"word": "for",
+"start": 454.43,
+"end": 454.65
+},
+{
+"line": "2.28",
+"i": 18,
+"word": "new",
+"start": 454.65,
+"end": 454.87
+},
+{
+"line": "2.28",
+"i": 19,
+"word": "spending",
+"start": 454.87,
+"end": 455.34
+},
+{
+"line": "2.28",
+"i": 20,
+"word": "till",
+"start": 455.34,
+"end": 455.62
+},
+{
+"line": "2.28",
+"i": 21,
+"word": "the",
+"start": 455.62,
+"end": 455.84
+},
+{
+"line": "2.28",
+"i": 22,
+"word": "old",
+"start": 455.84,
+"end": 456.06
+},
+{
+"line": "2.28",
+"i": 23,
+"word": "bill",
+"start": 456.06,
+"end": 456.34
+},
+{
+"line": "2.28",
+"i": 24,
+"word": "is",
+"start": 456.34,
+"end": 456.51
+},
+{
+"line": "2.28",
+"i": 25,
+"word": "cleared.",
+"start": 456.51,
+"end": 456.93
+},
+{
+"line": "2.29",
+"i": 0,
+"word": "The",
+"start": 457.29,
+"end": 457.51
+},
+{
+"line": "2.29",
+"i": 1,
+"word": "minimum",
+"start": 457.51,
+"end": 457.93
+},
+{
+"line": "2.29",
+"i": 2,
+"word": "is",
+"start": 457.93,
+"end": 458.11
+},
+{
+"line": "2.29",
+"i": 3,
+"word": "like",
+"start": 458.11,
+"end": 458.38
+},
+{
+"line": "2.29",
+"i": 4,
+"word": "an",
+"start": 458.38,
+"end": 458.55
+},
+{
+"line": "2.29",
+"i": 5,
+"word": "emergency",
+"start": 458.55,
+"end": 459.07
+},
+{
+"line": "2.29",
+"i": 6,
+"word": "brake.",
+"start": 459.07,
+"end": 459.4
+},
+{
+"line": "2.29",
+"i": 7,
+"word": "Use",
+"start": 459.72,
+"end": 459.97
+},
+{
+"line": "2.29",
+"i": 8,
+"word": "it",
+"start": 459.97,
+"end": 460.16
+},
+{
+"line": "2.29",
+"i": 9,
+"word": "only",
+"start": 460.16,
+"end": 460.46
+},
+{
+"line": "2.29",
+"i": 10,
+"word": "in",
+"start": 460.46,
+"end": 460.66
+},
+{
+"line": "2.29",
+"i": 11,
+"word": "an",
+"start": 460.66,
+"end": 460.85
+},
+{
+"line": "2.29",
+"i": 12,
+"word": "emergency,",
+"start": 460.85,
+"end": 461.43
+},
+{
+"line": "2.29",
+"i": 13,
+"word": "not",
+"start": 461.71,
+"end": 461.99
+},
+{
+"line": "2.29",
+"i": 14,
+"word": "every",
+"start": 461.99,
+"end": 462.39
+},
+{
+"line": "2.29",
+"i": 15,
+"word": "month.",
+"start": 462.39,
+"end": 462.79
+},
+{
+"line": "2.30",
+"i": 0,
+"word": "What",
+"start": 463.13,
+"end": 463.35
+},
+{
+"line": "2.30",
+"i": 1,
+"word": "do",
+"start": 463.35,
+"end": 463.49
+},
+{
+"line": "2.30",
+"i": 2,
+"word": "you",
+"start": 463.49,
+"end": 463.68
+},
+{
+"line": "2.30",
+"i": 3,
+"word": "pay",
+"start": 463.68,
+"end": 463.86
+},
+{
+"line": "2.30",
+"i": 4,
+"word": "every",
+"start": 463.86,
+"end": 464.12
+},
+{
+"line": "2.30",
+"i": 5,
+"word": "month?",
+"start": 464.12,
+"end": 464.38
+},
+{
+"line": "2.30",
+"i": 6,
+"word": "The",
+"start": 464.67,
+"end": 464.87
+},
+{
+"line": "2.30",
+"i": 7,
+"word": "full",
+"start": 464.87,
+"end": 465.11
+},
+{
+"line": "2.30",
+"i": 8,
+"word": "bill,",
+"start": 465.11,
+"end": 465.35
+},
+{
+"line": "2.30",
+"i": 9,
+"word": "or",
+"start": 465.55,
+"end": 465.68
+},
+{
+"line": "2.30",
+"i": 10,
+"word": "the",
+"start": 465.68,
+"end": 465.84
+},
+{
+"line": "2.30",
+"i": 11,
+"word": "minimum?",
+"start": 465.84,
+"end": 466.15
+},
+{
+"line": "2.30",
+"i": 12,
+"word": "Tell",
+"start": 466.58,
+"end": 466.76
+},
+{
+"line": "2.30",
+"i": 13,
+"word": "me",
+"start": 466.76,
+"end": 466.87
+},
+{
+"line": "2.30",
+"i": 14,
+"word": "in",
+"start": 466.87,
+"end": 466.99
+},
+{
+"line": "2.30",
+"i": 15,
+"word": "the",
+"start": 466.99,
+"end": 467.14
+},
+{
+"line": "2.30",
+"i": 16,
+"word": "comments.",
+"start": 467.14,
+"end": 467.45
+},
+{
+"line": "2.31",
+"i": 0,
+"word": "In",
+"start": 467.78,
+"end": 467.95
+},
+{
+"line": "2.31",
+"i": 1,
+"word": "the",
+"start": 467.95,
+"end": 468.18
+},
+{
+"line": "2.31",
+"i": 2,
+"word": "next",
+"start": 468.18,
+"end": 468.45
+},
+{
+"line": "2.31",
+"i": 3,
+"word": "video,",
+"start": 468.45,
+"end": 468.78
+},
+{
+"line": "2.31",
+"i": 4,
+"word": "we",
+"start": 468.78,
+"end": 468.95
+},
+{
+"line": "2.31",
+"i": 5,
+"word": "will",
+"start": 468.95,
+"end": 469.23
+},
+{
+"line": "2.31",
+"i": 6,
+"word": "see",
+"start": 469.23,
+"end": 469.45
+},
+{
+"line": "2.31",
+"i": 7,
+"word": "what",
+"start": 469.45,
+"end": 469.73
+},
+{
+"line": "2.31",
+"i": 8,
+"word": "happens",
+"start": 469.73,
+"end": 470.15
+},
+{
+"line": "2.31",
+"i": 9,
+"word": "if",
+"start": 470.15,
+"end": 470.32
+},
+{
+"line": "2.31",
+"i": 10,
+"word": "you",
+"start": 470.32,
+"end": 470.55
+},
+{
+"line": "2.31",
+"i": 11,
+"word": "cannot",
+"start": 470.55,
+"end": 470.92
+},
+{
+"line": "2.31",
+"i": 12,
+"word": "pay",
+"start": 470.92,
+"end": 471.15
+},
+{
+"line": "2.31",
+"i": 13,
+"word": "even",
+"start": 471.15,
+"end": 471.42
+},
+{
+"line": "2.31",
+"i": 14,
+"word": "the",
+"start": 471.42,
+"end": 471.65
+},
+{
+"line": "2.31",
+"i": 15,
+"word": "minimum.",
+"start": 471.65,
+"end": 472.07
+},
+{
+"line": "2.32",
+"i": 0,
+"word": "If",
+"start": 472.43,
+"end": 472.56
+},
+{
+"line": "2.32",
+"i": 1,
+"word": "this",
+"start": 472.56,
+"end": 472.77
+},
+{
+"line": "2.32",
+"i": 2,
+"word": "helped",
+"start": 472.77,
+"end": 473.06
+},
+{
+"line": "2.32",
+"i": 3,
+"word": "you,",
+"start": 473.06,
+"end": 473.23
+},
+{
+"line": "2.32",
+"i": 4,
+"word": "share",
+"start": 473.48,
+"end": 473.78
+},
+{
+"line": "2.32",
+"i": 5,
+"word": "it",
+"start": 473.78,
+"end": 473.94
+},
+{
+"line": "2.32",
+"i": 6,
+"word": "with",
+"start": 473.94,
+"end": 474.2
+},
+{
+"line": "2.32",
+"i": 7,
+"word": "one",
+"start": 474.2,
+"end": 474.4
+},
+{
+"line": "2.32",
+"i": 8,
+"word": "friend",
+"start": 474.4,
+"end": 474.75
+},
+{
+"line": "2.32",
+"i": 9,
+"word": "who",
+"start": 474.75,
+"end": 474.96
+},
+{
+"line": "2.32",
+"i": 10,
+"word": "uses",
+"start": 474.96,
+"end": 475.21
+},
+{
+"line": "2.32",
+"i": 11,
+"word": "a",
+"start": 475.21,
+"end": 475.33
+},
+{
+"line": "2.32",
+"i": 12,
+"word": "credit",
+"start": 475.33,
+"end": 475.67
+},
+{
+"line": "2.32",
+"i": 13,
+"word": "card.",
+"start": 475.67,
+"end": 475.93
+},
+{
+"line": "2.32",
+"i": 14,
+"word": "Subscribe",
+"start": 476.23,
+"end": 476.62
+},
+{
+"line": "2.32",
+"i": 15,
+"word": "to",
+"start": 476.62,
+"end": 476.75
+},
+{
+"line": "2.32",
+"i": 16,
+"word": "the",
+"start": 476.75,
+"end": 476.91
+},
+{
+"line": "2.32",
+"i": 17,
+"word": "channel.",
+"start": 476.91,
+"end": 477.23
+},
+{
+"line": "2.32",
+"i": 18,
+"word": "See",
+"start": 477.53,
+"end": 477.7
+},
+{
+"line": "2.32",
+"i": 19,
+"word": "you",
+"start": 477.7,
+"end": 477.88
+},
+{
+"line": "2.32",
+"i": 20,
+"word": "soon.",
+"start": 477.88,
+"end": 478.09
+},
+{
+"line": "2.32",
+"i": 21,
+"word": "Jai",
+"start": 478.4,
+"end": 478.58
+},
+{
+"line": "2.32",
+"i": 22,
+"word": "Hind.",
+"start": 478.58,
+"end": 478.79
+}
+]
