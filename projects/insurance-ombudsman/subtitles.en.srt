@@ -1,0 +1,536 @@
+1
+00:00:00,000 --> 00:00:04,440
+Imagine you are standing at a hospital billing counter at nine o'clock at night.
+
+2
+00:00:04,680 --> 00:00:13,080
+The bill is four and a half lakh rupees, and your cashless claim, where the insurance company pays the hospital directly, has just been denied.
+
+3
+00:00:13,350 --> 00:00:15,340
+We told this story in our last video.
+
+4
+00:00:15,690 --> 00:00:17,400
+Here is what you need to know from it.
+
+5
+00:00:17,620 --> 00:00:20,510
+A cashless denial is not the end of your claim.
+
+6
+00:00:20,730 --> 00:00:23,870
+You can pay the hospital, and claim the money back later.
+
+7
+00:00:24,060 --> 00:00:27,450
+And if the company still says no, there is a four-step plan.
+
+8
+00:00:27,730 --> 00:00:28,860
+Collect your papers.
+
+9
+00:00:29,060 --> 00:00:32,160
+File for reimbursement and write to the grievance officer.
+
+10
+00:00:32,310 --> 00:00:34,160
+Register on Bima Bharosa.
+
+11
+00:00:34,420 --> 00:00:37,090
+And step four, the Insurance Ombudsman.
+
+12
+00:00:37,300 --> 00:00:43,410
+So you paid the bill from your pocket, collected your hospital papers, came home, and filed for reimbursement.
+
+13
+00:00:43,730 --> 00:00:46,700
+Three weeks later, an email lands in your inbox.
+
+14
+00:00:46,920 --> 00:00:59,830
+Either the insurance company rejects your claim all over again... or worse, out of your four and a half lakh rupee bill, they approve just one lakh twenty thousand, and cut the remaining three lakh thirty thousand rupees.
+
+15
+00:01:00,100 --> 00:01:04,220
+At that moment, many families think they only have two choices.
+
+16
+00:01:04,480 --> 00:01:05,200
+Choice one.
+
+17
+00:01:05,520 --> 00:01:11,040
+Hire a lawyer, go to consumer court, and wait, often for a long time, for a verdict.
+
+18
+00:01:11,110 --> 00:01:12,410
+Or choice two.
+
+19
+00:01:12,690 --> 00:01:23,000
+Answer one of those ads for a private claim recovery service, which promises to fight your case, but some ask for twenty percent or more of the money they recover as their fee.
+
+20
+00:01:23,170 --> 00:01:24,260
+Stop right there.
+
+21
+00:01:24,470 --> 00:01:27,680
+Before you pick either door, there is a third one.
+
+22
+00:01:27,900 --> 00:01:29,490
+Step four of that plan.
+
+23
+00:01:29,720 --> 00:01:33,600
+Today, we open that door fully, from start to finish.
+
+24
+00:01:33,860 --> 00:01:36,410
+Filing a complaint costs zero rupees.
+
+25
+00:01:36,620 --> 00:01:40,780
+If the Ombudsman passes an award, it is binding on the insurance company.
+
+26
+00:01:40,920 --> 00:01:49,080
+And if the company does not challenge the award, but pays it late, it has to pay you a penalty of five thousand rupees for every day of delay.
+
+27
+00:01:49,230 --> 00:01:51,420
+Welcome to Be Practical with Kishore.
+
+28
+00:01:51,560 --> 00:02:04,020
+Today, I will show you one common mistake that gets complaints turned away at the door, how to file on the official website step by step, what happens at the hearing, and what the company must do after it loses.
+
+29
+00:02:04,160 --> 00:02:07,150
+All without paying a single rupee to middlemen.
+
+30
+00:02:07,360 --> 00:02:10,850
+Let's break it down... in plain, simple English.
+
+31
+00:02:12,350 --> 00:02:20,410
+First... step three, Bima Bharosa, the online complaint portal of the insurance regulator, the I-R-D-A-I.
+
+32
+00:02:20,700 --> 00:02:21,680
+It often works.
+
+33
+00:02:21,970 --> 00:02:25,140
+But if it does not work for you, do not stop there.
+
+34
+00:02:25,380 --> 00:02:29,130
+You register on Bima Bharosa, upload your papers, and wait.
+
+35
+00:02:29,370 --> 00:02:34,990
+Many people then get the same rejection letter from the insurance company again, and the complaint is closed.
+
+36
+00:02:35,220 --> 00:02:38,500
+And you think, even the government portal could not help me.
+
+37
+00:02:38,970 --> 00:02:39,650
+Here is why.
+
+38
+00:02:39,950 --> 00:02:41,780
+Bima Bharosa is useful.
+
+39
+00:02:41,950 --> 00:02:46,260
+Your complaint goes on the regulator's record, and the company has to answer it.
+
+40
+00:02:46,570 --> 00:02:49,390
+But Bima Bharosa is NOT a court.
+
+41
+00:02:49,550 --> 00:02:56,590
+Your complaint goes to the same insurance company that cut your claim, and the I-R-D-A-I tracks how the company handles it.
+
+42
+00:02:56,820 --> 00:03:02,210
+Bima Bharosa does not decide your claim, and it does not pass an order telling the company to pay you.
+
+43
+00:03:02,570 --> 00:03:04,720
+That is why step four exists.
+
+44
+00:03:04,970 --> 00:03:13,580
+The body that can pass a binding award in your case... is the Insurance Ombudsman, which works under the Insurance Ombudsman Rules, twenty seventeen.
+
+45
+00:03:13,860 --> 00:03:15,560
+Now, back to the second door.
+
+46
+00:03:15,780 --> 00:03:17,660
+Private claim recovery companies.
+
+47
+00:03:17,940 --> 00:03:20,670
+Suppose your three lakh thirty thousand rupees is stuck.
+
+48
+00:03:21,080 --> 00:03:27,650
+A recovery agency tells you, sign our agreement, and if we get your money back, give us twenty percent plus G-S-T.
+
+49
+00:03:27,880 --> 00:03:31,930
+Twenty percent of three lakh thirty thousand is sixty-six thousand rupees.
+
+50
+00:03:32,090 --> 00:03:39,450
+Add eighteen percent G-S-T, and it is seventy-seven thousand eight hundred and eighty rupees out of your family's medical savings.
+
+51
+00:03:39,610 --> 00:03:41,800
+And here is what they may not tell you.
+
+52
+00:03:42,050 --> 00:03:51,580
+Under Rule fourteen of the Insurance Ombudsman Rules, the complaint is made by you, the person with the grievance, or through your legal heir, nominee or assignee.
+
+53
+00:03:51,760 --> 00:03:56,330
+The form is the same free form on the official website that you can fill in yourself.
+
+54
+00:03:56,640 --> 00:04:00,120
+And never share your passwords or O-T-Ps with anyone.
+
+55
+00:04:00,350 --> 00:04:04,830
+So before you sign any agreement and give away a share of your money, remember.
+
+56
+00:04:05,140 --> 00:04:08,800
+You can do this yourself online, for zero rupees.
+
+57
+00:04:08,850 --> 00:04:10,130
+Now listen carefully.
+
+58
+00:04:10,450 --> 00:04:14,660
+You cannot jump straight to the Ombudsman on the day your claim is rejected.
+
+59
+00:04:14,920 --> 00:04:18,280
+If you do, your complaint can be turned away at the door.
+
+60
+00:04:18,600 --> 00:04:25,880
+In twenty twenty-four to twenty-five alone, seventeen hundred and fifteen health complaints were turned away for this one reason.
+
+61
+00:04:26,100 --> 00:04:29,600
+The person had not complained to the insurance company first.
+
+62
+00:04:29,770 --> 00:04:33,270
+Under Rule fourteen, you must follow a two-step clock.
+
+63
+00:04:33,550 --> 00:04:34,660
+Clock step one.
+
+64
+00:04:34,950 --> 00:04:36,860
+This is step two of our plan.
+
+65
+00:04:37,150 --> 00:04:44,040
+Complain in writing to the insurance company, best of all to its Grievance Redressal Officer, the G-R-O.
+
+66
+00:04:44,300 --> 00:04:51,920
+Every insurer has to show its grievance officer's details on its website, and the Ombudsman's website lists their email addresses too.
+
+67
+00:04:52,160 --> 00:04:58,960
+Send one calm, formal email with your policy number, your claim number, and why their deduction is wrong.
+
+68
+00:04:59,220 --> 00:05:01,910
+Keep a copy of that email and every reply.
+
+69
+00:05:02,130 --> 00:05:03,340
+You will need them later.
+
+70
+00:05:03,560 --> 00:05:09,300
+Under the I-R-D-A-I rules, the company should resolve your grievance within fourteen days.
+
+71
+00:05:09,550 --> 00:05:10,640
+Clock step two.
+
+72
+00:05:10,960 --> 00:05:13,840
+Wait for their reply, or wait one month.
+
+73
+00:05:14,160 --> 00:05:24,470
+The moment the company rejects your complaint, or you are not happy with its reply, or one month passes with no reply at all... the door to the Ombudsman opens.
+
+74
+00:05:24,690 --> 00:05:31,690
+From that day, you have one year to file your complaint with the Ombudsman, for compensation of up to fifty lakh rupees.
+
+75
+00:05:31,900 --> 00:05:35,890
+That limit was raised to fifty lakh rupees in November twenty twenty-three.
+
+76
+00:05:36,090 --> 00:05:38,170
+And remember one strict condition.
+
+77
+00:05:38,350 --> 00:05:48,080
+The Ombudsman cannot take your complaint if the same dispute is already pending, or already decided, in any court, consumer forum, or arbitration.
+
+78
+00:05:48,190 --> 00:05:51,790
+So, how do you actually file, and what happens next?
+
+79
+00:05:52,010 --> 00:05:57,130
+Open your browser and go to the official website, c-i-o-i-n-s dot co dot in.
+
+80
+00:05:57,130 --> 00:06:02,710
+Choose Register Complaint, and verify your mobile number with an O-T-P.
+
+81
+00:06:02,930 --> 00:06:05,210
+Then you choose your Ombudsman office.
+
+82
+00:06:05,350 --> 00:06:12,190
+There are eighteen offices across India, in cities like Hyderabad, Bengaluru, Mumbai, Delhi and Kolkata.
+
+83
+00:06:12,380 --> 00:06:18,170
+You pick the one that covers the place where you live, or the insurance company's branch that handled your policy.
+
+84
+00:06:18,380 --> 00:06:21,000
+Before you submit, keep these documents ready.
+
+85
+00:06:21,240 --> 00:06:21,730
+One.
+
+86
+00:06:21,850 --> 00:06:23,820
+A copy of your insurance policy.
+
+87
+00:06:24,060 --> 00:06:24,460
+Two.
+
+88
+00:06:24,620 --> 00:06:28,000
+The hospital discharge summary and the itemised final bill.
+
+89
+00:06:28,220 --> 00:06:28,660
+Three.
+
+90
+00:06:28,820 --> 00:06:31,420
+The company's rejection or deduction letter.
+
+91
+00:06:31,660 --> 00:06:32,130
+Four.
+
+92
+00:06:32,270 --> 00:06:35,290
+A copy of the complaint you sent to the insurance company.
+
+93
+00:06:35,480 --> 00:06:36,220
+And five.
+
+94
+00:06:36,380 --> 00:06:39,270
+Your I-D and address proof, and a photograph.
+
+95
+00:06:39,530 --> 00:06:43,350
+Each file can be a P-D-F or a J-P-G, up to ten M-B.
+
+96
+00:06:43,560 --> 00:06:47,070
+Check every detail, tick the declaration, and submit.
+
+97
+00:06:47,190 --> 00:06:50,340
+Your complaint is verified first, and then registered.
+
+98
+00:06:50,530 --> 00:06:53,000
+Save the acknowledgement and your complaint number.
+
+99
+00:06:53,300 --> 00:06:54,890
+Now, what happens next?
+
+100
+00:06:55,050 --> 00:06:58,550
+The Ombudsman hears both sides, you and the company.
+
+101
+00:06:58,710 --> 00:07:01,790
+The hearing can be in person, or online by video.
+
+102
+00:07:01,940 --> 00:07:05,220
+Many complaints end in mediation under Rule sixteen.
+
+103
+00:07:05,380 --> 00:07:10,390
+The Ombudsman suggests a fair settlement, and if both sides agree, the case closes.
+
+104
+00:07:10,490 --> 00:07:16,510
+In twenty twenty-four to twenty-five, about one in three health complaints that were closed, ended this way.
+
+105
+00:07:16,690 --> 00:07:21,100
+If there is no settlement, the Ombudsman decides the case, and passes an award.
+
+106
+00:07:21,350 --> 00:07:23,300
+You don't need fancy legal words.
+
+107
+00:07:23,420 --> 00:07:25,180
+Explain your case simply.
+
+108
+00:07:25,370 --> 00:07:26,710
+When did you buy the policy?
+
+109
+00:07:26,930 --> 00:07:28,290
+Why were you in the hospital?
+
+110
+00:07:28,410 --> 00:07:30,230
+And how much did the company cut?
+
+111
+00:07:30,410 --> 00:07:31,930
+And how long does it take?
+
+112
+00:07:32,210 --> 00:07:39,710
+Of the health complaints the Ombudsman closed in twenty twenty-four to twenty-five, about eight out of ten were closed within three months.
+
+113
+00:07:39,850 --> 00:07:42,520
+And here is why this law is built for you.
+
+114
+00:07:42,790 --> 00:07:43,390
+First.
+
+115
+00:07:43,510 --> 00:07:49,050
+Under Rule seventeen, when the Ombudsman passes an award, it is binding on the insurance company.
+
+116
+00:07:49,280 --> 00:07:51,860
+Wait... what if you are NOT happy with the award?
+
+117
+00:07:52,070 --> 00:07:53,500
+You don't have to accept it.
+
+118
+00:07:53,730 --> 00:07:57,420
+Other legal remedies, like the consumer forum, may still be open to you.
+
+119
+00:07:57,650 --> 00:07:58,480
+And second.
+
+120
+00:07:58,600 --> 00:08:07,630
+Under the I-R-D-A-I health master circular of twenty twenty-four, the insurance company must carry out the award within thirty days of receiving it.
+
+121
+00:08:07,760 --> 00:08:18,190
+If it is late, and it has not challenged the award within those thirty days, it must pay you a penalty of five thousand rupees for every day of delay, on top of any interest that is due.
+
+122
+00:08:18,390 --> 00:08:21,340
+Ten days late, that is fifty thousand rupees.
+
+123
+00:08:21,390 --> 00:08:24,640
+Thirty days late, one lakh fifty thousand rupees.
+
+124
+00:08:24,950 --> 00:08:34,700
+And in December twenty twenty-four, the Bombay High Court heard the case of a senior citizen who had won an Ombudsman award, but was not paid for more than three years.
+
+125
+00:08:34,870 --> 00:08:47,470
+The court ordered the insurance company to pay the award with interest, plus one lakh rupees in costs, and said the costs and interest should be recovered from the officers responsible, after an inquiry.
+
+126
+00:08:47,780 --> 00:08:50,370
+That is the power of knowing your rights.
+
+127
+00:08:50,540 --> 00:08:54,630
+You don't need connections, and you don't need to pay twenty percent to middlemen.
+
+128
+00:08:54,900 --> 00:08:55,750
+Be smart.
+
+129
+00:08:55,910 --> 00:08:56,930
+Be informed.
+
+130
+00:08:57,220 --> 00:08:59,350
+And always... be practical.
+
+131
+00:08:59,690 --> 00:09:05,350
+In our next episode, we look at consumables, the gloves, masks and syringes on your bill.
+
+132
+00:09:05,590 --> 00:09:14,380
+We will open a five lakh rupee hospital bill, line by line, look at what we pay for these consumables, and what the government's price rules say about them.
+
+133
+00:09:14,670 --> 00:09:19,200
+Hit the subscribe button, share this video with your family, and drop your questions below.
+
+134
+00:09:19,410 --> 00:09:21,090
+I'll see you in the next video.
+

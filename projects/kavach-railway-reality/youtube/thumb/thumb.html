@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<!-- YouTube thumbnail, channel theme (assets/brand: navy, gold, gold/blue circuit lines, red pill).
+     Variant from the URL hash: #A (real loco photo: Kavach working on 2,633 of 69,000 route km, V032-V033)
+     or #B (would Kavach have saved Balasore? the honest answer, V043-V044; signal schematic labelled ILLUSTRATION as in C1-C3).
+     Photo: loco.jpg, a frame of Pixabay 370238 (SahaniFilms, Pixabay Content License; already in media_manifest.csv). Shot by shoot.js at 2x. -->
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("../../../../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("../../../../node_modules/@fontsource/inter/files/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+  :root { --navy: #0b1530; --gold: #ffd34d; --blue: #4a6fa5; --red: #e5383b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: var(--navy); font-family: Inter, Arial, sans-serif; }
+  #t { position: relative; width: 1280px; height: 720px; overflow: hidden;
+    background: radial-gradient(ellipse at 30% 50%, #18295a 0%, #0b1530 60%, #070d1f 100%); }
+  svg.lines { position: absolute; inset: 0; }
+  .big { position: absolute; font-weight: 800; line-height: .95; letter-spacing: -.02em; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,.65); }
+  .gold { color: var(--gold); }
+  .pill { position: absolute; font-weight: 800; color: #fff; background: var(--red); border-radius: 18px; padding: 14px 26px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.45); letter-spacing: -.01em; }
+  .logo { position: absolute; right: 26px; bottom: 24px; width: 104px; height: 104px; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,.5); }
+  .tag { position: absolute; font-weight: 800; font-size: 15px; letter-spacing: .12em; color: rgba(255,255,255,.7); }
+  .v { display: none; } body.A .vA, body.B .vB { display: block; }
+
+  /* A: the photo fills the right side and fades into the navy on the left */
+  .photo { position: absolute; right: -60px; top: 0; width: 900px; height: 720px; background: url("loco.jpg") 38% 50% / cover;
+    filter: saturate(1.15) contrast(1.05); }
+  .photo::after { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, #0b1530 0%, rgba(11,21,48,.85) 22%, rgba(11,21,48,0) 55%), linear-gradient(0deg, rgba(7,13,31,.6), rgba(7,13,31,0) 40%); }
+  .bar { position: absolute; height: 34px; border-radius: 17px; background: rgba(255,255,255,.14); overflow: hidden; }
+  .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--gold); border-radius: 17px; }
+</style>
+</head>
+<body>
+<div id="t">
+  <div class="v vA"><div class="photo"></div></div>
+
+  <!-- the banner's circuit lines: gold and blue, rounded bends, dot ends -->
+  <svg class="lines" viewBox="0 0 1280 720" fill="none" stroke-width="5" stroke-linecap="round">
+    <g stroke="#ffd34d"><path d="M0 70 H120" /><path d="M0 640 H70 Q100 640 115 615 L130 590 H170" /></g>
+    <g stroke="#4a6fa5"><path d="M0 110 H160" /><path d="M0 680 H120" /></g>
+    <g fill="#ffd34d" stroke="none"><circle cx="120" cy="70" r="9" /><circle cx="170" cy="590" r="9" /></g>
+    <g fill="#4a6fa5" stroke="none"><circle cx="160" cy="110" r="9" /><circle cx="120" cy="680" r="9" /></g>
+  </svg>
+
+  <!-- A: how much of India's track has Kavach working -->
+  <div class="v vA">
+    <div class="big" style="left: 60px; top: 150px; font-size: 128px;">KAVACH</div>
+    <div class="big" style="left: 64px; top: 278px; font-size: 52px; color: #c9d4ea;">WORKING ON ONLY</div>
+    <div class="big gold" style="left: 58px; top: 340px; font-size: 150px;">2,633 KM</div>
+    <div class="bar" style="left: 66px; top: 500px; width: 560px;"><i style="width: 4%; min-width: 34px;"></i></div>
+    <div class="big" style="left: 66px; top: 548px; font-size: 34px; color: #c9d4ea;">OF 69,000 ROUTE KM</div>
+    <div class="pill" style="left: 700px; top: 60px; font-size: 42px;">CRASHES IMPOSSIBLE?</div>
+  </div>
+
+  <!-- B: Balasore, the false green (schematic, as the film's C1-C3) -->
+  <div class="v vB">
+    <svg viewBox="0 0 1280 720" style="position:absolute; inset:0;" fill="none" stroke-linecap="round">
+      <!-- main line and the loop it was set towards -->
+      <path d="M560 560 H1280" stroke="#4a6fa5" stroke-width="10" opacity=".55" />
+      <path d="M760 560 L900 420 H1280" stroke="#e5383b" stroke-width="10" />
+      <!-- goods train standing on the loop -->
+      <g fill="#7a1d22" stroke="#e5383b" stroke-width="3">
+        <rect x="900" y="398" width="76" height="40" rx="5" /><rect x="984" y="398" width="76" height="40" rx="5" /><rect x="1068" y="398" width="76" height="40" rx="5" /></g>
+      <!-- Coromandel (white) heading for the points -->
+      <g fill="#e8f1ff"><rect x="540" y="538" width="92" height="44" rx="8" /><rect x="640" y="538" width="110" height="44" rx="14" /></g>
+      <path d="M750 560 L790 520" stroke="#ffd34d" stroke-width="6" opacity=".9" />
+      <!-- the signal: an Indian colour-light head with hoods, showing green -->
+      <path d="M1210 330 V560" stroke="#8a97ad" stroke-width="10" />
+      <rect x="1158" y="70" width="104" height="270" rx="14" fill="#0d1424" stroke="#5b6b85" stroke-width="5" />
+      <circle cx="1210" cy="125" r="32" fill="#3a1416" /><circle cx="1210" cy="205" r="32" fill="#3a3214" />
+      <circle cx="1210" cy="285" r="32" fill="#2fe07a" /><circle cx="1210" cy="285" r="64" fill="#2fe07a" opacity=".2" />
+      <g stroke="#5b6b85" stroke-width="6"><path d="M1172 98 Q1210 84 1248 98" /><path d="M1172 178 Q1210 164 1248 178" /><path d="M1172 258 Q1210 244 1248 258" /></g>
+    </svg>
+    <div class="tag" style="left: 830px; top: 610px;">ILLUSTRATION</div>
+    <div class="big" style="left: 60px; top: 70px; font-size: 76px;">COULD KAVACH</div>
+    <div class="big" style="left: 60px; top: 150px; font-size: 76px;">HAVE SAVED</div>
+    <div class="big gold" style="left: 54px; top: 236px; font-size: 138px;">BALASORE?</div>
+    <div class="pill" style="left: 64px; top: 410px; font-size: 44px;">THE HONEST ANSWER</div>
+    <div class="big" style="left: 66px; top: 500px; font-size: 40px; color: #2fe07a;">FALSE GREEN</div>
+  </div>
+
+  <img class="logo" src="logo.png" alt="Be Practical with Kishore" />
+</div>
+<script>document.body.className = (location.hash.slice(1) || "A");</script>
+</body>
+</html>

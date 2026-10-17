@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C1 filing stepper</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="shared/io.js"></script>
+    <script src="windows.js"></script>
+    <link rel="stylesheet" href="shared/io.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+#scene { position: absolute; inset: 0; perspective: 2600px; }
+#cam { position: absolute; inset: 0; transform-origin: 960px 540px; }
+/* browser: a labelled schematic, not the real portal (no logos, no real layout) */
+#win { position: absolute; left: 230px; top: 110px; width: 1460px; height: 860px; border-radius: 18px; overflow: hidden; background: #eef1f6;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.08), 0 50px 110px rgba(0,0,0,.6); }
+#chrome { position: absolute; left: 0; right: 0; top: 0; height: 128px; background: #dfe4ec; }
+.dots { position: absolute; left: 28px; top: 24px; display: flex; gap: 12px; }
+.dots i { width: 18px; height: 18px; border-radius: 50%; background: #b9c1cd; }
+.tabx { position: absolute; left: 130px; top: 12px; width: 300px; height: 40px; border-radius: 12px 12px 0 0; background: #eef1f6; }
+#bar { position: absolute; left: 24px; right: 24px; top: 62px; height: 52px; border-radius: 26px; background: #fff; display: flex; align-items: center; padding: 0 22px; gap: 14px;
+  box-shadow: inset 0 0 0 2px #cfd6e0; font: 600 30px/1 Inter, Arial, sans-serif; color: #172231; }
+#bar svg { width: 26px; height: 26px; flex: none; }
+#url { white-space: pre; }
+#caret { width: 3px; height: 34px; background: #172231; margin-left: -10px; }
+#ph { position: absolute; left: 76px; color: #8a94a3; font-weight: 400; }
+#load { position: absolute; left: 0; top: 124px; height: 4px; background: var(--teal); transform-origin: 0 50%; }
+#page { position: absolute; left: 0; right: 0; top: 128px; bottom: 0; }
+/* new-tab page under the address bar while the URL is typed (review fix: no blank white window) */
+#ntp { position: absolute; left: 0; right: 0; top: 128px; bottom: 0; padding: 26px 60px; font-family: Inter, Arial, sans-serif; color: #172231; }
+#ntp .h { padding-left: 230px; font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .12em; color: #4a5565; margin-bottom: 22px; }
+#ntp .tiles { display: flex; gap: 22px; margin-bottom: 44px; padding-left: 230px; }
+#ntp .tile { width: 96px; text-align: center; font: 600 22px/1.2 Inter, Arial, sans-serif; color: #3d4756; }
+#ntp .tile b { display: block; width: 84px; height: 84px; margin: 0 auto 12px; border-radius: 22px; background: #fff; box-shadow: inset 0 0 0 2px #cfd6e0;
+  font: 800 36px/84px Inter, Arial, sans-serif; color: #14263B; }
+#ntp .row { margin-left: 230px; display: flex; gap: 18px; align-items: center; padding: 16px 0; border-bottom: 2px solid #dfe4ec; font: 600 26px/1.2 Inter, Arial, sans-serif; max-width: 1180px; }
+#ntp .row i { width: 30px; height: 30px; border-radius: 8px; background: #cfd6e0; flex: none; }
+#ntp .row span { color: #4a5565; font-weight: 400; margin-left: auto; font-size: 22px; }
+.rail { position: absolute; left: 90px; right: 90px; top: 46px; height: 90px; }
+.rail .line { position: absolute; left: 40px; right: 40px; top: 30px; height: 6px; background: #cfd6e0; border-radius: 3px; }
+.rail .fill { position: absolute; left: 40px; top: 30px; height: 6px; background: var(--teal); border-radius: 3px; width: 0; }
+.step { position: absolute; top: 0; width: 220px; margin-left: -110px; text-align: center; }
+.step .n { width: 66px; height: 66px; margin: 0 auto; border-radius: 50%; background: #fff; border: 5px solid #cfd6e0; color: #6b7686;
+  font: 800 28px/56px Inter, Arial, sans-serif; position: relative; }
+.step .n.on { border-color: var(--teal); color: #127a69; }
+.step .n svg { position: absolute; inset: 6px; }
+.step .l { margin-top: 10px; font: 600 22px/1.2 Inter, Arial, sans-serif; color: #4a5565; }
+.blk { position: absolute; border-radius: 10px; background: #dde2ea; }
+.btn { position: absolute; border-radius: 14px; font: 800 30px/1 Inter, Arial, sans-serif; display: flex; align-items: center; justify-content: center; }
+.btn.pri { background: #14263B; color: #fff; }
+.btn.sec { background: #fff; color: #14263B; box-shadow: inset 0 0 0 3px #14263B; }
+.fld { position: absolute; background: #fff; border-radius: 12px; box-shadow: inset 0 0 0 2px #cfd6e0; font: 600 32px/1 Inter, Arial, sans-serif; color: #172231;
+  display: flex; align-items: center; padding: 0 24px; letter-spacing: .06em; }
+.lbl { position: absolute; font: 600 22px/1 Inter, Arial, sans-serif; color: #4a5565; letter-spacing: .04em; }
+.otp { position: absolute; display: flex; gap: 16px; }
+.otp i { width: 70px; height: 84px; border-radius: 12px; background: #fff; box-shadow: inset 0 0 0 2px #cfd6e0; font: 800 44px/84px Inter, Arial, sans-serif; text-align: center; font-style: normal; color: #172231; }
+#ok { position: absolute; display: flex; align-items: center; gap: 14px; font: 800 32px/1 Inter, Arial, sans-serif; color: #127a69; }
+#ok svg { width: 52px; height: 52px; }
+#cursor { position: absolute; left: 0; top: 0; width: 40px; height: 52px; }
+.ripple { position: absolute; width: 80px; height: 80px; margin: -40px 0 0 -40px; border-radius: 50%; border: 5px solid var(--teal); }
+/* phone in the foreground */
+#phone { position: absolute; left: 1390px; top: 420px; width: 380px; height: 780px; border-radius: 54px; background: #0d1016; padding: 14px;
+  box-shadow: 0 0 0 2px #2a2f3a, 0 50px 100px rgba(0,0,0,.65); }
+#phone .scr { position: relative; width: 100%; height: 100%; border-radius: 42px; overflow: hidden; background: linear-gradient(170deg, #1e3550, #0f1d2e); }
+#phone .notch { position: absolute; left: 50%; top: 12px; width: 100px; height: 28px; margin-left: -50px; border-radius: 16px; background: #0d1016; }
+#sms { position: absolute; left: 16px; right: 16px; top: 90px; border-radius: 24px; background: rgba(245,247,251,.95); padding: 20px 22px; color: #172231; }
+#sms .k { font: 600 18px/1 Inter, Arial, sans-serif; color: #5d6876; letter-spacing: .08em; }
+#sms .v { font: 800 30px/1.2 Inter, Arial, sans-serif; margin-top: 12px; letter-spacing: .04em; white-space: nowrap; }
+.win2 { position: absolute; left: 150px; top: 90px; width: 1380px; height: 880px; border-radius: 18px; overflow: hidden; background: #eef1f6; box-shadow: 0 0 0 2px rgba(255,255,255,.08), 0 50px 110px rgba(0,0,0,.6); }
+.chrome2 { position: absolute; left: 0; right: 0; top: 0; height: 128px; background: #dfe4ec; }
+.bar2 { position: absolute; left: 24px; right: 24px; top: 62px; height: 52px; border-radius: 26px; background: #fff; display: flex; align-items: center; padding: 0 22px; gap: 14px; box-shadow: inset 0 0 0 2px #cfd6e0; font: 600 30px/1 Inter, Arial, sans-serif; color: #172231; }
+.bar2 svg { width: 26px; height: 26px; }
+.page2 { position: absolute; left: 0; right: 0; top: 128px; bottom: 0; }
+.page2 .rail { left: 70px; right: 70px; }
+.step .n.done { background: var(--teal); border-color: var(--teal); color: #0B1422; }
+.rev { position: absolute; left: 120px; top: 190px; width: 640px; }
+.rr { display: flex; gap: 30px; align-items: center; height: 54px; border-bottom: 2px solid #dde2ea; }
+.rr b { width: 250px; flex: none; font: 600 22px/1 Inter, Arial, sans-serif; color: #3a4350; } .rr i { font: 800 22px/1 Inter, Arial, sans-serif; font-style: normal; color: #111a26; white-space: nowrap; }
+#scan48 { position: absolute; left: -20px; right: -20px; top: 0; height: 54px; background: rgba(255,219,89,.35); border-radius: 8px; }
+.decl { position: absolute; left: 120px; top: 520px; display: flex; align-items: center; gap: 22px; }
+.decl .box { width: 54px; height: 54px; border-radius: 10px; border: 4px solid #14263B; background: #fff; position: relative; }
+.decl .box svg { position: absolute; inset: 2px; }
+.decl .dl { font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .1em; color: #172231; }
+.decl .dtx { font: 600 20px/1 Inter, Arial, sans-serif; color: #232a33; }
+.pill { position: absolute; display: flex; align-items: center; gap: 14px; padding: 16px 26px 16px 18px; border-radius: 40px; background: #fff; box-shadow: inset 0 0 0 3px #59DCC3, 0 10px 24px rgba(0,0,0,.12); font: 800 34px/1 Inter, Arial, sans-serif; color: #0B1422; }
+.pill svg { width: 48px; height: 48px; }
+#pv { left: 860px; top: 250px; } #pr { left: 860px; top: 470px; }
+.arr { position: absolute; left: 930px; top: 370px; width: 120px; height: 40px; transform: rotate(90deg); }
+.cur { position: absolute; left: 0; top: 0; width: 40px; height: 52px; }
+#ack { position: absolute; left: 400px; top: 400px; width: 440px; height: 300px; padding: 26px 30px; }
+#ack .ah { font: 800 22px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: #14263B; }
+#ack .ak { margin-top: 26px; font: 600 18px/1 Inter, Arial, sans-serif; letter-spacing: .1em; color: #3d4756; }
+#ack .av { display: inline-block; margin-top: 8px; font: 800 36px/1.2 Inter, Arial, sans-serif; color: #0B1422; padding: 2px 6px; border-radius: 6px; }
+#ack .ln2 { font: 600 17px/1.3 Inter, Arial, sans-serif; color: #232a33; margin: 8px 0; white-space: nowrap; }
+#phone48 { position: absolute; left: 1480px; top: 330px; width: 380px; height: 780px; border-radius: 54px; background: #0d1016; padding: 14px; box-shadow: 0 0 0 2px #2a2f3a, 0 50px 100px rgba(0,0,0,.65); }
+#phone48 .scr { position: relative; width: 100%; height: 100%; border-radius: 42px; overflow: hidden; background: linear-gradient(170deg, #1e3550, #0f1d2e); }
+#phone48 .notch { position: absolute; left: 50%; top: 12px; width: 100px; height: 28px; margin-left: -50px; border-radius: 16px; background: #0d1016; }
+#dl48 { position: absolute; left: 16px; right: 16px; top: 90px; border-radius: 24px; background: rgba(245,247,251,.95); padding: 18px 20px; display: flex; gap: 14px; align-items: center; color: #172231; }
+#dl48 svg { width: 44px; height: 44px; flex: none; }
+#dl48 .k { font: 800 18px/1 Inter, Arial, sans-serif; letter-spacing: .12em; color: #3d4756; }
+#dl48 .v { font: 800 18px/1.2 Inter, Arial, sans-serif; margin-top: 6px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="C1_filing_stepper" data-start="0" data-width="1920" data-height="1080" data-duration="21.1">
+      <div class="io-plate" id="plate-wrap"><video id="plate" class="clip" src="media/plate.mp4" muted playsinline data-start="0" data-duration="21.1" data-track-index="0"></video></div>
+      <div class="io-grade"></div>
+      <div id="scene" class="clip" data-start="0" data-duration="11.3333" data-track-index="1"><div id="cam">
+        <div id="win">
+          <div id="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="tabx"></div>
+            <div id="bar"><svg viewBox="0 0 24 24" fill="none" stroke="#127a69" stroke-width="2.6" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11 V8 a4 4 0 0 1 8 0 V11"/></svg>
+              <span id="url"></span><i id="caret"></i><span id="ph">Search or type a web address</span></div>
+            <div id="load"></div>
+          </div>
+          <div id="ntp">
+            <div class="h">SHORTCUTS</div>
+            <div class="tiles"><div class="tile"><b>M</b></div><div class="tile"><b>N</b></div><div class="tile"><b>B</b></div><div class="tile"><b>W</b></div></div>
+            <div class="h">RECENTLY VISITED</div>
+            <div class="row"><i></i>Sample Health Insurance · Grievance redressal<span>samplehealth.example</span></div>
+            <div class="row"><i></i>Mail · Sent · Grievance: partial settlement of claim<span>mail</span></div>
+            <div class="row"><i></i>Sample City Hospital · Patient portal<span>samplecityhospital.example</span></div>
+          </div>
+          <div id="page">
+            <div class="rail"><div class="line"></div><div class="fill" id="fill"></div>
+              <div class="step" style="left:40px"><div class="n on" id="n1">1<svg id="tick1" viewBox="0 0 48 48" fill="#59DCC3" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="24" stroke="none"/><path d="M13 25 L21 33 L36 16" fill="none"/></svg></div><div class="l">Register</div></div>
+              <div class="step" style="left:440px"><div class="n">2</div><div class="l">Details</div></div>
+              <div class="step" style="left:840px"><div class="n">3</div><div class="l">Upload</div></div>
+              <div class="step" style="left:1240px"><div class="n">4</div><div class="l">Review</div></div>
+            </div>
+            <div id="home">
+              <div class="blk" style="left:120px; top:200px; width:640px; height:28px"></div>
+              <div class="blk" style="left:120px; top:250px; width:520px; height:20px; background:#e6eaf0"></div>
+              <div class="btn pri" id="btn-reg" style="left:120px; top:320px; width:470px; height:96px">Register Complaint</div>
+              <div class="btn sec" style="left:620px; top:320px; width:340px; height:96px; opacity:.5"></div>
+              <div class="blk" style="left:1010px; top:200px; width:330px; height:480px; background:#e6eaf0"></div>
+            </div>
+            <div id="form">
+              <div class="lbl" style="left:120px; top:200px">MOBILE NUMBER</div>
+              <div class="fld" style="left:120px; top:236px; width:560px; height:90px"><span>+91&nbsp;</span><span id="mob"></span></div>
+              <div class="btn pri" id="btn-otp" style="left:710px; top:236px; width:250px; height:90px">Send OTP</div>
+              <div class="lbl" style="left:120px; top:380px">ENTER OTP</div>
+              <div class="otp" style="left:120px; top:416px"><i id="o1"></i><i id="o2"></i><i id="o3"></i><i id="o4"></i><i id="o5"></i><i id="o6"></i></div>
+              <div id="ok" style="left:680px; top:432px"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#59DCC3"/><path d="M13 25 L21 33 L36 16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</div>
+            </div>
+          </div>
+        </div>
+        <svg id="cursor" viewBox="0 0 40 52"><path d="M3 3 L3 42 L13 33 L20 49 L27 46 L20 30 L34 30 Z" fill="#fff" stroke="#0B1422" stroke-width="3" stroke-linejoin="round"/></svg>
+        <div class="ripple" id="rip1"></div><div class="ripple" id="rip2"></div>
+        <div id="phone"><div class="scr"><div class="notch"></div><div id="sms"><div class="k">MESSAGE · NOW</div><div class="v">OTP ●●●●●●</div></div></div></div>
+      </div></div>
+
+      <!-- O048: step 4 review -> declaration -> submit -> verified, then registered -> acknowledgement saved (SIMULATION) -->
+      <div id="s48" class="clip" data-start="11.3333" data-duration="9.7667" data-track-index="1" style="position:absolute; inset:0; perspective:2600px">
+        <div id="cam48" style="position:absolute; inset:0; transform-origin:960px 540px">
+          <div class="win2" id="win48">
+            <div class="chrome2"><div class="dots"><i></i><i></i><i></i></div><div class="tabx"></div>
+              <div class="bar2"><svg viewBox="0 0 24 24" fill="none" stroke="#127a69" stroke-width="2.6" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11 V8 a4 4 0 0 1 8 0 V11"/></svg><span>cioins.co.in</span></div></div>
+            <div class="page2">
+              <div class="rail"><div class="line"></div><div class="fill" style="width:1200px"></div>
+                <div class="step" style="left:40px"><div class="n done">✓</div><div class="l">Register</div></div>
+                <div class="step" style="left:440px"><div class="n done">✓</div><div class="l">Details</div></div>
+                <div class="step" style="left:840px"><div class="n done">✓</div><div class="l">Upload</div></div>
+                <div class="step" style="left:1240px"><div class="n on">4</div><div class="l">Review</div></div>
+              </div>
+              <div class="rev" id="rev">
+                <div class="rr"><b>Policy No.</b><i>SHI-4471-0926</i></div>
+                <div class="rr"><b>Compensation sought</b><i>₹3,30,000</i></div>
+                <div class="rr"><b>Ombudsman centre</b><i>Hyderabad</i></div>
+                <div class="rr"><b>Insurer</b><i>Sample Health Insurance Co. Ltd.</i></div>
+                <div class="rr"><b>Complainant</b><i>R. Kumar</i></div>
+                <div id="scan48"></div>
+              </div>
+              <div class="decl"><div class="box" id="box48"><svg id="tk48" viewBox="0 0 48 48"><path d="M10 25 L20 35 L38 13" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="dl">DECLARATION</div><span class="dtx">I declare that the details given are true.</span></div>
+              <div class="btn pri" id="btn-sub" style="left:120px; top:640px; width:300px; height:84px">Submit</div>
+              <div class="pill" id="pv"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#59DCC3"/><path d="M13 25 L21 33 L36 16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</div>
+              <svg class="arr" id="arr48" viewBox="0 0 120 40"><path d="M4 20 H104 M90 6 L108 20 L90 34" fill="none" stroke="#14263B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="pill" id="pr"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#59DCC3"/><path d="M13 25 L21 33 L36 16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>Registered</div>
+            </div>
+          </div>
+          <svg id="cursor48" class="cur" viewBox="0 0 40 52"><path d="M3 3 L3 42 L13 33 L20 49 L27 46 L20 30 L34 30 Z" fill="#fff" stroke="#0B1422" stroke-width="3" stroke-linejoin="round"/></svg>
+          <div class="ripple" id="rip3"></div><div class="ripple" id="rip4"></div>
+          <div id="ack" class="paper" data-layout-ignore><div class="ah">ACKNOWLEDGEMENT</div><div class="ak">COMPLAINT NO.</div><div class="av" id="ackno">HYD-H-2026-0471</div>
+            <div class="ln2">Complainant: R. Kumar</div><div class="ln2">Insurer: Sample Health Insurance Co. Ltd.</div><div class="ln2">Centre: Hyderabad · SIMULATION</div></div>
+          <div id="phone48"><div class="scr"><div class="notch"></div><div id="dl48"><svg viewBox="0 0 48 48" fill="none" stroke="#0B1422" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 V30 M14 20 L24 30 L34 20 M8 40 H40"/></svg><div><div class="k">SAVED</div><div class="v">acknowledgement.pdf</div></div></div></div></div>
+        </div>
+      </div>
+      <div class="io-key" id="io-key"></div><div class="io-fill"></div><div class="io-leak" id="io-leak"></div><div class="io-dust" id="io-dust"></div>
+      <canvas class="io-grain" id="grain" width="500" height="290"></canvas>
+      <div class="io-vig"></div>
+      <div id="lt" class="io-lt clip" data-start="0" data-duration="5.4333" data-track-index="2"><div class="main" id="t-url">cioins.co.in</div></div>
+      <div id="tag" class="io-tag clip" data-start="0" data-duration="11.3333" data-track-index="3">ILLUSTRATION</div>
+      <div id="tag48" class="io-tag clip" data-start="11.3333" data-duration="9.7667" data-track-index="3">SIMULATION</div>
+    </div>
+    <script>
+      const W = window.WIN, $ = IO.$;
+      const URL = "cioins.co.in";
+      // "c-i-o-i-n-s dot co dot in" is spoken 3.14–5.17: one letter per spoken unit
+      const keyT = [3.22, 3.4, 3.58, 3.76, 3.94, 4.12, 4.36, 4.5, 4.62, 4.84, 4.98, 5.08];
+      FIN.bind($("url"), (t) => keyT.filter((k) => t >= k).length, (n) => URL.slice(0, n));
+      FIN.hook((t) => {
+        const typed = t >= keyT[0];
+        $("ph").style.opacity = typed ? 0 : 1;
+        const blink = Math.floor(t * 2.2) % 2 === 0 || (t > 3.1 && t < 5.2);
+        $("caret").style.opacity = t < 5.25 && blink ? 1 : 0;
+      });
+      // masked mobile number and OTP: never real digits
+      const mobT = 8.35, MOB = "●●●●● ●●●●●";
+      FIN.bind($("mob"), (t) => Math.max(0, Math.min(MOB.length, Math.floor((t - mobT) / 0.07) + 1)), (n) => MOB.slice(0, n));
+      for (let i = 1; i <= 6; i++) FIN.bind($("o" + i), (t) => (t >= 10.15 + i * 0.1 ? 1 : 0), (v) => (v ? "●" : ""));
+
+      const tl = gsap.timeline({ paused: true });
+      // O039 — "Open your browser (0.25–1.3) and go to the official website (–2.9), c-i-o-i-n-s dot co dot in (3.14–5.17)."
+      tl.fromTo("#win", { y: 60, rotationX: 8, rotationY: -10 }, { y: 0, rotationX: 4, rotationY: -6, duration: 0.9, ease: "power3.out" }, 0.0);
+      tl.fromTo("#cam", { scale: 1.95, x: 640, y: 660 }, { scale: 1.8, x: 560, y: 610, duration: 3.0, ease: "power1.inOut" }, 0.0);
+      tl.to("#cam", { scale: 1.85, x: 420, y: 630, duration: 2.1, ease: "power1.inOut" }, 3.0);
+      tl.fromTo("#page", { opacity: 0 }, { opacity: 0, duration: 0.1 }, 0);
+      tl.fromTo("#load", { scaleX: 0, width: "100%", opacity: 1 }, { scaleX: 1, duration: 0.5, ease: "power2.in" }, 5.15);
+      tl.to("#load", { opacity: 0, duration: 0.2 }, 5.65);
+      tl.to("#page", { opacity: 1, duration: 0.35 }, 5.4);
+      tl.to("#ntp", { opacity: 0, duration: 0.25 }, 5.2);
+      tl.fromTo("#t-url", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 4.6);
+      // O040 — "Choose Register Complaint (5.68–6.6), and verify your mobile number (6.96–9.3) with an O-T-P (≈10.1–11.0)."
+      tl.to("#cam", { scale: 1.0, x: -60, y: 0, duration: 1.0, ease: "power2.inOut" }, 5.2);
+      tl.to("#win", { rotationX: 2, rotationY: -3, duration: 1.0, ease: "power2.inOut" }, 5.2);
+      tl.fromTo("#form", { opacity: 0 }, { opacity: 0, duration: 0.1 }, 0);
+      tl.fromTo("#tick1", { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" }, { opacity: 0, scale: 0.4, duration: 0.1 }, 0);
+      tl.fromTo("#ok", { opacity: 0 }, { opacity: 0, duration: 0.1 }, 0);
+      // cursor to the button, click
+      const bx = 230 + 120 + 235, by = 110 + 128 + 320 + 48;
+      tl.fromTo("#cursor", { x: 1300, y: 900, opacity: 0 }, { x: bx, y: by, opacity: 1, duration: 0.7, ease: "power2.inOut" }, 5.6);
+      tl.fromTo("#btn-reg", { scale: 1 }, { scale: 0.96, duration: 0.08, yoyo: true, repeat: 1 }, 6.3);
+      tl.fromTo("#rip1", { x: bx, y: by, scale: 0.3, opacity: 0.9 }, { scale: 1.6, opacity: 0, duration: 0.5, ease: "power2.out" }, 6.3);
+      tl.to("#home", { opacity: 0, x: -60, duration: 0.35, ease: "power2.in" }, 6.55);
+      tl.fromTo("#form", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 6.85);
+      tl.to("#cam", { scale: 1.32, x: 330, y: 70, duration: 1.6, ease: "power2.inOut" }, 6.9);
+      // Send OTP click, SMS on the phone
+      const ox = 230 + 710 + 125, oy = 110 + 128 + 236 + 45;
+      tl.to("#cursor", { x: ox, y: oy, duration: 0.5, ease: "power2.inOut" }, 8.9);
+      tl.fromTo("#rip2", { x: ox, y: oy, scale: 0.3, opacity: 0.9 }, { scale: 1.6, opacity: 0, duration: 0.5, ease: "power2.out" }, 9.45);
+      tl.to("#cursor", { opacity: 0, duration: 0.3 }, 9.8);
+      tl.fromTo("#phone", { x: 520, rotation: 8 }, { x: 0, rotation: -4, duration: 0.7, ease: "power3.out" }, 9.5);
+      tl.fromTo("#sms", { y: -140, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, 9.85);
+      tl.to("#cam", { scale: 1.2, x: -60, y: 30, duration: 1.2, ease: "power2.inOut" }, 9.4);
+      tl.to("#ok", { opacity: 1, duration: 0.3 }, 10.95);
+      tl.fromTo("#ok svg", { scale: 0.3, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.35, ease: "back.out(2.5)" }, 10.95);
+      tl.to("#tick1", { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 11.0);
+      tl.to("#fill", { width: 200, duration: 0.3 }, 11.05);
+
+      // O048 — "Check every detail (0.25–1.4), tick the declaration (1.8–2.8), and submit (2.9–3.6). Your complaint is verified
+      //         first (3.9–5.7), and then registered (5.9–6.8). Save the acknowledgement (7.2–8.4) and your complaint number (8.4–9.5)."
+      const B48 = 11.3333, T = (t) => B48 + t;
+      tl.fromTo("#cam48", { scale: 1.2, x: 380, y: 60 }, { scale: 1.26, x: 420, y: 40, duration: 1.7, ease: "power1.inOut" }, T(0));
+      tl.fromTo("#scan48", { y: 0, opacity: 1 }, { y: 216, duration: 1.3, ease: "none" }, T(0.2));
+      tl.to("#scan48", { opacity: 0, duration: 0.25 }, T(1.5));
+      tl.to("#cam48", { scale: 1.3, x: 420, y: -80, duration: 0.8, ease: "power2.inOut" }, T(1.5));
+      const bx48 = 150 + 120 + 27, by48 = 90 + 128 + 520 + 27, sx48 = 150 + 120 + 150, sy48 = 90 + 128 + 640 + 42;
+      tl.fromTo("#cursor48", { x: 900, y: 1000, opacity: 0 }, { x: bx48, y: by48, opacity: 1, duration: 0.5, ease: "power2.inOut" }, T(1.5));
+      tl.fromTo("#box48", { backgroundColor: "#ffffff" }, { backgroundColor: "#14263B", duration: 0.12 }, T(2.15));
+      tl.fromTo("#tk48", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.25, ease: "back.out(2.5)" }, T(2.15));
+      tl.fromTo("#rip3", { x: bx48, y: by48, scale: 0.3, opacity: 0.9 }, { scale: 1.5, opacity: 0, duration: 0.45 }, T(2.15));
+      tl.to("#cursor48", { x: sx48, y: sy48, duration: 0.45, ease: "power2.inOut" }, T(2.55));
+      tl.fromTo("#btn-sub", { scale: 1 }, { scale: 0.95, duration: 0.08, yoyo: true, repeat: 1 }, T(3.1));
+      tl.fromTo("#rip4", { x: sx48, y: sy48, scale: 0.3, opacity: 0.9 }, { scale: 1.6, opacity: 0, duration: 0.5 }, T(3.1));
+      tl.to("#cursor48", { opacity: 0, duration: 0.3 }, T(3.5));
+      tl.to("#cam48", { scale: 1.15, x: 60, y: -10, duration: 0.8, ease: "power2.inOut" }, T(3.4));
+      tl.fromTo("#pv", { opacity: 0.25, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, T(4.4));
+      tl.fromTo("#arr48", { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(5.6));
+      tl.fromTo("#pr", { opacity: 0.25, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, T(6.2));
+      tl.fromTo("#ack", { opacity: 0, x: -240, y: 40, rotation: -6, scale: 0.8 }, { opacity: 1, x: 0, y: 0, rotation: -2, scale: 1, duration: 0.6, ease: "power3.out" }, T(7.1));
+      tl.to("#cam48", { scale: 1.0, x: -40, y: -30, duration: 1.2, ease: "power2.inOut" }, T(6.9));
+      tl.fromTo("#phone48", { x: 520, rotation: 8 }, { x: 0, rotation: -3, duration: 0.7, ease: "power3.out" }, T(7.4));
+      tl.fromTo("#dl48", { y: -140, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, T(8.0));
+      tl.fromTo("#ackno", { backgroundColor: "rgba(255,219,89,0)" }, { backgroundColor: "rgba(255,219,89,.75)", duration: 0.4 }, T(8.5));
+      tl.to("#cam48", { scale: 1.05, x: -60, y: -40, duration: 1.4, ease: "none" }, T(8.1));
+      IO.atmos({ duration: W.duration, seed: 2, leaks: [5.2, 11.36] });
+      tl.to({}, { duration: 0.01 }, W.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["C1_filing_stepper"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>C5 proof magnifier</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <script src="shared/io.js"></script>
+    <script src="windows.js"></script>
+    <link rel="stylesheet" href="shared/io.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+.sec { position: absolute; inset: 0; }
+.part { position: absolute; inset: 0; }
+.flash { position: absolute; inset: 0; background: #fff6e0; opacity: 0; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="C5_proof_magnifier" data-start="0" data-width="1920" data-height="1080" data-duration="58.8333">
+      <div class="io-plate" id="plate-wrap"><video id="plate" class="clip" src="media/plate.mp4" muted playsinline data-start="0" data-duration="58.8333" data-track-index="0"></video></div>
+      <div class="io-grade"></div>
+
+      <!-- O018: Rules cover, title + short title -->
+      <div id="s-O018" class="sec clip" data-start="0" data-duration="11.3333" data-track-index="1"><div class="part" id="r-O018"></div></div>
+      <!-- O022: Rule 14(1), who may complain -->
+      <div id="s-O022" class="sec clip" data-start="11.3333" data-duration="12.3" data-track-index="1"><div class="part" id="r-O022"></div></div>
+      <!-- O027: CIO Statement H8, 1,715 under 14(3)(a) -->
+      <div id="s-O027" class="sec clip" data-start="23.6333" data-duration="11.3" data-track-index="1"><div class="part" id="r-O027"></div></div>
+      <!-- O035: one year (p9) then fifty lakhs (p11), two crops -->
+      <div id="s-O035" class="sec clip" data-start="34.9333" data-duration="7.3" data-track-index="1">
+        <div class="part" id="r-O035a"></div><div class="part" id="r-O035b"></div><div class="flash" id="f-O035"></div>
+      </div>
+      <!-- O036: [fifty] -> footnote 3, G.S.R. 828(E) dated 9.11.2023 -->
+      <div id="s-O036" class="sec clip" data-start="42.2333" data-duration="4.3" data-track-index="1"><div class="part" id="r-O036"></div></div>
+      <!-- O037: Rule 14(5), pending or disposed of -->
+      <div id="s-O037" class="sec clip" data-start="46.5333" data-duration="12.3" data-track-index="1"><div class="part" id="r-O037"></div></div>
+
+      <div class="io-key" id="io-key"></div><div class="io-fill"></div><div class="io-leak" id="io-leak"></div><div class="io-dust" id="io-dust"></div>
+      <canvas class="io-grain" id="grain" width="500" height="290"></canvas>
+      <div class="io-vig"></div>
+
+      <!-- layer 3: on-screen text exactly as scenes.md -->
+      <div id="lt-O018" class="io-lt clip" data-start="0" data-duration="11.3333" data-track-index="2"><div class="src" id="O018-src">[INSURANCE OMBUDSMAN RULES | 2017]</div></div>
+      <div id="lt-O022" class="io-lt clip" data-start="11.3333" data-duration="12.3" data-track-index="2"><div class="src" id="O022-src">[RULE 14 | INSURANCE OMBUDSMAN RULES]</div></div>
+      <div id="lt-O027" class="io-lt clip" data-start="23.6333" data-duration="11.3" data-track-index="2">
+        <div class="main y" id="O027-a"><b id="O027-n">1,715</b> HEALTH COMPLAINTS TURNED AWAY</div>
+        <div class="main y" id="O027-b">NO COMPLAINT TO THE INSURER FIRST</div>
+        <div class="src" id="O027-src">[CIO ANNUAL REPORT 2024–25 | STATEMENT H8]</div>
+      </div>
+      <div id="lt-O035" class="io-lt clip" data-start="34.9333" data-duration="7.3" data-track-index="2">
+        <div class="main y" id="O035-a"><b>1 YEAR</b><span id="O035-b"> · UP TO <b>₹50 LAKH</b></span></div>
+        <div class="src" id="O035-src">[CIO FAQ]</div>
+      </div>
+      <div id="lt-O036" class="io-lt clip" data-start="42.2333" data-duration="4.3" data-track-index="2"><div class="src" id="O036-src">[GAZETTE G.S.R. 828(E) | 2023]</div></div>
+      <div id="lt-O037" class="io-lt clip" data-start="46.5333" data-duration="12.3" data-track-index="2">
+        <div class="main" id="O037-a">PENDING OR DECIDED ELSEWHERE = NOT ALLOWED</div>
+        <div class="src" id="O037-src">[RULE 14(5)]</div>
+      </div>
+    </div>
+    <script>
+      const W = window.WIN, $ = IO.$, sec = {};
+      for (const s of W.sections) sec[s.id] = s.start;
+      // page boxes (300 dpi page pixels; pdftotext -bbox of S01_Ombudsman_Rules_2023.pdf), H8 = report page image px
+      const B = {
+        p1_title: [[505, 178, 1380, 234]], p1_short: [[1253, 599, 2155, 644], [296, 665, 815, 710]],
+        p9_head: [[296, 129, 1334, 174]], p9_person: [[1347, 129, 2155, 174], [296, 195, 506, 240]],
+        p9_heirs: [[1155, 195, 2155, 240], [296, 262, 477, 307]], p9_year: [[396, 1839, 1297, 1884]],
+        p9_r5: [[296, 2787, 1869, 2832]], p9_pending: [[1169, 2853, 1330, 2898]], p9_disposed: [[1500, 2853, 1874, 2898]],
+        p9_court: [[1895, 2853, 2154, 2898]], p9_forum: [[296, 2919, 679, 2964]], p9_arb: [[691, 2919, 890, 2964]],
+        p11_fifty: [[562, 470, 1747, 522]], p11_fn3: [[296, 3371, 1422, 3417]],
+        h8_col: [[436, 362, 534, 398]], h8_total: [[440, 936, 534, 966]], h8_legend: [[113, 1024, 522, 1048]],
+      };
+      const P = { w: 2481, h: 3508 };
+      // time helper: section-local seconds -> scene seconds
+      const at = (id, keys) => keys.map(([t, v]) => [sec[id] + t, v]);
+      const hl = (id, box, t0, t1, cls) => ({ boxes: B[box], t0: sec[id] + t0, t1: sec[id] + t1, cls });
+
+      // O018 — "...the Insurance Ombudsman (≈6.0–7.5), which works under the Insurance Ombudsman Rules, twenty seventeen (≈9.4–11.0)"
+      IO.docRig({ host: $("r-O018"), img: "img/rules_p1.jpg", ...P, hlEase: true,
+        cam: { cx: at("O018", [[0, 1240], [2.4, 1180], [5.6, 960], [8.0, 1180], [11.4, 1250]]),
+               cy: at("O018", [[0, 1500], [2.4, 1150], [5.6, 300], [8.0, 520], [11.4, 600]]),
+               s: at("O018", [[0, 0.36], [2.4, 0.42], [5.6, 0.92], [8.0, 0.86], [11.4, 0.95]]),
+               tx: at("O018", [[0, -30], [11.4, 30]]) },
+        lens: { x: at("O018", [[8.0, 1500], [9.2, 1500], [10.4, 600], [11.4, 640]]), y: at("O018", [[8.0, 622], [9.2, 622], [10.4, 688], [11.4, 690]]),
+                on: at("O018", [[7.9, 0], [8.5, 1]]), m: at("O018", [[8, 1.7]]), R: 230 },
+        hl: [hl("O018", "p1_title", 5.9, 7.4), hl("O018", "p1_short", 9.2, 10.9)] });
+
+      // O022 — "Under Rule fourteen (2.7–4.2) ... made by you, the person with the grievance (5.7–9.0), or through your legal heir, nominee or assignee (9.2–12.0)"
+      IO.docRig({ host: $("r-O022"), img: "img/rules_p9.jpg", ...P,
+        cam: { cx: at("O022", [[0, 1240], [2.5, 1200], [4.4, 900], [6.0, 1300], [9.2, 1360], [12.3, 1300]]),
+               cy: at("O022", [[0, 1700], [2.5, 1100], [4.4, 260], [6.0, 230], [9.2, 260], [12.3, 270]]),
+               s: at("O022", [[0, 0.33], [2.5, 0.4], [4.4, 0.95], [6.0, 0.86], [9.2, 0.9], [12.3, 0.98]]), tx: at("O022", [[0, 20], [12.3, -20]]) },
+        lens: { x: at("O022", [[5.6, 1500], [8.6, 2000], [9.2, 1500], [10.9, 2050], [11.7, 390]]), y: at("O022", [[5.6, 152], [8.6, 160], [9.2, 218], [10.9, 218], [11.7, 284]]),
+                on: at("O022", [[5.4, 0], [6.0, 1]]), m: at("O022", [[5.6, 1.6]]), R: 220 },
+        hl: [hl("O022", "p9_head", 2.9, 4.4), hl("O022", "p9_person", 5.9, 8.9), hl("O022", "p9_heirs", 9.3, 12.0)] });
+
+      // O027 — H8: header to the [14(3(a))] column, Total 1,715 (≈2.6–4.3), legend "Customer Not represented to Ins. Co." (7.8–)
+      IO.docRig({ host: $("r-O027"), img: "img/cio_h8.jpg", w: 2000, h: 1414,
+        cam: { cx: at("O027", [[0, 1000], [2.3, 900], [3.6, 520], [7.4, 500], [8.8, 460], [11.3, 440]]),
+               cy: at("O027", [[0, 300], [2.3, 380], [3.6, 760], [7.4, 800], [8.8, 960], [11.3, 980]]),
+               s: at("O027", [[0, 0.82], [2.3, 0.9], [3.6, 1.05], [7.4, 1.08], [8.8, 1.12], [11.3, 1.16]]) },
+        lens: { x: at("O027", [[1.0, 487], [2.4, 487], [3.4, 487], [7.6, 487], [8.6, 220], [10.4, 420]]),
+                y: at("O027", [[1.0, 380], [2.4, 380], [3.4, 951], [7.6, 951], [8.6, 1036], [10.4, 1036]]),
+                on: at("O027", [[0.9, 0], [1.5, 1]]), m: at("O027", [[1, 1.45]]), R: 200 },
+        hl: [hl("O027", "h8_col", 1.3, 2.0), hl("O027", "h8_total", 3.0, 3.7), hl("O027", "h8_legend", 8.2, 10.0)] });
+
+      // O035 — p9 "within one year" (≈1.5–2.3), cut, p11 "fifty lakhs" (≈5.8–7.0)
+      IO.docRig({ host: $("r-O035a"), img: "img/rules_p9.jpg", ...P,
+        cam: { cx: at("O035", [[0, 900], [3.9, 860]]), cy: at("O035", [[0, 1700], [1.2, 1850], [3.9, 1870]]), s: at("O035", [[0, 0.55], [1.2, 0.95], [3.9, 1.05]]) },
+        lens: { x: at("O035", [[1.0, 600], [2.4, 1150], [3.9, 1250]]), y: at("O035", [[1.0, 1861], [3.9, 1861]]), on: at("O035", [[0.8, 0], [1.3, 1]]), m: at("O035", [[1, 1.6]]), R: 210 },
+        hl: [hl("O035", "p9_year", 1.3, 2.4)] });
+      IO.docRig({ host: $("r-O035b"), img: "img/rules_p11.jpg", ...P,
+        cam: { cx: at("O035", [[3.9, 1300], [7.3, 1180]]), cy: at("O035", [[3.9, 700], [5.0, 500], [7.3, 495]]), s: at("O035", [[3.9, 0.6], [5.0, 0.95], [7.3, 1.02]]) },
+        lens: { x: at("O035", [[5.0, 1150], [5.8, 1300], [6.6, 1600], [7.3, 1660]]), y: at("O035", [[5.2, 496], [7.3, 496]]), on: at("O035", [[4.6, 0], [5.1, 1]]), m: at("O035", [[5, 1.6]]), R: 210 },
+        hl: [hl("O035", "p11_fifty", 4.9, 6.6)] });
+
+      // O036 — "raised to fifty lakh rupees (≈1.4–2.4) in November twenty twenty-three (≈2.6–4.0)": [fifty] -> footnote 3
+      IO.docRig({ host: $("r-O036"), img: "img/rules_p11.jpg", ...P,
+        cam: { cx: at("O036", [[0, 1300], [1.9, 1250], [2.6, 900], [4.3, 880]]), cy: at("O036", [[0, 520], [1.9, 500], [2.6, 3320], [4.3, 3360]]),
+               s: at("O036", [[0, 0.9], [1.9, 0.95], [2.3, 0.6], [2.6, 0.9], [4.3, 0.98]]) },
+        lens: { x: at("O036", [[0, 1520], [1.9, 1560], [2.6, 600], [4.0, 1150]]), y: at("O036", [[0, 496], [1.9, 496], [2.6, 3394], [4.3, 3394]]),
+                on: at("O036", [[0, 1], [1.9, 1], [2.15, 0], [2.6, 0], [2.9, 1]]), m: at("O036", [[0, 1.6]]), R: 210 },
+        hl: [{ boxes: [[1440, 466, 1747, 522]], t0: sec.O036 + 1.2, t1: sec.O036 + 2.0 }, hl("O036", "p11_fn3", 2.8, 4.0)] });
+
+      // O037 — 14(5): "cannot take your complaint" (2.5–3.4), pending (≈5.3), decided (≈6.5), court (≈7.9), consumer forum (≈9.0), arbitration (≈10.2)
+      IO.docRig({ host: $("r-O037"), img: "img/rules_p9.jpg", ...P,
+        cam: { cx: at("O037", [[0, 1240], [2.3, 1200], [3.6, 1100], [6.0, 1400], [8.5, 1500], [9.2, 900], [12.3, 820]]),
+               cy: at("O037", [[0, 1700], [2.3, 2500], [3.6, 2840], [6.0, 2860], [8.5, 2870], [9.2, 2920], [12.3, 2925]]),
+               s: at("O037", [[0, 0.33], [2.3, 0.6], [3.6, 0.92], [8.5, 0.95], [12.3, 1.02]]) },
+        lens: { x: at("O037", [[4.8, 1250], [6.2, 1250], [6.9, 1690], [7.9, 2020], [8.6, 2020], [9.2, 480], [10.2, 480], [10.8, 790]]),
+                y: at("O037", [[4.8, 2876], [8.6, 2876], [9.2, 2942], [12.3, 2942]]),
+                on: at("O037", [[4.6, 0], [5.1, 1]]), m: at("O037", [[4.8, 1.6]]), R: 205 },
+        hl: [hl("O037", "p9_r5", 2.6, 3.6), hl("O037", "p9_pending", 5.3, 5.9), hl("O037", "p9_disposed", 6.4, 7.2),
+             hl("O037", "p9_court", 7.8, 8.5), hl("O037", "p9_forum", 9.0, 9.8), hl("O037", "p9_arb", 10.2, 10.9)] });
+
+      IO.atmos({ duration: W.duration, seed: 5, leaks: [sec.O022 + 0.1, sec.O027 + 0.1, sec.O035 + 3.75, sec.O037 + 0.1] });
+
+      const tl = gsap.timeline({ paused: true });
+      const pop = (el, t) => tl.fromTo(el, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, t);
+      const S = (id, t) => sec[id] + t;
+      // O035 hard cut between the two crops, with a soft white flash
+      tl.fromTo("#r-O035b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, S("O035", 3.85));
+      tl.fromTo("#f-O035", { opacity: 0 }, { opacity: 0.35, duration: 0.08, ease: "none" }, S("O035", 3.82));
+      tl.to("#f-O035", { opacity: 0, duration: 0.3, ease: "power2.out" }, S("O035", 3.9));
+      // labels: each lands on its words
+      pop("#O018-src", S("O018", 0.6));
+      pop("#O022-src", S("O022", 2.9));
+      pop("#O027-a", S("O027", 2.6)); pop("#O027-b", S("O027", 7.8)); pop("#O027-src", S("O027", 3.0));
+      pop("#O035-a", S("O035", 1.5)); tl.fromTo("#O035-b", { opacity: 0 }, { opacity: 1, duration: 0.4 }, S("O035", 5.7)); pop("#O035-src", S("O035", 1.9));
+      pop("#O036-src", S("O036", 0.5));
+      pop("#O037-a", S("O037", 6.4)); pop("#O037-src", S("O037", 2.7));
+      // 1,715 counts up as the lens lands on the Total row ("seventeen hundred and fifteen")
+      FIN.bind($("O027-n"), (t) => Math.round(1715 * IO.ramp(t, S("O027", 2.6), S("O027", 4.0))), (v) => v.toLocaleString("en-IN"));
+      tl.to({}, { duration: 0.01 }, W.duration - 0.01);
+      FIN.attach(tl);
+      window.__timelines["C5_proof_magnifier"] = tl;
+    </script>
+  </body>
+</html>

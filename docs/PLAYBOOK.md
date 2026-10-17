@@ -30,7 +30,12 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
   4K ≈ 1 GB), a contact sheet PNG/JPG, the SRT and the YouTube description, sent with `SendUserFile` (30 MB cap per file).
   **Google Drive replaces Gofile (owner, 2026-10-13).** *Why:* the owner already keeps a `Creator` folder there and opens it
   in the Drive app on the phone; Gofile links expire and need a browser. How:
-  - Videos: `scripts/upload_gdrive.sh --sub <slug> FILE…` (pinned rclone, uploads to `Creator/<slug>/`, prints a view link).
+  - **Drive layout (owner, 2026-10-15):** `Creator/English/<slug>/` and `Creator/Telugu/<slug>/`, one folder per video
+    (the channel is the film's narration language, `lang.txt`); channel art in `<Channel>/_Channel/`; material for both
+    channels in `Creator/_Shared (both channels)/`. Nothing loose in `Creator/`. *Why:* the owner runs two channels and
+    finds a film's files on the phone by channel, then by video. Folder names are the repo slugs.
+  - Videos: `scripts/upload_gdrive.sh --sub <Channel>/<slug> FILE…` (pinned rclone, uploads to `Creator/<Channel>/<slug>/`,
+    prints a view link), e.g. `--sub English/insurance-ombudsman`.
     The Google Drive connector can't carry video-sized files (content goes through the tool call), so the script needs
     **`GDRIVE_RCLONE_TOKEN`**, a one-time setup on the phone: Termux → `pkg install rclone` → `rclone authorize "drive"`
     → sign in with the Drive account that owns `Creator` in the browser that opens → copy the one-line JSON it prints →
@@ -42,7 +47,7 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
     "anyone with the link" sharing. The first two uploads (the VO blocks) did get link sharing before this fix.
   - Small text deliverables (description, SRT, `review.md`, `claims.csv`) can go up through the connector
     (`create_file` with `parentId` = the Creator folder `1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M`, `disableConversionToGoogleType`).
-  - Owner footage and clips for a film: the owner drops them in `Creator/` (zips are fine); sessions read them with the
+  - Owner footage and clips for a film: the owner drops them in `Creator/<Channel>/<slug>/` (zips are fine); sessions read them with the
     connector (`search_files` with `parentId`, `download_file_content`). Report in plain words: what changed,
   what is still a stand-in, any rights or Content ID risk.
 - **Git:** all work lands on `main`. *Why:* in Oct 2026 nine stale session branches hid finished work; one branch keeps
@@ -376,6 +381,12 @@ stop sequences, consecutive stops under 35 km apart joined (≈ 71,700 km agains
 that graph (Delhi–Mumbai 1,377 km, Delhi–Howrah 1,440 km, both within 1% of the real distances). Natural Earth's own
 railroads layer is too sparse (≈ 41,000 km). Overpass (OSM) is blocked from the cloud container. Builder:
 `video/kavach-railway-reality/_D_tools/build_map.py`. Keep the whole country in frame unless a zoom is the point.
+
+**Recording blocks in the chat (owner, 2026-10-15).** When a script is locked or a block changes, the reply itself carries
+every block as its own fenced code block, ready to paste into ElevenLabs: a heading line above each (block number, length,
+voice and settings, the file name to save as `voice/<code>-chN.mp3`), and nothing but the spoken text inside the fence.
+*Why:* the owner works on a phone; a code block has a one-tap copy button, while a Drive `.md` or the repo needs opening,
+selecting and scrolling. Drive and `bunty_blocks.md` stay as the record.
 
 ### 4a-3. Visual modes for explainers (owner, 2026-10-11)
 *Why (owner):* "not only slides": viewers stay to the end when they see real life, watch the maths being worked out and
@@ -956,7 +967,7 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 - **Shell traps:** never `pkill -f <pattern>` in a command line that contains the pattern (it kills its own shell; use
   `[x]yz`). Never name a shell function after a command it calls (`cut(){ … | cut; }` forked ~1,500 shells and OOM-killed
   renders).
-- **Deliver:** `scripts/upload_gdrive.sh --sub <slug>` to the owner's Drive `Creator` folder (§1); upload the master and
+- **Deliver:** `scripts/upload_gdrive.sh --sub <Channel>/<slug>` to the owner's Drive `Creator` folder (§1); upload the master and
   a 720p copy. `scripts/upload_gofile.sh` only as a fallback while `GDRIVE_RCLONE_TOKEN` is missing. Commit sources, EDL, registry, transcripts, SRT and description; large
   footage stays out of git (`assets/video/*`, `assets/raw/`, `projects/*/assets/`, renders).
 
@@ -1031,7 +1042,56 @@ board vs real-footage balance, loudness) and refine once more.
       real footage or a proof of the same idea; never leave an empty board on screen for more than ~1 s.
 - [ ] **Indian faces, places and money** in every stand-in (see §4a-3); a European street, shop or face is a reshoot.
 
+### 4a-4. Series continuity for connected films (owner, 2026-10-15)
+When a film continues an earlier one (Health Claim Trap → Insurance Ombudsman), it plays as the next episode of one
+story, never a fresh start. *Why:* the owner: "when we have connected topics we should not confuse the audience"; a
+viewer who saw episode 1 notices a changed bill, and a newcomer needs ten seconds of where we are.
+1. **Read the earlier film first:** its `script.full.tsv` (what was actually recorded), `youtube/description.md` and EDL.
+2. **Same story world:** the same family, amounts and documents (the ₹4,50,000 bill, the CASHLESS DENIED stamp), carried
+   on, not reset. Worked examples derive from the earlier numbers.
+3. **Never contradict earlier advice.** If episode 1 said "step 3: Bima Bharosa", episode 2 explains why step 3 alone is
+   not the end; it does not call it a mistake. Facts both films state use the same source and wording (claims rows reused).
+4. **Every episode stands alone (owner, 2026-10-15: "even with the second video they need to understand everything;
+   no need to watch" the first).** Open on the situation itself ("Imagine you are standing at …"), then a 15–25 s recap
+   that teaches what the viewer needs from the earlier film; the earlier film is a pointer ("we told this story in our
+   last video"), never a requirement. Gloss every term on first use as if new (cashless, Bima Bharosa, GRO); no "as we
+   saw last time", "remember step four" or "rule three from our first video". No "nobody tells you" about something we
+   already told them.
+4b. **Glimpses:** 2–4 s shots from the earlier film's final cut in the recap (labelled `FROM EPISODE 1`), so returning
+   viewers recognise the story and new ones see it.
+5. **Recurring motifs** (the four-step staircase, the same SIMULATION letter design) tie the episodes together; each
+   film still gets its own art direction for its new parts (§4a).
+6. **Callbacks without dependence:** link back through the recap ("step two of our plan") and tease the next episode in
+   its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
+
 ## 15. Lessons log
+
+**Insurance Ombudsman (English, 2026-10-15).** (1) A shot cache keyed on "file exists" was poisoned by a render cut
+off when the session was resumed: one shot file had no moov atom, and the concat demuxer froze the whole film from
+5:13 to the end on the last good frame. Fix in `projects/insurance-ombudsman/build/assemble.py`: render each shot to
+`tmp_<name>` and rename only when complete; after any interrupted run, ffprobe every cached shot and delete failures.
+*Why:* a frozen half-film passes every timing check and is only caught by looking at the sheets. (2) drawtext silently
+drops a label containing `%` (text expansion); use `expansion=none` instead of escaping. (3) Never `pkill -f` in the
+same command that later starts the process the pattern matches: it killed its own shell twice. (4) Glimpses from an
+earlier film already carry its lower thirds; overlaying ours doubled them, so they get only a top-left
+`FROM EPISODE 1` tag. (5) Parallel scene sessions (A/B/C, PLAYBOOK §3) delivered 43 frame-exact clips in about
+75 minutes while the coordinator sourced, cut and mixed; specs generated from the real VO timing (`scenes.md`) meant
+every clip dropped in at its window with no retiming.
+
+**Insurance Ombudsman v3, independent review + 4K (2026-10-16).** A fresh session reviewed v2 shot by shot
+(`build/review_shots.py`) and found what the authors' own pass missed: (1) a stock clip on screen three times (F08),
+because `split_long` and reuses across chapters hid it; count clip *sources*, not shot rows, before each render.
+(2) An edit that cuts away from a scene can hide the scene's own beat: the coordinator's GRO-list still covered the
+first 8 s of A6 O030, so the insurer page that A6 built for "every insurer has to show its GRO details" never
+appeared. When a still is laid over a scene window, check what the scene shows under it. (3) "No blank paper" includes
+screens: an email compose window or a new browser tab held for 5-10 s reads as a white slide; fill it with the
+context the VO implies (the quoted settlement email, recent visits). (4) Show the family's own city on a directory
+page (Hyderabad, not the default first tab). (5) A label that names a number must not stay up while a counter rolls
+past it. (6) Canva templates can be re-exported at 4K through the Canva connector (`export-design`, `mp4`,
+`horizontal_4k`); keep the crop/composite steps in a script (`tools/make_canva.py`) so a rebuild never depends on
+files that lived only in a dead session. (7) A detached render script still needs `HYPERFRAMES_RENDER_DETACHED=1`
+(also in this log, below); `setsid nohup` alone was cancelled within seconds.
+
 
 **Health Claim Rejection Trap (English, 2026-10-14).** (1) The owner's handoffs (a full brief, a "fixes" rewrite, then a
 visual-engine spec) each carried unsourced numbers ("80% rejected", "60 days", "₹500–800 rider", "₹90,000 cut",

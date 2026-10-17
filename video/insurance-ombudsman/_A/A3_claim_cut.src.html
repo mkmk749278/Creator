@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>A3 claim cut: the bill, the paid part, the cut</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <style>
+/*KIT_CSS*/
+/* A3: G01 Claim Deduction as a paper strip on a daylight desk (₹4,50,000 bill, ₹1,20,000 paid, ₹3,30,000 cut). */
+#stage { position: absolute; inset: 0; transform-origin: 50% 46%; }
+#letter { left: 580px; top: 170px; width: 760px; height: 760px; padding: 56px 58px; }
+.srow { font: 600 20px/1.2 Inter, Arial, sans-serif; color: #2b3443; white-space: nowrap; margin-bottom: 16px; }
+.srow.h { font-weight: 800; color: #14263B; letter-spacing: .02em; }
+/* the bill strip: 1500 x 190, split at 400 px (₹1,20,000 of ₹4,50,000 = 26.7%) */
+.strip { position: absolute; left: 210px; top: 400px; width: 1500px; height: 190px; padding: 30px 40px; }
+.strip .row { display: flex; gap: 22px; margin-bottom: 18px; }
+.strip .row i { display: block; height: 14px; border-radius: 7px; background: rgba(28, 37, 51, .17); }
+#pA { clip-path: polygon(0 0, 400px 0, 392px 22px, 408px 46px, 394px 74px, 410px 100px, 395px 128px, 407px 156px, 398px 190px, 0 190px); }
+#pB { clip-path: polygon(400px 0, 1500px 0, 1500px 190px, 398px 190px, 407px 156px, 395px 128px, 410px 100px, 394px 74px, 408px 46px, 392px 22px); transform-origin: 400px 50%; }
+#fillA { position: absolute; left: 0; top: 0; bottom: 0; width: 410px; background: rgba(89, 220, 195, .55); mix-blend-mode: multiply; transform-origin: 0 50%; }
+#tintB { position: absolute; inset: 0; background: rgba(255, 125, 128, .62); mix-blend-mode: multiply; }
+.lbl { position: absolute; white-space: nowrap; }
+.lbl .k { display: block; margin-bottom: 10px; }
+.lbl .v { font: 800 76px/1 Inter, Arial, sans-serif; letter-spacing: -.01em; }
+.lbl.scr { background: rgba(11, 20, 34, .93); padding: 18px 24px 20px; border-radius: 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="A3_claim_cut" data-start="0" data-width="1920" data-height="1080" data-duration="13.21">
+      <div class="layer"><video id="a3-bg" class="bgv" src="media/desk_f07.mp4" muted playsinline data-start="0" data-duration="13.21" data-track-index="0" data-volume="0"></video></div>
+      <div class="layer" id="ov">
+        <div class="grade"></div>
+        <div class="leak" id="leak" style="left: -500px; top: -700px"></div>
+        <div id="stage">
+          <div class="paper dk" id="letter" data-layout-allow-overlap>
+            <div class="dk-lh">Sample Health Insurance Co. Ltd.</div><div class="dk-sub">Claims Department · Hyderabad</div>
+            <div class="dk-rule"></div>
+            <div class="dk-ref"><span>Policy No. SHI-4471-0926</span><span>Claim No. CLM-2408-55217</span></div>
+            <div class="dk-t">Claim settlement advice · CLM-2408-55217</div>
+            <div class="dk-p">Dear R. Kumar, your claim has been processed.</div>
+            <div class="dk-row"><span>Amount claimed</span><b>₹4,50,000</b></div>
+            <div class="dk-row"><span>Amount approved</span><b>₹1,20,000</b></div>
+            <div class="dk-row"><span>Amount disallowed</span><b>₹3,30,000</b></div>
+            <div class="dk-p" style="margin-top: 14px">Reason: deductions as per policy terms and conditions.</div>
+            <div class="dk-sig">Claims Department<br />Sample Health Insurance Co. Ltd.</div>
+            <div class="sim-wm" data-layout-allow-occlusion style="left: 420px; top: 660px">SIMULATION</div>
+          </div>
+          <div id="stripWrap">
+            <div class="paper strip" id="pA">
+              <div class="srow h">Sample City Hospital · Itemised bill · Patient: R. Kumar · Claim No. CLM-2408-55217</div>
+              <div class="srow">Room charges · Surgeon fees · OT charges · Anaesthesia · ICU charges · Medicines · Doctor visits</div>
+              <div class="srow">Consumables · Investigations · Nursing charges · Diet · Pharmacy · Registration · Discharge</div>
+              <div id="fillA"></div>
+            </div>
+            <div class="paper strip" id="pB">
+              <div class="srow h">Sample City Hospital · Itemised bill · Patient: R. Kumar · Claim No. CLM-2408-55217</div>
+              <div class="srow">Room charges · Surgeon fees · OT charges · Anaesthesia · ICU charges · Medicines · Doctor visits</div>
+              <div class="srow">Consumables · Investigations · Nursing charges · Diet · Pharmacy · Registration · Discharge</div>
+              <div id="tintB"></div>
+            </div>
+          </div>
+          <div class="lbl scr" id="lBill" style="left: 210px; top: 228px"><span class="k">Bill</span><span class="v" id="vBill">₹4,50,000</span></div>
+          <div class="lbl scr" id="lPaid" style="left: 210px; top: 640px"><span class="k" style="color: var(--teal)">Paid</span><span class="v" style="color: var(--teal)" id="vPaid">₹1,20,000</span></div>
+          <div class="lbl scr" id="lCut" style="left: 1030px; top: 760px"><span class="k" style="color: var(--coral)">Cut</span><span class="v" style="color: var(--coral)" id="vCut">₹3,30,000</span></div>
+        </div>
+        <div class="tag">Example</div>
+        <canvas class="grain" id="grain" width="500" height="290"></canvas>
+        <div class="vig"></div>
+      </div>
+    </div>
+    <script>
+/*KIT_JS*/
+      // Local time = film time - 46.67 (O005 window 46.92-59.63, 0.25 s handle). Beats from the VO pauses:
+      // "four and a half lakh" ~51.8 -> 5.1; "one lakh twenty thousand" ~54.4 -> 7.7; "three lakh thirty thousand" ~56.9 -> 10.2.
+      const $ = (id) => document.getElementById(id), D = 13.21;
+      const T = { worse: 4.03, bill: 5.05, paid: 7.6, cut: 10.15 };
+      FIN.grain($("grain"));
+      IO.motes($("ov"), 26, 11, { x: 0, y: 80, w: 1920, h: 900 }, 0.8);
+      IO.drift($("stage"), 5, 4);
+      const tl = gsap.timeline({ paused: true });
+      // camera: slow push all through, a firmer push on the cut
+      tl.fromTo($("stage"), { scale: 1.0 }, { scale: 1.05, duration: T.cut, ease: "none" }, 0);
+      tl.to($("stage"), { scale: 1.1, y: -20, duration: D - T.cut, ease: "power2.out" }, T.cut);
+      tl.fromTo($("leak"), { x: 0, opacity: 0.6 }, { x: 260, opacity: 1, duration: D, ease: "none" }, 0);
+      // the letter: "rejects your claim all over again... or worse" -> it slides in, then away for the bill
+      tl.fromTo($("letter"), { y: 520, rotation: 5, opacity: 0 }, { y: 0, rotation: -1.6, opacity: 1, duration: 1.2, ease: "power3.out" }, 0.05);
+      tl.to($("letter"), { y: -40, rotation: -2.4, duration: 2.8, ease: "none" }, 1.25);
+      tl.to($("letter"), { y: -120, x: -560, rotation: -9, scale: 0.86, opacity: 0.4, filter: "blur(4px)", duration: 1.0, ease: "power2.inOut" }, T.worse);
+      // the bill strip lands
+      tl.fromTo($("stripWrap"), { x: 1900, rotation: 3, opacity: 0 }, { x: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, T.bill - 0.35);
+      tl.fromTo($("lBill"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, T.bill);
+      // paid portion fills in teal
+      tl.fromTo($("fillA"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, T.paid);
+      tl.fromTo($("lPaid"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, T.paid + 0.3);
+      // the cut: coral tint, tears and peels away
+      tl.fromTo($("tintB"), { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, T.cut - 0.2);
+      tl.to($("pB"), { x: 70, y: 70, rotation: 5.5, duration: 0.6, ease: "power3.out" }, T.cut + 0.1);
+      tl.to($("pB"), { x: 110, y: 110, rotation: 7, duration: D - T.cut - 0.7, ease: "none" }, T.cut + 0.7);
+      tl.to($("lBill"), { opacity: 0.45, duration: 0.4 }, T.cut);
+      tl.fromTo($("lCut"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, T.cut + 0.35);
+      tl.to({}, { duration: 0.01 }, D - 0.01);
+      FIN.attach(tl);
+      window.__timelines["A3_claim_cut"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+/* Session B kit ("the third door" desk world): tokens, desk plate, window light, paper, labels.
+   Palette from the owner's G01–G08 SVGs (README of projects/insurance-ombudsman):
+   navy = base, yellow = money, clocks and our calculations, teal = the Ombudsman route and the rules,
+   paper/mist = text, coral only for cuts. @font-face rules live in each index.html (PLAYBOOK §10). */
+:root {
+  --navy: #0b1422; --navy-2: #14263b; --yellow: #ffdb59; --teal: #59dcc3; --paper: #f5f7fb; --mist: #b8c7d9; --coral: #ff7d80;
+  --ink: #1b2533; --ink-dim: #6a7484; --paper-warm: #f4efe4;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #05080e; font-family: Inter, Arial, sans-serif; }
+.k-root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--navy); color: var(--paper);
+  font-family: Inter, Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.seg { position: absolute; inset: 0; visibility: hidden; }
+
+/* layer 1: the desk, seen through a slowly drifting camera */
+.cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.desk { position: absolute; left: -160px; top: -90px; width: 2240px; height: 1260px; background: url("desk.jpg") 0 0 / 100% 100%; }
+.light { position: absolute; left: -160px; top: -90px; width: 2240px; height: 1260px; background: url("light.png") 0 0 / 100% 100%; mix-blend-mode: screen; opacity: .2; }
+.dof { position: absolute; inset: 0; pointer-events: none;   /* shallow depth of field: soft dark edges, sharp centre band */
+  background: radial-gradient(ellipse 75% 70% at 50% 50%, rgba(5,8,14,0) 55%, rgba(5,8,14,.35) 100%); }
+
+/* paper: grain tile, warm key from the window (upper left), soft contact + drop shadow, slight curl highlight */
+.paper { position: absolute; color: var(--ink); background: #f4efe4 url("paper.jpg") center / 640px 640px; border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 26px 50px rgba(0,0,0,.5); overflow: hidden; }
+.paper::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(118deg, rgba(255,236,200,.22) 0%, rgba(255,255,255,0) 38%, rgba(20,38,59,0) 70%, rgba(20,38,59,.16) 100%); }
+.rule { height: 9px; border-radius: 5px; background: rgba(27,37,51,.16); margin: 0 0 15px; }   /* illegible body lines */
+.sig { position: absolute; height: 2px; background: rgba(27,37,51,.45); }
+
+/* layer 3: kinetic accents on a dark scrim in the lower corners */
+.lt { position: absolute; display: flex; align-items: center; gap: 18px; padding: 16px 26px 16px 22px; border-radius: 10px;
+  background: rgba(6,10,18,.78); font: 800 46px/1 Inter, Arial, sans-serif; letter-spacing: .01em; white-space: nowrap; color: var(--paper); }
+.lt::before { content: ""; width: 7px; align-self: stretch; border-radius: 4px; background: currentColor; }
+.lt.y { color: var(--yellow); } .lt.t { color: var(--teal); } .lt.c { color: var(--coral); }
+.lt small { font: 600 26px/1 Inter, Arial, sans-serif; letter-spacing: .06em; color: var(--mist); }
+.tag { position: absolute; right: 56px; bottom: 40px; font: 600 19px/1 Inter, Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(245,247,251,.9); background: rgba(6,10,18,.62); padding: 9px 14px; border-radius: 6px; white-space: nowrap; }
+.tag b { color: var(--yellow); font-weight: 800; }
+.tag i { font-style: normal; color: var(--teal); }
+
+/* layer 2: atmosphere */
+.dust { position: absolute; inset: 0; pointer-events: none; opacity: .55; }   /* < .6 so the layout audit does not count it as an occluder */
+.grain { position: absolute; left: -40px; top: -40px; width: 2000px; height: 1160px; opacity: .08; mix-blend-mode: overlay; pointer-events: none; }
+.vig { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 52%, rgba(0,0,0,.3) 82%, rgba(0,0,0,.5) 100%); }
+
+/* revision v2 (owner, 2026-10-15): every document carries real, readable SIMULATION text (texts in kit.js K.DOCS) */
+.dx { position: absolute; inset: 0; padding: 44px 46px; font: 400 20px/1.35 Inter, Arial, sans-serif; color: var(--ink); }
+.dx .sim { position: absolute; right: 18px; top: 14px; font: 800 13px/1 Inter, Arial, sans-serif; letter-spacing: .2em; color: #1b2533;
+  border: 2px solid rgba(27,37,51,.5); padding: 4px 7px; border-radius: 3px; }
+.dx .org { font: 800 18px/1.25 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #1e3a5f; text-align: center; }
+.dx .ttl { font: 800 27px/1.2 Inter, Arial, sans-serif; text-align: center; margin: 10px 0 6px; color: #111a26; }
+.dx .ref { font: 600 16px/1.35 Inter, Arial, sans-serif; color: #404b5c; text-align: center; margin-bottom: 18px; }
+.dx hr { border: 0; border-top: 2px solid rgba(27,37,51,.18); margin: 12px 0 16px; }
+.dx .row { font: 400 23px/1.3 Inter, Arial, sans-serif; margin: 0 0 10px; }
+.dx .row b { font-weight: 800; }
+.dx .key { position: relative; font: 800 25px/1.3 Inter, Arial, sans-serif; margin: 14px 0 16px; padding: 4px 6px; }
+.dx .key .hl { position: absolute; left: -4px; right: -4px; top: 0; bottom: 0; background: rgba(255,219,89,.6); mix-blend-mode: multiply; transform-origin: 0 50%; transform: scaleX(0); }
+.dx .small { font: 400 15px/1.45 Inter, Arial, sans-serif; color: #2c3747; margin: 0 0 6px; }
+.dx .sign { position: absolute; left: 46px; bottom: 46px; font: 400 18px/1.3 Inter, Arial, sans-serif; color: #3a4556; }
+.dx .sign u { display: inline-block; width: 210px; border-bottom: 2px solid rgba(27,37,51,.6); margin-left: 8px; text-decoration: none; }
+.dx .ok { display: inline-block; color: #1f8f7b; font-weight: 800; }
+.stamp-r { position: absolute; padding: 10px 18px; border: 5px solid rgba(35,70,140,.85); border-radius: 10px; color: rgba(35,70,140,.9);
+  font: 800 30px/1.1 Inter, Arial, sans-serif; letter-spacing: .08em; text-align: center; mix-blend-mode: multiply; white-space: nowrap; }
+.stamp-r small { display: block; font: 800 20px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; }
+
+/* per-paper type sizes: big enough to read on a phone, and the text fills the page */
+.agree .dx .ttl { font-size: 31px; } .agree .dx .ref { font-size: 18px; } .agree .dx .row { font-size: 26px; }
+.agree .dx .key { font-size: 28px; } .agree .dx .small { font-size: 19px; } .agree .dx .sign { font-size: 21px; }
+.award .dx .org { font-size: 20px; } .award .dx .ttl { font-size: 36px; } .award .dx .ref { font-size: 18px; }
+.award .dx .key { font-size: 28px; } .award .dx .small { font-size: 18px; } .award .dx .sign { font-size: 20px; }
+.settle .dx .ttl { font-size: 28px; } .settle .dx .ref { font-size: 17px; } .settle .dx .row { font-size: 26px; } .settle .dx .key { font-size: 30px; }
+.doc .dx .org { font-size: 20px; } .doc .dx .ttl { font-size: 27px; } .doc .dx .ref { font-size: 17px; } .doc .dx .row { font-size: 25px; }

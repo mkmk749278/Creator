@@ -5,8 +5,8 @@ description: Hand a finished or preview cut to the phone-only owner - upload lin
 
 # Deliver to the owner
 
-1. **Video:** `scripts/upload_gdrive.sh --sub <slug> <file>…` for the master and a 720p copy: they land in the owner's
-   Google Drive `Creator/<slug>/` folder (owner, 2026-10-13: Drive replaces Gofile). Needs `GDRIVE_RCLONE_TOKEN`
+1. **Video:** `scripts/upload_gdrive.sh --sub <English|Telugu>/<slug> <file>…` for the master and a 720p copy: they land in the owner's
+   Google Drive `Creator/<English|Telugu>/<slug>/` folder (owner, 2026-10-13: Drive replaces Gofile). Needs `GDRIVE_RCLONE_TOKEN`
    (one-time phone setup, PLAYBOOK §1). If it is missing, say so plainly, give the setup steps, and fall back to
    `scripts/upload_gofile.sh` for this delivery. Small text files (description, SRT, review) can also go to the
    `Creator/<slug>/` folder with the Google Drive connector.

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B1 fee split: what a 20% recovery fee costs</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="kit/kit.js"></script>
+    <link rel="stylesheet" href="kit/kit.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+/* the family's money as a paper strip (cheque-like guilloche), and the fee piece cut from its right end */
+.strip { width: 1240px; height: 236px; }
+.strip .band { position: absolute; left: 0; top: 0; bottom: 0; width: 16px; background: var(--yellow); }
+.strip .guil { position: absolute; inset: 18px 18px 18px 34px; border: 2px solid rgba(27,37,51,.18); border-radius: 4px;
+  background: repeating-linear-gradient(100deg, rgba(20,38,59,.05) 0 2px, rgba(0,0,0,0) 2px 9px), repeating-linear-gradient(-12deg, rgba(20,38,59,.04) 0 1px, rgba(0,0,0,0) 1px 7px); }
+.strip .amt { position: absolute; left: 76px; top: 52px; font: 800 124px/1 Inter, Arial, sans-serif; letter-spacing: -.02em; color: var(--ink); }
+.piece { width: 248px; height: 236px; box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 18px 36px rgba(0,0,0,.45); }
+.piece .guil { position: absolute; inset: 18px 18px 18px 0; border: 2px solid rgba(27,37,51,.18); border-left: 0; border-radius: 0 4px 4px 0;
+  background: repeating-linear-gradient(100deg, rgba(20,38,59,.05) 0 2px, rgba(0,0,0,0) 2px 9px); }
+.piece .val { position: absolute; left: 0; right: 0; top: 92px; text-align: center; font: 800 46px/1 Inter, Arial, sans-serif; color: #7a5a00; }
+.perf { position: absolute; top: 0; bottom: 0; width: 0; border-left: 4px dashed var(--yellow); filter: drop-shadow(0 0 6px rgba(255,219,89,.6)); }
+.gstchip { position: absolute; padding: 18px 24px; border-radius: 10px; background: rgba(6,10,18,.84); border: 3px solid var(--yellow);
+  font: 800 40px/1 Inter, Arial, sans-serif; color: var(--yellow); white-space: nowrap; }
+.gstchip small { font: 600 24px/1 Inter, Arial, sans-serif; color: var(--mist); letter-spacing: .06em; }
+
+/* the unbranded agreement */
+.agree { width: 600px; height: 700px; }
+.ring { position: absolute; border: 5px solid var(--yellow); border-radius: 10px; box-shadow: 0 0 22px rgba(255,219,89,.5); }
+
+/* bulldog clip pinning the stuck money */
+.clip { position: absolute; width: 150px; height: 120px; }
+.zero { position: absolute; inset: 0; border-radius: 3px; box-shadow: inset 0 0 0 5px var(--teal), 0 0 40px rgba(89,220,195,.55); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="k-root" data-composition-id="B1_fee_split" data-start="0" data-width="1920" data-height="1080" data-duration="30.6">
+
+      <!-- O020: the stuck ₹3,30,000 and the agency's agreement (EXAMPLE) -->
+      <div class="seg" id="s0">
+        <div class="cam" id="cam0">
+          <div class="desk"></div><div class="light" id="lt0"></div>
+          <div class="paper strip" id="st0" style="left:60px; top:700px; transform: rotate(-3deg)">
+            <div class="band"></div><div class="guil"></div><div class="amt">₹3,30,000</div>
+          </div>
+          <svg class="clip" id="clip0" viewBox="0 0 150 120" style="left:140px; top:660px">
+            <defs><linearGradient id="m0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a5566" /><stop offset=".5" stop-color="#1c2330" /><stop offset="1" stop-color="#0d1118" /></linearGradient></defs>
+            <path d="M18 96 L132 96 L124 40 L26 40 Z" fill="url(#m0)" stroke="#5d6a7c" stroke-width="2" />
+            <path d="M40 42 C40 6, 110 6, 110 42" fill="none" stroke="#9aa6b6" stroke-width="7" stroke-linecap="round" />
+            <path d="M26 46 L124 46" stroke="rgba(255,255,255,.25)" stroke-width="3" />
+          </svg>
+          <div class="paper agree" data-layout-allow-overflow id="ag0" data-doc="D2" style="left:1240px; top:110px; transform: rotate(3deg)">
+            <div class="ring" id="sig0" style="left:30px; bottom:30px; width:340px; height:54px"></div>
+          </div>
+        </div>
+        <div class="dof"></div>
+        <div class="tag" id="tag0">EXAMPLE</div>
+      </div>
+
+      <!-- O021: 20% = ₹66,000; + 18% GST (ASSUMED) = ₹77,880 (OUR CALCULATION) -->
+      <div class="seg" id="s1">
+        <div class="cam" id="cam1">
+          <div class="desk"></div><div class="light" id="lt1"></div>
+          <div class="paper agree" data-layout-allow-overflow data-doc="D2" style="left:1380px; top:-300px; transform: rotate(9deg); opacity:.85"></div>
+          <div id="grp1" style="position:absolute; left:250px; top:330px; width:1240px; height:236px">
+            <div class="paper strip" id="st1" style="left:0; top:0; width:992px">
+              <div class="band"></div><div class="guil" style="right:0; border-right:0; border-radius:4px 0 0 4px"></div><div class="amt" id="amt1">₹3,30,000</div>
+            </div>
+            <div class="paper piece" id="pc1" style="left:992px; top:0">
+              <div class="guil"></div><div class="val" id="val1">₹66,000</div>
+            </div>
+            <div class="perf" id="perf1" style="left:990px"></div>
+          </div>
+          <div class="gstchip" id="gst1" style="left:1270px; top:820px">+ 18% GST <small>(ASSUMED)</small></div>
+        </div>
+        <div class="dof"></div>
+        <div class="lt y" id="lt1a" style="left:64px; bottom:44px"><span id="lw1">₹66,000 FEE</span><span id="lw2">+ 18% GST (ASSUMED)</span><span id="lw3">= ₹77,880</span></div>
+        <div class="tag" id="tag1"><b>OUR CALCULATION</b></div>
+      </div>
+
+      <!-- O024: the fee folds back into the family's money; filing costs ₹0 -->
+      <div class="seg" id="s2">
+        <div class="cam" id="cam2">
+          <div class="desk"></div><div class="light" id="lt2"></div>
+          <div class="paper agree" data-layout-allow-overflow id="ag2" data-doc="D2" style="left:1290px; top:90px; transform: rotate(4deg)">
+            <div class="ring" id="sig2" style="left:30px; bottom:30px; width:340px; height:54px"></div>
+          </div>
+          <div id="grp2" style="position:absolute; left:150px; top:400px; width:1240px; height:236px">
+            <div class="paper strip" id="st2" style="left:0; top:0; width:992px">
+              <div class="band"></div><div class="guil" style="right:0; border-right:0; border-radius:4px 0 0 4px"></div><div class="amt">₹3,30,000</div>
+            </div>
+            <div class="paper piece" id="pc2" style="left:992px; top:0">
+              <div class="guil"></div><div class="val" id="val2">₹77,880</div>
+            </div>
+            <div class="zero" id="z2"></div>
+          </div>
+        </div>
+        <div class="dof"></div>
+        <div class="lt t" id="lt2a" style="left:64px; bottom:44px">FILING FEE: ₹0</div>
+        <div class="tag" id="tag2"><i>[CIO FAQ]</i></div>
+      </div>
+
+      <canvas class="dust" id="dust" width="1920" height="1080"></canvas>
+      <canvas class="grain" id="grain" width="500" height="290"></canvas>
+      <div class="vig"></div>
+    </div>
+    <script>
+      const $ = (id) => document.getElementById(id);
+      // VO windows (film seconds, projects/insurance-ombudsman/scenes.md); each clip = window + 0.25 s handle each side
+      const L = K.layout([{ id: "O020", ws: 197.94, we: 207.45 }, { id: "O021", ws: 207.88, we: 219.25 }, { id: "O024", ws: 240.35, we: 248.60 }]);
+      const DUR = K.total(L);
+      K.fillDocs(); K.grain($("grain")); K.dust($("dust"));
+      const tl = gsap.timeline({ paused: true });
+      L.forEach((s, i) => { tl.set($("s" + i), { visibility: "visible" }, s.off); if (i < L.length - 1) tl.set($("s" + i), { visibility: "hidden" }, s.off + s.len);
+        tl.fromTo($("lt" + i), { x: 0, y: 0 }, { x: 60, y: 14, duration: s.len, ease: "none" }, s.off); });
+      const pop = (el, t, from = { opacity: 0, y: 24 }, d = 0.45) => tl.fromTo(el, from, { opacity: 1, y: 0, x: 0, scale: 1, duration: d, ease: "power3.out" }, t);
+
+      // ---- O020 ----
+      { const v = L[0].v, s = L[0];
+        tl.fromTo($("cam0"), { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: -40, y: -16, duration: v(205.2) - s.off, ease: "none" }, s.off);
+        tl.fromTo($("st0"), { y: 520, rotation: -9 }, { y: 0, rotation: -3, duration: 0.9, ease: "power3.out" }, s.off);
+        tl.fromTo($("clip0"), { opacity: 0, y: -90, scale: 1.25 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "power4.in" }, v(199.75));   // "is stuck"
+        tl.fromTo($("st0"), { x: 0 }, { x: 0, keyframes: [{ x: 6, duration: 0.05 }, { x: -4, duration: 0.06 }, { x: 0, duration: 0.08 }] }, v(200.1));
+        tl.fromTo($("ag0"), { x: 900, rotation: 14 }, { x: 0, rotation: 5, duration: 0.8, ease: "power3.out" }, v(201.0));            // "a recovery agency"
+        tl.fromTo($("sig0"), { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, v(202.75));   // "sign our agreement"
+        tl.to($("sig0"), { opacity: 0, duration: 0.4 }, v(204.6));
+        tl.fromTo($("ag0").querySelector(".hl"), { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power1.inOut" }, v(205.5));          // "twenty percent plus G-S-T": the fee line
+        tl.to($("cam0"), { x: -260, y: -20, scale: 1.14, duration: 1.6, ease: "power2.inOut" }, v(205.2));                               // lean in to read it
+        pop($("tag0"), s.off + 0.4, { opacity: 0 });
+      }
+      // ---- O021 ----
+      { const v = L[1].v, s = L[1];
+        tl.fromTo($("cam1"), { scale: 1.03, x: 10, y: 0 }, { scale: 1.09, x: -30, y: -10, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("perf1"), { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.45, ease: "power2.out" }, v(208.1));    // "twenty percent of"
+        tl.fromTo($("val1"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, v(209.55));                                              // "sixty-six thousand"
+        tl.to($("pc1"), { x: 70, y: 210, rotation: 7, duration: 0.7, ease: "power3.out" }, v(209.45));
+        tl.to($("perf1"), { opacity: 0, duration: 0.3 }, v(209.45));
+        tl.to($("amt1"), { color: "rgba(27,37,51,.62)", duration: 0.5 }, v(209.6));
+        tl.set([$("lw2"), $("lw3")], { display: "none" }, s.off);
+        tl.set($("lw2"), { display: "inline" }, v(212.3)); tl.set($("lw3"), { display: "inline" }, v(216.6));   // the scrim grows word by word
+        tl.fromTo($("lw1"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, v(209.8));
+        tl.fromTo($("lt1a"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, v(209.7));
+        tl.fromTo($("gst1"), { opacity: 0, x: 220 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, v(212.05));             // "add eighteen percent"
+        tl.fromTo($("lw2"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, v(212.3));
+        tl.to($("gst1"), { x: -40, y: -170, scale: 0.55, opacity: 0, duration: 0.6, ease: "power2.in" }, v(213.75));                   // joins the fee piece
+        tl.to($("pc1"), { scale: 1.12, duration: 0.25, yoyo: true, repeat: 1, ease: "power2.out" }, v(214.25));
+        const fee = K.keys([[v(214.3), 66000], [v(216.9), 77880]]);
+        K.text($("val1"), (t) => K.inr(Math.round(fee(t) / 10) * 10));
+        tl.fromTo($("lw3"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, v(216.6));               // "...eighty rupees"
+        tl.to($("pc1"), { x: 260, y: 300, rotation: 13, duration: 1.6, ease: "power2.inOut" }, v(217.3));                              // "out of your family's savings"
+        pop($("tag1"), v(209.8), { opacity: 0 });
+      }
+      // ---- O024 ----
+      { const v = L[2].v, s = L[2];
+        tl.fromTo($("cam2"), { scale: 1.08, x: -20, y: -10 }, { scale: 1.02, x: 20, y: 0, duration: s.len, ease: "none" }, s.off);
+        tl.set($("pc2"), { x: 130, y: 300, rotation: 10 }, s.off);
+        tl.fromTo($("sig2"), { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.35 }, v(240.5));                         // "before you sign any agreement"
+        tl.to($("pc2"), { x: 330, y: 250, rotation: 16, duration: 1.4, ease: "power2.inOut" }, v(241.4));                              // "give away a share"
+        tl.fromTo($("ag2").querySelector(".hl"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power1.inOut" }, v(241.6));          // the fee line
+        tl.to($("sig2"), { opacity: 0, duration: 0.3 }, v(244.1));
+        tl.to($("ag2"), { x: 800, rotation: 16, opacity: 0, duration: 0.8, ease: "power2.in" }, v(245.0));                             // "you can do this yourself"
+        tl.to($("pc2"), { x: 0, y: 0, rotation: 0, duration: 1.0, ease: "power3.inOut" }, v(245.3));                                  // the fee folds back
+        tl.to($("val2"), { opacity: 0, duration: 0.4 }, v(245.6));
+        tl.fromTo($("z2"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, v(246.3));
+        tl.fromTo($("lt2a"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(247.5));               // "for zero rupees"
+        pop($("tag2"), v(247.6), { opacity: 0 });
+      }
+      tl.to({}, { duration: 0.01 }, DUR - 0.01);
+      K.attach(tl);
+      window.__timelines["B1_fee_split"] = tl;
+    </script>
+  </body>
+</html>
