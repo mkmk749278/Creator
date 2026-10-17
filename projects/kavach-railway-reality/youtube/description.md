@@ -1,11 +1,12 @@
 # YouTube package: The Kavach Railway Reality
 
-Chapter times come from the film's program timeline (`align/program.json`, 11:13 with the end card). The full cut is
-not assembled yet (the 8:34 reel on Drive is the animated scenes only). If the edit moves anything, re-check these
-times against the final MP4 before you upload.
+Chapter times are for **reel v2 4K (8:34)**, the video on Drive: the 46 animated scenes joined in film order
+(`scenes.json` durations, total 513.75 s). The reel leaves out the lines planned over real footage (welcome, the
+"eight minute mark" promise, V044 "nobody can say for sure", the PIB and Rail Madad steps), so the description carries
+the action steps. If the full 11:13 film is assembled later, its chapters are at the end of this file.
 
 THUMBNAILS: `thumbnail_A.jpg` (real Indian Railways loco, KAVACH working on only 2,633 KM of 69,000 route km, said at
-5:41 and 5:27) and `thumbnail_B.jpg` (COULD KAVACH HAVE SAVED BALASORE? signal illustration; the honest answer at 7:47).
+4:29 and 4:15 in the reel) and `thumbnail_B.jpg` (COULD KAVACH HAVE SAVED BALASORE? signal illustration; answered in the reel at 6:06–6:35 (C3, E6)).
 Run both in YouTube Test & Compare.
 
 ## Title (pick one)
@@ -38,21 +39,21 @@ Three things you can do:
 Tell me in the comments: which route do you travel most, and do you know if Kavach is working on it yet?
 
 CHAPTERS
-0:00 2 AM on a night train, and two WhatsApp forwards
-1:02 What Kavach really is (not an app)
-1:48 The four links: track tags, station, radio, engine
-3:05 SIL-4: the highest safety level, and what it does not mean
-3:29 Why a train cannot stop like a car
-4:27 Fog: when the loco pilot sees the signal too late
-5:11 208 red signals passed in five years
-5:27 The rollout: 69,000 route km
-6:04 Fitted is not working: the headline trap
-6:25 Money and suppliers
-7:11 Balasore: would Kavach have stopped it?
-8:21 Kanchanjunga Express: where Kavach could help
-9:12 Does Kavach always lock the speed at 15 km/h?
-9:42 What you can do
-10:23 Kavach is not magic, and not useless
+0:00 Two WhatsApp forwards after a crash
+0:23 What Kavach really is (not an app)
+0:46 The four links: track tags, station, radio, engine
+2:01 SIL-4: the highest safety level, and what it does not mean
+2:27 Why a train cannot stop like a car
+3:18 Fog: when the loco pilot sees the signal too late
+3:58 208 red signals passed in five years
+4:14 The rollout: 69,000 route km
+4:52 Fitted is not working: the headline trap
+5:14 The money, and the slowest step
+5:41 Balasore: would Kavach have stopped it?
+6:35 Kanchanjunga Express: where Kavach could help
+7:26 Does Kavach always lock the speed at 15 km/h?
+7:56 What you can do
+8:13 Kavach is not magic, and not useless
 
 SOURCES
 - Commission of Railway Safety, Abstracts of accident inquiry reports 2024-25: https://crs.gov.in/wp-content/uploads/2026/05/Abstract-2024-25-Final-pdf-English-12-5-26complete.pdf
@@ -78,4 +79,23 @@ Music by Kevin MacLeod (incompetech.com), licensed under Creative Commons: By At
 Know the facts. Stay practical. Jai Hind.
 
 #BePracticalWithKishore #Kavach #IndianRailways #RailwaySafety #Balasore #TrainAccident
+```
+
+## Chapters for the full film (11:13 program timeline), if it is assembled later
+```
+0:00 2 AM on a night train, and two WhatsApp forwards
+1:02 What Kavach really is (not an app)
+1:48 The four links: track tags, station, radio, engine
+3:05 SIL-4: the highest safety level, and what it does not mean
+3:29 Why a train cannot stop like a car
+4:27 Fog: when the loco pilot sees the signal too late
+5:11 208 red signals passed in five years
+5:27 The rollout: 69,000 route km
+6:04 Fitted is not working: the headline trap
+6:25 Money and suppliers
+7:11 Balasore: would Kavach have stopped it?
+8:21 Kanchanjunga Express: where Kavach could help
+9:12 Does Kavach always lock the speed at 15 km/h?
+9:42 What you can do
+10:23 Kavach is not magic, and not useless
 ```
