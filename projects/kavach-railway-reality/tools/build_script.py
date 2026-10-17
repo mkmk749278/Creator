@@ -82,9 +82,10 @@ def lint_en(row):
     for tok in re.findall(r"\b[A-Z]{2,}\b", t):
         if tok not in EN_WORD_ACRONYMS:
             errs.append(f"bare acronym {tok}: write it for the voice (e.g. {'-'.join(tok)})")
-    for opener in ("now let us", "let us understand", "in this video we", "first, one thing must be clear"):
+    for opener in ("now let us", "let us understand", "in this video we", "first, one thing must be clear",
+                   "welcome to be practical", "today we'll", "today we will", "it has been observed"):
         if opener in t.lower():
-            errs.append(f"lecture opener '{opener}' (PLAYBOOK §4a-4)")
+            errs.append(f"lecture opener '{opener}' (PLAYBOOK §4a-4, §4a-5; the channel is named only in the outro)")
     for sent in re.split(r"(?<=[.?])\s+", t):
         w = re.findall(r"[A-Za-z']+", sent.lower())
         if sent.rstrip().endswith(".") and not sent.rstrip().endswith("...") and w and (w[0] in EN_QWORDS[1:] or w[-1] == "right"):

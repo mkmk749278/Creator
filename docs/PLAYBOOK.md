@@ -525,8 +525,8 @@ YouTube Studio: ask the owner for Studio screenshots (Reach and Engagement tabs 
    small test batch of impressions, and three credit card films compete with each other. *Rule:* one to two long films a
    week, never two on the same topic within a fortnight.
 3. **The title's brand suffix eats the mobile title.** "| Be Practical With Kishore" is 27 characters; phones show
-   about the first 50–60. The one breakout title had no suffix. *Recommendation for the owner* (§13a; the owner decides):
-   put the channel name in the description, not the title.
+   about the first 50–60. The one breakout title had no suffix. **Owner's decision (2026-10-17): keep the suffix**
+   (§13a). So put the hook words first, so the part a phone shows carries the promise on its own.
 4. **Delayed ledes and false open loops** (§4a-5): fix them in the edit before delivery.
 5. **No Shorts.** Shorts don't count toward watch hours but are the cheapest way for a new channel to be found and to
    gain subscribers. *Rule:* cut two or three 30–50 s vertical Shorts from every film (the hook, the reveal), each
@@ -558,6 +558,8 @@ What the curves say:
    away, "0 fabs". Stakes and real failure hold viewers better than background.
 5. **Targets for the next films:** at least 65% at 0:30, at least 50% at 1:00, average view duration at least 35%.
    Hitting that roughly doubles watch hours per view, and YouTube widens browse distribution for videos that hold.
+   **Owner's decisions (2026-10-17):** channel name and logo sting only at the end (§5.5 rule 5); first frame = the
+   thumbnail's subject (§5.5 rule 1); title suffix kept; India-capability films first (point 1 above).
 6. **Open question:** the synthetic voice may cost some early exits (viewers who notice TTS). We can't measure it
    from one channel; recheck once the intro fix is in place.
 
@@ -606,7 +608,8 @@ Refined 2026-10-09 with the measured transcripts of 18 competitor videos (number
   (NB Show, Day Trader), the **myth everyone believes** (Think Deep), a **stakes list + promise** ("ఈ వీడియోలో పిన్ టు
   పిన్ ఎక్స్ప్లెయిన్ చేస్తా, లాస్ట్ వరకు చూడండి", Kowshik) or a **question chain** ("అసలు ఇది ఏంటి? ఎలా వర్క్
   అవుతుంది? ఎవరికి లాభం, ఎవరికి నష్టం? నష్టం ఎవరికో తెలుసా... మనకే", Kowshik). Name and greeting come right after the
-  hook (face and name within 15–20 s; NB Show flashes its name sting at 0:02), and the thumbnail's promise lands by 0:30.
+  hook (NB Show flashes its name sting at 0:02), and the thumbnail's promise lands by 0:30. **Our channel no longer
+  copies this** (owner, 2026-10-17, §4a-7): no greeting or name sting inside the film; the name comes only at the end.
 - Subscribe asks: Kowshik asks at 21–26 s and Money Purse at 22–33 s, right after the promise; Think Deep and NB Show only
   at the end. One short ask right after the promise and one at the end is the common shape.
 
@@ -701,16 +704,19 @@ When an authentic photo or document is irreplaceable:
 4. **Moving contact sheet:** 3–4 archival angles slide into a collage, one every ~1.5 s.
 
 ### 5.5 Owner's standing notes (from reviews; now rules)
-1. Subject's **face and name within the first 15–20 s** (lower-third "NAME · born–died"); repeat the name lower-third when
-   the VO says the name.
+1. The first frame shows the **thumbnail's own subject and claim** (owner, 2026-10-17). In a person-centred film the
+   subject's **face and name are on screen within the first 15–20 s** (lower-third "NAME · born–died"); repeat the name
+   lower-third when the VO says the name.
 2. Stock or stand-in footage that could pass for the real event carries a permanent **"ILLUSTRATIVE FOOTAGE"** label
    (`+illus` in the EDL). Never give stock a CCTV/archival look; that look is for authentic footage only. Licensed stand-ins
    get honest tags ("ARCHIVE PHOTO · 2013", "B-ROLL").
 3. **No on-screen data that contradicts the VO** (Prahlad v4 showed a monitor reading 168/90 under "vitals normal").
    Replace it with an honest, labelled graphic.
 4. **No stock clip more than twice**; no filler space or lab footage. "When did what happen" gets a timeline graphic.
-5. **Branding:** banner intro when the channel name is spoken (logo sting), small logo bug in a corner on every other shot,
-   end on the logo end card with subscribe and YouTube end-screen zones. Files in `assets/brand/`.
+5. **Branding (owner, 2026-10-17):** the channel is named, with the logo sting, **only in the outro**; no welcome line,
+   logo sting or title card anywhere earlier. A small logo bug sits in a corner throughout; end on the logo end card with
+   subscribe and YouTube end-screen zones. Files in `assets/brand/`. *Why:* §4a-7, the welcome + sting + title card at
+   0:25–0:45 is where our retention fell (jet engine: 47% → 33%).
 6. **Science is explained with animation, never still plates** (§9). Label each "ILLUSTRATION", "ILLUSTRATIVE CURVE" or
    "HYPOTHESIS". *Why:* anatomy plates and microscopy stills were rejected on breath-hold.
 
@@ -1178,11 +1184,13 @@ rules before changing anything. Read its answer with `list_events`, then archive
 - [ ] Every shot matches the exact words over it; the VO is silent under every diegetic or LIVE moment.
 - [ ] English films (§4a-4): the open loop's promised minute matches the cut; a visual reset every 3.5–5 s; no stock
   of anonymous office workers typing; acronyms in the VO were said correctly (listen, don't assume).
-- [ ] Face and name on screen within 20 s; name lower-third returns when the VO says the name.
+- [ ] First frame shows the thumbnail's subject and claim; in a person-centred film, face and name within 20 s and the
+  name lower-third returns when the VO says the name.
 - [ ] Every frame's on-screen data agrees with the VO (numbers, monitors, headlines, dates).
 - [ ] Stand-ins labelled "ILLUSTRATIVE FOOTAGE"; authentic footage carries its source credit.
 - [ ] No stock clip more than twice. Science beats animated and honestly labelled.
-- [ ] Logo sting when the channel is named, logo bug elsewhere, end card last.
+- [ ] No welcome, "Today we'll…", logo sting or title card before the outro; logo bug throughout; channel named with
+  the sting only in the outro; end card last.
 - [ ] No near-black or dead frames; block changes dip to black; the music bed never restarts audibly.
 - [ ] Claims stay claims; a real skeptic or mainstream-science beat on health topics.
 - [ ] About −14 LUFS; subtitles rebuilt after any timing change.
