@@ -24,7 +24,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   (1) a **thumbnail in the channel theme** (1280×720 JPG, built as HTML and shot with Playwright, like
   `projects/minimum-due/youtube/thumb/`); (2) the **title in a click-to-copy code block**, ending
   `| Be Practical With Kishore`; (3) a **simple description with chapter timestamps** (starting `0:00`) in its own
-  click-to-copy code block. Commit them in `projects/<slug>/youtube/`, then open a PR to `main`, merge it, and close
+  click-to-copy code block: **only** 2–4 plain lines on what the video shows, then the timestamps. No sources, references,
+  credits, disclaimers, hashtags or links (owner, 2026-10-17). Timestamps come from the exact cut the owner uploads. Commit them in `projects/<slug>/youtube/`, then open a PR to `main`, merge it, and close
   (archive) the session.
 - English first; keep all script and on-screen text i18n-ready.
 
