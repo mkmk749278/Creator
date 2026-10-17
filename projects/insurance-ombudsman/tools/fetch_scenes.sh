@@ -18,8 +18,11 @@ PY
 export RCLONE_CONFIG_GD_TYPE=drive RCLONE_CONFIG_GD_SCOPE=drive RCLONE_CONFIG_GD_TOKEN="$TOKEN" RCLONE_CONFIG=/dev/null
 export RCLONE_CONFIG_GD_ROOT_FOLDER_ID=${GDRIVE_CREATOR_FOLDER_ID:-1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M}
 mkdir -p assets/scenes
-for s in A B C; do
-  "$RC" copy "gd:English/insurance-ombudsman/scenes/$s" assets/scenes --include "*.mp4" --include "*.jpg" --include "*.png" 2>/dev/null || true
+# 4K master (2026-10-16): the native 4K clips come from video/insurance-ombudsman/render_4k.sh (local) and Drive scenes4k/
+# (render shards); the 1080p folders A/B/C are only a fallback. --ignore-existing: never overwrite a clip already here
+# (a plain copy once replaced the fresh 4K clips with the old 1080p ones).
+for s in scenes4k scenes/A scenes/B scenes/C; do
+  "$RC" copy "gd:English/insurance-ombudsman/$s" assets/scenes --ignore-existing --include "*.mp4" 2>/dev/null || true
 done
 python3 - <<'PY'
 import re
