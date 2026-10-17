@@ -9,7 +9,7 @@ the one-year window and the ₹50 lakh limit, the bar on disputes pending or dec
 (18 offices, documents, verification), mediation and the hearing, the award that binds only the insurer, the 30-day
 compliance rule and the ₹5,000-a-day penalty, and the Bombay High Court's Dedhia judgment.
 
-**Status (2026-10-15): phase 1, script v1.3, fact-check passed (37/37 confirmed).** Inputs from the owner (Drive `Creator/English/insurance-ombudsman/`):
+**Status (2026-10-16): v3 4K master after an independent review (`review.md`); script v1.3, fact-check passed (37/37 confirmed).** Inputs from the owner (Drive `Creator/English/insurance-ombudsman/`):
 `Claude.md` (the master directive and VO script, kept verbatim in `handoff/owner-directive.md`), an audit PDF
 (`handoff/ombudsman-audit.*`), `BP_HLTH02_Complete_Asset_Pack.zip` (20 Pexels clips, 8 SVG/4K graphics G01–G08, official
 source snapshots, and the pack's own `SCRIPT_CORRECTIONS.md`) and `Pexels_India_Footage.zip` (15 India clips). The zips'

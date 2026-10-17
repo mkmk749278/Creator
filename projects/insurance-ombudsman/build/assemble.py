@@ -16,7 +16,7 @@ P = Path(__file__).resolve().parents[1]
 ROOT = P.parents[1]
 A = P / "assets"
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-RENDER_V = {"glimpse": 2, "sting": 3, "end": 3}
+RENDER_V = {"glimpse": 2, "sting": 3, "end": 4}
 ILL, SIM, CALC, EP1 = "ILLUSTRATIVE FOOTAGE", "SIMULATION", "OUR CALCULATION", "FROM EPISODE 1"
 GAP = 1.5                      # music beat between the two VO takes (timing.csv uses the same)
 VO = [(P / "voice/bp-hlth02-ch1.mp3", 0.0), (P / "voice/bp-hlth02-ch2-4.mp3", 130.85 + GAP)]
@@ -189,7 +189,7 @@ SHOTS = [
     F("F15", at(126), 6.0, "THE POWER OF KNOWING YOUR RIGHTS", tag=""),
     F("F14", at(127), 4.0, "NO CONNECTIONS · NO 20% FEES", tag=""),
     S(at(128), "sting"),
-    S(at(131), "still", src=A / "episode1" / "bill_consumables.png", zoom=(1.0, 1.25), focus=(0.45, 0.32), label="NEXT · CONSUMABLES", tag=EP1),
+    S(at(131), "still", src=A / "episode1" / "bill_consumables.png", zoom=(1.0, 1.12), focus=(0.6, 0.3), label="NEXT · CONSUMABLES", tag=EP1),
     S(at(131, 0.6), "clip", src=B(151857), ss=1.0, label="GLOVES · MASKS · SYRINGES", tag=ILL),
     S(at(132), "clip", src=B(67764), ss=4.0, label="A ₹5 LAKH BILL, LINE BY LINE", tag=ILL),
     CV("IO-5", at(132, 0.55), "WHAT THE PRICE RULES SAY"),
@@ -280,7 +280,7 @@ def render(shot, dur, out, W, H):
             fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},eq=brightness=-0.15[bg];"
                   f"[1:v]scale={int(W*0.62)}:-2,format=rgba,fade=t=in:st=0:d=0.5:alpha=1[l];[bg][l]overlay=(W-w)/2:(H-h)/2")
         else:
-            fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=8,eq=brightness=-0.25[bg];"
+            fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur={int(8 * H / 1080)},eq=brightness=-0.25[bg];"
                   f"[1:v]scale={int(W*0.5)}:-2[l];[bg][l]overlay=(W-w)/2:H*0.18,"
                   f"drawtext=fontfile={FONT}:text='SUBSCRIBE · SHARE WITH YOUR FAMILY':x=(w-tw)/2:y=h*0.70:fontsize={int(H*0.035)}:fontcolor=white,"
                   f"drawtext=fontfile={FONT}:text='Educational only · not legal advice · read your policy wording':x=(w-tw)/2:y=h*0.78:fontsize={int(H*0.024)}:fontcolor=white@0.85")

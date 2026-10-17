@@ -1,3 +1,32 @@
+# Review v3: independent review of v2 + native 4K master (2026-10-16)
+
+Fresh-session review of `insurance-ombudsman-preview-v2-1080p.mp4`, shot by shot (`build/review_shots.py`: 3 frames per
+shot beside the VO words, sheets in `runs/insurance-ombudsman/review_v2/`), against PLAYBOOK §14 and the owner's v2 notes.
+Re-checked on the 4K master: sheets `runs/insurance-ombudsman/review_v3/`, freezedetect (≥ 1.5 s) and blackdetect clean,
+−14.3 LUFS integrated, 3840×2160 30 fps, 9:25.
+
+| # | Finding (v2) | Where | Fix (v3) |
+|---|---|---|---|
+| 1 | Stock clip F08 (signing in a folder) on screen 3 times (rule: max twice) | 1:18, 2:04, 3:14 | 1:18 and 3:14 now show A2's recovery agreement (20% fee line highlighted; "back to the second door" opens door two onto it); F08 stays once |
+| 2 | A6's insurer GRO page never seen: the blurred CIO list covered the first 8 s of O030 | 4:44 | A6 plays from the window start (insurer page, GRO email highlighted on "every insurer has to show…"); the CIO list cuts in on "the Ombudsman's website lists…" for 3.6 s |
+| 3 | CIO GRO list fully blurred (7.8 s of blur) while the VO says it lists their email addresses | 4:44 | New capture: only officers' names and personal emails blurred; the GRO role addresses stay readable |
+| 4 | O029 compose window mostly blank white for 10 s (owner: no blank paper) | 4:33 | The settlement email being answered is quoted under the draft (D1 text) until the body is typed |
+| 5 | C1 O039 browser blank white while the URL is typed | 5:52 | New-tab page: shortcuts and recently visited (insurer grievance page, the sent mail, hospital portal), invented |
+| 6 | Office directory showed the Ahmedabad centre; the family is in Hyderabad | 6:12 | Recaptured with the Hyderabad centre selected |
+| 7 | "FILING IS FREE" over the CIO home page (nothing about fees on it), tagged CIO FAQ | 1:34 | C4's FREE TO FILE beat (complaint with filing fee ₹0) on "costs zero rupees" |
+| 8 | "The same rejection letter… again" on a man at a laptop | 2:29 | Episode 01's CASHLESS DENIED letter (FROM EPISODE 1), then the laptop shot as COMPLAINT CLOSED |
+| 9 | "10 DAYS = ₹50,000" stayed up while the meter rolled to 12+ days | 8:21 | Label leaves when the drums roll on, 30-day label lands with the drums at 30 |
+| 10 | "Next · consumables" on a Pixabay woman in a mask (not Indian, not consumables) | 8:59 | Episode 01's bill, Medicines and consumables ₹1,21,000 line |
+| 11 | Hyderabad skyline F14 five times (2 clips + sting, sting, end card) | 1:49, 8:55, 9:15 | Sting and end card on PX04 (Jaipur aerial, owner's India pack) |
+
+Left for the owner (not changed): the Canva people clips IO-1 and IO-5 are the owner's own template picks and show
+non-Indian actors; Bombay High Court photos run 23 s as seven framings (the only real visuals of the case).
+
+## 4K pipeline
+Native 4K scenes (`video/insurance-ombudsman/render_4k.sh` → `split_4k.py`, the C scenes on a parallel render shard),
+Canva templates re-exported at 4K (`tools/make_canva.py`), web captures at 3× (`build/web_full.js`, `web_gro.js`,
+`web_hyd.js`), Episode 01 glimpses from its 2160p cut, `build/assemble.py --height 2160`, `build/mix.py --height 2160`.
+
 # Review v2 (owner's notes on v1, 2026-10-15)
 
 Sheets: `runs/insurance-ombudsman/qa4/` (every 2 s). Audio −14.3 LUFS. freezedetect: one 3.7 s hold at 4:40 (A6 O029,
