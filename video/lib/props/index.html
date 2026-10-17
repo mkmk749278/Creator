@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Props studio: photoreal card, bill, phone, notice</title>
+    <!--
+      Photoreal prop stills (owner, 2026-10-13: "use ultra realistic photos for card, bill, etc."). One prop per page load,
+      lit in a studio HDRI with a soft key, rendered with an alpha background and a shadow-only floor, so the PNG drops onto
+      any page (doodle paper, desk, footage) with its own contact shadow. No real bank names or logos; every use is
+      labelled SIMULATION. Driven by shoot.mjs: index.html#<url-encoded JSON spec>. Not a timed composition.
+    -->
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/jsm/", "postprocessing": "./vendor/pp/postprocessing.js" } }
+    </script>
+    <style>html, body { margin: 0; background: transparent; } canvas { display: block; }</style>
+    <!-- fonts the textures use: vendor/fonts/bricolage-grotesque-latin-800-normal.woff2 vendor/fonts/bricolage-grotesque-latin-ext-800-normal.woff2
+         vendor/fonts/inter-tight-latin-800-normal.woff2 vendor/fonts/inter-tight-latin-ext-800-normal.woff2 vendor/fonts/inter-tight-latin-500-normal.woff2
+         vendor/fonts/inter-tight-latin-ext-500-normal.woff2 vendor/fonts/jetbrains-mono-latin-700-normal.woff2 vendor/fonts/jetbrains-mono-latin-500-normal.woff2
+         vendor/library/hdri/studio_small_09_1k.hdr vendor/library/hdri/small_empty_room_1_1k.hdr
+         vendor/library/texture/american_walnut_veneer_diff_4k.jpg vendor/library/texture/american_walnut_veneer_nor_gl_4k.jpg vendor/library/texture/american_walnut_veneer_rough_4k.jpg -->
+  </head>
+  <body>
+    <script type="module" src="props.js"></script>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 4.56,
+  "te": "Now the biggest fear. Will the police arrest you? ...",
+  "en": "",
+  "speech_vs_text": 1.31,
+  "boundary_margin": 0.007,
+  "confidence": "check"
+ },
+ {
+  "line": 2,
+  "start": 5.028,
+  "end": 8.08,
+  "te": "Here is the truth. Simply not being able to pay is not a crime.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.007,
+  "confidence": "check"
+ },
+ {
+  "line": 3,
+  "start": 8.51,
+  "end": 20.539,
+  "te": "The Supreme Court has said that not repaying a loan is not cheating, unless you planned to cheat from the very start. And in twenty twenty five, it said police and FIRs are not a way to recover money.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.268,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 21.18,
+  "end": 31.479,
+  "te": "But a few things can become a criminal case. A cheque that bounces. And an auto debit that fails because there is no money. And of course, lying when you applied.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 31.918,
+  "end": 38.085,
+  "te": "So never give a cheque you know will bounce. And if your auto debit will fail, talk to the bank before the date.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 38.651,
+  "end": 43.902,
+  "te": "One more myth. After six months, the bank writes it off. So it's gone, right?",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.129,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 44.398,
+  "end": 49.176,
+  "te": "No. A write off is the bank cleaning its own books. Your debt is not forgiven.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.129,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 49.733,
+  "end": 62.805,
+  "te": "SBI Card, for example, writes off an account after more than six missed payments in a row. But you still owe it. And some old bad loans are sold to recovery companies for a small part of their value. Then they call you.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.3,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 63.311,
+  "end": 66.903,
+  "te": "So what should you actually do? Five practical steps.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.087,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 67.337,
+  "end": 76.94,
+  "te": "Step one. Don't hide. Call the bank before day ninety, and also write to them. Tell them what happened and what you can pay. Keep every message.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.081,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 77.435,
+  "end": 93.693,
+  "te": "Step two. Know the recovery rules. Calls only between eight in the morning and seven in the evening. No threats, no abuse, no calls to shame your family or friends. Anyone who comes home must carry an ID card and the bank's authorisation letter. Ask to see them.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.024,
+  "confidence": "check"
+ },
+ {
+  "line": 12,
+  "start": 94.108,
+  "end": 110.674,
+  "te": "If they break these rules, complain to the bank first. No answer in thirty days? Go to the RBI Ombudsman on the RBI complaint website. It is free. But since July twenty twenty six, you have only ninety days to do it. The RBI helpline is fourteen four four eight.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.024,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 111.087,
+  "end": 117.697,
+  "te": "If someone threatens you, call one one two. If you get a fake link or a fake notice, call one nine three zero.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.077,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 118.263,
+  "end": 130.984,
+  "te": "Step three. Check every legal notice yourself. A lawyer's notice is not a court summons. A real court case has a case number. Type it yourself on the eCourts website. Never tap the link in the message.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.072,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 131.478,
+  "end": 141.071,
+  "te": "Step four. If you settle, settle on paper. Get the settlement letter from the bank first. Pay only through the bank's own channel. Never cash to an agent.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.072,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 141.408,
+  "end": 151.894,
+  "te": "And know the cost. Your CIBIL will say settled, not closed. That bank won't lend to you for at least a year. Later, ask the bank what you must pay to clean that record.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.075,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 152.435,
+  "end": 168.182,
+  "te": "Step five. If you have many cards, plan the order. This is my practical view, not a rule. First, the bank where your salary sits, because that bank can touch your account. Next, the small bills, because fees grow them fastest. Then the rest.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.036,
+  "confidence": "check"
+ },
+ {
+  "line": 18,
+  "start": 168.594,
+  "end": 175.341,
+  "te": "You can choose where your salary goes. But the debt doesn't go away. Use the breathing space to settle, not to run.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.036,
+  "confidence": "check"
+ },
+ {
+  "line": 19,
+  "start": 175.861,
+  "end": 191.182,
+  "te": "So, can they arrest you? Not just for being unable to pay. Can they take your salary? Without a court order, only that same bank, and only up to what you owe. Will they come home? That depends on how much you owe, and where you live.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.078,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 191.581,
+  "end": 195.053,
+  "te": "The fear is real. But fear is also their tool. Knowledge is yours.",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.078,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 195.485,
+  "end": 200.311,
+  "te": "Tell me in the comments. Has a recovery agent ever called you or your family? What did they say?",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.206,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 200.698,
+  "end": 206.371,
+  "te": "If this helped, share it with one person who is scared right now. And subscribe to Be Practical with Kishore.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.206,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 206.786,
+  "end": 211.113,
+  "te": "This video is for education only. It is not legal or financial advice.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.429,
+  "confidence": "high"
+ }
+]

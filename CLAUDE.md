@@ -83,6 +83,14 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 ## Documentary rules (Be Practical with Kishore). Full spec: PLAYBOOK Part B
 - **A film, never a slide deck.** No full-screen text boxes, bullet lists, cards or question-mark graphics; no flat colour
   or plain gradient canvas. Text ≤ 15% of the screen: 2–4-word lower-thirds, dates/places/numbers, counters, a corner timer.
+- **Lede first (owner, 2026-10-17; PLAYBOOK §4a-5):** the event, rule or trap the title and thumbnail name is on screen
+  and in the VO **within 25 s**; no background, definitions or history in the first 2 minutes. Hook: 0:00–0:08 crisis in
+  motion (no logo, greeting or static mockup) → 0:08–0:30 the thumbnail paradox → 0:30–0:55 the open loop with the exact
+  minute of the payoff, re-checked against every re-edit. Long clean animation cuts to a real asset or a strong angle
+  change every 4–5 s; 25–30% of the picture is real-world grit (headlines, street footage, gazette PDFs).
+- **Sentence architecture for Akash (PLAYBOOK §4a-6):** the breath test; a 20-word scene-setter then a 4-word punch,
+  never three same-length sentences in a row; `...` before numbers and reveals, `—` for pivots, `?` on questions; no
+  passive corporate grammar ("It has been observed…"), no lecture or agenda openers ("Today we'll…").
 - **Always moving:** a visual reset every 3.5–5.0 s (owner, 2026-10-15: angle shift, document push-in, kinetic callout);
   the shot itself never stops moving: no unmoving still or flat frame over 1.5 s; ≥ 85% of the runtime
   is moving footage or animation. Animate irreplaceable stills (parallax, particles, forensic magnifier, sliding collage).
@@ -96,9 +104,15 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   calculation as moving, to-scale HyperFrames animation (counters, brackets, zones, magnifiers). PLAYBOOK §4a-3.
 - **Science is explained with animated HyperFrames scenes** (Three.js for organs and cells, SVG/GSAP for charts, dials,
   timelines), labelled "ILLUSTRATION", "ILLUSTRATIVE CURVE" or "HYPOTHESIS". Never static plates.
-- **Owner's standing notes:** face and name within 15–20 s; "ILLUSTRATIVE FOOTAGE" on stand-ins that could pass as the
-  real event (never a CCTV/archive look on stock); no on-screen data that contradicts the VO; no stock clip more than twice;
-  logo sting when the channel is named, logo bug elsewhere, end card last.
+- **Owner's standing notes:** the first frame shows the thumbnail's own subject and claim; a person-centred film has that
+  person's face and name within 15–20 s; "ILLUSTRATIVE FOOTAGE" on stand-ins that could pass as the
+  real event (never a CCTV/archive look on stock); no on-screen data that contradicts the VO; no stock clip more than twice.
+- **Channel name only at the end (owner, 2026-10-17; PLAYBOOK §4a-7):** no "Welcome to Be Practical with Kishore", no
+  "Today we'll…", no logo sting or title card anywhere inside the film; the channel is named, with the logo sting, only
+  in the outro and end card. A small logo bug in a corner throughout. *Why:* Studio retention fell from 47% to 33% across
+  the welcome + sting + title card at 0:25–0:45.
+- **Topics (owner, 2026-10-17):** India-capability films first ("India landed on the Moon, why no jet engine?", chips):
+  they got 95% of our views from recommendations. Money and rights topics become Shorts or ride inside a story with stakes.
 - **Workflow:** (1) asset manifest → (2) EDL (timecode → asset → motion → overlay → text → sound cues) → (3) assembly code
   bound to the project's `assets/`. Self-review with the checklist in PLAYBOOK §14 and write `review.md` before every render.
 - **No Whisper** for transcription or translation: time the owner's script on the VO with `scripts/align_script.py`

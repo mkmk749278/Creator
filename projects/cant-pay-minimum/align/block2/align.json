@@ -1,0 +1,272 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 8.016,
+  "te": "Now see it from their side. If you owe ten thousand, the agency may earn about a thousand rupees. And only if you pay in full.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.241,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 8.629,
+  "end": 16.202,
+  "te": "Now think about where you live. Say your card has your old room address in the city. But your family lives in a village, far away.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.241,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 16.742,
+  "end": 30.896,
+  "te": "Agencies usually work city by city, or district by district. In Andhra and Telangana, one card company's agency list names just six places. Hyderabad, Warangal, Karimnagar, Vizag, Vijayawada and Tirupati.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.223,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 31.408,
+  "end": 42.533,
+  "te": "For a small amount, a long trip to a far village rarely pays for itself. So small dues mostly stay as calls and messages. That's not a rule. It's simple business.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.065,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 43.045,
+  "end": 54.887,
+  "te": "For bigger amounts, it changes. Finding a person who moved is a paid job. One bank pays seven thousand five hundred rupees for each person traced. That's worth it only when the amount is big.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.065,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 55.341,
+  "end": 58.399,
+  "te": "What about court? Here again, the amount decides.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.197,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 58.792,
+  "end": 69.822,
+  "te": "To file a case, the bank pays court fees and a lawyer. On a small amount, that eats a big part of what it can recover. So a court case for ten thousand rarely makes sense for the bank.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.193,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 70.278,
+  "end": 85.352,
+  "te": "For bigger dues, card companies do use Lok Adalat. You get a notice for a settlement meeting, usually in your own city. In one real case, SBI Card took about one point eight lakh of card dues to a Lok Adalat in the customer's city, Indore.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 85.805,
+  "end": 90.23,
+  "te": "If you get such a notice, go. It is a chance to settle with a written record.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 90.701,
+  "end": 107.186,
+  "te": "Some banks use arbitration. Be careful here. In the Delhi High Court, one bank admitted about seventy six thousand awards where the bank alone picked the arbitrator. The court said such an award is void and cannot be enforced. The bank can still try to recover in the proper way.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.246,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 107.642,
+  "end": 116.038,
+  "te": "And the special bank tribunal, the DRT, is only for dues of twenty lakh rupees or more. For most card dues, it is not even possible.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.295,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 116.485,
+  "end": 121.437,
+  "te": "So here is my practical reading, slab by slab. No bank publishes this.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.027,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 121.854,
+  "end": 132.988,
+  "te": "Around ten thousand. Calls and messages, a blocked card and a bad mark on your CIBIL. A court case is unlikely, but the mark stays with you for years.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.027,
+  "confidence": "check"
+ },
+ {
+  "line": 14,
+  "start": 133.481,
+  "end": 141.328,
+  "te": "Fifty thousand to one lakh. Calls, then an agency, maybe a visit if you live in a city they cover, and settlement or Lok Adalat notices.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.035,
+  "confidence": "check"
+ },
+ {
+  "line": 15,
+  "start": 141.803,
+  "end": 147.612,
+  "te": "Two to five lakh. Expect field visits, people tracing you if you moved, and legal notices.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.142,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 148.125,
+  "end": 152.644,
+  "te": "Ten lakh and above. A court case becomes worth the bank's money. Take it seriously from day one.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 0.062,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 153.087,
+  "end": 160.17,
+  "te": "Remember, these slabs are about what you owe to one bank. Other banks don't add it up. They only see it on your CIBIL.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.062,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 160.67,
+  "end": 163.351,
+  "te": "Now, two traps that catch salaried people.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.069,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 163.604,
+  "end": 167.44,
+  "te": "Trap one. Your salary account is in the same bank as your card.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.069,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 167.879,
+  "end": 175.197,
+  "te": "Your card terms allow that bank to hold or take money from your account to cover what you owe. It is called the right of set off.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.19,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 175.746,
+  "end": 194.396,
+  "te": "The national consumer commission upheld one bank taking fifty three thousand rupees from a savings account for card dues. And in February twenty twenty six, in a loan case, the Kerala High Court said a bank's hold is not a court attachment, so the usual salary protection doesn't stop it.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.005,
+  "confidence": "check"
+ },
+ {
+  "line": 22,
+  "start": 194.871,
+  "end": 203.616,
+  "te": "But it is not unlimited. Only your money, only for your debt, only in that bank, and only up to what you owe. A bank where you owe nothing cannot touch your account.",
+  "en": "",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.005,
+  "confidence": "check"
+ },
+ {
+  "line": 23,
+  "start": 204.124,
+  "end": 210.251,
+  "te": "And the bank does not have to warn you first. Some banks only promise to tell you within three days after the hold.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.127,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 210.744,
+  "end": 217.152,
+  "te": "Trap two. Many products in one bank. RBI rules mark the borrower, not just one account.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.127,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 217.472,
+  "end": 227.015,
+  "te": "So if your card at a bank becomes an NPA, your other loans at that same bank can be marked NPA too. To clean it, you must clear the overdue on all of them.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 227.456,
+  "end": 235.051,
+  "te": "And cards from different banks? They don't share your accounts. But they all see your CIBIL. One default can make the others cut your limit.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.182,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 235.505,
+  "end": 244.592,
+  "te": "That's why paying one card with another is so dangerous. Some banks can even cancel a card used that way. When one card stops, the whole chain falls.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.302,
+  "confidence": "high"
+ }
+]

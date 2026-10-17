@@ -16,11 +16,14 @@ ROOT = P.parents[1]
 A = P / "assets"
 BR, CM, PR, SM, BD = A / "broll", A / "commons", A / "proof", A / "sim", A / "boards"
 CI = A / "commons_in"
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"   # fallback only (end card)
+# Modern labels (owner, 2026-10-12: the old writing looked outdated): Bricolage Grotesque 800 (latin + latin-ext merged, so
+# the ₹ sign renders) for the label, JetBrains Mono 700 for source tags; build/make_fonts.py writes them from node_modules.
+LFONT, TFONT = P / "assets/fonts/Bricolage-800.ttf", P / "assets/fonts/JetBrainsMono-700.ttf"
 BOARD_AT = {b["id"]: b["start"] for b in BOARDS}
 ERASE = {b["id"]: [st["at"] for st in b["steps"] if st.get("erase")] for b in BOARDS}   # board erase times (film s)
 CN = A / "commons_new"; BN = A / "broll_new"
-RENDER_V = 3   # bump when render() changes, so cached shots re-render
+RENDER_V = 5   # bump when render() changes, so cached shots re-render (4: modern labels, doodle boards)
 
 
 # ---- refined cut (owner's visual-refinement brief, 2026-10-12; refine-plan.md) ----
@@ -58,6 +61,12 @@ def refined_shots(shots):
         S(s2 + c2["year"] - 0.2, "scene", id="s02_timeline"),
         S(s3, "scene", id="s03_allocation"),
     ]
+    # 1.08 "the full maths behind that small number": flash-forwards now come from the money scenes (the boards they
+    # used, b04/b06, are no longer in the refined cut)
+    for x in out:
+        if x["kind"] == "board" and x["id"] in ("b04_rules", "b06_slow"):
+            sid, frm = ("s02_timeline", s2 + c2["to30481"]) if x["id"] == "b04_rules" else ("s03_allocation", s3 + scene_meta("s03_allocation")[2]["twentysix"] - 1.5)
+            x.update(kind="scene", id=sid, frm=round(frm, 2))
     return sorted(out, key=lambda x: x["t"])
 
 
@@ -123,7 +132,7 @@ SHOTS = [
     S(L("1.33")[0] - 0.2, "proof", src=PR / "icici_table.png", label="SAME METHOD AS ICICI'S TABLE", tag="ICICI BANK · INTEREST RATES PAGE | 2025"),
     S(L("1.34")[0] + 0.2, "proof", src=PR / "icici_interest.png", label="₹4,317 EXPLAINED", tag="ICICI BANK · INTEREST RATES PAGE | 2025"),
     S(L("1.35")[0] - 0.2, "photo", src=CI / "petrol_pump_03_indian-oil-petrol-pump-at-chanchalguda-j.jpg", label="NOV 15 · PETROL ON THE SAME CARD", tag="PHOTO: WIKIMEDIA COMMONS, CC BY-SA 4.0"),
-    S(L("1.35")[0] + 3.6, "clip", src=BR / "pixabay_84222.mp4", ss=1.0, label="NEW SPEND"),
+    # (review 2026-10-12: the road-traffic clip here did not show "the same card"; the petrol-pump photo now runs on)
     S(BOARD_AT["b05_newswipe"], "board", id="b05_newswipe"),
     *cutaway("b05_newswipe", 0, S(0, "clip", src=BR / "coverr-online-shopping-with-credit-card.mp4", ss=8.0, label="YOUR CARD IS NOT FREE ANY MORE"), back=2.4),
     S(L("2.01")[0] - 0.3, "clip", src=BR / "pixabay_61621.mp4", ss=2.0, label="MONTH AFTER MONTH"),
@@ -163,19 +172,32 @@ def run(cmd):
 
 
 def esc(s):
-    return s.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’").replace(",", "\\,").replace("%", "\\%")
+    """Text for drawtext with expansion=none (so % is literal; '\%' with expansion on dropped whole labels, review 2026-10-12)."""
+    return s.replace("\\", "\\\\").replace(":", "\\:").replace("'", "’").replace(",", "\\,")
+
+
+def text_w(txt, font, size):
+    from PIL import ImageFont
+    return ImageFont.truetype(str(font), size).getlength(txt)
 
 
 def overlays(W, H, label="", tag=""):
+    """Lower-left label: dark panel with a gold accent bar and Bricolage type; lower-right source tag: mono on a dim pill.
+    Sizes are measured with the same font files, so the panels fit the text exactly."""
     k = H / 1080
     f = []
     if label:
-        fs = int(40 * k)
-        f.append(f"drawtext=fontfile={FONT}:text='{esc(label)}':x={int(84*k)}:y={int(950*k)}:fontsize={fs}:fontcolor=white:"
-                 f"box=1:boxcolor=black@0.55:boxborderw={int(18*k)}")
+        fs = int(40 * k); pad = int(24 * k); h = int(72 * k); x0, y0 = int(84 * k), int(918 * k)
+        w = int(text_w(label, LFONT, fs)) + 2 * pad
+        f.append(f"drawbox=x={x0}:y={y0}:w={int(8 * k)}:h={h}:color=0xF6C453@1:t=fill")
+        f.append(f"drawbox=x={x0 + int(8 * k)}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.72:t=fill")
+        f.append(f"drawtext=fontfile={LFONT}:expansion=none:text='{esc(label)}':x={x0 + int(8 * k) + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white")
     if tag:
-        f.append(f"drawtext=fontfile={FONT}:text='{esc(tag)}':x=w-tw-{int(70*k)}:y=h-{int(64*k)}:fontsize={int(20*k)}:fontcolor=white@0.9:"
-                 f"box=1:boxcolor=black@0.45:boxborderw={int(8*k)}")
+        fs = int(19 * k); pad = int(12 * k); h = int(34 * k)
+        w = int(text_w(tag, TFONT, fs)) + 2 * pad
+        x0, y0 = W - w - int(64 * k), H - h - int(44 * k)
+        f.append(f"drawbox=x={x0}:y={y0}:w={w}:h={h}:color=0x0B0F17@0.55:t=fill")
+        f.append(f"drawtext=fontfile={TFONT}:expansion=none:text='{esc(tag)}':x={x0 + pad}:y={y0}+({h}-th)/2:fontsize={fs}:fontcolor=white@0.92")
     return f
 
 
@@ -226,7 +248,15 @@ def yellow_focus(png):
     return (sum(xs) / len(xs)) / w, (sum(ys) / len(ys)) / h
 
 
+# Stand-ins while Wikimedia Commons rate-limits a re-download (preview only; fetch_assets.py restores the real files).
+FALLBACK = {"supreme_court_03_inside-the-supreme-court-of-india-11-jpg.jpg": CM / "supreme_court_04_inside-the-supreme-court-of-india-12-jpg.jpg",
+            "bank_01_an-hdfc-bank-branch-jpg.jpg": CN / "bank_05_hdfc-bank-atm-jpg.jpg"}
+
+
 def render(shot, dur, out, W, H):
+    if shot.get("src") and not Path(shot["src"]).exists() and Path(shot["src"]).name in FALLBACK:
+        print("WARNING stand-in for missing", Path(shot["src"]).name, flush=True)
+        shot = dict(shot, src=FALLBACK[Path(shot["src"]).name])
     k = shot["kind"]; lab, tag = shot.get("label", ""), shot.get("tag", "")
     enc = ["-frames:v", str(round(dur * 30)), "-an", "-c:v", "libx264", "-preset", "veryfast", *rate(H, 5), "-pix_fmt", "yuv420p", "-r", "30"]
     if k in ("clip", "sample"):
@@ -244,9 +274,13 @@ def render(shot, dur, out, W, H):
     elif k in ("board", "scene"):
         base, folder = (BOARD_AT[shot["id"]], BD) if k == "board" else (scene_meta(shot["id"])[0], SC)
         off = shot.get("frm", shot["t"]) - base
-        vf = [f"scale={W}:{H}", "fps=30"] + overlays(W, H, lab, tag)
-        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(folder / (shot["id"] + ".mp4")), "-vf", ",".join(vf),
-             "-t", f"{dur:.3f}"] + enc + [str(out)])
+        # hold the last frame if a window runs a few frames past the render's end (4K b05 is 0.11 s shorter than the
+        # window that uses it): a short shot would shift every later cut against the VO
+        vf = [f"scale={W}:{H}", "fps=30", "tpad=stop_mode=clone:stop_duration=2"] + overlays(W, H, lab, tag)
+        # no -t here: after a seek between frames, -t dropped the last frame (6 shots 1 frame short at 4K, the cuts after
+        # them 0.2 s early by the end); tpad guarantees enough input, so -frames:v alone sets the exact length
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, off):.3f}", "-i", str(folder / (shot["id"] + ".mp4")), "-vf", ",".join(vf)]
+            + enc + [str(out)])
     elif k in ("still", "photo", "proof"):
         if k == "proof":
             fx, fy = yellow_focus(shot["src"]); z = (1.25, 1.7)
@@ -279,12 +313,33 @@ def render(shot, dur, out, W, H):
     elif k == "end":
         fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=8,eq=brightness=-0.25[bg];"
               f"[1:v]scale={int(W*0.5)}:-2[l];[bg][l]overlay=(W-w)/2:H*0.18,"
-              f"drawtext=fontfile={FONT}:text='SUBSCRIBE · NEXT\\: CANT PAY EVEN THE MINIMUM?':x=(w-tw)/2:y=h*0.72:fontsize={int(H*0.035)}:fontcolor=white,"
-              f"drawtext=fontfile={FONT}:text='Educational only · not financial advice':x=(w-tw)/2:y=h*0.80:fontsize={int(H*0.024)}:fontcolor=white@0.8")
+              f"drawtext=fontfile={LFONT}:expansion=none:text='SUBSCRIBE · NEXT\\: CAN’T PAY EVEN THE MINIMUM?':x=(w-tw)/2:y=h*0.72:fontsize={int(H*0.038)}:fontcolor=white,"
+              f"drawtext=fontfile={TFONT}:expansion=none:text='EDUCATIONAL ONLY · NOT FINANCIAL ADVICE':x=(w-tw)/2:y=h*0.80:fontsize={int(H*0.022)}:fontcolor=white@0.8")
         run(["ffmpeg", "-v", "error", "-y", "-ss", "2", "-stream_loop", "-1", "-i", str(BR / "pixabay_200435.mp4"), "-loop", "1", "-i", str(ROOT / "assets/brand/banner.png"),
              "-filter_complex", fc, "-t", f"{dur:.3f}"] + enc + [str(out)])
     else:
         sys.exit("unknown kind " + k)
+
+
+def sfx_bus(shots, out):
+    """Doodle sound effects (assets/boards/<id>.sfx.wav, from video/lib/doodle/make_sfx.py) placed under each board shot at
+    the right offset into its scene; one 48 kHz stereo track for the whole film."""
+    import numpy as np, wave
+    sr = 48000; bus = np.zeros((int((END + 1) * sr), 2))
+    for i, x in enumerate(shots):
+        if x["kind"] != "board":
+            continue
+        f = A / "boards" / (x["id"] + ".sfx.wav")
+        if not f.exists():
+            continue
+        w = wave.open(str(f)); a = np.frombuffer(w.readframes(w.getnframes()), "<i2").astype(float).reshape(-1, 2) / 32768
+        nxt = shots[i + 1]["t"] if i + 1 < len(shots) else END
+        off = int((x.get("frm", x["t"]) - BOARD_AT[x["id"]]) * sr); n = int((nxt - x["t"]) * sr); at = int(x["t"] * sr)
+        seg = a[max(0, off): max(0, off) + n]
+        bus[at: at + len(seg)] += seg[: len(bus) - at]
+    with wave.open(str(out), "wb") as w:
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr)
+        w.writeframes((np.clip(bus, -1, 1) * 32767).astype("<i2").tobytes())
 
 
 def src_mtime(s):
@@ -339,7 +394,7 @@ def split_long(shots, end):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--height", type=int, default=720)
-    ap.add_argument("--skip-boards", action="store_true", help="render other shots while board renders are still running")
+    ap.add_argument("--skip-boards", action="store_true", help="render other shots while board and scene renders are still running")
     ap.add_argument("--refined", action="store_true", help="the refined cut (refine-plan.md): scenes replace boards/filler")
     a = ap.parse_args(); H = a.height; W = H * 16 // 9
     global BD, SC
@@ -358,8 +413,8 @@ def main():
         key = hashlib.sha1(json.dumps([s, dur, W, H, src_mtime(s), RENDER_V], default=str, sort_keys=True).encode()).hexdigest()[:8]
         out = sd / f"{i:03d}_{s['kind']}_{key}.mp4"   # spec hash: an edited shot re-renders, the rest are reused
         if not out.exists():
-            if a.skip_boards and s["kind"] == "board" and not (BD / (s["id"] + ".mp4")).exists():
-                print(f"{i:03d} skip board {s['id']}"); continue
+            if a.skip_boards and s["kind"] in ("board", "scene") and not ((BD if s["kind"] == "board" else SC) / (s["id"] + ".mp4")).exists():
+                print(f"{i:03d} skip {s['kind']} {s['id']}"); continue
             render(s, dur, out, W, H)
         print(f"{i:03d} {s['t']:7.2f} {dur:6.2f} {s['kind']:6s} {s.get('label') or s.get('id') or ''}", flush=True)
         lst.append(f"file '{out}'")
@@ -391,8 +446,10 @@ def main():
          f"scale={int(H*0.09)}:-2,format=rgba,colorchannelmixer=aa=0.85", str(logo)])
     # audio: VO + ducked bed, then two-pass linear loudnorm to -14 LUFS (fast on its own; slow inside the video graph)
     mix = A / "mix_raw.wav"
-    run(["ffmpeg", "-v", "error", "-y", "-i", str(vo), "-i", str(bed), "-filter_complex",
-         f"[1:a]volume=-25dB,{duck}[b];[0:a][b]amix=inputs=2:duration=longest:normalize=0[a]", "-map", "[a]", "-t", f"{END:.2f}", str(mix)])
+    sfx = A / "sfx_bus.wav"
+    sfx_bus(shots, sfx)   # doodle sound effects (pop, whoosh, scribble, clink...) under the board shots
+    run(["ffmpeg", "-v", "error", "-y", "-i", str(vo), "-i", str(bed), "-i", str(sfx), "-filter_complex",
+         f"[1:a]volume=-25dB,{duck}[b];[2:a]aresample=48000[s];[0:a][b][s]amix=inputs=3:duration=first:normalize=0[a]", "-map", "[a]", "-t", f"{END:.2f}", str(mix)])
     # loudness: measure, apply the exact gain to -14 LUFS, then a brick-wall limiter at -1.5 dBFS for the few VO peaks.
     # (loudnorm linear=true silently undershoots, -14.8 LUFS on v1, when the gain would push true peak over the ceiling.)
     def integrated(f, af="anull"):

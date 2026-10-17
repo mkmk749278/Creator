@@ -132,7 +132,13 @@ code and upload renders after every finished scene, not at the end. Start the ne
 
 **Rules:** each session owns one folder and one branch (no merge conflicts); same effort and quality in every shard; media
 over 100 MB never goes in git (hand over by URL list and re-download, or a release asset/LFS after a test upload); archive
-sessions when done; 6–8 sessions is the sensible maximum. Every new session runs `.claude/hooks/session-start.sh`
+sessions when done; 6–8 sessions is the sensible maximum.
+**Handing large files between sessions (tested 2026-10-13):** Litterbox (catbox.moe's temporary host, ≤ 1 GB per file,
+kept 72 h) works both ways from the cloud: `curl -F reqtype=fileupload -F time=72h -F fileToUpload=@f.mp4
+https://litterbox.catbox.moe/resources/internals/api.php` prints a direct URL, `curl -L <url>` gets it back byte-identical
+(md5 checked). Commit `<file>.url` text (URL + md5) to the session's branch; the receiver fetches the branch and downloads.
+Gofile does not work for this: guests can upload, but the contents API answers `error-notPremium` and a direct download
+redirects. Gofile stays the owner's delivery link. Only our own renders and our own licensed assets go to Litterbox. Every new session runs `.claude/hooks/session-start.sh`
 (npm install with vendoring, `.venv` with all extras, library fetch), so it is ready to render when it starts.
 The `/parallel-render` skill walks through the whole procedure.
 
@@ -412,6 +418,182 @@ money film that is the spend or the payment (card machine, bill, wallet), never 
 "a family function" was rejected). (b) *the character* was then dropped altogether (see 3). (c) *no foreign money*: drop clips
 showing dollars or euros in a rupee film (about half the "money/bills" stock results); prefer cards, phones, bills.
 
+### 4a-5. Indian audience psychology and retention architecture (owner, 2026-10-17)
+*Why this exists:* most Indian viewers watch on a phone, with distractions around them (an often-quoted YouTube figure
+says about 80% of watch time in India is on mobile; YouTube said in 2025 that Indian adults spend over 72 minutes a day on
+YouTube). A film that feels like a lecture, or holds back what the thumbnail promised, loses half its viewers in the first
+minute, and YouTube then stops recommending the channel's next films. Our own uploads show it (§4a-7). Every script and
+edit follows these four laws. Where they are stricter than §4a or §4a-4, they win.
+
+1. **Lede first, no delayed payoff.** If the title or thumbnail names an event, rule, scam or trap (Balasore, Cashless
+   Denied, the Minimum Due trap), that exact thing is **on screen and in the VO within the first 25 s** (was 0:30 in §4a).
+   **No exposition in the first 2 minutes:** no background, definitions or history before the viewer has seen the
+   high-stakes conflict. The explanation is earned *after* the viewer knows what broke or where the trap is.
+   *Seen in our data:* the Kavach film's title asks about Balasore, but Balasore arrives at 5:41 of 8:34.
+2. **The 3-tier hook (0:00–1:00).**
+   - **0:00–0:08, the visceral trigger:** motion and stakes from the first frame. No logo sting, no static phone mockup,
+     no greeting. Start in the middle of the crisis.
+   - **0:08–0:30, the thumbnail paradox:** deliver the thumbnail promise and state the paradox common sense can't answer.
+   - **0:30–0:55, the open loop:** give the viewer an exact mission ("at six minutes forty, I'll show you the exact
+     clause that…"). The minute must be true in the final cut; re-check it after every re-edit (§13a). *Seen:* the
+     Kavach script promises Balasore "around the eight minute mark", but the uploaded reel v2 has Balasore at 5:41.
+3. **Anti-lecture, blame the system.** The sharp, protective elder brother across a chai table, never a news reader,
+   professor or corporate trainer. Banned openers: "Now let us understand…", "In this video we will examine…", "First,
+   one must know…", "Let us look at the history…", and the softer "Today we'll…" agenda line. Never blame the viewer for
+   not knowing the law; blame the fine print, the predatory design or the bottleneck.
+4. **70/30 mixed-media realism.** Clean 3D or vector animation held alone for more than 4–5 s reads as a training module:
+   inside a long explainer scene, cut in a real asset or make a strong angle change every 4–5 s. At least 25–30% of the
+   visual track is real-world grit: archive news headlines, real street or trackside footage, gazette and circular PDFs
+   with a kinetic highlighter, satellite imagery. The visual reset stays every 3.5–5.0 s (§5.1 rule 5).
+
+### 4a-6. Sentence architecture: synthetic read vs human read (owner, 2026-10-17)
+*Why:* ElevenLabs Akash (v4) infers pitch, warmth, tension and breath only from punctuation, sentence-length variety and
+rhythm. Text written like a report (uniform 15–20-word sentences, passive corporate words, flat full stops) makes Akash
+drop pitch the same way at every full stop: a drone. Text written like speech (a long visual sentence followed by a short
+punch, `...` pauses, `—` pivots, `?` questions) reads like a person.
+
+**The four rules**
+1. **The breath test:** say each sentence aloud on one natural breath. Run out of air before the full stop and it is too
+   long for Akash: it will sound rushed.
+2. **Punctuation is musical notation:** `.` pitch drops, thought ends; `...` breath and about 0.5 s of held tension;
+   `—` a conversational turn and a tempo change; `?` rises and pulls the listener in.
+3. **No passive corporate grammar:** never "It has been observed that…" → "Look at what happened…"; never "Citizens must
+   be aware…" → "Here's what they never tell you to your face…".
+4. **Length contrast:** never three sentences of the same length in a row; follow a 20-word scene-setter with a
+   4-word punch. This sits with §4a-4: never three or more very short sentences in a row either (the lint checks it).
+
+**Before and after.** The examples teach rhythm only. Their facts were checked against our own fact-checks
+(`projects/health-claim-trap/claims.csv` HC-08, `projects/kavach-railway-reality/fact-check.md`), and the VO text follows §4a-2:
+number words, no digits, `₹`, `!` or double quotes. A real script re-verifies every fact (§12).
+
+*Case 1, a cashless claim denied at the hospital.*
+- ❌ Synthetic: "When a health insurance claim is rejected at the hospital, policyholders often experience severe financial
+  confusion. Under the Insurance Regulatory and Development Authority rules, cashless approval should be processed
+  smoothly. Now let us examine the five-year moratorium rule…" *Fails:* passive phrasing, uniform lengths, lecture turn.
+- ✅ Human:
+  > It's eleven thirty at night. Your discharge papers are stamped, the cab is waiting outside... and the man at the
+  > T-P-A desk slides one sheet of paper across the counter. Three words, stamped in red. Cashless denied.
+  > Now they want four lakh rupees from your savings before your family can leave that room — and all he says is, sir,
+  > policy terms. Take a breath. That paper is not the final word. At five minutes forty, I'll show you the five year
+  > rule that stops an insurer from rejecting a long-running policy for a pre-existing illness or a missed disclosure,
+  > unless they can prove fraud.
+  
+  *Works:* a real place and hour, long lines against short ones, `...` for breath, `—` for the turn. (The original
+  draft said the rule makes any rejection "illegal"; it covers non-disclosure and pre-existing grounds after five
+  continuous years, fraud excepted, so the claim is narrowed.)
+
+*Case 2, Balasore and Kavach.*
+- ❌ Synthetic: "Automatic Train Protection systems like Kavach are designed to prevent collisions on Indian Railways… We
+  must first analyse track signalling circuits and electronic interlocking…" *Fails:* turns some three hundred deaths
+  into a case study and makes the viewer sit through definitions before any tension.
+- ✅ Human:
+  > Picture this. It's evening near Balasore, and the Coromandel Express is running at about one hundred and twenty
+  > eight kilometres an hour... on a green signal. Clear line. Full speed. But ahead, the crossover is set the wrong
+  > way — towards a loop line where a goods train is standing. Within hours, every phone in India asks the same thing.
+  > Where was Kavach? Here's what the newsroom didn't explain... the signal itself was showing green. Feed a safety
+  > computer the same wrong information, and it may believe the line is clear too.
+  
+  *Works:* present tense puts the viewer on the train, short bursts against slow pauses. (The original draft said Kavach
+  "would have accelerated straight into that collision". Our fact-checked Kavach film says nobody can say yes or no for
+  sure, and the Ministry told Parliament the crash was not linked to Kavach. Series continuity (§4a-4) forbids
+  contradicting it, so the example stops at "may".)
+
+*Case 3, the credit card minimum due.*
+- ❌ Synthetic: "Credit card statements contain a minimum amount due figure that many consumers pay without realising the
+  interest implications. Now let us look at the table…"
+- ✅ Human:
+  > You open your banking app on the fifth... and the bill says sixty five thousand rupees. But right below it, in bright
+  > blue, there's a tiny number. Three thousand two hundred and fifty. Pay that, and the app says well done. What they
+  > don't print on the front page... the moment you pay less than the full bill, your interest-free days are gone —
+  > and interest runs on every swipe from the day you made it. Look at what happens next month.
+
+### 4a-7. Channel performance and growth plan (measured 2026-10-17)
+*Why this exists:* the owner asked where we are lagging and when the channel can earn. Numbers are the public channel
+page on 2026-10-17 (joined 12 Aug 2026; 51 subscribers; 7 videos). CTR, average view duration and retention are only in
+YouTube Studio: ask the owner for Studio screenshots (Reach and Engagement tabs per video) before the next decision.
+
+| Video | Length | Age | Views |
+|---|---|---|---|
+| The $10 Billion Chip Gamble (semiconductor) | 10:50 | 10 d | 7,028 |
+| India Landed on the Moon. Why Can't It Build a Jet Engine? | 9:23 | 2 d | 937 |
+| Can't Pay Your Credit Card Bill? Know Your Rights (long cut) | 27:41 | 2 w | 439 |
+| Credit Card Minimum Amount Due: The Interest Trap | 8:05 | 4 d | 50 |
+| Cashless Claim Denied? The 5-Year IRDAI Rule | 8:46 | 2 d | 10 |
+| Can't Pay Your Credit Card Minimum Due? What Happens Next | 11:29 | 3 d | 8 |
+| Could Kavach Have Saved Balasore? | 8:35 | 2 h | 1 |
+
+**What the data says (and the rule it gives us)**
+1. **India's-capability stories pull views; consumer-rights explainers don't, yet.** The two "can India build it" films
+   have 95% of all views. Personal-finance how-tos compete with huge channels for search, and a new channel has no search
+   authority. *Rule:* lead with national engineering, strategy and "why can't India…" paradox films; carry money and
+   rights topics inside a story with stakes, or as Shorts, until the channel has an audience.
+2. **Too many uploads too close together.** Five long films in four days on a 51-subscriber channel: each gets only a
+   small test batch of impressions, and three credit card films compete with each other. *Rule:* one to two long films a
+   week, never two on the same topic within a fortnight.
+3. **The title's brand suffix eats the mobile title.** "| Be Practical With Kishore" is 27 characters; phones show
+   about the first 50–60. The one breakout title had no suffix. **Owner's decision (2026-10-17): keep the suffix**
+   (§13a). So put the hook words first, so the part a phone shows carries the promise on its own.
+4. **Delayed ledes and false open loops** (§4a-5): fix them in the edit before delivery.
+5. **No Shorts.** Shorts don't count toward watch hours but are the cheapest way for a new channel to be found and to
+   gain subscribers. *Rule:* cut two or three 30–50 s vertical Shorts from every film (the hook, the reveal), each
+   linking to the full film.
+
+**YouTube Studio data (owner's screenshots, 2026-10-17): YouTube IS recommending us; viewers leave in the first
+45 s.**
+
+| Video | Views | From recommendations (browse) | Avg view duration | Still watching at 0:30 |
+|---|---|---|---|---|
+| Chip Gamble (10:50) | 6,122 | 5.9K (96%) | 2:42 (25.1%) | 54% |
+| Jet engine (9:22) | 985 | 976 (99%) | 1:58 (21.0%) | 47% |
+
+Partner progress (Studio, data as of 12 Oct): 51 / 1,000 subscribers, **91 / 4,000 qualified watch hours**, 0 Shorts
+views. Kavach: no retention data yet (2 days to process).
+
+What the curves say:
+1. **The problem is distribution-to-retention, not distribution.** Nearly all views come from the home feed and
+   suggested, so titles and thumbnails earn clicks. (CTR and impressions are on the Reach tab; ask for it.)
+2. **About two thirds of the viewers we lose are gone by about 0:45.** Both curves fall from about 95% to about 33–35% by
+   0:40–0:45, then go almost flat: the people who pass the first minute mostly watch to the end. The body of our films
+   works; **the first 45 seconds don't.**
+3. **The drop lines up with our intro block.** In the jet engine film, J008 asks the thumbnail question at about 0:25,
+   then J009 runs "Welcome to Be Practical with Kishore. Today, the story of…", a logo sting and a title card: the curve
+   falls from 47% to about 33% across exactly that stretch. To a home-feed viewer, a welcome, sting and title card say
+   "the real video hasn't started". The chip film opens on 2021 car parking lots and global percentages, not the
+   $10 billion gamble its thumbnail shows, and loses 46% in 30 s.
+4. **Real conflict makes people rewind.** The chip curve's only bump is at about 6:30–6:45: failed fabs, Foxconn walks
+   away, "0 fabs". Stakes and real failure hold viewers better than background.
+5. **Targets for the next films:** at least 65% at 0:30, at least 50% at 1:00, average view duration at least 35%.
+   Hitting that roughly doubles watch hours per view, and YouTube widens browse distribution for videos that hold.
+   **Owner's decisions (2026-10-17):** channel name and logo sting only at the end (§5.5 rule 5); first frame = the
+   thumbnail's subject (§5.5 rule 1); title suffix kept; India-capability films first (point 1 above).
+6. **Open question:** the synthetic voice may cost some early exits (viewers who notice TTS). We can't measure it
+   from one channel; recheck once the intro fix is in place.
+
+**Monetization maths** (YouTube Help, YPP overview, checked 2026-10-17). Ad revenue needs **1,000 subscribers and 4,000
+public long-form watch hours in the last 12 months** (or 10 million Shorts views in 90 days). The lower tier (500 subs,
+3 uploads in 90 days, 3,000 hours or 3 million Shorts views) unlocks memberships and Super Thanks only, no ad share;
+India is eligible. At our measured average view of about 2 minutes 20 seconds, 4,000 hours needs about **1 lakh long-form
+views**; at 4 minutes it needs about 60,000; at a typical 1 subscriber per 100–200 views, 1,000 subscribers is about **1–2 lakh views**. Earnings: Indian
+finance and education RPM is commonly quoted at ₹50–150 per 1,000 views (agency estimates; English above regional
+languages; October–December higher), so **1 lakh views ≈ ₹5,000–15,000**. Plan from the real RPM in Studio once known.
+
+### 4a-8. Practical reality over paper rules (owner, 2026-10-12)
+*Why (owner):* the channel is "Be Practical": viewers need what really happens to them, not only what the RBI or the bank
+says. Rules:
+- **Split by the viewer's real situation.** Never treat one amount or one case as everyone's: ₹10,000, ₹1 lakh,
+  ₹2–5 lakh and ₹10 lakh+ play out differently (who calls, whether anyone visits, whether a court case is worth the
+  bank's cost, what settlement looks like). Show the slab table on screen and say which slab the viewer is in.
+- **Follow the money on both sides.** Explain why the other side acts as it does: recovery agency commission, cost of a
+  field visit, court fees and lawyer costs against the amount, write-off and sale to collectors.
+- **Every combination the viewer may have:** one card or several; several banks or several cards (plus a salary
+  account, FD or loan) at the same bank; add-on cards; card-to-card rotation. Say what changes in each: shared limits,
+  cross-default, set-off across accounts, other issuers cutting limits after a CIBIL hit, which bank chases first.
+- **Real-life logistics count:** where the agency is based (mostly cities) vs where the person lives (a village Aadhaar
+  address, a moved communication address), calls vs visits, what a "legal notice" SMS really is.
+- **Rules still frame it:** state the RBI/legal rule first, then "but in real life…", and label each part: sourced fact,
+  bank/agency practice (with source), or our reasoning ("OUR ESTIMATE"). Never pass practice off as law, or a guess as
+  data. Never advise dodging a valid debt; the defence is knowing your rights and settling on paper.
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
@@ -449,7 +631,8 @@ Refined 2026-10-09 with the measured transcripts of 18 competitor videos (number
   (NB Show, Day Trader), the **myth everyone believes** (Think Deep), a **stakes list + promise** ("ఈ వీడియోలో పిన్ టు
   పిన్ ఎక్స్ప్లెయిన్ చేస్తా, లాస్ట్ వరకు చూడండి", Kowshik) or a **question chain** ("అసలు ఇది ఏంటి? ఎలా వర్క్
   అవుతుంది? ఎవరికి లాభం, ఎవరికి నష్టం? నష్టం ఎవరికో తెలుసా... మనకే", Kowshik). Name and greeting come right after the
-  hook (face and name within 15–20 s; NB Show flashes its name sting at 0:02), and the thumbnail's promise lands by 0:30.
+  hook (NB Show flashes its name sting at 0:02), and the thumbnail's promise lands by 0:30. **Our channel no longer
+  copies this** (owner, 2026-10-17, §4a-7): no greeting or name sting inside the film; the name comes only at the end.
 - Subscribe asks: Kowshik asks at 21–26 s and Money Purse at 22–33 s, right after the promise; Think Deep and NB Show only
   at the end. One short ask right after the promise and one at the end is the common shape.
 
@@ -494,8 +677,10 @@ change, never mid-thought. Keep the punctuation rules in §4 (commas, full stops
 ## 5. The look
 
 ### 5.1 Zero-tolerance rules (and why)
-1. **No presentation cards:** no full-screen text boxes, bullet lists, icon cards, summary slides or question-mark graphics
-   on flat backgrounds. *Why:* breath-hold v1 was exactly that, and the owner's verdict was "a boring PowerPoint".
+1. **No presentation cards, no delayed lede:** no full-screen text boxes, bullet lists, icon cards, summary slides or
+   question-mark graphics on flat backgrounds, and the thumbnail's subject is on screen within 25 s (§4a-5). *Why:*
+   breath-hold v1 was exactly that, and the owner's verdict was "a boring PowerPoint"; delayed reveals lose mobile
+   viewers in the first 30 s (owner, 2026-10-17).
 2. **No static canvas:** a motionless photo or flat colour never stays over **1.5 s**; a plain CSS gradient never counts as
    a background. The canvas always has camera motion, particle atmosphere or live video.
 3. **85% real motion:** at least 85% of the runtime is moving video, screen recordings, kinetic data animation or B-roll.
@@ -542,18 +727,44 @@ When an authentic photo or document is irreplaceable:
 4. **Moving contact sheet:** 3–4 archival angles slide into a collage, one every ~1.5 s.
 
 ### 5.5 Owner's standing notes (from reviews; now rules)
-1. Subject's **face and name within the first 15–20 s** (lower-third "NAME · born–died"); repeat the name lower-third when
-   the VO says the name.
+1. The first frame shows the **thumbnail's own subject and claim** (owner, 2026-10-17). In a person-centred film the
+   subject's **face and name are on screen within the first 15–20 s** (lower-third "NAME · born–died"); repeat the name
+   lower-third when the VO says the name.
 2. Stock or stand-in footage that could pass for the real event carries a permanent **"ILLUSTRATIVE FOOTAGE"** label
    (`+illus` in the EDL). Never give stock a CCTV/archival look; that look is for authentic footage only. Licensed stand-ins
    get honest tags ("ARCHIVE PHOTO · 2013", "B-ROLL").
 3. **No on-screen data that contradicts the VO** (Prahlad v4 showed a monitor reading 168/90 under "vitals normal").
    Replace it with an honest, labelled graphic.
 4. **No stock clip more than twice**; no filler space or lab footage. "When did what happen" gets a timeline graphic.
-5. **Branding:** banner intro when the channel name is spoken (logo sting), small logo bug in a corner on every other shot,
-   end on the logo end card with subscribe and YouTube end-screen zones. Files in `assets/brand/`.
+5. **Branding (owner, 2026-10-17):** the channel is named, with the logo sting, **only in the outro**; no welcome line,
+   logo sting or title card anywhere earlier. A small logo bug sits in a corner throughout; end on the logo end card with
+   subscribe and YouTube end-screen zones. Files in `assets/brand/`. *Why:* §4a-7, the welcome + sting + title card at
+   0:25–0:45 is where our retention fell (jet engine: 47% → 33%).
 6. **Science is explained with animation, never still plates** (§9). Label each "ILLUSTRATION", "ILLUSTRATIVE CURVE" or
    "HYPOTHESIS". *Why:* anatomy plates and microscopy stills were rejected on breath-hold.
+
+### 5.6 Desk + doodle: our own look for money explainers (owner, 2026-10-12: "mix both")
+*Why:* the owner called the whiteboard and its handwriting "outdated", then rejected the next idea (a dark glass-card
+FinTech dashboard from an outside spec) before it was built, and asked for our own best method, ultra realistic, no ceiling.
+**Research (2026-10-12):** 200 mid-video frames (YouTube auto-frames `i.ytimg.com/vi/<id>/maxres1-3.jpg`, study only) from
+recent PolyMatter, How Money Works, Economics Explained, Business Casual, Vox, WSJ, CNBC, The Economist, Cleo Abram,
+Wendover, Johnny Harris, Kurzgesagt and Think School videos. None used glass cards, neon dashboards or whiteboards; those
+read as template or AI looks. The strongest frames put information **into a real world**: a price tag on a product, a
+number pinned on an aerial map, a stamped paper document, a cutout photo in a real room. Vendor trend blogs (GDJ,
+Renderforest, Genesis, 2026) say the same: texture, physical materials and "made" over clean corporate vector.
+**Owner's decision (2026-10-12): mix both.** The photoreal **desk** for the big moments (the hook, every reveal, the
+money that moves), the **doodle** mode (`video/lib/doodle`) for explaining: sketched objects and metaphors drawn on in
+Rough.js, items popping in with a sound each (pop, whoosh, scribble, rip, thud, clink; `make_sfx.py`), 2–3-word labels in
+clean type, no handwriting, no characters. *Why doodle:* the research of current doodle channels (Sprouts) showed the
+dated part of our whiteboard was the handwriting, not the drawing.
+**The desk method:** money is shown as photoreal physical objects on one desk, rendered in Three.js inside HyperFrames
+(`video/lib/moneytable`): a printed bill, a phone, metal coins that move (100 × ₹1 = ₹100, so a split is visible as two
+piles), printed tent cards, stamps, receipts, a wall calendar. **Words live on objects** (printed, engraved, on a screen),
+not pasted over the picture; one mono kicker + one bold line (Bricolage Grotesque 800, JetBrains Mono) is the only overlay.
+Dark room, a warm practical pool of light (spot, soft shadow), walnut desk (Poly Haven CC0 PBR), HDRI reflections, ACES,
+vignette, slow breathing camera. Real Indian footage still carries every real-life beat (§4a-3); the desk replaces the
+BOARD mode. Every figure on an object still traces to `claims.csv` or the project's maths tool, with an OUR CALCULATION /
+SIMULATION tag. Avoid: glass cards, neon, gradient canvases, floating icon grids, handwriting.
 
 ## 6. Workflow and engines
 
@@ -919,6 +1130,11 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
   Real archival audio (e.g. a CC BY clip on archive.org) beats an empty LIVE row.
 - **Loudness:** two-pass **linear** normalisation to −14 LUFS integrated, −1 dBTP (one gain + limiter). *Why:* single-pass
   `loudnorm` pumped silent pauses up to narration level.
+- **Pixabay music (owner, 2026-10-12):** our key has no music access and the site blocks scripts, so Claude shortlists
+  tracks by reading their pages and the owner downloads them on the phone. **Only tracks whose page does not say
+  "Content ID Registered"**: on 2026-10-12, 15 of the 21 tracks checked were registered (all 11 hopeful pianos), and a
+  registered track gets a YouTube claim that can take the ad money. One bed per act (tension → curious → hopeful), a
+  sound effect on every doodle item. Shortlist and mood map: `projects/cant-pay-minimum/music.md`.
 - `scripts/make_bed.py` synthesises a royalty-free bed (drones, pads, heartbeat, bowls); `scripts/final_mix.sh` mixes.
 
 ## 12. Facts, honesty and rights
@@ -1002,6 +1218,14 @@ closing the session keeps `main` complete and stops idle sessions using the shar
 
 ## 14. Pre-render review (every cut, before the final render)
 
+**Audio-synced frame review, every cut, before the owner sees it (owner, 2026-10-12: "you can read images and videos
+frame by frame, so make every frame suit the audio; self-review every frame; give the best only").** Time the words
+(`projects/minimum-due/build/words.py`: pauses pinned to punctuation, words spread by length; no Whisper), place every
+animated item on the word that names it (`P(line, "phrase")`), give every page a slow camera move so nothing sits still,
+then run `build/review_av.py` (one frame per second with the words heard in that second) and read **every** sheet. Fix
+every frame that does not show what is being said, is empty, unreadable, covered or off-frame, rebuild, and review again.
+Only then send the cut, with the review summary.
+
 Contact-sheet the cut (`scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --every 2`: 3×3 timecoded tiles, 1536 px)
 and go shot by shot; write `review.md` (issue → shot IDs → fix). In a session, read the sheets yourself at `high` effort or
 above; in Actions, `python -m pipeline.review_cut` sends sheets + EDL to Opus at `max` and writes `review.md`/`review.json`
@@ -1019,11 +1243,13 @@ rules before changing anything. Read its answer with `list_events`, then archive
 - [ ] Every shot matches the exact words over it; the VO is silent under every diegetic or LIVE moment.
 - [ ] English films (§4a-4): the open loop's promised minute matches the cut; a visual reset every 3.5–5 s; no stock
   of anonymous office workers typing; acronyms in the VO were said correctly (listen, don't assume).
-- [ ] Face and name on screen within 20 s; name lower-third returns when the VO says the name.
+- [ ] First frame shows the thumbnail's subject and claim; in a person-centred film, face and name within 20 s and the
+  name lower-third returns when the VO says the name.
 - [ ] Every frame's on-screen data agrees with the VO (numbers, monitors, headlines, dates).
 - [ ] Stand-ins labelled "ILLUSTRATIVE FOOTAGE"; authentic footage carries its source credit.
 - [ ] No stock clip more than twice. Science beats animated and honestly labelled.
-- [ ] Logo sting when the channel is named, logo bug elsewhere, end card last.
+- [ ] No welcome, "Today we'll…", logo sting or title card before the outro; logo bug throughout; channel named with
+  the sting only in the outro; end card last.
 - [ ] No near-black or dead frames; block changes dip to black; the music bed never restarts audibly.
 - [ ] Claims stay claims; a real skeptic or mainstream-science beat on health topics.
 - [ ] About −14 LUFS; subtitles rebuilt after any timing change.
@@ -1152,6 +1378,22 @@ Each of these cost a re-render or a wrong look:
 - **Thermal view reads instantly when the background is the hot gas** (yellow/white in the ironbow ramp) and the cooled
   blade sits darker (red/magenta) in front of it. Cooling-film cyan only right behind the holes, never as a wash.
 - **Inter's subsets have no `≈` (U+2248):** draw it as a small inline SVG in the label.
+
+- **First real parallel 4K run (Minimum Due, 2026-10-13).** 3 render shards plus 1 assembler: about 2 h 35 min wall
+  clock end to end, including about 1 h of waiting for the shards. Native 4K renders ran at about 8× real time
+  (s02_timeline: 105 s in 14.7 min) on one 4 vCPU VM. Every file went over Litterbox (§3) and arrived with a matching md5.
+  Two lessons: doodle pages need `#root` stretched to 100% in the 4K copy (render_4k.sh), or the zoom:2 stage shows only
+  a quarter of the frame; and give every shot an exact frame count (`-frames:v`), because single dropped frames add up to
+  0.2 s of drift against the VO. All sessions share one usage limit: when it ran out at 02:30 UTC, every session paused
+  until the reset, so plan heavy runs around it.
+
+**Can't Pay Even the Minimum, research (2026-10-12).** One background researcher with 12 rule topics ran for over an
+hour, then a session restart ended it with nothing saved; the owner asked why research took so long. Now: split research
+into 2–4 narrow parallel researchers (one topic group each, ~15 min target), skip topics another file already covers,
+and make every researcher **append findings to its file after each item**, so a restart loses at most one item. Check on
+long background work every ~20 min instead of assuming it is still running.
+The fact-check then hit the account's usage limit mid-run (resets after a few hours): parallel max-effort checkers burn
+usage fast. Keep the write-as-you-go rule for checkers too, and on a limit stop resume from the saved rows.
 
 **Minimum Amount Due (English, 8:05, 2026-10-11, v1 → v2).** The per-shot review of v1 found:
 - **Proofs unreadable:** 1080p screenshots at a 1.1–1.8× zoom left the highlighted line about 10 px tall on a phone.
@@ -1412,6 +1654,19 @@ them: anatomy-organ, blood-flow, globe-routes, document-forensic, data-graphics,
 9. **Measure before adopting** any expensive effect: render a 2 s shard with and without it and log the cost in §15.
 10. **Fact-check as a separate pass** at `max` effort in a fresh context (as the phone pipeline already does), producing a
     claims table (claim → source URL → status) committed with each video, like `episodes/.../04-fact-check.md`.
+11. **AI presenter (trial, owner approved the test 2026-10-12; not a standing rule yet).** An invented on-camera host
+    (a man of about 35 with a moustache, black shirt, grey armchair, podcast mic; reference `projects/ai-presenter/reference/rest_A.jpg`) for openings, chapter bridges, the practical-defence act and
+    outros. Folder: `projects/ai-presenter/` (character bible, one-paste `flow-agent-brief.md`, `gesture-map.yaml`). Method: the owner makes
+    a gesture library once in Google Flow (Veo, from their subscription credits: silent 8 s clips, first frame = last frame
+    = one rest still, two cameras); per film, Bunty's VO is lip-synced onto those clips with an open-source model
+    (LatentSync or MuseTalk) on a free Kaggle GPU, and each line's emotion cue picks the clip. *Why:* Flow has no API, and Veo
+    through the paid Gemini API breaks the zero-spend rule. Lip-sync models only redraw the mouth, so expressions and
+    hands must come from the base clips. Veo's own Telugu speech changes voice between clips. Limits: he is never presented
+    as Kishore or a real person; "Altered content = Yes" plus an "AI presenter" tag; never holds a product; ≤ ~20 s per
+    stretch, cut A/B every 3–4 s; real footage and animation still carry the film.
+    *Measured 2026-10-12:* LatentSync 1.5 on Kaggle (T4, Python 3.10 venv via uv; Kaggle's image is Python 3.13) made 30 s
+    of 720p lip-sync in 46 min (setup ~2 min), redrawing only the mouth; gestures and expressions stay from the Veo clip.
+    Kaggle needs a phone-verified account for GPU and internet. Notebook: `projects/ai-presenter/kaggle/latentsync_run.py`.
 
 ---
 

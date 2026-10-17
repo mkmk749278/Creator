@@ -75,3 +75,26 @@ YouTube package: `youtube/`.
 - `thumbnail_A.jpg` and `thumbnail_B.jpg`, in the channel's navy and gold theme.
 
 Phase 2 of the brief was not started; the owner approved the cut as it is.
+
+## Phase 2 (2026-10-12): whiteboard out, doodle in; modern labels
+
+Owner: "white board and writing looks out dated"; after a look study (PLAYBOOK §5.6) the owner chose desk + doodle.
+
+- **All 11 boards still in the refined cut** (b01, b02, b05, b07–b14) are rebuilt as doodle scenes on the new kit
+  `video/lib/doodle/doodle.js`: sketched objects and metaphors drawn on with Rough.js, short typed labels (Bricolage
+  Grotesque), no handwriting. Designs in `build/doodles.py` (same ids, start/end and page-turn moments as `boards.py`, so
+  every cut-in and cutaway still lands); `build/make_doodles.py` writes the scenes; `build/render_doodles.sh` renders them.
+  Examples: ₹4,688 not paid vs ₹4,317 interest on a balance scale; "the minimum is a switch that starts the interest
+  meter" as a real switch and meter; card rotation as three cards spinning in a loop; the three numbers as price tags.
+- **Sound effects** on every doodle item (pop, whoosh, scribble, clink, thud), mixed under the boards by `assemble.py`
+  (`sfx_bus`), synthesised by `video/lib/doodle/make_sfx.py`.
+- **Labels on every clip** are now a dark panel with a gold accent bar in Bricolage Grotesque, and source tags in
+  JetBrains Mono, sized to the text (`overlays()`; fonts from `build/make_fonts.py`). The old DejaVu-on-black boxes are gone.
+- **"Coming up: the full maths"** flash-forwards (1.08) now show the ₹30,481 ledger and the ₹74/₹26 split from the money
+  scenes instead of whiteboard frames.
+- Assets re-fetched in a fresh session with `build/fetch_assets.py` (36 clips from the logged CDN URLs), proofs and sims
+  re-shot from the live pages. Wikimedia Commons rate-limited 4 photos; the preview uses stand-ins for two of them
+  (Supreme Court interior → its second angle; HDFC branch → the HDFC ATM photo), to be restored before the master.
+
+Checked: lint 0 errors on all scenes; per-shot review sheets `qa/review_refined/`; 8:04.8, −14.2 LUFS.
+720p preview: https://gofile.io/d/DUAkZXdt. Not yet done: the 4K master (needs native-4K renders of the 11 scenes).

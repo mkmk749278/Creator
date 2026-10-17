@@ -77,6 +77,12 @@ for (const project of projects) {
       copyFileSync(join(root, "node_modules/@fontsource/inter/files", f), join(out, "fonts", f));
     }
   }
+  // Any other @fontsource file a page names as vendor/fonts/<file>.woff2 (Inter Tight, Bricolage Grotesque, JetBrains Mono…).
+  for (const [, f] of html.matchAll(/vendor\/fonts\/([\w-]+\.woff2)/g)) {
+    if (existsSync(join(out, "fonts", f))) continue;
+    const pkg = readdirSync(join(root, "node_modules/@fontsource")).find((p) => existsSync(join(root, "node_modules/@fontsource", p, "files", f)));
+    if (pkg) copyFileSync(join(root, "node_modules/@fontsource", pkg, "files", f), join(out, "fonts", f));
+  }
   // Handwriting font for whiteboard scenes (Kalam, OFL), only where a page asks for it.
   if (html.includes("vendor/fonts/kalam-")) {
     for (const w of [400, 700]) {
@@ -90,6 +96,22 @@ for (const project of projects) {
   if (html.includes("vendor/wb/")) {
     mkdirSync(join(out, "wb"), { recursive: true });
     for (const f of ["wb.js", "wb-fonts.js", "wb.css"]) copyFileSync(join(root, "video/lib/whiteboard", f), join(out, "wb", f));
+  }
+  // Rough.js (MIT): seeded hand-drawn SVG shapes for doodle scenes (video/lib/doodle).
+  if (html.includes("vendor/rough/")) {
+    mkdirSync(join(out, "rough"), { recursive: true });
+    copyFileSync(join(root, "node_modules/roughjs/bundled/rough.js"), join(out, "rough", "rough.js"));
+  }
+  // Doodle kit (video/lib/doodle/doodle.js) for pages that reference vendor/doodle/.
+  if (html.includes("vendor/doodle/")) {
+    mkdirSync(join(out, "doodle"), { recursive: true });
+    copyFileSync(join(root, "video/lib/doodle/doodle.js"), join(out, "doodle", "doodle.js"));
+    copyFileSync(join(root, "video/lib/doodle/paper.jpg"), join(out, "doodle", "paper.jpg"));
+  }
+  // Plates kit (video/lib/plates/plates.js): desk scenes from photoreal stills, for pages that reference vendor/plates/.
+  if (html.includes("vendor/plates/")) {
+    mkdirSync(join(out, "plates"), { recursive: true });
+    copyFileSync(join(root, "video/lib/plates/plates.js"), join(out, "plates", "plates.js"));
   }
   // Seeded organic motion: createNoise3D(seededRandom).
   if (html.includes("vendor/noise/")) {

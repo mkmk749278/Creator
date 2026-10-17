@@ -1,0 +1,352 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 3.725,
+  "te": "A message comes on your phone. Your credit card payment is overdue.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.206,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 4.221,
+  "end": 8.068,
+  "te": "Then another message. Then a call from a number you don't know.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.206,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 8.654,
+  "end": 15.254,
+  "te": "In our last video, we saw how paying only the minimum keeps you in debt for years. Today, a harder question.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.149,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 15.758,
+  "end": 17.913,
+  "te": "What if you cannot pay even that minimum?",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.149,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 18.314,
+  "end": 23.976,
+  "te": "Maybe your salary stopped. Maybe a hospital bill came first. It happens to good, honest people.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.19,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 24.413,
+  "end": 30.389,
+  "te": "And then the fear starts. Will the police come home? Will they take my salary? Will my family find out?",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.19,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 30.932,
+  "end": 34.688,
+  "te": "Most people think there is one answer for everyone. There isn't.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.109,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 35.04,
+  "end": 40.567,
+  "te": "Someone who owes ten thousand rupees and someone who owes ten lakh live two very different stories.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.109,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 41.025,
+  "end": 45.748,
+  "te": "Today I will show you both. The rules on paper, and the reality on the ground.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.162,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 46.149,
+  "end": 48.129,
+  "te": "Welcome to Be Practical with Kishore.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.555,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 48.589,
+  "end": 53.758,
+  "te": "First, let's understand the clock. The day your last date passes, the bank starts counting.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.017,
+  "confidence": "check"
+ },
+ {
+  "line": 12,
+  "start": 54.189,
+  "end": 60.039,
+  "te": "Thirty days. Sixty days. Ninety days. The bank's system checks your account every single day.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.017,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 60.429,
+  "end": 70.109,
+  "te": "If the minimum stays unpaid for ninety days after the due date, the bank must mark your card a bad loan. They call it an NPA. A non performing asset.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.101,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 70.487,
+  "end": 76.967,
+  "te": "Now here is something most people don't know. From that day, your unpaid card is also a loss for the bank.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.101,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 77.283,
+  "end": 84.69,
+  "te": "The bank must keep aside at least a quarter of what you owe, from its own profit. That is one reason the pressure grows around this time.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.12,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 85.142,
+  "end": 90.676,
+  "te": "But listen carefully. Some people say interest stops after ninety days. No rule says that.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.199,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 91.075,
+  "end": 97.31,
+  "te": "The bank cannot count your unpaid interest as its income. But your bill can keep growing as per your card terms.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.199,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 97.657,
+  "end": 103.134,
+  "te": "There is a second clock too. Your CIBIL. Banks now update the credit bureaus every fifteen days.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.172,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 103.495,
+  "end": 110.528,
+  "te": "The good part is, the bank must tell you before it reports you as a defaulter. And if you have a genuine dispute, it must wait.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.172,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 110.84,
+  "end": 118.71,
+  "te": "In one case, a consumer commission held SBI Card at fault for reporting a customer to CIBIL without proper notice first.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.061,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 119.128,
+  "end": 125.476,
+  "te": "And the card itself? At SBI Card, for example, it may be blocked from the very first missed payment.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.061,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 125.92,
+  "end": 129.588,
+  "te": "Now the part nobody tells you. A small bill grows faster than a big bill.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.108,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 129.957,
+  "end": 134.598,
+  "te": "Take two people. Ravi owes ten thousand rupees. Sunita owes one lakh. Both stop paying.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 134.995,
+  "end": 140.561,
+  "te": "Both pay the same interest. Three point seven five percent a month, plus eighteen percent GST on it.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.263,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 140.849,
+  "end": 150.634,
+  "te": "But the late fee is not a percentage. It is a fixed amount by slab. On ten thousand, the late fee is seven hundred and fifty rupees. On one lakh, it is thirteen hundred.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.263,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 151.014,
+  "end": 160.929,
+  "te": "Seven hundred and fifty on ten thousand is seven and a half percent, every month, just as a fee. Thirteen hundred on one lakh is only one point three percent.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.292,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 161.487,
+  "end": 167.577,
+  "te": "After six months of paying nothing, Ravi's ten thousand becomes about nineteen thousand. Almost double.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 167.986,
+  "end": 171.341,
+  "te": "Sunita's one lakh becomes about one lakh thirty eight thousand.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.138,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 171.821,
+  "end": 179.671,
+  "te": "For Ravi, about two thirds of that jump is late fees and the GST on them. So the smaller your bill, the harder the fees hit.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.134,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 180.038,
+  "end": 186.672,
+  "te": "This is our own calculation, using one bank's published fees. Your bill will be different, but the shape is the same.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.134,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 187.169,
+  "end": 192.742,
+  "te": "Now the real question. Who actually comes after you? And will anyone come to your house?",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.2,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 193.157,
+  "end": 201.039,
+  "te": "In the first three months, it is mostly calls. Automated calls, SMS, WhatsApp. Many from big call centres in cities.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.288,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 201.454,
+  "end": 206.859,
+  "te": "Banks decide how hard to chase by two things. The days you are late, and the money at risk.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.285,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 207.32,
+  "end": 213.1,
+  "te": "After that, many banks hand your account to a recovery agency. And here is the business behind it.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.285,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 213.462,
+  "end": 224.842,
+  "te": "Many agencies earn only when they collect. A percentage of what you pay. One public sector bank pays its agencies between seven and a half and fifteen percent on accounts up to one lakh.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.308,
+  "confidence": "high"
+ }
+]
