@@ -430,7 +430,7 @@ edit follows these four laws. Where they are stricter than §4a or §4a-4, they 
    - **0:08–0:30, the thumbnail paradox:** deliver the thumbnail promise and state the paradox common sense can't answer.
    - **0:30–0:55, the open loop:** give the viewer an exact mission ("at six minutes forty, I'll show you the exact
      clause that…"). The minute must be true in the final cut; re-check it after every re-edit (§13a). *Seen:* the
-     Kavach VO promises Balasore "around the eight minute mark"; reel v2 has it at 5:41.
+     Kavach script promises Balasore "around the eight minute mark", but the uploaded reel v2 has Balasore at 5:41.
 3. **Anti-lecture, blame the system.** The sharp, protective elder brother across a chai table, never a news reader,
    professor or corporate trainer. Banned openers: "Now let us understand…", "In this video we will examine…", "First,
    one must know…", "Let us look at the history…", and the softer "Today we'll…" agenda line. Never blame the viewer for
@@ -532,11 +532,40 @@ YouTube Studio: ask the owner for Studio screenshots (Reach and Engagement tabs 
    gain subscribers. *Rule:* cut two or three 30–50 s vertical Shorts from every film (the hook, the reveal), each
    linking to the full film.
 
+**YouTube Studio data (owner's screenshots, 2026-10-17): YouTube IS recommending us; viewers leave in the first
+45 s.**
+
+| Video | Views | From recommendations (browse) | Avg view duration | Still watching at 0:30 |
+|---|---|---|---|---|
+| Chip Gamble (10:50) | 6,122 | 5.9K (96%) | 2:42 (25.1%) | 54% |
+| Jet engine (9:22) | 985 | 976 (99%) | 1:58 (21.0%) | 47% |
+
+Partner progress (Studio, data as of 12 Oct): 51 / 1,000 subscribers, **91 / 4,000 qualified watch hours**, 0 Shorts
+views. Kavach: no retention data yet (2 days to process).
+
+What the curves say:
+1. **The problem is distribution-to-retention, not distribution.** Nearly all views come from the home feed and
+   suggested, so titles and thumbnails earn clicks. (CTR and impressions are on the Reach tab; ask for it.)
+2. **About two thirds of the viewers we lose are gone by about 0:45.** Both curves fall from about 95% to about 33–35% by
+   0:40–0:45, then go almost flat: the people who pass the first minute mostly watch to the end. The body of our films
+   works; **the first 45 seconds don't.**
+3. **The drop lines up with our intro block.** In the jet engine film, J008 asks the thumbnail question at about 0:25,
+   then J009 runs "Welcome to Be Practical with Kishore. Today, the story of…", a logo sting and a title card: the curve
+   falls from 47% to about 33% across exactly that stretch. To a home-feed viewer, a welcome, sting and title card say
+   "the real video hasn't started". The chip film opens on 2021 car parking lots and global percentages, not the
+   $10 billion gamble its thumbnail shows, and loses 46% in 30 s.
+4. **Real conflict makes people rewind.** The chip curve's only bump is at about 6:30–6:45: failed fabs, Foxconn walks
+   away, "0 fabs". Stakes and real failure hold viewers better than background.
+5. **Targets for the next films:** at least 65% at 0:30, at least 50% at 1:00, average view duration at least 35%.
+   Hitting that roughly doubles watch hours per view, and YouTube widens browse distribution for videos that hold.
+6. **Open question:** the synthetic voice may cost some early exits (viewers who notice TTS). We can't measure it
+   from one channel; recheck once the intro fix is in place.
+
 **Monetization maths** (YouTube Help, YPP overview, checked 2026-10-17). Ad revenue needs **1,000 subscribers and 4,000
 public long-form watch hours in the last 12 months** (or 10 million Shorts views in 90 days). The lower tier (500 subs,
 3 uploads in 90 days, 3,000 hours or 3 million Shorts views) unlocks memberships and Super Thanks only, no ad share;
-India is eligible. With an average view of about 3 minutes (check Studio), 4,000 hours is about **80,000 long-form
-views**; at a typical 1 subscriber per 100–200 views, 1,000 subscribers is about **1–2 lakh views**. Earnings: Indian
+India is eligible. At our measured average view of about 2 minutes 20 seconds, 4,000 hours needs about **1 lakh long-form
+views**; at 4 minutes it needs about 60,000; at a typical 1 subscriber per 100–200 views, 1,000 subscribers is about **1–2 lakh views**. Earnings: Indian
 finance and education RPM is commonly quoted at ₹50–150 per 1,000 views (agency estimates; English above regional
 languages; October–December higher), so **1 lakh views ≈ ₹5,000–15,000**. Plan from the real RPM in Studio once known.
 
