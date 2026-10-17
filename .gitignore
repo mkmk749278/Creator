@@ -65,3 +65,12 @@ projects/jet-engine-paradox/qa/
 projects/jet-engine-paradox/thumbnail/*.png
 projects/jet-engine-paradox/thumbnail/pixabay_*.jpg
 video/kavach-railway-reality/_tools/queue*.log
+
+video/insurance-ombudsman/*/media/
+video/insurance-ombudsman/*/render.log
+video/insurance-ombudsman/_A/render_status.txt
+video/insurance-ombudsman/_A/*.jpg
+video/insurance-ombudsman/_A/out/
+*.mov
+video/insurance-ombudsman/_4k/
+video/insurance-ombudsman/render_4k.log

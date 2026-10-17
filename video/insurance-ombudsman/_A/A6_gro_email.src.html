@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>A6 GRO email: typed, sent, filed</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <style>
+/*KIT_CSS*/
+/* A6 (revision v2): O029 + O030 + O031 as one scene (film 276.90-303.39; local = film - 276.90).
+   The D4 email to the GRO is typed line by line in VO order on a laptop, sent, and filed in "My claim file". */
+#stage { position: absolute; inset: 0; transform-origin: 50% 40%; }
+#laptop { position: absolute; left: 170px; top: 50px; width: 1580px; height: 930px; border-radius: 26px; background: #0d1119; padding: 18px;
+  box-shadow: 0 60px 120px rgba(0,0,0,.6), 0 0 0 2px #2b3342; }
+#base { position: absolute; left: 60px; top: 976px; width: 1800px; height: 70px; border-radius: 0 0 40px 40px; background: linear-gradient(#3a4250, #1b2029); box-shadow: 0 30px 60px rgba(0,0,0,.6); }
+#scr { position: relative; width: 100%; height: 100%; border-radius: 10px; overflow: hidden; background: #eef2f7; color: #18202c; font-family: Inter, Arial, sans-serif; }
+/* mail client (generic, unbranded) */
+#side { position: absolute; left: 0; top: 0; bottom: 0; width: 280px; background: #dde4ee; padding: 30px 22px; }
+#side .app { font: 800 26px/1 Inter, Arial, sans-serif; color: #14263B; margin-bottom: 30px; }
+#side .f { font: 600 21px/1 Inter, Arial, sans-serif; color: #18202c; padding: 13px 14px; border-radius: 10px; margin-bottom: 6px; display: flex; justify-content: space-between; }
+#side .f.on { background: #c6d2e2; color: #14263B; }
+#fClaim { color: #4f3b06 !important; }
+#main { position: absolute; left: 280px; right: 0; top: 0; bottom: 0; padding: 26px 40px; }
+#main .ttl { font: 800 24px/1 Inter, Arial, sans-serif; color: #5b6473; letter-spacing: .02em; margin-bottom: 18px; }
+.fld { display: flex; gap: 16px; align-items: baseline; border-bottom: 2px solid #d3dae5; padding: 12px 0; font: 600 24px/1.3 Inter, Arial, sans-serif; min-height: 58px; }
+.fld .fk { width: 120px; flex: none; color: #3e4757; font-weight: 600; }
+.fld .v { color: #14263B; font-weight: 800; }
+#body { padding-top: 18px; font: 400 25px/1.5 Inter, Arial, sans-serif; color: #18202c; }
+#body .ln { min-height: 37px; }
+#body .gap { height: 14px; }
+.hl { border-radius: 6px; padding: 0 4px; margin: 0 -4px; }
+/* the settlement email being answered, quoted under the draft (review fix: no blank white window in O029) */
+#quote { position: absolute; left: 40px; right: 80px; top: 320px; padding: 18px 0 0 22px; border-left: 4px solid #c9d2df; font: 400 23px/1.5 Inter, Arial, sans-serif; color: #3e4757; }
+#quote .qh { font: 600 21px/1.4 Inter, Arial, sans-serif; color: #4a5565; margin-bottom: 8px; }
+#quote b { color: #14263B; }
+#quote .cut { color: #b4383b; font-weight: 800; }
+#att { display: flex; gap: 12px; margin-top: 16px; }
+.pill { font: 600 19px/1 Inter, Arial, sans-serif; color: #14263B; background: #fff; border: 2px solid #c9d2df; border-radius: 10px; padding: 10px 14px; white-space: nowrap; }
+#send { position: absolute; right: 40px; bottom: 30px; font: 800 24px/1 Inter, Arial, sans-serif; color: #0B1422; background: var(--teal); border-radius: 12px; padding: 16px 34px; }
+.caret { display: inline-block; width: 3px; height: 28px; margin-left: 2px; background: #14263B; vertical-align: -5px; }
+/* the insurer's web page (schematic, invented) */
+#web { position: absolute; left: 220px; top: 40px; right: 60px; bottom: 60px; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 30px 70px rgba(11, 20, 34, .35); }
+#web .bar { height: 56px; background: #e4e9f0; display: flex; align-items: center; padding: 0 22px; gap: 14px; margin: 0; border-radius: 0; }
+#web .dot { width: 14px; height: 14px; border-radius: 50%; background: #c3ccd8; }
+#web .url { flex: 1; background: #fff; border-radius: 10px; padding: 9px 16px; font: 600 20px/1 Inter, Arial, sans-serif; color: #3b4656; margin-left: 12px; }
+#web .hd { background: #14263B; color: #F5F7FB; padding: 22px 36px; font: 800 30px/1 Inter, Arial, sans-serif; }
+#web .nav { display: flex; gap: 34px; padding: 16px 36px; border-bottom: 2px solid #e4e9f0; font: 600 21px/1 Inter, Arial, sans-serif; color: #5b6473; }
+#web .nav b { color: #14263B; border-bottom: 3px solid var(--teal); padding-bottom: 8px; }
+#web .pg { padding: 34px 36px; }
+#web h1 { font: 800 40px/1.1 Inter, Arial, sans-serif; color: #14263B; margin-bottom: 26px; }
+#web .card { border: 2px solid #dfe5ee; border-radius: 14px; padding: 26px 30px; max-width: 900px; }
+#web .card .r { font: 600 27px/1.5 Inter, Arial, sans-serif; color: #18202c; }
+#web .card .r span { color: #5b6473; font-weight: 400; }
+#web .note { font: 400 22px/1.4 Inter, Arial, sans-serif; color: #5b6473; margin-top: 24px; }
+/* filed items + the claim folder (O031) */
+.card2 { position: absolute; width: 640px; padding: 22px 28px; border-radius: 14px; background: #fff; color: #18202c; box-shadow: 0 24px 60px rgba(0,0,0,.45); font: 400 22px/1.4 Inter, Arial, sans-serif; }
+.card2 .h { font: 800 21px/1.2 Inter, Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #5b6473; margin-bottom: 8px; }
+.card2 .s { font: 800 23px/1.3 Inter, Arial, sans-serif; color: #14263B; margin-bottom: 6px; }
+#bill { width: 520px; }
+#folder { position: absolute; left: 610px; top: 1120px; width: 700px; height: 430px; }
+#folder .back { position: absolute; inset: 0; border-radius: 12px; background: #c9a86a; }
+#folder .tab { position: absolute; left: 40px; top: -40px; width: 260px; height: 52px; border-radius: 14px 14px 0 0; background: #c9a86a; }
+#folder .front { position: absolute; left: 0; right: 0; bottom: 0; height: 300px; border-radius: 4px 4px 12px 12px; background: linear-gradient(#e0c286, #cfae6e); box-shadow: 0 -6px 20px rgba(0,0,0,.25); }
+#folder .lab { position: absolute; left: 60px; top: 60px; padding: 14px 24px; background: #F5F7FB; color: #14263B; font: 800 40px/1 Inter, Arial, sans-serif; border-radius: 6px; transform: rotate(-1.5deg); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="A6_gro_email" data-start="0" data-width="1920" data-height="1080" data-duration="26.49">
+      <div class="layer"><video id="a6-bg" class="bgv" src="media/desk_f10b.mp4" muted playsinline data-start="0" data-duration="26.49" data-track-index="0" data-volume="0"></video></div>
+      <div class="layer" id="ov">
+        <div class="grade" style="background: radial-gradient(ellipse at 45% 30%, rgba(255, 214, 160, .06), rgba(11, 20, 34, .72) 60%, rgba(5, 9, 16, .9) 100%)"></div>
+        <div class="leak" id="leak" style="left: -600px; top: -800px"></div>
+        <div id="stage">
+          <div id="base"></div>
+          <div id="laptop"><div id="scr">
+            <div id="side">
+              <div class="app">Mail</div>
+              <div class="f">Inbox</div>
+              <div class="f" id="fSent">Sent</div>
+              <div class="f on" id="fDraft">Drafts</div>
+              <div class="f" id="fClaim">My claim file</div>
+            </div>
+            <div id="main">
+              <div id="compose">
+                <div class="ttl">New message</div>
+                <div class="fld"><span class="fk">To</span><span class="v" id="tTo"></span></div>
+                <div class="fld"><span class="fk">Subject</span><span class="v" id="tSub"></span></div>
+                <div id="body">
+                  <div class="ln" id="b0"></div><div class="gap"></div>
+                  <div class="ln" id="b1"></div>
+                  <div class="ln"><span class="hl" id="hlP"><span id="b2"></span></span></div>
+                  <div class="ln"><span class="hl" id="hlC"><span id="b3"></span></span></div>
+                  <div class="ln" id="b4"></div>
+                  <div class="ln"><span class="hl" id="hlW"><span id="b5"></span></span></div>
+                  <div class="ln" id="b6"></div>
+                  <div class="ln" id="b7"></div><div class="gap"></div>
+                  <div class="ln" id="b8"></div>
+                </div>
+                <div id="quote">
+                  <div class="qh">Claims Department, Sample Health Insurance Co. Ltd. wrote:</div>
+                  <b>Claim settlement advice · CLM-2408-55217</b><br>
+                  Dear R. Kumar, your claim has been processed.<br>
+                  Amount claimed: ₹4,50,000 · Amount approved: ₹1,20,000 · <span class="cut">Amount disallowed: ₹3,30,000</span><br>
+                  Reason: deductions as per policy terms and conditions.
+                </div>
+                <div id="att"><span class="pill">policy.pdf</span><span class="pill">discharge-summary.pdf</span><span class="pill">itemised-bill.pdf</span><span class="pill">settlement-letter.pdf</span></div>
+                <div id="send">Send</div>
+              </div>
+            </div>
+            <div id="web">
+              <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">samplehealth.example/grievance-redressal</span></div>
+              <div class="hd">Sample Health Insurance Co. Ltd.</div>
+              <div class="nav"><span>Home</span><span>Policies</span><span>Claims</span><b>Grievance redressal</b></div>
+              <div class="pg">
+                <h1>Grievance redressal</h1>
+                <div class="card">
+                  <div class="r">Grievance Redressal Officer</div>
+                  <div class="r" id="mailRow"><span>Email: </span><span class="hl" id="mailHl" style="color: #18202c; font-weight: 600">gro@samplehealth.example</span></div>
+                </div>
+                <div class="note">Write to us with your policy number and claim number.</div>
+              </div>
+            </div>
+          </div></div>
+          <div class="card2" id="cSent" style="left: 300px; top: 120px"><div class="h">Sent · to gro@samplehealth.example</div><div class="s">Grievance: partial settlement of claim CLM-2408-55217</div>Dear Grievance Redressal Officer, I write about my health claim. Policy No. SHI-4471-0926.</div>
+          <div class="card2" id="cReply" style="left: 980px; top: 200px"><div class="h">Reply · from gro@samplehealth.example</div><div class="s">Re: Grievance: partial settlement of claim CLM-2408-55217</div>We have received your grievance and are reviewing it.</div>
+          <div class="paper card2" id="bill" style="left: 700px; top: 470px"><div class="h">Sample City Hospital · Itemised bill</div><div class="s">Patient: R. Kumar · Total: ₹4,50,000</div>Room charges · Surgeon fees · OT charges · Medicines · Investigations · Nursing</div>
+          <div id="folder"><div class="tab"></div><div class="back"></div><div class="front"><div class="lab">My claim file</div></div></div>
+        </div>
+        <div class="tag">Simulation</div>
+        <canvas class="grain" id="grain" width="500" height="290"></canvas>
+        <div class="vig"></div>
+      </div>
+    </div>
+    <script>
+/*KIT_JS*/
+      const $ = (id) => document.getElementById(id), D = 26.49;
+      // Beats (local = film - 276.90): "Complain in writing" 277.15 -> 0.25; "Grievance Redressal Officer" ~280.9 -> 4.0;
+      // "the G-R-O" 282.79 -> 5.89; O030 284.30 -> 7.40; "Ombudsman's website lists their email" 288.55 -> 11.65;
+      // "Send one calm, formal email" 292.16 -> 15.26; "policy number" ~293.4 -> 16.5; "claim number" ~294.5 -> 17.6;
+      // "why their deduction is wrong" ~296.1 -> 19.2 (to 298.76 -> 21.86); O031 "Keep a copy" 299.22 -> 22.32;
+      // "and every reply" 300.98 -> 24.08; "You will need them later" 302.13 -> 25.23.
+      const T = { sent: 22.55, reply: 24.08, file: 25.23 };
+      // [element, text, start, end]: each line types in VO order (pure function of t)
+      const TYPE = [
+        ["tSub", "Grievance: partial settlement of claim CLM-2408-55217", 0.45, 2.9],
+        ["b0", "Dear Grievance Redressal Officer,", 3.4, 5.6],
+        ["tTo", "gro@samplehealth.example", 14.25, 14.95],
+        ["b1", "I write about my health claim.", 15.3, 16.2],
+        ["b2", "Policy No. SHI-4471-0926.", 16.45, 17.3],
+        ["b3", "Claim No. CLM-2408-55217.", 17.55, 18.4],
+        ["b4", "Hospital bill: ₹4,50,000. Paid: ₹1,20,000. Cut: ₹3,30,000.", 18.4, 19.15],
+        ["b5", "The deduction is wrong because my policy has no room-rent limit and every charge is listed in the itemised bill (attached).", 19.2, 21.7],
+        ["b6", "Please review and pay the balance.", 21.7, 21.98],
+        ["b7", "Attached: policy, discharge summary, itemised bill, settlement letter.", 21.98, 22.26],
+        ["b8", "R. Kumar", 22.26, 22.4],
+      ].map(([id, txt, a, b]) => ({ el: $(id), chars: Array.from(txt), a, b }));
+      const caret = document.createElement("span"); caret.className = "caret";
+      FIN.hook((t) => {
+        let active = null;
+        for (const L of TYPE) {
+          const n = t <= L.a ? 0 : t >= L.b ? L.chars.length : Math.round((t - L.a) / (L.b - L.a) * L.chars.length);
+          const s = L.chars.slice(0, n).join("");
+          if (L.el.textContent !== s) L.el.textContent = s;
+          if (t >= L.a && t < L.b + 0.6) active = L;
+        }
+        if (active && t < T.sent) { active.el.appendChild(caret); caret.style.opacity = (Math.floor(t * 2.5) % 2 === 0 || t < active.b) ? 1 : 0; }
+        else if (caret.parentNode) caret.remove();
+      });
+      FIN.grain($("grain"));
+      IO.drift($("stage"), 4, 17);
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#cSent", "#cReply", "#bill", "#att"], { opacity: 0 });
+
+      // camera: settle on the compose window, move to the browser, follow the body as it fills
+      tl.fromTo($("stage"), { scale: 1.28, x: 50, y: 175 }, { scale: 1.2, x: 40, y: 160, duration: 7.0, ease: "sine.out" }, 0);
+      tl.to($("stage"), { scale: 1.06, x: 0, y: 20, duration: 0.6, ease: "power2.inOut" }, 7.2);
+      tl.to($("stage"), { scale: 1.1, y: 30, duration: 4.0, ease: "sine.inOut" }, 7.8);
+      tl.to($("stage"), { scale: 1.0, y: 0, duration: 2.5, ease: "sine.inOut" }, 11.9);
+      tl.to($("stage"), { scale: 1.2, x: -50, y: -90, duration: 1.2, ease: "sine.inOut" }, 15.0);
+      tl.to($("stage"), { scale: 1.24, x: -60, y: -125, duration: 6.3, ease: "none" }, 16.2);
+      tl.to($("stage"), { scale: 1.0, x: 0, y: 0, duration: 0.8, ease: "power2.inOut" }, T.sent);
+      tl.fromTo($("leak"), { x: 0 }, { x: 300, duration: D, ease: "none" }, 0);
+      // "the G-R-O": the salutation is the GRO
+      tl.fromTo($("b0"), { backgroundColor: "rgba(89, 220, 195, 0)" }, { backgroundColor: "rgba(89, 220, 195, .35)", duration: 0.4, yoyo: true, repeat: 1, repeatDelay: 0.8 }, 5.89);
+      // O030: the insurer's grievance page opens over the mail
+      tl.fromTo($("web"), { opacity: 0, y: 60, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 7.4);
+      tl.fromTo($("mailHl"), { backgroundColor: "rgba(255, 219, 89, 0)" }, { backgroundColor: "rgba(255, 219, 89, .6)", duration: 0.4 }, 9.2);
+      tl.to($("web"), { opacity: 0, y: -40, scale: 0.97, duration: 0.45, ease: "power2.in" }, 13.75);
+      tl.to($("compose"), { opacity: 0, duration: 0.3 }, 7.6);
+      tl.to($("compose"), { opacity: 1, duration: 0.3 }, 13.95);
+      // "Send one calm, formal email": the body types; highlights land on their words
+      const hl = (id, t, c) => tl.fromTo($(id), { backgroundColor: "rgba(0,0,0,0)" }, { backgroundColor: c, duration: 0.3 }, t);
+      hl("hlP", 16.45, "rgba(89, 220, 195, .35)"); hl("hlC", 17.55, "rgba(89, 220, 195, .35)"); hl("hlW", 19.2, "rgba(255, 219, 89, .5)");
+      tl.to($("quote"), { opacity: 0, y: 30, duration: 0.4, ease: "power2.in" }, 14.9);
+      tl.to($("att"), { opacity: 1, duration: 0.25 }, 21.98);
+      // O031 "Keep a copy": Send, then the sent mail, the reply and the bill go into My claim file
+      tl.fromTo($("send"), { scale: 1 }, { scale: 0.92, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut" }, T.sent - 0.1);
+      tl.to($("compose"), { opacity: 0, x: -500, y: 120, scale: 0.4, duration: 0.45, ease: "power2.in" }, T.sent + 0.1);
+      tl.to($("fDraft"), { backgroundColor: "rgba(198, 210, 226, 0)", duration: 0.2 }, T.sent + 0.2);
+      tl.to($("fSent"), { backgroundColor: "#c6d2e2", duration: 0.2 }, T.sent + 0.3);
+      tl.to($("laptop"), { opacity: 0.4, filter: "blur(3px)", duration: 0.6 }, T.sent + 0.4);
+      tl.fromTo($("cSent"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, T.sent + 0.55);
+      tl.fromTo($("cReply"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, T.reply);
+      tl.fromTo($("bill"), { opacity: 0, y: 60, rotation: 4 }, { opacity: 1, y: 0, rotation: -2, duration: 0.45, ease: "power3.out", immediateRender: false }, T.reply + 0.45);
+      tl.to($("folder"), { y: -560, duration: 0.55, ease: "power3.out" }, T.file - 0.2);
+      tl.to(["#cSent", "#cReply", "#bill"], { y: 520, scale: 0.6, duration: 0.5, ease: "power2.in", stagger: 0.12 }, T.file + 0.25);
+      tl.to(["#cSent", "#cReply", "#bill"], { opacity: 0, duration: 0.1, stagger: 0.12 }, T.file + 0.68);
+      tl.to($("folder"), { y: -580, scale: 1.04, duration: D - T.file - 1.0, ease: "sine.out" }, T.file + 1.0);
+      tl.to({}, { duration: 0.01 }, D - 0.01);
+      FIN.attach(tl);
+      window.__timelines["A6_gro_email"] = tl;
+    </script>
+  </body>
+</html>

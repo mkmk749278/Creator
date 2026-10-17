@@ -14,7 +14,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - The owner (Kishore) works **only from an Android phone**: GitHub app, Claude app, Termux, SSH to a VPS. No PC.
   Everything runs in cloud sessions, GitHub Actions or the VPS. Results must be viewable on a phone (MP4 link, contact
   sheet, issue comment, run summary). **Deliver videos to the owner's Google Drive `Creator` folder**
-  (`scripts/upload_gdrive.sh`, needs `GDRIVE_RCLONE_TOKEN`), not Gofile (owner, 2026-10-13; PLAYBOOK §1).
+  (`scripts/upload_gdrive.sh`, needs `GDRIVE_RCLONE_TOKEN`), not Gofile (owner, 2026-10-13; PLAYBOOK §1), in
+  `Creator/<English|Telugu>/<slug>/`: one folder per video, nothing loose in `Creator/` (owner, 2026-10-15).
 - **All work lands on `main`.** Parallel sessions use their own branch and folder; the coordinator merges them into `main`
   the same day. Sessions can't delete branches: tell the owner which ones to delete.
 - Build in phases. At the end of each phase, stop and report what was built, what was measured and what is left.
@@ -110,6 +111,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   (చండాలం, కటిక చీకటి, caste names as adjectives); the mechanism is the villain, never the viewer; attribute contested
   figures. Hard gates beside the fact-check: synthetic-content disclosure, health context (WHO/ICMR + skeptic), SEBI
   education-only lane (no buy/sell calls, price data ≥ 30 days old, disclaimer), Press Council suicide norms.
+- **Series continuity (owner, 2026-10-15):** a film that continues an earlier one reads the earlier script first, keeps its
+  family, numbers and documents, never contradicts its advice, and still stands alone: a short recap with glimpses teaches what the earlier film said,
+  so no one has to watch it first (PLAYBOOK §4a-4).
 - **Narration language: English by default** (owner, 2026-10-11; *why:* Telugu-only films reach too few viewers).
   Simple, everyday Indian English that any Indian understands: common words (pay, spend, money, bill, salary),
   lakh/crore and rupees, no hard "international" vocabulary or idioms; the same warm elder-brother, talk-don't-read
@@ -137,6 +141,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   (`[serious]`, `[softly]`, `[urgent]` …); the builder also writes a tag-free copy in case a take reads a tag aloud.
   `tools/build_script.py` lints all of this. If a take breaks around `...`, use a comma and pause in the edit. Hand the
   owner re-record text in this format.
+- **Recording blocks go in the chat (owner, 2026-10-15):** whenever a VO is ready or changes, paste every block in the reply,
+  one fenced code block each (tap to copy on the phone), headed with block number, voice settings and the file name to save.
+  Files in Drive/repo are extra, never instead (PLAYBOOK §4a-2).
 - **Talk, don't read** (owner, 2026-10-09): narration sounds like the owner talking to you, never like reading text aloud.
   Heavy Tenglish like NB Show (English words and short phrases where people really use them), మీరు + మనం address, spoken
   verb forms, no newspaper words (ఈ నేపథ్యంలో, తద్వారా, కావున). **Clarity first:** full sentences with a subject and a
@@ -158,8 +165,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - Every on-screen claim traces to `analysis.json`, then to a source locator (reviewer + timestamp or paragraph).
 
 ## Cloud session traps (each cost a render)
-- Backgrounded commands die at ~30 min: start renders with `setsid nohup … < /dev/null & disown` (plain `nohup … &` lets
-  HyperFrames cancel with `render_cancelled_parent_exited` when the tool call ends), watch with Monitor, one render per session.
+- Backgrounded commands die at ~30 min: start renders with `HYPERFRAMES_RENDER_DETACHED=1 setsid nohup … < /dev/null & disown`
+  (without the variable HyperFrames cancels with `render_cancelled_parent_exited` when the tool call ends), watch with Monitor, one render per session.
   An idle session's VM can be reclaimed mid-job.
 - Never `pkill -f <pattern>` in a command line containing the pattern; never name a shell function after a command it calls.
 - Bitrate-cap every encode. Large media stays out of git.

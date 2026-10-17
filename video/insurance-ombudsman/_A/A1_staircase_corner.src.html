@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>A1 staircase corner callback (6 s, transparent, lower left)</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/fin/fin.js"></script>
+    <style>
+/*KIT_CSS*/
+/* Corner version for chapter 2-3 callbacks: transparent background, staircase in the lower-left corner,
+   steps 1-4 light in turn, step 4 stays lit. No loop (plays once, holds). Render as MOV (alpha). */
+body, .io-root { background: transparent !important; }
+#mini { position: absolute; left: 30px; top: 640px; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#plate { position: absolute; left: 40px; top: 730px; width: 640px; height: 320px; border-radius: 18px;
+  background: radial-gradient(ellipse at 50% 70%, rgba(11, 20, 34, .78), rgba(11, 20, 34, .0) 72%); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="io-root" data-composition-id="A1_corner" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+      <div id="plate"></div>
+      <svg id="mini" viewBox="0 0 1920 1080"></svg>
+    </div>
+    <script>
+/*KIT_JS*/
+      const $ = (id) => document.getElementById(id), D = 6, svg = $("mini");
+      const steps = IO.stairs(svg, { id: "a1c" });
+      const file = IO.caseFile(svg, "a1c-file", 1.0);
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(svg, { scale: 0.35, opacity: 0, y: 20 }, { scale: 0.37, opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0);
+      tl.to(svg, { scale: 0.385, duration: D - 0.5, ease: "none" }, 0.5);
+      const ts = [0.7, 1.7, 2.7, 3.7], fx = (i) => steps[i].cx, fy = (i) => steps[i].topY + 8;
+      steps.forEach((s) => tl.set(s.num, { opacity: 0.45 }, 0));
+      tl.fromTo(file, { x: fx(0), y: fy(0) - 200, opacity: 0 }, { x: fx(0), y: fy(0), opacity: 1, duration: 0.4, ease: "bounce.out" }, ts[0] - 0.1);
+      ts.forEach((t, i) => {
+        const s = steps[i], last = i === 3;
+        tl.fromTo(s.top, { opacity: 0 }, { opacity: 0.55, duration: 0.3 }, t);
+        tl.fromTo(s.glow, { opacity: 0 }, { opacity: 1, duration: 0.3 }, t);
+        tl.fromTo(s.pool, { opacity: 0 }, { opacity: 1, duration: 0.4 }, t);
+        tl.to(s.num, { opacity: 1, fill: last ? "#59DCC3" : "#FFDB59", duration: 0.3 }, t);
+        if (i > 0) {
+          const p = steps[i - 1];
+          tl.to(p.top, { opacity: 0.12, duration: 0.4 }, t); tl.to(p.glow, { opacity: 0.25, duration: 0.4 }, t);
+          tl.to(p.pool, { opacity: 0.15, duration: 0.4 }, t); tl.to(p.num, { opacity: 0.6, duration: 0.4 }, t);
+          tl.to(file, { x: fx(i), duration: 0.45, ease: "power1.inOut" }, t - 0.25);
+          tl.to(file, { keyframes: [{ y: fy(i) - 130, duration: 0.22, ease: "power2.out" }, { y: fy(i), duration: 0.23, ease: "power2.in" }] }, t - 0.25);
+        }
+      });
+      tl.to({}, { duration: 0.01 }, D - 0.01);
+      FIN.attach(tl);
+      window.__timelines["A1_corner"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B4 time stats: mediation and three months</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="kit/kit.js"></script>
+    <link rel="stylesheet" href="kit/kit.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+.doc { width: 400px; height: 430px; }
+.doc .lh { width: 170px; height: 20px; background: rgba(27,37,51,.5); border-radius: 4px; margin-bottom: 40px; }
+.doc .rule { height: 8px; margin-bottom: 15px; }
+.settle { width: 440px; height: 480px; box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 30px 60px rgba(0,0,0,.55), 0 0 0 5px rgba(89,220,195,.85); }
+.settle .lh { width: 200px; height: 20px; background: rgba(27,37,51,.5); border-radius: 4px; margin: 0 auto 44px; }
+.tick { position: absolute; bottom: 60px; width: 120px; height: 70px; border-bottom: 3px solid rgba(27,37,51,.5); }
+.tick svg { position: absolute; left: 22px; bottom: 6px; width: 70px; height: 70px; }
+/* a case folder (closed) */
+.fold { position: absolute; width: 150px; height: 112px; border-radius: 6px 16px 6px 6px; background: linear-gradient(160deg, #c8d4e2, #a9b8ca);
+  box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 14px 26px rgba(0,0,0,.45); }
+.fold::before { content: ""; position: absolute; left: 0; top: -16px; width: 60px; height: 20px; border-radius: 6px 6px 0 0; background: #b9c6d6; }
+.fold.hi { background: linear-gradient(160deg, #9ff3e2, #59dcc3); }
+.fold.hi::before { background: #7fe6d1; }
+.fold .ov { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(160deg, #9ff3e2, #59dcc3); opacity: 0; }
+.bigfold { position: absolute; width: 560px; height: 420px; border-radius: 10px 30px 10px 10px; background: linear-gradient(160deg, #9ff3e2, #3fb9a3);
+  box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 30px 60px rgba(0,0,0,.55); transform-origin: 50% 0; }
+/* three month pages */
+.month { width: 440px; height: 380px; padding: 46px 34px 30px; }
+.month .mlab { font: 800 24px/1 Inter, Arial, sans-serif; letter-spacing: .12em; color: #1e3a5f; margin-bottom: 20px; }
+.month .lh { width: 130px; height: 16px; background: rgba(27,37,51,.45); border-radius: 4px; margin-bottom: 26px; }
+.grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; }
+.grid i { display: block; height: 40px; border-radius: 4px; background: rgba(27,37,51,.08); }
+.grid i.on { background: rgba(255,205,60,.75); }
+.zone { position: absolute; border-radius: 16px; border: 4px dashed rgba(89,220,195,.8); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="k-root" data-composition-id="B4_time_stats" data-start="0" data-width="1920" data-height="1080" data-duration="24.467">
+
+      <!-- O051: mediation under Rule 16; about one in three closed health complaints ended this way -->
+      <div class="seg" id="s0">
+        <div class="cam" id="cam0"><div class="desk"></div><div class="light" id="lt0"></div>
+          <div class="paper doc" id="dA" data-doc="D5" style="left:120px; top:320px; transform: rotate(-5deg)"></div>
+          <div class="paper doc" id="dB" data-doc="D6" style="left:1400px; top:320px; transform: rotate(5deg)"></div>
+          <div class="paper settle" id="dS" data-doc="D8" style="left:740px; top:290px"></div>
+          <div class="bigfold" id="bf0" style="left:680px; top:280px"></div>
+          <div id="row0" style="position:absolute; left:0; top:0">
+            <div class="fold hi" id="f0a" style="left:730px; top:360px; width:280px; height:210px"></div>
+            <div class="fold" id="f0b" style="left:1060px; top:360px; width:280px; height:210px"></div>
+            <div class="fold" id="f0c" style="left:1390px; top:360px; width:280px; height:210px"></div>
+          </div>
+        </div>
+        <div class="dof"></div>
+        <div class="lt y" id="lt0a" style="left:64px; bottom:44px">≈ 1 IN 3</div>
+        <div class="tag" id="tag0"><b>OUR CALCULATION</b> <i>[CIO ANNUAL REPORT | 2024–25]</i></div>
+      </div>
+
+      <!-- O054: about 8 in 10 closed health complaints were closed within three months -->
+      <div class="seg" id="s1">
+        <div class="cam" id="cam1"><div class="desk"></div><div class="light" id="lt1"></div>
+          <div class="paper month" data-m="1" id="m1" style="left:100px; top:420px; transform: rotate(-1.5deg)"><div class="mlab"></div><div class="grid"></div></div>
+          <div class="paper month" data-m="2" id="m2" style="left:570px; top:420px; transform: rotate(1deg)"><div class="mlab"></div><div class="grid"></div></div>
+          <div class="paper month" data-m="3" id="m3" style="left:1040px; top:420px; transform: rotate(-.5deg)"><div class="mlab"></div><div class="grid"></div></div>
+          <div class="zone" id="zn1" style="left:80px; top:400px; width:1420px; height:420px"></div>
+          <div id="files1"></div>
+        </div>
+        <div class="dof"></div>
+        <div class="lt y" id="lt1a" style="left:64px; bottom:44px">8 IN 10 CLOSED CASES · UNDER 3 MONTHS</div>
+        <div class="tag"><i>[CIO ANNUAL REPORT | 2024–25]</i></div>
+      </div>
+
+      <canvas class="dust" id="dust" width="1920" height="1080"></canvas>
+      <canvas class="grain" id="grain" width="500" height="290"></canvas>
+      <div class="vig"></div>
+    </div>
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const L = K.layout([{ id: "O051", ws: 421.94, we: 436.31 }, { id: "O054", ws: 450.41, we: 459.51 }]);
+      const DUR = K.total(L);
+      K.fillDocs(); K.grain($("grain")); K.dust($("dust"));
+      document.querySelectorAll("[data-m]").forEach((m) => { m.querySelector(".mlab").textContent = "MONTH " + m.dataset.m; });
+
+      // month grids (35 cells) and ten case folders for O054
+      const cells = [];
+      ["m1", "m2", "m3"].forEach((m) => { const g = $(m).querySelector(".grid"); g.innerHTML = "<i></i>".repeat(35); cells.push(...g.children); });
+      const files = $("files1"); let html = "";
+      for (let i = 0; i < 10; i++) html += `<div class="fold" id="fl${i}" style="left:${110 + i * 168}px; top:150px"><b class="ov"></b></div>`;
+      files.innerHTML = html;
+
+      const tl = gsap.timeline({ paused: true });
+      L.forEach((s, i) => { tl.set($("s" + i), { visibility: "visible" }, s.off); if (i < L.length - 1) tl.set($("s" + i), { visibility: "hidden" }, s.off + s.len);
+        tl.fromTo($("lt" + i), { x: 0, y: 0 }, { x: 50, y: 12, duration: s.len, ease: "none" }, s.off); });
+
+      // ---- O051 ----
+      { const v = L[0].v, s = L[0];
+        tl.fromTo($("cam0"), { scale: 1.0, x: 0 }, { scale: 1.07, x: -20, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("dA"), { x: -500 }, { x: 0, duration: 0.9, ease: "power3.out" }, s.off + 0.1);
+        tl.fromTo($("dB"), { x: 500 }, { x: 0, duration: 0.9, ease: "power3.out" }, s.off + 0.2);
+        tl.to($("dA"), { x: 230, rotation: -3, duration: 2.2, ease: "sine.inOut" }, v(422.6));          // "end in mediation": the two sides move toward each other
+        tl.to($("dB"), { x: -230, rotation: 3, duration: 2.2, ease: "sine.inOut" }, v(422.6));
+        tl.fromTo($("dS"), { y: -1100, rotation: 6 }, { y: 0, rotation: 0, duration: 0.9, ease: "power3.out" }, v(425.4));   // "suggests a fair settlement"
+        tl.fromTo($("dS").querySelector("[data-tick='1']"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, v(428.0));   // "both sides"
+        tl.fromTo($("dS").querySelector("[data-tick='2']"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, v(428.45));  // "agree"
+        tl.to([$("dA"), $("dB")], { x: (i) => (i ? -560 : 560), y: 40, rotation: 0, scale: 0.85, opacity: 0, duration: 0.6, ease: "power2.in" }, v(429.0));
+        tl.fromTo($("dS").querySelector("[data-closed]"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3 }, v(429.3));   // "the case closes"
+        tl.fromTo($("bf0"), { opacity: 0, scaleY: -0.2 }, { opacity: 1, scaleY: 1, duration: 0.55, ease: "power3.out" }, v(429.75));  // "the case closes"
+        tl.to($("dS"), { opacity: 0, duration: 0.2 }, v(430.2));
+        // the closed file becomes one of three closed health complaints
+        tl.to($("bf0"), { x: 50, y: 80, width: 280, height: 210, duration: 0.7, ease: "power3.inOut" }, v(430.5));
+        tl.set($("bf0"), { opacity: 0 }, v(431.2));
+        tl.fromTo($("f0a"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, v(431.2));
+        tl.fromTo($("f0b"), { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, v(432.4));   // "one in three"
+        tl.fromTo($("f0c"), { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, v(432.6));
+        tl.to($("row0"), { x: -250, duration: 0.8, ease: "power2.inOut" }, v(432.4));
+        tl.fromTo($("lt0a"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(432.9));
+        tl.fromTo($("tag0"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, v(433.0));
+        tl.fromTo($("f0a"), { scale: 1 }, { scale: 1.08, duration: 0.35, yoyo: true, repeat: 1, ease: "power2.out" }, v(433.3));
+      }
+      // ---- O054 ----
+      { const v = L[1].v, s = L[1];
+        tl.fromTo($("cam1"), { scale: 1.08, y: 20 }, { scale: 1.0, y: 0, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo([$("m1"), $("m2"), $("m3")], { y: 700 }, { y: 0, duration: 0.8, stagger: 0.12, ease: "power3.out" }, s.off);   // "how long does it take?"
+        tl.fromTo(files.children, { opacity: 0, y: -260 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.12, ease: "power3.out" }, v(452.4));   // "the health complaints ... closed"
+        const n = K.keys([[v(452.6), 0], [v(458.4), 105]]);
+        K.hook((t) => { const k = Math.floor(n(t) + 1e-6); cells.forEach((c, i) => c.classList.toggle("on", i < k)); });   // three months run
+        for (let i = 0; i < 8; i++) {   // "about eight out of ten" land inside the three months
+          const tx = 200 + (i % 4) * 320, ty = 470 + Math.floor(i / 4) * 170;   // a 4 x 2 stack across the three month pages
+          tl.to($("fl" + i), { x: tx - (110 + i * 168), y: ty - 150, rotation: (i % 3 - 1) * 4, duration: 0.6, ease: "power3.inOut" }, v(456.5) + i * 0.07);
+          tl.fromTo($("fl" + i).querySelector(".ov"), { opacity: 0 }, { opacity: 1, duration: 0.25 }, v(457.0) + i * 0.07);
+        }
+        tl.to($("fl8"), { x: 1580 - 1454, y: 320, duration: 0.7, ease: "power3.inOut" }, v(456.8));   // the other two stay outside
+        tl.to($("fl9"), { x: 1580 - 1622, y: 490, duration: 0.7, ease: "power3.inOut" }, v(456.9));
+        tl.fromTo($("zn1"), { opacity: 0 }, { opacity: 1, duration: 0.5 }, v(457.7));
+        tl.fromTo($("lt1a"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(458.1));   // "within three months"
+      }
+      tl.to({}, { duration: 0.01 }, DUR - 0.01);
+      K.attach(tl);
+      window.__timelines["B4_time_stats"] = tl;
+    </script>
+  </body>
+</html>

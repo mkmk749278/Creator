@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>B3 penalty meter: ₹5,000 for every day late</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="kit/kit.js"></script>
+    <link rel="stylesheet" href="kit/kit.css" />
+    <style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2700-27BF; }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-02FF, U+20A0-20CF; }
+
+/* the award (no insurer, no names): letterhead bars, body lines, a teal seal with a balance-scale mark */
+.award { width: 560px; height: 660px; }
+.award .lh { width: 230px; height: 24px; background: rgba(27,37,51,.5); border-radius: 4px; margin: 0 auto 14px; }
+.award .lh2 { width: 150px; height: 11px; background: rgba(27,37,51,.22); border-radius: 4px; margin: 0 auto 50px; }
+.seal { position: absolute; right: 56px; bottom: 62px; width: 128px; height: 128px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #8af0dc, #2fa58f 70%);
+  box-shadow: 0 6px 14px rgba(0,0,0,.35), inset 0 0 0 6px rgba(255,255,255,.25); }
+.seal svg { position: absolute; inset: 22px; }
+/* the consumer forum file: a mist folder with a pillared-building mark */
+.folder { position: absolute; width: 520px; height: 640px; border-radius: 6px 22px 6px 6px; background: linear-gradient(160deg, #c8d4e2, #a9b8ca);
+  box-shadow: 0 2px 3px rgba(0,0,0,.35), 0 26px 50px rgba(0,0,0,.5); }
+.folder::before { content: ""; position: absolute; left: 0; top: -30px; width: 200px; height: 40px; border-radius: 10px 10px 0 0; background: #b9c6d6; }
+.folder svg { position: absolute; left: 150px; top: 200px; width: 220px; height: 220px; }
+.open { position: absolute; inset: -14px; border-radius: 12px 30px 12px 12px; border: 5px dashed rgba(89,220,195,.9); box-shadow: 0 0 30px rgba(89,220,195,.45); }
+
+/* calendar strip: 30 days from receipt (paper), deadline (yellow), then the days late */
+.cal { position: absolute; display: flex; gap: 5px; }
+.cal i { display: block; width: 25px; height: 64px; border-radius: 4px; background: rgba(245,247,251,.12); box-shadow: inset 0 0 0 2px rgba(245,247,251,.18); }
+.cal i.on { background: #efe9dc; box-shadow: 0 4px 10px rgba(0,0,0,.35); }
+.cal i.late { background: rgba(255,219,89,.12); box-shadow: inset 0 0 0 2px rgba(255,219,89,.35); }
+.cal i.late.on { background: var(--yellow); box-shadow: 0 0 16px rgba(255,219,89,.55); }
+.deadline { position: absolute; width: 8px; height: 120px; border-radius: 4px; background: var(--yellow); box-shadow: 0 0 18px rgba(255,219,89,.7); }
+.rcpt { position: absolute; width: 96px; height: 96px; border-radius: 50%; border: 6px solid var(--teal); }
+.rcpt svg { position: absolute; inset: 14px; }
+.chip { position: absolute; padding: 14px 20px; border-radius: 10px; background: rgba(6,10,18,.82); font: 800 34px/1 Inter, Arial, sans-serif; color: var(--mist);
+  border: 3px solid rgba(184,199,217,.55); white-space: nowrap; }
+
+/* the meter: a dark enclosure with odometer drums (paper digits) */
+.meter { position: absolute; width: 1180px; height: 360px; border-radius: 28px; background: linear-gradient(180deg, #1c3049, #0e1a2a);
+  box-shadow: 0 40px 80px rgba(0,0,0,.6), inset 0 2px 0 rgba(255,255,255,.12), inset 0 0 0 3px #2a4363; }
+.meter .plate { position: absolute; left: 40px; top: 30px; font: 800 40px/1 Inter, Arial, sans-serif; color: var(--yellow); letter-spacing: .02em; }
+.meter .lab { position: absolute; top: 300px; font: 600 22px/1 Inter, Arial, sans-serif; letter-spacing: .14em; color: var(--mist); }
+.drums { position: absolute; top: 100px; height: 176px; display: flex; gap: 6px; align-items: center; }
+.drum { position: relative; width: 98px; height: 176px; overflow: hidden; border-radius: 10px; background: linear-gradient(180deg, #b9b3a6, #f4efe4 30%, #f4efe4 70%, #b9b3a6);
+  box-shadow: inset 0 0 0 3px rgba(0,0,0,.35); }
+.drum .col { position: absolute; left: 0; right: 0; top: 0; }
+.drum .col b { display: block; height: 176px; font: 800 132px/176px Inter, Arial, sans-serif; text-align: center; color: var(--ink); }
+.sep { font: 800 120px/176px Inter, Arial, sans-serif; color: var(--paper); width: 34px; text-align: center; }
+.sep.r { width: 76px; color: var(--yellow); }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="k-root" data-composition-id="B3_penalty_meter" data-start="0" data-width="1920" data-height="1080" data-duration="35.967">
+
+      <!-- O057: not happy with the award? You don't have to accept it; other remedies may remain -->
+      <div class="seg" id="s0">
+        <div class="cam" id="cam0"><div class="desk"></div><div class="light" id="lt0"></div>
+          <div class="folder" id="fo0" style="left:1180px; top:250px; transform: rotate(4deg)">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#2b3a52" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 L24 8 L42 18 Z M9 22 V36 M17 22 V36 M31 22 V36 M39 22 V36 M5 40 H43 M6 18 H42" /></svg>
+            <div class="open" id="op0"></div>
+          </div>
+          <div class="paper award" id="aw0" data-doc="D7" style="left:680px; top:160px; transform: rotate(-2deg)">
+            <div class="seal"><svg viewBox="0 0 48 48" fill="none" stroke="#0b1422" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7 V40 M14 40 H34 M10 14 H38 M10 14 L5 27 H15 Z M38 14 L33 27 H43 Z" /></svg></div>
+          </div>
+        </div>
+        <div class="dof"></div>
+      </div>
+
+      <!-- O058: the insurer must carry out the award within 30 days of receiving it -->
+      <div class="seg" id="s1">
+        <div class="cam" id="cam1"><div class="desk"></div><div class="light" id="lt1"></div>
+          <div class="cal" id="cal1" style="left:150px; top:300px"></div>
+          <div class="rcpt" id="rc1" style="left:105px; top:180px"><svg viewBox="0 0 48 48" fill="none" stroke="#59dcc3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 25 L20 35 L38 13" /></svg></div>
+          <div class="deadline" id="dl1" style="left:1046px; top:272px"></div>
+          <div class="paper award" id="aw1" data-doc="D7" style="left:1240px; top:190px; transform: rotate(-2deg)">
+            <div class="seal"><svg viewBox="0 0 48 48" fill="none" stroke="#0b1422" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7 V40 M14 40 H34 M10 14 H38 M10 14 L5 27 H15 Z M38 14 L33 27 H43 Z" /></svg></div>
+            <div class="stamp-r" id="st1" style="left:56px; top:455px; transform: rotate(-8deg)">RECEIVED<small>15 SEP 2026</small></div>
+          </div>
+        </div>
+        <div class="dof"></div>
+        <div class="lt y" id="lt1a" style="left:64px; bottom:44px">30 DAYS FROM RECEIPT</div>
+        <div class="tag"><b>[IRDAI HEALTH MASTER CIRCULAR | 2024]</b></div>
+      </div>
+
+      <!-- O059: late and not challenged in 30 days: ₹5,000 for every day -->
+      <div class="seg" id="s2">
+        <div class="cam" id="cam2"><div class="desk"></div><div class="light" id="lt2"></div>
+          <div class="cal" id="cal2" style="left:70px; top:160px"></div>
+          <div class="deadline" id="dl2" style="left:936px; top:132px"></div>
+          <div class="chip" id="ch2" style="left:330px; top:262px">NOT IF CHALLENGED IN 30 DAYS</div>
+          <div class="meter" id="me2" style="left:60px; top:520px"></div>
+          <div class="paper award" id="aw2" data-doc="D7" style="left:1330px; top:300px; transform: rotate(3deg) scale(.82); transform-origin: 0 0">
+            <div class="seal"><svg viewBox="0 0 48 48" fill="none" stroke="#0b1422" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7 V40 M14 40 H34 M10 14 H38 M10 14 L5 27 H15 Z M38 14 L33 27 H43 Z" /></svg></div>
+            <div class="stamp-r" id="st2" style="left:56px; top:455px; transform: rotate(-8deg)">RECEIVED<small>15 SEP 2026</small></div>
+          </div>
+        </div>
+        <div class="dof"></div>
+        <div class="tag"><b>[IRDAI HEALTH FAQ 45 · POLICYHOLDERS' INTERESTS MASTER CIRCULAR | 2024]</b></div>
+      </div>
+
+      <!-- O060: 10 days late = ₹50,000; 30 days late = ₹1,50,000 (OUR CALCULATION) -->
+      <div class="seg" id="s3">
+        <div class="cam" id="cam3"><div class="desk"></div><div class="light" id="lt3"></div>
+          <div class="cal" id="cal3" style="left:70px; top:160px"></div>
+          <div class="deadline" id="dl3" style="left:936px; top:132px"></div>
+          <div class="meter" id="me3" style="left:370px; top:400px"></div>
+        </div>
+        <div class="dof"></div>
+        <div class="lt y" id="lt3a" style="left:64px; bottom:44px"><span id="l3a">10 DAYS = ₹50,000</span><span id="l3b">30 DAYS = ₹1,50,000</span></div>
+        <div class="tag"><b>OUR CALCULATION</b></div>
+      </div>
+
+      <canvas class="dust" id="dust" width="1920" height="1080"></canvas>
+      <canvas class="grain" id="grain" width="500" height="290"></canvas>
+      <div class="vig"></div>
+    </div>
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const L = K.layout([{ id: "O057", ws: 469.28, we: 477.22 }, { id: "O058", ws: 477.65, we: 487.43 },
+                          { id: "O059", ws: 487.76, we: 497.99 }, { id: "O060", ws: 498.39, we: 504.44 }]);
+      const DUR = K.total(L);
+      K.fillDocs(); K.grain($("grain")); K.dust($("dust"));
+
+      // calendar strips: 30 cells to the deadline (+ 30 late cells in O059/O060)
+      const cal = (el, late) => { el.innerHTML = "<i></i>".repeat(30) + (late ? '<i class="late"></i>'.repeat(30) : "");
+        const c = [...el.children]; if (late) c.slice(0, 30).forEach((x) => x.classList.add("on")); return c; };
+      const c1 = cal($("cal1"), false), c2 = cal($("cal2"), true), c3 = cal($("cal3"), true);
+      // late cells: 30 cells from x = 940 (after the deadline) at 30 px pitch
+      $("cal2").style.left = $("cal3").style.left = "40px";
+      // light cells i < n(t) (n continuous); late cells start at index 30
+      const light = (cells, from, n) => { for (let i = 0; i < 30; i++) cells[from + i].classList.toggle("on", i < Math.floor(n + 1e-6)); };
+
+      // meter: a days drum (2 digits) and a rupee drum (₹ d,dd,ddd); odometer roll as a function of the value
+      const meter = (el, plate) => {
+        const col = () => `<div class="drum"><div class="col" data-layout-allow-overflow>${[0,1,2,3,4,5,6,7,8,9,0].map((d) => `<b data-layout-allow-occlusion data-layout-allow-overflow>${d}</b>`).join("")}</div></div>`;
+        el.innerHTML = `<div class="plate">${plate}</div>
+          <div class="drums" style="left:40px">${col()}${col()}</div><div class="lab" style="left:40px">DAYS LATE</div>
+          <div class="drums" style="left:300px"><div class="sep r">₹</div>${col()}<div class="sep" data-layout-allow-occlusion>,</div>${col()}${col()}<div class="sep" data-layout-allow-occlusion>,</div>${col()}${col()}${col()}</div>`;
+        const cols = [...el.querySelectorAll(".col")];
+        return (days) => {   // drum k shows digit (value / 10^k) with a smooth carry in its last tenth
+          const roll = (c, v, k) => { const p = Math.pow(10, k), d = Math.floor(v / p) % 10, low = (v % p) / p;
+            const r = k === 0 ? v % 1 : Math.max(0, (low - 0.9) / 0.1); c.style.transform = `translateY(${-(d + r) * 176}px)`;
+            c.parentNode.style.opacity = k > 0 && v < p ? 0.16 : 1; };   // leading zeros dimmed
+          // like a taxi meter, each new day clicks over in its last 15%, so held frames read exact multiples of ₹5,000
+          const f = days % 1, step = Math.floor(days) + (f < 0.85 ? 0 : (1 - Math.cos(Math.PI * (f - 0.85) / 0.15)) / 2);
+          roll(cols[1], step, 0); roll(cols[0], step, 1);
+          const amt = step * 5000; [5, 4, 3, 2, 1, 0].forEach((k, i) => roll(cols[2 + i], amt, k));
+        };
+      };
+      const m2 = meter($("me2"), "₹5,000 / DAY"), m3 = meter($("me3"), "₹5,000 / DAY");
+
+      const tl = gsap.timeline({ paused: true });
+      L.forEach((s, i) => { tl.set($("s" + i), { visibility: "visible" }, s.off); if (i < L.length - 1) tl.set($("s" + i), { visibility: "hidden" }, s.off + s.len);
+        tl.fromTo($("lt" + i), { x: 0, y: 0 }, { x: 50, y: 12, duration: s.len, ease: "none" }, s.off); });
+
+      // ---- O057 ----
+      { const v = L[0].v, s = L[0];
+        tl.fromTo($("cam0"), { scale: 1.02, x: 0 }, { scale: 1.08, x: -40, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("aw0"), { y: 60, rotation: -6 }, { y: 0, rotation: -2, duration: 1.0, ease: "power3.out" }, s.off);
+        tl.set($("fo0"), { x: 900 }, s.off);
+        tl.to($("aw0"), { rotation: 3, y: -10, duration: 1.4, ease: "sine.inOut" }, v(469.9));                    // "what if you are NOT happy"
+        tl.to($("aw0"), { x: -420, y: 40, rotation: -10, duration: 1.0, ease: "power3.inOut" }, v(472.0));        // "you don't have to accept it"
+        tl.to($("fo0"), { x: 0, duration: 1.0, ease: "power3.out" }, v(473.7));                                    // "other legal remedies"
+        tl.fromTo($("op0"), { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, v(476.3));   // "may still be open"
+      }
+      // ---- O058 ----
+      { const v = L[1].v, s = L[1];
+        tl.fromTo($("cam1"), { scale: 1.06, x: -20 }, { scale: 1.0, x: 20, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("aw1"), { x: 500, y: 300, rotation: 10 }, { x: 0, y: 0, rotation: -2, duration: 0.9, ease: "power3.out" }, s.off + 0.1);   // "and second"
+        tl.fromTo($("cal1"), { opacity: 0 }, { opacity: 1, duration: 0.6 }, v(478.6));
+        tl.fromTo($("st1"), { opacity: 0, scale: 1.9 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.in" }, v(483.9));   // the insurer receives the award: date stamp
+        tl.fromTo($("aw1"), { x: 0 }, { keyframes: [{ x: 5, duration: 0.05 }, { x: -3, duration: 0.05 }, { x: 0, duration: 0.08 }] }, v(484.15));
+        tl.fromTo($("rc1"), { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.in" }, v(484.6));     // day 0 on the strip
+        tl.fromTo($("aw1").querySelector(".hl"), { scaleX: 0 }, { scaleX: 1, duration: 1.3, ease: "power1.inOut" }, v(485.9));      // "within thirty days of receiving it"
+        const n = K.keys([[v(485.9), 0], [v(487.25), 30]]); K.hook((t) => c1.forEach((x, i) => x.classList.toggle("on", i < Math.floor(n(t) + 1e-6))));   // "within thirty days"
+        tl.fromTo($("dl1"), { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.3, ease: "back.out(2)" }, v(487.2));
+        tl.fromTo($("lt1a"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(486.2));
+      }
+      // ---- O059 ----
+      { const v = L[2].v, s = L[2];
+        tl.fromTo($("cam2"), { scale: 1.0, y: 0 }, { scale: 1.07, y: -30, duration: s.len, ease: "none" }, s.off);
+        tl.fromTo($("ch2"), { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(489.3));     // "not challenged ... thirty days"
+        tl.set($("aw2").querySelector(".hl"), { scaleX: 1 }, s.off);                                                // the deadline line stays marked
+        tl.fromTo($("me2"), { opacity: 0, y: 420 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, v(491.6));      // "it must pay you a penalty"
+        tl.fromTo($("me2").querySelector(".plate"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4 }, v(493.0)); // "five thousand rupees"
+        const d = K.keys([[v(494.9), 0], [v(495.8), 1]]); K.hook((t) => { m2(d(t)); light(c2, 30, d(t)); });                 // "for every day of delay"
+      }
+      // ---- O060 ----
+      { const v = L[3].v, s = L[3];
+        tl.fromTo($("cam3"), { scale: 1.04 }, { scale: 1.1, duration: s.len, ease: "none" }, s.off);
+        const d = K.keys([[v(498.4), 1], [v(499.6), 10], [v(501.4), 10], [v(502.9), 30]]);
+        K.hook((t) => { m3(d(t)); light(c3, 30, d(t)); });
+        tl.set($("l3b"), { display: "none" }, s.off);
+        tl.fromTo($("lt3a"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, v(499.8));   // "fifty thousand rupees"
+        // review fix: the 10-day label leaves when the drums roll on ("Thirty days late", 501.39) and the 30-day label lands
+        // with the drums at 30, so the label never disagrees with the meter
+        tl.to($("lt3a"), { opacity: 0, duration: 0.2 }, v(501.4));
+        tl.set($("l3a"), { display: "none" }, v(502.9)); tl.set($("l3b"), { display: "inline" }, v(502.9));             // drums at 30
+        tl.to($("lt3a"), { opacity: 1, duration: 0.3 }, v(502.9));
+        tl.fromTo($("l3b"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, v(502.9));
+      }
+      tl.to({}, { duration: 0.01 }, DUR - 0.01);
+      K.attach(tl);
+      window.__timelines["B3_penalty_meter"] = tl;
+    </script>
+  </body>
+</html>

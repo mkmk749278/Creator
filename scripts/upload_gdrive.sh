@@ -3,7 +3,8 @@
 # Replaces scripts/upload_gofile.sh for delivery (owner, 2026-10-13: "use Google Drive from now instead of Gofile").
 #
 # Usage: scripts/upload_gdrive.sh [--sub <subfolder>] FILE [FILE ...]
-#   --sub jet-engine-paradox   puts the files in Creator/<subfolder>/ (created if missing)
+#   --sub English/insurance-ombudsman   puts the files in Creator/<subfolder>/ (created if missing).
+#   Drive layout (owner, 2026-10-15): Creator/<English|Telugu>/<slug>/, one folder per video (PLAYBOOK §1).
 #
 # Needs the environment variable GDRIVE_RCLONE_TOKEN: the JSON line that `rclone authorize "drive"` prints
 # (one-time setup on the phone in Termux, PLAYBOOK §1). Optional GDRIVE_CREATOR_FOLDER_ID (default: the Creator
