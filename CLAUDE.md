@@ -83,6 +83,14 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 ## Documentary rules (Be Practical with Kishore). Full spec: PLAYBOOK Part B
 - **A film, never a slide deck.** No full-screen text boxes, bullet lists, cards or question-mark graphics; no flat colour
   or plain gradient canvas. Text ≤ 15% of the screen: 2–4-word lower-thirds, dates/places/numbers, counters, a corner timer.
+- **Lede first (owner, 2026-10-17; PLAYBOOK §4a-5):** the event, rule or trap the title and thumbnail name is on screen
+  and in the VO **within 25 s**; no background, definitions or history in the first 2 minutes. Hook: 0:00–0:08 crisis in
+  motion (no logo, greeting or static mockup) → 0:08–0:30 the thumbnail paradox → 0:30–0:55 the open loop with the exact
+  minute of the payoff, re-checked against every re-edit. Long clean animation cuts to a real asset or a strong angle
+  change every 4–5 s; 25–30% of the picture is real-world grit (headlines, street footage, gazette PDFs).
+- **Sentence architecture for Akash (PLAYBOOK §4a-6):** the breath test; a 20-word scene-setter then a 4-word punch,
+  never three same-length sentences in a row; `...` before numbers and reveals, `—` for pivots, `?` on questions; no
+  passive corporate grammar ("It has been observed…"), no lecture or agenda openers ("Today we'll…").
 - **Always moving:** a visual reset every 3.5–5.0 s (owner, 2026-10-15: angle shift, document push-in, kinetic callout);
   the shot itself never stops moving: no unmoving still or flat frame over 1.5 s; ≥ 85% of the runtime
   is moving footage or animation. Animate irreplaceable stills (parallax, particles, forensic magnifier, sliding collage).

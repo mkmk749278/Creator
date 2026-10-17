@@ -412,6 +412,134 @@ money film that is the spend or the payment (card machine, bill, wallet), never 
 "a family function" was rejected). (b) *the character* was then dropped altogether (see 3). (c) *no foreign money*: drop clips
 showing dollars or euros in a rupee film (about half the "money/bills" stock results); prefer cards, phones, bills.
 
+### 4a-5. Indian audience psychology and retention architecture (owner, 2026-10-17)
+*Why this exists:* most Indian viewers watch on a phone, with distractions around them (an often-quoted YouTube figure
+says about 80% of watch time in India is on mobile; YouTube said in 2025 that Indian adults spend over 72 minutes a day on
+YouTube). A film that feels like a lecture, or holds back what the thumbnail promised, loses half its viewers in the first
+minute, and YouTube then stops recommending the channel's next films. Our own uploads show it (§4a-7). Every script and
+edit follows these four laws. Where they are stricter than §4a or §4a-4, they win.
+
+1. **Lede first, no delayed payoff.** If the title or thumbnail names an event, rule, scam or trap (Balasore, Cashless
+   Denied, the Minimum Due trap), that exact thing is **on screen and in the VO within the first 25 s** (was 0:30 in §4a).
+   **No exposition in the first 2 minutes:** no background, definitions or history before the viewer has seen the
+   high-stakes conflict. The explanation is earned *after* the viewer knows what broke or where the trap is.
+   *Seen in our data:* the Kavach film's title asks about Balasore, but Balasore arrives at 5:41 of 8:34.
+2. **The 3-tier hook (0:00–1:00).**
+   - **0:00–0:08, the visceral trigger:** motion and stakes from the first frame. No logo sting, no static phone mockup,
+     no greeting. Start in the middle of the crisis.
+   - **0:08–0:30, the thumbnail paradox:** deliver the thumbnail promise and state the paradox common sense can't answer.
+   - **0:30–0:55, the open loop:** give the viewer an exact mission ("at six minutes forty, I'll show you the exact
+     clause that…"). The minute must be true in the final cut; re-check it after every re-edit (§13a). *Seen:* the
+     Kavach VO promises Balasore "around the eight minute mark"; reel v2 has it at 5:41.
+3. **Anti-lecture, blame the system.** The sharp, protective elder brother across a chai table, never a news reader,
+   professor or corporate trainer. Banned openers: "Now let us understand…", "In this video we will examine…", "First,
+   one must know…", "Let us look at the history…", and the softer "Today we'll…" agenda line. Never blame the viewer for
+   not knowing the law; blame the fine print, the predatory design or the bottleneck.
+4. **70/30 mixed-media realism.** Clean 3D or vector animation held alone for more than 4–5 s reads as a training module:
+   inside a long explainer scene, cut in a real asset or make a strong angle change every 4–5 s. At least 25–30% of the
+   visual track is real-world grit: archive news headlines, real street or trackside footage, gazette and circular PDFs
+   with a kinetic highlighter, satellite imagery. The visual reset stays every 3.5–5.0 s (§5.1 rule 5).
+
+### 4a-6. Sentence architecture: synthetic read vs human read (owner, 2026-10-17)
+*Why:* ElevenLabs Akash (v4) infers pitch, warmth, tension and breath only from punctuation, sentence-length variety and
+rhythm. Text written like a report (uniform 15–20-word sentences, passive corporate words, flat full stops) makes Akash
+drop pitch the same way at every full stop: a drone. Text written like speech (a long visual sentence followed by a short
+punch, `...` pauses, `—` pivots, `?` questions) reads like a person.
+
+**The four rules**
+1. **The breath test:** say each sentence aloud on one natural breath. Run out of air before the full stop and it is too
+   long for Akash: it will sound rushed.
+2. **Punctuation is musical notation:** `.` pitch drops, thought ends; `...` breath and about 0.5 s of held tension;
+   `—` a conversational turn and a tempo change; `?` rises and pulls the listener in.
+3. **No passive corporate grammar:** never "It has been observed that…" → "Look at what happened…"; never "Citizens must
+   be aware…" → "Here's what they never tell you to your face…".
+4. **Length contrast:** never three sentences of the same length in a row; follow a 20-word scene-setter with a
+   4-word punch. This sits with §4a-4: never three or more very short sentences in a row either (the lint checks it).
+
+**Before and after.** The examples teach rhythm only. Their facts were checked against our own fact-checks
+(`projects/health-claim-trap/claims.csv` HC-08, `projects/kavach-railway-reality/fact-check.md`), and the VO text follows §4a-2:
+number words, no digits, `₹`, `!` or double quotes. A real script re-verifies every fact (§12).
+
+*Case 1, a cashless claim denied at the hospital.*
+- ❌ Synthetic: "When a health insurance claim is rejected at the hospital, policyholders often experience severe financial
+  confusion. Under the Insurance Regulatory and Development Authority rules, cashless approval should be processed
+  smoothly. Now let us examine the five-year moratorium rule…" *Fails:* passive phrasing, uniform lengths, lecture turn.
+- ✅ Human:
+  > It's eleven thirty at night. Your discharge papers are stamped, the cab is waiting outside... and the man at the
+  > T-P-A desk slides one sheet of paper across the counter. Three words, stamped in red. Cashless denied.
+  > Now they want four lakh rupees from your savings before your family can leave that room — and all he says is, sir,
+  > policy terms. Take a breath. That paper is not the final word. At five minutes forty, I'll show you the five year
+  > rule that stops an insurer from rejecting a long-running policy for a pre-existing illness or a missed disclosure,
+  > unless they can prove fraud.
+  
+  *Works:* a real place and hour, long lines against short ones, `...` for breath, `—` for the turn. (The original
+  draft said the rule makes any rejection "illegal"; it covers non-disclosure and pre-existing grounds after five
+  continuous years, fraud excepted, so the claim is narrowed.)
+
+*Case 2, Balasore and Kavach.*
+- ❌ Synthetic: "Automatic Train Protection systems like Kavach are designed to prevent collisions on Indian Railways… We
+  must first analyse track signalling circuits and electronic interlocking…" *Fails:* turns some three hundred deaths
+  into a case study and makes the viewer sit through definitions before any tension.
+- ✅ Human:
+  > Picture this. It's evening near Balasore, and the Coromandel Express is running at about one hundred and twenty
+  > eight kilometres an hour... on a green signal. Clear line. Full speed. But ahead, the crossover is set the wrong
+  > way — towards a loop line where a goods train is standing. Within hours, every phone in India asks the same thing.
+  > Where was Kavach? Here's what the newsroom didn't explain... the signal itself was showing green. Feed a safety
+  > computer the same wrong information, and it may believe the line is clear too.
+  
+  *Works:* present tense puts the viewer on the train, short bursts against slow pauses. (The original draft said Kavach
+  "would have accelerated straight into that collision". Our fact-checked Kavach film says nobody can say yes or no for
+  sure, and the Ministry told Parliament the crash was not linked to Kavach. Series continuity (§4a-4) forbids
+  contradicting it, so the example stops at "may".)
+
+*Case 3, the credit card minimum due.*
+- ❌ Synthetic: "Credit card statements contain a minimum amount due figure that many consumers pay without realising the
+  interest implications. Now let us look at the table…"
+- ✅ Human:
+  > You open your banking app on the fifth... and the bill says sixty five thousand rupees. But right below it, in bright
+  > blue, there's a tiny number. Three thousand two hundred and fifty. Pay that, and the app says well done. What they
+  > don't print on the front page... the moment you pay less than the full bill, your interest-free days are gone —
+  > and interest runs on every swipe from the day you made it. Look at what happens next month.
+
+### 4a-7. Channel performance and growth plan (measured 2026-10-17)
+*Why this exists:* the owner asked where we are lagging and when the channel can earn. Numbers are the public channel
+page on 2026-10-17 (joined 12 Aug 2026; 51 subscribers; 7 videos). CTR, average view duration and retention are only in
+YouTube Studio: ask the owner for Studio screenshots (Reach and Engagement tabs per video) before the next decision.
+
+| Video | Length | Age | Views |
+|---|---|---|---|
+| The $10 Billion Chip Gamble (semiconductor) | 10:50 | 10 d | 7,028 |
+| India Landed on the Moon. Why Can't It Build a Jet Engine? | 9:23 | 2 d | 937 |
+| Can't Pay Your Credit Card Bill? Know Your Rights (long cut) | 27:41 | 2 w | 439 |
+| Credit Card Minimum Amount Due: The Interest Trap | 8:05 | 4 d | 50 |
+| Cashless Claim Denied? The 5-Year IRDAI Rule | 8:46 | 2 d | 10 |
+| Can't Pay Your Credit Card Minimum Due? What Happens Next | 11:29 | 3 d | 8 |
+| Could Kavach Have Saved Balasore? | 8:35 | 2 h | 1 |
+
+**What the data says (and the rule it gives us)**
+1. **India's-capability stories pull views; consumer-rights explainers don't, yet.** The two "can India build it" films
+   have 95% of all views. Personal-finance how-tos compete with huge channels for search, and a new channel has no search
+   authority. *Rule:* lead with national engineering, strategy and "why can't India…" paradox films; carry money and
+   rights topics inside a story with stakes, or as Shorts, until the channel has an audience.
+2. **Too many uploads too close together.** Five long films in four days on a 51-subscriber channel: each gets only a
+   small test batch of impressions, and three credit card films compete with each other. *Rule:* one to two long films a
+   week, never two on the same topic within a fortnight.
+3. **The title's brand suffix eats the mobile title.** "| Be Practical With Kishore" is 27 characters; phones show
+   about the first 50–60. The one breakout title had no suffix. *Recommendation for the owner* (§13a; the owner decides):
+   put the channel name in the description, not the title.
+4. **Delayed ledes and false open loops** (§4a-5): fix them in the edit before delivery.
+5. **No Shorts.** Shorts don't count toward watch hours but are the cheapest way for a new channel to be found and to
+   gain subscribers. *Rule:* cut two or three 30–50 s vertical Shorts from every film (the hook, the reveal), each
+   linking to the full film.
+
+**Monetization maths** (YouTube Help, YPP overview, checked 2026-10-17). Ad revenue needs **1,000 subscribers and 4,000
+public long-form watch hours in the last 12 months** (or 10 million Shorts views in 90 days). The lower tier (500 subs,
+3 uploads in 90 days, 3,000 hours or 3 million Shorts views) unlocks memberships and Super Thanks only, no ad share;
+India is eligible. With an average view of about 3 minutes (check Studio), 4,000 hours is about **80,000 long-form
+views**; at a typical 1 subscriber per 100–200 views, 1,000 subscribers is about **1–2 lakh views**. Earnings: Indian
+finance and education RPM is commonly quoted at ₹50–150 per 1,000 views (agency estimates; English above regional
+languages; October–December higher), so **1 lakh views ≈ ₹5,000–15,000**. Plan from the real RPM in Studio once known.
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
@@ -494,8 +622,10 @@ change, never mid-thought. Keep the punctuation rules in §4 (commas, full stops
 ## 5. The look
 
 ### 5.1 Zero-tolerance rules (and why)
-1. **No presentation cards:** no full-screen text boxes, bullet lists, icon cards, summary slides or question-mark graphics
-   on flat backgrounds. *Why:* breath-hold v1 was exactly that, and the owner's verdict was "a boring PowerPoint".
+1. **No presentation cards, no delayed lede:** no full-screen text boxes, bullet lists, icon cards, summary slides or
+   question-mark graphics on flat backgrounds, and the thumbnail's subject is on screen within 25 s (§4a-5). *Why:*
+   breath-hold v1 was exactly that, and the owner's verdict was "a boring PowerPoint"; delayed reveals lose mobile
+   viewers in the first 30 s (owner, 2026-10-17).
 2. **No static canvas:** a motionless photo or flat colour never stays over **1.5 s**; a plain CSS gradient never counts as
    a background. The canvas always has camera motion, particle atmosphere or live video.
 3. **85% real motion:** at least 85% of the runtime is moving video, screen recordings, kinetic data animation or B-roll.
