@@ -960,6 +960,34 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
   a 720p copy. `scripts/upload_gofile.sh` only as a fallback while `GDRIVE_RCLONE_TOKEN` is missing. Commit sources, EDL, registry, transcripts, SRT and description; large
   footage stays out of git (`assets/video/*`, `assets/raw/`, `projects/*/assets/`, renders).
 
+### 13a. YouTube package and close-out after every final video (owner, 2026-10-17)
+
+*Why:* the owner uploads from the YouTube Studio app on a phone. A ready thumbnail and text they can copy with one tap
+(the copy button on a fenced code block in the GitHub and Claude apps) remove all typing and guesswork; merging and
+closing the session keeps `main` complete and stops idle sessions using the shared limit.
+
+1. **Thumbnail (Be Practical with Kishore theme).** 1280×720 JPG (plus a 2× PNG), built as HTML in
+   `projects/<slug>/youtube/thumb/` and shot with Playwright (`shoot.js`; copy `projects/minimum-due/youtube/thumb/`).
+   Theme from `assets/brand/`: deep navy radial background (`#0b1530` → `#070d1f`), the banner's gold (`#ffd34d`) and
+   blue (`#4a6fa5`) circuit lines with dot ends, Inter 800 in white with the key number or word in gold, one red
+   (`#e5383b`) pill for the shock line, a real photo, footage frame or the film's own simulation (labelled as in the
+   film), and the square BE PRACTICAL logo in a corner. 2–4 large words and one concrete number or object, and every
+   promise is delivered literally in the film (§4a). No AI images of real people. Make an A and a B variant for Test &
+   Compare; look at both at phone size before delivering.
+2. **Title in a click-to-copy block.** A plain fenced code block holding exactly one line, ending
+   `| Be Practical With Kishore`, ≤ 100 characters in all (YouTube's limit), no `!`, the hook first and search words
+   after it. Offer one or two alternatives, each in its own block.
+3. **Description in a click-to-copy block.** Simple, everyday words (§4a-2): 2–4 short lines on what the film shows,
+   the action steps if any, the pinned-comment question, then `CHAPTERS` with timestamps from the final cut starting at
+   `0:00` (at least 3, each ≥ 10 s apart, so YouTube makes chapters), then sources, the AI-voice/synthetic disclosure
+   and safety lines where relevant, and credits. Everything the owner pastes sits inside one fenced code block, no
+   Markdown formatting inside it.
+4. Save as `projects/<slug>/youtube/description.md` (title and description blocks) next to the thumbnails, send the
+   thumbnail JPGs and `description.md` with `SendUserFile`, and paste the title and description blocks in the final
+   chat reply as well.
+5. **Close-out:** commit, push the session branch, open a PR to `main`, merge it (merge commit), confirm the merge,
+   tell the owner which branch to delete, then archive the session (`archive_session`).
+
 ## 14. Pre-render review (every cut, before the final render)
 
 Contact-sheet the cut (`scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --every 2`: 3×3 timecoded tiles, 1536 px)
