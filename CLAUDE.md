@@ -19,6 +19,12 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   the same day. Sessions can't delete branches: tell the owner which ones to delete.
 - Build in phases. At the end of each phase, stop and report what was built, what was measured and what is left.
 - Once the owner approves a cut, stop editing it.
+- **Every final video ends with a YouTube package and a merged PR** (owner, 2026-10-17; PLAYBOOK §13a, `/deliver`):
+  (1) a **thumbnail in the channel theme** (1280×720 JPG, built as HTML and shot with Playwright, like
+  `projects/minimum-due/youtube/thumb/`); (2) the **title in a click-to-copy code block**, ending
+  `| Be Practical With Kishore`; (3) a **simple description with chapter timestamps** (starting `0:00`) in its own
+  click-to-copy code block. Commit them in `projects/<slug>/youtube/`, then open a PR to `main`, merge it, and close
+  (archive) the session.
 - English first; keep all script and on-screen text i18n-ready.
 
 ## Quality first (owner's rule)
