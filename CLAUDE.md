@@ -183,6 +183,10 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   (`[serious]`, `[softly]`, `[urgent]` …); the builder also writes a tag-free copy in case a take reads a tag aloud.
   `tools/build_script.py` lints all of this. If a take breaks around `...`, use a comma and pause in the edit. Hand the
   owner re-record text in this format.
+- **Independent audience review before the owner hears it (owner, 2026-10-20; PLAYBOOK §4a-11).** Every narration that
+  passes the checkers goes to a new cloud session with no repo attached, using `prompts/audience_review_v1.md` (five
+  Indian viewers: topic clear in 10 s? where they swipe? can they explain it back?). Apply fact-safe fixes, re-check,
+  save `projects/<slug>/review_audience_vN.md`, and send the owner the blocks with a short review summary.
 - **Recording blocks go in the chat (owner, 2026-10-15):** whenever a VO is ready or changes, paste every block in the reply,
   one fenced code block each (tap to copy on the phone), headed with block number, voice settings and the file name to save.
   Files in Drive/repo are extra, never instead (PLAYBOOK §4a-2).

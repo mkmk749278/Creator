@@ -825,6 +825,25 @@ blocks (§4a-2): Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, 
 characters (§9.3), a blank line between beats, each block with its file name. Run
 `python3 scripts/spoken_english_check.py projects/<slug>/vo.txt` first.
 
+### 4a-11. Independent audience review of every audio script (owner, 2026-10-20)
+*Why (owner):* "What actually are we talking about? Look at the hook." Film 01's hook opened on "your phone says
+debited" without ever saying it was a U.P.I. payment at a shop: we had read the script so many times that we could no
+longer hear it as a stranger. From now on every narration gets an outside ear before the owner sees it.
+
+**How:** when a VO draft passes `scripts/spoken_english_check.py` and `claims_check.py`, start a **new cloud session
+with no repository attached** (`create_session` without `source_url`, so it cannot read our rules, research or earlier
+drafts) and send it `prompts/audience_review_v1.md` with the title and the narration exactly as it will be recorded.
+It plays five Indian viewers (student, kirana owner with English as a second language, retired teacher, software
+engineer, a commuter on a noisy bus) and reports: is the topic clear in 10 seconds, where they would swipe, can they
+explain the core idea and the practical answer in their own words, robotic or unclear lines, which jokes land, the
+question still in their head, scores, the top 5 fixes with rewritten lines, and a verdict.
+
+**Then:** apply the fixes that keep every fact true (a reviewer rewrite can never add a fact; check each changed line
+against `claims.csv`), re-run both checkers, and send the owner the recording blocks together with a short summary of
+the review (scores, what changed, and anything we chose not to change and why). If the verdict is "not ready", fix and
+review again. Save the reviewer's report as `projects/<slug>/review_audience_vN.md`. Archive the review session when
+done.
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.

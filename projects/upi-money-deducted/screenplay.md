@@ -1,6 +1,6 @@
 # Film 01 · UPI Payment Failed, But Money Deducted. Where Did It Go?
 
-Storyboard and screenplay (Block 3). Times are estimates at 150 words a minute (VO v6, 439 words: the UPI flow first, then success / failed / processing as a phone call, owner 2026-10-20); re-time from `align/` once the VO is
+Storyboard and screenplay (Block 3). Times are estimates at 150 words a minute (VO v7, 438 words: hook names UPI and the shop in the first line, owner 2026-10-20; then the UPI flow and success / failed / processing as a phone call); re-time from `align/` once the VO is
 recorded. Each row is one visual state (2.5–4.5 s) and changes **one** thing from the row before (angle, geometry or
 state). `[B]` = Blender Cycles hero shot, `[3]` = Three.js, `[H]` = HyperFrames 2D, `[R]` = real footage. Stand-ins
 carry ILLUSTRATIVE FOOTAGE; every model carries ILLUSTRATION. Cite tags bottom right.
@@ -19,10 +19,10 @@ table, the NPCI circular pages.
 
 | Time | Phase | AUDIO (VO) | VISUAL + ACTION | HUD | SFX / music |
 |---|---|---|---|---|---|
-| 0:00 | Hook | "Your phone says debited. The shopkeeper says nothing came." | `[R]` Kirana counter: phone shows ₹840 DEBITED (simulated, no real app brand); the soundbox stays dark. ILLUSTRATIVE FOOTAGE. | BALANCE ₹4,400 (amber) | Buzz, then silence |
-| 0:04 | Hook | "Now you're both staring like it's a third umpire review." | `[H]` Split screen, customer and shopkeeper eye to eye; a cricket-style "DECISION PENDING" strip slides across the bottom. | — | Crowd murmur sting |
-| 0:08 | Hook | "So where is your eight hundred and forty rupees right now?" | `[H]` ₹840 lifts off the phone as an amber crate; a tracking reticle locks on: WHERE? | MONEY AT ? | Reticle beep |
-| 0:12 | Hook | "You'll know where, when it comes back, and how not to pay twice." | `[H]` Three chips slide in: WHERE · WHEN · DON'T PAY TWICE. | — | Three ticks |
+| 0:00 | Hook | "You pay eight hundred and forty rupees on U.P.I. at a kirana shop." | `[R]` POV at a kirana counter: phone camera scans the UPI QR standee, ₹840 typed, thumb taps PAY (simulated screen, no real app brand). ILLUSTRATIVE FOOTAGE. | — | Counter ambience, taps |
+| 0:04 | Hook | "Your phone says debited, but the shopkeeper says nothing came." | `[R]` Tight on the phone: ₹840 DEBITED; cut to the soundbox, light off, and the shopkeeper shaking their head at their own phone. | BALANCE ₹4,400 (amber) | Buzz, then silence |
+| 0:08 | Hook | "Now you're both staring like it's a third umpire review." | `[H]` Split screen, customer and shopkeeper eye to eye; a cricket-style "DECISION PENDING" strip slides across the bottom. | — | Crowd murmur sting |
+| 0:12 | Hook | "So where is your money right now? In three minutes, you'll know where, when it comes back, and how not to pay twice." | `[H]` ₹840 lifts off the phone as an amber crate; a tracking reticle locks on (WHERE?); three chips slide in: WHERE · WHEN · DON'T PAY TWICE. | MONEY AT ? | Reticle beep, three ticks |
 | 0:17 | Flow | "First, let me show you what happens after you type your pin." | `[R]` Thumb types the PIN (stand-in). Match cut into the blueprint world. | — | Taps, whoosh |
 | 0:22 | Flow | "Step one, your bank takes the money out — that's why debited shows up so fast." | `[B]` YOUR BANK cutaway: the account row drops ₹840 instantly; chip STEP 1. | DEBIT ✓ · BALANCE ₹4,400 | Click |
 | 0:28 | Flow | "Step two, N.P.C.I., the switchboard in the middle, calls the shop's bank and asks it to add the money." | `[B]` Pull back: the N.P.C.I. switchboard; an operator-style patch cable plugs into SHOP'S BANK; chip STEP 2. Cite `[WORLD BANK / NPCI \| UPI FLOW]`. | CALL RINGING | Old phone ring |

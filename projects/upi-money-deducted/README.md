@@ -1,7 +1,7 @@
 # Film 01 · UPI Payment Failed, But Money Deducted. Where Did It Go?
 
 First film of the 180-second roadmap (`config/roadmap-180s.yaml` #01; rules PLAYBOOK §4a-9). English VO (`lang.txt`),
-439 words, about 2:56 at 150 words a minute (VO v6, owner 2026-10-20: 440 words for depth, the flow first, success / failed / processing as a phone call, humour allowed; narration blueprint §4a-10). Genre: tech explainer, dark blueprint look (`blueprint` in `config/brand.yaml`).
+438 words, about 2:55 at 150 words a minute (VO v7: hook names U.P.I. and the shop in line one; v6: owner 2026-10-20: 440 words for depth, the flow first, success / failed / processing as a phone call, humour allowed; narration blueprint §4a-10). Genre: tech explainer, dark blueprint look (`blueprint` in `config/brand.yaml`).
 
 **Mechanism (v5, owner 2026-10-20: "no technical depth, nothing cleared from the user's point of view"):** the
 film answers the stuck viewer's three questions. *Where is my money?* UPI runs on two layers: messages in real time
