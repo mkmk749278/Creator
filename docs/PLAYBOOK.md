@@ -610,9 +610,10 @@ section wins; everything not mentioned here (fact-check, rights, honesty labels,
 YouTube package, merged PR) still applies.
 
 **Script**
-1. **Length: 320–440 words** at 145–160 words a minute (§4a-10), so about 2:10–3:00. Use up to 440 when the mechanism
-   needs depth (owner, 2026-10-20, for film 01: "go with 440 words for more depth, but the explanation should be
-   simple"). `scripts/spoken_english_check.py` defaults to 320–440.
+1. **Length: about 320–440 words as a guide, never a cap** (145–160 words a minute, §4a-10, so roughly 2:10–3:00).
+   Owner, 2026-10-20: "don't stick to 440 words; the narration should be good, that's our main priority." Go longer
+   when clarity needs it (film 01 v11: ~580 words, ~3:50), and cut any line that doesn't earn its place.
+   `scripts/spoken_english_check.py` reports the word count as a note, not a failure.
 1a. **Explain with an everyday analogy and light humour (owner, 2026-10-20).** "No need to stick strictly to bank words
    or technical words; understanding for the audience is what matters." Show the real flow first, step by step, then
    carry it with one analogy the viewer lives with (film 01: NPCI phones the shop's bank; picked up and yes = success,
@@ -787,8 +788,10 @@ the blueprint only shows them in an example), and **number words, not digits** (
    execution of the debit instruction"). Put the thing first when it helps: "The shop's bank — it never replied."
    Chain short clauses with and, but, so, not with although or whereas.
 3. **Talk to one person.** "You" in most sentences (≥ 3 per 100 words); put the viewer in the scene.
-4. **Be a person.** The narrator speaks as "I", "me", "let's" at least once every 100 words ("I'll show you", "Let's
-   look at", "One tip from me").
+4. **Be a person.** The narrator speaks as "I", "me", "let's" where it sounds natural ("My one rule", "the way I
+   remember it", "I know you have one"). Aim for about one per 100 words, but never force it: six independent audience
+   reviews of film 01 flagged lines like "Let me walk you through" and "one thing I find really interesting" as
+   YouTube-template filler, so the checker reports this as a note, not a failure.
 5. **Ask, then answer.** At least one sentence in ten is a question: the viewer's own doubt in their words, a short
    self-question ("Why? Because…"), quiz-style splits ("Paid a shop? … Sent it to a person? …").
 6. **Signposts and check-ins** (at least two a film, never back to back): "Here's the catch", "Think about it", "Look at
@@ -824,6 +827,25 @@ from `align/`; if Akash reads under 145, regenerate with a speed of 1.05–1.1.
 blocks (§4a-2): Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on, blocks under 1,500
 characters (§9.3), a blank line between beats, each block with its file name. Run
 `python3 scripts/spoken_english_check.py projects/<slug>/vo.txt` first.
+
+### 4a-11. Independent audience review of every audio script (owner, 2026-10-20)
+*Why (owner):* "What actually are we talking about? Look at the hook." Film 01's hook opened on "your phone says
+debited" without ever saying it was a U.P.I. payment at a shop: we had read the script so many times that we could no
+longer hear it as a stranger. From now on every narration gets an outside ear before the owner sees it.
+
+**How:** when a VO draft passes `scripts/spoken_english_check.py` and `claims_check.py`, start a **new cloud session
+with no repository attached** (`create_session` without `source_url`, so it cannot read our rules, research or earlier
+drafts) and send it `prompts/audience_review_v1.md` with the title and the narration exactly as it will be recorded.
+It plays five Indian viewers (student, kirana owner with English as a second language, retired teacher, software
+engineer, a commuter on a noisy bus) and reports: is the topic clear in 10 seconds, where they would swipe, can they
+explain the core idea and the practical answer in their own words, robotic or unclear lines, which jokes land, the
+question still in their head, scores, the top 5 fixes with rewritten lines, and a verdict.
+
+**Then:** apply the fixes that keep every fact true (a reviewer rewrite can never add a fact; check each changed line
+against `claims.csv`), re-run both checkers, and send the owner the recording blocks together with a short summary of
+the review (scores, what changed, and anything we chose not to change and why). If the verdict is "not ready", fix and
+review again. Save the reviewer's report as `projects/<slug>/review_audience_vN.md`. Archive the review session when
+done.
 
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The

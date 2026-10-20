@@ -79,8 +79,8 @@ def main():
     lens = [len(words(s)) for s in sents]
     fails, notes = [], []
 
-    if not a.min_words <= n <= a.max_words:
-        fails.append(f"{n} words, want {a.min_words}-{a.max_words}")
+    if not a.min_words <= n <= a.max_words:  # a guide, not a cap (owner, 2026-10-20: the narration being good comes first)
+        notes.append(f"{n} words, guide {a.min_words}-{a.max_words}: fine if every line earns its place")
     avg = n / len(sents)
     if not 7.5 <= avg <= 14:
         fails.append(f"average sentence {avg:.1f} words, want 7.5-14 (creators: 11-13)")
@@ -102,8 +102,8 @@ def main():
     if you < 3:
         fails.append(f"'you/your' {you:.1f} per 100 words, want >= 3 (creators: 2-6)")
     me = 100 * sum(w in ME for w in ws) / n
-    if me < 1:
-        fails.append(f"narrator 'I/me/we/let's' {me:.1f} per 100 words, want >= 1 (creators: 1-5)")
+    if me < 1:  # a note since 2026-10-20: audience reviews (§4a-11) flagged forced "I find…" lines as template filler
+        notes.append(f"narrator 'I/me/we/let's' {me:.1f} per 100 words (creators: 1-5); add one only where it sounds natural")
     low = text.lower()
     checks = sum(low.count(c) for c in CHECKINS)
     if checks < 2:
