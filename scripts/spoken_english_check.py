@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Spoken-English gate for English narration (PLAYBOOK §4a-10).
+"""Spoken-English gate for English narration (PLAYBOOK §4a-10, owner's narration blueprint in Part H).
 
 Measures a VO the way we measured the Indian explainer channels that hold viewers (study 2026-10-20) and fails
-when the script drifts toward "read text": long sentences, no questions, no "you", no narrator, fancy words.
+when the script drifts toward "read text": long sentences, no questions, no "you", no narrator, fancy words,
+foreign slang, no punch / expansion rhythm, semicolons.
 
 usage: python3 scripts/spoken_english_check.py projects/<slug>/vo.txt [--min-words 320 --max-words 390]
        (a script.tsv works too: the `en` column is read)
@@ -27,19 +28,29 @@ FANCY = {"utilize": "use", "utilise": "use", "commence": "start", "facilitate": 
          "however": "but", "therefore": "so", "thus": "so", "hence": "so", "moreover": "also", "furthermore": "also",
          "nevertheless": "still", "whereby": "where", "wherein": "where", "erratically": "strangely",
          "exasperating": "annoying", "initiate": "start", "remitter": "your bank", "beneficiary": "their bank",
-         "transaction": "payment", "transactions": "payments", "mechanism": "how it works"}
+         "transaction": "payment", "transactions": "payments", "mechanism": "how it works",
+         "delve": "look at", "harnessing": "using", "harness": "use", "imperative": "important", "testament": "proof",
+         "notwithstanding": "despite", "aforementioned": "this", "consequently": "so", "promulgated": "made",
+         "optimize": "speed up", "seamless": "smooth", "leverage": "use", "paradigm": "model"}
+# Phrases from the owner's blueprint (Part H): formal AI phrases and foreign slang that clash with an Indian voice.
+BANNED_PHRASES = ["in conclusion", "it is imperative", "testament to", "in accordance with", "y'all", "stoked",
+                  "no cap", "buckle up", "fam", "touch base", "rent-free", "rent free", "ballpark", "bite the bullet",
+                  "hello friends", "welcome back", "in this video", "let us understand", "smash that", "hit the bell"]
 YOU = {"you", "your", "you're", "you'll", "you've", "yours", "yourself"}
 ME = {"i", "me", "my", "i'm", "i'll", "i've", "we", "us", "our", "let's", "we're", "we'll"}
-CHECKINS = ("right?", "isn't it?", "no?", "simple, right?", "see,", "you know", "imagine", "tell me")
+CHECKINS = ("right?", "isn't it?", "makes sense?", "no?", "see,", "you know", "imagine", "tell me", "think about it",
+            "here's the catch", "here's the thing", "the reality is", "now notice this", "look at", "put simply")
+DOTTED = re.compile(r"\b(?:[A-Z]\.){2,}")
 
 
 def sentences(text):
+    text = DOTTED.sub(lambda m: m.group(0).replace(".", ""), text)  # U.P.I. is one word, not three sentences
     parts = re.split(r"(?<=[.?!])\s+", text.replace("...", "… "))
     return [p.strip() for p in parts if re.search(r"[A-Za-z]", p)]
 
 
 def words(s):
-    return re.findall(r"[A-Za-z][A-Za-z'\-]*", s)
+    return re.findall(r"[A-Za-z][A-Za-z'\-]*", DOTTED.sub(lambda m: m.group(0).replace(".", ""), s))
 
 
 def load(path):
@@ -73,6 +84,11 @@ def main():
     for i in range(len(lens) - 2):
         if max(lens[i:i + 3]) - min(lens[i:i + 3]) <= 1 and min(lens[i:i + 3]) >= 6:
             notes.append(f"three same-length sentences in a row ({lens[i:i + 3]}): {sents[i][:50]}…")
+    punch = sum(3 <= l <= 6 for l in lens) / len(lens)
+    expand = sum(12 <= l <= 18 for l in lens) / len(lens)
+    if punch < 0.15 or expand < 0.15:
+        fails.append(f"rhythm: {100 * punch:.0f}% punches (3-6 words) and {100 * expand:.0f}% expansions (12-18), "
+                     "want >= 15% each (punch → expansion → checkpoint)")
     q = sum(s.endswith("?") for s in sents)
     if q / len(sents) < 0.10:
         fails.append(f"questions are {100 * q / len(sents):.0f}% of sentences, want >= 10% (creators: 12-22%)")
@@ -86,10 +102,16 @@ def main():
     checks = sum(low.count(c) for c in CHECKINS)
     if checks < 2:
         fails.append(f"{checks} check-ins (right? / see, / imagine / tell me …), want >= 2")
+    for p in BANNED_PHRASES:
+        if re.search(r"\b" + re.escape(p) + r"\b", low):
+            fails.append(f"banned phrase '{p}' (Part H)")
+    if ";" in text:
+        fails.append("semicolon: TTS collapses it; use a full stop or a spaced dash")
     fancy = sorted({w for w in ws if w in FANCY})
     for w in fancy:
         fails.append(f"fancy word '{w}': say '{FANCY[w]}'")
-    content = [w for w in ws if len(w) > 3 and w not in INDIAN_OK and not w.endswith("'s")]
+    acronyms = {m.group(0).replace(".", "").lower() for m in DOTTED.finditer(text)}
+    content = [w for w in ws if len(w) > 3 and w not in INDIAN_OK | acronyms and not w.endswith("'s")]
     rare = sorted({w for w in content if zipf_frequency(w, "en") < 3.5})
     rare_pct = 100 * sum(w in rare for w in content) / max(1, len(content))
     if rare_pct > 4:
@@ -100,11 +122,11 @@ def main():
         fails.append("digits, ₹, !, double quotes or brackets in VO text")
     bare = sorted(set(re.findall(r"\b[A-Z]{2,}\b", text)))
     if bare:
-        fails.append(f"bare capital acronyms (hyphenate for Akash): {', '.join(bare)}")
+        fails.append(f"bare capital acronyms (write U.P.I. for Akash): {', '.join(bare)}")
 
     print(f"{n} words · {len(sents)} sentences · avg {avg:.1f} · questions {100 * q / len(sents):.0f}% · "
           f"you {you:.1f}/100 · I/we {me:.1f}/100 · check-ins {checks} · rare {rare_pct:.1f}% · "
-          f"≈{n / 140:.1f} min at 140 wpm")
+          f"punch {100 * punch:.0f}% · expand {100 * expand:.0f}% · ≈{n / 150 * 60:.0f} s at 150 wpm")
     for m in notes:
         print("  note:", m)
     for m in fails:
