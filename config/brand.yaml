@@ -22,6 +22,7 @@ blueprint:   # keys are prefixed bp_ because scripts/make_mascot.mjs reads every
   bp_passive: "#8b949e"    # muted slate: housings, return/vent lines
   bp_readout: "#e6edf3"    # HUD numbers, dimension lines
   bp_verified: "#3fb950"   # terminal green: verified states
+  bp_fail: "#f85149"       # red: a FAILED outcome only (owner, 2026-10-20: orange and amber look alike on a phone)
 fonts:
   family: Inter          # vendored from @fontsource/inter (OFL)
   weights: [400, 600, 800]

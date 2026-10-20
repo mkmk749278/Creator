@@ -1,18 +1,19 @@
 # Film 01 hero world: YOUR BANK rack, N.P.C.I. switchboard, SHOP'S BANK rack (screenplay.md, PLAYBOOK §4a-9).
 # Dark blueprint look, photo-real materials, Cycles on CPU (8 samples + OpenImageDenoise).
 # Run: <venv with bpy==5.2.2>/bin/python -I world.py -- <shot> <samples> <out.png> [frame]
-#   shot: wide | board | hold   (lookdev stills; animation passes come after the owner sees the look)
+#   shot: wide | board | hold;  state: idle | success | failed | processing (plan v2, review_visual_plan_v1.md)
 import bpy, bmesh, math, sys, time
 from mathutils import Vector
 
 args = sys.argv[sys.argv.index("--") + 1:]
 shot, samples, out = args[0], int(args[1]), args[2]
-frame = int(args[3]) if len(args) > 3 else 1
+state = args[3] if len(args) > 3 else "idle"
+frame = 1
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc = bpy.context.scene
 C = {"bg": "#0d1117", "panel": "#161b22", "grid": "#30363d", "amber": "#d29922", "cyan": "#58a6ff",
-     "orange": "#f0883e", "slate": "#8b949e", "readout": "#e6edf3", "green": "#3fb950"}
+     "orange": "#f0883e", "slate": "#8b949e", "readout": "#e6edf3", "green": "#3fb950", "red": "#f85149"}
 
 
 def lin(h, a=1.0):
@@ -48,7 +49,7 @@ def noisy_metal(name, col, rough=0.35, scale=60.0, var=0.18):
 def box(name, size, loc, m, bevel=0.004):
     bpy.ops.mesh.primitive_cube_add(size=1, location=loc)
     o = bpy.context.object; o.name = name; o.scale = size
-    bpy.ops.object.transform_apply(scale=True)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)  # keep the origin at loc
     if bevel:
         md = o.modifiers.new("bv", "BEVEL"); md.width = bevel; md.segments = 2
     o.data.materials.append(m)
@@ -202,11 +203,16 @@ def switchboard(cx):
     bpy.context.object.data.materials.append(dial_face)
     bpy.ops.mesh.primitive_torus_add(major_radius=0.2, minor_radius=0.012, location=(cx, 0.105, 2.38), rotation=(math.radians(90), 0, 0))
     bpy.context.object.data.materials.append(brass_m)
+    bm = bmesh.new()
     for t in range(15):
-        a = math.radians(90 - t * 24)
-        box(f"tick{t}", (0.014, 0.006, 0.04 if t % 5 else 0.06), (cx + 0.155 * math.cos(a), 0.096, 2.38 + 0.155 * math.sin(a)), tick_m, 0)
-        bpy.context.object.rotation_euler = (0, -a + math.radians(90), 0)
-    text("N.P.C.I.", (cx, 0.14, 2.06), 0.075, label_m)
+        a = math.radians(90 - t * 24); L = 0.06 if t % 5 == 0 else 0.04; w2 = 0.007
+        ux, uz = math.cos(a), math.sin(a); px, pz = -uz, ux
+        r1, r2 = 0.17 - L, 0.17
+        vs = [bm.verts.new((cx + ux * r + px * s2 * w2, 0.103, 2.38 + uz * r + pz * s2 * w2)) for r, s2 in ((r1, -1), (r2, -1), (r2, 1), (r1, 1))]
+        bm.faces.new(vs)
+    me = bpy.data.meshes.new("ticks"); bm.to_mesh(me); tk = bpy.data.objects.new("ticks", me); sc.collection.objects.link(tk)
+    me.materials.append(tick_m)
+    text("N.P.C.I.", (cx, 0.15, 1.93), 0.075, label_m)
 
 
 switchboard(0.0)
@@ -224,8 +230,68 @@ def cable(name, pts, m, r=0.012):
     return o
 
 
-cable("call_out", [(-0.049, -0.02, 0.85), (0.4, -0.5, 0.35), (1.3, -0.6, 0.06), (1.9, -0.55, 0.3), (2.2, -0.52, 1.2)], cable_live)
-cable("debit_done", [(-0.235, -0.02, 0.85), (-0.8, -0.5, 0.3), (-1.6, -0.6, 0.06), (-2.0, -0.55, 0.4), (-2.2, -0.52, 1.0)], cable_dead)
+RUPEE_FONT = bpy.data.fonts.load("/usr/share/fonts/opentype/inter/Inter-Bold.otf")
+STATE_COL = {"idle": C["cyan"], "success": C["green"], "failed": C["red"], "processing": C["amber"]}
+SCREEN = {"idle": "CALLING...", "success": "CONNECTED", "failed": "DECLINED", "processing": "CALL DROPPED"}
+sc_col = STATE_COL[state]
+
+call_pts = [(-0.049, -0.02, 0.85), (0.4, -0.5, 0.35), (1.3, -0.6, 0.06), (1.9, -0.55, 0.3), (1.95, -0.53, 1.2)]
+if state == "processing":   # the line goes dark past the middle: a live stub, then a dead cable
+    cable("call_live", call_pts[:3], mat("cable_amber", C["amber"], 0, 0.35, C["amber"], 6.0))
+    cable("call_dead", call_pts[2:], cable_dead)
+else:
+    cable("call", call_pts, mat(f"cable_{state}", sc_col, 0, 0.35, sc_col, 14.0))
+cable("debit_done", [(-0.235, -0.02, 0.85), (-0.8, -0.5, 0.3), (-1.6, -0.6, 0.06), (-2.0, -0.55, 0.4), (-1.95, -0.53, 1.0)],
+      mat("cable_back", C["red"], 0, 0.35, C["red"], 10.0) if state == "failed" else cable_dead)
+
+
+def label3d(body, loc, size, m, font=None):
+    o = text(body, loc, size, m)
+    if font:
+        o.data.font = font
+    return o
+
+
+# bank identity (review #7): lit name plate, a vault-door panel with a wheel, a row of ₹ account slots
+plate_lit = mat("plate_lit", "#0f1520", 0.2, 0.3, C["readout"], 0.15)
+vault_m = noisy_metal("vault", "#6c7682", 0.3, 90, 0.12)
+slot_m = mat("slot", "#0b0f14", 0.0, 0.4, C["cyan"], 0.8)
+for bx, nm in ((-2.2, "YOUR BANK"), (2.2, "SHOP'S BANK")):
+    box(f"vault_{bx}", (0.5, 0.03, 0.62), (bx, -0.53, 0.5), vault_m, 0.01)
+    bpy.ops.mesh.primitive_torus_add(major_radius=0.12, minor_radius=0.012, location=(bx, -0.555, 0.52), rotation=(math.radians(90), 0, 0))
+    bpy.context.object.data.materials.append(brass_m)
+    for k in range(3):
+        box(f"spoke{bx}{k}", (0.24, 0.012, 0.014), (bx, -0.56, 0.52), brass_m, 0.003)
+        bpy.context.object.rotation_euler = (0, math.radians(k * 60), 0)
+    for k in range(4):  # account slots, each with a ₹ glyph
+        box(f"slot{bx}{k}", (0.09, 0.02, 0.05), (bx - 0.165 + k * 0.11, -0.53, 1.62), slot_m, 0.004)
+        label3d("₹", (bx - 0.165 + k * 0.11, -0.545, 1.607), 0.035, label_dim, RUPEE_FONT)
+
+# the switchboard's call screen and three outcome lamps (review #6, #8)
+box("screen", (0.62, 0.03, 0.13), (0.0, 0.155, 1.80), mat("screen_glass", "#05080c", 0.0, 0.12, coat=1.0), 0.006)
+label3d(SCREEN[state], (0.0, 0.135, 1.78), 0.06, mat("screen_txt", sc_col, 0, 0.4, sc_col, 6.0), RUPEE_FONT)
+for k, (key, _glyph) in enumerate((("success", "✓"), ("failed", "✕"), ("processing", "⧗"))):
+    lx = (-0.42, 0.0, 0.42)[k]
+    on = state == key
+    lm2 = (mat(f"lamp_{key}", STATE_COL[key], 0, 0.25, STATE_COL[key], 9.0) if on
+           else mat(f"lamp_{key}_off", "#1a1d22", 0.0, 0.2, STATE_COL[key], 0.08))  # off = dark glass
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.04, location=(lx, 0.16, 1.645))
+    bpy.context.object.scale = (1, 0.55, 1); bpy.context.object.data.materials.append(lm2)
+
+# the ₹840 token: where it sits IS the status (review #1, #2)
+TOKEN_AT = {"idle": (-1.95, -0.62, 1.05), "success": (1.95, -0.62, 1.62),
+            "failed": (-1.95, -0.62, 1.62), "processing": (1.3, -0.62, 0.32)}
+tx, ty, tz = TOKEN_AT[state]
+tok_m = mat("token", "#0c1118", 0.6, 0.3)  # dark coin face; the rim and the amount carry the glow
+rim_m = mat("token_rim", C["amber"], 0.9, 0.25, C["amber"], 6.0 if state == "processing" else 3.0)
+bpy.ops.mesh.primitive_cylinder_add(radius=0.11, depth=0.022, vertices=64, location=(tx, ty, tz), rotation=(math.radians(90), 0, 0))
+bpy.context.object.data.materials.append(tok_m)
+md = bpy.context.object.modifiers.new("bv", "BEVEL"); md.width = 0.006; md.segments = 3
+bpy.ops.mesh.primitive_torus_add(major_radius=0.11, minor_radius=0.012, location=(tx, ty, tz), rotation=(math.radians(90), 0, 0))
+bpy.context.object.data.materials.append(rim_m)
+label3d("₹840", (tx, ty - 0.013, tz - 0.024), 0.068, mat("token_txt", C["amber"], 0, 0.4, C["amber"], 8.0), RUPEE_FONT)
+pl = bpy.data.lights.new("token_glow", "POINT"); pl.energy = 8 if state == "processing" else 4; pl.color = lin(C["amber"])[:3]
+po = bpy.data.objects.new("token_glow", pl); po.location = (tx, ty - 0.2, tz); sc.collection.objects.link(po)
 
 # ---------- lighting: dark room, cool key, rim lights, volumetric haze ----------
 w = bpy.data.worlds.new("w"); sc.world = w; w.use_nodes = True
