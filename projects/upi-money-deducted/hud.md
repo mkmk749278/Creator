@@ -10,9 +10,11 @@ word (`screenplay.md`). Logo bug bottom right, citation tags bottom right above 
 | DEBIT LEG | state | `IDLE → SENT → DONE ✓` | `DONE ✓` (stays done) | `bp_signal` while sent, `bp_verified` done | U03 |
 | CREDIT LEG | state | `IDLE → SENT → DONE ✓` | `SENT → NO REPLY → DEEMED` then `SETTLED ✓` or `RETURNED ↩` | `bp_signal` → `bp_pressure` (deemed) → green / slate | U04, U06, U07 |
 | YOUR BALANCE | ₹ | ₹5,240 → ₹4,400 | ₹4,400 held, then back to ₹5,240 | `bp_readout`; amber while money is in limbo | ILLUSTRATIVE (₹840 example) |
-| MONEY AT | location | `YOUR BANK → SHOP'S BANK` | `IN TRANSIT` (amber, blinking dot) | `bp_pressure` | follows the VO |
+| MONEY AT | location | `YOUR BANK` | `YOUR BANK` → (next batch) `SHOP'S BANK` → `SHOP` (TCC) or `YOUR BANK` (RET) | `bp_pressure` | U16–U18 |
 | DAY | T+n | `T+0` | counts `T+0 … T+5` (shop) / `T+1` (person) | `bp_readout`; `bp_stress` past the limit | U08, U09 |
 | BANK OWES | ₹ / day | `₹0` | `₹100 / DAY` after the limit | `bp_stress` | U10, U11 |
+| NEXT BATCH | countdown to the next settlement cycle | `01:52:00` | — | `bp_passive` | U16 (cycle length from NPCI Annexure E; the countdown value is ILLUSTRATIVE) |
+| ANSWER | shop's bank filing | — | `TCC ✓` (credited) or `RET ↩` (return) | green / slate | U18, U19 |
 | UPI LOAD | payments / day | `80 CR / DAY` | — | `bp_passive` | U01 (our calculation from NPCI data) |
 
 **Rules:** the HUD shows only what the VO has said or is saying; nothing contradicts it. Running seconds and the
