@@ -1,0 +1,100 @@
+1
+00:00:00,000 --> 00:00:11,896
+Your bank S.M.S. says eight hundred and forty rupees — debited. Your U.P.I. app says — processing. And the shop's soundbox? Silent. The shopkeeper is looking at you.
+
+2
+00:00:11,896 --> 00:00:22,083
+Don't pay again. Your money is not lost. In a few minutes, you'll know exactly where it is, when it comes back, and the one mistake that makes people pay twice.
+
+3
+00:00:22,083 --> 00:00:24,590
+Here's what happens after you type your pin.
+
+4
+00:00:24,590 --> 00:00:29,639
+First, your bank takes the money out of your account. That's the debited message you see.
+
+5
+00:00:29,639 --> 00:00:40,419
+Then N.P.C.I. steps in. It's not your app — it's the system behind all U.P.I. apps. It calls the shop's bank and says, please add this money to the shop's account.
+
+6
+00:00:40,419 --> 00:00:46,097
+I like to think of it as a phone call. And like every phone call in India... three things can happen.
+
+7
+00:00:46,097 --> 00:00:51,792
+One, the shop's bank picks up and says, done, the shop got it — that's success.
+
+8
+00:00:51,792 --> 00:00:59,566
+Two, the shop's bank picks up and says, sorry, we can't take this, maybe there's a problem with the account — that's failed.
+
+9
+00:00:59,566 --> 00:01:09,832
+Failed sounds scary, but it's the clear answer. The payment did not go through, and your money comes back to you on its own. So if it says failed, you can pay again. Simple so far, right?
+
+10
+00:01:09,832 --> 00:01:20,047
+Three. The troublemaker. N.P.C.I. calls... and the line goes quiet. Hello?... Hello?... Call dropped.
+
+11
+00:01:20,047 --> 00:01:28,103
+Did the shop's bank add the money before the call dropped? Nobody knows yet. That's the processing you see — some apps call it pending.
+
+12
+00:01:28,103 --> 00:01:38,434
+So right there at the counter, don't pay again. Ask the shopkeeper to check their bank S.M.S., not the soundbox. And take a screenshot of your payment, so you both have proof.
+
+13
+00:01:38,434 --> 00:01:53,042
+Bank says received? Then the shop got your money, and you're done. Nothing yet? Then it's still processing. Show them your screenshot and say — it's stuck, not lost. If it reaches you, you'll get the S.M.S. If not, it comes back to me.
+
+14
+00:01:53,042 --> 00:02:07,193
+So where is your money right now? When the call drops, N.P.C.I. doesn't cancel the payment — it puts it on hold. Your money has left your account, but it's stuck between your bank and the shop's bank. Not lost — just waiting.
+
+15
+00:02:07,193 --> 00:02:14,534
+Now the shop's bank has to answer one simple question — did it go into the shop's account, or not? Only two answers.
+
+16
+00:02:14,534 --> 00:02:18,845
+Yes? Then the shop has your money, even though the soundbox stayed silent.
+
+17
+00:02:18,845 --> 00:02:22,753
+No? Then it comes back to your bank, and into your account.
+
+18
+00:02:22,753 --> 00:02:44,108
+How long can this take? If the money didn't reach them — whether it says failed or processing — the bank must return it, and the R.B.I. has set a deadline. Paid a person? Back by the next day. Paid a shop or a business? Within five days — five normal days, Sundays included, not five working days. Person, one day. Shop, five days.
+
+19
+00:02:44,108 --> 00:02:54,298
+And if the bank takes longer, it has to pay you one hundred rupees for every extra day. You don't even have to complain. The bank has to pay it on its own. That's an R.B.I. rule.
+
+20
+00:02:54,298 --> 00:03:13,515
+Quick summary, the way I remember it. Success — the shop got it. Failed — it didn't go through, your money comes back on its own, and you can pay again. Processing — don't pay again. If it never reaches the shop, you get it back within one day for a person, five days for a shop.
+
+21
+00:03:13,515 --> 00:03:23,978
+My one rule: never pay again while it says processing. Because if that first payment turns out to be a yes... congrats, you just paid eight hundred and forty rupees... twice.
+
+22
+00:03:23,978 --> 00:03:36,362
+Don't want to wait? Open your app, go to your payment history, tap that payment, and look for U.P.I. Help. You can raise it right away. Paid twice by mistake? Choose duplicate payment there.
+
+23
+00:03:36,362 --> 00:03:48,621
+Still not solved? Complain to your bank. Bank not fixing it? Then complain to the R.B.I. The office has a strange name — the R.B.I. Ombudsman. Remember it: R.B.I. Ombudsman.
+
+24
+00:03:48,621 --> 00:03:53,220
+Send this to that one friend who always pays twice — I know you have one.
+
+25
+00:03:53,220 --> 00:04:00,509
+Next video: what really happens in those few seconds after you hit pay, when everything works. Watch that one next.
+
