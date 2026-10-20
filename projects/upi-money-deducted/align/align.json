@@ -1,0 +1,252 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 11.452,
+  "te": "Your bank S.M.S. says eight hundred and forty rupees — debited. Your U.P.I. app says — processing. And the shop's soundbox? Silent. The shopkeeper is looking at you.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.034,
+  "confidence": "check"
+ },
+ {
+  "line": 2,
+  "start": 11.896,
+  "end": 21.565,
+  "te": "Don't pay again. Your money is not lost. In a few minutes, you'll know exactly where it is, when it comes back, and the one mistake that makes people pay twice.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.034,
+  "confidence": "check"
+ },
+ {
+  "line": 3,
+  "start": 22.083,
+  "end": 24.077,
+  "te": "Here's what happens after you type your pin.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.256,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 24.59,
+  "end": 29.181,
+  "te": "First, your bank takes the money out of your account. That's the debited message you see.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.245,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 29.639,
+  "end": 39.999,
+  "te": "Then N.P.C.I. steps in. It's not your app — it's the system behind all U.P.I. apps. It calls the shop's bank and says, please add this money to the shop's account.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.209,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 40.419,
+  "end": 45.662,
+  "te": "I like to think of it as a phone call. And like every phone call in India... three things can happen.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.13,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 46.097,
+  "end": 51.379,
+  "te": "One, the shop's bank picks up and says, done, the shop got it — that's success.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.13,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 51.792,
+  "end": 59.118,
+  "te": "Two, the shop's bank picks up and says, sorry, we can't take this, maybe there's a problem with the account — that's failed.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.16,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 59.566,
+  "end": 69.394,
+  "te": "Failed sounds scary, but it's the clear answer. The payment did not go through, and your money comes back to you on its own. So if it says failed, you can pay again. Simple so far, right?",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.025,
+  "confidence": "check"
+ },
+ {
+  "line": 10,
+  "start": 69.832,
+  "end": 79.484,
+  "te": "Three. The troublemaker. N.P.C.I. calls... and the line goes quiet. Hello?... Hello?... Call dropped.",
+  "en": "",
+  "speech_vs_text": 1.28,
+  "boundary_margin": 0.025,
+  "confidence": "check"
+ },
+ {
+  "line": 11,
+  "start": 80.047,
+  "end": 87.698,
+  "te": "Did the shop's bank add the money before the call dropped? Nobody knows yet. That's the processing you see — some apps call it pending.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.056,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 88.103,
+  "end": 97.89,
+  "te": "So right there at the counter, don't pay again. Ask the shopkeeper to check their bank S.M.S., not the soundbox. And take a screenshot of your payment, so you both have proof.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.135,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 98.434,
+  "end": 112.645,
+  "te": "Bank says received? Then the shop got your money, and you're done. Nothing yet? Then it's still processing. Show them your screenshot and say — it's stuck, not lost. If it reaches you, you'll get the S.M.S. If not, it comes back to me.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.084,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 113.042,
+  "end": 126.766,
+  "te": "So where is your money right now? When the call drops, N.P.C.I. doesn't cancel the payment — it puts it on hold. Your money has left your account, but it's stuck between your bank and the shop's bank. Not lost — just waiting.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.084,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 127.193,
+  "end": 134.165,
+  "te": "Now the shop's bank has to answer one simple question — did it go into the shop's account, or not? Only two answers.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.11,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 134.534,
+  "end": 138.321,
+  "te": "Yes? Then the shop has your money, even though the soundbox stayed silent.",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.08,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 138.845,
+  "end": 142.325,
+  "te": "No? Then it comes back to your bank, and into your account.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.064,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 142.753,
+  "end": 163.614,
+  "te": "How long can this take? If the money didn't reach them — whether it says failed or processing — the bank must return it, and the R.B.I. has set a deadline. Paid a person? Back by the next day. Paid a shop or a business? Within five days — five normal days, Sundays included, not five working days. Person, one day. Shop, five days.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.064,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 164.108,
+  "end": 173.862,
+  "te": "And if the bank takes longer, it has to pay you one hundred rupees for every extra day. You don't even have to complain. The bank has to pay it on its own. That's an R.B.I. rule.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.059,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 174.298,
+  "end": 193.013,
+  "te": "Quick summary, the way I remember it. Success — the shop got it. Failed — it didn't go through, your money comes back on its own, and you can pay again. Processing — don't pay again. If it never reaches the shop, you get it back within one day for a person, five days for a shop.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.059,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 193.515,
+  "end": 203.513,
+  "te": "My one rule: never pay again while it says processing. Because if that first payment turns out to be a yes... congrats, you just paid eight hundred and forty rupees... twice.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.172,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 203.978,
+  "end": 215.95,
+  "te": "Don't want to wait? Open your app, go to your payment history, tap that payment, and look for U.P.I. Help. You can raise it right away. Paid twice by mistake? Choose duplicate payment there.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.059,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 216.362,
+  "end": 228.227,
+  "te": "Still not solved? Complain to your bank. Bank not fixing it? Then complain to the R.B.I. The office has a strange name — the R.B.I. Ombudsman. Remember it: R.B.I. Ombudsman.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.059,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 228.621,
+  "end": 232.825,
+  "te": "Send this to that one friend who always pays twice — I know you have one.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.078,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 233.22,
+  "end": 240.308,
+  "te": "Next video: what really happens in those few seconds after you hit pay, when everything works. Watch that one next.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.078,
+  "confidence": "high"
+ }
+]
