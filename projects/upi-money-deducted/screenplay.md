@@ -16,6 +16,28 @@ character. References to collect: telephone-exchange photos, data-centre racks, 
 photo (shape only), the RBI building exterior, a kirana counter, a UPI QR standee and soundbox, the RBI circular
 table, the NPCI circular pages.
 
+**Plan v2 (after `review_visual_plan_v1.md`; these rules win over any row below that conflicts):**
+- **The ₹840 token** is the hero object: a glowing ₹ disc, born at 0:24 when it leaves YOUR BANK's account slot, tracked
+  to the end (a "parcel cam" follows it along the cable). **Its position is the status:** in the shop's slot = SUCCESS
+  (green ✓, soundbox lights and says "payment received"), bounced back home = FAILED (red ✗, `bp_fail` #f85149 if the
+  owner agrees), frozen and pulsing mid-cable while the cable goes dark = PROCESSING (amber hourglass). Every state has
+  colour + icon + position + its own sound (chime / buzz / ticking clock).
+- **Switchboard decoded:** a call screen on the crown (CALLING… → CONNECTED / CALL DROPPED) and the three outcome lamps
+  live on the board (0:40 stays in 3D). At 0:29 a 1–2 s ARCHIVE insert of a real operator plugging a cord, then the 3D
+  plug completes the motion. Match cut: PIN keypad grid → jack grid (0:22).
+- **Banks look like banks:** lit name plate, a vault-door front panel, ₹ account slots on each rack.
+- **0:29 split:** (a) app icons funnel into one switch, SYSTEM BEHIND ALL APPS; (b) the plug and the ring.
+- **HUD:** two lines on screen (STATUS, MONEY AT); timer, balance, day and bank-owes pop in only when they change.
+- **Hook:** one phone close-up with two notifications stacked, ₹840 DEBITED over PROCESSING…, then the silent soundbox,
+  the shopkeeper's look and a queue behind (stock counter footage + our simulated UI). 0:11 chips one at a time.
+- **Scene fixes:** 0:53 ✗ lamp and a reject stamp, no padlock · 1:00 token flies back, balance climbs, pay-again thumb as a
+  1.5 s insert · 1:13 the 15 s dial sweeps from the ring · 1:22 add "?" on the shop's row · 1:41 the customer's own phone
+  with a return arrow back to them · 1:56 batch shuttle demoted to a background detail, no chip · 2:27 RBI table ~1 s as
+  proof, then a big calendar PERSON T+1 / SHOP T+5 · 2:51 calendar flips T+6, T+7, one ₹100 coin per flip · 3:20 balance
+  drops twice, two SMS stack · 3:58 hold PAYS TWICE 2.5 s.
+- **Craft:** warm practical lamp at the switchboard, slightly rough floor reflections, volumetric light; every 3D shot
+  moves (slow dolly, 35–50 mm, rack focus, micro-shake on the drop); kirana ambience bed under the counter scenes.
+
 | Time | Phase | AUDIO (VO) | VISUAL + ACTION | HUD | SFX / music |
 |---|---|---|---|---|---|
 | 0:00 | Hook | "Your bank S.M.S. says eight hundred and forty rupees — debited. Your U.P.I. app says — processing. And the shop's soundbox? Silent. The shopkeeper is looking at you." | `[R]` Kirana counter: bank SMS on the phone "₹840 debited", then the UPI app "PROCESSING" (simulated screens, no real app brand); the soundbox, light off; the shopkeeper looking at the customer. ILLUSTRATIVE FOOTAGE. | BALANCE ₹4,400 (amber) · STATUS PROCESSING | Buzz, then silence |
