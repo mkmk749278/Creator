@@ -404,7 +404,7 @@ if os.environ.get("UPI_ANIM") == "processing":
     tgt_e = bpy.data.objects.new("cam_target", None); sc.collection.objects.link(tgt_e)
     tc = cam.constraints.new("TRACK_TO"); tc.target = tgt_e; tc.track_axis = "TRACK_NEGATIVE_Z"; tc.up_axis = "UP_Y"
     for f, cl, tl, fd in ((1, (0.0, -6.6, 1.55), (0.0, 0.0, 1.05), 5.4), (84, (0.2, -6.2, 1.45), (0.3, 0.0, 1.0), 5.2),
-                          (END, (1.0, -3.6, 0.9), (1.3, -0.6, 0.45), 3.0)):
+                          (END, (0.9, -4.3, 1.05), (1.05, -0.5, 0.55), 3.8)):
         cam.location = cl; cam.keyframe_insert("location", frame=f)
         tgt_e.location = tl; tgt_e.keyframe_insert("location", frame=f)
         cd.dof.focus_distance = fd; cd.dof.keyframe_insert("focus_distance", frame=f)
@@ -414,7 +414,13 @@ if os.environ.get("UPI_ANIM") == "processing":
                 kp.interpolation = "BEZIER"
     sc.render.resolution_x, sc.render.resolution_y = 960, 540
     sc.render.filepath = out.rstrip("/") + "/f_"; sc.render.image_settings.file_format = "PNG"
-    t0 = time.time(); bpy.ops.render.render(animation=True); print(f"ANIM {END} frames {time.time() - t0:.1f}s -> {out}")
+    t0 = time.time()
+    if os.environ.get("UPI_ANIM_FRAMES"):  # spot-check chosen frames before the full pass
+        for f in map(int, os.environ["UPI_ANIM_FRAMES"].split(",")):
+            sc.frame_set(f); sc.render.filepath = f"{out.rstrip('/')}/f_{f:04d}.png"; bpy.ops.render.render(write_still=True)
+    else:
+        bpy.ops.render.render(animation=True)
+    print(f"ANIM done {time.time() - t0:.1f}s -> {out}")
     sys.exit(0)
 
 t0 = time.time(); bpy.ops.render.render(write_still=True); print(f"RENDER {shot} {samples}spp {time.time() - t0:.1f}s -> {out}")
