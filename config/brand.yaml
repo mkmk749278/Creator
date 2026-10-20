@@ -11,6 +11,17 @@ colors:
   bad: "#ff6b7a"        # split / problems / skip
   glass: "rgba(255, 255, 255, 0.06)"
   glass_edge: "rgba(255, 255, 255, 0.14)"
+# Be Practical with Kishore 180-second explainers: dark blueprint look (owner, 2026-10-20; PLAYBOOK §4a-9).
+blueprint:   # keys are prefixed bp_ because scripts/make_mascot.mjs reads every "#hex" key into one map
+  bp_bg: "#0d1117"
+  bp_panel: "#161b22"
+  bp_grid: "#30363d"
+  bp_pressure: "#d29922"   # amber: pressure, heat, fuel
+  bp_signal: "#58a6ff"     # electric cyan: RF, current, data
+  bp_stress: "#f0883e"     # safety orange: friction, braking, faults
+  bp_passive: "#8b949e"    # muted slate: housings, return/vent lines
+  bp_readout: "#e6edf3"    # HUD numbers, dimension lines
+  bp_verified: "#3fb950"   # terminal green: verified states
 fonts:
   family: Inter          # vendored from @fontsource/inter (OFL)
   weights: [400, 600, 800]

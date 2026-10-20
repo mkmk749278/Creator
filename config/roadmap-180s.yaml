@@ -1,0 +1,243 @@
+# Be Practical with Kishore: 180-second engineering explainer roadmap (owner, 2026-10-20).
+# Transcribed from the owner's PDF "Engineering the Three-Minute Epiphany", section 5. Rules: PLAYBOOK §4a-9.
+# Publish in this order: each film's last 15 s bridges to `next`, and its end screen links to that film.
+# `list_no` is the topic's number in the owner's original 50-topic list. `existing` points at an earlier long film on
+# the same subject: read it first and keep its numbers and advice (series continuity, PLAYBOOK §4a-4).
+# The mechanism, visual and bridge notes are planning notes, not facts: every number in them (frequencies, pressures,
+# percentages, dot counts) goes through /fact-check before it is spoken or shown. Fix the bridge line if a fact changes.
+
+sprints:
+  - id: 1
+    name: Digital Money & Everyday Telecom Loop
+    focus: Capturing high-intent daily friction points, demystifying the India Stack, and establishing baseline retention.
+  - id: 2
+    name: Indian Railways & Heavy Infrastructure Loop
+    focus: High-volume curiosity regarding rail physics; establishes dark-mode mechanical cross-section supremacy.
+  - id: 3
+    name: Wireless Networks, Signals & Internet Architecture
+    focus: Resolving network latency and invisible protocol bottlenecks for tech workers and digital natives.
+  - id: 4
+    name: Smartphone Hardware & Sensory Physics
+    focus: Deconstructing the micro-sensors and electromechanical systems running inside everyday devices.
+  - id: 5
+    name: Home Appliances, Power & Grid Dynamics
+    focus: Resolving everyday household electrical questions and scaling up to national grid physics.
+  - id: 6
+    name: Automotive Dynamics & Heavy Machinery
+    focus: Deepening engagement with two-wheeler mechanics, automotive dynamics, and industrial scales.
+  - id: 7
+    name: Deep Tech, Defense & Frontier Physics
+    focus: Channel flagship topics; advanced explainers delivering unmatched visual production value.
+
+videos:
+  # Sprint 1
+  - {num: 1, sprint: 1, list_no: 18, title: "UPI Payment Failed, But Money Deducted. Where Did It Go?",
+     mechanism: "Asynchronous rollback vs. CBS deadlock during distributed ACID database commits.",
+     visual: "Network diagram of the uncommitted two-phase debit lock.",
+     bridge: "To see why CBS hangs, look at what happens when the 1.2s handshake works perfectly..."}
+  - {num: 2, sprint: 1, list_no: 13, title: "What Actually Happens When You Pay ₹100 Through UPI?",
+     mechanism: "Asymmetric MPIN encryption via device keystore to HSM atomic ledger debit.",
+     visual: "Flow diagram tracking encrypted payload crossing PSP, Switch, and CBS.",
+     bridge: "The bank ledger committed, but how does the chai shop's speaker announce it 2s later?"}
+  - {num: 3, sprint: 1, list_no: 21, title: "How Does a Shopkeeper's UPI Soundbox Know You've Paid?",
+     mechanism: "Lightweight MQTT publish-subscribe telemetry over cellular IoT modems.",
+     visual: "Isometric exploded view of the soundbox SIM, MCU, and audio synthesis chip.",
+     bridge: "The soundbox reads the cloud, but how does your camera read bank details off static paper?"}
+  - {num: 4, sprint: 1, list_no: 19, title: "How Does a QR Code Know Which Bank Account to Pay?",
+     mechanism: "Reed-Solomon error correction and URI string parsing within 2D matrix modules.",
+     visual: "Animated matrix breakdown showing position squares and data mask bits.",
+     bridge: "QRs require camera optics, but what about the sticker on your car that needs neither camera nor battery?"}
+  - {num: 5, sprint: 1, list_no: 14, title: "How Does FASTag Work Without a Battery?",
+     mechanism: "Passive 865–867 MHz UHF backscatter modulation and charge pump capacitor induction.",
+     visual: "RF wave energizing the tag antenna, toggling input impedance to reflect data.",
+     bridge: "FASTag bounces waves at 20 meters; why does your debit card require touching the terminal?"}
+  - {num: 6, sprint: 1, list_no: 20, title: "How Does Tap-to-Pay Work Without Swiping Your Card?",
+     mechanism: "13.56 MHz NFC near-field inductive coupling and dynamic EMV cryptogram generation.",
+     visual: "Magnetic field coupling between POS coil and card coil with tokenized packet exchange.",
+     bridge: "Cards use encrypted chips, but how do cash machines verify crumpled paper notes in milliseconds?"}
+  - {num: 7, sprint: 1, list_no: 15, title: "How Does an ATM Identify Fake Currency?",
+     mechanism: "Multi-spectral CIS infrared (850/940nm) metamerism and magnetic intaglio ink detection.",
+     visual: "Cross-section of transport rollers scanning notes under IR, UV, and magnetic sensors.",
+     bridge: "ATMs verify single currency notes; how does India connect rival e-commerce apps on one open rail?"}
+  - {num: 8, sprint: 1, list_no: 16, title: "How Does ONDC Connect Different Shopping Apps?",
+     mechanism: "Asynchronous Beckn protocol JSON-RPC broadcasts across decentralized gateway registries.",
+     visual: "Network topology showing buyer app search querying seller nodes simultaneously.",
+     bridge: "Closes the fintech sprint; bridges into the heavy rail and transport series."}
+  # Sprint 2
+  - {num: 9, sprint: 2, list_no: 1, title: "Why Do Train Brakes Work When Air Pressure Drops?",
+     mechanism: "Differential pressure across the C3W distributor valve diaphragm unseating the hollow stem.",
+     visual: "Color-coded pneumatic cross-section lifting against spring force as BP vents.",
+     bridge: "Even when emergency air drops instantly, why can't a train stop on a dime?"}
+  - {num: 10, sprint: 2, list_no: 7, title: "Why Can't a Train Stop Immediately After Applying Brakes?",
+     mechanism: "Steel-on-steel adhesion limits and graduated deceleration curves to prevent wheel flat-spots.",
+     visual: "Friction vector HUD comparing static vs kinetic rail adhesion at 110 km/h.",
+     bridge: "Because human drivers cannot stop in time, India built an automated radio shield to do it for them...",
+     existing: projects/kavach-railway-reality}
+  - {num: 11, sprint: 2, list_no: 2, title: "How Does India's Kavach Stop Trains Automatically?",
+     mechanism: "Dynamic TDMA over 406–470 MHz UHF 2FSK telemetry matched with track RFID positioning.",
+     visual: "Synchronized radio timeslot mesh between loco, mast, and sleeper RFID tag.",
+     bridge: "Kavach tracks trains through radio, but how do the rails themselves know a train is sitting on them?",
+     existing: projects/kavach-railway-reality}
+  - {num: 12, sprint: 2, list_no: 6, title: "How Do Railway Tracks Detect an Approaching Train?",
+     mechanism: "Low-voltage DC/Audio Frequency track circuits short-circuited by steel wheel-axle sets.",
+     visual: "Current flow diagram across rails dropping track relay contacts to de-energize signals.",
+     bridge: "Once a track detects a train, how does the system prevent two green lights on colliding routes?"}
+  - {num: 13, sprint: 2, list_no: 11, title: "How Do Railway Signals Prevent Train Collisions?",
+     mechanism: "Fail-safe Solid-State Interlocking (SSI) evaluating ladder logic and boolean route matrices.",
+     visual: "Dual-redundant processor voting scheme locking turnouts before setting aspect green.",
+     bridge: "Signals control train movement, but what tells road gates to slam shut kilometers ahead?"}
+  - {num: 14, sprint: 2, list_no: 12, title: "How Do Railway Level-Crossing Gates Know When to Close?",
+     mechanism: "Approach track treadles and audio-frequency track circuits activating interlocked boom barriers.",
+     visual: "Dynamic schematic showing train striking approach point, triggering interlocking relay.",
+     bridge: "Tracks control safety, but how do trains pull 1,000 amps from overhead lines without wearing a hole in them?"}
+  - {num: 15, sprint: 2, list_no: 4, title: "Why Don't Electric Train Wires Wear Out Immediately?",
+     mechanism: "Staggered zigzag catenary wire geometry distributing friction across carbon pantograph strips.",
+     visual: "Top-down view showing catenary sweeping laterally across the pantograph width.",
+     bridge: "That pantograph pulls megawatts to accelerate, but did you know it generates power when stopping?"}
+  - {num: 16, sprint: 2, list_no: 10, title: "How Can an Electric Train Generate Power While Braking?",
+     mechanism: "Reversible three-phase AC induction motors operating as asynchronous generators.",
+     visual: "Electromagnetic counter-torque vectors feeding current through the traction converter into OHE.",
+     bridge: "Brakes and power are solved, but why don't conical train wheels derail around sharp curves?"}
+  - {num: 17, sprint: 2, list_no: 8, title: "Why Don't Train Wheels Fall Off on Sharp Curves?",
+     mechanism: "Conical wheel tread profile inducing differential rolling radii and hunting oscillation self-centering.",
+     visual: "Dynamic cross-section of conical wheelset shifting laterally to balance rolling radius.",
+     bridge: "Rail wheel geometry is self-centering, but how does an automated Metro halt within 2 centimeters of platform doors?"}
+  - {num: 18, sprint: 2, list_no: 9, title: "How Does a Metro Train Stop at Exactly the Right Spot?",
+     mechanism: "Communication-Based Train Control (CBTC) transponder interrogation and target-speed profile curves.",
+     visual: "Deceleration profile matching transponder pings to wheel tachometer feedback.",
+     bridge: "Bridges heavy rail mechanics into wireless communications and signal architectures."}
+  # Sprint 3
+  - {num: 19, sprint: 3, list_no: 23, title: "Why Is Your Wi-Fi Slow Even With Full Signal?",
+     mechanism: "CSMA/CA contention windows, 2.4 GHz channel overlap, and airtime fairness starvation.",
+     visual: "Packet collision timeline showing backoff intervals on congested RF channels.",
+     bridge: "Wi-Fi chokes on radio interference, but how does a glass wire split high-speed internet to 64 apartments with no switches?"}
+  - {num: 20, sprint: 3, list_no: 17, title: "How Can One Optical Fiber Connect 64 Homes?",
+     mechanism: "Planar Lightwave Circuit (PLC) splitters using fused biconical tapers and downstream TDMA slicing.",
+     visual: "Light ray splitting through passive silica Y-junctions into individual fiber pigtails.",
+     bridge: "Fiber delivers terabits to the mast, but how does one cell tower manage 5,000 active phones without dropping?"}
+  - {num: 21, sprint: 3, list_no: 24, title: "How Can One Mobile Tower Connect Thousands of Phones?",
+     mechanism: "Orthogonal Frequency-Division Multiple Access (OFDMA) and spatial sector antenna arrays.",
+     visual: "Resource block grid assigning subcarrier frequencies across microsecond time slots.",
+     bridge: "Your tower connects you, but what happens when you drive 100 km/h past three towers on the highway?"}
+  - {num: 22, sprint: 3, list_no: 34, title: "How Does Your Phone Switch Towers Without Disconnecting a Call?",
+     mechanism: "RSRP/RSRQ measurement reports triggering B1/A3 event hard/soft network handovers.",
+     visual: "Dual-signal threshold HUD transitioning voice data channels between adjacent cells.",
+     bridge: "Cell towers track your sector, but how does your phone find your exact street coordinates with zero internet?"}
+  - {num: 23, sprint: 3, list_no: 22, title: "How Does GPS Find Your Location Without Internet?",
+     mechanism: "4-satellite pseudorange sphere intersection and relativistic atomic clock correction.",
+     visual: "3D spatial geometry intersecting spheres to pinpoint a single ground coordinate.",
+     bridge: "GPS relies on synchronized timestamps, which is the exact same math keeping your authenticator codes ticking..."}
+  - {num: 24, sprint: 3, list_no: 25, title: "How Do Authenticator Codes Change Every 30 Seconds?",
+     mechanism: "Time-Based One-Time Password (TOTP) HMAC-SHA1 hashing of Unix epoch time steps.",
+     visual: "Counter hashing visual: Unix timestamp modulo 30 generating 6-digit dynamic tokens.",
+     bridge: "We trust algorithms for safety, but how do we build high-voltage electrical switches with zero moving parts?"}
+  - {num: 25, sprint: 3, list_no: 29, title: "How Can an Electronic Switch Work Without Moving Parts?",
+     mechanism: "Optocoupler infrared isolation driving back-to-back SCRs during zero-crossing AC points.",
+     visual: "Internal optocoupler schematic showing LED activating phototriac at 0 V crossing.",
+     bridge: "Shifts from infrastructure backbones into smartphone micro-hardware."}
+  # Sprint 4
+  - {num: 26, sprint: 4, list_no: 26, title: "How Does Your Phone Camera Stabilize Shaky Videos?",
+     mechanism: "Closed-loop Lorentz voice coil actuators translating suspended lens barrels on leaf springs.",
+     visual: "Exploded 3D view of voice coils countering 4,000 Hz gyroscope vector inputs.",
+     bridge: "Magnets float your camera lens, but how does glass read your fingerprint through a glowing OLED screen?"}
+  - {num: 27, sprint: 4, list_no: 30, title: "How Does Your Fingerprint Sensor Work Under the Screen?",
+     mechanism: "Micro-collimator CMOS imaging vs piezoelectric ultrasonic acoustic boundary mapping.",
+     visual: "Ultrasonic pulses penetrating display layers and bouncing off epidermal skin ridges.",
+     bridge: "Fingerprint sensors use reflected light and sound; how does face unlock read your face in absolute darkness?"}
+  - {num: 28, sprint: 4, list_no: 31, title: "How Does Face Unlock Recognize You in Complete Darkness?",
+     mechanism: "Vertical-Cavity Surface-Emitting Laser (VCSEL) projecting 30,000 structured infrared dots.",
+     visual: "IR dot mesh projecting across facial contours decoded by a dedicated neural engine.",
+     bridge: "Sensors use invisible light; how do earbuds cancel loud jet engines using more sound waves?"}
+  - {num: 29, sprint: 4, list_no: 27, title: "How Do Earbuds Cancel Noise Using More Sound?",
+     mechanism: "Sub-millisecond DSP phase inversion creating acoustic destructive wave interference.",
+     visual: "Plot of incoming ambient wave summed with 180° inverted wave collapsing to zero.",
+     bridge: "Earbuds use miniature batteries; how does a heavy power bank convert voltage without catching fire?"}
+  - {num: 30, sprint: 4, list_no: 33, title: "How Does a Power Bank Convert Battery Power to Charge Your Phone?",
+     mechanism: "High-frequency synchronous buck-boost inductor switching and PWM charge regulation.",
+     visual: "Inductor magnetic energy storage charging and discharging across fast MOSFET gates.",
+     bridge: "Power banks operate silently, but why do cheap fast chargers make an annoying high-pitched screech?"}
+  - {num: 31, sprint: 4, list_no: 32, title: "Why Do Some Mobile Chargers Make a High-Pitched Noise?",
+     mechanism: "Magnetostriction in ferrite transformer cores and piezoelectric vibration in ceramic capacitors.",
+     visual: "Atomic-level lattice deformation within ferrite cores cycling at human audible frequencies.",
+     bridge: "Chargers pull current from your wall, but how does the smart meter outside measure watts without spinning dials?"}
+  - {num: 32, sprint: 4, list_no: 28, title: "How Does a Smart Electricity Meter Measure Your Bill?",
+     mechanism: "Micro-volt drop analysis across electron-beam welded manganin shunts plus Hall-effect sensors.",
+     visual: "PCB current flow diagram showing analog front-end sampling voltage drops.",
+     bridge: "Bridges personal electronics into domestic power and grid systems."}
+  # Sprint 5
+  - {num: 33, sprint: 5, list_no: 38, title: "How Does an Inverter AC Actually Save Electricity?",
+     mechanism: "Variable-speed BLDC compressor modulation avoiding high-current startup spikes.",
+     visual: "Compressor power draw curve comparing bang-bang relay cycling vs continuous modulation.",
+     bridge: "ACs pump heat out of rooms, but how does your fridge keep milk ice cold while radiating heat at the back?"}
+  - {num: 34, sprint: 5, list_no: 37, title: "Why Is Your Refrigerator Cold Inside but Hot at the Back?",
+     mechanism: "Phase-change thermodynamics across compressor, condenser coil, and capillary expansion valve.",
+     visual: "Closed-loop cycle showing liquid refrigerant boiling into vapor inside the evaporator.",
+     bridge: "Refrigerants extract heat, but how does a kitchen RO filter strip microscopic dissolved salt out of water?"}
+  - {num: 35, sprint: 5, list_no: 41, title: "How Does an RO Water Purifier Separate Salt From Water?",
+     mechanism: "Overcoming osmotic pressure using 100 PSI pumps across semi-permeable polyamide sheets.",
+     visual: "Microscopic water molecules squeezing through membrane pores while hydrated ions are rejected.",
+     bridge: "Purifiers run on domestic power, but why does a rooftop solar plant stop working the instant the grid goes down?"}
+  - {num: 36, sprint: 5, list_no: 48, title: "Why Do Most Rooftop Solar Systems Stop Working During a Power Cut?",
+     mechanism: "Automated anti-islanding protection disconnecting inverters to protect maintenance workers.",
+     visual: "Circuit breaker isolation preventing inverter voltage backfeed into dead utility lines.",
+     bridge: "When the grid is active, how does a solar inverter convert raw DC sunlight into clean 50 Hz wall power?"}
+  - {num: 37, sprint: 5, list_no: 47, title: "How Does a Solar Inverter Convert Sunlight Into Household Electricity?",
+     mechanism: "Full-bridge H-bridge inverter using high-frequency SPWM to synthesize pure AC sine waves.",
+     visual: "MOSFET bridge switching quadrants converting steady DC bus voltage into sinusoidal output.",
+     bridge: "Inverters sync to 50 Hz, but what happens to the country if the national grid deviates by just 0.1 Hertz?"}
+  - {num: 38, sprint: 5, list_no: 43, title: "Why Must India's Electricity Grid Stay Near 50 Hz?",
+     mechanism: "Rotational kinetic inertia of spinning 3,000 RPM alternators counteracting load variations.",
+     visual: "Rotor mechanical deceleration cutaway linked to nationwide grid frequency dial.",
+     bridge: "Bridges large-scale electrical networks into automotive and kinetic systems."}
+  # Sprint 6
+  - {num: 39, sprint: 6, list_no: 39, title: "How Does ABS Stop Your Car From Skidding?",
+     mechanism: "High-speed solenoid valves modulating line pressure 15 times/sec based on tone wheel sensors.",
+     visual: "Hydraulic valve diagram pulsing brake fluid pressure to maintain optimal tire slip.",
+     bridge: "ABS prevents skidding, but what sensor tells an airbag to deploy in 30 milliseconds before you hit the wheel?"}
+  - {num: 40, sprint: 6, list_no: 40, title: "How Does a Car Airbag Decide When to Open?",
+     mechanism: "Capacitive MEMS accelerometers detecting sudden deceleration and firing pyrotechnic squibs.",
+     visual: "Micro-cantilever flexing between capacitive plates triggering sodium azide ignition.",
+     bridge: "Cars use single dry clutches, but how do bikes slip clutches in stop-and-go traffic without burning up?"}
+  - {num: 41, sprint: 6, list_no: 35, title: "How Does a Motorcycle Wet Clutch Actually Work?",
+     mechanism: "Viscous fluid shear transmission across interleaved steel and friction plates in an oil bath.",
+     visual: "Exploded axial cutaway showing engine oil dissipating friction heat between plates.",
+     bridge: "Motorcycles burn fuel at low pressure, but how does a diesel engine atomize fuel under 2,500 bar?"}
+  - {num: 42, sprint: 6, list_no: 36, title: "How Does a Diesel Injector Handle Extreme Pressure?",
+     mechanism: "Piezoelectric crystal elongation triggering hydraulic pressure balance drops above the needle.",
+     visual: "Common-rail injector cutaway showing fuel pressure lifting the needle from below.",
+     bridge: "Diesel runs under high pressure, but why does an idle electric vehicle catch fire with the engine off?"}
+  - {num: 43, sprint: 6, list_no: 46, title: "Why Can an EV Battery Catch Fire Even When the Car Is Parked?",
+     mechanism: "Lithium dendrite puncture, SEI layer degradation, and self-sustaining thermal runaway.",
+     visual: "Microscopic dendrite growth bridging anode to cathode triggering internal short circuits.",
+     bridge: "Batteries carry cars, but how does an elevator lift a full load of passengers with a motor smaller than a motorcycle?"}
+  - {num: 44, sprint: 6, list_no: 3, title: "How Can a Small Motor Lift a Heavy Elevator?",
+     mechanism: "The 45% counterweight balancing rule balancing gross car weight plus average passenger payload.",
+     visual: "Dynamic balance diagram showing motor delivering minimal torque to overcome friction.",
+     bridge: "Elevators measure cable balance, but how does a steel platform weigh a 50-ton truck in 2 seconds?"}
+  - {num: 45, sprint: 6, list_no: 5, title: "How Does a Weighbridge Measure a 50-Ton Truck?",
+     mechanism: "Elastic shear beam micro-deformation measured via piezoresistive Wheatstone bridge circuits.",
+     visual: "3D steel load cell cutaway showing micro-strain elongation and bridge voltage shifts.",
+     bridge: "Bridges everyday industrial mechanics into defense and semiconductor engineering."}
+  # Sprint 7
+  - {num: 46, sprint: 7, list_no: 50, title: "How Are Billions of Tiny Transistors Printed Onto a Silicon Chip?",
+     mechanism: "DUV 193nm immersion photolithography using chrome photomasks and photoresist polymers.",
+     visual: "Step-and-scan optics projecting scaled UV laser patterns onto a chemical-coated wafer.",
+     bridge: "Light can print a 3-nanometer gate, but why does a single invisible speck of dust destroy an entire wafer?",
+     existing: episodes/india-semiconductor-gamble}
+  - {num: 47, sprint: 7, list_no: 44, title: "Why Can a Tiny Dust Particle Ruin a Microchip?",
+     mechanism: "ISO Class 1 vertical laminar displacement airflow (0.45 m/s) and sub-floor air scavenging.",
+     visual: "CFD particle simulation showing dust pushed straight down into floor vents.",
+     bridge: "Microchips process calculations, but how do Gallium Nitride chips steer radar beams at Mach 2 without moving?"}
+  - {num: 48, sprint: 7, list_no: 42, title: "How Can a Fighter Jet Radar Move Without Moving?",
+     mechanism: "Constructive and destructive wave interference from hundreds of phase-shifted T/R modules.",
+     visual: "Simulation of overlapping microwave wavefronts steering direction electronically.",
+     bridge: "Radars track through empty air, but how does a jet engine generate thrust without pushing against the ground?"}
+  - {num: 49, sprint: 7, list_no: 49, title: "How Does a Jet Engine Produce Thrust Without Pushing Against the Ground?",
+     mechanism: "Internal forward-wall pressure differentials and momentum conservation of accelerated mass.",
+     visual: "Pressure vector distribution inside the combustion chamber and convergent exhaust nozzle.",
+     bridge: "Jet engines pull air from the sky, but why are rocket engines that carry their own oxygen so difficult to cool?",
+     existing: projects/jet-engine-paradox}
+  - {num: 50, sprint: 7, list_no: 45, title: "Why Are Rocket Engines So Difficult to Build?",
+     mechanism: "Regenerative cryogenic cooling through milled copper jacket channels under 20 MPa pressure.",
+     visual: "Dual-loop cutaway showing liquid hydrogen cooling the throat before combustion injection.",
+     bridge: "Concludes the foundational 50-video library."}

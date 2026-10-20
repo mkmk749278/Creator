@@ -17,6 +17,7 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
 - Part D: 22 Recommendations
 - Part E: the owner's channel charter (verbatim)
 - Part F: the owner's production handoff guide and style examples for English films (verbatim, 2026-10-15)
+- Part G: the owner's 180-second hyper-visual format directive and blueprint (verbatim, 2026-10-20; rules in §4a-9)
 
 ---
 
@@ -593,6 +594,101 @@ says. Rules:
 - **Rules still frame it:** state the RBI/legal rule first, then "but in real life…", and label each part: sourced fact,
   bank/agency practice (with source), or our reasoning ("OUR ESTIMATE"). Never pass practice off as law, or a guess as
   data. Never advise dodging a valid debt; the defence is knowing your rights and settling on paper.
+
+### 4a-9. The 180-second hyper-visual explainer (owner, 2026-10-20)
+*Why (owner):* a 10-minute film that viewers leave at 2 minutes shows YouTube about 20% average percentage viewed (APV)
+and loses browse reach; the same 2 minutes on a 2.5-minute film is about 75–85% APV, which YouTube pushes. Long films also
+invite intros, history and padding. Our own data agrees (§4a-7): two thirds of the viewers we lose are gone by 0:45, and
+the people who stay mostly finish. So the channel now makes **2–3 minute, 16:9 engineering explainers, each about one
+mechanism**, in a dark blueprint look with a live telemetry HUD, published in themed sprints where each film hands the
+viewer to the next. The owner's text is verbatim in Part G; the 50 films, in order, are in `config/roadmap-180s.yaml`.
+
+**Where it applies:** every film in the roadmap, and any film the owner calls a 180-second explainer. Longer films the
+owner asks for keep the other rules in Part B. Where this section and an older rule disagree for these films, this
+section wins; everything not mentioned here (fact-check, rights, honesty labels, sound matrix, English VO rules, phonetics,
+YouTube package, merged PR) still applies.
+
+**Script**
+1. **Length: 320–390 words** at 130–140 words a minute, so about 2:20–3:00. The owner's PDF also gives 380–440 and
+   380–430; the 2026-10-20 directive message is the newest and wins. Count the words of the VO column before recording.
+2. **Single mechanism rule.** One observable mystery, one physical or code mechanism, one practical takeaway. No history,
+   market size, funding, policy or geopolitics. This replaces the four acts (Part E) and the 8–12 minute structure
+   (§4a-4) for these films.
+3. **Six phases** (times are for a 3:00 film; scale them for shorter scripts):
+
+   | Time | Phase | What happens |
+   |---|---|---|
+   | 0:00–0:10 | Zero-buffer hook | An everyday friction point or physical paradox, already in motion: the billing-counter standoff, a car at a toll gate at 80 km/h, an air hose snapping while the brakes lock. No greeting, intro or subscribe line. |
+   | 0:10–0:30 | Constraint framing | The scale and the bottleneck: what must happen, how fast, how heavy (1,200 tonnes at 110 km/h). |
+   | 0:30–1:30 | Layer 1: resting state | The cross-section at rest: lines, chambers, pressures, the A → B chain. |
+   | 1:30–2:10 | Stress reveal | The trigger (pressure drop, voltage pulse, load spike); parts move, the HUD jumps. 1.5 s of music silence, then the thud, as the paradox resolves. |
+   | 2:10–2:30 | Edge case | What happens when it fails (line break, blackout, packet loss) and how the design fails safe. |
+   | 2:30–3:00 | Synthesis and bridge | The insight in one sentence, said twice; the last ~15 s bridge to the next film. |
+
+   The hook names the thumbnail's subject, so lede-first (§4a-5 law 1) is met. The open loop with an exact minute
+   (§4a-5 law 2, 0:30–0:55) is dropped: the whole film is the payoff.
+4. **Say the key rule twice.** When the film delivers its critical rule or safety takeaway, state it, pause (`...`),
+   then say it again in plainer words.
+5. **Bridge, never a silent logo.** The last ~15 s name the next roadmap film as a question: "Topic A works this way, but
+   what about Topic B? Watch this next breakdown to find out." (`bridge` in the roadmap; re-word it if the fact-check
+   changes a number). It runs over the end screen, so the logo end card and end-screen zones sit under live VO. The
+   channel is still named only here (§5.5 rule 5). The 8–12 minute outro ("Know your rights. Stay practical. Jai Hind.")
+   is replaced by the bridge; the pinned-comment question stays in the YouTube package.
+6. **Voice:** the friendly, grounded peer, sharp and conversational, no fluff ("sodhi lekunda"). The English VO rules,
+   sentence architecture (§4a-6) and Akash phonetics (§4a-4) apply unchanged. "Vocal inflection cues" are carried by
+   punctuation (`...`, `—`, `?`), not bracket tags: the recording block stays clean text (owner, 2026-10-11: no emotion cues).
+
+**Picture**
+1. **Dark blueprint canvas** (`blueprint`, keys `bp_*`, in `config/brand.yaml`): `#0d1117` background, `#161b22` panels, a Cartesian
+   grid in `#30363d`. Colour means something: amber `#d29922` pressure, heat, fuel; electric cyan `#58a6ff` RF, current,
+   data packets; safety orange `#f0883e` friction, braking, stress, faults; muted slate `#8b949e` housings, return and
+   vent lines; white `#e6edf3` / terminal green `#3fb950` HUD numbers, dimension lines, verified states. *How this fits
+   §5.1 "no flat canvas":* the grid is never shown empty; there is always a moving cross-section or footage on it, plus
+   grain and vignette (the three layers, §5.2).
+2. **Real internal cross-sections, not surfaces.** Not a sticker: the aluminium dipole antenna, the charge-pump capacitor,
+   the switching transistor. Not a wheel: the differential pressure lifting the hollow stem in the C3W distributor valve.
+   Not a phone: the voice-coil actuators floating the lens barrel on leaf springs. Draw them from real reference photos
+   and diagrams first (§9.2). Label each "ILLUSTRATION" or "SIMPLIFIED".
+3. **Persistent telemetry HUD, top left**, tracking the film's real variable (MHz, V, kg/cm², ms, km/h), with normal and
+   stressed values, changing exactly when the VO says so. Every HUD value is a fact-checked number or carries
+   "ILLUSTRATIVE". The logo bug and citation tags move to the right-hand corners; there is no separate corner timer.
+4. **Real people for the friction.** No wide stock or drone shots, and **no clip used twice in one film**. Real footage
+   is for the hook and the human beats: tight micro-interactions (driver's view, hands on a phone or card machine, a
+   face reacting) or real close-ups of the machine. "ILLUSTRATIVE FOOTAGE" on stand-ins as usual. The 25–30% real-footage
+   target of §4a-5 law 4 doesn't apply: in these films the cutaway is the subject.
+5. **Pacing:** hold each visual state **2.5–4.5 s**; no cut under 1.8 s (tiring), no state held over 5.0 s (attention
+   drifts). This replaces the 3.5–5.0 s reset for these films. Inside a state the shot still never stops moving (§5.1).
+6. **Single delta per cut:** change only one of camera angle, assembly geometry or state variable at each cut, so the
+   viewer keeps their bearings.
+7. **Labels: 3 words at most** per callout.
+8. **Sync to 100 ms** (3 frames at 30 fps): every visual change hits its cue word. No Whisper (§7): in `script.tsv`,
+   start a new row at every cue word so `scripts/align_script.py` gives that cue its own start time, then check the
+   rows `align.md` flags by ear.
+
+**Engines.** The owner's text names Remotion (2D flows, HUDs), Manim CE (waves, fields, curves) and headless Blender
+on a Kaggle GPU (3D cutaways). We keep **HyperFrames** (pinned, CLAUDE.md): GSAP covers the 2D flows and HUDs, Three.js
+the 3D cutaways (§9.4 shows it holds up on our CPU VMs), and one engine keeps every scene on the same lint/check/snapshot
+loop. Manim or Blender are added only if the owner approves after a side-by-side test (open decision 1 below).
+
+**What to hand over when the owner assigns a roadmap topic** (the four blocks, in the chat):
+1. **Telemetry HUD spec:** variables, units, normal and stressed values, and when each changes. Save as `projects/<slug>/hud.md`.
+2. **Narration script**, word for word, 320–390 words, in a click-to-copy block in the recording-block format (§4a-2).
+3. **Storyboard:** a timestamped table of camera angles, cross-sections, materials, HUD changes and real human shots, with
+   the `[Visual Action]` cue for every line. This is the film's `screenplay.md` (TIME | AUDIO | VISUAL + HUD + SFX).
+4. **End-screen bridge:** the exact VO line and the end-screen picture that link to the next film.
+Then the normal pipeline: fact-check (the roadmap's mechanism notes are not facts), sourcing, EDL, scenes, review,
+render, YouTube package.
+
+**Publishing.** Upload in roadmap order: each bridge names the next film, so the next film should go up next, and its
+end-screen element is added once it is live. Where a roadmap film has an earlier long film on the same subject
+(`existing` in the roadmap: Kavach, the jet engine, chips), read that script first and keep its numbers (§4a-4 series
+continuity).
+
+**Open decisions for the owner (asked 2026-10-20):**
+1. Engines: stay on HyperFrames only, or test Manim CE and Blender (Kaggle GPU needs a Kaggle account and API key)?
+2. Order: the roadmap starts with eight money and payments films; §4a-7 (2026-10-17) said India-capability films first
+   and money topics as Shorts. We follow the roadmap (the newer instruction) unless the owner says otherwise.
+3. Upload pace: §4a-7 says one or two long films a week (50 films ≈ 6 months). Does that still hold for 3-minute films?
 
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
@@ -2111,3 +2207,235 @@ Here is the untold story of India’s 10-billion-dollar semiconductor gamble.
 | **Vocal Inflection** | Monotonous pitch drops at every period | Dynamic sentence length, dramatic pauses (`...`), em-dashes (`—`) |
 | **Visual Architecture** | Anonymous stock videos of people at desks | Real government gazettes, court orders, kinetic math models, satellite maps |
 | **India-Centric Angle** | Generic consumer advice | Grounded in Indian middle-class life, celebrating Indian capability while solving real systemic pain |
+
+---
+
+# Part G: Owner's 180-second format directive and blueprint (verbatim, received 2026-10-20)
+
+Kept word for word (the `[span_N]` citation markers from the owner's copy are removed, and the PDF's LaTeX is shown as
+plain units). How each point maps onto this playbook, and where we keep a stricter or different rule: §4a-9. The PDF's
+section 5 (the 50-video roadmap) is in `config/roadmap-180s.yaml`, transcribed field by field.
+
+## G.1 Master System Directive (chat message, 2026-10-20)
+
+# Master System Directive: The 180-Second "Hyper-Visual" Architecture
+
+Channel Identity: Be Practical with Kishore
+Format: 120–180 Seconds (2 to 3 Minutes) | 16:9 Landscape | Dark Blueprint Aesthetic (#0d1117)
+Core Mission: Eliminate long 8-minute documentary drag and academic formula lectures. Deliver high-density, hyper-visual engineering epiphanies that isolate a single physical, computational, or mechanical mechanism with crystal-clear visual cross-sections and real-time telemetry HUDs.
+
+---
+
+1. The Strategic Shift: 8-Minute Videos vs. 2–3 Minute Videos
+
+* The Retention & Watch-Hour Math: YouTube's recommendation engine promotes satisfaction metrics. A 10-minute video abandoned at 2 minutes registers ~20% Average Percentage Viewed (APV), signaling poor satisfaction. The identical 2 minutes of view duration on a 2.5-minute video yields 75% to 85% APV, which triggers distribution across Home and Suggested feeds.
+* The Mid-Roll Reality: A 7-to-8 minute video earns no extra mid-roll ad slots if viewers abandon it early. A tight 2-to-3 minute video watched to completion consistently fires pre-roll and post-roll ads and hits the 4,000-hour monetization threshold significantly faster through organic algorithmic volume.
+* Elimination of Didactic Drag: Long formats encourage introductions, historical context, and padding. The 180-second format enforces the Single Mechanism Rule: one observable mystery, one physical/code mechanism, and one actionable takeaway.
+
+Comparison:
+- 8–10 Min Video with Filler -> ~1:40 Watch Time -> 15–20% APV -> Algorithm Suppresses Reach (Mid-rolls never trigger)
+- 2–3 Min Calibrated Video -> ~1:50 Watch Time -> 75–85% APV -> Algorithm Pushes Browse/Search (High post-roll triggers + binge loops)
+
+---
+
+2. Visual Directives: "Hyper-Frames, Zero Filler"
+
+The viewer's eye must never be allowed to wander. Visual quality must look engineered, deliberate, and high-fidelity:
+
+* Zero Recycled B-Roll: Never repeat the same b-roll or drone shot multiple times in one video. Replace repetitive wide shots with tight human micro-interactions (driver POV, hands on screens, facial reactions) or direct mechanical close-ups.
+* Ultra-Realistic Internal Cross-Sections:
+  - Do not merely show a sticker; expose the aluminum dipole antenna, the charge pump capacitor, and the switching micro-transistor.
+  - Do not merely show a train wheel; expose the differential pressure lifting the hollow stem inside the C3W distributor valve.
+  - Do not merely show a smartphone; expose the Lorentz-force voice coil actuators floating the lens barrel on leaf springs.
+* The Dark Blueprint Aesthetic:
+  - Background Canvas: Slate and deep charcoal (#0d1117 and #161b22) overlaid with subtle Cartesian grids (#30363d).
+  - Functional Accent Colors: Amber (#d29922) for pressure/heat, Electric Cyan (#58a6ff) for RF signals and electric current, Safety Orange (#f0883e) for friction/stress, and Muted Slate (#8b949e) for passive boundaries.
+* Persistent Real-Time Telemetry HUD: The top-left corner must always feature an engineering HUD tracking empirical variables (frequency in MHz, voltage in V, pressure in kg/cm2, latency in ms, or speed in km/h) dynamically locked to the narration.
+* Cognitive Dwell Time & Pacing:
+  - Hold visual states for 2.5 to 4.5 seconds. Cuts under 1.8 seconds induce fatigue; static holds over 5.0 seconds trigger viewer drop-off.
+  - Follow the Single Delta Invariance Rule: Never shift camera angle, assembly geometry, and state variables simultaneously. Change only one parameter per cut to preserve viewer spatial orientation.
+
+---
+
+3. Audio Narration & Scripting Standards
+
+* Duration & Word Count: Strictly 320 to 390 words (paced at 130–140 WPM for a 2:15 to 2:45 total runtime).
+* Narrative Voice: Friendly, grounded peer. Informative, sharp, and conversational with zero fluff (sodhi lekunda).
+* The Zero-Buffer Hook (0:00–0:10): Drop the viewer straight into an everyday awkward friction point or physical paradox (e.g., standoff at a billing counter, car hitting a toll gate at 80 km/h, air brake hose rupturing). No greetings, no channel intros, no subscriber pleas.
+* Repetition of Critical Concepts: Whenever a crucial rule or safety takeaway is delivered, state it clearly, pause, and immediately reinforce it a second time in plain words to lock in comprehension.
+* Algorithmic End-Screen Bridge (Final 15s): Never end on a silent logo. Verbally hook into the next video in the sprint to drive session watch time: "Topic A works this way, but what about Topic B? Watch this next breakdown to find out."
+
+---
+
+4. Technical Execution Stack
+
+* Remotion (React/TypeScript): Used for 2D technical vector flows, network topologies, state machine logic, and real-time HUD overlays.
+* Headless Blender (bpy) on Kaggle GPU: Used for 3D rigid-body mechanical cutaways, exploded assemblies, and studio-lit PBR renders using Cycles GPU acceleration.
+
+---
+
+5. Mandatory Deliverable Structure for Every Video Request
+
+When assigned any topic from the 50-video roadmap, output the response using these 4 structured blocks:
+
+Block 1: Telemetry HUD Specification
+- Defined units, empirical parameters, and normal vs. stressed states.
+
+Block 2: Master Audio Narration Script (Click-to-Copy)
+- Fully written word-for-word script (under 390 words) with vocal inflection cues and repeated emphasis on critical takeaways.
+
+Block 3: Hyper-Visual Storyboard & B-Roll Breakdown
+- Timestamped visual table detailing 3D camera angles, internal cross-sections, PBR materials, and real-world human b-roll cues.
+
+Block 4: Algorithmic End-Screen Hook
+- The exact verbal and visual bridge linking to the next video in the sprint.
+
+## G.2 "Engineering the Three-Minute Epiphany: Master Channel Architecture & AI Production Blueprint" (PDF, 2026-10-20)
+
+Below is the consolidated, production-ready operational blueprint unifying the channel strategy, audience psychology,
+visual and audio specifications, Claude system instructions, and the prioritized 50-video release roadmap. While direct
+file injection into Google Drive is not natively available via API tools in this session, the text below is formatted in
+clean Markdown so it can be copied and saved directly into a Google Doc or Drive folder.
+
+### 1. Executive Channel Strategy & The Architectural Pivot
+
+**What the Strategy Is**
+
+The channel produces **2 to 4-minute (120–240 second) high-density landscape (16:9) engineering explainers**. Each
+video discards classroom didacticism, promotional hype, and talking-head filler, isolating and deconstructing a
+**single physical, mechanical, or computational mechanism** using dark-mode technical blueprints, 3D/orthographic
+cutaways, and synchronized telemetry heads-up displays (HUDs).
+
+**Why We Changed to This Strategy (The Strategic Pivot)**
+
+```
+Traditional Educational Ecosystem (Fragmented & Leaky)
+  JEE / Coaching Lectures (60–180m) ──► High fatigue, formula memorization, zero spatial intuition
+  Geopolitical / News Media (10–25m) ──► National rhetoric, policy framing, zero engineering mechanics
+  Social Micro-Shorts (30–60s)       ──► Superficial trivia micro-dosing, zero multi-step causal logic
+                    │
+                    ▼
+          THE UNCLAIMED BLUE OCEAN:
+  The 180-Second "Aha!" Mechanical Explainer (>85% APV)
+```
+
+1. **Resolving the "Aha! Deficit":** Indian digital media is polarized between 90-minute formulaic coaching lectures
+   (JEE/GATE/UPSC) and hyper-simplified 30-second vertical trivia or sensationalist geopolitical news. The tech-literate
+   demographic (software developers, engineering students, builders, civil service aspirants) interacts daily with
+   complex infrastructure—such as UPI, Kavach, electronic tolling, and AESA radars—yet is offered only public relations
+   summaries rather than bare-metal explanations. Providing first-principles mechanistic clarity resolves this epistemic
+   hunger and drives organic peer-to-peer sharing.
+2. **The Algorithmic Retention Math (APV vs. AVD):** On YouTube, an 8-to-10 minute video where a user drops off at the
+   2-minute mark registers an **Average Percentage Viewed (APV) of 20% to 25%**, signaling low satisfaction and causing
+   the algorithm to suppress browse impressions. That identical 2 minutes of view duration on a tight 3-minute video
+   yields an **APV of ~67% to 75%**, signaling high audience completion and triggering aggressive distribution across
+   YouTube Search and Browse feeds.
+3. **Elimination of Didactic Drag:** Standard educational videos lose over 40% of their audience in the first 60 seconds
+   due to channel logos, host greetings, and theoretical definitions. The new strategy enforces an immediate
+   **Zero-Buffer Hook**, presenting an observable physical paradox within 8 seconds.
+4. **The Co-Visitation Recommendation Engine:** The initial plan sampled unrelated topics at random (e.g., an elevator
+   video followed by a microchip video). The YouTube recommendation engine relies on **co-visitation graphs**
+   (recommending Video B because viewers who watched Video A also watched Video B). By reorganizing the 50 videos into
+   **7 tightly clustered, thematic sprints**, each video directly tees up the next, maximizing continuous session watch
+   time and dominating the "Up Next" suggested column.
+
+### 2. Audio Scripting & Narrative Engineering Guidelines
+
+- **Script Length:** Exactly **380 to 440 words** for a target speaking pace of 135 to 145 words per minute (yielding
+  ~2.5 to 3 minutes of runtime).
+- **The Single Mechanism Rule:** Do not explain the history, market size, or geopolitical impact. Isolate the single
+  physical, pneumatic, or cryptographic choke point.
+- **Zero Banter / No Host Persona:** Eliminate "Welcome back to the channel," "Hit subscribe," or rhetorical intros.
+  Treat the viewer as an analytical adult who values time efficiency.
+- **Auditory-Visual Lock:** Every script must be annotated with bracketed visual cues. Visual transitions must hit
+  within 100 milliseconds of the narration cue to eliminate split-attention fatigue.
+
+**The 180-Second Narrative Retention Protocol**
+
+| Timestamp | Phase | Objective & Structural Execution | Psychological Dynamic |
+|---|---|---|---|
+| **0:00 – 0:10** | **The Zero-Buffer Hook** | Present a real-world physical paradox or failure scenario (e.g., air hose snaps, but train brakes lock). | Establishes an immediate cognitive gap. |
+| **0:10 – 0:30** | **System Constraint Framing** | Define the operational scale and physical/mathematical bottleneck (e.g., 1,200 tons moving at 110 km/h). | Frames the governing boundaries. |
+| **0:30 – 1:30** | **Layer 1 Decomposition** | Reveal the internal cross-section in its resting equilibrium state; trace lines, chambers, and pressures. | Establishes the core causal dependency chain (A → B). |
+| **1:30 – 2:10** | **Telemetry & Stress Reveal** | Introduce the trigger (pressure drop, voltage pulse, load spike); animate moving components and HUD readouts. | Resolves the initial paradox under stress. |
+| **2:10 – 2:30** | **Edge-Case Resolution** | Show what occurs during critical failure (line fracture, blackouts, packet drops). | Reinforces fail-safe system design. |
+| **2:30 – 3:00** | **The "Aha!" Synthesis & Chaining** | Deliver the core insight in one sentence; bridge immediately to the adjacent video topic. | Delivers epistemic closure and drives session auto-play. |
+
+### 3. Visual Identity, Animation Architecture & HUD Specifications
+
+**Visual Palette & Canvas Rules**
+
+- **Canvas:** Dark slate and charcoal base (#0d1117 and #161b22) overlaid with muted Cartesian grid lines (#30363d) to
+  prevent eye strain and establish a technical blueprint aesthetic.
+- **Functional Color Taxonomy:**
+  - **Amber (#d29922):** High hydraulic/pneumatic pressure, fuel flows, active mechanical heat.
+  - **Electric Cyan (#58a6ff):** RF signals, electric current, digital packet routing, logic state signals.
+  - **Safety Orange (#f0883e):** Kinetic contact friction, braking forces, mechanical stress points, fault states.
+  - **Muted Slate (#8b949e):** Structural enclosures, return/exhaust conduits, atmospheric reference venting.
+  - **Pure White / Terminal Green (#e6edf3 / #3fb950):** HUD numeric readouts, dimension lines, verified states.
+
+**Cognitive Load Budgeting & Pacing Rules**
+
+- **Visual Dwell Time:** Maintain individual visual states on screen between **2.5 and 4.5 seconds**. Cuts under 1.8
+  seconds cause saccadic eye thrashing; static holds over 5.0 seconds trigger attention drift.
+- **Single Delta Invariance:** Never shift the camera perspective, assembly geometry, and state variables
+  simultaneously. Change only one parameter per cut to maintain viewer spatial orientation.
+- **Typography:** Labels must never exceed **3 words per callout** to prevent visual reading from competing with auditory
+  processing.
+- **Real-Time Telemetry HUD:** All videos must render a persistent corner HUD tracking empirical variables (e.g.,
+  pressure in kg/cm², frequencies in MHz, latency in ms, or velocity in km/h) locked to narration.
+
+### 4. Master Claude Instructions (System Prompt for Video Production)
+
+Copy and paste this block directly into Claude Code, Claude Opus, or Claude 3.5 Sonnet to generate scripts, visual cues,
+and animation code deterministically:
+
+```
+You are the Lead Systems Engineer, Technical Scriptwriter, and Motion Code Architect for "Be Practical with Kishore," a high-density engineering channel delivering 180-second visual explainers on Indian and global technology.
+
+Your core mission is to deconstruct complex mechanical, computational, and electromechanical systems using first principles. You strictly reject didactic lecture drag, vague PR summaries, and superficial trivia.
+
+### Core Production Rules:
+1. Duration & Cadence: Scripts must strictly span 380 to 430 words (approx. 180 seconds at 140 WPM).
+2. The Single Mechanism Rule: Isolate the single physical, mathematical, or computational linchpin. Omit history, funding, policy, and filler.
+3. Retention Protocol: Structure every script into the 6 mandatory phases:
+   - 0:00–0:10: Zero-Buffer Hook (The Physical Paradox)
+   - 0:10–0:30: System Constraint Framing (Governing Boundaries)
+   - 0:30–1:30: Layer 1 Decomposition (Resting Equilibrium)
+   - 1:30–2:10: Telemetry & Stress Reveal (Active State Change)
+   - 2:10–2:30: Edge-Case Resolution (Critical Failure / Fail-Safe)
+   - 2:30–3:00: The "Aha!" Synthesis & Next-Episode Bridge
+4. Visual-Auditory Synchronization: Every line of dialogue must include bracketed [Visual Action] directives specifying camera angles, component color changes, and HUD telemetry shifts within 100ms precision.
+5. Code-First Visual Generation: When requested, output executable code:
+   - Remotion (React/TypeScript): For state transitions, networking loops, and UI HUDs.
+   - Manim CE (Python): For wave dynamics, fields, vector calculus, and parametric curves.
+   - Blender Python (bpy): For 3D mechanical cuts and kinematic linkages.
+
+### Design System Constants:
+- Canvas: #0d1117 (Background), #161b22 (Panels), #30363d (Grid lines)
+- Accents: Amber #d29922 (Pressure/Hydraulics), Electric Cyan #58a6ff (Data/Current), Safety Orange #f0883e (Mechanical Friction/Stress), Muted Slate #8b949e (Passive/Vented)
+- Max visual dwell time: 2.5–4.5 seconds per state.
+- Max text label: 3 words per on-screen graphic.
+
+When a topic is provided, output:
+1. Telemetry HUD Configuration (Parameters, units, normal vs. stressed values).
+2. Word-for-Word 400-Word Script with synchronized [Visual & HUD Actions].
+3. Executable Animation Code (Remotion or Manim CE).
+4. Direct Next-Episode Bridge Hook for the suggested video algorithm.
+```
+
+### 5. The Master 50-Video Algorithmic Priority Roadmap (7 Sprints)
+
+The 50 topics from the channel list are organized into 7 Sequential Thematic Sprints. Videos are sequenced to maximize
+co-visitation suggestions, guiding viewers through continuous auto-play sessions. *(Full table: `config/roadmap-180s.yaml`.)*
+
+### 6. Execution Protocol for Batch Production
+
+1. **Audio Synthesis First:** Generate voiceover using an authentic, natural voice profile locked strictly between 135
+   and 145 words per minute.
+2. **Timestamp Alignment:** Process audio through Whisper to export word-level JSON timestamps.
+3. **Claude Code Render Generation:** Pass the script, timestamp JSON, and design tokens into Claude to output the
+   corresponding Remotion React composition or Python Manim script.
+4. **Automated Review & End-Screen Stitching:** Verify that visual transitions align within 100 milliseconds of speech
+   markers, ensure HUD readouts update concurrently, and link the final 15 seconds directly to the sprint's designated
+   Next-Episode Bridge.
