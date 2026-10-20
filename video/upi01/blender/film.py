@@ -484,6 +484,7 @@ sc.cycles.max_bounces = 4; sc.cycles.diffuse_bounces = 2; sc.cycles.glossy_bounc
 sc.cycles.transmission_bounces = 2; sc.cycles.volume_bounces = 0; sc.cycles.volume_step_rate = 4
 sc.view_settings.view_transform = "AgX"; sc.view_settings.look = "AgX - Medium High Contrast"
 sc.render.fps = FPS; sc.render.image_settings.file_format = "PNG"
+sc.render.use_overwrite = False; sc.render.use_placeholder = True   # resumable after a VM pause
 os.makedirs(OUT, exist_ok=True)
 t0 = time.time()
 if SHOT in STILLS:
