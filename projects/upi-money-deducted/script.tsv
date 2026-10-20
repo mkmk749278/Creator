@@ -1,18 +1,19 @@
 te	en
-	Your phone says... debited. Eight hundred and forty rupees. The shopkeeper turns the speaker toward you — silence. Nothing came. And the queue behind you is getting louder.
-	So where is your money right now? It is not lost. It is stuck between two banks.
-	U-P-I moves about eighty crore payments a day. And the switch in the middle, run by N-P-C-I, gives each bank just fifteen seconds to answer.
-	Here is the path when everything works. You type your U-P-I pin. Your app sends the request to N-P-C-I. N-P-C-I asks your bank to debit you.
-	Your bank takes the money out of your account and replies, done.
-	Only then does N-P-C-I ask the shop's bank to credit the shop. The shop's bank adds the money and replies, done.
-	Two legs. A debit leg first, then a credit leg — two separate steps, on two separate bank computers. Your money leaves first... and arrives second.
-	Back to the counter. Your bank has already debited you. The credit request reaches the shop's bank... and the reply never comes back.
-	Maybe a network link dropped. Maybe the session timed out.
-	Fifteen seconds pass. N-P-C-I cannot wait forever, so it marks your payment as deemed — pending. Nobody knows yet whether the shop got the money.
-	So your app shows debited, and the shop shows nothing. Both screens are telling the truth.
-	Then the system checks itself. N-P-C-I goes back to the shop's bank and asks, what happened?
-	If the money reached the shop, it becomes a success. If it never reached, the shop's bank sends it back, and your bank reverses the debit. Either way, it has to settle.
-	So here is the rule. For a payment to a shop, the R-B-I says the money must come back within five days. Sent to a person, by the next day. If the bank is late, it owes you one hundred rupees for every day of delay — without you even asking.
-	Let me say that again. Shop, five days. Person, next day. Late means one hundred rupees a day.
-	And before you pay a second time... check the status of the first one.
-	That is the payment that breaks. So what happens in those few seconds when a hundred rupee payment goes right? Watch this next breakdown to find out.
+	Imagine this. You scan the Q-R at a kirana shop and pay eight hundred and forty rupees. Your phone says... debited. But the shop's speaker stays silent, and the shopkeeper says, nothing came. You know this feeling, right?
+	So where did your money go? Relax, it's not lost. It's stuck between two banks, and I'll show you exactly where.
+	See, U-P-I handles about eighty crore payments a day. So the system in the middle, run by N-P-C-I, gives every bank just fifteen seconds to reply.
+	First, let's watch a normal payment. You type your pin, and N-P-C-I tells your bank, take eight hundred and forty rupees from this account.
+	Your bank takes it out and replies, done.
+	Only then does N-P-C-I tell the shop's bank, add this money. The shop's bank adds it and replies, done.
+	So one payment is really two steps, in two different banks. Money goes out first... and comes in second. Simple, right?
+	Now back to your shop. Step one worked — your money is already out. Step two starts... and the shop's bank never replies.
+	Maybe a network link broke, or the connection timed out.
+	After fifteen seconds, N-P-C-I can't keep waiting, so it puts your payment on hold. The system calls it deemed — which simply means, not sure yet.
+	So why does your phone say debited? Because step one finished, but step two never arrived. Both screens are telling the truth.
+	Then N-P-C-I goes back and asks the shop's bank, did the money reach the shop or not?
+	If yes, it becomes a success. If not, the shop's bank sends it back, and your bank returns your money.
+	So what does the R-B-I rule say? Paid a shop? Your money must come back within five days. Sent it to a person? By the next day. And if the bank is late, it pays you one hundred rupees for every extra day — without you even asking.
+	Let me say that once more. Shop, five days. Person, next day. Late means one hundred rupees a day.
+	One tip from me. Before you pay again, check the first payment's status, or you may pay twice.
+	Has this happened to you? Tell me in the comments how long it took.
+	That's the payment that breaks. But what happens when a hundred rupee payment goes right? Watch this next one.

@@ -150,6 +150,12 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   voice. Numbers and amounts as words (`thirty thousand rupees`), no digits, `₹`, `!`, double quotes or brackets in
   VO text; `—` allowed for mid-thought pivots; `?` on every real question; no emotion cues (empty `emotion` column, owner 2026-10-11). Put `en` in the project's `lang.txt`: the `en` column is then the VO and `te` an
   optional Telugu dub; `tools/build_script.py` lints both. The Telugu rules below apply to Telugu films and dubs.
+- **Simple, friendly, interactive English (owner, 2026-10-20; PLAYBOOK §4a-10, measured on Indian explainer channels).**
+  Everyday words an Indian uses at a shop or bank (payment, not transaction; but, not however); talk to one person
+  (≥ 3 "you" per 100 words) as a person (≥ 1 "I/let's" per 100); ≥ 10% of sentences are questions (the viewer's own
+  doubt, quiz splits, one comment question near the end); ≥ 2 check-ins ("right?", "See,", "isn't it?", no Hindi tags);
+  reassure, never lecture; average 7.5–14 words a sentence, none over 25; contractions. `scripts/spoken_english_check.py`
+  must pass, and every English film's reply pastes its recording blocks (Akash, < 1,500 characters each).
 - **English films: owner's production guide (2026-10-15; PLAYBOOK §4a-4, verbatim in Part F).** *Why:* earlier scripts
   sounded like a news reader. Voice = a street-smart elder brother talking across a table; no lecture openers ("Now let us
   understand…", "In this video we will…"); mix short punches with flowing sentences (never 3+ very short sentences in a

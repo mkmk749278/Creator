@@ -634,7 +634,8 @@ YouTube package, merged PR) still applies.
    changes a number). It runs over the end screen, so the logo end card and end-screen zones sit under live VO. The
    channel is still named only here (§5.5 rule 5). The 8–12 minute outro ("Know your rights. Stay practical. Jai Hind.")
    is replaced by the bridge; the pinned-comment question stays in the YouTube package.
-6. **Voice:** the friendly, grounded peer, sharp and conversational, no fluff ("sodhi lekunda"). The English VO rules,
+6. **Voice:** the friendly, grounded peer, sharp and conversational, no fluff ("sodhi lekunda"), written to §4a-10
+   (simple everyday English, questions, "you" and "I"; `scripts/spoken_english_check.py` passes). The English VO rules,
    sentence architecture (§4a-6) and Akash phonetics (§4a-4) apply unchanged. "Vocal inflection cues" are carried by
    punctuation (`...`, `—`, `?`), not bracket tags: the recording block stays clean text (owner, 2026-10-11: no emotion cues).
 
@@ -706,6 +707,73 @@ continuity).
 2. Order: the roadmap starts with eight money and payments films; §4a-7 (2026-10-17) said India-capability films first
    and money topics as Shorts. We follow the roadmap (the newer instruction) unless the owner says otherwise.
 3. Upload pace: §4a-7 says one or two long films a week (50 films ≈ 6 months). Does that still hold for 3-minute films?
+
+### 4a-10. Simple, friendly, interactive English for Indian listeners (owner, 2026-10-20)
+*Why (owner):* "keep the narration more simple daily English for Indians … more friendly, more interactive," and give
+the recording text for every video. Our first 180-second script (film 01 v1) was correct but sounded like a clipped
+announcement: short flat statements, almost no questions, no narrator. This section is how every English VO is written
+from now on; `scripts/spoken_english_check.py` measures it and must pass before a VO goes to the owner.
+
+**What we measured (2026-10-20).** Openings (first 30–90 s) of Indian English explainers, transcripts read through the
+search tool because YouTube blocks caption downloads from the container (study only; nothing goes into our films):
+
+| Channel · video (views) | Avg words / sentence | Questions | "you" / 100 words | "I, we, let's" / 100 | Rare words |
+|---|---|---|---|---|---|
+| Think School · IT shift (1.2M) | 20.5 | 0% | 0.0 | 0.9 | 10.6% |
+| Think School · 4F crisis (2.4M) | 11.4 | 22% | 1.9 | 3.9 | 5.3% |
+| Akshat Shrivastava · market correction (673K) | 12.5 | 21% | 4.7 | 4.7 | 5.3% |
+| CA Rachana Ranade · REC and PFC (153K) | 20.5 | 12% | 3.7 | 2.4 | 4.3% |
+| CA Rachana Ranade · retirement (131K) | 23.6 | 0% | 6.1 | 1.2 | 3.2% |
+| Science ABC · drinks run down the cup (5.5K, 543K subs) | 20.0 | 11% | 1.1 | 0.0 | 14.4% |
+| Our film 01, v1 | 7.5 | 6% | 5.2 | 0.3 | 0.4% |
+| Our film 01, v2 (this rule) | 8.3 | 21% | 5.4 | 1.3 | 0.0% |
+
+Rare words = content words outside everyday English (wordfreq Zipf < 3.5), with Indian everyday words allowed. The
+pattern: the channels Indians watch talk *to* the viewer and *as a person* ("let me tell you", "you know very well",
+"right?"), ask the viewer's own question out loud ("natural question comes that hey if I have already invested … what
+should I do?"), turn the hook into a little game ("Let's play a game. Imagine it's a normal day…": Warikoo, who now
+records in Hindi), reassure ("your head starts spinning, right? But the truth is it's not tough. It was just never
+explained simply." Rachana Ranade) and use everyday Indian anchors (salary, SIP, your pocket). The one channel full of
+textbook words ("exasperating", "conundrum", "propensity") has the weakest views for its size.
+
+**What the research says.**
+- *Conversational style teaches better:* a meta-analysis of studies comparing "you/I" conversational text with formal
+  text found learners learn more from the conversational version (Ginns, Martin & Marsh 2013, *Educational Psychology
+  Review* 25: 445–472; the "personalization principle" in multimedia learning).
+- *Short sentences are understood:* in the American Press Institute readability data, readers understood more than 90%
+  at an average of 14 words a sentence and under 10% at 43 words (as cited by GOV.UK, which caps sentences at 25 words).
+- *Most of our listeners hear English as a second language:* slower, clearer speech helps second-language listeners in
+  several studies, though results are mixed (Easy Language speech-rate study, 2025, tested 130–190 wpm). Human Indian
+  creators speak fast (≈ 140–225 wpm in our sample, from caption timestamps), but they have a face and a real voice; a TTS voice with no face
+  needs more room. Keep Akash at ~140 wpm.
+- *Indian English has its own friendly tags:* the invariant "isn't it?" is used most in Indian English among Asian
+  Englishes (Parviainen 2016, cited in Degenhardt 2025, *Journal of Pragmatics*); "right?" is the pan-Indian check-in.
+  We use those, not Hindi tags ("na", "yaar"), so viewers in every state feel included.
+
+**The rules (the checker enforces the numbers).**
+1. **Everyday words only.** The words an Indian uses at a shop, a bank counter or on a phone call: pay, money, bank,
+   account, bill, salary, shop, phone, reply, wait, send, back. Say "payment", not "transaction"; "your bank", not
+   "remitter"; "about", not "approximately"; "but", not "however"; "so", not "therefore". A technical word only when it
+   is the thing the film is about, said once with its plain meaning ("the system calls it deemed — which simply means,
+   not sure yet"). Indian everyday words are welcome: lakh, crore, kirana, chai, recharge, EMI.
+2. **Talk to one person.** "You" in most sentences (≥ 3 per 100 words); put the viewer inside the scene ("Imagine this.
+   You scan the Q-R…").
+3. **Be a person.** The narrator speaks as "I", "me", "let's" at least once every 100 words ("I'll show you exactly
+   where", "Let me say that once more", "One tip from me").
+4. **Ask, then answer.** At least one sentence in ten is a question: the viewer's own doubt in their words ("So why does
+   your phone say debited?"), quiz-style splits ("Paid a shop? … Sent it to a person? …"), and one comment question
+   near the end ("Has this happened to you? Tell me in the comments how long it took.").
+5. **Check in.** "Right?", "See,", "You know this feeling, right?", "Simple, right?", "isn't it?": at least two a film,
+   never in back-to-back sentences.
+6. **Reassure, never lecture.** "Relax, it's not lost." "Don't worry, this part is simple." No "In this video we will",
+   no "Let us understand" (§4a-5, §4a-6 still apply).
+7. **Sentence shape.** Average 7.5–14 words (the creators sit at 11–13; our punchy repeats pull it down), none over 25,
+   never three same-length sentences in a row; contractions as people speak them (it's, I'll, don't, can't).
+8. **Same honesty.** Simpler words never change a fact: every simplified line must still match its claims row.
+
+**Recording text for every film:** every English film's reply to the owner pastes the VO as click-to-copy recording
+blocks (§4a-2): Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on, blocks under 1,500
+characters (§9.3), each with its file name. Run `python3 scripts/spoken_english_check.py projects/<slug>/vo.txt` first.
 
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
