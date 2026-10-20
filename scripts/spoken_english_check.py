@@ -102,8 +102,8 @@ def main():
     if you < 3:
         fails.append(f"'you/your' {you:.1f} per 100 words, want >= 3 (creators: 2-6)")
     me = 100 * sum(w in ME for w in ws) / n
-    if me < 1:
-        fails.append(f"narrator 'I/me/we/let's' {me:.1f} per 100 words, want >= 1 (creators: 1-5)")
+    if me < 1:  # a note since 2026-10-20: audience reviews (§4a-11) flagged forced "I find…" lines as template filler
+        notes.append(f"narrator 'I/me/we/let's' {me:.1f} per 100 words (creators: 1-5); add one only where it sounds natural")
     low = text.lower()
     checks = sum(low.count(c) for c in CHECKINS)
     if checks < 2:

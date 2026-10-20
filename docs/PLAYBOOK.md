@@ -788,8 +788,10 @@ the blueprint only shows them in an example), and **number words, not digits** (
    execution of the debit instruction"). Put the thing first when it helps: "The shop's bank — it never replied."
    Chain short clauses with and, but, so, not with although or whereas.
 3. **Talk to one person.** "You" in most sentences (≥ 3 per 100 words); put the viewer in the scene.
-4. **Be a person.** The narrator speaks as "I", "me", "let's" at least once every 100 words ("I'll show you", "Let's
-   look at", "One tip from me").
+4. **Be a person.** The narrator speaks as "I", "me", "let's" where it sounds natural ("My one rule", "the way I
+   remember it", "I know you have one"). Aim for about one per 100 words, but never force it: six independent audience
+   reviews of film 01 flagged lines like "Let me walk you through" and "one thing I find really interesting" as
+   YouTube-template filler, so the checker reports this as a note, not a failure.
 5. **Ask, then answer.** At least one sentence in ten is a question: the viewer's own doubt in their words, a short
    self-question ("Why? Because…"), quiz-style splits ("Paid a shop? … Sent it to a person? …").
 6. **Signposts and check-ins** (at least two a film, never back to back): "Here's the catch", "Think about it", "Look at
