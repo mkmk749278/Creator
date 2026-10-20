@@ -10,7 +10,8 @@ mkdir -p "$OUT"
 for s in "$@"; do
   [ -f "$OUT/$s.uploaded" ] && { echo "SKIP $s (uploaded)"; continue; }
   echo "START $s $(date -u +%T)"
-  nice -n 10 "$V/bin/python" -I video/upi01/blender/film.py -- "$s" "$SPP" "$OUT/$s" "$RES" 2>&1 | grep -E 'FILM|Traceback|Error:' | grep -v CUEW
+  case "$s" in S*) sp=${STILL_SPP:-12}; rs=${STILL_RES:-1920x1080} ;; *) sp=$SPP; rs=$RES ;; esac   # stills get pushed in later
+  nice -n 10 "$V/bin/python" -I video/upi01/blender/film.py -- "$s" "$sp" "$OUT/$s" "$rs" 2>&1 | grep -E 'FILM|Traceback|Error:' | grep -v CUEW
   case "$s" in S*) cp "$OUT/$s/f_0001.png" "$OUT/$s.png"; f="$OUT/$s.png" ;;
     *) ffmpeg -hide_banner -loglevel error -y -framerate 24 -i "$OUT/$s/f_%04d.png" -c:v libx264 -pix_fmt yuv420p \
          -crf 12 -preset slow -maxrate 40M -bufsize 80M "$OUT/$s.mp4" && f="$OUT/$s.mp4" ;;
