@@ -1,23 +1,23 @@
-You pay eight hundred and forty rupees on U.P.I. at a kirana shop. Your phone says debited, but the shop's soundbox stays silent. Now you're both staring like it's a third umpire review.
-So where is your money? In three minutes — where it is, when it comes back, and how not to pay twice.
-Let me explain what happens after you type your pin.
+Your U.P.I. app says eight hundred and forty rupees debited. But the shop's soundbox is silent, and you're both staring like it's a third umpire review.
+So where did your money go? In three minutes — where it is, when it comes back, and the mistake that makes you pay twice.
+Here's what happens after you type your pin.
 Step one, your bank takes the money out — that's why debited shows up instantly.
-Step two, N.P.C.I., the middleman that runs U.P.I., calls the shop's bank — add this money.
+Step two, N.P.C.I. — the middleman that runs U.P.I. — calls the shop's bank: add this money.
 Think about it — it's a phone call. And like every call in India... three things can happen.
-One. The shop's bank picks up and says, done, the shop got it. That's success.
-Two. The shop's bank picks up and says, sorry, can't take it, maybe the account has a problem. That's failed.
-Your money already left, so N.P.C.I. tells your bank, give it back. Failed sounds scary, but it's the safe one — just pay again, right?
+One, the shop's bank picks up — done, the shop got it. That's success.
+Two, it picks up — sorry, can't take it, maybe an account problem. That's failed.
+Your money already left, so N.P.C.I. tells your bank to return it. Failed sounds scary, but it's the safe one — your money is coming back, so pay again.
 Three, the troublemaker. N.P.C.I. calls... and the line goes quiet. Hello? Hello? Call dropped.
 Did the shop's bank add the money before it dropped? Nobody knows. Your app shows this as pending, or processing.
-After fifteen seconds, N.P.C.I. marks it approved for now, to be checked later.
-Here's the twist — the real money doesn't travel with the call, it moves later, in big batches, about ten times a day, through the R.B.I.
-In the next batch, your money moves to the shop's bank. That's where it is now.
+No answer in fifteen seconds? N.P.C.I. doesn't cancel it. It parks it as approved for now — that doesn't mean the shop got it.
+Here's the catch — the call is only a message. The real money moves later, in big batches, ten times a day, through the R.B.I.
+So where is your money? After the next batch, it's sitting with the shop's bank. That's the answer.
 Next day, the shop's bank checks its books like a teacher taking attendance. Two answers.
-Yes, we gave it to the shop. So the shop has it, even with a silent soundbox.
-Or, no, we never did — then it comes back to your account.
-The R.B.I. sets a deadline. Sent to a person? Next day. Paid a shop? Within five days. If the bank is late, it pays you one hundred rupees for every extra day — without you asking.
-Quick summary, the way I remember it. Success, the shop got it. Failed, it's coming back, so pay again. Processing, you wait.
-Never pay again while it says processing. If it was a yes, congrats — you paid double for one packet of biscuits.
-Ask the shopkeeper to check their bank app or S.M.S., not the soundbox. Still stuck? Open the payment in your history and tap U.P.I. Help. Paid twice? Pick duplicate payment.
-Cleared your doubt? Send this to that friend who always pays twice — I know you have one.
-Next, what happens in the few seconds a payment goes through? Watch that one.
+Yes, we gave it to the shop — so the shop has it, soundbox or not.
+Or, no, we never did — then it comes back to you.
+How long can this take? Paid a person? The R.B.I. says, sorted by the next day. Paid a shop? Within five days. If the bank is late, it has to pay you one hundred rupees for every extra day, even if you don't complain.
+Quick summary, the way I remember it. Success, the shop got it. Failed, it's coming back, so pay again. Processing, wait.
+My one rule: never pay again while it says processing. If it was a yes, congrats — you paid double for one packet of biscuits.
+Ask the shopkeeper to check their bank S.M.S., not the soundbox. Still stuck? Open the payment in your history and tap U.P.I. Help. Paid twice? Pick duplicate payment.
+Send this to that friend who always pays twice — I know you have one.
+Next video: what happens when a payment goes through.
