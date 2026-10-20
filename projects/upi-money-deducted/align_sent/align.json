@@ -1,0 +1,832 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 4.069,
+  "te": "Your bank S.M.S. says eight hundred and forty rupees — debited.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.075,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 4.457,
+  "end": 6.648,
+  "te": "Your U.P.I. app says — processing.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.075,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 7.094,
+  "end": 8.273,
+  "te": "And the shop's soundbox?",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 8.713,
+  "end": 9.313,
+  "te": "Silent.",
+  "en": "",
+  "speech_vs_text": 1.53,
+  "boundary_margin": 9.9,
+  "confidence": "check"
+ },
+ {
+  "line": 5,
+  "start": 9.806,
+  "end": 11.452,
+  "te": "The shopkeeper is looking at you.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 11.896,
+  "end": 12.747,
+  "te": "Don't pay again.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 13.301,
+  "end": 14.668,
+  "te": "Your money is not lost.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 1.385,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 15.024,
+  "end": 21.565,
+  "te": "In a few minutes, you'll know exactly where it is, when it comes back, and the one mistake that makes people pay twice.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.933,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 22.083,
+  "end": 24.077,
+  "te": "Here's what happens after you type your pin.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.273,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 24.59,
+  "end": 27.309,
+  "te": "First, your bank takes the money out of your account.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.273,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 27.65,
+  "end": 29.181,
+  "te": "That's the debited message you see.",
+  "en": "",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.148,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 29.639,
+  "end": 31.345,
+  "te": "Then N.P.C.I. steps in.",
+  "en": "",
+  "speech_vs_text": 1.51,
+  "boundary_margin": 0.148,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 31.767,
+  "end": 35.325,
+  "te": "It's not your app — it's the system behind all U.P.I. apps.",
+  "en": "",
+  "speech_vs_text": 1.2,
+  "boundary_margin": 0.557,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 35.831,
+  "end": 39.999,
+  "te": "It calls the shop's bank and says, please add this money to the shop's account.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.726,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 40.419,
+  "end": 42.098,
+  "te": "I like to think of it as a phone call.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 1.089,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 42.547,
+  "end": 45.662,
+  "te": "And like every phone call in India... three things can happen.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.124,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 46.097,
+  "end": 51.379,
+  "te": "One, the shop's bank picks up and says, done, the shop got it — that's success.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.072,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 51.792,
+  "end": 59.118,
+  "te": "Two, the shop's bank picks up and says, sorry, we can't take this, maybe there's a problem with the account — that's failed.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.072,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 59.566,
+  "end": 62.459,
+  "te": "Failed sounds scary, but it's the clear answer.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.239,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 62.85,
+  "end": 66.799,
+  "te": "The payment did not go through, and your money comes back to you on its own.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.535,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 67.186,
+  "end": 69.394,
+  "te": "So if it says failed, you can pay again.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.429,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 69.832,
+  "end": 70.84,
+  "te": "Simple so far, right?",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.429,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 71.114,
+  "end": 71.382,
+  "te": "Three.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 71.828,
+  "end": 72.677,
+  "te": "The troublemaker.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.55,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 73.326,
+  "end": 76.272,
+  "te": "N.P.C.I. calls... and the line goes quiet.",
+  "en": "",
+  "speech_vs_text": 1.28,
+  "boundary_margin": 0.55,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 76.953,
+  "end": 77.226,
+  "te": "Hello?...",
+  "en": "",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 1.323,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 77.918,
+  "end": 78.285,
+  "te": "Hello?...",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 78.897,
+  "end": 79.484,
+  "te": "Call dropped.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 80.047,
+  "end": 82.854,
+  "te": "Did the shop's bank add the money before the call dropped?",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 83.272,
+  "end": 84.165,
+  "te": "Nobody knows yet.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 1.143,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 84.541,
+  "end": 87.698,
+  "te": "That's the processing you see — some apps call it pending.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.084,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 88.103,
+  "end": 90.557,
+  "te": "So right there at the counter, don't pay again.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.084,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 90.929,
+  "end": 94.575,
+  "te": "Ask the shopkeeper to check their bank S.M.S., not the soundbox.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.18,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 94.993,
+  "end": 97.89,
+  "te": "And take a screenshot of your payment, so you both have proof.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.18,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 98.434,
+  "end": 99.448,
+  "te": "Bank says received?",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 36,
+  "start": 99.792,
+  "end": 101.671,
+  "te": "Then the shop got your money, and you're done.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 37,
+  "start": 102.152,
+  "end": 102.623,
+  "te": "Nothing yet?",
+  "en": "",
+  "speech_vs_text": 0.72,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "start": 103.088,
+  "end": 104.448,
+  "te": "Then it's still processing.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 1.047,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "start": 104.839,
+  "end": 108.307,
+  "te": "Show them your screenshot and say — it's stuck, not lost.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.131,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "start": 108.616,
+  "end": 112.645,
+  "te": "If it reaches you, you'll get the S.M.S. If not, it comes back to me.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.131,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "start": 113.042,
+  "end": 114.723,
+  "te": "So where is your money right now?",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.331,
+  "confidence": "high"
+ },
+ {
+  "line": 42,
+  "start": 115.234,
+  "end": 119.846,
+  "te": "When the call drops, N.P.C.I. doesn't cancel the payment — it puts it on hold.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.222,
+  "confidence": "high"
+ },
+ {
+  "line": 43,
+  "start": 120.274,
+  "end": 124.724,
+  "te": "Your money has left your account, but it's stuck between your bank and the shop's bank.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.222,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "start": 125.216,
+  "end": 126.766,
+  "te": "Not lost — just waiting.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.414,
+  "confidence": "high"
+ },
+ {
+  "line": 45,
+  "start": 127.193,
+  "end": 132.721,
+  "te": "Now the shop's bank has to answer one simple question — did it go into the shop's account, or not?",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.33,
+  "confidence": "high"
+ },
+ {
+  "line": 46,
+  "start": 133.126,
+  "end": 134.165,
+  "te": "Only two answers.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.33,
+  "confidence": "high"
+ },
+ {
+  "line": 47,
+  "start": 134.534,
+  "end": 134.877,
+  "te": "Yes?",
+  "en": "",
+  "speech_vs_text": 1.75,
+  "boundary_margin": 2.121,
+  "confidence": "check"
+ },
+ {
+  "line": 48,
+  "start": 135.209,
+  "end": 138.321,
+  "te": "Then the shop has your money, even though the soundbox stayed silent.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 2.121,
+  "confidence": "high"
+ },
+ {
+  "line": 49,
+  "start": 138.845,
+  "end": 139.153,
+  "te": "No?",
+  "en": "",
+  "speech_vs_text": 2.35,
+  "boundary_margin": 4.016,
+  "confidence": "check"
+ },
+ {
+  "line": 50,
+  "start": 139.513,
+  "end": 142.325,
+  "te": "Then it comes back to your bank, and into your account.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 51,
+  "start": 142.753,
+  "end": 143.803,
+  "te": "How long can this take?",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.755,
+  "confidence": "high"
+ },
+ {
+  "line": 52,
+  "start": 144.328,
+  "end": 151.838,
+  "te": "If the money didn't reach them — whether it says failed or processing — the bank must return it, and the R.B.I. has set a deadline.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.755,
+  "confidence": "high"
+ },
+ {
+  "line": 53,
+  "start": 152.285,
+  "end": 152.911,
+  "te": "Paid a person?",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 1.1,
+  "confidence": "high"
+ },
+ {
+  "line": 54,
+  "start": 153.327,
+  "end": 154.227,
+  "te": "Back by the next day.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 55,
+  "start": 154.69,
+  "end": 155.935,
+  "te": "Paid a shop or a business?",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.269,
+  "confidence": "high"
+ },
+ {
+  "line": 56,
+  "start": 156.259,
+  "end": 161.575,
+  "te": "Within five days — five normal days, Sundays included, not five working days.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.269,
+  "confidence": "high"
+ },
+ {
+  "line": 57,
+  "start": 161.958,
+  "end": 162.993,
+  "te": "Person, one day.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.185,
+  "confidence": "high"
+ },
+ {
+  "line": 58,
+  "start": 163.389,
+  "end": 164.626,
+  "te": "Shop, five days.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.185,
+  "confidence": "high"
+ },
+ {
+  "line": 59,
+  "start": 164.913,
+  "end": 170.031,
+  "te": "And if the bank takes longer, it has to pay you one hundred rupees for every extra day.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.558,
+  "confidence": "high"
+ },
+ {
+  "line": 60,
+  "start": 170.55,
+  "end": 171.706,
+  "te": "You don't even have to complain.",
+  "en": "",
+  "speech_vs_text": 0.71,
+  "boundary_margin": 1.877,
+  "confidence": "high"
+ },
+ {
+  "line": 61,
+  "start": 172.044,
+  "end": 173.862,
+  "te": "The bank has to pay it on its own.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 62,
+  "start": 174.298,
+  "end": 175.308,
+  "te": "That's an R.B.I. rule.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.437,
+  "confidence": "high"
+ },
+ {
+  "line": 63,
+  "start": 175.881,
+  "end": 177.932,
+  "te": "Quick summary, the way I remember it.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.215,
+  "confidence": "high"
+ },
+ {
+  "line": 64,
+  "start": 178.317,
+  "end": 180.14,
+  "te": "Success — the shop got it.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.215,
+  "confidence": "high"
+ },
+ {
+  "line": 65,
+  "start": 180.569,
+  "end": 185.12,
+  "te": "Failed — it didn't go through, your money comes back on its own, and you can pay again.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.186,
+  "confidence": "high"
+ },
+ {
+  "line": 66,
+  "start": 185.558,
+  "end": 187.368,
+  "te": "Processing — don't pay again.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.186,
+  "confidence": "high"
+ },
+ {
+  "line": 67,
+  "start": 187.72,
+  "end": 193.013,
+  "te": "If it never reaches the shop, you get it back within one day for a person, five days for a shop.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.211,
+  "confidence": "high"
+ },
+ {
+  "line": 68,
+  "start": 193.515,
+  "end": 196.908,
+  "te": "My one rule: never pay again while it says processing.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.211,
+  "confidence": "high"
+ },
+ {
+  "line": 69,
+  "start": 197.311,
+  "end": 204.427,
+  "te": "Because if that first payment turns out to be a yes... congrats, you just paid eight hundred and forty rupees... twice.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.066,
+  "confidence": "high"
+ },
+ {
+  "line": 70,
+  "start": 204.792,
+  "end": 205.498,
+  "te": "Don't want to wait?",
+  "en": "",
+  "speech_vs_text": 0.77,
+  "boundary_margin": 0.066,
+  "confidence": "high"
+ },
+ {
+  "line": 71,
+  "start": 205.877,
+  "end": 210.923,
+  "te": "Open your app, go to your payment history, tap that payment, and look for U.P.I. Help.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.172,
+  "confidence": "high"
+ },
+ {
+  "line": 72,
+  "start": 211.366,
+  "end": 212.628,
+  "te": "You can raise it right away.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 1.414,
+  "confidence": "high"
+ },
+ {
+  "line": 73,
+  "start": 213.024,
+  "end": 214.177,
+  "te": "Paid twice by mistake?",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 74,
+  "start": 214.515,
+  "end": 215.95,
+  "te": "Choose duplicate payment there.",
+  "en": "",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 75,
+  "start": 216.362,
+  "end": 217.289,
+  "te": "Still not solved?",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 76,
+  "start": 217.601,
+  "end": 218.641,
+  "te": "Complain to your bank.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 77,
+  "start": 219.081,
+  "end": 220.069,
+  "te": "Bank not fixing it?",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.66,
+  "confidence": "high"
+ },
+ {
+  "line": 78,
+  "start": 220.353,
+  "end": 225.534,
+  "te": "Then complain to the R.B.I. The office has a strange name — the R.B.I. Ombudsman.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.66,
+  "confidence": "high"
+ },
+ {
+  "line": 79,
+  "start": 225.939,
+  "end": 226.47,
+  "te": "Remember it:",
+  "en": "",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 1.011,
+  "confidence": "high"
+ },
+ {
+  "line": 80,
+  "start": 226.844,
+  "end": 228.227,
+  "te": "R.B.I. Ombudsman.",
+  "en": "",
+  "speech_vs_text": 1.76,
+  "boundary_margin": 3.089,
+  "confidence": "check"
+ },
+ {
+  "line": 81,
+  "start": 228.621,
+  "end": 232.825,
+  "te": "Send this to that one friend who always pays twice — I know you have one.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.071,
+  "confidence": "high"
+ },
+ {
+  "line": 82,
+  "start": 233.22,
+  "end": 239.056,
+  "te": "Next video: what really happens in those few seconds after you hit pay, when everything works.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.071,
+  "confidence": "high"
+ },
+ {
+  "line": 83,
+  "start": 239.386,
+  "end": 240.308,
+  "te": "Watch that one next.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.442,
+  "confidence": "high"
+ }
+]
