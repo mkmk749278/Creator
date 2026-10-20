@@ -412,7 +412,7 @@ if os.environ.get("UPI_ANIM") == "processing":
         for fc in getattr(a, "fcurves", []):
             for kp in fc.keyframe_points:
                 kp.interpolation = "BEZIER"
-    sc.render.resolution_x, sc.render.resolution_y = 960, 540
+    sc.render.resolution_x, sc.render.resolution_y = (int(v) for v in os.environ.get("UPI_RES", "960x540").split("x"))
     sc.render.filepath = out.rstrip("/") + "/f_"; sc.render.image_settings.file_format = "PNG"
     t0 = time.time()
     if os.environ.get("UPI_ANIM_FRAMES"):  # spot-check chosen frames before the full pass
