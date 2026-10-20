@@ -4,7 +4,8 @@ Two channels' worth of video work lives here:
 - **Be Practical with Kishore**: narrated documentaries and explainers (Telugu and English).
 - **Phone Consensus**: 4K phone reviews built from what 15+ trusted reviewers said.
 
-Video length on both channels is set by the topic, never by a fixed target (owner, 2026-10-09).
+Video length on both channels is set by the topic, never by a fixed target (owner, 2026-10-09), except the 180-second
+engineering explainers below, which run 2–3 minutes (owner, 2026-10-20).
 
 This file holds the rules every session must follow. **`docs/PLAYBOOK.md` is the only other instruction file**: full specs,
 how-tos, measurements, the reason behind each rule, and recommendations. Read the parts that apply before starting work.
@@ -81,6 +82,18 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - Known gotchas (video wrappers, negative tweens, `tl.call`, fonts, SVG filters): PLAYBOOK §10. Realism recipe: §9.
 
 ## Documentary rules (Be Practical with Kishore). Full spec: PLAYBOOK Part B
+- **180-second hyper-visual explainers (owner, 2026-10-20; PLAYBOOK §4a-9, verbatim in Part G).** The channel's main
+  format now: the 50 films in `config/roadmap-180s.yaml`, made and uploaded in that order. **320–390 words** (≈2:20–3:00),
+  **one mechanism** per film (no history, market or policy), six phases: 0:00–0:10 zero-buffer hook (a friction point
+  or paradox in motion) → constraint framing → resting cross-section → stress reveal → edge case / fail-safe → insight
+  said twice + a **~15 s bridge question to the next roadmap film** over the end screen (never a silent logo). Dark
+  blueprint look (`blueprint` in `config/brand.yaml`, colour = meaning), real internal cross-sections drawn from real
+  references, a **persistent top-left telemetry HUD** locked to the VO (fact-checked values or "ILLUSTRATIVE"), visual
+  states held **2.5–4.5 s** (no cut < 1.8 s), **one change per cut** (angle, geometry or state), labels ≤ 3 words, no
+  clip used twice, real footage for the hook and human micro-interactions, cues within 100 ms (one `script.tsv` row per
+  cue). On a topic, hand over four blocks in chat: HUD spec, click-to-copy narration, storyboard (= `screenplay.md`),
+  bridge. In these films this wins over the four acts, the 8–12 min structure, the open loop with a minute, the
+  3.5–5.0 s reset and the 25–30% grit target below; HyperFrames stays the engine and Whisper stays banned.
 - **A film, never a slide deck.** No full-screen text boxes, bullet lists, cards or question-mark graphics; no flat colour
   or plain gradient canvas. Text ≤ 15% of the screen: 2–4-word lower-thirds, dates/places/numbers, counters, a corner timer.
 - **Lede first (owner, 2026-10-17; PLAYBOOK §4a-5):** the event, rule or trap the title and thumbnail name is on screen

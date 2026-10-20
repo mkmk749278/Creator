@@ -5,7 +5,9 @@ description: Start a new narrated documentary or explainer for Be Practical with
 
 # New documentary
 
-Rules live in `CLAUDE.md` and `docs/PLAYBOOK.md` Part B; this is the order of work. Work at `high`/`xhigh` effort; never
+Rules live in `CLAUDE.md` and `docs/PLAYBOOK.md` Part B; this is the order of work. For a roadmap film
+(`config/roadmap-180s.yaml`), PLAYBOOK §4a-9 sets the length, phases, look and the four blocks to hand over first;
+beats are then 2.5–4.5 s, not 3.5–5 s. Work at `high`/`xhigh` effort; never
 skip a step to save time (PLAYBOOK §4). Stop and report to the owner at each **[report]**.
 
 1. **Project.** `projects/<slug>/` with `script.md` (owner's text verbatim), `voice/` (VO files), `README.md`
