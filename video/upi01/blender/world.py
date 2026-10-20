@@ -2,7 +2,7 @@
 # Dark blueprint look, photo-real materials, Cycles on CPU (8 samples + OpenImageDenoise).
 # Run: <venv with bpy==5.2.2>/bin/python -I world.py -- <shot> <samples> <out.png> [frame]
 #   shot: wide | board | hold;  state: idle | success | failed | processing (plan v2, review_visual_plan_v1.md)
-import bpy, bmesh, math, sys, time
+import bpy, bmesh, math, os, sys, time
 from mathutils import Vector
 
 args = sys.argv[sys.argv.index("--") + 1:]
@@ -230,7 +230,7 @@ def cable(name, pts, m, r=0.012):
     return o
 
 
-RUPEE_FONT = bpy.data.fonts.load("/usr/share/fonts/opentype/inter/Inter-Bold.otf")
+RUPEE_FONT = bpy.data.fonts.load(os.environ.get("UPI_FONT", "/usr/share/fonts/opentype/inter/Inter-Bold.otf"))  # Inter has ₹
 STATE_COL = {"idle": C["cyan"], "success": C["green"], "failed": C["red"], "processing": C["amber"]}
 SCREEN = {"idle": "CALLING...", "success": "CONNECTED", "failed": "DECLINED", "processing": "CALL DROPPED"}
 sc_col = STATE_COL[state]

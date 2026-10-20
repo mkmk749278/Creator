@@ -7,10 +7,12 @@ outdir = sys.argv[1]; rest = sys.argv[sys.argv.index("--") + 1:]
 env = dict(a.split("=", 1) for a in rest[rest.index("--env") + 1:]) if "--env" in rest else {}
 wargs = rest[:rest.index("--env")] if "--env" in rest else rest
 src = base64.b64encode(open(os.path.join(here, "world.py"), "rb").read()).decode()
+font = base64.b64encode(open("/usr/share/fonts/opentype/inter/Inter-Bold.otf", "rb").read()).decode()  # OFL
 runner = f'''import base64, os, subprocess, sys, time
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "bpy==5.2.2"], check=True)
 open("world.py", "wb").write(base64.b64decode("{src}"))
-env = dict(os.environ, UPI_DEVICE="GPU", **{env!r})
+open("Inter-Bold.otf", "wb").write(base64.b64decode("{font}"))
+env = dict(os.environ, UPI_DEVICE="GPU", UPI_FONT=os.path.abspath("Inter-Bold.otf"), **{env!r})
 os.makedirs("/kaggle/working/out", exist_ok=True)
 t0 = time.time()
 r = subprocess.run([sys.executable, "-I", "world.py", "--", *{wargs!r}], env=env, capture_output=True, text=True)
