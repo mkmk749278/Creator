@@ -79,8 +79,8 @@ def main():
     lens = [len(words(s)) for s in sents]
     fails, notes = [], []
 
-    if not a.min_words <= n <= a.max_words:
-        fails.append(f"{n} words, want {a.min_words}-{a.max_words}")
+    if not a.min_words <= n <= a.max_words:  # a guide, not a cap (owner, 2026-10-20: the narration being good comes first)
+        notes.append(f"{n} words, guide {a.min_words}-{a.max_words}: fine if every line earns its place")
     avg = n / len(sents)
     if not 7.5 <= avg <= 14:
         fails.append(f"average sentence {avg:.1f} words, want 7.5-14 (creators: 11-13)")

@@ -610,9 +610,10 @@ section wins; everything not mentioned here (fact-check, rights, honesty labels,
 YouTube package, merged PR) still applies.
 
 **Script**
-1. **Length: 320–440 words** at 145–160 words a minute (§4a-10), so about 2:10–3:00. Use up to 440 when the mechanism
-   needs depth (owner, 2026-10-20, for film 01: "go with 440 words for more depth, but the explanation should be
-   simple"). `scripts/spoken_english_check.py` defaults to 320–440.
+1. **Length: about 320–440 words as a guide, never a cap** (145–160 words a minute, §4a-10, so roughly 2:10–3:00).
+   Owner, 2026-10-20: "don't stick to 440 words; the narration should be good, that's our main priority." Go longer
+   when clarity needs it (film 01 v11: ~580 words, ~3:50), and cut any line that doesn't earn its place.
+   `scripts/spoken_english_check.py` reports the word count as a note, not a failure.
 1a. **Explain with an everyday analogy and light humour (owner, 2026-10-20).** "No need to stick strictly to bank words
    or technical words; understanding for the audience is what matters." Show the real flow first, step by step, then
    carry it with one analogy the viewer lives with (film 01: NPCI phones the shop's bank; picked up and yes = success,
