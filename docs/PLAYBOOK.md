@@ -665,10 +665,27 @@ YouTube package, merged PR) still applies.
    start a new row at every cue word so `scripts/align_script.py` gives that cue its own start time, then check the
    rows `align.md` flags by ear.
 
-**Engines.** The owner's text names Remotion (2D flows, HUDs), Manim CE (waves, fields, curves) and headless Blender
-on a Kaggle GPU (3D cutaways). We keep **HyperFrames** (pinned, CLAUDE.md): GSAP covers the 2D flows and HUDs, Three.js
-the 3D cutaways (§9.4 shows it holds up on our CPU VMs), and one engine keeps every scene on the same lint/check/snapshot
-loop. Manim or Blender are added only if the owner approves after a side-by-side test (open decision 1 below).
+**Engines (owner, 2026-10-20: "choose the best for visualization"; measured the same day).**
+- **HyperFrames (GSAP + SVG) for everything 2D:** the HUD, labels, network and packet flows, state machines, wave and
+  field plots, counters. It replaces both Remotion and Manim CE in the owner's text: same jobs, one look, and every scene
+  goes through the same lint/check/snapshot loop. Text and HUD always come from HyperFrames, never baked into 3D renders,
+  so they stay sharp and can be re-timed to the VO without re-rendering.
+- **Blender Cycles for the hero 3D cutaways** (the 2–4 shots per film that carry the mechanism: the valve at rest, the
+  stress moment, the exploded assembly). *Why:* the directive asks for ultra-realistic PBR cross-sections; Cycles gives
+  true metal reflections, soft shadows and contact occlusion that SwiftShader Three.js can't. Test scene:
+  `video/lib/blender/cutaway_test.py` (`bpy==5.2.2` from pip, in its own venv). Measured on our 4 vCPU VM at 1920×1080:
+  32 samples 68.5 s a frame; **8 samples + adaptive sampling + reduced bounces + OpenImageDenoise 27.3 s a frame,
+  looking the same**. Renders come out as PNG frames, are encoded to a bitrate-capped clip and go into the HyperFrames
+  composition as a video layer, with the HUD and labels on top. Fixed seed, no simulation bakes, so frames are repeatable.
+  - **Where it renders:** a free Kaggle GPU (T4, 30 h a week; we already ran LatentSync there, §22) once the owner adds
+    `KAGGLE_USERNAME` and `KAGGLE_KEY` as environment secrets. Until then, CPU in parallel sessions: a 4 s shot is 120
+    frames, about 55 min on one VM, so ~30 s of hero 3D per film is ~7 VM-hours, split across 3 sessions (§3).
+    The GPU speed is not measured yet: measure the first Kaggle run and log it in §15.
+  - **Budget:** keep hero 3D to about 20–40 s per film; hold a Blender shot 2.5–4.5 s like any other state.
+- **Three.js (in HyperFrames) for the rest of the 3D:** long camera moves, many labels pinned to 3D points, and
+  world scenes like the Kavach railway (§9.4), at ~4 s a frame. Draw Three.js and Blender versions of the same object
+  from the same references and colours so cuts between them match.
+- **Not used:** Remotion (a second Chromium engine, §9.3) and Manim (HyperFrames SVG does the plots in the film's look).
 
 **What to hand over when the owner assigns a roadmap topic** (the four blocks, in the chat):
 1. **Telemetry HUD spec:** variables, units, normal and stressed values, and when each changes. Save as `projects/<slug>/hud.md`.
@@ -685,7 +702,7 @@ end-screen element is added once it is live. Where a roadmap film has an earlier
 continuity).
 
 **Open decisions for the owner (asked 2026-10-20):**
-1. Engines: stay on HyperFrames only, or test Manim CE and Blender (Kaggle GPU needs a Kaggle account and API key)?
+1. ~~Engines~~: decided 2026-10-20 (above). Still needed: Kaggle API key as environment secrets for GPU renders.
 2. Order: the roadmap starts with eight money and payments films; §4a-7 (2026-10-17) said India-capability films first
    and money topics as Shorts. We follow the roadmap (the newer instruction) unless the owner says otherwise.
 3. Upload pace: §4a-7 says one or two long films a week (50 films ≈ 6 months). Does that still hold for 3-minute films?
@@ -1157,7 +1174,8 @@ The owner shared "Claude Code in Cloud Sessions: Master CPU-Only Production Play
   SVG scenes that share the film's look. Pillow + FFmpeg cover stills and contact sheets.
 - **Client-side WebGL (send the owner an HTML file)**: not usable for a film, because the MP4 must contain the 3D.
   Three.js scenes render in the cloud on SwiftShader (≈ 27 s per output second without N8AO, §9), which is affordable.
-- **No Blender Cycles, no local video diffusion, no heavy physics bakes**: already our rule.
+- **No local video diffusion, no heavy physics bakes**: already our rule. Blender Cycles was on this list; since
+  2026-10-20 it is used for the hero cutaways of the 180-second films (§4a-9), measured at 27 s a frame on CPU.
 - **yt-dlp clips**: used when YouTube answers from the container; never routed around blocks (CLAUDE.md).
 - **Akash V4 takes under 1,500 characters**: the guide's limit for English Akash takes, against our 4,000–4,500 for Bunty.
   Apply to the next English script's voice blocks and confirm with the owner.
@@ -1388,6 +1406,11 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
    its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
 
 ## 15. Lessons log
+
+**Blender Cycles on the session VM (2026-10-20).** `bpy==5.2.2` installs from pip (about 1 GB venv, Python 3.13) and
+renders headless on CPU (the CUDA warning at start is harmless). 1080p cutaway: 32 samples 68.5 s, 8 samples with
+adaptive sampling, max 4 bounces and OpenImageDenoise 27.3 s, no visible difference. Eevee needs a GPU context, so
+it is not an option here. *Why it matters:* it sets the hero-3D budget per film (§4a-9).
 
 **Insurance Ombudsman (English, 2026-10-15).** (1) A shot cache keyed on "file exists" was poisoned by a render cut
 off when the session was resumed: one shot file had no moov atom, and the concat demuxer froze the whole film from

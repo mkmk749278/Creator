@@ -93,7 +93,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   clip used twice, real footage for the hook and human micro-interactions, cues within 100 ms (one `script.tsv` row per
   cue). On a topic, hand over four blocks in chat: HUD spec, click-to-copy narration, storyboard (= `screenplay.md`),
   bridge. In these films this wins over the four acts, the 8–12 min structure, the open loop with a minute, the
-  3.5–5.0 s reset and the 25–30% grit target below; HyperFrames stays the engine and Whisper stays banned.
+  3.5–5.0 s reset and the 25–30% grit target below. Engines: HyperFrames for all 2D, HUD and text; **Blender Cycles
+  for the 2–4 hero 3D cutaways** (8 samples + denoise, ~27 s a frame on CPU; Kaggle GPU once the key is added), composited
+  under the HyperFrames HUD; Three.js for other 3D; no Remotion or Manim. Whisper stays banned.
 - **A film, never a slide deck.** No full-screen text boxes, bullet lists, cards or question-mark graphics; no flat colour
   or plain gradient canvas. Text ≤ 15% of the screen: 2–4-word lower-thirds, dates/places/numbers, counters, a corner timer.
 - **Lede first (owner, 2026-10-17; PLAYBOOK §4a-5):** the event, rule or trap the title and thumbnail name is on screen
