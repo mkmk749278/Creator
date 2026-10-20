@@ -30,6 +30,8 @@ table, the NPCI circular pages.
 - **HUD:** two lines on screen (STATUS, MONEY AT); timer, balance, day and bank-owes pop in only when they change.
 - **Hook:** one phone close-up with two notifications stacked, ₹840 DEBITED over PROCESSING…, then the silent soundbox,
   the shopkeeper's look and a queue behind (stock counter footage + our simulated UI). 0:11 chips one at a time.
+  **Shopkeeper: no spoken line** (owner, 2026-10-20: no recording). Silence and his look carry it; the words go on
+  screen as our simulated UI, never in his mouth: the shop's phone reads NOT RECEIVED (0:04) and NO S.M.S. YET (1:41).
 - **Scene fixes:** 0:53 ✗ lamp and a reject stamp, no padlock · 1:00 token flies back, balance climbs, pay-again thumb as a
   1.5 s insert · 1:13 the 15 s dial sweeps from the ring · 1:22 add "?" on the shop's row · 1:41 the customer's own phone
   with a return arrow back to them · 1:56 batch shuttle demoted to a background detail, no chip · 2:27 RBI table ~1 s as

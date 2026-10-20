@@ -2,7 +2,7 @@
 # Dark blueprint look, photo-real materials, Cycles on CPU (8 samples + OpenImageDenoise).
 # Run: <venv with bpy==5.2.2>/bin/python -I world.py -- <shot> <samples> <out.png> [frame]
 #   shot: wide | board | hold;  state: idle | success | failed | processing (plan v2, review_visual_plan_v1.md)
-import bpy, bmesh, math, sys, time
+import bpy, bmesh, math, os, sys, time
 from mathutils import Vector
 
 args = sys.argv[sys.argv.index("--") + 1:]
@@ -230,7 +230,7 @@ def cable(name, pts, m, r=0.012):
     return o
 
 
-RUPEE_FONT = bpy.data.fonts.load("/usr/share/fonts/opentype/inter/Inter-Bold.otf")
+RUPEE_FONT = bpy.data.fonts.load(os.environ.get("UPI_FONT", "/usr/share/fonts/opentype/inter/Inter-Bold.otf"))  # Inter has ₹
 STATE_COL = {"idle": C["cyan"], "success": C["green"], "failed": C["red"], "processing": C["amber"]}
 SCREEN = {"idle": "CALLING...", "success": "CONNECTED", "failed": "DECLINED", "processing": "CALL DROPPED"}
 sc_col = STATE_COL[state]
@@ -329,6 +329,19 @@ d = Vector(tgt) - Vector(loc); cam.rotation_euler = d.to_track_quat("-Z", "Y").t
 
 # ---------- render ----------
 sc.render.engine = "CYCLES"; sc.cycles.device = "CPU"; sc.cycles.samples = samples
+import os
+if os.environ.get("UPI_DEVICE") == "GPU":  # Kaggle T4/P100 (video/upi01/blender/kaggle_render.py)
+    cp = bpy.context.preferences.addons["cycles"].preferences
+    for kind in ("OPTIX", "CUDA"):
+        try:
+            cp.compute_device_type = kind; cp.get_devices()
+            if any(d.type == kind for d in cp.devices):
+                break
+        except TypeError:
+            continue
+    for d in cp.devices:
+        d.use = d.type != "CPU"
+    sc.cycles.device = "GPU"; print("DEVICE", cp.compute_device_type, [d.name for d in cp.devices if d.use])
 sc.cycles.use_denoising = True; sc.cycles.denoiser = "OPENIMAGEDENOISE"
 sc.cycles.max_bounces = 4; sc.cycles.diffuse_bounces = 2; sc.cycles.glossy_bounces = 2
 sc.cycles.transmission_bounces = 2; sc.cycles.volume_bounces = 0; sc.cycles.volume_step_rate = 4
@@ -336,4 +349,78 @@ sc.render.resolution_x, sc.render.resolution_y = 1920, 1080; sc.render.resolutio
 sc.view_settings.view_transform = "AgX"; sc.view_settings.look = "AgX - Medium High Contrast"
 sc.render.film_transparent = False; sc.frame_set(frame)
 sc.render.filepath = out; sc.render.image_settings.file_format = "PNG"
+
+# ---------- motion test (UPI_ANIM=processing): the call rings, the token rides the cable, the line drops ----------
+import os
+if os.environ.get("UPI_ANIM") == "processing":
+    assert state == "processing"
+    FPS, END = 24, int(os.environ.get("UPI_ANIM_END", "150"))
+    sc.render.fps = FPS; sc.frame_start, sc.frame_end = 1, END
+    for n in ("call_live", "call_dead"):
+        bpy.data.objects.remove(bpy.data.objects[n], do_unlink=True)
+    cable("call_dead_full", call_pts, cable_dead)
+    ov_m = mat("cable_overlay", C["cyan"], 0, 0.35, C["cyan"], 14.0); ov = cable("call_overlay", call_pts, ov_m, 0.0125)
+    ob = ov_m.node_tree.nodes["Principled BSDF"]
+    def key_socket(sock, frame, value):
+        sock.default_value = value; sock.keyframe_insert("default_value", frame=frame)
+    ov.data.bevel_factor_mapping_end = "SPLINE"
+    for f, v in ((1, 0.0), (24, 0.0), (72, 0.5)):
+        ov.data.bevel_factor_end = v; ov.data.keyframe_insert("bevel_factor_end", frame=f)
+    for f, v in ((72, 14.0), (75, 2.0), (77, 12.0), (79, 0.6), (81, 9.0), (84, 0.0), (90, 0.0), (96, 4.0)):
+        key_socket(ob.inputs["Emission Strength"], f, v)
+    for f, col in ((83, C["cyan"]), (90, C["amber"])):
+        key_socket(ob.inputs["Emission Color"], f, lin(col)); key_socket(ob.inputs["Base Color"], f, lin(col))
+    # the token: parented to an empty that follows the call path
+    path = cable("token_path", call_pts, cable_dead, 0.0); path.data.use_path = True; path.hide_render = True
+    piv = bpy.data.objects.new("token_pivot", None); sc.collection.objects.link(piv); piv.location = (tx, ty, tz)
+    bpy.context.view_layer.update()
+    parts = [o for o in sc.objects if o is not piv and (o.location - Vector((tx, ty, tz))).length < 0.3
+             and o.name.split(".")[0] in ("Cylinder", "Torus", "Text", "token_glow")]
+    for o in parts:
+        o.parent = piv; o.matrix_parent_inverse = piv.matrix_world.inverted()
+    piv.location = (0.0, -0.09, 0.16)
+    fp = piv.constraints.new("FOLLOW_PATH"); fp.target = path; fp.use_fixed_location = True
+    for f, v in ((1, 0.0), (24, 0.0), (72, 0.5)):
+        fp.offset_factor = v; fp.keyframe_insert("offset_factor", frame=f)
+    tm = bpy.data.materials["token_rim"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"]
+    for i, f in enumerate(range(84, END + 1, 12)):
+        key_socket(tm, f, 9.0 if i % 2 == 0 else 3.0)
+    # screen: CALLING... until the drop, then CALL DROPPED (built above for this state)
+    calling = label3d("CALLING...", (0.0, 0.135, 1.78), 0.06, mat("screen_call", C["cyan"], 0, 0.4, C["cyan"], 6.0), RUPEE_FONT)
+    dropped = [o for o in sc.objects if o.type == "FONT" and o.data.body == "CALL DROPPED"][0]
+    for o, vis in ((calling, (True, False)), (dropped, (False, True))):
+        for f, v in ((83, vis[0]), (84, vis[1])):
+            o.hide_render = not v; o.keyframe_insert("hide_render", frame=f)
+    lp = bpy.data.materials["lamp_processing"].node_tree.nodes["Principled BSDF"]
+    for f, (bc, es) in ((83, ("#1a1d22", 0.08)), (84, (C["amber"], 9.0))):
+        key_socket(lp.inputs["Base Color"], f, lin(bc)); key_socket(lp.inputs["Emission Strength"], f, es)
+    # the 15-second dial: a hand sweeps from the ring to the drop (ILLUSTRATIVE pace)
+    dp = bpy.data.objects.new("dial_pivot", None); sc.collection.objects.link(dp); dp.location = (0.0, 0.094, 2.38)
+    hand = box("dial_hand", (0.012, 0.006, 0.15), (0.0, 0.094, 2.38 + 0.065), tick_m, 0); hand.parent = dp
+    hand.matrix_parent_inverse = dp.matrix_world.inverted()
+    for f, v in ((24, 0.0), (84, math.radians(360))):
+        dp.rotation_euler = (0, v, 0); dp.keyframe_insert("rotation_euler", index=1, frame=f)
+    # camera: wide, then a slow push toward the frozen token
+    tgt_e = bpy.data.objects.new("cam_target", None); sc.collection.objects.link(tgt_e)
+    tc = cam.constraints.new("TRACK_TO"); tc.target = tgt_e; tc.track_axis = "TRACK_NEGATIVE_Z"; tc.up_axis = "UP_Y"
+    for f, cl, tl, fd in ((1, (0.0, -6.6, 1.55), (0.0, 0.0, 1.05), 5.4), (84, (0.2, -6.2, 1.45), (0.3, 0.0, 1.0), 5.2),
+                          (END, (0.9, -4.3, 1.05), (1.05, -0.5, 0.55), 3.8)):
+        cam.location = cl; cam.keyframe_insert("location", frame=f)
+        tgt_e.location = tl; tgt_e.keyframe_insert("location", frame=f)
+        cd.dof.focus_distance = fd; cd.dof.keyframe_insert("focus_distance", frame=f)
+    for a in bpy.data.actions:  # ease every move
+        for fc in getattr(a, "fcurves", []):
+            for kp in fc.keyframe_points:
+                kp.interpolation = "BEZIER"
+    sc.render.resolution_x, sc.render.resolution_y = 960, 540
+    sc.render.filepath = out.rstrip("/") + "/f_"; sc.render.image_settings.file_format = "PNG"
+    t0 = time.time()
+    if os.environ.get("UPI_ANIM_FRAMES"):  # spot-check chosen frames before the full pass
+        for f in map(int, os.environ["UPI_ANIM_FRAMES"].split(",")):
+            sc.frame_set(f); sc.render.filepath = f"{out.rstrip('/')}/f_{f:04d}.png"; bpy.ops.render.render(write_still=True)
+    else:
+        bpy.ops.render.render(animation=True)
+    print(f"ANIM done {time.time() - t0:.1f}s -> {out}")
+    sys.exit(0)
+
 t0 = time.time(); bpy.ops.render.render(write_still=True); print(f"RENDER {shot} {samples}spp {time.time() - t0:.1f}s -> {out}")
