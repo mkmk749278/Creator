@@ -71,6 +71,8 @@ srv_m = noisy_metal("server", "#252c35", 0.38, 120)
 bezel_m = mat("bezel", "#0f1318", 0.2, 0.55)
 led_g = mat("led_g", C["green"], 0, 0.3, C["green"], 9.0)
 led_c = mat("led_c", C["cyan"], 0, 0.3, C["cyan"], 9.0)
+patch_b = mat("patch_b", "#1f5fbf", 0.0, 0.45)
+patch_w = mat("patch_w", "#c9ced6", 0.0, 0.5)
 led_a = mat("led_a", C["amber"], 0, 0.3, C["amber"], 7.0)
 wood_m = mat("board_wood", "#2a2018", 0.0, 0.5, coat=0.6)
 brass_m = noisy_metal("brass", "#b08d57", 0.28, 200, 0.1)
@@ -123,48 +125,93 @@ def rack(cx, name, led_mat, label):
         for k in range(6 if units > 1 else 4):
             box(f"{name}_bay{i}_{k}", (0.003, 0.004, h * 0.7), (cx - 0.18 + k * 0.04, -D / 2 + 0.028, z + h / 2), rack_m, 0)
         z += h + 0.003; i += 1
+    for side in (-1, 1):  # vertical cable managers with blue / white patch cords (qa/ref/datacentre.jpg 4, 5)
+        box(f"{name}_mgr{side}", (0.07, 0.12, H - 0.2), (cx + side * 0.335, -D / 2 + 0.06, H / 2), rack_m, 0.004)
+        for k in range(10):
+            zz = 0.25 + k * 0.17; cm = patch_b if k % 3 else patch_w
+            cord(f"{name}_pc{side}_{k}", [(cx + side * 0.2, -D / 2 + 0.02, zz), (cx + side * 0.27, -D / 2 - 0.02, zz - 0.02),
+                                          (cx + side * 0.335, -D / 2 + 0.0, zz - 0.08), (cx + side * 0.335, -D / 2 + 0.03, zz - 0.3)], cm, 0.0035)
     text(label, (cx, -D / 2 - 0.02, H + 0.12), 0.11, label_m)
 
 
-rack(-2.2, "yourbank", led_c, "YOUR BANK")
-rack(2.2, "shopbank", led_c, "SHOP'S BANK")
 
 
-# ---------- N.P.C.I. switchboard: an old exchange board, blueprint-coloured ----------
+# ---------- N.P.C.I. switchboard, copied from the manual-exchange references (qa/ref/exchange.jpg) ----------
+# Tall upright with jack fields and white lamp caps (refs 2, 8, 12), a desk shelf with two rows of cord plugs and
+# key switches (refs 2, 7), red cloth cords hanging in loops below the shelf (refs 2, 3), dark wood cabinet.
+lamp_m = mat("lamp_cap", "#e8e2d0", 0.0, 0.35, "#ffe9b0", 0.6)
+cord_m = mat("cord_cloth", "#8c2a1c", 0.0, 0.75)
+cord_bump = cord_m.node_tree; _b = cord_bump.nodes["Principled BSDF"]
+_w = cord_bump.nodes.new("ShaderNodeTexWave"); _w.inputs["Scale"].default_value = 400; _w.wave_profile = "SAW"
+_bp = cord_bump.nodes.new("ShaderNodeBump"); _bp.inputs["Strength"].default_value = 0.25
+cord_bump.links.new(_w.outputs["Fac"], _bp.inputs["Height"]); cord_bump.links.new(_bp.outputs["Normal"], _b.inputs["Normal"])
+plate_m = noisy_metal("plate", "#3a3226", 0.35, 150, 0.12)
+
+
+def arrayed(obj, counts, offsets):
+    for i, (n, off) in enumerate(zip(counts, offsets)):
+        md = obj.modifiers.new(f"arr{i}", "ARRAY"); md.count = n
+        md.use_relative_offset = False; md.use_constant_offset = True; md.constant_offset_displace = off
+    return obj
+
+
+def cord(name, pts, m, r=0.006):
+    cu = bpy.data.curves.new(name, "CURVE"); cu.dimensions = "3D"; cu.bevel_depth = r; cu.bevel_resolution = 3
+    sp = cu.splines.new("BEZIER"); sp.bezier_points.add(len(pts) - 1)
+    for bp, p in zip(sp.bezier_points, pts):
+        bp.co = p; bp.handle_left_type = bp.handle_right_type = "AUTO"
+    o = bpy.data.objects.new(name, cu); sc.collection.objects.link(o); o.data.materials.append(m)
+    return o
+
+
 def switchboard(cx):
-    W, H = 1.5, 1.7
-    box("sb_cab", (W, 0.5, 0.85), (cx, 0.1, 0.425), wood_m, 0.01)          # desk
-    box("sb_shelf", (W + 0.06, 0.62, 0.04), (cx, 0.04, 0.87), wood_m, 0.008)
-    box("sb_panel", (W, 0.12, H - 0.9), (cx, 0.3, 0.9 + (H - 0.9) / 2), bake_m, 0.01)
-    box("sb_crown", (W + 0.08, 0.2, 0.08), (cx, 0.3, H + 0.04), wood_m, 0.01)
-    # jack field: 10 x 6 brass jacks
-    for r in range(6):
-        for c in range(10):
-            x = cx - 0.6 + c * 0.133; zz = 1.05 + r * 0.1
-            bpy.ops.mesh.primitive_cylinder_add(radius=0.012, depth=0.02, location=(x, 0.235, zz), rotation=(math.radians(90), 0, 0))
+    W = 1.6
+    box("sb_desk", (W, 0.62, 0.74), (cx, 0.0, 0.37), wood_m, 0.012)
+    box("sb_shelf", (W + 0.06, 0.5, 0.035), (cx, -0.08, 0.76), wood_m, 0.01)
+    box("sb_upright", (W, 0.16, 1.32), (cx, 0.26, 0.78 + 0.66), wood_m, 0.012)
+    box("sb_face", (W - 0.12, 0.02, 1.16), (cx, 0.175, 0.86 + 0.58), bake_m, 0.004)
+    box("sb_crown", (W + 0.1, 0.24, 0.07), (cx, 0.26, 2.135), wood_m, 0.012)
+    # 4 jack fields of 14 x 9; each jack = brass ring + dark hole; a lamp cap row above each field row
+    for f in range(4):
+        x0 = cx - 0.66 + f * 0.34; z0 = 0.92
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.0075, depth=0.012, vertices=12, location=(x0, 0.163, z0), rotation=(math.radians(90), 0, 0))
+        j = bpy.context.object; j.data.materials.append(brass_m); arrayed(j, (14, 9), ((0.022, 0, 0), (0, 0, 0.075)))
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.0038, depth=0.014, vertices=8, location=(x0, 0.161, z0), rotation=(math.radians(90), 0, 0))
+        h = bpy.context.object; h.data.materials.append(bake_m); arrayed(h, (14, 9), ((0.022, 0, 0), (0, 0, 0.075)))
+        bpy.ops.mesh.primitive_uv_sphere_add(radius=0.0062, segments=10, ring_count=6, location=(x0, 0.163, z0 + 0.03))
+        l = bpy.context.object; l.scale = (1, 0.6, 1); l.data.materials.append(lamp_m); arrayed(l, (14, 9), ((0.022, 0, 0), (0, 0, 0.075)))
+        box(f"sb_strip{f}", (0.32, 0.006, 1.1), (x0 + 0.143, 0.17, 0.86 + 0.55), plate_m, 0.001)
+    # desk: two rows of 16 cord plugs (brass sleeves, red cord tails) + key switches in front
+    for row, y in enumerate((-0.02, 0.06)):
+        for k in range(16):
+            x = cx - 0.7 + k * 0.093
+            bpy.ops.mesh.primitive_cylinder_add(radius=0.008, depth=0.07, vertices=12, location=(x, y, 0.81))
             bpy.context.object.data.materials.append(brass_m)
-            bpy.ops.mesh.primitive_cylinder_add(radius=0.006, depth=0.022, location=(x, 0.233, zz), rotation=(math.radians(90), 0, 0))
-            bpy.context.object.data.materials.append(bake_m)
-    # cord plugs standing on the shelf
-    for k in range(8):
-        x = cx - 0.5 + k * 0.14
-        bpy.ops.mesh.primitive_cylinder_add(radius=0.014, depth=0.09, location=(x, -0.12, 0.935))
-        bpy.context.object.data.materials.append(brass_m if k != 3 else cable_live)
-    # 15-second dial on the crown
-    bpy.ops.mesh.primitive_cylinder_add(radius=0.2, depth=0.03, location=(cx, 0.22, 1.98), rotation=(math.radians(90), 0, 0))
+            if row == 0:
+                box(f"key{k}", (0.012, 0.02, 0.035), (x, -0.2, 0.795), bake_m, 0.002)
+                bpy.context.object.rotation_euler = (math.radians(-18 if k % 3 else 18), 0, 0)
+            # cord tail dropping through the shelf into a hanging loop (deterministic sag per plug)
+            sag = 0.18 + 0.07 * ((k * 7 + row * 3) % 5)
+            cord(f"tail{row}_{k}", [(x, y, 0.77), (x, y - 0.02, 0.62), (x + 0.01, y - 0.12, 0.76 - sag - 0.25), (x + 0.02, y - 0.25, 0.6)], cord_m)
+    # three patched calls: cords arcing from desk plugs up into jacks on the face
+    for (k, fx, fy) in ((2, 3, 4), (6, 7, 6), (11, 9, 2)):
+        x = cx - 0.7 + k * 0.093; jx = cx - 0.66 + (fx // 1) * 0.022 + (k % 4) * 0.34; jz = 0.92 + fy * 0.075
+        cord(f"patch{k}", [(x, -0.02, 0.85), (x + 0.02, 0.0, 1.05), ((x + jx) / 2, 0.08, jz + 0.12), (jx, 0.15, jz)], cord_m)
+    # the 15-second dial on the crown
+    bpy.ops.mesh.primitive_cylinder_add(radius=0.2, depth=0.03, location=(cx, 0.12, 2.38), rotation=(math.radians(90), 0, 0))
     bpy.context.object.data.materials.append(dial_face)
-    bpy.ops.mesh.primitive_torus_add(major_radius=0.2, minor_radius=0.012, location=(cx, 0.205, 1.98), rotation=(math.radians(90), 0, 0))
+    bpy.ops.mesh.primitive_torus_add(major_radius=0.2, minor_radius=0.012, location=(cx, 0.105, 2.38), rotation=(math.radians(90), 0, 0))
     bpy.context.object.data.materials.append(brass_m)
     for t in range(15):
         a = math.radians(90 - t * 24)
-        box(f"tick{t}", (0.014, 0.006, 0.04 if t % 5 else 0.06),
-            (cx + 0.155 * math.cos(a), 0.196, 1.98 + 0.155 * math.sin(a)), tick_m, 0)
+        box(f"tick{t}", (0.014, 0.006, 0.04 if t % 5 else 0.06), (cx + 0.155 * math.cos(a), 0.096, 2.38 + 0.155 * math.sin(a)), tick_m, 0)
         bpy.context.object.rotation_euler = (0, -a + math.radians(90), 0)
-    text("N.P.C.I.", (cx, 0.18, 1.62), 0.09, label_m)
-    text("SWITCH", (cx, 0.18, 1.53), 0.045, label_dim)
+    text("N.P.C.I.", (cx, 0.14, 2.06), 0.075, label_m)
 
 
 switchboard(0.0)
+rack(-2.2, "yourbank", led_c, "YOUR BANK")
+rack(2.2, "shopbank", led_c, "SHOP'S BANK")
 
 
 # ---------- patch cables: bezier tubes from the board to each rack ----------
@@ -177,8 +224,8 @@ def cable(name, pts, m, r=0.012):
     return o
 
 
-cable("call_out", [(-0.07, -0.12, 0.98), (0.4, -0.5, 0.35), (1.3, -0.6, 0.06), (1.9, -0.55, 0.3), (2.2, -0.52, 1.2)], cable_live)
-cable("debit_done", [(-0.21, -0.12, 0.98), (-0.8, -0.5, 0.3), (-1.6, -0.6, 0.06), (-2.0, -0.55, 0.4), (-2.2, -0.52, 1.0)], cable_dead)
+cable("call_out", [(-0.049, -0.02, 0.85), (0.4, -0.5, 0.35), (1.3, -0.6, 0.06), (1.9, -0.55, 0.3), (2.2, -0.52, 1.2)], cable_live)
+cable("debit_done", [(-0.235, -0.02, 0.85), (-0.8, -0.5, 0.3), (-1.6, -0.6, 0.06), (-2.0, -0.55, 0.4), (-2.2, -0.52, 1.0)], cable_dead)
 
 # ---------- lighting: dark room, cool key, rim lights, volumetric haze ----------
 w = bpy.data.worlds.new("w"); sc.world = w; w.use_nodes = True
