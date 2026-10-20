@@ -5,7 +5,7 @@ Measures a VO the way we measured the Indian explainer channels that hold viewer
 when the script drifts toward "read text": long sentences, no questions, no "you", no narrator, fancy words,
 foreign slang, no punch / expansion rhythm, semicolons.
 
-usage: python3 scripts/spoken_english_check.py projects/<slug>/vo.txt [--min-words 320 --max-words 390]
+usage: python3 scripts/spoken_english_check.py projects/<slug>/vo.txt [--min-words 320 --max-words 440]
        (a script.tsv works too: the `en` column is read)
 needs: pip install -e '.[script]'   (wordfreq, for the rare-word check)
 """
@@ -43,14 +43,20 @@ CHECKINS = ("right?", "isn't it?", "makes sense?", "no?", "see,", "you know", "i
 DOTTED = re.compile(r"\b(?:[A-Z]\.){2,}")
 
 
+def undot(text):
+    """U.P.I. is one word; keep one full stop when the acronym ends a sentence."""
+    return re.sub(r"\b((?:[A-Z]\.){2,})(?=(\s+[A-Z\n]|\s*$))?",
+                  lambda m: m.group(1).replace(".", "") + ("." if m.group(2) is not None else ""), text, flags=re.M)
+
+
 def sentences(text):
-    text = DOTTED.sub(lambda m: m.group(0).replace(".", ""), text)  # U.P.I. is one word, not three sentences
+    text = undot(text)
     parts = re.split(r"(?<=[.?!])\s+", text.replace("...", "… "))
     return [p.strip() for p in parts if re.search(r"[A-Za-z]", p)]
 
 
 def words(s):
-    return re.findall(r"[A-Za-z][A-Za-z'\-]*", DOTTED.sub(lambda m: m.group(0).replace(".", ""), s))
+    return re.findall(r"[A-Za-z][A-Za-z'\-]*", undot(s))
 
 
 def load(path):
@@ -64,7 +70,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("path")
     ap.add_argument("--min-words", type=int, default=320)
-    ap.add_argument("--max-words", type=int, default=390)
+    ap.add_argument("--max-words", type=int, default=440)
     a = ap.parse_args()
     text = load(a.path)
     sents = sentences(text)

@@ -1,49 +1,50 @@
 # Film 01 · UPI Payment Failed, But Money Deducted. Where Did It Go?
 
-Storyboard and screenplay (Block 3). Times are estimates at 150 words a minute (VO v5: answers the viewer's three questions with the real two-layer mechanism, owner 2026-10-20); re-time from `align/` once the VO is
+Storyboard and screenplay (Block 3). Times are estimates at 150 words a minute (VO v6, 439 words: the UPI flow first, then success / failed / processing as a phone call, owner 2026-10-20); re-time from `align/` once the VO is
 recorded. Each row is one visual state (2.5–4.5 s) and changes **one** thing from the row before (angle, geometry or
 state). `[B]` = Blender Cycles hero shot, `[3]` = Three.js, `[H]` = HyperFrames 2D, `[R]` = real footage. Stand-ins
 carry ILLUSTRATIVE FOOTAGE; every model carries ILLUSTRATION. Cite tags bottom right.
 
-**The model (designed from real reference photos first, PLAYBOOK §9.2): a two-deck cutaway.** Upper deck, the
-**MESSAGE LAYER**: three machines (YOUR BANK · NPCI SWITCH · SHOP'S BANK) joined by glass fibre; cyan light pulses
-race along it, and a 15-second ring sits on the switch. Lower deck, the **MONEY LAYER**: under each bank a vault room;
-money waits on a belt as amber crates, and every two hours a "batch" shuttle carries them to a central hub labelled
-**RBI SETTLEMENT ACCOUNTS** (ILLUSTRATION). A clock on the hub shows the next batch. The app's three words sit on a
-status board on the switch: SUCCESS (green), FAILED (orange), PROCESSING (amber, blinking). At the shop's bank, a
-ledger with two rubber stamps: **TCC · CREDITED** and **RET · RETURN**. References to collect: data-centre racks, a
-bank vault room, an RTGS/RBI building exterior (real photo for the hub), a kirana counter, a UPI QR standee and
-soundbox, the RBI circular table, NPCI circular pages (15 seconds; settlement cycles table).
+**The model (designed from real reference photos first, PLAYBOOK §9.2).** Upper deck, the **call**: YOUR BANK and
+SHOP'S BANK as two server racks, and between them **N.P.C.I. as a switchboard** (a blueprint version of an old
+telephone exchange: patch cables, a big round 15-second dial). A call is a cyan cable glowing from the switchboard into
+the shop's bank, with a call-status panel: RINGING · PICKED UP · DROPPED. Lower deck, the **money**: amber crates in
+vaults and a **cash lorry** that leaves for an **RBI SETTLEMENT** depot ten times a day (ILLUSTRATION, never a real bank
+van livery). At the shop's bank, an attendance-register ledger with two stamps: **YES · GAVE TO SHOP (TCC)** and
+**NO · SENT BACK (RET)**. The three outcomes keep fixed colours everywhere: SUCCESS green, FAILED orange, PROCESSING
+amber. Humour beats are visual and quick (third umpire screen, teacher's register, biscuit packet), never a cartoon
+character. References to collect: telephone-exchange photos, data-centre racks, a bank vault, an Indian cash-van
+photo (shape only), the RBI building exterior, a kirana counter, a UPI QR standee and soundbox, the RBI circular
+table, the NPCI circular pages.
 
 | Time | Phase | AUDIO (VO) | VISUAL + ACTION | HUD | SFX / music |
 |---|---|---|---|---|---|
-| 0:00 | Hook | "Your phone says debited. The shop says nothing came." | `[R]` Tight on a phone at a kirana counter: ₹840 DEBITED (our own simulated screen, no real app brand); cut to the soundbox, light off. ILLUSTRATIVE FOOTAGE. | BALANCE ₹4,400 (amber) | Buzz, then silence |
-| 0:04 | Hook | "So where is your eight hundred and forty rupees right now?" | `[H]` ₹840 lifts off the phone as an amber crate; a question-free tracking reticle locks onto it (label: WHERE?). | MONEY AT ? | Reticle beep |
-| 0:08 | Hook | "It isn't lost. It's sitting in one bank's account." | `[B]` Wide hero, two-deck cutaway; the crate rests in a vault under one of the banks, which one is hidden in shadow. ILLUSTRATION. | — | Low drone |
-| 0:12 | Hook | "I'll show you which one, when it comes back, and the one mistake that makes you pay twice." | `[H]` Three small chips slide in on the lower third: WHICH BANK · WHEN · PAY TWICE? (3 words max each), then fade. | — | Three ticks |
-| 0:19 | Mechanism | "Let me tell you the secret. U.P.I. runs on two layers." | `[B]` Same wide, the two decks light up in turn; labels MESSAGE LAYER (top), MONEY LAYER (bottom). | — | Two hits |
-| 0:23 | Mechanism | "The first layer only moves messages, and every bank gets fifteen seconds to reply." | `[B]` Upper deck: cyan pulses race between the three machines; the 15-second ring on the switch. 1 s insert: NPCI circular, "15 seconds". Cite `[NPCI UPI CIRCULAR \| 2026]`. | LEG TIMER 15.0 (limit) | Fast data ticks |
-| 0:29 | Mechanism | "The second layer moves the actual money, later, in batches." | `[B]` Tilt down to the lower deck: amber crates queue on belts under each bank. | — | Heavy belt hum |
-| 0:32 | Mechanism | "Ten times a day, banks settle up through their accounts at the R.B.I." | `[B]` A batch shuttle leaves for the RBI SETTLEMENT ACCOUNTS hub; the hub clock jumps two hours; `[R]` 1 s insert: NPCI settlement-cycle table, magnifier on cycles 1–10. Cite `[NPCI UPI CIRCULAR \| 2026]`. | NEXT BATCH 01:52:00 · 10 BATCHES / DAY | Shuttle whoosh |
-| 0:38 | Mechanism | "So the word your app shows is only about the messages. Makes sense?" | `[H]` Same frame: the switch's status board glows on the upper deck only; the lower deck dims. | STATUS ? | — |
-| 0:43 | Success | "Success means both banks replied." | `[B]` Upper deck: pulse out and back from both banks; SUCCESS lamp green. | STATUS SUCCESS ✓ | Chime |
-| 0:46 | Failed | "Failed means it broke early — your money never left, or your bank sends it back. Failed is safe to try again." | `[B]` Pulse dies before your bank; FAILED lamp orange; the crate never leaves your vault (or slides straight back). `[R]` Phone: FAILED · Kindly Try Again. Cite `[NPCI UPI HELP \| 2023]`. | STATUS FAILED · BALANCE ₹5,240 | Short buzz, tap |
-| 0:54 | Processing | "Now the big one... processing." | `[B]` Push in on the board: PROCESSING lamp blinks amber; everything else dims. | STATUS PROCESSING | Music drops |
-| 0:56 | Processing | "Your bank replied, done. But the shop's bank went silent." | `[B]` Upper deck: your bank's pulse returns green; the pulse to the shop's bank goes out and nothing comes back. | DEBIT LEG DONE ✓ · CREDIT LEG NO REPLY | Silence (1.5 s) |
-| 1:00 | Processing | "After fifteen seconds, N.P.C.I. stops waiting, and here's the catch — it marks your payment deemed approved. Approved for now, checked later." | `[B]` The 15-second ring completes in orange; a stamp DEEMED APPROVED lands on the message. Cite `[NPCI OC 213 \| 2025]`. | LEG TIMER 15.0 TIMEOUT · CREDIT LEG DEEMED | Thud (reveal) |
-| 1:09 | Money | "So in the next money batch, your eight hundred and forty rupees really moves to the shop's bank." | `[B]` Lower deck: your crate rides the batch shuttle via the RBI hub into the SHOP'S BANK vault. Cite `[NPCI UPI GLOBAL QR RULES \| 2024]`. | MONEY AT SHOP'S BANK | Shuttle, clunk |
-| 1:15 | Money | "That's where your money is right now." | `[B]` Reticle from 0:04 snaps onto the crate in the shop's bank vault. | MONEY AT SHOP'S BANK (locked) | Reticle lock |
-| 1:19 | Answers | "The next day, the shop's bank checks its books and must file one of two answers." | `[B]` Inside the shop's bank: a ledger opens; two stamps hover. A day counter flips to T+1. | DAY T+1 | Page turn |
-| 1:25 | Answers | "Answer one, T.C.C. — we credited the shop. The shop has your money, even though its speaker stayed silent." | `[B]` Stamp TCC · CREDITED; crate slides into the shop's account row; `[R]` the soundbox still dark. | ANSWER TCC ✓ | Stamp, chime |
-| 1:33 | Answers | "Answer two, R.E.T. — return. The shop never got it, so the money goes back, and your bank puts it in your account." | `[B]` Rewind; stamp RET · RETURN; the crate rides the next batch home; your account row climbs back. Cite `[NPCI CIRCULAR \| 2026]`. | ANSWER RET ↩ · BALANCE ₹5,240 | Stamp, reverse whoosh |
-| 1:42 | Answers | "That's why refunds come the next day, not in seconds." | `[H]` Same frame, the T+1 counter glows; the hub clock spins once. | — | — |
-| 1:46 | Rule | "And the R.B.I. sets a deadline. Sent to a person? Back by the next day. Paid a shop? Within five days." | `[R]` Push-in on the real RBI circular table, magnifier on "T + 1" then "T + 5"; day strips draw. Cite `[RBI CIRCULAR \| 2019]`. | DAY T+1 (person) · T+5 (shop) | Ticks |
-| 1:54 | Ruin | "Miss it — and the bank pays you one hundred rupees for every extra day. You don't even have to ask." | `[H]` The strip runs past its limit; each extra cell drops a ₹100 coin into YOUR ACCOUNT. | BANK OWES ₹100 / DAY | Coin drops |
-| 2:03 | Action | "So what should you do at the counter? Here's what I do." | `[R]` Back at the counter; the phone shows PROCESSING. | STATUS PROCESSING | Music lifts |
-| 2:08 | Action | "First, never pay again while it says processing. If the answer is T.C.C. — you've paid twice." | `[H]` Thumb hovers over PAY; a ghost second crate appears and both land in the shop's account; chip PAID TWICE. ILLUSTRATION. | BALANCE ₹3,560 (illustrative) | Double thud |
-| 2:14 | Action | "Second, ask the shopkeeper to check their bank statement, not the speaker." | `[R]` Shopkeeper's phone: bank statement scrolls to a ₹840 credit (simulated, no real app brand); the soundbox ignored. | — | Scroll |
-| 2:19 | Action | "Third, if nothing comes back by the deadline, complain in your app's U.P.I. Help, and then to your bank." | `[R]` Phone: History → payment → UPI Help → Complaint Raised (simulated). | — | Taps |
-| 2:27 | Share | "Cleared your doubt? Send this to that friend who always pays twice." | `[H]` Share sheet slides up (simulated, no real app brand). | HUD collapses | Soft rise |
-| 2:32 | Bridge | "That's the payment that breaks. But what happens when a payment goes right? Watch this next one." | `[B]` Wide hero: a clean pulse runs both ways on the message layer; SUCCESS lamp green. End screen: logo end card + film 02 tile + subscribe zone. Channel named here only. | — | Outro bed, logo sting under VO |
+| 0:00 | Hook | "Your phone says debited. The shopkeeper says nothing came." | `[R]` Kirana counter: phone shows ₹840 DEBITED (simulated, no real app brand); the soundbox stays dark. ILLUSTRATIVE FOOTAGE. | BALANCE ₹4,400 (amber) | Buzz, then silence |
+| 0:04 | Hook | "Now you're both staring like it's a third umpire review." | `[H]` Split screen, customer and shopkeeper eye to eye; a cricket-style "DECISION PENDING" strip slides across the bottom. | — | Crowd murmur sting |
+| 0:08 | Hook | "So where is your eight hundred and forty rupees right now?" | `[H]` ₹840 lifts off the phone as an amber crate; a tracking reticle locks on: WHERE? | MONEY AT ? | Reticle beep |
+| 0:12 | Hook | "You'll know where, when it comes back, and how not to pay twice." | `[H]` Three chips slide in: WHERE · WHEN · DON'T PAY TWICE. | — | Three ticks |
+| 0:17 | Flow | "First, let me show you what happens after you type your pin." | `[R]` Thumb types the PIN (stand-in). Match cut into the blueprint world. | — | Taps, whoosh |
+| 0:22 | Flow | "Step one, your bank takes the money out — that's why debited shows up so fast." | `[B]` YOUR BANK cutaway: the account row drops ₹840 instantly; chip STEP 1. | DEBIT ✓ · BALANCE ₹4,400 | Click |
+| 0:28 | Flow | "Step two, N.P.C.I., the switchboard in the middle, calls the shop's bank and asks it to add the money." | `[B]` Pull back: the N.P.C.I. switchboard; an operator-style patch cable plugs into SHOP'S BANK; chip STEP 2. Cite `[WORLD BANK / NPCI \| UPI FLOW]`. | CALL RINGING | Old phone ring |
+| 0:36 | Flow | "It's like a phone call, and like every call in India... three things can happen." | `[H]` The call-status panel lights three slots: PICKED UP ✓ · PICKED UP ✗ · DROPPED. | — | Ring stops |
+| 0:42 | Success | "One. The shop's bank picks up and says, done, the shop got it. That's success." | `[B]` Cable glows green; the crate drops into the shop's account row; SUCCESS lamp green. | CALL PICKED UP · STATUS SUCCESS ✓ | "Click" of a receiver, chime |
+| 0:48 | Failed | "Two. The shop's bank picks up and says, sorry, can't take it — maybe the shop's account has a problem. That's failed." | `[B]` Cable glows orange; a padlock on the shop's account row; FAILED lamp orange. | CALL PICKED UP · STATUS FAILED | Short buzz |
+| 0:56 | Failed | "Your money already left, so N.P.C.I. tells your bank to give it back. Failed sounds scary, but it's the safe one — just pay again." | `[B]` A second cable to YOUR BANK: "GIVE IT BACK"; the account row climbs back. `[R]` Phone: FAILED · Kindly Try Again; thumb pays again. Cite `[NPCI UPI CIRCULAR \| 2026]`. | BALANCE ₹5,240 | Reverse whoosh, tap |
+| 1:06 | Processing | "Three. The troublemaker. N.P.C.I. calls... and the line goes quiet. Hello? Hello? Call dropped." | `[B]` Cable glows, then flickers and goes dark mid-way; the call panel flashes DROPPED. | CALL DROPPED · STATUS PROCESSING | Ring, static, dead tone |
+| 1:12 | Processing | "Did the shop's bank add the money before the call dropped? Nobody knows. That's processing." | `[B]` Inside SHOP'S BANK: the account row half-lit, flickering between ₹0 and ₹840; PROCESSING lamp amber. | — | Silence (1.5 s) |
+| 1:18 | Processing | "After fifteen seconds, N.P.C.I. marks it deemed approved — approved for now, checked later." | `[B]` The 15-second dial on the switchboard completes; a stamp DEEMED APPROVED lands on the call log. Cite `[NPCI OC 213 \| 2025]`. | DIAL 15 s · DEEMED | Thud (reveal) |
+| 1:24 | Twist | "Here's the twist. The real money doesn't travel with the call — it moves later, in bulk." | `[B]` Tilt down from the call deck to the money deck: your ₹840 crate still sits in YOUR BANK's vault. | MONEY AT YOUR BANK | Low brass hit |
+| 1:31 | Twist | "Picture a cash lorry leaving ten times a day, settling every bank's account at the R.B.I." | `[B]` A blueprint cash lorry loads crates and drives to the RBI SETTLEMENT depot; a clock jumps two hours. Insert: NPCI settlement-cycle table, cycles 1–10. ILLUSTRATION. Cite `[NPCI UPI CIRCULAR \| 2026]`. | NEXT LORRY 01:52 · 10 / DAY | Engine, horn (short) |
+| 1:37 | Twist | "On the next lorry, your money rides to the shop's bank. That's where it is right now." | `[B]` Your crate rides the lorry into SHOP'S BANK's vault; the reticle from 0:08 locks on. Cite `[NPCI UPI GLOBAL QR RULES \| 2024]`. | MONEY AT SHOP'S BANK (locked) | Reticle lock |
+| 1:44 | Answers | "Next day, the shop's bank checks its books, like a teacher taking attendance. Two possible answers." | `[B]` An attendance-register ledger opens; a pen runs down the names; the day counter flips to T+1. | DAY T+1 | Page turn, pen scratch |
+| 1:50 | Answers | "Yes, we gave it to the shop. So the shop has it, even though its speaker stayed silent." | `[B]` Stamp YES · GAVE TO SHOP (small label TCC); `[R]` the soundbox, still dark. | ANSWER YES (TCC) | Stamp, chime |
+| 1:58 | Answers | "Or, no, we never did — then it rides the lorry back to your account. Makes sense?" | `[B]` Stamp NO · SENT BACK (small label RET); the crate rides the lorry home; your account row climbs back. | ANSWER NO (RET) · BALANCE ₹5,240 | Stamp, engine |
+| 2:04 | Deadline | "And the R.B.I. sets a deadline. Sent to a person? Back by the next day. Paid a shop? Within five days." | `[R]` Push-in on the real RBI circular table, magnifier on "T + 1" then "T + 5". Cite `[RBI CIRCULAR \| 2019]`. | DAY T+1 (person) · T+5 (shop) | Ticks |
+| 2:13 | Deadline | "If the bank is late, it pays you one hundred rupees for every extra day — without you asking." | `[H]` Day strip runs past the limit; ₹100 coins drop into YOUR ACCOUNT one per day. | BANK OWES ₹100 / DAY | Coin drops |
+| 2:20 | Summary | "Quick summary, the way I remember it. Success, the shop got it. Failed, it's coming back, so pay again. Processing, you wait." | `[H]` The three lamps in a row, each with a 2-word chip: GOT IT · PAY AGAIN · WAIT. | — | Three hits |
+| 2:29 | Tip | "So never pay again while it says processing. If the answer is yes, congratulations — you just paid double for one packet of biscuits." | `[H]` Two ₹840 crates land in the shop's account; cut to a single biscuit packet with a ×2 price tag. ILLUSTRATION. | BALANCE ₹3,560 (illustrative) | Double thud, comic beat |
+| 2:39 | Tip | "Ask the shopkeeper to check their bank statement, not the speaker. Stuck after the deadline? Complain in your app's U.P.I. Help." | `[R]` Shop phone: bank statement shows a ₹840 credit; then your phone: History → UPI Help → Complaint Raised (simulated). | — | Scroll, taps |
+| 2:47 | Share | "Cleared your doubt? Send this to that friend who always pays twice — I know you have one." | `[H]` Share sheet slides up (simulated); a contact named "PAYS TWICE" is highlighted. | HUD collapses | Soft laugh beat |
+| 2:54 | Bridge | "So what happens when a payment goes right? Watch this next one." | `[B]` A clean call: cable green both ways, SUCCESS lamp. End screen: logo end card + film 02 tile + subscribe zone. Channel named here only. | — | Outro bed, logo sting under VO |
 
-**Hero Blender shots (budget ≈ 30 s):** 0:08 two-deck wide; 0:29–0:38 the money layer and batch shuttle; 1:00–1:15 deemed stamp and the crate moving to the shop's bank; 1:19–1:42 the ledger and two stamps; 2:32 closing wide. Everything else is HyperFrames or Three.js.
+**Hero Blender shots (budget ≈ 35 s):** 0:28 the switchboard and patch cable; 1:06–1:18 the dropped call and the 15-second dial; 1:24–1:37 money deck and cash lorry; 1:44–1:58 the register and two stamps; 2:54 closing wide. Everything else is HyperFrames or Three.js.
