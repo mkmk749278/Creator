@@ -5,6 +5,7 @@ word (`screenplay.md`). Logo bug bottom right, citation tags bottom right above 
 
 | Readout | Unit | Normal | Stressed | Colour | Source / label |
 |---|---|---|---|---|---|
+| CALL | the phone-call state | `RINGING → PICKED UP` | `DROPPED` | cyan → green / orange; dropped = dim cyan | U03, U04, U22 |
 | STATUS | app word | `SUCCESS ✓` | `PROCESSING` (blinking) → `SUCCESS ✓` or back to `FAILED/RETURNED`; `FAILED` | green / amber / orange, matching the status board | U13–U15 |
 | LEG TIMER | seconds, 0.0 → 15.0 | stops at 0.4–1.2 s with a green tick | runs to 15.0, flashes, `TIMEOUT` | `bp_readout` → `bp_stress` at 15.0 | 15 s limit: claims U02. Running times ILLUSTRATIVE |
 | DEBIT LEG | state | `IDLE → SENT → DONE ✓` | `DONE ✓` (stays done) | `bp_signal` while sent, `bp_verified` done | U03 |
@@ -13,7 +14,7 @@ word (`screenplay.md`). Logo bug bottom right, citation tags bottom right above 
 | MONEY AT | location | `YOUR BANK` | `YOUR BANK` → (next batch) `SHOP'S BANK` → `SHOP` (TCC) or `YOUR BANK` (RET) | `bp_pressure` | U16–U18 |
 | DAY | T+n | `T+0` | counts `T+0 … T+5` (shop) / `T+1` (person) | `bp_readout`; `bp_stress` past the limit | U08, U09 |
 | BANK OWES | ₹ / day | `₹0` | `₹100 / DAY` after the limit | `bp_stress` | U10, U11 |
-| NEXT BATCH | countdown to the next settlement cycle | `01:52:00` | — | `bp_passive` | U16 (cycle length from NPCI Annexure E; the countdown value is ILLUSTRATIVE) |
+| NEXT LORRY | countdown to the next settlement cycle (shown as the lorry) | `01:52:00` | — | `bp_passive` | U16 (cycle length from NPCI Annexure E; the countdown value is ILLUSTRATIVE) |
 | ANSWER | shop's bank filing | — | `TCC ✓` (credited) or `RET ↩` (return) | green / slate | U18, U19 |
 | UPI LOAD | payments / day | `80 CR / DAY` | — | `bp_passive` | U01 (our calculation from NPCI data) |
 

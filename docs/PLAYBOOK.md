@@ -610,8 +610,16 @@ section wins; everything not mentioned here (fact-check, rights, honesty labels,
 YouTube package, merged PR) still applies.
 
 **Script**
-1. **Length: 320–390 words** at 130–140 words a minute, so about 2:20–3:00. The owner's PDF also gives 380–440 and
-   380–430; the 2026-10-20 directive message is the newest and wins. Count the words of the VO column before recording.
+1. **Length: 320–440 words** at 145–160 words a minute (§4a-10), so about 2:10–3:00. Use up to 440 when the mechanism
+   needs depth (owner, 2026-10-20, for film 01: "go with 440 words for more depth, but the explanation should be
+   simple"). `scripts/spoken_english_check.py` defaults to 320–440.
+1a. **Explain with an everyday analogy and light humour (owner, 2026-10-20).** "No need to stick strictly to bank words
+   or technical words; understanding for the audience is what matters." Show the real flow first, step by step, then
+   carry it with one analogy the viewer lives with (film 01: NPCI phones the shop's bank; picked up and yes = success,
+   picked up and no = failed, call dropped = processing; a cash lorry ten times a day for settlement). Technical terms
+   appear only as small on-screen labels (TCC, RET) or once with a plain meaning. Humour is quick and visual (a third
+   umpire review, a teacher's register, a biscuit packet paid twice), never at the viewer's expense, and every analogy
+   must stay true to the sourced mechanism.
 2. **The viewer's-questions test (owner, 2026-10-20).** Before writing, list the three questions a viewer in this
    situation is actually asking (for a stuck payment: where is my money right now, when exactly does it come back,
    what do I do now). The film must answer each one concretely, and the "how" must go **one layer deeper than common

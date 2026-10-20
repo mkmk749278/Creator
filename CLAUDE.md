@@ -83,7 +83,7 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 
 ## Documentary rules (Be Practical with Kishore). Full spec: PLAYBOOK Part B
 - **180-second hyper-visual explainers (owner, 2026-10-20; PLAYBOOK §4a-9, verbatim in Part G).** The channel's main
-  format now: the 50 films in `config/roadmap-180s.yaml`, made and uploaded in that order. **320–390 words** (≈2:20–3:00),
+  format now: the 50 films in `config/roadmap-180s.yaml`, made and uploaded in that order. **320–440 words** (≈2:10–3:00 at 150 wpm; 440 when the topic needs depth, owner 2026-10-20),
   **one mechanism** per film (no history, market or policy), answering the viewer's own three questions with machinery one
   layer deeper than common knowledge, from primary documents (owner, 2026-10-20: "no technical depth, nothing cleared";
   §4a-9 rule 2), six phases: 0:00–0:10 zero-buffer hook (a friction point
@@ -153,7 +153,7 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   VO text; `—` allowed for mid-thought pivots; `?` on every real question; no emotion cues (empty `emotion` column, owner 2026-10-11). Put `en` in the project's `lang.txt`: the `en` column is then the VO and `te` an
   optional Telugu dub; `tools/build_script.py` lints both. The Telugu rules below apply to Telugu films and dubs.
 - **Simple, friendly, interactive English (owner, 2026-10-20; PLAYBOOK §4a-10, owner's narration blueprint verbatim in
-  Part H).** Modern educated Indian conversational English: an engineer explaining over coffee. Everyday words
+  Part H).** Modern educated Indian conversational English: an engineer explaining over coffee; everyday analogies and light humour welcome, plain words over bank words (owner, 2026-10-20). Everyday words
   (payment, not transaction; but, not however), active verbs, topic first; talk to one person (≥ 3 "you" per 100
   words) as a person (≥ 1 "I/let's" per 100); ≥ 10% questions; signposts and check-ins ("Here's the catch", "Think
   about it", "…right?", "Makes sense?", no Hindi tags); rhythm punch (3–6 words) → expansion (12–18) → checkpoint, none
