@@ -1,7 +1,7 @@
 # Film 01 · UPI Payment Failed, But Money Deducted. Where Did It Go?
 
 First film of the 180-second roadmap (`config/roadmap-180s.yaml` #01; rules PLAYBOOK §4a-9). English VO (`lang.txt`),
-390 words, about 2:50 at 140 words a minute (VO v2 after the spoken-English pass, PLAYBOOK §4a-10). Genre: tech explainer, dark blueprint look (`blueprint` in `config/brand.yaml`).
+390 words, about 2:40 at 150 words a minute (VO v3, written to the owner's narration blueprint, PLAYBOOK §4a-10). Genre: tech explainer, dark blueprint look (`blueprint` in `config/brand.yaml`).
 
 **Mechanism (corrected from the roadmap note):** the roadmap called this an "asynchronous rollback vs CBS deadlock in a
 distributed two-phase commit". The sources show something simpler and more accurate: UPI runs a **debit leg, then a

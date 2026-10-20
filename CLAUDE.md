@@ -86,7 +86,7 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   format now: the 50 films in `config/roadmap-180s.yaml`, made and uploaded in that order. **320–390 words** (≈2:20–3:00),
   **one mechanism** per film (no history, market or policy), six phases: 0:00–0:10 zero-buffer hook (a friction point
   or paradox in motion) → constraint framing → resting cross-section → stress reveal → edge case / fail-safe → insight
-  said twice + a **~15 s bridge question to the next roadmap film** over the end screen (never a silent logo). Dark
+  said as Rule → Ruin → Reality + a **~15 s bridge question to the next roadmap film** over the end screen (never a silent logo). Dark
   blueprint look (`blueprint` in `config/brand.yaml`, colour = meaning), real internal cross-sections drawn from real
   references, a **persistent top-left telemetry HUD** locked to the VO (fact-checked values or "ILLUSTRATIVE"), visual
   states held **2.5–4.5 s** (no cut < 1.8 s), **one change per cut** (angle, geometry or state), labels ≤ 3 words, no
@@ -150,17 +150,21 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   voice. Numbers and amounts as words (`thirty thousand rupees`), no digits, `₹`, `!`, double quotes or brackets in
   VO text; `—` allowed for mid-thought pivots; `?` on every real question; no emotion cues (empty `emotion` column, owner 2026-10-11). Put `en` in the project's `lang.txt`: the `en` column is then the VO and `te` an
   optional Telugu dub; `tools/build_script.py` lints both. The Telugu rules below apply to Telugu films and dubs.
-- **Simple, friendly, interactive English (owner, 2026-10-20; PLAYBOOK §4a-10, measured on Indian explainer channels).**
-  Everyday words an Indian uses at a shop or bank (payment, not transaction; but, not however); talk to one person
-  (≥ 3 "you" per 100 words) as a person (≥ 1 "I/let's" per 100); ≥ 10% of sentences are questions (the viewer's own
-  doubt, quiz splits, one comment question near the end); ≥ 2 check-ins ("right?", "See,", "isn't it?", no Hindi tags);
-  reassure, never lecture; average 7.5–14 words a sentence, none over 25; contractions. `scripts/spoken_english_check.py`
-  must pass, and every English film's reply pastes its recording blocks (Akash, < 1,500 characters each).
+- **Simple, friendly, interactive English (owner, 2026-10-20; PLAYBOOK §4a-10, owner's narration blueprint verbatim in
+  Part H).** Modern educated Indian conversational English: an engineer explaining over coffee. Everyday words
+  (payment, not transaction; but, not however), active verbs, topic first; talk to one person (≥ 3 "you" per 100
+  words) as a person (≥ 1 "I/let's" per 100); ≥ 10% questions; signposts and check-ins ("Here's the catch", "Think
+  about it", "…right?", "Makes sense?", no Hindi tags); rhythm punch (3–6 words) → expansion (12–18) → checkpoint, none
+  over 25; cold assertion in the first 8 s; rules as Rule → Ruin → Reality; sections end with a forward pivot; banned:
+  moreover, furthermore, delve, harnessing, imperative, y'all, stoked, no cap, buckle up. TTS: blank line between
+  beats, spaced dash and `...` for pauses, no semicolons, acronyms with dots (U.P.I., R.B.I.), no audio tags; pace
+  145–160 wpm. `scripts/spoken_english_check.py` must pass, and every English film's reply pastes its recording
+  blocks (Akash, < 1,500 characters each).
 - **English films: owner's production guide (2026-10-15; PLAYBOOK §4a-4, verbatim in Part F).** *Why:* earlier scripts
   sounded like a news reader. Voice = a street-smart elder brother talking across a table; no lecture openers ("Now let us
   understand…", "In this video we will…"); mix short punches with flowing sentences (never 3+ very short sentences in a
-  row), `...` before a number or reveal, `—` for pivots. **Phonetics for Akash:** letter acronyms hyphenated (R-B-I,
-  E-M-I, N-P-A, R-D-S-O), `Sibill`, `Ray-rah`, `Loke Uh-daa-lut`; the lint fails bare capital acronyms. **Structure,
+  row), `...` before a number or reveal, `—` for pivots. **Phonetics for Akash:** letter acronyms with dots since 2026-10-20 (R.B.I.,
+  E.M.I., N.P.A., R.D.S.O.; hyphens were the earlier form), `Sibill`, `Ray-rah`, `Loke Uh-daa-lut`; the lint fails bare capital acronyms. **Structure,
   8–12 min:** lived-reality hook with an **open loop in the first 60 s** naming the minute of the payoff (must be true in
   the final cut) → forensic dissection (what they tell you vs what the document says) → citizen's action plan with
   verified helplines → outro tying it to India's strength, a pinned-comment question, "Know your rights. Stay practical.
