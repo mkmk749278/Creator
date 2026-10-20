@@ -5,6 +5,7 @@ word (`screenplay.md`). Logo bug bottom right, citation tags bottom right above 
 
 | Readout | Unit | Normal | Stressed | Colour | Source / label |
 |---|---|---|---|---|---|
+| STATUS | app word | `SUCCESS ✓` | `PROCESSING` (blinking) → `SUCCESS ✓` or back to `FAILED/RETURNED`; `FAILED` | green / amber / orange, matching the status board | U13–U15 |
 | LEG TIMER | seconds, 0.0 → 15.0 | stops at 0.4–1.2 s with a green tick | runs to 15.0, flashes, `TIMEOUT` | `bp_readout` → `bp_stress` at 15.0 | 15 s limit: claims U02. Running times ILLUSTRATIVE |
 | DEBIT LEG | state | `IDLE → SENT → DONE ✓` | `DONE ✓` (stays done) | `bp_signal` while sent, `bp_verified` done | U03 |
 | CREDIT LEG | state | `IDLE → SENT → DONE ✓` | `SENT → NO REPLY → DEEMED` then `SETTLED ✓` or `RETURNED ↩` | `bp_signal` → `bp_pressure` (deemed) → green / slate | U04, U06, U07 |

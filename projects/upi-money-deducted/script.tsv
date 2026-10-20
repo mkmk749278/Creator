@@ -1,24 +1,23 @@
 te	en
 	Your phone says debited. The shop says nothing came.
-	And here's the strange part — both are telling the truth.
-	Your money isn't lost. It's stuck between two banks... and I'll show you when it comes back.
-	Think about it. You pay eight hundred and forty rupees at a kirana shop, and the speaker stays silent. Sounds familiar, right?
-	Here's the catch. U.P.I. handles about eighty crore payments a day. So the system in the middle, run by N.P.C.I., gives every bank fifteen seconds to reply.
-	Let's look at a normal payment. N.P.C.I. tells your bank, take out eight hundred and forty rupees.
-	Your bank does it, and replies... done.
-	Only then does N.P.C.I. tell the shop's bank to add it. That bank adds it, and replies... done.
-	One payment is two steps. Money leaves one bank first, and reaches the other bank second. Makes sense?
-	Let's go back to your shop. Step one worked — your money is already out. Step two starts... and the shop's bank never replies.
-	Maybe a network link broke. Maybe the connection timed out.
-	Fifteen seconds pass. N.P.C.I. can't wait forever, so it marks your payment as deemed — which simply means, not sure yet.
-	That's why your phone says debited. For your bank, step one is finished, but for the shop, step two never arrived.
-	Now notice this. The system doesn't give up. N.P.C.I. goes back to the shop's bank and asks... did the money reach the shop or not?
-	If yes, it's a success. If not, the shop's bank sends it back, and your bank returns every rupee.
-	Here's the rule from the R.B.I. Paid a shop? Your money must come back within five days. Sent it to a person? By the next day.
+	So open your U.P.I. app and look. It will show you one of three words — success, failed, or processing.
+	Each one means something different for your money. And the third one... that's where people panic and pay twice. I'll show you why.
+	Here's the catch. U.P.I. handles about eighty crore payments a day, so N.P.C.I., the system in the middle, gives every bank fifteen seconds to reply.
+	Let's look at what a payment really is. It's two steps — first your bank takes the money out, and then the shop's bank adds it in.
+	Now the three words make sense, right?
+	Success means both steps finished, and your money has already reached the shop's bank. Done.
+	Failed means the payment broke before it finished. Sometimes your money never even left, and if it did, your bank has to send it back.
+	I'll be honest — failed is the safe one, because you can simply try again.
+	Now the big one. Processing — some apps say pending.
+	It means a reply never came back. In your case, step one worked, so your money is out. Step two started... but the shop's bank never replied. Maybe a network link broke. Maybe the connection timed out.
+	After fifteen seconds, N.P.C.I. can't keep waiting, so it marks your payment as deemed — which simply means, not sure yet.
+	Think about it. Your money isn't lost. It's waiting between two banks, and nobody knows yet which way it will go.
+	So N.P.C.I. goes back and asks the shop's bank... did the money reach or not?
+	If yes, processing becomes success. If not, the shop's bank sends it back, and your bank returns every rupee.
+	And there's a deadline from the R.B.I. Paid a shop? Your money must come back within five days. Sent it to a person? By the next day.
 	Miss that deadline — and the bank pays you one hundred rupees for every extra day, without you asking.
-	At the end of the day, your money was never lost — it was only waiting.
-	One tip from me. Never pay a second time while the first payment still says pending.
-	If the first one goes through later — you've paid twice.
-	Pending isn't failed. It just means... not sure yet.
+	So here's my one rule. Never pay again while it says processing.
+	If the first payment goes through later — you've paid twice.
+	Failed means try again. Processing means wait.
 	Cleared your doubt? Send it to that friend who always pays twice.
 	That's how a stuck payment comes home. But what happens when a payment goes right? Watch this next one.
