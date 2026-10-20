@@ -1,26 +1,27 @@
-Your U.P.I. app says eight hundred and forty rupees debited. But the shop's soundbox is silent, and you're both staring at each other like it's a third umpire review. You know that feeling, right?
-Stop. Don't pay again yet. Your money is not lost. In the next few minutes, you'll know where it is right now, when it comes back, and the one mistake that makes people pay twice.
-Here's what happens after you type your pin.
-Step one. Your bank takes the money out of your account. That's the debited message you see.
-Step two. N.P.C.I. — the middleman that runs U.P.I. — calls the shop's bank and says, please add this money to the shop's account.
-It's just like a phone call. And like every phone call in India... three things can happen.
+U.P.I. says eight hundred and forty rupees debited. But the shop's soundbox? Silent. Now you're both staring at each other — third umpire moment, right?
+Don't pay again. Your money is not lost. In a few minutes, you'll know where it is right now, when it comes back, and the one mistake that makes people pay twice.
+Let me walk you through what happens after you type your pin.
+First, your bank takes the money out of your account. That's the debited message you see.
+Then N.P.C.I. — the middleman that runs U.P.I. — calls the shop's bank and says, please add this money to the shop's account.
+I like to think of it as a phone call. And like every phone call in India... three things can happen.
 One. The shop's bank picks up and says, done, the shop got it. That's success.
 Two. The shop's bank picks up and says, sorry, we can't take this, maybe there's a problem with the account. That's failed.
 Failed sounds scary, but it's actually the clear answer. The payment did not happen, and your money comes back on its own. So you can pay again. Simple so far, right?
 Three. The troublemaker. N.P.C.I. calls... and the line goes quiet. Hello?... Hello?... Call dropped.
 Did the shop's bank add the money before the call dropped? Nobody knows yet. Your app shows this as pending, or processing.
 So right there at the counter, don't pay again. Ask the shopkeeper to check their bank S.M.S., not the soundbox.
-N.P.C.I. waits fifteen seconds for an answer. When none comes, it doesn't cancel your payment. It keeps it on hold and sorts it out later.
-One more thing. That phone call only passes the message. The real money between the two banks moves later, all together, ten times a day, through the Reserve Bank.
-So where is your money right now? It has left your bank, and after the next round, it's sitting with the shop's bank. Not lost.
-But reaching the shop's bank is not the same as reaching the shop's account. That's the only question left.
-Then the shop's bank checks its records, like a teacher taking attendance. Only two answers are possible.
-Yes, we put it in the shop's account. Then the shop has your money, even though the soundbox stayed silent.
-Or, no, we never did. Then the money goes back, and your bank puts it in your account.
-How long can this take? Paid a person? Your money should be back by the next day. Paid a shop? Within five days. That's the R.B.I. rule.
-And if the bank takes longer, it has to pay you one hundred rupees for every extra day. Automatically. Even if you don't complain.
+S.M.S. says received? The shop got it. You're done. Nothing yet? Then it's still processing — your money will reach the shop, or come back to you.
+Meanwhile, N.P.C.I. waits fifteen seconds for an answer. When none comes, it doesn't cancel your payment. It puts it on hold, and the banks check it later.
+Now, one thing I find really interesting. That phone call only passes the message. The actual money between banks moves later, in one go, ten times a day.
+So where is your money right now? It has left your account, and it's on its way to the shop's bank, or already waiting there. Not lost.
+Now the shop's bank has to answer one simple question — did it go into the shop's account, or not? Like a teacher taking attendance, it can only say yes or no.
+Yes? Then the shop has your money, even though the soundbox stayed silent.
+No? Then the shop's bank sends it back to your bank, and your bank puts it in your account.
+How long can this take? Whether it says failed or processing, the R.B.I. has fixed a limit. Paid a person? Back by the next day. Paid a shop? Within five days.
+And if the bank takes longer, it has to pay you one hundred rupees for every extra day. You don't even have to complain. The bank has to pay it on its own. That's the rule.
 Quick summary, the way I remember it. Success, the shop got it. Failed, your money comes back, so pay again. Processing, wait — up to a day for a person, up to five days for a shop.
-My one rule: never pay again while it says processing. Because if that first payment turns out to be a yes... congrats, you just paid double for one packet of biscuits.
-Still stuck after that? Open your app, go to your payment history, tap that payment, and look for U.P.I. Help. Paid twice by mistake? Choose duplicate payment there.
+My one rule: never pay again while it says processing. Because if that first payment turns out to be a yes... congrats, you just paid eight hundred and forty rupees... twice.
+Still stuck after the deadline? Open your app, go to your payment history, tap that payment, and look for U.P.I. Help. Paid twice by mistake? Choose duplicate payment there.
+Still not solved? Here's what I'd do. Complain to your bank. And if your bank doesn't fix it, you can go to the R.B.I. Ombudsman.
 Send this to that one friend who always pays twice — I know you have one.
 Next video: the full journey of one hundred rupees, when everything goes right.
