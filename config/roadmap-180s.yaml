@@ -36,7 +36,7 @@ videos:
      visual: "Network diagram of the uncommitted two-phase debit lock.",
      bridge: "That is the payment that breaks. So what happens in those few seconds when a hundred rupee payment goes right?",
      project: projects/upi-money-deducted,
-     note: "Sourced mechanism: debit leg then credit leg, 15 s limits, credit timeout = deemed, check then credit or return (README)."}
+     note: "Sourced mechanism (v5): messages in real time vs money in 10 settlement batches at the RBI; credit timeout = deemed approved and settled to the shop's bank, which files TCC or RET on T+1 (README)."}
   - {num: 2, sprint: 1, list_no: 13, title: "What Actually Happens When You Pay ₹100 Through UPI?",
      mechanism: "Asymmetric MPIN encryption via device keystore to HSM atomic ledger debit.",
      visual: "Flow diagram tracking encrypted payload crossing PSP, Switch, and CBS.",

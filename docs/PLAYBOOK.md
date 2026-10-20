@@ -612,10 +612,18 @@ YouTube package, merged PR) still applies.
 **Script**
 1. **Length: 320–390 words** at 130–140 words a minute, so about 2:20–3:00. The owner's PDF also gives 380–440 and
    380–430; the 2026-10-20 directive message is the newest and wins. Count the words of the VO column before recording.
-2. **Single mechanism rule.** One observable mystery, one physical or code mechanism, one practical takeaway. No history,
+2. **The viewer's-questions test (owner, 2026-10-20).** Before writing, list the three questions a viewer in this
+   situation is actually asking (for a stuck payment: where is my money right now, when exactly does it come back,
+   what do I do now). The film must answer each one concretely, and the "how" must go **one layer deeper than common
+   knowledge**: the real machinery from primary documents (for UPI: messages vs money, the 10 settlement batches at
+   the RBI, deemed approved, the shop's bank filing TCC or RET), never a vague line like "it's waiting between two
+   banks". The hook promises those answers ("I'll show you which bank, when it comes back, and the one mistake that
+   makes you pay twice"). *Why:* film 01 v1–v4 explained "two steps" and the owner judged it "no technical depth,
+   nothing cleared from the user's point of view": a viewer had no reason to watch.
+3. **Single mechanism rule.** One observable mystery, one physical or code mechanism, one practical takeaway. No history,
    market size, funding, policy or geopolitics. This replaces the four acts (Part E) and the 8–12 minute structure
    (§4a-4) for these films.
-3. **Six phases** (times are for a 3:00 film; scale them for shorter scripts):
+4. **Six phases** (times are for a 3:00 film; scale them for shorter scripts):
 
    | Time | Phase | What happens |
    |---|---|---|
@@ -628,15 +636,15 @@ YouTube package, merged PR) still applies.
 
    The hook names the thumbnail's subject, so lede-first (§4a-5 law 1) is met. The open loop with an exact minute
    (§4a-5 law 2, 0:30–0:55) is dropped: the whole film is the payoff.
-4. **Say the key rule twice, as a triad.** When the film delivers its critical rule or safety takeaway, give the Rule,
+5. **Say the key rule twice, as a triad.** When the film delivers its critical rule or safety takeaway, give the Rule,
    the Ruin (what happens if you break it) and the Reality (why the system works that way), §4a-10 rule 9, not the
    same sentence repeated.
-5. **Bridge, never a silent logo.** The last ~15 s name the next roadmap film as a question: "Topic A works this way, but
+6. **Bridge, never a silent logo.** The last ~15 s name the next roadmap film as a question: "Topic A works this way, but
    what about Topic B? Watch this next breakdown to find out." (`bridge` in the roadmap; re-word it if the fact-check
    changes a number). It runs over the end screen, so the logo end card and end-screen zones sit under live VO. The
    channel is still named only here (§5.5 rule 5). The 8–12 minute outro ("Know your rights. Stay practical. Jai Hind.")
    is replaced by the bridge; the pinned-comment question stays in the YouTube package.
-6. **Voice:** the friendly, grounded peer, sharp and conversational, no fluff ("sodhi lekunda"), written to §4a-10
+7. **Voice:** the friendly, grounded peer, sharp and conversational, no fluff ("sodhi lekunda"), written to §4a-10
    (simple everyday English, questions, "you" and "I"; `scripts/spoken_english_check.py` passes). The English VO rules,
    sentence architecture (§4a-6) and Akash phonetics (§4a-4) apply unchanged. "Vocal inflection cues" are carried by
    punctuation (`...`, `—`, `?`), not bracket tags: the recording block stays clean text (owner, 2026-10-11: no emotion cues).
@@ -1508,6 +1516,13 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
    its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
 
 ## 15. Lessons log
+
+**Film 01 script, v1–v5 (2026-10-20).** Four rewrites polished the wording (simpler English, questions, the three
+app statuses) while the content stayed shallow: "a payment is two steps, the second one timed out". The owner's verdict:
+"What's the reason to see our video? No technical depth. Nothing cleared from the user's point of view." The fix was
+research, not wording: NPCI's consolidated circular (settlement in 10 batches through RBI accounts), NPCI OC 213 and the
+UPI Global QR rules (deemed approved is settled; the shop's bank files TCC or RET on T+1) gave the real answer to "where
+is my money". *Rule:* §4a-9 rule 2, the viewer's-questions test, comes before any wording pass.
 
 **Blender Cycles on the session VM (2026-10-20).** `bpy==5.2.2` installs from pip (about 1 GB venv, Python 3.13) and
 renders headless on CPU (the CUDA warning at start is harmless). 1080p cutaway: 32 samples 68.5 s, 8 samples with

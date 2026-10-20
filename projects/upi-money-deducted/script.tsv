@@ -1,23 +1,23 @@
 te	en
-	Your phone says debited. The shop says nothing came.
-	So open your U.P.I. app and look. It will show you one of three words — success, failed, or processing.
-	Each one means something different for your money. And the third one... that's where people panic and pay twice. I'll show you why.
-	Here's the catch. U.P.I. handles about eighty crore payments a day, so N.P.C.I., the system in the middle, gives every bank fifteen seconds to reply.
-	Let's look at what a payment really is. It's two steps — first your bank takes the money out, and then the shop's bank adds it in.
-	Now the three words make sense, right?
-	Success means both steps finished, and your money has already reached the shop's bank. Done.
-	Failed means the payment broke before it finished. Sometimes your money never even left, and if it did, your bank has to send it back.
-	I'll be honest — failed is the safe one, because you can simply try again.
-	Now the big one. Processing — some apps say pending.
-	It means a reply never came back. In your case, step one worked, so your money is out. Step two started... but the shop's bank never replied. Maybe a network link broke. Maybe the connection timed out.
-	After fifteen seconds, N.P.C.I. can't keep waiting, so it marks your payment as deemed — which simply means, not sure yet.
-	Think about it. Your money isn't lost. It's waiting between two banks, and nobody knows yet which way it will go.
-	So N.P.C.I. goes back and asks the shop's bank... did the money reach or not?
-	If yes, processing becomes success. If not, the shop's bank sends it back, and your bank returns every rupee.
-	And there's a deadline from the R.B.I. Paid a shop? Your money must come back within five days. Sent it to a person? By the next day.
-	Miss that deadline — and the bank pays you one hundred rupees for every extra day, without you asking.
-	So here's my one rule. Never pay again while it says processing.
-	If the first payment goes through later — you've paid twice.
-	Failed means try again. Processing means wait.
-	Cleared your doubt? Send it to that friend who always pays twice.
-	That's how a stuck payment comes home. But what happens when a payment goes right? Watch this next one.
+	Your phone says debited. The shop says nothing came. So where is your eight hundred and forty rupees right now?
+	It isn't lost. It's sitting in one bank's account. I'll show you which one, when it comes back, and the one mistake that makes you pay twice.
+	Let me tell you the secret. U.P.I. runs on two layers. The first layer only moves messages, and every bank gets fifteen seconds to reply.
+	The second layer moves the actual money, later, in batches. Ten times a day, banks settle up through their accounts at the R.B.I.
+	So the word your app shows is only about the messages. Makes sense?
+	Success means both banks replied. Failed means it broke early — your money never left, or your bank sends it back. Failed is safe to try again.
+	Now the big one... processing.
+	Your bank replied, done. But the shop's bank went silent.
+	After fifteen seconds, N.P.C.I. stops waiting, and here's the catch — it marks your payment deemed approved. Approved for now, checked later.
+	So in the next money batch, your eight hundred and forty rupees really moves to the shop's bank. That's where your money is right now.
+	The next day, the shop's bank checks its books and must file one of two answers.
+	Answer one, T.C.C. — we credited the shop. The shop has your money, even though its speaker stayed silent.
+	Answer two, R.E.T. — return. The shop never got it, so the money goes back, and your bank puts it in your account.
+	That's why refunds come the next day, not in seconds.
+	And the R.B.I. sets a deadline. Sent to a person? Back by the next day. Paid a shop? Within five days.
+	Miss it — and the bank pays you one hundred rupees for every extra day. You don't even have to ask.
+	So what should you do at the counter? Here's what I do.
+	First, never pay again while it says processing. If the answer is T.C.C. — you've paid twice.
+	Second, ask the shopkeeper to check their bank statement, not the speaker.
+	Third, if nothing comes back by the deadline, complain in your app's U.P.I. Help, and then to your bank.
+	Cleared your doubt? Send this to that friend who always pays twice.
+	That's the payment that breaks. But what happens when a payment goes right? Watch this next one.

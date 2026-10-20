@@ -84,7 +84,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 ## Documentary rules (Be Practical with Kishore). Full spec: PLAYBOOK Part B
 - **180-second hyper-visual explainers (owner, 2026-10-20; PLAYBOOK §4a-9, verbatim in Part G).** The channel's main
   format now: the 50 films in `config/roadmap-180s.yaml`, made and uploaded in that order. **320–390 words** (≈2:20–3:00),
-  **one mechanism** per film (no history, market or policy), six phases: 0:00–0:10 zero-buffer hook (a friction point
+  **one mechanism** per film (no history, market or policy), answering the viewer's own three questions with machinery one
+  layer deeper than common knowledge, from primary documents (owner, 2026-10-20: "no technical depth, nothing cleared";
+  §4a-9 rule 2), six phases: 0:00–0:10 zero-buffer hook (a friction point
   or paradox in motion) → constraint framing → resting cross-section → stress reveal → edge case / fail-safe → insight
   said as Rule → Ruin → Reality + a **~15 s bridge question to the next roadmap film** over the end screen (never a silent logo). Dark
   blueprint look (`blueprint` in `config/brand.yaml`, colour = meaning), real internal cross-sections drawn from real
