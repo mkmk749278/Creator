@@ -1,0 +1,197 @@
+# Recording blocks: Akash (ElevenLabs), rare earth magnets
+
+Voice: Akash, the channel's English voice and settings. Paste each block as is; the blank lines are pauses. Save each take as `voice/rem_bNN.mp3` (NN = block number).
+
+## Block 1 of 8 · 806 characters · save as `voice/rem_b01.mp3`
+
+```
+July, twenty twenty-five. Pune. You're inside Bajaj's Chetak scooter factory.
+
+A year earlier, this factory made about twenty thousand electric Chetaks in a month. This July... less than eleven thousand. Barely half.
+
+No strike. No battery problem. What's missing is one small magnet... and most of them come from China.
+
+And the crazy part? The raw material for that magnet is lying in the sand on our own beaches — in Andhra Pradesh, Kerala, Tamil Nadu and Odisha.
+
+By our own government's count, India's sands hold about seven million tonnes of rare earths.
+
+So why can't India make the magnet?
+
+Stay with me, and you'll see three things. The hard step nobody else wanted to do. Then, about five minutes in, the secret inside our sand that kept it locked away. And at the end, the date you should watch.
+```
+
+## Block 2 of 8 · 925 characters · save as `voice/rem_b02.mp3`
+
+```
+First, what is this magnet?
+
+It's called a rare earth magnet. Mostly iron, a pinch of boron, and a metal called neodymium.
+
+It's small, but it's very strong. And in a motor, strength is everything.
+
+Here's why. A stronger magnet gives you the same push from a smaller motor. Smaller means lighter. And lighter means you get more kilometres on one charge. Makes sense?
+
+That's why most electric scooters and cars you see on the road use these magnets in their motors.
+
+And not just vehicles. The same kind of magnet sits in your phone's little vibration motor, in many wind turbines, and in defence systems.
+
+Now look at this number. India needs about four thousand tonnes of these magnets a year... and we buy almost all of them from abroad.
+
+And more than eight out of every ten come from one country. China.
+
+So you're probably thinking — if the sand is ours, why can't we just dig it up and make them? Let's open that box.
+```
+
+## Block 3 of 8 · 1451 characters · save as `voice/rem_b03.mp3`
+
+```
+Here's the catch, and it may surprise you. Rare earths are not actually rare. The rare part is getting them out clean.
+
+There are seventeen of them. And when you dig them up, you get them mixed together.
+
+Think of them as seventeen twins. Nearly the same size, same habits, almost the same chemistry. To your eye, and to most chemicals, they look the same.
+
+So how do you pull one twin out of the crowd? There's no single magic step.
+
+You dissolve the mix in acid, and the liquid flows through a long row of tanks. Each tank pulls the twins apart... only a tiny bit.
+
+So you repeat it. Again and again. A big plant can run hundreds of these tanks in a row, just to get one element clean.
+
+It's like washing rice. One wash takes out a little dirt. You want it perfectly clean? You keep washing... hundreds of times.
+
+And you've only done the first half. The second half has four quick steps.
+
+Next, the clean rare earth becomes a metal. You melt that metal with iron and boron, and cool it into thin pieces.
+
+Then hydrogen gas cracks those pieces, and you grind them into a powder much smaller than flour.
+
+You line that powder up inside a strong magnetic field, press it into a block, and bake it at about a thousand degrees.
+
+Only at the very end do you switch on its magnetism. That's when you finally have a magnet.
+
+So a magnet isn't one factory. It's a chain. Sand, to mixed rare earths, to clean rare earth powder, to metal, to alloy, to magnet.
+```
+
+## Block 4 of 8 · 1099 characters · save as `voice/rem_b04.mp3`
+
+```
+Miss one link... and you're stuck. Remember this chain. It's the whole story.
+
+So how did China end up leading every link?
+
+In nineteen ninety-two, China's leader Deng Xiaoping is reported to have said — the Middle East has oil, China has rare earths.
+
+And China treated it like a national mission. Long-term, and patient.
+
+Until about forty years ago, America made most of the world's rare earths. Then the work moved to China, where labour was cheaper and pollution rules were weaker.
+
+Because separating rare earths is dirty work. Strong acids. Lots of waste. Most countries were happy to let someone else do it.
+
+So China did it for thirty years... and got very, very good at it.
+
+Now look at where that leaves you and me today. China digs up about six out of every ten of the rare earths used in magnets.
+
+It cleans about eight and a half out of ten. And it makes more than nine out of every ten of these strong magnets. That's from the International Energy Agency.
+
+Do you notice something? Digging is the easy part. The tanks and the furnaces are the hard part... and China runs most of them.
+```
+
+## Block 5 of 8 · 1294 characters · save as `voice/rem_b05.mp3`
+
+```
+So what about India? We had the sand all along. What stopped us?
+
+I'll give you two things. What's inside our sand. And what we did with it.
+
+In India, rare earths mostly come in a mineral called monazite. You'll find it in the dark sand on some beaches in the south and east.
+
+And monazite has a surprise inside it. Thorium. It's radioactive, and it can be used as nuclear fuel. And that one fact, as you'll see, changed how India handled this sand.
+
+So by law, monazite is treated as an atomic material. Under the Atomic Energy Act, only one government company is allowed to process it. Indian Rare Earths Limited — today it's simply called I.R.E.L.
+
+If you think about it, that kept things safe. But for decades it also kept the business small. Even India's own mining bureau wrote that demand for rare earths at home was limited.
+
+And here's the painful part. In twenty twenty-four, I.R.E.L. produced about two thousand nine hundred tonnes of rare earths.
+
+And more than a thousand tonnes went to Japan, under a deal signed back in twenty twelve.
+
+Think about it. You send the raw material out... and you buy the finished magnets in. So you sell the cheap part, and you buy back the costly part.
+
+There's one more honest problem. Our sand is rich in the lighter rare earths, like neodymium.
+```
+
+## Block 6 of 8 · 1330 characters · save as `voice/rem_b06.mp3`
+
+```
+But a magnet inside a hot motor also needs a little of two heavier ones, to keep its strength in the heat. Our own atomic energy department says India has very little of those. For now, we depend on others for them.
+
+So the sand alone was never going to be enough. You need the whole chain. And then came the wake-up call.
+
+April, twenty twenty-five. China said companies now need special permission to send out seven of these elements... and the magnets made with them.
+
+Permission takes time. And while you wait, your supply dries up.
+
+By July, Bajaj was making about half the Chetaks it made a year earlier. Ather and T.V.S. felt the pressure too.
+
+Back in April, Rajiv Bajaj had warned — if China stopped these magnets, India's whole electric vehicle industry could halt within weeks.
+
+Later, China started giving permission to some Indian companies. But there was a condition. You couldn't use those magnets for defence.
+
+Then in October twenty twenty-five, China announced even wider rules. After talks with America, it put those new rules on hold for one year.
+
+That one-year hold is set to end this November tenth. But America and China have already stretched their own trade deal till January. So the big question for you is simple. Will China's hold get stretched too?
+
+And the April permission rule? It never went away.
+```
+
+## Block 7 of 8 · 1274 characters · save as `voice/rem_b07.mp3`
+
+```
+So is India just waiting? Not at all — and this part might surprise you.
+
+In Visakhapatnam, on a campus of the Bhabha Atomic Research Centre, India already runs a rare earth magnet plant.
+
+It's built with our own technology, from Bhabha and a D.R.D.O. lab. And it makes a special magnet that can take high heat, the kind used in defence and space.
+
+In November twenty twenty-five, the government approved a scheme worth about seven thousand three hundred crore rupees.
+
+The goal? Six thousand tonnes of magnets a year, made in India. And the full chain — from rare earth powder, to metal, to alloy, to finished magnet.
+
+Five companies can win up to twelve hundred tonnes each. This August, twenty bids came in. Among them, Larsen and Toubro, Coal India and ReNew.
+
+The winners are still to be announced, so keep your eyes on this.
+
+The twenty twenty-six budget also announced special rare earth zones in Odisha, Kerala, Andhra Pradesh and Tamil Nadu. Mining, processing, research and factories, all linked up.
+
+And remember the Japan deal? In June twenty twenty-five, Reuters reported that India asked I.R.E.L. to stop those exports, and keep the rare earths at home.
+
+So the plan is to keep the sand here. The money is here. Now comes the hard middle you saw in that chain.
+```
+
+## Block 8 of 8 · 1429 characters · save as `voice/rem_b08.mp3`
+
+```
+Let me be honest with you about the timeline. Under the scheme, plants get two years to be built. Then five years of support.
+
+And China has a head start of more than thirty years. Running hundreds of tanks well, every single day, takes practice. You can't buy that overnight.
+
+So here's the rule I take from all this. If you only sell the sand, you sell cheap and you buy expensive.
+
+And the price of that? When the one seller says stop, your factories stop. You saw it in Pune.
+
+But the reality today is different. India has the sand. It has the scientists. And now it has the money. What's left is the hard middle — more tanks, and the furnaces.
+
+So what does this mean for you?
+
+If you're buying an electric scooter or a new phone, a small part inside it depends on this chain. Its price, and even whether it reaches your showroom on time.
+
+Watch two things. November tenth — does China's hold end, or get stretched? And the scheme winners — the five companies that will try to build India's own magnets.
+
+India won't fix this in one jump. It'll be tank by tank... furnace by furnace.
+
+And magnets aren't the only missing piece. India is called the pharmacy of the world... but a big share of the ingredients in your medicines comes from China. Why? That's our next story.
+
+Which missing piece should we open after that? Tell me in the comments. I read every one.
+
+This is Be Practical with Kishore. Stay practical. Jai Hind.
+```
