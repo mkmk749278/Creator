@@ -1,0 +1,96 @@
+1
+00:00:00,000 --> 00:00:06,278
+Two in the afternoon. Full sun on your rooftop solar... and suddenly, a power cut.
+
+2
+00:00:06,278 --> 00:00:15,212
+The sun is still shining. But your fans stop. Your solar isn't broken. It switched off on purpose — to protect a lineman's life.
+
+3
+00:00:15,212 --> 00:00:20,329
+Where does all that sunshine go? And how do you keep your fans running? Let's see.
+
+4
+00:00:20,329 --> 00:00:31,772
+One thing first — this is not the inverter battery you keep at home... It's the box your solar panels connect to. Installers call it an on-grid inverter... We'll just call it the solar box.
+
+5
+00:00:31,772 --> 00:00:35,585
+Your panels give D.C. power — it flows only one way.
+
+6
+00:00:35,585 --> 00:00:48,590
+Your house runs on A.C. power — not the air conditioner, the wall-socket kind. It swings forward and back — fifty full swings every second. The solar box turns panel power into wall-socket power.
+
+7
+00:00:48,590 --> 00:00:58,934
+Here's the thing — the solar box can't make that back-and-forth rhythm on its own. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.
+
+8
+00:00:58,934 --> 00:01:09,619
+On a normal day, it follows every beat. Your house uses what it needs. The extra goes out through your meter... onto the street wire... and up to the transformer on the pole.
+
+9
+00:01:09,619 --> 00:01:14,683
+Now the power cut comes. The electricity board switches off the supply to your street.
+
+10
+00:01:14,683 --> 00:01:20,464
+Think about it. If your solar box kept pushing, that dead wire would be alive again, right?
+
+11
+00:01:20,464 --> 00:01:30,524
+And that transformer on the pole works in reverse. Your two hundred and thirty volts... becomes about eleven thousand volts... On a wire the lineman thinks is switched off.
+
+12
+00:01:30,524 --> 00:01:42,454
+So the solar box is built to notice. If the beat goes missing, or the voltage starts changing, it switches itself off... click. Safety rules say it must switch off within two seconds.
+
+13
+00:01:42,454 --> 00:01:51,245
+But there's one tricky case. Say your house is using exactly what the panels make. Then the power cut changes nothing — the box can't feel it.
+
+14
+00:01:51,245 --> 00:01:59,755
+So the box tests the drummer. Again and again, it plays a little off-beat — on purpose — to check... is the drummer still there?
+
+15
+00:01:59,755 --> 00:02:02,935
+If the grid is there, the drummer pulls it back in line.
+
+16
+00:02:02,935 --> 00:02:10,511
+If the grid is gone, nobody pulls it back. The beat keeps sliding... and the box knows. Click — it switches off.
+
+17
+00:02:10,511 --> 00:02:16,622
+What happens to your panels? Once the box is off, the power has nowhere to go. Nothing comes out.
+
+18
+00:02:16,622 --> 00:02:27,879
+The sunlight still lands and just turns into heat — your panels are built for that. But the panel wires still have voltage in them. So don't touch them yourself — leave that to a trained person.
+
+19
+00:02:27,879 --> 00:02:36,994
+So how do you keep your fans running? You need a different box — a hybrid inverter. Hybrid simply means it works with the grid and with a battery.
+
+20
+00:02:36,994 --> 00:02:46,229
+When the grid dies, a switch inside it first cuts your house off from the street. Then the battery becomes the drummer, and the panels dance again.
+
+21
+00:02:46,229 --> 00:02:54,237
+Remember this. A normal on-grid solar box, with no battery, has to go silent when the grid goes. That's by design.
+
+22
+00:02:54,237 --> 00:03:01,882
+If anyone offers to switch off this safety — just say no... Because the lineman fixing your street is the one who gets the shock.
+
+23
+00:03:01,882 --> 00:03:05,335
+Your solar never failed. It just lost its drummer.
+
+24
+00:03:05,335 --> 00:03:12,209
+But when the grid is live, how does that box turn sunlight into steady wall-socket power? Let's open it up next.
+

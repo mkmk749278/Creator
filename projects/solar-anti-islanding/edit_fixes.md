@@ -39,3 +39,13 @@ and `fix_22.mp3` (re-generated at speed 0.85). It adds all 17 pauses as above. E
 - Line 15 read at 220 wpm even after re-generation, so it has `atempo=0.9` (pitch-safe), giving 198 wpm. If it sounds stretched, set `T15 = 1.0`.
 - `fix_22.mp3` starts with "If" at 0.04–0.12 s, followed by a 0.2 s gap before "anyone". The cut starts at 0 s so the word is kept.
 - **Check by ear:** the three splice points (0:15, 0:33, 2:08, 3:08), line 15's tempo, and the room-tone joins.
+
+## Take 2: the owner re-recorded the full VO (2026-10-21)
+Source `voice/vo_v10_full_take2.mp3`: 3:12, about 174 wpm, so the speed setting didn't slow the full take. All 24 lines
+align; lines 9–11 were flagged, but their speech-to-text ratios are 0.90–1.02. `tools/edit_take.py` applies the same 17 pauses.
+Inner pauses are found by phrase, using silencedetect d=0.10, because the pause after "thirty volts..." is only 0.14 s. The tool also:
+- slows line 3 to ×0.92 (217 → 200 wpm);
+- swaps line 15 for `fix_15.mp3` at ×0.9 (198 wpm; both full takes read it at about 260).
+
+**Result:** `voice/vo_v10_take2_edit.mp3`, 3:26.4, about 162 wpm, −22.8 LUFS. Exact line times are in `align_take2/edit_lines_exact.json`.
+**This edit replaces the take 1 edit.**
