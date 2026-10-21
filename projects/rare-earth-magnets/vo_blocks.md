@@ -1,15 +1,15 @@
 # Recording blocks: Akash (ElevenLabs), rare earth magnets
 
-Voice: Akash, the channel's English voice and settings. Paste each block as is; the blank lines are pauses. Save each take as `voice/rem_bNN.mp3` (NN = block number).
+Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/rem_bNN.mp3` (NN = block number).
 
-## Block 1 of 8 · 806 characters · save as `voice/rem_b01.mp3`
+## Block 1 of 8 · 800 characters · save as `voice/rem_b01.mp3`
 
 ```
-July, twenty twenty-five. Pune. You're inside Bajaj's Chetak scooter factory.
+July, twenty twenty-five. Pune. Bajaj's electric Chetak factory is making barely half the scooters it made a year earlier.
 
-A year earlier, this factory made about twenty thousand electric Chetaks in a month. This July... less than eleven thousand. Barely half.
+The reason? Not a strike. Not batteries. One small magnet... and most of them come from China.
 
-No strike. No battery problem. What's missing is one small magnet... and most of them come from China.
+A year earlier, about twenty thousand Chetaks a month. This July... less than eleven thousand.
 
 And the crazy part? The raw material for that magnet is lying in the sand on our own beaches — in Andhra Pradesh, Kerala, Tamil Nadu and Odisha.
 
@@ -42,39 +42,39 @@ And more than eight out of every ten come from one country. China.
 So you're probably thinking — if the sand is ours, why can't we just dig it up and make them? Let's open that box.
 ```
 
-## Block 3 of 8 · 1451 characters · save as `voice/rem_b03.mp3`
+## Block 3 of 8 · 1410 characters · save as `voice/rem_b03.mp3`
 
 ```
 Here's the catch, and it may surprise you. Rare earths are not actually rare. The rare part is getting them out clean.
 
 There are seventeen of them. And when you dig them up, you get them mixed together.
 
-Think of them as seventeen twins. Nearly the same size, same habits, almost the same chemistry. To your eye, and to most chemicals, they look the same.
+Think of them as seventeen brothers and sisters who look almost exactly alike. Nearly the same size, same habits, almost the same chemistry. To your eye, and to most chemicals, they look the same.
 
-So how do you pull one twin out of the crowd? There's no single magic step.
+So how do you pull one of them out of the crowd? There's no single magic step.
 
-You dissolve the mix in acid, and the liquid flows through a long row of tanks. Each tank pulls the twins apart... only a tiny bit.
+You dissolve the mix in acid, and the liquid flows through a long row of tanks. Each tank pulls them apart... only a tiny bit.
 
 So you repeat it. Again and again. A big plant can run hundreds of these tanks in a row, just to get one element clean.
 
 It's like washing rice. One wash takes out a little dirt. You want it perfectly clean? You keep washing... hundreds of times.
 
-And you've only done the first half. The second half has four quick steps.
+And that's only the first half. The second half is faster. Let me run you through it.
 
-Next, the clean rare earth becomes a metal. You melt that metal with iron and boron, and cool it into thin pieces.
+Next, the clean rare earth becomes a metal. You melt that metal with iron and boron — a mix like that is called an alloy — and cool it into thin pieces.
 
 Then hydrogen gas cracks those pieces, and you grind them into a powder much smaller than flour.
 
 You line that powder up inside a strong magnetic field, press it into a block, and bake it at about a thousand degrees.
 
 Only at the very end do you switch on its magnetism. That's when you finally have a magnet.
+```
 
+## Block 4 of 8 · 1210 characters · save as `voice/rem_b04.mp3`
+
+```
 So a magnet isn't one factory. It's a chain. Sand, to mixed rare earths, to clean rare earth powder, to metal, to alloy, to magnet.
-```
 
-## Block 4 of 8 · 1099 characters · save as `voice/rem_b04.mp3`
-
-```
 Miss one link... and you're stuck. Remember this chain. It's the whole story.
 
 So how did China end up leading every link?
@@ -89,9 +89,9 @@ Because separating rare earths is dirty work. Strong acids. Lots of waste. Most 
 
 So China did it for thirty years... and got very, very good at it.
 
-Now look at where that leaves you and me today. China digs up about six out of every ten of the rare earths used in magnets.
+Now look at where that leaves you and me today. Digging up the rare earths for magnets? China does about six out of ten.
 
-It cleans about eight and a half out of ten. And it makes more than nine out of every ten of these strong magnets. That's from the International Energy Agency.
+Cleaning them? About eight and a half out of ten. Making the magnets? More than nine out of ten. That's from the International Energy Agency.
 
 Do you notice something? Digging is the easy part. The tanks and the furnaces are the hard part... and China runs most of them.
 ```
@@ -120,7 +120,7 @@ Think about it. You send the raw material out... and you buy the finished magnet
 There's one more honest problem. Our sand is rich in the lighter rare earths, like neodymium.
 ```
 
-## Block 6 of 8 · 1330 characters · save as `voice/rem_b06.mp3`
+## Block 6 of 8 · 1318 characters · save as `voice/rem_b06.mp3`
 
 ```
 But a magnet inside a hot motor also needs a little of two heavier ones, to keep its strength in the heat. Our own atomic energy department says India has very little of those. For now, we depend on others for them.
@@ -139,12 +139,12 @@ Later, China started giving permission to some Indian companies. But there was a
 
 Then in October twenty twenty-five, China announced even wider rules. After talks with America, it put those new rules on hold for one year.
 
-That one-year hold is set to end this November tenth. But America and China have already stretched their own trade deal till January. So the big question for you is simple. Will China's hold get stretched too?
+That one-year hold is set to end on November tenth. America and China have already stretched their own trade deal till January. So here's what you watch. Will China stretch this hold too... or not?
 
 And the April permission rule? It never went away.
 ```
 
-## Block 7 of 8 · 1274 characters · save as `voice/rem_b07.mp3`
+## Block 7 of 8 · 1264 characters · save as `voice/rem_b07.mp3`
 
 ```
 So is India just waiting? Not at all — and this part might surprise you.
@@ -157,7 +157,7 @@ In November twenty twenty-five, the government approved a scheme worth about sev
 
 The goal? Six thousand tonnes of magnets a year, made in India. And the full chain — from rare earth powder, to metal, to alloy, to finished magnet.
 
-Five companies can win up to twelve hundred tonnes each. This August, twenty bids came in. Among them, Larsen and Toubro, Coal India and ReNew.
+Five companies can win up to twelve hundred tonnes each. This August, twenty bids came in. Among them, L and T, Coal India and ReNew.
 
 The winners are still to be announced, so keep your eyes on this.
 

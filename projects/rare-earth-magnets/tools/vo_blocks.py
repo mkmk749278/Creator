@@ -21,7 +21,7 @@ for l in lines:
     cur.append(l)
 blocks.append(cur)
 out = ["# Recording blocks: Akash (ElevenLabs), rare earth magnets\n",
-       "Voice: Akash, the channel's English voice and settings. Paste each block as is; the blank lines are pauses. "
+       "Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. "
        "Save each take as `voice/rem_bNN.mp3` (NN = block number).\n"]
 for i, b in enumerate(blocks, 1):
     text = "\n\n".join(b)
