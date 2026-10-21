@@ -1,0 +1,45 @@
+Two in the afternoon. Full sun on your rooftop solar... and suddenly, a power cut.
+
+The sun is still shining. But your fans stop. Your solar isn't broken. It switched off on purpose — to protect a lineman's life.
+
+So where does all that sunshine go? And how do you keep your fans running? Let's see.
+
+One thing first — this is not your home inverter battery. It's the box your solar panels connect to. Installers call it an on-grid inverter. We'll just call it the solar box.
+
+Your panels give D.C. — it flows in one direction only.
+
+But your house runs on A.C. — not the air conditioner, the current in your wall socket. It goes back and forth, fifty times every second. The solar box changes the panels' D.C. into this A.C.
+
+Here's the thing — the solar box can't make that back-and-forth rhythm on its own. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.
+
+On a normal day, it follows every beat. Your house takes what it needs, and the extra goes out through your meter... to the street wire and the transformer on the pole.
+
+Now the power cut comes. The electricity board switches off the supply to your street.
+
+Think about it. If your solar box kept pushing, that dead wire would be alive again, right?
+
+And the transformer on the pole would take your two hundred and thirty volts... and push it up to about eleven thousand volts. On a wire the lineman thinks is switched off.
+
+So the solar box is built to notice. If the beat goes missing, or the voltage starts changing, it switches itself off... click. Safety rules say it must switch off within two seconds.
+
+But sometimes your house uses exactly what the panels make. Then, when the power goes, nothing changes. The box can't feel any difference. So how does it know? It plays a small trick. Again and again, it shifts its beat a tiny bit — on purpose — to test if the drummer is still there.
+
+If the grid is there, the drummer pulls it back in line.
+
+If the grid is gone, nobody pulls it back. The beat keeps sliding... and the box knows. Click — it switches off.
+
+So what happens to your panels? With the box off, current has no path. So no power comes out.
+
+The sunlight still lands and just turns into heat — your panels are built for that. But the panel wires still have voltage in them. So don't touch them yourself — leave that to a trained person.
+
+So how do you keep your fans running? You need a different box — a hybrid inverter. Hybrid simply means it works with the grid and with a battery.
+
+When the grid dies, a switch inside it first cuts your house off from the street. Then the battery becomes the drummer, and the panels dance again.
+
+So remember this. A solar box without a battery must go silent when the grid goes.
+
+If anyone ever offers to bypass this safety feature — say no. Because the lineman fixing your street is the one who gets the shock.
+
+Your solar never failed. It just lost its drummer.
+
+But when the grid is live, how does that box turn sunlight into clean wall power? Let's open it up next.
