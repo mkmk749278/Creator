@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<!-- YouTube thumbnail, channel theme (navy, gold, circuit lines, logo). The picture is the film's own daylight world
+     (world.jpg: S01 at 12 s, wide framing, HUD and labels hidden): full sun on the panels, the box tripped (red LED),
+     the lineman on the pole. Shot by shoot.js at 2x. -->
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("../../../../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2") format("woff2"); }
+  :root { --navy: #0b1530; --gold: #ffd34d; --blue: #4a6fa5; --red: #e5383b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: var(--navy); font-family: Inter, Arial, sans-serif; }
+  #t { position: relative; width: 1280px; height: 720px; overflow: hidden; background: var(--navy); }
+  .pic { position: absolute; left: 400px; top: 0; width: 1100px; height: 720px; background: url(world.jpg) no-repeat;
+    background-size: 1280px 720px; background-position: -170px 0; }
+  .fade { position: absolute; left: 400px; top: 0; width: 260px; height: 720px; background: linear-gradient(90deg, var(--navy), rgba(11,21,48,0)); }
+  svg.lines { position: absolute; inset: 0; }
+  .big { position: absolute; font-weight: 800; line-height: .95; letter-spacing: -.02em; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,.55); }
+  .gold { color: var(--gold); }
+  .pill { position: absolute; font-weight: 800; color: #fff; background: var(--red); border-radius: 18px; padding: 14px 26px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.45); }
+  .ring { position: absolute; border: 10px solid var(--red); border-radius: 50%; box-shadow: 0 0 30px 8px rgba(229,56,59,.6); }
+  .logo { position: absolute; right: 26px; top: 24px; width: 104px; height: 104px; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,.5); }
+</style>
+</head>
+<body>
+<div id="t">
+  <div class="pic"></div>
+  <div class="fade"></div>
+  <svg class="lines" viewBox="0 0 1280 720" fill="none" stroke-width="5" stroke-linecap="round">
+    <g stroke="#ffd34d"><path d="M0 60 H110" /><path d="M0 650 H70 Q100 650 115 625 L130 600 H170" /></g>
+    <g stroke="#4a6fa5"><path d="M0 100 H150" /><path d="M0 690 H120" /></g>
+    <g fill="#ffd34d" stroke="none"><circle cx="110" cy="60" r="9" /><circle cx="170" cy="600" r="9" /></g>
+    <g fill="#4a6fa5" stroke="none"><circle cx="150" cy="100" r="9" /><circle cx="120" cy="690" r="9" /></g>
+  </svg>
+  <div class="big" style="left: 52px; top: 150px; font-size: 104px;">FULL SUN</div>
+  <div class="big gold" style="left: 48px; top: 262px; font-size: 104px;">NO POWER?</div>
+  <div class="pill" style="left: 56px; top: 420px; font-size: 50px;">SOLAR SWITCHED OFF</div>
+  <!-- ring round the tripped box -->
+  <div class="ring" style="left: 798px; top: 468px; width: 190px; height: 190px;"></div>
+  <img class="logo" src="logo.png" alt="Be Practical with Kishore" />
+</div>
+</body>
+</html>
