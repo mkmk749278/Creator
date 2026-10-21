@@ -83,7 +83,7 @@ def tap(t, x, y):
 
 
 def phone(at, to, x, y, inner, rot=0, fx="up"):
-    el(f'<div class="phone" data-rot="{rot}" style="left:{x}px;top:{y}px;transform:rotate({rot}deg)" {attrs(at, to, fx, 0.6)}>'
+    el(f'<div class="phone" data-rot="{rot}" style="left:{x}px;top:{y}px;transform:rotate({rot}deg) scale(.86)" {attrs(at, to, fx, 0.6)}>'
        f'<div class="scrn"><div class="cam"></div>{inner}<div class="glare"></div></div></div>', at, to)
 
 
@@ -195,19 +195,19 @@ phone(97.6, 101.0, 1240, 60, scr(head("Payment") + PAYEE + '<div class="amt">₹
 chip("Screenshot = proof", 98.8, 101.0, 140, 440, "cyan", "", "pop", "📸")
 # "Bank says received? Then the shop got your money... Nothing yet? Then it's still processing."
 shot(101.0, 107.4, "BG_soft", "slow", "SIMULATED SCREEN")
-phone(101.0, 107.4, 330, 60, '<div class="wall"></div>' + sms(101.2, None, '<b>₹840.00 received</b> in A/c XX7790 from customer. UPI Ref 4271 8830 1265.', frm="SHOP'S BANK · SMS"), rot=-2)
+phone(101.0, 107.4, 560, 60, '<div class="wall"></div>' + sms(101.2, None, '<b>₹840.00 received</b> in A/c XX7790 from customer. UPI Ref 4271 8830 1265.', frm="SHOP'S BANK · SMS"), rot=-2)
 phone(104.7, 107.4, 1120, 60, '<div class="wall"></div><div class="clock" style="font-size:70px;top:430px">No new S.M.S.</div>', rot=2)
-chip("Received", 102.4, 107.4, 400, 820, "green", "sm", "pop", "✓")
+chip("Received", 102.4, 107.4, 620, 820, "green", "sm", "pop", "✓")
 chip("Nothing yet", 105.8, 107.4, 1210, 820, "amber", "sm", "pop", "⧗")
 # "Show them your screenshot and say — it's stuck, not lost. If it reaches you... If not, it comes back to me."
 shot(107.4, 111.4, "kirana_soft", "push", "SIMULATED SCREEN", warm=True, media_start=9.0)
 shot(111.4, 116.6, "kirana_soft2", "slow", "SIMULATED SCREEN", warm=True, media_start=7.0)
-phone(107.4, 116.6, 1240, 60, scr(head("Payment") + PAYEE + '<div class="amt">₹840</div><div class="stat"><div class="spin"></div><div class="t" style="color:#b7791f">Processing</div>'
+phone(107.4, 111.4, 1240, 60, scr(head("Payment") + PAYEE + '<div class="amt">₹840</div><div class="stat"><div class="spin"></div><div class="t" style="color:#b7791f">Processing</div>'
       '<div class="s">Screenshot saved · UPI Ref 4271 8830 1265</div></div>', 107.4, None), rot=-3)
 chip("Tell the shopkeeper", 107.6, 116.6, 120, 340, "ink", "sm", "pop", "💬")
 chip("Stuck, not lost", 109.6, 111.3, 120, 490, "amber", "", "pop")
-chip("Reaches you → S.M.S.", 111.4, 113.6, 120, 490, "green", "", "pop")
-chip("If not → back to me", 113.7, 116.6, 120, 490, "cyan", "", "pop", "↩")
+chip("Reaches you → S.M.S.", 111.4, 116.6, 420, 420, "green", "xl", "pop")
+chip("If not → back to me", 113.7, 116.6, 420, 620, "cyan", "xl", "pop", "↩")
 # ---- WHERE IS IT
 shot(116.6, 119.5, "S24_where", "in")                                                 # "So where is your money right now?" (music silent 1.5 s before)
 chip("Where is ₹840?", 116.9, 119.5, 120, 340, "amber", "", "pop")
@@ -297,7 +297,7 @@ el(f'<div class="mark" style="left:330px;top:242px;width:212px;height:226px" {at
 el(f'<div class="mark amber" style="left:1170px;top:242px;width:212px;height:226px" {attrs(196.6, 200.8, "pop")}></div>', 196.6, 200.8)
 el(f'<div class="rowlbl c-green" style="left:128px;top:540px" {attrs(195.3, 200.8, "left")}>👤 Person → 1 day</div>', 195.3, 200.8)
 el(f'<div class="rowlbl c-amber" style="left:128px;top:630px" {attrs(196.5, 200.8, "left")}>🏪 Shop → 5 days</div>', 196.5, 200.8)
-chip("2 more tips →", 197.6, 200.8, 1380, 900, "cyan", "sm", "left")
+chip("One rule →", 197.6, 200.8, 1380, 740, "cyan", "sm", "left")
 # ---- THE ONE RULE
 shot(200.8, 205.5, "S36_rule", "in")                                                  # "My one rule: never pay again while it says processing."
 chip("One rule", 201.2, 205.5, 120, 340, "amber", "", "pop")
@@ -336,7 +336,7 @@ shot(238.2, 242.7, "street_soft", "slow", "SIMULATED SCREEN", media_start=3.0)  
 phone(238.2, 242.7, 725, 60, '<div class="wall"></div>' + f'<div class="share" {attrs(238.2, None, "cut")}><div class="ttl">Share to</div><div class="ppl">'
       + "".join(f'<div class="{"hl" if n == "Pays Twice" else ""}"><i></i>{n}</div>' for n in ["Amma", "Ravi", "Office group", "Pays Twice", "Sneha", "Arjun", "Family", "More"]) + "</div></div>")
 chip("You know one", 240.0, 242.7, 150, 420, "amber", "sm", "pop", "😄")
-shot(242.7, 251.7, "L_success", "zoomhome", origin="50% 30%")                             # "Next video: what really happens in those few seconds after you hit pay..."
+shot(242.7, 251.7, "L_success", "zoomboard", origin="50% 26%")                             # "Next video: what really happens in those few seconds after you hit pay..."
 chip("Next: when it works", 243.4, 251.7, 120, 740, "cyan", "sm", "up")
 shot(251.7, END, "B43_end", "slow", "")
 el('<div class="endcard" ' + attrs(251.9, None, "fade", 0.8) + '><img class="logo" src="media/logo_square.png" alt=""/><div class="ch">Be Practical<br/>with Kishore</div>'

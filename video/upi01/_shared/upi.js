@@ -8,7 +8,7 @@
     left: [{ scale: 1.08, xPercent: 2 }, { scale: 1.08, xPercent: -2 }], right: [{ scale: 1.08, xPercent: -2 }, { scale: 1.08, xPercent: 2 }],
     up: [{ scale: 1.08, yPercent: 2 }, { scale: 1.08, yPercent: -2 }], push: [{ scale: 1.0 }, { scale: 1.05 }],
     slow: [{ scale: 1.02 }, { scale: 1.06 }], none: [{ scale: 1.0 }, { scale: 1.0 }],
-    zoomhome: [{ scale: 1.7 }, { scale: 1.9 }],
+    zoomhome: [{ scale: 1.7 }, { scale: 1.9 }], zoomboard: [{ scale: 2.15 }, { scale: 2.35 }],
   };
   const fmt = (v, pre, suf) => pre + Math.round(v).toLocaleString("en-IN") + suf;
   window.UPI_animate = function (tl, D) {

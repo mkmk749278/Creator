@@ -73,7 +73,7 @@ body { background: #000; color: var(--ink); font-family: var(--sans); }
 .ring { position: absolute; z-index: 31; border-radius: 50%; border: 6px solid var(--red); box-shadow: 0 0 30px rgba(248,81,73,.6); }
 
 /* ---------- phone mock-up (generic Android, no real app brand) ---------- */
-.phone { position: absolute; width: 470px; height: 960px; z-index: 20; border-radius: 62px; padding: 16px;
+.phone { position: absolute; width: 470px; height: 960px; z-index: 20; transform-origin: 50% 0; border-radius: 62px; padding: 16px;
   background: linear-gradient(145deg, #2b3038, #0c0e12 45%, #1b1f26); box-shadow: 0 40px 90px rgba(0,0,0,.65), inset 0 0 0 2px #3a414c, inset 0 0 0 5px #0a0b0d; }
 .phone::after { content: ""; position: absolute; right: -5px; top: 210px; width: 5px; height: 110px; border-radius: 3px; background: #262b33; }
 .phone .scrn { position: relative; width: 100%; height: 100%; border-radius: 48px; overflow: hidden; background: #0f1218; }
@@ -100,11 +100,11 @@ body { background: #000; color: var(--ink); font-family: var(--sans); }
 .btn { position: absolute; left: 30px; right: 30px; bottom: 44px; height: 92px; border-radius: 22px; font: 800 32px/92px var(--sans); text-align: center; color: #fff; background: #3b5bdb; }
 .btn.red { background: #d63a3a; } .btn.ghost { background: transparent; color: #3b5bdb; border: 3px solid #3b5bdb; }
 .notif { position: absolute; left: 18px; right: 18px; top: 60px; border-radius: 26px; padding: 20px 22px; background: rgba(32,37,46,.96); color: #e6edf3;
-  box-shadow: 0 16px 40px rgba(0,0,0,.45); font: 500 25px/1.35 var(--sans); z-index: 5; }
+  box-shadow: 0 16px 40px rgba(0,0,0,.45); font: 500 32px/1.3 var(--sans); z-index: 5; top: 200px; padding: 28px 26px; }
 .notif .from { font: 700 18px/1 var(--sans); letter-spacing: .04em; opacity: .7; margin-bottom: 8px; display: flex; justify-content: space-between; }
 .notif b { color: #fff; }
-.notif.n2 { top: 220px; }
-.wall { position: absolute; inset: 0; background: linear-gradient(160deg, #2a3a55 0%, #141b27 55%, #0d1117 100%); }
+.notif.n2 { top: 470px; }
+.wall { position: absolute; inset: 0; background: linear-gradient(160deg, #4a6a9a 0%, #2a3a55 50%, #1a2333 100%); }
 .clock { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font: 300 120px/1 var(--sans); color: rgba(255,255,255,.9); }
 .pin .dots { display: flex; justify-content: center; gap: 26px; margin: 60px 0 70px; }
 .pin .dots i { width: 26px; height: 26px; border-radius: 50%; border: 3px solid #12161c; display: block; }
@@ -154,14 +154,14 @@ body { background: #000; color: var(--ink); font-family: var(--sans); }
 .big { position: absolute; z-index: 28; font: 800 150px/1 var(--sans); letter-spacing: .02em; text-shadow: 0 6px 40px rgba(0,0,0,.6); white-space: nowrap; }
 .app { position: absolute; z-index: 24; width: 120px; height: 120px; border-radius: 30px; box-shadow: 0 12px 30px rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center;
   font: 800 56px/1 var(--sans); color: #fff; }
-.endcard { position: absolute; inset: 0; z-index: 35; background: rgba(6,9,13,.78); }
+.endcard { position: absolute; inset: 0; z-index: 35; background: rgba(6,9,13,.92); }
 .endcard .logo { position: absolute; left: 160px; top: 300px; width: 240px; height: 240px; border-radius: 26px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
 .endcard .ch { position: absolute; left: 160px; top: 570px; font: 800 52px/1.1 var(--sans); }
 .endcard .tile { position: absolute; right: 160px; top: 250px; width: 800px; height: 450px; border-radius: 18px; border: 3px solid var(--cyan); overflow: hidden; background: #000; }
 .endcard .tile img { width: 100%; height: 100%; object-fit: cover; opacity: .75; }
 .endcard .tile .tt { position: absolute; left: 30px; bottom: 26px; right: 30px; font: 800 44px/1.1 var(--sans); text-shadow: var(--sh); }
 .endcard .tile .nx { position: absolute; left: 30px; top: 24px; font: 800 22px/1 var(--mono); letter-spacing: .18em; color: var(--cyan); }
-.endcard .sub { position: absolute; left: 160px; top: 720px; font: 800 32px/1; padding: 18px 40px; border-radius: 12px; background: #e5332a; color: #fff; }
+.endcard .sub { position: absolute; left: 160px; top: 720px; font: 800 60px/1 var(--sans); padding: 28px 60px; border-radius: 12px; background: #e5332a; color: #fff; }
 
 /* simplified beats: lamp glows on a still, the shop's ledger and rubber stamps (2D) */
 .glow { position: absolute; z-index: 18; width: 140px; height: 140px; border-radius: 50%; transform: scale(.62); }
