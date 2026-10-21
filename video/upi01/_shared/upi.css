@@ -154,7 +154,7 @@ body { background: #000; color: var(--ink); font-family: var(--sans); }
 .big { position: absolute; z-index: 28; font: 800 150px/1 var(--sans); letter-spacing: .02em; text-shadow: 0 6px 40px rgba(0,0,0,.6); white-space: nowrap; }
 .app { position: absolute; z-index: 24; width: 120px; height: 120px; border-radius: 30px; box-shadow: 0 12px 30px rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center;
   font: 800 56px/1 var(--sans); color: #fff; }
-.endcard { position: absolute; inset: 0; z-index: 35; }
+.endcard { position: absolute; inset: 0; z-index: 35; background: rgba(6,9,13,.78); }
 .endcard .logo { position: absolute; left: 160px; top: 300px; width: 240px; height: 240px; border-radius: 26px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
 .endcard .ch { position: absolute; left: 160px; top: 570px; font: 800 52px/1.1 var(--sans); }
 .endcard .tile { position: absolute; right: 160px; top: 250px; width: 800px; height: 450px; border-radius: 18px; border: 3px solid var(--cyan); overflow: hidden; background: #000; }

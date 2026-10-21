@@ -215,9 +215,12 @@ shot(129.6, 131.4, "S25c_hold", "in")                                           
 chip("Not lost · just waiting", 129.7, 131.4, 120, 860, "green", "sm", "up")
 # ---- THE ANSWER
 shot(131.4, 138.8, "BG_soft", "slow")                                                # "Now the shop's bank has to answer one simple question..."
-el(f'<div class="ledger" style="left:560px;top:190px" {attrs(131.6, 147.0, "up", 0.5)}><div class="lh">SHOP&#39;S BANK · NEXT DAY</div>'
+el(f'<div class="ledger" style="left:560px;top:190px" {attrs(131.6, 141.4, "up", 0.5)}><div class="lh">SHOP&#39;S BANK · NEXT DAY</div>'
    f'<div class="lr"><span>Customer payment</span><b>₹840</b><i>?</i></div><div class="lr dim2"><span>Milk booth</span><b>₹56</b><i>✓</i></div>'
-   f'<div class="lr dim2"><span>Electricity</span><b>₹1,240</b><i>✓</i></div></div>', 131.6, 147.0)
+   f'<div class="lr dim2"><span>Electricity</span><b>₹1,240</b><i>✓</i></div></div>', 131.6, 141.4)
+el(f'<div class="ledger" style="left:560px;top:190px" {attrs(143.1, 147.0, "cut")}><div class="lh">SHOP&#39;S BANK · NEXT DAY</div>'
+   f'<div class="lr"><span>Customer payment</span><b>₹840</b><i>?</i></div><div class="lr dim2"><span>Milk booth</span><b>₹56</b><i>✓</i></div>'
+   f'<div class="lr dim2"><span>Electricity</span><b>₹1,240</b><i>✓</i></div></div>', 143.1, 147.0)
 chip("In the shop's account?", 133.2, 138.8, 620, 120, "ink", "sm", "pop")
 chip("Only two answers", 137.4, 138.8, 760, 780, "amber", "sm", "pop")
 cite("[NPCI | UPI OC 213]", 131.6, 147.0)
@@ -240,7 +243,8 @@ def calendar(at, to, x, y, labels=True):
 
 
 shot(147.0, 152.6, "BG_soft", "slow")                                                 # "How long can this take? If the money didn't reach them..."
-calendar(147.3, 171.0, 128, 360)
+calendar(147.3, 152.6, 128, 360)
+calendar(156.6, 171.0, 128, 360)
 chip("How long?", 147.2, 152.6, 120, 170, "ink", "", "pop")
 el(f'<div class="mark amber" style="left:120px;top:352px;width:176px;height:206px" {attrs(148.8, 152.6, "pop")}></div>', 148.8, 152.6)
 chip("Failed or processing", 151.0, 152.6, 120, 640, "amber", "sm", "up")
