@@ -1,12 +1,12 @@
 # India Has the Rare Earths. China Has the Magnets. Why?
 
 "India's Missing Pieces" episode 2 (owner, 2026-10-21: back to documentaries; topic research in
-`docs/research/reports/India content edge 2026-10-21.md`). English VO (`lang.txt`), Akash; about 1,630 words, about
+`docs/research/reports/India content edge 2026-10-21.md`). English VO (`lang.txt`), Akash; about 1,660 words, about
 10–11 minutes. The film answers the viewer's questions in order: what the magnet is and why motors need it; why
 separating seventeen near-identical rare earths takes hundreds of tanks; how China came to hold every link of the chain;
 what kept India's monazite locked away (thorium, the Atomic Energy Act, one state company, small demand, raw exports to
 Japan); the April 2025 licence shock (Bajaj Chetak output about halved); India's answer (Vizag magnet plant, ₹7,280 crore
-scheme, 20 bidders, rare earth corridors) and the dates to watch (China's hold ends 10 November 2026 unless extended;
+scheme, 20 bids, rare earth corridors) and the dates to watch (China's hold ends 10 November 2026 on paper, while the US–China truce now runs to 10 January 2027;
 scheme winners).
 
 **Genre and look:** tech + business, dark blueprint palette (amber = China's control, cyan = magnetism / India's

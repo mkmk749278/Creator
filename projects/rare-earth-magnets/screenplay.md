@@ -13,8 +13,8 @@ story (factories, beaches, plants, documents); 3D carries the mechanism.
 chapter: SAND → MIXED → CLEAN → METAL → ALLOY → MAGNET. Each link lights in amber when China holds it and cyan/green
 when India is building it. It's the one picture the viewer should remember (owner: "best visuals", narration simple).
 
-**Persistent HUD (top-left, small):** `IMPORTS 2024-25 · 53,700 T · ~9/10 CHINA` → later `CHINA: 94% OF MAGNETS` →
-`HOLD ENDS · 10 NOV 2026` countdown. Values only from `claims.csv`, else "ILLUSTRATIVE".
+**Persistent HUD (top-left, small):** `NEED ~4,000 T/YR · 85–90% FROM CHINA` → later `CHINA: 94% OF SINTERED MAGNETS (IEA 2024)` →
+`ON PAPER: 10 NOV 2026 · TRUCE: 10 JAN 2027`. Exact labels: `fact-check.md` §3. Values only from `claims.csv`, else "ILLUSTRATIVE".
 
 **Hero 3D shots (Blender Cycles on Kaggle GPU, or Three.js):** (1) scooter hub motor opening to show its magnet ring;
 (2) the solvent-extraction cascade: a long row of tanks with the liquid's colour shifting tank by tank;
@@ -24,15 +24,15 @@ press → furnace glow → field lines switching on; (4) a monazite grain cut op
 | Time | Lines | Audio | Visual + action | SFX / music |
 |---|---|---|---|---|
 | 0:00 | L01–L03 | Pune, July 2025, Bajaj line, 20,000 → under 11,000, a missing magnet | REAL: EV scooter assembly line (Bajaj press/news footage if licensable, else stock tagged ILLUSTRATIVE FOOTAGE). Counter 20,384 (JUL 2024) drops to 10,824 (JUL 2025) [AUTOCAR INDIA]. Empty motor slot on a scooter frame, push-in; a magnet-shaped gap outlined in red | Factory ambience; hard stop on "magnet" |
-| 0:20 | L04–L06 | Twist: the raw material is in our beach sand; third biggest store | REAL: Kerala / Tamil Nadu / Odisha coast aerials (Commons / state tourism, land-only map pins). Macro: dark mineral sand glittering in a hand. Thumbnail frame recreated: sand left, magnet right, "OUR SAND. THEIR MAGNET." | Waves; low pulse |
+| 0:20 | L04–L06 | Twist: the raw material is in our beach sand; about seven million tonnes [DAE / AMD 2026], no world rank | REAL: Kerala / Tamil Nadu / Odisha coast aerials (Commons / state tourism, land-only map pins). Macro: dark mineral sand glittering in a hand. Thumbnail frame recreated: sand left, magnet right, "OUR SAND. THEIR MAGNET." | Waves; low pulse |
 | 0:38 | L07 | Open loop (three things; sand payoff about five minutes in) | Three quick teasers: tank row, a glowing grain, a calendar page NOV 10 | Riser |
 | 0:51 | L08–L13 | What the magnet is; why strong = small motor = more km | 3D hero 1: hub motor opens, magnet ring glows cyan. Split: big weak motor vs small strong motor, same push arrow. Odometer counts up. Quick real cuts: phone vibration motor macro, wind turbine, defence (stock) | Clicks on each use |
-| 1:30 | L14–L16 | Imports ~53,700 t; ~9 in 10 from China | Animated container ships stacking: 10 boxes, 9 turn amber [SOURCE]. HUD locks the number | Thud on "China" |
+| 1:30 | L14–L16 | Need ~4,000 t a year, nearly all imported; 85–90% from China | Animated container ships stacking: 10 boxes, 8–9 turn amber [GOVT OF INDIA · PIB 2026]. HUD locks the number | Thud on "China" |
 | 1:52 | L17–L24 | 17 twins; separation tanks; washing rice | 17 near-identical spheres jostling; one tries to leave, can't. 3D hero 2: tank cascade, camera tracks down the row; a counter of stages ticks into the hundreds. Real: rice washed in a steel vessel (stock), cut back to tanks | Liquid; gentle humour beat on rice |
 | 2:52 | L25–L28 | Metal → flakes → hydrogen → powder → field → press → bake → charge | 3D hero 3, one step per beat (2.5–4 s each), labels ≤ 3 words: FLAKES · HYDROGEN · POWDER · ALIGN · PRESS · ~1000 °C · CHARGE | Furnace roar; magnetic "snap" |
 | 3:20 | L29–L30 | It's a chain; miss one link and you're stuck | THE CHAIN BAR appears link by link, then one link breaks | Chain clink, then silence 1.5 s |
 | 3:35 | L31–L36 | Deng 1992 (reported); US → China; dirty work | Archive photo of Deng (Commons, credited) with the quote as text "AS REPORTED". Mountain Pass mine (USGS, public domain), then Baotou (Commons). Acid tanks, waste pond (Commons) | Low drone |
-| 4:17 | L37–L39 | IEA: ~60% mining, ~9/10 separating, ~94% magnets | THE CHAIN BAR: links fill amber with the three numbers [IEA]. Tanks and furnace links glow brightest | Braam on "China owns them" |
+| 4:17 | L37–L39 | IEA: ~60% mining (2025), ~85% separating (2025), 94% sintered magnets (2024) | THE CHAIN BAR: links fill amber with the three numbers [IEA]. Tanks and furnace links glow brightest | Braam on "China owns them" |
 | 4:42 | L40–L45 | Monazite; thorium; Atomic Energy Act; only I.R.E.L.; "demand ... limited" | 3D hero 4: a monazite grain cut open: cyan rare earths, a pulsing thorium core (labelled ILLUSTRATION). Document push-in: Atomic Energy Act and Indian Bureau of Mines yearbook pages with highlighter | Geiger tick (subtle) |
 | 5:33 | L46–L48 | 2,900 t; >1,000 t to Japan; sold raw, bought finished | Two arrows on a land-only map: sand box sailing out to Japan, magnet box sailing in from China. "CHEAP OUT · EXPENSIVE IN" | Cash-register irony beat |
 | 5:54 | L49–L51 | Light vs heavy rare earths; whole chain | Periodic strip: light ones lit cyan, two heavy ones dim with "EXPERTS: SCARCE IN INDIA". Chain bar returns | |
