@@ -48,7 +48,7 @@ window.SCENE = function (tl, ctx) {
   wires.forEach(({ w }) => { const b = w.getBBox(), d = Math.hypot(b.x + b.width / 2 - 924, b.y + b.height / 2 - 654);
     tl.to(w, { attr: { stroke: "#f85149" }, duration: 0.3 }, 7.0 + d / 1100 * 2.6); });
   K.look(tl, 7.9, 2.9, 1180, 470, 1.0, "sine.inOut");
-  K.label(tl, 7.95, 11.0, "ALIVE AGAIN", 120, 860).classList.add("red");
+  K.label(tl, 8.6, 11.0, "ALIVE AGAIN", 120, 860).classList.add("red");
 
   // ---- 11.62 the pole transformer works in reverse: cutaway ----
   K.look(tl, 11.0, 0.8, 1475, 560, 2.2, "power2.in");
@@ -98,32 +98,32 @@ window.SCENE = function (tl, ctx) {
   } }, 14.5);
   tl.to("#ltCoil rect", { attr: { fill: "#E59866" }, duration: 0.4 }, 14.6);
   K.hudShow(tl, 14.6, "line");
-  K.label(tl, 14.6, 19.9, "230 V", 330, 330).classList.add("amber");
+  K.label(tl, 14.6, 18.7, "230 V", 330, 330).classList.add("amber");
   tl.to(flux, { opacity: 1, duration: 0.3 }, 15.2).fromTo(flux, { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": -400 }, duration: 4.8, ease: "none", immediateRender: false }, 15.2);
   // 16.77 "becomes about eleven thousand volts…": the many thin turns glow red; HUD rolls up, settles on "≈ 11,000 V"
   tl.to("#htCoil rect", { attr: { fill: "#f85149", stroke: "#FFB4A8" }, duration: 0.5, stagger: 0.02 }, 16.8);
   const rv = { v: 230 }, hv = document.getElementById("h_line");
   tl.fromTo(rv, { v: 230 }, { v: 10400, duration: 1.4, ease: "power2.in", immediateRender: false, onUpdate: () => { hv.textContent = Math.round(rv.v / 10) * 10 + " V"; } }, 16.8);
   K.hudSet(tl, 18.25, "line", "≈ 11,000 V", "red");
-  K.label(tl, 17.0, 19.9, "≈ 11,000 V", 1340, 860).classList.add("red");
+  K.label(tl, 17.0, 18.7, "≈ 11,000 V", 1340, 860).classList.add("red");
 
   // ---- 20.09 "On a wire the lineman thinks is switched off": the 11 kV line upstream; the red creeps; freeze ----
-  tl.to(wc, { attr: { r: 0 }, duration: 0.45, ease: "power2.out" }, 19.85);
-  tl.set("#world", { visibility: "visible" }, 19.84).set("#fg", { visibility: "visible" }, 19.84);
-  tl.to("#stage", { filter: "saturate(0.6) brightness(0.92)", duration: 0.2 }, 19.9);
+  tl.to(wc, { attr: { r: 0 }, duration: 0.45, ease: "power2.out" }, 18.8);
+  tl.set("#world", { visibility: "visible" }, 18.79).set("#fg", { visibility: "visible" }, 18.79);
+  tl.to("#stage", { filter: "saturate(0.6) brightness(0.92)", duration: 0.2 }, 18.85);
   const pole = el("g", { id: "htPole" }, world);
   el("polygon", { points: "1679,880 1701,880 1697,232 1683,232", fill: "#B9B4A8" }, pole);
   el("rect", { x: 1640, y: 232, width: 100, height: 10, fill: "#8B8F94" }, pole);
   W36.lineman(world, 1690, 402, 1.0, "lmB");                               // gloves just below the wire: reaching, not touching
-  wires.slice(0, 3).forEach(({ w }) => tl.set(w, { attr: { stroke: "#9aa0a6" } }, 19.84));  // 11 kV back to dead slate; only the creep is red
-  tl.set("#brk", { visibility: "hidden" }, 19.84).set("#dholBadge", { opacity: 0 }, 19.84);
-  tl.set("#htPole, #lmB", { visibility: "hidden" }, 0).set("#htPole, #lmB", { visibility: "visible" }, 19.84);
+  wires.slice(0, 3).forEach(({ w }) => tl.set(w, { attr: { stroke: "#9aa0a6" } }, 18.79));  // 11 kV back to dead slate; only the creep is red
+  tl.set("#brk", { visibility: "hidden" }, 18.79).set("#dholBadge", { opacity: 0 }, 18.79);
+  tl.set("#htPole, #lmB", { visibility: "hidden" }, 0).set("#htPole, #lmB", { visibility: "visible" }, 18.79);
   const creep = el("path", { d: "M 1402 191 Q 1560 250 1682 238", fill: "none", stroke: "#f85149", "stroke-width": 7, "stroke-linecap": "round", opacity: 0.95 }, world);
   const cl = creep.getTotalLength();
   tl.set(creep, { attr: { "stroke-dasharray": `${cl} ${cl}`, "stroke-dashoffset": cl } }, 0);
-  K.cam(tl, 19.84, 1560, 330, 2.3);
-  tl.to(creep, { attr: { "stroke-dashoffset": cl * 0.1 }, duration: 1.9, ease: "power1.inOut" }, 20.1);    // stops short of his gloves
-  K.label(tl, 20.3, D, "THINKS IT'S OFF", 120, 860).classList.add("red");
+  K.cam(tl, 18.79, 1560, 330, 2.3);
+  tl.to(creep, { attr: { "stroke-dashoffset": cl * 0.1 }, duration: 2.6, ease: "power1.inOut" }, 19.1);    // stops short of his gloves
+  K.label(tl, 19.2, D, "THINKS IT'S OFF", 120, 860).classList.add("red");
   // freeze before contact: everything holds, a slow push keeps the frame alive
   K.look(tl, 22.0, D - 22.0, 1610, 300, 2.45, "none");
   tl.to("#stage", { filter: "saturate(0.5) brightness(0.82)", duration: 0.15 }, 22.0);

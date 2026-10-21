@@ -44,7 +44,7 @@ window.SCENE = function (tl, ctx) {
   K.beats(tl, L, 6.0, 16.2);
   K.beats(tl, L, 16.2, D, { noTravel: true });                             // export scene: keep the drum and the dance, no rings
   K.label(tl, 5.9, 11.3, "DRUMMER", 1240, 330).classList.add("amber");
-  K.label(tl, 7.9, 11.3, "DANCER", 690, 640).classList.add("green");
+  K.label(tl, 7.4, 11.3, "DANCER", 690, 640).classList.add("green");
 
   // ---- 11.64 "On a normal day, it follows every beat": the two traces lie on top of each other ----
   const sc = el("g", { id: "nScope", opacity: 0 }, svg);

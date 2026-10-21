@@ -143,5 +143,13 @@
     } }, t0);
   }
 
-  window.K = { BEAT, hud, hudSet, hudShow, tag, label, beats, gridDead, gridLive, tripBox, whatIf, pushIn, pullOut, look, cam, xBuild, xRun };
+  // re-time a scene after re-measuring its cues: every position argument goes through a piecewise-linear map
+  function warp(tl, from, to) {
+    const W = t => { if (t <= from[0]) return t; for (let i = 1; i < from.length; i++) if (t <= from[i]) return to[i - 1] + (t - from[i - 1]) * (to[i] - to[i - 1]) / (from[i] - from[i - 1]); return t; };
+    const P = new Proxy(tl, { get(o, k) { const v = o[k];
+      if (["to", "from", "fromTo", "set"].includes(k)) return (...a) => { const i = a.length - 1; if (typeof a[i] === "number") a[i] = W(a[i]); o[k](...a); return P; };
+      return typeof v === "function" ? v.bind(o) : v; } });
+    P.W = W; return P;
+  }
+  window.K = { warp, BEAT, hud, hudSet, hudShow, tag, label, beats, gridDead, gridLive, tripBox, whatIf, pushIn, pullOut, look, cam, xBuild, xRun };
 })();

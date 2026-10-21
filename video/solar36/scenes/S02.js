@@ -70,10 +70,10 @@ window.SCENE = function (tl, ctx) {
   tl.set(run, { opacity: 1 }, 5.6).to(run, { attr: { "stroke-dashoffset": -len }, duration: 1.9, ease: "power1.inOut" }, 5.6).set(run, { opacity: 0 }, 7.55);
   K.look(tl, 5.7, 1.9, 900, 640, 2.4, "power2.inOut");
   // 8.07 "Installers call it an on-grid inverter"
-  K.label(tl, 8.1, 10.25, "ON-GRID INVERTER", 1110, 250);
+  K.label(tl, 7.9, 10.6, "ON-GRID INVERTER", 1110, 250);
   tl.to("#world", { scale: "+=0.08", x: "-=74", y: "-=51", duration: 4.8, ease: "sine.inOut" }, 7.9);  // slow push on the box (centre 924,654)
   // 11.32 "We'll just call it the solar box": the sun badge pops — the box we follow all film
-  K.label(tl, 11.35, D, "SOLAR BOX", 1110, 250).classList.add("green");
-  tl.fromTo("#badge", { scale: 1 }, { scale: 1.45, duration: 0.22, ease: "back.out(3)", yoyo: true, repeat: 1, immediateRender: false }, 11.35);
-  K.hudShow(tl, 11.6, "box");
+  K.label(tl, 10.85, D, "SOLAR BOX", 1110, 250).classList.add("green");
+  tl.fromTo("#badge", { scale: 1 }, { scale: 1.45, duration: 0.22, ease: "back.out(3)", yoyo: true, repeat: 1, immediateRender: false }, 10.85);
+  K.hudShow(tl, 11.1, "box");
 };

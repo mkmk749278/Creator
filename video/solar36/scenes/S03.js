@@ -4,8 +4,10 @@
 // Cues (local s): "Your panels give D.C." 0.24 · "one way" 2.23 · "Your house runs on A.C." 4.05 · "not the air
 // conditioner" 5.19 · "wall-socket kind" 6.21 · "swings forward and back" 7.38 · "fifty full swings" 8.86 ·
 // "The solar box turns…" 10.70 · "…wall-socket power" 13.21.
-window.SCENE = function (tl, ctx) {
+window.SCENE = function (tl0, ctx) {
   const { D } = ctx, el = W36.el;
+  // cue times below are the first estimates; the warp moves them onto the measured phrase starts (2026-10-21)
+  const tl = K.warp(tl0, [4.0, 5.19, 6.21, 7.38, 8.86, 10.70, 13.21, D], [4.0, 6.03, 7.56, 8.65, 10.32, 13.02, 14.53, D]);
   const svg = document.getElementById("stage");
   W36.lane(svg); W36.xray(svg);
   K.hud([{ k: "grid", label: "GRID", v: "230 V · 50.0 Hz", cls: "cyan" }, { k: "box", label: "SOLAR BOX", v: "IN STEP ✓", cls: "green" }]);
@@ -33,7 +35,7 @@ window.SCENE = function (tl, ctx) {
   el("line", { x1: 1350, y1: 360, x2: 1850, y2: 360.2, stroke: "#30363d", "stroke-width": 2 }, tr);              // zero line
   const pr = { T: 0 };
   tl.fromTo(pr, { T: 0 }, { T: D, duration: D, ease: "none", immediateRender: false, onUpdate: () => {
-    const ac = pr.T >= 7.3;
+    const ac = pr.T >= tl.W(7.3);
     tp.setAttribute("d", ac ? W36.sinePath(1350, 1850, 360, 56, 3, -2 * Math.PI * pr.T / K.BEAT) : "M 1350 318 L 1850 318");
     tp.setAttribute("stroke", ac ? "#58a6ff" : "#F2C14E");
     tt.textContent = ac ? "A.C. · FORWARD AND BACK" : "D.C. · ONE WAY"; tt.setAttribute("fill", ac ? "#58a6ff" : "#F2C14E");

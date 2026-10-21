@@ -1,391 +1,407 @@
 1
-00:00:00,000 --> 00:00:03,667
-2 PM. Full sun on your rooftop solar…
+00:00:00,000 --> 00:00:01,335
+2 PM
 
 2
-00:00:03,707 --> 00:00:05,725
-and suddenly, a power cut
+00:00:01,375 --> 00:00:03,665
+Full sun on your rooftop solar…
 
 3
-00:00:06,278 --> 00:00:07,697
-The sun is still shining
+00:00:03,705 --> 00:00:05,725
+and suddenly, a power cut
 
 4
-00:00:07,737 --> 00:00:08,954
-But your fans stop
+00:00:06,278 --> 00:00:07,694
+The sun is still shining
 
 5
-00:00:08,994 --> 00:00:10,910
-Your solar isn't broken
+00:00:07,734 --> 00:00:08,954
+But your fans stop
 
 6
-00:00:10,950 --> 00:00:12,889
-It switched off on purpose
+00:00:08,994 --> 00:00:10,903
+Your solar isn't broken
 
 7
-00:00:12,929 --> 00:00:14,534
-— to protect a lineman's life
+00:00:10,943 --> 00:00:12,167
+It switched off on purpose
 
 8
-00:00:15,240 --> 00:00:17,098
-Where does all that sunshine go?
+00:00:12,207 --> 00:00:14,534
+— to protect a lineman's life
 
 9
-00:00:17,138 --> 00:00:20,000
-And how do you keep your fans running? Let's see
+00:00:15,240 --> 00:00:17,090
+Where does all that sunshine go?
 
 10
-00:00:21,763 --> 00:00:24,462
-One thing first — this is not the inverter
+00:00:17,130 --> 00:00:20,000
+And how do you keep your fans running? Let's see
 
 11
-00:00:24,502 --> 00:00:25,949
-battery you keep at home…
+00:00:21,763 --> 00:00:22,663
+One thing first
 
 12
-00:00:25,989 --> 00:00:28,692
-It's the box your solar panels connect to
+00:00:22,703 --> 00:00:24,196
+— this is not the inverter
 
 13
+00:00:24,236 --> 00:00:25,948
+battery you keep at home…
+
+14
+00:00:25,988 --> 00:00:28,692
+It's the box your solar panels connect to
+
+15
 00:00:28,732 --> 00:00:31,663
 Installers call it an on-grid inverter…
 
-14
+16
 00:00:31,703 --> 00:00:33,787
 We'll just call it the solar box
 
-15
-00:00:34,306 --> 00:00:36,084
+17
+00:00:34,306 --> 00:00:36,075
 Your panels give DC power
 
-16
-00:00:36,123 --> 00:00:37,594
+18
+00:00:36,115 --> 00:00:37,594
 — it flows only one way
 
-17
-00:00:38,119 --> 00:00:40,062
+19
+00:00:38,119 --> 00:00:40,061
 Your house runs on AC power
 
-18
-00:00:40,102 --> 00:00:41,816
+20
+00:00:40,101 --> 00:00:41,590
 — not the air conditioner,
 
-19
-00:00:41,856 --> 00:00:43,232
+21
+00:00:41,630 --> 00:00:42,682
 the wall-socket kind
 
-20
-00:00:43,272 --> 00:00:44,573
+22
+00:00:42,722 --> 00:00:44,352
 It swings forward and back
 
-21
-00:00:44,613 --> 00:00:46,597
+23
+00:00:44,392 --> 00:00:47,052
 — 50 full swings every second
 
-22
-00:00:46,637 --> 00:00:48,421
+24
+00:00:47,092 --> 00:00:48,556
 The solar box turns panel
 
-23
-00:00:48,461 --> 00:00:50,490
+25
+00:00:48,596 --> 00:00:50,490
 power into wall-socket power
 
-24
-00:00:52,124 --> 00:00:52,825
+26
+00:00:52,124 --> 00:00:52,812
 Here's the thing
 
-25
-00:00:52,865 --> 00:00:54,529
+27
+00:00:52,852 --> 00:00:54,719
 — the solar box can't make that
 
-26
-00:00:54,569 --> 00:00:56,646
+28
+00:00:54,759 --> 00:00:56,625
 back-and-forth rhythm on its own
 
-27
-00:00:56,686 --> 00:00:58,672
+29
+00:00:56,665 --> 00:00:58,672
 Think of the grid as a drummer…
 
-28
-00:00:58,712 --> 00:01:00,462
+30
+00:00:58,712 --> 00:01:00,835
 and the solar box as a dancer
 
-29
-00:01:00,502 --> 00:01:02,517
+31
+00:01:00,875 --> 00:01:02,517
 that only follows the drum
 
-30
-00:01:02,968 --> 00:01:05,295
+32
+00:01:02,968 --> 00:01:05,287
 On a normal day, it follows every beat
 
-31
-00:01:05,335 --> 00:01:07,505
+33
+00:01:05,327 --> 00:01:07,217
 Your house uses what it needs
 
-32
-00:01:07,545 --> 00:01:09,646
+34
+00:01:07,257 --> 00:01:09,639
 The extra goes out through your meter…
 
-33
-00:01:09,686 --> 00:01:11,044
+35
+00:01:09,679 --> 00:01:11,042
 onto the street wire…
 
-34
-00:01:11,084 --> 00:01:13,071
+36
+00:01:11,082 --> 00:01:13,071
 and up to the transformer on the pole
 
-35
-00:01:14,653 --> 00:01:16,223
+37
+00:01:14,653 --> 00:01:16,218
 Now the power cut comes
 
-36
-00:01:16,263 --> 00:01:17,856
+38
+00:01:16,258 --> 00:01:17,887
 The electricity board switches
 
-37
-00:01:17,896 --> 00:01:19,185
+39
+00:01:17,927 --> 00:01:19,185
 off the supply to your street
 
-38
-00:01:19,717 --> 00:01:22,652
-Think about it. If your solar box kept pushing,
-
-39
-00:01:22,692 --> 00:01:25,023
-that dead wire would be alive again, right?
-
 40
-00:01:25,498 --> 00:01:27,230
-And that transformer on
+00:01:19,717 --> 00:01:20,401
+Think about it
 
 41
-00:01:27,270 --> 00:01:29,233
-the pole works in reverse
+00:01:20,441 --> 00:01:22,455
+If your solar box kept pushing,
 
 42
-00:01:29,273 --> 00:01:30,301
-Your 230 volts…
+00:01:22,495 --> 00:01:25,023
+that dead wire would be alive again, right?
 
 43
-00:01:30,341 --> 00:01:32,535
-becomes about 11,000 volts…
+00:01:25,498 --> 00:01:26,723
+And that transformer on
 
 44
-00:01:32,575 --> 00:01:36,245
-On a wire the lineman thinks is switched off
+00:01:26,763 --> 00:01:28,199
+the pole works in reverse
 
 45
+00:01:28,239 --> 00:01:30,298
+Your 230 volts…
+
+46
+00:01:30,338 --> 00:01:32,727
+becomes about 11,000 volts…
+
+47
+00:01:32,767 --> 00:01:36,245
+On a wire the lineman thinks is switched off
+
+48
 00:01:37,858 --> 00:01:40,221
 So the solar box is built to notice
 
-46
-00:01:40,261 --> 00:01:41,713
+49
+00:01:40,261 --> 00:01:41,786
 If the beat goes missing,
 
-47
-00:01:41,754 --> 00:01:43,450
+50
+00:01:41,826 --> 00:01:43,611
 or the voltage starts changing,
 
-48
-00:01:43,490 --> 00:01:45,610
-it switches itself off… click
-
-49
-00:01:45,650 --> 00:01:47,184
-Safety rules say it must
-
-50
-00:01:47,224 --> 00:01:49,355
-switch off within 2 seconds
-
 51
-00:01:50,811 --> 00:01:52,694
-But there's one tricky case
+00:01:43,651 --> 00:01:45,176
+it switches itself off…
 
 52
-00:01:52,734 --> 00:01:54,598
-Say your whole street is using
+00:01:45,216 --> 00:01:45,614
+click
 
 53
-00:01:54,638 --> 00:01:56,864
-exactly what the solar panels make
+00:01:45,654 --> 00:01:47,609
+Safety rules say it must
 
 54
-00:01:56,904 --> 00:01:59,021
-Then the power cut changes nothing
+00:01:47,649 --> 00:01:49,355
+switch off within 2 seconds
 
 55
-00:01:59,061 --> 00:02:00,351
-— the box can't feel it
+00:01:50,811 --> 00:01:52,693
+But there's one tricky case
 
 56
+00:01:52,733 --> 00:01:54,194
+Say your whole street is using
+
+57
+00:01:54,234 --> 00:01:56,553
+exactly what the solar panels make
+
+58
+00:01:56,593 --> 00:01:59,013
+Then the power cut changes nothing
+
+59
+00:01:59,053 --> 00:02:00,351
+— the box can't feel it
+
+60
 00:02:00,813 --> 00:02:02,674
 So the box tests the drummer
 
-57
-00:02:02,714 --> 00:02:05,672
+61
+00:02:02,714 --> 00:02:05,244
 Again and again, it plays a little off-beat
 
-58
-00:02:05,712 --> 00:02:07,406
+62
+00:02:05,284 --> 00:02:06,644
 — on purpose — to check…
 
-59
-00:02:07,446 --> 00:02:08,851
+63
+00:02:06,684 --> 00:02:08,851
 is the drummer still there?
 
-60
-00:02:09,927 --> 00:02:11,335
+64
+00:02:09,927 --> 00:02:11,186
 If the grid is there,
 
-61
-00:02:11,375 --> 00:02:13,525
+65
+00:02:11,226 --> 00:02:13,525
 the drummer pulls it back in line
 
-62
-00:02:14,499 --> 00:02:16,977
+66
+00:02:14,499 --> 00:02:16,746
 If the grid is gone, nobody pulls it back
 
-63
-00:02:17,017 --> 00:02:18,696
+67
+00:02:16,786 --> 00:02:18,660
 The beat keeps sliding…
 
-64
-00:02:18,736 --> 00:02:20,401
+68
+00:02:18,700 --> 00:02:20,395
 and the box knows. Click
 
-65
-00:02:20,441 --> 00:02:21,392
+69
+00:02:20,435 --> 00:02:21,392
 — it switches off
 
-66
-00:02:23,075 --> 00:02:24,465
+70
+00:02:23,075 --> 00:02:24,462
 What happens to your panels?
 
-67
-00:02:24,505 --> 00:02:25,806
+71
+00:02:24,502 --> 00:02:25,703
 Once the box is off,
 
-68
-00:02:25,846 --> 00:02:27,698
+72
+00:02:25,743 --> 00:02:27,691
 the power has nowhere to go
 
-69
-00:02:27,738 --> 00:02:28,689
+73
+00:02:27,731 --> 00:02:28,689
 Nothing comes out
 
-70
-00:02:29,186 --> 00:02:30,523
+74
+00:02:29,186 --> 00:02:30,339
 The sunlight still lands
 
-71
-00:02:30,563 --> 00:02:31,995
+75
+00:02:30,379 --> 00:02:31,772
 and just turns into heat
 
-72
-00:02:32,035 --> 00:02:34,001
+76
+00:02:31,811 --> 00:02:33,998
 — your panels are built for that
 
-73
-00:02:34,041 --> 00:02:35,435
+77
+00:02:34,038 --> 00:02:35,674
 But the panel wires still
 
-74
-00:02:35,475 --> 00:02:36,439
+78
+00:02:35,714 --> 00:02:36,871
 have voltage in them
 
-75
-00:02:36,478 --> 00:02:38,255
+79
+00:02:36,911 --> 00:02:38,216
 So don't touch them yourself
 
-76
-00:02:38,294 --> 00:02:39,929
+80
+00:02:38,256 --> 00:02:39,929
 — leave that to a trained person
 
-77
-00:02:41,443 --> 00:02:43,684
+81
+00:02:41,443 --> 00:02:43,141
 So how do you keep your fans running?
 
-78
-00:02:43,724 --> 00:02:44,981
+82
+00:02:43,181 --> 00:02:44,982
 You need a different box
 
-79
-00:02:45,021 --> 00:02:46,347
+83
+00:02:45,022 --> 00:02:46,349
 — a hybrid inverter
 
-80
-00:02:46,387 --> 00:02:48,381
+84
+00:02:46,389 --> 00:02:48,253
 Hybrid simply means it works with
 
-81
-00:02:48,421 --> 00:02:50,156
+85
+00:02:48,293 --> 00:02:50,156
 the grid and with a battery
 
-82
-00:02:50,558 --> 00:02:52,802
+86
+00:02:50,558 --> 00:02:52,806
 When the grid dies, a switch inside it
 
-83
-00:02:52,842 --> 00:02:55,155
+87
+00:02:52,846 --> 00:02:54,840
 first cuts your house off from the street
 
-84
-00:02:55,195 --> 00:02:57,625
+88
+00:02:54,880 --> 00:02:57,488
 Then the battery becomes the drummer,
 
-85
-00:02:57,665 --> 00:02:59,172
+89
+00:02:57,528 --> 00:02:59,172
 and the panels dance again
 
-86
-00:02:59,793 --> 00:03:00,629
+90
+00:02:59,793 --> 00:03:00,620
 Remember this
 
-87
-00:03:00,669 --> 00:03:03,857
+91
+00:03:00,660 --> 00:03:03,898
 A normal on-grid solar box, with no battery,
 
-88
-00:03:03,897 --> 00:03:06,171
+92
+00:03:03,938 --> 00:03:06,167
 has to go silent when the grid goes
 
-89
-00:03:06,211 --> 00:03:07,243
+93
+00:03:06,207 --> 00:03:07,243
 That's by design
 
-90
-00:03:08,501 --> 00:03:10,893
+94
+00:03:08,501 --> 00:03:10,890
 If anyone offers to switch off this safety
 
-91
-00:03:10,933 --> 00:03:11,879
+95
+00:03:10,930 --> 00:03:12,440
 — just say no…
 
-92
-00:03:11,919 --> 00:03:13,791
+96
+00:03:12,480 --> 00:03:14,335
 Because the lineman fixing your
 
-93
-00:03:13,831 --> 00:03:16,229
+97
+00:03:14,375 --> 00:03:16,229
 street is the one who gets the shock
 
-94
-00:03:17,346 --> 00:03:18,802
+98
+00:03:17,346 --> 00:03:18,803
 Your solar never failed
 
-95
-00:03:18,842 --> 00:03:20,230
+99
+00:03:18,843 --> 00:03:20,230
 It just lost its drummer
 
-96
-00:03:20,799 --> 00:03:23,429
+100
+00:03:20,799 --> 00:03:23,185
 But when the grid is live, how does that box
 
-97
-00:03:23,469 --> 00:03:26,097
+101
+00:03:23,225 --> 00:03:26,095
 turn sunlight into steady wall-socket power?
 
-98
-00:03:26,137 --> 00:03:27,435
+102
+00:03:26,135 --> 00:03:27,435
 Let's open it up next

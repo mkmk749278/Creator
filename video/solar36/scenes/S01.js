@@ -26,6 +26,7 @@ window.SCENE = function (tl, ctx) {
   K.label(tl, tSplit + 0.4, V(8.9), "STILL SUNNY", 96, 420).classList.add("amber");
   K.gridDead(tl, 0);
   tl.set("#slowTag", { opacity: 0 }, 0);                       // no beat in this scene: the grid is down
+  tl.set("#dholBadge", { visibility: "hidden" }, 0);          // the drummer is introduced in S04
   tl.set("#world", { visibility: "hidden" }, 0).set("#world", { visibility: "visible" }, tSplit - 0.05);
   // 9.0 the box: green LED goes dark, a white flash ring, "not broken"
   const tBox = V(9.0);
@@ -35,7 +36,7 @@ window.SCENE = function (tl, ctx) {
   K.hudShow(tl, tBox + 0.6, "box");
   K.label(tl, tBox + 0.8, V(11.5), "NOT BROKEN", 1180, 860).classList.add("green");
   // 11.6 the lineman it protects: low angle on the LT pole, calm work, no harm
-  const tLm = V(11.6);
+  const tLm = V(12.1);                                   // "— to protect a lineman's life" (measured)
   K.look(tl, tLm, 0.8, 1220, 660, 2.6, "power2.inOut", 1150, 600);
   tl.fromTo("#lmA", { y: 30 }, { y: 0, duration: 2.6, ease: "sine.out", immediateRender: false }, tLm);
   K.label(tl, tLm + 0.6, V(14.6), "LINEMAN", 120, 820);

@@ -46,10 +46,10 @@ window.SCENE = function (tl, ctx) {
   const lev = el("line", { x1: 1800, y1: 380, x2: 1852, y2: 380, stroke: "#3fb950", "stroke-width": 9, "stroke-linecap": "round" }, brk);
   el("rect", { x: 1786, y: 318, width: 88, height: 26, rx: 4, fill: "#1B2631" }, brk);
   el("text", { x: 1830, y: 338, "text-anchor": "middle", class: "w-tagM" }, brk).textContent = "11 kV";
-  tl.to(lev, { rotation: -38, svgOrigin: "1800 380", duration: 0.18, ease: "power3.in" }, 7.1).to(lev, { attr: { stroke: "#f85149" }, duration: 0.05 }, 7.25);
-  tl.to("#dholBadge", { filter: "grayscale(1) brightness(0.8)", duration: 0.3 }, 7.2);
-  K.hudSet(tl, 7.2, "grid", "CUT · STILL 230 V", "amber");
-  K.label(tl, 7.2, 8.0, "SUPPLY CUT", 1420, 470).classList.add("red");
+  tl.to(lev, { rotation: -38, svgOrigin: "1800 380", duration: 0.18, ease: "power3.in" }, 6.55).to(lev, { attr: { stroke: "#f85149" }, duration: 0.05 }, 6.7);
+  tl.to("#dholBadge", { filter: "grayscale(1) brightness(0.8)", duration: 0.3 }, 6.65);
+  K.hudSet(tl, 6.65, "grid", "CUT · STILL 230 V", "amber");
+  K.label(tl, 6.65, 8.0, "SUPPLY CUT", 1420, 470).classList.add("red");
   // 8.0 push into the box: the scope has not changed at all
   K.look(tl, 7.6, 0.4, 924, 654, 2.4, "power2.in");
   K.pushIn(tl, 8.0);

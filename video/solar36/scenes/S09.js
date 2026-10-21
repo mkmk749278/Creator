@@ -108,16 +108,16 @@ window.SCENE = function (tl, ctx) {
   tl.set("#world, #fg", { visibility: "hidden" }, 10.85);
   tl.fromTo("#hxCam", { scale: 1.05, svgOrigin: "960 560" }, { scale: 1.0, duration: 8.4, ease: "sine.out", immediateRender: false }, 10.3);
   // 11.6 the grid switch opens: a visible gap, the street stays slate
-  tl.to(ctc, { rotation: -32, svgOrigin: "760 520", duration: 0.16, ease: "power3.in" }, 11.6).to(ctc, { attr: { stroke: "#f85149" }, duration: 0.05 }, 11.76);
+  tl.to(ctc, { rotation: -32, svgOrigin: "760 520", duration: 0.16, ease: "power3.in" }, 12.3).to(ctc, { attr: { stroke: "#f85149" }, duration: 0.05 }, 12.46);
   const fl = el("circle", { cx: 800, cy: 515, r: 20, fill: "none", stroke: "#FFFFFF", "stroke-width": 8, opacity: 0 }, hc);
-  tl.fromTo(fl, { opacity: 1, attr: { r: 20 } }, { opacity: 0, attr: { r: 160 }, duration: 0.45, ease: "power2.out", immediateRender: false }, 11.76);
-  K.hudShow(tl, 11.8, "bk");
-  K.label(tl, 11.9, 14.6, "STREET CUT OFF", 120, 860).classList.add("red");
+  tl.fromTo(fl, { opacity: 1, attr: { r: 20 } }, { opacity: 0, attr: { r: 160 }, duration: 0.45, ease: "power2.out", immediateRender: false }, 12.46);
+  K.hudShow(tl, 12.5, "bk");
+  K.label(tl, 12.5, 14.3, "STREET CUT OFF", 120, 860).classList.add("red");
   // 14.75 the battery becomes the drummer: the dhol flies to the battery and comes alive
-  tl.to(dr, { x: 1060, y: 640, duration: 0.9, ease: "power2.inOut" }, 14.8);
+  tl.to(dr, { x: 1060, y: 640, duration: 0.9, ease: "power2.inOut" }, 14.3);
   tl.to("#hxDrum .drRing", { attr: { stroke: "#3fb950" }, duration: 0.2 }, 15.6).to("#hxDrum .drBody", { attr: { fill: "#9C5A2E" }, duration: 0.2 }, 15.6);
   K.hudSet(tl, 15.6, "bk", "BATTERY ✓", "green"); K.hudSet(tl, 15.6, "box", "ON BATTERY", "green");
-  K.label(tl, 15.0, 17.0, "BATTERY = DRUMMER", 120, 860).classList.add("green");
+  K.label(tl, 14.4, 16.8, "BATTERY = DRUMMER", 120, 860).classList.add("green");
   tl.to("#bus, .fanWire", { opacity: 1, duration: 0.3 }, 15.7);
   // 17.10 the panels dance again: beats from the battery, the badge hops, the backed-up fan spins; the rest stays dark
   for (let t = 15.7; t < D - 0.1; t += K.BEAT) {
