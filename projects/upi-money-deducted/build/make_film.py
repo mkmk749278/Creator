@@ -91,7 +91,7 @@ def phone(at, to, x, y, inner, rot=0, fx="up"):
 # THE CUT (film seconds). VO cues in comments.
 # =====================================================================================================
 # ---- HOOK
-shot(0.0, 4.4, "kirana_soft", "slow", "ILLUSTRATIVE FOOTAGE", warm=True)           # "Your bank S.M.S. says ₹840 — debited."
+shot(0.0, 4.4, "K_kirana", "slow", "PHOTO · IDEALIST JACK / FLICKR · PUBLIC DOMAIN", warm=True)           # "Your bank S.M.S. says ₹840 — debited."
 phone(0.0, 7.0, 1240, 60, '<div class="wall"></div><div class="clock">9:41</div>'
       + sms(0.35, None, '<b>₹840.00 debited</b> from A/c XX4521 to Sharma Kirana Store. UPI Ref 4271 8830 1265.')
       + scr(head("Paying") + PAYEE + '<div class="amt">₹840</div><div class="stat"><div class="spin"></div><div class="t" style="color:#b7791f">Payment processing</div>'
@@ -100,11 +100,11 @@ phone(0.0, 7.0, 1240, 60, '<div class="wall"></div><div class="clock">9:41</div>
             '<div class="s">Waiting for confirmation from the bank</div></div>'
             + sms(4.5, None, '<b>₹840.00 debited</b> from A/c XX4521 to Sharma Kirana Store.', ""), 4.45, None), rot=-4)
 chip("₹840 debited", 0.4, 4.4, 140, 510, "red", "xl", "pop")
-shot(4.4, 7.0, "kirana_soft2", "left", "ILLUSTRATIVE FOOTAGE", warm=True)           # "Your U.P.I. app says — processing."
+shot(4.4, 7.0, "K_paytm", "left", "PHOTO · SASHA INDIA / FLICKR · CC BY-SA 2.0", warm=True)           # "Your U.P.I. app says — processing."
 chip("Processing", 4.6, 7.0, 360, 430, "amber", "", "pop", "⧗")
-shot(7.0, 9.75, "SB_off", "in", "ILLUSTRATION", warm=True)                          # "And the shop's soundbox? Silent."
+shot(7.0, 9.75, "SB_phonepe", "in", "DEVICE IMAGE · PHONEPE", warm=True)                          # "And the shop's soundbox? Silent."
 chip("Silent", 8.7, 9.75, 1180, 330, "slate", "sm", "pop", "🔇")
-shot(9.75, 11.85, "shopkeeper", "in", "ILLUSTRATIVE FOOTAGE", warm=True, origin="42% 30%", media_start=1.0)            # "The shopkeeper is looking at you."
+shot(9.75, 11.85, "K_shopkeeper", "in", "PHOTO · THE_STEVE_COX / FLICKR · CC BY 2.0", warm=True, origin="68% 36%")            # "The shopkeeper is looking at you."
 chip("Not received", 10.1, 11.85, 140, 820, "red", "sm", "left")
 # "Don't pay again. Your money is not lost."
 shot(11.85, 15.0, "kirana_soft3", "slow", "SIMULATED SCREEN", warm=True)
@@ -183,7 +183,7 @@ phone(87.2, 90.8, 1240, 60, scr(head("Payment") + PAYEE + '<div class="amt">₹8
 chip("Pending = Processing", 88.6, 90.8, 140, 440, "amber", "", "pop")
 cite("[NPCI | UPI HELP GUIDELINES]", 88.6, 90.8)
 # ---- AT THE COUNTER
-shot(90.8, 97.6, "counter", "push", "ILLUSTRATIVE FOOTAGE", warm=True)             # "So right there at the counter, don't pay again. Ask... bank S.M.S..."
+shot(90.8, 97.6, "K_store", "push", "PHOTO · NAMAN BHAGAT / WIKIMEDIA · CC BY-SA 4.0", warm=True)             # "So right there at the counter, don't pay again. Ask... bank S.M.S..."
 chip("Don't pay again", 91.3, 93.6, 120, 390, "red", "", "pop", "✋")
 chip("Check bank S.M.S.", 93.7, 97.6, 120, 390, "cyan", "", "pop")
 chip("Not the soundbox", 95.4, 97.6, 120, 580, "slate", "sm", "pop")
