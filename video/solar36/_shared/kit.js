@@ -85,7 +85,7 @@
 
   // ---------- camera: push into the box (world → X-ray) and back out ----------
   function pushIn(tl, t, X) {
-    tl.to("#world", { scale: 5.5, x: 960 - 5.5 * 924, y: 540 - 5.5 * 654, svgOrigin: "0 0", duration: 0.7, ease: "power2.inOut" }, t);
+    tl.to("#world", { scale: 5.5, x: 960 - 5.5 * 924, y: 540 - 5.5 * 654, duration: 0.7, ease: "power2.inOut" }, t);
     tl.to("#fg", { x: -900, y: 260, opacity: 0, duration: 0.5, ease: "power2.in" }, t);
     tl.fromTo("#veil", { opacity: 0 }, { opacity: 0.32, duration: 0.3, immediateRender: false }, t + 0.25);
     tl.fromTo("#brackets", { opacity: 0, scale: 1.15, svgOrigin: "960 540" }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)", immediateRender: false }, t + 0.3);
@@ -102,7 +102,8 @@
   // world camera: put world point (cx,cy) at screen (sx,sy) at scale s. Origin stays 0 0 (GSAP compensates origin changes).
   const camAt = (cx, cy, s, sx, sy) => ({ scale: s, x: (sx === undefined ? 960 : sx) - s * cx, y: (sy === undefined ? 540 : sy) - s * cy, svgOrigin: "0 0" });
   function look(tl, t, dur, cx, cy, s, ease, sx, sy) {
-    tl.to("#world", { ...camAt(cx, cy, s, sx, sy), duration: dur, ease: ease || "sine.inOut" }, t);
+    const { svgOrigin, ...to } = camAt(cx, cy, s, sx, sy);   // never put svgOrigin in a tween: GSAP then re-offsets x/y
+    tl.to("#world", { ...to, duration: dur, ease: ease || "sine.inOut" }, t);
   }
   function cam(tl, t, cx, cy, s, sx, sy) { tl.set("#world", camAt(cx, cy, s, sx, sy), t); }
 

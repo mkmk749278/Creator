@@ -1375,6 +1375,10 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 - Never add tweens at negative positions: per-part timer keys from other parts inflated a 45 s part to 2477 s. Clip
   keyframes to `[0, dur]` per part.
 - `tl.call` doesn't run on render seeks: use stacked elements and `tl.set`. No `letterSpacing` tweens.
+- **SVG camera moves: set `svgOrigin` once, never inside a tween** (film 36, 2026-10-21). A `.to()` that carries `svgOrigin`
+  (even the same value) makes GSAP re-offset x/y, so a scale + x/y "camera" lands hundreds of px off (S03: 493 px at scale 1).
+  Set `{scale, x, y, svgOrigin: "0 0"}` with `tl.set` at 0, then tween only `scale/x/y` with `x = sx - s*cx`; a group placed
+  with a `transform` attribute must be wrapped, since a GSAP tween on it replaces the attribute (the lineman jumped to 0,0).
 - An SVG filter on a perfectly vertical or horizontal line renders nothing.
 - `@font-face` goes in each `index.html` with root-relative paths; canvas fonts need a fallback (`Inter, Arial, sans-serif`)
   or the first frame renders in a serif.

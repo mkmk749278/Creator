@@ -274,8 +274,8 @@
     el("rect", { x: 710, y: 770, width: 58, height: 52, rx: 4, fill: "rgba(225,240,248,0.9)" }, meter);
     el("rect", { x: 716, y: 778, width: 46, height: 18, fill: "#1D2A35" }, meter);
     txt(meter, 739, 792, "0 4 2 7", "w-lcd", { "text-anchor": "middle" });
-    el("rect", { x: 660, y: 858, width: 160, height: 34, rx: 6, fill: "rgba(13,17,23,0.85)" }, meter);
-    txt(meter, 740, 883, "NET METER", "w-tagM", { "text-anchor": "middle" });
+    el("rect", { x: 536, y: 774, width: 156, height: 34, rx: 6, fill: "rgba(13,17,23,0.85)" }, meter);          // tag beside the meter (below it was cut by the foreground)
+    txt(meter, 614, 799, "NET METER", "w-tagM", { "text-anchor": "middle" });
     el("circle", { id: "meterLed", cx: 756, cy: 810, r: 4, fill: C.red }, meter);
     dbBox(world, 760, 602, "DC");
     const box = solarBox(world, 864, 584);
