@@ -306,13 +306,13 @@
     const ring = el("path", { id: "ringPath", d: `${sag(1700, 226, 1470, 191, 8)} L 1470 440 L 1556 630 L 1556 470 ${sag(1556, 470, 1216, 456, 10).replace("M", "L")} ${sag(1216, 470, 1120, 592, 18).replace("M", "L")} L 1120 820 L 778 820 L 740 820`, fill: "none", stroke: "none" }, world);
     // the drummer: a dhol inside a round GRID callout with a pointer to the 11 kV line
     const cb = el("g", { id: "dholBadge" }, world);
-    el("line", { x1: 1322, y1: 214, x2: 1700, y2: 226, stroke: "#0d1117", "stroke-width": 4 }, cb);
-    el("circle", { cx: 1700, cy: 226, r: 8, fill: "#0d1117" }, cb);
+    el("line", { x1: 1322, y1: 210, x2: 1684, y2: 204, stroke: "#FFFFFF", "stroke-width": 4, "stroke-dasharray": "12 8" }, cb);
+    el("circle", { cx: 1700, cy: 204, r: 12, fill: "none", stroke: "#FFFFFF", "stroke-width": 4 }, cb);
     el("circle", { cx: 1230, cy: 200, r: 96, fill: "rgba(13,17,23,0.82)", stroke: "#58a6ff", "stroke-width": 4 }, cb);
     const dh = dhol(cb, 1230, 186);
     txt(cb, 1230, 274, "GRID", "w-grid", { "text-anchor": "middle" });
-    el("rect", { x: 1132, y: 306, width: 196, height: 30, rx: 6, fill: "rgba(13,17,23,0.82)" }, cb);
-    txt(cb, 1230, 328, "SLOWED DOWN", "w-tagS", { "text-anchor": "middle" });
+    el("rect", { x: 1098, y: 302, width: 264, height: 40, rx: 8, fill: "rgba(13,17,23,0.85)" }, cb);
+    txt(cb, 1230, 330, "SLOWED DOWN", "w-tagS", { "text-anchor": "middle" });
     foreground(svg);
     return { world, ring, box, dc, dp };
   }
@@ -339,7 +339,7 @@
     txt(cam, F.x + 36, F.y + 60, "INSIDE THE SOLAR BOX", "x-title");
     const inner = el("g", { id: "xInner" }, cam);
     // panel + sun icon outside left, DC in through the left wall
-    const pv = el("g", { transform: "translate(250 600)" }, inner);
+    const pv = el("g", { transform: "translate(250 600)", class: "b1" }, inner);
     el("rect", { x: -70, y: -10, width: 130, height: 90, rx: 4, fill: "#1F3A5F", stroke: "#AEB6BF", "stroke-width": 4 }, pv);
     for (let i = 1; i < 3; i++) el("line", { x1: -70 + i * 43.3, y1: -10, x2: -70 + i * 43.3 + 0.2, y2: 80, stroke: "#5D86B0", "stroke-width": 2 }, pv);
     el("line", { x1: -70, y1: 35, x2: 60, y2: 35.2, stroke: "#5D86B0", "stroke-width": 2 }, pv);
@@ -354,7 +354,7 @@
       const sg = el("g", { class: "swg", "data-k": k }, inner);
       el("circle", { cx: sx, cy: sy + 30, r: 6, fill: C.read }, sg); el("circle", { cx: sx + 36, cy: sy + 30, r: 6, fill: C.read }, sg);
       el("line", { class: "sw", x1: sx, y1: sy + 30, x2: sx + 34, y2: sy + 8, stroke: C.cyan, "stroke-width": 5, "stroke-linecap": "round" }, sg); });
-    txt(inner, 845, 748, "D.C. → A.C.", "x-lab", { "text-anchor": "middle" });
+    txt(inner, 845, 748, "DC → AC", "x-lab", { "text-anchor": "middle" });
     let coil = "M 930 620"; for (let k = 0; k < 5; k++) coil += ` q 8 -26 16 0`;
     el("path", { d: coil, fill: "none", stroke: C.read, "stroke-width": 4 }, inner);
     el("line", { x1: 1010, y1: 620, x2: 1072, y2: 620.3, stroke: C.cyan, "stroke-width": 7, "stroke-linecap": "round" }, inner);
@@ -404,9 +404,9 @@
     // scope: grid trace (blue, 4 px) + box trace (white dashed, 2 px)
     const scope = el("g", { id: "scope" }, g);
     el("rect", { x: 1330, y: 230, width: 540, height: 205, rx: 14, fill: C.panel, stroke: C.grid, "stroke-width": 2 }, scope);
-    txt(scope, 1354, 270, "GRID", "x-tag cyan");
-    txt(scope, 1474, 270, "· BOX", "x-tag");
-    txt(scope, 1846, 270, "IN STEP ✓", "x-tag green", { "text-anchor": "end", id: "inStep", opacity: 0 });
+    el("rect", { x: 1352, y: 250, width: 22, height: 22, fill: C.cyan }, scope); txt(scope, 1384, 272, "GRID", "x-tag cyan");
+    el("rect", { x: 1500, y: 250, width: 22, height: 22, fill: "rgba(255,255,255,0.7)" }, scope); txt(scope, 1532, 272, "BOX", "x-tag");
+    txt(scope, 1846, 272, "IN STEP ✓", "x-tag green", { "text-anchor": "end", id: "inStep", opacity: 0 });
     el("path", { id: "tBox", fill: "none", stroke: "rgba(255,255,255,0.42)", "stroke-width": 12, "stroke-linecap": "round" }, scope);
     el("path", { id: "tGrid", fill: "none", stroke: C.cyan, "stroke-width": 4 }, scope);
     return { g, cam, inner };
