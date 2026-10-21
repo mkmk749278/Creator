@@ -1,8 +1,10 @@
 # Why Do Most Rooftop Solar Systems Stop Working During a Power Cut?
 
 Roadmap film 36 (`config/roadmap-180s.yaml`), 180-second explainer (PLAYBOOK §4a-9). Phase 1: narration.
-VO: `vo.txt` (380 words, about 2:32 at 150 wpm). `scripts/spoken_english_check.py` passes.
-Status: draft. Not yet fact-checked (`claims.csv`) or audience-reviewed (§4a-11).
+VO: `vo.txt` = **v10, the recording version** (556 words, about 3:28 at 160 wpm / 3:42 at 150). `scripts/spoken_english_check.py` passes.
+Audience-reviewed in 9 independent rounds (§4a-11, `review_audience_v1–v9.md`; earlier drafts are `vo_v1–v9.txt`). Clarity went from 4–7 in v1 to 6–8, and trust from 6–7 to 7–9. The panel's verdict went from "not ready" to "almost ready", and v10 applies the last fixes.
+It runs longer than the 2.5-minute brief because each round added clarity the panel asked for (owner, 2026-10-20: "the narration should be good, that's our main priority").
+Still to do: the fact-check (`claims.csv`).
 
 ## Viewer's three questions
 1. My roof is in full sun. Why does my solar stop when the power goes?
@@ -24,8 +26,12 @@ Status: draft. Not yet fact-checked (`claims.csv`) or audience-reviewed (§4a-11
 - C4 "Many" inverters use active frequency-shift detection (Sandia SFS, AFD): Sandia/NREL report.
 - C5 Open circuit means I = 0, so P = V × I = 0 W. Panels at Voc are within their rating, and the unextracted energy becomes heat: module datasheet plus an NREL note.
 - C6 The hybrid opens its grid relay before forming its own voltage: two hybrid inverter manuals (switchover time goes on the HUD only, labelled from the manual).
+- C7 (added in v5) The panel wires still carry voltage while the inverter is off and the panels are lit, so only a trained person should touch them: module datasheet Voc plus a CEA/MNRE or NREL safety note.
+- C8 50 Hz means fifty full cycles a second (the VO says "fifty full swings"; v9 caught "flips back and forth fifty times" as wrong).
+- C9 "Safety rules say it must switch off within two seconds" is the same as C1, so the CEA clause decides whether "safety rules" can stand or must become "international safety standards".
 
-## Beat sheet (times from 150 wpm; re-time on the real VO with `align_script.py`)
+## Beat sheet (written for VO v1: the pictures still hold, but rebuild the timings and VO cues for v10 on the real VO with `align_script.py`)
+The v10 additions need beats too: home battery inverter vs solar box (a split screen of the two boxes), D.C. vs A.C. (a wall socket, "not the air conditioner"), the panel-wire voltage warning, and "switch off this safety — say no".
 Colour key, from `blueprint` in brand.yaml: amber = sun and heat, cyan = current, orange = fault, green = verified state.
 
 | # | Time | Phase | VO (first words) | Visual anchor | On-screen text (≤ 3 words) | HUD (top left) | SFX / music |
@@ -51,5 +57,5 @@ Colour key, from `blueprint` in brand.yaml: amber = sun and heat, cyan = current
 | 19 | 2:30 | Bridge | "But when the grid is live…" | End screen: the H-bridge MOSFETs glowing (next film), logo end card under live VO | `NEXT: THE INVERTER` | – | Outro bed |
 
 ## Recording blocks (Akash, Eleven v4: stability 0.65, similarity 0.85, style 0.15, speaker boost on)
-Block 1 → `voice/vo_01.mp3`: beats 1–10 (1,103 characters). Block 2 → `voice/vo_02.mp3`: beats 11–19 (948 characters).
-The text is in `vo.txt`, split at "What if your house uses exactly…".
+Three blocks of VO v10, each under 1,500 characters and split at a thought break: `vo_block_1.txt` → `voice/vo_01.mp3` (910 characters),
+`vo_block_2.txt` → `voice/vo_02.mp3` (1,158), `vo_block_3.txt` → `voice/vo_03.mp3` (1,002).

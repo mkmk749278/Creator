@@ -1,0 +1,16 @@
+What happens to your panels? Once the box is off, the power has nowhere to go. Nothing comes out.
+
+The sunlight still lands and just turns into heat — your panels are built for that. But the panel wires still have voltage in them. So don't touch them yourself — leave that to a trained person.
+
+So how do you keep your fans running? You need a different box — a hybrid inverter. Hybrid simply means it works with the grid and with a battery.
+
+When the grid dies, a switch inside it first cuts your house off from the street. Then the battery becomes the drummer, and the panels dance again.
+
+Remember this. A normal on-grid solar box, with no battery, has to go silent when the grid goes. That's by design.
+
+If anyone offers to switch off this safety — just say no. Because the lineman fixing your street is the one who gets the shock.
+
+Your solar never failed. It just lost its drummer.
+
+But when the grid is live, how does that box turn sunlight into steady wall-socket power? Let's open it up next.
+

@@ -1,0 +1,17 @@
+On a normal day, it follows every beat. Your house uses what it needs. The extra goes out through your meter... onto the street wire... and up to the transformer on the pole.
+
+Now the power cut comes. The electricity board switches off the supply to your street.
+
+Think about it. If your solar box kept pushing, that dead wire would be alive again, right?
+
+And that transformer on the pole works in reverse. Your two hundred and thirty volts... becomes about eleven thousand volts. On a wire the lineman thinks is switched off.
+
+So the solar box is built to notice. If the beat goes missing, or the voltage starts changing, it switches itself off... click. Safety rules say it must switch off within two seconds.
+
+But there's one tricky case. Say your house is using exactly what the panels make. Then the power cut changes nothing — the box can't feel it.
+
+So the box tests the drummer. Again and again, it plays a little off-beat — on purpose — to check... is the drummer still there?
+
+If the grid is there, the drummer pulls it back in line.
+
+If the grid is gone, nobody pulls it back. The beat keeps sliding... and the box knows. Click — it switches off.

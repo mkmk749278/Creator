@@ -1,0 +1,13 @@
+Two in the afternoon. Full sun on your rooftop solar... and suddenly, a power cut.
+
+The sun is still shining. But your fans stop. Your solar isn't broken. It switched off on purpose — to protect a lineman's life.
+
+Where does all that sunshine go? And how do you keep your fans running? Let's see.
+
+One thing first — this is not the inverter battery you keep at home. It's the box your solar panels connect to. Installers call it an on-grid inverter. We'll just call it the solar box.
+
+Your panels give D.C. power — it flows only one way.
+
+Your house runs on A.C. power — not the air conditioner, the wall-socket kind. It swings forward and back — fifty full swings every second. The solar box turns panel power into wall-socket power.
+
+Here's the thing — the solar box can't make that back-and-forth rhythm on its own. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.
