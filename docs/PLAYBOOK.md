@@ -847,6 +847,24 @@ the review (scores, what changed, and anything we chose not to change and why). 
 review again. Save the reviewer's report as `projects/<slug>/review_audience_vN.md`. Archive the review session when
 done.
 
+### 4a-12. Every review comes from an independent session (owner, 2026-10-21)
+*Why (owner):* "Always take review from independent sessions." The session that built something has read its own
+plan too often to see it as a viewer does, the same reason as §4a-11, which covered narration only.
+
+**What gets an independent review:**
+- narration text (§4a-11)
+- the recorded audio (script plus measured per-line timings)
+- the visual plan and storyboard
+- lookdev frames
+- each rendered scene and the assembled cut (the §14 checklist pass stays ours too, but not instead)
+- thumbnail, title and description
+
+**How:**
+- Use `create_session` with no `source_url`, so the session cannot read our rules, research or drafts. The prompt carries only what a viewer would get, plus the hard limits needed for buildable advice.
+- **Pictures:** embed downscaled JPGs (about 800 px wide, q≈6, ≤ 35 KB each) as base64 text in the prompt, with a one-line command to decode and view them. Nothing is uploaded or made public.
+- Save the report as `projects/<slug>/review_<what>_vN.md`, apply the fixes that keep every fact true, re-review when the verdict is "not ready", and archive the session.
+- Film 36 first used this for the visual suggestions, the audio take and the lookdev (2026-10-21).
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
