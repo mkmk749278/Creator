@@ -571,6 +571,17 @@ What the curves say:
 6. **Open question:** the synthetic voice may cost some early exits (viewers who notice TTS). We can't measure it
    from one channel; recheck once the intro fix is in place.
 
+**Topic research (2026-10-21; full report `docs/research/reports/India content edge 2026-10-21.md`).** 95 YouTube
+searches and about 440 India autocomplete phrases. Findings: (a) the jet-engine question is the most-covered India
+defence topic (Vigyan Recharge 737K, Buddhi Media 336K and many more), and our thumbnail text sat under the timestamp
+badge, so the film reached only defence fans who had already seen the answer; the chip film was a fresh, open "bet" with
+a number on a one-object thumbnail; (b) low competition can mean low demand: "kavach" autocomplete returns only a movie
+and a serial, and our Kavach film got 66 views in 4 days; (c) the open space is "India's missing pieces" told as a live
+bet (rare earth magnets, pharma APIs, sovereign AI, fertiliser, NavIC, Indian chip design): people search these, and only
+news clips or Hindi films answer them; (d) winners in this niche run 9–16 minutes. *Practice (recommended, not yet
+owner-approved):* before choosing a topic, check YouTube autocomplete (`gl=IN`) for demand and the top 20 results for supply,
+and skip topics where Hindi giants already have 1M+ films unless we have a mechanism nobody showed.
+
 **Monetization maths** (YouTube Help, YPP overview, checked 2026-10-17). Ad revenue needs **1,000 subscribers and 4,000
 public long-form watch hours in the last 12 months** (or 10 million Shorts views in 90 days). The lower tier (500 subs,
 3 uploads in 90 days, 3,000 hours or 3 million Shorts views) unlocks memberships and Super Thanks only, no ad share;
