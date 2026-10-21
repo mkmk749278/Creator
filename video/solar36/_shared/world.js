@@ -437,5 +437,5 @@
     return g;
   }
 
-  window.W36 = { el, txt, C, lane, xray, sinePath, FRAME, lineman };
+  window.W36 = { el, txt, C, lane, xray, sinePath, FRAME, lineman, panels };
 })();

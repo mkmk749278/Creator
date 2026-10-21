@@ -94,7 +94,7 @@
     tl.set("#world", { visibility: "hidden" }, t + 1.05).set("#fg", { visibility: "hidden" }, t + 1.05);
   }
   function pullOut(tl, t) {
-    tl.set("#world", { visibility: "visible", scale: 5.5, x: 960 - 5.5 * 924, y: 540 - 5.5 * 654, svgOrigin: "0 0" }, t).set("#fg", { visibility: "visible" }, t);
+    tl.set("#world", { visibility: "visible", scale: 5.5, x: 960 - 5.5 * 924, y: 540 - 5.5 * 654 }, t).set("#fg", { visibility: "visible" }, t);
     tl.to("#xWipeC", { attr: { r: 0 }, duration: 0.45, ease: "power2.out" }, t);
     tl.to("#world", { scale: 1, x: 0, y: 0, duration: 0.7, ease: "power2.inOut" }, t + 0.25);
     tl.to("#fg", { x: 0, y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, t + 0.35);
@@ -105,7 +105,8 @@
     const { svgOrigin, ...to } = camAt(cx, cy, s, sx, sy);   // never put svgOrigin in a tween: GSAP then re-offsets x/y
     tl.to("#world", { ...to, duration: dur, ease: ease || "sine.inOut" }, t);
   }
-  function cam(tl, t, cx, cy, s, sx, sy) { tl.set("#world", camAt(cx, cy, s, sx, sy), t); }
+  function cam(tl, t, cx, cy, s, sx, sy) {             // svgOrigin only on the first set (t = 0): later it would re-offset x/y
+    const { svgOrigin, ...to } = camAt(cx, cy, s, sx, sy); tl.set("#world", t === 0 ? { ...to, svgOrigin } : to, t); }
 
   // ---------- X-ray: staged reveal + the running machine ----------
   const STAGES = [[".b1", "#xInner > line:nth-of-type(1)", ".dcdot"], ["#xInner > rect", ".swg"], ["#relay"], ["#acPulses", "#xInner > circle"], ["#brain", "#sense", "#ctlRelay", "#ctlBridge"]];
@@ -138,7 +139,7 @@
       tGrid.setAttribute("stroke", s.grid ? "#58a6ff" : "#8b949e");
       tBox.setAttribute("d", on ? W36.sinePath(1350, 1850, 350, 52, 3, bp + (s.lockOff || 0)) : "M 1350 350 L 1850 350");
       const bt = (T % BEAT) / BEAT; const xb = $("#xBadge");
-      if (xb) { xb.setAttribute("transform", `translate(0 -118) scale(${(1 + (s.grid ? 0.1 : 0) * Math.max(0, 1 - bt * 4)).toFixed(3)})`); xb.setAttribute("opacity", s.grid ? 1 : 0.35); }
+      if (xb) { xb.setAttribute("transform", `translate(0 -118) scale(${(1 + (s.grid ? 0.1 : 0) * Math.max(0, 1 - bt * 4)).toFixed(3)})`); xb.setAttribute("opacity", (s.badge !== undefined ? s.badge : s.grid) ? 1 : 0.35); }   // badge: the drummer itself (can differ from the voltage seen)
     } }, t0);
   }
 
