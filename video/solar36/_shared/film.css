@@ -1,0 +1,41 @@
+  @font-face { font-family: "Inter"; font-weight: 400; src: url("vendor/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Inter"; font-weight: 400 800; src: url("vendor/fonts/inter-latin-ext-600-normal.woff2") format("woff2");
+    unicode-range: U+2190-21FF, U+2713, U+2248, U+00B7; }
+  :root { --bp-bg: #0d1117; --bp-panel: #161b22; --bp-grid: #30363d; --bp-signal: #58a6ff; --bp-pressure: #d29922;
+    --bp-verified: #3fb950; --bp-fail: #f85149; --bp-readout: #e6edf3; --bp-label: #C9D1D9; }
+  html, body { margin: 0; background: var(--bp-bg); }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: Inter, Arial, sans-serif; }
+  #stage { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+  .w-plate { font: 800 15px Inter, Arial, sans-serif; fill: #F7F9F9; letter-spacing: 0.04em; }
+  .w-db { font: 800 20px Inter, Arial, sans-serif; fill: #1C2833; letter-spacing: 0.04em; }
+  .w-lcd { font: 800 14px Inter, Arial, sans-serif; fill: #7DFFB0; }
+  .w-danger { font: 800 14px Inter, Arial, sans-serif; fill: #B03A2E; }
+  .w-dangerW { font: 800 12px Inter, Arial, sans-serif; fill: #FDFEFE; letter-spacing: 0.06em; }
+  .w-tagS { font: 800 26px Inter, Arial, sans-serif; fill: #E6EDF3; letter-spacing: 0.08em; }
+  .w-grid { font: 800 34px Inter, Arial, sans-serif; fill: #58a6ff; letter-spacing: 0.12em; }
+  .x-title { font: 800 44px Inter, Arial, sans-serif; fill: #E6EDF3; letter-spacing: 0.04em; }
+  .x-lab { font: 800 42px Inter, Arial, sans-serif; fill: var(--bp-label); letter-spacing: 0.06em; }
+  .x-lab.cyan { fill: var(--bp-signal); }
+  .w-tagM { font: 800 21px Inter, Arial, sans-serif; fill: #E6EDF3; letter-spacing: 0.08em; }
+  .x-tag { font: 800 34px Inter, Arial, sans-serif; fill: var(--bp-label); letter-spacing: 0.10em; }
+  .x-tag.green { fill: var(--bp-verified); } .x-tag.cyan { fill: var(--bp-signal); }
+  #grain { position: absolute; inset: 0; opacity: 0.08; mix-blend-mode: multiply; }
+  #vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 60%, rgba(30,15,0,0.28) 100%); }
+  #hud { position: absolute; left: 56px; top: 48px; padding: 16px 24px; min-width: 380px; background: rgba(22,27,34,0.86);
+    border: 1px solid var(--bp-grid); border-radius: 12px; color: var(--bp-readout); font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.05em; opacity: 0.9; }
+  #hud .row { display: flex; justify-content: space-between; gap: 30px; line-height: 56px; font-variant-numeric: tabular-nums; border-radius: 6px; padding: 0 6px; }
+  #hud .k { color: #b6bec8; font-weight: 600; }
+  #hud .v.cyan { color: var(--bp-signal); } #hud .v.green { color: var(--bp-verified); } #hud .v.amber { color: var(--bp-pressure); }
+  #title { position: absolute; left: 0; right: 0; top: 64px; text-align: center; opacity: 0; }
+  #title span { display: inline-block; padding: 10px 26px; background: rgba(13,17,23,0.80); color: var(--bp-readout); border-radius: 10px;
+    font: 800 40px Inter, Arial, sans-serif; letter-spacing: 0.12em; }
+  #cap { position: absolute; left: 0; right: 0; bottom: 34px; text-align: center; }
+  #cap span { display: inline-block; padding: 10px 26px; background: rgba(13,17,23,0.78); color: #fff; border-radius: 10px;
+    font: 600 52px Inter, Arial, sans-serif; }
+  #bug { position: absolute; right: 56px; top: 48px; width: 124px; height: 124px; border-radius: 62px; background: rgba(13,17,23,0.82);
+    border: 2px solid rgba(230,237,243,0.35); color: var(--bp-readout); font: 800 18px Inter, Arial, sans-serif; display: flex;
+    align-items: center; justify-content: center; text-align: center; letter-spacing: 0.06em; }
+  #tag { position: absolute; right: 56px; top: 184px; font: 800 26px Inter, Arial, sans-serif; letter-spacing: 0.06em; color: #FFFFFF;
+    background: rgba(13,17,23,0.7); padding: 6px 12px; border-radius: 6px; opacity: 0; }

@@ -1,0 +1,114 @@
+[
+ {
+  "id": "S01",
+  "title": "Hook",
+  "start": 0,
+  "end": 20.901,
+  "lines": [
+   1,
+   3
+  ],
+  "media": [
+   {
+    "src": "assets/clips/rooftop.mp4",
+    "start": 0,
+    "dur": 3.2
+   },
+   {
+    "src": "assets/clips/fan_slow.mp4",
+    "start": 2.6,
+    "dur": 7.0
+   }
+  ]
+ },
+ {
+  "id": "S02",
+  "title": "Which box",
+  "start": 20.901,
+  "end": 34.066,
+  "lines": [
+   4,
+   4
+  ]
+ },
+ {
+  "id": "S03",
+  "title": "DC and AC",
+  "start": 34.066,
+  "end": 51.327,
+  "lines": [
+   5,
+   6
+  ]
+ },
+ {
+  "id": "S04",
+  "title": "Drummer and dancer",
+  "start": 51.327,
+  "end": 73.882,
+  "lines": [
+   7,
+   8
+  ]
+ },
+ {
+  "id": "S05",
+  "title": "Power cut, what if",
+  "start": 73.882,
+  "end": 97.072,
+  "lines": [
+   9,
+   11
+  ]
+ },
+ {
+  "id": "S06",
+  "title": "The box notices",
+  "start": 97.072,
+  "end": 110.103,
+  "lines": [
+   12,
+   12
+  ]
+ },
+ {
+  "id": "S07",
+  "title": "The tricky case",
+  "start": 110.103,
+  "end": 142.253,
+  "lines": [
+   13,
+   16
+  ]
+ },
+ {
+  "id": "S08",
+  "title": "The panels",
+  "start": 142.253,
+  "end": 160.706,
+  "lines": [
+   17,
+   18
+  ]
+ },
+ {
+  "id": "S09",
+  "title": "Hybrid",
+  "start": 160.706,
+  "end": 179.502,
+  "lines": [
+   19,
+   20
+  ]
+ },
+ {
+  "id": "S10",
+  "title": "Rule, say no, bridge",
+  "start": 179.502,
+  "end": 207.67,
+  "lines": [
+   21,
+   24
+  ]
+ }
+]
