@@ -1,6 +1,6 @@
 # Film 01 · YouTube package (final cut: upi01_v7.mp4, 4:18)
 
-Thumbnail: `thumbnail_B.jpg` (independent review: clarity 9/10, click 8/10; A scored 5/5). Built from `thumb/thumb_b.html`, shot with `scripts/_thumb_shot.mjs`.
+Thumbnail: `thumbnail_C.jpg` ("₹840 DEBITED · APP SAYS: FAILED / PROCESSING · WHERE IS IT? + RBI REFUND RULE"; owner brief 2026-10-21: say debited, show both statuses, show what is inside). Independent review: brief 9/10, clarity 8/10, click 8/10 (B: 4/7/6). Built from `thumb/thumb_c.html`, shot with `scripts/_thumb_shot.mjs`.
 
 ## Title
 ```
