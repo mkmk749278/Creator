@@ -118,7 +118,7 @@
     el("rect", { x: -40, y: -24, width: 80, height: 48, rx: 22, fill: "#C2652B", stroke: "#7A3A16", "stroke-width": 3 }, g);
     el("ellipse", { cx: -40, cy: 0, rx: 10, ry: 24, fill: "#F2E3C6", stroke: "#7A3A16", "stroke-width": 3 }, g);
     el("ellipse", { cx: 40, cy: 0, rx: 10, ry: 24, fill: "#F2E3C6", stroke: "#7A3A16", "stroke-width": 3 }, g);
-    for (let i = -2; i <= 2; i++) el("line", { x1: -30 + i * 2, y1: -22, x2: 30 + i * 2, y2: 22, stroke: "#E9C46A", "stroke-width": 2, opacity: 0.7 }, g);
+    el("polyline", { points: "-30,-22 -20,22 -10,-22 0,22 10,-22 20,22 30,-22", fill: "none", stroke: "#F2E3C6", "stroke-width": 3, "stroke-linejoin": "round", opacity: 0.9 }, g); // dhol lacing (zig-zag)
     el("line", { x1: 46, y1: -40, x2: 18, y2: -6, stroke: "#6B4423", "stroke-width": 5, "stroke-linecap": "round" }, g); // stick
     return g;
   }
