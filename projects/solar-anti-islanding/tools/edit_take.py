@@ -19,7 +19,7 @@ import numpy as np
 SR = 44100
 SLOW = {3: 0.92, 15: 0.9}  # lines that read over ~215 wpm in both takes: pitch-safe atempo
 # Line 15 reads at ~260 wpm in both full takes; the separately generated clip (speed 0.85) reads it at 220, x0.9 = 198.
-REPLACE = {15: ("voice/fix_15.mp3", 0.0, 3.27)}
+REPLACE = {13: ("voice/fix_13.mp3", 0.0, 9.58), 15: ("voice/fix_15.mp3", 0.0, 3.27)}  # 13: "whole street" re-record (fact-check S23)
 PAD = 0.22  # half a typical pause around a spliced clip that starts and ends on speech
 # (line, phrase the pause follows or None for the end of the line, seconds) — edit_fixes.md
 PAUSES = [

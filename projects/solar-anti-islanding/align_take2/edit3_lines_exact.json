@@ -1,0 +1,170 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 5.765,
+  "en": "Two in the afternoon. Full sun on your rooftop solar... and suddenly, a power cut.",
+  "tempo": 1.0
+ },
+ {
+  "line": 2,
+  "start": 6.278,
+  "end": 14.574,
+  "en": "The sun is still shining. But your fans stop. Your solar isn't broken. It switched off on purpose \u2014 to protect a lineman's life.",
+  "tempo": 1.0
+ },
+ {
+  "line": 3,
+  "start": 15.24,
+  "end": 20.04,
+  "en": "Where does all that sunshine go? And how do you keep your fans running? Let's see.",
+  "tempo": 0.92
+ },
+ {
+  "line": 4,
+  "start": 21.763,
+  "end": 33.827,
+  "en": "One thing first \u2014 this is not the inverter battery you keep at home... It's the box your solar panels connect to. Installers call it an on-grid inverter... We'll just call it the solar box.",
+  "tempo": 1.0
+ },
+ {
+  "line": 5,
+  "start": 34.306,
+  "end": 37.634,
+  "en": "Your panels give D.C. power \u2014 it flows only one way.",
+  "tempo": 1.0
+ },
+ {
+  "line": 6,
+  "start": 38.119,
+  "end": 50.53,
+  "en": "Your house runs on A.C. power \u2014 not the air conditioner, the wall-socket kind. It swings forward and back \u2014 fifty full swings every second. The solar box turns panel power into wall-socket power.",
+  "tempo": 1.0
+ },
+ {
+  "line": 7,
+  "start": 52.124,
+  "end": 62.557,
+  "en": "Here's the thing \u2014 the solar box can't make that back-and-forth rhythm on its own. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.",
+  "tempo": 1.0
+ },
+ {
+  "line": 8,
+  "start": 62.968,
+  "end": 73.111,
+  "en": "On a normal day, it follows every beat. Your house uses what it needs. The extra goes out through your meter... onto the street wire... and up to the transformer on the pole.",
+  "tempo": 1.0
+ },
+ {
+  "line": 9,
+  "start": 74.653,
+  "end": 79.225,
+  "en": "Now the power cut comes. The electricity board switches off the supply to your street.",
+  "tempo": 1.0
+ },
+ {
+  "line": 10,
+  "start": 79.717,
+  "end": 85.063,
+  "en": "Think about it. If your solar box kept pushing, that dead wire would be alive again, right?",
+  "tempo": 1.0
+ },
+ {
+  "line": 11,
+  "start": 85.498,
+  "end": 96.285,
+  "en": "And that transformer on the pole works in reverse. Your two hundred and thirty volts... becomes about eleven thousand volts... On a wire the lineman thinks is switched off.",
+  "tempo": 1.0
+ },
+ {
+  "line": 12,
+  "start": 97.858,
+  "end": 109.395,
+  "en": "So the solar box is built to notice. If the beat goes missing, or the voltage starts changing, it switches itself off... click. Safety rules say it must switch off within two seconds.",
+  "tempo": 1.0
+ },
+ {
+  "line": 13,
+  "start": 110.811,
+  "end": 120.391,
+  "en": "But there's one tricky case. Say your house is using exactly what the panels make. Then the power cut changes nothing \u2014 the box can't feel it.",
+  "tempo": 1.0
+ },
+ {
+  "line": 14,
+  "start": 120.813,
+  "end": 128.891,
+  "en": "So the box tests the drummer. Again and again, it plays a little off-beat \u2014 on purpose \u2014 to check... is the drummer still there?",
+  "tempo": 1.0
+ },
+ {
+  "line": 15,
+  "start": 129.927,
+  "end": 133.565,
+  "en": "If the grid is there, the drummer pulls it back in line.",
+  "tempo": 0.9
+ },
+ {
+  "line": 16,
+  "start": 134.499,
+  "end": 141.432,
+  "en": "If the grid is gone, nobody pulls it back. The beat keeps sliding... and the box knows. Click \u2014 it switches off.",
+  "tempo": 1.0
+ },
+ {
+  "line": 17,
+  "start": 143.075,
+  "end": 148.729,
+  "en": "What happens to your panels? Once the box is off, the power has nowhere to go. Nothing comes out.",
+  "tempo": 1.0
+ },
+ {
+  "line": 18,
+  "start": 149.186,
+  "end": 159.969,
+  "en": "The sunlight still lands and just turns into heat \u2014 your panels are built for that. But the panel wires still have voltage in them. So don't touch them yourself \u2014 leave that to a trained person.",
+  "tempo": 1.0
+ },
+ {
+  "line": 19,
+  "start": 161.443,
+  "end": 170.196,
+  "en": "So how do you keep your fans running? You need a different box \u2014 a hybrid inverter. Hybrid simply means it works with the grid and with a battery.",
+  "tempo": 1.0
+ },
+ {
+  "line": 20,
+  "start": 170.558,
+  "end": 179.212,
+  "en": "When the grid dies, a switch inside it first cuts your house off from the street. Then the battery becomes the drummer, and the panels dance again.",
+  "tempo": 1.0
+ },
+ {
+  "line": 21,
+  "start": 179.793,
+  "end": 187.283,
+  "en": "Remember this. A normal on-grid solar box, with no battery, has to go silent when the grid goes. That's by design.",
+  "tempo": 1.0
+ },
+ {
+  "line": 22,
+  "start": 188.501,
+  "end": 196.269,
+  "en": "If anyone offers to switch off this safety \u2014 just say no... Because the lineman fixing your street is the one who gets the shock.",
+  "tempo": 1.0
+ },
+ {
+  "line": 23,
+  "start": 197.346,
+  "end": 200.27,
+  "en": "Your solar never failed. It just lost its drummer.",
+  "tempo": 1.0
+ },
+ {
+  "line": 24,
+  "start": 200.799,
+  "end": 207.475,
+  "en": "But when the grid is live, how does that box turn sunlight into steady wall-socket power? Let's open it up next.",
+  "tempo": 1.0
+ }
+]
