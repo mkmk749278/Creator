@@ -178,7 +178,7 @@ chip("Not the soundbox", 95.4, 97.6, 120, 440, "slate", "sm", "pop")
 shot(97.6, 101.0, "kirana_soft3", "push", "SIMULATED SCREEN", warm=True, media_start=2.0)   # "And take a screenshot of your payment..."
 phone(97.6, 101.0, 1240, 60, scr(head("Payment") + PAYEE + '<div class="amt">₹840</div><div class="stat"><div class="spin"></div><div class="t" style="color:#b7791f">Payment processing</div>'
       '<div class="s">UPI Ref 4271 8830 1265</div></div>', 97.6, None)
-      + f'<div class="flash" {attrs(98.4, None, "flash")}></div><div class="thumb" {attrs(98.6, None, "pop")}></div>', rot=-3)
+      + f'<div class="flash" {attrs(98.4, None, "flash")}></div><div class="thumb" {attrs(98.6, None, "pop")}><div style="font:800 34px Inter;text-align:center;margin-top:70px">₹840</div><div style="font:700 15px Inter;color:#b7791f;text-align:center;margin-top:8px">Processing</div><div style="font:500 11px Inter;text-align:center;margin-top:10px;opacity:.6">Ref 4271 8830 1265</div></div>', rot=-3)
 chip("Screenshot = proof", 98.8, 101.0, 140, 440, "cyan", "", "pop", "📸")
 # "Bank says received? Then the shop got your money... Nothing yet? Then it's still processing."
 shot(101.0, 107.4, "BG_soft", "slow", "SIMULATED SCREEN")
