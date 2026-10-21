@@ -2,27 +2,27 @@ Two in the afternoon. Full sun on your rooftop solar... and suddenly, a power cu
 
 The sun is still shining. But your fans stop. Your solar isn't broken. It switched off on purpose — to protect a lineman's life.
 
-Why does it switch off? Where does that sunshine go? And how do you keep your fans running? Let's see.
+So where does all that sunshine go? And how do you keep your fans running? Let's see.
 
 One thing first — this is not your home inverter battery. It's the box your solar panels connect to. Installers call it an on-grid inverter. We'll just call it the solar box.
 
 Your panels give D.C. — it flows in one direction only.
 
-But your house needs A.C. — power that goes back and forth, fifty times every second. The solar box changes the panels' D.C. into this A.C.
+But your house runs on A.C. — not the air conditioner, the current in your wall socket. It goes back and forth, fifty times every second. The solar box changes the panels' D.C. into this A.C.
 
-And it can't make that swing by itself. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.
+Here's the thing — the solar box can't make that back-and-forth rhythm on its own. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.
 
 On a normal day, it follows every beat. Your house takes what it needs, and the extra goes out through your meter... to the street wire and the transformer on the pole.
 
-Now the electricity board cuts your line.
+Now the power cut comes. The electricity board switches off the supply to your street.
 
 Think about it. If your solar box kept pushing, that dead wire would be alive again, right?
 
 And the transformer on the pole would take your two hundred and thirty volts... and push it up to about eleven thousand volts. On a wire the lineman thinks is switched off.
 
-So the solar box is built to notice. If the beat goes missing, or the voltage starts changing, it switches itself off... click. The safety standards give it two seconds to do this, at most.
+So the solar box is built to notice. If the beat goes missing, or the voltage starts changing, it switches itself off... click. Safety rules say it must switch off within two seconds.
 
-But what if your house is using exactly what the panels make? Then the power cut changes nothing the box can feel. So how does it know? It plays a small trick. Again and again, it shifts its beat a tiny bit — on purpose — to test if the drummer is still there.
+But sometimes your house uses exactly what the panels make. Then, when the power goes, nothing changes. The box can't feel any difference. So how does it know? It plays a small trick. Again and again, it shifts its beat a tiny bit — on purpose — to test if the drummer is still there.
 
 If the grid is there, the drummer pulls it back in line.
 
