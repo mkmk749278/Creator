@@ -1,10 +1,10 @@
 Two in the afternoon. Full sun on your rooftop solar panels... and suddenly, a power cut.
 
-The sun is still shining. But your fans stop.
+The sun is still shining. But your fans stop. Your solar isn't broken — it switched off on purpose.
 
-Why does solar quit exactly when you need it? I'll show you why, where that sunlight goes, and what keeps your fans running.
+Why would it quit exactly when you need it? I'll show you why, where that sunlight goes, and what keeps your fans running.
 
-First, which box are we talking about? Not the battery inverter under your stairs. I mean the solar box on your wall, wired to your panels.
+First, which box are we talking about? Not the battery inverter many of us keep at home for power cuts. I mean the solar box on your wall... the one connected to your panels.
 
 Your panels give one-way current. Your house runs on current that swings back and forth — fifty times a second. The solar box turns one into the other.
 
@@ -16,15 +16,17 @@ Now the electricity board cuts your line.
 
 Here's the catch. If your solar box kept pushing, that dead wire would be alive again.
 
-And the transformer would take your two-thirty volts and push it up to about eleven thousand — on a line the lineman thinks is dead.
+And the transformer would take your two hundred thirty volts... and push it up to about eleven thousand volts. On a wire the lineman thinks is dead.
 
-So the solar box is built to notice. Beat missing, voltage drifting? It cuts itself off inside... click. The safety rules give it two seconds, at most.
+So the solar box is built to notice. Beat missing, voltage drifting? It switches itself off — click. The safety rules give it two seconds, at most.
 
-But what if your house is using exactly what your panels make, so nothing seems to change? The solar box has a trick. It keeps pushing its own beat a little bit off, on purpose.
+But sometimes your house uses exactly what your panels make. Then nothing seems to change, right? So the solar box plays a small trick. All the time, it pushes its beat slightly off... on purpose.
 
-With the grid there, the grid pulls it back. With the grid gone, nobody does. The beat drifts away... and the box switches off. Makes sense?
+With the grid there, the grid pulls it back.
 
-So what happens to your panels? The path is open, so no current can flow. No current flowing... means no power coming out.
+With the grid gone, nobody pulls it back. The beat drifts away... and the box switches off.
+
+So what happens to your panels? The box has switched itself off, so the circuit is broken. Current has nowhere to go... so no power comes out.
 
 The sunlight still lands. It just turns into heat, and your panels are built to sit in the sun like that.
 
@@ -34,7 +36,7 @@ When the grid dies, a switch inside it first cuts your house off from the street
 
 Here's the rule. A solar box without a battery must go silent when the grid goes.
 
-Break it... and the lineman fixing your street takes the shock.
+If anyone removes this safety switch... the lineman fixing your street takes the shock.
 
 Your solar never failed. It just lost its drummer.
 
