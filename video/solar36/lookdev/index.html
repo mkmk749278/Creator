@@ -20,8 +20,12 @@
   .w-lcd { font: 800 14px Inter, Arial, sans-serif; fill: #7DFFB0; }
   .w-danger { font: 800 14px Inter, Arial, sans-serif; fill: #B03A2E; }
   .w-dangerW { font: 800 12px Inter, Arial, sans-serif; fill: #FDFEFE; letter-spacing: 0.06em; }
-  .w-tagS { font: 800 14px Inter, Arial, sans-serif; fill: #E6EDF3; letter-spacing: 0.08em; }
-  .w-grid { font: 800 24px Inter, Arial, sans-serif; fill: #58a6ff; letter-spacing: 0.12em; }
+  .w-tagS { font: 800 19px Inter, Arial, sans-serif; fill: #E6EDF3; letter-spacing: 0.08em; }
+  .w-grid { font: 800 34px Inter, Arial, sans-serif; fill: #58a6ff; letter-spacing: 0.12em; }
+  .x-title { font: 800 44px Inter, Arial, sans-serif; fill: #E6EDF3; letter-spacing: 0.04em; }
+  .x-lab { font: 800 42px Inter, Arial, sans-serif; fill: var(--bp-label); letter-spacing: 0.06em; }
+  .x-lab.cyan { fill: var(--bp-signal); }
+  .w-tagM { font: 800 21px Inter, Arial, sans-serif; fill: #E6EDF3; letter-spacing: 0.08em; }
   .x-tag { font: 800 34px Inter, Arial, sans-serif; fill: var(--bp-label); letter-spacing: 0.10em; }
   .x-tag.green { fill: var(--bp-verified); } .x-tag.cyan { fill: var(--bp-signal); }
   #grain { position: absolute; inset: 0; opacity: 0.08; mix-blend-mode: multiply; }
@@ -40,7 +44,7 @@
   #bug { position: absolute; right: 56px; top: 48px; width: 124px; height: 124px; border-radius: 62px; background: rgba(13,17,23,0.82);
     border: 2px solid rgba(230,237,243,0.35); color: var(--bp-readout); font: 800 18px Inter, Arial, sans-serif; display: flex;
     align-items: center; justify-content: center; text-align: center; letter-spacing: 0.06em; }
-  #tag { position: absolute; right: 56px; top: 184px; font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0.12em; color: var(--bp-label);
+  #tag { position: absolute; right: 56px; top: 184px; font: 800 25px Inter, Arial, sans-serif; letter-spacing: 0.12em; color: var(--bp-label);
     background: rgba(13,17,23,0.7); padding: 6px 12px; border-radius: 6px; opacity: 0; }
 </style>
 </head>
@@ -77,7 +81,7 @@
     tl.fromTo(c, { rotation: -3, transformOrigin: "50% 0%" }, { rotation: 3, duration: 0.8 + i * 0.12, ease: "sine.inOut", yoyo: true, repeat: 3 }, 0));
   L.dc.setAttribute("stroke-dasharray", "20 12");
   tl.fromTo(L.dc, { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": -260 }, duration: T_PUSH, ease: "none" }, 0);
-  tl.set("#dhol", { scaleX: 1, scaleY: 1, svgOrigin: "0 0" }, 0).set("#badge", { y: 0 }, 0).set("#dholShock", { opacity: 0, attr: { r: 60 } }, 0).set("#dholFlash", { opacity: 0 }, 0).set(".ltCore", { opacity: 0 }, 0).set("#meterLed", { opacity: 0.25 }, 0);
+  tl.set("#dhol", { scaleX: 1, scaleY: 1, svgOrigin: "0 0" }, 0).set("#badge", { y: 0 }, 0).set("#dholShock", { opacity: 0, attr: { r: 60 } }, 0).set("#dholBadge", { scale: 1, svgOrigin: "1230 200" }, 0).set(".ltCore", { opacity: 0 }, 0).set("#meterLed", { opacity: 0.25 }, 0);
   const ringPath = L.ring, len = ringPath.getTotalLength();
   for (let b = 0; b < 4; b++) {
     const t0 = b * BEAT;
@@ -85,15 +89,18 @@
       .to("#dhol", { scaleX: 0.96, scaleY: 1.05, duration: 0.10, ease: "sine.out" }, t0 + 0.06)
       .to("#dhol", { scaleX: 1, scaleY: 1, duration: 0.14, ease: "sine.inOut" }, t0 + 0.16);
     tl.fromTo("#dholShock", { opacity: 0.95, attr: { r: 60 } }, { opacity: 0, attr: { r: 140 }, duration: 0.42, ease: "power2.out", immediateRender: false }, t0);
-    tl.fromTo("#dholFlash", { opacity: 0.9 }, { opacity: 0, duration: 0.1, immediateRender: false }, t0);
+    tl.fromTo("#dholPos .skin", { fill: "#FFFFFF" }, { fill: "#F4E6C8", duration: 0.12, immediateRender: false }, t0);
+    tl.fromTo("#dholBadge", { scale: 1.08, svgOrigin: "1230 200" }, { scale: 1, duration: 0.25, ease: "sine.out", immediateRender: false }, t0);
     tl.fromTo(".ltCore", { opacity: 0.95 }, { opacity: 0, duration: 0.55, immediateRender: false }, t0 + 0.12);
-    const ring = E("circle", { r: 60, fill: "rgba(255,255,255,0.88)", stroke: "#1f6feb", "stroke-width": 6, opacity: 0 }, L.world);
+    const glow = E("circle", { r: 70, fill: "none", stroke: "rgba(31,111,235,0.55)", "stroke-width": 16, opacity: 0 }, L.world);
+    const ring = E("circle", { r: 60, fill: "rgba(156,200,255,0.25)", stroke: "#FFFFFF", "stroke-width": 8, opacity: 0 }, L.world);
     const p = { u: 0 }, TR = 0.95;
     tl.fromTo(p, { u: 0 }, { u: 1, duration: TR, ease: "power1.in", immediateRender: false, onUpdate: () => {
       const pt = ringPath.getPointAtLength(p.u * len);
       ring.setAttribute("cx", pt.x); ring.setAttribute("cy", pt.y);
       ring.setAttribute("opacity", p.u <= 0 || p.u >= 1 ? 0 : Math.min(1, 8 * p.u, 4 * (1 - p.u) + 0.15));
-      ring.setAttribute("r", 30 - 10 * p.u);
+      ring.setAttribute("r", 50 - 14 * p.u);
+      glow.setAttribute("cx", pt.x); glow.setAttribute("cy", pt.y); glow.setAttribute("r", 52 - 14 * p.u); glow.setAttribute("opacity", ring.getAttribute("opacity"));
     } }, t0);
     // the dancer bobs when the beat arrives; the net meter LED pulses
     tl.to("#badge", { y: -12, scaleY: 1.08, duration: 0.09, ease: "power2.out" }, t0 + TR).to("#badge", { y: 0, scaleY: 1, duration: 0.2, ease: "sine.in" }, t0 + TR + 0.09);
@@ -107,7 +114,7 @@
   tl.fromTo("#veil", { opacity: 0 }, { opacity: 0.32, duration: 0.3 }, T_X - 0.45);
   tl.fromTo("#brackets", { opacity: 0, scale: 1.15, svgOrigin: "960 540" }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)" }, T_X - 0.4);
   tl.to("#brackets", { opacity: 0, duration: 0.25 }, T_X + 0.2).set("#veil", { opacity: 0 }, T_X + 0.3);
-  tl.to("#hud", { opacity: 0.3, duration: 0.4 }, T_X + 0.6);
+
   tl.fromTo("#xWipeC", { attr: { r: 0 } }, { attr: { r: 1150 }, duration: 0.45, ease: "power2.in" }, T_X - 0.15);
   tl.to("#tag", { opacity: 1, duration: 0.3 }, T_X + 0.2);
   tl.set("#world", { visibility: "hidden" }, T_X + 0.35).set("#fg", { visibility: "hidden" }, T_X + 0.35);
@@ -131,11 +138,12 @@
     acps.forEach(c => c.setAttribute("cx", (+c.getAttribute("data-x") + 15 * Math.sin(-ph)).toFixed(1)));   // AC jiggles in place, in phase with the scope
     document.getElementById("pupil").setAttribute("cx", (980 + 8 * Math.sin(-ph)).toFixed(1));
     sense.setAttribute("stroke-dashoffset", (-T * 90).toFixed(1));
+    const bt = (T % BEAT) / BEAT; document.getElementById("xBadge").setAttribute("transform", `translate(0 -118) scale(${(1 + 0.1 * Math.max(0, 1 - bt * 4)).toFixed(3)})`);
     document.getElementById("ctlBridge").setAttribute("stroke-dashoffset", (-T * 60).toFixed(1));
     document.getElementById("ctlRelay").setAttribute("stroke-dashoffset", (-T * 60).toFixed(1));
     const off = T < LOCK0 ? Math.PI / 6 : T > LOCK1 ? 0 : (Math.PI / 6) * (1 - (T - LOCK0) / (LOCK1 - LOCK0));
-    tGrid.setAttribute("d", W36.sinePath(1350, 1850, 370, 60, 3, ph));
-    tBox.setAttribute("d", W36.sinePath(1350, 1850, 370, 60, 3, ph + off));
+    tGrid.setAttribute("d", W36.sinePath(1350, 1850, 350, 52, 3, ph));
+    tBox.setAttribute("d", W36.sinePath(1350, 1850, 350, 52, 3, ph + off));
   } }, T_X);
   tl.fromTo("#inStep", { opacity: 0, scale: 1.3, svgOrigin: "1780 262" }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, LOCK1);
   tl.set("#hBox", { textContent: "IN STEP ✓", className: "v green" }, LOCK1);

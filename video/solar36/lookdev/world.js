@@ -144,7 +144,7 @@
       el("line", { x1: x + dx, y1: 330, x2: x + dx, y2: 424, stroke: "#3B3B3B", "stroke-width": 2 }, tg); });
     [0, 1, 2, 3].forEach(k => el("rect", { x: x + 138, y: 500 + k * 14, width: 12, height: 8, rx: 2, fill: "#3D3A37" }, tg)); // LT bushings
     el("rect", { x: x + 40, y: 520, width: 54, height: 26, fill: "#1C2833" }, tg);
-    txt(tg, x + 67, 538, "11 kV / 433 V", "w-plate", { "text-anchor": "middle" });
+    el("rect", { x: x + 52, y: 526, width: 30, height: 14, fill: "#C9CFD2" }, tg);            // rating plate (no text: not in the VO)
     // LT distribution box on the pole, danger board
     el("rect", { x: p2 - 40, y: 630, width: 80, height: 96, rx: 4, fill: "#7F8C8D", stroke: "#5D6D7E", "stroke-width": 3 }, tg);
     el("path", { d: `M ${x + 150} 520 Q ${p2 + 30} 560 ${p2 + 8} 630`, fill: "none", stroke: "#2B2B2B", "stroke-width": 5 }, tg);
@@ -165,13 +165,22 @@
     const g = el("g", { id: "dholPos", transform: `translate(${cx} ${cy})` }, parent);
     el("circle", { id: "dholShock", r: 70, fill: "none", stroke: C.cyan, "stroke-width": 6, opacity: 0 }, g);
     const d = el("g", { id: "dhol", transform: "scale(0.72)" }, g);
-    el("circle", { id: "dholFlash", r: 80, fill: "#FFFFFF", opacity: 0 }, g);
-    el("path", { d: "M -64 -40 Q 0 -84 64 -40", fill: "none", stroke: "#8E44AD", "stroke-width": 7, "stroke-linecap": "round" }, d); // strap
-    el("rect", { x: -64, y: -38, width: 128, height: 76, rx: 34, fill: "#C2652B", stroke: "#6E3414", "stroke-width": 4 }, d);
-    el("polyline", { points: "-48,-34 -32,34 -16,-34 0,34 16,-34 32,34 48,-34", fill: "none", stroke: "#F7EBD3", "stroke-width": 4, "stroke-linejoin": "round" }, d);
-    el("ellipse", { cx: -64, cy: 0, rx: 15, ry: 38, fill: "#F2E3C6", stroke: "#6E3414", "stroke-width": 4 }, d);
-    el("ellipse", { cx: 64, cy: 0, rx: 15, ry: 38, fill: "#F2E3C6", stroke: "#6E3414", "stroke-width": 4 }, d);
-    el("path", { id: "dholStick", d: "M 112 -70 Q 96 -30 74 -8", fill: "none", stroke: "#5D3A1A", "stroke-width": 8, "stroke-linecap": "round" }, d);
+    // wooden barrel (bulging), dark wood bands, rope lacing in crossing diagonals with brass rings, two cream skins
+    el("path", { d: "M -60 -34 Q 0 -54 60 -34 L 60 34 Q 0 54 -60 34 Z", fill: "#9C5A2E", stroke: "#5A2E12", "stroke-width": 4 }, d);
+    el("path", { d: "M -46 -40 Q -44 0 -46 40", fill: "none", stroke: "#6E3A18", "stroke-width": 6 }, d);
+    el("path", { d: "M 46 -40 Q 44 0 46 40", fill: "none", stroke: "#6E3A18", "stroke-width": 6 }, d);
+    for (let i = 0; i < 6; i++) {
+      const x0 = -40 + i * 16;
+      el("line", { x1: x0, y1: -40, x2: x0 + 16, y2: 40, stroke: "#F3E2BD", "stroke-width": 3 }, d);
+      el("line", { x1: x0 + 16, y1: -40, x2: x0, y2: 40, stroke: "#F3E2BD", "stroke-width": 3 }, d);
+      el("circle", { cx: x0, cy: -40, r: 3, fill: "#D4A017" }, d); el("circle", { cx: x0, cy: 40, r: 3, fill: "#D4A017" }, d);
+    }
+    el("ellipse", { cx: -62, cy: 0, rx: 16, ry: 40, fill: "#5A2E12" }, d);
+    el("ellipse", { cx: 62, cy: 0, rx: 16, ry: 40, fill: "#5A2E12" }, d);
+    el("ellipse", { cx: -62, cy: 0, rx: 12, ry: 35, fill: "#F4E6C8", class: "skin" }, d);
+    el("ellipse", { cx: 62, cy: 0, rx: 12, ry: 35, fill: "#F4E6C8", class: "skin" }, d);
+    el("path", { id: "dholStick", d: "M 116 -78 Q 100 -34 76 -8", fill: "none", stroke: "#4A2A10", "stroke-width": 8, "stroke-linecap": "round" }, d);   // dagga
+    el("path", { d: "M -104 -70 L -76 -14", fill: "none", stroke: "#8A6A3A", "stroke-width": 4, "stroke-linecap": "round" }, d);                         // tihli
     return g;
   }
 
@@ -265,8 +274,8 @@
     el("rect", { x: 710, y: 770, width: 58, height: 52, rx: 4, fill: "rgba(225,240,248,0.9)" }, meter);
     el("rect", { x: 716, y: 778, width: 46, height: 18, fill: "#1D2A35" }, meter);
     txt(meter, 739, 792, "0 4 2 7", "w-lcd", { "text-anchor": "middle" });
-    el("rect", { x: 686, y: 862, width: 106, height: 26, rx: 6, fill: "rgba(13,17,23,0.82)" }, meter);
-    txt(meter, 739, 881, "NET METER", "w-tagS", { "text-anchor": "middle" });
+    el("rect", { x: 660, y: 858, width: 160, height: 34, rx: 6, fill: "rgba(13,17,23,0.85)" }, meter);
+    txt(meter, 740, 883, "NET METER", "w-tagM", { "text-anchor": "middle" });
     el("circle", { id: "meterLed", cx: 756, cy: 810, r: 4, fill: C.red }, meter);
     dbBox(world, 760, 602, "DC");
     const box = solarBox(world, 864, 584);
@@ -301,7 +310,9 @@
     el("circle", { cx: 1700, cy: 226, r: 8, fill: "#0d1117" }, cb);
     el("circle", { cx: 1230, cy: 200, r: 96, fill: "rgba(13,17,23,0.82)", stroke: "#58a6ff", "stroke-width": 4 }, cb);
     const dh = dhol(cb, 1230, 186);
-    txt(cb, 1230, 270, "GRID", "w-grid", { "text-anchor": "middle" });
+    txt(cb, 1230, 274, "GRID", "w-grid", { "text-anchor": "middle" });
+    el("rect", { x: 1132, y: 306, width: 196, height: 30, rx: 6, fill: "rgba(13,17,23,0.82)" }, cb);
+    txt(cb, 1230, 328, "SLOWED DOWN", "w-tagS", { "text-anchor": "middle" });
     foreground(svg);
     return { world, ring, box, dc, dp };
   }
@@ -325,7 +336,7 @@
     const cam = el("g", { id: "xcam" }, g);
     const F = FRAME;
     el("rect", { id: "xFrame", x: F.x, y: F.y, width: F.w, height: F.h, rx: 46, fill: "rgba(22,27,34,0.88)", stroke: C.label, "stroke-width": 3, "stroke-dasharray": "14 8" }, cam);
-    txt(cam, F.x + 40, F.y + 58, "INSIDE THE SOLAR BOX", "x-tag");
+    txt(cam, F.x + 36, F.y + 60, "INSIDE THE SOLAR BOX", "x-title");
     const inner = el("g", { id: "xInner" }, cam);
     // panel + sun icon outside left, DC in through the left wall
     const pv = el("g", { transform: "translate(250 600)" }, inner);
@@ -334,7 +345,7 @@
     el("line", { x1: -70, y1: 35, x2: 60, y2: 35.2, stroke: "#5D86B0", "stroke-width": 2 }, pv);
     el("circle", { cx: -20, cy: -80, r: 22, fill: "none", stroke: C.amber, "stroke-width": 4 }, pv);
     for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4; el("line", { x1: -20 + Math.cos(a) * 30, y1: -80 + Math.sin(a) * 30, x2: -20 + Math.cos(a) * 40, y2: -80 + Math.sin(a) * 40, stroke: C.amber, "stroke-width": 4, "stroke-linecap": "round" }, pv); }
-    txt(inner, 250, 720, "PANELS", "x-tag", { "text-anchor": "middle" });
+    txt(inner, 250, 730, "PANELS", "x-lab", { "text-anchor": "middle" });
     el("line", { x1: 320, y1: 620, x2: 760, y2: 620.3, stroke: C.amber, "stroke-width": 8, "stroke-linecap": "round" }, inner);
     for (let i = 0; i < 10; i++) el("circle", { cx: 320 + i * 44, cy: 620, r: 7, fill: "#F2C14E", class: "dcdot" }, inner);
     // H-bridge (4 switches) + filter coil
@@ -343,7 +354,7 @@
       const sg = el("g", { class: "swg", "data-k": k }, inner);
       el("circle", { cx: sx, cy: sy + 30, r: 6, fill: C.read }, sg); el("circle", { cx: sx + 36, cy: sy + 30, r: 6, fill: C.read }, sg);
       el("line", { class: "sw", x1: sx, y1: sy + 30, x2: sx + 34, y2: sy + 8, stroke: C.cyan, "stroke-width": 5, "stroke-linecap": "round" }, sg); });
-    txt(inner, 845, 736, "D.C. → A.C.", "x-tag", { "text-anchor": "middle" });
+    txt(inner, 845, 748, "D.C. → A.C.", "x-lab", { "text-anchor": "middle" });
     let coil = "M 930 620"; for (let k = 0; k < 5; k++) coil += ` q 8 -26 16 0`;
     el("path", { d: coil, fill: "none", stroke: C.read, "stroke-width": 4 }, inner);
     el("line", { x1: 1010, y1: 620, x2: 1072, y2: 620.3, stroke: C.cyan, "stroke-width": 7, "stroke-linecap": "round" }, inner);
@@ -354,17 +365,20 @@
     el("circle", { cx: 1080, cy: 620, r: 11, fill: C.read }, relay);
     el("rect", { x: 1162, y: 606, width: 16, height: 16, rx: 3, fill: C.read }, relay);
     el("line", { id: "lever", x1: 1080, y1: 620, x2: 1166, y2: 612, stroke: C.green, "stroke-width": 10, "stroke-linecap": "round" }, relay);
-    txt(relay, 1125, 706, "SAFETY SWITCH", "x-tag", { "text-anchor": "middle" });
+    txt(relay, 1125, 708, "SAFETY", "x-lab", { "text-anchor": "middle" }); txt(relay, 1125, 752, "SWITCH", "x-lab", { "text-anchor": "middle" });
     // the brain: a chip with an ear icon, a sensing line from the grid side, a control line to the relay
     const brain = el("g", { id: "brain" }, inner);
     el("rect", { x: 900, y: 300, width: 160, height: 100, rx: 10, fill: C.panel, stroke: C.read, "stroke-width": 3 }, brain);
     for (let k = 0; k < 5; k++) { el("rect", { x: 914 + k * 30, y: 290, width: 10, height: 10, fill: C.read }, brain); el("rect", { x: 914 + k * 30, y: 400, width: 10, height: 10, fill: C.read }, brain); }
     el("path", { d: "M 940 350 Q 980 318 1020 350 Q 980 382 940 350 Z", fill: "none", stroke: C.cyan, "stroke-width": 5, "stroke-linejoin": "round" }, brain); // eye
     el("circle", { id: "pupil", cx: 980, cy: 350, r: 10, fill: C.cyan }, brain);
-    txt(brain, 980, 272, "WATCHES THE GRID", "x-tag", { "text-anchor": "middle" });
-    el("path", { id: "sense", d: "M 1200 620 L 1230 620 L 1230 350 L 1060 350", fill: "none", stroke: C.cyan, "stroke-width": 5, "stroke-dasharray": "10 8" }, inner);
-    el("path", { id: "ctlRelay", d: "M 1040 410 L 1040 560 L 1120 600", fill: "none", stroke: C.read, "stroke-width": 4, "stroke-dasharray": "10 6" }, inner);
-    el("path", { id: "ctlBridge", d: "M 920 410 L 920 470 L 845 470 L 845 540", fill: "none", stroke: C.read, "stroke-width": 4, "stroke-dasharray": "10 6" }, inner);
+    txt(brain, 980, 278, "WATCHES THE GRID", "x-lab", { "text-anchor": "middle" });
+    const defs2 = svg.querySelector("defs");
+    const mk = (id, col) => { const m = el("marker", { id, viewBox: "0 0 10 10", refX: 8, refY: 5, markerWidth: 5, markerHeight: 5, orient: "auto-start-reverse" }, defs2); el("path", { d: "M 0 0 L 10 5 L 0 10 z", fill: col }, m); };
+    mk("arrB", C.cyan); mk("arrW", C.read);
+    el("path", { id: "sense", d: "M 1200 620 L 1230 620 L 1230 350 L 1068 350", fill: "none", stroke: C.cyan, "stroke-width": 5, "stroke-dasharray": "10 8", "marker-end": "url(#arrB)" }, inner);
+    el("path", { id: "ctlRelay", d: "M 1040 410 L 1040 560 L 1112 596", fill: "none", stroke: C.read, "stroke-width": 4, "stroke-dasharray": "10 6", "marker-end": "url(#arrW)" }, inner);
+    el("path", { id: "ctlBridge", d: "M 920 410 L 920 470 L 845 470 L 845 532", fill: "none", stroke: C.read, "stroke-width": 4, "stroke-dasharray": "10 6", "marker-end": "url(#arrW)" }, inner);
     // AC wave out through the relay to the house: socket icon outside right
     el("line", { x1: 1180, y1: 620, x2: 1600, y2: 620.3, stroke: C.cyan, "stroke-width": 7, "stroke-linecap": "round", opacity: 0.55 }, inner);
     el("line", { x1: 1440, y1: 620, x2: 1440.3, y2: 780, stroke: C.cyan, "stroke-width": 7, "stroke-linecap": "round", opacity: 0.55 }, inner);
@@ -375,18 +389,21 @@
     const gp = el("g", { transform: "translate(1690 620)" }, inner);
     el("rect", { x: -8, y: -70, width: 16, height: 180, fill: C.slate }, gp);
     el("rect", { x: -44, y: -62, width: 88, height: 10, fill: C.slate }, gp);
-    el("rect", { x: -30, y: -122, width: 60, height: 38, rx: 17, fill: "#C2652B", stroke: "#6E3414", "stroke-width": 3 }, gp);
-    el("polyline", { points: "-21,-118 -12,-88 -3,-118 6,-88 15,-118", fill: "none", stroke: "#F7EBD3", "stroke-width": 3 }, gp);
-    txt(inner, 1690, 776, "GRID", "x-tag cyan", { "text-anchor": "middle" });
+    const xb = el("g", { id: "xBadge", transform: "translate(0 -118)" }, gp);
+    el("circle", { r: 46, fill: "#0d1117", stroke: C.cyan, "stroke-width": 4 }, xb);
+    el("path", { d: "M -30 -16 Q 0 -26 30 -16 L 30 16 Q 0 26 -30 16 Z", fill: "#9C5A2E", stroke: "#5A2E12", "stroke-width": 3 }, xb);
+    for (let i = 0; i < 4; i++) { el("line", { x1: -20 + i * 12, y1: -19, x2: -8 + i * 12, y2: 19, stroke: "#F3E2BD", "stroke-width": 2 }, xb); el("line", { x1: -8 + i * 12, y1: -19, x2: -20 + i * 12, y2: 19, stroke: "#F3E2BD", "stroke-width": 2 }, xb); }
+    el("ellipse", { cx: -31, cy: 0, rx: 6, ry: 17, fill: "#F4E6C8" }, xb); el("ellipse", { cx: 31, cy: 0, rx: 6, ry: 17, fill: "#F4E6C8" }, xb);
+    txt(inner, 1690, 786, "GRID", "x-lab cyan", { "text-anchor": "middle" });
     const sk = el("g", { transform: "translate(1420 860) scale(0.85)" }, inner);
     el("rect", { x: -56, y: -60, width: 150, height: 120, rx: 14, fill: "#F4F6F7", stroke: C.cyan, "stroke-width": 4 }, sk);   // Indian 3-pin + switch
     el("circle", { cx: 0, cy: -26, r: 12, fill: "#2C3E50" }, sk); el("circle", { cx: -20, cy: 18, r: 8, fill: "#2C3E50" }, sk); el("circle", { cx: 20, cy: 18, r: 8, fill: "#2C3E50" }, sk);
     el("rect", { x: 52, y: -30, width: 28, height: 52, rx: 5, fill: "#D5DBDB", stroke: "#99A3A4", "stroke-width": 2 }, sk);
     el("rect", { x: 56, y: -26, width: 20, height: 22, rx: 3, fill: "#C0392B" }, sk);
-    txt(inner, 1520, 872, "HOUSE", "x-tag", { "text-anchor": "start" });
+    txt(inner, 1520, 876, "HOUSE", "x-lab", { "text-anchor": "start" });
     // scope: grid trace (blue, 4 px) + box trace (white dashed, 2 px)
     const scope = el("g", { id: "scope" }, g);
-    el("rect", { x: 1330, y: 230, width: 540, height: 230, rx: 14, fill: C.panel, stroke: C.grid, "stroke-width": 2 }, scope);
+    el("rect", { x: 1330, y: 230, width: 540, height: 205, rx: 14, fill: C.panel, stroke: C.grid, "stroke-width": 2 }, scope);
     txt(scope, 1354, 270, "GRID", "x-tag cyan");
     txt(scope, 1474, 270, "· BOX", "x-tag");
     txt(scope, 1846, 270, "IN STEP ✓", "x-tag green", { "text-anchor": "end", id: "inStep", opacity: 0 });
