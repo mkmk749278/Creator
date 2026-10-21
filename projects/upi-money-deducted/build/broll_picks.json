@@ -1,0 +1,10 @@
+{
+ "kirana_soft":  {"file": "pixabay_3175.mp4",  "soft": "soft_3175.mp4",   "use_soft": true, "what": "North Indian shop row, defocused"},
+ "kirana_soft2": {"file": "pixabay_1643.mp4",  "soft": "soft_1643.mp4",   "use_soft": true, "what": "bazaar lane at dusk, defocused"},
+ "kirana_soft3": {"file": "pixabay_32701.mp4", "soft": "soft_32701.mp4",  "use_soft": true, "what": "Tirupati food stall counter, defocused"},
+ "street_soft":  {"file": "pixabay_32287.mp4", "soft": "soft_32287.mp4",  "use_soft": true, "what": "Bangalore shopping street, defocused"},
+ "hands_soft":   {"file": "pixabay_169446.mp4","soft": "soft_169446.mp4", "use_soft": true, "what": "thumb typing on a phone, defocused"},
+ "shopkeeper":   {"file": "pixabay_246100.mp4","soft": "sharp_246100.mp4","use_soft": true, "ms": 4.5, "what": "shopkeeper behind his table looks up at a customer"},
+ "counter":      {"file": "pixabay_32701.mp4", "soft": "sharp_32701.mp4", "use_soft": true, "ms": 11.0, "what": "men waiting at a steel stall counter"},
+ "counter2":     {"file": "pixabay_47023.mp4", "soft": "sharp_47023.mp4", "use_soft": true, "ms": 1.0, "what": "a young man checks his phone"}
+}

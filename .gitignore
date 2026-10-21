@@ -80,3 +80,8 @@ projects/minimum-due/qa/review_av/
 projects/*/qa/scenes/
 projects/*/qa/sourcing/
 projects/*/qa/review_av/
+video/upi01/p*/media/
+video/upi01/p*/vendor/
+video/upi01/p*/shared/
+video/upi01/p*/snapshots/
+video/upi01/p*/renders/
