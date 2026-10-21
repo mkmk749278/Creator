@@ -31,10 +31,10 @@ def media(name):
 SHOTS, OV = [], []
 
 
-def shot(t0, t1, src, move="push", tag="ILLUSTRATION", media_start=0.0, flick=None, src_b=None, warm=False, dim=False):
+def shot(t0, t1, src, move="push", tag="ILLUSTRATION", media_start=0.0, flick=None, src_b=None, warm=False, dim=False, origin=None):
     if not media_start and src in BROLL:
         media_start = BROLL[src].get("ms", 0.0)
-    SHOTS.append(dict(t0=t0, t1=t1, src=src, move=move, tag=tag, ms=media_start, flick=flick, src_b=src_b, warm=warm, dim=dim))
+    SHOTS.append(dict(t0=t0, t1=t1, src=src, move=move, tag=tag, ms=media_start, flick=flick, src_b=src_b, warm=warm, dim=dim, origin=origin))
 
 
 def el(html_s, at, to=None):
@@ -138,16 +138,23 @@ chip("System behind all apps", 33.2, 35.6, 120, 600, "cyan", "sm", "up")
 cite("[WORLD BANK | UPI CASE STUDY 2021]", 29.7, 35.6)
 shot(35.6, 40.3, "B11")                                                               # "It calls the shop's bank and says, please add..."
 chip("Please add ₹840", 37.4, 40.3, 1150, 250, "cyan", "sm", "pop", "☎")
-shot(40.3, 47.2, "B12")                                                               # "...a phone call... three things can happen."
-chip("Three outcomes", 44.0, 47.2, 120, 860, "ink", "sm", "up")
+shot(40.3, 42.9, "B12part")                                                           # "...a phone call. And like every phone call in India..."
+shot(42.9, 47.2, "B12_last", "none")                                                  # "...three things can happen." (lamps light in 2D)
+for k, (x, y, col, word) in enumerate([(372, 711, "green", "Success"), (960, 729, "red", "Failed"), (1635, 747, "amber", "Processing")]):
+    el(f'<div class="glow g-{col}" style="left:{x - 70}px;top:{y - 70}px" {attrs(44.0 + 0.8 * k, 47.2, "fade", 0.2)}></div>', 44.0 + 0.8 * k, 47.2)
+    lbl(word, 44.1 + 0.8 * k, 47.2, x - 80, y + 70, col, "up")
 # ---- SUCCESS / FAILED
-shot(47.2, 53.0, "B13")                                                               # "One... done, the shop got it — that's success."
+shot(47.2, 48.1, "L_calling", "in")                                                  # "One, the shop's bank picks up..."
+shot(48.1, 53.0, "L_success", "in", origin="80% 45%")                                 # "...done, the shop got it — that's success."
+el(f'<div class="flash" style="background:rgba(63,185,80,.35);z-index:16" {attrs(48.1, None, "flash")}></div>', 48.1)
 chip("1", 47.3, 53.0, 120, 250, "green", "xl", "pop")
 chip("Success", 51.6, 53.0, 260, 266, "green", "", "pop", "✓")
-shot(53.0, 60.7, "B14")                                                               # "Two... sorry, we can't take this... that's failed."
+shot(53.0, 54.2, "L_calling", "out")                                                 # "Two, the shop's bank picks up and says, sorry..."
+shot(54.2, 60.7, "L_failed", "in", origin="70% 50%")                                  # "...we can't take this... that's failed."
+el(f'<div class="flash" style="background:rgba(248,81,73,.35);z-index:16" {attrs(54.2, None, "flash")}></div>', 54.2)
 chip("2", 53.1, 60.7, 120, 250, "red", "xl", "pop")
 chip("Failed", 59.0, 60.7, 260, 266, "red", "", "pop", "✕")
-shot(60.7, 68.3, "B15")                                                               # "Failed sounds scary... comes back on its own."
+shot(60.7, 68.3, "L_failed", "zoomhome", origin="14% 52%")                          # "Failed sounds scary... comes back on its own."
 chip("Clear answer", 62.0, 64.0, 120, 250, "red", "sm", "pop")
 chip("Comes back by itself", 64.4, 68.3, 120, 250, "green", "sm", "pop", "↩")
 cite("[NPCI UPI CIRCULAR | 2026]", 64.4, 68.3)
@@ -158,7 +165,8 @@ phone(68.3, 73.6, 1240, 60, scr(head("Payment") + PAYEE + '<div class="stat"><di
 chip("You can pay again", 69.2, 73.6, 160, 420, "green", "", "pop", "✓")
 chip("Simple?", 71.9, 73.6, 160, 560, "ink", "sm", "pop")
 # ---- PROCESSING
-shot(73.6, 82.5, "B17")                                                               # "Three. The troublemaker... Call dropped."
+shot(73.6, 76.3, "L_calling", "slow")                                                # "Three. The troublemaker. N.P.C.I. calls..."
+shot(76.3, 82.5, "L_drop", "none", media_start=0.0)                                   # "...the line goes quiet. Hello?... Hello?... Call dropped." (motion test)
 chip("3", 73.8, 82.5, 120, 250, "amber", "xl", "pop")
 chip("Hello?", 79.6, 81.5, 1250, 300, "ink", "sm", "pop")
 chip("Hello?", 80.6, 81.5, 1350, 400, "ink", "sm", "pop")
@@ -206,17 +214,21 @@ chip("Between banks", 127.6, 129.6, 760, 250, "amber", "sm", "pop")
 shot(129.6, 131.4, "S25c_hold", "in")                                                 # "Not lost — just waiting."
 chip("Not lost · just waiting", 129.7, 131.4, 120, 860, "green", "sm", "up")
 # ---- THE ANSWER
-shot(131.4, 138.8, "B26")                                                             # "Now the shop's bank has to answer one simple question..."
-chip("Into the shop's account?", 133.2, 138.8, 120, 250, "ink", "sm", "pop")
-chip("Only two answers", 137.4, 138.8, 120, 370, "amber", "sm", "pop")
+shot(131.4, 138.8, "BG_soft", "slow")                                                # "Now the shop's bank has to answer one simple question..."
+el(f'<div class="ledger" style="left:560px;top:190px" {attrs(131.6, 147.0, "up", 0.5)}><div class="lh">SHOP&#39;S BANK · NEXT DAY</div>'
+   f'<div class="lr"><span>Customer payment</span><b>₹840</b><i>?</i></div><div class="lr dim2"><span>Milk booth</span><b>₹56</b><i>✓</i></div>'
+   f'<div class="lr dim2"><span>Electricity</span><b>₹1,240</b><i>✓</i></div></div>', 131.6, 147.0)
+chip("In the shop's account?", 133.2, 138.8, 620, 120, "ink", "sm", "pop")
+chip("Only two answers", 137.4, 138.8, 760, 780, "amber", "sm", "pop")
 cite("[NPCI | UPI OC 213]", 131.6, 147.0)
-shot(138.8, 140.6, "B27a")                                                            # "Yes?"
-shot(140.6, 143.1, "B27b")                                                            # "Then the shop has your money, even though the soundbox stayed silent."
-chip("Shop has it", 140.8, 143.1, 120, 250, "green", "", "pop", "✓")
-chip("Soundbox silent", 141.6, 143.1, 120, 380, "slate", "sm", "pop", "🔇")
-shot(143.1, 144.9, "B28a")                                                            # "No?"
-shot(144.9, 147.0, "B28b")                                                            # "Then it comes back to your bank, and into your account."
-chip("Back to you", 145.0, 147.0, 1200, 250, "green", "", "pop", "↩")
+shot(138.8, 141.4, "BG_soft", "in")                                                  # "Yes? Then the shop has your money..."
+el(f'<div class="stampmark c-green" style="left:1040px;top:250px" {attrs(138.95, 141.4, "stamp", 0.18)}>YES</div>', 138.95, 141.4)
+chip("Into shop's account", 139.7, 141.4, 620, 780, "green", "sm", "pop", "→")
+shot(141.4, 143.1, "SB_off", "in", warm=True)                                         # "...even though the soundbox stayed silent."
+chip("Soundbox silent", 141.6, 143.1, 1180, 330, "slate", "sm", "pop", "🔇")
+shot(143.1, 147.0, "BG_soft", "out")                                                  # "No? Then it comes back to your bank, and into your account."
+el(f'<div class="stampmark c-red" style="left:1070px;top:250px" {attrs(143.25, 147.0, "stamp", 0.18)}>NO</div>', 143.25, 147.0)
+chip("Back to your account", 144.2, 147.0, 620, 780, "green", "sm", "pop", "↩")
 # ---- THE DEADLINE (2D calendar over the blurred room)
 DAYS = ["WED", "THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"]   # T+4 is a Sunday: "Sundays included" is true on screen
 
@@ -305,7 +317,7 @@ shot(238.2, 242.7, "street_soft", "slow", "SIMULATED SCREEN", media_start=3.0)  
 phone(238.2, 242.7, 725, 60, '<div class="wall"></div>' + f'<div class="share" {attrs(238.5, None, "up", 0.5)}><div class="ttl">Share to</div><div class="ppl">'
       + "".join(f'<div class="{"hl" if n == "Pays Twice" else ""}"><i></i>{n}</div>' for n in ["Amma", "Ravi", "Office group", "Pays Twice", "Sneha", "Arjun", "Family", "More"]) + "</div></div>")
 chip("You know one", 240.0, 242.7, 150, 420, "amber", "sm", "pop", "😄")
-shot(242.7, 251.7, "B43")                                                             # "Next video: what really happens in those few seconds after you hit pay..."
+shot(242.7, 251.7, "L_success", "out", origin="50% 50%")                             # "Next video: what really happens in those few seconds after you hit pay..."
 chip("Next: when it works", 243.4, 251.7, 120, 860, "cyan", "sm", "up")
 shot(251.7, END, "B43_end", "slow", "")
 el('<div class="endcard" ' + attrs(251.9, None, "fade", 0.8) + '><img class="logo" src="media/logo_square.png" alt=""/><div class="ch">Be Practical<br/>with Kishore</div>'
@@ -402,7 +414,7 @@ def emit():
                     b = f'<img class="m b" src="media/{sb.name}" alt="" data-move="{s["move"]}" />'
                 flick = f' data-flick="{s["flick"]}"' if s["flick"] else ""
                 H.append(f'      <div id="{pid}-s{i}" class="{cls}" data-start="{st}" data-duration="{du}" data-track-index="1"{flick}>'
-                         f'<img class="m a" src="{fn}" alt="" data-move="{s["move"]}" />{b}{"<div class=dim></div>" if s["dim"] else ""}{tag}</div>')
+                         f'<img class="m a" src="{fn}" alt="" data-move="{s["move"]}"{f' data-origin="{s["origin"]}"' if s["origin"] else ""} />{b}{"<div class=dim></div>" if s["dim"] else ""}{tag}</div>')
         O = []
         for o in OV:
             a, b = o["at"], o["to"] if o["to"] is not None else END

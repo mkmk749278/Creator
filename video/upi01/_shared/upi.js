@@ -8,6 +8,7 @@
     left: [{ scale: 1.08, xPercent: 2 }, { scale: 1.08, xPercent: -2 }], right: [{ scale: 1.08, xPercent: -2 }, { scale: 1.08, xPercent: 2 }],
     up: [{ scale: 1.08, yPercent: 2 }, { scale: 1.08, yPercent: -2 }], push: [{ scale: 1.0 }, { scale: 1.05 }],
     slow: [{ scale: 1.02 }, { scale: 1.06 }], none: [{ scale: 1.0 }, { scale: 1.0 }],
+    zoomhome: [{ scale: 1.7 }, { scale: 1.9 }],
   };
   const fmt = (v, pre, suf) => pre + Math.round(v).toLocaleString("en-IN") + suf;
   window.UPI_animate = function (tl, D) {
@@ -42,6 +43,7 @@
       else if (fx === "down") go({ y: -34 }, { y: 0 });
       else if (fx === "left") go({ x: -46 }, { x: 0 });
       else if (fx === "right") go({ x: 46 }, { x: 0 });
+      else if (fx === "stamp") go({ scale: 2.4 }, { scale: 1, ease: "power4.in", duration: d });
       else if (fx === "grow") { tl.set(el, { autoAlpha: 1, scaleX: 0 }, a); tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "power2.inOut", immediateRender: false }, a); }
       else if (fx === "fall") go({ y: -420 }, { y: 0, ease: "bounce.out", duration: Math.max(d, 0.7) });
       else if (fx === "rise") go({ y: 140 }, { y: 0, duration: Math.max(d, 0.6) });
