@@ -22,7 +22,7 @@ And that transformer on the pole works in reverse. Your two hundred and thirty v
 
 So the solar box is built to notice. If the beat goes missing, or the voltage starts changing, it switches itself off... click. Safety rules say it must switch off within two seconds.
 
-But there's one tricky case. Say your house is using exactly what the panels make. Then the power cut changes nothing — the box can't feel it.
+But there's one tricky case. Say your whole street is using exactly what the solar panels make. Then the power cut changes nothing — the box can't feel it.
 
 So the box tests the drummer. Again and again, it plays a little off-beat — on purpose — to check... is the drummer still there?
 

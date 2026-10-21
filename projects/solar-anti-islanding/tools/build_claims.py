@@ -1,0 +1,504 @@
+#!/usr/bin/env python3
+"""Build projects/solar-anti-islanding/claims.csv and check every source_quote against the locally saved source text.
+
+usage: python3 -I build_claims.py <dl_dir> <out_csv>
+"""
+import csv
+import re
+import sys
+import unicodedata
+from pathlib import Path
+
+DL = Path(sys.argv[1])
+OUT = Path(sys.argv[2])
+
+# ---- sources: URL -> local text files used to verify the quote ----
+CEA_GAZ = "https://www.cbip.org/MIR/Final/CEA%202.pdf"
+CEA_CONS = ("https://www.cbip.org/cearegulations/CEA%20DATA/Connectivity/Connectivity%20Regulation/"
+            "Con%20Coneectivity%20Regulations%202013.pdf")
+BIS = "https://www.bis.gov.in/wp-content/uploads/2025/04/16169_2019_Final_UTRF.pdf"
+IEA = "https://iea-pvps.org/wp-content/uploads/2020/01/rep5_09.pdf"
+DOE = "https://www.energy.gov/eere/solar/solar-integration-inverters-and-grid-services-basics"
+UNITIL = "https://unitil.com/sites/default/files/2022-09/Default_IEEE1547-2018_Settings_Requirements_Issued.pdf"
+MSERC = "https://mserc.gov.in/regulations/Supply_Code_2012.pdf"
+WBSEDCL = ("https://www.wbsedcl.in/irj/go/km/docs/internet/webpage/techspec/"
+           "Final%20%20SPEC%20-%203%20Star%20315%20%20%20KVA%20DTR%20BIS.pdf")
+OSHRC = "https://www.oshrc.gov/wp-content/uploads/Pike_Electric_Inc._Docket_No._01-0166.txt"
+ECM = "https://www.ecmweb.com/renewables/article/20896643/the-highs-and-lows-of-photovoltaic-system-calculations"
+RUJA = "https://rujapre.ujaen.es/items/4395d976-2bf3-4966-b526-50d429dcbafe/full"
+ADANI = "https://www.adanisolar.com/-/media/Project/AdaniSolar/Downloads/pdf/newdatasheet1/Installation-Manual-28112024.pdf"
+DMEGC = "https://www.dmegcsolar.com/upload/img/2023-02/63e4b1a573ce8.pdf"
+SOLIS = "https://signaturesolar.com/content/Solis%20Inverters/Series%206%20Hybrid/User_Manual_Solis_Manual_S6-EH1P.pdf"
+SUNGROW = "https://uk.sungrowpower.com/upload/file/20211202/EN%20FS%20Sungrow%203-phase%20Hybrid%20Backup%20Factsheet.pdf"
+MERCOM = "https://www.mercomindia.com/odisha-updates-rooftop-solar-net-metering-rules-to-allow-hybrid-inverters"
+LUM_INV = "https://www.luminousindia.com/solar-inverters/on-grid-solar-inverters"
+LUM_SYS = "https://www.luminousindia.com/solar-solutions/on-grid-solar-system"
+DEYE = "https://www.deyeinverter.com/deyeinverter/2026/06/24/BManualSUN-1-4K-G04P1-EU-AM120260622en.pdf"
+GOAN = "https://www.thegoan.net/goa-news/electrocution-due-to-back-field-power-from-inverter-cee/112482.html"
+
+LOCAL = {
+    CEA_GAZ: ["cea/cbip_cea2.txt", "cea/cbip_cea2.raw.txt"],
+    CEA_CONS: ["cea/cbip2013.txt", "cea/cbip2013.raw.txt"],
+    BIS: ["mnre/bis16169.txt", "mnre/bis16169.raw.txt"],
+    IEA: ["sandia/rep5_09.txt", "sandia/rep5_09.raw.txt"],
+    DOE: ["doe/inv.txt"],
+    UNITIL: ["ieee/unitil.txt", "ieee/unitil.raw.txt"],
+    MSERC: ["india/mserc.txt", "india/mserc.raw.txt"],
+    WBSEDCL: ["india/wb315.txt", "india/wb315.raw.txt"],
+    OSHRC: ["osha/pike.cp1252.txt"],
+    ECM: ["web/ecm.html.txt"],
+    RUJA: ["web/ruja.html.txt"],
+    ADANI: ["modules/adani_im.txt", "modules/adani_im.raw.txt"],
+    DMEGC: ["modules/dmegc_im.txt", "modules/dmegc_im.raw.txt"],
+    SOLIS: ["hybrid/solis_s6.txt", "hybrid/solis_s6.raw.txt"],
+    SUNGROW: ["hybrid/sungrow_fs.txt", "hybrid/sungrow_fs.raw.txt"],
+    MERCOM: ["web/mercom.html.txt"],
+    LUM_INV: ["web/lum_inv.html.txt"],
+    LUM_SYS: ["web/lum_sys.html.txt"],
+    DEYE: ["ongrid/deye_g04p1.txt", "ongrid/deye_g04p1.raw.txt"],
+    GOAN: ["web/goan.html.txt"],
+}
+
+ROWS = [
+    # id, claim, on_screen, timecode, status, url, quote, note
+    ("S01",
+     "Line 2 'It switched off on purpose': in India a grid-connected rooftop solar inverter is required by law to "
+     "disconnect from the grid when the grid supply is lost (anti-islanding is mandatory, CEA connectivity "
+     "regulations 2013, reg. 11(6)).",
+     "no", "0:06", "confirmed", CEA_CONS,
+     "Distributed generation resource operating in parallel with electricity system shall be equipped with the "
+     "following protective functions to sense abnormal conditions on electricity system and cause the distributed "
+     "generation resource to be automatically disconnected from electricity system or to prevent the distributed "
+     "generation resource from being connected to electricity system inappropriately-",
+     "Central Electricity Authority (Technical Standards for Connectivity of the Distributed Generation Resources) "
+     "Regulations 2013 (Gazette of India, 30 Sep 2013, File No. 12/X/STD(CONN)/GM/CEA), consolidated by CBIP with the "
+     "First Amendment of 6 Feb 2019. Applies to every 'generating station feeding electricity into the electricity "
+     "system at voltage level of below 33 kV' (def. 2(1)(e)), i.e. rooftop solar. The Odisha regulator's net-metering "
+     "order applies the same CEA standards to rooftop PV: 'The photo voltaic system in the event of fault, voltage or "
+     "frequency variations must island / disconnect itself within IEC standard on stipulated period' (OERC Case "
+     "16/2019, https://www.orierc.org/Orders/2019/C-16-2019.pdf). MNRE's 2017 Compulsory Registration Order makes "
+     "PV inverters conform to IS 16169 (islanding-prevention test), see S20. No later amendment found on 2026-10-21; "
+     "CEA's 2026 draft connectivity regulations cover only connections at 33 kV and above (KS&K, "
+     "https://ksandk.com/md/newsletter/cea-draft-grid-connectivity-standards-2026/). cea.nic.in now shows a login page, "
+     "so the CBIP copies were used. Tag: [CEA REGULATIONS 2013 | REG. 11(6)]."),
+
+    ("S02",
+     "Line 2 'to protect a lineman's life': the reason for the shutdown is the safety of line workers, who could "
+     "otherwise touch a line still energised by the solar system.",
+     "no", "0:06", "confirmed", IEA,
+     "3. Islanding may create a hazard for utility line-workers or the public by causing a line to remain energized "
+     "that may be assumed to be disconnected from all energy sources.",
+     "IEA PVPS Report T5-09 (2002), Bower (Sandia) and Ropp, section 2. It is one of five reasons the report gives "
+     "(also customer-equipment damage, out-of-phase reclosing and interference with restoration), so on screen do not "
+     "call it the only reason. The report also notes that crews who follow dead-line rules (test and earth) are "
+     "protected, so anti-islanding is the backstop. Indian installer SolarSquare gives the same reason: 'This "
+     "essential safety feature is hard-coded so linemen who repair faulty lines are not exposed to electrocution.' "
+     "(https://www.solarsquare.in/blog/on-grid-vs-off-grid/, updated 18 Oct 2026)."),
+
+    ("S03",
+     "Line 2 'The sun is still shining. But your fans stop': with no battery, a grid-tie inverter makes no AC from the "
+     "panels once the grid has failed, so the house gets nothing from its solar in full sun.",
+     "no", "0:06", "confirmed", SOLIS,
+     "If the grid fails or is inactive, the inverter will not be able to generate any AC power using PV power.",
+     "Solis S6-EH1P hybrid user manual (US models), section 4.1.1 'Grid-Tie PV String Inverter' (the hybrid run with "
+     "no battery). Universal for grid-connected rooftop inverters in India because of the CEA rule (S01, S18)."),
+
+    ("S04",
+     "Line 4: the box the panels connect to is what Indian installers and makers call an 'on-grid inverter', and it "
+     "is not the home battery inverter (an on-grid system works without a battery).",
+     "no", "0:21", "confirmed", LUM_INV,
+     "An on-grid inverter has one job: to take the electricity generated by your solar panels and make it ready for "
+     "use in your home or business.",
+     "Luminous (Indian inverter maker) on-grid inverter page. Same page: 'An on-grid solar "
+     "system works without a battery, which keeps the installation simpler'. 'Solar box' is our own nickname."),
+
+    ("S05",
+     "Line 5: panels give D.C. power, which flows only one way.",
+     "no", "0:34", "confirmed", DOE,
+     "It’s a device that converts direct current (DC) electricity, which is what a solar panel generates, to "
+     "alternating current (AC) electricity, which the electrical grid uses. In DC, electricity is maintained at "
+     "constant voltage in one direction.",
+     "U.S. Department of Energy, Solar Energy Technologies Office, 'Solar Integration: Inverters and Grid Services "
+     "Basics'. A panel's DC voltage changes with sunlight, but its direction does not, so 'flows only one way' is "
+     "right."),
+
+    ("S06",
+     "Line 6: homes run on A.C., which swings forward and back.",
+     "no", "0:38", "confirmed", DOE,
+     "In AC, electricity flows in both directions in the circuit as the voltage changes from positive to negative.",
+     "Same DOE page as S05."),
+
+    ("S07",
+     "Line 6: India's mains supply runs at 50 Hz (on-screen 50 Hz).",
+     "yes", "0:38", "confirmed", MSERC,
+     "The declared frequency of the alternating current (AC) shall be 50 HZ.",
+     "Meghalaya SERC Supply Code 2012, clause 2.1(1). The CEA DG regulations set the inverter frequency trips around "
+     "50 Hz (50.5 Hz / 47.5 Hz, S17) and DISCOM transformer specs are '50 HZ' (WBSEDCL, S15). Tag: [STATE SUPPLY "
+     "CODE]."),
+
+    ("S08",
+     "Line 6 'fifty full swings every second': 50 Hz means 50 complete forward-and-back cycles per second, so one "
+     "cycle lasts 20 ms (storyboard HUD 'CYCLE 20 ms').",
+     "yes", "0:38", "confirmed", CEA_CONS,
+     "\"frequency\" means the number of alternating cycles per second expressed in Hertz;",
+     "CEA DG regulations 2013, def. 2(1)(f). OUR CALCULATION: 1 / 50 = 0.02 s = 20 ms per cycle. A cycle reverses "
+     "direction twice, so the current changes direction 100 times a second: 'fifty full swings' (forward and back) is "
+     "right, and 'flips fifty times' would be wrong."),
+
+    ("S09",
+     "Line 6: the solar box (inverter) turns the panels' D.C. into the A.C. used at the wall socket.",
+     "no", "0:38", "confirmed", CEA_CONS,
+     "\"inverter\" means a device that changes direct current power into alternating current power;",
+     "CEA DG regulations 2013, def. 2(1)(j). DOE page (S05) says the same."),
+
+    ("S10",
+     "Line 7-8: a grid-tied (grid-following) inverter cannot set the A.C. rhythm on its own; it takes its timing from "
+     "the grid and follows it ('a dancer that only follows the drum').",
+     "no", "0:52", "confirmed", DOE,
+     "Traditional “grid-following” inverters require an outside signal from the electrical grid to determine when the "
+     "switching will occur in order to produce a sine wave that can be injected into the power grid. In these "
+     "systems, the power from the grid provides a signal that the inverter tries to match.",
+     "DOE page (S05). The inverter does build the wave itself by switching, but it takes the timing from the grid "
+     "(a phase-locked loop); 'can't make that rhythm on its own' is a fair plain-words version. DOE itself uses a "
+     "'dance partners' picture for grid-forming and grid-following inverters. CEA reg. 11(4) exempts inverters from a separate "
+     "synchronising device 'if the same is inherently built into the inverter'."),
+
+    ("S11",
+     "Line 8: on a normal day the surplus goes out through the house meter onto the street wire, toward the "
+     "transformer (net metering export).",
+     "no", "1:02", "confirmed", LUM_SYS,
+     "Yes, Luminous’ on grid solar power system supports net metering, allowing you to export surplus electricity to "
+     "the grid and earn credits on your electricity bill.",
+     "CEA 2019 amendment, def. 2(1)(ja): a prosumer 'consumes electricity from the grid and can also inject "
+     "electricity into the grid, using same point of connection' (CBIP consolidated text). Physics nuance: exported "
+     "power is mostly used by neighbours on the same street wire and passes up through the pole transformer only when "
+     "the street makes more than it uses. 'Up to the transformer on the pole' is fine as the path (meter, service "
+     "wire, street line fed by the transformer); the picture should not imply that all export always reaches the "
+     "transformer."),
+
+    ("S12",
+     "Line 9: a power cut can be the electricity board switching off a section of the network (for example for "
+     "repairs), which is when linemen work on lines they believe are dead.",
+     "no", "1:14", "confirmed", IEA,
+     "4. Intentional disconnect for servicing either at a point on the utility or at the service entrance;",
+     "IEA T5-09 list of conditions that can create an island; it also lists '3. Utility switching of the distribution "
+     "system and loads;' and faults. The scenario in the VO is one of the listed cases."),
+
+    ("S13",
+     "Line 10: if the solar box kept pushing after the cut, the dead street wire would be live again (an 'unintended "
+     "island').",
+     "no", "1:19", "confirmed", CEA_GAZ,
+     "\"unintended island\" means a part of the electricity system which remains energised by one or more distributed "
+     "generation resource, when such part of the system has been isolated from the remaining part of the electricity "
+     "system;",
+     "CEA DG regulations 2013, def. 2(1)(m), Gazette of India 30 Sep 2013, page 7-8. IEA T5-09: 'Islanding is a condition in which a portion of the utility "
+     "system, which contains both load and generation, is isolated from the remainder of the utility system and "
+     "continues to operate.'"),
+
+    ("S14",
+     "Line 11: the pole transformer works in reverse: power pushed into its low-voltage side energises its "
+     "high-voltage side and the line beyond it (back-feed).",
+     "no", "1:25", "confirmed", IEA,
+     "When current-source inverters are used, and when the switch that disconnects the utility voltage source from "
+     "the island is on the primary side of the transformer, as shown in Figure 1, the secondary of the transformer "
+     "will be excited by the output current of the PV inverter.",
+     "IEA T5-09 section 4.1.3.2. Second, independent source: U.S. OSHRC decision, Secretary of Labor v. Pike Electric, "
+     "Docket 06-0166 (ALJ, 26 Mar 2007): a homeowner's portable generator back-fed a de-energised three-phase line "
+     "(normally 'energized at 7,220 volts, phase to ground') through a transformer that 'was not opened, tagged, "
+     "flagged and grounded', and lineman Adams was electrocuted (S17). HyperPhysics: a transformer can 'raise or "
+     "lower AC voltages' (http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/transf.html)."),
+
+    ("S15",
+     "Line 11: Indian homes are supplied at 230 V single-phase (on-screen 230 V).",
+     "yes", "1:25", "confirmed", MSERC,
+     "(i) Single Phase: 230 volts between, a phase and neutral",
+     "Meghalaya SERC Supply Code 2012, clause 2.1(1)(a); same clause lists 'High Tension (HT) - Three Phase: 11 kV, "
+     "22 kV, 33 kV between phases.' Independent: UP Electricity Supply Code 2005, clause 3.1(b): 'Low Tension (LT) - "
+     "Single Phase: 230 volts between phases and neutral. - Three Phase: 400 volts between phases.' "
+     "(https://uperc.org/App_File/U-P-ElectricitySupplyCode2005upto12thAmendment-pdf323201825406PM.pdf). Tag: "
+     "[STATE SUPPLY CODES]."),
+
+    ("S16",
+     "Line 11: 'Your two hundred and thirty volts... becomes about eleven thousand volts': the street's pole "
+     "transformer is an 11 kV / 433 V unit, so 230 V fed back into it appears at about 11,000 V on the high-voltage "
+     "line (on-screen 11,000 V).",
+     "yes", "1:25", "confirmed", WBSEDCL,
+     "supply & delivery of three phase 50 HZ, 11/ 0.433 KV, Delta/Star, Vector Group Dyn11, two winding, oil immersed "
+     "naturally Oil & Air cooled",
+     "WBSEDCL technical specification, 315 kVA '3 PHASE POLE MOUNTED' distribution transformer, voltage ratio "
+     "'11000 / 433 V'. OUR CALCULATION: each low-voltage winding is 433 / 1.732 = 250 V, each high-voltage winding "
+     "11,000 V, ratio 44. 230 V x 44 = 10,120 V; 250 V x 44 = 11,000 V. 'About eleven thousand volts' is fair (within "
+     "about 8%) and 11 kV is the line's rating. ON-SCREEN CAUTION: show '≈ 11,000 V' or '11 kV LINE'; a counter that "
+     "lands exactly on 11,000 from 230 overstates it slightly."),
+
+    ("S17",
+     "Line 11 'On a wire the lineman thinks is switched off': back-fed power can energise a line that crews treat as "
+     "dead and kill a line worker.",
+     "no", "1:25", "confirmed", OSHRC,
+     "The homeowner had connected a portable generator to the house’s circuitry which caused electrical energy to "
+     "backfeed to the line Adams was splicing, energizing it. Adams was electrocuted when he cut the line",
+     "OSHRC Docket 06-0166 (Pike Electric), findings of fact. Same record: 'Pike was treating the power lines as "
+     "de-energized because Alabama Power Company had opened the switches inside the substation'. IEA T5-09 reason 3 "
+     "(S02) states the same hazard in general terms."),
+
+    ("S18",
+     "Line 12: 'If the beat goes missing, or the voltage starts changing, it switches itself off... click': the "
+     "inverter must trip on abnormal voltage or frequency and open its grid relay.",
+     "no", "1:37", "confirmed", CEA_CONS,
+     "over and under voltage trip functions if voltage reaches above 110% or below 80% respectively with a clearing "
+     "time upto two seconds; however, appropriate licensee may prescribe a narrower range of voltage for the purpose.",
+     "CEA reg. 11(6)(a). Reg. 11(6)(b): 'over and under frequency trip functions, if frequency reaches 50.5 Hz and "
+     "below 47.5 Hz with a clearing time upto 0.2 seconds'. IEA T5-09 calls these OVP/UVP and OFP/UFP (passive "
+     "detection). The 'click' is the grid relay opening (Solis manual: 'it automatically opens the relay between "
+     "itself and the grid'; Deye on-grid manual fault list: 'Check relays and AC voltage of relays.'). HUD CAUTION: "
+     "India's over-frequency trip is 50.5 Hz (a DISCOM may set it narrower), so any 'TRIP' frequency on screen must be "
+     "50.5 Hz or lower, never 50.6 or 50.7 Hz."),
+
+    ("S19",
+     "Line 12: 'Safety rules say it must switch off within two seconds': the Indian rule itself sets two seconds for "
+     "an island (on-screen ≤ 2 s).",
+     "yes", "1:37", "confirmed", CEA_GAZ,
+     "a function to prevent the distributed generation resource from contributing to the formation of an unintended "
+     "island, and cease to energise the electricity system within two seconds of the formation of an unintended "
+     "Island.",
+     "Gazette of India Extraordinary, Part III Sec. 4, 30 Sep 2013, page 10, CEA reg. 11(6)(e); unchanged by the 2019 "
+     "amendment (CBIP consolidated text). The Indian rule states exactly two seconds, so 'Safety rules' can stay (no "
+     "change to 'international safety standards' needed). 'Cease to energise' = stop feeding power = 'switch off'. "
+     "Two seconds is the maximum; real inverters usually trip sooner (not claimed). Tag: [CEA REG. 11(6)(e) | IEEE "
+     "1547 | IS 16169], CEA first for Indian viewers."),
+
+    ("S20",
+     "Line 12 (same two seconds): the international standard IEEE 1547-2018 also sets two seconds.",
+     "yes", "1:37", "confirmed", UNITIL,
+     "For an unintentional island in which the DER energizes a portion of the Area EPS through the PCC, the DER shall "
+     "detect the island, cease to energize the Area EPS, and trip within 2 s of the formation of an island.",
+     "Unitil / Massachusetts TSRG 'Default IEEE 1547-2018 Setting Requirements' (9 May 2022), quoting IEEE 1547-2018 "
+     "as amended by 1547a-2020, Clause 8.1.1. Independent: AEP 'DER Technical Interconnection and Interoperability "
+     "Requirements' (effective 1 Feb 2024), section 7.1: 'As required by IEEE Std 1547™-2018 Clause 8.1, ... trip "
+     "within 2.0 seconds of the formation of the island.' (https://docs.aep.com/docs/requiredpostings/"
+     "DERInterconnectionRequirements_UpdatedRev3_final_02-01-2024.pdf)."),
+
+    ("S21",
+     "Line 12 (same two seconds): the inverter islanding test IS 16169 / IEC 62116, compulsory for PV inverters sold "
+     "in India, passes an inverter only if it stops within 2 s.",
+     "yes", "1:37", "confirmed", BIS,
+     "An EUT is considered to comply with the requirements for islanding protection when each case of recorded "
+     "run-on time is less than 2 s or meets the requirements of local codes.",
+     "BIS test report format for IS 16169:2019 / IEC 62116:2014, clause 6.2 (bis.gov.in). Compulsory: pv magazine "
+     "India, 10 Apr 2019 (Uma Gupta): 'The Solar Photovoltaics Systems, Devices and Components Goods (Requirements for "
+     "Compulsory Registration) Order 2017 prohibits sales, import or distribution of goods that do not conform to "
+     "specified Indian standards—IS 16221 (Part 2): 2015 and IS 16169:2014 in the case of PV inverters.' "
+     "(https://www.pv-magazine-india.com/2019/04/10/mnre-issues-guidelines-for-approval-of-solar-inverters/). IS 16221 "
+     "(Part 2) is the inverter safety standard ('Safety of Power Converters for use in Solar Photovoltaic Power "
+     "Systems', same article), not the islanding test."),
+
+    ("S22",
+     "Line 13 (mechanism): when the power used on the cut-off section exactly matches the solar feeding it, the cut "
+     "changes neither voltage nor frequency, so the ordinary voltage and frequency checks cannot see it.",
+     "no", "1:50", "confirmed", IEA,
+     "If ∆P = ∆Q = 0 when the utility disconnects or opens, there will be insufficient change in the amplitude or "
+     "frequency of va to activate any of the standard over/under voltage or frequency protection devices. This "
+     "corresponds to a case in which the PV (inverter output) power production is matched to the load power "
+     "requirement, and the load has a unity power factor at the line frequency.",
+     "IEA T5-09 section 4.1.1.5. The same report: passive protection alone is 'generally considered to be "
+     "insufficient anti-islanding protection'. IS 16169 / IEC 62116 tests exactly this case: 'The test uses an RLC "
+     "load, resonant at the EUT nominal frequency (50 Hz or 60 Hz) and matched to the EUT output power.' (BIS TRF, "
+     "clause 6.1). The VO leaves out the reactive-power part of the match; acceptable simplification."),
+
+    ("S23",
+     "Line 13 VO wording: 'Say your house is using exactly what the panels make. Then the power cut changes nothing "
+     "— the box can't feel it.' (In this film the cut switches off the whole street, line 9.)",
+     "no", "1:50", "wrong", IEA,
+     "The NDZ is the range of local loads (that is, loads inside the potential island) for which the islanding "
+     "prevention method under consideration can be made to fail to detect islanding.",
+     "WRONG AS WORDED. The balance that hides a cut is between everything left on the cut-off section and all the "
+     "solar feeding it (IEA: ΔP and ΔQ are the power flowing through the switch that opened). Line 9 has the board "
+     "switch off the whole street, so the neighbours' loads stay wired to your solar box after the cut. If only your "
+     "house is balanced, their fans and lights pull the voltage down at once (IEA: 'If ∆P≠0, the amplitude of va will "
+     "change, and the OVP/UVP can detect the change'), and the ordinary voltage check trips the box: no tricky case. "
+     "FIX (re-record one sentence, same voice and settings): 'Say your whole street is using exactly what the solar "
+     "panels make.' Then keep 'Then the power cut changes nothing — the box can't feel it.' The fixed vo.txt copy "
+     "passes scripts/spoken_english_check.py (558 words). Picture: the balance scale must weigh the street's use "
+     "against all the panels' output, with zero flow at the transformer, not one house."),
+
+    ("S24",
+     "Lines 14-16: the box plays 'a little off-beat on purpose'; with the grid present the frequency is held, without "
+     "it the frequency keeps drifting until the frequency trip switches the box off (active anti-islanding).",
+     "no", "1:59", "confirmed", IEA,
+     "In this method, the waveform of the current injected into node “a” by the PV inverter is slightly distorted "
+     "such that there is a continuous trend to change the frequency. When connected to the utility it is impossible "
+     "to change the frequency.",
+     "IEA T5-09 section 4.2.4 (Frequency Bias / Active Frequency Drift). Same section: 'When disconnected from the "
+     "utility, the frequency of va is forced to drift up or down' and 'This process continues until the frequency has "
+     "drifted far enough from ω0 to be detected by the over/under frequency protection (OFP/UFP).' Real products do "
+     "this: Eastups EA-series grid-tie inverter manual, 'Anti-islanding protection: Shifting the frequency of the "
+     "inverter away from nominal conditions in the absence of a reference frequency (frequency shift)' "
+     "(https://en.eastups.com/u/cms/en/202009/15095607fk1j.pdf). Other inverters use other active tests (impedance or "
+     "reactive-power nudges), so the film shows one common method; HUD values ILLUSTRATIVE with the trip line at "
+     "50.5 Hz (S18)."),
+
+    ("S25",
+     "Line 17 'Once the box is off... Nothing comes out': with the inverter off, the panel circuit is open; the "
+     "voltage is at its maximum but no current flows, so the panels deliver zero power (P = V x I).",
+     "no", "2:21", "confirmed", ECM,
+     "the open circuit voltage (Voc) value occurs at the bottom right side of the curve. At this point, the voltage "
+     "is at its maximum, and current flow is zero.",
+     "EC&M, 'The Highs and Lows of Photovoltaic System Calculations', Mayfield (Renewable Energy Associates), 23 Jul "
+     "2012. HyperPhysics: 'P = VI Power = Voltage x Current' (http://hyperphysics.phy-astr.gsu.edu/hbase/electric/"
+     "elepow.html). Adani module manual: 'A solar array generates DC electricity when sunlight falls on the modules "
+     "and the inverter is in active mode.' On-screen 'V = Voc · I = 0 A · P = 0 W' is correct."),
+
+    ("S26",
+     "Line 18 'The sunlight still lands and just turns into heat — your panels are built for that': a module left at "
+     "open circuit in sun runs only a few degrees warmer than a working one, well inside its rated range.",
+     "no", "2:27", "confirmed", RUJA,
+     "Results showed the short-circuited module's temperature was 6.90 °C higher, and the open-circuited module's "
+     "temperature was 3.67 °C higher than the MPP module.",
+     "Osama, Tina, Gagliano, Jiménez-Castillo, Muñoz-Rodríguez, Solar Energy Materials and Solar Cells 287 (2025) "
+     "113625, doi 10.1016/j.solmat.2025.113625 (4-month outdoor test, Jaén, Spain). Rated range: Adani installation "
+     "manual 'Operating temperature -40°C to +85°C'. The industry NOCT rating is itself measured on 'open circuited "
+     "cells in a module' (Sinovoltaics, https://sinovoltaics.com/learning-center/quality/"
+     "normal-operating-cell-temperature-noct-definition-noct-definition/). 'Just turns into heat' is a fair "
+     "simplification (some light is reflected). Covers outage-length periods, not months of disconnection. If a "
+     "number is shown: '+3.7 °C (ONE STUDY)'."),
+
+    ("S27",
+     "Line 18 'But the panel wires still have voltage in them': lit panels are live even when nothing is connected or "
+     "the inverter is off.",
+     "no", "2:27", "confirmed", DMEGC,
+     "PV module connectors pass direct current (DC) when exposed to sunlight or other light sources. Contact with "
+     "electrically active parts of the module, such as terminals, can result in injury or death, irrespective of "
+     "whether or not the module and the other electrical equipment have been connected.",
+     "DMEGC module installation manual (Ver 202301). EC&M (S25): 'it is safe to assume that if there is ambient "
+     "light, the PV module has the ability to produce its full rated voltage.' Adani manual: 'On direct exposure to "
+     "Sunlight, PV module produces electricity, which can result in electric shock'. No panel-voltage number on "
+     "screen unless sourced; 'STILL LIVE' is right."),
+
+    ("S28",
+     "Line 18 'So don't touch them yourself — leave that to a trained person'.",
+     "no", "2:27", "confirmed", ADANI,
+     "It is recommended that all the solar module, module array and the DC combiner box should be handled by only "
+     "trained person.",
+     "Adani Solar PV module installation manual MSEL/MSPVL/IM02/2024. DMEGC manual: 'The installation and handling of "
+     "PV modules require professional skills and should only be performed by qualified professionals.'"),
+
+    ("S29",
+     "Line 19: to keep fans running in a power cut you need a different box, a hybrid inverter, which works with the "
+     "grid and with a battery.",
+     "no", "2:40", "confirmed", MERCOM,
+     "Hybrid inverters compatible with both solar modules and energy storage systems have been added",
+     "Mercom India, 28 Nov 2025 (Odisha net-metering rules now allow hybrid inverters). Solis S6 hybrid manual: 'The "
+     "S6 hybrid is capable of providing AC power to home loads using PV and battery power in the event of a grid "
+     "failure. This is known as backup power.' Battery: the same hybrid without a battery makes no AC in an outage "
+     "(S03), so 'with a battery' is the right definition. Other routes exist (an off-grid system, or a battery "
+     "inverter AC-coupled beside the existing on-grid box, which the Solis manual also describes), but each still "
+     "needs a battery-capable inverter, so 'a different box' holds. Not misleading."),
+
+    ("S30",
+     "Line 20: 'When the grid dies, a switch inside it first cuts your house off from the street. Then the battery "
+     "becomes the drummer, and the panels dance again.'",
+     "no", "2:49", "confirmed", SOLIS,
+     "When the inverter senses that the grid power has been lost, it automatically opens the relay between itself and "
+     "the grid. It keeps the relay closed to the backup, allowing it to supply AC power to the home loads as long as "
+     "power is available.",
+     "Solis S6-EH1P manual, section 4.4. Independent: Sungrow 3-phase Hybrid backup factsheet (2021): 'In case of a "
+     "grid failure the bypass switch inside the 3-phase Hybrid opens and all loads connected to the backup port will "
+     "get a seamless transition into backup mode. Only loads not connected to the backup port experience the black "
+     "out.' and 'Within less than 20 ms a bypass switch will open and up to 9.9 kW of loads connected to the backup "
+     "port will be supplied by the battery and PV.' CAVEAT: only the circuits wired to the backup output (e.g. fans "
+     "and lights) are cut off from the street and powered; the rest of the house stays dark unless the installer "
+     "wires the whole house to backup. Picture: show the backed-up fans coming back, not every appliance. Switchover "
+     "time on screen only with a model label (e.g. '< 20 MS · SUNGROW 3-PHASE'), or leave it out."),
+
+    ("S31",
+     "Line 20 'the battery becomes the drummer': in backup mode the battery-fed inverter makes its own A.C. timing "
+     "(grid-forming) instead of following the grid.",
+     "no", "2:49", "confirmed", DOE,
+     "More advanced grid-forming inverters can generate the signal themselves.",
+     "DOE page (S05). Same page: 'Solar-plus–battery storage systems rely on advanced inverters to operate without any "
+     "support from the grid in case of outages, if they are designed to do so.' Strictly the hybrid inverter, running "
+     "on the battery, sets the beat; the analogy is fine."),
+
+    ("S32",
+     "Line 21: 'A normal on-grid solar box, with no battery, has to go silent when the grid goes. That's by design.'",
+     "no", "2:58", "confirmed", CEA_CONS,
+     "a voltage and frequency sensing and time-delay function to prevent the distributed generation resource from "
+     "energising a de-energised circuit and to prevent the distributed generation resource from reconnecting with "
+     "electricity system unless voltage and frequency is within the prescribed limits and are stable for at least "
+     "sixty seconds; and",
+     "CEA reg. 11(6)(d), with 11(6)(e) (S19). It also means the box waits for at least sixty seconds of stable grid "
+     "before it restarts (useful if the film ever shows the return). Solis no-battery behaviour: S03."),
+
+    ("S33",
+     "Line 22 'If anyone offers to switch off this safety': some inverters expose an anti-islanding on/off setting, so "
+     "an installer could switch it off; doing so breaks the CEA rule.",
+     "no", "3:07", "confirmed", DEYE,
+     "Island: Anti-islanding protection",
+     "Deye SUN-(1-4)K-G04P1-EU on-grid inverter manual (June 2026): the 'Island' item (ON/OFF) sits in the "
+     "password-protected running-parameter menu. Switching it off breaks CEA reg. 11(6)(e), and CEA reg. 15(2) (2019 "
+     "amendment): 'The user may be disconnected from the grid by the licensee for non-compliance of any provision of "
+     "these regulations'. Never show the real menu or steps."),
+
+    ("S34",
+     "Line 22 'Because the lineman fixing your street is the one who gets the shock': back-fed power from a "
+     "customer's inverter has killed a lineman in India, even after he had switched off and earthed the line.",
+     "no", "3:07", "confirmed", GOAN,
+     "He said, Zambaulikar had taken all the precautions before embarking on his task such as putting off the main "
+     "supply and also temporarily earthing it but the 'back field' supply to the neutral line from the Fitness "
+     "Factory's inverter did him in.",
+     "The Goan, 20 Apr 2024, quoting Goa's Chief Electrical Engineer Stephen Fernandes (a commercial battery inverter "
+     "with no earthing, not rooftop solar, but the same back-feed hazard). U.S. case: OSHRC 06-0166 (S17). It is a "
+     "risk, not a certainty (crews also test and earth lines, IEA T5-09), but the VO's line names the person at risk "
+     "and is acceptable."),
+]
+
+
+def norm(s: str) -> str:
+    s = unicodedata.normalize("NFKC", s)
+    for a, b in [("’", "'"), ("‘", "'"), ("“", '"'), ("”", '"'), ("­", ""), ("–", "-"), ("—", "-"),
+                 ("∆", "Δ"), ("�", "'"), ("ﬁ", "fi"), ("ﬂ", "fl")]:
+        s = s.replace(a, b)
+    s = re.sub(r"\s+", " ", s)
+    return s.strip().lower()
+
+
+def columns(text: str):
+    """Rebuild left and right columns of a two-column -layout extraction."""
+    left, right = [], []
+    for line in text.splitlines():
+        parts = re.split(r"\s{3,}", line.strip(), maxsplit=1)
+        left.append(parts[0])
+        if len(parts) > 1:
+            right.append(parts[1])
+    return " ".join(left), " ".join(right)
+
+
+def found(url: str, quote: str) -> bool:
+    q = norm(quote)
+    for rel in LOCAL[url]:
+        p = DL / rel
+        if not p.exists():
+            continue
+        t = p.read_text(encoding="utf-8", errors="replace")
+        cands = [t, *columns(t)]
+        if any(q in norm(c) for c in cands):
+            return True
+    return False
+
+
+def main():
+    bad = []
+    for r in ROWS:
+        if not found(r[5], r[6]):
+            bad.append(r[0])
+    with OUT.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
+        w.writerow(["id", "claim", "on_screen", "timecode", "status", "source_url", "source_quote", "note"])
+        for r in ROWS:
+            w.writerow(r)
+    print(f"wrote {len(ROWS)} rows to {OUT}")
+    print("quotes not found verbatim in local source text:", bad or "none")
+
+
+if __name__ == "__main__":
+    main()
