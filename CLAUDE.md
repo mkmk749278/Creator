@@ -190,7 +190,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - **Every review is independent (owner, 2026-10-21: "Always take review from independent sessions"; PLAYBOOK §4a-12).**
   Every review of our own work goes to a new cloud session with no repo attached, never only to the session that made
   it: scripts and audio, visual plans, lookdev frames, storyboards, rendered cuts, thumbnails and the YouTube package.
-  Frames go into the prompt as small base64 JPGs. Save each report as `projects/<slug>/review_<what>_vN.md`.
+  Frames: commit small preview JPGs and give their `raw.githubusercontent.com` URLs (the repo is public). Save each
+  report as `projects/<slug>/review_<what>_vN.md`.
 - **Recording blocks go in the chat (owner, 2026-10-15):** whenever a VO is ready or changes, paste every block in the reply,
   one fenced code block each (tap to copy on the phone), headed with block number, voice settings and the file name to save.
   Files in Drive/repo are extra, never instead (PLAYBOOK §4a-2).
