@@ -1,36 +1,40 @@
-Two in the afternoon. Full sun on your roof... and the power goes.
+Two in the afternoon. Full sun on your rooftop solar panels... and suddenly, a power cut.
 
-Your panels are full of power. But your fans still stop.
+The sun is still shining. But your fans stop.
 
-Strange, right? I'll show you why, where that sunlight goes, and the one switch that fixes it.
+Why does solar quit exactly when you need it? I'll show you why, where that sunlight goes, and what keeps your fans running.
 
-Your inverter has one job. It turns the panels' steady current into the fifty hertz power your pole gives you.
+First, which box are we talking about? Not the battery inverter under your stairs. I mean the solar box on your wall, wired to your panels.
 
-But it can't make that beat by itself. Think of the grid as a drummer... and your inverter as a dancer that only follows the drum.
+Your panels give one-way current. Your house runs on current that swings back and forth — fifty times a second. The solar box turns one into the other.
 
-Fifty times a second, the grid swings. The box watches every swing and pushes its current out in step.
+But it can't make that swing by itself. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.
 
-Your house takes what it needs. The extra flows out through your meter, to the street wire and the transformer on the pole.
+On a normal day, it follows every beat. Your house takes what it needs, and the extra goes out through your meter... to the street wire, and the transformer on the pole.
 
-Now the power company cuts your line.
+Now the electricity board cuts your line.
 
-Here's the catch. If your inverter kept pushing, that dead wire would be alive again. The pole box would step your two hundred thirty volts up to about eleven thousand — on a wire a worker is about to touch.
+Here's the catch. If your solar box kept pushing, that dead wire would be alive again.
 
-So the inverter is built to notice. Is the beat missing? Is the voltage drifting? It stops and opens its relay... click. The rule gives it two seconds, at most.
+And the transformer would take your two-thirty volts and push it up to about eleven thousand — on a line the lineman thinks is dead.
 
-What if your house uses exactly what your panels make? Many of them push their own beat off a tiny bit, on purpose. The grid pulls it back. No grid... it keeps drifting, and the box trips.
+So the solar box is built to notice. Beat missing, voltage drifting? It cuts itself off inside... click. The safety rules give it two seconds, at most.
 
-So what happens to your panels? The circuit is open, so no current flows. Power is voltage times current. Zero current... means zero power.
+But what if your house is using exactly what your panels make, so nothing seems to change? The solar box has a trick. It keeps pushing its own beat a little bit off, on purpose.
 
-The sunlight still lands. It just turns into heat, and the panels are fine sitting like that.
+With the grid there, the grid pulls it back. With the grid gone, nobody does. The beat drifts away... and the box switches off. Makes sense?
 
-So how do you keep your fans on? A hybrid inverter with a battery.
+So what happens to your panels? The path is open, so no current can flow. No current flowing... means no power coming out.
 
-When the grid dies, a switch inside first cuts your house off from the street. Then the battery becomes the drummer, and the panels dance again.
+The sunlight still lands. It just turns into heat, and your panels are built to sit in the sun like that.
 
-Here's the rule. An on-grid inverter must go silent when the grid goes.
+So how do you keep your fans running? You need a different box — a hybrid inverter, with a battery.
 
-Break it... and the man fixing your street takes the shock.
+When the grid dies, a switch inside it first cuts your house off from the street. Then the battery becomes the drummer, and the panels dance again.
+
+Here's the rule. A solar box without a battery must go silent when the grid goes.
+
+Break it... and the lineman fixing your street takes the shock.
 
 Your solar never failed. It just lost its drummer.
 
