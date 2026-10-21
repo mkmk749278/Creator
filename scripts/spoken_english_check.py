@@ -19,7 +19,10 @@ from wordfreq import zipf_frequency
 # Words everyday Indian viewers know even though they are rare in global English text.
 INDIAN_OK = {"rupee", "rupees", "lakh", "lakhs", "crore", "crores", "kirana", "chai", "salary", "emi", "upi", "qr",
              "debited", "credited", "shopkeeper", "recharge", "aadhaar", "pan", "kyc", "atm", "otp", "metro", "auto",
-             "rickshaw", "scooty", "tiffin", "paise", "pin", "app", "apps", "paytm", "phonepe", "gpay", "bhim"}
+             "rickshaw", "scooty", "tiffin", "paise", "pin", "app", "apps", "paytm", "phonepe", "gpay", "bhim",
+             # Indian places and brands every viewer knows, and the film's own subject words, said and shown (2026-10-21)
+             "pune", "kerala", "odisha", "nadu", "andhra", "visakhapatnam", "bajaj", "chetak", "chetaks", "scooter",
+             "scooters", "magnet", "magnets", "earths"}
 # Fancy words that make narration sound like a textbook; say the plain word instead.
 FANCY = {"utilize": "use", "utilise": "use", "commence": "start", "facilitate": "help", "subsequently": "then",
          "approximately": "about", "numerous": "many", "regarding": "about", "phenomenon": "thing", "conundrum": "puzzle",

@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:transparent}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script></head><body>
+<script type="module">
+// Thumbnail hero: a nickel-plated NdFeB block magnet (illustration of a generic part), lit by a studio HDRI.
+import * as THREE from "three";
+import { RGBELoader } from "three/addons/loaders/RGBELoader.js";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+const W = 1400, H = 1050;
+const r = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+r.setSize(W, H); r.setPixelRatio(1); r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = 0.92;
+r.outputColorSpace = THREE.SRGBColorSpace; document.body.appendChild(r.domElement);
+const scene = new THREE.Scene();
+const pm = new THREE.PMREMGenerator(r);
+const hdr = await new RGBELoader().loadAsync("/library/hdri/studio_small_09_1k.hdr");
+scene.environment = pm.fromEquirectangular(hdr).texture;
+const mat = new THREE.MeshPhysicalMaterial({ color: 0xbfc3c9, metalness: 1, roughness: 0.12, clearcoat: 0.6, clearcoatRoughness: 0.08 });
+const big = new THREE.Mesh(new RoundedBoxGeometry(3.0, 1.0, 1.6, 6, 0.07), mat);
+big.rotation.set(0.55, -0.78, 0.18); scene.add(big);
+const key = new THREE.DirectionalLight(0xfff1dd, 2.2); key.position.set(-4, 6, 5); scene.add(key);
+const rim = new THREE.DirectionalLight(0x8fc3ff, 3.0); rim.position.set(5, 2, -4); scene.add(rim);
+const cam = new THREE.PerspectiveCamera(30, W / H, 0.1, 100); cam.position.set(0, 0.9, 6.4); cam.lookAt(0, 0, 0);
+r.render(scene, cam); window.__done = true;
+</script></body></html>

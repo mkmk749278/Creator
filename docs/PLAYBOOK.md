@@ -608,6 +608,12 @@ says. Rules:
   data. Never advise dodging a valid debt; the defence is knowing your rights and settling on paper.
 
 ### 4a-9. The 180-second hyper-visual explainer (owner, 2026-10-20)
+**Status (owner, 2026-10-21): no longer the main format.** After the first 180-second film (UPI) and the topic
+research (`docs/research/reports/India content edge 2026-10-21.md`: winners on India topics run 9–16 minutes; our only
+pushed films are 9–11 minute India-capability documentaries), the owner said "go back to documentaries". Use this section
+for the hook, chapter mechanics, HUD and Shorts cut from documentaries, and in full only when the owner asks for a
+180-second film.
+
 *Why (owner):* a 10-minute film that viewers leave at 2 minutes shows YouTube about 20% average percentage viewed (APV)
 and loses browse reach; the same 2 minutes on a 2.5-minute film is about 75–85% APV, which YouTube pushes. Long films also
 invite intros, history and padding. Our own data agrees (§4a-7): two thirds of the viewers we lose are gone by 0:45, and
