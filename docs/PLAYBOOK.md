@@ -1501,6 +1501,12 @@ animated item on the word that names it (`P(line, "phrase")`), give every page a
 then run `build/review_av.py` (one frame per second with the words heard in that second) and read **every** sheet. Fix
 every frame that does not show what is being said, is empty, unreadable, covered or off-frame, rebuild, and review again.
 Only then send the cut, with the review summary.
+**Measure phrase times, don't guess them from the pause list (film 36, 2026-10-21).** *Why:* mapping silencedetect
+gaps to phrases by eye put S03 of film 36 a phrase early (1–2 s) from 0:38 on, and the error only showed when the burned
+captions disagreed with the picture. `projects/solar-anti-islanding/tools/make_captions.py` places each punctuation
+phrase boundary on the real pause where the count of loudness-envelope syllable peaks matches the text's syllables (DP,
+in order): use its phrase starts as the cue sheet for every scene, before animating. A scene already built on guessed
+cues can be re-timed with `K.warp(tl, oldCues, newCues)` (`video/solar36/_shared/kit.js`).
 
 Contact-sheet the cut (`scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --every 2`: 3×3 timecoded tiles, 1536 px)
 and go shot by shot; write `review.md` (issue → shot IDs → fix). In a session, read the sheets yourself at `high` effort or

@@ -15,6 +15,7 @@ window.SCENE = function (tl, ctx) {
   K.gridDead(tl, 0);
   tl.set("#slowTag", { opacity: 0 }, 0).set("#boxLed", { attr: { fill: "#f85149" } }, 0).set("#dholBadge", { opacity: 0.35 }, 0);
   K.tag(tl, 0, D, "ILLUSTRATION");
+  tl.set("#meter text, #meter > rect:nth-of-type(4)", { opacity: 0 }, 0).to("#meter text, #meter > rect:nth-of-type(4)", { opacity: 1, duration: 0.3 }, 3.0);  // cut off by the foreground in the first close shot
 
   // ---- 0:00 the fans are still dead ----
   const fan = el("g", { id: "wFan" }, world);

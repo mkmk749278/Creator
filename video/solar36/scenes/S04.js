@@ -47,7 +47,7 @@ window.SCENE = function (tl, ctx) {
   K.label(tl, 7.4, 11.3, "DANCER", 690, 640).classList.add("green");
 
   // ---- 11.64 "On a normal day, it follows every beat": the two traces lie on top of each other ----
-  const sc = el("g", { id: "nScope", opacity: 0 }, svg);
+  const sc = el("g", { id: "nScope", opacity: 0, transform: "translate(1900 0) scale(0.9) translate(-1900 0)" }, svg);   // kept clear of the drum badge
   el("rect", { x: 1330, y: 230, width: 540, height: 205, rx: 14, fill: "#161b22", stroke: "#30363d", "stroke-width": 2 }, sc);
   el("rect", { x: 1352, y: 250, width: 22, height: 22, fill: "#58a6ff" }, sc); el("text", { x: 1384, y: 272, class: "x-tag cyan" }, sc).textContent = "GRID";
   el("rect", { x: 1500, y: 250, width: 22, height: 22, fill: "rgba(255,255,255,0.7)" }, sc); el("text", { x: 1532, y: 272, class: "x-tag" }, sc).textContent = "BOX";
