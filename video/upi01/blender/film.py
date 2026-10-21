@@ -462,6 +462,7 @@ STILLS = {
     "S35b_lamps": still("mid", (0.1, -1.4, 1.75), (0.0, 0.16, 1.72), 50, "failed", "declined"),
     "S35c_lamps": still("mid", (-0.35, -1.5, 1.8), (0.0, 0.16, 1.72), 50, "processing", "dropped"),
     "S36_rule": still("mid", (-0.9, -2.6, 1.3), (0.2, 0.0, 1.35), 40, "processing", "dropped"),
+    "BG_room": still(None, (0.3, -3.2, 0.32), (0.0, 0.0, 1.0), 22),   # blurred in the edit: backdrop for 2D scenes
     "S37b_twice": still(None, (2.45, -2.1, 1.85), (2.15, -0.6, 1.62), 45, extra=_twice),
 }
 
