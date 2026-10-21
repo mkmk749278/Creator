@@ -27,7 +27,7 @@
     border: 1px solid var(--bp-grid); border-radius: 12px; color: var(--bp-readout); font: 800 34px Inter, Arial, sans-serif; letter-spacing: 0.05em; opacity: 0.9; }
   #hud .row { display: flex; justify-content: space-between; gap: 30px; line-height: 56px; font-variant-numeric: tabular-nums; border-radius: 6px; padding: 0 6px; }
   #hud .k { color: #b6bec8; font-weight: 600; }
-  #hud .v.cyan { color: var(--bp-signal); } #hud .v.green { color: var(--bp-verified); } #hud .v.amber { color: var(--bp-pressure); }
+  #hud .v.cyan { color: var(--bp-signal); } #hud .v.green { color: var(--bp-verified); } #hud .v.amber { color: var(--bp-pressure); } #hud .v.red { color: var(--bp-fail); }
   #title { position: absolute; left: 0; right: 0; top: 64px; text-align: center; opacity: 0; }
   #title span { display: inline-block; padding: 10px 26px; background: rgba(13,17,23,0.80); color: var(--bp-readout); border-radius: 10px;
     font: 800 40px Inter, Arial, sans-serif; letter-spacing: 0.12em; }
