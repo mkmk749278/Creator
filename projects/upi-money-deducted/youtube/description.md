@@ -25,3 +25,13 @@ You will see where a stuck payment waits, the R.B.I. deadline to get it back (1 
 3:34 UPI Help and complaints
 4:02 Next video
 ```
+
+## Hashtags (owner asked 2026-10-21; paste at the very end of the description, the first 3 show above the title)
+```
+#UPI #UPIPaymentFailed #RBI #MoneyDeducted #UPIRefund #PhonePe #GooglePay #Paytm #DigitalPayments #BePracticalWithKishore
+```
+
+## Tags (YouTube Studio "Tags" box)
+```
+upi payment failed but money deducted, upi money debited but payment failed, upi payment processing, upi refund, upi failed transaction refund, rbi tat rule, rbi upi refund time, t+1 refund, upi compensation 100 per day, upi pending payment, phonepe payment failed money deducted, google pay payment failed money deducted, paytm payment failed money deducted, upi complaint, npci upi help, be practical with kishore
+```
