@@ -4,8 +4,10 @@ Two channels' worth of video work lives here:
 - **Be Practical with Kishore**: narrated documentaries and explainers (Telugu and English).
 - **Phone Consensus**: 4K phone reviews built from what 15+ trusted reviewers said.
 
-Video length on both channels is set by the topic, never by a fixed target (owner, 2026-10-09), except the 180-second
-engineering explainers below, which run 2–3 minutes (owner, 2026-10-20).
+Video length on both channels is set by the topic, never by a fixed target (owner, 2026-10-09). **The main format is the
+narrated documentary again, about 9–14 minutes as a guide** (owner, 2026-10-21: "go back to documentaries"; research in
+`docs/research/reports/India content edge 2026-10-21.md`): the "India's Missing Pieces" series, with the thumbnail built to
+win the click first, narration in the simplest words, and the best visuals.
 
 This file holds the rules every session must follow. **`docs/PLAYBOOK.md` is the only other instruction file**: full specs,
 how-tos, measurements, the reason behind each rule, and recommendations. Read the parts that apply before starting work.
@@ -82,8 +84,10 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - Known gotchas (video wrappers, negative tweens, `tl.call`, fonts, SVG filters): PLAYBOOK §10. Realism recipe: §9.
 
 ## Documentary rules (Be Practical with Kishore). Full spec: PLAYBOOK Part B
-- **180-second hyper-visual explainers (owner, 2026-10-20; PLAYBOOK §4a-9, verbatim in Part G).** The channel's main
-  format now: the 50 films in `config/roadmap-180s.yaml`, made and uploaded in that order. **about 320–440 words as a guide, never a cap** (owner, 2026-10-20: "don't stick to 440 words; the narration should be good, that's our main priority"),
+- **180-second hyper-visual explainers (owner, 2026-10-20; PLAYBOOK §4a-9, verbatim in Part G).** **No longer the main
+  format (owner, 2026-10-21).** Their hook, one-mechanism chapters, HUD and blueprint cross-sections now go inside
+  documentaries and into Shorts; the 50 roadmap films in `config/roadmap-180s.yaml` are a bank of Shorts and chapters.
+  The rules here apply only when the owner asks for a 180-second film. **about 320–440 words as a guide, never a cap** (owner, 2026-10-20: "don't stick to 440 words; the narration should be good, that's our main priority"),
   **one mechanism** per film (no history, market or policy), answering the viewer's own three questions with machinery one
   layer deeper than common knowledge, from primary documents (owner, 2026-10-20: "no technical depth, nothing cleared";
   §4a-9 rule 2), six phases: 0:00–0:10 zero-buffer hook (a friction point
