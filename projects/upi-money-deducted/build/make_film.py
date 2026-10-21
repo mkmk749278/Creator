@@ -99,7 +99,7 @@ phone(0.0, 7.0, 1240, 60, '<div class="wall"></div><div class="clock">9:41</div>
       + scr(head("Paying") + PAYEE + '<div class="amt">₹840</div><div class="stat"><div class="spin"></div><div class="t" style="color:#b7791f">Payment processing</div>'
             '<div class="s">Waiting for confirmation from the bank</div></div>'
             + sms(4.5, None, '<b>₹840.00 debited</b> from A/c XX4521 to Sharma Kirana Store.', ""), 4.45, None), rot=-4)
-chip("₹840 debited", 0.4, 4.4, 140, 420, "red", "xl", "pop")
+chip("₹840 debited", 0.4, 4.4, 140, 510, "red", "xl", "pop")
 shot(4.4, 7.0, "kirana_soft2", "left", "ILLUSTRATIVE FOOTAGE", warm=True)           # "Your U.P.I. app says — processing."
 chip("Processing", 4.6, 7.0, 360, 430, "amber", "", "pop", "⧗")
 shot(7.0, 9.75, "SB_off", "in", "ILLUSTRATION", warm=True)                          # "And the shop's soundbox? Silent."
@@ -111,7 +111,7 @@ shot(11.85, 15.0, "kirana_soft3", "slow", "SIMULATED SCREEN", warm=True)
 phone(11.85, 15.0, 725, 60, scr(head("Pay again?") + PAYEE + '<div class="amt">₹840</div>'
       + '<div class="btn">PAY ₹840</div>' , 11.85, None), fx="up")
 el('<div class="ring" style="left:870px;top:820px;width:180px;height:180px" ' + attrs(12.0, 15.0, "pop") + "></div>", 12.0, 15.0)
-chip("Don't pay again", 12.0, 15.0, 120, 380, "red", "", "pop", "✋")
+chip("Don't pay again", 12.0, 15.0, 120, 470, "red", "", "pop", "✋")
 chip("Not lost", 13.3, 15.0, 1340, 380, "green", "", "pop")
 # "In a few minutes, you'll know exactly where it is, when it comes back, and the one mistake that makes people pay twice."
 shot(15.0, 18.4, "street_soft", "right", "ILLUSTRATIVE FOOTAGE")
@@ -130,7 +130,7 @@ phone(22.0, 24.55, 725, 60, scr('<div class="pin" style="text-align:center"><div
 for k, (x, y) in enumerate([(110, 640), (330, 750), (220, 860), (110, 750), (330, 640), (220, 970)]):
     el(f'<div class="tap" style="left:{725 + 16 + x}px;top:{60 + 16 + y}px" {attrs(22.45 + 0.24 * k, None, "tap")}></div>', 22.45 + 0.24 * k)
 shot(24.55, 29.55, "B09")                                                             # "First, your bank takes the money out..."
-lbl("Step 1 · Debit", 25.0, 29.4, 120, 860, "cyan")
+lbl("Step 1 · Debit", 25.0, 29.4, 120, 740, "cyan")
 shot(29.55, 35.6, "S10_board", "in")                                                  # "Then N.P.C.I. steps in. It's not your app..."
 for k, (c, g) in enumerate([("#3b5bdb", "₹"), ("#2f9e44", "P"), ("#e8590c", "U"), ("#7048e8", "B"), ("#0c8599", "A"), ("#c2255c", "W")]):
     x0, y0 = 160 + (k % 3) * 150, 260 + (k // 3) * 150
@@ -141,25 +141,25 @@ cite("[WORLD BANK | UPI CASE STUDY 2021]", 29.7, 35.6)
 shot(35.6, 40.3, "B11")                                                               # "It calls the shop's bank and says, please add..."
 chip("Please add ₹840", 37.4, 40.3, 1150, 250, "cyan", "sm", "pop", "☎")
 shot(40.3, 42.9, "B12part")
-chip("Like a phone call", 40.6, 44.0, 120, 860, "cyan", "sm", "up", "☎")                                                           # "...a phone call. And like every phone call in India..."
-shot(42.9, 47.2, "B12_last", "none")                                                  # "...three things can happen." (lamps light in 2D)
-for k, (x, y, col, word) in enumerate([(372, 711, "green", "Success"), (960, 729, "red", "Failed"), (1635, 747, "amber", "Processing")]):
+chip("Like a phone call", 40.6, 44.0, 120, 740, "cyan", "sm", "up", "☎")                                                           # "...a phone call. And like every phone call in India..."
+shot(42.9, 47.2, "B12_last", "slow")                                                  # "...three things can happen." (lamps light in 2D)
+for k, (x, y, col, word) in enumerate([(360, 715, "green", "Success"), (960, 733, "red", "Failed"), (1650, 751, "amber", "Processing")]):
     el(f'<div class="glow g-{col}" style="left:{x - 70}px;top:{y - 70}px" {attrs(44.0 + 0.8 * k, 47.2, "fade", 0.2)}></div>', 44.0 + 0.8 * k, 47.2)
     lbl(word, 44.1 + 0.8 * k, 47.2, x - 80, y + 70, col, "up")
 # ---- SUCCESS / FAILED
 shot(47.2, 48.1, "L_calling", "in")                                                  # "One, the shop's bank picks up..."
 shot(48.1, 53.0, "L_success", "in", origin="80% 45%")                                 # "...done, the shop got it — that's success."
 el(f'<div class="flash" style="background:rgba(63,185,80,.35);z-index:16" {attrs(48.1, None, "flash")}></div>', 48.1)
-chip("1", 47.3, 53.0, 120, 250, "green", "xl", "pop")
+chip("1", 47.3, 53.0, 120, 340, "green", "xl", "pop")
 chip("Success", 51.6, 53.0, 260, 266, "green", "", "pop", "✓")
 shot(53.0, 54.2, "L_calling", "out")                                                 # "Two, the shop's bank picks up and says, sorry..."
 shot(54.2, 60.7, "L_failed", "in", origin="70% 50%")                                  # "...we can't take this... that's failed."
 el(f'<div class="flash" style="background:rgba(248,81,73,.35);z-index:16" {attrs(54.2, None, "flash")}></div>', 54.2)
-chip("2", 53.1, 60.7, 120, 250, "red", "xl", "pop")
+chip("2", 53.1, 60.7, 120, 340, "red", "xl", "pop")
 chip("Failed", 59.0, 60.7, 260, 266, "red", "", "pop", "✕")
 shot(60.7, 68.3, "L_failed", "zoomhome", origin="14% 52%")                          # "Failed sounds scary... comes back on its own."
-chip("Clear answer", 62.0, 64.0, 120, 250, "red", "sm", "pop")
-chip("Comes back by itself", 64.4, 68.3, 120, 250, "green", "sm", "pop", "↩")
+chip("Clear answer", 62.0, 64.0, 120, 340, "red", "sm", "pop")
+chip("Comes back by itself", 64.4, 68.3, 120, 340, "green", "sm", "pop", "↩")
 cite("[NPCI UPI CIRCULAR | 2026]", 64.4, 68.3)
 shot(68.3, 73.6, "kirana_soft2", "push", "SIMULATED SCREEN", warm=True, media_start=2.5)   # "So if it says failed, you can pay again."
 phone(68.3, 73.6, 1240, 60, scr(head("Payment") + PAYEE + '<div class="stat"><div class="ic" style="background:#d63a3a">✕</div><div class="t" style="color:#c92a2a">Payment failed</div>'
@@ -170,13 +170,13 @@ chip("Simple?", 71.9, 73.6, 160, 560, "ink", "sm", "pop")
 # ---- PROCESSING
 shot(73.6, 76.3, "L_calling", "slow")                                                # "Three. The troublemaker. N.P.C.I. calls..."
 shot(76.3, 82.5, "L_drop", "none", media_start=0.0)                                   # "...the line goes quiet. Hello?... Hello?... Call dropped." (motion test)
-chip("3", 73.8, 82.5, 120, 250, "amber", "xl", "pop")
+chip("3", 73.8, 82.5, 120, 340, "amber", "xl", "pop")
 chip("Hello?", 79.6, 81.5, 1250, 300, "ink", "sm", "pop")
 chip("Hello?", 80.6, 81.5, 1350, 400, "ink", "sm", "pop")
 cite("[NPCI UPI CIRCULAR | 2026]", 76.0, 82.5)
 shot(82.5, 87.2, "S18_slot840", "in", flick=0.42, src_b="S18_slot0")                  # "Did the shop's bank add the money...? Nobody knows yet."
 chip("Shop's balance: ₹0 or ₹840?", 82.7, 87.2, 760, 760, "amber", "sm", "pop")
-chip("Nobody knows yet", 85.9, 87.2, 120, 860, "amber", "sm", "up")
+chip("Nobody knows yet", 85.9, 87.2, 120, 740, "amber", "sm", "up")
 shot(87.2, 90.8, "hands_soft", "slow", "SIMULATED SCREEN", media_start=2.0)          # "That's the processing you see — some apps call it pending."
 phone(87.2, 90.8, 1240, 60, scr(head("Payment") + PAYEE + '<div class="amt">₹840</div><div class="stat"><div class="spin"></div><div class="t" style="color:#b7791f">Pending</div>'
       '<div class="s">We are checking with the bank</div></div>', 87.2, None), rot=-3)
@@ -184,8 +184,8 @@ chip("Pending = Processing", 88.6, 90.8, 140, 440, "amber", "", "pop")
 cite("[NPCI | UPI HELP GUIDELINES]", 88.6, 90.8)
 # ---- AT THE COUNTER
 shot(90.8, 97.6, "counter", "push", "ILLUSTRATIVE FOOTAGE", warm=True)             # "So right there at the counter, don't pay again. Ask... bank S.M.S..."
-chip("Don't pay again", 91.3, 93.6, 120, 300, "red", "", "pop", "✋")
-chip("Check bank S.M.S.", 93.7, 97.6, 120, 300, "cyan", "", "pop")
+chip("Don't pay again", 91.3, 93.6, 120, 390, "red", "", "pop", "✋")
+chip("Check bank S.M.S.", 93.7, 97.6, 120, 390, "cyan", "", "pop")
 chip("Not the soundbox", 95.4, 97.6, 120, 440, "slate", "sm", "pop")
 phone(93.7, 97.6, 1290, 80, '<div class="wall"></div>' + sms(93.9, None, "<b>Checking…</b> Shop's bank S.M.S. inbox", frm="SHOP'S PHONE"), rot=3)
 shot(97.6, 101.0, "kirana_soft3", "push", "SIMULATED SCREEN", warm=True, media_start=2.0)   # "And take a screenshot of your payment..."
@@ -200,26 +200,27 @@ phone(104.7, 107.4, 1120, 60, '<div class="wall"></div><div class="clock" style=
 chip("Received", 102.4, 107.4, 400, 820, "green", "sm", "pop", "✓")
 chip("Nothing yet", 105.8, 107.4, 1210, 820, "amber", "sm", "pop", "⧗")
 # "Show them your screenshot and say — it's stuck, not lost. If it reaches you... If not, it comes back to me."
-shot(107.4, 116.6, "kirana_soft", "push", "SIMULATED SCREEN", warm=True, media_start=9.0)
+shot(107.4, 111.4, "kirana_soft", "push", "SIMULATED SCREEN", warm=True, media_start=9.0)
+shot(111.4, 116.6, "kirana_soft2", "slow", "SIMULATED SCREEN", warm=True, media_start=7.0)
 phone(107.4, 116.6, 1240, 60, scr(head("Payment") + PAYEE + '<div class="amt">₹840</div><div class="stat"><div class="spin"></div><div class="t" style="color:#b7791f">Processing</div>'
       '<div class="s">Screenshot saved · UPI Ref 4271 8830 1265</div></div>', 107.4, None), rot=-3)
-chip("You → shopkeeper", 107.6, 116.6, 120, 250, "ink", "sm", "pop", "💬")
-chip("Stuck, not lost", 109.6, 111.3, 120, 400, "amber", "", "pop")
-chip("Reaches you → S.M.S.", 111.4, 113.6, 120, 400, "green", "", "pop")
-chip("If not → back to me", 113.7, 116.6, 120, 400, "cyan", "", "pop", "↩")
+chip("You → shopkeeper", 107.6, 116.6, 120, 340, "ink", "sm", "pop", "💬")
+chip("Stuck, not lost", 109.6, 111.3, 120, 490, "amber", "", "pop")
+chip("Reaches you → S.M.S.", 111.4, 113.6, 120, 490, "green", "", "pop")
+chip("If not → back to me", 113.7, 116.6, 120, 490, "cyan", "", "pop", "↩")
 # ---- WHERE IS IT
 shot(116.6, 119.5, "S24_where", "in")                                                 # "So where is your money right now?" (music silent 1.5 s before)
-chip("Where is ₹840?", 116.9, 119.5, 120, 250, "amber", "", "pop")
+chip("Where is ₹840?", 116.9, 119.5, 120, 340, "amber", "", "pop")
 shot(119.5, 124.6, "S25a_hold", "in")                                                 # "...N.P.C.I. doesn't cancel the payment — it puts it on hold."
-chip("Not cancelled", 120.6, 124.6, 120, 250, "ink", "sm", "pop")
+chip("Not cancelled", 120.6, 124.6, 120, 340, "ink", "sm", "pop")
 chip("On hold", 123.2, 124.6, 900, 640, "amber", "", "pop", "⏸")
 cite("[NPCI UPI CIRCULAR | 2026]", 119.7, 131.4)
 shot(124.6, 129.6, "S25b_hold", "right")                                              # "...stuck between your bank and the shop's bank."
-lbl("Your bank", 125.4, 129.6, 120, 860, "slate")
-lbl("Shop's bank", 126.6, 129.6, 1440, 860, "slate")
+lbl("Your bank", 125.4, 129.6, 120, 740, "slate")
+lbl("Shop's bank", 126.6, 129.6, 1440, 740, "slate")
 chip("Between banks", 127.6, 129.6, 760, 250, "amber", "sm", "pop")
-shot(129.6, 131.4, "S25c_hold", "in")                                                 # "Not lost — just waiting."
-chip("Not lost · just waiting", 129.7, 131.4, 120, 860, "green", "sm", "up")
+shot(129.6, 131.4, "S24_where", "zoomhome", origin="66% 62%")                                                 # "Not lost — just waiting."
+chip("Not lost · just waiting", 129.7, 131.4, 120, 740, "green", "sm", "up")
 # ---- THE ANSWER
 shot(131.4, 138.8, "BG_soft", "slow")                                                # "Now the shop's bank has to answer one simple question..."
 el(f'<div class="ledger" style="left:360px;top:150px;width:1200px" {attrs(131.6, 141.4, "up", 0.5)}><div class="lh">SHOP&#39;S BANK · NEXT DAY</div>'
@@ -234,8 +235,9 @@ cite("[NPCI | UPI OC 213]", 131.6, 147.0)
 shot(138.8, 141.4, "BG_soft", "in")                                                  # "Yes? Then the shop has your money..."
 el(f'<div class="stampmark c-green" style="left:1150px;top:250px" {attrs(138.95, 141.4, "stamp", 0.18)}>YES</div>', 138.95, 141.4)
 chip("Into shop's account", 139.7, 141.4, 360, 820, "green", "sm", "pop", "→")
-shot(141.4, 143.1, "SB_off", "in", warm=True)                                         # "...even though the soundbox stayed silent."
-chip("Soundbox silent", 141.6, 143.1, 1180, 330, "slate", "sm", "pop", "🔇")
+shot(141.4, 143.1, "BG_soft", "in")                                                  # "...even though the soundbox stayed silent."
+phone(141.4, 143.1, 1240, 60, '<div class="wall"></div>' + sms(141.5, None, '<b>₹840.00 received</b> in A/c XX7790. UPI Ref 4271 8830 1265.', frm="SHOP'S BANK · SMS", when="next day"), rot=-2)
+chip("Soundbox stayed silent", 141.6, 143.1, 120, 420, "slate", "sm", "pop", "🔇")
 shot(143.1, 147.0, "BG_soft", "out")                                                  # "No? Then it comes back to your bank, and into your account."
 el(f'<div class="stampmark c-red" style="left:1180px;top:250px" {attrs(143.25, 147.0, "stamp", 0.18)}>NO</div>', 143.25, 147.0)
 chip("Back to your account", 144.2, 147.0, 360, 820, "green", "sm", "pop", "↩")
@@ -252,7 +254,7 @@ def calendar(at, to, x, y, labels=True):
 shot(147.0, 152.6, "BG_soft", "slow")                                                 # "How long can this take? If the money didn't reach them..."
 calendar(147.3, 152.6, 128, 360)
 calendar(156.6, 171.0, 128, 360)
-chip("How long?", 147.2, 152.6, 120, 170, "ink", "", "pop")
+chip("How long?", 147.2, 152.6, 900, 200, "ink", "", "pop")
 el(f'<div class="mark amber" style="left:120px;top:352px;width:212px;height:226px" {attrs(148.8, 152.6, "pop")}></div>', 148.8, 152.6)
 chip("Failed or processing", 151.0, 152.6, 120, 660, "amber", "sm", "up")
 shot(152.6, 156.6, "rbi_table", "in", "R.B.I. CIRCULAR · 2019")                      # "...the bank must return it, and the R.B.I. has set a deadline."
@@ -277,30 +279,35 @@ el(f'<div class="mark amber" style="left:1170px;top:242px;width:212px;height:226
 for k, (t, x) in enumerate([(175.3, 0), (177.4, 0)]):
     el(f'<div class="coin" style="left:{720 + k * 150}px;top:660px" {attrs(t, 183.2, "fall")}>₹100</div>', t, 183.2)
 lbl("T+6 · late", 174.4, 183.2, 1388, 476, "red")
+el(f'<div class="mark amber" style="left:1380px;top:242px;width:212px;height:226px;border-color:var(--red)" {attrs(175.3, 183.2, "pop")}></div>', 175.3, 183.2)
+el(f'<div class="mark amber" style="left:1590px;top:242px;width:212px;height:226px;border-color:var(--red)" {attrs(177.4, 183.2, "pop")}></div>', 177.4, 183.2)
 shot(177.9, 183.2, "BG_soft", "in")
-chip("No complaint needed", 178.1, 183.2, 120, 170, "green", "sm", "pop")
-chip("R.B.I. rule", 181.8, 183.2, 760, 170, "cyan", "sm", "pop")
+chip("No complaint needed", 178.1, 183.2, 1000, 120, "green", "sm", "pop")
+chip("R.B.I. rule", 181.8, 183.2, 1000, 680, "cyan", "sm", "pop")
 # ---- SUMMARY
 shot(183.2, 187.9, "S35a_lamps", "in")                                                # "Quick summary... Success — the shop got it."
-chip("Shop got it", 185.8, 187.9, 120, 860, "green", "", "up", "✓")
+chip("Shop got it", 185.8, 187.9, 120, 740, "green", "", "up", "✓")
 shot(187.9, 192.9, "S35b_lamps", "in")                                                # "Failed — it didn't go through... you can pay again."
-chip("Pay again", 188.1, 192.9, 120, 860, "red", "", "up", "↻")
+chip("Pay again", 188.1, 192.9, 120, 740, "green", "", "up", "↻")
 shot(192.9, 195.1, "S35c_lamps", "in")                                                # "Processing — don't pay again."
-chip("Don't pay", 193.0, 195.1, 120, 860, "amber", "", "up", "✋")
+chip("Don't pay", 193.0, 195.1, 120, 740, "amber", "", "up", "✋")
 shot(195.1, 200.8, "BG_soft", "slow")                                                 # "If it never reaches the shop... one day for a person, five days for a shop."
-el(f'<div class="rowlbl c-green" style="left:300px;top:380px" {attrs(195.3, 200.8, "left")}>👤 Person → 1 day</div>', 195.3, 200.8)
-el(f'<div class="rowlbl c-amber" style="left:300px;top:480px" {attrs(196.5, 200.8, "left")}>🏪 Shop → 5 days</div>', 196.5, 200.8)
+calendar(195.1, 200.8, 128, 250)
+el(f'<div class="mark" style="left:330px;top:242px;width:212px;height:226px" {attrs(195.4, 200.8, "pop")}></div>', 195.4, 200.8)
+el(f'<div class="mark amber" style="left:1170px;top:242px;width:212px;height:226px" {attrs(196.6, 200.8, "pop")}></div>', 196.6, 200.8)
+el(f'<div class="rowlbl c-green" style="left:128px;top:540px" {attrs(195.3, 200.8, "left")}>👤 Person → 1 day</div>', 195.3, 200.8)
+el(f'<div class="rowlbl c-amber" style="left:128px;top:630px" {attrs(196.5, 200.8, "left")}>🏪 Shop → 5 days</div>', 196.5, 200.8)
 chip("2 more tips →", 197.6, 200.8, 1380, 900, "cyan", "sm", "left")
 # ---- THE ONE RULE
 shot(200.8, 205.5, "S36_rule", "in")                                                  # "My one rule: never pay again while it says processing."
-chip("One rule", 201.2, 205.5, 120, 250, "amber", "", "pop")
-chip("Processing → don't pay", 202.6, 205.5, 120, 380, "amber", "sm", "pop")
+chip("One rule", 201.2, 205.5, 120, 340, "amber", "", "pop")
+chip("Processing → don't pay", 202.6, 205.5, 120, 470, "amber", "sm", "pop")
 shot(205.5, 209.9, "hands_soft", "push", "SIMULATED SCREEN", media_start=4.0)        # "Because if that first payment turns out to be a yes..."
 phone(205.5, 209.9, 1240, 60, '<div class="wall"></div>' + sms(206.0, None, '<b>₹840.00 debited</b> · Sharma Kirana Store', "", when="10:02")
       + sms(207.4, None, '<b>₹840.00 debited</b> · Sharma Kirana Store', "n2", when="10:03"), rot=-3)
 chip("First one: yes", 206.6, 209.9, 140, 440, "green", "sm", "pop")
 shot(209.9, 214.2, "S37b_twice", "in")                                                # "...congrats, you just paid ₹840... twice."
-chip("Paid twice", 212.4, 214.2, 120, 250, "red", "xl", "pop")
+chip("Paid twice", 212.4, 214.2, 120, 340, "red", "xl", "pop")
 # ---- UPI HELP
 shot(214.2, 220.9, "hands_soft", "slow", "SIMULATED SCREEN", media_start=1.0)        # "Don't want to wait? Open your app... U.P.I. Help."
 hist = ('<div class="list">' + "".join(f'<div class="it"><span class="ic"></span>{n}<span class="r">{a}</span></div>' for n, a in [("Mobile recharge", "₹299"), ("Sharma Kirana Store", "₹840"), ("Milk booth", "₹56"), ("Electricity bill", "₹1,240")]) + "</div>")
@@ -316,22 +323,22 @@ chip("← Duplicate payment", 222.6, 226.0, 1220, 560, "amber", "sm", "left")
 shot(220.9, 226.0, "kirana_soft", "push", "SIMULATED SCREEN", warm=True, media_start=6.0)
 chip("Raise it now", 221.0, 226.0, 150, 420, "cyan", "sm", "pop")
 # ---- ESCALATE (ladder)
-shot(226.0, 232.1, "BG_soft", "slow")                                                 # "Still not solved? Complain to your bank. Bank not fixing it? ... R.B.I."
+shot(226.0, 232.1, "kirana_soft2", "slow", "ILLUSTRATIVE FOOTAGE", media_start=8.0)                                                 # "Still not solved? Complain to your bank. Bank not fixing it? ... R.B.I."
 for k, (t, txt) in enumerate([(226.0, "U.P.I. Help"), (227.2, "Your bank"), (230.0, "R.B.I.")]):
     el(f'<div class="step" style="left:{140 + k * 560}px;top:{640 - k * 170}px" {attrs(t, 232.1, "up")}><span class="no">{k + 1}</span>{txt}</div>', t, 232.1)
     if k:
         el(f'<div class="arrow" style="left:{140 + k * 560 - 100}px;top:{715 - k * 170 + 85}px;width:90px;transform:rotate(-30deg)" {attrs(t - 0.2, 232.1, "grow", 0.3)}></div>', t - 0.2, 232.1)
 cite("[RBI CIRCULAR | SEP 2019]", 230.0, 238.2)
-shot(232.1, 238.2, "BG_soft", "in")                                                   # "The office has a strange name — the R.B.I. Ombudsman. Remember it."
+shot(232.1, 238.2, "kirana_soft3", "in", "ILLUSTRATIVE FOOTAGE", media_start=12.0)                                                   # "The office has a strange name — the R.B.I. Ombudsman. Remember it."
 el(f'<div class="big c-cyan" style="left:300px;top:250px" {attrs(234.2, 238.2, "pop", 0.5)}>R.B.I. OMBUDSMAN</div>', 234.2, 238.2)
-chip("Remember it", 235.5, 238.2, 300, 140, "amber", "sm", "pop")
+chip("Remember it", 235.5, 238.2, 300, 470, "amber", "sm", "pop")
 # ---- SHARE + BRIDGE
 shot(238.2, 242.7, "street_soft", "slow", "SIMULATED SCREEN", media_start=3.0)       # "Send this to that one friend who always pays twice..."
-phone(238.2, 242.7, 725, 60, '<div class="wall"></div>' + f'<div class="share" {attrs(238.5, None, "up", 0.5)}><div class="ttl">Share to</div><div class="ppl">'
+phone(238.2, 242.7, 725, 60, '<div class="wall"></div>' + f'<div class="share" {attrs(238.2, None, "cut")}><div class="ttl">Share to</div><div class="ppl">'
       + "".join(f'<div class="{"hl" if n == "Pays Twice" else ""}"><i></i>{n}</div>' for n in ["Amma", "Ravi", "Office group", "Pays Twice", "Sneha", "Arjun", "Family", "More"]) + "</div></div>")
 chip("You know one", 240.0, 242.7, 150, 420, "amber", "sm", "pop", "😄")
-shot(242.7, 251.7, "L_success", "out", origin="50% 50%")                             # "Next video: what really happens in those few seconds after you hit pay..."
-chip("Next: when it works", 243.4, 251.7, 120, 860, "cyan", "sm", "up")
+shot(242.7, 251.7, "L_success", "zoomhome", origin="50% 30%")                             # "Next video: what really happens in those few seconds after you hit pay..."
+chip("Next: when it works", 243.4, 251.7, 120, 740, "cyan", "sm", "up")
 shot(251.7, END, "B43_end", "slow", "")
 el('<div class="endcard" ' + attrs(251.9, None, "fade", 0.8) + '><img class="logo" src="media/logo_square.png" alt=""/><div class="ch">Be Practical<br/>with Kishore</div>'
    '<div class="sub">SUBSCRIBE</div><div class="tile"><img src="media/B43_end.png" alt=""/><div class="nx">NEXT VIDEO</div>'
