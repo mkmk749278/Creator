@@ -10,6 +10,8 @@ window.SCENE = function (tl, ctx) {
   // 0:00 rooftop footage, slow push; 2:00 PM chip
   tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.08, duration: 3.2, ease: "none" }, 0);
   K.label(tl, 0.3, 2.5, "2:00 PM", 96, 820);
+  K.tag(tl, 2.6, 6.0, "ILLUSTRATIVE FOOTAGE");                 // the fan clip is a stand-in
+  K.tag(tl, 6.4, D, "ILLUSTRATION");
   // 2.6 fan at speed, the room dims on "power cut"
   const tCut = V(4.4);
   tl.fromTo("#shot1", { filter: "brightness(1)" }, { filter: "brightness(0.72)", duration: 0.25, immediateRender: false }, tCut);

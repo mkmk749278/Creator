@@ -89,6 +89,14 @@
   "lines": [
    17,
    18
+  ],
+  "media": [
+   {
+    "src": "assets/broll/pixabay_159674.mp4",
+    "start": 16.05,
+    "dur": 2.4,
+    "mediaStart": 1.2
+   }
   ]
  },
  {
