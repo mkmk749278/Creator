@@ -37,7 +37,7 @@ window.SCENE = function (tl, ctx) {
   const knob = el("circle", { id: "knob", cx: 1095, cy: 470, r: 66, fill: "#3fb950" }, ov);
   el("text", { x: 1000, y: 610, "text-anchor": "middle", class: "x-tag" }, ov).textContent = "SAFETY ON";
   // a finger reaching for the toggle from the right
-  const fin = el("g", { id: "finger" }, ov);
+  const fin = el("g", { id: "finger", visibility: "hidden" }, ov);   // dropped after review v1 (read as a render bug)
   el("rect", { x: 1180, y: 446, width: 500, height: 48, rx: 24, fill: "#8D5524" }, fin);
   el("rect", { x: 1400, y: 424, width: 560, height: 92, rx: 30, fill: "#2E86C1" }, fin);
   // the raised palm that stops it
@@ -48,11 +48,9 @@ window.SCENE = function (tl, ctx) {
   el("rect", { x: 850, y: 740, width: 190, height: 260, rx: 20, fill: "#2E86C1" }, palm);
   const ring = el("circle", { cx: 1275, cy: 560, r: 60, fill: "none", stroke: "#f85149", "stroke-width": 10, opacity: 0 }, svg);
   tl.to("#tgl", { opacity: 1, duration: 0.3 }, 9.1);
-  tl.fromTo("#finger", { x: 300 }, { x: 0, duration: 1.8, ease: "power2.out", immediateRender: false }, 9.6);
   tl.to("#world", { filter: "brightness(0.45)", duration: 0.4 }, 9.1);
   tl.fromTo("#palm", { opacity: 0, y: 220 }, { opacity: 1, y: 0, duration: 0.28, ease: "back.out(1.8)", immediateRender: false }, 11.6);
   tl.fromTo(ring, { opacity: 1, attr: { r: 60 } }, { opacity: 0, attr: { r: 420 }, duration: 0.6, ease: "power2.out", immediateRender: false }, 11.75);
-  tl.to("#finger", { x: 420, duration: 0.5, ease: "power2.in" }, 11.9);
   tl.fromTo("#palm", { scale: 1, svgOrigin: "945 640" }, { scale: 1.04, duration: 1.6, ease: "sine.inOut", immediateRender: false }, 11.9);
   K.label(tl, 11.7, 13.35, "SAY NO", 120, 860).classList.add("red");
   tl.to("#tgl, #palm", { opacity: 0, duration: 0.3 }, 13.3).to("#world", { filter: "brightness(1)", duration: 0.3 }, 13.3);
@@ -69,6 +67,7 @@ window.SCENE = function (tl, ctx) {
   tl.to("#badge", { rotation: 18, svgOrigin: "0 10", duration: 0.5, ease: "sine.inOut" }, 19.8).to("#badge", { rotation: 0, duration: 0.6, ease: "sine.inOut" }, 20.5);
 
   // ================= Bridge (21.29–): into the box → end screen under live VO =================
+  tl.to("#shield", { opacity: 0, duration: 0.2 }, 20.9);
   K.look(tl, 21.1, 0.6, 924, 654, 2.6, "power2.in");
   tl.to("#stage", { filter: "none", duration: 0.3 }, 21.2);
   K.pushIn(tl, 21.6);

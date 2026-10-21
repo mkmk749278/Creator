@@ -115,7 +115,7 @@ window.SCENE = function (tl, ctx) {
   el("text", { x: 1050, y: 895, class: "x-tag" }, bar).textContent = "49.5";
   const mk = el("polygon", { points: "0,0 -14,-24 14,-24", fill: "#E6EDF3", transform: `translate(${fx(50)} 818)` }, bar);
   // the moving waves (pure function of time)
-  const nudges = [24.9, 26.2, 27.5, 28.8, 30.05], tClick = 30.15;
+  const nudges = [24.9, 26.2, 27.5, 28.65, 29.8], tClick = 29.9;      // the last step reaches 50.5 Hz on "Click"
   const fOff = T => 50 + 0.1 * nudges.filter(t => T >= t).length;
   const kickL = T => { const p = (T - 19.9) % 1.3; return T < 19.9 ? 0 : (p < 0.1 ? 0.9 * p / 0.1 : 0.9 * Math.exp(-(p - 0.1) * 9)); };
   const st = { T: 19 };

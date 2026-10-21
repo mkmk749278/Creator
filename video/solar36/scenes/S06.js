@@ -71,7 +71,7 @@ window.SCENE = function (tl, ctx) {
   K.label(tl, 10.0, D, "UNDER 2 SECONDS", 120, 860).classList.add("green");
   // citation tag (journalistic, bottom right)
   const cite = document.createElement("div"); cite.className = "lab"; cite.textContent = "CEA REG. 11(6)(e) · IEEE 1547 · IS 16169";
-  Object.assign(cite.style, { left: "auto", right: "50px", top: "452px", font: "700 26px Inter, Arial, sans-serif", borderLeftColor: "#8b949e" });
+  Object.assign(cite.style, { left: "auto", right: "50px", top: "452px", font: "700 32px Inter, Arial, sans-serif", borderLeftColor: "#8b949e" });
   document.getElementById("root").appendChild(cite);
   tl.set(cite, { opacity: 0 }, 0).to(cite, { opacity: 1, duration: 0.3 }, 9.3);
 };

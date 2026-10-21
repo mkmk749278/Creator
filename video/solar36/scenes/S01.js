@@ -5,7 +5,7 @@ window.SCENE = function (tl, ctx) {
   const svg = document.getElementById("stage");
   const L = W36.lane(svg); W36.xray(svg); document.getElementById("xray").setAttribute("opacity", 0);
   const lm = W36.lineman(L.world, 1240, 760, 1.25, "lmA");
-  K.hud([{ k: "grid", label: "GRID", v: "230 V · 50.0 Hz", cls: "cyan" }, { k: "box", label: "SOLAR BOX", v: "TRIPPED", cls: "red", hidden: true }]);
+  K.hud([{ k: "grid", label: "GRID", v: "230 V · 50.0 Hz", cls: "cyan" }, { k: "box", label: "SOLAR", v: "TRIPPED", cls: "red", hidden: true }]);
 
   // 0:00 rooftop footage, slow push; 2:00 PM chip
   tl.fromTo("#v0", { scale: 1.0 }, { scale: 1.08, duration: 3.2, ease: "none" }, 0);
@@ -34,7 +34,7 @@ window.SCENE = function (tl, ctx) {
   K.look(tl, tBox - 0.2, 0.6, 924, 654, 2.4, "power2.inOut");
   K.tripBox(tl, tBox + 0.6);
   K.hudShow(tl, tBox + 0.6, "box");
-  K.label(tl, tBox + 0.8, V(11.5), "NOT BROKEN", 1180, 860).classList.add("green");
+  K.label(tl, tBox + 0.8, V(11.5), "NOT BROKEN", 1110, 300).classList.add("green");
   // 11.6 the lineman it protects: low angle on the LT pole, calm work, no harm
   const tLm = V(12.1);                                   // "— to protect a lineman's life" (measured)
   K.look(tl, tLm, 0.8, 1220, 660, 2.6, "power2.inOut", 1150, 600);

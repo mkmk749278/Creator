@@ -11,7 +11,7 @@ window.SCENE = function (tl, ctx) {
   K.hud([{ k: "grid", label: "GRID", v: "OFF", cls: "" }, { k: "box", label: "SOLAR BOX", v: "TRIPPED", cls: "red" },
          { k: "pv", label: "PANELS", v: "0 A · 0 W", cls: "amber", hidden: true }]);
   K.gridDead(tl, 0);
-  tl.set("#dholBadge, #meter text", { visibility: "hidden" }, 0);                    // the drummer is gone (and it would crowd the tag)
+  tl.set("#dholBadge, #meter text, #fg", { visibility: "hidden" }, 0);   // the foreground scooter would cover the box                    // the drummer is gone (and it would crowd the tag)
   tl.set("#slowTag", { opacity: 0 }, 0).set("#boxLed", { attr: { fill: "#f85149" } }, 0);
   K.tag(tl, 0, 15.7, "ILLUSTRATION");
   K.tag(tl, 16.1, D, "ILLUSTRATIVE FOOTAGE");
@@ -34,7 +34,7 @@ window.SCENE = function (tl, ctx) {
 
   // ---- 6.93 the sunlight just turns into heat (panels are built for it) ----
   const heat = el("g", { id: "heat", opacity: 0 }, world);
-  el("rect", { x: 560, y: 280, width: 460, height: 110, rx: 8, fill: "#FF8C1A", opacity: 0.32 }, heat);
+  el("rect", { x: 560, y: 280, width: 460, height: 110, rx: 8, fill: "#FFB347", opacity: 0.13 }, heat);   // warm, not burnt
   const waves = [...Array(7)].map((_, k) => el("path", { fill: "none", stroke: "#FFB347", "stroke-width": 4, "stroke-linecap": "round", opacity: 0.7 }, heat));
   const hp = { T: 0 };
   tl.fromTo(hp, { T: 0 }, { T: 4.6, duration: 4.6, ease: "none", immediateRender: false, onUpdate: () => {

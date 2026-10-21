@@ -6,7 +6,7 @@ WrapStyle: 2
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,Inter,50,&H00FFFFFF,&H00FFFFFF,&H5A0D1117,&H5A0D1117,-1,0,0,0,100,100,0,0,3,14,0,2,80,80,42,1
+Style: Cap,Inter,66,&H00FFFFFF,&H00FFFFFF,&H330D1117,&H330D1117,-1,0,0,0,100,100,0,0,3,16,0,2,60,60,40,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -19,12 +19,16 @@ Dialogue: 0,0:00:08.99,0:00:10.90,Cap,,0,0,0,,Your solar isn't broken
 Dialogue: 0,0:00:10.94,0:00:12.17,Cap,,0,0,0,,It switched off on purpose
 Dialogue: 0,0:00:12.21,0:00:14.53,Cap,,0,0,0,,— to protect a lineman's life
 Dialogue: 0,0:00:15.24,0:00:17.09,Cap,,0,0,0,,Where does all that sunshine go?
-Dialogue: 0,0:00:17.13,0:00:20.00,Cap,,0,0,0,,And how do you keep your fans running? Let's see
+Dialogue: 0,0:00:17.13,0:00:18.35,Cap,,0,0,0,,And how do you keep
+Dialogue: 0,0:00:18.39,0:00:19.36,Cap,,0,0,0,,your fans running?
+Dialogue: 0,0:00:19.40,0:00:20.00,Cap,,0,0,0,,Let's see
 Dialogue: 0,0:00:21.76,0:00:22.66,Cap,,0,0,0,,One thing first
 Dialogue: 0,0:00:22.70,0:00:24.20,Cap,,0,0,0,,— this is not the inverter
 Dialogue: 0,0:00:24.24,0:00:25.95,Cap,,0,0,0,,battery you keep at home…
-Dialogue: 0,0:00:25.99,0:00:28.69,Cap,,0,0,0,,It's the box your solar panels connect to
-Dialogue: 0,0:00:28.73,0:00:31.66,Cap,,0,0,0,,Installers call it an on-grid inverter…
+Dialogue: 0,0:00:25.99,0:00:27.44,Cap,,0,0,0,,It's the box your solar
+Dialogue: 0,0:00:27.48,0:00:28.69,Cap,,0,0,0,,panels connect to
+Dialogue: 0,0:00:28.73,0:00:30.31,Cap,,0,0,0,,Installers call it an
+Dialogue: 0,0:00:30.35,0:00:31.66,Cap,,0,0,0,,on-grid inverter…
 Dialogue: 0,0:00:31.70,0:00:33.79,Cap,,0,0,0,,We'll just call it the solar box
 Dialogue: 0,0:00:34.31,0:00:36.08,Cap,,0,0,0,,Your panels give DC power
 Dialogue: 0,0:00:36.12,0:00:37.59,Cap,,0,0,0,,— it flows only one way
@@ -41,23 +45,29 @@ Dialogue: 0,0:00:54.76,0:00:56.62,Cap,,0,0,0,,back-and-forth rhythm on its own
 Dialogue: 0,0:00:56.66,0:00:58.67,Cap,,0,0,0,,Think of the grid as a drummer…
 Dialogue: 0,0:00:58.71,0:01:00.83,Cap,,0,0,0,,and the solar box as a dancer
 Dialogue: 0,0:01:00.87,0:01:02.52,Cap,,0,0,0,,that only follows the drum
-Dialogue: 0,0:01:02.97,0:01:05.29,Cap,,0,0,0,,On a normal day, it follows every beat
+Dialogue: 0,0:01:02.97,0:01:03.91,Cap,,0,0,0,,On a normal day,
+Dialogue: 0,0:01:03.95,0:01:05.29,Cap,,0,0,0,,it follows every beat
 Dialogue: 0,0:01:05.33,0:01:07.22,Cap,,0,0,0,,Your house uses what it needs
-Dialogue: 0,0:01:07.26,0:01:09.64,Cap,,0,0,0,,The extra goes out through your meter…
+Dialogue: 0,0:01:07.26,0:01:08.56,Cap,,0,0,0,,The extra goes out
+Dialogue: 0,0:01:08.60,0:01:09.64,Cap,,0,0,0,,through your meter…
 Dialogue: 0,0:01:09.68,0:01:11.04,Cap,,0,0,0,,onto the street wire…
-Dialogue: 0,0:01:11.08,0:01:13.07,Cap,,0,0,0,,and up to the transformer on the pole
+Dialogue: 0,0:01:11.08,0:01:11.78,Cap,,0,0,0,,and up to the
+Dialogue: 0,0:01:11.82,0:01:13.07,Cap,,0,0,0,,transformer on the pole
 Dialogue: 0,0:01:14.65,0:01:16.22,Cap,,0,0,0,,Now the power cut comes
 Dialogue: 0,0:01:16.26,0:01:17.89,Cap,,0,0,0,,The electricity board switches
 Dialogue: 0,0:01:17.93,0:01:19.18,Cap,,0,0,0,,off the supply to your street
 Dialogue: 0,0:01:19.72,0:01:20.40,Cap,,0,0,0,,Think about it
 Dialogue: 0,0:01:20.44,0:01:22.45,Cap,,0,0,0,,If your solar box kept pushing,
-Dialogue: 0,0:01:22.49,0:01:25.02,Cap,,0,0,0,,that dead wire would be alive again, right?
+Dialogue: 0,0:01:22.49,0:01:23.48,Cap,,0,0,0,,that dead wire would
+Dialogue: 0,0:01:23.52,0:01:25.02,Cap,,0,0,0,,be alive again, right?
 Dialogue: 0,0:01:25.50,0:01:26.72,Cap,,0,0,0,,And that transformer on
 Dialogue: 0,0:01:26.76,0:01:28.20,Cap,,0,0,0,,the pole works in reverse
 Dialogue: 0,0:01:28.24,0:01:30.30,Cap,,0,0,0,,Your 230 volts…
 Dialogue: 0,0:01:30.34,0:01:32.73,Cap,,0,0,0,,becomes about 11,000 volts…
-Dialogue: 0,0:01:32.77,0:01:36.24,Cap,,0,0,0,,On a wire the lineman thinks is switched off
-Dialogue: 0,0:01:37.86,0:01:40.22,Cap,,0,0,0,,So the solar box is built to notice
+Dialogue: 0,0:01:32.77,0:01:34.78,Cap,,0,0,0,,On a wire the lineman
+Dialogue: 0,0:01:34.82,0:01:36.24,Cap,,0,0,0,,thinks is switched off
+Dialogue: 0,0:01:37.86,0:01:39.13,Cap,,0,0,0,,So the solar box is
+Dialogue: 0,0:01:39.17,0:01:40.22,Cap,,0,0,0,,built to notice
 Dialogue: 0,0:01:40.26,0:01:41.79,Cap,,0,0,0,,If the beat goes missing,
 Dialogue: 0,0:01:41.83,0:01:43.61,Cap,,0,0,0,,or the voltage starts changing,
 Dialogue: 0,0:01:43.65,0:01:45.18,Cap,,0,0,0,,it switches itself off…
@@ -66,16 +76,19 @@ Dialogue: 0,0:01:45.65,0:01:47.61,Cap,,0,0,0,,Safety rules say it must
 Dialogue: 0,0:01:47.65,0:01:49.35,Cap,,0,0,0,,switch off within 2 seconds
 Dialogue: 0,0:01:50.81,0:01:52.69,Cap,,0,0,0,,But there's one tricky case
 Dialogue: 0,0:01:52.73,0:01:54.19,Cap,,0,0,0,,Say your whole street is using
-Dialogue: 0,0:01:54.23,0:01:56.55,Cap,,0,0,0,,exactly what the solar panels make
+Dialogue: 0,0:01:54.23,0:01:55.27,Cap,,0,0,0,,exactly what the
+Dialogue: 0,0:01:55.31,0:01:56.55,Cap,,0,0,0,,solar panels make
 Dialogue: 0,0:01:56.59,0:01:59.01,Cap,,0,0,0,,Then the power cut changes nothing
 Dialogue: 0,0:01:59.05,0:02:00.35,Cap,,0,0,0,,— the box can't feel it
 Dialogue: 0,0:02:00.81,0:02:02.67,Cap,,0,0,0,,So the box tests the drummer
-Dialogue: 0,0:02:02.71,0:02:05.24,Cap,,0,0,0,,Again and again, it plays a little off-beat
+Dialogue: 0,0:02:02.71,0:02:03.84,Cap,,0,0,0,,Again and again,
+Dialogue: 0,0:02:03.88,0:02:05.24,Cap,,0,0,0,,it plays a little off-beat
 Dialogue: 0,0:02:05.28,0:02:06.64,Cap,,0,0,0,,— on purpose — to check…
 Dialogue: 0,0:02:06.68,0:02:08.85,Cap,,0,0,0,,is the drummer still there?
 Dialogue: 0,0:02:09.93,0:02:11.19,Cap,,0,0,0,,If the grid is there,
 Dialogue: 0,0:02:11.23,0:02:13.53,Cap,,0,0,0,,the drummer pulls it back in line
-Dialogue: 0,0:02:14.50,0:02:16.75,Cap,,0,0,0,,If the grid is gone, nobody pulls it back
+Dialogue: 0,0:02:14.50,0:02:15.50,Cap,,0,0,0,,If the grid is gone,
+Dialogue: 0,0:02:15.54,0:02:16.75,Cap,,0,0,0,,nobody pulls it back
 Dialogue: 0,0:02:16.79,0:02:18.66,Cap,,0,0,0,,The beat keeps sliding…
 Dialogue: 0,0:02:18.70,0:02:20.40,Cap,,0,0,0,,and the box knows. Click
 Dialogue: 0,0:02:20.44,0:02:21.39,Cap,,0,0,0,,— it switches off
@@ -90,25 +103,35 @@ Dialogue: 0,0:02:34.04,0:02:35.67,Cap,,0,0,0,,But the panel wires still
 Dialogue: 0,0:02:35.71,0:02:36.87,Cap,,0,0,0,,have voltage in them
 Dialogue: 0,0:02:36.91,0:02:38.22,Cap,,0,0,0,,So don't touch them yourself
 Dialogue: 0,0:02:38.26,0:02:39.93,Cap,,0,0,0,,— leave that to a trained person
-Dialogue: 0,0:02:41.44,0:02:43.14,Cap,,0,0,0,,So how do you keep your fans running?
+Dialogue: 0,0:02:41.44,0:02:42.37,Cap,,0,0,0,,So how do you keep
+Dialogue: 0,0:02:42.41,0:02:43.14,Cap,,0,0,0,,your fans running?
 Dialogue: 0,0:02:43.18,0:02:44.98,Cap,,0,0,0,,You need a different box
 Dialogue: 0,0:02:45.02,0:02:46.35,Cap,,0,0,0,,— a hybrid inverter
 Dialogue: 0,0:02:46.39,0:02:48.25,Cap,,0,0,0,,Hybrid simply means it works with
 Dialogue: 0,0:02:48.29,0:02:50.16,Cap,,0,0,0,,the grid and with a battery
-Dialogue: 0,0:02:50.56,0:02:52.81,Cap,,0,0,0,,When the grid dies, a switch inside it
-Dialogue: 0,0:02:52.85,0:02:54.84,Cap,,0,0,0,,first cuts your house off from the street
-Dialogue: 0,0:02:54.88,0:02:57.49,Cap,,0,0,0,,Then the battery becomes the drummer,
+Dialogue: 0,0:02:50.56,0:02:51.54,Cap,,0,0,0,,When the grid dies,
+Dialogue: 0,0:02:51.58,0:02:52.81,Cap,,0,0,0,,a switch inside it
+Dialogue: 0,0:02:52.85,0:02:53.82,Cap,,0,0,0,,first cuts your house
+Dialogue: 0,0:02:53.86,0:02:54.84,Cap,,0,0,0,,off from the street
+Dialogue: 0,0:02:54.88,0:02:56.04,Cap,,0,0,0,,Then the battery
+Dialogue: 0,0:02:56.08,0:02:57.49,Cap,,0,0,0,,becomes the drummer,
 Dialogue: 0,0:02:57.53,0:02:59.17,Cap,,0,0,0,,and the panels dance again
 Dialogue: 0,0:02:59.79,0:03:00.62,Cap,,0,0,0,,Remember this
-Dialogue: 0,0:03:00.66,0:03:03.90,Cap,,0,0,0,,A normal on-grid solar box, with no battery,
-Dialogue: 0,0:03:03.94,0:03:06.17,Cap,,0,0,0,,has to go silent when the grid goes
+Dialogue: 0,0:03:00.66,0:03:02.64,Cap,,0,0,0,,A normal on-grid solar box,
+Dialogue: 0,0:03:02.68,0:03:03.90,Cap,,0,0,0,,with no battery,
+Dialogue: 0,0:03:03.94,0:03:05.16,Cap,,0,0,0,,has to go silent
+Dialogue: 0,0:03:05.20,0:03:06.17,Cap,,0,0,0,,when the grid goes
 Dialogue: 0,0:03:06.21,0:03:07.24,Cap,,0,0,0,,That's by design
-Dialogue: 0,0:03:08.50,0:03:10.89,Cap,,0,0,0,,If anyone offers to switch off this safety
+Dialogue: 0,0:03:08.50,0:03:09.68,Cap,,0,0,0,,If anyone offers to
+Dialogue: 0,0:03:09.72,0:03:10.89,Cap,,0,0,0,,switch off this safety
 Dialogue: 0,0:03:10.93,0:03:12.44,Cap,,0,0,0,,— just say no…
 Dialogue: 0,0:03:12.48,0:03:14.33,Cap,,0,0,0,,Because the lineman fixing your
-Dialogue: 0,0:03:14.37,0:03:16.23,Cap,,0,0,0,,street is the one who gets the shock
+Dialogue: 0,0:03:14.37,0:03:15.39,Cap,,0,0,0,,street is the one
+Dialogue: 0,0:03:15.43,0:03:16.23,Cap,,0,0,0,,who gets the shock
 Dialogue: 0,0:03:17.35,0:03:18.80,Cap,,0,0,0,,Your solar never failed
 Dialogue: 0,0:03:18.84,0:03:20.23,Cap,,0,0,0,,It just lost its drummer
-Dialogue: 0,0:03:20.80,0:03:23.18,Cap,,0,0,0,,But when the grid is live, how does that box
-Dialogue: 0,0:03:23.22,0:03:26.10,Cap,,0,0,0,,turn sunlight into steady wall-socket power?
+Dialogue: 0,0:03:20.80,0:03:22.21,Cap,,0,0,0,,But when the grid is live,
+Dialogue: 0,0:03:22.25,0:03:23.18,Cap,,0,0,0,,how does that box
+Dialogue: 0,0:03:23.22,0:03:24.88,Cap,,0,0,0,,turn sunlight into steady
+Dialogue: 0,0:03:24.92,0:03:26.10,Cap,,0,0,0,,wall-socket power?
 Dialogue: 0,0:03:26.14,0:03:27.44,Cap,,0,0,0,,Let's open it up next

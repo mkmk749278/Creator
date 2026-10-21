@@ -16,7 +16,7 @@ from pathlib import Path
 PROJ = Path(__file__).resolve().parents[1]
 LINES = json.loads((PROJ / "align_take2/edit3_lines_exact.json").read_text())
 VO = PROJ / "voice/vo_v10_take3_edit.mp3"
-MAXC = 46
+MAXC = 34
 READ = [(r"\bD\.C\.", "DC"), (r"\bA\.C\.", "AC"), ("two hundred and thirty volts", "230 volts"),
         ("about eleven thousand volts", "about 11,000 volts"), ("fifty full swings", "50 full swings"),
         ("within two seconds", "within 2 seconds"), ("Two in the afternoon", "2 PM")]
@@ -49,7 +49,7 @@ def phrases(text):
     for p in re.split(r"(?<=[.?!…])\s+|\s+(?=—)|(?<=\.\.\.)\s+", text):
         p = p.strip()
         if not p: continue
-        if groups and (len(p) < 16 or len(" ".join(groups[-1])) < 16) and len(" ".join(groups[-1])) + 1 + len(p) <= 52:
+        if groups and (len(p) < 16 or len(" ".join(groups[-1])) < 16) and len(" ".join(groups[-1])) + 1 + len(p) <= 40:
             groups[-1] = [" ".join(groups[-1]) + " " + p]; continue          # fold short bits into a neighbour
         out, stack = [], [p]
         while stack:
@@ -161,7 +161,7 @@ WrapStyle: 2
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,Inter,50,&H00FFFFFF,&H00FFFFFF,&H5A0D1117,&H5A0D1117,-1,0,0,0,100,100,0,0,3,14,0,2,80,80,42,1
+Style: Cap,Inter,66,&H00FFFFFF,&H00FFFFFF,&H330D1117,&H330D1117,-1,0,0,0,100,100,0,0,3,16,0,2,60,60,40,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

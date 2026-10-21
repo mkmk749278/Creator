@@ -103,7 +103,7 @@ window.SCENE = function (tl, ctx) {
   // 16.77 "becomes about eleven thousand volts…": the many thin turns glow red; HUD rolls up, settles on "≈ 11,000 V"
   tl.to("#htCoil rect", { attr: { fill: "#f85149", stroke: "#FFB4A8" }, duration: 0.5, stagger: 0.02 }, 16.8);
   const rv = { v: 230 }, hv = document.getElementById("h_line");
-  tl.fromTo(rv, { v: 230 }, { v: 10400, duration: 1.4, ease: "power2.in", immediateRender: false, onUpdate: () => { hv.textContent = Math.round(rv.v / 10) * 10 + " V"; } }, 16.8);
+  tl.fromTo(rv, { v: 230 }, { v: 10400, duration: 1.4, ease: "power2.in", immediateRender: false, onUpdate: () => { hv.textContent = (rv.v < 1000 ? 230 : Math.round(rv.v / 1000) * 1000).toLocaleString("en-IN") + " V"; } }, 16.8);
   K.hudSet(tl, 18.25, "line", "≈ 11,000 V", "red");
   K.label(tl, 17.0, 18.7, "≈ 11,000 V", 1340, 860).classList.add("red");
 

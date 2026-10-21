@@ -48,7 +48,7 @@ window.SCENE = function (tl0, ctx) {
   // sits over the socket, shakes no and slides off; 6.21 "the wall-socket kind" — the socket glows
   xlook(4.0, 0.9, 1430, 760, 1.7);
   tl.to("#acPulses, #xInner > circle, #xInner > line", { opacity: 1, duration: 0.3 }, 4.1);
-  const acu = el("g", { id: "acUnit", opacity: 0 }, document.getElementById("xInner"));
+  const acu = el("g", { id: "acUnit", opacity: 0 }, el("g", { transform: "translate(-110 0)" }, document.getElementById("xInner")));   // clear of the HOUSE label
   el("rect", { x: 1290, y: 800, width: 300, height: 104, rx: 22, fill: "#F4F6F7", stroke: "#AEB6BF", "stroke-width": 4 }, acu);
   el("rect", { x: 1310, y: 874, width: 260, height: 12, rx: 6, fill: "#C8CED3" }, acu);
   el("circle", { cx: 1560, cy: 828, r: 6, fill: "#3fb950" }, acu);
