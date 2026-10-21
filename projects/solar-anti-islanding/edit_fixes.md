@@ -29,3 +29,13 @@ Splice each at its silence boundaries: 3+4 = 0:15.19–0:28.82, 15 = 1:57.65–2
 | 17 | 23 | before "Your solar never failed" | 0.6 s | closing line |
 
 About 14 s in total, which makes the runtime about 3:30 with the re-generated lines. Picture notes are in `review_audio_v1.md`.
+
+## Done (2026-10-21)
+`tools/assemble_vo.py` builds `voice/vo_v10_edit.wav` / `.mp3` (gitignored) from take 1 plus `fix_03_04.mp3`, `fix_15.mp3`
+and `fix_22.mp3` (re-generated at speed 0.85). It adds all 17 pauses as above. Every cut sits at the midpoint of a measured pause.
+- **Result:** 3:28.4 (take 1 was 3:11.3), about 161 wpm including pauses, −22.8 LUFS, −1.0 dB peak (to be mastered to −14 LUFS in the mix).
+- **Line timings:** `align_edit/lines_exact.json`, mapped through the cut list. It replaces an aligner pass on the edit, because the aligner read the new 0.6 s pause inside line 4 as a line end.
+- Re-generated lines 3+4 now read at 198 and 171 wpm (were 217 and 235), and line 22 at 170 wpm (was 203).
+- Line 15 read at 220 wpm even after re-generation, so it has `atempo=0.9` (pitch-safe), giving 198 wpm. If it sounds stretched, set `T15 = 1.0`.
+- `fix_22.mp3` starts with "If" at 0.04–0.12 s, followed by a 0.2 s gap before "anyone". The cut starts at 0 s so the word is kept.
+- **Check by ear:** the three splice points (0:15, 0:33, 2:08, 3:08), line 15's tempo, and the room-tone joins.
