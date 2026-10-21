@@ -157,7 +157,7 @@ shot(54.2, 60.7, "L_failed", "in", origin="70% 50%")                            
 el(f'<div class="flash" style="background:rgba(248,81,73,.35);z-index:16" {attrs(54.2, None, "flash")}></div>', 54.2)
 chip("2", 53.1, 60.7, 120, 340, "red", "xl", "pop")
 chip("Failed", 59.0, 60.7, 260, 266, "red", "", "pop", "✕")
-shot(60.7, 68.3, "L_failed", "zoomhome", origin="14% 52%")                          # "Failed sounds scary... comes back on its own."
+shot(60.7, 68.3, "L_failed", "zoomhome", origin="14% 25%")                          # "Failed sounds scary... comes back on its own."
 chip("Clear answer", 62.0, 64.0, 120, 340, "red", "sm", "pop")
 chip("Comes back by itself", 64.4, 68.3, 120, 340, "green", "sm", "pop", "↩")
 cite("[NPCI UPI CIRCULAR | 2026]", 64.4, 68.3)
@@ -213,7 +213,7 @@ shot(116.6, 119.5, "S24_where", "in")                                           
 chip("Where is ₹840?", 116.9, 119.5, 120, 340, "amber", "", "pop")
 shot(119.5, 124.6, "S25a_hold", "in")                                                 # "...N.P.C.I. doesn't cancel the payment — it puts it on hold."
 chip("Not cancelled", 120.6, 124.6, 120, 340, "ink", "sm", "pop")
-chip("On hold", 123.2, 124.6, 900, 640, "amber", "", "pop", "⏸")
+chip("On hold", 123.2, 124.6, 1250, 330, "amber", "", "pop", "⏸")
 cite("[NPCI UPI CIRCULAR | 2026]", 119.7, 131.4)
 shot(124.6, 129.6, "S25b_hold", "right")                                              # "...stuck between your bank and the shop's bank."
 lbl("Your bank", 125.4, 129.6, 120, 740, "slate")
