@@ -10,7 +10,7 @@ Your panels give D.C. — it flows in one direction only.
 
 But your house needs A.C. — power that goes back and forth, fifty times every second. The solar box changes the panels' D.C. into this A.C.
 
-But it can't make that swing by itself. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.
+And it can't make that swing by itself. Think of the grid as a drummer... and the solar box as a dancer that only follows the drum.
 
 On a normal day, it follows every beat. Your house takes what it needs, and the extra goes out through your meter... to the street wire and the transformer on the pole.
 
@@ -22,7 +22,7 @@ And the transformer would take your two hundred thirty volts... and push it up t
 
 So the solar box is built to notice. If the beat goes missing, or the voltage starts changing, it switches itself off... click. By the safety standards, it must do this within two seconds.
 
-But sometimes your house uses exactly as much as your panels make. Then, when the power cut comes, the box feels no change at all. So how does it know? So it keeps checking. Every moment, it changes its own beat a tiny bit, on purpose — just to see what happens.
+But sometimes your house uses exactly as much as your panels make. Then, when the power cut comes, the box feels no change at all. So how does it know? It keeps checking. Every moment, it changes its own beat a tiny bit, on purpose — just to see what happens.
 
 With the grid there, the grid pulls it back.
 
