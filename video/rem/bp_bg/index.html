@@ -20,7 +20,7 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="bp_bg" data-start="0" data-width="1920" data-height="1080" data-duration="24">
+    <div id="root" data-composition-id="bp_bg" data-start="0" data-width="1920" data-height="1080" data-duration="44">
       <svg width="1920" height="1080"><defs>
         <pattern id="g1" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#30363d" stroke-width="1" opacity=".35"/></pattern>
         <pattern id="g2" width="240" height="240" patternUnits="userSpaceOnUse"><path d="M240 0H0V240" fill="none" stroke="#30363d" stroke-width="1.5" opacity=".6"/></pattern>
@@ -32,11 +32,11 @@
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      tl.to({}, { duration: 24 }, 0);
+      tl.to({}, { duration: 44 }, 0);
 
-      tl.fromTo("#grid", { x: 0, y: 0 }, { x: -96, y: -48, duration: 24, ease: "none" }, 0);
-      tl.fromTo("#dust", { x: 0, y: 0 }, { x: -60, y: -110, duration: 24, ease: "none" }, 0);
-      tl.fromTo("#glow", { attr: { cx: 700 } }, { attr: { cx: 1200 }, duration: 24, ease: "sine.inOut" }, 0);
+      tl.fromTo("#grid", { x: 0, y: 0 }, { x: -192, y: -96, duration: 44, ease: "none" }, 0);
+      tl.fromTo("#dust", { x: 0, y: 0 }, { x: -110, y: -200, duration: 44, ease: "none" }, 0);
+      tl.fromTo("#glow", { attr: { cx: 700 } }, { attr: { cx: 1200 }, duration: 22, ease: "sine.inOut" }, 0); tl.to("#glow", { attr: { cx: 700 }, duration: 22, ease: "sine.inOut" }, 22);
       window.__timelines["bp_bg"] = tl;
     </script>
   </body>
