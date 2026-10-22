@@ -460,8 +460,8 @@ tick(430.4, 433.7, 1220, "Paused · 1 year", "NOV 2025", "amber")
 with v5():   # headline, then the key-takeaway bullets (the article's photo is coin cells, not magnets)
     shot(R(433.7), R(433.7) + 4.0, "P_technology_head", "in", "DOCUMENT · TECHNOLOGY.ORG")
     shot(R(433.7) + 4.0, R(446.3), "P_technology_keys", "in", "DOCUMENT · TECHNOLOGY.ORG")                   # "...set to end on November tenth. ... trade deal till January. ... Will China stretch this hold too...?"
-chip("On paper: 10 Nov 2026", 433.9, 446.3, 120, 80, "amber", "sm", "pop")
-chip("US–China truce: 10 Jan 2027", 437.3, 446.3, 120, 180, "cyan", "sm", "pop")
+chip("On paper: 10 Nov 2026", 433.9, 446.3, 120, 130, "amber", "sm", "pop")
+chip("US–China truce: 10 Jan 2027", 437.3, 446.3, 120, 225, "cyan", "sm", "pop")
 chip("Stretch?", 443.1, 446.3, 1300, 760, "ink", "", "pop")
 cite("[MOFCOM | 2025–26 · AS OF 21 OCT 2026]", 434.0, 446.3)
 shot(446.3, 449.9, "R_bp_bg", "slow", ms=34.0)                                          # "And the April permission rule? It never went away."
