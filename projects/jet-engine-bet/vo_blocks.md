@@ -2,7 +2,7 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
 
-## Block 1 of 10 · 912 characters · save as `voice/jeb_b01.mp3`
+## Block 1 of 10 · 889 characters · save as `voice/jeb_b01.mp3`
 
 ```
 October, twenty twenty-six. In H.A.L. hangars in Bengaluru and Nashik, close to thirty brand new Tejas fighter jets are standing ready. Painted. Radars fitted. You'd think they're ready to fly.
@@ -11,21 +11,21 @@ And not one of them has reached the Air Force yet.
 
 By most reports, the biggest reason is the engine. America's G.E. has sent only fourteen of the ninety-nine engines these jets need.
 
-And here's the crazy part. Inside a modern jet engine, a small metal blade can sit in gas that is hotter than the blade's own melting point... and the blade does not melt.
+And here's the crazy part. Inside a modern jet engine, a small metal blade can sit in gas hotter than its own melting point... and it does not melt.
 
 Very few countries on Earth can make that blade. It takes decades of trial and error, and India is still learning.
 
 Stay with me, and you'll see three things. First, how a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
 ```
 
-## Block 2 of 10 · 1180 characters · save as `voice/jeb_b02.mp3`
+## Block 2 of 10 · 1193 characters · save as `voice/jeb_b02.mp3`
 
 ```
 First, let me show you what a jet engine actually does.
 
-Four jobs. Suck. Squeeze. Burn. Blow.
+Four jobs. Can you guess them? Suck. Squeeze. Burn. Blow.
 
-Suck first. A big fan at the front pulls in air. Lots of it, more than you'd think, you know.
+Suck first. A big fan at the front pulls in air. Lots of it. Can you imagine how much?
 
 Now squeeze. Have you ever pumped a bicycle tyre, and felt the pump get hot? Squeezing air makes it hot and packs it tight. Inside the engine, rows of small fans, called the compressor, squeeze that air again and again.
 
@@ -50,14 +50,14 @@ Cambridge University shows the picture, in a classroom example. Gas of about fou
 So the blade is sitting in gas hotter than its melting point. You'd expect it to melt, right? So how does it survive?
 ```
 
-## Block 4 of 10 · 1384 characters · save as `voice/jeb_b04.mp3`
+## Block 4 of 10 · 1424 characters · save as `voice/jeb_b04.mp3`
 
 ```
 Three tricks. And you've seen each one in daily life.
 
 Trick one is the metal itself. If you look inside ordinary metal, you'd see countless tiny crystals stuck together. Like a brick wall. The lines between the bricks are the weak spots.
 
-Under heat and a huge pull, the metal slowly stretches along those lines. Think of a steel spoon you leave in a flame. It bends... slowly. Engineers call it creep.
+Under heat and a huge pull, the metal slowly stretches along those lines. Think of a steel spoon you leave in a flame. It bends... slowly, right? Engineers call it creep.
 
 So the best blades are grown as one single crystal. No bricks. No lines. You get one solid piece. It's a very strong nickel metal mix, with a rare metal called rhenium added.
 
@@ -67,17 +67,17 @@ Then it comes out through rows of tiny holes you can barely see, and spreads ove
 
 Trick three is a ceramic coating on top. Let me explain it simply. A heat shield, like the wall of a thermos flask that keeps your tea hot. It slows the heat from reaching the metal, so you get a cooler blade.
 
-So what do you have? A crystal with no weak lines, cool air inside and outside, and a ceramic shield. Together, they keep the metal far below the gas. That's how you beat the heat.
+So what do you have? A crystal with no weak lines, cool air inside and outside, and a ceramic shield. Together, they keep the metal far below the gas, and you can see why. That's how you beat the heat. Simple, no?
 ```
 
-## Block 5 of 10 · 1180 characters · save as `voice/jeb_b05.mp3`
+## Block 5 of 10 · 1176 characters · save as `voice/jeb_b05.mp3`
 
 ```
 But there's one more problem. Do you know what it is? The spin.
 
 Rolls-Royce says the disc holding these blades turns more than twelve thousand times every minute. Your ceiling fan on full speed is slow next to that.
 
-Rolls-Royce says the pull you'd feel on each blade is like a London bus hanging from it. Think of you swinging a bucket round and round... with a bus in it.
+It also says the pull you'd feel on each blade is like a London bus hanging from it. Think of you swinging a bucket round and round... with a bus in it.
 
 So picture it, you and me, looking at one blade. Would you trust it? Gas hotter than its melting point. A bus hanging from it. For thousands of hours.
 
@@ -106,7 +106,7 @@ Those engines were due from twenty twenty-three. The first one came in March twe
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
 
-## Block 7 of 10 · 1441 characters · save as `voice/jeb_b07.mp3`
+## Block 7 of 10 · 1448 characters · save as `voice/jeb_b07.mp3`
 
 ```
 Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you and me?
@@ -115,7 +115,7 @@ May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answ
 
 Sales of the same G.E. engines to India stopped. American help on the Tejas flight controls ended too.
 
-Imagine your supplier saying no. Our engineers built the flight control system themselves. And they did it.
+Imagine your supplier saying no to you. Our engineers built the flight control system themselves. And they did it.
 
 But the lesson was simple. If you don't own the engine, you don't fully own your fighter jet.
 
