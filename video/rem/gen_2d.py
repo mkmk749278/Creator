@@ -218,5 +218,52 @@ js = """
       tl.to("#block", { fill: "#dfe6ee", duration: .5 }, 24.6);"""
 write("magline", 30, body, js)
 
+# ------------------------------------------------------------------------------------------------------------------
+# stairs: the separation analogy (owner 2026-10-22, replaces "washing rice"). Each step is one small tank; the liquid
+# goes from muddy brown at the bottom to clean cyan at the top. A glowing rare earth climbs one step per hop, faster
+# and faster, while the frame rises with it and a purity bar inches up. The staircase runs on into the haze:
+# "hundreds of steps". ILLUSTRATION; step count and purity are illustrative.
+NS, DX, DY = 90, 92, 56
+def mix(a, b, k):
+    return "#" + "".join(f"{round(int(a[i:i + 2], 16) + (int(b[i:i + 2], 16) - int(a[i:i + 2], 16)) * k):02x}" for i in (1, 3, 5))
+steps = []
+for i in range(NS):
+    x, y, k = 180 + i * DX, 980 - i * DY, (i / (NS - 1)) ** 0.7
+    liq = mix("#5a3a17", "#14a3c2", k)
+    steps.append(
+        f'<g class="stp">'
+        f'<path d="M{x} {y} l{DX} 0 l26 -16 l-{DX} 0 z" fill="#1c232c" stroke="#c9d1d9" stroke-width="1.5"/>'   # top face
+        f'<rect x="{x}" y="{y}" width="{DX}" height="{DY + 40}" fill="#0d1117" stroke="#c9d1d9" stroke-width="1.5"/>'  # front glass
+        f'<rect x="{x + 4}" y="{y + 18}" width="{DX - 8}" height="{DY + 18}" fill="{liq}"/><path d="M{x + 4} {y + 18} q{DX / 4 - 2} -6 {DX / 2 - 4} 0 t{DX / 2 - 4} 0" fill="none" stroke="#e6edf3" stroke-opacity=".35" stroke-width="2"/>'
+        f'<line x1="{x + DX / 2 + 13}" y1="{y - 8}" x2="{x + DX / 2 + 13}" y2="{y - 44}" stroke="#8b949e" stroke-width="3"/><rect x="{x + DX / 2 + 5}" y="{y - 60}" width="16" height="18" rx="3" fill="#30363d" stroke="#8b949e"/>'
+        f'<path d="M{x + DX} {y} l26 -16 l0 {DY + 40} l-26 16 z" fill="#11161d" stroke="#c9d1d9" stroke-width="1.5"/></g>')
+# hop times: slow first steps, then faster and faster (a pure list, no state)
+hops, t, d = [], 0.9, 0.62
+for i in range(1, 70):
+    hops.append((i, round(t, 3), round(d, 3))); t += d; d = max(0.09, d * 0.86)
+hop_js = "\n".join(
+    f'      tl.to("#dot", {{ x: {i * DX}, duration: {d}, ease: "none" }}, {t}); '
+    f'tl.to("#dot", {{ y: {-i * DY - 34}, duration: {d * 0.5:.3f}, ease: "power2.out" }}, {t}); '
+    f'tl.to("#dot", {{ y: {-i * DY}, duration: {d * 0.5:.3f}, ease: "power2.in" }}, {t + d * 0.5:.3f});'
+    + (f' tl.to("#cam", {{ x: {-(i - 8) * DX}, y: {(i - 8) * DY}, duration: {d}, ease: "power1.inOut" }}, {t});' if i > 8 else "")
+    for i, t, d in hops)
+end_t = hops[-1][1] + hops[-1][2]
+write("stairs", 10, GRID + f"""
+      <svg width="1920" height="1080"><defs>
+        <radialGradient id="dg"><stop offset="0%" stop-color="#bfe0ff"/><stop offset="45%" stop-color="#58a6ff" stop-opacity=".9"/><stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="haze" x1="0" y1="1" x2="1" y2="0"><stop offset="45%" stop-color="#070a0f" stop-opacity="0"/><stop offset="100%" stop-color="#070a0f" stop-opacity=".95"/></linearGradient></defs>
+        <g id="cam"><g id="st">{''.join(steps)}</g>
+          <g transform="translate({180 + DX / 2} {980 - 30})"><g id="dot"><circle r="46" fill="url(#dg)"/><circle r="15" fill="#e6f3ff"/></g></g></g>
+        <rect width="1920" height="1080" fill="url(#haze)"/>
+        <g id="meter" opacity="0"><rect x="1700" y="300" width="44" height="520" rx="8" fill="#0d1117" stroke="#8b949e" stroke-width="2"/>
+          <rect id="pur" x="1706" y="306" width="32" height="508" rx="5" fill="#58a6ff" transform="translate(0 0)"/>
+          <text class="mono" x="1722" y="868" text-anchor="middle">PURITY</text></g>
+        <rect width="1920" height="1080" fill="url(#vg)"/></svg>
+      <div class="tagb">ILLUSTRATION · STEPS NOT TO SCALE</div>""", f"""
+      tl.fromTo(".stp", {{ opacity: 0, y: 40 }}, {{ opacity: 1, y: 0, duration: .5, stagger: .012, ease: "power2.out" }}, 0);
+      tl.to("#meter", {{ opacity: 1, duration: .4 }}, 1.2);
+      tl.fromTo("#pur", {{ scaleY: .04, transformOrigin: "50% 100%" }}, {{ scaleY: .93, duration: {end_t - 1.2:.2f}, ease: "power2.in", transformOrigin: "50% 100%" }}, 1.2);
+{hop_js}""")
+
 for sid in ["map_india", "map_asia"]:
     shutil.copy(HERE / "map/map.js", HERE / sid / "map.js")

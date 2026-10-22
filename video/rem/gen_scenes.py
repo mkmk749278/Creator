@@ -255,6 +255,50 @@ SCENES["rice"] = dict(dur=8, fov=30, bg="0x070a0f", fog="8, 24", bloom=0.6, hdri
       }
 """)
 
+# ---------------------------------------------------------------------------------------------------------------
+# buzz: a phone's vibration motor (eccentric rotating mass), modelled on teardown photos (Raimond Spekking, Commons:
+# Nokia X2-02 / iPhone 3G / Huawei W1 vibrating alert motors; projects/rare-earth-magnets/assets/ref/buzz): a small
+# nickel can with a printed label, a bracket, and a half-moon weight on the shaft. It buzzes, the can slides back,
+# and inside the spinning copper coil sits the small magnet, which glows. ILLUSTRATION, scaled up hugely.
+SCENES["buzz"] = dict(dur=10, fov=28, bg="0x070a0f", fog="10, 30", bloom=0.9, hdri="studio_small_09_1k.hdr", body="""
+      const nickel = new THREE.MeshPhysicalMaterial({ color: 0xb9bec4, metalness: 1, roughness: 0.28, clearcoat: 0.4, transparent: true, opacity: 1 });
+      const weightM = new THREE.MeshPhysicalMaterial({ color: 0x8f959c, metalness: 1, roughness: 0.4 });
+      const copper = new THREE.MeshPhysicalMaterial({ color: 0xc8743a, metalness: 1, roughness: 0.3, clearcoat: 0.5, transparent: true, opacity: 1 });
+      const magMat = new THREE.MeshPhysicalMaterial({ color: 0xc9ccd2, metalness: 1, roughness: 0.2, clearcoat: 0.8, emissive: 0x58a6ff, emissiveIntensity: 0 });
+      const dark = new THREE.MeshStandardMaterial({ color: 0x1b1f24, roughness: 0.7 });
+      // printed label (the reference cans carry a lot code in black ink)
+      const lc = document.createElement("canvas"); lc.width = 1024; lc.height = 256; const lg = lc.getContext("2d");
+      lg.fillStyle = "#c3c7cc"; lg.fillRect(0, 0, 1024, 256); lg.fillStyle = "#1a1a1a"; lg.font = "bold 70px monospace";
+      lg.save(); lg.translate(560, 128); lg.rotate(Math.PI / 2); lg.textAlign = "center"; lg.fillText("A4Z9", 0, 24); lg.restore();
+      const labelMat = new THREE.MeshPhysicalMaterial({ map: new THREE.CanvasTexture(lc), metalness: 0.9, roughness: 0.35, transparent: true, opacity: 1 });
+      const M = new THREE.Group(); M.rotation.z = Math.PI / 2; scene.add(M);   // axis along x
+      const can = new THREE.Group(); M.add(can);
+      const side = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.62, 2.0, 96, 1, true), labelMat); side.rotation.y = 2.2; can.add(side);
+      const endc = new THREE.Mesh(new THREE.CircleGeometry(0.62, 96), nickel); endc.rotation.x = Math.PI / 2; endc.position.y = -1.0; can.add(endc);
+      // inside: the fixed magnet on the axis, the coreless copper coil cup spinning round it, the shaft and the weight
+      const magnet = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 1.3, 64), magMat); magnet.position.y = -0.05; M.add(magnet);
+      const coil = new THREE.Group(); M.add(coil);
+      for (let i = 0; i < 3; i++) { const w = new THREE.Mesh(new THREE.TorusGeometry(0.46, 0.035, 12, 48, Math.PI * 0.55), copper);
+        w.rotation.set(Math.PI / 2, 0, i * Math.PI * 2 / 3); for (let k = 0; k < 7; k++) { const c = w.clone(); c.position.y = -0.55 + k * 0.17; coil.add(c); } }
+      const comm = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.2, 24), dark); comm.position.y = -0.85; M.add(comm);
+      const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 1.0, 16), weightM); shaft.position.y = 1.35; M.add(shaft);
+      const wt = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.6, 48, 1, false, 0, Math.PI), weightM); wt.position.y = 1.55;
+      const wg = new THREE.Group(); wg.add(wt); M.add(wg);
+      scene.add(shadowDisc(2.6, -1.0, 0.7));
+      function renderAt(t) {
+        const open = seg(t, 3.0, 5.4), glow = seg(t, 5.2, 6.8);
+        const spin = 9.0 * t;   // a pure function of time; fast enough to read as spinning
+        wg.rotation.y = spin; coil.rotation.y = spin;
+        const buzz = (1 - open) * 0.018;
+        M.position.set(buzz * Math.sin(t * 157), buzz * Math.sin(t * 131 + 1), 0);
+        can.position.y = -1.2 * open; nickel.opacity = labelMat.opacity = 1 - open; nickel.depthWrite = labelMat.depthWrite = open < 0.5;
+        copper.opacity = 1 - 0.55 * glow;
+        magMat.emissiveIntensity = 0.9 * glow;
+        const a = 0.55 + 0.25 * (t / DUR), r = 6.2 - 1.0 * seg(t, 0, 7);
+        camera.position.set(Math.sin(a) * r, 1.4, Math.cos(a) * r); camera.lookAt(-0.2 - 0.6 * open, 0, 0);
+      }
+""")
+
 for sid, s in SCENES.items():
     d = HERE / sid
     d.mkdir(parents=True, exist_ok=True)
