@@ -58,3 +58,16 @@ Open:
 - **Lede:** the Pune event is at 0:30, later than the 25 s guide. This is the owner's call: they asked for the familiar opening first. The magnet is on screen from 0:00, and India is named at 0:25.
 
 Mix: −14.2 LUFS, sample peak −0.9 dBFS.
+
+## Cut 4 (2026-10-22): final candidate, 11:09
+- **Open loop closed.** The owner recorded the pickup "Then, about six minutes in…". It is spliced into block 1 over the old sentence, at the same length:
+  - pickup 4% faster (inaudible), its mid pause shortened;
+  - lead-in pause 0.37 s, as in the original take;
+  - every later timing unchanged (silences checked against the original take).
+  - Thorium is at 5:41; the chip reads "~6 MIN IN".
+- **Fixes from cut 3, verified on frames:**
+  - "Not one factory" chip over the empty grid at 4:00;
+  - "Paused · 1 year" on the timeline;
+  - "Pause ends, or stretched?" on the closing calendar.
+- **Mix:** −14.1 LUFS, sample peak −0.5 dBFS (YouTube turns it down, not up).
+- **Lede:** still at 0:30 by the owner's choice (see cut 3).
