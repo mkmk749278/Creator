@@ -1146,7 +1146,11 @@ re-test a source when it fails, and update this table. Licence rows marked ✱ n
 
 ### 8.2 Reachable with a free key (add as environment secrets; recommended)
 Pexels (`api.pexels.com/videos/search`; **new API keys paused** in Oct 2026; `stock_fetch.py` supports it once
-`PEXELS_API_KEY` exists): commercial use OK; the website 403s here but the API answers. Pixabay now works (§8.1). Unsplash (`api.unsplash.com`), Freesound (`freesound.org/apiv2`, CC0/BY/BY-NC per sound),
+`PEXELS_API_KEY` exists): commercial use OK; the website 403s here but the API answers. **Owner's Pexels account (2026-10-22):** the owner has a Pexels
+login but no API key (new keys paused). Account logins never go in the repo, docs or chat logs (store them only as
+environment secrets), and a password is not a way in for sessions: the Pexels website 403s the cloud, and scripted website
+logins are not a supported download route. Use: the owner downloads a named Pexels clip on the phone and drops it in
+`Creator/<Channel>/<slug>/footage/` (pulled with `scripts/gdrive_pull.sh`), or `PEXELS_API_KEY` once Pexels issues keys again. Pixabay now works (§8.1). Unsplash (`api.unsplash.com`), Freesound (`freesound.org/apiv2`, CC0/BY/BY-NC per sound),
 DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email to Catalog_API@nara.gov).
 
 ### 8.3 Blocked or not usable
@@ -1195,12 +1199,19 @@ this). Use one of:
    window (stops cookie rotation), paste it into Settings → Secrets → Actions → `YT_COOKIES`. Re-export when runs fail
    with the bot check again. Choose `runner: self-hosted` to run on the VPS (helps only if its IP isn't flagged).
    The study workflow is **for analysing how other channels shoot**; their footage never goes in our videos.
-2. **Phone (Termux, mobile IP):**
+2. **Phone (Termux, mobile IP), one command straight into Drive (owner, 2026-10-22): the default for footage we
+   will use.** *Why:* YouTube 403s the cloud container and the VPS runner was offline twice (13 Oct, 22 Oct); the phone's
+   mobile IP downloads fine, and Drive is where sessions already read from. The session writes the exact line for the owner:
    ```bash
-   pkg install python ffmpeg nodejs && pip install "yt-dlp==2026.8.19"
-   yt-dlp --js-runtimes node -f "bv*[height<=720]+ba/b" -o "/sdcard/Download/%(id)s.%(ext)s" URL
+   curl -sL https://raw.githubusercontent.com/mkmk749278/Creator/main/scripts/termux_fetch_to_drive.sh | bash -s -- \
+     English/<slug> "URL" "URL@01:10-01:40"
    ```
-   Then upload to Google Drive and give Claude the file name (sessions read Drive through the connector).
+   `scripts/termux_fetch_to_drive.sh` installs python, ffmpeg, nodejs, rclone and yt-dlp 2026.8.19 on first run, creates the
+   rclone remote `creator` (one browser sign-in, rooted at the Creator folder), downloads each URL (`@MM:SS-MM:SS` = only
+   that range, max 1080p) and copies the MP4s plus `fetched.csv` (title, uploader, duration) to
+   `Creator/<Channel>/<slug>/footage/`. The session then runs
+   `scripts/gdrive_pull.sh <Channel>/<slug>/footage projects/<slug>/assets/yt` (needs `GDRIVE_RCLONE_TOKEN`, §1).
+   Still only short, credited excerpts of official or news footage the owner has cleared (§8.6).
 
 ### 8.6 Sourcing rules (and why)
 - **Fact-check before sourcing** (`/fact-check` → `claims.csv` → `scripts/claims_check.py`): sourcing for a claim that turns

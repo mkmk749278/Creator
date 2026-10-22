@@ -20,12 +20,13 @@ for l in lines:
         blocks.append(cur); cur = []
     cur.append(l)
 blocks.append(cur)
-out = ["# Recording blocks: Akash (ElevenLabs), rare earth magnets\n",
-       "Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. "
-       "Save each take as `voice/rem_bNN.mp3` (NN = block number).\n"]
-for i, b in enumerate(blocks, 1):
-    text = "\n\n".join(b)
-    assert len(text) < CAP, (i, len(text))
-    out.append(f"## Block {i} of {len(blocks)} · {len(text)} characters · save as `voice/rem_b{i:02d}.mp3`\n\n```\n{text}\n```\n")
-(HERE / "vo_blocks.md").write_text("\n".join(out))
-print(len(blocks), "blocks:", [len("\n\n".join(b)) for b in blocks])
+if __name__ == "__main__":
+    out = ["# Recording blocks: Akash (ElevenLabs), rare earth magnets\n",
+           "Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. "
+           "Save each take as `voice/rem_bNN.mp3` (NN = block number).\n"]
+    for i, b in enumerate(blocks, 1):
+        text = "\n\n".join(b)
+        assert len(text) < CAP, (i, len(text))
+        out.append(f"## Block {i} of {len(blocks)} · {len(text)} characters · save as `voice/rem_b{i:02d}.mp3`\n\n```\n{text}\n```\n")
+    (HERE / "vo_blocks.md").write_text("\n".join(out))
+    print(len(blocks), "blocks:", [len("\n\n".join(b)) for b in blocks])
