@@ -1,0 +1,342 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 2.172,
+  "te": "Let me be honest with you about the timeline.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.375,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 2.707,
+  "end": 5.449,
+  "te": "Under the scheme, plants get two years to be built.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.12,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 5.848,
+  "end": 7.436,
+  "te": "Then five years of support.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.12,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 7.992,
+  "end": 11.208,
+  "te": "And China has a head start of more than thirty years.",
+  "en": "",
+  "speech_vs_text": 1.23,
+  "boundary_margin": 0.875,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 11.854,
+  "end": 15.753,
+  "te": "Running hundreds of tanks well, every single day, takes practice.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.366,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 16.195,
+  "end": 17.518,
+  "te": "You can't buy that overnight.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.366,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 17.93,
+  "end": 19.836,
+  "te": "So here's the rule I take from all this.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.611,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 20.316,
+  "end": 24.242,
+  "te": "If you only sell the sand, you sell cheap and you buy expensive.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.42,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 24.762,
+  "end": 25.578,
+  "te": "And the price of that?",
+  "en": "",
+  "speech_vs_text": 0.77,
+  "boundary_margin": 0.42,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 26.103,
+  "end": 29.159,
+  "te": "When the one seller says stop, your factories stop.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.583,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 29.598,
+  "end": 30.43,
+  "te": "You saw it in Pune.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.583,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 30.918,
+  "end": 32.793,
+  "te": "But the reality today is different.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.26,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 33.241,
+  "end": 34.323,
+  "te": "India has the sand.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.26,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 34.668,
+  "end": 35.756,
+  "te": "It has the scientists.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 36.106,
+  "end": 37.58,
+  "te": "And now it has the money.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 38.026,
+  "end": 41.971,
+  "te": "What's left is the hard middle — more tanks, and the furnaces.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.315,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 42.404,
+  "end": 43.701,
+  "te": "So what does this mean for you?",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.315,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 44.215,
+  "end": 49.787,
+  "te": "If you're buying an electric scooter or a new phone, a small part inside it depends on this chain.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.224,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 50.191,
+  "end": 53.58,
+  "te": "Its price, and even whether it reaches your showroom on time.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.224,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 53.984,
+  "end": 54.861,
+  "te": "Watch two things.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.381,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 55.229,
+  "end": 58.73,
+  "te": "November tenth — does China's hold end, or get stretched?",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.183,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 59.141,
+  "end": 63.913,
+  "te": "And the scheme winners — the five companies that will try to build India's own magnets.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.183,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 64.327,
+  "end": 66.228,
+  "te": "India won't fix this in one jump.",
+  "en": "",
+  "speech_vs_text": 1.22,
+  "boundary_margin": 0.41,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 66.679,
+  "end": 69.473,
+  "te": "It'll be tank by tank... furnace by furnace.",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.407,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 69.905,
+  "end": 72.133,
+  "te": "And magnets aren't the only missing piece.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.407,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 72.527,
+  "end": 78.621,
+  "te": "India is called the pharmacy of the world... but a big share of the ingredients in your medicines comes from China.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.512,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 79.114,
+  "end": 79.405,
+  "te": "Why?",
+  "en": "",
+  "speech_vs_text": 1.55,
+  "boundary_margin": 1.401,
+  "confidence": "check"
+ },
+ {
+  "line": 28,
+  "start": 79.879,
+  "end": 81.005,
+  "te": "That's our next story.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 81.439,
+  "end": 83.311,
+  "te": "Which missing piece should we open after that?",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 83.716,
+  "end": 84.584,
+  "te": "Tell me in the comments.",
+  "en": "",
+  "speech_vs_text": 0.73,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 84.849,
+  "end": 85.855,
+  "te": "I read every one.",
+  "en": "",
+  "speech_vs_text": 1.24,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 86.294,
+  "end": 87.846,
+  "te": "This is Be Practical with Kishore.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 88.297,
+  "end": 89.013,
+  "te": "Stay practical.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 89.476,
+  "end": 89.85,
+  "te": "Jai Hind.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ }
+]

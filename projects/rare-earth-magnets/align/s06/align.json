@@ -1,0 +1,242 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 6.41,
+  "te": "But a magnet inside a hot motor also needs a little of two heavier ones, to keep its strength in the heat.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.27,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.943,
+  "end": 11.137,
+  "te": "Our own atomic energy department says India has very little of those.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.257,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 11.639,
+  "end": 13.733,
+  "te": "For now, we depend on others for them.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.257,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 14.28,
+  "end": 16.711,
+  "te": "So the sand alone was never going to be enough.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.556,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 17.206,
+  "end": 18.476,
+  "te": "You need the whole chain.",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.42,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 19.129,
+  "end": 20.768,
+  "te": "And then came the wake-up call.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.42,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 21.291,
+  "end": 22.71,
+  "te": "April, twenty twenty-five.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.545,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 23.411,
+  "end": 30.01,
+  "te": "China said companies now need special permission to send out seven of these elements... and the magnets made with them.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.68,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 30.449,
+  "end": 31.604,
+  "te": "Permission takes time.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.489,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 32.09,
+  "end": 34.457,
+  "te": "And while you wait, your supply dries up.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.489,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 34.871,
+  "end": 39.199,
+  "te": "By July, Bajaj was making about half the Chetaks it made a year earlier.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.828,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 39.685,
+  "end": 41.797,
+  "te": "Ather and T.V.S. felt the pressure too.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.192,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 42.297,
+  "end": 50.735,
+  "te": "Back in April, Rajiv Bajaj had warned — if China stopped these magnets, India's whole electric vehicle industry could halt within weeks.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.192,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 51.198,
+  "end": 54.758,
+  "te": "Later, China started giving permission to some Indian companies.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.208,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 55.213,
+  "end": 56.537,
+  "te": "But there was a condition.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.207,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 57.069,
+  "end": 59.321,
+  "te": "You couldn't use those magnets for defence.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.207,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 59.761,
+  "end": 63.94,
+  "te": "Then in October twenty twenty-five, China announced even wider rules.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.462,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 64.388,
+  "end": 68.331,
+  "te": "After talks with America, it put those new rules on hold for one year.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.462,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 68.777,
+  "end": 71.674,
+  "te": "That one-year hold is set to end on November tenth.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 1.475,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 72.236,
+  "end": 76.171,
+  "te": "America and China have already stretched their own trade deal till January.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 76.621,
+  "end": 77.597,
+  "te": "So here's what you watch.",
+  "en": "",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 2.154,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 78.076,
+  "end": 80.828,
+  "te": "Will China stretch this hold too... or not?",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.104,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 81.343,
+  "end": 82.674,
+  "te": "And the April permission rule?",
+  "en": "",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.104,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 83.185,
+  "end": 84.135,
+  "te": "It never went away.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ }
+]

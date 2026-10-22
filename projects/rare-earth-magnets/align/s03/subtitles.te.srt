@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:03,038
+Here's the catch, and it may surprise you.
+
+2
+00:00:03,038 --> 00:00:05,912
+Rare earths are not actually rare.
+
+3
+00:00:05,912 --> 00:00:08,670
+The rare part is getting them out clean.
+
+4
+00:00:08,670 --> 00:00:10,360
+There are seventeen of them.
+
+5
+00:00:10,360 --> 00:00:13,348
+And when you dig them up, you get them mixed together.
+
+6
+00:00:13,348 --> 00:00:18,274
+Think of them as seventeen brothers and sisters who look almost exactly alike.
+
+7
+00:00:18,274 --> 00:00:22,786
+Nearly the same size, same habits, almost the same chemistry.
+
+8
+00:00:22,786 --> 00:00:26,062
+To your eye, and to most chemicals, they look the same.
+
+9
+00:00:26,062 --> 00:00:28,880
+So how do you pull one of them out of the crowd?
+
+10
+00:00:28,880 --> 00:00:30,885
+There's no single magic step.
+
+11
+00:00:30,885 --> 00:00:35,575
+You dissolve the mix in acid, and the liquid flows through a long row of tanks.
+
+12
+00:00:35,575 --> 00:00:39,070
+Each tank pulls them apart... only a tiny bit.
+
+13
+00:00:39,070 --> 00:00:40,202
+So you repeat it.
+
+14
+00:00:40,202 --> 00:00:41,836
+Again and again.
+
+15
+00:00:41,836 --> 00:00:47,280
+A big plant can run hundreds of these tanks in a row, just to get one element clean.
+
+16
+00:00:47,280 --> 00:00:48,764
+It's like washing rice.
+
+17
+00:00:48,764 --> 00:00:51,011
+One wash takes out a little dirt.
+
+18
+00:00:51,011 --> 00:00:52,627
+You want it perfectly clean?
+
+19
+00:00:52,627 --> 00:00:55,426
+You keep washing... hundreds of times.
+
+20
+00:00:55,426 --> 00:00:57,257
+And that's only the first half.
+
+21
+00:00:57,257 --> 00:00:59,157
+The second half is faster.
+
+22
+00:00:59,157 --> 00:01:00,535
+Let me run you through it.
+
+23
+00:01:00,535 --> 00:01:03,674
+Next, the clean rare earth becomes a metal.
+
+24
+00:01:03,674 --> 00:01:10,730
+You melt that metal with iron and boron — a mix like that is called an alloy — and cool it into thin pieces.
+
+25
+00:01:10,730 --> 00:01:16,865
+Then hydrogen gas cracks those pieces, and you grind them into a powder much smaller than flour.
+
+26
+00:01:16,865 --> 00:01:24,432
+You line that powder up inside a strong magnetic field, press it into a block, and bake it at about a thousand degrees.
+
+27
+00:01:24,432 --> 00:01:27,885
+Only at the very end do you switch on its magnetism.
+
+28
+00:01:27,885 --> 00:01:30,436
+That's when you finally have a magnet.
+

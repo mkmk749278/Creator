@@ -1,0 +1,282 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 2.106,
+  "te": "So a magnet isn't one factory.",
+  "en": "",
+  "speech_vs_text": 1.4,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 2.527,
+  "end": 3.2,
+  "te": "It's a chain.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.505,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 3.742,
+  "end": 9.761,
+  "te": "Sand, to mixed rare earths, to clean rare earth powder, to metal, to alloy, to magnet.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.274,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 10.316,
+  "end": 12.245,
+  "te": "Miss one link... and you're stuck.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.274,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 12.928,
+  "end": 13.85,
+  "te": "Remember this chain.",
+  "en": "",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.541,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 14.24,
+  "end": 15.333,
+  "te": "It's the whole story.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 1.86,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 15.984,
+  "end": 18.584,
+  "te": "So how did China end up leading every link?",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.253,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 19.095,
+  "end": 27.113,
+  "te": "In nineteen ninety-two, China's leader Deng Xiaoping is reported to have said — the Middle East has oil, China has rare earths.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.221,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 27.586,
+  "end": 30.078,
+  "te": "And China treated it like a national mission.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.221,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 30.564,
+  "end": 32.222,
+  "te": "Long-term, and patient.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.177,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 32.671,
+  "end": 36.626,
+  "te": "Until about forty years ago, America made most of the world's rare earths.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.177,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 37.059,
+  "end": 41.806,
+  "te": "Then the work moved to China, where labour was cheaper and pollution rules were weaker.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.433,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 42.219,
+  "end": 44.577,
+  "te": "Because separating rare earths is dirty work.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.546,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 45.086,
+  "end": 46.039,
+  "te": "Strong acids.",
+  "en": "",
+  "speech_vs_text": 1.32,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 46.275,
+  "end": 47.168,
+  "te": "Lots of waste.",
+  "en": "",
+  "speech_vs_text": 1.24,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 47.561,
+  "end": 49.999,
+  "te": "Most countries were happy to let someone else do it.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.28,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 50.544,
+  "end": 54.93,
+  "te": "So China did it for thirty years... and got very, very good at it.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.236,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 55.502,
+  "end": 57.576,
+  "te": "Now look at where that leaves you and me today.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.236,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 58.054,
+  "end": 59.873,
+  "te": "Digging up the rare earths for magnets?",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 60.314,
+  "end": 62.105,
+  "te": "China does about six out of ten.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 62.589,
+  "end": 63.16,
+  "te": "Cleaning them?",
+  "en": "",
+  "speech_vs_text": 0.73,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 63.498,
+  "end": 65.14,
+  "te": "About eight and a half out of ten.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 65.603,
+  "end": 66.575,
+  "te": "Making the magnets?",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 66.87,
+  "end": 68.175,
+  "te": "More than nine out of ten.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 68.649,
+  "end": 70.674,
+  "te": "That's from the International Energy Agency.",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 71.161,
+  "end": 72.098,
+  "te": "Do you notice something?",
+  "en": "",
+  "speech_vs_text": 0.72,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 72.524,
+  "end": 74.111,
+  "te": "Digging is the easy part.",
+  "en": "",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 0.179,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 74.512,
+  "end": 79.26,
+  "te": "The tanks and the furnaces are the hard part... and China runs most of them.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.179,
+  "confidence": "high"
+ }
+]
