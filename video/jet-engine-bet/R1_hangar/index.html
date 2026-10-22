@@ -48,11 +48,11 @@
       import { createNoise2D } from "simplex-noise";
       await document.fonts.load("800 140px Inter");
       const st = createStage({ fov: 40, near: 0.1, far: 500, hdri: "vendor/ph/hangar_interior_2k.hdr",
-        bloom: { intensity: 0.75, threshold: 1.1, smoothing: 0.3, radius: 0.8 }, vignette: 0.0,
-        ao: { radius: 1.3, intensity: 2.6, quality: "Performance" }, whip: true });
+        bloom: { intensity: 0.75, threshold: 1.1, smoothing: 0.3, radius: 0.8 }, vignette: 0.55,
+        ao: { radius: 1.3, intensity: 2.6, quality: "Performance" }, dof: { distance: 9, range: 4, bokeh: 2.4 }, whip: true });
       const { scene, camera } = st;
       scene.background = new THREE.Color(0x03050a); scene.fog = new THREE.FogExp2(0x0c121b, 0.0105);
-      setEnv(scene, 0.2);
+      setEnv(scene, 0.38);
       const noise = createNoise2D(mulberry32(11));
       const tex = (url, srgb) => new THREE.TextureLoader().loadAsync(url).then((t) => { t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; if (srgb) t.colorSpace = THREE.SRGBColorSpace; return t; });
       const [fD, fR, fN] = await Promise.all([tex("vendor/ph/hangar_concrete_floor_diff_2k.jpg", true), tex("vendor/ph/hangar_concrete_floor_rough_2k.jpg"), tex("vendor/ph/hangar_concrete_floor_nor_gl_2k.jpg")]);
@@ -124,15 +124,15 @@
       const tagPivot = new THREE.Group(); tagPivot.position.set(HX - 0.06, 0.92, HZ - 4.4); scene.add(tagPivot);
       const tag = new THREE.Mesh(new THREE.PlaneGeometry(0.16, 0.34, 1, 5), new THREE.MeshStandardMaterial({ color: 0xd8321c, roughness: 0.85, side: THREE.DoubleSide, emissive: 0x2a0905 })); tag.position.y = -0.18; tagPivot.add(tag);
       // --- light ---------------------------------------------------------------------------------------------------------------------
-      scene.add(new THREE.HemisphereLight(0x6a7f9f, 0x12151a, 0.18));
+      scene.add(new THREE.HemisphereLight(0x7b90b4, 0x15181e, 0.42));
       for (const [x, z] of [[-13.5, 20], [-13.5, 44], [13.5, 24], [13.5, 56], [-27, 30], [27, 40], [0, 70], [-13.5, 80]]) {
-        const s = new THREE.SpotLight(0xdfe9ff, 130, 50, 0.9, 1.0, 2); s.position.set(x, HH - 1.4, z); s.target.position.set(x, 0, z); scene.add(s); scene.add(s.target); }
+        const s = new THREE.SpotLight(0xdfe9ff, 190, 50, 0.9, 1.0, 2); s.position.set(x, HH - 1.4, z); s.target.position.set(x, 0, z); scene.add(s); scene.add(s.target); }
       const rim = new THREE.DirectionalLight(0xffb87a, 0); rim.position.set(0, 7, -40); rim.target.position.set(-6, 0, 20); scene.add(rim); scene.add(rim.target);
       const torch = new THREE.SpotLight(0xfff1dc, 6, 22, 0.5, 0.95, 1.8); scene.add(torch); scene.add(torch.target);
       // light shafts: soft additive cones from the battens above the jets
-      const coneMat = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false, uniforms: { uA: { value: 0.07 } },
-        vertexShader: "varying vec2 vUv; varying vec3 vN; varying vec3 vV; void main(){ vUv = uv; vec4 mv = modelViewMatrix * vec4(position,1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }",
-        fragmentShader: "varying vec2 vUv; varying vec3 vN; varying vec3 vV; uniform float uA; void main(){ float f = abs(dot(normalize(vN), normalize(vV))); float a = pow(1.0 - vUv.y, 1.8) * pow(f, 2.2) * uA; gl_FragColor = vec4(vec3(0.6,0.76,1.0) * a, a); }" });
+      const coneMat = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false, uniforms: { uA: { value: 0.05 } },
+        vertexShader: "varying vec2 vUv; varying vec3 vN; varying vec3 vV; varying float vY; void main(){ vUv = uv; vY = position.y; vec4 mv = modelViewMatrix * vec4(position,1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }",
+        fragmentShader: "varying vec2 vUv; varying vec3 vN; varying vec3 vV; varying float vY; uniform float uA; void main(){ float f = abs(dot(normalize(vN), normalize(vV))); float e = smoothstep(-7.5, -3.0, vY) * (1.0 - smoothstep(2.0, 7.5, vY)); float a = e * pow(f, 2.6) * uA; gl_FragColor = vec4(vec3(0.6,0.76,1.0) * a, a); }" });
       for (const [x, z] of [[-13.5, 20], [13.5, 24], [-13.5, 44], [13.5, 56], [0, 70]]) { const c = new THREE.Mesh(new THREE.ConeGeometry(5.2, 15, 32, 1, true), coneMat); c.position.set(x, 8.6, z); c.rotation.x = Math.PI; scene.add(c); }
       // dust motes: round soft sprites, only a few hundred
       const NP = 900, pr = mulberry32(5), b3 = new Float32Array(NP * 3), ph = new Float32Array(NP);
@@ -166,7 +166,7 @@
       st.run((t) => {
         const open = seg(t, 0.3, 2.0, ease.inOut2);
         doorG.position.y = 16.2 * open;
-        spill.scale.set(34, 8 + 40 * open, 1); spill.position.z = (8 + 40 * open) / 2; spill.material.opacity = 1;
+        spill.scale.set(34, 8 + 40 * open, 1); spill.position.z = (8 + 40 * open) / 2; spill.material.opacity = 0.5;
         const c = sample(t); const w = walk(t);
         const n1 = noise(t * 0.5, 1), n2 = noise(t * 0.5, 7), n3 = noise(t * 0.4, 13);
         const bob = 0.02 * w * Math.sin(t * 11.0), sway = 0.012 * w * Math.sin(t * 5.5);
@@ -180,7 +180,7 @@
         torch.intensity = 4 + 70 * tun; torch.angle = 0.42 + 0.2 * tun;
         rim.intensity = 1.2 * open;
         tagPivot.rotation.z = (t > 19 ? 0.5 * Math.sin((t - 19) * 2.3) * Math.exp(-(t - 19) * 0.2) : 0);
-        const dist = c.p.distanceTo(c.l);
+        const dist = c.p.distanceTo(c.l); st.fx.dof.cocMaterial.focusDistance = Math.max(2, Math.min(dist, 40)); st.fx.dof.cocMaterial.focusRange = Math.max(2.2, dist * 0.45);
         const wh = Math.sin(clamp((t - 33.95) / 0.7) * Math.PI); st.fx.whip.uniforms.get("uAmt").value = 0.055 * wh; st.fx.whip.uniforms.get("uDir").value.set(1, 0.04);
         const pa = dgeo.attributes.position.array;
         for (let i = 0; i < NP; i++) { pa[i * 3] = b3[i * 3] + 0.5 * Math.sin(t * 0.23 + ph[i]); pa[i * 3 + 1] = (b3[i * 3 + 1] + 10 - t * 0.06) % 10 + 0.5 + 0.15 * Math.sin(t * 0.4 + ph[i] * 2); pa[i * 3 + 2] = b3[i * 3 + 2] + 0.4 * Math.cos(t * 0.19 + ph[i]); }

@@ -105,8 +105,8 @@ function mats(seed) {
   const grey = new THREE.Color(0x737b84), olive = new THREE.Color(0x4b5048);
   M = {
     grey, olive,
-    paint: new THREE.MeshPhysicalMaterial({ color: 0xffffff, vertexColors: true, roughness: 0.58, metalness: 0.12, clearcoat: 0.45, clearcoatRoughness: 0.32, bumpMap: atlas, bumpScale: 1.6, roughnessMap: atlas, envMapIntensity: 0.9 }),
-    paintFlat: new THREE.MeshPhysicalMaterial({ color: grey, roughness: 0.58, metalness: 0.12, clearcoat: 0.45, clearcoatRoughness: 0.32, bumpMap: atlas, bumpScale: 1.6, roughnessMap: atlas, envMapIntensity: 0.9, side: THREE.DoubleSide }),
+    paint: new THREE.MeshPhysicalMaterial({ color: 0xffffff, vertexColors: true, roughness: 0.62, metalness: 0.1, clearcoat: 0.22, clearcoatRoughness: 0.4, bumpMap: atlas, bumpScale: 1.6, roughnessMap: atlas, envMapIntensity: 0.9 }),
+    paintFlat: new THREE.MeshPhysicalMaterial({ color: grey, roughness: 0.62, metalness: 0.1, clearcoat: 0.22, clearcoatRoughness: 0.4, bumpMap: atlas, bumpScale: 1.6, roughnessMap: atlas, envMapIntensity: 0.9, side: THREE.DoubleSide }),
     dark: new THREE.MeshStandardMaterial({ color: 0x0d0e11, roughness: 0.7, metalness: 0.3 }),
     glass: new THREE.MeshPhysicalMaterial({ color: 0x0b0f16, roughness: 0.03, metalness: 0.15, clearcoat: 1, clearcoatRoughness: 0.02, envMapIntensity: 3.2, reflectivity: 0.9 }),
     frame: new THREE.MeshStandardMaterial({ color: 0x23262b, roughness: 0.5, metalness: 0.6 }),
@@ -114,7 +114,7 @@ function mats(seed) {
     rubber: new THREE.MeshStandardMaterial({ color: 0x0b0b0c, roughness: 0.92, metalness: 0.0 }),
     metalDull: new THREE.MeshStandardMaterial({ color: 0x3a3c40, roughness: 0.62, metalness: 0.8, bumpMap: atlas, bumpScale: 0.8 }),
     petal: new THREE.MeshStandardMaterial({ color: 0xffffff, vertexColors: true, roughness: 0.55, metalness: 0.85, side: THREE.DoubleSide, bumpMap: atlas, bumpScale: 0.6 }),
-    bay: new THREE.MeshStandardMaterial({ color: 0x1d1e22, roughness: 0.72, metalness: 0.6, side: THREE.BackSide, bumpMap: atlas, bumpScale: 1.2 }),
+    bay: new THREE.MeshStandardMaterial({ color: 0x1d1e22, roughness: 0.72, metalness: 0.6, side: THREE.DoubleSide, bumpMap: atlas, bumpScale: 1.2 }),
     tag: new THREE.MeshStandardMaterial({ color: 0xd8321c, roughness: 0.85, side: THREE.DoubleSide, emissive: 0x2a0905 }),
   };
   return M;
@@ -166,7 +166,7 @@ export function makeJet({ detail = 1, seed = 1 } = {}) {
     // the empty engine bay: irregular lathe wall, rails, uneven frames, cable looms, bulkhead with bolts, mount bracket, tag
     const r = mulberry32(seed + 30); const prof = [];
     for (let i = 0; i <= 40; i++) { const z = JET.nozzleZ + 0.1 + (i / 40) * JET.bayLen; prof.push(new THREE.Vector2(JET.tubeR + 0.035 * Math.sin(z * 2.3) + 0.03 * (r() - 0.5) + 0.04 * sstep(JET.bayLen - 1.5, JET.bayLen, z - JET.nozzleZ), z)); }
-    const bayG = new THREE.LatheGeometry(prof, 40); bayG.rotateX(Math.PI / 2); bayG.scale(1, 1, -1);
+    const bayG = new THREE.LatheGeometry(prof, 40); bayG.rotateX(Math.PI / 2);
     const bay = new THREE.Mesh(bayG, m.bay); bay.position.y = 0.04; add(bay);
     for (const ang of [Math.PI * 0.17, Math.PI * 1.17]) { const rail = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.09, JET.bayLen - 1.2), m.metalDull); rail.position.set(Math.cos(ang) * 0.51, 0.04 + Math.sin(ang) * 0.51, JET.nozzleZ + JET.bayLen / 2); rail.rotation.z = ang + Math.PI / 2; add(rail); }
     let zf = JET.nozzleZ + 0.7; while (zf < JET.nozzleZ + JET.bayLen - 0.5) { const th = 0.012 + r() * 0.03; const f = new THREE.Mesh(new THREE.TorusGeometry(JET.tubeR * 0.985, th, 8, 40), m.metalDull); f.position.set(0, 0.04, zf); add(f); zf += 0.35 + r() * 1.2; }
