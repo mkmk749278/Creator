@@ -88,8 +88,9 @@ def big(text, at, to, x, y, col="ink", fx="pop"):
     el(f'<div class="big c-{col}" style="left:{x}px;top:{y}px" {attrs(at, to, fx)}>{esc(text)}</div>', at, to)
 
 
-def quote(text, small, at, to):
-    el(f'<div class="quote" {attrs(at, to, "up", 0.5)}>{esc(text)}<small>{esc(small)}</small></div>', at, to)
+def quote(text, small, at, to, top=None):
+    st = f' style="top:{top}px;bottom:auto"' if top is not None else ""
+    el(f'<div class="quote"{st} {attrs(at, to, "up", 0.5)}>{esc(text)}<small>{esc(small)}</small></div>', at, to)
 
 
 def namelt(name, role, at, to):
@@ -167,7 +168,7 @@ def tline(at, to):
 shot(0.0, 2.7, "T_sandmagnet", "in", "")                                              # "July, twenty twenty-five. Pune."
 datebig("JULY 2025", "PUNE · BAJAJ CHETAK PLANT", 0.15, 8.4)
 shot(2.7, 5.6, "Y01", "slow", ms=37.0)                                                 # "Bajaj's electric Chetak factory..."
-shot(5.6, 8.4, "Y01", "in", ms=136.5)                                                  # "...barely half the scooters it made a year earlier."
+shot(5.6, 8.4, "Y01", "in", ms=132.0)                                                  # "...barely half the scooters it made a year earlier."
 chip("Output ≈ half", 6.0, 8.4, 1260, 760, "red", "sm", "pop")
 shot(8.4, 12.05, "R_bp_bg", "slow", ms=0.0)                                            # "The reason? Not a strike. Not batteries."
 chip("Strike", 9.85, 12.05, 560, 420, "slate", "", "pop", "✕")
@@ -179,7 +180,7 @@ shot(16.4, 22.65, "R_bp_bg", "push", ms=4.0)                                    
 el(f'<div class="hkey" style="left:220px;top:300px" {attrs(16.5, 22.65, "fade")}>CHETAK OUTPUT · ONE MONTH</div>', 16.5, 22.65)
 hbar(16.6, 22.65, 220, 400, 1180, "slate", "JULY 2024", '<span data-count="0,20384,F16.7,1.6">0</span>')
 hbar(19.85, 22.65, 220, 620, 626, "red", "JULY 2025", '<span data-count="0,10824,F19.95,1.4">0</span>')
-chip("−47%", 21.0, 22.65, 1080, 610, "red", "", "pop")
+chip("−47%", 21.0, 22.65, 1160, 610, "red", "", "pop")
 cite("[AUTOCAR INDIA | AUG 2025]", 16.6, 22.65)
 shot(22.65, 26.3, "Y05", "crop", ms=63.5)                                              # "And the crazy part? The raw material ... in the sand on our own beaches"
 chip("Our own sand", 23.9, 26.3, 120, 300, "amber", "", "pop")
@@ -191,7 +192,7 @@ cite("[DAE / AMD | RAJYA SABHA 2026]", 32.6, 37.85)
 shot(37.85, 40.45, "T_sandmagnet", "in", "")                                           # "So why can't India make the magnet?"
 big("OUR SAND.", 38.0, 40.45, 110, 200, "ink", "left")
 big("THEIR MAGNET.", 38.5, 40.45, 110, 370, "amber", "left")
-shot(40.45, 42.8, "R_bp_bg", "slow", ms=6.0)                                            # "Stay with me, and you'll see three things."
+shot(40.45, 42.8, "px_180875", "slow", ms=9.0)                                            # "Stay with me, and you'll see three things."
 big("3 THINGS", 40.6, 42.8, 620, 420, "cyan")
 shot(42.8, 45.45, "Y11", "in", ms=36.0)                                                # "The hard step nobody else wanted to do."
 lbl("1 · The hard step", 43.0, 45.45, 120, 760, "cyan")
@@ -200,14 +201,14 @@ lbl("2 · The secret in our sand", 45.6, 50.6, 120, 760, "amber")
 chip("~5 min in", 46.5, 50.6, 1380, 160, "slate", "sm", "pop")
 shot(50.6, 53.6, "R_bp_bg", "push", ms=10.0)                                            # "And at the end, the date you should watch."
 lbl("3 · The date to watch", 50.75, 53.6, 120, 760, "red")
-el(f'<div class="cal" style="left:820px;top:330px" {attrs(51.0, 53.6, "pop")}><div class="d"><div class="w">NOV</div><div class="n">?</div></div></div>', 51.0, 53.6)
+el(f'<div class="cal" style="left:820px;top:330px" {attrs(51.0, 53.6, "pop")}><div class="d"><div class="w">NOV</div><div class="n">10</div></div></div>', 51.0, 53.6)
 
 # ---- THE MAGNET (0:53-1:53)
 shot(53.6, 58.1, "Y07", "in", ms=103.5)                                                # "First, what is this magnet? It's called a rare earth magnet."
 chip("Rare earth magnet", 56.1, 58.1, 120, 760, "cyan", "", "up")
-shot(58.1, 62.7, "Y07", "slow", ms=106.5)                                              # "Mostly iron, a pinch of boron, and a metal called neodymium."
-lbl("Iron", 58.4, 62.7, 140, 300, "slate", "left"); lbl("Boron", 59.4, 62.7, 140, 380, "slate", "left")
-lbl("Neodymium", 60.5, 62.7, 140, 460, "cyan", "left")
+shot(58.1, 62.7, "Y07", "crop", ms=106.5, origin="50% 100%")                                              # "Mostly iron, a pinch of boron, and a metal called neodymium."
+chip("Iron", 58.4, 62.7, 120, 560, "slate", "sm", "pop"); chip("Boron", 59.4, 62.7, 120, 660, "slate", "sm", "pop")
+chip("Neodymium", 60.5, 62.7, 120, 760, "cyan", "sm", "pop")
 shot(62.7, 68.1, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=66.0)        # "It's small, but it's very strong. And in a motor, strength is everything."
 chip("Small · very strong", 63.0, 68.1, 120, 760, "cyan", "sm", "up")
 shot(68.1, 78.6, "R_bp_bg", "slow", "ILLUSTRATIVE", ms=12.0)                            # "Here's why... same push from a smaller motor... lighter... more kilometres... Makes sense?"
@@ -256,22 +257,22 @@ shot(160.0, 168.0, "R_rice", "none", "ILLUSTRATION", ms=0.0)                    
 chip("Like washing rice", 160.2, 168.0, 120, 160, "ink", "", "pop")
 count(165.3, 168.0, 1260, 760, 1, 200, 165.4, 2.2, "WASH ", "", "cyan", "sm")
 shot(168.0, 173.2, "Y08", "crop", ms=0.0)                                             # "And that's only the first half. The second half is faster. Let me run you through it."
-chip("Second half", 170.0, 173.2, 120, 160, "cyan", "", "pop")
+chip("Second half", 170.0, 173.2, 120, 300, "cyan", "", "pop")
 # the second half: real factory steps, each under its VO clause; drawings fill what footage can't show
 shot(173.2, 176.4, "Y08", "crop", ms=5.0)                                              # "Next, the clean rare earth becomes a metal."
-lbl("Metal", 173.6, 176.4, 120, 160, "cyan")
+lbl("Metal", 173.6, 176.4, 120, 300, "cyan")
 shot(176.4, 179.6, "Y08", "crop", ms=11.0)                                              # "You melt that metal with iron and boron —"
-lbl("+ Iron + Boron", 176.6, 179.6, 120, 160, "amber")
+lbl("+ Iron + Boron", 176.6, 179.6, 120, 300, "amber")
 shot(179.6, 183.4, "Y08", "crop", ms=28.5)                                              # "— a mix like that is called an alloy — and cool it into thin pieces."
-lbl("Alloy · thin pieces", 179.8, 183.4, 120, 160, "cyan")
+lbl("Alloy · thin pieces", 179.8, 183.4, 120, 300, "cyan")
 shot(183.4, 186.3, "R_magline", "none", ms=10.8)                                        # "Then hydrogen gas cracks those pieces,"
-shot(186.3, 189.5, "Y07", "in", ms=13.0)                                                # "and you grind them into a powder much smaller than flour."
+shot(186.3, 189.5, "Y07", "crop", ms=13.0, origin="100% 0%")                                                # "and you grind them into a powder much smaller than flour."
 lbl("Finer than flour", 186.5, 189.5, 120, 160, "cyan")
 shot(189.5, 192.4, "R_magline", "none", ms=16.5)                                        # "You line that powder up inside a strong magnetic field,"
-shot(192.4, 194.6, "Y07", "in", ms=28.0)                                                # "press it into a block,"
-shot(194.6, 197.1, "Y07", "in", ms=37.5)                                                # "and bake it at about a thousand degrees."
+shot(192.4, 194.6, "Y07", "crop", ms=28.0, origin="100% 0%")                                                # "press it into a block,"
+shot(194.6, 197.1, "Y07", "crop", ms=37.5, origin="100% 0%")                                                # "and bake it at about a thousand degrees."
 lbl("~1,000–1,100 °C", 194.8, 197.1, 120, 160, "orange")
-shot(197.1, 200.5, "Y07", "in", ms=70.0)                                                # "Only at the very end do you switch on its magnetism."
+shot(197.1, 200.5, "Y07", "crop", ms=70.0, origin="100% 0%")                                                # "Only at the very end do you switch on its magnetism."
 shot(200.5, 203.7, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=67.5)      # "That's when you finally have a magnet."
 chip("Magnet", 200.8, 203.7, 120, 760, "cyan", "", "up")
 shot(203.7, 219.7, "R_bp_bg", "slow", ms=20.0)                                          # "So a magnet isn't one factory. It's a chain. Sand, to mixed ... to magnet. Miss one link... stuck."
@@ -282,7 +283,7 @@ chip("Stuck", 215.3, 219.7, 860, 420, "red", "", "pop")
 # ---- HOW CHINA WON (3:40-4:43)
 shot(219.7, 222.85, "R_map_asia", "none", "MAP · LAND ONLY", ms=8.0)                    # "So how did China end up leading every link?"
 shot(222.85, 231.3, "R_map_asia", "none", "MAP · LAND ONLY", ms=10.5)                   # Deng Xiaoping is reported to have said ...
-quote("The Middle East has oil. China has rare earths.", "DENG XIAOPING · AS REPORTED · 1992", 224.6, 231.3)
+quote("The Middle East has oil. China has rare earths.", "DENG XIAOPING · AS REPORTED · 1992", 224.6, 231.3, top=110)
 shot(231.3, 236.4, "Y03", "in", ms=64.5)                                                # "And China treated it like a national mission. Long-term, and patient."
 chip("National mission", 231.6, 236.4, 120, 760, "amber", "", "up")
 shot(236.4, 240.8, "R_bp_bg", "slow", ms=24.0)                                          # "Until about forty years ago, America made most of the world's rare earths."
@@ -294,7 +295,7 @@ chip("Weaker pollution rules", 243.6, 245.95, 120, 420, "amber", "sm", "pop")
 shot(245.95, 254.3, "Y04", "crop", ms=38.5)                                            # "Because separating rare earths is dirty work. Strong acids. Lots of waste..."
 chip("Strong acids", 248.8, 254.3, 120, 160, "red", "sm", "pop")
 chip("Lots of waste", 250.0, 254.3, 120, 280, "red", "sm", "pop")
-shot(254.3, 259.2, "Y07", "slow", ms=10.0)                                               # "So China did it for thirty years... and got very, very good at it."
+shot(254.3, 259.2, "Y07", "crop", ms=10.0, origin="100% 0%")                                               # "So China did it for thirty years... and got very, very good at it."
 chip("30 years", 254.5, 259.2, 120, 760, "amber", "", "up")
 shot(259.2, 274.9, "R_bp_bg", "slow", ms=26.0)                                          # IEA: six of ten, eight and a half of ten, more than nine of ten
 el(f'<div class="hkey" style="left:220px;top:250px;color:var(--ink)" {attrs(259.4, 274.9, "fade")}>CHINA\'S SHARE OF THE WORLD</div>', 259.4, 274.9)
@@ -373,8 +374,8 @@ tick(424.9, 433.7, 300, "Licence rule", "APR 2025", "red")
 tick(425.4, 433.7, 760, "Wider rules", "OCT 2025", "red")
 tick(430.4, 433.7, 1220, "On hold · 1 year", "NOV 2025", "amber")
 shot(433.7, 446.3, "P_technology", "in", "DOCUMENT · TECHNOLOGY.ORG")                   # "...set to end on November tenth. ... trade deal till January. ... Will China stretch this hold too...?"
-chip("On paper: 10 Nov 2026", 433.9, 446.3, 120, 160, "amber", "sm", "pop")
-chip("US–China truce: 10 Jan 2027", 437.3, 446.3, 120, 270, "cyan", "sm", "pop")
+chip("On paper: 10 Nov 2026", 433.9, 446.3, 120, 560, "amber", "sm", "pop")
+chip("US–China truce: 10 Jan 2027", 437.3, 446.3, 120, 660, "cyan", "sm", "pop")
 chip("Stretch?", 443.1, 446.3, 1300, 760, "ink", "", "pop")
 cite("[MOFCOM | 2025–26 · AS OF 21 OCT 2026]", 434.0, 446.3)
 shot(446.3, 449.9, "R_bp_bg", "slow", ms=34.0)                                          # "And the April permission rule? It never went away."
@@ -400,13 +401,13 @@ shot(480.2, 490.2, "R_bp_bg", "slow", ms=4.0)                                   
 count(480.9, 490.2, 600, 230, 0, 6000, 481.0, 1.4, "", " T / YEAR", "green", "xl")
 chain(484.9, 490.2, states=[(2, 486.0, "cyan"), (3, 487.4, "cyan"), (4, 488.2, "cyan"), (5, 488.9, "cyan")])
 shot(490.2, 499.45, "P_ddindia", "in", "DOCUMENT · DD INDIA")                          # "Five companies can win up to 1,200 tonnes each. This August, twenty bids came in. ... L and T, Coal India and ReNew."
-chip("5 × 1,200 T", 490.5, 499.45, 120, 160, "green", "sm", "pop")
-chip("20 bids · Aug 2026", 493.9, 499.45, 120, 270, "cyan", "sm", "pop")
+chip("5 × 1,200 T", 490.5, 499.45, 120, 560, "green", "sm", "pop")
+chip("20 bids · Aug 2026", 493.9, 499.45, 120, 660, "cyan", "sm", "pop")
 chip("L&T · Coal India · ReNew", 496.2, 499.45, 120, 760, "ink", "sm", "up")
 cite("[MHI / DD INDIA | AUG 2026]", 490.5, 499.45)
-shot(499.45, 503.0, "R_bp_bg", "slow", ms=12.0)                                         # "The winners are still to be announced, so keep your eyes on this."
-chip("Winners: not yet", 499.7, 503.0, 620, 420, "amber", "", "pop")
-el(f'<div class="hkey" style="left:640px;top:560px" {attrs(500.0, 503.0, "fade")}>AS OF 21 OCT 2026</div>', 500.0, 503.0)
+shot(499.45, 503.0, "px_40054", "slow", ms=4.0, dim=True)                                         # "The winners are still to be announced, so keep your eyes on this."
+chip("Winners: not yet", 499.7, 503.0, 120, 160, "amber", "", "pop")
+el(f'<div class="hkey" style="left:140px;top:290px" {attrs(500.0, 503.0, "fade")}>AS OF 21 OCT 2026</div>', 500.0, 503.0)
 shot(503.0, 510.3, "R_map_india", "none", "MAP · LAND ONLY · ILLUSTRATIVE ZONES", ms=15.6)  # "The 2026 budget also announced special rare earth zones in Odisha, Kerala, Andhra Pradesh and Tamil Nadu."
 cite("[UNION BUDGET 2026–27]", 503.2, 510.3)
 shot(510.3, 514.75, "P_budget", "in", "DOCUMENT · PIB")                                 # "Mining, processing, research and factories, all linked up."
@@ -421,7 +422,8 @@ chip("The hard middle", 528.4, 531.65, 1080, 420, "amber", "sm", "pop")
 
 # ---- HONEST TIMELINE + RULE / RUIN / REALITY (8:51-9:34)
 shot(531.65, 539.65, "R_bp_bg", "slow", ms=24.0)                                        # "Let me be honest... two years to be built. Then five years of support."
-hbar(534.3, 539.65, 220, 400, 300, "cyan", "BUILD", "2 YEARS", vx=560)
+lbl("The honest timeline", 531.8, 539.65, 220, 220, "cyan")
+hbar(533.4, 539.65, 220, 400, 300, "cyan", "BUILD", "2 YEARS", vx=560)
 hbar(537.4, 539.65, 540, 600, 750, "green", "SUPPORT", "5 YEARS", vx=1320)
 cite("[SCHEME GUIDELINES | MHI 2025]", 534.3, 539.65)
 shot(539.65, 549.6, "Y07", "slow", ms=0.0)                                           # "And China has a head start of more than thirty years. Running hundreds of tanks well... practice."
@@ -451,7 +453,7 @@ chip("Tank by tank", 598.4, 601.55, 120, 760, "cyan", "", "up")
 shot(601.55, 610.6, "px_40948", "slow", ms=0.0)                                         # "And magnets aren't the only missing piece. India is called the pharmacy of the world..."
 chip("Pharmacy of the world", 604.2, 610.6, 120, 160, "green", "sm", "pop")
 chip("Ingredients from China?", 607.0, 610.6, 120, 270, "amber", "sm", "pop")
-shot(610.6, 618.0, "R_bp_bg", "slow", ms=34.0)                                          # "Why? That's our next story. Which missing piece should we open after that? Tell me in the comments."
+shot(610.6, 618.0, "endtile", "in", "PIXABAY", dim=True)                                          # "Why? That's our next story. Which missing piece should we open after that? Tell me in the comments."
 big("NEXT: MEDICINES", 610.8, 613.0, 380, 420, "green")
 chip("Which piece next?", 613.2, 618.0, 620, 420, "cyan", "", "pop", "💬")
 shot(618.0, END, "R_bp_bg", "slow", "", ms=14.0)                                         # "This is Be Practical with Kishore. Stay practical. Jai Hind." + end screen

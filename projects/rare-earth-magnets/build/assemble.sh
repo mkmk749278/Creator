@@ -15,10 +15,13 @@ mix="[0:a]aresample=48000,aformat=channel_layouts=mono,volume=1.0,apad=whole_dur
 [2:a]aresample=48000,aformat=channel_layouts=mono,volume=-9dB,atrim=0:$dur[fx];
 [v][bed][fx]amix=inputs=3:normalize=0:duration=first,alimiter=limit=0.95[m]"
 ffmpeg -y -loglevel error -i "$A/vo/vo_full.wav" -i "$A/audio/bed.wav" -i "$A/audio/sfx.wav" -filter_complex "$mix" -map "[m]" -ar 48000 "$tmp/mix.wav"
-# two-pass linear loudness normalisation to -14 LUFS / -1.5 dBTP
-read -r I TP LRA TH < <(ffmpeg -hide_banner -i "$tmp/mix.wav" -af loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json -f null - 2>&1 |
-  python3 -c 'import sys,json,re; d=json.loads(re.search(r"\{[^{}]*\}", sys.stdin.read(), re.S).group(0)); print(d["input_i"], d["input_tp"], d["input_lra"], d["input_thresh"])')
-ffmpeg -y -loglevel error -i "$tmp/mix.wav" -af "loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=$I:measured_TP=$TP:measured_LRA=$LRA:measured_thresh=$TH:linear=true" -ar 48000 "$tmp/master.wav"
+# loudness to -14 LUFS as one static (linear) gain, then a true-peak limiter at -1.5 dBTP, then re-measure and trim once:
+# loudnorm's linear mode silently backed off to -15.9 LUFS on cut 1 because of the TP ceiling
+lufs() { ffmpeg -hide_banner -i "$1" -af ebur128=peak=true -f null - 2>&1 | awk '/^ +I:/{v=$2} END{print v}'; }
+gain=$(python3 -c "print(-14 - float('$(lufs "$tmp/mix.wav")'))")
+ffmpeg -y -loglevel error -i "$tmp/mix.wav" -af "volume=${gain}dB,alimiter=limit=0.84:level=false:attack=2:release=60" -ar 48000 "$tmp/m1.wav"
+gain=$(python3 -c "print(-14 - float('$(lufs "$tmp/m1.wav")'))")
+ffmpeg -y -loglevel error -i "$tmp/m1.wav" -af "volume=${gain}dB,alimiter=limit=0.84:level=false:attack=2:release=60" -ar 48000 "$tmp/master.wav"
 mkdir -p "$(dirname "$out")"
 ffmpeg -y -loglevel error -i "$tmp/video.mp4" -i "$tmp/master.wav" -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -ac 2 -movflags +faststart -shortest "$out"
 ffmpeg -hide_banner -i "$out" -af ebur128=peak=true -f null - 2>&1 | grep -E "^\s+(I|Peak):" | tail -2
