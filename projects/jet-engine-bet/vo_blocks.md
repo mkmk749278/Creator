@@ -2,33 +2,33 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
 
-## Block 1 of 10 · 855 characters · save as `voice/jeb_b01.mp3`
+## Block 1 of 10 · 1277 characters · save as `voice/jeb_b01.mp3`
 
 ```
-October, twenty twenty-six. In H.A.L. hangars in Bengaluru and Nashik, close to thirty brand new Tejas fighter jets are standing ready. Painted. Radars fitted. You'd think they're ready to fly.
+Picture this. Close to thirty brand new Tejas fighter jets, parked in hangars in Bengaluru and Nashik. Painted. Radars fitted. They look ready to fly.
 
-And not one of them has reached the Air Force yet.
+But not one of them has reached the Air Force. Not one.
 
-By most reports, the biggest reason is the engine. America's G.E. has sent only fourteen of the ninety-nine engines these jets need.
+So what's stopping them? Mostly, an engine. America's G.E. is supposed to send ninety-nine of them. So far? Only fourteen.
 
-And here's the twist. Inside a modern jet engine, a small metal blade can sit in gas hotter than its own melting point... and it does not melt.
+And here's the twist. Inside a modern jet engine, there's a small metal blade. It sits in gas hotter than its own melting point... and it does not melt. How? You're about to see.
 
-Very few countries on Earth can make that blade. It takes decades of trial and error, and India is still learning.
+Very few countries in the world can make that blade. It took them decades of trial and error. And India? India is still learning.
 
-Stay with me. First, how a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
-```
+Okay, here's the plan. First, how a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
 
-## Block 2 of 10 · 1193 characters · save as `voice/jeb_b02.mp3`
-
-```
-First, let me show you what a jet engine actually does.
+Okay. What does a jet engine actually do?
 
 Four jobs. Can you guess them? Suck. Squeeze. Burn. Blow.
 
 Suck first. A big fan at the front pulls in air. Lots of it. Can you imagine how much?
 
 Now squeeze. Have you ever pumped a bicycle tyre, and felt the pump get hot? Squeezing air makes it hot and packs it tight. Inside the engine, rows of small fans, called the compressor, squeeze that air again and again.
+```
 
+## Block 2 of 10 · 768 characters · save as `voice/jeb_b02.mp3`
+
+```
 Then burn. This is the part you'd call the fire. Fuel is sprayed into this hot, squeezed air and lit. You know the flame on your gas stove? Picture it... but a flame that never goes out, and is far, far bigger. The burning gas swells up, and you can guess what it wants. To rush out.
 
 And then blow. On its way out, that gas hits another set of fans, called the turbine. It spins them, like wind spinning a ceiling fan.
@@ -90,30 +90,30 @@ For decades, no engine maker shared it with India.
 So you can see the club is small. America, Russia, Britain and France are the main members. And after decades of struggle, China.
 ```
 
-## Block 6 of 10 · 799 characters · save as `voice/jeb_b06.mp3`
+## Block 6 of 10 · 826 characters · save as `voice/jeb_b06.mp3`
 
 ```
 Now let's see why this matters for you, and for the jets waiting in Nashik.
 
-The Air Force is supposed to have forty-two fighter squadrons, its basic fighting units. Today it has about twenty-nine. The old MiG twenty-one retired in September twenty twenty-five.
+The Air Force is meant to have forty-two fighter squadrons. That's its basic fighting unit. Today? About twenty-nine. Old jets like the MiG twenty-one have retired.
 
-So the government ordered eighty-three Tejas jets in twenty twenty-one, and ninety-seven more in twenty twenty-five. That's one hundred and eighty jets.
+So the government placed orders. Eighty-three Tejas jets in twenty twenty-one. Ninety-seven more in twenty twenty-five. That's one hundred and eighty jets.
 
-But H.A.L. doesn't make the engine. Every one of them runs on the F four zero four, built by G.E. in Lynn, Massachusetts.
+But here's the thing. H.A.L. builds the jet... not the engine. Every one of them runs on the F four zero four, made by G.E. in Lynn, Massachusetts.
 
-Those engines were due from twenty twenty-three. The first one came in March twenty twenty-five. G.E. blamed its supply chain. H.A.L. has put penalties on G.E. for the delay.
+Those engines were due from twenty twenty-three. The first one arrived in March twenty twenty-five. G.E. says its supply chain had problems. And H.A.L. has put penalties on G.E. for the delay.
 
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
 
-## Block 7 of 10 · 1438 characters · save as `voice/jeb_b07.mp3`
+## Block 7 of 10 · 1436 characters · save as `voice/jeb_b07.mp3`
 
 ```
 Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you and me?
 
-May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answers with sanctions.
+Go back to May nineteen ninety-eight. India tests nuclear weapons at Pokhran. America reacts with sanctions.
 
-Sales of the same G.E. engines to India stopped. American help on the Tejas flight controls ended too.
+Suddenly, no more G.E. engines for India. And American help on the Tejas flight controls? Gone too.
 
 Imagine your supplier saying no to you. Our engineers built the flight control system themselves. And they did it.
 
@@ -123,7 +123,7 @@ So did India try to build its own? Yes. And that's where the story gets painful.
 
 In nineteen eighty-six, our engineers began planning a fighter engine. The job went to G.T.R.E., a government defence lab in Bengaluru. They named the engine Kaveri.
 
-The government approved it in nineteen eighty-nine, with a deadline of nineteen ninety-six.
+The government said yes in nineteen eighty-nine. The deadline? Nineteen ninety-six.
 
 The goal was huge. A very powerful engine, with an extra-boost mode called the afterburner. And India was building the Tejas at the same time. Both almost from scratch. That doubled the risk.
 
@@ -136,14 +136,14 @@ And weaker too, as you'd guess. As reported, about seventy units of push instead
 And India had no place to test a fighter engine at high altitude. So the Kaveri went to Russia.
 ```
 
-## Block 8 of 10 · 1462 characters · save as `voice/jeb_b08.mp3`
+## Block 8 of 10 · 1490 characters · save as `voice/jeb_b08.mp3`
 
 ```
 In two thousand eight, the Kaveri was cut loose from the Tejas. The Tejas would fly with the American engine.
 
 But the lab didn't stop. In twenty ten, a Kaveri flew on a Russian plane used as a flying test bed. Twenty-seven flights, up to twelve kilometres high.
 
-By twenty twelve, about two thousand crore rupees was spent, and the estimate had grown past twenty-eight hundred crore.
+By twenty twelve, about two thousand crore rupees had gone in. And the estimate? Past twenty-eight hundred crore.
 
 So was it all a failure? Not quite, as you'll see. Look at what you get from it.
 
@@ -157,15 +157,15 @@ But the next big fighter, the A.M.C.A., needs much more. The first A.M.C.A. jets
 
 For later ones, India wants a new engine of about one hundred and twenty kilonewtons. And this time, India wants to own the design.
 
-In August twenty twenty-five, the Defence Minister said India would build it with France's Safran, together with G.T.R.E. India's condition, as reported? Full Indian ownership of the design.
+In August twenty twenty-five, the Defence Minister said India would build it with a French company, Safran, together with G.T.R.E. India's condition? Full Indian ownership of the design. At least, that's what's been reported.
 ```
 
-## Block 9 of 10 · 922 characters · save as `voice/jeb_b09.mp3`
+## Block 9 of 10 · 943 characters · save as `voice/jeb_b09.mp3`
 
 ```
-And here's the catch, and I think you'll agree it's a big one. As of October twenty twenty-six, that deal is still waiting for final approval.
+And here's the catch, and I think you'll agree it's a big one. Right now, in October twenty twenty-six, that deal is still waiting for final approval.
 
-In August, Rolls-Royce and Reliance also announced plans to build an engine in India. So you see, India has offers. What it needs, if you ask me, is a decision.
+And in August this year, Rolls-Royce and Reliance also said they plan to build an engine in India. So you see, India has offers. What it needs, if you ask me, is a decision.
 
 And remember, China walked this road too. Its J twenty stealth fighter used Russian engines at first. It took China decades, and many failures, to switch to its own.
 
