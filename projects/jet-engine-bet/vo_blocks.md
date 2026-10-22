@@ -2,7 +2,7 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
 
-## Block 1 of 9 · 1495 characters · save as `voice/jeb_b01.mp3`
+## Block 1 of 9 · 1297 characters · save as `voice/jeb_b01.mp3`
 
 ```
 Picture this. Close to thirty brand new Tejas fighter jets, parked in hangars in Bengaluru and Nashik. Shiny and painted. They look ready to fly, don't they?
@@ -13,9 +13,9 @@ So what's stopping them? Mostly, an engine. America's G.E. is supposed to send n
 
 And here's the twist. Inside a modern jet engine, there's a small metal blade. It sits in gas hotter than its own melting point... and it does not melt. How? You're about to see.
 
-Very few countries in the world can make that blade. It took them decades of trial and error. And India? India is still learning.
+Very few countries in the world can make that blade, and you'll see why. It took them decades of trial and error, as you'd expect. And India? India is still learning. Surprised?
 
-Here's what's coming. How a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt. And at the end, the decision still waiting in Delhi.
+Here's what's coming for you. How a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt. And at the end, the decision still waiting in Delhi.
 
 Okay. What does a jet engine actually do?
 
@@ -24,19 +24,23 @@ Four jobs. Can you guess them? Suck. Squeeze. Burn. Blow.
 Suck first. A big fan at the front pulls in air. Lots of it. Can you imagine how much?
 
 Now squeeze. Have you ever pumped a bicycle tyre, and felt the pump get hot? Squeezing air makes it hot and packs it tight. Inside the engine, rows of small fans, called the compressor, squeeze that air again and again.
+```
 
+## Block 2 of 9 · 737 characters · save as `voice/jeb_b02.mp3`
+
+```
 Then burn. This is the part you'd call the fire. Fuel is sprayed into this hot, squeezed air and lit. You know the flame on your gas stove? Picture it... but a flame that never goes out, and is far, far bigger. The burning gas swells up and rushes out.
-```
 
-## Block 2 of 9 · 1152 characters · save as `voice/jeb_b02.mp3`
-
-```
 And then blow. On its way out, that gas hits another set of fans, called the turbine. It spins them, like wind spinning a ceiling fan.
 
 Here's the clever part. That turbine is joined by a shaft to the compressor. So the hot gas spins the turbine, the turbine spins the compressor, and the engine keeps itself running. Makes sense so far?
 
 What's left of the gas shoots out of the back. You've seen that trail in the sky. And the jet is pushed forward... like a balloon you let go of.
+```
 
+## Block 3 of 9 · 1407 characters · save as `voice/jeb_b03.mp3`
+
+```
 Now remember this, because you'll need it later. The turbine sits right behind the flame. It's where you'll find the metal with the toughest job in the whole engine.
 
 So how hot? Now listen to this. Rolls-Royce says the gas can be up to two hundred degrees hotter than the point where the blade's metal would melt.
@@ -44,11 +48,7 @@ So how hot? Now listen to this. Rolls-Royce says the gas can be up to two hundre
 Here's a simple picture, from Cambridge University. Gas of about fourteen hundred degrees Celsius. The blade itself stays near nine hundred and thirty. That gap, roughly four hundred and seventy degrees, is the whole trick.
 
 So the gas is hotter than the metal could ever take on its own. You'd expect the blade to melt, right? So how does it survive?
-```
 
-## Block 3 of 9 · 1423 characters · save as `voice/jeb_b03.mp3`
-
-```
 Three tricks. And you've seen each one in daily life.
 
 Trick one is the metal itself. If you look inside ordinary metal, you'd see countless tiny crystals stuck together. Like a brick wall. The lines between the bricks are the weak spots.
@@ -58,17 +58,17 @@ Under heat and a huge pull, the metal slowly stretches along those lines. Think 
 So the best blades are grown as one single crystal. No bricks. No lines. You get one solid piece. It's a super strong metal, mostly nickel, with a rare metal called rhenium added.
 
 Trick two is air. These blades are hollow, with tiny channels inside. Cooler air from the compressor is pushed through them.
+```
 
+## Block 4 of 9 · 1441 characters · save as `voice/jeb_b04.mp3`
+
+```
 Then it comes out through rows of tiny holes you can barely see, and spreads over the blade like a thin blanket. Ever walked into a mall through an air curtain at the door? You feel cool air blowing across you. Same idea. A moving sheet of cool air between the hot side and the blade.
 
 Trick three is a ceramic coating on top. Let me explain it simply. A heat shield, like the lining of a thermos flask. It slows the heat from reaching the metal, so you get a cooler blade.
 
 So what do you have? A crystal with no weak lines, cool air inside and outside, and a ceramic shield. Together, they keep the metal far cooler than the gas. That's how the blade survives, and now you know it.
-```
 
-## Block 4 of 9 · 1181 characters · save as `voice/jeb_b04.mp3`
-
-```
 But there's one more problem. Do you know what it is? The spin.
 
 Rolls-Royce says the disc holding these blades turns more than twelve thousand times every minute. Your ceiling fan on full speed is slow next to that.
@@ -78,26 +78,26 @@ It also says the pull you'd feel on each blade is like a whole bus hanging from 
 So picture it, you and me, looking at one blade. Would you trust it? Gas hotter than its melting point. A bus hanging from it. For thousands of hours.
 
 You may ask, why not copy a rocket engine? A rocket engine runs for minutes, not hours, and then its stage is dropped. A fighter engine has to breathe air, go from idle to full power in seconds, and keep going for thousands of hours.
+```
 
+## Block 5 of 9 · 1264 characters · save as `voice/jeb_b05.mp3`
+
+```
 Now you can see why so few countries can do it. And you can't just copy the drawing. The real knowledge is in how the metal is grown, cast, drilled and tested. Countries learned that over decades, and many failures, and you can't skip that.
 
 For decades, no engine maker shared it with India.
 
 So you can see the club is small. America, Russia, Britain and France are the main members. And after decades of struggle, China.
-```
 
-## Block 5 of 9 · 797 characters · save as `voice/jeb_b05.mp3`
-
-```
 Now let's see why this matters for you, and for the jets waiting in Nashik.
 
-The Air Force needs forty-two squadrons of fighter jets. Today it has about twenty-nine. Old jets like the MiG twenty-one have retired.
+The Air Force needs forty-two squadrons of fighter jets. Today it has about twenty-nine. You can see the gap. Old jets like the MiG twenty-one have retired, as you may know.
 
 So the government placed orders. Eighty-three Tejas jets in twenty twenty-one. Ninety-seven more in twenty twenty-five. That's one hundred and eighty jets.
 
 But here's the thing. H.A.L. builds the jet... not the engine. Every one of them runs on the F four zero four, made by G.E. in Lynn, Massachusetts.
 
-Those engines were due from twenty twenty-three. The first one arrived in March twenty twenty-five. G.E. says its supply chain had problems. And H.A.L. has put penalties on G.E. for the delay.
+You'd expect those engines from twenty twenty-three. The first one arrived in March twenty twenty-five. G.E. says its supply chain had problems. And H.A.L. has put penalties on G.E. for the delay.
 
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
