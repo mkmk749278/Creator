@@ -1,6 +1,6 @@
 # YouTube package: rare earth magnets (final)
 
-Final cut: native 4K master (`assets/out/rare_earth_magnets_4k_master.mp4`, 11:09). Chapter times are checked
+Final cut: native 4K master (`assets/out/rare_earth_magnets_FINAL_4K.mp4`, 3840×2160, 11:09, −14.1 LUFS). Chapter times are checked
 against `align/sentences.json` (the independent review corrected two of them to 7:01 and 10:05).
 
 ## Title
