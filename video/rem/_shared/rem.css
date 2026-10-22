@@ -20,7 +20,7 @@ body { background: #000; color: var(--ink); font-family: var(--sans); }
 .warm .grade { background: radial-gradient(125% 105% at 50% 46%, transparent 55%, rgba(20,8,0,.5) 100%),
               linear-gradient(180deg, rgba(0,0,0,.2) 0%, transparent 18%, transparent 70%, rgba(0,0,0,.55) 100%); }
 .vover { position: absolute; inset: 0; pointer-events: none; }
-.dim { position: absolute; inset: 0; background: rgba(6,9,13,.55); }
+.dim { position: absolute; inset: 0; background: rgba(6,9,13,.6); }
 
 /* ---------- atmosphere ---------- */
 #grain { position: absolute; inset: -40px; width: 2000px; height: 1160px; opacity: .07; mix-blend-mode: overlay; pointer-events: none; z-index: 60; }
@@ -55,7 +55,7 @@ body { background: #000; color: var(--ink); font-family: var(--sans); }
 .blink { animation: none; }
 
 /* ---------- captions ---------- */
-.cap { position: absolute; left: 50%; bottom: 74px; transform: translateX(-50%); max-width: 1500px; text-align: center; z-index: 55;
+.cap { position: absolute; left: 50%; bottom: 74px; transform: translateX(-50%); width: max-content; max-width: 1500px; text-align: center; z-index: 55;
   font: 700 44px/1.22 var(--sans); color: #fff; padding: 8px 22px 10px; background: rgba(0,0,0,.58); border-radius: 8px;
   text-shadow: 0 1px 2px #000; }
 .cap b { color: #ffd166; font-weight: 800; }

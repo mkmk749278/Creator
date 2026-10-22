@@ -14,6 +14,7 @@ D, OUT = HERE / "assets/docs", HERE / "assets/plates"
 CROPS = {   # name: (source file, crop box, tilt degrees)
     "P_autocar": ("autocar_chetak_july.png", (590, 140, 1330, 940), -1.2),
     "P_ather": ("ather_450x_spec.png", (370, 300, 1540, 600), -0.8),
+    "P_ather_line": ("ather_450x_spec.png", (380, 488, 1530, 588), -0.5),
     "P_nexon": ("nexon_ev_spec.png", (395, 220, 1140, 800), 1.0),
     "P_nexon_row": ("nexon_ev_spec.png", (395, 410, 1140, 690), -0.6),
     "P_autocar_photo": ("autocar_chetak_july.png", (636, 350, 1284, 730), 0),
@@ -22,6 +23,8 @@ CROPS = {   # name: (source file, crop box, tilt degrees)
     "P_ians": ("ians_licences.png", (290, 90, 1290, 920), 1.2),
     "P_pmindia": ("pmindia_cabinet_repm.png", (20, 430, 1260, 1075), -0.8),
     "P_technology": ("technology_org_nov10.png", (340, 30, 1220, 1060), 1.0),
+    "P_technology_head": ("technology_org_nov10.png", (350, 70, 1200, 215), 0.6),
+    "P_technology_keys": ("technology_org_nov10.png", (360, 845, 1200, 1075), -0.6),
     "P_pib_vizag": ("pib_2220295.png", (320, 30, 1640, 960), -0.8),
     "P_pib_reserves": ("pib_2238892.png", (320, 30, 1640, 960), 0.8),
     "P_pib_magnets": ("pib_2248182.png", (320, 30, 1640, 960), -0.8),

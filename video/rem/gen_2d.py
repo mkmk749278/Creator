@@ -91,18 +91,19 @@ coasts = [("odisha", P["odisha_c"], "ODISHA", 30, -22, "start"), ("ap", P["ap_c"
 pins = "".join(pin(i, *xy, "#d29922", lab, dx, dy, an) for i, xy, lab, dx, dy, an in coasts)
 zones = "".join(f'<circle id="z_{i}" cx="{xy[0]}" cy="{xy[1]}" r="120" fill="#58a6ff" opacity="0"/>' for i, xy, *_ in coasts)
 write("map_india", 24, GRID + f"""
-      <svg width="1920" height="1080"><g id="cam" style="transform-origin: 960px 540px">
+      <svg width="1920" height="1080"><g transform="translate(0 -150)"><g id="cam" style="transform-origin: 960px 540px">
         <path d="{V['land']}" fill="#111a24" stroke="#58a6ff" stroke-opacity=".55" stroke-width="2"/>
         <path d="{V['land']}" fill="none" stroke="#58a6ff" stroke-opacity=".12" stroke-width="10"/>
         {zones}{pins}
         {pin("vizag", *P["vizag"], "#58a6ff", "VISAKHAPATNAM", 30, -26)}
-        <text id="ztitle" class="lab" x="{P['tn_c'][0] - 520}" y="{P['odisha_c'][1] - 80}" opacity="0" style="font-size:40px;fill:#58a6ff">RARE EARTH CORRIDORS</text>
-      </g><rect width="1920" height="1080" fill="url(#vg)"/></svg>
+        <text id="ztitle" class="lab" x="{P['tn_c'][0] - 520}" y="{P['odisha_c'][1] + 40}" opacity="0" style="font-size:40px;fill:#58a6ff">RARE EARTH CORRIDORS</text>
+      </g></g><rect width="1920" height="1080" fill="url(#vg)"/></svg>
       <div class="tagb">MAP · LAND ONLY · ILLUSTRATIVE ZONES</div>""", """
       tl.fromTo("#cam", { scale: 1.0 }, { scale: 1.07, duration: 24, ease: "none" }, 0);
-      ["#odisha", "#ap", "#tn", "#kerala"].forEach((s, i) => { tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: .5 }, 0.8 + i * 0.9); tl.to(s, { opacity: .25, duration: .5 }, 8); });
+      // in the order the VO names them (film 56.2 s = scene 0.2): "Andhra Pradesh, Kerala, Tamil Nadu and Odisha"
+      [["#ap", 0.9], ["#kerala", 2.2], ["#tn", 3.1], ["#odisha", 4.3]].forEach(([s, t]) => { tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: .5 }, t); tl.to(s, { opacity: .25, duration: .5 }, 8); });
       tl.fromTo("#vizag", { opacity: 0 }, { opacity: 1, duration: .5 }, 8.4); tl.to("#vizag", { opacity: .25, duration: .5 }, 16);
-      ["#z_odisha", "#z_ap", "#z_tn", "#z_kerala"].forEach((s, i) => { tl.fromTo(s, { opacity: 0 }, { opacity: .34, duration: .6 }, 16.4 + i * 0.5); });
+      ["#z_odisha", "#z_kerala", "#z_ap", "#z_tn"].forEach((s, i) => { tl.fromTo(s, { opacity: 0 }, { opacity: .34, duration: .6 }, 16.4 + i * 0.5); });
       ["#odisha", "#ap", "#tn", "#kerala"].forEach((s) => tl.to(s, { opacity: 1, duration: .5 }, 16.4));
       tl.fromTo("#ztitle", { opacity: 0 }, { opacity: 1, duration: .6 }, 17.2);""")
 
@@ -116,8 +117,28 @@ write("map_asia", 24, GRID + f"""
         <circle id="cn" cx="{Q['china_c'][0]}" cy="{Q['china_c'][1]}" r="260" fill="#d29922" opacity="0"/>
         <path id="a1" d="{A['arcs']['india_japan']}" fill="none" stroke="#e6edf3" stroke-width="7" stroke-linecap="round" stroke-dasharray="4000" stroke-dashoffset="4000"/>
         <path id="a2" d="{A['arcs']['china_india']}" fill="none" stroke="#d29922" stroke-width="9" stroke-linecap="round" stroke-dasharray="4000" stroke-dashoffset="4000"/>
-        <g id="pin_in" opacity="0"><circle cx="{Q['chennai'][0]}" cy="{Q['chennai'][1]}" r="12" fill="#58a6ff"/><text class="lab" x="{Q['chennai'][0] - 26}" y="{Q['chennai'][1] + 50}" text-anchor="end">INDIA</text></g>
+        <g id="pin_in" opacity="0"><circle cx="{Q['chennai'][0]}" cy="{Q['chennai'][1]}" r="12" fill="#58a6ff"/><text class="lab" x="{Q['chennai'][0] - 26}" y="{Q['chennai'][1] - 30}" text-anchor="end">INDIA</text></g>
         <g id="pin_jp" opacity="0"><circle cx="{Q['tokyo'][0]}" cy="{Q['tokyo'][1]}" r="12" fill="#e6edf3"/><text class="lab" x="{Q['tokyo'][0] - 20}" y="{Q['tokyo'][1] + 56}" text-anchor="end">JAPAN</text></g>
+        <g id="pin_cn" opacity="0"><text class="lab" x="{Q['china_c'][0]}" y="{Q['china_c'][1]}" text-anchor="middle" style="fill:#d29922;font-size:44px">CHINA</text></g>
+        <g id="pin_bt" opacity="0"><circle cx="{Q['baotou'][0]}" cy="{Q['baotou'][1]}" r="14" fill="#d29922"/><circle cx="{Q['baotou'][0]}" cy="{Q['baotou'][1]}" r="40" fill="none" stroke="#d29922" stroke-width="3"/>
+          <text class="lab" x="{Q['baotou'][0] + 30}" y="{Q['baotou'][1] - 24}">BAOTOU</text></g>
+      </g><rect width="1920" height="1080" fill="url(#vg)"/></svg>
+      <div class="tagb">MAP · LAND ONLY</div>""", """
+      tl.fromTo("#cam", { scale: 1.0 }, { scale: 1.05, duration: 16, ease: "none" }, 0);
+      tl.fromTo("#pin_in", { opacity: 0 }, { opacity: 1, duration: .4 }, 0.3); tl.fromTo("#pin_jp", { opacity: 0 }, { opacity: 1, duration: .4 }, 0.6);
+      tl.to("#a1", { strokeDashoffset: 0, duration: 3.2, ease: "power2.inOut" }, 1.0); tl.to("#a1", { opacity: .2, duration: .5 }, 8);
+      tl.fromTo("#pin_cn", { opacity: 0 }, { opacity: 1, duration: .4 }, 8.3); tl.to("#cn", { opacity: .16, duration: .8 }, 8.3);
+      tl.to("#a2", { strokeDashoffset: 0, duration: 3.0, ease: "power2.inOut" }, 9.0); tl.to("#a2", { opacity: .25, duration: .5 }, 16);
+      tl.to("#cam", { scale: ZS_, x: ZX_, y: ZY_, duration: 3.5, ease: "power2.inOut" }, 16.0);
+      tl.fromTo("#pin_bt", { opacity: 0 }, { opacity: 1, duration: .5 }, 17.2); tl.to("#cn", { opacity: .3, duration: .8 }, 17.2);""".replace("ZS_", str(ZS)).replace("ZX_", str(ZX)).replace("ZY_", str(ZY)))
+write("map_china", 24, GRID + f"""
+      <svg width="1920" height="1080"><g id="cam" style="transform-origin: 960px 540px">
+        <path d="{A['land']}" fill="#111a24" stroke="#58a6ff" stroke-opacity=".5" stroke-width="2"/>
+        <circle id="cn" cx="{Q['china_c'][0]}" cy="{Q['china_c'][1]}" r="260" fill="#d29922" opacity="0"/>
+        <path id="a1" visibility="hidden" d="{A['arcs']['india_japan']}" fill="none" stroke="#e6edf3" stroke-width="7" stroke-linecap="round" stroke-dasharray="4000" stroke-dashoffset="4000"/>
+        <path id="a2" d="{A['arcs']['china_india']}" fill="none" stroke="#d29922" stroke-width="9" stroke-linecap="round" stroke-dasharray="4000" stroke-dashoffset="4000"/>
+        <g id="pin_in" opacity="0"><circle cx="{Q['chennai'][0]}" cy="{Q['chennai'][1]}" r="12" fill="#58a6ff"/><text class="lab" x="{Q['chennai'][0] - 26}" y="{Q['chennai'][1] - 30}" text-anchor="end">INDIA</text></g>
+        <g id="pin_jp" opacity="0" visibility="hidden"><circle cx="{Q['tokyo'][0]}" cy="{Q['tokyo'][1]}" r="12" fill="#e6edf3"/><text class="lab" x="{Q['tokyo'][0] - 20}" y="{Q['tokyo'][1] + 56}" text-anchor="end">JAPAN</text></g>
         <g id="pin_cn" opacity="0"><text class="lab" x="{Q['china_c'][0]}" y="{Q['china_c'][1]}" text-anchor="middle" style="fill:#d29922;font-size:44px">CHINA</text></g>
         <g id="pin_bt" opacity="0"><circle cx="{Q['baotou'][0]}" cy="{Q['baotou'][1]}" r="14" fill="#d29922"/><circle cx="{Q['baotou'][0]}" cy="{Q['baotou'][1]}" r="40" fill="none" stroke="#d29922" stroke-width="3"/>
           <text class="lab" x="{Q['baotou'][0] + 30}" y="{Q['baotou'][1] - 24}">BAOTOU</text></g>
@@ -265,5 +286,5 @@ write("stairs", 10, GRID + f"""
       tl.fromTo("#pur", {{ scaleY: .04, transformOrigin: "50% 100%" }}, {{ scaleY: .93, duration: {end_t - 1.2:.2f}, ease: "power2.in", transformOrigin: "50% 100%" }}, 1.2);
 {hop_js}""")
 
-for sid in ["map_india", "map_asia"]:
+for sid in ["map_india", "map_asia", "map_china"]:
     shutil.copy(HERE / "map/map.js", HERE / sid / "map.js")
