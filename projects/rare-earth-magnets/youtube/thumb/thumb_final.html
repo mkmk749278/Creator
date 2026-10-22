@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* FINAL (owner's pick 2026-10-22, from G3): a real hand holds a small magnet up to you. "We have the sand. Not this."
+   Curiosity: what is this small thing, and why can't we make it? Refined: magnetic field lines so the disc reads as a
+   magnet (panel: "looks like a coin"), no arrow through the text, photo fills the frame edge to edge. */
+@font-face{font-family:I;font-weight:800;src:url(inter-latin-800-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}body{width:1280px;height:720px;overflow:hidden;font-family:I,sans-serif;font-weight:800;position:relative;background:#0b0d11}
+.bg{position:absolute;left:259px;top:94px;width:1280px;height:644px;transform:scale(1.55);transform-origin:640px 270px;background:url(fingers_magnet.jpg) 0 0/1280px 644px}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,10,14,.95) 0,rgba(8,10,14,.82) 36%,rgba(8,10,14,.15) 56%,rgba(8,10,14,0) 64%)}
+svg{position:absolute;inset:0}
+.t1{position:absolute;left:46px;top:96px;font-size:92px;line-height:1;letter-spacing:-3px;color:#fff;text-shadow:0 6px 24px rgba(0,0,0,.85)}
+.tag{position:absolute;left:560px;top:600px;font-size:40px;letter-spacing:3px;color:#0b0d11;background:#7cc4ff;padding:6px 18px 9px;border-radius:10px;box-shadow:0 0 24px rgba(124,196,255,.7)}
+.t2{position:absolute;left:42px;top:318px;font-size:138px;line-height:1;letter-spacing:-5px;color:#ffd400;text-shadow:0 8px 30px rgba(0,0,0,.9)}
+</style></head><body><div class="bg"></div><div class="shade"></div>
+<svg width="1280" height="720" viewBox="0 0 1280 720"><defs>
+  <filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <!-- disc centre (900, 362), face radii about 211 x 200 after the 1.55 zoom -->
+  <g fill="none" stroke="#7cc4ff" stroke-linecap="round" filter="url(#g)" opacity=".9">
+    <ellipse cx="902" cy="357" rx="222" ry="214" stroke-width="5" opacity=".95"/>
+    <path d="M688 300 C 610 230, 610 494, 688 424" stroke-width="5"/>
+    <path d="M684 250 C 560 160, 560 564, 684 474" stroke-width="4" opacity=".75"/>
+    <path d="M700 205 C 520 90, 520 634, 700 519" stroke-width="3" opacity=".5"/>
+    <path d="M1112 300 C 1190 230, 1190 494, 1112 424" stroke-width="5"/>
+    <path d="M1116 250 C 1240 160, 1240 564, 1116 474" stroke-width="4" opacity=".75"/>
+  </g>
+</svg>
+<div class="t1">WE HAVE<br>THE SAND.</div><div class="t2">NOT<br>THIS.</div><div class="tag">MAGNET</div>
+</body></html>

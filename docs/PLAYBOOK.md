@@ -1475,14 +1475,11 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 (the copy button on a fenced code block in the GitHub and Claude apps) remove all typing and guesswork; merging and
 closing the session keeps `main` complete and stops idle sessions using the shared limit.
 
-1. **Thumbnail (Be Practical with Kishore theme).** 1280×720 JPG (plus a 2× PNG), built as HTML in
-   `projects/<slug>/youtube/thumb/` and shot with Playwright (`shoot.js`; copy `projects/minimum-due/youtube/thumb/`).
-   Theme from `assets/brand/`: deep navy radial background (`#0b1530` → `#070d1f`), the banner's gold (`#ffd34d`) and
-   blue (`#4a6fa5`) circuit lines with dot ends, Inter 800 in white with the key number or word in gold, one red
-   (`#e5383b`) pill for the shock line, a real photo, footage frame or the film's own simulation (labelled as in the
-   film), and the square BE PRACTICAL logo in a corner. 2–4 large words and one concrete number or object, and every
-   promise is delivered literally in the film (§4a). No AI images of real people. Make an A and a B variant for Test &
-   Compare; look at both at phone size before delivering.
+1. **Thumbnail: built for curiosity, not as a slide (owner, 2026-10-22: "we are failing at thumbnail, that's why
+   low CTR").** 1280×720 JPG, built as HTML in `projects/<slug>/youtube/thumb/` and shot with `shoot.mjs`. Follow
+   §13b. The old navy-and-gold card template is retired. Make at least three concepts, run
+   `scripts/thumb_feed.py` (phone feed + "Up next" size) and an independent click panel, then deliver a main and an
+   A/B challenger for Test & Compare.
 2. **Title in a click-to-copy block.** A plain fenced code block holding exactly one line, ending
    `| Be Practical With Kishore`, ≤ 100 characters in all (YouTube's limit), no `!`, the hook first and search words
    after it. Offer one or two alternatives, each in its own block.
@@ -1497,6 +1494,40 @@ closing the session keeps `main` complete and stops idle sessions using the shar
    chat reply as well.
 5. **Close-out:** commit, push the session branch, open a PR to `main`, merge it (merge commit), confirm the merge,
    tell the owner which branch to delete, then archive the session (`archive_session`).
+
+### 13b. Thumbnails that make people curious (owner, 2026-10-22)
+**Curiosity is the most important thing on a thumbnail (owner, 2026-10-22).** It comes before the theme, the
+brand colours, explaining the topic and looking clean. The one test for every thumbnail: *does a viewer who
+sees it for one second on a phone feel a question they need the video to answer?* If not, it fails, however good it
+looks. Every rule below serves that test.
+
+*Why:* our thumbnails got low CTR. Every one was the same dark navy card: yellow text on the right, a mock document
+on the left, a red pill, 6–12 words, and labels like "SIMULATION". In the feed they read as an info slide, not a
+story. They also **answered** the question ("STEP 4 OMBUDSMAN", "5-YEAR RULE", "OUR SAND. CHINA'S MAGNET."), so
+nothing was left to click for. Side by side with the new concepts at phone size (`qa/thumbs/feed_small.png`,
+rare earth film), the old cards disappear.
+
+**Rules**
+1. **One real thing, big.** Use one hero object or moment the viewer recognises in under a second: a hand holding the
+   thing, a vehicle, a phone, a face. Prefer real photos (stock or our footage frame); composite only to put the
+   film's object into a real scene, never AI people.
+2. **A visual question.** Something in the picture must look wrong, surprising or out of scale: a coin-sized magnet
+   that "halved Bajaj", a red circle on a part of an everyday scooter. If nothing in the image raises a question, it
+   is a slide.
+3. **Words add, never repeat, never answer.** Use 2–4 words, max 5. They add what the title doesn't say (a name, a
+   number, a stake) and leave the answer for the video. Use "THIS" pointing at the object; a number with a sign (−47%);
+   a stake ("CAN STOP THIS"). Don't use a full sentence, the title's own words or the conclusion.
+4. **Bright or high contrast, not navy.** YouTube's app is dark mode, so a dark navy card sinks. Use a light
+   background, or a real photo with one dark side panel behind the text. Use one accent colour (yellow or red) on one
+   word.
+5. **Phone test.** Check at 168×94 with the duration badge (`scripts/thumb_feed.py`). Nothing important goes in
+   the bottom-right corner (badge). The text must be readable and the object recognisable at that size.
+6. **Honest.** Every word and image is paid off in the film, ideally in the first 30 s (§4a-5). "THIS HALVED BAJAJ"
+   is sourced (Chetak about 20,000 → under 11,000 a month). Don't promise what the film doesn't show.
+7. **A face is the strongest lever.** When the owner sends real photos of himself (surprised, pointing, holding the
+   object), put his face on the side opposite the text. Never generate or fake a face.
+8. **Test.** Upload a main thumbnail plus at least one challenger in YouTube Studio → Test & Compare. Write the winner
+   and its CTR here after 2 weeks.
 
 ## 14. Pre-render review (every cut, before the final render)
 
