@@ -7,7 +7,12 @@ set -euo pipefail
 P=$(cd "$(dirname "$0")/.." && pwd); A=$P/assets; out=${1:-$A/out/rare_earth_magnets_preview.mp4}
 tmp=$(mktemp -d); : > "$tmp/list.txt"
 PARTS=${PARTS_DIR:-$A/out}   # PARTS_DIR=$A/out/4k for the native 4K master (render_parts_4k.sh)
-for i in 1 2 3 4 5; do echo "file '$PARTS/p$i.mp4'" >> "$tmp/list.txt"; done
+# a part rendered in two pieces (make_film.py SPLIT=N) is joined as pNa + pNb; a missing part stops the build
+for i in 1 2 3 4 5; do
+  if [ -f "$PARTS/p$i.mp4" ]; then echo "file '$PARTS/p$i.mp4'" >> "$tmp/list.txt"
+  elif [ -f "$PARTS/p${i}a.mp4" ] && [ -f "$PARTS/p${i}b.mp4" ]; then printf "file '%s'\nfile '%s'\n" "$PARTS/p${i}a.mp4" "$PARTS/p${i}b.mp4" >> "$tmp/list.txt"
+  else echo "missing part p$i in $PARTS" >&2; exit 1; fi
+done
 ffmpeg -y -loglevel error -f concat -safe 0 -i "$tmp/list.txt" -an -c copy "$tmp/video.mp4"
 dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$tmp/video.mp4")
 mix="[0:a]aresample=48000,aformat=channel_layouts=mono,volume=1.0,apad=whole_dur=$dur,asplit=2[v][vsc];

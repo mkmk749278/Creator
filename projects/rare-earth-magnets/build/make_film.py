@@ -8,7 +8,7 @@ on top is HTML animated by video/rem/_shared/rem.js (engine copied from the UPI 
 claims.csv; the exact labels follow fact-check.md §3.
 Usage: python3 projects/rare-earth-magnets/build/make_film.py   (then npm run vendor; render each part)
 """
-import html, json, re, shutil
+import html, json, os, re, shutil
 from pathlib import Path
 
 P = Path(__file__).resolve().parents[1]; ROOT = P.parents[1]; A = P / "assets"
@@ -608,8 +608,30 @@ def emit():
     for a, b2 in zip(SHOTS, SHOTS[1:]):   # the cut must be gapless and non-overlapping
         assert abs(a["t1"] - b2["t0"]) < 1e-6, (a["src"], a["t1"], b2["t0"])
     caps = captions(); PARTS = part_bounds()
+    # SPLIT="2" writes part 2 as p2a + p2b, cut at the shot start nearest its middle (a 4K render of a whole part ran
+    # out of memory near its end, 2026-10-22); the other parts and parts.json are unchanged.
+    split = os.environ.get("SPLIT")
+    NAMES = [f"p{k + 1}" for k in range(len(PARTS) - 1)]
+    if split:
+        k = int(split) - 1; a0, b0 = PARTS[k], PARTS[k + 1]
+        mid = min((x["t0"] for x in SHOTS if a0 < x["t0"] < b0), key=lambda x: abs(x - (a0 + b0) / 2))
+        only = {f"p{k + 1}a": (a0, mid), f"p{k + 1}b": (mid, b0)}
     for k in range(len(PARTS) - 1):
-        t0, t1 = PARTS[k], PARTS[k + 1]; D = r3(t1 - t0); pid = f"p{k + 1}"; d = OUTV / pid
+        t0, t1 = PARTS[k], PARTS[k + 1]; pid = NAMES[k]
+        if split:
+            if k != int(split) - 1:
+                continue
+            for pid, (t0, t1) in only.items():
+                emit_part(pid, t0, t1, caps)
+            continue
+        emit_part(pid, t0, t1, caps)
+    if not split:
+        (P / "build/parts.json").write_text(json.dumps(PARTS))
+
+
+def emit_part(pid, t0, t1, caps):
+    if True:
+        D = r3(t1 - t0); d = OUTV / pid
         shutil.rmtree(d / "media", ignore_errors=True); (d / "media").mkdir(parents=True, exist_ok=True)
         shutil.copytree(OUTV / "_shared", d / "shared", dirs_exist_ok=True)
         shutil.copy(ROOT / "assets/brand/logo_square.png", d / "media/logo_square.png")
@@ -652,7 +674,6 @@ def emit():
                         for a, b, c in caps if b > t0 and a < t1)
         (d / "index.html").write_text(PAGE.format(pid=pid, D=D, shots="\n".join(H), ov="\n".join(O), cap=cap))
         print(f"{pid}: {t0:.1f}-{t1:.1f} ({D:.1f}s) {sum(1 for x in SHOTS if t0 - 1e-6 <= x['t0'] < t1 - 1e-6)} shots, {len(O)} overlays")
-    (P / "build/parts.json").write_text(json.dumps(PARTS))
 
 
 PAGE = """<!doctype html>
