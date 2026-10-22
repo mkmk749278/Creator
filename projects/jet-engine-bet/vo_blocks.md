@@ -2,7 +2,7 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
 
-## Block 1 of 9 · 1297 characters · save as `voice/jeb_b01.mp3`
+## Block 1 of 9 · 1309 characters · save as `voice/jeb_b01.mp3`
 
 ```
 Picture this. Close to thirty brand new Tejas fighter jets, parked in hangars in Bengaluru and Nashik. Shiny and painted. They look ready to fly, don't they?
@@ -13,7 +13,7 @@ So what's stopping them? Mostly, an engine. America's G.E. is supposed to send n
 
 And here's the twist. Inside a modern jet engine, there's a small metal blade. It sits in gas hotter than its own melting point... and it does not melt. How? You're about to see.
 
-Very few countries in the world can make that blade, and you'll see why. It took them decades of trial and error, as you'd expect. And India? India is still learning. Surprised?
+Very few countries in the world can make that blade, and you'll see why. It took them decades of trial and error, as you'd expect. And India? India is still learning. Surprised, aren't you?
 
 Here's what's coming for you. How a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt. And at the end, the decision still waiting in Delhi.
 
