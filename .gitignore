@@ -90,3 +90,4 @@ video/upi01/p*/renders/
 video/rem/p*/media/
 video/rem/p*/shared/
 video/rem/p*_4k/
+video/rem/p[0-9][ab]/
