@@ -75,9 +75,9 @@ def cite(text, at, to):
     el(f'<div class="cite" {attrs(at, to, "fade")}>{esc(text)}</div>', at, to)
 
 
-def count(at, to, x, y, a, b, start, dur, pre="", suf="", col="ink", size="", fx="pop"):
+def count(at, to, x, y, a, b, start, dur, pre="", suf="", col="ink", size="", fx="pop", dec=0):
     el(f'<div class="chip {size} c-{col}" style="left:{x}px;top:{y}px" {attrs(at, to, fx)}><span data-count="{a},{b},F{start},{dur}" data-pre="{esc(pre)}" '
-       f'data-suf="{esc(suf)}" data-ease="power2.out">{esc(pre)}{a}{esc(suf)}</span></div>', at, to)
+       f'data-suf="{esc(suf)}" data-dec="{dec}" data-ease="power2.out">{esc(pre)}{a}{esc(suf)}</span></div>', at, to)
 
 
 def hl(at, to, x, y, w, h, d=0.6):
@@ -185,7 +185,7 @@ shot(22.65, 26.3, "Y05", "crop", ms=63.5)                                       
 chip("Our own sand", 23.9, 26.3, 120, 300, "amber", "", "pop")
 shot(26.3, 32.2, "R_map_india", "none", "MAP · LAND ONLY", ms=0.2)                     # "— in Andhra Pradesh, Kerala, Tamil Nadu and Odisha."
 shot(32.2, 37.85, "px_180875", "slow", ms=2.0)                                          # "By our own government's count... about seven million tonnes"
-count(32.6, 37.85, 120, 300, 0, 7.23, 32.7, 1.6, "", "", "amber", "xl")
+count(32.6, 37.85, 120, 300, 0, 7.23, 32.7, 1.6, "", "", "amber", "xl", dec=2)
 el(f'<div class="hkey" style="left:130px;top:470px;color:var(--ink)" {attrs(33.2, 37.85, "fade")}>MILLION TONNES · RARE EARTH OXIDE · IN THE GROUND</div>', 33.2, 37.85)
 cite("[DAE / AMD | RAJYA SABHA 2026]", 32.6, 37.85)
 shot(37.85, 40.45, "T_sandmagnet", "in", "")                                           # "So why can't India make the magnet?"
@@ -208,15 +208,15 @@ chip("Rare earth magnet", 56.1, 58.1, 120, 760, "cyan", "", "up")
 shot(58.1, 62.7, "Y07", "slow", ms=106.5)                                              # "Mostly iron, a pinch of boron, and a metal called neodymium."
 lbl("Iron", 58.4, 62.7, 140, 300, "slate", "left"); lbl("Boron", 59.4, 62.7, 140, 380, "slate", "left")
 lbl("Neodymium", 60.5, 62.7, 140, 460, "cyan", "left")
-shot(62.7, 68.1, "Y02", "in", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=66.0)        # "It's small, but it's very strong. And in a motor, strength is everything."
+shot(62.7, 68.1, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=66.0)        # "It's small, but it's very strong. And in a motor, strength is everything."
 chip("Small · very strong", 63.0, 68.1, 120, 760, "cyan", "sm", "up")
 shot(68.1, 78.6, "R_bp_bg", "slow", "ILLUSTRATIVE", ms=12.0)                            # "Here's why... same push from a smaller motor... lighter... more kilometres... Makes sense?"
 el(f'<div class="ringm" style="left:300px;top:300px;width:460px;height:460px" {attrs(69.2, 78.6, "pop")}></div>', 69.2, 78.6)
 el(f'<div class="ringm strong" style="left:1180px;top:390px;width:280px;height:280px" {attrs(70.0, 78.6, "pop")}></div>', 70.0, 78.6)
 lbl("Weaker magnet", 69.3, 78.6, 300, 230, "slate", "fade"); lbl("Strong magnet", 70.1, 78.6, 1110, 230, "cyan", "fade")
-chip("Same push", 71.0, 78.6, 780, 800, "ink", "sm", "pop")
-chip("Lighter", 72.9, 78.6, 1150, 760, "green", "sm", "pop")
-chip("More km per charge", 74.7, 78.6, 1060, 860, "green", "sm", "pop")
+chip("Same push", 71.0, 78.6, 760, 120, "ink", "sm", "pop")
+chip("Lighter", 72.9, 78.6, 1560, 400, "green", "sm", "pop")
+chip("More km per charge", 74.7, 78.6, 1100, 720, "green", "sm", "pop")
 shot(78.6, 84.15, "Y01", "in", ms=77.0)                                                # "That's why most electric scooters and cars ... use these magnets in their motors."
 chip("Most EVs", 80.0, 84.15, 120, 760, "cyan", "", "up")
 shot(84.15, 87.6, "px_202987", "in", ms=2.0)                                            # "...your phone's little vibration motor,"
@@ -272,7 +272,7 @@ shot(192.4, 194.6, "Y07", "in", ms=28.0)                                        
 shot(194.6, 197.1, "Y07", "in", ms=37.5)                                                # "and bake it at about a thousand degrees."
 lbl("~1,000–1,100 °C", 194.8, 197.1, 120, 160, "orange")
 shot(197.1, 200.5, "Y07", "in", ms=70.0)                                                # "Only at the very end do you switch on its magnetism."
-shot(200.5, 203.7, "Y02", "in", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=67.5)      # "That's when you finally have a magnet."
+shot(200.5, 203.7, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=67.5)      # "That's when you finally have a magnet."
 chip("Magnet", 200.8, 203.7, 120, 760, "cyan", "", "up")
 shot(203.7, 219.7, "R_bp_bg", "slow", ms=20.0)                                          # "So a magnet isn't one factory. It's a chain. Sand, to mixed ... to magnet. Miss one link... stuck."
 big("A CHAIN", 206.3, 213.4, 700, 330, "ink")
@@ -286,8 +286,8 @@ quote("The Middle East has oil. China has rare earths.", "DENG XIAOPING · AS RE
 shot(231.3, 236.4, "Y03", "in", ms=64.5)                                                # "And China treated it like a national mission. Long-term, and patient."
 chip("National mission", 231.6, 236.4, 120, 760, "amber", "", "up")
 shot(236.4, 240.8, "R_bp_bg", "slow", ms=24.0)                                          # "Until about forty years ago, America made most of the world's rare earths."
-tline(236.5, 245.95)
-tick(236.8, 245.95, 300, "America leads", "UNTIL THE 1980s", "cyan")
+tline(236.5, 240.8)
+tick(236.8, 240.8, 300, "America leads", "UNTIL THE 1980s", "cyan")
 shot(240.8, 245.95, "Y03", "in", ms=13.5)                                               # "Then the work moved to China, where labour was cheaper and pollution rules were weaker."
 chip("Cheaper labour", 241.6, 245.95, 120, 300, "amber", "sm", "pop")
 chip("Weaker pollution rules", 243.6, 245.95, 120, 420, "amber", "sm", "pop")
@@ -310,7 +310,7 @@ chip("Hard", 278.3, 283.8, 1000, 480, "amber", "sm", "pop")
 # ---- WHAT STOPPED INDIA (4:43-6:26)
 shot(283.8, 294.0, "px_334883", "slow", ms=1.0)                                         # "So what about India? ... What stopped us? ... two things"
 chip("What stopped us?", 287.6, 294.0, 120, 160, "ink", "", "pop")
-lbl("1 · What's inside", 290.3, 294.0, 120, 760, "amber"); lbl("2 · What we did", 292.1, 294.0, 120, 840, "amber")
+lbl("1 · What's inside", 290.3, 294.0, 120, 660, "amber"); lbl("2 · What we did", 292.1, 294.0, 120, 750, "amber")
 shot(294.0, 298.2, "Y05", "crop", ms=19.5)                                             # "In India, rare earths mostly come in a mineral called monazite."
 chip("Monazite", 295.4, 298.2, 120, 160, "amber", "", "pop")
 shot(298.2, 302.3, "Y05", "crop", ms=83.6)                                             # "You'll find it in the dark sand on some beaches in the south and east."
@@ -331,11 +331,11 @@ shot(337.8, 344.9, "Y06", "crop", ms=203.0)                                     
 count(339.6, 344.9, 120, 160, 0, 2900, 339.7, 1.4, "", " T · 2024", "amber", "")
 cite("[REUTERS | JUN 2025]", 339.6, 344.9)
 shot(344.9, 350.0, "R_map_asia", "none", "MAP · LAND ONLY", ms=0.6)                     # "And more than a thousand tonnes went to Japan, under a deal signed back in 2012."
-chip("> 1,000 T to Japan", 346.3, 350.0, 1140, 760, "ink", "sm", "pop")
-chip("Deal · 2012", 347.9, 350.0, 1140, 860, "slate", "sm", "pop")
+chip("> 1,000 T to Japan", 346.3, 350.0, 1140, 550, "ink", "sm", "pop")
+chip("Deal · 2012", 347.9, 350.0, 1140, 660, "slate", "sm", "pop")
 shot(350.0, 358.8, "R_map_asia", "none", "MAP · LAND ONLY", ms=8.6)                     # "You send the raw material out... buy the finished magnets in..."
-chip("Raw material out", 351.0, 358.8, 120, 760, "ink", "sm", "up")
-chip("Magnets in", 352.6, 358.8, 120, 860, "amber", "sm", "up")
+chip("Raw material out", 351.0, 358.8, 120, 650, "ink", "sm", "up")
+chip("Magnets in", 352.6, 358.8, 120, 760, "amber", "sm", "up")
 shot(358.8, 364.9, "R_bp_bg", "slow", ms=32.0)                                          # "Our sand is rich in the lighter rare earths, like neodymium."
 tiles(358.9, 371.9, on=("La", "Ce", "Pr", "Nd", "Sm"), on_t=361.0, stagger=0.02)
 chip("Rich in light ones", 361.2, 364.9, 620, 640, "cyan", "sm", "pop")
@@ -358,7 +358,6 @@ cite("[MOFCOM ANNOUNCEMENT No. 18 | 2025]", 388.4, 395.35)
 shot(395.35, 399.8, "px_24255", "slow", ms=2.0)                                          # "Permission takes time. And while you wait, your supply dries up."
 chip("Waiting", 395.6, 399.8, 120, 760, "amber", "", "up")
 shot(399.8, 407.2, "P_autocar", "in", "DOCUMENT · AUTOCAR INDIA")                       # "By July, Bajaj was making about half the Chetaks... Ather and T.V.S. felt the pressure too."
-hl(400.6, 407.2, 560, 868, 760, 26)
 lbl("Ather · T.V.S.", 404.7, 407.2, 120, 760, "amber")
 cite("[AUTOCAR INDIA | AUG 2025]", 400.0, 407.2)
 shot(407.2, 416.1, "P_cnbc", "in", "DOCUMENT · CNBC-TV18")                              # "Back in April, Rajiv Bajaj had warned — ... could halt within weeks."
@@ -369,10 +368,10 @@ chip("Some licences", 416.4, 424.7, 120, 760, "green", "sm", "up")
 chip("Not for defence", 422.0, 424.7, 1180, 160, "red", "", "pop")
 cite("[IANS | OCT 2025]", 416.4, 424.7)
 shot(424.7, 433.7, "R_bp_bg", "slow", ms=22.0)                                          # "Then in October 2025, China announced even wider rules... on hold for one year."
-tline(424.8, 449.9)
-tick(424.9, 449.9, 300, "Licence rule", "APR 2025", "red")
-tick(425.4, 449.9, 760, "Wider rules", "OCT 2025", "red")
-tick(430.4, 449.9, 1220, "On hold · 1 year", "NOV 2025", "amber")
+tline(424.8, 433.7)
+tick(424.9, 433.7, 300, "Licence rule", "APR 2025", "red")
+tick(425.4, 433.7, 760, "Wider rules", "OCT 2025", "red")
+tick(430.4, 433.7, 1220, "On hold · 1 year", "NOV 2025", "amber")
 shot(433.7, 446.3, "P_technology", "in", "DOCUMENT · TECHNOLOGY.ORG")                   # "...set to end on November tenth. ... trade deal till January. ... Will China stretch this hold too...?"
 chip("On paper: 10 Nov 2026", 433.9, 446.3, 120, 160, "amber", "sm", "pop")
 chip("US–China truce: 10 Jan 2027", 437.3, 446.3, 120, 270, "cyan", "sm", "pop")
@@ -389,7 +388,7 @@ chip("Not at all", 452.4, 455.65, 120, 760, "green", "", "up")
 shot(455.65, 463.1, "Y02", "slow", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=147.5)  # "In Visakhapatnam, on a campus of the Bhabha Atomic Research Centre, India already runs a rare earth magnet plant."
 lbl("Visakhapatnam", 455.9, 463.1, 120, 160, "cyan")
 cite("[DAE | PIB 2026]", 456.0, 463.1)
-shot(463.1, 467.55, "Y02", "in", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=12.0)     # "It's built with our own technology, from Bhabha and a D.R.D.O. lab."
+shot(463.1, 467.55, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=12.0)     # "It's built with our own technology, from Bhabha and a D.R.D.O. lab."
 chip("BARC + DRDO tech", 463.4, 467.55, 120, 760, "cyan", "sm", "up")
 shot(467.55, 473.5, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=56.0)     # "And it makes a special magnet that can take high heat..."
 chip("Samarium-cobalt", 467.8, 473.5, 120, 160, "cyan", "sm", "pop")
@@ -411,10 +410,9 @@ el(f'<div class="hkey" style="left:640px;top:560px" {attrs(500.0, 503.0, "fade")
 shot(503.0, 510.3, "R_map_india", "none", "MAP · LAND ONLY · ILLUSTRATIVE ZONES", ms=15.6)  # "The 2026 budget also announced special rare earth zones in Odisha, Kerala, Andhra Pradesh and Tamil Nadu."
 cite("[UNION BUDGET 2026–27]", 503.2, 510.3)
 shot(510.3, 514.75, "P_budget", "in", "DOCUMENT · PIB")                                 # "Mining, processing, research and factories, all linked up."
-hl(510.9, 514.75, 520, 790, 900, 26)
 shot(514.75, 524.2, "R_map_asia", "none", "MAP · LAND ONLY", ms=1.0)                    # "And remember the Japan deal? In June 2025, Reuters reported that India asked I.R.E.L. to stop those exports..."
-chip("Reported · Reuters · Jun 2025", 516.5, 524.2, 1040, 760, "ink", "sm", "pop")
-chip("Keep it home", 521.3, 524.2, 1040, 860, "green", "sm", "pop")
+chip("Reported · Reuters · Jun 2025", 516.5, 524.2, 1040, 650, "ink", "sm", "pop")
+chip("Keep it home", 521.3, 524.2, 1040, 760, "green", "sm", "pop")
 shot(524.2, 531.65, "R_bp_bg", "slow", ms=16.0)                                         # "So the plan is to keep the sand here. The money is here. Now comes the hard middle..."
 chain(524.3, 531.65, states=[(0, 524.5, "green"), (1, 528.4, "amber"), (2, 528.4, "amber"), (3, 528.4, "amber"), (4, 528.4, "amber")])
 chip("Sand: here", 524.6, 531.65, 120, 420, "green", "sm", "pop")

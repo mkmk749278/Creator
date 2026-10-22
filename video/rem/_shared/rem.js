@@ -11,7 +11,7 @@
     zoomhome: [{ scale: 1.7 }, { scale: 1.9 }], zoomboard: [{ scale: 2.15 }, { scale: 2.35 }],
     crop: [{ scale: 1.26 }, { scale: 1.33 }],   // hides burned-in subtitles / tickers at the bottom (origin set per shot)
   };
-  const fmt = (v, pre, suf) => pre + Math.round(v).toLocaleString("en-IN") + suf;
+  const fmt = (v, pre, suf, dec) => pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString("en-IN")) + suf;
   window.REM_animate = function (tl, D) {
     // ---- base shots
     document.querySelectorAll(".shot").forEach((sh) => {
@@ -62,9 +62,9 @@
     });
     // ---- counters: data-count="from,to,start,dur" data-pre data-suf
     document.querySelectorAll("[data-count]").forEach((el) => {
-      const [f, to, s, d] = el.dataset.count.split(",").map(Number), pre = el.dataset.pre || "", suf = el.dataset.suf || "", o = { v: f };
-      el.textContent = fmt(f, pre, suf);
-      tl.fromTo(o, { v: f }, { v: to, duration: d, ease: el.dataset.ease || "none", immediateRender: false, onUpdate: () => { el.textContent = fmt(o.v, pre, suf); } }, s);
+      const [f, to, s, d] = el.dataset.count.split(",").map(Number), pre = el.dataset.pre || "", suf = el.dataset.suf || "", dec = +(el.dataset.dec || 0), o = { v: f };
+      el.textContent = fmt(f, pre, suf, dec);
+      tl.fromTo(o, { v: f }, { v: to, duration: d, ease: el.dataset.ease || "none", immediateRender: false, onUpdate: () => { el.textContent = fmt(o.v, pre, suf, dec); } }, s);
     });
     // ---- the phone drifts like it's held (sine keyframes over its whole on-screen time)
     document.querySelectorAll(".phone[data-at]").forEach((p) => {
