@@ -9,7 +9,9 @@ import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import {
   EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, ToneMappingMode, VignetteEffect, Effect, FXAAEffect,
+  DepthOfFieldEffect, EffectAttribute,
 } from "postprocessing";
+import { N8AOPostPass } from "n8ao";
 
 export { THREE };
 
@@ -631,6 +633,17 @@ class ShimmerEffect extends Effect {
       { uniforms: new Map([["uT", new THREE.Uniform(0)], ["uAmp", new THREE.Uniform(0)], ["uRect", new THREE.Uniform(new THREE.Vector4(0.5, 0.5, 0.3, 0.3))]]) });
   }
 }
+export class WhipEffect extends Effect {
+  constructor() {
+    super("WhipEffect", `uniform vec2 uDir; uniform float uAmt;
+      void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor){
+        if (uAmt < 0.0001) { outputColor = inputColor; return; }
+        vec4 c = vec4(0.0); float tw = 0.0;
+        for (int i = -10; i <= 10; i++) { float w = 1.0 - abs(float(i)) / 11.0; c += texture2D(inputBuffer, uv + uDir * uAmt * float(i) / 10.0) * w; tw += w; }
+        outputColor = c / tw; }`,
+      { attributes: EffectAttribute.CONVOLUTION, uniforms: new Map([["uDir", new THREE.Uniform(new THREE.Vector2(1, 0))], ["uAmt", new THREE.Uniform(0)]]) });
+  }
+}
 class GrainEffect extends Effect {
   constructor() {
     super("GrainEffect", `uniform float uT, uGrain, uLift;
@@ -651,7 +664,7 @@ class GrainEffect extends Effect {
  * frames on hf-seek. update(t) must set the whole scene state from t alone.
  */
 export function createStage({ fov = 32, near = 0.02, far = 200, bloom = { intensity: 0.8, threshold: 1.3, smoothing: 0.3, radius: 0.7 },
-  vignette = 0.42, exposure = 1.0, hdri = "vendor/library/hdri/studio_small_09_1k.hdr", envRotation = 0 } = {}) {
+  vignette = 0.42, exposure = 1.0, hdri = "vendor/library/hdri/studio_small_09_1k.hdr", envRotation = 0, ao = null, dof = null, whip = false } = {}) {
   const root = document.getElementById("root");
   const W = +root.dataset.width, H = +root.dataset.height, DUR = +root.dataset.duration;
   const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gl"), antialias: false, stencil: false, depth: false,
@@ -663,8 +676,13 @@ export function createStage({ fov = 32, near = 0.02, far = 200, bloom = { intens
   const B = window.BENCH || {};
   const composer = new EffectComposer(renderer, { frameBufferType: THREE.HalfFloatType, multisampling: B.msaa ?? 0 });  // 4x MSAA costs 2.4x on the software GL (measured); FXAA instead
   composer.addPass(new RenderPass(scene, camera));
+  let aoPass = null, dofFx = null, whipFx = null;
+  if (ao) { aoPass = new N8AOPostPass(scene, camera, W, H); aoPass.configuration.aoRadius = ao.radius ?? 1.2; aoPass.configuration.distanceFalloff = ao.falloff ?? 1.0;
+    aoPass.configuration.intensity = ao.intensity ?? 2.4; aoPass.configuration.color = new THREE.Color(0, 0, 0); aoPass.setQualityMode(ao.quality ?? "Performance"); aoPass.configuration.halfRes = true; composer.addPass(aoPass); }
   const shimmer = new ShimmerEffect();
   if (!B.noShimmer) composer.addPass(new EffectPass(camera, shimmer));
+  if (dof) { dofFx = new DepthOfFieldEffect(camera, { focusDistance: dof.distance ?? 6, focusRange: dof.range ?? 3, bokehScale: dof.bokeh ?? 2.2, resolutionScale: 0.5 }); composer.addPass(new EffectPass(camera, dofFx)); }
+  if (whip) { whipFx = new WhipEffect(); composer.addPass(new EffectPass(camera, whipFx)); }
   const bloomFx = new BloomEffect({ intensity: bloom.intensity, luminanceThreshold: bloom.threshold, luminanceSmoothing: bloom.smoothing, mipmapBlur: true, radius: bloom.radius });
   const vig = new VignetteEffect({ darkness: vignette, offset: 0.32 });
   const tone = new ToneMappingEffect({ mode: ToneMappingMode.ACES_FILMIC });
@@ -674,7 +692,7 @@ export function createStage({ fov = 32, near = 0.02, far = 200, bloom = { intens
   post.push(grain);
   composer.addPass(new EffectPass(camera, ...post));
   composer.setSize(W, H);
-  const stage = { root, W, H, DUR, renderer, scene, camera, composer, fx: { shimmer, bloom: bloomFx, vig, tone, grain } };
+  const stage = { root, W, H, DUR, renderer, scene, camera, composer, fx: { shimmer, bloom: bloomFx, vig, tone, grain, dof: dofFx, whip: whipFx, ao: aoPass } };
   stage.setShimmer = (amp, cx = 0.5, cy = 0.5, rx = 0.3, ry = 0.3) => { const u = shimmer.uniforms; u.get("uAmp").value = amp; u.get("uRect").value.set(cx, cy, rx, ry); };
   stage.ready = new HDRLoader().loadAsync(hdri).then((tex) => {
     const pm = new THREE.PMREMGenerator(renderer);
