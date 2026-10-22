@@ -5,28 +5,28 @@
   "end": 1.988,
   "te": "There's a magnet in your pocket right now.",
   "en": "",
-  "speech_vs_text": 0.91,
-  "boundary_margin": 0.177,
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.178,
   "confidence": "high"
  },
  {
   "line": 2,
   "start": 2.44,
-  "end": 9.163,
+  "end": 9.162,
   "te": "When your phone buzzes, that's a tiny motor spinning... and inside it sits a tiny, very strong magnet.",
   "en": "",
-  "speech_vs_text": 0.94,
-  "boundary_margin": 0.177,
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.178,
   "confidence": "high"
  },
  {
   "line": 3,
   "start": 9.774,
-  "end": 12.546,
+  "end": 12.545,
   "te": "Now check the spec sheet of an electric scooter or car.",
   "en": "",
-  "speech_vs_text": 0.95,
-  "boundary_margin": 0.267,
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.3,
   "confidence": "high"
  },
  {
@@ -35,8 +35,8 @@
   "end": 17.605,
   "te": "Look at the motor line, and you'll often see two words... permanent magnet.",
   "en": "",
-  "speech_vs_text": 0.92,
-  "boundary_margin": 0.24,
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.254,
   "confidence": "high"
  },
  {
@@ -45,18 +45,18 @@
   "end": 20.136,
   "te": "Same family of magnet, just bigger.",
   "en": "",
-  "speech_vs_text": 0.93,
-  "boundary_margin": 0.24,
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.254,
   "confidence": "high"
  },
  {
   "line": 6,
   "start": 20.703,
-  "end": 22.203,
+  "end": 22.202,
   "te": "No magnet, no motor.",
   "en": "",
-  "speech_vs_text": 1.15,
-  "boundary_margin": 0.128,
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.129,
   "confidence": "high"
  },
  {
@@ -65,8 +65,8 @@
   "end": 24.479,
   "te": "No motor... no E.V.",
   "en": "",
-  "speech_vs_text": 1.86,
-  "boundary_margin": 0.014,
+  "speech_vs_text": 1.85,
+  "boundary_margin": 0.017,
   "confidence": "check"
  },
  {
@@ -76,7 +76,7 @@
   "te": "And in twenty twenty-five, that one magnet hit India's E.V. makers hard.",
   "en": "",
   "speech_vs_text": 1.14,
-  "boundary_margin": 0.014,
+  "boundary_margin": 0.017,
   "confidence": "check"
  },
  {
@@ -85,8 +85,8 @@
   "end": 31.484,
   "te": "July, Pune.",
   "en": "",
-  "speech_vs_text": 1.31,
-  "boundary_margin": 0.152,
+  "speech_vs_text": 1.3,
+  "boundary_margin": 0.154,
   "confidence": "high"
  },
  {
@@ -96,7 +96,7 @@
   "te": "Bajaj's electric Chetak factory was making barely half the scooters it made a year earlier.",
   "en": "",
   "speech_vs_text": 1.07,
-  "boundary_margin": 0.152,
+  "boundary_margin": 0.154,
   "confidence": "high"
  },
  {
@@ -112,10 +112,10 @@
  {
   "line": 12,
   "start": 38.668,
-  "end": 39.317,
+  "end": 39.316,
   "te": "Not a strike.",
   "en": "",
-  "speech_vs_text": 0.98,
+  "speech_vs_text": 0.97,
   "boundary_margin": 9.9,
   "confidence": "high"
  },
@@ -125,8 +125,8 @@
   "end": 40.376,
   "te": "Not batteries.",
   "en": "",
-  "speech_vs_text": 0.96,
-  "boundary_margin": 0.84,
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.843,
   "confidence": "high"
  },
  {
@@ -136,7 +136,7 @@
   "te": "That small magnet... and most of them come from China.",
   "en": "",
   "speech_vs_text": 1.05,
-  "boundary_margin": 0.246,
+  "boundary_margin": 0.242,
   "confidence": "high"
  },
  {
@@ -145,18 +145,18 @@
   "end": 48.636,
   "te": "In July twenty twenty-four, about twenty thousand Chetaks a month.",
   "en": "",
-  "speech_vs_text": 0.97,
-  "boundary_margin": 0.246,
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.242,
   "confidence": "high"
  },
  {
   "line": 16,
   "start": 49.069,
-  "end": 52.213,
+  "end": 52.212,
   "te": "In July twenty twenty-five... less than eleven thousand.",
   "en": "",
   "speech_vs_text": 0.91,
-  "boundary_margin": 0.632,
+  "boundary_margin": 0.634,
   "confidence": "high"
  },
  {
@@ -166,7 +166,7 @@
   "te": "And the crazy part?",
   "en": "",
   "speech_vs_text": 0.91,
-  "boundary_margin": 0.832,
+  "boundary_margin": 0.828,
   "confidence": "high"
  },
  {
@@ -176,17 +176,17 @@
   "te": "The raw material for that magnet is lying in the sand on our own beaches — in Andhra Pradesh, Kerala, Tamil Nadu and Odisha.",
   "en": "",
   "speech_vs_text": 1.06,
-  "boundary_margin": 0.347,
+  "boundary_margin": 0.349,
   "confidence": "high"
  },
  {
   "line": 19,
-  "start": 61.893,
+  "start": 61.894,
   "end": 67.156,
   "te": "By our own government's count, India's sands hold about seven million tonnes of rare earths.",
   "en": "",
-  "speech_vs_text": 1.02,
-  "boundary_margin": 0.347,
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.349,
   "confidence": "high"
  },
  {
@@ -196,7 +196,7 @@
   "te": "So why can't India make the magnet?",
   "en": "",
   "speech_vs_text": 1.07,
-  "boundary_margin": 0.491,
+  "boundary_margin": 0.492,
   "confidence": "high"
  },
  {
@@ -205,8 +205,8 @@
   "end": 71.993,
   "te": "Stay with me, and you'll see three things.",
   "en": "",
-  "speech_vs_text": 0.85,
-  "boundary_margin": 0.22,
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.221,
   "confidence": "high"
  },
  {
@@ -216,17 +216,17 @@
   "te": "The hard step nobody else wanted to do.",
   "en": "",
   "speech_vs_text": 0.97,
-  "boundary_margin": 0.153,
+  "boundary_margin": 0.221,
   "confidence": "high"
  },
  {
   "line": 23,
-  "start": 74.993,
-  "end": 79.778,
-  "te": "Then, about five minutes in, the secret inside our sand that kept it locked away.",
+  "start": 74.995,
+  "end": 79.915,
+  "te": "Then, about six minutes in, the secret inside our sand that kept it locked away.",
   "en": "",
-  "speech_vs_text": 0.96,
-  "boundary_margin": 0.153,
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.242,
   "confidence": "high"
  },
  {
@@ -236,7 +236,7 @@
   "te": "And at the end, the date you should watch.",
   "en": "",
   "speech_vs_text": 0.86,
-  "boundary_margin": 0.184,
+  "boundary_margin": 0.317,
   "confidence": "high"
  }
 ]

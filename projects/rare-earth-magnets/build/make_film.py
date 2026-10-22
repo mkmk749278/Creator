@@ -264,7 +264,7 @@ shot(42.8, 45.45, "Y11", "in", ms=36.0)                                         
 lbl("1 · The hard step", 43.0, 45.45, 120, 760, "cyan")
 shot(45.45, 50.6, "R_grain", "in", ms=4.5)                                              # "Then, about five minutes in, the secret inside our sand..."
 lbl("2 · The secret in our sand", 45.6, 50.6, 120, 760, "amber")
-chip("~5 min in", 46.5, 50.6, 1380, 160, "slate", "sm", "pop")
+chip("~6 min in", 46.5, 50.6, 1380, 160, "slate", "sm", "pop")
 shot(50.6, 53.6, "R_bp_bg", "push", ms=10.0)                                            # "And at the end, the date you should watch."
 lbl("3 · The date to watch", 50.75, 53.6, 120, 760, "red")
 el(f'<div class="cal" style="left:820px;top:330px" {attrs(51.0, 53.6, "pop")}><div class="d"><div class="w">NOV</div><div class="n">10</div></div></div>', 51.0, 53.6)

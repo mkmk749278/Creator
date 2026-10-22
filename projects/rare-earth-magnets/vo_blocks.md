@@ -2,7 +2,7 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/rem_bNN.mp3` (NN = block number).
 
-## Block 1 of 8 · 1242 characters · save as `voice/rem_b01.mp3`
+## Block 1 of 8 · 1241 characters · save as `voice/rem_b01.mp3`
 
 ```
 There's a magnet in your pocket right now. When your phone buzzes, that's a tiny motor spinning... and inside it sits a tiny, very strong magnet.
@@ -23,7 +23,7 @@ By our own government's count, India's sands hold about seven million tonnes of 
 
 So why can't India make the magnet?
 
-Stay with me, and you'll see three things. The hard step nobody else wanted to do. Then, about five minutes in, the secret inside our sand that kept it locked away. And at the end, the date you should watch.
+Stay with me, and you'll see three things. The hard step nobody else wanted to do. Then, about six minutes in, the secret inside our sand that kept it locked away. And at the end, the date you should watch.
 ```
 
 ## Block 2 of 8 · 985 characters · save as `voice/rem_b02.mp3`
