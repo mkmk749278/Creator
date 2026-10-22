@@ -1,0 +1,77 @@
+[
+ {
+  "sheet": 1,
+  "tile": 1,
+  "label": "P_autocar.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 2,
+  "label": "P_autocar_photo.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 3,
+  "label": "P_budget.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 4,
+  "label": "P_cnbc.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 5,
+  "label": "P_ddindia.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 6,
+  "label": "P_ians.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 7,
+  "label": "P_ibm_act.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 8,
+  "label": "P_ibm_demand.png"
+ },
+ {
+  "sheet": 1,
+  "tile": 9,
+  "label": "P_iea.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 1,
+  "label": "P_pib_magnets.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 2,
+  "label": "P_pib_reserves.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 3,
+  "label": "P_pib_vizag.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 4,
+  "label": "P_pmindia.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 5,
+  "label": "P_technology.png"
+ },
+ {
+  "sheet": 2,
+  "tile": 6,
+  "label": "P_usgs.png"
+ }
+]

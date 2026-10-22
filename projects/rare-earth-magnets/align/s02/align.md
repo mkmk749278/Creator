@@ -1,4 +1,4 @@
-# Script alignment: 19 lines, 58.4 s audio
+# Script alignment: 23 lines, 63.0 s audio
 
-19 lines high confidence; 0 to check by ear (speech time far from the line's text length, or a boundary that could sit one pause earlier/later).
+23 lines high confidence; 0 to check by ear (speech time far from the line's text length, or a boundary that could sit one pause earlier/later).
 
