@@ -15,6 +15,7 @@ CROPS = {   # name: (source file, crop box, tilt degrees)
     "P_autocar": ("autocar_chetak_july.png", (590, 140, 1330, 940), -1.2),
     "P_ather": ("ather_450x_spec.png", (370, 300, 1540, 600), -0.8),
     "P_nexon": ("nexon_ev_spec.png", (395, 220, 1140, 800), 1.0),
+    "P_nexon_row": ("nexon_ev_spec.png", (395, 410, 1140, 690), -0.6),
     "P_autocar_photo": ("autocar_chetak_july.png", (636, 350, 1284, 730), 0),
     "P_cnbc": ("cnbctv18_rajiv.png", (360, 500, 1200, 980), 1.0),
     "P_ddindia": ("ddindia_20_bids.png", (250, 370, 1330, 1075), -1.0),

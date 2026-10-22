@@ -12,8 +12,14 @@ from pathlib import Path
 import numpy as np
 import soundfile as sf
 from scipy.signal import butter, sosfilt
+import importlib.util
 
-SR = 48000; DUR = 636.0; N = int(DUR * SR)
+# v5 voice track: times below are v4 film times mapped through make_film.R (same sentence map as the picture);
+# cues for the parts re-cut in v5 (opening, stairs, factory steps) are written in v5 time in V5_CUES.
+_spec = importlib.util.spec_from_file_location("make_film", Path(__file__).with_name("make_film.py"))
+MF = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(MF)
+R = MF.R
+SR = 48000; DUR = MF.END; N = int(DUR * SR)
 rng = np.random.default_rng(21)
 P = Path(__file__).resolve().parents[1]; OUT = P / "assets/audio"; OUT.mkdir(parents=True, exist_ok=True)
 t_all = np.arange(N) / SR
@@ -52,9 +58,9 @@ def noise(d):
 # ---------------- bed ----------------
 CHORDS = {"tense": [(110.0, 130.8, 164.8), (98.0, 116.5, 146.8)], "calm": [(130.8, 164.8, 196.0), (110.0, 138.6, 164.8)],
           "drive": [(146.8, 174.6, 220.0), (130.8, 155.6, 196.0)], "hope": [(130.8, 164.8, 196.0), (146.8, 185.0, 220.0)]}
-SECTIONS = [(0, "tense"), (53.6, "drive"), (112.7, "calm"), (173.2, "drive"), (219.7, "tense"), (283.8, "calm"),
-            (305.0, "tense"), (386.2, "tense"), (449.9, "hope"), (531.65, "calm"), (574.05, "drive"), (618.0, "hope")]
-REVEALS = [214.07, 305.0, 386.24, 448.14]   # bed silent for 1.5 s before each, low hit on it
+SECTIONS = [(0, "tense"), (R(53.6), "drive"), (R(112.7), "calm"), (R(173.2), "drive"), (R(219.7), "tense"), (R(283.8), "calm"),
+            (R(305.0), "tense"), (R(386.2), "tense"), (R(449.9), "hope"), (R(531.65), "calm"), (R(574.05), "drive"), (R(618.0), "hope")]
+REVEALS = [R(214.07), R(305.0), R(386.24), R(448.14)]   # bed silent for 1.5 s before each, low hit on it
 bed = np.zeros(N)
 for si, (s0, mood) in enumerate(SECTIONS):
     s1 = SECTIONS[si + 1][0] if si + 1 < len(SECTIONS) else DUR
@@ -76,7 +82,7 @@ for at in REVEALS:
     bed[i - ramp:i] *= np.linspace(1, 0, ramp); bed[i:j] = 0; bed[j:j + ramp] *= np.linspace(0, 1, ramp)
     hit = (tone(41, 2.4, 0.003, 2.0, (1.0, 0.5, 0.25)) + lp(noise(2.4), 200) * 0.6) * np.exp(-np.arange(int(2.4 * SR)) / SR * 1.6)
     put(bed, at, hit, 0.5)
-end = int(618.0 * SR); bed[end:] *= np.linspace(1.0, 2.2, N - end)   # end screen: music carries it
+end = int(R(618.0) * SR); bed[end:] *= np.linspace(1.0, 2.2, N - end)   # end screen: music carries it
 bed *= env(N, 1.5, 4.0)
 sf.write(OUT / "bed.wav", (bed / np.max(np.abs(bed)) * 0.6).astype(np.float32), SR)
 
@@ -116,12 +122,16 @@ def err():
     return tone(180, 0.45, 0.003, 0.08, (1.0, 0.6, 0.4)) * 0.4
 
 
-CUES = [(0.15, whoosh(0.5), 0.25), (9.85, err(), 0.35), (10.85, err(), 0.35), (12.2, snap(), 0.6), (14.0, thud(55), 0.6),
-        (16.7, whoosh(0.6), 0.2), (19.95, thud(50), 0.6), (21.0, err(), 0.4), (26.3, whoosh(0.5), 0.2), (32.7, whoosh(0.6), 0.25),
-        (38.0, thud(48), 0.8), (38.5, thud(48), 0.8), (51.0, click(1500, 0.05), 0.5), (60.5, snap(), 0.5),
+V5_CUES = [(0.15, whoosh(0.5), 0.25), (2.5, click(1800, 0.04), 0.4), (5.6, whoosh(0.6), 0.2), (7.4, chime(), 0.35),
+           (9.8, click(1500, 0.05), 0.4), (13.1, click(1500, 0.05), 0.4), (15.4, thud(55), 0.6), (18.1, whoosh(0.6), 0.2),
+           (20.85, thud(50), 0.7), (30.45, thud(48), 0.7), (33.6, err(), 0.4), (38.67, err(), 0.35), (39.61, err(), 0.35),
+           (42.3, thud(55), 0.6), (45.0, whoosh(0.6), 0.2), (49.2, thud(50), 0.6), (50.6, err(), 0.4), (92.3, snap(), 0.5),
+           (110.4, click(1500, 0.05), 0.4), (121.0, chime(), 0.3), (196.6, click(900, 0.04), 0.4), (202.8, chime(), 0.3),
+           (206.8, whoosh(0.5), 0.25), (233.66, snap(), 0.8), (237.5, chime(), 0.4)]
+CUES = [(26.3, whoosh(0.5), 0.2), (32.7, whoosh(0.6), 0.25),
+        (38.0, thud(48), 0.8), (38.5, thud(48), 0.8), (51.0, click(1500, 0.05), 0.5),
         (69.2, whoosh(0.4), 0.2), (72.9, chime(), 0.3), (74.7, chime(), 0.3), (94.5, whoosh(0.7), 0.25), (104.3, thud(55), 0.7),
-        (121.5, whoosh(0.5), 0.2), (138.9, snap(), 0.6), (148.6, click(1800, 0.04), 0.5), (165.4, click(900, 0.04), 0.4),
-        (170.0, whoosh(0.5), 0.25), (197.1, snap(), 0.8), (200.8, chime(), 0.4)] + \
+        (121.5, whoosh(0.5), 0.2), (138.9, snap(), 0.6), (148.6, click(1800, 0.04), 0.5)] + \
        [(t, clink(), 0.9) for t in (207.5, 208.4, 209.6, 211.1, 212.2, 213.0)] + [(214.4, snap(), 1.0),
         (224.6, whoosh(0.8), 0.25), (248.8, err(), 0.3), (261.8, whoosh(0.6), 0.2), (266.3, whoosh(0.6), 0.2), (269.3, whoosh(0.6), 0.2),
         (276.3, chime(), 0.25), (278.3, thud(55), 0.6), (295.4, click(1500, 0.05), 0.4), (317.9, thud(60), 0.6),
@@ -133,6 +143,8 @@ CUES = [(0.15, whoosh(0.5), 0.25), (9.85, err(), 0.35), (10.85, err(), 0.35), (1
         (521.3, chime(), 0.35), (528.4, thud(55), 0.5), (551.9, thud(48), 0.6), (557.7, err(), 0.5), (564.8, chime(), 0.5),
         (586.9, click(1500, 0.05), 0.5), (590.8, click(1500, 0.05), 0.5), (610.8, whoosh(0.8), 0.3), (618.1, chime(), 0.5)]
 for at, x, g in CUES:
+    put(fx, R(at), x, g)
+for at, x, g in V5_CUES:
     put(fx, at, x, g)
 sf.write(OUT / "sfx.wav", (fx / max(1e-9, np.max(np.abs(fx))) * 0.7).astype(np.float32), SR)
 print("bed + sfx ->", OUT)

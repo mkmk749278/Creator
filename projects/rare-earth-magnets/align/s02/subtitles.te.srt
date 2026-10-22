@@ -1,76 +1,92 @@
 1
-00:00:00,000 --> 00:00:02,387
+00:00:00,000 --> 00:00:02,445
 First, what is this magnet?
 
 2
-00:00:02,387 --> 00:00:04,518
+00:00:02,445 --> 00:00:04,625
 It's called a rare earth magnet.
 
 3
-00:00:04,518 --> 00:00:09,050
-Mostly iron, a pinch of boron, and a metal called neodymium.
+00:00:04,625 --> 00:00:06,126
+It's mostly iron.
 
 4
-00:00:09,050 --> 00:00:11,528
-It's small, but it's very strong.
+00:00:06,126 --> 00:00:10,712
+Add a little boron... and one special metal, called neodymium.
 
 5
-00:00:11,528 --> 00:00:14,461
-And in a motor, strength is everything.
+00:00:10,712 --> 00:00:13,164
+It's small, but it's very strong.
 
 6
-00:00:14,461 --> 00:00:15,407
-Here's why.
+00:00:13,164 --> 00:00:16,063
+And in a motor, strength is everything.
 
 7
-00:00:15,407 --> 00:00:19,151
-A stronger magnet gives you the same push from a smaller motor.
+00:00:16,063 --> 00:00:16,918
+Here's why.
 
 8
-00:00:19,151 --> 00:00:20,880
-Smaller means lighter.
+00:00:16,918 --> 00:00:20,734
+A stronger magnet gives you the same push from a smaller motor.
 
 9
-00:00:20,880 --> 00:00:24,368
-And lighter means you get more kilometres on one charge.
+00:00:20,734 --> 00:00:22,428
+Smaller means lighter.
 
 10
-00:00:24,368 --> 00:00:25,381
-Makes sense?
+00:00:22,428 --> 00:00:25,909
+And lighter means you get more kilometres on one charge.
 
 11
-00:00:25,381 --> 00:00:30,495
-That's why most electric scooters and cars you see on the road use these magnets in their motors.
+00:00:25,909 --> 00:00:26,849
+Makes sense?
 
 12
-00:00:30,495 --> 00:00:31,910
-And not just vehicles.
+00:00:26,849 --> 00:00:29,827
+That's why the spec sheet says permanent magnet.
 
 13
-00:00:31,910 --> 00:00:39,070
-The same kind of magnet sits in your phone's little vibration motor, in many wind turbines, and in defence systems.
+00:00:29,827 --> 00:00:34,279
+Most electric scooters and cars on the road use these magnets in their motors.
 
 14
-00:00:39,070 --> 00:00:40,523
-Now look at this number.
+00:00:34,279 --> 00:00:35,923
+And it's not just vehicles.
 
 15
-00:00:40,523 --> 00:00:47,220
-India needs about four thousand tonnes of these magnets a year... and we buy almost all of them from abroad.
+00:00:35,923 --> 00:00:37,666
+Remember the buzz in your phone?
 
 16
-00:00:47,220 --> 00:00:51,042
-And more than eight out of every ten come from one country.
+00:00:37,666 --> 00:00:39,062
+Same kind of magnet.
 
 17
-00:00:51,042 --> 00:00:52,063
-China.
+00:00:39,062 --> 00:00:43,220
+You'll also find it in many wind turbines, and in defence systems.
 
 18
-00:00:52,063 --> 00:00:57,230
-So you're probably thinking — if the sand is ours, why can't we just dig it up and make them?
+00:00:43,220 --> 00:00:44,741
+Now look at this number.
 
 19
-00:00:57,230 --> 00:00:58,436
+00:00:44,741 --> 00:00:51,694
+India needs about four thousand tonnes of these magnets a year... and we buy almost all of them from abroad.
+
+20
+00:00:51,694 --> 00:00:55,518
+And more than eight out of every ten come from one country.
+
+21
+00:00:55,518 --> 00:00:56,392
+China.
+
+22
+00:00:56,392 --> 00:01:01,788
+So you're probably thinking — if the sand is ours, why can't we just dig it up and make them?
+
+23
+00:01:01,788 --> 00:01:03,007
 Let's open that box.
 

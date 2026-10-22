@@ -13,8 +13,51 @@ from pathlib import Path
 
 P = Path(__file__).resolve().parents[1]; ROOT = P.parents[1]; A = P / "assets"
 OUTV = ROOT / "video/rem"
-VO_END = 621.6
-END = 636.0          # VO + end screen (YouTube end-screen elements need 5-20 s)
+# ---------- v5 retime (owner's notes 2026-10-22: new opening, stairs, simpler lines) ----------
+# Most shots below were cut on the v4 takes. R(t) maps a v4 film time onto the v5 voice track, sentence by sentence
+# (align/sentences_v4.json -> align/sentences.json; unchanged sentences map exactly, changed ones linearly between
+# their neighbours). Shots and overlays written inside `with v5():` are already in v5 time and are not mapped.
+import difflib
+OLD_S = json.loads((P / "align/sentences_v4.json").read_text())
+NEW_S = json.loads((P / "align/sentences.json").read_text())
+V4_VO_END, V4_END = 621.6, 636.0
+VO_END = round(NEW_S[-1]["end"], 2)
+END = round(VO_END + (V4_END - V4_VO_END), 2)   # VO + end screen (YouTube end-screen elements need 5-20 s)
+
+
+def _anchors():
+    a, b = [s["en"] for s in OLD_S], [s["en"] for s in NEW_S]
+    pts = [(0.0, 0.0)]
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(a=a, b=b, autojunk=False).get_opcodes():
+        if tag == "equal":
+            for i, j in zip(range(i1, i2), range(j1, j2)):
+                pts += [(OLD_S[i]["start"], NEW_S[j]["start"]), (OLD_S[i]["end"], NEW_S[j]["end"])]
+    pts += [(V4_VO_END, VO_END), (V4_END, END)]
+    return sorted(set(pts))
+
+
+ANCH = _anchors()
+
+
+def R(t):
+    """v4 film time -> v5 film time (piecewise linear through the anchors)."""
+    for (x0, y0), (x1, y1) in zip(ANCH, ANCH[1:]):
+        if x0 <= t <= x1:
+            return round(y0 + (t - x0) * (y1 - y0) / (x1 - x0), 3) if x1 > x0 else y0
+    return round(t - ANCH[-1][0] + ANCH[-1][1], 3)
+
+
+V5 = False
+
+
+class v5:
+    def __enter__(self):
+        global V5
+        V5 = True
+
+    def __exit__(self, *a):
+        global V5
+        V5 = False
 esc = html.escape
 
 YT = {  # owner-fetched footage (assets/yt/fetched.csv): short, credited excerpts
@@ -50,15 +93,20 @@ def shot(t0, t1, src, move="push", tag=None, ms=0.0, origin=None, dim=False):
         tag = YT[src][1] if src in YT else ("PIXABAY" if src.startswith("px_") else "ILLUSTRATION" if src.startswith("R_") else "")
     if move == "crop" and origin is None:
         origin = "50% 6%"
+    if not V5:
+        t0, t1 = R(t0), R(t1)
     SHOTS.append(dict(t0=t0, t1=t1, src=src, move=move, tag=tag, ms=ms, origin=origin, dim=dim))
 
 
 def el(h, at, to=None):
+    if not V5:   # the html carries F-marked v4 times; emit() maps those through R
+        at, to = R(at), (R(to) if to is not None else None)
     OV.append(dict(h=h, at=at, to=to))
 
 
 def attrs(at, to, fx, d=None, extra=""):
-    s = f'data-at="F{at}" data-fx="{fx}"' + (f' data-to="F{to}"' if to is not None else "") + (f' data-d="{d}"' if d else "")
+    m = "N" if V5 else "F"   # N: already v5 time; F: v4 time, mapped in emit()
+    s = f'data-at="{m}{at}" data-fx="{fx}"' + (f' data-to="{m}{to}"' if to is not None else "") + (f' data-d="{d}"' if d else "")
     return s + extra
 
 
@@ -76,7 +124,7 @@ def cite(text, at, to):
 
 
 def count(at, to, x, y, a, b, start, dur, pre="", suf="", col="ink", size="", fx="pop", dec=0):
-    el(f'<div class="chip {size} c-{col}" style="left:{x}px;top:{y}px" {attrs(at, to, fx)}><span data-count="{a},{b},F{start},{dur}" data-pre="{esc(pre)}" '
+    el(f'<div class="chip {size} c-{col}" style="left:{x}px;top:{y}px" {attrs(at, to, fx)}><span data-count="{a},{b},{"N" if V5 else "F"}{start},{dur}" data-pre="{esc(pre)}" '
        f'data-suf="{esc(suf)}" data-dec="{dec}" data-ease="power2.out">{esc(pre)}{a}{esc(suf)}</span></div>', at, to)
 
 
@@ -165,23 +213,41 @@ def tline(at, to):
 # THE CUT (film seconds = VO seconds). VO cue in each comment.
 # =====================================================================================================
 # ---- HOOK (0:00-0:53): Pune, half the scooters, one magnet, our sand
-shot(0.0, 2.7, "T_sandmagnet", "in", "")                                              # "July, twenty twenty-five. Pune."
-datebig("JULY 2025", "PUNE · BAJAJ CHETAK PLANT", 0.15, 8.4)
-shot(2.7, 5.6, "Y01", "slow", ms=37.0)                                                 # "Bajaj's electric Chetak factory..."
-shot(5.6, 8.4, "Y01", "in", ms=132.0)                                                  # "...barely half the scooters it made a year earlier."
-chip("Output ≈ half", 6.0, 8.4, 1260, 760, "red", "sm", "pop")
-shot(8.4, 12.05, "R_bp_bg", "slow", ms=0.0)                                            # "The reason? Not a strike. Not batteries."
-chip("Strike", 9.85, 12.05, 560, 420, "slate", "", "pop", "✕")
-chip("Batteries", 10.85, 12.05, 980, 420, "slate", "", "pop", "✕")
-shot(12.05, 16.4, "R_motor", "in", ms=7.0)                                             # "One small magnet... and most of them come from China."
-chip("One small magnet", 12.2, 16.4, 120, 760, "cyan", "", "up")
-chip("Most from China", 14.0, 16.4, 1180, 160, "amber", "", "pop")
-shot(16.4, 22.65, "R_bp_bg", "push", ms=4.0)                                            # "A year earlier, about twenty thousand... This July... less than eleven thousand."
-el(f'<div class="hkey" style="left:220px;top:300px" {attrs(16.5, 22.65, "fade")}>CHETAK OUTPUT · ONE MONTH</div>', 16.5, 22.65)
-hbar(16.6, 22.65, 220, 400, 1180, "slate", "JULY 2024", '<span data-count="0,20384,F16.7,1.6">0</span>')
-hbar(19.85, 22.65, 220, 620, 626, "red", "JULY 2025", '<span data-count="0,10824,F19.95,1.4">0</span>')
-chip("−47%", 21.0, 22.65, 1160, 610, "red", "", "pop")
-cite("[AUTOCAR INDIA | AUG 2025]", 16.6, 22.65)
+with v5():   # v5 opening (owner 2026-10-22): the magnet you already carry, the spec sheet, then Pune
+    EA = R(22.65)
+    shot(0.0, 2.44, "T_sandmagnet", "in", "")                                          # "There's a magnet in your pocket right now."
+    chip("In your pocket", 0.4, 2.44, 120, 760, "cyan", "", "up")
+    shot(2.44, 5.6, "commons_Nokia_motor", "in", "PHOTO · RAIMOND SPEKKING · CC BY-SA 4.0")  # "When your phone buzzes, that's a tiny motor spinning..."
+    lbl("Phone vibration motor", 3.0, 5.6, 120, 160, "cyan")
+    shot(5.6, 9.77, "R_buzz", "none", ms=3.0)                                          # "...and inside it sits a tiny, very strong magnet."
+    chip("Tiny, very strong magnet", 7.4, 9.77, 120, 760, "cyan", "", "up")
+    shot(9.77, 13.07, "P_ather", "in", "DOCUMENT · SHRIRAM FINANCE · ATHER 450X")       # "Now check the spec sheet of an electric scooter or car."
+    chip("Scooter", 10.2, 13.07, 120, 160, "slate", "sm", "pop")
+    shot(13.07, 15.3, "P_nexon", "in", "DOCUMENT · AUTOCAR INDIA · TATA NEXON EV")      # "Look at the motor line,"
+    chip("Car", 13.3, 15.3, 120, 160, "slate", "sm", "pop")
+    shot(15.3, 18.07, "P_nexon_row", "in", "DOCUMENT · AUTOCAR INDIA · TATA NEXON EV")  # "...and you'll often see two words... permanent magnet."
+    chip("Permanent magnet", 15.6, 18.07, 1180, 760, "cyan", "", "pop")
+    cite("[AUTOCAR INDIA | NEXON EV SPECS]", 13.3, 18.07)
+    shot(18.07, 20.7, "R_motor", "none", ms=4.5)                                       # "Same family of magnet, just bigger."
+    chip("Same magnet · bigger", 18.3, 20.7, 120, 760, "cyan", "", "up")
+    shot(20.7, 22.7, "Y01", "in", ms=52.0)                                             # "No magnet, no motor."
+    lbl("No magnet, no motor", 20.85, 22.7, 120, 160, "red")
+    shot(22.7, 24.99, "Y01", "slow", ms=31.5)                                          # "No motor... no E.V."
+    shot(24.99, 30.38, "Y01", "slow", ms=57.0)                                         # "And in 2025, that one magnet hit India's E.V. makers hard."
+    shot(30.38, 37.77, "Y01", "slow", ms=37.0)                                         # "July, Pune. Bajaj's electric Chetak factory was making barely half..."
+    datebig("JULY 2025", "PUNE · BAJAJ CHETAK PLANT", 30.45, 37.77)
+    chip("Output ≈ half", 33.6, 37.77, 1260, 760, "red", "sm", "pop")
+    shot(37.77, 40.84, "R_bp_bg", "slow", ms=0.0)                                      # "The reason? Not a strike. Not batteries."
+    chip("Strike", 38.67, 40.84, 560, 420, "slate", "", "pop", "✕")
+    chip("Batteries", 39.61, 40.84, 980, 420, "slate", "", "pop", "✕")
+    shot(40.84, 44.76, "R_map_asia", "none", "MAP · LAND ONLY", ms=9.0)                 # "That small magnet... and most of them come from China."
+    chip("Most from China", 42.3, 44.76, 120, 760, "amber", "", "up")
+    shot(44.76, EA, "R_bp_bg", "push", ms=4.0)                                         # "In July 2024, about 20,000 Chetaks a month. In July 2025... less than 11,000."
+    el(f'<div class="hkey" style="left:220px;top:300px" {attrs(44.85, EA, "fade")}>CHETAK OUTPUT · ONE MONTH</div>', 44.85, EA)
+    hbar(44.9, EA, 220, 400, 1180, "slate", "JULY 2024", '<span data-count="0,20384,N45.0,1.6">0</span>')
+    hbar(49.1, EA, 220, 620, 626, "red", "JULY 2025", '<span data-count="0,10824,N49.2,1.4">0</span>')
+    chip("−47%", 50.6, EA, 1160, 610, "red", "", "pop")
+    cite("[AUTOCAR INDIA | AUG 2025]", 44.9, EA)
 shot(22.65, 26.3, "Y05", "crop", ms=63.5)                                              # "And the crazy part? The raw material ... in the sand on our own beaches"
 chip("Our own sand", 23.9, 26.3, 120, 300, "amber", "", "pop")
 shot(26.3, 32.2, "R_map_india", "none", "MAP · LAND ONLY", ms=0.2)                     # "— in Andhra Pradesh, Kerala, Tamil Nadu and Odisha."
@@ -206,9 +272,10 @@ el(f'<div class="cal" style="left:820px;top:330px" {attrs(51.0, 53.6, "pop")}><d
 # ---- THE MAGNET (0:53-1:53)
 shot(53.6, 58.1, "Y07", "in", ms=103.5)                                                # "First, what is this magnet? It's called a rare earth magnet."
 chip("Rare earth magnet", 56.1, 58.1, 120, 760, "cyan", "", "up")
-shot(58.1, 62.7, "Y07", "crop", ms=106.5, origin="50% 100%")                                              # "Mostly iron, a pinch of boron, and a metal called neodymium."
-chip("Iron", 58.4, 62.7, 120, 560, "slate", "sm", "pop"); chip("Boron", 59.4, 62.7, 120, 660, "slate", "sm", "pop")
-chip("Neodymium", 60.5, 62.7, 120, 760, "cyan", "sm", "pop")
+shot(58.1, 62.7, "Y07", "crop", ms=87.5, origin="100% 0%")                                              # "Mostly iron, a pinch of boron, and a metal called neodymium."
+with v5():   # "It's mostly iron. Add a little boron... and one special metal, called neodymium."
+    chip("Iron", 88.0, R(62.7), 120, 560, "slate", "sm", "pop"); chip("Boron", 90.0, R(62.7), 120, 660, "slate", "sm", "pop")
+    chip("Neodymium", 92.3, R(62.7), 120, 760, "cyan", "sm", "pop")
 shot(62.7, 68.1, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=66.0)        # "It's small, but it's very strong. And in a motor, strength is everything."
 chip("Small · very strong", 63.0, 68.1, 120, 760, "cyan", "sm", "up")
 shot(68.1, 78.6, "R_bp_bg", "slow", "ILLUSTRATIVE", ms=12.0)                            # "Here's why... same push from a smaller motor... lighter... more kilometres... Makes sense?"
@@ -218,14 +285,19 @@ lbl("Weaker magnet", 69.3, 78.6, 300, 230, "slate", "fade"); lbl("Strong magnet"
 chip("Same push", 71.0, 78.6, 760, 120, "ink", "sm", "pop")
 chip("Lighter", 72.9, 78.6, 1560, 400, "green", "sm", "pop")
 chip("More km per charge", 74.7, 78.6, 1100, 720, "green", "sm", "pop")
-shot(78.6, 84.15, "Y01", "in", ms=77.0)                                                # "That's why most electric scooters and cars ... use these magnets in their motors."
-chip("Most EVs", 80.0, 84.15, 120, 760, "cyan", "", "up")
-shot(84.15, 87.6, "px_202987", "in", ms=2.0)                                            # "...your phone's little vibration motor,"
-lbl("Vibration motor", 86.0, 87.6, 120, 760, "cyan")
-shot(87.6, 90.2, "px_209180", "slow", ms=3.0)                                           # "in many wind turbines,"
-lbl("Wind turbines", 87.8, 90.2, 120, 760, "cyan")
-shot(90.2, 92.7, "pixabay_7278481", "in", "PHOTO · PIXABAY")                            # "and in defence systems."
-lbl("Defence", 90.4, 92.7, 120, 760, "cyan")
+with v5():   # callbacks to the opening: the spec sheet, the phone's buzz
+    shot(R(78.6), 113.1, "P_nexon_row", "slow", "DOCUMENT · AUTOCAR INDIA · TATA NEXON EV")  # "That's why the spec sheet says permanent magnet."
+    chip("Permanent magnet", 110.4, 113.1, 1180, 760, "cyan", "", "pop")
+    shot(113.1, 117.56, "Y01", "in", ms=77.0)                                          # "Most electric scooters and cars on the road use these magnets..."
+    chip("Most EVs", 114.0, 117.56, 120, 760, "cyan", "", "up")
+    shot(117.56, 120.94, "px_202987", "in", ms=2.0)                                     # "And it's not just vehicles. Remember the buzz in your phone?"
+    lbl("Your phone's buzz", 119.3, 120.94, 120, 760, "cyan")
+    shot(120.94, 123.2, "R_buzz", "none", ms=7.0)                                      # "Same kind of magnet."
+    chip("Same kind of magnet", 121.0, 123.2, 120, 760, "cyan", "", "up")
+    shot(123.2, 124.8, "px_209180", "slow", ms=3.0)                                    # "You'll also find it in many wind turbines,"
+    lbl("Wind turbines", 123.3, 124.8, 120, 760, "cyan")
+    shot(124.8, R(92.7), "pixabay_7278481", "in", "PHOTO · PIXABAY")                   # "and in defence systems."
+    lbl("Defence", 125.0, R(92.7), 120, 760, "cyan")
 shot(92.7, 100.85, "px_23215", "slow", ms=1.0)                                          # "India needs about four thousand tonnes... we buy almost all of them from abroad."
 count(94.4, 100.85, 120, 300, 0, 4000, 94.5, 1.4, "~", " T / YEAR", "amber", "xl")
 chip("Almost all imported", 98.0, 100.85, 120, 520, "ink", "sm", "up")
@@ -250,31 +322,35 @@ chip("Pull one out?", 138.9, 143.6, 1200, 200, "cyan", "", "pop")
 shot(143.6, 151.75, "Y11", "in", ms=73.5)                                              # "You dissolve the mix in acid, and the liquid flows through a long row of tanks..."
 lbl("Acid + tanks", 144.6, 151.75, 120, 760, "cyan")
 chip("A tiny bit each tank", 148.6, 151.75, 1080, 160, "amber", "sm", "pop")
-shot(151.75, 160.0, "R_tanks", "none", ms=4.0)                                          # "So you repeat it. Again and again. A big plant can run hundreds of these tanks..."
+with v5():
+    shot(R(151.75), 194.9, "R_tanks", "none", ms=4.0)                                  # "So you repeat it. Again and again. A big plant can run hundreds of these tanks..."
 count(154.6, 160.0, 120, 300, 1, 300, 154.7, 4.5, "TANK ", "", "cyan", "")
 el(f'<div class="hkey" style="left:130px;top:410px" {attrs(155.0, 160.0, "fade")}>ILLUSTRATIVE COUNT · "HUNDREDS"</div>', 155.0, 160.0)
-shot(160.0, 168.0, "R_rice", "none", "ILLUSTRATION", ms=0.0)                            # "It's like washing rice... You keep washing... hundreds of times."
-chip("Like washing rice", 160.2, 168.0, 120, 160, "ink", "", "pop")
-count(165.3, 168.0, 1260, 760, 1, 200, 165.4, 2.2, "WASH ", "", "cyan", "sm")
-shot(168.0, 173.2, "Y08", "crop", ms=0.0)                                             # "And that's only the first half. The second half is faster. Let me run you through it."
-chip("Second half", 170.0, 173.2, 120, 300, "cyan", "", "pop")
-# the second half: real factory steps, each under its VO clause; drawings fill what footage can't show
-shot(173.2, 176.4, "Y08", "crop", ms=5.0)                                              # "Next, the clean rare earth becomes a metal."
-lbl("Metal", 173.6, 176.4, 120, 300, "cyan")
-shot(176.4, 179.6, "Y08", "crop", ms=11.0)                                              # "You melt that metal with iron and boron —"
-lbl("+ Iron + Boron", 176.6, 179.6, 120, 300, "amber")
-shot(179.6, 183.4, "Y08", "crop", ms=28.5)                                              # "— a mix like that is called an alloy — and cool it into thin pieces."
-lbl("Alloy · thin pieces", 179.8, 183.4, 120, 300, "cyan")
-shot(183.4, 186.3, "R_magline", "none", ms=10.8)                                        # "Then hydrogen gas cracks those pieces,"
-shot(186.3, 189.5, "Y07", "crop", ms=13.0, origin="100% 0%")                                                # "and you grind them into a powder much smaller than flour."
-lbl("Finer than flour", 186.5, 189.5, 120, 160, "cyan")
-shot(189.5, 192.4, "R_magline", "none", ms=16.5)                                        # "You line that powder up inside a strong magnetic field,"
-shot(192.4, 194.6, "Y07", "crop", ms=28.0, origin="100% 0%")                                                # "press it into a block,"
-shot(194.6, 197.1, "Y07", "crop", ms=37.5, origin="100% 0%")                                                # "and bake it at about a thousand degrees."
-lbl("~1,000–1,100 °C", 194.8, 197.1, 120, 160, "orange")
-shot(197.1, 200.5, "Y07", "crop", ms=70.0, origin="100% 0%")                                                # "Only at the very end do you switch on its magnetism."
-shot(200.5, 203.7, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=67.5)      # "That's when you finally have a magnet."
-chip("Magnet", 200.8, 203.7, 120, 760, "cyan", "", "up")
+with v5():   # the staircase replaces "washing rice" (owner 2026-10-22: rice is washed once or twice, not hundreds of times)
+    shot(194.9, R(168.0), "R_stairs", "none", ms=0.0)                                  # "Think of it like climbing stairs. Each tank is one step... You climb hundreds of steps."
+    chip("Each tank = one step", 196.6, 202.3, 120, 160, "ink", "", "pop")
+    chip("Hundreds of steps", 202.8, R(168.0), 120, 280, "cyan", "", "pop")
+with v5():   # the second half, one real step per VO clause (v5 wording)
+    EE = R(203.7)
+    shot(R(168.0), 209.9, "Y08", "crop", ms=7.0)                                      # "And that's only the first half. The second half is faster. Let me run you through it."
+    chip("Second half", 206.8, 209.9, 120, 300, "cyan", "", "pop")
+    shot(209.9, 212.95, "Y08", "crop", ms=0.0)                                         # "Next, the clean rare earth becomes a metal."
+    lbl("Metal", 210.2, 212.95, 120, 300, "cyan")
+    shot(212.95, 217.69, "Y08", "crop", ms=11.0)                                       # "You melt it with iron and boron... and that mix is called an alloy."
+    lbl("+ Iron + Boron", 213.4, 217.69, 120, 300, "amber")
+    chip("Alloy", 215.6, 217.69, 120, 400, "cyan", "sm", "pop")
+    shot(217.69, 220.29, "Y08", "crop", ms=28.5)                                       # "Then you cool it into thin pieces."
+    lbl("Thin pieces", 217.85, 220.29, 120, 300, "cyan")
+    shot(220.29, 222.4, "R_magline", "none", ms=10.8)                                  # "Hydrogen gas cracks those pieces,"
+    shot(222.4, 225.72, "Y07", "crop", ms=13.0, origin="100% 0%")                      # "and you grind them into a powder finer than flour."
+    lbl("Finer than flour", 222.6, 225.72, 120, 160, "cyan")
+    shot(225.72, 229.2, "R_magline", "none", ms=16.5)                                  # "You line that powder up inside a strong magnetic field,"
+    shot(229.2, 230.7, "Y07", "crop", ms=28.0, origin="100% 0%")                       # "press it into a block,"
+    shot(230.7, 233.66, "Y07", "crop", ms=37.5, origin="100% 0%")                      # "and bake it at about a thousand degrees Celsius."
+    lbl("~1,000–1,100 °C", 230.9, 233.66, 120, 160, "orange")
+    shot(233.66, 237.22, "Y07", "crop", ms=70.0, origin="100% 0%")                     # "Only at the very end do you switch on its magnetism."
+    shot(237.22, EE, "Y02", "crop", "FOOTAGE · PMO · DEPT OF ATOMIC ENERGY", ms=67.5)   # "That's when you finally have a magnet."
+    chip("Magnet", 237.5, EE, 120, 760, "cyan", "", "up")
 shot(203.7, 219.7, "R_bp_bg", "slow", ms=20.0)                                          # "So a magnet isn't one factory. It's a chain. Sand, to mixed ... to magnet. Miss one link... stuck."
 big("A CHAIN", 206.3, 213.4, 700, 330, "ink")
 chain(207.5, 219.7, show=[(0, 207.5), (1, 208.4), (2, 209.6), (3, 211.1), (4, 212.2), (5, 213.0)], states=[(3, 214.4, "red")])
@@ -439,10 +515,11 @@ shot(569.65, 574.05, "R_bp_bg", "slow", ms=28.0)                                
 chain(569.7, 574.05, states=[(0, 569.9, "green"), (1, 571.4, "amber"), (2, 571.4, "amber"), (3, 572.6, "amber"), (4, 572.6, "amber"), (5, 569.9, "green")])
 
 # ---- WHAT IT MEANS FOR YOU + BRIDGE (9:34-10:21)
-shot(574.05, 578.5, "px_202987", "slow", ms=7.0)                                        # "So what does this mean for you? If you're buying an electric scooter or a new phone,"
-shot(578.5, 585.6, "Y01", "in", ms=142.0)                                              # "...a small part inside it depends on this chain. Its price, and even whether it reaches your showroom on time."
-chip("Price", 581.9, 585.6, 120, 160, "amber", "sm", "pop")
-chip("Delivery date", 583.6, 585.6, 120, 270, "amber", "sm", "pop")
+with v5():
+    shot(R(574.05), 611.07, "px_202987", "slow", ms=7.0)                               # "So what does this mean for you? If you're planning to buy an electric scooter or a new phone, remember this."
+    shot(611.07, R(585.6), "Y01", "in", ms=142.0)                                      # "A small magnet inside it depends on this chain — and that can change its price, and even when it reaches your showroom."
+    chip("Price", 615.0, R(585.6), 120, 160, "amber", "sm", "pop")
+    chip("Delivery date", 617.0, R(585.6), 120, 270, "amber", "sm", "pop")
 shot(585.6, 595.95, "R_bp_bg", "slow", ms=10.0)                                          # "Watch two things. November tenth ... And the scheme winners..."
 el(f'<div class="cal" style="left:300px;top:330px" {attrs(586.9, 595.95, "pop")}><div class="d"><div class="w">NOV</div><div class="n">10</div></div></div>', 586.9, 595.95)
 lbl("Hold ends, or stretched?", 586.9, 595.95, 300, 600, "amber", "fade")
@@ -456,7 +533,7 @@ chip("Ingredients from China?", 607.0, 610.6, 120, 270, "amber", "sm", "pop")
 shot(610.6, 618.0, "endtile", "in", "PIXABAY", dim=True)                                          # "Why? That's our next story. Which missing piece should we open after that? Tell me in the comments."
 big("NEXT: MEDICINES", 610.8, 613.0, 380, 420, "green")
 chip("Which piece next?", 613.2, 618.0, 620, 420, "cyan", "", "pop", "💬")
-shot(618.0, END, "R_bp_bg", "slow", "", ms=14.0)                                         # "This is Be Practical with Kishore. Stay practical. Jai Hind." + end screen
+shot(618.0, V4_END, "R_bp_bg", "slow", "", ms=14.0)                                         # "This is Be Practical with Kishore. Stay practical. Jai Hind." + end screen
 el('<div class="endcard" ' + attrs(618.1, None, "fade", 0.8) + '><img class="logo" src="media/logo_square.png" alt=""/><div class="ch">Be Practical<br/>with Kishore</div>'
    '<div class="sub">SUBSCRIBE</div><div class="tile"><img src="media/endtile.jpg" alt=""/><div class="nx">INDIA\'S MISSING PIECES · NEXT</div>'
    '<div class="tt">The pharmacy of the world\'s missing ingredient</div></div></div>', 618.1)
@@ -549,8 +626,9 @@ def emit():
             a, b = o["at"], o["to"] if o["to"] is not None else END
             if b <= t0 or a >= t1:
                 continue
-            h = re.sub(r'(data-(?:at|to)=")F([\d.]+)"', lambda mm: f'{mm.group(1)}{min(D, max(0.0, loc(float(mm.group(2)))))}"', o["h"])
-            h = re.sub(r'(data-count="[\d.]+,[\d.]+,)F([\d.]+)', lambda mm: f'{mm.group(1)}{max(0.0, loc(float(mm.group(2))))}', h)
+            ft = lambda mk, x: float(x) if mk == "N" else R(float(x))
+            h = re.sub(r'(data-(?:at|to)=")([FN])([\d.]+)"', lambda mm: f'{mm.group(1)}{min(D, max(0.0, loc(ft(mm.group(2), mm.group(3)))))}"', o["h"])
+            h = re.sub(r'(data-count="[\d.]+,[\d.]+,)([FN])([\d.]+)', lambda mm: f'{mm.group(1)}{max(0.0, loc(ft(mm.group(2), mm.group(3))))}', h)
             O.append("      " + h)
         cap = "\n".join(f'      <div class="cap" data-at="{max(0.0, loc(a))}" data-to="{min(D, loc(b))}" data-fx="fade" data-d="0.12">{c}</div>'
                         for a, b, c in caps if b > t0 and a < t1)
