@@ -20,7 +20,7 @@ export function floorTexture(seed = 9) {
   for (let y = 0; y <= H; y += 256) { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t;
 }
-export function textDecal(text, { w = 1024, h = 256, font = "800 150px Inter", color = "#F8FAFC", bg = null } = {}) {
+export function textDecal(text, { w = 1700, h = 256, font = "800 140px Inter", color = "#F8FAFC", bg = null } = {}) {
   const c = document.createElement("canvas"); c.width = w; c.height = h; const g = c.getContext("2d");
   if (bg) { g.fillStyle = bg; g.fillRect(0, 0, w, h); }
   g.fillStyle = color; g.font = font; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(text, w / 2, h / 2);
@@ -40,7 +40,7 @@ function loft(stations, nAng = 44, n = 2.4) {
     }
   });
   for (let i = 0; i < stations.length - 1; i++) for (let k = 0; k < nAng; k++) {
-    const a = i * (nAng + 1) + k, b = a + 1, c = a + nAng + 1, d = c + 1; idx.push(a, c, b, b, c, d);
+    const a = i * (nAng + 1) + k, b = a + 1, c = a + nAng + 1, d = c + 1; idx.push(a, b, c, b, d, c);
   }
   const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
   g.setIndex(idx); g.computeVertexNormals(); return g;
@@ -56,7 +56,7 @@ export const JET = { len: 13.4, span: 8.2, nozzleZ: -6.2, bayLen: 8.4, tubeR: 0.
 /** generic compound-delta light fighter. opts.detail 0..1 (gear, canopy, nozzle interior). */
 export function makeJet({ detail = 1, seed = 1 } = {}) {
   const grp = new THREE.Group(); const air = new THREE.Group(); air.position.y = 1.62; grp.add(air);
-  const paint = new THREE.MeshPhysicalMaterial({ color: 0x858c95, roughness: 0.46, metalness: 0.18, clearcoat: 0.3, clearcoatRoughness: 0.4,
+  const paint = new THREE.MeshPhysicalMaterial({ color: 0x6c737c, roughness: 0.5, metalness: 0.2, clearcoat: 0.15, clearcoatRoughness: 0.5,
     bumpMap: panelTexture(seed), bumpScale: 1.2 });
   const dark = new THREE.MeshStandardMaterial({ color: 0x14171c, roughness: 0.5, metalness: 0.4 });
   const glass = new THREE.MeshPhysicalMaterial({ color: 0x0b1018, roughness: 0.04, metalness: 0.1, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 2.2 });
@@ -79,8 +79,9 @@ export function makeJet({ detail = 1, seed = 1 } = {}) {
   const strakeR = strake.clone(); strakeR.scale.x = -1; air.add(strakeR);
   // intakes
   for (const sx of [-1, 1]) {
-    const ib = new THREE.Mesh(new THREE.BoxGeometry(0.78, 0.72, 2.7, 3, 3, 6), paint); ib.position.set(sx * 1.02, -0.2, 2.2); air.add(ib);
-    const mouth = new THREE.Mesh(new THREE.PlaneGeometry(0.62, 0.56), dark); mouth.position.set(sx * 1.02, -0.2, 3.56); air.add(mouth);
+    const ib = new THREE.Mesh(loft([{ z: 0.4, w: 0.46, h: 0.34, yc: -0.28 }, { z: 1.6, w: 0.5, h: 0.4, yc: -0.3 }, { z: 2.8, w: 0.44, h: 0.42, yc: -0.26 }, { z: 3.5, w: 0.38, h: 0.36, yc: -0.2 }], 24, 3.2), paint);
+    ib.position.x = sx * 0.98; air.add(ib);
+    const mouth = new THREE.Mesh(new THREE.CircleGeometry(0.33, 20), dark); mouth.scale.set(1, 0.9, 1); mouth.position.set(sx * 0.98, -0.2, 3.52); air.add(mouth);
   }
   // canopy + spine
   const can = new THREE.Mesh(new THREE.SphereGeometry(1, 36, 20, 0, Math.PI * 2, 0, Math.PI / 2), glass); can.scale.set(0.56, 0.55, 1.5); can.position.set(0, 1.0, 3.05); air.add(can);
@@ -98,7 +99,7 @@ export function makeJet({ detail = 1, seed = 1 } = {}) {
   air.add(noz);
   if (detail > 0.5) {
     const tube = new THREE.Mesh(new THREE.CylinderGeometry(JET.tubeR, JET.tubeR * 0.96, JET.bayLen, 36, 1, true),
-      new THREE.MeshStandardMaterial({ color: 0x2a2d33, roughness: 0.55, metalness: 0.7, side: THREE.BackSide }));
+      new THREE.MeshStandardMaterial({ color: 0x1b1d22, roughness: 0.6, metalness: 0.6, side: THREE.BackSide }));
     tube.rotation.x = Math.PI / 2; tube.position.set(0, 0.05, JET.nozzleZ + JET.bayLen / 2 - 0.2); air.add(tube);
     const ribMat = new THREE.MeshStandardMaterial({ color: 0x3d4047, roughness: 0.45, metalness: 0.85 });
     for (let i = 0; i < 9; i++) { const rib = new THREE.Mesh(new THREE.TorusGeometry(JET.tubeR * 0.97, 0.02, 8, 36), ribMat); rib.position.set(0, 0.05, JET.nozzleZ + 0.5 + i * 0.92); air.add(rib); }
