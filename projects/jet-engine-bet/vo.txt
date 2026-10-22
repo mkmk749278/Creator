@@ -6,13 +6,13 @@ Very few countries on Earth can make that blade. It takes decades of trial and e
 Stay with me, and you'll see three things. First, how a jet engine works, using things from your own kitchen. Then, in about three minutes, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
 First, let me show you what a jet engine actually does.
 Four jobs. Suck. Squeeze. Burn. Blow.
-Suck first. A big fan at the front pulls in air. Lots of it, more than you'd think.
+Suck first. A big fan at the front pulls in air. Lots of it, more than you'd think, you know.
 Now squeeze. Have you ever pumped a bicycle tyre, and felt the pump get hot? Squeezing air makes it hot and packs it tight. Inside the engine, rows of small fans, called the compressor, squeeze that air again and again.
 Then burn. This is the part you'd call the fire. Fuel is sprayed into this hot, squeezed air and lit. You know the flame on your gas stove? Picture it... but a flame that never goes out, and is far, far bigger. The burning gas swells up, and you can guess what it wants. To rush out.
 And then blow. On its way out, that gas hits another set of fans, called the turbine. It spins them, like wind spinning a ceiling fan.
 Here's the clever part. That turbine is joined by a shaft to the compressor. So the hot gas spins the turbine, the turbine spins the compressor, and the engine keeps itself running. Makes sense so far?
 What's left of the gas shoots out of the back. You've seen that trail in the sky. And the jet is pushed forward... like a balloon you let go of.
-Now remember this, because you'll need it. The turbine sits right behind the flame. It's the hottest place in the whole engine.
+Now remember this, because you'll need it later. The turbine sits right behind the flame. It's the hottest place in the whole engine.
 So how hot? Here's the shocking part. Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they're made of.
 Cambridge University shows the picture. Gas of about fourteen hundred degrees. And the blade metal itself, held at about nine hundred and thirty. That's the gap the blade's three tricks have to create. By our own calculation, roughly four hundred and seventy degrees.
 So the blade is sitting in gas hotter than its melting point. You'd expect it to melt, right? So how does it survive?
@@ -38,7 +38,7 @@ So the government ordered eighty-three Tejas jets in twenty twenty-one, and nine
 But H.A.L. doesn't make the engine. Every one of them runs on the F four zero four, built by G.E. in Lynn, Massachusetts.
 Those engines were due from twenty twenty-three. The first one came in March twenty twenty-five. G.E. blamed its supply chain. H.A.L. has put penalties on G.E. for the delay.
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
-Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you?
+Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you and me?
 May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answers with sanctions, under a law called the Glenn Amendment.
 Sales of the same G.E. engines to India stopped. American help on the Tejas flight controls ended too.
 Imagine your supplier saying no. Our engineers built the flight control system themselves. And they did it.

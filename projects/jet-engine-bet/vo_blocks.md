@@ -18,14 +18,14 @@ Very few countries on Earth can make that blade. It takes decades of trial and e
 Stay with me, and you'll see three things. First, how a jet engine works, using things from your own kitchen. Then, in about three minutes, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
 ```
 
-## Block 2 of 9 · 1170 characters · save as `voice/jeb_b02.mp3`
+## Block 2 of 9 · 1180 characters · save as `voice/jeb_b02.mp3`
 
 ```
 First, let me show you what a jet engine actually does.
 
 Four jobs. Suck. Squeeze. Burn. Blow.
 
-Suck first. A big fan at the front pulls in air. Lots of it, more than you'd think.
+Suck first. A big fan at the front pulls in air. Lots of it, more than you'd think, you know.
 
 Now squeeze. Have you ever pumped a bicycle tyre, and felt the pump get hot? Squeezing air makes it hot and packs it tight. Inside the engine, rows of small fans, called the compressor, squeeze that air again and again.
 
@@ -38,10 +38,10 @@ Here's the clever part. That turbine is joined by a shaft to the compressor. So 
 What's left of the gas shoots out of the back. You've seen that trail in the sky. And the jet is pushed forward... like a balloon you let go of.
 ```
 
-## Block 3 of 9 · 1380 characters · save as `voice/jeb_b03.mp3`
+## Block 3 of 9 · 1386 characters · save as `voice/jeb_b03.mp3`
 
 ```
-Now remember this, because you'll need it. The turbine sits right behind the flame. It's the hottest place in the whole engine.
+Now remember this, because you'll need it later. The turbine sits right behind the flame. It's the hottest place in the whole engine.
 
 So how hot? Here's the shocking part. Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they're made of.
 
@@ -102,10 +102,10 @@ Those engines were due from twenty twenty-three. The first one came in March twe
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
 
-## Block 6 of 9 · 1434 characters · save as `voice/jeb_b06.mp3`
+## Block 6 of 9 · 1441 characters · save as `voice/jeb_b06.mp3`
 
 ```
-Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you?
+Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you and me?
 
 May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answers with sanctions, under a law called the Glenn Amendment.
 
