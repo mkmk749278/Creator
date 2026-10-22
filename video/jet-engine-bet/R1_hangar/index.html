@@ -114,7 +114,7 @@
         const s = new THREE.SpotLight(0xdfe9ff, 170, 46, 0.62, 0.85, 1.2); s.position.set(x, 14.4, z); s.target.position.set(x, 0, z); scene.add(s); scene.add(s.target);
         const cone = new THREE.Mesh(new THREE.ConeGeometry(4.6, 14, 32, 1, true), coneMat); cone.position.set(x, 7.4, z); cone.rotation.x = Math.PI; scene.add(cone);
       }
-      const torch = new THREE.SpotLight(0xfff1dc, 80, 30, 0.55, 0.85, 1.4); scene.add(torch); scene.add(torch.target);
+      const torch = new THREE.SpotLight(0xfff1dc, 8, 26, 0.5, 0.9, 1.8); scene.add(torch); scene.add(torch.target);
       const spill = new THREE.DirectionalLight(0xa9c2e6, 0); spill.position.set(0, 6, -30); spill.target.position.set(0, 0, 20); scene.add(spill); scene.add(spill.target);
 
       // dust
@@ -133,12 +133,12 @@
         [7.8, [4.2, 1.66, 9.4], [-4, 2.0, 14], 46],
         [11.0, [1.6, 1.25, 12.8], [-5.2, 1.7, 14.2], 40],
         [14.0, [-3.0, 0.55, 14.6], [-5.8, 2.3, 16.8], 66],
-        [17.0, [-8.8, 1.45, 14.8], [-6.0, 2.0, 15.6], 40],
-        [20.2, [-9.6, 1.55, 17.6], [-6.1, 2.4, 18.2], 38],
-        [20.8, [-10.4, 1.7, 17.8], [-6.0, 1.9, 19.6], 46],
-        [25.4, [-10.5, 1.7, 17.9], [-6.0, 1.9, 19.7], 45],
-        [26.6, [-10.0, 1.6, 21.4], [-6.0, 1.8, 24.0], 46],
-        [28.4, [-8.6, 1.45, 27.0], [-6.0, 1.7, 27.0], 46],
+        [17.0, [-11.8, 1.5, 13.2], [-6.0, 1.9, 14.8], 36],
+        [20.2, [-13.0, 1.6, 17.0], [-6.1, 2.0, 18.4], 38],
+        [20.8, [-14.0, 1.7, 17.6], [-6.0, 1.9, 19.4], 42],
+        [25.4, [-14.2, 1.7, 17.8], [-6.0, 1.9, 19.5], 41],
+        [26.6, [-12.6, 1.6, 21.6], [-6.0, 1.8, 24.0], 44],
+        [28.4, [-9.6, 1.5, 28.2], [-6.0, 1.7, 27.0], 46],
         [29.6, [-6.6, 1.5, 30.2], [-6.0, 1.68, 26.2], 46],
         [30.1, [-6.0, 1.67, 28.6], [-6.0, 1.67, 22.0], 44],
         [30.8, [-6.0, 1.67, 26.4], [-6.0, 1.67, 19.0], 42],
@@ -163,7 +163,7 @@
         const bob = 0.022 * w * Math.sin(t * 10.5), sway = 0.012 * w * Math.sin(t * 5.2);
         camera.position.set(c.p.x + sway, c.p.y + bob, c.p.z); camera.up.set(0.006 * w * Math.sin(t * 5.2), 1, 0); camera.lookAt(c.l); camera.fov = c.fov; camera.updateProjectionMatrix();
         torch.position.copy(camera.position); const dir = new THREE.Vector3().subVectors(c.l, c.p).normalize(); torch.target.position.copy(camera.position).addScaledVector(dir, 8);
-        const tun = seg(t, 29.8, 30.4) * (1 - seg(t, 33.8, 34.4)); torch.intensity = 40 + 110 * tun; torch.angle = 0.5 + 0.2 * tun;
+        const tun = seg(t, 29.8, 30.4) * (1 - seg(t, 33.8, 34.4)); torch.intensity = 8 + 70 * tun; torch.angle = 0.5 + 0.2 * tun;
         tagPivot.rotation.z = (t > 19 ? 0.5 * Math.sin((t - 19) * 2.3) * Math.exp(-(t - 19) * 0.18) : 0);
         const pa = dgeo.attributes.position.array;
         for (let i = 0; i < NP; i++) { pa[i * 3] = base3[i * 3] + 0.5 * Math.sin(t * 0.23 + ph[i]); pa[i * 3 + 1] = (base3[i * 3 + 1] + 13 - t * 0.07) % 13 + 0.2 * Math.sin(t * 0.4 + ph[i] * 2); pa[i * 3 + 2] = base3[i * 3 + 2] + 0.4 * Math.cos(t * 0.19 + ph[i]); }
