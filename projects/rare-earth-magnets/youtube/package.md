@@ -29,13 +29,16 @@ This film shows how the magnet is made, how China took the lead, what stopped In
 ```
 
 ## Thumbnail
-- **Upload `thumbnail_e2.jpg`.** This is the independent review's #1 concept, rebuilt with its notes:
-  - India's dark mineral sand on the left, with a tricolour edge;
-  - the magnet on the right, stamped MADE IN CHINA;
-  - "OUR SAND. / CHINA'S MAGNET." with each phrase over its own half;
-  - the "7 MILLION TONNES" chip.
-- **A/B test (YouTube Studio → Test & Compare):** add `thumbnail_f2.jpg` (the phone x-ray, "THIS IS IN YOUR PHONE / CHINA MAKES 94%").
-- Earlier drafts: A–D, E, F.
+- **Main (owner's pick, 2026-10-22): `thumbnail_final.jpg`.** "WE HAVE THE SAND. NOT THIS." with a real hand holding
+  a small magnet up to the camera, field lines around it and a MAGNET tag. *Curiosity:* what is this small thing, and
+  why can't India make it? Built per PLAYBOOK §13b. The hand is Pixabay 2643160 with its coin re-skinned as a nickel
+  disc (`thumb/make_magnet_hand.py`).
+- **A/B challenger (Test & Compare): `thumbnail_h.jpg`.** "CHINA CAN STOP THIS" on a bright background, with a
+  scooter, its hub motor circled and a zoom to the magnet. This was the independent click panel's #1 for viewers who
+  ride scooters. The scooter is Pixabay 1313453 with the brand logos removed (`thumb/clean_scooter.py`).
+- Phone-feed check: `qa/thumbs_final/feed_small.png`. Panel notes: session 2026-10-22 (rank h > g > g2 > f2 > e2 > g3;
+  the owner preferred g3, refined into the final).
+- Earlier drafts: A–F.
 
 ## Upload checklist
 - **Altered or synthetic content: Yes.** The narration is an AI voice (ElevenLabs).
