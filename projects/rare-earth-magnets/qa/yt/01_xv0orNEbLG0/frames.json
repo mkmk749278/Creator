@@ -1,0 +1,177 @@
+[
+ {
+  "sheet": 1,
+  "tile": 1,
+  "label": "00:02.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 2,
+  "label": "00:07.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 3,
+  "label": "00:12.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 4,
+  "label": "00:17.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 5,
+  "label": "00:22.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 6,
+  "label": "00:27.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 7,
+  "label": "00:32.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 8,
+  "label": "00:37.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 9,
+  "label": "00:42.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 1,
+  "label": "00:47.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 2,
+  "label": "00:52.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 3,
+  "label": "00:57.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 4,
+  "label": "01:02.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 5,
+  "label": "01:07.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 6,
+  "label": "01:12.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 7,
+  "label": "01:17.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 8,
+  "label": "01:22.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 9,
+  "label": "01:27.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 1,
+  "label": "01:32.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 2,
+  "label": "01:37.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 3,
+  "label": "01:42.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 4,
+  "label": "01:47.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 5,
+  "label": "01:52.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 6,
+  "label": "01:57.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 7,
+  "label": "02:02.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 8,
+  "label": "02:07.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 9,
+  "label": "02:12.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 1,
+  "label": "02:17.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 2,
+  "label": "02:22.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 3,
+  "label": "02:27.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 4,
+  "label": "02:32.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 5,
+  "label": "02:37.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 6,
+  "label": "02:42.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 7,
+  "label": "02:47.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 8,
+  "label": "02:52.50"
+ }
+]

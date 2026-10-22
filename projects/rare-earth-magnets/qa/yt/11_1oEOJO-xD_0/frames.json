@@ -1,0 +1,237 @@
+[
+ {
+  "sheet": 1,
+  "tile": 1,
+  "label": "00:01.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 2,
+  "label": "00:04.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 3,
+  "label": "00:07.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 4,
+  "label": "00:10.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 5,
+  "label": "00:13.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 6,
+  "label": "00:16.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 7,
+  "label": "00:19.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 8,
+  "label": "00:22.50"
+ },
+ {
+  "sheet": 1,
+  "tile": 9,
+  "label": "00:25.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 1,
+  "label": "00:28.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 2,
+  "label": "00:31.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 3,
+  "label": "00:34.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 4,
+  "label": "00:37.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 5,
+  "label": "00:40.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 6,
+  "label": "00:43.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 7,
+  "label": "00:46.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 8,
+  "label": "00:49.50"
+ },
+ {
+  "sheet": 2,
+  "tile": 9,
+  "label": "00:52.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 1,
+  "label": "00:55.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 2,
+  "label": "00:58.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 3,
+  "label": "01:01.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 4,
+  "label": "01:04.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 5,
+  "label": "01:07.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 6,
+  "label": "01:10.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 7,
+  "label": "01:13.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 8,
+  "label": "01:16.50"
+ },
+ {
+  "sheet": 3,
+  "tile": 9,
+  "label": "01:19.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 1,
+  "label": "01:22.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 2,
+  "label": "01:25.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 3,
+  "label": "01:28.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 4,
+  "label": "01:31.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 5,
+  "label": "01:34.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 6,
+  "label": "01:37.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 7,
+  "label": "01:40.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 8,
+  "label": "01:43.50"
+ },
+ {
+  "sheet": 4,
+  "tile": 9,
+  "label": "01:46.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 1,
+  "label": "01:49.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 2,
+  "label": "01:52.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 3,
+  "label": "01:55.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 4,
+  "label": "01:58.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 5,
+  "label": "02:01.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 6,
+  "label": "02:04.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 7,
+  "label": "02:07.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 8,
+  "label": "02:10.50"
+ },
+ {
+  "sheet": 5,
+  "tile": 9,
+  "label": "02:13.50"
+ },
+ {
+  "sheet": 6,
+  "tile": 1,
+  "label": "02:16.50"
+ },
+ {
+  "sheet": 6,
+  "tile": 2,
+  "label": "02:19.50"
+ }
+]

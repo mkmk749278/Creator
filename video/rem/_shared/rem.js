@@ -9,6 +9,7 @@
     up: [{ scale: 1.08, yPercent: 2 }, { scale: 1.08, yPercent: -2 }], push: [{ scale: 1.0 }, { scale: 1.05 }],
     slow: [{ scale: 1.02 }, { scale: 1.06 }], none: [{ scale: 1.0 }, { scale: 1.0 }],
     zoomhome: [{ scale: 1.7 }, { scale: 1.9 }], zoomboard: [{ scale: 2.15 }, { scale: 2.35 }],
+    crop: [{ scale: 1.26 }, { scale: 1.33 }],   // hides burned-in subtitles / tickers at the bottom (origin set per shot)
   };
   const fmt = (v, pre, suf) => pre + Math.round(v).toLocaleString("en-IN") + suf;
   window.REM_animate = function (tl, D) {

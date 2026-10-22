@@ -72,13 +72,13 @@ def write(sid, dur, body, js, extra=()):
 # bp_bg: drifting blueprint grid, a slow cyan glow and seeded dust; a moving base for data overlays (not a flat canvas).
 rnd = random.Random(11)
 dots = "".join(f'<circle cx="{rnd.uniform(0, 1920):.0f}" cy="{rnd.uniform(0, 1080):.0f}" r="{rnd.uniform(1, 2.6):.1f}" fill="#58a6ff" opacity="{rnd.uniform(.08, .3):.2f}"/>' for _ in range(140))
-write("bp_bg", 24, GRID + f"""
+write("bp_bg", 44, GRID + f"""
       <svg width="1920" height="1080"><defs><radialGradient id="gl" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#58a6ff" stop-opacity=".16"/><stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/></radialGradient></defs>
         <ellipse id="glow" cx="760" cy="520" rx="900" ry="620" fill="url(#gl)"/><g id="dust">{dots}</g>
         <rect width="1920" height="1080" fill="url(#vg)"/></svg>""", """
-      tl.fromTo("#grid", { x: 0, y: 0 }, { x: -96, y: -48, duration: 24, ease: "none" }, 0);
-      tl.fromTo("#dust", { x: 0, y: 0 }, { x: -60, y: -110, duration: 24, ease: "none" }, 0);
-      tl.fromTo("#glow", { attr: { cx: 700 } }, { attr: { cx: 1200 }, duration: 24, ease: "sine.inOut" }, 0);""")
+      tl.fromTo("#grid", { x: 0, y: 0 }, { x: -192, y: -96, duration: 44, ease: "none" }, 0);
+      tl.fromTo("#dust", { x: 0, y: 0 }, { x: -110, y: -200, duration: 44, ease: "none" }, 0);
+      tl.fromTo("#glow", { attr: { cx: 700 } }, { attr: { cx: 1200 }, duration: 22, ease: "sine.inOut" }, 0); tl.to("#glow", { attr: { cx: 700 }, duration: 22, ease: "sine.inOut" }, 22);""")
 
 # ------------------------------------------------------------------------------------------------------------------
 # map_india: 0-8 s the four monazite coasts; 8-16 s Visakhapatnam magnet plant; 16-24 s the rare earth corridors.
