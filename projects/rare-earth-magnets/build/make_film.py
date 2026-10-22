@@ -353,6 +353,8 @@ with v5():   # the second half, one real step per VO clause (v5 wording)
     chip("Magnet", 237.5, EE, 120, 760, "cyan", "", "up")
 shot(203.7, 219.7, "R_bp_bg", "slow", ms=20.0)                                          # "So a magnet isn't one factory. It's a chain. Sand, to mixed ... to magnet. Miss one link... stuck."
 big("A CHAIN", 206.3, 213.4, 700, 330, "ink")
+with v5():
+    chip("Not one factory", 240.5, R(206.3), 760, 420, "slate", "", "pop")   # "So a magnet isn't one factory."
 chain(207.5, 219.7, show=[(0, 207.5), (1, 208.4), (2, 209.6), (3, 211.1), (4, 212.2), (5, 213.0)], states=[(3, 214.4, "red")])
 chip("Stuck", 215.3, 219.7, 860, 420, "red", "", "pop")
 
@@ -448,7 +450,7 @@ shot(424.7, 433.7, "R_bp_bg", "slow", ms=22.0)                                  
 tline(424.8, 433.7)
 tick(424.9, 433.7, 300, "Licence rule", "APR 2025", "red")
 tick(425.4, 433.7, 760, "Wider rules", "OCT 2025", "red")
-tick(430.4, 433.7, 1220, "On hold · 1 year", "NOV 2025", "amber")
+tick(430.4, 433.7, 1220, "Paused · 1 year", "NOV 2025", "amber")
 shot(433.7, 446.3, "P_technology", "in", "DOCUMENT · TECHNOLOGY.ORG")                   # "...set to end on November tenth. ... trade deal till January. ... Will China stretch this hold too...?"
 chip("On paper: 10 Nov 2026", 433.9, 446.3, 120, 560, "amber", "sm", "pop")
 chip("US–China truce: 10 Jan 2027", 437.3, 446.3, 120, 660, "cyan", "sm", "pop")
@@ -522,7 +524,7 @@ with v5():
     chip("Delivery date", 617.0, R(585.6), 120, 270, "amber", "sm", "pop")
 shot(585.6, 595.95, "R_bp_bg", "slow", ms=10.0)                                          # "Watch two things. November tenth ... And the scheme winners..."
 el(f'<div class="cal" style="left:300px;top:330px" {attrs(586.9, 595.95, "pop")}><div class="d"><div class="w">NOV</div><div class="n">10</div></div></div>', 586.9, 595.95)
-lbl("Hold ends, or stretched?", 586.9, 595.95, 300, 600, "amber", "fade")
+lbl("Pause ends, or stretched?", 586.9, 595.95, 300, 600, "amber", "fade")
 el(f'<div class="cal" style="left:1150px;top:330px" {attrs(590.8, 595.95, "pop")}><div class="d"><div class="w">MHI</div><div class="n">5</div></div></div>', 590.8, 595.95)
 lbl("Scheme winners", 590.8, 595.95, 1150, 600, "green", "fade")
 shot(595.95, 601.55, "R_tanks", "none", ms=9.5)                                         # "India won't fix this in one jump. It'll be tank by tank... furnace by furnace."

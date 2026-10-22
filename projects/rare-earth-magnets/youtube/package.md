@@ -1,6 +1,6 @@
 # YouTube package: rare earth magnets (draft, final after the owner approves the cut)
 
-Chapter times come from the cut (film seconds = VO seconds, `build/make_film.py` section starts).
+Chapter times come from cut 3 (v5 voice, 11:09; `build/make_film.py` section starts through R()).
 
 ## Title (recommended)
 ```
@@ -13,19 +13,19 @@ We Have 7 Million Tonnes of Rare Earths. Why Does China Control Our Scooters? | 
 
 ## Description
 ```
-In July 2025, Bajaj's Chetak factory made barely half its usual scooters, all because of one small magnet.
+The magnet that buzzes your phone is the same kind that drives India's electric scooters. In July 2025, Bajaj's Chetak factory made barely half its usual scooters because of it.
 India's beaches hold about 7 million tonnes of rare earths, yet almost every magnet we use comes from abroad.
 This film shows how that magnet is made, how China came to run the chain, what stopped India, and the plan to catch up.
 
-0:00 Half the scooters, one small magnet
-0:53 What a rare earth magnet is
-1:52 Why rare earths are hard to separate
-3:39 How China took the lead
-4:43 What stopped India
-6:26 April 2025: the shock
-7:29 India's answer
-8:51 The honest timeline
-9:34 What it means for you
+0:00 The magnet in your pocket, and half the scooters
+1:23 What a rare earth magnet is
+2:26 Why rare earths are hard to separate
+4:16 How China took the lead
+5:19 What stopped India
+7:03 April 2025: the shock
+8:03 India's answer
+9:22 The honest timeline
+10:04 What it means for you
 ```
 
 ## Thumbnail

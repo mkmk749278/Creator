@@ -35,3 +35,26 @@ Left as is:
 ## Facts re-checked before delivery (2026-10-22)
 - China's hold on the October 2025 rules still ends **10 Nov 2026** on paper. The US–China arrangements are extended to 10 Jan 2027, and there is no rare-earth-specific extension yet. The VO ("set to end on November tenth… trade deal till January") still holds.
 - REPM scheme: 20 bids (Aug 2026), no winners announced. "Still to be announced" holds.
+
+## Cut 3 (2026-10-22): v5 voice (owner's notes), 11:09
+How it was built:
+- New takes for blocks 1–4 and 6–8; block 5 kept.
+- Sentence alignment: 208 sentences, 5 short ones flagged. Each flagged boundary checked against the silences.
+- Shots retimed through `R()` (v4→v5 sentence map). The opening, the magnet recipe, the callbacks, the stairs, the factory steps and the takeaway were re-authored in v5 time.
+- Every remaining shot boundary is within 0.35 s of a sentence start, or on a clause by design.
+- Siblings sync re-checked: the sphere leaves 0.15 s after "pull one of them out".
+
+Seen on the 5 s sheets (`qa/cut3`), all fine:
+- The new opening (Nokia teardown photo, vibration-motor cutaway, Ather and Nexon spec sheets, hub motor, Chetak line).
+- The stairs replacing the rice.
+- The factory steps under their clauses.
+
+Fixed after the sheets (in the next render):
+- An empty grid for 2.5 s at 4:00 → "Not one factory" chip.
+- "Hold" → "Pause" on the timeline tick and the closing calendar label, to match the v5 VO.
+
+Open:
+- **Open loop:** "about five minutes in", but thorium is now at **5:41** (the section starts at 5:19). The fix is a one-sentence pickup from the owner: "Then, about six minutes in, the secret inside our sand that kept it locked away."
+- **Lede:** the Pune event is at 0:30, later than the 25 s guide. This is the owner's call: they asked for the familiar opening first. The magnet is on screen from 0:00, and India is named at 0:25.
+
+Mix: −14.2 LUFS, sample peak −0.9 dBFS.
