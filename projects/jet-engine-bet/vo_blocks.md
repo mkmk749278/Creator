@@ -1,0 +1,179 @@
+# Recording blocks: Akash (ElevenLabs), jet engine bet
+
+Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
+
+## Block 1 of 8 · 980 characters · save as `voice/jeb_b01.mp3`
+
+```
+October, twenty twenty-six. In H.A.L. hangars in Bengaluru and Nashik, close to thirty brand new Tejas fighter jets are standing ready. Painted. Radars fitted. You'd think they're ready to fly.
+
+And not one of them has reached the Air Force yet.
+
+Think about that. Jets your country ordered, finished and waiting... for one part.
+
+The reason? Not the radar. An engine. America's G.E. has sent only fourteen of the ninety-nine engines these jets need.
+
+And the crazy part? India was the first country ever to land near the Moon's south pole. It builds its own nuclear submarines.
+
+So why can't India build a jet engine? You'd think a country that does all that could, right?
+
+Stay with me, and you'll see three things. First, one tiny part inside the engine that lives in gas hotter than its own melting point. Then, about four minutes in, what happened to India's own engine... and what we quietly built from its ashes. And at the end, the decision that is still waiting in Delhi.
+```
+
+## Block 2 of 8 · 928 characters · save as `voice/jeb_b02.mp3`
+
+```
+First, let me show you why one engine holds up so many jets.
+
+The Air Force is supposed to have forty-two fighter squadrons. Today it has about twenty-nine. The old MiG twenty-one retired in September twenty twenty-five.
+
+So the government ordered, with your money, eighty-three Tejas jets in twenty twenty-one, and ninety-seven more in twenty twenty-five. That's one hundred and eighty jets. You can see the size of the hole.
+
+But H.A.L. doesn't make the engine. Every one of these jets runs on the F four zero four, built by G.E. in Lynn, Massachusetts. About thirteen thousand kilometres from Bengaluru.
+
+You'd expect those engines from twenty twenty-three. The first one came in March twenty twenty-five. G.E. blamed its supply chain. H.A.L. has put penalties on G.E. for the delay.
+
+Radar and missile work is still pending too, if you're wondering. But the engine is the biggest hold-up, and you can check that in the news.
+```
+
+## Block 3 of 8 · 1293 characters · save as `voice/jeb_b03.mp3`
+
+```
+Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you?
+
+May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answers with sanctions, under a law called the Glenn Amendment.
+
+Sales of the same G.E. engines to India stopped. Imagine your supplier simply saying no. American help on the Tejas flight controls ended too.
+
+Our engineers built the flight control system themselves. And they did it.
+
+Did you spot the pattern? The lesson was simple. If you don't own the engine, you don't fully own your fighter jet.
+
+So why not just build one? Let's open the box together.
+
+First, a fair question. If I.S.R.O. can build rocket engines, why is a jet engine harder?
+
+A rocket engine fires for minutes, not hours. It carries its own oxygen. Then its stage falls away, and you never see it again.
+
+A fighter engine has to breathe air, just like you and me. Humid sea air. Freezing mountain air. Desert dust.
+
+Think about what you ask of it. It has to go from idle to full power in seconds, again and again, in hard turns. And it has to run for thousands of hours between overhauls.
+
+And right at the heart of it sits one small part. The high pressure turbine blade.
+
+It sits just behind the flame, where burning fuel makes a storm of hot gas.
+```
+
+## Block 4 of 8 · 1433 characters · save as `voice/jeb_b04.mp3`
+
+```
+Now here's the shocking part, so hold on to your seat. Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they're made of.
+
+The gas is hotter than the metal's melting point. And still the blade doesn't melt. You'd expect it to, right? So how?
+
+There are three secrets. The first is in the metal itself.
+
+If you look inside normal metal, you see many tiny crystals. The borders between them are weak spots. Under heat and huge force, the metal slowly stretches along those borders. Engineers call it creep.
+
+So the best blades are grown as one single crystal. You get no borders at all. It's a nickel super alloy, with a rare metal called rhenium mixed in.
+
+The second secret is air.
+
+Each blade is hollow, with tiny channels inside. Cooler air from the compressor is pushed through them. It comes out through rows of tiny holes, and wraps the blade in a thin blanket of cooler air.
+
+The third secret? You'll like this one. A ceramic coating on top, like a heat shield.
+
+Now add the spin. Imagine you're that blade. The disc holding these blades turns more than twelve thousand times a minute. Rolls-Royce says the pull on each blade is like a London bus hanging from it.
+
+So picture it, you and me, looking at one blade. Gas above the metal's melting point. A bus hanging from every blade. For thousands of hours.
+
+Now you can see why so few countries can do it. Makes sense?
+```
+
+## Block 5 of 8 · 1423 characters · save as `voice/jeb_b05.mp3`
+
+```
+And you can't just copy the drawing. Even with it in your hands, you'd fail. The real knowledge is in how the metal is grown, cast, drilled and tested. Countries learned that over decades, and many failures.
+
+For decades, no engine maker shared it with India.
+
+So you can see the club is small. America, Russia, Britain and France are the main members. And after decades of struggle, China.
+
+So did India try to join it? Yes, and you can see why it's hard. And that's where the story gets painful, for you and me.
+
+In nineteen eighty-six, our engineers began planning a fighter engine of their own. The job went to G.T.R.E., a D.R.D.O. lab in Bengaluru. They named the engine Kaveri.
+
+In March nineteen eighty-nine, the government approved it. About three hundred and eighty-two crore rupees, and a target of December nineteen ninety-six.
+
+The goal was huge. You can feel the ambition. Eighty-one kilonewtons of push with the afterburner on. And India was building the Tejas at the same time. Both almost from scratch. That doubled the risk.
+
+Then the prototypes reached the test bench... and you can guess what happened. The numbers didn't add up.
+
+It was meant to weigh eleven hundred kilos. It weighed twelve hundred and thirty-five.
+
+It was meant to give eighty-one kilonewtons. As reported, it reached only about seventy.
+
+And India had no place to test a fighter engine at high altitude. So the Kaveri went to Russia.
+```
+
+## Block 6 of 8 · 1436 characters · save as `voice/jeb_b06.mp3`
+
+```
+In September two thousand eight, the Kaveri was cut loose from the Tejas. The Tejas would fly with the American engine.
+
+But G.T.R.E. didn't stop. In twenty ten, a Kaveri flew on a Russian Ilyushin plane, used as a flying test bed. Twenty-seven flights, up to twelve kilometres high.
+
+By twenty twelve, about two thousand crore rupees had been spent. And the estimate had grown to more than twenty-eight hundred crore.
+
+So was it all a failure? Not quite. Look at what you get from it.
+
+G.T.R.E. took off the afterburner and made a simpler engine. The Dry Kaveri. In Russian tests it gave about forty-eight kilonewtons, a little above its target.
+
+It's now chosen, and you may hear this name soon, to power India's stealth combat drone, the planned Ghatak.
+
+Meanwhile, D.R.D.O.'s metals lab in Hyderabad learned to cast single crystal blades. In twenty twenty-one, it supplied sixty of them to H.A.L. for a helicopter engine.
+
+Those years weren't wasted. They built a base India didn't have in nineteen eighty-six. You can build on that.
+
+But the next big fighter, the A.M.C.A., needs much more. The first A.M.C.A. jets will use G.E.'s F four one four.
+
+For later ones, India wants a new engine of about one hundred and twenty kilonewtons. And this time, India wants to own the design.
+
+In August twenty twenty-five, the government picked France's Safran to build it with G.T.R.E. India's condition? Full Indian ownership of the design.
+```
+
+## Block 7 of 8 · 913 characters · save as `voice/jeb_b07.mp3`
+
+```
+And here's the catch. As of October twenty twenty-six, that deal is still waiting for final approval.
+
+In August, Rolls-Royce and Reliance also announced plans to build an engine in India. So you see, India has offers. What it needs, if you ask me, is a decision.
+
+And remember, China walked this road too. Its J twenty stealth fighter used Russian engines at first. It took China decades, and many failures, to switch to its own.
+
+So here's the rule I take from all this. And I want you to remember it. If you don't own the engine, you don't fully own the jet.
+
+And the price of that? When the one seller slows down, the jets wait in the hangar... and so do you. You saw it in Nashik.
+
+But the reality today is different. India has, as you've seen, a flight-tested engine base, blade makers in Hyderabad, and a partner on the table. What's left is the hard middle... the hot part of the engine, and the decision.
+```
+
+## Block 8 of 8 · 924 characters · save as `voice/jeb_b08.mp3`
+
+```
+So what does this mean for you?
+
+It means the jets that guard your skies depend on an engine from another country. Would you be comfortable with that? And it explains why you'll keep hearing about this Safran deal.
+
+Here's what you should watch. Two things. Does the government give final approval to the Safran engine? And when does the first new Tejas Mark One A finally reach the Air Force?
+
+Let me be honest with you. Even with approval, you won't see a new engine tomorrow. China took decades.
+
+India won't fix this in one jump. It'll be blade by blade... test by test.
+
+And engines aren't the only missing piece. Last time we looked at the magnet inside your scooter's motor. Same pattern. India has the talent... but a link in the chain sits in someone else's hands.
+
+Which missing piece should we open next? You tell me in the comments. I read every one.
+
+This is Be Practical with Kishore. Stay practical. Jai Hind.
+```
