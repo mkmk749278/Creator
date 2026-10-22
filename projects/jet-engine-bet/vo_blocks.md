@@ -2,7 +2,7 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
 
-## Block 1 of 10 · 862 characters · save as `voice/jeb_b01.mp3`
+## Block 1 of 9 · 862 characters · save as `voice/jeb_b01.mp3`
 
 ```
 October, twenty twenty-six. In H.A.L. hangars in Bengaluru and Nashik, close to thirty brand new Tejas fighter jets are standing ready. Painted. Radars fitted. You'd think they're ready to fly.
@@ -18,7 +18,7 @@ Very few countries on Earth can make that blade. It takes decades of trial and e
 Stay with me. I'll show you how a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
 ```
 
-## Block 2 of 10 · 1193 characters · save as `voice/jeb_b02.mp3`
+## Block 2 of 9 · 1193 characters · save as `voice/jeb_b02.mp3`
 
 ```
 First, let me show you what a jet engine actually does.
@@ -38,61 +38,57 @@ Here's the clever part. That turbine is joined by a shaft to the compressor. So 
 What's left of the gas shoots out of the back. You've seen that trail in the sky. And the jet is pushed forward... like a balloon you let go of.
 ```
 
-## Block 3 of 10 · 708 characters · save as `voice/jeb_b03.mp3`
+## Block 3 of 9 · 1426 characters · save as `voice/jeb_b03.mp3`
 
 ```
 Now remember this, because you'll need it later. The turbine sits right behind the flame. It's where the metal has the toughest job in the whole engine.
 
 So how hot? Now listen to this. Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they're made of.
 
-Cambridge University shows the picture, in a classroom example. Gas of about fourteen hundred degrees Celsius. And the blade metal itself, held at about nine hundred and thirty. The cooling air and the coating have to create that gap, roughly four hundred and seventy degrees.
+Here's a simple picture, from Cambridge University. Gas of about fourteen hundred degrees Celsius. But the blade itself stays at about nine hundred and thirty. The cooling air and the coating create that gap, roughly four hundred and seventy degrees.
 
-So the blade is sitting in gas hotter than its melting point. You'd expect it to melt, right? So how does it survive?
-```
+So the gas is hotter than the metal could ever take on its own. You'd expect the blade to melt, right? So how does it survive?
 
-## Block 4 of 10 · 1424 characters · save as `voice/jeb_b04.mp3`
-
-```
 Three tricks. And you've seen each one in daily life.
 
 Trick one is the metal itself. If you look inside ordinary metal, you'd see countless tiny crystals stuck together. Like a brick wall. The lines between the bricks are the weak spots.
 
-Under heat and a huge pull, the metal slowly stretches along those lines. Think of a steel spoon you leave in a flame. It bends... slowly, right? Engineers call it creep.
+Under heat and a huge pull, the metal slowly stretches along those lines. Think of a steel spoon you leave in a flame, with a weight on it. It bends... slowly, right? Engineers call it creep.
 
 So the best blades are grown as one single crystal. No bricks. No lines. You get one solid piece. It's a very strong nickel metal mix, with a rare metal called rhenium added.
 
 Trick two is air. These blades are hollow, with tiny channels inside. Cooler air from the compressor is pushed through them.
+```
 
+## Block 4 of 9 · 1450 characters · save as `voice/jeb_b04.mp3`
+
+```
 Then it comes out through rows of tiny holes you can barely see, and spreads over the blade like a thin blanket. Ever walked into a mall through an air curtain at the door? You feel cool air blowing across you. Same idea. A moving sheet of cool air between the hot side and the blade.
 
 Trick three is a ceramic coating on top. Let me explain it simply. A heat shield, like the wall of a thermos flask that keeps your tea hot. It slows the heat from reaching the metal, so you get a cooler blade.
 
-So what do you have? A crystal with no weak lines, cool air inside and outside, and a ceramic shield. Together, they keep the metal far below the gas, and you can see why. That's how you beat the heat. Simple, no?
-```
+So what do you have? A crystal with no weak lines, cool air inside and outside, and a ceramic shield. Together, they keep the metal far below the gas, and you can see why. That's how you beat the heat.
 
-## Block 5 of 10 · 1198 characters · save as `voice/jeb_b05.mp3`
-
-```
 But there's one more problem. Do you know what it is? The spin.
 
 Rolls-Royce says the disc holding these blades turns more than twelve thousand times every minute. Your ceiling fan on full speed is slow next to that.
 
-It also says the pull you'd feel on each blade is like a London bus, a big double-decker, hanging from it. Think of you swinging a bucket round and round... with a bus in it.
+It also says the pull you'd feel on each blade is like a whole bus hanging from it. Think of you swinging a bucket round and round... with a bus in it.
 
 So picture it, you and me, looking at one blade. Would you trust it? Gas hotter than its melting point. A bus hanging from it. For thousands of hours.
 
 You may ask, why not copy a rocket engine? A rocket engine fires for minutes, not hours, and then it falls away. A fighter engine has to breathe air, go from idle to full power in seconds, and keep going for thousands of hours.
+```
 
+## Block 5 of 9 · 1224 characters · save as `voice/jeb_b05.mp3`
+
+```
 Now you can see why so few countries can do it. And you can't just copy the drawing. The real knowledge is in how the metal is grown, cast, drilled and tested. Countries learned that over decades, and many failures, and you can't skip that.
 
 For decades, no engine maker shared it with India.
 
 So you can see the club is small. America, Russia, Britain and France are the main members. And after decades of struggle, China.
-```
 
-## Block 6 of 10 · 799 characters · save as `voice/jeb_b06.mp3`
-
-```
 Now let's see why this matters for you, and for the jets waiting in Nashik.
 
 The Air Force is supposed to have forty-two fighter squadrons, its basic fighting units. Today it has about twenty-nine. The old MiG twenty-one retired in September twenty twenty-five.
@@ -106,7 +102,7 @@ Those engines were due from twenty twenty-three. The first one came in March twe
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
 
-## Block 7 of 10 · 1486 characters · save as `voice/jeb_b07.mp3`
+## Block 6 of 9 · 1489 characters · save as `voice/jeb_b06.mp3`
 
 ```
 Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you and me?
@@ -123,23 +119,23 @@ So did India try to build its own? Yes. And that's where the story gets painful.
 
 In nineteen eighty-six, our engineers began planning a fighter engine. The job went to G.T.R.E., a government defence lab in Bengaluru. They named the engine Kaveri.
 
-In March nineteen eighty-nine, the government approved it. The deadline was December nineteen ninety-six.
+The government approved it in nineteen eighty-nine, with a deadline of nineteen ninety-six.
 
-The goal was huge. Eighty-one kilonewtons of push, that's its power rating, with the extra-boost afterburner on. And India was building the Tejas at the same time. Both almost from scratch. That doubled the risk.
+The goal was huge. A very powerful engine, with an extra-boost mode called the afterburner. And India was building the Tejas at the same time. Both almost from scratch. That doubled the risk.
 
 Then the prototypes reached the test bench... and you can guess what happened. The numbers didn't add up.
 
 It came out heavier than planned. Twelve hundred and thirty-five kilos, instead of eleven hundred.
 
-And weaker than planned. As reported, about seventy kilonewtons of push, instead of eighty-one.
+And weaker than planned. As reported, about seventy units of push instead of the planned eighty-one. Engineers call them kilonewtons.
 
 And India had no place to test a fighter engine at high altitude. So the Kaveri went to Russia.
 ```
 
-## Block 8 of 10 · 1462 characters · save as `voice/jeb_b08.mp3`
+## Block 7 of 9 · 1452 characters · save as `voice/jeb_b07.mp3`
 
 ```
-In September two thousand eight, the Kaveri was cut loose from the Tejas. The Tejas would fly with the American engine.
+In two thousand eight, the Kaveri was cut loose from the Tejas. The Tejas would fly with the American engine.
 
 But G.T.R.E. didn't stop. In twenty ten, a Kaveri flew on a Russian plane used as a flying test bed. Twenty-seven flights, up to twelve kilometres high.
 
@@ -160,7 +156,7 @@ For later ones, India wants a new engine of about one hundred and twenty kilonew
 In August twenty twenty-five, the Defence Minister said India would build it with France's Safran, together with G.T.R.E. India's condition, as reported? Full Indian ownership of the design.
 ```
 
-## Block 9 of 10 · 922 characters · save as `voice/jeb_b09.mp3`
+## Block 8 of 9 · 922 characters · save as `voice/jeb_b08.mp3`
 
 ```
 And here's the catch, and I think you'll agree it's a big one. As of October twenty twenty-six, that deal is still waiting for final approval.
@@ -176,12 +172,12 @@ And the price of that? When the one seller slows down, the jets wait in the hang
 But the reality today is different. India has, as you've seen, a flight-tested engine base, blade makers in Hyderabad, and a partner on the table. What's left is the hard middle... the hot part of the engine, and the decision.
 ```
 
-## Block 10 of 10 · 972 characters · save as `voice/jeb_b10.mp3`
+## Block 9 of 9 · 1038 characters · save as `voice/jeb_b09.mp3`
 
 ```
 So what does this mean for you? Why should you care?
 
-It means the jets that guard your skies depend on an engine from another country. There's nothing to buy or sign. And it explains why you'll keep hearing about this Safran deal.
+It means the jets that guard your skies depend on an engine from another country. Nothing for you to buy or sign here. But you can watch for two signs that India is really moving. And it explains why you'll keep hearing about this Safran deal.
 
 Here's what you should watch. Two things. Does the government give final approval to the Safran engine? And when does the first new Tejas Mark One A finally reach the Air Force?
 
