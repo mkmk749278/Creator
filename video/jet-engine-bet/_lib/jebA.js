@@ -9,7 +9,7 @@ import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import {
   EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, ToneMappingMode, VignetteEffect, Effect, FXAAEffect,
-  DepthOfFieldEffect, EffectAttribute,
+  DepthOfFieldEffect, EffectAttribute, VignetteTechnique,
 } from "postprocessing";
 import { N8AOPostPass } from "n8ao";
 
@@ -684,7 +684,7 @@ export function createStage({ fov = 32, near = 0.02, far = 200, bloom = { intens
   if (dof) { dofFx = new DepthOfFieldEffect(camera, { focusDistance: dof.distance ?? 6, focusRange: dof.range ?? 3, bokehScale: dof.bokeh ?? 2.2, resolutionScale: 0.5 }); composer.addPass(new EffectPass(camera, dofFx)); }
   if (whip) { whipFx = new WhipEffect(); composer.addPass(new EffectPass(camera, whipFx)); }
   const bloomFx = new BloomEffect({ intensity: bloom.intensity, luminanceThreshold: bloom.threshold, luminanceSmoothing: bloom.smoothing, mipmapBlur: true, radius: bloom.radius });
-  const vig = new VignetteEffect({ darkness: vignette, offset: 0.32 });
+  const vig = new VignetteEffect({ technique: VignetteTechnique.ESKIL, darkness: vignette, offset: 0.3 });
   const tone = new ToneMappingEffect({ mode: ToneMappingMode.ACES_FILMIC });
   const grain = new GrainEffect();
   const post = [bloomFx, vig, tone]; if (B.bloom === 0) post.shift();
