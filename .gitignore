@@ -87,3 +87,5 @@ video/upi01/p*/snapshots/
 video/upi01/p*/renders/
 projects/jet-engine-bet/final/*.mp3
 projects/jet-engine-bet/assets/
+video/jet-engine-bet/*.mp4
+video/**/.*.hf-transaction-*/
