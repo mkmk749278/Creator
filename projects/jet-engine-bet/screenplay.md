@@ -1,76 +1,126 @@
-# Screenplay v1 (visual-first): The Blade That Should Melt
+# Screenplay v2: "The Walk-Around" (one continuous camera tour)
 
-Working title; episode of "India's Missing Pieces". English VO (`vo.txt`, Akash). Line ids = `L<n>` = line n of `vo.txt`.
-Times are estimates (about 1,940 words, roughly 12 minutes at Akash's pace); they are replaced by `align_script.py` timings after recording. The open-loop line says the blade arrives 'in about three minutes': re-check against the final cut. Owner brief (2026-10-22): **no Chandrayaan opener
-(everyone knows it, nobody clicks); concentrate on visuals; explain the science of the jet engine deeper but with simple
-words and everyday things.** The film's centre is the 3D engine and the blade; the Tejas and Kaveri story is the frame.
+Film: *The Blade That Should Melt*. Voice-over: the owner's two Akash takes, joined (8:31, `final/jeb_vo_final.mp3`); times are
+from `final/align/align.json` (sentence level, 61 of 63 lines high confidence). Text: `final/narration_final.md`.
 
-**Look:** tech x geopolitics, dark blueprint base (`blueprint` in `config/brand.yaml`) plus a **thermal-camera (ironbow)
-palette for everything hot**. Colour = meaning: white-yellow = hottest gas, orange = hot metal, cyan = cooling air (the one
-cool accent), green = a link India owns, red = a stop or a gap. Real footage and documents carry the story (hangar, Tejas,
-G.E. Lynn, CAG pages); 3D carries every mechanism.
+**Owner's direction (2026-10-22):** the narration takes the audience on a **walk-around tour of the jet** ("come with me",
+"walk around to the back", "look right into the exhaust", "cut it open and you'll find..."). The picture must do the same:
+**one continuous first-person camera**, cinematic, with camera angles viewers have not seen in a jet-engine video. Audience
+first; the picture shows what the voice says at that second.
 
-**Signature device: THE HOT-GAS GAUGE** (persistent, top-left): a vertical thermometer with two markers, GAS (about 1,400 °C)
-and METAL (about 930 °C), the gap shaded and labelled `OUR CALCULATION: ~470 °C`. It sits empty before L15, wakes at L16, and
-every trick (crystal, air, coating) drags the METAL marker down or shows why it holds. Values only from `claims.csv`, else
-"ILLUSTRATIVE". A second small HUD (top-right) carries the news numbers: `ENGINES SENT 14 / 99`, `JETS WAITING ~30`,
-`DELIVERED TO IAF 0` (as of dates in the claims; re-check before upload).
+## The concept: ONE CAMERA, FIVE ROOMS
 
-**Everyday-object cutaways (a 2-second inset each, same camera language as the 3D):** bicycle pump nozzle glowing warm (L10);
-gas stove ring (L11); ceiling fan turning in the wind (L12); balloon let go (L14); brick wall vs one stone (L20); steel
-spoon bending in a flame (L21); mall air curtain (L24); thermos cut in half (L25); bucket swing (L29). Each is real
-stock or a clean 3D render, labelled `ANALOGY`.
+The viewer is a visitor with a torch. The camera never "cuts to a graphic"; it moves **through** rooms, and each room hands
+over to the next by a match-move (a shape, a light or a motion carries across the join).
 
-**Hero 3D shots (Blender Cycles, 8 samples + denoise, composited under the HyperFrames HUD; Three.js for the live-in-page
-ones):**
-1. **The four-job engine:** a cutaway turbofan; air as pale streaks, then compressed (streaks bunch, tint warms), fuel mist
-   and flame, gas hitting the turbine, the shaft glowing as the turbine drives the compressor, exhaust. One job per beat
-   (2.5–4 s): SUCK · SQUEEZE · BURN · BLOW.
-2. **The blade zoom:** camera dives from the whole engine to the first turbine stage to one blade, in ironbow colour.
-3. **The grain-vs-crystal slice:** a blade cross-section: many grains with weak lines glowing red and slowly stretching
-   (creep) vs one uniform crystal that stays still.
-4. **The cooled blade:** hollow channels carrying cyan air, film holes breathing a cyan blanket over the surface, a thin
-   ceramic skin; thermal view of surface temperature dropping as each layer switches on.
-5. **The spin:** the turbine disc at speed, a red arrow of pull on one blade, a London bus silhouette at scale hanging off it.
+| Room | Time | Where the camera is | Look |
+|---|---|---|---|
+| 1. The Hangar | 0:00–0:41 | Walking through a dark Nashik hangar, around one Tejas, to the tail, into the exhaust | Real-feel photoreal, cold blue work light, dust in the beams |
+| 2. The Engine | 0:59–2:23 | Flying INSIDE the engine as the air: fan, compressor, fire, turbine | Cutaway engine, air as streaks, colour = temperature (ironbow) |
+| 3. The Blade | 2:23–4:15 | Diving into one blade: grains, channels, air film, ceramic | Macro; thermal camera look; labelled ILLUSTRATION |
+| 4. The Spin | 4:15–5:27 | Riding the disc rim, then pulling out to the world map of the engine club | Motion blur, rim-cam, bus at scale |
+| 5. The Gallery of India | 5:27–8:31 | Walking a corridor of rooms: Air Force, 1998, Kaveri test cell, Hyderabad lab, Delhi | Dolly-through physical sets of real photos, documents and headlines |
 
-| Time | Lines | Audio | Visual + action | SFX / music |
+**Camera vocabulary (the "never-before" angles, use each once or twice, never as a gimmick):**
+1. **Walk-around POV**: gentle handheld sway, torch beam leading, breath-level (1.6 m).
+2. **Under-the-wing hero**: ultra-low, wide, jet towering, hangar lights as flares.
+3. **Exhaust-tunnel dolly**: camera pushes into the nozzle; petals of the nozzle close round the frame.
+4. **Air-molecule POV**: the camera IS a particle of air, riding the engine from intake to exhaust; we feel squeeze (the frame
+   tightens, vignette closes), fire (flash and warm grade), release (stretch).
+5. **Blade-skim**: macro camera gliding millimetres above the blade surface along the cooling-air film.
+6. **Inside-the-metal flythrough**: camera moves between the crystal grains (the brick-wall joints), then through a single clean
+   crystal with no joints.
+7. **Rim-cam**: camera bolted to the spinning disc, the blade standing out from the frame, a double-decker bus hanging off it
+   at scale.
+8. **Thermal-vision**: ironbow overlay that wipes across the real frame to show heat.
+9. **Time-corridor dolly**: the camera walks a long corridor; each doorway is a year (1986, 1998, 2008, 2021, 2026).
+
+**Rules:** text under 15% of the screen; no slides; hold no state longer than 4.5 s; one change per cut; the hot-gas gauge
+(top-left, GAS vs BLADE, gap labelled OUR CALCULATION) wakes at 2:23 and stays through Room 3 and 4; everything that is an
+illustration says ILLUSTRATION; the real-world rooms use real photos and footage first (HAL/PIB/MoD/IAF/GE/Rolls-Royce).
+
+## Shot list (times from the alignment)
+
+### Room 1: The Hangar (0:00–0:41)
+| Time | Line | Camera move | What we see | Sound |
 |---|---|---|---|---|
-| 0:00 | L01–L02 | Oct 2026, hangars, ~30 Tejas waiting, none delivered | REAL: HAL Nashik/Bengaluru Tejas Mk1A line (HAL/PIB/MoD photos and video, animated), grey jets in a row. Counter `DELIVERED TO IAF: 0` ticks in. First frame is the thumbnail's own subject: one turbine blade glowing against a Tejas tail. | Hangar ambience; hard stop on "not one" |
-| 0:11 | L03 | Biggest reason: the engine; 14 of 99 | G.E. Lynn plant exterior (GE press), F404 crate. HUD locks `ENGINES SENT 14 / 99`. A 99-slot bar fills 14 amber, 85 stay empty | Thud on "fourteen" |
-| 0:18 | L04–L05 | The blade sits in gas hotter than its melting point and does not melt; very few countries can make it; India still learning | Hero 3D 2 opening: the blade glowing white-hot, a flame wall behind it; GAS vs METAL gauge flashes in with the gap shaded red. Quick flash of a world map with the few countries that make it (lit, no borders), India outlined, empty | Low riser, silence 1.5 s before "does not melt", then thump |
-| 0:32 | L06 | Open loop: how it works with kitchen things; blade in about three minutes; decision in Delhi | Three teasers: stove ring + engine, the cyan air blanket, a calendar page "DECISION: CCS APPROVAL" | Riser |
-| 0:52 | L07–L09 | Four jobs; suck | Hero 3D 1: the four words stamp on in a row; camera enters the intake; fan blades, air streaks pulled in. Real: a jet starting up on the ramp (IAF/Commons) cut in for 2 s | Fan spool-up |
-| 1:08 | L10 | Squeeze: bicycle pump | Inset: a hand on a bicycle pump, thermal view, the nozzle warming. Cut to hero 1: compressor stages, streaks bunch and warm toward orange; stage counter ticks up. | Pump hiss |
-| 1:28 | L11 | Burn: gas stove flame; far bigger | Stove ring blue flame (macro) dissolves into the combustor in hero 1: fuel mist, flame, expansion arrows | Gas whoosh |
-| 1:48 | L12–L13 | Turbine like a ceiling fan; shaft joins turbine to compressor | Wind spinning a ceiling fan (stock) match-cuts to the turbine. Hero 1: the shaft lights up end to end, a loop arrow turbine to compressor to turbine: "THE ENGINE FEEDS ITSELF" is spoken, not written | Motor hum |
-| 2:12 | L14 | Exhaust; trail; balloon | Contrail in the sky (stock), then a balloon released across the frame with a small arrow pair. Hero 1 pulls back to show thrust | |
-| 2:24 | L15 | Turbine sits right behind the flame, hottest place | Hero 2 dive: from the whole engine to the turbine stage to one blade, ironbow thermal colour; HUD gauge wakes (GAS marker climbs) | Low drone |
-| 2:40 | L16 | Rolls-Royce: up to 200 °C above the melting point | Blade in the flame; a melting-point line on the gauge; gas marker rides 200 above it. Source tag `[ROLLS-ROYCE 2012]` on a document push-in | Braam; music out 1.5 s before "two hundred" |
-| 3:00 | L17 | Cambridge: gas ~1,400 °C, metal ~930 °C; our calculation ~470 °C gap | Gauge fills both markers with the numbers; the gap bracket animates to scale; `OUR CALCULATION` tag. Document: Cambridge page, magnifier on the figures | Tick |
-| 3:16 | L18 | You'd expect it to melt, right? How does it survive? | Held beat: the blade glows, then a slow push-in. The three tricks appear as three dots on the gauge's side | Silence 1 s |
-| 3:28 | L19 | Three tricks; seen at home | Three numbered icons light one by one (no text slide: they are the 3D objects: crystal, channel, shell) | |
-| 3:36 | L20–L22 | Trick one: brick wall of crystals, creep, single crystal; nickel alloy, rhenium | Brick wall (stock/3D) with weak mortar lines glowing; cut to hero 3: grains with red boundaries slowly stretching, the METAL marker creeping up; spoon bending in flame inset. Then the single crystal: lines vanish, still. Lattice flash (Three.js) of a rhenium atom in the nickel lattice, labelled ILLUSTRATION. Real: DMRL single-crystal blade photo (PIB 2021) | Metal creak; calm tone on the single crystal |
-| 4:24 | L23–L24 | Trick two: hollow blade, cool air channels, film of cool air; mall air curtain | Hero 4: cutaway, cyan air flows through channels, bursts from tiny holes and hugs the surface in a thin film; mall entrance with an air curtain (stock) as the 2-second analogy; thermal view: surface cools as the film switches on, METAL marker drops | Soft air hiss |
-| 5:00 | L25–L26 | Trick three: ceramic shield, thermos flask; all three together | Thermos cut in half (3D) inset; on the blade a thin white shell slides on, temperature drops again. Then all three layers stack in one cutaway while the METAL marker settles at about 930 | Chord resolves |
-| 5:32 | L27–L29 | The spin: 12,000 rpm; London bus; ceiling fan snail; bucket | Hero 5: disc at speed (motion-blurred), red pull arrow on one blade; to scale a double-decker bus hangs from it. Ceiling fan beside it looks slow | Rising whine |
-| 6:00 | L30 | Gas above melting point, a bus, thousands of hours | Three stacked states on one blade: heat, pull, time (a clock counter running into thousands). No new words on screen beyond `THOUSANDS OF HOURS` | Thud |
-| 6:12 | L31 | Why a rocket is easier | Split frame: rocket stage burning 2–11 min then falling away (ISRO LVM3 clip, no Chandrayaan framing) vs the engine running thousands of hours. One clean metaphor, quick | |
-| 6:28 | L32–L34 | Can't copy the drawing; know-how; nobody shared; small club | Blueprint on a drafting table slides off; the real knowledge shown as a casting, a drill, a test rig (stock/3D); a globe lights up America, Russia, Britain, France, China | Low drone |
-| 7:00 | L35–L37 | Why it matters: 42 squadrons / ~29; MiG-21 retired; 83 + 97 orders | Squadron gauge: 42 slots, 29 amber, 13 red pulse. MiG-21 retirement (PIB). Contract counter 83 → 180 over a PIB photo | Gauge ticks |
-| 7:32 | L38–L40 | HAL does not make the engine; F404, Lynn; due 2023, first March 2025; penalties; radar and missiles also pending | Timeline ribbon: 2023 promised → MAR 2025 first engine, gap filling red. Headlines (Bloomberg, New Indian Express) under a magnifier | Clock tick |
-| 8:04 | L41–L45 | 1998 sanctions; control; engineers built flight control themselves; the lesson | Pokhran 1998 archive headline; Glenn Amendment page push-in (CRS). Hardware wireframe of the Tejas with the engine bay going dark. The lesson line is spoken over a slow push-in on the empty bay | Silence 1.5 s before the lesson, then a thud |
-| 8:40 | L46–L50 | Kaveri: 1986 plan, March 1989 approval, Rs 382 crore, Dec 1996; 81 kN; Tejas at the same time; the test bench | Document: CAG report page with highlighter. Thrust bar (target 81 vs achieved) and weight bar (1,100 vs 1,235 kg) as bars, labelled `AS REPORTED` where disputed | Test-cell roar |
-| 9:20 | L51–L56 | Numbers; no high-altitude facility; Russia; Sept 2008 delinking; 2010 Il-76 flights; 27 flights; spend | Kaveri on the Il-76 test bed (Commons/MoD); counters 27 flights, 12 km; cost ribbon 382 → 2,839 crore | |
-| 9:52 | L57–L60 | Not a failure: Dry Kaveri ~48 kN; Ghatak; DMRL blades; the base | Thrust bar fills past target (green, since this one India owns); DMRL single-crystal blades (PIB 2021) in the same hero 2 style; `60 BLADES · 2021` counter | Uplift |
-| 10:24 | L61–L66 | AMCA on F414; 120 kN; Safran with GTRE Aug 2025; full Indian IP; still waiting; Rolls-Royce and Reliance; China took decades | Engine-club globe: India fills in amber only where facts support (DMRL, Kaveri). Document: news pages, credited. `STATUS: AWAITING CCS APPROVAL (OCT 2026)`. J-20 / WS-10 / WS-15 relay graphic, no more than 3 s | |
-| 11:08 | L67–L69 | Rule, Ruin, Reality | Rule: the empty engine bay glows. Ruin: jets in the hangar, DELIVERED 0. Reality: the hot-gas gauge with the three tricks in green, the missing link in the middle (the hot section) pulsing amber | Silence 1.5 s before Reality |
-| 11:28 | L70–L74 | What it means for you; two things to watch; honest timeline | Two cards-as-objects (a calendar page and a Tejas handover photo frame), not text boxes. Slow push on the hot-section blade | |
-| 11:52 | L75–L77 | Bridge: the magnet film; next missing piece; sign-off | Magnet from the previous film spins into view and joins the blade; a three-up of the series: chips, magnets, engine. Channel name and logo sting only here | Outro sting |
+| 0:00 | 01 "October, twenty twenty-six" | Black; a hangar door slides up | Date burns in as a floor-stencil, dust in the light | Door rumble, then silence |
+| 0:02 | 02 "Come with me ... hangars" | **Walk-around POV**, forward through the door | Dark hangar, a row of grey Tejas under work lights; real-feel textures from HAL/PIB photos (parallax-animated) | Footsteps, cavernous room tone |
+| 0:08 | 03 "Look around you ... nearly thirty ... Painted, radars fitted, cockpits wired, lethal" | Pan slowly along the line; **under-the-wing hero** on the nose; push-in to the radome, then the canopy | Counter appears on the floor: JETS BUILT ~30. Close-ups on paint, radome, cockpit (animated stills) | Metallic ticks on each word; low sub-bass |
+| 0:20 | 04 "not a single one has been delivered" | Camera stops dead in front of a jet; a red tag swings on the nose gear | HUD: DELIVERED TO IAF: 0 | Hard stop, silence 1.5 s |
+| 0:26 | 05 "Walk around to the back ... look into the exhaust" | **Walk-around** along the fuselage to the tail, then **exhaust-tunnel dolly** into the nozzle | Nozzle petals frame the dark | Footsteps; breath of wind |
+| 0:30 | 06 "Nothing. A hollow, empty tunnel." | Camera lingers deep in the tunnel: darkness, a faint glow far away | Empty bay, the glow never comes | Silence, then one low note |
+| 0:34 | 07 "G.E. ... ninety-nine ... only fourteen" | Whip-pull out of the tunnel to a wide of the line of jets, overlaid with a 99-slot bar, 14 amber | HUD: ENGINES SENT 14 / 99 (re-check before upload) | Thud on "fourteen" |
 
-## Checks before building
-- Text stays under 15% of the screen; every cut shows one change; nothing static for more than 1.5 s.
-- No Chandrayaan opener, no welcome, no logo until L77.
-- Every number on screen comes from `claims.csv` (`fact-check.md` §Time-sensitive for the news numbers); ILLUSTRATION /
-  ANALOGY / AS REPORTED labels where the claims say so.
-- Real footage first: Tejas/HAL/PIB/G.E. media, CAG and CRS pages. Stock only for the analogies, labelled ANALOGY.
-- Build order: hero 1 and 2 first (the whole film hangs on them), then 3, 4, 5, then the HUD, then the documents.
+### Room 1b: the question (0:41–0:59)
+| 0:42 | 08 "India lands rovers on the Moon ... why can't we just build an engine?" | Camera rises through the hangar roof into a night sky; Moon, satellites, a supercomputer rack in three quick **match-cut** dollies; then back down, the empty tunnel | Real ISRO/PIB footage for the Moon and satellites (brief, labelled credits) | Rising swell |
+| 0:54 | 09 "single hardest engineering puzzle" | Camera drops into the dark of the tunnel again | | |
+
+### Room 2: The Engine (0:59–2:23)
+| 0:59 | 10 "a tiny metal blade ... hotter than its own melting point" | The tunnel's far glow resolves: **macro on one glowing blade** in a flame wall; slow orbit | The blade, white-hot, alive; blade stays solid (a held beat, no text) | Low roar; music out 1.5 s before "does not melt" |
+| 1:12 | 11 "four or five countries know how" | World map slides under the blade (land only, no borders); four-five points light up, India outlined and empty | | |
+| 1:19 | 12 "look at how a fighter engine breathes" | **Pull back and up**: the jet ghosts to X-ray, the engine glows inside it | Cutaway of the jet; ILLUSTRATION | |
+| 1:26 | 13 "blowtorch ... air pump ... Suck. Squeeze. Burn. Blow." | Four title beats as 3D objects on the engine (not text slides): arrow-in, arrow-squeeze, flame, arrow-out | | One sound per word |
+| 1:37 | 14 "Suck: giant front fan gulps in air" | **Air-molecule POV** enters the intake past the fan blades | | Fan spool-up |
+| 1:43 | 15 "Squeeze ... thirty times atmospheric" | Same POV: frame tightens, vignette closes, air turns orange; stage counter ticks | | Rising pitch |
+| 1:56 | 16 "Burn ... seventeen hundred degrees" | Flash of the combustor: flame wall, thermal grade white | Number on screen only as HUD (1,700 °C) | Roar |
+| 2:06 | 17 "Blow ... spins the shaft ... forty-ton ... speed of sound" | Release: stretch; camera rides through the turbine, the shaft lights up end to end, exhaust ahead | | Whoosh |
+| 2:18 | 18–19 "Where does that turbine sit? Directly behind the fire." | Camera stops, spins to look back over its shoulder at the flame, then forward at the turbine | | Silence on "Directly behind" |
+
+### Room 3: The Blade (2:23–4:15)
+| 2:23 | 20 "Rolls-Royce and Cambridge: gas two hundred degrees hotter than the melting point" | **Thermal-vision wipe** across the blade; HUD gauge wakes, GAS marker climbs above a MELTING line | Document push-in: Rolls-Royce release and Cambridge page with magnifier | Braam |
+| 2:39 | 21–22 "fourteen hundred ... nine hundred thirty ... four-seventy gap" | Gauge fills both markers; gap bracket animates to scale; tag OUR CALCULATION | | Tick |
+| 2:47 | 23 "if that gap collapses ... the blade turns to water" | Quick **what-if**: the gap closes, the blade slumps like wax and the frame goes white; whiplash back to normal | Short, 1.5 s | Crack |
+| 2:54 | 24–25 "How does it survive? Three tricks." | Camera pushes at the blade surface; three light dots appear on the blade root | | |
+| 3:02 | 26–27 "First: zero joints. Steel spoon, brick wall, creep" | **Inside-the-metal flythrough**: camera dives into the surface, passes between grains (brick wall with glowing red joints), the grains slowly stretch; steel spoon sagging in a flame as a 2 s inset | ILLUSTRATION | Metal creak |
+| 3:21 | 28 "grown in a vacuum furnace as one single crystal ... nickel superalloy, rhenium" | The joints vanish; one clean lattice, camera glides through it; a vacuum furnace growing the blade (3D) | | Calm tone |
+| 3:36 | 29–30 "Second: the blade is hollow ... internal maze" | **Cut-open**: the blade slices lengthwise, camera enters the root and rides the cyan air through the maze | Cyan = cooling air only | Air hiss |
+| 3:49 | 31–32 "Third ... micro-holes ... paper-thin blanket" | **Blade-skim**: macro camera gliding along the surface as the air exits the holes and spreads in a film | | Soft whoosh |
+| 4:02 | 33 "the fire never actually touches the metal" | Camera on the blade surface looking up at the flame; it skims over the film; the gauge's METAL marker holds | | |
+| 4:09 | 34 "ceramic thermal barrier coating" | A thin white shell slides over the blade; METAL marker drops again | | Chord resolves |
+
+### Room 4: The Spin (4:15–5:27)
+| 4:15 | 35 "the second nightmare: the spin" | Camera cuts to the disc rim and bolts on: **rim-cam** | Blur of the disc, the blade pointing out of frame | Rising whine |
+| 4:20 | 36 "twelve thousand R-P-M ... nine-ton bus" | A red arrow of pull appears on the blade; a double-decker bus drops into frame at scale and hangs from the blade; counter 12,000 | ILLUSTRATION | Strain creak |
+| 4:34 | 37 "Let that sink in" | Hold the three states on the same blade: heat, pull, time (clock into thousands); no words beyond THOUSANDS OF HOURS | | Thud |
+| 4:45 | 38–39 "rockets vs fighter engine" | **Split frame**: rocket stage burns and drops (ISRO LVM3 clip) vs the engine idling to full power in two seconds | | |
+| 5:08 | 40 "cannot copy from a drawing" | A blueprint slides off the table; the real know-how shown as a casting, a drill, a test rig | | Low drone |
+| 5:18 | 41 "club of four: America, Britain, France, Russia ... China" | Camera pulls up to a high globe; five points light up | | |
+
+### Room 5: The Gallery of India (5:27–8:31)
+The camera becomes a **time-corridor dolly**: it walks from the hangar into a long hall. Every doorway is a year, every room
+is real (photos, documents, headlines, footage), lit like a museum at night.
+| 5:27 | 42 "back to those thirty silent jets in Nashik" | The camera exits the globe and lands back in the hangar, at the same spot as 0:20 | | Hangar tone |
+| 5:32 | 43 "forty-two squadrons, twenty-nine, MiG-21s retire" | Camera pans along the line of jets as slots fill: 42 outlines, 29 amber, 13 red | MiG-21 retirement photo (PIB) | Gauge ticks |
+| 5:44 | 44 "180 Tejas, H.A.L. built the airframes, engine in Massachusetts, penalties" | Corridor opens: contract-signing photo (PIB) with magnifier, then a **rapid dolly** across the Atlantic to G.E. Lynn (press photo) | Counter 83 + 97 = 180 | Whoosh |
+| 6:04 | 45–46 "May 1998, Pokhran, sanctions" | **Doorway 1998**: archive headlines and the Glenn Amendment page under glass | CRS page push-in | Door slam, then quiet |
+| 6:20 | 47 "engineers built the flight controls themselves" | Walk past a wall of drawings; a Tejas wireframe's flight-control surfaces light up | | Warm tone |
+| 6:33 | 48–49 "Kaveri, nineteen eighty-six, G.T.R.E., eighty-one kilonewtons" | **Doorway 1986**: a test cell; the Kaveri on its stand, spinning up | Document: CAG report with highlighter; thrust bar | Test-cell roar |
+| 6:46 | 50–51 "called a failure ... bit off more than we could chew ... seventy" | Camera circles the engine; target bar (81) vs achieved (70) | Label AS REPORTED | |
+| 6:54 | 51 "delinked in two thousand eight" | **Doorway 2008**: Tejas rolls away with the G.E. engine; the Kaveri stays in the cell | | Door hum |
+| 7:12 | 52–53 "twenty-one-hundred-crore ... Dry Kaveri, forty-eight kN ... Ghatak" | Camera walks past the cost ribbon; the Dry Kaveri on a Russian bench; the Ghatak drone silhouette lifts off | Thrust bar fills green past target | Uplift |
+| 7:25 | 54 "D.M.R.L. Hyderabad, single crystal, sixty blades" | **Doorway 2021**: a lab; the DMRL blades (PIB photo) turn on a table in the same blade-skim macro style from Room 3 | Counter 60 BLADES | Calm |
+| 7:36 | 55–56 "what happens next ... A.M.C.A. ... one-ten kilonewton ... design ownership" | Corridor widens; the A.M.C.A. wireframe, two empty engine bays labelled F414 now / NEW ENGINE later | Label ILLUSTRATION | |
+| 7:50 | 57–58 "Safran ... Rolls-Royce and Reliance ... the decision sits in New Delhi" | **Doorway 2026**: a long table in a dark room, three folders (Safran, Rolls-Royce + Reliance, G.T.R.E.) and an empty chair; camera pushes to the chair | STATUS: AWAITING APPROVAL (OCT 2026), re-check before upload | Clock tick |
+| 8:04 | 59 "China spent thirty years..." | Quick cut: J-20 on the ramp (Commons), WS-15 title, a calendar flipping | | |
+| 8:15 | 60–61 "air superiority isn't painted on the wings ... forged inside the blade that refuses to melt" | Camera leaves the room, returns to the hangar, walks to the tail and pushes into the exhaust again: this time the tunnel is **not empty**: a blade, glowing, turning, far in the dark | Match-cut to the first shot (0:30) | Music swell; last line over the glowing blade |
+| 8:23 | 62–63 CTA + sign-off | Hold on the glowing blade; the channel logo bug and sting appear here only; end card | | Outro sting |
+
+## Hero shots to build (priority order)
+1. **A. The Engine Journey** (1:19–2:23, 64 s): Blender cutaway turbofan, air-molecule POV. The film hangs on this.
+2. **B. The Blade** (2:23–4:15, 112 s total, but 3 shots): inside-the-metal grains, the cooled blade maze, the blade-skim film.
+3. **C. The Hangar and the Exhaust** (0:00–0:41, 41 s): hangar + Tejas + nozzle; also reused at 5:27 and 8:15 (the match-cut).
+4. **D. The Rim-cam** (4:15–4:45, 30 s).
+5. **E. The Gallery** (5:27–8:31, 184 s): HyperFrames 2.5D dolly-through of real photos, documents, headlines and footage (cheap, fast).
+
+**Cost plan (PLAYBOOK §3, CLAUDE.md engines):** Blender Cycles about 27 s a frame on CPU at 8 samples with denoise. A, B, C and D total
+about 280 s = 7,000 frames at 25 fps = about 52 CPU-hours, so split across four parallel cloud sessions (about 13 h each) or run
+on Kaggle GPU once the key is added; alternatively render hero shots at 12 fps and frame-interpolate, or build A and B in
+Three.js (HyperFrames) with Blender used only for the blade macros and the hangar. E and all HUDs/documents are HyperFrames.
+
+## Next steps
+1. Owner picks the shot-build approach (Blender on four sessions vs Three.js for the engine journey).
+2. Source real assets (contact sheet first): HAL/PIB/MoD Tejas photos, G.E. press media, CAG and CRS pages, ISRO footage,
+   DMRL blades, Russian test-bed images; Pixabay B-roll only for hangar dust/light.
+3. Build A and B first (the film hangs on them), review frame by frame, then C, D, E; HUD last.
+4. New thumbnail: one object (the glowing blade in the dark tunnel), one number (14 / 99), 2 to 4 words, clear of the timestamp corner.
