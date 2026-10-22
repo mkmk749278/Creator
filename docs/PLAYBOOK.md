@@ -1575,6 +1575,19 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
 
 ## 15. Lessons log
 
+**Rare earth film audio and footage (2026-10-22).**
+- **Loudness: three traps.** Each one cost a re-mix.
+  - (1) `loudnorm` in linear mode quietly backs off when the true-peak ceiling would be crossed. Cut 1 landed at −15.9 LUFS, not −14.
+  - (2) ffmpeg's mono→stereo upmix (`-ac 2`) drops each channel by 3 dB, so a mono master measured at −14 plays at about −14.6 in the MP4.
+  - (3) Re-encoding an AAC track can overshoot one channel by several dB.
+  - *Rule:* make the master stereo explicitly (`pan=stereo|c0=c0|c1=c0`) **before** measuring. Use one static gain to −14 plus `alimiter`, measured twice (`projects/rare-earth-magnets/build/assemble.sh`). Check the final MP4 with `ebur128` + `astats` for each channel.
+- **Owner-fetched factory clips carry burned-in captions and logos.** Choose the `crop` origin per clip:
+  - Captions at the bottom: origin at the top (`50% 6%`).
+  - Captions bottom-left and a logo top-left (BMAG): origin `100% 0%`.
+  - Logo at the top *and* subtitles at the bottom (JDA): keep the top crop, leave the small logo as the credit, and move our labels clear of it.
+  - Snapshot each cropped shot before rendering.
+- **Contact-sheet review catches what snapshots miss.** Cut 1 had a cross-fade to black at the source in-point, chips covering numbers and headlines, and four blank text-only frames. *Rule:* look at every 5 s sheet before upload. Pull the full frame wherever the sheet's timecode label might hide a title.
+
 **Film 01 script, v1–v5 (2026-10-20).** Four rewrites polished the wording (simpler English, questions, the three
 app statuses) while the content stayed shallow: "a payment is two steps, the second one timed out". The owner's verdict:
 "What's the reason to see our video? No technical depth. Nothing cleared from the user's point of view." The fix was
