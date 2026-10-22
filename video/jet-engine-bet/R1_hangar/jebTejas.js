@@ -106,7 +106,7 @@ function mats(seed) {
   M = {
     grey, olive,
     paint: new THREE.MeshPhysicalMaterial({ color: 0xffffff, vertexColors: true, roughness: 0.62, metalness: 0.1, clearcoat: 0.22, clearcoatRoughness: 0.4, bumpMap: atlas, bumpScale: 1.6, roughnessMap: atlas, envMapIntensity: 0.9 }),
-    paintFlat: new THREE.MeshPhysicalMaterial({ color: grey, roughness: 0.62, metalness: 0.1, clearcoat: 0.22, clearcoatRoughness: 0.4, bumpMap: atlas, bumpScale: 1.6, roughnessMap: atlas, envMapIntensity: 0.9, side: THREE.DoubleSide }),
+    paintFlat: new THREE.MeshPhysicalMaterial({ color: grey, roughness: 0.62, metalness: 0.1, clearcoat: 0.22, clearcoatRoughness: 0.4, bumpMap: atlas, bumpScale: 1.6, roughnessMap: atlas, envMapIntensity: 0.55, side: THREE.DoubleSide }),
     dark: new THREE.MeshStandardMaterial({ color: 0x0d0e11, roughness: 0.7, metalness: 0.3 }),
     glass: new THREE.MeshPhysicalMaterial({ color: 0x0b0f16, roughness: 0.03, metalness: 0.15, clearcoat: 1, clearcoatRoughness: 0.02, envMapIntensity: 3.2, reflectivity: 0.9 }),
     frame: new THREE.MeshStandardMaterial({ color: 0x23262b, roughness: 0.5, metalness: 0.6 }),
@@ -168,7 +168,7 @@ export function makeJet({ detail = 1, seed = 1 } = {}) {
     for (let i = 0; i <= 40; i++) { const z = JET.nozzleZ + 0.1 + (i / 40) * JET.bayLen; prof.push(new THREE.Vector2(JET.tubeR + 0.035 * Math.sin(z * 2.3) + 0.03 * (r() - 0.5) + 0.04 * sstep(JET.bayLen - 1.5, JET.bayLen, z - JET.nozzleZ), z)); }
     const bayG = new THREE.LatheGeometry(prof, 40); bayG.rotateX(Math.PI / 2);
     const bay = new THREE.Mesh(bayG, m.bay); bay.position.y = 0.04; add(bay);
-    for (const ang of [Math.PI * 0.17, Math.PI * 1.17]) { const rail = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.09, JET.bayLen - 1.2), m.metalDull); rail.position.set(Math.cos(ang) * 0.51, 0.04 + Math.sin(ang) * 0.51, JET.nozzleZ + JET.bayLen / 2); rail.rotation.z = ang + Math.PI / 2; add(rail); }
+    for (const ang of [Math.PI * 0.62]) { const rail = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.09, JET.bayLen - 1.2), m.metalDull); rail.position.set(Math.cos(ang) * 0.51, 0.04 + Math.sin(ang) * 0.51, JET.nozzleZ + JET.bayLen / 2); rail.rotation.z = ang + Math.PI / 2; add(rail); }
     let zf = JET.nozzleZ + 0.7; while (zf < JET.nozzleZ + JET.bayLen - 0.5) { const th = 0.012 + r() * 0.03; const f = new THREE.Mesh(new THREE.TorusGeometry(JET.tubeR * 0.985, th, 8, 40), m.metalDull); f.position.set(0, 0.04, zf); add(f); zf += 0.35 + r() * 1.2; }
     for (let k = 0; k < 4; k++) { const pts = []; const ang0 = Math.PI * (1.45 + 0.07 * k); for (let i = 0; i < 8; i++) { const z = JET.nozzleZ + 0.8 + (i / 7) * (JET.bayLen - 1.6); const a = ang0 + 0.1 * Math.sin(i * 1.3 + k); pts.push(new THREE.Vector3(Math.cos(a) * (JET.tubeR - 0.045), 0.04 + Math.sin(a) * (JET.tubeR - 0.045), z)); }
       add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 40, 0.011 + 0.003 * k, 6), m.rubber)); }
