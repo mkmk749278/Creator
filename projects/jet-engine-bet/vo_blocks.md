@@ -2,7 +2,7 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
 
-## Block 1 of 10 · 889 characters · save as `voice/jeb_b01.mp3`
+## Block 1 of 10 · 862 characters · save as `voice/jeb_b01.mp3`
 
 ```
 October, twenty twenty-six. In H.A.L. hangars in Bengaluru and Nashik, close to thirty brand new Tejas fighter jets are standing ready. Painted. Radars fitted. You'd think they're ready to fly.
@@ -11,11 +11,11 @@ And not one of them has reached the Air Force yet.
 
 By most reports, the biggest reason is the engine. America's G.E. has sent only fourteen of the ninety-nine engines these jets need.
 
-And here's the crazy part. Inside a modern jet engine, a small metal blade can sit in gas hotter than its own melting point... and it does not melt.
+And here's the twist. Inside a modern jet engine, a small metal blade can sit in gas hotter than its own melting point... and it does not melt.
 
 Very few countries on Earth can make that blade. It takes decades of trial and error, and India is still learning.
 
-Stay with me, and you'll see three things. First, how a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
+Stay with me. I'll show you how a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
 ```
 
 ## Block 2 of 10 · 1193 characters · save as `voice/jeb_b02.mp3`
@@ -38,14 +38,14 @@ Here's the clever part. That turbine is joined by a shaft to the compressor. So 
 What's left of the gas shoots out of the back. You've seen that trail in the sky. And the jet is pushed forward... like a balloon you let go of.
 ```
 
-## Block 3 of 10 · 759 characters · save as `voice/jeb_b03.mp3`
+## Block 3 of 10 · 708 characters · save as `voice/jeb_b03.mp3`
 
 ```
 Now remember this, because you'll need it later. The turbine sits right behind the flame. It's where the metal has the toughest job in the whole engine.
 
-So how hot? Here's the shocking part. Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they're made of.
+So how hot? Now listen to this. Rolls-Royce says its blades work in gas up to two hundred degrees hotter than the melting point of the metal they're made of.
 
-Cambridge University shows the picture, in a classroom example. Gas of about fourteen hundred degrees. And the blade metal itself, held at about nine hundred and thirty. That's in Celsius. And that's the gap the cooling air and the coating have to create. By our own calculation, roughly four hundred and seventy degrees.
+Cambridge University shows the picture, in a classroom example. Gas of about fourteen hundred degrees Celsius. And the blade metal itself, held at about nine hundred and thirty. The cooling air and the coating have to create that gap, roughly four hundred and seventy degrees.
 
 So the blade is sitting in gas hotter than its melting point. You'd expect it to melt, right? So how does it survive?
 ```
@@ -70,14 +70,14 @@ Trick three is a ceramic coating on top. Let me explain it simply. A heat shield
 So what do you have? A crystal with no weak lines, cool air inside and outside, and a ceramic shield. Together, they keep the metal far below the gas, and you can see why. That's how you beat the heat. Simple, no?
 ```
 
-## Block 5 of 10 · 1176 characters · save as `voice/jeb_b05.mp3`
+## Block 5 of 10 · 1198 characters · save as `voice/jeb_b05.mp3`
 
 ```
 But there's one more problem. Do you know what it is? The spin.
 
 Rolls-Royce says the disc holding these blades turns more than twelve thousand times every minute. Your ceiling fan on full speed is slow next to that.
 
-It also says the pull you'd feel on each blade is like a London bus hanging from it. Think of you swinging a bucket round and round... with a bus in it.
+It also says the pull you'd feel on each blade is like a London bus, a big double-decker, hanging from it. Think of you swinging a bucket round and round... with a bus in it.
 
 So picture it, you and me, looking at one blade. Would you trust it? Gas hotter than its melting point. A bus hanging from it. For thousands of hours.
 
@@ -106,12 +106,12 @@ Those engines were due from twenty twenty-three. The first one came in March twe
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
 
-## Block 7 of 10 · 1448 characters · save as `voice/jeb_b07.mp3`
+## Block 7 of 10 · 1486 characters · save as `voice/jeb_b07.mp3`
 
 ```
 Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you and me?
 
-May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answers with sanctions, under a law called the Glenn Amendment.
+May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answers with sanctions.
 
 Sales of the same G.E. engines to India stopped. American help on the Tejas flight controls ended too.
 
@@ -121,24 +121,24 @@ But the lesson was simple. If you don't own the engine, you don't fully own your
 
 So did India try to build its own? Yes. And that's where the story gets painful.
 
-In nineteen eighty-six, our engineers began planning a fighter engine. The job went to G.T.R.E., a D.R.D.O. lab in Bengaluru. They named the engine Kaveri.
+In nineteen eighty-six, our engineers began planning a fighter engine. The job went to G.T.R.E., a government defence lab in Bengaluru. They named the engine Kaveri.
 
-In March nineteen eighty-nine, the government approved it. About three hundred and eighty-two crore rupees, and a target of December nineteen ninety-six.
+In March nineteen eighty-nine, the government approved it. The deadline was December nineteen ninety-six.
 
 The goal was huge. Eighty-one kilonewtons of push, that's its power rating, with the extra-boost afterburner on. And India was building the Tejas at the same time. Both almost from scratch. That doubled the risk.
 
 Then the prototypes reached the test bench... and you can guess what happened. The numbers didn't add up.
 
-It was meant to weigh eleven hundred kilos. It weighed twelve hundred and thirty-five.
+It came out heavier than planned. Twelve hundred and thirty-five kilos, instead of eleven hundred.
 
-It was meant to give eighty-one kilonewtons. As reported, it reached only about seventy.
-```
+And weaker than planned. As reported, about seventy kilonewtons of push, instead of eighty-one.
 
-## Block 8 of 10 · 1367 characters · save as `voice/jeb_b08.mp3`
-
-```
 And India had no place to test a fighter engine at high altitude. So the Kaveri went to Russia.
+```
 
+## Block 8 of 10 · 1462 characters · save as `voice/jeb_b08.mp3`
+
+```
 In September two thousand eight, the Kaveri was cut loose from the Tejas. The Tejas would fly with the American engine.
 
 But G.T.R.E. didn't stop. In twenty ten, a Kaveri flew on a Russian plane used as a flying test bed. Twenty-seven flights, up to twelve kilometres high.
@@ -156,13 +156,13 @@ Those years weren't wasted. They built a base India didn't have in nineteen eigh
 But the next big fighter, the A.M.C.A., needs much more. The first A.M.C.A. jets are planned to use G.E.'s F four one four.
 
 For later ones, India wants a new engine of about one hundred and twenty kilonewtons. And this time, India wants to own the design.
-```
 
-## Block 9 of 10 · 1115 characters · save as `voice/jeb_b09.mp3`
-
-```
 In August twenty twenty-five, the Defence Minister said India would build it with France's Safran, together with G.T.R.E. India's condition, as reported? Full Indian ownership of the design.
+```
 
+## Block 9 of 10 · 922 characters · save as `voice/jeb_b09.mp3`
+
+```
 And here's the catch, and I think you'll agree it's a big one. As of October twenty twenty-six, that deal is still waiting for final approval.
 
 In August, Rolls-Royce and Reliance also announced plans to build an engine in India. So you see, India has offers. What it needs, if you ask me, is a decision.
@@ -171,7 +171,7 @@ And remember, China walked this road too. Its J twenty stealth fighter used Russ
 
 So here's the rule I take from all this. If you don't own the engine, you don't fully own the jet.
 
-And the price of that? When the one seller slows down, the jets wait in the hangar... and so do you. You saw it in Nashik.
+And the price of that? When the one seller slows down, the jets wait in the hangar... and so do you. Just like in Nashik.
 
 But the reality today is different. India has, as you've seen, a flight-tested engine base, blade makers in Hyderabad, and a partner on the table. What's left is the hard middle... the hot part of the engine, and the decision.
 ```
