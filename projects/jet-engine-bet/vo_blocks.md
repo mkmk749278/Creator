@@ -2,10 +2,10 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
 
-## Block 1 of 10 · 1277 characters · save as `voice/jeb_b01.mp3`
+## Block 1 of 9 · 1495 characters · save as `voice/jeb_b01.mp3`
 
 ```
-Picture this. Close to thirty brand new Tejas fighter jets, parked in hangars in Bengaluru and Nashik. Painted. Radars fitted. They look ready to fly.
+Picture this. Close to thirty brand new Tejas fighter jets, parked in hangars in Bengaluru and Nashik. Shiny and painted. They look ready to fly, don't they?
 
 But not one of them has reached the Air Force. Not one.
 
@@ -15,7 +15,7 @@ And here's the twist. Inside a modern jet engine, there's a small metal blade. I
 
 Very few countries in the world can make that blade. It took them decades of trial and error. And India? India is still learning.
 
-Okay, here's the plan. First, how a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt, and the three tricks that save it. And at the end, the decision still waiting in Delhi.
+Here's what's coming. How a jet engine works, using everyday things. Then, about three minutes in, the blade that should melt. And at the end, the decision still waiting in Delhi.
 
 Okay. What does a jet engine actually do?
 
@@ -24,53 +24,49 @@ Four jobs. Can you guess them? Suck. Squeeze. Burn. Blow.
 Suck first. A big fan at the front pulls in air. Lots of it. Can you imagine how much?
 
 Now squeeze. Have you ever pumped a bicycle tyre, and felt the pump get hot? Squeezing air makes it hot and packs it tight. Inside the engine, rows of small fans, called the compressor, squeeze that air again and again.
+
+Then burn. This is the part you'd call the fire. Fuel is sprayed into this hot, squeezed air and lit. You know the flame on your gas stove? Picture it... but a flame that never goes out, and is far, far bigger. The burning gas swells up and rushes out.
 ```
 
-## Block 2 of 10 · 768 characters · save as `voice/jeb_b02.mp3`
+## Block 2 of 9 · 1152 characters · save as `voice/jeb_b02.mp3`
 
 ```
-Then burn. This is the part you'd call the fire. Fuel is sprayed into this hot, squeezed air and lit. You know the flame on your gas stove? Picture it... but a flame that never goes out, and is far, far bigger. The burning gas swells up, and you can guess what it wants. To rush out.
-
 And then blow. On its way out, that gas hits another set of fans, called the turbine. It spins them, like wind spinning a ceiling fan.
 
 Here's the clever part. That turbine is joined by a shaft to the compressor. So the hot gas spins the turbine, the turbine spins the compressor, and the engine keeps itself running. Makes sense so far?
 
 What's left of the gas shoots out of the back. You've seen that trail in the sky. And the jet is pushed forward... like a balloon you let go of.
-```
 
-## Block 3 of 10 · 1423 characters · save as `voice/jeb_b03.mp3`
-
-```
-Now remember this, because you'll need it later. The turbine sits right behind the flame. It's where the metal has the toughest job in the whole engine.
+Now remember this, because you'll need it later. The turbine sits right behind the flame. It's where you'll find the metal with the toughest job in the whole engine.
 
 So how hot? Now listen to this. Rolls-Royce says the gas can be up to two hundred degrees hotter than the point where the blade's metal would melt.
 
-Here's a simple picture, from Cambridge University. Gas of about fourteen hundred degrees Celsius. But the blade itself stays at about nine hundred and thirty. The cooling air and the coating create that gap, roughly four hundred and seventy degrees.
+Here's a simple picture, from Cambridge University. Gas of about fourteen hundred degrees Celsius. The blade itself stays near nine hundred and thirty. That gap, roughly four hundred and seventy degrees, is the whole trick.
 
 So the gas is hotter than the metal could ever take on its own. You'd expect the blade to melt, right? So how does it survive?
+```
 
+## Block 3 of 9 · 1423 characters · save as `voice/jeb_b03.mp3`
+
+```
 Three tricks. And you've seen each one in daily life.
 
 Trick one is the metal itself. If you look inside ordinary metal, you'd see countless tiny crystals stuck together. Like a brick wall. The lines between the bricks are the weak spots.
 
-Under heat and a huge pull, the metal slowly stretches along those lines. Think of a steel spoon left in a flame, with a weight on it. It softens and bends... slowly, right? Engineers call it creep.
+Under heat and a huge pull, the metal slowly stretches along those lines. Think of a steel spoon left in a flame, with a weight on it. It softens and bends... slowly. Engineers call it creep.
 
-So the best blades are grown as one single crystal. No bricks. No lines. You get one solid piece. It's a very strong nickel metal mix, with a rare metal called rhenium added.
+So the best blades are grown as one single crystal. No bricks. No lines. You get one solid piece. It's a super strong metal, mostly nickel, with a rare metal called rhenium added.
 
 Trick two is air. These blades are hollow, with tiny channels inside. Cooler air from the compressor is pushed through them.
-```
 
-## Block 4 of 10 · 705 characters · save as `voice/jeb_b04.mp3`
-
-```
 Then it comes out through rows of tiny holes you can barely see, and spreads over the blade like a thin blanket. Ever walked into a mall through an air curtain at the door? You feel cool air blowing across you. Same idea. A moving sheet of cool air between the hot side and the blade.
 
-Trick three is a ceramic coating on top. Let me explain it simply. A heat shield, like the wall of a thermos flask that keeps your tea hot. It slows the heat from reaching the metal, so you get a cooler blade.
+Trick three is a ceramic coating on top. Let me explain it simply. A heat shield, like the lining of a thermos flask. It slows the heat from reaching the metal, so you get a cooler blade.
 
 So what do you have? A crystal with no weak lines, cool air inside and outside, and a ceramic shield. Together, they keep the metal far cooler than the gas. That's how the blade survives, and now you know it.
 ```
 
-## Block 5 of 10 · 1181 characters · save as `voice/jeb_b05.mp3`
+## Block 4 of 9 · 1181 characters · save as `voice/jeb_b04.mp3`
 
 ```
 But there's one more problem. Do you know what it is? The spin.
@@ -90,12 +86,12 @@ For decades, no engine maker shared it with India.
 So you can see the club is small. America, Russia, Britain and France are the main members. And after decades of struggle, China.
 ```
 
-## Block 6 of 10 · 826 characters · save as `voice/jeb_b06.mp3`
+## Block 5 of 9 · 797 characters · save as `voice/jeb_b05.mp3`
 
 ```
 Now let's see why this matters for you, and for the jets waiting in Nashik.
 
-The Air Force is meant to have forty-two fighter squadrons. That's its basic fighting unit. Today? About twenty-nine. Old jets like the MiG twenty-one have retired.
+The Air Force needs forty-two squadrons of fighter jets. Today it has about twenty-nine. Old jets like the MiG twenty-one have retired.
 
 So the government placed orders. Eighty-three Tejas jets in twenty twenty-one. Ninety-seven more in twenty twenty-five. That's one hundred and eighty jets.
 
@@ -106,7 +102,7 @@ Those engines were due from twenty twenty-three. The first one arrived in March 
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
 
-## Block 7 of 10 · 1436 characters · save as `voice/jeb_b07.mp3`
+## Block 6 of 9 · 1477 characters · save as `voice/jeb_b06.mp3`
 
 ```
 Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you and me?
@@ -115,7 +111,7 @@ Go back to May nineteen ninety-eight. India tests nuclear weapons at Pokhran. Am
 
 Suddenly, no more G.E. engines for India. And American help on the Tejas flight controls? Gone too.
 
-Imagine your supplier saying no to you. Our engineers built the flight control system themselves. And they did it.
+Imagine your supplier saying no to you, just like that. Our engineers built the flight control system themselves. And they did it.
 
 But the lesson was simple. If you don't own the engine, you don't fully own your fighter jet.
 
@@ -127,27 +123,27 @@ The government said yes in nineteen eighty-nine. The deadline? Nineteen ninety-s
 
 The goal was huge. A very powerful engine, with an extra-boost mode called the afterburner. And India was building the Tejas at the same time. Both almost from scratch. That doubled the risk.
 
-Then the prototypes reached the test bench... and you can guess what happened. The numbers didn't add up.
+Then the prototypes reached the test bench... and the numbers didn't add up.
 
 It came out heavier than planned.
 
-And weaker too, as you'd guess. As reported, about seventy units of push instead of the planned eighty-one. Engineers call these units kilonewtons.
+And weaker too. As reported, it gave about seventy units of push. The plan was eighty-one.
 
 And India had no place to test a fighter engine at high altitude. So the Kaveri went to Russia.
-```
 
-## Block 8 of 10 · 1490 characters · save as `voice/jeb_b08.mp3`
-
-```
 In two thousand eight, the Kaveri was cut loose from the Tejas. The Tejas would fly with the American engine.
+```
 
+## Block 7 of 9 · 1380 characters · save as `voice/jeb_b07.mp3`
+
+```
 But the lab didn't stop. In twenty ten, a Kaveri flew on a Russian plane used as a flying test bed. Twenty-seven flights, up to twelve kilometres high.
 
-By twenty twelve, about two thousand crore rupees had gone in. And the estimate? Past twenty-eight hundred crore.
+By twenty twelve, India had spent about two thousand crore on it. And the bill was heading past twenty-eight hundred crore.
 
-So was it all a failure? Not quite, as you'll see. Look at what you get from it.
+So was it all a failure? Not quite. Look at what you get from it.
 
-The lab took off the afterburner and made a simpler engine. The Dry Kaveri. In Russian tests it gave about forty-eight kilonewtons, a little above its target of forty-six. It's now chosen to power India's stealth combat drone, the planned Ghatak.
+The lab took off the afterburner and made a simpler engine. The Dry Kaveri. In Russian tests it gave about forty-eight units of push, a little above its target of forty-six. It's now chosen to power India's stealth combat drone, the planned Ghatak.
 
 Remember that single crystal blade from earlier? India's metals lab in Hyderabad learned to cast them. In twenty twenty-one, it supplied sixty to H.A.L., for a helicopter engine.
 
@@ -155,12 +151,12 @@ Those years weren't wasted. They built a base India didn't have in nineteen eigh
 
 But the next big fighter, the A.M.C.A., needs much more. The first A.M.C.A. jets are planned to use G.E.'s F four one four.
 
-For later ones, India wants a new engine of about one hundred and twenty kilonewtons. And this time, India wants to own the design.
+For later ones, India wants a new engine with about one hundred and twenty units of push. And this time, India wants to own the design.
 
 In August twenty twenty-five, the Defence Minister said India would build it with a French company, Safran, together with G.T.R.E. India's condition? Full Indian ownership of the design. At least, that's what's been reported.
 ```
 
-## Block 9 of 10 · 943 characters · save as `voice/jeb_b09.mp3`
+## Block 8 of 9 · 955 characters · save as `voice/jeb_b08.mp3`
 
 ```
 And here's the catch, and I think you'll agree it's a big one. Right now, in October twenty twenty-six, that deal is still waiting for final approval.
@@ -171,21 +167,21 @@ And remember, China walked this road too. Its J twenty stealth fighter used Russ
 
 So here's the rule I take from all this. If you don't own the engine, you don't fully own the jet.
 
-And the price of that? When the one seller slows down, the jets wait in the hangar... and so do you. Just like in Nashik.
+And the price of that? When the one seller slows down, the jets wait in the hangar. Just like in Nashik.
 
-But the reality today is different. India has, as you've seen, a flight-tested engine base, blade makers in Hyderabad, and a partner on the table. What's left is the hard middle... the hot part of the engine, and the decision.
+But the reality today is different. India has, as you've seen, a flight-tested engine base, blade makers in Hyderabad, and a partner on the table. What's left is the hardest part. Building the hot section of the engine, and deciding who builds it with us.
 ```
 
-## Block 10 of 10 · 1038 characters · save as `voice/jeb_b10.mp3`
+## Block 9 of 9 · 1015 characters · save as `voice/jeb_b09.mp3`
 
 ```
 So what does this mean for you? Why should you care?
 
-It means the jets that guard your skies depend on an engine from another country. Nothing for you to buy or sign here. But you can watch for two signs that India is really moving. And it explains why you'll keep hearing about this Safran deal.
+It means the jets that guard your skies depend on an engine from another country. You don't need to do anything. But you can watch for two signs that India is really moving. And it explains why you'll keep hearing about this Safran deal.
 
 Here's what you should watch. Two things. Does the government give final approval to the Safran engine? And when does the first new Tejas Mark One A finally reach the Air Force?
 
-Let me be honest with you. Even with approval, you won't see a new engine tomorrow. China took decades.
+Honestly? Even with approval, you won't see a new engine tomorrow. China took decades.
 
 India won't fix this in one jump, and you shouldn't expect that. It'll be blade by blade... test by test.
 
