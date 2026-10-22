@@ -24,7 +24,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - Build in phases. At the end of each phase, stop and report what was built, what was measured and what is left.
 - Once the owner approves a cut, stop editing it.
 - **Every final video ends with a YouTube package and a merged PR** (owner, 2026-10-17; PLAYBOOK §13a, `/deliver`):
-  (1) a **thumbnail built for curiosity** (owner, 2026-10-22: low CTR; PLAYBOOK §13b): one real object or moment, a
+  (1) a **thumbnail built for curiosity, the most important thing on a thumbnail** (owner, 2026-10-22: low CTR;
+  PLAYBOOK §13b; the test: one second on a phone must raise a question only the video answers): one real object or moment, a
   visual question, 2–4 words that add to the title and never answer it, bright, honest. **The old navy-card template
   is retired.** Run 3+ concepts through `scripts/thumb_feed.py` and an independent click panel, and deliver a main
   and an A/B challenger (1280×720 JPG, HTML shot with Playwright, like `projects/rare-earth-magnets/youtube/thumb/`);

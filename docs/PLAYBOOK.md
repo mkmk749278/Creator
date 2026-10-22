@@ -1496,6 +1496,11 @@ closing the session keeps `main` complete and stops idle sessions using the shar
    tell the owner which branch to delete, then archive the session (`archive_session`).
 
 ### 13b. Thumbnails that make people curious (owner, 2026-10-22)
+**Curiosity is the most important thing on a thumbnail (owner, 2026-10-22).** It comes before the theme, the
+brand colours, explaining the topic and looking clean. The one test for every thumbnail: *does a viewer who
+sees it for one second on a phone feel a question they need the video to answer?* If not, it fails, however good it
+looks. Every rule below serves that test.
+
 *Why:* our thumbnails got low CTR. Every one was the same dark navy card: yellow text on the right, a mock document
 on the left, a red pill, 6–12 words, and labels like "SIMULATION". In the feed they read as an info slide, not a
 story. They also **answered** the question ("STEP 4 OMBUDSMAN", "5-YEAR RULE", "OUR SAND. CHINA'S MAGNET."), so
