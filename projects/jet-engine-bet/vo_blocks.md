@@ -102,10 +102,10 @@ Those engines were due from twenty twenty-three. The first one came in March twe
 Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
 
-## Block 6 of 9 · 1454 characters · save as `voice/jeb_b06.mp3`
+## Block 6 of 9 · 1434 characters · save as `voice/jeb_b06.mp3`
 
 ```
-Now, a delay is the small problem. Here's the big one. Control, and it touches you. Why does that matter to you?
+Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you?
 
 May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answers with sanctions, under a law called the Glenn Amendment.
 
