@@ -9,7 +9,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent.parent
 CAP = 1500
 # lines (1-based) that open a chapter: a block should start here when it can
-CHAPTERS = ("First, let me show you","Now, a delay","So why not just build one?","Now here's the shocking part","So did India try","So was it all a failure","So here's the rule","So what does this mean")
+CHAPTERS = ("First, let me show you","Now remember this","Three tricks","But there's one more problem","Why is a rocket easier","Now let's see why this matters","Now, a delay","So did India try","So was it all a failure","So here's the rule","So what does this mean")
 
 lines = [l.strip() for l in (HERE / "vo.txt").read_text().splitlines() if l.strip()]
 blocks, cur = [], []
