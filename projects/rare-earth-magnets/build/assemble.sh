@@ -2,11 +2,12 @@
 # Join the rendered parts (video/rem/p1..p5 -> assets/out/pN.mp4) and lay the master audio under them (CLAUDE.md audio):
 # the VO leads (peaks about -2 dB), the bed is ducked under the voice by a sidechain compressor and swells back in the
 # pauses, SFX sit about 9 dB down; then two-pass LINEAR loudnorm to -14 LUFS so pauses keep their contrast.
-# usage: bash projects/rare-earth-magnets/build/assemble.sh OUT.mp4
+# usage: [PARTS_DIR=dir] bash projects/rare-earth-magnets/build/assemble.sh OUT.mp4
 set -euo pipefail
 P=$(cd "$(dirname "$0")/.." && pwd); A=$P/assets; out=${1:-$A/out/rare_earth_magnets_preview.mp4}
 tmp=$(mktemp -d); : > "$tmp/list.txt"
-for i in 1 2 3 4 5; do echo "file '$A/out/p$i.mp4'" >> "$tmp/list.txt"; done
+PARTS=${PARTS_DIR:-$A/out}   # PARTS_DIR=$A/out/4k for the native 4K master (render_parts_4k.sh)
+for i in 1 2 3 4 5; do echo "file '$PARTS/p$i.mp4'" >> "$tmp/list.txt"; done
 ffmpeg -y -loglevel error -f concat -safe 0 -i "$tmp/list.txt" -an -c copy "$tmp/video.mp4"
 dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$tmp/video.mp4")
 mix="[0:a]aresample=48000,aformat=channel_layouts=mono,volume=1.0,apad=whole_dur=$dur,asplit=2[v][vsc];
