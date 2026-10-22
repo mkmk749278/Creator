@@ -71,3 +71,51 @@ Mix: −14.2 LUFS, sample peak −0.9 dBFS.
   - "Pause ends, or stretched?" on the closing calendar.
 - **Mix:** −14.1 LUFS, sample peak −0.5 dBFS (YouTube turns it down, not up).
 - **Lede:** still at 0:30 by the owner's choice (see cut 3).
+
+## Cut 5 (2026-10-22): independent review (separate cloud session, read-only) and fixes, native 4K
+Verdict was "not ready". Fixed:
+
+**Broken or mismatched frames**
+- **5:38 blue channel wipe (Manorama):** replaced by TNM dark beach plus Manorama sand, both before the wipe.
+- **4:42 auto-show car (Reuters cut inside the shot):** replaced by two smokestack pieces (13.0 s and 37.0 s).
+- **End card:** the baked-in tile for the unreleased next film is removed. The YouTube end-screen area is left free.
+- **0:38 empty grid:** dimmed welding sparks on the Chetak line now sit behind Strike/Batteries.
+- **Pixabay jetty (twice):** replaced.
+  - 5:22: the Kerala coast, then the TNM reporter holding black sand ("What's inside our sand").
+  - 8:06: the Vizag plant aerial ("Not at all").
+
+**Maps**
+- India map lifted above the caption band, so Kerala and Tamil Nadu are no longer hidden.
+- Pins appear in the VO's order; the corridor zones follow the VO's order.
+- `map_china` (no Japan pin or arc) is used at 0:42 and 4:16–4:30. Japan appears only with the Japan deal.
+
+**Numbers and wording on screen**
+- The counter reads "~₹7,300 crore", matching the VO (the exact ₹7,280 crore stays in claims.csv).
+- "Samarium-cobalt" → "Heat-proof magnet", matching the VO.
+
+**Captions**
+- At most two lines. The caption box was capped at half the frame by `left:50%`, so it now uses `width:max-content` (≤1500 px).
+- Parts over 96 characters are split into two events.
+
+**Documents**
+- Ather spec: tight crop on the PMSM sentence.
+- Technology.org: headline, then the key-takeaway bullets. The coin-cell photo is gone.
+- Chips moved off the headlines.
+
+**Labels**
+- JDA labels moved below the source logo.
+- 2:34 chips in reading order.
+
+**Grid stretches → dimmed real footage** (`dim=` on video shots):
+- the chain intro over the BMAG line (dim 0.78);
+- the IEA bars over the Baotou mine;
+- the light/heavy tiles over Kerala beach mining (TNM);
+- April 2025 over the Baotou chimney skyline (Sky);
+- 6,000 t/year over the Vizag aerial.
+
+**Not changed**
+- **Narration (locked):** the review's pacing notes (process recital, numbers barrage) are kept for the next script.
+- **MEA spokesperson name tag:** not added, because the identity is unverified.
+- **Package:** the review's title, chapters 7:01 and 10:05, and thumbnail E2 (E rebuilt with its notes).
+
+**Master:** native 4K via `build/render_parts_4k.sh` (`make_native_4k.mjs`, never `--resolution 4k`).

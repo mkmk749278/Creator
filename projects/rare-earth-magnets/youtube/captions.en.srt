@@ -1,0 +1,1123 @@
+1
+00:00:00,000 --> 00:00:02,110
+There's a magnet in your pocket right now.
+
+2
+00:00:02,440 --> 00:00:03,990
+When your phone buzzes,
+
+3
+00:00:03,990 --> 00:00:07,880
+that's a tiny motor spinning... and inside it sits a tiny,
+
+4
+00:00:07,880 --> 00:00:09,280
+very strong magnet.
+
+5
+00:00:09,770 --> 00:00:12,660
+Now check the spec sheet of an electric scooter or car.
+
+6
+00:00:13,070 --> 00:00:14,480
+Look at the motor line,
+
+7
+00:00:14,480 --> 00:00:17,730
+and you'll often see two words... permanent magnet.
+
+8
+00:00:18,070 --> 00:00:20,260
+Same family of magnet, just bigger.
+
+9
+00:00:20,700 --> 00:00:22,320
+No magnet, no motor.
+
+10
+00:00:22,700 --> 00:00:24,600
+No motor... no E.V.
+
+11
+00:00:24,990 --> 00:00:26,750
+And in 2025,
+
+12
+00:00:26,750 --> 00:00:29,920
+that one magnet hit India's E.V. makers hard.
+
+13
+00:00:30,380 --> 00:00:31,600
+July, Pune.
+
+14
+00:00:31,950 --> 00:00:37,400
+Bajaj's electric Chetak factory was making barely half the scooters it made a year earlier.
+
+15
+00:00:37,770 --> 00:00:38,340
+The reason?
+
+16
+00:00:38,670 --> 00:00:39,440
+Not a strike.
+
+17
+00:00:39,610 --> 00:00:40,500
+Not batteries.
+
+18
+00:00:40,840 --> 00:00:44,460
+That small magnet... and most of them come from China.
+
+19
+00:00:44,760 --> 00:00:46,370
+In July 2024,
+
+20
+00:00:46,370 --> 00:00:48,760
+about 20,000 Chetaks a month.
+
+21
+00:00:49,070 --> 00:00:52,330
+In July 2025... less than 11,000.
+
+22
+00:00:52,800 --> 00:00:53,830
+And the crazy part?
+
+23
+00:00:54,050 --> 00:00:58,460
+The raw material for that magnet is lying in the sand on our own beaches
+
+24
+00:00:58,460 --> 00:01:00,180
+— in Andhra Pradesh, Kerala,
+
+25
+00:01:00,180 --> 00:01:01,640
+Tamil Nadu and Odisha.
+
+26
+00:01:01,890 --> 00:01:03,630
+By our own government's count,
+
+27
+00:01:03,630 --> 00:01:07,280
+India's sands hold about 7 million tonnes of rare earths.
+
+28
+00:01:07,630 --> 00:01:09,670
+So why can't India make the magnet?
+
+29
+00:01:09,950 --> 00:01:12,110
+Stay with me, and you'll see three things.
+
+30
+00:01:12,360 --> 00:01:14,700
+The hard step nobody else wanted to do.
+
+31
+00:01:15,000 --> 00:01:16,680
+Then, about six minutes in,
+
+32
+00:01:16,680 --> 00:01:20,040
+the secret inside our sand that kept it locked away.
+
+33
+00:01:20,230 --> 00:01:22,550
+And at the end, the date you should watch.
+
+34
+00:01:23,300 --> 00:01:25,430
+First, what is this magnet?
+
+35
+00:01:25,750 --> 00:01:27,670
+It's called a rare earth magnet.
+
+36
+00:01:27,930 --> 00:01:29,040
+It's mostly iron.
+
+37
+00:01:29,430 --> 00:01:32,450
+Add a little boron... and one special metal,
+
+38
+00:01:32,450 --> 00:01:33,740
+called neodymium.
+
+39
+00:01:34,020 --> 00:01:36,160
+It's small, but it's very strong.
+
+40
+00:01:36,470 --> 00:01:38,980
+And in a motor, strength is everything.
+
+41
+00:01:39,370 --> 00:01:39,900
+Here's why.
+
+42
+00:01:40,220 --> 00:01:43,670
+A stronger magnet gives you the same push from a smaller motor.
+
+43
+00:01:44,040 --> 00:01:45,480
+Smaller means lighter.
+
+44
+00:01:45,730 --> 00:01:48,920
+And lighter means you get more kilometres on one charge.
+
+45
+00:01:49,210 --> 00:01:49,810
+Makes sense?
+
+46
+00:01:50,150 --> 00:01:52,790
+That's why the spec sheet says permanent magnet.
+
+47
+00:01:53,130 --> 00:01:57,320
+Most electric scooters and cars on the road use these magnets in their motors.
+
+48
+00:01:57,580 --> 00:01:58,890
+And it's not just vehicles.
+
+49
+00:01:59,230 --> 00:02:00,680
+Remember the buzz in your phone?
+
+50
+00:02:00,970 --> 00:02:01,950
+Same kind of magnet.
+
+51
+00:02:02,370 --> 00:02:04,740
+You'll also find it in many wind turbines,
+
+52
+00:02:04,740 --> 00:02:06,160
+and in defence systems.
+
+53
+00:02:06,520 --> 00:02:07,660
+Now look at this number.
+
+54
+00:02:08,040 --> 00:02:11,510
+India needs about 4,000 tonnes of these magnets a
+
+55
+00:02:11,510 --> 00:02:14,670
+year... and we buy almost all of them from abroad.
+
+56
+00:02:15,000 --> 00:02:18,430
+And more than eight out of every ten come from one country.
+
+57
+00:02:18,820 --> 00:02:19,310
+China.
+
+58
+00:02:19,700 --> 00:02:21,220
+So you're probably thinking —
+
+59
+00:02:21,220 --> 00:02:22,280
+if the sand is ours,
+
+60
+00:02:22,280 --> 00:02:24,610
+why can't we just dig it up and make them?
+
+61
+00:02:25,090 --> 00:02:26,180
+Let's open that box.
+
+62
+00:02:26,910 --> 00:02:29,670
+Here's the catch, and it may surprise you.
+
+63
+00:02:30,000 --> 00:02:32,270
+Rare earths are not actually rare.
+
+64
+00:02:32,670 --> 00:02:35,050
+The rare part is getting them out clean.
+
+65
+00:02:35,370 --> 00:02:36,650
+There are 17 of them.
+
+66
+00:02:36,910 --> 00:02:38,080
+And when you dig them up,
+
+67
+00:02:38,080 --> 00:02:39,520
+you get them mixed together.
+
+68
+00:02:39,860 --> 00:02:44,310
+Think of them as 17 brothers and sisters who look almost exactly alike.
+
+69
+00:02:44,750 --> 00:02:46,940
+Nearly the same size, same habits,
+
+70
+00:02:46,940 --> 00:02:48,730
+almost the same chemistry.
+
+71
+00:02:49,090 --> 00:02:51,040
+To your eye, and to most chemicals,
+
+72
+00:02:51,040 --> 00:02:52,220
+they look the same.
+
+73
+00:02:52,550 --> 00:02:55,040
+So how do you pull one of them out of the crowd?
+
+74
+00:02:55,460 --> 00:02:57,360
+There's no single magic step.
+
+75
+00:02:57,570 --> 00:02:59,260
+You dissolve the mix in acid,
+
+76
+00:02:59,260 --> 00:03:02,240
+and the liquid flows through a long row of tanks.
+
+77
+00:03:02,590 --> 00:03:05,800
+Each tank pulls them apart... only a tiny bit.
+
+78
+00:03:06,070 --> 00:03:07,270
+So you repeat it.
+
+79
+00:03:07,520 --> 00:03:08,710
+Again and again.
+
+80
+00:03:09,070 --> 00:03:12,260
+A big plant can run hundreds of these tanks in a row,
+
+81
+00:03:12,260 --> 00:03:14,180
+just to get one element clean.
+
+82
+00:03:14,590 --> 00:03:16,400
+Think of it like climbing stairs.
+
+83
+00:03:16,540 --> 00:03:19,990
+Each tank is one step... it lifts you only a little.
+
+84
+00:03:20,410 --> 00:03:22,470
+Want one rare earth, nearly pure?
+
+85
+00:03:22,830 --> 00:03:24,650
+You climb hundreds of steps.
+
+86
+00:03:24,910 --> 00:03:26,380
+And that's only the first half.
+
+87
+00:03:26,760 --> 00:03:28,300
+The second half is faster.
+
+88
+00:03:28,570 --> 00:03:29,600
+Let me run you through it.
+
+89
+00:03:29,930 --> 00:03:32,730
+Next, the clean rare earth becomes a metal.
+
+90
+00:03:32,970 --> 00:03:37,320
+You melt it with iron and boron... and that mix is called an alloy.
+
+91
+00:03:37,720 --> 00:03:40,030
+Then you cool it into thin pieces.
+
+92
+00:03:40,320 --> 00:03:42,300
+Hydrogen gas cracks those pieces,
+
+93
+00:03:42,300 --> 00:03:45,410
+and you grind them into a powder finer than flour.
+
+94
+00:03:45,750 --> 00:03:49,040
+You line that powder up inside a strong magnetic field,
+
+95
+00:03:49,040 --> 00:03:50,350
+press it into a block,
+
+96
+00:03:50,350 --> 00:03:53,340
+and bake it at about 1,000 degrees Celsius.
+
+97
+00:03:53,690 --> 00:03:56,880
+Only at the very end do you switch on its magnetism.
+
+98
+00:03:57,250 --> 00:03:59,670
+That's when you finally have a magnet.
+
+99
+00:04:00,350 --> 00:04:02,680
+So a magnet isn't one factory.
+
+100
+00:04:02,960 --> 00:04:03,740
+It's a chain.
+
+101
+00:04:04,180 --> 00:04:06,110
+Sand, to mixed rare earths,
+
+102
+00:04:06,110 --> 00:04:09,470
+to clean rare earth powder, to metal, to alloy,
+
+103
+00:04:09,470 --> 00:04:10,310
+to magnet.
+
+104
+00:04:10,750 --> 00:04:12,800
+Miss one link... and you're stuck.
+
+105
+00:04:13,300 --> 00:04:14,270
+Remember this chain.
+
+106
+00:04:14,540 --> 00:04:15,750
+It's the whole story.
+
+107
+00:04:16,230 --> 00:04:19,140
+So how did China end up leading every link?
+
+108
+00:04:19,460 --> 00:04:20,890
+In 1992,
+
+109
+00:04:20,890 --> 00:04:24,180
+China's leader Deng Xiaoping is reported to have said
+
+110
+00:04:24,180 --> 00:04:25,800
+— the Middle East has oil,
+
+111
+00:04:25,800 --> 00:04:27,290
+China has rare earths.
+
+112
+00:04:27,630 --> 00:04:30,160
+And China treated it like a national mission.
+
+113
+00:04:30,520 --> 00:04:32,350
+Long-term, and patient.
+
+114
+00:04:32,610 --> 00:04:34,110
+Until about 40 years ago,
+
+115
+00:04:34,110 --> 00:04:36,630
+America made most of the world's rare earths.
+
+116
+00:04:37,020 --> 00:04:38,580
+Then the work moved to China,
+
+117
+00:04:38,580 --> 00:04:41,750
+where labour was cheaper and pollution rules were weaker.
+
+118
+00:04:41,990 --> 00:04:44,730
+Because separating rare earths is dirty work.
+
+119
+00:04:44,980 --> 00:04:46,090
+Strong acids.
+
+120
+00:04:46,190 --> 00:04:47,220
+Lots of waste.
+
+121
+00:04:47,620 --> 00:04:50,120
+Most countries were happy to let someone else do it.
+
+122
+00:04:50,490 --> 00:04:53,790
+So China did it for 30 years... and got very,
+
+123
+00:04:53,790 --> 00:04:54,980
+very good at it.
+
+124
+00:04:55,300 --> 00:04:57,660
+Now look at where that leaves you and me today.
+
+125
+00:04:58,010 --> 00:04:59,970
+Digging up the rare earths for magnets?
+
+126
+00:05:00,280 --> 00:05:02,130
+China does about six out of ten.
+
+127
+00:05:02,500 --> 00:05:03,190
+Cleaning them?
+
+128
+00:05:03,450 --> 00:05:04,740
+More than eight out of ten.
+
+129
+00:05:05,110 --> 00:05:06,230
+Making the magnets?
+
+130
+00:05:06,460 --> 00:05:07,850
+More than nine out of ten.
+
+131
+00:05:08,180 --> 00:05:10,400
+That's from the International Energy Agency.
+
+132
+00:05:10,810 --> 00:05:11,880
+Do you notice something?
+
+133
+00:05:12,170 --> 00:05:13,930
+Digging is the easy part.
+
+134
+00:05:14,230 --> 00:05:18,990
+The tanks and the furnaces are the hard part... and China runs most of them.
+
+135
+00:05:19,710 --> 00:05:21,180
+So what about India?
+
+136
+00:05:21,540 --> 00:05:23,110
+We had the sand all along.
+
+137
+00:05:23,450 --> 00:05:24,330
+What stopped us?
+
+138
+00:05:24,740 --> 00:05:25,880
+I'll give you two things.
+
+139
+00:05:26,200 --> 00:05:27,680
+What's inside our sand.
+
+140
+00:05:27,960 --> 00:05:29,570
+And what we did with it.
+
+141
+00:05:29,940 --> 00:05:30,490
+In India,
+
+142
+00:05:30,490 --> 00:05:33,870
+rare earths mostly come in a mineral called monazite.
+
+143
+00:05:34,110 --> 00:05:37,870
+You'll find it in the dark sand on some beaches in the south and east.
+
+144
+00:05:38,170 --> 00:05:40,590
+And monazite has a surprise inside it.
+
+145
+00:05:40,890 --> 00:05:41,510
+Thorium.
+
+146
+00:05:41,850 --> 00:05:42,850
+It's radioactive,
+
+147
+00:05:42,850 --> 00:05:45,030
+and it can be used as nuclear fuel.
+
+148
+00:05:45,300 --> 00:05:47,340
+And that one fact, as you'll see,
+
+149
+00:05:47,340 --> 00:05:49,690
+changed how India handled this sand.
+
+150
+00:05:50,080 --> 00:05:50,720
+So by law,
+
+151
+00:05:50,720 --> 00:05:53,520
+monazite is treated as an atomic material.
+
+152
+00:05:53,760 --> 00:05:55,260
+Under the Atomic Energy Act,
+
+153
+00:05:55,260 --> 00:05:58,230
+only one government company is allowed to process it.
+
+154
+00:05:58,410 --> 00:06:00,190
+Indian Rare Earths Limited —
+
+155
+00:06:00,190 --> 00:06:02,400
+today it's simply called IREL
+
+156
+00:06:02,750 --> 00:06:05,070
+If you think about it, that kept things safe.
+
+157
+00:06:05,490 --> 00:06:08,330
+But for decades it also kept the business small.
+
+158
+00:06:08,560 --> 00:06:13,330
+Even India's own mining bureau wrote that demand for rare earths at home was limited.
+
+159
+00:06:13,690 --> 00:06:15,150
+And here's the painful part.
+
+160
+00:06:15,360 --> 00:06:16,570
+In 2024,
+
+161
+00:06:16,570 --> 00:06:20,640
+IREL produced about 2,900 tonnes of rare earths.
+
+162
+00:06:20,810 --> 00:06:23,200
+And more than 1,000 tonnes went to Japan,
+
+163
+00:06:23,200 --> 00:06:25,510
+under a deal signed back in 2012.
+
+164
+00:06:25,920 --> 00:06:26,620
+Think about it.
+
+165
+00:06:26,800 --> 00:06:30,570
+You send the raw material out... and you buy the finished magnets in.
+
+166
+00:06:30,880 --> 00:06:32,360
+So you sell the cheap part,
+
+167
+00:06:32,360 --> 00:06:34,300
+and you buy back the costly part.
+
+168
+00:06:34,650 --> 00:06:36,330
+There's one more honest problem.
+
+169
+00:06:36,560 --> 00:06:39,150
+Our sand is rich in the lighter rare earths,
+
+170
+00:06:39,150 --> 00:06:40,150
+like neodymium.
+
+171
+00:06:40,820 --> 00:06:45,320
+But a magnet inside a hot motor also needs a little of two heavier ones
+
+172
+00:06:45,320 --> 00:06:46,970
+— dysprosium and terbium —
+
+173
+00:06:46,970 --> 00:06:49,180
+to keep its strength in the heat.
+
+174
+00:06:49,540 --> 00:06:53,580
+Our own atomic energy department says India has very little of those.
+
+175
+00:06:53,940 --> 00:06:56,130
+For now, we depend on others for them.
+
+176
+00:06:56,440 --> 00:06:59,110
+So the sand alone was never going to be enough.
+
+177
+00:06:59,540 --> 00:07:00,910
+You need the whole chain.
+
+178
+00:07:01,270 --> 00:07:03,030
+And then came the wake-up call.
+
+179
+00:07:03,410 --> 00:07:04,950
+April, 2025.
+
+180
+00:07:05,360 --> 00:07:08,820
+China said companies now need special permission to send out
+
+181
+00:07:08,820 --> 00:07:11,940
+seven rare earths... and the magnets made with them.
+
+182
+00:07:12,350 --> 00:07:13,590
+Permission takes time.
+
+183
+00:07:13,850 --> 00:07:16,170
+And while you wait, your supply dries up.
+
+184
+00:07:16,500 --> 00:07:18,790
+You saw what that did to Bajaj by July.
+
+185
+00:07:19,050 --> 00:07:21,190
+Ather and TVS felt the pressure too.
+
+186
+00:07:21,510 --> 00:07:23,950
+Back in April, Rajiv Bajaj had warned —
+
+187
+00:07:23,950 --> 00:07:25,900
+if China stopped these magnets,
+
+188
+00:07:25,900 --> 00:07:30,030
+India's whole electric vehicle industry could halt within weeks.
+
+189
+00:07:30,360 --> 00:07:30,690
+Later,
+
+190
+00:07:30,690 --> 00:07:33,970
+China started giving permission to some Indian companies.
+
+191
+00:07:34,220 --> 00:07:35,280
+But there was a condition.
+
+192
+00:07:35,560 --> 00:07:38,030
+You couldn't use those magnets for defence.
+
+193
+00:07:38,290 --> 00:07:40,390
+Then in October 2025,
+
+194
+00:07:40,390 --> 00:07:42,610
+China announced even tougher rules.
+
+195
+00:07:42,870 --> 00:07:45,410
+But after talks with America, it paused them —
+
+196
+00:07:45,410 --> 00:07:46,250
+for one year.
+
+197
+00:07:46,560 --> 00:07:48,530
+That pause ends on November 10,
+
+198
+00:07:48,530 --> 00:07:49,690
+2026.
+
+199
+00:07:50,000 --> 00:07:54,150
+America and China have already stretched their own trade deal till January.
+
+200
+00:07:54,390 --> 00:07:55,580
+So here's what you watch.
+
+201
+00:07:55,920 --> 00:07:59,170
+Will China stretch this pause too... or let it end?
+
+202
+00:07:59,530 --> 00:08:00,920
+And the April permission rule?
+
+203
+00:08:01,210 --> 00:08:02,290
+It never went away.
+
+204
+00:08:03,050 --> 00:08:05,010
+So is India just waiting?
+
+205
+00:08:05,390 --> 00:08:08,280
+Not at all — and this part might surprise you.
+
+206
+00:08:08,660 --> 00:08:09,720
+In Visakhapatnam,
+
+207
+00:08:09,720 --> 00:08:12,770
+on a campus of the Bhabha Atomic Research Centre,
+
+208
+00:08:12,770 --> 00:08:15,690
+India already runs a rare earth magnet plant.
+
+209
+00:08:15,990 --> 00:08:18,090
+It's built with our own technology,
+
+210
+00:08:18,090 --> 00:08:20,070
+from Bhabha and a DRDO lab.
+
+211
+00:08:20,310 --> 00:08:23,510
+And it makes a special magnet that can take high heat,
+
+212
+00:08:23,510 --> 00:08:25,710
+the kind used in defence and space.
+
+213
+00:08:25,990 --> 00:08:27,570
+In November 2025,
+
+214
+00:08:27,570 --> 00:08:32,130
+the government approved a scheme worth about ₹7,300 crore.
+
+215
+00:08:32,380 --> 00:08:32,930
+The goal?
+
+216
+00:08:33,210 --> 00:08:35,840
+6,000 tonnes of magnets a year,
+
+217
+00:08:35,840 --> 00:08:36,930
+made in India.
+
+218
+00:08:37,200 --> 00:08:39,790
+And the full chain — from rare earth powder,
+
+219
+00:08:39,790 --> 00:08:42,200
+to metal, to alloy, to finished magnet.
+
+220
+00:08:42,520 --> 00:08:44,160
+Five companies will share that.
+
+221
+00:08:44,380 --> 00:08:46,020
+In August 2026,
+
+222
+00:08:46,020 --> 00:08:47,320
+20 bids came in.
+
+223
+00:08:47,590 --> 00:08:50,620
+Among them, L&T, Coal India and ReNew.
+
+224
+00:08:50,850 --> 00:08:52,640
+The winners are still to be announced,
+
+225
+00:08:52,640 --> 00:08:53,990
+so keep your eyes on this.
+
+226
+00:08:54,210 --> 00:08:58,820
+The 2026 budget also announced special rare earth zones in Odisha,
+
+227
+00:08:58,820 --> 00:09:01,150
+Kerala, Andhra Pradesh and Tamil Nadu.
+
+228
+00:09:01,350 --> 00:09:04,200
+Mining, processing, research and factories,
+
+229
+00:09:04,200 --> 00:09:05,250
+all linked up.
+
+230
+00:09:05,580 --> 00:09:07,140
+And remember the Japan deal?
+
+231
+00:09:07,380 --> 00:09:08,960
+In June 2025,
+
+232
+00:09:08,960 --> 00:09:12,760
+Reuters reported that India asked IREL to stop those exports,
+
+233
+00:09:12,760 --> 00:09:14,810
+and keep the rare earths at home.
+
+234
+00:09:15,030 --> 00:09:17,310
+So the plan is to keep the sand here.
+
+235
+00:09:17,600 --> 00:09:18,850
+The money is here.
+
+236
+00:09:19,070 --> 00:09:21,720
+Now comes the hard middle you saw in that chain.
+
+237
+00:09:22,490 --> 00:09:24,780
+Let me be honest with you about the timeline.
+
+238
+00:09:25,220 --> 00:09:26,150
+Under the scheme,
+
+239
+00:09:26,150 --> 00:09:28,060
+plants get two years to be built.
+
+240
+00:09:28,300 --> 00:09:30,000
+Then five years of support.
+
+241
+00:09:30,400 --> 00:09:33,720
+And China has a head start of more than 30 years.
+
+242
+00:09:34,090 --> 00:09:36,070
+Running hundreds of tanks well,
+
+243
+00:09:36,070 --> 00:09:38,300
+every single day, takes practice.
+
+244
+00:09:38,670 --> 00:09:40,010
+You can't buy that overnight.
+
+245
+00:09:40,410 --> 00:09:42,440
+So here's the rule I take from all this.
+
+246
+00:09:42,840 --> 00:09:44,470
+If you only sell the sand,
+
+247
+00:09:44,470 --> 00:09:46,900
+you sell cheap and you buy expensive.
+
+248
+00:09:47,330 --> 00:09:48,280
+And the price of that?
+
+249
+00:09:48,590 --> 00:09:50,340
+When the one seller says stop,
+
+250
+00:09:50,340 --> 00:09:51,630
+your factories stop.
+
+251
+00:09:52,150 --> 00:09:53,110
+You saw it in Pune.
+
+252
+00:09:53,560 --> 00:09:55,010
+But here's the reality today.
+
+253
+00:09:55,480 --> 00:09:56,740
+India has the sand.
+
+254
+00:09:57,020 --> 00:09:58,210
+It has the scientists.
+
+255
+00:09:58,470 --> 00:10:00,060
+And now it has the money.
+
+256
+00:10:00,420 --> 00:10:03,350
+What's left is the hard middle — more tanks,
+
+257
+00:10:03,350 --> 00:10:04,600
+and the furnaces.
+
+258
+00:10:05,040 --> 00:10:06,470
+So what does this mean for you?
+
+259
+00:10:06,860 --> 00:10:09,970
+If you're planning to buy an electric scooter or a new phone,
+
+260
+00:10:09,970 --> 00:10:10,800
+remember this.
+
+261
+00:10:11,100 --> 00:10:14,000
+A small magnet inside it depends on this chain
+
+262
+00:10:14,000 --> 00:10:16,020
+— and that can change its price,
+
+263
+00:10:16,020 --> 00:10:18,600
+and even when it reaches your showroom.
+
+264
+00:10:18,970 --> 00:10:19,940
+Watch two things.
+
+265
+00:10:20,280 --> 00:10:22,730
+November 10 — does China's pause end,
+
+266
+00:10:22,730 --> 00:10:23,890
+or get stretched?
+
+267
+00:10:24,170 --> 00:10:25,530
+And the scheme winners —
+
+268
+00:10:25,530 --> 00:10:29,160
+the five companies that will try to build India's own magnets.
+
+269
+00:10:29,480 --> 00:10:31,310
+India won't fix this in one jump.
+
+270
+00:10:31,660 --> 00:10:34,600
+It'll be tank by tank... furnace by furnace.
+
+271
+00:10:34,890 --> 00:10:37,260
+And magnets aren't the only missing piece.
+
+272
+00:10:37,560 --> 00:10:40,920
+India is called the pharmacy of the world... but a big share of
+
+273
+00:10:40,920 --> 00:10:43,760
+the ingredients in your medicines comes from China.
+
+274
+00:10:44,200 --> 00:10:44,610
+Why?
+
+275
+00:10:45,020 --> 00:10:46,230
+That's our next story.
+
+276
+00:10:46,570 --> 00:10:48,570
+Which missing piece should we open after that?
+
+277
+00:10:48,870 --> 00:10:49,830
+Tell me in the comments.
+
+278
+00:10:49,910 --> 00:10:51,040
+I read every one.
+
+279
+00:10:51,390 --> 00:10:52,940
+This is Be Practical with Kishore.
+
+280
+00:10:53,270 --> 00:10:54,080
+Stay practical.
+
+281
+00:10:54,370 --> 00:10:54,840
+Jai Hind.
