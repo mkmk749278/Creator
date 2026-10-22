@@ -102,10 +102,8 @@ export function makeJet({ detail = 1, seed = 1 } = {}) {
       new THREE.MeshStandardMaterial({ color: 0x15161a, roughness: 0.7, metalness: 0.5, side: THREE.BackSide }));
     tube.rotation.x = Math.PI / 2; tube.position.set(0, 0.05, JET.nozzleZ + JET.bayLen / 2 - 0.2); air.add(tube);
     const ribMat = new THREE.MeshStandardMaterial({ color: 0x2a2c31, roughness: 0.6, metalness: 0.7 });
-    for (let i = 0; i < 9; i++) { const rib = new THREE.Mesh(new THREE.TorusGeometry(JET.tubeR * 0.97, 0.02, 8, 36), ribMat); rib.position.set(0, 0.05, JET.nozzleZ + 0.5 + i * 0.92); air.add(rib); }
-    for (let i = 0; i < 6; i++) { const a = (i / 6) * Math.PI * 2 + 0.3; const pipe = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, JET.bayLen - 1.4, 8), ribMat);
-      pipe.rotation.x = Math.PI / 2; pipe.position.set(Math.cos(a) * (JET.tubeR - 0.04), 0.05 + Math.sin(a) * (JET.tubeR - 0.04), JET.nozzleZ + JET.bayLen / 2 - 0.4); air.add(pipe); }
-    const endwall = new THREE.Mesh(new THREE.CircleGeometry(JET.tubeR, 32), new THREE.MeshStandardMaterial({ color: 0x0a0b0d, roughness: 0.7, metalness: 0.3 }));
+    for (let i = 0; i < 9; i++) { const rib = new THREE.Mesh(new THREE.TorusGeometry(JET.tubeR * 0.97, 0.012, 8, 36), ribMat); rib.position.set(0, 0.05, JET.nozzleZ + 0.5 + i * 0.92); air.add(rib); }
+    const endwall = new THREE.Mesh(new THREE.CircleGeometry(JET.tubeR, 32), new THREE.MeshStandardMaterial({ color: 0x040405, roughness: 0.8, metalness: 0.2 }));
     endwall.position.set(0, 0.05, JET.nozzleZ + JET.bayLen - 0.35); endwall.rotation.y = Math.PI; air.add(endwall);
     // landing gear
     const gearMat = new THREE.MeshStandardMaterial({ color: 0xaab0b8, roughness: 0.35, metalness: 0.8 }); const tyre = new THREE.MeshStandardMaterial({ color: 0x0c0d0f, roughness: 0.9 });
