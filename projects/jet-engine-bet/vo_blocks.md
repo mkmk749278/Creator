@@ -2,18 +2,18 @@
 
 Voice: Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/jeb_bNN.mp3` (NN = block number).
 
-## Block 1 of 9 · 940 characters · save as `voice/jeb_b01.mp3`
+## Block 1 of 9 · 931 characters · save as `voice/jeb_b01.mp3`
 
 ```
 October, twenty twenty-six. In H.A.L. hangars in Bengaluru and Nashik, close to thirty brand new Tejas fighter jets are standing ready. Painted. Radars fitted. You'd think they're ready to fly.
 
 And not one of them has reached the Air Force yet.
 
-The reason? Not the radar. An engine. America's G.E. has sent only fourteen of the ninety-nine engines these jets need.
+The biggest reason? An engine. America's G.E. has sent only fourteen of the ninety-nine engines these jets need.
 
 And here's the crazy part. Inside that engine, a small metal blade sits in gas that is hotter than the blade's own melting point... and the blade does not melt.
 
-Very few countries on Earth can make that blade. Can you guess how? India is still learning.
+Very few countries on Earth can make that blade. Do you know why? India is still learning.
 
 So how does a jet engine really work? Why is it so hard to copy? Stay with me, and you'll see three things. First, how it works, using things in your own kitchen. Then, in about three minutes, the blade that should melt, and the three tricks that save it. And at the end, the decision that is still waiting in Delhi.
 ```
@@ -78,7 +78,7 @@ Rolls-Royce says the pull you'd feel on each blade is like a London bus hanging 
 So picture it, you and me, looking at one blade. Would you trust it? Gas hotter than its melting point. A bus hanging from it. For thousands of hours.
 ```
 
-## Block 5 of 9 · 1450 characters · save as `voice/jeb_b05.mp3`
+## Block 5 of 9 · 1404 characters · save as `voice/jeb_b05.mp3`
 
 ```
 Why is a rocket easier? Because you only need it for minutes. A rocket engine fires for minutes, not hours, and then it falls away. A fighter engine has to breathe air, go from idle to full power in seconds, and keep going for thousands of hours.
@@ -93,18 +93,18 @@ Now let's see why this matters for you, and for the jets waiting in Nashik.
 
 Let me give you the numbers. The Air Force is supposed to have forty-two fighter squadrons. Today it has about twenty-nine. The old MiG twenty-one retired in September twenty twenty-five.
 
-So the government ordered eighty-three Tejas jets in twenty twenty-one, and ninety-seven more in twenty twenty-five. That's one hundred and eighty jets.
+So the government ordered eighty-three Tejas jets in twenty twenty-one, and ninety-seven more in twenty twenty-five. That's one hundred and eighty jets. Think of the hole that leaves for you.
 
 But H.A.L. doesn't make the engine. Every one of them runs on the F four zero four, built by G.E. in Lynn, Massachusetts.
 
 Those engines were due from twenty twenty-three. The first one came in March twenty twenty-five. G.E. blamed its supply chain. H.A.L. has put penalties on G.E. for the delay.
-
-Radar and missile work is still pending too. But the engine is the biggest hold-up.
 ```
 
-## Block 6 of 9 · 1436 characters · save as `voice/jeb_b06.mp3`
+## Block 6 of 9 · 1499 characters · save as `voice/jeb_b06.mp3`
 
 ```
+Radar and missile work is still pending too, if you're asking. But the engine is the biggest hold-up.
+
 Now, a delay is the small problem. Here's the big one. Control. Why does that matter to you?
 
 May, nineteen ninety-eight. India tests nuclear weapons at Pokhran. America answers with sanctions, under a law called the Glenn Amendment.
@@ -115,7 +115,7 @@ Imagine your supplier saying no. Our engineers built the flight control system t
 
 But the lesson was simple. If you don't own the engine, you don't fully own your fighter jet.
 
-So did India try to build its own? Of course. Yes. And that's where the story gets painful.
+So did India try to build its own? Yes. And that's where the story gets painful.
 
 In nineteen eighty-six, our engineers began planning a fighter engine. The job went to G.T.R.E., a D.R.D.O. lab in Bengaluru. They named the engine Kaveri.
 
@@ -125,12 +125,12 @@ The goal was huge. Eighty-one kilonewtons of push with the afterburner on. And I
 
 Then the prototypes reached the test bench... and you can guess what happened. The numbers didn't add up.
 
-Let me give you the numbers. It was meant to weigh eleven hundred kilos. It weighed twelve hundred and thirty-five.
+It was meant to weigh eleven hundred kilos. It weighed twelve hundred and thirty-five.
 
 It was meant to give eighty-one kilonewtons. As reported, it reached only about seventy.
 ```
 
-## Block 7 of 9 · 1406 characters · save as `voice/jeb_b07.mp3`
+## Block 7 of 9 · 1386 characters · save as `voice/jeb_b07.mp3`
 
 ```
 And India had no place to test a fighter engine at high altitude. So the Kaveri went to Russia.
@@ -145,13 +145,13 @@ So was it all a failure? Not quite. Look at what you get from it.
 
 G.T.R.E. took off the afterburner and made a simpler engine. The Dry Kaveri. In Russian tests it gave about forty-eight kilonewtons, a little above its target. It's now chosen to power India's stealth combat drone, the planned Ghatak.
 
-Remember that single crystal blade from earlier? D.R.D.O.'s metals lab in Hyderabad learned to cast them. In twenty twenty-one, it supplied sixty to H.A.L. Did you know that? for a helicopter engine.
+Remember that single crystal blade from earlier? D.R.D.O.'s metals lab in Hyderabad learned to cast them. In twenty twenty-one, it supplied sixty to H.A.L., for a helicopter engine. Did you know that?
 
 Those years weren't wasted. They built a base India didn't have in nineteen eighty-six. And you can build on a base.
 
 But the next big fighter, the A.M.C.A., needs much more. The first A.M.C.A. jets will use G.E.'s F four one four.
 
-For later ones, India wants a new engine of about one hundred and twenty kilonewtons. And this time, India wants to own the design. Would you want less?
+For later ones, India wants a new engine of about one hundred and twenty kilonewtons. And this time, India wants to own the design.
 ```
 
 ## Block 8 of 9 · 1074 characters · save as `voice/jeb_b08.mp3`
