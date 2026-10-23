@@ -36,8 +36,12 @@ Then it tells the real story of Kaveri, what India has built since, and the deci
 ```
 
 ## Thumbnail
-Concepts in `thumbnail_a.jpg`, `thumbnail_b.jpg`, `thumbnail_c.jpg` (built from `thumb/thumb_*.html`, PLAYBOOK §13b):
-- **A, "INDIA'S MISSING PIECE"**: a real Tejas (MoD, GODL-India) with its engine glow circled. The series name, one object, bright sky.
-- **B, "WHERE'S THE ENGINE?"**: the real first Mk1A rolled out at HAL, its tail circled. The film opens on this exact question.
-- **C, "ONLY 5 NATIONS CAN MAKE THIS"**: the hero turbine blade glowing hot (our render).
-The TurboSquid CG model is never used in a thumbnail (editorial licence).
+- **Main: `thumbnail_c.jpg`**, "ONLY 5 NATIONS CAN MAKE THIS" + red stamp "INDIA: NOT YET" on the hero turbine blade (our render).
+  Curiosity: what is this glowing part, and why can't India make it yet? Matches the film's line "Only four or five countries
+  know how to make that blade. India has been chasing that secret for forty years."
+- **A/B challenger (Test & Compare): `thumbnail_b.jpg`**, "30 JETS. 0 DELIVERED." on the real first Tejas Mk1A rolled out at
+  HAL (MoD, GODL-India, credited in the corner). The film's lede in the first 25 s.
+- Dropped: `thumbnail_a.jpg` ("INDIA'S MISSING PIECE" over a lit afterburner reads as a contradiction).
+- Independent click panel (session 2026-10-23, five Indian phone viewers): ranked C > B > A; asked for the stamp on C, an
+  honest text on B (the jet in the photo is complete, so no circle and no "no engines"), and to drop A.
+- Phone-feed check: `qa_feed/feed_small.png`. The TurboSquid CG model is never used in a thumbnail (editorial licence).
