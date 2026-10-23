@@ -1,0 +1,252 @@
+1
+00:00:00,000 --> 00:00:02,360
+October, twenty twenty-six.
+
+2
+00:00:02,360 --> 00:00:07,763
+Come with me for a second inside the H-A-L hangars in Bengaluru and Nashik.
+
+3
+00:00:07,763 --> 00:00:20,753
+Look around you. You’re looking at nearly thirty brand-new Tejas fighter jets standing in dead silence. Painted. Radars fitted. Cockpits wired. They look lethal.
+
+4
+00:00:20,753 --> 00:00:25,832
+Yet not a single one has been delivered to the Air Force. Not one.
+
+5
+00:00:25,832 --> 00:00:30,524
+Walk around to the back with me, and look right into the exhaust. What do you see?
+
+6
+00:00:30,524 --> 00:00:33,653
+Nothing. It’s a hollow, empty tunnel.
+
+7
+00:00:33,653 --> 00:00:41,810
+America’s G-E was supposed to deliver ninety-nine F-404 engines for these jets. As of today? They’ve sent just fourteen.
+
+8
+00:00:41,810 --> 00:00:53,881
+Now, I know what you’re thinking. India lands rovers on the Moon, launches commercial satellites, and builds supercomputers. Why on earth can’t we just build an engine and get our own jets in the air?
+
+9
+00:00:53,881 --> 00:00:59,415
+That question takes you straight to the single hardest engineering puzzle on the planet.
+
+10
+00:00:59,415 --> 00:01:11,959
+Deep inside every modern fighter engine, there’s a tiny metal blade no bigger than your smartphone. During flight, it spins inside an inferno hotter than its own melting point — and it does not melt.
+
+11
+00:01:11,959 --> 00:01:19,547
+Only four or five countries on the planet know how to make that blade. India has been chasing that secret for forty years.
+
+12
+00:01:19,547 --> 00:01:26,457
+To see why this tiny piece of metal is such a nightmare, look at how a fighter engine actually breathes.
+
+13
+00:01:26,457 --> 00:01:37,090
+Think of it as a continuous blowtorch driving its own massive air pump. Four simple steps: Suck. Squeeze. Burn. And Blow.
+
+14
+00:01:37,090 --> 00:01:43,645
+Suck: That giant front fan gulps in hundreds of kilograms of air every single second.
+
+15
+00:01:43,645 --> 00:01:56,601
+Squeeze: You know what happens when you compress air — physics forces the temperature and pressure through the roof. Rows of spinning blades pack that air down until pressure hits thirty times atmospheric level.
+
+16
+00:01:56,601 --> 00:02:06,376
+Burn: Jet fuel sprays into that packed air and catches fire — an explosive, continuous hurricane reaching seventeen hundred degrees Celsius.
+
+17
+00:02:06,376 --> 00:02:18,488
+And Blow: That roaring gas blasts backward, slams into the turbine, spins the central shaft driving the front compressor, and shoots out the exhaust — throwing a forty-ton fighter past the speed of sound.
+
+18
+00:02:18,488 --> 00:02:21,358
+Now, hold on. Where does that turbine sit?
+
+19
+00:02:21,358 --> 00:02:23,186
+Directly behind the fire.
+
+20
+00:02:23,186 --> 00:02:39,330
+Think about this for a second. Test data from Rolls-Royce and Cambridge University shows that the gas blasting out of the combustor is two hundred degrees hotter than the temperature that turns the blade’s alloy into a liquid puddle.
+
+21
+00:02:39,330 --> 00:02:44,245
+The gas is at fourteen hundred degrees, but the blade stays at nine hundred and thirty.
+
+22
+00:02:44,245 --> 00:02:47,004
+That’s a four-hundred-and-seventy-degree gap.
+
+23
+00:02:47,004 --> 00:02:54,795
+If that gap collapses for even half a second, the blade turns to water, and the entire engine disintegrates in mid-air.
+
+24
+00:02:54,795 --> 00:02:59,429
+So how does a piece of metal survive an inferno that should destroy it?
+
+25
+00:02:59,429 --> 00:03:02,261
+Engineers use three brilliant tricks.
+
+26
+00:03:02,261 --> 00:03:05,332
+First: The blade has zero joints.
+
+27
+00:03:05,332 --> 00:03:21,038
+If you look at an ordinary steel spoon under a microscope, it looks like a brick wall — billions of tiny crystals glued together. Under brutal heat and heavy pulling, metal slowly stretches along those joints. Engineers call it creep.
+
+28
+00:03:21,038 --> 00:03:36,682
+So modern turbine blades aren't forged, cut, or welded. They are grown inside a vacuum furnace as one single, continuous crystal of nickel superalloy laced with rare rhenium. No bricks. No joints. No weak lines.
+
+29
+00:03:36,682 --> 00:03:39,237
+Second: The blade is hollow.
+
+30
+00:03:39,237 --> 00:03:48,957
+Cut it open, and you’ll find an internal maze. Cooler air from the front compressor is pumped up through the base, carrying away heat from the inside out.
+
+31
+00:03:48,957 --> 00:03:51,665
+Third — and look at how clever this is:
+
+32
+00:03:51,665 --> 00:04:02,108
+That cooling air bleeds out through thousands of laser-drilled micro-holes along the blade’s edge. It wraps the metal in a moving, paper-thin blanket of cool air.
+
+33
+00:04:02,108 --> 00:04:09,763
+The seventeen-hundred-degree fire never actually touches the metal! It skims across an invisible shield of cool air.
+
+34
+00:04:09,763 --> 00:04:14,785
+Add a ceramic thermal barrier coating on top, and that metal survives the inferno.
+
+35
+00:04:15,506 --> 00:04:21,184
+Now, if you think heat is the only problem, look at the second nightmare: The spin.
+
+36
+00:04:21,184 --> 00:04:33,497
+That turbine disc is turning at twelve thousand R-P-M. The centrifugal force pulling on that single thumb-sized blade is equal to hanging an entire nine-ton city bus from it.
+
+37
+00:04:33,497 --> 00:04:45,148
+Let that sink in. Gas hotter than its melting point. A nine-ton bus hanging from it. And it has to run for thousands of flight hours without a single microscopic crack.
+
+38
+00:04:45,148 --> 00:04:51,556
+You might ask me: "Kishore, we build cryogenic rocket engines for ISRO. Why can’t we just use that tech?"
+
+39
+00:04:51,556 --> 00:05:05,773
+Here’s the difference: A rocket engine fires for three minutes, exhausts its fuel, and drops into the sea. A fighter jet engine has to jump from idle to supersonic in two seconds, swallow desert dust and freezing monsoon rain, and survive for twenty-five years.
+
+40
+00:05:05,773 --> 00:05:17,381
+You cannot copy this from a drawing. The secret isn’t the blueprint; it’s the vacuum metallurgy, the crystal casting recipes, and the micro-cooling physics.
+
+41
+00:05:17,381 --> 00:05:26,685
+That club has only four permanent members: America, Britain, France, and Russia. And after thirty years of painful trial and error, China.
+
+42
+00:05:26,685 --> 00:05:31,986
+And that brings us right back to those thirty silent jets in Nashik.
+
+43
+00:05:31,986 --> 00:05:43,412
+Our Air Force is authorized for forty-two fighter squadrons. Today, we’re operating around twenty-nine. The old MiG-twenty-ones are retiring, and that squadron gap is real.
+
+44
+00:05:43,412 --> 00:06:03,872
+The government ordered one hundred and eighty Tejas Mark One-A jets. H-A-L built the airframes. But the heart of the aircraft — the F-404 engine — is sitting in Massachusetts. G-E ran into supply chain delays. Penalties were slapped. But you and I both know: penalties don’t put engines in fighter jets.
+
+45
+00:06:03,872 --> 00:06:07,019
+And India has seen this exact movie before.
+
+46
+00:06:07,019 --> 00:06:20,063
+Remember May nineteen ninety-eight? India tests nuclear weapons at Pokhran. Washington slaps sanctions overnight. G-E engines were frozen, and American help on the Tejas flight controls was abruptly pulled.
+
+47
+00:06:20,063 --> 00:06:32,637
+Our engineers didn’t complain. They worked night and day and built the digital flight control system in-house. But the lesson was carved in stone: If you don’t own the engine, you don’t truly own the jet.
+
+48
+00:06:32,637 --> 00:06:37,097
+Did we try to build one? Absolutely. The Kaveri project.
+
+49
+00:06:37,097 --> 00:06:45,560
+Started in nineteen eighty-six by G-T-R-E in Bengaluru, the target was an indigenous eighty-one kilonewton engine.
+
+50
+00:06:45,560 --> 00:06:53,345
+Now, whenever people talk about Kaveri, they call it a total failure. But look at what actually happened before you judge.
+
+51
+00:06:53,345 --> 00:07:11,412
+We were trying to build a world-class engine while building our very first modern fighter jet from scratch. We simply bit off more than we could chew. Kaveri was overweight and delivered seventy kilonewtons — eleven short of what Tejas needed. In two thousand eight, it was delinked.
+
+52
+00:07:11,412 --> 00:07:16,040
+Was that twenty-one-hundred-crore investment wasted? Not a chance.
+
+53
+00:07:16,040 --> 00:07:24,662
+Look at what we have today: The "Dry Kaveri" delivers forty-eight kilonewtons and is chosen to power India’s Ghatak stealth combat drone!
+
+54
+00:07:24,662 --> 00:07:36,296
+And D-M-R-L in Hyderabad cracked the single-crystal casting technique, supplying sixty indigenous blades to H-A-L. We finally have the foundation we lacked in nineteen eighty-six.
+
+55
+00:07:36,296 --> 00:07:40,924
+Now, here is the big question for you and me: What happens next?
+
+56
+00:07:40,924 --> 00:07:50,107
+Our upcoming fifth-generation stealth fighter, the A-M-C-A, needs a one-hundred-and-ten kilonewton beast with complete sovereign design ownership.
+
+57
+00:07:50,107 --> 00:07:59,476
+France’s Safran has offered joint development with complete transfer of core hot-section technology. Rolls-Royce and Reliance have pitched an alternative.
+
+58
+00:07:59,476 --> 00:08:03,586
+The offers are on the table. The decision sits in New Delhi.
+
+59
+00:08:03,586 --> 00:08:14,687
+China spent thirty years stumbling through engine crashes before their domestic fighters finally flew on Chinese engines. India is walking that exact same fire right now.
+
+60
+00:08:14,687 --> 00:08:18,372
+Because true air superiority isn’t painted on the wings.
+
+61
+00:08:18,372 --> 00:08:22,620
+It is forged inside the blade that refuses to melt.
+
+62
+00:08:22,620 --> 00:08:27,083
+What do you think India should do with the Safran deal? Tell me in the comments.
+
+63
+00:08:27,083 --> 00:08:30,616
+This is Be Practical with Kishore. Stay practical.
+
