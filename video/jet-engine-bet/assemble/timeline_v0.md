@@ -11,14 +11,7 @@
 | 1:03.8 | B1_metal_zoom.mp4 | blade in fire |
 | 1:06.7 | A3_blade_rise.mp4 | blade in fire |
 | 1:12.0 | D7_engine_club.mp4 | engine club globe |
-| 1:19.5 | A2_engine_dive.mp4 | how an engine breathes (R2 placeholder) |
-| 1:28.8 | A4_combustor_flow.mp4 | how an engine breathes (R2 placeholder) |
-| 1:37.1 | A2_engine_dive.mp4 | suck squeeze burn blow (R2 placeholder) |
-| 1:47.5 | A4_combustor_flow.mp4 | suck squeeze burn blow (R2 placeholder) |
-| 1:56.8 | A5_thermal_reveal.mp4 | suck squeeze burn blow (R2 placeholder) |
-| 2:03.8 | A2_engine_dive.mp4 | suck squeeze burn blow (R2 placeholder) |
-| 2:10.9 | A4_combustor_flow.mp4 | suck squeeze burn blow (R2 placeholder) |
-| 2:18.5 | A4_combustor_flow.mp4 | turbine behind the fire |
+| 1:19.5 | R2_engine_journey.mp4 | R2 engine journey: suck, squeeze, burn, blow |
 | 2:23.2 | A5_thermal_reveal.mp4 | thermal gauge: gas vs blade |
 | 2:54.8 | B2_polycrystal.mp4 | three tricks / zero joints |
 | 3:05.3 | B3_creep.mp4 | brick wall, creep |
@@ -45,15 +38,14 @@
 | 5:57.5 | D4_promise.mp4 | squadrons, orders, G.E., delay |
 | 6:03.9 | C3_sanctions_wireframe.mp4 | 1998 sanctions |
 | 6:19.2 | C6_split_blueprint.mp4 | 1998 sanctions |
-| 6:32.6 | C4_kaveri_blueprint.mp4 | Kaveri: target, weight, thrust |
-| 6:37.1 | C5_thrust_target.mp4 | Kaveri: target, weight, thrust |
-| 6:43.4 | D10_thrust.mp4 | Kaveri: target, weight, thrust |
-| 6:48.8 | D9_weight.mp4 | Kaveri: target, weight, thrust |
-| 6:53.3 | D8_russia_route.mp4 | Russia tests, delinked 2008 |
-| 7:01.9 | C7_blueprint_tear.mp4 | Russia tests, delinked 2008 |
+| 6:32.6 | C4_kaveri_blueprint.mp4 | Kaveri: target 81 kN |
+| 6:41.3 | C5_thrust_target.mp4 | Kaveri: target 81 kN |
+| 6:53.3 | D9_weight.mp4 | weight, tests, 70 kN, delinked |
+| 6:57.7 | D8_russia_route.mp4 | weight, tests, 70 kN, delinked |
+| 7:06.1 | D10_thrust.mp4 | weight, tests, 70 kN, delinked |
 | 7:11.4 | D12_cost.mp4 | cost, Dry Kaveri, DMRL blades |
-| 7:19.6 | C8_dry_kaveri.mp4 | cost, Dry Kaveri, DMRL blades |
-| 7:31.0 | A3_blade_rise.mp4 | cost, Dry Kaveri, DMRL blades |
+| 7:16.3 | C8_dry_kaveri.mp4 | cost, Dry Kaveri, DMRL blades |
+| 7:29.9 | A3_blade_rise.mp4 | cost, Dry Kaveri, DMRL blades |
 | 7:36.3 | C9_amca_engines.mp4 | AMCA, Safran, the decision |
 | 7:46.8 | D14_paris_derby.mp4 | AMCA, Safran, the decision |
 | 8:03.6 | D7_engine_club.mp4 | China walked this road |
