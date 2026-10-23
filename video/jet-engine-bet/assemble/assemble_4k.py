@@ -100,7 +100,7 @@ shot(48.60, "v", ISRO_M, ss=315, srclen=2.0, credit=C_ISRO, note="L8 control roo
 shot(50.60, "v", ISRO_M, ss=765, srclen=3.3, credit=C_ISRO, note="L8 celebration -> why not an engine?")
 # the blade
 shot(53.90, "v", sc("A/A3_blade_rise.mp4"), ss=0, srclen=5.0, ill=True, fin=0.2, note="L9 the hardest puzzle")
-shot(59.40, "v", sc("A/A1_title_blade.mp4"), ss=2.0, srclen=4.6, ill=True, labels=[(60.2, 63.9, lambda: lab("Smaller than", "your smartphone"))], note="L10 tiny blade")
+shot(59.40, "v", sc("A/A2_engine_dive.mp4"), ss=0.0, srclen=4.6, ill=True, labels=[(60.2, 63.9, lambda: lab("Smaller than", "your smartphone"))], note="L10 tiny blade")
 shot(64.00, "v", sc("A/A5_thermal_reveal.mp4"), ss=0, srclen=4.2, ill=True, labels=[(66.0, 71.6, lambda: lab("Hotter than its", "own melting point", accent="red"))], note="L10 inferno")
 shot(68.20, "v", sc("A/A3_blade_rise.mp4"), ss=1.0, srclen=3.8, ill=True, note="L10 ...and it does not melt")
 shot(72.00, "v", sc("D/D7_engine_club.mp4"), ss=4.4, srclen=7.5, ill=True, labels=[(76.6, 79.3, lambda: lab("40 years", "1986 → 2026"))], note="L11 club: markers as named")
@@ -109,7 +109,7 @@ R2B = [(98.0, 103.0, lambda: lab("Hundreds of kg", "of air every second", pos="l
        (109.0, 116.0, lambda: lab("Pressure: 30×", "atmosphere", pos="lr", hi="30×")),
        (120.5, 126.0, lambda: lab("1,700 °C", "the flame", pos="lr", hi="1,700 °C", accent="red"))]
 shot(79.50, "v", R2, ss=0.0, srclen=51.0, up=True, ill=True, labels=R2B, note="L12-17 R2 journey to the turbine")
-shot(130.50, "v", PIB, ss=13.4, srclen=6.0, crop=CROP_PIB, credit=C_PIB, labels=[(133.0, 138.2, lambda: lab("Past the", "speed of sound"))], note="L17 Blow: real Tejas climbing")
+shot(130.50, "v", PIB, ss=13.4, srclen=6.0, crop=(0.15, 0.0, 0.70, 0.70), credit=C_PIB, labels=[(133.0, 138.2, lambda: lab("Past the", "speed of sound"))], note="L17 Blow: real Tejas climbing")
 shot(136.50, "p", real("tejas_28_hal-tejas-aero-india-day1-jpg.jpg"), kb=(1.05, 1.18, 0.5, 0.45, 0.5, 0.4), note="L17 afterburner")
 shot(138.30, "v", R2, ss=58.8, srclen=4.5, ill=True, note="L18-19 turbine sits directly behind the fire")
 # the gap
@@ -135,7 +135,8 @@ shot(249.80, "v", sc("B/B8_tbc.mp4"), ss=0, srclen=3.7, ill=True, note="L34 cera
 # the spin
 shot(255.50, "v", sc("A/A6_spin_bus.mp4"), ss=0, srclen=8.2, ill=True, note="L35-36 12,000 RPM")
 shot(266.00, "p", real("bus_140_best-cbd-wad-jpg.jpg"), kb=(1.04, 1.16, 0.5, 0.55, 0.52, 0.5), labels=[(266.2, 272.9, lambda: lab("9-ton city bus", "hanging from one blade", hi="9-ton"))], note="L36 a nine-ton city bus")
-shot(273.50, "v", sc("A/A7_recap.mp4"), ss=0, srclen=6.7, ill=True, note="L37 let that sink in")
+shot(273.50, "v", sc("A/A5_thermal_reveal.mp4"), ss=0, srclen=4.2, ill=True, note="L37 gas hotter than its melting point")
+shot(277.00, "p", real("bus_136_best-food-on-wheels-mumbai-jpg.jpg"), kb=(1.04, 1.14, 0.5, 0.5, 0.5, 0.45), note="L37 a nine-ton bus hanging from it")
 shot(280.20, "v", sc("A/A8_verdict_blade.mp4"), ss=1.0, srclen=6.3, ill=True, note="L37 thousands of hours, no crack")
 # rocket vs jet
 shot(285.10, "v", ISRO_L, ss=840, srclen=5.0, credit=C_ISRO, fin=0.15, note="L38 we build cryogenic rocket engines")
@@ -144,7 +145,9 @@ shot(296.20, "p", real("tejas_14_digital-fly-by-wire-for-tejas-mk1a-.jpg"), kb=(
 shot(299.60, "p", real("tejas_31_hal-tejas-at-leh-jpg.jpg"), kb=(1.04, 1.14, 0.5, 0.5, 0.45, 0.5), note="L39 dust, cold (Leh)")
 shot(302.60, "v", real("tvid_36_tejas-takeoff-from-ins-vikrant-webm.mp4"), ss=0.5, srclen=2.9, credit="Video: Indian Navy (GODL-India)", note="L39 25 years of punishment")
 # the club
-shot(305.80, "v", sc("C/C7_blueprint_tear.mp4"), ss=0, srclen=9.9, ill=True, note="L40 not the blueprint")
+shot(305.80, "v", sc("C/C4_kaveri_blueprint.mp4"), ss=0, srclen=4.2, ill=True, labels=[(306.0, 309.9, lambda: lab("Not in the drawing"))], note="L40 you cannot copy this from a drawing")
+shot(310.00, "v", sc("B/B4_single_crystal.mp4"), ss=1.5, srclen=3.6, ill=True, labels=[(310.2, 313.5, lambda: lab("Crystal casting", "vacuum metallurgy"))], note="L40 the casting recipes")
+shot(313.60, "v", sc("B/B7_film_cooling.mp4"), ss=0.5, srclen=3.8, ill=True, labels=[(313.8, 317.2, lambda: lab("Micro-cooling", "physics"))], note="L40 micro-cooling physics")
 shot(317.40, "v", sc("D/D7_engine_club.mp4"), ss=3.4, srclen=8.8, ill=True, note="L41 the club")
 # back to Nashik: the cost
 shot(326.70, "v", DD, ss=123.0, srclen=4.8, crop=CROP_DD, credit=C_DD, fin=0.15, labels=[(327.0, 331.3, lambda: lab("Back in Nashik", "about thirty jets waiting"))], note="L42 back to the line")
@@ -181,7 +184,7 @@ shot(483.60, "p", real("tejas_43_exercise-garuda-iaf-su-30-mki-fren.jpg"), kb=(1
 shot(489.20, "p", real("tejas_23_hal-tejas-la-5018-of-squadron-18-f.jpg"), kb=(1.03, 1.15, 0.5, 0.5, 0.55, 0.45), note="L59 India is walking that fire now")
 shot(494.70, "v", PIB, ss=37.5, srclen=3.3, crop=CROP_PIB, credit=C_PIB, note="L60 not painted on the wings")
 shot(498.40, "v", sc("A/A3_blade_rise.mp4"), ss=0.5, srclen=4.0, ill=True, note="L61 forged inside the blade")
-shot(502.60, "v", sc("A/A8_verdict_blade.mp4"), ss=0.2, srclen=4.4, ill=True, labels=[(502.8, 506.8, lambda: L.big("What should India do\nwith the Safran deal?", "Tell me in the comments", size=130))], note="L62 the question")
+shot(502.60, "v", PIB, ss=41.0, srclen=4.5, crop=CROP_PIB, credit=C_PIB, labels=[(502.8, 506.8, lambda: L.big("What should India do\nwith the Safran deal?", "Tell me in the comments", size=130))], note="L62 the question")
 shot(507.10, "card", "", labels=[], fin=0.4, note="L63 sign-off + end card")
 
 # ---------------------------------------------------------------- rendering ------------------------------------------------
@@ -248,8 +251,8 @@ def render_shot(i, s, t0, t1):
     key = hashlib.md5(json.dumps([str(s["src"]), s["kind"], s["ss"], s["srclen"], s["crop"], s["kb"], s["credit"], s["ill"], s["fin"], s["fout"],
                                   round(t0, 3), round(t1, 3), [str(p[0]) for p in pngs], [p[1:] for p in pngs],
                                   RENDER_VERSION]).encode()).hexdigest()[:12]
-    f = OUT / f"s{i:03d}.mp4"; kf = OUT / f"s{i:03d}.key"
-    if f.exists() and kf.exists() and kf.read_text() == key: return f
+    f = OUT / f"k_{key}.mp4"          # cache by content key: inserting a shot never renumbers (and invalidates) the rest
+    if f.exists(): return f
     n = int(round(D * FPS))
     inputs, fc, base = [], [], "[0:v]"
     if s["kind"] == "p":
@@ -293,8 +296,8 @@ def render_shot(i, s, t0, t1):
     else:
         run(cmd)
     got = dur_of(f)
-    if abs(got - n / FPS) > 0.05: print(f"shot {i}: duration {got:.3f} != {n / FPS:.3f}"); sys.exit(1)
-    kf.write_text(key); return f
+    if abs(got - n / FPS) > 0.05: f.unlink(); print(f"shot {i}: duration {got:.3f} != {n / FPS:.3f}"); sys.exit(1)
+    return f
 
 def _render_k(k, t0, t1):
     SHOTS.sort(key=lambda s: s["t0"])
