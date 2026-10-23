@@ -33,19 +33,19 @@ def _width(d, text, f, tracking):
     return sum(d.textlength(ch, font=f) for ch in text) + tracking * max(0, len(text) - 1)
 
 
-def label(text, sub=None, *, pos="ll", accent="amber", hi=None, size=80, x=192, y=None):
+def label(text, sub=None, *, pos="ll", accent="amber", hi=None, size=80, x=192, y=None, minw=0, alpha=184):
     """Lower-left label (jep.css .jep-label at 2x). `hi` = substring drawn in the accent colour (numbers)."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(img)
     f = font("ExtraBold", size); fs = font("SemiBold", int(size * 0.55)); tr = size * 0.04
     text = text.upper(); sub = sub.upper() if sub else None
     tw = _width(d, text, f, tr); sw = _width(d, sub, fs, size * 0.08) if sub else 0
     padx, pady = int(size * 0.55), int(size * 0.36)
-    bw = int(max(tw, sw) + 2 * padx); bh = int(size * 1.12 + (size * 0.75 if sub else 0) + 2 * pady)
+    bw = max(minw, int(max(tw, sw) + 2 * padx)); bh = int(size * 1.12 + (size * 0.75 if sub else 0) + 2 * pady)
     if y is None:
         y = H - 240 - bh
     if pos == "lr":
         x = W - 192 - bw
-    d.rectangle([x, y, x + bw, y + bh], fill=SLATE + (184,))
+    d.rectangle([x, y, x + bw, y + bh], fill=SLATE + (alpha,))
     d.rectangle([x, y, x + 8, y + bh], fill=COLORS[accent] + (255,))
     tx, ty = x + padx, y + pady - int(size * 0.08)
     if hi and hi.upper() in text:
