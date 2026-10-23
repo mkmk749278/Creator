@@ -22,7 +22,7 @@ export async function loadTejas(url, { paint = 0x5d646b, radome = 0x4c5055, atla
   const dark = new THREE.MeshStandardMaterial({ color: 0x15171a, roughness: 0.7, metalness: 0.35 });
   const display = new THREE.MeshStandardMaterial({ color: 0x050807, emissive: new THREE.Color(0x2a6a52), emissiveIntensity: 0.35, roughness: 0.3 });
   const tyre = new THREE.MeshStandardMaterial({ color: 0x0c0c0d, roughness: 0.92 });
-  const nozzle = new THREE.MeshStandardMaterial({ color: 0x3e3f43, roughness: 0.58, metalness: 0.85, side: THREE.DoubleSide });
+  const nozzle = new THREE.MeshStandardMaterial({ color: 0x2e2f33, roughness: 0.62, metalness: 0.75, side: THREE.DoubleSide });
   const pick = (m) => {
     const n = m.name || "";
     if (HIDE.test(n)) return null;

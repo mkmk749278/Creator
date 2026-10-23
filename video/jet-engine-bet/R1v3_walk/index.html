@@ -136,7 +136,7 @@
         camera.fov = c.fov; camera.updateProjectionMatrix();
         const tun = seg(t, 16.9, 17.7);
         torch.position.copy(camera.position); dirv.subVectors(c.l, c.p).normalize(); torch.target.position.copy(camera.position).addScaledVector(dirv, 8);
-        torch.intensity = 3 + 60 * tun; torch.angle = 0.42 + 0.2 * tun;
+        torch.intensity = 3 + 14 * tun; torch.angle = 0.5 + 0.25 * tun;
         const dist = c.p.distanceTo(c.l); st.fx.dof.cocMaterial.focusDistance = Math.max(2, Math.min(dist, 40)); st.fx.dof.cocMaterial.focusRange = Math.max(2.4, dist * 0.5);
         const pa = dgeo.attributes.position.array;
         for (let i = 0; i < NP; i++) { pa[i * 3] = b3[i * 3] + 0.5 * Math.sin(t * 0.23 + ph[i]); pa[i * 3 + 1] = (b3[i * 3 + 1] + 10 - t * 0.06) % 10 + 0.5 + 0.15 * Math.sin(t * 0.4 + ph[i] * 2); pa[i * 3 + 2] = b3[i * 3 + 2] + 0.4 * Math.cos(t * 0.19 + ph[i]); }

@@ -29,6 +29,7 @@ OUT = VJ / "assemble/work4k"
 VO = ROOT / "projects/jet-engine-bet/final/jeb_vo_final.mp3"
 W, H, FPS = 3840, 2160, 30
 END = 514.2   # 510.2 sign-off end + 4 s end card
+RENDER_VERSION = 3   # bump when the render logic (not the edit) changes, to invalidate the shot cache
 ENC = ["-c:v", "libx264", "-preset", "fast", "-crf", "17", "-maxrate", "35M", "-bufsize", "70M", "-pix_fmt", "yuv420p",
        "-r", str(FPS), "-g", "60", "-profile:v", "high", "-level", "5.1", "-x264-params", "keyint=60:min-keyint=60:scenecut=0"]
 
@@ -47,22 +48,33 @@ CROP_DD = (0.10, 0.0, 0.80, 0.80)     # above DD India's lower-third and ticker
 CROP_PIB = (0.12, 0.08, 0.76, 0.76)   # clear of the PIB logo and the boxed captions
 C_DD, C_PIB, C_ISRO, C_IAF, C_MOD = "Video: DD India", "Video: PIB India", "Video: ISRO", "Video: Indian Air Force", "Photo: Ministry of Defence (GODL-India)"
 
-def credit_of(name):
-    m = MANIFEST.get(name)
-    if not m: return None
-    if m.get("licence", "").upper().startswith("GODL"): return "Photo: Ministry of Defence / PIB (GODL-India)"
-    a = (m.get("author") or "").split("\n")[0][:38]
-    return f"Photo: {a} · {m.get('licence')}" if a and a != "Unknown" else f"Photo: Wikimedia Commons · {m.get('licence')}"
-
 MANIFEST = {}
 if (REAL / "manifest.json").exists():
     for m in json.loads((REAL / "manifest.json").read_text()): MANIFEST[m["file"]] = m
+
+
+def credit_of(name):
+    """On-screen attribution for a Commons photo (CC BY / BY-SA need it; the description carries no credits, CLAUDE.md)."""
+    m = MANIFEST.get(name)
+    if not m: return None
+    lic = " ".join(m.get("licence", "").split())
+    if lic.upper().startswith("GODL"): return "Photo: Ministry of Defence (GODL-India)"
+    a = " ".join((m.get("author") or "").split())
+    for junk in ("The original uploader was ", " at English Wikipedia.", "Parent institution", "Unknown author"):
+        a = a.replace(junk, "")
+    a = a.split(" -- ")[0].split("http")[0]
+    if "U.S. Navy" in a: a = "U.S. Navy"
+    if "Department of Defense" in a: a = "U.S. Department of Defense"
+    a = a.strip(" .·")[:34]
+    if lic.lower().startswith(("public domain", "pd")): return f"Photo: {a or 'Wikimedia Commons'} (public domain)"
+    return f"Photo: {a} · {lic} · Wikimedia Commons" if a else f"Photo: Wikimedia Commons · {lic}"
 
 # ---------------------------------------------------------------- the edit (film seconds) ---------------------------------
 # shot(t0, kind, src, ...): runs to the next shot's t0. kinds: v = video/scene clip, p = still (moving), cg = native CG render.
 # labels: (a, b, image-fn) in film seconds; tags/credits are per shot.
 SHOTS = []
 def shot(t0, kind, src, ss=0.0, srclen=None, crop=None, kb=None, credit=None, ill=False, labels=(), fin=0.0, fout=0.0, up=True, note=""):
+    if kind == "p" and credit is None: credit = credit_of(Path(src).name)
     SHOTS.append(dict(t0=t0, kind=kind, src=Path(src), ss=ss, srclen=srclen, crop=crop, kb=kb, credit=credit, ill=ill, labels=list(labels),
                       fin=fin, fout=fout, up=up, note=note))
 lab = L.label
@@ -235,7 +247,7 @@ def render_shot(i, s, t0, t1):
     pngs = overlay_pngs(s, i, t0, t1)
     key = hashlib.md5(json.dumps([str(s["src"]), s["kind"], s["ss"], s["srclen"], s["crop"], s["kb"], s["credit"], s["ill"], s["fin"], s["fout"],
                                   round(t0, 3), round(t1, 3), [str(p[0]) for p in pngs], [p[1:] for p in pngs],
-                                  Path(__file__).stat().st_mtime, (Path(__file__).parent / "labels4k.py").stat().st_mtime]).encode()).hexdigest()[:12]
+                                  RENDER_VERSION]).encode()).hexdigest()[:12]
     f = OUT / f"s{i:03d}.mp4"; kf = OUT / f"s{i:03d}.key"
     if f.exists() and kf.exists() and kf.read_text() == key: return f
     n = int(round(D * FPS))
