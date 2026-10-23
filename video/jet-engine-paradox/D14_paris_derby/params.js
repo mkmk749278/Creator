@@ -2,7 +2,7 @@
 window.SCENE = {
   id: "d14-paris-derby", duration: 19.56,
   safran: { name: "SAFRAN", at: [48.86, 2.35] }, gtre: { name: "GTRE", at: [12.97, 77.59] },
-  selected: "SAFRAN + GTRE · SELECTED AUG 2025",
+  selected: "SAFRAN + GTRE · OFFER ON THE TABLE",
   stamp: "FULL INDIAN IP",
   status: "AWAITING FINAL APPROVAL · OCT 2026",
   rr: { name: "ROLLS-ROYCE + RELIANCE", sub: "AUG 2026", from: [52.92, -1.48], to: [22.5, 79.0] },
