@@ -103,7 +103,7 @@ shot(53.90, "v", sc("A/A3_blade_rise.mp4"), ss=0.9, srclen=4.1, ill=True, fin=0.
 shot(59.40, "v", sc("A/A2_engine_dive.mp4"), ss=0.0, srclen=4.6, ill=True, labels=[(60.2, 63.9, lambda: lab("Smaller than", "your smartphone"))], note="L10 tiny blade")
 shot(64.00, "v", sc("A/A5_thermal_reveal.mp4"), ss=0, srclen=4.2, ill=True, labels=[(66.0, 71.6, lambda: lab("Hotter than its", "own melting point", accent="red"))], note="L10 inferno")
 shot(68.20, "v", sc("A/A3_blade_rise.mp4"), ss=1.0, srclen=3.8, ill=True, note="L10 ...and it does not melt")
-shot(72.00, "v", sc("D/D7_engine_club.mp4"), ss=4.4, srclen=7.5, ill=True, labels=[(76.6, 79.3, lambda: lab("40 years", "1986 → 2026", minw=1100, alpha=235))], note="L11 club: markers as named")
+shot(72.00, "v", sc("D/D7_engine_club.mp4"), ss=4.4, srclen=7.5, ill=True, labels=[(76.6, 79.3, lambda: lab("40 years", "1986 → 2026", minw=1100, alpha=255))], note="L11 club: markers as named")
 # how an engine breathes: R2 journey (chips baked in), readouts added; Blow ends on a real Tejas
 R2B = [(98.0, 103.0, lambda: lab("Hundreds of kg", "of air every second", pos="lr")),
        (109.0, 116.0, lambda: lab("Pressure: 30×", "atmosphere", pos="lr", hi="30×")),
@@ -174,12 +174,12 @@ shot(426.50, "v", sc("C/C1_empty_bay.mp4"), ss=0, srclen=4.4, ill=True, labels=[
 shot(431.40, "v", sc("D/D12_cost.mp4"), ss=0.4, srclen=4.3, ill=True, note="L52 ~2,000 crore spent by 2012")
 shot(436.00, "v", sc("C/C8_dry_kaveri.mp4"), ss=3.0, srclen=6.2, ill=True, note="L53 Dry Kaveri ~48.5 kN")
 shot(440.60, "p", real("ghatak_110_autonomous-flying-wing-tech-jpg.jpg"), kb=(1.03, 1.14, 0.5, 0.55, 0.55, 0.5), labels=[(440.8, 444.2, lambda: lab("Ghatak", "stealth combat drone (demonstrator)"))], note="L53 Ghatak")
-shot(444.70, "v", sc("A/A3_blade_rise.mp4"), ss=0.2, srclen=4.5, ill=True, labels=[(445.0, 455.8, lambda: lab("D.M.R.L. Hyderabad", "60 single-crystal blades to HAL", hi="60", minw=1700, alpha=240))], note="L54 DMRL blades")
+shot(444.70, "v", sc("A/A3_blade_rise.mp4"), ss=0.2, srclen=4.5, ill=True, labels=[(445.0, 455.8, lambda: lab("D.M.R.L. Hyderabad", "60 single-crystal blades to HAL", hi="60", minw=1700, alpha=255))], note="L54 DMRL blades")
 shot(450.50, "v", sc("B/B4_single_crystal.mp4"), ss=1.5, srclen=3.5, ill=True, note="L54 the foundation")
 # what next
 shot(456.30, "p", real("mk1a_37_tejas-mk1a-flying-at-aero-india-202.jpg"), kb=(1.03, 1.14, 0.5, 0.5, 0.56, 0.48), fin=0.15, note="L55 what happens next?")
-shot(460.90, "v", sc("C/C9_amca_engines.mp4"), ss=0, srclen=8.8, ill=True, labels=[(468.3, 470.1, lambda: lab("AMCA Mk2", "110 kN class · Indian design", hi="110 kN", minw=1700, alpha=245))], note="L56 AMCA needs 110 kN, Indian design")
-shot(470.10, "v", sc("D/D14_paris_derby.mp4"), ss=0, srclen=13.0, ill=True, labels=[(472.0, 475.2, lambda: lab("Safran + GTRE", "offer: joint development", minw=1800, alpha=245)), (475.4, 479.4, lambda: lab("Rolls-Royce + Reliance", "an alternative pitch", minw=1800, alpha=245)), (479.6, 483.6, lambda: lab("Decision pending", "New Delhi", hi="New Delhi", minw=1800, alpha=245))], note="L57-58 Safran offer, RR + Reliance, decision in Delhi")
+shot(460.90, "v", sc("C/C9_amca_engines.mp4"), ss=0, srclen=8.8, ill=True, labels=[(468.3, 470.1, lambda: lab("AMCA Mk2", "110 kN class · Indian design", hi="110 kN", minw=1700, alpha=255))], note="L56 AMCA needs 110 kN, Indian design")
+shot(470.10, "v", sc("D/D14_paris_derby.mp4"), ss=0, srclen=13.0, ill=True, labels=[(472.0, 475.2, lambda: lab("Safran + GTRE", "offer: joint development", minw=1800, alpha=255)), (475.4, 479.4, lambda: lab("Rolls-Royce + Reliance", "an alternative pitch", minw=1800, alpha=255)), (479.6, 483.6, lambda: lab("Decision pending", "New Delhi", hi="New Delhi", minw=1800, alpha=255))], note="L57-58 Safran offer, RR + Reliance, decision in Delhi")
 shot(483.60, "p", real("tejas_43_exercise-garuda-iaf-su-30-mki-fren.jpg"), kb=(1.03, 1.13, 0.5, 0.5, 0.45, 0.5), labels=[(483.8, 489.0, lambda: lab("China", "30 years to its own fighter engines"))], note="L59 China walked this road")
 shot(489.20, "p", real("tejas_23_hal-tejas-la-5018-of-squadron-18-f.jpg"), kb=(1.03, 1.15, 0.5, 0.5, 0.55, 0.45), note="L59 India is walking that fire now")
 shot(494.70, "v", PIB, ss=37.5, srclen=3.3, crop=CROP_PIB, credit=C_PIB, note="L60 not painted on the wings")
