@@ -248,7 +248,8 @@ def still_frames(path, n, kb, out_pipe):
 def render_shot(i, s, t0, t1):
     D = t1 - t0
     pngs = overlay_pngs(s, i, t0, t1)
-    key = hashlib.md5(json.dumps([str(s["src"]), s["kind"], s["ss"], s["srclen"], s["crop"], s["kb"], s["credit"], s["ill"], s["fin"], s["fout"],
+    mt = s["src"].stat().st_mtime if s["kind"] == "cg" and s["src"].exists() else 0   # a re-rendered CG file must not hit the cache
+    key = hashlib.md5(json.dumps([str(s["src"]), mt, s["kind"], s["ss"], s["srclen"], s["crop"], s["kb"], s["credit"], s["ill"], s["fin"], s["fout"],
                                   round(t0, 3), round(t1, 3), [str(p[0]) for p in pngs], [p[1:] for p in pngs],
                                   RENDER_VERSION]).encode()).hexdigest()[:12]
     f = OUT / f"k_{key}.mp4"          # cache by content key: inserting a shot never renumbers (and invalidates) the rest

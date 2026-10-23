@@ -81,6 +81,12 @@
         const j = model.clone(true); j.position.set(x, 0, ROWS(r)); j.rotation.y = Math.PI + (rnd() - 0.5) * 0.03; scene.add(j); fleet.push(j);
         const p = new THREE.Mesh(new THREE.PlaneGeometry(10, 15), new THREE.MeshBasicMaterial({ map: shTex, transparent: true, depthWrite: false })); p.rotation.x = -Math.PI / 2; p.position.set(x, 0.02, ROWS(r)); scene.add(p);
       }
+      // the hero's tail: darken its nozzle, steel and inner surfaces so the torch inside the exhaust shows an empty dark tube,
+      // not the model's lit engine-face disc and bright petals (shard 4 review)
+      { const hero = fleet.find((j) => Math.abs(j.position.x - HX) < 0.1 && Math.abs(j.position.z - HZ) < 0.1);
+        const heroDark = new THREE.MeshStandardMaterial({ color: 0x0d0d10, roughness: 0.85, metalness: 0.25, side: THREE.DoubleSide });
+        const swap = new Set([materials.nozzle, materials.steel, materials.dark]);
+        hero.traverse((o) => { if (!o.isMesh) return; o.material = Array.isArray(o.material) ? o.material.map((m) => (swap.has(m) ? heroDark : m)) : (swap.has(o.material) ? heroDark : o.material); }); }
       // the hero's empty engine bay: a clean dark tube behind the nozzle with bare frames and a blanked bulkhead (no props:
       // review v1 asked for "bare ribs and the dark"); it closes the see-through hole of the model's exhaust shell
       const EXY = exhaust ? exhaust.center.y : 2.25, EXR = exhaust ? exhaust.radius : 0.46;
@@ -136,7 +142,7 @@
         camera.fov = c.fov; camera.updateProjectionMatrix();
         const tun = seg(t, 16.9, 17.7);
         torch.position.copy(camera.position); dirv.subVectors(c.l, c.p).normalize(); torch.target.position.copy(camera.position).addScaledVector(dirv, 8);
-        torch.intensity = 3 + 14 * tun; torch.angle = 0.5 + 0.25 * tun;
+        torch.intensity = 3 + 5 * tun; torch.angle = 0.5 + 0.25 * tun;
         const dist = c.p.distanceTo(c.l); st.fx.dof.cocMaterial.focusDistance = Math.max(2, Math.min(dist, 40)); st.fx.dof.cocMaterial.focusRange = Math.max(2.4, dist * 0.5);
         const pa = dgeo.attributes.position.array;
         for (let i = 0; i < NP; i++) { pa[i * 3] = b3[i * 3] + 0.5 * Math.sin(t * 0.23 + ph[i]); pa[i * 3 + 1] = (b3[i * 3 + 1] + 10 - t * 0.06) % 10 + 0.5 + 0.15 * Math.sin(t * 0.4 + ph[i] * 2); pa[i * 3 + 2] = b3[i * 3 + 2] + 0.4 * Math.cos(t * 0.19 + ph[i]); }

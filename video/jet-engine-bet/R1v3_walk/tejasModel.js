@@ -76,5 +76,5 @@ export async function loadTejas(url, { paint = 0x5d646b, radome = 0x4c5055, atla
     const groups = o.geometry.groups.length ? o.geometry.groups : [{ start: 0, count: idx ? idx.count : pos.count, materialIndex: 0 }];
     for (const gr of groups) { if (mats[gr.materialIndex] !== nozzle) continue; for (let i = gr.start; i < gr.start + gr.count; i++) { v.fromBufferAttribute(pos, idx ? idx.getX(i) : i).applyMatrix4(o.matrixWorld); if (v.z < b3.min.z + 1.0) tb.expandByPoint(v); } } });
   const exhaust = tb.isEmpty() ? null : { center: tb.getCenter(new THREE.Vector3()), radius: Math.min(tb.max.x - tb.min.x, tb.max.y - tb.min.y) / 2, zExit: tb.min.z };
-  return { model: g, box: b3, nozzleBox: nb, exhaust, dropped: extras.length, materials: { skin, skinDark, nose, glass, nozzle } };
+  return { model: g, box: b3, nozzleBox: nb, exhaust, dropped: extras.length, materials: { skin, skinDark, nose, glass, nozzle, steel, dark, display, tyre } };
 }
