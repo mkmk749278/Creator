@@ -1,7 +1,7 @@
 # YouTube package: India's jet engine bet (film v2, 4K)
 
-Final cut: `film_v2_4k.mp4` (3840×2160, 8:34, −14 LUFS). Chapter times are the voice-over line starts
-(`final/align/align.json`), which the 4K edit uses as its cut points (`video/jet-engine-bet/assemble/timeline_v2.md`).
+Final cut: `film_v2_4k.mp4` (3840×2160, 8:37, −14 LUFS). Chapter times are the voice-over line starts
+(`final/align/align.json`, mapped through the re-take splices in `final/splices.json`), which the 4K edit uses as its cut points (`video/jet-engine-bet/assemble/timeline_v2.md`).
 
 ## Title
 ```
@@ -28,11 +28,11 @@ Then it tells the real story of Kaveri, what India has built since, and the deci
 2:59 Three tricks that keep it alive
 4:15 The spin
 4:45 Why rocket engines are not enough
-5:26 Back in Nashik
-6:07 The 1998 lesson
-6:32 Kaveri: failure or foundation?
-7:36 What happens next
-8:03 China's road, and ours
+5:28 Back in Nashik
+6:10 The 1998 lesson
+6:35 Kaveri: failure or foundation?
+7:39 What happens next
+8:06 China's road, and ours
 ```
 
 ## Thumbnail
