@@ -8,7 +8,7 @@ folds, ding, whooshes, bonk, twinkles. Usage: python3 make_audio.py out.wav   (t
 import sys, wave
 import numpy as np
 
-SR, DUR = 48000, 17.0
+SR, DUR = 48000, 18.6
 N = int(SR * DUR)
 rng = np.random.default_rng(7)
 mus, sfx = np.zeros(N), np.zeros(N)
@@ -98,7 +98,9 @@ for k in range(int((12.3 - 8.9) / 0.125)):
     put(mus, 8.9 + k * 0.125, pluck(n, 0.5, 1.2), -24 + (2 if k % 6 == 0 else 0))
 for k, n in enumerate([60, 64, 67]): put(mus, 13.5 + k * 0.12, pluck(n, 1.0), -24)  # relief
 strum(15.42, [60, 64, 67, 72, 76], -16, 1.6); strum(15.92, [62, 67, 71, 74], -19, 0.8)  # laugh: fanfare
-strum(16.26, [60, 64, 67, 72, 76, 79], -16, 1.8, gap=0.02)
+for k, n in enumerate([79, 76, 72, 67]): put(mus, 16.3 + k * 0.07, pluck(n, 0.4), -22)   # the plane pops off: falling run
+for k, n in enumerate([67, 72]): put(mus, 16.88 + k * 0.08, pluck(n, 0.6), -21)            # caught it
+strum(17.3, [60, 64, 67, 72, 76, 79], -15, 2.2, gap=0.022)                                # wink: final chord
 
 # ---------------- sfx ----------------
 X0, V, TD, TS, S = -80, 300, 2.6, 3.0, 210                                  # walk, as in stick.js
@@ -107,7 +109,7 @@ d = np.where(ts < TD, V * ts, V * TD + V * (ts - TD) - V * (ts - TD) ** 2 / (2 *
 for k in range(1, int(d[-1] / (S / 2)) + 1):
     at = ts[np.searchsorted(d, k * S / 2)]
     put(sfx, at, thud(150, 0.12), -24)
-for at in [3.3, 3.42, 5.95, 8.9, 9.9, 15.92, 16.26]: put(sfx, at, thud(140, 0.14), -21)
+for at in [3.3, 3.42, 5.95, 8.9, 9.9, 15.92, 16.26, 16.96]: put(sfx, at, thud(140, 0.14), -21)
 t = tt(2.2); put(sfx, 1.9, bp(noise(len(t)), 600, 4000) * (0.3 + 0.7 * np.abs(np.sin(2 * np.pi * 0.72 * t))) * np.minimum(1, t / 0.4), -30)  # flutter
 put(sfx, 4.1, crinkle(0.14), -13)                                                                        # catch
 t = tt(0.55); put(sfx, 4.85, bp(noise(len(t)), 2000, 7000) * (np.sin(2 * np.pi * 9 * t) > 0.3), -27)      # scratch
@@ -123,6 +125,10 @@ put(sfx, 13.9, boing(900, 0.15), -20)                                           
 put(sfx, 14.3, whoosh(0.35, 500, 3000), -16)                                                             # it comes back...
 put(sfx, 14.6, thud(240, 0.2), -6); put(sfx, 14.6, boing(150, 0.7), -12)                                 # bonk
 for k in range(5): put(sfx, 14.7 + k * 0.16, bell(3000 + 400 * (k % 3), 0.4), -25)                       # stars
+for k, n in enumerate([74, 71]): put(sfx, 11.5 + k * 0.32, pluck(n, 0.5, 0.7), -23)                   # "hmm, where did it go?"
+put(sfx, 16.28, boing(420, 0.4), -15)                                                                     # pop off the head
+put(sfx, 16.86, crinkle(0.12), -13)                                                                      # catch
+put(sfx, 17.3, bell(2637, 1.0) + 0.5 * bell(3520, 0.8), -15)                                             # wink ting
 
 mix = mus * 0.9 + sfx
 mix[-int(0.3 * SR):] *= np.linspace(1, 0, int(0.3 * SR))
