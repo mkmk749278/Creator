@@ -133,6 +133,10 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   3.5–5.0 s reset and the 25–30% grit target below. Engines: HyperFrames for all 2D, HUD and text; **Blender Cycles
   for the 2–4 hero 3D cutaways** (8 samples + denoise, ~27 s a frame on CPU; Kaggle GPU once the key is added), composited
   under the HyperFrames HUD; Three.js for other 3D; no Remotion or Manim. Whisper stays banned.
+- **Stick-figure characters when the scene demands (owner, 2026-10-24; PLAYBOOK §4a-3 item 3):** hand-drawn acting
+  characters designed per film (who they are, clothes, props, setting), never the demo's exact look and never a real
+  person; they act out the viewer's situation, a hypothetical or a mechanism, and never replace real footage that
+  exists. Rig and craft bar: `video/stickman/` (planted-foot walk, IK, face, anticipation, look-at).
 - **A film, never a slide deck.** No full-screen text boxes, bullet lists, cards or question-mark graphics; no flat colour
   or plain gradient canvas. Text ≤ 15% of the screen: 2–4-word lower-thirds, dates/places/numbers, counters, a corner timer.
 - **Lede first (owner, 2026-10-17; PLAYBOOK §4a-5):** the event, rule or trap the title and thumbnail name is on screen
