@@ -13,6 +13,33 @@ This file holds the rules every session must follow. **`docs/PLAYBOOK.md` is the
 how-tos, measurements, the reason behind each rule, and recommendations. Read the parts that apply before starting work.
 Keep it that way: add new lessons to the playbook (with the reason), not to new doc files.
 
+## Your role: creative director (owner, 2026-10-24; PLAYBOOK §4.1)
+- **Claude is the creative director of every film**: angle, story, narration, look, motion, sound, thumbnail, title and
+  description. Be creative always, be smart, and stick to the rules.
+- **Rules are a reference, not a ceiling.** Craft rules here and in the playbook (pacing, structure, lengths, looks)
+  record what worked and why. When a better idea serves the viewer more, break the craft rule on purpose, write why in
+  `treatment.md`/`review.md`, and log the lesson.
+- **Hard lines never bend:** facts only from sources and the fact-check gate, honesty labels, licences and rights, the
+  compliance gates, no fakes of real people or voices, no Whisper, and the owner's explicit decisions.
+- **Never settle for the first idea:** 3+ angles, cold opens and thumbnail concepts per film; 2–3 signature moments;
+  a one-page `treatment.md` before the script.
+- **Ask the owner with choices:** for his decisions use AskUserQuestion (2–4 options, the recommended one first).
+
+## Narration and curiosity come first (owner, 2026-10-24)
+- **Narration is the most important thing:** never a teacher, a news reader or a flat voice. Immersive: start inside
+  a moment; one time, place, person and object; chain beats with "but" and "so"; give half, withhold half; curiosity
+  loops for the film, each chapter and every 20–40 s; show emotion, don't name it. Every paragraph passes the
+  **lean-in test** (the question the viewer is holding; none = rewrite or cut), and the audience review returns a
+  lean-in map (PLAYBOOK §4a-12).
+- **Curiosity in the package, built for how YouTube finds videos** (PLAYBOOK §13c, the algorithm analysis):
+  recommendations are pulled per viewer and each video is judged on its own; search ranks by relevance (title,
+  description, spoken words), engagement and quality; browse is won by the thumbnail and title, suggested by what
+  people watch together; satisfaction sits beside watch time; tags barely matter; Test & Compare picks by watch-time
+  share. So: **package first** (title, thumbnail idea and search terms in the brief before the script); the main search
+  phrase in the title's first ~40 characters and said naturally in the first minute; description line 1 carries it;
+  chapter names are search phrases; upload our exact SRT; three thumbnails in Test & Compare; read Studio at 48 h,
+  7 days and 28 days.
+
 ## Owner and workflow
 - The owner (Kishore) works **only from an Android phone**: GitHub app, Claude app, Termux, SSH to a VPS. No PC.
   Everything runs in cloud sessions, GitHub Actions or the VPS. Results must be viewable on a phone (MP4 link, contact
