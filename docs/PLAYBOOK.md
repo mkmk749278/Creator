@@ -1385,6 +1385,12 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
 - Never add tweens at negative positions: per-part timer keys from other parts inflated a 45 s part to 2477 s. Clip
   keyframes to `[0, dur]` per part.
 - `tl.call` doesn't run on render seeks: use stacked elements and `tl.set`. No `letterSpacing` tweens.
+- A plain `tl.seek(t)` suppresses `onUpdate`, so a proxy-clock redraw can silently never run in tests. Drive per-frame
+  redraws from a setter on the tweened object (`set t(v) { render(v); }`, `video/stickman/stick.js`): setters run on every seek.
+- The compiler can run an external `<script src>` before the body exists (`getElementById` → null). Have the file define
+  an init function and call it, with the `window.__timelines` registration, from an inline script at the end of `<body>`.
+- Character animation works (stick man demo, `video/stickman/`, 2026-10-24): procedural walk with planted feet, 2-bone IK,
+  pose tracks, face rig, 12 fps line boil; 17 s at 60 fps rendered in 2.5 min on 4 workers.
 - An SVG filter on a perfectly vertical or horizontal line renders nothing.
 - `@font-face` goes in each `index.html` with root-relative paths; canvas fonts need a fallback (`Inter, Arial, sans-serif`)
   or the first frame renders in a serif.
