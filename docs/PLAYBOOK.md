@@ -410,14 +410,40 @@ follow a character. Every explainer mixes, in this order of preference:
    appears at most once, small, in a lower-third (`OUR CALCULATION · …`). `video/lib/whiteboard` stays in the repo
    for other uses but is not used for maths unless the owner asks. *Why:* the whiteboard read as a text slide.
    Examples: `video/kavach-railway-reality/D1`, `D2`, `D3`, `D6`.
-3. ~~TOON~~ **No animated character** (owner, 2026-10-11, after a first test: "cancel character, use any clip that
-   syncs to the situation"). Every action the VO says is a real clip (Pixabay API, Coverr, Commons, owner footage).
+3. **CHARACTER: hand-drawn stick-figure scenes, as the situation and scene demand** (owner, 2026-10-24, after the
+   stick-man demo `video/stickman/`, "The Paper Plane": "looks great … we can use these characters in future
+   documentaries, not exact characters, as situation and scene demands"). This replaces the 2026-10-11 rule "No animated
+   character" (that first test was a flat toon; the owner then asked for real clips instead).
+   - **Not one mascot.** Each film designs the characters its scenes need: who they are (a borrower, a loco pilot, a
+     shopkeeper, a family), clothes and props (saree, uniform, helmet, phone, ledger), colour accents and setting, in the
+     film's own art direction (§5.3). Reuse the *rig and methods*, never the demo's exact look (red scarf, hair tuft, paper
+     plane, beige meadow).
+   - **When to use it:** to act out the viewer's own everyday situation, a hypothetical ("say you miss one E.M.I."), a
+     process or mechanism with a human in it, an inner reaction (confusion, the idea, panic, relief) or a light comic
+     beat. Real footage stays first for the real event, real places and real documents (REAL above, the 25–30% grit
+     target, semantic lock): a character never stands in for footage that exists.
+   - **Honesty:** a character is never a real, named person and never mimics one (no caricatures of officials or
+     public figures); it is plainly a drawing, so no "ILLUSTRATIVE FOOTAGE" chip is needed, but numbers and claims it
+     shows still come from `claims.csv`. Never the mechanism's victim mocked: the elder-brother voice applies to drawings too.
+   - **Craft bar (from the demo):** feet planted while walking (no sliding), 2-bone IK for arms and legs, anticipation
+     before and follow-through after every big action, eyes and head that track what matters (look-at), a face that
+     changes with every beat (brows, blinks, mouth shapes), secondary motion (scarf, hair, dupatta, tie) driven by
+     velocity, 12 fps line boil, a soft contact shadow, sound on every action. On a phone the figure fills ≥ 40% of the
+     frame height in close shots; wide shots only to show scale or travel. Hold each readable pose 0.3–0.6 s.
+   - **Fits the documentary rules:** it still obeys "a film, never a slide deck", the 3.5–5.0 s visual reset, ≥ 85%
+     moving, and the three layers (a drawn world with texture, atmosphere, kinetic accents). Character scenes can sit
+     over or beside real footage (a figure walking through a real photo, pointing at a real document) when the scene needs it.
+   - **How:** HyperFrames SVG, everything a pure function of time: pose keyframe tracks, procedural walk, IK, face rig,
+     a clock driven by a setter (§10). Start from `video/stickman/stick.js`; when the first film uses it, move the rig
+     into `video/lib/` (body, walk, IK, face) and keep the story per scene. Cost: 17 s at 60 fps rendered in 2.5 min on
+     4 workers. Sound is synthesised (`video/stickman/make_audio.py`) or CC0, logged as usual.
 4. **PROOF**: credited screen recordings of the real source page (bank, RBI, court, news) under a magnifier.
 5. **SIM**: labelled phone/bill simulations only where the viewer needs to see a screen.
 Plan these per line in `visual-plan.md` (time from `align/`), before sourcing and scene work.
 **Owner's review notes (2026-10-11):** (a) *common-sense fit*: show what the line is about in the film's context; for a
 money film that is the spend or the payment (card machine, bill, wallet), never the event itself (a wedding ritual for
-"a family function" was rejected). (b) *the character* was then dropped altogether (see 3). (c) *no foreign money*: drop clips
+"a family function" was rejected). (b) *the character* was then dropped (back since 2026-10-24 as hand-drawn stick
+figures, see 3). (c) *no foreign money*: drop clips
 showing dollars or euros in a rupee film (about half the "money/bills" stock results); prefer cards, phones, bills.
 
 ### 4a-5. Indian audience psychology and retention architecture (owner, 2026-10-17)
@@ -1025,7 +1051,7 @@ Renderforest, Genesis, 2026) say the same: texture, physical materials and "made
 **Owner's decision (2026-10-12): mix both.** The photoreal **desk** for the big moments (the hook, every reveal, the
 money that moves), the **doodle** mode (`video/lib/doodle`) for explaining: sketched objects and metaphors drawn on in
 Rough.js, items popping in with a sound each (pop, whoosh, scribble, rip, thud, clink; `make_sfx.py`), 2–3-word labels in
-clean type, no handwriting, no characters. *Why doodle:* the research of current doodle channels (Sprouts) showed the
+clean type, no handwriting (characters: stick-figure scenes, §4a-3 item 3, since 2026-10-24). *Why doodle:* the research of current doodle channels (Sprouts) showed the
 dated part of our whiteboard was the handwriting, not the drawing.
 **The desk method:** money is shown as photoreal physical objects on one desk, rendered in Three.js inside HyperFrames
 (`video/lib/moneytable`): a printed bill, a phone, metal coins that move (100 × ₹1 = ₹100, so a split is visible as two
@@ -1866,7 +1892,8 @@ took 90 min in a subagent while sourcing, scenes and assembly ran). Lessons:
 - **Reusable thermal-camera figure** (`video/fireice/_shared/body.js`): body parts drawn as temperatures into a
   low-res canvas field, blurred, palette-mapped (ironbow) and masked by a soft silhouette; one master clock tween
   (`FX.clock`) redraws every frame from `t` alone. Looks like a real thermogram; renders at ~5 s per output second
-  (1080p, 4 workers). A flat-coloured SVG stick figure looked like a pictogram; drop that approach.
+  (1080p, 4 workers). A flat-coloured SVG stick figure looked like a pictogram *as a body diagram*; for science of the
+  body use the thermal figure. (Acting stick-figure characters are a separate mode, §4a-3 item 3.)
 - **Dailymotion has full broadcaster documentaries** (VICE "The Superhuman World of the Iceman", DW Euromaxx) with real
   event footage (the Radboud endotoxin test), but only at 288p: usable as credited archive with `hqdn3d` + `unsharp`.
 - **Verify every third-party in-point with an exact `-ss` frame grab** before render: a 12 s overview sheet put a talk

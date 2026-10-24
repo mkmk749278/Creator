@@ -1,5 +1,5 @@
 // Doodle kit (video/lib/doodle): sketched objects that draw on or pop in, for explaining beats (owner, 2026-10-12:
-// desk for big moments, doodle for explaining). Objects and metaphors, short typed labels, no handwriting, no characters.
+// desk for big moments, doodle for explaining). Objects and metaphors, short typed labels, no handwriting (acting characters live in video/stickman, PLAYBOOK §4a-3).
 // Everything is scheduled on one paused GSAP timeline (seek-safe). Rough.js shapes use fixed seeds (deterministic).
 // Scene format (params.js): window.SCENE = { duration, tag, kicker, items: [ { kind, x, y, s, rot, at, dur, in, exit,
 // moves: [{ at, dur, x, y, s, rot, ease }], ...kind props } ] }. Sound cues are written by the generator (SCENE.sfx).
