@@ -128,7 +128,7 @@ for k in range(5): put(sfx, 14.7 + k * 0.16, bell(3000 + 400 * (k % 3), 0.4), -2
 for k, n in enumerate([74, 71]): put(sfx, 11.5 + k * 0.32, pluck(n, 0.5, 0.7), -23)                   # "hmm, where did it go?"
 put(sfx, 16.28, boing(420, 0.4), -15)                                                                     # pop off the head
 put(sfx, 16.86, crinkle(0.12), -13)                                                                      # catch
-put(sfx, 17.3, bell(2637, 1.0) + 0.5 * bell(3520, 0.8), -15)                                             # wink ting
+put(sfx, 17.3, bell(2637, 1.0) + 0.5 * bell(3520, 1.0), -15)                                             # wink ting
 
 mix = mus * 0.9 + sfx
 mix[-int(0.3 * SR):] *= np.linspace(1, 0, int(0.3 * SR))
