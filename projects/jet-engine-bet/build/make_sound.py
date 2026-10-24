@@ -41,7 +41,8 @@ CHORDS = {"tense": [(110.0, 130.8, 164.8), (98.0, 116.5, 146.8)], "calm": [(130.
           "drive": [(146.8, 174.6, 220.0), (130.8, 155.6, 196.0)], "hope": [(130.8, 164.8, 196.0), (146.8, 185.0, 220.0)]}
 SECTIONS = [(0, "tense"), (41.8, "drive"), (79.5, "drive"), (143.2, "tense"), (174.8, "calm"), (255.5, "tense"), (285.1, "drive"),
             (326.7, "tense"), (392.6, "calm"), (436.0, "hope"), (456.3, "drive"), (494.7, "hope"), (507.1, "hope")]
-REVEALS = [30.5, 141.4, 164.2, 367.0, 479.5]   # "Nothing." / "Directly behind the fire." / the 470° gap / May 1998 / the decision
+SECTIONS = [(A.M(t), m) for t, m in SECTIONS]   # old voice-over times -> the re-take timeline (splices.json)
+REVEALS = [A.M(t) for t in (30.5, 141.4, 164.2, 367.0, 479.5)]   # "Nothing." / "Directly behind the fire." / the 470° gap / May 1998 / the decision
 bed = np.zeros(N)
 for si, (s0, mood) in enumerate(SECTIONS):
     s1 = SECTIONS[si + 1][0] if si + 1 < len(SECTIONS) else DUR
@@ -61,7 +62,7 @@ for at in REVEALS:
     bed[i - ramp:i] *= np.linspace(1, 0, ramp); bed[i:j] = 0; bed[j:j + ramp] *= np.linspace(0, 1, ramp)
     hit = (tone(41, 2.4, 0.003, 2.0, (1.0, 0.5, 0.25)) + lp(noise(2.4), 200) * 0.6) * np.exp(-np.arange(int(2.4 * SR)) / SR * 1.6)
     put(bed, at, hit, 0.5)
-e0 = int(507.1 * SR); bed[e0:] *= np.linspace(1.0, 2.2, N - e0)   # end card: the music carries it
+e0 = int(A.M(507.1) * SR); bed[e0:] *= np.linspace(1.0, 2.2, N - e0)   # end card: the music carries it
 bed *= env(N, 1.5, 3.0)
 sf.write(OUT / "bed.wav", (bed / np.max(np.abs(bed)) * 0.6).astype(np.float32), SR)
 
@@ -82,7 +83,7 @@ for k, s in enumerate(SHOTS):
     if real and prev_cg: put(fx, max(0, s["t0"] - 0.35), whoosh(0.5), 0.22)
     if any(r in s["src"].name for r in REALJET): put(fx, s["t0"], rumble(t1 - s["t0"]), 0.5)
     for (a, b, _) in s["labels"]: put(fx, a, click(), 0.35)
-put(fx, 33.6, whoosh(0.8, False), 0.3)   # whip out of the tunnel
+put(fx, A.M(33.6), whoosh(0.8, False), 0.3)   # whip out of the tunnel
 sf.write(OUT / "sfx.wav", (fx / max(1e-9, np.max(np.abs(fx))) * 0.7).astype(np.float32), SR)
 
 # ---------------- master ----------------
