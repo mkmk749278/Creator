@@ -8,10 +8,10 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
 `docs/phase0-report.md` (merged here in Oct 2026). Per-project READMEs and briefs stay next to their projects as records.
 
 **Contents**
-- Part A: How we work. 1 Owner and delivery · 2 Claude models · 3 Parallel sessions · 4 Quality first
+- Part A: How we work. 1 Owner and delivery · 2 Claude models · 3 Parallel sessions · 4 Quality first (4.1 Creative director)
 - Part B: Documentaries. 4a Channel, language and audience rules · 5 The look · 6 Workflow and engines · 7 Script and voice · 8 Media sourcing ·
-  9 Realistic animation · 10 HyperFrames · 11 Sound · 12 Facts, honesty and rights · 13 Render and deliver ·
-  14 Pre-render review · 15 Lessons log
+  9 Realistic animation · 10 HyperFrames · 11 Sound · 12 Facts, honesty and rights · 13 Render and deliver (13c: how YouTube finds
+  our videos) · 14 Pre-render review · 15 Lessons log
 - Part C: Phone consensus pipeline. 16 Product and spec · 17 Claude in the pipeline · 18 Architecture and stages ·
   19 Control flow, secrets, evals · 20 Build phases · 21 Phase 0 measurements
 - Part D: 22 Recommendations
@@ -154,6 +154,34 @@ The owner's rule (Oct 2026): **accuracy and the best output matter more than spe
 - Research deeply: several independent sources per fact, the real event footage before stock, and a contact sheet of every
   asset before it goes into a cut.
 - Fast mode stays off unless the owner asks (it costs 2× and only speeds up output tokens).
+
+### 4.1 Creative director: rules are a reference, not a ceiling (owner, 2026-10-24)
+> "Always should be creative director for everything. Be creative always and be smart and always stick to rules.
+> Rules not the ceiling, they are for reference. Creative brains don't have limits." (owner, 2026-10-24, given for
+> the new Built on Bharat channel and asked to apply here too)
+
+Claude is the **creative director** of every film: angle, story, narration, look, motion, sound, thumbnail, title and
+description. *Why:* YouTube judges each video on its own and rewards what viewers are glad they watched (§13c); a film
+that looks like everyone else's, or like our own last film, gives them no reason to choose it.
+- **Craft rules are a floor and a reference.** Pacing numbers, act structure, chapter lengths, looks and formats in this
+  playbook record what worked and what failed, with the reason. Know the reason; when a better idea serves the viewer
+  more, break the craft rule on purpose, write why in the project's `treatment.md` or `review.md`, check it in review,
+  and log the result in §15.
+- **Hard lines never bend:** facts only from sources and the fact-check gate (§12), honesty labels, licences and rights,
+  the compliance gates (synthetic disclosure, health context, SEBI education-only lane, Press Council suicide norms,
+  ban list: §4a), no fakes of real people or voices, no Whisper, and the owner's explicit decisions. Creativity works
+  inside these, never around them.
+- **Never settle for the first idea.** For every film: 3+ angles, 3+ cold opens, 3+ thumbnail concepts; pick the best
+  with a reason. Design 2–3 signature moments per film that people remember and share (a match cut, a 3D cutaway that
+  finally makes the mechanism click, a silence before the reveal).
+- **A creative treatment before the script** (`projects/<slug>/treatment.md`, one page): logline with its tension; the
+  feeling at the start, the low point and the end; the angle that makes ours different from the 3 strongest films on
+  the subject; the film's own art direction; the signature moments; the sound palette; the package (§13c).
+- **Smart, not just bold:** every creative choice must make the story clearer, the emotion stronger or the curiosity
+  sharper. If it only looks clever, cut it.
+- **Ask the owner with choices.** The owner answers by selecting options on the phone. For his decisions (topic,
+  voice, anything paid, a change to his rules) use the AskUserQuestion tool: 2–4 clear options, the recommended one
+  first marked "(Recommended)", a one-line reason each. Decide everything else and say what you decided.
 
 ---
 
@@ -890,6 +918,92 @@ the review (scores, what changed, and anything we chose not to change and why). 
 review again. Save the reviewer's report as `projects/<slug>/review_audience_vN.md`. Archive the review session when
 done.
 
+### 4a-12. Immersive narration: the lean-in craft (owner, 2026-10-24)
+> "Narration is the most important thing. Not like teacher, not like news reader, not like flat. We should hold
+> audience, they should get immersive experience, they should lean into story." (owner, 2026-10-24, for Built on
+> Bharat; applied here too)
+
+*Why:* recommendations follow how viewers respond (§13c), and our own curves lose two thirds of the leavers in the
+first 45 s (§4a-7). §4a-4, §4a-6 and §4a-10 set the voice, the sentence architecture and the words; this section adds
+the storytelling that makes people lean in. It works with Rule → Ruin → Reality and the elder-brother voice, not
+against them.
+
+**The three voices we never use.**
+The same facts in each voice, so the difference is clear. *(Chandrayaan-3 is used only to teach the craft. Its facts
+are well known, but a real film still puts every line through §12.)*
+
+**The teacher** explains before the viewer cares: definitions first, an agenda, "X is a Y".
+> ❌ "Chandrayaan-3 was India's third lunar mission. Its objective was to demonstrate a safe soft landing on the Moon.
+> To understand its importance, let us first look at what a soft landing is."
+
+**The news reader** summarises the ending first and lets big adjectives do the work. Passive, no person, no moment.
+> ❌ "In a historic achievement, India became the first nation to land near the lunar south pole, a milestone that was
+> celebrated across the country."
+
+**The flat voice** has every sentence the same length and weight. No questions, no turns, no silence.
+> ❌ "The lander began its descent in the evening. The engines slowed it down. The team watched the data. The lander
+> touched down safely. The country celebrated the landing."
+
+**The storyteller** puts you inside the moment, withholds the ending, and makes you need the next line.
+> ✅ "Evening, twenty third of August, twenty twenty three. A control room in Bengaluru... and nobody is touching
+> anything. They can't. The lander is falling towards the Moon on its own, and for these last minutes, no human can
+> help it. Four years ago, India tried this exact thing — and lost the lander in the final minutes. Same room. A lot
+> of the same faces. And now the whole country is watching... one small dot on a screen."
+
+*Why the last one works:* a time, a place and a moment; a tension you can feel ("nobody is touching anything"); the
+stakes in human terms (the last attempt failed, the same faces); a question the viewer now holds (will it land?);
+long lines against short ones; `...` and `—` giving the voice room to breathe and turn.
+
+**What makes a viewer lean in.**
+1. **Start in the middle of the moment.** The first line is inside a scene that is already moving, never before it.
+2. **Specific beats general.** One time, one place, one person, one object ("one small dot on a screen"), never
+   "scientists worked hard for many years".
+3. **Chain with "but" and "so", never "and then".** Every beat is caused by the last one or works against it. A run of
+   "and then… and then…" is a list, and a list loses people. (Writers' rule of thumb, popularised by Trey Parker and
+   Matt Stone.)
+4. **Curiosity loops at three sizes.** One **film loop** (opened by 0:55, paid at the end). One **chapter loop** per
+   chapter (a question opened at the start, answered 2–4 minutes later). **Small loops every 20–40 seconds** (a
+   withheld detail, "but there was a problem nobody had noticed yet"). Close one loop and open the next in the same
+   breath. Never open a loop the film doesn't close, or the viewer feels cheated.
+5. **Give half, keep half.** Curiosity is strongest when people know enough to see the gap (Loewenstein 1994,
+   *Psychological Bulletin* 116: 75–98, "information gap" theory). So give the reference point first ("India had
+   already failed once, in the last two minutes"), then the gap ("what changed in four years?").
+6. **Stakes in human terms.** Who loses what if this fails: a family's savings, a town's jobs, a scientist's career,
+   the country's pride. Rupees and what they meant then ("a year's salary for a mill worker").
+7. **Put the viewer inside.** Present tense for scenes; "you" placed in the scene ("Stand on that platform. The
+   heat comes off the rails in waves."); one or two senses per scene, never a pile of adjectives. People who feel
+   carried into a story are more moved by it and believe it more (Green & Brock 2000, *Journal of Personality and
+   Social Psychology* 79: 701–721, "narrative transportation").
+8. **One point of view per chapter.** Tell it through someone's eyes, with what they knew then, not what we know now.
+   When we know more than they did, say so ("He didn't know it yet, but…"): it pulls the viewer forward.
+9. **Turns.** Every chapter has an expectation and a reversal. If nothing surprises the viewer for two minutes, the
+   chapter is too long or in the wrong order.
+10. **Show the emotion, don't name it.** Never "it was an emotional moment". Show the hands that won't stay still, the
+    silence before the cheer, the scientist who takes his glasses off. Real reactions only.
+11. **Rhythm and breath.** A long, flowing line, then a short punch. The key line on its own. A pause before the
+    reveal; sometimes the music stops and the voice says nothing at all.
+12. **Talk like a person.** Contractions, plain words, the odd aside ("and this is the part I love"), "I" used
+    rarely and only when it sounds real. Ask the viewer's own question out loud, then answer it.
+13. **Plant and pay off.** Plant an object, a line or a person early; bring it back at the end with new meaning.
+14. **End on an image and a feeling,** never a summary. Then one forward line into the next film.
+15. **Leave room for the picture.** Never describe what is already on screen ("here we see a steel plant"). The words
+    add what the picture can't: the stakes, the thought, the number, the irony. Let real sound carry 2–6 seconds with
+    no voice at big moments.
+
+**The lean-in test (every paragraph, before recording).**
+Write the script as the film's `screenplay.md` with a **Q column**: the question the viewer is holding during that
+paragraph. Then check each paragraph:
+- [ ] **What is the viewer waiting to find out right now?** If the Q cell is empty, they swipe: add a question or cut.
+- [ ] Is there a person, a place and a moment, or is it a summary?
+- [ ] Is there a "but" or a "so" in it, or is it "and then"?
+- [ ] Read it aloud. Would a teacher, a news reader or a flat voice say it this way? Then rewrite it.
+- [ ] Can it go without the film losing anything? Then it goes.
+- [ ] Does the last line pull into the next paragraph?
+
+**In the audience review** (§4a-11), ask the reviewer for a **lean-in map**: every ~30 s marked *leaning in*,
+*neutral* or *drifting*, plus any line that sounds like a teacher, a news reader or a flat voice. If any viewer drifts
+in the first minute, fix and review again.
+
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
 Telugu leaders win on warmth and presence (§4a), and a written-register script read by TTS sounds like a news bulletin.
@@ -1561,6 +1675,158 @@ rare earth film), the old cards disappear.
 8. **Test.** Upload a main thumbnail plus at least one challenger in YouTube Studio → Test & Compare. Write the winner
    and its CTR here after 2 weeks.
 
+### 13c. How YouTube finds our videos, and curiosity in the package (analysis, 2026-10-24)
+> "Making the curiosity is also the most important thing: thumbnail, title and YouTube description simple, yet how
+> actually our video comes up when someone searches on YouTube … match how the YouTube algorithm works for search,
+> suggestions, browse features." (owner, 2026-10-24, for Built on Bharat; applied here too)
+
+**How the system works (what YouTube itself says).**
+Sources: YouTube Help *How YouTube search works* (answer 16090438), *Discovery and performance FAQs* (141805), *Tips
+for video descriptions* (12948449), *Add tags* (146402), *Traffic sources* (1714921), *Test & compare* (13861714),
+youtube.com/howyoutubeworks (recommendations), and YouTube's growth and discovery lead Todd Beaupré on Creator Insider
+(interviews reported by Search Engine Journal, 2025, and PPC Land, 1 Sept 2026, from an auto transcript). Read on
+2026-10-24; links at the end of this section. Third-party "algorithm guides" were read too, but only the official points are treated as
+fact. Precise weights you see on blogs ("the first 30 s count 40%") are guesses, not YouTube figures.
+
+**It pulls, it doesn't push.** "A lot of creators think of YouTube as pushing videos out to a bunch of people, but it's
+actually more the reverse" (Beaupré). When a viewer opens the app, the system picks, for that one person, the videos
+it expects them to watch and be glad they watched. *So:* there is no "the algorithm" to please, only viewers. Each film
+must be the best choice for a specific kind of viewer at the moment they see it.
+
+**It judges each video on its own.** "The algorithm for Discovery is focused more on individual videos"; there is no
+penalty box for a weak video or a break, and historical data is not over-weighted when it doesn't predict the next
+video (Beaupré). Old videos can come back when a topic becomes relevant again. *So:* evergreen films keep earning; a
+flop doesn't sink the channel; never delete or rush.
+
+**What it measures.** Viewing behaviour (what people watch, skip and search for), "absolute and relative watch time",
+likes and dislikes ("some of the hundreds of signals"), "Not interested" feedback, and satisfaction surveys (YouTube
+Help 141805, howyoutubeworks). Beaupré: "No metric on its own is a good indicator of value" and "We don't want to just
+assume that all time is valuable": surveys separate time spent from time people were glad they spent. *So:* a click the
+film doesn't pay off (clickbait) can hurt more than it helps, and a viewer who finishes satisfied is the real win.
+
+**Three doors, three different rules.**
+| Door (Studio traffic source) | What it is | What decides it | What we control |
+|---|---|---|---|
+| **YouTube search** | Results for a typed query | **Relevance** (how well the title, description, tags and *video content* match the query), **engagement** (e.g. watch time for that query), **quality** (channels showing expertise, authority and trust on the topic), plus the viewer's own history (Help 16090438) | The words people type, in the title, description, chapters and the spoken narration (YouTube reads the captions); accurate captions uploaded; real depth on the topic |
+| **Browse features** | Home feed, subscriptions, Watch Later, Explore (Help 1714921) | The viewer's interests and history, and how similar viewers responded to the video (Help 141805) | The thumbnail and title (that is all the viewer sees), and the satisfaction of those who clicked |
+| **Suggested videos** | "Up next" beside and after other videos, and links in descriptions (Help 1714921) | What the viewer is likely to watch next, given what they're watching and their history. "Not simply just because it's related": it follows what viewers actually watch together (Beaupré) | Films that people who watch big India documentaries also want; our own series, playlists and end screens chaining one film into the next |
+
+**New channels.** With no viewer history, the system matches what the video is about with viewers' topic interests;
+if no interested audience emerges, impressions stop (Beaupré, Sept 2026, as reported). New uploads reach people who
+have never watched the channel within the first hour, and the system learns separately for subscribers and non-subscribers.
+Beaupré's advice to a small channel: go deep into one audience rather than wide, and build a catalogue so a viewer who
+finds you can watch more. *So:* stay in one clear lane (§4a-7, the "India's Missing Pieces" lane), make every film's subject unmistakable from its
+title, thumbnail and first minute, and group films into series.
+
+**Subscribers are not the audience.** "Even your best videos, 90% of the time, your subscribed audience isn't deciding
+to watch," and a 10% or lower click-through rate is normal (Beaupré). *So:* package every film for a stranger, not for
+fans.
+
+**Series hold viewers.** "Viewers don't want to be picking up the remote every five to 10 minutes to make a new video
+decision" (Beaupré, about living-room viewing). Playlists and series keep a session going.
+
+**Upload frequency doesn't drive growth.** "Growth in views across uploads is not correlated with time between uploads"
+(Help 141805). *So:* never rush a film to keep a schedule. Quality first, always.
+
+**Tags barely matter.** "Tags play a minimal role in your video's discovery"; they help only when the subject is
+commonly misspelled. "Your video's title, thumbnail, and description are more important" (Help 146402). Stuffing
+tags into a description breaks the spam policy.
+
+**Descriptions do matter for search.** YouTube's own tips: pick 1–2 main words that describe the video and feature
+them prominently in both the description and the title; "pretend you're searching for your video, what would you type
+into the search bar?"; the first few lines are what viewers see first; every video needs a unique description; use
+chapters; link playlists (Help 12948449).
+
+**Chapters reach Google too.** Google Search shows "key moments" for videos and gives priority to the ones a creator
+sets, including "the exact timestamps and labels in the video description" for YouTube videos (Google Search Central,
+video structured data). Chapter titles are search phrases in their own right.
+
+**Thumbnail tests are judged on watch time, not clicks.** Test & Compare shows up to three thumbnails evenly and picks
+the one with the highest **watch time share**, because a click-only winner "may determine a different winning
+thumbnail" than one people keep watching (Help 13861714). Title testing is rolling out to some channels. *So:* the
+best package is the one that attracts the viewers who will stay.
+
+**Misleading packaging is against the rules.** Titles should "accurately represent the content"; avoid "deceiving,
+misleading, clickbaity or sensational" titles and thumbnails (Help 141805).
+
+**Language.** Channels that dub most of their watch time do better, and translated titles and descriptions should be
+uploaded with the dubs (Beaupré, 2025). A later step for us (Hindi/Telugu dubs: §4a-7, research report §8).
+
+**What this means for us.**
+1. **Package first.** Before the script, draft the title, the thumbnail idea and the search terms in the project's
+   brief. They are the promise; the first 30 s deliver it (§4a-5) and the film pays it off.
+2. **Curiosity first, keywords second, honesty always.** The pair must make a stranger feel a question only the film
+   answers (§13b), while the title and description carry the words people type, and everything is true.
+3. **Write for one viewer.** The brief names who the film is for and the big videos they already watch; suggested
+   traffic comes from sitting next to those.
+4. **Search words from real searches:** YouTube autocomplete (`gl=IN`, `hl=en`), the top 20 results, Google Trends
+   India, and Studio's **Research** tab and per-video **search terms** report. Save
+   `projects/<slug>/research/search_terms.md`: one main phrase, 2–4 secondary phrases, the curiosity question.
+5. **The narration says the main phrase naturally** in the first minute (YouTube reads the video content). Never forced.
+6. **Upload our exact captions** (the SRT from the locked script) with every film.
+7. **Series and chains:** every film in a series playlist ("India's Missing Pieces"), the end screen pointing to the
+   next film, a pinned-comment question (§4a-4 outro).
+8. **Test every film:** three thumbnails in Test & Compare from the first hour (titles too when Studio offers it).
+   It picks by watch-time share, so the winner is the one that attracts viewers who stay. Record winners in §15.
+
+**Curiosity: the heart of the package.** People get curious when they know *some* of something and can see the gap
+(Loewenstein 1994). So the package gives a known reference point and opens a specific gap: not vague mystery, and
+never the answer. The title carries the subject and the search words; the thumbnail carries the emotion and the visual
+question (§13b); they never repeat each other.
+
+**Five curiosity shapes that suit our films** (examples are shapes, not checked claims):
+| Shape | Title pattern | Why it pulls |
+|---|---|---|
+| **The paradox** | "India Reached the Moon. Why Does It Still Import Magnets?" | Two facts that shouldn't both be true |
+| **The bet** | "The Tata Bet That Nearly Lost Everything" | An open outcome: did it work? |
+| **Hidden in plain sight** | "Why Indians Still Buy Gold When Shares Pay More" | Something you see daily has a secret |
+| **The origin** | "How a Village in a Jungle Became India's Steel City" | A transformation you want to see happen |
+| **The unlikely detail** | "The Steam Engine Still Running Since 1855" | A specific, surprising fact you want to check |
+
+Rules for the pair:
+- **The title carries the subject and the search words; the thumbnail carries the emotion and the visual question.**
+  They work together and never repeat each other.
+- **Specific beats vague.** A number, a name, a place, a year ("1903", "₹2,000 crore", "one man") makes a gap feel real.
+- **Never answer the question** in the title or the thumbnail.
+- **Never lie, never exaggerate.** Every word is paid off in the film, ideally the core of it in the first 30 seconds.
+  YouTube's surveys and watch-time tests punish packages that over-promise.
+
+**Title:** the main search phrase inside the first ~40 characters, said the way people type it, with the curiosity in the
+same line; the `| Be Practical With Kishore` suffix stays (owner, 2026-10-17), so the words before it must work alone
+on a phone. Two alternatives for title tests.
+
+**Description, inside the owner's simple rule (§13a: 2–4 plain lines and timestamps, nothing else):** line 1 is one
+plain sentence with the main search phrase and the curiosity (YouTube shows the first lines in search and reads the
+whole description for relevance; its own tips: feature 1–2 main words in both the title and the description); lines
+2–4 use 2–3 secondary phrases naturally; **chapter names are search phrases and story beats at once** ("Why India
+imports rare earth magnets", not "Part 2"); Google also shows description chapters as "key moments". *Not changed
+without the owner:* hashtags and a series playlist link (YouTube's help says both aid discovery; Built on Bharat uses
+them since 2026-10-24) stay out here until the owner says otherwise. **Tags:** only alternate spellings and common
+misspellings (YouTube: "tags play a minimal role" otherwise).
+
+**After publishing:** read Studio at 48 hours, 7 days and 28 days (owner's screenshots of Reach and Engagement):
+CTR and impressions per traffic source (browse, suggested, search), retention at 0:30 and 1:00 against §4a-7's
+targets, rewinds and cliffs with what was on screen, and the search terms report. Low CTR with good retention: the
+package fails the film, test a new thumbnail. High CTR with an early cliff: the film breaks the promise, fix the
+opening in the next film. Don't change what's working; don't judge a film only on its first days. Log findings in §15.
+
+**Sources (read 2026-10-24).**
+- How YouTube search works: https://support.google.com/youtube/answer/16090438
+- Discovery and performance FAQs: https://support.google.com/youtube/answer/141805
+- Tips for video descriptions: https://support.google.com/youtube/answer/12948449
+- Add tags to your video: https://support.google.com/youtube/answer/146402
+- Hashtags: https://support.google.com/youtube/answer/6390658
+- Traffic sources: https://support.google.com/youtube/answer/1714921
+- Test & compare thumbnails: https://support.google.com/youtube/answer/13861714
+- How YouTube works, recommendations: https://www.youtube.com/howyoutubeworks/product-features/recommendations/
+- Beaupré interview, 2025: https://www.searchenginejournal.com/how-youtubes-recommendation-system-works-in-2025/538379/
+- Algorithm myths, YouTube growth team: https://www.searchenginejournal.com/youtube-algorithm-myths-debunked-insights-from-the-growth-team/510091/
+- Beaupré on Creator Insider, 1 Sept 2026 (as reported): https://ppc.land/subscribers-skip-90-of-uploads-in-their-feed-youtube-director-says/
+- Google key moments: https://developers.google.com/search/docs/appearance/structured-data/video
+- Loewenstein, G. (1994). The psychology of curiosity. *Psychological Bulletin*, 116(1), 75–98.
+- Green, M. C., & Brock, T. C. (2000). The role of transportation in the persuasiveness of public narratives.
+  *Journal of Personality and Social Psychology*, 79(5), 701–721.
+
 ## 14. Pre-render review (every cut, before the final render)
 
 **Audio-synced frame review, every cut, before the owner sees it (owner, 2026-10-12: "you can read images and videos
@@ -1637,6 +1903,14 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
    its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
 
 ## 15. Lessons log
+
+**Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
+channel Built on Bharat (repo `mkmk749278/Built-on-Bharat`), the owner made narration and curiosity in the package the
+top priorities, made Claude the creative director with rules as a reference rather than a ceiling, and asked for the
+same here. Added §4.1, §4a-12 and §13c. The analysis read YouTube's own help pages and its discovery lead's
+interviews: recommendations are pulled per viewer, each video is judged on its own, satisfaction sits beside watch
+time, search ranks by relevance, engagement and quality, tags barely matter, and Test & Compare picks by watch-time
+share.
 
 **Jet engine film v2: real footage first, a real airframe, a 4K assembly (2026-10-23).**
 - **Check a cut's streams before anyone sees it.** v1's 720p copy had a 229 s picture under a 510 s voice (picture gone
