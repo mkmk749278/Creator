@@ -22,7 +22,10 @@ INDIAN_OK = {"rupee", "rupees", "lakh", "lakhs", "crore", "crores", "kirana", "c
              "rickshaw", "scooty", "tiffin", "paise", "pin", "app", "apps", "paytm", "phonepe", "gpay", "bhim",
              # Indian places and brands every viewer knows, and the film's own subject words, said and shown (2026-10-21)
              "pune", "kerala", "odisha", "nadu", "andhra", "visakhapatnam", "bajaj", "chetak", "chetaks", "scooter",
-             "scooters", "magnet", "magnets", "earths"}
+             "scooters", "magnet", "magnets", "earths",
+             # jet engine film subject words (2026-10-22)
+             "afterburner", "kaveri", "kilonewtons", "ghatak", "ilyushin", "compressor", "hangar", "hangars", "bengaluru",
+             "kilos", "kishore"}
 # Fancy words that make narration sound like a textbook; say the plain word instead.
 FANCY = {"utilize": "use", "utilise": "use", "commence": "start", "facilitate": "help", "subsequently": "then",
          "approximately": "about", "numerous": "many", "regarding": "about", "phenomenon": "thing", "conundrum": "puzzle",

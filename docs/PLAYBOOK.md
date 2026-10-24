@@ -1606,6 +1606,32 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
 
 ## 15. Lessons log
 
+**Jet engine film v2: real footage first, a real airframe, a 4K assembly (2026-10-23).**
+- **Check a cut's streams before anyone sees it.** v1's 720p copy had a 229 s picture under a 510 s voice (picture gone
+  after 3:49). *Fix:* `video/jet-engine-bet/assemble/assemble_4k.py` refuses to finish unless the picture equals the film
+  length and the video and audio streams match within 0.15 s.
+- **Use the owner's official clips before building CG.** The v0/v1 hangar used a generic procedural jet while DD India's
+  HAL Nashik line, PIB Tejas flying and IAF MiG-21 farewell clips sat unused. The independent review asked for real
+  footage on every beat a camera can reach; CG only where none can (inside the empty exhaust).
+- **A 3D airframe from TurboSquid: drop the FBX's lights.** The free "HAL Tejas Fighter Navy" FBX carries the author's
+  Blender studio lights; cloned 31 times they blew the hangar to white and made frames ~3× slower. `_lib/tejasModel.js`
+  removes lights and cameras, hides decal materials whose images are not in the file, and repaints. Military models are
+  "editorial" on TurboSquid: fine in a documentary, never in a thumbnail; the file stays out of git (no redistribution).
+- **Never rip a model the author made non-downloadable** (Tampermonkey/viewer extractors), even when a video shows how:
+  it takes a paid or protected asset without a licence. Use a free CC BY / royalty-free download or ask the owner to buy.
+- **WebGL at 4K on the CPU is ~10 min a frame for a 30-jet hangar.** Render the 3D at 1080p (the Kavach recipe, §9.4) and
+  draw every label at 4K in the assembly (`labels4k.py`, PIL) so text is sharp; say so to the owner.
+- **Worker restarts kill renders** (twice in one afternoon, even with `setsid nohup`). Split long CG into 5 s shards that
+  skip finished parts (`video/jet-engine-bet/work/r1shards/run.sh`); `HF_SEGMENTED_CAPTURE` made only one segment.
+- **Cache 4K shots by content key, not by position** (`k_<key>.mp4`), so inserting a shot doesn't re-render the rest; two
+  helper sessions on fresh VMs rendered 79 shots in ~40 min while the coordinator rendered CG.
+- **Commons API 429 → use the website.** `scripts/commons_html_fetch.py` reads category pages and each file page's
+  `licensetpl_short` (accepts GODL-India, the government open-data licence most MoD/PIB photos use) and downloads
+  standard 1920 px thumbnails; Openverse was returning 500s the same day.
+- **pgrep/pkill traps, again:** a `pgrep -f` pattern that also appears anywhere in the same command line (a heredoc, a
+  later command) matches the shell itself and kills it (exit 144). List PIDs with `ps | grep -v grep` in one call, kill
+  in the next.
+
 **Rare earth film: 4K and the independent review (2026-10-22).**
 - **A native 4K part can run out of memory near its end.** Part 2 (133 s, 22 shots, 1080p sources) aborted twice in
   V8 `JSON.parse` around 118 s. Every other part rendered.

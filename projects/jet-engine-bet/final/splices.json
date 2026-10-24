@@ -1,0 +1,42 @@
+{
+ "old_duration": 510.5761,
+ "new_duration": 513.6341,
+ "splices": [
+  {
+   "old": [
+    126.37,
+    138.28
+   ],
+   "new_len": 12.542,
+   "gain": 0.876,
+   "file": "l17_blow.mp3"
+  },
+  {
+   "old": [
+    297.83,
+    305.48
+   ],
+   "new_len": 9.977,
+   "gain": 0.806,
+   "file": "l39_fighter.mp3"
+  },
+  {
+   "old": [
+    338.76,
+    342.92
+   ],
+   "new_len": 4.426,
+   "gain": 0.898,
+   "file": "l43_mig21.mp3"
+  },
+  {
+   "old": [
+    431.4,
+    435.73
+   ],
+   "new_len": 4.163,
+   "gain": 0.733,
+   "file": "l52_crore.mp3"
+  }
+ ]
+}

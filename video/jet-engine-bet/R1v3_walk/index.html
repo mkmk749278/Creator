@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>R1 v3 · The hangar walk-around (real Tejas airframe)</title>
+    <!-- Room 1 v3 (independent review v1, §6): the CG half of the walk-around, intercut in the edit with real HAL Nashik footage.
+         Two shots, authored at 1920x1080 (WebGL at 4K was ~10 min a frame on the CPU), upscaled in the 4K assembly where all text is drawn at 4K.
+         A (0-7.6 s = VO 7.6-15.2): walk in towards a hangar of ~30 new, unmarked Tejas, noses to camera, dead silence.
+         B (7.6-20.8 s = VO 20.6-33.8): low pass under the hero, stop dead on "Not one", walk round to the tail, push into the
+         nozzle and hold in the empty tunnel on "Nothing". Airframe: TurboSquid "HAL Tejas Fighter Navy" (free, product 1458138),
+         repainted Air Force grey, navy decals and missiles removed (tejasModel.js). Hangar: procedural, Poly Haven CC0 floor and HDRI.
+         ILLUSTRATION in the edit. -->
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/jsm/", "three/examples/jsm/": "./vendor/three/jsm/", "postprocessing": "./vendor/pp/postprocessing.js", "simplex-noise": "./vendor/noise/simplex-noise.js", "n8ao": "./vendor/pp/N8AO.js" } }
+    </script>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      html, body { margin: 0; background: #05070b; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #05070b; }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="R1v3_walk" data-start="0" data-width="1920" data-height="1080" data-duration="20.8">
+      <canvas id="gl"></canvas>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true }); tl.to({}, { duration: 20.8 });
+      window.__timelines = window.__timelines || {}; window.__timelines["R1v3_walk"] = tl;
+    </script>
+    <script type="module">
+      import { THREE, createStage, setEnv, seg, ease, lerp, clamp, mulberry32 } from "./jebA.js";
+      import { panelAtlas, radialTex } from "./jebTejas.js";
+      import { loadTejas } from "./tejasModel.js";
+      import { createNoise2D } from "simplex-noise";
+      const B = window.BENCH || {};
+      const st = createStage({ fov: 40, near: 0.05, far: 400, hdri: "vendor/ph/hangar_interior_2k.hdr",
+        bloom: { intensity: 0.65, threshold: 1.5, smoothing: 0.15, radius: 0.45 }, vignette: 0.5,
+        ao: B.noAo ? null : { radius: 1.3, intensity: 2.4, quality: "Performance" }, dof: { distance: 9, range: 5, bokeh: 2.0 }, whip: false });
+      const { scene, camera } = st;
+      scene.background = new THREE.Color(0x03050a); scene.fog = new THREE.FogExp2(0x0c121b, 0.0085);
+      const noise = createNoise2D(mulberry32(11));
+      const tex = (url, srgb) => new THREE.TextureLoader().loadAsync(url).then((t) => { t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; if (srgb) t.colorSpace = THREE.SRGBColorSpace; return t; });
+      const [fD, fR, fN] = await Promise.all([tex("vendor/ph/hangar_concrete_floor_diff_2k.jpg", true), tex("vendor/ph/hangar_concrete_floor_rough_2k.jpg"), tex("vendor/ph/hangar_concrete_floor_nor_gl_2k.jpg")]);
+      const HL = 150, HW = 70, HH = 18;
+      // --- hangar shell (from R1 v2, door closed: we are inside) ------------------------------------------------------------
+      for (const t of [fD, fR, fN]) t.repeat.set(HW / 4.5, HL / 4.5);
+      const floor = new THREE.Mesh(new THREE.PlaneGeometry(HW, HL), new THREE.MeshStandardMaterial({ map: fD, roughnessMap: fR, normalMap: fN, normalScale: new THREE.Vector2(0.9, 0.9), color: 0xa2a7ae, roughness: 1, metalness: 0, envMapIntensity: 0.6 }));
+      floor.rotation.x = -Math.PI / 2; floor.position.set(0, 0, HL / 2 - 10); scene.add(floor);
+      const flute = (() => { const c = document.createElement("canvas"); c.width = 256; c.height = 64; const g = c.getContext("2d"); g.fillStyle = "#808080"; g.fillRect(0, 0, 256, 64);
+        for (let i = 0; i < 16; i++) { const gr = g.createLinearGradient(i * 16, 0, i * 16 + 16, 0); gr.addColorStop(0, "#d0d0d0"); gr.addColorStop(0.5, "#303030"); gr.addColorStop(1, "#d0d0d0"); g.fillStyle = gr; g.fillRect(i * 16, 0, 16, 64); }
+        const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(24, 2); return t; })();
+      const wallMat = new THREE.MeshStandardMaterial({ color: 0x2a323c, roughness: 0.7, metalness: 0.45, bumpMap: flute, bumpScale: 2.0 });
+      const wall = (w, h, x, y, z, ry) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), wallMat); m.position.set(x, y, z); m.rotation.y = ry; scene.add(m); return m; };
+      wall(HL, HH, -HW / 2, HH / 2, HL / 2 - 10, Math.PI / 2); wall(HL, HH, HW / 2, HH / 2, HL / 2 - 10, -Math.PI / 2); wall(HW, HH, 0, HH / 2, HL - 10, Math.PI); wall(HW, HH, 0, HH / 2, -10, 0);
+      const roof = new THREE.Mesh(new THREE.PlaneGeometry(HW, HL), new THREE.MeshStandardMaterial({ color: 0x0e1218, roughness: 0.85, metalness: 0.3, bumpMap: flute, bumpScale: 1.5 })); roof.rotation.x = Math.PI / 2; roof.position.set(0, HH + 0.4, HL / 2 - 10); scene.add(roof);
+      const steel = new THREE.MeshStandardMaterial({ color: 0x2f3640, roughness: 0.55, metalness: 0.7 });
+      for (let z = -5; z < HL - 10; z += 7.5) { const b = new THREE.Mesh(new THREE.BoxGeometry(HW, 0.5, 0.36), steel); b.position.set(0, HH - 0.4, z); scene.add(b);
+        const b2 = new THREE.Mesh(new THREE.BoxGeometry(HW, 0.26, 0.26), steel); b2.position.set(0, HH - 2.6, z); scene.add(b2);
+        for (let x = -32; x <= 32; x += 8) { const d = new THREE.Mesh(new THREE.BoxGeometry(0.14, 2.2, 0.14), steel); d.position.set(x, HH - 1.5, z); d.rotation.z = (Math.round(x / 8) % 2 === 0 ? 0.4 : -0.4); scene.add(d); } }
+      const diff = new THREE.MeshBasicMaterial({ color: new THREE.Color(0xe4eeff).multiplyScalar(5.2) });
+      const housing = new THREE.MeshStandardMaterial({ color: 0x15181d, roughness: 0.5, metalness: 0.6 });
+      for (const x of [-28, -14, 0, 14, 28]) for (let z = -2; z < HL - 10; z += 12) { const h = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.12, 4.6), housing); h.position.set(x, HH - 1.0, z); scene.add(h);
+        const d = new THREE.Mesh(new THREE.PlaneGeometry(0.34, 4.4), diff); d.rotation.x = Math.PI / 2; d.position.set(x, HH - 1.07, z); scene.add(d); }
+      const winTex = (() => { const c = document.createElement("canvas"); c.width = 8; c.height = 128; const g = c.getContext("2d"); const gr = g.createLinearGradient(0, 0, 0, 128);
+        gr.addColorStop(0, "#0b1731"); gr.addColorStop(0.55, "#243a63"); gr.addColorStop(1, "#8a6a58"); g.fillStyle = gr; g.fillRect(0, 0, 8, 128); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; })();
+      const winMat = new THREE.MeshBasicMaterial({ map: winTex, color: new THREE.Color(1, 1, 1).multiplyScalar(1.25) });
+      for (const sx of [-1, 1]) for (let z = -2; z < HL - 10; z += 14) { const w = new THREE.Mesh(new THREE.PlaneGeometry(9, 2.6), winMat); w.position.set(sx * (HW / 2 - 0.05), 13.2, z); w.rotation.y = -sx * Math.PI / 2; scene.add(w); }
+      const yel = new THREE.MeshBasicMaterial({ color: 0x6f5a14 });
+      for (const x of [-14, 0, 14]) { const m = new THREE.Mesh(new THREE.PlaneGeometry(0.14, HL), yel); m.rotation.x = -Math.PI / 2; m.position.set(x, 0.012, HL / 2 - 10); scene.add(m); }
+      // --- the fleet: 4 columns x 8, noses to the door (-Z); hero = column x=-7, row 1 -------------------------------------
+      const atlas = panelAtlas(5);
+      const { model, materials, exhaust } = await loadTejas("models/tejas_lite.fbx", { atlas });
+      const COLS = [-24, -8, 8, 24], ROWS = (r) => 14 + r * 16;
+      const HX = -8, HZ = ROWS(1);
+      const rnd = mulberry32(77); const fleet = [];
+      const shTex = radialTex([[0, "rgba(0,0,0,0.55)"], [1, "rgba(0,0,0,0)"]]);
+      for (const x of COLS) for (let r = 0; r < 8; r++) {
+        if (x === 24 && r === 7) continue; if (x === -24 && r === 6) continue;
+        const j = model.clone(true); j.position.set(x, 0, ROWS(r)); j.rotation.y = Math.PI + (rnd() - 0.5) * 0.03; scene.add(j); fleet.push(j);
+        const p = new THREE.Mesh(new THREE.PlaneGeometry(10, 15), new THREE.MeshBasicMaterial({ map: shTex, transparent: true, depthWrite: false })); p.rotation.x = -Math.PI / 2; p.position.set(x, 0.02, ROWS(r)); scene.add(p);
+      }
+      // the hero's tail: darken its nozzle, steel and inner surfaces so the torch inside the exhaust shows an empty dark tube,
+      // not the model's lit engine-face disc and bright petals (shard 4 review)
+      { const hero = fleet.find((j) => Math.abs(j.position.x - HX) < 0.1 && Math.abs(j.position.z - HZ) < 0.1);
+        const heroDark = new THREE.MeshStandardMaterial({ color: 0x0d0d10, roughness: 0.85, metalness: 0.25, side: THREE.DoubleSide });
+        const swap = new Set([materials.nozzle, materials.steel, materials.dark]);
+        hero.traverse((o) => { if (!o.isMesh) return; o.material = Array.isArray(o.material) ? o.material.map((m) => (swap.has(m) ? heroDark : m)) : (swap.has(o.material) ? heroDark : o.material); }); }
+      // the hero's empty engine bay: a clean dark tube behind the nozzle with bare frames and a blanked bulkhead (no props:
+      // review v1 asked for "bare ribs and the dark"); it closes the see-through hole of the model's exhaust shell
+      const EXY = exhaust ? exhaust.center.y : 2.25, EXR = exhaust ? exhaust.radius : 0.46;
+      { const bayMat = new THREE.MeshStandardMaterial({ color: 0x1b1c20, roughness: 0.78, metalness: 0.45, side: THREE.BackSide, bumpMap: atlas, bumpScale: 0.7 });
+        const len = 5.2, z0 = HZ + 6.45;   // world: tail exit near HZ+6.57, the tube runs forward (towards -Z)
+        const tube = new THREE.Mesh(new THREE.CylinderGeometry(EXR * 0.98, EXR * 1.04, len, 48, 1, true), bayMat); tube.rotation.x = Math.PI / 2; tube.position.set(HX, EXY, z0 - len / 2); scene.add(tube);
+        const fr = new THREE.MeshStandardMaterial({ color: 0x2a2c31, roughness: 0.6, metalness: 0.7 });
+        for (let k = 1; k <= 6; k++) { const f = new THREE.Mesh(new THREE.TorusGeometry(EXR * 0.95, 0.012 + 0.006 * (k % 2), 8, 48), fr); f.position.set(HX, EXY, z0 - k * 0.78); scene.add(f); }
+        const bulk = new THREE.Mesh(new THREE.CircleGeometry(EXR, 48), new THREE.MeshStandardMaterial({ color: 0x0a0a0c, roughness: 0.85, metalness: 0.3 })); bulk.position.set(HX, EXY, z0 - len + 0.02); scene.add(bulk); }
+
+      // depth: the model closes its tail with skin ~1 m in; a radial black-to-grey disc just inside the nozzle reads as the
+      // empty tunnel falling away into darkness (the camera stops at the exit plane)
+      { const c = document.createElement("canvas"); c.width = c.height = 256; const g = c.getContext("2d"); const gr = g.createRadialGradient(128, 128, 4, 128, 128, 128);
+        gr.addColorStop(0, "#000000"); gr.addColorStop(0.55, "#020203"); gr.addColorStop(0.85, "#0b0c0f"); gr.addColorStop(1, "#16171b"); g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
+        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+        const void_ = new THREE.Mesh(new THREE.CircleGeometry(EXR * 1.25, 64), new THREE.MeshBasicMaterial({ map: t, fog: false, side: THREE.DoubleSide })); void_.position.set(HX, EXY, HZ + 6.6 - 0.45); scene.add(void_); }
+
+      // --- light -----------------------------------------------------------------------------------------------------------
+      setEnv(scene, 0.42);
+      scene.add(new THREE.HemisphereLight(0x7b90b4, 0x15181e, 0.45));
+      for (const [x, z] of [[-8, 4], [-8, 30], [8, 10], [8, 40], [-24, 22], [24, 26], [0, 60], [-8, 62]]) {
+        const s = new THREE.SpotLight(0xdfe9ff, 150, 52, 0.9, 1.0, 2); s.position.set(x, HH - 1.4, z); s.target.position.set(x, 0, z); scene.add(s); scene.add(s.target); }
+      const rim = new THREE.DirectionalLight(0xffb87a, 0.9); rim.position.set(30, 9, -10); rim.target.position.set(-6, 0, 20); scene.add(rim); scene.add(rim.target);
+      const torch = new THREE.SpotLight(0xfff1dc, 6, 24, 0.5, 0.95, 1.8); scene.add(torch); scene.add(torch.target);
+      const coneMat = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false, uniforms: { uA: { value: 0.05 } },
+        vertexShader: "varying vec3 vN; varying vec3 vV; varying float vY; void main(){ vY = position.y; vec4 mv = modelViewMatrix * vec4(position,1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }",
+        fragmentShader: "varying vec3 vN; varying vec3 vV; varying float vY; uniform float uA; void main(){ float f = abs(dot(normalize(vN), normalize(vV))); float e = smoothstep(-7.5, -3.0, vY) * (1.0 - smoothstep(2.0, 7.5, vY)); float a = e * pow(f, 2.6) * uA; gl_FragColor = vec4(vec3(0.6,0.76,1.0) * a, a); }" });
+      for (const [x, z] of [[-8, 4], [8, 10], [-8, 30], [8, 40], [0, 60]]) { const c = new THREE.Mesh(new THREE.ConeGeometry(5.2, 15, 32, 1, true), coneMat); c.position.set(x, 9.2, z); c.rotation.x = Math.PI; scene.add(c); }
+      const NP = 900, pr = mulberry32(5), b3 = new Float32Array(NP * 3), ph = new Float32Array(NP);
+      for (let i = 0; i < NP; i++) { b3[i * 3] = (pr() - 0.5) * 44; b3[i * 3 + 1] = pr() * 10 + 0.5; b3[i * 3 + 2] = pr() * 70 - 4; ph[i] = pr() * 6.28; }
+      const dgeo = new THREE.BufferGeometry(); dgeo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(NP * 3), 3));
+      const dust = new THREE.Points(dgeo, new THREE.PointsMaterial({ map: radialTex([[0, "rgba(255,255,255,0.9)"], [1, "rgba(255,255,255,0)"]], 32), color: 0xcfe0ff, size: 0.05, transparent: true, opacity: 0.4, blending: THREE.AdditiveBlending, depthWrite: false })); dust.frustumCulled = false; scene.add(dust);
+
+      // --- camera: two shots, each [t, position, look-at, fov] on centripetal splines with handheld noise ---------------------
+      const NZ = HZ + 6.6;   // the hero's nozzle exit plane (tail), nose at HZ - 6.6
+      const NY = EXY;
+      const SHOTS = [
+        { t0: 0, t1: 7.6, K: [
+          [0.0, [1.2, 1.62, -6.5], [-1.5, 2.0, 30], 40], [3.8, [0.6, 1.62, -2.0], [-3.0, 2.1, 30], 38], [7.6, [0.1, 1.62, 2.2], [-5.5, 2.1, 30], 36] ], walk: [0, 7.6] },
+        { t0: 7.6, t1: 20.8, K: [
+          [7.6, [HX - 9.5, 0.95, HZ - 6.0], [HX, 1.7, HZ - 2.0], 34], [10.2, [HX - 7.6, 0.98, HZ - 2.2], [HX, 1.7, HZ + 0.4], 32], [11.4, [HX - 7.2, 1.0, HZ - 1.4], [HX, 1.7, HZ + 0.8], 32],
+          [13.0, [HX - 7.15, 1.0, HZ - 1.35], [HX, 1.7, HZ + 0.85], 32],
+          [14.9, [HX - 8.2, 1.55, HZ + 7.5], [HX, 1.8, NZ - 1.0], 34], [16.4, [HX - 2.4, NY, NZ + 6.0], [HX, NY, NZ], 34],
+          [17.1, [HX, NY, NZ + 2.4], [HX, NY, NZ - 3], 32], [17.7, [HX, NY, NZ + 0.55], [HX, NY, NZ - 6], 30], [20.8, [HX, NY, NZ + 0.12], [HX, NY, NZ - 6], 28] ], walk: [13.0, 16.6] },
+      ];
+      for (const S of SHOTS) { S.P = new THREE.CatmullRomCurve3(S.K.map((k) => new THREE.Vector3(...k[1])), false, "centripetal", 0.5); S.L = new THREE.CatmullRomCurve3(S.K.map((k) => new THREE.Vector3(...k[2])), false, "centripetal", 0.5); }
+      const sample = (S, t) => { const K = S.K; let i = 0; while (i < K.length - 2 && t > K[i + 1][0]) i++;
+        const f = clamp((t - K[i][0]) / (K[i + 1][0] - K[i][0])); const s = f * f * (3 - 2 * f); const u = (i + s) / (K.length - 1);
+        return { p: S.P.getPoint(u), l: S.L.getPoint(u), fov: lerp(K[i][3], K[i + 1][3], s) }; };
+      const tmp = new THREE.Vector3(), dirv = new THREE.Vector3();
+      st.run((t) => {
+        const S = t < SHOTS[1].t0 ? SHOTS[0] : SHOTS[1];
+        const c = sample(S, t); const w = seg(t, S.walk[0], S.walk[0] + 0.5) * (1 - seg(t, S.walk[1] - 0.4, S.walk[1]));
+        const n1 = noise(t * 0.5, 1), n2 = noise(t * 0.5, 7), n3 = noise(t * 0.4, 13);
+        const bob = 0.018 * w * Math.sin(t * 10.5), sway = 0.011 * w * Math.sin(t * 5.25);
+        camera.position.set(c.p.x + sway + 0.006 * n1, c.p.y + bob + 0.005 * n2, c.p.z);
+        camera.up.set(0, 1, 0);
+        const dd = c.p.distanceTo(c.l) / 10;
+        tmp.set(c.l.x + 0.035 * n3 * dd, c.l.y + 0.025 * n1 * dd, c.l.z); camera.lookAt(tmp);
+        camera.fov = c.fov; camera.updateProjectionMatrix();
+        const tun = seg(t, 16.9, 17.7);
+        torch.position.copy(camera.position); dirv.subVectors(c.l, c.p).normalize(); torch.target.position.copy(camera.position).addScaledVector(dirv, 8);
+        torch.intensity = 3 + 5 * tun; torch.angle = 0.5 + 0.25 * tun;
+        const dist = c.p.distanceTo(c.l); st.fx.dof.cocMaterial.focusDistance = Math.max(2, Math.min(dist, 40)); st.fx.dof.cocMaterial.focusRange = Math.max(2.4, dist * 0.5);
+        const pa = dgeo.attributes.position.array;
+        for (let i = 0; i < NP; i++) { pa[i * 3] = b3[i * 3] + 0.5 * Math.sin(t * 0.23 + ph[i]); pa[i * 3 + 1] = (b3[i * 3 + 1] + 10 - t * 0.06) % 10 + 0.5 + 0.15 * Math.sin(t * 0.4 + ph[i] * 2); pa[i * 3 + 2] = b3[i * 3 + 2] + 0.4 * Math.cos(t * 0.19 + ph[i]); }
+        dgeo.attributes.position.needsUpdate = true;
+        st.fx.vig.darkness = 0.5 + 0.25 * tun;
+      });
+    </script>
+  </body>
+</html>

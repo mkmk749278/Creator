@@ -1,0 +1,582 @@
+[
+ {
+  "line": 1,
+  "start": 0.205,
+  "end": 9.362,
+  "te": "Picture this. Inside H-A-L hangars in Bengaluru and Nashik, nearly thirty brand-new Tejas fighter jets are parked in silence.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.402,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 10.39,
+  "end": 15.358,
+  "te": "Freshly painted. Radars fitted. Cockpits wired. Ready for combat.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.193,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 16.415,
+  "end": 21.49,
+  "te": "Yet not a single one has been delivered to the Indian Air Force. Not one.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.099,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 22.148,
+  "end": 26.895,
+  "te": "The reason? Look inside the tail. The engine bay is completely empty.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.099,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 27.72,
+  "end": 37.559,
+  "te": "America's G-E was contracted to deliver ninety-nine F-404 engines for these jets. As of October twenty twenty-six, H-A-L has received only fourteen.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.194,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 38.084,
+  "end": 41.617,
+  "te": "And that delay exposes a brutal engineering reality.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.194,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 42.293,
+  "end": 55.001,
+  "te": "Deep inside a modern fighter engine sits a tiny turbine blade, no larger than your smartphone. During flight, it spins inside an inferno hotter than the melting point of the metal itself — and it doesn't melt.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.011,
+  "confidence": "check"
+ },
+ {
+  "line": 8,
+  "start": 55.576,
+  "end": 67.192,
+  "te": "Only four or five nations on Earth know how to make that blade. It took them half a century of trial, error, and metallurgy crashes. India has spent four decades trying to master it.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.011,
+  "confidence": "check"
+ },
+ {
+  "line": 9,
+  "start": 67.749,
+  "end": 74.076,
+  "te": "To understand why thirty fighter jets are stuck on the ground, you have to understand the blade that refuses to melt.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.262,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 74.719,
+  "end": 76.177,
+  "te": "First, the core mechanism.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.267,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 76.723,
+  "end": 86.945,
+  "te": "A fighter jet engine is essentially a continuous-fire blowtorch that powers its own air pump. It does four jobs: Suck. Squeeze. Burn. And Blow.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.164,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 87.576,
+  "end": 95.54,
+  "te": "The front fan sucks in air. The compressor stages ram that air backward, squeezing it down until pressure spikes to thirty atmospheres.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.164,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 95.946,
+  "end": 106.654,
+  "te": "That compressed air enters the combustion chamber, mixes with vaporized jet fuel, and ignites in a violent, continuous hurricane of fire reaching seventeen hundred degrees Celsius.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.177,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 107.14,
+  "end": 123.054,
+  "te": "As that superheated gas expands backward to escape, it hits the turbine. The gas spins the turbine, the turbine spins the central shaft driving the compressor up front, and the rest blasts out the exhaust nozzle — pushing a forty-ton aircraft past the speed of sound.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.177,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 123.732,
+  "end": 128.657,
+  "te": "Now, look at where that turbine sits. It sits directly behind the fire.",
+  "en": "",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 0.192,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 129.164,
+  "end": 131.207,
+  "te": "This is where physics turns hostile.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.327,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 131.812,
+  "end": 140.62,
+  "te": "According to Rolls-Royce, the gas exiting the combustor can be up to two hundred degrees hotter than the temperature where the blade's alloy turns into liquid puddle.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.175,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 141.097,
+  "end": 155.234,
+  "te": "At Cambridge University test facilities, gas temperatures reach fourteen hundred degrees, yet the blade's surface stays near nine hundred and thirty degrees. That four-hundred-and-seventy-degree gap is the holy grail of aerospace engineering.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 155.746,
+  "end": 157.336,
+  "te": "So why doesn't it melt?",
+  "en": "",
+  "speech_vs_text": 1.27,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 157.89,
+  "end": 161.742,
+  "te": "Engineers protect that blade using three distinct layers of physics.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.124,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 162.009,
+  "end": 164.019,
+  "te": "Layer one: The crystal lattice.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.124,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 164.541,
+  "end": 183.473,
+  "te": "Ordinary metal is made of billions of microscopic crystals bonded together like a brick wall. Under extreme heat and continuous tension, the metal slowly stretches along those microscopic boundary lines. Engineers call it \"creep.\" Leave a steel spoon under a flame with a weight attached, and it slowly sags.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.16,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 183.95,
+  "end": 200.153,
+  "te": "To stop that, modern turbine blades are not forged or welded. They are grown inside a vacuum furnace as one single, continuous crystal of nickel superalloy, laced with rare elements like rhenium. Zero grain boundaries. Zero microscopic fault lines.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.16,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 200.719,
+  "end": 203.239,
+  "te": "Layer two: Internal serpentine cooling.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 203.714,
+  "end": 216.176,
+  "te": "The blade is not solid. It is cast with an intricate, hollow labyrinth inside. Cold bleed air from the compressor is forced up through the base, circulating through internal channels to pull heat out from the inside.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 216.779,
+  "end": 219.363,
+  "te": "Layer three: The invisible air blanket.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.271,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 219.798,
+  "end": 233.815,
+  "te": "That internal cooling air exits through thousands of microscopic, laser-drilled holes angled across the blade's edge. As it bleeds out, it forms a microscopic boundary layer — a continuous film of cool air wrapping the surface.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.359,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 234.246,
+  "end": 241.591,
+  "te": "The raging seventeen-hundred-degree fire never actually touches the metal. It skims over an invisible cushion of cool air.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.359,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 242.014,
+  "end": 247.174,
+  "te": "Add an outer ceramic thermal barrier coating, and you have an alloy that can survive the inferno.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.238,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 247.719,
+  "end": 250.897,
+  "te": "Now add the second killer: Mechanical stress.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.223,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 251.326,
+  "end": 263.747,
+  "te": "That turbine disc spins at over twelve thousand R-P-M. The centrifugal force pulling on that single blade is equivalent to hanging an entire nine-ton city bus from a piece of metal the size of your hand.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.155,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 264.18,
+  "end": 272.117,
+  "te": "Gas hotter than its melting point. A city bus pulling on it. And it has to run reliably for thousands of flight hours without cracking.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.155,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 272.549,
+  "end": 284.778,
+  "te": "A rocket engine runs for three minutes and gets thrown away. A fighter engine has to throttle from idle to full afterburner in two seconds, breathe thin air at forty thousand feet, and survive for decades.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.143,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 285.16,
+  "end": 295.821,
+  "te": "That is why you cannot simply reverse-engineer a jet engine from a blueprint. The secret isn't the drawing. The secret is the metallurgy, the cooling geometry, and the casting recipes.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.143,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 296.224,
+  "end": 306.391,
+  "te": "That exclusive club has only four permanent members: America, Britain, France, and Russia. And after thirty years of relentless failures, China.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.029,
+  "confidence": "check"
+ },
+ {
+  "line": 36,
+  "start": 306.846,
+  "end": 309.551,
+  "te": "And that brings us back to the jets parked in Nashik.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.029,
+  "confidence": "check"
+ },
+ {
+  "line": 37,
+  "start": 310.074,
+  "end": 321.623,
+  "te": "The Indian Air Force is authorized for forty-two fighter squadrons. Today, it operates around twenty-nine. With legacy MiG-twenty-ones retired, that leaves a dangerous gap in national air defense.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.365,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "start": 322.08,
+  "end": 332.231,
+  "te": "The government ordered eighty-three Tejas Mark One-A jets in twenty twenty-one, and ninety-seven more in twenty twenty-five. That's a fleet of one hundred and eighty aircraft.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.155,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "start": 332.843,
+  "end": 348.013,
+  "te": "H-A-L can build the airframes. But the heart of the jet — the F-404 engine — comes from G-E in Massachusetts. G-E cited global supply chain bottlenecks. Penalties were imposed. But penalties don't put engines inside fighter jets.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.155,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "start": 348.366,
+  "end": 351.402,
+  "te": "And this isn't the first time India has been caught in this trap.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.281,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "start": 351.707,
+  "end": 365.292,
+  "te": "In May nineteen ninety-eight, after the Pokhran nuclear tests, Washington slapped sanctions on New Delhi. G-E engines were halted overnight. American assistance on the Tejas fly-by-wire flight control system was abruptly pulled.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.148,
+  "confidence": "high"
+ },
+ {
+  "line": 42,
+  "start": 365.656,
+  "end": 376.295,
+  "te": "Indian engineers stepped up and developed the digital flight controls entirely in-house. But the lesson was carved in stone: If you don't own the engine, you do not own the aircraft.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.137,
+  "confidence": "high"
+ },
+ {
+  "line": 43,
+  "start": 376.688,
+  "end": 380.165,
+  "te": "Did India try to build one? Yes. The Kaveri project.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.088,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "start": 380.44,
+  "end": 388.17,
+  "te": "Started in nineteen eighty-six by G-T-R-E in Bengaluru, the goal was an indigenous eighty-one kilonewton engine with afterburner.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.088,
+  "confidence": "high"
+ },
+ {
+  "line": 45,
+  "start": 388.514,
+  "end": 405.561,
+  "te": "But building an advanced fighter engine while simultaneously building India's first modern jet airframe proved too complex. When prototypes hit the test bench, Kaveri was overweight and generated only seventy kilonewtons of wet thrust — eleven kilonewtons short of what Tejas demanded.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.269,
+  "confidence": "high"
+ },
+ {
+  "line": 46,
+  "start": 405.973,
+  "end": 409.773,
+  "te": "In two thousand eight, Kaveri was officially delinked from Tejas.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.269,
+  "confidence": "high"
+ },
+ {
+  "line": 47,
+  "start": 410.205,
+  "end": 413.313,
+  "te": "Was the twenty-one-hundred-crore investment a waste? No.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.153,
+  "confidence": "high"
+ },
+ {
+  "line": 48,
+  "start": 413.675,
+  "end": 425.134,
+  "te": "Stripped of its afterburner, the \"Dry Kaveri\" generates forty-eight kilonewtons. It has been flight-tested on Russian flying testbeds and is now designated to power India's Ghatak stealth combat drone.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.103,
+  "confidence": "high"
+ },
+ {
+  "line": 49,
+  "start": 425.583,
+  "end": 435.036,
+  "te": "More importantly, D-M-R-L in Hyderabad cracked the single-crystal casting technique, supplying sixty indigenous blades to H-A-L for helicopter engines.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.103,
+  "confidence": "high"
+ },
+ {
+  "line": 50,
+  "start": 435.415,
+  "end": 440.029,
+  "te": "India established the foundation. But modern frontline combat demands more.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.066,
+  "confidence": "high"
+ },
+ {
+  "line": 51,
+  "start": 440.414,
+  "end": 456.656,
+  "te": "The upcoming fifth-generation fighter, the A-M-C-A, will fly its initial prototypes on G-E's F-four-one-four. But for production variants, India requires a brand-new, one-hundred-and-ten to one-hundred-and-twenty kilonewton powerplant — with full sovereign design ownership.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.066,
+  "confidence": "high"
+ },
+ {
+  "line": 52,
+  "start": 457.133,
+  "end": 466.209,
+  "te": "France's Safran has offered joint development with complete transfer of core hot-section technology. Rolls-Royce and Reliance have pitched an alternative joint venture.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 53,
+  "start": 466.601,
+  "end": 470.252,
+  "te": "The proposals are on the table. The decision sits in New Delhi.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.447,
+  "confidence": "high"
+ },
+ {
+  "line": 54,
+  "start": 470.778,
+  "end": 479.148,
+  "te": "China faced this exact wall with its J-twenty, flying on Russian engines for years before its domestic W-S-fifteen finally matured.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.435,
+  "confidence": "high"
+ },
+ {
+  "line": 55,
+  "start": 479.625,
+  "end": 487.436,
+  "te": "Building an aerospace engine is not a sprint. It is an excruciating game of metallurgy, ceramic chemistry, and patience.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.198,
+  "confidence": "high"
+ },
+ {
+  "line": 56,
+  "start": 487.838,
+  "end": 496.312,
+  "te": "Until that hot-section capability is manufactured on Indian soil, the jets in Bengaluru and Nashik will remain dependent on foreign assembly lines.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.198,
+  "confidence": "high"
+ },
+ {
+  "line": 57,
+  "start": 496.75,
+  "end": 502.31,
+  "te": "Strategic autonomy isn't built on the wings. It is forged in the fire of the turbine blade.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.459,
+  "confidence": "high"
+ },
+ {
+  "line": 58,
+  "start": 502.882,
+  "end": 506.065,
+  "te": "This is Be Practical with Kishore. Stay practical.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.969,
+  "confidence": "high"
+ }
+]

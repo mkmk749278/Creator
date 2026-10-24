@@ -1,0 +1,16 @@
+<!doctype html><html><body style="margin:0;background:#222"><canvas id="c" width="1600" height="900"></canvas>
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/jsm/","three/examples/jsm/":"./vendor/three/jsm/","postprocessing":"./vendor/pp/postprocessing.js","simplex-noise":"./vendor/noise/simplex-noise.js","n8ao":"./vendor/pp/N8AO.js"}}</script>
+<script type="module">
+import { THREE } from "./jebA.js"; import { loadTejas } from "./tejasModel.js"; import { HDRLoader } from "three/addons/loaders/HDRLoader.js";
+const r=new THREE.WebGLRenderer({canvas:document.getElementById('c'),antialias:true,preserveDrawingBuffer:true}); r.setSize(1600,900,false); r.toneMapping=THREE.ACESFilmicToneMapping;
+const sc=new THREE.Scene(); sc.background=new THREE.Color(0x1a1f27);
+const hdr=await new HDRLoader().loadAsync("vendor/ph/hangar_interior_2k.hdr"); const pm=new THREE.PMREMGenerator(r); sc.environment=pm.fromEquirectangular(hdr).texture;
+sc.add(new THREE.HemisphereLight(0x8fa3c4,0x202020,0.6)); const d=new THREE.DirectionalLight(0xfff2e0,2.0); d.position.set(6,12,8); sc.add(d);
+const fl=new THREE.Mesh(new THREE.PlaneGeometry(80,80),new THREE.MeshStandardMaterial({color:0x5a5e64,roughness:0.9})); fl.rotation.x=-Math.PI/2; sc.add(fl);
+const R=await loadTejas("models/tejas_lite.fbx"); const {model,box,nozzleBox}=R; sc.add(model);
+window.INFO={ex:R.exhaust,noz:[nozzleBox.min.toArray(),nozzleBox.max.toArray()].map(a=>a.map(x=>+x.toFixed(2))),box:[box.min.toArray(),box.max.toArray()].map(a=>a.map(x=>+x.toFixed(2)))};
+const cam=new THREE.PerspectiveCamera(35,16/9,0.05,500);
+const V=[[[11,2.2,9],[0,1.8,0]],[[-6,1.8,-12],[0,1.8,-3]],[[0,1.75,-9.2],[0,1.75,-4]],[[0.9,4.2,4.6],[0,2.2,3.3]],[[-14,1.4,0],[0,1.6,0]],[[0,1.7,-7.2],[0,1.7,0]]];
+window.shot=(i)=>{cam.position.set(...V[i][0]); cam.lookAt(new THREE.Vector3(...V[i][1])); r.render(sc,cam); return document.getElementById('c').toDataURL('image/jpeg',0.85);};
+window.NSHOT=V.length; window.READY=1;
+</script></body></html>
