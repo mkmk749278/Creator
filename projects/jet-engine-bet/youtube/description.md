@@ -1,6 +1,7 @@
 # YouTube package: India's jet engine bet (film v2, 4K)
 
-Final cut: `film_v2_4k.mp4` (3840×2160, 8:37, −14 LUFS). Chapter times are the voice-over line starts
+Final cut: `film_v2_4k.mp4` (3840×2160, 8:37, 38.6 Mbps, −14 LUFS), delivered 2026-10-24 to Drive
+`Creator/English/jet-engine-bet/film_v2_4k.mp4` (https://drive.google.com/file/d/18exezbihLY8zm9DPJSfRUL7A_AGNSZdL/view). Chapter times are the voice-over line starts
 (`final/align/align.json`, mapped through the re-take splices in `final/splices.json`), which the 4K edit uses as its cut points (`video/jet-engine-bet/assemble/timeline_v2.md`).
 
 ## Title
