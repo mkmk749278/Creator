@@ -28,7 +28,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 ## Narration and curiosity come first (owner, 2026-10-24)
 - **Narration is the most important thing:** never a teacher, a news reader or a flat voice. Immersive: start inside
   a moment; one time, place, person and object; chain beats with "but" and "so"; give half, withhold half; curiosity
-  loops for the film, each chapter and every 20–40 s; show emotion, don't name it. Every paragraph passes the
+  loops for the film, each chapter and every 20–40 s; show emotion, don't name it; anchor dates in an event viewers
+  lived, said the Indian way ("the Corona days… three weeks before the lockdown", owner 2026-10-28). Every paragraph passes the
   **lean-in test** (the question the viewer is holding; none = rewrite or cut), and the audience review returns a
   lean-in map (PLAYBOOK §4a-12).
 - **Curiosity in the package, built for how YouTube finds videos** (PLAYBOOK §13c, the algorithm analysis):

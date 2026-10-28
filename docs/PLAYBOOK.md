@@ -995,6 +995,16 @@ long lines against short ones; `...` and `—` giving the voice room to breathe 
 15. **Leave room for the picture.** Never describe what is already on screen ("here we see a steel plant"). The words
     add what the picture can't: the stakes, the thought, the number, the irony. Let real sound carry 2–6 seconds with
     no voice at big moments.
+16. **Anchor dates in lived memory (owner, 2026-10-28).** A bare date ("the third of March, twenty twenty") is a
+    calendar entry; the event the viewer lived through is a picture they already carry. Name that event the way people
+    in India say it, then the date: "Think back to the Corona days. Not the lockdown yet — this is three weeks before
+    it." Others: demonetisation night, the Chandrayaan-3 landing, the 1991 opening of the economy, the World Cup final,
+    the U.P.I. boom. Rules: (a) the anchor is a sourced fact like any other, with its own claims row (exact gaps such as
+    "three weeks before" are checked against primary dates); (b) only events most viewers remember, never a private
+    or regional one that needs explaining; (c) never use a tragedy for colour: name it plainly and keep the film's own
+    subject in front; (d) no claims about what "everyone" was doing unless a source shows it (panic buying, empty
+    shelves). *Why (owner):* while recording the pharma film, "twenty twenty" alone didn't put him in the scene; saying
+    Corona did.
 
 **The lean-in test (every paragraph, before recording).**
 Write the script as the film's `screenplay.md` with a **Q column**: the question the viewer is holding during that
@@ -1909,6 +1919,17 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
    its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
 
 ## 15. Lessons log
+
+**Pharma film: lived-memory anchors, and outside script reviews (2026-10-28).**
+- **Anchor dates in events viewers lived** (§4a-12 item 16). The owner, recording block 1, noticed "the third of March,
+  twenty twenty" read as a bare date; the scene only came alive as "the Corona days… three weeks before the lockdown".
+  Applied in the pharma film (Corona, and 1991 as "the year India opened up its economy"); every anchor got a claims row.
+- **Check outside AI script reviews against the claims file before taking any edit.** Two pasted reviews of the pharma
+  VO proposed lines that would have broken facts the fact-check had fixed (26 vs 13 restricted ingredients; Alembic
+  stopped in 2020 vs 2011; "P.A.P. almost entirely from China" vs 60–80%; "freezing cold" tanks; a supply that "simply
+  vanished"), plus SSML break tags our rules ban and a word count 25% too low. *Rule:* take the idea, never the text,
+  until every changed fact has a claims row.
+- **One recording file with every VO change** (§4a-2): full narration plus the click-to-copy blocks, `scripts/vo_blocks.py`.
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
 channel Built on Bharat (repo `mkmk749278/Built-on-Bharat`), the owner made narration and curiosity in the package the

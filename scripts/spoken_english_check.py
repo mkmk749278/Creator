@@ -29,7 +29,7 @@ INDIAN_OK = {"rupee", "rupees", "lakh", "lakhs", "crore", "crores", "kirana", "c
              # pharma film subject words and names, said and shown (2026-10-28)
              "niti", "aayog", "amoxicillin", "penicillin", "paracetamol", "antibiotic", "antibiotics", "aminophenol",
              "aurobindo", "cipla", "alembic", "sarabhai", "ranbaxy", "himachal", "kakinada", "lyfius", "nakkapalli",
-             "pimpri", "hubei", "enzyme", "mould", "pharma", "pharmacy"}
+             "pimpri", "hubei", "enzyme", "mould", "pharma", "pharmacy", "corona", "wuhan", "chakki"}
 # Fancy words that make narration sound like a textbook; say the plain word instead.
 FANCY = {"utilize": "use", "utilise": "use", "commence": "start", "facilitate": "help", "subsequently": "then",
          "approximately": "about", "numerous": "many", "regarding": "about", "phenomenon": "thing", "conundrum": "puzzle",
