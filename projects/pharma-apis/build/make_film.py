@@ -115,8 +115,8 @@ def cite(text, at, to):
     el(f'<div class="cite" {attrs(at, to, "fade")}>{esc(text)}</div>', at, to)
 
 
-def datebig(text, small, at, to):
-    el(f'<div class="datebig" {attrs(at, to, "left", 0.4)}>{esc(text)}<small>{esc(small)}</small></div>', at, to)
+def datebig(text, small, at, to, scrim=False):
+    el(f'<div class="datebig{" scrim" if scrim else ""}" {attrs(at, to, "left", 0.4)}>{esc(text)}<small>{esc(small)}</small></div>', at, to)
 
 
 def namelt(name, role, at, to):
@@ -298,7 +298,7 @@ shot(c(71), "px_216619", "slow", ms=10.0, dim=0.5)                 # "And in Sep
 chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 760, "steel", "sm", "up")
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
-datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))
+datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73), scrim=True)   # bright tank frame behind
 shot(c(73), "Y02", "slow", ms=44.0)                                # "That's the date to watch..."
 shot(c(74), "Y02", "crop", ms=86.0, origin="50% 20%")            # "And here's the balance the government has to strike..."
 chip("Protect the plant", L(74, 0.4), LE(74), 120, 160, "saffron", "sm", "up")
@@ -400,6 +400,11 @@ def emit():
           f"{len(SEQ)} shots, {len(OV)} overlays")
 
 
+def seam_sliver(a, b, t0, t1):
+    """An item crossing a part seam with under 0.6 s on this side: drop that sliver (it reads as a flash)."""
+    return (a < t0 or b > t1) and min(b, t1) - max(a, t0) < 0.6
+
+
 def emit_part(pid, t0, t1, caps):
     D = r3(t1 - t0); d = OUTV / pid
     shutil.rmtree(d / "media", ignore_errors=True); (d / "media").mkdir(parents=True, exist_ok=True)
@@ -427,13 +432,13 @@ def emit_part(pid, t0, t1, caps):
     O = []
     for o in OV:
         a, b = o["at"], o["to"] if o["to"] is not None else END
-        if b <= t0 or a >= t1:
+        if b <= t0 or a >= t1 or seam_sliver(a, b, t0, t1):
             continue
         h = re.sub(r'(data-(?:at|to)=")([\d.]+)"', lambda mm: f'{mm.group(1)}{min(D, max(0.0, loc(float(mm.group(2)))))}"', o["h"])
         h = re.sub(r'(data-count="[\d.]+,[\d.]+,)([\d.]+)', lambda mm: f'{mm.group(1)}{max(0.0, loc(float(mm.group(2))))}', h)
         O.append("      " + h)
     cap = "\n".join(f'      <div class="cap" data-at="{max(0.0, loc(a))}" data-to="{min(D, loc(b))}" data-fx="fade" data-d="0.12">{c}</div>'
-                    for a, b, c in caps if b > t0 and a < t1)
+                    for a, b, c in caps if b > t0 and a < t1 and not seam_sliver(a, b, t0, t1))
     (d / "index.html").write_text(PAGE.format(pid=pid, D=D, shots="\n".join(H), ov="\n".join(O), cap=cap))
     print(f"{pid}: {t0:.1f}-{t1:.1f} ({D:.1f}s) {sum(1 for x in SEQ if t0 - 1e-6 <= x['t0'] < t1 - 1e-6)} shots, {len(O)} overlays")
 

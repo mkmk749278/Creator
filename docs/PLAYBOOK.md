@@ -1988,6 +1988,14 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   with one Akash setup; the owner's reading: the emotional lines change the timing. *So:* keep good takes and give the
   fast blocks room in the edit (picture-led pauses, diegetic beats, silence before reveals) instead of asking for
   slower re-records; flag a re-record only when a line is hard to follow.
+- **Splitting a film into render parts leaves slivers at the seams, and a too-short window never fades out.** The
+  pharma parts carried a label, a gauge and a caption that crossed a seam by 0.1–0.5 s. A window shorter than fade-in +
+  fade-out put the fade-out *before* the fade-in finished, so the item stayed on screen for the whole next part (the
+  "Cooked" chip over all of part 3; a part-4 caption over all of part 5). `hyperframes check` caught every case as
+  `content_overlap` errors over a long time range. *Fix:* the part emitter drops a seam sliver under 0.6 s
+  (`seam_sliver` in `projects/pharma-apis/build/make_film.py`), and the overlay engine squeezes both fades into any
+  short window (`video/pha/_shared/pha.js`). *Rule:* run `check` on every part before rendering any of them, and read a
+  `content_overlap` that spans most of a part as an item that never left, not as a layout nit.
 - **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".

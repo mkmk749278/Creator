@@ -180,6 +180,7 @@ body { background: #000; color: var(--ink); font-family: var(--sans); }
 
 /* ================= rare earth film additions ================= */
 .datebig { position: absolute; left: 70px; top: 70px; z-index: 32; font: 800 64px/1 var(--mono); letter-spacing: .08em; color: var(--ink); text-shadow: var(--sh); }
+.datebig.scrim { background: rgba(4,18,21,.74); padding: 18px 26px 20px; border-radius: 10px; }
 .datebig small { display: block; font-size: 30px; color: var(--amber); margin-top: 14px; letter-spacing: .2em; }
 /* the six-link chain: SAND -> MIXED -> CLEAN -> METAL -> ALLOY -> MAGNET */
 .chain { position: absolute; left: 110px; top: 640px; width: 1700px; height: 170px; z-index: 28; }

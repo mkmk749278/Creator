@@ -35,7 +35,10 @@
     });
     // ---- timed overlays
     document.querySelectorAll("[data-at]").forEach((el) => {
-      const a = +el.dataset.at, b = el.dataset.to != null ? +el.dataset.to : null, fx = el.dataset.fx || "fade", d = +(el.dataset.d || 0.35);
+      const a = +el.dataset.at, b = el.dataset.to != null ? +el.dataset.to : null, fx = el.dataset.fx || "fade";
+      // a window shorter than fade-in + fade-out squeezes both, or the fade-out lands first and the item never leaves
+      const d = b != null ? Math.min(+(el.dataset.d || 0.35), Math.max(0.04, (b - a) / 2)) : +(el.dataset.d || 0.35);
+      const fo = b != null ? Math.min(0.25, Math.max(0.04, (b - a) / 2)) : 0.25;
       tl.set(el, { autoAlpha: 0 }, 0);
       const go = (from, to) => tl.fromTo(el, Object.assign({ autoAlpha: 0 }, from), Object.assign({ autoAlpha: 1, duration: d, ease: E, immediateRender: false }, to), a);
       if (fx === "cut") tl.set(el, { autoAlpha: 1 }, a);
@@ -53,7 +56,7 @@
       else go({}, {});
       if (b != null && fx !== "tap" && fx !== "flash") {
         if (el.dataset.cut != null) tl.set(el, { autoAlpha: 0 }, b);
-        else tl.to(el, { autoAlpha: 0, duration: 0.25, ease: "power1.in" }, b - 0.25);
+        else tl.to(el, { autoAlpha: 0, duration: fo, ease: "power1.in" }, Math.max(0, b - fo));
       }
       if (el.dataset.pulse) {   // finite pulse (glow) between at and to
         const p = +el.dataset.pulse, end = b != null ? b : D;
