@@ -1,0 +1,252 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 2.79,
+  "te": "And if you look at antibiotics, it gets worse.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.225,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 3.282,
+  "end": 13.872,
+  "te": "Niti Aayog — that's the government's own think tank — says out of every hundred rupees India spent on imported antibiotic powder... about eighty-six went to China.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.225,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 14.384,
+  "end": 16.314,
+  "te": "Even your fever tablet has a China link.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.415,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 16.831,
+  "end": 19.192,
+  "te": "Indian factories do make paracetamol powder.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 19.642,
+  "end": 21.074,
+  "te": "But the raw chemical it's made from?",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 1.398,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 21.576,
+  "end": 25.325,
+  "te": "Industry reports say a big share of that still comes from China.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.362,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 25.912,
+  "end": 28.713,
+  "te": "So you might be thinking — has it always been like this?",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.362,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 29.052,
+  "end": 30.823,
+  "te": "Did India ever make its own powder?",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 1.128,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 31.301,
+  "end": 31.702,
+  "te": "It did.",
+  "en": "",
+  "speech_vs_text": 1.24,
+  "boundary_margin": 1.863,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 32.173,
+  "end": 35.378,
+  "te": "And this part of the story, most people have never heard.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.42,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 36.165,
+  "end": 37.498,
+  "te": "Pimpri, near Pune.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.42,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 37.962,
+  "end": 38.961,
+  "te": "Nineteen fifty-four.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.552,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 39.408,
+  "end": 44.903,
+  "te": "India has been free for less than seven years, and it's building a factory to make its own penicillin.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.309,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 45.408,
+  "end": 47.69,
+  "te": "Penicillin was the miracle drug of that time.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.276,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 48.113,
+  "end": 50.765,
+  "te": "Back then, a small cut on your hand could kill you.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.276,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 51.253,
+  "end": 54.291,
+  "te": "With penicillin, it became a few days of medicine for you.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.362,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 54.799,
+  "end": 58.23,
+  "te": "The government sets up a company called Hindustan Antibiotics.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.166,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 58.591,
+  "end": 63.202,
+  "te": "By nineteen fifty-six, Indian penicillin is coming out of Indian tanks.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.166,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 63.64,
+  "end": 64.523,
+  "te": "Just think about it.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.176,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 64.892,
+  "end": 66.446,
+  "te": "Picture your grandparents' India.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.266,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 66.911,
+  "end": 73.103,
+  "te": "A young, poor country, growing one of the most important medicines on earth... in its own factory.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.218,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 73.546,
+  "end": 79.053,
+  "te": "Soon, others join in — big names you may know, like Alembic, Sarabhai and Ranbaxy.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.218,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 79.556,
+  "end": 82.233,
+  "te": "India is making its own antibiotics.",
+  "en": "",
+  "speech_vs_text": 1.3,
+  "boundary_margin": 0.293,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 82.678,
+  "end": 85.594,
+  "te": "But to see what happened next, you need to know one thing.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.293,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 86.058,
+  "end": 87.97,
+  "te": "How do you actually make penicillin?",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.757,
+  "confidence": "high"
+ }
+]

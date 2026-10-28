@@ -1,0 +1,282 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 4.89,
+  "te": "Many medicines, like paracetamol, are cooked from chemicals, step by step.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.394,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 5.515,
+  "end": 6.728,
+  "te": "Penicillin is different.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.394,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 7.168,
+  "end": 8.426,
+  "te": "Penicillin is grown.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.893,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 9.004,
+  "end": 13.166,
+  "te": "You take a special mould... a cousin of the green patches you've seen on old bread.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.744,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 13.724,
+  "end": 17.37,
+  "te": "You put it in a giant steel tank, and you feed it sugar and air.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.49,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 17.976,
+  "end": 20.698,
+  "te": "For about a week, the tank runs day and night.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.49,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 21.155,
+  "end": 24.845,
+  "te": "The mould eats, grows, and gives out penicillin into the liquid.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.53,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 25.379,
+  "end": 29.339,
+  "te": "And if even one stray germ gets in, you can lose the whole batch.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.197,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 29.827,
+  "end": 32.161,
+  "te": "Then you take the penicillin out and clean it.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.197,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 32.608,
+  "end": 35.026,
+  "te": "This first powder is called penicillin G.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.326,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 35.554,
+  "end": 38.15,
+  "te": "Next, it's turned into a smaller base powder.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.326,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 38.62,
+  "end": 42.335,
+  "te": "Factories call it six A.P.A., but let's just call it the base.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.343,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 42.864,
+  "end": 48.063,
+  "te": "From that base, factories make amoxicillin — the antibiotic in so many strips at home.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.343,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 48.631,
+  "end": 50.366,
+  "te": "Now here's the secret of this business.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.977,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 50.853,
+  "end": 53.05,
+  "te": "A bigger tank makes the powder cheaper.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 53.448,
+  "end": 54.248,
+  "te": "Much cheaper.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 54.752,
+  "end": 55.048,
+  "te": "Why?",
+  "en": "",
+  "speech_vs_text": 1.52,
+  "boundary_margin": 1.372,
+  "confidence": "check"
+ },
+ {
+  "line": 18,
+  "start": 55.555,
+  "end": 61.292,
+  "te": "The tank must stay perfectly clean, cool, and full of air, every hour of every day.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 61.787,
+  "end": 64.652,
+  "te": "That takes a lot of power, water and steam.",
+  "en": "",
+  "speech_vs_text": 1.26,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 65.195,
+  "end": 66.077,
+  "te": "Think of a flour mill.",
+  "en": "",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 66.547,
+  "end": 69.822,
+  "te": "A big chakki grinds each kilo cheaper than a small one.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 70.304,
+  "end": 74.254,
+  "te": "Double your tank, and your costs don't double... but your output does.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.253,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 74.645,
+  "end": 76.183,
+  "te": "So you can guess who wins.",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.253,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 76.565,
+  "end": 79.453,
+  "te": "The country with the biggest tanks and the cheapest power.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.557,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 79.919,
+  "end": 82.573,
+  "te": "And that's exactly where India's story turns.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 83.123,
+  "end": 84.679,
+  "te": "Now, here's what we got wrong.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 85.204,
+  "end": 89.366,
+  "te": "For years, India's government allowed only a few companies to make penicillin, and only in small amounts.",
+  "en": "",
+  "speech_vs_text": 0.73,
+  "boundary_margin": 0.565,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 89.661,
+  "end": 91.231,
+  "te": "So our plants stayed too small to be cheap.",
+  "en": "",
+  "speech_vs_text": 0.71,
+  "boundary_margin": 3.74,
+  "confidence": "high"
+ }
+]

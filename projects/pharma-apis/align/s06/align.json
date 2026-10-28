@@ -1,0 +1,212 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 5.665,
+  "te": "It launched a scheme to pay companies extra for making forty-one of these missing ingredients in India.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.848,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.194,
+  "end": 9.274,
+  "te": "Nearly seven thousand crore rupees, set aside.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.276,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 9.808,
+  "end": 12.483,
+  "te": "And one company took the biggest bet of all.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.276,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 13.085,
+  "end": 14.629,
+  "te": "Kakinada, Andhra Pradesh.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.386,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 15.229,
+  "end": 20.993,
+  "te": "On the coast, a new plant goes up, built by Aurobindo Pharma, through its unit called Lyfius.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.386,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 21.476,
+  "end": 24.083,
+  "te": "Inside are the giant tanks I just told you about.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.595,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 24.595,
+  "end": 33.093,
+  "te": "The company says it cost around two thousand five hundred crore rupees, and it's built to make fifteen thousand tonnes of penicillin G every year.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.224,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 33.574,
+  "end": 36.289,
+  "te": "In twenty twenty-four, the tanks start running.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.224,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 36.857,
+  "end": 39.363,
+  "te": "For the first time in more than ten years...",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.191,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 39.73,
+  "end": 42.493,
+  "te": "India is growing its own penicillin again.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.191,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 43.04,
+  "end": 44.316,
+  "te": "But you know the trap.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.207,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 44.79,
+  "end": 49.337,
+  "te": "Even with Indian penicillin ready, cheap imports were still waiting at the port.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.691,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 49.796,
+  "end": 53.85,
+  "te": "So on the twenty-ninth of January, twenty twenty-six, the government stepped in.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.561,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 54.294,
+  "end": 56.325,
+  "te": "It set a minimum price at the border.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.561,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 56.73,
+  "end": 63.313,
+  "te": "If penicillin powder comes in cheaper than about two thousand two hundred rupees a kilo, it now needs a special licence.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.511,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 63.713,
+  "end": 66.626,
+  "te": "The same rule covers amoxicillin and its base powder.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.511,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 67.031,
+  "end": 68.356,
+  "te": "Think of it as a shield.",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 1.611,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 68.738,
+  "end": 73.211,
+  "te": "It gives the new Indian plant breathing room, while it grows big enough to stand on its own.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.231,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 73.666,
+  "end": 81.866,
+  "te": "And in September twenty twenty-six, after the Kakinada plant complained, the government also started checking whether China is selling penicillin here below a fair price.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.231,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 82.026,
+  "end": 83.259,
+  "te": "But that shield has an end date.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.069,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 83.681,
+  "end": 87.648,
+  "te": "It runs for one year... until January twenty twenty-seven.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.069,
+  "confidence": "high"
+ }
+]

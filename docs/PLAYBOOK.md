@@ -354,6 +354,22 @@ India while the topics stay India-first. Rules:
 - **Files:** `lang.txt` = `en` in the project folder makes the `en` column of `script.full.tsv` the VO and the `te`
   column an optional Telugu dub; `tools/build_script.py` lints English VO (`lint_en`) and builds the blocks from it.
 - On-screen text, citation tags and the description were already English; nothing changes there.
+- **One recording file with every VO change (owner, 2026-10-28: "give full text in one single md file along with same
+  click to copy blocks").** `python3 scripts/vo_blocks.py projects/<slug>/vo.txt --prefix <xx> --title "<film>"` writes
+  `projects/<slug>/vo_blocks.md`: word count and run time, voice settings, the full narration to read through, then the
+  recording blocks as fenced code (under 1,500 characters, blank line between beats). Send it with SendUserFile **and**
+  paste the blocks in the chat (§4a-4 rule stands). *Why:* the owner reads the whole script in one place on the phone and
+  copies blocks from the same file.
+- **Re-records are free; quality is not traded for a saved take (owner, 2026-10-28: "I do record any number of times,
+  no problem at all").** Never keep a weaker line because a block is already recorded, and never splice a few words
+  into a take: re-record the whole block so the voice, pace and room tone match. With every VO change, say exactly
+  **which block numbers to record again** (compare the old and new `vo_blocks.md`), and keep the block boundaries
+  stable (`vo_blocks.py` default limit, unchanged between edits) so one changed line costs one block, not every block
+  after it.
+- **Read place names as the ear hears them.** Two place names close together sound like two places: "if Kakinada wins…
+  the next one might start in Andhra" made the owner hear Kakinada and Andhra as separate (2026-10-28). Name one place,
+  join them ("the plant in Kakinada"), or pay the line off with the contrast the film is built on ("right here in
+  India" against "began in China").
 
 ### 4a-4. Owner's production guide for English films (2026-10-15)
 The owner's *Production & Scriptwriting Handoff* and *Style Comparison* (verbatim in Part F) set the standard for every
@@ -989,6 +1005,16 @@ long lines against short ones; `...` and `—` giving the voice room to breathe 
 15. **Leave room for the picture.** Never describe what is already on screen ("here we see a steel plant"). The words
     add what the picture can't: the stakes, the thought, the number, the irony. Let real sound carry 2–6 seconds with
     no voice at big moments.
+16. **Anchor dates in lived memory (owner, 2026-10-28).** A bare date ("the third of March, twenty twenty") is a
+    calendar entry; the event the viewer lived through is a picture they already carry. Name that event the way people
+    in India say it, then the date: "Think back to the Corona days. Not the lockdown yet — this is three weeks before
+    it." Others: demonetisation night, the Chandrayaan-3 landing, the 1991 opening of the economy, the World Cup final,
+    the U.P.I. boom. Rules: (a) the anchor is a sourced fact like any other, with its own claims row (exact gaps such as
+    "three weeks before" are checked against primary dates); (b) only events most viewers remember, never a private
+    or regional one that needs explaining; (c) never use a tragedy for colour: name it plainly and keep the film's own
+    subject in front; (d) no claims about what "everyone" was doing unless a source shows it (panic buying, empty
+    shelves). *Why (owner):* while recording the pharma film, "twenty twenty" alone didn't put him in the scene; saying
+    Corona did.
 
 **The lean-in test (every paragraph, before recording).**
 Write the script as the film's `screenplay.md` with a **Q column**: the question the viewer is holding during that
@@ -1903,6 +1929,24 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
    its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
 
 ## 15. Lessons log
+
+**Pharma film: lived-memory anchors, and outside script reviews (2026-10-28).**
+- **Anchor dates in events viewers lived** (§4a-12 item 16). The owner, recording block 1, noticed "the third of March,
+  twenty twenty" read as a bare date; the scene only came alive as "the Corona days… three weeks before the lockdown".
+  Applied in the pharma film (Corona, and 1991 as "the year India opened up its economy"); every anchor got a claims row.
+- **Check outside AI script reviews against the claims file before taking any edit.** Two pasted reviews of the pharma
+  VO proposed lines that would have broken facts the fact-check had fixed (26 vs 13 restricted ingredients; Alembic
+  stopped in 2020 vs 2011; "P.A.P. almost entirely from China" vs 60–80%; "freezing cold" tanks; a supply that "simply
+  vanished"), plus SSML break tags our rules ban and a word count 25% too low. *Rule:* take the idea, never the text,
+  until every changed fact has a claims row.
+- **One recording file with every VO change** (§4a-2): full narration plus the click-to-copy blocks, `scripts/vo_blocks.py`.
+- **Per-block pace varies with the same voice settings.** The pharma takes ran 156–180 wpm block by block (168 overall)
+  with one Akash setup; the owner's reading: the emotional lines change the timing. *So:* keep good takes and give the
+  fast blocks room in the edit (picture-led pauses, diegetic beats, silence before reveals) instead of asking for
+  slower re-records; flag a re-record only when a line is hard to follow.
+- **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
+  every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
+  Andhra"): the ending now says "the plant in Kakinada… right here in India".
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
 channel Built on Bharat (repo `mkmk749278/Built-on-Bharat`), the owner made narration and curiosity in the package the

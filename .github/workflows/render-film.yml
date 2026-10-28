@@ -1,0 +1,136 @@
+name: Render film
+
+# Render HyperFrames compositions on GitHub's free runners (public repo: standard runners are free and unlimited,
+# 4 vCPU / 16 GB each, up to 20 jobs at once, 6 h per job). Uses no Claude usage: a session authors and checks the
+# scenes, pushes, starts this workflow, and ends its turn; it reads the result later (PLAYBOOK §3a).
+#
+# Start: GitHub app → Actions → "Render film" → Run workflow, or a session via the GitHub MCP `actions_run_trigger`.
+# Each composition dir in `dirs` becomes one parallel job. Results: the run Summary (time, size, contact sheet) and
+# either Google Drive (`Creator/<drive_sub>/`, needs the GDRIVE_RCLONE_TOKEN repo secret) or a run artifact.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dirs:
+        description: "Composition folders, space-separated (e.g. video/pharma-apis/s01 video/pharma-apis/s02)"
+        type: string
+        required: true
+      resolution:
+        description: "1080p preview or native 4K"
+        type: choice
+        options: [1080p, 4k]
+        default: 1080p
+      assets:
+        description: "Optional Drive folder to pull into each job first, as DRIVE_PATH:LOCAL_DIR (e.g. English/pharma-apis/build/assets:projects/pharma-apis/assets)"
+        type: string
+        default: ""
+      drive_sub:
+        description: "Drive folder for the renders (empty = run artifact only)"
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+env:
+  HYPERFRAMES_NO_TELEMETRY: "1"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.m.outputs.matrix }}
+    steps:
+      - id: m
+        env:
+          DIRS: ${{ inputs.dirs }}
+        run: |
+          python3 -c "import json,os; print('matrix='+json.dumps({'dir': os.environ['DIRS'].split()}))" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: plan
+    name: render ${{ matrix.dir }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install FFmpeg, HyperFrames, Chrome
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          python3 -m pip install --quiet "pillow==11.3.0"
+          npm ci
+          npx hyperframes telemetry disable || true
+          npx hyperframes browser ensure
+          nproc; free -g; df -h "$GITHUB_WORKSPACE" | tail -1
+      - name: Pull assets from Drive
+        if: inputs.assets != ''
+        env:
+          GDRIVE_RCLONE_TOKEN: ${{ secrets.GDRIVE_RCLONE_TOKEN }}
+          ASSETS: ${{ inputs.assets }}
+        run: |
+          bash scripts/gdrive_pull.sh "${ASSETS%%:*}" "${ASSETS#*:}"
+      - name: Prepare
+        id: prep
+        env:
+          DIR: ${{ matrix.dir }}
+        run: |
+          name=$(echo "$DIR" | tr '/' '_')
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+          if [[ "${{ inputs.resolution }}" == "4k" ]]; then
+            node scripts/make_native_4k.mjs "$DIR" "$DIR-4k"
+            echo "dir=$DIR-4k" >> "$GITHUB_OUTPUT"
+            echo "args=--workers 4 --video-bitrate 20M" >> "$GITHUB_OUTPUT"
+          else
+            echo "dir=$DIR" >> "$GITHUB_OUTPUT"
+            echo "args=--workers 4 --video-bitrate 12M" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Check
+        working-directory: ${{ steps.prep.outputs.dir }}
+        run: npx hyperframes check
+      - name: Render
+        working-directory: ${{ steps.prep.outputs.dir }}
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/out"
+          start=$(date +%s)
+          npx hyperframes render ${{ steps.prep.outputs.args }} --output "$GITHUB_WORKSPACE/out/${{ steps.prep.outputs.name }}.mp4" 2>&1 | tee "$GITHUB_WORKSPACE/out/render.log"
+          echo "$(( $(date +%s) - start ))" > "$GITHUB_WORKSPACE/out/seconds.txt"
+      - name: Contact sheet and summary
+        run: |
+          f="out/${{ steps.prep.outputs.name }}.mp4"
+          python3 scripts/contact_sheet.py "$f" --out out/sheet --every 2 || true
+          secs=$(cat out/seconds.txt)
+          dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+          probe=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height,r_frame_rate -of csv=p=0 "$f")
+          {
+            echo "### ${{ matrix.dir }} (${{ inputs.resolution }})"
+            echo "| render s | film s | × real time | size | stream |"
+            echo "|---|---|---|---|---|"
+            echo "| $secs | $(printf %.1f "$dur") | $(python3 -c "print(round($secs/max($dur,0.1),1))") | $(du -h "$f" | cut -f1) | $probe |"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload to Drive
+        if: inputs.drive_sub != ''
+        env:
+          GDRIVE_RCLONE_TOKEN: ${{ secrets.GDRIVE_RCLONE_TOKEN }}
+        run: |
+          bash scripts/upload_gdrive.sh --sub "${{ inputs.drive_sub }}" out/${{ steps.prep.outputs.name }}.mp4 | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ steps.prep.outputs.name }}
+          path: |
+            out/sheet/
+            out/render.log
+            ${{ inputs.drive_sub == '' && format('out/{0}.mp4', steps.prep.outputs.name) || 'out/seconds.txt' }}
+          retention-days: 7
