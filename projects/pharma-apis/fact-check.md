@@ -109,3 +109,10 @@ that row must go back to `wrong`.
 CAG's HAL audit (server error; used ISID and DoP instead), the Nehru Archive (blocked; used DoP), eparlib.nic.in (not reachable from
 this session), Britannica (blocked; used Healthline and Wikipedia) and the e-Gazette copy of notification 56 (TLS error; used
 the signed DGFT scan that LiveLaw hosts).
+
+## Writer's note, narration v4 (2026-10-28, after audience review v2)
+Wording-only changes; no new facts. "By the end of the twenty tens" → "By about twenty twenty" (same ISID source); the
+anti-dumping case said as "started checking whether China is selling penicillin here below a fair price" (DGTR
+initiation, 28 Sep 2026); "Lyfius, a unit of Aurobindo Pharma" → "Aurobindo Pharma, through its unit called Lyfius";
+the floor said as "needs a special licence… the same rule covers amoxicillin and its base powder"; new line "Protect the
+Indian plant... without making your antibiotics costlier" is our framing of the trade-off, not a factual claim.

@@ -10,14 +10,14 @@ mould green = penicillin, amber = China's supply, saffron-white = Indian-made, r
 device: the CAPSULE GAUGE. Full plan: `treatment.md`.
 
 Files: `treatment.md` (angle, shape, package) · `research.md` (writer's leads) · `research/search_terms.md`
-(autocomplete, main phrase) · `vo.txt` / `script.tsv` (narration v3, 1,687 words, about 11 minutes) · `vo_blocks.md`
-(7 Akash blocks) · `claims.csv` + `fact-check.md` (independent check: 67 confirmed, 4 attributed) ·
-`review_audience_v1.md`.
+(autocomplete, main phrase) · `vo.txt` / `script.tsv` (narration v4, 1,735 words, about 11 minutes) · `vo_blocks.md`
+(Akash blocks) · `claims.csv` + `fact-check.md` (independent check: 67 confirmed, 4 attributed) ·
+`review_audience_v1.md`, `review_audience_v2.md`.
 
 Checks: `.venv/bin/python scripts/spoken_english_check.py projects/pharma-apis/vo.txt --min-words 1300 --max-words 2000`
 and `python3 scripts/claims_check.py projects/pharma-apis/claims.csv`.
 
-Status: narration v3 ready to record (both gates pass). Next: owner records the 7 blocks → `align_script.py` → recheck
+Status: narration v4 ready to record (both gates pass). Next: owner records the blocks → `align_script.py` → recheck
 the "minute eight" open loop → sourcing → thumbnails (3+ curiosity concepts through `thumb_feed.py` + click panel) →
 scenes → review → render.
 **Time-sensitive, recheck before upload:** the minimum import price (to about 29 January 2027), the two DGTR
