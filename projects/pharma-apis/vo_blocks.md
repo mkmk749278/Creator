@@ -1,6 +1,6 @@
 # Recording file: The Pharmacy of the World's Missing Powder (pharma APIs)
 
-1747 words · 8 blocks · about 11–12 minutes at 145–155 words a minute.
+1797 words · 8 blocks · about 12–12 minutes at 145–155 words a minute.
 
 **Voice:** Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/pha_bNN.mp3` (NN = block number).
 
@@ -12,13 +12,15 @@ But open one antibiotic capsule and look at the white powder inside. That's the 
 
 The rest of the capsule is just there to carry it to you.
 
-Now come with me to the third of March, twenty twenty.
+Now think back to the Corona days. You remember them. Not the lockdown yet — this is three weeks before it. The third of March, twenty twenty.
+
+In China, the city of Wuhan has been locked down for almost six weeks. Here in India, there are only a handful of cases so far.
 
 Delhi. A two-page government order goes out, and if you run a medicine company, your phone starts ringing. Thirteen medicine ingredients, and the medicines made from them, can't leave India without a licence. Paracetamol is one of them.
 
 Wait. India? The pharmacy of the world... locking its own doors?
 
-Yes. And the reason was far away. One part of China, called Hubei, was shut down for the virus.
+Yes. And the reason was Corona. Wuhan sits in a Chinese province called Hubei... and the whole province was shut down.
 
 Reports at the time said many of the ingredients on that list came from that one place.
 
@@ -100,7 +102,7 @@ It built huge plants, in huge drug parks, with cheap power and cheap water. Its 
 
 And then cheap Chinese penicillin flooded the world market... at prices nobody else could match.
 
-Now remember this one number. In nineteen ninety-one, of all the medicine powder India bought from outside, China sold less than one per cent.
+Now remember this one number. Nineteen ninety-one — the year India opened up its economy. Of all the medicine powder India bought from outside, China sold less than one per cent.
 
 Less than one.
 
@@ -122,7 +124,7 @@ Niti Aayog estimates Chinese powder costs thirty-five to forty per cent less tha
 
 That's the trap. You can't compete without a big plant. And you can't risk a big plant... when one price war can wipe it out.
 
-For years, that trap held. Then twenty twenty happened — the day India had to lock its own doors.
+For years, that trap held. Then Corona came — and India had to lock its own doors.
 
 And this time, the central government decided to break the trap.
 
@@ -162,7 +164,7 @@ So has India won? Not yet. But it's back in the fight.
 
 So here's the lesson. If you only master the last step, you're only as strong as whoever controls the step before.
 
-And the cost? You saw it in twenty twenty. When one part of China shut down, the pharmacy of the world had to lock its own doors.
+And the cost? You saw it in the Corona days. When one province in China shut down, the pharmacy of the world had to lock its own doors.
 
 But here's the reality today. India has the scientists. It has the factories. And now, it's growing its own penicillin again.
 
@@ -182,7 +184,7 @@ This is Be Practical with Kishore. Stay practical. Jai Hind.
 
 ## Recording blocks (tap to copy)
 
-### Block 1 of 8 · 1376 characters · save as `voice/pha_b01.mp3`
+### Block 1 of 8 · 1361 characters · save as `voice/pha_b01.mp3`
 
 ```
 India sells medicines to around two hundred countries. That's why you hear it called the pharmacy of the world.
@@ -191,28 +193,30 @@ But open one antibiotic capsule and look at the white powder inside. That's the 
 
 The rest of the capsule is just there to carry it to you.
 
-Now come with me to the third of March, twenty twenty.
+Now think back to the Corona days. You remember them. Not the lockdown yet — this is three weeks before it. The third of March, twenty twenty.
+
+In China, the city of Wuhan has been locked down for almost six weeks. Here in India, there are only a handful of cases so far.
 
 Delhi. A two-page government order goes out, and if you run a medicine company, your phone starts ringing. Thirteen medicine ingredients, and the medicines made from them, can't leave India without a licence. Paracetamol is one of them.
 
 Wait. India? The pharmacy of the world... locking its own doors?
 
-Yes. And the reason was far away. One part of China, called Hubei, was shut down for the virus.
+Yes. And the reason was Corona. Wuhan sits in a Chinese province called Hubei... and the whole province was shut down.
 
 Reports at the time said many of the ingredients on that list came from that one place.
 
 So here's the question I want to answer for you today. If India makes medicine for the world... who makes the powder inside India's medicine?
 
 And before you worry — this isn't about the quality of your medicines. It's about who controls the supply.
+```
 
+### Block 2 of 8 · 1439 characters · save as `voice/pha_b02.mp3`
+
+```
 Stay with me. Around minute eight, I'll take you to a fight India is in right now — in Andhra Pradesh. And I'll give you the date that could decide how it ends.
 
 First, let's give India its due. Because that pharmacy of the world title? India earned it.
-```
 
-### Block 2 of 8 · 1396 characters · save as `voice/pha_b02.mp3`
-
-```
 Think back to two thousand one. H.I.V. is killing millions in Africa. The medicines exist... but the Western price is around ten thousand dollars a year for one patient.
 
 Then an Indian company, Cipla, stands up and offers the same three-drug mix for about a dollar a day.
@@ -234,13 +238,13 @@ But the powder you swallow? A lot of it is made somewhere else first.
 In twenty twenty-five, India bought these powders from other countries worth around sixty-five thousand crore rupees.
 
 And the biggest seller, by far... China.
+```
 
+### Block 3 of 8 · 1371 characters · save as `voice/pha_b03.mp3`
+
+```
 And if you look at antibiotics, it gets worse. Niti Aayog — that's the government's own think tank — says out of every hundred rupees India spent on imported antibiotic powder... about eighty-six went to China.
-```
 
-### Block 3 of 8 · 1431 characters · save as `voice/pha_b03.mp3`
-
-```
 Even your fever tablet has a China link. Indian factories do make paracetamol powder. But the raw chemical it's made from? Industry reports say a big share of that still comes from China.
 
 So you might be thinking — has it always been like this? Did India ever make its own powder?
@@ -258,15 +262,15 @@ Just think about it. Picture your grandparents' India. A young, poor country, gr
 Soon, others join in — big names you may know, like Alembic, Sarabhai and Ranbaxy. India is making its own antibiotics.
 
 But to see what happened next, you need to know one thing. How do you actually make penicillin?
+```
 
+### Block 4 of 8 · 1432 characters · save as `voice/pha_b04.mp3`
+
+```
 Many medicines, like paracetamol, are cooked from chemicals, step by step. Penicillin is different. Penicillin is grown.
 
 You take a special mould... a cousin of the green patches you've seen on old bread. You put it in a giant steel tank, and you feed it sugar and air.
-```
 
-### Block 4 of 8 · 1367 characters · save as `voice/pha_b04.mp3`
-
-```
 For about a week, the tank runs day and night. The mould eats, grows, and gives out penicillin into the liquid. And if even one stray germ gets in, you can lose the whole batch.
 
 Then you take the penicillin out and clean it. This first powder is called penicillin G.
@@ -284,18 +288,18 @@ So you can guess who wins. The country with the biggest tanks and the cheapest p
 And that's exactly where India's story turns.
 
 Now, here's what we got wrong. For years, India's government allowed only a few companies to make penicillin, and only in small amounts. So our plants stayed too small to be cheap.
+```
 
+### Block 5 of 8 · 1407 characters · save as `voice/pha_b05.mp3`
+
+```
 Meanwhile, in the nineteen nineties, China went all in on medicine ingredients.
 
 It built huge plants, in huge drug parks, with cheap power and cheap water. Its factories also faced looser pollution rules.
-```
 
-### Block 5 of 8 · 1377 characters · save as `voice/pha_b05.mp3`
-
-```
 And then cheap Chinese penicillin flooded the world market... at prices nobody else could match.
 
-Now remember this one number. In nineteen ninety-one, of all the medicine powder India bought from outside, China sold less than one per cent.
+Now remember this one number. Nineteen ninety-one — the year India opened up its economy. Of all the medicine powder India bought from outside, China sold less than one per cent.
 
 Less than one.
 
@@ -317,18 +321,18 @@ Niti Aayog estimates Chinese powder costs thirty-five to forty per cent less tha
 
 That's the trap. You can't compete without a big plant. And you can't risk a big plant... when one price war can wipe it out.
 
-For years, that trap held. Then twenty twenty happened — the day India had to lock its own doors.
+For years, that trap held. Then Corona came — and India had to lock its own doors.
 
 And this time, the central government decided to break the trap.
+```
 
+### Block 6 of 8 · 1437 characters · save as `voice/pha_b06.mp3`
+
+```
 It launched a scheme to pay companies extra for making forty-one of these missing ingredients in India. Nearly seven thousand crore rupees, set aside.
 
 And one company took the biggest bet of all.
-```
 
-### Block 6 of 8 · 1339 characters · save as `voice/pha_b06.mp3`
-
-```
 Kakinada, Andhra Pradesh. On the coast, a new plant goes up, built by Aurobindo Pharma, through its unit called Lyfius.
 
 Inside are the giant tanks I just told you about. The company says it cost around two thousand five hundred crore rupees, and it's built to make fifteen thousand tonnes of penicillin G every year.
@@ -346,13 +350,13 @@ Think of it as a shield. It gives the new Indian plant breathing room, while it 
 And in September twenty twenty-six, after the Kakinada plant complained, the government also started checking whether China is selling penicillin here below a fair price.
 
 But that shield has an end date. It runs for one year... until January twenty twenty-seven.
+```
 
+### Block 7 of 8 · 1434 characters · save as `voice/pha_b07.mp3`
+
+```
 That's the date to watch. Will Kakinada be strong enough by then? Or will the shield get extended?
-```
 
-### Block 7 of 8 · 1328 characters · save as `voice/pha_b07.mp3`
-
-```
 And here's the balance the government has to strike. Protect the Indian plant... without making your antibiotics costlier.
 
 And it's not just penicillin. Companies have already put more than five thousand crore rupees into this scheme.
@@ -365,7 +369,7 @@ So has India won? Not yet. But it's back in the fight.
 
 So here's the lesson. If you only master the last step, you're only as strong as whoever controls the step before.
 
-And the cost? You saw it in twenty twenty. When one part of China shut down, the pharmacy of the world had to lock its own doors.
+And the cost? You saw it in the Corona days. When one province in China shut down, the pharmacy of the world had to lock its own doors.
 
 But here's the reality today. India has the scientists. It has the factories. And now, it's growing its own penicillin again.
 

@@ -116,3 +116,40 @@ anti-dumping case said as "started checking whether China is selling penicillin 
 initiation, 28 Sep 2026); "Lyfius, a unit of Aurobindo Pharma" → "Aurobindo Pharma, through its unit called Lyfius";
 the floor said as "needs a special licence… the same rule covers amoxicillin and its base powder"; new line "Protect the
 Indian plant... without making your antibiotics costlier" is our framing of the trade-off, not a factual claim.
+
+## Changed lines, 2026-10-28 (Corona anchor)
+Independent light pass on the lines changed in `vo.txt` (now 88 lines): L4, L5, L8, L49, L60, L80. Rows P72–P77 (P76 and
+P77 are new). Line numbers in these rows follow the current `vo.txt`; older rows keep the numbering of the version they checked.
+
+**Result: all confirmed. No VO line has to change.** `claims_check.py`: 77 claims, 73 confirmed, 4 claim; gate passed.
+
+- **L4, lockdown "three weeks" later (P72):** the PM ordered the nationwide lockdown on 24 March 2020 (PIB), 21 days after
+  3 March. It took effect from 25 March.
+- **L5, Wuhan "locked down for six weeks" (P73):** Wuhan closed its outbound routes at 10 a.m. on 23 January 2020 (State
+  Council white paper, June 2020). That makes 3 March day 40, or five weeks and five days, so "six weeks" is rounded up by two days.
+- **L5, "only a handful of cases" (P74):** India had 5 confirmed cases, 3 of them already recovered (Health Ministry via PIB,
+  2 March evening; WHO Situation Report 43, 3 March).
+- **L8, "the reason was Corona" (P77):** The Tribune, 3 March 2020: the curbs came "in the wake of coronavirus outbreak",
+  on the advice of the pharma department's committee set up after the outbreak.
+- **L8, "the whole province was shut down" (P76):** the white paper says all outbound routes from Wuhan and Hubei were
+  closed. Hubei's own notice of 24 March 2020 lifted the exit controls for "areas outside Wuhan" only from 25 March. Hubei's
+  60 million people were told to stay home on 16 February (BBC). Easing inside the province began only in mid-March (CGTN, 14 March).
+- **L49, 1991 "the year India opened up its economy" (P75):** the 24 July 1991 budget speech ("we should welcome, rather than
+  fear, foreign investment"; "expose Indian industry to competition from abroad"), backed by the RBI and a Finance Ministry paper.
+- **L60, L80, "Corona came" and "one province in China shut down":** the wording stays true (P76, P77). The same Tribune story
+  says Chinese ingredient makers outside Hubei had partly restarted by 3 March, which is why "one province" is fair.
+
+**Optional tightening (not required):** L5 "has been locked down for six weeks" → "has been locked down for almost six weeks" (exact).
+
+**Watch-outs for the edit**
+- "A handful" is true only on 3 March. India had 29 cases by 4 March (Health Minister in the Rajya Sabha, 5 March 2020).
+  If the scene's date moves, re-check this line.
+- "Whole province" is right for 3 March. AP's account of late January says the Wuhan restrictions spread to "most of the
+  province". By March, the exit controls and the stay-home order covered all of Hubei. P76 replaces P09's "most of the province" note for this line.
+- "Had to lock its own doors" (L60, L80) is unchanged framing that already passed under P08. The curb covered about 10% of
+  pharma exports, and the government's own panel said stocks could last two to three months.
+- Optional tags: `INDIA: 5 CASES · 3 MAR 2020 [WHO]` · `WUHAN LOCKED DOWN SINCE 23 JAN`.
+
+**Sources I could not open (worked around):** Reuters (blocked to this session; used AP and the Hubei notice on Xinhua instead), The
+Guardian (fetch failed; not needed), dea.gov.in direct download (TLS certificate error; read the paper through a text extract)
+and english.scio.gov.cn over https (certificate mismatch; cited the same white paper PDF on english.www.gov.cn instead).
