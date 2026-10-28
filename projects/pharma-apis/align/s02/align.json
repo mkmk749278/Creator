@@ -1,0 +1,282 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 0.65,
+  "te": "Stay with me.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.884,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 1.104,
+  "end": 6.083,
+  "te": "Around minute eight, I'll take you to a fight India is in right now — in Andhra Pradesh.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.278,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 6.619,
+  "end": 9.533,
+  "te": "And I'll give you the date that could decide how it ends.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.278,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 10.103,
+  "end": 11.984,
+  "te": "First, let's give India its due.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.332,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 12.417,
+  "end": 14.197,
+  "te": "Because that pharmacy of the world title?",
+  "en": "",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 0.266,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 14.626,
+  "end": 15.675,
+  "te": "India earned it.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.266,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 16.282,
+  "end": 17.612,
+  "te": "Think back to two thousand one.",
+  "en": "",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.486,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 18.073,
+  "end": 20.352,
+  "te": "H.I.V. is killing millions in Africa.",
+  "en": "",
+  "speech_vs_text": 1.26,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 20.765,
+  "end": 26.495,
+  "te": "The medicines exist... but the Western price is around ten thousand dollars a year for one patient.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 26.992,
+  "end": 33.369,
+  "te": "Then an Indian company, Cipla, stands up and offers the same three-drug mix for about a dollar a day.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.324,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 33.842,
+  "end": 34.584,
+  "te": "One dollar.",
+  "en": "",
+  "speech_vs_text": 1.28,
+  "boundary_margin": 1.201,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 35.014,
+  "end": 38.592,
+  "te": "That one offer helped change how the world priced these medicines.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.042,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 38.923,
+  "end": 44.737,
+  "te": "And today, you'll find India sells medicines abroad worth more than two and a half lakh crore rupees a year.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.042,
+  "confidence": "check"
+ },
+ {
+  "line": 14,
+  "start": 45.239,
+  "end": 46.885,
+  "te": "So where's the missing piece?",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.5,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 47.43,
+  "end": 48.096,
+  "te": "Here's the catch.",
+  "en": "",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 48.528,
+  "end": 50.273,
+  "te": "Every tablet has two parts.",
+  "en": "",
+  "speech_vs_text": 1.23,
+  "boundary_margin": 0.856,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 50.62,
+  "end": 52.859,
+  "te": "There's the powder that actually makes you better.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 0.637,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 53.27,
+  "end": 57.0,
+  "te": "The industry calls it the A.P.I. — and no, not the computer kind.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.407,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 57.389,
+  "end": 58.495,
+  "te": "Let's just call it the powder.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.407,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 58.944,
+  "end": 64.493,
+  "te": "And then there's everything around it... the rest of the tablet, the coating, the strip, the box.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.244,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 64.864,
+  "end": 66.179,
+  "te": "And you should be proud of this.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.244,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 66.528,
+  "end": 69.254,
+  "te": "Indian companies are world class at that last part.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.493,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 69.655,
+  "end": 74.485,
+  "te": "Mixing, pressing, packing, and passing the toughest inspections on the planet.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.493,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 74.854,
+  "end": 75.993,
+  "te": "But the powder you swallow?",
+  "en": "",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 0.644,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 76.391,
+  "end": 78.765,
+  "te": "A lot of it is made somewhere else first.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.321,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 79.11,
+  "end": 85.523,
+  "te": "In twenty twenty-five, India bought these powders from other countries worth around sixty-five thousand crore rupees.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.321,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 85.893,
+  "end": 87.586,
+  "te": "And the biggest seller, by far...",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.556,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 88.128,
+  "end": 88.496,
+  "te": "China.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.952,
+  "confidence": "high"
+ }
+]

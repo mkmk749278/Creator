@@ -1,0 +1,262 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 3.053,
+  "te": "India sells medicines to around two hundred countries.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.496,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 3.504,
+  "end": 6.303,
+  "te": "That's why you hear it called the pharmacy of the world.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.223,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 6.837,
+  "end": 11.114,
+  "te": "But open one antibiotic capsule and look at the white powder inside.",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.223,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 11.583,
+  "end": 16.491,
+  "te": "That's the actual medicine... and there's a fair chance its journey began in China.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.233,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 16.947,
+  "end": 19.662,
+  "te": "The rest of the capsule is just there to carry it to you.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 1.261,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 20.221,
+  "end": 21.687,
+  "te": "Now think back to the Corona days.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 22.122,
+  "end": 22.776,
+  "te": "You remember them.",
+  "en": "",
+  "speech_vs_text": 0.71,
+  "boundary_margin": 0.67,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 23.14,
+  "end": 25.747,
+  "te": "Not the lockdown yet — this is three weeks before it.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.67,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 26.204,
+  "end": 28.064,
+  "te": "The third of March, twenty twenty.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.442,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 28.528,
+  "end": 32.659,
+  "te": "In China, the city of Wuhan has been locked down for almost six weeks.",
+  "en": "",
+  "speech_vs_text": 1.22,
+  "boundary_margin": 0.274,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 33.082,
+  "end": 35.968,
+  "te": "Here in India, there are only a handful of cases so far.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.274,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 36.487,
+  "end": 36.879,
+  "te": "Delhi.",
+  "en": "",
+  "speech_vs_text": 1.27,
+  "boundary_margin": 2.469,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 37.315,
+  "end": 42.515,
+  "te": "A two-page government order goes out, and if you run a medicine company, your phone starts ringing.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.281,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 42.927,
+  "end": 48.386,
+  "te": "Thirteen medicine ingredients, and the medicines made from them, can't leave India without a licence.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.281,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 48.768,
+  "end": 50.26,
+  "te": "Paracetamol is one of them.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 1.01,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 50.786,
+  "end": 51.045,
+  "te": "Wait.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 51.489,
+  "end": 51.86,
+  "te": "India?",
+  "en": "",
+  "speech_vs_text": 1.2,
+  "boundary_margin": 1.829,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 52.369,
+  "end": 55.375,
+  "te": "The pharmacy of the world... locking its own doors?",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 1.829,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 55.793,
+  "end": 56.175,
+  "te": "Yes.",
+  "en": "",
+  "speech_vs_text": 2.06,
+  "boundary_margin": 1.261,
+  "confidence": "check"
+ },
+ {
+  "line": 20,
+  "start": 56.559,
+  "end": 58.071,
+  "te": "And the reason was Corona.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.472,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 58.499,
+  "end": 63.227,
+  "te": "Wuhan sits in a Chinese province called Hubei... and the whole province was shut down.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.222,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 63.661,
+  "end": 66.769,
+  "te": "Reports at the time said many of the ingredients on that list came from that one place.",
+  "en": "",
+  "speech_vs_text": 0.72,
+  "boundary_margin": 0.222,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 66.968,
+  "end": 68.424,
+  "te": "So here's the question I want to answer for you today.",
+  "en": "",
+  "speech_vs_text": 0.56,
+  "boundary_margin": 0.388,
+  "confidence": "check"
+ },
+ {
+  "line": 24,
+  "start": 68.84,
+  "end": 73.6,
+  "te": "If India makes medicine for the world... who makes the powder inside India's medicine?",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.388,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 74.07,
+  "end": 77.93,
+  "te": "And before you worry — this isn't about the quality of your medicines.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.329,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 78.135,
+  "end": 80.375,
+  "te": "It's about who controls the supply.",
+  "en": "",
+  "speech_vs_text": 1.3,
+  "boundary_margin": 0.329,
+  "confidence": "high"
+ }
+]

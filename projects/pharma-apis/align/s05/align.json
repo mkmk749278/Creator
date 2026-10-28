@@ -1,0 +1,342 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 4.653,
+  "te": "Meanwhile, in the nineteen nineties, China went all in on medicine ingredients.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.379,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 5.096,
+  "end": 9.961,
+  "te": "It built huge plants, in huge drug parks, with cheap power and cheap water.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.267,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 10.401,
+  "end": 13.293,
+  "te": "Its factories also faced looser pollution rules.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.065,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 13.76,
+  "end": 19.719,
+  "te": "And then cheap Chinese penicillin flooded the world market... at prices nobody else could match.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.065,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 20.386,
+  "end": 21.753,
+  "te": "Now remember this one number.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.433,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 22.254,
+  "end": 25.531,
+  "te": "Nineteen ninety-one — the year India opened up its economy.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 26.037,
+  "end": 31.317,
+  "te": "Of all the medicine powder India bought from outside, China sold less than one per cent.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.219,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 31.999,
+  "end": 32.931,
+  "te": "Less than one.",
+  "en": "",
+  "speech_vs_text": 1.34,
+  "boundary_margin": 0.303,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 33.568,
+  "end": 37.462,
+  "te": "Then, one by one, the Indian penicillin plants went quiet.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.294,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 38.087,
+  "end": 39.301,
+  "te": "Hindustan Antibiotics.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.294,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 39.72,
+  "end": 40.155,
+  "te": "Stopped.",
+  "en": "",
+  "speech_vs_text": 0.58,
+  "boundary_margin": 0.186,
+  "confidence": "check"
+ },
+ {
+  "line": 12,
+  "start": 40.626,
+  "end": 41.247,
+  "te": "I.D.P.L.",
+  "en": "",
+  "speech_vs_text": 2.45,
+  "boundary_margin": 0.186,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 41.635,
+  "end": 42.104,
+  "te": "Stopped.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 42.556,
+  "end": 42.985,
+  "te": "Torrent.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 43.382,
+  "end": 44.022,
+  "te": "Ranbaxy.",
+  "en": "",
+  "speech_vs_text": 1.44,
+  "boundary_margin": 9.9,
+  "confidence": "check"
+ },
+ {
+  "line": 16,
+  "start": 44.4,
+  "end": 44.975,
+  "te": "Sarabhai.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 1.044,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 45.349,
+  "end": 45.828,
+  "te": "Stopped.",
+  "en": "",
+  "speech_vs_text": 0.68,
+  "boundary_margin": 0.145,
+  "confidence": "check"
+ },
+ {
+  "line": 18,
+  "start": 46.223,
+  "end": 47.371,
+  "te": "And the last one standing...",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 47.841,
+  "end": 48.228,
+  "te": "Alembic.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 48.783,
+  "end": 49.246,
+  "te": "Stopped.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 1.243,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 49.774,
+  "end": 54.648,
+  "te": "By about twenty twenty, India was importing all of that base powder for amoxicillin.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 1.243,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 55.088,
+  "end": 56.34,
+  "te": "Every last kilo.",
+  "en": "",
+  "speech_vs_text": 1.52,
+  "boundary_margin": 1.76,
+  "confidence": "check"
+ },
+ {
+  "line": 23,
+  "start": 56.849,
+  "end": 58.076,
+  "te": "Remember that one per cent?",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.317,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 58.455,
+  "end": 60.24,
+  "te": "That was for all medicine powder.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.28,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 60.685,
+  "end": 63.694,
+  "te": "Now, if you look at just antibiotic powder today...",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.28,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 64.097,
+  "end": 66.562,
+  "te": "China's share is around eighty-six per cent.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 2.701,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 67.096,
+  "end": 73.165,
+  "te": "Niti Aayog estimates Chinese powder costs thirty-five to forty per cent less than powder made in India.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.228,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 73.643,
+  "end": 77.066,
+  "te": "So tell me — if you ran a company, would you build a plant here?",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.228,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 77.635,
+  "end": 78.286,
+  "te": "That's the trap.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 1.009,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 78.732,
+  "end": 80.716,
+  "te": "You can't compete without a big plant.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 1.323,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 81.059,
+  "end": 83.96,
+  "te": "And you can't risk a big plant... when one price war can wipe it out.",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.295,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 84.115,
+  "end": 84.945,
+  "te": "For years, that trap held.",
+  "en": "",
+  "speech_vs_text": 0.65,
+  "boundary_margin": 0.295,
+  "confidence": "check"
+ },
+ {
+  "line": 33,
+  "start": 85.398,
+  "end": 86.994,
+  "te": "Then Corona came — and India had to lock its own doors.",
+  "en": "",
+  "speech_vs_text": 0.6,
+  "boundary_margin": 0.061,
+  "confidence": "check"
+ },
+ {
+  "line": 34,
+  "start": 87.489,
+  "end": 90.955,
+  "te": "And this time, the central government decided to break the trap.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.061,
+  "confidence": "high"
+ }
+]
