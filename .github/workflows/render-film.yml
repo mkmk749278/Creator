@@ -70,7 +70,9 @@ jobs:
         run: |
           command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
           python3 -m pip install --quiet "pillow==11.3.0"
-          npm ci
+          npm ci --ignore-scripts
+          python3 scripts/library.py fetch
+          npm run vendor
           npx hyperframes telemetry disable || true
           npx hyperframes browser ensure
           nproc; free -g; df -h "$GITHUB_WORKSPACE" | tail -1
