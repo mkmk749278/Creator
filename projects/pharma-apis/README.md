@@ -10,7 +10,7 @@ mould green = penicillin, amber = China's supply, saffron-white = Indian-made, r
 device: the CAPSULE GAUGE. Full plan: `treatment.md`.
 
 Files: `treatment.md` (angle, shape, package) · `research.md` (writer's leads) · `research/search_terms.md`
-(autocomplete, main phrase) · `vo.txt` / `script.tsv` (narration v5, 1,802 words, about 11 minutes) · `vo_blocks.md`
+(autocomplete, main phrase) · `vo.txt` / `script.tsv` (narration v5, 1,807 words, about 11 minutes) · `vo_blocks.md`
 (Akash blocks) · `claims.csv` + `fact-check.md` (independent check: 67 confirmed, 4 attributed) ·
 `review_audience_v1.md`, `review_audience_v2.md`.
 

@@ -1,6 +1,6 @@
 # Recording file: The Pharmacy of the World's Missing Powder (pharma APIs)
 
-1802 words · 8 blocks · about 12–12 minutes at 145–155 words a minute.
+1807 words · 8 blocks · about 12–12 minutes at 145–155 words a minute.
 
 **Voice:** Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/pha_bNN.mp3` (NN = block number).
 
@@ -156,7 +156,7 @@ And here's the balance the government has to strike. Protect the Indian plant...
 
 And it's not just penicillin. Companies have already put more than five thousand crore rupees into this scheme.
 
-And if you live in Gujarat, Himachal or Andhra, this one is close to home. Three giant bulk drug parks are coming up... in Gujarat, in Himachal Pradesh, and at Nakkapalli in Andhra Pradesh.
+And there's more coming. Three giant bulk drug parks are being built — in Gujarat, in Himachal Pradesh... and one at Nakkapalli. Yes, you heard right — that's in Andhra Pradesh too, the same state as the Kakinada plant.
 
 Let me be honest with you. None of those parks is up and running yet. And China has a thirty-year head start, and makes far more penicillin than we do.
 
@@ -352,7 +352,7 @@ And in September twenty twenty-six, after the Kakinada plant complained, the gov
 But that shield has an end date. It runs for one year... until January twenty twenty-seven.
 ```
 
-### Block 7 of 8 · 1457 characters · save as `voice/pha_b07.mp3`
+### Block 7 of 8 · 1487 characters · save as `voice/pha_b07.mp3`
 
 ```
 That's the date to watch. Will Kakinada be strong enough by then? Or will the shield get extended?
@@ -361,7 +361,7 @@ And here's the balance the government has to strike. Protect the Indian plant...
 
 And it's not just penicillin. Companies have already put more than five thousand crore rupees into this scheme.
 
-And if you live in Gujarat, Himachal or Andhra, this one is close to home. Three giant bulk drug parks are coming up... in Gujarat, in Himachal Pradesh, and at Nakkapalli in Andhra Pradesh.
+And there's more coming. Three giant bulk drug parks are being built — in Gujarat, in Himachal Pradesh... and one at Nakkapalli. Yes, you heard right — that's in Andhra Pradesh too, the same state as the Kakinada plant.
 
 Let me be honest with you. None of those parks is up and running yet. And China has a thirty-year head start, and makes far more penicillin than we do.
 
