@@ -185,7 +185,7 @@ shot(c(10), "R_capsule_open", "push", ms=4.2)                      # "So here's 
 shot(c(11), "PXa", "slow", ms=0.5)                                 # "And before you worry — this isn't about the quality..."
 chip("Quality: not the issue", L(11, 0.2), LE(11), 120, 160, "green", "sm", "up")
 chip("Supply: the issue", L(11, 0.6), LE(11), 120, 260, "amber", "sm", "up")
-shot(c(12), "Y02", "crop", ms=[32.0, 48.0, 64.0], origin="50% 30%")              # "Stay with me. Around minute eight... Andhra Pradesh"
+shot(c(12), "Y02", "crop", ms=[32.0, 50.0, 65.3], origin="50% 8%")              # "Stay with me. Around minute eight... Andhra Pradesh"
 chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm", "up")
 # ---- INDIA EARNED IT (1:31-2:50)
 shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
@@ -283,12 +283,12 @@ chip("41 ingredients", L(62, 0.25), LE(62), 120, 460, "saffron", "sm", "up")
 cite("[DEPT OF PHARMACEUTICALS | PLI 2020]", L(62, 0.25), LE(62))
 shot(c(63), "R_map_india", "none", ms=3.6)                         # "And one company took the biggest bet of all."
 # ---- KAKINADA SWITCHES IT BACK ON (the promised minute eight)
-shot(c(64) - BEATS[63] + 0.2, "Y02", "slow", ms=[32.0, 48.0, 80.0])              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
+shot(c(64) - BEATS[63] + 0.2, "Y02", "slow", ms=[32.0, 50.0, 81.0])              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
 namelt("Kakinada, Andhra Pradesh", "LYFIUS PHARMA · AUROBINDO PHARMA", L(64, 0.1), LE(64))
 shot(c(65), "Y02", "crop", ms=62.0, origin="50% 8%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
 chip("₹2,500 cr · company figure", L(65, 0.35), LE(65), 120, 160, "saffron", "sm", "up")
 chip("15,000 tonnes a year", L(65, 0.7), LE(65), 120, 280, "saffron", "sm", "up")
-shot(c(66), "Y02", "crop", ms=74.0, origin="50% 8%")             # "In twenty twenty-four, the tanks start running..."
+shot(c(66), "Y02", "crop", ms=[74.0, 81.0], origin="50% 8%")             # "In twenty twenty-four, the tanks start running..."
 datebig("2024", "PENICILLIN G · MADE IN INDIA AGAIN", L(66, 0.05), LE(66))
 shot(c(67), "px_216619", "slow", ms=4.0)                           # "But you know the trap... cheap imports were still waiting at the port."
 shot(c(68), "D_dgft_2026_mip-1", "in", tag="DOCUMENT · DGFT")      # "So on the twenty-ninth of January, 2026, the government stepped in."
@@ -301,7 +301,7 @@ chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 760, "steel", "s
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
 datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))
-shot(c(73), "Y02", "crop", ms=48.0, origin="50% 8%")                                # "That's the date to watch..."
+shot(c(73), "Y02", "crop", ms=50.0, origin="50% 8%")                                # "That's the date to watch..."
 shot(c(74), "Y02", "crop", ms=86.0, origin="50% 8%")            # "And here's the balance the government has to strike..."
 chip("Protect the plant", L(74, 0.4), LE(74), 120, 160, "saffron", "sm", "up")
 chip("Keep medicines affordable", L(74, 0.7), LE(74), 120, 280, "green", "sm", "up")
