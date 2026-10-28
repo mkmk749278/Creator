@@ -57,3 +57,20 @@ curl -sL https://raw.githubusercontent.com/mkmk749278/Creator/main/scripts/termu
 | 3aclBlRaYNQ | ABP Majha (1:03) | Hindustan Antibiotics, Pimpri |
 | keUkhEBY_fs | Amar Agro Industry (0:40) | flour mill plant (atta chakki) |
 | ZT2VuADHAFo | Adinath Stones (0:43) | commercial atta chakki |
+
+## Owner's footage, pass 2 (2026-10-28, pulled from Drive `English/pharma-apis/footage/`)
+Contact sheets: `qa/footage/<clip>/`.
+| Clip | Verdict | Use |
+|---|---|---|
+| **02 Lyfius corporate film** (1878×1080) | ✅ the find of the pass | 7:37 plant aerials (0:34–0:58), 7:45 fermenter halls (1:02–1:30, "biggest fermenter capacity ever used in India" caption: cover it, we don't claim it), 7:58 vessels and workers (1:14–1:58). Skip the PM still (0:18–0:30). Cover burned-in captions with our lower-thirds |
+| **04 ABP Majha, Hindustan Antibiotics** (640×480) | ✅ small | 3:46/6:30: the real HAL gate sign at Pimpri (0:08–0:20), framed small as a document (low resolution) |
+| **06 Adinath Stones** | ✅ | 5:25 the small chakki (0:02–0:22) |
+| **05 Amar Agro** | ✅ with crop | 5:25 the bigger mill (0:00–0:12), crop the phone number |
+| Pexels 3922881 (tablets popped into a palm) | ✅ | 2:36 "the powder you swallow", 10:11 "next time you take an antibiotic" |
+| Pexels 13048933 (blister macro) | ✅ | 0:00 opener texture, 2:20 "the strip, the box" |
+| 01 ET Now | ❌ studio stock talk, no plant footage (and stock-price graphics: SEBI lane) | — |
+| 03 PM exhibition | ❌ an Ayurveda institute exhibition, no Lyfius | — |
+| Pexels 8657618 | ❌ Western shop and dollar notes: contradicts an Indian chemist scene | — |
+
+Still open: an Indian chemist counter for 1:14 and 10:04 (owner's phone clip, or a HyperFrames scene); Pimpri archive
+photos (Commons, retry); Cipla/MSF, 1991 budget, DoP scheme, DGTR 2026 documents.
