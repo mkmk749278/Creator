@@ -24,6 +24,10 @@ Strength: **P** = primary document, **S** = reputable secondary, **W** = weak / 
 | India pharma exports US$30.5 bn in 2024-25; 3rd by volume, 11th by value | PIB document Mar 2026 | P | https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/mar/doc2026321831401.pdf |
 | PLI bulk drugs: approved 2020, ₹6,940 cr, 41 products; ~₹5,210 cr invested, 39 projects, 28 products (June 2026) | Govt via PSU Watch; Nadda RS reply Mar 2026 | S → PIB | https://psuwatch.com/newsupdates/total-investment-of-rs-5210-crore-made-under-pli-scheme-for-bulk-drugs-till-june-2026-govt |
 | Bulk drug parks (₹3,000 cr scheme): Gujarat (Jambusar, Bharuch), HP (Una/Haroli), AP (moved from Kakinada to Nakkapalli, Anakapalli); none confirmed operating yet | Rajya Sabha PQ 11 Mar 2025; Tribune; Indiaseatradenews Aug 2026 | P/S | https://rsdebate.nic.in/bitstream/123456789/758688/1/PQ_267_11032025_U1304_p225_p229.pdf |
+| Cipla 2001: triple-therapy H.I.V. cocktail offered at about US$1 a day (≈$350/yr); Western price then ≈$10,000–15,000/yr | NYT Feb 2001; MSF | S → primary | find NYT 7 Feb 2001 / MSF |
+| Indian medicines reach ~200 countries | PIB / Pharmexcil | S → PIB | find |
+| ~13 of the 26 restricted APIs linked to Hubei (VO: about half) | Tribune 2020 | S | https://www.tribuneindia.com/news/business/curbs-on-drug-exports-as-coronavirus-threat-rises-50607 |
+| Fermentation: Penicillium chrysogenum fed-batch about a week; Pen-G → 6-APA by enzyme (penicillin acylase) → amoxicillin | textbook / review paper | find |
 | "India supplies about 59% of amoxicillin finished doses" (global or US?) | CFR | W: check scope before use | CFR |
 
 **Open questions for the fact-check:** the exact NITI figures from the PDF; whether the MIP has been extended or challenged;

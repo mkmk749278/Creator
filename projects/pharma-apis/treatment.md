@@ -1,7 +1,13 @@
 # Treatment: The Pharmacy of the World's Missing Powder
 
 *India's Missing Pieces, episode 4 (after chips, rare earth magnets, jet engine). English, Akash. About 11–12 minutes.
-Draft 1, 2026-10-28: the angle, cold open and thumbnail are for the owner to pick (marked ★ = recommended).*
+Draft 1, 2026-10-28 (★ = recommended).*
+
+**Owner's answers (2026-10-28):** angle: "cover all, but concentrate more on what the audience likes and should feel
+proud of India", so A carries the film with B (Dolo/2020) and C (the 1991 number) inside it, and pride beats lead
+(Cipla's dollar a day, Pimpri 1956, Kakinada 2024). Cold open: "same as question 2", read as both openings combined
+(capsule for 0:00–0:08, then the 2020 order); to confirm. Thumbnail and title: "should be clickable, the audience should
+feel curious to click", so curiosity first for both, with 3+ concepts each tested in `thumb_feed.py` and a click panel.
 
 **Logline.** India makes the pills for half the world, but the white powder inside many of them, above all the
 penicillin family, starts in China. India once made it, in a factory Nehru's government built in 1954, then lost every
