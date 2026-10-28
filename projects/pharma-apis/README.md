@@ -21,7 +21,8 @@ Status: VO recorded (owner, 2026-10-28; takes in `voice/`, gitignored). `python3
 trims each take, times every line and sentence per block, joins `voice/vo_full.wav` (10:47.5, about 168 wpm, same as the
 rare-earth film) and writes `align/` (align.json, sentences.json, blocks.json, subtitles.en.srt). Kakinada lands at 7:37
 in the raw VO: the edit's planned breathing room (roll-call silences, the 2020 order push-in, tank ambience, music
-silence before reveals) must bring it to about 8:00, or block 2's "minute eight" is re-recorded. Next: sourcing → thumbnails (3+ curiosity concepts through `thumb_feed.py` + click panel) →
+silence before reveals) must bring it to about 8:00, or block 2's "minute eight" is re-recorded. Owner keeps all takes (same setup; emotional lines change the timing): blocks 1 and 7 (about 180 and 177 wpm)
+get extra picture-led room in the edit. Next: sourcing → thumbnails (3+ curiosity concepts through `thumb_feed.py` + click panel) →
 scenes → review → render.
 **Time-sensitive, recheck before upload:** the minimum import price (to about 29 January 2027), the two DGTR
 anti-dumping cases opened in September 2026, and whether any bulk drug park has started.

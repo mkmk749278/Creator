@@ -1940,6 +1940,10 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   vanished"), plus SSML break tags our rules ban and a word count 25% too low. *Rule:* take the idea, never the text,
   until every changed fact has a claims row.
 - **One recording file with every VO change** (§4a-2): full narration plus the click-to-copy blocks, `scripts/vo_blocks.py`.
+- **Per-block pace varies with the same voice settings.** The pharma takes ran 156–180 wpm block by block (168 overall)
+  with one Akash setup; the owner's reading: the emotional lines change the timing. *So:* keep good takes and give the
+  fast blocks room in the edit (picture-led pauses, diegetic beats, silence before reveals) instead of asking for
+  slower re-records; flag a re-record only when a line is hard to follow.
 - **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".
