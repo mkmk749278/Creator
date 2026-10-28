@@ -110,7 +110,7 @@ Meanwhile, in the nineteen nineties, China went all in on medicine ingredients.
 It built huge plants, in huge drug parks, with cheap power and cheap water. Its factories also faced looser pollution rules.
 ```
 
-## Block 5 of 8 · 1367 characters · save as `voice/pha_b05.mp3`
+## Block 5 of 8 · 1377 characters · save as `voice/pha_b05.mp3`
 
 ```
 And then cheap Chinese penicillin flooded the world market... at prices nobody else could match.
@@ -123,7 +123,9 @@ Then, one by one, the Indian penicillin plants went quiet.
 
 Hindustan Antibiotics. Stopped.
 
-I.D.P.L. Torrent. Ranbaxy. Sarabhai. Stopped.
+I.D.P.L. Stopped.
+
+Torrent. Ranbaxy. Sarabhai. Stopped.
 
 And the last one standing... Alembic. Stopped.
 
