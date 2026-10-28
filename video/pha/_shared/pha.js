@@ -10,6 +10,9 @@
     slow: [{ scale: 1.02 }, { scale: 1.06 }], none: [{ scale: 1.0 }, { scale: 1.0 }],
     zoomhome: [{ scale: 1.7 }, { scale: 1.9 }], zoomboard: [{ scale: 2.15 }, { scale: 2.35 }],
     crop: [{ scale: 1.26 }, { scale: 1.33 }],   // hides burned-in subtitles / tickers at the bottom (origin set per shot)
+    // the framings a long hold cuts to when make_film.py splits it (a new angle every 3.5-5 s)
+    crop2: [{ scale: 1.42 }, { scale: 1.48 }], cutA: [{ scale: 1.2 }, { scale: 1.25 }], cutB: [{ scale: 1.12 }, { scale: 1.17 }],
+    doc: [{ scale: 1.55 }, { scale: 1.62 }],
   };
   const fmt = (v, pre, suf, dec) => pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString("en-IN")) + suf;
   window.PHA_animate = function (tl, D) {

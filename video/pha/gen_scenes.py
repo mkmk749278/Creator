@@ -165,7 +165,7 @@ def map_india():
         js += f'      tl.set("#p_{k}", {{ autoAlpha: 0 }}, 0); pop("#p_{k}", {t});\n'
         if col == "#ff9933":
             js += f'      tl.to("#g_{k}", {{ opacity: 1, duration: 1 }}, {t});\n'
-    svg += '<text id="both" class="mono" x="1180" y="980" style="font-size:30px;fill:#ff9933" opacity="0">SAME STATE · ANDHRA PRADESH</text>'
+    svg += '<text id="both" class="mono" x="1180" y="860" style="font-size:30px;fill:#ff9933" opacity="0">SAME STATE · ANDHRA PRADESH</text>'
     js += '      fade("#both", 10.0);\n'
     write("map_india", 24, svg, js)
 

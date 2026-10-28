@@ -10,7 +10,7 @@ India Is the Pharmacy of the World. So Who Makes Its Medicine? | Be Practical Wi
 
 ```
 India is the pharmacy of the world, but the powder inside many of our medicines, the API, comes from China.
-In the Corona days India had to hold back exports of 26 of its own medicines and their ingredients. This film shows why that happened, how India once made its own penicillin at Pimpri, and how a new plant in Kakinada, Andhra Pradesh, is switching it back on.
+In the Corona days India had to stop 13 medicine ingredients, and the medicines made from them, from leaving the country without a licence. This film shows why that happened, how India once made its own penicillin at Pimpri, and how a new plant in Kakinada, Andhra Pradesh, is switching it back on.
 Simple English, real documents, and the date to watch next.
 
 0:00 India, the pharmacy of the world, locked

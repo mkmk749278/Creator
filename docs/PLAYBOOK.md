@@ -1996,6 +1996,18 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   (`seam_sliver` in `projects/pharma-apis/build/make_film.py`), and the overlay engine squeezes both fades into any
   short window (`video/pha/_shared/pha.js`). *Rule:* run `check` on every part before rendering any of them, and read a
   `content_overlap` that spans most of a part as an item that never left, not as a layout nit.
+- **Shots laid one per VO line run far too long; split them in the engine, not by hand.** The first pharma cut had 79
+  shots averaging 8.6 s (one stock clip 23.6 s, a news clip 21 s, gazette pages 15–17 s) against the 3.5–5 s reset rule.
+  *Fix:* `split_long()` in `projects/pharma-apis/build/make_film.py` cuts every hold over 4.6 s into near-equal pieces,
+  each with a new framing (punch-ins for footage, reading down the page for documents, x-shifts for cropped news), and
+  lets a shot list several in-points (`ms=[32.0, 48.0]`) to jump to clean stretches. 153 shots, 4.4 s on average.
+  *Rule:* print the shot-length list before the first render and fix any hold over 5 s; run `freezedetect`
+  (`n=0.002:d=1.5`) on every cut.
+- **Strip every third-party clip end to end before choosing in-points.** The ABP Majha clip of Hindustan Antibiotics
+  turns into a workers' press meet (a named man at microphones) 20 s in; a shot that ran past 0:19 put STOPPED stamps on
+  real people's faces. The Lyfius promo carries a title card and lower-third boxes at known times. *So:* a 2–4 s contact
+  strip of the whole clip (`fps=1/2,tile=6x5`), the clean ranges written next to the asset in the EDL, and every
+  in-point checked against them. Real people in news footage never sit under a verdict graphic.
 - **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".

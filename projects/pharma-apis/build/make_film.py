@@ -11,6 +11,7 @@ Usage: python3 projects/pharma-apis/build/make_film.py   (then npm run vendor; r
 """
 import html
 import json
+import math
 import re
 import shutil
 import subprocess
@@ -184,7 +185,7 @@ shot(c(10), "R_capsule_open", "push", ms=4.2)                      # "So here's 
 shot(c(11), "PXa", "slow", ms=0.5)                                 # "And before you worry — this isn't about the quality..."
 chip("Quality: not the issue", L(11, 0.2), LE(11), 120, 160, "green", "sm", "up")
 chip("Supply: the issue", L(11, 0.6), LE(11), 120, 260, "amber", "sm", "up")
-shot(c(12), "Y02", "crop", ms=36.0, origin="50% 30%")              # "Stay with me. Around minute eight... Andhra Pradesh"
+shot(c(12), "Y02", "crop", ms=[32.0, 48.0, 64.0], origin="50% 30%")              # "Stay with me. Around minute eight... Andhra Pradesh"
 chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm", "up")
 # ---- INDIA EARNED IT (1:31-2:50)
 shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
@@ -212,14 +213,15 @@ chip("Raw chemical: a big share from China", L(26, 0.6), LE(26), 120, 760, "ambe
 cite("[INDUSTRY REPORTS]", L(26, 0.6), LE(26))
 # ---- INDIA MADE ITS OWN PENICILLIN (3:16-4:19)
 shot(c(27), "W_L0012314", "in")                                    # "So you might be thinking — has it always been like this?"
-shot(c(29), "Y04", "crop", ms=8.0, origin="50% 20%")              # "Pimpri, near Pune. Nineteen fifty-four..."
+shot(c(29), "Y04", "crop", ms=8.0, origin="50% 50%")              # "Pimpri, near Pune. Nineteen fifty-four..."
 datebig("1954", "PIMPRI · NEAR PUNE", L(29, 0.05), LE(29))
 shot(c(30), "W_L0012314", "out")                                   # "Penicillin was the miracle drug of that time..."
 chip("Miracle drug", L(30, 0.1), LE(30) + 2.0, 120, 760, "green", "", "up")
-shot(c(31), "Y04", "crop", ms=15.0, origin="50% 20%")             # "The government sets up... Hindustan Antibiotics. By 1956..."
+shot(c(31), "Y04", "crop", ms=[14.5, 6.0], origin="50% 50%")             # "The government sets up... Hindustan Antibiotics. By 1956..."
 namelt("Hindustan Antibiotics", "PIMPRI · SET UP 1954 · PENICILLIN BY 1956", L(31, 0.15), LE(31))
 cite("[DEPT OF PHARMACEUTICALS | HAL]", L(31, 0.15), LE(31))
-shot(c(32), "R_map_india", "none", ms=0.6)                         # "Just think about it. Picture your grandparents' India..."
+shot(c(32), "R_map_india", "none", ms=0.0)                         # "Just think about it. Picture your grandparents' India..."
+shot(S(32, 2) - PRE, "Y04", "crop", ms=[10.5, 15.5], origin="50% 50%")   # "A young, poor country, growing... in its own factory" (HAL, Pimpri)
 shot(c(33), "px_45677", "slow", ms=0.0, dim=0.35)                  # "Soon, others join in — Alembic, Sarabhai and Ranbaxy..."
 plate("Alembic", "", L(33, 0.35), LE(33), 160, 300); plate("Sarabhai", "", L(33, 0.45), LE(33), 560, 300); plate("Ranbaxy", "", L(33, 0.55), LE(33), 1000, 300)
 shot(c(34), "R_fermenter", "push", ms=0.0)                         # "How do you actually make penicillin?"
@@ -247,7 +249,7 @@ chip("Bigger mill · cheaper kilo", S(42, 2) + 0.3, LE(42) + 2.0, 120, 760, "gre
 shot(c(43), "R_tanks", "none", ms=9.4)                             # "So you can guess who wins..."
 shot(c(44), "R_map_stream", "none", ms=6.0)                        # "And that's exactly where India's story turns."
 # ---- HOW CHINA TOOK THE POWDER (5:43-7:23)
-shot(c(45), "Y04", "crop", ms=10.0, origin="50% 20%", dim=0.35)    # "Now, here's what we got wrong... only a few companies"
+shot(c(45), "Y04", "crop", ms=[10.0, 14.5], origin="50% 50%", dim=0.35)    # "Now, here's what we got wrong... only a few companies"
 chip("Few licences", L(45, 0.35), LE(45), 120, 300, "red", "sm", "up")
 chip("Small plants", L(45, 0.6), LE(45), 120, 420, "red", "sm", "up")
 cite("[MDPI ECONOMIES 2021]", L(45, 0.35), LE(45))
@@ -258,7 +260,7 @@ shot(c(48), "R_map_stream", "none", ms=8.0)                        # "And then c
 shot(c(49), "px_262189", "slow", ms=2.0, dim=0.78)                 # "Nineteen ninety-one — the year India opened up its economy..."
 datebig("1991", "INDIA OPENS ITS ECONOMY", L(49, 0.05), LE(50))
 gauge(L(49, 0.65), LE(50) + 1.0, 0.5, "ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE", "RIS DP 268")
-shot(c(51), "Y04", "crop", ms=17.0, origin="50% 20%", dim=0.55)    # "Then, one by one, the Indian penicillin plants went quiet."
+shot(c(51), "Y04", "crop", ms=[6.0, 10.0, 14.5, 7.5, 12.0], origin="50% 50%", dim=0.55)    # "Then, one by one, the Indian penicillin plants went quiet."
 for i, (name, ln) in enumerate([("Hindustan Antibiotics", 52), ("I.D.P.L.", 53), ("Torrent · Ranbaxy · Sarabhai", 54), ("Alembic", 55)]):
     plate(name, "", L(ln), LE(55) + 1.4, 160, 170 + i * 170)
     stamp("STOPPED", round(LE(ln) - 0.35, 3), LE(55) + 1.4, 1180, 175 + i * 170)
@@ -268,7 +270,7 @@ chip("Base powder: 100% imported", L(56, 0.3), LE(56), 120, 760, "amber", "sm", 
 cite("[ISID WP239]", L(56, 0.3), LE(56))
 shot(c(57), "D_niti_p-40", "in", dim=0.6, tag="DOCUMENT · NITI AAYOG")   # "Remember that one per cent?... around eighty-six per cent."
 gauge(L(57, 0.6), LE(57), 86.1, "ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
-shot(c(58), "px_45680", "slow", ms=0.5, dim=0.45)                  # "Niti Aayog estimates Chinese powder costs 35-40% less..."
+shot(c(58), "px_45680", "slow", ms=[0.0, 2.9], dim=0.45)                  # "Niti Aayog estimates Chinese powder costs 35-40% less..."
 shot(S(58, 1) - PRE, "px_45677", "in", ms=2.0, dim=0.45)           # "So tell me — if you ran a company, would you build a plant here?"
 chip("China's powder: 35–40% cheaper", L(58, 0.2), LE(58), 120, 160, "amber", "sm", "up")
 cite("[NITI AAYOG ESTIMATE]", L(58, 0.2), LE(58))
@@ -281,12 +283,12 @@ chip("41 ingredients", L(62, 0.25), LE(62), 120, 460, "saffron", "sm", "up")
 cite("[DEPT OF PHARMACEUTICALS | PLI 2020]", L(62, 0.25), LE(62))
 shot(c(63), "R_map_india", "none", ms=3.6)                         # "And one company took the biggest bet of all."
 # ---- KAKINADA SWITCHES IT BACK ON (the promised minute eight)
-shot(c(64) - BEATS[63] + 0.2, "Y02", "slow", ms=34.0)              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
+shot(c(64) - BEATS[63] + 0.2, "Y02", "slow", ms=[32.0, 48.0, 80.0])              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
 namelt("Kakinada, Andhra Pradesh", "LYFIUS PHARMA · AUROBINDO PHARMA", L(64, 0.1), LE(64))
-shot(c(65), "Y02", "crop", ms=62.0, origin="50% 20%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
+shot(c(65), "Y02", "crop", ms=62.0, origin="50% 8%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
 chip("₹2,500 cr · company figure", L(65, 0.35), LE(65), 120, 160, "saffron", "sm", "up")
 chip("15,000 tonnes a year", L(65, 0.7), LE(65), 120, 280, "saffron", "sm", "up")
-shot(c(66), "Y02", "crop", ms=74.0, origin="50% 20%")             # "In twenty twenty-four, the tanks start running..."
+shot(c(66), "Y02", "crop", ms=74.0, origin="50% 8%")             # "In twenty twenty-four, the tanks start running..."
 datebig("2024", "PENICILLIN G · MADE IN INDIA AGAIN", L(66, 0.05), LE(66))
 shot(c(67), "px_216619", "slow", ms=4.0)                           # "But you know the trap... cheap imports were still waiting at the port."
 shot(c(68), "D_dgft_2026_mip-1", "in", tag="DOCUMENT · DGFT")      # "So on the twenty-ninth of January, 2026, the government stepped in."
@@ -299,27 +301,27 @@ chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 760, "steel", "s
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
 datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73), scrim=True)   # bright tank frame behind
-shot(c(73), "Y02", "slow", ms=44.0)                                # "That's the date to watch..."
-shot(c(74), "Y02", "crop", ms=86.0, origin="50% 20%")            # "And here's the balance the government has to strike..."
+shot(c(73), "Y02", "crop", ms=48.0, origin="50% 8%")                                # "That's the date to watch..."
+shot(c(74), "Y02", "crop", ms=86.0, origin="50% 8%")            # "And here's the balance the government has to strike..."
 chip("Protect the plant", L(74, 0.4), LE(74), 120, 160, "saffron", "sm", "up")
 chip("Keep medicines affordable", L(74, 0.7), LE(74), 120, 280, "green", "sm", "up")
-shot(c(75), "Y02", "slow", ms=50.0)            # "And it's not just penicillin... five thousand crore"
+shot(c(75), "Y02", "crop", ms=[49.0, 64.0], origin="50% 8%")            # "And it's not just penicillin... five thousand crore"
 count(L(75, 0.45), LE(75), 120, 160, 0, 5000, L(75, 0.5), 1.0, "₹", " CRORE+ INVESTED", "saffron", "sm")
 cite("[DEPT OF PHARMACEUTICALS | JUNE 2026]", L(75, 0.45), LE(75))
 shot(c(76), "R_map_india", "none", ms=6.5)                         # "Three giant bulk drug parks... Nakkapalli... same state"
 shot(c(77), "R_map_stream", "none", ms=10.0)                       # "None of those parks is up and running yet..."
 chip("None running yet", L(77, 0.25), LE(77), 120, 760, "red", "sm", "up")
-shot(c(78), "Y02", "crop", ms=110.0, origin="50% 20%")            # "So has India won? Not yet. But it's back in the fight."
+shot(c(78), "Y02", "crop", ms=110.0, origin="50% 8%")            # "So has India won? Not yet. But it's back in the fight."
 # ---- RULE, RUIN, REALITY + WHAT IT MEANS FOR YOU
 shot(c(79), "px_45675", "in", ms=8.0, dim=0.3)                     # "So here's the lesson..."
 shot(c(80), "D_dgft_2020_noti50-1", "in", tag="DOCUMENT · DGFT")  # "And the cost? You saw it in the Corona days..."
-shot(c(81), "Y02", "crop", ms=96.0, origin="50% 20%")             # "But here's the reality today..."
+shot(c(81), "Y02", "crop", ms=96.0, origin="50% 8%")             # "But here's the reality today..."
 shot(c(82), "PXa", "slow", ms=0.3)                                 # "So what does this mean for you? Keep taking your medicines..."
 shot(c(84), "R_capsule_open", "push", ms=3.6)                      # "But the next time you take an antibiotic... began in China."
 shot(c(85), "R_map_home", "none", ms=0.8)                          # "And if the plant in Kakinada wins... right here in India."
 shot(c(86), "R_map_home", "out", ms=6.0, dim=0.5)                  # "Medicines aren't the only missing piece... India's own A.I.?"
 chip("Next: India's own A.I.", L(86, 0.5), END, 120, 160, "steel", "", "up")
-shot(c(87), "endcard", "none", tag="")                             # pinned question, channel line, end screen
+shot(c(87), "endcard", "push", tag="")                             # pinned question, channel line, end screen
 chip("Which medicine should India make fully?", L(87, 0.2), END, 120, 760, "saffron", "sm", "up")
 
 
@@ -380,8 +382,44 @@ def part_bounds(n=5):
     return b + [END]
 
 
+RESET = 4.6   # longest hold before a visual reset (CLAUDE.md: every 3.5-5.0 s)
+# framings a split piece cuts to: (move, origin); documents read down the page, footage alternates punch-ins
+FRAMES = {"doc": [("doc", "50% 28%"), ("doc", "50% 52%"), ("doc", "50% 76%")],
+        "crop": [("crop2", "28%"), ("crop", "50%"), ("crop2", "72%")],   # x only: each shot keeps its own height
+        "anim": [("cutB", "50% 50%"), ("push", "50% 50%")],
+        "foot": [("cutA", "32% 38%"), ("cutB", "68% 58%"), ("cutA", "62% 34%"), ("cutB", "36% 62%")]}
+
+
+SPLIT_R = {"R_tablet"}   # renders whose long holds sit still (freezedetect), centred so a punch-in keeps the labels
+
+
+def split_long():
+    """Cut every hold over RESET into near-equal pieces, each with a new framing (one change per cut). Video keeps
+    running (or jumps to the next in-point when a shot lists several); animated renders and the end card move on their
+    own and are left whole."""
+    out = []
+    for s, nxt in zip(SEQ, SEQ[1:] + [dict(t0=END)]):
+        d = nxt["t0"] - s["t0"]; ms = s["ms"]
+        if d <= RESET + 0.4 or (s["src"].startswith("R_") and s["src"] not in SPLIT_R) or s["src"] == "endcard":
+            out.append(dict(s, ms=ms[0] if isinstance(ms, list) else ms)); continue
+        n = math.ceil(d / RESET); step = d / n
+        kind = "anim" if s["src"] in SPLIT_R else "doc" if s["src"].startswith("D_") else "crop" if s["move"] == "crop" else "foot"
+        for k in range(n):
+            p = dict(s, t0=r3(s["t0"] + k * step))
+            p["ms"] = ms[k] if isinstance(ms, list) and k < len(ms) else (
+                (ms[-1] if isinstance(ms, list) else ms) + (k - (len(ms) - 1 if isinstance(ms, list) else 0)) * step)
+            p["ms"] = r3(p["ms"])
+            if k:
+                p["move"], p["origin"] = FRAMES[kind][(k - 1) % len(FRAMES[kind])]
+                if kind == "crop":
+                    p["origin"] += " " + (s["origin"] or "50% 50%").split()[1]
+            out.append(p)
+    SEQ[:] = out
+
+
 def emit():
     SEQ.sort(key=lambda s: s["t0"])
+    split_long()
     for s, nxt in zip(SEQ, SEQ[1:] + [dict(t0=END)]):
         s["t1"] = nxt["t0"]
         assert s["t1"] - s["t0"] > 0.4, (s["src"], s["t0"], s["t1"])
