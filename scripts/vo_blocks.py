@@ -57,7 +57,8 @@ def main():
 
     dest = Path(args.out) if args.out else vo.with_name("vo_blocks.md")
     dest.write_text("\n".join(out), encoding="utf-8")
-    print(f"{dest}: {words} words, {n} blocks {[len("\n\n".join(b)) for b in blocks]}")
+    sizes = [len("\n\n".join(b)) for b in blocks]
+    print(f"{dest}: {words} words, {n} blocks {sizes}")
 
 
 if __name__ == "__main__":
