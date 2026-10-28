@@ -9,9 +9,16 @@ English VO (`lang.txt`), Akash; target about 11–12 minutes, set by the story.
 mould green = penicillin, amber = China's supply, saffron-white = Indian-made, red stamp = a stopped plant. Signature
 device: the CAPSULE GAUGE. Full plan: `treatment.md`.
 
-Files: `treatment.md` (angle, shape, package) · `research.md` (writer's leads, not yet fact-checked) ·
-`research/search_terms.md` (autocomplete, main phrase).
+Files: `treatment.md` (angle, shape, package) · `research.md` (writer's leads) · `research/search_terms.md`
+(autocomplete, main phrase) · `vo.txt` / `script.tsv` (narration v3, 1,687 words, about 11 minutes) · `vo_blocks.md`
+(7 Akash blocks) · `claims.csv` + `fact-check.md` (independent check: 67 confirmed, 4 attributed) ·
+`review_audience_v1.md`.
 
-Status: phase 1 (research, package brief, treatment). Next: the owner picks the angle, cold open and thumbnail → narration
-(`vo.txt`, `script.tsv`) → `spoken_english_check.py` → `/fact-check` → audience review → recording blocks to the owner.
-**Time-sensitive:** the minimum import price runs to about 29 January 2027; recheck before upload.
+Checks: `.venv/bin/python scripts/spoken_english_check.py projects/pharma-apis/vo.txt --min-words 1300 --max-words 2000`
+and `python3 scripts/claims_check.py projects/pharma-apis/claims.csv`.
+
+Status: narration v3 ready to record (both gates pass). Next: owner records the 7 blocks → `align_script.py` → recheck
+the "minute eight" open loop → sourcing → thumbnails (3+ curiosity concepts through `thumb_feed.py` + click panel) →
+scenes → review → render.
+**Time-sensitive, recheck before upload:** the minimum import price (to about 29 January 2027), the two DGTR
+anti-dumping cases opened in September 2026, and whether any bulk drug park has started.
