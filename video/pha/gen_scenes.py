@@ -103,7 +103,7 @@ def pin(x, y, label, cls="lab", dx=26, dy=-18, col="#f2f7f7", pid="", anchor="st
 
 # ---------------------------------------------------------------------------------------------------------------
 # 1. map_stream: the powder's journey, China -> India (amber), on land-only Asia. 14 s.
-def map_stream(sid="map_stream", D=14, home=False):
+def map_stream(sid="map_stream", D=22, home=False):
     a = MAP["asia"]; P = a["pts"]
     kx, ky = P["kakinada"]; wx, wy = P["wuhan"]; cx, cy = P["china_c"]; ix, iy = P["india_c"]
     route = a["arcs"]["kakinada_india"] if home else a["arcs"]["wuhan_kakinada"]
@@ -147,7 +147,7 @@ def map_hubei():
       tl.fromTo(o, {{ v: 0 }}, {{ v: 40, duration: 2.6, ease: "power1.out", immediateRender: false, onUpdate: () => {{ el.textContent = Math.round(o.v); }} }}, 1.2);
       fade("#ind", 4.2);
 """
-    write("map_hubei", 12, svg, js)
+    write("map_hubei", 16, svg, js)
 
 
 # 3. map_india: pins appear on cue (Pimpri 1954; Kakinada; the three parks). 18 s; make_film picks the window.
@@ -167,7 +167,7 @@ def map_india():
             js += f'      tl.to("#g_{k}", {{ opacity: 1, duration: 1 }}, {t});\n'
     svg += '<text id="both" class="mono" x="1180" y="980" style="font-size:30px;fill:#ff9933" opacity="0">SAME STATE · ANDHRA PRADESH</text>'
     js += '      fade("#both", 10.0);\n'
-    write("map_india", 18, svg, js)
+    write("map_india", 24, svg, js)
 
 
 # 4. capsule_open: the capsule twists open, white powder pours and lifts into a stream. 9 s.
@@ -203,7 +203,7 @@ def capsule_open():
       } }, 0);
       fade("#t1", 3.0); out("#t1", 5.2);
 """
-    write("capsule_open", 9, svg, js)
+    write("capsule_open", 12, svg, js)
 
 
 # 5. tablet: exploded view, the powder (A.P.I.) core and everything around it. 12 s.
@@ -224,7 +224,7 @@ def tablet():
       ["#fill", "#coat", "#strip", "#box"].forEach((s, i) => { tl.set(s, { autoAlpha: 0 }, 0);
         tl.fromTo(s, { autoAlpha: 0, y: 700 - [530, 430, 330, 230][i] }, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out", immediateRender: false }, 3.0 + i * 0.6); });
 """
-    write("tablet", 12, svg, js)
+    write("tablet", 22, svg, js)
 
 
 # 6. fermenter: a stirred steel tank in cross-section: the mould grows, sugar and air go in, penicillin comes out. 22 s.
@@ -303,9 +303,9 @@ def tanks():
       fade("#kg", 9.0); tl.fromTo("#b1", { scaleX: 0, transformOrigin: "160px 0" }, { scaleX: 1, duration: 0.9, immediateRender: false }, 9.2);
       tl.fromTo("#b2", { scaleX: 0, transformOrigin: "160px 0" }, { scaleX: 1, duration: 0.9, immediateRender: false }, 10.0); fade("#note", 10.4);
 """
-    write("tanks", 16, svg, js)
+    write("tanks", 22, svg, js)
 
 
 if __name__ == "__main__":
-    map_stream(); map_stream("map_home", 14, home=True); map_hubei(); map_india(); capsule_open(); tablet()
+    map_stream(); map_stream("map_home", 22, home=True); map_hubei(); map_india(); capsule_open(); tablet()
     fermenter(); fermenter("fermenter_lit", lit=True); tanks()

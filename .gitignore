@@ -109,3 +109,6 @@ video/jet-engine-bet/*/vendor/ph/
 video/jet-engine-bet/*/snapshots/
 projects/jet-engine-bet/final/retakes/
 projects/jet-engine-bet/final/*.wav
+video/pha/p*/media/
+video/pha/p*/shared/
+video/pha/p*_4k/

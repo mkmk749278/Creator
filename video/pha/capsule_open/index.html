@@ -22,14 +22,14 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="capsule_open" data-start="0" data-width="1920" data-height="1080" data-duration="9">
+    <div id="root" data-composition-id="capsule_open" data-start="0" data-width="1920" data-height="1080" data-duration="12">
       <svg width="1920" height="1080"><defs><pattern id="g1" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#24434a" stroke-width="1" opacity=".45"/></pattern><radialGradient id="glowA"><stop offset="0" stop-color="#e8a33d" stop-opacity=".9"/><stop offset="1" stop-color="#e8a33d" stop-opacity="0"/></radialGradient><radialGradient id="glowS"><stop offset="0" stop-color="#ff9933" stop-opacity=".95"/><stop offset="1" stop-color="#ff9933" stop-opacity="0"/></radialGradient><radialGradient id="glowR"><stop offset="0" stop-color="#ef4f45" stop-opacity=".8"/><stop offset="1" stop-color="#ef4f45" stop-opacity="0"/></radialGradient></defs><rect width="1920" height="1080" fill="url(#g1)"/><defs><linearGradient id="ca" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a7a"/><stop offset=".45" stop-color="#d6382c"/><stop offset="1" stop-color="#7a1810"/></linearGradient><linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#e3eaec"/><stop offset="1" stop-color="#97a7ab"/></linearGradient></defs><ellipse cx="960" cy="800" rx="520" ry="40" fill="#000" opacity=".35"/><g id="pile"></g><g id="L"><path d="M960 480 H760 a120 120 0 0 0 0 240 H960 Z" fill="url(#ca)"/><path d="M720 520 q-60 30 -40 90" stroke="#fff" stroke-width="10" opacity=".45" fill="none" stroke-linecap="round"/></g><g id="R"><path d="M940 490 H1160 a110 110 0 0 1 0 220 H940 Z" fill="url(#cb)"/><path d="M1190 525 q50 30 30 80" stroke="#fff" stroke-width="10" opacity=".7" fill="none" stroke-linecap="round"/></g><text id="t1" class="lab" x="960" y="300" text-anchor="middle" opacity="0">THE POWDER IS THE MEDICINE</text></svg>
 
       <div class="tagb">ILLUSTRATION</div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      const D = 9;
+      const D = 12;
 
       const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { autoAlpha: 0, scale: 0.6, transformOrigin: "50% 50%" }, { autoAlpha: 1, scale: 1, duration: d, ease: "back.out(2)", immediateRender: false }, t);
       const fade = (sel, t, d = 0.5) => tl.fromTo(sel, { autoAlpha: 0 }, { autoAlpha: 1, duration: d, ease: "power2.out", immediateRender: false }, t);
