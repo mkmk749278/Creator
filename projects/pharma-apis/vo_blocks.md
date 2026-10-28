@@ -1,6 +1,6 @@
 # Recording file: The Pharmacy of the World's Missing Powder (pharma APIs)
 
-1797 words · 8 blocks · about 12–12 minutes at 145–155 words a minute.
+1802 words · 8 blocks · about 12–12 minutes at 145–155 words a minute.
 
 **Voice:** Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). Paste each block as is; the blank lines are pauses. Save each take as `voice/pha_bNN.mp3` (NN = block number).
 
@@ -174,7 +174,7 @@ Keep taking your medicines exactly as your doctor says. Nothing in this story ch
 
 But the next time you take an antibiotic, think about that white powder. There's a fair chance part of its journey began in China.
 
-And if Kakinada wins... the next one might start in Andhra.
+And if the plant in Kakinada wins... the next one might start right here in India.
 
 Medicines aren't the only missing piece. India writes software for the whole world. So why is India's own A.I. still so far behind America's and China's? That's our next story.
 
@@ -352,7 +352,7 @@ And in September twenty twenty-six, after the Kakinada plant complained, the gov
 But that shield has an end date. It runs for one year... until January twenty twenty-seven.
 ```
 
-### Block 7 of 8 · 1434 characters · save as `voice/pha_b07.mp3`
+### Block 7 of 8 · 1457 characters · save as `voice/pha_b07.mp3`
 
 ```
 That's the date to watch. Will Kakinada be strong enough by then? Or will the shield get extended?
@@ -379,7 +379,7 @@ Keep taking your medicines exactly as your doctor says. Nothing in this story ch
 
 But the next time you take an antibiotic, think about that white powder. There's a fair chance part of its journey began in China.
 
-And if Kakinada wins... the next one might start in Andhra.
+And if the plant in Kakinada wins... the next one might start right here in India.
 ```
 
 ### Block 8 of 8 · 374 characters · save as `voice/pha_b08.mp3`

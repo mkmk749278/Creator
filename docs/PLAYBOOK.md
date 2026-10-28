@@ -360,6 +360,16 @@ India while the topics stay India-first. Rules:
   recording blocks as fenced code (under 1,500 characters, blank line between beats). Send it with SendUserFile **and**
   paste the blocks in the chat (§4a-4 rule stands). *Why:* the owner reads the whole script in one place on the phone and
   copies blocks from the same file.
+- **Re-records are free; quality is not traded for a saved take (owner, 2026-10-28: "I do record any number of times,
+  no problem at all").** Never keep a weaker line because a block is already recorded, and never splice a few words
+  into a take: re-record the whole block so the voice, pace and room tone match. With every VO change, say exactly
+  **which block numbers to record again** (compare the old and new `vo_blocks.md`), and keep the block boundaries
+  stable (`vo_blocks.py` default limit, unchanged between edits) so one changed line costs one block, not every block
+  after it.
+- **Read place names as the ear hears them.** Two place names close together sound like two places: "if Kakinada wins…
+  the next one might start in Andhra" made the owner hear Kakinada and Andhra as separate (2026-10-28). Name one place,
+  join them ("the plant in Kakinada"), or pay the line off with the contrast the film is built on ("right here in
+  India" against "began in China").
 
 ### 4a-4. Owner's production guide for English films (2026-10-15)
 The owner's *Production & Scriptwriting Handoff* and *Style Comparison* (verbatim in Part F) set the standard for every
@@ -1930,6 +1940,9 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   vanished"), plus SSML break tags our rules ban and a word count 25% too low. *Rule:* take the idea, never the text,
   until every changed fact has a claims row.
 - **One recording file with every VO change** (§4a-2): full narration plus the click-to-copy blocks, `scripts/vo_blocks.py`.
+- **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
+  every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
+  Andhra"): the ending now says "the plant in Kakinada… right here in India".
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
 channel Built on Bharat (repo `mkmk749278/Built-on-Bharat`), the owner made narration and curiosity in the package the

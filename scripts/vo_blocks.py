@@ -33,7 +33,8 @@ def main():
     ap.add_argument("vo", help="vo.txt, one spoken beat per line")
     ap.add_argument("--prefix", required=True, help="take file prefix, e.g. pha -> voice/pha_b01.mp3")
     ap.add_argument("--title", required=True)
-    ap.add_argument("--limit", type=int, default=1450, help="max characters per block (hard cap 1,500)")
+    ap.add_argument("--limit", type=int, default=1490,
+                    help="max characters per block (hard cap 1,500); keep it fixed across edits so blocks keep their lines")
     ap.add_argument("--out", help="default: vo_blocks.md next to vo.txt")
     args = ap.parse_args()
 
