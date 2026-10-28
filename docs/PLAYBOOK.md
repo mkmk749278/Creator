@@ -144,6 +144,50 @@ redirects. Gofile stays the owner's delivery link. Only our own renders and our 
 (npm install with vendoring, `.venv` with all extras, library fetch), so it is ready to render when it starts.
 The `/parallel-render` skill walks through the whole procedure.
 
+### 3a. Where to render: cloud session or GitHub Actions (researched and measured 2026-10-28)
+> "On rendering, your cloud session vs GitHub Actions GitHub machine: which is better, also in view of usage saving of
+> Claude too? Go deep research." (owner, 2026-10-28)
+
+**Facts (sources: docs.github.com *GitHub-hosted runners reference*, *Usage limits, billing and administration*,
+*Actions limits*, read 2026-10-28; GitHub changelog 2025-12-16; our repo's settings):**
+- **The repo is public**, so "use of the standard GitHub-hosted runners is free and unlimited on public repositories"
+  (GitHub docs). A standard Linux runner for a public repo is **4 vCPU, 16 GB RAM, 14 GB SSD** (private repos get
+  2 vCPU / 8 GB). No GPU (GPU runners are paid "larger runners" on Team/Enterprise plans only).
+- **Up to 20 jobs at once** on the Free plan, **6 hours per job**, 35 days per workflow run.
+- GitHub's announced fee for self-hosted runners (2026) was **postponed**; the owner's VPS runner stays free.
+- A cloud session is a 4 vCPU / 16 GB VM too (§3), but it costs **Claude usage**: the session must stay alive through
+  the render (Monitor wake-ups, each one a model turn over the whole conversation), idle VMs can be reclaimed mid-job,
+  and parallel sessions share one usage limit (five sessions hit the 5-hour limit in about 10 minutes, §3, 2026-10-13).
+- **Measured, same 20 s 1080p spike (`video/spike`, `--workers 4`):** cloud session **61 s** wall (59 s capture);
+  GitHub runner **41 s** for the render step, plus **44 s** of install (npm, library files, Chrome) and ~10 s
+  checkout. *So:* the runner is about **1.5× faster per job**, and a 10-minute film split into 5 parts renders as
+  5 parallel jobs in roughly the time of one part.
+
+**Decision (Claude's, as creative director; recorded for every film):**
+1. **Author and check in the session** (cheap model work): write scenes and `make_film.py`, `hyperframes lint` →
+   `check` → `snapshot`, look at the PNGs, fix. Short test renders (≤ 20 s) may run in the session.
+2. **Every full render runs on GitHub Actions** (`Render film` workflow, `.github/workflows/render-film.yml`): one job
+   per part or scene folder, 1080p preview or native 4K, results to Drive (`drive_sub`) with timing and a contact sheet
+   in the run summary. The session starts it (GitHub MCP `actions_run_trigger` on `main`), **ends its turn**, and comes
+   back only to pull the parts, assemble the audio and review the contact sheet. *Why:* zero Claude usage during
+   renders, 1.5× faster per job, 20 parallel jobs, no VM reclaim.
+3. **Parallel cloud sessions are now only for parallel authoring** (two heavy sessions at most, §3), never for render
+   shards.
+4. **The VPS self-hosted runner** stays for YouTube fetches (mobile/residential IP needs) and as a fallback renderer.
+
+**Rules that come with it:**
+- **Public repo = public logs and artifacts.** Never echo a secret; never upload a render that contains third-party
+  excerpts (news, company films) as a run artifact: send renders to Drive (`drive_sub`), and keep artifacts to logs and
+  contact sheets of our own material. Artifacts on the Free plan share a 500 MB quota anyway.
+- **Assets reach the runner through Drive:** the session tars `projects/<slug>/assets/` (or the parts' `media/`) to
+  `Creator/<Channel>/<slug>/build/`; the job pulls it (`assets` input). Needs the repo secret
+  **`GDRIVE_RCLONE_TOKEN`** (Settings → Secrets and variables → Actions; the same value as the environment's).
+- **Workflow files must be on `main`** for `workflow_dispatch`: merge the workflow change first, then trigger.
+- **Fresh runners need `npm ci --ignore-scripts` → `python3 scripts/library.py fetch` → `npm run vendor`**: the plain
+  `npm ci` postinstall fails without the library files (run 1, 2026-10-28).
+- Keep each job under ~5 h and inside 14 GB of disk: split long 4K parts (the rare-earth 4K part ran out of memory
+  once, §15).
+
 ## 4. Quality first: never trim effort for speed
 
 The owner's rule (Oct 2026): **accuracy and the best output matter more than speed.**

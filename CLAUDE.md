@@ -69,8 +69,12 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   research to finish sooner. Use `high`/`xhigh` effort for building and `max` for fact-checks and final reviews.
   Fact-checks are light (owner, 2026-10-11): re-verify only weak rows, numbers, our calculations and changed lines;
   strong rows the writer sourced with URL + quote are only spot-opened (PLAYBOOK §12).
-- **Get speed from parallel cloud sessions** (each is its own 4 vCPU / 16 GB VM): split rendering and animation across
-  sessions, keep media sourcing in one session (all sessions share one IP and one usage limit). Plan: PLAYBOOK §3.
+- **Render on GitHub Actions, author in the session (owner's question, 2026-10-28; PLAYBOOK §3a):** the repo is public,
+  so GitHub's standard runners are free and unlimited (4 vCPU / 16 GB, 20 jobs at once, 6 h a job) and measured 1.5×
+  faster than a session on the same scene, with zero Claude usage. Sessions write and check scenes (lint, check,
+  snapshot, short tests); every full render goes through the `Render film` workflow, results to Drive; the session ends
+  its turn while it runs. Parallel cloud sessions are for authoring only (at most two heavy ones; all share one IP and
+  one usage limit). Plan: PLAYBOOK §3, §3a.
 - Research deeply: real sources for every fact, real footage before stock, a contact sheet of every asset before use.
   When a source is blocked, work down the fallback chain in PLAYBOOK §8; never route around blocks with VPNs or proxies.
   For **study and analysis data** (competitor transcripts, stats), the owner allows any source, including third-party
