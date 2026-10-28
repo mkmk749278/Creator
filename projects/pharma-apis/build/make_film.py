@@ -116,7 +116,7 @@ def cite(text, at, to):
     el(f'<div class="cite" {attrs(at, to, "fade")}>{esc(text)}</div>', at, to)
 
 
-def datebig(text, small, at, to, scrim=False):
+def datebig(text, small, at, to, scrim=True):   # dark backing: dates sit on bright footage too
     el(f'<div class="datebig{" scrim" if scrim else ""}" {attrs(at, to, "left", 0.4)}>{esc(text)}<small>{esc(small)}</small></div>', at, to)
 
 
@@ -300,7 +300,7 @@ shot(c(71), "px_216619", "slow", ms=10.0, dim=0.5)                 # "And in Sep
 chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 760, "steel", "sm", "up")
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
-datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73), scrim=True)   # bright tank frame behind
+datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))
 shot(c(73), "Y02", "crop", ms=48.0, origin="50% 8%")                                # "That's the date to watch..."
 shot(c(74), "Y02", "crop", ms=86.0, origin="50% 8%")            # "And here's the balance the government has to strike..."
 chip("Protect the plant", L(74, 0.4), LE(74), 120, 160, "saffron", "sm", "up")
