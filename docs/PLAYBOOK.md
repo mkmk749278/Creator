@@ -354,6 +354,12 @@ India while the topics stay India-first. Rules:
 - **Files:** `lang.txt` = `en` in the project folder makes the `en` column of `script.full.tsv` the VO and the `te`
   column an optional Telugu dub; `tools/build_script.py` lints English VO (`lint_en`) and builds the blocks from it.
 - On-screen text, citation tags and the description were already English; nothing changes there.
+- **One recording file with every VO change (owner, 2026-10-28: "give full text in one single md file along with same
+  click to copy blocks").** `python3 scripts/vo_blocks.py projects/<slug>/vo.txt --prefix <xx> --title "<film>"` writes
+  `projects/<slug>/vo_blocks.md`: word count and run time, voice settings, the full narration to read through, then the
+  recording blocks as fenced code (under 1,500 characters, blank line between beats). Send it with SendUserFile **and**
+  paste the blocks in the chat (§4a-4 rule stands). *Why:* the owner reads the whole script in one place on the phone and
+  copies blocks from the same file.
 
 ### 4a-4. Owner's production guide for English films (2026-10-15)
 The owner's *Production & Scriptwriting Handoff* and *Style Comparison* (verbatim in Part F) set the standard for every

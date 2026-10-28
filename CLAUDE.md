@@ -228,7 +228,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   save `projects/<slug>/review_audience_vN.md`, and send the owner the blocks with a short review summary.
 - **Recording blocks go in the chat (owner, 2026-10-15):** whenever a VO is ready or changes, paste every block in the reply,
   one fenced code block each (tap to copy on the phone), headed with block number, voice settings and the file name to save.
-  Files in Drive/repo are extra, never instead (PLAYBOOK §4a-2).
+  **Also send one Markdown file** with the full narration followed by the same click-to-copy blocks (owner, 2026-10-28):
+  `scripts/vo_blocks.py` → `projects/<slug>/vo_blocks.md`, sent with SendUserFile. The file is extra to the chat blocks,
+  never instead (PLAYBOOK §4a-2).
 - **Talk, don't read** (owner, 2026-10-09): narration sounds like the owner talking to you, never like reading text aloud.
   Heavy Tenglish like NB Show (English words and short phrases where people really use them), మీరు + మనం address, spoken
   verb forms, no newspaper words (ఈ నేపథ్యంలో, తద్వారా, కావున). **Clarity first:** full sentences with a subject and a
