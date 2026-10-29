@@ -350,7 +350,7 @@ shot(c(85), "R_map_home", "none", ms=0.8)                          # "And if the
 shot(c(86), "R_map_home", "out", ms=6.0, dim=0.5)                  # "Medicines aren't the only missing piece... India's own A.I.?"
 chip("Next: India's own A.I.", L(86, 0.5), END, 120, 160, "steel", "", "up")
 shot(c(87), "endcard", "push", tag="")                             # pinned question, channel line, end screen
-chip("Which medicine should India make fully?", L(87, 0.2), END, 120, 640, "saffron", "sm", "up")
+chip("Which medicine should India make fully?", L(87, 0.2), END, 120, 760, "saffron", "sm", "up")
 
 
 # ---------- captions from the sentence timings (film time) ----------
