@@ -43,3 +43,12 @@ Method: 340 frames every 2 s on 38 timecoded sheets, read tile by tile against t
 ## Next
 
 Re-render all five parts (every part changed with the splits), re-run sheets and freezedetect, then deliver.
+
+## Pending for the next review round (batched; owner, 2026-10-29: one 720p cut per round, 4K after finalising)
+
+1. **Restore the narration the take trim cut off** (about 13 s; PLAYBOOK §15): the last sentence of blocks 1, 4, 5, 6 and 8,
+   "Jai Hind" included. Fixed trim in `tools/align_blocks.py`; re-run it, then `make_film.py` and `make_sound.py`
+   (film 11:32, Kakinada at about 8:06), check with `scripts/vo_take_check.py`, render at 720p.
+2. Weak stock beats, if better footage arrives: the microscope under the 2001 H.I.V. prices and 1991, the port under
+   China's drug parks.
+3. Then the owner's review notes on preview 3.
