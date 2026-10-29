@@ -199,7 +199,7 @@ shot(c(10), "PH_257336", "in")   # real strips (the capsule animation is kept fo
 shot(c(11), "PXa", "slow", ms=0.5)                                 # "And before you worry — this isn't about the quality..."
 chip("Quality: not the issue", L(11, 0.2), LE(11), 120, 160, "green", "sm", "up")
 chip("Supply: the issue", L(11, 0.6), LE(11), 120, 260, "amber", "sm", "up")
-shot(c(12), "Y02", "crop", ms=[50.0, 80.9, 33.0], origin="35% 50%")              # "Stay with me. Around minute eight... Andhra Pradesh"
+shot(c(12), "Y02", "crop2", ms=[49.78, 42.0, 86.26], origin="35% 35%")              # "Stay with me. Around minute eight... Andhra Pradesh"
 chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm", "up")
 # ---- INDIA EARNED IT (1:31-2:50)
 shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
@@ -268,9 +268,9 @@ chip("Small chakki", L(42, 0.1), S(42, 2), 120, 640, "steel", "sm", "up")
 shot(S(42, 2) - PRE, "Y05", "crop", ms=1.0, origin="50% 10%")     # "Double your tank, and your costs don't double... but your output does."
 chip("Bigger mill · cheaper kilo", S(42, 2) + 0.3, LE(42) + 2.0, 120, 640, "green", "sm", "up")
 shot(c(43), "R_tanks", "none", ms=9.4)                             # "So you can guess who wins..."
-shot(c(44), "px_45677", "slow", ms=1.0, dim=0.3)                        # "And that's exactly where India's story turns."
+shot(c(44), "PH_257336", "out", dim=0.2)                        # "And that's exactly where India's story turns."
 # ---- HOW CHINA TOOK THE POWDER (5:43-7:23)
-shot(c(45), "Y04", "crop", ms=[10.45, 6.05], origin="50% 50%", dim=0.35, tag="FOOTAGE · ABP MAJHA · TODAY")    # "Now, here's what we got wrong... only a few companies"
+shot(c(45), "px_45677", "slow", ms=[0.2, 4.6, 1.2], dim=0.4)    # "Now, here's what we got wrong... only a few companies"
 chip("Few licences", L(45, 0.35), LE(45), 120, 300, "red", "sm", "up")
 chip("Small plants", L(45, 0.6), LE(45), 120, 420, "red", "sm", "up")
 cite("[MDPI ECONOMIES 2021]", L(45, 0.35), LE(45))
@@ -305,12 +305,13 @@ chip("41 ingredients", L(62, 0.25), LE(62), 120, 460, "saffron", "sm", "up")
 cite("[DEPT OF PHARMACEUTICALS | PLI 2020]", L(62, 0.25), LE(62))
 shot(c(63), "R_map_india", "none", ms=3.6)                         # "And one company took the biggest bet of all."
 # ---- KAKINADA SWITCHES IT BACK ON (the promised minute eight)
-shot(c(64) - BEATS[63] + 0.2, "Y02", "crop", ms=[11.0, 50.0, 80.9], origin="35% 50%")   # the satellite zoom onto the coast              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
-namelt("Kakinada, Andhra Pradesh", "LYFIUS PHARMA · AUROBINDO PHARMA", L(64, 0.1), LE(64))
-shot(c(65), "Y02", "crop", ms=[65.6, 71.6, 83.6], origin="35% 50%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
+shot(c(64) - BEATS[63] + 0.2, "Y02", "crop2", ms=[11.0, 42.0, 49.78], origin="35% 35%")   # the satellite zoom onto the coast              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
+namelt("Kakinada, Andhra Pradesh", "LYFIUS PHARMA · AUROBINDO PHARMA", L(64, 0.1), L(64, 0.55))
+shot(L(64, 0.58) - PRE, "D_aurobindo_lyfius_2024-1", "doc", origin="50% 32%", tag="DOCUMENT · AUROBINDO PHARMA · 29 OCT 2024")   # "built by Aurobindo Pharma, through its unit called Lyfius"
+shot(c(65), "Y02", "crop2", ms=[62.38, 67.74, 86.26], origin="35% 35%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
 chip("₹2,500 cr · company figure", L(65, 0.35), LE(65), 120, 160, "saffron", "sm", "up")
 chip("15,000 tonnes a year", L(65, 0.7), LE(65), 120, 280, "saffron", "sm", "up")
-shot(c(66), "Y02", "crop", ms=[88.0, 101.5], origin="35% 50%")             # "In twenty twenty-four, the tanks start running..."
+shot(c(66), "Y02", "crop2", ms=[97.74, 59.58], origin="35% 35%")             # "In twenty twenty-four, the tanks start running..."
 datebig("2024", "PENICILLIN G · MADE IN INDIA AGAIN", L(66, 0.05), LE(66))
 shot(c(67), "J_aerial", "out")   # cheap imports at an Indian port                           # "But you know the trap... cheap imports were still waiting at the port."
 shot(c(68), "D_dgft_2026_mip-1", "in", tag="DOCUMENT · DGFT")      # "So on the twenty-ninth of January, 2026, the government stepped in."
@@ -319,27 +320,30 @@ datebig("29 JAN 2026", "MINIMUM IMPORT PRICE", L(68, 0.1), LE(69))
 shot(c(69), "R_mipgate", "none", ms=round(max(0.0, 9.6 - (S(69, 2) - c(69))), 3))   # "It set a minimum price at the border..."
 cite("[DGFT | 29 JAN 2026]", L(68, 0.1), LE(69))
 shot(c(70), "R_fermenter_lit", "none", ms=4.0)                     # "Think of it as a shield..."
-shot(c(71), "R_mipgate", "none", ms=12.5, dim=0.25)   # "below a fair price": the gate                 # "And in September 2026... below a fair price."
+shot(c(71), "R_mipgate", "none", ms=10.4, dim=0.25)   # "below a fair price": the gate
+shot(L(71, 0.5) - PRE, "R_map_trade", "none", ms=13.0, dim=0.2)   # "...whether China is selling penicillin here": the route in                 # "And in September 2026... below a fair price."
 chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 640, "steel", "sm", "up")
 chip("On Lyfius Pharma's application", L(71, 0.45), LE(71), 120, 830, "steel", "sm", "up")   # DGTR initiation 28 Sep 2026 (P63 note)
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
 datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))
-shot(c(73), "Y02", "crop", ms=33.0, origin="35% 50%")                                # "That's the date to watch..."
-shot(c(74), "Y02", "crop", ms=[90.2, 91.6], origin="35% 50%")            # "And here's the balance the government has to strike..."
+shot(c(73), "D_dgft_2026_mip-2", "doc", origin="50% 58%", tag="DOCUMENT · DGFT")   # "the date to watch": "a period of one year"                                # "That's the date to watch..."
+shot(c(74), "Y02", "crop2", ms=[86.26, 93.42], origin="35% 35%")            # "And here's the balance the government has to strike..."
 chip("Protect the plant", L(74, 0.4), LE(74), 120, 160, "saffron", "sm", "up")
 chip("Keep medicines affordable", L(74, 0.7), LE(74), 120, 280, "green", "sm", "up")
-shot(c(75), "Y02", "crop", ms=[82.3, 72.0], origin="35% 50%")            # "And it's not just penicillin... five thousand crore"
+shot(c(75), "Y02", "crop2", ms=[83.62, 62.38], origin="35% 35%")            # "And it's not just penicillin... five thousand crore"
 count(L(75, 0.45), LE(75), 120, 160, 0, 5000, L(75, 0.5), 1.0, "₹", " CRORE+ INVESTED", "saffron", "sm")
 cite("[DEPT OF PHARMACEUTICALS | JUNE 2026]", L(75, 0.45), LE(75))
 shot(c(76), "R_map_india", "none", ms=6.5)                         # "Three giant bulk drug parks... Nakkapalli... same state"
 shot(c(77), "R_map_india", "none", ms=9.0)   # "none of those parks": the park pins                       # "None of those parks is up and running yet..."
 chip("None running yet", L(77, 0.25), LE(77), 120, 640, "red", "sm", "up")
-shot(c(78), "Y02", "crop", ms=[101.5, 66.0], origin="35% 50%")            # "So has India won? Not yet. But it's back in the fight."
+shot(c(78), "Y02", "crop2", ms=[97.74, 65.62], origin="35% 35%")            # "So has India won? Not yet. But it's back in the fight."
 # ---- RULE, RUIN, REALITY + WHAT IT MEANS FOR YOU
 shot(c(79), "px_45675", "in", ms=8.0, dim=0.3)                     # "So here's the lesson..."
 shot(c(80), "D_dgft_2020_noti50-1", "in", tag="DOCUMENT · DGFT")  # "And the cost? You saw it in the Corona days..."
-shot(c(81), "Y02", "crop", ms=[88.0, 83.6], origin="35% 50%")             # "But here's the reality today..."
+shot(c(81), "px_262464", "slow", ms=9.0, dim=0.2, tag="PIXABAY · ILLUSTRATIVE")   # "the reality today. India has the scientists."
+shot(S(81, 2) - PRE, "px_45680", "slow", ms=0.5, dim=0.3)   # "It has the factories."
+shot(S(81, 3) - PRE, "Y02", "crop2", ms=[86.26, 59.58], origin="35% 35%")   # "And now, it's growing its own penicillin again."             # "But here's the reality today..."
 shot(c(82), "PH_1540220", "in")                                 # "So what does this mean for you? Keep taking your medicines..."
 shot(c(84), "R_capsule_open", "push", ms=3.6)                      # "But the next time you take an antibiotic... began in China."
 shot(c(85), "R_map_home", "none", ms=0.8)                          # "And if the plant in Kakinada wins... right here in India."
@@ -416,6 +420,7 @@ RESET = 4.6   # longest hold before a visual reset (CLAUDE.md: every 3.5-5.0 s)
 # framings a split piece cuts to: (move, origin); documents read down the page, footage alternates punch-ins
 FRAMES = {"doc": [("doc", "50% 28%"), ("doc", "50% 52%"), ("doc", "50% 76%")],
         "crop": [("crop2", "28%"), ("crop", "50%"), ("crop2", "72%")],   # x only: each shot keeps its own height
+        "y02": [("crop2", "25% 35%"), ("crop2", "60% 35%"), ("crop2", "42% 35%")],
         "anim": [("cutB", "50% 50%"), ("push", "50% 50%")],
         "foot": [("cutA", "32% 38%"), ("cutB", "68% 58%"), ("cutA", "62% 34%"), ("cutB", "36% 62%")]}
 
@@ -433,7 +438,7 @@ def split_long():
         if d <= RESET + 0.4 or (s["src"].startswith("R_") and s["src"] not in SPLIT_R) or s["src"] == "endcard":
             out.append(dict(s, ms=ms[0] if isinstance(ms, list) else ms)); continue
         n = math.ceil(d / RESET); step = d / n
-        kind = "anim" if s["src"] in SPLIT_R else "doc" if s["src"].startswith("D_") else "crop" if s["move"] == "crop" else "foot"
+        kind = "y02" if s["src"] == "Y02" else "anim" if s["src"] in SPLIT_R else "doc" if s["src"].startswith("D_") else "crop" if s["move"] == "crop" else "foot"
         for k in range(n):
             p = dict(s, t0=r3(s["t0"] + k * step))
             p["ms"] = ms[k] if isinstance(ms, list) and k < len(ms) else (
@@ -441,7 +446,7 @@ def split_long():
             p["ms"] = r3(p["ms"])
             if k:
                 p["move"], p["origin"] = FRAMES[kind][(k - 1) % len(FRAMES[kind])]
-                if kind == "crop":
+                if kind == "crop" and s["src"] != "Y02":
                     p["origin"] += " " + (s["origin"] or "50% 50%").split()[1]
             out.append(p)
     SEQ[:] = out
@@ -451,8 +456,13 @@ def split_long():
 # inside one of these, so it never shows a few frames of the promo's own next shot (the "flash frames"), the Prime
 # Minister and PLI slides (Y02 17-32 s), title cards, lower-third boxes or the press meet (Y04 from 19 s).
 CLEAN = {
-    "Y02": [(11.0, 13.9), (33.0, 34.9), (50.0, 52.5), (65.6, 67.6), (71.6, 72.9), (73.0, 73.9), (80.9, 82.2), (82.3, 83.5),
-            (83.6, 84.8), (88.0, 90.1), (90.2, 91.5), (91.6, 93.3), (101.5, 102.8)],
+    # Y02 is always framed with "y02" below (1.45x from 35% 35%): the bottom 20% (lower-third boxes) and top 11% (the
+    # Lyfius logo) stay out of frame, so only titles, the PM/PLI slides (17-32 s), the white fade (79-80 s) and the
+    # collage and group shots (103-108 s) need excluding; spans run 0.1 s clear of the promo's own cuts
+    "Y02": [(11.0, 13.9), (33.0, 34.9), (42.0, 49.58), (49.78, 52.46), (52.66, 55.7), (57.18, 59.38), (59.58, 62.18),
+            (62.38, 65.42), (65.62, 67.54), (67.74, 71.42), (71.62, 72.86), (73.06, 74.78), (74.98, 76.66), (76.86, 78.8),
+            (80.98, 82.14), (82.34, 83.42), (83.62, 86.06), (86.26, 90.02), (90.22, 91.46), (91.66, 93.22), (93.42, 95.82),
+            (96.02, 97.54), (97.74, 101.38), (101.58, 102.8)],
     "Y04": [(6.05, 7.25), (7.35, 10.3), (10.45, 14.1), (14.25, 19.05)],
 }
 FPS = 30
@@ -490,32 +500,57 @@ def clean_ranges(src):
 
 
 def clean_assign():
-    """Fit every footage piece inside clean ranges: start in the range that holds its in-point (or the next one); a piece
-    longer than what is left of its range continues in the next range as a new cut (at least 1 s each)."""
-    out = []
+    """Place every footage piece inside clean spans, using footage not yet used where possible (no repeats).
+    A piece takes the unused window nearest its requested in-point; when no unused window holds it whole, it becomes
+    2 or 3 cuts of at least 1.5 s, each in its own unused window (the promo cuts every 1-3 s, so its spans are short)."""
+    used, out = {}, []
+
+    def overlap(src, a, b):
+        return sum(max(0.0, min(b, y) - max(a, x)) for x, y in used.get(src, []))
+
+    def best(src, rs, need, want):
+        cands = []
+        for a, b in rs:
+            if b - a < need:
+                continue
+            x = a
+            while x + need <= b + 1e-6:
+                cands.append((overlap(src, x, x + need) * 10 + abs(x - want) * 0.02, x)); x += 0.25
+        return min(cands) if cands else None
+
     for i, s in enumerate(SEQ):
         rs = clean_ranges(s["src"])
         end = SEQ[i + 1]["t0"] if i + 1 < len(SEQ) else END
-        sp = 30.0 / rate(s["src"])            # source seconds per film second
-        d = (end - s["t0"]) * sp
         if not rs:
             out.append(s); continue
-        k = next((j for j, (a, b) in enumerate(rs) if a - 1e-6 <= s["ms"] < b - 0.3), None)
-        if k is None:
-            k = next((j for j, (a, b) in enumerate(rs) if a >= s["ms"]), 0)
-        cur, t, left, first = max(s["ms"], rs[k][0]), s["t0"], d, True
-        for _ in range(40):
-            a, b = rs[k]
-            avail = b - cur
-            if avail >= left:
-                out.append(dict(s, t0=r3(t), ms=r3(cur)))
+        sp = 30.0 / rate(s["src"])
+        film = end - s["t0"]
+        plan = None                                           # (repeat seconds + a small price per extra cut, sub, starts)
+        for n in (1, 2, 3, 4):
+            sub = film / n
+            if n > 1 and sub < 1.3:
                 break
-            if left - avail < 1.0:          # keep the last piece at least 1 s: take less from this range
-                avail = left - 1.0
-            if avail >= 1.0:
-                out.append(dict(s, t0=r3(t), ms=r3(cur))); first = False
-                t += avail / sp; left -= avail
-            k = (k + 1) % len(rs); cur = rs[k][0]
+            picks = []
+            for k in range(n):
+                c = best(s["src"], rs, sub * sp, s["ms"] + k * 2.0)
+                if c is None:
+                    break
+                picks.append(c[1]); used.setdefault(s["src"], []).append((c[1], c[1] + sub * sp))
+            rep = sum(overlap(s["src"], x, x + sub * sp) - sub * sp for x in picks) if len(picks) == n else None
+            for _ in picks:                                   # undo; the chosen plan is re-added below
+                used[s["src"]].pop()
+            if rep is not None and (plan is None or rep + 0.4 * (n - 1) < plan[0]):
+                plan = (rep + 0.4 * (n - 1), sub, picks)
+        if plan is None:
+            plan = (0, film, [rs[0][0]])
+        _, sub, starts = plan
+        for x in starts:
+            used.setdefault(s["src"], []).append((x, x + sub * sp))
+        for k, x in enumerate(starts):
+            p = dict(s, t0=r3(s["t0"] + k * sub), ms=r3(x))
+            if k and s["src"] == "Y02":
+                p["move"], p["origin"] = FRAMES["y02"][k % 3]
+            out.append(p)
     SEQ[:] = out
 
 
