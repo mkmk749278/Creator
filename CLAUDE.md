@@ -23,6 +23,11 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   compliance gates, no fakes of real people or voices, no Whisper, and the owner's explicit decisions.
 - **Never settle for the first idea:** 3+ angles, cold opens and thumbnail concepts per film; 2–3 signature moments;
   a one-page `treatment.md` before the script.
+- **Creativity has no ceiling (owner, 2026-10-29):** "use the creativity as much as you can, more than humans do".
+  A review note or a craft rule is the floor: meet it, then go past it. The obvious device (a timelapse for growth, a
+  push-in on a document) is the basic level; ask what would make the viewer feel the mechanism, then build that
+  (the living fermenter, the notes collapsing to scale, the border gate). Every review round includes a creative pass
+  over the whole film, not only the flagged shots (PLAYBOOK §4.1, §15).
 - **Ask the owner with choices:** for his decisions use AskUserQuestion (2–4 options, the recommended one first).
 
 ## Narration and curiosity come first (owner, 2026-10-24)

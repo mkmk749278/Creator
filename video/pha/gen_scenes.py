@@ -234,53 +234,154 @@ def tablet():
 
 # 6. fermenter: a stirred steel tank in cross-section: the mould grows, sugar and air go in, penicillin comes out. 22 s.
 def fermenter(sid="fermenter", lit=False):
+    """A living fermenter (owner's review, 2026-10-29: "use your creativity everywhere"). One week in 22 s on a day clock:
+    sugar streams in and is eaten; spores (day 1) sprout glowing tips and branch (days 2-3); new colonies spread and the
+    broth clouds (days 4-5); the mould releases golden penicillin that gathers until the broth is gold (days 6-7).
+    A magnifier shows one hyphal tip up close; MOULD / PENICILLIN meters rise in step; day and night sweep the steel.
+    Everything is seeded and a pure function of time. ILLUSTRATION."""
     shell = "#ff9933" if lit else "#c9d6d9"
-    svg = (GRID + '<defs><linearGradient id="liq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd27a" stop-opacity=".55"/>'
-           '<stop offset="1" stop-color="#3b7a3a" stop-opacity=".85"/></linearGradient><clipPath id="tank"><rect x="640" y="250" width="640" height="640" rx="120"/></clipPath>'
+    svg = (GRID + '<defs><clipPath id="tank"><rect x="640" y="250" width="640" height="640" rx="120"/></clipPath>'
+           '<clipPath id="lensc"><circle cx="1590" cy="660" r="176"/></clipPath>'
+           '<radialGradient id="glowT"><stop offset="0" stop-color="#fff6c8" stop-opacity=".95"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></radialGradient>'
+           '<linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bfe9f2" stop-opacity="0"/>'
+           '<stop offset=".5" stop-color="#bfe9f2" stop-opacity=".22"/><stop offset="1" stop-color="#bfe9f2" stop-opacity="0"/></linearGradient>'
            '<linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#5d7276"/><stop offset=".5" stop-color="#d7e1e3"/><stop offset="1" stop-color="#5d7276"/></linearGradient></defs>'
+           '<g id="cam">'
            f'<rect x="628" y="238" width="664" height="664" rx="130" fill="none" stroke="{shell}" stroke-width="20"/>'
            '<rect x="640" y="250" width="640" height="640" rx="120" fill="#0b2328"/>'
-           '<g clip-path="url(#tank)"><rect id="liquid" x="640" y="330" width="640" height="600" fill="url(#liq)"/><g id="myc"></g><g id="bub"></g></g>'
+           '<g clip-path="url(#tank)">'
+           '<rect id="water" x="640" y="330" width="640" height="600" fill="#a9d8de" opacity=".14"/>'
+           '<rect id="cloud" x="640" y="330" width="640" height="600" fill="#d9ead0" opacity="0"/>'
+           '<rect id="amber" x="640" y="330" width="640" height="600" fill="#e8a33d" opacity="0"/>'
+           '<rect x="640" y="326" width="640" height="6" fill="#d7eef2" opacity=".45"/>'
+           '<g id="sugar"></g><g id="myc"></g><g id="tips"></g><g id="gold"></g><g id="spores"></g><g id="bub"></g>'
+           '<rect id="sw" x="380" y="250" width="260" height="640" fill="url(#sweep)" transform="skewX(-14)"/></g>'
            '<rect x="952" y="130" width="16" height="660" fill="url(#steel)"/>'
            '<g id="imp1"><rect x="860" y="600" width="200" height="16" rx="6" fill="#d7e1e3"/></g>'
            '<g id="imp2"><rect x="860" y="760" width="200" height="16" rx="6" fill="#d7e1e3"/></g>'
            '<rect x="905" y="95" width="110" height="60" rx="10" fill="#5d7276"/>'
-           # feeds: sugar (top left), air (bottom sparger), product (bottom right)
            '<path d="M420 300 H700" stroke="#c9d6d9" stroke-width="14"/><text class="mono" x="300" y="285">SUGAR</text>'
            '<path d="M420 860 H760 V870" stroke="#c9d6d9" stroke-width="14" fill="none"/><text class="mono" x="320" y="845">AIR</text>'
            '<path d="M1210 880 V960 H1540" stroke="#c9d6d9" stroke-width="14" fill="none"/>'
-           '<g id="drops"></g>'
-           '<text id="out" class="lab" x="1560" y="975" style="fill:#5fd17a" opacity="0">PENICILLIN</text>'
-           '<g id="clock" opacity="0"><circle cx="1540" cy="300" r="78" fill="none" stroke="#9db3b8" stroke-width="6"/><line id="hand" x1="1540" y1="300" x2="1540" y2="236" stroke="#f2f7f7" stroke-width="8" stroke-linecap="round"/>'
+           '<g id="drops"></g></g>'
+           # night falls over everything but the labels
+           '<rect id="night" x="0" y="0" width="1920" height="1080" fill="#020a10" opacity="0"/>'
+           '<text id="out" class="lab" x="1560" y="975" style="fill:#f0b24a" opacity="0">PENICILLIN</text>'
+           '<g id="clock" opacity="0"><circle cx="1540" cy="300" r="78" fill="none" stroke="#9db3b8" stroke-width="6"/>'
+           '<circle id="sun" cx="1540" cy="222" r="11" fill="#ffd27a"/>'
+           '<line id="hand" x1="1540" y1="300" x2="1540" y2="236" stroke="#f2f7f7" stroke-width="8" stroke-linecap="round"/>'
            '<text id="day" class="lab" x="1540" y="430" text-anchor="middle">DAY 1</text></g>'
-           '<text id="mould" class="lab" x="960" y="210" text-anchor="middle" style="fill:#5fd17a" opacity="0">MOULD</text>')
+           '<text id="mould" class="lab" x="960" y="210" text-anchor="middle" style="fill:#5fd17a" opacity="0">MOULD</text>'
+           '<text id="spl" class="mono" x="700" y="740" opacity="0">SPORES</text>'
+           # the magnifier: one hyphal tip, close up
+           '<g id="lens" opacity="0"><line id="lead" x1="1150" y1="560" x2="1440" y2="600" stroke="#f2f7f7" stroke-width="3" stroke-dasharray="6 8"/>'
+           '<circle cx="1590" cy="660" r="180" fill="#0b2328" stroke="#f2f7f7" stroke-width="8"/>'
+           '<g clip-path="url(#lensc)"><rect id="lw" x="1410" y="480" width="360" height="360" fill="#a9d8de" opacity=".12"/>'
+           '<rect id="lamb" x="1410" y="480" width="360" height="360" fill="#e8a33d" opacity="0"/><g id="lmyc"></g><g id="lgold"></g><g id="ltips"></g></g>'
+           '<text class="mono" x="1590" y="880" text-anchor="middle" style="font-size:20px">MAGNIFIED</text></g>'
+           # meters: what the tank is making (illustrative)
+           '<g id="meters" opacity="0"><text class="mono" x="110" y="470" style="font-size:22px">MOULD</text>'
+           '<rect x="110" y="482" width="420" height="18" rx="6" fill="#123b42"/><rect id="mb1" x="110" y="482" width="420" height="18" rx="6" fill="#5fd17a"/>'
+           '<text class="mono" x="110" y="550" style="font-size:22px">PENICILLIN</text>'
+           '<rect x="110" y="562" width="420" height="18" rx="6" fill="#123b42"/><rect id="mb2" x="110" y="562" width="420" height="18" rx="6" fill="#f0b24a"/>'
+           '<text class="mono" x="110" y="620" style="font-size:17px">ILLUSTRATIVE</text></g>')
     js = """
-      // mould threads: fixed seeded curves that grow in with time; bubbles rise; impellers turn; sugar drips; day clock
-      const NS = "http://www.w3.org/2000/svg", my = document.getElementById("myc"), bub = document.getElementById("bub"), dr = document.getElementById("drops");
-      const th = [], bs = [], ds = [];
-      for (let i = 0; i < 70; i++) { const p = document.createElementNS(NS, "path"); const x = 680 + (i * 89) % 560, y = 380 + (i * 151) % 480;
-        let d = `M${x} ${y}`; for (let k = 1; k < 7; k++) d += ` q ${((i * k * 13) % 40) - 20} ${((i * k * 7) % 30) - 15} ${((i * k * 31) % 50) - 25} ${((i * k * 17) % 50) - 25}`;
-        p.setAttribute("d", d); p.setAttribute("stroke", i % 3 ? "#bfe7a3" : "#e9f7dd"); p.setAttribute("stroke-width", 3); p.setAttribute("fill", "none"); my.appendChild(p); th.push(p); }
-      for (let i = 0; i < 46; i++) { const c = document.createElementNS(NS, "circle"); c.setAttribute("r", 5 + (i * 7) % 9); c.setAttribute("fill", "none");
-        c.setAttribute("stroke", "#e9f7ff"); c.setAttribute("stroke-width", 2.5); bub.appendChild(c); bs.push(c); }
-      for (let i = 0; i < 6; i++) { const c = document.createElementNS(NS, "circle"); c.setAttribute("r", 9); c.setAttribute("fill", "#f2f7f7"); dr.appendChild(c); ds.push(c); }
-      th.forEach((p) => { const L = p.getTotalLength(); p.dataset.L = L; p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
+      const NS = "http://www.w3.org/2000/svg", $ = (id) => document.getElementById(id);
+      const mk = (tag, parent, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+      let seed = 20260129; const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+      const ramp = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+      const DAY = (n) => 7 + (n - 1) * 1.4;           // the clock: day 1 at 7 s, a day every 1.4 s, day 7 at 15.4 s
+      const CX = 880, CY = 690;                        // the spores sit beside the shaft, between the impellers
+      // ---- branching hyphae: each segment grows in from its start time; its tip glows while it grows
+      function tree(segs, x, y, ang, len, gen, max, t0, w0, bounds) {
+        const c = ang + (rnd() - 0.5) * 0.9, mx = x + Math.cos(c) * len * 0.55, my = y + Math.sin(c) * len * 0.55;
+        const ex = x + Math.cos(ang) * len, ey = y + Math.sin(ang) * len, dur = 0.5 + rnd() * 0.35;
+        segs.push({ x, y, mx, my, ex, ey, t0, dur, w: Math.max(1.1, w0 - gen * 0.5) });
+        if (gen < max && ex > bounds[0] && ex < bounds[2] && ey > bounds[1] && ey < bounds[3]) {
+          const n = rnd() < 0.35 ? 3 : 2;
+          for (let k = 0; k < n; k++) tree(segs, ex, ey, ang + (k - (n - 1) / 2) * (0.45 + rnd() * 0.45), len * (0.7 + rnd() * 0.14), gen + 1, max, t0 + dur * 0.62, w0, bounds); }
+      }
+      const B = [650, 335, 1270, 885], segs = [];
+      for (let i = 0; i < 8; i++) tree(segs, CX, CY, i * 0.785 + rnd() * 0.4, 58 + rnd() * 20, 0, 5, DAY(2) + rnd() * 0.5, 3.6, B);            // days 2-3
+      for (let c = 0; c < 9; c++) { const x = 690 + rnd() * 540, y = 380 + rnd() * 470, t0 = DAY(3.6) + rnd() * 2.0;                            // days 4-5
+        for (let i = 0; i < 4; i++) tree(segs, x, y, i * 1.571 + rnd(), 32 + rnd() * 16, 1, 4, t0 + rnd() * 0.3, 3.2, B); }
+      const LB = [1414, 484, 1766, 836], lsegs = [];                                                                                          // in the lens, 6x
+      for (let i = 0; i < 3; i++) tree(lsegs, 1500, 760, -1.2 + i * 0.55, 120, 0, 3, DAY(2.4) + i * 0.3, 11, LB);
+      const drawSegs = (list, g, col) => list.forEach((s) => { s.p = mk("path", g, { d: `M${s.x.toFixed(1)} ${s.y.toFixed(1)} Q${s.mx.toFixed(1)} ${s.my.toFixed(1)} ${s.ex.toFixed(1)} ${s.ey.toFixed(1)}`,
+        fill: "none", stroke: col, "stroke-width": s.w, "stroke-linecap": "round" }); s.L = s.p.getTotalLength(); s.p.style.strokeDasharray = s.L; s.p.style.strokeDashoffset = s.L; });
+      drawSegs(segs, $("myc"), "#eaf6df"); drawSegs(lsegs, $("lmyc"), "#eaf6df");
+      const tipPool = Array.from({ length: 140 }, () => mk("circle", $("tips"), { r: 7, fill: "url(#glowT)", opacity: 0 }));
+      const ltipPool = Array.from({ length: 12 }, () => mk("circle", $("ltips"), { r: 22, fill: "url(#glowT)", opacity: 0 }));
+      const qpt = (s, u) => { const a = (1 - u) * (1 - u), b = 2 * u * (1 - u), c = u * u; return [a * s.x + b * s.mx + c * s.ex, a * s.y + b * s.my + c * s.ey]; };
+      // ---- spores, sugar, penicillin, bubbles, drops
+      const spores = Array.from({ length: 16 }, () => { const a = rnd() * 6.283, r = rnd() * 18;
+        mk("circle", $("spores"), { cx: CX + Math.cos(a) * r, cy: CY + Math.sin(a) * r, r: 9, fill: "#f4fbef", opacity: 0.18 });
+        return mk("circle", $("spores"), { cx: CX + Math.cos(a) * r, cy: CY + Math.sin(a) * r, r: 3 + rnd() * 2.5, fill: "#f4fbef" }); });
+      const sugar = Array.from({ length: 42 }, (_, i) => ({ e: mk("circle", $("sugar"), { r: 4.5, fill: "#ffffff", opacity: 0 }), off: (i * 0.29) % 2.4, a: rnd(), b: rnd() }));
+      const ends = segs.filter((s) => s.t0 < DAY(5.5)).map((s) => [s.ex, s.ey, s.t0 + s.dur]);
+      const gold = Array.from({ length: 160 }, (_, i) => ({ e: mk("circle", $("gold"), { r: 3.2 + (i % 3), fill: "#ffc95a", opacity: 0 }),
+        src: ends[(i * 37) % ends.length], off: (i * 0.173) % 2.6, dx: (rnd() - 0.5) * 70 }));
+      const lgold = Array.from({ length: 26 }, (_, i) => ({ e: mk("circle", $("lgold"), { r: 6 + (i % 3) * 2, fill: "#ffc95a", opacity: 0 }), off: (i * 0.31) % 2.2, a: rnd() * 6.283 }));
+      const bs = Array.from({ length: 46 }, (_, i) => mk("circle", $("bub"), { r: 5 + (i * 7) % 9, fill: "none", stroke: "#e9f7ff", "stroke-width": 2.5 }));
+      const ds = Array.from({ length: 6 }, () => mk("circle", $("drops"), { r: 9, fill: "#f2f7f7" }));
+"""
+    js_update = """
       const o = { t: 0 };
       tl.fromTo(o, { t: 0 }, { t: D, duration: D, ease: "none", immediateRender: false, onUpdate: () => {
-        const t = o.t;
-        th.forEach((p, i) => { const g = Math.min(1, Math.max(0, (t - 1.0 - (i % 10) * 0.25) / 5)); p.style.strokeDashoffset = (+p.dataset.L) * (1 - g); });
+        const t = o.t, wk = ramp(t, DAY(1), DAY(7));
+        // camera: a slow push in as the week passes
+        $("cam").setAttribute("transform", `translate(960 560) scale(${(1 + 0.05 * wk).toFixed(4)}) translate(-960 -560)`);
+        // hyphae grow; growing tips glow
+        let k = 0;
+        segs.forEach((s) => { const u = ramp(t, s.t0, s.t0 + s.dur); s.p.style.strokeDashoffset = s.L * (1 - u);
+          if (u > 0 && u < 1 && k < tipPool.length) { const [x, y] = qpt(s, u); const c = tipPool[k++]; c.setAttribute("cx", x.toFixed(1)); c.setAttribute("cy", y.toFixed(1)); c.setAttribute("opacity", 1); } });
+        for (; k < tipPool.length; k++) tipPool[k].setAttribute("opacity", 0);
+        let lk = 0;
+        lsegs.forEach((s) => { const u = ramp(t, s.t0, s.t0 + s.dur * 1.6); s.p.style.strokeDashoffset = s.L * (1 - u);
+          if (u > 0 && u < 1 && lk < ltipPool.length) { const [x, y] = qpt(s, u); const c = ltipPool[lk++]; c.setAttribute("cx", x.toFixed(1)); c.setAttribute("cy", y.toFixed(1)); c.setAttribute("opacity", 1); } });
+        for (; lk < ltipPool.length; lk++) ltipPool[lk].setAttribute("opacity", 0);
+        $("myc").setAttribute("opacity", (1 - 0.2 * ramp(t, DAY(6), DAY(7))).toFixed(3));
+        // spores: in at 1 s, they swell on day 1, then are hidden inside the growth
+        spores.forEach((c, i) => { c.setAttribute("opacity", (ramp(t, 1.0, 1.6) * (1 - 0.7 * ramp(t, DAY(3), DAY(4)))).toFixed(3)); });
+        $("spores").setAttribute("opacity", ramp(t, 1.0, 1.6).toFixed(3));
+        $("spl").setAttribute("opacity", (ramp(t, DAY(1), DAY(1) + 0.3) * (1 - ramp(t, DAY(2) + 0.4, DAY(2) + 0.8))).toFixed(3));
+        // sugar streams in from the inlet and is eaten: each grain drifts toward the growth and fades on arrival
+        sugar.forEach((g, i) => { if (t < 0.5 + g.off) { g.e.setAttribute("opacity", 0); return; }
+          const u = ((t - 0.5 - g.off) % 2.4) / 2.4, x = 700 + u * (CX - 700 + (g.a - 0.5) * 320), y = 312 + u * (CY - 312 + (g.b - 0.5) * 260) + Math.sin(u * 9 + i) * 12;
+          g.e.setAttribute("cx", x.toFixed(1)); g.e.setAttribute("cy", y.toFixed(1)); g.e.setAttribute("opacity", (Math.min(1, u * 6) * (1 - ramp(u, 0.7, 1))).toFixed(3)); });
+        // penicillin: from day 5 golden specks leave the mould and gather; that is what turns the broth gold
+        gold.forEach((g) => { const b = Math.max(DAY(5), g.src[2]) + g.off; if (t < b) { g.e.setAttribute("opacity", 0); return; }
+          const age = (t - b) % 2.6, x = g.src[0] + g.dx * (age / 2.6), y = g.src[1] - age * 28;
+          g.e.setAttribute("cx", x.toFixed(1)); g.e.setAttribute("cy", y.toFixed(1)); g.e.setAttribute("opacity", (Math.min(1, age * 3) * (1 - ramp(age, 1.8, 2.6))).toFixed(3)); });
+        lgold.forEach((g) => { const b = DAY(4.6) + g.off; if (t < b) { g.e.setAttribute("opacity", 0); return; }
+          const age = (t - b) % 2.2, r = 30 + age * 70; g.e.setAttribute("cx", (1600 + Math.cos(g.a) * r).toFixed(1)); g.e.setAttribute("cy", (640 + Math.sin(g.a) * r - age * 20).toFixed(1));
+          g.e.setAttribute("opacity", (Math.min(1, age * 3) * (1 - ramp(age, 1.5, 2.2))).toFixed(3)); });
+        // the broth: clear, then cloudy, then gold
+        $("cloud").setAttribute("opacity", (0.4 * ramp(t, DAY(3.6), DAY(5.6)) * (1 - 0.5 * ramp(t, DAY(6), DAY(7)))).toFixed(3));
+        const am = 0.6 * ramp(t, DAY(5.2), DAY(7) + 0.4); $("amber").setAttribute("opacity", am.toFixed(3)); $("lamb").setAttribute("opacity", (am * 0.9).toFixed(3));
+        // meters
+        $("mb1").setAttribute("width", (420 * Math.max(0.02, ramp(t, DAY(2), DAY(6)))).toFixed(1));
+        $("mb2").setAttribute("width", (420 * Math.max(0.02, ramp(t, DAY(5), DAY(7) + 0.4))).toFixed(1));
+        // day and night: the light dims each night, a sweep of light crosses the steel each morning; sun/moon on the clock
+        const ph = t < DAY(1) ? 0 : ((t - DAY(1)) / 1.4) % 1, nightA = t < DAY(1) || t > DAY(7) + 0.7 ? 0 : 0.34 * Math.max(0, Math.sin((ph - 0.5) * 6.283 + 1.571 * 2)) ;
+        $("night").setAttribute("opacity", (0.34 * (t >= DAY(1) && t <= DAY(7) + 0.7 ? Math.max(0, -Math.cos(ph * 6.283)) : 0)).toFixed(3));
+        $("sw").setAttribute("x", (380 + ph * 1100).toFixed(1));
+        $("sw").setAttribute("opacity", (t >= DAY(1) && t <= DAY(7) + 0.7 ? Math.max(0, Math.cos(ph * 6.283)) : 0).toFixed(3));
+        const sa = ph * 6.283; $("sun").setAttribute("cx", (1540 + Math.sin(sa) * 78).toFixed(1)); $("sun").setAttribute("cy", (300 - Math.cos(sa) * 78).toFixed(1));
+        $("sun").setAttribute("fill", Math.cos(ph * 6.283) >= 0 ? "#ffd27a" : "#cfe3ff");
+        // bubbles, sugar drops at the inlet, impellers, the day count
         bs.forEach((c, i) => { const per = 3.2 + (i % 5) * 0.4, s = (t + i * 0.37) % per, x = 700 + (i * 113) % 520 + Math.sin(t * 2 + i) * 10;
-          c.setAttribute("cx", x); c.setAttribute("cy", 880 - s / per * 560); c.setAttribute("opacity", t > 0.6 ? 0.85 : 0); });
+          c.setAttribute("cx", x); c.setAttribute("cy", 880 - s / per * 560); c.setAttribute("opacity", t > 0.6 ? 0.7 : 0); });
         ds.forEach((c, i) => { const s = (t + i * 0.5) % 3, x = 430 + s * 95; c.setAttribute("cx", Math.min(x, 700)); c.setAttribute("cy", 300 + (x > 700 ? (x - 700) * 2 : 0));
           c.setAttribute("opacity", t > 0.4 && x < 760 ? 1 : 0); });
-        const a = t * 260; document.getElementById("imp1").setAttribute("transform", `translate(960 608) scale(${Math.cos(a * Math.PI / 180).toFixed(3)} 1) translate(-960 -608)`);
-        document.getElementById("imp2").setAttribute("transform", `translate(960 768) scale(${Math.cos((a + 60) * Math.PI / 180).toFixed(3)} 1) translate(-960 -768)`);
-        const day = Math.min(7, 1 + Math.floor(Math.max(0, t - 7) / 1.4)); document.getElementById("day").textContent = "DAY " + day;
-        document.getElementById("hand").setAttribute("transform", `rotate(${(Math.max(0, t - 7) / 1.4) * 360} 1540 300)`);
+        const a = t * 260; $("imp1").setAttribute("transform", `translate(960 608) scale(${Math.cos(a * Math.PI / 180).toFixed(3)} 1) translate(-960 -608)`);
+        $("imp2").setAttribute("transform", `translate(960 768) scale(${Math.cos((a + 60) * Math.PI / 180).toFixed(3)} 1) translate(-960 -768)`);
+        const day = Math.min(7, 1 + Math.floor(Math.max(0, t - DAY(1)) / 1.4)); $("day").textContent = "DAY " + day;
+        $("hand").setAttribute("transform", `rotate(${(Math.max(0, t - DAY(1)) / 1.4) * 360} 1540 300)`);
       } }, 0);
-      fade("#mould", 1.0); out("#mould", 6.0); fade("#clock", 7.0); fade("#out", 15.5);
+      fade("#mould", 1.0); out("#mould", 6.0); fade("#clock", 7.0); fade("#lens", 9.6, 0.6); fade("#meters", 8.6); fade("#out", 15.5);
 """
-    write(sid, 22, svg, js)
+    write(sid, 22, svg, js + js_update)
 
 
 # 7. tanks: small vs big tank to scale, and the cost of each kilo. 16 s.
@@ -311,6 +412,106 @@ def tanks():
     write("tanks", 22, svg, js)
 
 
+# 8. cipla: the 2001 price drop to scale (owner, 2026-10-29: creativity everywhere; maths is animated, never written).
+# 104 notes of $100 pile up (the Western price, about $10,400 a year: MSF 7 Feb 2001), then all but 3.5 fly away (Cipla's
+# $350 a year). The numbers themselves are the film's cards; this scene is the scale. 20 s; the collapse starts at 10.0 s.
+def cipla(sid="cipla", D=20):
+    svg = (GRID + '<defs><linearGradient id="note" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9d8a8"/>'
+           '<stop offset="1" stop-color="#6e9a62"/></linearGradient></defs>'
+           '<g id="notes"></g>'
+           '<text id="key" class="mono" x="1516" y="282" text-anchor="middle" style="font-size:20px" opacity="0">EACH NOTE = $100</text>'
+           '<text id="yr" class="mono" x="1516" y="240" text-anchor="middle" opacity="0">ONE PATIENT · ONE YEAR</text>')
+    js = """
+      const NS = "http://www.w3.org/2000/svg", g = document.getElementById("notes");
+      let seed = 2001; const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+      const ramp = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+      const COLS = 8, N = 104, W = 54, H = 30, GX = 64, GY = 40, X0 = 1516 - (COLS * GX) / 2, Y0 = 820;
+      const notes = [];
+      for (let i = 0; i < N; i++) {
+        const col = i % COLS, row = Math.floor(i / COLS), x = X0 + col * GX, y = Y0 - row * GY;
+        const e = document.createElementNS(NS, "g");
+        e.innerHTML = `<rect x="0" y="0" width="${W}" height="${H}" rx="4" fill="url(#note)" stroke="#2e4a2a" stroke-width="2"/>`
+          + `<circle cx="${W / 2}" cy="${H / 2}" r="8" fill="none" stroke="#2e4a2a" stroke-width="2"/>`;
+        g.appendChild(e);
+        // which notes stay: the bottom three and a half (the half is the 4th note, clipped)
+        const keep = i < 3 ? 1 : i === 3 ? 0.5 : 0;
+        notes.push({ e, x, y, keep, t0: 0.4 + i * 0.028, vx: (rnd() - 0.2) * 900, vy: -300 - rnd() * 500, spin: (rnd() - 0.5) * 720, d: rnd() * 0.9 });
+        if (keep === 0.5) e.querySelector("rect").setAttribute("width", W / 2);
+      }
+      const o = { t: 0 };
+      tl.fromTo(o, { t: 0 }, { t: D, duration: D, ease: "none", immediateRender: false, onUpdate: () => {
+        const t = o.t;
+        notes.forEach((n) => {
+          const inn = ramp(t, n.t0, n.t0 + 0.35), drop = (1 - inn) * -60;
+          let x = n.x, y = n.y + drop, r = 0, a = inn;
+          if (!n.keep) { const u = Math.max(0, t - 10.0 - n.d); x += n.vx * u; y += n.vy * u + 900 * u * u; r = n.spin * u; a *= 1 - ramp(u, 0.6, 1.2); }
+          n.e.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${r.toFixed(1)} ${W / 2} ${H / 2})`);
+          n.e.setAttribute("opacity", a.toFixed(3));
+        });
+      } }, 0);
+      fade("#yr", 0.6); fade("#key", 3.6);
+"""
+    write(sid, D, svg, js)
+
+
+# 9. mipgate: the minimum import price as a border gate (DGFT Notification 56/2025-26, 29 Jan 2026). Containers below
+# the floor are stopped (import "Restricted" = needs a licence); dearer ones pass. Container prices are ILLUSTRATIVE;
+# the floors are the notification's: Pen-G Rs 2,216/kg, amoxicillin trihydrate Rs 2,733/kg, 6-APA Rs 3,405/kg. 16 s.
+def mipgate(sid="mipgate", D=16):
+    lanes = [("PENICILLIN G", "₹2,216 / KG", 520, 0.0), ("AMOXICILLIN", "₹2,733 / KG", 670, 9.6), ("6-APA", "₹3,405 / KG", 820, 10.2)]
+    svg = (GRID + '<rect x="0" y="380" width="430" height="640" fill="#0e3a4a" opacity=".55"/>'
+           '<text class="mono" x="60" y="420">SEA</text><g id="waves"></g>'
+           '<rect x="1240" y="380" width="680" height="640" fill="#123b42"/><text class="big" x="1580" y="330" text-anchor="middle" style="fill:#ff9933">INDIA</text>'
+           '<line x1="1200" y1="400" x2="1200" y2="900" stroke="#f2f7f7" stroke-width="6" stroke-dasharray="14 12"/>'
+           '<text class="mono" x="1200" y="388" text-anchor="middle" style="font-size:20px">BORDER</text>')
+    for k, (name, floor, y, t0) in enumerate(lanes):
+        svg += (f'<g id="lane{k}" opacity="0"><line x1="60" y1="{y + 40}" x2="1860" y2="{y + 40}" stroke="#2f5a62" stroke-width="3"/>'
+                f'<text class="mono" x="60" y="{y - 20}" style="font-size:20px">{name}</text>'
+                f'<g id="gate{k}"><rect x="1188" y="{y - 70}" width="24" height="110" rx="6" fill="#ef4f45"/></g>'
+                f'<text class="lab" x="1230" y="{y - 82}" style="font-size:28px;fill:#ff9933">MIN {floor}</text>'
+                f'<g id="cars{k}"></g><text id="stop{k}" class="lab" x="900" y="{y - 92}" text-anchor="middle" style="font-size:26px;fill:#ef4f45" opacity="0">LICENCE NEEDED</text></g>')
+    svg += '<text id="ill" class="mono" x="60" y="362" style="font-size:18px" opacity="0">CONTAINER PRICES ILLUSTRATIVE</text>'
+    js = """
+      const NS = "http://www.w3.org/2000/svg", $ = (id) => document.getElementById(id);
+      const ramp = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+      // [lane, price shown, floor, arrives at the gate at] ; below the floor = stopped
+      const LANES = [{ y: 520, floor: 2216, t0: 0.4, box: [[1650, 1.4], [2600, 3.6], [1900, 5.6], [2900, 7.4]] },
+                     { y: 670, floor: 2733, t0: 9.6, box: [[2100, 11.2], [3100, 13.2]] },
+                     { y: 820, floor: 3405, t0: 10.2, box: [[2700, 11.8], [3800, 13.8]] }];
+      const waves = Array.from({ length: 9 }, (_, i) => { const w = document.createElementNS(NS, "path");
+        w.setAttribute("d", "M0 0 q 20 -10 40 0 t 40 0 t 40 0 t 40 0"); w.setAttribute("stroke", "#3d7f92"); w.setAttribute("stroke-width", 3);
+        w.setAttribute("fill", "none"); $("waves").appendChild(w); return { w, y: 460 + i * 52, off: (i * 97) % 300 }; });
+      const cars = [];
+      LANES.forEach((L, k) => L.box.forEach(([p, ta]) => {
+        const e = document.createElementNS(NS, "g");
+        const ok = p >= L.floor, col = ok ? "#5fd17a" : "#e8a33d";
+        e.innerHTML = `<rect x="-90" y="${L.y - 40}" width="180" height="78" rx="6" fill="#1d4f58" stroke="${col}" stroke-width="4"/>`
+          + `<text class="lab" x="0" y="${L.y + 12}" text-anchor="middle" style="font-size:26px;fill:${col}">₹${p.toLocaleString("en-IN")}</text>`;
+        $("cars" + k).appendChild(e); cars.push({ e, k, ok, ta, L });
+      }));
+      const o = { t: 0 };
+      tl.fromTo(o, { t: 0 }, { t: D, duration: D, ease: "none", immediateRender: false, onUpdate: () => {
+        const t = o.t, stopA = [0, 0, 0], open = [0, 0, 0];
+        waves.forEach((v) => v.w.setAttribute("transform", `translate(${(20 + ((v.off + t * 40) % 260)).toFixed(1)} ${v.y})`));
+        cars.forEach((c) => {
+          const start = c.ta - 1.6;                       // rolls in from the sea over 1.6 s to the gate (x 1080)
+          let x = -120 + 1200 * ramp(t, start, c.ta), a = ramp(t, start, start + 0.3);
+          if (c.ok) { const u = t - c.ta; if (u > 0) { x = 1080 + u * 520; open[c.k] = Math.max(open[c.k], 1 - ramp(u, 0.9, 1.3)); } }
+          else { const u = t - c.ta; if (u > 0) { x = 1080 - Math.min(1, u * 3) * 40; stopA[c.k] = Math.max(stopA[c.k], 1 - ramp(u, 1.0, 1.3)); a *= 1 - ramp(u, 1.0, 1.35); } }
+          if (x > 1900) a = 0;
+          c.e.setAttribute("transform", `translate(${x.toFixed(1)} 0)`); c.e.setAttribute("opacity", a.toFixed(3));
+        });
+        for (let k = 0; k < 3; k++) {
+          const op = cars.filter((c) => c.k === k && c.ok).reduce((m, c) => Math.max(m, ramp(t, c.ta - 0.35, c.ta - 0.05) * (1 - ramp(t, c.ta + 0.9, c.ta + 1.3))), 0);
+          $("gate" + k).setAttribute("transform", `translate(0 ${(-120 * op).toFixed(1)})`);   // the barrier slides up for a car above the floor
+          $("stop" + k).setAttribute("opacity", stopA[k].toFixed(3));
+        }
+      } }, 0);
+      fade("#lane0", 0.1); fade("#lane1", 9.6); fade("#lane2", 10.2); fade("#ill", 1.0);
+"""
+    write(sid, D, svg, js)
+
+
 if __name__ == "__main__":
     map_stream(); map_stream("map_home", 22, home=True); map_hubei(); map_india(); capsule_open(); tablet()
-    fermenter(); fermenter("fermenter_lit", lit=True); tanks()
+    fermenter(); fermenter("fermenter_lit", lit=True); tanks(); cipla(); mipgate()

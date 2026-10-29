@@ -146,6 +146,10 @@ CUES = [(L(2, 0.15), pop(), 0.6), (MF.S(2, 1) - 0.2, whoosh(0.7), 0.25), (L(6, 0
         (L(57, 0.6), thud(50), 0.6), (L(62, 0.55), click(1500, 0.05), 0.4), (L(68, 0.1), thud(55), 0.6), (L(70), chime(), 0.4),
         (L(76, 0.7), chime(), 0.35), (L(85), chime(), 0.5)]
 CUES += [(round(LE(n) - 0.35, 3), stampfx(), 1.0) for n in (52, 53, 54, 55)]
+# the notes fly away as the $350 card lands; the border gate: a thud for each container stopped, a click for each let through
+CUES += [(MF.L(15, 0.55), whoosh(1.0), 0.4)]
+_g0 = MF.c(69) - max(0.0, 9.6 - (MF.S(69, 2) - MF.c(69)))
+CUES += [(_g0 + t, thud(70), 0.5) for t in (1.4, 5.6, 11.2, 11.8)] + [(_g0 + t, click(1800, 0.05), 0.35) for t in (3.6, 7.4, 13.2, 13.8)]
 # one stray germ: a low, dissonant warning sting as the broth turns murky
 CUES += [(MF.S(37, 2) + 0.15, (tone(98, 1.6, 0.01, 1.2, (1.0, 0.4)) + tone(104, 1.6, 0.01, 1.2, (0.7,))) * np.exp(-np.arange(int(1.6 * SR)) / SR * 1.5), 0.55)]
 for at, x, g in CUES:

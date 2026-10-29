@@ -190,12 +190,14 @@ chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm
 # ---- INDIA EARNED IT (1:31-2:50)
 shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
 shot(c(14), "px_262189", "slow", dim=0.72)                         # "Think back to two thousand one. H.I.V. ... ten thousand dollars"
+# the price drop to scale: the pile of $100 notes collapses (scene 10.0 s) exactly as the $350 card lands
+shot(S(14, 2) - PRE, "R_cipla", "none", ms=round(max(0.0, 10.0 - (L(15, 0.55) - (S(14, 2) - PRE))), 3))   # "The medicines exist... a dollar a day... One dollar."
 datebig("2001", "H.I.V. MEDICINES", L(14, 0.05), LE(16))
 # same unit on both cards (owner's review, 2026-10-29): MSF 7 Feb 2001, "about $10,400" in the US vs Cipla's "$350 per year" (P14, P15)
-count(L(14, 0.6), LE(16), 600, 330, 0, 10400, L(14, 0.62), 1.3, "$", " / YEAR", "red", "xl")
-chip("Western price", L(14, 0.75), LE(16), 606, 462, "red", "sm", "up")
-count(L(15, 0.5), LE(16), 600, 566, 0, 350, L(15, 0.55), 0.9, "$", " / YEAR", "green", "xl")
-chip("Cipla · under $1 a day", L(15, 0.7), LE(16), 606, 698, "green", "sm", "up")
+count(L(14, 0.6), LE(16), 230, 330, 0, 10400, L(14, 0.62), 1.3, "$", " / YEAR", "red", "xl")
+chip("Western price", L(14, 0.75), LE(16), 236, 462, "red", "sm", "up")
+count(L(15, 0.5), LE(16), 230, 566, 0, 350, L(15, 0.55), 0.9, "$", " / YEAR", "green", "xl")
+chip("Cipla · under $1 a day", L(15, 0.7), LE(16), 236, 698, "green", "sm", "up")
 cite("[MSF | 2001]", L(14, 0.6), LE(16))
 shot(c(17), "px_29021", "slow", ms=2.0)                            # "And today... more than two and a half lakh crore rupees a year."
 count(L(17, 0.4), LE(17), 120, 760, 0, 2.5, L(17, 0.45), 1.2, "₹", " LAKH CRORE+", "ink", "", 1)
@@ -298,7 +300,8 @@ datebig("2024", "PENICILLIN G · MADE IN INDIA AGAIN", L(66, 0.05), LE(66))
 shot(c(67), "px_216619", "slow", ms=4.0)                           # "But you know the trap... cheap imports were still waiting at the port."
 shot(c(68), "D_dgft_2026_mip-1", "in", tag="DOCUMENT · DGFT")      # "So on the twenty-ninth of January, 2026, the government stepped in."
 datebig("29 JAN 2026", "MINIMUM IMPORT PRICE", L(68, 0.1), LE(69))
-chip("₹2,216 / kg · penicillin G", L(69, 0.4), LE(69), 120, 760, "saffron", "sm", "up")
+# the floor as a border gate; the amoxicillin and 6-APA lanes (scene 9.6 s) open on "The same rule covers..."
+shot(c(69), "R_mipgate", "none", ms=round(max(0.0, 9.6 - (S(69, 2) - c(69))), 3))   # "It set a minimum price at the border..."
 cite("[DGFT | 29 JAN 2026]", L(68, 0.1), LE(69))
 shot(c(70), "R_fermenter_lit", "none", ms=4.0)                     # "Think of it as a shield..."
 shot(c(71), "px_23759", "slow", ms=2.0, dim=0.5)                 # "And in September 2026... below a fair price."

@@ -74,3 +74,13 @@ Not done, and why:
 - "Qule Pharma (Aurobindo unit)": the Aurobindo link is not sourced; only the Lyfius application is shown.
 - Airport freighter at 8:27: the VO there says "waiting at the port", so it stays a port shot (semantic lock).
 - 1080p60 / 4K export: review cuts are 720p; 4K once the owner finalises (owner, 2026-10-29).
+
+Round 2 creative pass (owner, 2026-10-29: "use your creativity everywhere"):
+- The fermenter is now a living week: sugar streams in and is eaten, spores sprout glowing tips and branch, colonies
+  spread and the broth clouds, the mould releases golden penicillin until the broth is gold, a 6x magnifier on one hyphal
+  tip, MOULD / PENICILLIN meters (ILLUSTRATIVE), day and night on the steel, a slow push in. Same scene, saffron, for the
+  Kakinada twin.
+- 2001 price drop: 104 notes of $100 collapse to 3½, timed to the $350 card (replaces 15 s of microscope stock).
+- Minimum import price: a border gate; containers under ₹2,216/kg stopped ("LICENCE NEEDED"), dearer ones pass; the
+  amoxicillin (₹2,733) and 6-APA (₹3,405) lanes open on "the same rule covers…" (container prices ILLUSTRATIVE; floors
+  from DGFT Notification 56/2025-26). Thuds and clicks on the gate, a whoosh as the notes fly.

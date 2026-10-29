@@ -2041,6 +2041,20 @@ break the trap", "Jai Hind" …), and the aligner squeezed their text into the r
 a 0.31 median). *Fix:* trim only a silence that reaches the end of the file, and stop if a trim would remove more than
 0.6 s. *Rule:* `scripts/vo_take_check.py --takes … --trimmed …` after every alignment; it flags speech after any trim
 point and any sentence far faster or slower than the film's median pace.
+
+**Pharma film, review round 2: the floor and the ceiling (owner, 2026-10-29).** The review asked for the fermenter to
+grow from Day 1 to Day 7 as a timelapse. The owner's answer to a literal timelapse: "Using time lapse is basic... use
+your creativity everywhere, more than humans do." What the scene became, and the pattern behind it:
+- **Show the process, not the label.** Sugar visibly streams in and is eaten; spores sprout glowing tips and branch;
+  colonies spread and the broth clouds; the mould *releases* golden penicillin that gathers until the broth is gold
+  (the colour change has a cause on screen); a magnifier shows one hyphal tip at 6x; MOULD and PENICILLIN meters rise in
+  step; day and night sweep the steel for "runs day and night"; a slow push in as the week passes.
+- **A creative pass over the whole film, every round.** The same round turned two weak stock beats into mechanisms:
+  the 2001 price drop as 104 notes of $100 collapsing to 3½ (to scale, timed to the $350 card), and the minimum import
+  price as a border gate where containers below ₹2,216/kg are stopped ("LICENCE NEEDED") and dearer ones pass, with
+  the amoxicillin and 6-APA lanes opening on "the same rule covers…".
+- *Rule:* for every scene ask what the viewer should *feel happening*, then animate the cause, not just the result;
+  numbers on screen come only from sources, invented quantities are labelled ILLUSTRATIVE.
 - **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".
