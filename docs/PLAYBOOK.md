@@ -2055,6 +2055,25 @@ your creativity everywhere, more than humans do." What the scene became, and the
   the amoxicillin and 6-APA lanes opening on "the same rule covers…".
 - *Rule:* for every scene ask what the viewer should *feel happening*, then animate the cause, not just the result;
   numbers on screen come only from sources, invented quantities are labelled ILLUSTRATIVE.
+
+**Pharma film, round 3: smoothness (owner's 720p audit, 2026-10-29: "the picture glitches while the sound flows").**
+Two separate faults, both measured, both now handled in the engine:
+- **Judder: 24/25 fps sources in a 30 fps timeline.** Every 5th-6th frame showed twice (12 of 75 frames in a 2.5 s
+  test window). *Fix:* `projects/pharma-apis/build/conform.sh` gives every source exactly one output frame per source
+  frame at 30 fps (`setpts=PTS*rate/30`: 25 fps plays 1.2x, 29.97 fps 1.001x); the assembler maps in-points by the
+  same factor (`rate()`). Motion-compensated interpolation (`minterpolate`) ran ~30x slower than real time in a
+  session and can warp, so it is the last resort. *Rule:* probe every source's frame rate before the edit; nothing
+  that is not 30/1 goes into a 30 fps film unconformed.
+- **Flash frames: the promo's own cuts.** Third-party promos cut every 1-3 s; an in-point a few frames before one of
+  their cuts shows a sliver of the next shot. *Fix:* `scdet` lists each source's cuts (`assets/cuts/`), a hand-checked
+  `CLEAN` table excludes slides, titles and people, and `clean_assign()` places every piece inside a clean span,
+  preferring footage not yet used; all cuts snap to whole 1/30 s frames. Lower-third boxes and logos are cropped out
+  by a fixed framing measured on a gridded frame (Lyfius: 1.6x from 30% height keeps 11-74%), not by luck.
+- **Know how much clean footage a promo really has.** The Lyfius promo had about 50 s of usable film against 100 s of
+  planned screen time, so it repeated. Documents (the company's own press release, the notification page that states
+  the date) and other footage carried the rest. *Rule:* sum the clean spans before writing the EDL.
+- **Never `pkill -f` a pattern that appears in the same command line** (CLAUDE.md trap): it killed the session's own
+  shell mid-edit here. Kill by PID.
 - **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".

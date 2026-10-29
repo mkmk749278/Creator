@@ -89,3 +89,17 @@ Round 2 creative pass (owner, 2026-10-29: "use your creativity everywhere"):
 11:32, 1280x720, −14.1 LUFS, peak −1.1 dBFS; 346 frames on 39 sheets (`runs/pharma-apis/qa4`). Freezes: 4, all ≤ 3.3 s.
 Minor, for the next round: the Cipla scene holds ~3 s after the notes fly (2:01); the tanks scene opens on a near-still
 1.6 s (5:23); the "one germ" murk lands on the Day 7 gold broth (4:57), not on a growing culture.
+
+
+## Round 3 (owner's 720p audit, 2026-10-29) → 4K master
+
+Fixed: judder (30 fps conform), flash frames (clean spans, frame-snapped cuts), the PM/PLI slide and promo titles
+(excluded spans), the Tribune ad (headline crop, date tag corrected to 4 Mar), "5 cases" (now "a handful", as the VO),
+bases named on the 1991 and today gauges, Hubei only on the March 2020 line (other China lines are sea lanes to
+Nhava Sheva and Chennai), Indian ports (JNPT photos), period labels (TODAY on HAL wall and lab), 1954 on an archive
+drawing, 1991 on the Budget speech, 2001 on MSF's report, capsule animation only at open and close, real strips,
+the gate labels, Lyfius boxes and logo cropped out, captions held to word end and lifted to 79%, source tags 22 px
+at the top right, stamps clear of the logo bug, end card 20 s, Cipla scene moving after the collapse, tablet labels
+36 px, tanks and tablet scenes split, the germ on a growing culture. SRT rebuilt in this cut's time.
+Checked and not changed: the four "doubled words" (three are transcript errors; the fourth is breath, 8 dB down, a
+different spectrum); the India outline (land only, no borders drawn); "+ heat removed" (not in our sources).
