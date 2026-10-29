@@ -12,6 +12,7 @@ Usage: python3 projects/pharma-apis/build/make_film.py   (then npm run vendor; r
 import html
 import json
 import math
+import os
 import re
 import shutil
 import subprocess
@@ -72,8 +73,9 @@ def media(name, raw=False):
         return A / "photos" / f"pixabay_{name[3:]}.jpg"
     if name.startswith("J_"):
         return A / "photos" / f"jnpt_{name[2:]}.jpg"
-    if name.startswith("R_"):
-        return A / "renders" / f"video_pha_{name[2:]}.mp4"
+    if name.startswith("R_"):   # PHA_RENDERS=4k: the native 3840x2160 scene renders for the master (render_scenes_4k.sh)
+        sub = "renders4k" if os.environ.get("PHA_RENDERS") == "4k" else "renders"
+        return A / sub / f"video_pha_{name[2:]}.mp4"
     if name.startswith("W_"):
         return A / "wellcome" / f"{name[2:]}.jpg"
     if name.startswith("D_"):
