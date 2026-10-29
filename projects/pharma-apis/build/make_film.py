@@ -99,8 +99,9 @@ def default_tag(src):
         return "WELLCOME COLLECTION · CC BY 4.0"
     if src.startswith("PH_"):
         return "PIXABAY"
-    if src.startswith("J_"):
-        return "J.N. PORT, NAVI MUMBAI · WIKIMEDIA COMMONS · CC BY-SA 4.0"
+    if src.startswith("J_"):   # CC BY-SA asks for the photographer's name with the licence
+        who = {"J_aerial": "EVENT HORIZON 299792", "J_seaside": "KUWARONLINE"}[src]
+        return f"J.N. PORT, NAVI MUMBAI · {who} · WIKIMEDIA COMMONS · CC BY-SA 4.0"
     if src.startswith("D_"):
         return "DOCUMENT"
     return ""
