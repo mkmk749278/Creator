@@ -131,6 +131,34 @@ def map_stream(sid="map_stream", D=22, home=False):
     write(sid, D, svg, js)
 
 
+# 1b. map_trade: China's powder reaching India by sea, landing at real ports (owner's review, 2026-10-29: general China
+# lines carry no Hubei label and end at an entry port, not mid-India). Points projected with the asia view (Mercator,
+# 23.21 px/degree): JNPT (Nhava Sheva, Mumbai) 72.95E 18.95N; Chennai 80.27E 13.08N. 22 s.
+def map_trade(sid="map_trade", D=22):
+    a = MAP["asia"]; P = a["pts"]
+    cx, cy = P["china_c"]; ix, iy = P["india_c"]
+    ports = [("NHAVA SHEVA · MUMBAI", 471.4, 688.1, -330, 60), ("CHENNAI", 641.3, 829.9, 26, 46)]
+    sea = (1180, 900)   # the ships leave China's coast and come round by sea
+    svg = GRID + land("asia") + f'<circle id="gc" cx="{cx}" cy="{cy}" r="190" fill="url(#glowA)" opacity="0"/>'
+    # real sea lanes: Guangzhou, the South China Sea, the Malacca Strait, the Bay of Bengal; round Sri Lanka for Mumbai
+    lanes = ["M 1407.9 597.4 C 1410.6 616.4 1436.9 660.4 1424.1 711.3 C 1411.3 762.2 1366.1 843.7 1331.3 902.9 C 1296.5 962.1 1240.4 1032.7 1215.3 1066.5 C 1190.2 1100.3 1203.6 1111.8 1180.4 1106.0 C 1157.2 1100.2 1108.9 1049.8 1076.0 1031.6 C 1043.1 1013.4 1025.8 1014.1 983.2 996.6 C 940.7 979.1 871.0 947.9 820.7 926.4 C 770.4 904.9 702.7 859.6 681.4 867.4 C 660.1 875.2 700.7 947.1 693.0 973.3 C 685.3 999.5 660.1 1026.5 635.0 1024.6 C 609.9 1022.6 567.4 993.7 542.2 961.6 C 517.1 929.5 495.9 877.4 484.1 831.8 C 472.3 786.2 473.5 712.0 471.4 688.1",
+             "M 1407.9 597.4 C 1410.6 616.4 1436.9 660.4 1424.1 711.3 C 1411.3 762.2 1366.1 843.7 1331.3 902.9 C 1296.5 962.1 1240.4 1032.7 1215.3 1066.5 C 1190.2 1100.3 1203.6 1111.8 1180.4 1106.0 C 1157.2 1100.2 1108.9 1049.8 1076.0 1031.6 C 1043.1 1013.4 1025.8 1014.1 983.2 996.6 C 940.7 979.1 871.0 947.9 820.7 926.4 C 770.4 904.9 710.8 883.5 681.4 867.4 C 652.0 851.3 650.5 836.1 644.3 829.9"]
+    for k, d in enumerate(lanes):
+        svg += f'<path id="r{k}" d="{d}" fill="none" stroke="#e8a33d" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" opacity="0"/><g id="d{k}"></g>'
+    svg += (f'<text id="lc" class="big" x="{cx + 40}" y="{cy - 120}" text-anchor="middle" style="fill:#e8a33d">CHINA</text>'
+            f'<text id="li" class="big" x="{ix - 60}" y="{iy - 160}" text-anchor="middle" style="fill:#ff9933">INDIA</text>')
+    for k, (lab, px, py, dx, dy) in enumerate(ports):
+        svg += pin(px, py, lab, cls="mono", pid=f"p{k}", col="#ff9933", dx=dx, dy=dy)
+    svg += '<text id="sea" class="mono" x="790" y="770" opacity="0">BY SEA</text>'
+    js = """
+      tl.set(["#lc", "#li", "#p0", "#p1", "#r0", "#r1", "#sea"], { autoAlpha: 0 }, 0);
+      fade("#lc", 0.3); fade("#li", 0.6); tl.to("#gc", { opacity: 1, duration: 1.2 }, 0.4);
+      fade("#r0", 0.8, 0.8); fade("#r1", 1.2, 0.8); fade("#sea", 1.6); pop("#p0", 2.2); pop("#p1", 2.6);
+      stream("#r0", "#d0", 40, 1.0, 230, "#e8a33d"); stream("#r1", "#d1", 34, 1.4, 230, "#e8a33d");
+"""
+    write(sid, D, svg, js)
+
+
 # 2. map_hubei: Wuhan locked down 40 days by 3 March 2020; India 5 cases. 12 s.
 def map_hubei():
     a = MAP["asia"]; P = a["pts"]; wx, wy = P["wuhan"]; ix, iy = P["india_c"]
@@ -141,8 +169,8 @@ def map_hubei():
            f'<g id="cnt" opacity="0"><text class="mono" x="{wx - 40}" y="{wy + 190}">LOCKED DOWN</text>'
            f'<text id="days" class="big" x="{wx - 40}" y="{wy + 290}" style="fill:#ef4f45">0</text>'
            f'<text class="lab" x="{wx + 120}" y="{wy + 290}">DAYS</text></g>'
-           f'<g id="ind" opacity="0"><text class="mono" x="{ix - 260}" y="{iy + 160}">INDIA · CONFIRMED CASES</text>'
-           f'<text class="big" x="{ix - 260}" y="{iy + 260}" style="fill:#f2f7f7">5</text></g>'
+           f'<g id="ind" opacity="0"><text class="mono" x="{ix - 260}" y="{iy + 160}">INDIA · 3 MARCH 2020</text>'
+           f'<text class="lab" x="{ix - 260}" y="{iy + 215}" style="fill:#f2f7f7">A HANDFUL OF CASES</text></g>'
            '<text class="mono" x="80" y="110" style="font-size:30px">23 JAN → 3 MAR 2020</text>')
     js = f"""
       tl.set(["#pw"], {{ autoAlpha: 0 }}, 0);
@@ -219,7 +247,7 @@ def tablet():
     for k, lab, col, y in layers:
         svg += (f'<g id="{k}"><ellipse cx="900" cy="{y}" rx="250" ry="56" fill="{col}" opacity=".55" stroke="#f2f7f7" stroke-opacity=".5" stroke-width="2"/>'
                 f'<line x1="1150" y1="{y}" x2="1290" y2="{y}" stroke="#9db3b8" stroke-width="3"/>'
-                f'<text class="mono" x="1310" y="{y + 9}" style="font-size:30px">{lab}</text></g>')
+                f'<text class="lab" x="1310" y="{y + 11}" style="font-size:36px;fill:#d7e7ea">{lab}</text></g>')
     svg += ('<g id="core"><ellipse cx="900" cy="700" rx="200" ry="50" fill="#ffffff"/><ellipse cx="900" cy="690" rx="150" ry="30" fill="#f7fbfc"/>'
             '<line x1="1100" y1="700" x2="1290" y2="700" stroke="#ffffff" stroke-width="4"/>'
             '<text class="lab" x="1310" y="712" style="fill:#ffffff">THE POWDER · A.P.I.</text></g>')
@@ -435,7 +463,7 @@ def cipla(sid="cipla", D=20):
         g.appendChild(e);
         // which notes stay: the bottom three and a half (the half is the 4th note, clipped)
         const keep = i < 3 ? 1 : i === 3 ? 0.5 : 0;
-        notes.push({ e, x, y, keep, t0: 0.4 + i * 0.028, vx: (rnd() - 0.2) * 900, vy: -300 - rnd() * 500, spin: (rnd() - 0.5) * 720, d: rnd() * 0.9 });
+        notes.push({ e, x, y, keep, col, t0: 0.4 + i * 0.028, vx: (rnd() - 0.2) * 900, vy: -300 - rnd() * 500, spin: (rnd() - 0.5) * 720, d: rnd() * 0.9 });
         if (keep === 0.5) e.querySelector("rect").setAttribute("width", W / 2);
       }
       const o = { t: 0 };
@@ -444,8 +472,11 @@ def cipla(sid="cipla", D=20):
         notes.forEach((n) => {
           const inn = ramp(t, n.t0, n.t0 + 0.35), drop = (1 - inn) * -60;
           let x = n.x, y = n.y + drop, r = 0, a = inn;
+          let sc = 1;
           if (!n.keep) { const u = Math.max(0, t - 10.0 - n.d); x += n.vx * u; y += n.vy * u + 900 * u * u; r = n.spin * u; a *= 1 - ramp(u, 0.6, 1.2); }
-          n.e.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${r.toFixed(1)} ${W / 2} ${H / 2})`);
+          else { const v = ramp(t, 11.6, 14.5), e = v * v * (3 - 2 * v); sc = 1 + 1.6 * e + 0.04 * Math.max(0, t - 14.5);
+            const tx = 1516 + (n.col - 1.75) * (W + 10) * sc - (W * sc) / 2, ty = 560 - (H * sc) / 2; x = n.x + (tx - n.x) * e; y = n.y + (ty - n.y) * e; }
+          n.e.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${sc.toFixed(4)}) rotate(${r.toFixed(1)} ${W / 2} ${H / 2})`);
           n.e.setAttribute("opacity", a.toFixed(3));
         });
       } }, 0);
@@ -466,10 +497,10 @@ def mipgate(sid="mipgate", D=16):
            '<text class="mono" x="1200" y="388" text-anchor="middle" style="font-size:20px">BORDER</text>')
     for k, (name, floor, y, t0) in enumerate(lanes):
         svg += (f'<g id="lane{k}" opacity="0"><line x1="60" y1="{y + 40}" x2="1860" y2="{y + 40}" stroke="#2f5a62" stroke-width="3"/>'
-                f'<text class="mono" x="60" y="{y - 20}" style="font-size:20px">{name}</text>'
+                f'<text class="mono" x="470" y="{y - 52}" style="font-size:24px">{name}</text>'
                 f'<g id="gate{k}"><rect x="1188" y="{y - 70}" width="24" height="110" rx="6" fill="#ef4f45"/></g>'
                 f'<text class="lab" x="1230" y="{y - 82}" style="font-size:28px;fill:#ff9933">MIN {floor}</text>'
-                f'<g id="cars{k}"></g><text id="stop{k}" class="lab" x="900" y="{y - 92}" text-anchor="middle" style="font-size:26px;fill:#ef4f45" opacity="0">LICENCE NEEDED</text></g>')
+                f'<g id="cars{k}"></g><text id="stop{k}" class="lab" x="1170" y="{y + 82}" text-anchor="end" style="font-size:26px;fill:#ef4f45" opacity="0">LICENCE NEEDED</text></g>')
     svg += '<text id="ill" class="mono" x="60" y="362" style="font-size:18px" opacity="0">CONTAINER PRICES ILLUSTRATIVE</text>'
     js = """
       const NS = "http://www.w3.org/2000/svg", $ = (id) => document.getElementById(id);
@@ -513,5 +544,5 @@ def mipgate(sid="mipgate", D=16):
 
 
 if __name__ == "__main__":
-    map_stream(); map_stream("map_home", 22, home=True); map_hubei(); map_india(); capsule_open(); tablet()
+    map_stream(); map_stream("map_home", 22, home=True); map_trade(); map_hubei(); map_india(); capsule_open(); tablet()
     fermenter(); fermenter("fermenter_lit", lit=True); tanks(); cipla(); mipgate()

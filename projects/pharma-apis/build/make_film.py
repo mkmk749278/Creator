@@ -50,7 +50,7 @@ def S(n, k):
 
 PRE = 0.15                       # the picture cuts this long before the line's first word ("cut on the breath")
 VO_END = F(LINES[-1]["end"])
-END = round(VO_END + 12.0, 2)   # end screen (YouTube end-screen elements need 5-20 s)
+END = round(VO_END + 8.0, 2)    # end screen (YouTube end-screen elements need 5-20 s; review: 24 s was too long)
 
 FOOT = {  # owner-fetched footage (assets/footage/fetched.csv; Pexels downloaded by the owner)
     "Y02": ("02_1ddBzBUaa8k.mp4", "FOOTAGE · LYFIUS PHARMA"), "Y04": ("04_3aclBlRaYNQ.mp4", "FOOTAGE · ABP MAJHA"),
@@ -59,11 +59,19 @@ FOOT = {  # owner-fetched footage (assets/footage/fetched.csv; Pexels downloaded
 }
 
 
-def media(name):
+def media(name, raw=False):
+    src = None
     if name in FOOT:
-        return A / "footage" / FOOT[name][0]
-    if name.startswith("px_"):
-        return A / "stock" / f"pixabay_{name[3:]}.mp4"
+        src = A / "footage" / FOOT[name][0]
+    elif name.startswith("px_"):
+        src = A / "stock" / f"pixabay_{name[3:]}.mp4"
+    if src is not None:   # the 30 fps conform (build/conform.sh) when it exists: no judder (owner's review, 2026-10-29)
+        conf = A / "conformed" / src.name
+        return conf if conf.exists() and not raw else src
+    if name.startswith("PH_"):
+        return A / "photos" / f"pixabay_{name[3:]}.jpg"
+    if name.startswith("J_"):
+        return A / "photos" / f"jnpt_{name[2:]}.jpg"
     if name.startswith("R_"):
         return A / "renders" / f"video_pha_{name[2:]}.mp4"
     if name.startswith("W_"):
@@ -87,6 +95,10 @@ def default_tag(src):
         return ""          # the scenes carry their own ILLUSTRATION tag
     if src.startswith("W_"):
         return "WELLCOME COLLECTION · CC BY 4.0"
+    if src.startswith("PH_"):
+        return "PIXABAY"
+    if src.startswith("J_"):
+        return "J.N. PORT, NAVI MUMBAI · WIKIMEDIA COMMONS · CC BY-SA 4.0"
     if src.startswith("D_"):
         return "DOCUMENT"
     return ""
@@ -165,7 +177,7 @@ def coins(at, to, n_amber=86, x0=430, y0=250):
 c = lambda n: L(n) - PRE           # cut time for line n
 # ---- HOOK: pharmacy of the world, the capsule, the locked doors (0:00-1:35)
 shot(0.0, "PXb", "slow", ms=1.0)                                   # "India sells medicines to around two hundred countries..."
-chip("Pharmacy of the world", 1.2, LE(1), 120, 760, "steel", "", "up")
+chip("Pharmacy of the world", 1.2, LE(1), 120, 640, "steel", "", "up")
 shot(c(2), "R_capsule_open", "none", ms=0.6)                       # "But open one antibiotic capsule..."
 shot(S(2, 1) - PRE, "R_map_stream", "none", ms=0.4)                # "That's the actual medicine... began in China."
 shot(c(3), "px_40948", "in", ms=1.0)                               # "The rest of the capsule is just there to carry it to you."
@@ -173,71 +185,72 @@ shot(c(4), "px_1643", "slow", tag="ILLUSTRATIVE FOOTAGE", ms=2.0, dim=0.45)   # 
 datebig("3 MARCH 2020", "LOCKDOWN 24 MARCH · 3 WEEKS AWAY", L(4, 0.55), LE(4))
 shot(c(5), "R_map_hubei", "none", ms=0.0)                          # "In China, the city of Wuhan has been locked down..."
 shot(c(6), "D_dgft_2020_noti50-1", "in", tag="DOCUMENT · DGFT")   # "Delhi. A two-page government order goes out..."
-chip("13 ingredients", S(6, 2), LE(6) + 1.5, 120, 760, "red", "sm", "pop")
-chip("Paracetamol", S(6, 3), LE(6) + 1.5, 640, 760, "red", "sm", "pop")
+chip("13 ingredients", S(6, 2), LE(6) + 1.5, 120, 640, "red", "sm", "pop")
+chip("Paracetamol", S(6, 3), LE(6) + 1.5, 640, 640, "red", "sm", "pop")
 cite("[DGFT NOTIFICATION 50/2015-20 | 3 MAR 2020]", L(6, 0.1), LE(6) + 1.5)
-shot(c(7), "px_23008", "slow", dim=0.35)                           # "Wait. India? The pharmacy of the world... locking its own doors?"
-chip("Exports: by licence", L(7, 0.4), LE(7), 120, 760, "red", "", "pop")
+shot(c(7), "J_aerial", "in", dim=0.3)   # an Indian port (JNPT), not a foreign one                           # "Wait. India? The pharmacy of the world... locking its own doors?"
+chip("Exports: by licence", L(7, 0.4), LE(7), 120, 640, "red", "", "pop")
 shot(c(8), "R_map_hubei", "none", ms=5.5)                          # "Yes. And the reason was Corona..."
-shot(c(9), "D_tribune_2020", "in", tag="DOCUMENT · THE TRIBUNE")  # "Reports at the time said..."
-cite("[THE TRIBUNE | 3 MAR 2020]", L(9), LE(9))
-shot(c(10), "R_capsule_open", "push", ms=4.2)                      # "So here's the question... who makes the powder?"
+shot(c(9), "D_tribune_2020_head", "in", tag="DOCUMENT · THE TRIBUNE")   # headline only: no ad banner  # "Reports at the time said..."
+cite("[THE TRIBUNE | 4 MAR 2020]", L(9), LE(9))
+shot(c(10), "PH_257336", "in")   # real strips (the capsule animation is kept for the open and the close)                      # "So here's the question... who makes the powder?"
 shot(c(11), "PXa", "slow", ms=0.5)                                 # "And before you worry — this isn't about the quality..."
 chip("Quality: not the issue", L(11, 0.2), LE(11), 120, 160, "green", "sm", "up")
 chip("Supply: the issue", L(11, 0.6), LE(11), 120, 260, "amber", "sm", "up")
-shot(c(12), "Y02", "crop", ms=[32.0, 50.0, 65.3], origin="50% 8%")              # "Stay with me. Around minute eight... Andhra Pradesh"
+shot(c(12), "Y02", "crop", ms=[50.0, 80.9, 33.0], origin="35% 50%")              # "Stay with me. Around minute eight... Andhra Pradesh"
 chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm", "up")
 # ---- INDIA EARNED IT (1:31-2:50)
 shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
-shot(c(14), "px_262189", "slow", dim=0.72)                         # "Think back to two thousand one. H.I.V. ... ten thousand dollars"
+shot(c(14), "D_msf2001-01", "in", tag="DOCUMENT · MSF · 2001")   # the 2001 ARV price report, not a microscope                         # "Think back to two thousand one. H.I.V. ... ten thousand dollars"
 # the price drop to scale: the pile of $100 notes collapses (scene 10.0 s) exactly as the $350 card lands
 shot(S(14, 2) - PRE, "R_cipla", "none", ms=round(max(0.0, 10.0 - (L(15, 0.55) - (S(14, 2) - PRE))), 3))   # "The medicines exist... a dollar a day... One dollar."
-datebig("2001", "H.I.V. MEDICINES", L(14, 0.05), LE(16))
+datebig("2001", "H.I.V. MEDICINES", L(14, 0.05), c(17))
 # same unit on both cards (owner's review, 2026-10-29): MSF 7 Feb 2001, "about $10,400" in the US vs Cipla's "$350 per year" (P14, P15)
-count(L(14, 0.6), LE(16), 230, 330, 0, 10400, L(14, 0.62), 1.3, "$", " / YEAR", "red", "xl")
-chip("Western price", L(14, 0.75), LE(16), 236, 462, "red", "sm", "up")
-count(L(15, 0.5), LE(16), 230, 566, 0, 350, L(15, 0.55), 0.9, "$", " / YEAR", "green", "xl")
-chip("Cipla · under $1 a day", L(15, 0.7), LE(16), 236, 698, "green", "sm", "up")
-cite("[MSF | 2001]", L(14, 0.6), LE(16))
-shot(c(17), "px_29021", "slow", ms=2.0)                            # "And today... more than two and a half lakh crore rupees a year."
-count(L(17, 0.4), LE(17), 120, 760, 0, 2.5, L(17, 0.45), 1.2, "₹", " LAKH CRORE+", "ink", "", 1)
+count(L(14, 0.6), c(17), 230, 330, 0, 10400, L(14, 0.62), 1.3, "$", " / YEAR", "red", "xl")
+chip("Western price", L(14, 0.75), c(17), 236, 462, "red", "sm", "up")
+count(L(15, 0.5), c(17), 230, 566, 0, 350, L(15, 0.55), 0.9, "$", " / YEAR", "green", "xl")
+chip("Cipla · under $1 a day", L(15, 0.7), c(17), 236, 698, "green", "sm", "up")
+cite("[MSF | 2001]", L(14, 0.6), c(17))
+shot(c(17), "J_seaside", "left")   # JNPT from the sea                            # "And today... more than two and a half lakh crore rupees a year."
+count(L(17, 0.4), LE(17), 120, 640, 0, 2.5, L(17, 0.45), 1.2, "₹", " LAKH CRORE+", "ink", "", 1)
 cite("[PIB | EXPORTS 2024-25]", L(17, 0.4), LE(17))
-shot(c(18), "R_tablet", "none", ms=0.0)                            # "Every tablet has two parts." ... coating, strip, box
+shot(c(18), "R_tablet", "none", ms=1.0)   # skip the empty first second                            # "Every tablet has two parts." ... coating, strip, box
 shot(c(21), "px_45682", "slow", ms=1.0)                            # "Indian companies are world class at that last part."
-shot(c(22), "R_capsule_open", "in", ms=6.0)                         # "But the powder you swallow?"
+shot(c(22), "PH_1851178", "in")                         # "But the powder you swallow?"
 shot(c(23), "D_niti_cover-01", "in", tag="DOCUMENT · NITI AAYOG")  # "In 2025, India bought these powders... sixty-five thousand crore"
-count(L(23, 0.5), LE(23), 120, 760, 0, 65000, L(23, 0.55), 1.4, "₹", " CRORE · 2025", "amber", "sm")
+count(L(23, 0.5), LE(23), 120, 640, 0, 65000, L(23, 0.55), 1.4, "₹", " CRORE · 2025", "amber", "sm")
 cite("[NITI AAYOG $7.4 BN | OUR CONVERSION]", L(23, 0.5), LE(23))
-shot(c(24), "R_map_stream", "none", ms=3.0)                        # "And the biggest seller, by far... China."
-shot(c(25), "D_niti_p-40", "in", dim=0.78, tag="DOCUMENT · NITI AAYOG")   # "And if you look at antibiotics... about eighty-six went to China."
+shot(c(24), "R_map_trade", "none", ms=3.0)   # no Hubei here: the route lands at Indian ports                        # "And the biggest seller, by far... China."
+shot(c(25), "D_niti_p-40", "in", dim=0.55, tag="DOCUMENT · NITI AAYOG")   # "And if you look at antibiotics... about eighty-six went to China."
 coins(L(25, 0.45), LE(25))
-gauge(L(25, 0.75), LE(25), 86.1, "ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
+gauge(L(25, 0.75), LE(25), 86.1, "TODAY · ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
 cite("[NITI AAYOG | TRADE WATCH Q4 FY26]", L(25, 0.4), LE(25))
-shot(c(26), "px_76395", "slow", dim=0.3)                           # "Even your fever tablet has a China link..."
-chip("Raw chemical: para-aminophenol", L(26, 0.6), LE(26), 120, 760, "amber", "sm", "up")   # P25: PAP, a big share from China
+shot(c(26), "PH_1853400", "in", dim=0.15)   # tablets, not a pipette robot                           # "Even your fever tablet has a China link..."
+chip("Raw chemical: para-aminophenol", L(26, 0.6), LE(26), 120, 640, "amber", "sm", "up")   # P25: PAP, a big share from China
 cite("[INDUSTRY REPORTS]", L(26, 0.6), LE(26))
 # ---- INDIA MADE ITS OWN PENICILLIN (3:16-4:19)
-shot(c(27), "W_L0012314", "in")                                    # "So you might be thinking — has it always been like this?"
-shot(c(29), "Y04", "crop", ms=8.0, origin="50% 50%")              # "Pimpri, near Pune. Nineteen fifty-four..."
+shot(c(27), "PH_1851178", "out")                                    # "So you might be thinking — has it always been like this?"
+shot(c(29), "W_L0032175", "in")   # an archive drawing carries 1954 (the HAL wall footage is today)              # "Pimpri, near Pune. Nineteen fifty-four..."
 datebig("1954", "PIMPRI · NEAR PUNE", L(29, 0.05), LE(29))
 shot(c(30), "W_L0012314", "out")                                   # "Penicillin was the miracle drug of that time..."
-chip("Miracle drug", L(30, 0.1), LE(30) + 2.0, 120, 760, "green", "", "up")
-shot(c(31), "Y04", "crop", ms=[14.5, 6.0], origin="50% 50%")             # "The government sets up... Hindustan Antibiotics. By 1956..."
+chip("Miracle drug", L(30, 0.1), LE(30) + 2.0, 120, 640, "green", "", "up")
+shot(c(31), "Y04", "crop", ms=[14.25, 7.35], origin="50% 50%", tag="FOOTAGE · ABP MAJHA · TODAY")             # "The government sets up... Hindustan Antibiotics. By 1956..."
 namelt("Hindustan Antibiotics", "PIMPRI · SET UP 1954 · PENICILLIN BY 1956", L(31, 0.15), LE(31))
 cite("[DEPT OF PHARMACEUTICALS | HAL]", L(31, 0.15), LE(31))
 shot(c(32), "R_map_india", "none", ms=0.0)                         # "Just think about it. Picture your grandparents' India..."
-shot(S(32, 2) - PRE, "W_L0032175", "in")   # "A young, poor country, growing... in its own factory" (penicillin production apparatus, archival)
-shot(c(33), "px_262464", "slow", ms=1.0, dim=0.2)                  # "Soon, others join in — Alembic, Sarabhai and Ranbaxy..."
+shot(S(32, 2) - PRE, "W_L0012314", "out")   # "A young, poor country, growing... in its own factory" (penicillin production apparatus, archival)
+shot(c(33), "px_262464", "slow", ms=1.0, dim=0.2, tag="PIXABAY · ILLUSTRATIVE · TODAY")                  # "Soon, others join in — Alembic, Sarabhai and Ranbaxy..."
 plate("Alembic", "", L(33, 0.35), LE(33), 160, 300); plate("Sarabhai", "", L(33, 0.45), LE(33), 560, 300); plate("Ranbaxy", "", L(33, 0.55), LE(33), 1000, 300)
 shot(c(34), "R_fermenter", "push", ms=0.0)                         # "How do you actually make penicillin?"
 # ---- WHY PENICILLIN IS A SCALE GAME (4:19-5:43)
 shot(c(35), "px_197486", "slow", ms=4.0)                           # "Many medicines, like paracetamol, are cooked from chemicals..."
-chip("Cooked", L(35, 0.2), S(35, 1), 120, 760, "steel", "", "pop")
+chip("Cooked", L(35, 0.2), S(35, 1), 120, 640, "steel", "", "pop")
 shot(S(35, 1) - PRE, "W_B0004595", "in")                           # "Penicillin is different. Penicillin is grown."
-chip("Grown", S(35, 2), LE(35), 120, 760, "green", "", "pop")
+chip("Grown", S(35, 2), LE(35), 120, 640, "green", "", "pop")
 shot(c(36), "W_B0004843", "in")                                    # "You take a special mould... a cousin of the green patches..."
 shot(S(36, 1) - PRE, "R_fermenter", "none", ms=0.5)                # "You put it in a giant steel tank... sugar and air."
 shot(c(37), "R_fermenter", "none", ms=6.8)                         # "For about a week, the tank runs day and night..."
+shot(S(37, 2) - PRE, "R_fermenter", "none", ms=9.8)   # the stray germ hits a growing culture (day 2-3), not the finished gold
 chip("One germ = lost batch", S(37, 2), LE(37) + 2.0, 120, 160, "red", "sm", "up")
 el(f'<div class="contam" {attrs(S(37, 2) + 0.15, LE(37) + 2.0, "fade", 0.9)}></div>', S(37, 2) + 0.15, LE(37) + 2.0)   # the broth turns murky (ILLUSTRATION)
 shot(c(38), "R_fermenter", "none", ms=15.0)                        # "Then you take the penicillin out... penicillin G."
@@ -247,41 +260,41 @@ shot(S(39, 2) - PRE, "PXb", "slow", ms=10.0, dim=0.3)              # "From that 
 chip("Penicillin G", L(39, 0.05), LE(39), 120, 300, "green", "sm", "left")
 chip("→ The base (6-A.P.A.)", L(39, 0.3), LE(39), 120, 420, "steel", "sm", "left")
 chip("→ Amoxicillin", L(39, 0.75), LE(39), 120, 540, "ink", "sm", "left")
-shot(c(40), "R_tanks", "none", ms=0.0)                             # "A bigger tank makes the powder cheaper. Much cheaper."
+shot(c(40), "R_tanks", "none", ms=0.5)                             # "A bigger tank makes the powder cheaper. Much cheaper."
 shot(c(42), "Y06", "slow", ms=4.0)                                 # "Think of a flour mill. A big chakki grinds each kilo cheaper..."
-chip("Small chakki", L(42, 0.1), S(42, 2), 120, 760, "steel", "sm", "up")
+chip("Small chakki", L(42, 0.1), S(42, 2), 120, 640, "steel", "sm", "up")
 shot(S(42, 2) - PRE, "Y05", "crop", ms=1.0, origin="50% 10%")     # "Double your tank, and your costs don't double... but your output does."
-chip("Bigger mill · cheaper kilo", S(42, 2) + 0.3, LE(42) + 2.0, 120, 760, "green", "sm", "up")
+chip("Bigger mill · cheaper kilo", S(42, 2) + 0.3, LE(42) + 2.0, 120, 640, "green", "sm", "up")
 shot(c(43), "R_tanks", "none", ms=9.4)                             # "So you can guess who wins..."
-shot(c(44), "R_map_stream", "none", ms=6.0)                        # "And that's exactly where India's story turns."
+shot(c(44), "px_45677", "slow", ms=1.0, dim=0.3)                        # "And that's exactly where India's story turns."
 # ---- HOW CHINA TOOK THE POWDER (5:43-7:23)
-shot(c(45), "Y04", "crop", ms=[10.0, 14.5], origin="50% 50%", dim=0.35)    # "Now, here's what we got wrong... only a few companies"
+shot(c(45), "Y04", "crop", ms=[10.45, 6.05], origin="50% 50%", dim=0.35, tag="FOOTAGE · ABP MAJHA · TODAY")    # "Now, here's what we got wrong... only a few companies"
 chip("Few licences", L(45, 0.35), LE(45), 120, 300, "red", "sm", "up")
 chip("Small plants", L(45, 0.6), LE(45), 120, 420, "red", "sm", "up")
 cite("[MDPI ECONOMIES 2021]", L(45, 0.35), LE(45))
 shot(c(46), "px_199788", "slow", ms=0.0)                            # "Meanwhile, in the nineteen nineties, China went all in..."
-chip("Cheap power · cheap water", L(47, 0.3), LE(47), 120, 760, "amber", "sm", "up")
+chip("Cheap power · cheap water", L(47, 0.3), LE(47), 120, 640, "amber", "sm", "up")
 cite("[CFR | THE PHARMA CHOKE POINT]", L(47, 0.3), LE(47))
-shot(c(48), "R_map_stream", "none", ms=8.0)                        # "And then cheap Chinese penicillin flooded the world market..."
-shot(c(49), "px_262189", "slow", ms=2.0, dim=0.78)                 # "Nineteen ninety-one — the year India opened up its economy..."
+shot(c(48), "R_map_trade", "none", ms=9.0)                        # "And then cheap Chinese penicillin flooded the world market..."
+shot(c(49), "D_budget1991-01", "in", dim=0.35, tag="DOCUMENT · BUDGET SPEECH 1991-92")                 # "Nineteen ninety-one — the year India opened up its economy..."
 datebig("1991", "INDIA OPENS ITS ECONOMY", L(49, 0.05), LE(50))
-gauge(L(49, 0.65), LE(50) + 1.0, 0.5, "ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE", "RIS DP 268")
+gauge(L(49, 0.65), LE(50) + 1.0, 0.5, "1991 · ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE", "RIS DP 268")
 shot(c(51), "px_212001", "slow", ms=[0.0, 3.6, 7.2], dim=0.55)
 shot(c(54), "px_212000", "slow", ms=[0.0, 3.8, 7.6], dim=0.55)   # the roll call over still gears (no people under the stamps)    # "Then, one by one, the Indian penicillin plants went quiet."
 for i, (name, ln) in enumerate([("Hindustan Antibiotics", 52), ("I.D.P.L.", 53), ("Torrent · Ranbaxy · Sarabhai", 54), ("Alembic", 55)]):
-    plate(name, "", L(ln), LE(55) + 1.4, 160, 170 + i * 170)
-    stamp("STOPPED", round(LE(ln) - 0.35, 3), LE(55) + 1.4, 1180, 175 + i * 170)
+    plate(name, "", L(ln), LE(55) + 1.4, 160, 230 + i * 160)   # clear of the logo bug (top right)
+    stamp("STOPPED", round(LE(ln) - 0.35, 3), LE(55) + 1.4, 1100, 235 + i * 160)
 cite("[RIS DP 268 · ISID WP239]", L(52), LE(55) + 1.4)
 shot(c(56), "px_23215", "slow", ms=4.0)                            # "By about twenty twenty, India was importing all of that base powder"
-chip("Base powder: 100% imported", L(56, 0.3), LE(56), 120, 760, "amber", "sm", "up")
+chip("Base powder: 100% imported", L(56, 0.3), LE(56), 120, 640, "amber", "sm", "up")
 cite("[ISID WP239]", L(56, 0.3), LE(56))
 shot(c(57), "D_niti_p-40", "in", dim=0.6, tag="DOCUMENT · NITI AAYOG")   # "Remember that one per cent?... around eighty-six per cent."
-gauge(L(57, 0.6), LE(57), 86.1, "ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
+gauge(L(57, 0.6), LE(57), 86.1, "TODAY · ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
 shot(c(58), "px_45680", "slow", ms=[0.0, 2.9], dim=0.45)                  # "Niti Aayog estimates Chinese powder costs 35-40% less..."
 shot(S(58, 1) - PRE, "px_199788", "in", ms=6.0, dim=0.45)           # "So tell me — if you ran a company, would you build a plant here?"
 chip("China's powder: 35–40% cheaper", L(58, 0.2), LE(58), 120, 160, "amber", "sm", "up")
 cite("[NITI AAYOG ESTIMATE]", L(58, 0.2), LE(58))
-shot(c(59), "R_tanks", "none", ms=12.0)                            # "That's the trap..."
+shot(c(59), "Y05", "crop", ms=8.0, origin="50% 10%")   # the big mill again, not the same COST OF EACH KILO frame                            # "That's the trap..."
 shot(c(60), "D_dgft_2020_noti50-1", "out", tag="DOCUMENT · DGFT")  # "Then Corona came — and India had to lock its own doors."
 shot(c(61), "px_45682", "slow", ms=6.0, dim=0.6)                   # "And this time, the central government decided to break the trap."
 shot(c(62), "px_197486", "slow", ms=1.0, dim=0.65)                 # "It launched a scheme..."
@@ -290,48 +303,48 @@ chip("41 ingredients", L(62, 0.25), LE(62), 120, 460, "saffron", "sm", "up")
 cite("[DEPT OF PHARMACEUTICALS | PLI 2020]", L(62, 0.25), LE(62))
 shot(c(63), "R_map_india", "none", ms=3.6)                         # "And one company took the biggest bet of all."
 # ---- KAKINADA SWITCHES IT BACK ON (the promised minute eight)
-shot(c(64) - BEATS[63] + 0.2, "Y02", "slow", ms=[32.0, 50.0, 81.0])              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
+shot(c(64) - BEATS[63] + 0.2, "Y02", "crop", ms=[11.0, 50.0, 80.9], origin="35% 50%")   # the satellite zoom onto the coast              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
 namelt("Kakinada, Andhra Pradesh", "LYFIUS PHARMA · AUROBINDO PHARMA", L(64, 0.1), LE(64))
-shot(c(65), "Y02", "crop", ms=62.0, origin="50% 8%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
+shot(c(65), "Y02", "crop", ms=[65.6, 71.6, 83.6], origin="35% 50%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
 chip("₹2,500 cr · company figure", L(65, 0.35), LE(65), 120, 160, "saffron", "sm", "up")
 chip("15,000 tonnes a year", L(65, 0.7), LE(65), 120, 280, "saffron", "sm", "up")
-shot(c(66), "Y02", "crop", ms=[74.0, 81.0], origin="50% 8%")             # "In twenty twenty-four, the tanks start running..."
+shot(c(66), "Y02", "crop", ms=[88.0, 101.5], origin="35% 50%")             # "In twenty twenty-four, the tanks start running..."
 datebig("2024", "PENICILLIN G · MADE IN INDIA AGAIN", L(66, 0.05), LE(66))
-shot(c(67), "px_216619", "slow", ms=4.0)                           # "But you know the trap... cheap imports were still waiting at the port."
+shot(c(67), "J_aerial", "out")   # cheap imports at an Indian port                           # "But you know the trap... cheap imports were still waiting at the port."
 shot(c(68), "D_dgft_2026_mip-1", "in", tag="DOCUMENT · DGFT")      # "So on the twenty-ninth of January, 2026, the government stepped in."
 datebig("29 JAN 2026", "MINIMUM IMPORT PRICE", L(68, 0.1), LE(69))
 # the floor as a border gate; the amoxicillin and 6-APA lanes (scene 9.6 s) open on "The same rule covers..."
 shot(c(69), "R_mipgate", "none", ms=round(max(0.0, 9.6 - (S(69, 2) - c(69))), 3))   # "It set a minimum price at the border..."
 cite("[DGFT | 29 JAN 2026]", L(68, 0.1), LE(69))
 shot(c(70), "R_fermenter_lit", "none", ms=4.0)                     # "Think of it as a shield..."
-shot(c(71), "px_23759", "slow", ms=2.0, dim=0.5)                 # "And in September 2026... below a fair price."
-chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 760, "steel", "sm", "up")
+shot(c(71), "R_mipgate", "none", ms=12.5, dim=0.25)   # "below a fair price": the gate                 # "And in September 2026... below a fair price."
+chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 640, "steel", "sm", "up")
 chip("On Lyfius Pharma's application", L(71, 0.45), LE(71), 120, 830, "steel", "sm", "up")   # DGTR initiation 28 Sep 2026 (P63 note)
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
 datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))
-shot(c(73), "Y02", "crop", ms=50.0, origin="50% 8%")                                # "That's the date to watch..."
-shot(c(74), "Y02", "crop", ms=86.0, origin="50% 8%")            # "And here's the balance the government has to strike..."
+shot(c(73), "Y02", "crop", ms=33.0, origin="35% 50%")                                # "That's the date to watch..."
+shot(c(74), "Y02", "crop", ms=[90.2, 91.6], origin="35% 50%")            # "And here's the balance the government has to strike..."
 chip("Protect the plant", L(74, 0.4), LE(74), 120, 160, "saffron", "sm", "up")
 chip("Keep medicines affordable", L(74, 0.7), LE(74), 120, 280, "green", "sm", "up")
-shot(c(75), "Y02", "crop", ms=[49.0, 64.0], origin="50% 8%")            # "And it's not just penicillin... five thousand crore"
+shot(c(75), "Y02", "crop", ms=[82.3, 72.0], origin="35% 50%")            # "And it's not just penicillin... five thousand crore"
 count(L(75, 0.45), LE(75), 120, 160, 0, 5000, L(75, 0.5), 1.0, "₹", " CRORE+ INVESTED", "saffron", "sm")
 cite("[DEPT OF PHARMACEUTICALS | JUNE 2026]", L(75, 0.45), LE(75))
 shot(c(76), "R_map_india", "none", ms=6.5)                         # "Three giant bulk drug parks... Nakkapalli... same state"
-shot(c(77), "R_map_stream", "none", ms=10.0)                       # "None of those parks is up and running yet..."
-chip("None running yet", L(77, 0.25), LE(77), 120, 760, "red", "sm", "up")
-shot(c(78), "Y02", "crop", ms=110.0, origin="50% 8%")            # "So has India won? Not yet. But it's back in the fight."
+shot(c(77), "R_map_india", "none", ms=9.0)   # "none of those parks": the park pins                       # "None of those parks is up and running yet..."
+chip("None running yet", L(77, 0.25), LE(77), 120, 640, "red", "sm", "up")
+shot(c(78), "Y02", "crop", ms=[101.5, 66.0], origin="35% 50%")            # "So has India won? Not yet. But it's back in the fight."
 # ---- RULE, RUIN, REALITY + WHAT IT MEANS FOR YOU
 shot(c(79), "px_45675", "in", ms=8.0, dim=0.3)                     # "So here's the lesson..."
 shot(c(80), "D_dgft_2020_noti50-1", "in", tag="DOCUMENT · DGFT")  # "And the cost? You saw it in the Corona days..."
-shot(c(81), "Y02", "crop", ms=96.0, origin="50% 8%")             # "But here's the reality today..."
-shot(c(82), "PXa", "slow", ms=0.3)                                 # "So what does this mean for you? Keep taking your medicines..."
+shot(c(81), "Y02", "crop", ms=[88.0, 83.6], origin="35% 50%")             # "But here's the reality today..."
+shot(c(82), "PH_1540220", "in")                                 # "So what does this mean for you? Keep taking your medicines..."
 shot(c(84), "R_capsule_open", "push", ms=3.6)                      # "But the next time you take an antibiotic... began in China."
 shot(c(85), "R_map_home", "none", ms=0.8)                          # "And if the plant in Kakinada wins... right here in India."
 shot(c(86), "R_map_home", "out", ms=6.0, dim=0.5)                  # "Medicines aren't the only missing piece... India's own A.I.?"
 chip("Next: India's own A.I.", L(86, 0.5), END, 120, 160, "steel", "", "up")
 shot(c(87), "endcard", "push", tag="")                             # pinned question, channel line, end screen
-chip("Which medicine should India make fully?", L(87, 0.2), END, 120, 760, "saffron", "sm", "up")
+chip("Which medicine should India make fully?", L(87, 0.2), END, 120, 640, "saffron", "sm", "up")
 
 
 # ---------- captions from the sentence timings (film time) ----------
@@ -354,8 +367,14 @@ def captions():
         tot = sum(len(p) for p in split); t = a
         for n, p in enumerate(split):
             d = (b - a) * len(p) / tot
-            out.append((round(t, 2), round(t + d + (0.12 if n == len(split) - 1 else 0.0), 2), esc(p))); t += d
-    return out
+            out.append((round(t, 2), round(t + d, 2), esc(p))); t += d
+    # hold each caption until its words are over, then fade (review: captions faded out mid-word): run on 0.35 s,
+    # but never into the next caption
+    held = []
+    for i, (a, b, p) in enumerate(out):
+        nxt = out[i + 1][0] if i + 1 < len(out) else b + 1.0
+        held.append((a, round(max(b, min(b + 0.35, nxt - 0.03)), 2), p))
+    return held
 
 
 def film_vo():
@@ -399,7 +418,7 @@ FRAMES = {"doc": [("doc", "50% 28%"), ("doc", "50% 52%"), ("doc", "50% 76%")],
         "foot": [("cutA", "32% 38%"), ("cutB", "68% 58%"), ("cutA", "62% 34%"), ("cutB", "36% 62%")]}
 
 
-SPLIT_R = {"R_tablet"}   # renders whose long holds sit still (freezedetect), centred so a punch-in keeps the labels
+SPLIT_R = {"R_tablet", "R_tanks"}   # renders whose long holds sit still (freezedetect), centred so a punch-in keeps the labels
 
 
 def split_long():
@@ -426,9 +445,102 @@ def split_long():
     SEQ[:] = out
 
 
+# Clean source ranges, checked frame by frame (owner's review, 2026-10-29): a piece of third-party footage may only play
+# inside one of these, so it never shows a few frames of the promo's own next shot (the "flash frames"), the Prime
+# Minister and PLI slides (Y02 17-32 s), title cards, lower-third boxes or the press meet (Y04 from 19 s).
+CLEAN = {
+    "Y02": [(11.0, 13.9), (33.0, 34.9), (50.0, 52.5), (65.6, 67.6), (71.6, 72.9), (73.0, 73.9), (80.9, 82.2), (82.3, 83.5),
+            (83.6, 84.8), (88.0, 90.1), (90.2, 91.5), (91.6, 93.3), (101.5, 102.8)],
+    "Y04": [(6.05, 7.25), (7.35, 10.3), (10.45, 14.1), (14.25, 19.05)],
+}
+FPS = 30
+
+
+_RATE = {}
+
+
+def rate(src):
+    """source frames per second when its conform exists, else 30: the conform plays each source frame once at 30 fps, so
+    1 film second uses 30/rate source seconds, and source time t sits at t * rate/30 in the conformed file"""
+    if src not in _RATE:
+        r = 30.0
+        if media(src).parent.name == "conformed":
+            n, d = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=r_frame_rate",
+                                   "-of", "csv=p=0", str(media(src, raw=True))], capture_output=True, text=True).stdout.strip().split("/")
+            r = int(n) / int(d)
+        _RATE[src] = r
+    return _RATE[src]
+
+
+def clean_ranges(src):
+    """CLEAN, else the spans between the source's own cuts (assets/cuts/<name>.txt from scdet), 0.1 s clear of each cut."""
+    if src in CLEAN:
+        return CLEAN[src]
+    m = media(src, raw=True)
+    cf = A / "cuts" / (m.stem + ".txt")
+    if m.suffix != ".mp4" or not cf.exists():
+        return None
+    cuts = [float(x) for x in cf.read_text().split()]
+    if not cuts:
+        return None
+    edges = [0.0] + cuts + [probe(m)]
+    return [(a + (0.1 if a else 0), b - 0.1) for a, b in zip(edges, edges[1:]) if b - a > 0.6]
+
+
+def clean_assign():
+    """Fit every footage piece inside clean ranges: start in the range that holds its in-point (or the next one); a piece
+    longer than what is left of its range continues in the next range as a new cut (at least 1 s each)."""
+    out = []
+    for i, s in enumerate(SEQ):
+        rs = clean_ranges(s["src"])
+        end = SEQ[i + 1]["t0"] if i + 1 < len(SEQ) else END
+        sp = 30.0 / rate(s["src"])            # source seconds per film second
+        d = (end - s["t0"]) * sp
+        if not rs:
+            out.append(s); continue
+        k = next((j for j, (a, b) in enumerate(rs) if a - 1e-6 <= s["ms"] < b - 0.3), None)
+        if k is None:
+            k = next((j for j, (a, b) in enumerate(rs) if a >= s["ms"]), 0)
+        cur, t, left, first = max(s["ms"], rs[k][0]), s["t0"], d, True
+        for _ in range(40):
+            a, b = rs[k]
+            avail = b - cur
+            if avail >= left:
+                out.append(dict(s, t0=r3(t), ms=r3(cur)))
+                break
+            if left - avail < 1.0:          # keep the last piece at least 1 s: take less from this range
+                avail = left - 1.0
+            if avail >= 1.0:
+                out.append(dict(s, t0=r3(t), ms=r3(cur))); first = False
+                t += avail / sp; left -= avail
+            k = (k + 1) % len(rs); cur = rs[k][0]
+    SEQ[:] = out
+
+
+def snap_frames():
+    """Every cut and in-point on a whole 1/30 s frame (the half-frame offsets showed as one-frame slivers)."""
+    for s in SEQ:
+        s["t0"] = round(round(s["t0"] * FPS) / FPS, 4)
+        if media(s["src"]).suffix == ".mp4":
+            s["ms"] = s["ms"] * rate(s["src"]) / 30.0     # source time -> conformed time
+        s["ms"] = round(round(s["ms"] * FPS) / FPS, 4)
+
+
+def write_srt(caps):
+    """YouTube captions in this cut's own time (review: the align SRT was in raw-VO time, up to 14 s off the film)."""
+    def ts(x):
+        ms = int(round(x * 1000)); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); sec, ms = divmod(ms, 1000)
+        return f"{h:02d}:{m:02d}:{sec:02d},{ms:03d}"
+    rows = [f"{i}\n{ts(a)} --> {ts(b)}\n{html.unescape(t)}\n" for i, (a, b, t) in enumerate(caps, 1)]
+    (P / "youtube").mkdir(exist_ok=True)
+    (P / "youtube/subtitles.en.srt").write_text("\n".join(rows), encoding="utf-8")
+
+
 def emit():
     SEQ.sort(key=lambda s: s["t0"])
     split_long()
+    clean_assign()
+    snap_frames()
     for s, nxt in zip(SEQ, SEQ[1:] + [dict(t0=END)]):
         s["t1"] = nxt["t0"]
         assert s["t1"] - s["t0"] > 0.4, (s["src"], s["t0"], s["t1"])
@@ -442,6 +554,7 @@ def emit():
     for k in range(len(PARTS) - 1):
         emit_part(f"p{k + 1}", PARTS[k], PARTS[k + 1], caps)
     (P / "build/parts.json").write_text(json.dumps(PARTS))
+    write_srt(caps)
     film_vo()
     print(f"film {END:.1f}s ({int(END // 60)}:{END % 60:04.1f}); Kakinada at {L(64):.1f}s ({int(L(64) // 60)}:{L(64) % 60:04.1f}); "
           f"{len(SEQ)} shots, {len(OV)} overlays")
