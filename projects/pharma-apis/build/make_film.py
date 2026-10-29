@@ -323,8 +323,8 @@ cite("[DGFT | 29 JAN 2026]", L(68, 0.1), LE(69))
 shot(c(70), "R_fermenter_lit", "none", ms=4.0)                     # "Think of it as a shield..."
 shot(c(71), "R_mipgate", "none", ms=10.4, dim=0.25)   # "below a fair price": the gate
 shot(L(71, 0.5) - PRE, "R_map_trade", "none", ms=13.0, dim=0.2)   # "...whether China is selling penicillin here": the route in                 # "And in September 2026... below a fair price."
-chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 560, "steel", "sm", "up")
-chip("On Lyfius Pharma's application", L(71, 0.45), LE(71), 120, 630, "steel", "sm", "up")   # DGTR initiation 28 Sep 2026 (P63 note)
+chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 540, "steel", "sm", "up")
+chip("On Lyfius Pharma's application", L(71, 0.45), LE(71), 120, 640, "steel", "sm", "up")   # DGTR initiation 28 Sep 2026 (P63 note)
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
 datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))
@@ -351,7 +351,7 @@ shot(c(85), "R_map_home", "none", ms=0.8)                          # "And if the
 shot(c(86), "R_map_home", "out", ms=6.0, dim=0.5)                  # "Medicines aren't the only missing piece... India's own A.I.?"
 chip("Next: India's own A.I.", L(86, 0.5), END, 120, 160, "steel", "", "up")
 shot(c(87), "endcard", "push", tag="")                             # pinned question, channel line, end screen
-chip("Which medicine should India make fully?", L(87, 0.2), END, 120, 760, "saffron", "sm", "up")
+chip("Which medicine should India make fully?", L(87, 0.2), END, 120, 290, "saffron", "sm", "up")
 
 
 # ---------- captions from the sentence timings (film time) ----------
