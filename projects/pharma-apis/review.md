@@ -84,3 +84,8 @@ Round 2 creative pass (owner, 2026-10-29: "use your creativity everywhere"):
 - Minimum import price: a border gate; containers under ₹2,216/kg stopped ("LICENCE NEEDED"), dearer ones pass; the
   amoxicillin (₹2,733) and 6-APA (₹3,405) lanes open on "the same rule covers…" (container prices ILLUSTRATIVE; floors
   from DGFT Notification 56/2025-26). Thuds and clicks on the gate, a whoosh as the notes fly.
+
+### v4 720p review (2026-10-29)
+11:32, 1280x720, −14.1 LUFS, peak −1.1 dBFS; 346 frames on 39 sheets (`runs/pharma-apis/qa4`). Freezes: 4, all ≤ 3.3 s.
+Minor, for the next round: the Cipla scene holds ~3 s after the notes fly (2:01); the tanks scene opens on a near-still
+1.6 s (5:23); the "one germ" murk lands on the Day 7 gold broth (4:57), not on a growing culture.
