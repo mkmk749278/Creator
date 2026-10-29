@@ -237,6 +237,12 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   `scripts/vo_blocks.py` → `projects/<slug>/vo_blocks.md`, sent with SendUserFile. The file is extra to the chat blocks,
   never instead. With every change, name **which blocks to record again**; the owner re-records freely (2026-10-28), so
   never keep a weaker line to save a take and never splice words into a take (PLAYBOOK §4a-2).
+- **Every take is checked before the film uses it (2026-10-29; PLAYBOOK §15):** the jet engine film shipped two doubled
+  phrases from spliced re-takes, and a trim cut the last sentence off four pharma blocks. Run `scripts/vo_take_check.py`
+  after every alignment (sentence pace vs words, speech left after a trim; no speech recognition) and listen to every
+  flag; respell names and units the voice misreads (`Sah-frahn`, `Naa-shik`, `Ghaa-tuk`, `kilo-newtons`, never `kN`/`cr`;
+  the `RESPELL` list and "Listen for" lines in `scripts/vo_blocks.py`); the owner gets one audio-only pass of the joined
+  VO before the film is locked.
 - **Talk, don't read** (owner, 2026-10-09): narration sounds like the owner talking to you, never like reading text aloud.
   Heavy Tenglish like NB Show (English words and short phrases where people really use them), మీరు + మనం address, spoken
   verb forms, no newspaper words (ఈ నేపథ్యంలో, తద్వారా, కావున). **Clarity first:** full sentences with a subject and a

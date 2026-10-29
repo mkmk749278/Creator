@@ -435,7 +435,12 @@ lines like "Now let us understand…" sounded like a lecture, and raw acronyms w
 **Phonetics for Akash (mandatory in VO text):** `Sibill` (CIBIL), `Loke Uh-daa-lut` (Lok Adalat), `Ray-rah` (RERA),
 and letter acronyms with hyphens: `R-B-I`, `E-M-I`, `N-P-A`, `G-S-T`, `B-N-S-S`, `F-I-R`, `T-P-A`. Apply the same to
 any acronym said letter by letter (R-D-S-O, R-F-I-D, C-R-S, L-H-B). Acronyms people say as a word stay as words (Isro,
-Kavach). The English lint fails any bare capital acronym that is not on the project's word list. Amounts: the guide
+Kavach). The English lint fails any bare capital acronym that is not on the project's word list. **Names and units the
+voice has misread** (the jet engine film, reported by an outside review on 2026-10-29: "Safran" heard as saffron,
+"Nashik" as Nasi, "Ghatak" as gutak, kilonewtons slurred): write `Sah-frahn`, `Naa-shik`, `Ghaa-tuk` and `kilo-newtons` in the VO text, never `kN`, `sq km` or
+`cr`; captions and on-screen text keep the real spelling. `scripts/vo_blocks.py` warns on the known list (`RESPELL`) and
+prints a "Listen for" line under every block (names, acronyms, units): any foreign or Indian proper noun the voice may
+not know gets a respelling the first time it appears, and the owner listens for each one in the take. Amounts: the guide
 allows `₹65,000` or `65 thousand rupees`; we keep **number words** in VO text ("sixty five thousand rupees") because
 digits and lakh/crore grouping have been read the Western way.
 
@@ -2008,6 +2013,34 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   real people's faces. The Lyfius promo carries a title card and lower-third boxes at known times. *So:* a 2–4 s contact
   strip of the whole clip (`fps=1/2,tile=6x5`), the clean ranges written next to the asset in the EDL, and every
   in-point checked against them. Real people in news footage never sit under a verdict graphic.
+
+**Jet engine film: production errors found after upload (owner's review, 2026-10-29).** An outside review of "30 Tejas
+Jets Are Ready. Why Can't They Fly?" heard two doubled phrases and several misread names. Checked against our files:
+- **Doubled phrases came from spliced re-takes.** "past the speed of sound" (02:18) and "and survive for twenty-five
+  years" (05:08) each play twice. Both sit exactly on splices in `projects/jet-engine-bet/final/splices.json`
+  (`l17_blow.mp3`, `l39_fighter.mp3`). The re-takes themselves said the phrase twice: the L17 fix *removed* a word
+  ("forty-ton") yet the re-take ran 0.6 s longer than the line it replaced, and the L39 re-take ran 2.3 s longer for a
+  small wording change. Nobody compared a re-take's length with its text before splicing it in. *Rules:* never splice
+  a phrase or a line into a take (the owner re-records the whole block, §4a-2); every take passes
+  `scripts/vo_take_check.py` (each sentence's speech time against its words, no speech recognition) before it goes
+  into a film, and every flagged sentence is listened to; a take longer than its text predicts is a repeat until proven
+  otherwise.
+- **Misread names and units** (reported: Safran → saffron, Nashik → Nasi, Ghatak → gutak, kilonewtons slurred,
+  delinked; the script spelled all of them correctly, so the voice or YouTube's auto-captions misread them):
+  respell them in the VO text (§4a-4 phonetics, the `RESPELL` list in `scripts/vo_blocks.py`) and give the owner a
+  "Listen for" list per block. Upload our own SRT so YouTube shows the real spellings.
+- **Audio-only pass before the film is locked:** the owner plays the joined VO (the trimmed, joined file the film uses,
+  not the raw takes) once through, at 1.5× if he likes, listening only for doubled words, misread names and cut-off
+  endings. Sent as one MP3 to Drive with the recording file.
+
+**Pharma film: the take trim cut off the last sentence of four blocks (found 2026-10-29 while checking the above).**
+`tools/align_blocks.py` cut each take 0.25 s after its *last pause*, assuming every take ends in silence. ElevenLabs
+takes often end right after the last word, so the cut fell at the pause before the last sentence: blocks 1, 4, 5, 6 and
+8 lost 0.6–3.7 s each ("So our plants stayed too small to be cheap", "And this time, the central government decided to
+break the trap", "Jai Hind" …), and the aligner squeezed their text into the remaining audio (0.15–0.18 s a word against
+a 0.31 median). *Fix:* trim only a silence that reaches the end of the file, and stop if a trim would remove more than
+0.6 s. *Rule:* `scripts/vo_take_check.py --takes … --trimmed …` after every alignment; it flags speech after any trim
+point and any sentence far faster or slower than the film's median pace.
 - **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".

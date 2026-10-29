@@ -9,10 +9,34 @@ usage: python3 scripts/vo_blocks.py projects/<slug>/vo.txt --prefix pha --title 
        (writes projects/<slug>/vo_blocks.md)
 """
 import argparse
+import re
 from pathlib import Path
 
 VOICE = ("Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). "
          "Paste each block as is; the blank lines are pauses.")
+
+
+# Words a voice model has misread in our films, with the spelling that reads right (PLAYBOOK §4a-4). The VO text uses
+# the right-hand form; captions and on-screen text keep the real spelling.
+RESPELL = {"Safran": "Sah-frahn", "Nashik": "Naa-shik", "Ghatak": "Ghaa-tuk", "kN": "kilo-newtons"}
+COMMON = {"I", "I'm", "I'll", "I've", "India", "Indian", "Corona", "China", "Chinese", "January", "February", "March",
+          "April", "May", "June", "July", "August", "September", "October", "November", "December", "Jai", "Hind"}
+TECH = re.compile(r"newton|delink|kilo|metre|gram", re.I)   # units and jargon the voice has slurred
+
+
+def listen_for(text):
+    """Names, acronyms and long technical words to check in the take: the words a voice model is most likely to misread
+    (the jet engine film shipped "Safran" read as saffron and kilonewtons slurred)."""
+    words, seen = [], set()
+    for sent in re.split(r"(?<=[.?!:\u2014])\s+|[\"\u201c\u201d]\s*", text):   # a clause start is not a name
+        toks = re.findall(r"[A-Za-z][A-Za-z.\u2019'-]*", sent)
+        for i, w in enumerate(toks):
+            w = re.sub(r"[\u2019']s$", "", w).strip(".\u2019'-")
+            if len(w) < 2 or w in seen or w in COMMON:
+                continue
+            if (i and w[0].isupper()) or TECH.search(w) or re.fullmatch(r"(?:[A-Z]\.){2,}[A-Z]?|[A-Z]{2,}", w) or len(w) >= 13:
+                seen.add(w); words.append(w)
+    return words
 
 
 def split_blocks(lines, limit):
@@ -55,6 +79,13 @@ def main():
         text = "\n\n".join(block)
         out += [f"### Block {i} of {n} · {len(text)} characters · save as `voice/{args.prefix}_b{i:02d}.mp3`", "",
                 "```", text, "```", ""]
+        lf = listen_for(text)
+        if lf:
+            out += ["Listen for: " + ", ".join(lf) + ". Every word clear, nothing said twice, the last word not cut off.", ""]
+
+    for bad, good in RESPELL.items():
+        if re.search(rf"\b{re.escape(bad)}\b", "\n".join(lines)):
+            print(f"warning: '{bad}' is misread by the voice: write '{good}' in vo.txt (captions keep '{bad}')")
 
     dest = Path(args.out) if args.out else vo.with_name("vo_blocks.md")
     dest.write_text("\n".join(out), encoding="utf-8")

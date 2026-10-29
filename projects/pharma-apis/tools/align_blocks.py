@@ -27,12 +27,18 @@ def duration(p):
     return float(run("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(p)).stdout)
 
 def trimmed(mp3, wav):
-    """Cut the take 0.25 s after its last pause starts, so every block join gets the same GAP."""
+    """Trim only the take's trailing silence (keep 0.25 s), so every block join gets the same GAP.
+    A take whose last word runs to the end of the file has no trailing silence and is kept whole: cutting at its last
+    *pause* dropped the last sentence of four pharma blocks, "Jai Hind" included (PLAYBOOK §15, 2026-10-29)."""
     log = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(mp3), "-af", "silencedetect=n=-45dB:d=0.2", "-f", "null", "-"],
                          capture_output=True, text=True).stderr
     starts = [float(x) for x in re.findall(r"silence_start: ([0-9.]+)", log)]
+    ends = [float(x) for x in re.findall(r"silence_end: ([0-9.]+)", log)]
     d = duration(mp3)
-    cut = starts[-1] + 0.25 if starts and d - starts[-1] > 0.45 else d
+    trailing = starts and (len(ends) < len(starts) or ends[-1] >= d - 0.05)   # the last silence reaches the end
+    cut = starts[-1] + 0.25 if trailing and d - starts[-1] > 0.45 else d
+    lost = d - cut
+    assert lost < 0.6, f"{mp3.name}: trimming {lost:.2f} s of the take, more than silence: check it"
     run("ffmpeg", "-y", "-loglevel", "error", "-i", str(mp3), "-t", f"{cut:.3f}",
         "-af", f"afade=t=out:st={max(0, cut - 0.08):.3f}:d=0.08", "-ar", "48000", "-ac", "1", str(wav))
     return cut
