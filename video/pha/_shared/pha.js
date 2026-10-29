@@ -13,6 +13,9 @@
     // the framings a long hold cuts to when make_film.py splits it (a new angle every 3.5-5 s)
     crop2: [{ scale: 1.42 }, { scale: 1.48 }], cutA: [{ scale: 1.2 }, { scale: 1.25 }], cutB: [{ scale: 1.12 }, { scale: 1.17 }],
     doc: [{ scale: 1.55 }, { scale: 1.62 }],
+    // the Lyfius promo: 1.6x anchored 30% from the top keeps 11-74% of the height, so its lower-third boxes (75-96%)
+    // and top-right logo (3-10%) never show (owner's review, 2026-10-29)
+    y02: [{ scale: 1.6 }, { scale: 1.66 }],
   };
   const fmt = (v, pre, suf, dec) => pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString("en-IN")) + suf;
   window.PHA_animate = function (tl, D) {

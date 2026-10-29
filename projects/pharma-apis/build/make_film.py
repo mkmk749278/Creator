@@ -199,7 +199,7 @@ shot(c(10), "PH_257336", "in")   # real strips (the capsule animation is kept fo
 shot(c(11), "PXa", "slow", ms=0.5)                                 # "And before you worry — this isn't about the quality..."
 chip("Quality: not the issue", L(11, 0.2), LE(11), 120, 160, "green", "sm", "up")
 chip("Supply: the issue", L(11, 0.6), LE(11), 120, 260, "amber", "sm", "up")
-shot(c(12), "Y02", "crop2", ms=[49.78, 42.0, 86.26], origin="35% 35%")              # "Stay with me. Around minute eight... Andhra Pradesh"
+shot(c(12), "Y02", "y02", ms=[49.78, 42.0, 86.26], origin="35% 30%")              # "Stay with me. Around minute eight... Andhra Pradesh"
 chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm", "up")
 # ---- INDIA EARNED IT (1:31-2:50)
 shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
@@ -208,10 +208,10 @@ shot(c(14), "D_msf2001-01", "in", tag="DOCUMENT · MSF · 2001")   # the 2001 AR
 shot(S(14, 2) - PRE, "R_cipla", "none", ms=round(max(0.0, 10.0 - (L(15, 0.55) - (S(14, 2) - PRE))), 3))   # "The medicines exist... a dollar a day... One dollar."
 datebig("2001", "H.I.V. MEDICINES", L(14, 0.05), c(17))
 # same unit on both cards (owner's review, 2026-10-29): MSF 7 Feb 2001, "about $10,400" in the US vs Cipla's "$350 per year" (P14, P15)
-count(L(14, 0.6), c(17), 230, 330, 0, 10400, L(14, 0.62), 1.3, "$", " / YEAR", "red", "xl")
-chip("Western price", L(14, 0.75), c(17), 236, 462, "red", "sm", "up")
-count(L(15, 0.5), c(17), 230, 566, 0, 350, L(15, 0.55), 0.9, "$", " / YEAR", "green", "xl")
-chip("Cipla · under $1 a day", L(15, 0.7), c(17), 236, 698, "green", "sm", "up")
+count(L(14, 0.6), c(17), 230, 250, 0, 10400, L(14, 0.62), 1.3, "$", " / YEAR", "red", "xl")
+chip("Western price", L(14, 0.75), c(17), 236, 382, "red", "sm", "up")
+count(L(15, 0.5), c(17), 230, 470, 0, 350, L(15, 0.55), 0.9, "$", " / YEAR", "green", "xl")
+chip("Cipla · under $1 a day", L(15, 0.7), c(17), 236, 602, "green", "sm", "up")
 cite("[MSF | 2001]", L(14, 0.6), c(17))
 shot(c(17), "J_seaside", "left")   # JNPT from the sea                            # "And today... more than two and a half lakh crore rupees a year."
 count(L(17, 0.4), LE(17), 120, 640, 0, 2.5, L(17, 0.45), 1.2, "₹", " LAKH CRORE+", "ink", "", 1)
@@ -305,13 +305,13 @@ chip("41 ingredients", L(62, 0.25), LE(62), 120, 460, "saffron", "sm", "up")
 cite("[DEPT OF PHARMACEUTICALS | PLI 2020]", L(62, 0.25), LE(62))
 shot(c(63), "R_map_india", "none", ms=3.6)                         # "And one company took the biggest bet of all."
 # ---- KAKINADA SWITCHES IT BACK ON (the promised minute eight)
-shot(c(64) - BEATS[63] + 0.2, "Y02", "crop2", ms=[11.0, 42.0, 49.78], origin="35% 35%")   # the satellite zoom onto the coast              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
+shot(c(64) - BEATS[63] + 0.2, "Y02", "y02", ms=[11.0, 42.0, 49.78], origin="35% 30%")   # the satellite zoom onto the coast              # (silence, then) "Kakinada, Andhra Pradesh. On the coast, a new plant..."
 namelt("Kakinada, Andhra Pradesh", "LYFIUS PHARMA · AUROBINDO PHARMA", L(64, 0.1), L(64, 0.55))
 shot(L(64, 0.58) - PRE, "D_aurobindo_lyfius_2024-1", "doc", origin="50% 32%", tag="DOCUMENT · AUROBINDO PHARMA · 29 OCT 2024")   # "built by Aurobindo Pharma, through its unit called Lyfius"
-shot(c(65), "Y02", "crop2", ms=[62.38, 67.74, 86.26], origin="35% 35%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
+shot(c(65), "Y02", "y02", ms=[62.38, 67.74, 86.26], origin="35% 30%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
 chip("₹2,500 cr · company figure", L(65, 0.35), LE(65), 120, 160, "saffron", "sm", "up")
 chip("15,000 tonnes a year", L(65, 0.7), LE(65), 120, 280, "saffron", "sm", "up")
-shot(c(66), "Y02", "crop2", ms=[97.74, 59.58], origin="35% 35%")             # "In twenty twenty-four, the tanks start running..."
+shot(c(66), "Y02", "y02", ms=[97.74, 59.58], origin="35% 30%")             # "In twenty twenty-four, the tanks start running..."
 datebig("2024", "PENICILLIN G · MADE IN INDIA AGAIN", L(66, 0.05), LE(66))
 shot(c(67), "J_aerial", "out")   # cheap imports at an Indian port                           # "But you know the trap... cheap imports were still waiting at the port."
 shot(c(68), "D_dgft_2026_mip-1", "in", tag="DOCUMENT · DGFT")      # "So on the twenty-ninth of January, 2026, the government stepped in."
@@ -322,28 +322,28 @@ cite("[DGFT | 29 JAN 2026]", L(68, 0.1), LE(69))
 shot(c(70), "R_fermenter_lit", "none", ms=4.0)                     # "Think of it as a shield..."
 shot(c(71), "R_mipgate", "none", ms=10.4, dim=0.25)   # "below a fair price": the gate
 shot(L(71, 0.5) - PRE, "R_map_trade", "none", ms=13.0, dim=0.2)   # "...whether China is selling penicillin here": the route in                 # "And in September 2026... below a fair price."
-chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 640, "steel", "sm", "up")
-chip("On Lyfius Pharma's application", L(71, 0.45), LE(71), 120, 830, "steel", "sm", "up")   # DGTR initiation 28 Sep 2026 (P63 note)
+chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 560, "steel", "sm", "up")
+chip("On Lyfius Pharma's application", L(71, 0.45), LE(71), 120, 630, "steel", "sm", "up")   # DGTR initiation 28 Sep 2026 (P63 note)
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
 datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))
 shot(c(73), "D_dgft_2026_mip-2", "doc", origin="50% 58%", tag="DOCUMENT · DGFT")   # "the date to watch": "a period of one year"                                # "That's the date to watch..."
-shot(c(74), "Y02", "crop2", ms=[86.26, 93.42], origin="35% 35%")            # "And here's the balance the government has to strike..."
+shot(c(74), "Y02", "y02", ms=[86.26, 93.42], origin="35% 30%")            # "And here's the balance the government has to strike..."
 chip("Protect the plant", L(74, 0.4), LE(74), 120, 160, "saffron", "sm", "up")
 chip("Keep medicines affordable", L(74, 0.7), LE(74), 120, 280, "green", "sm", "up")
-shot(c(75), "Y02", "crop2", ms=[83.62, 62.38], origin="35% 35%")            # "And it's not just penicillin... five thousand crore"
+shot(c(75), "Y02", "y02", ms=[83.62, 62.38], origin="35% 30%")            # "And it's not just penicillin... five thousand crore"
 count(L(75, 0.45), LE(75), 120, 160, 0, 5000, L(75, 0.5), 1.0, "₹", " CRORE+ INVESTED", "saffron", "sm")
 cite("[DEPT OF PHARMACEUTICALS | JUNE 2026]", L(75, 0.45), LE(75))
 shot(c(76), "R_map_india", "none", ms=6.5)                         # "Three giant bulk drug parks... Nakkapalli... same state"
 shot(c(77), "R_map_india", "none", ms=9.0)   # "none of those parks": the park pins                       # "None of those parks is up and running yet..."
 chip("None running yet", L(77, 0.25), LE(77), 120, 640, "red", "sm", "up")
-shot(c(78), "Y02", "crop2", ms=[97.74, 65.62], origin="35% 35%")            # "So has India won? Not yet. But it's back in the fight."
+shot(c(78), "Y02", "y02", ms=[97.74, 65.62], origin="35% 30%")            # "So has India won? Not yet. But it's back in the fight."
 # ---- RULE, RUIN, REALITY + WHAT IT MEANS FOR YOU
 shot(c(79), "px_45675", "in", ms=8.0, dim=0.3)                     # "So here's the lesson..."
 shot(c(80), "D_dgft_2020_noti50-1", "in", tag="DOCUMENT · DGFT")  # "And the cost? You saw it in the Corona days..."
 shot(c(81), "px_262464", "slow", ms=9.0, dim=0.2, tag="PIXABAY · ILLUSTRATIVE")   # "the reality today. India has the scientists."
 shot(S(81, 2) - PRE, "px_45680", "slow", ms=0.5, dim=0.3)   # "It has the factories."
-shot(S(81, 3) - PRE, "Y02", "crop2", ms=[86.26, 59.58], origin="35% 35%")   # "And now, it's growing its own penicillin again."             # "But here's the reality today..."
+shot(S(81, 3) - PRE, "Y02", "y02", ms=[86.26, 59.58], origin="35% 30%")   # "And now, it's growing its own penicillin again."             # "But here's the reality today..."
 shot(c(82), "PH_1540220", "in")                                 # "So what does this mean for you? Keep taking your medicines..."
 shot(c(84), "R_capsule_open", "push", ms=3.6)                      # "But the next time you take an antibiotic... began in China."
 shot(c(85), "R_map_home", "none", ms=0.8)                          # "And if the plant in Kakinada wins... right here in India."
@@ -420,7 +420,7 @@ RESET = 4.6   # longest hold before a visual reset (CLAUDE.md: every 3.5-5.0 s)
 # framings a split piece cuts to: (move, origin); documents read down the page, footage alternates punch-ins
 FRAMES = {"doc": [("doc", "50% 28%"), ("doc", "50% 52%"), ("doc", "50% 76%")],
         "crop": [("crop2", "28%"), ("crop", "50%"), ("crop2", "72%")],   # x only: each shot keeps its own height
-        "y02": [("crop2", "25% 35%"), ("crop2", "60% 35%"), ("crop2", "42% 35%")],
+        "y02": [("y02", "25% 30%"), ("y02", "60% 30%"), ("y02", "42% 30%")],
         "anim": [("cutB", "50% 50%"), ("push", "50% 50%")],
         "foot": [("cutA", "32% 38%"), ("cutB", "68% 58%"), ("cutA", "62% 34%"), ("cutB", "36% 62%")]}
 
