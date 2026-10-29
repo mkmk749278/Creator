@@ -51,6 +51,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   the same day. Sessions can't delete branches: tell the owner which ones to delete.
 - Build in phases. At the end of each phase, stop and report what was built, what was measured and what is left.
 - Once the owner approves a cut, stop editing it.
+- **Review cuts are 720p; 4K only after the owner finalises (owner, 2026-10-29).** While a film is under review, collect
+  all fixes (the owner's notes and ours) and render one 720p review cut per round; never re-render just to fix one thing
+  mid-review. The native 4K render happens once, after the owner finalises the cut.
 - **Every final video ends with a YouTube package and a merged PR** (owner, 2026-10-17; PLAYBOOK §13a, `/deliver`):
   (1) a **thumbnail built for curiosity, the most important thing on a thumbnail** (owner, 2026-10-22: low CTR;
   PLAYBOOK §13b; the test: one second on a phone must raise a question only the video answers): one real object or moment, a
