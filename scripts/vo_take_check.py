@@ -25,6 +25,7 @@ import subprocess
 import sys
 
 SQUEEZED, STRETCHED, MIN_WORDS = 0.6, 1.6, 5     # pace vs the film's median seconds per word
+SHORT, SHORT_SQUEEZED = 8, 0.5    # short punch lines are said fast: under 8 words, flag only below half the median
 
 
 def duration(p):
@@ -59,8 +60,9 @@ def main():
     med = statistics.median(p for _, _, p in rows)
     print(f"{len(rows)} sentences, median {med:.3f} s a word")
     for s, w, p in rows:
-        if w >= MIN_WORDS and (p < med * SQUEEZED or p > med * STRETCHED):
-            kind = "squeezed: audio missing?" if p < med * SQUEEZED else "stretched: a repeated phrase or a long pause?"
+        sq = SHORT_SQUEEZED if w < SHORT else SQUEEZED
+        if w >= MIN_WORDS and (p < med * sq or p > med * STRETCHED):
+            kind = "squeezed: audio missing?" if p < med * sq else "stretched: a repeated phrase or a long pause?"
             flags.append(f"L{s['line']} at {s['start']:.1f}s, {p / med:.2f}x the median pace ({kind}): {s['en'][:80]}")
 
     if a.takes and a.trimmed:

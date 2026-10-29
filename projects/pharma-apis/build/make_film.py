@@ -54,7 +54,7 @@ END = round(VO_END + 12.0, 2)   # end screen (YouTube end-screen elements need 5
 
 FOOT = {  # owner-fetched footage (assets/footage/fetched.csv; Pexels downloaded by the owner)
     "Y02": ("02_1ddBzBUaa8k.mp4", "FOOTAGE · LYFIUS PHARMA"), "Y04": ("04_3aclBlRaYNQ.mp4", "FOOTAGE · ABP MAJHA"),
-    "Y05": ("05_keUkhEBY_fs.mp4", "FOOTAGE · AMAR AGRO INDUSTRY"), "Y06": ("06_ZT2VuADHAFo.mp4", "FOOTAGE · ADINATH STONES"),
+    "Y05": ("05_keUkhEBY_fs_stab.mp4", "FOOTAGE · AMAR AGRO INDUSTRY"), "Y06": ("06_ZT2VuADHAFo_stab.mp4", "FOOTAGE · ADINATH STONES"),
     "PXa": ("3922881-uhd_4096_2160_25fps.mp4", "PEXELS"), "PXb": ("13048933-uhd_3840_2160_30fps.mp4", "PEXELS"),
 }
 
@@ -191,10 +191,13 @@ chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm
 shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
 shot(c(14), "px_262189", "slow", dim=0.72)                         # "Think back to two thousand one. H.I.V. ... ten thousand dollars"
 datebig("2001", "H.I.V. MEDICINES", L(14, 0.05), LE(16))
-count(L(14, 0.6), L(15) + 0.4, 600, 470, 0, 10000, L(14, 0.62), 1.3, "$", " / YEAR", "red", "xl")
-count(L(15, 0.5), LE(16), 700, 470, 0, 1, L(15, 0.55), 0.4, "$", " / DAY", "green", "xl")
+# same unit on both cards (owner's review, 2026-10-29): MSF 7 Feb 2001, "about $10,400" in the US vs Cipla's "$350 per year" (P14, P15)
+count(L(14, 0.6), LE(16), 600, 330, 0, 10400, L(14, 0.62), 1.3, "$", " / YEAR", "red", "xl")
+chip("Western price", L(14, 0.75), LE(16), 606, 462, "red", "sm", "up")
+count(L(15, 0.5), LE(16), 600, 566, 0, 350, L(15, 0.55), 0.9, "$", " / YEAR", "green", "xl")
+chip("Cipla · under $1 a day", L(15, 0.7), LE(16), 606, 698, "green", "sm", "up")
 cite("[MSF | 2001]", L(14, 0.6), LE(16))
-shot(c(17), "px_23215", "slow", ms=2.0)                            # "And today... more than two and a half lakh crore rupees a year."
+shot(c(17), "px_29021", "slow", ms=2.0)                            # "And today... more than two and a half lakh crore rupees a year."
 count(L(17, 0.4), LE(17), 120, 760, 0, 2.5, L(17, 0.45), 1.2, "₹", " LAKH CRORE+", "ink", "", 1)
 cite("[PIB | EXPORTS 2024-25]", L(17, 0.4), LE(17))
 shot(c(18), "R_tablet", "none", ms=0.0)                            # "Every tablet has two parts." ... coating, strip, box
@@ -209,7 +212,7 @@ coins(L(25, 0.45), LE(25))
 gauge(L(25, 0.75), LE(25), 86.1, "ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
 cite("[NITI AAYOG | TRADE WATCH Q4 FY26]", L(25, 0.4), LE(25))
 shot(c(26), "px_76395", "slow", dim=0.3)                           # "Even your fever tablet has a China link..."
-chip("Raw chemical: a big share from China", L(26, 0.6), LE(26), 120, 760, "amber", "sm", "up")
+chip("Raw chemical: para-aminophenol", L(26, 0.6), LE(26), 120, 760, "amber", "sm", "up")   # P25: PAP, a big share from China
 cite("[INDUSTRY REPORTS]", L(26, 0.6), LE(26))
 # ---- INDIA MADE ITS OWN PENICILLIN (3:16-4:19)
 shot(c(27), "W_L0012314", "in")                                    # "So you might be thinking — has it always been like this?"
@@ -221,8 +224,8 @@ shot(c(31), "Y04", "crop", ms=[14.5, 6.0], origin="50% 50%")             # "The 
 namelt("Hindustan Antibiotics", "PIMPRI · SET UP 1954 · PENICILLIN BY 1956", L(31, 0.15), LE(31))
 cite("[DEPT OF PHARMACEUTICALS | HAL]", L(31, 0.15), LE(31))
 shot(c(32), "R_map_india", "none", ms=0.0)                         # "Just think about it. Picture your grandparents' India..."
-shot(S(32, 2) - PRE, "Y04", "crop", ms=[10.5, 15.5], origin="50% 50%")   # "A young, poor country, growing... in its own factory" (HAL, Pimpri)
-shot(c(33), "px_45677", "slow", ms=0.0, dim=0.35)                  # "Soon, others join in — Alembic, Sarabhai and Ranbaxy..."
+shot(S(32, 2) - PRE, "W_L0032175", "in")   # "A young, poor country, growing... in its own factory" (penicillin production apparatus, archival)
+shot(c(33), "px_262464", "slow", ms=1.0, dim=0.2)                  # "Soon, others join in — Alembic, Sarabhai and Ranbaxy..."
 plate("Alembic", "", L(33, 0.35), LE(33), 160, 300); plate("Sarabhai", "", L(33, 0.45), LE(33), 560, 300); plate("Ranbaxy", "", L(33, 0.55), LE(33), 1000, 300)
 shot(c(34), "R_fermenter", "push", ms=0.0)                         # "How do you actually make penicillin?"
 # ---- WHY PENICILLIN IS A SCALE GAME (4:19-5:43)
@@ -234,6 +237,7 @@ shot(c(36), "W_B0004843", "in")                                    # "You take a
 shot(S(36, 1) - PRE, "R_fermenter", "none", ms=0.5)                # "You put it in a giant steel tank... sugar and air."
 shot(c(37), "R_fermenter", "none", ms=6.8)                         # "For about a week, the tank runs day and night..."
 chip("One germ = lost batch", S(37, 2), LE(37) + 2.0, 120, 160, "red", "sm", "up")
+el(f'<div class="contam" {attrs(S(37, 2) + 0.15, LE(37) + 2.0, "fade", 0.9)}></div>', S(37, 2) + 0.15, LE(37) + 2.0)   # the broth turns murky (ILLUSTRATION)
 shot(c(38), "R_fermenter", "none", ms=15.0)                        # "Then you take the penicillin out... penicillin G."
 chip("Penicillin G", L(38, 0.6), LE(38), 1320, 160, "green", "sm", "pop")
 shot(c(39), "px_40948", "slow", ms=0.5, dim=0.4)                   # "Next, it's turned into a smaller base powder..."
@@ -253,14 +257,15 @@ shot(c(45), "Y04", "crop", ms=[10.0, 14.5], origin="50% 50%", dim=0.35)    # "No
 chip("Few licences", L(45, 0.35), LE(45), 120, 300, "red", "sm", "up")
 chip("Small plants", L(45, 0.6), LE(45), 120, 420, "red", "sm", "up")
 cite("[MDPI ECONOMIES 2021]", L(45, 0.35), LE(45))
-shot(c(46), "px_23008", "slow", ms=6.0)                            # "Meanwhile, in the nineteen nineties, China went all in..."
+shot(c(46), "px_199788", "slow", ms=0.0)                            # "Meanwhile, in the nineteen nineties, China went all in..."
 chip("Cheap power · cheap water", L(47, 0.3), LE(47), 120, 760, "amber", "sm", "up")
 cite("[CFR | THE PHARMA CHOKE POINT]", L(47, 0.3), LE(47))
 shot(c(48), "R_map_stream", "none", ms=8.0)                        # "And then cheap Chinese penicillin flooded the world market..."
 shot(c(49), "px_262189", "slow", ms=2.0, dim=0.78)                 # "Nineteen ninety-one — the year India opened up its economy..."
 datebig("1991", "INDIA OPENS ITS ECONOMY", L(49, 0.05), LE(50))
 gauge(L(49, 0.65), LE(50) + 1.0, 0.5, "ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE", "RIS DP 268")
-shot(c(51), "Y04", "crop", ms=[6.0, 10.0, 14.5, 7.5, 12.0], origin="50% 50%", dim=0.55)    # "Then, one by one, the Indian penicillin plants went quiet."
+shot(c(51), "px_212001", "slow", ms=[0.0, 3.6, 7.2], dim=0.55)
+shot(c(54), "px_212000", "slow", ms=[0.0, 3.8, 7.6], dim=0.55)   # the roll call over still gears (no people under the stamps)    # "Then, one by one, the Indian penicillin plants went quiet."
 for i, (name, ln) in enumerate([("Hindustan Antibiotics", 52), ("I.D.P.L.", 53), ("Torrent · Ranbaxy · Sarabhai", 54), ("Alembic", 55)]):
     plate(name, "", L(ln), LE(55) + 1.4, 160, 170 + i * 170)
     stamp("STOPPED", round(LE(ln) - 0.35, 3), LE(55) + 1.4, 1180, 175 + i * 170)
@@ -271,7 +276,7 @@ cite("[ISID WP239]", L(56, 0.3), LE(56))
 shot(c(57), "D_niti_p-40", "in", dim=0.6, tag="DOCUMENT · NITI AAYOG")   # "Remember that one per cent?... around eighty-six per cent."
 gauge(L(57, 0.6), LE(57), 86.1, "ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
 shot(c(58), "px_45680", "slow", ms=[0.0, 2.9], dim=0.45)                  # "Niti Aayog estimates Chinese powder costs 35-40% less..."
-shot(S(58, 1) - PRE, "px_45677", "in", ms=2.0, dim=0.45)           # "So tell me — if you ran a company, would you build a plant here?"
+shot(S(58, 1) - PRE, "px_199788", "in", ms=6.0, dim=0.45)           # "So tell me — if you ran a company, would you build a plant here?"
 chip("China's powder: 35–40% cheaper", L(58, 0.2), LE(58), 120, 160, "amber", "sm", "up")
 cite("[NITI AAYOG ESTIMATE]", L(58, 0.2), LE(58))
 shot(c(59), "R_tanks", "none", ms=12.0)                            # "That's the trap..."
@@ -296,8 +301,9 @@ datebig("29 JAN 2026", "MINIMUM IMPORT PRICE", L(68, 0.1), LE(69))
 chip("₹2,216 / kg · penicillin G", L(69, 0.4), LE(69), 120, 760, "saffron", "sm", "up")
 cite("[DGFT | 29 JAN 2026]", L(68, 0.1), LE(69))
 shot(c(70), "R_fermenter_lit", "none", ms=4.0)                     # "Think of it as a shield..."
-shot(c(71), "px_216619", "slow", ms=10.0, dim=0.5)                 # "And in September 2026... below a fair price."
+shot(c(71), "px_23759", "slow", ms=2.0, dim=0.5)                 # "And in September 2026... below a fair price."
 chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 760, "steel", "sm", "up")
+chip("On Lyfius Pharma's application", L(71, 0.45), LE(71), 120, 830, "steel", "sm", "up")   # DGTR initiation 28 Sep 2026 (P63 note)
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
 shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
 datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))

@@ -52,3 +52,25 @@ Re-render all five parts (every part changed with the splits), re-run sheets and
 2. Weak stock beats, if better footage arrives: the microscope under the 2001 H.I.V. prices and 1991, the port under
    China's drug parks.
 3. Then the owner's review notes on preview 3.
+
+## Round 2 (owner's review of preview 3, 2026-10-29) → v4, 720p
+
+Done:
+- Narration restored: the trim had cut the last sentence off blocks 1, 4, 5, 6 and 8 ("Jai Hind" included). Film 11:32,
+  Kakinada at 8:06 (still "around minute eight"). `vo_take_check.py` passes.
+- Maps: the import route lands on India as a whole (no city); Kakinada appears first at the reveal (8:06) and after.
+- Cipla cards in one unit: $10,400 / year (Western price) and $350 / year (Cipla · under $1 a day) [MSF, 7 Feb 2001; P14, P15].
+- Raw chemical named: para-aminophenol (P25). Anti-dumping line adds "On Lyfius Pharma's application" (DGTR, 28 Sep 2026).
+- "One germ = lost batch": the broth turns murky with a low warning sting (ILLUSTRATION).
+- De-duplication: exports on a different port clip (29021); China's plants and "would you build a plant here?" on factory
+  chimneys (199788); "others join in" on an Indian QC lab (262464); anti-dumping on a night terminal (23759); roll call on
+  still gears (212000/212001); "young, poor country" on the Wellcome penicillin production drawing (L0032175). HAL wall
+  now 3 uses (3:33, 3:54 where the VO names it, 5:55); blister machine 3 uses; port aerials 4 (two clips, twice each).
+- Chakki clips stabilised (vidstab); the burned phone number on Y05 stays cropped out.
+
+Not done, and why:
+- "Medecines" typo at 10:44: not in our captions (the text reads "Medicines"); the review misread it.
+- MIP math ($13.50 China price, $25 Indian break-even): no source found; facts only from sources. ₹2,216/kg stays.
+- "Qule Pharma (Aurobindo unit)": the Aurobindo link is not sourced; only the Lyfius application is shown.
+- Airport freighter at 8:27: the VO there says "waiting at the port", so it stays a port shot (semantic lock).
+- 1080p60 / 4K export: review cuts are 720p; 4K once the owner finalises (owner, 2026-10-29).

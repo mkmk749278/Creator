@@ -29,7 +29,7 @@
   "start": 20.221,
   "end": 28.064,
   "block": 1,
-  "confidence": "high"
+  "confidence": "check"
  },
  {
   "line": 5,
@@ -67,640 +67,640 @@
   "line": 9,
   "en": "Reports at the time said many of the ingredients on that list came from that one place.",
   "start": 63.661,
-  "end": 66.769,
+  "end": 68.424,
   "block": 1,
   "confidence": "high"
  },
  {
   "line": 10,
   "en": "So here's the question I want to answer for you today. If India makes medicine for the world... who makes the powder inside India's medicine?",
-  "start": 66.968,
-  "end": 73.6,
+  "start": 68.84,
+  "end": 76.502,
   "block": 1,
-  "confidence": "check"
+  "confidence": "high"
  },
  {
   "line": 11,
   "en": "And before you worry \u2014 this isn't about the quality of your medicines. It's about who controls the supply.",
-  "start": 74.07,
-  "end": 80.375,
+  "start": 76.933,
+  "end": 82.863,
   "block": 1,
   "confidence": "high"
  },
  {
   "line": 12,
   "en": "Stay with me. Around minute eight, I'll take you to a fight India is in right now \u2014 in Andhra Pradesh. And I'll give you the date that could decide how it ends.",
-  "start": 81.357,
-  "end": 90.89,
+  "start": 83.769,
+  "end": 93.302,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 13,
   "en": "First, let's give India its due. Because that pharmacy of the world title? India earned it.",
-  "start": 91.46,
-  "end": 97.032,
+  "start": 93.872,
+  "end": 99.444,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 14,
   "en": "Think back to two thousand one. H.I.V. is killing millions in Africa. The medicines exist... but the Western price is around ten thousand dollars a year for one patient.",
-  "start": 97.639,
-  "end": 107.852,
+  "start": 100.051,
+  "end": 110.264,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 15,
   "en": "Then an Indian company, Cipla, stands up and offers the same three-drug mix for about a dollar a day.",
-  "start": 108.349,
-  "end": 114.726,
+  "start": 110.761,
+  "end": 117.138,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 16,
   "en": "One dollar. That one offer helped change how the world priced these medicines.",
-  "start": 115.199,
-  "end": 119.949,
+  "start": 117.611,
+  "end": 122.361,
   "block": 2,
   "confidence": "check"
  },
  {
   "line": 17,
   "en": "And today, you'll find India sells medicines abroad worth more than two and a half lakh crore rupees a year.",
-  "start": 120.28,
-  "end": 126.094,
+  "start": 122.692,
+  "end": 128.506,
   "block": 2,
   "confidence": "check"
  },
  {
   "line": 18,
   "en": "So where's the missing piece? Here's the catch. Every tablet has two parts.",
-  "start": 126.596,
-  "end": 131.63,
+  "start": 129.008,
+  "end": 134.042,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 19,
   "en": "There's the powder that actually makes you better. The industry calls it the A.P.I. \u2014 and no, not the computer kind. Let's just call it the powder.",
-  "start": 131.977,
-  "end": 139.852,
+  "start": 134.389,
+  "end": 142.264,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 20,
   "en": "And then there's everything around it... the rest of the tablet, the coating, the strip, the box.",
-  "start": 140.301,
-  "end": 145.85,
+  "start": 142.713,
+  "end": 148.262,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 21,
   "en": "And you should be proud of this. Indian companies are world class at that last part. Mixing, pressing, packing, and passing the toughest inspections on the planet.",
-  "start": 146.221,
-  "end": 155.842,
+  "start": 148.633,
+  "end": 158.254,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 22,
   "en": "But the powder you swallow? A lot of it is made somewhere else first.",
-  "start": 156.211,
-  "end": 160.122,
+  "start": 158.623,
+  "end": 162.534,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 23,
   "en": "In twenty twenty-five, India bought these powders from other countries worth around sixty-five thousand crore rupees.",
-  "start": 160.467,
-  "end": 166.88,
+  "start": 162.879,
+  "end": 169.292,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 24,
   "en": "And the biggest seller, by far... China.",
-  "start": 167.25,
-  "end": 169.853,
+  "start": 169.662,
+  "end": 172.265,
   "block": 2,
   "confidence": "high"
  },
  {
   "line": 25,
   "en": "And if you look at antibiotics, it gets worse. Niti Aayog \u2014 that's the government's own think tank \u2014 says out of every hundred rupees India spent on imported antibiotic powder... about eighty-six went to China.",
-  "start": 170.821,
-  "end": 184.693,
+  "start": 173.233,
+  "end": 187.105,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 26,
   "en": "Even your fever tablet has a China link. Indian factories do make paracetamol powder. But the raw chemical it's made from? Industry reports say a big share of that still comes from China.",
-  "start": 185.205,
-  "end": 196.146,
+  "start": 187.617,
+  "end": 198.558,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 27,
   "en": "So you might be thinking \u2014 has it always been like this? Did India ever make its own powder?",
-  "start": 196.733,
-  "end": 201.644,
+  "start": 199.145,
+  "end": 204.056,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 28,
   "en": "It did. And this part of the story, most people have never heard.",
-  "start": 202.122,
-  "end": 206.199,
+  "start": 204.534,
+  "end": 208.611,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 29,
   "en": "Pimpri, near Pune. Nineteen fifty-four. India has been free for less than seven years, and it's building a factory to make its own penicillin.",
-  "start": 206.986,
-  "end": 215.724,
+  "start": 209.398,
+  "end": 218.136,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "Penicillin was the miracle drug of that time. Back then, a small cut on your hand could kill you. With penicillin, it became a few days of medicine for you.",
-  "start": 216.229,
-  "end": 225.112,
+  "start": 218.641,
+  "end": 227.524,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 31,
   "en": "The government sets up a company called Hindustan Antibiotics. By nineteen fifty-six, Indian penicillin is coming out of Indian tanks.",
-  "start": 225.62,
-  "end": 234.023,
+  "start": 228.032,
+  "end": 236.435,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 32,
   "en": "Just think about it. Picture your grandparents' India. A young, poor country, growing one of the most important medicines on earth... in its own factory.",
-  "start": 234.461,
-  "end": 243.924,
+  "start": 236.873,
+  "end": 246.336,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 33,
   "en": "Soon, others join in \u2014 big names you may know, like Alembic, Sarabhai and Ranbaxy. India is making its own antibiotics.",
-  "start": 244.367,
-  "end": 253.054,
+  "start": 246.779,
+  "end": 255.466,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 34,
   "en": "But to see what happened next, you need to know one thing. How do you actually make penicillin?",
-  "start": 253.499,
-  "end": 258.791,
+  "start": 255.911,
+  "end": 261.203,
   "block": 3,
   "confidence": "high"
  },
  {
   "line": 35,
   "en": "Many medicines, like paracetamol, are cooked from chemicals, step by step. Penicillin is different. Penicillin is grown.",
-  "start": 259.789,
-  "end": 268.215,
+  "start": 262.201,
+  "end": 270.627,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 36,
   "en": "You take a special mould... a cousin of the green patches you've seen on old bread. You put it in a giant steel tank, and you feed it sugar and air.",
-  "start": 268.793,
-  "end": 277.159,
+  "start": 271.205,
+  "end": 279.571,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 37,
   "en": "For about a week, the tank runs day and night. The mould eats, grows, and gives out penicillin into the liquid. And if even one stray germ gets in, you can lose the whole batch.",
-  "start": 277.765,
-  "end": 289.128,
+  "start": 280.177,
+  "end": 291.54,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 38,
   "en": "Then you take the penicillin out and clean it. This first powder is called penicillin G.",
-  "start": 289.616,
-  "end": 294.815,
+  "start": 292.028,
+  "end": 297.227,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 39,
   "en": "Next, it's turned into a smaller base powder. Factories call it six A.P.A., but let's just call it the base. From that base, factories make amoxicillin \u2014 the antibiotic in so many strips at home.",
-  "start": 295.343,
-  "end": 307.852,
+  "start": 297.755,
+  "end": 310.264,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 40,
   "en": "Now here's the secret of this business. A bigger tank makes the powder cheaper. Much cheaper.",
-  "start": 308.42,
-  "end": 314.037,
+  "start": 310.832,
+  "end": 316.449,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 41,
   "en": "Why? The tank must stay perfectly clean, cool, and full of air, every hour of every day. That takes a lot of power, water and steam.",
-  "start": 314.541,
-  "end": 324.441,
+  "start": 316.953,
+  "end": 326.853,
   "block": 4,
   "confidence": "check"
  },
  {
   "line": 42,
   "en": "Think of a flour mill. A big chakki grinds each kilo cheaper than a small one. Double your tank, and your costs don't double... but your output does.",
-  "start": 324.984,
-  "end": 334.043,
+  "start": 327.396,
+  "end": 336.455,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 43,
   "en": "So you can guess who wins. The country with the biggest tanks and the cheapest power.",
-  "start": 334.434,
-  "end": 339.242,
+  "start": 336.846,
+  "end": 341.654,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 44,
   "en": "And that's exactly where India's story turns.",
-  "start": 339.708,
-  "end": 342.362,
+  "start": 342.12,
+  "end": 344.774,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 45,
   "en": "Now, here's what we got wrong. For years, India's government allowed only a few companies to make penicillin, and only in small amounts. So our plants stayed too small to be cheap.",
-  "start": 342.912,
-  "end": 351.02,
+  "start": 345.324,
+  "end": 356.607,
   "block": 4,
   "confidence": "high"
  },
  {
   "line": 46,
   "en": "Meanwhile, in the nineteen nineties, China went all in on medicine ingredients.",
-  "start": 351.994,
-  "end": 356.647,
+  "start": 357.491,
+  "end": 362.144,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 47,
   "en": "It built huge plants, in huge drug parks, with cheap power and cheap water. Its factories also faced looser pollution rules.",
-  "start": 357.09,
-  "end": 365.287,
+  "start": 362.587,
+  "end": 370.784,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 48,
   "en": "And then cheap Chinese penicillin flooded the world market... at prices nobody else could match.",
-  "start": 365.754,
-  "end": 371.713,
+  "start": 371.251,
+  "end": 377.21,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 49,
   "en": "Now remember this one number. Nineteen ninety-one \u2014 the year India opened up its economy. Of all the medicine powder India bought from outside, China sold less than one per cent.",
-  "start": 372.38,
-  "end": 383.311,
+  "start": 377.877,
+  "end": 388.808,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 50,
   "en": "Less than one.",
-  "start": 383.993,
-  "end": 384.925,
+  "start": 389.49,
+  "end": 390.422,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 51,
   "en": "Then, one by one, the Indian penicillin plants went quiet.",
-  "start": 385.562,
-  "end": 389.456,
+  "start": 391.059,
+  "end": 394.953,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 52,
   "en": "Hindustan Antibiotics. Stopped.",
-  "start": 390.081,
-  "end": 392.149,
+  "start": 395.578,
+  "end": 397.646,
   "block": 5,
   "confidence": "check"
  },
  {
   "line": 53,
   "en": "I.D.P.L. Stopped.",
-  "start": 392.62,
-  "end": 394.098,
+  "start": 398.117,
+  "end": 399.595,
   "block": 5,
   "confidence": "check"
  },
  {
   "line": 54,
   "en": "Torrent. Ranbaxy. Sarabhai. Stopped.",
-  "start": 394.55,
-  "end": 397.822,
+  "start": 400.047,
+  "end": 403.319,
   "block": 5,
   "confidence": "check"
  },
  {
   "line": 55,
   "en": "And the last one standing... Alembic. Stopped.",
-  "start": 398.217,
-  "end": 401.24,
+  "start": 403.714,
+  "end": 406.737,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 56,
   "en": "By about twenty twenty, India was importing all of that base powder for amoxicillin. Every last kilo.",
-  "start": 401.768,
-  "end": 408.334,
+  "start": 407.265,
+  "end": 413.831,
   "block": 5,
   "confidence": "check"
  },
  {
   "line": 57,
   "en": "Remember that one per cent? That was for all medicine powder. Now, if you look at just antibiotic powder today... China's share is around eighty-six per cent.",
-  "start": 408.843,
-  "end": 418.556,
+  "start": 414.34,
+  "end": 424.053,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 58,
   "en": "Niti Aayog estimates Chinese powder costs thirty-five to forty per cent less than powder made in India. So tell me \u2014 if you ran a company, would you build a plant here?",
-  "start": 419.09,
-  "end": 429.06,
+  "start": 424.587,
+  "end": 434.557,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 59,
   "en": "That's the trap. You can't compete without a big plant. And you can't risk a big plant... when one price war can wipe it out.",
-  "start": 429.629,
-  "end": 435.954,
+  "start": 435.126,
+  "end": 442.436,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 60,
   "en": "For years, that trap held. Then Corona came \u2014 and India had to lock its own doors.",
-  "start": 436.109,
-  "end": 438.988,
+  "start": 442.889,
+  "end": 448.446,
   "block": 5,
-  "confidence": "check"
+  "confidence": "high"
  },
  {
   "line": 61,
   "en": "And this time, the central government decided to break the trap.",
-  "start": 439.483,
-  "end": 442.949,
+  "start": 448.834,
+  "end": 452.118,
   "block": 5,
   "confidence": "high"
  },
  {
   "line": 62,
   "en": "It launched a scheme to pay companies extra for making forty-one of these missing ingredients in India. Nearly seven thousand crore rupees, set aside.",
-  "start": 443.939,
-  "end": 453.213,
+  "start": 453.12,
+  "end": 462.394,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 63,
   "en": "And one company took the biggest bet of all.",
-  "start": 453.747,
-  "end": 456.422,
+  "start": 462.928,
+  "end": 465.603,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 64,
   "en": "Kakinada, Andhra Pradesh. On the coast, a new plant goes up, built by Aurobindo Pharma, through its unit called Lyfius.",
-  "start": 457.024,
-  "end": 464.932,
+  "start": 466.205,
+  "end": 474.113,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 65,
   "en": "Inside are the giant tanks I just told you about. The company says it cost around two thousand five hundred crore rupees, and it's built to make fifteen thousand tonnes of penicillin G every year.",
-  "start": 465.415,
-  "end": 477.032,
+  "start": 474.596,
+  "end": 486.213,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 66,
   "en": "In twenty twenty-four, the tanks start running. For the first time in more than ten years... India is growing its own penicillin again.",
-  "start": 477.513,
-  "end": 486.432,
+  "start": 486.694,
+  "end": 495.613,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 67,
   "en": "But you know the trap. Even with Indian penicillin ready, cheap imports were still waiting at the port.",
-  "start": 486.979,
-  "end": 493.276,
+  "start": 496.16,
+  "end": 502.457,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 68,
   "en": "So on the twenty-ninth of January, twenty twenty-six, the government stepped in.",
-  "start": 493.735,
-  "end": 497.789,
+  "start": 502.916,
+  "end": 506.97,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 69,
   "en": "It set a minimum price at the border. If penicillin powder comes in cheaper than about two thousand two hundred rupees a kilo, it now needs a special licence. The same rule covers amoxicillin and its base powder.",
-  "start": 498.233,
-  "end": 510.565,
+  "start": 507.414,
+  "end": 519.746,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 70,
   "en": "Think of it as a shield. It gives the new Indian plant breathing room, while it grows big enough to stand on its own.",
-  "start": 510.97,
-  "end": 517.15,
+  "start": 520.151,
+  "end": 526.331,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 71,
   "en": "And in September twenty twenty-six, after the Kakinada plant complained, the government also started checking whether China is selling penicillin here below a fair price.",
-  "start": 517.605,
-  "end": 525.805,
+  "start": 526.786,
+  "end": 536.379,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 72,
   "en": "But that shield has an end date. It runs for one year... until January twenty twenty-seven.",
-  "start": 525.965,
-  "end": 531.587,
+  "start": 536.801,
+  "end": 543.166,
   "block": 6,
   "confidence": "high"
  },
  {
   "line": 73,
   "en": "That's the date to watch. Will Kakinada be strong enough by then? Or will the shield get extended?",
-  "start": 532.556,
-  "end": 538.31,
+  "start": 544.099,
+  "end": 549.853,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 74,
   "en": "And here's the balance the government has to strike. Protect the Indian plant... without making your antibiotics costlier.",
-  "start": 538.874,
-  "end": 545.521,
+  "start": 550.417,
+  "end": 557.064,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 75,
   "en": "And it's not just penicillin. Companies have already put more than five thousand crore rupees into this scheme.",
-  "start": 546.068,
-  "end": 551.916,
+  "start": 557.611,
+  "end": 563.459,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 76,
   "en": "And there's more coming. Three giant bulk drug parks are being built \u2014 in Gujarat, in Himachal Pradesh... and one at Nakkapalli. Yes, you heard right \u2014 that's in Andhra Pradesh too, the same state as the Kakinada plant.",
-  "start": 552.291,
-  "end": 566.13,
+  "start": 563.834,
+  "end": 577.673,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 77,
   "en": "Let me be honest with you. None of those parks is up and running yet. And China has a thirty-year head start, and makes far more penicillin than we do.",
-  "start": 566.675,
-  "end": 575.225,
+  "start": 578.218,
+  "end": 586.768,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 78,
   "en": "So has India won? Not yet. But it's back in the fight.",
-  "start": 575.642,
-  "end": 579.817,
+  "start": 587.185,
+  "end": 591.36,
   "block": 7,
   "confidence": "check"
  },
  {
   "line": 79,
   "en": "So here's the lesson. If you only master the last step, you're only as strong as whoever controls the step before.",
-  "start": 580.205,
-  "end": 587.026,
+  "start": 591.748,
+  "end": 598.569,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 80,
   "en": "And the cost? You saw it in the Corona days. When one province in China shut down, the pharmacy of the world had to lock its own doors.",
-  "start": 587.446,
-  "end": 595.189,
+  "start": 598.989,
+  "end": 606.732,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 81,
   "en": "But here's the reality today. India has the scientists. It has the factories. And now, it's growing its own penicillin again.",
-  "start": 595.554,
-  "end": 603.538,
+  "start": 607.097,
+  "end": 615.081,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 82,
   "en": "So what does this mean for you?",
-  "start": 603.962,
-  "end": 605.291,
+  "start": 615.505,
+  "end": 616.834,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 83,
   "en": "Keep taking your medicines exactly as your doctor says. Nothing in this story changes that.",
-  "start": 605.727,
-  "end": 610.605,
+  "start": 617.27,
+  "end": 622.148,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 84,
   "en": "But the next time you take an antibiotic, think about that white powder. There's a fair chance part of its journey began in China.",
-  "start": 611.077,
-  "end": 618.196,
+  "start": 622.62,
+  "end": 629.739,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 85,
   "en": "And if the plant in Kakinada wins... the next one might start right here in India.",
-  "start": 618.566,
-  "end": 622.874,
+  "start": 630.109,
+  "end": 635.101,
   "block": 7,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "Medicines aren't the only missing piece. India writes software for the whole world. So why is India's own A.I. still so far behind America's and China's? That's our next story.",
-  "start": 623.846,
-  "end": 635.594,
+  "start": 635.966,
+  "end": 647.714,
   "block": 8,
-  "confidence": "check"
+  "confidence": "high"
  },
  {
   "line": 87,
   "en": "Before you go, tell me in the comments \u2014 which medicine in your home would you most like to see fully made in India? I read every one.",
-  "start": 636.08,
-  "end": 642.395,
+  "start": 648.2,
+  "end": 655.986,
   "block": 8,
-  "confidence": "check"
+  "confidence": "high"
  },
  {
   "line": 88,
   "en": "This is Be Practical with Kishore. Stay practical. Jai Hind.",
-  "start": 642.857,
-  "end": 647.25,
+  "start": 656.593,
+  "end": 660.143,
   "block": 8,
-  "confidence": "check"
+  "confidence": "high"
  }
 ]

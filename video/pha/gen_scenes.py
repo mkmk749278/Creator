@@ -106,7 +106,11 @@ def pin(x, y, label, cls="lab", dx=26, dy=-18, col="#f2f7f7", pid="", anchor="st
 def map_stream(sid="map_stream", D=22, home=False):
     a = MAP["asia"]; P = a["pts"]
     kx, ky = P["kakinada"]; wx, wy = P["wuhan"]; cx, cy = P["china_c"]; ix, iy = P["india_c"]
-    route = a["arcs"]["kakinada_india"] if home else a["arcs"]["wuhan_kakinada"]
+    if home:
+        route = a["arcs"]["kakinada_india"]
+    else:   # imports land in India as a whole: no city before the Kakinada reveal (owner's review, 2026-10-29)
+        kx, ky = ix, iy
+        route = f"M {wx} {wy} Q {(wx + ix) / 2:.1f} {min(wy, iy) - 170:.1f} {ix} {iy}"
     col = "#ff9933" if home else "#e8a33d"
     svg = (GRID + land("asia") +
            f'<circle id="gw" cx="{wx}" cy="{wy}" r="150" fill="url(#glowA)" opacity="0"/>'
@@ -114,8 +118,9 @@ def map_stream(sid="map_stream", D=22, home=False):
            f'<path id="route" d="{route}" fill="none" stroke="{col}" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" opacity=".55"/>'
            '<g id="dots"></g>'
            f'<text id="lc" class="big" x="{cx + 40}" y="{cy - 120}" text-anchor="middle" style="fill:#e8a33d">CHINA</text>'
-           f'<text id="li" class="big" x="{ix - (260 if home else 60)}" y="{iy + (120 if home else -40)}" text-anchor="middle" style="fill:#ff9933">INDIA</text>'
-           + pin(wx, wy, "HUBEI", pid="pw", col="#e8a33d") + pin(kx, ky, "KAKINADA", pid="pk", col="#ff9933", dx=24, dy=48))
+           f'<text id="li" class="big" x="{ix - (260 if home else 290)}" y="{iy + (120 if home else 60)}" text-anchor="middle" style="fill:#ff9933">INDIA</text>'
+           + pin(wx, wy, "HUBEI", pid="pw", col="#e8a33d")
+           + (pin(kx, ky, "KAKINADA", pid="pk", col="#ff9933", dx=24, dy=48) if home else '<g id="pk"></g>'))
     js = f"""
       tl.set(["#lc", "#li", "#pw", "#pk", "#route"], {{ autoAlpha: 0 }}, 0);
       fade("#route", 0.3, 0.8); fade("#lc", 0.4); fade("#li", 0.7);
