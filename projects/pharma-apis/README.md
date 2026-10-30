@@ -24,5 +24,6 @@ in the raw VO: the edit's planned breathing room (roll-call silences, the 2020 o
 silence before reveals) must bring it to about 8:00, or block 2's "minute eight" is re-recorded. Owner keeps all takes (same setup; emotional lines change the timing): blocks 1 and 7 (about 180 and 177 wpm)
 get extra picture-led room in the edit. Next: sourcing → thumbnails (3+ curiosity concepts through `thumb_feed.py` + click panel) →
 scenes → review → render.
+Final: 4K master `pharma_apis_4k.mp4` (11:28) on Drive `English/pharma-apis/` (30 Oct 2026); takes kept on Drive in `Vo/`.
 **Time-sensitive, recheck before upload:** the minimum import price (to about 29 January 2027), the two DGTR
 anti-dumping cases opened in September 2026, and whether any bulk drug park has started.

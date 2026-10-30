@@ -46,7 +46,7 @@
   "en": "You remember them.",
   "start": 22.122,
   "end": 22.776,
-  "confidence": "high"
+  "confidence": "check"
  },
  {
   "line": 4,
@@ -150,1267 +150,1267 @@
   "line": 9,
   "en": "Reports at the time said many of the ingredients on that list came from that one place.",
   "start": 63.661,
-  "end": 66.769,
+  "end": 68.424,
   "confidence": "high"
  },
  {
   "line": 10,
   "en": "So here's the question I want to answer for you today.",
-  "start": 66.968,
-  "end": 68.424,
-  "confidence": "check"
+  "start": 68.84,
+  "end": 71.11,
+  "confidence": "high"
  },
  {
   "line": 10,
   "en": "If India makes medicine for the world... who makes the powder inside India's medicine?",
-  "start": 68.84,
-  "end": 73.6,
+  "start": 71.552,
+  "end": 76.502,
   "confidence": "high"
  },
  {
   "line": 11,
   "en": "And before you worry \u2014 this isn't about the quality of your medicines.",
-  "start": 74.07,
-  "end": 77.93,
+  "start": 76.933,
+  "end": 80.375,
   "confidence": "high"
  },
  {
   "line": 11,
   "en": "It's about who controls the supply.",
-  "start": 78.135,
-  "end": 80.375,
+  "start": 80.692,
+  "end": 82.863,
   "confidence": "high"
  },
  {
   "line": 12,
   "en": "Stay with me.",
-  "start": 81.357,
-  "end": 82.007,
+  "start": 83.769,
+  "end": 84.419,
   "confidence": "high"
  },
  {
   "line": 12,
   "en": "Around minute eight, I'll take you to a fight India is in right now \u2014 in Andhra Pradesh.",
-  "start": 82.461,
-  "end": 87.44,
+  "start": 84.873,
+  "end": 89.852,
   "confidence": "high"
  },
  {
   "line": 12,
   "en": "And I'll give you the date that could decide how it ends.",
-  "start": 87.976,
-  "end": 90.89,
+  "start": 90.388,
+  "end": 93.302,
   "confidence": "high"
  },
  {
   "line": 13,
   "en": "First, let's give India its due.",
-  "start": 91.46,
-  "end": 93.341,
+  "start": 93.872,
+  "end": 95.753,
   "confidence": "high"
  },
  {
   "line": 13,
   "en": "Because that pharmacy of the world title?",
-  "start": 93.774,
-  "end": 95.554,
+  "start": 96.186,
+  "end": 97.966,
   "confidence": "high"
  },
  {
   "line": 13,
   "en": "India earned it.",
-  "start": 95.983,
-  "end": 97.032,
+  "start": 98.395,
+  "end": 99.444,
   "confidence": "high"
  },
  {
   "line": 14,
   "en": "Think back to two thousand one.",
-  "start": 97.639,
-  "end": 98.969,
+  "start": 100.051,
+  "end": 101.381,
   "confidence": "high"
  },
  {
   "line": 14,
   "en": "H.I.V. is killing millions in Africa.",
-  "start": 99.43,
-  "end": 101.709,
+  "start": 101.842,
+  "end": 104.121,
   "confidence": "high"
  },
  {
   "line": 14,
   "en": "The medicines exist... but the Western price is around ten thousand dollars a year for one patient.",
-  "start": 102.122,
-  "end": 107.852,
+  "start": 104.534,
+  "end": 110.264,
   "confidence": "high"
  },
  {
   "line": 15,
   "en": "Then an Indian company, Cipla, stands up and offers the same three-drug mix for about a dollar a day.",
-  "start": 108.349,
-  "end": 114.726,
+  "start": 110.761,
+  "end": 117.138,
   "confidence": "high"
  },
  {
   "line": 16,
   "en": "One dollar.",
-  "start": 115.199,
-  "end": 115.941,
+  "start": 117.611,
+  "end": 118.353,
   "confidence": "high"
  },
  {
   "line": 16,
   "en": "That one offer helped change how the world priced these medicines.",
-  "start": 116.371,
-  "end": 119.949,
+  "start": 118.783,
+  "end": 122.361,
   "confidence": "check"
  },
  {
   "line": 17,
   "en": "And today, you'll find India sells medicines abroad worth more than two and a half lakh crore rupees a year.",
-  "start": 120.28,
-  "end": 126.094,
+  "start": 122.692,
+  "end": 128.506,
   "confidence": "check"
  },
  {
   "line": 18,
   "en": "So where's the missing piece?",
-  "start": 126.596,
-  "end": 128.242,
+  "start": 129.008,
+  "end": 130.654,
   "confidence": "high"
  },
  {
   "line": 18,
   "en": "Here's the catch.",
-  "start": 128.787,
-  "end": 129.453,
+  "start": 131.199,
+  "end": 131.865,
   "confidence": "high"
  },
  {
   "line": 18,
   "en": "Every tablet has two parts.",
-  "start": 129.885,
-  "end": 131.63,
+  "start": 132.297,
+  "end": 134.042,
   "confidence": "high"
  },
  {
   "line": 19,
   "en": "There's the powder that actually makes you better.",
-  "start": 131.977,
-  "end": 134.216,
+  "start": 134.389,
+  "end": 136.628,
   "confidence": "high"
  },
  {
   "line": 19,
   "en": "The industry calls it the A.P.I. \u2014 and no, not the computer kind.",
-  "start": 134.627,
-  "end": 138.357,
+  "start": 137.039,
+  "end": 140.769,
   "confidence": "high"
  },
  {
   "line": 19,
   "en": "Let's just call it the powder.",
-  "start": 138.746,
-  "end": 139.852,
+  "start": 141.158,
+  "end": 142.264,
   "confidence": "high"
  },
  {
   "line": 20,
   "en": "And then there's everything around it... the rest of the tablet, the coating, the strip, the box.",
-  "start": 140.301,
-  "end": 145.85,
+  "start": 142.713,
+  "end": 148.262,
   "confidence": "high"
  },
  {
   "line": 21,
   "en": "And you should be proud of this.",
-  "start": 146.221,
-  "end": 147.536,
+  "start": 148.633,
+  "end": 149.948,
   "confidence": "high"
  },
  {
   "line": 21,
   "en": "Indian companies are world class at that last part.",
-  "start": 147.885,
-  "end": 150.611,
+  "start": 150.297,
+  "end": 153.023,
   "confidence": "high"
  },
  {
   "line": 21,
   "en": "Mixing, pressing, packing, and passing the toughest inspections on the planet.",
-  "start": 151.012,
-  "end": 155.842,
+  "start": 153.424,
+  "end": 158.254,
   "confidence": "high"
  },
  {
   "line": 22,
   "en": "But the powder you swallow?",
-  "start": 156.211,
-  "end": 157.35,
+  "start": 158.623,
+  "end": 159.762,
   "confidence": "high"
  },
  {
   "line": 22,
   "en": "A lot of it is made somewhere else first.",
-  "start": 157.748,
-  "end": 160.122,
+  "start": 160.16,
+  "end": 162.534,
   "confidence": "high"
  },
  {
   "line": 23,
   "en": "In twenty twenty-five, India bought these powders from other countries worth around sixty-five thousand crore rupees.",
-  "start": 160.467,
-  "end": 166.88,
+  "start": 162.879,
+  "end": 169.292,
   "confidence": "high"
  },
  {
   "line": 24,
   "en": "And the biggest seller, by far...",
-  "start": 167.25,
-  "end": 168.943,
+  "start": 169.662,
+  "end": 171.355,
   "confidence": "high"
  },
  {
   "line": 24,
   "en": "China.",
-  "start": 169.485,
-  "end": 169.853,
+  "start": 171.897,
+  "end": 172.265,
   "confidence": "high"
  },
  {
   "line": 25,
   "en": "And if you look at antibiotics, it gets worse.",
-  "start": 170.821,
-  "end": 173.611,
+  "start": 173.233,
+  "end": 176.023,
   "confidence": "high"
  },
  {
   "line": 25,
   "en": "Niti Aayog \u2014 that's the government's own think tank \u2014 says out of every hundred rupees India spent on imported antibiotic powder... about eighty-six went to China.",
-  "start": 174.103,
-  "end": 184.693,
+  "start": 176.515,
+  "end": 187.105,
   "confidence": "high"
  },
  {
   "line": 26,
   "en": "Even your fever tablet has a China link.",
-  "start": 185.205,
-  "end": 187.135,
+  "start": 187.617,
+  "end": 189.547,
   "confidence": "high"
  },
  {
   "line": 26,
   "en": "Indian factories do make paracetamol powder.",
-  "start": 187.652,
-  "end": 190.013,
+  "start": 190.064,
+  "end": 192.425,
   "confidence": "high"
  },
  {
   "line": 26,
   "en": "But the raw chemical it's made from?",
-  "start": 190.463,
-  "end": 191.895,
+  "start": 192.875,
+  "end": 194.307,
   "confidence": "high"
  },
  {
   "line": 26,
   "en": "Industry reports say a big share of that still comes from China.",
-  "start": 192.397,
-  "end": 196.146,
+  "start": 194.809,
+  "end": 198.558,
   "confidence": "high"
  },
  {
   "line": 27,
   "en": "So you might be thinking \u2014 has it always been like this?",
-  "start": 196.733,
-  "end": 199.534,
+  "start": 199.145,
+  "end": 201.946,
   "confidence": "high"
  },
  {
   "line": 27,
   "en": "Did India ever make its own powder?",
-  "start": 199.873,
-  "end": 201.644,
+  "start": 202.285,
+  "end": 204.056,
   "confidence": "high"
  },
  {
   "line": 28,
   "en": "It did.",
-  "start": 202.122,
-  "end": 202.523,
+  "start": 204.534,
+  "end": 204.935,
   "confidence": "high"
  },
  {
   "line": 28,
   "en": "And this part of the story, most people have never heard.",
-  "start": 202.994,
-  "end": 206.199,
+  "start": 205.406,
+  "end": 208.611,
   "confidence": "high"
  },
  {
   "line": 29,
   "en": "Pimpri, near Pune.",
-  "start": 206.986,
-  "end": 208.319,
+  "start": 209.398,
+  "end": 210.731,
   "confidence": "high"
  },
  {
   "line": 29,
   "en": "Nineteen fifty-four.",
-  "start": 208.783,
-  "end": 209.782,
+  "start": 211.195,
+  "end": 212.194,
   "confidence": "high"
  },
  {
   "line": 29,
   "en": "India has been free for less than seven years, and it's building a factory to make its own penicillin.",
-  "start": 210.229,
-  "end": 215.724,
+  "start": 212.641,
+  "end": 218.136,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "Penicillin was the miracle drug of that time.",
-  "start": 216.229,
-  "end": 218.511,
+  "start": 218.641,
+  "end": 220.923,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "Back then, a small cut on your hand could kill you.",
-  "start": 218.934,
-  "end": 221.586,
+  "start": 221.346,
+  "end": 223.998,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "With penicillin, it became a few days of medicine for you.",
-  "start": 222.074,
-  "end": 225.112,
+  "start": 224.486,
+  "end": 227.524,
   "confidence": "high"
  },
  {
   "line": 31,
   "en": "The government sets up a company called Hindustan Antibiotics.",
-  "start": 225.62,
-  "end": 229.051,
+  "start": 228.032,
+  "end": 231.463,
   "confidence": "high"
  },
  {
   "line": 31,
   "en": "By nineteen fifty-six, Indian penicillin is coming out of Indian tanks.",
-  "start": 229.412,
-  "end": 234.023,
+  "start": 231.824,
+  "end": 236.435,
   "confidence": "high"
  },
  {
   "line": 32,
   "en": "Just think about it.",
-  "start": 234.461,
-  "end": 235.344,
+  "start": 236.873,
+  "end": 237.756,
   "confidence": "high"
  },
  {
   "line": 32,
   "en": "Picture your grandparents' India.",
-  "start": 235.713,
-  "end": 237.267,
+  "start": 238.125,
+  "end": 239.679,
   "confidence": "high"
  },
  {
   "line": 32,
   "en": "A young, poor country, growing one of the most important medicines on earth... in its own factory.",
-  "start": 237.732,
-  "end": 243.924,
+  "start": 240.144,
+  "end": 246.336,
   "confidence": "high"
  },
  {
   "line": 33,
   "en": "Soon, others join in \u2014 big names you may know, like Alembic, Sarabhai and Ranbaxy.",
-  "start": 244.367,
-  "end": 249.874,
+  "start": 246.779,
+  "end": 252.286,
   "confidence": "high"
  },
  {
   "line": 33,
   "en": "India is making its own antibiotics.",
-  "start": 250.377,
-  "end": 253.054,
+  "start": 252.789,
+  "end": 255.466,
   "confidence": "high"
  },
  {
   "line": 34,
   "en": "But to see what happened next, you need to know one thing.",
-  "start": 253.499,
-  "end": 256.415,
+  "start": 255.911,
+  "end": 258.827,
   "confidence": "high"
  },
  {
   "line": 34,
   "en": "How do you actually make penicillin?",
-  "start": 256.879,
-  "end": 258.791,
+  "start": 259.291,
+  "end": 261.203,
   "confidence": "high"
  },
  {
   "line": 35,
   "en": "Many medicines, like paracetamol, are cooked from chemicals, step by step.",
-  "start": 259.789,
-  "end": 264.679,
+  "start": 262.201,
+  "end": 267.091,
   "confidence": "high"
  },
  {
   "line": 35,
   "en": "Penicillin is different.",
-  "start": 265.304,
-  "end": 266.517,
+  "start": 267.716,
+  "end": 268.929,
   "confidence": "high"
  },
  {
   "line": 35,
   "en": "Penicillin is grown.",
-  "start": 266.957,
-  "end": 268.215,
+  "start": 269.369,
+  "end": 270.627,
   "confidence": "high"
  },
  {
   "line": 36,
   "en": "You take a special mould... a cousin of the green patches you've seen on old bread.",
-  "start": 268.793,
-  "end": 272.955,
+  "start": 271.205,
+  "end": 275.367,
   "confidence": "high"
  },
  {
   "line": 36,
   "en": "You put it in a giant steel tank, and you feed it sugar and air.",
-  "start": 273.513,
-  "end": 277.159,
+  "start": 275.925,
+  "end": 279.571,
   "confidence": "high"
  },
  {
   "line": 37,
   "en": "For about a week, the tank runs day and night.",
-  "start": 277.765,
-  "end": 280.487,
+  "start": 280.177,
+  "end": 282.899,
   "confidence": "high"
  },
  {
   "line": 37,
   "en": "The mould eats, grows, and gives out penicillin into the liquid.",
-  "start": 280.944,
-  "end": 284.634,
+  "start": 283.356,
+  "end": 287.046,
   "confidence": "high"
  },
  {
   "line": 37,
   "en": "And if even one stray germ gets in, you can lose the whole batch.",
-  "start": 285.168,
-  "end": 289.128,
+  "start": 287.58,
+  "end": 291.54,
   "confidence": "high"
  },
  {
   "line": 38,
   "en": "Then you take the penicillin out and clean it.",
-  "start": 289.616,
-  "end": 291.95,
+  "start": 292.028,
+  "end": 294.362,
   "confidence": "high"
  },
  {
   "line": 38,
   "en": "This first powder is called penicillin G.",
-  "start": 292.397,
-  "end": 294.815,
+  "start": 294.809,
+  "end": 297.227,
   "confidence": "high"
  },
  {
   "line": 39,
   "en": "Next, it's turned into a smaller base powder.",
-  "start": 295.343,
-  "end": 297.939,
+  "start": 297.755,
+  "end": 300.351,
   "confidence": "high"
  },
  {
   "line": 39,
   "en": "Factories call it six A.P.A., but let's just call it the base.",
-  "start": 298.409,
-  "end": 302.124,
+  "start": 300.821,
+  "end": 304.536,
   "confidence": "high"
  },
  {
   "line": 39,
   "en": "From that base, factories make amoxicillin \u2014 the antibiotic in so many strips at home.",
-  "start": 302.653,
-  "end": 307.852,
+  "start": 305.065,
+  "end": 310.264,
   "confidence": "high"
  },
  {
   "line": 40,
   "en": "Now here's the secret of this business.",
-  "start": 308.42,
-  "end": 310.155,
+  "start": 310.832,
+  "end": 312.567,
   "confidence": "high"
  },
  {
   "line": 40,
   "en": "A bigger tank makes the powder cheaper.",
-  "start": 310.642,
-  "end": 312.839,
+  "start": 313.054,
+  "end": 315.251,
   "confidence": "high"
  },
  {
   "line": 40,
   "en": "Much cheaper.",
-  "start": 313.237,
-  "end": 314.037,
+  "start": 315.649,
+  "end": 316.449,
   "confidence": "high"
  },
  {
   "line": 41,
   "en": "Why?",
-  "start": 314.541,
-  "end": 314.837,
+  "start": 316.953,
+  "end": 317.249,
   "confidence": "check"
  },
  {
   "line": 41,
   "en": "The tank must stay perfectly clean, cool, and full of air, every hour of every day.",
-  "start": 315.344,
-  "end": 321.081,
+  "start": 317.756,
+  "end": 323.493,
   "confidence": "high"
  },
  {
   "line": 41,
   "en": "That takes a lot of power, water and steam.",
-  "start": 321.576,
-  "end": 324.441,
+  "start": 323.988,
+  "end": 326.853,
   "confidence": "high"
  },
  {
   "line": 42,
   "en": "Think of a flour mill.",
-  "start": 324.984,
-  "end": 325.866,
+  "start": 327.396,
+  "end": 328.278,
   "confidence": "high"
  },
  {
   "line": 42,
   "en": "A big chakki grinds each kilo cheaper than a small one.",
-  "start": 326.336,
-  "end": 329.611,
+  "start": 328.748,
+  "end": 332.023,
   "confidence": "high"
  },
  {
   "line": 42,
   "en": "Double your tank, and your costs don't double... but your output does.",
-  "start": 330.093,
-  "end": 334.043,
+  "start": 332.505,
+  "end": 336.455,
   "confidence": "high"
  },
  {
   "line": 43,
   "en": "So you can guess who wins.",
-  "start": 334.434,
-  "end": 335.972,
+  "start": 336.846,
+  "end": 338.384,
   "confidence": "high"
  },
  {
   "line": 43,
   "en": "The country with the biggest tanks and the cheapest power.",
-  "start": 336.354,
-  "end": 339.242,
+  "start": 338.766,
+  "end": 341.654,
   "confidence": "high"
  },
  {
   "line": 44,
   "en": "And that's exactly where India's story turns.",
-  "start": 339.708,
-  "end": 342.362,
+  "start": 342.12,
+  "end": 344.774,
   "confidence": "high"
  },
  {
   "line": 45,
   "en": "Now, here's what we got wrong.",
-  "start": 342.912,
-  "end": 344.468,
+  "start": 345.324,
+  "end": 346.88,
   "confidence": "high"
  },
  {
   "line": 45,
   "en": "For years, India's government allowed only a few companies to make penicillin, and only in small amounts.",
-  "start": 344.993,
-  "end": 349.155,
+  "start": 347.405,
+  "end": 353.432,
   "confidence": "high"
  },
  {
   "line": 45,
   "en": "So our plants stayed too small to be cheap.",
-  "start": 349.45,
-  "end": 351.02,
+  "start": 353.883,
+  "end": 356.607,
   "confidence": "high"
  },
  {
   "line": 46,
   "en": "Meanwhile, in the nineteen nineties, China went all in on medicine ingredients.",
-  "start": 351.994,
-  "end": 356.647,
+  "start": 357.491,
+  "end": 362.144,
   "confidence": "high"
  },
  {
   "line": 47,
   "en": "It built huge plants, in huge drug parks, with cheap power and cheap water.",
-  "start": 357.09,
-  "end": 361.955,
+  "start": 362.587,
+  "end": 367.452,
   "confidence": "high"
  },
  {
   "line": 47,
   "en": "Its factories also faced looser pollution rules.",
-  "start": 362.395,
-  "end": 365.287,
+  "start": 367.892,
+  "end": 370.784,
   "confidence": "high"
  },
  {
   "line": 48,
   "en": "And then cheap Chinese penicillin flooded the world market... at prices nobody else could match.",
-  "start": 365.754,
-  "end": 371.713,
+  "start": 371.251,
+  "end": 377.21,
   "confidence": "high"
  },
  {
   "line": 49,
   "en": "Now remember this one number.",
-  "start": 372.38,
-  "end": 373.747,
+  "start": 377.877,
+  "end": 379.244,
   "confidence": "high"
  },
  {
   "line": 49,
   "en": "Nineteen ninety-one \u2014 the year India opened up its economy.",
-  "start": 374.248,
-  "end": 377.525,
+  "start": 379.745,
+  "end": 383.022,
   "confidence": "high"
  },
  {
   "line": 49,
   "en": "Of all the medicine powder India bought from outside, China sold less than one per cent.",
-  "start": 378.031,
-  "end": 383.311,
+  "start": 383.528,
+  "end": 388.808,
   "confidence": "high"
  },
  {
   "line": 50,
   "en": "Less than one.",
-  "start": 383.993,
-  "end": 384.925,
+  "start": 389.49,
+  "end": 390.422,
   "confidence": "high"
  },
  {
   "line": 51,
   "en": "Then, one by one, the Indian penicillin plants went quiet.",
-  "start": 385.562,
-  "end": 389.456,
+  "start": 391.059,
+  "end": 394.953,
   "confidence": "high"
  },
  {
   "line": 52,
   "en": "Hindustan Antibiotics.",
-  "start": 390.081,
-  "end": 391.295,
+  "start": 395.578,
+  "end": 396.792,
   "confidence": "high"
  },
  {
   "line": 52,
   "en": "Stopped.",
-  "start": 391.714,
-  "end": 392.149,
+  "start": 397.211,
+  "end": 397.646,
   "confidence": "check"
  },
  {
   "line": 53,
   "en": "I.D.P.L.",
-  "start": 392.62,
-  "end": 393.241,
+  "start": 398.117,
+  "end": 398.738,
   "confidence": "check"
  },
  {
   "line": 53,
   "en": "Stopped.",
-  "start": 393.629,
-  "end": 394.098,
+  "start": 399.126,
+  "end": 399.595,
   "confidence": "high"
  },
  {
   "line": 54,
   "en": "Torrent.",
-  "start": 394.55,
-  "end": 394.979,
+  "start": 400.047,
+  "end": 400.476,
   "confidence": "high"
  },
  {
   "line": 54,
   "en": "Ranbaxy.",
-  "start": 395.376,
-  "end": 396.016,
-  "confidence": "check"
+  "start": 400.873,
+  "end": 401.513,
+  "confidence": "high"
  },
  {
   "line": 54,
   "en": "Sarabhai.",
-  "start": 396.394,
-  "end": 396.969,
+  "start": 401.891,
+  "end": 402.466,
   "confidence": "high"
  },
  {
   "line": 54,
   "en": "Stopped.",
-  "start": 397.343,
-  "end": 397.822,
+  "start": 402.84,
+  "end": 403.319,
   "confidence": "check"
  },
  {
   "line": 55,
   "en": "And the last one standing...",
-  "start": 398.217,
-  "end": 399.365,
+  "start": 403.714,
+  "end": 404.862,
   "confidence": "high"
  },
  {
   "line": 55,
   "en": "Alembic.",
-  "start": 399.835,
-  "end": 400.222,
+  "start": 405.332,
+  "end": 405.719,
   "confidence": "high"
  },
  {
   "line": 55,
   "en": "Stopped.",
-  "start": 400.777,
-  "end": 401.24,
+  "start": 406.274,
+  "end": 406.737,
   "confidence": "high"
  },
  {
   "line": 56,
   "en": "By about twenty twenty, India was importing all of that base powder for amoxicillin.",
-  "start": 401.768,
-  "end": 406.642,
+  "start": 407.265,
+  "end": 412.139,
   "confidence": "high"
  },
  {
   "line": 56,
   "en": "Every last kilo.",
-  "start": 407.082,
-  "end": 408.334,
+  "start": 412.579,
+  "end": 413.831,
   "confidence": "check"
  },
  {
   "line": 57,
   "en": "Remember that one per cent?",
-  "start": 408.843,
-  "end": 410.07,
+  "start": 414.34,
+  "end": 415.567,
   "confidence": "high"
  },
  {
   "line": 57,
   "en": "That was for all medicine powder.",
-  "start": 410.449,
-  "end": 412.234,
+  "start": 415.946,
+  "end": 417.731,
   "confidence": "high"
  },
  {
   "line": 57,
   "en": "Now, if you look at just antibiotic powder today...",
-  "start": 412.679,
-  "end": 415.688,
+  "start": 418.176,
+  "end": 421.185,
   "confidence": "high"
  },
  {
   "line": 57,
   "en": "China's share is around eighty-six per cent.",
-  "start": 416.091,
-  "end": 418.556,
+  "start": 421.588,
+  "end": 424.053,
   "confidence": "high"
  },
  {
   "line": 58,
   "en": "Niti Aayog estimates Chinese powder costs thirty-five to forty per cent less than powder made in India.",
-  "start": 419.09,
-  "end": 425.159,
+  "start": 424.587,
+  "end": 430.656,
   "confidence": "high"
  },
  {
   "line": 58,
   "en": "So tell me \u2014 if you ran a company, would you build a plant here?",
-  "start": 425.637,
-  "end": 429.06,
+  "start": 431.134,
+  "end": 434.557,
   "confidence": "high"
  },
  {
   "line": 59,
   "en": "That's the trap.",
-  "start": 429.629,
-  "end": 430.28,
+  "start": 435.126,
+  "end": 435.777,
   "confidence": "high"
  },
  {
   "line": 59,
   "en": "You can't compete without a big plant.",
-  "start": 430.726,
-  "end": 432.71,
+  "start": 436.223,
+  "end": 438.207,
   "confidence": "high"
  },
  {
   "line": 59,
   "en": "And you can't risk a big plant... when one price war can wipe it out.",
-  "start": 433.053,
-  "end": 435.954,
+  "start": 438.55,
+  "end": 442.436,
   "confidence": "high"
  },
  {
   "line": 60,
   "en": "For years, that trap held.",
-  "start": 436.109,
-  "end": 436.939,
-  "confidence": "check"
+  "start": 442.889,
+  "end": 444.485,
+  "confidence": "high"
  },
  {
   "line": 60,
   "en": "Then Corona came \u2014 and India had to lock its own doors.",
-  "start": 437.392,
-  "end": 438.988,
-  "confidence": "check"
+  "start": 444.98,
+  "end": 448.446,
+  "confidence": "high"
  },
  {
   "line": 61,
   "en": "And this time, the central government decided to break the trap.",
-  "start": 439.483,
-  "end": 442.949,
+  "start": 448.834,
+  "end": 452.118,
   "confidence": "high"
  },
  {
   "line": 62,
   "en": "It launched a scheme to pay companies extra for making forty-one of these missing ingredients in India.",
-  "start": 443.939,
-  "end": 449.604,
+  "start": 453.12,
+  "end": 458.785,
   "confidence": "high"
  },
  {
   "line": 62,
   "en": "Nearly seven thousand crore rupees, set aside.",
-  "start": 450.133,
-  "end": 453.213,
+  "start": 459.314,
+  "end": 462.394,
   "confidence": "high"
  },
  {
   "line": 63,
   "en": "And one company took the biggest bet of all.",
-  "start": 453.747,
-  "end": 456.422,
+  "start": 462.928,
+  "end": 465.603,
   "confidence": "high"
  },
  {
   "line": 64,
   "en": "Kakinada, Andhra Pradesh.",
-  "start": 457.024,
-  "end": 458.568,
+  "start": 466.205,
+  "end": 467.749,
   "confidence": "high"
  },
  {
   "line": 64,
   "en": "On the coast, a new plant goes up, built by Aurobindo Pharma, through its unit called Lyfius.",
-  "start": 459.168,
-  "end": 464.932,
+  "start": 468.349,
+  "end": 474.113,
   "confidence": "high"
  },
  {
   "line": 65,
   "en": "Inside are the giant tanks I just told you about.",
-  "start": 465.415,
-  "end": 468.022,
+  "start": 474.596,
+  "end": 477.203,
   "confidence": "high"
  },
  {
   "line": 65,
   "en": "The company says it cost around two thousand five hundred crore rupees, and it's built to make fifteen thousand tonnes of penicillin G every year.",
-  "start": 468.534,
-  "end": 477.032,
+  "start": 477.715,
+  "end": 486.213,
   "confidence": "high"
  },
  {
   "line": 66,
   "en": "In twenty twenty-four, the tanks start running.",
-  "start": 477.513,
-  "end": 480.228,
+  "start": 486.694,
+  "end": 489.409,
   "confidence": "high"
  },
  {
   "line": 66,
   "en": "For the first time in more than ten years...",
-  "start": 480.796,
-  "end": 483.302,
+  "start": 489.977,
+  "end": 492.483,
   "confidence": "high"
  },
  {
   "line": 66,
   "en": "India is growing its own penicillin again.",
-  "start": 483.669,
-  "end": 486.432,
+  "start": 492.85,
+  "end": 495.613,
   "confidence": "high"
  },
  {
   "line": 67,
   "en": "But you know the trap.",
-  "start": 486.979,
-  "end": 488.255,
+  "start": 496.16,
+  "end": 497.436,
   "confidence": "high"
  },
  {
   "line": 67,
   "en": "Even with Indian penicillin ready, cheap imports were still waiting at the port.",
-  "start": 488.729,
-  "end": 493.276,
+  "start": 497.91,
+  "end": 502.457,
   "confidence": "high"
  },
  {
   "line": 68,
   "en": "So on the twenty-ninth of January, twenty twenty-six, the government stepped in.",
-  "start": 493.735,
-  "end": 497.789,
+  "start": 502.916,
+  "end": 506.97,
   "confidence": "high"
  },
  {
   "line": 69,
   "en": "It set a minimum price at the border.",
-  "start": 498.233,
-  "end": 500.264,
+  "start": 507.414,
+  "end": 509.445,
   "confidence": "high"
  },
  {
   "line": 69,
   "en": "If penicillin powder comes in cheaper than about two thousand two hundred rupees a kilo, it now needs a special licence.",
-  "start": 500.669,
-  "end": 507.252,
+  "start": 509.85,
+  "end": 516.433,
   "confidence": "high"
  },
  {
   "line": 69,
   "en": "The same rule covers amoxicillin and its base powder.",
-  "start": 507.652,
-  "end": 510.565,
+  "start": 516.833,
+  "end": 519.746,
   "confidence": "high"
  },
  {
   "line": 70,
   "en": "Think of it as a shield.",
-  "start": 510.97,
-  "end": 512.295,
+  "start": 520.151,
+  "end": 521.476,
   "confidence": "high"
  },
  {
   "line": 70,
   "en": "It gives the new Indian plant breathing room, while it grows big enough to stand on its own.",
-  "start": 512.677,
-  "end": 517.15,
+  "start": 521.858,
+  "end": 526.331,
   "confidence": "high"
  },
  {
   "line": 71,
   "en": "And in September twenty twenty-six, after the Kakinada plant complained, the government also started checking whether China is selling penicillin here below a fair price.",
-  "start": 517.605,
-  "end": 525.805,
+  "start": 526.786,
+  "end": 536.379,
   "confidence": "high"
  },
  {
   "line": 72,
   "en": "But that shield has an end date.",
-  "start": 525.965,
-  "end": 527.198,
+  "start": 536.801,
+  "end": 539.017,
   "confidence": "high"
  },
  {
   "line": 72,
   "en": "It runs for one year... until January twenty twenty-seven.",
-  "start": 527.62,
-  "end": 531.587,
+  "start": 539.487,
+  "end": 543.166,
   "confidence": "high"
  },
  {
   "line": 73,
   "en": "That's the date to watch.",
-  "start": 532.556,
-  "end": 533.761,
+  "start": 544.099,
+  "end": 545.304,
   "confidence": "high"
  },
  {
   "line": 73,
   "en": "Will Kakinada be strong enough by then?",
-  "start": 534.241,
-  "end": 536.164,
+  "start": 545.784,
+  "end": 547.707,
   "confidence": "high"
  },
  {
   "line": 73,
   "en": "Or will the shield get extended?",
-  "start": 536.641,
-  "end": 538.31,
+  "start": 548.184,
+  "end": 549.853,
   "confidence": "high"
  },
  {
   "line": 74,
   "en": "And here's the balance the government has to strike.",
-  "start": 538.874,
-  "end": 541.218,
+  "start": 550.417,
+  "end": 552.761,
   "confidence": "high"
  },
  {
   "line": 74,
   "en": "Protect the Indian plant... without making your antibiotics costlier.",
-  "start": 541.717,
-  "end": 545.521,
+  "start": 553.26,
+  "end": 557.064,
   "confidence": "high"
  },
  {
   "line": 75,
   "en": "And it's not just penicillin.",
-  "start": 546.068,
-  "end": 547.347,
+  "start": 557.611,
+  "end": 558.89,
   "confidence": "high"
  },
  {
   "line": 75,
   "en": "Companies have already put more than five thousand crore rupees into this scheme.",
-  "start": 547.71,
-  "end": 551.916,
+  "start": 559.253,
+  "end": 563.459,
   "confidence": "high"
  },
  {
   "line": 76,
   "en": "And there's more coming.",
-  "start": 552.291,
-  "end": 553.335,
+  "start": 563.834,
+  "end": 564.878,
   "confidence": "high"
  },
  {
   "line": 76,
   "en": "Three giant bulk drug parks are being built \u2014 in Gujarat, in Himachal Pradesh... and one at Nakkapalli.",
-  "start": 553.705,
-  "end": 560.408,
+  "start": 565.248,
+  "end": 571.951,
   "confidence": "high"
  },
  {
   "line": 76,
   "en": "Yes, you heard right \u2014 that's in Andhra Pradesh too, the same state as the Kakinada plant.",
-  "start": 560.826,
-  "end": 566.13,
+  "start": 572.369,
+  "end": 577.673,
   "confidence": "high"
  },
  {
   "line": 77,
   "en": "Let me be honest with you.",
-  "start": 566.675,
-  "end": 567.691,
+  "start": 578.218,
+  "end": 579.234,
   "confidence": "high"
  },
  {
   "line": 77,
   "en": "None of those parks is up and running yet.",
-  "start": 568.117,
-  "end": 570.154,
+  "start": 579.66,
+  "end": 581.697,
   "confidence": "high"
  },
  {
   "line": 77,
   "en": "And China has a thirty-year head start, and makes far more penicillin than we do.",
-  "start": 570.511,
-  "end": 575.225,
+  "start": 582.054,
+  "end": 586.768,
   "confidence": "high"
  },
  {
   "line": 78,
   "en": "So has India won?",
-  "start": 575.642,
-  "end": 577.001,
+  "start": 587.185,
+  "end": 588.544,
   "confidence": "check"
  },
  {
   "line": 78,
   "en": "Not yet.",
-  "start": 577.429,
-  "end": 577.93,
+  "start": 588.972,
+  "end": 589.473,
   "confidence": "high"
  },
  {
   "line": 78,
   "en": "But it's back in the fight.",
-  "start": 578.307,
-  "end": 579.817,
+  "start": 589.85,
+  "end": 591.36,
   "confidence": "high"
  },
  {
   "line": 79,
   "en": "So here's the lesson.",
-  "start": 580.205,
-  "end": 581.079,
+  "start": 591.748,
+  "end": 592.622,
   "confidence": "high"
  },
  {
   "line": 79,
   "en": "If you only master the last step, you're only as strong as whoever controls the step before.",
-  "start": 581.489,
-  "end": 587.026,
+  "start": 593.032,
+  "end": 598.569,
   "confidence": "high"
  },
  {
   "line": 80,
   "en": "And the cost?",
-  "start": 587.446,
-  "end": 588.123,
+  "start": 598.989,
+  "end": 599.666,
   "confidence": "high"
  },
  {
   "line": 80,
   "en": "You saw it in the Corona days.",
-  "start": 588.458,
-  "end": 589.83,
+  "start": 600.001,
+  "end": 601.373,
   "confidence": "high"
  },
  {
   "line": 80,
   "en": "When one province in China shut down, the pharmacy of the world had to lock its own doors.",
-  "start": 590.148,
-  "end": 595.189,
+  "start": 601.691,
+  "end": 606.732,
   "confidence": "high"
  },
  {
   "line": 81,
   "en": "But here's the reality today.",
-  "start": 595.554,
-  "end": 596.961,
+  "start": 607.097,
+  "end": 608.504,
   "confidence": "high"
  },
  {
   "line": 81,
   "en": "India has the scientists.",
-  "start": 597.33,
-  "end": 598.891,
+  "start": 608.873,
+  "end": 610.434,
   "confidence": "high"
  },
  {
   "line": 81,
   "en": "It has the factories.",
-  "start": 599.116,
-  "end": 600.337,
+  "start": 610.659,
+  "end": 611.88,
   "confidence": "high"
  },
  {
   "line": 81,
   "en": "And now, it's growing its own penicillin again.",
-  "start": 600.716,
-  "end": 603.538,
+  "start": 612.259,
+  "end": 615.081,
   "confidence": "high"
  },
  {
   "line": 82,
   "en": "So what does this mean for you?",
-  "start": 603.962,
-  "end": 605.291,
+  "start": 615.505,
+  "end": 616.834,
   "confidence": "high"
  },
  {
   "line": 83,
   "en": "Keep taking your medicines exactly as your doctor says.",
-  "start": 605.727,
-  "end": 608.632,
+  "start": 617.27,
+  "end": 620.175,
   "confidence": "high"
  },
  {
   "line": 83,
   "en": "Nothing in this story changes that.",
-  "start": 608.94,
-  "end": 610.605,
+  "start": 620.483,
+  "end": 622.148,
   "confidence": "high"
  },
  {
   "line": 84,
   "en": "But the next time you take an antibiotic, think about that white powder.",
-  "start": 611.077,
-  "end": 614.661,
+  "start": 622.62,
+  "end": 626.204,
   "confidence": "high"
  },
  {
   "line": 84,
   "en": "There's a fair chance part of its journey began in China.",
-  "start": 615.046,
-  "end": 618.196,
+  "start": 626.589,
+  "end": 629.739,
   "confidence": "high"
  },
  {
   "line": 85,
   "en": "And if the plant in Kakinada wins... the next one might start right here in India.",
-  "start": 618.566,
-  "end": 622.874,
+  "start": 630.109,
+  "end": 635.101,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "Medicines aren't the only missing piece.",
-  "start": 623.846,
-  "end": 626.101,
+  "start": 635.966,
+  "end": 638.221,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "India writes software for the whole world.",
-  "start": 626.594,
-  "end": 628.821,
+  "start": 638.714,
+  "end": 640.941,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "So why is India's own A.I. still so far behind America's and China's?",
-  "start": 629.198,
-  "end": 634.038,
-  "confidence": "check"
+  "start": 641.318,
+  "end": 646.158,
+  "confidence": "high"
  },
  {
   "line": 86,
   "en": "That's our next story.",
-  "start": 634.477,
-  "end": 635.594,
+  "start": 646.597,
+  "end": 647.714,
   "confidence": "high"
  },
  {
   "line": 87,
   "en": "Before you go, tell me in the comments \u2014 which medicine in your home would you most like to see fully made in India?",
-  "start": 636.08,
-  "end": 637.959,
-  "confidence": "check"
+  "start": 648.2,
+  "end": 654.515,
+  "confidence": "high"
  },
  {
   "line": 87,
   "en": "I read every one.",
-  "start": 638.317,
-  "end": 642.395,
-  "confidence": "check"
+  "start": 654.977,
+  "end": 655.986,
+  "confidence": "high"
  },
  {
   "line": 88,
   "en": "This is Be Practical with Kishore.",
-  "start": 642.857,
-  "end": 643.866,
-  "confidence": "check"
+  "start": 656.593,
+  "end": 658.133,
+  "confidence": "high"
  },
  {
   "line": 88,
   "en": "Stay practical.",
-  "start": 644.473,
-  "end": 646.013,
-  "confidence": "check"
+  "start": 658.598,
+  "end": 659.37,
+  "confidence": "high"
  },
  {
   "line": 88,
   "en": "Jai Hind.",
-  "start": 646.478,
-  "end": 647.25,
-  "confidence": "check"
+  "start": 659.763,
+  "end": 660.143,
+  "confidence": "high"
  }
 ]

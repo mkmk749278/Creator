@@ -5,8 +5,8 @@
   "end": 4.653,
   "te": "Meanwhile, in the nineteen nineties, China went all in on medicine ingredients.",
   "en": "",
-  "speech_vs_text": 0.98,
-  "boundary_margin": 0.379,
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.385,
   "confidence": "high"
  },
  {
@@ -15,8 +15,8 @@
   "end": 9.961,
   "te": "It built huge plants, in huge drug parks, with cheap power and cheap water.",
   "en": "",
-  "speech_vs_text": 1.17,
-  "boundary_margin": 0.267,
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.277,
   "confidence": "high"
  },
  {
@@ -25,8 +25,8 @@
   "end": 13.293,
   "te": "Its factories also faced looser pollution rules.",
   "en": "",
-  "speech_vs_text": 1.04,
-  "boundary_margin": 0.065,
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.062,
   "confidence": "high"
  },
  {
@@ -35,8 +35,8 @@
   "end": 19.719,
   "te": "And then cheap Chinese penicillin flooded the world market... at prices nobody else could match.",
   "en": "",
-  "speech_vs_text": 1.04,
-  "boundary_margin": 0.065,
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.062,
   "confidence": "high"
  },
  {
@@ -45,8 +45,8 @@
   "end": 21.753,
   "te": "Now remember this one number.",
   "en": "",
-  "speech_vs_text": 0.9,
-  "boundary_margin": 0.433,
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.428,
   "confidence": "high"
  },
  {
@@ -55,7 +55,7 @@
   "end": 25.531,
   "te": "Nineteen ninety-one — the year India opened up its economy.",
   "en": "",
-  "speech_vs_text": 0.97,
+  "speech_vs_text": 0.93,
   "boundary_margin": 0.219,
   "confidence": "high"
  },
@@ -65,7 +65,7 @@
   "end": 31.317,
   "te": "Of all the medicine powder India bought from outside, China sold less than one per cent.",
   "en": "",
-  "speech_vs_text": 1.02,
+  "speech_vs_text": 0.98,
   "boundary_margin": 0.219,
   "confidence": "high"
  },
@@ -75,8 +75,8 @@
   "end": 32.931,
   "te": "Less than one.",
   "en": "",
-  "speech_vs_text": 1.34,
-  "boundary_margin": 0.303,
+  "speech_vs_text": 1.28,
+  "boundary_margin": 0.297,
   "confidence": "high"
  },
  {
@@ -85,8 +85,8 @@
   "end": 37.462,
   "te": "Then, one by one, the Indian penicillin plants went quiet.",
   "en": "",
-  "speech_vs_text": 1.07,
-  "boundary_margin": 0.294,
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.285,
   "confidence": "high"
  },
  {
@@ -95,8 +95,8 @@
   "end": 39.301,
   "te": "Hindustan Antibiotics.",
   "en": "",
-  "speech_vs_text": 0.96,
-  "boundary_margin": 0.294,
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.285,
   "confidence": "high"
  },
  {
@@ -105,7 +105,7 @@
   "end": 40.155,
   "te": "Stopped.",
   "en": "",
-  "speech_vs_text": 0.58,
+  "speech_vs_text": 0.56,
   "boundary_margin": 0.186,
   "confidence": "check"
  },
@@ -115,7 +115,7 @@
   "end": 41.247,
   "te": "I.D.P.L.",
   "en": "",
-  "speech_vs_text": 2.45,
+  "speech_vs_text": 2.34,
   "boundary_margin": 0.186,
   "confidence": "check"
  },
@@ -125,7 +125,7 @@
   "end": 42.104,
   "te": "Stopped.",
   "en": "",
-  "speech_vs_text": 1.06,
+  "speech_vs_text": 1.01,
   "boundary_margin": 9.9,
   "confidence": "high"
  },
@@ -135,7 +135,7 @@
   "end": 42.985,
   "te": "Torrent.",
   "en": "",
-  "speech_vs_text": 0.96,
+  "speech_vs_text": 0.92,
   "boundary_margin": 9.9,
   "confidence": "high"
  },
@@ -145,9 +145,9 @@
   "end": 44.022,
   "te": "Ranbaxy.",
   "en": "",
-  "speech_vs_text": 1.44,
+  "speech_vs_text": 1.38,
   "boundary_margin": 9.9,
-  "confidence": "check"
+  "confidence": "high"
  },
  {
   "line": 16,
@@ -155,8 +155,8 @@
   "end": 44.975,
   "te": "Sarabhai.",
   "en": "",
-  "speech_vs_text": 1.13,
-  "boundary_margin": 1.044,
+  "speech_vs_text": 1.08,
+  "boundary_margin": 1.064,
   "confidence": "high"
  },
  {
@@ -165,7 +165,7 @@
   "end": 45.828,
   "te": "Stopped.",
   "en": "",
-  "speech_vs_text": 0.68,
+  "speech_vs_text": 0.65,
   "boundary_margin": 0.145,
   "confidence": "check"
  },
@@ -175,7 +175,7 @@
   "end": 47.371,
   "te": "And the last one standing...",
   "en": "",
-  "speech_vs_text": 0.86,
+  "speech_vs_text": 0.82,
   "boundary_margin": 0.145,
   "confidence": "high"
  },
@@ -185,7 +185,7 @@
   "end": 48.228,
   "te": "Alembic.",
   "en": "",
-  "speech_vs_text": 0.87,
+  "speech_vs_text": 0.83,
   "boundary_margin": 9.9,
   "confidence": "high"
  },
@@ -195,8 +195,8 @@
   "end": 49.246,
   "te": "Stopped.",
   "en": "",
-  "speech_vs_text": 1.04,
-  "boundary_margin": 1.243,
+  "speech_vs_text": 1.0,
+  "boundary_margin": 1.218,
   "confidence": "high"
  },
  {
@@ -205,8 +205,8 @@
   "end": 54.648,
   "te": "By about twenty twenty, India was importing all of that base powder for amoxicillin.",
   "en": "",
-  "speech_vs_text": 1.0,
-  "boundary_margin": 1.243,
+  "speech_vs_text": 0.95,
+  "boundary_margin": 1.218,
   "confidence": "high"
  },
  {
@@ -215,8 +215,8 @@
   "end": 56.34,
   "te": "Every last kilo.",
   "en": "",
-  "speech_vs_text": 1.52,
-  "boundary_margin": 1.76,
+  "speech_vs_text": 1.45,
+  "boundary_margin": 1.754,
   "confidence": "check"
  },
  {
@@ -225,8 +225,8 @@
   "end": 58.076,
   "te": "Remember that one per cent?",
   "en": "",
-  "speech_vs_text": 0.88,
-  "boundary_margin": 0.317,
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.321,
   "confidence": "high"
  },
  {
@@ -235,8 +235,8 @@
   "end": 60.24,
   "te": "That was for all medicine powder.",
   "en": "",
-  "speech_vs_text": 0.92,
-  "boundary_margin": 0.28,
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.277,
   "confidence": "high"
  },
  {
@@ -245,8 +245,8 @@
   "end": 63.694,
   "te": "Now, if you look at just antibiotic powder today...",
   "en": "",
-  "speech_vs_text": 1.14,
-  "boundary_margin": 0.28,
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.277,
   "confidence": "high"
  },
  {
@@ -255,8 +255,8 @@
   "end": 66.562,
   "te": "China's share is around eighty-six per cent.",
   "en": "",
-  "speech_vs_text": 1.11,
-  "boundary_margin": 2.701,
+  "speech_vs_text": 1.06,
+  "boundary_margin": 2.77,
   "confidence": "high"
  },
  {
@@ -265,8 +265,8 @@
   "end": 73.165,
   "te": "Niti Aayog estimates Chinese powder costs thirty-five to forty per cent less than powder made in India.",
   "en": "",
-  "speech_vs_text": 1.12,
-  "boundary_margin": 0.228,
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.235,
   "confidence": "high"
  },
  {
@@ -275,8 +275,8 @@
   "end": 77.066,
   "te": "So tell me — if you ran a company, would you build a plant here?",
   "en": "",
-  "speech_vs_text": 0.92,
-  "boundary_margin": 0.228,
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.235,
   "confidence": "high"
  },
  {
@@ -285,8 +285,8 @@
   "end": 78.286,
   "te": "That's the trap.",
   "en": "",
-  "speech_vs_text": 0.85,
-  "boundary_margin": 1.009,
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.996,
   "confidence": "high"
  },
  {
@@ -295,48 +295,48 @@
   "end": 80.716,
   "te": "You can't compete without a big plant.",
   "en": "",
-  "speech_vs_text": 1.04,
-  "boundary_margin": 1.323,
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.578,
   "confidence": "high"
  },
  {
   "line": 31,
   "start": 81.059,
-  "end": 83.96,
+  "end": 84.945,
   "te": "And you can't risk a big plant... when one price war can wipe it out.",
   "en": "",
-  "speech_vs_text": 0.84,
-  "boundary_margin": 0.295,
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.354,
   "confidence": "high"
  },
  {
   "line": 32,
-  "start": 84.115,
-  "end": 84.945,
+  "start": 85.398,
+  "end": 86.994,
   "te": "For years, that trap held.",
   "en": "",
-  "speech_vs_text": 0.65,
-  "boundary_margin": 0.295,
-  "confidence": "check"
+  "speech_vs_text": 1.2,
+  "boundary_margin": 0.354,
+  "confidence": "high"
  },
  {
   "line": 33,
-  "start": 85.398,
-  "end": 86.994,
+  "start": 87.489,
+  "end": 90.955,
   "te": "Then Corona came — and India had to lock its own doors.",
   "en": "",
-  "speech_vs_text": 0.6,
-  "boundary_margin": 0.061,
-  "confidence": "check"
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.39,
+  "confidence": "high"
  },
  {
   "line": 34,
-  "start": 87.489,
-  "end": 90.955,
+  "start": 91.343,
+  "end": 94.627,
   "te": "And this time, the central government decided to break the trap.",
   "en": "",
-  "speech_vs_text": 0.93,
-  "boundary_margin": 0.061,
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.39,
   "confidence": "high"
  }
 ]

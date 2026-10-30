@@ -69,7 +69,7 @@ jobs:
       - name: Install FFmpeg, HyperFrames, Chrome
         run: |
           command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
-          python3 -m pip install --quiet "pillow==11.3.0"
+          python3 -m pip install --quiet "pillow==12.3.0"
           npm ci --ignore-scripts
           python3 scripts/library.py fetch
           npm run vendor
@@ -82,7 +82,10 @@ jobs:
           GDRIVE_RCLONE_TOKEN: ${{ secrets.GDRIVE_RCLONE_TOKEN }}
           ASSETS: ${{ inputs.assets }}
         run: |
+          [[ -n "$GDRIVE_RCLONE_TOKEN" ]] || { echo "::error::Repo secret GDRIVE_RCLONE_TOKEN is missing (PLAYBOOK §3a)"; exit 1; }
           bash scripts/gdrive_pull.sh "${ASSETS%%:*}" "${ASSETS#*:}"
+          # tars made by the session (paths relative to the repo root, e.g. video/pha/p1/media) unpack in place
+          for t in "${ASSETS#*:}"/*.tar; do [[ -f "$t" ]] && tar xf "$t" && rm -f "$t"; done; true
       - name: Prepare
         id: prep
         env:

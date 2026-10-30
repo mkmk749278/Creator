@@ -144,6 +144,50 @@ redirects. Gofile stays the owner's delivery link. Only our own renders and our 
 (npm install with vendoring, `.venv` with all extras, library fetch), so it is ready to render when it starts.
 The `/parallel-render` skill walks through the whole procedure.
 
+### 3a. Where to render: cloud session or GitHub Actions (researched and measured 2026-10-28)
+> "On rendering, your cloud session vs GitHub Actions GitHub machine: which is better, also in view of usage saving of
+> Claude too? Go deep research." (owner, 2026-10-28)
+
+**Facts (sources: docs.github.com *GitHub-hosted runners reference*, *Usage limits, billing and administration*,
+*Actions limits*, read 2026-10-28; GitHub changelog 2025-12-16; our repo's settings):**
+- **The repo is public**, so "use of the standard GitHub-hosted runners is free and unlimited on public repositories"
+  (GitHub docs). A standard Linux runner for a public repo is **4 vCPU, 16 GB RAM, 14 GB SSD** (private repos get
+  2 vCPU / 8 GB). No GPU (GPU runners are paid "larger runners" on Team/Enterprise plans only).
+- **Up to 20 jobs at once** on the Free plan, **6 hours per job**, 35 days per workflow run.
+- GitHub's announced fee for self-hosted runners (2026) was **postponed**; the owner's VPS runner stays free.
+- A cloud session is a 4 vCPU / 16 GB VM too (§3), but it costs **Claude usage**: the session must stay alive through
+  the render (Monitor wake-ups, each one a model turn over the whole conversation), idle VMs can be reclaimed mid-job,
+  and parallel sessions share one usage limit (five sessions hit the 5-hour limit in about 10 minutes, §3, 2026-10-13).
+- **Measured, same 20 s 1080p spike (`video/spike`, `--workers 4`):** cloud session **61 s** wall (59 s capture);
+  GitHub runner **41 s** for the render step, plus **44 s** of install (npm, library files, Chrome) and ~10 s
+  checkout. *So:* the runner is about **1.5× faster per job**, and a 10-minute film split into 5 parts renders as
+  5 parallel jobs in roughly the time of one part.
+
+**Decision (Claude's, as creative director; recorded for every film):**
+1. **Author and check in the session** (cheap model work): write scenes and `make_film.py`, `hyperframes lint` →
+   `check` → `snapshot`, look at the PNGs, fix. Short test renders (≤ 20 s) may run in the session.
+2. **Every full render runs on GitHub Actions** (`Render film` workflow, `.github/workflows/render-film.yml`): one job
+   per part or scene folder, 1080p preview or native 4K, results to Drive (`drive_sub`) with timing and a contact sheet
+   in the run summary. The session starts it (GitHub MCP `actions_run_trigger` on `main`), **ends its turn**, and comes
+   back only to pull the parts, assemble the audio and review the contact sheet. *Why:* zero Claude usage during
+   renders, 1.5× faster per job, 20 parallel jobs, no VM reclaim.
+3. **Parallel cloud sessions are now only for parallel authoring** (two heavy sessions at most, §3), never for render
+   shards.
+4. **The VPS self-hosted runner** stays for YouTube fetches (mobile/residential IP needs) and as a fallback renderer.
+
+**Rules that come with it:**
+- **Public repo = public logs and artifacts.** Never echo a secret; never upload a render that contains third-party
+  excerpts (news, company films) as a run artifact: send renders to Drive (`drive_sub`), and keep artifacts to logs and
+  contact sheets of our own material. Artifacts on the Free plan share a 500 MB quota anyway.
+- **Assets reach the runner through Drive:** the session tars `projects/<slug>/assets/` (or the parts' `media/`) to
+  `Creator/<Channel>/<slug>/build/`; the job pulls it (`assets` input). Needs the repo secret
+  **`GDRIVE_RCLONE_TOKEN`** (Settings → Secrets and variables → Actions; the same value as the environment's).
+- **Workflow files must be on `main`** for `workflow_dispatch`: merge the workflow change first, then trigger.
+- **Fresh runners need `npm ci --ignore-scripts` → `python3 scripts/library.py fetch` → `npm run vendor`**: the plain
+  `npm ci` postinstall fails without the library files (run 1, 2026-10-28).
+- Keep each job under ~5 h and inside 14 GB of disk: split long 4K parts (the rare-earth 4K part ran out of memory
+  once, §15).
+
 ## 4. Quality first: never trim effort for speed
 
 The owner's rule (Oct 2026): **accuracy and the best output matter more than speed.**
@@ -391,7 +435,12 @@ lines like "Now let us understand…" sounded like a lecture, and raw acronyms w
 **Phonetics for Akash (mandatory in VO text):** `Sibill` (CIBIL), `Loke Uh-daa-lut` (Lok Adalat), `Ray-rah` (RERA),
 and letter acronyms with hyphens: `R-B-I`, `E-M-I`, `N-P-A`, `G-S-T`, `B-N-S-S`, `F-I-R`, `T-P-A`. Apply the same to
 any acronym said letter by letter (R-D-S-O, R-F-I-D, C-R-S, L-H-B). Acronyms people say as a word stay as words (Isro,
-Kavach). The English lint fails any bare capital acronym that is not on the project's word list. Amounts: the guide
+Kavach). The English lint fails any bare capital acronym that is not on the project's word list. **Names and units the
+voice has misread** (the jet engine film, reported by an outside review on 2026-10-29: "Safran" heard as saffron,
+"Nashik" as Nasi, "Ghatak" as gutak, kilonewtons slurred): write `Sah-frahn`, `Naa-shik`, `Ghaa-tuk` and `kilo-newtons` in the VO text, never `kN`, `sq km` or
+`cr`; captions and on-screen text keep the real spelling. `scripts/vo_blocks.py` warns on the known list (`RESPELL`) and
+prints a "Listen for" line under every block (names, acronyms, units): any foreign or Indian proper noun the voice may
+not know gets a respelling the first time it appears, and the owner listens for each one in the take. Amounts: the guide
 allows `₹65,000` or `65 thousand rupees`; we keep **number words** in VO text ("sixty five thousand rupees") because
 digits and lakh/crore grouping have been read the Western way.
 
@@ -1944,6 +1993,87 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   with one Akash setup; the owner's reading: the emotional lines change the timing. *So:* keep good takes and give the
   fast blocks room in the edit (picture-led pauses, diegetic beats, silence before reveals) instead of asking for
   slower re-records; flag a re-record only when a line is hard to follow.
+- **Splitting a film into render parts leaves slivers at the seams, and a too-short window never fades out.** The
+  pharma parts carried a label, a gauge and a caption that crossed a seam by 0.1–0.5 s. A window shorter than fade-in +
+  fade-out put the fade-out *before* the fade-in finished, so the item stayed on screen for the whole next part (the
+  "Cooked" chip over all of part 3; a part-4 caption over all of part 5). `hyperframes check` caught every case as
+  `content_overlap` errors over a long time range. *Fix:* the part emitter drops a seam sliver under 0.6 s
+  (`seam_sliver` in `projects/pharma-apis/build/make_film.py`), and the overlay engine squeezes both fades into any
+  short window (`video/pha/_shared/pha.js`). *Rule:* run `check` on every part before rendering any of them, and read a
+  `content_overlap` that spans most of a part as an item that never left, not as a layout nit.
+- **Shots laid one per VO line run far too long; split them in the engine, not by hand.** The first pharma cut had 79
+  shots averaging 8.6 s (one stock clip 23.6 s, a news clip 21 s, gazette pages 15–17 s) against the 3.5–5 s reset rule.
+  *Fix:* `split_long()` in `projects/pharma-apis/build/make_film.py` cuts every hold over 4.6 s into near-equal pieces,
+  each with a new framing (punch-ins for footage, reading down the page for documents, x-shifts for cropped news), and
+  lets a shot list several in-points (`ms=[32.0, 48.0]`) to jump to clean stretches. 153 shots, 4.4 s on average.
+  *Rule:* print the shot-length list before the first render and fix any hold over 5 s; run `freezedetect`
+  (`n=0.002:d=1.5`) on every cut.
+- **Strip every third-party clip end to end before choosing in-points.** The ABP Majha clip of Hindustan Antibiotics
+  turns into a workers' press meet (a named man at microphones) 20 s in; a shot that ran past 0:19 put STOPPED stamps on
+  real people's faces. The Lyfius promo carries a title card and lower-third boxes at known times. *So:* a 2–4 s contact
+  strip of the whole clip (`fps=1/2,tile=6x5`), the clean ranges written next to the asset in the EDL, and every
+  in-point checked against them. Real people in news footage never sit under a verdict graphic.
+
+**Jet engine film: production errors found after upload (owner's review, 2026-10-29).** An outside review of "30 Tejas
+Jets Are Ready. Why Can't They Fly?" heard two doubled phrases and several misread names. Checked against our files:
+- **Doubled phrases came from spliced re-takes.** "past the speed of sound" (02:18) and "and survive for twenty-five
+  years" (05:08) each play twice. Both sit exactly on splices in `projects/jet-engine-bet/final/splices.json`
+  (`l17_blow.mp3`, `l39_fighter.mp3`). The re-takes themselves said the phrase twice: the L17 fix *removed* a word
+  ("forty-ton") yet the re-take ran 0.6 s longer than the line it replaced, and the L39 re-take ran 2.3 s longer for a
+  small wording change. Nobody compared a re-take's length with its text before splicing it in. *Rules:* never splice
+  a phrase or a line into a take (the owner re-records the whole block, §4a-2); every take passes
+  `scripts/vo_take_check.py` (each sentence's speech time against its words, no speech recognition) before it goes
+  into a film, and every flagged sentence is listened to; a take longer than its text predicts is a repeat until proven
+  otherwise.
+- **Misread names and units** (reported: Safran → saffron, Nashik → Nasi, Ghatak → gutak, kilonewtons slurred,
+  delinked; the script spelled all of them correctly, so the voice or YouTube's auto-captions misread them):
+  respell them in the VO text (§4a-4 phonetics, the `RESPELL` list in `scripts/vo_blocks.py`) and give the owner a
+  "Listen for" list per block. Upload our own SRT so YouTube shows the real spellings.
+- **Audio-only pass before the film is locked:** the owner plays the joined VO (the trimmed, joined file the film uses,
+  not the raw takes) once through, at 1.5× if he likes, listening only for doubled words, misread names and cut-off
+  endings. Sent as one MP3 to Drive with the recording file.
+
+**Pharma film: the take trim cut off the last sentence of four blocks (found 2026-10-29 while checking the above).**
+`tools/align_blocks.py` cut each take 0.25 s after its *last pause*, assuming every take ends in silence. ElevenLabs
+takes often end right after the last word, so the cut fell at the pause before the last sentence: blocks 1, 4, 5, 6 and
+8 lost 0.6–3.7 s each ("So our plants stayed too small to be cheap", "And this time, the central government decided to
+break the trap", "Jai Hind" …), and the aligner squeezed their text into the remaining audio (0.15–0.18 s a word against
+a 0.31 median). *Fix:* trim only a silence that reaches the end of the file, and stop if a trim would remove more than
+0.6 s. *Rule:* `scripts/vo_take_check.py --takes … --trimmed …` after every alignment; it flags speech after any trim
+point and any sentence far faster or slower than the film's median pace.
+
+**Pharma film, review round 2: the floor and the ceiling (owner, 2026-10-29).** The review asked for the fermenter to
+grow from Day 1 to Day 7 as a timelapse. The owner's answer to a literal timelapse: "Using time lapse is basic... use
+your creativity everywhere, more than humans do." What the scene became, and the pattern behind it:
+- **Show the process, not the label.** Sugar visibly streams in and is eaten; spores sprout glowing tips and branch;
+  colonies spread and the broth clouds; the mould *releases* golden penicillin that gathers until the broth is gold
+  (the colour change has a cause on screen); a magnifier shows one hyphal tip at 6x; MOULD and PENICILLIN meters rise in
+  step; day and night sweep the steel for "runs day and night"; a slow push in as the week passes.
+- **A creative pass over the whole film, every round.** The same round turned two weak stock beats into mechanisms:
+  the 2001 price drop as 104 notes of $100 collapsing to 3½ (to scale, timed to the $350 card), and the minimum import
+  price as a border gate where containers below ₹2,216/kg are stopped ("LICENCE NEEDED") and dearer ones pass, with
+  the amoxicillin and 6-APA lanes opening on "the same rule covers…".
+- *Rule:* for every scene ask what the viewer should *feel happening*, then animate the cause, not just the result;
+  numbers on screen come only from sources, invented quantities are labelled ILLUSTRATIVE.
+
+**Pharma film, round 3: smoothness (owner's 720p audit, 2026-10-29: "the picture glitches while the sound flows").**
+Two separate faults, both measured, both now handled in the engine:
+- **Judder: 24/25 fps sources in a 30 fps timeline.** Every 5th-6th frame showed twice (12 of 75 frames in a 2.5 s
+  test window). *Fix:* `projects/pharma-apis/build/conform.sh` gives every source exactly one output frame per source
+  frame at 30 fps (`setpts=PTS*rate/30`: 25 fps plays 1.2x, 29.97 fps 1.001x); the assembler maps in-points by the
+  same factor (`rate()`). Motion-compensated interpolation (`minterpolate`) ran ~30x slower than real time in a
+  session and can warp, so it is the last resort. *Rule:* probe every source's frame rate before the edit; nothing
+  that is not 30/1 goes into a 30 fps film unconformed.
+- **Flash frames: the promo's own cuts.** Third-party promos cut every 1-3 s; an in-point a few frames before one of
+  their cuts shows a sliver of the next shot. *Fix:* `scdet` lists each source's cuts (`assets/cuts/`), a hand-checked
+  `CLEAN` table excludes slides, titles and people, and `clean_assign()` places every piece inside a clean span,
+  preferring footage not yet used; all cuts snap to whole 1/30 s frames. Lower-third boxes and logos are cropped out
+  by a fixed framing measured on a gridded frame (Lyfius: 1.6x from 30% height keeps 11-74%), not by luck.
+- **Know how much clean footage a promo really has.** The Lyfius promo had about 50 s of usable film against 100 s of
+  planned screen time, so it repeated. Documents (the company's own press release, the notification page that states
+  the date) and other footage carried the rest. *Rule:* sum the clean spans before writing the EDL.
+- **Never `pkill -f` a pattern that appears in the same command line** (CLAUDE.md trap): it killed the session's own
+  shell mid-edit here. Kill by PID.
 - **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".

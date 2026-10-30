@@ -25,5 +25,5 @@ line,picture_start,picture_end,speech_start,speech_end,pause_after,pause_use,en
 24,76.415,79.769,76.565,79.453,0.47,"cut on the breath; music bed lifts, whoosh/impact on the cut",
 25,79.769,82.973,79.919,82.573,0.55,"cut on the breath; music bed lifts, whoosh/impact on the cut",
 26,82.973,85.054,83.123,84.679,0.52,"cut on the breath; music bed lifts, whoosh/impact on the cut",
-27,85.054,89.511,85.204,89.366,0.3,"cut on the breath; music bed lifts, whoosh/impact on the cut",
-28,89.511,91.506,89.661,91.231,0.0,end,
+27,85.054,91.532,85.204,91.231,0.45,"cut on the breath; music bed lifts, whoosh/impact on the cut",
+28,91.532,94.589,91.682,94.406,0.0,end,

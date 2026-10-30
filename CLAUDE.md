@@ -23,6 +23,11 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   compliance gates, no fakes of real people or voices, no Whisper, and the owner's explicit decisions.
 - **Never settle for the first idea:** 3+ angles, cold opens and thumbnail concepts per film; 2–3 signature moments;
   a one-page `treatment.md` before the script.
+- **Creativity has no ceiling (owner, 2026-10-29):** "use the creativity as much as you can, more than humans do".
+  A review note or a craft rule is the floor: meet it, then go past it. The obvious device (a timelapse for growth, a
+  push-in on a document) is the basic level; ask what would make the viewer feel the mechanism, then build that
+  (the living fermenter, the notes collapsing to scale, the border gate). Every review round includes a creative pass
+  over the whole film, not only the flagged shots (PLAYBOOK §4.1, §15).
 - **Ask the owner with choices:** for his decisions use AskUserQuestion (2–4 options, the recommended one first).
 
 ## Narration and curiosity come first (owner, 2026-10-24)
@@ -51,6 +56,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   the same day. Sessions can't delete branches: tell the owner which ones to delete.
 - Build in phases. At the end of each phase, stop and report what was built, what was measured and what is left.
 - Once the owner approves a cut, stop editing it.
+- **Review cuts are 720p; 4K only after the owner finalises (owner, 2026-10-29).** While a film is under review, collect
+  all fixes (the owner's notes and ours) and render one 720p review cut per round; never re-render just to fix one thing
+  mid-review. The native 4K render happens once, after the owner finalises the cut.
 - **Every final video ends with a YouTube package and a merged PR** (owner, 2026-10-17; PLAYBOOK §13a, `/deliver`):
   (1) a **thumbnail built for curiosity, the most important thing on a thumbnail** (owner, 2026-10-22: low CTR;
   PLAYBOOK §13b; the test: one second on a phone must raise a question only the video answers): one real object or moment, a
@@ -69,8 +77,12 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   research to finish sooner. Use `high`/`xhigh` effort for building and `max` for fact-checks and final reviews.
   Fact-checks are light (owner, 2026-10-11): re-verify only weak rows, numbers, our calculations and changed lines;
   strong rows the writer sourced with URL + quote are only spot-opened (PLAYBOOK §12).
-- **Get speed from parallel cloud sessions** (each is its own 4 vCPU / 16 GB VM): split rendering and animation across
-  sessions, keep media sourcing in one session (all sessions share one IP and one usage limit). Plan: PLAYBOOK §3.
+- **Render on GitHub Actions, author in the session (owner's question, 2026-10-28; PLAYBOOK §3a):** the repo is public,
+  so GitHub's standard runners are free and unlimited (4 vCPU / 16 GB, 20 jobs at once, 6 h a job) and measured 1.5×
+  faster than a session on the same scene, with zero Claude usage. Sessions write and check scenes (lint, check,
+  snapshot, short tests); every full render goes through the `Render film` workflow, results to Drive; the session ends
+  its turn while it runs. Parallel cloud sessions are for authoring only (at most two heavy ones; all share one IP and
+  one usage limit). Plan: PLAYBOOK §3, §3a.
 - Research deeply: real sources for every fact, real footage before stock, a contact sheet of every asset before use.
   When a source is blocked, work down the fallback chain in PLAYBOOK §8; never route around blocks with VPNs or proxies.
   For **study and analysis data** (competitor transcripts, stats), the owner allows any source, including third-party
@@ -233,6 +245,12 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   `scripts/vo_blocks.py` → `projects/<slug>/vo_blocks.md`, sent with SendUserFile. The file is extra to the chat blocks,
   never instead. With every change, name **which blocks to record again**; the owner re-records freely (2026-10-28), so
   never keep a weaker line to save a take and never splice words into a take (PLAYBOOK §4a-2).
+- **Every take is checked before the film uses it (2026-10-29; PLAYBOOK §15):** the jet engine film shipped two doubled
+  phrases from spliced re-takes, and a trim cut the last sentence off four pharma blocks. Run `scripts/vo_take_check.py`
+  after every alignment (sentence pace vs words, speech left after a trim; no speech recognition) and listen to every
+  flag; respell names and units the voice misreads (`Sah-frahn`, `Naa-shik`, `Ghaa-tuk`, `kilo-newtons`, never `kN`/`cr`;
+  the `RESPELL` list and "Listen for" lines in `scripts/vo_blocks.py`); the owner gets one audio-only pass of the joined
+  VO before the film is locked.
 - **Talk, don't read** (owner, 2026-10-09): narration sounds like the owner talking to you, never like reading text aloud.
   Heavy Tenglish like NB Show (English words and short phrases where people really use them), మీరు + మనం address, spoken
   verb forms, no newspaper words (ఈ నేపథ్యంలో, తద్వారా, కావున). **Clarity first:** full sentences with a subject and a
