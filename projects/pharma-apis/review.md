@@ -125,3 +125,40 @@ first the headline and date, then a push into its photo of masked buyers at a De
 3 March picture). Part 1 re-rendered in 4K on Actions; the other four parts are unchanged.
 Master rebuilt with the new part 1 (Drive `renders/4k_v2/video_pha_p1.mp4`): 11:28.0, −14.1 LUFS, peak −1.1 dBFS; part 1
 decodes clean, no black frames; the only freeze is still the known 2.2 s $10,400 card at 1:50.8. Same Drive link.
+
+## Round 4 (independent 4K audit, 30 Oct 2026, `114d468b-4k-2026-10-30.md`) → next 720p review cut
+
+Measured before fixing (all 20,640 frames of the 4K master):
+- **"Judder" = the grain, not the footage.** The footage conform worked (no repeated frames on any stock or promo shot).
+  Whole-frame repeats (grain included) came only on our slow animated scenes: `pha.js` stepped the grain 24 times a
+  second on the 30 fps timeline, so every 5th frame nothing moved. Fixed: one grain step per frame. The 720p cut of
+  29 Oct had the same pattern, so it was never a 4K load problem. (HyperFrames' "sparse keyframes" warning was tested
+  and is not the cause.)
+- **13 one-frame flashes** of the empty background (the audit found 8): shot times were rounded UP to 3 decimals
+  (78.867 for the frame at 78.8667), so on the cut frame the new shot had not started and the old one had ended.
+  Fixed: `build/frame_floor.py`, shot start/end floored onto their frames (`make_film.py` uses it).
+- The session rebuilt `assets/` from the Drive part tars + raw footage + Pixabay originals, so `make_film.py` runs again;
+  four in-points moved by fractions of a second on single-shot stock (re-fetched renditions have other frame rates).
+
+Fixed from the audit:
+- 10:30 "It has the factories": a Lyfius worker in a hard hat (the 7:22 clip stood for China); 7:22 tagged ILLUSTRATIVE.
+- 0:58 Hubei: China News Service footage of Wuhan, 26 Jan 2020 (CC BY 4.0, Commons): the empty aerial, then the empty
+  boulevard on "the whole province was shut down" (no more dead repeat of the 0:29 map). Framed 1.6x: logos out.
+- 1% → 86%: hero numbers centre screen ("<1%" for 1991, the same "<1%" on "Remember that one per cent?", then a match
+  cut to "86%" on "eighty-six" with the capsule filling and a low thud), bases underneath.
+- 5:08 penicillin G → 6-A.P.A. → amoxicillin: `chain` scene, one penam core, the side group snipped and replaced
+  (skeletal formulae, ILLUSTRATION). 10:11 lesson: `chain_lesson`, India's last link, China's links before it, the
+  joint cracks.
+- 7:51 PLI: the Department of Pharmaceuticals press note (9 Dec 2021, "41 products … Rs. 6,940 cr.").
+- 9:39 "₹5,000 crore": PSU Watch's report (Rs 5,210 crore till June 2026), not one company's plant.
+- 3:12 fever tablet: a thermometer on white tablets (paracetamol is white).
+- 3:24 "It did.": 0.6 s of black under the words, then Hindustan Antibiotics' old signboard behind trees today.
+- 7:35 the trap: the tanks, steady, "Small plant: can't compete" / "Big plant: big risk", a PRICE WAR stamp (+ sound).
+- Fermenter: the day clock only moves forward; the germ beat is a "What if" branch; the Kakinada tank keeps its clock.
+- Counters land in under 0.45 s. Safe zones: tank meters moved left, "SAME STATE · ANDHRA PRADESH" large and clear of
+  the captions, tablet layers 140 px left (the punched-in pieces clipped "THE REST OF THE TABLET").
+
+Waiting on the owner's phone (YouTube search + Pexels, `scripts/termux_search_to_drive.sh`): Pimpri 1950s, the
+grandparents' India, "a cut could kill you", the STOPPED roll call (one real image per name), the 2001 H.I.V. human
+beat, an Indian export carton / packing line (0:00), an Indian medicine box (1:19), Indian plants (1:36, 2:32), a
+chemical reactor for "cooked" (4:30), a licence-era document (5:58), China's drug parks (6:10, 7:28).

@@ -253,11 +253,15 @@ shot(c(25), "D_niti_p-40", "in", dim=0.55, tag="DOCUMENT · NITI AAYOG")   # "An
 coins(L(25, 0.45), LE(25))
 gauge(L(25, 0.75), LE(25), 86.1, "TODAY · ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
 cite("[NITI AAYOG | TRADE WATCH Q4 FY26]", L(25, 0.4), LE(25))
-shot(c(26), "PH_1853400", "in", dim=0.15)   # tablets, not a pipette robot                           # "Even your fever tablet has a China link..."
+shot(c(26), "PH_1539191", "in", dim=0.15)   # a fever thermometer on white tablets (audit 2026-10-30: paracetamol is white, not pink)   # "Even your fever tablet has a China link..."
 chip("Raw chemical: para-aminophenol", L(26, 0.6), LE(26), 120, 640, "amber", "sm", "up")   # P25: PAP, a big share from China
 cite("[INDUSTRY REPORTS]", L(26, 0.6), LE(26))
 # ---- INDIA MADE ITS OWN PENICILLIN (3:16-4:19)
 shot(c(27), "PH_1851178", "out")                                    # "So you might be thinking — has it always been like this?"
+# "It did.": 0.6 s of black under the words (audit 2026-10-30), then Hindustan Antibiotics' old signboard behind the trees
+# today: "this part of the story, most people have never heard"
+el(f'<div class="blackout" {attrs(S(28, 0) - 0.12, S(28, 0) + 0.5, "fade", 0.08)}></div>', S(28, 0) - 0.12, S(28, 0) + 0.5)
+shot(S(28, 1) - PRE, "Y04", "crop", ms=[10.45, 6.05], origin="50% 50%", tag="FOOTAGE · ABP MAJHA · TODAY")
 shot(c(29), "W_L0032175", "in")   # an archive drawing carries 1954 (the HAL wall footage is today)              # "Pimpri, near Pune. Nineteen fifty-four..."
 datebig("1954", "PIMPRI · NEAR PUNE", L(29, 0.05), LE(29))
 shot(c(30), "W_L0012314", "out")                                   # "Penicillin was the miracle drug of that time..."
@@ -326,10 +330,15 @@ shot(c(58), "px_45680", "slow", ms=[0.0, 2.9], dim=0.45, tag="PIXABAY · ILLUSTR
 shot(S(58, 1) - PRE, "px_199788", "in", ms=6.0, dim=0.45)           # "So tell me — if you ran a company, would you build a plant here?"
 chip("China's powder: 35–40% cheaper", L(58, 0.2), LE(58), 120, 160, "amber", "sm", "up")
 cite("[NITI AAYOG ESTIMATE]", L(58, 0.2), LE(58))
-shot(c(59), "Y05", "crop", ms=8.0, origin="50% 10%")   # the big mill again, not the same COST OF EACH KILO frame                            # "That's the trap..."
+# the trap on the tanks, steady (audit 2026-10-30: the handheld mill shook): small can't compete, big is a risk, and a
+# price war stamps the big tank
+shot(c(59), "R_tanks", "none", ms=0.8)                              # "That's the trap. You can't compete without a big plant..."
+chip("Small plant: can't compete", S(59, 1), LE(59) + 0.5, 120, 160, "red", "sm", "up")
+chip("Big plant: big risk", S(59, 2), LE(59) + 0.5, 120, 260, "amber", "sm", "up")
+stamp("PRICE WAR", round(LE(59) - 0.9, 3), LE(59) + 0.5, 1010, 470)
 shot(c(60), "D_dgft_2020_noti50-1", "out", tag="DOCUMENT · DGFT")  # "Then Corona came — and India had to lock its own doors."
 shot(c(61), "px_45682", "slow", ms=6.0, dim=0.6)                   # "And this time, the central government decided to break the trap."
-shot(c(62), "px_197486", "slow", ms=1.0, dim=0.65)                 # "It launched a scheme..."
+shot(c(62), "D_dop_pli_pressnote_2021-1", "in", origin="50% 72%", dim=0.35, tag="DOCUMENT · DEPT OF PHARMACEUTICALS · PRESS NOTE · DEC 2021")   # the scheme on its own paper, not a Western lab (audit 2026-10-30)   # "It launched a scheme..."
 count(L(62, 0.5), LE(62), 120, 300, 0, 6940, L(62, 0.55), 1.2, "₹", " CRORE", "saffron", "")
 chip("41 ingredients", L(62, 0.25), LE(62), 120, 460, "saffron", "sm", "up")
 cite("[DEPT OF PHARMACEUTICALS | PLI 2020]", L(62, 0.25), LE(62))

@@ -143,7 +143,7 @@ CUES = [(L(2, 0.15), pop(), 0.6), (MF.S(2, 1) - 0.2, whoosh(0.7), 0.25), (L(6, 0
         (L(14, 0.62), click(1500, 0.05), 0.4), (L(15, 0.55), chime(), 0.35), (L(24), thud(48), 0.7), (L(25, 0.45), click(1800, 0.04), 0.4),
         (L(25, 1.2 / 1e9 + 0.75), chime(), 0.3), (L(35, 0.95), chime(), 0.25), (L(36, 0.6), bubbles(), 0.6), (L(37), bubbles(), 0.5),
         (L(38, 0.6), chime(), 0.3), (L(44), whoosh(0.8), 0.3), (L(48), whoosh(0.8, False), 0.3), (L(49, 0.65), click(1500, 0.05), 0.4),
-        (MF.HERO86, thud(45), 0.7), (L(62, 0.55), click(1500, 0.05), 0.4), (L(68, 0.1), thud(55), 0.6), (L(70), chime(), 0.4),
+        (MF.HERO86, thud(45), 0.7), (round(MF.LE(59) - 0.9, 3), stampfx(), 0.55), (L(62, 0.55), click(1500, 0.05), 0.4), (L(68, 0.1), thud(55), 0.6), (L(70), chime(), 0.4),
         (L(76, 0.7), chime(), 0.35), (L(85), chime(), 0.5)]
 CUES += [(round(LE(n) - 0.35, 3), stampfx(), 1.0) for n in (52, 53, 54, 55)]
 # the notes fly away as the $350 card lands; the border gate: a thud for each container stopped, a click for each let through
