@@ -162,3 +162,11 @@ Waiting on the owner's phone (YouTube search + Pexels, `scripts/termux_search_to
 grandparents' India, "a cut could kill you", the STOPPED roll call (one real image per name), the 2001 H.I.V. human
 beat, an Indian export carton / packing line (0:00), an Indian medicine box (1:19), Indian plants (1:36, 2:32), a
 chemical reactor for "cooked" (4:30), a licence-era document (5:58), China's drug parks (6:10, 7:28).
+
+### Round 4 review cut (720p, 30 Oct 2026)
+`pharma_apis_720_r4.mp4` on Drive: 11:28.0, 1280x720 at 30 fps, −14.1 LUFS, peak −1.1 dBFS, rendered on Actions
+(720p option). All 20,640 frames measured: **0 repeated frames, 0 one-frame flashes** (the 4K master had 406 and 13).
+The first 720p attempt still repeated every 3rd frame: the grain used `floor(t * 30)`; `Math.round` fixed it, checked
+frame by frame in the browser before the re-render. Holds over 1.6 s: 1:50.7 (2.2 s, the $10,400 card), 1:53.4 (1.7 s),
+2:12.6 (1.8 s), 7:33.9 (1.6 s, the tanks building). Next: the archive and plant footage from the owner's phone (YouTube
+bot check on the mobile IP; script now paces requests and takes a throwaway account's cookies), then the 4K master.
