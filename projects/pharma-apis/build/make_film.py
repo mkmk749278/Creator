@@ -285,11 +285,9 @@ chip("What if · one germ = lost batch", S(37, 2), LE(37) + 2.0, 120, 160, "red"
 el(f'<div class="contam" {attrs(S(37, 2) + 0.15, LE(37) + 2.0, "fade", 0.9)}></div>', S(37, 2) + 0.15, LE(37) + 2.0)   # the broth turns murky (ILLUSTRATION)
 shot(c(38), "R_fermenter", "none", ms=round(9.8 + c(38) - (S(37, 2) - PRE), 3))                      # "Then you take the penicillin out... penicillin G."
 chip("Penicillin G", L(38, 0.6), LE(38), 1320, 160, "green", "sm", "pop")
-shot(c(39), "px_40948", "slow", ms=0.5, dim=0.4)                   # "Next, it's turned into a smaller base powder..."
-shot(S(39, 2) - PRE, "PXb", "slow", ms=10.0, dim=0.3)              # "From that base, factories make amoxicillin..."
-chip("Penicillin G", L(39, 0.05), LE(39), 120, 300, "green", "sm", "left")
-chip("→ The base (6-A.P.A.)", L(39, 0.3), LE(39), 120, 420, "steel", "sm", "left")
-chip("→ Amoxicillin", L(39, 0.75), LE(39), 120, 540, "ink", "sm", "left")
+# the chemistry itself (audit 2026-10-30: capsules under the chips skipped it): one core, the side group snipped off and a new
+# one locked on (gen_scenes.chain: snip ~1.2 s, "six A.P.A." 3.3 s, amoxicillin 7.5 s from the cut)
+shot(c(39), "R_chain", "none", ms=0.0)                             # "Next, it's turned into a smaller base powder... amoxicillin"
 shot(c(40), "R_tanks", "none", ms=0.5)                             # "A bigger tank makes the powder cheaper. Much cheaper."
 shot(c(42), "Y06", "slow", ms=4.0)                                 # "Think of a flour mill. A big chakki grinds each kilo cheaper..."
 chip("Small chakki", L(42, 0.1), S(42, 2), 120, 640, "steel", "sm", "up")
@@ -371,7 +369,7 @@ shot(c(77), "R_map_india", "none", ms=9.0)   # "none of those parks": the park p
 chip("None running yet", L(77, 0.25), LE(77), 120, 640, "red", "sm", "up")
 shot(c(78), "Y02", "y02", ms=[97.74, 65.62], origin="35% 30%")            # "So has India won? Not yet. But it's back in the fight."
 # ---- RULE, RUIN, REALITY + WHAT IT MEANS FOR YOU
-shot(c(79), "px_45675", "in", ms=8.0, dim=0.3)                     # "So here's the lesson..."
+shot(c(79), "R_chain_lesson", "none", ms=0.0)   # the lesson as the chain: India's last link, China's before it, the joint cracks (audit 2026-10-30)   # "So here's the lesson..."
 shot(c(80), "D_dgft_2020_noti50-1", "in", tag="DOCUMENT · DGFT")  # "And the cost? You saw it in the Corona days..."
 shot(c(81), "px_262464", "slow", ms=9.0, dim=0.2, tag="PIXABAY · ILLUSTRATIVE")   # "the reality today. India has the scientists."
 shot(S(81, 2) - PRE, "Y02", "y02", ms=76.86, origin="35% 30%")   # "It has the factories.": a Lyfius worker in a hard hat (the 7:22 clip stood for China; audit 2026-10-30)

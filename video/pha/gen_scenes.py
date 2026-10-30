@@ -548,6 +548,105 @@ def mipgate(sid="mipgate", D=16):
     write(sid, D, svg, js)
 
 
+# 11. chain: penicillin G -> the base (6-APA) -> amoxicillin (audit 2026-10-30: the chips were right but the picture skipped
+# the chemistry). The penam core (the beta-lactam square fused to the sulphur ring) is drawn once and never changes; only the
+# side group on its nitrogen does: penicillin G's (phenylacetyl, green) is snipped off, leaving H2N (6-APA, "the base"), and
+# amoxicillin's (with its NH2 and the ring's OH) locks on. Skeletal and schematic: ILLUSTRATION. 14 s; make_film.py starts it
+# on the cut (snip on "smaller base powder" ~1.2 s, "six A.P.A." ~3.3 s, amoxicillin on "factories make amoxicillin" ~7.6 s).
+def _hexagon(cx, cy, r):
+    import math
+    pts = [(cx + r * math.cos(math.radians(a)), cy + r * math.sin(math.radians(a))) for a in range(0, 360, 60)]
+    return "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in pts) + " Z"
+
+
+def chain():
+    ST = 'fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"'
+    core = (f'<g id="core" stroke="#c9d6d9" {ST}>'
+            '<path d="M840 470 L950 470 L950 580 L840 580 Z"/>'                    # beta-lactam
+            '<path d="M950 470 L1050 430 L1120 515 L1075 610 L950 580"/>'           # thiazolidine
+            '<path d="M840 580 L800 650 M826 572 L786 642"/>'                       # C=O
+            '<path d="M1120 515 L1190 480 M1120 515 L1190 555"/>'                   # gem-dimethyl
+            '<path d="M1075 610 L1110 690"/><path d="M840 470 L775 425"/></g>'
+            '<text class="lab" x="1050" y="420" text-anchor="middle" style="font-size:40px">S</text>'
+            '<text class="lab" x="975" y="612" style="font-size:36px">N</text>'
+            '<text class="lab" x="780" y="700" text-anchor="middle" style="font-size:36px">O</text>'
+            '<text class="lab" x="1112" y="732" style="font-size:32px">COOH</text>')
+    def side(gid, col, amox):
+        g = (f'<g id="{gid}"><g stroke="{col}" {ST}>'
+             '<path d="M760 425 L700 470 L625 425 L566 506"/>'                     # N-C(=O)-C-ring (to the ring's vertex)
+             '<path d="M700 470 L700 555 M686 470 L686 555"/>'                      # C=O
+             f'<path d="{_hexagon(486, 506, 80)}"/><circle cx="486" cy="506" r="48" stroke-width="5"/>')   # aromatic ring
+        if amox:
+            g += '<path d="M625 425 L625 340"/><path d="M406 506 L346 506"/>'
+        g += '</g><text class="lab" x="700" y="600" text-anchor="middle" style="font-size:36px">O</text>'
+        if amox:
+            g += ('<text class="lab" x="625" y="322" text-anchor="middle" style="font-size:32px">NH₂</text>'
+                  '<text class="lab" x="336" y="518" text-anchor="end" style="font-size:32px">HO</text>')
+        return g + '</g>'
+    svg = (GRID + '<g id="mol" transform="translate(190 30)">'
+           '<ellipse id="glow" cx="985" cy="540" rx="300" ry="220" fill="url(#glowA)" opacity="0"/>'
+           + core + side("pen", "#5fd17a", False) + side("amx", "#f2f7f7", True) +
+           '<text id="nh" class="lab" x="772" y="410" text-anchor="middle" style="font-size:36px">NH</text>'
+           '<text id="nh2" class="lab" x="772" y="410" text-anchor="middle" style="font-size:36px;fill:#e8a33d">H₂N</text>'
+           '<path id="snip" d="M745 395 L800 455" stroke="#ef4f45" stroke-width="6" stroke-dasharray="10 8"/>'
+           '<text id="corelab" class="mono" x="985" y="800" text-anchor="middle">THE CORE · STAYS THE SAME</text></g>'
+           '<text id="t_pen" class="big" x="960" y="200" text-anchor="middle" style="fill:#5fd17a">PENICILLIN G</text>'
+           '<text id="t_apa" class="big" x="960" y="200" text-anchor="middle" style="fill:#e8a33d">6-A.P.A. · THE BASE</text>'
+           '<text id="t_amx" class="big" x="960" y="200" text-anchor="middle">AMOXICILLIN</text>'
+           '<g id="steps" class="mono">'
+           '<text id="s1" x="620" y="270" text-anchor="middle">PENICILLIN G</text><text x="790" y="270" text-anchor="middle">→</text>'
+           '<text id="s2" x="960" y="270" text-anchor="middle">6-A.P.A.</text><text x="1110" y="270" text-anchor="middle">→</text>'
+           '<text id="s3" x="1290" y="270" text-anchor="middle">AMOXICILLIN</text></g>'
+           '<text class="mono" x="1840" y="1000" text-anchor="end">SKELETAL FORMULAE</text>')
+    js = """
+      tl.set(["#amx", "#nh2", "#snip", "#t_apa", "#t_amx", "#corelab", "#glow"], { autoAlpha: 0 }, 0);
+      tl.fromTo("#mol", { scale: 1.0, transformOrigin: "960px 540px" }, { scale: 1.06, duration: 14, ease: "none", immediateRender: false }, 0);
+      tl.fromTo("#core path", { strokeDashoffset: 0 }, { strokeDashoffset: 0, duration: 0.01 }, 0);
+      fade("#corelab", 0.4); tl.to("#glow", { opacity: 0.55, duration: 1.0 }, 0.3);
+      ["#s1", "#s2", "#s3"].forEach((s, i) => tl.set(s, { fill: "#5c7a80" }, 0));
+      tl.set("#s1", { fill: "#5fd17a" }, 0);
+      // snip: the side group leaves on "a smaller base powder"
+      tl.fromTo("#snip", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.12, immediateRender: false }, 1.1); out("#snip", 1.6, 0.25);
+      tl.to("#pen", { x: -260, autoAlpha: 0, duration: 1.0, ease: "power2.in" }, 1.4);
+      out("#nh", 1.9, 0.2); fade("#nh2", 2.0, 0.3);
+      out("#t_pen", 3.1, 0.25); fade("#t_apa", 3.3, 0.35); tl.set("#s1", { fill: "#5c7a80" }, 3.3); tl.set("#s2", { fill: "#e8a33d" }, 3.3);
+      // amoxicillin's group slides in and locks on
+      tl.fromTo("#amx", { x: -320, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.9, ease: "power3.out", immediateRender: false }, 7.5);
+      out("#nh2", 8.3, 0.15); fade("#nh", 8.35, 0.2);
+      tl.fromTo("#glow", { opacity: 0.55 }, { opacity: 1, duration: 0.25, yoyo: true, repeat: 1, immediateRender: false }, 8.4);
+      out("#t_apa", 8.3, 0.25); fade("#t_amx", 8.5, 0.35); tl.set("#s2", { fill: "#5c7a80" }, 8.5); tl.set("#s3", { fill: "#f2f7f7" }, 8.5);
+"""
+    write("chain", 14, svg, js)
+
+
+# 12. chain_lesson: "If you only master the last step, you're only as strong as whoever controls the step before." Three
+# linked steps; the last one India's (saffron), the ones before it China's (amber); then the joint before India's step
+# cracks. ILLUSTRATION. 8 s; the cut is at 0, "the last step" ~2.4 s, "the step before" ~6.1 s.
+def chain_lesson():
+    links = [("l1", "PENICILLIN G", 330), ("l2", "6-A.P.A.", 790), ("l3", "AMOXICILLIN", 1250)]
+    svg = GRID
+    for k, lab, x in links:
+        svg += (f'<g id="{k}"><rect x="{x}" y="440" width="340" height="150" rx="75" fill="#123b42" stroke="#c9d6d9" stroke-width="8"/>'
+                f'<text class="lab" x="{x + 170}" y="527" text-anchor="middle" style="font-size:32px">{lab}</text></g>')
+    svg += ('<g id="j1" stroke="#c9d6d9" stroke-width="10" stroke-linecap="round"><path d="M670 515 H790"/></g>'
+            '<g id="j2" stroke="#c9d6d9" stroke-width="10" stroke-linecap="round"><path d="M1130 515 H1250"/></g>'
+            '<path id="crack" d="M1190 470 L1176 498 L1204 520 L1180 548 L1196 566" fill="none" stroke="#ef4f45" stroke-width="7" stroke-linejoin="round"/>'
+            '<text id="tin" class="lab" x="1420" y="660" text-anchor="middle" style="fill:#ff9933">INDIA</text>'
+            '<text id="tcn" class="lab" x="730" y="660" text-anchor="middle" style="fill:#e8a33d">CHINA</text>'
+            '')
+    js = """
+      tl.set(["#tin", "#tcn", "#crack"], { autoAlpha: 0 }, 0);
+      ["#l1", "#l2", "#j1", "#j2", "#l3"].forEach((s, i) => tl.fromTo(s, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.4, immediateRender: false }, 0.1 + i * 0.12));
+      tl.to("#l3 rect", { stroke: "#ff9933", fill: "#3b2a12", duration: 0.4 }, 2.4); fade("#tin", 2.5);
+      tl.to(["#l1 rect", "#l2 rect"], { stroke: "#e8a33d", fill: "#3a2c12", duration: 0.4 }, 4.8); fade("#tcn", 4.9);
+      tl.fromTo("#crack", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.15, immediateRender: false }, 6.1);
+      tl.to("#j2 path", { stroke: "#ef4f45", duration: 0.15 }, 6.1);
+      tl.to(["#l3", "#tin"], { y: 26, rotation: 4, transformOrigin: "1250px 515px", duration: 0.5, ease: "power2.in" }, 6.3);
+      tl.to("#l3", { opacity: 0.55, duration: 0.6 }, 6.6);
+"""
+    write("chain_lesson", 8, svg, js)
+
+
 if __name__ == "__main__":
     map_stream(); map_stream("map_home", 22, home=True); map_trade(); map_hubei(); map_india(); capsule_open(); tablet()
-    fermenter(); fermenter("fermenter_lit", lit=True); tanks(); cipla(); mipgate()
+    fermenter(); fermenter("fermenter_lit", lit=True); tanks(); cipla(); mipgate(); chain(); chain_lesson()
