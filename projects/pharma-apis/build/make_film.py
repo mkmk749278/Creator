@@ -60,6 +60,7 @@ END = round(VO_END + 8.0, 2)    # end screen (YouTube end-screen elements need 5
 FOOT = {  # owner-fetched footage (assets/footage/fetched.csv; Pexels downloaded by the owner)
     "Y02": ("02_1ddBzBUaa8k.mp4", "FOOTAGE · LYFIUS PHARMA"), "Y04": ("04_3aclBlRaYNQ.mp4", "FOOTAGE · ABP MAJHA"),
     "Y05": ("05_keUkhEBY_fs_stab.mp4", "FOOTAGE · AMAR AGRO INDUSTRY"), "Y06": ("06_ZT2VuADHAFo_stab.mp4", "FOOTAGE · ADINATH STONES"),
+    "APc": ("ap_pretoria_court_20010418.mp4", "AP ARCHIVE · PRETORIA HIGH COURT · 18 APR 2001"),
     "CNa": ("cns_wuhan_aerial_20200126.mp4", "CHINA NEWS SERVICE · WUHAN · 26 JAN 2020 · CC BY 4.0"),
     "CNs": ("cns_wuhan_streets_20200126.mp4", "CHINA NEWS SERVICE · WUHAN · 26 JAN 2020 · CC BY 4.0"),
     "PXa": ("3922881-uhd_4096_2160_25fps.mp4", "PEXELS"), "PXb": ("13048933-uhd_3840_2160_30fps.mp4", "PEXELS"),
@@ -229,7 +230,10 @@ shot(c(12), "Y02", "y02", ms=[49.78, 42.0, 86.26], origin="35% 30%")            
 chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm", "up")
 # ---- INDIA EARNED IT (1:31-2:50)
 shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
-shot(c(14), "D_msf2001-01", "in", tag="DOCUMENT · MSF · 2001")   # the 2001 ARV price report, not a microscope                         # "Think back to two thousand one. H.I.V. ... ten thousand dollars"
+shot(c(14), "D_msf2001-01", "in", tag="DOCUMENT · MSF · 2001")   # the 2001 ARV price report, not a microscope                         # "Think back to two thousand one."
+# the people first (audit 2026-10-30): H.I.V.-positive activists in court for the medicine-price case, Pretoria, 18 Apr 2001
+# (AP; the 4:3 picture filled at 1.42x)
+shot(S(14, 1) - PRE, "APc", "crop2", ms=24.78, origin="50% 50%")   # "H.I.V. is killing millions in Africa."
 # the price drop to scale: the pile of $100 notes collapses (scene 10.0 s) exactly as the $350 card lands
 shot(S(14, 2) - PRE, "R_cipla", "none", ms=round(max(0.0, 10.0 - (L(15, 0.55) - (S(14, 2) - PRE))), 3))   # "The medicines exist... a dollar a day... One dollar."
 datebig("2001", "H.I.V. MEDICINES", L(14, 0.05), c(17))
@@ -275,7 +279,7 @@ shot(c(33), "px_262464", "slow", ms=1.0, dim=0.2, tag="PIXABAY · ILLUSTRATIVE �
 plate("Alembic", "", L(33, 0.35), LE(33), 160, 300); plate("Sarabhai", "", L(33, 0.45), LE(33), 560, 300); plate("Ranbaxy", "", L(33, 0.55), LE(33), 1000, 300)
 shot(c(34), "R_fermenter", "push", ms=0.0)                         # "How do you actually make penicillin?"
 # ---- WHY PENICILLIN IS A SCALE GAME (4:19-5:43)
-shot(c(35), "px_197486", "slow", ms=4.0)                           # "Many medicines, like paracetamol, are cooked from chemicals..."
+shot(c(35), "R_cooked", "none", ms=0.0)   # a batch reactor, step by step (audit 2026-10-30: petri dishes said biology)   # "Many medicines, like paracetamol, are cooked from chemicals..."
 chip("Cooked", L(35, 0.2), S(35, 1), 120, 640, "steel", "", "pop")
 shot(S(35, 1) - PRE, "W_B0004595", "in")                           # "Penicillin is different. Penicillin is grown."
 chip("Grown", S(35, 2), LE(35), 120, 640, "green", "", "pop")

@@ -647,6 +647,81 @@ def chain_lesson():
     write("chain_lesson", 8, svg, js)
 
 
+# 13. cooked: "Many medicines, like paracetamol, are cooked from chemicals, step by step." (audit 2026-10-30: petri dishes
+# and a microscope said biology, the opposite). A jacketed batch reactor drawn from real Indian plant footage (red-oxide
+# vessel on lugs, motor and gearbox on top, nozzles and a yellow gauge on the lid, bottom valve, stencilled number):
+# a cutaway shows the batch. Step 1 and step 2 feeds go in, the jacket heats, crystals form as it cools, the bottom
+# valve drops white powder into a drum. ILLUSTRATION. 7 s.
+def cooked():
+    svg = (GRID +
+           # plant pipes behind (orange, blue, green), as in the reference
+           '<path d="M0 210 H1920" stroke="#c4622d" stroke-width="22" opacity=".55"/><path d="M0 250 H1920" stroke="#2e6f9e" stroke-width="16" opacity=".5"/>'
+           '<path d="M1640 0 V1080" stroke="#5c8f6a" stroke-width="26" opacity=".45"/>'
+           # feeds: step 1 (blue) and step 2 (amber) from the left into lid nozzles
+           '<path d="M120 330 H820 V372" fill="none" stroke="#7fd3e6" stroke-width="16"/><path d="M120 400 H700 V300 H880 V372" fill="none" stroke="#e8a33d" stroke-width="16"/>'
+           # vessel: lugs and legs, body, dished bottom, lid
+           '<rect x="700" y="470" width="60" height="26" fill="#5b3a2c"/><rect x="1160" y="470" width="60" height="26" fill="#5b3a2c"/>'
+           '<path d="M720 496 V900 M1200 496 V900" stroke="#8a8f90" stroke-width="16"/>'
+           '<path d="M760 390 H1160 V760 Q960 860 760 760 Z" fill="#a4442f" stroke="#5b2416" stroke-width="6"/>'
+           '<ellipse cx="960" cy="390" rx="200" ry="34" fill="#b9573f" stroke="#5b2416" stroke-width="6"/>'
+           '<text x="780" y="800" style="font: 800 34px Inter, Arial; fill:#f2e6d8; opacity:.85">R-1</text>'
+           '<rect id="heat" x="760" y="390" width="400" height="380" fill="#ff7a2f" opacity="0"/>'
+           # nozzles, gauge, motor and gearbox on the lid
+           '<rect x="808" y="352" width="24" height="30" fill="#c9d6d9"/><rect x="868" y="352" width="24" height="30" fill="#c9d6d9"/><rect x="1040" y="350" width="26" height="32" fill="#c9d6d9"/>'
+           '<g id="gauge"><circle cx="1110" cy="330" r="34" fill="#f2c94c" stroke="#3a3a3a" stroke-width="6"/><circle cx="1110" cy="330" r="22" fill="#fff8dc"/>'
+           '<line id="needle" x1="1110" y1="330" x2="1094" y2="344" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/></g>'
+           '<rect x="944" y="250" width="32" height="130" fill="#b04a33"/><rect x="912" y="150" width="96" height="110" rx="12" fill="#7d8a8f" stroke="#3d4548" stroke-width="5"/>'
+           # cutaway window with the batch, the stirrer and its blades
+           '<clipPath id="win"><rect x="800" y="440" width="320" height="300" rx="26"/></clipPath>'
+           '<rect x="800" y="440" width="320" height="300" rx="26" fill="#0c2a30" stroke="#f2f7f7" stroke-width="5"/>'
+           '<g clip-path="url(#win)"><rect id="liq" x="800" y="740" width="320" height="0" fill="#7fd3e6" opacity=".85"/>'
+           '<g id="drops"></g><g id="xtals"></g><g id="bub"></g>'
+           '<line x1="960" y1="430" x2="960" y2="700" stroke="#c9d6d9" stroke-width="10"/><g id="blade"><rect x="890" y="690" width="140" height="16" rx="8" fill="#c9d6d9"/></g></g>'
+           # bottom valve and the drum
+           '<rect x="944" y="840" width="32" height="40" fill="#8a8f90"/><rect id="valve" x="930" y="874" width="60" height="16" rx="6" fill="#c0392b"/>'
+           '<rect id="pour" x="950" y="890" width="20" height="0" fill="#f7fbfc"/>'
+           # the drum right under the valve: the powder falls straight in
+           '<g><rect x="870" y="960" width="180" height="120" rx="12" fill="#2e6f9e" stroke="#9db3b8" stroke-width="5"/>'
+           '<rect id="heap" x="884" y="960" width="152" height="0" fill="#f7fbfc"/>'
+           '<text x="960" y="1040" text-anchor="middle" style="font: 800 26px Inter, Arial; fill:#f2f7f7">POWDER</text></g>'
+           '<text id="c1" class="lab" x="160" y="310" style="fill:#7fd3e6">STEP 1</text><text id="c2" class="lab" x="160" y="460" style="fill:#e8a33d">STEP 2</text>'
+           '<text id="c3" class="lab" x="1240" y="560" style="fill:#ff9a3c">HEAT</text><text id="c4" class="lab" x="1240" y="640" style="fill:#f2f7f7">CRYSTALS</text>')
+    js = """
+      tl.set(["#c1", "#c2", "#c3", "#c4"], { autoAlpha: 0 }, 0);
+      const $ = (id) => document.getElementById(id), NS = "http://www.w3.org/2000/svg";
+      const mk = (g, tag, a) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); $(g).appendChild(e); return e; };
+      const drops = [], xt = [], bub = [];
+      for (let i = 0; i < 28; i++) drops.push(mk("drops", "circle", { r: 7, cx: i < 14 ? 820 : 880, cy: 380, fill: i < 14 ? "#7fd3e6" : "#e8a33d", opacity: 0 }));
+      for (let i = 0; i < 40; i++) xt.push(mk("xtals", "rect", { x: 815 + ((i * 53) % 290), y: 600 + ((i * 37) % 120), width: 10, height: 10, fill: "#f7fbfc", opacity: 0,
+                                                              transform: `rotate(45 ${820 + ((i * 53) % 290)} ${605 + ((i * 37) % 120)})` }));
+      for (let i = 0; i < 18; i++) bub.push(mk("bub", "circle", { r: 4 + (i % 3) * 2, cx: 820 + ((i * 71) % 280), cy: 730, fill: "none", stroke: "#fff3e0", "stroke-width": 2, opacity: 0 }));
+      const ramp = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+      const mix = (c1, c2, k) => { const p = (c) => [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16)); const a = p(c1), b = p(c2);
+        return "#" + a.map((v, i) => Math.round(v + (b[i] - v) * k).toString(16).padStart(2, "0")).join(""); };
+      const o = { t: 0 };
+      tl.fromTo(o, { t: 0 }, { t: 7, duration: 7, ease: "none", immediateRender: false, onUpdate: () => {
+        const t = o.t;
+        const lvl = 120 * ramp(t, 0.6, 1.8) + 90 * ramp(t, 1.8, 3.0) - 60 * ramp(t, 5.2, 6.6);
+        $("liq").setAttribute("y", (740 - lvl).toFixed(1)); $("liq").setAttribute("height", lvl.toFixed(1));
+        const col = t < 1.8 ? "#7fd3e6" : t < 3.0 ? mix("#7fd3e6", "#d99a3a", ramp(t, 1.8, 2.6)) : t < 4.2 ? mix("#d99a3a", "#e0703a", ramp(t, 3.0, 3.8)) : mix("#e0703a", "#e8dccb", ramp(t, 4.2, 5.0));
+        $("liq").setAttribute("fill", col);
+        drops.forEach((d, i) => { const t0 = (i < 14 ? 0.6 : 1.8) + (i % 14) * 0.08, k = (t - t0) / 0.5;
+          d.setAttribute("opacity", k > 0 && k < 1 ? 0.95 : 0); d.setAttribute("cy", (380 + 330 * Math.max(0, Math.min(1, k))).toFixed(1)); });
+        $("heat").setAttribute("opacity", (0.28 * ramp(t, 3.0, 3.6) * (1 - ramp(t, 4.2, 4.8))).toFixed(3));
+        bub.forEach((b, i) => { const ph = ((t * 1.3 + i * 0.37) % 1); const on = t > 3.1 && t < 4.4;
+          b.setAttribute("opacity", on ? (0.8 * (1 - ph)).toFixed(2) : 0); b.setAttribute("cy", (730 - ph * (lvl - 20)).toFixed(1)); });
+        xt.forEach((x, i) => x.setAttribute("opacity", (0.9 * ramp(t, 4.3 + (i % 10) * 0.07, 4.6 + (i % 10) * 0.07) * (1 - ramp(t, 5.4, 6.6))).toFixed(2)));
+        $("needle").setAttribute("transform", `rotate(${(160 * ramp(t, 3.0, 3.7) - 120 * ramp(t, 4.2, 4.9)).toFixed(1)} 1110 330)`);
+        $("blade").setAttribute("transform", `translate(960 698) scale(${Math.cos(t * 9).toFixed(3)} 1) translate(-960 -698)`);
+        $("pour").setAttribute("height", (70 * ramp(t, 5.2, 5.4)).toFixed(1));
+        const hp = 26 * ramp(t, 5.4, 6.8); $("heap").setAttribute("y", (960 - hp).toFixed(1)); $("heap").setAttribute("height", hp.toFixed(1));
+        $("valve").setAttribute("fill", t > 5.1 ? "#5fd17a" : "#c0392b");
+      } }, 0);
+      fade("#c1", 0.6, 0.3); fade("#c2", 1.8, 0.3); fade("#c3", 3.0, 0.3); fade("#c4", 4.3, 0.3);
+"""
+    write("cooked", 7, svg, js)
+
+
 if __name__ == "__main__":
     map_stream(); map_stream("map_home", 22, home=True); map_trade(); map_hubei(); map_india(); capsule_open(); tablet()
-    fermenter(); fermenter("fermenter_lit", lit=True); tanks(); cipla(); mipgate(); chain(); chain_lesson()
+    fermenter(); fermenter("fermenter_lit", lit=True); tanks(); cipla(); mipgate(); chain(); chain_lesson(); cooked()
