@@ -2128,6 +2128,32 @@ rare earth engine:
 - **Search YouTube from the session with the channel's API** (`scripts/yt_search.py`, §8.5): web search barely
   indexes YouTube and the container gets 403s, but the YouTube Data API answers with the channel's own tokens. The
   session vets thumbnails on a contact sheet and writes the exact `termux_fetch_to_drive.sh` line with ranges.
+
+**Pharma film, round 5: the final round (r4 review + the owner's two extra reviews, 2026-10-30).**
+- **Look at every stock clip before trusting its tags or its manifest line.** Pixabay 212000 was logged as "old machine
+  gears" and played under "Hindustan Antibiotics. Stopped." It is an aerial of St Isaac's Cathedral, St Petersburg.
+  *Rule:* the contact sheet of a clip is the record, not its tags; a roll call of real places gets the real places
+  (here the workers' 2015 protest at H.A.'s own wall and I.D.P.L. Hyderabad's gate).
+- **One cut per action word.** "Mixing, pressing, packing, inspections" over one capsule machine read as a disconnect.
+  Find the gaps between the words with `silencedetect=n=-38dB:d=0.06` on `vo_film.wav` and cut in them (0.8–1.0 s
+  shots are right here); size each footage span to its one verb so `clean_assign` cannot move it elsewhere.
+- **A burned-in watermark the crop can't reach**: `delogo` in `conform.sh` (a per-file `case`), and keep the credit on
+  screen. Check the corners of every news clip at the crop you use (`hyperframes snapshot --at`), not the raw frame.
+- **Old telecined 24-in-30 clips:** `mpdecimate` drops nothing; `decimate=cycle=4,setpts=N/30/TB` does.
+- **Stale extra tars on Drive overwrite new code.** The workflow unpacks every tar in `build/parts/pN/` in name order, so
+  an old `pN_shared.tar` lands after `pN.tar` and puts back an old `shared/`. Delete extras when you repack.
+- **A match cut is a hard cut.** Two heroes cross-fading for 0.25 s read as the "86%" box jittering; `data-cut` out
+  and `fx=cut` in.
+- **Wide documents (a 2.8:1 headline) get padded to 16:9** before they go on screen, so no push-in crops the headline.
+- **Doubled words heard by a reviewer's transcriber:** profile 50 ms RMS around the spot; a short voiced burst 8–10 dB
+  under the word before it is a breath or a soft repeat. Duck it 24 dB in `film_vo()` and still list it for the
+  owner's listening pass.
+- **Music by act** (second review): an investigative bassline for act 1, a sparse sub drone while the plants shut,
+  rising percussion for the counter-offensive; tactile moments (coins, stamps, a chemical snap, a border gate) each get
+  a sound. Swapping in licensed tracks later needs only `assemble.sh`, never a new video render.
+- **Music from YouTube:** the YouTube Data API cannot reach Studio's Audio Library, and "no copyright music" uploads
+  often draw Content ID claims. Licensed tracks come from the Audio Library in Studio on the phone (download, save to
+  Drive `<slug>/music/`), then the session re-mixes.
   `scripts/termux_search_to_drive.sh` (search on the phone) is the fallback when the tokens are missing.
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
