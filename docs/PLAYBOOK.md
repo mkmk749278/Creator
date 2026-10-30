@@ -2098,6 +2098,11 @@ Two separate faults, both measured, both now handled in the engine:
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".
 
+**Acknowledge every review (owner, 2026-10-30).** After each review round, write `projects/<slug>/review_ack_rN.md`:
+every item of the review with FIXED / FIXED NEXT / OPEN / CHECKED and the evidence (measurements, frame times, the
+source), in the review cut's own times, plus what we found that the reviewer missed. *Why:* the next reviewer checks
+the fixes instead of re-finding them, and disagreements are argued with evidence, not dropped silently.
+
 **Pharma film, round 4: measure the "judder" before fixing it (independent 4K audit, 2026-10-30).** The audit said 51
 shots still juddered and blamed 24/25 fps footage. Measured on all 20,640 frames: the footage conform worked, and the
 repeated frames sat only on our own slow animated scenes. Two engine faults, both fixed for every film that copies the
