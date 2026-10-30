@@ -28,16 +28,24 @@ if ! rclone listremotes | grep -q "^creator:$"; then
   rclone config create creator drive scope=drive root_folder_id="$CREATOR_FOLDER_ID" || { echo "rclone sign-in failed" >&2; exit 3; }
 fi
 
+# "Sign in to confirm you're not a bot" (seen on the mobile IP, 2026-10-30): sign in with a THROWAWAY Google account's
+# cookies (never the channel or main account, PLAYBOOK §8.5). Export cookies.txt (Netscape format) from youtube.com in a
+# private window of Firefox for Android (add-on "cookies.txt"), save it to Downloads as youtube_cookies.txt, run
+# termux-setup-storage once; this script then passes it to yt-dlp. Switching to Wi-Fi often clears the check too.
+COOKIES="${YT_COOKIES_FILE:-$HOME/storage/downloads/youtube_cookies.txt}"
+[[ -f "$COOKIES" ]] && echo "Using cookies: $COOKIES" || COOKIES=""
 echo "file,url,section,title,uploader,duration_s" > fetched.csv
 n=0; ok=0
 for entry in "$@"; do
   n=$((n + 1)); url="${entry%@*}"; sec=""
   [[ "$entry" == *@*-* ]] && sec="${entry##*@}"
   args=(--js-runtimes node --no-playlist --restrict-filenames --no-progress -q --no-warnings
+        --sleep-requests 1.5 --sleep-interval 8 --max-sleep-interval 20
         -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080]/b" --merge-output-format mp4
         --print-to-file "%(title)s|%(uploader)s|%(duration)s" meta.txt
         -o "$(printf %02d $n)_%(id)s.%(ext)s")
   [[ -n "$sec" ]] && args+=(--download-sections "*$sec" --force-keyframes-at-cuts)
+  [[ -n "$COOKIES" ]] && args+=(--cookies "$COOKIES")
   echo "== $n $entry"
   rm -f meta.txt
   if yt-dlp "${args[@]}" "$url"; then
