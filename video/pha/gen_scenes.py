@@ -117,7 +117,7 @@ def map_stream(sid="map_stream", D=22, home=False):
            f'<circle id="gk" cx="{kx}" cy="{ky}" r="130" fill="url(#glowS)" opacity="0"/>'
            f'<path id="route" d="{route}" fill="none" stroke="{col}" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" opacity=".55"/>'
            '<g id="dots"></g>'
-           f'<text id="lc" class="big" x="{cx + 40}" y="{cy - 120}" text-anchor="middle" style="fill:#e8a33d">CHINA</text>'
+           f'<text id="lc" class="big" x="{cx + 40}" y="{cy - 120}" text-anchor="middle" style="fill:#ff5a5f">CHINA</text>'
            f'<text id="li" class="big" x="{ix - (260 if home else 290)}" y="{iy + (120 if home else 60)}" text-anchor="middle" style="fill:#ff9933">INDIA</text>'
            + pin(wx, wy, "HUBEI", pid="pw", col="#e8a33d")
            + (pin(kx, ky, "KAKINADA", pid="pk", col="#ff9933", dx=24, dy=48) if home else '<g id="pk"></g>'))
@@ -145,7 +145,7 @@ def map_trade(sid="map_trade", D=22):
              "M 1407.9 597.4 C 1410.6 616.4 1436.9 660.4 1424.1 711.3 C 1411.3 762.2 1366.1 843.7 1331.3 902.9 C 1296.5 962.1 1240.4 1032.7 1215.3 1066.5 C 1190.2 1100.3 1203.6 1111.8 1180.4 1106.0 C 1157.2 1100.2 1108.9 1049.8 1076.0 1031.6 C 1043.1 1013.4 1025.8 1014.1 983.2 996.6 C 940.7 979.1 871.0 947.9 820.7 926.4 C 770.4 904.9 710.8 883.5 681.4 867.4 C 652.0 851.3 650.5 836.1 644.3 829.9"]
     for k, d in enumerate(lanes):
         svg += f'<path id="r{k}" d="{d}" fill="none" stroke="#e8a33d" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" opacity="0"/><g id="d{k}"></g>'
-    svg += (f'<text id="lc" class="big" x="{cx + 40}" y="{cy - 120}" text-anchor="middle" style="fill:#e8a33d">CHINA</text>'
+    svg += (f'<text id="lc" class="big" x="{cx + 40}" y="{cy - 120}" text-anchor="middle" style="fill:#ff5a5f">CHINA</text>'
             f'<text id="li" class="big" x="{ix - 60}" y="{iy - 160}" text-anchor="middle" style="fill:#ff9933">INDIA</text>')
     for k, (lab, px, py, dx, dy) in enumerate(ports):
         svg += pin(px, py, lab, cls="mono", pid=f"p{k}", col="#ff9933", dx=dx, dy=dy)
@@ -259,7 +259,9 @@ def tablet():
       tl.set(["#core"], { autoAlpha: 0 }, 0);
       pop("#core", 0.4, 0.6);
       ["#fill", "#coat", "#strip", "#box"].forEach((s, i) => { tl.set(s, { autoAlpha: 0 }, 0);
-        tl.fromTo(s, { autoAlpha: 0, y: 700 - [530, 430, 330, 230][i] }, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out", immediateRender: false }, 3.0 + i * 0.6); });
+        // a 36 px settle in place, never a slide through the other layers: the box flew up through every label and
+        // drew them twice for a few frames (r4 review, 2:16 "THE STRIP" ghost)
+        tl.fromTo(s, { autoAlpha: 0, y: 36 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out", immediateRender: false }, 3.0 + i * 0.6); });
 """
     write("tablet", 22, svg, js)
 
@@ -610,9 +612,10 @@ def chain():
       tl.to("#pen", { x: -260, autoAlpha: 0, duration: 1.0, ease: "power2.in" }, 1.4);
       out("#nh", 1.9, 0.2); fade("#nh2", 2.0, 0.3);
       out("#t_pen", 3.1, 0.25); fade("#t_apa", 3.3, 0.35); tl.set("#s1", { fill: "#5c7a80" }, 3.3); tl.set("#s2", { fill: "#e8a33d" }, 3.3);
-      // amoxicillin's group slides in and locks on
-      tl.fromTo("#amx", { x: -320, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.9, ease: "power3.out", immediateRender: false }, 7.5);
-      out("#nh2", 8.3, 0.15); fade("#nh", 8.35, 0.2);
+      // amoxicillin's group glides in from the left and locks on at 8.3 s (second review, 30 Oct: at 0.9 s power3 it
+      // read as appearing, not as a chemical change)
+      tl.fromTo("#amx", { x: -320, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1.6, ease: "power2.inOut", immediateRender: false }, 6.7);
+      out("#nh2", 7.7, 0.3); fade("#nh", 8.35, 0.2);   // 6-A.P.A.'s H2N gives way as the group arrives (no overlap at the lock)
       tl.fromTo("#glow", { opacity: 0.55 }, { opacity: 1, duration: 0.25, yoyo: true, repeat: 1, immediateRender: false }, 8.4);
       out("#t_apa", 8.3, 0.25); fade("#t_amx", 8.5, 0.35); tl.set("#s2", { fill: "#5c7a80" }, 8.5); tl.set("#s3", { fill: "#f2f7f7" }, 8.5);
 """
@@ -620,7 +623,7 @@ def chain():
 
 
 # 12. chain_lesson: "If you only master the last step, you're only as strong as whoever controls the step before." Three
-# linked steps; the last one India's (saffron), the ones before it China's (amber); then the joint before India's step
+# linked steps; the last one India's (saffron), the ones before it China's (red: amber read as the same orange on a phone, r4 review); then the joint before India's step
 # cracks. ILLUSTRATION. 8 s; the cut is at 0, "the last step" ~2.4 s, "the step before" ~6.1 s.
 def chain_lesson():
     links = [("l1", "PENICILLIN G", 330), ("l2", "6-A.P.A.", 790), ("l3", "AMOXICILLIN", 1250)]
@@ -630,17 +633,17 @@ def chain_lesson():
                 f'<text class="lab" x="{x + 170}" y="527" text-anchor="middle" style="font-size:32px">{lab}</text></g>')
     svg += ('<g id="j1" stroke="#c9d6d9" stroke-width="10" stroke-linecap="round"><path d="M670 515 H790"/></g>'
             '<g id="j2" stroke="#c9d6d9" stroke-width="10" stroke-linecap="round"><path d="M1130 515 H1250"/></g>'
-            '<path id="crack" d="M1190 470 L1176 498 L1204 520 L1180 548 L1196 566" fill="none" stroke="#ef4f45" stroke-width="7" stroke-linejoin="round"/>'
+            '<path id="crack" d="M1190 470 L1176 498 L1204 520 L1180 548 L1196 566" fill="none" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>'
             '<text id="tin" class="lab" x="1420" y="660" text-anchor="middle" style="fill:#ff9933">INDIA</text>'
-            '<text id="tcn" class="lab" x="730" y="660" text-anchor="middle" style="fill:#e8a33d">CHINA</text>'
+            '<text id="tcn" class="lab" x="730" y="660" text-anchor="middle" style="fill:#ff5a5f">CHINA</text>'
             '')
     js = """
       tl.set(["#tin", "#tcn", "#crack"], { autoAlpha: 0 }, 0);
       ["#l1", "#l2", "#j1", "#j2", "#l3"].forEach((s, i) => tl.fromTo(s, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.4, immediateRender: false }, 0.1 + i * 0.12));
       tl.to("#l3 rect", { stroke: "#ff9933", fill: "#3b2a12", duration: 0.4 }, 2.4); fade("#tin", 2.5);
-      tl.to(["#l1 rect", "#l2 rect"], { stroke: "#e8a33d", fill: "#3a2c12", duration: 0.4 }, 4.8); fade("#tcn", 4.9);
+      tl.to(["#l1 rect", "#l2 rect"], { stroke: "#e5484d", fill: "#3a1518", duration: 0.4 }, 4.8); fade("#tcn", 4.9);
       tl.fromTo("#crack", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.15, immediateRender: false }, 6.1);
-      tl.to("#j2 path", { stroke: "#ef4f45", duration: 0.15 }, 6.1);
+      tl.to("#j2 path", { stroke: "#ffffff", duration: 0.15 }, 6.1);
       tl.to(["#l3", "#tin"], { y: 26, rotation: 4, transformOrigin: "1250px 515px", duration: 0.5, ease: "power2.in" }, 6.3);
       tl.to("#l3", { opacity: 0.55, duration: 0.6 }, 6.6);
 """

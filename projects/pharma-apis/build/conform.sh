@@ -12,6 +12,8 @@ for f in "$@"; do
   r=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of csv=p=0 "$f")
   h=$(ffprobe -v error -select_streams v:0 -show_entries stream=height -of csv=p=0 "$f")
   [ "$h" -gt 1440 ] && sc=",scale=-2:1440" || sc=""
+  # a broadcaster's burned-in watermark the crop can't reach (the source is still credited on screen)
+  case "$n" in r5_08_-KiqNoJvtbo.mp4) sc="$sc,delogo=x=32:y=325:w=180:h=36" ;; esac
   ffmpeg -hide_banner -loglevel error -y -i "$f" -an -vf "setpts=PTS*($r)/30$sc" -r 30 -c:v libx264 -preset medium -crf 17 \
     -maxrate 30M -bufsize 60M -pix_fmt yuv420p -f mp4 "$OUT/.$n" && mv "$OUT/.$n" "$OUT/$n" && echo "done $n ($r)"
 done
