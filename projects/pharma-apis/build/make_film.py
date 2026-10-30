@@ -16,7 +16,11 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import frame_floor as FF  # noqa: E402
 
 P = Path(__file__).resolve().parents[1]; ROOT = P.parents[1]; A = P / "assets"; OUTV = ROOT / "video/pha"
 esc = html.escape
@@ -615,7 +619,9 @@ def emit_part(pid, t0, t1, caps):
     loc = lambda x: r3(x - t0)
     H = []
     for i, s in enumerate(x for x in SEQ if t0 - 1e-6 <= x["t0"] < t1 - 1e-6):
-        st, du = loc(s["t0"]), r3(s["t1"] - s["t0"]); src = media(s["src"])
+        # start and end floored onto their frames (frame_floor.py): rounded up, the cut frame showed the empty background
+        fs, fe = round(s["t0"] * FPS) - round(t0 * FPS), round(s["t1"] * FPS) - round(t0 * FPS)
+        st, du = FF.ft(fs), round(FF.ft(fe) - FF.ft(fs), 4); src = media(s["src"])
         fn = f"media/{src.name}"
         if not (d / fn).exists():
             shutil.copy(src, d / fn)
