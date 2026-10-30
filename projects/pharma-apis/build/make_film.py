@@ -60,6 +60,8 @@ END = round(VO_END + 8.0, 2)    # end screen (YouTube end-screen elements need 5
 FOOT = {  # owner-fetched footage (assets/footage/fetched.csv; Pexels downloaded by the owner)
     "Y02": ("02_1ddBzBUaa8k.mp4", "FOOTAGE · LYFIUS PHARMA"), "Y04": ("04_3aclBlRaYNQ.mp4", "FOOTAGE · ABP MAJHA"),
     "Y05": ("05_keUkhEBY_fs_stab.mp4", "FOOTAGE · AMAR AGRO INDUSTRY"), "Y06": ("06_ZT2VuADHAFo_stab.mp4", "FOOTAGE · ADINATH STONES"),
+    "CNa": ("cns_wuhan_aerial_20200126.mp4", "CHINA NEWS SERVICE · WUHAN · 26 JAN 2020 · CC BY 4.0"),
+    "CNs": ("cns_wuhan_streets_20200126.mp4", "CHINA NEWS SERVICE · WUHAN · 26 JAN 2020 · CC BY 4.0"),
     "PXa": ("3922881-uhd_4096_2160_25fps.mp4", "PEXELS"), "PXb": ("13048933-uhd_3840_2160_30fps.mp4", "PEXELS"),
 }
 
@@ -144,6 +146,7 @@ def namelt(name, role, at, to):
 
 
 def count(at, to, x, y, a, b, start, dur, pre="", suf="", col="ink", size="", dec=0):
+    dur = min(dur, 0.45)   # lands in under half a second: a slow roll showed wrong numbers long enough to read (audit 2026-10-30)
     el(f'<div class="chip {size} c-{col}" style="left:{x}px;top:{y}px" {attrs(at, to, "pop")}><span data-count="{a},{b},{start},{dur}" '
        f'data-pre="{esc(pre)}" data-suf="{esc(suf)}" data-dec="{dec}" data-ease="power2.out">{esc(pre)}{a}{esc(suf)}</span></div>', at, to)
 
@@ -164,6 +167,16 @@ def gauge(at, to, pct, key, src):
        f'<div class="key">{esc(key)}<br/>{esc(src)}</div></div>'.replace('style="width:100%"', f'style="width:{w * 100:.1f}%"'), at, to)
 
 
+def hero(num, key, at, to, pct, col="steel"):
+    """the film's two numbers as heroes (audit 2026-10-30: they lived only in a small corner gauge): one big number centre
+    screen over a capsule bar that fills to China's share, its base underneath; the same place and size every time, so
+    "<1%" can match-cut to "86%"."""
+    w = max(0.6, pct)
+    el(f'<div class="hero c-{col}" {attrs(at, to, "fade", 0.25)}><div class="num">{esc(num)}</div>'
+       f'<div class="bar"><div class="fill" style="width:{w:.1f}%" data-at="{round(at + 0.15, 3)}" data-fx="grow" data-d="0.8"></div></div>'
+       f'<div class="key">{esc(key)}</div></div>', at, to)
+
+
 def pct_txt(p):
     return "<1%" if p < 1 else f"{p:g}%"
 
@@ -182,6 +195,7 @@ def coins(at, to, n_amber=86, x0=430, y0=250):
 # THE CUT (film seconds). VO cue in each comment; L(n) = line n of vo.txt.
 # =====================================================================================================
 c = lambda n: L(n) - PRE           # cut time for line n
+HERO86 = round(S(57, 3) + 1.15, 3)   # "China's share is around eighty-six per cent": the word "eighty-six"
 # ---- HOOK: pharmacy of the world, the capsule, the locked doors (0:00-1:35)
 shot(0.0, "PXb", "slow", ms=1.0)                                   # "India sells medicines to around two hundred countries..."
 chip("Pharmacy of the world", 1.2, LE(1), 120, 640, "steel", "", "up")
@@ -201,7 +215,10 @@ chip("Paracetamol", S(6, 3), LE(6) + 1.5, 640, 640, "red", "sm", "pop")
 cite("[DGFT NOTIFICATION 50/2015-20 | 3 MAR 2020]", L(6, 0.1), LE(6) + 1.5)
 shot(c(7), "J_aerial", "in", dim=0.3)   # an Indian port (JNPT), not a foreign one                           # "Wait. India? The pharmacy of the world... locking its own doors?"
 chip("Exports: by licence", L(7, 0.4), LE(7), 120, 640, "red", "", "pop")
-shot(c(8), "R_map_hubei", "none", ms=5.5)                          # "Yes. And the reason was Corona..."
+# the second time in Hubei shows the place (audit 2026-10-30: the map again was a dead repeat): Wuhan three days into
+# its lockdown, framed 1.6x from the centre so the agency logos in the corners stay out
+shot(c(8), "CNa", "y02", ms=6.0, origin="50% 50%")                  # "Yes. And the reason was Corona. Wuhan sits in a Chinese province called Hubei..."
+shot(L(8, 0.62) - PRE, "CNs", "y02", ms=9.2, origin="50% 50%")      # "...and the whole province was shut down."
 shot(c(9), "D_tribune_2020_head", "in", tag="DOCUMENT · THE TRIBUNE")   # headline only: no ad banner  # "Reports at the time said..."
 cite("[THE TRIBUNE | 4 MAR 2020]", L(9), LE(9))
 shot(c(10), "PH_257336", "in")   # real strips (the capsule animation is kept for the open and the close)                      # "So here's the question... who makes the powder?"
@@ -260,11 +277,13 @@ shot(S(35, 1) - PRE, "W_B0004595", "in")                           # "Penicillin
 chip("Grown", S(35, 2), LE(35), 120, 640, "green", "", "pop")
 shot(c(36), "W_B0004843", "in")                                    # "You take a special mould... a cousin of the green patches..."
 shot(S(36, 1) - PRE, "R_fermenter", "none", ms=0.5)                # "You put it in a giant steel tank... sugar and air."
-shot(c(37), "R_fermenter", "none", ms=6.8)                         # "For about a week, the tank runs day and night..."
+# the day clock only runs forward (audit 2026-10-30): this piece flows into the germ beat at day 3 (9.8 s), the what-if
+# batch runs on to day 7 under the murk, and "take the penicillin out" carries on from there
+shot(c(37), "R_fermenter", "none", ms=round(9.8 - (S(37, 2) - PRE - c(37)), 3))   # "For about a week, the tank runs day and night..."
 shot(S(37, 2) - PRE, "R_fermenter", "none", ms=9.8)   # the stray germ hits a growing culture (day 2-3), not the finished gold
-chip("One germ = lost batch", S(37, 2), LE(37) + 2.0, 120, 160, "red", "sm", "up")
+chip("What if · one germ = lost batch", S(37, 2), LE(37) + 2.0, 120, 160, "red", "sm", "up")
 el(f'<div class="contam" {attrs(S(37, 2) + 0.15, LE(37) + 2.0, "fade", 0.9)}></div>', S(37, 2) + 0.15, LE(37) + 2.0)   # the broth turns murky (ILLUSTRATION)
-shot(c(38), "R_fermenter", "none", ms=15.0)                        # "Then you take the penicillin out... penicillin G."
+shot(c(38), "R_fermenter", "none", ms=round(9.8 + c(38) - (S(37, 2) - PRE), 3))                      # "Then you take the penicillin out... penicillin G."
 chip("Penicillin G", L(38, 0.6), LE(38), 1320, 160, "green", "sm", "pop")
 shot(c(39), "px_40948", "slow", ms=0.5, dim=0.4)                   # "Next, it's turned into a smaller base powder..."
 shot(S(39, 2) - PRE, "PXb", "slow", ms=10.0, dim=0.3)              # "From that base, factories make amoxicillin..."
@@ -289,7 +308,8 @@ cite("[CFR | THE PHARMA CHOKE POINT]", L(47, 0.3), LE(47))
 shot(c(48), "R_map_trade", "none", ms=9.0)                        # "And then cheap Chinese penicillin flooded the world market..."
 shot(c(49), "D_budget1991-01", "in", dim=0.35, tag="DOCUMENT · BUDGET SPEECH 1991-92")                 # "Nineteen ninety-one — the year India opened up its economy..."
 datebig("1991", "INDIA OPENS ITS ECONOMY", L(49, 0.05), LE(50))
-gauge(L(49, 0.65), LE(50) + 1.0, 0.5, "1991 · ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE", "RIS DP 268")
+# "Now remember this one number": the number becomes the hero (audit 2026-10-30), and comes back at 7:11
+hero("<1%", "1991 · ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE · RIS DP 268", S(49, 2) + 3.2, LE(50) + 1.0, 0.5)
 shot(c(51), "px_212001", "slow", ms=[0.0, 3.6, 7.2], dim=0.55)
 shot(c(54), "px_212000", "slow", ms=[0.0, 3.8, 7.6], dim=0.55)   # the roll call over still gears (no people under the stamps)    # "Then, one by one, the Indian penicillin plants went quiet."
 for i, (name, ln) in enumerate([("Hindustan Antibiotics", 52), ("I.D.P.L.", 53), ("Torrent · Ranbaxy · Sarabhai", 54), ("Alembic", 55)]):
@@ -300,8 +320,11 @@ shot(c(56), "px_23215", "slow", ms=4.0)                            # "By about t
 chip("Base powder: 100% imported", L(56, 0.3), LE(56), 120, 640, "amber", "sm", "up")
 cite("[ISID WP239]", L(56, 0.3), LE(56))
 shot(c(57), "D_niti_p-40", "in", dim=0.6, tag="DOCUMENT · NITI AAYOG")   # "Remember that one per cent?... around eighty-six per cent."
-gauge(L(57, 0.6), LE(57), 86.1, "TODAY · ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE", "NITI AAYOG · 2025")
-shot(c(58), "px_45680", "slow", ms=[0.0, 2.9], dim=0.45)                  # "Niti Aayog estimates Chinese powder costs 35-40% less..."
+# "Remember that one per cent?": the same "<1%" in the same place, then a match cut to "86%" on "eighty-six" (the low thud
+# in make_sound.py sits on HERO86) and the capsule fills
+hero("<1%", "1991 · ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE · RIS DP 268", S(57, 0), HERO86, 0.5)
+hero("86%", "TODAY · ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE · NITI AAYOG 2025", HERO86, LE(57) + 0.8, 86.1, "amber")
+shot(c(58), "px_45680", "slow", ms=[0.0, 2.9], dim=0.45, tag="PIXABAY · ILLUSTRATIVE")                # "Niti Aayog estimates Chinese powder costs 35-40% less..."
 shot(S(58, 1) - PRE, "px_199788", "in", ms=6.0, dim=0.45)           # "So tell me — if you ran a company, would you build a plant here?"
 chip("China's powder: 35–40% cheaper", L(58, 0.2), LE(58), 120, 160, "amber", "sm", "up")
 cite("[NITI AAYOG ESTIMATE]", L(58, 0.2), LE(58))
@@ -334,14 +357,14 @@ shot(L(71, 0.5) - PRE, "R_map_trade", "none", ms=13.0, dim=0.2)   # "...whether 
 chip("Anti-dumping check · Sep 2026", L(71, 0.3), LE(71), 120, 540, "steel", "sm", "up")
 chip("On Lyfius Pharma's application", L(71, 0.45), LE(71), 120, 640, "steel", "sm", "up")   # DGTR initiation 28 Sep 2026 (P63 note)
 cite("[DGTR | 28 SEP 2026]", L(71, 0.3), LE(71))
-shot(c(72), "R_fermenter_lit", "none", ms=10.0)                    # "But that shield has an end date... January 2027."
+shot(c(72), "R_fermenter_lit", "none", ms=round(4.0 + c(71) - c(70), 3))   # the Kakinada tank keeps its own clock running                  # "But that shield has an end date... January 2027."
 datebig("JAN 2027", "THE SHIELD ENDS", L(72, 0.5), LE(73))
 shot(c(73), "D_dgft_2026_mip-2", "doc", origin="50% 58%", tag="DOCUMENT · DGFT")   # "the date to watch": "a period of one year"                                # "That's the date to watch..."
 shot(c(74), "Y02", "y02", ms=[86.26, 93.42], origin="35% 30%")            # "And here's the balance the government has to strike..."
 chip("Protect the plant", L(74, 0.4), LE(74), 120, 160, "saffron", "sm", "up")
 chip("Keep medicines affordable", L(74, 0.7), LE(74), 120, 280, "green", "sm", "up")
-shot(c(75), "Y02", "y02", ms=[83.62, 62.38], origin="35% 30%")            # "And it's not just penicillin... five thousand crore"
-count(L(75, 0.45), LE(75), 120, 160, 0, 5000, L(75, 0.5), 1.0, "₹", " CRORE+ INVESTED", "saffron", "sm")
+# a scheme-wide figure on the scheme's own report, not over one company's plant (audit 2026-10-30); the headline carries the number
+shot(c(75), "D_psuwatch_pli_2026", "in", tag="DOCUMENT · PSU WATCH · JUNE 2026")   # "And it's not just penicillin... five thousand crore"
 cite("[DEPT OF PHARMACEUTICALS | JUNE 2026]", L(75, 0.45), LE(75))
 shot(c(76), "R_map_india", "none", ms=6.5)                         # "Three giant bulk drug parks... Nakkapalli... same state"
 shot(c(77), "R_map_india", "none", ms=9.0)   # "none of those parks": the park pins                       # "None of those parks is up and running yet..."
@@ -351,7 +374,7 @@ shot(c(78), "Y02", "y02", ms=[97.74, 65.62], origin="35% 30%")            # "So 
 shot(c(79), "px_45675", "in", ms=8.0, dim=0.3)                     # "So here's the lesson..."
 shot(c(80), "D_dgft_2020_noti50-1", "in", tag="DOCUMENT · DGFT")  # "And the cost? You saw it in the Corona days..."
 shot(c(81), "px_262464", "slow", ms=9.0, dim=0.2, tag="PIXABAY · ILLUSTRATIVE")   # "the reality today. India has the scientists."
-shot(S(81, 2) - PRE, "px_45680", "slow", ms=0.5, dim=0.3)   # "It has the factories."
+shot(S(81, 2) - PRE, "Y02", "y02", ms=76.86, origin="35% 30%")   # "It has the factories.": a Lyfius worker in a hard hat (the 7:22 clip stood for China; audit 2026-10-30)
 shot(S(81, 3) - PRE, "Y02", "y02", ms=[86.26, 59.58], origin="35% 30%")   # "And now, it's growing its own penicillin again."             # "But here's the reality today..."
 shot(c(82), "PH_1540220", "in")                                 # "So what does this mean for you? Keep taking your medicines..."
 shot(c(84), "R_capsule_open", "push", ms=3.6)                      # "But the next time you take an antibiotic... began in China."

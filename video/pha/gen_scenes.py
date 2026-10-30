@@ -198,7 +198,10 @@ def map_india():
         js += f'      tl.set("#p_{k}", {{ autoAlpha: 0 }}, 0); pop("#p_{k}", {t});\n'
         if col == "#ff9933":
             js += f'      tl.to("#g_{k}", {{ opacity: 1, duration: 1 }}, {t});\n'
-    svg += '<text id="both" class="mono" x="1180" y="860" style="font-size:30px;fill:#ff9933" opacity="0">SAME STATE · ANDHRA PRADESH</text>'
+    # beside the two pins, well above the captions (audit 2026-10-30: at y 860 it was tiny and collided with the subtitle)
+    svg += ('<g id="both" opacity="0"><path d="M1376 640 v80" stroke="#ff9933" stroke-width="4"/>'
+            '<text class="mono" x="1396" y="672" style="font-size:40px;fill:#ff9933">SAME STATE</text>'
+            '<text class="mono" x="1396" y="720" style="font-size:40px;fill:#ff9933">ANDHRA PRADESH</text></g>')
     js += '      fade("#both", 10.0);\n'
     write("map_india", 24, svg, js)
 
@@ -245,12 +248,13 @@ def tablet():
               ("fill", "THE REST OF THE TABLET", "#e3eaec", 530)]
     svg = GRID
     for k, lab, col, y in layers:
-        svg += (f'<g id="{k}"><ellipse cx="900" cy="{y}" rx="250" ry="56" fill="{col}" opacity=".55" stroke="#f2f7f7" stroke-opacity=".5" stroke-width="2"/>'
-                f'<line x1="1150" y1="{y}" x2="1290" y2="{y}" stroke="#9db3b8" stroke-width="3"/>'
-                f'<text class="lab" x="1310" y="{y + 11}" style="font-size:36px;fill:#d7e7ea">{lab}</text></g>')
-    svg += ('<g id="core"><ellipse cx="900" cy="700" rx="200" ry="50" fill="#ffffff"/><ellipse cx="900" cy="690" rx="150" ry="30" fill="#f7fbfc"/>'
-            '<line x1="1100" y1="700" x2="1290" y2="700" stroke="#ffffff" stroke-width="4"/>'
-            '<text class="lab" x="1310" y="712" style="fill:#ffffff">THE POWDER · A.P.I.</text></g>')
+        # 140 px left of centre-right: the punched-in split pieces (1.12-1.25x) clipped "THE REST OF THE TABLET" (audit 2026-10-30)
+        svg += (f'<g id="{k}"><ellipse cx="760" cy="{y}" rx="250" ry="56" fill="{col}" opacity=".55" stroke="#f2f7f7" stroke-opacity=".5" stroke-width="2"/>'
+                f'<line x1="1010" y1="{y}" x2="1150" y2="{y}" stroke="#9db3b8" stroke-width="3"/>'
+                f'<text class="lab" x="1170" y="{y + 11}" style="font-size:36px;fill:#d7e7ea">{lab}</text></g>')
+    svg += ('<g id="core"><ellipse cx="760" cy="700" rx="200" ry="50" fill="#ffffff"/><ellipse cx="760" cy="690" rx="150" ry="30" fill="#f7fbfc"/>'
+            '<line x1="960" y1="700" x2="1150" y2="700" stroke="#ffffff" stroke-width="4"/>'
+            '<text class="lab" x="1170" y="712" style="fill:#ffffff">THE POWDER · A.P.I.</text></g>')
     js = """
       tl.set(["#core"], { autoAlpha: 0 }, 0);
       pop("#core", 0.4, 0.6);
@@ -424,16 +428,17 @@ def tanks():
            '<g id="kg"><text class="mono" x="160" y="140" style="font-size:30px">COST OF EACH KILO</text>'
            '<rect id="b1" x="160" y="170" width="520" height="56" rx="8" fill="#ef4f45"/><text class="lab" x="700" y="212">SMALL</text>'
            '<rect id="b2" x="160" y="250" width="250" height="56" rx="8" fill="#5fd17a"/><text class="lab" x="430" y="292">BIG</text></g>'
-           '<g id="meters"><text class="mono" x="1180" y="150">POWER</text><text class="mono" x="1180" y="190">WATER</text><text class="mono" x="1180" y="230">STEAM</text>'
-           '<rect id="m1" x="1330" y="132" width="300" height="20" rx="6" fill="#7fd3e6"/><rect id="m2" x="1330" y="172" width="300" height="20" rx="6" fill="#7fd3e6"/>'
-           '<rect id="m3" x="1330" y="212" width="300" height="20" rx="6" fill="#7fd3e6"/></g>'
+           # left, under the cost bars: top right is the logo bug and the source tags (audit 2026-10-30)
+           '<g id="meters"><text class="mono" x="160" y="450">POWER</text><text class="mono" x="160" y="490">WATER</text><text class="mono" x="160" y="530">STEAM</text>'
+           '<rect id="m1" x="310" y="432" width="300" height="20" rx="6" fill="#7fd3e6"/><rect id="m2" x="310" y="472" width="300" height="20" rx="6" fill="#7fd3e6"/>'
+           '<rect id="m3" x="310" y="512" width="300" height="20" rx="6" fill="#7fd3e6"/></g>'
            '<text id="note" class="mono" x="160" y="360" opacity="0">ILLUSTRATIVE · NOT TO A REAL COST</text>')
     js = """
       tl.set(["#small", "#bigt", "#man", "#kg", "#meters"], { autoAlpha: 0 }, 0);
       tl.fromTo("#small", { autoAlpha: 0, scaleY: 0, transformOrigin: "400px 880px" }, { autoAlpha: 1, scaleY: 1, duration: 0.7, ease: "back.out(1.6)", immediateRender: false }, 0.3);
       tl.fromTo("#bigt", { autoAlpha: 0, scaleY: 0, transformOrigin: "1220px 880px" }, { autoAlpha: 1, scaleY: 1, duration: 0.9, ease: "back.out(1.4)", immediateRender: false }, 1.2);
       fade("#man", 2.0); fade("#meters", 4.0);
-      ["#m1", "#m2", "#m3"].forEach((m, i) => tl.fromTo(m, { scaleX: 0, transformOrigin: "1330px 0px" }, { scaleX: 1, duration: 1.2, ease: "power2.out", immediateRender: false }, 4.2 + i * 0.3));
+      ["#m1", "#m2", "#m3"].forEach((m, i) => tl.fromTo(m, { scaleX: 0, transformOrigin: "310px 0px" }, { scaleX: 1, duration: 1.2, ease: "power2.out", immediateRender: false }, 4.2 + i * 0.3));
       fade("#kg", 9.0); tl.fromTo("#b1", { scaleX: 0, transformOrigin: "160px 0" }, { scaleX: 1, duration: 0.9, immediateRender: false }, 9.2);
       tl.fromTo("#b2", { scaleX: 0, transformOrigin: "160px 0" }, { scaleX: 1, duration: 0.9, immediateRender: false }, 10.0); fade("#note", 10.4);
 """
