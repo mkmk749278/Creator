@@ -36,6 +36,8 @@ def main():
     for qi, q in enumerate(args[1:], 1):
         items = api(tok, "search", part="snippet", q=q, type="video", maxResults=n)["items"]
         ids = [it["id"]["videoId"] for it in items]
+        if not ids:   # a search with no results makes no sheet (ffmpeg's xstack needs 2+ inputs)
+            print(f"q{qi}: no results for {q!r}"); continue
         dur = {v["id"]: v["contentDetails"]["duration"] for v in api(tok, "videos", part="contentDetails", id=",".join(ids))["items"]}
         tiles = []
         for k, it in enumerate(items, 1):

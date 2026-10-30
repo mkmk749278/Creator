@@ -129,6 +129,26 @@ def shot(t0, src, move="push", tag=None, ms=0.0, origin=None, dim=False):
     SEQ.append(dict(t0=round(t0, 3), src=src, move=move, tag=default_tag(src) if tag is None else tag, ms=ms, origin=origin, dim=dim))
 
 
+# Cipla's film cuts every 1-2 s and burns captions into most shots: its caption-free spans (frame-checked), raw seconds
+CIP_SPANS = [(3.47, 4.92), (13.1, 14.05), (37.25, 38.21), (46.1, 47.33),   # the four verbs, each sized to its one word
+             (38.3, 40.0), (14.2, 15.33), (44.5, 45.49), (15.45, 16.33), (11.22, 12.04), (0.05, 0.75), (16.44, 17.1), (1.7, 2.45),
+             (27.4, 29.75), (12.15, 13.0), (51.6, 53.8), (2.6, 3.32)]   # the last four: no lower third
+SRC_FPS = {"CIP": 299 / 12}
+
+
+def montage(t0, t1, src, starts, move="crop2", origin="50% 50%", tag=None):
+    """back-to-back pieces from one source, each as long as its own clean span (CLEAN) allows, until t1; one shot per piece
+    so clean_assign keeps each inside its span (owner's review, 30 Oct: picture to word, shot by shot)"""
+    t = t0
+    for a in starts:
+        span = next(b - a for x, b in CIP_SPANS if abs(x - a) < 1e-6)
+        shot(round(t, 3), src, move, ms=a, origin=origin, tag=tag)
+        t += span * SRC_FPS[src] / 30 - 0.04
+        if t >= t1 - 0.3:
+            return
+    raise SystemExit(f"montage {src} at {t0}: spans end at {t:.2f}, need {t1}")
+
+
 def el(h, at, to):
     OV.append(dict(h=h, at=at, to=to))
 
@@ -237,7 +257,9 @@ chip("Supply: the issue", L(11, 0.6), LE(11), 120, 260, "amber", "sm", "up")
 shot(c(12), "Y02", "y02", ms=[49.78, 42.0, 86.26], origin="35% 30%")              # "Stay with me. Around minute eight... Andhra Pradesh"
 chip("Minute 8 · Andhra Pradesh", L(12, 0.15), LE(12), 120, 160, "saffron", "sm", "up")
 # ---- INDIA EARNED IT (1:31-2:50)
-shot(c(13), "px_45675", "slow", ms=1.0)                            # "First, let's give India its due..."
+# "First, let's give India its due... India earned it." on an Indian plant (owner's review, 30 Oct: it was a Chinese
+# softgel line): Cipla's own film, caption-free spans only
+montage(c(13), c(14), "CIP", [38.3, 14.2, 44.5, 15.45, 11.22, 0.05, 16.44, 1.7])
 shot(c(14), "D_msf2001-01", "in", tag="DOCUMENT · MSF · 2001")   # the 2001 ARV price report, not a microscope                         # "Think back to two thousand one."
 # the people first (audit 2026-10-30): H.I.V.-positive activists in court for the medicine-price case, Pretoria, 18 Apr 2001
 # (AP; the 4:3 picture filled at 1.42x)
@@ -255,14 +277,18 @@ shot(c(17), "J_seaside", "left")   # JNPT from the sea                          
 count(L(17, 0.4), LE(17), 120, 640, 0, 2.5, L(17, 0.45), 1.2, "₹", " LAKH CRORE+", "ink", "", 1)
 cite("[PIB | EXPORTS 2024-25]", L(17, 0.4), LE(17))
 shot(c(18), "R_tablet", "slow", ms=1.0)   # skip the empty first second                            # "Every tablet has two parts." ... coating, strip, box
-shot(c(21), "px_45682", "slow", ms=1.0)                            # "Indian companies are world class at that last part."
+# "And you should be proud of this. Indian companies are world class at that last part." Cipla's chief in his plant
+# (no lower third in these spans), not a foreign capsule line
+montage(c(21), S(21, 2) - PRE, "CIP", [27.4, 12.15, 51.6, 2.6])
 # one cut per verb, on the word (second review, 30 Oct: one machine held under four actions): Cipla's own line, the
 # letterbox and captions framed out (crop2); the cut points sit in the voice's own gaps between the words
 shot(S(21, 2) - PRE, "CIP", "crop2", ms=13.15, origin="50% 50%")     # "Mixing," (the coating drum)
 shot(round(S(21, 2) + 0.626, 3), "CIP", "crop2", ms=3.5, origin="50% 50%")    # "pressing," (tablets off the press)
 shot(round(S(21, 2) + 1.476, 3), "CIP", "crop2", ms=37.26, origin="50% 50%")  # "packing," (blister line)
 shot(round(S(21, 2) + 2.256, 3), "CIP", "crop2", ms=46.12, origin="50% 50%")  # "and passing the toughest inspections" (clean room)
-shot(round(S(21, 2) + 3.236, 3), "px_197485", "slow", ms=1.0, tag="PIXABAY · ILLUSTRATIVE")   # "...on the planet." (Q.C. check)
+# "...on the planet.": Lyfius's quality lab, two microscope shots (the lab's first shot is the teaser's at 1:33)
+shot(round(S(21, 2) + 3.236, 3), "Y02", "y02", ms=96.02, origin="35% 30%", tag="FOOTAGE · LYFIUS PHARMA · QUALITY LAB")
+shot(round(S(21, 2) + 3.236 + (c(22) - S(21, 2) - 3.236) / 2, 3), "Y02", "y02", ms=97.74, origin="35% 30%", tag="FOOTAGE · LYFIUS PHARMA · QUALITY LAB")
 shot(c(22), "PH_1851178", "in")                         # "But the powder you swallow?"
 shot(c(23), "D_niti_cover-01", "in", tag="DOCUMENT · NITI AAYOG")  # "In 2025, India bought these powders... sixty-five thousand crore"
 count(L(23, 0.5), LE(23), 120, 640, 0, 65000, L(23, 0.55), 1.4, "₹", " CRORE · 2025", "amber", "sm")
@@ -282,9 +308,9 @@ shot(c(27), "PH_1851178", "out")                                    # "So you mi
 # the black runs to the signboard's cut (r4 review 3:29: the blisters showed again for 7 frames between them)
 el(f'<div class="blackout" {attrs(S(28, 0) - 0.12, S(28, 1) - PRE, "fade", 0.08)}></div>', S(28, 0) - 0.12, S(28, 1) - PRE)
 shot(S(28, 1) - PRE, "Y04", "crop", ms=[10.45, 14.25], origin="50% 50%", tag="FOOTAGE · ABP MAJHA · TODAY")
-shot(c(29), "W_L0032175", "in")   # an archive drawing carries 1954 (the HAL wall footage is today)              # "Pimpri, near Pune. Nineteen fifty-four..."
+shot(c(29), "R_pimpri", "none", ms=0.0)   # map -> Pimpri, 15 Aug 1947 -> 1954 (< 7 years), the factory rises (owner's review: a lab drawing was here)              # "Pimpri, near Pune. Nineteen fifty-four..."
 datebig("1954", "PIMPRI · NEAR PUNE", L(29, 0.05), LE(29))
-shot(c(30), "W_L0012314", "out")                                   # "Penicillin was the miracle drug of that time..."
+shot(c(30), "ICI", "slow", ms=531.2)                                # "Penicillin was the miracle drug of that time..." (the 1944 film's own penicillin vials)
 # a wounded man on a drip, masked doctors at the bed; then the same men well again (I.C.I.'s 1944 penicillin film)
 shot(S(30, 1) - PRE, "ICI", "slow", ms=581.5)                       # "Back then, a small cut on your hand could kill you."
 shot(S(30, 2) - PRE, "ICI", "slow", ms=[572.6, 559.3])              # "With penicillin, it became a few days of medicine for you."
@@ -292,10 +318,11 @@ chip("Miracle drug", L(30, 0.1), S(30, 1) - PRE, 120, 640, "green", "", "up")   
 shot(c(31), "HSN", "crop", ms=[27.1, 34.3], origin="50% 60%")   # the board, then the works (r4 review 3:32: the ABP clip crossed its own cut)             # "The government sets up... Hindustan Antibiotics. By 1956..."
 namelt("Hindustan Antibiotics", "PIMPRI · SET UP 1954 · PENICILLIN BY 1956", L(31, 0.15), LE(31))
 cite("[DEPT OF PHARMACEUTICALS | HAL]", L(31, 0.15), LE(31))
-shot(c(32), "R_map_india", "none", ms=0.0)                         # "Just think about it. Picture your grandparents' India..."
-shot(S(32, 2) - PRE, "W_L0012314", "out")   # "A young, poor country, growing... in its own factory" (penicillin production apparatus, archival)
-shot(c(33), "px_262464", "slow", ms=1.0, dim=0.2, tag="PIXABAY · ILLUSTRATIVE · TODAY")                  # "Soon, others join in — Alembic, Sarabhai and Ranbaxy..."
-plate("Alembic", "", L(33, 0.35), LE(33), 160, 300); plate("Sarabhai", "", L(33, 0.45), LE(33), 560, 300); plate("Ranbaxy", "", L(33, 0.55), LE(33), 1000, 300)
+# "Picture your grandparents' India. A young, poor country, growing... in its own factory": the Pimpri plant at work, a
+# cyclist on the road, a fermenter turning gold, vials out of the door (owner's review: a potency chart was here)
+shot(c(32), "R_pimpri_grow", "none", ms=0.0)
+# "Soon, others join in — Alembic, Sarabhai and Ranbaxy": each plant rises on its own name beside Pimpri
+shot(c(33), "R_skyline_rise", "none", ms=0.0)
 shot(c(34), "R_fermenter", "push", ms=0.0)                         # "How do you actually make penicillin?"
 # ---- WHY PENICILLIN IS A SCALE GAME (4:19-5:43)
 shot(c(35), "R_cooked", "none", ms=0.0)   # a batch reactor, step by step (audit 2026-10-30: petri dishes said biology)   # "Many medicines, like paracetamol, are cooked from chemicals..."
@@ -340,15 +367,18 @@ datebig("1991", "INDIA OPENS ITS ECONOMY", L(49, 0.05), LE(50))
 hero("<1%", "1991 · ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE · RIS DP 268", S(49, 2) + 3.2, LE(50) + 1.0, 0.5)
 # the roll call (r4 review: St Isaac's Cathedral, St Petersburg, was under "Hindustan Antibiotics"; out): the gears go
 # quiet, then H.A.'s own wall with its workers protesting to save it (2015), I.D.P.L. Hyderabad's gate, the gears again
-shot(c(51), "px_212001", "slow", ms=0.0, dim=0.55)
+# the roll call (owner's review, 30 Oct: the names sat on stock gears): the skyline from 4:15, now six plants, goes quiet;
+# H.A. and I.D.P.L. on their real places, each named and stamped there; then back to the skyline, where Torrent,
+# Ranbaxy and Sarabhai go dark on their own names and Alembic last (scene clock = film time from line 51's cut)
+shot(c(51), "R_skyline_dark", "none", ms=0.0)                        # "Then, one by one, the Indian penicillin plants went quiet."
 shot(round(LE(51) + 0.3, 3), "MPC", "slow", ms=12.45, dim=0.4)     # "Hindustan Antibiotics. Stopped."
 shot(c(53), "ETV", "crop2", ms=4.45, origin="45% 55%", dim=0.4)     # "I.D.P.L. Stopped."
-shot(c(54), "px_212001", "slow", ms=[3.0, 6.0], dim=0.55)          # "Torrent. Ranbaxy. Sarabhai. Stopped." ... "Alembic. Stopped."    # "Then, one by one, the Indian penicillin plants went quiet."
-for i, (name, ln) in enumerate([("Hindustan Antibiotics", 52), ("I.D.P.L.", 53), ("Torrent · Ranbaxy · Sarabhai", 54), ("Alembic", 55)]):
-    plate(name, "", round(LE(51) + 0.35, 3) if ln == 52 else L(ln), LE(55) + 1.4, 160, 230 + i * 160)   # H.A. on the cut (r4 review: 2 s unlabelled)   # clear of the logo bug (top right)
-    stamp("STOPPED", round(LE(ln) - 0.35, 3), LE(55) + 1.4, 1100, 235 + i * 160)
+shot(c(54), "R_skyline_dark", "none", ms=round(c(54) - c(51), 3))    # "Torrent. Ranbaxy. Sarabhai. Stopped." ... "Alembic. Stopped."
+for name, ln, a, b in [("Hindustan Antibiotics", 52, round(LE(51) + 0.35, 3), c(53)), ("I.D.P.L.", 53, L(53), c(54))]:
+    plate(name, "", a, b, 160, 230)
+    stamp("STOPPED", round(LE(ln) - 0.35, 3), b, 1100, 235)
 cite("[RIS DP 268 · ISID WP239]", L(52), LE(55) + 1.4)
-shot(c(56), "px_23215", "slow", ms=4.0)                            # "By about twenty twenty, India was importing all of that base powder"
+shot(c(56), "px_23215", "slow", ms=[0.0, 11.0])   # two clean stretches of the port (r6 audit: a hazard-marked deck sat mid-clip)                            # "By about twenty twenty, India was importing all of that base powder"
 chip("Base powder: 100% imported", L(56, 0.3), LE(56), 120, 640, "amber", "sm", "up")
 cite("[ISID WP239]", L(56, 0.3), LE(56))
 shot(c(57), "D_niti_p-40", "in", dim=0.6, tag="DOCUMENT · NITI AAYOG")   # "Remember that one per cent?... around eighty-six per cent."
@@ -379,7 +409,7 @@ shot(L(64, 0.58) - PRE, "D_aurobindo_lyfius_2024-1", "doc", origin="50% 32%", ta
 shot(c(65), "Y02", "y02", ms=[62.38, 67.74, 86.26], origin="35% 30%")             # "Inside are the giant tanks... the company says ₹2,500 crore... 15,000 tonnes"
 chip("₹2,500 cr · company figure", L(65, 0.35), LE(65), 120, 160, "saffron", "sm", "up")
 chip("15,000 tonnes a year", L(65, 0.7), LE(65), 120, 280, "saffron", "sm", "up")
-shot(c(66), "Y02", "y02", ms=[97.74, 59.58], origin="35% 30%")             # "In twenty twenty-four, the tanks start running..."
+shot(c(66), "Y02", "y02", ms=[52.66, 59.58, 80.98, 91.66, 33.0, 74.98], origin="35% 30%")             # "In twenty twenty-four, the tanks start running..."
 datebig("2024", "PENICILLIN G · MADE IN INDIA AGAIN", L(66, 0.05), LE(66))
 shot(c(67), "J_aerial", "out")   # cheap imports at an Indian port                           # "But you know the trap... cheap imports were still waiting at the port."
 shot(c(68), "D_dgft_2026_mip-1", "in", tag="DOCUMENT · DGFT")      # "So on the twenty-ninth of January, 2026, the government stepped in."
@@ -538,8 +568,8 @@ CLEAN = {
     # round 5 sources: spans between their own cuts (scdet 12), 0.1 s clear; Cipla's only where no caption is burned in
     "MPC": [(12.37, 18.7), (20.3, 25.95)],   # the source dissolves 18.9-20.2 "ETV": [(4.34, 9.5), (25.7, 30.94)],
     "HSN": [(26.98, 34.1), (34.3, 39.58), (39.78, 45.82)],
-    "ICI": [(559.1, 564.5), (572.56, 577.54), (581.42, 587.58)],
-    "CIP": [(3.47, 4.92), (13.1, 14.05), (37.25, 38.21), (46.1, 47.33)],   # each sized to its one verb
+    "CIP": CIP_SPANS,
+    "ICI": [(559.1, 564.5), (572.56, 577.54), (581.42, 587.58), (531.0, 537.9)],   # the vials (526.7-531 is the lab notebook)
 }
 FPS = 30
 
