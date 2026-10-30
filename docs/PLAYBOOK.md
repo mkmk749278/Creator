@@ -2154,6 +2154,15 @@ rare earth engine:
 - **Music from YouTube:** the YouTube Data API cannot reach Studio's Audio Library, and "no copyright music" uploads
   often draw Content ID claims. Licensed tracks come from the Audio Library in Studio on the phone (download, save to
   Drive `<slug>/music/`), then the session re-mixes.
+- **Part seams (found by measuring the final master, not by eye):** (1) a GSAP `tl.set(show)` at 0 loses to the
+  `tl.set(hide)` also at 0 on the first rendered frame, so every part's frame 0 dropped its dim, tags and overlays;
+  anything on screen from a part's first frame is now shown with `gsap.set` directly. (2) An overlay or caption that
+  crosses a seam must cut in and out there (`seam_cut()` in `make_film.py`), never fade on both sides. (3) A part's
+  length must be floored onto its last frame: `r3()` rounded 136.6667 up to 136.667 and the renderer added a 4101st,
+  empty frame, which also slid every later part a frame behind the voice. *Check:* frame count of each part ==
+  round(length × 30), and a strip of the 3 frames each side of every seam.
+- **The AAC encode adds ~0.8 dB of true peak** to sharp synthesised transients (ticks, buzz): the master limiter now
+  sits at −2.5 dBFS to land under −1 dBTP.
   `scripts/termux_search_to_drive.sh` (search on the phone) is the fallback when the tokens are missing.
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
