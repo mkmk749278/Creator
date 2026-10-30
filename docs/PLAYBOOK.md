@@ -1402,7 +1402,27 @@ DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email 
 
 ### 8.5 Getting YouTube footage legitimately
 Never route around blocks with VPNs, proxies or alternative YouTube clients (the auto-mode permission check also blocks
-this). Use one of:
+this).
+
+**Find it first with the channel's own YouTube API (owner, 2026-10-30).** Cloud sessions have the channel's OAuth
+credentials as environment variables: `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN_BEPRACTICALWITHKISHORE`
+and `YT_REFRESH_TOKEN_BUILTONBHARAT` (scope `youtube.force-ssl`, the same access YouTube Studio has). The API answers
+from the container even when youtube.com and yt-dlp get 403s, so a session searches, reads durations and dates and
+vets thumbnails itself; the phone only downloads what was picked.
+- **Search:** `python3 scripts/yt_search.py OUT_DIR "search one" "search two" [--n 8]` writes `results.json` (id,
+  title, channel, date, duration) and one thumbnail contact sheet per search (`sheet_qNN.jpg`). Read the sheets, pick,
+  then hand the owner one `termux_fetch_to_drive.sh` line (option 2 below) with the picked URLs and ranges.
+- **Quota:** 10,000 units a day per project; `search.list` costs 100, `videos.list` 1, so about 90 searches a day.
+  Keep a round to 10–20 searches.
+- **What it cannot do:** download videos (the API has no media download; `captions.download` works only for our own
+  uploads). Downloads still go through the phone (2) or a workflow (0, 1).
+- **Other uses, same tokens:** our own videos' metadata, captions and analytics (Studio data at 48 h / 7 / 28 days,
+  §13c), comment threads and replies (the comments repo's sessions use them). Never change a public video's title,
+  description, thumbnail or privacy without the owner's yes in that conversation.
+- **Never print or commit the tokens.** Mint an access token in code (`oauth2.googleapis.com/token`, grant
+  `refresh_token`) and keep it in memory or the scratchpad.
+
+Then download with one of:
 0. **Fetch media for a video workflow** (for footage we will use: official channels, owner-cleared clips, CC). GitHub app →
    Actions → *Fetch media for a video* → slug + URLs separated by spaces, `URL@01:10-01:24` for a range, runner
    `self-hosted` for the VPS. The artifact has the MP4s, `fetched.csv` (title, uploader, licence) and timecoded contact
@@ -2100,9 +2120,10 @@ rare earth engine:
 - **A session can rebuild a film's `assets/` from Drive** (the part tars hold every conformed clip, document and scene
   render; owner footage sits in `footage/`; Pixabay originals re-fetch by id). Keep the VO takes on Drive too
   (`<slug>/Vo/`): they lived only in a session container and had to be re-uploaded from the phone.
-- **The phone searches YouTube for the session** (`scripts/termux_search_to_drive.sh`): web search barely indexes
-  YouTube and the container gets 403s, so the phone drops titles and thumbnails in Drive, the session vets them on a
-  contact sheet and writes the exact `termux_fetch_to_drive.sh` line with time ranges.
+- **Search YouTube from the session with the channel's API** (`scripts/yt_search.py`, §8.5): web search barely
+  indexes YouTube and the container gets 403s, but the YouTube Data API answers with the channel's own tokens. The
+  session vets thumbnails on a contact sheet and writes the exact `termux_fetch_to_drive.sh` line with ranges.
+  `scripts/termux_search_to_drive.sh` (search on the phone) is the fallback when the tokens are missing.
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
 channel Built on Bharat (repo `mkmk749278/Built-on-Bharat`), the owner made narration and curiosity in the package the
