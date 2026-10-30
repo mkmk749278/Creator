@@ -16,9 +16,9 @@ on:
         type: string
         required: true
       resolution:
-        description: "1080p preview or native 4K"
+        description: "720p review cut (owner, 2026-10-29), 1080p preview or native 4K"
         type: choice
-        options: [1080p, 4k]
+        options: [720p, 1080p, 4k]
         default: 1080p
       assets:
         description: "Optional Drive folder to pull into each job first, as DRIVE_PATH:LOCAL_DIR (e.g. English/pharma-apis/build/assets:projects/pharma-apis/assets)"
@@ -93,7 +93,11 @@ jobs:
         run: |
           name=$(echo "$DIR" | tr '/' '_')
           echo "name=$name" >> "$GITHUB_OUTPUT"
-          if [[ "${{ inputs.resolution }}" == "4k" ]]; then
+          if [[ "${{ inputs.resolution }}" == "720p" ]]; then
+            node scripts/make_native_res.mjs "$DIR" "$DIR-720" 1280
+            echo "dir=$DIR-720" >> "$GITHUB_OUTPUT"
+            echo "args=--workers 4 --video-bitrate 5M" >> "$GITHUB_OUTPUT"
+          elif [[ "${{ inputs.resolution }}" == "4k" ]]; then
             node scripts/make_native_4k.mjs "$DIR" "$DIR-4k"
             echo "dir=$DIR-4k" >> "$GITHUB_OUTPUT"
             echo "args=--workers 4 --video-bitrate 20M" >> "$GITHUB_OUTPUT"
