@@ -170,3 +170,10 @@ The first 720p attempt still repeated every 3rd frame: the grain used `floor(t *
 frame by frame in the browser before the re-render. Holds over 1.6 s: 1:50.7 (2.2 s, the $10,400 card), 1:53.4 (1.7 s),
 2:12.6 (1.8 s), 7:33.9 (1.6 s, the tanks building). Next: the archive and plant footage from the owner's phone (YouTube
 bot check on the mobile IP; script now paces requests and takes a throwaway account's cookies), then the 4K master.
+
+## Round 5 (30 Oct 2026): final 4K master
+
+Answers the r4 720p review and the owner's two extra reviews item by item in `review_ack_r5.md`. Master:
+`pharma_apis_4k.mp4` (Drive `Creator/English/pharma-apis/`), 3840×2160, 30 fps, 11:28.3, 20,650 frames.
+Measured: 0 repeats between moving frames, 0 flash frames, 0 freezes over 1.6 s, clean part seams, −14.2 LUFS,
+−1.7 dBTP. Owner's audio-only pass still asked for: 0:50.8, 8:21.9, 10:38.3 and the name list in the ack.

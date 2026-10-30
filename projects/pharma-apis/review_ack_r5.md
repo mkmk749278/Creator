@@ -76,4 +76,24 @@ Status key: **FIXED** (in the final master) · **CHECKED** (measured, nothing to
 
 ## 6. Measured on the final 4K master
 
-MEASUREMENTS
+Measured on all 20,650 frames of `pharma_apis_4k.mp4` (3840×2160, 30 fps, 11:28.3), the same checks as R4:
+
+| Check | r4 review cut | Final master |
+|---|---|---|
+| Frames whose motion repeats on a beat (a near-zero difference between two moving neighbours) | 1 shot, 3.9 s | **0** |
+| Black flash frames (one-frame luma dips) | 0 | **0** |
+| Fully repeated frames | 5 | 12 (all inside still holds of the source, none between moving frames) |
+| Frozen holds over 1.6 s (`freezedetect` n=0.002) | 0 | **0** |
+| Cuts closer than 5 frames | the 6 chains above | 3, all checked by eye: the "pressing" tablets' own fast motion before the packing cut (2:38.6), the 0.08 s fade into the black under "It did." (3:29.3), and the cut to the H.A. workers (5:58.0) |
+| Part seams (2:16.7, 4:36.0, 6:53.0, 9:11.6) | a framing jump and a label ghost at 2:16 | one clean change at each, overlays and captions continuous across all four |
+| Loudness | −14.1 LUFS, −1.1 dBTP | **−14.2 LUFS, −1.7 dBTP**, 3.5 LU range |
+| Part frame counts | p1 had one extra empty frame | 4100 + 4179 + 4110 + 4160 + 4101 = 20,650, exactly the film's length |
+
+Found and fixed while measuring the first 4K master (not in any review): every part's first frame dropped its dim,
+tags and overlays (a GSAP hide and show both at time 0); seam-crossing labels faded out and in; part 1's length
+rounded up gave it a 4101st empty frame, so everything after 2:16 sat one frame behind the voice; the 5:58 protest
+shot began inside the source's own dissolve; the AAC encode pushed the true peak to −0.7 dBTP. All five parts were
+re-rendered; the numbers above are from that second master.
+
+**Chapters** checked against this master: 0:00, 1:36, 2:12, 2:57, 3:35, 4:30, 5:21, 5:58, 7:47, 8:06, 8:42, 9:16,
+10:11 (the open loop's "around minute eight" lands at 8:06.4).
