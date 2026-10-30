@@ -330,7 +330,7 @@ cite("[DEPT OF PHARMACEUTICALS | HAL]", L(31, 0.15), LE(31))
 # cyclist on the road, a fermenter turning gold, vials out of the door (owner's review: a potency chart was here)
 shot(c(32), "R_pimpri_grow", "none", ms=0.0)
 # "Soon, others join in — Alembic, Sarabhai and Ranbaxy": each plant rises on its own name beside Pimpri
-shot(c(33), "R_skyline_rise", "none", ms=0.0)
+shot(c(33), "R_skyline_rise", "slow", ms=0.0)   # a slow push: Pimpri alone held still 2.6 s (freezedetect, round 6)
 shot(c(34), "R_fermenter", "push", ms=0.0)                         # "How do you actually make penicillin?"
 # ---- WHY PENICILLIN IS A SCALE GAME (4:19-5:43)
 shot(c(35), "R_cooked", "none", ms=0.0)   # a batch reactor, step by step (audit 2026-10-30: petri dishes said biology)   # "Many medicines, like paracetamol, are cooked from chemicals..."
@@ -529,7 +529,10 @@ def part_bounds(n=5):
     starts = [s["t0"] for s in SEQ[1:]]
     b = [0.0]
     for k in range(1, n):
-        b.append(min(starts, key=lambda x: abs(x - END * k / n)))
+        c = min(starts, key=lambda x: abs(x - END * k / n))
+        # the seam sits XF after a cut, so the whole dissolve renders inside one part and the next part opens mid-shot
+        # (round 6: seams on the cut itself left three hard cuts, the only "stitches" in the dissolved film)
+        b.append(round((round(c * FPS) + round(XF * FPS)) / FPS, 4))
     return b + [END]
 
 
@@ -746,10 +749,14 @@ def emit_part(pid, t0, t1, caps):
     shutil.copy(ROOT / "assets/brand/logo_square.png", d / "media/logo_square.png")
     loc = lambda x: r3(x - t0)
     H = []
-    part = [x for x in SEQ if t0 - 1e-6 <= x["t0"] < t1 - 1e-6]
+    part = [x for x in SEQ if x["t0"] < t1 - 1e-6 and x["t1"] > t0 + 1e-6]
     for i, s in enumerate(part):
         # start and end floored onto their frames (frame_floor.py): rounded up, the cut frame showed the empty background
         fs, fe = round(s["t0"] * FPS) - round(t0 * FPS), round(s["t1"] * FPS) - round(t0 * FPS)
+        ms = s["ms"]
+        if fs < 0:   # a shot that began in the previous part carries on from the seam, from the same source frame
+            ms = round(ms + (-fs) / FPS, 4) if media(s["src"]).suffix == ".mp4" else ms
+            fs = 0
         # the dissolve: the incoming shot fades in over XF while the outgoing one runs XF longer beneath it; none at a
         # part's first frame (nothing of this part lies under it) and none into or out of a hard shot
         prev, nxt = (part[i - 1] if i else None), (part[i + 1] if i + 1 < len(part) else None)
@@ -767,7 +774,7 @@ def emit_part(pid, t0, t1, caps):
                else f'<div class="dim" style="background:rgba(4,18,21,{s["dim"]})"></div>')
         if src.suffix == ".mp4":
             H.append(f'      <div id="{pid}-s{i}" class="shot"{xf} data-vs="{st}" data-vd="{du}" style="visibility:hidden"><video id="{pid}-v{i}" class="m" src="{fn}" muted playsinline '
-                     f'data-move="{s["move"]}"{org} data-start="{st}" data-duration="{du}" data-media-start="{s["ms"]}" data-track-index="2" data-volume="0"></video></div>')
+                     f'data-move="{s["move"]}"{org} data-start="{st}" data-duration="{du}" data-media-start="{ms}" data-track-index="2" data-volume="0"></video></div>')
             H.append(f'      <div class="vover"{xf} data-vs="{st}" data-vd="{du}" style="visibility:hidden">{dim}{tag}</div>')
         else:
             fit = ' style="object-fit:contain;background:#071a1e"' if s["src"].startswith("D_") or s["src"] == "endcard" else ""
