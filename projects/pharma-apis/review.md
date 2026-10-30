@@ -177,3 +177,11 @@ Answers the r4 720p review and the owner's two extra reviews item by item in `re
 `pharma_apis_4k.mp4` (Drive `Creator/English/pharma-apis/`), 3840×2160, 30 fps, 11:28.3, 20,650 frames.
 Measured: 0 repeats between moving frames, 0 flash frames, 0 freezes over 1.6 s, clean part seams, −14.2 LUFS,
 −1.7 dBTP. Owner's audio-only pass still asked for: 0:50.8, 8:21.9, 10:38.3 and the name list in the ack.
+
+## Round 6 (30 Oct 2026): picture to word, no stitches, direct 4K
+
+Owner: "narration to scene, every second, word by word" and "should not look like stitches". All shots audited against
+their words (`review_picture_audit_r6.md`); four new scenes (pimpri, pimpri_grow, skyline_rise, skyline_dark), Cipla,
+Lyfius lab, I.C.I. vials, CCTV+/CGTN China footage; every cut a 6-frame dissolve except the deliberate fast cuts; seams
+inside shots. 4K master measured: 0 repeats, 0 flashes, 0 freezes, seamless parts, −14.2 LUFS, −1.7 dBTP
+(`review_ack_r6.md`).

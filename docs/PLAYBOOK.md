@@ -2190,6 +2190,17 @@ company names over a stock lab and gears. The reviews graded *flow*; nobody read
 - **Word times:** the aligner gives sentences only. Letter-count spreading is fine for an audit (±0.3 s); for
   verb cuts and name reveals measure the voice's own gaps (`silencedetect=n=-38dB:d=0.06`, or a 40 ms RMS
   profile for names run together, e.g. "Alembic, Sarabhai and Ranbaxy").
+- **"No stitches" = dissolve every cut (owner, 2026-10-30).** Every cut is now a 6-frame (0.2 s) dissolve: the
+  incoming shot fades in while the outgoing one runs on beneath it (`XF` in `make_film.py`, `data-xf` in `pha.js`).
+  Footage must hold those 6 extra frames inside its clean span, so `clean_assign` reserves the tail; a span too short
+  for shot + tail silently moves the shot to another window, so check in-points after every build. Keep hard cuts only
+  where the rhythm is the point (`hard=True`: verb cuts, fast montages). Measured: 174 hard cuts → 27.
+- **Seams go inside a shot.** A part's first frame cannot dissolve from the previous part, so a seam on a cut stays
+  a hard cut. `part_bounds()` now puts each seam XF after a cut: the dissolve renders whole in one part and the next
+  part opens mid-shot, carrying the shot on from the same source frame (`ms` advanced).
+- **Never add a clean span without a contact sheet of it.** A span added "for the coast site" (8.2–11 s of the Lyfius
+  promo) was the promo's globe-and-cloud zoom; it put Earth from space under "build a plant here?" and leaked into a
+  second shot as white sky. Only the measured master caught it.
   `scripts/termux_search_to_drive.sh` (search on the phone) is the fallback when the tokens are missing.
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new

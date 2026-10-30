@@ -49,7 +49,24 @@ narration's own.
 
 ## 3. Measured on the 4K master
 
-MEASUREMENTS
+Measured on all 20,650 frames of `pharma_apis_4k.mp4` (3840×2160, 30 fps, 11:28.3; parts 4106 + 4179 + 4110 + 4160 +
+4095 frames):
+
+| Check | Round 5 master | Round 6 master |
+|---|---|---|
+| Frames whose motion repeats between moving neighbours | 0 | **0** |
+| One-frame black flashes | 0 | **0** |
+| Frozen holds over 1.6 s | 0 | **0** (a 2.6 s hold on the new 4:15 skyline was found and given a slow push) |
+| Hard cuts | 174 | **27**: 22 are the deliberate fast cuts (Cipla montage, the four verbs, the cut into the black under "It did."), the cut into and out of the 7:30 site shot, and three changes inside animated scenes (the fermenter's days) |
+| Part seams (2:16.9, 4:36.2, 6:53.2, 9:11.8) | a clean change at each | **no change at any**: each seam now sits after a dissolve, inside a shot |
+| Loudness | −14.2 LUFS, −1.7 dBTP | **−14.2 LUFS, −1.7 dBTP**, 3.5 LU range |
+
+Found and fixed while measuring the first round-6 4K master: the three seam cuts could not dissolve (seams moved);
+the 4:15 freeze; a Lyfius span added for "build a plant here?" turned out to be the promo's globe zoom, which also put
+a white sky under "Protect the Indian plant" at 9:35 (removed; the empty plot from above carries the question). Parts 4
+and 5 were rendered again; the numbers above are from that master.
+
+The shot-by-word audit was run again on this master (`build/shot_word_audit.py`): every changed shot sits on its words.
 
 ## 4. Package
 
