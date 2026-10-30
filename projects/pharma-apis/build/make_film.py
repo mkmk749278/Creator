@@ -70,6 +70,9 @@ FOOT = {  # owner-fetched footage (assets/footage/fetched.csv; Pexels downloaded
     "HSN": ("r5_08_-KiqNoJvtbo.mp4", "FOOTAGE · NEXT GENERATION NEWS · PIMPRI · 2015"),
     "ICI": ("r5_04_-7HmDfgaakg.mp4", "ARCHIVE FILM · PENICILLIN · I.C.I. 1944 · BRUNNER MOND FILM ARCHIVE"),
     "CIP": ("r5_02_xziIt2SJp34.mp4", "FOOTAGE · CIPLA · MAKE IN INDIA"),
+    # round 6 (owner-fetched 30 Oct): Chinese drug plants today, for "China went all in… huge plants" (the chimney was a stand-in)
+    "CGT": ("r6_01_9c-PcIWGwQY.mp4", "FOOTAGE · CGTN · CSPC PLANT, SHIJIAZHUANG · 2022"),
+    "CCV": ("r6_02_mXsHcF87-Is.mp4", "FOOTAGE · CCTV+ · CHINA · 2026"),
     "PXa": ("3922881-uhd_4096_2160_25fps.mp4", "PEXELS"), "PXb": ("13048933-uhd_3840_2160_30fps.mp4", "PEXELS"),
 }
 
@@ -124,9 +127,14 @@ def default_tag(src):
 SEQ, OV = [], []
 
 
-def shot(t0, src, move="push", tag=None, ms=0.0, origin=None, dim=False):
-    """a base shot from t0 until the next shot starts (the cut is gapless by construction)"""
-    SEQ.append(dict(t0=round(t0, 3), src=src, move=move, tag=default_tag(src) if tag is None else tag, ms=ms, origin=origin, dim=dim))
+XF = 0.2   # every cut is a 6-frame dissolve (owner, 2026-10-30: "should not look like stitches, all should feel smooth")
+
+
+def shot(t0, src, move="push", tag=None, ms=0.0, origin=None, dim=False, hard=False):
+    """a base shot from t0 until the next shot starts (the cut is gapless by construction). hard=True: the cuts into and
+    out of this shot stay hard (a deliberate rhythm: the verb cuts, the Cipla montage); every other cut dissolves over XF,
+    the outgoing shot running XF longer under the incoming one"""
+    SEQ.append(dict(t0=round(t0, 3), src=src, move=move, tag=default_tag(src) if tag is None else tag, ms=ms, origin=origin, dim=dim, hard=hard))
 
 
 # Cipla's film cuts every 1-2 s and burns captions into most shots: its caption-free spans (frame-checked), raw seconds
@@ -142,7 +150,7 @@ def montage(t0, t1, src, starts, move="crop2", origin="50% 50%", tag=None):
     t = t0
     for a in starts:
         span = next(b - a for x, b in CIP_SPANS if abs(x - a) < 1e-6)
-        shot(round(t, 3), src, move, ms=a, origin=origin, tag=tag)
+        shot(round(t, 3), src, move, ms=a, origin=origin, tag=tag, hard=True)
         t += span * SRC_FPS[src] / 30 - 0.04
         if t >= t1 - 0.3:
             return
@@ -282,10 +290,10 @@ shot(c(18), "R_tablet", "slow", ms=1.0)   # skip the empty first second         
 montage(c(21), S(21, 2) - PRE, "CIP", [27.4, 12.15, 51.6, 2.6])
 # one cut per verb, on the word (second review, 30 Oct: one machine held under four actions): Cipla's own line, the
 # letterbox and captions framed out (crop2); the cut points sit in the voice's own gaps between the words
-shot(S(21, 2) - PRE, "CIP", "crop2", ms=13.15, origin="50% 50%")     # "Mixing," (the coating drum)
-shot(round(S(21, 2) + 0.626, 3), "CIP", "crop2", ms=3.5, origin="50% 50%")    # "pressing," (tablets off the press)
-shot(round(S(21, 2) + 1.476, 3), "CIP", "crop2", ms=37.26, origin="50% 50%")  # "packing," (blister line)
-shot(round(S(21, 2) + 2.256, 3), "CIP", "crop2", ms=46.12, origin="50% 50%")  # "and passing the toughest inspections" (clean room)
+shot(S(21, 2) - PRE, "CIP", "crop2", ms=13.15, origin="50% 50%", hard=True)     # "Mixing," (the coating drum)
+shot(round(S(21, 2) + 0.626, 3), "CIP", "crop2", ms=3.5, origin="50% 50%", hard=True)    # "pressing," (tablets off the press)
+shot(round(S(21, 2) + 1.476, 3), "CIP", "crop2", ms=37.26, origin="50% 50%", hard=True)  # "packing," (blister line)
+shot(round(S(21, 2) + 2.256, 3), "CIP", "crop2", ms=46.12, origin="50% 50%", hard=True)  # "and passing the toughest inspections" (clean room)
 # "...on the planet.": Lyfius's quality lab, two microscope shots (the lab's first shot is the teaser's at 1:33)
 shot(round(S(21, 2) + 3.236, 3), "Y02", "y02", ms=96.02, origin="35% 30%", tag="FOOTAGE · LYFIUS PHARMA · QUALITY LAB")
 shot(round(S(21, 2) + 3.236 + (c(22) - S(21, 2) - 3.236) / 2, 3), "Y02", "y02", ms=97.74, origin="35% 30%", tag="FOOTAGE · LYFIUS PHARMA · QUALITY LAB")
@@ -357,7 +365,12 @@ shot(S(45, 2) - PRE, "HSN", "crop", ms=34.3, origin="50% 60%", dim=0.4)   # "So 
 chip("Few licences", L(45, 0.35), LE(45), 120, 300, "red", "sm", "up")
 chip("Small plants", L(45, 0.6), LE(45), 120, 420, "red", "sm", "up")
 cite("[MDPI ECONOMIES 2021]", L(45, 0.35), LE(45))
-shot(c(46), "px_199788", "slow", ms=0.0)                            # "Meanwhile, in the nineteen nineties, China went all in..."
+# China, owner-fetched news footage of its drug plants (round 6): mass lines on "went all in", CSPC's plant and a robot
+# warehouse on "huge plants, in huge drug parks", the chimney kept only for "looser pollution rules". Tagged with their year
+shot(c(46), "CCV", "crop", ms=43.1, origin="35% 70%")                # "Meanwhile, in the nineteen nineties, China went all in on medicine ingredients."
+shot(c(47), "CGT", "y02", ms=39.4, origin="40% 45%")   # 1.6x keeps 13-77% of the height: the place caption (top) and subtitles (bottom) stay out               # "It built huge plants, in huge drug parks,"
+shot(round(c(47) + 3.0, 3), "CCV", "crop", ms=22.4, origin="35% 70%")   # "...with cheap power and cheap water."
+shot(S(47, 1) - PRE, "px_199788", "slow", ms=6.0)                    # "Its factories also faced looser pollution rules."
 chip("Cheap power · cheap water", L(47, 0.3), LE(47), 120, 640, "amber", "sm", "up")
 cite("[CFR | THE PHARMA CHOKE POINT]", L(47, 0.3), LE(47))
 shot(c(48), "R_map_trade", "none", ms=9.0)                        # "And then cheap Chinese penicillin flooded the world market..."
@@ -386,8 +399,10 @@ shot(c(57), "D_niti_p-40", "in", dim=0.6, tag="DOCUMENT · NITI AAYOG")   # "Rem
 # in make_sound.py sits on HERO86) and the capsule fills
 hero("<1%", "1991 · ALL MEDICINE POWDER IMPORTS · CHINA'S SHARE · RIS DP 268", S(57, 0), HERO86, 0.5, cut_out=True)
 hero("86%", "TODAY · ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE · NITI AAYOG 2025", HERO86, LE(57) + 0.8, 86.1, "amber", cut_in=True)
-shot(c(58), "px_45680", "slow", ms=[0.0, 2.9], dim=0.45, tag="PIXABAY · ILLUSTRATIVE")                # "Niti Aayog estimates Chinese powder costs 35-40% less..."
-shot(S(58, 1) - PRE, "px_199788", "in", ms=6.0, dim=0.45)           # "So tell me — if you ran a company, would you build a plant here?"
+shot(c(58), "CCV", "crop", ms=18.8, origin="35% 70%", dim=0.3)      # "Niti Aayog estimates Chinese powder costs 35-40% less..." (Chinese packers)
+# "So tell me — if you ran a company, would you build a plant here?": India's plants dark, then the empty Kakinada plot
+shot(S(58, 1) - PRE, "R_skyline_dark", "push", ms=19.2)
+shot(round(S(58, 1) - PRE + 1.8, 3), "Y02", "y02", ms=8.25, origin="35% 30%", tag="FOOTAGE · LYFIUS PHARMA · THE COAST SITE", hard=True)   # the span holds the shot, not a dissolve tail
 chip("China's powder: 35–40% cheaper", L(58, 0.2), LE(58), 120, 160, "amber", "sm", "up")
 cite("[NITI AAYOG ESTIMATE]", L(58, 0.2), LE(58))
 # the trap on the tanks, steady (audit 2026-10-30: the handheld mill shook): small can't compete, big is a risk, and a
@@ -563,12 +578,14 @@ CLEAN = {
     # collage and group shots (103-108 s) need excluding; spans run 0.1 s clear of the promo's own cuts
     # 30 Oct audit: the promo also cross-wipes inside these (3-4 frame wipes scdet missed); spans split at every
     # frame-difference transition of the conformed source (peak > 25), mapped to raw time (x1.2)
-    "Y02": [(11.0, 13.9), (33.0, 34.9), (42.32, 49.58), (49.78, 52.46), (52.66, 55.7), (57.18, 59.38), (59.58, 62.18), (62.38, 65.42), (65.62, 67.54), (67.74, 71.42), (71.62, 72.86), (73.06, 74.78), (74.98, 76.66), (77.48, 78.8), (80.98, 82.14), (82.34, 83.42), (83.62, 84.96), (86.26, 87.68), (88.12, 90.02), (90.22, 91.46), (91.66, 93.22), (93.42, 95.82), (96.02, 97.54), (97.74, 99.48), (99.92, 101.38), (101.58, 102.8)],
+    "Y02": [(8.2, 10.95), (11.0, 13.9), (33.0, 34.9), (42.32, 49.58), (49.78, 52.46), (52.66, 55.7), (57.18, 59.38), (59.58, 62.18), (62.38, 65.42), (65.62, 67.54), (67.74, 71.42), (71.62, 72.86), (73.06, 74.78), (74.98, 76.66), (77.48, 78.8), (80.98, 82.14), (82.34, 83.42), (83.62, 84.96), (86.26, 87.68), (88.12, 90.02), (90.22, 91.46), (91.66, 93.22), (93.42, 95.82), (96.02, 97.54), (97.74, 99.48), (99.92, 101.38), (101.58, 102.8)],
     "Y04": [(6.05, 7.25), (7.35, 10.3), (10.45, 14.1), (14.25, 19.05)],
     # round 5 sources: spans between their own cuts (scdet 12), 0.1 s clear; Cipla's only where no caption is burned in
     "MPC": [(12.37, 18.7), (20.3, 25.95)],   # the source dissolves 18.9-20.2 "ETV": [(4.34, 9.5), (25.7, 30.94)],
     "HSN": [(26.98, 34.1), (34.3, 39.58), (39.78, 45.82)],
     "CIP": CIP_SPANS,
+    "CCV": [(10.9, 14.78), (14.98, 18.58), (18.78, 22.18), (22.38, 25.63), (25.83, 28.98), (32.78, 34.23), (43.07, 46.38), (46.58, 49.87), (50.07, 52.18)],
+    "CGT": [(39.38, 43.02), (43.22, 46.46)],
     "ICI": [(559.1, 564.5), (572.56, 577.54), (581.42, 587.58), (531.0, 537.9)],   # the vials (526.7-531 is the lab notebook)
 }
 FPS = 30
@@ -630,6 +647,8 @@ def clean_assign():
         if not rs:
             out.append(s); continue
         sp = 30.0 / rate(s["src"])
+        nxt = SEQ[i + 1] if i + 1 < len(SEQ) else None
+        tail = XF if nxt is not None and not (s.get("hard") or nxt.get("hard")) else 0.0
         film = end - s["t0"]
         plan = None                                           # (repeat seconds + a small price per extra cut, sub, starts)
         for n in (1, 2, 3, 4):
@@ -638,7 +657,7 @@ def clean_assign():
                 break
             picks = []
             for k in range(n):
-                c = best(s["src"], rs, sub * sp, s["ms"] + k * 2.0)
+                c = best(s["src"], rs, (sub + tail) * sp, s["ms"] + k * 2.0)
                 if c is None:
                     break
                 picks.append(c[1]); used.setdefault(s["src"], []).append((c[1], c[1] + sub * sp))
@@ -727,10 +746,18 @@ def emit_part(pid, t0, t1, caps):
     shutil.copy(ROOT / "assets/brand/logo_square.png", d / "media/logo_square.png")
     loc = lambda x: r3(x - t0)
     H = []
-    for i, s in enumerate(x for x in SEQ if t0 - 1e-6 <= x["t0"] < t1 - 1e-6):
+    part = [x for x in SEQ if t0 - 1e-6 <= x["t0"] < t1 - 1e-6]
+    for i, s in enumerate(part):
         # start and end floored onto their frames (frame_floor.py): rounded up, the cut frame showed the empty background
         fs, fe = round(s["t0"] * FPS) - round(t0 * FPS), round(s["t1"] * FPS) - round(t0 * FPS)
+        # the dissolve: the incoming shot fades in over XF while the outgoing one runs XF longer beneath it; none at a
+        # part's first frame (nothing of this part lies under it) and none into or out of a hard shot
+        prev, nxt = (part[i - 1] if i else None), (part[i + 1] if i + 1 < len(part) else None)
+        soft_in = fs > 0 and prev is not None and not (prev.get("hard") or s.get("hard"))
+        soft_out = nxt is not None and not (s.get("hard") or nxt.get("hard"))
+        fe += round(XF * FPS) if soft_out else 0
         st, du = FF.ft(fs), round(FF.ft(fe) - FF.ft(fs), 4); src = media(s["src"])
+        xf = f' data-xf="{XF}"' if soft_in else ""
         fn = f"media/{src.name}"
         if not (d / fn).exists():
             shutil.copy(src, d / fn)
@@ -739,12 +766,12 @@ def emit_part(pid, t0, t1, caps):
         dim = ("" if not s["dim"] else '<div class="dim"></div>' if s["dim"] is True
                else f'<div class="dim" style="background:rgba(4,18,21,{s["dim"]})"></div>')
         if src.suffix == ".mp4":
-            H.append(f'      <div id="{pid}-s{i}" class="shot" data-vs="{st}" data-vd="{du}" style="visibility:hidden"><video id="{pid}-v{i}" class="m" src="{fn}" muted playsinline '
+            H.append(f'      <div id="{pid}-s{i}" class="shot"{xf} data-vs="{st}" data-vd="{du}" style="visibility:hidden"><video id="{pid}-v{i}" class="m" src="{fn}" muted playsinline '
                      f'data-move="{s["move"]}"{org} data-start="{st}" data-duration="{du}" data-media-start="{s["ms"]}" data-track-index="2" data-volume="0"></video></div>')
-            H.append(f'      <div class="vover" data-vs="{st}" data-vd="{du}" style="visibility:hidden">{dim}{tag}</div>')
+            H.append(f'      <div class="vover"{xf} data-vs="{st}" data-vd="{du}" style="visibility:hidden">{dim}{tag}</div>')
         else:
             fit = ' style="object-fit:contain;background:#071a1e"' if s["src"].startswith("D_") or s["src"] == "endcard" else ""
-            H.append(f'      <div id="{pid}-s{i}" class="shot" data-start="{st}" data-duration="{du}" data-track-index="1">'
+            H.append(f'      <div id="{pid}-s{i}" class="shot"{xf} data-start="{st}" data-duration="{du}" data-track-index="1">'
                      f'<img class="m a" src="{fn}" alt=""{fit} data-move="{s["move"]}"{org} />{dim}{tag}</div>')
     O = []
     for o in OV:

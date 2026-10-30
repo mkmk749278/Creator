@@ -26,6 +26,8 @@
       // a set at 0 that shows something loses to the hide set also at 0 on the first frame, so anything on screen from
       // a part's first frame is shown directly (round 5: every part's frame 0 lost its dim, tag and overlays)
       if (!timed) { if (t > 1e-4) { tl.set(sh, { visibility: "hidden" }, 0); tl.set(sh, { visibility: "visible" }, t); } else gsap.set(sh, { visibility: "visible" }); tl.set(sh, { visibility: "hidden" }, t + d); }
+      // the dissolve (owner, 2026-10-30: no stitches): the incoming shot fades in over the outgoing one, which runs on beneath it
+      if (sh.dataset.xf && t > 1e-4) tl.fromTo(sh, { opacity: 0 }, { opacity: 1, duration: +sh.dataset.xf, ease: "sine.inOut", immediateRender: false }, t);
       sh.querySelectorAll(".m").forEach((m) => {
         const mv = MOVES[m.dataset.move || "push"];
         if (m.dataset.origin) m.style.transformOrigin = m.dataset.origin;
@@ -39,6 +41,7 @@
     });
     document.querySelectorAll(".vover").forEach((o) => {
       const t = +o.dataset.vs, d = +o.dataset.vd;
+      if (o.dataset.xf && t > 1e-4) tl.fromTo(o, { opacity: 0 }, { opacity: 1, duration: +o.dataset.xf, ease: "sine.inOut", immediateRender: false }, t);
       if (t > 1e-4) { tl.set(o, { visibility: "hidden" }, 0); tl.set(o, { visibility: "visible" }, t); } else gsap.set(o, { visibility: "visible" });
       tl.set(o, { visibility: "hidden" }, t + d);
     });
