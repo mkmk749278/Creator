@@ -1179,6 +1179,10 @@ change, never mid-thought. Keep the punctuation rules in §4 (commas, full stops
 6. **Semantic lock:** every shot shows exactly what the VO says at that second (kidneys → renal animation, "CCTV
    isolation" → a high-angle surveillance view, "world record" → the actual attempt). *Why:* breath-hold showed a railway
    crowd for "the audience"; the owner rejected it. Generic B-roll only where the narration is generic.
+   **Check it shot by shot, every round** (owner, 2026-10-30): list every shot with the words spoken over it and one
+   frame each (`projects/pharma-apis/build/shot_word_audit.py`), grade WRONG / WEAK / OK, and fix every WRONG before a
+   cut goes to the owner. Names, places, years and verbs are the hard cases: a company name needs that company's
+   picture (or an illustration of that company), a year needs that year, a verb needs that action.
 7. **Real event footage beats stock**, and archive photos of the person from other years are a weak fallback. Hunt for the
    actual event first (§8).
 8. **Avoid our known stock looks** (name them, per §2): floating glass cards, neon-on-black dashboards, centred title +
@@ -2163,6 +2167,40 @@ rare earth engine:
   round(length × 30), and a strip of the 3 frames each side of every seam.
 - **The AAC encode adds ~0.8 dB of true peak** to sharp synthesised transients (ticks, buzz): the master limiter now
   sits at −2.5 dBFS to land under −1 dBTP.
+
+**Pharma film, round 6: the picture must say the words (owner's review, 2026-10-30).** The "final" 4K master passed
+every frame measurement and two independent reviews, yet the owner found "Pimpri… 1954… free less than seven
+years… building a factory" over a British lab drawing, "growing… in its own factory" over a potency chart, and the
+company names over a stock lab and gears. The reviews graded *flow*; nobody read each shot against its own words.
+- **The audit that catches it:** `shot_word_audit.py` (all shots, their words, one frame each, labelled sheets).
+  Of 181 shots, 11 were WRONG and 8 WEAK. The WRONG ones clustered where no real footage existed (1950s India, old
+  company plants) and where a stock clip had been chosen for a *topic* ("pharma line") instead of the *words*
+  ("Indian companies"): a Chinese softgel line twice under "India".
+- **When no real footage exists, draw what the words say, don't fill.** A Wellcome archive image "about penicillin"
+  is filler under "Pimpri 1954". The fix was a scene per sentence: map → Pimpri, 15 Aug 1947 → 1954 filling
+  ("< 7 YEARS FREE"), the factory rising; the plant at work with a fermenter turning gold; plants rising on each
+  company's name. *Signature:* the 4:15 skyline returns at the roll call and goes dark plant by plant, so the
+  story's rise and fall is one picture (`video/pha/gen_scenes.py`: `factory()`, `skyline()`, `pimpri()`).
+- **A montage of a source's caption-free spans** rescues a promo full of burned-in text: list the clean spans
+  (frame-checked), lay them back to back on the words (`montage()` in `make_film.py`), each piece no longer than
+  its span, so nothing ever plays into a caption.
+- **Search before drawing, and say what the search found:** the channel's YouTube API found no 1950s H.A., Alembic,
+  Sarabhai or Ranbaxy film; it did find CGTN / CCTV+ news footage of Chinese drug plants for "China built huge
+  plants", fetched by the owner with one Termux line (`research/yt_search_r6.json`).
+- **Word times:** the aligner gives sentences only. Letter-count spreading is fine for an audit (±0.3 s); for
+  verb cuts and name reveals measure the voice's own gaps (`silencedetect=n=-38dB:d=0.06`, or a 40 ms RMS
+  profile for names run together, e.g. "Alembic, Sarabhai and Ranbaxy").
+- **"No stitches" = dissolve every cut (owner, 2026-10-30).** Every cut is now a 6-frame (0.2 s) dissolve: the
+  incoming shot fades in while the outgoing one runs on beneath it (`XF` in `make_film.py`, `data-xf` in `pha.js`).
+  Footage must hold those 6 extra frames inside its clean span, so `clean_assign` reserves the tail; a span too short
+  for shot + tail silently moves the shot to another window, so check in-points after every build. Keep hard cuts only
+  where the rhythm is the point (`hard=True`: verb cuts, fast montages). Measured: 174 hard cuts → 27.
+- **Seams go inside a shot.** A part's first frame cannot dissolve from the previous part, so a seam on a cut stays
+  a hard cut. `part_bounds()` now puts each seam XF after a cut: the dissolve renders whole in one part and the next
+  part opens mid-shot, carrying the shot on from the same source frame (`ms` advanced).
+- **Never add a clean span without a contact sheet of it.** A span added "for the coast site" (8.2–11 s of the Lyfius
+  promo) was the promo's globe-and-cloud zoom; it put Earth from space under "build a plant here?" and leaked into a
+  second shot as white sky. Only the measured master caught it.
   `scripts/termux_search_to_drive.sh` (search on the phone) is the fallback when the tokens are missing.
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new

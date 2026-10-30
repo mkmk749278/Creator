@@ -725,6 +725,188 @@ def cooked():
     write("cooked", 7, svg, js)
 
 
+# ---------------------------------------------------------------------------------------------------------------
+# 14-17. Pimpri and the Indian plants (owner's review, 30 Oct: "Pimpri… free less than seven years… building a factory"
+# sat on a British lab drawing, "growing… in its own factory" on a potency chart, the company names on a stock lab and
+# on gears). No film of 1950s Pimpri, Alembic, Sarabhai or Ranbaxy could be found or cleared, so these scenes draw
+# exactly what the words say, and the same skyline that rises at 4:15 goes dark at the roll call. ILLUSTRATION.
+# Times inside each scene are the voice's own word times (silencedetect on vo_film.wav), relative to the scene's cut.
+
+def factory(k, cx, base, w=300, h=200, lit=True, label="", lab_size=30, flag=False):
+    """one plant: shed with a saw-tooth roof, a chimney and a fermenter tank; windows lit when it runs"""
+    x0 = cx - w / 2; top = base - h; teeth = 4; tw = w / teeth
+    roof = f"M{x0} {top}" + "".join(f" L{x0 + i * tw + tw * 0.75} {top - 46} L{x0 + (i + 1) * tw} {top - 46} L{x0 + (i + 1) * tw} {top}" for i in range(teeth))
+    win = "".join(f'<rect class="w{k}" x="{x0 + 22 + i * (w - 44) / 5:.1f}" y="{top + 40 + j * 58}" width="{(w - 44) / 5 - 14:.1f}" height="34" rx="3" fill="#ffd27a" opacity="{0.9 if lit else 0.12}"/>'
+                  for i in range(5) for j in range(max(2, int((h - 100) / 58))))
+    tank_x = x0 + w + 8
+    g = (f'<g id="f{k}"><rect x="{x0 + w * 0.12}" y="{top - 150}" width="26" height="150" fill="#2c4f56" stroke="#9db3b8" stroke-width="3"/>'
+         f'<path d="{roof} L{x0 + w} {base} L{x0} {base} Z" fill="#163a41" stroke="#9db3b8" stroke-width="4" stroke-linejoin="round"/>{win}'
+         f'<rect x="{tank_x}" y="{base - 150}" width="62" height="150" rx="26" fill="#1d454c" stroke="#9db3b8" stroke-width="4"/>'
+         f'<rect id="tk{k}" x="{tank_x + 6}" y="{base - 144}" width="50" height="138" rx="20" fill="#ff9933" opacity="{0.55 if lit else 0}"/>'
+         f'<rect x="{cx - 26}" y="{base - 70}" width="52" height="70" fill="#0b2328" stroke="#9db3b8" stroke-width="3"/>')
+    if flag:
+        g += (f'<line x1="{x0 + w - 30}" y1="{top - 46}" x2="{x0 + w - 30}" y2="{top - 150}" stroke="#c9d6d9" stroke-width="4"/>'
+              f'<g id="flag{k}"><rect x="{x0 + w - 28}" y="{top - 150}" width="66" height="14" fill="#ff9933"/><rect x="{x0 + w - 28}" y="{top - 136}" width="66" height="14" fill="#f2f7f7"/>'
+              f'<rect x="{x0 + w - 28}" y="{top - 122}" width="66" height="14" fill="#138808"/><circle cx="{x0 + w + 5}" cy="{top - 129}" r="5" fill="#1a3a8f"/></g>')
+    if label:
+        g += f'<text id="lb{k}" class="lab" x="{cx}" y="{top - 175}" text-anchor="middle" style="font-size:{lab_size}px">{label}</text>'
+    g += f'<g id="sm{k}"></g></g>'
+    return g, (x0 + w * 0.12 + 13, top - 150)
+
+
+SMOKE = """
+      // chimney smoke, a pure function of time: puffs rise and fade; level(k, t) says how hard plant k is running
+      function smoke(chims, level) {
+        const P = chims.map(([k, x, y]) => { const g = document.getElementById("sm" + k), a = [];
+          for (let i = 0; i < 7; i++) { const c = document.createElementNS("http://www.w3.org/2000/svg", "circle"); c.setAttribute("fill", "#c9d6d9"); g.appendChild(c); a.push(c); }
+          return [k, x, y, a]; });
+        const o = { t: 0 };
+        tl.fromTo(o, { t: 0 }, { t: D, duration: D, ease: "none", immediateRender: false, onUpdate: () => {
+          P.forEach(([k, x, y, a]) => { const L = level(k, o.t);
+            a.forEach((c, i) => { const ph = (o.t * 0.45 + i / 7) % 1;
+              c.setAttribute("cx", (x + 30 * ph + 8 * Math.sin(ph * 6 + i)).toFixed(1)); c.setAttribute("cy", (y - 10 - 150 * ph).toFixed(1));
+              c.setAttribute("r", (12 + 30 * ph).toFixed(1)); c.setAttribute("opacity", (0.42 * (1 - ph) * L).toFixed(3)); }); });
+        } }, 0);
+      }
+      const ramp = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
+"""
+
+
+def pimpri():
+    """3:35.6 "Pimpri, near Pune. Nineteen fifty-four. India has been free for less than seven years, and it's building a
+    factory to make its own penicillin." Map -> Pimpri; 15 Aug 1947 -> 1954 fills (< 7 years); the factory draws itself."""
+    a = MAP["india"]; px, py = a["pts"]["pimpri"]
+    fac, _ = factory("p", 940, 820, 600, 330, lit=False, flag=True)
+    svg = (GRID + f'<g id="mapg">{land("india")}{pin(px, py, "PIMPRI · NEAR PUNE", pid="pp", col="#7fd3e6", dx=-30, dy=-24, anchor="end")}</g>'
+           '<g id="tline" opacity="0"><line x1="620" y1="300" x2="1460" y2="300" stroke="#3b6a72" stroke-width="10" stroke-linecap="round"/>'
+           '<line id="tfill" x1="620" y1="300" x2="1460" y2="300" stroke="#ff9933" stroke-width="10" stroke-linecap="round"/>'
+           '<circle cx="620" cy="300" r="14" fill="#ff9933"/><circle cx="1460" cy="300" r="14" fill="#7fd3e6"/>'
+           '<text class="mono" x="620" y="262" text-anchor="middle">15 AUG 1947</text><text class="mono" x="1460" y="262" text-anchor="middle">1954</text>'
+           '<text id="t7" class="lab" x="1040" y="372" text-anchor="middle" style="fill:#ff9933;font-size:44px">&lt; 7 YEARS FREE</text></g>'
+           '<line id="gnd" x1="300" y1="820" x2="1620" y2="820" stroke="#9db3b8" stroke-width="5" opacity="0"/>'
+           f'<g id="site" opacity="0">{fac}</g>'
+           '<g id="crane" opacity="0"><path id="cr1" d="M1400 820 V330 H1080" fill="none" stroke="#e8a33d" stroke-width="10"/>'
+           '<path id="cr2" d="M1100 330 V420" stroke="#c9d6d9" stroke-width="4"/><rect x="1080" y="420" width="40" height="26" fill="#e8a33d"/></g>'
+           '<text id="plab" class="lab" x="940" y="300" text-anchor="middle" style="fill:#ff9933;font-size:40px" opacity="0">PENICILLIN FACTORY</text>')
+    js = f"""
+      tl.set("#pp", {{ autoAlpha: 0 }}, 0); pop("#pp", 0.15);
+      tl.fromTo("#mapg", {{ scale: 1, transformOrigin: "{px}px {py}px" }}, {{ scale: 2.2, duration: 1.6, ease: "power2.inOut", immediateRender: false }}, 0.9);
+      tl.to("#mapg", {{ opacity: 0.18, duration: 0.8 }}, 1.7);
+      fade("#tline", 1.85, 0.3);
+      tl.fromTo("#tfill", {{ attr: {{ x2: 620 }} }}, {{ attr: {{ x2: 1460 }}, duration: 1.0, ease: "power1.inOut", immediateRender: false }}, 1.95);
+      tl.set("#t7", {{ autoAlpha: 0 }}, 0); pop("#t7", 2.9);
+      tl.to("#tline", {{ autoAlpha: 0, duration: 0.4 }}, 3.25);
+      // "and it's building a factory": the plant rises out of the ground, the crane swinging, then the lights come on
+      fade("#gnd", 3.3, 0.3); fade("#site", 3.4, 0.2); fade("#crane", 3.4, 0.3);
+      tl.fromTo("#fp", {{ clipPath: "inset(100% 0 0 0)" }}, {{ clipPath: "inset(0% 0 0 0)", duration: 2.6, ease: "power1.inOut", immediateRender: false }}, 3.45);
+      tl.fromTo("#crane", {{ rotation: 0, transformOrigin: "1400px 820px" }}, {{ rotation: -6, duration: 2.6, ease: "sine.inOut", immediateRender: false }}, 3.45);
+      tl.to("#crane", {{ autoAlpha: 0, duration: 0.4 }}, 6.2);
+      tl.to(".wp", {{ opacity: 0.9, duration: 0.6, stagger: 0.04 }}, 6.3);
+      tl.to("#tkp", {{ opacity: 0.6, duration: 0.8 }}, 6.6);
+      fade("#plab", 6.6, 0.4);
+      tl.fromTo("#flagp", {{ skewY: -3, transformOrigin: "0% 50%" }}, {{ skewY: 3, duration: 0.9, ease: "sine.inOut", repeat: 9, yoyo: true, immediateRender: false }}, 0);
+"""
+    write("pimpri", 9.4, svg, js)
+
+
+def pimpri_grow():
+    """4:05 "Just think about it. Picture your grandparents' India. A young, poor country, growing one of the most important
+    medicines on earth... in its own factory." The plant at dusk, a cyclist on the road; the wall opens on a fermenter
+    turning gold; vials roll out of the door."""
+    fac, (chx, chy) = factory("g", 760, 800, 520, 300, lit=True, flag=True)
+    vials = "".join(f'<g class="vial" id="v{i}"><rect x="-11" y="-30" width="22" height="34" rx="5" fill="#f2f7f7"/><rect x="-11" y="-14" width="22" height="18" rx="4" fill="#e8a33d"/>'
+                    f'<rect x="-8" y="-38" width="16" height="9" fill="#9db3b8"/></g>' for i in range(8))
+    svg = (GRID + '<rect width="1920" height="1080" fill="#e8a33d" opacity=".07"/>'
+           '<circle cx="1500" cy="330" r="110" fill="#ffb347" opacity=".35"/><circle cx="1500" cy="330" r="70" fill="#ffcf8a" opacity=".5"/>'
+           '<line x1="0" y1="800" x2="1920" y2="800" stroke="#9db3b8" stroke-width="5"/><line x1="0" y1="860" x2="1920" y2="860" stroke="#3b6a72" stroke-width="3" stroke-dasharray="30 26"/>'
+           f'{fac}'
+           # the cutaway: a fermenter inside the shed, its broth turning gold
+           '<g id="cut" opacity="0"><rect x="510" y="505" width="500" height="295" fill="#0b2328" stroke="#9db3b8" stroke-width="4"/>'
+           '<rect x="670" y="530" width="180" height="260" rx="64" fill="#123b42" stroke="#c9d6d9" stroke-width="5"/>'
+           '<clipPath id="tc"><rect x="674" y="534" width="172" height="252" rx="60"/></clipPath>'
+           '<rect id="gold" x="674" y="786" width="172" height="0" fill="#e8a33d" clip-path="url(#tc)"/><g id="bb" clip-path="url(#tc)"></g>'
+           '<line x1="760" y1="510" x2="760" y2="760" stroke="#c9d6d9" stroke-width="5"/><rect id="imp" x="720" y="740" width="80" height="10" rx="4" fill="#c9d6d9"/></g>'
+           # the conveyor out of the door, and the road with a cyclist
+           '<rect x="1010" y="790" width="560" height="10" fill="#9db3b8"/>'
+           f'<g id="vials">{vials}</g>'
+           '<g id="cyc"><circle cx="0" cy="0" r="26" fill="none" stroke="#f2f7f7" stroke-width="5"/><circle cx="82" cy="0" r="26" fill="none" stroke="#f2f7f7" stroke-width="5"/>'
+           '<path d="M0 0 L30 -40 L70 -40 L82 0 M30 -40 L42 0 L70 -40" fill="none" stroke="#f2f7f7" stroke-width="5" stroke-linejoin="round"/>'
+           '<circle cx="40" cy="-118" r="15" fill="#f2f7f7"/><path d="M40 -103 L48 -58 L30 -40 M48 -58 L70 -44 M42 -92 L72 -54" fill="none" stroke="#f2f7f7" stroke-width="6" stroke-linecap="round"/></g>')
+    js = f"""
+      const $ = (id) => document.getElementById(id);
+      const bub = []; for (let i = 0; i < 14; i++) {{ const c = document.createElementNS("http://www.w3.org/2000/svg", "circle"); c.setAttribute("r", 4 + (i % 3) * 2); c.setAttribute("fill", "#fff3cf"); $("bb").appendChild(c); bub.push(c); }}
+      const o = {{ t: 0 }};
+      tl.fromTo(o, {{ t: 0 }}, {{ t: D, duration: D, ease: "none", immediateRender: false, onUpdate: () => {{
+        const t = o.t;
+        $("cyc").setAttribute("transform", `translate(${{(-160 + 330 * t).toFixed(1)}} 852)`);          // the cyclist crosses on "your grandparents' India"
+        const lv = 246 * ramp(t, 3.6, 7.4); $("gold").setAttribute("y", (786 - lv).toFixed(1)); $("gold").setAttribute("height", lv.toFixed(1));
+        $("imp").setAttribute("transform", `translate(760 745) scale(${{Math.cos(t * 7).toFixed(3)}} 1) translate(-760 -745)`);
+        bub.forEach((b, i) => {{ const ph = (t * 0.9 + i / 14) % 1; b.setAttribute("cx", 700 + (i * 37) % 120); b.setAttribute("cy", (786 - ph * lv).toFixed(1));
+          b.setAttribute("opacity", (t > 3.6 ? 0.8 * (1 - ph) : 0).toFixed(2)); }});
+        document.querySelectorAll(".vial").forEach((v, i) => {{ const k = (t - 8.0 - i * 0.28) / 2.4;
+          v.setAttribute("opacity", k > 0 ? Math.min(1, k * 6) : 0); v.setAttribute("transform", `translate(${{(1040 + 500 * Math.min(1, Math.max(0, k))).toFixed(1)}} 788)`); }});
+      }} }}, 0);
+      fade("#cut", 3.4, 0.5);
+      tl.to("#tkg", {{ opacity: 0.9, duration: 1.2 }}, 7.4);
+      tl.fromTo("#flagg", {{ skewY: -3, transformOrigin: "0% 50%" }}, {{ skewY: 3, duration: 0.9, ease: "sine.inOut", repeat: 10, yoyo: true, immediateRender: false }}, 0);
+{SMOKE}
+      smoke([["g", {chx}, {chy}]], () => 1);
+"""
+    write("pimpri_grow", 10.4, svg, js)
+
+
+def skyline(sid, D, plants, events, dim_at=None, spot=None):
+    """a row of plants: plants = [(key, label, cx, lit_from)], events = [(t, key, 'rise'|'dark')]"""
+    svg = GRID + '<line x1="0" y1="840" x2="1920" y2="840" stroke="#9db3b8" stroke-width="5"/>'
+    chims = []
+    w, h = (226, 300) if len(plants) > 4 else (300, 330)
+    for k, label, cx, _ in plants:
+        g, (x, y) = factory(k, cx, 840, w, h, lit=True, label=label, lab_size=30 if len(plants) > 4 else 38, flag=False)
+        svg += g; chims.append((k, x, y))
+        svg += (f'<text id="st{k}" class="lab" x="{cx}" y="{700}" text-anchor="middle" opacity="0" '
+                f'style="fill:rgba(4,18,21,.55);stroke:#ef4f45;stroke-width:4px;font-size:{46 if len(plants) > 4 else 56}px;paint-order:normal" transform="rotate(-9 {cx} 680)">STOPPED</text>')
+    js = ""
+    for k, label, cx, t0 in plants:
+        if t0 > 0:
+            js += (f'      tl.set("#f{k}", {{ autoAlpha: 0 }}, 0);\n'
+                   f'      tl.fromTo("#f{k}", {{ autoAlpha: 1, clipPath: "inset(100% 0 0 0)" }}, {{ autoAlpha: 1, clipPath: "inset(0% 0 0 0)", duration: 0.55, ease: "power2.out", immediateRender: false }}, {t0});\n')
+    for t, k, kind in events:
+        if kind in ("dark", "off"):   # the lights go out
+            js += (f'      tl.to(".w{k}", {{ opacity: 0.08, duration: 0.25 }}, {t}); tl.to("#tk{k}", {{ opacity: 0, duration: 0.3 }}, {t});\n'
+                   f'      tl.to("#f{k}", {{ filter: "saturate(0.2) brightness(0.6)", duration: 0.3 }}, {t});\n')
+        if kind in ("dark", "stamp"):   # the STOPPED stamp lands (make_sound.py's stamp sits on the same frame)
+            js += f'      tl.fromTo("#st{k}", {{ autoAlpha: 0, scale: 2.4, transformOrigin: "50% 50%" }}, {{ autoAlpha: 1, scale: 1, duration: 0.28, ease: "power4.in", immediateRender: false }}, {t});\n'
+        elif kind == "glow":
+            js += f'      tl.to(".w{k}", {{ opacity: 1, fill: "#ffe3a6", duration: 0.4 }}, {t}); tl.to("#tk{k}", {{ opacity: 0.9, duration: 0.5 }}, {t});\n'
+        elif kind == "spot":
+            js += f'      tl.to("#f{k}", {{ scale: 1.06, transformOrigin: "50% 100%", duration: 0.6 }}, {t});\n'
+    if dim_at is not None:   # "went quiet": every machine slows, lights drop by a third
+        js += '      tl.to("[class^=w]", { opacity: 0.55, duration: 1.2 }, %s);\n' % dim_at
+    darks = {}
+    for t, k, kind in events:
+        if kind in ("dark", "off"):
+            darks.setdefault(k, t)
+    lv = " ".join(f'if (k === "{k}") return t < {t} ? {"(1 - 0.6 * ramp(t, %s, %s))" % (dim_at, dim_at + 1.2) if dim_at is not None else 1} : 0;' for k, t in darks.items())
+    births = {k: t0 for k, _, _, t0 in plants}
+    js += SMOKE + "      smoke(" + json.dumps(chims) + ", (k, t) => { const born = " + json.dumps(births) + "[k]; if (t < born + 0.5) return 0; " + lv + " return 1; });\n"
+    write(sid, D, svg, js)
+
+
+def skylines():
+    # 4:15 "Soon, others join in — big names you may know, like Alembic, Sarabhai and Ranbaxy. India is making its own
+    # antibiotics." Pimpri stands alone; each plant rises on its own name (word times 3.37, 4.13, 5.07); all glow on 6.1
+    skyline("skyline_rise", 9.4, [("a", "PIMPRI · H.A.", 290, 0), ("b", "ALEMBIC", 740, 3.3), ("c", "SARABHAI", 1190, 4.06), ("d", "RANBAXY", 1640, 5.0)],
+            [(6.1, k, "glow") for k in "abcd"])
+    # 6:43 the roll call (scene clock = the film from line 51's cut): every plant lit, they go quiet on "went quiet",
+    # H.A. and I.D.P.L. go dark during their own real footage, then Torrent, Ranbaxy, Sarabhai on their names, the stamp
+    # on "Stopped.", Alembic last
+    P = [("h", "H.A.", 150, 0), ("i", "I.D.P.L.", 465, 0), ("t", "TORRENT", 780, 0), ("r", "RANBAXY", 1095, 0), ("s", "SARABHAI", 1410, 0), ("l", "ALEMBIC", 1725, 0)]
+    skyline("skyline_dark", 21.6, P, [(7.89, "h", "dark"), (10.44, "i", "dark"), (12.05, "t", "off"), (12.95, "r", "off"), (13.9, "s", "off"),
+                                      (14.76, "t", "stamp"), (14.76, "r", "stamp"), (14.76, "s", "stamp"),
+                                      (17.7, "l", "spot"), (18.78, "l", "dark")], dim_at=2.6)
+
+
 if __name__ == "__main__":
     map_stream(); map_stream("map_home", 22, home=True); map_trade(); map_hubei(); map_india(); capsule_open(); tablet()
     fermenter(); fermenter("fermenter_lit", lit=True); tanks(); cipla(); mipgate(); chain(); chain_lesson(); cooked()
+    pimpri(); pimpri_grow(); skylines()
