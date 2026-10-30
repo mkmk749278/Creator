@@ -184,7 +184,11 @@ chip("Pharmacy of the world", 1.2, LE(1), 120, 640, "steel", "", "up")
 shot(c(2), "R_capsule_open", "none", ms=0.6)                       # "But open one antibiotic capsule..."
 shot(S(2, 1) - PRE, "R_map_stream", "none", ms=0.4)                # "That's the actual medicine... began in China."
 shot(c(3), "px_40948", "in", ms=1.0)                               # "The rest of the capsule is just there to carry it to you."
-shot(c(4), "px_1643", "slow", tag="ILLUSTRATIVE FOOTAGE", ms=2.0, dim=0.45)   # "Now think back to the Corona days..."
+# the Corona days as a dated report, not a generic street (owner, 2026-10-30): the Tribune page of 4 Mar 2020, headline
+# and date first, then down into its photo of masked buyers at a Delhi chemist counter
+TRIB = "DOCUMENT · THE TRIBUNE · 4 MAR 2020"
+shot(c(4), "D_tribune_2020_masks", "in", origin="50% 22%", tag=TRIB)   # "Now think back to the Corona days... Not the lockdown yet"
+shot(round(c(4) + (c(5) - c(4)) / 2, 3), "D_tribune_2020_masks", "doc", origin="50% 74%", tag=TRIB)   # "three weeks before it. The third of March"
 datebig("3 MARCH 2020", "LOCKDOWN 24 MARCH · 3 WEEKS AWAY", L(4, 0.55), LE(4))
 shot(c(5), "R_map_hubei", "none", ms=0.0)                          # "In China, the city of Wuhan has been locked down..."
 shot(c(6), "D_dgft_2020_noti50-1", "in", tag="DOCUMENT · DGFT")   # "Delhi. A two-page government order goes out..."
