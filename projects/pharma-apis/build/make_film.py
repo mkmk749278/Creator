@@ -536,7 +536,7 @@ CLEAN = {
     "Y02": [(11.0, 13.9), (33.0, 34.9), (42.32, 49.58), (49.78, 52.46), (52.66, 55.7), (57.18, 59.38), (59.58, 62.18), (62.38, 65.42), (65.62, 67.54), (67.74, 71.42), (71.62, 72.86), (73.06, 74.78), (74.98, 76.66), (77.48, 78.8), (80.98, 82.14), (82.34, 83.42), (83.62, 84.96), (86.26, 87.68), (88.12, 90.02), (90.22, 91.46), (91.66, 93.22), (93.42, 95.82), (96.02, 97.54), (97.74, 99.48), (99.92, 101.38), (101.58, 102.8)],
     "Y04": [(6.05, 7.25), (7.35, 10.3), (10.45, 14.1), (14.25, 19.05)],
     # round 5 sources: spans between their own cuts (scdet 12), 0.1 s clear; Cipla's only where no caption is burned in
-    "MPC": [(12.37, 18.7), (19.75, 25.95)], "ETV": [(4.34, 9.5), (25.7, 30.94)],
+    "MPC": [(12.37, 18.7), (20.3, 25.95)],   # the source dissolves 18.9-20.2 "ETV": [(4.34, 9.5), (25.7, 30.94)],
     "HSN": [(26.98, 34.1), (34.3, 39.58), (39.78, 45.82)],
     "ICI": [(559.1, 564.5), (572.56, 577.54), (581.42, 587.58)],
     "CIP": [(3.47, 4.92), (13.1, 14.05), (37.25, 38.21), (46.1, 47.33)],   # each sized to its one verb
@@ -674,12 +674,24 @@ def emit():
 
 
 def seam_sliver(a, b, t0, t1):
-    """An item crossing a part seam with under 0.6 s on this side: drop that sliver (it reads as a flash)."""
-    return (a < t0 or b > t1) and min(b, t1) - max(a, t0) < 0.6
+    """Kept for reference: items crossing a seam are no longer dropped, they cut in and out at the seam instead
+    (round 5: a dropped caption sliver and fades on both sides of a seam read as a 2-3 frame dip)."""
+    return False
+
+
+def seam_cut(h, a, b, t0, t1):
+    """an overlay that continues from the previous part appears at once; one that continues into the next leaves at once"""
+    if a < t0 - 1e-6:
+        h = re.sub(r'data-fx="[^"]*"', 'data-fx="cut"', h, count=1)
+    if b > t1 + 1e-6:
+        h = h.replace("<div ", "<div data-cut ", 1)
+    return h
 
 
 def emit_part(pid, t0, t1, caps):
-    D = r3(t1 - t0); d = OUTV / pid
+    # the part's length floored onto its last frame: r3() rounded p1 up to 136.667 s and the renderer made a 4101st,
+    # empty frame (a one-frame blank at the seam, and every later part 1 frame late against the voice; round 5)
+    D = FF.ft(round(t1 * FPS) - round(t0 * FPS)); d = OUTV / pid
     shutil.rmtree(d / "media", ignore_errors=True); (d / "media").mkdir(parents=True, exist_ok=True)
     shutil.copytree(OUTV / "_shared", d / "shared", dirs_exist_ok=True)
     shutil.copy(ROOT / "assets/brand/logo_square.png", d / "media/logo_square.png")
@@ -711,9 +723,9 @@ def emit_part(pid, t0, t1, caps):
             continue
         h = re.sub(r'(data-(?:at|to)=")([\d.]+)"', lambda mm: f'{mm.group(1)}{min(D, max(0.0, loc(float(mm.group(2)))))}"', o["h"])
         h = re.sub(r'(data-count="[\d.]+,[\d.]+,)([\d.]+)', lambda mm: f'{mm.group(1)}{max(0.0, loc(float(mm.group(2))))}', h)
-        O.append("      " + h)
-    cap = "\n".join(f'      <div class="cap" data-at="{max(0.0, loc(a))}" data-to="{min(D, loc(b))}" data-fx="fade" data-d="0.12">{c}</div>'
-                    for a, b, c in caps if b > t0 and a < t1 and not seam_sliver(a, b, t0, t1))
+        O.append("      " + seam_cut(h, a, b, t0, t1))
+    cap = "\n".join(seam_cut(f'      <div class="cap" data-at="{max(0.0, loc(a))}" data-to="{min(D, loc(b))}" data-fx="fade" data-d="0.12">{c}</div>', a, b, t0, t1)
+                    for a, b, c in caps if b > t0 and a < t1)
     (d / "index.html").write_text(PAGE.format(pid=pid, D=D, shots="\n".join(H), ov="\n".join(O), cap=cap))
     print(f"{pid}: {t0:.1f}-{t1:.1f} ({D:.1f}s) {sum(1 for x in SEQ if t0 - 1e-6 <= x['t0'] < t1 - 1e-6)} shots, {len(O)} overlays")
 

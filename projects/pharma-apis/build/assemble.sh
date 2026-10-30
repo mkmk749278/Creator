@@ -21,13 +21,13 @@ mix="[0:a]aresample=48000,aformat=channel_layouts=mono,volume=1.0,apad=whole_dur
 [2:a]aresample=48000,aformat=channel_layouts=mono,volume=-9dB,atrim=0:$dur[fx];
 [v][bed][fx]amix=inputs=3:normalize=0:duration=first,alimiter=limit=0.95,pan=stereo|c0=c0|c1=c0[m]"
 ffmpeg -y -loglevel error -i "$P/voice/vo_film.wav" -i "$A/audio/bed.wav" -i "$A/audio/sfx.wav" -filter_complex "$mix" -map "[m]" -ar 48000 "$tmp/mix.wav"
-# loudness to -14 LUFS as one static (linear) gain, then a true-peak limiter at -1.5 dBTP, then re-measure and trim once:
+# loudness to -14 LUFS as one static (linear) gain, then a limiter at -2.5 dBFS (the AAC encode adds ~0.8 dB of true peak on the round-5 SFX), then re-measure and trim once:
 # loudnorm's linear mode silently backed off to -15.9 LUFS on cut 1 because of the TP ceiling
 lufs() { ffmpeg -hide_banner -i "$1" -af ebur128=peak=true -f null - 2>&1 | awk '/^ +I:/{v=$2} END{print v}'; }
 gain=$(python3 -c "print(-14 - float('$(lufs "$tmp/mix.wav")'))")
-ffmpeg -y -loglevel error -i "$tmp/mix.wav" -af "volume=${gain}dB,alimiter=limit=0.84:level=false:attack=2:release=60" -ar 48000 "$tmp/m1.wav"
+ffmpeg -y -loglevel error -i "$tmp/mix.wav" -af "volume=${gain}dB,alimiter=limit=0.75:level=false:attack=2:release=60" -ar 48000 "$tmp/m1.wav"
 gain=$(python3 -c "print(-14 - float('$(lufs "$tmp/m1.wav")'))")
-ffmpeg -y -loglevel error -i "$tmp/m1.wav" -af "volume=${gain}dB,alimiter=limit=0.84:level=false:attack=2:release=60" -ar 48000 "$tmp/master.wav"
+ffmpeg -y -loglevel error -i "$tmp/m1.wav" -af "volume=${gain}dB,alimiter=limit=0.75:level=false:attack=2:release=60" -ar 48000 "$tmp/master.wav"
 mkdir -p "$(dirname "$out")"
 ffmpeg -y -loglevel error -i "$tmp/video.mp4" -i "$tmp/master.wav" -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -movflags +faststart -shortest "$out"
 ffmpeg -hide_banner -i "$out" -af ebur128=peak=true -f null - 2>&1 | grep -E "^\s+(I|Peak):" | tail -2
