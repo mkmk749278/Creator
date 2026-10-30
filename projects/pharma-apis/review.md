@@ -113,3 +113,15 @@ reproduces `align/` byte for byte, so the timing is unchanged. `film_vo()` + `ma
 −1.1 dBFS. Part lengths match `parts.json` within one frame; full decode has no errors; no black frames; captions and
 picture line up across all four joins (contact sheet checked). One freeze over 2 s: 1:50.8–1:53.0 (2.2 s), the $10,400
 card holding while the VO reads the price, before the notes collapse. Left as is: fixing it needs a part re-render.
+
+### Owner's note on the 4K master (2026-10-30): the Corona-days shot
+"While we are talking about Corona we simply showed public on a road; that might not fit." Right: 0:21–0:29 was a
+generic Pixabay market street (px_1643, ILLUSTRATIVE FOOTAGE) that could be any day. Pixabay's COVID clips were a cartoon,
+promos with their own text, or not India; the Commons COVID-India photos are all after the lockdown (distancing
+stickers, PPE, vaccines), which would contradict "not the lockdown yet". Now the line sits on a dated report: The
+Tribune, 4 Mar 2020, "Chemist shops run out of hand sanitizers, face masks in several parts of Delhi-NCR" (PTI copy),
+first the headline and date, then a push into its photo of masked buyers at a Delhi chemist counter, under "3 MARCH
+2020". The photo is shown as part of the page (its file was re-uploaded by the site in 2024, so it is not claimed as a
+3 March picture). Part 1 re-rendered in 4K on Actions; the other four parts are unchanged.
+Master rebuilt with the new part 1 (Drive `renders/4k_v2/video_pha_p1.mp4`): 11:28.0, −14.1 LUFS, peak −1.1 dBFS; part 1
+decodes clean, no black frames; the only freeze is still the known 2.2 s $10,400 card at 1:50.8. Same Drive link.
