@@ -123,3 +123,5 @@ Tribune, 4 Mar 2020, "Chemist shops run out of hand sanitizers, face masks in se
 first the headline and date, then a push into its photo of masked buyers at a Delhi chemist counter, under "3 MARCH
 2020". The photo is shown as part of the page (its file was re-uploaded by the site in 2024, so it is not claimed as a
 3 March picture). Part 1 re-rendered in 4K on Actions; the other four parts are unchanged.
+Master rebuilt with the new part 1 (Drive `renders/4k_v2/video_pha_p1.mp4`): 11:28.0, −14.1 LUFS, peak −1.1 dBFS; part 1
+decodes clean, no black frames; the only freeze is still the known 2.2 s $10,400 card at 1:50.8. Same Drive link.
