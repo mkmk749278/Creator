@@ -103,3 +103,13 @@ at the top right, stamps clear of the logo bug, end card 20 s, Cipla scene movin
 36 px, tanks and tablet scenes split, the germ on a growing culture. SRT rebuilt in this cut's time.
 Checked and not changed: the four "doubled words" (three are transcript errors; the fourth is breath, 8 dB down, a
 different spectrum); the India outline (land only, no borders drawn); "+ heat removed" (not in our sources).
+
+### 4K master assembled (2026-10-30)
+The round-3 session hit its usage limit after the five native 4K parts finished on Actions (Drive `renders/4k/`), so the
+mix was rebuilt in a new session. The owner re-uploaded the eight Akash takes to Drive `English/pharma-apis/Vo/`
+(p1–p8.mp3 = `voice/pha_b01–08.mp3`): each matches `align/blocks.json` to the millisecond, and `align_blocks.py`
+reproduces `align/` byte for byte, so the timing is unchanged. `film_vo()` + `make_sound.py` + `assemble.sh`
+(PARTS_DIR = the 4K parts) → `pharma_apis_4k.mp4`: 11:28.0, 3840x2160 at 30 fps, about 19.7 Mb/s, −14.1 LUFS, peak
+−1.1 dBFS. Part lengths match `parts.json` within one frame; full decode has no errors; no black frames; captions and
+picture line up across all four joins (contact sheet checked). One freeze over 2 s: 1:50.8–1:53.0 (2.2 s), the $10,400
+card holding while the VO reads the price, before the notes collapse. Left as is: fixing it needs a part re-render.
