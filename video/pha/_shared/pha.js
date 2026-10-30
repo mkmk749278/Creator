@@ -80,7 +80,7 @@
       const a = +p.dataset.at, b = p.dataset.to != null ? +p.dataset.to : D, n = Math.max(1, Math.floor((b - a) / 1.6));
       for (let i = 0; i < n; i++) tl.to(p, { y: i % 2 ? 0 : -9, rotation: (+(p.dataset.rot || 0)) + (i % 2 ? 0.4 : -0.4), duration: (b - a) / n, ease: "sine.inOut" }, a + i * (b - a) / n);
     });
-    // ---- grain: shifted from time only
+    // ---- grain: shifted from time only, one step per frame, rounded (24 a second froze it every 5th frame; floor() of a time that lands a hair under a whole frame repeated every 3rd: the "judder", audit 2026-10-30)
     const g = document.getElementById("grain");
     if (g) {
       const x = g.getContext("2d"); let s = 11; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
@@ -88,7 +88,7 @@
       x.putImageData(im, 0, 0);
       const st = { v: 0 };
       tl.fromTo(st, { v: 0 }, { v: D, duration: D, ease: "none", immediateRender: false, onUpdate: () => {
-        const f = Math.floor(st.v * 24) % 7; g.style.transform = `translate(${(f * 13) % 40 - 20}px, ${(f * 7) % 30 - 15}px) scale(4)`; } }, 0);
+        const f = Math.round(st.v * 30) % 7; g.style.transform = `translate(${(f * 13) % 40 - 20}px, ${(f * 7) % 30 - 15}px) scale(4)`; } }, 0);
     }
   };
 })();

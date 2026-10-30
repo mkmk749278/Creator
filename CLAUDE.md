@@ -281,6 +281,10 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   (`scripts/stock_fetch.py`, key in `PIXABAY_API_KEY`, AI-generated results hidden);
   the Commons search API rate-limits (files load with a User-Agent and standard thumb widths). Tested sources and the
   fallback chain: PLAYBOOK §8.
+- **Search YouTube with the channel's API, download on the phone** (owner, 2026-10-30): the `YT_*` OAuth variables
+  (Studio access) answer from the container; `scripts/yt_search.py` searches and makes thumbnail sheets, then the owner
+  runs one `termux_fetch_to_drive.sh` line in a click-to-copy block. Never print the tokens; never change a public
+  video without the owner's yes (PLAYBOOK §8.5).
 
 ## Ground rules
 1. Ask before adding paid services, and report the expected cost per video.

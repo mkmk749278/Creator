@@ -1402,7 +1402,27 @@ DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email 
 
 ### 8.5 Getting YouTube footage legitimately
 Never route around blocks with VPNs, proxies or alternative YouTube clients (the auto-mode permission check also blocks
-this). Use one of:
+this).
+
+**Find it first with the channel's own YouTube API (owner, 2026-10-30).** Cloud sessions have the channel's OAuth
+credentials as environment variables: `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN_BEPRACTICALWITHKISHORE`
+and `YT_REFRESH_TOKEN_BUILTONBHARAT` (scope `youtube.force-ssl`, the same access YouTube Studio has). The API answers
+from the container even when youtube.com and yt-dlp get 403s, so a session searches, reads durations and dates and
+vets thumbnails itself; the phone only downloads what was picked.
+- **Search:** `python3 scripts/yt_search.py OUT_DIR "search one" "search two" [--n 8]` writes `results.json` (id,
+  title, channel, date, duration) and one thumbnail contact sheet per search (`sheet_qNN.jpg`). Read the sheets, pick,
+  then hand the owner one `termux_fetch_to_drive.sh` line (option 2 below) with the picked URLs and ranges.
+- **Quota:** 10,000 units a day per project; `search.list` costs 100, `videos.list` 1, so about 90 searches a day.
+  Keep a round to 10–20 searches.
+- **What it cannot do:** download videos (the API has no media download; `captions.download` works only for our own
+  uploads). Downloads still go through the phone (2) or a workflow (0, 1).
+- **Other uses, same tokens:** our own videos' metadata, captions and analytics (Studio data at 48 h / 7 / 28 days,
+  §13c), comment threads and replies (the comments repo's sessions use them). Never change a public video's title,
+  description, thumbnail or privacy without the owner's yes in that conversation.
+- **Never print or commit the tokens.** Mint an access token in code (`oauth2.googleapis.com/token`, grant
+  `refresh_token`) and keep it in memory or the scratchpad.
+
+Then download with one of:
 0. **Fetch media for a video workflow** (for footage we will use: official channels, owner-cleared clips, CC). GitHub app →
    Actions → *Fetch media for a video* → slug + URLs separated by spaces, `URL@01:10-01:24` for a range, runner
    `self-hosted` for the VPS. The artifact has the MP4s, `fetched.csv` (title, uploader, licence) and timecoded contact
@@ -2077,6 +2097,33 @@ Two separate faults, both measured, both now handled in the engine:
 - **Re-record whole blocks, and say which** (§4a-2): the owner re-records freely, so lines are never kept to save a take;
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".
+
+**Pharma film, round 4: measure the "judder" before fixing it (independent 4K audit, 2026-10-30).** The audit said 51
+shots still juddered and blamed 24/25 fps footage. Measured on all 20,640 frames: the footage conform worked, and the
+repeated frames sat only on our own slow animated scenes. Two engine faults, both fixed for every film that copies the
+rare earth engine:
+- **Grain must step once per frame.** `pha.js` moved the grain `floor(t * 24)` times a second on a 30 fps timeline, so
+  every 5th frame nothing on screen changed; on footage the motion hides it, on a slow map the whole frame repeats.
+  *Rule:* anything that steps with time steps at the film's own frame rate (or a divisor of it: 30, 15, 10), with
+  `Math.round(t * fps)`, never `floor`: the first fix used `floor(t * 30)` and repeated every 3rd frame, because the
+  tweened time lands a hair under a whole frame. Test by seeking the timeline frame by frame in Playwright
+  (`window.__timelines = {}` as an init script, then `tl.seek(k / 30)`) and comparing the stepped value; zero repeats
+  before rendering.
+  *How to measure:* `tblend=all_mode=difference,signalstats` per frame; a near-zero difference between two moving
+  neighbours is a repeat. Compare against the source render before blaming the source.
+- **Write shot times a hair before their frame, never after.** Times rounded to 3 decimals land up to half a
+  millisecond late (78.867 for the frame at 78.8667): on that frame the new shot has not started and the old one has
+  ended, so the background flashes for one frame (13 in this film). `projects/pharma-apis/build/frame_floor.py`
+  floors start and end onto their frames; `make_film.py` writes through it. Snapshot the exact cut frame to check.
+- **One Drive folder per render batch, made first.** Five parallel Render film jobs creating the same new folder
+  made two folders of that name and one upload failed. `rclone mkdir` the `drive_sub` before starting the jobs.
+- **A session can rebuild a film's `assets/` from Drive** (the part tars hold every conformed clip, document and scene
+  render; owner footage sits in `footage/`; Pixabay originals re-fetch by id). Keep the VO takes on Drive too
+  (`<slug>/Vo/`): they lived only in a session container and had to be re-uploaded from the phone.
+- **Search YouTube from the session with the channel's API** (`scripts/yt_search.py`, §8.5): web search barely
+  indexes YouTube and the container gets 403s, but the YouTube Data API answers with the channel's own tokens. The
+  session vets thumbnails on a contact sheet and writes the exact `termux_fetch_to_drive.sh` line with ranges.
+  `scripts/termux_search_to_drive.sh` (search on the phone) is the fallback when the tokens are missing.
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
 channel Built on Bharat (repo `mkmk749278/Built-on-Bharat`), the owner made narration and curiosity in the package the
