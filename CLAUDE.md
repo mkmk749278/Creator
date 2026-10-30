@@ -56,6 +56,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   the same day. Sessions can't delete branches: tell the owner which ones to delete.
 - Build in phases. At the end of each phase, stop and report what was built, what was measured and what is left.
 - Once the owner approves a cut, stop editing it.
+- **Every review round ends with an acknowledgement document (owner, 2026-10-30):** `projects/<slug>/review_ack_rN.md`,
+  answering the review item by item (FIXED / FIXED NEXT / OPEN / CHECKED with the evidence, in the review cut's own
+  times), plus anything new we found. It goes to the next reviewer with the cut; send it to the owner with SendUserFile.
 - **Review cuts are 720p; 4K only after the owner finalises (owner, 2026-10-29).** While a film is under review, collect
   all fixes (the owner's notes and ours) and render one 720p review cut per round; never re-render just to fix one thing
   mid-review. The native 4K render happens once, after the owner finalises the cut.

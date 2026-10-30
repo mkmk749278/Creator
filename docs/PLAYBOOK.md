@@ -2098,6 +2098,11 @@ Two separate faults, both measured, both now handled in the engine:
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".
 
+**Acknowledge every review (owner, 2026-10-30).** After each review round, write `projects/<slug>/review_ack_rN.md`:
+every item of the review with FIXED / FIXED NEXT / OPEN / CHECKED and the evidence (measurements, frame times, the
+source), in the review cut's own times, plus what we found that the reviewer missed. *Why:* the next reviewer checks
+the fixes instead of re-finding them, and disagreements are argued with evidence, not dropped silently.
+
 **Pharma film, round 4: measure the "judder" before fixing it (independent 4K audit, 2026-10-30).** The audit said 51
 shots still juddered and blamed 24/25 fps footage. Measured on all 20,640 frames: the footage conform worked, and the
 repeated frames sat only on our own slow animated scenes. Two engine faults, both fixed for every film that copies the
@@ -2123,6 +2128,41 @@ rare earth engine:
 - **Search YouTube from the session with the channel's API** (`scripts/yt_search.py`, §8.5): web search barely
   indexes YouTube and the container gets 403s, but the YouTube Data API answers with the channel's own tokens. The
   session vets thumbnails on a contact sheet and writes the exact `termux_fetch_to_drive.sh` line with ranges.
+
+**Pharma film, round 5: the final round (r4 review + the owner's two extra reviews, 2026-10-30).**
+- **Look at every stock clip before trusting its tags or its manifest line.** Pixabay 212000 was logged as "old machine
+  gears" and played under "Hindustan Antibiotics. Stopped." It is an aerial of St Isaac's Cathedral, St Petersburg.
+  *Rule:* the contact sheet of a clip is the record, not its tags; a roll call of real places gets the real places
+  (here the workers' 2015 protest at H.A.'s own wall and I.D.P.L. Hyderabad's gate).
+- **One cut per action word.** "Mixing, pressing, packing, inspections" over one capsule machine read as a disconnect.
+  Find the gaps between the words with `silencedetect=n=-38dB:d=0.06` on `vo_film.wav` and cut in them (0.8–1.0 s
+  shots are right here); size each footage span to its one verb so `clean_assign` cannot move it elsewhere.
+- **A burned-in watermark the crop can't reach**: `delogo` in `conform.sh` (a per-file `case`), and keep the credit on
+  screen. Check the corners of every news clip at the crop you use (`hyperframes snapshot --at`), not the raw frame.
+- **Old telecined 24-in-30 clips:** `mpdecimate` drops nothing; `decimate=cycle=4,setpts=N/30/TB` does.
+- **Stale extra tars on Drive overwrite new code.** The workflow unpacks every tar in `build/parts/pN/` in name order, so
+  an old `pN_shared.tar` lands after `pN.tar` and puts back an old `shared/`. Delete extras when you repack.
+- **A match cut is a hard cut.** Two heroes cross-fading for 0.25 s read as the "86%" box jittering; `data-cut` out
+  and `fx=cut` in.
+- **Wide documents (a 2.8:1 headline) get padded to 16:9** before they go on screen, so no push-in crops the headline.
+- **Doubled words heard by a reviewer's transcriber:** profile 50 ms RMS around the spot; a short voiced burst 8–10 dB
+  under the word before it is a breath or a soft repeat. Duck it 24 dB in `film_vo()` and still list it for the
+  owner's listening pass.
+- **Music by act** (second review): an investigative bassline for act 1, a sparse sub drone while the plants shut,
+  rising percussion for the counter-offensive; tactile moments (coins, stamps, a chemical snap, a border gate) each get
+  a sound. Swapping in licensed tracks later needs only `assemble.sh`, never a new video render.
+- **Music from YouTube:** the YouTube Data API cannot reach Studio's Audio Library, and "no copyright music" uploads
+  often draw Content ID claims. Licensed tracks come from the Audio Library in Studio on the phone (download, save to
+  Drive `<slug>/music/`), then the session re-mixes.
+- **Part seams (found by measuring the final master, not by eye):** (1) a GSAP `tl.set(show)` at 0 loses to the
+  `tl.set(hide)` also at 0 on the first rendered frame, so every part's frame 0 dropped its dim, tags and overlays;
+  anything on screen from a part's first frame is now shown with `gsap.set` directly. (2) An overlay or caption that
+  crosses a seam must cut in and out there (`seam_cut()` in `make_film.py`), never fade on both sides. (3) A part's
+  length must be floored onto its last frame: `r3()` rounded 136.6667 up to 136.667 and the renderer added a 4101st,
+  empty frame, which also slid every later part a frame behind the voice. *Check:* frame count of each part ==
+  round(length × 30), and a strip of the 3 frames each side of every seam.
+- **The AAC encode adds ~0.8 dB of true peak** to sharp synthesised transients (ticks, buzz): the master limiter now
+  sits at −2.5 dBFS to land under −1 dBTP.
   `scripts/termux_search_to_drive.sh` (search on the phone) is the fallback when the tokens are missing.
 
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new

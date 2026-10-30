@@ -23,7 +23,9 @@
     document.querySelectorAll(".shot").forEach((sh) => {
       const timed = sh.dataset.start != null;
       const t = timed ? +sh.dataset.start : +sh.dataset.vs, d = timed ? +sh.dataset.duration : +sh.dataset.vd;
-      if (!timed) { tl.set(sh, { visibility: "hidden" }, 0); tl.set(sh, { visibility: "visible" }, t); tl.set(sh, { visibility: "hidden" }, t + d); }
+      // a set at 0 that shows something loses to the hide set also at 0 on the first frame, so anything on screen from
+      // a part's first frame is shown directly (round 5: every part's frame 0 lost its dim, tag and overlays)
+      if (!timed) { if (t > 1e-4) { tl.set(sh, { visibility: "hidden" }, 0); tl.set(sh, { visibility: "visible" }, t); } else gsap.set(sh, { visibility: "visible" }); tl.set(sh, { visibility: "hidden" }, t + d); }
       sh.querySelectorAll(".m").forEach((m) => {
         const mv = MOVES[m.dataset.move || "push"];
         if (m.dataset.origin) m.style.transformOrigin = m.dataset.origin;
@@ -37,7 +39,8 @@
     });
     document.querySelectorAll(".vover").forEach((o) => {
       const t = +o.dataset.vs, d = +o.dataset.vd;
-      tl.set(o, { visibility: "hidden" }, 0); tl.set(o, { visibility: "visible" }, t); tl.set(o, { visibility: "hidden" }, t + d);
+      if (t > 1e-4) { tl.set(o, { visibility: "hidden" }, 0); tl.set(o, { visibility: "visible" }, t); } else gsap.set(o, { visibility: "visible" });
+      tl.set(o, { visibility: "hidden" }, t + d);
     });
     // ---- timed overlays
     document.querySelectorAll("[data-at]").forEach((el) => {
@@ -45,9 +48,9 @@
       // a window shorter than fade-in + fade-out squeezes both, or the fade-out lands first and the item never leaves
       const d = b != null ? Math.min(+(el.dataset.d || 0.35), Math.max(0.04, (b - a) / 2)) : +(el.dataset.d || 0.35);
       const fo = b != null ? Math.min(0.25, Math.max(0.04, (b - a) / 2)) : 0.25;
-      tl.set(el, { autoAlpha: 0 }, 0);
+      if (fx === "cut" && a <= 1e-4) gsap.set(el, { autoAlpha: 1 }); else tl.set(el, { autoAlpha: 0 }, 0);
       const go = (from, to) => tl.fromTo(el, Object.assign({ autoAlpha: 0 }, from), Object.assign({ autoAlpha: 1, duration: d, ease: E, immediateRender: false }, to), a);
-      if (fx === "cut") tl.set(el, { autoAlpha: 1 }, a);
+      if (fx === "cut") { if (a > 1e-4) tl.set(el, { autoAlpha: 1 }, a); }
       else if (fx === "pop") go({ scale: 0.7 }, { scale: 1, ease: "back.out(2)" });
       else if (fx === "up") go({ y: 34 }, { y: 0 });
       else if (fx === "down") go({ y: -34 }, { y: 0 });

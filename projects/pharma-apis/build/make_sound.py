@@ -68,12 +68,27 @@ for si, (s0, mood) in enumerate(SECTIONS):
     while t < s1:
         d = min(bar, s1 - t); ch = CHORDS[mood][k % 2]; n = int(d * SR); tt = np.arange(n) / SR
         pad = sum(np.sin(2 * np.pi * f * tt) + 0.45 * np.sin(2 * np.pi * f * 2.003 * tt) + 0.2 * np.sin(2 * np.pi * f * 0.5 * tt) for f in ch)
+        if mood == "dark":   # act 3, the plants shut (second review, 30 Oct): the music drops out to a low, sparse sub drone
+            dr = (np.sin(2 * np.pi * ch[0] / 2 * tt) + 0.6 * np.sin(2 * np.pi * ch[0] / 2 * 1.5 * tt)) * (0.6 + 0.4 * np.sin(np.pi * tt / max(d, 0.1)))
+            put(bed, t, lp(dr, 200) * env(n, 1.2, 1.2) * 0.07); t += bar; k += 1; continue
         put(bed, t, lp(pad, 950) * env(n, 0.8, 0.8) * 0.05)
         # a soft "piano" pluck on each bar (clean-room coldness), louder in pride and hope
         pl = tone(ch[2] * 2, 1.8, 0.003, 1.6, (1.0, 0.3, 0.12)) * np.exp(-np.arange(int(1.8 * SR)) / SR * 2.4)
         put(bed, t, pl, {"pride": 0.05, "hope": 0.06}.get(mood, 0.03))
+        if s0 < L(29) and mood == "cold":   # act 1, the investigation: a driving low bassline, root and fifth on the eighths
+            for e in range(8):
+                f = ch[0] / 2 * (1.5 if e % 4 == 3 else 1.0); nb = tone(f, 0.24, 0.004, 0.18, (1.0, 0.35)) * np.exp(-np.arange(int(0.24 * SR)) / SR * 7)
+                put(bed, t + e * bar / 8, lp(nb, 400), 0.07)
         t += bar; k += 1
-    bpm = {"cold": 68, "dark": 76, "lab": 84}.get(mood, 0)
+    if mood == "hope" and s0 >= L(64):   # act 4, the counter-offensive: rising percussion, kick on the beat, hat off it
+        p = 60 / 96; t = s0; span = max(1.0, s1 - s0)
+        while t < s1 - 0.2:
+            g = 0.35 + 0.65 * (t - s0) / span
+            kick = tone(52, 0.3, 0.002, 0.25, (1.0, 0.3)) * np.exp(-np.arange(int(0.3 * SR)) / SR * 12)
+            put(bed, t, kick, 0.16 * g)
+            put(bed, t + p / 2, hp(noise(0.04), 6000) * env(int(0.04 * SR), 0.001, 0.035), 0.05 * g)
+            t += p
+    bpm = {"cold": 68, "lab": 84}.get(mood, 0)
     if bpm:
         p = 60 / bpm; t = s0
         while t < s1 - 0.2:
@@ -115,6 +130,21 @@ def stampfx():   # rubber stamp: a dull thud with a paper slap
     y = thud(70) * 0.8; s = bp(noise(0.08), 600, 2500) * env(int(0.08 * SR), 0.001, 0.06); y[:len(s)] += s * 0.6; return y
 
 
+def stampfx2():   # the STOPPED stamp with a 60 Hz sub drop under it (second review: the stamps had no weight)
+    y = stampfx(); n = int(0.7 * SR); tt = np.arange(n) / SR
+    sub = np.sin(2 * np.pi * (60 * tt - 12 * tt * tt)) * np.exp(-tt * 5)
+    out = np.zeros(max(len(y), n)); out[:len(y)] += y; out[:n] += sub * 0.9; return out
+
+
+def buzz():       # a short digital rejection buzz (the border gate stopping a container)
+    n = int(0.22 * SR); tt = np.arange(n) / SR
+    return lp(np.sign(np.sin(2 * np.pi * 110 * tt)), 1800) * env(n, 0.005, 0.05) * 0.35
+
+
+def tick():       # one coin turning (a soft tally click)
+    return bp(noise(0.012), 3000, 6000) * env(int(0.012 * SR), 0.0005, 0.01) * 0.6
+
+
 def ring():      # a phone ringing twice (the 3 March order)
     out = np.zeros(int(2.4 * SR))
     for k in (0.0, 1.2):
@@ -145,11 +175,16 @@ CUES = [(L(2, 0.15), pop(), 0.6), (MF.S(2, 1) - 0.2, whoosh(0.7), 0.25), (L(6, 0
         (L(38, 0.6), chime(), 0.3), (L(44), whoosh(0.8), 0.3), (L(48), whoosh(0.8, False), 0.3), (L(49, 0.65), click(1500, 0.05), 0.4),
         (MF.HERO86, thud(45), 0.7), (round(MF.LE(59) - 0.9, 3), stampfx(), 0.55), (L(62, 0.55), click(1500, 0.05), 0.4), (L(68, 0.1), thud(55), 0.6), (L(70), chime(), 0.4),
         (L(76, 0.7), chime(), 0.35), (L(85), chime(), 0.5)]
-CUES += [(round(LE(n) - 0.35, 3), stampfx(), 1.0) for n in (52, 53, 54, 55)]
+CUES += [(round(LE(n) - 0.35, 3), stampfx2(), 1.0) for n in (52, 53, 54, 55)]
+# the 100 coins: a soft tally as the 86 turn amber (MF.coins: amber at +1.2 s, one every 14 ms; a tick on every other one)
+CUES += [(round(L(25, 0.45) + 1.2 + i * 0.014, 3), tick(), 0.22) for i in range(0, 86, 2)]
+# the chemistry: a glass "snap" as the side group comes off, a click as amoxicillin's group locks on (chain scene times)
+CUES += [(round(MF.c(39) + 1.1, 3), bp(noise(0.05), 2500, 9000) * env(int(0.05 * SR), 0.0005, 0.045), 0.5),
+         (round(MF.c(39) + 8.3, 3), click(2200, 0.04), 0.5)]
 # the notes fly away as the $350 card lands; the border gate: a thud for each container stopped, a click for each let through
 CUES += [(MF.L(15, 0.55), whoosh(1.0), 0.4)]
 _g0 = MF.c(69) - max(0.0, 9.6 - (MF.S(69, 2) - MF.c(69)))
-CUES += [(_g0 + t, thud(70), 0.5) for t in (1.4, 5.6, 11.2, 11.8)] + [(_g0 + t, click(1800, 0.05), 0.35) for t in (3.6, 7.4, 13.2, 13.8)]
+CUES += [(_g0 + t, thud(70), 0.7) for t in (1.4, 5.6, 11.2, 11.8)] + [(_g0 + t + 0.02, buzz(), 0.5) for t in (1.4, 5.6, 11.2, 11.8)] + [(_g0 + t, click(1800, 0.05), 0.35) for t in (3.6, 7.4, 13.2, 13.8)]
 # one stray germ: a low, dissonant warning sting as the broth turns murky
 CUES += [(MF.S(37, 2) + 0.15, (tone(98, 1.6, 0.01, 1.2, (1.0, 0.4)) + tone(104, 1.6, 0.01, 1.2, (0.7,))) * np.exp(-np.arange(int(1.6 * SR)) / SR * 1.5), 0.55)]
 for at, x, g in CUES:

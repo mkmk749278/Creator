@@ -61,9 +61,10 @@
       tl.to("#pen", { x: -260, autoAlpha: 0, duration: 1.0, ease: "power2.in" }, 1.4);
       out("#nh", 1.9, 0.2); fade("#nh2", 2.0, 0.3);
       out("#t_pen", 3.1, 0.25); fade("#t_apa", 3.3, 0.35); tl.set("#s1", { fill: "#5c7a80" }, 3.3); tl.set("#s2", { fill: "#e8a33d" }, 3.3);
-      // amoxicillin's group slides in and locks on
-      tl.fromTo("#amx", { x: -320, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.9, ease: "power3.out", immediateRender: false }, 7.5);
-      out("#nh2", 8.3, 0.15); fade("#nh", 8.35, 0.2);
+      // amoxicillin's group glides in from the left and locks on at 8.3 s (second review, 30 Oct: at 0.9 s power3 it
+      // read as appearing, not as a chemical change)
+      tl.fromTo("#amx", { x: -320, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1.6, ease: "power2.inOut", immediateRender: false }, 6.7);
+      out("#nh2", 7.7, 0.3); fade("#nh", 8.35, 0.2);   // 6-A.P.A.'s H2N gives way as the group arrives (no overlap at the lock)
       tl.fromTo("#glow", { opacity: 0.55 }, { opacity: 1, duration: 0.25, yoyo: true, repeat: 1, immediateRender: false }, 8.4);
       out("#t_apa", 8.3, 0.25); fade("#t_amx", 8.5, 0.35); tl.set("#s2", { fill: "#5c7a80" }, 8.5); tl.set("#s3", { fill: "#f2f7f7" }, 8.5);
 

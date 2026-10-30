@@ -53,7 +53,9 @@
       tl.set(["#core"], { autoAlpha: 0 }, 0);
       pop("#core", 0.4, 0.6);
       ["#fill", "#coat", "#strip", "#box"].forEach((s, i) => { tl.set(s, { autoAlpha: 0 }, 0);
-        tl.fromTo(s, { autoAlpha: 0, y: 700 - [530, 430, 330, 230][i] }, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out", immediateRender: false }, 3.0 + i * 0.6); });
+        // a 36 px settle in place, never a slide through the other layers: the box flew up through every label and
+        // drew them twice for a few frames (r4 review, 2:16 "THE STRIP" ghost)
+        tl.fromTo(s, { autoAlpha: 0, y: 36 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out", immediateRender: false }, 3.0 + i * 0.6); });
 
       window.__timelines["tablet"] = tl;
     </script>

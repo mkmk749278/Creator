@@ -1,4 +1,4 @@
-# YouTube package: pharma-apis (4K master, 11:28; chapter times from this cut)
+# YouTube package: pharma-apis (final 4K master, 11:28, round 5; chapter times re-checked against this cut)
 
 ## Title
 
@@ -6,7 +6,15 @@
 India Is the Pharmacy of the World. So Who Makes Its Medicine? | Be Practical With Kishore
 ```
 
-Challenger title for Test & Compare (from the 29 Oct audit): `India Makes Medicine for the World. So Why Is the Powder From China? | Be Practical With Kishore`
+Test & Compare titles (r4 review, 30 Oct). The main title above is the paradox; the other two:
+
+```
+The Kakinada Plant Taking On China's Penicillin | Be Practical With Kishore
+```
+
+```
+Why India Imports 86% of Its Antibiotic Powder | Be Practical With Kishore
+```
 
 ## Description
 
@@ -22,9 +30,9 @@ This film shows how India once made its own penicillin at Pimpri, how China took
 3:35 India made its own penicillin: Pimpri 1954
 4:30 How penicillin is made
 5:21 Why a bigger plant makes cheaper medicine
-5:57 How China took the API market
-7:46 The PLI scheme for medicine ingredients
-8:05 The Kakinada penicillin plant
+5:58 How China took the API market
+7:47 The PLI scheme for medicine ingredients
+8:06 The Kakinada penicillin plant
 8:42 The minimum import price on penicillin
 9:16 The date to watch: January 2027
 10:11 The lesson, and what it means for you
