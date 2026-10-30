@@ -402,7 +402,7 @@ hero("86%", "TODAY · ANTIBIOTIC POWDER IMPORTS · CHINA'S SHARE · NITI AAYOG 2
 shot(c(58), "CCV", "crop", ms=18.8, origin="35% 70%", dim=0.3)      # "Niti Aayog estimates Chinese powder costs 35-40% less..." (Chinese packers)
 # "So tell me — if you ran a company, would you build a plant here?": India's plants dark, then the empty Kakinada plot
 shot(S(58, 1) - PRE, "R_skyline_dark", "push", ms=19.2)
-shot(round(S(58, 1) - PRE + 1.8, 3), "Y02", "y02", ms=8.25, origin="35% 30%", tag="FOOTAGE · LYFIUS PHARMA · THE COAST SITE", hard=True)   # the span holds the shot, not a dissolve tail
+shot(round(S(58, 1) - PRE + 1.8, 3), "Y02", "y02", ms=11.0, origin="35% 30%", tag="FOOTAGE · LYFIUS PHARMA · THE SITE", hard=True)   # the empty plot from above (8-11 s is the promo's globe zoom); the span holds the shot, not a dissolve tail
 chip("China's powder: 35–40% cheaper", L(58, 0.2), LE(58), 120, 160, "amber", "sm", "up")
 cite("[NITI AAYOG ESTIMATE]", L(58, 0.2), LE(58))
 # the trap on the tanks, steady (audit 2026-10-30: the handheld mill shook): small can't compete, big is a risk, and a
@@ -581,7 +581,7 @@ CLEAN = {
     # collage and group shots (103-108 s) need excluding; spans run 0.1 s clear of the promo's own cuts
     # 30 Oct audit: the promo also cross-wipes inside these (3-4 frame wipes scdet missed); spans split at every
     # frame-difference transition of the conformed source (peak > 25), mapped to raw time (x1.2)
-    "Y02": [(8.2, 10.95), (11.0, 13.9), (33.0, 34.9), (42.32, 49.58), (49.78, 52.46), (52.66, 55.7), (57.18, 59.38), (59.58, 62.18), (62.38, 65.42), (65.62, 67.54), (67.74, 71.42), (71.62, 72.86), (73.06, 74.78), (74.98, 76.66), (77.48, 78.8), (80.98, 82.14), (82.34, 83.42), (83.62, 84.96), (86.26, 87.68), (88.12, 90.02), (90.22, 91.46), (91.66, 93.22), (93.42, 95.82), (96.02, 97.54), (97.74, 99.48), (99.92, 101.38), (101.58, 102.8)],
+    "Y02": [(11.0, 13.9), (33.0, 34.9), (42.32, 49.58), (49.78, 52.46), (52.66, 55.7), (57.18, 59.38), (59.58, 62.18), (62.38, 65.42), (65.62, 67.54), (67.74, 71.42), (71.62, 72.86), (73.06, 74.78), (74.98, 76.66), (77.48, 78.8), (80.98, 82.14), (82.34, 83.42), (83.62, 84.96), (86.26, 87.68), (88.12, 90.02), (90.22, 91.46), (91.66, 93.22), (93.42, 95.82), (96.02, 97.54), (97.74, 99.48), (99.92, 101.38), (101.58, 102.8)],
     "Y04": [(6.05, 7.25), (7.35, 10.3), (10.45, 14.1), (14.25, 19.05)],
     # round 5 sources: spans between their own cuts (scdet 12), 0.1 s clear; Cipla's only where no caption is burned in
     "MPC": [(12.37, 18.7), (20.3, 25.95)],   # the source dissolves 18.9-20.2 "ETV": [(4.34, 9.5), (25.7, 30.94)],
