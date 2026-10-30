@@ -2078,6 +2078,28 @@ Two separate faults, both measured, both now handled in the engine:
   every VO change names the blocks to record again. **Place names close together read as two places** ("Kakinada…
   Andhra"): the ending now says "the plant in Kakinada… right here in India".
 
+**Pharma film, round 4: measure the "judder" before fixing it (independent 4K audit, 2026-10-30).** The audit said 51
+shots still juddered and blamed 24/25 fps footage. Measured on all 20,640 frames: the footage conform worked, and the
+repeated frames sat only on our own slow animated scenes. Two engine faults, both fixed for every film that copies the
+rare earth engine:
+- **Grain must step once per frame.** `pha.js` moved the grain `floor(t * 24)` times a second on a 30 fps timeline, so
+  every 5th frame nothing on screen changed; on footage the motion hides it, on a slow map the whole frame repeats.
+  *Rule:* anything that steps with time steps at the film's own frame rate (or a divisor of it: 30, 15, 10).
+  *How to measure:* `tblend=all_mode=difference,signalstats` per frame; a near-zero difference between two moving
+  neighbours is a repeat. Compare against the source render before blaming the source.
+- **Write shot times a hair before their frame, never after.** Times rounded to 3 decimals land up to half a
+  millisecond late (78.867 for the frame at 78.8667): on that frame the new shot has not started and the old one has
+  ended, so the background flashes for one frame (13 in this film). `projects/pharma-apis/build/frame_floor.py`
+  floors start and end onto their frames; `make_film.py` writes through it. Snapshot the exact cut frame to check.
+- **One Drive folder per render batch, made first.** Five parallel Render film jobs creating the same new folder
+  made two folders of that name and one upload failed. `rclone mkdir` the `drive_sub` before starting the jobs.
+- **A session can rebuild a film's `assets/` from Drive** (the part tars hold every conformed clip, document and scene
+  render; owner footage sits in `footage/`; Pixabay originals re-fetch by id). Keep the VO takes on Drive too
+  (`<slug>/Vo/`): they lived only in a session container and had to be re-uploaded from the phone.
+- **The phone searches YouTube for the session** (`scripts/termux_search_to_drive.sh`): web search barely indexes
+  YouTube and the container gets 403s, so the phone drops titles and thumbnails in Drive, the session vets them on a
+  contact sheet and writes the exact `termux_fetch_to_drive.sh` line with time ranges.
+
 **Creative director, lean-in narration and the YouTube discovery analysis (2026-10-24).** While setting up the new
 channel Built on Bharat (repo `mkmk749278/Built-on-Bharat`), the owner made narration and curiosity in the package the
 top priorities, made Claude the creative director with rules as a reference rather than a ceiling, and asked for the
