@@ -2084,7 +2084,11 @@ repeated frames sat only on our own slow animated scenes. Two engine faults, bot
 rare earth engine:
 - **Grain must step once per frame.** `pha.js` moved the grain `floor(t * 24)` times a second on a 30 fps timeline, so
   every 5th frame nothing on screen changed; on footage the motion hides it, on a slow map the whole frame repeats.
-  *Rule:* anything that steps with time steps at the film's own frame rate (or a divisor of it: 30, 15, 10).
+  *Rule:* anything that steps with time steps at the film's own frame rate (or a divisor of it: 30, 15, 10), with
+  `Math.round(t * fps)`, never `floor`: the first fix used `floor(t * 30)` and repeated every 3rd frame, because the
+  tweened time lands a hair under a whole frame. Test by seeking the timeline frame by frame in Playwright
+  (`window.__timelines = {}` as an init script, then `tl.seek(k / 30)`) and comparing the stepped value; zero repeats
+  before rendering.
   *How to measure:* `tblend=all_mode=difference,signalstats` per frame; a near-zero difference between two moving
   neighbours is a repeat. Compare against the source render before blaming the source.
 - **Write shot times a hair before their frame, never after.** Times rounded to 3 decimals land up to half a
