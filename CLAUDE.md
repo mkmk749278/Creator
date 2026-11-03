@@ -166,6 +166,14 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
 - **Always moving:** a visual reset every 3.5–5.0 s (owner, 2026-10-15: angle shift, document push-in, kinetic callout);
   the shot itself never stops moving: no unmoving still or flat frame over 1.5 s; ≥ 85% of the runtime
   is moving footage or animation. Animate irreplaceable stills (parallax, particles, forensic magnifier, sliding collage).
+  Only motion a viewer can see counts: grain and a faint drift are not motion (PLAYBOOK §5.1 rule 2).
+- **Readable by a 50-year-old on a phone, without glasses (2026-11-03; PLAYBOOK §5.1 rule 9):** at 1080, ≥ 44 px for
+  what the VO points to and ≥ 30 px for every other fact; Telugu about 1.2× larger; light on a dark scrim, ≥ 7:1;
+  the narration's simple words, ₹ with Indian grouping, dates day-first; every frame read at 480p size. Lists and
+  exploded parts build on their own words; a highlight finishes as its word lands.
+- **Outside review notes are leads (2026-11-03):** check each against the composition, the word timings and a
+  rendered frame before changing anything, and answer it in the review_ack. Keep our style: warm, few, simple words
+  on screen, never dense HUD micro-text.
 - **Three layers in every frame:** full-screen real footage or a moving photo; atmosphere (grain, ~30% vignette, light leaks,
   optional 2.35:1 bars, low-opacity HUD); kinetic accents in lower corners on a dark scrim.
 - **Genre sets the look** (science, biography, business, tech, society): PLAYBOOK §5.3.

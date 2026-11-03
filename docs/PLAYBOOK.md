@@ -1168,6 +1168,12 @@ change, never mid-thought. Keep the punctuation rules in §4 (commas, full stops
    viewers in the first 30 s (owner, 2026-10-17).
 2. **No static canvas:** a motionless photo or flat colour never stays over **1.5 s**; a plain CSS gradient never counts as
    a background. The canvas always has camera motion, particle atmosphere or live video.
+   **Only motion a viewer can see counts (2026-11-03):** a push or pan that visibly moves the picture (about 3% scale
+   or 30 px across a 4 s hold at 1080), a counter or meter moving, a highlight drawing, a new element arriving on its
+   word. Grain, a faint grid drift or a 2% zoom over 15 s do not count. Plan the next move at the usual dead spots:
+   after a type-on finishes, after a counter lands, after every row of a card has arrived. *Why:* an outside review
+   of a finished cut on another production found 5–9 s holds that had passed two reviews because they "moved" by
+   grain and grid drift alone.
 3. **85% real motion:** at least 85% of the runtime is moving video, screen recordings, kinetic data animation or B-roll.
    Stills are for authentic archival evidence only, and always animated (§5.4).
 4. **Text ≤ 15% of the screen**, only as 2–4-word lower-thirds, locations/dates/telemetry, counters, timers and meters, or a
@@ -1187,6 +1193,23 @@ change, never mid-thought. Keep the punctuation rules in §4 (commas, full stops
    actual event first (§8).
 8. **Avoid our known stock looks** (name them, per §2): floating glass cards, neon-on-black dashboards, centred title +
    subtitle on a gradient, icon grids, emoji, stock "scientist with test tube", generic space or lab filler.
+9. **Readable by a 50-year-old on a phone, without reading glasses (2026-11-03).** Most of our viewers are over 45 and
+   watch on a phone. In a survey in Mahabubnagar (then Andhra Pradesh, now Telangana), 63.7% of people over 35 had
+   presbyopia and only 19% of them had glasses for it (Marmamula, Keeffe & Rao, *Ophthalmic Epidemiology* 2009,
+   [record](https://repository.ias.ac.in/25039)). On mobile data, YouTube's automatic quality often plays below 1080p.
+   So, at the 1920×1080 authoring size:
+   - **≥ 44 px** for what the VO points to: the number, the 2–4-word label, the highlighted line's overlay.
+   - **≥ 30 px** for everything else that carries a fact: dates, places, source credits, units, citation tags.
+   - **Telugu on screen about 1.2× the English size** (vowel signs and conjuncts are small at the same size: our
+     practice, checked on the 480p preview).
+   - **Contrast:** light text on a dark scrim, at least 7:1 for anything under 44 px; no grey-on-grey.
+   - **The simplest words on screen too:** the narration's words (pay, bill, salary), rupees with Indian grouping
+     (₹1,25,000), lakh and crore, dates day-first (15 AUG 1947), never month-first.
+   - **The test:** look at every contact sheet frame at 480p size (854×480). If a word is not plainly readable there,
+     it fails. A word an outside reviewer misreads is too small.
+   - Nothing clipped at a panel's edge, nothing on a grid line, all text inside the central 90% of the frame.
+   *Why:* our older viewers cannot zoom a video, and a fact they can't read is a fact we didn't show. Small labels
+   (13–17 px) were the commonest fault an outside review found in a finished documentary cut on another production.
 
 ### 5.2 Three layers in every frame
 | Layer | Content | Rules |
@@ -1975,6 +1998,15 @@ board vs real-footage balance, loudness) and refine once more.
 - [ ] **Proofs readable on a phone:** the highlighted words fill ≥ 1/3 of the frame width at the end of the push; shoot
       source pages at 2× (`deviceScaleFactor: 2`) so a 2–2.5× zoom stays sharp; remove fixed/sticky layers (pop-ups,
       "get notified" boxes, cookie bars) and ad slots before the screenshot.
+- [ ] **Readable by an elder on a phone (§5.1 rule 9):** ≥ 44 px for what the VO points to, ≥ 30 px for every other
+      fact, Telugu about 1.2× larger, ≥ 7:1 on a dark scrim; every sheet frame read at 480p size; nothing clipped.
+- [ ] **Builds follow the words:** a list, diagram, form or exploded view with named parts never arrives all at once;
+      each part enters on its own word. A highlight starts a few frames before its word and finishes as it lands. A
+      meter or counter always agrees with the picture beside it (never a dial at empty beside a number still full).
+- [ ] **One desk look per film:** every document (gazette page, web screenshot, bill) lies on the same surface with
+      the same tilt, paper tone and shadow; a web screenshot never looks pasted on beside a photographed page.
+- [ ] **Outside review notes checked before fixing** (§15, 2026-11-03): each point checked against the composition,
+      the word timings and a rendered frame; the review_ack records CONFIRMED / PARTLY / NOT CONFIRMED.
 - [ ] **No board holds longer than ~16 s without a cut:** cut away at the duster moments (the board is blank there) to
       real footage or a proof of the same idea; never leave an empty board on screen for more than ~1 s.
 - [ ] **Indian faces, places and money** in every stand-in (see §4a-3); a European street, shop or face is a reshoot.
@@ -2002,6 +2034,23 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
    its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
 
 ## 15. Lessons log
+
+**Picture lessons from an outside visual review, adapted for our viewers (2026-11-03).** The owner shared an outside
+review of a finished documentary cut made on another production. We checked every point against that film's code,
+timing and rendered frames before taking anything, and carry over only what holds for an Indian audience:
+- **Outside picture reviews are leads, not orders.** Of twelve points, five were right, five were real problems with
+  another cause, and two were wrong: a "typo" that was a misread of small text, CSS values and word times that were
+  not the film's, and two timing fixes that would have made the sync worse. *Rule:* extend the 2026-10-28 rule below
+  to picture notes: check each in the composition, the word timings and a rendered frame, then answer it in the
+  review_ack (`projects/<slug>/review_ack_rN.md`, lessons 2026-10-30).
+- **"Moving" must mean moving to a viewer** (§5.1 rule 2). Grain and a faint drift let 5–9 s holds through.
+- **Small grey labels were the commonest fault** (§5.1 rule 9). For our older phone viewers the floor is higher than
+  for a desktop audience: 44 / 30 px at 1080, Telugu larger, the 480p test.
+- **Lists and exploded parts that arrive at once lose the narration's rhythm,** and a meter that disagrees with its
+  picture contradicts the film (§14 checklist).
+- **Their style is not ours.** The outside notes suggested clinical HUD micro-text, blinking dots and corner
+  readouts. Our films keep warm, simple, few words on screen: one 2–4-word label in the narration's words, never a
+  dense telemetry strip.
 
 **Pharma film: lived-memory anchors, and outside script reviews (2026-10-28).**
 - **Anchor dates in events viewers lived** (§4a-12 item 16). The owner, recording block 1, noticed "the third of March,
