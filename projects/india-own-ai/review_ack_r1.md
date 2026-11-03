@@ -28,4 +28,5 @@ is the same in r1 and r2.
 ## Open
 - **"Mumbai" (I.I.T. Bombay, 9:42):** no real Mumbai footage exists on Pixabay (one result is Dubai, another Taipei), so the BharatGen reel carries the line.
 - **"Aadhaar" (10:43):** no real Aadhaar-centre footage with a clear licence. The KISAN e-Mitra government chatbot clip stays under "Sarvam says".
+- **NDTV clip on "Vivek Raghavan and Pratyush Kumar" (8:28):** the clip's own anchor caption shows in the bottom-left corner. It is the only footage of Pratyush. Next round: a tighter crop that keeps the caption out (FIXED NEXT).
 - **Licences:** every new clip is logged in `media_manifest.csv` (Pixabay Content License, CC BY / BY-SA photos via Openverse, the NVIDIA excerpt credited on screen).
