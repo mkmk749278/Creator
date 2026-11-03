@@ -27,3 +27,16 @@ picked is needed. New rows A84–A92 in `claims.csv`.
 | Comma after Common Crawl | Not needed | The name ends its sentence. |
 | Nvidia "En-vidia" respell | Only if a take slurs it | Listen-for list. |
 | Visual: split వర్షం's virama; Budget-height bar; payoff scorecard | Taken into the screenplay | The DeepSeek pieces really do split ్ in వర్షం (`research/token_example.txt`). Scorecard ratios corrected (Sarvam 11/8 = 1.4×, not 1.3×). |
+
+## Round 2 (owner's two PDFs, 2026-11-03)
+- **Owner's decisions (PDF 2):** translations approved (Hindi, Marathi, Telugu); NavIC stays as the bridge; keep
+  `...` (the playbook rule), test dashes only if a take trails off.
+- **Taken:** restore "DeepSeek says the final training run of its base model cost about five and a half million
+  dollars. The American giants were spending billions." at the top of block 2. Without it the Nvidia crash has no
+  cause (cut in v4 to save time; +23 words, payoff ~9:45 raw, ~10:05 with picture beats).
+- **Rejected again, re-verified today:** Meta alone guided **$135–145 billion** for 2026 in its Q3 results of
+  21 Oct 2026 (letsdatascience, fourweekmba, newsquawk on the Q3 release); $38–45 bn was Meta's 2024 level, so
+  "America's tech giants combined" would understate the gap by about four times. Sarvam's chat app **is** called
+  Indus (TechCrunch 20 Feb 2026, Outlook Business, Storyboard18; HMD pre-loads it). Tech Mahindra's "Project Indus"
+  and PhonePe's "Indus Appstore" are different things; the VO says "Sarvam's app, called Indus", which is exact.
+- **Dashes (PDF 1):** not taken, per the owner's PDF 2.
