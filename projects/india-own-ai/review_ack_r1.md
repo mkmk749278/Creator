@@ -22,6 +22,7 @@ is the same in r1 and r2.
 
 ## Also found and fixed
 - **"12 MAY 2025", not 13 May.** The date card on "scrapped that rule" now matches the BIS release on screen, which is dated May 12, 2025 (claims.csv A45).
+- **No fake screens:** the laptop clip on "They're engineers" (3:10) and "Can an Indian team train one from zero" (8:47) showed a made-up "Encrypting / Satellite uplink" hacker screen. Both lines now use real Indian engineers at work. That is a third use of each clip, on purpose: Pixabay has no other real footage of Indian engineers.
 - The Nvidia clip's H100 close-up plays on "those Nvidia chips" (8:31), credited "NVIDIA · H100 MODULE".
 
 ## Open

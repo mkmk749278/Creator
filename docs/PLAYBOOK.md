@@ -2045,6 +2045,12 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   the Yotta clip is two men talking outside, so it can't carry "reading room" or "clusters".
 - **No stock clip more than twice** (standing note); count the uses in the cut before building
   (`grep` the `shot(`/`ins(` calls). Real event footage of the named person or place is exempt.
+- **Review renders: shrink a part's clips to 720p first** (`projects/india-own-ai/build/shrink_media.sh`). The two
+  heaviest parts (514 and 733 MB, about 50 clips each) failed on GitHub. First the check's media requests hit
+  `net::ERR_CONNECTION_RESET`, then the render timed out on `Runtime.evaluate` (HyperFrames: "RAM-pressured hosts with
+  heavy-asset compositions"). At 720p the parts are 90–260 MB and render. Shrink only for review cuts, never before the 4K master.
+- **Screens in stock footage count as pictures too:** a "programmer" clip showed a made-up "Encrypting / Satellite uplink"
+  UI. Read what is on every screen in the frame.
 - **Look inside the owner's Drive footage before searching outside:** the "DGX tour" clip held Jensen Huang to camera
   and a real H100 close-up, the best pictures for "Nvidia" in the film.
 
