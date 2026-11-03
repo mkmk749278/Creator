@@ -324,7 +324,7 @@ box("blackout", S(18, 2) + 0.9, LE(18), 0, 0, 1920, 1080, fx="fade", d=0.3, styl
 chip("Around minute 10", S(18, 2) + 1.0, LE(18), 700, 480, "saffron", "", "pop")
 shot(c(19), "plate", "slow")                                           # "what's actually inside one of these machines... three things"
 for k, (lab, colr) in enumerate([("?", "paper"), ("?", "chip"), ("?", "saffron")]):
-    box(f"frame3 c-{colr}", S(19, 1) + k * 0.25, LE(19), 120 + k * 580, 330, fx="pop", inner=lab)
+    box(f"frame3 c-{colr}", L(19, 0.05) + k * 0.35, LE(19), 120 + k * 580, 330, fx="pop", inner=lab)
 # ---------------- Ch 2 · How ChatGPT actually works ----------------
 shot(c(20), "GIRL", "slow", ms=2.0)                                    # "Picture a child who has read every book in a giant library."
 shot(S(20, 1) - PRE, "LIBW", "in", ms=1.0, dim=0.35)                   # "You start a sentence... the child guesses your next word."
@@ -337,7 +337,7 @@ for k, (w, p) in enumerate([("tomorrow", "71%"), ("today", "18%"), ("soon", "6%"
         style="border-color:#ff9933" if k == 0 else "")
 illus(L(21), LE(21))
 shot(c(22), "plate", "slow")                                           # "three things. A library... A reading room... And teachers"
-for k, (lab, colr, t) in enumerate([("Library", "paper", S(22, 1)), ("Reading room", "chip", S(22, 2)), ("Teachers", "saffron", S(22, 3))]):
+for k, (lab, colr, t) in enumerate([("Library", "paper", L(22, 0.05)), ("Reading room", "chip", S(22, 2)), ("Teachers", "saffron", S(22, 3))]):
     box(f"frame3 c-{colr}", t, LE(22), 120 + k * 580, 330, fx="pop", inner=lab)
 shot(c(23), "LIBA", "in", ms=1.0)                                       # "The library is words — trillions of pieces of text"
 chip("Library = words", L(23, 0.1), SE(23, 0), 120, 640, "paper", "sm", "up")
@@ -345,8 +345,8 @@ shot(S(23, 1) - PRE, "LED", "slow", ms=0.5)                            # "The re
 chip("Reading room = chips", S(23, 1), SE(23, 1), 120, 640, "chip", "sm", "up")
 shot(S(23, 2) - PRE, "BLR2", "slow", ms=4.0)                           # "And the teachers? They're engineers."
 chip("Teachers = engineers", S(23, 2), LE(23), 120, 640, "saffron", "sm", "up")
-shot(c(24), "BSW", "crop", ms=68.6, origin="50% 40%")                  # "India has the teachers... software for companies all over the world." (Wipro)
-shot(S(24, 2) - PRE, "BLR", "slow", ms=1.0)
+shot(c(24), "BLR", "slow", ms=1.0)                                     # "India has the teachers... software for companies all over the world."
+shot(S(24, 2) - PRE, "BLR2", "slow", ms=14.0)   # (the Business Standard clip burns its own captions in: dropped, round 1 review)
 chip("India has the teachers", L(24, 0.1), LE(24), 120, 160, "saffron", "sm", "up")
 # ---------------- Ch 3 · Why AI is weak in Indian languages ----------------
 shot(c(25), "plate", "slow")                                           # "your missing pieces are the library and the reading room"
@@ -470,8 +470,8 @@ shot(c(55), "plate", "slow")                                           # "So is 
 chip("Hopeless?", L(55), S(55, 1), 700, 440, "slate", "", "pop")
 chip("No.", S(55, 1), LE(55), 820, 440, "saffron", "xl", "pop")
 shot(c(56), "D_deepseek_p11-11", "doc", origin="50% 90%", tag="DOCUMENT · DEEPSEEK-V3 TECHNICAL REPORT")   # "about two thousand chips... cut-down version"
-count(L(56, 0.2), LE(56), 120, 640, 0, 2048, L(56, 0.25), 0.45, "", " H800 CHIPS", "chip", "")
-chip("Cut-down, for China", S(56, 2), LE(56), 120, 500, "abroad", "sm", "up")
+count(L(56, 0.2), LE(56), 120, 500, 0, 2048, L(56, 0.25), 0.45, "", " H800 CHIPS", "chip", "")
+chip("Cut-down, for China", S(56, 2), LE(56), 120, 640, "abroad", "sm", "up")
 cite("[DEEPSEEK-V3 PAPER | ARXIV 2412.19437]", L(56), LE(56))
 shot(c(57), "BLR", "slow", ms=4.0)                                     # "You need clever engineering... Indian engineers can play."
 chip("Clever beats biggest", S(57, 1) + 0.3, LE(57), 120, 640, "saffron", "sm", "up")

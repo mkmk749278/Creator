@@ -344,3 +344,8 @@ body { background: #000; color: var(--ink); font-family: var(--sans); }
 .illus { position: absolute; right: 44px; bottom: 40px; z-index: 41; font: 700 16px/1 var(--mono); letter-spacing: .18em; color: rgba(230,237,243,.75);
   padding: 7px 11px; border: 1px dashed rgba(230,237,243,.45); border-radius: 4px; background: rgba(13,17,23,.7); }
 .hbar.c-saffron { background: linear-gradient(90deg, #c76a10, #ff9933); box-shadow: 0 0 24px rgba(255,153,51,.45); }
+/* every text style falls back to the bundled Indian-script and Chinese fonts: the render machines have none of their
+   own (round 1 review: the payoff's हिंदी / తెలుగు labels came out as empty boxes on GitHub's runners) */
+:root { --mono: "JetBrains Mono", "Inter", "Deva", "Telu", "Taml", "Orya", "Beng", "SC", monospace;
+        --sans: "Inter", "Deva", "Telu", "Taml", "Orya", "Beng", "SC", Arial, sans-serif; }
+.datebig { top: 100px; }
