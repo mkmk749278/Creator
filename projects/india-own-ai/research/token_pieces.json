@@ -1,0 +1,746 @@
+{
+ "chatgpt": {
+  "en": [
+   {
+    "t": "Will",
+    "bad": false
+   },
+   {
+    "t": " it",
+    "bad": false
+   },
+   {
+    "t": " rain",
+    "bad": false
+   },
+   {
+    "t": " in",
+    "bad": false
+   },
+   {
+    "t": " my",
+    "bad": false
+   },
+   {
+    "t": " village",
+    "bad": false
+   },
+   {
+    "t": " tomorrow",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "hi": [
+   {
+    "t": "क्या",
+    "bad": false
+   },
+   {
+    "t": " कल",
+    "bad": false
+   },
+   {
+    "t": " मेरे",
+    "bad": false
+   },
+   {
+    "t": " गाँव",
+    "bad": false
+   },
+   {
+    "t": " में",
+    "bad": false
+   },
+   {
+    "t": " बारिश",
+    "bad": false
+   },
+   {
+    "t": " होगी",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "mr": [
+   {
+    "t": "उ",
+    "bad": false
+   },
+   {
+    "t": "द",
+    "bad": false
+   },
+   {
+    "t": "्या",
+    "bad": false
+   },
+   {
+    "t": " माझ",
+    "bad": false
+   },
+   {
+    "t": "्या",
+    "bad": false
+   },
+   {
+    "t": " गाव",
+    "bad": false
+   },
+   {
+    "t": "ात",
+    "bad": false
+   },
+   {
+    "t": " प",
+    "bad": false
+   },
+   {
+    "t": "ाऊ",
+    "bad": false
+   },
+   {
+    "t": "स",
+    "bad": false
+   },
+   {
+    "t": " पड",
+    "bad": false
+   },
+   {
+    "t": "ेल",
+    "bad": false
+   },
+   {
+    "t": " का",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "te": [
+   {
+    "t": "ర",
+    "bad": false
+   },
+   {
+    "t": "ేప",
+    "bad": false
+   },
+   {
+    "t": "ు",
+    "bad": false
+   },
+   {
+    "t": " మా",
+    "bad": false
+   },
+   {
+    "t": " ఊ",
+    "bad": false
+   },
+   {
+    "t": "e0b0b0e0b0bfe0b0",
+    "bad": true
+   },
+   {
+    "t": "b2e0b18b",
+    "bad": true
+   },
+   {
+    "t": " వ",
+    "bad": false
+   },
+   {
+    "t": "ర్ష",
+    "bad": false
+   },
+   {
+    "t": "ం",
+    "bad": false
+   },
+   {
+    "t": " పడ",
+    "bad": false
+   },
+   {
+    "t": "ుత",
+    "bad": false
+   },
+   {
+    "t": "ుంద",
+    "bad": false
+   },
+   {
+    "t": "ా",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "zh": [
+   {
+    "t": "明",
+    "bad": false
+   },
+   {
+    "t": "天",
+    "bad": false
+   },
+   {
+    "t": "我们",
+    "bad": false
+   },
+   {
+    "t": "村",
+    "bad": false
+   },
+   {
+    "t": "会",
+    "bad": false
+   },
+   {
+    "t": "下",
+    "bad": false
+   },
+   {
+    "t": "雨",
+    "bad": false
+   },
+   {
+    "t": "吗",
+    "bad": false
+   },
+   {
+    "t": "？",
+    "bad": false
+   }
+  ]
+ },
+ "sarvam": {
+  "en": [
+   {
+    "t": "Will",
+    "bad": false
+   },
+   {
+    "t": " it",
+    "bad": false
+   },
+   {
+    "t": " rain",
+    "bad": false
+   },
+   {
+    "t": " in",
+    "bad": false
+   },
+   {
+    "t": " my",
+    "bad": false
+   },
+   {
+    "t": " village",
+    "bad": false
+   },
+   {
+    "t": " tomorrow",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "hi": [
+   {
+    "t": "क्या",
+    "bad": false
+   },
+   {
+    "t": " कल",
+    "bad": false
+   },
+   {
+    "t": " मेरे",
+    "bad": false
+   },
+   {
+    "t": " गाँव",
+    "bad": false
+   },
+   {
+    "t": " में",
+    "bad": false
+   },
+   {
+    "t": " बारिश",
+    "bad": false
+   },
+   {
+    "t": " होगी",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "mr": [
+   {
+    "t": "उ",
+    "bad": false
+   },
+   {
+    "t": "द्या",
+    "bad": false
+   },
+   {
+    "t": " माझ्या",
+    "bad": false
+   },
+   {
+    "t": " गावात",
+    "bad": false
+   },
+   {
+    "t": " पा",
+    "bad": false
+   },
+   {
+    "t": "ऊस",
+    "bad": false
+   },
+   {
+    "t": " पड",
+    "bad": false
+   },
+   {
+    "t": "ेल",
+    "bad": false
+   },
+   {
+    "t": " का",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "te": [
+   {
+    "t": "రే",
+    "bad": false
+   },
+   {
+    "t": "పు",
+    "bad": false
+   },
+   {
+    "t": " మా",
+    "bad": false
+   },
+   {
+    "t": " ఊ",
+    "bad": false
+   },
+   {
+    "t": "రిలో",
+    "bad": false
+   },
+   {
+    "t": " వర్ష",
+    "bad": false
+   },
+   {
+    "t": "ం",
+    "bad": false
+   },
+   {
+    "t": " ప",
+    "bad": false
+   },
+   {
+    "t": "డు",
+    "bad": false
+   },
+   {
+    "t": "తు",
+    "bad": false
+   },
+   {
+    "t": "ందా?",
+    "bad": false
+   }
+  ],
+  "zh": [
+   {
+    "t": "明天",
+    "bad": false
+   },
+   {
+    "t": "我们",
+    "bad": false
+   },
+   {
+    "t": "村",
+    "bad": false
+   },
+   {
+    "t": "会",
+    "bad": false
+   },
+   {
+    "t": "下",
+    "bad": false
+   },
+   {
+    "t": "雨",
+    "bad": false
+   },
+   {
+    "t": "吗",
+    "bad": false
+   },
+   {
+    "t": "？",
+    "bad": false
+   }
+  ]
+ },
+ "deepseek": {
+  "en": [
+   {
+    "t": "Will",
+    "bad": false
+   },
+   {
+    "t": " it",
+    "bad": false
+   },
+   {
+    "t": " rain",
+    "bad": false
+   },
+   {
+    "t": " in",
+    "bad": false
+   },
+   {
+    "t": " my",
+    "bad": false
+   },
+   {
+    "t": " village",
+    "bad": false
+   },
+   {
+    "t": " tomorrow",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "hi": [
+   {
+    "t": "क",
+    "bad": false
+   },
+   {
+    "t": "्या",
+    "bad": false
+   },
+   {
+    "t": " क",
+    "bad": false
+   },
+   {
+    "t": "ल",
+    "bad": false
+   },
+   {
+    "t": " म",
+    "bad": false
+   },
+   {
+    "t": "े",
+    "bad": false
+   },
+   {
+    "t": "रे",
+    "bad": false
+   },
+   {
+    "t": " ग",
+    "bad": false
+   },
+   {
+    "t": "ाँ",
+    "bad": false
+   },
+   {
+    "t": "व",
+    "bad": false
+   },
+   {
+    "t": " में",
+    "bad": false
+   },
+   {
+    "t": " ब",
+    "bad": false
+   },
+   {
+    "t": "ार",
+    "bad": false
+   },
+   {
+    "t": "िश",
+    "bad": false
+   },
+   {
+    "t": " हो",
+    "bad": false
+   },
+   {
+    "t": "ग",
+    "bad": false
+   },
+   {
+    "t": "ी",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "mr": [
+   {
+    "t": "उ",
+    "bad": false
+   },
+   {
+    "t": "द",
+    "bad": false
+   },
+   {
+    "t": "्या",
+    "bad": false
+   },
+   {
+    "t": " म",
+    "bad": false
+   },
+   {
+    "t": "e0a4bee0a4",
+    "bad": true
+   },
+   {
+    "t": "9d",
+    "bad": true
+   },
+   {
+    "t": "्या",
+    "bad": false
+   },
+   {
+    "t": " ग",
+    "bad": false
+   },
+   {
+    "t": "ाव",
+    "bad": false
+   },
+   {
+    "t": "ात",
+    "bad": false
+   },
+   {
+    "t": " प",
+    "bad": false
+   },
+   {
+    "t": "e0a4bee0a4",
+    "bad": true
+   },
+   {
+    "t": "8a",
+    "bad": true
+   },
+   {
+    "t": "स",
+    "bad": false
+   },
+   {
+    "t": " प",
+    "bad": false
+   },
+   {
+    "t": "ड",
+    "bad": false
+   },
+   {
+    "t": "े",
+    "bad": false
+   },
+   {
+    "t": "ल",
+    "bad": false
+   },
+   {
+    "t": " का",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "te": [
+   {
+    "t": "ర",
+    "bad": false
+   },
+   {
+    "t": "ే",
+    "bad": false
+   },
+   {
+    "t": "ప",
+    "bad": false
+   },
+   {
+    "t": "ు",
+    "bad": false
+   },
+   {
+    "t": " మ",
+    "bad": false
+   },
+   {
+    "t": "ా",
+    "bad": false
+   },
+   {
+    "t": "20e0b0",
+    "bad": true
+   },
+   {
+    "t": "8a",
+    "bad": true
+   },
+   {
+    "t": "ర",
+    "bad": false
+   },
+   {
+    "t": "e0b0bfe0b0",
+    "bad": true
+   },
+   {
+    "t": "b2",
+    "bad": true
+   },
+   {
+    "t": "ో",
+    "bad": false
+   },
+   {
+    "t": " వ",
+    "bad": false
+   },
+   {
+    "t": "ర",
+    "bad": false
+   },
+   {
+    "t": "e0b18de0b0",
+    "bad": true
+   },
+   {
+    "t": "b7",
+    "bad": true
+   },
+   {
+    "t": "ం",
+    "bad": false
+   },
+   {
+    "t": " ప",
+    "bad": false
+   },
+   {
+    "t": "డ",
+    "bad": false
+   },
+   {
+    "t": "e0b181e0b0",
+    "bad": true
+   },
+   {
+    "t": "a4",
+    "bad": true
+   },
+   {
+    "t": "e0b181e0b082e0b0",
+    "bad": true
+   },
+   {
+    "t": "a6",
+    "bad": true
+   },
+   {
+    "t": "ా",
+    "bad": false
+   },
+   {
+    "t": "?",
+    "bad": false
+   }
+  ],
+  "zh": [
+   {
+    "t": "明天",
+    "bad": false
+   },
+   {
+    "t": "我们",
+    "bad": false
+   },
+   {
+    "t": "村",
+    "bad": false
+   },
+   {
+    "t": "会",
+    "bad": false
+   },
+   {
+    "t": "下雨",
+    "bad": false
+   },
+   {
+    "t": "吗",
+    "bad": false
+   },
+   {
+    "t": "？",
+    "bad": false
+   }
+  ]
+ }
+}
