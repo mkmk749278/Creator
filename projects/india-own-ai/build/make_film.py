@@ -195,7 +195,8 @@ def count(at, to, x, y, a, b, start, dur, pre="", suf="", col="ink", size="", de
 
 def box(cls, at, to, x, y, w=None, h=None, fx="fade", d=None, inner="", style=""):
     st = f"left:{x}px;top:{y}px" + (f";width:{w}px" if w is not None else "") + (f";height:{h}px" if h is not None else "") + (";" + style if style else "")
-    el(f'<div class="{cls}" style="{st}" {attrs(at, to, fx, d)}>{inner}</div>', at, to)
+    allow = " data-layout-allow-overlap" if cls.startswith(("half", "cut", "blackout", "pgi", "stack", "onepage", "brick", "dotf", "vbar")) else ""
+    el(f'<div class="{cls}"{allow} style="{st}" {attrs(at, to, fx, d)}>{inner}</div>', at, to)
 
 
 # ---------- the PIECE METER: tiles for one language on one chopper ----------
@@ -254,9 +255,9 @@ c = lambda n: L(n) - PRE
 # ---------------- Ch 1 · Can India build its own ChatGPT? ----------------
 shot(0.0, "MON", "slow", ms=0.5)                                       # "Ask an A.I. one simple question."
 shot(S(1, 1) - PRE, "TYP", "in", ms=6.0, dim=0.35)                     # "Will it rain in my village tomorrow?"
-bubble(Q["en"], "YOU ASK", S(1, 1), SE(2, 0), 300, 220)
+bubble(Q["en"], "YOU ASK", S(1, 1), L(2, 0.05), 300, 220)
 shot(c(2), "plate", "slow")                                            # "Before it reads your question, the machine chops it into pieces."
-bubble(Q["en"], "YOU ASK", L(2), S(2, 1), 300, 220)
+bubble(Q["en"], "YOU ASK", L(2, 0.05), S(2, 1), 300, 220)
 tiles("deepseek", "en", S(2, 1), LE(2), 470, cls="en", meter_y=110)   # "In English... just eight."
 bubble(Q["hi"], "हिंदी · HINDI", L(3), S(3, 1) + 1.0, 300, 220)       # "Now ask it in Hindi."
 tiles("deepseek", "hi", S(3, 1) + 1.2, LE(3), 470, meter_y=110)       # "On DeepSeek... eighteen. More than double."
@@ -394,7 +395,7 @@ SCRIPTS = ["हिंदी", "বাংলা", "తెలుగు", "मर�
            "मैथिली", "ᱥᱟᱱᱛᱟᱲᱤ", "कश्मीरी", "नेपाली", "सिन्धी", "डोगरी", "कोंकणी", "মৈতৈলোন্", "बड़ो", "संस्कृतम्"]
 for k, s_ in enumerate(SCRIPTS):
     box("shelf", S(33, 2) + k * 0.06, LE(33), 160 + (k % 6) * 270, 400 + (k // 6) * 90, 250, None, "pop", 0.18, inner=esc(s_))
-chip("22 languages · ~12 scripts", S(33, 3), LE(33), 520, 820, "paper", "sm", "up")
+chip("22 languages · ~12 scripts", S(33, 3), LE(33), 160, 140, "paper", "sm", "up")
 cite("[CONSTITUTION, 8TH SCHEDULE]", S(33, 2), LE(33))
 shot(c(34), "BAZ", "slow", ms=2.0)                                      # "that's why your question cost so much more... the chopper learns from this library"
 shot(c(35), "plate", "slow")                                           # "rain or village, one neat piece each... chopped into bits... half a letter"
@@ -431,8 +432,8 @@ shot(c(45), "D_fr_rule_p1-01", "doc", origin="50% 20%", tag="DOCUMENT · U.S. FE
 shot(S(45, 1) - PRE, "plate", "slow")                                  # "three groups... allies freely... China blocked"
 for k, (lab, colr, t) in enumerate([("Tier 1 · allies · free", "green", S(45, 2)), ("Tier 2 · capped", "amber", S(45, 1) + 0.3), ("Tier 3 · blocked", "red", S(45, 3))]):
     box("plate", t, LE(46), 200 + k * 560, 420, fx="up", inner=esc(lab), style=f"border-color:var(--{colr})")
-el(f'<div class="chip c-amber" style="left:820px;top:640px" {attrs(L(46), LE(46), "stamp")}>India</div>', L(46), LE(46))
-box("plate", L(46, 0.5), LE(46), 760, 780, fx="up", inner="Limit on chips<small>AI DIFFUSION RULE · 90 FR 4544</small>")
+el(f'<div class="chip c-amber" style="left:820px;top:200px" {attrs(L(46), LE(46), "stamp")}>India</div>', L(46), LE(46))
+box("plate", L(46, 0.5), LE(46), 760, 600, fx="up", inner="Limit on chips<small>AI DIFFUSION RULE · 90 FR 4544</small>")
 cite("[BIS | 15 JAN 2025]", S(45, 1), LE(46))
 shot(c(47), "CAP", "slow", ms=2.0)                                     # "Four months later... scrapped... The tap is in someone else's hand."
 datebig("13 MAY 2025", "RULE RESCINDED", L(47, 0.15), S(47, 1))
@@ -470,7 +471,7 @@ chip("Hopeless?", L(55), S(55, 1), 700, 440, "slate", "", "pop")
 chip("No.", S(55, 1), LE(55), 820, 440, "saffron", "xl", "pop")
 shot(c(56), "D_deepseek_p11-11", "doc", origin="50% 90%", tag="DOCUMENT · DEEPSEEK-V3 TECHNICAL REPORT")   # "about two thousand chips... cut-down version"
 count(L(56, 0.2), LE(56), 120, 640, 0, 2048, L(56, 0.25), 0.45, "", " H800 CHIPS", "chip", "")
-chip("Cut-down, for China", S(56, 2), LE(56), 120, 780, "abroad", "sm", "up")
+chip("Cut-down, for China", S(56, 2), LE(56), 120, 500, "abroad", "sm", "up")
 cite("[DEEPSEEK-V3 PAPER | ARXIV 2412.19437]", L(56), LE(56))
 shot(c(57), "BLR", "slow", ms=4.0)                                     # "You need clever engineering... Indian engineers can play."
 chip("Clever beats biggest", S(57, 1) + 0.3, LE(57), 120, 640, "saffron", "sm", "up")
@@ -518,7 +519,7 @@ for r, (who, colr, ln) in enumerate(ROWS):
         n = len(TOK[who][lang]); tk = S(ln, k + 1) if ln != 70 else S(70, 1) + k * 1.0
         box(f"hbar c-{'saffron' if colr == 'saffron' else 'slate'}", tk, LE(71) + 1.0, 560 + k * 430, y + 50, n * 15, 70, "grow", 0.4)
         box("hval", tk + 0.2, LE(71) + 1.0, 560 + k * 430, y - 10, fx="up", inner=f"{esc(LANG[lang].split(' · ')[0])} {n}")
-chip("Hindi = English", S(71, 1) + 1.2, LE(71) + 1.0, 1360, 700, "saffron", "sm", "pop")
+chip("= English", S(71, 1) + 1.2, LE(71) + 1.0, 700, 720, "saffron", "sm", "pop")
 cite("[OUR TEST | 3 TOKENIZERS]", L(69), LE(71) + 1.0)
 shot(c(72), "plate", "slow")                                           # "a thousand sentences, each in thirteen languages"
 FL = json.loads((P / "research/token_test_flores200.json").read_text())
@@ -538,7 +539,7 @@ for k, (lab, colr) in enumerate([("Library", "saffron"), ("Reading room", "chip"
     box(f"frame3 c-{colr}", L(74) + k * 0.2, LE(74), 120 + k * 580, 330, fx="pop", inner=lab)
 shot(c(75), "KIS", "slow", ms=63.0, tag="FOOTAGE · AGRICULTURE INDIA · KISAN E-MITRA (A GOVERNMENT CHATBOT)")   # "Sarvam says its models help run Aadhaar services... Maharashtra..."
 chip("Aadhaar · Sarvam says", S(75, 1), S(75, 2), 120, 160, "saffron", "sm", "up")
-datebig("28 OCT 2026", "MAHARASHTRA · 2,500 OFFICIALS", S(75, 1), LE(75))
+datebig("28 OCT 2026", "MAHARASHTRA · 2,500 OFFICIALS", S(75, 2), LE(75))
 cite("[FORBES INDIA · AIM NETWORK]", L(75), LE(75))
 # ---------------- Ch 6 · Has India caught up? ----------------
 shot(c(76), "YOT", "slow", ms=62.0, dim=0.3)                           # "has India built its own ChatGPT? ... Not yet."
