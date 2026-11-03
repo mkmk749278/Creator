@@ -158,6 +158,8 @@ def shot(t0, src, move="push", tag=None, ms=0.0, origin=None, dim=False, hard=Fa
 
 
 def el(h, at, to):
+    if to is not None and to < at + 0.3:   # an end before (or right after) the start never fades out: it stays on screen
+        raise SystemExit(f"overlay ends before it starts ({at:.2f} -> {to:.2f}): {h[:90]}")
     OV.append(dict(h=h, at=round(at, 3), to=None if to is None else round(to, 3)))
 
 
@@ -259,7 +261,7 @@ tiles("deepseek", "en", S(2, 1), LE(2), 470, cls="en", meter_y=110)   # "In Engl
 bubble(Q["hi"], "हिंदी · HINDI", L(3), S(3, 1) + 1.0, 300, 220)       # "Now ask it in Hindi."
 tiles("deepseek", "hi", S(3, 1) + 1.2, LE(3), 470, meter_y=110)       # "On DeepSeek... eighteen. More than double."
 cite("[OUR TEST | DEEPSEEK V3 TOKENIZER]", S(3, 1), LE(6))
-tiles("deepseek", "mr", L(4), S(4, 1) - 0.05, 300, meter_y=110)       # "Marathi, twenty."
+tiles("deepseek", "mr", L(4), S(4, 1) - 0.05, 300, meter_y=110, stagger=0.045)       # "Marathi, twenty."
 tiles("deepseek", "te", S(4, 1), S(4, 2) + 0.2, 300, meter_y=110)     # "Telugu, twenty-five."
 # "And in those two, it even cuts some of your letters in half." -> the Telugu letter ఊ cracked, held 1.5 s (BEATS)
 box("half l", S(4, 2) + 0.2, LE(4) + 1.5, 520, 170, fx="fade", d=0.3, inner="ఊ")
@@ -441,8 +443,8 @@ shot(c(49), "YOT", "slow", ms=60.0)                                    # "Under 
 chip("One common pool", L(49, 0.2), LE(49), 120, 160, "chip", "sm", "up")
 chip("Govt pays part", L(49, 0.75), LE(49), 120, 280, "saffron", "sm", "up")
 shot(c(50), "plate", "slow")                                           # "eighteen thousand... forty-five thousand"
-count(L(50, 0.5), LE(50), 300, 420, 0, 18693, L(50, 0.55), 0.45, "", " CHIPS", "chip", "xl")
-chip("JAN 2025", L(50, 0.5), SE(50, 0), 300, 300, "slate", "sm", "fade")
+count(L(50, 0.1), LE(50), 300, 420, 0, 18693, L(50, 0.12), 0.45, "", " CHIPS", "chip", "xl")
+chip("JAN 2025", L(50, 0.1), SE(50, 0), 300, 300, "slate", "sm", "fade")
 count(S(50, 1), LE(50), 300, 640, 18693, 45000, S(50, 1) + 0.2, 0.45, "", "+ CHIPS", "saffron", "xl")
 chip("JUNE 2026", S(50, 1), LE(50), 300, 800, "slate", "sm", "fade")
 cite("[PIB | 30 JAN 2025 · JUNE 2026]", L(50), LE(50))
@@ -453,13 +455,13 @@ box("dotf c-abroad", S(51, 1) + 1.2, LE(51), 560, 300, 1000, 350, "grow", 1.0, s
 box("hkey", S(51, 1) + 1.6, LE(51), 560, 680, inner="ONE COMPANY · META · ≈ 350,000 (TARGET, END 2024)")
 cite("[ZUCKERBERG | JAN 2024]", S(51, 1), LE(51))
 shot(c(52), "plate", "slow")                                           # "India's whole A.I. mission is about ten thousand crore rupees"
-box("brick in", S(52, 1) + 0.4, LE(54), 200, 800, fx="pop")
-box("hkey", S(52, 1) + 0.6, LE(54), 120, 860, inner="INDIA AI MISSION · ₹10,372 CR · 5 YEARS")
+box("brick in", S(52, 1) + 0.4, LE(54), 200, 690, fx="pop")
+box("hkey", S(52, 1) + 0.6, LE(54), 120, 750, inner="INDIA AI MISSION · ₹10,372 CR · 5 YEARS")
 cite("[PIB | 7 MAR 2024]", S(52, 1), LE(52))
 shot(c(53), "plate", "slow")                                           # "Meta... around thirteen lakh crore rupees... much of it for A.I."
 for k in range(126):
-    box("brick", L(53, 0.3) + k * 0.025, LE(54), 520 + (k % 14) * 92, 800 - (k // 14) * 46, fx="pop", d=0.12)
-box("hkey", L(53, 0.4), LE(54), 520, 340, inner="META · 2026 · ≈ ₹13 LAKH CRORE ($135-145 BN)")
+    box("brick", L(53, 0.3) + k * 0.025, LE(54), 520 + (k % 14) * 92, 690 - (k // 14) * 46, fx="pop", d=0.12)
+box("hkey", L(53, 0.4), LE(54), 520, 230, inner="META · 2026 · ≈ ₹13 LAKH CRORE ($135-145 BN)")
 cite("[META Q3 2026 RESULTS]", L(53), LE(54))
 shot(c(54), "plate", "slow")                                           # "That's not double. That's more than a hundred times as much."
 chip("> 100×", S(54, 3), LE(54), 120, 200, "red", "xl", "stamp")
@@ -482,14 +484,14 @@ count(S(59, 1), LE(59), 120, 640, 0, 4096, S(59, 1) + 0.6, 0.45, "", " H100 CHIP
 shot(c(60), "D_sarvam_105b_hf", "doc", origin="50% 30%", tag="DOCUMENT · HUGGING FACE")   # "Sarvam's next model is built on top of a French one"
 chip("May 2025 · built on a French base", L(60, 0.35), LE(60), 120, 640, "abroad", "sm", "up")
 shot(c(61), "YOT", "slow", ms=11.0)                                    # "Can an Indian team train one from zero, start to finish, at home?"
-box("prog", S(61, 2), LE(61), 360, 780, inner='<div class="fill" style="transform:scaleX(0.02)"></div>')
+box("prog", S(61, 2), LE(61), 360, 680, inner='<div class="fill" style="transform:scaleX(0.02)"></div>')
 chip("From zero?", S(61, 2) + 0.3, LE(61), 720, 640, "saffron", "sm", "pop")
 shot(c(62), "SUM" if have("SUM") else "CITY", "slow", ms=20.0)         # "February twenty twenty-six. Bharat Mandapam, Delhi."
 datebig("18 FEB 2026", "BHARAT MANDAPAM · AI IMPACT SUMMIT", L(62, 0.05), LE(62))
 shot(c(63), "SAR" if have("SAR") else "D_sarvam_blog", "slow" if have("SAR") else "doc", ms=5.0, origin="50% 35%")   # "two new models... a hundred and five billion parameters"
 count(S(63, 1) + 0.4, SE(63, 1) + 3.5, 120, 640, 0, 105, S(63, 1) + 0.5, 0.45, "", " BN DIALS", "saffron", "xl")
 shot(c(64), "YOT", "slow", ms=43.0)                                    # "Trained from scratch. In India... twelve trillion pieces"
-el(f'<div class="prog" style="top:780px" {attrs(L(64), LE(64), "fade")}><div class="fill" data-at="{round(L(64) + 0.2, 3)}" data-fx="grow" data-d="3.0"></div></div>', L(64), LE(64))
+el(f'<div class="prog" style="top:680px" {attrs(L(64), LE(64), "fade")}><div class="fill" data-at="{round(L(64) + 0.2, 3)}" data-fx="grow" data-d="3.0"></div></div>', L(64), LE(64))
 chip("Trained from scratch · in India", L(64), S(64, 3), 120, 160, "saffron", "sm", "up")
 count(S(64, 3) + 0.8, LE(64), 120, 160, 0, 12, S(64, 3) + 1.0, 0.45, "", " TRILLION PIECES", "paper", "sm")
 cite("[SARVAM | FEB 2026]", L(64), LE(64))
@@ -516,7 +518,7 @@ for r, (who, colr, ln) in enumerate(ROWS):
         n = len(TOK[who][lang]); tk = S(ln, k + 1) if ln != 70 else S(70, 1) + k * 1.0
         box(f"hbar c-{'saffron' if colr == 'saffron' else 'slate'}", tk, LE(71) + 1.0, 560 + k * 430, y + 50, n * 15, 70, "grow", 0.4)
         box("hval", tk + 0.2, LE(71) + 1.0, 560 + k * 430, y - 10, fx="up", inner=f"{esc(LANG[lang].split(' · ')[0])} {n}")
-chip("= English", S(71, 1) + 1.2, LE(71) + 1.0, 560, 860, "saffron", "sm", "pop")
+chip("Hindi = English", S(71, 1) + 1.2, LE(71) + 1.0, 1360, 700, "saffron", "sm", "pop")
 cite("[OUR TEST | 3 TOKENIZERS]", L(69), LE(71) + 1.0)
 shot(c(72), "plate", "slow")                                           # "a thousand sentences, each in thirteen languages"
 FL = json.loads((P / "research/token_test_flores200.json").read_text())
@@ -528,14 +530,14 @@ for k, (code, lab) in enumerate(LG):
     box("hkey", t, LE(73), 120, y + 18, inner=esc(lab))
     box("hbar c-slate", t, LE(73), 420, y, int(ds * 230), 34, "grow", 0.4)
     box("hbar c-saffron", t + 0.5, LE(73), 420, y + 38, int(sv * 230), 34, "grow", 0.4, style="background:linear-gradient(90deg,#c76a10,#ff9933)")
-box("hkey", S(72, 1), LE(73), 1500, 150, inner="GREY · DEEPSEEK<br/>SAFFRON · SARVAM<br/>× ENGLISH")
+box("hkey", S(72, 1), LE(73), 1500, 260, inner="GREY · DEEPSEEK<br/>SAFFRON · SARVAM<br/>× ENGLISH")
 cite("[OUR TEST | FLORES-200, 1,012 SENTENCES]", S(72, 1), LE(73))
-chip("Odia · 5.5× → 1.4×", S(73, 1), LE(73), 1300, 860, "saffron", "sm", "pop")
+chip("Odia · 5.5× → 1.4×", S(73, 1), LE(73), 1300, 680, "saffron", "sm", "pop")
 shot(c(74), "plate", "slow")                                           # "the gap shrinks, a lot... an Indian team put the missing pieces in"
 for k, (lab, colr) in enumerate([("Library", "saffron"), ("Reading room", "chip"), ("Teachers", "saffron")]):
     box(f"frame3 c-{colr}", L(74) + k * 0.2, LE(74), 120 + k * 580, 330, fx="pop", inner=lab)
 shot(c(75), "KIS", "slow", ms=63.0, tag="FOOTAGE · AGRICULTURE INDIA · KISAN E-MITRA (A GOVERNMENT CHATBOT)")   # "Sarvam says its models help run Aadhaar services... Maharashtra..."
-chip("Aadhaar · Sarvam says", L(75, 0.2), S(75, 1), 120, 160, "saffron", "sm", "up")
+chip("Aadhaar · Sarvam says", S(75, 1), S(75, 2), 120, 160, "saffron", "sm", "up")
 datebig("28 OCT 2026", "MAHARASHTRA · 2,500 OFFICIALS", S(75, 1), LE(75))
 cite("[FORBES INDIA · AIM NETWORK]", L(75), LE(75))
 # ---------------- Ch 6 · Has India caught up? ----------------
@@ -559,7 +561,7 @@ shot(c(82), "RUP", "in", ms=1.0)                                       # "If Ind
 chip("Paying extra", L(82, 0.4), LE(82), 120, 640, "red", "sm", "up")
 shot(c(83), "plate", "slow")                                           # "an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia..."
 for k, lab in enumerate(["हिंदी", "मराठी", "తెలుగు", "বাংলা", "ଓଡ଼ିଆ"]):
-    el(f'<div class="tok saffron" style="left:{220 + k * 300}px;top:460px" {attrs(L(83, 0.25) + k * 0.25, LE(83), "pop", 0.2)}>{lab}</div>', L(83, 0.25) + k * 0.25, LE(83))
+    el(f'<div class="tok saffron" style="left:{220 + k * 300}px;top:460px" {attrs(L(83, 0.05) + k * 0.25, LE(83), "pop", 0.2)}>{lab}</div>', L(83, 0.05) + k * 0.25, LE(83))
 shot(c(84), "TYP", "slow", ms=8.0, dim=0.2)                                      # "check your ChatGPT plan before the free year ends..."
 chip("Check your plan", L(84, 0.3), LE(84), 120, 640, "saffron", "sm", "up")
 shot(c(85), "FARM", "slow", ms=1.0)                                    # "ask the same question in your own language to two or three..."
@@ -569,7 +571,7 @@ chip("Pay for the one that understands you", S(85, 2), LE(85), 120, 160, "saffro
 shot(c(86), "NAV" if have("NAV") else "CITY", "slow", ms=10.0)          # "NavIC... why does your phone still lean on America's G.P.S.?"
 chip("NavIC · next story", S(86, 1), LE(86), 120, 640, "saffron", "sm", "up")
 shot(c(87), "plate", "slow")                                           # "Ask any A.I. one question in your mother tongue... tell me in the comments"
-bubble("Which A.I. answered best in your language?", "TELL ME IN THE COMMENTS", L(87, 0.1), END, 300, 380)
+bubble("Which A.I. answered best in your language?", "TELL ME IN THE COMMENTS", L(87, 0.1), VO_END - 1.6, 300, 380)
 shot(c(88), "plate", "slow")                                           # "This is Be Practical with Kishore. Stay practical. Jai Hind."
 
 
