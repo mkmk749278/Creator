@@ -2028,6 +2028,26 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   guidance is $135–145 bn) and that Sarvam's app isn't called Indus (it is). Check every point against `claims.csv`
   first (`projects/india-own-ai/review_outside_v1.md`).
 
+**India-own-AI round 1: picture on the word, and only real pictures (owner, 2026-11-03).**
+- **Every name, place, number and key verb gets its own picture on the word, even for 1–2 s.** *Why (owner, r1):*
+  "narration to visuals... not matching at all"; one shot per line left "Chinese", "Delhi", "Taiwan", "Nvidia" and
+  "Maharashtra" over unrelated city or office footage. *How:* word times from `build/words.py` (silencedetect pauses plus a
+  letter-weighted spread, no speech recognition); `ins(W(line, "word"), src, dur)` in `build/make_film.py` cuts away
+  0.15 s before the word and resumes the shot underneath as if it had kept running (over an animated plate the cutaway is
+  dimmed under the animation). r1 had 167 shots; r2 has 268, 92 of them on words. Plan first in `word_map.md`, then check
+  with `build/word_audit.py`: one frame per cutaway, labelled with its word.
+- **"All should look real and should match situation" (owner, r2):** a stock search hit is not a picture until
+  you have looked at it. In one batch of 59 Pixabay/Openverse picks, 17 failed the look: CGI flags, satellites, a HUD,
+  green-screen calendars, timers, progress bars, CGI yuan, Western classrooms, a posed actor. Some were the wrong
+  place: a "Mumbai" skyline that is Taipei 101, "rupee" notes that are Pakistani, an "Aadhaar centre" whose sign is an MLA
+  office. *Rule:* make a contact sheet of two frames per clip before wiring any of it, reject computer graphics and
+  foreign stand-ins for Indian scenes, and read the signs in the frame. A real clip's content has to match its words:
+  the Yotta clip is two men talking outside, so it can't carry "reading room" or "clusters".
+- **No stock clip more than twice** (standing note); count the uses in the cut before building
+  (`grep` the `shot(`/`ins(` calls). Real event footage of the named person or place is exempt.
+- **Look inside the owner's Drive footage before searching outside:** the "DGX tour" clip held Jensen Huang to camera
+  and a real H100 close-up, the best pictures for "Nvidia" in the film.
+
 **Pharma film: lived-memory anchors, and outside script reviews (2026-10-28).**
 - **Anchor dates in events viewers lived** (§4a-12 item 16). The owner, recording block 1, noticed "the third of March,
   twenty twenty" read as a bare date; the scene only came alive as "the Corona days… three weeks before the lockdown".

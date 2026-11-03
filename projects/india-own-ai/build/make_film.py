@@ -58,6 +58,19 @@ def SE(n, k):
     return F([s for s in SENTS if s["line"] == n][k]["end"])
 
 
+WORDS = json.loads((P / "align/words.json").read_text())   # build/words.py: word times, raw VO seconds
+_norm = lambda w: re.sub(r"[^a-z0-9.']", "", w.lower()).strip(".'")
+
+
+def W(n, phrase, k=0):
+    """film time of the k-th place in line n where `phrase` (one or more words) is said"""
+    ws = [w for w in WORDS if w["line"] == n]; want = [_norm(x) for x in phrase.split()]
+    hits = [i for i in range(len(ws)) if all(i + j < len(ws) and _norm(ws[i + j]["w"]).startswith(x) for j, x in enumerate(want))]
+    if len(hits) <= k:
+        raise SystemExit(f"word {phrase!r} not in line {n}: {' '.join(w['w'] for w in ws)}")
+    return F(ws[hits[k]]["t"])
+
+
 PRE = 0.15
 VO_END = F(LINES[-1]["end"])
 END = round(VO_END + 8.0, 2)
@@ -87,6 +100,7 @@ FOOT = {  # third-party footage from the owner's Drive (asset-manifest.md): key 
     "KIS": ("05_u8uJ6tqYt4I.mp4", "FOOTAGE · AGRICULTURE INDIA · KISAN E-MITRA"),
     "BSW": ("01_ytvy1JruLlY.mp4", "FOOTAGE · BUSINESS STANDARD"),
     "TATA": ("01_Ap3ek027Feo.mp4", "FOOTAGE · BRIGHT WAY · TATA FAB SITE, DHOLERA"),
+    "NVD": ("02_tiaX1Ja3C5g_h.mp4", "FOOTAGE · NVIDIA · JENSEN HUANG, NVIDIA CEO"),
 }
 # owner-fetched YouTube clips (Termux, Creator/English/india-own-ai/footage/): used when present, else the fallback shot
 YT = {"VAI": "zhtFmBv2hmg", "PMX": "Y1mdgQkUHn0", "IND": "K7PBZSmJrXQ_h", "NAV": "85RfBSq6X04_h",
@@ -116,6 +130,12 @@ def media(name, raw=False):
     if src is not None:
         conf = A / "conformed" / src.name
         return conf if conf.exists() and not raw else src
+    if name.startswith("ST_"):   # word-level stock (round 2): assets/stock, Pixabay videos / Openverse photos
+        for ext in (".mp4", ".jpg"):
+            f = A / "stock" / f"{name[3:]}{ext}"
+            if f.exists():
+                conf = A / "conformed" / f.name
+                return conf if ext == ".mp4" and conf.exists() and not raw else f
     if name.startswith("PIB_"):
         return A / "pib" / f"{name[4:]}.jpg"
     if name.startswith("D_"):
@@ -142,6 +162,11 @@ def default_tag(src):
         return YT_TAG[src]
     if src in PX:
         return "PEXELS"
+    if src.startswith("ST_"):
+        if media(src).suffix == ".mp4":
+            return "PIXABAY"
+        r = STOCK.get(src[3:], {})
+        return f"PHOTO · {r.get('author', '').upper()} · CC {r.get('licence', '').upper()} · OPENVERSE"
     if src.startswith("PIB_"):
         return "PHOTO · PIB · 30 JAN 2025"
     if src.startswith("D_"):
@@ -149,8 +174,52 @@ def default_tag(src):
     return ""
 
 
-SEQ, OV = [], []
+STOCK = {Path(r[0]).stem: dict(page=r[1], author=r[2], licence=r[3]) for r in json.loads((A / "stock/picked.json").read_text())} \
+    if (A / "stock/picked.json").exists() else {}
+SEQ, OV, INS = [], [], []
 XF = 0.2
+
+
+def ins(at, src, dur=1.5, ms=0.0, move="in", tag=None, origin=None, dim=None):
+    """a word-level cutaway (owner, r1: "while we are saying names, verbs... show that clip, even one or two seconds"):
+    cut to `src` just before the word at `at`, hold `dur`, then the shot underneath resumes where it would have been"""
+    INS.append(dict(at=round(at - PRE, 3), src=src, dur=dur, ms=ms, move=move, tag=tag, origin=origin, dim=dim))
+
+
+def apply_ins():
+    for it in sorted(INS, key=lambda x: x["at"]):
+        SEQ.sort(key=lambda s: s["t0"])
+        t = it["at"]; i = max(k for k, s in enumerate(SEQ) if s["t0"] <= t + 1e-6); par = SEQ[i]
+        nxt = SEQ[i + 1]["t0"] if i + 1 < len(SEQ) else END
+        if nxt - t < 0.7:          # the word lands just before a cut: the insert opens the next shot instead
+            if i + 1 >= len(SEQ) or t - par["t0"] < 0.5:
+                print(f"  ~ insert {it['src']} at {t:.1f} skipped (next cut in {nxt - t:.2f}s)"); continue
+            i += 1; par = SEQ[i]; SEQ.pop(i)
+            nxt = SEQ[i]["t0"] if i < len(SEQ) else END
+            end = t + it["dur"]
+            dim = it["dim"] if it["dim"] is not None else (0.55 if par["src"] == "plate" else False)
+            SEQ.append(dict(t0=round(t, 3), src=it["src"], move=it["move"], tag=default_tag(it["src"]) if it["tag"] is None else it["tag"],
+                            ms=it["ms"], origin=it["origin"], dim=dim, hard=False))
+            if nxt - end >= 0.7:
+                pm = par["ms"][0] if isinstance(par["ms"], list) else par["ms"]
+                adv = max(0.0, end - par["t0"]) if media(par["src"]).suffix == ".mp4" else 0.0
+                SEQ.append(dict(par, t0=round(end, 3), ms=round(pm + adv, 3)))
+            continue
+        lead = t - par["t0"]
+        if lead < 0.6:             # right at the start of a shot: the insert opens it
+            t = par["t0"]; SEQ.pop(i); lead = 0.0
+        end = t + it["dur"]
+        dim = it["dim"] if it["dim"] is not None else (0.55 if par["src"] == "plate" else False)
+        new = dict(t0=round(t, 3), src=it["src"], move=it["move"], tag=default_tag(it["src"]) if it["tag"] is None else it["tag"],
+                   ms=it["ms"], origin=it["origin"], dim=dim, hard=False)
+        SEQ.append(new)
+        if nxt - end >= 0.7:       # the shot underneath carries on, as if it had kept running
+            pm = par["ms"][0] if isinstance(par["ms"], list) else par["ms"]
+            adv = (end - par["t0"]) if media(par["src"]).suffix == ".mp4" else 0.0
+            SEQ.append(dict(par, t0=round(end, 3), ms=round(pm + adv, 3)))
+        elif lead == 0.0 and nxt - t < 0.7 + it["dur"]:
+            pass                   # the insert simply runs to the next cut
+    SEQ.sort(key=lambda s: s["t0"])
 
 
 def shot(t0, src, move="push", tag=None, ms=0.0, origin=None, dim=False, hard=False):
@@ -275,17 +344,17 @@ vbars(L(5), LE(6), [("English", 8, "abroad", L(5)), ("हिंदी", 18, "abr
                     ("తెలుగు", 25, "red", L(5) + 0.45), ("中文", 7, "abroad", S(6, 2))])
 chip("Can India build its own?", L(5, 0.15), LE(5) + 0.3, 110, 130, "saffron", "sm", "up")
 chip("Built in China", S(6, 3), LE(6), 110, 250, "abroad", "sm", "pop")   # "Fewer than English."
-shot(c(7), "CITY", "slow", ms=2.0, dim=0.25)                           # "A machine speaks best in the language of the people who built it."
+shot(c(7), "SEMI", "slow", ms=2.0, dim=0.25)                           # "A machine speaks best in the language of the people who built it."
 chip("Built in America · built in China", L(7, 0.45), LE(7), 120, 160, "abroad", "sm", "up")
-shot(c(8), "TYP", "in", ms=1.0)                                       # "Your apps pay these machines by the piece."
+shot(c(8), "ST_r2_phonein_2", "in", ms=4.0)                                       # "Your apps pay these machines by the piece."
 chip("Pay by the piece", L(8, 0.3), LE(8), 120, 640, "paper", "sm", "up")
 chip("More pieces = bigger bill", L(8, 0.6), LE(8), 120, 760, "red", "sm", "up")
 shot(c(9), "D_techcrunch_go_free", "doc", origin="50% 40%", tag="DOCUMENT · TECHCRUNCH · 27 OCT 2025")   # "last November... Go free"
 datebig("4 NOV 2025", "CHATGPT GO · FREE FOR A YEAR", L(9, 0.2), LE(9))
 cite("[OPENAI | TECHCRUNCH 27 OCT 2025]", L(9, 0.2), LE(9))
-shot(c(10), "TYP", "out", ms=14.0, dim=0.3)                            # "For the first people who signed up, that free year runs out... about now."
+shot(c(10), "ST_notify_1", "out", ms=1.0, dim=0.3)                            # "For the first people who signed up, that free year runs out... about now."
 datebig("NOV 2026", "THE FREE YEAR ENDS", L(10, 0.5), LE(10))
-shot(c(11), "CROWD", "slow", ms=2.0)                                   # "So when yours ends, whose machine...? America? China? Or here?"
+shot(c(11), "VOICE", "slow", ms=1.0)                                   # "So when yours ends, whose machine...? America? China? Or here?"
 chip("America?", S(11, 1), LE(11), 160, 640, "abroad", "sm", "pop")
 chip("China?", S(11, 2), LE(11), 560, 640, "abroad", "sm", "pop")
 chip("Or here?", S(11, 3), LE(11), 880, 640, "saffron", "sm", "pop")
@@ -313,7 +382,7 @@ box("hbar c-saffron", S(16, 1) + 0.4, LE(16) + 1.0, 260, 640, 1284, 120, "grow",
 box("hkey", S(16, 1) + 0.4, LE(16) + 1.0, 260, 590, inner="INDIA'S WHOLE UNION BUDGET 2025-26 · ₹50.65 LAKH CRORE")
 cite("[UNION BUDGET 2025-26 | OUR CONVERSION]", S(16, 1), LE(16) + 1.0)
 shot(c(17), "VAI" if have("VAI") else "PIB_image001QNTH", "crop2" if have("VAI") else "in", ms=0.2, origin="50% 18%")   # "Three days later... Ashwini Vaishnaw..."
-namelt("Ashwini Vaishnaw", "UNION I.T. MINISTER · 30 JAN 2025", L(17, 0.25), SE(17, 0))
+namelt("Ashwini Vaishnaw", "UNION I.T. MINISTER · 30 JAN 2025", W(17, "minister"), SE(17, 0))
 shot(S(17, 1) - PRE, "VAI" if have("VAI") else "PIB_image002946I", "crop2" if have("VAI") else "left", ms=37.5, origin="50% 18%")                       # "India will build its own A.I. model... within six months."
 chip("Within 6 months", S(17, 1) + 1.5, LE(17), 120, 640, "saffron", "sm", "up")
 cite("[PIB | 30 JAN 2025]", L(17), LE(17))
@@ -339,11 +408,11 @@ illus(L(21), LE(21))
 shot(c(22), "plate", "slow")                                           # "three things. A library... A reading room... And teachers"
 for k, (lab, colr, t) in enumerate([("Library", "paper", L(22, 0.05)), ("Reading room", "chip", S(22, 2)), ("Teachers", "saffron", S(22, 3))]):
     box(f"frame3 c-{colr}", t, LE(22), 120 + k * 580, 330, fx="pop", inner=lab)
-shot(c(23), "LIBA", "in", ms=1.0)                                       # "The library is words — trillions of pieces of text"
+shot(c(23), "HPAGE", "in", ms=8.0)                                       # "The library is words — trillions of pieces of text"
 chip("Library = words", L(23, 0.1), SE(23, 0), 120, 640, "paper", "sm", "up")
 shot(S(23, 1) - PRE, "LED", "slow", ms=0.5)                            # "The reading room is chips..."
 chip("Reading room = chips", S(23, 1), SE(23, 1), 120, 640, "chip", "sm", "up")
-shot(S(23, 2) - PRE, "BLR2", "slow", ms=4.0)                           # "And the teachers? They're engineers."
+shot(S(23, 2) - PRE, "ST_coding_2", "slow", ms=30.0)                           # "And the teachers? They're engineers."
 chip("Teachers = engineers", S(23, 2), LE(23), 120, 640, "saffron", "sm", "up")
 shot(c(24), "BLR", "slow", ms=1.0)                                     # "India has the teachers... software for companies all over the world."
 shot(S(24, 2) - PRE, "BLR2", "slow", ms=14.0)   # (the Business Standard clip burns its own captions in: dropped, round 1 review)
@@ -436,11 +505,11 @@ el(f'<div class="chip c-amber" style="left:820px;top:200px" {attrs(L(46), LE(46)
 box("plate", L(46, 0.5), LE(46), 760, 600, fx="up", inner="Limit on chips<small>AI DIFFUSION RULE · 90 FR 4544</small>")
 cite("[BIS | 15 JAN 2025]", S(45, 1), LE(46))
 shot(c(47), "CAP", "slow", ms=2.0)                                     # "Four months later... scrapped... The tap is in someone else's hand."
-datebig("13 MAY 2025", "RULE RESCINDED", L(47, 0.15), S(47, 1))
+datebig("12 MAY 2025", "RULE RESCINDED", L(47, 0.15), S(47, 1))
 shot(S(47, 2) - PRE, "TAP", "in", ms=36.0)
 chip("Someone else's tap", S(47, 2) + 0.2, LE(47), 120, 640, "red", "sm", "up")
-shot(c(48), "YOT", "slow", ms=26.0)                                    # "India didn't wait... It rented one... and shared it."
-shot(c(49), "YOT", "slow", ms=60.0)                                    # "Under the IndiaAI Mission... one common pool..."
+shot(c(48), "YOT", "slow", ms=60.0)                                    # "India didn't wait... It rented one... and shared it."
+shot(c(49), "ST_r2_dcc_3", "slow", ms=4.0)                                    # "Under the IndiaAI Mission... one common pool..."
 chip("One common pool", L(49, 0.2), LE(49), 120, 160, "chip", "sm", "up")
 chip("Govt pays part", L(49, 0.75), LE(49), 120, 280, "saffron", "sm", "up")
 shot(c(50), "plate", "slow")                                           # "eighteen thousand... forty-five thousand"
@@ -484,14 +553,14 @@ namelt("Pratyush Kumar", "CO-FOUNDER, SARVAM · WITH VIVEK RAGHAVAN", L(59, 0.2)
 count(S(59, 1), LE(59), 120, 640, 0, 4096, S(59, 1) + 0.6, 0.45, "", " H100 CHIPS", "chip", "")
 shot(c(60), "D_sarvam_105b_hf", "doc", origin="50% 30%", tag="DOCUMENT · HUGGING FACE")   # "Sarvam's next model is built on top of a French one"
 chip("May 2025 · built on a French base", L(60, 0.35), LE(60), 120, 640, "abroad", "sm", "up")
-shot(c(61), "YOT", "slow", ms=11.0)                                    # "Can an Indian team train one from zero, start to finish, at home?"
+shot(c(61), "ST_coding_2", "slow", ms=50.0)   # (the NDTV clip at 15 s is a stage with its own anchor captions: not used)                                    # "Can an Indian team train one from zero, start to finish, at home?"
 box("prog", S(61, 2), LE(61), 360, 680, inner='<div class="fill" style="transform:scaleX(0.02)"></div>')
 chip("From zero?", S(61, 2) + 0.3, LE(61), 720, 640, "saffron", "sm", "pop")
 shot(c(62), "PMX" if have("PMX") else "CITY", "slow", ms=5.3)         # "February twenty twenty-six. Bharat Mandapam, Delhi."
 datebig("18 FEB 2026", "BHARAT MANDAPAM · AI IMPACT SUMMIT", L(62, 0.05), LE(62))
 shot(c(63), "PMX" if have("PMX") else "D_sarvam_blog", "slow" if have("PMX") else "doc", ms=25.1, origin="50% 35%")   # "two new models... a hundred and five billion parameters"
 count(S(63, 1) + 0.4, SE(63, 1) + 3.5, 120, 640, 0, 105, S(63, 1) + 0.5, 0.45, "", " BN DIALS", "saffron", "xl")
-shot(c(64), "YOT", "slow", ms=43.0)                                    # "Trained from scratch. In India... twelve trillion pieces"
+shot(c(64), "ST_r2_dc_0", "slow", ms=8.0)                                    # "Trained from scratch. In India... twelve trillion pieces"
 el(f'<div class="prog" style="top:680px" {attrs(L(64), LE(64), "fade")}><div class="fill" data-at="{round(L(64) + 0.2, 3)}" data-fx="grow" data-d="3.0"></div></div>', L(64), LE(64))
 chip("Trained from scratch · in India", L(64), S(64, 3), 120, 160, "saffron", "sm", "up")
 count(S(64, 3) + 0.8, LE(64), 120, 160, 0, 12, S(64, 3) + 1.0, 0.45, "", " TRILLION PIECES", "paper", "sm")
@@ -542,7 +611,7 @@ chip("Aadhaar · Sarvam says", S(75, 1), S(75, 2), 120, 160, "saffron", "sm", "u
 datebig("28 OCT 2026", "MAHARASHTRA · 2,500 OFFICIALS", S(75, 2), LE(75))
 cite("[FORBES INDIA · AIM NETWORK]", L(75), LE(75))
 # ---------------- Ch 6 · Has India caught up? ----------------
-shot(c(76), "YOT", "slow", ms=62.0, dim=0.3)                           # "has India built its own ChatGPT? ... Not yet."
+shot(c(76), "CITY", "slow", ms=4.0, dim=0.3)                           # "has India built its own ChatGPT? ... Not yet."
 chip("Not yet", S(76, 3), LE(76), 120, 640, "red", "", "stamp")
 shot(c(77), "plate", "slow")                                           # "DeepSeek's newest big model has one point six trillion..."
 box("dotf c-saffron", L(77, 0.2), LE(77), 200, 360, 120, 120, "pop", style="color:var(--saffron)")
@@ -563,17 +632,121 @@ chip("Paying extra", L(82, 0.4), LE(82), 120, 640, "red", "sm", "up")
 shot(c(83), "plate", "slow")                                           # "an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia..."
 for k, lab in enumerate(["हिंदी", "मराठी", "తెలుగు", "বাংলা", "ଓଡ଼ିଆ"]):
     el(f'<div class="tok saffron" style="left:{220 + k * 300}px;top:460px" {attrs(L(83, 0.05) + k * 0.25, LE(83), "pop", 0.2)}>{lab}</div>', L(83, 0.05) + k * 0.25, LE(83))
-shot(c(84), "TYP", "slow", ms=8.0, dim=0.2)                                      # "check your ChatGPT plan before the free year ends..."
+shot(c(84), "ST_notify_1", "slow", ms=4.0, dim=0.2)                                      # "check your ChatGPT plan before the free year ends..."
 chip("Check your plan", L(84, 0.3), LE(84), 120, 640, "saffron", "sm", "up")
 shot(c(85), "FARM", "slow", ms=1.0)                                    # "ask the same question in your own language to two or three..."
 shot(S(85, 1) - PRE, "IND" if have("IND") else "D_techcrunch_indus", "slow" if have("IND") else "doc", ms=5.0, origin="30% 40%")
 shot(S(85, 2) - PRE, "KIS", "slow", ms=1.0)
 chip("Pay for the one that understands you", S(85, 2), LE(85), 120, 160, "saffron", "sm", "up")
-shot(c(86), "NAV" if have("NAV") else "CITY", "slow", ms=10.0)          # "NavIC... why does your phone still lean on America's G.P.S.?"
+shot(c(86), "ST_r2_inflag_1", "slow", ms=1.0)
+shot(W(86, "Navik") - PRE, "NAV" if have("NAV") else "ST_satellite_0", "slow", ms=10.0)          # "NavIC... why does your phone still lean on America's G.P.S.?"
 chip("NavIC · next story", S(86, 1), LE(86), 120, 640, "saffron", "sm", "up")
 shot(c(87), "plate", "slow")                                           # "Ask any A.I. one question in your mother tongue... tell me in the comments"
 bubble("Which A.I. answered best in your language?", "TELL ME IN THE COMMENTS", L(87, 0.1), VO_END - 1.6, 300, 380)
 shot(c(88), "plate", "slow")                                           # "This is Be Practical with Kishore. Stay practical. Jai Hind."
+
+
+# =====================================================================================================
+# WORD-LEVEL CUTAWAYS (owner, after r1): every name, place, number and verb gets its own picture on the word.
+# word_map.md is the plan; W(line, "word") is the word's film time. Over an animated plate the cutaway is dimmed
+# so the animation stays on top (three layers). No stock clip more than twice (owner's standing note).
+# =====================================================================================================
+D = dict(move="doc", origin="50% 30%")
+# real camera footage only, matched to the situation (owner, round 2: "all should look real and should match situation");
+# rejected by eye: CGI flags, satellites, HUDs, green-screen calendars, timers, progress bars, Western classrooms, a posed
+# actor, a "Mumbai" skyline that is Taipei, Pakistani rupee notes, CGI yuan, an "Aadhaar centre" photo of an MLA office.
+ins(W(1, "rain"), "RAIN", 1.0, ms=2.0)                                  # "Will it rain
+ins(W(1, "village"), "ST_r2_village_5", 1.6, ms=1.0)                    #  in my village tomorrow?"
+ins(W(3, "DeepSeek"), "D_deepseek_v3_abs", 1.1, **D)                    # "On DeepSeek,
+ins(W(3, "Chinese"), "ST_r2_china_3", 1.2, ms=2.0)                      #  the famous Chinese A.I."
+ins(W(4, "Marathi"), "ST_pune_1", 1.3, ms=1.0)                          # "Marathi, twenty."
+ins(W(4, "Telugu"), "ST_hyderabad_1", 1.3, ms=2.0)                      # "Telugu, twenty-five."
+ins(W(5, "India"), "ST_r2_inflag_3", 1.4, ms=1.0)                       # "So can India build...
+ins(W(6, "Chinese"), "ST_r2_cnflagr_2", 1.4, ms=1.0)                    # "Ask it in Chinese."
+ins(W(7, "people"), "FAB", 2.2, ms=6.0, dim=0.25)               # "the people who built it."
+ins(W(8, "pride"), "ST_inflag_1", 1.3, ms=2.0)                          # "not just pride."
+ins(W(8, "apps"), "ST_appstore_2", 1.5, ms=1.0)                         # "Your apps pay these machines"
+ins(W(9, "signed"), "TYP2", 1.4, ms=1.0)                                # "Maybe you signed up too."
+ins(W(9, "biggest"), "CROWD", 1.6, ms=8.0)                              # "one of its biggest markets."
+ins(W(11, "America"), "ST_usflag_1", 1.3, ms=1.0)                       # "One built in America?
+ins(W(11, "China"), "ST_r2_cnflagr_2", 1.3, ms=6.0)                     #  One built in China?
+ins(W(11, "here"), "ST_r2_inflag_3", 1.8, ms=8.0)                       #  Or one built here?"
+ins(W(13, "Chinese"), "ST_r2_shanghai_2", 1.3, ms=3.0)                  # "A small Chinese lab
+ins(W(13, "DeepSeek"), "D_deepseek_p1-01", 1.3, **D)                    #  called DeepSeek"
+ins(W(13, "downloads"), "ST_r2_phonein_2", 1.2, ms=1.0)                 # "in downloads
+ins(W(13, "Apple's"), "ST_appstore_2", 1.3, ms=6.0)                     #  on Apple's App Store
+ins(W(13, "America"), "ST_usflag_0", 1.4, ms=2.0)                       #  in America."
+ins(W(14, "five"), "ST_r2_usd_1", 1.6, ms=1.0)                          # "five and a half million dollars."
+ins(W(14, "American"), "ST_wallst_2", 1.6, ms=2.0)                      # "The American giants"
+ins(W(15, "Nvidia"), "NVD", 1.8, ms=20.0)
+namelt("Jensen Huang", "NVIDIA CEO", W(15, "Nvidia") + 0.1, W(15, "Nvidia") + 1.6)                               # "chip company Nvidia"
+ins(W(15, "fifty"), "RUP", 1.5, ms=3.0)                                 # "fifty lakh crore rupees."
+ins(W(16, "India's"), "ST_r2_parl_0", 1.5, ms=2.0)                      # "India's whole Union Budget"
+ins(W(17, "Delhi"), "ST_delhi_0", 1.2, ms=12.0)                         # "in Delhi,"
+ins(W(19, "inside"), "RACK", 1.4, ms=8.0)                               # "what's actually inside"
+ins(W(19, "magic"), "PCB", 1.4, ms=2.0)                                 # "it isn't magic."
+ins(W(20, "library"), "LIBA", 1.6, ms=5.0)                              # "a giant library."
+ins(W(20, "start"), "TYP2", 1.4, ms=5.0)                                # "You start a sentence"
+ins(W(21, "chatbot"), "ST_notify_0", 1.6, ms=2.0)                       # "all a chatbot does."
+ins(W(22, "library"), "LIBW", 1.3, ms=6.0)                              # "A library to read.
+ins(W(22, "reading"), "SEMI", 1.3, ms=2.0)                              #  A reading room
+ins(W(22, "teachers"), "ST_r2_itblr_0", 1.8, ms=2.0)                    #  And teachers"
+ins(W(23, "chips"), "ST_wafer_1", 1.3, ms=2.0)                          # "The reading room is chips,"
+ins(W(24, "teachers"), "ST_r2_itblr_3", 1.6, ms=1.0)                    # "India has the teachers."
+ins(W(24, "Indian"), "ST_r2_itblr_0", 1.6, ms=12.0)                     # "Indian engineers write software"
+ins(W(29, "fifty"), "ST_varanasi_2", 1.8, ms=3.0)                       # "more than fifty crore people."
+ins(W(30, "eight"), "KOL", 1.6, ms=8.0)                                 # "around eight crore people"
+ins(W(33, "China's"), "ST_r2_china_4", 1.4, ms=2.0)                     # "China's A.I."
+ins(W(33, "scripts"), "BAZ", 1.6, ms=6.0)                               # "a dozen different scripts."
+ins(W(34, "library"), "LIBA", 1.6, ms=12.0)                        # "this same library."
+ins(W(35, "rain"), "RAIN", 1.1, ms=9.0)                                 # "like rain
+ins(W(35, "village"), "ST_r2_village_0", 1.2, ms=1.0)                   #  or village"
+ins(W(38, "Page"), "ST_books_0", 1.3, ms=1.0)                           # "Page by page,"
+ins(W(39, "government"), "ST_r2_parl_0", 1.5, ms=9.0)                   # "A government data shelf"
+ins(W(40, "words"), "NEWS", 1.4, ms=8.0)                               # "words are only half of it."
+ins(W(41, "Nvidia"), "NVD", 1.2, ms=85.0, tag="FOOTAGE · NVIDIA")                # "made by... Nvidia."
+ins(W(43, "America"), "ST_usflag_1", 1.3, ms=6.0)                       # "designed in America
+ins(W(43, "Taiwan"), "ST_taipei_1", 1.6, ms=2.0)                        #  and made mostly in Taiwan."
+ins(W(45, "America's"), "ST_whitehouse_0", 1.6, ms=3.0)                 # "America's government"
+ins(W(45, "China"), "ST_r2_china_1", 1.4, ms=2.0)                       # "China was blocked."
+ins(W(47, "scrapped"), "D_bis_rescission", 1.8, **D)                    # "scrapped that rule."
+ins(W(49, "IndiaAI"), "D_indiaai_compute", 1.5, **D)                    # "Under the IndiaAI Mission,"
+ins(W(49, "startups"), "ST_r2_itblr_3", 1.5, ms=6.0)                    # "Indian startups and researchers"
+ins(W(51, "American"), "ST_usflag_0", 1.3, ms=9.0)                      # "one American company, Meta,"
+ins(W(53, "investors"), "ST_nyse_1", 1.5, move="in")                    # "Meta told its investors"
+ins(W(53, "buildings"), "ST_dcbuild_1", 1.6, ms=2.0)                    # "on buildings and machines"
+ins(W(55, "DeepSeek"), "D_deepseek_v3_abs", 1.3, move="doc", origin="50% 60%")   # "Because remember DeepSeek."
+ins(W(56, "China"), "ST_r2_shanghai_0", 1.4, ms=4.0)                    # "sold to China."
+ins(W(57, "biggest"), "ST_r2_dc_0", 1.3, ms=2.0)                             # "the biggest room."
+ins(W(57, "clever"), "PCB", 1.5, ms=8.0)                                # "clever engineering."
+ins(W(58, "government"), "PIB_image002946I", 1.4, move="left")          # "The government picks"
+ins(W(58, "Sarvam"), "PMX" if have("PMX") else "D_sarvam_blog", 1.8, ms=5.3)   # "A Bengaluru startup called Sarvam."
+ins(W(59, "Nvidia"), "NVD", 1.5, ms=30.0, tag="FOOTAGE · NVIDIA · H100 MODULE")                              # "those Nvidia chips"
+ins(W(60, "French"), "ST_paris_1", 1.6, ms=2.0)                         # "on top of a French one."
+ins(W(61, "home"), "ST_delhi_1", 1.4, ms=6.0)                           # "at home?"
+ins(W(62, "Delhi"), "ST_delhi_0", 1.2, ms=24.0)                         # "Bharat Mandapam, Delhi."
+ins(W(64, "India"), "ST_r2_inflag_1", 1.3, ms=6.0)                                # "In India."
+ins(W(66, "minister"), "VAI" if have("VAI") else "PIB_image001QNTH", 1.6, ms=62.0, move="crop2", origin="50% 18%")   # "The minister had hoped"
+ins(W(67, "Param"), "D_bharatgen_param2_hf", 1.6, **D)                  # "called Param Two"
+ins(W(68, "village"), "ST_pune_0", 1.4, ms=3.0)                         # "in my village tomorrow?"
+ins(W(73, "Odia"), "ST_konark_1", 1.6, ms=3.0, tag="PIXABAY · ODISHA")  # "Look at Odia."
+ins(W(75, "Maharashtra"), "ST_mantralaya_1", 1.6, move="in")            # "Maharashtra gave..."
+ins(W(77, "DeepSeek's"), "D_deepseek_p5-05", 1.4, **D)                  # "DeepSeek's newest big model"
+ins(W(78, "clusters"), "ST_r2_dcc_3", 1.3, ms=2.0)                             # "far bigger clusters,
+ins(W(78, "budgets"), "ST_r2_usd_0", 1.5, ms=2.0)                       #  with far bigger budgets."
+ins(W(80, "BharatGen's"), "BGN" if have("BGN") else "D_bharatgen_blog", 1.6, ms=116.0)   # "BharatGen's mandate"
+ins(W(82, "languages"), "NEWS", 1.6, ms=4.0)                            # "in our own languages."
+for lw, city, m, tg in [("Hindi", "ST_varanasi_0", 3.0, "PIXABAY · VARANASI"), ("Marathi", "ST_pune_0", 6.0, "PIXABAY · PUNE"),
+                        ("Telugu", "ST_hyderabad_0", 4.0, "PIXABAY · HYDERABAD"), ("Bengali", "ST_kolkata_0", 4.0, "PIXABAY · KOLKATA"),
+                        ("Odia", "ST_konark_1", 14.0, "PIXABAY · ODISHA")]:
+    ins(W(83, lw), city, 0.9, ms=m, dim=0.45, tag=tg)                   # "reads your Hindi, Marathi, Telugu, Bengali or Odia"
+ins(W(85, "Chat", 0), "D_techcrunch_go_free", 1.0, **D)                 # "Chat G.P.T.,
+ins(W(85, "DeepSeek"), "D_deepseek_v3_abs", 1.0, move="doc", origin="50% 50%")   #  DeepSeek,"
+ins(W(85, "understands"), "ST_farmerphone_1", 1.8, ms=2.0)              # "the one that really understands you."
+ins(W(86, "phone"), "ST_notify_0", 1.4, ms=6.0)                         # "why does your phone
+ins(W(86, "America's"), "CAP", 1.6, ms=6.0)                             #  still lean on America's G.P.S.?"
+ins(W(87, "mother"), "ST_farmerphone_1", 1.6, ms=9.0)                   # "in your mother tongue"
+ins(W(88, "Jai"), "ST_inflag_1", 1.6, ms=6.0, dim=0.2)                  # "Jai Hind."
 
 
 # ---------------- sound cues (build/make_sound.py reads build/sound.json) ----------------
@@ -716,6 +889,7 @@ CLEAN = {   # clean spans checked by eye on qa/owner_spans.jpg (raw source secon
     "BHA": [(4.1, 6.9), (13.9, 15.6), (15.8, 17.1), (48.1, 50.4)],
     "KIS": [(0.3, 3.9), (14.5, 16.8), (62.2, 67.7), (88.7, 89.9)],
     "TATA": [(72.8, 85.7)],
+    "NVD": [(0.5, 12.5), (17.0, 42.0), (84.6, 87.6)],   # Jensen Huang to camera; the closing logo card
     # the owner's YouTube clips (qa/yt_spans.jpg): spans between their own cuts, 0.1 s clear
     "VAI": [(0.2, 13.3), (20.5, 30.9), (37.5, 52.8), (60.4, 84.6), (92.3, 118.3)],
     "PMX": [(5.3, 14.8), (25.1, 27.0), (27.2, 28.6), (29.9, 35.1), (51.5, 64.5)],
@@ -825,6 +999,7 @@ def make_plate():
 def emit():
     make_plate()
     SEQ.sort(key=lambda s: s["t0"])
+    apply_ins()
     split_long()
     clean_assign()
     snap_frames()
