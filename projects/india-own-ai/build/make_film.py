@@ -89,18 +89,18 @@ FOOT = {  # third-party footage from the owner's Drive (asset-manifest.md): key 
     "TATA": ("01_Ap3ek027Feo.mp4", "FOOTAGE · BRIGHT WAY · TATA FAB SITE, DHOLERA"),
 }
 # owner-fetched YouTube clips (Termux, Creator/English/india-own-ai/footage/): used when present, else the fallback shot
-YT = {"VAI": "zhtFmBv2hmg", "SUM": "CsjZ30kdU0Q", "SAR": "7-Ss6DNonOc", "IND": "K7PBZSmJrXQ", "NAV": "85RfBSq6X04",
-      "BGN": "EF8XR_HZm2Q", "PKN": "Er0FGccFg3Q", "YTC": "HbFPkVyR_0k", "BHD": "6CCU07GFEus"}
-YT_TAG = {"VAI": "FOOTAGE · CNBC-TV18 · 30 JAN 2025", "SUM": "FOOTAGE · INDIA TODAY · BHARAT MANDAPAM · FEB 2026",
-          "SAR": "FOOTAGE · MYGOV INDIA · AI IMPACT SUMMIT · 18 FEB 2026", "IND": "FOOTAGE · SARVAM · INDUS",
-          "NAV": "FOOTAGE · CNBC-TV18 · GSLV-F18 / NVS-03 · 30 OCT 2026", "BGN": "FOOTAGE · AIM · BHARATGEN",
-          "PKN": "FOOTAGE · NDTV · PRATYUSH KUMAR, SARVAM", "YTC": "FOOTAGE · YOTTA · SHAKTI CLOUD", "BHD": "FOOTAGE · DIGITAL INDIA · BHASHA DAAN"}
+YT = {"VAI": "zhtFmBv2hmg", "PMX": "Y1mdgQkUHn0", "IND": "K7PBZSmJrXQ_h", "NAV": "85RfBSq6X04_h",
+      "BGN": "YNrzA_wRBW8", "PKN": "Er0FGccFg3Q", "BHD": "6CCU07GFEus"}
+YT_TAG = {"VAI": "FOOTAGE · CNBC-TV18 · INDIAAI BRIEFING · 30 JAN 2025", "PMX": "FOOTAGE · NARENDRA MODI · AI IMPACT EXPO, BHARAT MANDAPAM · FEB 2026",
+          "IND": "FOOTAGE · SARVAM · INDUS", "NAV": "FOOTAGE · CNBC-TV18 · GSLV-F18 / NVS-03 · 30 OCT 2026",
+          "BGN": "FOOTAGE · INDIA TODAY GLOBAL · BHARATGEN", "PKN": "FOOTAGE · NDTV · PRATYUSH KUMAR, SARVAM CO-FOUNDER",
+          "BHD": "FOOTAGE · DIGITAL INDIA · BHASHINI BHASHA DAAN"}
 
 
 def yt_file(key):
     d = A / "footage" / "yt"
     if d.exists():
-        for f in d.glob(f"*_{YT[key]}*.mp4"):
+        for f in d.glob(f"*_{YT[key]}.mp4"):
             return f
     return None
 
@@ -312,9 +312,9 @@ box("hkey", L(16), LE(16) + 1.0, 260, 330, inner="NVIDIA · LOST IN ONE DAY · �
 box("hbar c-saffron", S(16, 1) + 0.4, LE(16) + 1.0, 260, 640, 1284, 120, "grow", 1.4, style="background:linear-gradient(90deg,#c76a10,#ff9933)")
 box("hkey", S(16, 1) + 0.4, LE(16) + 1.0, 260, 590, inner="INDIA'S WHOLE UNION BUDGET 2025-26 · ₹50.65 LAKH CRORE")
 cite("[UNION BUDGET 2025-26 | OUR CONVERSION]", S(16, 1), LE(16) + 1.0)
-shot(c(17), "VAI" if have("VAI") else "PIB_image001QNTH", "slow" if have("VAI") else "in", ms=20.0)   # "Three days later... Ashwini Vaishnaw..."
+shot(c(17), "VAI" if have("VAI") else "PIB_image001QNTH", "crop2" if have("VAI") else "in", ms=0.2, origin="50% 18%")   # "Three days later... Ashwini Vaishnaw..."
 namelt("Ashwini Vaishnaw", "UNION I.T. MINISTER · 30 JAN 2025", L(17, 0.25), SE(17, 0))
-shot(S(17, 1) - PRE, "PIB_image002946I", "left")                       # "India will build its own A.I. model... within six months."
+shot(S(17, 1) - PRE, "VAI" if have("VAI") else "PIB_image002946I", "crop2" if have("VAI") else "left", ms=37.5, origin="50% 18%")                       # "India will build its own A.I. model... within six months."
 chip("Within 6 months", S(17, 1) + 1.5, LE(17), 120, 640, "saffron", "sm", "up")
 cite("[PIB | 30 JAN 2025]", L(17), LE(17))
 shot(c(18), "PIB_image002946I", "right")                               # "So did India keep that promise? You'll see."
@@ -410,9 +410,9 @@ for i in range(100):
     x, y = 430 + (i % 20) * 54, 220 + (i // 20) * 72
     box("pgi en" if i < 99 else "pgi in", L(37), LE(37), x, y, fx="fade", d=0.1)
 chip("Learned last · costs more", L(37, 0.6), LE(37), 520, 680, "red", "sm", "up")
-shot(c(38), "BHA", "crop", ms=48.2, origin="50% 40%")                  # "someone has to build the Indian part of the library. Page by page, voice by voice."
+shot(c(38), "BHD" if have("BHD") else "BHA", "slow" if have("BHD") else "crop", ms=27.7 if have("BHD") else 48.2, origin="50% 40%")                  # "someone has to build the Indian part of the library. Page by page, voice by voice."
 shot(S(38, 1) - PRE, "VOICE", "in", ms=3.0)
-shot(S(38, 2) - PRE, "BHA", "crop", ms=4.2, origin="50% 30%")
+shot(S(38, 2) - PRE, "BHD" if have("BHD") else "BHA", "slow" if have("BHD") else "crop", ms=63.5 if have("BHD") else 4.2, origin="50% 30%")
 chip("Bhasha Daan · speak, write, see", S(38, 1), LE(38), 120, 160, "saffron", "sm", "up")
 shot(c(39), "D_aikosh", "doc", origin="25% 85%", tag="DOCUMENT · AI KOSH · NOV 2026")   # "A.I. Kosh, now holds more than sixteen thousand collections."
 count(L(39, 0.5), LE(39), 120, 160, 0, 16140, L(39, 0.55), 0.45, "", "+ DATASETS", "saffron", "sm")
@@ -479,17 +479,17 @@ chip("Clever beats biggest", S(57, 1) + 0.3, LE(57), 120, 640, "saffron", "sm", 
 shot(c(58), "BLR2", "slow", ms=10.0)                                   # "April twenty twenty-five... A Bengaluru startup called Sarvam."
 datebig("APR 2025", "INDIAAI PICKS ITS FIRST MODEL BUILDER", L(58, 0.05), LE(58))
 chip("Sarvam · Bengaluru", L(58, 0.7), LE(58), 120, 640, "saffron", "", "up")
-shot(c(59), "PKN" if have("PKN") else "D_sarvam_blog", "slow" if have("PKN") else "doc", ms=30.0, origin="50% 30%")   # "Vivek Raghavan and Pratyush Kumar... four thousand chips"
-namelt("Vivek Raghavan · Pratyush Kumar", "CO-FOUNDERS · SARVAM", L(59, 0.2), S(59, 1))
+shot(c(59), "PKN" if have("PKN") else "D_sarvam_blog", "crop2" if have("PKN") else "doc", ms=5.1, origin="32% 45%")   # "Vivek Raghavan and Pratyush Kumar... four thousand chips"
+namelt("Pratyush Kumar", "CO-FOUNDER, SARVAM · WITH VIVEK RAGHAVAN", L(59, 0.2), S(59, 1))
 count(S(59, 1), LE(59), 120, 640, 0, 4096, S(59, 1) + 0.6, 0.45, "", " H100 CHIPS", "chip", "")
 shot(c(60), "D_sarvam_105b_hf", "doc", origin="50% 30%", tag="DOCUMENT · HUGGING FACE")   # "Sarvam's next model is built on top of a French one"
 chip("May 2025 · built on a French base", L(60, 0.35), LE(60), 120, 640, "abroad", "sm", "up")
 shot(c(61), "YOT", "slow", ms=11.0)                                    # "Can an Indian team train one from zero, start to finish, at home?"
 box("prog", S(61, 2), LE(61), 360, 680, inner='<div class="fill" style="transform:scaleX(0.02)"></div>')
 chip("From zero?", S(61, 2) + 0.3, LE(61), 720, 640, "saffron", "sm", "pop")
-shot(c(62), "SUM" if have("SUM") else "CITY", "slow", ms=20.0)         # "February twenty twenty-six. Bharat Mandapam, Delhi."
+shot(c(62), "PMX" if have("PMX") else "CITY", "slow", ms=5.3)         # "February twenty twenty-six. Bharat Mandapam, Delhi."
 datebig("18 FEB 2026", "BHARAT MANDAPAM · AI IMPACT SUMMIT", L(62, 0.05), LE(62))
-shot(c(63), "SAR" if have("SAR") else "D_sarvam_blog", "slow" if have("SAR") else "doc", ms=5.0, origin="50% 35%")   # "two new models... a hundred and five billion parameters"
+shot(c(63), "PMX" if have("PMX") else "D_sarvam_blog", "slow" if have("PMX") else "doc", ms=25.1, origin="50% 35%")   # "two new models... a hundred and five billion parameters"
 count(S(63, 1) + 0.4, SE(63, 1) + 3.5, 120, 640, 0, 105, S(63, 1) + 0.5, 0.45, "", " BN DIALS", "saffron", "xl")
 shot(c(64), "YOT", "slow", ms=43.0)                                    # "Trained from scratch. In India... twelve trillion pieces"
 el(f'<div class="prog" style="top:680px" {attrs(L(64), LE(64), "fade")}><div class="fill" data-at="{round(L(64) + 0.2, 3)}" data-fx="grow" data-d="3.0"></div></div>', L(64), LE(64))
@@ -504,7 +504,7 @@ for k, (x, lab, small, t) in enumerate([(140, "30 JAN 2025", "THE PROMISE", L(66
                                         (980, "+10 MONTHS", "AT THE MOST", S(66, 0) + 2.4), (1400, "18 FEB 2026", "DELIVERED", S(66, 1))]):
     box("tick", t, LE(66) + 1.2, x + 13, 563, fx="pop")
     box("tlab", t, LE(66) + 1.2, x, 600, fx="up", inner=f"<small>{esc(small)}</small>{esc(lab)}")
-shot(c(67), "BGN" if have("BGN") else "D_bharatgen_blog", "slow" if have("BGN") else "doc", ms=40.0, origin="50% 40%")   # "BharatGen... Param Two... twenty-two languages"
+shot(c(67), "BGN" if have("BGN") else "D_bharatgen_blog", "crop2" if have("BGN") else "doc", ms=111.9, origin="50% 25%")   # "BharatGen... Param Two... twenty-two languages"
 chip("BharatGen · IIT Bombay", L(67, 0.2), LE(67), 120, 640, "saffron", "sm", "up")
 chip("Param2 · 22 languages", L(67, 0.6), LE(67), 120, 760, "saffron", "sm", "up")
 # ---- the payoff: the same test, three choppers
@@ -716,6 +716,14 @@ CLEAN = {   # clean spans checked by eye on qa/owner_spans.jpg (raw source secon
     "BHA": [(4.1, 6.9), (13.9, 15.6), (15.8, 17.1), (48.1, 50.4)],
     "KIS": [(0.3, 3.9), (14.5, 16.8), (62.2, 67.7), (88.7, 89.9)],
     "TATA": [(72.8, 85.7)],
+    # the owner's YouTube clips (qa/yt_spans.jpg): spans between their own cuts, 0.1 s clear
+    "VAI": [(0.2, 13.3), (20.5, 30.9), (37.5, 52.8), (60.4, 84.6), (92.3, 118.3)],
+    "PMX": [(5.3, 14.8), (25.1, 27.0), (27.2, 28.6), (29.9, 35.1), (51.5, 64.5)],
+    "PKN": [(5.1, 24.7)],
+    "BGN": [(111.9, 123.9)],
+    "BHD": [(27.7, 28.8), (29.9, 31.5), (31.7, 32.7), (32.9, 34.0), (35.3, 37.3), (63.5, 65.7), (65.9, 68.5)],
+    "IND": [(0.5, 59.9)],
+    "NAV": [(15.3, 54.4)],
 }
 
 
