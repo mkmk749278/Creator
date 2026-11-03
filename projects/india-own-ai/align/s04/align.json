@@ -1,0 +1,312 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 2.428,
+  "te": "And India's job is harder than China's.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 2.852,
+  "end": 5.59,
+  "te": "China's A.I. mostly needs one written language.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.709,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 6.096,
+  "end": 11.538,
+  "te": "Your country's Constitution lists twenty-two, written in about a dozen different scripts.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.709,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 11.919,
+  "end": 13.584,
+  "te": "Each one needs its own shelf.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 1.036,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 14.109,
+  "end": 18.982,
+  "te": "And that's why your question cost so much more in Hindi, Marathi and Telugu.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 19.426,
+  "end": 20.302,
+  "te": "Remember the chopper?",
+  "en": "",
+  "speech_vs_text": 0.7,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 20.75,
+  "end": 23.216,
+  "te": "It learns its pieces from this same library.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.382,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 23.642,
+  "end": 28.948,
+  "te": "Words it sees all the time, like rain or village, become one neat piece each.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.141,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 29.317,
+  "end": 33.066,
+  "te": "Your words, which it hardly ever sees, get chopped into bits.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.141,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 33.361,
+  "end": 35.027,
+  "te": "Sometimes into half a letter.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.476,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 35.473,
+  "end": 36.019,
+  "te": "Here's the rule.",
+  "en": "",
+  "speech_vs_text": 0.65,
+  "boundary_margin": 9.9,
+  "confidence": "check"
+ },
+ {
+  "line": 12,
+  "start": 36.475,
+  "end": 38.677,
+  "te": "A machine learns from what it reads.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 39.019,
+  "end": 39.874,
+  "te": "And what goes wrong?",
+  "en": "",
+  "speech_vs_text": 0.77,
+  "boundary_margin": 0.662,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 40.269,
+  "end": 46.621,
+  "te": "If your language is only a tiny corner of the library, the machine learns it last... and charges you more.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.101,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 47.007,
+  "end": 49.972,
+  "te": "So someone has to build the Indian part of the library.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.101,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 50.394,
+  "end": 52.488,
+  "te": "Page by page, voice by voice.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.394,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 52.822,
+  "end": 54.889,
+  "te": "And that's slow, expensive work.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.47,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 55.363,
+  "end": 56.633,
+  "te": "And India has started.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.791,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 57.102,
+  "end": 60.564,
+  "te": "A government data shelf for Indian builders, called A.I.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.213,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 60.911,
+  "end": 63.712,
+  "te": "Kosh, now holds more than sixteen thousand collections.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.213,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 64.033,
+  "end": 65.695,
+  "te": "But words are only half of it.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.269,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 66.1,
+  "end": 69.293,
+  "te": "Even with a perfect library, you need a place to read it.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.269,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 69.626,
+  "end": 71.643,
+  "te": "And this is where India hits a wall.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.82,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 72.046,
+  "end": 73.492,
+  "te": "This is the reading room.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.676,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 73.918,
+  "end": 77.534,
+  "te": "A chip like this one, made by an American company called Nvidia.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.185,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 77.86,
+  "end": 81.997,
+  "te": "It's called a G.P.U., and a single one costs lakhs of rupees.",
+  "en": "",
+  "speech_vs_text": 1.25,
+  "boundary_margin": 0.185,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 82.327,
+  "end": 87.717,
+  "te": "And to train a big A.I., you need thousands of them, wired together, running for months.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.291,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 88.035,
+  "end": 88.868,
+  "te": "And here's the catch.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.291,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 89.239,
+  "end": 90.997,
+  "te": "India doesn't make these chips.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 91.305,
+  "end": 94.306,
+  "te": "They're designed in America and made mostly in Taiwan.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 1.359,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 94.629,
+  "end": 96.671,
+  "te": "If you watched our chip film, you know why.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 1.359,
+  "confidence": "high"
+ }
+]

@@ -1,0 +1,136 @@
+1
+00:00:00,000 --> 00:00:01,563
+Trained from scratch.
+
+2
+00:00:01,563 --> 00:00:02,609
+In India.
+
+3
+00:00:02,609 --> 00:00:05,000
+On those shared chips you just saw.
+
+4
+00:00:05,000 --> 00:00:10,010
+And before it ever talked to you, it read around twelve trillion pieces of text.
+
+5
+00:00:10,010 --> 00:00:12,547
+Then Sarvam did something generous.
+
+6
+00:00:12,547 --> 00:00:14,455
+It made the model open.
+
+7
+00:00:14,455 --> 00:00:19,293
+Any Indian developer can download it and build their own apps on it, for free.
+
+8
+00:00:19,293 --> 00:00:23,821
+The minister had hoped for six months, and later said ten at the most.
+
+9
+00:00:23,821 --> 00:00:25,352
+It took about a year.
+
+10
+00:00:25,352 --> 00:00:28,530
+Late, you could say... but delivered.
+
+11
+00:00:28,530 --> 00:00:32,478
+And that same week, BharatGen — a team led by I.I.T.
+
+12
+00:00:32,478 --> 00:00:38,529
+Bombay — showed its own model too, called Param Two, built for all twenty-two scheduled Indian languages.
+
+13
+00:00:38,529 --> 00:00:40,262
+Now remember my promise to you.
+
+14
+00:00:40,262 --> 00:00:41,561
+The chopping test.
+
+15
+00:00:41,561 --> 00:00:42,654
+Same question.
+
+16
+00:00:42,654 --> 00:00:44,607
+Will it rain in my village tomorrow?
+
+17
+00:00:44,607 --> 00:00:46,727
+DeepSeek's chopper, you've seen.
+
+18
+00:00:46,727 --> 00:00:48,063
+Hindi, eighteen.
+
+19
+00:00:48,063 --> 00:00:49,574
+Marathi, twenty.
+
+20
+00:00:49,574 --> 00:00:51,118
+Telugu, twenty-five.
+
+21
+00:00:51,118 --> 00:00:53,972
+The chopper behind Chat G.P.T.'s recent models...
+
+22
+00:00:53,972 --> 00:00:57,585
+Hindi eight, Marathi fourteen, Telugu fifteen.
+
+23
+00:00:57,585 --> 00:00:58,684
+And Sarvam's?
+
+24
+00:00:58,684 --> 00:01:01,636
+Hindi, eight — exactly the same as English.
+
+25
+00:01:01,636 --> 00:01:02,986
+Marathi, ten.
+
+26
+00:01:02,986 --> 00:01:04,370
+Telugu, eleven.
+
+27
+00:01:04,370 --> 00:01:06,489
+And this isn't one lucky sentence.
+
+28
+00:01:06,489 --> 00:01:11,992
+We ran the same test on more than a thousand sentences, each one in thirteen languages.
+
+29
+00:01:11,992 --> 00:01:13,146
+Look at Odia.
+
+30
+00:01:13,146 --> 00:01:17,010
+On DeepSeek's chopper, five and a half times the pieces of English.
+
+31
+00:01:17,010 --> 00:01:19,564
+On Sarvam's... less than one and a half.
+
+32
+00:01:19,564 --> 00:01:22,281
+And BharatGen's chopper does about as well.
+
+33
+00:01:22,281 --> 00:01:25,705
+So for your language, the gap shrinks, a lot.
+
+34
+00:01:25,705 --> 00:01:29,360
+Because this time... an Indian team put the missing pieces in.
+

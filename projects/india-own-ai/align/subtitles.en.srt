@@ -1,0 +1,988 @@
+1
+00:00:00,000 --> 00:00:02,745
+Ask an A.I. one simple question.
+
+2
+00:00:02,745 --> 00:00:04,863
+Will it rain in my village tomorrow?
+
+3
+00:00:04,863 --> 00:00:08,753
+Before it reads your question, the machine chops it into pieces.
+
+4
+00:00:08,753 --> 00:00:10,925
+In English... just eight.
+
+5
+00:00:10,925 --> 00:00:12,670
+Now ask it in Hindi.
+
+6
+00:00:12,670 --> 00:00:16,111
+On DeepSeek, the famous Chinese A.I.... eighteen.
+
+7
+00:00:16,111 --> 00:00:17,413
+More than double.
+
+8
+00:00:17,413 --> 00:00:19,060
+Marathi, twenty.
+
+9
+00:00:19,060 --> 00:00:21,061
+Telugu, twenty-five.
+
+10
+00:00:21,061 --> 00:00:24,601
+And in those two, it even cuts some of your letters in half.
+
+11
+00:00:24,601 --> 00:00:27,593
+So can India build an A.I. of its own?
+
+12
+00:00:27,593 --> 00:00:30,065
+One that speaks your language best?
+
+13
+00:00:30,065 --> 00:00:31,310
+Here's a clue for you.
+
+14
+00:00:31,310 --> 00:00:32,713
+Ask it in Chinese.
+
+15
+00:00:32,713 --> 00:00:33,951
+Seven pieces.
+
+16
+00:00:33,951 --> 00:00:35,367
+Fewer than English.
+
+17
+00:00:35,367 --> 00:00:36,693
+You see what's going on?
+
+18
+00:00:36,693 --> 00:00:40,751
+A machine speaks best in the language of the people who built it.
+
+19
+00:00:40,751 --> 00:00:42,222
+And it's not just pride.
+
+20
+00:00:42,222 --> 00:00:45,181
+Your apps pay these machines by the piece.
+
+21
+00:00:45,181 --> 00:00:49,303
+More pieces means a bigger bill, and a slower answer for you.
+
+22
+00:00:49,303 --> 00:00:51,240
+Now think back to last November.
+
+23
+00:00:51,240 --> 00:00:56,408
+Chat G.P.T.'s paid plan, called Go, became free in India for a whole year.
+
+24
+00:00:56,408 --> 00:00:57,935
+Maybe you signed up too.
+
+25
+00:00:57,935 --> 00:01:01,655
+OpenAI says India is now one of its biggest markets.
+
+26
+00:01:01,655 --> 00:01:06,404
+For the first people who signed up, that free year runs out... about now.
+
+27
+00:01:06,404 --> 00:01:09,847
+So when yours ends, whose machine will you be talking to?
+
+28
+00:01:09,847 --> 00:01:11,324
+One built in America?
+
+29
+00:01:11,324 --> 00:01:12,718
+One built in China?
+
+30
+00:01:12,718 --> 00:01:14,092
+Or one built here?
+
+31
+00:01:14,092 --> 00:01:18,756
+To see why India doesn't have its own yet, you have to go back to one Monday.
+
+32
+00:01:18,756 --> 00:01:21,765
+The twenty-seventh of January, twenty twenty-five.
+
+33
+00:01:21,765 --> 00:01:26,428
+A small Chinese lab called DeepSeek has just put out a free A.I.
+
+34
+00:01:26,428 --> 00:01:31,741
+By that Monday, it's beaten Chat G.P.T. in downloads on Apple's App Store in America.
+
+35
+00:01:32,573 --> 00:01:39,080
+DeepSeek says the final training run of its base model cost about five and a half million dollars.
+
+36
+00:01:39,080 --> 00:01:43,670
+The American giants, you may remember, were spending billions.
+
+37
+00:01:43,670 --> 00:01:49,725
+That day, the American chip company Nvidia loses around five hundred and ninety billion dollars in value.
+
+38
+00:01:49,725 --> 00:01:52,676
+That's about fifty lakh crore rupees.
+
+39
+00:01:52,676 --> 00:01:54,689
+Think about that number for a second.
+
+40
+00:01:54,689 --> 00:02:02,119
+It's roughly the size of India's whole Union Budget for that year... gone from one company in one day.
+
+41
+00:02:02,119 --> 00:02:07,707
+Three days later, in Delhi, India's I.T. minister, Ashwini Vaishnaw, makes a promise.
+
+42
+00:02:07,707 --> 00:02:13,507
+India will build its own A.I. model... and he hopes it will be ready within six months.
+
+43
+00:02:13,507 --> 00:02:15,999
+So did India keep that promise?
+
+44
+00:02:15,999 --> 00:02:16,944
+You'll see.
+
+45
+00:02:16,944 --> 00:02:22,461
+And around minute ten, I'll run that same chopping test for you again... on an Indian machine.
+
+46
+00:02:22,461 --> 00:02:24,077
+That's where it gets interesting.
+
+47
+00:02:24,077 --> 00:02:28,214
+But first, you need to know what's actually inside one of these machines.
+
+48
+00:02:28,214 --> 00:02:30,054
+Because it isn't magic.
+
+49
+00:02:30,054 --> 00:02:31,318
+It's three things.
+
+50
+00:02:31,318 --> 00:02:35,406
+Picture a child who has read every book in a giant library.
+
+51
+00:02:35,406 --> 00:02:38,942
+You start a sentence... and the child guesses your next word.
+
+52
+00:02:38,942 --> 00:02:39,979
+Then the next one.
+
+53
+00:02:39,979 --> 00:02:41,037
+Then the next.
+
+54
+00:02:41,037 --> 00:02:43,276
+That's really all a chatbot does.
+
+55
+00:02:43,276 --> 00:02:48,832
+It guesses the next piece, again and again, so well that you feel it's thinking.
+
+56
+00:02:48,832 --> 00:02:51,964
+So if you want to build one, you need three things.
+
+57
+00:02:51,964 --> 00:02:53,416
+A library to read.
+
+58
+00:02:53,416 --> 00:02:55,358
+A reading room where it can read.
+
+59
+00:02:55,358 --> 00:02:57,860
+And teachers who know how to train the child.
+
+60
+00:02:58,745 --> 00:03:04,021
+The library is words — trillions of pieces of text, like the ones you type.
+
+61
+00:03:04,021 --> 00:03:09,884
+The reading room is chips, thousands of them, running day and night for months.
+
+62
+00:03:09,884 --> 00:03:11,100
+And the teachers?
+
+63
+00:03:11,100 --> 00:03:12,460
+They're engineers.
+
+64
+00:03:12,460 --> 00:03:14,080
+India has the teachers.
+
+65
+00:03:14,080 --> 00:03:15,463
+You know this already.
+
+66
+00:03:15,463 --> 00:03:19,481
+Indian engineers write software for companies all over the world.
+
+67
+00:03:19,481 --> 00:03:23,123
+So your missing pieces are the library and the reading room.
+
+68
+00:03:23,123 --> 00:03:25,012
+Let's start with the library.
+
+69
+00:03:25,012 --> 00:03:27,584
+Almost nobody tells you about this part.
+
+70
+00:03:27,584 --> 00:03:30,441
+A lot of A.I. learns from the internet.
+
+71
+00:03:30,441 --> 00:03:34,471
+One of the biggest free copies of the web is called Common Crawl.
+
+72
+00:03:34,471 --> 00:03:41,012
+Many A.I. models learned from it, including an early model from the makers of the Chat G.P.T. you use.
+
+73
+00:03:41,012 --> 00:03:49,821
+So we took its latest copy, from October twenty twenty-six — more than two billion web pages — and checked its own count of languages.
+
+74
+00:03:49,821 --> 00:03:50,588
+English?
+
+75
+00:03:50,588 --> 00:03:53,560
+Forty-two out of every hundred pages.
+
+76
+00:03:53,560 --> 00:03:55,497
+Now, can you guess Hindi?
+
+77
+00:03:55,497 --> 00:04:00,345
+For every one page in Hindi... there are about two hundred pages in English.
+
+78
+00:04:00,345 --> 00:04:04,145
+And Hindi is the mother tongue of more than fifty crore people.
+
+79
+00:04:04,145 --> 00:04:04,985
+Marathi?
+
+80
+00:04:04,985 --> 00:04:06,439
+About fifteen hundred.
+
+81
+00:04:06,439 --> 00:04:07,161
+Telugu?
+
+82
+00:04:07,161 --> 00:04:09,088
+About two thousand three hundred.
+
+83
+00:04:09,088 --> 00:04:14,072
+And each of those is the mother tongue of around eight crore people, maybe yours.
+
+84
+00:04:14,072 --> 00:04:19,564
+All of India's languages together make up less than one page in every hundred.
+
+85
+00:04:19,564 --> 00:04:20,488
+Think about it.
+
+86
+00:04:20,488 --> 00:04:25,153
+More than one in every six people on Earth lives in your country.
+
+87
+00:04:25,153 --> 00:04:30,545
+But in the library these machines read, your language is almost invisible.
+
+88
+00:04:30,545 --> 00:04:33,397
+And India's job is harder than China's.
+
+89
+00:04:33,397 --> 00:04:36,641
+China's A.I. mostly needs one written language.
+
+90
+00:04:36,641 --> 00:04:42,464
+Your country's Constitution lists twenty-two, written in about a dozen different scripts.
+
+91
+00:04:42,464 --> 00:04:44,654
+Each one needs its own shelf.
+
+92
+00:04:44,654 --> 00:04:49,971
+And that's why your question cost so much more in Hindi, Marathi and Telugu.
+
+93
+00:04:49,971 --> 00:04:51,295
+Remember the chopper?
+
+94
+00:04:51,295 --> 00:04:54,187
+It learns its pieces from this same library.
+
+95
+00:04:54,187 --> 00:04:59,862
+Words it sees all the time, like rain or village, become one neat piece each.
+
+96
+00:04:59,862 --> 00:05:03,906
+Your words, which it hardly ever sees, get chopped into bits.
+
+97
+00:05:03,906 --> 00:05:06,018
+Sometimes into half a letter.
+
+98
+00:05:06,018 --> 00:05:07,020
+Here's the rule.
+
+99
+00:05:07,020 --> 00:05:09,564
+A machine learns from what it reads.
+
+100
+00:05:09,564 --> 00:05:10,814
+And what goes wrong?
+
+101
+00:05:10,814 --> 00:05:17,552
+If your language is only a tiny corner of the library, the machine learns it last... and charges you more.
+
+102
+00:05:17,552 --> 00:05:20,939
+So someone has to build the Indian part of the library.
+
+103
+00:05:20,939 --> 00:05:23,367
+Page by page, voice by voice.
+
+104
+00:05:23,367 --> 00:05:25,908
+And that's slow, expensive work.
+
+105
+00:05:25,908 --> 00:05:27,647
+And India has started.
+
+106
+00:05:27,647 --> 00:05:31,456
+A government data shelf for Indian builders, called A.I.
+
+107
+00:05:31,456 --> 00:05:34,578
+Kosh, now holds more than sixteen thousand collections.
+
+108
+00:05:34,578 --> 00:05:36,645
+But words are only half of it.
+
+109
+00:05:36,645 --> 00:05:40,171
+Even with a perfect library, you need a place to read it.
+
+110
+00:05:40,171 --> 00:05:42,591
+And this is where India hits a wall.
+
+111
+00:05:42,591 --> 00:05:44,463
+This is the reading room.
+
+112
+00:05:44,463 --> 00:05:48,405
+A chip like this one, made by an American company called Nvidia.
+
+113
+00:05:48,405 --> 00:05:52,872
+It's called a G.P.U., and a single one costs lakhs of rupees.
+
+114
+00:05:52,872 --> 00:05:58,580
+And to train a big A.I., you need thousands of them, wired together, running for months.
+
+115
+00:05:58,580 --> 00:05:59,784
+And here's the catch.
+
+116
+00:05:59,784 --> 00:06:01,850
+India doesn't make these chips.
+
+117
+00:06:01,850 --> 00:06:05,174
+They're designed in America and made mostly in Taiwan.
+
+118
+00:06:05,174 --> 00:06:07,516
+If you watched our chip film, you know why.
+
+119
+00:06:08,237 --> 00:06:13,659
+In January twenty twenty-five, India found out how fast that door can close.
+
+120
+00:06:13,659 --> 00:06:18,223
+Just days before leaving office, America's government put out a new rule.
+
+121
+00:06:18,223 --> 00:06:20,668
+It sorted the world into three groups.
+
+122
+00:06:20,668 --> 00:06:23,568
+Its closest allies could buy these chips freely.
+
+123
+00:06:23,568 --> 00:06:25,180
+China was blocked.
+
+124
+00:06:25,180 --> 00:06:26,243
+And India?
+
+125
+00:06:26,243 --> 00:06:31,438
+India was put in the middle group, with a limit on how many of these chips it could get.
+
+126
+00:06:31,438 --> 00:06:35,197
+Four months later, the new American government scrapped that rule.
+
+127
+00:06:35,197 --> 00:06:36,914
+But India had seen it.
+
+128
+00:06:36,914 --> 00:06:39,392
+The tap is in someone else's hand.
+
+129
+00:06:39,392 --> 00:06:41,045
+So what would you do?
+
+130
+00:06:41,045 --> 00:06:44,033
+India didn't wait to own a giant reading room.
+
+131
+00:06:44,033 --> 00:06:46,349
+It rented one... and shared it.
+
+132
+00:06:46,349 --> 00:06:51,444
+Under the IndiaAI Mission, private companies put their chips into one common pool.
+
+133
+00:06:51,444 --> 00:06:56,477
+Indian startups and researchers rent time on them, and the government pays part of the bill.
+
+134
+00:06:56,477 --> 00:07:01,822
+In January twenty twenty-five, India lined up more than eighteen thousand chips for that pool.
+
+135
+00:07:01,822 --> 00:07:05,377
+By June twenty twenty-six, more than forty-five thousand.
+
+136
+00:07:05,377 --> 00:07:06,971
+That's a big jump, right?
+
+137
+00:07:06,971 --> 00:07:15,179
+But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips.
+
+138
+00:07:15,179 --> 00:07:19,346
+Almost eight times your country's whole shared pool this June.
+
+139
+00:07:19,346 --> 00:07:20,235
+And the money?
+
+140
+00:07:20,235 --> 00:07:25,574
+India's whole A.I. mission is about ten thousand crore rupees, spread over five years.
+
+141
+00:07:25,574 --> 00:07:34,363
+This year alone, Meta told its investors it would spend around thirteen lakh crore rupees on buildings and machines, much of it for A.I.
+
+142
+00:07:35,142 --> 00:07:39,472
+So India's whole mission... ten thousand crore, over five years.
+
+143
+00:07:39,472 --> 00:07:43,822
+Meta alone... thirteen lakh crore, in one single year.
+
+144
+00:07:43,822 --> 00:07:44,927
+That's not double.
+
+145
+00:07:44,927 --> 00:07:47,374
+That's more than a hundred times as much.
+
+146
+00:07:47,374 --> 00:07:49,201
+So is it hopeless?
+
+147
+00:07:49,201 --> 00:07:49,871
+No.
+
+148
+00:07:49,871 --> 00:07:51,920
+Because remember DeepSeek.
+
+149
+00:07:51,920 --> 00:07:56,061
+DeepSeek says it trained its base model on about two thousand chips.
+
+150
+00:07:56,061 --> 00:07:57,776
+Not hundreds of thousands.
+
+151
+00:07:57,776 --> 00:08:02,171
+And they were a cut-down version, made so they could still be sold to China.
+
+152
+00:08:02,171 --> 00:08:04,439
+So what's the lesson for you and me?
+
+153
+00:08:04,439 --> 00:08:06,888
+You don't always need the biggest room.
+
+154
+00:08:06,888 --> 00:08:08,841
+You need clever engineering.
+
+155
+00:08:08,841 --> 00:08:11,471
+And that's a game Indian engineers can play.
+
+156
+00:08:11,471 --> 00:08:13,192
+April twenty twenty-five.
+
+157
+00:08:13,192 --> 00:08:17,776
+The government picks the first company to build India's own model from scratch.
+
+158
+00:08:17,776 --> 00:08:20,098
+A Bengaluru startup called Sarvam.
+
+159
+00:08:20,098 --> 00:08:25,031
+Sarvam was started by two Indians you should know, Vivek Raghavan and Pratyush Kumar.
+
+160
+00:08:25,031 --> 00:08:29,145
+The mission gives them about four thousand of those Nvidia chips to work with.
+
+161
+00:08:29,145 --> 00:08:31,768
+But a month later, the doubts begin.
+
+162
+00:08:31,768 --> 00:08:35,434
+Sarvam's next model is built on top of a French one.
+
+163
+00:08:35,434 --> 00:08:39,729
+And critics ask — if the base is foreign, how is it Indian?
+
+164
+00:08:39,729 --> 00:08:41,087
+Fair question, isn't it?
+
+165
+00:08:41,087 --> 00:08:42,285
+You'd ask it too.
+
+166
+00:08:42,285 --> 00:08:46,815
+Can an Indian team train one from zero, start to finish, at home?
+
+167
+00:08:46,815 --> 00:08:48,622
+February twenty twenty-six.
+
+168
+00:08:48,622 --> 00:08:50,182
+Bharat Mandapam, Delhi.
+
+169
+00:08:50,182 --> 00:08:52,341
+The India A.I.
+
+170
+00:08:52,341 --> 00:08:52,849
+Impact Summit.
+
+171
+00:08:52,849 --> 00:08:55,308
+There, Sarvam shows India two new models.
+
+172
+00:08:55,308 --> 00:08:58,974
+The bigger one has a hundred and five billion parameters.
+
+173
+00:08:58,974 --> 00:09:02,933
+Think of them as tiny dials the machine tunes while it reads.
+
+174
+00:09:03,639 --> 00:09:05,202
+Trained from scratch.
+
+175
+00:09:05,202 --> 00:09:06,248
+In India.
+
+176
+00:09:06,248 --> 00:09:08,639
+On those shared chips you just saw.
+
+177
+00:09:08,639 --> 00:09:13,649
+And before it ever talked to you, it read around twelve trillion pieces of text.
+
+178
+00:09:13,649 --> 00:09:16,186
+Then Sarvam did something generous.
+
+179
+00:09:16,186 --> 00:09:18,094
+It made the model open.
+
+180
+00:09:18,094 --> 00:09:22,932
+Any Indian developer can download it and build their own apps on it, for free.
+
+181
+00:09:22,932 --> 00:09:27,460
+The minister had hoped for six months, and later said ten at the most.
+
+182
+00:09:27,460 --> 00:09:28,991
+It took about a year.
+
+183
+00:09:28,991 --> 00:09:32,169
+Late, you could say... but delivered.
+
+184
+00:09:32,169 --> 00:09:36,117
+And that same week, BharatGen — a team led by I.I.T.
+
+185
+00:09:36,117 --> 00:09:42,168
+Bombay — showed its own model too, called Param Two, built for all twenty-two scheduled Indian languages.
+
+186
+00:09:42,168 --> 00:09:43,901
+Now remember my promise to you.
+
+187
+00:09:43,901 --> 00:09:45,200
+The chopping test.
+
+188
+00:09:45,200 --> 00:09:46,293
+Same question.
+
+189
+00:09:46,293 --> 00:09:48,246
+Will it rain in my village tomorrow?
+
+190
+00:09:48,246 --> 00:09:50,366
+DeepSeek's chopper, you've seen.
+
+191
+00:09:50,366 --> 00:09:51,702
+Hindi, eighteen.
+
+192
+00:09:51,702 --> 00:09:53,213
+Marathi, twenty.
+
+193
+00:09:53,213 --> 00:09:54,757
+Telugu, twenty-five.
+
+194
+00:09:54,757 --> 00:09:57,611
+The chopper behind Chat G.P.T.'s recent models...
+
+195
+00:09:57,611 --> 00:10:01,224
+Hindi eight, Marathi fourteen, Telugu fifteen.
+
+196
+00:10:01,224 --> 00:10:02,323
+And Sarvam's?
+
+197
+00:10:02,323 --> 00:10:05,275
+Hindi, eight — exactly the same as English.
+
+198
+00:10:05,275 --> 00:10:06,625
+Marathi, ten.
+
+199
+00:10:06,625 --> 00:10:08,009
+Telugu, eleven.
+
+200
+00:10:08,009 --> 00:10:10,128
+And this isn't one lucky sentence.
+
+201
+00:10:10,128 --> 00:10:15,631
+We ran the same test on more than a thousand sentences, each one in thirteen languages.
+
+202
+00:10:15,631 --> 00:10:16,785
+Look at Odia.
+
+203
+00:10:16,785 --> 00:10:20,649
+On DeepSeek's chopper, five and a half times the pieces of English.
+
+204
+00:10:20,649 --> 00:10:23,203
+On Sarvam's... less than one and a half.
+
+205
+00:10:23,203 --> 00:10:25,920
+And BharatGen's chopper does about as well.
+
+206
+00:10:25,920 --> 00:10:29,344
+So for your language, the gap shrinks, a lot.
+
+207
+00:10:29,344 --> 00:10:32,864
+Because this time... an Indian team put the missing pieces in.
+
+208
+00:10:33,730 --> 00:10:35,522
+And it's already at work.
+
+209
+00:10:35,522 --> 00:10:40,177
+Sarvam says its models help run Aadhaar services in Indian languages.
+
+210
+00:10:40,177 --> 00:10:46,807
+And in October, Maharashtra gave Sarvam's A.I. assistant to two thousand five hundred government officials.
+
+211
+00:10:46,807 --> 00:10:50,095
+So has India built its own Chat G.P.T.?
+
+212
+00:10:50,095 --> 00:10:51,600
+Let me be honest with you.
+
+213
+00:10:51,600 --> 00:10:54,155
+Not one that matches the best in the world.
+
+214
+00:10:54,155 --> 00:10:55,003
+Not yet.
+
+215
+00:10:55,003 --> 00:11:00,243
+DeepSeek's newest big model has one point six trillion of those dials in total.
+
+216
+00:11:00,243 --> 00:11:02,234
+About fifteen times Sarvam's.
+
+217
+00:11:02,234 --> 00:11:05,039
+And Sarvam says it plainly, in its own report.
+
+218
+00:11:05,039 --> 00:11:11,123
+The newest models from other labs are trained on far bigger clusters, with far bigger budgets.
+
+219
+00:11:11,123 --> 00:11:12,711
+Here's the real scoreboard.
+
+220
+00:11:12,711 --> 00:11:14,669
+India has the teachers.
+
+221
+00:11:14,669 --> 00:11:16,957
+India has started on the library.
+
+222
+00:11:16,957 --> 00:11:18,422
+And for the reading room...
+
+223
+00:11:18,422 --> 00:11:20,660
+India still rents the chips.
+
+224
+00:11:20,660 --> 00:11:21,641
+What's next?
+
+225
+00:11:21,641 --> 00:11:28,393
+The IndiaAI Mission has now picked twenty Indian proposals to build models, Sarvam and BharatGen among them.
+
+226
+00:11:28,393 --> 00:11:33,638
+And BharatGen's mandate is to keep scaling, all the way up to a trillion dials.
+
+227
+00:11:33,638 --> 00:11:35,201
+So here's the lesson.
+
+228
+00:11:35,201 --> 00:11:39,459
+A machine speaks best in the language of the people who build it.
+
+229
+00:11:39,459 --> 00:11:47,921
+If India only rents other countries' machines, you and I will keep paying extra to be understood... in our own languages.
+
+230
+00:11:47,921 --> 00:11:57,171
+But today, there's an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
+
+231
+00:11:57,171 --> 00:11:59,251
+So what does this mean for you?
+
+232
+00:11:59,251 --> 00:12:03,073
+First, check your Chat G.P.T. plan before the free year ends.
+
+233
+00:12:03,073 --> 00:12:06,381
+Once it's over, it can start charging you on its own.
+
+234
+00:12:07,113 --> 00:12:13,666
+And before you pay for any A.I., ask the same question in your own language to two or three of them.
+
+235
+00:12:13,666 --> 00:12:19,255
+Chat G.P.T., DeepSeek, and an Indian one, like Sarvam's app, called Indus.
+
+236
+00:12:19,255 --> 00:12:22,656
+Pay only for the one that really understands you.
+
+237
+00:12:22,656 --> 00:12:26,580
+And A.I. isn't the only thing India has built for itself.
+
+238
+00:12:26,580 --> 00:12:31,143
+Did you know India has its own satellite navigation, up in space?
+
+239
+00:12:31,143 --> 00:12:32,765
+It's called Navik.
+
+240
+00:12:32,765 --> 00:12:36,902
+So why does your phone still lean on America's G.P.S.?
+
+241
+00:12:36,902 --> 00:12:38,595
+That's our next story.
+
+242
+00:12:38,595 --> 00:12:40,878
+Before you go, try this tonight.
+
+243
+00:12:40,878 --> 00:12:47,407
+Ask any A.I. one question in your mother tongue... and tell me in the comments which one answered best.
+
+244
+00:12:47,407 --> 00:12:49,027
+I read every one.
+
+245
+00:12:49,027 --> 00:12:51,240
+This is Be Practical with Kishore.
+
+246
+00:12:51,240 --> 00:12:52,337
+Stay practical.
+
+247
+00:12:52,337 --> 00:12:53,007
+Jai Hind.
+

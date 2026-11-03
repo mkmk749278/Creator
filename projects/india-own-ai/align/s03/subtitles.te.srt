@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:05,276
+The library is words — trillions of pieces of text, like the ones you type.
+
+2
+00:00:05,276 --> 00:00:11,139
+The reading room is chips, thousands of them, running day and night for months.
+
+3
+00:00:11,139 --> 00:00:12,355
+And the teachers?
+
+4
+00:00:12,355 --> 00:00:13,715
+They're engineers.
+
+5
+00:00:13,715 --> 00:00:15,335
+India has the teachers.
+
+6
+00:00:15,335 --> 00:00:16,718
+You know this already.
+
+7
+00:00:16,718 --> 00:00:20,736
+Indian engineers write software for companies all over the world.
+
+8
+00:00:20,736 --> 00:00:24,378
+So your missing pieces are the library and the reading room.
+
+9
+00:00:24,378 --> 00:00:26,267
+Let's start with the library.
+
+10
+00:00:26,267 --> 00:00:28,839
+Almost nobody tells you about this part.
+
+11
+00:00:28,839 --> 00:00:31,696
+A lot of A.I. learns from the internet.
+
+12
+00:00:31,696 --> 00:00:35,726
+One of the biggest free copies of the web is called Common Crawl.
+
+13
+00:00:35,726 --> 00:00:42,267
+Many A.I. models learned from it, including an early model from the makers of the Chat G.P.T. you use.
+
+14
+00:00:42,267 --> 00:00:51,076
+So we took its latest copy, from October twenty twenty-six — more than two billion web pages — and checked its own count of languages.
+
+15
+00:00:51,076 --> 00:00:51,843
+English?
+
+16
+00:00:51,843 --> 00:00:54,815
+Forty-two out of every hundred pages.
+
+17
+00:00:54,815 --> 00:00:56,752
+Now, can you guess Hindi?
+
+18
+00:00:56,752 --> 00:01:01,600
+For every one page in Hindi... there are about two hundred pages in English.
+
+19
+00:01:01,600 --> 00:01:05,400
+And Hindi is the mother tongue of more than fifty crore people.
+
+20
+00:01:05,400 --> 00:01:06,240
+Marathi?
+
+21
+00:01:06,240 --> 00:01:07,694
+About fifteen hundred.
+
+22
+00:01:07,694 --> 00:01:08,416
+Telugu?
+
+23
+00:01:08,416 --> 00:01:10,343
+About two thousand three hundred.
+
+24
+00:01:10,343 --> 00:01:15,327
+And each of those is the mother tongue of around eight crore people, maybe yours.
+
+25
+00:01:15,327 --> 00:01:20,819
+All of India's languages together make up less than one page in every hundred.
+
+26
+00:01:20,819 --> 00:01:21,743
+Think about it.
+
+27
+00:01:21,743 --> 00:01:26,408
+More than one in every six people on Earth lives in your country.
+
+28
+00:01:26,408 --> 00:01:31,100
+But in the library these machines read, your language is almost invisible.
+

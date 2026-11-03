@@ -1,0 +1,322 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 3.848,
+  "te": "So India's whole mission... ten thousand crore, over five years.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 4.33,
+  "end": 8.157,
+  "te": "Meta alone... thirteen lakh crore, in one single year.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.171,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 8.68,
+  "end": 9.474,
+  "te": "That's not double.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.662,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 9.785,
+  "end": 11.687,
+  "te": "That's more than a hundred times as much.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.175,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 12.232,
+  "end": 13.588,
+  "te": "So is it hopeless?",
+  "en": "",
+  "speech_vs_text": 1.24,
+  "boundary_margin": 0.175,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 14.059,
+  "end": 14.326,
+  "te": "No.",
+  "en": "",
+  "speech_vs_text": 2.0,
+  "boundary_margin": 1.882,
+  "confidence": "check"
+ },
+ {
+  "line": 7,
+  "start": 14.729,
+  "end": 16.424,
+  "te": "Because remember DeepSeek.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 2.419,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 16.778,
+  "end": 20.607,
+  "te": "DeepSeek says it trained its base model on about two thousand chips.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.281,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 20.919,
+  "end": 22.31,
+  "te": "Not hundreds of thousands.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.281,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 22.634,
+  "end": 26.633,
+  "te": "And they were a cut-down version, made so they could still be sold to China.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.862,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 27.029,
+  "end": 28.89,
+  "te": "So what's the lesson for you and me?",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 1.35,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 29.297,
+  "end": 31.415,
+  "te": "You don't always need the biggest room.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.244,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 31.746,
+  "end": 33.261,
+  "te": "You need clever engineering.",
+  "en": "",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 0.244,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 33.699,
+  "end": 35.973,
+  "te": "And that's a game Indian engineers can play.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.449,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 36.329,
+  "end": 37.629,
+  "te": "April twenty twenty-five.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 1.156,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 38.05,
+  "end": 42.27,
+  "te": "The government picks the first company to build India's own model from scratch.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.474,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 42.634,
+  "end": 44.609,
+  "te": "A Bengaluru startup called Sarvam.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.327,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 44.956,
+  "end": 49.53,
+  "te": "Sarvam was started by two Indians you should know, Vivek Raghavan and Pratyush Kumar.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.327,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 49.889,
+  "end": 53.551,
+  "te": "The mission gives them about four thousand of those Nvidia chips to work with.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.185,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 54.003,
+  "end": 56.281,
+  "te": "But a month later, the doubts begin.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.185,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 56.626,
+  "end": 59.895,
+  "te": "Sarvam's next model is built on top of a French one.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.198,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 60.292,
+  "end": 64.148,
+  "te": "And critics ask — if the base is foreign, how is it Indian?",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.034,
+  "confidence": "check"
+ },
+ {
+  "line": 23,
+  "start": 64.587,
+  "end": 65.577,
+  "te": "Fair question, isn't it?",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.034,
+  "confidence": "check"
+ },
+ {
+  "line": 24,
+  "start": 65.945,
+  "end": 66.766,
+  "te": "You'd ask it too.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 4.649,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 67.143,
+  "end": 71.305,
+  "te": "Can an Indian team train one from zero, start to finish, at home?",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.259,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 71.673,
+  "end": 73.208,
+  "te": "February twenty twenty-six.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.259,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 73.48,
+  "end": 74.758,
+  "te": "Bharat Mandapam, Delhi.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 75.04,
+  "end": 76.815,
+  "te": "The India A.I.",
+  "en": "",
+  "speech_vs_text": 2.66,
+  "boundary_margin": 9.9,
+  "confidence": "check"
+ },
+ {
+  "line": 29,
+  "start": 77.199,
+  "end": 77.554,
+  "te": "Impact Summit.",
+  "en": "",
+  "speech_vs_text": 0.44,
+  "boundary_margin": 0.563,
+  "confidence": "check"
+ },
+ {
+  "line": 30,
+  "start": 77.707,
+  "end": 79.877,
+  "te": "There, Sarvam shows India two new models.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.563,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 80.166,
+  "end": 83.522,
+  "te": "The bigger one has a hundred and five billion parameters.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.612,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 83.832,
+  "end": 87.491,
+  "te": "Think of them as tiny dials the machine tunes while it reads.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ }
+]
