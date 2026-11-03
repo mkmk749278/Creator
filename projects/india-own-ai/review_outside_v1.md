@@ -40,3 +40,9 @@ picked is needed. New rows A84–A92 in `claims.csv`.
   Indus (TechCrunch 20 Feb 2026, Outlook Business, Storyboard18; HMD pre-loads it). Tech Mahindra's "Project Indus"
   and PhonePe's "Indus Appstore" are different things; the VO says "Sarvam's app, called Indus", which is exact.
 - **Dashes (PDF 1):** not taken, per the owner's PDF 2.
+
+## Round 3 (owner's note, 2026-11-03)
+- "Duplicate in block 8": none in the current file. The note compared the v4 block split with v5's; restoring the
+  DeepSeek line moved the boundaries, so the Aadhaar/Maharashtra and "Not yet" lines now open block 8 (once).
+- Meta and Indus raised again; the owner chose (AskUserQuestion) **keep "Meta alone"** and **keep "Sarvam's app,
+  called Indus"** after the evidence above. **Text final (narration v5).**
