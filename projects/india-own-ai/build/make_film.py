@@ -412,7 +412,7 @@ shot(c(23), "HPAGE", "in", ms=8.0)                                       # "The 
 chip("Library = words", L(23, 0.1), SE(23, 0), 120, 640, "paper", "sm", "up")
 shot(S(23, 1) - PRE, "LED", "slow", ms=0.5)                            # "The reading room is chips..."
 chip("Reading room = chips", S(23, 1), SE(23, 1), 120, 640, "chip", "sm", "up")
-shot(S(23, 2) - PRE, "ST_coding_2", "slow", ms=30.0)                           # "And the teachers? They're engineers."
+shot(S(23, 2) - PRE, "ST_r2_itblr_3", "slow", ms=12.0)   # (a third use, on purpose: the only real Indian engineers we have; the laptop clip shows a fake hacker screen)                           # "And the teachers? They're engineers."
 chip("Teachers = engineers", S(23, 2), LE(23), 120, 640, "saffron", "sm", "up")
 shot(c(24), "BLR", "slow", ms=1.0)                                     # "India has the teachers... software for companies all over the world."
 shot(S(24, 2) - PRE, "BLR2", "slow", ms=14.0)   # (the Business Standard clip burns its own captions in: dropped, round 1 review)
@@ -553,7 +553,7 @@ namelt("Pratyush Kumar", "CO-FOUNDER, SARVAM · WITH VIVEK RAGHAVAN", L(59, 0.2)
 count(S(59, 1), LE(59), 120, 640, 0, 4096, S(59, 1) + 0.6, 0.45, "", " H100 CHIPS", "chip", "")
 shot(c(60), "D_sarvam_105b_hf", "doc", origin="50% 30%", tag="DOCUMENT · HUGGING FACE")   # "Sarvam's next model is built on top of a French one"
 chip("May 2025 · built on a French base", L(60, 0.35), LE(60), 120, 640, "abroad", "sm", "up")
-shot(c(61), "ST_coding_2", "slow", ms=50.0)   # (the NDTV clip at 15 s is a stage with its own anchor captions: not used)                                    # "Can an Indian team train one from zero, start to finish, at home?"
+shot(c(61), "ST_r2_itblr_0", "slow", ms=22.0)   # (the NDTV clip at 15 s is a stage with its own anchor captions: not used)                                    # "Can an Indian team train one from zero, start to finish, at home?"
 box("prog", S(61, 2), LE(61), 360, 680, inner='<div class="fill" style="transform:scaleX(0.02)"></div>')
 chip("From zero?", S(61, 2) + 0.3, LE(61), 720, 640, "saffron", "sm", "pop")
 shot(c(62), "PMX" if have("PMX") else "CITY", "slow", ms=5.3)         # "February twenty twenty-six. Bharat Mandapam, Delhi."
