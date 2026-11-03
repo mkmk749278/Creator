@@ -23,7 +23,7 @@ turns "sovereign AI", an abstract word, into a meter the viewer can see.
 | | Angle | Verdict |
 |---|---|---|
 | ★ A | **The language tax.** One village question, chopped into pieces; the chopper learns from a library that is 0.02% Telugu; India builds its own library, rents a reading room, and its own machine reads Telugu at under half DeepSeek's count. | Best: an original measurement, a felt mechanism, Telugu/Tamil/Odia viewers see their own script on screen, and a proud but honest payoff |
-| B | **The ten-month promise.** 30 Jan 2025 the minister says India will have its own model in about ten months; 18 Feb 2026 Sarvam 105B. Did India deliver? | A good spine for chapter 5, not a film: the answer is "yes, a bit late", so no tension left |
+| B | **The ten-month promise.** 30 Jan 2025 the minister says India will have its own model "within six months" (PIB), later "ten at the most"; 18 Feb 2026 Sarvam 105B. Did India deliver? | A good spine for chapter 5, not a film: the answer is "yes, a bit late", so no tension left |
 | C | **DeepSeek on a budget.** How a Chinese lab did it with ~2,000 restricted chips. | Foreign hero; becomes the hope beat in chapter 4 ("you need the cleverest engineers, not the biggest room") |
 | D | **Why is ChatGPT free in India?** The free Go year from 4 Nov 2025 runs out from this month. | Strong news hook and a lived-memory anchor, but a business story; it becomes the 0:30 anchor and the plant for the ending |
 
@@ -46,7 +46,7 @@ loop: "just before minute ten, the same test on an Indian machine") → 1:50 **H
 read a library; three ingredients: library, reading room, teachers) → 3:05 **Why AI is weak in Indian languages** (the
 library count: 2,300 English pages for each Telugu page; why the chopper splits letters; AI Kosh) → 4:50 **India's GPU
 problem** (one chip, lakhs of rupees; India makes none; the January 2025 US rule; the shared pool 18,693 → 45,000+;
-Meta's 350,000; ₹10,000 crore vs ₹10 lakh crore; DeepSeek's 2,048 cut-down chips) → 7:05 **What India built: Sarvam
+Meta's 350,000; ₹10,000 crore vs ~₹13 lakh crore; DeepSeek's 2,048 cut-down chips) → 7:05 **What India built: Sarvam
 and BharatGen** (April 2025 pick; the French-base criticism; Bharat Mandapam 2026; the meter again; Odia; Aadhaar,
 Maharashtra) → 9:30 **Has India caught up?** (671B vs 105B; Sarvam's own admission; the trillion-dial mandate; 20 more
 teams; the lesson; what it means for you) → outro: bridge to NavIC, pinned-comment challenge.
@@ -67,11 +67,11 @@ rule, Sarvam's model card).
 ## Signature moments
 1. **The letter cut in half** (~0:10): the Telugu tile for ఊ splits down the middle into two dead grey shards (real
    byte pieces from the DeepSeek tokenizer, `research/token_example.txt`). The image the film is remembered by.
-2. **The library to scale** (~3:40): a single Telugu page on a desk; the camera pulls back as 2,313 English pages stack
-   beside it into a tower, counted live (to scale; "OUR COUNT | COMMON CRAWL, OCT 2026").
+2. **The library to scale** (~3:40): a single Telugu page on a desk; the camera pulls back as 2,308 English pages stack
+   beside it into a tower, counted live (to scale; "COMMON CRAWL'S OWN COUNT, OCT 2026").
 3. **The meter again** (~9:35): the same village question, three machines side by side: 25, 15, 11. Then the Odia bar
    collapses from 5.5× to 1.4×. Silence, then a single saffron chime.
-4. Supporting: the hundred-times stack (₹10,000 crore as one brick, ₹10 lakh crore as a wall), animated, never written.
+4. Supporting: the hundred-times stack (₹10,000 crore as one brick, about ₹13 lakh crore as a wall of 124–133 bricks), animated, never written.
 
 ## Sound
 Room tone of a library (page turns, a clock), cooling-fan roar of a data hall, a soft tile "tick" for each token (the

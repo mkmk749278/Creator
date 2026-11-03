@@ -40,7 +40,7 @@ Telugu letters in half" is literal. Translation to be checked by a Telugu reader
 
 **Common Crawl language count.** `https://raw.githubusercontent.com/commoncrawl/cc-crawl-statistics/master/plots/languages.csv`,
 crawl `CC-MAIN-2026-43` (October 2026): total 2,169,426,757 pages; English 923,409,281 (42.56%); Telugu 400,109
-(0.0184%) → 2,313 English pages per Telugu page; Hindi 0.2111%; Tamil 0.0434%; Odia 0.0064%; all Indian languages
+(0.0184%) → 2,308 English pages per Telugu page (fact-check: 923,409,281 ÷ 400,109); Hindi 0.2111%; Tamil 0.0434%; Odia 0.0064%; all Indian languages
 (hin tel tam ben mar kan mal guj ori pan urd asm san nep) 0.570% → "less than one page in every hundred". Primary
 language as detected by CLD2 (Common Crawl's method). Common Crawl blog lists the October 2026 crawl.
 
