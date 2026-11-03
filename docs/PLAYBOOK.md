@@ -2011,6 +2011,19 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
   dozen scripts. If one language is singled out (the worst case, a payoff), say why on air.
 - **Measure every example language, don't assume:** Hindi was 18 pieces on DeepSeek but showed no split letters;
   Marathi and Telugu did. The VO says "cuts letters" only for the two where it is true.
+- **Every text style needs the bundled script fonts, not only the tiles.** Round 1's payoff labels (हिंदी, తెలుగు in
+  `.hval`/`.hkey`) rendered as empty boxes on GitHub's runners, which have no Indian-script fonts; local snapshots
+  looked fine because this container has some. *Fix:* `--sans` and `--mono` in `video/aig/_shared/aig.css` fall back to
+  the bundled Deva/Telu/Taml/Orya/Beng/SC faces. *Check:* look at the runner's render, never only local snapshots.
+- **Run `npx hyperframes check` on every part before triggering renders:** the workflow stops on layout errors (two
+  text blocks overlapping), and the first run lost four renders to them. `build/snap.py` (film-time snapshots) plus the
+  check catch both the look and the overlaps in the session.
+- **Never commit part media** (`video/aig/*/media/` is ignored): it goes to the render as Drive tars. A tar that also
+  carries `shared/` overwrites a newer committed style file; ship style fixes as a small `pN_z.tar` that unpacks after.
+- **News clips with burned-in captions:** the Business Standard clip's own "₹15,000 crore buyback" text showed under
+  "India has the teachers". Use only spans with no on-screen text of their own.
+- **ElevenLabs music and SFX** (owner, 2026-11-03: open sources first; FreePD has closed, Incompetech needs a credit
+  we don't print): music is billed apart from the voice characters; at most 2 requests at once (a third gets 429).
 - **Outside AI reviews keep being wrong on numbers:** the pasted review said Meta's capex was $38–45 bn (its 2026
   guidance is $135–145 bn) and that Sarvam's app isn't called Indus (it is). Check every point against `claims.csv`
   first (`projects/india-own-ai/review_outside_v1.md`).
