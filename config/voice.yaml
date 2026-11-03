@@ -1,0 +1,14 @@
+# ElevenLabs voices used from the session (scripts/eleven_tts.py). Key: ELEVENLABS_API_KEY (environment secret).
+# Owner, 2026-11-03 (app screenshot): voice "Akash - Confident and Natural", Eleven v4, Stability "Creative",
+# Similarity just past the middle (~0.6), Language override none (auto), MP3 44.1 kHz 128 kbps.
+# Eleven v3/v4 stability presets: Creative = 0.0, Natural = 0.5, Robust = 1.0.
+voices:
+  akash:
+    name: "Akash - Confident and Natural"
+    voice_id: cQA1lL0fn7iAFW1w50SR
+    model_id: eleven_v4
+    output_format: mp3_44100_128
+    language_code: null        # auto (owner's setting)
+    settings:
+      stability: 0.0           # "Creative"
+      similarity_boost: 0.6

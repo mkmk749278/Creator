@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- T1 "8 vs 25": the same village question, English vs Telugu, as the DeepSeek tokenizer really chops it
+     (research/token_example.txt). Red tiles = byte pieces of a single Telugu letter cut in half. -->
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:Inter;font-weight:800;src:url(inter-latin-800-normal.woff2)}
+@font-face{font-family:Inter;font-weight:600;src:url(inter-latin-600-normal.woff2)}
+@font-face{font-family:Tel;font-weight:800;src:url(noto-sans-telugu-telugu-800-normal.woff2)}
+@font-face{font-family:Tel;font-weight:600;src:url(noto-sans-telugu-telugu-600-normal.woff2)}
+html,body{margin:0;width:1280px;height:720px;overflow:hidden}
+body{background:radial-gradient(120% 90% at 70% 40%,#fff6df 0%,#ffd98a 55%,#f2a93b 100%);font-family:Inter,Tel,sans-serif;position:relative}
+.row{position:absolute;left:44px;display:flex;flex-wrap:wrap;gap:10px}
+.t{font:600 30px Inter,Tel;padding:10px 14px;border-radius:12px;background:#fff;color:#1c2330;box-shadow:0 4px 0 #0002}
+.en .t{background:#1f3a5f;color:#fff}
+.te .t{background:#fff;border:3px solid #1c2330;font-family:Tel,Inter;font-weight:800;font-size:34px}
+.te .bad{background:#e0262b;color:#fff;border-color:#8a0f12;transform:rotate(-8deg)}
+.te .bad2{transform:rotate(9deg)}
+.num{position:absolute;font:800 150px/1 Inter;color:#1c2330;letter-spacing:-6px}
+.lab{position:absolute;font:800 30px Inter;color:#1c2330;letter-spacing:2px}
+.q{position:absolute;right:40px;top:28px;font:800 74px/0.95 Inter;color:#1c2330;text-align:right;letter-spacing:-2px}
+.q b{color:#e0262b}
+.logo{position:absolute;left:44px;bottom:26px;width:64px;opacity:.9}
+</style></head><body>
+<div class="lab" style="left:48px;top:40px">ENGLISH</div>
+<div class="num" style="left:40px;top:76px">8</div>
+<div class="row en" style="top:110px;left:170px;width:560px">
+  <span class="t">Will</span><span class="t">it</span><span class="t">rain</span><span class="t">in</span><span class="t">my</span><span class="t">village</span><span class="t">tomorrow</span><span class="t">?</span>
+</div>
+<div class="lab" style="left:48px;top:300px">తెలుగు · TELUGU</div>
+<div class="num" style="left:40px;top:340px;color:#e0262b">25</div>
+<div class="row te" style="top:350px;left:250px;width:1000px">
+  <span class="t">ర</span><span class="t">ే</span><span class="t">ప</span><span class="t">ు</span><span class="t">మ</span><span class="t">ా</span><span class="t bad">ఊ½</span><span class="t bad bad2">½</span><span class="t">ర</span><span class="t bad">ి½</span><span class="t bad bad2">½</span><span class="t">ో</span><span class="t">వ</span><span class="t">ర</span><span class="t bad">్½</span><span class="t bad bad2">½</span><span class="t">ం</span><span class="t">ప</span><span class="t">డ</span><span class="t bad">ు½</span><span class="t bad bad2">½</span><span class="t">ుం½</span><span class="t bad bad2">½</span><span class="t">ా</span><span class="t">?</span>
+</div>
+<div class="q">SAME<br>QUESTION<b>?</b></div>
+</body></html>

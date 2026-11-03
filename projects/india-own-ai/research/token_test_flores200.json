@@ -1,0 +1,132 @@
+{
+ "eng_Latn": {
+  "gpt4o(o200k)": 26873,
+  "gpt4(cl100k)": 27182,
+  "sarvam": 27122,
+  "bharatgen": 32639,
+  "deepseekV3": 27041,
+  "qwen3": 27621,
+  "chars": 131966,
+  "n": 1012
+ },
+ "hin_Deva": {
+  "gpt4o(o200k)": 42292,
+  "gpt4(cl100k)": 129364,
+  "sarvam": 35537,
+  "bharatgen": 37339,
+  "deepseekV3": 75589,
+  "qwen3": 121973,
+  "chars": 131079,
+  "n": 1012
+ },
+ "tel_Telu": {
+  "gpt4o(o200k)": 51863,
+  "gpt4(cl100k)": 225286,
+  "sarvam": 39400,
+  "bharatgen": 41522,
+  "deepseekV3": 101201,
+  "qwen3": 193195,
+  "chars": 132505,
+  "n": 1012
+ },
+ "tam_Taml": {
+  "gpt4o(o200k)": 53199,
+  "gpt4(cl100k)": 207772,
+  "sarvam": 39830,
+  "bharatgen": 42200,
+  "deepseekV3": 83021,
+  "qwen3": 168828,
+  "chars": 154133,
+  "n": 1012
+ },
+ "kan_Knda": {
+  "gpt4o(o200k)": 52975,
+  "gpt4(cl100k)": 240818,
+  "sarvam": 40924,
+  "bharatgen": 42652,
+  "deepseekV3": 99722,
+  "qwen3": 191209,
+  "chars": 138140,
+  "n": 1012
+ },
+ "mal_Mlym": {
+  "gpt4o(o200k)": 52584,
+  "gpt4(cl100k)": 242932,
+  "sarvam": 44237,
+  "bharatgen": 44105,
+  "deepseekV3": 119408,
+  "qwen3": 199583,
+  "chars": 149336,
+  "n": 1012
+ },
+ "ben_Beng": {
+  "gpt4o(o200k)": 45592,
+  "gpt4(cl100k)": 157626,
+  "sarvam": 32840,
+  "bharatgen": 40508,
+  "deepseekV3": 54532,
+  "qwen3": 138814,
+  "chars": 129042,
+  "n": 1012
+ },
+ "mar_Deva": {
+  "gpt4o(o200k)": 48965,
+  "gpt4(cl100k)": 137410,
+  "sarvam": 38016,
+  "bharatgen": 36715,
+  "deepseekV3": 81182,
+  "qwen3": 127661,
+  "chars": 133252,
+  "n": 1012
+ },
+ "guj_Gujr": {
+  "gpt4o(o200k)": 48135,
+  "gpt4(cl100k)": 208278,
+  "sarvam": 40614,
+  "bharatgen": 42302,
+  "deepseekV3": 104419,
+  "qwen3": 186119,
+  "chars": 126428,
+  "n": 1012
+ },
+ "ory_Orya": {
+  "gpt4o(o200k)": 133961,
+  "gpt4(cl100k)": 337072,
+  "sarvam": 38802,
+  "bharatgen": 41937,
+  "deepseekV3": 149957,
+  "qwen3": 267893,
+  "chars": 134839,
+  "n": 1012
+ },
+ "pan_Guru": {
+  "gpt4o(o200k)": 70345,
+  "gpt4(cl100k)": 213407,
+  "sarvam": 42253,
+  "bharatgen": 47653,
+  "deepseekV3": 121018,
+  "qwen3": 200987,
+  "chars": 133425,
+  "n": 1012
+ },
+ "zho_Hans": {
+  "gpt4o(o200k)": 33555,
+  "gpt4(cl100k)": 50811,
+  "sarvam": 29247,
+  "bharatgen": 45711,
+  "deepseekV3": 25396,
+  "qwen3": 27704,
+  "chars": 43251,
+  "n": 1012
+ },
+ "fra_Latn": {
+  "gpt4o(o200k)": 36808,
+  "gpt4(cl100k)": 43710,
+  "sarvam": 38286,
+  "bharatgen": 55849,
+  "deepseekV3": 41833,
+  "qwen3": 43694,
+  "chars": 157688,
+  "n": 1012
+ }
+}
