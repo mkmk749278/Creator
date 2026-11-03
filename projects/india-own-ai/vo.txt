@@ -11,7 +11,7 @@ For the first people who signed up, that free year runs out... about now.
 So when yours ends, whose machine will you be talking to? One built in America? One built in China? Or one built here?
 To see why India doesn't have its own yet, you have to go back to one Monday. The twenty-seventh of January, twenty twenty-five.
 A small Chinese lab called DeepSeek has just put out a free A.I. By that Monday, it's beaten Chat G.P.T. in downloads on Apple's App Store in America.
-DeepSeek says the final training run of its base model cost about five and a half million dollars. The American giants were spending billions.
+DeepSeek says the final training run of its base model cost about five and a half million dollars. The American giants, you may remember, were spending billions.
 That day, the American chip company Nvidia loses around five hundred and ninety billion dollars in value. That's about fifty lakh crore rupees.
 Think about that number for a second. It's roughly the size of India's whole Union Budget for that year... gone from one company in one day.
 Three days later, in Delhi, India's I.T. minister, Ashwini Vaishnaw, makes a promise. India will build its own A.I. model... and he hopes it will be ready within six months.

@@ -1,6 +1,6 @@
 # Recording file: Can India Build Its Own ChatGPT?
 
-2074 words · 9 blocks · about 13–14 minutes at 145–155 words a minute.
+2077 words · 9 blocks · about 13–14 minutes at 145–155 words a minute.
 
 **Voice:** Akash - Confident and Natural, Eleven v4, Stability Creative, Similarity about 0.6, language auto, MP3 44.1 kHz 128 kbps (owner, 2026-11-03; config/voice.yaml, scripts/eleven_tts.py makes the takes). Paste each block as is; the blank lines are pauses. Save each take as `voice/aig_bNN.mp3` (NN = block number).
 
@@ -32,7 +32,7 @@ To see why India doesn't have its own yet, you have to go back to one Monday. Th
 
 A small Chinese lab called DeepSeek has just put out a free A.I. By that Monday, it's beaten Chat G.P.T. in downloads on Apple's App Store in America.
 
-DeepSeek says the final training run of its base model cost about five and a half million dollars. The American giants were spending billions.
+DeepSeek says the final training run of its base model cost about five and a half million dollars. The American giants, you may remember, were spending billions.
 
 That day, the American chip company Nvidia loses around five hundred and ninety billion dollars in value. That's about fifty lakh crore rupees.
 
@@ -216,10 +216,10 @@ A small Chinese lab called DeepSeek has just put out a free A.I. By that Monday,
 
 Listen for: A.I, English, Hindi, DeepSeek, G.P.T, Go, America, Monday, twenty-seventh, Chat, Apple, App, Store. Every word clear, nothing said twice, the last word not cut off.
 
-### Block 2 of 9 · 1321 characters · save as `voice/aig_b02.mp3`
+### Block 2 of 9 · 1340 characters · save as `voice/aig_b02.mp3`
 
 ```
-DeepSeek says the final training run of its base model cost about five and a half million dollars. The American giants were spending billions.
+DeepSeek says the final training run of its base model cost about five and a half million dollars. The American giants, you may remember, were spending billions.
 
 That day, the American chip company Nvidia loses around five hundred and ninety billion dollars in value. That's about fifty lakh crore rupees.
 
