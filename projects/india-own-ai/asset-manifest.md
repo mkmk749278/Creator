@@ -19,3 +19,10 @@ every use gets a `media_manifest.csv` row with the source, the timecode used and
 
 Labels: the Kisan e-Mitra and Bhashini clips are real government tools, shown as themselves; nothing here is
 "ILLUSTRATIVE". No stock clip used more than twice.
+
+## Pexels batches (2026-11-03)
+- `assets/pexels_termux/` (24 clips, owner's Termux run of `scripts/termux_pexels_to_drive.sh`; Drive
+  `Creator/English/india-own-ai/footage/pexels/`) and `assets/pexels_ag/` (36 clips + `pexels_list.csv` with creator
+  names, Antigravity; Drive shared `footage/india-own-ai-pexels/`). Verdicts and picks: `qa/pexels/verdicts.md`;
+  sheets `qa/pexels/termux_*.jpg`, `qa/pexels/ag_*.jpg`. Lesson: IDs from an AI-written list were wrong for 9 of 24;
+  check every clip by picture.
