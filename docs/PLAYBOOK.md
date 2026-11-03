@@ -2003,6 +2003,18 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
 
 ## 15. Lessons log
 
+**India-own-AI film: lead with Hindi, show India as many languages (owner, 2026-11-03).**
+- **Language examples start with Hindi, then 1–2 more from other regions** (here Hindi → Marathi → Telugu: north, west,
+  south). *Why (owner):* "our audience are overall most Indians speak Hindi"; a Telugu-only example made the film read
+  as a South Indian creator's, which narrows the channel. Draft 1 opened on Telugu alone.
+- **India's many languages are part of the story, not a footnote:** a beat on 22 scheduled languages in about a
+  dozen scripts. If one language is singled out (the worst case, a payoff), say why on air.
+- **Measure every example language, don't assume:** Hindi was 18 pieces on DeepSeek but showed no split letters;
+  Marathi and Telugu did. The VO says "cuts letters" only for the two where it is true.
+- **Outside AI reviews keep being wrong on numbers:** the pasted review said Meta's capex was $38–45 bn (its 2026
+  guidance is $135–145 bn) and that Sarvam's app isn't called Indus (it is). Check every point against `claims.csv`
+  first (`projects/india-own-ai/review_outside_v1.md`).
+
 **Pharma film: lived-memory anchors, and outside script reviews (2026-10-28).**
 - **Anchor dates in events viewers lived** (§4a-12 item 16). The owner, recording block 1, noticed "the third of March,
   twenty twenty" read as a bare date; the scene only came alive as "the Corona days… three weeks before the lockdown".
