@@ -1,0 +1,24 @@
+# Be Practical with Kishore: film ideas not yet on a slate.
+# Ideas from the owner, viewers and research land here first. The planned documentary slate is in
+# docs/research/reports/India content edge 2026-10-21.md §5; the 180-second bank is config/roadmap-180s.yaml.
+# Notes here are planning notes, not facts: every claim goes through /fact-check before it is spoken or shown.
+# When an idea becomes a film, set `status: film` and `project: projects/<slug>`.
+
+ideas:
+  - id: ola-ferrite-motor
+    title_idea: "Ola's ferrite motor"
+    added: 2026-11-04
+    source: viewer request
+    requested_by:
+      - video: kBSiNkouDUY   # India Has 7M Tons of Rare Earths. Why Can't We Make Magnets?
+        handle: "@subhadipmukherjee8797"
+        asked: [2026-10-30, 2026-11-04]   # asked again: "waiting anxiously"
+    lane: India's Missing Pieces
+    angle: >-
+      Sequel to the rare earth magnet film: can an electric scooter motor skip rare earth magnets altogether,
+      and what does a ferrite motor give up and gain?
+    continuity: projects/rare-earth-magnets   # read its script and claims.csv first (PLAYBOOK §4a-4)
+    to_verify:
+      - What Ola has actually announced about a ferrite motor, from Ola's own releases and filings
+      - Whether it is in production or on sale, and in which models
+    status: idea
