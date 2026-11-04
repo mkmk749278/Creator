@@ -38,7 +38,11 @@ best in your language?" comment bubble. The rule is in CLAUDE.md and PLAYBOOK §
   `build/words.py` now runs after every alignment; with it, every cutaway lands, `hyperframes check` passes on all ten
   parts with the approved layout, and nothing else in the design changed.
 
+## The 4K master (measured)
+`india_own_ai_final_4k_r4.mp4` (Drive `Creator/English/india-own-ai/final/`): 3840×2160, 30 fps, 13:06.5, video and
+audio streams both 786.5 s, −14.2 LUFS, peak −1.8 dBFS. Whole-film scan at 480p (blackdetect, freezedetect 1.5 s): no
+black frames; the only still is the end card (12:59.8 on). All nine part joins checked (frame before, at, after):
+continuous, including the 9:10 training bar. Rendered on GitHub Actions (run 79, ten native-4K parts).
+
 ## OPEN
-- The 4K parts render on GitHub Actions; then assembly, a full-film freeze/black scan, join checks and the
-  loudness of the final MP4.
-- The owner's audio-only pass of the new voice (`india_own_ai_vo_r4.mp3`) and the soundtrack with the code-made effects.
+- The owner's listen: the new voice (`india_own_ai_vo_r4.mp3`) and the code-made effects in the soundtrack.

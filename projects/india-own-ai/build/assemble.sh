@@ -7,8 +7,9 @@ set -euo pipefail
 P=$(cd "$(dirname "$0")/.." && pwd); A=$P/assets; out=${1:-$A/out/india_own_ai_preview.mp4}
 tmp=$(mktemp -d); : > "$tmp/list.txt"
 PARTS=${PARTS_DIR:-$A/out}   # PARTS_DIR=$A/out/4k for the native 4K master (render_parts_4k.sh)
+# PARTN="1 2 … 10" for the 10-part 4K master (NPARTS=10); PARTS_DIR must be an absolute path
 # a part rendered in two pieces (make_film.py SPLIT=N) is joined as pNa + pNb; a missing part stops the build
-for i in 1 2 3 4 5; do
+for i in ${PARTN:-1 2 3 4 5}; do
   if [ -f "$PARTS/p$i.mp4" ]; then echo "file '$PARTS/p$i.mp4'" >> "$tmp/list.txt"
   elif [ -f "$PARTS/p${i}a.mp4" ] && [ -f "$PARTS/p${i}b.mp4" ]; then printf "file '%s'\nfile '%s'\n" "$PARTS/p${i}a.mp4" "$PARTS/p${i}b.mp4" >> "$tmp/list.txt"
   else echo "missing part p$i in $PARTS" >&2; exit 1; fi

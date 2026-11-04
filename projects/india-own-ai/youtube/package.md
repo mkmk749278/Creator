@@ -1,6 +1,6 @@
 # YouTube package: india-own-ai (final 4K, r4: "our country" voice)
 
-Upload file: Drive `Creator/English/india-own-ai/final/india_own_ai_final_4k_r4.mp4` (3840×2160, 30 fps, 13:06.5; loudness measured at assembly). The r3 file is superseded: it says "your country".
+Upload file: Drive `Creator/English/india-own-ai/final/india_own_ai_final_4k_r4.mp4` (3840×2160, 30 fps, 13:06.5, −14.2 LUFS, peak −1.8 dBFS): https://drive.google.com/file/d/1M6YZAizZ6m6dhWuJZQf1E9EPLCkLJ6Vj/view The r3 file is superseded: it says "your country".
 Subtitles: `youtube/subtitles.en.srt` (our exact captions; NavIC spelled right, no names split).
 Thumbnails for Test & Compare: `thumbnail_b.jpg` (main), `thumbnail_a.jpg` (challenger).
 
