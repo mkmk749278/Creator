@@ -1,104 +1,104 @@
 1
-00:00:00,000 --> 00:00:01,792
+00:00:00,000 --> 00:00:01,935
 And it's already at work.
 
 2
-00:00:01,792 --> 00:00:06,447
+00:00:01,935 --> 00:00:06,680
 Sarvam says its models help run Aadhaar services in Indian languages.
 
 3
-00:00:06,447 --> 00:00:13,077
+00:00:06,680 --> 00:00:13,162
 And in October, Maharashtra gave Sarvam's A.I. assistant to two thousand five hundred government officials.
 
 4
-00:00:13,077 --> 00:00:16,365
+00:00:13,162 --> 00:00:16,530
 So has India built its own Chat G.P.T.?
 
 5
-00:00:16,365 --> 00:00:17,870
+00:00:16,530 --> 00:00:18,044
 Let me be honest with you.
 
 6
-00:00:17,870 --> 00:00:20,425
+00:00:18,044 --> 00:00:20,583
 Not one that matches the best in the world.
 
 7
-00:00:20,425 --> 00:00:21,273
+00:00:20,583 --> 00:00:21,507
 Not yet.
 
 8
-00:00:21,273 --> 00:00:26,513
+00:00:21,507 --> 00:00:26,816
 DeepSeek's newest big model has one point six trillion of those dials in total.
 
 9
-00:00:26,513 --> 00:00:28,504
+00:00:26,816 --> 00:00:28,868
 About fifteen times Sarvam's.
 
 10
-00:00:28,504 --> 00:00:31,309
+00:00:28,868 --> 00:00:31,810
 And Sarvam says it plainly, in its own report.
 
 11
-00:00:31,309 --> 00:00:37,393
+00:00:31,810 --> 00:00:37,651
 The newest models from other labs are trained on far bigger clusters, with far bigger budgets.
 
 12
-00:00:37,393 --> 00:00:38,981
+00:00:37,651 --> 00:00:39,288
 Here's the real scoreboard.
 
 13
-00:00:38,981 --> 00:00:40,939
+00:00:39,288 --> 00:00:41,134
 India has the teachers.
 
 14
-00:00:40,939 --> 00:00:43,227
+00:00:41,134 --> 00:00:43,400
 India has started on the library.
 
 15
-00:00:43,227 --> 00:00:44,692
+00:00:43,400 --> 00:00:44,767
 And for the reading room...
 
 16
-00:00:44,692 --> 00:00:46,930
+00:00:44,767 --> 00:00:46,930
 India still rents the chips.
 
 17
-00:00:46,930 --> 00:00:47,911
+00:00:46,930 --> 00:00:47,919
 What's next?
 
 18
-00:00:47,911 --> 00:00:54,663
+00:00:47,919 --> 00:00:54,697
 The IndiaAI Mission has now picked twenty Indian proposals to build models, Sarvam and BharatGen among them.
 
 19
-00:00:54,663 --> 00:00:59,908
+00:00:54,697 --> 00:00:59,772
 And BharatGen's mandate is to keep scaling, all the way up to a trillion dials.
 
 20
-00:00:59,908 --> 00:01:01,471
+00:00:59,772 --> 00:01:01,321
 So here's the lesson.
 
 21
-00:01:01,471 --> 00:01:05,729
+00:01:01,321 --> 00:01:05,482
 A machine speaks best in the language of the people who build it.
 
 22
-00:01:05,729 --> 00:01:14,191
+00:01:05,482 --> 00:01:13,205
 If India only rents other countries' machines, you and I will keep paying extra to be understood... in our own languages.
 
 23
-00:01:14,191 --> 00:01:23,441
-But today, there's an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
+00:01:13,205 --> 00:01:23,374
+But today, there's an Indian machine that reads our Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
 
 24
-00:01:23,441 --> 00:01:25,521
+00:01:23,374 --> 00:01:25,471
 So what does this mean for you?
 
 25
-00:01:25,521 --> 00:01:29,343
+00:01:25,471 --> 00:01:29,432
 First, check your Chat G.P.T. plan before the free year ends.
 
 26
-00:01:29,343 --> 00:01:32,640
+00:01:29,432 --> 00:01:32,640
 Once it's over, it can start charging you on its own.
 

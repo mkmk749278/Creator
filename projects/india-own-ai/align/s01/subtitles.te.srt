@@ -1,136 +1,136 @@
 1
-00:00:00,000 --> 00:00:02,745
+00:00:00,000 --> 00:00:02,649
 Ask an A.I. one simple question.
 
 2
-00:00:02,745 --> 00:00:04,863
+00:00:02,649 --> 00:00:04,761
 Will it rain in my village tomorrow?
 
 3
-00:00:04,863 --> 00:00:08,753
+00:00:04,761 --> 00:00:08,637
 Before it reads your question, the machine chops it into pieces.
 
 4
-00:00:08,753 --> 00:00:10,925
+00:00:08,637 --> 00:00:10,970
 In English... just eight.
 
 5
-00:00:10,925 --> 00:00:12,670
+00:00:10,970 --> 00:00:12,622
 Now ask it in Hindi.
 
 6
-00:00:12,670 --> 00:00:16,111
+00:00:12,622 --> 00:00:16,354
 On DeepSeek, the famous Chinese A.I.... eighteen.
 
 7
-00:00:16,111 --> 00:00:17,413
+00:00:16,354 --> 00:00:17,780
 More than double.
 
 8
-00:00:17,413 --> 00:00:19,060
+00:00:17,780 --> 00:00:19,621
 Marathi, twenty.
 
 9
-00:00:19,060 --> 00:00:21,061
+00:00:19,621 --> 00:00:21,691
 Telugu, twenty-five.
 
 10
-00:00:21,061 --> 00:00:24,601
-And in those two, it even cuts some of your letters in half.
+00:00:21,691 --> 00:00:25,454
+And in those two, it even cuts some of our letters in half.
 
 11
-00:00:24,601 --> 00:00:27,593
+00:00:25,454 --> 00:00:28,392
 So can India build an A.I. of its own?
 
 12
-00:00:27,593 --> 00:00:30,065
-One that speaks your language best?
+00:00:28,392 --> 00:00:30,866
+One that speaks our language best?
 
 13
-00:00:30,065 --> 00:00:31,310
+00:00:30,866 --> 00:00:32,110
 Here's a clue for you.
 
 14
-00:00:31,310 --> 00:00:32,713
+00:00:32,110 --> 00:00:33,557
 Ask it in Chinese.
 
 15
-00:00:32,713 --> 00:00:33,951
+00:00:33,557 --> 00:00:34,845
 Seven pieces.
 
 16
-00:00:33,951 --> 00:00:35,367
+00:00:34,845 --> 00:00:36,206
 Fewer than English.
 
 17
-00:00:35,367 --> 00:00:36,693
+00:00:36,206 --> 00:00:37,539
 You see what's going on?
 
 18
-00:00:36,693 --> 00:00:40,751
+00:00:37,539 --> 00:00:41,588
 A machine speaks best in the language of the people who built it.
 
 19
-00:00:40,751 --> 00:00:42,222
+00:00:41,588 --> 00:00:43,056
 And it's not just pride.
 
 20
-00:00:42,222 --> 00:00:45,181
+00:00:43,056 --> 00:00:45,856
 Your apps pay these machines by the piece.
 
 21
-00:00:45,181 --> 00:00:49,303
+00:00:45,856 --> 00:00:50,269
 More pieces means a bigger bill, and a slower answer for you.
 
 22
-00:00:49,303 --> 00:00:51,240
+00:00:50,269 --> 00:00:52,140
 Now think back to last November.
 
 23
-00:00:51,240 --> 00:00:56,408
+00:00:52,140 --> 00:00:57,177
 Chat G.P.T.'s paid plan, called Go, became free in India for a whole year.
 
 24
-00:00:56,408 --> 00:00:57,935
+00:00:57,177 --> 00:00:58,739
 Maybe you signed up too.
 
 25
-00:00:57,935 --> 00:01:01,655
+00:00:58,739 --> 00:01:02,474
 OpenAI says India is now one of its biggest markets.
 
 26
-00:01:01,655 --> 00:01:06,404
+00:01:02,474 --> 00:01:07,285
 For the first people who signed up, that free year runs out... about now.
 
 27
-00:01:06,404 --> 00:01:09,847
+00:01:07,285 --> 00:01:10,743
 So when yours ends, whose machine will you be talking to?
 
 28
-00:01:09,847 --> 00:01:11,324
+00:01:10,743 --> 00:01:12,184
 One built in America?
 
 29
-00:01:11,324 --> 00:01:12,718
+00:01:12,184 --> 00:01:13,540
 One built in China?
 
 30
-00:01:12,718 --> 00:01:14,092
+00:01:13,540 --> 00:01:15,234
 Or one built here?
 
 31
-00:01:14,092 --> 00:01:18,756
+00:01:15,234 --> 00:01:20,169
 To see why India doesn't have its own yet, you have to go back to one Monday.
 
 32
-00:01:18,756 --> 00:01:21,765
+00:01:20,169 --> 00:01:23,192
 The twenty-seventh of January, twenty twenty-five.
 
 33
-00:01:21,765 --> 00:01:26,428
+00:01:23,192 --> 00:01:27,815
 A small Chinese lab called DeepSeek has just put out a free A.I.
 
 34
-00:01:26,428 --> 00:01:31,840
+00:01:27,815 --> 00:01:33,360
 By that Monday, it's beaten Chat G.P.T. in downloads on Apple's App Store in America.
 

@@ -2,46 +2,46 @@
  {
   "block": 1,
   "start": 0.0,
-  "duration": 91.873
+  "duration": 93.388
  },
  {
   "block": 2,
-  "start": 92.573,
+  "start": 94.088,
   "duration": 85.473
  },
  {
   "block": 3,
-  "start": 178.745,
-  "duration": 91.1
+  "start": 180.26,
+  "duration": 86.988
  },
  {
   "block": 4,
-  "start": 270.545,
-  "duration": 96.993
+  "start": 267.948,
+  "duration": 98.769
  },
  {
   "block": 5,
-  "start": 368.237,
-  "duration": 86.204
+  "start": 367.417,
+  "duration": 86.126
  },
  {
   "block": 6,
-  "start": 455.142,
+  "start": 454.243,
   "duration": 87.798
  },
  {
   "block": 7,
-  "start": 543.639,
-  "duration": 89.391
+  "start": 542.74,
+  "duration": 89.887
  },
  {
   "block": 8,
-  "start": 633.73,
+  "start": 633.328,
   "duration": 92.682
  },
  {
   "block": 9,
-  "start": 727.113,
+  "start": 726.71,
   "duration": 45.871
  }
 ]

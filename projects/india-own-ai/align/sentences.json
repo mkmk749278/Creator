@@ -3,1729 +3,1729 @@
   "line": 1,
   "en": "Ask an A.I. one simple question.",
   "start": 0.0,
-  "end": 2.158,
+  "end": 2.091,
   "confidence": "high"
  },
  {
   "line": 1,
   "en": "Will it rain in my village tomorrow?",
-  "start": 2.745,
-  "end": 4.357,
+  "start": 2.649,
+  "end": 4.264,
   "confidence": "high"
  },
  {
   "line": 2,
   "en": "Before it reads your question, the machine chops it into pieces.",
-  "start": 4.863,
-  "end": 8.377,
+  "start": 4.761,
+  "end": 8.208,
   "confidence": "high"
  },
  {
   "line": 2,
   "en": "In English... just eight.",
-  "start": 8.753,
-  "end": 10.457,
+  "start": 8.637,
+  "end": 10.402,
   "confidence": "high"
  },
  {
   "line": 3,
   "en": "Now ask it in Hindi.",
-  "start": 10.925,
-  "end": 12.229,
+  "start": 10.97,
+  "end": 12.215,
   "confidence": "high"
  },
  {
   "line": 3,
   "en": "On DeepSeek, the famous Chinese A.I.... eighteen.",
-  "start": 12.67,
-  "end": 15.725,
+  "start": 12.622,
+  "end": 15.919,
   "confidence": "high"
  },
  {
   "line": 3,
   "en": "More than double.",
-  "start": 16.111,
-  "end": 16.991,
+  "start": 16.354,
+  "end": 17.25,
   "confidence": "high"
  },
  {
   "line": 4,
   "en": "Marathi, twenty.",
-  "start": 17.413,
-  "end": 18.631,
+  "start": 17.78,
+  "end": 19.109,
   "confidence": "high"
  },
  {
   "line": 4,
   "en": "Telugu, twenty-five.",
-  "start": 19.06,
-  "end": 20.583,
+  "start": 19.621,
+  "end": 21.155,
   "confidence": "high"
  },
  {
   "line": 4,
-  "en": "And in those two, it even cuts some of your letters in half.",
-  "start": 21.061,
-  "end": 24.058,
+  "en": "And in those two, it even cuts some of our letters in half.",
+  "start": 21.691,
+  "end": 24.782,
   "confidence": "high"
  },
  {
   "line": 5,
   "en": "So can India build an A.I. of its own?",
-  "start": 24.601,
-  "end": 27.237,
+  "start": 25.454,
+  "end": 28.052,
   "confidence": "high"
  },
  {
   "line": 5,
-  "en": "One that speaks your language best?",
-  "start": 27.593,
-  "end": 29.627,
+  "en": "One that speaks our language best?",
+  "start": 28.392,
+  "end": 30.331,
   "confidence": "high"
  },
  {
   "line": 6,
   "en": "Here's a clue for you.",
-  "start": 30.065,
-  "end": 30.837,
+  "start": 30.866,
+  "end": 31.671,
   "confidence": "high"
  },
  {
   "line": 6,
   "en": "Ask it in Chinese.",
-  "start": 31.31,
-  "end": 32.388,
+  "start": 32.11,
+  "end": 33.184,
   "confidence": "high"
  },
  {
   "line": 6,
   "en": "Seven pieces.",
-  "start": 32.713,
-  "end": 33.597,
+  "start": 33.557,
+  "end": 34.473,
   "confidence": "high"
  },
  {
   "line": 6,
   "en": "Fewer than English.",
-  "start": 33.951,
-  "end": 34.907,
+  "start": 34.845,
+  "end": 35.657,
   "confidence": "high"
  },
  {
   "line": 7,
   "en": "You see what's going on?",
-  "start": 35.367,
-  "end": 36.305,
+  "start": 36.206,
+  "end": 37.12,
   "confidence": "high"
  },
  {
   "line": 7,
   "en": "A machine speaks best in the language of the people who built it.",
-  "start": 36.693,
-  "end": 40.352,
+  "start": 37.539,
+  "end": 41.095,
   "confidence": "high"
  },
  {
   "line": 8,
   "en": "And it's not just pride.",
-  "start": 40.751,
-  "end": 41.781,
+  "start": 41.588,
+  "end": 42.639,
   "confidence": "high"
  },
  {
   "line": 8,
   "en": "Your apps pay these machines by the piece.",
-  "start": 42.222,
-  "end": 44.742,
+  "start": 43.056,
+  "end": 45.508,
   "confidence": "high"
  },
  {
   "line": 8,
   "en": "More pieces means a bigger bill, and a slower answer for you.",
-  "start": 45.181,
-  "end": 48.792,
+  "start": 45.856,
+  "end": 49.724,
   "confidence": "high"
  },
  {
   "line": 9,
   "en": "Now think back to last November.",
-  "start": 49.303,
-  "end": 50.784,
+  "start": 50.269,
+  "end": 51.751,
   "confidence": "high"
  },
  {
   "line": 9,
   "en": "Chat G.P.T.'s paid plan, called Go, became free in India for a whole year.",
-  "start": 51.24,
-  "end": 55.982,
+  "start": 52.14,
+  "end": 56.756,
   "confidence": "high"
  },
  {
   "line": 9,
   "en": "Maybe you signed up too.",
-  "start": 56.408,
-  "end": 57.512,
+  "start": 57.177,
+  "end": 58.292,
   "confidence": "high"
  },
  {
   "line": 9,
   "en": "OpenAI says India is now one of its biggest markets.",
-  "start": 57.935,
-  "end": 61.211,
+  "start": 58.739,
+  "end": 62.063,
   "confidence": "high"
  },
  {
   "line": 10,
   "en": "For the first people who signed up, that free year runs out... about now.",
-  "start": 61.655,
-  "end": 65.958,
+  "start": 62.474,
+  "end": 66.763,
   "confidence": "high"
  },
  {
   "line": 11,
   "en": "So when yours ends, whose machine will you be talking to?",
-  "start": 66.404,
-  "end": 69.353,
+  "start": 67.285,
+  "end": 70.368,
   "confidence": "high"
  },
  {
   "line": 11,
   "en": "One built in America?",
-  "start": 69.847,
-  "end": 70.892,
+  "start": 70.743,
+  "end": 71.838,
   "confidence": "high"
  },
  {
   "line": 11,
   "en": "One built in China?",
-  "start": 71.324,
-  "end": 72.337,
+  "start": 72.184,
+  "end": 73.19,
   "confidence": "high"
  },
  {
   "line": 11,
   "en": "Or one built here?",
-  "start": 72.718,
-  "end": 73.662,
+  "start": 73.54,
+  "end": 74.732,
   "confidence": "high"
  },
  {
   "line": 12,
   "en": "To see why India doesn't have its own yet, you have to go back to one Monday.",
-  "start": 74.092,
-  "end": 78.315,
+  "start": 75.234,
+  "end": 79.775,
   "confidence": "high"
  },
  {
   "line": 12,
   "en": "The twenty-seventh of January, twenty twenty-five.",
-  "start": 78.756,
-  "end": 81.27,
+  "start": 80.169,
+  "end": 82.691,
   "confidence": "high"
  },
  {
   "line": 13,
   "en": "A small Chinese lab called DeepSeek has just put out a free A.I.",
-  "start": 81.765,
-  "end": 86.034,
+  "start": 83.192,
+  "end": 87.436,
   "confidence": "high"
  },
  {
   "line": 13,
   "en": "By that Monday, it's beaten Chat G.P.T. in downloads on Apple's App Store in America.",
-  "start": 86.428,
-  "end": 91.441,
+  "start": 87.815,
+  "end": 93.013,
   "confidence": "high"
  },
  {
   "line": 14,
   "en": "DeepSeek says the final training run of its base model cost about five and a half million dollars.",
-  "start": 92.573,
-  "end": 98.615,
+  "start": 94.088,
+  "end": 100.13,
   "confidence": "high"
  },
  {
   "line": 14,
   "en": "The American giants, you may remember, were spending billions.",
-  "start": 99.08,
-  "end": 103.36,
+  "start": 100.595,
+  "end": 104.875,
   "confidence": "check"
  },
  {
   "line": 15,
   "en": "That day, the American chip company Nvidia loses around five hundred and ninety billion dollars in value.",
-  "start": 103.67,
-  "end": 109.29,
+  "start": 105.185,
+  "end": 110.805,
   "confidence": "check"
  },
  {
   "line": 15,
   "en": "That's about fifty lakh crore rupees.",
-  "start": 109.725,
-  "end": 111.98,
+  "start": 111.24,
+  "end": 113.495,
   "confidence": "high"
  },
  {
   "line": 16,
   "en": "Think about that number for a second.",
-  "start": 112.676,
-  "end": 114.19,
+  "start": 114.191,
+  "end": 115.705,
   "confidence": "high"
  },
  {
   "line": 16,
   "en": "It's roughly the size of India's whole Union Budget for that year... gone from one company in one day.",
-  "start": 114.689,
-  "end": 121.548,
+  "start": 116.204,
+  "end": 123.063,
   "confidence": "high"
  },
  {
   "line": 17,
   "en": "Three days later, in Delhi, India's I.T. minister, Ashwini Vaishnaw, makes a promise.",
-  "start": 122.119,
-  "end": 127.242,
+  "start": 123.634,
+  "end": 128.757,
   "confidence": "high"
  },
  {
   "line": 17,
   "en": "India will build its own A.I. model... and he hopes it will be ready within six months.",
-  "start": 127.707,
-  "end": 133.049,
+  "start": 129.222,
+  "end": 134.564,
   "confidence": "high"
  },
  {
   "line": 18,
   "en": "So did India keep that promise?",
-  "start": 133.507,
-  "end": 135.521,
+  "start": 135.022,
+  "end": 137.036,
   "confidence": "high"
  },
  {
   "line": 18,
   "en": "You'll see.",
-  "start": 135.999,
-  "end": 136.449,
+  "start": 137.514,
+  "end": 137.964,
   "confidence": "high"
  },
  {
   "line": 18,
   "en": "And around minute ten, I'll run that same chopping test for you again... on an Indian machine.",
-  "start": 136.944,
-  "end": 142.008,
+  "start": 138.459,
+  "end": 143.523,
   "confidence": "high"
  },
  {
   "line": 18,
   "en": "That's where it gets interesting.",
-  "start": 142.461,
-  "end": 143.607,
+  "start": 143.976,
+  "end": 145.122,
   "confidence": "check"
  },
  {
   "line": 19,
   "en": "But first, you need to know what's actually inside one of these machines.",
-  "start": 144.077,
-  "end": 147.929,
+  "start": 145.592,
+  "end": 149.444,
   "confidence": "high"
  },
  {
   "line": 19,
   "en": "Because it isn't magic.",
-  "start": 148.214,
-  "end": 149.576,
+  "start": 149.729,
+  "end": 151.091,
   "confidence": "high"
  },
  {
   "line": 19,
   "en": "It's three things.",
-  "start": 150.054,
-  "end": 150.934,
+  "start": 151.569,
+  "end": 152.449,
   "confidence": "high"
  },
  {
   "line": 20,
   "en": "Picture a child who has read every book in a giant library.",
-  "start": 151.318,
-  "end": 154.86,
+  "start": 152.833,
+  "end": 156.375,
   "confidence": "high"
  },
  {
   "line": 20,
   "en": "You start a sentence... and the child guesses your next word.",
-  "start": 155.406,
-  "end": 158.458,
+  "start": 156.921,
+  "end": 159.973,
   "confidence": "high"
  },
  {
   "line": 20,
   "en": "Then the next one.",
-  "start": 158.942,
-  "end": 159.584,
+  "start": 160.457,
+  "end": 161.099,
   "confidence": "high"
  },
  {
   "line": 20,
   "en": "Then the next.",
-  "start": 159.979,
-  "end": 160.554,
+  "start": 161.494,
+  "end": 162.069,
   "confidence": "high"
  },
  {
   "line": 21,
   "en": "That's really all a chatbot does.",
-  "start": 161.037,
-  "end": 162.934,
+  "start": 162.552,
+  "end": 164.449,
   "confidence": "high"
  },
  {
   "line": 21,
   "en": "It guesses the next piece, again and again, so well that you feel it's thinking.",
-  "start": 163.276,
-  "end": 168.404,
+  "start": 164.791,
+  "end": 169.919,
   "confidence": "high"
  },
  {
   "line": 22,
   "en": "So if you want to build one, you need three things.",
-  "start": 168.832,
-  "end": 171.616,
+  "start": 170.347,
+  "end": 173.131,
   "confidence": "high"
  },
  {
   "line": 22,
   "en": "A library to read.",
-  "start": 171.964,
-  "end": 172.966,
+  "start": 173.479,
+  "end": 174.481,
   "confidence": "high"
  },
  {
   "line": 22,
   "en": "A reading room where it can read.",
-  "start": 173.416,
-  "end": 175.007,
+  "start": 174.931,
+  "end": 176.522,
   "confidence": "high"
  },
  {
   "line": 22,
   "en": "And teachers who know how to train the child.",
-  "start": 175.358,
-  "end": 177.56,
+  "start": 176.873,
+  "end": 179.075,
   "confidence": "high"
  },
  {
   "line": 23,
   "en": "The library is words \u2014 trillions of pieces of text, like the ones you type.",
-  "start": 178.745,
-  "end": 183.437,
+  "start": 180.26,
+  "end": 185.131,
   "confidence": "high"
  },
  {
   "line": 23,
   "en": "The reading room is chips, thousands of them, running day and night for months.",
-  "start": 184.021,
-  "end": 189.307,
+  "start": 185.547,
+  "end": 190.663,
   "confidence": "high"
  },
  {
   "line": 23,
   "en": "And the teachers?",
-  "start": 189.884,
-  "end": 190.582,
+  "start": 191.083,
+  "end": 191.79,
   "confidence": "high"
  },
  {
   "line": 23,
   "en": "They're engineers.",
-  "start": 191.1,
-  "end": 191.925,
+  "start": 192.189,
+  "end": 193.015,
   "confidence": "high"
  },
  {
   "line": 24,
   "en": "India has the teachers.",
-  "start": 192.46,
-  "end": 193.713,
+  "start": 193.375,
+  "end": 194.741,
   "confidence": "high"
  },
  {
   "line": 24,
   "en": "You know this already.",
-  "start": 194.08,
-  "end": 194.967,
+  "start": 195.005,
+  "end": 195.931,
   "confidence": "high"
  },
  {
   "line": 24,
   "en": "Indian engineers write software for companies all over the world.",
-  "start": 195.463,
-  "end": 198.794,
+  "start": 196.283,
+  "end": 199.673,
   "confidence": "high"
  },
  {
   "line": 25,
-  "en": "So your missing pieces are the library and the reading room.",
-  "start": 199.481,
-  "end": 202.549,
+  "en": "So our missing pieces are the library and the reading room.",
+  "start": 199.998,
+  "end": 202.924,
   "confidence": "high"
  },
  {
   "line": 25,
   "en": "Let's start with the library.",
-  "start": 203.123,
-  "end": 204.381,
+  "start": 203.262,
+  "end": 204.454,
   "confidence": "high"
  },
  {
   "line": 25,
   "en": "Almost nobody tells you about this part.",
-  "start": 205.012,
-  "end": 207.009,
+  "start": 204.9,
+  "end": 206.897,
   "confidence": "high"
  },
  {
   "line": 26,
   "en": "A lot of A.I. learns from the internet.",
-  "start": 207.584,
-  "end": 209.896,
+  "start": 207.368,
+  "end": 209.706,
   "confidence": "high"
  },
  {
   "line": 26,
   "en": "One of the biggest free copies of the web is called Common Crawl.",
-  "start": 210.441,
-  "end": 213.963,
+  "start": 210.101,
+  "end": 213.655,
   "confidence": "high"
  },
  {
   "line": 26,
   "en": "Many A.I. models learned from it, including an early model from the makers of the Chat G.P.T. you use.",
-  "start": 214.471,
-  "end": 220.499,
-  "confidence": "high"
+  "start": 214.017,
+  "end": 219.897,
+  "confidence": "check"
  },
  {
   "line": 27,
   "en": "So we took its latest copy, from October twenty twenty-six \u2014 more than two billion web pages \u2014 and checked its own count of languages.",
-  "start": 221.012,
-  "end": 229.307,
-  "confidence": "high"
+  "start": 220.21,
+  "end": 228.411,
+  "confidence": "check"
  },
  {
   "line": 28,
   "en": "English?",
-  "start": 229.821,
-  "end": 230.22,
+  "start": 228.824,
+  "end": 229.252,
   "confidence": "high"
  },
  {
   "line": 28,
   "en": "Forty-two out of every hundred pages.",
-  "start": 230.588,
-  "end": 233.094,
+  "start": 229.65,
+  "end": 232.011,
   "confidence": "high"
  },
  {
   "line": 28,
   "en": "Now, can you guess Hindi?",
-  "start": 233.56,
-  "end": 234.966,
+  "start": 232.36,
+  "end": 233.639,
   "confidence": "high"
  },
  {
   "line": 29,
   "en": "For every one page in Hindi... there are about two hundred pages in English.",
-  "start": 235.497,
-  "end": 239.805,
+  "start": 234.043,
+  "end": 238.438,
   "confidence": "high"
  },
  {
   "line": 29,
   "en": "And Hindi is the mother tongue of more than fifty crore people.",
-  "start": 240.345,
-  "end": 243.671,
+  "start": 238.805,
+  "end": 242.091,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "Marathi?",
-  "start": 244.145,
-  "end": 244.588,
+  "start": 242.45,
+  "end": 242.899,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "About fifteen hundred.",
-  "start": 244.985,
-  "end": 245.994,
+  "start": 243.233,
+  "end": 244.277,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "Telugu?",
-  "start": 246.439,
-  "end": 246.815,
+  "start": 244.643,
+  "end": 245.044,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "About two thousand three hundred.",
-  "start": 247.161,
-  "end": 248.722,
+  "start": 245.356,
+  "end": 246.904,
   "confidence": "high"
  },
  {
   "line": 30,
   "en": "And each of those is the mother tongue of around eight crore people, maybe yours.",
-  "start": 249.088,
-  "end": 253.565,
+  "start": 247.253,
+  "end": 251.634,
   "confidence": "high"
  },
  {
   "line": 31,
   "en": "All of India's languages together make up less than one page in every hundred.",
-  "start": 254.072,
-  "end": 258.94,
+  "start": 252.023,
+  "end": 256.75,
   "confidence": "high"
  },
  {
   "line": 32,
   "en": "Think about it.",
-  "start": 259.564,
-  "end": 260.106,
+  "start": 257.163,
+  "end": 257.712,
   "confidence": "high"
  },
  {
   "line": 32,
-  "en": "More than one in every six people on Earth lives in your country.",
-  "start": 260.488,
-  "end": 264.757,
+  "en": "More than one in every six people on Earth lives in our country.",
+  "start": 258.051,
+  "end": 262.033,
   "confidence": "high"
  },
  {
   "line": 32,
-  "en": "But in the library these machines read, your language is almost invisible.",
-  "start": 265.153,
-  "end": 269.556,
+  "en": "But in the library these machines read, our language is almost invisible.",
+  "start": 262.419,
+  "end": 266.91,
   "confidence": "high"
  },
  {
   "line": 33,
   "en": "And India's job is harder than China's.",
-  "start": 270.545,
-  "end": 272.973,
+  "start": 267.948,
+  "end": 270.43,
   "confidence": "high"
  },
  {
   "line": 33,
   "en": "China's A.I. mostly needs one written language.",
-  "start": 273.397,
-  "end": 276.135,
+  "start": 270.855,
+  "end": 273.711,
   "confidence": "high"
  },
  {
   "line": 33,
-  "en": "Your country's Constitution lists twenty-two, written in about a dozen different scripts.",
-  "start": 276.641,
-  "end": 282.083,
+  "en": "Our country's Constitution lists twenty-two, written in about a dozen different scripts.",
+  "start": 274.174,
+  "end": 279.646,
   "confidence": "high"
  },
  {
   "line": 33,
   "en": "Each one needs its own shelf.",
-  "start": 282.464,
-  "end": 284.129,
+  "start": 280.105,
+  "end": 281.93,
   "confidence": "high"
  },
  {
   "line": 34,
   "en": "And that's why your question cost so much more in Hindi, Marathi and Telugu.",
-  "start": 284.654,
-  "end": 289.527,
+  "start": 282.517,
+  "end": 287.381,
   "confidence": "high"
  },
  {
   "line": 34,
   "en": "Remember the chopper?",
-  "start": 289.971,
-  "end": 290.847,
-  "confidence": "high"
+  "start": 287.835,
+  "end": 288.711,
+  "confidence": "check"
  },
  {
   "line": 34,
   "en": "It learns its pieces from this same library.",
-  "start": 291.295,
-  "end": 293.761,
+  "start": 289.259,
+  "end": 291.756,
   "confidence": "high"
  },
  {
   "line": 35,
   "en": "Words it sees all the time, like rain or village, become one neat piece each.",
-  "start": 294.187,
-  "end": 299.493,
+  "start": 292.209,
+  "end": 297.752,
   "confidence": "high"
  },
  {
   "line": 35,
   "en": "Your words, which it hardly ever sees, get chopped into bits.",
-  "start": 299.862,
-  "end": 303.611,
+  "start": 298.157,
+  "end": 302.096,
   "confidence": "high"
  },
  {
   "line": 35,
   "en": "Sometimes into half a letter.",
-  "start": 303.906,
-  "end": 305.572,
+  "start": 302.452,
+  "end": 304.17,
   "confidence": "high"
  },
  {
   "line": 36,
   "en": "Here's the rule.",
-  "start": 306.018,
-  "end": 306.564,
-  "confidence": "check"
+  "start": 304.585,
+  "end": 305.178,
+  "confidence": "high"
  },
  {
   "line": 36,
   "en": "A machine learns from what it reads.",
-  "start": 307.02,
-  "end": 309.222,
+  "start": 305.623,
+  "end": 307.799,
   "confidence": "high"
  },
  {
   "line": 37,
   "en": "And what goes wrong?",
-  "start": 309.564,
-  "end": 310.419,
+  "start": 308.312,
+  "end": 309.151,
   "confidence": "high"
  },
  {
   "line": 37,
-  "en": "If your language is only a tiny corner of the library, the machine learns it last... and charges you more.",
-  "start": 310.814,
-  "end": 317.166,
+  "en": "If our language is only a tiny corner of the library, the machine learns it last... and charges us more.",
+  "start": 309.741,
+  "end": 316.327,
   "confidence": "high"
  },
  {
   "line": 38,
   "en": "So someone has to build the Indian part of the library.",
-  "start": 317.552,
-  "end": 320.517,
+  "start": 316.712,
+  "end": 319.762,
   "confidence": "high"
  },
  {
   "line": 38,
   "en": "Page by page, voice by voice.",
-  "start": 320.939,
-  "end": 323.033,
+  "start": 320.147,
+  "end": 322.159,
   "confidence": "high"
  },
  {
   "line": 38,
   "en": "And that's slow, expensive work.",
-  "start": 323.367,
-  "end": 325.434,
+  "start": 322.558,
+  "end": 324.634,
   "confidence": "high"
  },
  {
   "line": 39,
   "en": "And India has started.",
-  "start": 325.908,
-  "end": 327.178,
+  "start": 325.011,
+  "end": 326.438,
   "confidence": "high"
  },
  {
   "line": 39,
   "en": "A government data shelf for Indian builders, called A.I.",
-  "start": 327.647,
-  "end": 331.109,
+  "start": 326.933,
+  "end": 330.366,
   "confidence": "high"
  },
  {
   "line": 39,
   "en": "Kosh, now holds more than sixteen thousand collections.",
-  "start": 331.456,
-  "end": 334.257,
+  "start": 330.573,
+  "end": 333.277,
   "confidence": "high"
  },
  {
   "line": 40,
   "en": "But words are only half of it.",
-  "start": 334.578,
-  "end": 336.24,
+  "start": 333.721,
+  "end": 335.571,
   "confidence": "high"
  },
  {
   "line": 40,
   "en": "Even with a perfect library, you need a place to read it.",
-  "start": 336.645,
-  "end": 339.838,
+  "start": 335.914,
+  "end": 339.168,
   "confidence": "high"
  },
  {
   "line": 40,
   "en": "And this is where India hits a wall.",
-  "start": 340.171,
-  "end": 342.188,
+  "start": 339.581,
+  "end": 341.784,
   "confidence": "high"
  },
  {
   "line": 41,
   "en": "This is the reading room.",
-  "start": 342.591,
-  "end": 344.037,
+  "start": 342.149,
+  "end": 343.57,
   "confidence": "high"
  },
  {
   "line": 41,
   "en": "A chip like this one, made by an American company called Nvidia.",
-  "start": 344.463,
-  "end": 348.079,
+  "start": 343.982,
+  "end": 347.415,
   "confidence": "high"
  },
  {
   "line": 41,
   "en": "It's called a G.P.U., and a single one costs lakhs of rupees.",
-  "start": 348.405,
-  "end": 352.542,
+  "start": 347.812,
+  "end": 351.836,
   "confidence": "high"
  },
  {
   "line": 42,
   "en": "And to train a big A.I., you need thousands of them, wired together, running for months.",
-  "start": 352.872,
-  "end": 358.262,
+  "start": 352.174,
+  "end": 357.337,
   "confidence": "high"
  },
  {
   "line": 43,
   "en": "And here's the catch.",
-  "start": 358.58,
-  "end": 359.413,
+  "start": 357.666,
+  "end": 358.472,
   "confidence": "high"
  },
  {
   "line": 43,
   "en": "India doesn't make these chips.",
-  "start": 359.784,
-  "end": 361.542,
+  "start": 358.825,
+  "end": 360.686,
   "confidence": "high"
  },
  {
   "line": 43,
   "en": "They're designed in America and made mostly in Taiwan.",
-  "start": 361.85,
-  "end": 364.851,
+  "start": 360.98,
+  "end": 363.88,
   "confidence": "high"
  },
  {
   "line": 43,
   "en": "If you watched our chip film, you know why.",
-  "start": 365.174,
-  "end": 367.216,
+  "start": 364.29,
+  "end": 366.313,
   "confidence": "high"
  },
  {
   "line": 44,
   "en": "In January twenty twenty-five, India found out how fast that door can close.",
-  "start": 368.237,
-  "end": 373.268,
+  "start": 367.417,
+  "end": 371.877,
   "confidence": "high"
  },
  {
   "line": 45,
   "en": "Just days before leaving office, America's government put out a new rule.",
-  "start": 373.659,
-  "end": 377.799,
+  "start": 372.3,
+  "end": 376.44,
   "confidence": "high"
  },
  {
   "line": 45,
   "en": "It sorted the world into three groups.",
-  "start": 378.223,
-  "end": 380.275,
+  "start": 376.83,
+  "end": 378.762,
   "confidence": "high"
  },
  {
   "line": 45,
   "en": "Its closest allies could buy these chips freely.",
-  "start": 380.668,
-  "end": 383.071,
+  "start": 379.129,
+  "end": 381.709,
   "confidence": "high"
  },
  {
   "line": 45,
   "en": "China was blocked.",
-  "start": 383.568,
-  "end": 384.779,
+  "start": 382.192,
+  "end": 383.39,
   "confidence": "high"
  },
  {
   "line": 46,
   "en": "And India?",
-  "start": 385.18,
-  "end": 385.629,
+  "start": 383.8,
+  "end": 384.31,
   "confidence": "high"
  },
  {
   "line": 46,
   "en": "India was put in the middle group, with a limit on how many of these chips it could get.",
-  "start": 386.243,
-  "end": 391.084,
+  "start": 384.727,
+  "end": 389.515,
   "confidence": "high"
  },
  {
   "line": 47,
   "en": "Four months later, the new American government scrapped that rule.",
-  "start": 391.438,
-  "end": 394.703,
+  "start": 389.957,
+  "end": 393.296,
   "confidence": "high"
  },
  {
   "line": 47,
   "en": "But India had seen it.",
-  "start": 395.197,
-  "end": 396.482,
+  "start": 393.716,
+  "end": 395.049,
   "confidence": "high"
  },
  {
   "line": 47,
   "en": "The tap is in someone else's hand.",
-  "start": 396.914,
-  "end": 398.955,
+  "start": 395.397,
+  "end": 397.48,
   "confidence": "high"
  },
  {
   "line": 48,
   "en": "So what would you do?",
-  "start": 399.392,
-  "end": 400.592,
+  "start": 397.918,
+  "end": 399.08,
   "confidence": "high"
  },
  {
   "line": 48,
   "en": "India didn't wait to own a giant reading room.",
-  "start": 401.045,
-  "end": 403.633,
+  "start": 399.597,
+  "end": 401.966,
   "confidence": "high"
  },
  {
   "line": 48,
   "en": "It rented one... and shared it.",
-  "start": 404.033,
-  "end": 406.054,
+  "start": 402.428,
+  "end": 404.295,
   "confidence": "high"
  },
  {
   "line": 49,
   "en": "Under the IndiaAI Mission, private companies put their chips into one common pool.",
-  "start": 406.349,
-  "end": 411.116,
+  "start": 404.739,
+  "end": 409.554,
   "confidence": "high"
  },
  {
   "line": 49,
   "en": "Indian startups and researchers rent time on them, and the government pays part of the bill.",
-  "start": 411.444,
-  "end": 416.126,
+  "start": 409.921,
+  "end": 414.551,
   "confidence": "high"
  },
  {
   "line": 50,
   "en": "In January twenty twenty-five, India lined up more than eighteen thousand chips for that pool.",
-  "start": 416.477,
-  "end": 421.39,
+  "start": 414.921,
+  "end": 419.861,
   "confidence": "high"
  },
  {
   "line": 50,
   "en": "By June twenty twenty-six, more than forty-five thousand.",
-  "start": 421.822,
-  "end": 425.033,
+  "start": 420.284,
+  "end": 423.622,
   "confidence": "high"
  },
  {
   "line": 51,
   "en": "That's a big jump, right?",
-  "start": 425.377,
-  "end": 426.646,
+  "start": 424.065,
+  "end": 425.184,
   "confidence": "high"
  },
  {
   "line": 51,
   "en": "But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips.",
-  "start": 426.971,
-  "end": 434.865,
+  "start": 425.599,
+  "end": 433.835,
   "confidence": "high"
  },
  {
   "line": 51,
-  "en": "Almost eight times your country's whole shared pool this June.",
-  "start": 435.179,
-  "end": 439.005,
+  "en": "Almost eight times our country's whole shared pool this June.",
+  "start": 434.167,
+  "end": 438.011,
   "confidence": "high"
  },
  {
   "line": 52,
   "en": "And the money?",
-  "start": 439.346,
-  "end": 439.87,
+  "start": 438.368,
+  "end": 438.904,
   "confidence": "high"
  },
  {
   "line": 52,
   "en": "India's whole A.I. mission is about ten thousand crore rupees, spread over five years.",
-  "start": 440.235,
-  "end": 445.308,
+  "start": 439.287,
+  "end": 444.237,
   "confidence": "high"
  },
  {
   "line": 53,
   "en": "This year alone, Meta told its investors it would spend around thirteen lakh crore rupees on buildings and machines, much of it for A.I.",
-  "start": 445.574,
-  "end": 454.063,
+  "start": 444.599,
+  "end": 453.198,
   "confidence": "high"
  },
  {
   "line": 54,
   "en": "So India's whole mission... ten thousand crore, over five years.",
-  "start": 455.142,
-  "end": 458.99,
+  "start": 454.243,
+  "end": 458.091,
   "confidence": "high"
  },
  {
   "line": 54,
   "en": "Meta alone... thirteen lakh crore, in one single year.",
-  "start": 459.472,
-  "end": 463.299,
+  "start": 458.573,
+  "end": 462.4,
   "confidence": "high"
  },
  {
   "line": 54,
   "en": "That's not double.",
-  "start": 463.822,
-  "end": 464.616,
+  "start": 462.923,
+  "end": 463.717,
   "confidence": "high"
  },
  {
   "line": 54,
   "en": "That's more than a hundred times as much.",
-  "start": 464.927,
-  "end": 466.829,
+  "start": 464.028,
+  "end": 465.93,
   "confidence": "high"
  },
  {
   "line": 55,
   "en": "So is it hopeless?",
-  "start": 467.374,
-  "end": 468.73,
+  "start": 466.475,
+  "end": 467.831,
   "confidence": "high"
  },
  {
   "line": 55,
   "en": "No.",
-  "start": 469.201,
-  "end": 469.468,
+  "start": 468.302,
+  "end": 468.569,
   "confidence": "check"
  },
  {
   "line": 55,
   "en": "Because remember DeepSeek.",
-  "start": 469.871,
-  "end": 471.566,
+  "start": 468.972,
+  "end": 470.667,
   "confidence": "high"
  },
  {
   "line": 56,
   "en": "DeepSeek says it trained its base model on about two thousand chips.",
-  "start": 471.92,
-  "end": 475.749,
+  "start": 471.021,
+  "end": 474.85,
   "confidence": "high"
  },
  {
   "line": 56,
   "en": "Not hundreds of thousands.",
-  "start": 476.061,
-  "end": 477.452,
+  "start": 475.162,
+  "end": 476.553,
   "confidence": "high"
  },
  {
   "line": 56,
   "en": "And they were a cut-down version, made so they could still be sold to China.",
-  "start": 477.776,
-  "end": 481.775,
+  "start": 476.877,
+  "end": 480.876,
   "confidence": "high"
  },
  {
   "line": 57,
   "en": "So what's the lesson for you and me?",
-  "start": 482.171,
-  "end": 484.032,
+  "start": 481.272,
+  "end": 483.133,
   "confidence": "high"
  },
  {
   "line": 57,
   "en": "You don't always need the biggest room.",
-  "start": 484.439,
-  "end": 486.557,
+  "start": 483.54,
+  "end": 485.658,
   "confidence": "high"
  },
  {
   "line": 57,
   "en": "You need clever engineering.",
-  "start": 486.888,
-  "end": 488.403,
+  "start": 485.989,
+  "end": 487.504,
   "confidence": "high"
  },
  {
   "line": 57,
   "en": "And that's a game Indian engineers can play.",
-  "start": 488.841,
-  "end": 491.115,
+  "start": 487.942,
+  "end": 490.216,
   "confidence": "high"
  },
  {
   "line": 58,
   "en": "April twenty twenty-five.",
-  "start": 491.471,
-  "end": 492.771,
+  "start": 490.572,
+  "end": 491.872,
   "confidence": "high"
  },
  {
   "line": 58,
   "en": "The government picks the first company to build India's own model from scratch.",
-  "start": 493.192,
-  "end": 497.412,
+  "start": 492.293,
+  "end": 496.513,
   "confidence": "high"
  },
  {
   "line": 58,
   "en": "A Bengaluru startup called Sarvam.",
-  "start": 497.776,
-  "end": 499.751,
+  "start": 496.877,
+  "end": 498.852,
   "confidence": "high"
  },
  {
   "line": 59,
   "en": "Sarvam was started by two Indians you should know, Vivek Raghavan and Pratyush Kumar.",
-  "start": 500.098,
-  "end": 504.672,
+  "start": 499.199,
+  "end": 503.773,
   "confidence": "high"
  },
  {
   "line": 59,
   "en": "The mission gives them about four thousand of those Nvidia chips to work with.",
-  "start": 505.031,
-  "end": 508.693,
+  "start": 504.132,
+  "end": 507.794,
   "confidence": "high"
  },
  {
   "line": 60,
   "en": "But a month later, the doubts begin.",
-  "start": 509.145,
-  "end": 511.423,
+  "start": 508.246,
+  "end": 510.524,
   "confidence": "high"
  },
  {
   "line": 60,
   "en": "Sarvam's next model is built on top of a French one.",
-  "start": 511.768,
-  "end": 515.037,
+  "start": 510.869,
+  "end": 514.138,
   "confidence": "high"
  },
  {
   "line": 60,
   "en": "And critics ask \u2014 if the base is foreign, how is it Indian?",
-  "start": 515.434,
-  "end": 519.29,
+  "start": 514.535,
+  "end": 518.391,
   "confidence": "check"
  },
  {
   "line": 61,
   "en": "Fair question, isn't it?",
-  "start": 519.729,
-  "end": 520.719,
+  "start": 518.83,
+  "end": 519.82,
   "confidence": "check"
  },
  {
   "line": 61,
   "en": "You'd ask it too.",
-  "start": 521.087,
-  "end": 521.908,
+  "start": 520.188,
+  "end": 521.009,
   "confidence": "high"
  },
  {
   "line": 61,
   "en": "Can an Indian team train one from zero, start to finish, at home?",
-  "start": 522.285,
-  "end": 526.447,
+  "start": 521.386,
+  "end": 525.548,
   "confidence": "high"
  },
  {
   "line": 62,
   "en": "February twenty twenty-six.",
-  "start": 526.815,
-  "end": 528.35,
+  "start": 525.916,
+  "end": 527.451,
   "confidence": "high"
  },
  {
   "line": 62,
   "en": "Bharat Mandapam, Delhi.",
-  "start": 528.622,
-  "end": 529.9,
+  "start": 527.723,
+  "end": 529.001,
   "confidence": "high"
  },
  {
   "line": 62,
   "en": "The India A.I.",
-  "start": 530.182,
-  "end": 531.957,
+  "start": 529.283,
+  "end": 531.058,
   "confidence": "check"
  },
  {
   "line": 62,
   "en": "Impact Summit.",
-  "start": 532.341,
-  "end": 532.696,
+  "start": 531.442,
+  "end": 531.797,
   "confidence": "check"
  },
  {
   "line": 63,
   "en": "There, Sarvam shows India two new models.",
-  "start": 532.849,
-  "end": 535.019,
+  "start": 531.95,
+  "end": 534.12,
   "confidence": "high"
  },
  {
   "line": 63,
   "en": "The bigger one has a hundred and five billion parameters.",
-  "start": 535.308,
-  "end": 538.664,
+  "start": 534.409,
+  "end": 537.765,
   "confidence": "high"
  },
  {
   "line": 63,
   "en": "Think of them as tiny dials the machine tunes while it reads.",
-  "start": 538.974,
-  "end": 542.633,
+  "start": 538.075,
+  "end": 541.734,
   "confidence": "high"
  },
  {
   "line": 64,
   "en": "Trained from scratch.",
-  "start": 543.639,
-  "end": 544.82,
+  "start": 542.74,
+  "end": 543.944,
   "confidence": "high"
  },
  {
   "line": 64,
   "en": "In India.",
-  "start": 545.202,
-  "end": 545.798,
+  "start": 544.289,
+  "end": 544.787,
   "confidence": "high"
  },
  {
   "line": 64,
   "en": "On those shared chips you just saw.",
-  "start": 546.248,
-  "end": 548.144,
+  "start": 545.253,
+  "end": 547.158,
   "confidence": "high"
  },
  {
   "line": 64,
   "en": "And before it ever talked to you, it read around twelve trillion pieces of text.",
-  "start": 548.639,
-  "end": 553.068,
+  "start": 547.674,
+  "end": 552.293,
   "confidence": "high"
  },
  {
   "line": 65,
   "en": "Then Sarvam did something generous.",
-  "start": 553.649,
-  "end": 555.787,
+  "start": 552.751,
+  "end": 554.877,
   "confidence": "high"
  },
  {
   "line": 65,
   "en": "It made the model open.",
-  "start": 556.186,
-  "end": 557.613,
+  "start": 555.245,
+  "end": 556.573,
   "confidence": "high"
  },
  {
   "line": 65,
   "en": "Any Indian developer can download it and build their own apps on it, for free.",
-  "start": 558.094,
-  "end": 562.41,
+  "start": 557.0,
+  "end": 561.303,
   "confidence": "high"
  },
  {
   "line": 66,
   "en": "The minister had hoped for six months, and later said ten at the most.",
-  "start": 562.932,
-  "end": 566.886,
+  "start": 561.74,
+  "end": 565.768,
   "confidence": "high"
  },
  {
   "line": 66,
   "en": "It took about a year.",
-  "start": 567.46,
-  "end": 568.4,
+  "start": 566.3,
+  "end": 567.254,
   "confidence": "high"
  },
  {
   "line": 66,
   "en": "Late, you could say... but delivered.",
-  "start": 568.991,
-  "end": 571.621,
+  "start": 567.771,
+  "end": 570.185,
   "confidence": "high"
  },
  {
   "line": 67,
   "en": "And that same week, BharatGen \u2014 a team led by I.I.T.",
-  "start": 572.169,
-  "end": 575.809,
+  "start": 570.603,
+  "end": 574.462,
   "confidence": "check"
  },
  {
   "line": 67,
   "en": "Bombay \u2014 showed its own model too, called Param Two, built for all twenty-two scheduled Indian languages.",
-  "start": 576.117,
-  "end": 581.672,
+  "start": 574.797,
+  "end": 580.568,
   "confidence": "high"
  },
  {
   "line": 68,
   "en": "Now remember my promise to you.",
-  "start": 582.168,
-  "end": 583.462,
+  "start": 580.976,
+  "end": 582.475,
   "confidence": "high"
  },
  {
   "line": 68,
   "en": "The chopping test.",
-  "start": 583.901,
-  "end": 584.771,
+  "start": 582.853,
+  "end": 583.785,
   "confidence": "high"
  },
  {
   "line": 68,
   "en": "Same question.",
-  "start": 585.2,
-  "end": 585.882,
+  "start": 584.181,
+  "end": 584.825,
   "confidence": "high"
  },
  {
   "line": 68,
   "en": "Will it rain in my village tomorrow?",
-  "start": 586.293,
-  "end": 587.87,
+  "start": 585.267,
+  "end": 586.772,
   "confidence": "high"
  },
  {
   "line": 69,
   "en": "DeepSeek's chopper, you've seen.",
-  "start": 588.246,
-  "end": 589.922,
+  "start": 587.126,
+  "end": 588.779,
   "confidence": "high"
  },
  {
   "line": 69,
   "en": "Hindi, eighteen.",
-  "start": 590.366,
-  "end": 591.306,
+  "start": 589.276,
+  "end": 590.305,
   "confidence": "high"
  },
  {
   "line": 69,
   "en": "Marathi, twenty.",
-  "start": 591.702,
-  "end": 592.771,
+  "start": 590.673,
+  "end": 591.751,
   "confidence": "high"
  },
  {
   "line": 69,
   "en": "Telugu, twenty-five.",
-  "start": 593.213,
-  "end": 594.366,
+  "start": 592.212,
+  "end": 593.367,
   "confidence": "high"
  },
  {
   "line": 70,
   "en": "The chopper behind Chat G.P.T.'s recent models...",
-  "start": 594.757,
-  "end": 597.229,
+  "start": 593.796,
+  "end": 596.228,
   "confidence": "high"
  },
  {
   "line": 70,
   "en": "Hindi eight, Marathi fourteen, Telugu fifteen.",
-  "start": 597.611,
-  "end": 600.825,
+  "start": 596.712,
+  "end": 599.945,
   "confidence": "high"
  },
  {
   "line": 71,
   "en": "And Sarvam's?",
-  "start": 601.224,
-  "end": 601.897,
+  "start": 600.372,
+  "end": 601.08,
   "confidence": "high"
  },
  {
   "line": 71,
   "en": "Hindi, eight \u2014 exactly the same as English.",
-  "start": 602.323,
-  "end": 604.817,
+  "start": 601.507,
+  "end": 604.198,
   "confidence": "high"
  },
  {
   "line": 71,
   "en": "Marathi, ten.",
-  "start": 605.275,
-  "end": 606.227,
+  "start": 604.648,
+  "end": 605.617,
   "confidence": "high"
  },
  {
   "line": 71,
   "en": "Telugu, eleven.",
-  "start": 606.625,
-  "end": 607.626,
+  "start": 606.017,
+  "end": 607.019,
   "confidence": "high"
  },
  {
   "line": 72,
   "en": "And this isn't one lucky sentence.",
-  "start": 608.009,
-  "end": 609.776,
+  "start": 607.37,
+  "end": 609.257,
   "confidence": "high"
  },
  {
   "line": 72,
   "en": "We ran the same test on more than a thousand sentences, each one in thirteen languages.",
-  "start": 610.128,
-  "end": 615.25,
+  "start": 609.584,
+  "end": 614.869,
   "confidence": "high"
  },
  {
   "line": 73,
   "en": "Look at Odia.",
-  "start": 615.631,
-  "end": 616.335,
+  "start": 615.247,
+  "end": 615.908,
   "confidence": "high"
  },
  {
   "line": 73,
   "en": "On DeepSeek's chopper, five and a half times the pieces of English.",
-  "start": 616.785,
-  "end": 620.163,
+  "start": 616.354,
+  "end": 619.837,
   "confidence": "high"
  },
  {
   "line": 73,
   "en": "On Sarvam's... less than one and a half.",
-  "start": 620.649,
-  "end": 622.772,
+  "start": 620.243,
+  "end": 622.336,
   "confidence": "high"
  },
  {
   "line": 73,
   "en": "And BharatGen's chopper does about as well.",
-  "start": 623.203,
-  "end": 625.518,
+  "start": 622.799,
+  "end": 625.037,
   "confidence": "high"
  },
  {
   "line": 74,
-  "en": "So for your language, the gap shrinks, a lot.",
-  "start": 625.92,
-  "end": 628.955,
+  "en": "So for our language, the gap shrinks, a lot.",
+  "start": 625.375,
+  "end": 628.584,
   "confidence": "high"
  },
  {
   "line": 74,
   "en": "Because this time... an Indian team put the missing pieces in.",
-  "start": 629.344,
-  "end": 632.564,
+  "start": 628.923,
+  "end": 632.255,
   "confidence": "high"
  },
  {
   "line": 75,
   "en": "And it's already at work.",
-  "start": 633.73,
-  "end": 635.051,
+  "start": 633.328,
+  "end": 634.924,
   "confidence": "high"
  },
  {
   "line": 75,
   "en": "Sarvam says its models help run Aadhaar services in Indian languages.",
-  "start": 635.522,
-  "end": 639.75,
+  "start": 635.263,
+  "end": 639.645,
   "confidence": "high"
  },
  {
   "line": 75,
   "en": "And in October, Maharashtra gave Sarvam's A.I. assistant to two thousand five hundred government officials.",
-  "start": 640.177,
-  "end": 646.373,
-  "confidence": "high"
+  "start": 640.008,
+  "end": 646.161,
+  "confidence": "check"
  },
  {
   "line": 76,
   "en": "So has India built its own Chat G.P.T.?",
-  "start": 646.807,
-  "end": 649.583,
-  "confidence": "high"
+  "start": 646.49,
+  "end": 649.311,
+  "confidence": "check"
  },
  {
   "line": 76,
   "en": "Let me be honest with you.",
-  "start": 650.095,
-  "end": 651.154,
+  "start": 649.858,
+  "end": 650.948,
   "confidence": "high"
  },
  {
   "line": 76,
   "en": "Not one that matches the best in the world.",
-  "start": 651.6,
-  "end": 653.779,
+  "start": 651.372,
+  "end": 653.582,
   "confidence": "high"
  },
  {
   "line": 76,
   "en": "Not yet.",
-  "start": 654.155,
-  "end": 654.652,
+  "start": 653.911,
+  "end": 654.403,
   "confidence": "high"
  },
  {
   "line": 77,
   "en": "DeepSeek's newest big model has one point six trillion of those dials in total.",
-  "start": 655.003,
-  "end": 659.853,
+  "start": 654.835,
+  "end": 659.848,
   "confidence": "high"
  },
  {
   "line": 77,
   "en": "About fifteen times Sarvam's.",
-  "start": 660.243,
+  "start": 660.144,
   "end": 661.889,
   "confidence": "high"
  },
  {
   "line": 78,
   "en": "And Sarvam says it plainly, in its own report.",
-  "start": 662.234,
-  "end": 664.621,
+  "start": 662.196,
+  "end": 664.852,
   "confidence": "high"
  },
  {
   "line": 78,
   "en": "The newest models from other labs are trained on far bigger clusters, with far bigger budgets.",
-  "start": 665.039,
-  "end": 670.686,
+  "start": 665.138,
+  "end": 670.617,
   "confidence": "high"
  },
  {
   "line": 79,
   "en": "Here's the real scoreboard.",
-  "start": 671.123,
-  "end": 672.252,
+  "start": 670.979,
+  "end": 672.247,
   "confidence": "high"
  },
  {
   "line": 79,
   "en": "India has the teachers.",
-  "start": 672.711,
-  "end": 674.223,
+  "start": 672.616,
+  "end": 674.062,
   "confidence": "high"
  },
  {
   "line": 79,
   "en": "India has started on the library.",
-  "start": 674.669,
-  "end": 676.492,
+  "start": 674.462,
+  "end": 676.332,
   "confidence": "high"
  },
  {
   "line": 79,
   "en": "And for the reading room...",
-  "start": 676.957,
-  "end": 677.891,
-  "confidence": "check"
+  "start": 676.728,
+  "end": 677.712,
+  "confidence": "high"
  },
  {
   "line": 79,
   "en": "India still rents the chips.",
-  "start": 678.422,
-  "end": 680.218,
+  "start": 678.095,
+  "end": 679.885,
   "confidence": "high"
  },
  {
   "line": 80,
   "en": "What's next?",
-  "start": 680.66,
-  "end": 681.267,
+  "start": 680.258,
+  "end": 680.903,
   "confidence": "high"
  },
  {
   "line": 80,
   "en": "The IndiaAI Mission has now picked twenty Indian proposals to build models, Sarvam and BharatGen among them.",
-  "start": 681.641,
-  "end": 688.021,
+  "start": 681.247,
+  "end": 687.743,
   "confidence": "high"
  },
  {
   "line": 80,
   "en": "And BharatGen's mandate is to keep scaling, all the way up to a trillion dials.",
-  "start": 688.393,
-  "end": 693.238,
+  "start": 688.025,
+  "end": 692.739,
   "confidence": "high"
  },
  {
   "line": 81,
   "en": "So here's the lesson.",
-  "start": 693.638,
-  "end": 694.782,
+  "start": 693.1,
+  "end": 694.242,
   "confidence": "high"
  },
  {
   "line": 81,
   "en": "A machine speaks best in the language of the people who build it.",
-  "start": 695.201,
-  "end": 699.151,
+  "start": 694.649,
+  "end": 698.39,
   "confidence": "high"
  },
  {
   "line": 82,
   "en": "If India only rents other countries' machines, you and I will keep paying extra to be understood... in our own languages.",
-  "start": 699.459,
-  "end": 707.582,
-  "confidence": "check"
+  "start": 698.81,
+  "end": 706.093,
+  "confidence": "high"
  },
  {
   "line": 83,
-  "en": "But today, there's an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.",
-  "start": 707.921,
-  "end": 716.772,
-  "confidence": "check"
+  "en": "But today, there's an Indian machine that reads our Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.",
+  "start": 706.533,
+  "end": 716.219,
+  "confidence": "high"
  },
  {
   "line": 84,
   "en": "So what does this mean for you?",
-  "start": 717.171,
-  "end": 718.865,
+  "start": 716.702,
+  "end": 718.365,
   "confidence": "high"
  },
  {
   "line": 84,
   "en": "First, check your Chat G.P.T. plan before the free year ends.",
-  "start": 719.251,
-  "end": 722.726,
+  "start": 718.799,
+  "end": 722.439,
   "confidence": "high"
  },
  {
   "line": 84,
   "en": "Once it's over, it can start charging you on its own.",
-  "start": 723.073,
-  "end": 726.081,
+  "start": 722.76,
+  "end": 725.603,
   "confidence": "high"
  },
  {
   "line": 85,
   "en": "And before you pay for any A.I., ask the same question in your own language to two or three of them.",
-  "start": 727.113,
-  "end": 733.159,
+  "start": 726.71,
+  "end": 732.756,
   "confidence": "high"
  },
  {
   "line": 85,
   "en": "Chat G.P.T., DeepSeek, and an Indian one, like Sarvam's app, called Indus.",
-  "start": 733.666,
-  "end": 738.632,
+  "start": 733.263,
+  "end": 738.229,
   "confidence": "high"
  },
  {
   "line": 85,
   "en": "Pay only for the one that really understands you.",
-  "start": 739.255,
-  "end": 742.087,
+  "start": 738.852,
+  "end": 741.684,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "And A.I. isn't the only thing India has built for itself.",
-  "start": 742.656,
-  "end": 745.971,
+  "start": 742.253,
+  "end": 745.568,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "Did you know India has its own satellite navigation, up in space?",
-  "start": 746.58,
-  "end": 750.644,
+  "start": 746.177,
+  "end": 750.241,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "It's called Navik.",
-  "start": 751.143,
-  "end": 752.279,
+  "start": 750.74,
+  "end": 751.876,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "So why does your phone still lean on America's G.P.S.?",
-  "start": 752.765,
-  "end": 756.381,
+  "start": 752.362,
+  "end": 755.978,
   "confidence": "high"
  },
  {
   "line": 86,
   "en": "That's our next story.",
-  "start": 756.902,
-  "end": 758.064,
+  "start": 756.499,
+  "end": 757.661,
   "confidence": "high"
  },
  {
   "line": 87,
   "en": "Before you go, try this tonight.",
-  "start": 758.595,
-  "end": 760.468,
+  "start": 758.192,
+  "end": 760.065,
   "confidence": "high"
  },
  {
   "line": 87,
   "en": "Ask any A.I. one question in your mother tongue... and tell me in the comments which one answered best.",
-  "start": 760.878,
-  "end": 766.995,
+  "start": 760.475,
+  "end": 766.592,
   "confidence": "high"
  },
  {
   "line": 87,
   "en": "I read every one.",
-  "start": 767.407,
-  "end": 768.498,
+  "start": 767.004,
+  "end": 768.095,
   "confidence": "high"
  },
  {
   "line": 88,
   "en": "This is Be Practical with Kishore.",
-  "start": 769.027,
-  "end": 770.816,
+  "start": 768.624,
+  "end": 770.413,
   "confidence": "high"
  },
  {
   "line": 88,
   "en": "Stay practical.",
-  "start": 771.24,
-  "end": 771.946,
+  "start": 770.837,
+  "end": 771.543,
   "confidence": "high"
  },
  {
   "line": 88,
   "en": "Jai Hind.",
-  "start": 772.337,
-  "end": 772.707,
+  "start": 771.934,
+  "end": 772.304,
   "confidence": "high"
  }
 ]

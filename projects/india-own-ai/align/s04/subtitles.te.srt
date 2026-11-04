@@ -1,124 +1,124 @@
 1
-00:00:00,000 --> 00:00:02,852
+00:00:00,000 --> 00:00:02,907
 And India's job is harder than China's.
 
 2
-00:00:02,852 --> 00:00:06,096
+00:00:02,907 --> 00:00:06,226
 China's A.I. mostly needs one written language.
 
 3
-00:00:06,096 --> 00:00:11,919
-Your country's Constitution lists twenty-two, written in about a dozen different scripts.
+00:00:06,226 --> 00:00:12,157
+Our country's Constitution lists twenty-two, written in about a dozen different scripts.
 
 4
-00:00:11,919 --> 00:00:14,109
+00:00:12,157 --> 00:00:14,569
 Each one needs its own shelf.
 
 5
-00:00:14,109 --> 00:00:19,426
+00:00:14,569 --> 00:00:19,887
 And that's why your question cost so much more in Hindi, Marathi and Telugu.
 
 6
-00:00:19,426 --> 00:00:20,750
+00:00:19,887 --> 00:00:21,311
 Remember the chopper?
 
 7
-00:00:20,750 --> 00:00:23,642
+00:00:21,311 --> 00:00:24,261
 It learns its pieces from this same library.
 
 8
-00:00:23,642 --> 00:00:29,317
+00:00:24,261 --> 00:00:30,209
 Words it sees all the time, like rain or village, become one neat piece each.
 
 9
-00:00:29,317 --> 00:00:33,361
+00:00:30,209 --> 00:00:34,504
 Your words, which it hardly ever sees, get chopped into bits.
 
 10
-00:00:33,361 --> 00:00:35,473
+00:00:34,504 --> 00:00:36,637
 Sometimes into half a letter.
 
 11
-00:00:35,473 --> 00:00:36,475
+00:00:36,637 --> 00:00:37,675
 Here's the rule.
 
 12
-00:00:36,475 --> 00:00:39,019
+00:00:37,675 --> 00:00:40,364
 A machine learns from what it reads.
 
 13
-00:00:39,019 --> 00:00:40,269
+00:00:40,364 --> 00:00:41,793
 And what goes wrong?
 
 14
-00:00:40,269 --> 00:00:47,007
-If your language is only a tiny corner of the library, the machine learns it last... and charges you more.
+00:00:41,793 --> 00:00:48,764
+If our language is only a tiny corner of the library, the machine learns it last... and charges us more.
 
 15
-00:00:47,007 --> 00:00:50,394
+00:00:48,764 --> 00:00:52,199
 So someone has to build the Indian part of the library.
 
 16
-00:00:50,394 --> 00:00:52,822
+00:00:52,199 --> 00:00:54,610
 Page by page, voice by voice.
 
 17
-00:00:52,822 --> 00:00:55,363
+00:00:54,610 --> 00:00:57,063
 And that's slow, expensive work.
 
 18
-00:00:55,363 --> 00:00:57,102
+00:00:57,063 --> 00:00:58,985
 And India has started.
 
 19
-00:00:57,102 --> 00:01:00,911
+00:00:58,985 --> 00:01:02,625
 A government data shelf for Indian builders, called A.I.
 
 20
-00:01:00,911 --> 00:01:04,033
+00:01:02,625 --> 00:01:05,773
 Kosh, now holds more than sixteen thousand collections.
 
 21
-00:01:04,033 --> 00:01:06,100
+00:01:05,773 --> 00:01:07,966
 But words are only half of it.
 
 22
-00:01:06,100 --> 00:01:09,626
+00:01:07,966 --> 00:01:11,633
 Even with a perfect library, you need a place to read it.
 
 23
-00:01:09,626 --> 00:01:12,046
+00:01:11,633 --> 00:01:14,201
 And this is where India hits a wall.
 
 24
-00:01:12,046 --> 00:01:13,918
+00:01:14,201 --> 00:01:16,034
 This is the reading room.
 
 25
-00:01:13,918 --> 00:01:17,860
+00:01:16,034 --> 00:01:19,864
 A chip like this one, made by an American company called Nvidia.
 
 26
-00:01:17,860 --> 00:01:22,327
+00:01:19,864 --> 00:01:24,226
 It's called a G.P.U., and a single one costs lakhs of rupees.
 
 27
-00:01:22,327 --> 00:01:28,035
+00:01:24,226 --> 00:01:29,718
 And to train a big A.I., you need thousands of them, wired together, running for months.
 
 28
-00:01:28,035 --> 00:01:29,239
+00:01:29,718 --> 00:01:30,877
 And here's the catch.
 
 29
-00:01:29,239 --> 00:01:31,305
+00:01:30,877 --> 00:01:33,032
 India doesn't make these chips.
 
 30
-00:01:31,305 --> 00:01:34,629
+00:01:33,032 --> 00:01:36,342
 They're designed in America and made mostly in Taiwan.
 
 31
-00:01:34,629 --> 00:01:36,960
+00:01:36,342 --> 00:01:38,720
 If you watched our chip film, you know why.
 

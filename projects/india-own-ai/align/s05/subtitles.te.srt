@@ -1,92 +1,92 @@
 1
-00:00:00,000 --> 00:00:05,422
+00:00:00,000 --> 00:00:04,883
 In January twenty twenty-five, India found out how fast that door can close.
 
 2
-00:00:05,422 --> 00:00:09,986
+00:00:04,883 --> 00:00:09,413
 Just days before leaving office, America's government put out a new rule.
 
 3
-00:00:09,986 --> 00:00:12,431
+00:00:09,413 --> 00:00:11,712
 It sorted the world into three groups.
 
 4
-00:00:12,431 --> 00:00:15,331
+00:00:11,712 --> 00:00:14,775
 Its closest allies could buy these chips freely.
 
 5
-00:00:15,331 --> 00:00:16,943
+00:00:14,775 --> 00:00:16,383
 China was blocked.
 
 6
-00:00:16,943 --> 00:00:18,006
+00:00:16,383 --> 00:00:17,310
 And India?
 
 7
-00:00:18,006 --> 00:00:23,201
+00:00:17,310 --> 00:00:22,540
 India was put in the middle group, with a limit on how many of these chips it could get.
 
 8
-00:00:23,201 --> 00:00:26,960
+00:00:22,540 --> 00:00:26,299
 Four months later, the new American government scrapped that rule.
 
 9
-00:00:26,960 --> 00:00:28,677
+00:00:26,299 --> 00:00:27,980
 But India had seen it.
 
 10
-00:00:28,677 --> 00:00:31,155
+00:00:27,980 --> 00:00:30,501
 The tap is in someone else's hand.
 
 11
-00:00:31,155 --> 00:00:32,808
+00:00:30,501 --> 00:00:32,180
 So what would you do?
 
 12
-00:00:32,808 --> 00:00:35,796
+00:00:32,180 --> 00:00:35,011
 India didn't wait to own a giant reading room.
 
 13
-00:00:35,796 --> 00:00:38,112
+00:00:35,011 --> 00:00:37,322
 It rented one... and shared it.
 
 14
-00:00:38,112 --> 00:00:43,207
+00:00:37,322 --> 00:00:42,504
 Under the IndiaAI Mission, private companies put their chips into one common pool.
 
 15
-00:00:43,207 --> 00:00:48,240
+00:00:42,504 --> 00:00:47,504
 Indian startups and researchers rent time on them, and the government pays part of the bill.
 
 16
-00:00:48,240 --> 00:00:53,585
+00:00:47,504 --> 00:00:52,867
 In January twenty twenty-five, India lined up more than eighteen thousand chips for that pool.
 
 17
-00:00:53,585 --> 00:00:57,140
+00:00:52,867 --> 00:00:56,648
 By June twenty twenty-six, more than forty-five thousand.
 
 18
-00:00:57,140 --> 00:00:58,734
+00:00:56,648 --> 00:00:58,182
 That's a big jump, right?
 
 19
-00:00:58,734 --> 00:01:06,942
+00:00:58,182 --> 00:01:06,750
 But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips.
 
 20
-00:01:06,942 --> 00:01:11,109
-Almost eight times your country's whole shared pool this June.
+00:01:06,750 --> 00:01:10,951
+Almost eight times our country's whole shared pool this June.
 
 21
-00:01:11,109 --> 00:01:11,998
+00:01:10,951 --> 00:01:11,870
 And the money?
 
 22
-00:01:11,998 --> 00:01:17,337
+00:01:11,870 --> 00:01:17,182
 India's whole A.I. mission is about ten thousand crore rupees, spread over five years.
 
 23
-00:01:17,337 --> 00:01:26,160
+00:01:17,182 --> 00:01:26,080
 This year alone, Meta told its investors it would spend around thirteen lakh crore rupees on buildings and machines, much of it for A.I.
 
