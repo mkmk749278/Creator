@@ -2077,6 +2077,25 @@ timing and rendered frames before taking anything, and carry over only what hold
   guidance is $135–145 bn) and that Sarvam's app isn't called Indus (it is). Check every point against `claims.csv`
   first (`projects/india-own-ai/review_outside_v1.md`).
 
+**India-own-AI 4K master: light parts, clean joins, and a session that never had the assets (2026-11-04).**
+- **A part carries only the seconds it uses.** At 4K a part holding whole source clips (308 MB, a 5-minute clip for 3 s
+  of it) died on GitHub with `Runtime.evaluate timed out`; nine lighter parts rendered. `TRIM=1` in
+  `projects/india-own-ai/build/make_film.py` cuts each shot's own frames (CFR 30 sources, frame-exact by PSNR) and the
+  part's media fell to 13–82 MB. Also render the 4K master as more, shorter parts (`NPARTS=10`, ~80 s).
+- **A nested animation must not restart at a part join.** A bar's fill that began before the join grew again from
+  empty in the next part. Any `data-at` before the part's first frame is now emitted as a cut (already finished).
+  *Check:* a sheet of the frame before, at and after every join, before uploading.
+- **Run a freeze scan on the joined master** (`freezedetect=n=0.002:d=1.5` at 480p) and fix every hit but the end card:
+  it found a 3 s still on a new illustration that the snapshots, which are single frames, could not show.
+- **A fresh session can rebuild a film from its Drive part tars:** unpack the media into `assets/pool`, then fit each
+  clip's source frame rate against the committed compositions (`assets/rates.json`; 2 of 57 needed a second look).
+  Full-resolution originals from Drive `footage/` map exactly once conformed the same way; the review-cut 720p copies
+  must never reach the 4K master.
+- **The VO timing didn't change, so the approved mix didn't either:** `build/remux_audio.sh` lays the reviewed cut's
+  audio under the new picture (−14.2 LUFS kept), instead of re-mixing from stems this session never had.
+- **"Data centre" stock can be a quarry:** a Pixabay clip filed under data centres was an open-cast mine; look at every
+  replacement in a snapshot before rendering.
+
 **India-own-AI round 1: picture on the word, and only real pictures (owner, 2026-11-03).**
 - **Every name, place, number and key verb gets its own picture on the word, even for 1–2 s.** *Why (owner, r1):*
   "narration to visuals... not matching at all"; one shot per line left "Chinese", "Delhi", "Taiwan", "Nvidia" and

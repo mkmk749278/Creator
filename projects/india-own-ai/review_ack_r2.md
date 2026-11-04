@@ -82,6 +82,17 @@ How it was checked: every note against the composition, the word timings (`align
 - **Thumbnail:** B is the main (as recommended), upgraded with the "INDIA'S FIX?" chip and a drop shadow on the dark words (`youtube/thumbnail_b.jpg`). A stays the A/B challenger.
 - **Titles and the schedule** (Unlisted ≥ 3 h, Fri 6 Nov 5:00–5:30 PM IST, before mid-November): for the owner's `/deliver` step.
 
+## The 4K master (measured)
+`india_own_ai_final_4k.mp4` (Drive `Creator/English/india-own-ai/final/`): 3840×2160, 30 fps, 13:06.9, −14.2 LUFS, peak
+−1.8 dBFS. Whole-film scan (blackdetect, freezedetect at 1.5 s): no black frames; the only still is the end card after
+the VO (13:00–13:06.9). All nine part joins checked frame by frame (the frame before, at and after each).
+
 ## Also found in this round
 - The 4K master renders as 10 parts (~80 s each, `NPARTS=10`) so no job carries the 600 MB media of the old p1/p4.
 - Seven sources that were shrunk to 720p for the review render are back at full resolution (the NDTV, PM, BharatGen and Bhasha Daan clips at 1080p; Bengaluru sunrise at 2160p; library walk at 1440p), mapped frame-exact to the r2 timing.
+- **4K p2 ran out of RAM** (`Runtime.evaluate timed out`): the part held whole source clips (308 MB). `TRIM=1` now cuts
+  each shot's own frames into the part (frame-exact: 51 dB PSNR on the same frame, 21 dB one frame off); p2 fell to 43 MB.
+- **9:10, the p7/p8 join:** the "trained from scratch" bar restarted from empty. A nested animation that began before a
+  join now shows finished; p8 re-rendered, checked continuous.
+- **12:16, a 3 s still** on the new three-chat-apps illustration (freeze scan): the answers now type in across the hold;
+  p1 and p10 re-rendered; the rescan is clean.
