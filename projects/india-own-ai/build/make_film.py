@@ -12,6 +12,7 @@ Usage: python3 projects/india-own-ai/build/make_film.py   (then npm run vendor i
 """
 import html
 import json
+import os
 import math
 import re
 import shutil
@@ -1142,6 +1143,20 @@ def seam_cut(h, a, b, t0, t1):
     return h
 
 
+def trim_clip(src, ms, dur, d):
+    """frame-exact cut of [ms, ms + dur] (CFR 30 sources), cached in assets/cuts; returns the part-relative path"""
+    key = f"{src.stem}_{int(round(ms * FPS))}_{int(round(dur * FPS))}.mp4"
+    cache = A / "cuts" / key
+    if not cache.exists():
+        cache.parent.mkdir(exist_ok=True)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{ms:.4f}", "-i", str(src), "-t", f"{dur:.4f}", "-an", "-r", "30",
+                        "-c:v", "libx264", "-preset", "medium", "-crf", "16", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+                        str(cache) + ".tmp.mp4"], check=True)
+        Path(str(cache) + ".tmp.mp4").rename(cache)
+    shutil.copy(cache, d / "media" / key)
+    return f"media/{key}"
+
+
 def emit_part(pid, t0, t1, caps):
     D = FF.ft(round(t1 * FPS) - round(t0 * FPS)); d = OUTV / pid
     shutil.rmtree(d / "media", ignore_errors=True); (d / "media").mkdir(parents=True, exist_ok=True)
@@ -1165,7 +1180,11 @@ def emit_part(pid, t0, t1, caps):
         st, du = FF.ft(fs), round(FF.ft(fe) - FF.ft(fs), 4); src = media(s["src"])
         xf = f' data-xf="{XF}"' if soft_in else ""
         fn = f"media/{src.name}"
-        if not (d / fn).exists():
+        if src.suffix == ".mp4" and os.environ.get("TRIM") == "1":
+            # 4K master (r3): each shot carries only its own seconds, so a part never loads whole source clips
+            # (p2 at 4K died with "Runtime.evaluate timed out" holding the full 5-minute PM clip for 3 s of it)
+            fn, ms = trim_clip(src, ms, du + 0.25, d), 0.0
+        elif not (d / fn).exists():
             shutil.copy(src, d / fn)
         tag = f'<div class="tag">{esc(s["tag"])}</div>' if s["tag"] else ""
         org = f' data-origin="{s["origin"]}"' if s["origin"] else ""
