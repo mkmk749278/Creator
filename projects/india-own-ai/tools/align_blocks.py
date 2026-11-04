@@ -5,7 +5,7 @@ Same method as the rare-earth film: each take's trailing silence is trimmed to 0
 sentences with scripts/align_script.py, then the takes are joined into voice/vo_full.wav with GAP seconds between them
 and every time is shifted onto that timeline. Blocks come from scripts/vo_blocks.py (the split the owner recorded from).
 Writes align/align.json (line, en, start, end, confidence, block), align/sentences.json, align/blocks.json and
-align/subtitles.en.srt (one cue per sentence).
+align/subtitles.en.srt (one cue per sentence), then runs build/words.py (align/words.json).
 usage: python3 projects/india-own-ai/tools/align_blocks.py
 """
 import json
@@ -91,3 +91,6 @@ filt += "".join(f"[a{k}]" for k in range(len(wavs))) + f"concat=n={len(wavs)}:v=
 run("ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", filt, "-map", "[o]", "-ac", "1", str(voice / "vo_full.wav"))
 low = [l["line"] for l in lines if l["confidence"] != "high"]
 print(f"{len(lines)} lines, {t - GAP:.1f} s; low-confidence lines: {low}")
+# word times for the word-level cutaways come from the new vo_full.wav too (r4: a build on the old take's words
+# dropped a cutaway and put tiles on a caption)
+print(run(sys.executable, str(HERE / "build/words.py")).stdout.strip())

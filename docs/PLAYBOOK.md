@@ -2111,9 +2111,10 @@ timing and rendered frames before taking anything, and carry over only what hold
 - **Prove the rebuild before changing it:** with the old alignment, `make_film.py` must reproduce the committed
   compositions byte-for-byte (a DRY run that names the trimmed cuts without encoding them). The mismatches name the
   missing clip frame rates exactly (`ms_committed / ms_dry × 30`); 49 clips fitted, all ten parts identical.
-- **A new take moves word-level cutaways:** run `make_film.py` and diff its "insert … skipped" list against the old
-  run's; one cutaway ("budgets") dropped and was re-anchored. Then `hyperframes check` every part: a tile row that
-  cleared the caption on the old timing sat on it on the new one.
+- **A new take needs new word times too:** `tools/align_blocks.py` writes lines and sentences, not
+  `align/words.json`; run `build/words.py` after it. The first r4 build ran on the old take's word times: a cutaway
+  dropped and a tile row sat on a caption, and a 4K run was cancelled. Then diff `make_film.py`'s "insert … skipped"
+  list against the old run's and `hyperframes check` every part.
 - **Whole-block re-takes, never splices:** six of nine blocks re-made; the others keep the approved takes.
 
 **India-own-AI round 1: picture on the word, and only real pictures (owner, 2026-11-03).**

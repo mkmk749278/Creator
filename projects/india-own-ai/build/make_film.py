@@ -451,7 +451,7 @@ box("plab s", _t0 + 0.8, LE(18), _px(_t0) - 110, 700, fx="up", inner=f"YOU ARE H
 box("pin", W(18, "minute"), LE(18), _px(600), 640, fx="fall", d=0.7)
 box("plab", W(18, "minute") + 0.4, LE(18), _px(600) - 150, 700, fx="up", inner="MINUTE 10")
 tiles("deepseek", "te", _t0 + 0.2, W(18, "Indian") + 0.3, 330, x0=160, x1=1760, stagger=0.03)
-tiles("sarvam", "te", W(18, "Indian") + 0.2, LE(18), 400, x0=_px(600) - 330, x1=1800, cls="saffron", stagger=0.06)   # r4: 70 px higher, so the third row clears the caption
+tiles("sarvam", "te", W(18, "Indian") + 0.2, LE(18), 470, x0=_px(600) - 330, x1=1800, cls="saffron", stagger=0.06)
 el(f'<div class="hkey" style="left:160px;top:270px" {attrs(_t0 + 0.2, W(18, "Indian") + 0.3, "fade")}>DEEPSEEK · TELUGU · 25 PIECES</div>', _t0 + 0.2, W(18, "Indian") + 0.3)
 shot(c(19), "plate", "slow")                                           # "what's actually inside one of these machines... three things"
 for k, (lab, colr) in enumerate([("?", "paper"), ("?", "chip"), ("?", "saffron")]):
@@ -818,7 +818,7 @@ ins(W(73, "Odia"), "ST_konark_1", 1.6, ms=3.0, tag="PIXABAY · ODISHA")  # "Look
 ins(W(75, "Maharashtra"), "ST_mantralaya_1", 1.6, move="in")            # "Maharashtra gave..."
 ins(W(77, "DeepSeek's"), "D_deepseek_v4_hf", 1.8, move="doc", origin="40% 100%", dim=False, tag="DOCUMENT · HUGGING FACE · DEEPSEEK-V4-PRO")   # "DeepSeek's newest big model"
 ins(W(78, "clusters"), "RACK", 1.3, ms=6.0)                             # "far bigger clusters,
-ins(W(78, "far bigger budgets"), "ST_r2_usd_0", 1.5, ms=2.0)            #  with far bigger budgets." (from "far": the r4 take reads it faster)
+ins(W(78, "budgets"), "ST_r2_usd_0", 1.5, ms=2.0)                       #  with far bigger budgets."
 ins(W(80, "BharatGen's"), "BGN" if have("BGN") else "D_bharatgen_blog", 1.6, ms=116.0)   # "BharatGen's mandate"
 ins(W(82, "languages"), "NEWS", 1.6, ms=4.0)                            # "in our own languages."
 for lw, city, m, tg in [("Hindi", "ST_varanasi_0", 3.0, "PIXABAY · VARANASI"), ("Marathi", "ST_pune_0", 6.0, "PIXABAY · PUNE"),
