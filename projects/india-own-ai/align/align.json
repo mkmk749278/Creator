@@ -1,0 +1,706 @@
+[
+ {
+  "line": 1,
+  "en": "Ask an A.I. one simple question. Will it rain in my village tomorrow?",
+  "start": 0.0,
+  "end": 4.357,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "en": "Before it reads your question, the machine chops it into pieces. In English... just eight.",
+  "start": 4.863,
+  "end": 10.457,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "en": "Now ask it in Hindi. On DeepSeek, the famous Chinese A.I.... eighteen. More than double.",
+  "start": 10.925,
+  "end": 16.991,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "en": "Marathi, twenty. Telugu, twenty-five. And in those two, it even cuts some of your letters in half.",
+  "start": 17.413,
+  "end": 24.058,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "en": "So can India build an A.I. of its own? One that speaks your language best?",
+  "start": 24.601,
+  "end": 29.627,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "en": "Here's a clue for you. Ask it in Chinese. Seven pieces. Fewer than English.",
+  "start": 30.065,
+  "end": 34.907,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "en": "You see what's going on? A machine speaks best in the language of the people who built it.",
+  "start": 35.367,
+  "end": 40.352,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "en": "And it's not just pride. Your apps pay these machines by the piece. More pieces means a bigger bill, and a slower answer for you.",
+  "start": 40.751,
+  "end": 48.792,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "en": "Now think back to last November. Chat G.P.T.'s paid plan, called Go, became free in India for a whole year. Maybe you signed up too. OpenAI says India is now one of its biggest markets.",
+  "start": 49.303,
+  "end": 61.211,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "en": "For the first people who signed up, that free year runs out... about now.",
+  "start": 61.655,
+  "end": 65.958,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "en": "So when yours ends, whose machine will you be talking to? One built in America? One built in China? Or one built here?",
+  "start": 66.404,
+  "end": 73.662,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "en": "To see why India doesn't have its own yet, you have to go back to one Monday. The twenty-seventh of January, twenty twenty-five.",
+  "start": 74.092,
+  "end": 81.27,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "en": "A small Chinese lab called DeepSeek has just put out a free A.I. By that Monday, it's beaten Chat G.P.T. in downloads on Apple's App Store in America.",
+  "start": 81.765,
+  "end": 91.441,
+  "block": 1,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "en": "DeepSeek says the final training run of its base model cost about five and a half million dollars. The American giants, you may remember, were spending billions.",
+  "start": 92.573,
+  "end": 103.36,
+  "block": 2,
+  "confidence": "check"
+ },
+ {
+  "line": 15,
+  "en": "That day, the American chip company Nvidia loses around five hundred and ninety billion dollars in value. That's about fifty lakh crore rupees.",
+  "start": 103.67,
+  "end": 111.98,
+  "block": 2,
+  "confidence": "check"
+ },
+ {
+  "line": 16,
+  "en": "Think about that number for a second. It's roughly the size of India's whole Union Budget for that year... gone from one company in one day.",
+  "start": 112.676,
+  "end": 121.548,
+  "block": 2,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "en": "Three days later, in Delhi, India's I.T. minister, Ashwini Vaishnaw, makes a promise. India will build its own A.I. model... and he hopes it will be ready within six months.",
+  "start": 122.119,
+  "end": 133.049,
+  "block": 2,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "en": "So did India keep that promise? You'll see. And around minute ten, I'll run that same chopping test for you again... on an Indian machine. That's where it gets interesting.",
+  "start": 133.507,
+  "end": 143.607,
+  "block": 2,
+  "confidence": "check"
+ },
+ {
+  "line": 19,
+  "en": "But first, you need to know what's actually inside one of these machines. Because it isn't magic. It's three things.",
+  "start": 144.077,
+  "end": 150.934,
+  "block": 2,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "en": "Picture a child who has read every book in a giant library. You start a sentence... and the child guesses your next word. Then the next one. Then the next.",
+  "start": 151.318,
+  "end": 160.554,
+  "block": 2,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "en": "That's really all a chatbot does. It guesses the next piece, again and again, so well that you feel it's thinking.",
+  "start": 161.037,
+  "end": 168.404,
+  "block": 2,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "en": "So if you want to build one, you need three things. A library to read. A reading room where it can read. And teachers who know how to train the child.",
+  "start": 168.832,
+  "end": 177.56,
+  "block": 2,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "en": "The library is words \u2014 trillions of pieces of text, like the ones you type. The reading room is chips, thousands of them, running day and night for months. And the teachers? They're engineers.",
+  "start": 178.745,
+  "end": 191.925,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "en": "India has the teachers. You know this already. Indian engineers write software for companies all over the world.",
+  "start": 192.46,
+  "end": 198.794,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "en": "So your missing pieces are the library and the reading room. Let's start with the library. Almost nobody tells you about this part.",
+  "start": 199.481,
+  "end": 207.009,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "en": "A lot of A.I. learns from the internet. One of the biggest free copies of the web is called Common Crawl. Many A.I. models learned from it, including an early model from the makers of the Chat G.P.T. you use.",
+  "start": 207.584,
+  "end": 220.499,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "en": "So we took its latest copy, from October twenty twenty-six \u2014 more than two billion web pages \u2014 and checked its own count of languages.",
+  "start": 221.012,
+  "end": 229.307,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "en": "English? Forty-two out of every hundred pages. Now, can you guess Hindi?",
+  "start": 229.821,
+  "end": 234.966,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "en": "For every one page in Hindi... there are about two hundred pages in English. And Hindi is the mother tongue of more than fifty crore people.",
+  "start": 235.497,
+  "end": 243.671,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "en": "Marathi? About fifteen hundred. Telugu? About two thousand three hundred. And each of those is the mother tongue of around eight crore people, maybe yours.",
+  "start": 244.145,
+  "end": 253.565,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "en": "All of India's languages together make up less than one page in every hundred.",
+  "start": 254.072,
+  "end": 258.94,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "en": "Think about it. More than one in every six people on Earth lives in your country. But in the library these machines read, your language is almost invisible.",
+  "start": 259.564,
+  "end": 269.556,
+  "block": 3,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "en": "And India's job is harder than China's. China's A.I. mostly needs one written language. Your country's Constitution lists twenty-two, written in about a dozen different scripts. Each one needs its own shelf.",
+  "start": 270.545,
+  "end": 284.129,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "en": "And that's why your question cost so much more in Hindi, Marathi and Telugu. Remember the chopper? It learns its pieces from this same library.",
+  "start": 284.654,
+  "end": 293.761,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "en": "Words it sees all the time, like rain or village, become one neat piece each. Your words, which it hardly ever sees, get chopped into bits. Sometimes into half a letter.",
+  "start": 294.187,
+  "end": 305.572,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 36,
+  "en": "Here's the rule. A machine learns from what it reads.",
+  "start": 306.018,
+  "end": 309.222,
+  "block": 4,
+  "confidence": "check"
+ },
+ {
+  "line": 37,
+  "en": "And what goes wrong? If your language is only a tiny corner of the library, the machine learns it last... and charges you more.",
+  "start": 309.564,
+  "end": 317.166,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "en": "So someone has to build the Indian part of the library. Page by page, voice by voice. And that's slow, expensive work.",
+  "start": 317.552,
+  "end": 325.434,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "en": "And India has started. A government data shelf for Indian builders, called A.I. Kosh, now holds more than sixteen thousand collections.",
+  "start": 325.908,
+  "end": 334.257,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "en": "But words are only half of it. Even with a perfect library, you need a place to read it. And this is where India hits a wall.",
+  "start": 334.578,
+  "end": 342.188,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "en": "This is the reading room. A chip like this one, made by an American company called Nvidia. It's called a G.P.U., and a single one costs lakhs of rupees.",
+  "start": 342.591,
+  "end": 352.542,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 42,
+  "en": "And to train a big A.I., you need thousands of them, wired together, running for months.",
+  "start": 352.872,
+  "end": 358.262,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 43,
+  "en": "And here's the catch. India doesn't make these chips. They're designed in America and made mostly in Taiwan. If you watched our chip film, you know why.",
+  "start": 358.58,
+  "end": 367.216,
+  "block": 4,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "en": "In January twenty twenty-five, India found out how fast that door can close.",
+  "start": 368.237,
+  "end": 373.268,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 45,
+  "en": "Just days before leaving office, America's government put out a new rule. It sorted the world into three groups. Its closest allies could buy these chips freely. China was blocked.",
+  "start": 373.659,
+  "end": 384.779,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 46,
+  "en": "And India? India was put in the middle group, with a limit on how many of these chips it could get.",
+  "start": 385.18,
+  "end": 391.084,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 47,
+  "en": "Four months later, the new American government scrapped that rule. But India had seen it. The tap is in someone else's hand.",
+  "start": 391.438,
+  "end": 398.955,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 48,
+  "en": "So what would you do? India didn't wait to own a giant reading room. It rented one... and shared it.",
+  "start": 399.392,
+  "end": 406.054,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 49,
+  "en": "Under the IndiaAI Mission, private companies put their chips into one common pool. Indian startups and researchers rent time on them, and the government pays part of the bill.",
+  "start": 406.349,
+  "end": 416.126,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 50,
+  "en": "In January twenty twenty-five, India lined up more than eighteen thousand chips for that pool. By June twenty twenty-six, more than forty-five thousand.",
+  "start": 416.477,
+  "end": 425.033,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 51,
+  "en": "That's a big jump, right? But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips. Almost eight times your country's whole shared pool this June.",
+  "start": 425.377,
+  "end": 439.005,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 52,
+  "en": "And the money? India's whole A.I. mission is about ten thousand crore rupees, spread over five years.",
+  "start": 439.346,
+  "end": 445.308,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 53,
+  "en": "This year alone, Meta told its investors it would spend around thirteen lakh crore rupees on buildings and machines, much of it for A.I.",
+  "start": 445.574,
+  "end": 454.063,
+  "block": 5,
+  "confidence": "high"
+ },
+ {
+  "line": 54,
+  "en": "So India's whole mission... ten thousand crore, over five years. Meta alone... thirteen lakh crore, in one single year. That's not double. That's more than a hundred times as much.",
+  "start": 455.142,
+  "end": 466.829,
+  "block": 6,
+  "confidence": "high"
+ },
+ {
+  "line": 55,
+  "en": "So is it hopeless? No. Because remember DeepSeek.",
+  "start": 467.374,
+  "end": 471.566,
+  "block": 6,
+  "confidence": "check"
+ },
+ {
+  "line": 56,
+  "en": "DeepSeek says it trained its base model on about two thousand chips. Not hundreds of thousands. And they were a cut-down version, made so they could still be sold to China.",
+  "start": 471.92,
+  "end": 481.775,
+  "block": 6,
+  "confidence": "high"
+ },
+ {
+  "line": 57,
+  "en": "So what's the lesson for you and me? You don't always need the biggest room. You need clever engineering. And that's a game Indian engineers can play.",
+  "start": 482.171,
+  "end": 491.115,
+  "block": 6,
+  "confidence": "high"
+ },
+ {
+  "line": 58,
+  "en": "April twenty twenty-five. The government picks the first company to build India's own model from scratch. A Bengaluru startup called Sarvam.",
+  "start": 491.471,
+  "end": 499.751,
+  "block": 6,
+  "confidence": "high"
+ },
+ {
+  "line": 59,
+  "en": "Sarvam was started by two Indians you should know, Vivek Raghavan and Pratyush Kumar. The mission gives them about four thousand of those Nvidia chips to work with.",
+  "start": 500.098,
+  "end": 508.693,
+  "block": 6,
+  "confidence": "high"
+ },
+ {
+  "line": 60,
+  "en": "But a month later, the doubts begin. Sarvam's next model is built on top of a French one. And critics ask \u2014 if the base is foreign, how is it Indian?",
+  "start": 509.145,
+  "end": 519.29,
+  "block": 6,
+  "confidence": "check"
+ },
+ {
+  "line": 61,
+  "en": "Fair question, isn't it? You'd ask it too. Can an Indian team train one from zero, start to finish, at home?",
+  "start": 519.729,
+  "end": 526.447,
+  "block": 6,
+  "confidence": "check"
+ },
+ {
+  "line": 62,
+  "en": "February twenty twenty-six. Bharat Mandapam, Delhi. The India A.I. Impact Summit.",
+  "start": 526.815,
+  "end": 532.696,
+  "block": 6,
+  "confidence": "check"
+ },
+ {
+  "line": 63,
+  "en": "There, Sarvam shows India two new models. The bigger one has a hundred and five billion parameters. Think of them as tiny dials the machine tunes while it reads.",
+  "start": 532.849,
+  "end": 542.633,
+  "block": 6,
+  "confidence": "high"
+ },
+ {
+  "line": 64,
+  "en": "Trained from scratch. In India. On those shared chips you just saw. And before it ever talked to you, it read around twelve trillion pieces of text.",
+  "start": 543.639,
+  "end": 553.068,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 65,
+  "en": "Then Sarvam did something generous. It made the model open. Any Indian developer can download it and build their own apps on it, for free.",
+  "start": 553.649,
+  "end": 562.41,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 66,
+  "en": "The minister had hoped for six months, and later said ten at the most. It took about a year. Late, you could say... but delivered.",
+  "start": 562.932,
+  "end": 571.621,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 67,
+  "en": "And that same week, BharatGen \u2014 a team led by I.I.T. Bombay \u2014 showed its own model too, called Param Two, built for all twenty-two scheduled Indian languages.",
+  "start": 572.169,
+  "end": 581.672,
+  "block": 7,
+  "confidence": "check"
+ },
+ {
+  "line": 68,
+  "en": "Now remember my promise to you. The chopping test. Same question. Will it rain in my village tomorrow?",
+  "start": 582.168,
+  "end": 587.87,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 69,
+  "en": "DeepSeek's chopper, you've seen. Hindi, eighteen. Marathi, twenty. Telugu, twenty-five.",
+  "start": 588.246,
+  "end": 594.366,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 70,
+  "en": "The chopper behind Chat G.P.T.'s recent models... Hindi eight, Marathi fourteen, Telugu fifteen.",
+  "start": 594.757,
+  "end": 600.825,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 71,
+  "en": "And Sarvam's? Hindi, eight \u2014 exactly the same as English. Marathi, ten. Telugu, eleven.",
+  "start": 601.224,
+  "end": 607.626,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 72,
+  "en": "And this isn't one lucky sentence. We ran the same test on more than a thousand sentences, each one in thirteen languages.",
+  "start": 608.009,
+  "end": 615.25,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 73,
+  "en": "Look at Odia. On DeepSeek's chopper, five and a half times the pieces of English. On Sarvam's... less than one and a half. And BharatGen's chopper does about as well.",
+  "start": 615.631,
+  "end": 625.518,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 74,
+  "en": "So for your language, the gap shrinks, a lot. Because this time... an Indian team put the missing pieces in.",
+  "start": 625.92,
+  "end": 632.564,
+  "block": 7,
+  "confidence": "high"
+ },
+ {
+  "line": 75,
+  "en": "And it's already at work. Sarvam says its models help run Aadhaar services in Indian languages. And in October, Maharashtra gave Sarvam's A.I. assistant to two thousand five hundred government officials.",
+  "start": 633.73,
+  "end": 646.373,
+  "block": 8,
+  "confidence": "high"
+ },
+ {
+  "line": 76,
+  "en": "So has India built its own Chat G.P.T.? Let me be honest with you. Not one that matches the best in the world. Not yet.",
+  "start": 646.807,
+  "end": 654.652,
+  "block": 8,
+  "confidence": "high"
+ },
+ {
+  "line": 77,
+  "en": "DeepSeek's newest big model has one point six trillion of those dials in total. About fifteen times Sarvam's.",
+  "start": 655.003,
+  "end": 661.889,
+  "block": 8,
+  "confidence": "high"
+ },
+ {
+  "line": 78,
+  "en": "And Sarvam says it plainly, in its own report. The newest models from other labs are trained on far bigger clusters, with far bigger budgets.",
+  "start": 662.234,
+  "end": 670.686,
+  "block": 8,
+  "confidence": "high"
+ },
+ {
+  "line": 79,
+  "en": "Here's the real scoreboard. India has the teachers. India has started on the library. And for the reading room... India still rents the chips.",
+  "start": 671.123,
+  "end": 680.218,
+  "block": 8,
+  "confidence": "check"
+ },
+ {
+  "line": 80,
+  "en": "What's next? The IndiaAI Mission has now picked twenty Indian proposals to build models, Sarvam and BharatGen among them. And BharatGen's mandate is to keep scaling, all the way up to a trillion dials.",
+  "start": 680.66,
+  "end": 693.238,
+  "block": 8,
+  "confidence": "high"
+ },
+ {
+  "line": 81,
+  "en": "So here's the lesson. A machine speaks best in the language of the people who build it.",
+  "start": 693.638,
+  "end": 699.151,
+  "block": 8,
+  "confidence": "high"
+ },
+ {
+  "line": 82,
+  "en": "If India only rents other countries' machines, you and I will keep paying extra to be understood... in our own languages.",
+  "start": 699.459,
+  "end": 707.582,
+  "block": 8,
+  "confidence": "check"
+ },
+ {
+  "line": 83,
+  "en": "But today, there's an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.",
+  "start": 707.921,
+  "end": 716.772,
+  "block": 8,
+  "confidence": "check"
+ },
+ {
+  "line": 84,
+  "en": "So what does this mean for you? First, check your Chat G.P.T. plan before the free year ends. Once it's over, it can start charging you on its own.",
+  "start": 717.171,
+  "end": 726.081,
+  "block": 8,
+  "confidence": "high"
+ },
+ {
+  "line": 85,
+  "en": "And before you pay for any A.I., ask the same question in your own language to two or three of them. Chat G.P.T., DeepSeek, and an Indian one, like Sarvam's app, called Indus. Pay only for the one that really understands you.",
+  "start": 727.113,
+  "end": 742.087,
+  "block": 9,
+  "confidence": "high"
+ },
+ {
+  "line": 86,
+  "en": "And A.I. isn't the only thing India has built for itself. Did you know India has its own satellite navigation, up in space? It's called Navik. So why does your phone still lean on America's G.P.S.? That's our next story.",
+  "start": 742.656,
+  "end": 758.064,
+  "block": 9,
+  "confidence": "high"
+ },
+ {
+  "line": 87,
+  "en": "Before you go, try this tonight. Ask any A.I. one question in your mother tongue... and tell me in the comments which one answered best. I read every one.",
+  "start": 758.595,
+  "end": 768.498,
+  "block": 9,
+  "confidence": "high"
+ },
+ {
+  "line": 88,
+  "en": "This is Be Practical with Kishore. Stay practical. Jai Hind.",
+  "start": 769.027,
+  "end": 772.707,
+  "block": 9,
+  "confidence": "high"
+ }
+]

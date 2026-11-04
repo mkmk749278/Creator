@@ -2052,6 +2052,57 @@ timing and rendered frames before taking anything, and carry over only what hold
   readouts. Our films keep warm, simple, few words on screen: one 2–4-word label in the narration's words, never a
   dense telemetry strip.
 
+**India-own-AI film: lead with Hindi, show India as many languages (owner, 2026-11-03).**
+- **Language examples start with Hindi, then 1–2 more from other regions** (here Hindi → Marathi → Telugu: north, west,
+  south). *Why (owner):* "our audience are overall most Indians speak Hindi"; a Telugu-only example made the film read
+  as a South Indian creator's, which narrows the channel. Draft 1 opened on Telugu alone.
+- **India's many languages are part of the story, not a footnote:** a beat on 22 scheduled languages in about a
+  dozen scripts. If one language is singled out (the worst case, a payoff), say why on air.
+- **Measure every example language, don't assume:** Hindi was 18 pieces on DeepSeek but showed no split letters;
+  Marathi and Telugu did. The VO says "cuts letters" only for the two where it is true.
+- **Every text style needs the bundled script fonts, not only the tiles.** Round 1's payoff labels (हिंदी, తెలుగు in
+  `.hval`/`.hkey`) rendered as empty boxes on GitHub's runners, which have no Indian-script fonts; local snapshots
+  looked fine because this container has some. *Fix:* `--sans` and `--mono` in `video/aig/_shared/aig.css` fall back to
+  the bundled Deva/Telu/Taml/Orya/Beng/SC faces. *Check:* look at the runner's render, never only local snapshots.
+- **Run `npx hyperframes check` on every part before triggering renders:** the workflow stops on layout errors (two
+  text blocks overlapping), and the first run lost four renders to them. `build/snap.py` (film-time snapshots) plus the
+  check catch both the look and the overlaps in the session.
+- **Never commit part media** (`video/aig/*/media/` is ignored): it goes to the render as Drive tars. A tar that also
+  carries `shared/` overwrites a newer committed style file; ship style fixes as a small `pN_z.tar` that unpacks after.
+- **News clips with burned-in captions:** the Business Standard clip's own "₹15,000 crore buyback" text showed under
+  "India has the teachers". Use only spans with no on-screen text of their own.
+- **ElevenLabs music and SFX** (owner, 2026-11-03: open sources first; FreePD has closed, Incompetech needs a credit
+  we don't print): music is billed apart from the voice characters; at most 2 requests at once (a third gets 429).
+- **Outside AI reviews keep being wrong on numbers:** the pasted review said Meta's capex was $38–45 bn (its 2026
+  guidance is $135–145 bn) and that Sarvam's app isn't called Indus (it is). Check every point against `claims.csv`
+  first (`projects/india-own-ai/review_outside_v1.md`).
+
+**India-own-AI round 1: picture on the word, and only real pictures (owner, 2026-11-03).**
+- **Every name, place, number and key verb gets its own picture on the word, even for 1–2 s.** *Why (owner, r1):*
+  "narration to visuals... not matching at all"; one shot per line left "Chinese", "Delhi", "Taiwan", "Nvidia" and
+  "Maharashtra" over unrelated city or office footage. *How:* word times from `build/words.py` (silencedetect pauses plus a
+  letter-weighted spread, no speech recognition); `ins(W(line, "word"), src, dur)` in `build/make_film.py` cuts away
+  0.15 s before the word and resumes the shot underneath as if it had kept running (over an animated plate the cutaway is
+  dimmed under the animation). r1 had 167 shots; r2 has 268, 92 of them on words. Plan first in `word_map.md`, then check
+  with `build/word_audit.py`: one frame per cutaway, labelled with its word.
+- **"All should look real and should match situation" (owner, r2):** a stock search hit is not a picture until
+  you have looked at it. In one batch of 59 Pixabay/Openverse picks, 17 failed the look: CGI flags, satellites, a HUD,
+  green-screen calendars, timers, progress bars, CGI yuan, Western classrooms, a posed actor. Some were the wrong
+  place: a "Mumbai" skyline that is Taipei 101, "rupee" notes that are Pakistani, an "Aadhaar centre" whose sign is an MLA
+  office. *Rule:* make a contact sheet of two frames per clip before wiring any of it, reject computer graphics and
+  foreign stand-ins for Indian scenes, and read the signs in the frame. A real clip's content has to match its words:
+  the Yotta clip is two men talking outside, so it can't carry "reading room" or "clusters".
+- **No stock clip more than twice** (standing note); count the uses in the cut before building
+  (`grep` the `shot(`/`ins(` calls). Real event footage of the named person or place is exempt.
+- **Review renders: shrink a part's clips to 720p first** (`projects/india-own-ai/build/shrink_media.sh`). The two
+  heaviest parts (514 and 733 MB, about 50 clips each) failed on GitHub. First the check's media requests hit
+  `net::ERR_CONNECTION_RESET`, then the render timed out on `Runtime.evaluate` (HyperFrames: "RAM-pressured hosts with
+  heavy-asset compositions"). At 720p the parts are 90–260 MB and render. Shrink only for review cuts, never before the 4K master.
+- **Screens in stock footage count as pictures too:** a "programmer" clip showed a made-up "Encrypting / Satellite uplink"
+  UI. Read what is on every screen in the frame.
+- **Look inside the owner's Drive footage before searching outside:** the "DGX tour" clip held Jensen Huang to camera
+  and a real H100 close-up, the best pictures for "Nvidia" in the film.
+
 **Pharma film: lived-memory anchors, and outside script reviews (2026-10-28).**
 - **Anchor dates in events viewers lived** (§4a-12 item 16). The owner, recording block 1, noticed "the third of March,
   twenty twenty" read as a bare date; the scene only came alive as "the Corona days… three weeks before the lockdown".

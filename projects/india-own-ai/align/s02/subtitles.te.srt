@@ -1,0 +1,100 @@
+1
+00:00:00,000 --> 00:00:06,507
+DeepSeek says the final training run of its base model cost about five and a half million dollars.
+
+2
+00:00:06,507 --> 00:00:11,097
+The American giants, you may remember, were spending billions.
+
+3
+00:00:11,097 --> 00:00:17,152
+That day, the American chip company Nvidia loses around five hundred and ninety billion dollars in value.
+
+4
+00:00:17,152 --> 00:00:20,103
+That's about fifty lakh crore rupees.
+
+5
+00:00:20,103 --> 00:00:22,116
+Think about that number for a second.
+
+6
+00:00:22,116 --> 00:00:29,546
+It's roughly the size of India's whole Union Budget for that year... gone from one company in one day.
+
+7
+00:00:29,546 --> 00:00:35,134
+Three days later, in Delhi, India's I.T. minister, Ashwini Vaishnaw, makes a promise.
+
+8
+00:00:35,134 --> 00:00:40,934
+India will build its own A.I. model... and he hopes it will be ready within six months.
+
+9
+00:00:40,934 --> 00:00:43,426
+So did India keep that promise?
+
+10
+00:00:43,426 --> 00:00:44,371
+You'll see.
+
+11
+00:00:44,371 --> 00:00:49,888
+And around minute ten, I'll run that same chopping test for you again... on an Indian machine.
+
+12
+00:00:49,888 --> 00:00:51,504
+That's where it gets interesting.
+
+13
+00:00:51,504 --> 00:00:55,641
+But first, you need to know what's actually inside one of these machines.
+
+14
+00:00:55,641 --> 00:00:57,481
+Because it isn't magic.
+
+15
+00:00:57,481 --> 00:00:58,745
+It's three things.
+
+16
+00:00:58,745 --> 00:01:02,833
+Picture a child who has read every book in a giant library.
+
+17
+00:01:02,833 --> 00:01:06,369
+You start a sentence... and the child guesses your next word.
+
+18
+00:01:06,369 --> 00:01:07,406
+Then the next one.
+
+19
+00:01:07,406 --> 00:01:08,464
+Then the next.
+
+20
+00:01:08,464 --> 00:01:10,703
+That's really all a chatbot does.
+
+21
+00:01:10,703 --> 00:01:16,259
+It guesses the next piece, again and again, so well that you feel it's thinking.
+
+22
+00:01:16,259 --> 00:01:19,391
+So if you want to build one, you need three things.
+
+23
+00:01:19,391 --> 00:01:20,843
+A library to read.
+
+24
+00:01:20,843 --> 00:01:22,785
+A reading room where it can read.
+
+25
+00:01:22,785 --> 00:01:25,440
+And teachers who know how to train the child.
+

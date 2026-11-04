@@ -1,0 +1,45 @@
+== 1. DeepSeek chopper across versions (same counts = same chopper)
+V3 (used in token_test.py)             example: en 8 te 25 zh 7 | FLORES: eng 27041 (1.00) hin 75589 (2.80) tel 101201 (3.74) tam 83021 (3.07) kan 99722 (3.69) mal 119408 (4.42) ben 54532 (2.02) ory 149957 (5.55) zho 25396 (0.94)
+DeepSeek-V3.1                          example: en 8 te 25 zh 7 | FLORES: eng 27041 (1.00) hin 75589 (2.80) tel 101201 (3.74) tam 83021 (3.07) kan 99722 (3.69) mal 119408 (4.42) ben 54532 (2.02) ory 149957 (5.55) zho 25396 (0.94)
+DeepSeek-R1-0528                       example: en 8 te 25 zh 7 | FLORES: eng 27041 (1.00) hin 75589 (2.80) tel 101201 (3.74) tam 83021 (3.07) kan 99722 (3.69) mal 119408 (4.42) ben 54532 (2.02) ory 149957 (5.55) zho 25396 (0.94)
+DeepSeek-V3.2                          example: en 8 te 25 zh 7 | FLORES: eng 27041 (1.00) hin 75589 (2.80) tel 101201 (3.74) tam 83021 (3.07) kan 99722 (3.69) mal 119408 (4.42) ben 54532 (2.02) ory 149957 (5.55) zho 25396 (0.94)
+DeepSeek-V4-Pro                        example: en 8 te 25 zh 7 | FLORES: eng 27041 (1.00) hin 75589 (2.80) tel 101201 (3.74) tam 83021 (3.07) kan 99722 (3.69) mal 119408 (4.42) ben 54532 (2.02) ory 149957 (5.55) zho 25396 (0.94)
+DeepSeek-V4.1-Flash                    example: en 8 te 25 zh 7 | FLORES: eng 27041 (1.00) hin 75589 (2.80) tel 101201 (3.74) tam 83021 (3.07) kan 99722 (3.69) mal 119408 (4.42) ben 54532 (2.02) ory 149957 (5.55) zho 25396 (0.94)
+
+== 2. Earlier choppers and Google Gemma 3 on the same 1,012 sentences
+o200k_base (ChatGPT, GPT-4o to GPT-5.x) example: en 8 te 15 zh 9 | FLORES: eng 26873 (1.00) hin 42292 (1.57) tel 51863 (1.93) tam 53199 (1.98) kan 52975 (1.97) mal 52584 (1.96) ben 45592 (1.70) ory 133961 (4.98) zho 33555 (1.25)
+Sarvam 30B/105B (Feb 2026)             example: en 8 te 11 zh 8 | FLORES: eng 27122 (1.00) hin 35537 (1.31) tel 39400 (1.45) tam 39830 (1.47) kan 40924 (1.51) mal 44237 (1.63) ben 32840 (1.21) ory 38802 (1.43) zho 29247 (1.08)
+Sarvam-1 (Oct 2024)                    example: en 9 te 16 zh 31 | FLORES: eng 31422 (1.00) hin 35954 (1.14) tel 36250 (1.15) tam 36390 (1.16) kan 38265 (1.22) mal 42626 (1.36) ben 40283 (1.28) ory 46015 (1.46) zho 119905 (3.82)
+BharatGen Param-1 2.9B (Jun 2025)      example: en 8 te 20 zh 9 | FLORES: eng 26966 (1.00) hin 45919 (1.70) tel 62995 (2.34) tam 59966 (2.22) kan 67707 (2.51) mal 70093 (2.60) ben 54991 (2.04) ory 359010 (13.31) zho 33885 (1.26)
+Krutrim-1 (2024)                       example: en 8 te 20 zh 26 | FLORES: eng 28876 (1.00) hin 84835 (2.94) tel 96499 (3.34) tam 113527 (3.93) kan 98435 (3.41) mal 110119 (3.81) ben 90499 (3.13) ory 95574 (3.31) zho 103367 (3.58)
+Gemma 3 (Google, Mar 2025)             example: en 8 te 14 zh 8 | FLORES: eng 27114 (1.00) hin 35537 (1.31) tel 48164 (1.78) tam 39830 (1.47) kan 52251 (1.93) mal 50113 (1.85) ben 32836 (1.21) ory 95199 (3.51) zho 29243 (1.08)
+
+== 3. Sarvam's vocabulary vs Gemma 3's
+Sarvam vocab 262144, Gemma 3 vocab 262145, same piece at the same id: 239314 (91.3%)
+only in Sarvam, by script: [('GURMUKHI', 3561), ('ORIYA', 3328), ('KANNADA', 2935), ('GUJARATI', 2635), ('TELUGU', 2520), ('MEETEI', 2333), ('MALAYALAM', 2067), ('TIBETAN', 1796), ('OL', 1320), ('other', 246)]
+only in Gemma 3, by script: [('HANGUL', 4678), ('LATIN', 3890), ('THAI', 2142), ('HIRAGANA', 1969), ('KATAKANA', 1957), ('GREEK', 1313), ('CJK', 904), ('ETHIOPIC', 847), ('HEBREW', 801), ('CUNEIFORM', 706)]
+  TELUGU: Sarvam 4284 pieces, Gemma 3 1764
+  TAMIL: Sarvam 3834 pieces, Gemma 3 3834
+  ORIYA: Sarvam 3428 pieces, Gemma 3 100
+  DEVANAGARI: Sarvam 13638 pieces, Gemma 3 13638
+  KANNADA: Sarvam 4173 pieces, Gemma 3 1238
+
+== 4. Other natural translations of the example (o200k / Sarvam / DeepSeek)
+  8   8   8  Will it rain in my village tomorrow?
+ 15  11  25  రేపు మా ఊరిలో వర్షం పడుతుందా?
+ 14  11  25  రేపు మా గ్రామంలో వర్షం పడుతుందా?
+ 15  11  25  రేపు నా ఊరిలో వర్షం పడుతుందా?
+ 15  12  24  రేపు మా ఊర్లో వర్షం పడుతుందా?
+ 15  12  23  మా ఊళ్ళో రేపు వాన పడుతుందా?
+ 15  11  27  రేపు మా గ్రామంలో వర్షం కురుస్తుందా?
+  9   8   7  明天我们村会下雨吗？
+ 10   9   7  我的村子明天会下雨吗？
+ 10   9   7  明天我村里会下雨吗？
+
+== 5. Telugu letters DeepSeek splits across two pieces (example question)
+  ఊ TELUGU LETTER UU: 3 bytes split over pieces [6, 7]
+  ల TELUGU LETTER LA: 3 bytes split over pieces [9, 10]
+  ష TELUGU LETTER SSA: 3 bytes split over pieces [14, 15]
+  త TELUGU LETTER TA: 3 bytes split over pieces [19, 20]
+  ద TELUGU LETTER DA: 3 bytes split over pieces [21, 22]
+  total pieces: 25
