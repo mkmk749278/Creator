@@ -274,6 +274,9 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   ramps, silent for 1.5 s before reveals; impacts −6 to −8 dB, small SFX −8 to −10 dB; master −14 LUFS two-pass linear. The video isn't locked to
   the VO: diegetic cuts (VO stops for 2–6 s of the asset's own sound), `LIVE` rows for real speech, `VO_PAUSE` ambience.
   Never talk over real dialogue.
+- **Music (owner, 2026-11-04): our own Lyria 3.5 library first**, one Drive folder `Music-Library/practical/` (both
+  channels), listed in `config/music_library.csv` and pulled with `scripts/music_pull.sh`; a new track is made with
+  `scripts/lyria_music.py` (every take checked by ear for vocals) and added to the library (PLAYBOOK §11.1).
 - **Rights and honesty:** log every asset with its licence in `media_manifest.csv`; short, credited excerpts of third-party
   footage; AI generation only where no real asset exists, never of a real person, never posed as evidence; never synthesise
   a real person's voice or quote; present claims as claims.

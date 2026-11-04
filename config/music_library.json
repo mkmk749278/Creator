@@ -1,0 +1,138 @@
+{
+ "_doc": "Prompts for this channel's music library (Drive Music-Library/practical/). Generate with scripts/lyria_music.py; PLAYBOOK §11.1.",
+ "common": "Instrumental only: no vocals, no choir, no humming, no spoken words, no vocal samples, and no pads or synths that sound like voices or a choir: sustained sounds come from bowed strings, piano, electric piano, organ-free analogue synths and electronic hum. This is a documentary underscore that plays under a narrator's voice: no lead melody in the speech range, no sudden loud hits or long silences, a steady overall level from start to finish, clean cinematic mix, wide stereo. Make it about three minutes long. It ends with a final held chord or note that decays naturally, never an abrupt cut.",
+ "tracks": [
+  {
+   "palette": "practical",
+   "id": "pr01_investigation",
+   "title": "Investigation",
+   "use": "Act 1 of an investigative documentary: following the trail",
+   "mood": "investigative, groovy, curious",
+   "bpm": "90",
+   "key": "E minor",
+   "prompt": "Investigative and curious. 90 BPM, E minor. A muted electric bass line with a gentle groove, soft brushed drums, light plucked guitar or muted synth stabs, a low pad. Like following a paper trail through an office at night. Steady, engaging, never loud.",
+   "brief": "investigative curious bassline, soft groove, steady"
+  },
+  {
+   "palette": "practical",
+   "id": "pr02_sub_tension",
+   "title": "Shutdown",
+   "use": "Tension: a crisis, plants shutting, a dependency exposed",
+   "mood": "dark, sparse, tense",
+   "bpm": "70",
+   "key": "C minor",
+   "prompt": "Sparse and tense. 70 BPM, C minor. A deep analogue synth bass pulse on every beat, low held cello notes, a quiet ticking hi-hat, sparse low piano notes and faint metallic textures. Dark and quiet with a steady level, the stakes are high.",
+   "brief": "sparse tense dark synth bass pulse, low cello, ticking, quiet steady level"
+  },
+  {
+   "palette": "practical",
+   "id": "pr03_curious",
+   "title": "How It Works",
+   "use": "Explainers: how a system works, how money flows",
+   "mood": "curious, light, friendly",
+   "bpm": "100",
+   "key": "G major",
+   "prompt": "Curious and friendly. 100 BPM, G major. Pizzicato strings and marimba in a light bouncing pattern, a soft piano, a gentle shaker. Bright, clear and intelligent, like an engineer explaining over coffee. Low and unobtrusive.",
+   "brief": "curious friendly pizzicato and marimba, light, unobtrusive"
+  },
+  {
+   "palette": "practical",
+   "id": "pr04_hopeful",
+   "title": "A Way Forward",
+   "use": "The practical defence, the action plan, hope",
+   "mood": "hopeful, warm",
+   "bpm": "84",
+   "key": "C major",
+   "prompt": "Warm and hopeful. 84 BPM, C major. Gentle piano chords, warm strings, a soft acoustic guitar pattern, a light pulse. Encouraging and calm, like a friend telling you it can be fixed.",
+   "brief": "warm hopeful piano and strings, encouraging, calm"
+  },
+  {
+   "palette": "practical",
+   "id": "pr05_counter",
+   "title": "Counter-offensive",
+   "use": "India fights back: rising effort, new plants, the comeback",
+   "mood": "rising, percussive, determined",
+   "bpm": "112",
+   "key": "D minor",
+   "prompt": "Determined and rising. 112 BPM, D minor. Cinematic percussion with dhol and tabla blended into orchestral drums, driving low strings, brass swells. Builds from a quiet beginning to a strong confident peak, then settles.",
+   "brief": "determined rising percussion, dhol and tabla, driving strings, builds"
+  },
+  {
+   "palette": "practical",
+   "id": "pr06_capability",
+   "title": "Made in India",
+   "use": "India's capability: a launch, an engine, a chip; the proud reveal",
+   "mood": "proud, cinematic, uplifting",
+   "bpm": "86",
+   "key": "D major",
+   "prompt": "Proud and uplifting. 86 BPM, D major. Broad cinematic strings, a bansuri phrase in the middle, warm French horns, soft timpani. Proud but not jingoistic, emotional and confident, resolving warmly.",
+   "brief": "proud uplifting cinematic strings, bansuri, warm, not jingoistic"
+  },
+  {
+   "palette": "practical",
+   "id": "pr07_scam",
+   "title": "The Trap",
+   "use": "Scams, traps, fraud calls, the danger the viewer must see",
+   "mood": "uneasy, dark, suspense",
+   "bpm": "80",
+   "key": "F minor",
+   "prompt": "Uneasy suspense. 80 BPM, F minor. A dark pulsing synth, unsettling high sustained notes, a slow low piano motif, soft ticking. The feeling that something is wrong on the other end of a phone call. Tense but restrained.",
+   "brief": "uneasy suspense, dark pulse, ticking, restrained"
+  },
+  {
+   "palette": "practical",
+   "id": "pr08_explainer",
+   "title": "Money Talk",
+   "use": "Money and rights explainers: bills, salaries, loans, rules",
+   "mood": "light, modern, neutral",
+   "bpm": "95",
+   "key": "A major",
+   "prompt": "Light, modern and neutral. 95 BPM, A major. A soft brushed drum groove, warm electric piano chords, a round electric bass, light acoustic guitar plucks. No samples, no vocal chops. Friendly and calm, sits well under a voice explaining something practical.",
+   "brief": "light modern calm groove, electric piano, bass, guitar plucks"
+  },
+  {
+   "palette": "practical",
+   "id": "pr09_technology",
+   "title": "Silicon",
+   "use": "Technology, AI, chips, data centres, the future",
+   "mood": "futuristic, warm, pulsing",
+   "bpm": "106",
+   "key": "B minor",
+   "prompt": "Futuristic but warm. 106 BPM, B minor. Pulsing synth arpeggios, a deep bass, a clean modern beat, airy pads, digital textures. Smart and forward-looking.",
+   "brief": "futuristic warm synth arpeggios, modern beat, forward-looking"
+  },
+  {
+   "palette": "practical",
+   "id": "pr10_human",
+   "title": "A Family's Story",
+   "use": "Human stories: a family, a worker, a patient, the cost to a person",
+   "mood": "emotional, intimate",
+   "bpm": "66",
+   "key": "A minor",
+   "prompt": "Emotional and intimate. 66 BPM, A minor. Solo piano, soft cello, a light warm pad. Tender and human, a story about one family. No percussion.",
+   "brief": "emotional intimate solo piano and cello, no percussion"
+  },
+  {
+   "palette": "practical",
+   "id": "pr11_outro",
+   "title": "Stay Practical",
+   "use": "The outro and end card",
+   "mood": "warm, confident, closing",
+   "bpm": "88",
+   "key": "G major",
+   "prompt": "Warm and confident closing. 88 BPM, G major. A gentle groove with soft drums, warm piano and strings, a hint of tabla. Friendly and resolved, ends on a held major chord.",
+   "brief": "warm confident closing, gentle groove, resolved"
+  },
+  {
+   "palette": "practical",
+   "id": "pr12_shorts",
+   "title": "Shorts Bed",
+   "use": "Vertical Shorts: a quick fact or trap",
+   "mood": "punchy, curious, immediate",
+   "bpm": "115",
+   "key": "E minor",
+   "prompt": "Make this one about one minute long. Starts immediately with no intro: a punchy curious beat, deep bass, plucked synth and a tabla accent, 115 BPM, E minor. A small lift at thirty seconds, ends on a held note.",
+   "brief": "punchy curious immediate start, about one minute"
+  }
+ ]
+}
