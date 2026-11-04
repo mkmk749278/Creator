@@ -1121,7 +1121,8 @@ def emit():
                 need = s["ms"] + s["t1"] - s["t0"] + XF
             if need > hv + 0.05:
                 print(f"  ! {s['src']} needs {need:.1f}s, has {hv:.1f}s (t={s['t0']:.1f}): the last frame will hold")
-    caps = captions(); PARTS = part_bounds()
+    import os
+    caps = captions(); PARTS = part_bounds(int(os.environ.get("NPARTS", "5")))   # NPARTS=10 for the native 4K master (lighter jobs)
     for k in range(len(PARTS) - 1):
         emit_part(f"p{k + 1}", PARTS[k], PARTS[k + 1], caps)
     (P / "build/parts.json").write_text(json.dumps(PARTS))
