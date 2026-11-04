@@ -1203,7 +1203,9 @@ def emit_part(pid, t0, t1, caps):
         a, b = o["at"], o["to"] if o["to"] is not None else END
         if b <= t0 or a >= t1:
             continue
-        h = re.sub(r'(data-(?:at|to)=")([\d.]+)"', lambda mm: f'{mm.group(1)}{min(D, max(0.0, loc(float(mm.group(2)))))}"', o["h"])
+        # a nested animation (a bar's fill) that began before this part's first frame shows finished, never restarts (4K seam at 9:10)
+        h0 = re.sub(r'data-at="([\d.]+)" data-fx="[^"]*"', lambda mm: mm.group(0) if float(mm.group(1)) >= t0 - 1e-6 else f'data-at="{mm.group(1)}" data-fx="cut"', o["h"])
+        h = re.sub(r'(data-(?:at|to)=")([\d.]+)"', lambda mm: f'{mm.group(1)}{min(D, max(0.0, loc(float(mm.group(2)))))}"', h0)
         h = re.sub(r'(data-count="[\d.]+,[\d.]+,)([\d.]+)', lambda mm: f'{mm.group(1)}{max(0.0, loc(float(mm.group(2))))}', h)
         O.append("      " + seam_cut(h, a, b, t0, t1))
     cap = "\n".join(seam_cut(f'      <div class="cap" data-at="{max(0.0, loc(a))}" data-to="{min(D, loc(b))}" data-fx="fade" data-d="0.12">{cc}</div>', a, b, t0, t1)
