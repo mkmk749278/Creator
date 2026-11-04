@@ -6,7 +6,7 @@
 set -euo pipefail
 src=${1:?r2 cut with the approved mix}; out=${2:?output}
 tmp=$(mktemp -d); : > "$tmp/list.txt"
-for i in 1 2 3 4 5; do f=$(ls "$PARTS_DIR"/*p$i.mp4 | head -1); echo "file '$(realpath "$f")'" >> "$tmp/list.txt"; done
+n=$(ls "$PARTS_DIR"/*p[0-9]*.mp4 | wc -l); for i in $(seq 1 "$n"); do f=$(ls "$PARTS_DIR"/*p$i.mp4 | head -1); echo "file '$(realpath "$f")'" >> "$tmp/list.txt"; done
 ffmpeg -y -loglevel error -f concat -safe 0 -i "$tmp/list.txt" -an -c copy "$tmp/video.mp4"
 vd=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$tmp/video.mp4"); ad=$(ffprobe -v error -select_streams a:0 -show_entries stream=duration -of csv=p=0 "$src")
 echo "video $vd s, audio $ad s"
