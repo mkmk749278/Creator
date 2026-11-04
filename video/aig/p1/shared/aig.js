@@ -16,6 +16,10 @@
     // the Lyfius promo: 1.6x anchored 30% from the top keeps 11-74% of the height, so its lower-third boxes (75-96%)
     // and top-right logo (3-10%) never show (owner's review, 2026-10-29)
     y02: [{ scale: 1.6 }, { scale: 1.66 }],
+    // round 3: one person out of a two-shot (the NDTV stage), and a lift-off below a broadcaster's headline
+    pk: [{ scale: 1.95 }, { scale: 2.05 }], bot: [{ scale: 1.6 }, { scale: 1.7 }],
+    // a slow pull-back that carries a comparison (India's chips, then Meta's)
+    pull: [{ scale: 1.22 }, { scale: 1.0 }],
   };
   const fmt = (v, pre, suf, dec) => pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString("en-IN")) + suf;
   window.AIG_animate = function (tl, D) {
@@ -61,6 +65,7 @@
       else if (fx === "right") go({ x: 46 }, { x: 0 });
       else if (fx === "stamp") go({ scale: 2.4 }, { scale: 1, ease: "power4.in", duration: d });
       else if (fx === "grow") { tl.set(el, { autoAlpha: 1, scaleX: 0 }, a); tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: d, ease: "power2.inOut", immediateRender: false }, a); }
+      else if (fx === "wipe") { tl.set(el, { autoAlpha: 1, clipPath: "inset(0% 100% 0% 0%)" }, a); tl.fromTo(el, { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: d, ease: "none", immediateRender: false }, a); }
       else if (fx === "fall") go({ y: -420 }, { y: 0, ease: "bounce.out", duration: Math.max(d, 0.7) });
       else if (fx === "rise") go({ y: 140 }, { y: 0, duration: Math.max(d, 0.6) });
       else if (fx === "tap") { tl.set(el, { autoAlpha: 1, scale: 0.3 }, a); tl.fromTo(el, { scale: 0.3, opacity: 0.9 }, { scale: 1.5, opacity: 0, duration: 0.55, ease: "power2.out", immediateRender: false }, a); }
