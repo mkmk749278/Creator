@@ -1423,8 +1423,9 @@ DVIDS (US military, public domain), NPS, Flickr API, NARA catalog (key by email 
   subject has no free photo, plan a credited article quote.
 - **Science visuals:** HyperFrames animation first (house rule) → Europe PMC CC BY figures → Wellcome (CC BY/PD only) →
   NIH 3D, CDC PHIL, NASA.
-- **Music:** YouTube Audio Library (owner downloads; free for monetised channels) → Incompetech (CC BY) / FreePD (CC0) →
-  ccMixter / FMA tracks without NC → `scripts/make_bed.py` synthesised bed.
+- **Music:** our own Lyria 3.5 library (§11.1; owner, 2026-11-04) → YouTube Audio Library (owner downloads; free for
+  monetised channels) → ccMixter / FMA tracks without NC → `scripts/make_bed.py` synthesised bed. (FreePD has closed;
+  Incompetech needs a printed credit, 2026-11-03.)
 - **Sound effects:** Openverse audio (Freesound CC0/BY previews) → Freesound API with a token → SoundBible PD clips.
 
 ### 8.5 Getting YouTube footage legitimately
@@ -1686,6 +1687,44 @@ Rules are in `CLAUDE.md`. Gotchas we hit, each cost at least one render:
   registered track gets a YouTube claim that can take the ad money. One bed per act (tension → curious → hopeful), a
   sound effect on every doodle item. Shortlist and mood map: `projects/cant-pay-minimum/music.md`.
 - `scripts/make_bed.py` synthesises a royalty-free bed (drones, pads, heartbeat, bowls); `scripts/final_mix.sh` mixes.
+
+### 11.1 The music library (owner, 2026-11-04)
+Our music is our own library, generated with **Google Lyria 3.5 through the Gemini API** (`GEMINI_API_KEY`) and kept
+in **one Drive folder: `Music-Library/practical/`** (id `1NdlHnIfxsccvKtA3GVDNG0Jmz5tKkl9N`, inside `Music-Library`,
+id `1F5r-bgyORTxPM66DXViM3Oxrrr7ukJY8`, at the top of My Drive), for both Be Practical with Kishore and Phone
+Consensus. *Why:* Pixabay music is mostly Content ID registered (15 of 21, §11), FreePD has closed, Incompetech needs a
+printed credit, and YouTube Audio Library picks need the owner's phone; Lyria output is ours to use (Google claims no
+ownership of output under the Gemini API terms), costs $0.08 a track, carries an inaudible SynthID watermark and has
+no Content ID owner. The other `Music-Library` folders belong to the sister channels: don't borrow their beds.
+- **The record:** `config/music_library.csv` (id, title, what it is for, mood, tempo, key, length, loudness, the
+  instruments heard); `config/music_library.json` holds the exact prompts. Each WAV in Drive has a JSON sidecar with
+  the prompt, the Lyria interaction id and the listening check.
+- **The palette:** `pr01_investigation` (act 1, the trail), `pr02_sub_tension` (the crisis), `pr03_curious` (how it
+  works), `pr04_hopeful` (the practical defence), `pr05_counter` (India fights back, dhol and tabla), `pr06_capability`
+  (the proud reveal), `pr07_scam` (traps and fraud), `pr08_explainer` (money and rights explainers, phone reviews),
+  `pr09_technology` (chips, AI, phones), `pr10_human` (a family's story), `pr11_outro` (outro and end card),
+  `pr12_shorts` (vertical Shorts, about a minute, starts at once). **Still to make:** `pr02_sub_tension`, `pr07_scam`
+  and `pr08_explainer` (they failed on choir pads or vocal chops, and the run stopped at the project's spending cap;
+  prompts already rewritten). Until then: `pr09_technology` or `pr01_investigation` for tension, `pr03_curious` for
+  explainers.
+- **Use:** pull the beds with `scripts/music_pull.sh projects/<slug>/assets/music pr01_investigation pr04_hopeful …`,
+  place them per act in the mix (one bed per act, crossfaded, `long_bed` loops; the charter's 1.5 s silence before a
+  core reveal still applies), and log each in the project's `media_manifest.csv`: source
+  `Music-Library/practical/<id>.wav`, licence "Generated with Google Lyria 3.5 (Gemini API, Paid Tier); Google claims
+  no ownership of output; SynthID watermark". No credit line needed; the synthetic-content disclosure gate applies.
+- **Level:** tracks arrive mastered loud (about −11 to −13 LUFS, peaks near 0 dBFS); the mixer sets the bed level
+  (−24 to −26 dB under speech). Never use a track at its delivered level.
+- **A new track:** add an entry to `config/music_library.json` (id `pr<NN>_<name>`, a prompt with tempo, key,
+  instruments and shape, and a one-line `brief`), run
+  `python3 scripts/lyria_music.py generate config/music_library.json projects/<slug>/assets/lyria --only <id>`, listen
+  to the kept take, push it with `scripts/music_pull.sh --push projects/<slug>/assets/lyria`, rebuild the CSV with
+  `scripts/lyria_music.py catalog` over the whole palette pulled from Drive, and commit both files.
+- **The check:** Lyria has no instrumental switch and often adds choir or "ooh" pads even when the prompt forbids
+  them. `lyria_music.py` has two Gemini models listen to every take: `gemini-3.5-flash` for vocals, defects, a hard
+  ending, an unsteady level and the fit to the brief, then `gemini-3.1-pro-preview` for voices alone (it caught choir
+  pads in 3 of the first 15 takes the first listener passed). A take either flags is made again, up to five times;
+  only clean takes are kept (`--attempts 5`). A person
+  still listens to a track before its first film. Never prompt for a named artist, film score or song.
 
 ## 12. Facts, honesty and rights
 
@@ -2034,6 +2073,17 @@ viewer who saw episode 1 notices a changed bill, and a newcomer needs ten second
    its own words (consumables → episode 3). Title and thumbnail follow the series hook ("Step 4").
 
 ## 15. Lessons log
+
+**The music library (2026-11-04).** The owner asked for all the music our films use, generated once with Lyria 3.5
+and kept in one Drive folder (§11.1). 102 takes were billed for 38 kept tracks (61 rejected, mostly for choir or "ooh" pads and vocal chops
+despite "Instrumental only, no vocals" in the prompt); the stronger second listener caught pads in 3 of the first 15
+tracks the first listener had passed. Prompts that ask for sustained "pads", "drones" or "harmonics", or for
+epic suspense, drift into choir most often: ask for bowed strings, piano, electric hum or analogue synth bass instead. Asking for "about three minutes" gave beds of
+close to three minutes (about two by default). The Gemini project's monthly spending cap (AI Studio, ai.studio/spend)
+stopped the run after about $8.25 of takes: estimate a batch first (takes × $0.08 × about 2.7) and ask the owner if it
+needs a higher cap. **Rule:** music comes from the library; every
+generated take is checked by ear before it is kept, and a person listens before a track's first film. *Why:*
+licence-clean music found once should never be searched for again, and a voice in the bed fights the narrator.
 
 **Picture lessons from an outside visual review, adapted for our viewers (2026-11-03).** The owner shared an outside
 review of a finished documentary cut made on another production. We checked every point against that film's code,
