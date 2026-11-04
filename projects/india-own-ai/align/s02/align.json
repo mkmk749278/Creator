@@ -1,0 +1,252 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 6.042,
+  "te": "DeepSeek says the final training run of its base model cost about five and a half million dollars.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.258,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.507,
+  "end": 10.787,
+  "te": "The American giants, you may remember, were spending billions.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.049,
+  "confidence": "check"
+ },
+ {
+  "line": 3,
+  "start": 11.097,
+  "end": 16.717,
+  "te": "That day, the American chip company Nvidia loses around five hundred and ninety billion dollars in value.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.049,
+  "confidence": "check"
+ },
+ {
+  "line": 4,
+  "start": 17.152,
+  "end": 19.407,
+  "te": "That's about fifty lakh crore rupees.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.329,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 20.103,
+  "end": 21.617,
+  "te": "Think about that number for a second.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.329,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 22.116,
+  "end": 28.975,
+  "te": "It's roughly the size of India's whole Union Budget for that year... gone from one company in one day.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.071,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 29.546,
+  "end": 34.669,
+  "te": "Three days later, in Delhi, India's I.T. minister, Ashwini Vaishnaw, makes a promise.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.071,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 35.134,
+  "end": 40.476,
+  "te": "India will build its own A.I. model... and he hopes it will be ready within six months.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.189,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 40.934,
+  "end": 42.948,
+  "te": "So did India keep that promise?",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.189,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 43.426,
+  "end": 43.876,
+  "te": "You'll see.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.509,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 44.371,
+  "end": 49.435,
+  "te": "And around minute ten, I'll run that same chopping test for you again... on an Indian machine.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.091,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 49.888,
+  "end": 51.034,
+  "te": "That's where it gets interesting.",
+  "en": "",
+  "speech_vs_text": 0.66,
+  "boundary_margin": 0.091,
+  "confidence": "check"
+ },
+ {
+  "line": 13,
+  "start": 51.504,
+  "end": 55.356,
+  "te": "But first, you need to know what's actually inside one of these machines.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.108,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 55.641,
+  "end": 57.003,
+  "te": "Because it isn't magic.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.11,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 57.481,
+  "end": 58.361,
+  "te": "It's three things.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.878,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 58.745,
+  "end": 62.287,
+  "te": "Picture a child who has read every book in a giant library.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.541,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 62.833,
+  "end": 65.885,
+  "te": "You start a sentence... and the child guesses your next word.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.541,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 66.369,
+  "end": 67.011,
+  "te": "Then the next one.",
+  "en": "",
+  "speech_vs_text": 0.71,
+  "boundary_margin": 1.684,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 67.406,
+  "end": 67.981,
+  "te": "Then the next.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.452,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 68.464,
+  "end": 70.361,
+  "te": "That's really all a chatbot does.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.452,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 70.703,
+  "end": 75.831,
+  "te": "It guesses the next piece, again and again, so well that you feel it's thinking.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.253,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 76.259,
+  "end": 79.043,
+  "te": "So if you want to build one, you need three things.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.253,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 79.391,
+  "end": 80.393,
+  "te": "A library to read.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.411,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 80.843,
+  "end": 82.434,
+  "te": "A reading room where it can read.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 82.785,
+  "end": 84.987,
+  "te": "And teachers who know how to train the child.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ }
+]

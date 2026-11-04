@@ -1,0 +1,136 @@
+1
+00:00:00,000 --> 00:00:02,745
+Ask an A.I. one simple question.
+
+2
+00:00:02,745 --> 00:00:04,863
+Will it rain in my village tomorrow?
+
+3
+00:00:04,863 --> 00:00:08,753
+Before it reads your question, the machine chops it into pieces.
+
+4
+00:00:08,753 --> 00:00:10,925
+In English... just eight.
+
+5
+00:00:10,925 --> 00:00:12,670
+Now ask it in Hindi.
+
+6
+00:00:12,670 --> 00:00:16,111
+On DeepSeek, the famous Chinese A.I.... eighteen.
+
+7
+00:00:16,111 --> 00:00:17,413
+More than double.
+
+8
+00:00:17,413 --> 00:00:19,060
+Marathi, twenty.
+
+9
+00:00:19,060 --> 00:00:21,061
+Telugu, twenty-five.
+
+10
+00:00:21,061 --> 00:00:24,601
+And in those two, it even cuts some of your letters in half.
+
+11
+00:00:24,601 --> 00:00:27,593
+So can India build an A.I. of its own?
+
+12
+00:00:27,593 --> 00:00:30,065
+One that speaks your language best?
+
+13
+00:00:30,065 --> 00:00:31,310
+Here's a clue for you.
+
+14
+00:00:31,310 --> 00:00:32,713
+Ask it in Chinese.
+
+15
+00:00:32,713 --> 00:00:33,951
+Seven pieces.
+
+16
+00:00:33,951 --> 00:00:35,367
+Fewer than English.
+
+17
+00:00:35,367 --> 00:00:36,693
+You see what's going on?
+
+18
+00:00:36,693 --> 00:00:40,751
+A machine speaks best in the language of the people who built it.
+
+19
+00:00:40,751 --> 00:00:42,222
+And it's not just pride.
+
+20
+00:00:42,222 --> 00:00:45,181
+Your apps pay these machines by the piece.
+
+21
+00:00:45,181 --> 00:00:49,303
+More pieces means a bigger bill, and a slower answer for you.
+
+22
+00:00:49,303 --> 00:00:51,240
+Now think back to last November.
+
+23
+00:00:51,240 --> 00:00:56,408
+Chat G.P.T.'s paid plan, called Go, became free in India for a whole year.
+
+24
+00:00:56,408 --> 00:00:57,935
+Maybe you signed up too.
+
+25
+00:00:57,935 --> 00:01:01,655
+OpenAI says India is now one of its biggest markets.
+
+26
+00:01:01,655 --> 00:01:06,404
+For the first people who signed up, that free year runs out... about now.
+
+27
+00:01:06,404 --> 00:01:09,847
+So when yours ends, whose machine will you be talking to?
+
+28
+00:01:09,847 --> 00:01:11,324
+One built in America?
+
+29
+00:01:11,324 --> 00:01:12,718
+One built in China?
+
+30
+00:01:12,718 --> 00:01:14,092
+Or one built here?
+
+31
+00:01:14,092 --> 00:01:18,756
+To see why India doesn't have its own yet, you have to go back to one Monday.
+
+32
+00:01:18,756 --> 00:01:21,765
+The twenty-seventh of January, twenty twenty-five.
+
+33
+00:01:21,765 --> 00:01:26,428
+A small Chinese lab called DeepSeek has just put out a free A.I.
+
+34
+00:01:26,428 --> 00:01:31,840
+By that Monday, it's beaten Chat G.P.T. in downloads on Apple's App Store in America.
+

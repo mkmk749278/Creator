@@ -1,0 +1,232 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 5.031,
+  "te": "In January twenty twenty-five, India found out how fast that door can close.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.434,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 5.422,
+  "end": 9.562,
+  "te": "Just days before leaving office, America's government put out a new rule.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.434,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 9.986,
+  "end": 12.038,
+  "te": "It sorted the world into three groups.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 1.104,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 12.431,
+  "end": 14.834,
+  "te": "Its closest allies could buy these chips freely.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.469,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 15.331,
+  "end": 16.542,
+  "te": "China was blocked.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.159,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 16.943,
+  "end": 17.392,
+  "te": "And India?",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.159,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 18.006,
+  "end": 22.847,
+  "te": "India was put in the middle group, with a limit on how many of these chips it could get.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.43,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 23.201,
+  "end": 26.466,
+  "te": "Four months later, the new American government scrapped that rule.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.354,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 26.96,
+  "end": 28.245,
+  "te": "But India had seen it.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.272,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 28.677,
+  "end": 30.718,
+  "te": "The tap is in someone else's hand.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.216,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 31.155,
+  "end": 32.355,
+  "te": "So what would you do?",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.216,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 32.808,
+  "end": 35.396,
+  "te": "India didn't wait to own a giant reading room.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.458,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 35.796,
+  "end": 37.817,
+  "te": "It rented one... and shared it.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.207,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 38.112,
+  "end": 42.879,
+  "te": "Under the IndiaAI Mission, private companies put their chips into one common pool.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.207,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 43.207,
+  "end": 47.889,
+  "te": "Indian startups and researchers rent time on them, and the government pays part of the bill.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.195,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 48.24,
+  "end": 53.153,
+  "te": "In January twenty twenty-five, India lined up more than eighteen thousand chips for that pool.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.175,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 53.585,
+  "end": 56.796,
+  "te": "By June twenty twenty-six, more than forty-five thousand.",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.175,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 57.14,
+  "end": 58.409,
+  "te": "That's a big jump, right?",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.363,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 58.734,
+  "end": 66.628,
+  "te": "But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 66.942,
+  "end": 70.768,
+  "te": "Almost eight times your country's whole shared pool this June.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.145,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 71.109,
+  "end": 71.633,
+  "te": "And the money?",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.192,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 71.998,
+  "end": 77.071,
+  "te": "India's whole A.I. mission is about ten thousand crore rupees, spread over five years.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.09,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 77.337,
+  "end": 85.826,
+  "te": "This year alone, Meta told its investors it would spend around thirteen lakh crore rupees on buildings and machines, much of it for A.I.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.09,
+  "confidence": "high"
+ }
+]

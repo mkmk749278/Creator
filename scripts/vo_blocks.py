@@ -12,7 +12,8 @@ import argparse
 import re
 from pathlib import Path
 
-VOICE = ("Akash, Eleven v4, stability 0.65, similarity 0.85, style 0.15, speaker boost on (PLAYBOOK §4a-10). "
+VOICE = ("Akash - Confident and Natural, Eleven v4, Stability Creative, Similarity about 0.6, language auto, "
+         "MP3 44.1 kHz 128 kbps (owner, 2026-11-03; config/voice.yaml, scripts/eleven_tts.py makes the takes). "
          "Paste each block as is; the blank lines are pauses.")
 
 

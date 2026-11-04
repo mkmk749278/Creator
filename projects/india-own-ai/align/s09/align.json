@@ -1,0 +1,142 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 6.046,
+  "te": "And before you pay for any A.I., ask the same question in your own language to two or three of them.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.264,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 6.553,
+  "end": 11.519,
+  "te": "Chat G.P.T., DeepSeek, and an Indian one, like Sarvam's app, called Indus.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.264,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 12.142,
+  "end": 14.974,
+  "te": "Pay only for the one that really understands you.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.267,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 15.543,
+  "end": 18.858,
+  "te": "And A.I. isn't the only thing India has built for itself.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.193,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 19.467,
+  "end": 23.531,
+  "te": "Did you know India has its own satellite navigation, up in space?",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.193,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 24.03,
+  "end": 25.166,
+  "te": "It's called Navik.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.11,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 25.652,
+  "end": 29.268,
+  "te": "So why does your phone still lean on America's G.P.S.?",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.11,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 29.789,
+  "end": 30.951,
+  "te": "That's our next story.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.559,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 31.482,
+  "end": 33.355,
+  "te": "Before you go, try this tonight.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.222,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 33.765,
+  "end": 39.882,
+  "te": "Ask any A.I. one question in your mother tongue... and tell me in the comments which one answered best.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.222,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 40.294,
+  "end": 41.385,
+  "te": "I read every one.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.342,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 41.914,
+  "end": 43.703,
+  "te": "This is Be Practical with Kishore.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.475,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 44.127,
+  "end": 44.833,
+  "te": "Stay practical.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 45.224,
+  "end": 45.594,
+  "te": "Jai Hind.",
+  "en": "",
+  "speech_vs_text": 0.76,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ }
+]
