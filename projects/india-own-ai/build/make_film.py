@@ -342,8 +342,10 @@ def phone_chats(at, to, x0=210, gap=540, pick=None):
     """ILLUSTRATION: the same Hindi question typed into three chat apps (generic cards, no brand art)"""
     for k, (nm, col) in enumerate([("ChatGPT", "#10a37f"), ("DeepSeek", "#4d6bfe"), ("Indus", "#ff9933")]):
         t = round(at + k * 0.35, 3)
+        # each app "answers": its reply lines type in, card after card, so the hold keeps moving (no still over 1.5 s)
+        ans = "".join(f'<div class="a{" s" if j == 1 else ""}" {attrs(round(t + 0.8 + k * 0.9 + j * 0.6, 3), None, "wipe", 0.8)}></div>' for j in range(3))
         el(f'<div class="chatcard" style="left:{x0 + k * gap}px;top:110px" {attrs(t, to, "up", 0.35)}><div class="ah"><i style="background:{col}"></i>{nm}</div>'
-           f'<div class="q">{esc(Q["hi"])}</div><div class="a"></div><div class="a s"></div><div class="a"></div></div>', t, to)
+           f'<div class="q">{esc(Q["hi"])}</div>{ans}</div>', t, to)
     illus(at, to, "ILLUSTRATION")
 
 
