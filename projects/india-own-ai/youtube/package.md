@@ -2,7 +2,8 @@
 
 Upload file: Drive `Creator/English/india-own-ai/final/india_own_ai_final_4k.mp4` (3840×2160, 30 fps, 13:06.9, −14.2 LUFS).
 Subtitles: `youtube/subtitles.en.srt` (our exact captions; NavIC spelled right, no names split).
-Thumbnails for Test & Compare: `thumbnail_b.jpg` (main), `thumbnail_a.jpg` (challenger).
+Thumbnail (owner's final, 2026-11-04): `thumbnail_final.jpg` ("BUILD OR RENT? THE AI TOLL", 1280×720; the AI tool's corner
+sparkle painted out from the matching grid). Test & Compare challengers: `thumbnail_b.jpg`, `thumbnail_a.jpg`.
 
 ## Title
 ```
