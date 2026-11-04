@@ -1,8 +1,8 @@
 Ask an A.I. one simple question. Will it rain in my village tomorrow?
 Before it reads your question, the machine chops it into pieces. In English... just eight.
 Now ask it in Hindi. On DeepSeek, the famous Chinese A.I.... eighteen. More than double.
-Marathi, twenty. Telugu, twenty-five. And in those two, it even cuts some of your letters in half.
-So can India build an A.I. of its own? One that speaks your language best?
+Marathi, twenty. Telugu, twenty-five. And in those two, it even cuts some of our letters in half.
+So can India build an A.I. of its own? One that speaks our language best?
 Here's a clue for you. Ask it in Chinese. Seven pieces. Fewer than English.
 You see what's going on? A machine speaks best in the language of the people who built it.
 And it's not just pride. Your apps pay these machines by the piece. More pieces means a bigger bill, and a slower answer for you.
@@ -22,19 +22,19 @@ That's really all a chatbot does. It guesses the next piece, again and again, so
 So if you want to build one, you need three things. A library to read. A reading room where it can read. And teachers who know how to train the child.
 The library is words — trillions of pieces of text, like the ones you type. The reading room is chips, thousands of them, running day and night for months. And the teachers? They're engineers.
 India has the teachers. You know this already. Indian engineers write software for companies all over the world.
-So your missing pieces are the library and the reading room. Let's start with the library. Almost nobody tells you about this part.
+So our missing pieces are the library and the reading room. Let's start with the library. Almost nobody tells you about this part.
 A lot of A.I. learns from the internet. One of the biggest free copies of the web is called Common Crawl. Many A.I. models learned from it, including an early model from the makers of the Chat G.P.T. you use.
 So we took its latest copy, from October twenty twenty-six — more than two billion web pages — and checked its own count of languages.
 English? Forty-two out of every hundred pages. Now, can you guess Hindi?
 For every one page in Hindi... there are about two hundred pages in English. And Hindi is the mother tongue of more than fifty crore people.
 Marathi? About fifteen hundred. Telugu? About two thousand three hundred. And each of those is the mother tongue of around eight crore people, maybe yours.
 All of India's languages together make up less than one page in every hundred.
-Think about it. More than one in every six people on Earth lives in your country. But in the library these machines read, your language is almost invisible.
-And India's job is harder than China's. China's A.I. mostly needs one written language. Your country's Constitution lists twenty-two, written in about a dozen different scripts. Each one needs its own shelf.
+Think about it. More than one in every six people on Earth lives in our country. But in the library these machines read, our language is almost invisible.
+And India's job is harder than China's. China's A.I. mostly needs one written language. Our country's Constitution lists twenty-two, written in about a dozen different scripts. Each one needs its own shelf.
 And that's why your question cost so much more in Hindi, Marathi and Telugu. Remember the chopper? It learns its pieces from this same library.
 Words it sees all the time, like rain or village, become one neat piece each. Your words, which it hardly ever sees, get chopped into bits. Sometimes into half a letter.
 Here's the rule. A machine learns from what it reads.
-And what goes wrong? If your language is only a tiny corner of the library, the machine learns it last... and charges you more.
+And what goes wrong? If our language is only a tiny corner of the library, the machine learns it last... and charges us more.
 So someone has to build the Indian part of the library. Page by page, voice by voice. And that's slow, expensive work.
 And India has started. A government data shelf for Indian builders, called A.I. Kosh, now holds more than sixteen thousand collections.
 But words are only half of it. Even with a perfect library, you need a place to read it. And this is where India hits a wall.
@@ -48,7 +48,7 @@ Four months later, the new American government scrapped that rule. But India had
 So what would you do? India didn't wait to own a giant reading room. It rented one... and shared it.
 Under the IndiaAI Mission, private companies put their chips into one common pool. Indian startups and researchers rent time on them, and the government pays part of the bill.
 In January twenty twenty-five, India lined up more than eighteen thousand chips for that pool. By June twenty twenty-six, more than forty-five thousand.
-That's a big jump, right? But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips. Almost eight times your country's whole shared pool this June.
+That's a big jump, right? But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips. Almost eight times our country's whole shared pool this June.
 And the money? India's whole A.I. mission is about ten thousand crore rupees, spread over five years.
 This year alone, Meta told its investors it would spend around thirteen lakh crore rupees on buildings and machines, much of it for A.I.
 So India's whole mission... ten thousand crore, over five years. Meta alone... thirteen lakh crore, in one single year. That's not double. That's more than a hundred times as much.
@@ -71,7 +71,7 @@ The chopper behind Chat G.P.T.'s recent models... Hindi eight, Marathi fourteen,
 And Sarvam's? Hindi, eight — exactly the same as English. Marathi, ten. Telugu, eleven.
 And this isn't one lucky sentence. We ran the same test on more than a thousand sentences, each one in thirteen languages.
 Look at Odia. On DeepSeek's chopper, five and a half times the pieces of English. On Sarvam's... less than one and a half. And BharatGen's chopper does about as well.
-So for your language, the gap shrinks, a lot. Because this time... an Indian team put the missing pieces in.
+So for our language, the gap shrinks, a lot. Because this time... an Indian team put the missing pieces in.
 And it's already at work. Sarvam says its models help run Aadhaar services in Indian languages. And in October, Maharashtra gave Sarvam's A.I. assistant to two thousand five hundred government officials.
 So has India built its own Chat G.P.T.? Let me be honest with you. Not one that matches the best in the world. Not yet.
 DeepSeek's newest big model has one point six trillion of those dials in total. About fifteen times Sarvam's.
@@ -80,7 +80,7 @@ Here's the real scoreboard. India has the teachers. India has started on the lib
 What's next? The IndiaAI Mission has now picked twenty Indian proposals to build models, Sarvam and BharatGen among them. And BharatGen's mandate is to keep scaling, all the way up to a trillion dials.
 So here's the lesson. A machine speaks best in the language of the people who build it.
 If India only rents other countries' machines, you and I will keep paying extra to be understood... in our own languages.
-But today, there's an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
+But today, there's an Indian machine that reads our Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
 So what does this mean for you? First, check your Chat G.P.T. plan before the free year ends. Once it's over, it can start charging you on its own.
 And before you pay for any A.I., ask the same question in your own language to two or three of them. Chat G.P.T., DeepSeek, and an Indian one, like Sarvam's app, called Indus. Pay only for the one that really understands you.
 And A.I. isn't the only thing India has built for itself. Did you know India has its own satellite navigation, up in space? It's called Navik. So why does your phone still lean on America's G.P.S.? That's our next story.

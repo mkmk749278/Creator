@@ -51,6 +51,7 @@ BANNED_PHRASES = ["in conclusion", "it is imperative", "testament to", "in accor
                   "no cap", "buckle up", "fam", "touch base", "rent-free", "rent free", "ballpark", "bite the bullet",
                   "hello friends", "welcome back", "in this video", "let us understand", "smash that", "hit the bell"]
 YOU = {"you", "your", "you're", "you'll", "you've", "yours", "yourself"}
+OURS = {"our", "ours", "us", "ourselves"}   # the shared India the narrator and viewer stand in (owner, 2026-11-04)
 ME = {"i", "me", "my", "i'm", "i'll", "i've", "we", "us", "our", "let's", "we're", "we'll"}
 CHECKINS = ("right?", "isn't it?", "makes sense?", "no?", "see,", "you know", "imagine", "tell me", "think about it",
             "here's the catch", "here's the thing", "the reality is", "now notice this", "look at", "put simply")
@@ -113,8 +114,12 @@ def main():
     if q / len(sents) < 0.10:
         fails.append(f"questions are {100 * q / len(sents):.0f}% of sentences, want >= 10% (creators: 12-22%)")
     you = 100 * sum(w in YOU for w in ws) / n
-    if you < 3:
-        fails.append(f"'you/your' {you:.1f} per 100 words, want >= 3 (creators: 2-6)")
+    ours = 100 * sum(w in OURS for w in ws) / n
+    # Owner, 2026-11-04: India is "our country", Indian languages "our language" (PLAYBOOK §4a-10 rule 13), so the
+    # shared "our/us" counts as talking to the viewer; "you" alone still needs the creators' floor of 2.
+    if you < 2 or you + ours < 3:
+        fails.append(f"'you/your' {you:.1f} + shared 'our/us' {ours:.1f} per 100 words, want you >= 2 and "
+                     "together >= 3 (creators: 2-6)")
     me = 100 * sum(w in ME for w in ws) / n
     if me < 1:  # a note since 2026-10-20: audience reviews (§4a-11) flagged forced "I find…" lines as template filler
         notes.append(f"narrator 'I/me/we/let's' {me:.1f} per 100 words (creators: 1-5); add one only where it sounds natural")

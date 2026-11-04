@@ -12,9 +12,9 @@ Before it reads your question, the machine chops it into pieces. In English... j
 
 Now ask it in Hindi. On DeepSeek, the famous Chinese A.I.... eighteen. More than double.
 
-Marathi, twenty. Telugu, twenty-five. And in those two, it even cuts some of your letters in half.
+Marathi, twenty. Telugu, twenty-five. And in those two, it even cuts some of our letters in half.
 
-So can India build an A.I. of its own? One that speaks your language best?
+So can India build an A.I. of its own? One that speaks our language best?
 
 Here's a clue for you. Ask it in Chinese. Seven pieces. Fewer than English.
 
@@ -54,7 +54,7 @@ The library is words — trillions of pieces of text, like the ones you type. Th
 
 India has the teachers. You know this already. Indian engineers write software for companies all over the world.
 
-So your missing pieces are the library and the reading room. Let's start with the library. Almost nobody tells you about this part.
+So our missing pieces are the library and the reading room. Let's start with the library. Almost nobody tells you about this part.
 
 A lot of A.I. learns from the internet. One of the biggest free copies of the web is called Common Crawl. Many A.I. models learned from it, including an early model from the makers of the Chat G.P.T. you use.
 
@@ -68,9 +68,9 @@ Marathi? About fifteen hundred. Telugu? About two thousand three hundred. And ea
 
 All of India's languages together make up less than one page in every hundred.
 
-Think about it. More than one in every six people on Earth lives in your country. But in the library these machines read, your language is almost invisible.
+Think about it. More than one in every six people on Earth lives in our country. But in the library these machines read, our language is almost invisible.
 
-And India's job is harder than China's. China's A.I. mostly needs one written language. Your country's Constitution lists twenty-two, written in about a dozen different scripts. Each one needs its own shelf.
+And India's job is harder than China's. China's A.I. mostly needs one written language. Our country's Constitution lists twenty-two, written in about a dozen different scripts. Each one needs its own shelf.
 
 And that's why your question cost so much more in Hindi, Marathi and Telugu. Remember the chopper? It learns its pieces from this same library.
 
@@ -78,7 +78,7 @@ Words it sees all the time, like rain or village, become one neat piece each. Yo
 
 Here's the rule. A machine learns from what it reads.
 
-And what goes wrong? If your language is only a tiny corner of the library, the machine learns it last... and charges you more.
+And what goes wrong? If our language is only a tiny corner of the library, the machine learns it last... and charges us more.
 
 So someone has to build the Indian part of the library. Page by page, voice by voice. And that's slow, expensive work.
 
@@ -106,7 +106,7 @@ Under the IndiaAI Mission, private companies put their chips into one common poo
 
 In January twenty twenty-five, India lined up more than eighteen thousand chips for that pool. By June twenty twenty-six, more than forty-five thousand.
 
-That's a big jump, right? But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips. Almost eight times your country's whole shared pool this June.
+That's a big jump, right? But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips. Almost eight times our country's whole shared pool this June.
 
 And the money? India's whole A.I. mission is about ten thousand crore rupees, spread over five years.
 
@@ -152,7 +152,7 @@ And this isn't one lucky sentence. We ran the same test on more than a thousand 
 
 Look at Odia. On DeepSeek's chopper, five and a half times the pieces of English. On Sarvam's... less than one and a half. And BharatGen's chopper does about as well.
 
-So for your language, the gap shrinks, a lot. Because this time... an Indian team put the missing pieces in.
+So for our language, the gap shrinks, a lot. Because this time... an Indian team put the missing pieces in.
 
 And it's already at work. Sarvam says its models help run Aadhaar services in Indian languages. And in October, Maharashtra gave Sarvam's A.I. assistant to two thousand five hundred government officials.
 
@@ -170,7 +170,7 @@ So here's the lesson. A machine speaks best in the language of the people who bu
 
 If India only rents other countries' machines, you and I will keep paying extra to be understood... in our own languages.
 
-But today, there's an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
+But today, there's an Indian machine that reads our Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
 
 So what does this mean for you? First, check your Chat G.P.T. plan before the free year ends. Once it's over, it can start charging you on its own.
 
@@ -184,7 +184,7 @@ This is Be Practical with Kishore. Stay practical. Jai Hind.
 
 ## Recording blocks (tap to copy)
 
-### Block 1 of 9 · 1391 characters · save as `voice/aig_b01.mp3`
+### Block 1 of 9 · 1389 characters · save as `voice/aig_b01.mp3`
 
 ```
 Ask an A.I. one simple question. Will it rain in my village tomorrow?
@@ -193,9 +193,9 @@ Before it reads your question, the machine chops it into pieces. In English... j
 
 Now ask it in Hindi. On DeepSeek, the famous Chinese A.I.... eighteen. More than double.
 
-Marathi, twenty. Telugu, twenty-five. And in those two, it even cuts some of your letters in half.
+Marathi, twenty. Telugu, twenty-five. And in those two, it even cuts some of our letters in half.
 
-So can India build an A.I. of its own? One that speaks your language best?
+So can India build an A.I. of its own? One that speaks our language best?
 
 Here's a clue for you. Ask it in Chinese. Seven pieces. Fewer than English.
 
@@ -240,14 +240,14 @@ So if you want to build one, you need three things. A library to read. A reading
 
 Listen for: American, Nvidia, Union, Budget, Delhi, I.T, Ashwini, Vaishnaw, A.I. Every word clear, nothing said twice, the last word not cut off.
 
-### Block 3 of 9 · 1396 characters · save as `voice/aig_b03.mp3`
+### Block 3 of 9 · 1393 characters · save as `voice/aig_b03.mp3`
 
 ```
 The library is words — trillions of pieces of text, like the ones you type. The reading room is chips, thousands of them, running day and night for months. And the teachers? They're engineers.
 
 India has the teachers. You know this already. Indian engineers write software for companies all over the world.
 
-So your missing pieces are the library and the reading room. Let's start with the library. Almost nobody tells you about this part.
+So our missing pieces are the library and the reading room. Let's start with the library. Almost nobody tells you about this part.
 
 A lot of A.I. learns from the internet. One of the biggest free copies of the web is called Common Crawl. Many A.I. models learned from it, including an early model from the makers of the Chat G.P.T. you use.
 
@@ -261,15 +261,15 @@ Marathi? About fifteen hundred. Telugu? About two thousand three hundred. And ea
 
 All of India's languages together make up less than one page in every hundred.
 
-Think about it. More than one in every six people on Earth lives in your country. But in the library these machines read, your language is almost invisible.
+Think about it. More than one in every six people on Earth lives in our country. But in the library these machines read, our language is almost invisible.
 ```
 
 Listen for: A.I, Common, Crawl, Chat, G.P.T, Hindi, English, Earth. Every word clear, nothing said twice, the last word not cut off.
 
-### Block 4 of 9 · 1489 characters · save as `voice/aig_b04.mp3`
+### Block 4 of 9 · 1486 characters · save as `voice/aig_b04.mp3`
 
 ```
-And India's job is harder than China's. China's A.I. mostly needs one written language. Your country's Constitution lists twenty-two, written in about a dozen different scripts. Each one needs its own shelf.
+And India's job is harder than China's. China's A.I. mostly needs one written language. Our country's Constitution lists twenty-two, written in about a dozen different scripts. Each one needs its own shelf.
 
 And that's why your question cost so much more in Hindi, Marathi and Telugu. Remember the chopper? It learns its pieces from this same library.
 
@@ -277,7 +277,7 @@ Words it sees all the time, like rain or village, become one neat piece each. Yo
 
 Here's the rule. A machine learns from what it reads.
 
-And what goes wrong? If your language is only a tiny corner of the library, the machine learns it last... and charges you more.
+And what goes wrong? If our language is only a tiny corner of the library, the machine learns it last... and charges us more.
 
 So someone has to build the Indian part of the library. Page by page, voice by voice. And that's slow, expensive work.
 
@@ -294,7 +294,7 @@ And here's the catch. India doesn't make these chips. They're designed in Americ
 
 Listen for: China's, A.I, Constitution, Hindi, Marathi, Telugu, American, Nvidia, G.P.U, America, Taiwan. Every word clear, nothing said twice, the last word not cut off.
 
-### Block 5 of 9 · 1390 characters · save as `voice/aig_b05.mp3`
+### Block 5 of 9 · 1389 characters · save as `voice/aig_b05.mp3`
 
 ```
 In January twenty twenty-five, India found out how fast that door can close.
@@ -311,7 +311,7 @@ Under the IndiaAI Mission, private companies put their chips into one common poo
 
 In January twenty twenty-five, India lined up more than eighteen thousand chips for that pool. By June twenty twenty-six, more than forty-five thousand.
 
-That's a big jump, right? But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips. Almost eight times your country's whole shared pool this June.
+That's a big jump, right? But by the end of twenty twenty-four, one American company, Meta, said it would have around three hundred and fifty thousand of these chips. Almost eight times our country's whole shared pool this June.
 
 And the money? India's whole A.I. mission is about ten thousand crore rupees, spread over five years.
 
@@ -346,7 +346,7 @@ There, Sarvam shows India two new models. The bigger one has a hundred and five 
 
 Listen for: DeepSeek, Bengaluru, Sarvam, Indians, Vivek, Raghavan, Pratyush, Kumar, Nvidia, French, Mandapam, Delhi, A.I, Summit. Every word clear, nothing said twice, the last word not cut off.
 
-### Block 7 of 9 · 1362 characters · save as `voice/aig_b07.mp3`
+### Block 7 of 9 · 1361 characters · save as `voice/aig_b07.mp3`
 
 ```
 Trained from scratch. In India. On those shared chips you just saw. And before it ever talked to you, it read around twelve trillion pieces of text.
@@ -369,12 +369,12 @@ And this isn't one lucky sentence. We ran the same test on more than a thousand 
 
 Look at Odia. On DeepSeek's chopper, five and a half times the pieces of English. On Sarvam's... less than one and a half. And BharatGen's chopper does about as well.
 
-So for your language, the gap shrinks, a lot. Because this time... an Indian team put the missing pieces in.
+So for our language, the gap shrinks, a lot. Because this time... an Indian team put the missing pieces in.
 ```
 
 Listen for: Sarvam, BharatGen, I.I.T, Param, Two, Chat, G.P.T, Marathi, Telugu, English, Odia, DeepSeek, Sarvam's. Every word clear, nothing said twice, the last word not cut off.
 
-### Block 8 of 9 · 1427 characters · save as `voice/aig_b08.mp3`
+### Block 8 of 9 · 1426 characters · save as `voice/aig_b08.mp3`
 
 ```
 And it's already at work. Sarvam says its models help run Aadhaar services in Indian languages. And in October, Maharashtra gave Sarvam's A.I. assistant to two thousand five hundred government officials.
@@ -393,7 +393,7 @@ So here's the lesson. A machine speaks best in the language of the people who bu
 
 If India only rents other countries' machines, you and I will keep paying extra to be understood... in our own languages.
 
-But today, there's an Indian machine that reads your Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
+But today, there's an Indian machine that reads our Hindi, Marathi, Telugu, Bengali or Odia more cheaply than Chat G.P.T. and DeepSeek do.
 
 So what does this mean for you? First, check your Chat G.P.T. plan before the free year ends. Once it's over, it can start charging you on its own.
 ```

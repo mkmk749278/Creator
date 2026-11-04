@@ -947,6 +947,13 @@ the blueprint only shows them in an example), and **number words, not digits** (
     Send it to that friend who always pays twice."
 11. **Reassure, never lecture.** "Relax, it's not lost." No "Let us understand", no "Hello friends" (§4a-5, §4a-6).
 12. **Same honesty.** Simpler words never change a fact: every simplified line must still match its claims row.
+13. **India is "our country", Indian languages "our language" (owner, 2026-11-04).** When the line is about India, its
+    people or its languages, the narrator stands with the viewer: "lives in our country", "our language is almost
+    invisible", "our missing pieces", "charges us more". Never "your country" or "your language". *Why (owner):* the
+    sovereign-AI film said "your country, your language" and it put the narrator outside India, talking at the viewer;
+    "our country, our language... that hits the emotion right." "You" stays for what the viewer does or owns ("ask in
+    your own language", "your apps", "your Chat G.P.T. plan"). `spoken_english_check.py` counts the shared "our/us"
+    with "you" (you ≥ 2, together ≥ 3 per 100 words).
 
 **Writing for the TTS (Part H):** one beat per line, and in the recording blocks a **blank line between beats** (the
 engine takes a breath there); a spaced dash ( — ) for a short stop before a number or punchline, `...` for a turn or
