@@ -1,6 +1,6 @@
-# YouTube package: india-own-ai (final 4K, r3)
+# YouTube package: india-own-ai (final 4K, r4: "our country" voice)
 
-Upload file: Drive `Creator/English/india-own-ai/final/india_own_ai_final_4k.mp4` (3840×2160, 30 fps, 13:06.9, −14.2 LUFS).
+Upload file: Drive `Creator/English/india-own-ai/final/india_own_ai_final_4k_r4.mp4` (3840×2160, 30 fps, 13:06.5; loudness measured at assembly). The r3 file is superseded: it says "your country".
 Subtitles: `youtube/subtitles.en.srt` (our exact captions; NavIC spelled right, no names split).
 Thumbnails for Test & Compare: `thumbnail_b.jpg` (main), `thumbnail_a.jpg` (challenger).
 
@@ -11,15 +11,15 @@ Can India Build Its Own ChatGPT? The Hidden Cost of Hindi | Be Practical With Ki
 
 ## Description
 ```
-Ask an A.I. the same question in English and in Hindi, and it chops your Hindi into more than twice the pieces. And your apps pay for every piece.
+Ask an A.I. the same question in English and in Hindi, and it chops our Hindi into more than twice the pieces. And your apps pay for every piece.
 We test three choppers, DeepSeek, ChatGPT and India's own Sarvam, on Hindi, Marathi and Telugu, and follow the three things India is missing: the library, the reading room and the teachers.
 Can India build its own ChatGPT? Here is what India has built, what it still rents, and what it means for you.
 
 0:00 Can India build its own ChatGPT?
-2:33 How ChatGPT actually works
-3:21 Why AI is weak in Indian languages
+2:35 How ChatGPT actually works
+3:22 Why AI is weak in Indian languages
 5:36 India's GPU problem
-8:15 What India built: Sarvam and BharatGen
+8:14 What India built: Sarvam and BharatGen
 10:52 Has India caught up?
 ```
 

@@ -2103,6 +2103,19 @@ timing and rendered frames before taking anything, and carry over only what hold
 - **"Data centre" stock can be a quarry:** a Pixabay clip filed under data centres was an open-cast mine; look at every
   replacement in a snapshot before rendering.
 
+**India-own-AI r4: re-voicing a finished film (2026-11-04, "our country, our language").**
+- **Save every stem to Drive the day it is made**, voice takes, music, sound effects, `rates.json`. r1's ElevenLabs
+  sound effects lived only in that session's container; when the VO changed, the mix could not be rebuilt and the
+  effects had to be made again (the key lacked sound effects, the connector had no credits, Freesound/Wikimedia
+  downloads return 403/429 here). Now: `Drive English/india-own-ai/audio/sfx/`, `voice/r4/`, `build/r4_audio_stems/`.
+- **Prove the rebuild before changing it:** with the old alignment, `make_film.py` must reproduce the committed
+  compositions byte-for-byte (a DRY run that names the trimmed cuts without encoding them). The mismatches name the
+  missing clip frame rates exactly (`ms_committed / ms_dry × 30`); 49 clips fitted, all ten parts identical.
+- **A new take moves word-level cutaways:** run `make_film.py` and diff its "insert … skipped" list against the old
+  run's; one cutaway ("budgets") dropped and was re-anchored. Then `hyperframes check` every part: a tile row that
+  cleared the caption on the old timing sat on it on the new one.
+- **Whole-block re-takes, never splices:** six of nine blocks re-made; the others keep the approved takes.
+
 **India-own-AI round 1: picture on the word, and only real pictures (owner, 2026-11-03).**
 - **Every name, place, number and key verb gets its own picture on the word, even for 1–2 s.** *Why (owner, r1):*
   "narration to visuals... not matching at all"; one shot per line left "Chinese", "Delhi", "Taiwan", "Nvidia" and
