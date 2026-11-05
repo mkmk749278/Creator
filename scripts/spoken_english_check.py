@@ -55,6 +55,7 @@ ME = {"i", "me", "my", "i'm", "i'll", "i've", "we", "us", "our", "let's", "we're
 CHECKINS = ("right?", "isn't it?", "makes sense?", "no?", "see,", "you know", "imagine", "tell me", "think about it",
             "here's the catch", "here's the thing", "the reality is", "now notice this", "look at", "put simply")
 DOTTED = re.compile(r"\b(?:[A-Z]\.){2,}")
+HYPHENATED = re.compile(r"\b[A-Z](?:-[A-Z])+\b")  # D-R-D-O: the owner's form since 2026-11-05
 
 
 def undot(text):
@@ -131,6 +132,7 @@ def main():
     for w in fancy:
         fails.append(f"fancy word '{w}': say '{FANCY[w]}'")
     acronyms = {m.group(0).replace(".", "").lower() for m in DOTTED.finditer(text)}
+    acronyms |= {m.group(0).lower() for m in HYPHENATED.finditer(text)}
     content = [w for w in ws if len(w) > 3 and w not in INDIAN_OK | acronyms and not w.endswith("'s")]
     rare = sorted({w for w in content if zipf_frequency(w, "en") < 3.5})
     rare_pct = 100 * sum(w in rare for w in content) / max(1, len(content))
@@ -142,7 +144,7 @@ def main():
         fails.append("digits, ₹, !, double quotes or brackets in VO text")
     bare = sorted(set(re.findall(r"\b[A-Z]{2,}\b", text)))
     if bare:
-        fails.append(f"bare capital acronyms (write U.P.I. for Akash): {', '.join(bare)}")
+        fails.append(f"bare capital acronyms (write D-R-D-O for Akash): {', '.join(bare)}")
 
     print(f"{n} words · {len(sents)} sentences · avg {avg:.1f} · questions {100 * q / len(sents):.0f}% · "
           f"you {you:.1f}/100 · I/we {me:.1f}/100 · check-ins {checks} · rare {rare_pct:.1f}% · "
