@@ -39,7 +39,7 @@ reason; never a new doc file.
 - **Simple, warm Indian English** any Indian understands; talk to one person; ask the viewer's own question, then answer
   it; a short punch, then a longer line; nothing over 25 words. No "Welcome to…", "In this video…", "Let us
   understand…", no hype words, no Hindi tags.
-- **Akash on Eleven v4, stability 0.50, similarity 0.85.** The recording text is the fact-checked `vo.txt`:
+- **Akash on Eleven v4, Stability "Creative" (0.0)**, the rest as in `config/voice.yaml`. The recording text is the fact-checked `vo.txt`:
   - **No tags or brackets of any kind.** Pauses come from commas, full stops, em-dashes and blank lines between blocks.
     **Never `...`**: it gives Akash no pause (measured).
   - Numbers, units and amounts in words; no digits, `₹`, `!`, quotes or semicolons.
