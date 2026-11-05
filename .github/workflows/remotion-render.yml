@@ -22,8 +22,8 @@ on:
         description: "2/3 = 720p review cut (always first), 1 = 1080p, 2 = 4K master (only after the owner approves)"
         default: "2/3"
       runners:
-        description: "parallel runners (1-20)"
-        default: "20"
+        description: "parallel runners (max 6: the account shares 20 with the other channels)"
+        default: "6"
       crf:
         description: "x264 CRF"
         default: "16"
