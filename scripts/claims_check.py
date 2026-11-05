@@ -19,7 +19,7 @@ import csv
 import sys
 from pathlib import Path
 
-STATUSES = {"confirmed", "claim", "disputed", "unverified", "wrong"}
+STATUSES = {"confirmed", "claim", "disputed", "unverified", "wrong", "our_calculation"}
 FIELDS = ["id", "claim", "on_screen", "timecode", "status", "source_url", "source_quote", "note"]
 
 
