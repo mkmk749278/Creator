@@ -1,0 +1,28 @@
+{
+  "name": "phone-consensus",
+  "private": true,
+  "description": "Consensus phone review video pipeline",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "vendor": "node scripts/vendor-assets.mjs",
+    "postinstall": "node scripts/vendor-assets.mjs"
+  },
+  "devDependencies": {
+    "@fontsource/bricolage-grotesque": "5.3.0",
+    "@fontsource/inter": "5.2.8",
+    "@fontsource/inter-tight": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/kalam": "5.3.0",
+    "@fontsource/noto-sans-telugu": "5.3.0",
+    "gsap": "3.15.0",
+    "hersheytext": "2.0.0",
+    "hyperframes": "0.8.103",
+    "n8ao": "2.0.1",
+    "postprocessing": "6.39.5",
+    "roughjs": "4.6.6",
+    "simplex-noise": "4.0.3",
+    "three": "0.181.2"
+  }
+}

@@ -1,0 +1,43 @@
+# The repo holds code and small text; every media file lives in Drive (owner, 2026-11-05; PLAYBOOK §2).
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.cache/
+dist/
+spike-out/
+
+# each film's media, pulled from Drive when needed
+projects/*/assets/
+projects/*/out/
+projects/*/renders/
+projects/*/public/assets
+projects/*/remotion/out/
+projects/*/remotion/public/media/
+
+# media never goes in git, anywhere
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.m4a
+*.mp3
+*.wav
+*.aac
+*.flac
+*.exr
+*.blend
+*.tar
+*.tar.gz
+*.zip
+
+# HyperFrames builds (older films and library scenes)
+video/**/vendor/
+video/**/snapshots/
+video/**/renders/
+video/**/.render.hf-transaction-*/
+video/**/work-*/
+
+# shared asset library: large files are re-fetched by scripts/library.py fetch
+library/_cache/

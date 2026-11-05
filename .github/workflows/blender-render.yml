@@ -1,0 +1,75 @@
+# Copied from Built-on-Bharat (2026-11-05).
+# Blender Cycles hero shots on GitHub's runners (PLAYBOOK §8.7, §10.5): a shot's frames split into shards that render
+# in parallel, so a cloud session never spends hours (or the owner's usage) on them. Each shard's frames are a workflow
+# artifact named <shot>_<range>; the session downloads them through the API, checks them and keeps them in Drive.
+name: blender-render
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "scripts/blender/<name>.py"
+        default: jubilee
+      shot:
+        description: "shot name (jubilee: hero | macro | table; counter: c1 | c2 | c3)"
+        default: hero
+      frames:
+        description: "first-last frame"
+        default: "0-299"
+      step:
+        description: "render every Nth frame"
+        default: "2"
+      shards:
+        description: "parallel jobs (1-20)"
+        default: "15"
+      extra:
+        description: "extra args, e.g. --samples 24 --bounces 12 --w 1920 --h 1080"
+        default: "--w 1920 --h 1080 --samples 24 --bounces 12"
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      shards: ${{ steps.p.outputs.shards }}
+    steps:
+      - id: p
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json
+          a, b = map(int, "${{ inputs.frames }}".split("-"))
+          step, n = int("${{ inputs.step }}"), max(1, min(20, int("${{ inputs.shards }}")))
+          frames = list(range(a, b + 1, step))
+          size = -(-len(frames) // n)
+          shards = [f"{c[0]}-{c[-1]}" for c in (frames[i:i + size] for i in range(0, len(frames), size))]
+          print("shards=" + json.dumps(shards))
+          EOF
+
+  render:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        range: ${{ fromJson(needs.plan.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-python@v5.3.0
+        with:
+          python-version: "3.11"
+      - name: Install Blender (bpy 4.2.0)
+        run: pip install --quiet bpy==4.2.0 pillow==11.0.0
+      - name: Render
+        run: |
+          out=out/${{ inputs.shot }}
+          python scripts/blender/${{ inputs.script }}.py --shot ${{ inputs.shot }} --frames ${{ matrix.range }} \
+            --step ${{ inputs.step }} --out "$out" --threads 4 ${{ inputs.extra }} 2>&1 | grep --line-buffered -E "^frame|Error|Traceback"
+          ls "$out" | wc -l
+      # Frames go up as a workflow artifact (kept 90 days, free on a public repo). Litterbox refused the runners'
+      # uploads on 2026-10-27 and a whole run's frames were lost, so nothing leaves GitHub any more.
+      - name: Upload shard
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: ${{ inputs.shot }}_${{ matrix.range }}
+          path: out/${{ inputs.shot }}
+          compression-level: 0
+          if-no-files-found: error

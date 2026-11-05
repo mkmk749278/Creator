@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Realism proof: HDRI + PBR + N8AO + bloom + seeded noise</title>
+    <!--
+      Reference scene for the realism recipe (docs/PLAYBOOK.md §9) and the render benchmark
+      (scripts/bench_render.py). window.BENCH = {ao: 0, bloom: 0, hdri: 0} turns passes off for cost measurement.
+    -->
+    <script src="vendor/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": {
+          "three": "./vendor/three/three.module.js",
+          "three/addons/": "./vendor/three/jsm/",
+          "three/examples/jsm/": "./vendor/three/jsm/",
+          "postprocessing": "./vendor/pp/postprocessing.js",
+          "n8ao": "./vendor/pp/N8AO.js",
+          "simplex-noise": "./vendor/noise/simplex-noise.js"
+      } }
+    </script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("vendor/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("vendor/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      html, body { margin: 0; background: #05070c; }
+      #root { position: relative; overflow: hidden; background: #05070c; font-family: Inter, Arial, sans-serif; color: #fff; }
+      #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .scrim { position: absolute; left: -200px; bottom: -220px; width: 1300px; height: 560px;
+        background: radial-gradient(closest-side, rgba(0,0,0,0.6), rgba(0,0,0,0)); }
+      .lt { position: absolute; left: 72px; bottom: 76px; }
+      .lt .rule { display: block; width: 84px; height: 5px; background: #3fd0c9; margin-bottom: 14px; }
+      .lt .t { display: block; font-size: 44px; font-weight: 800; }
+      .lt .s { display: block; font-size: 26px; font-weight: 600; color: #b9d7e6; margin-top: 6px; }
+      .tag { position: absolute; right: 56px; top: 44px; font-size: 20px; font-weight: 800; letter-spacing: 0.16em;
+        color: rgba(255,255,255,0.75); border: 2px solid rgba(255,255,255,0.45); padding: 6px 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="realism-proof" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+      <canvas id="gl"></canvas>
+      <div class="scrim"></div>
+      <div class="lt" id="lt"><span class="rule"></span><span class="t">A living cell</span><span class="s">Membrane, organelles, motion</span></div>
+      <div class="tag">ILLUSTRATION</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#lt", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 0.4);
+      window.__timelines["realism-proof"] = tl;
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      import { HDRLoader } from "three/addons/loaders/HDRLoader.js";
+      import { EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, ToneMappingMode, VignetteEffect } from "postprocessing";
+      import { N8AOPostPass } from "n8ao";
+      import { createNoise4D } from "simplex-noise";
+
+      const B = window.BENCH || {};  // set by scripts/bench_render.py to measure each pass
+      const USE_AO = B.ao !== 0, USE_BLOOM = B.bloom !== 0, USE_HDRI = B.hdri !== 0;
+      const root = document.getElementById("root");
+      const W = +root.dataset.width, H = +root.dataset.height, DUR = +root.dataset.duration;
+      // Seeded RNG: every random value is fixed, so any frame renders identically in any worker.
+      const mulberry32 = (s) => () => { s = (s + 0x6d2b79f5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+      const rng = mulberry32(42), noise = createNoise4D(mulberry32(7));
+
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gl"), antialias: false, stencil: false,
+        depth: false, powerPreference: "high-performance", preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+      renderer.toneMapping = THREE.NoToneMapping;  // tone mapping happens in the effect pass (AgX)
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x05070c);
+      const camera = new THREE.PerspectiveCamera(30, W / H, 0.1, 60);
+
+      // Cell membrane: icosphere displaced by 4D noise sampled at time t (pure function of t).
+      const geo = new THREE.IcosahedronGeometry(1.25, 48);
+      const base = geo.attributes.position.array.slice();
+      // Glossy surfaces show the HDRI's pixels as blocks; keep roughness >= ~0.4 on a 1k map (use 2k for hero close-ups).
+      // Translucency by opacity, not transmission: transmission re-renders the scene per object (~30 min per 12 s).
+      const mat = new THREE.MeshPhysicalMaterial({ color: 0x8fd3cc, roughness: 0.45, metalness: 0,
+        clearcoat: 0.6, clearcoatRoughness: 0.4, sheen: 1, sheenColor: new THREE.Color(0x7ff0ff), sheenRoughness: 0.5,
+        envMapIntensity: 1.0, transparent: true, opacity: 0.5, depthWrite: false, side: THREE.DoubleSide });
+      const cell = new THREE.Mesh(geo, mat); scene.add(cell);
+
+      // Organelles: instanced, positions from noise(seed, t).
+      const N = 90;
+      const org = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(0.085, 3),
+        new THREE.MeshPhysicalMaterial({ color: 0xffb347, roughness: 0.4, emissive: 0xff7a1a, emissiveIntensity: 0.6, clearcoat: 0.6 }), N);
+      const seeds = Array.from({ length: N }, () => ({ x: rng() * 2 - 1, y: rng() * 2 - 1, z: rng() * 2 - 1, s: 0.5 + rng() }));
+      scene.add(org);
+
+      const key = new THREE.DirectionalLight(0xffffff, 1.2); key.position.set(3, 4, 5); scene.add(key);
+      const rim = new THREE.DirectionalLight(0x6fc8ff, 1.6); rim.position.set(-4, 1, -3); scene.add(rim);
+
+      const composer = new EffectComposer(renderer, { frameBufferType: THREE.HalfFloatType });
+      composer.addPass(new RenderPass(scene, camera));
+      if (USE_AO) { const ao = new N8AOPostPass(scene, camera, W, H); ao.configuration.aoRadius = 0.6;
+        ao.configuration.intensity = 2.2; ao.setQualityMode("Performance"); ao.configuration.halfRes = true; composer.addPass(ao); }
+      const effects = [];
+      if (USE_BLOOM) effects.push(new BloomEffect({ intensity: 0.9, luminanceThreshold: 0.75, mipmapBlur: true }));
+      effects.push(new VignetteEffect({ darkness: 0.45, offset: 0.3 }));
+      effects.push(new ToneMappingEffect({ mode: ToneMappingMode.AGX }));
+      composer.addPass(new EffectPass(camera, ...effects));
+      composer.setSize(W, H);
+
+      const pos = geo.attributes.position, v = new THREE.Vector3(), m4 = new THREE.Matrix4(), qt = new THREE.Quaternion(), sc = new THREE.Vector3(), p = new THREE.Vector3();
+      function renderAt(t) {
+        const k = 0.35 * t;  // noise speed
+        for (let i = 0; i < pos.count; i++) {
+          v.set(base[i * 3], base[i * 3 + 1], base[i * 3 + 2]);
+          const d = 1 + 0.07 * noise(v.x * 0.9, v.y * 0.9, v.z * 0.9, k) + 0.02 * noise(v.x * 3, v.y * 3, v.z * 3, k * 2);
+          pos.setXYZ(i, v.x * d, v.y * d, v.z * d);
+        }
+        pos.needsUpdate = true; geo.computeVertexNormals();
+        for (let i = 0; i < N; i++) {
+          const s = seeds[i];
+          p.set(s.x + 0.25 * noise(s.x, s.y, s.z, k), s.y + 0.25 * noise(s.y, s.z, s.x, k), s.z + 0.25 * noise(s.z, s.x, s.y, k));
+          p.setLength(Math.min(0.95, p.length()) * 1.1);
+          sc.setScalar(s.s); m4.compose(p, qt.identity(), sc); org.setMatrixAt(i, m4);
+        }
+        org.instanceMatrix.needsUpdate = true;
+        const a = -0.6 + 0.5 * (t / DUR);  // slow orbit and push-in
+        const r = 7.0 - 0.9 * (t / DUR);
+        camera.position.set(Math.sin(a) * r, 0.6 - 0.2 * (t / DUR), Math.cos(a) * r);
+        camera.lookAt(0.6, 0.1, 0);
+        cell.rotation.y = 0.2 * t;
+        composer.render();
+      }
+
+      const ready = USE_HDRI
+        ? new HDRLoader().loadAsync("vendor/library/hdri/studio_small_09_1k.hdr").then((tex) => {
+            const pm = new THREE.PMREMGenerator(renderer);
+            scene.environment = pm.fromEquirectangular(tex).texture;  // baked once, free per frame
+            tex.dispose(); pm.dispose();
+          })
+        : Promise.resolve();
+      ready.then(() => {
+        window.addEventListener("hf-seek", (ev) => renderAt(ev.detail.time));
+        renderAt(window.__hfThreeTime || 0);
+      });
+    </script>
+  </body>
+</html>
