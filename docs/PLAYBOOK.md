@@ -10,7 +10,7 @@ date), and adds a line to §16 only if it doesn't fit a rule. Never add a new do
 for word: put its rules where they belong and keep the original in `docs/archive/`.
 
 **Contents**
-1. The channel · 2. Working with the owner · 3. The pipeline at a glance · 4. Package first · 5. Story ·
+1. The channel · 2. Working with the owner · 3. How we make a film · 4. The package · 5. Story ·
 6. Narration · 7. Pronunciation · 8. Facts and honesty · 9. The look · 10. Picture tools · 11. Media sourcing ·
 12. Sound and music · 13. Review · 14. Render and deliver · 15. Release and after · 16. Lessons log
 
@@ -131,37 +131,115 @@ ISRO's Samudrayaan page). Arjun Mk1A is about 68–68.5 t with Kanchan composite
 
 ---
 
-## 3. The pipeline at a glance
+## 3. How we make a film (owner, 2026-11-05; refined by Claude as creative director)
 
-Every film moves through these stages, in order. Each stage leaves a file in `projects/<slug>/` and has a gate.
+The owner's process, sharpened. Two principles run through every step:
+- **Creativity in every step, not only at the end.** Each step has a creative question; the obvious answer (a
+  timelapse, a push-in, a "Welcome" line, a stock clip of the topic) is the floor, never the result. Narration and
+  visuals get the most of it.
+- **Decide early, build once.** Direction is cheapest to change in the plan and most expensive after the audio. So the
+  owner approves the plan before the narration is written, and the slow work (footage fetches, Blender hero shots)
+  starts the day the plan is approved, beside the narration.
 
-| # | Stage | Output | Gate before the next stage |
-|---|---|---|---|
-| 1 | Brief and package | `brief.md`, `research/search_terms.md` | title, thumbnail idea and search phrase chosen (§4) |
-| 2 | Research | `research/`, draft `claims.csv` | every fact has a URL and a verbatim quote |
-| 3 | Treatment | `treatment.md` (one page) | 3+ angles, 3+ cold opens, 2–3 signature moments chosen (§5) |
-| 4 | Script | `vo.txt`, `screenplay.md` | lean-in test, `spoken_english_check.py` passes (§6) |
-| 5 | Fact-check | `claims.csv` | `scripts/claims_check.py` passes at `max` effort (§8) |
-| 6 | Audience review | `review_audience_vN.md` | independent session, lean-in map, fixes applied (§13.3) |
-| 7 | Recording | `vo_blocks.md` + blocks in the chat | owner records; every take passes `vo_take_check.py` (§6.6) |
-| 8 | Timing | `vo/timing.json` | `align_script.py` lines checked by ear where flagged |
-| 9 | Media | `asset-manifest.md`, `media_manifest.csv`, contact sheets | every asset looked at and licensed (§11) |
-| 10 | Scenes | scene handoff docs, compositions, Blender shots | stills checked at key frames (§10) |
-| 11 | Review cut (720p) | the cut, `review.md` | measured checks + shot-word audit pass (§13) |
-| 12 | Owner review | `review_ack_rN.md` | owner approves the cut |
-| 13 | 4K master | the master on Drive | seams, freeze and loudness checks (§14) |
-| 14 | Package and release | `youtube/metadata.json`, thumbnails, SRT | scheduled for the slot; PR merged (§15) |
+### Phase A: find the story
 
-Skills that walk through stages: `/new-documentary` (all of it), `/fact-check`, `/source-media`, `/review-cut`,
+**1. Topic.** From the roadmap (§1.1) or the owner's idea. *Creative question:* what is the single physical paradox a
+stranger would stop scrolling for? Output: `brief.md` (the machine, the paradox, who it's for).
+
+**2. Deep research: what everyone says vs what it actually is.** Read what the news shows, what the biggest YouTube
+videos and social posts say, what officials claim, and then the primary documents (papers, filings, standards,
+datasheets, court and parliament records). Output: `research/landscape.md` with four parts:
+- **What everyone is saying** (with links), and the 3–5 strongest existing films, their angle and where viewers
+  complain in the comments.
+- **What it actually is:** the real mechanism, numbers and history, every fact logged in a draft `claims.csv`.
+- **Our edge, in one sentence:** what nobody has shown clearly, which the film will. No edge, no film: pick another
+  angle or topic.
+- **What pictures exist:** real footage, archive and documents, found now. The visuals we can get shape the plan.
+*Creative question:* where is the surprise: the gap between what people believe and what the steel actually does?
+
+### Phase B: decide everything
+
+**3. The plan (the most important step).** Everything is decided here, on paper, before a word of narration:
+- 3+ angles, 3+ cold opens, 3+ endings; the chosen ones and why.
+- **The questions viewers are actually asking** (from search, comments and the research), and where each one is
+  answered.
+- **The beat sheet:** every beat with its time, its viewer question (the Q column), its turn, and **its picture**
+  (real footage, document, map, Blender hero, Three.js, Remotion graphic), its sound and its music cue.
+- **2–3 signature moments,** designed in full: the cutaway that makes the mechanism click, the match cut, the silence.
+- **The hero 3D shots** (2–4), named with their camera move, so Blender can start early.
+- **Zero sodhi:** every beat earns its place; what the viewer doesn't need to feel the paradox is cut, however
+  interesting.
+- **Independent plan review** (§13.3): a fresh session judges the plan against the best existing films and what
+  viewers want to know. Fixes applied.
+Output: `plan.md` (+ `review_plan_vN.md`), sent to the owner as a short, phone-readable summary. **Owner approves the
+plan.** *Creative question:* what will a viewer tell a friend about this film?
+
+### Phase C: words (and, in parallel, pictures start)
+
+**4. Facts first.** Every claim the plan makes is fact-checked before the narration is finalised (`/fact-check`,
+`scripts/claims_check.py`). A fact that falls changes the plan now, not the edit later.
+
+**5. Narration.** Written from the plan, then:
+- a **creative pass** (§6): sharpen the cold open and every chapter's first line, plant and pay off, put the
+  viewer inside the moment, cut every line a picture already says;
+- the checks: the lean-in test, `spoken_english_check.py`, the pronunciation list;
+- an **independent narration review** (§13.3), heard as viewers would hear it.
+Output: **`narration.md`** sent to the owner (the full narration, what changed after review, the "listen for" names).
+**Owner approves the narration.**
+
+**In parallel, from plan approval:** footage requests go out (step 7) and the Blender hero shots render on GitHub
+(their length is trimmed to the audio later). This turns the owner's fetching time and the render time into no
+waiting at all.
+
+**6. Audio.** Only after the narration is approved: `scripts/eleven_tts.py` with Akash on Eleven v4, Stability
+Creative (0.0), similarity 50%, the best quality the plan allows (`config/voice.yaml`). Every take passes
+`scripts/vo_take_check.py`; a flagged block is regenerated (credits are limited: about 66,000 characters a month on the
+Creator plan, so one take per block first). Joined and timed (§6.7). Output: the final VO in Drive, sent to the owner.
+**Owner approves the audio.**
+
+### Phase D: the picture
+
+**7. Footage.** Real before made (§11). YouTube clips: one click-to-copy Termux line. Anything blocked from the cloud
+(Pexels, Vimeo, news sites, paid-wall-free archives): one click-to-copy request for **Cowork** on the owner's home
+laptop (§11.3). Everything lands in the film's Drive folder; every clip is looked at before use. *Creative question:*
+which real shot makes this sentence undeniable?
+
+**8. Word-by-word sync (the major part).** From the audio's word timings, every name, brand, number, place and verb
+gets its own picture on its word, to the frame; and the pictures of each sentence together say the whole sentence
+(§9.5). Built as scene docs, then Remotion compositions and Blender shots. *Creative question:* for each sentence,
+what would make the viewer *feel* it, not just see a label?
+
+**9. Render on GitHub.** Every full render runs on the runners, inside the account's shared runner budget with the
+other two channels (§14.1).
+
+**10. Music and sound.** Beds from the library chosen for each act in the plan, an effect on every visual event,
+silence before the big reveals, the voice always on top (§12).
+
+### Phase E: review and finish
+
+**11. The 720p review cut,** finished like the final (never a test), after our own full review (§13.1). Uploaded to
+Drive.
+
+**12. Independent viewer review.** Not "was it built right" but "did it give viewers what they wanted, better than
+anything else on this topic" (§13.3). Fixes made, `review_ack_rN.md` written, then the owner reviews. **Owner approves
+the cut.**
+
+**13. The 4K master,** rendered once and uploaded to Drive.
+
+**14. Title, thumbnail and description,** when the owner asks (§4). Candidate thumbnail frames are noted during the
+build so the best ones are ready.
+
+Skills that walk through the steps: `/new-documentary` (all of it), `/fact-check`, `/source-media`, `/review-cut`,
 `/deliver`.
 
 ---
 
-## 4. Package first
+## 4. The package: title, thumbnail, description
 
-The title, thumbnail idea and search phrase are written into `brief.md` **before the script**. *Why:* they are the
-promise; the first 30 seconds deliver it and the film pays it off. A film written first and packaged later promises
-something vague.
+**Made when the owner asks** (owner, 2026-11-05), at the end. But the promise is decided in the plan (step 3): the
+paradox the film opens on and the search words people use come from the research (step 2), so the first 30 seconds
+already deliver what the title and thumbnail will say. *Why:* a film planned without its promise opens vaguely, and
+vague openings lost two thirds of our viewers by 0:45.
 
 ### 4.1 How YouTube finds a film (YouTube's own help pages and its discovery team, read 2026-10-24)
 - **Browse (home feed)** is won by the thumbnail and title; **suggested** ("up next") follows what viewers actually
@@ -347,21 +425,25 @@ paragraph. For each paragraph: Is the Q cell filled? (Empty = they swipe: add a 
 place and moment, or a summary? A "but" or "so", or "and then"? Would a teacher or news reader say it this way? Can it go
 without loss? Does the last line pull into the next?
 
-### 6.6 Recording and takes
-- **Recording blocks in the chat** (owner, 2026-10-15): every time a VO is ready or changes, paste every block as its
-  own fenced code block (one tap to copy), headed with the block number, voice settings and the file name to save.
-  **Also** send `vo_blocks.md` (full narration, then the same blocks) with SendUserFile:
-  `python3 scripts/vo_blocks.py projects/<slug>/vo.txt --prefix <xx> --title "<film>"`. Blocks stay under 1,500
-  characters, and their boundaries stay stable between edits so one changed line costs one block.
-- **Re-records are free** (owner, 2026-10-28). Never keep a weaker line to save a take, and **never splice words into a
-  take**: re-record the whole block. With every change, name exactly which blocks to record again.
-- **Every take is checked:** `scripts/vo_take_check.py` after every alignment (each sentence's speech time against its
-  words; speech left after a trim). A take longer than its text predicts is a repeat until proven otherwise.
-  *Why:* the jet-engine film shipped two doubled phrases from spliced re-takes, and a trim cut the last sentence off
-  four pharma blocks.
-- **The owner's audio-only pass:** one listen to the joined VO the film uses, before the film is locked, for doubled
-  words, misread names and cut-off endings. Each block's "Listen for" line (from `vo_blocks.py`) names what to check.
-- **Keep the takes on Drive** (`<slug>/Vo/`): a container can be reclaimed.
+### 6.6 Audio: generated after approval (owner, 2026-11-05)
+- **No audio until the owner approves `narration.md`.** Then the session generates it with the ElevenLabs API:
+  `python3 scripts/vo_blocks.py projects/<slug>/vo.txt --prefix <xx> --title "<film>"` (blocks under 1,500
+  characters, boundaries stable between edits), then
+  `python3 scripts/eleven_tts.py --blocks projects/<slug>/vo_blocks.md --prefix <xx> --outdir projects/<slug>/assets/vo`.
+  Settings come from `config/voice.yaml`: Akash, Eleven v4, Stability Creative (0.0), similarity 50%, MP3 44.1 kHz
+  192 kbps (the best the Creator plan allows; WAV needs Pro).
+- **Credits are limited** (about 66,000 characters a month on the Creator plan; a 15-minute film is about 13,000).
+  One take per block first; regenerate only the blocks a check or the owner flags (`--only 3,7`). Check the balance
+  before a big run.
+- **Every take is checked:** `scripts/vo_take_check.py` after alignment (each sentence's speech time against its
+  words; speech left after a trim). A take longer than its text predicts is a repeat until proven otherwise. Listen
+  for the "Listen for" names of each block. *Why:* the jet-engine film shipped two doubled phrases from spliced
+  re-takes, and a trim cut the last sentence off four pharma blocks.
+- **Never splice words into a take:** regenerate the whole block, so voice and pace match.
+- **The owner reviews the final joined audio** (one MP3 in Drive, sent with SendUserFile) and approves it before any
+  picture is timed to it. If the owner flags a line, change the text if needed (the narration file shows the change),
+  regenerate that block, and send the new joined file.
+- **Keep the takes on Drive** (`<film folder>/vo/`): a container can be reclaimed.
 
 ### 6.7 Timing
 - Time from the recorded VO and the locked script, **never from speech recognition** (no Whisper). *Why:* Whisper
@@ -455,13 +537,24 @@ cards "a collage of templates".
 - **Smooth to the eye:** dissolve cuts (about 0.2 s) by default, hard cuts only where the rhythm is the point (verb
   cuts, fast montages). A match cut is always a hard cut.
 
-### 9.5 Semantic lock (within 100 ms)
-The picture shows the exact noun, number or stress the voice says, landing within 100 ms of the word (owner,
-2026-11-05). **Every name, place, number and key verb gets its own picture on its word,** even for 1–2 s. A topic
-picture is not enough: "Indian companies" needs Indian companies, "1954" needs 1954, "forged" needs forging. When no
-real footage exists, **draw what the words say** (a scene per sentence) instead of filling with a related picture.
-*Why:* the owner found "Pimpri 1954" over a British lab drawing and company names over stock gears in a 4K master that
-had passed every frame measurement.
+### 9.5 Word-by-word sync, and every sentence whole (owner, 2026-11-05: "the major part of the video")
+Two rules at once:
+1. **Every word that names something gets its own picture on that word**, landing within 100 ms: every name, brand,
+   number, place, date and key verb ("forged", "cracks", "surfaces"), even for 1–2 s. A topic picture is not enough:
+   "Indian companies" needs Indian companies, "1954" needs 1954, "forged" needs forging.
+2. **The pictures of a sentence together say the whole sentence.** A run of word-pictures that each fit their word but
+   don't add up to the sentence's meaning fails. Plan each sentence as a small scene: the base shot carries the
+   sentence, the word-pictures cut in on their words and return to it (cutaways 0.15 s before the word, the base shot
+   continuing underneath as if it never stopped).
+- **How:** word times from the approved audio (`vo/timing.json`; the voice's own gaps for fast names and verbs). Plan
+  in `word_map.md` (sentence → base shot → word cutaways), build, then audit with the shot-word audit (one frame per
+  cutaway, labelled with its word) and a sentence pass (one strip per sentence, read against the sentence).
+- **When no real footage exists, draw what the words say** (a scene per sentence), never a related filler picture.
+- *Why:* the owner found "Pimpri 1954" over a British lab drawing and company names over stock gears in a 4K master that
+  had passed every frame measurement; and in the AI film, one shot per line left "Chinese", "Delhi", "Taiwan" and
+  "Nvidia" over unrelated footage.
+- *Creative question for every sentence:* what would make the viewer feel it? A literal picture is the floor; a
+  match cut, a cause shown happening, a number made physical is the goal.
 
 ### 9.6 Readable on a phone and the family TV (2026-11-03)
 At the 1920×1080 authoring size: **≥ 44 px** for what the voice points to; **≥ 30 px** for every other fact (dates,
@@ -592,7 +685,24 @@ It downloads only the ranges (max 1080p) on the phone's mobile IP straight to th
 tokens; never change a public video without the owner's yes. **Look in the owner's Drive footage before searching
 outside** (it held the best "Nvidia" shots in the AI film).
 
-### 11.3 Rules
+### 11.3 Blocked from the cloud: Cowork on the owner's home laptop (owner, 2026-11-05)
+The owner runs the Claude desktop app with Cowork on a laptop at home (home network, reaches everything) and drives it
+from the phone. For anything the cloud can't fetch (the Pexels and Pixabay websites, Vimeo, news sites, archives that
+block cloud IPs, logged-in downloads), give the owner **one click-to-copy request to paste into Cowork**, complete in
+itself:
+```text
+Download these files and save them to Google Drive, folder Creator/<English|Built-on-Bharat>/<slug>/footage/cowork/
+(create it if missing). Keep the original file names, highest quality offered, no re-encoding.
+1. <exact page URL> : <what it is> (take: <the variant/size>; range <mm:ss-mm:ss> if a video)
+2. ...
+When done, also save a list.csv in the same folder with: file name, source page URL, title, author, licence shown on
+the page.
+```
+Then pull it with `scripts/gdrive_pull.sh <film folder>/footage/cowork projects/<slug>/assets/cowork`, look at every
+file, and log each in `media_manifest.csv`. Only licence-clean sources (commercial use allowed); never logins to
+paid archives without asking.
+
+### 11.4 Rules
 - **Fact-check before sourcing.** Sourcing for a claim that turns out wrong wastes the most time.
 - **Look at every asset before using it.** A contact sheet (two frames per clip) is the record, not the tags or the
   manifest line. *Measured:* about a third of search hits were wrong; one batch of 59 had 17 failures (CGI flags, a
@@ -673,17 +783,25 @@ outside** (it held the best "Nvidia" shots in the AI film).
 - [ ] Flash, freeze, judder, seam and loudness measurements pass.
 - [ ] Captions rebuilt from the locked script after any timing change.
 
-### 13.3 Independent reviews
-- **The narration, before the owner hears it:** a new cloud session **with no repo attached** (`create_session` with no
-  `source_url`) gets `prompts/audience_review_v1.md` and the narration exactly as recorded. It plays five Indian viewers
-  and returns: is the topic clear in 10 s, where they would swipe, can they explain it back, robotic lines, scores, top
-  fixes, and a **lean-in map** (every ~30 s: leaning in / neutral / drifting). Apply only fixes that keep every fact
-  true, re-run the checkers, save `review_audience_vN.md`, archive the session. *Why:* we read our own script so often
-  that we can't hear it as a stranger (film 01's hook never said it was a U.P.I. payment).
-- **The cut:** the independent Review repo (`mkmk749278/Review`) audits each 720p review cut on its own protocol.
+### 13.3 Independent reviews: does it give viewers what they want? (owner, 2026-11-05)
+Each is a new cloud session **with no repo attached** (`create_session` with no `source_url`), so it judges as an
+outsider, not against our own rules. It gets only what it needs, plays real Indian viewers, and **compares us with
+what already exists**: the 3–5 strongest films on the topic (from `research/landscape.md`). Archive it when done.
+- **At the plan (step 3):** the edge sentence, the beat sheet and the signature moments, plus the strongest existing
+  films. Questions: would viewers click and stay? Which of their real questions are missing? What do the other films
+  already do better? Where is the sodhi? What would make this the best film on the topic? Saved as
+  `review_plan_vN.md`.
+- **At the narration (step 5):** `prompts/audience_review_v1.md` and the narration exactly as it will be voiced. It
+  returns: topic clear in 10 s, where viewers would swipe, can they explain it back, robotic lines, a **lean-in map**
+  (every ~30 s: leaning in / neutral / drifting), and how it compares with the existing films. Saved as
+  `review_audience_vN.md`. *Why:* we read our own script so often that we can't hear it as a stranger.
+- **At the 720p cut (step 12):** the cut (a Drive download link) and the narration with times. Not "was it built
+  right" but: did it meet what viewers wanted from this topic, better than the others? Where did attention drop, what
+  was confusing, what was unforgettable? The independent Review repo (`mkmk749278/Review`) also audits the cut on its
+  own protocol.
+- **Apply only fixes that keep every fact true;** a reviewer's rewrite never adds a fact.
 - **Every review round ends with `review_ack_rN.md`** (owner, 2026-10-30): every item FIXED / FIXED NEXT / OPEN /
-  CHECKED with evidence, in the review cut's own times, plus what we found that the reviewer missed. Send it to the
-  owner and the next reviewer.
+  CHECKED with evidence, plus what we found that the reviewer missed. Send it to the owner.
 - **Outside notes are leads, not orders:** check each against the composition, the word timings and a rendered frame
   before changing anything. *Why:* of twelve points in one outside picture review, five were right, five were real
   with another cause, and two were wrong (and would have made the sync worse).
@@ -692,12 +810,19 @@ outside** (it held the best "Nvidia" shots in the AI film).
 
 ## 14. Render and deliver
 
-### 14.1 Where
+### 14.1 Where, and the shared runner budget
 - **Author and check in the session; every full render runs on GitHub Actions.** The repo is public, so standard
-  runners are free and unlimited: 4 vCPU / 16 GB / 14 GB disk, 20 jobs at once, 6 h a job, measured 1.5× faster than a
-  session, and no Claude usage while they run. The session triggers the workflow, ends its turn, and comes back to
-  check the result. *Why:* a session must stay alive through a render, and an idle session's VM can be reclaimed
-  mid-job.
+  runners are free with no minute limit: 4 vCPU / 16 GB / 14 GB disk, 6 h a job, measured 1.5× faster than a session,
+  and no Claude usage while they run. The session triggers the workflow, ends its turn, and comes back to check.
+- **The runner budget is shared (owner, 2026-11-05).** GitHub's Free plan allows **20 jobs at once for the whole
+  account**, shared by every repo: this one, `Margin-of-Error` and `The-Mechanical-Paradox` (and any other active
+  repo). Extra jobs wait in a queue; nothing fails, but one channel can block the others. So:
+  - **Creator uses at most 6 runners at once** (`runners: 6` on `remotion-render.yml`; at most 6 Blender shards).
+  - Before a big render, check what is already running across the account (GitHub MCP `actions_list` on each channel
+    repo); if the others are busy, render fewer parts at a time or later.
+  - Render in fewer, longer parts rather than many tiny ones (less setup time per job); never re-render a part that
+    already passed.
+  - Artifacts on public repos still count toward storage; keep shards 1–7 days and send finished films to Drive.
 - **Public repo = public logs and artifacts:** never echo a secret; renders with third-party excerpts go to Drive, never
   to run artifacts.
 - Media reaches the runner through Drive (tars of the parts' media; repo secret `GDRIVE_RCLONE_TOKEN`). Workflow files

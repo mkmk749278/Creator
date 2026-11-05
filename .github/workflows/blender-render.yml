@@ -19,8 +19,8 @@ on:
         description: "render every Nth frame"
         default: "2"
       shards:
-        description: "parallel jobs (1-20)"
-        default: "15"
+        description: "parallel jobs (max 6: the account shares 20 with the other channels)"
+        default: "6"
       extra:
         description: "extra args, e.g. --samples 24 --bounces 12 --w 1920 --h 1080"
         default: "--w 1920 --h 1080 --samples 24 --bounces 12"
