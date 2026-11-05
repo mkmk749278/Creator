@@ -323,7 +323,7 @@ the moment and leans into the story.
 - `scripts/spoken_english_check.py projects/<slug>/vo.txt` measures all of this and must pass.
 
 ### 6.4 Writing for Akash (Eleven v4)
-**Voice:** Akash on Eleven v4, **stability 0.50, similarity 0.85** (owner, 2026-11-05). Pace about 145–160 words a
+**Voice:** "Akash - Confident and Natural" on Eleven v4, **Stability "Creative" (0.0)** (owner, 2026-11-05; Eleven v4 presets: Creative 0.0, Natural 0.5, Robust 1.0); the other settings as in `config/voice.yaml`. Pace about 145–160 words a
 minute. The fact-checked `vo.txt` is exactly the recording text.
 
 - **No tags or brackets of any kind.** *Why (owner's tests, 2026-10-24/25):* voice-description tags changed the voice
