@@ -111,6 +111,11 @@ def main():
     ap.add_argument("--max-words", type=int, default=440)
     a = ap.parse_args()
     text = load(a.path)
+    # The film's own names and subject words (ships, places, the chemistry it explains), said and shown on screen:
+    # projects/<slug>/words.txt beside the VO, one per line (2026-11-05).
+    allow = Path(a.path).with_name("words.txt")
+    if allow.exists():
+        INDIAN_OK.update(w.strip().lower() for w in allow.read_text(encoding="utf-8").split() if w.strip())
     sents = sentences(text)
     ws = [w.lower().strip("-") for w in words(text)]
     n = len(ws)
