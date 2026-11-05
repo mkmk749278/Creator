@@ -9,6 +9,40 @@ narrated documentary again, about 9–14 minutes as a guide** (owner, 2026-10-21
 `docs/research/reports/India content edge 2026-10-21.md`): the "India's Missing Pieces" series, with the thumbnail built to
 win the click first, narration in the simplest words, and the best visuals.
 
+## One channel, one film a week, the industrial roadmap (owner, 2026-11-05; PLAYBOOK §4a-13, verbatim in Part I)
+**This section wins over any older rule below that it contradicts.**
+- **Built on Bharat is retired as a channel.** Its films go out on Be Practical with Kishore in the playlist **"Built
+  on Bharat | The Industrial Backbone"** (official series playlist; the 158-year Tata film is the anchor). Every weekly
+  release joins it when published. Tata v10 is finished in `mkmk749278/Built-on-Bharat`, which is then frozen; **every
+  roadmap film is built here**, in `projects/<slug>/` (owner's choice, 2026-11-05).
+- **Formula:** hard machinery under extreme heat, pressure or stress holding a national effort hostage (the single point
+  of failure). Zero Sodhi: no fluff, no chest-thumping, no software jargon, no lecture. The senior engineer over coffee.
+- **Roadmap:** the 25 films in PLAYBOOK Part I §6, in order; Video #1 is "Why India's Submarines Must Surface: The A-I-P
+  Dilemma". Several subtitles were wrong as written (A-I-P stores no hydrogen; P-H-W-Rs have no pressure vessel;
+  tungsten mushrooms, D-U shear-bands; DMR-249A is warship steel; EMALS is megajoules, not gigawatts): each film's
+  brief starts from the research flags in §4a-13, and the fact-check gate still runs.
+- **VO for Akash v4 (stability 0.50, similarity 0.85):** no brackets or tags of any kind; comma = breath, em-dash =
+  pivot, full stop = landing; a blank line between blocks for a pause before reveals; **acronyms hyphenated (D-R-D-O,
+  I-S-R-O, H-A-L, C-R-G-O)**, replacing the dotted form; all numbers and units in words. Master −14 LUFS / −1 dBTP,
+  music −25 dB under voice and −12 dB in gaps, 1.0 s of silence before a major reveal.
+- **Picture:** headless **Blender CLI** (`scripts/render_*.py`) for the 3D cutaways, stress fields and glowing metal,
+  **Remotion** (`src/compositions/`, pinned like Built on Bharat's `4.0.534`) for HUD, telemetry and graphs. This
+  replaces HyperFrames and "no Remotion" for roadmap films; films already in HyperFrames keep it. Durations come from the
+  VO timestamps. Visible motion every 3.5 s, no static plate over 1.5 s, picture on the spoken noun within 100 ms, and
+  every model on a physical base (Cycles steel plate, drafting grid, satellite plate), never in a void. Renders on
+  GitHub Actions to `dist/`.
+- **Release:** exactly one film a week, **Sunday 11:30 AM IST** (or **Thursday 6:30 PM IST** if QA clears early).
+  Upload as soon as the final passes QA and **schedule** it for the slot (owner, 2026-11-05: the lead time depends on how
+  early it is done); **45 minutes before is the minimum**, since 4K60 can take hours to process (YouTube Help 71674).
+  "Altered or synthetic content" = Yes, no AI tools named in the description; title, thumbnail, chapters (`00:00`),
+  playlist, cards and end screens locked by T-15; pin the source comment within 60 s of going Public.
+- **Package:** title **under 45 characters, one physical paradox, no channel suffix**; thumbnail of one hero cutaway or
+  glowing part, at most 3 words in caution yellow or signal red, bottom-right corner clear; everything in
+  `projects/<slug>/youtube/metadata.json`.
+- **First 48 hours:** no self-views from the owner's phone, Wi-Fi or accounts; read Studio after 24 h; if impressions
+  > 1,500 and CTR < 2.5%, switch to the challenger thumbnail.
+- **Drive:** `Creator/English/<slug>/`, or `Creator/Playlists/Built-on-Bharat/<slug>/` for playlist films.
+
 This file holds the rules every session must follow. **`docs/PLAYBOOK.md` is the only other instruction file**: full specs,
 how-tos, measurements, the reason behind each rule, and recommendations. Read the parts that apply before starting work.
 Keep it that way: add new lessons to the playbook (with the reason), not to new doc files.
@@ -68,8 +102,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   visual question, 2–4 words that add to the title and never answer it, bright, honest. **The old navy-card template
   is retired.** Run 3+ concepts through `scripts/thumb_feed.py` and an independent click panel, and deliver a main
   and an A/B challenger (1280×720 JPG, HTML shot with Playwright, like `projects/rare-earth-magnets/youtube/thumb/`);
-  (2) the **title in a click-to-copy code block**, ending
-  `| Be Practical With Kishore`; (3) a **simple description with chapter timestamps** (starting `0:00`) in its own
+  (2) the **title in a click-to-copy code block**, under 45 characters with no channel suffix (owner, 2026-11-05; the
+  `| Be Practical With Kishore` suffix is retired); (3) a **simple description with chapter timestamps** (starting `0:00`) in its own
   click-to-copy code block: **only** 2–4 plain lines on what the video shows, then the timestamps. No sources, references,
   credits, disclaimers, hashtags or links (owner, 2026-10-17). Timestamps come from the exact cut the owner uploads. Commit them in `projects/<slug>/youtube/`, then open a PR to `main`, merge it, and close
   (archive) the session.
@@ -148,7 +182,8 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   bridge. In these films this wins over the four acts, the 8–12 min structure, the open loop with a minute, the
   3.5–5.0 s reset and the 25–30% grit target below. Engines: HyperFrames for all 2D, HUD and text; **Blender Cycles
   for the 2–4 hero 3D cutaways** (8 samples + denoise, ~27 s a frame on CPU; Kaggle GPU once the key is added), composited
-  under the HyperFrames HUD; Three.js for other 3D; no Remotion or Manim. Whisper stays banned.
+  under the HyperFrames HUD; Three.js for other 3D; no Manim (Remotion + Blender CLI are the engines for roadmap films
+  since 2026-11-05). Whisper stays banned.
 - **Stick-figure characters when the scene demands (owner, 2026-10-24; PLAYBOOK §4a-3 item 3):** hand-drawn acting
   characters designed per film (who they are, clothes, props, setting), never the demo's exact look and never a real
   person; they act out the viewer's situation, a hypothetical or a mechanism, and never replace real footage that
@@ -225,14 +260,14 @@ Keep it that way: add new lessons to the playbook (with the reason), not to new 
   about it", "…right?", "Makes sense?", no Hindi tags); rhythm punch (3–6 words) → expansion (12–18) → checkpoint, none
   over 25; cold assertion in the first 8 s; rules as Rule → Ruin → Reality; sections end with a forward pivot; banned:
   moreover, furthermore, delve, harnessing, imperative, y'all, stoked, no cap, buckle up. TTS: blank line between
-  beats, spaced dash and `...` for pauses, no semicolons, acronyms with dots (U.P.I., R.B.I.), no audio tags; pace
+  beats, spaced dash and `...` for pauses, no semicolons, acronyms hyphenated (U-P-I, R-B-I; owner, 2026-11-05), no audio tags; pace
   145–160 wpm. `scripts/spoken_english_check.py` must pass, and every English film's reply pastes its recording
   blocks (Akash, < 1,500 characters each).
 - **English films: owner's production guide (2026-10-15; PLAYBOOK §4a-4, verbatim in Part F).** *Why:* earlier scripts
   sounded like a news reader. Voice = a street-smart elder brother talking across a table; no lecture openers ("Now let us
   understand…", "In this video we will…"); mix short punches with flowing sentences (never 3+ very short sentences in a
-  row), `...` before a number or reveal, `—` for pivots. **Phonetics for Akash:** letter acronyms with dots since 2026-10-20 (R.B.I.,
-  E.M.I., N.P.A., R.D.S.O.; hyphens were the earlier form), `Sibill`, `Ray-rah`, `Loke Uh-daa-lut`; the lint fails bare capital acronyms. **Structure,
+  row), `...` before a number or reveal, `—` for pivots. **Phonetics for Akash:** letter acronyms hyphenated again since 2026-11-05 (R-B-I,
+  E-M-I, N-P-A, D-R-D-O; dots were used 2026-10-20 to 11-05), `Sibill`, `Ray-rah`, `Loke Uh-daa-lut`; the lint fails bare capital acronyms. **Structure,
   8–12 min:** lived-reality hook with an **open loop in the first 60 s** naming the minute of the payoff (must be true in
   the final cut) → forensic dissection (what they tell you vs what the document says) → citizen's action plan with
   verified helplines → outro tying it to India's strength, a pinned-comment question, "Know your rights. Stay practical.

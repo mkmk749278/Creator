@@ -19,6 +19,8 @@ It replaces `HANDOFF.md`, `docs/documentary-playbook.md`, `docs/documentary-prod
 - Part F: the owner's production handoff guide and style examples for English films (verbatim, 2026-10-15)
 - Part G: the owner's 180-second hyper-visual format directive and blueprint (verbatim, 2026-10-20; rules in §4a-9)
 - Part H: the owner's Indian conversational narration blueprint (verbatim, 2026-10-20; rules in §4a-10)
+- Part I: the owner's master execution and broadcast directive: one channel, Built on Bharat as a playlist, weekly
+  release, the 25-film industrial roadmap (verbatim, 2026-11-05; rules and research in §4a-13)
 
 ---
 
@@ -950,9 +952,8 @@ the blueprint only shows them in an example), and **number words, not digits** (
 
 **Writing for the TTS (Part H):** one beat per line, and in the recording blocks a **blank line between beats** (the
 engine takes a breath there); a spaced dash ( — ) for a short stop before a number or punchline, `...` for a turn or
-reveal; **no semicolons** (the engine collapses them); **acronyms with dots: U.P.I., N.P.C.I., R.B.I., Q.R.** (the
-blueprint's most reliable letter-by-letter form; this replaces the hyphenated U-P-I of §4a-4 for Akash: if a take
-reads the dots as long pauses, go back to hyphens for that film and note it in §15); units in words ("two
+reveal; **no semicolons** (the engine collapses them); **acronyms hyphenated: D-R-D-O, U-P-I, R-B-I** (owner, 2026-11-05,
+§4a-13; this replaces the dotted U.P.I. form used from 2026-10-20 to 2026-11-05); units in words ("two
 milliseconds", "one-twenty hertz", "ten kilograms per square centimetre").
 
 **Pace: 145–160 words a minute** (Part H: under 140 tests the patience of urban viewers, over 170 hurts
@@ -1078,6 +1079,136 @@ paragraph. Then check each paragraph:
 **In the audience review** (§4a-11), ask the reviewer for a **lean-in map**: every ~30 s marked *leaning in*,
 *neutral* or *drifting*, plus any line that sounds like a teacher, a news reader or a flat voice. If any viewer drifts
 in the first minute, fix and review again.
+
+### 4a-13. One channel, one weekly film, the industrial roadmap (owner, 2026-11-05; verbatim in Part I)
+
+The owner's master directive of 2026-11-05 (Part I, word for word) sets the channel's next phase. Each point below was
+researched on 2026-11-05 against the repos and outside sources. Where research changed a point, the reason and the owner's
+answer are given. **Where this section disagrees with an older rule in this playbook, this section wins.**
+
+**1. Built on Bharat is retired as a channel; it lives on as a playlist.**
+- Every industrial, nation-building and corporate-history film goes out on **Be Practical with Kishore**, in the
+  playlist **"Built on Bharat | The Industrial Backbone"**. The 158-year Tata film (`mkmk749278/Built-on-Bharat`,
+  `films/tata-history`, v9 reviewed 2026-11-05, v10 carrying the fixes) is the anchor film.
+- Every weekly release joins that playlist at publication. Set it as the **official series playlist** in Studio
+  (desktop: playlist settings → "Set as official series for this playlist"). YouTube's help page still lists this
+  setting (2026-11-05). It needs a verified account, only our own videos, and a video can sit in only one series playlist
+  (Help 6084043).
+- **Repo home (owner's choice, 2026-11-05):** Tata v10 is finished in the Built-on-Bharat repo, which is then frozen as
+  an archive and reference. **All roadmap films are built here in Creator**, under `projects/<slug>/`. Copy that repo's
+  Remotion libraries and lessons as needed (its PLAYBOOK is the reference for Remotion craft: real ground, document
+  table, the black-flash fix in `DepthPhoto`).
+- The Phone Consensus channel and Telugu work are not touched by this directive.
+
+**2. The editorial formula.** Hard physical machinery under extreme heat, pressure or mechanical stress that holds a
+national effort hostage: the single point of failure (the Tejas engine and rare-earth films, the owner's 48K and 47K
+view benchmarks). The "Zero Sodhi Mandate": no motivational fluff, no political chest-thumping, no B2B software jargon,
+no lecture tone. The voice is the senior engineering colleague or elder brother over coffee, as before. The respect and
+honesty rules (§4a-4, §12) still hold: celebrate the engineering, examine the bottleneck honestly, never cynical.
+
+**3. Narration text for Akash v4 (stability 0.50, similarity 0.85).**
+- **No brackets of any kind**: no emotion, mood or `[pause]` tags (this matches what the owner heard fail on Akash).
+- **Cadence from punctuation:** a comma is a breath, an em-dash (—) is an explaining pivot, a full stop is a hard
+  landing. **A blank line between blocks** gives an organic pause of about 1.2 s before a mechanical reveal.
+- **Acronyms are hyphenated: D-R-D-O, I-S-R-O, H-A-L, C-N-C, A-I-P, P-H-W-R, U-P-W, C-R-G-O.** This **replaces the
+  dotted form (U.P.I.) of §4a-10** for English films. `scripts/spoken_english_check.py` accepts the hyphenated form
+  and tells a bare acronym to use it (2026-11-05). The directive spells I-S-R-O letter by letter, so the older "Isro
+  said as a word" exception is gone too. If a take reads a hyphenated acronym badly, respell it for that film and log it
+  in §15.
+- **Every number, unit and amount in words** ("twenty-one thousand crore", "six hundred atmospheres", "point two three
+  millimetres"). No ₹, $ or digits in VO text (unchanged).
+- **Mastering:** voice −14 LUFS integrated, −1 dBTP; music −25 dB under the voice, up to −12 dB in gaps; **1.0 s of
+  true silence before a major mechanical reveal** (the charter's 1.5 s music silence is a floor for the music; the
+  directive's 1.0 s is total silence, voice and music).
+
+**4. Picture: Blender CLI + Remotion for the roadmap films.**
+- **Engines (directive):** headless Blender Python scripts (`scripts/render_*.py`, run as
+  `blender -b -P scripts/render_scene.py --render-output //output/frame_ -F PNG`) for volumetric cutaways, F.E.A.
+  stress gradients, 1,200 °C billets, cavitation, flow and CAD sections. Remotion compositions (`src/compositions/`)
+  for telemetry, HUD callouts, stress-vector overlays and graphs. This **replaces "no Remotion" in §4a-9 and
+  HyperFrames as the main engine for the roadmap films**. HyperFrames projects already in progress keep their engine.
+  Pin Remotion as Built on Bharat did (`4.0.534`, every `@remotion/*` on the same version); `bpy==5.2.2` is already
+  measured here (§15, 2026-10-20).
+- **Timing:** Blender and Remotion shots export with duration markers taken from the Akash VO timestamps.
+- **Pacing:** visible camera motion (orbit, micro-zoom or vector drift) at least every 3.5 s; **no still or static plate
+  longer than 1.5 s**; the picture shows the exact noun or stress spoken within 100 ms.
+- **Tactile grounding:** nothing floats in a black void. Every model sits on a physical base: a Cycles-rendered steel
+  inspection plate, a drafting grid or a satellite plate.
+- **Renders run headless on GitHub Actions** (§3a); results go to `dist/`.
+
+**5. Weekly release and the pre-flight protocol.**
+- **Exactly one film a week.** Primary slot **Sunday 11:30 AM IST**. Alternative **Thursday 6:30 PM IST**, only when QA
+  clears early.
+- **Lead time (owner's answer, 2026-11-05: "if we complete the video early we schedule it at the preferred time, so it
+  depends on how early we complete").** Upload the final as soon as it passes QA and **schedule** it for the slot. The
+  directive's **T-45 min Unlisted** is the minimum, not the target. *Why:* YouTube's help (answer 71674) says 4K takes
+  about four times longer than HD, and 60 fps takes longer still; a 60-minute 4K30 video can take up to 4 hours. Our
+  12–23-minute 4K60 cuts can need well over 45 minutes. The independent Review repo flags anything under 3 hours as a
+  risk.
+- **Before the switch:** at about T-30, Content ID and the ad-suitability check finish. Set **"Altered or synthetic
+  content" = Yes** (the narration is a realistic synthetic voice; YouTube asks for disclosure of realistic synthetic
+  audio, Help 14328491). The public description does not mention AI tools. At about T-15, lock the title, thumbnail,
+  description (chapters with leading zeros, `00:00`, `02:30`), the playlist, cards and end screens (latest episode +
+  the playlist).
+- **At T-00:** the film goes Public at the slot. Post and pin the primary source comment within 60 seconds.
+
+**6. Package (replaces the suffix rule of §13a/§13c for this channel).**
+- **Title under 45 characters, one visceral physical paradox, no channel suffix.** *Why it fits the research:* outside
+  title-length tools put the mobile home-feed cut at about 45–55 characters (no official YouTube number); 45 keeps the
+  whole line visible. The main search phrase still goes first.
+- **Thumbnail:** one hero cutaway or glowing component, high industrial contrast, at most 3 words in caution yellow or
+  signal red, the **bottom-right corner left clear** for the time badge. The §13b curiosity test still applies. Make 3+
+  concepts, then a main and challengers for Test & Compare.
+- **`metadata.json`** in `projects/<slug>/youtube/`: title options, thumbnail files, description, chapters, playlist,
+  schedule slot. Ready for an API upload or a phone upload.
+
+**7. The first 48 hours.**
+- **No self-views:** never open or scrub the published film on the owner's phone, home Wi-Fi or linked accounts. (No
+  official YouTube source says a creator's own views hurt a video; YouTube filters invalid views. The rule costs
+  nothing and keeps our retention data clean, so we keep it.)
+- **Don't panic in the first 2–4 hours:** YouTube tests the film on a seed group of viewers first. Read Studio after
+  **24 hours**. If impressions are over 1,500 and CTR is under 2.5%, switch to the pre-made challenger thumbnail
+  (unless Test & Compare is still running; then let it finish). The 48 h / 7 d / 28 d reads of §13c continue.
+
+**8. Delivery.** Rendered films go to `dist/`, then to Drive with `scripts/upload_gdrive.sh`:
+`Creator/English/<slug>/` for Be Practical films, `Creator/Playlists/Built-on-Bharat/<slug>/` for films in the Built on
+Bharat playlist. One folder per film, nothing loose (§1).
+
+**9. The 25-film industrial roadmap: research flags (2026-11-05).** The owner's list (Part I §6) is the locked order.
+The fact-check gate (§12) still runs on every film. A first pass on 2026-11-05 found these points in the one-line
+subtitles that the films must **not** state as written. Each film's brief starts from the correction.
+
+| # | Subtitle says | What the sources say | Film angle |
+|---|---|---|---|
+| 1 AIP | "30-bar hydrogen storage" | D-R-D-O/N-M-R-L's A-I-P **makes hydrogen on board** from sodium borohydride and water, feeding a phosphoric acid fuel cell, with liquid oxygen carried. It avoids storing hydrogen (Defense News, 24 Jan 2023; Janes, Mar 2021). L&T prime, Thermax fuel cells, Naval Group integration; first Kalvari refit date not confirmed. | The paradox is "a submarine that brews its own fuel", not a gas bottle. |
+| 3 EMALS | "gigawatt flywheel storage" | Four disk alternators of about 121 MJ each, up to 484 MJ released over 2–3 s, recharged in 45 s (Wikipedia, citing Navy material; primary source still to find). That is a few hundred megawatts at peak, not gigawatts. | Say megajoules and seconds; verify against General Atomics or U.S. Navy papers. |
+| 14 hull steel | "DMR-249A vs HY-80" | DMR-249A is **warship** steel (Vikrant's hull; the Indian version of Russian AB-class ABA). The submarine-hull grade is reported as **DMR-292A** (2013 report). Indian sources compare against AB-class and HY-100. | Re-frame: AB-class/DMR-249A for ships vs submarine-grade steel; confirm DMR-292A from D-R-D-O. |
+| 15 APFSDS | "adiabatic shear banding" in a tungsten dart | **Tungsten heavy alloys mushroom; depleted uranium self-sharpens by adiabatic shear** (DTIC report ADA270477; patents). | The paradox is that tungsten does *not* shear-band, and the work to make it do so. |
+| 19 PHWR | "Reactor pressure vessel: 300 mm solid steel" | **P-H-W-Rs have no reactor pressure vessel.** The coolant runs through hundreds of Zr-2.5%Nb pressure tubes inside a calandria (IAEA ARIS, I-P-H-W-R-220). | Re-frame around the pressure tubes (delayed hydride cracking, en-masse coolant channel replacement), or move the forging story to the P-W-R vessels L&T forges. |
+| 20 coal | "45% abrasive silica" | Indian coal is high in **ash** (often 30–45%), and the ash is rich in silica. The two numbers are different things. | Say ash content, then silica in the ash, each from its own source. |
+| 25 points | "2 mm locking tolerance" | The Indian installation text found tests with a **5 mm obstruction** 150 mm from the switch toe. The RDSO figure is not yet confirmed. | Use the RDSO drawing or maintenance circular before any number goes on screen. |
+
+Confirmed on first pass (still fact-checked per film): Matsya-6000's sphere is Ti-6Al-4V ELI, 2,260 mm across, 80 mm
+wall, rated about 600 bar; L-P-S-C built the electron-beam weld, a 7,100 mm weld in 32 minutes after about 700 trials
+(ISRO's Samudrayaan page). Arjun Mk1A is about 68–68.5 t, with Kanchan composite armour plus E-R-A (ThePrint; Vayu).
+UPW at 18.2 MΩ·cm is the theoretical limit for pure water. The owner's view figures (48K, 47K) are the owner's Studio numbers,
+not checked here.
+
+**Sources (read 2026-11-05).**
+- Low video quality after upload (4K and 60 fps processing time): https://support.google.com/youtube/answer/71674
+- Disclosing altered or synthetic content: https://support.google.com/youtube/answer/14328491
+- Series playlists: https://support.google.com/youtube/answer/6084043
+- D-R-D-O A-I-P: https://www.defensenews.com/industry/techwatch/2023/01/24/indian-lab-teams-up-with-frances-naval-group-on-submarine-tech/ ,
+  https://www.janes.com/defence-news/news-detail/drdo-completes-test-milestone-for-fuel-cell-aip-system
+- EMALS: https://en.wikipedia.org/wiki/Electromagnetic_Aircraft_Launch_System
+- DMR-249A: https://drdo.gov.in/drdo/sites/default/files/tot/DMR_249A_Bars10072026.pdf ,
+  https://www.ajaishukla.com/2013/08/ins-vikrants-first-victory-being-built.html
+- Tungsten vs DU: https://apps.dtic.mil/sti/pdfs/ADA270477.pdf
+- I-P-H-W-R-220 design: https://aris.iaea.org/sites/..%5CPDF%5CIPHWR-220.pdf
+- Matsya-6000 sphere: https://www.isro.gov.in/Samudrayaan_Project.html
+- Arjun Mk1A: https://theprint.in/defence/defence-ministry-orders-118-arjun-mark-1-a-tanks-heres-what-to-expect-from-hunter-killers/738905
+- Point machine obstruction test: https://sites.google.com/view/agcsignal/technical-contents/signalling-assets/point-machines
+- Title length (no official figure; tool vendors): https://channelpreview.vercel.app/blog/youtube-title-length
 
 ### 4b. Talk, don't read: spoken Telugu narration (owner, 2026-10-09)
 *Why:* the owner's rule is that a script must never sound like someone reading; it must sound like a person talking. The
@@ -1787,9 +1918,9 @@ closing the session keeps `main` complete and stops idle sessions using the shar
    §13b. The old navy-and-gold card template is retired. Make at least three concepts, run
    `scripts/thumb_feed.py` (phone feed + "Up next" size) and an independent click panel, then deliver a main and an
    A/B challenger for Test & Compare.
-2. **Title in a click-to-copy block.** A plain fenced code block holding exactly one line, ending
-   `| Be Practical With Kishore`, ≤ 100 characters in all (YouTube's limit), no `!`, the hook first and search words
-   after it. Offer one or two alternatives, each in its own block.
+2. **Title in a click-to-copy block.** A plain fenced code block holding exactly one line, **under 45 characters, one
+   physical paradox, no channel suffix** (owner, 2026-11-05, §4a-13; the `| Be Practical With Kishore` suffix of
+   2026-10-17 is retired), no `!`, the main search phrase first. Offer one or two alternatives, each in its own block.
 3. **Description in a click-to-copy block: simple description and timestamps, nothing else** (owner, 2026-10-17:
    "always give the simple description and timestamps, no references, no sources, nothing"). 2–4 short lines in everyday
    words (§4a-2) on what the video shows, then `CHAPTERS` with timestamps starting at `0:00` (at least 3, each ≥ 10 s
@@ -1925,7 +2056,8 @@ uploaded with the dubs (Beaupré, 2025). A later step for us (Hindi/Telugu dubs:
    `projects/<slug>/research/search_terms.md`: one main phrase, 2–4 secondary phrases, the curiosity question.
 5. **The narration says the main phrase naturally** in the first minute (YouTube reads the video content). Never forced.
 6. **Upload our exact captions** (the SRT from the locked script) with every film.
-7. **Series and chains:** every film in a series playlist ("India's Missing Pieces"), the end screen pointing to the
+7. **Series and chains:** every film in a series playlist (roadmap films: "Built on Bharat | The Industrial
+   Backbone", the official series playlist, §4a-13; earlier films: "India's Missing Pieces"), the end screen pointing to the
    next film, a pinned-comment question (§4a-4 outro).
 8. **Test every film:** three thumbnails in Test & Compare from the first hour (titles too when Studio offers it).
    It picks by watch-time share, so the winner is the one that attracts viewers who stay. Record winners in §15.
@@ -1953,7 +2085,7 @@ Rules for the pair:
   YouTube's surveys and watch-time tests punish packages that over-promise.
 
 **Title:** the main search phrase inside the first ~40 characters, said the way people type it, with the curiosity in the
-same line; the `| Be Practical With Kishore` suffix stays (owner, 2026-10-17), so the words before it must work alone
+same line; no channel suffix and under 45 characters (owner, 2026-11-05, §4a-13; the 2026-10-17 suffix is retired), so the line must work alone
 on a phone. Two alternatives for title tests.
 
 **Description, inside the owner's simple rule (§13a: 2–4 plain lines and timestamps, nothing else):** line 1 is one
@@ -4083,3 +4215,151 @@ https://www.reddit.com/r/NewTubers/comments/1b4nvqu/im_a_pro_youtube_producer_as
 _anything/ 22. AI Se Hindi Horror Story Video Kaise Banaye - ScoopNonStop,
 https://scoopnonstop.com/ai-se-hindi-horror-story-video-kaise-banaye-complete-master-prompt/
 ```
+
+---
+
+# Part I: Owner's master execution and broadcast directive (verbatim, received 2026-11-05)
+
+Received as an attached file (`Claude.md`) on 2026-11-05. Kept word for word below. The rules, the owner's answers to
+the two open points (lead time, repo home) and the research flags on the roadmap are in §4a-13. Where the two differ,
+§4a-13 says why.
+
+````markdown
+# CLAUDE CODE MASTER EXECUTION DIRECTIVE: BE PRACTICAL WITH KISHORE
+# REPOSITORY: Creator (Mobile-first headless pipeline via Termux / GitHub MCP)
+
+## 1. MISSION & REPOSITORY ARCHITECTURE
+You are the Lead Systems Architect, Technical Director, and Forensic Scriptwriter for the YouTube channel "Be Practical with Kishore".
+- All tasks are executed within this cloud session via GitHub MCP, GitHub Actions, and headless CLI runners.
+- The creator operates entirely from an Android phone (Termux, Claude Code, GitHub, Google Drive). Every deliverable must be headless, script-driven, and non-interactive.
+- Content Strategy: "Built on Bharat" is retired and consolidated into "Be Practical with Kishore". The flagship 158-Year Tata Empire documentary is in the final delivery pipeline. We are establishing an uncompromising, weekly forensic documentary cadence.
+
+## 2. AUDIENCE & EDITORIAL FORMULA
+- Channel Focus: Forensic industrial engineering, mechanical single points of failure (SPOF), strategic supply chains, heavy metallurgy, and defense bottlenecks.
+- The Winning Formula: Hard physical machinery under extreme thermal/pressure/mechanical stresses holding a multi-billion-dollar national effort hostage (exemplified by the 48K-view Tejas Jet Engine and 47K-view Rare Earths films).
+- Zero Sodhi Mandate: No generic motivational fluff, no political chest-thumping, no B2B software jargon, no university lecture tone. The persona is a sharp, experienced senior engineering colleague or elder brother explaining hard physical and economic realities over coffee.
+
+## 3. NARRATION SPECIFICATIONS (MEICE & ELEVENLABS AKASH V4)
+- Engine: ElevenLabs Akash V4 (Stability: 0.50, Similarity: 0.85).
+- Persona Cadence: Modern Educated Indian Conversational English (MEICE).
+- Script Formatting Rules (Strict):
+  * NO emotion or mood brackets: Never write [curious], [whispering], [intense], or [pause]. These corrupt timbre and trigger model drift in V4.
+  * Punctuation-Driven Cadence: Commas (,) dictate natural breathing pauses; em-dashes (—) dictate explanatory pivots; full stops (.) mark hard, definitive landing beats.
+  * Structural Pauses: Leave an empty line between script blocks to inject an organic 1.2-second pause before mechanical reveals.
+  * Hyphenated Acronyms: To prevent pronunciation corruption, every acronym MUST be hyphenated: D-R-D-O, I-S-R-O, H-A-L, C-N-C, A-I-P, P-H-W-R, U-P-W, C-R-G-O.
+  * Spelled-Out Numbers: Spell out all numbers, units, and financial amounts in full words (e.g., "twenty-one thousand crore", "one thousand five hundred horsepower", "six hundred atmospheres", "point two three millimeters"). Never output raw currency symbols (₹, $) or naked digits in voiceover text.
+  * Audio Mastering Target: Master voice track at -14 LUFS (-1 dB True Peak). Background music ducked to -25 dB under voice, swelling to -12 dB in transition gaps. 1.0 second of absolute silence before major mechanical reveals.
+
+## 4. VISUAL & RENDERING PIPELINE (BLENDER CLI + REMOTION)
+We do not use desktop GUI editors. Visual production is fully automated via headless scripts running on the GitHub Actions machine runner:
+- Headless 3D Generation:
+  * Claude writes procedural Blender Python scripts (`scripts/render_*.py`) targeting Blender CLI:
+    `blender -b -P scripts/render_scene.py --render-output //output/frame_ -F PNG`
+  * Focus areas: Volumetric cutaways, finite element analysis (FEA) thermal stress gradients, 1,200°C glowing forged billets, cavitation bubbles, fluid dynamics, and CAD cross-sections.
+- Remotion Motion Compositing:
+  * Claude writes React/Remotion compositions (`src/compositions/`) for technical telemetry, 2D HUD callouts, stress-vector overlays, and data graphs.
+- Pacing & The 3.5-Second Rule:
+  * Continuous visual momentum: Camera orbital pan, micro-zoom, or vector field drift every 3.5 seconds.
+  * No still image or static plate may remain on screen for more than 1.5 seconds.
+  * Semantic 1:1 Lock: The visual on screen must represent the exact mechanical noun or physical stress spoken within 100 milliseconds.
+  * Tactile Grounding: No objects floating in an empty black void. Every model, specimen, or blueprint must sit on a physical base (Cycles-rendered steel inspection plate, drafting grid, or satellite plate).
+
+## 5. DELIVERY & PUBLISHING PROTOCOLS
+- Output Directory: Completed videos rendered to `dist/` and synced to Google Drive (`Creator/English/<slug>/`) via `scripts/upload_gdrive.sh`.
+- Publishing Schedule: Exactly 1 film per week.
+  * Primary Slot: Sunday at 11:30 AM IST (captures peak weekend long-form watch time).
+  * Secondary Slot: Thursday at 6:30 PM IST (peak evening commuter/post-dinner window).
+- Pre-flight Upload: Always upload 45 minutes prior as Unlisted to allow YouTube backend processing of 4K VP09/AV01 codecs and automated Content ID checks.
+- Metadata Mandate:
+  * Titles: Under 45 characters. Single visceral physical paradox. No channel suffix.
+  * Thumbnails: 1 hero cutaway or glowing component, high industrial contrast, maximum 3 words in caution yellow or signal red. Bottom-right corner kept completely clear for the YouTube timecode badge.
+
+## 6. MASTER 25-VIDEO INDUSTRIAL ROADMAP
+Claude will systematically execute research, scripting, Blender automation scripts, Remotion architecture, and packaging across this locked pipeline:
+
+1. Why India’s Submarines Must Surface: The AIP Dilemma (Phosphoric acid fuel cells, 30-bar hydrogen storage, acoustic silence)
+2. The 6,000-Meter Titanium Sphere: Inside Matsya 6000 (600 atmospheres hydrostatic crush mechanics & Ti-6Al-4V electron beam welding)
+3. Why India Can’t Build an Aircraft Carrier Catapult (EMALS linear induction motors & gigawatt flywheel storage)
+4. The Torpedo Sonar Blind Spot: Towed Array Cable Failure (Submarine baffles & Kevlar cavitation drag)
+5. The Gas Turbine That Won’t Start at Sea: Marine Zorya Turbines (Corrosive salt-spray sulfidation & hot-section metallurgy)
+6. The 2,000°C Nose Cone: India’s Hypersonic Glide Bottleneck (Mach 6 atmospheric friction, plasma sheath, hafnium carbide ceramics)
+7. Why ISRO Still Imports Threads of Carbon (T1000 aerospace-grade carbon fiber & PAN precursor wet-spinning)
+8. The Ceramic Armor Paradox: Why Arjun Tanks Are Heavy (Kanchan composite matrix vs. 68-ton soft desert mobility)
+9. The Cryogenic Injector: How ISRO Mastered Liquid Hydrogen (CE-20 engine combustion at -253°C without thermal shock cracking)
+10. The Ramjet Air-Intake Geometry: Astra Mk-3 Missile (SFDR supersonic intake shockwave stability & flameout prevention)
+11. The 160 km/h Wheel India Couldn’t Forge (10,000-ton hydraulic forging vs. centrifugal stress fracture in cast steel)
+12. Single-Crystal Blades: The 1,600°C Turbine Wall (Helical spiral pigtail grain selectors in directional solidification)
+13. The 0.23mm Steel That Controls India’s Power Grid (CRGO cold-rolled electrical steel atomic magnetic crystal alignment)
+14. Submarine Hull Steel: DMR-249A vs. HY-80 (Hydraulic ring bending & hydrogen-induced cracking at 300m depth)
+15. The Tungsten Kinetic Penetrator: The APFSDS Dart (Adiabatic shear banding at 1,700 m/s without explosive charge)
+16. The 7 PM Solar Cliff: Why the Indian Grid Rejects Sunlight (The Duck Curve & thermal coal ramp limits)
+17. The 800 kV Bushing: The Weak Link in High-Voltage Lines (Oil-impregnated paper dielectric flashover breakdown)
+18. Pumped-Storage Hydro Batteries: The Only Giant Battery India Can Build (90-second reversible Francis pump-turbines)
+19. The Nuclear Reactor Pressure Vessel: 300mm Solid Steel (PHWR seamless ring forging & radiation embrittlement)
+20. Coal Ash & Boiler Tube Leaks: The Indian Coal Paradox (45% abrasive silica sandblast erosion in supercritical boilers)
+21. Why India Can’t Build Its Own Shipping Containers (Corten steel automated corrugation lines & precision corner castings)
+22. The Ultra-Pure Water Trap: The Chip Fab Bottleneck (18.2 Megohm-cm UPW filtration & 10nm particle limits)
+23. The 5-Axis CNC Controller Export Ban (Wassenaar Arrangement dual-use interpolating software restrictions)
+24. The Superconducting Wire: Inside an Indian MRI Machine (Niobium-Titanium liquid helium cryostats at 4 Kelvin)
+25. The Railway Switch Machine: Why Signal Points Fail (2mm locking detector slide tolerances & summer thermal expansion)
+
+## 7. IMMEDIATE OPERATIONAL COMMAND
+Claude, acknowledge this framework. Verify git status, review the active branches in this repository, check the final assembly status of the Tata Empire documentary, and prepare the production scaffold for Video #1: "Why India’s Submarines Must Surface: The AIP Dilemma" (script, Blender procedural generation script, Remotion timeline, and metadata package).
+
+# MASTER BROADCAST & UPLOAD DIRECTIVE: BE PRACTICAL WITH KISHORE
+# CHANNEL ECOSYSTEM RELEASE ARCHITECTURE & PLAYLIST INTEGRATION
+
+## 1. STRATEGIC CHANNEL STRUCTURE & CONSOLIDATION
+- Flagship Channel: "Be Practical with Kishore"
+- Channel Consolidation Policy: 
+  * The standalone channel "Built on Bharat" is retired.
+  * All previous and upcoming industrial, strategic nation-building, and corporate history films are unified under "Be Practical with Kishore".
+- Dedicated Playlist Architecture:
+  * Playlist Name: "Built on Bharat | The Industrial Backbone"
+  * Anchor Film: The 158-Year Tata Empire Documentary.
+  * Content Scope: High-stakes industrial infrastructure, historical corporate state-building, national supply chains, and strategic defense engineering.
+  * Technical Implementation: Every weekly release is immediately assigned to this playlist on publication. Set this playlist as an official series playlist in YouTube Studio to boost automatic consecutive viewing.
+
+## 2. PRODUCTION CADENCE & EXACT RELEASE SCHEDULE
+- Cadence: Exactly 1 long-form investigative film per week (no daily short-form clutter; purely cinematic, high-retention journalism).
+- Primary Broadcast Slot (Weekend Power Window):
+  * Target Day: SUNDAY
+  * Target Time: 11:30 AM IST (Indian Standard Time)
+  * Strategic Logic: Educated Indian tech professionals, students, and engineers browse YouTube relaxed between 11:30 AM and 3:00 PM, leading straight into Sunday evening leisure. Long-form (12–20 minute) videos achieve their highest completion rates and average view duration (AVD) when viewers are not rushed during weekday work commutes.
+- Alternative / Midweek Power Slot:
+  * Target Day: THURSDAY
+  * Target Time: 6:30 PM IST
+  * Strategic Logic: Catches the post-work peak transit and evening dinner window (7:00 PM – 10:30 PM IST). Use this only if production clears quality assurance early and cannot wait for Sunday.
+
+## 3. THE 45-MINUTE PRE-FLIGHT PROTOCOL (CRITICAL)
+Never publish a video straight to "Public" immediately upon rendering. Follow this mandatory sequence:
+
+1. T-45 Minutes (The Upload & Ingestion Phase):
+   - Upload the completed .mp4 file as "UNLISTED".
+   - Purpose: YouTube's backend takes 20 to 40 minutes to process high-resolution VP09 and AV01 codecs. If published immediately, early viewers see a blurry 360p/480p stream and immediately bounce, killing early retention metrics.
+2. T-30 Minutes (Automated Rights & Safety Scans):
+   - YouTube completes automated Content ID scans for copyright flags and advertiser-friendly evaluation while Unlisted.
+   - Set the backend "Altered or Synthetic Content" flag to YES (disclosing synthetic narration without mentioning AI tools in the public description).
+3. T-15 Minutes (Packaging Lock):
+   - Set finalized Title (under 45 characters, no channel suffix).
+   - Upload finalized 16:9 Thumbnail (ensuring the bottom-right corner is clear of essential graphics to avoid the timestamp overlay).
+   - Paste Description (Chapters formatted with leading zeros, e.g., 00:00, 02:30).
+   - Add to Playlist: "Built on Bharat | The Industrial Backbone".
+   - Set Cards and End Screens linking directly to the latest episode and playlist.
+4. T-00 (The Public Switch):
+   - Switch visibility from "Unlisted" to "PUBLIC" at exactly 11:30 AM IST.
+   - Post and pin the primary source comment within the first 60 seconds.
+
+## 4. METRIC MONITORING & FIRST 48 HOURS DISCIPLINE
+- Zero Self-Views: Never open or scrub through the published video on the creator's phone, home Wi-Fi network, or linked Google accounts. Doing so skews the audience retention graph and confuses the recommendation engine.
+- Algorithmic Batching (The 24-Hour Horizon):
+  * Initial Seed Tranche: YouTube delivers ~200–500 seed impressions in Browse and Suggested feeds to test Click-Through Rate (CTR) and Average View Duration (AVD).
+  * Do NOT panic or swap thumbnails if views plateau during the first 2–4 hours. The recommendation engine deliberately pauses delivery to evaluate watch-time data from the initial cohort before unlocking larger impression tranches.
+  * Evaluation Checkpoint: Review Studio metrics only after 24 hours. If impressions exceed 1,500 and CTR is below 2.5%, test the pre-rendered alternative high-contrast thumbnail.
+
+## 5. REPOSITORY AUTOMATION DIRECTIVE (CLAUDE / GITHUB MCP)
+For every script developed in this repository:
+- All assets must be bundled into `Creator/English/<video-slug>/` or `Creator/Playlists/Built-on-Bharat/<video-slug>/`.
+- Headless Blender CLI scripts and Remotion compositions must export with precise duration markers corresponding to the Akash V4 voiceover timestamps.
+- Metadata, thumbnail options, and chapter breakdowns must be compiled into `metadata.json` ready for automated API deployment or mobile upload.
+````
