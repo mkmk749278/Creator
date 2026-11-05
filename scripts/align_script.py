@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic silence-to-script alignment: time every script line on the voiceover without Whisper (PLAYBOOK §7).
+"""Deterministic silence-to-script alignment: time every script line on the voiceover without Whisper (docs/archive/PLAYBOOK_2026-11-05.md §7).
 
 The script is the source of truth and is already in spoken order, so there is nothing to transcribe or translate:
 we only need where each line starts and ends. FFmpeg `silencedetect` finds the pauses; each script line is then

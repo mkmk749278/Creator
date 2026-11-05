@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""See thumbnails the way viewers do before choosing one (PLAYBOOK §13b).
+"""See thumbnails the way viewers do before choosing one (docs/archive/PLAYBOOK_2026-11-05.md §13b).
 
 Draws (1) a YouTube mobile home feed in dark mode, 1080 px wide (a phone at 3x), each thumbnail full width with the
 duration badge bottom right, channel avatar, two-line title and meta line; and (2) the small "Up next" size, 168x94

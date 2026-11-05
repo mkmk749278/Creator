@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # Download Pexels stock clips on the owner's phone and put them in Google Drive, in
 # Creator/<Channel>/<slug>/footage/pexels/, where a cloud session pulls them (owner, 2026-11-03).
-# Why on the phone: the Pexels website refuses the cloud container (PLAYBOOK §8.3) and Pexels paused new API keys.
+# Why on the phone: the Pexels website refuses the cloud container (docs/archive/PLAYBOOK_2026-11-05.md §8.3) and Pexels paused new API keys.
 # Licence: Pexels licence (free to use, no attribution needed; we credit anyway in the description).
 #
 # One command in Termux (the session that needs the clips writes it out for you):
@@ -16,7 +16,7 @@
 set -uo pipefail
 DEST="${1:?usage: termux_pexels_to_drive.sh <Channel>/<slug> ID:name [ID:name ...]}"; shift
 [[ $# -ge 1 ]] || { echo "give at least one ID:name" >&2; exit 2; }
-CREATOR_FOLDER_ID=1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M   # the owner's Drive "Creator" folder (PLAYBOOK §1)
+CREATOR_FOLDER_ID=1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M   # the owner's Drive "Creator" folder (docs/archive/PLAYBOOK_2026-11-05.md §1)
 SLUG=$(basename "$DEST")
 OUT="$HOME/creator_fetch/$SLUG/pexels"
 mkdir -p "$OUT" && cd "$OUT" || exit 1

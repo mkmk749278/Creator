@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# Competitor study kit, run on the owner's phone in Termux (mobile IP; PLAYBOOK §4a item 4, §8.5 option 2).
+# Competitor study kit, run on the owner's phone in Termux (mobile IP; docs/archive/PLAYBOOK_2026-11-05.md §4a item 4, §8.5 option 2).
 # For each of the 18 picks: Telugu captions, full audio (opus ~50 kb/s) and the first 3 minutes at 360p.
 # Zips everything (about 150-250 MB) and uploads it to Gofile; paste the printed link to Claude.
 # Study only: none of this footage or audio ever goes into our videos.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Timecoded contact sheets of a video (or a folder of images) for review on a phone or by Opus (PLAYBOOK §14).
+"""Timecoded contact sheets of a video (or a folder of images) for review on a phone or by Opus (docs/archive/PLAYBOOK_2026-11-05.md §14).
 
   python3 scripts/contact_sheet.py CUT.mp4 --out runs/<slug>/qa --every 2      # one frame every 2 s
   python3 scripts/contact_sheet.py media/folder --out qa                         # every image, labelled by name

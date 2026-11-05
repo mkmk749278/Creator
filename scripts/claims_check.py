@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fact-check gate for a documentary (PLAYBOOK §12, §22.10).
+"""Fact-check gate for a documentary (docs/archive/PLAYBOOK_2026-11-05.md §12, §22.10).
 
 The fact-check pass (a fresh session or subagent at max effort, see .claude/skills/fact-check) writes
 <project>/claims.csv with one row per factual claim in the script:

@@ -1,34 +1,32 @@
 ---
 name: new-documentary
-description: Start a new narrated documentary or explainer for Be Practical with Kishore from a script, topic or voiceover. Use when the owner sends a script, VO file or topic for a new video. Runs the whole pipeline in order (project setup, genre, fact-check, sourcing, EDL, scenes, render, review, delivery) and decides what to split across parallel sessions.
+description: Start and run a new weekly documentary for Be Practical with Kishore from a roadmap topic, an owner's idea or a script. Runs the whole pipeline in order (brief and package, research, treatment, script, fact-check, audience review, recording, timing, media, scenes, review cut, master, release) and stops to report after each stage.
 ---
 
 # New documentary
 
-Rules live in `CLAUDE.md` and `docs/PLAYBOOK.md` Part B; this is the order of work. For a roadmap film
-(`config/roadmap-180s.yaml`), PLAYBOOK §4a-9 sets the length, phases, look and the four blocks to hand over first;
-beats are then 2.5–4.5 s, not 3.5–5 s. Every English VO passes `scripts/spoken_english_check.py` (PLAYBOOK §4a-10)
-before it goes to the owner, and the reply pastes its recording blocks. Work at `high`/`xhigh` effort; never
-skip a step to save time (PLAYBOOK §4). Stop and report to the owner at each **[report]**.
+Rules: `CLAUDE.md`. How each stage works: `docs/PLAYBOOK.md` §3 (the pipeline table). Work at `high`/`xhigh` effort;
+never skip a check to save time. Stop and report to the owner at each **[report]**; send only finished work.
 
-1. **Project.** `projects/<slug>/` with `script.md` (owner's text verbatim), `voice/` (VO files), `README.md`
-   (one paragraph + rebuild commands). Work on `main`.
-2. **Genre and look.** Pick the genre row in PLAYBOOK §5.3; write palette, media stack and accents into the README.
-3. **Timing.** `projects/<slug>/script.tsv` (one spoken line per row, `te<TAB>en`) →
-   `python3 scripts/align_script.py voice/<vo>.mp3 script.tsv --out align`; listen to the lines `align.md` flags. Never
-   Whisper (PLAYBOOK §7). No script → ask the owner for it.
-4. **Fact-check.** Run `/fact-check` in a fresh subagent at `max` effort → `claims.csv`; `python3 scripts/claims_check.py`
-   must pass before anything goes on screen. **[report]** disputed/claim rows and any script fix needed.
-5. **Beats.** Split the script into beats of 3.5–5 s of picture each (owner, 2026-10-15); for each beat write the literal visual (semantic lock),
-   the kind (real footage / animated scene / moving still), and LIVE / diegetic / VO_PAUSE breaks.
-6. **Sourcing.** `/source-media` (one session only) → `asset-manifest.md`, `media_manifest.csv`, contact sheets.
-   Prefer the shared library (`python3 scripts/library.py list`) and `video/lib/` scenes before new work.
-   **[report]** contact sheet + what is still a stand-in + what the owner must fetch (YouTube clips → Fetch media workflow).
-7. **EDL.** `edl.csv` + `edl.md`: timecode → asset → motion → overlay → text → sound cues; every stand-in `+illus`.
-8. **Animated scenes.** One folder per scene under `video/<slug>/<scene>/` (copy from `video/lib/` when one fits), realism
-   recipe PLAYBOOK §9, lint → check → snapshot → look → fix. Over ~3 scenes or a film over 5 min → `/parallel-render`.
-9. **Assemble + review.** Render the 1080p cut; `/review-cut` (sheets + Opus, PLAYBOOK §14) until it passes; fix; repeat.
-   **[report]** preview link + contact sheet + `review.md`.
-10. **Final.** After the owner approves: native 4K for animated scenes, final mix (−14 LUFS), SRT, description with
-    credits (`credits.py`), then `/deliver`. Never edit an approved cut.
-11. **Lessons.** Add what went wrong or right to PLAYBOOK §15, with the reason, in the same commit.
+1. **Brief and package** (§1.1, §4): `projects/<slug>/brief.md` starting from the roadmap's research flags; search words
+   in `research/search_terms.md`; title, thumbnail idea and the paradox chosen first. **[report]**
+2. **Research** (§8): sources logged as you go in a draft `claims.csv` (URL + verbatim quote). Primary documents for the
+   mechanism, one layer deeper than common knowledge.
+3. **Treatment** (§5.2): `treatment.md`: 3+ angles, 3+ cold opens, 3+ thumbnail concepts, 2–3 signature moments, the
+   art direction, the sound palette. **[report]**
+4. **Script** (§5, §6, §7): `vo.txt` + `screenplay.md` with the Q column; new terms added to `config/pronunciation.csv`;
+   `scripts/spoken_english_check.py` passes.
+5. **Fact-check:** `/fact-check` in a fresh subagent at `max`; `scripts/claims_check.py` passes.
+6. **Audience review** (§13.3): a new session with no repo, `prompts/audience_review_v1.md`, lean-in map; fact-safe
+   fixes; checks re-run. **[report]** recording blocks in the chat + `vo_blocks.md` + the review summary.
+7. **Recording and timing** (§6.6, §6.7): each take passes `scripts/vo_take_check.py`; `align_script.py` →
+   `vo/timing.json`; the owner's audio-only pass.
+8. **Media** (§11): `/source-media` → `asset-manifest.md`, `media_manifest.csv`, contact sheets; YouTube picks through
+   `yt_search.py` and one Termux line for the owner. **[report]** what the owner must fetch.
+9. **Scenes** (§9, §10): design references first; a scene handoff doc per scene; Blender hero shots, Three.js and
+   Remotion scenes; stills at every cut and word cue, looked at.
+10. **Review cut, 720p** (§13, §14): render on GitHub Actions; `/review-cut` until a round finds nothing.
+    **[report]** the cut + contact sheet + `review.md`.
+11. **Owner review rounds:** collect all notes, one 720p cut per round, `review_ack_rN.md` each round.
+12. **Master and release:** after approval, the 4K master once; then `/deliver`.
+13. **Lessons:** change the playbook rule the lesson belongs to (with the reason), in the same commit.

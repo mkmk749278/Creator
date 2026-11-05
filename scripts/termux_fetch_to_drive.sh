@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # Download YouTube (or Dailymotion, archive.org…) clips on the owner's phone and put them straight into Google Drive,
-# in Creator/<Channel>/<slug>/footage/, where a cloud session pulls them with scripts/gdrive_pull.sh (PLAYBOOK §8.5).
+# in Creator/<Channel>/<slug>/footage/, where a cloud session pulls them with scripts/gdrive_pull.sh (docs/archive/PLAYBOOK_2026-11-05.md §8.5).
 # Why on the phone: YouTube answers 403 to the cloud container and the VPS runner is often offline; the phone's mobile
-# IP works. Only footage we may use: short, credited excerpts of official or news footage, owner-cleared (PLAYBOOK §8.6).
+# IP works. Only footage we may use: short, credited excerpts of official or news footage, owner-cleared (docs/archive/PLAYBOOK_2026-11-05.md §8.6).
 #
 # One command in Termux (copy the whole line; the session that needs the clips writes it out for you):
 #   curl -sL https://raw.githubusercontent.com/mkmk749278/Creator/main/scripts/termux_fetch_to_drive.sh | bash -s -- \
@@ -14,7 +14,7 @@
 set -uo pipefail
 DEST="${1:?usage: termux_fetch_to_drive.sh <Channel>/<slug> URL [URL@START-END ...]}"; shift
 [[ $# -ge 1 ]] || { echo "give at least one URL" >&2; exit 2; }
-CREATOR_FOLDER_ID=1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M   # the owner's Drive "Creator" folder (PLAYBOOK §1)
+CREATOR_FOLDER_ID=1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M   # the owner's Drive "Creator" folder (docs/archive/PLAYBOOK_2026-11-05.md §1)
 SLUG=$(basename "$DEST")
 OUT="$HOME/creator_fetch/$SLUG"
 mkdir -p "$OUT" && cd "$OUT" || exit 1
@@ -29,7 +29,7 @@ if ! rclone listremotes | grep -q "^creator:$"; then
 fi
 
 # "Sign in to confirm you're not a bot" (seen on the mobile IP, 2026-10-30): sign in with a THROWAWAY Google account's
-# cookies (never the channel or main account, PLAYBOOK §8.5). Export cookies.txt (Netscape format) from youtube.com in a
+# cookies (never the channel or main account, docs/archive/PLAYBOOK_2026-11-05.md §8.5). Export cookies.txt (Netscape format) from youtube.com in a
 # private window of Firefox for Android (add-on "cookies.txt"), save it to Downloads as youtube_cookies.txt, run
 # termux-setup-storage once; this script then passes it to yt-dlp. Switching to Wi-Fi often clears the check too.
 COOKIES="${YT_COOKIES_FILE:-$HOME/storage/downloads/youtube_cookies.txt}"

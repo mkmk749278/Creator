@@ -1,4 +1,4 @@
-# Audience review prompt, v1 (owner, 2026-10-20; PLAYBOOK §4a-11)
+# Audience review prompt, v1 (owner, 2026-10-20; PLAYBOOK §13.3)
 
 Paste into a **new cloud session with no repository attached** (`create_session` without `source_url`), replacing
 `{TITLE}` and `{NARRATION}` (one beat per line, exactly as it will be recorded). The session must not see our rules,

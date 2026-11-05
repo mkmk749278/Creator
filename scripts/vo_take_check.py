@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check recorded VO takes before they go into a film, without any speech recognition (no Whisper; PLAYBOOK §7, §15).
+"""Check recorded VO takes before they go into a film, without any speech recognition (no Whisper; docs/archive/PLAYBOOK_2026-11-05.md §7, §15).
 
 Two failures this catches, both shipped once:
   1. A take that says a phrase twice. ElevenLabs sometimes repeats a phrase; the jet engine film went out with
@@ -14,7 +14,7 @@ usage:
   python3 scripts/vo_take_check.py --sentences projects/<slug>/align/sentences.json
         [--takes 'projects/<slug>/voice/<prefix>_b*.mp3' --trimmed 'projects/<slug>/voice/t*.wav']
   sentences.json: a list of {line, en, start, end} (tools/align_blocks.py writes it). Exit 1 when anything is flagged:
-  listen to every flagged line (the owner re-records the block; never splice a phrase in, PLAYBOOK §4a-2).
+  listen to every flagged line (the owner re-records the block; never splice a phrase in, docs/archive/PLAYBOOK_2026-11-05.md §4a-2).
 """
 import argparse
 import glob

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Insert silent beats into a recorded voiceover at its own pauses (edit-room pacing fix, PLAYBOOK §7).
+"""Insert silent beats into a recorded voiceover at its own pauses (edit-room pacing fix, docs/archive/PLAYBOOK_2026-11-05.md §7).
 
   python3 scripts/insert_pauses.py VOICE.mp3 CUTS.json OUT.wav [--slots align/slots.csv --slots-out align/slots_edit.csv]
 

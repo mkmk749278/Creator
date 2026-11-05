@@ -1,4 +1,4 @@
-"""Measure the opening of a competitor video (study only; PLAYBOOK §4a): loudness, cut rate, pauses, music bed.
+"""Measure the opening of a competitor video (study only; docs/archive/PLAYBOOK_2026-11-05.md §4a): loudness, cut rate, pauses, music bed.
 
 floor_db is the 10th-percentile 100 ms level: a dry voice reads about -50 dB, a music bed under the voice much higher.
 

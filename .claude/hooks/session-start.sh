@@ -1,7 +1,7 @@
 #!/bin/bash
 # Cloud sessions start ready to render: Node deps (HyperFrames, GSAP, Three.js, postprocessing; postinstall
 # vendors them into every video/ project), the Python venv, and the shared asset library cache.
-# Each parallel session is a fresh VM, so this runs once per session (PLAYBOOK §3).
+# Each parallel session is a fresh VM, so this runs once per session (docs/archive/PLAYBOOK_2026-11-05.md §3).
 set -euo pipefail
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
   exit 0

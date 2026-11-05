@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Spoken-English gate for English narration (PLAYBOOK §4a-10, owner's narration blueprint in Part H).
+"""Spoken-English gate for English narration (docs/archive/PLAYBOOK_2026-11-05.md §4a-10, owner's narration blueprint in Part H).
 
 Measures a VO the way we measured the Indian explainer channels that hold viewers (study 2026-10-20) and fails
 when the script drifts toward "read text": long sentences, no questions, no "you", no narrator, fancy words,
@@ -12,6 +12,7 @@ needs: pip install -e '.[script]'   (wordfreq, for the rare-word check)
 import argparse
 import csv
 import re
+from pathlib import Path
 import sys
 
 from wordfreq import zipf_frequency
@@ -55,6 +56,28 @@ ME = {"i", "me", "my", "i'm", "i'll", "i've", "we", "us", "our", "let's", "we're
 CHECKINS = ("right?", "isn't it?", "makes sense?", "no?", "see,", "you know", "imagine", "tell me", "think about it",
             "here's the catch", "here's the thing", "the reality is", "now notice this", "look at", "put simply")
 DOTTED = re.compile(r"\b(?:[A-Z]\.){2,}")
+PRON_CSV = Path(__file__).resolve().parent.parent / "config" / "pronunciation.csv"
+
+
+def pronunciation_faults(text):
+    """Every acronym and hard name in config/pronunciation.csv has one VO spelling (owner, 2026-11-05: letters as
+    D-R-D-O, word acronyms as words, e.g. Isro). Flag the other spellings of a listed term."""
+    faults = []
+    if not PRON_CSV.exists():
+        return faults
+    with PRON_CSV.open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            term, good = row["term"], row["write_in_vo"]
+            letters = re.sub(r"[^A-Za-z]", "", term)
+            bad = {term}
+            if letters.isupper() and len(letters) > 1:
+                bad |= {".".join(letters) + ".", "-".join(letters), " ".join(letters), letters}
+            for b in sorted(bad - {good}):
+                if re.search(r"(?<![A-Za-z.-])" + re.escape(b) + r"(?![A-Za-z-])", text):
+                    faults.append(f"'{b}' -> write '{good}' (config/pronunciation.csv)")
+    return faults
+
+
 HYPHENATED = re.compile(r"\b[A-Z](?:-[A-Z])+\b")  # D-R-D-O: the owner's form since 2026-11-05
 
 
@@ -142,6 +165,10 @@ def main():
         notes.append(f"rare words (explain each once in plain words): {', '.join(rare)}")
     if re.search(r'[0-9₹!"()\[\]]', text):
         fails.append("digits, ₹, !, double quotes or brackets in VO text")
+    for fault in pronunciation_faults(text):
+        fails.append(f"pronunciation: {fault}")
+    if "..." in text or "\u2026" in text:
+        fails.append("'...' gives Akash no pause (measured): use a full stop, a comma or a blank line")
     bare = sorted(set(re.findall(r"\b[A-Z]{2,}\b", text)))
     if bare:
         fails.append(f"bare capital acronyms (write D-R-D-O for Akash): {', '.join(bare)}")

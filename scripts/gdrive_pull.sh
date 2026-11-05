@@ -3,14 +3,14 @@
 # scripts/termux_fetch_to_drive.sh, which puts phone-downloaded clips in Creator/<Channel>/<slug>/footage/).
 #
 # Usage: scripts/gdrive_pull.sh English/rare-earth-magnets/footage projects/rare-earth-magnets/assets/yt
-# Needs GDRIVE_RCLONE_TOKEN, exactly like scripts/upload_gdrive.sh (PLAYBOOK §1); reuses its pinned rclone.
+# Needs GDRIVE_RCLONE_TOKEN, exactly like scripts/upload_gdrive.sh (docs/archive/PLAYBOOK_2026-11-05.md §1); reuses its pinned rclone.
 set -euo pipefail
 SRC="${1:?Drive path under Creator/, e.g. English/<slug>/footage}"; DST="${2:?local folder}"
 RCLONE_VER=v1.71.1
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 CACHE="$ROOT/.cache/rclone"
 FOLDER_ID=${GDRIVE_CREATOR_FOLDER_ID:-1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M}
-[[ -n ${GDRIVE_RCLONE_TOKEN:-} ]] || { echo "GDRIVE_RCLONE_TOKEN is not set (see PLAYBOOK §1, Google Drive setup)" >&2; exit 3; }
+[[ -n ${GDRIVE_RCLONE_TOKEN:-} ]] || { echo "GDRIVE_RCLONE_TOKEN is not set (see docs/archive/PLAYBOOK_2026-11-05.md §1, Google Drive setup)" >&2; exit 3; }
 RCLONE="$CACHE/rclone-$RCLONE_VER-linux-amd64/rclone"
 if [[ ! -x $RCLONE ]]; then
   mkdir -p "$CACHE"

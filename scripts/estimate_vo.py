@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Estimate how long Bunty (ElevenLabs Telugu) will take to speak a script, before any TTS is generated (PLAYBOOK §7).
+"""Estimate how long Bunty (ElevenLabs Telugu) will take to speak a script, before any TTS is generated (docs/archive/PLAYBOOK_2026-11-05.md §7).
 
 Per-line model fitted on the 65 lines of fire-and-ice (three eleven_v4 Bunty takes, timed by align_script.py):
   seconds = 0.065 x characters + 0.07 x '...' + 0.53 x commas + 0.22 per line

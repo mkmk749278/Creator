@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # Search YouTube on the owner's phone and put the results (title, channel, length, date, URL and a thumbnail per
 # video) in Google Drive, Creator/<Channel>/<slug>/search/, so a cloud session can vet them on a contact sheet and
-# write the exact termux_fetch_to_drive.sh line for the clips worth using (PLAYBOOK §8.5). Nothing is downloaded but
+# write the exact termux_fetch_to_drive.sh line for the clips worth using (docs/archive/PLAYBOOK_2026-11-05.md §8.5). Nothing is downloaded but
 # thumbnails. Why on the phone: YouTube answers 403 to the cloud container, and web search barely indexes YouTube.
 #
 # One command in Termux (the session writes it out for you):
@@ -13,7 +13,7 @@
 set -uo pipefail
 DEST="${1:?usage: termux_search_to_drive.sh <Channel>/<slug> \"search\" [\"search\" ...]}"; shift
 [[ $# -ge 1 ]] || { echo "give at least one search" >&2; exit 2; }
-CREATOR_FOLDER_ID=1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M   # the owner's Drive "Creator" folder (PLAYBOOK §1)
+CREATOR_FOLDER_ID=1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M   # the owner's Drive "Creator" folder (docs/archive/PLAYBOOK_2026-11-05.md §1)
 OUT="$HOME/creator_search/$(basename "$DEST")"
 rm -rf "$OUT" && mkdir -p "$OUT" && cd "$OUT" || exit 1
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the owner's recording file for an English VO (owner, 2026-10-28; PLAYBOOK §4a-2).
+"""Build the owner's recording file for an English VO (owner, 2026-10-28; docs/archive/PLAYBOOK_2026-11-05.md §4a-2).
 
 One Markdown file holds the full narration to read through, then the same text split into click-to-copy recording
 blocks (fenced code, under 1,500 characters each, blank line between beats). Send this one file with every VO change,
@@ -17,9 +17,17 @@ VOICE = ("Akash - Confident and Natural, Eleven v4, Stability Creative, Similari
          "Paste each block as is; the blank lines are pauses.")
 
 
-# Words a voice model has misread in our films, with the spelling that reads right (PLAYBOOK §4a-4). The VO text uses
+# Words a voice model has misread in our films, with the spelling that reads right (docs/archive/PLAYBOOK_2026-11-05.md §4a-4). The VO text uses
 # the right-hand form; captions and on-screen text keep the real spelling.
-RESPELL = {"Safran": "Sah-frahn", "Nashik": "Naa-shik", "Ghatak": "Ghaa-tuk", "kN": "kilo-newtons"}
+def _respell():
+    """Terms the voice misreads and their VO spelling, from config/pronunciation.csv (the one list, 2026-11-05)."""
+    import csv
+    path = Path(__file__).resolve().parent.parent / "config" / "pronunciation.csv"
+    with path.open(encoding="utf-8") as f:
+        return {r["term"]: r["write_in_vo"] for r in csv.DictReader(f) if r["term"] != r["write_in_vo"]}
+
+
+RESPELL = _respell()
 COMMON = {"I", "I'm", "I'll", "I've", "India", "Indian", "Corona", "China", "Chinese", "January", "February", "March",
           "April", "May", "June", "July", "August", "September", "October", "November", "December", "Jai", "Hind"}
 TECH = re.compile(r"newton|delink|kilo|metre|gram", re.I)   # units and jargon the voice has slurred

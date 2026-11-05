@@ -3,7 +3,7 @@
 
 Runs where downloads work: the VPS self-hosted runner or GitHub's runner with YT_COOKIES (the "Fetch media"
 workflow), or Termux on the phone. Only fetch what may be used: official channels, footage the owner cleared, CC
-licences. Every file still needs a credit and a licence row in the project's media_manifest.csv (PLAYBOOK §8, §12).
+licences. Every file still needs a credit and a licence row in the project's media_manifest.csv (docs/archive/PLAYBOOK_2026-11-05.md §8, §12).
 
   python3 scripts/fetch_media.py OUT_DIR "URL" "URL@00:30-00:45" ... [--max-height 1080] [--cookies cookies.txt]
 

@@ -4,10 +4,10 @@
 #
 # Usage: scripts/upload_gdrive.sh [--sub <subfolder>] FILE [FILE ...]
 #   --sub English/insurance-ombudsman   puts the files in Creator/<subfolder>/ (created if missing).
-#   Drive layout (owner, 2026-10-15): Creator/<English|Telugu>/<slug>/, one folder per video (PLAYBOOK §1).
+#   Drive layout (owner, 2026-10-15): Creator/<English|Telugu>/<slug>/, one folder per video (docs/archive/PLAYBOOK_2026-11-05.md §1).
 #
 # Needs the environment variable GDRIVE_RCLONE_TOKEN: the JSON line that `rclone authorize "drive"` prints
-# (one-time setup on the phone in Termux, PLAYBOOK §1). Optional GDRIVE_CREATOR_FOLDER_ID (default: the Creator
+# (one-time setup on the phone in Termux, docs/archive/PLAYBOOK_2026-11-05.md §1). Optional GDRIVE_CREATOR_FOLDER_ID (default: the Creator
 # folder found on 2026-10-13). rclone itself is a pinned binary fetched into .cache/ on first use.
 # Small text files (description, SRT, review.md) can also go up through the Google Drive connector without a token;
 # the connector cannot carry video-sized files.
@@ -19,7 +19,7 @@ FOLDER_ID=${GDRIVE_CREATOR_FOLDER_ID:-1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M}
 SUB=""
 if [[ ${1:-} == --sub ]]; then SUB=$2; shift 2; fi
 [[ $# -ge 1 ]] || { sed -n 2,12p "$0"; exit 2; }
-[[ -n ${GDRIVE_RCLONE_TOKEN:-} ]] || { echo "GDRIVE_RCLONE_TOKEN is not set (see PLAYBOOK §1, Google Drive setup)" >&2; exit 3; }
+[[ -n ${GDRIVE_RCLONE_TOKEN:-} ]] || { echo "GDRIVE_RCLONE_TOKEN is not set (see docs/archive/PLAYBOOK_2026-11-05.md §1, Google Drive setup)" >&2; exit 3; }
 
 RCLONE="$CACHE/rclone-$RCLONE_VER-linux-amd64/rclone"
 if [[ ! -x $RCLONE ]]; then

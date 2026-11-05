@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared asset library: licence-clean media reused across videos (PLAYBOOK §22.8).
+"""Shared asset library: licence-clean media reused across videos (docs/archive/PLAYBOOK_2026-11-05.md §22.8).
 
 library/manifest.csv is the single record. Small files (<= 5 MB) are committed under library/<kind>/;
 larger ones live in library/_cache/ (gitignored) and are re-downloaded by `fetch` from file_url.

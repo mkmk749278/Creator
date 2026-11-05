@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Pull tracks from this channel's music library in Google Drive (Music-Library/practical/) into a film's assets.
-# The library is the channel's own Lyria 3.5 music (config/music_library.csv, PLAYBOOK §11.1).
+# The library is the channel's own Lyria 3.5 music (config/music_library.csv, docs/archive/PLAYBOOK_2026-11-05.md §11.1).
 #
 # Usage: scripts/music_pull.sh DEST [ID ...]
 #   scripts/music_pull.sh projects/<slug>/assets/music pr01_investigation pr04_hopeful
@@ -16,7 +16,7 @@ ROOT=$(cd "$(dirname "$0")/.." && pwd)
 CACHE="$ROOT/.cache/rclone"
 FOLDER_ID=${MUSIC_FOLDER_ID:-1NdlHnIfxsccvKtA3GVDNG0Jmz5tKkl9N}   # Music-Library/practical, created 2026-11-04
 [[ $# -ge 1 ]] || { sed -n 2,14p "$0"; exit 2; }
-[[ -n ${GDRIVE_RCLONE_TOKEN:-} ]] || { echo "GDRIVE_RCLONE_TOKEN is not set (see PLAYBOOK §1, Google Drive setup)" >&2; exit 3; }
+[[ -n ${GDRIVE_RCLONE_TOKEN:-} ]] || { echo "GDRIVE_RCLONE_TOKEN is not set (see docs/archive/PLAYBOOK_2026-11-05.md §1, Google Drive setup)" >&2; exit 3; }
 RCLONE="$CACHE/rclone-$RCLONE_VER-linux-amd64/rclone"
 if [[ ! -x $RCLONE ]]; then
   mkdir -p "$CACHE"

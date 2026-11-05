@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Measure what an effect costs to render before adopting it (PLAYBOOK §9, §22.9).
+"""Measure what an effect costs to render before adopting it (docs/archive/PLAYBOOK_2026-11-05.md §9, §22.9).
 
 Renders the first N seconds of a HyperFrames project once per variant and prints wall time per output second.
 A variant is NAME=JS: the JS is injected as the first <script> in <head>, so a scene can read flags from
@@ -8,7 +8,7 @@ A variant is NAME=JS: the JS is injected as the first <script> in <head>, so a s
   python3 scripts/bench_render.py video/lib/realism-proof --seconds 2 \
       --variant full= --variant no-ao='window.BENCH={ao:0}' --variant no-bloom='window.BENCH={bloom:0}' [--4k] [--workers 3]
 
-Writes <scratch>/bench-<project>.json and prints a table. Add meaningful results to PLAYBOOK §15.
+Writes <scratch>/bench-<project>.json and prints a table. Add meaningful results to docs/archive/PLAYBOOK_2026-11-05.md §15.
 """
 import argparse
 import json
