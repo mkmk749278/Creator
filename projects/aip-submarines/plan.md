@@ -4,7 +4,7 @@
 becomes fuel, a submarine that must be cut in two to carry it, and a trap of time: a system can't be trusted until it
 has been to sea, and it can't go to sea until a submarine is cut open for it.
 
-**Length:** about 13 minutes. **Feeling:** tension at the start, wonder in the middle, an honest knot of frustration and
+**Length:** about 11–12 minutes (v2, after the independent review). **Feeling:** tension at the start, wonder in the middle, an honest knot of frustration and
 respect at the trap, quiet resolve at the end.
 
 ## 1. Angles considered
@@ -19,125 +19,135 @@ Chosen: **C as the spine, A opens it, D and B are the two chapters that make it 
 ## 2. Cold opens considered
 1. **The snorkel moment (chosen).** Night, the Arabian Sea. A submarine's battery is running low. A thin mast rises
    through black water; diesel exhaust; somewhere far away, a radar sweeps. "This is the most dangerous minute in a
-   submarine's life — and it chose this." Labelled RECONSTRUCTION. *Why:* it puts the viewer inside the paradox in 8 s.
-2. A white chalk line around the middle of a submarine in a dry dock: "India is going to cut a working submarine in
-   two." (Strong, but it answers before we ask; kept as the 0:45 reveal.)
-3. A spoon of white powder: "This powder could keep a submarine hidden for two weeks." (Kept for chapter 3.)
+   submarine's life. And it has to do it every few days." Labelled RECONSTRUCTION. *Why:* the paradox in 8 s.
+2. A chalk line around the middle of a submarine in a dry dock (kept as the 0:40 reveal; a popular short already used
+   "cut in half", so it is not the twist, the trap is).
+3. A spoonful of white powder (kept for chapter 3).
 
 ## 3. Endings considered
-1. **The same night sea, the same low battery, and this time the mast never rises (chosen)** — the boat keeps going,
-   deep and quiet: "If the trials work, this is the minute that stops happening." Plant (0:00) and pay-off.
-2. The first torch cut on INS Khanderi's hull (doesn't exist yet as footage; can't be shown honestly).
-3. The 2021 land test rig in Mumbai: "a submarine engine that has never seen the sea" (becomes the chapter 5 image).
+1. **Conditional bookend (chosen):** the same night sea, the same low battery, and this time the mast stays down,
+   labelled IF: "If Khanderi's trials work, this is the minute that stops happening. If they fail, the trap closes
+   again. That's why the next twelve months matter more than any headline." Then one line and one image toward the next
+   film.
+2. The first torch cut on INS Khanderi's hull (no such footage yet; can't be shown honestly).
+3. The 2021 land rig: "an engine that has never seen the sea" (used inside chapter 4 instead).
 
-## 4. The viewers' real questions (from search, comments, research) → where answered
-| Question | Answered at |
+## 4. The viewers' real questions → where answered (v2)
+| Question | Where |
 |---|---|
-| Why does a submarine have to come up at all? | ch1 |
-| What is AIP, really? Does it make a sub invisible? | ch2 |
-| How does India's AIP actually work? (the "how do they actually" complaint) | ch3 |
-| Why do you have to cut the submarine? | ch4 |
-| Why did the Navy choose Germany's AIP for P-75I — is DRDO's bad? | ch5 |
-| When will an Indian submarine actually have it? | ch5–6 |
-| What do Pakistan and China have? | ch5 (one beat each, attributed) |
+| **Why did the Navy choose Germany's AIP over DRDO's? Is ours bad?** (the comment-section anger) | **planted in the open loop (0:50), again at ch2's end, paid off in ch4** |
+| Why does a submarine have to come up at all? | cold open + ch1 |
+| How long can it stay under, with and without AIP? (numbers) | ch1–ch2 |
+| Does AIP make it invisible? | ch2 (no: quieter for longer, still findable) |
+| How does India's AIP actually work? | ch3 |
+| Is liquid oxygen on a submarine dangerous? | ch3 (one line) |
+| Is ours as good as the German one on paper? | ch3 (one honest line: no hydrogen gas stored on board) |
+| Why cut the submarine? Is a longer, cut hull safe? | ch4 |
+| What does "proven at sea" actually mean? | ch4 (one line, from sources) |
+| When, and will all six boats get it? Who builds it? | ch5 |
+| What if Khanderi's trials fail? | landing |
+| What do Pakistan and China have? | ch5 (two factual sentences, no threat music) |
 | Why not just build nuclear submarines? | ch2 (one line) |
 
-## 5. Beat sheet
-Times are planned; picture = what is on screen, H = Blender hero shot, T = Three.js/Remotion 3D, R = Remotion graphic.
+## 5. Beat sheet (v2)
+Times are planned; H = Blender hero shot, T = Three.js in Remotion, R = Remotion graphic. Each chapter turn restates the
+key idea in one line (older phone viewers need the repetition).
 
 ### Cold open (0:00–0:55)
-| Time | Beat (what the narration does) | Viewer's question | Picture | Sound / music |
+| Time | Beat | Viewer's question | Picture | Sound / music |
 |---|---|---|---|---|
-| 0:00 | Night, Arabian Sea, battery low; the captain gives one order: raise the snorkel | what's about to happen? | **H1** mast breaking black water, exhaust, moonlight; RECONSTRUCTION tag | sea hush, low hull groan; bp03_low_tension |
-| 0:12 | Why this minute is dangerous: the mast, the noise, the radar far away | will they be caught? | H1 wide; a radar sweep line crosses the frame | diesel rumble rises; ping |
-| 0:25 | **The paradox:** a machine built to hide must show itself every few days | why would anyone build it that way? | cut to real Kalvari-class footage at sea (Navy/PIB) | music drops |
-| 0:35 | The cure has a name, AIP; everyone online calls it a "ghost maker" | is that true? | real YouTube-style headline wall, blurred, quoted (no channel logos) | whoosh |
-| 0:45 | **The reveal:** to fit it, India must cut one of its own submarines in two | cut in two?! | **T** chalk line wraps the hull in a dry dock | 1.0 s silence → low hit |
-| 0:50 | **Open loop:** "and the hardest part isn't the cutting; it's a trap India walked into in 2025. By the end you'll see it." | what trap? | Khanderi at a pier (real), slow push | bp03 continues |
+| 0:00 | Night, Arabian Sea, battery low; one order: raise the snorkel | what's about to happen? | **H1** mast breaks black water, exhaust; RECONSTRUCTION | sea hush, hull groan; bp03_low_tension |
+| 0:10 | "The most dangerous minute in a submarine's life. And it has to do it every few days." | why? | H1 wide; a radar sweep crosses the frame | diesel rumble, ping |
+| 0:20 | A machine built to hide must show itself (real Kalvari-class at sea) | why build it like that? | real Navy/PIB footage | music drops |
+| 0:28 | The cure has a name, AIP; online it's the "ghost maker" | is that true? | headline wall, held long enough to read one | whoosh |
+| 0:40 | To fit it, India must cut one of its own submarines in two | cut in two? | **T** chalk line wraps a hull in dry dock | 1.0 s silence → low hit |
+| 0:48 | **Open loop:** "India built this machine. It has run on land. And the Navy still chose a German one for its next submarines. Both of them were right. By the end, you'll see why." | why German? who's right? | Khanderi at a pier (real), slow push; then a split: Indian rig / German boat | bp03 continues |
 
-### Ch1 · Why a submarine must breathe (0:55–3:00)
+### Ch1 · Caught breathing (0:55–2:05), told from the hunter's side
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 0:55 | Under water, everything runs on a battery: hundreds of cells, the size of a room | how long does it last? | **H2** Kalvari cutaway on a steel inspection plate, the battery deck lights cell by cell | electric hum |
-| 1:20 | Diesel engines need air; under water there is none | so how do you recharge? | H2: the diesels go dark under water | breath-like air hiss |
-| 1:35 | So: come up, raise the snorkel, run the diesels, drink air | how often? | R: a patrol timeline; snorkel marks every few days (number from the fact-check) | |
-| 2:00 | In those hours the boat is loud, visible, slow | who's looking? | real DVIDS P-8 footage + India's own P-8I (credited) | jet pass |
-| 2:20 | The irony: India flies some of the best sub hunters in the world; it knows exactly how a snorkel gets caught | — | P-8I real footage, sonobuoy drop | splash |
-| 2:40 | The share of a patrol spent exposed is what navies fight to shrink | can it go to zero? | R: the timeline's red slivers shrink | music turns: fx02_mechanism |
+| 0:55 | A P-8I sub hunter's view: what it looks for is a mast, a wake, a radar blip, diesel noise | can it see a submarine? | real P-8I / DVIDS P-8 footage, radar screen (credited) | jet pass |
+| 1:15 | Why the mast is there: under water everything runs on a battery; diesels need air | how long does the battery last? | **H2** cutaway on a steel plate: battery deck lights, diesels dark | electric hum |
+| 1:35 | The number: about N days at slow speed, then it must snorkel (fact-check gives N) | that's all? | R: a patrol strip with red snorkel slivers | |
+| 1:50 | Navies fight to shrink those red slivers; that is the whole game | can they go to zero? | R: slivers shrink | music turns: fx02_mechanism |
 
-### Ch2 · The ghost myth (3:00–5:00)
+### Ch2 · The ghost myth (2:05–3:30)
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 3:00 | What AIP really is: a second engine that doesn't need air | what does it burn? | R: three engines side by side on a drafting grid: Stirling, steam (MESMA), fuel cell | |
-| 3:25 | The world's choices: Sweden/Japan/China's Stirling, France's MESMA, Germany's fuel cells | who has it? | real company footage, credited, 2–3 s each | |
-| 3:50 | **The myth breaks:** AIP lets you crawl for weeks, not run; a sprint still drains the battery in under an hour | so it's not a ghost? | T: speed dial vs endurance curve, the curve collapses as speed rises | the ghost-headline wall shatters |
-| 4:20 | Still, crawling for two weeks unseen changes everything | why? | H1 variant: the mast that doesn't rise; R: red slivers become one sliver in a month | |
-| 4:40 | Why not just go nuclear? one line: nuclear boats are huge, few and costly; diesel boats guard the shallow coast | — | real INS Arihant still (credited) beside a Kalvari, to scale | |
+| 2:05 | AIP: a second engine that needs no air. "Three ways to make power without air; India chose the third." | which three? | R: three icons on a drafting grid, two fade, fuel cell stays | |
+| 2:20 | The numbers: days on battery vs about two weeks with AIP (sourced) | that much? | R: the strip; red slivers merge into one | |
+| 2:40 | **Myth breaks:** it lets you crawl for weeks, not run; a sprint still drains the battery fast; and a quiet boat can still be found by active sonar or its wake | so not a ghost | T: speed vs endurance curve collapsing; the headline wall cracks | glass crack |
+| 3:05 | Why not just go nuclear? one line: nuclear boats are large, few and costly; diesel boats guard the shallow coast | — | real Arihant still beside a Kalvari, to scale | |
+| 3:15 | Turn: "So India built its own AIP. And it built it differently from everyone else." (and the Navy still chose Germany's for P-75I — hold that) | how is it different? | cut to a white powder | music: bp09_precision |
 
-### Ch3 · India's powder (5:00–7:30)
+### Ch3 · India's powder (3:30–5:45)
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 5:00 | Every other fuel-cell sub carries hydrogen. India's carries none | then where does it come from? | **H3** a white powder on a steel plate, macro | silence |
-| 5:15 | Sodium borohydride: add water, hydrogen comes out | really, from powder? | H3: water meets powder, bubbles rise in a glass reactor | fizz (SFX) |
-| 5:45 | The hydrogen meets oxygen carried as a cold liquid, inside a fuel cell whose heart is phosphoric acid | why acid? | H3: hydrogen and oxygen streams into the PAFC stack, cyan and amber | hum builds |
-| 6:15 | Out comes electricity — and water, which flows back to make more hydrogen | a loop? | H3: the water loop closes; R: the loop drawn once | click |
-| 6:40 | What's left: a salty waste that stays on board in a tank | where does the waste go? | H3: the waste tank fills | |
-| 7:00 | The land prototype ran in Mumbai on 8 March 2021, in endurance and full-power modes | did it work? | real PIB/DRDO photo of the prototype, animated push | applause-free: a single steady tone |
+| 3:30 | Every other fuel-cell submarine carries hydrogen. India's carries none | then where from? | **H3** powder on a steel plate, macro | silence |
+| 3:45 | Sodium borohydride: add water, hydrogen comes out | from powder? | H3: water meets powder, bubbles | fizz |
+| 4:10 | **Human scale:** about a spoonful makes enough electricity to charge a phone (OUR CALCULATION) | that little? | H3 + a phone beside the spoon, charging bar fills | charge chime |
+| 4:30 | Hydrogen meets oxygen carried as a cold liquid, in a fuel cell whose heart is phosphoric acid; out comes electricity and water | how does it make electricity? | H3: streams into the PAFC stack, cyan and amber | hum builds |
+| 5:00 | Is liquid oxygen dangerous? one line (sourced) | — | H3: insulated LOX tank, frost | |
+| 5:10 | On paper, India's edge: no hydrogen gas stored on board; the cost: a heavy plant and a waste tank to carry | is ours better? | R: scale with two pans: "no stored H2" / "weight + waste" | |
+| 5:30 | Restate: "Powder in, power out, under water, for weeks." | — | H3 continuous move ends on the glowing stack | |
 
-### Ch4 · Cut it in half (7:30–9:30)
+### Ch4 · Cut it in half, and the trap (5:45–9:30)
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 7:30 | A Kalvari is about 67 metres long; there is no spare room | where does it fit? | T: the hull in plan view on a drafting grid, every compartment full | |
-| 7:50 | So you open the submarine like a book | how? | **H4** dry dock: cut line glows, the two halves part on rails | grinder, metal groan |
-| 8:20 | Slide in a new section: about 8 metres, about 300 tonnes, holding the powder, the oxygen, the fuel cells, the waste | 300 tonnes?! | H4: the plug rolls in; R: 67.56 m → 77.56 m counter | heavy rollers |
-| 8:50 | Weld, test, and trust that the hull holds at depth | can a cut hull be trusted? | H4: weld bead glow; R: pressure rings | hiss |
-| 9:10 | And you only get to do this when a submarine comes in for its big refit, once in years | when is the next window? | R: calendar of refit windows | music turns: bh03_tension |
+| 5:45 | A Kalvari has no spare room for any of this | where does it go? | T: hull plan on a drafting grid, every compartment full | |
+| 6:00 | So you open the submarine like a book | how? | **H4** dry dock: cut line glows, halves part on rails | grinder, metal groan |
+| 6:25 | Slide in a new section: powder, oxygen, fuel cells, waste; the boat grows about ten metres (sourced; length counter on screen) | how big? | H4 plug rolls in; R counter 67.56 → 77.56 m; **human scale**: autorickshaws end to end beside it | heavy rollers |
+| 6:55 | Is a cut, longer hull safe? one line (sourced: weld, pressure tests) | — | H4 weld glow; pressure rings | hiss |
+| 7:10 | The 2021 land rig in Mumbai: it ran. But it has never been to sea | so it's not proven? | real PIB/DRDO prototype photo, push | single tone |
+| 7:30 | What "proven at sea" means (sourced: hours of running inside a submarine at sea) | why does that matter so much? | R: the requirement, highlighted | |
+| 7:50 | **The P-75I payoff:** the tender demanded an AIP already proven at sea; DRDO's had run only on land; Germany's had sailed for years | so it's not about quality? | real TKMS footage (credited); R: the clause | music: bh03_tension |
+| 8:20 | **The trap:** the Navy can't bet a war submarine on an engine that has never been to sea; the engine can't go to sea until a submarine is cut open for it | so who is right? | **R signature:** two panels, an arrow loops between them and closes | 1.0 s silence |
+| 8:45 | Both are right. That's what makes it a trap | then how does it break? | split: DRDO lab / Navy crew (real) | |
+| 9:00 | And the window: a boat can only be cut open in its big refit, once in years; INS Kalvari's came in 2025, without the plug (sourced reason, no blame) | so it missed? | R: refit calendar, a window turns grey | clock tick |
 
-### Ch5 · The trap (9:30–12:00)
+### Ch5 · The way out (9:30–10:50)
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 9:30 | 2025: INS Kalvari came in for its first refit. The plug wasn't ready. The window closed. | so it missed? | real Kalvari at MDL (Navy/PIB), the calendar window turns grey | clock tick |
-| 9:55 | **The trap:** the Navy can't bet a war submarine on a machine that has never been to sea | fair? | R: a loop drawn as two arrows: "not proven at sea" ⇄ "no submarine to prove it" | |
-| 10:20 | And the new submarines, Project 75I: the tender demanded an AIP already proven at sea; DRDO's had run only on land; the German one had sailed | so it's not about quality? | real TKMS Type 212/214 footage (credited); R: the clause, highlighted on the tender text | |
-| 10:50 | Both sides are right; that's what makes it a trap | then who breaks it? | split frame: DRDO lab / Navy crew | |
-| 11:05 | Meanwhile: Pakistan commissioned its first Hangor-class boat in April 2026, reported to carry AIP; China's Yuan class has had it for years | is India behind? | real Hangor commissioning news footage (credited, no verdict graphics on people); map on real ground | low drone |
-| 11:30 | The way out: INS Khanderi. October 2026, the energy module powered up at Hazira; early 2027, into the submarine | will it happen? | real L&T Hazira STW-2 photos; Khanderi real | music lifts: pr06_capability |
+| 9:30 | INS Khanderi is next. October 2026, the energy module powered up at L&T Hazira; early 2027, into the submarine; then sea trials | will it happen? | real STW-2 photos; Khanderi real | music lifts: pr06_capability |
+| 9:55 | Who builds it: NMRL designs, L&T builds, Thermax the fuel cells, Mazagon Dock fits it; all six boats in their refits (as reported) | all six? | R: names on real ground (Ambernath, Hazira, Mumbai) | |
+| 10:15 | Meanwhile: two factual sentences on Pakistan's Hangor (commissioned April 2026, reported AIP) and China's Yuan | is India behind? | real credited footage; no threat graphics | low drone, no stingers |
+| 10:35 | Restate the trap in one line, and how Khanderi opens it | — | the loop graphic opens | |
 
-### Landing (12:00–13:00)
+### Landing (10:50–11:45)
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 12:00 | What it means: if Khanderi's trials work, India has its own AIP, sea-proven, and the trap opens for every boat after | what changes for us? | the six Kalvari boats, real, in formation (if footage) | |
-| 12:30 | Back to the night sea, the battery low… and this time the mast stays down | — | H1 reprise: the mast doesn't rise; the boat glides deeper | sea hush; music resolves (bp10_landing) |
-| 12:50 | One line forward to the next film (Matsya 6000, the titanium sphere) | — | end card, channel name with logo sting (the only time) | sting |
+| 10:50 | If Khanderi's trials work, India has its own sea-proven AIP, and the trap opens for every boat after | what changes? | the Kalvari boats at sea (real) | |
+| 11:10 | Back to the night sea. Battery low. And this time the mast stays down. IF. | — | H1 reprise, labelled IF; the boat glides deeper | sea hush; bp10_landing |
+| 11:25 | "If they fail, the trap closes again. That's why the next twelve months matter more than any headline." | — | hold on dark water | |
+| 11:35 | One image and one line toward the next film (a titanium sphere six kilometres down) | — | end card, channel name and logo sting, the only time | sting |
 
 ## 6. Signature moments
-1. **The mast that does / doesn't rise** (0:00 and 12:30): the same shot, two outcomes; the whole film is the
-   difference.
-2. **One gram of powder becomes power** (ch3): one continuous Blender macro move from powder to bubbles to fuel cell
-   glow to water flowing back, no cut.
-3. **Opening a submarine like a book** (ch4): the cut, the parting halves, the plug rolling in, the length counter
-   ticking from 67.56 to 77.56 m.
+1. **The mast that does / doesn't rise** (open and close), the close labelled IF.
+2. **Powder to power** in one continuous macro move, with the phone that charges from a spoonful (OUR CALCULATION).
+3. **Opening a submarine like a book**: halves part, the plug rolls in, the length counter and autorickshaws to scale.
+4. **The trap loop** (new, from the review): "can't trust it until it has been to sea" ⇄ "can't go to sea until we
+   trust it", an arrow that loops and closes — the one picture that explains the whole argument.
 
 ## 7. Hero 3D shots (Blender Cycles; can start on plan approval)
-- **H1** Snorkel at night: procedural ocean, mast and exhaust, radar sweep light; 2 versions (rises / stays down).
-- **H2** Kalvari-class cutaway on a steel inspection plate: battery deck, diesels, motor (from real Scorpène
-  references; labelled SIMPLIFIED).
-- **H3** The AIP chain macro: powder → reactor → PAFC stack → water loop → waste tank (labelled ILLUSTRATION).
-- **H4** Dry-dock surgery: the cut, the halves parting, the plug rolling in, the weld (labelled ILLUSTRATION).
+- **H1** Snorkel at night, two versions (rises / stays down).
+- **H2** Kalvari-type cutaway on a steel inspection plate (SIMPLIFIED: the real internal layout is not public).
+- **H3** The AIP chain macro: powder → reactor → PAFC stack → water, LOX tank (ILLUSTRATION).
+- **H4** Dry-dock surgery: cut, halves parting, plug rolling in, weld (ILLUSTRATION).
 
 ## 8. Music and sound
-bp03_low_tension (cold open) → fx02_mechanism (ch1–2) → bp09_precision (ch3) → fx04_cascade (ch4) → bh03_tension (ch5)
-→ pr06_capability (the way out) → bp10_landing (landing). Real sea, diesel, grinder, weld and sonar sounds; 1.0 s
-silence before the "cut in two" reveal and before the trap.
+bp03_low_tension (open) → fx02_mechanism (ch1–2) → bp09_precision (ch3) → fx04_cascade (the cut) → bh03_tension (the
+trap) → pr06_capability (the way out) → bp10_landing. Real sea, diesel, grinder, weld and sonar sounds; 1.0 s silence
+before "cut in two" and before the trap. Pakistan and China get no threat music.
 
 ## 9. Cut (zero sodhi)
-- Submarine history (Ictineo, U-boats, the snorkel's invention): interesting, not needed.
-- Every AIP type in depth: one beat only; ours is the story.
-- The whole P-75I bidding saga, prices and politics: only the sea-proven clause matters.
-- Kilo and Shishumar fleet details: one line of context at most.
-- Speculation about wartime scenarios with Pakistan or China: no.
+Submarine history; the AIP-types tour (one line now); the P-75I bidding saga and prices (only the sea-proven clause);
+Kilo and Shishumar details; war-scenario speculation; the exact "endurance and max power modes" wording (now "it ran
+on land in 2021"); a second headline wall; a separate Short (no Shorts, owner 2026-11-05).
 
-## 10. To verify in the fact-check (step 4)
-Battery endurance and snorkel frequency for a Kalvari-type boat; AIP endurance claims (14 days); plug size and weight;
-Kalvari refit date and why it missed; P-75I clause wording; Hangor's AIP; China's Yuan AIP; the STW-2 date and place;
-Arihant comparison; India's P-8I.
+## 10. Review and fact-check list (step 4)
+Independent plan review v1: 7.5/10, all 7 changes applied (`review_plan_v1.md`). To verify before the narration is
+final: battery-only days for a Kalvari-type boat; AIP endurance (about 14 days); **plug length (8.3 m section vs +10 m
+overall: resolve)**; plug weight; Kalvari's 2025 refit and the stated reason; the P-75I clause wording and what "proven"
+required; Hangor's AIP (attributed); China's Yuan AIP; STW-2 date and place; the six-boat plan; LOX safety line; hull
+safety line; India's P-8I; our powder-to-phone calculation (NaBH4 + 2 H2O → NaBO2 + 4 H2, fuel-cell efficiency from a
+PAFC source); whether DRDO's water really loops back (patent).
