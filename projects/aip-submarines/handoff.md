@@ -1,6 +1,6 @@
-# Handoff · aip-submarines (2026-11-06, end of session; weekly limit)
+# Handoff · aip-submarines (2026-11-06, evening)
 
-Branch `ccr-cc92ffe7-fv5thg`, PR #76 (open; nothing on it is red). Everything below is committed and pushed.
+Branch `ccr-235edd1d-ezbsf6` (PR #76 merged earlier today). Everything below is committed and pushed.
 
 ## Where the film stands (PLAYBOOK §3 steps)
 - Steps 1–6 done: topic, research, plan, facts (43 claims, gate passes), narration and audio **approved by the owner**.
@@ -12,19 +12,21 @@ Branch `ccr-cc92ffe7-fv5thg`, PR #76 (open; nothing on it is red). Everything be
   are rendered. The mix is in Drive `mix/mix.wav` (bed 23 dB under the voice).
 - Step 11: three own-review rounds (`review.md`). Step 12: one independent review (`review_viewer_r1.md`); its
   fixes are applied (`review_ack_r1.md`).
-- **In flight:** round-4 720p render `aip_review_r4_720p.mp4` (remotion-render run dispatched about 18:15 UTC on
-  the branch). It lands in Drive `Built-on-Bharat/aip-submarines/renders/`.
+- Round 4 (`aip_review_r4_720p.mp4`, in Drive) measured and checked: `review.md` § Round 4. Three holds (5:46, 7:46),
+  the Defence Secretary quote layout (4:37) and the clipped map credit are fixed in the source.
+- **In flight:** round-5 720p render `aip_review_r5_720p.mp4` (remotion-render, dispatched about 19:00 UTC on
+  `ccr-235edd1d-ezbsf6`). It lands in Drive `Built-on-Bharat/aip-submarines/renders/`.
 
 ## Next session, in order
-1. Check the round-4 run (GitHub MCP `actions_list` on `remotion-render.yml`). If a shard hung on apt, cancel and
-   `rerun_failed_jobs`. Pull the cut: `/tmp`-style rclone (see `scripts/upload_gdrive.sh` for the config) or
-   `scripts/gdrive_pull.sh Built-on-Bharat/aip-submarines/renders <dir>`.
-2. Measure it (ebur128, blackdetect) and check frames at 0:12, 2:58, 4:38, 6:45, 7:08, 7:30–7:50, 8:12.
-3. Send the owner the r4 Drive link (it is private) and a summary of `review_ack_r1.md`. **Trash
-   `renders/aip_review_r3_720p.mp4`**: it is shared "anyone with the link" for the independent reviewer, and
-   trashing it kills the link (the Drive connector cannot remove a permission; tell the owner first).
-4. Run the independent review again on r4 with the **new real-audience panel** (`prompts/audience_review_v1.md`).
-   The r4 file must be link-shared for it (ask the owner, as for r3). Then `review_ack_r2.md`.
+1. Check the round-5 run (GitHub MCP `actions_list` on `remotion-render.yml`). If a shard hung on apt, cancel and
+   `rerun_failed_jobs`. Pull the cut with `scripts/gdrive_pull.sh Built-on-Bharat/aip-submarines/renders <dir>`.
+2. Measure it (ebur128, blackdetect, freezedetect n=0.003 d=1.5) and check frames at 4:37–4:46, 5:44–5:48, 7:45–7:50
+   and the map credits.
+3. Send the owner the r5 Drive link (it is private) and a summary of `review_ack_r1.md` and round 4. **Trash
+   `renders/aip_review_r3_720p.mp4`**: it is shared "anyone with the link" for the independent reviewer, and trashing
+   it kills the link (r1, r2 and r4 can go too once r5 is good) (the Drive connector cannot remove a permission; tell the owner first).
+4. Run the independent review again on r5 with the **new real-audience panel** (`prompts/audience_review_v1.md`).
+   The r5 file must be link-shared for it (ask the owner, as for r3). Then `review_ack_r2.md`.
 5. **The owner approves the cut** → render the 4K master once (`scale` 2, name `aip_master_4k.mp4`).
 6. Step 14 (title, thumbnail, description) only when the owner asks.
 

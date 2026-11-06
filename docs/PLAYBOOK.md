@@ -534,6 +534,10 @@ cards "a collage of templates".
 - **A 3D camera that tracks the boat cancels the motion:** the frame looks frozen even though everything moves.
   Hold the camera (or push it) while the object crosses the frame. `freezedetect` (n=0.002) also flags dark,
   low-contrast underwater frames that do move: check those two frames apart before "fixing" them (2026-11-06).
+- **An eased camera dies at the end of a long shot.** The ease-out leaves the last 1.5–2 s nearly still, and a clip
+  that runs out (slowed to 0.5×, then its last frame) has nothing else moving. On a long shot over short footage, use a
+  linear push and pan to the cut, or put a new element on a word in that tail. *Why:* round 4 of the AIP film held
+  2 s under "signs off the design" and 1.7 s under "Designed at D-R-D-O's lab", both found only by `freezedetect`.
 - **Shots change about every 3.5–5 s;** split any hold over about 4.6 s into new framings. *Why:* the first pharma cut
   laid one shot per VO line and averaged 8.6 s a shot.
 - At least 85% of the runtime is moving footage or animation. Eased motion only (springs, curves), never linear.

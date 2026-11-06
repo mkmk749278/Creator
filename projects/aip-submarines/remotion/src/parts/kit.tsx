@@ -38,10 +38,11 @@ export const Cam: React.FC<{
 	to?: [number, number, number];
 	drift?: number;
 	seed?: string;
+	ease?: (t: number) => number; // the move's easing; linear keeps a long shot moving to its last frame
 	children: React.ReactNode;
-}> = ({dur, from = [1, 0, 0], to = [1.08, 0, 0], drift = 4, seed = 'c', children}) => {
+}> = ({dur, from = [1, 0, 0], to = [1.08, 0, 0], drift = 4, seed = 'c', ease = ez.cam, children}) => {
 	const f = useCurrentFrame();
-	const k = tw(f, 0, dur, 0, 1);
+	const k = tw(f, 0, dur, 0, 1, ease);
 	const s = from[0] + (to[0] - from[0]) * k;
 	const x = from[1] + (to[1] - from[1]) * k + drift * noise2D(seed + 'x', f / 150, 0);
 	const y = from[2] + (to[2] - from[2]) * k + drift * noise2D(seed + 'y', 0, f / 170);
@@ -61,7 +62,8 @@ export const Clip: React.FC<{
 	startAt?: number; // seconds into the prepared clip
 	grade?: 'night' | 'day' | 'red' | 'none';
 	style?: React.CSSProperties;
-}> = ({name, dur, from = [1.04, 0, 0], to = [1.12, 0, 0], startAt = 0, grade = 'night', style}) => {
+	ease?: (t: number) => number;
+}> = ({name, dur, from = [1.04, 0, 0], to = [1.12, 0, 0], startAt = 0, grade = 'night', style, ease}) => {
 	const filter =
 		grade === 'night'
 			? 'contrast(1.08) saturate(0.85) brightness(0.92)'
@@ -71,7 +73,7 @@ export const Clip: React.FC<{
 					? 'contrast(1.05) saturate(0.95)'
 					: undefined;
 	return (
-		<Cam dur={dur} from={from} to={to} seed={name}>
+		<Cam dur={dur} from={from} to={to} seed={name} ease={ease}>
 			<OffthreadVideo
 				src={staticFile(`assets/media/clips/${name}.mp4`)}
 				startFrom={Math.round(startAt * 60)}
