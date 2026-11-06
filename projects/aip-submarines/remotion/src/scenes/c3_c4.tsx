@@ -175,7 +175,8 @@ export const ch34: Part = (() => {
 	const c117 = pre(s0(117));
 	add(c117, 'H4 slide', (d) => <Clip name="H4" dur={d} startAt={(700 - (w0(117, 'slides') - c117)) / 60} grade="none" from={[1.0, 0, 0]} to={[1.04, 0, 0]} />);
 	over(pre(w0(117, 'joined')), pre(s0(118)), 'joined', <Label at={0} text="JOINED" x={960} y={170} size={64} align="center" color={C.orange} />);
-	tag(c114, pre(s0(118)));
+	tag(c114, maz);
+	tag(pre(w0(115, 'hull')), pre(s0(118)));
 
 	// S118–120: ten metres longer; four autorickshaws
 	const c118 = pre(s0(118));
@@ -283,14 +284,15 @@ export const ch34: Part = (() => {
 
 	// S149–153: 2025, INS Kalvari's refit went ahead without it (C11)
 	const c149 = pre(s0(149));
-	add(c149, 'KAL above', (d) => <Clip name="KAL_above" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.1, 0, 0]} />);
+	add(c149, 'VAG shed refit', (d) => <Clip name="VAG_shed" dur={d} startAt={1.5} grade="day" from={[1.0, 0, 0]} to={[1.1, 0, 0]} />);
 	over(pre(w0(149, 'twenty')), pre(s0(154)), '2025', <Label at={0} text="2025" x={170} y={170} size={96} mono />);
 	over(pre(w0(150, 'Kalvari')), pre(s0(151)), 'ins kalvari', <Label at={0} text="INS KALVARI · IN REFIT" x={170} y={320} size={52} />);
 	over(pre(w0(151, 'engine')), pre(s0(152)), 'not ready', <Label at={0} text="AIP NOT READY" x={170} y={320} size={56} color={C.amber} />);
-	add(pre(s0(152)), 'KAL sea out', (d) => <Clip name="KAL_awash" dur={d} grade="day" />);
+	add(pre(s0(152)), 'TRI out to sea', (d) => <Clip name="TRI_side" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.1, 0, 0]} />);
 	over(pre(w0(152, 'without')), pre(s0(154)), 'without', <Label at={0} text="OUT WITHOUT IT" x={170} y={320} size={56} color={C.red} />);
 	over(pre(w0(153, 'window')), pre(s0(154)), 'window', <Label at={0} text="THE WINDOW CLOSED" x={960} y={700} size={64} align="center" color={C.red} />);
-	over(c149, pre(s0(154)), 'credit kal', <Credit text="INS KALVARI · INDIAN NAVY / MDL" />);
+	over(c149, pre(s0(152)), 'credit vag shed', <Credit text={VAG} />);
+	over(pre(s0(152)), pre(s0(154)), 'credit tri', <Credit text="INS KALVARI SEA TRIALS" />);
 	return {shots, overlays};
 })();
 

@@ -16,7 +16,8 @@ export const VerticalClip: React.FC<{name: string; dur: number; startAt?: number
 		<Cam dur={dur} from={[1.0, 0, 0]} to={[1.07, 0, -10]} seed={name}>
 			<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
 				<div style={{height: 1000, width: 563, boxShadow: '0 30px 90px rgba(0,0,0,0.7)', border: '2px solid rgba(255,255,255,0.15)', overflow: 'hidden'}}>
-					<OffthreadVideo src={staticFile(`assets/media/clips/${name}.mp4`)} startFrom={Math.round(startAt * 60)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+					{/* the source's corner logos sit in its top 12%: scale from the bottom so they fall outside the frame */}
+					<OffthreadVideo src={staticFile(`assets/media/clips/${name}.mp4`)} startFrom={Math.round(startAt * 60)} muted style={{width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.3)', transformOrigin: '50% 92%'}} />
 				</div>
 			</AbsoluteFill>
 		</Cam>

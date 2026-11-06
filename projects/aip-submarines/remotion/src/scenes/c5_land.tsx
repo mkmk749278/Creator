@@ -22,7 +22,7 @@ const Deeper: React.FC<{dur: number}> = ({dur}) => {
 	return (
 		<AbsoluteFill>
 			<Underwater depth={0.5 + 0.5 * k} />
-			<SubUnderwater cam={[20 - 30 * k, 6 + 10 * k, 90]} look={[-10 * k, -4 * k, 0]} fov={34} x={-10 + 25 * k} depthTint={0.5 + 0.5 * k} />
+			<SubUnderwater cam={[-10 + 25 * k + 6, 6 + 10 * k, 95]} look={[-10 + 25 * k, -4 * k, 0]} fov={34} x={-10 + 25 * k} depthTint={0.5 + 0.5 * k} />
 		</AbsoluteFill>
 	);
 };
@@ -124,7 +124,7 @@ export const ch5: Part = (() => {
 				{f: d, lon: 84.5, lat: 20.5, zoom: 0.96},
 			]}
 			pins={[
-				{at: w0(167, 'Yuan') - c165, ll: [108, 30], label: "CHINA'S YUAN CLASS", sub: 'HAS AIP', color: C.ink, side: 'left'},
+				{at: w0(167, 'Yuan') - c165, ll: [108, 26.5], label: "CHINA'S YUAN CLASS", sub: 'HAS AIP', color: C.ink, side: 'left'},
 				{at: w0(168, 'Pakistan') - c165, ll: P.karachi, label: 'PAKISTAN · HANGOR CLASS', sub: 'APR 2026 · AIP, ITS NAVY SAYS', color: C.ink},
 			]}
 		/>
