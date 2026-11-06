@@ -119,10 +119,16 @@ export const ch34: Part = (() => {
 
 	// S101–102: the Defence Secretary, October 2026 (C14 context; quoted words only)
 	const c101 = pre(s0(101));
-	add(c101, 'VAG valves safety', (d) => <Clip name="VAG_valves" dur={d} startAt={4} grade="day" />);
-	over(pre(w0(101, 'October')), pre(s0(103)), 'oct', <Label at={0} text="OCT 2026" sub="DEFENCE SECRETARY" x={170} y={190} size={56} mono />);
-	over(pre(w0(102, 'strict')), pre(s0(103)), 'quote', <Label at={0} text="“STRICT SAFETY CULTURE”" sub="“NO COMPROMISE”" x={170} y={380} size={58} color={C.amber} />);
-	over(c101, pre(s0(103)), 'credit vag', <Credit text={VAG} />);
+	// review r1: the quote sat on a sailor's face and read as the Secretary himself; it now sits on the sealed hull drawing
+	add(c101, 'sealed chain quote', (d) => (
+		<Plate dur={d} seed="chainq" from={[1.06, 0, 0]} to={[1.12, 0, 0]}>
+			<div style={{opacity: 0.45}}>
+				<Chain cue={{h2: -200, o2: -200, cold: -200, cell: -200, acid: -200, elec: -200, water: -200, back: -200, hull: -200}} />
+			</div>
+		</Plate>
+	));
+	over(pre(w0(101, 'October')), pre(s0(103)), 'oct', <Label at={0} text="OCT 2026" x={960} y={220} size={60} mono align="center" />);
+	over(pre(w0(102, 'strict')), pre(s0(103)), 'quote', <Label at={0} text="“STRICT SAFETY CULTURE”" sub="“NO COMPROMISE” · DEFENCE SECRETARY" x={960} y={420} size={64} color={C.amber} align="center" />);
 
 	// S103–106: the balance
 	const c103 = pre(s0(103));
@@ -284,14 +290,14 @@ export const ch34: Part = (() => {
 
 	// S149–153: 2025, INS Kalvari's refit went ahead without it (C11)
 	const c149 = pre(s0(149));
-	add(c149, 'VAG shed refit', (d) => <Clip name="VAG_shed" dur={d} startAt={1.5} grade="day" from={[1.0, 0, 0]} to={[1.1, 0, 0]} />);
+	add(c149, 'KAL above', (d) => <Clip name="KAL_above" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.1, 0, 0]} />); // INS Kalvari herself (review r1: the Vagir shot was captioned Kalvari)
 	over(pre(w0(149, 'twenty')), pre(s0(154)), '2025', <Label at={0} text="2025" x={170} y={170} size={96} mono />);
-	over(pre(w0(150, 'Kalvari')), pre(s0(151)), 'ins kalvari', <Label at={0} text="INS KALVARI · IN REFIT" x={170} y={320} size={52} />);
+	over(pre(w0(150, 'Kalvari')), pre(s0(151)), 'ins kalvari', <Label at={0} text="INS KALVARI" sub="IN REFIT IN 2025" x={170} y={320} size={56} />);
 	over(pre(w0(151, 'engine')), pre(s0(152)), 'not ready', <Label at={0} text="AIP NOT READY" x={170} y={320} size={56} color={C.amber} />);
 	add(pre(s0(152)), 'TRI out to sea', (d) => <Clip name="TRI_side" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.1, 0, 0]} />);
 	over(pre(w0(152, 'without')), pre(s0(154)), 'without', <Label at={0} text="OUT WITHOUT IT" x={170} y={320} size={56} color={C.red} />);
 	over(pre(w0(153, 'window')), pre(s0(154)), 'window', <Label at={0} text="THE WINDOW CLOSED" x={960} y={700} size={64} align="center" color={C.red} />);
-	over(c149, pre(s0(152)), 'credit vag shed', <Credit text={VAG} />);
+	over(c149, pre(s0(152)), 'credit kal', <Credit text="INS KALVARI · INDIAN NAVY / MDL" />);
 	over(pre(s0(152)), pre(s0(154)), 'credit tri', <Credit text="INS KALVARI SEA TRIALS" />);
 	return {shots, overlays};
 })();

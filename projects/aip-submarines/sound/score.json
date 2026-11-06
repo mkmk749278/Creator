@@ -1,4 +1,7 @@
 {
+  "_why": "review r1: the bed sat only 2-4 dB under the voice in gaps; PLAYBOOK §12 wants about -25 dB under the voice, -12 in the gaps",
+  "bed_rms_db": -27,
+  "duck_db": -20,
   "slots": [
     {"track": "Under Load", "from": 0, "to": "s:29+1", "fade_in": 2.5, "fade_out": 2.0, "gain_db": -2, "why": "cold open: the night, the paradox"},
     {"track": "The Mechanism", "from": "s:29-1", "to": "s:79+1", "fade_in": 2.0, "fade_out": 2.0, "why": "ch1-2: how the hunt and the battery work"},

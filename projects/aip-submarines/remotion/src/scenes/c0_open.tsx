@@ -127,7 +127,7 @@ export const open: Part = (() => {
 	// S3–6: the control room, real (INS Vagir)
 	add(pre(s0(3)), 'VAG ctrl', (d) => <Clip name="VAG_ctrl" dur={d} grade="red" />);
 	add(pre(s0(4)), 'VAG consoles', (d) => <Clip name="VAG_consoles" dur={d} startAt={1.0} grade="red" />);
-	add(pre(s0(5)), 'VAG periscope', (d) => <Clip name="VAG_peri" dur={d} grade="red" />);
+	add(pre(s0(5)), 'VAG red consoles', (d) => <Clip name="VAG_consoles" dur={d} startAt={7} grade="red" />); // windowless consoles (review r1: the periscope shot had a skyline)
 	over(pre(s0(3)), pre(w0(6, 'Raise')), 'credit vag', <Credit text={VAG} />);
 
 	// S6–9: "Raise" → hard cut to the mast; it breaks the surface on "mast rises"

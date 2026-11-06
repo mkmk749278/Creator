@@ -152,7 +152,7 @@ export const Label: React.FC<{
 				{text}
 			</div>
 			{sub ? (
-				<div style={{marginTop: 8, fontFamily: F.label, fontWeight: 700, fontSize: 32, color: C.dim, textTransform: 'uppercase', letterSpacing: 1, whiteSpace: 'nowrap'}}>
+				<div style={{marginTop: 8, fontFamily: F.label, fontWeight: 700, fontSize: 40, color: C.dim, textTransform: 'uppercase', letterSpacing: 1, whiteSpace: 'nowrap'}}>
 					<span style={{background: 'rgba(3,7,13,0.78)', padding: '4px 12px'}}>{sub}</span>
 				</div>
 			) : null}

@@ -290,6 +290,7 @@ def main() -> None:
     out.mkdir(parents=True, exist_ok=True)
     timing = json.loads((film / "vo/timing.json").read_text())
     A = Anchors(timing)
+    score = json.loads((film / "sound/score.json").read_text())
     n = int(round(timing["durationInFrames"] / timing["fps"] * SR))  # exactly the picture's length
 
     # ---- voice: peaks at −3 dBFS
@@ -302,7 +303,7 @@ def main() -> None:
     frames = np.sqrt(np.mean(voice[: len(voice) // hop * hop, 0].reshape(-1, hop) ** 2, axis=1))
     speech = (20 * np.log10(frames + 1e-9) > -40).astype(float)
     speech = np.convolve(speech, np.ones(25), mode="same") > 0  # bridge gaps under 0.25 s
-    duck_db = np.where(speech, -11.0, 0.0)
+    duck_db = np.where(speech, float(score.get("duck_db", -11.0)), 0.0)  # score.json may set it (PLAYBOOK §12: −25 under the voice)
     ramp = 50  # 0.5 s at 100 Hz
     duck_db = np.convolve(np.pad(duck_db, ramp, mode="edge"), np.ones(ramp) / ramp, mode="same")[ramp:-ramp]
     duck = np.repeat(db(1) ** duck_db, hop)  # 10**(dB/20)
@@ -310,7 +311,6 @@ def main() -> None:
 
     # ---- music bed: each slot at −23 dBFS RMS, faded, ducked
     tracks = {r["title"]: film / r["file"] for r in csv.DictReader((film / "sound/music_manifest.csv").open())}
-    score = json.loads((film / "sound/score.json").read_text())
     bed = np.zeros((n, 2), np.float32)
     cache: dict = {}
     for s in score["slots"]:
@@ -324,7 +324,7 @@ def main() -> None:
         seg = src[off: off + int((t1 - t0) * SR)]
         if len(seg) < int((t1 - t0) * SR) - SR // 10:
             print(f"  ! {s['track']} runs out {((t1 - t0) * SR - len(seg)) / SR:.1f}s early in slot {s['why'][:40]}")
-        seg = seg * db(-23 - rms_db(seg) + s.get("gain_db", 0))
+        seg = seg * db(float(score.get("bed_rms_db", -23)) - rms_db(seg) + s.get("gain_db", 0))
         fi, fo = int(s.get("fade_in", 1.5) * SR), int(s.get("fade_out", 1.5) * SR)
         env = np.ones(len(seg))
         env[: min(fi, len(env))] = np.linspace(0, 1, min(fi, len(env))) ** 2

@@ -167,7 +167,7 @@ export const ch12: Part = (() => {
 	add(c66, 'dial', (d) => (
 		<Plate dur={d} seed="dial">
 			<SpeedDial x={620} y={560} keys={[[0, 0.08], [w0(67, 'run') - c66, 0.95], [w0(68, 'Push') - c66, 0.95]]} />
-			<Battery x={1080} y={430} a={w0(68, 'draining') - c66} b={w0(68, 'fast') - c66 + 30} from={0.9} to={0.18} scale={1.2} appear={w0(68, 'back') - c66} />
+			<Battery x={1080} y={430} a={w0(68, 'Push') - c66} b={w0(68, 'draining') - c66 + 10} from={0.9} to={0.12} scale={1.2} appear={w0(68, 'Push') - c66 - 6} />
 		</Plate>
 	));
 	over(pre(w0(66, 'crawl')), pre(w0(67, 'run')), 'weeks', <Label at={0} text="CRAWL FOR WEEKS" x={960} y={170} size={60} align="center" color={C.green} />);

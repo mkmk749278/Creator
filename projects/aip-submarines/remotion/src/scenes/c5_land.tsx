@@ -57,6 +57,46 @@ const NextFilm: React.FC<{dur: number; depth: number; sphere: number; card: numb
 	);
 };
 
+/** Khanderi's road to sea trials (review r1: the map alone drifted): a vertical timeline over the sea, each step lights on
+ * its word and the boat marker moves down to it. */
+const RoadToSea: React.FC<{at: [number, number, number, number]}> = ({at}) => {
+	const f = useCurrentFrame();
+	const steps: [string, string][] = [
+		['OCT 2026', 'TESTS AT HAZIRA'],
+		['EARLY 2027', 'TO MAZAGON DOCK'],
+		['MID-2027', 'FITTED IN KHANDERI'],
+		['THEN', 'SEA TRIALS'],
+	];
+	const x = 150;
+	const y0 = 190;
+	const gap = 170;
+	const pos = at.reduce((acc, a, i) => acc + (i === 0 ? 0 : tw(f, a, a + 40, 0, 1, ez.sweep)), 0);
+	const by = y0 + gap * pos;
+	return (
+		<svg width={1920} height={1080} style={{position: 'absolute', left: 0, top: 0}}>
+			<rect x={x - 50} y={y0 - 60} width={560} height={gap * 3 + 150} rx={16} fill="rgba(3,7,13,0.8)" />
+			<line x1={x} x2={x} y1={y0} y2={y0 + gap * 3} stroke={C.dim} strokeWidth={4} />
+			<line x1={x} x2={x} y1={y0} y2={by} stroke={C.green} strokeWidth={7} />
+			{steps.map(([d, t], i) => {
+				const lit = tw(f, at[i] - 4, at[i] + 10, 0, 1, ez.arrive);
+				const y = y0 + gap * i;
+				return (
+					<g key={d}>
+						<circle cx={x} cy={y} r={15} fill={lit > 0.5 ? C.green : '#1b222b'} stroke={C.ink} strokeWidth={3} />
+						<text x={x + 40} y={y - 6} fill={lit > 0.5 ? C.ink : C.dim} fontFamily={F.mono} fontWeight={700} fontSize={44} opacity={0.45 + 0.55 * lit}>
+							{d}
+						</text>
+						<text x={x + 40} y={y + 40} fill={lit > 0.5 ? C.amber : C.dim} fontFamily={F.label} fontWeight={800} fontSize={36} opacity={0.45 + 0.55 * lit}>
+							{t}
+						</text>
+					</g>
+				);
+			})}
+			<circle cx={x} cy={by} r={24} fill="none" stroke={C.amber} strokeWidth={5} />
+		</svg>
+	);
+};
+
 export const ch5: Part = (() => {
 	const shots: Part['shots'] = [];
 	const overlays: Part['overlays'] = [];
@@ -95,12 +135,7 @@ export const ch5: Part = (() => {
 			routes={[{a: w0(159, 'goes') - c157, b: w0(159, 'Dock') - c157 + 20, from: P.hazira, to: P.mumbai, color: C.amber}]}
 		/>
 	));
-	over(pre(w0(157, 'October')), pre(s0(158)), 'oct', <Label at={0} text="OCT 2026" sub="THE NEXT ROUND OF TESTS" x={120} y={230} size={64} mono />);
-	over(pre(w0(158, 'powered')), pre(s0(159)), 'navy rules', <Label at={0} text="TESTED TO THE NAVY'S RULES" x={120} y={230} size={52} color={C.cyan} />);
-	over(pre(w0(159, 'Early')), pre(s0(160)), 'early 27', <Label at={0} text="EARLY 2027" x={120} y={230} size={64} mono />);
-	over(pre(w0(160, 'middle')), pre(s0(161)), 'mid 27', <Label at={0} text="FITTING: MID-2027" sub="THEN SEA TRIALS" x={120} y={230} size={60} mono color={C.green} />);
-	over(pre(w0(162, 'Built')), pre(s0(163)), 'built lt', <Label at={0} text="BUILT BY L&T" x={120} y={230} size={56} color={C.amber} />);
-	over(pre(w0(163, 'Fitted')), pre(s0(164)), 'fitted mdl', <Label at={0} text="FITTED BY MAZAGON DOCK" x={120} y={230} size={56} />);
+	over(pre(w0(157, 'October')), pre(s0(164)), 'road', <RoadToSea at={[9, w0(159, 'Early') - pre(w0(157, 'October')), w0(160, 'middle') - pre(w0(157, 'October')), w0(160, 'sea') - pre(w0(157, 'October'))]} />);
 
 	const c164 = pre(s0(164));
 	add(c164, 'six boats', (d) => (

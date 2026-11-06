@@ -44,9 +44,9 @@ export const SpoonPhone: React.FC<{spoon: number; grams: number; phone: number; 
 	return (
 		<svg width={1920} height={1080} style={{position: 'absolute'}}>
 			<g transform={`translate(560 560) scale(${sp})`} opacity={1 - 0.7 * tn}>
-				<ellipse cx={0} cy={0} rx={150} ry={70} fill="#b8bec6" stroke="#e6ebf0" strokeWidth={4} />
-				<path d="M140 -10 L420 -60 L425 -40 L150 20 Z" fill="#b8bec6" stroke="#e6ebf0" strokeWidth={3} />
-				<ellipse cx={0} cy={-18} rx={118} ry={44} fill="#f2f2ef" />
+				<ellipse cx={0} cy={0} rx={110} ry={62} fill="#b8bec6" stroke="#e6ebf0" strokeWidth={4} />
+				<path d="M100 -6 Q200 -22 460 -34 Q470 -26 462 -20 Q210 -4 104 14 Z" fill="#b8bec6" stroke="#e6ebf0" strokeWidth={3} />
+				<ellipse cx={0} cy={-12} rx={86} ry={40} fill="#f2f2ef" />
 				{Array.from({length: 40}).map((_, i) => (
 					<circle key={i} cx={-100 + ((i * 37) % 200)} cy={-30 + ((i * 13) % 26)} r={3} fill="#ffffff" opacity={0.8} />
 				))}
@@ -124,7 +124,7 @@ export const Chain: React.FC<{cue: ChainCues}> = ({cue}) => {
 					<rect key={i} x={790 + i * 40} y={420} width={26} height={260} rx={4} fill={C.cyan} fillOpacity={0.15 + 0.35 * on(cue.elec)} stroke={C.cyan} strokeWidth={3} />
 				))}
 				<T x={970} y={740} s={44} c={C.cyan}>FUEL CELL</T>
-				<T x={970} y={800} s={34} c={C.dim} o={on(cue.acid)}>PHOSPHORIC ACID</T>
+				<T x={790} y={800} s={34} c={C.dim} o={on(cue.acid)} a="end">PHOSPHORIC ACID</T>
 			</g>
 			{flow(1170, 520, 1520, 520, C.cyan, cue.elec, 8)}
 			<T x={1345} y={490} s={40} c={C.cyan} o={on(cue.elec)}>ELECTRICITY</T>
@@ -133,12 +133,12 @@ export const Chain: React.FC<{cue: ChainCues}> = ({cue}) => {
 				<T x={1640} y={540} s={40} c={C.green}>BATTERY</T>
 			</g>
 			{/* water out, and back to the powder */}
-			{flow(970, 680, 970, 860, C.frost, cue.water, 4)}
-			{on(cue.water) > 0 ? <T x={1060} y={880} s={44} c={C.frost} a="start" o={on(cue.water)}>WATER</T> : null}
+			{flow(1150, 680, 1150, 860, C.frost, cue.water, 4)}
+			{on(cue.water) > 0 ? <T x={1190} y={880} s={44} c={C.frost} a="start" o={on(cue.water)}>WATER</T> : null}
 			{(() => {
 				const k = tw(f, cue.back, cue.back + 50, 0, 1, ez.sweep);
 				return k > 0 ? (
-					<path d="M960 870 Q600 960 330 690" fill="none" stroke={C.frost} strokeWidth={8} strokeDasharray={`${k * 900} 900`} strokeLinecap="round" />
+					<path d="M1140 870 Q640 990 330 690" fill="none" stroke={C.frost} strokeWidth={8} strokeDasharray={`${k * 900} 900`} strokeLinecap="round" />
 				) : null;
 			})()}
 			{hull > 0 ? (
@@ -236,14 +236,12 @@ export const TrapLoop: React.FC<{both: number; navy: number; engine: number; clo
 			<g opacity={Math.max(b, n)}>
 				<rect x={170} y={380} width={620} height={300} rx={20} fill="rgba(10,16,24,0.9)" stroke={n > 0.5 ? C.ink : C.dim} strokeWidth={5} />
 				<T x={480} y={470} s={48}>THE NAVY</T>
-				<T x={480} y={550} s={34} c={C.dim} o={n}>WON'T BET A WAR SUBMARINE</T>
-				<T x={480} y={600} s={34} c={C.dim} o={n}>ON AN ENGINE NEVER AT SEA</T>
+				<T x={480} y={575} s={50} c={C.ink} o={n}>NEEDS SEA PROOF</T>
 			</g>
 			<g opacity={Math.max(b, e)}>
 				<rect x={1130} y={380} width={620} height={300} rx={20} fill="rgba(10,16,24,0.9)" stroke={e > 0.5 ? C.amber : C.dim} strokeWidth={5} />
 				<T x={1440} y={470} s={48} c={C.amber}>THE ENGINE</T>
-				<T x={1440} y={550} s={34} c={C.dim} o={e}>CAN'T GO TO SEA UNTIL</T>
-				<T x={1440} y={600} s={34} c={C.dim} o={e}>A BOAT IS CUT OPEN FOR IT</T>
+				<T x={1440} y={575} s={44} c={C.ink} o={e}>NEEDS A BOAT CUT OPEN</T>
 			</g>
 			<g fill="none" stroke={col} strokeWidth={9} strokeLinecap="round">
 				<path d="M800 400 C 900 230, 1020 230, 1120 400" pathLength={1} strokeDasharray={`${Math.min(1, cl * 2) * (1 - 0.6 * gapOpen)} 1`} />
