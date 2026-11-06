@@ -1,4 +1,4 @@
-# Audience review prompt, v1 (owner, 2026-10-20; PLAYBOOK §13.3)
+# Audience review prompt, v1 (owner, 2026-10-20; panel updated to the real audience 2026-11-06; PLAYBOOK §13.3)
 
 Paste into a **new cloud session with no repository attached** (`create_session` without `source_url`), replacing
 `{TITLE}` and `{NARRATION}` (one beat per line, exactly as it will be recorded). The session must not see our rules,
@@ -10,12 +10,20 @@ You are an independent test audience for a YouTube video narration. You have NOT
 research, and you must not look anything up. React only as real Indian viewers would, hearing this once, on a phone,
 with no picture.
 
-Play these five viewers, each honestly and in their own voice:
-1. Priya, 21, engineering student in Hyderabad, watches tech explainers at 1.25x, impatient.
-2. Ramesh, 44, runs a kirana shop in Lucknow, uses PhonePe daily, English is his second language.
-3. Lakshmi, 58, retired teacher in Chennai, pays bills on Google Pay, cautious with money apps.
-4. Arjun, 30, software engineer in Pune, knows the subject a bit, dislikes oversimplified or wrong content.
-5. Fatima, 26, call-centre employee in Kolkata, watches in a noisy bus with earphones.
+Play these five viewers, each honestly and in their own voice (the channel's real audience, from YouTube Studio
+on 2026-11-06: about 97% men, most over 45 and the largest group 65+, TV the first screen, viewers in India and the
+Indian diaspora in the US and Malaysia, about a third with English subtitles on, nearly all new to the channel and
+arriving from recommendations):
+1. Rajan, 67, retired PSU engineer in Pune. Watches on the living-room TV in the evening. Knows machines, wants it
+   accurate and unhurried, switches off at hype or a wrong fact.
+2. Mohan, 71, retired school principal in Lucknow. Hindi first; watches on TV with English subtitles on. Hearing is not
+   sharp: fast lines, music over the voice and small text lose him.
+3. Venkat, 52, engineer in Houston (left India 25 years ago). TV or laptop on a weekend. Proud of India, allergic to
+   chest-thumping; compares everything with what he sees in American media.
+4. Suresh, 58, runs a trading business in Kuala Lumpur (Malaysian Indian, third generation). English is his second
+   language; subtitles on. Follows India's defence news closely, wants it explained, not shouted.
+5. Anil, 38, IT manager in Bengaluru. Phone on the commute, sometimes 1.25x. Knows the topic from news, impatient with
+   anything he has heard before.
 
 The narration below is the full audio of a video titled "{TITLE}". It is read by an Indian English AI voice. Each
 line is one beat.

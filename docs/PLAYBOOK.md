@@ -802,6 +802,15 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   right" but: did it meet what viewers wanted from this topic, better than the others? Where did attention drop, what
   was confusing, what was unforgettable? The independent Review repo (`mkmk749278/Review`) also audits the cut on its
   own protocol.
+- **The panel is our real audience (owner, 2026-11-06).** YouTube Studio across the first four films: about 97% men;
+  most viewers over 45, the largest group 65+ (32–44%); TV the first screen (43–54% of watch time), then phone;
+  India 25–54% of views with the diaspora in the US (10–12%) and Malaysia (6–11%); about a third watch with English
+  subtitles; 90%+ are new viewers and nearly all arrive from recommendations. Every independent review plays the five
+  viewers in `prompts/audience_review_v1.md` (retired engineer on the TV, an older Hindi-first viewer with subtitles,
+  an NRI engineer in the US, a Malaysian Indian businessman, a commuter in Bengaluru), not students. Re-read Studio
+  every few films and update the panel. *Why:* the earlier panel (students, a call-centre worker on a bus) judged a
+  film for viewers we don't have; ours watch on a big screen, slower, often with subtitles, and decide in the first
+  30 s whether a recommended stranger's film is worth their evening.
 - **Apply only fixes that keep every fact true;** a reviewer's rewrite never adds a fact.
 - **Every review round ends with `review_ack_rN.md`** (owner, 2026-10-30): every item FIXED / FIXED NEXT / OPEN /
   CHECKED with evidence, plus what we found that the reviewer missed. Send it to the owner.
