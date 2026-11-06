@@ -667,6 +667,9 @@ factory and machine footage, archive headlines, official documents, satellite vi
 - **Photos:** Wikimedia Commons (`scripts/commons_fetch.py`; files at standard thumb widths with a User-Agent; the
   search API rate-limits) → Openverse (`license_type=commercial`) → Library of Congress, Smithsonian Open Access,
   Rijksmuseum, Europeana.
+- **Map ground:** NASA Blue Marble with bathymetry (public domain; `scripts/bluemarble_india.py`). Download the
+  21600 px tiles from `assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-topography-bathymetry/december/`;
+  *why:* `eoimages.gsfc.nasa.gov` resets connections from the cloud (2026-11-06).
 - **Blocked from the cloud:** YouTube downloads (mostly), Vimeo, Mixkit, Videvo, the Pexels and Pixabay websites,
   C-SPAN, British Pathé, PIB and Prasar Bharati archives. Never route around a block with a VPN, proxy or another
   client; the owner fetches from the phone instead.

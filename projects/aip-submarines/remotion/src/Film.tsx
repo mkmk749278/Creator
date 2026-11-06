@@ -35,10 +35,10 @@ const FRAMINGS: [number, number, number][] = [
 	[1.09, 20, -20],
 	[1.03, -25, 15],
 ];
-const SEG = 240;
+const SEG = 270; // split anything over 4.5 s
 const Reframe: React.FC<{dur: number; seed: number; children: React.ReactNode}> = ({dur, seed, children}) => {
 	const f = useCurrentFrame();
-	const n = Math.max(1, Math.round(dur / SEG));
+	const n = Math.max(1, Math.ceil(dur / SEG));
 	if (n === 1) {
 		return <>{children}</>;
 	}

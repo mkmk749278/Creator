@@ -1,8 +1,17 @@
 import {noise2D} from '@remotion/noise';
 import React from 'react';
 import {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
-import {COUNTRIES} from '../../../../../lib/remotion/map/indiaGeo';
-import {project} from '../../../../../lib/remotion/map/IndiaMap';
+import {COUNTRIES, MAP_PROJ} from '../../../../../lib/remotion/map/indiaGeo';
+
+/** Lambert azimuthal equal-area, the same projection as scripts/india_map.py (lib/remotion/map/IndiaMap.tsx). */
+const project = ([lon, lat]: [number, number]): [number, number] => {
+	const r = Math.PI / 180;
+	const l = (lon - MAP_PROJ.lon0) * r;
+	const p = lat * r;
+	const p0 = MAP_PROJ.lat0 * r;
+	const k = Math.sqrt(2 / (1 + Math.sin(p0) * Math.sin(p) + Math.cos(p0) * Math.cos(p) * Math.cos(l)));
+	return [(MAP_PROJ.rKm * k * Math.cos(p) * Math.sin(l)) / MAP_PROJ.kmPerUnit, -(MAP_PROJ.rKm * k * (Math.cos(p0) * Math.sin(p) - Math.sin(p0) * Math.cos(p) * Math.cos(l))) / MAP_PROJ.kmPerUnit];
+};
 import {C, F} from '../theme';
 import {ez, tw} from './kit';
 import bm from '../../../media/bm_plate.json';
