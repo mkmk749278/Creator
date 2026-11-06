@@ -15,7 +15,7 @@ const pre = (f: number) => f - 9;
 const VAG = 'INDIAN NAVY · INS VAGIR FILM';
 
 /** The boat under the waves, camera gliding alongside; push to the fin on "Indian submarine". */
-const UnderShot: React.FC<{dur: number; push: number}> = ({dur, push}) => {
+export const UnderShot: React.FC<{dur: number; push: number}> = ({dur, push}) => {
 	const f = useCurrentFrame();
 	const k = tw(f, 0, dur, 0, 1);
 	const pk = tw(f, push, push + 90, 0, 1);
@@ -28,7 +28,7 @@ const UnderShot: React.FC<{dur: number; push: number}> = ({dur, push}) => {
 };
 
 /** The boat in profile under water, the AIP module glowing mid-hull ("There is a cure"), then the ghost. */
-const ProfileShot: React.FC<{dur: number; plugAt: number; ghostAt?: number; goneAt?: number; backAt?: number}> = ({dur, plugAt, ghostAt, goneAt, backAt}) => {
+export const ProfileShot: React.FC<{dur: number; plugAt: number; ghostAt?: number; goneAt?: number; backAt?: number}> = ({dur, plugAt, ghostAt, goneAt, backAt}) => {
 	const f = useCurrentFrame();
 	const k = tw(f, 0, dur, 0, 1);
 	const plug = tw(f, plugAt, plugAt + 30, 0, 1, ez.arrive);

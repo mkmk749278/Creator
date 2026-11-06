@@ -220,7 +220,7 @@ export const Plate: React.FC<{children?: React.ReactNode; dur: number; seed?: st
 }) => (
 	<AbsoluteFill style={{background: '#0d1116'}}>
 		<Cam dur={dur} from={from} to={to} seed={seed}>
-			<AbsoluteFill style={{transform: 'perspective(2400px) rotateX(12deg) scale(1.12)', transformOrigin: '50% 60%'}}>
+			<AbsoluteFill style={{transform: 'perspective(2400px) rotateX(8deg) scale(1.0)', transformOrigin: '50% 55%'}}>
 				<svg width="1920" height="1080" style={{position: 'absolute'}}>
 					<defs>
 						<filter id="brush">
