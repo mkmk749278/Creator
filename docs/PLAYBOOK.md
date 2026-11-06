@@ -531,6 +531,9 @@ cards "a collage of templates".
   highlight drawing, a new element arriving on its word. Grain, dust or a 2% zoom over 15 s do not. Plan the next move
   at the dead spots: after a type-on, after a counter lands, after a card finishes building. *Why:* an outside review
   found 5–9 s holds that had passed two reviews because they "moved" by grain alone.
+- **A 3D camera that tracks the boat cancels the motion:** the frame looks frozen even though everything moves.
+  Hold the camera (or push it) while the object crosses the frame. `freezedetect` (n=0.002) also flags dark,
+  low-contrast underwater frames that do move: check those two frames apart before "fixing" them (2026-11-06).
 - **Shots change about every 3.5–5 s;** split any hold over about 4.6 s into new framings. *Why:* the first pharma cut
   laid one shot per VO line and averaged 8.6 s a shot.
 - At least 85% of the runtime is moving footage or animation. Eased motion only (springs, curves), never linear.
@@ -862,6 +865,16 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
 - One heavy job per session (about 14 GB memory); if ffmpeg dies with an empty error, check for OOM.
 - Look at the runner's render, not only local stills: the runner had no Indian-script fonts once, and labels rendered as
   empty boxes.
+- **`remotion-render.yml` needs both Drive folders:** `<film>/render-media` (clips, maps, hero clips) and
+  `<film>/vo-render` (it may hold only `vo/lock.json` when the voice comes from the mix). A missing folder fails every
+  shard in a minute (2026-11-06).
+- **A shard can hang on the runner's `apt-get install ffmpeg` step** (30 min, no progress). Cancel the run, then
+  `rerun_failed_jobs`: finished shards keep their artifacts and the join still runs (2026-11-06).
+- **Blender on the runners:** the job limit is 340 min and a timed-out shard loses all its frames (they upload at the
+  end). Volumes, glass bubbles and emission make frames 2–4× slower than a local test predicts: use 3–4 shards for
+  any shot over 300 frames, or start a low-sample backup render of the slow range on spare runners and cancel
+  whichever finishes second. Artifacts download through `download_workflow_run_artifact` (a URL valid for about 10
+  minutes; `curl -C -` with retries).
 
 ---
 
