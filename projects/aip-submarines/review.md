@@ -49,5 +49,10 @@ Our own review (PLAYBOOK §13.1) of the first 720p cut: 9:05.97, 1280×720 at 60
 - **Map credit cut off on the left** ("ASA BLUE MARBLE"): the film's reframe moves (up to 1.09×, −30 px) pushed it past
   the edge. It now sits at x 150, below the Mazagon label; checked on all four maps.
 
-## Next
-Round 5 renders → the owner watches it → independent viewer review r2 (real-audience panel) → `review_ack_r2.md` → the owner approves the cut → the 4K master.
+## Round 5 (aip_review_r5_720p.mp4) · the cut for the owner and independent review r2
+- −14.1 LUFS, −1.1 dBTP, 545.97 s; black only the 0.18 s dissolve at 9:01.3. `freezedetect` (n=0.003) no longer
+  lists 5:46 or 7:46; what remains is the round-3 noise-floor list (underwater 0:02–0:51, 2:28, 3:02) and the ending.
+- Checked on the frame: the quote beat (4:39, 4:43), Naval Group (5:46–5:48, moving), Ambernath on "D-R-D-O's"
+  (7:48), the map credit in full.
+
+The owner watches round 5 → independent viewer review r2 (real-audience panel) → `review_ack_r2.md` → the owner approves the cut → the 4K master.
