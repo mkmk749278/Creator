@@ -41,3 +41,5 @@ video/**/work-*/
 
 # shared asset library: large files are re-fetched by scripts/library.py fetch
 library/_cache/
+.venv-blender/
+.venv-geo/

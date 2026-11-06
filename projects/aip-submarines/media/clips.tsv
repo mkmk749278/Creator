@@ -21,7 +21,7 @@ KAL_hall	02_Cisf_i9wf1A.mp4	65.6	76.4	600:300:0:71	hull sections in the build ha
 KAL_sea	02_Cisf_i9wf1A.mp4	119.6	124.4	600:338:0:71	boat at sea
 KAL_awash	02_Cisf_i9wf1A.mp4	125.6	131.4	600:338:0:71	fin awash
 KAL_ctrl	02_Cisf_i9wf1A.mp4	191.6	206.4	600:338:0:71	control room, consoles
-TRI_wake	03_UqgXvO28E1g.mp4	0	38	836:470:9:4	boat drawing white wake arcs
+TRI_wake	03_UqgXvO28E1g.mp4	0	9	836:470:9:4	boat drawing white wake arcs
 TRI_surf	03_UqgXvO28E1g.mp4	39.6	44.4	836:470:9:4	boat on the surface, oblique
 TRI_above	03_UqgXvO28E1g.mp4	44.6	53.4	836:470:9:4	boat from above
 TRI_side	03_UqgXvO28E1g.mp4	54.6	58.4	836:470:9:4	surfaced, side on
@@ -30,7 +30,7 @@ KHA_bow	09_O55T0nrwmpo.mp4	9.6	14.4	1180:664:0:56	Khanderi at sea, bow wave
 KHA_turq	09_O55T0nrwmpo.mp4	24.6	29.4	1180:664:0:56	boat in turquoise water
 KHA_sea	09_O55T0nrwmpo.mp4	44.6	49.4	1180:664:0:56	boat at sea
 KHA_end	09_O55T0nrwmpo.mp4	104.6	114.4	1180:664:0:56	boat at sea, bow on
-LCH_dock	08__HDn5W2mnmc.mp4	72	92	626:352:7:0	boat on the pontoon, Mazagon Dock
+LCH_dock	08__HDn5W2mnmc.mp4	72	80	626:352:7:0	boat on the pontoon, Mazagon Dock
 CT_red	02_vNZTUJsccAk.mp4	640	700	1700:956:60:62	red-lit control room (check: no presenter)
 CT_hatch	02_vNZTUJsccAk.mp4	598	606	1700:956:60:62	hatch, ladder
 CT_under	02_vNZTUJsccAk.mp4	1356	1366	1700:956:60:62	underwater ripples

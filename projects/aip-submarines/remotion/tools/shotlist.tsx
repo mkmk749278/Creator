@@ -18,3 +18,11 @@ shots.forEach((s, i) => {
 });
 console.log(rows.join('\n'));
 console.log(`${shots.length} shots; mean ${(DURATION / FPS / shots.length).toFixed(2)} s; segments over 5 s: ${long}`);
+
+if (process.argv.includes('--json')) {
+	const mids = shots.map((s, i) => {
+		const end = i + 1 < shots.length ? shots[i + 1].at : DURATION;
+		return {at: s.at, end, mid: Math.round((s.at + end) / 2), name: s.name};
+	});
+	require('fs').writeFileSync('/tmp/claude-0/shots.json', JSON.stringify(mids));
+}

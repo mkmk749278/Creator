@@ -140,11 +140,12 @@ export const open: Part = (() => {
 	add(s9, 'H1b wide', (d) => <Clip name="H1b" dur={d} startAt={(diesel - raise) / 60} from={[1.0, 0, 0]} to={[1.03, 0, 0]} grade="none" />);
 	over(s9, pre(s0(10)), 'exhaust', <Exhaust x={1010} y={300} start={0} />);
 	over(s9, pre(s0(10)), 'radar', <RadarSweep cx={1010} cy={420} r={520} blip={w0(9, 'easier') - s9} bx={1010} by={360} lock={w0(9, 'find') - s9} />);
-	over(raise, pre(s0(10)), 'recon', <Honesty text="RECONSTRUCTION" />);
+	over(raise, diesel, 'recon', <Honesty text="RECONSTRUCTION" />);
+	over(s9, pre(s0(10)), 'recon2', <Honesty text="RECONSTRUCTION" />);
 
 	// S10–13: a machine built to disappear
 	add(pre(s0(10)), 'VAG underwater', (d) => <Clip name="VAG_under" dur={d} grade="none" />);
-	add(pre(s0(11)), 'VAG night boat', (d) => <Clip name="VAG_night" dur={d} grade="night" />);
+	add(pre(s0(11)), 'VAG night boat', (d) => <Clip name="VAG_dusk" dur={d} grade="night" from={[1.1, 0, 0]} to={[1.25, 0, 20]} />);
 	over(pre(s0(10)), pre(s0(12)), 'credit vag3', <Credit text={VAG} />);
 	over(pre(s0(11)), pre(s0(12)), 'danger ring', <RedRing x={960} y={520} at={w0(11, 'dangerous') - pre(s0(11))} r={170} />);
 	const s12 = pre(s0(12));
