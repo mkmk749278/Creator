@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import type {Part} from '../Film';
 import {Battery, Ping, RedRing} from '../parts/instruments';
-import {Clip, Count, Credit, ez, Honesty, Label, Plate, tw, Underwater} from '../parts/kit';
+import {Clip, Count, Credit, ez, Honesty, Label, MarineSnow, Plate, tw, Underwater} from '../parts/kit';
 import {PatrolStrip, Silhouette} from '../parts/drawings';
 import {AcousticLine, Cutaway, RadarScope, SeaFromAbove, SpeedDial, ThreeMachines, VerticalClip} from '../parts/schematics';
 import {SubUnderwater} from '../parts/Sub3D';
@@ -31,7 +31,8 @@ const SonarShot: React.FC<{dur: number; ping: number}> = ({dur, ping}) => {
 	return (
 		<AbsoluteFill>
 			<Underwater depth={0.5} />
-			<SubUnderwater cam={[40 - 70 * k, -10 + 8 * k, 125 - 40 * k]} look={[-6 + 14 * k, 0, 0]} fov={36} x={-10 + 20 * k} depthTint={0.5} />
+			<MarineSnow speed={1.2} />
+			<SubUnderwater cam={[24 - 16 * k, -8 + 6 * k, 120 - 36 * k]} look={[0, 0, 0]} fov={36} x={-22 + 34 * k} depthTint={0.4} />
 			<Ping x={1700} y={300} start={ping} max={1500} />
 		</AbsoluteFill>
 	);

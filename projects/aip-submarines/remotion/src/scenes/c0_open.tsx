@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import type {Part} from '../Film';
 import {Battery, CutLine, Exhaust, RadarSweep, RedRing} from '../parts/instruments';
-import {Cam, Clip, Credit, ez, Honesty, Label, Plate, tw, Underwater} from '../parts/kit';
+import {Cam, Clip, Credit, ez, Honesty, Label, MarineSnow, Plate, tw, Underwater} from '../parts/kit';
 import {PatrolStrip, PlugDrawing, Silhouette, SubSide} from '../parts/drawings';
 import {SubUnderwater} from '../parts/Sub3D';
 import {SeaMap} from '../parts/SeaMap';
@@ -44,8 +44,9 @@ export const ProfileShot: React.FC<{dur: number; plugAt: number; ghostAt?: numbe
 	}
 	return (
 		<AbsoluteFill>
-			<Underwater depth={0.35} />
-			<SubUnderwater cam={[-16 + 30 * k, -7 + 6 * k, 96 - 26 * k]} look={[-8 + 18 * k, 0, 0]} fov={34} x={-10 + 22 * k} plug={plug * (1 - ghost)} ghost={ghost} depthTint={0.4} />
+			<Underwater depth={0.2} />
+			<MarineSnow speed={1.2} />
+			<SubUnderwater cam={[-4 + 4 * k, -5 + 4 * k, 100 - 34 * k]} look={[-2 + 4 * k, 0, 0]} fov={34} x={-16 + 30 * k} plug={plug * (1 - ghost)} ghost={ghost} depthTint={0.25} />
 		</AbsoluteFill>
 	);
 };

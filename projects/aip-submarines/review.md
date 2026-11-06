@@ -26,5 +26,9 @@ Our own review (PLAYBOOK §13.1) of the first 720p cut: 9:05.97, 1280×720 at 60
 - The dry-dock surgery (5:14–5:45) is the strongest 3D moment: the cut glows, the halves part, the section rolls in, the seams weld.
 - Weaker spots to watch in round 2: the battery cutaway labels are small at 480p; the H4 hull is dark (by design, a covered dock at night).
 
+## Round 2 (aip_review_r2_720p.mp4)
+- Loudness −14.1 LUFS, peak −1.0 dBFS; length 545.97 s: pass. The P-8I open, the Khanderi clip and the five plates are fixed (checked at 1:15, 2:12, 2:34, 4:00, 6:08, 7:52, 8:12).
+- `freezedetect` still flagged the underwater shots (0:38–0:51, 2:28, 3:02) and the ending (8:52–9:00). Cause: the camera tracked the boat, so the boat did not move across the frame. **Fixed for round 3:** the camera holds while the boat crosses and grows, the water is lighter, and marine snow drifts past the lens (the ending's snow rises fast, so it reads as the camera sinking).
+
 ## Next
 Round-2 cut with these fixes → independent viewer review (`prompts/audience_review_v1.md`) → the owner.

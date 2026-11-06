@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import type {Part} from '../Film';
 import {Battery} from '../parts/instruments';
-import {Clip, Count, Credit, ez, Honesty, Label, Plate, tw, Underwater, useSpring} from '../parts/kit';
+import {Clip, Count, Credit, ez, Honesty, Label, MarineSnow, Plate, tw, Underwater, useSpring} from '../parts/kit';
 import {PatrolStrip, Silhouette} from '../parts/drawings';
 import {TrapLoop} from '../parts/chain';
 import {SeaMap, P} from '../parts/SeaMap';
@@ -36,6 +36,7 @@ const NextFilm: React.FC<{dur: number; depth: number; sphere: number; card: numb
 	return (
 		<AbsoluteFill>
 			<Underwater depth={1} />
+			<MarineSnow speed={4} />
 			<AbsoluteFill>
 				<svg width={1920} height={1080} style={{position: 'absolute', opacity: 1 - cd}}>
 					<circle cx={1300} cy={520} r={230} fill="none" stroke="#c9ced6" strokeWidth={10} pathLength={1} strokeDasharray={`${sp} 1`} />

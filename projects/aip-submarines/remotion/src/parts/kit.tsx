@@ -295,3 +295,18 @@ export const Underwater: React.FC<{depth?: number}> = ({depth = 0}) => {
 		</AbsoluteFill>
 	);
 };
+
+/** Marine snow: specks drifting past the lens; `speed` px a frame upward reads as the camera sinking. */
+export const MarineSnow: React.FC<{speed?: number; n?: number}> = ({speed = 1, n = 140}) => {
+	const f = useCurrentFrame();
+	return (
+		<svg width={1920} height={1080} style={{position: 'absolute', left: 0, top: 0, pointerEvents: 'none'}}>
+			{Array.from({length: n}).map((_, i) => {
+				const x = random('sx' + i) * 1920 + 20 * noise2D('sn' + i, f / 200, 0);
+				const z = 0.4 + random('sz' + i) * 0.9;
+				const y = (((random('sy' + i) * 1200 - f * speed * z) % 1200) + 1200) % 1200 - 60;
+				return <circle key={i} cx={x} cy={y} r={1.2 + 2.2 * z} fill="#cfe8ff" opacity={0.18 + 0.3 * z} />;
+			})}
+		</svg>
+	);
+};
