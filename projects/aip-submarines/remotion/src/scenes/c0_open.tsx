@@ -138,8 +138,8 @@ export const open: Part = (() => {
 	over(diesel, s0(9), 'credit vag2', <Credit text={VAG} />);
 	const s9 = pre(s0(9));
 	add(s9, 'H1b wide', (d) => <Clip name="H1b" dur={d} startAt={(diesel - raise) / 60} from={[1.0, 0, 0]} to={[1.03, 0, 0]} grade="none" />);
-	over(s9, pre(s0(10)), 'exhaust', <Exhaust x={1010} y={300} start={0} />);
-	over(s9, pre(s0(10)), 'radar', <RadarSweep cx={1010} cy={420} r={520} blip={w0(9, 'easier') - s9} bx={1010} by={360} lock={w0(9, 'find') - s9} />);
+	over(s9, pre(s0(10)), 'exhaust', <Exhaust x={975} y={300} start={0} />);
+	over(s9, pre(s0(10)), 'radar', <RadarSweep cx={1010} cy={420} r={520} blip={w0(9, 'easier') - s9} bx={975} by={390} lock={w0(9, 'find') - s9} />);
 	over(raise, diesel, 'recon', <Honesty text="RECONSTRUCTION" />);
 	over(s9, pre(s0(10)), 'recon2', <Honesty text="RECONSTRUCTION" />);
 
