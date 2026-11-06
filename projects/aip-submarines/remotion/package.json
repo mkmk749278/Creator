@@ -1,0 +1,27 @@
+{
+  "name": "aip-submarines-film",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/inter-tight": "5.2.7",
+    "@fontsource/jetbrains-mono": "5.2.8",
+    "@react-three/fiber": "8.17.10",
+    "@remotion/cli": "4.0.534",
+    "@remotion/fonts": "4.0.534",
+    "@remotion/noise": "4.0.534",
+    "@remotion/paths": "4.0.534",
+    "@remotion/three": "4.0.534",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.534",
+    "three": "0.169.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "@types/three": "0.169.0",
+    "typescript": "5.6.3"
+  }
+}

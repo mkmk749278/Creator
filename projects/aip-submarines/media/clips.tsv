@@ -1,0 +1,41 @@
+# name	source (assets/footage/)	start_s	end_s	crop w:h:x:y (source px, empty = full)	note
+VAG_dusk	01_BDi71t9M1iI.mp4	2	8.5		dusk sea, boat far off
+VAG_sea	01_BDi71t9M1iI.mp4	8.6	11.5		boat at sea
+VAG_ctrl	01_BDi71t9M1iI.mp4	13.8	17.6		red control room
+VAG_surf	01_BDi71t9M1iI.mp4	18.6	31		boat surfacing, fin and mast in spray
+VAG_shed	01_BDi71t9M1iI.mp4	64.6	68.6		hull in the shed at Mazagon
+VAG_bow	01_BDi71t9M1iI.mp4	68.6	74.5		boat at sea, bow wave
+VAG_deck	01_BDi71t9M1iI.mp4	125.8	128.6		crew on deck
+VAG_mach	01_BDi71t9M1iI.mp4	130.6	137.6		machinery interior
+VAG_foam	01_BDi71t9M1iI.mp4	139.6	142.6		hull through foam
+VAG_under	01_BDi71t9M1iI.mp4	144.6	149.6		underwater blue
+VAG_peri	01_BDi71t9M1iI.mp4	149.6	152.8		red control room, periscope
+VAG_seadeck	01_BDi71t9M1iI.mp4	152.8	155.6		deck at sea
+VAG_valves	01_BDi71t9M1iI.mp4	155.6	166.6		interior, valves
+VAG_night	01_BDi71t9M1iI.mp4	170.6	175.8		night, boat in dark water
+VAG_consoles	01_BDi71t9M1iI.mp4	200.6	212.6		red control room, consoles
+VAG_sunset	01_BDi71t9M1iI.mp4	221.6	229.5		boat at sea, then sunset
+KAL_above	02_Cisf_i9wf1A.mp4	29.6	35.4	600:338:0:71	INS Kalvari from above
+KAL_dock	02_Cisf_i9wf1A.mp4	47.6	52.4	600:300:0:71	Mazagon Dock aerial (caption cropped)
+KAL_hall	02_Cisf_i9wf1A.mp4	65.6	76.4	600:300:0:71	hull sections in the build hall
+KAL_sea	02_Cisf_i9wf1A.mp4	119.6	124.4	600:338:0:71	boat at sea
+KAL_awash	02_Cisf_i9wf1A.mp4	125.6	131.4	600:338:0:71	fin awash
+KAL_ctrl	02_Cisf_i9wf1A.mp4	191.6	206.4	600:338:0:71	control room, consoles
+TRI_wake	03_UqgXvO28E1g.mp4	0	38	836:470:9:4	boat drawing white wake arcs
+TRI_surf	03_UqgXvO28E1g.mp4	39.6	44.4	836:470:9:4	boat on the surface, oblique
+TRI_above	03_UqgXvO28E1g.mp4	44.6	53.4	836:470:9:4	boat from above
+TRI_side	03_UqgXvO28E1g.mp4	54.6	58.4	836:470:9:4	surfaced, side on
+TRI_masts	03_UqgXvO28E1g.mp4	99.6	110.4	836:470:9:4	side on, fin and masts
+KHA_bow	09_O55T0nrwmpo.mp4	9.6	14.4	1180:664:0:56	Khanderi at sea, bow wave
+KHA_turq	09_O55T0nrwmpo.mp4	24.6	29.4	1180:664:0:56	boat in turquoise water
+KHA_sea	09_O55T0nrwmpo.mp4	44.6	49.4	1180:664:0:56	boat at sea
+KHA_end	09_O55T0nrwmpo.mp4	104.6	114.4	1180:664:0:56	boat at sea, bow on
+LCH_dock	08__HDn5W2mnmc.mp4	72	92	626:352:7:0	boat on the pontoon, Mazagon Dock
+CT_red	02_vNZTUJsccAk.mp4	640	700	1700:956:60:62	red-lit control room (check: no presenter)
+CT_hatch	02_vNZTUJsccAk.mp4	598	606	1700:956:60:62	hatch, ladder
+CT_under	02_vNZTUJsccAk.mp4	1356	1366	1700:956:60:62	underwater ripples
+P8I_ramp	04_450AsJU2OK4.mp4	5.6	7.6	V	on the ramp (vertical)
+P8I_takeoff	04_450AsJU2OK4.mp4	17.6	19.8	V	take-off (vertical)
+P8I_flight	04_450AsJU2OK4.mp4	25.6	29.6	V	in flight (vertical)
+P8I_sea	04_450AsJU2OK4.mp4	33.6	35.8	V	over the sea (vertical)
+P8I_over	04_450AsJU2OK4.mp4	43.6	45.8	V	overhead (vertical)
