@@ -26,6 +26,32 @@ const FadeIn: React.FC<{n: number; children: React.ReactNode}> = ({n, children})
 	return <AbsoluteFill style={{opacity: o}}>{children}</AbsoluteFill>;
 };
 
+// §9.4: a new framing about every 4 s. A shot longer than that is split into segments, each with its own framing;
+// the camera eases between them in 18 frames (a visible move, never a jump).
+const FRAMINGS: [number, number, number][] = [
+	[1.0, 0, 0],
+	[1.08, -30, -15],
+	[1.04, 30, 12],
+	[1.09, 20, -20],
+	[1.03, -25, 15],
+];
+const SEG = 240;
+const Reframe: React.FC<{dur: number; seed: number; children: React.ReactNode}> = ({dur, seed, children}) => {
+	const f = useCurrentFrame();
+	const n = Math.max(1, Math.round(dur / SEG));
+	if (n === 1) {
+		return <>{children}</>;
+	}
+	const len = dur / n;
+	const i = Math.min(n - 1, Math.floor(f / len));
+	const pick = (k: number) => FRAMINGS[(k + seed) % FRAMINGS.length];
+	const a = pick(Math.max(0, i - 1));
+	const b = pick(i);
+	const t = i === 0 ? 1 : interpolate(f - i * len, [0, 18], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ez.cam});
+	const v = a.map((x, j) => x + (b[j] - x) * t);
+	return <AbsoluteFill style={{transform: `translate(${v[1]}px, ${v[2]}px) scale(${v[0]})`, transformOrigin: '50% 50%'}}>{children}</AbsoluteFill>;
+};
+
 export const Film: React.FC = () => (
 	<AbsoluteFill style={{background: '#000'}}>
 		{shots.map((s, i) => {
@@ -35,7 +61,9 @@ export const Film: React.FC = () => (
 			const dur = end - from + (i + 1 < shots.length && !shots[i + 1].hard ? 0 : 0);
 			return (
 				<Sequence key={s.name + i} from={from} durationInFrames={Math.max(1, end - from)} name={s.name}>
-					<FadeIn n={pre}>{s.el(dur)}</FadeIn>
+					<FadeIn n={pre}>
+						<Reframe dur={end - from} seed={i}>{s.el(dur)}</Reframe>
+					</FadeIn>
 				</Sequence>
 			);
 		})}

@@ -1,0 +1,15 @@
+id,url,owner,licence,what it shows,where used
+VAG,https://www.youtube.com/watch?v=BDi71t9M1iI,Indian Navy (official channel),Standard YouTube licence; short credited excerpts only,INS Vagir (Kalvari class): boat at sea and surfacing; control room; interiors; Mazagon shed; sunset,cold open; ch1; ch3; landing
+KAL,https://www.youtube.com/watch?v=Cisf_i9wf1A,Indian Navy / Mazagon Dock (Kalvari film),Standard YouTube licence; short credited excerpts only,INS Kalvari from above; at sea; fin awash,ch2; ch4 (2025 refit beat)
+TRI,https://www.youtube.com/watch?v=UqgXvO28E1g,Kalvari sea trials (aerial) uploader,Standard YouTube licence; short credited excerpts only,Kalvari-class boat drawing wakes; surfaced side-on; masts,cold open; ch1; ch2
+P8I,https://www.youtube.com/watch?v=450AsJU2OK4,Indian Navy (official channel),Standard YouTube licence; short credited excerpts only,P-8I on the ramp; take-off; in flight over the sea,ch1
+KHA,https://www.youtube.com/watch?v=O55T0nrwmpo,Financial Express,Standard YouTube licence; short credited excerpts only; watermark cropped,INS Khanderi at sea,ch5; landing
+LCH,https://www.youtube.com/watch?v=_HDn5W2mnmc,uploader of the INS Vagir launch video,Standard YouTube licence; short credited excerpt only,INS Vagir on the pontoon at Mazagon Dock (Mumbai),ch4 (Mazagon Dock)
+BM,https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/,NASA Earth Observatory,Public domain (NASA imagery),Blue Marble Next Generation with bathymetry (Dec 2004) reprojected,every map
+NE,https://www.naturalearthdata.com/,Natural Earth,Public domain,ne_10m_admin_0_countries_ind (India's official boundary),every map
+H1,ours (scripts/blender/snorkel.py),Be Practical with Kishore,Ours,RECONSTRUCTION: snorkel mast at night,cold open; landing
+H3,ours (scripts/blender/aip_hero.py powder),Be Practical with Kishore,Ours,ILLUSTRATION: white powder; water drop; bubbles,ch3
+H4,ours (scripts/blender/aip_hero.py drydock),Be Practical with Kishore,Ours,ILLUSTRATION: hull cut in two; new section; weld,ch4
+T1,ours (remotion/src/parts/Sub3D.tsx),Be Practical with Kishore,Ours,ILLUSTRATION: Kalvari-type boat under water,cold open; ch2; ch3; landing
+LOGO,assets/brand/logo_square.png,Be Practical with Kishore,Ours,channel logo,end card
+FONTS,@fontsource inter-tight 5.2.7 / jetbrains-mono 5.2.8,Rasmus Andersson / JetBrains,SIL Open Font License,labels and numbers,everywhere
