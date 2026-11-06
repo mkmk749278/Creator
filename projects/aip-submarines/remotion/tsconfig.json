@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {"*": ["node_modules/@types/*", "node_modules/*"]},
+    "types": ["react"]
+  },
+  "include": ["src", "remotion.config.ts", "../../../lib/remotion/motion.ts", "../../../lib/remotion/Camera.tsx", "../../../lib/remotion/timing.ts"]
+}

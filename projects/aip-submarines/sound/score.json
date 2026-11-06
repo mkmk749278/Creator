@@ -1,0 +1,21 @@
+{
+  "_why": "review r1: the bed sat only 2-4 dB under the voice in gaps; PLAYBOOK §12 wants about -25 dB under the voice, -12 in the gaps",
+  "bed_rms_db": -27,
+  "duck_db": -20,
+  "slots": [
+    {"track": "Under Load", "from": 0, "to": "s:29+1", "fade_in": 2.5, "fade_out": 2.0, "gain_db": -2, "why": "cold open: the night, the paradox"},
+    {"track": "The Mechanism", "from": "s:29-1", "to": "s:79+1", "fade_in": 2.0, "fade_out": 2.0, "why": "ch1-2: how the hunt and the battery work"},
+    {"track": "Tolerance", "from": "s:79-1", "to": "s:110+1", "fade_in": 2.0, "fade_out": 2.0, "why": "ch3: the powder, the chemistry"},
+    {"track": "The Cascade", "from": "s:110-1", "to": "s:123+1", "fade_in": 1.5, "fade_out": 2.0, "why": "ch4: the cut"},
+    {"track": "Against the Odds", "from": "s:123-1", "to": "s:154+1", "fade_in": 2.0, "fade_out": 2.0, "why": "the trap"},
+    {"track": "Made in India", "from": "s:154-1", "to": "s:169+1", "fade_in": 2.0, "fade_out": 2.0, "why": "ch5: the way out"},
+    {"track": "Landing", "from": "s:169-1", "to": "end+4.5", "fade_in": 2.5, "fade_out": 3.0, "why": "landing and the end card"}
+  ],
+  "rooms": [
+    {"what": "harbour", "from": 0, "to": "s:3", "gain_db": -32},
+    {"what": "harbour", "from": "s:173", "to": "s:179", "gain_db": -32}
+  ],
+  "quiet": [
+    {"from": "s:165", "to": "s:169", "gain_db": -2}
+  ]
+}

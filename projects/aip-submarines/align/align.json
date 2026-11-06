@@ -1,0 +1,1842 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 0.514,
+  "te": "Night.",
+  "en": "",
+  "speech_vs_text": 1.54,
+  "boundary_margin": 9.9,
+  "confidence": "check"
+ },
+ {
+  "line": 2,
+  "start": 0.926,
+  "end": 1.925,
+  "te": "The Arabian Sea.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 1.237,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 2.583,
+  "end": 6.767,
+  "te": "Somewhere under these waves, an Indian submarine is running out of battery.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 1.237,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 7.442,
+  "end": 9.119,
+  "te": "Imagine you're in its control room.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 1.724,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 9.734,
+  "end": 11.028,
+  "te": "Nobody raises a voice.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 11.512,
+  "end": 13.495,
+  "te": "The captain gives one quiet order.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 14.143,
+  "end": 14.964,
+  "te": "Raise the snorkel.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 15.556,
+  "end": 18.339,
+  "te": "A thin steel mast rises through black water.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 18.813,
+  "end": 20.463,
+  "te": "The diesel engines roar to life.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.379,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 20.937,
+  "end": 25.908,
+  "te": "And for the next few hours, you are easier to find than at almost any other time on your patrol.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.379,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 26.437,
+  "end": 28.698,
+  "te": "You're inside a machine built to disappear.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.572,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 29.168,
+  "end": 31.587,
+  "te": "This is the most dangerous part of its life.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.623,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 32.039,
+  "end": 33.808,
+  "te": "And it has to do it every few days.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.623,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 34.334,
+  "end": 37.945,
+  "te": "So why would anyone build a hiding machine that has to show itself?",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.65,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 38.58,
+  "end": 39.299,
+  "te": "There is a cure.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 39.797,
+  "end": 41.047,
+  "te": "You've probably heard its name.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.041,
+  "confidence": "check"
+ },
+ {
+  "line": 17,
+  "start": 41.46,
+  "end": 44.187,
+  "te": "A-I-P, air independent propulsion.",
+  "en": "",
+  "speech_vs_text": 1.26,
+  "boundary_margin": 0.041,
+  "confidence": "check"
+ },
+ {
+  "line": 18,
+  "start": 44.617,
+  "end": 46.703,
+  "te": "Online, they call it the ghost maker.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.57,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 47.169,
+  "end": 50.291,
+  "te": "Our submarines will become invisible, the headlines say.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.391,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 50.759,
+  "end": 51.578,
+  "te": "But here's the catch.",
+  "en": "",
+  "speech_vs_text": 0.77,
+  "boundary_margin": 0.061,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 51.96,
+  "end": 55.806,
+  "te": "To fit it, India has to cut one of its own submarines in two.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.061,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 56.279,
+  "end": 57.322,
+  "te": "And it gets stranger.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.803,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 57.721,
+  "end": 60.602,
+  "te": "India built this machine, with its own scientists.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 1.017,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 60.917,
+  "end": 62.153,
+  "te": "It has run on land.",
+  "en": "",
+  "speech_vs_text": 1.32,
+  "boundary_margin": 1.123,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 62.547,
+  "end": 66.415,
+  "te": "Yet the Navy leaned towards a German design for its next submarines.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 66.918,
+  "end": 68.273,
+  "te": "So was the Navy wrong?",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 68.579,
+  "end": 70.627,
+  "te": "Or was India's machine not good enough?",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.627,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 71.122,
+  "end": 72.851,
+  "te": "The answer is, both were right.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.627,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 73.196,
+  "end": 75.102,
+  "te": "By the end of this film, you'll see why.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.601,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 75.629,
+  "end": 78.118,
+  "te": "Start with the people whose job is to find you.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.235,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 78.57,
+  "end": 79.722,
+  "te": "Now switch sides.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.235,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 80.084,
+  "end": 80.788,
+  "te": "You're the hunter.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.207,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 81.16,
+  "end": 85.298,
+  "te": "You're flying a P-Eight-I of the Indian Navy, hours out over the sea.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.148,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 85.698,
+  "end": 87.355,
+  "te": "You don't look for the submarine itself.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 0.148,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 87.828,
+  "end": 89.643,
+  "te": "You look for what it leaves behind.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.226,
+  "confidence": "high"
+ },
+ {
+  "line": 36,
+  "start": 89.997,
+  "end": 90.618,
+  "te": "A mast.",
+  "en": "",
+  "speech_vs_text": 1.86,
+  "boundary_margin": 2.891,
+  "confidence": "check"
+ },
+ {
+  "line": 37,
+  "start": 91.024,
+  "end": 93.321,
+  "te": "The thin white wake it draws on the water.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "start": 93.722,
+  "end": 94.917,
+  "te": "A dot on your radar.",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "start": 95.31,
+  "end": 96.917,
+  "te": "The noise of a diesel engine.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "start": 98.109,
+  "end": 98.773,
+  "te": "Now switch back.",
+  "en": "",
+  "speech_vs_text": 0.76,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "start": 99.3,
+  "end": 100.493,
+  "te": "You're in the submarine again.",
+  "en": "",
+  "speech_vs_text": 0.74,
+  "boundary_margin": 0.43,
+  "confidence": "high"
+ },
+ {
+  "line": 42,
+  "start": 100.958,
+  "end": 103.34,
+  "te": "So why would you ever raise that mast?",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.147,
+  "confidence": "high"
+ },
+ {
+  "line": 43,
+  "start": 103.749,
+  "end": 108.7,
+  "te": "Because under water, everything you depend on runs on one giant battery.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.147,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "start": 109.193,
+  "end": 112.454,
+  "te": "The motor, the lights, the air plant, the computers.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.338,
+  "confidence": "high"
+ },
+ {
+  "line": 45,
+  "start": 113.062,
+  "end": 116.007,
+  "te": "And the engines that charge your battery need air.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.249,
+  "confidence": "high"
+ },
+ {
+  "line": 46,
+  "start": 116.597,
+  "end": 117.968,
+  "te": "Down there, there is none.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.193,
+  "confidence": "high"
+ },
+ {
+  "line": 47,
+  "start": 118.44,
+  "end": 120.264,
+  "te": "So how long can your battery last?",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.193,
+  "confidence": "high"
+ },
+ {
+  "line": 48,
+  "start": 120.832,
+  "end": 121.494,
+  "te": "A few days.",
+  "en": "",
+  "speech_vs_text": 1.24,
+  "boundary_margin": 2.909,
+  "confidence": "high"
+ },
+ {
+  "line": 49,
+  "start": 121.957,
+  "end": 127.218,
+  "te": "The makers of India's Kalvari class say about four, and only if you move at a crawl.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.393,
+  "confidence": "high"
+ },
+ {
+  "line": 50,
+  "start": 127.67,
+  "end": 132.458,
+  "te": "Then you must come up near the surface, raise your mast, and breathe for hours.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.393,
+  "confidence": "high"
+ },
+ {
+  "line": 51,
+  "start": 132.969,
+  "end": 134.979,
+  "te": "Picture your patrol as a strip of time.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.547,
+  "confidence": "high"
+ },
+ {
+  "line": 52,
+  "start": 135.473,
+  "end": 137.211,
+  "te": "Every few days, a red mark.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.409,
+  "confidence": "high"
+ },
+ {
+  "line": 53,
+  "start": 137.684,
+  "end": 142.253,
+  "te": "Each red mark is a few hours when you can be heard, seen, or caught on radar.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.252,
+  "confidence": "high"
+ },
+ {
+  "line": 54,
+  "start": 142.749,
+  "end": 145.265,
+  "te": "For a submarine navy, that's the whole game, right?",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.252,
+  "confidence": "high"
+ },
+ {
+  "line": 55,
+  "start": 145.75,
+  "end": 146.66,
+  "te": "Fewer red marks.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 1.115,
+  "confidence": "high"
+ },
+ {
+  "line": 56,
+  "start": 146.889,
+  "end": 147.908,
+  "te": "Shorter red marks.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 57,
+  "start": 148.327,
+  "end": 150.34,
+  "te": "That's exactly what A-I-P does.",
+  "en": "",
+  "speech_vs_text": 1.31,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 58,
+  "start": 150.72,
+  "end": 153.649,
+  "te": "It's a second engine that doesn't need air from outside.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 59,
+  "start": 154.143,
+  "end": 155.857,
+  "te": "Three main kinds are in use today.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.373,
+  "confidence": "high"
+ },
+ {
+  "line": 60,
+  "start": 156.267,
+  "end": 159.614,
+  "te": "A Stirling engine, a steam turbine, and a fuel cell.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.299,
+  "confidence": "high"
+ },
+ {
+  "line": 61,
+  "start": 160.063,
+  "end": 161.591,
+  "te": "India chose the fuel cell.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.213,
+  "confidence": "high"
+ },
+ {
+  "line": 62,
+  "start": 161.912,
+  "end": 164.32,
+  "te": "And for you, the difference is huge.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.213,
+  "confidence": "high"
+ },
+ {
+  "line": 63,
+  "start": 164.713,
+  "end": 168.594,
+  "te": "About four days on the battery becomes about two weeks under water.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.322,
+  "confidence": "high"
+ },
+ {
+  "line": 64,
+  "start": 169.066,
+  "end": 171.993,
+  "te": "That's D-R-D-O's own figure from its land trials.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.194,
+  "confidence": "high"
+ },
+ {
+  "line": 65,
+  "start": 172.409,
+  "end": 173.467,
+  "te": "So, a ghost?",
+  "en": "",
+  "speech_vs_text": 1.65,
+  "boundary_margin": 0.194,
+  "confidence": "check"
+ },
+ {
+  "line": 66,
+  "start": 173.88,
+  "end": 174.383,
+  "te": "Not quite.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.424,
+  "confidence": "high"
+ },
+ {
+  "line": 67,
+  "start": 174.785,
+  "end": 176.791,
+  "te": "A-I-P lets you crawl for weeks.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.458,
+  "confidence": "high"
+ },
+ {
+  "line": 68,
+  "start": 177.053,
+  "end": 178.144,
+  "te": "It doesn't let you run.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.458,
+  "confidence": "high"
+ },
+ {
+  "line": 69,
+  "start": 178.613,
+  "end": 181.999,
+  "te": "Push for speed, and you're back on the battery, draining it fast.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.151,
+  "confidence": "high"
+ },
+ {
+  "line": 70,
+  "start": 182.425,
+  "end": 185.221,
+  "te": "And even when you're quiet, you can still be found.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.151,
+  "confidence": "high"
+ },
+ {
+  "line": 71,
+  "start": 185.728,
+  "end": 188.196,
+  "te": "Active sonar can bounce sound off your hull.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.646,
+  "confidence": "high"
+ },
+ {
+  "line": 72,
+  "start": 188.593,
+  "end": 191.452,
+  "te": "And the moment you raise a mast, you can still be seen.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.726,
+  "confidence": "high"
+ },
+ {
+  "line": 73,
+  "start": 192.673,
+  "end": 195.418,
+  "te": "What it really buys you is fewer red marks.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.615,
+  "confidence": "high"
+ },
+ {
+  "line": 74,
+  "start": 195.897,
+  "end": 197.796,
+  "te": "Fewer moments of being exposed.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.165,
+  "confidence": "high"
+ },
+ {
+  "line": 75,
+  "start": 198.304,
+  "end": 201.071,
+  "te": "At sea, that can decide whether you come home.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.165,
+  "confidence": "high"
+ },
+ {
+  "line": 76,
+  "start": 201.561,
+  "end": 204.688,
+  "te": "Then you might ask, why not just build nuclear submarines?",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.438,
+  "confidence": "high"
+ },
+ {
+  "line": 77,
+  "start": 205.183,
+  "end": 206.291,
+  "te": "India does build them.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.697,
+  "confidence": "high"
+ },
+ {
+  "line": 78,
+  "start": 206.656,
+  "end": 209.786,
+  "te": "But they are far bigger, far more costly, and few.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.274,
+  "confidence": "high"
+ },
+ {
+  "line": 79,
+  "start": 210.274,
+  "end": 215.851,
+  "te": "In the shallow waters close to our coast, a small, quiet diesel boat is still the right tool.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.274,
+  "confidence": "high"
+ },
+ {
+  "line": 80,
+  "start": 216.252,
+  "end": 218.215,
+  "te": "So India built its own A-I-P.",
+  "en": "",
+  "speech_vs_text": 1.4,
+  "boundary_margin": 0.571,
+  "confidence": "high"
+ },
+ {
+  "line": 81,
+  "start": 218.68,
+  "end": 220.365,
+  "te": "And it built it in its own way.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.54,
+  "confidence": "high"
+ },
+ {
+  "line": 82,
+  "start": 220.707,
+  "end": 225.109,
+  "te": "Germany's fuel cell submarines carry their hydrogen locked inside metal tanks.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.54,
+  "confidence": "high"
+ },
+ {
+  "line": 83,
+  "start": 225.549,
+  "end": 228.059,
+  "te": "India's carries no hydrogen gas at all.",
+  "en": "",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 0.162,
+  "confidence": "high"
+ },
+ {
+  "line": 84,
+  "start": 228.468,
+  "end": 231.076,
+  "te": "Instead, it carries a dry white powder.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.162,
+  "confidence": "high"
+ },
+ {
+  "line": 85,
+  "start": 231.476,
+  "end": 232.8,
+  "te": "Sodium boro-hydride.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.23,
+  "confidence": "high"
+ },
+ {
+  "line": 86,
+  "start": 233.236,
+  "end": 235.611,
+  "te": "Add water, and the powder gives off hydrogen.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.301,
+  "confidence": "high"
+ },
+ {
+  "line": 87,
+  "start": 236.002,
+  "end": 239.512,
+  "te": "Right there, inside the submarine, only as much as you need.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.176,
+  "confidence": "high"
+ },
+ {
+  "line": 88,
+  "start": 239.824,
+  "end": 241.792,
+  "te": "How much power is hiding in that powder?",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.176,
+  "confidence": "high"
+ },
+ {
+  "line": 89,
+  "start": 242.136,
+  "end": 246.767,
+  "te": "One spoonful, about seven grams, makes enough electricity to charge your phone.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.306,
+  "confidence": "high"
+ },
+ {
+  "line": 90,
+  "start": 247.14,
+  "end": 249.229,
+  "te": "That's our rough calculation, on paper.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.364,
+  "confidence": "high"
+ },
+ {
+  "line": 91,
+  "start": 249.63,
+  "end": 251.126,
+  "te": "Now picture tonnes of it.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.364,
+  "confidence": "high"
+ },
+ {
+  "line": 92,
+  "start": 251.474,
+  "end": 253.371,
+  "te": "The hydrogen then meets oxygen.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.53,
+  "confidence": "high"
+ },
+ {
+  "line": 93,
+  "start": 253.723,
+  "end": 257.512,
+  "te": "The oxygen is carried as a liquid, kept very, very cold.",
+  "en": "",
+  "speech_vs_text": 1.2,
+  "boundary_margin": 0.404,
+  "confidence": "high"
+ },
+ {
+  "line": 94,
+  "start": 257.838,
+  "end": 261.594,
+  "te": "The two meet inside a fuel cell, and its heart is an acid.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.317,
+  "confidence": "high"
+ },
+ {
+  "line": 95,
+  "start": 262.019,
+  "end": 263.011,
+  "te": "You won't see a flame.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.317,
+  "confidence": "high"
+ },
+ {
+  "line": 96,
+  "start": 263.322,
+  "end": 264.142,
+  "te": "No explosion.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 97,
+  "start": 264.512,
+  "end": 266.548,
+  "te": "Just a steady flow of electricity.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 98,
+  "start": 266.901,
+  "end": 268.219,
+  "te": "And one more thing comes out.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 99,
+  "start": 268.67,
+  "end": 269.027,
+  "te": "Water.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 1.707,
+  "confidence": "high"
+ },
+ {
+  "line": 100,
+  "start": 269.374,
+  "end": 272.841,
+  "te": "That water flows back to the powder, to make more hydrogen.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.341,
+  "confidence": "high"
+ },
+ {
+  "line": 101,
+  "start": 273.175,
+  "end": 276.598,
+  "te": "Would you want all this inside a sealed steel tube with you?",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.341,
+  "confidence": "high"
+ },
+ {
+  "line": 102,
+  "start": 276.911,
+  "end": 280.71,
+  "te": "In October twenty twenty-six, India's Defence Secretary said it simply.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.674,
+  "confidence": "high"
+ },
+ {
+  "line": 103,
+  "start": 280.99,
+  "end": 285.36,
+  "te": "These systems need a strict safety culture, with no compromise.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.22,
+  "confidence": "high"
+ },
+ {
+  "line": 104,
+  "start": 286.207,
+  "end": 289.004,
+  "te": "On paper, India's design has a real edge.",
+  "en": "",
+  "speech_vs_text": 1.22,
+  "boundary_margin": 0.22,
+  "confidence": "high"
+ },
+ {
+  "line": 105,
+  "start": 289.432,
+  "end": 292.027,
+  "te": "There's no tank of hydrogen gas waiting to leak.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 1.247,
+  "confidence": "high"
+ },
+ {
+  "line": 106,
+  "start": 292.466,
+  "end": 293.092,
+  "te": "And the price?",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.156,
+  "confidence": "high"
+ },
+ {
+  "line": 107,
+  "start": 293.474,
+  "end": 298.195,
+  "te": "Weight, and a salty waste liquid that the boat must hold, or pump out to sea.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.156,
+  "confidence": "high"
+ },
+ {
+  "line": 108,
+  "start": 298.651,
+  "end": 299.255,
+  "te": "Powder in.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.65,
+  "confidence": "high"
+ },
+ {
+  "line": 109,
+  "start": 299.613,
+  "end": 300.169,
+  "te": "Power out.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.745,
+  "confidence": "high"
+ },
+ {
+  "line": 110,
+  "start": 300.535,
+  "end": 302.138,
+  "te": "Under water, for weeks.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.187,
+  "confidence": "high"
+ },
+ {
+  "line": 111,
+  "start": 302.736,
+  "end": 303.993,
+  "te": "But there's a problem.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.187,
+  "confidence": "high"
+ },
+ {
+  "line": 112,
+  "start": 304.438,
+  "end": 307.625,
+  "te": "A Kalvari submarine is about sixty-seven metres long.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.238,
+  "confidence": "high"
+ },
+ {
+  "line": 113,
+  "start": 308.098,
+  "end": 311.426,
+  "te": "Walk through it, and you'll find every metre already full.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.157,
+  "confidence": "high"
+ },
+ {
+  "line": 114,
+  "start": 311.868,
+  "end": 313.876,
+  "te": "So where does this whole plant go?",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.157,
+  "confidence": "high"
+ },
+ {
+  "line": 115,
+  "start": 314.33,
+  "end": 316.27,
+  "te": "You open the submarine like a book.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.791,
+  "confidence": "high"
+ },
+ {
+  "line": 116,
+  "start": 316.587,
+  "end": 319.593,
+  "te": "At Mazagon Dock in Mumbai, the hull is cut in two.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.47,
+  "confidence": "high"
+ },
+ {
+  "line": 117,
+  "start": 319.944,
+  "end": 325.468,
+  "te": "A brand-new section is built, holding the powder, the oxygen, the fuel cells and the waste.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.258,
+  "confidence": "high"
+ },
+ {
+  "line": 118,
+  "start": 325.854,
+  "end": 329.032,
+  "te": "It slides into the gap, and the two parts are joined around it.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.258,
+  "confidence": "high"
+ },
+ {
+  "line": 119,
+  "start": 329.293,
+  "end": 332.354,
+  "te": "Reports say the boat comes out about ten metres longer.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.149,
+  "confidence": "high"
+ },
+ {
+  "line": 120,
+  "start": 332.74,
+  "end": 334.104,
+  "te": "Picture ten metres.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.149,
+  "confidence": "high"
+ },
+ {
+  "line": 121,
+  "start": 334.467,
+  "end": 337.48,
+  "te": "That's about four autorickshaws, parked bumper to bumper.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.2,
+  "confidence": "high"
+ },
+ {
+  "line": 122,
+  "start": 337.788,
+  "end": 340.456,
+  "te": "Now, would you trust a hull that has been cut open?",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.2,
+  "confidence": "high"
+ },
+ {
+  "line": 123,
+  "start": 340.756,
+  "end": 347.75,
+  "te": "That's why the submarine's original designer, France's Naval Group, watches over the work and signs off the design for safe fitting.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.131,
+  "confidence": "high"
+ },
+ {
+  "line": 124,
+  "start": 348.144,
+  "end": 350.408,
+  "te": "So the plan is ready, and the machine works.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.131,
+  "confidence": "high"
+ },
+ {
+  "line": 125,
+  "start": 350.789,
+  "end": 351.978,
+  "te": "That's what you'd expect, right?",
+  "en": "",
+  "speech_vs_text": 0.74,
+  "boundary_margin": 0.491,
+  "confidence": "high"
+ },
+ {
+  "line": 126,
+  "start": 352.4,
+  "end": 353.647,
+  "te": "Here's the honest answer.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 127,
+  "start": 353.977,
+  "end": 355.038,
+  "te": "Does it work on land?",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 128,
+  "start": 355.382,
+  "end": 355.746,
+  "te": "Yes.",
+  "en": "",
+  "speech_vs_text": 1.82,
+  "boundary_margin": 2.959,
+  "confidence": "check"
+ },
+ {
+  "line": 129,
+  "start": 355.992,
+  "end": 363.657,
+  "te": "On the eighth of March, twenty twenty-one, D-R-D-O's land prototype was proven, in its endurance mode and its maximum power mode.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.019,
+  "confidence": "check"
+ },
+ {
+  "line": 130,
+  "start": 363.979,
+  "end": 365.78,
+  "te": "But it has never been to sea.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.019,
+  "confidence": "check"
+ },
+ {
+  "line": 131,
+  "start": 366.978,
+  "end": 369.371,
+  "te": "And at sea, the rules are different.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.383,
+  "confidence": "high"
+ },
+ {
+  "line": 132,
+  "start": 369.918,
+  "end": 375.835,
+  "te": "For its next six submarines, the Navy asked for an air independent engine already proven at sea.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.383,
+  "confidence": "high"
+ },
+ {
+  "line": 133,
+  "start": 376.29,
+  "end": 376.947,
+  "te": "Not on shore.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.964,
+  "confidence": "high"
+ },
+ {
+  "line": 134,
+  "start": 377.368,
+  "end": 377.854,
+  "te": "At sea.",
+  "en": "",
+  "speech_vs_text": 1.46,
+  "boundary_margin": 2.484,
+  "confidence": "check"
+ },
+ {
+  "line": 135,
+  "start": 378.354,
+  "end": 384.372,
+  "te": "Reports say a bid from L and T with Spain's Navantia was turned down for exactly this reason.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.616,
+  "confidence": "high"
+ },
+ {
+  "line": 136,
+  "start": 384.757,
+  "end": 387.652,
+  "te": "Its system had been shown on shore, not at sea.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 137,
+  "start": 388.096,
+  "end": 391.557,
+  "te": "Germany's fuel cell boats have been at sea for about twenty years.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 138,
+  "start": 391.896,
+  "end": 394.288,
+  "te": "So the Navy leaned towards a German design.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.295,
+  "confidence": "high"
+ },
+ {
+  "line": 139,
+  "start": 394.743,
+  "end": 396.672,
+  "te": "Does that mean India's machine is bad?",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 140,
+  "start": 397.091,
+  "end": 397.31,
+  "te": "No.",
+  "en": "",
+  "speech_vs_text": 1.64,
+  "boundary_margin": 9.9,
+  "confidence": "check"
+ },
+ {
+  "line": 141,
+  "start": 397.733,
+  "end": 400.792,
+  "te": "It means nobody has proven our system at sea yet.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 2.067,
+  "confidence": "high"
+ },
+ {
+  "line": 142,
+  "start": 401.171,
+  "end": 403.954,
+  "te": "Look at it from both sides, and the trap becomes clear.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.165,
+  "confidence": "high"
+ },
+ {
+  "line": 143,
+  "start": 404.341,
+  "end": 408.497,
+  "te": "The Navy can't bet a war submarine on an engine that has never been to sea.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.165,
+  "confidence": "high"
+ },
+ {
+  "line": 144,
+  "start": 408.903,
+  "end": 412.907,
+  "te": "And the engine can't go to sea until a submarine is cut open for it.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.389,
+  "confidence": "high"
+ },
+ {
+  "line": 145,
+  "start": 413.267,
+  "end": 413.973,
+  "te": "Both are right.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 1.711,
+  "confidence": "high"
+ },
+ {
+  "line": 146,
+  "start": 414.413,
+  "end": 415.502,
+  "te": "That's what makes it a trap.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 147,
+  "start": 415.992,
+  "end": 417.709,
+  "te": "And there's one more lock on that trap.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.859,
+  "confidence": "high"
+ },
+ {
+  "line": 148,
+  "start": 418.189,
+  "end": 423.758,
+  "te": "A submarine can only be cut open in a big refit, when it leaves service for months of repair.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.74,
+  "confidence": "high"
+ },
+ {
+  "line": 149,
+  "start": 424.125,
+  "end": 426.367,
+  "te": "And that comes once in several years.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.74,
+  "confidence": "high"
+ },
+ {
+  "line": 150,
+  "start": 426.861,
+  "end": 428.656,
+  "te": "So what happened in twenty twenty-five?",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 151,
+  "start": 429.151,
+  "end": 432.016,
+  "te": "India's first Kalvari boat was in for its refit.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.646,
+  "confidence": "high"
+ },
+ {
+  "line": 152,
+  "start": 432.351,
+  "end": 433.896,
+  "te": "The new engine wasn't ready.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.424,
+  "confidence": "high"
+ },
+ {
+  "line": 153,
+  "start": 434.303,
+  "end": 435.871,
+  "te": "The boat came out without it.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.424,
+  "confidence": "high"
+ },
+ {
+  "line": 154,
+  "start": 436.306,
+  "end": 437.526,
+  "te": "The window closed.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.309,
+  "confidence": "high"
+ },
+ {
+  "line": 155,
+  "start": 438.038,
+  "end": 440.862,
+  "te": "So if you were in charge, how would you break the trap?",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.309,
+  "confidence": "high"
+ },
+ {
+  "line": 156,
+  "start": 441.326,
+  "end": 442.974,
+  "te": "You'd start with one submarine.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.84,
+  "confidence": "high"
+ },
+ {
+  "line": 157,
+  "start": 443.382,
+  "end": 445.66,
+  "te": "Reports say it will be I-N-S Khanderi.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.452,
+  "confidence": "high"
+ },
+ {
+  "line": 158,
+  "start": 446.81,
+  "end": 453.662,
+  "te": "This October, the heart of this machine started its next round of tests, at L and T's yard in Hazira, Gujarat.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.2,
+  "confidence": "high"
+ },
+ {
+  "line": 159,
+  "start": 454.226,
+  "end": 457.686,
+  "te": "Next, it gets powered up and tested to the Navy's rules.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.2,
+  "confidence": "high"
+ },
+ {
+  "line": 160,
+  "start": 458.136,
+  "end": 460.337,
+  "te": "Early next year, it goes to Mazagon Dock.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.405,
+  "confidence": "high"
+ },
+ {
+  "line": 161,
+  "start": 460.831,
+  "end": 466.267,
+  "te": "And the Defence Secretary says the fitting comes around the middle of next year, with sea trials to follow.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.405,
+  "confidence": "high"
+ },
+ {
+  "line": 162,
+  "start": 466.714,
+  "end": 469.347,
+  "te": "Designed at D-R-D-O's lab in Ambernath.",
+  "en": "",
+  "speech_vs_text": 1.36,
+  "boundary_margin": 0.599,
+  "confidence": "high"
+ },
+ {
+  "line": 163,
+  "start": 469.835,
+  "end": 471.033,
+  "te": "Built by L and T.",
+  "en": "",
+  "speech_vs_text": 1.49,
+  "boundary_margin": 0.349,
+  "confidence": "check"
+ },
+ {
+  "line": 164,
+  "start": 471.546,
+  "end": 472.986,
+  "te": "Fitted by Mazagon Dock.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.349,
+  "confidence": "high"
+ },
+ {
+  "line": 165,
+  "start": 473.39,
+  "end": 477.986,
+  "te": "And the plan is to give it to all six Kalvari boats, one refit at a time.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.223,
+  "confidence": "high"
+ },
+ {
+  "line": 166,
+  "start": 478.47,
+  "end": 480.204,
+  "te": "Meanwhile, is the sea waiting?",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.223,
+  "confidence": "high"
+ },
+ {
+  "line": 167,
+  "start": 480.767,
+  "end": 481.033,
+  "te": "No.",
+  "en": "",
+  "speech_vs_text": 1.99,
+  "boundary_margin": 2.364,
+  "confidence": "check"
+ },
+ {
+  "line": 168,
+  "start": 481.525,
+  "end": 484.847,
+  "te": "China's Yuan class submarines already have this technology.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.215,
+  "confidence": "high"
+ },
+ {
+  "line": 169,
+  "start": 485.307,
+  "end": 492.652,
+  "te": "In April twenty twenty-six, Pakistan commissioned its first Hangor class submarine, which its navy says has A-I-P too.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.215,
+  "confidence": "high"
+ },
+ {
+  "line": 170,
+  "start": 493.161,
+  "end": 497.748,
+  "te": "So everything you've heard now rests on one boat, and one set of trials.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 171,
+  "start": 498.217,
+  "end": 502.141,
+  "te": "If those trials work, India will have what no tender can turn down.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.149,
+  "confidence": "high"
+ },
+ {
+  "line": 172,
+  "start": 502.592,
+  "end": 504.988,
+  "te": "Its own A-I-P, proven at sea.",
+  "en": "",
+  "speech_vs_text": 1.34,
+  "boundary_margin": 0.149,
+  "confidence": "high"
+ },
+ {
+  "line": 173,
+  "start": 505.543,
+  "end": 509.334,
+  "te": "The trap opens, for this boat and every boat after it.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.17,
+  "confidence": "high"
+ },
+ {
+  "line": 174,
+  "start": 509.807,
+  "end": 512.14,
+  "te": "Now go back to that night in the Arabian Sea.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.552,
+  "confidence": "high"
+ },
+ {
+  "line": 175,
+  "start": 512.624,
+  "end": 513.87,
+  "te": "You're in the control room again.",
+  "en": "",
+  "speech_vs_text": 0.72,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 176,
+  "start": 514.292,
+  "end": 515.17,
+  "te": "The battery is low.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 177,
+  "start": 515.575,
+  "end": 516.623,
+  "te": "You wait for the order.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.306,
+  "confidence": "high"
+ },
+ {
+  "line": 178,
+  "start": 517.104,
+  "end": 519.469,
+  "te": "And this time, the mast stays down.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.306,
+  "confidence": "high"
+ },
+ {
+  "line": 179,
+  "start": 519.98,
+  "end": 522.774,
+  "te": "The submarine slips deeper, and keeps going.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.43,
+  "confidence": "high"
+ },
+ {
+  "line": 180,
+  "start": 523.312,
+  "end": 525.183,
+  "te": "But for now, that's only a hope.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.43,
+  "confidence": "high"
+ },
+ {
+  "line": 181,
+  "start": 525.636,
+  "end": 528.156,
+  "te": "If the trials fail, the trap closes again.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.314,
+  "confidence": "high"
+ },
+ {
+  "line": 182,
+  "start": 528.693,
+  "end": 532.214,
+  "te": "That's why the coming year matters more than any headline you'll read.",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.177,
+  "confidence": "high"
+ },
+ {
+  "line": 183,
+  "start": 532.703,
+  "end": 534.473,
+  "te": "Next, we go even deeper.",
+  "en": "",
+  "speech_vs_text": 1.2,
+  "boundary_margin": 0.177,
+  "confidence": "high"
+ },
+ {
+  "line": 184,
+  "start": 534.841,
+  "end": 541.091,
+  "te": "Six thousand metres down, inside a titanium sphere built to carry Indians to the bottom of the ocean.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.261,
+  "confidence": "high"
+ }
+]
