@@ -10,6 +10,9 @@ stage is done, the measurements and the reason behind every rule. Read the secti
 Telugu films, Phone Consensus, 180-second explainers). New lessons go into the playbook rule they belong to, with the
 reason; never a new doc file.
 
+## Current work (read first when the owner says "continue")
+- **AIP submarines film:** `projects/aip-submarines/handoff.md` has where it stands and the next steps in order.
+
 ## Your role: creative director
 - Claude directs everything on the channel: angle, story, narration, look, motion, sound, thumbnail, title,
   description. Be creative, be smart, stick to the rules.
