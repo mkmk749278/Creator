@@ -14048,5 +14048,7 @@
 }
 ],
 "duration": 541.466,
-"durationInFrames": 32488
+"voDurationInFrames": 32488,
+"outro": 4.5,
+"durationInFrames": 32758
 }

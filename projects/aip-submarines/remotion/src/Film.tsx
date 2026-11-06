@@ -4,6 +4,8 @@ import {Atmos, ez} from './parts/kit';
 import {DURATION} from './timing';
 import {open} from './scenes/c0_open';
 import {ch12} from './scenes/c1_c2';
+import {ch34} from './scenes/c3_c4';
+import {ch5} from './scenes/c5_land';
 
 // The film is a list of shots on frames from the locked audio (vo/timing.json). Each shot runs to the next shot's
 // start; a dissolve (0.2 s) overlaps the previous shot unless the cut is hard (§9.4). Overlays (labels, gauges,
@@ -14,7 +16,7 @@ export type Overlay = {from: number; to: number; el: React.ReactNode; name: stri
 export type Part = {shots: Shot[]; overlays: Overlay[]};
 
 const DISSOLVE = 12;
-const parts: Part[] = [open, ch12];
+const parts: Part[] = [open, ch12, ch34, ch5];
 const shots = parts.flatMap((p) => p.shots).sort((a, b) => a.at - b.at);
 const overlays = parts.flatMap((p) => p.overlays);
 

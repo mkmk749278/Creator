@@ -7,7 +7,7 @@ for byte (its SHA-256 goes into the lock). No transcription: the locked script i
 2. Inside a sentence, clause boundaries snap to nearby pauses and words spread by spoken length (vo_timing helpers).
 3. Chapters start at the sentence whose text begins with each prefix in chapters.tsv (`prefix<TAB>title`).
 
-Usage: scripts/vo_lock.py projects/<slug> --audio projects/<slug>/assets/vo/<prefix>_vo_full.mp3 [--fps 60]
+Usage: scripts/vo_lock.py projects/<slug> --audio projects/<slug>/assets/vo/<prefix>_vo_full.mp3 [--fps 60] [--outro 4]
 Writes projects/<slug>/vo/: timing.json (sentences, words, chapters; seconds and frames), captions.en.srt,
 timing.md (sentences to check), lock.json (audio name, SHA-256, duration, approval). Also writes
 assets/vo/vo_full.wav (48 kHz mono, same audio, for Remotion).
@@ -40,6 +40,7 @@ def main() -> None:
     ap.add_argument("--audio", type=Path, required=True)
     ap.add_argument("--fps", type=int, default=60)
     ap.add_argument("--approved", default="", help="who approved and when, e.g. 'owner, 2026-11-06'")
+    ap.add_argument("--outro", type=float, default=0.0, help="seconds of picture after the voice (end card); the mix pads to match")
     a = ap.parse_args()
     film, fps = a.film, a.fps
     out = film / "vo"
@@ -65,7 +66,9 @@ def main() -> None:
     if ci != len(chap_rows):
         sys.exit(f"chapter prefix not found in order: {chap_rows[ci][0]}")
     timing["duration"] = round(total, 3)
-    timing["durationInFrames"] = round(total * fps)
+    timing["voDurationInFrames"] = round(total * fps)
+    timing["outro"] = a.outro
+    timing["durationInFrames"] = round((total + a.outro) * fps)  # the film: voice plus the end card
     for key in ("sentences", "words", "chapters"):
         for x in timing[key]:
             for k in ("start", "end"):
