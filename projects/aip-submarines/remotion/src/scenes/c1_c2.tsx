@@ -31,7 +31,7 @@ const SonarShot: React.FC<{dur: number; ping: number}> = ({dur, ping}) => {
 	return (
 		<AbsoluteFill>
 			<Underwater depth={0.5} />
-			<SubUnderwater cam={[10 - 20 * k, -4, 110]} look={[0, 0, 0]} fov={36} depthTint={0.5} />
+			<SubUnderwater cam={[40 - 70 * k, -10 + 8 * k, 125 - 40 * k]} look={[-6 + 14 * k, 0, 0]} fov={36} x={-10 + 20 * k} depthTint={0.5} />
 			<Ping x={1700} y={300} start={ping} max={1500} />
 		</AbsoluteFill>
 	);
@@ -115,7 +115,7 @@ export const ch12: Part = (() => {
 	add(c50, 'strip', (d) => (
 		<StripShot
 			dur={d}
-			strip={{x: 260, y: 420, w: 1400, draw: w0(50, 'strip') - c50, marks: MARKS, markAt: w0(51, 'red') - c50, days: 28, label: 'YOUR PATROL · 4 WEEKS', fewerAt: w0(54, 'Fewer') - c50, shrinkAt: w0(55, 'Shorter') - c50}}
+			strip={{x: 260, y: 420, w: 1400, draw: 0, marks: MARKS, markAt: w0(51, 'red') - c50, days: 28, label: 'YOUR PATROL · 4 WEEKS', fewerAt: w0(54, 'Fewer') - c50, shrinkAt: w0(55, 'Shorter') - c50}}
 			extra={<StripSenses c={c50} />}
 		/>
 	));

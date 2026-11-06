@@ -2,6 +2,15 @@ import {noise2D} from '@remotion/noise';
 import React from 'react';
 import {AbsoluteFill, interpolate, OffthreadVideo, random, spring, staticFile, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
 import {C, F} from '../theme';
+import LENS from '../../../media/clip_durations.json';
+
+const clipLen = (name: string): number => (LENS as Record<string, number>)[name] ?? 999;
+/** Playback rate so a shot never outruns its footage (a slower, never frozen, clip; at least 0.5×). */
+export const fitRate = (name: string, durFrames: number, startAt: number): number => {
+	const need = durFrames / 60;
+	const have = clipLen(name) - startAt - 0.05;
+	return need <= have ? 1 : Math.max(0.5, have / need);
+};
 
 // The film's small kit: every value is a function of the frame (PLAYBOOK §10.2).
 
@@ -66,6 +75,7 @@ export const Clip: React.FC<{
 			<OffthreadVideo
 				src={staticFile(`assets/media/clips/${name}.mp4`)}
 				startFrom={Math.round(startAt * 60)}
+				playbackRate={fitRate(name, dur, startAt)}
 				muted
 				style={{width: '100%', height: '100%', objectFit: 'cover', filter, ...style}}
 			/>

@@ -38,7 +38,7 @@ export const Tanks: React.FC<{at: number; gas: number; empty?: number}> = ({at, 
 /** One spoonful (about 7 g) and a phone that charges from it (OUR CALCULATION); `tonnes` grows a heap. */
 export const SpoonPhone: React.FC<{spoon: number; grams: number; phone: number; tonnes: number}> = ({spoon, grams, phone, tonnes}) => {
 	const f = useCurrentFrame();
-	const sp = useSpring(spoon);
+	const sp = Math.max(0.6, useSpring(0)) * (0.85 + 0.15 * useSpring(spoon)); // the spoon is there from the start; it lifts on its word
 	const ch = tw(f, phone, phone + 90, 0.05, 1, ez.sweep);
 	const tn = tw(f, tonnes, tonnes + 40, 0, 1, ez.arrive);
 	return (

@@ -35,7 +35,8 @@ const NextFilm: React.FC<{dur: number; depth: number; sphere: number; card: numb
 	const logo = useSpring(card + 10);
 	return (
 		<AbsoluteFill>
-			<Plate dur={dur} seed="next">
+			<Underwater depth={1} />
+			<AbsoluteFill>
 				<svg width={1920} height={1080} style={{position: 'absolute', opacity: 1 - cd}}>
 					<circle cx={1300} cy={520} r={230} fill="none" stroke="#c9ced6" strokeWidth={10} pathLength={1} strokeDasharray={`${sp} 1`} />
 					<circle cx={1300} cy={520} r={190} fill="rgba(201,206,214,0.08)" opacity={sp} />
@@ -45,7 +46,7 @@ const NextFilm: React.FC<{dur: number; depth: number; sphere: number; card: numb
 					<Count a={depth} b={depth + 70} from={0} to={6000} x={200} y={380} size={150} unit="M DOWN" color={C.cyan} />
 					<Label at={sphere} text="A TITANIUM SPHERE" x={1300} y={800} size={50} align="center" />
 				</div>
-			</Plate>
+			</AbsoluteFill>
 			{cd > 0 ? (
 				<AbsoluteFill style={{background: `rgba(3,7,13,${0.92 * cd})`, alignItems: 'center', justifyContent: 'center'}}>
 					<Img src={staticFile('brand/logo_square.png')} style={{width: 420, height: 420, opacity: logo, transform: `scale(${0.9 + 0.1 * logo})`, borderRadius: 24}} />
@@ -105,7 +106,7 @@ export const ch5: Part = (() => {
 		<Plate dur={d} seed="six2">
 			<svg width={1920} height={1080} style={{position: 'absolute'}}>
 				{Array.from({length: 6}).map((_, i) => (
-					<Silhouette key={i} x={220 + (i % 3) * 520} y={440 + Math.floor(i / 3) * 190} px={6} len={i === 0 ? 77.5 : 67.5} color={i === 0 ? C.amber : C.dim} at={w0(164, 'six') - c164 + i * 4} />
+					<Silhouette key={i} x={220 + (i % 3) * 520} y={440 + Math.floor(i / 3) * 190} px={6} len={i === 0 ? 77.5 : 67.5} color={i === 0 ? C.amber : C.dim} at={i * 4} />
 				))}
 			</svg>
 		</Plate>

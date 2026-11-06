@@ -225,7 +225,7 @@ export const ch34: Part = (() => {
 		<Plate dur={d} seed="six">
 			<svg width={1920} height={1080} style={{position: 'absolute'}}>
 				{Array.from({length: 6}).map((_, i) => (
-					<Silhouette key={i} x={220 + (i % 3) * 520} y={420 + Math.floor(i / 3) * 170} px={6} len={70} color={C.ink} at={w0(131, 'six') - c130 + i * 5} />
+					<Silhouette key={i} x={220 + (i % 3) * 520} y={420 + Math.floor(i / 3) * 170} px={6} len={70} color={C.ink} at={i * 5} opacity={1} />
 				))}
 			</svg>
 		</Plate>

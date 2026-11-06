@@ -45,7 +45,7 @@ export const ProfileShot: React.FC<{dur: number; plugAt: number; ghostAt?: numbe
 	return (
 		<AbsoluteFill>
 			<Underwater depth={0.35} />
-			<SubUnderwater cam={[-6 + 10 * k, -3, 84 - 10 * k]} look={[-4 + 8 * k, 0, 0]} fov={34} plug={plug * (1 - ghost)} ghost={ghost} depthTint={0.4} />
+			<SubUnderwater cam={[-16 + 30 * k, -7 + 6 * k, 96 - 26 * k]} look={[-8 + 18 * k, 0, 0]} fov={34} x={-10 + 22 * k} plug={plug * (1 - ghost)} ghost={ghost} depthTint={0.4} />
 		</AbsoluteFill>
 	);
 };

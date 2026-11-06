@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, OffthreadVideo, staticFile, useCurrentFrame} from 'remotion';
 import {C, F} from '../theme';
-import {Cam, ez, tw, useSpring} from './kit';
+import {Cam, ez, fitRate, tw, useSpring} from './kit';
 import {hullPath, finPath, SUB_LEN_M} from './drawings';
 import {noise2D} from '@remotion/noise';
 
@@ -11,13 +11,13 @@ import {noise2D} from '@remotion/noise';
 export const VerticalClip: React.FC<{name: string; dur: number; startAt?: number}> = ({name, dur, startAt = 0}) => (
 	<AbsoluteFill style={{background: '#000'}}>
 		<AbsoluteFill style={{filter: 'blur(40px) brightness(0.45)', transform: 'scale(1.3)'}}>
-			<OffthreadVideo src={staticFile(`assets/media/clips/${name}.mp4`)} startFrom={Math.round(startAt * 60)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+			<OffthreadVideo src={staticFile(`assets/media/clips/${name}.mp4`)} startFrom={Math.round(startAt * 60)} playbackRate={fitRate(name, dur, startAt)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 		</AbsoluteFill>
 		<Cam dur={dur} from={[1.0, 0, 0]} to={[1.07, 0, -10]} seed={name}>
 			<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
 				<div style={{height: 1000, width: 563, boxShadow: '0 30px 90px rgba(0,0,0,0.7)', border: '2px solid rgba(255,255,255,0.15)', overflow: 'hidden'}}>
 					{/* the source's corner logos sit in its top 12%: scale from the bottom so they fall outside the frame */}
-					<OffthreadVideo src={staticFile(`assets/media/clips/${name}.mp4`)} startFrom={Math.round(startAt * 60)} muted style={{width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.3)', transformOrigin: '50% 92%'}} />
+					<OffthreadVideo src={staticFile(`assets/media/clips/${name}.mp4`)} startFrom={Math.round(startAt * 60)} playbackRate={fitRate(name, dur, startAt)} muted style={{width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.3)', transformOrigin: '50% 92%'}} />
 				</div>
 			</AbsoluteFill>
 		</Cam>
@@ -238,13 +238,14 @@ export const ThreeMachines: React.FC<{at: [number, number, number]; keep?: numbe
 	return (
 		<svg width={1920} height={1080} style={{position: 'absolute'}}>
 			{items.map((it, i) => {
-				const k = tw(f, at[i] - 4, at[i] + 30, 0, 1, ez.sweep);
+				const k = tw(f, i * 6, i * 6 + 30, 0, 1, ez.sweep); // all three draw at once, dim
+				const lit = tw(f, at[i] - 4, at[i] + 10, 0, 1, ez.arrive); // each lights on its word
 				const o = i < 2 ? 1 - 0.8 * fade : 1;
 				const cx = 420 + i * 540;
 				const cy = 500;
 				const sel = i === 2 ? fade : 0;
 				return (
-					<g key={i} opacity={o * Math.min(1, k * 2)} transform={`translate(${cx} ${cy}) scale(${1 + 0.15 * sel})`}>
+					<g key={i} opacity={o * Math.min(1, k * 2) * (0.3 + 0.7 * lit)} transform={`translate(${cx} ${cy}) scale(${1 + 0.15 * sel + 0.06 * lit})`}>
 						{i === 0 ? (
 							<g fill="none" stroke={C.ink} strokeWidth={5} pathLength={1}>
 								<rect x={-70} y={-150} width={140} height={200} rx={10} pathLength={1} strokeDasharray={`${k} 1`} />
