@@ -56,3 +56,11 @@ Our own review (PLAYBOOK §13.1) of the first 720p cut: 9:05.97, 1280×720 at 60
   (7:48), the map credit in full.
 
 The owner watches round 5 → independent viewer review r2 (real-audience panel) → `review_ack_r2.md` → the owner approves the cut → the 4K master.
+
+## Round 6 (2026-11-07): subscribe line, horizontal P-8I
+- `aip_review_r6_720p.mp4` (run 42366190404, commit 3a762cf): −14.1 LUFS, −1.1 dBTP, 554.42 s (549.91 s voice + 4.5 s
+  end card). Black and freeze flags are the same as r5's (dark underwater at 8:41 and 8:44, the end-card dissolve, the
+  slow teaser), shifted by the new 8.47 s; none in the new shots.
+- Frames checked in the render at 1:16, 1:19, 1:22, 1:24.6 (ANI ramp, Boeing take-off and air to air, sea from above
+  under "hours out over the sea") and 8:53.5, 8:57, 8:59.6, 9:00.6 (Khanderi at sea, INS KHANDERI label, subscribe pill
+  above the credit, button red on "there"). No burned-in captions, no clipped labels, no logos.
