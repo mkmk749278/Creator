@@ -15,11 +15,10 @@ Branch `ccr-9fa27be6-01wq25` (holds rounds 4–6; not yet merged to `main`). Eve
 - Round 6 720p (`aip_review_r6_720p.mp4`) rendered from commit 3a762cf.
 
 ## Next session, in order
-1. If not done: measure r6, check the new frames (1:15–1:25, 8:52–9:02), send the owner the r6 link and the new audio.
-2. **The owner approves the r6 cut and the audio** → set `approved` in `vo/lock.json`, render the 4K master once
-   (`scale` 2, `aip_master_4k.mp4`).
-3. Step 14 (title, thumbnail, description) only when the owner asks. Leads from the outside review: "Cut in two",
-   the hull plug sliding into the gap.
+1. **Done 2026-11-07:** the owner approved r6 and the audio; the 4K master `aip_master_4k.mp4` is in Drive
+   `English/aip-submarines/renders/` and checked. The folder moved from `Built-on-Bharat/` (owner); r1–r5 trashed.
+2. Step 14 (title, thumbnail, description, `youtube/metadata.json`) only when the owner asks. Leads from the outside
+   review: "Cut in two", the hull plug sliding into the gap. Then the fresh-facts gate within 24 h of upload.
 
 ## Older notes (2026-11-06)
 
