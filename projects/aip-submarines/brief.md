@@ -1,6 +1,6 @@
 # Film 1 · Why India's Submarines Must Surface: The AIP Dilemma
 
-- **Slug:** `aip-submarines` · Drive: `Creator/Built-on-Bharat/aip-submarines/` (playlist film: "Built on Bharat | The
+- **Slug:** `aip-submarines` · Drive: `Creator/English/aip-submarines/` (playlist film: "Built on Bharat | The
   Industrial Backbone")
 - **The machine:** a diesel-electric attack submarine (India's Kalvari class) and the 8–10 m air-independent
   propulsion (AIP) "plug" that DRDO built to keep it under water.

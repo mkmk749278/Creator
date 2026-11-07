@@ -7,8 +7,8 @@ description: Hand a finished cut to the phone-only owner - Drive links, contact 
 
 Rules: `CLAUDE.md` and PLAYBOOK §4 (package), §14 (render and deliver), §15 (release).
 
-1. **Video to Drive:** `scripts/upload_gdrive.sh --sub <folder> <file>…`, where `<folder>` is `English/<slug>` or
-   `Built-on-Bharat/<slug>` (both inside `Creator/`). The master and a 720p copy. Needs `GDRIVE_RCLONE_TOKEN`;
+1. **Video to Drive:** `scripts/upload_gdrive.sh --sub <folder> <file>…`, where `<folder>` is `English/<slug>`
+   (inside `Creator/`; playlist films too). The master and a 720p copy. Needs `GDRIVE_RCLONE_TOKEN`;
    if it is missing, say so plainly and stop.
 2. **Files with `SendUserFile`:** contact sheet(s), `review.md` or `review_ack_rN.md`, the SRT.
 3. **The YouTube package (final films):** in `projects/<slug>/youtube/`:

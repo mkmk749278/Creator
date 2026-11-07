@@ -120,8 +120,8 @@ ISRO's Samudrayaan page). Arjun Mk1A is about 68–68.5 t with Kanchan composite
   restores every commit and branch).
 - **Git.** All work lands on `main`: a session works on its own branch, opens a PR, merges it the same day (merge
   commit), and tells the owner which branch to delete (sessions can't delete branches).
-- **Google Drive.** Everything for a film goes in one folder: `Creator/English/<slug>/`, or
-  `Creator/Built-on-Bharat/<slug>/` for playlist films. Nothing loose in `Creator/`. Videos go up with
+- **Google Drive.** Everything for a film goes in one folder: `Creator/English/<slug>/`, Built on Bharat playlist films
+  too (owner, 2026-11-07: it is a playlist, not a channel, so it has no folder of its own). Nothing loose in `Creator/`. Videos go up with
   `scripts/upload_gdrive.sh --sub <path> FILE…` (needs `GDRIVE_RCLONE_TOKEN`; links are private, never "anyone with the
   link"). Small text files can go through the Drive connector (Creator folder id `1NOCNjqPX5dOzKpp71oyEIIj0xoF-W68M`).
   The owner drops footage in the film's `footage/` folder; pull it with `scripts/gdrive_pull.sh`.

@@ -1,4 +1,4 @@
-# Footage log (vetted 2026-11-06 on contact sheets; Drive `Built-on-Bharat/aip-submarines/footage/`)
+# Footage log (vetted 2026-11-06 on contact sheets; Drive `English/aip-submarines/footage/`)
 
 Third-party clips are used only as short, credited excerpts (§8, §11.4). Clean spans have no burned-in captions,
 logos, titles or tickers in frame. Times are source seconds. A corner watermark is cropped out (a 1.1× scale-up).

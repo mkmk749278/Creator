@@ -1,12 +1,12 @@
 # Footage requests r1 (2026-11-05), from the approved plan
 
-All land in Drive `Creator/Built-on-Bharat/aip-submarines/footage/`. Official and news footage is used only as short,
+All land in Drive `Creator/English/aip-submarines/footage/`. Official and news footage is used only as short,
 credited excerpts. Frames are vetted on contact sheets before use.
 
 ## A. Phone (Termux): short official and news clips
 ```bash
 curl -sL https://raw.githubusercontent.com/mkmk749278/Creator/main/scripts/termux_fetch_to_drive.sh | bash -s -- \
-  Built-on-Bharat/aip-submarines \
+  English/aip-submarines \
   "https://www.youtube.com/watch?v=BDi71t9M1iI" \
   "https://www.youtube.com/watch?v=Cisf_i9wf1A" \
   "https://www.youtube.com/watch?v=UqgXvO28E1g" \
@@ -23,7 +23,7 @@ Mazagon Dock, Khanderi commissioning.
 
 ## B. Laptop (Cowork): blocked sites and big files
 ```text
-Please download these and save them to Google Drive, folder Creator/Built-on-Bharat/aip-submarines/footage/cowork/
+Please download these and save them to Google Drive, folder Creator/English/aip-submarines/footage/cowork/
 (create it if missing). Keep original file names, highest quality offered, no re-encoding. When done, save list.csv in
 the same folder with: file name, source page URL, title, author/owner, licence shown on the page.
 

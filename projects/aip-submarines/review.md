@@ -64,3 +64,8 @@ The owner watches round 5 → independent viewer review r2 (real-audience panel)
 - Frames checked in the render at 1:16, 1:19, 1:22, 1:24.6 (ANI ramp, Boeing take-off and air to air, sea from above
   under "hours out over the sea") and 8:53.5, 8:57, 8:59.6, 9:00.6 (Khanderi at sea, INS KHANDERI label, subscribe pill
   above the credit, button red on "there"). No burned-in captions, no clipped labels, no logos.
+
+## 4K master (2026-11-07)
+- `aip_master_4k.mp4` (run 42369109565, commit 8776b37): 3840×2160, 60 fps, 554.42 s, −14.1 LUFS, −1.1 dBTP; black flags
+  the same as r6; frames at 0:00.5, 1:16, 1:22, 5:00, 7:00, 8:57, 8:59.6, 9:12 match r6.
+- Drive folder moved to `Creator/English/aip-submarines/` (owner, 2026-11-07); r1–r5 and `mix_r5.wav` trashed.
