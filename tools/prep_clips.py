@@ -4,7 +4,7 @@
   python3 tools/prep_clips.py projects/<slug> [--only NAME,NAME] [--jobs 3]
 
 Reads projects/<slug>/media/clips.tsv (name, source in assets/footage/, start, end, crop w:h:x:y or V for vertical,
-note). Writes assets/media/clips/<name>.mp4: only the seconds used, cropped (watermarks, captions, letterbox), scaled
+note, optional ffmpeg colour fix such as a colour cast). Writes assets/media/clips/<name>.mp4: only the seconds used, cropped (watermarks, captions, letterbox), scaled
 to 1920x1080 (vertical sources to 608x1080 x 1.0 height), motion-interpolated to 60 fps when the source is not a
 divisor of 60, H.264 CRF 18 capped at 16 Mb/s, no audio. Skips clips already made unless --force.
 """
@@ -35,6 +35,8 @@ def make(film, row, force):
         vf.append("scale=-2:1080:flags=lanczos")
     else:
         vf.append("scale=1920:1080:flags=lanczos,setsar=1")
+    if len(row) > 6 and row[6].strip():
+        vf.append(row[6].strip())  # a colour fix for a source with a cast (e.g. a green news feed)
     fr = fps_of(srcp)
     if abs(60 / fr - round(60 / fr)) > 1e-3:
         vf.append("minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1")

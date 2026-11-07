@@ -1,6 +1,29 @@
-# Handoff · aip-submarines (2026-11-06, end of session; weekly limit)
+# Handoff · aip-submarines (2026-11-07)
 
-Branch `ccr-cc92ffe7-fv5thg`, PR #76 (open; nothing on it is red). Everything below is committed and pushed.
+Branch `ccr-9fa27be6-01wq25` (holds rounds 4–6; not yet merged to `main`). Everything below is committed and pushed.
+
+## Today (2026-11-07)
+- An outside review of r5 (owner's PDF) was checked: audio clean, one reviewer error (`review_ack_r2.md`).
+- **Subscribe line added** (owner chose option A): "This story isn't over. When Khanderi goes back to sea with its
+  new engine, we'll be there. Subscribe, so you're there too." One new ElevenLabs block (`vo/aip_b07.mp3` in Drive),
+  levelled −1.8 dB and inserted after "…any headline you'll read." The joined voice is `aip_vo_full_v2.mp3/.wav`
+  (549.91 s); The owner approved the r6 cut and this audio on 2026-11-07 (`vo/lock.json`). Earlier sentences moved at most one frame.
+- On screen: Khanderi at sea, "INS KHANDERI · BACK TO SEA · WITH AIP", then a subscribe pill (logo, channel name,
+  button turns red on "there") over a calm aerial. New mix in Drive `mix/mix.wav` (old one kept as `mix_r5.wav`).
+- **P-8I (review r1 #4) fixed**: the owner's Termux fetch brought Boeing's P-8I first-flight film and ANI's INS
+  Rajali clip; the vertical Navy short is gone. Sea-from-above now lands on "hours out over the sea".
+- Round 6 720p (`aip_review_r6_720p.mp4`) rendered from commit 3a762cf.
+
+## Next session, in order
+1. If not done: measure r6, check the new frames (1:15–1:25, 8:52–9:02), send the owner the r6 link and the new audio.
+2. **The owner approves the r6 cut and the audio** → set `approved` in `vo/lock.json`, render the 4K master once
+   (`scale` 2, `aip_master_4k.mp4`).
+3. Step 14 (title, thumbnail, description) only when the owner asks. Leads from the outside review: "Cut in two",
+   the hull plug sliding into the gap.
+
+## Older notes (2026-11-06)
+
+Branch `ccr-235edd1d-ezbsf6` (PR #76 merged earlier today). Everything below is committed and pushed.
 
 ## Where the film stands (PLAYBOOK §3 steps)
 - Steps 1–6 done: topic, research, plan, facts (43 claims, gate passes), narration and audio **approved by the owner**.
@@ -12,21 +35,20 @@ Branch `ccr-cc92ffe7-fv5thg`, PR #76 (open; nothing on it is red). Everything be
   are rendered. The mix is in Drive `mix/mix.wav` (bed 23 dB under the voice).
 - Step 11: three own-review rounds (`review.md`). Step 12: one independent review (`review_viewer_r1.md`); its
   fixes are applied (`review_ack_r1.md`).
-- **In flight:** round-4 720p render `aip_review_r4_720p.mp4` (remotion-render run dispatched about 18:15 UTC on
-  the branch). It lands in Drive `Built-on-Bharat/aip-submarines/renders/`.
+- Round 4 (`aip_review_r4_720p.mp4`, in Drive) measured and checked: `review.md` § Round 4. Three holds (5:46, 7:46),
+  the Defence Secretary quote layout (4:37) and the clipped map credit are fixed in the source.
+- Round 5 (`aip_review_r5_720p.mp4`, Drive id `1HdilW6WE8ZxPn0esWTVM4z9-vezR1AhP`) measured and checked
+  (`review.md` § Round 5) and sent to the owner. Asked: trash r3 (kills its public link) and link-share r5 for the
+  independent reviewer.
 
 ## Next session, in order
-1. Check the round-4 run (GitHub MCP `actions_list` on `remotion-render.yml`). If a shard hung on apt, cancel and
-   `rerun_failed_jobs`. Pull the cut: `/tmp`-style rclone (see `scripts/upload_gdrive.sh` for the config) or
-   `scripts/gdrive_pull.sh Built-on-Bharat/aip-submarines/renders <dir>`.
-2. Measure it (ebur128, blackdetect) and check frames at 0:12, 2:58, 4:38, 6:45, 7:08, 7:30–7:50, 8:12.
-3. Send the owner the r4 Drive link (it is private) and a summary of `review_ack_r1.md`. **Trash
-   `renders/aip_review_r3_720p.mp4`**: it is shared "anyone with the link" for the independent reviewer, and
-   trashing it kills the link (the Drive connector cannot remove a permission; tell the owner first).
-4. Run the independent review again on r4 with the **new real-audience panel** (`prompts/audience_review_v1.md`).
-   The r4 file must be link-shared for it (ask the owner, as for r3). Then `review_ack_r2.md`.
-5. **The owner approves the cut** → render the 4K master once (`scale` 2, name `aip_master_4k.mp4`).
-6. Step 14 (title, thumbnail, description) only when the owner asks.
+1. Read the owner's answers on trashing r3 and sharing r5. Trash r1–r4 once they agree (the Drive connector can trash
+   but cannot remove a permission).
+2. Pull r5 if needed: `scripts/gdrive_pull.sh Built-on-Bharat/aip-submarines/renders <dir>`.
+3. Run the independent review again on r5 with the **new real-audience panel** (`prompts/audience_review_v1.md`).
+   The r5 file must be link-shared for it (ask the owner, as for r3). Then `review_ack_r2.md`.
+4. **The owner approves the cut** → render the 4K master once (`scale` 2, name `aip_master_4k.mp4`).
+5. Step 14 (title, thumbnail, description) only when the owner asks.
 
 ## Open items needing the owner
 - Extra pauses after "twenty twenty-one" and "turned down" (independent review #8): these change the approved audio.

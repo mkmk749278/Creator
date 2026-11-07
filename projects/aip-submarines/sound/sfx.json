@@ -30,5 +30,6 @@
   {"at": "w:171:proven", "sfx": "stamp", "gain_db": -8},
   {"at": "w:172:opens", "sfx": "riser", "gain_db": -14},
   {"at": "w:180:closes", "sfx": "metal_slam", "gain_db": -10},
-  {"at": "w:183:six", "to": "w:183:titanium", "sfx": "riser", "gain_db": -16}
+  {"at": "w:184:there", "sfx": "counter_land", "gain_db": -18},
+  {"at": "w:186:six", "to": "w:186:titanium", "sfx": "riser", "gain_db": -16}
 ]}

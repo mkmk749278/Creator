@@ -167,7 +167,7 @@ export const SeaMap: React.FC<{
 					</div>
 				);
 			})}
-			<div style={{position: 'absolute', left: 80, bottom: 200, fontFamily: F.label, fontWeight: 700, fontSize: 30, color: C.dim, opacity: 0.85}}>
+			<div style={{position: 'absolute', left: 150, bottom: 110, fontFamily: F.label, fontWeight: 700, fontSize: 30, color: C.dim, opacity: 0.85}}>
 				NASA BLUE MARBLE · NATURAL EARTH
 			</div>
 			<AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,${0.35 + 0.05 * noise2D('mv', f / 200, 0)}) 100%)`}} />

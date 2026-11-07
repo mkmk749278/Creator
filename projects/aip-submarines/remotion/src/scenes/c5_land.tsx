@@ -10,7 +10,7 @@ import {SubUnderwater} from '../parts/Sub3D';
 import {C, F} from '../theme';
 import {s0, s1, w0} from '../timing';
 
-// Chapter 5 · The way out (S154–168) and the landing (S169–183), word_map.md.
+// Chapter 5 · The way out (S154–168) and the landing (S169–186), word_map.md.
 const pre = (f: number) => f - 9;
 const VAG = 'INDIAN NAVY · INS VAGIR FILM';
 const KHA = 'INS KHANDERI · FINANCIAL EXPRESS';
@@ -54,6 +54,32 @@ const NextFilm: React.FC<{dur: number; depth: number; sphere: number; card: numb
 				</AbsoluteFill>
 			) : null}
 		</AbsoluteFill>
+	);
+};
+
+/** The subscribe ask (owner, 2026-11-07): a pill on the lower third on "Subscribe", the channel's mark and name, the
+ *  button pressed once and then breathing. The only place in the film besides the end card where the brand appears. */
+const SubscribePill: React.FC<{at: number; press: number}> = ({at, press}) => {
+	const f = useCurrentFrame();
+	const p = useSpring(at);
+	const pr = useSpring(press, 260, 16);
+	const tap = f >= press ? 1 - 0.06 * Math.sin(Math.min(1, (f - press) / 12) * Math.PI) : 1;
+	const breathe = f > press + 12 ? 0.5 + 0.5 * Math.sin((f - press - 12) / 60 * Math.PI * 2) : 0;
+	if (f < at) {
+		return null;
+	}
+	return (
+		<div style={{position: 'absolute', left: '50%', bottom: 320, transform: `translate(-50%, ${(1 - p) * 60}px)`, opacity: p,
+			display: 'flex', alignItems: 'center', gap: 28, padding: '18px 22px 18px 18px', borderRadius: 999,
+			background: 'rgba(13,17,23,0.92)', border: '2px solid rgba(238,243,248,0.16)', boxShadow: '0 24px 70px rgba(0,0,0,0.6)'}}>
+			<Img src={staticFile('brand/logo_square.png')} style={{width: 96, height: 96, borderRadius: 999}} />
+			<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 46, color: C.ink, letterSpacing: 1, whiteSpace: 'nowrap'}}>BE PRACTICAL WITH KISHORE</div>
+			<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 46, letterSpacing: 2, padding: '16px 34px', borderRadius: 999, whiteSpace: 'nowrap',
+				color: pr > 0.5 ? C.ink : '#0d1117', background: pr > 0.5 ? C.red : C.ink, transform: `scale(${tap})`,
+				boxShadow: `0 0 ${20 + 30 * breathe}px rgba(255,59,59,${0.25 + 0.35 * breathe * pr})`}}>
+				SUBSCRIBE
+			</div>
+		</div>
 	);
 };
 
@@ -124,13 +150,13 @@ export const ch5: Part = (() => {
 			keys={[
 				{f: 0, lon: 71.8, lat: 20.6, zoom: 6},
 				{f: w0(159, 'Mazagon') - c157, lon: 71.6, lat: 20.1, zoom: 6.6},
-				{f: w0(161, 'Ambernath') - c157, lon: 71.7, lat: 20.0, zoom: 7.0},
-				{f: d, lon: 71.7, lat: 20.0, zoom: 7.3},
+				{f: w0(161, 'Designed') - c157, lon: 71.7, lat: 20.0, zoom: 7.0},
+				{f: d, lon: 71.9, lat: 19.8, zoom: 7.7},
 			]}
 			pins={[
 				{at: w0(157, 'Hazira') - c157, ll: P.hazira, label: 'HAZIRA', sub: "L&T'S YARD · GUJARAT"},
 				{at: w0(159, 'Mazagon') - c157, ll: P.mumbai, label: 'MAZAGON DOCK', sub: 'MUMBAI', side: 'left'},
-				{at: w0(161, 'Ambernath') - c157, ll: P.ambernath, label: 'AMBERNATH', sub: 'DRDO LAB · NMRL', color: C.cyan},
+				{at: w0(161, 'D-R-D-O') - c157, ll: P.ambernath, label: 'AMBERNATH', sub: 'DRDO LAB · NMRL', color: C.cyan},
 			]}
 			routes={[{a: w0(159, 'goes') - c157, b: w0(159, 'Dock') - c157 + 20, from: P.hazira, to: P.mumbai, color: C.amber}]}
 		/>
@@ -207,9 +233,19 @@ export const ch5: Part = (() => {
 	));
 	over(pre(w0(181, 'coming')), pre(s0(182)), '2027', <Label at={0} text="THE NEXT 12 MONTHS" x={960} y={170} size={64} align="center" color={C.amber} />);
 
-	// S182–183: next film, end card (the only logo)
+	// S182–184: the subscribe line (owner, 2026-11-07): the story isn't over; Khanderi back at sea with its new engine; subscribe
 	const c182 = pre(s0(182));
-	add(c182, 'next film', (d) => <NextFilm dur={d} depth={w0(183, 'Six') - c182} sphere={w0(183, 'titanium') - c182} card={s1(183) - c182 + 12} />);
+	add(c182, 'KHA sea again', (d) => <Clip name="KHA_sea" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.1, -30, 0]} />);
+	over(c182, pre(s0(185)), 'credit kha3', <Credit text={KHA} />);
+	over(pre(w0(182, 'over')), pre(s0(183)), 'not over', <Label at={0} text="NOT OVER YET" x={960} y={170} size={64} align="center" color={C.amber} />);
+	add(pre(w0(183, 'sea')), 'KHA turq', (d) => <Clip name="KHA_turq" dur={d} grade="day" from={[1.04, 0, 0]} to={[1.14, 40, -10]} />, true);
+	over(pre(w0(183, 'Khanderi')), pre(s0(184)), 'khanderi', <Label at={0} text="INS KHANDERI" sub="BACK TO SEA · WITH AIP" x={170} y={190} size={60} />);
+	add(pre(w0(184, 'Subscribe')), 'KHA aerial', (d) => <Clip name="KHA_aer" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.08, 0, 20]} />);
+	over(pre(w0(184, 'Subscribe')), pre(s0(185)), 'subscribe', <SubscribePill at={0} press={w0(184, 'there') - pre(w0(184, 'Subscribe'))} />);
+
+	// S185–186: next film, end card (the only logo)
+	const c185 = pre(s0(185));
+	add(c185, 'next film', (d) => <NextFilm dur={d} depth={w0(186, 'Six') - c185} sphere={w0(186, 'titanium') - c185} card={s1(186) - c185 + 12} />);
 	return {shots, overlays};
 })();
 

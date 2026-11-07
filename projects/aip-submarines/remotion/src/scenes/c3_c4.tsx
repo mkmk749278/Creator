@@ -122,13 +122,16 @@ export const ch34: Part = (() => {
 	// review r1: the quote sat on a sailor's face and read as the Secretary himself; it now sits on the sealed hull drawing
 	add(c101, 'sealed chain quote', (d) => (
 		<Plate dur={d} seed="chainq" from={[1.06, 0, 0]} to={[1.12, 0, 0]}>
-			<div style={{opacity: 0.45}}>
+			<div style={{opacity: 0.25, filter: 'blur(3px)'}}>
 				<Chain cue={{h2: -200, o2: -200, cold: -200, cell: -200, acid: -200, elec: -200, water: -200, back: -200, hull: -200}} />
 			</div>
 		</Plate>
 	));
-	over(pre(w0(101, 'October')), pre(s0(103)), 'oct', <Label at={0} text="OCT 2026" x={960} y={220} size={60} mono align="center" />);
-	over(pre(w0(102, 'strict')), pre(s0(103)), 'quote', <Label at={0} text="“STRICT SAFETY CULTURE”" sub="“NO COMPROMISE” · DEFENCE SECRETARY" x={960} y={420} size={64} color={C.amber} align="center" />);
+	// review r4: the date sat on the oxygen tube, "Defence Secretary" had no picture, and the card hid half of two labels;
+	// the drawing now sits further back and the speaker gets his own line on his words.
+	over(pre(w0(101, 'October')), pre(s0(103)), 'oct', <Label at={0} text="OCT 2026" x={960} y={250} size={60} mono align="center" />);
+	over(pre(w0(101, 'Defence')), pre(s0(103)), 'speaker', <Label at={0} text="INDIA'S DEFENCE SECRETARY" x={960} y={360} size={52} align="center" />);
+	over(pre(w0(102, 'strict')), pre(s0(103)), 'quote', <Label at={0} text="“STRICT SAFETY CULTURE”" sub="“NO COMPROMISE”" x={960} y={540} size={64} color={C.amber} align="center" />);
 
 	// S103–106: the balance
 	const c103 = pre(s0(103));
@@ -204,7 +207,9 @@ export const ch34: Part = (() => {
 
 	// S121–122: trust a cut hull? Naval Group signs off
 	const c121 = pre(s0(121));
-	add(c121, 'H4 weld', (d) => <Clip name="H4" dur={d} startAt={13.8} grade="none" from={[1.08, 0, 0]} to={[1.16, 0, 0]} />);
+	// The clip runs out about 4 s in (0.5x), so a steady linear push and pan carries the rest to the cut (r4: an eased
+	// move went still for 2 s under "signs off the design").
+	add(c121, 'H4 weld', (d) => <Clip name="H4" dur={d} startAt={13.8} grade="none" from={[1.06, 50, 0]} to={[1.24, -90, 0]} ease={(t) => t} />);
 	over(pre(w0(122, 'Naval')), pre(s0(123)), 'naval group', <Label at={0} text="NAVAL GROUP" sub="FRANCE · THE ORIGINAL DESIGNER" x={170} y={190} size={60} />);
 	over(pre(w0(122, 'signs')), pre(s0(123)), 'signs off', <Label at={0} text="✓ SIGNS OFF THE DESIGN" x={170} y={420} size={50} color={C.green} />);
 	tag(c121, pre(s0(123)));

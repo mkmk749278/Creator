@@ -1,8 +1,8 @@
 {
- "audio": "aip_vo_full.mp3",
- "sha256": "78c9a37636ec6138ea32b31acf4ee6a244ccaeab4e1d69da88a012972211b9b6",
- "duration": 541.466,
- "approved": "owner, 2026-11-06 (chat: 'Audio approved lock it and proceed')",
+ "audio": "aip_vo_full_v2.wav",
+ "sha256": "ffb61b66057187c1486ef3a12ec4d1fcf1a455a0bcea7a5544ce34ab45da3d38",
+ "duration": 549.91,
+ "approved": "owner, 2026-11-07 (chat: 'Approved', the r6 cut with the subscribe line)",
  "wav": "vo_full.wav",
- "wav_duration": 541.44
+ "wav_duration": 549.91
 }

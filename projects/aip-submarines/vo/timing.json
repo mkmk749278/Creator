@@ -1,6 +1,6 @@
 {
 "fps": 60,
-"audio": "aip_vo_full.mp3",
+"audio": "aip_vo_full_v2.wav",
 "sentences": [
 {
 "id": 0,
@@ -8,7 +8,7 @@
 "text": "Night.",
 "start": 0.0,
 "end": 0.527,
-"ratio": 1.52,
+"ratio": 1.53,
 "margin": 9.9,
 "startFrame": 0,
 "endFrame": 32
@@ -28,7 +28,7 @@
 "id": 2,
 "chapter": "Cold open",
 "text": "Somewhere under these waves, an Indian submarine is running out of battery.",
-"start": 2.574,
+"start": 2.575,
 "end": 6.793,
 "ratio": 0.93,
 "margin": 1.25,
@@ -41,8 +41,8 @@
 "text": "Imagine you're in its control room.",
 "start": 7.442,
 "end": 9.173,
-"ratio": 0.89,
-"margin": 1.738,
+"ratio": 0.9,
+"margin": 1.737,
 "startFrame": 447,
 "endFrame": 550
 },
@@ -51,7 +51,7 @@
 "chapter": "Cold open",
 "text": "Nobody raises a voice.",
 "start": 9.732,
-"end": 11.056,
+"end": 11.05,
 "ratio": 1.06,
 "margin": 9.9,
 "startFrame": 584,
@@ -96,7 +96,7 @@
 "text": "The diesel engines roar to life.",
 "start": 18.807,
 "end": 20.54,
-"ratio": 0.96,
+"ratio": 0.97,
 "margin": 0.356,
 "startFrame": 1128,
 "endFrame": 1232
@@ -116,9 +116,9 @@
 "id": 10,
 "chapter": "Cold open",
 "text": "You're inside a machine built to disappear.",
-"start": 26.434,
+"start": 26.433,
 "end": 28.717,
-"ratio": 0.94,
+"ratio": 0.95,
 "margin": 0.571,
 "startFrame": 1586,
 "endFrame": 1723
@@ -196,7 +196,7 @@
 "start": 44.611,
 "end": 46.724,
 "ratio": 0.97,
-"margin": 0.571,
+"margin": 0.57,
 "startFrame": 2677,
 "endFrame": 2803
 },
@@ -207,7 +207,7 @@
 "start": 47.151,
 "end": 50.309,
 "ratio": 0.89,
-"margin": 0.403,
+"margin": 0.404,
 "startFrame": 2829,
 "endFrame": 3019
 },
@@ -218,7 +218,7 @@
 "start": 50.756,
 "end": 51.603,
 "ratio": 0.77,
-"margin": 0.157,
+"margin": 0.158,
 "startFrame": 3045,
 "endFrame": 3096
 },
@@ -229,7 +229,7 @@
 "start": 51.959,
 "end": 55.837,
 "ratio": 1.14,
-"margin": 0.157,
+"margin": 0.158,
 "startFrame": 3118,
 "endFrame": 3350
 },
@@ -262,7 +262,7 @@
 "start": 60.915,
 "end": 62.155,
 "ratio": 1.28,
-"margin": 1.125,
+"margin": 1.124,
 "startFrame": 3655,
 "endFrame": 3729
 },
@@ -271,7 +271,7 @@
 "chapter": "Cold open",
 "text": "Yet the Navy leaned towards a German design for its next submarines.",
 "start": 62.544,
-"end": 66.527,
+"end": 66.528,
 "ratio": 1.03,
 "margin": 9.9,
 "startFrame": 3753,
@@ -281,11 +281,11 @@
 "id": 25,
 "chapter": "Cold open",
 "text": "So was the Navy wrong?",
-"start": 66.912,
+"start": 66.908,
 "end": 68.285,
 "ratio": 1.17,
 "margin": 9.9,
-"startFrame": 4015,
+"startFrame": 4014,
 "endFrame": 4097
 },
 {
@@ -295,7 +295,7 @@
 "start": 68.576,
 "end": 70.628,
 "ratio": 0.96,
-"margin": 0.646,
+"margin": 0.645,
 "startFrame": 4115,
 "endFrame": 4238
 },
@@ -306,7 +306,7 @@
 "start": 71.119,
 "end": 72.851,
 "ratio": 0.93,
-"margin": 0.646,
+"margin": 0.645,
 "startFrame": 4267,
 "endFrame": 4371
 },
@@ -317,7 +317,7 @@
 "start": 73.196,
 "end": 75.132,
 "ratio": 0.87,
-"margin": 0.611,
+"margin": 0.61,
 "startFrame": 4392,
 "endFrame": 4508
 },
@@ -325,10 +325,10 @@
 "id": 29,
 "chapter": "Caught breathing",
 "text": "Start with the people whose job is to find you.",
-"start": 75.615,
+"start": 75.611,
 "end": 78.155,
-"ratio": 0.99,
-"margin": 0.611,
+"ratio": 1.0,
+"margin": 0.61,
 "startFrame": 4537,
 "endFrame": 4689
 },
@@ -337,8 +337,8 @@
 "chapter": "Caught breathing",
 "text": "Now switch sides.",
 "start": 78.567,
-"end": 79.744,
-"ratio": 1.22,
+"end": 79.751,
+"ratio": 1.23,
 "margin": 9.9,
 "startFrame": 4714,
 "endFrame": 4785
@@ -360,7 +360,7 @@
 "text": "You're flying a P-Eight-I of the Indian Navy, hours out over the sea.",
 "start": 81.157,
 "end": 85.332,
-"ratio": 1.07,
+"ratio": 1.08,
 "margin": 0.218,
 "startFrame": 4869,
 "endFrame": 5120
@@ -371,7 +371,7 @@
 "text": "You don't look for the submarine itself.",
 "start": 85.695,
 "end": 87.363,
-"ratio": 0.75,
+"ratio": 0.76,
 "margin": 0.218,
 "startFrame": 5142,
 "endFrame": 5242
@@ -393,8 +393,8 @@
 "text": "A mast.",
 "start": 89.993,
 "end": 90.626,
-"ratio": 1.83,
-"margin": 2.889,
+"ratio": 1.84,
+"margin": 2.888,
 "startFrame": 5400,
 "endFrame": 5438
 },
@@ -426,7 +426,7 @@
 "text": "The noise of a diesel engine.",
 "start": 95.304,
 "end": 96.931,
-"ratio": 1.02,
+"ratio": 1.03,
 "margin": 9.9,
 "startFrame": 5718,
 "endFrame": 5816
@@ -458,9 +458,9 @@
 "chapter": "Caught breathing",
 "text": "So why would you ever raise that mast?",
 "start": 100.942,
-"end": 103.344,
+"end": 103.345,
 "ratio": 1.16,
-"margin": 0.158,
+"margin": 0.159,
 "startFrame": 6057,
 "endFrame": 6201
 },
@@ -470,8 +470,8 @@
 "text": "Because under water, everything you depend on runs on one giant battery.",
 "start": 103.746,
 "end": 108.721,
-"ratio": 1.1,
-"margin": 0.158,
+"ratio": 1.11,
+"margin": 0.159,
 "startFrame": 6225,
 "endFrame": 6523
 },
@@ -480,11 +480,11 @@
 "chapter": "Caught breathing",
 "text": "The motor, the lights, the air plant, the computers.",
 "start": 109.186,
-"end": 112.55,
-"ratio": 0.95,
-"margin": 0.31,
+"end": 112.559,
+"ratio": 0.96,
+"margin": 0.306,
 "startFrame": 6551,
-"endFrame": 6753
+"endFrame": 6754
 },
 {
 "id": 44,
@@ -524,11 +524,11 @@
 "chapter": "Caught breathing",
 "text": "A few days.",
 "start": 120.832,
-"end": 121.508,
-"ratio": 1.22,
+"end": 121.51,
+"ratio": 1.23,
 "margin": 2.876,
 "startFrame": 7250,
-"endFrame": 7290
+"endFrame": 7291
 },
 {
 "id": 48,
@@ -537,7 +537,7 @@
 "start": 121.952,
 "end": 127.245,
 "ratio": 1.06,
-"margin": 0.399,
+"margin": 0.398,
 "startFrame": 7317,
 "endFrame": 7635
 },
@@ -548,7 +548,7 @@
 "start": 127.664,
 "end": 132.495,
 "ratio": 1.01,
-"margin": 0.399,
+"margin": 0.398,
 "startFrame": 7660,
 "endFrame": 7950
 },
@@ -559,7 +559,7 @@
 "start": 132.969,
 "end": 135.005,
 "ratio": 0.95,
-"margin": 0.537,
+"margin": 0.538,
 "startFrame": 7978,
 "endFrame": 8100
 },
@@ -601,11 +601,11 @@
 "chapter": "Caught breathing",
 "text": "Fewer red marks.",
 "start": 145.685,
-"end": 146.673,
-"ratio": 1.1,
-"margin": 1.132,
+"end": 146.683,
+"ratio": 1.11,
+"margin": 1.137,
 "startFrame": 8741,
-"endFrame": 8800
+"endFrame": 8801
 },
 {
 "id": 55,
@@ -624,7 +624,7 @@
 "text": "That's exactly what A-I-P does.",
 "start": 148.327,
 "end": 150.353,
-"ratio": 1.27,
+"ratio": 1.28,
 "margin": 9.9,
 "startFrame": 8900,
 "endFrame": 9021
@@ -635,7 +635,7 @@
 "text": "It's a second engine that doesn't need air from outside.",
 "start": 150.718,
 "end": 153.651,
-"ratio": 0.96,
+"ratio": 0.97,
 "margin": 9.9,
 "startFrame": 9043,
 "endFrame": 9219
@@ -646,7 +646,7 @@
 "text": "Three main kinds are in use today.",
 "start": 154.143,
 "end": 155.886,
-"ratio": 0.93,
+"ratio": 0.94,
 "margin": 0.348,
 "startFrame": 9249,
 "endFrame": 9353
@@ -679,7 +679,7 @@
 "text": "And for you, the difference is huge.",
 "start": 161.91,
 "end": 164.329,
-"ratio": 1.08,
+"ratio": 1.09,
 "margin": 0.243,
 "startFrame": 9715,
 "endFrame": 9860
@@ -691,7 +691,7 @@
 "start": 164.712,
 "end": 168.598,
 "ratio": 0.97,
-"margin": 0.363,
+"margin": 0.362,
 "startFrame": 9883,
 "endFrame": 10116
 },
@@ -777,7 +777,7 @@
 "chapter": "The ghost myth",
 "text": "Active sonar can bounce sound off your hull.",
 "start": 185.724,
-"end": 188.211,
+"end": 188.212,
 "ratio": 1.0,
 "margin": 0.639,
 "startFrame": 11143,
@@ -799,7 +799,7 @@
 "chapter": "The ghost myth",
 "text": "What it really buys you is fewer red marks.",
 "start": 192.672,
-"end": 195.458,
+"end": 195.457,
 "ratio": 1.09,
 "margin": 0.618,
 "startFrame": 11560,
@@ -844,7 +844,7 @@
 "text": "India does build them.",
 "start": 205.181,
 "end": 206.293,
-"ratio": 0.89,
+"ratio": 0.9,
 "margin": 0.71,
 "startFrame": 12311,
 "endFrame": 12378
@@ -889,7 +889,7 @@
 "start": 218.674,
 "end": 220.375,
 "ratio": 1.07,
-"margin": 2.404,
+"margin": 2.403,
 "startFrame": 13120,
 "endFrame": 13222
 },
@@ -966,7 +966,7 @@
 "start": 239.804,
 "end": 241.796,
 "ratio": 0.9,
-"margin": 0.366,
+"margin": 0.367,
 "startFrame": 14388,
 "endFrame": 14508
 },
@@ -977,7 +977,7 @@
 "start": 242.135,
 "end": 246.836,
 "ratio": 0.94,
-"margin": 0.366,
+"margin": 0.367,
 "startFrame": 14528,
 "endFrame": 14810
 },
@@ -1021,7 +1021,7 @@
 "start": 253.722,
 "end": 257.513,
 "ratio": 1.2,
-"margin": 0.459,
+"margin": 0.458,
 "startFrame": 15223,
 "endFrame": 15451
 },
@@ -1031,8 +1031,8 @@
 "text": "The two meet inside a fuel cell, and its heart is an acid.",
 "start": 257.837,
 "end": 261.716,
-"ratio": 1.1,
-"margin": 0.276,
+"ratio": 1.11,
+"margin": 0.277,
 "startFrame": 15470,
 "endFrame": 15703
 },
@@ -1043,7 +1043,7 @@
 "start": 262.016,
 "end": 263.011,
 "ratio": 0.9,
-"margin": 0.276,
+"margin": 0.277,
 "startFrame": 15721,
 "endFrame": 15781
 },
@@ -1108,7 +1108,7 @@
 "text": "Would you want all this inside a sealed steel tube with you?",
 "start": 273.174,
 "end": 276.605,
-"ratio": 1.03,
+"ratio": 1.04,
 "margin": 0.405,
 "startFrame": 16390,
 "endFrame": 16596
@@ -1141,7 +1141,7 @@
 "text": "On paper, India's design has a real edge.",
 "start": 286.206,
 "end": 289.004,
-"ratio": 1.18,
+"ratio": 1.19,
 "margin": 0.246,
 "startFrame": 17172,
 "endFrame": 17340
@@ -1150,10 +1150,10 @@
 "id": 104,
 "chapter": "India's powder",
 "text": "There's no tank of hydrogen gas waiting to leak.",
-"start": 289.404,
+"start": 289.402,
 "end": 292.032,
 "ratio": 1.0,
-"margin": 1.255,
+"margin": 1.253,
 "startFrame": 17364,
 "endFrame": 17522
 },
@@ -1161,7 +1161,7 @@
 "id": 105,
 "chapter": "India's powder",
 "text": "And the price?",
-"start": 292.451,
+"start": 292.452,
 "end": 293.102,
 "ratio": 0.86,
 "margin": 0.156,
@@ -1186,7 +1186,7 @@
 "start": 298.65,
 "end": 299.264,
 "ratio": 1.11,
-"margin": 0.658,
+"margin": 0.659,
 "startFrame": 17919,
 "endFrame": 17956
 },
@@ -1230,7 +1230,7 @@
 "start": 304.437,
 "end": 307.65,
 "ratio": 1.06,
-"margin": 0.227,
+"margin": 0.226,
 "startFrame": 18266,
 "endFrame": 18459
 },
@@ -1241,7 +1241,7 @@
 "start": 308.096,
 "end": 311.432,
 "ratio": 0.91,
-"margin": 0.174,
+"margin": 0.172,
 "startFrame": 18486,
 "endFrame": 18686
 },
@@ -1249,10 +1249,10 @@
 "id": 113,
 "chapter": "Cut it in half",
 "text": "So where does this whole plant go?",
-"start": 311.847,
+"start": 311.843,
 "end": 313.877,
 "ratio": 1.0,
-"margin": 0.174,
+"margin": 0.172,
 "startFrame": 18711,
 "endFrame": 18833
 },
@@ -1260,10 +1260,10 @@
 "id": 114,
 "chapter": "Cut it in half",
 "text": "You open the submarine like a book.",
-"start": 314.325,
+"start": 314.328,
 "end": 316.272,
 "ratio": 1.01,
-"margin": 0.778,
+"margin": 0.777,
 "startFrame": 18860,
 "endFrame": 18976
 },
@@ -1307,7 +1307,7 @@
 "start": 329.292,
 "end": 332.393,
 "ratio": 0.94,
-"margin": 0.139,
+"margin": 0.138,
 "startFrame": 19758,
 "endFrame": 19944
 },
@@ -1317,8 +1317,8 @@
 "text": "Picture ten metres.",
 "start": 332.74,
 "end": 334.117,
-"ratio": 1.0,
-"margin": 0.139,
+"ratio": 1.01,
+"margin": 0.138,
 "startFrame": 19964,
 "endFrame": 20047
 },
@@ -1351,7 +1351,7 @@
 "start": 340.753,
 "end": 347.789,
 "ratio": 0.89,
-"margin": 0.672,
+"margin": 0.671,
 "startFrame": 20445,
 "endFrame": 20867
 },
@@ -1362,7 +1362,7 @@
 "start": 348.138,
 "end": 350.422,
 "ratio": 0.85,
-"margin": 0.481,
+"margin": 0.48,
 "startFrame": 20888,
 "endFrame": 21025
 },
@@ -1373,7 +1373,7 @@
 "start": 350.789,
 "end": 351.979,
 "ratio": 0.72,
-"margin": 0.481,
+"margin": 0.48,
 "startFrame": 21047,
 "endFrame": 21119
 },
@@ -1382,7 +1382,7 @@
 "chapter": "The trap",
 "text": "Here's the honest answer.",
 "start": 352.338,
-"end": 353.652,
+"end": 353.651,
 "ratio": 0.95,
 "margin": 9.9,
 "startFrame": 21140,
@@ -1405,8 +1405,8 @@
 "text": "Yes.",
 "start": 355.376,
 "end": 355.75,
-"ratio": 1.8,
-"margin": 2.978,
+"ratio": 1.81,
+"margin": 2.979,
 "startFrame": 21323,
 "endFrame": 21345
 },
@@ -1449,7 +1449,7 @@
 "text": "For its next six submarines, the Navy asked for an air independent engine already proven at sea.",
 "start": 369.909,
 "end": 375.842,
-"ratio": 1.02,
+"ratio": 1.03,
 "margin": 0.622,
 "startFrame": 22195,
 "endFrame": 22551
@@ -1461,7 +1461,7 @@
 "start": 376.286,
 "end": 376.948,
 "ratio": 0.96,
-"margin": 0.947,
+"margin": 0.948,
 "startFrame": 22577,
 "endFrame": 22617
 },
@@ -1493,7 +1493,7 @@
 "text": "Its system had been shown on shore, not at sea.",
 "start": 384.757,
 "end": 387.677,
-"ratio": 1.02,
+"ratio": 1.03,
 "margin": 0.183,
 "startFrame": 23085,
 "endFrame": 23261
@@ -1570,7 +1570,7 @@
 "text": "The Navy can't bet a war submarine on an engine that has never been to sea.",
 "start": 404.338,
 "end": 408.521,
-"ratio": 1.04,
+"ratio": 1.05,
 "margin": 0.421,
 "startFrame": 24260,
 "endFrame": 24511
@@ -1692,7 +1692,7 @@
 "start": 436.265,
 "end": 437.616,
 "ratio": 0.98,
-"margin": 0.256,
+"margin": 0.255,
 "startFrame": 26176,
 "endFrame": 26257
 },
@@ -1703,7 +1703,7 @@
 "start": 438.033,
 "end": 440.98,
 "ratio": 0.92,
-"margin": 0.256,
+"margin": 0.255,
 "startFrame": 26282,
 "endFrame": 26459
 },
@@ -1780,7 +1780,7 @@
 "start": 466.71,
 "end": 469.451,
 "ratio": 1.37,
-"margin": 0.608,
+"margin": 0.609,
 "startFrame": 28003,
 "endFrame": 28167
 },
@@ -1812,8 +1812,8 @@
 "text": "And the plan is to give it to all six Kalvari boats, one refit at a time.",
 "start": 473.39,
 "end": 478.018,
-"ratio": 1.1,
-"margin": 0.364,
+"ratio": 1.11,
+"margin": 0.365,
 "startFrame": 28403,
 "endFrame": 28681
 },
@@ -1824,7 +1824,7 @@
 "start": 478.469,
 "end": 480.212,
 "ratio": 0.92,
-"margin": 0.364,
+"margin": 0.365,
 "startFrame": 28708,
 "endFrame": 28813
 },
@@ -1835,7 +1835,7 @@
 "start": 480.766,
 "end": 481.033,
 "ratio": 1.93,
-"margin": 2.398,
+"margin": 2.397,
 "startFrame": 28846,
 "endFrame": 28862
 },
@@ -1890,7 +1890,7 @@
 "start": 502.592,
 "end": 505.022,
 "ratio": 1.37,
-"margin": 0.151,
+"margin": 0.146,
 "startFrame": 30156,
 "endFrame": 30301
 },
@@ -1900,8 +1900,8 @@
 "text": "The trap opens, for this boat and every boat after it.",
 "start": 505.526,
 "end": 509.336,
-"ratio": 1.01,
-"margin": 0.166,
+"ratio": 0.96,
+"margin": 0.146,
 "startFrame": 30332,
 "endFrame": 30560
 },
@@ -1912,7 +1912,7 @@
 "start": 509.804,
 "end": 512.158,
 "ratio": 0.97,
-"margin": 0.459,
+"margin": 0.53,
 "startFrame": 30588,
 "endFrame": 30729
 },
@@ -1988,7 +1988,7 @@
 "text": "If the trials fail, the trap closes again.",
 "start": 525.632,
 "end": 528.225,
-"ratio": 1.01,
+"ratio": 1.02,
 "margin": 0.593,
 "startFrame": 31538,
 "endFrame": 31694
@@ -2007,24 +2007,57 @@
 {
 "id": 182,
 "chapter": "What happens next",
-"text": "Next, we go even deeper.",
-"start": 532.7,
-"end": 534.488,
-"ratio": 1.44,
-"margin": 0.634,
-"startFrame": 31962,
-"endFrame": 32069
+"text": "This story isn't over.",
+"start": 532.991,
+"end": 534.379,
+"ratio": 1.18,
+"margin": 0.904,
+"startFrame": 31979,
+"endFrame": 32063
 },
 {
 "id": 183,
 "chapter": "What happens next",
+"text": "When Khanderi goes back to sea with its new engine, we'll be there.",
+"start": 534.822,
+"end": 538.323,
+"ratio": 0.88,
+"margin": 0.254,
+"startFrame": 32089,
+"endFrame": 32299
+},
+{
+"id": 184,
+"chapter": "What happens next",
+"text": "Subscribe, so you're there too.",
+"start": 538.768,
+"end": 540.472,
+"ratio": 0.85,
+"margin": 0.254,
+"startFrame": 32326,
+"endFrame": 32428
+},
+{
+"id": 185,
+"chapter": "What happens next",
+"text": "Next, we go even deeper.",
+"start": 541.17,
+"end": 542.958,
+"ratio": 1.44,
+"margin": 0.635,
+"startFrame": 32470,
+"endFrame": 32577
+},
+{
+"id": 186,
+"chapter": "What happens next",
 "text": "Six thousand metres down, inside a titanium sphere built to carry Indians to the bottom of the ocean.",
-"start": 534.837,
-"end": 541.131,
+"start": 543.307,
+"end": 549.601,
 "ratio": 1.01,
-"margin": 0.634,
-"startFrame": 32090,
-"endFrame": 32468
+"margin": 0.635,
+"startFrame": 32598,
+"endFrame": 32976
 }
 ],
 "words": [
@@ -2063,7 +2096,7 @@
 {
 "s": 2,
 "w": "Somewhere",
-"start": 2.574,
+"start": 2.575,
 "end": 3.084,
 "startFrame": 154,
 "endFrame": 185
@@ -2208,31 +2241,31 @@
 "s": 4,
 "w": "Nobody",
 "start": 9.732,
-"end": 10.114,
+"end": 10.112,
 "startFrame": 584,
 "endFrame": 607
 },
 {
 "s": 4,
 "w": "raises",
-"start": 10.114,
-"end": 10.496,
+"start": 10.112,
+"end": 10.492,
 "startFrame": 607,
 "endFrame": 630
 },
 {
 "s": 4,
 "w": "a",
-"start": 10.496,
-"end": 10.623,
+"start": 10.492,
+"end": 10.619,
 "startFrame": 630,
 "endFrame": 637
 },
 {
 "s": 4,
 "w": "voice.",
-"start": 10.623,
-"end": 11.056,
+"start": 10.619,
+"end": 11.05,
 "startFrame": 637,
 "endFrame": 663
 },
@@ -2583,39 +2616,39 @@
 {
 "s": 10,
 "w": "You're",
-"start": 26.434,
-"end": 26.787,
+"start": 26.433,
+"end": 26.786,
 "startFrame": 1586,
 "endFrame": 1607
 },
 {
 "s": 10,
 "w": "inside",
-"start": 26.787,
-"end": 27.14,
+"start": 26.786,
+"end": 27.139,
 "startFrame": 1607,
 "endFrame": 1628
 },
 {
 "s": 10,
 "w": "a",
-"start": 27.14,
-"end": 27.258,
+"start": 27.139,
+"end": 27.257,
 "startFrame": 1628,
 "endFrame": 1635
 },
 {
 "s": 10,
 "w": "machine",
-"start": 27.258,
-"end": 27.658,
+"start": 27.257,
+"end": 27.657,
 "startFrame": 1635,
 "endFrame": 1659
 },
 {
 "s": 10,
 "w": "built",
-"start": 27.658,
+"start": 27.657,
 "end": 27.964,
 "startFrame": 1659,
 "endFrame": 1678
@@ -2624,14 +2657,14 @@
 "s": 10,
 "w": "to",
 "start": 27.964,
-"end": 28.129,
+"end": 28.128,
 "startFrame": 1678,
 "endFrame": 1688
 },
 {
 "s": 10,
 "w": "disappear.",
-"start": 28.129,
+"start": 28.128,
 "end": 28.717,
 "startFrame": 1688,
 "endFrame": 1723
@@ -3080,7 +3113,7 @@
 "s": 18,
 "w": "invisible,",
 "start": 48.718,
-"end": 49.286,
+"end": 49.285,
 "startFrame": 2923,
 "endFrame": 2957
 },
@@ -3424,22 +3457,22 @@
 "s": 24,
 "w": "towards",
 "start": 63.697,
-"end": 64.142,
+"end": 64.143,
 "startFrame": 3822,
 "endFrame": 3849
 },
 {
 "s": 24,
 "w": "a",
-"start": 64.142,
-"end": 64.273,
+"start": 64.143,
+"end": 64.274,
 "startFrame": 3849,
 "endFrame": 3856
 },
 {
 "s": 24,
 "w": "German",
-"start": 64.273,
+"start": 64.274,
 "end": 64.667,
 "startFrame": 3856,
 "endFrame": 3880
@@ -3456,70 +3489,70 @@
 "s": 24,
 "w": "for",
 "start": 65.06,
-"end": 65.295,
+"end": 65.296,
 "startFrame": 3904,
 "endFrame": 3918
 },
 {
 "s": 24,
 "w": "its",
-"start": 65.295,
-"end": 65.531,
+"start": 65.296,
+"end": 65.532,
 "startFrame": 3918,
 "endFrame": 3932
 },
 {
 "s": 24,
 "w": "next",
-"start": 65.531,
-"end": 65.819,
+"start": 65.532,
+"end": 65.82,
 "startFrame": 3932,
 "endFrame": 3949
 },
 {
 "s": 24,
 "w": "submarines.",
-"start": 65.819,
-"end": 66.527,
+"start": 65.82,
+"end": 66.528,
 "startFrame": 3949,
 "endFrame": 3992
 },
 {
 "s": 25,
 "w": "So",
-"start": 66.912,
-"end": 67.108,
-"startFrame": 4015,
+"start": 66.908,
+"end": 67.105,
+"startFrame": 4014,
 "endFrame": 4026
 },
 {
 "s": 25,
 "w": "was",
-"start": 67.108,
-"end": 67.36,
+"start": 67.105,
+"end": 67.358,
 "startFrame": 4026,
-"endFrame": 4042
+"endFrame": 4041
 },
 {
 "s": 25,
 "w": "the",
-"start": 67.36,
-"end": 67.613,
-"startFrame": 4042,
+"start": 67.358,
+"end": 67.611,
+"startFrame": 4041,
 "endFrame": 4057
 },
 {
 "s": 25,
 "w": "Navy",
-"start": 67.613,
-"end": 67.921,
+"start": 67.611,
+"end": 67.92,
 "startFrame": 4057,
 "endFrame": 4075
 },
 {
 "s": 25,
 "w": "wrong?",
-"start": 67.921,
+"start": 67.92,
 "end": 68.285,
 "startFrame": 4075,
 "endFrame": 4097
@@ -3703,71 +3736,71 @@
 {
 "s": 29,
 "w": "Start",
-"start": 75.615,
-"end": 75.921,
+"start": 75.611,
+"end": 75.917,
 "startFrame": 4537,
 "endFrame": 4555
 },
 {
 "s": 29,
 "w": "with",
-"start": 75.921,
-"end": 76.179,
+"start": 75.917,
+"end": 76.176,
 "startFrame": 4555,
 "endFrame": 4571
 },
 {
 "s": 29,
 "w": "the",
-"start": 76.179,
-"end": 76.391,
+"start": 76.176,
+"end": 76.388,
 "startFrame": 4571,
 "endFrame": 4583
 },
 {
 "s": 29,
 "w": "people",
-"start": 76.391,
-"end": 76.744,
+"start": 76.388,
+"end": 76.742,
 "startFrame": 4583,
 "endFrame": 4605
 },
 {
 "s": 29,
 "w": "whose",
-"start": 76.744,
-"end": 77.05,
+"start": 76.742,
+"end": 77.048,
 "startFrame": 4605,
 "endFrame": 4623
 },
 {
 "s": 29,
 "w": "job",
-"start": 77.05,
-"end": 77.261,
+"start": 77.048,
+"end": 77.26,
 "startFrame": 4623,
 "endFrame": 4636
 },
 {
 "s": 29,
 "w": "is",
-"start": 77.261,
-"end": 77.426,
+"start": 77.26,
+"end": 77.425,
 "startFrame": 4636,
 "endFrame": 4646
 },
 {
 "s": 29,
 "w": "to",
-"start": 77.426,
-"end": 77.591,
+"start": 77.425,
+"end": 77.59,
 "startFrame": 4646,
 "endFrame": 4655
 },
 {
 "s": 29,
 "w": "find",
-"start": 77.591,
+"start": 77.59,
 "end": 77.849,
 "startFrame": 4655,
 "endFrame": 4671
@@ -3784,24 +3817,24 @@
 "s": 30,
 "w": "Now",
 "start": 78.567,
-"end": 78.825,
+"end": 78.827,
 "startFrame": 4714,
 "endFrame": 4730
 },
 {
 "s": 30,
 "w": "switch",
-"start": 78.825,
-"end": 79.256,
+"start": 78.827,
+"end": 79.26,
 "startFrame": 4730,
-"endFrame": 4755
+"endFrame": 4756
 },
 {
 "s": 30,
 "w": "sides.",
-"start": 79.256,
-"end": 79.744,
-"startFrame": 4755,
+"start": 79.26,
+"end": 79.751,
+"startFrame": 4756,
 "endFrame": 4785
 },
 {
@@ -4304,14 +4337,14 @@
 "s": 41,
 "w": "would",
 "start": 101.4,
-"end": 101.771,
+"end": 101.772,
 "startFrame": 6084,
 "endFrame": 6106
 },
 {
 "s": 41,
 "w": "you",
-"start": 101.771,
+"start": 101.772,
 "end": 102.029,
 "startFrame": 6106,
 "endFrame": 6122
@@ -4320,31 +4353,31 @@
 "s": 41,
 "w": "ever",
 "start": 102.029,
-"end": 102.343,
+"end": 102.344,
 "startFrame": 6122,
 "endFrame": 6141
 },
 {
 "s": 41,
 "w": "raise",
-"start": 102.343,
-"end": 102.715,
+"start": 102.344,
+"end": 102.716,
 "startFrame": 6141,
 "endFrame": 6163
 },
 {
 "s": 41,
 "w": "that",
-"start": 102.715,
-"end": 103.029,
+"start": 102.716,
+"end": 103.03,
 "startFrame": 6163,
 "endFrame": 6182
 },
 {
 "s": 41,
 "w": "mast?",
-"start": 103.029,
-"end": 103.344,
+"start": 103.03,
+"end": 103.345,
 "startFrame": 6182,
 "endFrame": 6201
 },
@@ -4464,17 +4497,17 @@
 "s": 43,
 "w": "the",
 "start": 110.071,
-"end": 110.301,
+"end": 110.305,
 "startFrame": 6604,
 "endFrame": 6618
 },
 {
 "s": 43,
 "w": "lights,",
-"start": 110.301,
-"end": 110.685,
+"start": 110.305,
+"end": 110.696,
 "startFrame": 6618,
-"endFrame": 6641
+"endFrame": 6642
 },
 {
 "s": 43,
@@ -4504,17 +4537,17 @@
 "s": 43,
 "w": "the",
 "start": 111.855,
-"end": 112.039,
+"end": 112.041,
 "startFrame": 6711,
 "endFrame": 6722
 },
 {
 "s": 43,
 "w": "computers.",
-"start": 112.039,
-"end": 112.55,
+"start": 112.041,
+"end": 112.559,
 "startFrame": 6722,
-"endFrame": 6753
+"endFrame": 6754
 },
 {
 "s": 44,
@@ -4696,17 +4729,17 @@
 "s": 47,
 "w": "few",
 "start": 120.949,
-"end": 121.158,
+"end": 121.159,
 "startFrame": 7257,
-"endFrame": 7269
+"endFrame": 7270
 },
 {
 "s": 47,
 "w": "days.",
-"start": 121.158,
-"end": 121.508,
-"startFrame": 7269,
-"endFrame": 7290
+"start": 121.159,
+"end": 121.51,
+"startFrame": 7270,
+"endFrame": 7291
 },
 {
 "s": 48,
@@ -5288,25 +5321,25 @@
 "s": 54,
 "w": "Fewer",
 "start": 145.685,
-"end": 146.014,
+"end": 146.018,
 "startFrame": 8741,
 "endFrame": 8761
 },
 {
 "s": 54,
 "w": "red",
-"start": 146.014,
-"end": 146.242,
+"start": 146.018,
+"end": 146.248,
 "startFrame": 8761,
 "endFrame": 8775
 },
 {
 "s": 54,
 "w": "marks.",
-"start": 146.242,
-"end": 146.673,
+"start": 146.248,
+"end": 146.683,
 "startFrame": 8775,
-"endFrame": 8800
+"endFrame": 8801
 },
 {
 "s": 55,
@@ -5999,31 +6032,31 @@
 {
 "s": 68,
 "w": "and",
-"start": 179.494,
-"end": 179.66,
+"start": 179.493,
+"end": 179.659,
 "startFrame": 10770,
 "endFrame": 10780
 },
 {
 "s": 68,
 "w": "you're",
-"start": 179.66,
-"end": 179.937,
+"start": 179.659,
+"end": 179.936,
 "startFrame": 10780,
 "endFrame": 10796
 },
 {
 "s": 68,
 "w": "back",
-"start": 179.937,
-"end": 180.14,
+"start": 179.936,
+"end": 180.139,
 "startFrame": 10796,
 "endFrame": 10808
 },
 {
 "s": 68,
 "w": "on",
-"start": 180.14,
+"start": 180.139,
 "end": 180.269,
 "startFrame": 10808,
 "endFrame": 10816
@@ -6160,30 +6193,30 @@
 "s": 70,
 "w": "sonar",
 "start": 186.097,
-"end": 186.42,
+"end": 186.421,
 "startFrame": 11166,
 "endFrame": 11185
 },
 {
 "s": 70,
 "w": "can",
-"start": 186.42,
-"end": 186.644,
+"start": 186.421,
+"end": 186.645,
 "startFrame": 11185,
 "endFrame": 11199
 },
 {
 "s": 70,
 "w": "bounce",
-"start": 186.644,
-"end": 187.017,
+"start": 186.645,
+"end": 187.018,
 "startFrame": 11199,
 "endFrame": 11221
 },
 {
 "s": 70,
 "w": "sound",
-"start": 187.017,
+"start": 187.018,
 "end": 187.341,
 "startFrame": 11221,
 "endFrame": 11240
@@ -6192,23 +6225,23 @@
 "s": 70,
 "w": "off",
 "start": 187.341,
-"end": 187.564,
+"end": 187.565,
 "startFrame": 11240,
 "endFrame": 11254
 },
 {
 "s": 70,
 "w": "your",
-"start": 187.564,
-"end": 187.838,
+"start": 187.565,
+"end": 187.839,
 "startFrame": 11254,
 "endFrame": 11270
 },
 {
 "s": 70,
 "w": "hull.",
-"start": 187.838,
-"end": 188.211,
+"start": 187.839,
+"end": 188.212,
 "startFrame": 11270,
 "endFrame": 11293
 },
@@ -6312,30 +6345,30 @@
 "s": 72,
 "w": "What",
 "start": 192.672,
-"end": 192.982,
+"end": 192.981,
 "startFrame": 11560,
 "endFrame": 11579
 },
 {
 "s": 72,
 "w": "it",
-"start": 192.982,
-"end": 193.179,
+"start": 192.981,
+"end": 193.178,
 "startFrame": 11579,
 "endFrame": 11591
 },
 {
 "s": 72,
 "w": "really",
-"start": 193.179,
-"end": 193.601,
+"start": 193.178,
+"end": 193.6,
 "startFrame": 11591,
 "endFrame": 11616
 },
 {
 "s": 72,
 "w": "buys",
-"start": 193.601,
+"start": 193.6,
 "end": 193.91,
 "startFrame": 11616,
 "endFrame": 11635
@@ -6368,15 +6401,15 @@
 "s": 72,
 "w": "red",
 "start": 194.726,
-"end": 194.98,
+"end": 194.979,
 "startFrame": 11684,
 "endFrame": 11699
 },
 {
 "s": 72,
 "w": "marks.",
-"start": 194.98,
-"end": 195.458,
+"start": 194.979,
+"end": 195.457,
 "startFrame": 11699,
 "endFrame": 11727
 },
@@ -7392,23 +7425,23 @@
 "s": 88,
 "w": "about",
 "start": 243.184,
-"end": 243.528,
+"end": 243.527,
 "startFrame": 14591,
 "endFrame": 14612
 },
 {
 "s": 88,
 "w": "seven",
-"start": 243.528,
-"end": 243.872,
+"start": 243.527,
+"end": 243.869,
 "startFrame": 14612,
 "endFrame": 14632
 },
 {
 "s": 88,
 "w": "grams,",
-"start": 243.872,
-"end": 244.216,
+"start": 243.869,
+"end": 244.212,
 "startFrame": 14632,
 "endFrame": 14653
 },
@@ -8359,63 +8392,63 @@
 {
 "s": 104,
 "w": "There's",
-"start": 289.404,
-"end": 289.814,
+"start": 289.402,
+"end": 289.812,
 "startFrame": 17364,
 "endFrame": 17389
 },
 {
 "s": 104,
 "w": "no",
-"start": 289.814,
-"end": 289.983,
+"start": 289.812,
+"end": 289.981,
 "startFrame": 17389,
 "endFrame": 17399
 },
 {
 "s": 104,
 "w": "tank",
-"start": 289.983,
-"end": 290.248,
+"start": 289.981,
+"end": 290.246,
 "startFrame": 17399,
 "endFrame": 17415
 },
 {
 "s": 104,
 "w": "of",
-"start": 290.248,
-"end": 290.417,
+"start": 290.246,
+"end": 290.415,
 "startFrame": 17415,
 "endFrame": 17425
 },
 {
 "s": 104,
 "w": "hydrogen",
-"start": 290.417,
-"end": 290.875,
+"start": 290.415,
+"end": 290.874,
 "startFrame": 17425,
 "endFrame": 17452
 },
 {
 "s": 104,
 "w": "gas",
-"start": 290.875,
-"end": 291.092,
+"start": 290.874,
+"end": 291.091,
 "startFrame": 17452,
-"endFrame": 17466
+"endFrame": 17465
 },
 {
 "s": 104,
 "w": "waiting",
-"start": 291.092,
-"end": 291.502,
-"startFrame": 17466,
+"start": 291.091,
+"end": 291.501,
+"startFrame": 17465,
 "endFrame": 17490
 },
 {
 "s": 104,
 "w": "to",
-"start": 291.502,
+"start": 291.501,
 "end": 291.67,
 "startFrame": 17490,
 "endFrame": 17500
@@ -8431,15 +8464,15 @@
 {
 "s": 105,
 "w": "And",
-"start": 292.451,
-"end": 292.64,
+"start": 292.452,
+"end": 292.641,
 "startFrame": 17547,
 "endFrame": 17558
 },
 {
 "s": 105,
 "w": "the",
-"start": 292.64,
+"start": 292.641,
 "end": 292.829,
 "startFrame": 17558,
 "endFrame": 17570
@@ -8823,55 +8856,55 @@
 {
 "s": 113,
 "w": "So",
-"start": 311.847,
-"end": 312.036,
+"start": 311.843,
+"end": 312.033,
 "startFrame": 18711,
 "endFrame": 18722
 },
 {
 "s": 113,
 "w": "where",
-"start": 312.036,
-"end": 312.388,
+"start": 312.033,
+"end": 312.385,
 "startFrame": 18722,
 "endFrame": 18743
 },
 {
 "s": 113,
 "w": "does",
-"start": 312.388,
-"end": 312.686,
+"start": 312.385,
+"end": 312.684,
 "startFrame": 18743,
 "endFrame": 18761
 },
 {
 "s": 113,
 "w": "this",
-"start": 312.686,
-"end": 312.984,
+"start": 312.684,
+"end": 312.982,
 "startFrame": 18761,
 "endFrame": 18779
 },
 {
 "s": 113,
 "w": "whole",
-"start": 312.984,
-"end": 313.336,
+"start": 312.982,
+"end": 313.335,
 "startFrame": 18779,
 "endFrame": 18800
 },
 {
 "s": 113,
 "w": "plant",
-"start": 313.336,
-"end": 313.688,
+"start": 313.335,
+"end": 313.687,
 "startFrame": 18800,
 "endFrame": 18821
 },
 {
 "s": 113,
 "w": "go?",
-"start": 313.688,
+"start": 313.687,
 "end": 313.877,
 "startFrame": 18821,
 "endFrame": 18833
@@ -8879,55 +8912,55 @@
 {
 "s": 114,
 "w": "You",
-"start": 314.325,
-"end": 314.541,
+"start": 314.328,
+"end": 314.544,
 "startFrame": 18860,
-"endFrame": 18872
+"endFrame": 18873
 },
 {
 "s": 114,
 "w": "open",
-"start": 314.541,
-"end": 314.806,
-"startFrame": 18872,
+"start": 314.544,
+"end": 314.808,
+"startFrame": 18873,
 "endFrame": 18888
 },
 {
 "s": 114,
 "w": "the",
-"start": 314.806,
-"end": 315.022,
+"start": 314.808,
+"end": 315.024,
 "startFrame": 18888,
 "endFrame": 18901
 },
 {
 "s": 114,
 "w": "submarine",
-"start": 315.022,
-"end": 315.527,
+"start": 315.024,
+"end": 315.528,
 "startFrame": 18901,
 "endFrame": 18932
 },
 {
 "s": 114,
 "w": "like",
-"start": 315.527,
-"end": 315.791,
+"start": 315.528,
+"end": 315.792,
 "startFrame": 18932,
-"endFrame": 18947
+"endFrame": 18948
 },
 {
 "s": 114,
 "w": "a",
-"start": 315.791,
-"end": 315.911,
-"startFrame": 18947,
+"start": 315.792,
+"end": 315.912,
+"startFrame": 18948,
 "endFrame": 18955
 },
 {
 "s": 114,
 "w": "book.",
-"start": 315.911,
+"start": 315.912,
 "end": 316.272,
 "startFrame": 18955,
 "endFrame": 18976
@@ -9191,47 +9224,47 @@
 {
 "s": 117,
 "w": "and",
-"start": 327.056,
-"end": 327.254,
-"startFrame": 19623,
+"start": 327.059,
+"end": 327.257,
+"startFrame": 19624,
 "endFrame": 19635
 },
 {
 "s": 117,
 "w": "the",
-"start": 327.254,
-"end": 327.452,
+"start": 327.257,
+"end": 327.454,
 "startFrame": 19635,
 "endFrame": 19647
 },
 {
 "s": 117,
 "w": "two",
-"start": 327.452,
-"end": 327.649,
+"start": 327.454,
+"end": 327.651,
 "startFrame": 19647,
 "endFrame": 19659
 },
 {
 "s": 117,
 "w": "parts",
-"start": 327.649,
-"end": 327.935,
+"start": 327.651,
+"end": 327.937,
 "startFrame": 19659,
 "endFrame": 19676
 },
 {
 "s": 117,
 "w": "are",
-"start": 327.935,
-"end": 328.133,
+"start": 327.937,
+"end": 328.134,
 "startFrame": 19676,
 "endFrame": 19688
 },
 {
 "s": 117,
 "w": "joined",
-"start": 328.133,
+"start": 328.134,
 "end": 328.463,
 "startFrame": 19688,
 "endFrame": 19708
@@ -9240,14 +9273,14 @@
 "s": 117,
 "w": "around",
 "start": 328.463,
-"end": 328.792,
+"end": 328.793,
 "startFrame": 19708,
 "endFrame": 19728
 },
 {
 "s": 117,
 "w": "it.",
-"start": 328.792,
+"start": 328.793,
 "end": 329.034,
 "startFrame": 19728,
 "endFrame": 19742
@@ -9559,23 +9592,23 @@
 {
 "s": 122,
 "w": "France's",
-"start": 343.111,
-"end": 343.563,
-"startFrame": 20587,
+"start": 343.108,
+"end": 343.561,
+"startFrame": 20586,
 "endFrame": 20614
 },
 {
 "s": 122,
 "w": "Naval",
-"start": 343.563,
-"end": 343.872,
+"start": 343.561,
+"end": 343.871,
 "startFrame": 20614,
 "endFrame": 20632
 },
 {
 "s": 122,
 "w": "Group,",
-"start": 343.872,
+"start": 343.871,
 "end": 344.181,
 "startFrame": 20632,
 "endFrame": 20651
@@ -9800,23 +9833,23 @@
 "s": 125,
 "w": "the",
 "start": 352.678,
-"end": 352.882,
+"end": 352.881,
 "startFrame": 21161,
 "endFrame": 21173
 },
 {
 "s": 125,
 "w": "honest",
-"start": 352.882,
-"end": 353.222,
+"start": 352.881,
+"end": 353.221,
 "startFrame": 21173,
 "endFrame": 21193
 },
 {
 "s": 125,
 "w": "answer.",
-"start": 353.222,
-"end": 353.652,
+"start": 353.221,
+"end": 353.651,
 "startFrame": 21193,
 "endFrame": 21219
 },
@@ -11792,23 +11825,23 @@
 "s": 154,
 "w": "were",
 "start": 438.585,
-"end": 438.849,
+"end": 438.85,
 "startFrame": 26315,
 "endFrame": 26331
 },
 {
 "s": 154,
 "w": "in",
-"start": 438.849,
-"end": 439.017,
+"start": 438.85,
+"end": 439.018,
 "startFrame": 26331,
 "endFrame": 26341
 },
 {
 "s": 154,
 "w": "charge,",
-"start": 439.017,
-"end": 439.377,
+"start": 439.018,
+"end": 439.378,
 "startFrame": 26341,
 "endFrame": 26363
 },
@@ -13822,187 +13855,363 @@
 },
 {
 "s": 182,
-"w": "Next,",
-"start": 532.7,
-"end": 533.104,
-"startFrame": 31962,
-"endFrame": 31986
+"w": "This",
+"start": 532.991,
+"end": 533.285,
+"startFrame": 31979,
+"endFrame": 31997
 },
 {
 "s": 182,
-"w": "we",
-"start": 533.252,
-"end": 533.449,
-"startFrame": 31995,
-"endFrame": 32007
+"w": "story",
+"start": 533.285,
+"end": 533.632,
+"startFrame": 31997,
+"endFrame": 32018
 },
 {
 "s": 182,
-"w": "go",
-"start": 533.449,
-"end": 533.645,
-"startFrame": 32007,
-"endFrame": 32019
+"w": "isn't",
+"start": 533.632,
+"end": 533.979,
+"startFrame": 32018,
+"endFrame": 32039
 },
 {
 "s": 182,
-"w": "even",
-"start": 533.645,
-"end": 533.954,
-"startFrame": 32019,
-"endFrame": 32037
-},
-{
-"s": 182,
-"w": "deeper.",
-"start": 533.954,
-"end": 534.488,
-"startFrame": 32037,
-"endFrame": 32069
+"w": "over.",
+"start": 533.979,
+"end": 534.379,
+"startFrame": 32039,
+"endFrame": 32063
 },
 {
 "s": 183,
-"w": "Six",
-"start": 534.837,
-"end": 535.091,
-"startFrame": 32090,
-"endFrame": 32105
+"w": "When",
+"start": 534.822,
+"end": 535.073,
+"startFrame": 32089,
+"endFrame": 32104
 },
 {
 "s": 183,
-"w": "thousand",
-"start": 535.091,
-"end": 535.628,
-"startFrame": 32105,
-"endFrame": 32138
+"w": "Khanderi",
+"start": 535.073,
+"end": 535.507,
+"startFrame": 32104,
+"endFrame": 32130
 },
 {
 "s": 183,
-"w": "metres",
-"start": 535.628,
-"end": 536.051,
-"startFrame": 32138,
-"endFrame": 32163
+"w": "goes",
+"start": 535.507,
+"end": 535.759,
+"startFrame": 32130,
+"endFrame": 32146
 },
 {
 "s": 183,
-"w": "down,",
-"start": 536.051,
-"end": 536.362,
-"startFrame": 32163,
-"endFrame": 32182
+"w": "back",
+"start": 535.759,
+"end": 536.01,
+"startFrame": 32146,
+"endFrame": 32161
 },
 {
 "s": 183,
-"w": "inside",
-"start": 536.639,
-"end": 537.04,
+"w": "to",
+"start": 536.01,
+"end": 536.17,
+"startFrame": 32161,
+"endFrame": 32170
+},
+{
+"s": 183,
+"w": "sea",
+"start": 536.17,
+"end": 536.376,
+"startFrame": 32170,
+"endFrame": 32183
+},
+{
+"s": 183,
+"w": "with",
+"start": 536.376,
+"end": 536.627,
+"startFrame": 32183,
+"endFrame": 32198
+},
+{
+"s": 183,
+"w": "its",
+"start": 536.627,
+"end": 536.833,
 "startFrame": 32198,
+"endFrame": 32210
+},
+{
+"s": 183,
+"w": "new",
+"start": 536.833,
+"end": 537.038,
+"startFrame": 32210,
 "endFrame": 32222
 },
 {
 "s": 183,
-"w": "a",
-"start": 537.04,
-"end": 537.174,
+"w": "engine,",
+"start": 537.038,
+"end": 537.381,
 "startFrame": 32222,
-"endFrame": 32230
+"endFrame": 32243
 },
 {
 "s": 183,
+"w": "we'll",
+"start": 537.741,
+"end": 537.945,
+"startFrame": 32264,
+"endFrame": 32277
+},
+{
+"s": 183,
+"w": "be",
+"start": 537.945,
+"end": 538.056,
+"startFrame": 32277,
+"endFrame": 32283
+},
+{
+"s": 183,
+"w": "there.",
+"start": 538.056,
+"end": 538.323,
+"startFrame": 32283,
+"endFrame": 32299
+},
+{
+"s": 184,
+"w": "Subscribe,",
+"start": 538.768,
+"end": 539.323,
+"startFrame": 32326,
+"endFrame": 32359
+},
+{
+"s": 184,
+"w": "so",
+"start": 539.612,
+"end": 539.737,
+"startFrame": 32377,
+"endFrame": 32384
+},
+{
+"s": 184,
+"w": "you're",
+"start": 539.737,
+"end": 540.006,
+"startFrame": 32384,
+"endFrame": 32400
+},
+{
+"s": 184,
+"w": "there",
+"start": 540.006,
+"end": 540.239,
+"startFrame": 32400,
+"endFrame": 32414
+},
+{
+"s": 184,
+"w": "too.",
+"start": 540.239,
+"end": 540.472,
+"startFrame": 32414,
+"endFrame": 32428
+},
+{
+"s": 185,
+"w": "Next,",
+"start": 541.17,
+"end": 541.574,
+"startFrame": 32470,
+"endFrame": 32494
+},
+{
+"s": 185,
+"w": "we",
+"start": 541.722,
+"end": 541.919,
+"startFrame": 32503,
+"endFrame": 32515
+},
+{
+"s": 185,
+"w": "go",
+"start": 541.919,
+"end": 542.115,
+"startFrame": 32515,
+"endFrame": 32527
+},
+{
+"s": 185,
+"w": "even",
+"start": 542.115,
+"end": 542.424,
+"startFrame": 32527,
+"endFrame": 32545
+},
+{
+"s": 185,
+"w": "deeper.",
+"start": 542.424,
+"end": 542.958,
+"startFrame": 32545,
+"endFrame": 32577
+},
+{
+"s": 186,
+"w": "Six",
+"start": 543.307,
+"end": 543.561,
+"startFrame": 32598,
+"endFrame": 32614
+},
+{
+"s": 186,
+"w": "thousand",
+"start": 543.561,
+"end": 544.098,
+"startFrame": 32614,
+"endFrame": 32646
+},
+{
+"s": 186,
+"w": "metres",
+"start": 544.098,
+"end": 544.521,
+"startFrame": 32646,
+"endFrame": 32671
+},
+{
+"s": 186,
+"w": "down,",
+"start": 544.521,
+"end": 544.832,
+"startFrame": 32671,
+"endFrame": 32690
+},
+{
+"s": 186,
+"w": "inside",
+"start": 545.109,
+"end": 545.51,
+"startFrame": 32707,
+"endFrame": 32731
+},
+{
+"s": 186,
+"w": "a",
+"start": 545.51,
+"end": 545.644,
+"startFrame": 32731,
+"endFrame": 32739
+},
+{
+"s": 186,
 "w": "titanium",
-"start": 537.174,
-"end": 537.682,
-"startFrame": 32230,
-"endFrame": 32261
+"start": 545.644,
+"end": 546.152,
+"startFrame": 32739,
+"endFrame": 32769
 },
 {
-"s": 183,
+"s": 186,
 "w": "sphere",
-"start": 537.682,
-"end": 538.083,
-"startFrame": 32261,
-"endFrame": 32285
+"start": 546.152,
+"end": 546.553,
+"startFrame": 32769,
+"endFrame": 32793
 },
 {
-"s": 183,
+"s": 186,
 "w": "built",
-"start": 538.083,
-"end": 538.43,
-"startFrame": 32285,
-"endFrame": 32306
+"start": 546.553,
+"end": 546.9,
+"startFrame": 32793,
+"endFrame": 32814
 },
 {
-"s": 183,
+"s": 186,
 "w": "to",
-"start": 538.43,
-"end": 538.618,
-"startFrame": 32306,
-"endFrame": 32317
+"start": 546.9,
+"end": 547.088,
+"startFrame": 32814,
+"endFrame": 32825
 },
 {
-"s": 183,
+"s": 186,
 "w": "carry",
-"start": 538.618,
-"end": 538.965,
-"startFrame": 32317,
-"endFrame": 32338
+"start": 547.088,
+"end": 547.435,
+"startFrame": 32825,
+"endFrame": 32846
 },
 {
-"s": 183,
+"s": 186,
 "w": "Indians",
-"start": 538.965,
-"end": 539.42,
-"startFrame": 32338,
-"endFrame": 32365
+"start": 547.435,
+"end": 547.89,
+"startFrame": 32846,
+"endFrame": 32873
 },
 {
-"s": 183,
+"s": 186,
 "w": "to",
-"start": 539.42,
-"end": 539.607,
-"startFrame": 32365,
-"endFrame": 32376
+"start": 547.89,
+"end": 548.077,
+"startFrame": 32873,
+"endFrame": 32885
 },
 {
-"s": 183,
+"s": 186,
 "w": "the",
-"start": 539.607,
-"end": 539.848,
-"startFrame": 32376,
-"endFrame": 32391
+"start": 548.077,
+"end": 548.318,
+"startFrame": 32885,
+"endFrame": 32899
 },
 {
-"s": 183,
+"s": 186,
 "w": "bottom",
-"start": 539.848,
-"end": 540.249,
-"startFrame": 32391,
-"endFrame": 32415
+"start": 548.318,
+"end": 548.719,
+"startFrame": 32899,
+"endFrame": 32923
 },
 {
-"s": 183,
+"s": 186,
 "w": "of",
-"start": 540.249,
-"end": 540.436,
-"startFrame": 32415,
-"endFrame": 32426
+"start": 548.719,
+"end": 548.906,
+"startFrame": 32923,
+"endFrame": 32934
 },
 {
-"s": 183,
+"s": 186,
 "w": "the",
-"start": 540.436,
-"end": 540.676,
-"startFrame": 32426,
-"endFrame": 32441
+"start": 548.906,
+"end": 549.146,
+"startFrame": 32934,
+"endFrame": 32949
 },
 {
-"s": 183,
+"s": 186,
 "w": "ocean.",
-"start": 540.676,
-"end": 541.131,
-"startFrame": 32441,
-"endFrame": 32468
+"start": 549.146,
+"end": 549.601,
+"startFrame": 32949,
+"endFrame": 32976
 }
 ],
 "chapters": [
@@ -14013,7 +14222,7 @@
 },
 {
 "title": "Caught breathing",
-"start": 75.615,
+"start": 75.611,
 "startFrame": 4537
 },
 {
@@ -14047,8 +14256,8 @@
 "startFrame": 29589
 }
 ],
-"duration": 541.466,
-"voDurationInFrames": 32488,
+"duration": 549.91,
+"voDurationInFrames": 32995,
 "outro": 4.5,
-"durationInFrames": 32758
+"durationInFrames": 33265
 }

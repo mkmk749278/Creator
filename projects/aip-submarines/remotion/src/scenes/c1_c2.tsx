@@ -4,7 +4,7 @@ import type {Part} from '../Film';
 import {Battery, Ping, RedRing} from '../parts/instruments';
 import {Clip, Count, Credit, ez, Honesty, Label, MarineSnow, Plate, tw, Underwater} from '../parts/kit';
 import {PatrolStrip, Silhouette} from '../parts/drawings';
-import {AcousticLine, Cutaway, RadarScope, SeaFromAbove, SpeedDial, ThreeMachines, VerticalClip} from '../parts/schematics';
+import {AcousticLine, Cutaway, RadarScope, SeaFromAbove, SpeedDial, ThreeMachines} from '../parts/schematics';
 import {SubUnderwater} from '../parts/Sub3D';
 import {SeaMap, P} from '../parts/SeaMap';
 import {ProfileShot} from './c0_open';
@@ -14,7 +14,8 @@ import {s0, w0} from '../timing';
 // Chapter 1 · Caught breathing (S29–55) and Chapter 2 · The ghost myth (S56–78), word_map.md.
 const pre = (f: number) => f - 9;
 const VAG = 'INDIAN NAVY · INS VAGIR FILM';
-const P8 = 'INDIAN NAVY · P-8I';
+const P8 = 'INDIAN NAVY P-8I · ANI';
+const P8B = 'P-8I FIRST FLIGHT · BOEING';
 
 /** The patrol strip on the plate: the film's motif. */
 const StripShot: React.FC<{dur: number; strip: React.ComponentProps<typeof PatrolStrip>; extra?: React.ReactNode}> = ({dur, strip, extra}) => (
@@ -46,18 +47,20 @@ export const ch12: Part = (() => {
 	const add = (at: number, name: string, el: (d: number) => React.ReactNode, hard = false) => shots.push({at, name, el, hard});
 	const over = (from: number, to: number, name: string, el: React.ReactNode) => overlays.push({from, to, name, el});
 
-	// S29–32: the hunter. P-8I real footage (vertical source in its frame).
-	add(pre(s0(29)), 'P8I ramp', (d) => <VerticalClip name="P8I_ramp" dur={d} />);
-	add(pre(w0(30, 'switch')), 'P8I takeoff', (d) => <VerticalClip name="P8I_takeoff" dur={d} />, true);
-	add(pre(s0(32)), 'P8I flight', (d) => <VerticalClip name="P8I_flight" dur={d} />);
-	add(pre(w0(32, 'hours')), 'P8I sea', (d) => <VerticalClip name="P8I_sea" dur={d} />);
-	over(pre(s0(29)), pre(s0(33)), 'credit p8', <Credit text={P8} />);
-	over(pre(w0(31, 'hunter')), pre(s0(32)), 'hunter', <Label at={0} text="THE HUNTER" x={1380} y={300} size={60} color={C.red} />);
-	over(pre(w0(32, 'P-Eight-I')), pre(s0(33)), 'p8i label', <Label at={0} text="P-8I" sub="INDIAN NAVY · SUB HUNTER" x={1380} y={300} size={72} />);
-	over(pre(w0(32, 'hours')), pre(s0(33)), 'hours', <Label at={0} text="HOURS OUT AT SEA" x={1380} y={560} size={48} color={C.cyan} />);
+	// S29–32: the hunter. P-8I real footage: ANI on the ramp, Boeing take-off and air to air (review r1 #4).
+	add(pre(s0(29)), 'P8I ramp', (d) => <Clip name="P8I_ramp" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.08, -20, 0]} />);
+	add(pre(w0(30, 'switch')), 'P8I takeoff', (d) => <Clip name="P8I_takeoff" dur={d} grade="day" from={[1.04, 0, 0]} to={[1.12, 40, -10]} />, true);
+	add(pre(s0(32)), 'P8I flight', (d) => <Clip name="P8I_flight" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.1, 30, 0]} />);
+	over(pre(s0(29)), pre(w0(30, 'switch')), 'credit p8 ani', <Credit text={P8} />);
+	over(pre(w0(30, 'switch')), pre(w0(32, 'hours')), 'credit p8 boeing', <Credit text={P8B} />);
+	over(pre(w0(31, 'hunter')), pre(s0(32)), 'hunter', <Label at={0} text="THE HUNTER" x={1220} y={300} size={60} color={C.red} />);
+	over(pre(w0(32, 'P-Eight-I')), pre(s0(33)), 'p8i label', <Label at={0} text="P-8I" sub="INDIAN NAVY · SUB HUNTER" x={1220} y={300} size={72} />);
+	over(pre(w0(32, 'hours')), pre(s0(33)), 'hours', <Label at={0} text="HOURS OUT AT SEA" x={1220} y={560} size={48} color={C.cyan} />);
 
 	// S33–38: what it looks for
-	add(pre(s0(33)), 'sea above', (d) => <SeaFromAbove dur={d} cross={w0(33, 'submarine') - pre(s0(33))} fade={w0(34, 'leaves') - pre(s0(33))} />);
+	// "hours out over the sea" lands on the sea itself (review r1 #4: the vertical P-8I sea shot is gone)
+	const sea = pre(w0(32, 'hours'));
+	add(sea, 'sea above', (d) => <SeaFromAbove dur={d} cross={w0(33, 'submarine') - sea} fade={w0(34, 'leaves') - sea} />);
 	add(pre(w0(35, 'mast')), 'TRI masts', (d) => <Clip name="TRI_masts" dur={d} from={[1.5, -200, 60]} to={[1.6, -230, 60]} grade="day" />, true);
 	add(pre(s0(36)), 'TRI wake', (d) => <Clip name="TRI_wake" dur={d} from={[1.05, 0, 0]} to={[1.12, 0, 0]} grade="day" />, true);
 	over(pre(s0(36)), pre(s0(37)), 'credit tri', <Credit text="INS KALVARI SEA TRIALS" />);
