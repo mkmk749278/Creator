@@ -7,7 +7,7 @@ Branch `ccr-9fa27be6-01wq25` (holds rounds 4–6; not yet merged to `main`). Eve
 - **Subscribe line added** (owner chose option A): "This story isn't over. When Khanderi goes back to sea with its
   new engine, we'll be there. Subscribe, so you're there too." One new ElevenLabs block (`vo/aip_b07.mp3` in Drive),
   levelled −1.8 dB and inserted after "…any headline you'll read." The joined voice is `aip_vo_full_v2.mp3/.wav`
-  (549.91 s); `vo/lock.json` says PENDING until the owner approves it. Earlier sentences moved at most one frame.
+  (549.91 s); The owner approved the r6 cut and this audio on 2026-11-07 (`vo/lock.json`). Earlier sentences moved at most one frame.
 - On screen: Khanderi at sea, "INS KHANDERI · BACK TO SEA · WITH AIP", then a subscribe pill (logo, channel name,
   button turns red on "there") over a calm aerial. New mix in Drive `mix/mix.wav` (old one kept as `mix_r5.wav`).
 - **P-8I (review r1 #4) fixed**: the owner's Termux fetch brought Boeing's P-8I first-flight film and ANI's INS
