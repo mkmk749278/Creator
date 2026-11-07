@@ -136,4 +136,6 @@ But for now, that's only a hope.
 
 If the trials fail, the trap closes again. That's why the coming year matters more than any headline you'll read.
 
+This story isn't over. When Khanderi goes back to sea with its new engine, we'll be there. Subscribe, so you're there too.
+
 Next, we go even deeper. Six thousand metres down, inside a titanium sphere built to carry Indians to the bottom of the ocean.

@@ -7,7 +7,7 @@ Night.
 The Arabian Sea.
 
 3
-00:00:02,574 --> 00:00:06,993
+00:00:02,575 --> 00:00:06,993
 Somewhere under these waves, an Indian submarine is running out of battery.
 
 4
@@ -15,7 +15,7 @@ Somewhere under these waves, an Indian submarine is running out of battery.
 Imagine you're in its control room.
 
 5
-00:00:09,732 --> 00:00:11,256
+00:00:09,732 --> 00:00:11,250
 Nobody raises a voice.
 
 6
@@ -39,7 +39,7 @@ The diesel engines roar to life.
 And for the next few hours, you are easier to find than at almost any other time on your patrol.
 
 11
-00:00:26,434 --> 00:00:28,917
+00:00:26,433 --> 00:00:28,917
 You're inside a machine built to disappear.
 
 12
@@ -95,11 +95,11 @@ India built this machine, with its own scientists.
 It has run on land.
 
 25
-00:01:02,544 --> 00:01:06,727
+00:01:02,544 --> 00:01:06,728
 Yet the Navy leaned towards a German design for its next submarines.
 
 26
-00:01:06,912 --> 00:01:08,485
+00:01:06,908 --> 00:01:08,485
 So was the Navy wrong?
 
 27
@@ -115,11 +115,11 @@ The answer is, both were right.
 By the end of this film, you'll see why.
 
 30
-00:01:15,615 --> 00:01:18,355
+00:01:15,611 --> 00:01:18,355
 Start with the people whose job is to find you.
 
 31
-00:01:18,567 --> 00:01:19,944
+00:01:18,567 --> 00:01:19,951
 Now switch sides.
 
 32
@@ -163,7 +163,7 @@ Now switch back.
 You're in the submarine again.
 
 42
-00:01:40,942 --> 00:01:43,544
+00:01:40,942 --> 00:01:43,545
 So why would you ever raise that mast?
 
 43
@@ -171,7 +171,7 @@ So why would you ever raise that mast?
 Because under water, everything you depend on runs on one giant battery.
 
 44
-00:01:49,186 --> 00:01:52,750
+00:01:49,186 --> 00:01:52,759
 The motor, the lights, the air plant, the computers.
 
 45
@@ -187,7 +187,7 @@ Down there, there is none.
 So how long can your battery last?
 
 48
-00:02:00,832 --> 00:02:01,708
+00:02:00,832 --> 00:02:01,710
 A few days.
 
 49
@@ -215,7 +215,7 @@ Each red mark is a few hours when you can be heard, seen, or caught on radar.
 For a submarine navy, that's the whole game, right?
 
 55
-00:02:25,685 --> 00:02:26,873
+00:02:25,685 --> 00:02:26,883
 Fewer red marks.
 
 56
@@ -279,7 +279,7 @@ Push for speed, and you're back on the battery, draining it fast.
 And even when you're quiet, you can still be found.
 
 71
-00:03:05,724 --> 00:03:08,411
+00:03:05,724 --> 00:03:08,412
 Active sonar can bounce sound off your hull.
 
 72
@@ -287,7 +287,7 @@ Active sonar can bounce sound off your hull.
 And the moment you raise a mast, you can still be seen.
 
 73
-00:03:12,672 --> 00:03:15,658
+00:03:12,672 --> 00:03:15,657
 What it really buys you is fewer red marks.
 
 74
@@ -415,11 +415,11 @@ These systems need a strict safety culture, with no compromise.
 On paper, India's design has a real edge.
 
 105
-00:04:49,404 --> 00:04:52,232
+00:04:49,402 --> 00:04:52,232
 There's no tank of hydrogen gas waiting to leak.
 
 106
-00:04:52,451 --> 00:04:53,302
+00:04:52,452 --> 00:04:53,302
 And the price?
 
 107
@@ -451,11 +451,11 @@ A Kalvari submarine is about sixty-seven metres long.
 Walk through it, and you'll find every metre already full.
 
 114
-00:05:11,847 --> 00:05:14,077
+00:05:11,843 --> 00:05:14,077
 So where does this whole plant go?
 
 115
-00:05:14,325 --> 00:05:16,472
+00:05:14,328 --> 00:05:16,472
 You open the submarine like a book.
 
 116
@@ -499,7 +499,7 @@ So the plan is ready, and the machine works.
 That's what you'd expect, right?
 
 126
-00:05:52,338 --> 00:05:53,852
+00:05:52,338 --> 00:05:53,851
 Here's the honest answer.
 
 127
@@ -727,9 +727,21 @@ If the trials fail, the trap closes again.
 That's why the coming year matters more than any headline you'll read.
 
 183
-00:08:52,700 --> 00:08:54,688
-Next, we go even deeper.
+00:08:52,991 --> 00:08:54,579
+This story isn't over.
 
 184
-00:08:54,837 --> 00:09:01,331
+00:08:54,822 --> 00:08:58,523
+When Khanderi goes back to sea with its new engine, we'll be there.
+
+185
+00:08:58,768 --> 00:09:00,672
+Subscribe, so you're there too.
+
+186
+00:09:01,170 --> 00:09:03,158
+Next, we go even deeper.
+
+187
+00:09:03,307 --> 00:09:09,801
 Six thousand metres down, inside a titanium sphere built to carry Indians to the bottom of the ocean.

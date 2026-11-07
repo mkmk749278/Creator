@@ -40,8 +40,8 @@ drawing. Labels on illustrations: ILLUSTRATION / RECONSTRUCTION / OUR CALCULATIO
 ## Chapter 1 · Caught breathing (1:15–2:28)
 | S | Time | Base | → word |
 |---|---|---|---|
-| 29–31 | 75.6–80.8 | P8I 6–7 on the ramp (vertical panel in our sea frame) | "switch sides" → whip pan; "hunter" → P8I 18–19 take-off |
-| 32 | 81.2–85.3 | P8I 26–29 in flight | "P-Eight-I" → label P-8I · INDIAN NAVY; "hours out over the sea" → P8I 34–35 over the sea, clock 3 h |
+| 29–31 | 75.6–80.8 | P8A 0–3 Indian Navy P-8I on the ramp (ANI) | "switch sides" → whip pan; "hunter" → P8B 6–10 take-off (Boeing) |
+| 32 | 81.2–85.3 | P8B 45–51 air to air (Boeing) | "P-Eight-I" → label P-8I · INDIAN NAVY; "hours out over the sea" → our sea from above, label HOURS OUT AT SEA |
 | 33–34 | 85.7–89.6 | R: top-down sea plate, the hull's outline under it, crossed out | "leaves behind" → the outline fades, the surface stays |
 | 35 | 90.0–90.6 | TRI 100–104 crop on the masts | "mast" |
 | 36 | 91.0–93.3 | TRI 0–8 white wake arcs from above | "wake" lands as the arc turns |
@@ -119,3 +119,4 @@ drawing. Labels on illustrations: ILLUSTRATION / RECONSTRUCTION / OUR CALCULATIO
 | 177–178 | 517.1–522.8 | **H1c** the mast stays down; T1 the hull slips deeper | the strip's last red mark goes out |
 | 179–181 | 523.3–532.3 | T1 the hull fading into the deep | "only a hope" → IF; "trap closes" → loop closes; "coming year" → 2027 |
 | 182–183 | 532.7–541.1 | R depth gauge falling, a titanium sphere drawn | "six thousand metres" → 6,000 m; then the end card, channel name and logo (the only time) |
+| 182–184 | 533.0–540.5 | KHA 45–49 Khanderi at sea, KHA 67–69 spray, KHA 27–29 from the air under the pill | "over" → NOT OVER YET; "Khanderi" → INS KHANDERI · BACK TO SEA · WITH AIP; "Subscribe" → the subscribe pill (logo, channel name, button pressed on "there") |
