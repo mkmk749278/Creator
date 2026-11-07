@@ -484,6 +484,14 @@ without loss? Does the last line pull into the next?
   weak rows, every number and date, our own calculations and on-screen values. After an edit, re-check only changed
   lines. Gate: `scripts/claims_check.py projects/<slug>/claims.csv`. *Why:* a full re-search of 95 claims once used most
   of a 5-hour usage window and found almost nothing new.
+- **Fresh-facts gate before upload (2026-11-07).** Every row about something still moving (deliveries, counts,
+  approvals, prices, "so far", "as of", "not yet") gets `fresh` in its note. Within 24 hours of the upload, search the
+  news since the row's check date for each `fresh` row, update `claims.csv` with the date checked, and fix the line (or
+  re-record that block) if the world moved. The upload waits until this is done; write the result in `fact-check.md`.
+  Our own research cut-off is the check date, not June 2026: the session searches the live web. *Why:* the Tejas film
+  (uploaded 28 Oct 2026) carried "14 of 99 engines, none delivered" from a 13 Oct check; the 22 Oct fact-check skipped
+  its "re-check before upload" list and nothing recorded that anyone did it. The numbers still held on 31 Oct (The
+  Wire), but a viewer asked us on 7 Nov to "get up-to-date information", and luck is not a method.
 - **Texture is storytelling; facts are facts.** The heat of the shop floor needs no citation, but texture may never
   change, add or invent a fact, quote or outcome.
 - **Outside reviews and AI suggestions are leads, not facts.** Check every changed fact against `claims.csv` before
@@ -887,7 +895,7 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   early we finish). **45 minutes before is the minimum.** *Why:* YouTube says 4K takes about four times longer than HD
   to process and 60 fps longer still (a 60-minute 4K30 video can take up to 4 hours; Help 71674). Early viewers of an
   unprocessed film see a blurry stream and leave. The Review repo flags under 3 hours as a risk.
-- **Before the slot:** Content ID and ad-suitability checks finish; "Altered or synthetic content" = Yes; title,
+- **Before the slot:** the fresh-facts gate (§8) is done and logged; Content ID and ad-suitability checks finish; "Altered or synthetic content" = Yes; title,
   thumbnail (+ challengers in Test & Compare), description with chapters, the **"Built on Bharat | The Industrial
   Backbone"** playlist (set as the official series playlist in Studio, desktop; needs a verified account; Help
   6084043), cards and end screens (the latest film and the playlist), our SRT.

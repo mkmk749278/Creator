@@ -76,7 +76,8 @@ reason; never a new doc file.
   exists, never a real person, labelled). Design every machine from real reference photos first.
 
 ## Facts and honesty (PLAYBOOK §8)
-- Facts only from collected sources (knowledge stops at June 2026). Every factual line has a row in `claims.csv` (URL,
+- Facts only from collected sources (knowledge stops at June 2026). Rows that can change are re-searched within 24 h
+  of upload (the fresh-facts gate, PLAYBOOK §8). Every factual line has a row in `claims.csv` (URL,
   verbatim quote, status); `scripts/claims_check.py` is the gate. Contested figures are attributed.
 - Storytelling texture never changes, adds or invents a fact, quote or outcome. Outside review suggestions are leads:
   check every changed fact against `claims.csv`.
