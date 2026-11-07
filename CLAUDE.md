@@ -131,7 +131,7 @@ answer is the floor. **Decide early, build once.**
 ## Owner and setup (PLAYBOOK §2)
 - Kishore works **only from an Android phone** (GitHub app, Claude app, Termux, SSH to a VPS). Everything runs in cloud
   sessions, GitHub Actions or the VPS; every result opens on a phone.
-- **Drive:** one folder per film, `Creator/English/<slug>/` or `Creator/Built-on-Bharat/<slug>/`; nothing loose.
+- **Drive:** one folder per film, `Creator/English/<slug>/`, playlist films included (owner, 2026-11-07); nothing loose.
   Upload with `scripts/upload_gdrive.sh` (needs `GDRIVE_RCLONE_TOKEN`).
 - **Git:** all work lands on `main` through a PR merged the same day; tell the owner which branches to delete.
 - **One working session at a time** (all sessions share one IP and one usage limit); a second session only for an

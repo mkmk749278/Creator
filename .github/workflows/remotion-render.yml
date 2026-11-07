@@ -13,7 +13,7 @@ on:
         description: "projects/<film> (the film's slug)"
         required: true
       drive:
-        description: "the film's Drive folder inside Creator, e.g. English/<slug> or Built-on-Bharat/<slug>"
+        description: "the film's Drive folder inside Creator, e.g. English/<slug>"
         required: true
       comp:
         description: "composition id"

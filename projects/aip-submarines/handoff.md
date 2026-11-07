@@ -44,7 +44,7 @@ Branch `ccr-235edd1d-ezbsf6` (PR #76 merged earlier today). Everything below is 
 ## Next session, in order
 1. Read the owner's answers on trashing r3 and sharing r5. Trash r1–r4 once they agree (the Drive connector can trash
    but cannot remove a permission).
-2. Pull r5 if needed: `scripts/gdrive_pull.sh Built-on-Bharat/aip-submarines/renders <dir>`.
+2. Pull r5 if needed: `scripts/gdrive_pull.sh English/aip-submarines/renders <dir>`.
 3. Run the independent review again on r5 with the **new real-audience panel** (`prompts/audience_review_v1.md`).
    The r5 file must be link-shared for it (ask the owner, as for r3). Then `review_ack_r2.md`.
 4. **The owner approves the cut** → render the 4K master once (`scale` 2, name `aip_master_4k.mp4`).
