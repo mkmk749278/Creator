@@ -34,5 +34,25 @@ Our own review (PLAYBOOK §13.1) of the first 720p cut: 9:05.97, 1280×720 at 60
 - −14.1 LUFS, −1.0 dBFS peak, 545.97 s; no black frames except 0.18 s at 9:01.3, where the depth gauge dissolves into the end card.
 - `freezedetect` (n=0.002) still lists 0:38, 0:46, 0:49 and 8:52–9:00. Checked frame against frame: the boat crosses about 120 px in 2.4 s and the marine snow moves throughout. These are dark, low-contrast frames that fall under the detector's noise floor, not holds a viewer would see.
 
-## Next
-The owner watches round 3 → independent viewer review of the cut → `review_ack_r1.md` → the owner approves the cut → the 4K master.
+## Round 4 (aip_review_r4_720p.mp4) · independent review r1 fixes
+- −14.1 LUFS, −1.1 dBTP, 545.97 s; black only the 0.18 s dissolve at 9:01.3. The r1 fixes hold on the frame (0:12 red
+  consoles, 2:58 battery red by "fast", 6:45 trap boxes, 7:08 Kalvari, 7:26–7:53 timeline, 8:12 Khanderi clip).
+- `freezedetect` (n=0.003) found three real holds, now fixed for round 5 (rendered locally, no still over 1.0 s):
+  - **5:46 "signs off the design" (2 s still):** the H4 clip runs out at 0.5× and the eased camera stopped with it. A
+    linear push and pan (`Cam`/`Clip` take an `ease`) keeps it moving to the cut.
+  - **7:46 "Designed at D-R-D-O's lab in" (1.7 s still, and no picture for "D-R-D-O"):** the Ambernath pin (DRDO LAB ·
+    NMRL) now lands on "D-R-D-O's", and the map pushes in from "Designed".
+  - The underwater shots (0:02, 2:28, 3:02) are the same noise-floor flags as round 3: the boat crosses about 650 px.
+- **4:37–4:46, the Defence Secretary quote:** "OCT 2026" sat on the oxygen tube, "Defence Secretary" had no picture on
+  its words, and the quote card hid half of "HYDROGEN" and "ELECTRICITY". The drawing now sits back (25%, soft), and
+  three lines arrive on their words: OCT 2026 → INDIA'S DEFENCE SECRETARY → the quote.
+- **Map credit cut off on the left** ("ASA BLUE MARBLE"): the film's reframe moves (up to 1.09×, −30 px) pushed it past
+  the edge. It now sits at x 150, below the Mazagon label; checked on all four maps.
+
+## Round 5 (aip_review_r5_720p.mp4) · the cut for the owner and independent review r2
+- −14.1 LUFS, −1.1 dBTP, 545.97 s; black only the 0.18 s dissolve at 9:01.3. `freezedetect` (n=0.003) no longer
+  lists 5:46 or 7:46; what remains is the round-3 noise-floor list (underwater 0:02–0:51, 2:28, 3:02) and the ending.
+- Checked on the frame: the quote beat (4:39, 4:43), Naval Group (5:46–5:48, moving), Ambernath on "D-R-D-O's"
+  (7:48), the map credit in full.
+
+The owner watches round 5 → independent viewer review r2 (real-audience panel) → `review_ack_r2.md` → the owner approves the cut → the 4K master.

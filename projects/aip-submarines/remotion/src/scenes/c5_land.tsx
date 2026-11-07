@@ -124,13 +124,13 @@ export const ch5: Part = (() => {
 			keys={[
 				{f: 0, lon: 71.8, lat: 20.6, zoom: 6},
 				{f: w0(159, 'Mazagon') - c157, lon: 71.6, lat: 20.1, zoom: 6.6},
-				{f: w0(161, 'Ambernath') - c157, lon: 71.7, lat: 20.0, zoom: 7.0},
-				{f: d, lon: 71.7, lat: 20.0, zoom: 7.3},
+				{f: w0(161, 'Designed') - c157, lon: 71.7, lat: 20.0, zoom: 7.0},
+				{f: d, lon: 71.9, lat: 19.8, zoom: 7.7},
 			]}
 			pins={[
 				{at: w0(157, 'Hazira') - c157, ll: P.hazira, label: 'HAZIRA', sub: "L&T'S YARD · GUJARAT"},
 				{at: w0(159, 'Mazagon') - c157, ll: P.mumbai, label: 'MAZAGON DOCK', sub: 'MUMBAI', side: 'left'},
-				{at: w0(161, 'Ambernath') - c157, ll: P.ambernath, label: 'AMBERNATH', sub: 'DRDO LAB · NMRL', color: C.cyan},
+				{at: w0(161, 'D-R-D-O') - c157, ll: P.ambernath, label: 'AMBERNATH', sub: 'DRDO LAB · NMRL', color: C.cyan},
 			]}
 			routes={[{a: w0(159, 'goes') - c157, b: w0(159, 'Dock') - c157 + 20, from: P.hazira, to: P.mumbai, color: C.amber}]}
 		/>
