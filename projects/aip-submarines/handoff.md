@@ -1,4 +1,27 @@
-# Handoff · aip-submarines (2026-11-06, evening)
+# Handoff · aip-submarines (2026-11-07)
+
+Branch `ccr-9fa27be6-01wq25` (holds rounds 4–6; not yet merged to `main`). Everything below is committed and pushed.
+
+## Today (2026-11-07)
+- An outside review of r5 (owner's PDF) was checked: audio clean, one reviewer error (`review_ack_r2.md`).
+- **Subscribe line added** (owner chose option A): "This story isn't over. When Khanderi goes back to sea with its
+  new engine, we'll be there. Subscribe, so you're there too." One new ElevenLabs block (`vo/aip_b07.mp3` in Drive),
+  levelled −1.8 dB and inserted after "…any headline you'll read." The joined voice is `aip_vo_full_v2.mp3/.wav`
+  (549.91 s); `vo/lock.json` says PENDING until the owner approves it. Earlier sentences moved at most one frame.
+- On screen: Khanderi at sea, "INS KHANDERI · BACK TO SEA · WITH AIP", then a subscribe pill (logo, channel name,
+  button turns red on "there") over a calm aerial. New mix in Drive `mix/mix.wav` (old one kept as `mix_r5.wav`).
+- **P-8I (review r1 #4) fixed**: the owner's Termux fetch brought Boeing's P-8I first-flight film and ANI's INS
+  Rajali clip; the vertical Navy short is gone. Sea-from-above now lands on "hours out over the sea".
+- Round 6 720p (`aip_review_r6_720p.mp4`) rendered from commit 3a762cf.
+
+## Next session, in order
+1. If not done: measure r6, check the new frames (1:15–1:25, 8:52–9:02), send the owner the r6 link and the new audio.
+2. **The owner approves the r6 cut and the audio** → set `approved` in `vo/lock.json`, render the 4K master once
+   (`scale` 2, `aip_master_4k.mp4`).
+3. Step 14 (title, thumbnail, description) only when the owner asks. Leads from the outside review: "Cut in two",
+   the hull plug sliding into the gap.
+
+## Older notes (2026-11-06)
 
 Branch `ccr-235edd1d-ezbsf6` (PR #76 merged earlier today). Everything below is committed and pushed.
 
