@@ -64,7 +64,7 @@ You've probably heard its name.
 
 17
 00:00:41,460 --> 00:00:44,406
-A-I-P, air independent propulsion.
+AIP, air independent propulsion.
 
 18
 00:00:44,611 --> 00:00:46,924
@@ -128,7 +128,7 @@ You're the hunter.
 
 33
 00:01:21,157 --> 00:01:25,532
-You're flying a P-Eight-I of the Indian Navy, hours out over the sea.
+You're flying a P-8I of the Indian Navy, hours out over the sea.
 
 34
 00:01:25,695 --> 00:01:27,563
@@ -224,7 +224,7 @@ Shorter red marks.
 
 57
 00:02:28,327 --> 00:02:30,553
-That's exactly what A-I-P does.
+That's exactly what AIP does.
 
 58
 00:02:30,718 --> 00:02:33,851
@@ -252,7 +252,7 @@ About four days on the battery becomes about two weeks under water.
 
 64
 00:02:49,044 --> 00:02:52,211
-That's D-R-D-O's own figure from its land trials.
+That's DRDO's own figure from its land trials.
 
 65
 00:02:52,390 --> 00:02:53,677
@@ -264,7 +264,7 @@ Not quite.
 
 67
 00:02:54,783 --> 00:02:57,008
-A-I-P lets you crawl for weeks.
+AIP lets you crawl for weeks.
 
 68
 00:02:57,051 --> 00:02:58,344
@@ -316,7 +316,7 @@ In the shallow waters close to our coast, a small, quiet diesel boat is still th
 
 80
 00:03:36,247 --> 00:03:38,444
-So India built its own A-I-P.
+So India built its own AIP.
 
 81
 00:03:38,674 --> 00:03:40,575
@@ -336,7 +336,7 @@ Instead, it carries a dry white powder.
 
 85
 00:03:51,468 --> 00:03:53,002
-Sodium boro-hydride.
+Sodium borohydride.
 
 86
 00:03:53,218 --> 00:03:55,825
@@ -352,7 +352,7 @@ How much power is hiding in that powder?
 
 89
 00:04:02,135 --> 00:04:07,036
-One spoonful, about seven grams, makes enough electricity to charge your phone.
+One spoonful, about 7 grams, makes enough electricity to charge your phone.
 
 90
 00:04:07,138 --> 00:04:09,432
@@ -404,7 +404,7 @@ Would you want all this inside a sealed steel tube with you?
 
 102
 00:04:36,909 --> 00:04:40,926
-In October twenty twenty-six, India's Defence Secretary said it simply.
+In October 2026, India's Defence Secretary said it simply.
 
 103
 00:04:40,987 --> 00:04:45,560
@@ -444,7 +444,7 @@ But there's a problem.
 
 112
 00:05:04,437 --> 00:05:07,850
-A Kalvari submarine is about sixty-seven metres long.
+A Kalvari submarine is about 67 metres long.
 
 113
 00:05:08,096 --> 00:05:11,632
@@ -472,11 +472,11 @@ It slides into the gap, and the two parts are joined around it.
 
 119
 00:05:29,292 --> 00:05:32,593
-Reports say the boat comes out about ten metres longer.
+Reports say the boat comes out about 10 metres longer.
 
 120
 00:05:32,740 --> 00:05:34,317
-Picture ten metres.
+Picture 10 metres.
 
 121
 00:05:34,456 --> 00:05:37,682
@@ -512,7 +512,7 @@ Yes.
 
 129
 00:05:55,991 --> 00:06:03,859
-On the eighth of March, twenty twenty-one, D-R-D-O's land prototype was proven, in its endurance mode and its maximum power mode.
+On 8 March 2021, DRDO's land prototype was proven, in its endurance mode and its maximum power mode.
 
 130
 00:06:03,973 --> 00:06:06,360
@@ -544,7 +544,7 @@ Its system had been shown on shore, not at sea.
 
 137
 00:06:28,094 --> 00:06:31,771
-Germany's fuel cell boats have been at sea for about twenty years.
+Germany's fuel cell boats have been at sea for about 20 years.
 
 138
 00:06:31,881 --> 00:06:34,498
@@ -596,7 +596,7 @@ And that comes once in several years.
 
 150
 00:07:06,854 --> 00:07:08,865
-So what happened in twenty twenty-five?
+So what happened in 2025?
 
 151
 00:07:09,151 --> 00:07:12,216
@@ -624,7 +624,7 @@ You'd start with one submarine.
 
 157
 00:07:23,382 --> 00:07:25,878
-Reports say it will be I-N-S Khanderi.
+Reports say it will be INS Khanderi.
 
 158
 00:07:26,804 --> 00:07:33,975
@@ -644,7 +644,7 @@ And the Defence Secretary says the fitting comes around the middle of next year,
 
 162
 00:07:46,710 --> 00:07:49,651
-Designed at D-R-D-O's lab in Ambernath.
+Designed at DRDO's lab in Ambernath.
 
 163
 00:07:49,832 --> 00:07:51,272
@@ -672,7 +672,7 @@ China's Yuan class submarines already have this technology.
 
 169
 00:08:05,305 --> 00:08:12,860
-In April twenty twenty-six, Pakistan commissioned its first Hangor class submarine, which its navy says has A-I-P too.
+In April 2026, Pakistan commissioned its first Hangor class submarine, which its navy says has AIP too.
 
 170
 00:08:13,157 --> 00:08:17,964
@@ -684,7 +684,7 @@ If those trials work, India will have what no tender can turn down.
 
 172
 00:08:22,592 --> 00:08:25,222
-Its own A-I-P, proven at sea.
+Its own AIP, proven at sea.
 
 173
 00:08:25,526 --> 00:08:29,536
@@ -744,4 +744,4 @@ Next, we go even deeper.
 
 187
 00:09:03,307 --> 00:09:09,801
-Six thousand metres down, inside a titanium sphere built to carry Indians to the bottom of the ocean.
+6,000 metres down, inside a titanium sphere built to carry Indians to the bottom of the ocean.

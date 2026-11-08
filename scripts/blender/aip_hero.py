@@ -11,6 +11,10 @@
                    the aft half rolls back on rails (60-250), the new section rolls in from the side (330-700), slides
                    into the gap (700-830), the seams glow as they are welded (840-959). The hull's shape matches the
                    film's Three.js and SVG boat (67.5 m, 6.2 m beam); the plug is about ten metres (claim C09).
+  thumb    (still) the YouTube thumbnail hero (owner asked for the package, 2026-11-08): the same dry-dock boat
+                   held at the moment the film's words describe ("the hull is cut in two ... slides into the gap"):
+                   the halves apart, both cut edges glowing, the new section sliding in from the side. --view a|b|c
+                   picks the camera. Lit brighter than the film shot so it reads at phone size.
 Deterministic: fixed seed, no simulation; every motion is a function of the frame. Labels come from Remotion.
 """
 import argparse
@@ -36,6 +40,7 @@ def args():
     ap.add_argument("--samples", type=int, default=24)
     ap.add_argument("--bounces", type=int, default=6)
     ap.add_argument("--threads", type=int, default=0)
+    ap.add_argument("--view", default="a")
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     return ap.parse_args(argv)
 
@@ -372,7 +377,8 @@ def build_drydock(a):
     hz.scale = (200, 90, 26)
     hz.data.materials.append(vol)
     sc.cycles.volume_step_rate = 4
-    return sc, cam, dict(aft=aft, fwd=fwd, plug=plug, rings=rings, glow=glow, cutx=cutx)
+    return sc, cam, dict(aft=aft, fwd=fwd, plug=plug, rings=rings, glow=glow, cutx=cutx, fin=fin, hullm=hullm,
+                         plugm=plugm, haze=pv)
 
 
 def pose_drydock(f, cam, o):
@@ -400,8 +406,73 @@ def pose_drydock(f, cam, o):
     aim_cam(cam, loc, aim, keys(f, [(0, 32), (960, 38)]), fstop=8)
 
 
+THUMB_VIEWS = {
+    # camera location, aim point, lens (mm)
+    "a": ((96.0, -40.0, 15.0), (36.0, -3.0, -1.0), 40),
+    "b": ((78.0, -34.0, 10.0), (32.0, -3.0, 0.0), 32),
+    "c": ((48.0, -26.0, 10.0), (27.0, 0.0, 0.5), 26),
+    "d": ((66.0, -54.0, 17.0), (30.0, -2.0, -1.5), 34),
+    "e": ((80.0, -48.0, 22.0), (31.0, -2.0, -1.0), 36),
+}
+
+
+def pose_thumb(a, sc, cam, o):
+    """the halves 12 m apart, both cut edges hot, the new section part-way in from the side"""
+    cutx = o["cutx"]
+    # a dark dock: the film's roof lights and haze turned down, so the boat reads as a silhouette with rims
+    for l in bpy.data.lights:
+        l.energy *= 0.12
+    o["haze"].inputs["Density"].default_value = 0.0004
+    # a rounded sail with masts in place of the film's plain block, so the boat reads as a submarine at phone size
+    fin = o["fin"]
+    fin.hide_render = True
+    bpy.ops.mesh.primitive_cube_add(size=1, location=fin.matrix_world.translation)
+    sail = bpy.context.object
+    sail.scale = (8.0, 1.25, 4.4)
+    bv = sail.modifiers.new("b", "BEVEL")
+    bv.width, bv.segments = 0.09, 5
+    sail.data.materials.append(o["hullm"])
+    sail.parent = o["fwd"]
+    sail.matrix_parent_inverse = o["fwd"].matrix_world.inverted()
+    bpy.ops.object.shade_smooth()
+    top = sail.location.z + 2.2
+    for dx, hgt in ((-1.6, 2.6), (0.2, 3.4), (1.8, 2.1)):
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.16, depth=hgt, location=(sail.location.x + dx, 0, top + hgt / 2))
+        m = bpy.context.object
+        m.data.materials.append(o["hullm"])
+    # the new section in dark primer, so its glowing ends carry it
+    bsdf = o["plugm"].node_tree.nodes["Principled BSDF"]
+    bsdf.inputs["Base Color"].default_value = (0.06, 0.065, 0.07, 1)
+    o["aft"].location = (-12.0, 0, 0)
+    o["plug"].location = (cutx - 6.0, -7.5, 0)
+    o["plug"].hide_render = False
+    r0, r1, r2 = o["rings"]
+    r0.location = (cutx, 0, 0)            # the cut edge on the forward half
+    r1.location = (cutx - 12.0, 0, 0)     # the cut edge on the aft half
+    r2.location = (cutx - 6.0 + 5.0, -7.5, 0)  # the new section's forward weld band
+    for r in (r0, r1, r2):
+        r.hide_render = False
+    o["glow"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 22.0
+    # warm light spilling out of the gap, a cool rim from behind the boat, a soft key from above
+    area((cutx - 6.0, -10.0, -2.0), (cutx - 6.0, 0, 0.5), 4, 1800, (1.0, 0.45, 0.12))
+    area((cutx + 10, 16.0, 9.0), (cutx + 10, 0, 0), 40, 14000, (0.4, 0.6, 1.0))
+    area((cutx - 22, 16.0, 9.0), (cutx - 22, 0, 0), 40, 12000, (0.4, 0.6, 1.0))
+    area((cutx, -6.0, 22.0), (cutx, 0, 0), 30, 2500, (1.0, 0.92, 0.85))
+    sc.view_settings.exposure = 0.0
+    loc, aim, lens = THUMB_VIEWS[a.view]
+    aim_cam(cam, loc, aim, lens, fstop=11)
+
+
 def main():
     a = args()
+    if a.shot == "thumb":
+        sc, cam, o = build_drydock(a)
+        pose_thumb(a, sc, cam, o)
+        os.makedirs(a.out, exist_ok=True)
+        sc.render.filepath = os.path.join(os.path.abspath(a.out), f"thumb_{a.view}.png")
+        bpy.ops.render.render(write_still=True)
+        print(f"thumb {a.view}", flush=True)
+        return
     if a.shot == "powder":
         sc, cam, o = build_powder(a)
         pose = pose_powder
