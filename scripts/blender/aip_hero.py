@@ -549,6 +549,7 @@ def sparks(origin, n, m, rnd):
         s = bpy.context.object
         s.rotation_euler = v.to_track_quat("Z", "Y").to_euler()
         s.data.materials.append(m)
+        s.visible_shadow = False
 
 
 def build_thumb2(a):
@@ -657,8 +658,202 @@ THUMB2_VIEWS = {
     "t": ((20.0, -15.0, 1.0), (35.0, 1.5, 0.2), 26),
 }
 
+
+# ---------------------------------------------------------------- the thumbnail, v3 (owner's review, 2026-11-08)
+def shell_arc(x0, x1, r, name, m, gap_from, gap_to, seg=128):
+    """a steel ring section from x0 to x1 with a window cut out between two angles (degrees; 0 faces -y, the camera
+    side, and +90 is the top): the cutaway that shows what is inside"""
+    verts, faces = [], []
+    angs = [i / seg * 360.0 - 180.0 for i in range(seg + 1)]
+    keep = [not (gap_from < a < gap_to) for a in angs]
+    for x in (x0, x1):
+        for a in angs:
+            t = math.radians(a)
+            verts.append((x, -r * math.cos(t), r * math.sin(t)))
+    n = seg + 1
+    for j in range(seg):
+        if keep[j] and keep[j + 1]:
+            faces.append((j, j + 1, n + j + 1, n + j))
+    me = bpy.data.meshes.new(name)
+    me.from_pydata(verts, [], faces)
+    me.update()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.collection.objects.link(ob)
+    ob.data.materials.append(m)
+    ob.modifiers.new("s", "SOLIDIFY").thickness = 0.1
+    for p in me.polygons:
+        p.use_smooth = True
+    return ob
+
+
+def plated(name, color, rough):
+    """hull steel with plate seams (a brick texture as bump) and fine noise"""
+    m = mat(name, color, rough, metal=0.35)
+    nt = m.node_tree
+    bsdf = nt.nodes["Principled BSDF"]
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    mp = nt.nodes.new("ShaderNodeMapping")
+    mp.inputs["Scale"].default_value = (0.16, 0.32, 0.32)
+    br = nt.nodes.new("ShaderNodeTexBrick")
+    br.inputs["Mortar Size"].default_value = 0.012
+    br.inputs["Scale"].default_value = 1.0
+    nz = nt.nodes.new("ShaderNodeTexNoise")
+    nz.inputs["Scale"].default_value = 6
+    nzs = nt.nodes.new("ShaderNodeMath")
+    nzs.operation = "MULTIPLY"
+    nzs.inputs[1].default_value = 0.08
+    nt.links.new(nz.outputs["Fac"], nzs.inputs[0])
+    mix = nt.nodes.new("ShaderNodeMath")
+    mix.operation = "ADD"
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.12
+    nt.links.new(tc.outputs["Object"], mp.inputs["Vector"])
+    nt.links.new(mp.outputs["Vector"], br.inputs["Vector"])
+    nt.links.new(br.outputs["Fac"], mix.inputs[0])
+    nt.links.new(nzs.outputs["Value"], mix.inputs[1])
+    nt.links.new(mix.outputs["Value"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    return m
+
+
+def build_thumb3(a):
+    sc, cam = setup(a, exposure=-0.2)
+    rnd = random.Random(7)
+    cutx, gap = 33.0, 12.4
+    aft_cut, fwd_cut = cutx - gap, cutx
+    hullm = plated("hull", (0.035, 0.038, 0.045), 0.5)
+    steel = mat("steel_in", (0.25, 0.26, 0.28), 0.4, metal=0.8)
+    kit = mat("kit", (0.1, 0.12, 0.15), 0.5, metal=0.4)
+    hot = mat("hot", (0, 0, 0), 1, emit=(1.0, 0.42, 0.08), strength=30)
+    spark = mat("spark", (0, 0, 0), 1, emit=(1.0, 0.62, 0.25), strength=90)
+    cell = mat("cell", (0.05, 0.03, 0.01), 0.6, emit=(1.0, 0.36, 0.0), strength=2.4)
+    cyan = mat("cyan", (0, 0, 0), 1, emit=(0.2, 0.75, 1.0), strength=5)
+    sil = mat("sil", (0.01, 0.01, 0.012), 0.8)
+    hat = mat("hat", (0.9, 0.7, 0.05), 0.5)
+    # the two halves of the boat, open at the cut, with their decks inside
+    hull_piece(0.2, aft_cut - 9, "aft_body", hullm)
+    tube(aft_cut - 9.05, aft_cut, R, "aft_ring", hullm)
+    hull_piece(fwd_cut + 12, HULL_LEN, "fwd_body", hullm)
+    tube(fwd_cut, fwd_cut + 12.05, R, "fwd_ring", hullm)
+    interior(aft_cut, 8.5, -1, steel, kit, (1.0, 0.75, 0.5), rnd)
+    interior(fwd_cut, 11.5, +1, steel, kit, (1.0, 0.75, 0.5), rnd)
+    for x in (aft_cut, fwd_cut):
+        bpy.ops.mesh.primitive_torus_add(major_radius=R, minor_radius=0.07, major_segments=128, minor_segments=8,
+                                         location=(x, 0, 0), rotation=(0, math.pi / 2, 0))
+        bpy.context.object.data.materials.append(hot)
+    # the sail, masts and stern planes
+    sx = HULL_LEN - 26 + 4.75
+    sail = box((sx, 0, R + 1.8), (8.0, 1.25, 4.4), hullm)
+    bv = sail.modifiers.new("b", "BEVEL")
+    bv.width, bv.segments = 0.09, 5
+    for dx, hgt in ((-1.6, 2.6), (0.2, 3.4), (1.8, 2.1)):
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.16, depth=hgt, location=(sx + dx, 0, R + 4.0 + hgt / 2))
+        bpy.context.object.data.materials.append(hullm)
+    for rot in (0, math.pi / 2):
+        p = box((2.6, 0, 0), (2.6, 0.16, 7.4), hullm)
+        p.rotation_euler = (rot + math.pi / 4, 0, 0)
+    # the new AIP section, in the gap on its rollers: about ten metres (claim C09), a cutaway window on the camera side
+    # showing the modules inside lit amber (an illustration of "fuel cells" and "the powder, the oxygen, the waste")
+    px0, px1 = cutx - gap / 2 - 5.0, cutx - gap / 2 + 5.0
+    plugm = plated("plug", (0.16, 0.17, 0.18), 0.38)
+    shell_arc(px0, px1, R, "plug", plugm, -38.0, 58.0)
+    for x in (px0, px1):
+        bpy.ops.mesh.primitive_torus_add(major_radius=R, minor_radius=0.06, major_segments=128, minor_segments=8,
+                                         location=(x, 0, 0), rotation=(0, math.pi / 2, 0))
+        bpy.context.object.data.materials.append(hot)
+        box((x, 0, 0), (0.08, 2 * R - 0.3, 2 * R - 0.3), kit)
+    box(((px0 + px1) / 2, 0, -1.05), (10.0, 2 * math.sqrt(R * R - 1.1) - 0.3, 0.08), steel)
+    for k in range(5):
+        x = px0 + 1.0 + k * 2.0
+        for y in (-1.0, 1.0):
+            box((x, y * 0.9, -0.2), (1.5, 0.95, 1.6), cell)
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.5, depth=1.6, location=(x, 0, 1.6), rotation=(0, math.pi / 2, 0))
+        bpy.context.object.data.materials.append(steel)
+    for y, z in ((-1.9, 0.6), (1.9, 0.6), (0.0, -2.3)):
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.07, depth=10.0, location=((px0 + px1) / 2, y, z),
+                                            rotation=(0, math.pi / 2, 0))
+        bpy.context.object.data.materials.append(cyan)
+    bpy.ops.object.light_add(type="POINT", location=((px0 + px1) / 2, -0.8, 0.2))
+    l = bpy.context.object
+    l.data.energy = 1100
+    l.data.color = (1.0, 0.42, 0.08)
+    l.data.shadow_soft_size = 2.0
+    # the dock
+    floor = -R - 1.4
+    conc = mat("concrete", (0.025, 0.026, 0.03), 0.8)
+    noise_bump(conc, 2, 0.3)
+    bpy.ops.mesh.primitive_plane_add(size=400, location=(30, 0, floor))
+    bpy.context.object.data.materials.append(conc)
+    railm = mat("rail", (0.3, 0.3, 0.32), 0.3, metal=1.0)
+    for y in (-1.6, 1.6):
+        box((30, y, floor + 0.1), (140, 0.18, 0.2), railm)
+    blockm = mat("blocks", (0.1, 0.06, 0.03), 0.8)
+    for x in list(range(-20, 90, 5)):
+        box((x, 0, -R - 0.7), (1.2, 2.4, 1.2), blockm)
+    box((30, 20, 6), (200, 0.5, 26), mat("wall", (0.04, 0.045, 0.055), 0.85))
+    # one worker on the floor beside the new section, for scale (a plain silhouette, not a real person)
+    worker(px1 - 2.0, -4.2, floor, sil, hat, 0.6)
+    # weld sparks where the new section meets the forward half
+    sparks((px1 + 0.05, -R * 0.7, -R * 0.7), 240, spark, rnd)
+    bpy.ops.object.light_add(type="POINT", location=(px1 + 0.4, -R * 0.8, -R * 0.75))
+    bpy.context.object.data.use_shadow = False
+    bpy.context.object.data.energy = 900
+    bpy.context.object.data.color = (1.0, 0.6, 0.3)
+    # light: a strong cool rim along the top of the boat and the sail, a soft key from the front, roof beams in haze
+    area((cutx, 14.0, 14.0), (cutx, 0, 2.0), 70, 52000, (0.55, 0.72, 1.0))
+    area((sx, 10.0, 12.0), (sx, 0, 4.0), 14, 9000, (0.6, 0.78, 1.0))
+    area((cutx, -30.0, 8.0), (cutx, 0, 0), 60, 1600, (0.9, 0.92, 1.0))
+    for x in (aft_cut - 4, (px0 + px1) / 2, fwd_cut + 5):
+        bpy.ops.object.light_add(type="SPOT", location=(x, -4, 18))
+        s = bpy.context.object
+        s.data.energy = 16000
+        s.data.spot_size = math.radians(24)
+        s.data.spot_blend = 0.6
+        s.data.color = (0.75, 0.85, 1.0)
+        s.rotation_euler = (Vector((x, -2, 0)) - Vector((x, -4, 18))).to_track_quat("-Z", "Y").to_euler()
+    vol = bpy.data.materials.new("haze")
+    vol.use_nodes = True
+    vn = vol.node_tree
+    vn.nodes.remove(vn.nodes["Principled BSDF"])
+    pv = vn.nodes.new("ShaderNodeVolumePrincipled")
+    pv.inputs["Density"].default_value = 0.002
+    vn.links.new(pv.outputs["Volume"], vn.nodes["Material Output"].inputs["Volume"])
+    box((30, 0, 8), (200, 90, 26), vol)
+    sc.cycles.volume_step_rate = 2
+    marks = {"plug_aft_top": (px0, 0, R), "plug_fwd_top": (px1, 0, R), "plug_aft_bot": (px0, 0, -R),
+             "plug_fwd_bot": (px1, 0, -R), "plug_mid": ((px0 + px1) / 2, -R, 0.0)}
+    return sc, cam, marks
+
+
+THUMB3_VIEWS = {
+    "u": ((19.0, -24.0, 2.5), (30.0, 0.0, 0.6), 24),
+    "v": ((16.0, -28.0, 4.0), (31.0, 0.0, 0.4), 26),
+    "w": ((23.0, -21.0, 1.0), (30.5, 0.0, 0.8), 22),
+    "x": ((15.0, -26.0, 2.5), (25.5, 0.0, 0.6), 21),
+    "y": ((12.0, -30.0, 3.0), (24.0, 0.0, 0.2), 22),
+    "z": ((19.5, -15.5, 1.6), (25.0, 0.0, 0.4), 24),
+}
+
 def main():
     a = args()
+    if a.shot == "thumb3":
+        from bpy_extras.object_utils import world_to_camera_view
+        import json
+        sc, cam, marks = build_thumb3(a)
+        loc, aim, lens = THUMB3_VIEWS[a.view]
+        aim_cam(cam, loc, aim, lens, fstop=10)
+        bpy.context.view_layer.update()
+        os.makedirs(a.out, exist_ok=True)
+        pts = {}
+        for k, p in marks.items():
+            v = world_to_camera_view(sc, cam, Vector(p))
+            pts[k] = [round(v.x, 4), round(1 - v.y, 4)]
+        with open(os.path.join(os.path.abspath(a.out), f"thumb3_{a.view}.json"), "w") as fh:
+            json.dump(pts, fh)
+        sc.render.filepath = os.path.join(os.path.abspath(a.out), f"thumb3_{a.view}.png")
+        bpy.ops.render.render(write_still=True)
+        print(f"thumb3 {a.view}", flush=True)
+        return
     if a.shot == "thumb2":
         sc, cam = build_thumb2(a)
         loc, aim, lens = THUMB2_VIEWS[a.view]

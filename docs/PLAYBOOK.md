@@ -307,6 +307,14 @@ The challengers vary the picture and the words, never the promise, because one o
 - Check at 168×94 with the badge (`scripts/thumb_feed.py`). Make 3+ concepts, build them as HTML in
   `youtube/thumb/` and shoot them at 1280×720, then deliver a main and two challengers for Test & Compare.
 - **Honest:** every word and image is paid off in the film, ideally in the first 30 s.
+- **Show the mystery object, not only the damage (owner's review of the AIP thumbnails, 2026-11-08).** A cut
+  submarine alone read as "scrap"; the version that works puts the new glowing section *in the gap*, cut away to show
+  it lit from inside, with a cool rim light on the hull and sail so the silhouette pops, one blueprint dimension
+  (`+10 M`, a number the film says) and weld sparks where it joins. Text in a heavy condensed face (Anton, OFL,
+  `library/fonts/`) with the bottom word in safety orange `#FF7A00` (owner's choice for this film). Keep at least half
+  the frame clearly lit: a dark-on-dark render sinks on a phone. *Why the words stay honest:* "THE 10M SECRET" was
+  proposed and dropped, because the plug is public; a promise the film doesn't keep wins the click and loses the
+  watch time, and Test & Compare picks the winner by watch-time share.
 - *Why these rules:* our old thumbnails (navy card, 6–12 words, a mock document) read as info slides and **answered**
   the question ("5-YEAR RULE"), so there was nothing left to click for. CTR was low.
 
