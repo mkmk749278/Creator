@@ -9,24 +9,24 @@
   "thumbnails": {
     "main": {
       "file": "thumb_a.jpg",
-      "words": "ON PURPOSE",
-      "picture": "our Blender render (aip_hero.py --shot thumb2 --view s): the boat in dry dock cut open, decks and ring frames lit inside, a worker silhouette (not a real person) standing inside for scale, sparks at the cut, the new section waiting on its cradle. ILLUSTRATION, as in the film.",
-      "paid_off": "0:52 and 5:02: the hull is cut open deliberately to fit the AIP section (C10)",
-      "compose": "make_thumbs.py --words \"ON|PURPOSE\" --text_w 0.43 --size 440 --lift 1.15 --valign 0.70 --panel 175"
+      "words": "CUT IN HALF",
+      "picture": "our Blender render (aip_hero.py --shot thumb3 --view x): the boat in dry dock cut in half, the new ~10 m AIP section in the gap, cut away and glowing inside, weld sparks where it joins, a worker silhouette for scale (not a real person), a '+10 M' dimension line. ILLUSTRATION, as in the film.",
+      "paid_off": "0:52 'cut one of its own submarines in two'; chapter 'Cut it in half' at 5:02; 'about ten metres longer' (C09)",
+      "compose": "make_thumbs.py --marks thumb3_x.json --dim \"+10 M\" --words \"CUT IN|HALF\" --font anton --accent orange --text_w 0.33 --size 600 --valign 0.6 --panel 170"
     },
     "challenger_1": {
       "file": "thumb_b.jpg",
-      "words": "WHY CUT IT?",
-      "picture": "the same render",
-      "paid_off": "0:52; 5:02",
-      "compose": "make_thumbs.py --words \"WHY CUT|IT?\" --text_w 0.385 --size 440 --lift 1.15 --valign 0.70 --panel 175"
+      "words": "WHAT'S INSIDE?",
+      "picture": "the same render, tighter",
+      "paid_off": "chapter 3 (the powder, oxygen, fuel cells) and 5:02 (the section holding the powder, the oxygen, the fuel cells and the waste)",
+      "compose": "make_thumbs.py --marks thumb3_x.json --dim \"+10 M\" --words \"WHAT'S|INSIDE?\" --font anton --accent orange --zoom 1.22 --shift -120 --text_w 0.33 --size 600 --valign 0.6 --panel 170 --dim_lift 80"
     },
     "challenger_2": {
       "file": "thumb_c.jpg",
       "words": "CAN'T STAY HIDDEN",
-      "picture": "our snorkel reconstruction at night (H1b frame 280) with red radar rings (the film draws the radar sweep that finds it)",
-      "paid_off": "0:02 sentence 1, 0:21 'you are easier to find', 0:34 'a hiding machine that has to show itself'",
-      "compose": "make_thumbs.py --words \"CAN'T STAY|HIDDEN\" --shift 420 --zoom 1.12 --text_w 0.47 --lift 1.25 --ping 1700,850"
+      "picture": "our snorkel reconstruction at night (H1b frame 280) with red radar rings",
+      "paid_off": "sentence 1; 0:21 'easier to find'; 0:34 'a hiding machine that has to show itself'",
+      "compose": "make_thumbs.py --words \"CAN'T STAY|HIDDEN\" --font anton --accent orange --shift 420 --zoom 1.12 --text_w 0.40 --size 600 --valign 0.5 --lift 1.3 --ping 1700,850"
     }
   },
   "description": "Why do India's submarines still have to come up and breathe every few days, and what can AIP, air independent propulsion, change?\nDRDO's AIP makes hydrogen from a white powder, under water. To fit it, a Kalvari class submarine has to be cut in two at Mazagon Dock.\nHow AIP works, why it doesn't make a submarine invisible, and why INS Khanderi's trials matter more than any headline.\n\n00:00 Why diesel submarines must surface\n01:15 How submarines get caught snorkelling\n02:28 Does AIP make a submarine invisible?\n03:36 How DRDO's AIP works\n05:02 Why the submarine is cut in two\n05:48 Proven at sea: the AIP trap\n07:18 How India can break the trap\n08:13 What happens next: INS Khanderi",
@@ -79,5 +79,5 @@
   "fresh_facts_gate": "Within 24 h of upload re-search the rows that can change: C12/C43 (Khanderi first, mid-2026 integration), the October 2026 Hazira tests and 'early next year' to Mazagon Dock, the P-75I deal status (C-rows on the German design), Pakistan's Hangor commissioning (April 2026).",
   "drive_folder": "Creator/English/aip-submarines/youtube/",
   "title_paid_off": "0:52 'To fit it, India has to cut one of its own submarines in two' (the film's own words); chapter 5:02",
-  "previous_round": "v1 (CUT IN TWO / CUT IT OPEN / OUT OF BATTERY) kept in Drive youtube/v1/; the owner asked for more curiosity on 2026-11-08"
+  "previous_round": "round 1 in Drive youtube/v1/, round 2 in youtube/v2/"
 }

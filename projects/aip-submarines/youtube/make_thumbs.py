@@ -7,6 +7,8 @@ Built at 2560x1440 and downsampled to 1280x720 (JPG q94, < 2 MB). Words sit on t
 kept clear for the time badge. '|' splits lines; the last line is in caution yellow, the others in white.
 """
 import argparse
+import json
+from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 W, H = 2560, 1440
@@ -15,16 +17,41 @@ GRID = (48, 54, 61)          # bp_grid #30363d
 WHITE = (244, 246, 251)
 YELLOW = (255, 196, 0)       # caution yellow
 FONT = "/usr/share/fonts/opentype/inter/InterDisplay-Black.otf"
+ANTON = str(Path(__file__).resolve().parents[3] / "library/fonts/Anton-Regular.woff")   # OFL, library/manifest.csv
+MONO = "/usr/share/fonts/truetype/jetbrains-mono/JetBrainsMono-Bold.ttf"
+COLOURS = {"yellow": (255, 196, 0), "orange": (255, 122, 0), "red": (248, 81, 73)}
 
 
-def fit_font(draw, text, max_w, start):
+def fit_font(draw, text, max_w, start, path=FONT):
     size = start
     while size > 40:
-        f = ImageFont.truetype(FONT, size)
+        f = ImageFont.truetype(path, size)
         if draw.textbbox((0, 0), text, font=f)[2] <= max_w:
             return f
         size -= 8
-    return ImageFont.truetype(FONT, size)
+    return ImageFont.truetype(path, size)
+
+
+def dimension(canvas, a, b, label, lift):
+    """a blueprint dimension line from a to b (2560-scale points), lifted by `lift` px, with ticks and a label"""
+    lay = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(lay)
+    ink = (230, 237, 243, 235)
+    (ax, ay), (bx, by) = a, b
+    ay2, by2 = ay - lift, by - lift
+    for (x, y0, y1) in ((ax, ay - 12, ay2 - 22), (bx, by - 12, by2 - 22)):
+        d.line([(x, y0), (x, y1)], fill=ink, width=4)
+    d.line([(ax, ay2), (bx, by2)], fill=ink, width=5)
+    for (x, y, s) in ((ax, ay2, 1), (bx, by2, -1)):
+        d.polygon([(x, y), (x + s * 34, y - 13), (x + s * 34, y + 13)], fill=ink)
+    f = ImageFont.truetype(MONO, 84)
+    tw = d.textbbox((0, 0), label, font=f)[2]
+    mx, my = (ax + bx) / 2, (ay2 + by2) / 2
+    pad = 18
+    d.rounded_rectangle([mx - tw / 2 - pad, my - 62, mx + tw / 2 + pad, my + 50], radius=10, fill=(13, 17, 23, 235),
+                        outline=COLOURS["orange"] + (255,), width=4)
+    d.text((mx - tw / 2, my - 60), label, font=f, fill=COLOURS["orange"] + (255,))
+    return Image.alpha_composite(canvas, lay)
 
 
 def main():
@@ -37,6 +64,11 @@ def main():
     ap.add_argument("--text_w", type=float, default=0.46, help="share of the width the words may use")
     ap.add_argument("--size", type=int, default=380)
     ap.add_argument("--lift", type=float, default=1.0, help="brightness multiplier for the render")
+    ap.add_argument("--font", default="inter", choices=["inter", "anton"])
+    ap.add_argument("--accent", default="yellow", choices=list(COLOURS))
+    ap.add_argument("--marks", default="", help="the render's projected points (aip_hero.py thumb3 json)")
+    ap.add_argument("--dim", default="", help="label for a dimension line over the plug, e.g. '+10 M'")
+    ap.add_argument("--dim_lift", type=int, default=90)
     ap.add_argument("--valign", type=float, default=0.47, help="vertical centre of the words, as a share of the height")
     ap.add_argument("--panel", type=int, default=225, help="darkness of the left panel, 0-255")
     ap.add_argument("--ping", default="", help="x,y (2560 scale): red radar rings around a point (the film draws the radar sweep that finds the snorkel)")
@@ -80,15 +112,22 @@ def main():
         glow = rings.filter(ImageFilter.GaussianBlur(8))
         canvas = Image.alpha_composite(Image.alpha_composite(canvas, glow), rings)
 
+    if a.dim and a.marks:
+        mk = json.load(open(a.marks))
+        sx = lambda p: (p[0] * sw + (W - sw) // 2 + a.shift, p[1] * sh + (H - sh) // 2)
+        canvas = dimension(canvas, sx(mk["plug_aft_top"]), sx(mk["plug_fwd_top"]), a.dim, a.dim_lift)
+
     # the words: left aligned, stacked, with a hard shadow for depth
     lines = a.words.split("|")
     d = ImageDraw.Draw(canvas)
     x0, max_w = 150, int(W * a.text_w) - 150
-    fonts = [fit_font(d, ln, max_w, a.size) for ln in lines]
-    size = min(f.size for f in fonts)
-    fonts = [ImageFont.truetype(FONT, size) for _ in lines]
+    fpath = ANTON if a.font == "anton" else FONT
+    fonts = [fit_font(d, ln, max_w, a.size, fpath) for ln in lines]
+    if a.font == "inter":
+        size = min(f.size for f in fonts)
+        fonts = [ImageFont.truetype(FONT, size) for _ in lines]
     heights = [d.textbbox((0, 0), ln, font=f)[3] - d.textbbox((0, 0), ln, font=f)[1] for ln, f in zip(lines, fonts)]
-    gap = int(size * 0.14)
+    gap = int(min(f.size for f in fonts) * (0.04 if a.font == "anton" else 0.14))
     total = sum(heights) + gap * (len(lines) - 1)
     y = int(H * a.valign - total / 2)
     shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -103,7 +142,7 @@ def main():
     canvas = Image.alpha_composite(canvas, shadow)
     d = ImageDraw.Draw(canvas)
     for i, (ln, f, yy) in enumerate(pos):
-        d.text((x0, yy), ln, font=f, fill=YELLOW if i == len(pos) - 1 else WHITE)
+        d.text((x0, yy), ln, font=f, fill=COLOURS[a.accent] if i == len(pos) - 1 else WHITE)
 
     out = canvas.convert("RGB").resize((1280, 720), Image.LANCZOS)
     out.save(a.out, "JPEG", quality=94, optimize=True)

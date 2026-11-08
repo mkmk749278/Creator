@@ -29,3 +29,11 @@ Decisions made while building the picture (2026-11-06), with the reason for each
   `indiaGeo.ts` directly rather than through `IndiaMap.tsx`.
 - NASA's `eoimages.gsfc.nasa.gov` resets connections from the cloud; the same Blue Marble tiles download from
   `assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/...`.
+
+## The package (2026-11-08)
+- **Title:** "Why India Has to Cut Its Own Submarine in Two" (the film's own words at 0:52, the chapter at 5:02). The
+  film predates the promise-first rule: its sentence 1 is the battery running out, so the package confirms 0:52, not
+  sentence 1. "Why India's Submarines Must Surface" (which sentence 1 confirms) is kept as the title test.
+- **Thumbnail, round 3** after the owner's review: our dry-dock boat cut in half with the new AIP section in the gap,
+  cut away and glowing; words CUT IN HALF (the film's chapter name). Challengers: WHAT'S INSIDE? (same scene, tighter)
+  and CAN'T STAY HIDDEN (the night snorkel with radar rings). "THE 10M SECRET" was dropped: the plug is public.
