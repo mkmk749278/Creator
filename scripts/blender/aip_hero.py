@@ -463,8 +463,211 @@ def pose_thumb(a, sc, cam, o):
     aim_cam(cam, loc, aim, lens, fstop=11)
 
 
+
+# ---------------------------------------------------------------- the thumbnail, v2 (owner, 2026-11-08: "more curious")
+def tube(x0, x1, r, name, m, seg=96):
+    """an open-ended steel ring section (no caps), with wall thickness"""
+    bpy.ops.mesh.primitive_cylinder_add(radius=r, depth=x1 - x0, vertices=seg, end_fill_type="NOTHING",
+                                        location=((x0 + x1) / 2, 0, 0), rotation=(0, math.pi / 2, 0))
+    t = bpy.context.object
+    t.name = name
+    t.modifiers.new("s", "SOLIDIFY").thickness = 0.09
+    t.data.materials.append(m)
+    bpy.ops.object.shade_smooth()
+    return t
+
+
+def box(loc, size, m, parent=None):
+    bpy.ops.mesh.primitive_cube_add(size=1, location=loc)
+    b = bpy.context.object
+    b.scale = size
+    b.data.materials.append(m)
+    return b
+
+
+def interior(x_open, depth, sign, steel, kit, lamp, rnd):
+    """decks, ring frames and equipment seen through a cut: from x_open going depth metres into the hull
+    (sign -1 for the aft half, +1 for the forward half). An illustration of a hull's inside, not a plan of a Kalvari."""
+    xs = x_open + sign * depth / 2
+    for z, t in ((-1.05, 0.08), (1.25, 0.06)):
+        w = 2 * math.sqrt(R * R - z * z) - 0.25
+        box((xs, 0, z), (depth, w, t), steel)
+    # ring frames every 0.7 m
+    k = 0.35
+    while k < depth:
+        bpy.ops.mesh.primitive_torus_add(major_radius=R - 0.13, minor_radius=0.05, major_segments=64, minor_segments=6,
+                                         location=(x_open + sign * k, 0, 0), rotation=(0, math.pi / 2, 0))
+        bpy.context.object.data.materials.append(steel)
+        k += 0.7
+    # equipment racks, consoles and pipes on both decks
+    for i in range(16):
+        dx = rnd.uniform(0.6, depth - 0.5)
+        deck = rnd.choice((-1.05, 1.25))
+        h = rnd.uniform(0.5, 1.3) if deck < 0 else rnd.uniform(0.4, 0.9)
+        y = rnd.choice((-1.0, 1.0)) * rnd.uniform(0.9, 1.9)
+        box((x_open + sign * dx, y, deck + h / 2 + 0.05), (rnd.uniform(0.4, 1.0), rnd.uniform(0.4, 0.8), h), kit)
+    for j in range(6):
+        a = rnd.uniform(0, math.tau)
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.06, depth=depth, vertices=12,
+                                            location=(xs, (R - 0.35) * math.cos(a), (R - 0.35) * math.sin(a)),
+                                            rotation=(0, math.pi / 2, 0))
+        bpy.context.object.data.materials.append(kit)
+    # working lights inside, so the decks read through the opening
+    for dx in (1.5, 5.0, 9.0):
+        bpy.ops.object.light_add(type="POINT", location=(x_open + sign * dx, 0, 0.3))
+        l = bpy.context.object
+        l.data.energy = 520
+        l.data.color = lamp
+        l.data.shadow_soft_size = 0.4
+
+
+def worker(x, y, floor, m, hat, turn):
+    """a plain silhouette for scale (about 1.75 m): not a real person"""
+    bpy.ops.mesh.primitive_cylinder_add(radius=0.2, depth=0.85, location=(x, y, floor + 0.43))
+    bpy.context.object.data.materials.append(m)
+    bpy.ops.mesh.primitive_cylinder_add(radius=0.25, depth=0.75, location=(x, y, floor + 1.22))
+    bpy.context.object.scale = (1.0, 0.7, 1.0)
+    bpy.context.object.rotation_euler = (0, 0, turn)
+    bpy.context.object.data.materials.append(m)
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.12, location=(x, y, floor + 1.7))
+    bpy.context.object.data.materials.append(m)
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.15, location=(x, y, floor + 1.77))
+    h = bpy.context.object
+    h.scale = (1, 1, 0.55)
+    h.data.materials.append(hat)
+
+
+def sparks(origin, n, m, rnd):
+    """a fan of hot sparks falling from a point on the cut edge (deterministic)"""
+    for i in range(n):
+        vx, vy, vz = rnd.uniform(-1.5, 1.5), rnd.uniform(-3.2, -0.6), rnd.uniform(-0.5, 2.2)
+        t = rnd.uniform(0.05, 0.9)
+        p = Vector(origin) + Vector((vx * t, vy * t, vz * t - 4.9 * t * t))
+        v = Vector((vx, vy, vz - 9.8 * t))
+        ln = rnd.uniform(0.04, 0.16)
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.006, depth=ln, vertices=6, location=p)
+        s = bpy.context.object
+        s.rotation_euler = v.to_track_quat("Z", "Y").to_euler()
+        s.data.materials.append(m)
+
+
+def build_thumb2(a):
+    sc, cam = setup(a, exposure=-0.35)
+    rnd = random.Random(11)
+    cutx, gap = 33.0, 13.0
+    hullm = mat("hull", (0.05, 0.055, 0.062), 0.55, metal=0.3)
+    noise_bump(hullm, 9, 0.12)
+    steel = mat("steel_in", (0.22, 0.23, 0.25), 0.45, metal=0.8)
+    kit = mat("kit", (0.12, 0.14, 0.17), 0.5, metal=0.4)
+    hot = mat("hot", (0, 0, 0), 1, emit=(1.0, 0.42, 0.1), strength=26)
+    spark = mat("spark", (0, 0, 0), 1, emit=(1.0, 0.62, 0.25), strength=90)
+    core = mat("core", (0, 0, 0), 1, emit=(1.0, 0.55, 0.15), strength=9)
+    sil = mat("sil", (0.01, 0.01, 0.012), 0.8)
+    hat = mat("hat", (0.9, 0.7, 0.05), 0.5)
+    # the two halves: a closed stern and bow from the film's hull, an open steel ring at each cut
+    aft_cut, fwd_cut = cutx - gap, cutx
+    hull_piece(0.2, aft_cut - 9, "aft_body", hullm)
+    tube(aft_cut - 9.05, aft_cut, R, "aft_ring", hullm)
+    hull_piece(fwd_cut + 12, HULL_LEN, "fwd_body", hullm)
+    tube(fwd_cut, fwd_cut + 12.05, R, "fwd_ring", hullm)
+    interior(aft_cut, 8.5, -1, steel, kit, (1.0, 0.8, 0.6), rnd)
+    interior(fwd_cut, 11.5, +1, steel, kit, (1.0, 0.72, 0.42), rnd)
+    # glowing cut edges
+    for x in (aft_cut, fwd_cut):
+        bpy.ops.mesh.primitive_torus_add(major_radius=R + 0.0, minor_radius=0.075, major_segments=128,
+                                         minor_segments=8, location=(x, 0, 0), rotation=(0, math.pi / 2, 0))
+        bpy.context.object.data.materials.append(hot)
+    # the sail with masts and the stern planes
+    sx = HULL_LEN - 26 + 4.75
+    sail = box((sx, 0, R + 1.8), (8.0, 1.25, 4.4), hullm)
+    bv = sail.modifiers.new("b", "BEVEL")
+    bv.width, bv.segments = 0.09, 5
+    for dx, hgt in ((-1.6, 2.6), (0.2, 3.4), (1.8, 2.1)):
+        bpy.ops.mesh.primitive_cylinder_add(radius=0.16, depth=hgt, location=(sx + dx, 0, R + 4.0 + hgt / 2))
+        bpy.context.object.data.materials.append(hullm)
+    for rot in (0, math.pi / 2):
+        p = box((2.6, 0, 0), (2.6, 0.16, 7.4), hullm)
+        p.rotation_euler = (rot + math.pi / 4, 0, 0)
+    # the new section, on a cradle beside the gap: open at its forward end, glowing modules inside
+    px, py = cutx - gap / 2, 9.0
+    plug = tube(px - 5, px + 5, R, "plug", mat("plug", (0.11, 0.115, 0.12), 0.4, metal=0.5))
+    plug.location.y = py
+    for x in (px - 5, px + 5):
+        bpy.ops.mesh.primitive_torus_add(major_radius=R, minor_radius=0.06, major_segments=128, minor_segments=8,
+                                         location=(x, py, 0), rotation=(0, math.pi / 2, 0))
+        bpy.context.object.data.materials.append(hot)
+    box((px - 4.9, py, 0), (0.08, 2 * R - 0.2, 2 * R - 0.2), kit)  # its closed aft bulkhead
+    for i, z in enumerate((-1.3, 0.0, 1.3)):
+        for j, y in enumerate((-1.1, 0.0, 1.1)):
+            if abs(z) + abs(y) > 2.2:
+                continue
+            box((px + 0.5, py + y, z), (8.0, 0.8, 0.95), core if (i + j) % 2 == 0 else kit)
+    box((px, py, -R - 0.75), (8.5, 3.6, 0.9), mat("cradle", (0.3, 0.2, 0.06), 0.7))
+    # the dock: dark concrete, rails, keel blocks, a back wall
+    floor = -R - 1.4
+    conc = mat("concrete", (0.05, 0.05, 0.05), 0.8)
+    noise_bump(conc, 2, 0.3)
+    bpy.ops.mesh.primitive_plane_add(size=400, location=(30, 0, floor))
+    bpy.context.object.data.materials.append(conc)
+    railm = mat("rail", (0.25, 0.25, 0.26), 0.3, metal=1.0)
+    for y in (-1.6, 1.6):
+        box((30, y, floor + 0.1), (140, 0.18, 0.2), railm)
+    blockm = mat("blocks", (0.25, 0.15, 0.06), 0.8)
+    for x in list(range(-20, int(aft_cut) - 1, 6)) + list(range(int(fwd_cut) + 2, 90, 6)):
+        box((x, 0, -R - 0.7), (1.2, 2.4, 1.2), blockm)
+    box((30, 20, 6), (200, 0.5, 26), mat("wall", (0.05, 0.055, 0.06), 0.85))
+    # workers for scale, and sparks from the forward cut's lower edge
+    worker(fwd_cut + 1.3, -0.4, -1.01, sil, hat, 1.2)     # standing on the lower deck, inside the cut boat
+    sparks((fwd_cut - 0.05, -R * 0.62, -R * 0.75), 260, spark, rnd)
+    bpy.ops.object.light_add(type="POINT", location=(fwd_cut - 0.3, -R * 0.7, -R * 0.7))
+    bpy.context.object.data.energy = 900
+    bpy.context.object.data.color = (1.0, 0.6, 0.3)
+    # light: cold roof beams through haze onto the gap, a blue rim behind the boat, warm spill from the cut
+    for x in (aft_cut - 3, fwd_cut + 3, cutx - gap / 2):
+        bpy.ops.object.light_add(type="SPOT", location=(x, -3, 18))
+        s = bpy.context.object
+        s.data.energy = 20000
+        s.data.spot_size = math.radians(22)
+        s.data.spot_blend = 0.6
+        s.data.color = (0.7, 0.82, 1.0)
+        s.rotation_euler = (Vector((x, -2, 0)) - Vector((x, -3, 18))).to_track_quat("-Z", "Y").to_euler()
+    area((cutx, 18.0, 8.0), (cutx, 0, 0), 60, 26000, (0.35, 0.55, 1.0))
+    area((cutx - gap / 2, -14.0, -1.5), (cutx - gap / 2, 0, 0), 6, 1200, (1.0, 0.5, 0.18))
+    vol = bpy.data.materials.new("haze")
+    vol.use_nodes = True
+    vn = vol.node_tree
+    vn.nodes.remove(vn.nodes["Principled BSDF"])
+    pv = vn.nodes.new("ShaderNodeVolumePrincipled")
+    pv.inputs["Density"].default_value = 0.0035
+    vn.links.new(pv.outputs["Volume"], vn.nodes["Material Output"].inputs["Volume"])
+    hz = box((30, 0, 8), (200, 90, 26), vol)
+    sc.cycles.volume_step_rate = 2
+    return sc, cam
+
+
+THUMB2_VIEWS = {
+    # camera location, aim point, lens (mm)
+    "m": ((47.0, -34.0, 3.5), (27.0, -2.0, 0.5), 28),
+    "n": ((56.0, -40.0, 6.0), (25.0, -2.0, 0.0), 30),
+    "o": ((40.0, -20.0, 1.5), (30.0, 0.0, 0.3), 22),
+    "p": ((18.0, -22.0, 1.0), (32.0, 0.5, 0.3), 26),
+    "q": ((14.0, -30.0, 3.0), (33.0, 1.0, 0.0), 30),
+    "r": ((22.0, -16.0, 0.0), (33.5, 0.3, 0.2), 24),
+    "s": ((24.0, -12.5, -0.6), (34.5, 0.4, 0.0), 22),
+    "t": ((20.0, -15.0, 1.0), (35.0, 1.5, 0.2), 26),
+}
+
 def main():
     a = args()
+    if a.shot == "thumb2":
+        sc, cam = build_thumb2(a)
+        loc, aim, lens = THUMB2_VIEWS[a.view]
+        aim_cam(cam, loc, aim, lens, fstop=9)
+        os.makedirs(a.out, exist_ok=True)
+        sc.render.filepath = os.path.join(os.path.abspath(a.out), f"thumb2_{a.view}.png")
+        bpy.ops.render.render(write_still=True)
+        print(f"thumb2 {a.view}", flush=True)
+        return
     if a.shot == "thumb":
         sc, cam, o = build_drydock(a)
         pose_thumb(a, sc, cam, o)
