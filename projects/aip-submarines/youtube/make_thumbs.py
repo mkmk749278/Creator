@@ -37,6 +37,8 @@ def main():
     ap.add_argument("--text_w", type=float, default=0.46, help="share of the width the words may use")
     ap.add_argument("--size", type=int, default=380)
     ap.add_argument("--lift", type=float, default=1.0, help="brightness multiplier for the render")
+    ap.add_argument("--valign", type=float, default=0.47, help="vertical centre of the words, as a share of the height")
+    ap.add_argument("--panel", type=int, default=225, help="darkness of the left panel, 0-255")
     a = ap.parse_args()
 
     src = Image.open(a.bg).convert("RGB")
@@ -53,7 +55,7 @@ def main():
     edge = int(W * (a.text_w + 0.1))
     for x in range(edge):
         t = 1.0 if x < W * a.text_w * 0.7 else max(0.0, 1 - (x - W * a.text_w * 0.7) / (edge - W * a.text_w * 0.7))
-        sd.line([(x, 0), (x, H)], fill=int(225 * t))
+        sd.line([(x, 0), (x, H)], fill=int(a.panel * t))
     canvas = Image.composite(Image.new("RGB", (W, H), BG), canvas, shade)
 
     # a faint drafting grid on the panel (the film's blueprint base)
@@ -78,7 +80,7 @@ def main():
     heights = [d.textbbox((0, 0), ln, font=f)[3] - d.textbbox((0, 0), ln, font=f)[1] for ln, f in zip(lines, fonts)]
     gap = int(size * 0.14)
     total = sum(heights) + gap * (len(lines) - 1)
-    y = (H - total) // 2 - 40
+    y = int(H * a.valign - total / 2)
     shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     sdw = ImageDraw.Draw(shadow)
     pos = []
