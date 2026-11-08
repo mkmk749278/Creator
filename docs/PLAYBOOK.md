@@ -140,6 +140,12 @@ The owner's process, sharpened. Two principles run through every step:
 - **Decide early, build once.** Direction is cheapest to change in the plan and most expensive after the audio. So the
   owner approves the plan before the narration is written, and the slow work (footage fetches, Blender hero shots)
   starts the day the plan is approved, beside the narration.
+- **Promise first (owner, 2026-11-08; the same order on all three channels).** The title and the thumbnail concept are
+  locked in the plan (step 3); the opening (0:00–0:45) is written first and verified against them (step 5, §5.1); the
+  rest of the narration and the beat sheet are built to pay that promise off; audio only after the opening is
+  verified (step 6); the picture is built to the locked narration (steps 7–10). *Why:* about two thirds of the viewers
+  we lose are gone by 0:45 (§5.1), and a viewer leaves fastest when the opening doesn't match what they clicked.
+  When the package is written last, the opening was written for a promise nobody had made yet.
 
 ### Phase A: find the story
 
@@ -160,7 +166,17 @@ datasheets, court and parliament records). Output: `research/landscape.md` with 
 ### Phase B: decide everything
 
 **3. The plan (the most important step).** Everything is decided here, on paper, before a word of narration:
-- 3+ angles, 3+ cold opens, 3+ endings; the chosen ones and why.
+- 3+ angles; the chosen one and why.
+- **The promise, locked (owner, 2026-11-08), before the cold opens and the beats:**
+  - **the promise in one sentence**, the physical paradox the viewer will have explained ("why a submarine that can't
+    breathe has to surface");
+  - **the title** (§4.4) and 2 alternatives that keep the same promise, from the search words (§4.2);
+  - **the thumbnail concept** (§4.5) and 3+ alternatives: the hero object, its visual question, the ≤ 3 words, what
+    the picture is (real photo or our Blender render). A written frame description, not a finished image; the
+    finished thumbnails are made at step 14 from this concept.
+  Everything after this point is built to keep that promise. 3+ concepts and titles are still explored here; the lock
+  is the choice among them.
+- 3+ cold opens and 3+ endings, each judged by how well it delivers the locked promise; the chosen ones and why.
 - **The questions viewers are actually asking** (from search, comments and the research), and where each one is
   answered.
 - **The beat sheet:** every beat with its time, its viewer question (the Q column), its turn, and **its picture**
@@ -170,28 +186,32 @@ datasheets, court and parliament records). Output: `research/landscape.md` with 
 - **Zero sodhi:** every beat earns its place; what the viewer doesn't need to feel the paradox is cut, however
   interesting.
 - **Independent plan review** (§13.3): a fresh session judges the plan against the best existing films and what
-  viewers want to know. Fixes applied.
-Output: `plan.md` (+ `review_plan_vN.md`), sent to the owner as a short, phone-readable summary. **Owner approves the
-plan.** *Creative question:* what will a viewer tell a friend about this film?
+  viewers want to know, and whether the title and thumbnail concept would win the click and the beat sheet pays them
+  off. Fixes applied.
+Output: `plan.md` with **the locked promise at the top** (+ `review_plan_vN.md`), sent to the owner as a short,
+phone-readable summary. **Owner approves the plan, and with it the title and thumbnail concept.** *Creative question:* what will a viewer tell a friend about this film?
 
 ### Phase C: words (and, in parallel, pictures start)
 
 **4. Facts first.** Every claim the plan makes is fact-checked before the narration is finalised (`/fact-check`,
 `scripts/claims_check.py`). A fact that falls changes the plan now, not the edit later.
 
-**5. Narration.** Written from the plan, then:
+**5. Narration.** **The opening first (0:00–0:45):** written from the plan's chosen cold open and run through the
+promise check (§5.1) before a line of the rest is written. A cold open that fails it is rewritten now, while it costs
+nothing. Then the full narration, from the beat sheet, each chapter moving toward the promise; then:
 - a **creative pass** (§6): sharpen the cold open and every chapter's first line, plant and pay off, put the
   viewer inside the moment, cut every line a picture already says;
 - the checks: the lean-in test, `spoken_english_check.py`, the pronunciation list;
 - an **independent narration review** (§13.3), heard as viewers would hear it.
-Output: **`narration.md`** sent to the owner (the full narration, what changed after review, the "listen for" names).
-**Owner approves the narration.**
+Output: **`narration.md`** sent to the owner, opening with the locked title and thumbnail concept and the promise
+check (so the owner hears sentence 1 against the package), then the full narration, what changed after review, and the
+"listen for" names. **Owner approves the narration.**
 
 **In parallel, from plan approval:** footage requests go out (step 7) and the Blender hero shots render on GitHub
 (their length is trimmed to the audio later). This turns the owner's fetching time and the render time into no
 waiting at all.
 
-**6. Audio.** Only after the narration is approved: `scripts/eleven_tts.py` with Akash on Eleven v4, Stability
+**6. Audio.** Only after the opening has passed the promise check and the narration is approved: `scripts/eleven_tts.py` with Akash on Eleven v4, Stability
 Creative (0.0), similarity 50%, the best quality the plan allows (`config/voice.yaml`). Every take passes
 `scripts/vo_take_check.py`; a flagged block is regenerated (credits are limited: about 66,000 characters a month on the
 Creator plan, so one take per block first). Joined and timed (§6.7). Output: the final VO in Drive, sent to the owner.
@@ -226,8 +246,10 @@ the cut.**
 
 **13. The 4K master,** rendered once and uploaded to Drive.
 
-**14. Title, thumbnail and description,** when the owner asks (§4). Candidate thumbnail frames are noted during the
-build so the best ones are ready.
+**14. The finished package,** when the owner asks (§4): the locked title, the thumbnails built from the locked concept
+(a main and two challengers), the description and metadata. Candidate thumbnail frames are noted during the build so
+the best ones are ready. If the finished film changed the promise (a fact fell, a better angle won), the title and
+thumbnail are changed only together with the opening, and the promise check runs again.
 
 Skills that walk through the steps: `/new-documentary` (all of it), `/fact-check`, `/source-media`, `/review-cut`,
 `/deliver`.
@@ -236,10 +258,11 @@ Skills that walk through the steps: `/new-documentary` (all of it), `/fact-check
 
 ## 4. The package: title, thumbnail, description
 
-**Made when the owner asks** (owner, 2026-11-05), at the end. But the promise is decided in the plan (step 3): the
-paradox the film opens on and the search words people use come from the research (step 2), so the first 30 seconds
-already deliver what the title and thumbnail will say. *Why:* a film planned without its promise opens vaguely, and
-vague openings lost two thirds of our viewers by 0:45.
+**Locked first, finished last** (owner, 2026-11-08; replaces "made at the end" of 2026-11-05). The title and the
+thumbnail concept are locked in the plan (step 3), from the search words in the research (step 2), and the opening is
+written to confirm them (§5.1). The finished thumbnails, the description and the metadata are made when the owner asks
+(step 14), from that lock. *Why:* a film planned without its promise opens vaguely, and vague openings lost two thirds
+of our viewers by 0:45.
 
 ### 4.1 How YouTube finds a film (YouTube's own help pages and its discovery team, read 2026-10-24)
 - **Browse (home feed)** is won by the thumbnail and title; **suggested** ("up next") follows what viewers actually
@@ -268,10 +291,13 @@ words; the thumbnail carries the emotion and the visual question. They never rep
   in the home feed (tool vendors' measurements; YouTube publishes no number), and the old 27-character suffix "| Be
   Practical With Kishore" ate the line. The one early breakout title had no suffix.
 - The main search phrase as early as possible, said the way people type it. No `!`, no clickbait words.
-- Write 2 alternatives for title tests.
+- Write 2 alternatives for title tests. They keep the locked promise and change only its wording.
+- **Locked in the plan** (step 3). Changed later only together with the opening (§5.1).
 
 ### 4.5 Thumbnail
 The one test: **a stranger who sees it for one second on a phone feels a question only the film answers.**
+The **concept** (hero object, visual question, words) is locked in the plan (step 3); the images are built at step 14.
+The challengers vary the picture and the words, never the promise, because one opening must confirm all three.
 - **One hero, big:** a cutaway or a glowing component (the 1,200 °C billet, the titanium sphere, the blade). Real
   photos or our own Blender renders; never AI people; never a fake face.
 - **A visual question:** something looks wrong, extreme or out of scale.
@@ -306,12 +332,25 @@ the real spellings of names). The title and description also go in the chat as c
   by 0:45; those who stay mostly finish. In the jet-engine film the curve fell from 47% to 33% exactly across a
   "Welcome to…" line, a logo sting and a title card at 0:25–0:45. So:
   - **0:00–0:08, cold open inside a real moment.** Motion and stakes from the first frame. No logo, no greeting.
-    The first frame shows the thumbnail's subject.
+    The first frame shows the thumbnail's subject, and **sentence 1 confirms the thumbnail's promise** (owner,
+    2026-11-08): it names or points to the thumbnail's object and its extreme, from inside the moment. Confirm, never
+    answer: the viewer knows they clicked the right film, and the question is still open.
   - **By 0:25, the paradox:** the thing the title and thumbnail promised, on screen and in the voice.
-  - **By 0:55, the open loop:** what the viewer will understand by the end, and roughly when ("by the end of this
+  - **By 0:45, the open loop** (was 0:55; tightened 2026-11-08 so the whole opening sits inside the window where we
+    lose viewers): what the viewer will understand by the end, and roughly when ("by the end of this
     film, you'll see why the steel has to be…"). If a minute is named, it must be true in the final cut.
   - No background, definitions or history in the first two minutes: the explanation is earned after the viewer has
     seen what breaks.
+- **The promise check** (the opening is written first and passes this before the rest of the narration, step 5):
+  1. Read only the locked title, the thumbnail concept and sentence 1: does a stranger know they clicked the right film?
+     Is the thumbnail's object (or its extreme, its number) in sentence 1, said the way the thumbnail says it?
+  2. Is sentence 1 inside a real moment (a time, place, object), not a topic statement ("Today we look at…")?
+  3. Does the first frame show the thumbnail's subject?
+  4. Is the paradox, in the title's own words, spoken by 0:25, and the open loop by 0:45?
+  5. Does the opening confirm without answering? (If sentence 1 gives away the mechanism, the film is over.)
+  6. Does every challenger thumbnail and alternative title still match sentence 1?
+  The result goes at the top of `narration.md`. A failure is fixed in the opening, or, if the opening is right and the
+  package is wrong, in the package (with the owner, since they approved it in the plan).
 - **Chapters of 2–4 minutes**, each a scene with its own question, turn and payoff. A shape that suits the formula:
   the machine at work → the stress it lives under → the failure or the bottleneck → why India is stuck → who is solving
   it and how → what it means for India today. Every film finds its own order.
@@ -364,7 +403,7 @@ the moment and leans into the story.
 1. **Start in the middle of the moment.** The first line is inside a scene already moving.
 2. **Specific beats general:** one time, one place, one person, one object.
 3. **Chain with "but" and "so", never "and then".** Every beat is caused by the last or works against it.
-4. **Curiosity loops at three sizes:** one film loop (open by 0:55, paid at the end), one per chapter, and a small one
+4. **Curiosity loops at three sizes:** one film loop (open by 0:45, paid at the end), one per chapter, and a small one
    every 20–40 s. Close one and open the next in the same breath. Never open a loop the film doesn't close.
 5. **Give half, keep half:** the reference point first, then the gap.
 6. **Stakes in human terms:** who loses what if this fails. Rupees and what they meant then.
@@ -790,7 +829,8 @@ paid archives without asking.
 5. Write `review.md` (issue → shot → fix), fix, rebuild, and review again until a round finds nothing worth fixing.
 
 ### 13.2 The pre-render checklist
-- [ ] Cold open in a moment; first frame = the thumbnail's subject; paradox by 0:25; open loop by 0:55 and true.
+- [ ] Cold open in a moment; first frame = the thumbnail's subject; sentence 1 confirms the thumbnail (the promise
+  check, §5.1); paradox by 0:25; open loop by 0:45 and true.
 - [ ] Every name, number, place and verb has its picture on its word; no generic stand-ins.
 - [ ] Visible motion every 3.5 s; no still over 1.5 s; no hold over 5 s; ≥ 85% moving.
 - [ ] Every model on a physical base; no void; one document pose.
@@ -805,12 +845,14 @@ paid archives without asking.
 Each is a new cloud session **with no repo attached** (`create_session` with no `source_url`), so it judges as an
 outsider, not against our own rules. It gets only what it needs, plays real Indian viewers, and **compares us with
 what already exists**: the 3–5 strongest films on the topic (from `research/landscape.md`). Archive it when done.
-- **At the plan (step 3):** the edge sentence, the beat sheet and the signature moments, plus the strongest existing
-  films. Questions: would viewers click and stay? Which of their real questions are missing? What do the other films
+- **At the plan (step 3):** the edge sentence, the locked title and thumbnail concept, the beat sheet and the
+  signature moments, plus the strongest existing films. Questions: would viewers click this package over the others,
+  and stay? Which of their real questions are missing? What do the other films
   already do better? Where is the sodhi? What would make this the best film on the topic? Saved as
   `review_plan_vN.md`.
-- **At the narration (step 5):** `prompts/audience_review_v1.md` and the narration exactly as it will be voiced. It
-  returns: topic clear in 10 s, where viewers would swipe, can they explain it back, robotic lines, a **lean-in map**
+- **At the narration (step 5):** `prompts/audience_review_v1.md` with the locked title and thumbnail concept and the
+  narration exactly as it will be voiced. It returns: does the first sentence confirm what they clicked, topic clear in
+  10 s, where viewers would swipe, can they explain it back, robotic lines, a **lean-in map**
   (every ~30 s: leaning in / neutral / drifting), and how it compares with the existing films. Saved as
   `review_audience_vN.md`. *Why:* we read our own script so often that we can't hear it as a stranger.
 - **At the 720p cut (step 12):** the cut (a Drive download link) and the narration with times. Not "was it built

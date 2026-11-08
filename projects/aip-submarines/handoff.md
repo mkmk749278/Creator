@@ -19,6 +19,9 @@ Branch `ccr-9fa27be6-01wq25` (holds rounds 4–6; not yet merged to `main`). Eve
    `English/aip-submarines/renders/` and checked. The folder moved from `Built-on-Bharat/` (owner); r1–r5 trashed.
 2. Step 14 (title, thumbnail, description, `youtube/metadata.json`) only when the owner asks. Leads from the outside
    review: "Cut in two", the hull plug sliding into the gap. Then the fresh-facts gate within 24 h of upload.
+   This film predates the promise-first order (owner, 2026-11-08; PLAYBOOK §3), so here it runs backwards: the
+   picture is locked, so the title and thumbnail must confirm sentence 1 ("Night. The Arabian Sea. Somewhere under
+   these waves, an Indian submarine is running out of battery.") and pass the promise check (§5.1).
 
 ## Older notes (2026-11-06)
 
