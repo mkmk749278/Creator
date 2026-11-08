@@ -39,6 +39,7 @@ def main():
     ap.add_argument("--lift", type=float, default=1.0, help="brightness multiplier for the render")
     ap.add_argument("--valign", type=float, default=0.47, help="vertical centre of the words, as a share of the height")
     ap.add_argument("--panel", type=int, default=225, help="darkness of the left panel, 0-255")
+    ap.add_argument("--ping", default="", help="x,y (2560 scale): red radar rings around a point (the film draws the radar sweep that finds the snorkel)")
     a = ap.parse_args()
 
     src = Image.open(a.bg).convert("RGB")
@@ -69,6 +70,15 @@ def main():
     gl = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     gl.paste(grid, (0, 0), mask)
     canvas = Image.alpha_composite(canvas.convert("RGBA"), gl)
+
+    if a.ping:
+        px, py = map(int, a.ping.split(","))
+        rings = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        rd = ImageDraw.Draw(rings)
+        for i, r in enumerate((150, 290, 430)):
+            rd.ellipse([px - r, py - r * 0.32, px + r, py + r * 0.32], outline=(248, 81, 73, 235 - i * 60), width=9 - i * 2)
+        glow = rings.filter(ImageFilter.GaussianBlur(8))
+        canvas = Image.alpha_composite(Image.alpha_composite(canvas, glow), rings)
 
     # the words: left aligned, stacked, with a hard shadow for depth
     lines = a.words.split("|")

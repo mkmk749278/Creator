@@ -1,32 +1,32 @@
 {
   "slug": "aip-submarines",
-  "promise": "Why India's submarines still have to surface every few days, and why the cure (AIP) means cutting one in two.",
-  "title": "Why India's Submarines Must Surface",
+  "promise": "India has to cut its own submarine in two on purpose: because a diesel submarine running out of battery must surface, and the cure (AIP) needs room.",
+  "title": "Why India Has to Cut Its Own Submarine in Two",
   "title_alternatives": [
-    "AIP: Why India's Submarines Must Surface",
-    "Why Indian Submarines Still Must Surface"
+    "Why India's Submarines Must Surface",
+    "Why India Has to Cut a Submarine in Two"
   ],
   "thumbnails": {
     "main": {
       "file": "thumb_a.jpg",
-      "words": "CUT IN TWO",
-      "picture": "our Blender render (scripts/blender/aip_hero.py --shot thumb --view d): the Kalvari-type boat in dry dock, halves apart, cut edges glowing, the new section sliding in",
-      "paid_off": "0:52 'To fit it, India has to cut one of its own submarines in two'; 5:02 chapter",
-      "compose": "make_thumbs.py --words \"CUT IN|TWO\" --text_w 0.42 --size 400 --lift 1.3 --valign 0.70 --panel 150"
+      "words": "ON PURPOSE",
+      "picture": "our Blender render (aip_hero.py --shot thumb2 --view s): the boat in dry dock cut open, decks and ring frames lit inside, a worker silhouette (not a real person) standing inside for scale, sparks at the cut, the new section waiting on its cradle. ILLUSTRATION, as in the film.",
+      "paid_off": "0:52 and 5:02: the hull is cut open deliberately to fit the AIP section (C10)",
+      "compose": "make_thumbs.py --words \"ON|PURPOSE\" --text_w 0.43 --size 440 --lift 1.15 --valign 0.70 --panel 175"
     },
     "challenger_1": {
       "file": "thumb_b.jpg",
-      "words": "CUT IT OPEN",
-      "picture": "the same render, close on the gap (--view c)",
-      "paid_off": "0:52; 5:02; 'until a submarine is cut open for it'",
-      "compose": "make_thumbs.py --words \"CUT IT|OPEN\" --shift 360 --zoom 1.3 --text_w 0.40 --size 400 --lift 1.25 --valign 0.72 --panel 170"
+      "words": "WHY CUT IT?",
+      "picture": "the same render",
+      "paid_off": "0:52; 5:02",
+      "compose": "make_thumbs.py --words \"WHY CUT|IT?\" --text_w 0.385 --size 440 --lift 1.15 --valign 0.70 --panel 175"
     },
     "challenger_2": {
       "file": "thumb_c.jpg",
-      "words": "OUT OF BATTERY",
-      "picture": "our snorkel reconstruction at night (H1b, frame 280)",
-      "paid_off": "sentence 1, 0:02 'an Indian submarine is running out of battery'",
-      "compose": "make_thumbs.py --words \"OUT OF|BATTERY\" --shift 420 --zoom 1.12 --text_w 0.47 --lift 1.25"
+      "words": "CAN'T STAY HIDDEN",
+      "picture": "our snorkel reconstruction at night (H1b frame 280) with red radar rings (the film draws the radar sweep that finds it)",
+      "paid_off": "0:02 sentence 1, 0:21 'you are easier to find', 0:34 'a hiding machine that has to show itself'",
+      "compose": "make_thumbs.py --words \"CAN'T STAY|HIDDEN\" --shift 420 --zoom 1.12 --text_w 0.47 --lift 1.25 --ping 1700,850"
     }
   },
   "description": "Why do India's submarines still have to come up and breathe every few days, and what can AIP, air independent propulsion, change?\nDRDO's AIP makes hydrogen from a white powder, under water. To fit it, a Kalvari class submarine has to be cut in two at Mazagon Dock.\nHow AIP works, why it doesn't make a submarine invisible, and why INS Khanderi's trials matter more than any headline.\n\n00:00 Why diesel submarines must surface\n01:15 How submarines get caught snorkelling\n02:28 Does AIP make a submarine invisible?\n03:36 How DRDO's AIP works\n05:02 Why the submarine is cut in two\n05:48 Proven at sea: the AIP trap\n07:18 How India can break the trap\n08:13 What happens next: INS Khanderi",
@@ -77,5 +77,7 @@
   "captions": "vo/captions.en.srt (English, written spellings)",
   "pinned_comment": "Sources for every fact in this film (the full list with quotes is kept with the film). The submarine cut in two, the snorkel at night and the powder are our own illustrations and reconstructions.\n\nhttps://www.theregister.com/2010/07/14/indian_aip_sub_order/\nhttps://www.thehindu.com/news/national/indianbuilt-scorpene-to-carry-critical-drdo-system/article6558305.ece\nhttps://patents.google.com/patent/WO2017145068A1/en\nhttps://pib.gov.in/PressReleseDetailm.aspx?PRID=1703456\nhttps://www.pib.gov.in/PressReleasePage.aspx?PRID=1893096\nhttps://defensenews.com/industry/techwatch/2023/01/24/indian-lab-teams-up-with-frances-naval-group-on-submarine-tech\nhttps://www.navalnews.com/naval-news/2023/01/indias-drdo-and-naval-group-to-upgrade-submarines-with-aip/\nhttps://machinist.in/2025/07/naval-group-and-mdl-to-retrofit-kalvari-class-submarines-with-drdo-propulsion-system/\nhttps://timesofindia.indiatimes.com/india/delay-hits-scorpene-retrofit-to-boost-stealth-endurance/articleshow/123082184.cms\nhttps://www.newindianexpress.com/nation/2025/Aug/31/integration-of-first-indigenous-air-independent-propulsion-system-to-begin-mid-2026\nhttps://www.pib.gov.in/PressReleasePage.aspx?PRID=2328040\nhttps://www.indiandefensenews.in/2026/10/80000-crores-submarine-pact-in-final.html\nhttps://www.thehindu.com/news/national/unable-to-participate-in-p-75i-submarine-project-due-to-rfp-conditions-frances-naval-group/article65378758.ece\nhttps://www.bairdmaritime.com/security/naval/naval-submersibles/pakistan-navy-commissions-lead-boat-of-new-submarine-class\nhttps://www.naval-technology.com/projects/scorpene-class\nhttps://timesofindia.indiatimes.com/defence/news/trouble-beneath-the-waves-indias-submarine-fleet-is-ageing-and-replacements-are-years-away/articleshow/134965302.cms\nhttps://www.deccanherald.com/india/maharashtra/after-40-years-of-service-navy-decommissions-ins-sindhughosh-3837847\nhttps://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1786640\nhttps://www.aninews.in/news/national/general-news/defence-ministry-finds-lampt-proposal-non-compliant-in-rs-70000-crore-submarine-deal20250122221402\nhttps://www.orfonline.org/research/torpedoing-a-submarine-rumour\nhttps://www.navalnews.com/?p=6357\nhttps://www.armyrecognition.com/news/navy-news/2026/india-project-75i-submarine-deal-70000-crore-ccs-approval\nhttps://www.pib.gov.in/PressReleasePage.aspx?PRID=2088874\nhttps://www.nti.org/analysis/articles/china-submarine-capabilities/\nhttps://www.dawn.com/news/2007071\nhttps://www.pib.gov.in/PressReleasePage.aspx?PRID=1810972\nhttps://navysbir.com/n25_1/N251-014.htm\nhttps://en.wikipedia.org/wiki/INS_Arihant\nhttps://www.larsentoubro.com/pressreleases/2023/2023-06-22-drdo-and-lt-join-hands-for-realisation-of-indigenous-air-independent-propulsion-aip-system-for-submarines-of-indian-navy\nhttps://en.wikipedia.org/wiki/Air-independent_propulsion\nhttps://irp.fas.org/program/collect/lfa.htm\nhttps://trucks.cardekho.com/en/trucks/bajaj/compact-4s/specifications\nhttps://en.wikipedia.org/wiki/Type_212A_submarine\nhttps://www.energy.gov/eere/fuelcells/types-fuel-cells",
   "fresh_facts_gate": "Within 24 h of upload re-search the rows that can change: C12/C43 (Khanderi first, mid-2026 integration), the October 2026 Hazira tests and 'early next year' to Mazagon Dock, the P-75I deal status (C-rows on the German design), Pakistan's Hangor commissioning (April 2026).",
-  "drive_folder": "Creator/English/aip-submarines/youtube/"
+  "drive_folder": "Creator/English/aip-submarines/youtube/",
+  "title_paid_off": "0:52 'To fit it, India has to cut one of its own submarines in two' (the film's own words); chapter 5:02",
+  "previous_round": "v1 (CUT IN TWO / CUT IT OPEN / OUT OF BATTERY) kept in Drive youtube/v1/; the owner asked for more curiosity on 2026-11-08"
 }
