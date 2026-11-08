@@ -11,6 +11,10 @@
                    the aft half rolls back on rails (60-250), the new section rolls in from the side (330-700), slides
                    into the gap (700-830), the seams glow as they are welded (840-959). The hull's shape matches the
                    film's Three.js and SVG boat (67.5 m, 6.2 m beam); the plug is about ten metres (claim C09).
+  thumb    (still) the YouTube thumbnail hero (owner asked for the package, 2026-11-08): the same dry-dock boat
+                   held at the moment the film's words describe ("the hull is cut in two ... slides into the gap"):
+                   the halves apart, both cut edges glowing, the new section sliding in from the side. --view a|b|c
+                   picks the camera. Lit brighter than the film shot so it reads at phone size.
 Deterministic: fixed seed, no simulation; every motion is a function of the frame. Labels come from Remotion.
 """
 import argparse
@@ -36,6 +40,7 @@ def args():
     ap.add_argument("--samples", type=int, default=24)
     ap.add_argument("--bounces", type=int, default=6)
     ap.add_argument("--threads", type=int, default=0)
+    ap.add_argument("--view", default="a")
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     return ap.parse_args(argv)
 
@@ -400,8 +405,47 @@ def pose_drydock(f, cam, o):
     aim_cam(cam, loc, aim, keys(f, [(0, 32), (960, 38)]), fstop=8)
 
 
+THUMB_VIEWS = {
+    # camera location, aim point, lens (mm)
+    "a": ((44.0, -30.0, 2.0), (25.0, 0.0, 1.2), 30),
+    "b": ((10.0, -30.0, 5.0), (26.0, 0.0, 0.8), 30),
+    "c": ((30.0, -17.0, 9.0), (27.0, 0.0, 0.0), 26),
+}
+
+
+def pose_thumb(a, sc, cam, o):
+    """the halves 12 m apart, both cut edges hot, the new section part-way in from the side"""
+    cutx = o["cutx"]
+    o["aft"].location = (-12.0, 0, 0)
+    o["plug"].location = (cutx - 6.0, -4.5, 0)
+    o["plug"].hide_render = False
+    r0, r1, r2 = o["rings"]
+    r0.location = (cutx, 0, 0)            # the cut edge on the forward half
+    r1.location = (cutx - 12.0, 0, 0)     # the cut edge on the aft half
+    r2.location = (cutx - 6.0 - 5.0, -4.5, 0)  # the new section's aft weld band
+    for r in (r0, r1, r2):
+        r.hide_render = False
+    o["glow"].node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 22.0
+    # warm light spilling out of the gap, a cool rim from behind the boat, a soft key from above
+    area((cutx - 6.0, -9.0, -1.0), (cutx - 6.0, 0, 0.5), 5, 2600, (1.0, 0.5, 0.18))
+    area((cutx + 5, 14.0, 6.0), (cutx, 0, 0), 30, 9000, (0.45, 0.62, 1.0))
+    area((cutx - 20, 12.0, 4.0), (cutx - 20, 0, 0), 30, 6000, (0.45, 0.62, 1.0))
+    area((cutx, -12.0, 14.0), (cutx, 0, 0), 20, 5000, (1.0, 0.9, 0.8))
+    sc.view_settings.exposure = 0.3
+    loc, aim, lens = THUMB_VIEWS[a.view]
+    aim_cam(cam, loc, aim, lens, fstop=11)
+
+
 def main():
     a = args()
+    if a.shot == "thumb":
+        sc, cam, o = build_drydock(a)
+        pose_thumb(a, sc, cam, o)
+        os.makedirs(a.out, exist_ok=True)
+        sc.render.filepath = os.path.join(os.path.abspath(a.out), f"thumb_{a.view}.png")
+        bpy.ops.render.render(write_still=True)
+        print(f"thumb {a.view}", flush=True)
+        return
     if a.shot == "powder":
         sc, cam, o = build_powder(a)
         pose = pose_powder
