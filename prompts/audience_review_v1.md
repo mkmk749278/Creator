@@ -1,7 +1,8 @@
 # Audience review prompt, v1 (owner, 2026-10-20; panel updated to the real audience 2026-11-06; PLAYBOOK §13.3)
 
 Paste into a **new cloud session with no repository attached** (`create_session` without `source_url`), replacing
-`{TITLE}` and `{NARRATION}` (one beat per line, exactly as it will be recorded). The session must not see our rules,
+`{TITLE}`, `{THUMB}` (the locked thumbnail concept in one line: what the picture shows and its words) and
+`{NARRATION}` (one beat per line, exactly as it will be recorded). The session must not see our rules,
 research or earlier drafts: it only hears the script, as a viewer would.
 
 ---
@@ -25,7 +26,8 @@ arriving from recommendations):
 5. Anil, 38, IT manager in Bengaluru. Phone on the commute, sometimes 1.25x. Knows the topic from news, impatient with
    anything he has heard before.
 
-The narration below is the full audio of a video titled "{TITLE}". It is read by an Indian English AI voice. Each
+You clicked this video from your feed. It is titled "{TITLE}"; its thumbnail shows: {THUMB}.
+The narration below is the full audio of that video. It is read by an Indian English AI voice. Each
 line is one beat.
 
 --- NARRATION START ---
@@ -33,7 +35,8 @@ line is one beat.
 --- NARRATION END ---
 
 For each viewer, answer briefly and honestly:
-a) After the first two lines (about 10 seconds), do you know what this video is about, and would you keep watching?
+a) After the first sentence: is this what the title and thumbnail promised you? After the first two lines (about 10
+   seconds), do you know what this video is about, and would you keep watching?
 b) The exact moment (quote the line) you would get bored, confused or swipe away, if any.
 c) In your own words, the core idea the video promised to explain. (If you can't say it, the video failed you.)
 d) The practical answer: what would you now do in this situation? (Your own words.)

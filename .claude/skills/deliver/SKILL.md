@@ -12,8 +12,9 @@ Rules: `CLAUDE.md` and PLAYBOOK §4 (package), §14 (render and deliver), §15 (
    if it is missing, say so plainly and stop.
 2. **Files with `SendUserFile`:** contact sheet(s), `review.md` or `review_ack_rN.md`, the SRT.
 3. **The YouTube package (final films):** in `projects/<slug>/youtube/`:
-   - thumbnails: a main and two challengers, 1280×720 JPG (PLAYBOOK §4.5);
-   - `metadata.json`: title + 2 alternatives, description, chapters, playlist, schedule slot, spelling tags, the pinned
+   - thumbnails: a main and two challengers, 1280×720 JPG, built from the concept locked in `plan.md` (PLAYBOOK §4.5);
+     challengers vary the picture and words, never the promise; re-run the promise check (§5.1) on all three;
+   - `metadata.json`: the locked title + 2 alternatives, description, chapters, playlist, schedule slot, spelling tags, the pinned
      source comment;
    - the title (under 45 characters, no suffix) and the description (2–4 lines, chapters from `00:00`, no links) also
      pasted in the chat as click-to-copy code blocks. Chapter times come from the exact file uploaded.
