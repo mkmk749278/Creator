@@ -24,10 +24,10 @@
      and **47% of watch time**; mobile 51% of views. Traffic is almost all browse features (home feed, 90%); search is
      under 1%. Subscribers are under 1% of views. What follows: the home-feed package (title + thumbnail) decides
      everything; TV viewers mean big-screen picture quality pays; the 30% average view is the number to grow.
-  2. **Playlists:** the owner created "Built on Bharat" and a second playlist for the regular films (2026-11-09).
-     The API still counts 2 playlists but returns none (list and search), so the film is not in a playlist yet. The
-     owner sends both playlist links (Share → Copy link); then set `playlist_id` in `metadata.json` and run
-     `yt_upload.py … --only playlist`, and rename the second playlist.
+  2. **Playlists created by the API** (owner asked, 2026-11-09; ids in `config/youtube_playlists.json`): "Built on
+     Bharat | The Industrial Backbone" (`PLbTelSN7Jsrg`: AIP first, then medicines, Tejas, rare earths, Kavach, jet
+     engine, chips) and "Practical India | Hard Truths, Simply Explained" (`PLYqsLgsTPCfg`: the $400B Empire, AI).
+     Unlisted films are left out. Setting Built on Bharat as the official series playlist is a Studio step (desktop).
   3. **Test & Compare** (thumb_c as challenger) is Studio-only (no API): the owner sets it in Studio on the desktop site.
   4. **Source comment** at 11:00 IST: post `pinned_comment` from `metadata.json` (the API can post; pinning is a tap in
      the Studio app).
