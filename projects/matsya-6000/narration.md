@@ -6,6 +6,8 @@ human silhouette for scale); challengers **ISRO'S WELD** and **WHY A BALL?**
 
 **Language (owner, 2026-11-09):** English only, no Hindi, and so simple that everyone understands.
 
+**Gates:** `claims_check.py` passes (39 claims: 31 confirmed, 2 attributed, 6 OUR CALCULATION); `spoken_english_check.py` passes.
+
 **Length:** 1,253 words, about 8½ minutes with pauses (Akash's pace on the AIP film). The weld chapter starts at about 2:50.
 
 ## Promise check (PLAYBOOK §5.1), re-run on v2
@@ -18,13 +20,13 @@ human silhouette for scale); challengers **ISRO'S WELD** and **WHY A BALL?**
 | 5. Confirms without answering? | **Pass.** Why it was hard and how they'll know are kept for later. |
 | 6. Every challenger and alt title matches? | **Pass.** ISRO'S WELD (0:20), WHY A BALL? (sentence 1; answered at ~2:20). |
 
-**Why "hardest" is honest:** Isro's own page: the first weld of this size in India; LPSC had only welded titanium up
-to 20 mm, this is 80 mm; about 700 trials. The narration says exactly that ("four times thicker than any titanium they
-had welded before").
+**Why "hardest" is honest:** Isro's own page: "carried out for the first time in the country"; LPSC "had the facility
+and expertise to carry out welding up to 20mm thick", and this is 80 mm; "nearly 700 trials". The narration says
+exactly that ("four times thicker than their welding machine could handle before").
 
 ## What changed after the independent narration review (`review_narration_v1.md`)
 Matsya named in the second line; the weld chapter moved up from ~4:30 to ~2:50; the aquanauts told once (with
-names and depths) instead of twice; "thicker than anything" → "than any titanium"; lines that needed the picture
+names and depths) instead of twice; "thicker than anything" → "than their welding machine could handle before" (ISRO's exact wording, found in the fact check); lines that needed the picture
 removed ("as you can see here"); which weld it was made clear ("one of the big welds that go right round the ball");
 "US Coast Guard"; one inspector, named once (a company from Norway); the air-pressure line made plain; a timeline
 added (officials: the full dive could come in 2027). Subtitles will show "1,00,000 tonnes" under "one lakh".
@@ -48,7 +50,7 @@ Real people only in real photos and footage.
 
 4. Now here's the strange part. Isro is known for rockets. But Isro's hardest weld wasn't for a rocket. It was for this ball.
 
-5. That weld was four times thicker than any titanium they had welded before. It took about seven hundred tries.
+5. That weld was four times thicker than their welding machine could handle before. It took about seven hundred tries.
 
 6. So why was it so hard? And after Titan, how will they know it holds? By the end, you'll know both.
 
@@ -90,7 +92,7 @@ Real people only in real photos and footage.
 
 25. So you can't weld it with a normal flame. What do you do? Isro used a beam of electrons, fired inside a vacuum. No air, so nothing can get in.
 
-26. But there was a catch. Isro's welding centre in Bengaluru had only ever welded titanium up to two centimetres thick. This wall is eight.
+26. But there was a catch. Isro's welding centre in Bengaluru could weld up to two centimetres thick. This wall is eight.
 
 27. So they made their machine much more powerful. Then they practised. About seven hundred trial welds, to get the settings exactly right.
 
@@ -100,7 +102,7 @@ Real people only in real photos and footage.
 
 30. But then, how do you know it's good inside? You can't cut it open, can you?
 
-31. So they built X-ray machines strong enough to see through eight centimetres of titanium. They used sound waves too, listening for hidden cracks. And the inspectors have to approve every step.
+31. So they built X-ray machines strong enough to see through eight centimetres of titanium. They used sound waves too, listening for hidden cracks. And an outside agency has to certify it.
 
 32. Now step inside with me. The wall is eight centimetres thick, so inside, you get just over two metres. Lie down in there, and your head and your feet would almost touch the walls.
 
@@ -116,7 +118,7 @@ Real people only in real photos and footage.
 
 38. So it's wrapped in a special foam. The foam is full of tiny hollow glass bubbles, set in hard plastic. The titanium takes the squeeze. The foam brings everyone home.
 
-39. That foam is made abroad, and it came late. Then, early this year, inspectors found a small crack in its cover. The first five hundred metre dive had to wait.
+39. That foam is made abroad, and it came late. Then, early this year, officials said inspectors had found a small crack in its cover. The first five hundred metre dive had to wait.
 
 40. On the sixth of November, Matsya finished another round of trials near Chennai, without people inside. Officials have said the full six kilometre dive could come in twenty twenty-seven.
 

@@ -13,7 +13,7 @@ strong 0:00–1:30 and 4:30–6:00; drifting 3:00–4:30 (the cabin, then the aq
 |---|---|
 | 1. Matsya first named halfway | Named in line 2: "the heart of India's first deep-sea sub for people. Its name is Matsya." |
 | 2. Weld promised at 0:20, paid at 4:30; aquanauts told twice | Weld chapter now at ~2:50; the cabin and the aquanauts come after it, told once |
-| 3. "Thicker than anything they had welded" overclaims | "four times thicker than any titanium they had welded before" (ISRO: 20 mm → 80 mm) |
+| 3. "Thicker than anything they had welded" overclaims | "four times thicker than their welding machine could handle before" (ISRO's own words: the facility could weld up to 20 mm) |
 | 4. Lines that need the picture | "as you can see here" and "the ball you've been looking at" removed; "like belts" added |
 | 5. Which of the seven welds was the hard one | "One of the big welds that go right round the ball" |
 | "American Coast Guard", report-speak | "U-S Coast Guard"; "the company's own failures, in how Titan was designed, checked and looked after" |
