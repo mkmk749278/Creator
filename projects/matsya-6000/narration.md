@@ -8,7 +8,7 @@ human silhouette for scale); challengers **ISRO'S WELD** and **WHY A BALL?**
 
 **Gates:** `claims_check.py` passes (39 claims: 31 confirmed, 2 attributed, 6 OUR CALCULATION); `spoken_english_check.py` passes.
 
-**Length:** 1,226 words, about 8½ minutes with pauses (Akash's pace on the AIP film). The weld chapter starts at about 2:50.
+**Length:** 1240 words, about 8½ minutes with pauses (Akash's pace on the AIP film). The weld chapter starts at about 2:50.
 
 ## Promise check (PLAYBOOK §5.1), re-run on v2
 | Check | Result |
@@ -40,16 +40,16 @@ OUR CALCULATION: one lakh tonnes, the buffalo on a fingernail, "just over two me
 "right round the ball". RECONSTRUCTION: the ball in the sea, the inside of the ball. SIMPLIFIED: the pressure arrows.
 Real people only in real photos and footage.
 
-## Outside review (owner's, 2026-11-09) and what we did
-| Suggestion | Decision |
+## Outside review (owner's, 2026-11-09): used for refinement, as the owner asked
+| Suggestion | What we did |
 |---|---|
-| Cut the Titan recap to two lines | **Taken, mostly:** two paragraphs became one. "Five people died" stays: the loss is told with dignity, not skipped. |
-| "Delaminated under compression", "forged titanium certified by DNV" | **Not taken:** not in our sourced claims. DNV certified the life-support system and Norway gives the capsule's final certification; the voice says only that. |
-| Say I-S-R-O, not Isro | **Not taken:** the owner's rule (2026-11-05) is Isro said as a word. We listen for it in the first take. |
-| A pause before "one lakh tonnes" with `...` | **Taken as an em-dash:** `...` gives Akash no pause (measured); the dash does. |
-| Captions spell Nautile | **Already so:** the voice reads Noh-teel, the captions say Nautile. |
-| Shorter foam lines, "hairline defect", "syntactic foam" | **Taken in spirit:** "That foam came from France, and it came late. Then, early this year, officials said a small crack was found in its cover. So the first five hundred metre dive had to wait." No new words like "hairline" or "syntactic": not in the source, and harder to follow. |
-| CTA with "2027", "track the telemetry", "engineering autopsy" | **Not taken:** the 2027 date is only an official's estimate, and "autopsy" is the wrong word in a film that mentions five deaths. The approved line stays. |
+| Cut the Titan recap to a sharp contrast | **Taken:** one paragraph. "Its hull, as you may know, was carbon fibre. After earlier dives, its layers had started to come apart, and it kept diving anyway." Delamination is now sourced (NTSB final report, claim M35). "Five people died" stays, for dignity. |
+| "Forged titanium certified by DNV" | **Taken as far as the sources go:** the ball is titanium, and "an outside inspection company … from Norway" checks the work. DNV certified the life support, and Norway gives the capsule's final certification. We don't say DNV certified the sphere, because no source says so. |
+| A pause before "one lakh tonnes" | **Taken** with an em-dash. `...` gives Akash no pause (measured). |
+| Shorter, cleaner foam lines | **Taken:** "That foam had to come from France, and it arrived late. Then, early this year, officials said a small crack was found in its cover. That held up the first test dive, to five hundred metres." "Hairline" is not in the source, so it stays "small". |
+| A call to action that bridges to the milestone, naming the channel | **Taken:** "When Matsya makes its first deep dive, we'll be there. Subscribe to Be Practical, so you're there too." The 2027 estimate is said earlier, attributed. "Engineering autopsy" is not used: the wrong word in a film that mentions five deaths. |
+| I-S-R-O instead of Isro | **Kept as Isro**, the owner's standing pronunciation rule (2026-11-05). We listen in the first take, and respell it if Akash drags it. |
+| Captions spell Nautile | **Already so.** |
 
 ## The narration, as it will be voiced (`vo.txt`)
 
@@ -77,7 +77,7 @@ Real people only in real photos and footage.
 
 12. You may remember it. In June twenty twenty-three, Titan broke apart on its way down to the Titanic. Five people died.
 
-13. Its hull, as you may know, was carbon fibre, and it had been damaged on earlier trips down. The U-S Coast Guard said the company's own failures caused it.
+13. Its hull, as you may know, was carbon fibre. After earlier dives, its layers had started to come apart, and it kept diving anyway. The U-S Coast Guard said the company's own failures caused it.
 
 14. So what's different here? Three things. The material is titanium, the metal deep-sea subs have trusted for more than fifty years. The shape is a ball. And an outside inspection company checks and approves the work. For Matsya, that company is from Norway.
 
@@ -127,7 +127,7 @@ Real people only in real photos and footage.
 
 37. So it's wrapped in a special foam. The foam is full of tiny hollow glass bubbles, set in hard plastic. The titanium takes the squeeze. The foam brings everyone home.
 
-38. That foam came from France, and it came late. Then, early this year, officials said a small crack was found in its cover. So the first five hundred metre dive had to wait.
+38. That foam had to come from France, and it arrived late. Then, early this year, officials said a small crack was found in its cover. That held up the first test dive, to five hundred metres.
 
 39. On the sixth of November, Matsya finished another round of trials near Chennai, without people inside. Officials have said the full six kilometre dive could come in twenty twenty-seven.
 
@@ -149,4 +149,4 @@ Real people only in real photos and footage.
 
 48. So the last test will be the sea itself. One dive. Six kilometres. Every number in this film, checked at once.
 
-49. This story isn't over. When Matsya makes its first deep dive, we'll be there. Subscribe, so you're there too.
+49. This story isn't over. When Matsya makes its first deep dive, we'll be there. Subscribe to Be Practical, so you're there too.
