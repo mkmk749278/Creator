@@ -433,7 +433,9 @@ the moment and leans into the story.
 ### 6.3 Words and rhythm
 - **Simple, warm Indian English,** the words any Indian from any state uses: pay, money, heat, pressure, steel, crack.
   Say "about" not "approximately", "but" not "however", "so" not "therefore". A technical word only when it is the
-  subject, said once with its plain meaning. Lakh, crore and rupees.
+  subject, said once with its plain meaning. Lakh, crore and rupees. **English only, no Hindi track, and so simple that
+  everyone understands** (owner, 2026-11-09, turning down a reviewer's Hindi-dub idea): one idea per sentence, every
+  big number said as something you can picture (a buffalo on a fingernail, not "six hundred bar").
 - **Talk to one person** ("you" about 3 times per 100 words) **as a person** ("I", "let's" when it sounds real, never
   forced: audience reviews flag "let me walk you through" as YouTube filler).
 - **Ask, then answer:** about one sentence in ten is a question, the viewer's own doubt in their words.
