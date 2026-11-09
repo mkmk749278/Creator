@@ -1,6 +1,6 @@
 # Plan · ISRO's Hardest Weld (matsya-6000) · v2, 2026-11-09 (after the independent review, `review_plan_v1.md`)
 
-## The promise (locked when the owner approves)
+## The promise (**locked: the owner approved plan v2, title and thumbnail concept on 2026-11-09**)
 **Promise in one sentence:** the hardest thing ISRO had to make for India's first deep-sea dive wasn't a rocket part.
 It was one seam around a titanium ball that three Indians will trust six kilometres down. You'll see why it's so hard,
 how they test it, and what Titan got wrong that this ball has to get right.
