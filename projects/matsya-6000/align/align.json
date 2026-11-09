@@ -1,0 +1,1442 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 6.67,
+  "te": "Six kilometres under the sea, the water will squeeze this titanium ball — with almost one lakh tonnes.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.391,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 7.247,
+  "end": 9.762,
+  "te": "Imagine you're inside it, with two other Indians.",
+  "en": "",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 0.391,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 10.496,
+  "end": 14.305,
+  "te": "This ball is the heart of India's first deep-sea sub for people.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.299,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 14.902,
+  "end": 16.304,
+  "te": "Its name is Matsya.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 0.299,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 16.96,
+  "end": 21.5,
+  "te": "Your whole world is five pieces of titanium, joined by seven welds.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.459,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 22.108,
+  "end": 23.252,
+  "te": "Now here's the strange part.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 0.459,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 23.801,
+  "end": 25.415,
+  "te": "Isro is known for rockets.",
+  "en": "",
+  "speech_vs_text": 1.15,
+  "boundary_margin": 1.172,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 25.781,
+  "end": 28.315,
+  "te": "But Isro's hardest weld wasn't for a rocket.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.418,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 28.774,
+  "end": 29.777,
+  "te": "It was for this ball.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.418,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 30.416,
+  "end": 34.52,
+  "te": "That weld was four times thicker than their welding machine could handle before.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.572,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 35.015,
+  "end": 36.928,
+  "te": "It took about seven hundred tries.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 2.834,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 37.502,
+  "end": 38.63,
+  "te": "So why was it so hard?",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.777,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 39.172,
+  "end": 41.595,
+  "te": "And after Titan, how will they know it holds?",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.581,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 42.231,
+  "end": 43.7,
+  "te": "By the end, you'll know both.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.185,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 44.3,
+  "end": 48.468,
+  "te": "First, I want you to feel what six kilometres of sea actually does.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.185,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 49.028,
+  "end": 54.453,
+  "te": "Every ten metres you go down, the sea presses on you as hard as all the air above you.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.312,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 55.077,
+  "end": 55.512,
+  "te": "Once more.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.819,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 56.096,
+  "end": 56.613,
+  "te": "And again.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 57.184,
+  "end": 58.032,
+  "te": "And again.",
+  "en": "",
+  "speech_vs_text": 1.59,
+  "boundary_margin": 2.295,
+  "confidence": "check"
+ },
+ {
+  "line": 20,
+  "start": 58.643,
+  "end": 61.292,
+  "te": "At six thousand metres, hold out your finger.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.384,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 61.859,
+  "end": 65.444,
+  "te": "The water would press on your fingernail with about six hundred kilos.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.384,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 65.915,
+  "end": 69.012,
+  "te": "That's a full-grown buffalo, standing on one fingernail.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.733,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 69.68,
+  "end": 71.755,
+  "te": "Now cover the whole ball with fingernails.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.889,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 72.204,
+  "end": 74.478,
+  "te": "Every one of them carries a buffalo.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.141,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 75.021,
+  "end": 81.668,
+  "te": "Add it all up, and the sea squeezes this ball with almost one lakh tonnes, from every side at once.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.141,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 82.278,
+  "end": 84.91,
+  "te": "So you're probably asking the same question I asked.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.387,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 85.329,
+  "end": 86.696,
+  "te": "Could this end like Titan?",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 87.267,
+  "end": 88.106,
+  "te": "You may remember it.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.678,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 88.516,
+  "end": 92.853,
+  "te": "In June twenty twenty-three, Titan broke apart on its way down to the Titanic.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.678,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 93.453,
+  "end": 94.376,
+  "te": "Five people died.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.614,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 95.21,
+  "end": 97.903,
+  "te": "Its hull, as you may know, was carbon fibre.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.463,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 98.41,
+  "end": 103.535,
+  "te": "After earlier dives, its layers had started to come apart, and it kept diving anyway.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.302,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 104.006,
+  "end": 107.521,
+  "te": "The U-S Coast Guard said the company's own failures caused it.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.177,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 107.925,
+  "end": 109.287,
+  "te": "So what's different here?",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.177,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 109.803,
+  "end": 110.375,
+  "te": "Three things.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 0.926,
+  "confidence": "high"
+ },
+ {
+  "line": 36,
+  "start": 110.797,
+  "end": 115.831,
+  "te": "The material is titanium, the metal deep-sea subs have trusted for more than fifty years.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.26,
+  "confidence": "high"
+ },
+ {
+  "line": 37,
+  "start": 116.23,
+  "end": 117.568,
+  "te": "The shape is a ball.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.26,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "start": 118.001,
+  "end": 121.5,
+  "te": "And an outside inspection company checks and approves the work.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.336,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "start": 121.975,
+  "end": 124.272,
+  "te": "For Matsya, that company is from Norway.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "start": 124.666,
+  "end": 126.557,
+  "te": "And if something goes wrong down there?",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.877,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "start": 126.937,
+  "end": 130.132,
+  "te": "The crew can drop heavy weights, and the sub rises back up.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.794,
+  "confidence": "high"
+ },
+ {
+  "line": 42,
+  "start": 130.571,
+  "end": 133.321,
+  "te": "And they carry enough air for ninety-six hours.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.13,
+  "confidence": "high"
+ },
+ {
+  "line": 43,
+  "start": 133.767,
+  "end": 134.919,
+  "te": "But why a ball?",
+  "en": "",
+  "speech_vs_text": 1.29,
+  "boundary_margin": 0.13,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "start": 135.255,
+  "end": 137.606,
+  "te": "Why not a long tube, like a normal submarine?",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.886,
+  "confidence": "high"
+ },
+ {
+  "line": 45,
+  "start": 138.036,
+  "end": 139.347,
+  "te": "Squeeze a ball in your hand.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 1.258,
+  "confidence": "high"
+ },
+ {
+  "line": 46,
+  "start": 139.701,
+  "end": 142.172,
+  "te": "You can feel the push spread all the way round.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.365,
+  "confidence": "high"
+ },
+ {
+  "line": 47,
+  "start": 142.566,
+  "end": 145.745,
+  "te": "There's no corner and no flat side where the pressure can win.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.365,
+  "confidence": "high"
+ },
+ {
+  "line": 48,
+  "start": 146.093,
+  "end": 149.535,
+  "te": "Even America's famous deep-sea sub, Alvin, uses a ball.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.363,
+  "confidence": "high"
+ },
+ {
+  "line": 49,
+  "start": 149.843,
+  "end": 152.618,
+  "te": "Its first one, in nineteen sixty-four, was steel.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.161,
+  "confidence": "high"
+ },
+ {
+  "line": 50,
+  "start": 152.987,
+  "end": 158.473,
+  "te": "In nineteen seventy-three, they changed it to titanium, and Alvin could go almost twice as deep.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.161,
+  "confidence": "high"
+ },
+ {
+  "line": 51,
+  "start": 158.893,
+  "end": 160.299,
+  "te": "India walked the same road.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.701,
+  "confidence": "high"
+ },
+ {
+  "line": 52,
+  "start": 160.65,
+  "end": 166.394,
+  "te": "In twenty twenty-one, it lowered a test ball of plain steel six hundred metres into the Bay of Bengal.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.151,
+  "confidence": "high"
+ },
+ {
+  "line": 53,
+  "start": 166.701,
+  "end": 167.975,
+  "te": "Then came titanium.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.151,
+  "confidence": "high"
+ },
+ {
+  "line": 54,
+  "start": 168.361,
+  "end": 170.685,
+  "te": "And this, you see, is where Isro comes in.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.696,
+  "confidence": "high"
+ },
+ {
+  "line": 55,
+  "start": 171.047,
+  "end": 172.671,
+  "te": "Remember that weld I told you about?",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.371,
+  "confidence": "high"
+ },
+ {
+  "line": 56,
+  "start": 173.034,
+  "end": 175.693,
+  "te": "You can't make a ball this big in one piece.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.113,
+  "confidence": "high"
+ },
+ {
+  "line": 57,
+  "start": 176.022,
+  "end": 177.269,
+  "te": "So how do you make it?",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.113,
+  "confidence": "high"
+ },
+ {
+  "line": 58,
+  "start": 177.553,
+  "end": 179.583,
+  "te": "Isro's drawing shows five pieces.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.672,
+  "confidence": "high"
+ },
+ {
+  "line": 59,
+  "start": 179.928,
+  "end": 180.634,
+  "te": "A top hatch.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.672,
+  "confidence": "high"
+ },
+ {
+  "line": 60,
+  "start": 180.963,
+  "end": 181.606,
+  "te": "Three rings.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 61,
+  "start": 181.926,
+  "end": 182.691,
+  "te": "A bottom dome.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 1.38,
+  "confidence": "high"
+ },
+ {
+  "line": 62,
+  "start": 183.033,
+  "end": 185.743,
+  "te": "Together, they weigh about five and a half tonnes.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 63,
+  "start": 186.548,
+  "end": 187.961,
+  "te": "Seven welds join them.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 64,
+  "start": 188.428,
+  "end": 190.834,
+  "te": "Four go right round the ball, like belts.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.486,
+  "confidence": "high"
+ },
+ {
+  "line": 65,
+  "start": 191.329,
+  "end": 192.827,
+  "te": "Three go round its windows.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.486,
+  "confidence": "high"
+ },
+ {
+  "line": 66,
+  "start": 193.391,
+  "end": 194.697,
+  "te": "Here's the problem you'd face.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.846,
+  "confidence": "high"
+ },
+ {
+  "line": 67,
+  "start": 195.166,
+  "end": 196.671,
+  "te": "Titanium is fussy.",
+  "en": "",
+  "speech_vs_text": 1.33,
+  "boundary_margin": 0.21,
+  "confidence": "high"
+ },
+ {
+  "line": 68,
+  "start": 197.276,
+  "end": 200.696,
+  "te": "Heat it in normal air, and it grabs oxygen and nitrogen.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.21,
+  "confidence": "high"
+ },
+ {
+  "line": 69,
+  "start": 201.17,
+  "end": 205.523,
+  "te": "The weld fills with tiny holes, and it becomes weak and easy to crack.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.213,
+  "confidence": "high"
+ },
+ {
+  "line": 70,
+  "start": 205.996,
+  "end": 208.215,
+  "te": "So you can't weld it with a normal flame.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.213,
+  "confidence": "high"
+ },
+ {
+  "line": 71,
+  "start": 208.821,
+  "end": 209.325,
+  "te": "What do you do?",
+  "en": "",
+  "speech_vs_text": 0.69,
+  "boundary_margin": 1.716,
+  "confidence": "check"
+ },
+ {
+  "line": 72,
+  "start": 209.835,
+  "end": 213.631,
+  "te": "Isro used a beam of electrons, fired inside a vacuum.",
+  "en": "",
+  "speech_vs_text": 1.29,
+  "boundary_margin": 0.337,
+  "confidence": "high"
+ },
+ {
+  "line": 73,
+  "start": 214.135,
+  "end": 216.178,
+  "te": "No air, so nothing can get in.",
+  "en": "",
+  "speech_vs_text": 1.23,
+  "boundary_margin": 0.276,
+  "confidence": "high"
+ },
+ {
+  "line": 74,
+  "start": 216.745,
+  "end": 217.988,
+  "te": "But there was a catch.",
+  "en": "",
+  "speech_vs_text": 0.56,
+  "boundary_margin": 0.209,
+  "confidence": "check"
+ },
+ {
+  "line": 75,
+  "start": 218.374,
+  "end": 222.398,
+  "te": "Isro's welding centre in Bengaluru could weld up to two centimetres thick.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.209,
+  "confidence": "high"
+ },
+ {
+  "line": 76,
+  "start": 223.008,
+  "end": 224.396,
+  "te": "This wall is eight.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.249,
+  "confidence": "high"
+ },
+ {
+  "line": 77,
+  "start": 224.838,
+  "end": 227.394,
+  "te": "So they made their machine much more powerful.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.249,
+  "confidence": "high"
+ },
+ {
+  "line": 78,
+  "start": 227.907,
+  "end": 229.057,
+  "te": "Then they practised.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.303,
+  "confidence": "high"
+ },
+ {
+  "line": 79,
+  "start": 229.393,
+  "end": 233.356,
+  "te": "About seven hundred trial welds, to get the settings exactly right.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 1.047,
+  "confidence": "high"
+ },
+ {
+  "line": 80,
+  "start": 233.946,
+  "end": 235.408,
+  "te": "Then came the real thing.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 1.224,
+  "confidence": "high"
+ },
+ {
+  "line": 81,
+  "start": 235.847,
+  "end": 238.462,
+  "te": "One of the big welds that go right round the ball.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.572,
+  "confidence": "high"
+ },
+ {
+  "line": 82,
+  "start": 238.912,
+  "end": 241.975,
+  "te": "Eight centimetres deep, and about seven metres long.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.118,
+  "confidence": "high"
+ },
+ {
+  "line": 83,
+  "start": 242.405,
+  "end": 244.988,
+  "te": "It took thirty-two minutes, in one go.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.118,
+  "confidence": "high"
+ },
+ {
+  "line": 84,
+  "start": 245.44,
+  "end": 249.815,
+  "te": "Isro says it was the first time anyone in India had made a weld like this.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.264,
+  "confidence": "high"
+ },
+ {
+  "line": 85,
+  "start": 250.313,
+  "end": 252.394,
+  "te": "But then, how do you know it's good inside?",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.335,
+  "confidence": "high"
+ },
+ {
+  "line": 86,
+  "start": 252.764,
+  "end": 254.27,
+  "te": "You can't cut it open, can you?",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.285,
+  "confidence": "high"
+ },
+ {
+  "line": 87,
+  "start": 254.678,
+  "end": 259.939,
+  "te": "So they built X-ray machines strong enough to see through eight centimetres of titanium.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.285,
+  "confidence": "high"
+ },
+ {
+  "line": 88,
+  "start": 260.348,
+  "end": 263.359,
+  "te": "They used sound waves too, listening for hidden cracks.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.38,
+  "confidence": "high"
+ },
+ {
+  "line": 89,
+  "start": 263.736,
+  "end": 266.37,
+  "te": "And an outside agency has to certify it.",
+  "en": "",
+  "speech_vs_text": 1.24,
+  "boundary_margin": 0.983,
+  "confidence": "high"
+ },
+ {
+  "line": 90,
+  "start": 266.919,
+  "end": 268.287,
+  "te": "Now step inside with me.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 1.013,
+  "confidence": "high"
+ },
+ {
+  "line": 91,
+  "start": 268.803,
+  "end": 273.667,
+  "te": "The wall is eight centimetres thick, so inside, you get just over two metres.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.152,
+  "confidence": "high"
+ },
+ {
+  "line": 92,
+  "start": 274.018,
+  "end": 278.622,
+  "te": "Lie down in there, and your head and your feet would almost touch the walls.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.152,
+  "confidence": "high"
+ },
+ {
+  "line": 93,
+  "start": 279.423,
+  "end": 283.331,
+  "te": "You and two others sit here, for a normal dive of twelve hours.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.153,
+  "confidence": "high"
+ },
+ {
+  "line": 94,
+  "start": 283.869,
+  "end": 284.837,
+  "te": "Oxygen comes in.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 1.448,
+  "confidence": "high"
+ },
+ {
+  "line": 95,
+  "start": 285.208,
+  "end": 287.915,
+  "te": "The carbon dioxide you breathe out gets cleaned away.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.212,
+  "confidence": "high"
+ },
+ {
+  "line": 96,
+  "start": 288.38,
+  "end": 290.314,
+  "te": "And who will sit where you're sitting?",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.212,
+  "confidence": "high"
+ },
+ {
+  "line": 97,
+  "start": 290.818,
+  "end": 296.994,
+  "te": "In August twenty twenty-five, India sent its first two trained people down in a French sub called Nautile.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.355,
+  "confidence": "high"
+ },
+ {
+  "line": 98,
+  "start": 297.425,
+  "end": 301.215,
+  "te": "Raju Ramesh, a scientist, reached about four thousand metres.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.115,
+  "confidence": "high"
+ },
+ {
+  "line": 99,
+  "start": 301.612,
+  "end": 307.101,
+  "te": "The next day, Commander Jatinder Pal Singh, a retired Navy officer, reached about five thousand.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.115,
+  "confidence": "high"
+ },
+ {
+  "line": 100,
+  "start": 307.54,
+  "end": 309.735,
+  "te": "So is Matsya ready, do you think?",
+  "en": "",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 0.338,
+  "confidence": "high"
+ },
+ {
+  "line": 101,
+  "start": 310.192,
+  "end": 310.758,
+  "te": "Not quite.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.454,
+  "confidence": "high"
+ },
+ {
+  "line": 102,
+  "start": 311.12,
+  "end": 312.371,
+  "te": "There's one more problem.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.921,
+  "confidence": "high"
+ },
+ {
+  "line": 103,
+  "start": 312.814,
+  "end": 314.811,
+  "te": "This ball is only part of the sub.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.283,
+  "confidence": "high"
+ },
+ {
+  "line": 104,
+  "start": 315.25,
+  "end": 318.801,
+  "te": "Around it go batteries, lights, motors and arms.",
+  "en": "",
+  "speech_vs_text": 1.4,
+  "boundary_margin": 0.283,
+  "confidence": "high"
+ },
+ {
+  "line": 105,
+  "start": 319.105,
+  "end": 322.363,
+  "te": "Put it all together, and the whole thing sinks like a stone.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.397,
+  "confidence": "high"
+ },
+ {
+  "line": 106,
+  "start": 322.754,
+  "end": 324.956,
+  "te": "So it's wrapped in a special foam.",
+  "en": "",
+  "speech_vs_text": 1.27,
+  "boundary_margin": 0.454,
+  "confidence": "high"
+ },
+ {
+  "line": 107,
+  "start": 325.279,
+  "end": 329.63,
+  "te": "The foam is full of tiny hollow glass bubbles, set in hard plastic.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.405,
+  "confidence": "high"
+ },
+ {
+  "line": 108,
+  "start": 330.015,
+  "end": 331.696,
+  "te": "The titanium takes the squeeze.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.405,
+  "confidence": "high"
+ },
+ {
+  "line": 109,
+  "start": 332.001,
+  "end": 333.803,
+  "te": "The foam brings everyone home.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 1.28,
+  "confidence": "high"
+ },
+ {
+  "line": 110,
+  "start": 334.205,
+  "end": 337.739,
+  "te": "That foam had to come from France, and it arrived late.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 0.142,
+  "confidence": "high"
+ },
+ {
+  "line": 111,
+  "start": 338.043,
+  "end": 342.48,
+  "te": "Then, early this year, officials said a small crack was found in its cover.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.142,
+  "confidence": "high"
+ },
+ {
+  "line": 112,
+  "start": 342.764,
+  "end": 345.941,
+  "te": "That held up the first test dive, to five hundred metres.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.372,
+  "confidence": "high"
+ },
+ {
+  "line": 113,
+  "start": 346.292,
+  "end": 351.555,
+  "te": "On the sixth of November, Matsya finished another round of trials near Chennai, without people inside.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.331,
+  "confidence": "high"
+ },
+ {
+  "line": 114,
+  "start": 351.878,
+  "end": 356.588,
+  "te": "Officials have said the full six kilometre dive could come in twenty twenty-seven.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.192,
+  "confidence": "high"
+ },
+ {
+  "line": 115,
+  "start": 356.918,
+  "end": 358.729,
+  "te": "So why do all this, you ask?",
+  "en": "",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 0.192,
+  "confidence": "high"
+ },
+ {
+  "line": 116,
+  "start": 359.138,
+  "end": 361.091,
+  "te": "What's down there that's worth it?",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.173,
+  "confidence": "high"
+ },
+ {
+  "line": 117,
+  "start": 361.92,
+  "end": 365.283,
+  "te": "Six thousand metres down, you'd see no sunlight at all.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.173,
+  "confidence": "high"
+ },
+ {
+  "line": 118,
+  "start": 365.861,
+  "end": 368.854,
+  "te": "Your lights are the only lights for six kilometres.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.319,
+  "confidence": "high"
+ },
+ {
+  "line": 119,
+  "start": 369.451,
+  "end": 372.716,
+  "te": "Outside your window, the water is close to freezing.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.319,
+  "confidence": "high"
+ },
+ {
+  "line": 120,
+  "start": 373.158,
+  "end": 377.017,
+  "te": "And the seafloor is covered with black lumps of metal, like stones.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.246,
+  "confidence": "high"
+ },
+ {
+  "line": 121,
+  "start": 377.693,
+  "end": 382.789,
+  "te": "India has the right to explore a big patch of that seabed, in the middle of the Indian Ocean.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.246,
+  "confidence": "high"
+ },
+ {
+  "line": 122,
+  "start": 383.296,
+  "end": 385.66,
+  "te": "It has held that right since two thousand and two.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.376,
+  "confidence": "high"
+ },
+ {
+  "line": 123,
+  "start": 386.102,
+  "end": 391.157,
+  "te": "In twenty twenty-two, an Indian robot sub surveyed it, more than five kilometres down.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.376,
+  "confidence": "high"
+ },
+ {
+  "line": 124,
+  "start": 391.581,
+  "end": 394.373,
+  "te": "Those lumps hold nickel, copper and cobalt.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.377,
+  "confidence": "high"
+ },
+ {
+  "line": 125,
+  "start": 394.796,
+  "end": 397.56,
+  "te": "Metals that go into batteries, like the one in your phone.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.081,
+  "confidence": "high"
+ },
+ {
+  "line": 126,
+  "start": 397.918,
+  "end": 399.397,
+  "te": "But let me be honest with you.",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 0.081,
+  "confidence": "high"
+ },
+ {
+  "line": 127,
+  "start": 399.792,
+  "end": 401.871,
+  "te": "Nobody is allowed to mine there yet.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 2.207,
+  "confidence": "high"
+ },
+ {
+  "line": 128,
+  "start": 402.248,
+  "end": 404.111,
+  "te": "The world is still writing the rules.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 129,
+  "start": 404.498,
+  "end": 406.357,
+  "te": "Matsya is not a mining machine.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 130,
+  "start": 406.76,
+  "end": 407.791,
+  "te": "It's a pair of eyes.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 131,
+  "start": 408.168,
+  "end": 410.388,
+  "te": "And you might ask, what about China?",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.188,
+  "confidence": "high"
+ },
+ {
+  "line": 132,
+  "start": 410.774,
+  "end": 416.458,
+  "te": "Its sub has already taken people to the deepest point on Earth, almost eleven thousand metres.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.284,
+  "confidence": "high"
+ },
+ {
+  "line": 133,
+  "start": 416.892,
+  "end": 421.738,
+  "te": "India's first goal is six thousand, deep enough for the seabed it wants to explore.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.259,
+  "confidence": "high"
+ },
+ {
+  "line": 134,
+  "start": 422.087,
+  "end": 425.197,
+  "te": "Now, one last time, come back inside the ball with me.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.259,
+  "confidence": "high"
+ },
+ {
+  "line": 135,
+  "start": 425.625,
+  "end": 426.49,
+  "te": "I'll be straight with you.",
+  "en": "",
+  "speech_vs_text": 0.65,
+  "boundary_margin": 0.916,
+  "confidence": "check"
+ },
+ {
+  "line": 136,
+  "start": 426.865,
+  "end": 429.78,
+  "te": "Matsya has not been to sea with people in it yet.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.165,
+  "confidence": "high"
+ },
+ {
+  "line": 137,
+  "start": 430.086,
+  "end": 435.005,
+  "te": "And no public report says this titanium ball has been tested at full pressure yet.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.165,
+  "confidence": "high"
+ },
+ {
+  "line": 138,
+  "start": 435.403,
+  "end": 437.843,
+  "te": "So the last test will be the sea itself.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.267,
+  "confidence": "high"
+ },
+ {
+  "line": 139,
+  "start": 438.34,
+  "end": 438.935,
+  "te": "One dive.",
+  "en": "",
+  "speech_vs_text": 1.28,
+  "boundary_margin": 1.461,
+  "confidence": "high"
+ },
+ {
+  "line": 140,
+  "start": 439.38,
+  "end": 440.372,
+  "te": "Six kilometres.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 1.298,
+  "confidence": "high"
+ },
+ {
+  "line": 141,
+  "start": 440.712,
+  "end": 443.319,
+  "te": "Every number in this film, checked at once.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.42,
+  "confidence": "high"
+ },
+ {
+  "line": 142,
+  "start": 443.678,
+  "end": 445.032,
+  "te": "This story isn't over.",
+  "en": "",
+  "speech_vs_text": 1.2,
+  "boundary_margin": 0.42,
+  "confidence": "high"
+ },
+ {
+  "line": 143,
+  "start": 445.382,
+  "end": 448.324,
+  "te": "When Matsya makes its first deep dive, we'll be there.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.191,
+  "confidence": "high"
+ },
+ {
+  "line": 144,
+  "start": 448.639,
+  "end": 451.12,
+  "te": "Subscribe to Be Practical, so you're there too.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.191,
+  "confidence": "high"
+ }
+]
