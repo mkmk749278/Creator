@@ -91,7 +91,7 @@ Real people only in real photos and footage.
 
 19. India walked the same road. In twenty twenty-one, it lowered a test ball of plain steel six hundred metres into the Bay of Bengal. Then came titanium.
 
-20. And this is where Isro comes in. Remember that weld I told you about?
+20. And this, you see, is where Isro comes in. Remember that weld I told you about?
 
 21. You can't make a ball this big in one piece. So how do you make it? Isro's drawing shows five pieces. A top hatch. Three rings. A bottom dome. Together, they weigh about five and a half tonnes.
 
