@@ -16,9 +16,13 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
 - ISRO's video (`assets/ref/isro_samudrayaan_230725.webm`, 3:30) is reusable with credit (ISRO copyright policy);
   upload it to Drive `English/matsya-6000/footage/` with the first footage batch.
 
+## Narration (2026-11-09)
+- Full narration v2 in `vo.txt` / `narration.md`, after the independent review (`review_narration_v1.md`). Both gates
+  pass: `claims_check.py` (39 claims) and `spoken_english_check.py`. **Sent to the owner for approval.**
+- Footage requests ready in `footage_requests.md` (Termux line, Cowork list incl. the blocked MoES PDFs).
+
 ## Next session, in order
-1. Write the rest of the narration from plan v2 and §8a, chapter by chapter, simple English, then the creative pass,
-   the checks and the independent narration review (`prompts/audience_review_v1.md`). `narration.md` to the owner.
-2. Still to source before the narration is final: the Titan report text (USCG ROI), Alvin 1973 (WHOI), Fendouzhe
-   (CAS), the ISA contract text, and the two MoES PDFs (one Cowork request: moes.gov.in blocks the cloud).
-3. In parallel: footage and photo requests, and the Blender hero shots H1–H4 (H2 is now five pieces and seven seams).
+1. When the owner approves the narration: ElevenLabs audio, one take per block (`scripts/eleven_tts.py`, Akash v4),
+   every take through `vo_take_check.py`; listen for Matsya, Noh-teel, the names. The owner approves the audio.
+2. Footage: send the owner the Termux line and the Cowork request from `footage_requests.md`.
+3. Blender hero shots H1–H4 (plan §7 and §8a; H2 is five pieces and seven seams).
