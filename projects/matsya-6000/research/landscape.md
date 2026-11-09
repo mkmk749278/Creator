@@ -1,4 +1,4 @@
-# Research landscape: what everyone says vs what it actually is (first pass, 2026-11-09)
+# Research landscape: what everyone says vs what it actually is (second pass, 2026-11-09)
 
 ## 1. What everyone is saying
 
@@ -56,12 +56,61 @@ lakh tonnes of sea, why ISRO, a rocket agency, had to weld it, and why after Tit
 - Our Blender hero shots: the sphere at 600 bar with pressure arrows, the electron beam closing the seam, a cutaway
   of three people in 2.1 m.
 
-## 5. Open research (next session)
-1. Primary sources: ISRO/LPSC weld release (the original), NIOT sphere design paper(s), PIB DOM document, Parliament
-   answers (2025–26), the steel-sphere 2021 test.
-2. Titan: the USCG MBI final report (date, depth of loss, hull cause) and NTSB, for the contrast; no speculation.
-3. Peers: China's Fendouzhe (titanium sphere, 10,909 m, 2020), Japan's Shinkai 6500, Alvin, Limiting Factor; which
-   countries have crewed 6,000 m capability (the "sixth country" claim needs checking).
-4. Why spheres, why titanium (vs steel, vs carbon fibre), buckling and imperfections; the foam's job.
-5. The open question for the film's landing: when the 500 m and 6,000 m dives happen (re-search on upload day).
-6. Demand: `scripts/yt_demand.py` for search phrases (Matsya 6000, Samudrayaan, deep sea submarine India, Titan).
+## 5. Second pass (2026-11-09): primary source, demand, Titan, why it matters to India
+
+**Primary: PIB "Deep Ocean Mission: India's Gateway to the Ocean Floor" (17 Aug 2025, sources ISRO and MoES).**
+- "a self-propelled manned submersible capable of transporting three individuals to depths of up to 6,000 meters";
+  "built to work for 12 hours of operational period and sustain up to 96 hours in emergency scenarios";
+  "high-density Li-Po battery, underwater acoustic telephone, drop-weight emergency escape mechanisms, and bio-vests".
+- "a spherical titanium-alloy vessel (Ti6Al4V - ELI grade) with a diameter of 2260 mm and wall thickness of 80 mm,
+  designed to withstand 600 bar pressure and temperatures as low as -3°C"; EBW by LPSC, "Perfection of the process
+  was achieved after 700 trials"; checked by TOFD and DLA PAUT. Built by NIOT with VSSC, ISRO.
+- **The human story:** "The expedition was conducted on August 5 and 6, 2025 in collaboration with IFREMER … aboard
+  IFREMER's submersible Nautile." "Indian aquanauts – Senior Scientist Shri Raju Ramesh and Cdr. Jatinder Pal Singh
+  (Retd) from NIOT, Chennai completed their inaugural seven-hour deep sea dives" to about 5,000 m. India's first
+  aquanauts learned to dive in a French machine first. (Real people: real photos only, never recreated faces.)
+- Plan in Aug 2025: "shallow water demonstration up to 500 meters by early 2026 … integration and deep-water tests by
+  mid-2027 and scientific explorations using MATSYA-6000 during 2027–28." (Slipped: the foam; see §1.)
+- Deep Ocean Mission launched 7 Sep 2021, "₹4077 crore spread across five years". OMe 6000 (autonomous) surveyed
+  the nodule site at 5,271 m in Dec 2022.
+
+**Why the deep sea matters to India (the "so what" for the landing).** India has held an International Seabed
+Authority contract since 25 March 2002 to explore polymetallic nodules over about 75,000 sq km of the Central Indian
+Ocean Basin, about 2,000 km south of India's tip (PM India / Cabinet release). The nodules hold nickel, copper and
+cobalt ("of economic and strategic importance"), the metals of batteries; the second extension (Feb 2023) assumes
+India can move to exploitation at its end (ISA press release). PIB: mining waits for "global rules … set by the
+International Seabed Authority". Honest frame: Matsya is a science and survey vehicle, not a mining machine; mining is
+contested and not yet allowed.
+
+**Titan, for the contrast (with dignity: five people died, 18 June 2023).** US Coast Guard Marine Board of
+Investigation, 5 Aug 2025: primary factors were OceanGate's "inadequate design, certification, maintenance and
+inspection process"; the passengers "were exposed to approximately 4,930 pounds per square inch of water pressure".
+NTSB: hull damage after dive 80, imploded on dive 88. Titan's hull was carbon fibre with titanium end caps, a
+cylinder, never certified. Matsya: a titanium sphere designed for 600 bar. 4,930 psi ≈ 340 bar (OUR CALCULATION).
+Use only what the reports say; never show or imply the victims; no implosion sound effects.
+
+**Demand (`scripts/yt_demand.py`, gl=IN, 2026-11-09; `assets/demand/`).**
+- "Matsya 6000": 17 autocomplete phrases (matsya 6000 mission, samudrayaan matsya 6000, matsya 6000 in hindi);
+  **no long video over 100K**; the top long one is CNN-News18, 35K. Supply is empty.
+- "Titan submarine": 42 phrases including **Tamil, Malayalam and Hindi** variants; 8 long videos over 1M; Dhruv
+  Rathee's "Mystery of Titan Submarine" 17.7M. Indians are hungry for this subject.
+- "deepest submarine dive": 26 phrases, 7 long over 1M (Astrum 13.3M).
+- So: the demand lives in Titan and "how deep can a submarine go"; the supply for India's own machine is nil. A title
+  that borrows the curiosity (the sphere, the pressure, Titan's lesson) and lands on Matsya fills an open gap.
+
+**Our channel's own audience (Analytics, 90 days):** 90% of views come from the home feed, viewers are mostly men
+35+, 47% of watch time is on TVs, half the views from India and a large NRI share. A Titan-adjacent, big-picture,
+deep-sea film suits browse and the TV screen.
+
+## 6. Open research (next session)
+1. ISRO's own weld release (original of the 700 trials / 32 minutes / 7,100 mm figures); NIOT design papers on the
+   sphere (inner diameter, safety factor, test pressure: was the sphere pressure-tested, where, to what?).
+2. The foam: what syntactic foam is, why it is imported, who makes it (the March 2026 Lok Sabha answer verbatim; UNI
+   blocked, try sansad.in / PIB).
+3. The 2021 mild-steel sphere test to 6,000 m: primary source.
+4. Peers with primary sources: Fendouzhe (titanium sphere, 10,909 m, 2020), Jiaolong, Shinkai 6500, Nautile, Alvin;
+   the "sixth country" claim is contested (5,000 m vs 6,000 m framing): attribute or drop.
+5. The physics of why a sphere, why titanium (vs steel, vs carbon fibre), and why a weld is the weak point; a
+   textbook or classification-society source (DNV / ABS rules for human-occupied vehicles).
+6. Picture sources: PIB/ISRO photos of the sphere, NIOT/DD clips of Kattupalli, IFREMER Nautile dive photos (licence),
+   USCG Titan report figures (US government work).
