@@ -153,6 +153,28 @@ ILLUSTRATION, SIMPLIFIED, OUR CALCULATION where they apply.
 - **H3 · Matsya in the abyss:** the vehicle descending, foam blocks, drop weights falling, lights on the seabed.
 - **H4 · Squeeze on the ball:** arrows from every side, stress shading, a breathing exaggeration labelled SIMPLIFIED.
 
+## 8a. Fact-check results (step 4, 2026-11-09) that change the plan
+- **Five pieces, seven welds, not two halves** (ISRO's own video, 23 Jul 2025, diagram at about 1:56): top hatch
+  695 kg, ring 1 987 kg, ring 2 1,319 kg, ring 3 1,293 kg, bottom dome 1,397 kg, joined by welds W1 to W7 (four round
+  seams, one round each of three viewports). The pieces add up to about 5.7 tonnes (OUR CALCULATION). The longest seam
+  sits at the middle; 7,100 mm is a full circle at the outside (OUR CALCULATION). So the story is **"five pieces, seven
+  welds, and the longest one, eighty millimetres thick, never done in India before"**. H2 becomes: five forged pieces
+  stack on the inspection plate, the seams trace one by one, the middle one last and brightest. S2 unrolls that one.
+- **ISRO footage is usable:** ISRO's copyright policy lets its material be reproduced free with a prominent credit;
+  third-party shots inside the video (PM, Chandrayaan, other photos) are not used. Usable: the forging, the EB welder,
+  the welded ball, the drawing, the inspection, the Ansys stress plot, the crew-frame animation (ILLUSTRATION).
+- **The 2021 test sphere was mild steel, rated 500 m, tested to 600 m** (MoES reply), not 6,000 m (Wikipedia is wrong).
+- **Life support is DNV certified** (oxygen and CO₂ scrubbing, 12 h / 96 h); the capsule's final certification comes
+  from Norway (ThePrint, MoES official, Feb 2026). A foam-casing crack delayed the 500 m test.
+- **No public proof test of the titanium ball found.** The landing stays "the sea is the last test", worded as "no
+  public report says it has been tested at full pressure yet".
+- **Comparisons:** 615 kg on a square centimetre ≈ a full-grown buffalo (CIRB: 450–800 kg). The nodule field is about
+  5 km down (OMe 6000 at 5,271 m), which is why 6 km.
+- **The title's "hardest":** supported by ISRO: first weld of this scale in India, four times thicker than LPSC had
+  welded (20 → 80 mm), about 700 trials. The narration says those facts, not a bare superlative.
+- Still to get: the Titan report's own words (USCG release), Alvin 1973 (WHOI), Fendouzhe (CAS), ISA contract text,
+  the MoES PDFs (blocked from the cloud: one Cowork request).
+
 ## 8. Facts to settle in step 4 (before the narration)
 1. **A proof or pressure test of the titanium sphere:** where, to what pressure, the design margin. Decides ch3's
    climax and the landing.
