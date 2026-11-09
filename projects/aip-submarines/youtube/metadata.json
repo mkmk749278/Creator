@@ -67,7 +67,7 @@
   ],
   "playlist": "Built on Bharat | The Industrial Backbone",
   "schedule": "Tuesday 10 November 2026, 11:00 AM IST (owner, 2026-11-09)",
-  "altered_or_synthetic": "Yes",
+  "altered_or_synthetic": "No",
   "tags": [
     "AIP submarine",
     "air independent propulsion",
@@ -83,5 +83,6 @@
   "previous_round": "round 1 in Drive youtube/v1/, round 2 in youtube/v2/",
   "publish_at_utc": "2026-11-10T05:30:00Z",
   "category_id": 28,
-  "video_id": "ZnrLVpCbBqQ"
+  "video_id": "ZnrLVpCbBqQ",
+  "altered_or_synthetic_note": "Owner set AI use = No in the YouTube app, 2026-11-09 (no AI footage; the voice is no real person; reconstructions are our animation, labelled)."
 }

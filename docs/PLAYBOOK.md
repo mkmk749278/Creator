@@ -553,8 +553,11 @@ without loss? Does the last line pull into the next?
 - **Respect:** accidents and tragedies are told with dignity (no gore, no victims' faces for shock, every figure
   attributed). Political figures with facts, not party colours. Real people in news footage never sit under a verdict
   graphic.
-- **Synthetic disclosure:** the narration is a realistic synthetic voice, so every film is uploaded with "Altered or
-  synthetic content" = Yes (YouTube Help 14328491). The public description does not name AI tools.
+- **AI-use disclosure (owner, 2026-11-09):** YouTube's "AI use" question = **No**. Its four cases are: a real person
+  made to say or do something, real footage altered, a realistic scene that didn't occur made with AI, AI music as the
+  main focus. Our narrator is a synthetic voice of no real person, and our reconstructions are our own Blender and
+  Remotion animation, labelled ILLUSTRATION on screen. Answer **Yes** whenever a film uses AI-generated footage or
+  images of a realistic scene, or alters real footage with AI (Help 14328491). The public description does not name AI tools.
 
 ---
 
@@ -949,7 +952,7 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   early we finish). **45 minutes before is the minimum.** *Why:* YouTube says 4K takes about four times longer than HD
   to process and 60 fps longer still (a 60-minute 4K30 video can take up to 4 hours; Help 71674). Early viewers of an
   unprocessed film see a blurry stream and leave. The Review repo flags under 3 hours as a risk.
-- **Before the slot:** the fresh-facts gate (§8) is done and logged; Content ID and ad-suitability checks finish; "Altered or synthetic content" = Yes; title,
+- **Before the slot:** the fresh-facts gate (§8) is done and logged; Content ID and ad-suitability checks finish; the AI-use answer (§ AI-use disclosure, No unless the film has AI scenes); title,
   thumbnail (+ challengers in Test & Compare), description with chapters, the **"Built on Bharat | The Industrial
   Backbone"** playlist (set as the official series playlist in Studio, desktop; needs a verified account; Help
   6084043), cards and end screens (the latest film and the playlist), our SRT.

@@ -15,15 +15,19 @@
 ## Release state (2026-11-09)
 - Fresh-facts gate done and logged (`review.md` § Fresh-facts gate): every changeable line holds.
 - **Uploaded** by `scripts/yt_upload.py`: video **`ZnrLVpCbBqQ`** (4K60 master from Drive), private, `publishAt`
-  2026-11-10T05:30:00Z, category Science & Technology, English, altered or synthetic = **Yes** (confirmed by the API),
+  2026-11-10T05:30:00Z, category Science & Technology, English, **AI use = No** (owner set it in the app, 2026-11-09),
   main thumbnail `thumb_a.jpg`, our SRT as English captions, description with chapters (`youtube/metadata.json`).
 - **Still open:**
-  1. **YouTube Analytics API is disabled** in Google Cloud project 125439600792 (the OAuth client's project). The owner
-     enables it once: console.developers.google.com/apis/api/youtubeanalytics.googleapis.com/overview?project=125439600792
-     Then `scripts/yt_audience.py` reads the audience stats (country, device, age, traffic, weekday).
-  2. **Playlist:** the API lists 2 playlists but returns no items, so the film is not yet in "Built on Bharat | The
-     Industrial Backbone". Either the owner adds it (YouTube app → video → Save) or sends the playlist link; then set
-     `playlist_id` in `metadata.json` and run `yt_upload.py … --only playlist`.
+  1. Analytics API enabled by the owner (2026-11-09); `scripts/yt_audience.py` works. Last 90 days: 130.7k views,
+     avg view 3:07 (about 30% of a film), +462/−46 subs. Viewers: India 51% of views, then US, Malaysia, Singapore,
+     Canada, UK, Australia (about 38% together, and they watch longer). 78% are 35+ and about 94% men. TV is 37% of views
+     and **47% of watch time**; mobile 51% of views. Traffic is almost all browse features (home feed, 90%); search is
+     under 1%. Subscribers are under 1% of views. What follows: the home-feed package (title + thumbnail) decides
+     everything; TV viewers mean big-screen picture quality pays; the 30% average view is the number to grow.
+  2. **Playlists:** the owner created "Built on Bharat" and a second playlist for the regular films (2026-11-09).
+     The API still counts 2 playlists but returns none (list and search), so the film is not in a playlist yet. The
+     owner sends both playlist links (Share → Copy link); then set `playlist_id` in `metadata.json` and run
+     `yt_upload.py … --only playlist`, and rename the second playlist.
   3. **Test & Compare** (thumb_c as challenger) is Studio-only (no API): the owner sets it in Studio on the desktop site.
   4. **Source comment** at 11:00 IST: post `pinned_comment` from `metadata.json` (the API can post; pinning is a tap in
      the Studio app).
