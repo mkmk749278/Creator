@@ -34,9 +34,10 @@ engineering behind India's biggest efforts.
   who are solving it. Never mock a region, language, religion, caste or community.
 - **The audience:** Indians across every state and the diaspora: engineers, students and curious families, many
   over 45, mostly on phones, often on the family TV. Most hear English as a second language.
-- **Built on Bharat is now a playlist, not a channel (owner, 2026-11-05).** Industrial, nation-building and corporate
-  history films go out here in the playlist **"Built on Bharat | The Industrial Backbone"**, with the 158-year Tata film
-  as its anchor. The Tata film is finished in the `mkmk749278/Built-on-Bharat` repo, which is then frozen. Every new
+- **Built on Bharat is now a playlist, not a channel (owner, 2026-11-05; narrowed 2026-11-09).** It holds only
+  company-history films (the 158-year Tata film, then Amul and others) in **"Built on Bharat | The Industrial
+  Backbone"**. Every other weekly film (the roadmap, engineering, technology, economy) goes into **"Practical India |
+  Hard Truths, Simply Explained"**. Both were created on 2026-11-09; ids in `config/youtube_playlists.json`. The Tata film is finished in the `mkmk749278/Built-on-Bharat` repo, which is then frozen. Every new
   film is built in this repo.
 - **No Shorts and no old sign-off (owner, 2026-11-05).** Only the weekly long film; no "Know your rights. Stay
   practical. Jai Hind." line. The outro names the channel with the logo sting and ends on the film's own image.
@@ -953,9 +954,8 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   to process and 60 fps longer still (a 60-minute 4K30 video can take up to 4 hours; Help 71674). Early viewers of an
   unprocessed film see a blurry stream and leave. The Review repo flags under 3 hours as a risk.
 - **Before the slot:** the fresh-facts gate (§8) is done and logged; Content ID and ad-suitability checks finish; the AI-use answer (§ AI-use disclosure, No unless the film has AI scenes); title,
-  thumbnail (+ challengers in Test & Compare), description with chapters, the **"Built on Bharat | The Industrial
-  Backbone"** playlist (set as the official series playlist in Studio, desktop; needs a verified account; Help
-  6084043), cards and end screens (the latest film and the playlist), our SRT.
+  thumbnail (+ challengers in Test & Compare), description with chapters, the film's playlist (§1: "Practical India" for the
+  weekly films, "Built on Bharat" for company histories; `scripts/yt_upload.py` adds it by `playlist_id`), cards and end screens (the latest film and the playlist), our SRT.
 - **At the slot:** the film goes public; post and pin the source comment (the film's main sources, plain links) within
   60 seconds.
 
