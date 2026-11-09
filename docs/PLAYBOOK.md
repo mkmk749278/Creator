@@ -980,6 +980,10 @@ branch to delete, archive the session.
 Short dated lessons that don't belong to one rule. The full film-by-film log (October 2026) is §15 of
 `docs/archive/PLAYBOOK_2026-11-05.md`.
 
+- **2026-11-09 · Upload by API** (`scripts/yt_upload.py`): `videos.insert` silently drops `containsSyntheticMedia`;
+  a `videos.update` of `status` right after keeps it (the script does both). The Analytics API has no hour-of-day
+  dimension, so a publish hour comes from country mix, weekday and our own past slots (`scripts/yt_audience.py`).
+  `playlists.list` can return a count but no items; add a film to a playlist by its id.
 - **2026-11-05 · Docs rewritten fresh.** One channel, English weekly documentaries; Built on Bharat became a playlist;
   Remotion + Blender for new films; hyphenated acronyms; `...` dropped (no pause on Akash); old docs archived.
 - **2026-11-04 · Music library.** 102 Lyria takes billed for 38 kept; choir pads were the main failure; the Gemini

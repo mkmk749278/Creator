@@ -11,7 +11,8 @@ Telugu films, Phone Consensus, 180-second explainers). New lessons go into the p
 reason; never a new doc file.
 
 ## Current work (read first when the owner says "continue")
-- **AIP submarines film:** `projects/aip-submarines/handoff.md` has where it stands and the next steps in order.
+- **AIP submarines film:** uploaded 2026-11-09, public 10 Nov 11:00 IST; `projects/aip-submarines/handoff.md` has the open release items.
+- **Matsya 6000 film (next):** `projects/matsya-6000/handoff.md`.
 
 ## Your role: creative director
 - Claude directs everything on the channel: angle, story, narration, look, motion, sound, thumbnail, title,

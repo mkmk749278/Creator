@@ -69,3 +69,15 @@ The owner watches round 5 → independent viewer review r2 (real-audience panel)
 - `aip_master_4k.mp4` (run 42369109565, commit 8776b37): 3840×2160, 60 fps, 554.42 s, −14.1 LUFS, −1.1 dBTP; black flags
   the same as r6; frames at 0:00.5, 1:16, 1:22, 5:00, 7:00, 8:57, 8:59.6, 9:12 match r6.
 - Drive folder moved to `Creator/English/aip-submarines/` (owner, 2026-11-07); r1–r5 and `mix_r5.wav` trashed.
+
+## Fresh-facts gate (2026-11-09, upload day; PLAYBOOK §8)
+Re-searched every row that can change; every narrated line still holds, no edit needed.
+- C13 / vo line 97 ("This October … Hazira … Early next year, it goes to Mazagon Dock"): STW Phase-2 inaugurated 24 Oct 2026
+  at L&T AM Naik complex, Hazira; next energised and tested to Navy protocols, then to MDL for integration targeted
+  early 2027. The Week 2026-10-24, bharatshakti.in, rnamedia.in. Holds (film goes public 10 Nov 2026).
+- C14 (Defence Secretary: fitting around mid-2027): no newer statement found. Holds.
+- C12 / C43 (Khanderi first, "Reports say"): still reported as the likely first boat (rnamedia.in); no refit start
+  reported. Attributed line holds.
+- C26 / lines 15, 79 (P-75I, "leaned towards a German design"): still awaiting CCS; German ambassador Jasper Wieck,
+  "We can sign it any time … the CCS has to give final approval" (Deccan Herald). Not signed. Holds.
+- C16 / C31 (Hangor commissioned April 2026, AIP per its navy): no change; second boat not commissioned. Holds.

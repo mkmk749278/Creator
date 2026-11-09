@@ -1,4 +1,37 @@
-# Handoff · aip-submarines (2026-11-07)
+# Handoff · aip-submarines (2026-11-09)
+
+## Owner decisions, 2026-11-09 (standing)
+- **Claude acts as channel owner and creative director; Kishore gives every approval.**
+- **Six-month goal:** subscribers and monetisation. **Viewer:** all curious Indians, equally.
+- **After release Claude may:** pin the source comment, swap the thumbnail on low CTR (PLAYBOOK §15.2 rule), reply to
+  comments with facts from sources (`claims.csv` only), and edit the title and description from data.
+- **Next film:** roadmap order (Matsya 6000, PLAYBOOK §1.1 #2); data may move a topic up.
+- **This film:** title "Why India's Submarines Must Surface"; main thumbnail **CUT IN HALF** (`thumb_a.jpg`),
+  Test & Compare challenger **CAN'T STAY HIDDEN** (`thumb_c.jpg`) (owner swapped Claude's proposed order).
+  Public **Tuesday 10 November 2026, 11:00 AM IST** (owner chose it over the Thursday/Sunday slots).
+- The YouTube token now carries `yt-analytics.readonly`, `yt-analytics-monetary.readonly` and `youtube.force-ssl`
+  (checked 2026-11-09).
+
+## Release state (2026-11-09)
+- Fresh-facts gate done and logged (`review.md` § Fresh-facts gate): every changeable line holds.
+- **Uploaded** by `scripts/yt_upload.py`: video **`ZnrLVpCbBqQ`** (4K60 master from Drive), private, `publishAt`
+  2026-11-10T05:30:00Z, category Science & Technology, English, altered or synthetic = **Yes** (confirmed by the API),
+  main thumbnail `thumb_a.jpg`, our SRT as English captions, description with chapters (`youtube/metadata.json`).
+- **Still open:**
+  1. **YouTube Analytics API is disabled** in Google Cloud project 125439600792 (the OAuth client's project). The owner
+     enables it once: console.developers.google.com/apis/api/youtubeanalytics.googleapis.com/overview?project=125439600792
+     Then `scripts/yt_audience.py` reads the audience stats (country, device, age, traffic, weekday).
+  2. **Playlist:** the API lists 2 playlists but returns no items, so the film is not yet in "Built on Bharat | The
+     Industrial Backbone". Either the owner adds it (YouTube app → video → Save) or sends the playlist link; then set
+     `playlist_id` in `metadata.json` and run `yt_upload.py … --only playlist`.
+  3. **Test & Compare** (thumb_c as challenger) is Studio-only (no API): the owner sets it in Studio on the desktop site.
+  4. **Source comment** at 11:00 IST: post `pinned_comment` from `metadata.json` (the API can post; pinning is a tap in
+     the Studio app).
+  5. Studio at 24 h (11 Nov, 11:00 IST): impressions > 1,500 and CTR < 2.5% → swap thumbnail (unless Test & Compare
+     is running).
+  6. Close-out (§15.3): merge this branch to `main`.
+
+## Earlier (2026-11-07)
 
 Branch `ccr-9fa27be6-01wq25` (holds rounds 4–6; not yet merged to `main`). Everything below is committed and pushed.
 
