@@ -19,7 +19,7 @@ Rules: `CLAUDE.md` and PLAYBOOK §4 (package), §14 (render and deliver), §15 (
    - the title (under 45 characters, no suffix) and the description (2–4 lines, chapters from `00:00`, no links) also
      pasted in the chat as click-to-copy code blocks. Chapter times come from the exact file uploaded.
 4. **Release plan in the reply:** the slot (Sunday 11:30 AM IST, or Thursday 6:30 PM IST), "upload now and schedule",
-   "Altered or synthetic content = Yes", add to the "Built on Bharat | The Industrial Backbone" playlist, pin the source
+   YouTube "AI use" = No unless the film has AI scenes (CLAUDE.md), add to its playlist ("Practical India" for weekly films, "Built on Bharat" for company histories; `config/youtube_playlists.json`), pin the source
    comment within 60 s, no self-views, read Studio at 24 h.
 5. **Report in plain words:** what changed since the last cut, what is illustrative, any rights or Content ID risk, and
    what you need from the owner.

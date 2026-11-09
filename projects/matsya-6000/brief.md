@@ -1,7 +1,7 @@
 # Film 2 · The 6,000-Metre Titanium Sphere: Inside Matsya 6000
 
-- **Slug:** `matsya-6000` · Drive: `Creator/English/matsya-6000/` (playlist film: "Built on Bharat | The Industrial
-  Backbone")
+- **Slug:** `matsya-6000` · Drive: `Creator/English/matsya-6000/` (playlist: "Practical India | Hard Truths, Simply
+  Explained", `PLYqsLgsTPCfg`)
 - **The machine:** the personnel sphere of Matsya 6000, India's first crewed deep-ocean submersible (NIOT, Ministry of
   Earth Sciences, Samudrayaan / Deep Ocean Mission): a titanium-alloy (Ti-6Al-4V ELI) ball, 2,260 mm across with an
   80 mm wall, rated for about 600 bar, made of two halves joined by one electron-beam weld that ISRO's LPSC developed.

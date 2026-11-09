@@ -1,8 +1,10 @@
 # Creator: Claude Code guide
 
 This repo makes **Be Practical with Kishore**: one long cinematic documentary a week, in English, about the hard
-physical engineering behind India's biggest efforts. The industrial and nation-building films go into the playlist
-**"Built on Bharat | The Industrial Backbone"** (Built on Bharat is no longer a separate channel; owner, 2026-11-05).
+physical engineering behind India's biggest efforts. **Playlists (owner, 2026-11-09):** the weekly films (the roadmap,
+engineering, technology, economy) go into **"Practical India | Hard Truths, Simply Explained"**; **"Built on Bharat |
+The Industrial Backbone"** holds only company-history films (the Tata film now; Amul and others later). Ids in
+`config/youtube_playlists.json`.
 
 This file holds the rules every session follows. **`docs/PLAYBOOK.md` is the only other instruction file**: how each
 stage is done, the measurements and the reason behind every rule. Read the sections your stage needs before starting.

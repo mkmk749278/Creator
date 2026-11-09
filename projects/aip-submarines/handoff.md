@@ -24,10 +24,10 @@
      and **47% of watch time**; mobile 51% of views. Traffic is almost all browse features (home feed, 90%); search is
      under 1%. Subscribers are under 1% of views. What follows: the home-feed package (title + thumbnail) decides
      everything; TV viewers mean big-screen picture quality pays; the 30% average view is the number to grow.
-  2. **Playlists created by the API** (owner asked, 2026-11-09; ids in `config/youtube_playlists.json`): "Built on
-     Bharat | The Industrial Backbone" (`PLbTelSN7Jsrg`: AIP first, then medicines, Tejas, rare earths, Kavach, jet
-     engine, chips) and "Practical India | Hard Truths, Simply Explained" (`PLYqsLgsTPCfg`: the $400B Empire, AI).
-     Unlisted films are left out. Setting Built on Bharat as the official series playlist is a Studio step (desktop).
+  2. **Playlists created by the API** (owner asked, 2026-11-09; ids in `config/youtube_playlists.json`). Owner's scope
+     the same day: "Built on Bharat | The Industrial Backbone" (`PLbTelSN7Jsrg`) holds only company histories (the
+     Tata film; Amul and others later); "Practical India | Hard Truths, Simply Explained" (`PLYqsLgsTPCfg`) holds the
+     weekly films, newest first: AIP, AI, medicines, Tejas, rare earths, Kavach, jet engine, chips.
   3. **Test & Compare** (thumb_c as challenger) is Studio-only (no API): the owner sets it in Studio on the desktop site.
   4. **Source comment** at 11:00 IST: post `pinned_comment` from `metadata.json` (the API can post; pinning is a tap in
      the Studio app).
