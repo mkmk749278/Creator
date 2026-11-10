@@ -46,6 +46,13 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   release pages 2104039 / 2156508 / Nov 2026 trials as PDFs with their photos, IFREMER Nautile photos (check licence:
   NC is not allowed), the USCG Titan report PDF. Re-sent as `footage_requests.md` §B r2.
 
+## Hero renders (2026-11-10)
+- In Drive `renders/` (1080p, 30 fps clips from step-2 frames, checked): H2_pieces, H2_seam, H4_squeeze, H1_dive.
+  Rendering: dark (4 shards, restarted), descent. Still to run: cutaway, weights, assemble, seabed.
+- Edit notes: dive 7.3–7.8 s, the camera clips through the window (black shards, a red flange slice): cover it with
+  a quick dip or blur through the glass in Remotion. Seam's last 6 s and squeeze's last 3 s are slow: add a Remotion
+  push. Squeeze crops the top of the ball at the end (a close-up; fine).
+
 ## Audio r2: the joins re-cut (2026-11-10, owner asked for refinement from two outside audio reviews)
 - The four glitches the review heard were the four take joins, all measured: takes 2-4 ended with a 46-65 ms
   clipped start of the next block's first word; the gaps were exact digital zero; takes 3-5 started at full level.
