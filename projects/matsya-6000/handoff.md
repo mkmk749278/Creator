@@ -46,7 +46,25 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   release pages 2104039 / 2156508 / Nov 2026 trials as PDFs with their photos, IFREMER Nautile photos (check licence:
   NC is not allowed), the USCG Titan report PDF. Re-sent as `footage_requests.md` §B r2.
 
+## Cowork r2 and footage vetting (2026-11-10)
+- **Cowork r2 done with real files** (saved to the laptop's synced `pexels/cowork_dl/` and to Drive
+  `footage/cowork/`, with a proper `list.csv`). Vetted: genuine JPG/PNG/PDF, licences as shown.
+  - USCG Titan Marine Board report (4 Aug 2025, 335 pages, US government work). Claims M12, M-CALC3, M27, M30 now cite
+    it verbatim (executive summary). `claims_check.py` passes (40 claims).
+  - IFREMER Nautile photos, **CC BY 4.0** (surface, recovery, inside with three viewports): usable with credit.
+  - PIB 2104039 wet-test photos (609 px, Kattupalli jetty, 7 Feb 2025); PIB 2156508 is only press-conference photos.
+  - NIOT: small images, no reuse licence shown: design renders of Matsya (Blender reference) and seabed mining
+    references only, never on screen. No NIOT photo of the titanium ball, the 2021 steel ball or OMe 6000 exists.
+  - Not obtainable: the four MoES PDFs (404 for everyone now; M19, M20 rest on the quoted text; sansad.in has the
+    same answers if a re-check is needed), PIB pages as PDF, and a Nov 2026 PIB release (none published).
+  - The old `download_cowork_assets.sh.docx` (AI-written) is still in `footage/cowork/`; ignore it.
+- **The ten clips vetted** on contact sheets (Drive `footage/sheets/`): keep F01 (DD India, best: hall, ball,
+  inspection), F06 (Nautile, square), F08 (Times Now: ball 2023, a black test sphere over the sea, likely 2021: confirm
+  before naming it), F03 as a 480p insert. Reject F02, F04, F05, F07, F09 (foreign subs shown as Indian), F10 (AI-looking).
+  Clean spans and verdicts in `media_manifest.csv`.
+- **Picture gaps** (our animation, labelled): the titanium ball's forging and the seven welds beyond ISRO's video, the
+  Nov 2026 unmanned trials (no real footage yet), Matsya at depth, the Titan comparison.
+
 ## Next session, in order
-1. Contact sheets and clean spans for the ten clips and the PIB photos; `media_manifest.csv` rows.
-2. The owner runs the Cowork r2 request on the laptop (real files only).
-3. Blender hero shots H1–H4 (plan §7, §8a), then Remotion.
+1. Blender hero shots H1–H4 (plan §7, §8a), designed from ISRO's drawing, the PIB photos and NIOT's renders.
+2. Remotion build to `vo/timing.json`, word-by-word sync, using the kept spans in `media_manifest.csv`.
