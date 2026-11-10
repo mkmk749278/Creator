@@ -1,0 +1,11571 @@
+{
+"fps": 60,
+"audio": "mat_vo_full.mp3",
+"sentences": [
+{
+"id": 0,
+"chapter": "Cold open",
+"text": "Six kilometres under the sea, the water will squeeze this titanium ball — with almost one lakh tonnes.",
+"start": 0.0,
+"end": 6.697,
+"ratio": 1.03,
+"margin": 0.436,
+"startFrame": 0,
+"endFrame": 402
+},
+{
+"id": 1,
+"chapter": "Cold open",
+"text": "Imagine you're inside it, with two other Indians.",
+"start": 7.244,
+"end": 9.815,
+"ratio": 0.83,
+"margin": 0.436,
+"startFrame": 435,
+"endFrame": 589
+},
+{
+"id": 2,
+"chapter": "Cold open",
+"text": "This ball is the heart of India's first deep-sea sub for people.",
+"start": 10.49,
+"end": 14.377,
+"ratio": 1.09,
+"margin": 0.314,
+"startFrame": 629,
+"endFrame": 863
+},
+{
+"id": 3,
+"chapter": "Cold open",
+"text": "Its name is Matsya.",
+"start": 14.897,
+"end": 16.309,
+"ratio": 1.11,
+"margin": 0.314,
+"startFrame": 894,
+"endFrame": 979
+},
+{
+"id": 4,
+"chapter": "Cold open",
+"text": "Your whole world is five pieces of titanium, joined by seven welds.",
+"start": 16.944,
+"end": 21.535,
+"ratio": 1.13,
+"margin": 0.477,
+"startFrame": 1017,
+"endFrame": 1292
+},
+{
+"id": 5,
+"chapter": "Cold open",
+"text": "Now here's the strange part.",
+"start": 22.106,
+"end": 23.257,
+"ratio": 0.74,
+"margin": 0.477,
+"startFrame": 1326,
+"endFrame": 1395
+},
+{
+"id": 6,
+"chapter": "Cold open",
+"text": "Isro is known for rockets.",
+"start": 23.797,
+"end": 25.448,
+"ratio": 1.1,
+"margin": 1.168,
+"startFrame": 1428,
+"endFrame": 1527
+},
+{
+"id": 7,
+"chapter": "Cold open",
+"text": "But Isro's hardest weld wasn't for a rocket.",
+"start": 25.758,
+"end": 28.426,
+"ratio": 1.02,
+"margin": 0.441,
+"startFrame": 1545,
+"endFrame": 1706
+},
+{
+"id": 8,
+"chapter": "Cold open",
+"text": "It was for this ball.",
+"start": 28.768,
+"end": 29.809,
+"ratio": 0.91,
+"margin": 0.172,
+"startFrame": 1726,
+"endFrame": 1789
+},
+{
+"id": 9,
+"chapter": "Cold open",
+"text": "That weld was four times thicker than their welding machine could handle before.",
+"start": 30.236,
+"end": 34.523,
+"ratio": 0.86,
+"margin": 0.172,
+"startFrame": 1814,
+"endFrame": 2071
+},
+{
+"id": 10,
+"chapter": "Cold open",
+"text": "It took about seven hundred tries.",
+"start": 35.013,
+"end": 36.968,
+"ratio": 0.98,
+"margin": 9.043,
+"startFrame": 2101,
+"endFrame": 2218
+},
+{
+"id": 11,
+"chapter": "Cold open",
+"text": "So why was it so hard?",
+"start": 37.489,
+"end": 38.721,
+"ratio": 1.08,
+"margin": 0.768,
+"startFrame": 2249,
+"endFrame": 2323
+},
+{
+"id": 12,
+"chapter": "Cold open",
+"text": "And after Titan, how will they know it holds?",
+"start": 39.169,
+"end": 41.63,
+"ratio": 0.87,
+"margin": 0.598,
+"startFrame": 2350,
+"endFrame": 2498
+},
+{
+"id": 13,
+"chapter": "Cold open",
+"text": "By the end, you'll know both.",
+"start": 42.226,
+"end": 43.737,
+"ratio": 0.86,
+"margin": 0.2,
+"startFrame": 2534,
+"endFrame": 2624
+},
+{
+"id": 14,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "First, I want you to feel what six kilometres of sea actually does.",
+"start": 44.255,
+"end": 48.496,
+"ratio": 1.03,
+"margin": 0.2,
+"startFrame": 2655,
+"endFrame": 2910
+},
+{
+"id": 15,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "Every ten metres you go down, the sea presses on you as hard as all the air above you.",
+"start": 49.022,
+"end": 54.535,
+"ratio": 1.11,
+"margin": 0.32,
+"startFrame": 2941,
+"endFrame": 3272
+},
+{
+"id": 16,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "Once more.",
+"start": 55.072,
+"end": 55.542,
+"ratio": 0.83,
+"margin": 3.615,
+"startFrame": 3304,
+"endFrame": 3333
+},
+{
+"id": 17,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "And again.",
+"start": 56.089,
+"end": 56.644,
+"ratio": 0.98,
+"margin": 9.9,
+"startFrame": 3365,
+"endFrame": 3399
+},
+{
+"id": 18,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "And again.",
+"start": 57.177,
+"end": 58.088,
+"ratio": 1.6,
+"margin": 2.283,
+"startFrame": 3431,
+"endFrame": 3485
+},
+{
+"id": 19,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "At six thousand metres, hold out your finger.",
+"start": 58.632,
+"end": 61.298,
+"ratio": 0.91,
+"margin": 0.424,
+"startFrame": 3518,
+"endFrame": 3678
+},
+{
+"id": 20,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "The water would press on your fingernail with about six hundred kilos.",
+"start": 61.837,
+"end": 65.466,
+"ratio": 0.88,
+"margin": 0.424,
+"startFrame": 3710,
+"endFrame": 3928
+},
+{
+"id": 21,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "That's a full-grown buffalo, standing on one fingernail.",
+"start": 65.913,
+"end": 69.079,
+"ratio": 0.93,
+"margin": 0.737,
+"startFrame": 3955,
+"endFrame": 4145
+},
+{
+"id": 22,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "Now cover the whole ball with fingernails.",
+"start": 69.68,
+"end": 71.783,
+"ratio": 0.84,
+"margin": 0.92,
+"startFrame": 4181,
+"endFrame": 4307
+},
+{
+"id": 23,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "Every one of them carries a buffalo.",
+"start": 72.203,
+"end": 74.487,
+"ratio": 1.11,
+"margin": 0.304,
+"startFrame": 4332,
+"endFrame": 4469
+},
+{
+"id": 24,
+"chapter": "How strong is the pressure 6 km deep",
+"text": "Add it all up, and the sea squeezes this ball with almost one lakh tonnes, from every side at once.",
+"start": 75.019,
+"end": 81.699,
+"ratio": 1.11,
+"margin": 0.304,
+"startFrame": 4501,
+"endFrame": 4902
+},
+{
+"id": 25,
+"chapter": "Could Matsya end like Titan",
+"text": "So you're probably asking the same question I asked.",
+"start": 82.263,
+"end": 84.921,
+"ratio": 0.89,
+"margin": 0.343,
+"startFrame": 4936,
+"endFrame": 5095
+},
+{
+"id": 26,
+"chapter": "Could Matsya end like Titan",
+"text": "Could this end like Titan?",
+"start": 85.328,
+"end": 86.713,
+"ratio": 0.93,
+"margin": 9.9,
+"startFrame": 5120,
+"endFrame": 5203
+},
+{
+"id": 27,
+"chapter": "Could Matsya end like Titan",
+"text": "You may remember it.",
+"start": 87.264,
+"end": 88.109,
+"ratio": 0.74,
+"margin": 0.625,
+"startFrame": 5236,
+"endFrame": 5287
+},
+{
+"id": 28,
+"chapter": "Could Matsya end like Titan",
+"text": "In June twenty twenty-three, Titan broke apart on its way down to the Titanic.",
+"start": 88.511,
+"end": 92.98,
+"ratio": 0.93,
+"margin": 0.625,
+"startFrame": 5311,
+"endFrame": 5579
+},
+{
+"id": 29,
+"chapter": "Could Matsya end like Titan",
+"text": "Five people died.",
+"start": 93.338,
+"end": 94.379,
+"ratio": 1.05,
+"margin": 2.428,
+"startFrame": 5600,
+"endFrame": 5663
+},
+{
+"id": 30,
+"chapter": "Could Matsya end like Titan",
+"text": "Its hull, as you may know, was carbon fibre.",
+"start": 95.204,
+"end": 97.994,
+"ratio": 1.19,
+"margin": 2.069,
+"startFrame": 5712,
+"endFrame": 5880
+},
+{
+"id": 31,
+"chapter": "Could Matsya end like Titan",
+"text": "After earlier dives, its layers had started to come apart, and it kept diving anyway.",
+"start": 98.406,
+"end": 103.598,
+"ratio": 0.98,
+"margin": 0.439,
+"startFrame": 5904,
+"endFrame": 6216
+},
+{
+"id": 32,
+"chapter": "Could Matsya end like Titan",
+"text": "The U-S Coast Guard said the company's own failures caused it.",
+"start": 103.988,
+"end": 107.524,
+"ratio": 1.01,
+"margin": 0.206,
+"startFrame": 6239,
+"endFrame": 6451
+},
+{
+"id": 33,
+"chapter": "Could Matsya end like Titan",
+"text": "So what's different here?",
+"start": 107.89,
+"end": 109.318,
+"ratio": 0.87,
+"margin": 0.206,
+"startFrame": 6473,
+"endFrame": 6559
+},
+{
+"id": 34,
+"chapter": "Could Matsya end like Titan",
+"text": "Three things.",
+"start": 109.801,
+"end": 110.443,
+"ratio": 0.82,
+"margin": 1.077,
+"startFrame": 6588,
+"endFrame": 6627
+},
+{
+"id": 35,
+"chapter": "Could Matsya end like Titan",
+"text": "The material is titanium, the metal deep-sea subs have trusted for more than fifty years.",
+"start": 110.792,
+"end": 115.868,
+"ratio": 0.95,
+"margin": 0.25,
+"startFrame": 6648,
+"endFrame": 6952
+},
+{
+"id": 36,
+"chapter": "Could Matsya end like Titan",
+"text": "The shape is a ball.",
+"start": 116.224,
+"end": 117.607,
+"ratio": 1.11,
+"margin": 0.25,
+"startFrame": 6973,
+"endFrame": 7056
+},
+{
+"id": 37,
+"chapter": "Could Matsya end like Titan",
+"text": "And an outside inspection company checks and approves the work.",
+"start": 117.975,
+"end": 121.619,
+"ratio": 0.97,
+"margin": 0.337,
+"startFrame": 7078,
+"endFrame": 7297
+},
+{
+"id": 38,
+"chapter": "Could Matsya end like Titan",
+"text": "For Matsya, that company is from Norway.",
+"start": 121.941,
+"end": 124.323,
+"ratio": 1.05,
+"margin": 9.9,
+"startFrame": 7316,
+"endFrame": 7459
+},
+{
+"id": 39,
+"chapter": "Could Matsya end like Titan",
+"text": "And if something goes wrong down there?",
+"start": 124.647,
+"end": 126.576,
+"ratio": 0.85,
+"margin": 9.9,
+"startFrame": 7479,
+"endFrame": 7595
+},
+{
+"id": 40,
+"chapter": "Could Matsya end like Titan",
+"text": "The crew can drop heavy weights, and the sub rises back up.",
+"start": 126.932,
+"end": 130.26,
+"ratio": 1.02,
+"margin": 9.9,
+"startFrame": 7616,
+"endFrame": 7816
+},
+{
+"id": 41,
+"chapter": "Could Matsya end like Titan",
+"text": "And they carry enough air for ninety-six hours.",
+"start": 130.565,
+"end": 133.354,
+"ratio": 1.03,
+"margin": 9.9,
+"startFrame": 7834,
+"endFrame": 8001
+},
+{
+"id": 42,
+"chapter": "Why deep-sea subs use a ball",
+"text": "But why a ball?",
+"start": 133.751,
+"end": 134.973,
+"ratio": 1.56,
+"margin": 9.9,
+"startFrame": 8025,
+"endFrame": 8098
+},
+{
+"id": 43,
+"chapter": "Why deep-sea subs use a ball",
+"text": "Why not a long tube, like a normal submarine?",
+"start": 135.244,
+"end": 137.691,
+"ratio": 0.98,
+"margin": 9.9,
+"startFrame": 8115,
+"endFrame": 8261
+},
+{
+"id": 44,
+"chapter": "Why deep-sea subs use a ball",
+"text": "Squeeze a ball in your hand.",
+"start": 138.027,
+"end": 139.352,
+"ratio": 0.85,
+"margin": 9.9,
+"startFrame": 8282,
+"endFrame": 8361
+},
+{
+"id": 45,
+"chapter": "Why deep-sea subs use a ball",
+"text": "You can feel the push spread all the way round.",
+"start": 139.647,
+"end": 142.236,
+"ratio": 0.98,
+"margin": 9.9,
+"startFrame": 8379,
+"endFrame": 8534
+},
+{
+"id": 46,
+"chapter": "Why deep-sea subs use a ball",
+"text": "There's no corner and no flat side where the pressure can win.",
+"start": 142.565,
+"end": 145.817,
+"ratio": 0.93,
+"margin": 9.9,
+"startFrame": 8554,
+"endFrame": 8749
+},
+{
+"id": 47,
+"chapter": "Why deep-sea subs use a ball",
+"text": "Even America's famous deep-sea sub, Alvin, uses a ball.",
+"start": 146.089,
+"end": 149.57,
+"ratio": 1.16,
+"margin": 1.845,
+"startFrame": 8765,
+"endFrame": 8974
+},
+{
+"id": 48,
+"chapter": "Why deep-sea subs use a ball",
+"text": "Its first one, in nineteen sixty-four, was steel.",
+"start": 149.842,
+"end": 152.704,
+"ratio": 1.0,
+"margin": 0.152,
+"startFrame": 8991,
+"endFrame": 9162
+},
+{
+"id": 49,
+"chapter": "Why deep-sea subs use a ball",
+"text": "In nineteen seventy-three, they changed it to titanium, and Alvin could go almost twice as deep.",
+"start": 152.983,
+"end": 158.589,
+"ratio": 0.98,
+"margin": 0.152,
+"startFrame": 9179,
+"endFrame": 9515
+},
+{
+"id": 50,
+"chapter": "Why deep-sea subs use a ball",
+"text": "India walked the same road.",
+"start": 158.885,
+"end": 160.37,
+"ratio": 0.95,
+"margin": 1.19,
+"startFrame": 9533,
+"endFrame": 9622
+},
+{
+"id": 51,
+"chapter": "Why deep-sea subs use a ball",
+"text": "In twenty twenty-one, it lowered a test ball of plain steel six hundred metres into the Bay of Bengal.",
+"start": 160.647,
+"end": 166.432,
+"ratio": 0.98,
+"margin": 1.303,
+"startFrame": 9639,
+"endFrame": 9986
+},
+{
+"id": 52,
+"chapter": "Why deep-sea subs use a ball",
+"text": "Then came titanium.",
+"start": 166.693,
+"end": 168.022,
+"ratio": 1.17,
+"margin": 2.115,
+"startFrame": 10002,
+"endFrame": 10081
+},
+{
+"id": 53,
+"chapter": "ISRO's hardest weld",
+"text": "And this, you see, is where Isro comes in.",
+"start": 168.342,
+"end": 170.745,
+"ratio": 1.09,
+"margin": 9.9,
+"startFrame": 10101,
+"endFrame": 10245
+},
+{
+"id": 54,
+"chapter": "ISRO's hardest weld",
+"text": "Remember that weld I told you about?",
+"start": 171.037,
+"end": 172.749,
+"ratio": 0.83,
+"margin": 9.9,
+"startFrame": 10262,
+"endFrame": 10365
+},
+{
+"id": 55,
+"chapter": "ISRO's hardest weld",
+"text": "You can't make a ball this big in one piece.",
+"start": 173.029,
+"end": 175.74,
+"ratio": 1.15,
+"margin": 9.9,
+"startFrame": 10382,
+"endFrame": 10544
+},
+{
+"id": 56,
+"chapter": "ISRO's hardest weld",
+"text": "So how do you make it?",
+"start": 175.99,
+"end": 177.17,
+"ratio": 0.23,
+"margin": 9.9,
+"startFrame": 10559,
+"endFrame": 10630
+},
+{
+"id": 57,
+"chapter": "ISRO's hardest weld",
+"text": "Isro's drawing shows five pieces.",
+"start": 177.54,
+"end": 179.63,
+"ratio": 0.45,
+"margin": 9.9,
+"startFrame": 10652,
+"endFrame": 10778
+},
+{
+"id": 58,
+"chapter": "ISRO's hardest weld",
+"text": "A top hatch.",
+"start": 179.91,
+"end": 180.66,
+"ratio": 3.27,
+"margin": 9.9,
+"startFrame": 10795,
+"endFrame": 10840
+},
+{
+"id": 59,
+"chapter": "ISRO's hardest weld",
+"text": "Three rings.",
+"start": 180.96,
+"end": 181.63,
+"ratio": 1.05,
+"margin": 9.9,
+"startFrame": 10858,
+"endFrame": 10898
+},
+{
+"id": 60,
+"chapter": "ISRO's hardest weld",
+"text": "A bottom dome.",
+"start": 181.9,
+"end": 182.75,
+"ratio": 0.85,
+"margin": 9.9,
+"startFrame": 10914,
+"endFrame": 10965
+},
+{
+"id": 61,
+"chapter": "ISRO's hardest weld",
+"text": "Together, they weigh about five and a half tonnes.",
+"start": 183.03,
+"end": 185.74,
+"ratio": 1.26,
+"margin": 9.9,
+"startFrame": 10982,
+"endFrame": 11144
+},
+{
+"id": 62,
+"chapter": "ISRO's hardest weld",
+"text": "Seven welds join them.",
+"start": 186.543,
+"end": 187.99,
+"ratio": 1.13,
+"margin": 0.377,
+"startFrame": 11193,
+"endFrame": 11279
+},
+{
+"id": 63,
+"chapter": "ISRO's hardest weld",
+"text": "Four go right round the ball, like belts.",
+"start": 188.376,
+"end": 190.856,
+"ratio": 1.02,
+"margin": 0.495,
+"startFrame": 11303,
+"endFrame": 11451
+},
+{
+"id": 64,
+"chapter": "ISRO's hardest weld",
+"text": "Three go round its windows.",
+"start": 191.321,
+"end": 192.913,
+"ratio": 1.02,
+"margin": 0.495,
+"startFrame": 11479,
+"endFrame": 11575
+},
+{
+"id": 65,
+"chapter": "ISRO's hardest weld",
+"text": "Here's the problem you'd face.",
+"start": 193.362,
+"end": 194.773,
+"ratio": 0.86,
+"margin": 9.9,
+"startFrame": 11602,
+"endFrame": 11686
+},
+{
+"id": 66,
+"chapter": "ISRO's hardest weld",
+"text": "Titanium is fussy.",
+"start": 195.166,
+"end": 196.729,
+"ratio": 1.46,
+"margin": 0.986,
+"startFrame": 11710,
+"endFrame": 11804
+},
+{
+"id": 67,
+"chapter": "ISRO's hardest weld",
+"text": "Heat it in normal air, and it grabs oxygen and nitrogen.",
+"start": 197.235,
+"end": 200.735,
+"ratio": 1.05,
+"margin": 0.986,
+"startFrame": 11834,
+"endFrame": 12044
+},
+{
+"id": 68,
+"chapter": "ISRO's hardest weld",
+"text": "The weld fills with tiny holes, and it becomes weak and easy to crack.",
+"start": 201.165,
+"end": 205.643,
+"ratio": 1.14,
+"margin": 1.046,
+"startFrame": 12070,
+"endFrame": 12339
+},
+{
+"id": 69,
+"chapter": "ISRO's hardest weld",
+"text": "So you can't weld it with a normal flame.",
+"start": 205.988,
+"end": 208.331,
+"ratio": 1.06,
+"margin": 9.9,
+"startFrame": 12359,
+"endFrame": 12500
+},
+{
+"id": 70,
+"chapter": "ISRO's hardest weld",
+"text": "What do you do?",
+"start": 208.811,
+"end": 209.333,
+"ratio": 0.67,
+"margin": 9.9,
+"startFrame": 12529,
+"endFrame": 12560
+},
+{
+"id": 71,
+"chapter": "ISRO's hardest weld",
+"text": "Isro used a beam of electrons, fired inside a vacuum.",
+"start": 209.83,
+"end": 213.728,
+"ratio": 1.3,
+"margin": 0.201,
+"startFrame": 12590,
+"endFrame": 12824
+},
+{
+"id": 72,
+"chapter": "ISRO's hardest weld",
+"text": "No air, so nothing can get in.",
+"start": 214.127,
+"end": 216.231,
+"ratio": 1.22,
+"margin": 0.2,
+"startFrame": 12848,
+"endFrame": 12974
+},
+{
+"id": 73,
+"chapter": "ISRO's hardest weld",
+"text": "But there was a catch.",
+"start": 216.738,
+"end": 218.04,
+"ratio": 0.86,
+"margin": 0.2,
+"startFrame": 13004,
+"endFrame": 13082
+},
+{
+"id": 74,
+"chapter": "ISRO's hardest weld",
+"text": "Isro's welding centre in Bengaluru could weld up to two centimetres thick.",
+"start": 218.372,
+"end": 222.524,
+"ratio": 0.92,
+"margin": 0.249,
+"startFrame": 13102,
+"endFrame": 13351
+},
+{
+"id": 75,
+"chapter": "ISRO's hardest weld",
+"text": "This wall is eight.",
+"start": 222.934,
+"end": 224.416,
+"ratio": 1.23,
+"margin": 0.249,
+"startFrame": 13376,
+"endFrame": 13465
+},
+{
+"id": 76,
+"chapter": "ISRO's hardest weld",
+"text": "So they made their machine much more powerful.",
+"start": 224.824,
+"end": 227.434,
+"ratio": 0.96,
+"margin": 0.296,
+"startFrame": 13489,
+"endFrame": 13646
+},
+{
+"id": 77,
+"chapter": "ISRO's hardest weld",
+"text": "Then they practised.",
+"start": 227.84,
+"end": 229.065,
+"ratio": 0.88,
+"margin": 0.298,
+"startFrame": 13670,
+"endFrame": 13744
+},
+{
+"id": 78,
+"chapter": "ISRO's hardest weld",
+"text": "About seven hundred trial welds, to get the settings exactly right.",
+"start": 229.385,
+"end": 233.485,
+"ratio": 1.01,
+"margin": 0.916,
+"startFrame": 13763,
+"endFrame": 14009
+},
+{
+"id": 79,
+"chapter": "ISRO's hardest weld",
+"text": "Then came the real thing.",
+"start": 233.934,
+"end": 235.455,
+"ratio": 1.07,
+"margin": 1.238,
+"startFrame": 14036,
+"endFrame": 14127
+},
+{
+"id": 80,
+"chapter": "ISRO's hardest weld",
+"text": "One of the big welds that go right round the ball.",
+"start": 235.844,
+"end": 238.524,
+"ratio": 0.97,
+"margin": 0.647,
+"startFrame": 14151,
+"endFrame": 14311
+},
+{
+"id": 81,
+"chapter": "ISRO's hardest weld",
+"text": "Eight centimetres deep, and about seven metres long.",
+"start": 238.911,
+"end": 242.011,
+"ratio": 0.96,
+"margin": 0.647,
+"startFrame": 14335,
+"endFrame": 14521
+},
+{
+"id": 82,
+"chapter": "ISRO's hardest weld",
+"text": "It took thirty-two minutes, in one go.",
+"start": 242.401,
+"end": 245.02,
+"ratio": 1.19,
+"margin": 0.333,
+"startFrame": 14544,
+"endFrame": 14701
+},
+{
+"id": 83,
+"chapter": "ISRO's hardest weld",
+"text": "Isro says it was the first time anyone in India had made a weld like this.",
+"start": 245.436,
+"end": 249.853,
+"ratio": 1.03,
+"margin": 0.333,
+"startFrame": 14726,
+"endFrame": 14991
+},
+{
+"id": 84,
+"chapter": "ISRO's hardest weld",
+"text": "But then, how do you know it's good inside?",
+"start": 250.306,
+"end": 252.396,
+"ratio": 0.85,
+"margin": 0.361,
+"startFrame": 15018,
+"endFrame": 15144
+},
+{
+"id": 85,
+"chapter": "ISRO's hardest weld",
+"text": "You can't cut it open, can you?",
+"start": 252.758,
+"end": 254.288,
+"ratio": 0.88,
+"margin": 0.267,
+"startFrame": 15165,
+"endFrame": 15257
+},
+{
+"id": 86,
+"chapter": "ISRO's hardest weld",
+"text": "So they built X-ray machines strong enough to see through eight centimetres of titanium.",
+"start": 254.667,
+"end": 260.011,
+"ratio": 0.96,
+"margin": 0.267,
+"startFrame": 15280,
+"endFrame": 15601
+},
+{
+"id": 87,
+"chapter": "ISRO's hardest weld",
+"text": "They used sound waves too, listening for hidden cracks.",
+"start": 260.336,
+"end": 263.39,
+"ratio": 0.88,
+"margin": 0.364,
+"startFrame": 15620,
+"endFrame": 15803
+},
+{
+"id": 88,
+"chapter": "ISRO's hardest weld",
+"text": "And an outside agency has to certify it.",
+"start": 263.719,
+"end": 266.493,
+"ratio": 1.22,
+"margin": 1.005,
+"startFrame": 15823,
+"endFrame": 15990
+},
+{
+"id": 89,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "Now step inside with me.",
+"start": 266.914,
+"end": 268.349,
+"ratio": 1.06,
+"margin": 1.079,
+"startFrame": 16015,
+"endFrame": 16101
+},
+{
+"id": 90,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "The wall is eight centimetres thick, so inside, you get just over two metres.",
+"start": 268.788,
+"end": 273.7,
+"ratio": 1.0,
+"margin": 0.151,
+"startFrame": 16127,
+"endFrame": 16422
+},
+{
+"id": 91,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "Lie down in there, and your head and your feet would almost touch the walls.",
+"start": 274.011,
+"end": 278.623,
+"ratio": 0.99,
+"margin": 0.151,
+"startFrame": 16441,
+"endFrame": 16717
+},
+{
+"id": 92,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "You and two others sit here, for a normal dive of twelve hours.",
+"start": 279.423,
+"end": 283.377,
+"ratio": 1.08,
+"margin": 0.298,
+"startFrame": 16765,
+"endFrame": 17003
+},
+{
+"id": 93,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "Oxygen comes in.",
+"start": 283.866,
+"end": 284.976,
+"ratio": 1.2,
+"margin": 1.723,
+"startFrame": 17032,
+"endFrame": 17099
+},
+{
+"id": 94,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "The carbon dioxide you breathe out gets cleaned away.",
+"start": 285.203,
+"end": 287.964,
+"ratio": 0.88,
+"margin": 0.205,
+"startFrame": 17112,
+"endFrame": 17278
+},
+{
+"id": 95,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "And who will sit where you're sitting?",
+"start": 288.38,
+"end": 290.363,
+"ratio": 0.85,
+"margin": 0.205,
+"startFrame": 17303,
+"endFrame": 17422
+},
+{
+"id": 96,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "In August twenty twenty-five, India sent its first two trained people down in a French sub called Noh-teel.",
+"start": 290.81,
+"end": 297.051,
+"ratio": 0.99,
+"margin": 0.465,
+"startFrame": 17449,
+"endFrame": 17823
+},
+{
+"id": 97,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "Raju Ramesh, a scientist, reached about four thousand metres.",
+"start": 297.416,
+"end": 301.246,
+"ratio": 1.02,
+"margin": 0.083,
+"startFrame": 17845,
+"endFrame": 18075
+},
+{
+"id": 98,
+"chapter": "Inside Matsya, and India's first aquanauts",
+"text": "The next day, Commander Jatinder Pal Singh, a retired Navy officer, reached about five thousand.",
+"start": 301.601,
+"end": 307.204,
+"ratio": 0.96,
+"margin": 0.083,
+"startFrame": 18096,
+"endFrame": 18432
+},
+{
+"id": 99,
+"chapter": "The foam, and the delay",
+"text": "So is Matsya ready, do you think?",
+"start": 307.529,
+"end": 309.738,
+"ratio": 1.24,
+"margin": 5.114,
+"startFrame": 18452,
+"endFrame": 18584
+},
+{
+"id": 100,
+"chapter": "The foam, and the delay",
+"text": "Not quite.",
+"start": 310.184,
+"end": 310.834,
+"ratio": 1.14,
+"margin": 9.9,
+"startFrame": 18611,
+"endFrame": 18650
+},
+{
+"id": 101,
+"chapter": "The foam, and the delay",
+"text": "There's one more problem.",
+"start": 311.083,
+"end": 312.44,
+"ratio": 0.95,
+"margin": 0.813,
+"startFrame": 18665,
+"endFrame": 18746
+},
+{
+"id": 102,
+"chapter": "The foam, and the delay",
+"text": "This ball is only part of the sub.",
+"start": 312.809,
+"end": 314.923,
+"ratio": 1.04,
+"margin": 0.267,
+"startFrame": 18769,
+"endFrame": 18895
+},
+{
+"id": 103,
+"chapter": "The foam, and the delay",
+"text": "Around it go batteries, lights, motors and arms.",
+"start": 315.244,
+"end": 318.817,
+"ratio": 1.32,
+"margin": 0.267,
+"startFrame": 18915,
+"endFrame": 19129
+},
+{
+"id": 104,
+"chapter": "The foam, and the delay",
+"text": "Put it all together, and the whole thing sinks like a stone.",
+"start": 319.105,
+"end": 322.449,
+"ratio": 0.95,
+"margin": 0.465,
+"startFrame": 19146,
+"endFrame": 19347
+},
+{
+"id": 105,
+"chapter": "The foam, and the delay",
+"text": "So it's wrapped in a special foam.",
+"start": 322.742,
+"end": 324.993,
+"ratio": 1.22,
+"margin": 0.487,
+"startFrame": 19365,
+"endFrame": 19500
+},
+{
+"id": 106,
+"chapter": "The foam, and the delay",
+"text": "The foam is full of tiny hollow glass bubbles, set in hard plastic.",
+"start": 325.274,
+"end": 329.742,
+"ratio": 1.14,
+"margin": 0.487,
+"startFrame": 19516,
+"endFrame": 19785
+},
+{
+"id": 107,
+"chapter": "The foam, and the delay",
+"text": "The titanium takes the squeeze.",
+"start": 330.01,
+"end": 331.725,
+"ratio": 0.93,
+"margin": 2.043,
+"startFrame": 19801,
+"endFrame": 19904
+},
+{
+"id": 108,
+"chapter": "The foam, and the delay",
+"text": "The foam brings everyone home.",
+"start": 331.985,
+"end": 333.878,
+"ratio": 1.06,
+"margin": 1.304,
+"startFrame": 19919,
+"endFrame": 20033
+},
+{
+"id": 109,
+"chapter": "The foam, and the delay",
+"text": "That foam had to come from France, and it arrived late.",
+"start": 334.198,
+"end": 337.761,
+"ratio": 1.11,
+"margin": 0.267,
+"startFrame": 20052,
+"endFrame": 20266
+},
+{
+"id": 110,
+"chapter": "The foam, and the delay",
+"text": "Then, early this year, officials said a small crack was found in its cover.",
+"start": 338.039,
+"end": 342.486,
+"ratio": 1.06,
+"margin": 0.267,
+"startFrame": 20282,
+"endFrame": 20549
+},
+{
+"id": 111,
+"chapter": "The foam, and the delay",
+"text": "That held up the first test dive, to five hundred metres.",
+"start": 342.758,
+"end": 346.049,
+"ratio": 0.98,
+"margin": 0.382,
+"startFrame": 20565,
+"endFrame": 20763
+},
+{
+"id": 112,
+"chapter": "The foam, and the delay",
+"text": "On the sixth of November, Matsya finished another round of trials near Chennai, without people inside.",
+"start": 346.291,
+"end": 351.632,
+"ratio": 0.84,
+"margin": 0.355,
+"startFrame": 20777,
+"endFrame": 21098
+},
+{
+"id": 113,
+"chapter": "The foam, and the delay",
+"text": "Officials have said the full six kilometre dive could come in twenty twenty-seven.",
+"start": 351.875,
+"end": 356.638,
+"ratio": 0.98,
+"margin": 0.174,
+"startFrame": 21112,
+"endFrame": 21398
+},
+{
+"id": 114,
+"chapter": "What's on India's seabed",
+"text": "So why do all this, you ask?",
+"start": 356.901,
+"end": 358.816,
+"ratio": 1.24,
+"margin": 0.174,
+"startFrame": 21414,
+"endFrame": 21529
+},
+{
+"id": 115,
+"chapter": "What's on India's seabed",
+"text": "What's down there that's worth it?",
+"start": 359.136,
+"end": 361.1,
+"ratio": 0.91,
+"margin": 0.246,
+"startFrame": 21548,
+"endFrame": 21666
+},
+{
+"id": 116,
+"chapter": "What's on India's seabed",
+"text": "Six thousand metres down, you'd see no sunlight at all.",
+"start": 361.913,
+"end": 365.366,
+"ratio": 1.07,
+"margin": 0.246,
+"startFrame": 21715,
+"endFrame": 21922
+},
+{
+"id": 117,
+"chapter": "What's on India's seabed",
+"text": "Your lights are the only lights for six kilometres.",
+"start": 365.852,
+"end": 368.98,
+"ratio": 0.99,
+"margin": 0.395,
+"startFrame": 21951,
+"endFrame": 22139
+},
+{
+"id": 118,
+"chapter": "What's on India's seabed",
+"text": "Outside your window, the water is close to freezing.",
+"start": 369.451,
+"end": 372.752,
+"ratio": 1.0,
+"margin": 0.395,
+"startFrame": 22167,
+"endFrame": 22365
+},
+{
+"id": 119,
+"chapter": "What's on India's seabed",
+"text": "And the seafloor is covered with black lumps of metal, like stones.",
+"start": 373.123,
+"end": 377.189,
+"ratio": 0.99,
+"margin": 0.304,
+"startFrame": 22387,
+"endFrame": 22631
+},
+{
+"id": 120,
+"chapter": "What's on India's seabed",
+"text": "India has the right to explore a big patch of that seabed, in the middle of the Indian Ocean.",
+"start": 377.688,
+"end": 382.84,
+"ratio": 0.95,
+"margin": 0.304,
+"startFrame": 22661,
+"endFrame": 22970
+},
+{
+"id": 121,
+"chapter": "What's on India's seabed",
+"text": "It has held that right since two thousand and two.",
+"start": 383.289,
+"end": 385.706,
+"ratio": 0.85,
+"margin": 0.473,
+"startFrame": 22997,
+"endFrame": 23142
+},
+{
+"id": 122,
+"chapter": "What's on India's seabed",
+"text": "In twenty twenty-two, an Indian robot sub surveyed it, more than five kilometres down.",
+"start": 386.101,
+"end": 391.226,
+"ratio": 1.0,
+"margin": 0.584,
+"startFrame": 23166,
+"endFrame": 23474
+},
+{
+"id": 123,
+"chapter": "What's on India's seabed",
+"text": "Those lumps hold nickel, copper and cobalt.",
+"start": 391.574,
+"end": 394.476,
+"ratio": 1.09,
+"margin": 0.353,
+"startFrame": 23494,
+"endFrame": 23669
+},
+{
+"id": 124,
+"chapter": "What's on India's seabed",
+"text": "Metals that go into batteries, like the one in your phone.",
+"start": 394.793,
+"end": 397.601,
+"ratio": 0.79,
+"margin": 0.085,
+"startFrame": 23688,
+"endFrame": 23856
+},
+{
+"id": 125,
+"chapter": "What's on India's seabed",
+"text": "But let me be honest with you.",
+"start": 397.913,
+"end": 399.451,
+"ratio": 0.79,
+"margin": 0.085,
+"startFrame": 23875,
+"endFrame": 23967
+},
+{
+"id": 126,
+"chapter": "What's on India's seabed",
+"text": "Nobody is allowed to mine there yet.",
+"start": 399.783,
+"end": 401.877,
+"ratio": 1.01,
+"margin": 2.083,
+"startFrame": 23987,
+"endFrame": 24113
+},
+{
+"id": 127,
+"chapter": "What's on India's seabed",
+"text": "The world is still writing the rules.",
+"start": 402.242,
+"end": 404.173,
+"ratio": 0.9,
+"margin": 9.9,
+"startFrame": 24135,
+"endFrame": 24250
+},
+{
+"id": 128,
+"chapter": "What's on India's seabed",
+"text": "Matsya is not a mining machine.",
+"start": 404.493,
+"end": 406.415,
+"ratio": 1.08,
+"margin": 9.9,
+"startFrame": 24270,
+"endFrame": 24385
+},
+{
+"id": 129,
+"chapter": "What's on India's seabed",
+"text": "It's a pair of eyes.",
+"start": 406.754,
+"end": 407.854,
+"ratio": 1.1,
+"margin": 0.195,
+"startFrame": 24405,
+"endFrame": 24471
+},
+{
+"id": 130,
+"chapter": "What's on India's seabed",
+"text": "And you might ask, what about China?",
+"start": 408.165,
+"end": 410.415,
+"ratio": 0.94,
+"margin": 0.195,
+"startFrame": 24490,
+"endFrame": 24625
+},
+{
+"id": 131,
+"chapter": "What's on India's seabed",
+"text": "Its sub has already taken people to the deepest point on Earth, almost eleven thousand metres.",
+"start": 410.773,
+"end": 416.581,
+"ratio": 1.01,
+"margin": 0.227,
+"startFrame": 24646,
+"endFrame": 24995
+},
+{
+"id": 132,
+"chapter": "What's on India's seabed",
+"text": "India's first goal is six thousand, deep enough for the seabed it wants to explore.",
+"start": 416.886,
+"end": 421.789,
+"ratio": 0.95,
+"margin": 0.227,
+"startFrame": 25013,
+"endFrame": 25307
+},
+{
+"id": 133,
+"chapter": "The last test",
+"text": "Now, one last time, come back inside the ball with me.",
+"start": 422.085,
+"end": 425.249,
+"ratio": 0.93,
+"margin": 0.241,
+"startFrame": 25325,
+"endFrame": 25515
+},
+{
+"id": 134,
+"chapter": "The last test",
+"text": "I'll be straight with you.",
+"start": 425.607,
+"end": 426.544,
+"ratio": 0.66,
+"margin": 0.938,
+"startFrame": 25536,
+"endFrame": 25593
+},
+{
+"id": 135,
+"chapter": "The last test",
+"text": "Matsya has not been to sea with people in it yet.",
+"start": 426.858,
+"end": 429.783,
+"ratio": 1.01,
+"margin": 0.203,
+"startFrame": 25611,
+"endFrame": 25787
+},
+{
+"id": 136,
+"chapter": "The last test",
+"text": "And no public report says this titanium ball has been tested at full pressure yet.",
+"start": 430.075,
+"end": 435.117,
+"ratio": 1.06,
+"margin": 0.203,
+"startFrame": 25804,
+"endFrame": 26107
+},
+{
+"id": 137,
+"chapter": "The last test",
+"text": "So the last test will be the sea itself.",
+"start": 435.39,
+"end": 438.011,
+"ratio": 1.09,
+"margin": 0.263,
+"startFrame": 26123,
+"endFrame": 26281
+},
+{
+"id": 138,
+"chapter": "The last test",
+"text": "One dive.",
+"start": 438.329,
+"end": 438.979,
+"ratio": 1.3,
+"margin": 1.528,
+"startFrame": 26300,
+"endFrame": 26339
+},
+{
+"id": 139,
+"chapter": "The last test",
+"text": "Six kilometres.",
+"start": 439.353,
+"end": 440.438,
+"ratio": 1.17,
+"margin": 1.239,
+"startFrame": 26361,
+"endFrame": 26426
+},
+{
+"id": 140,
+"chapter": "The last test",
+"text": "Every number in this film, checked at once.",
+"start": 440.709,
+"end": 443.362,
+"ratio": 1.01,
+"margin": 0.81,
+"startFrame": 26443,
+"endFrame": 26602
+},
+{
+"id": 141,
+"chapter": "The last test",
+"text": "This story isn't over.",
+"start": 443.67,
+"end": 445.067,
+"ratio": 1.15,
+"margin": 0.81,
+"startFrame": 26620,
+"endFrame": 26704
+},
+{
+"id": 142,
+"chapter": "The last test",
+"text": "When Matsya makes its first deep dive, we'll be there.",
+"start": 445.378,
+"end": 448.344,
+"ratio": 0.9,
+"margin": 0.212,
+"startFrame": 26723,
+"endFrame": 26901
+},
+{
+"id": 143,
+"chapter": "The last test",
+"text": "Subscribe to Be Practical, so you're there too.",
+"start": 448.627,
+"end": 451.161,
+"ratio": 0.89,
+"margin": 0.212,
+"startFrame": 26918,
+"endFrame": 27070
+}
+],
+"words": [
+{
+"s": 0,
+"w": "Six",
+"start": 0.0,
+"end": 0.269,
+"startFrame": 0,
+"endFrame": 16
+},
+{
+"s": 0,
+"w": "kilometres",
+"start": 0.269,
+"end": 0.955,
+"startFrame": 16,
+"endFrame": 57
+},
+{
+"s": 0,
+"w": "under",
+"start": 0.955,
+"end": 1.343,
+"startFrame": 57,
+"endFrame": 81
+},
+{
+"s": 0,
+"w": "the",
+"start": 1.343,
+"end": 1.612,
+"startFrame": 81,
+"endFrame": 97
+},
+{
+"s": 0,
+"w": "sea,",
+"start": 1.612,
+"end": 1.881,
+"startFrame": 97,
+"endFrame": 113
+},
+{
+"s": 0,
+"w": "the",
+"start": 2.175,
+"end": 2.398,
+"startFrame": 130,
+"endFrame": 144
+},
+{
+"s": 0,
+"w": "water",
+"start": 2.398,
+"end": 2.72,
+"startFrame": 144,
+"endFrame": 163
+},
+{
+"s": 0,
+"w": "will",
+"start": 2.72,
+"end": 2.992,
+"startFrame": 163,
+"endFrame": 180
+},
+{
+"s": 0,
+"w": "squeeze",
+"start": 2.992,
+"end": 3.414,
+"startFrame": 180,
+"endFrame": 205
+},
+{
+"s": 0,
+"w": "this",
+"start": 3.414,
+"end": 3.687,
+"startFrame": 205,
+"endFrame": 221
+},
+{
+"s": 0,
+"w": "titanium",
+"start": 3.687,
+"end": 4.157,
+"startFrame": 221,
+"endFrame": 249
+},
+{
+"s": 0,
+"w": "ball",
+"start": 4.157,
+"end": 4.43,
+"startFrame": 249,
+"endFrame": 266
+},
+{
+"s": 0,
+"w": "with",
+"start": 4.792,
+"end": 5.115,
+"startFrame": 288,
+"endFrame": 307
+},
+{
+"s": 0,
+"w": "almost",
+"start": 5.115,
+"end": 5.554,
+"startFrame": 307,
+"endFrame": 333
+},
+{
+"s": 0,
+"w": "one",
+"start": 5.554,
+"end": 5.818,
+"startFrame": 333,
+"endFrame": 349
+},
+{
+"s": 0,
+"w": "lakh",
+"start": 5.818,
+"end": 6.14,
+"startFrame": 349,
+"endFrame": 368
+},
+{
+"s": 0,
+"w": "tonnes.",
+"start": 6.14,
+"end": 6.697,
+"startFrame": 368,
+"endFrame": 402
+},
+{
+"s": 1,
+"w": "Imagine",
+"start": 7.244,
+"end": 7.605,
+"startFrame": 435,
+"endFrame": 456
+},
+{
+"s": 1,
+"w": "you're",
+"start": 7.605,
+"end": 7.923,
+"startFrame": 456,
+"endFrame": 475
+},
+{
+"s": 1,
+"w": "inside",
+"start": 7.923,
+"end": 8.242,
+"startFrame": 475,
+"endFrame": 495
+},
+{
+"s": 1,
+"w": "it,",
+"start": 8.242,
+"end": 8.39,
+"startFrame": 495,
+"endFrame": 503
+},
+{
+"s": 1,
+"w": "with",
+"start": 8.652,
+"end": 8.889,
+"startFrame": 519,
+"endFrame": 533
+},
+{
+"s": 1,
+"w": "two",
+"start": 8.889,
+"end": 9.083,
+"startFrame": 533,
+"endFrame": 545
+},
+{
+"s": 1,
+"w": "other",
+"start": 9.083,
+"end": 9.363,
+"startFrame": 545,
+"endFrame": 562
+},
+{
+"s": 1,
+"w": "Indians.",
+"start": 9.363,
+"end": 9.815,
+"startFrame": 562,
+"endFrame": 589
+},
+{
+"s": 2,
+"w": "This",
+"start": 10.49,
+"end": 10.785,
+"startFrame": 629,
+"endFrame": 647
+},
+{
+"s": 2,
+"w": "ball",
+"start": 10.785,
+"end": 11.08,
+"startFrame": 647,
+"endFrame": 665
+},
+{
+"s": 2,
+"w": "is",
+"start": 11.08,
+"end": 11.267,
+"startFrame": 665,
+"endFrame": 676
+},
+{
+"s": 2,
+"w": "the",
+"start": 11.267,
+"end": 11.509,
+"startFrame": 676,
+"endFrame": 691
+},
+{
+"s": 2,
+"w": "heart",
+"start": 11.509,
+"end": 11.857,
+"startFrame": 691,
+"endFrame": 711
+},
+{
+"s": 2,
+"w": "of",
+"start": 11.857,
+"end": 12.045,
+"startFrame": 711,
+"endFrame": 723
+},
+{
+"s": 2,
+"w": "India's",
+"start": 12.045,
+"end": 12.501,
+"startFrame": 723,
+"endFrame": 750
+},
+{
+"s": 2,
+"w": "first",
+"start": 12.501,
+"end": 12.849,
+"startFrame": 750,
+"endFrame": 771
+},
+{
+"s": 2,
+"w": "deep-sea",
+"start": 12.849,
+"end": 13.385,
+"startFrame": 771,
+"endFrame": 803
+},
+{
+"s": 2,
+"w": "sub",
+"start": 13.385,
+"end": 13.626,
+"startFrame": 803,
+"endFrame": 818
+},
+{
+"s": 2,
+"w": "for",
+"start": 13.626,
+"end": 13.868,
+"startFrame": 818,
+"endFrame": 832
+},
+{
+"s": 2,
+"w": "people.",
+"start": 13.868,
+"end": 14.377,
+"startFrame": 832,
+"endFrame": 863
+},
+{
+"s": 3,
+"w": "Its",
+"start": 14.897,
+"end": 15.173,
+"startFrame": 894,
+"endFrame": 910
+},
+{
+"s": 3,
+"w": "name",
+"start": 15.173,
+"end": 15.511,
+"startFrame": 910,
+"endFrame": 931
+},
+{
+"s": 3,
+"w": "is",
+"start": 15.511,
+"end": 15.726,
+"startFrame": 931,
+"endFrame": 944
+},
+{
+"s": 3,
+"w": "Matsya.",
+"start": 15.726,
+"end": 16.309,
+"startFrame": 944,
+"endFrame": 979
+},
+{
+"s": 4,
+"w": "Your",
+"start": 16.944,
+"end": 17.274,
+"startFrame": 1017,
+"endFrame": 1036
+},
+{
+"s": 4,
+"w": "whole",
+"start": 17.274,
+"end": 17.663,
+"startFrame": 1036,
+"endFrame": 1060
+},
+{
+"s": 4,
+"w": "world",
+"start": 17.663,
+"end": 18.053,
+"startFrame": 1060,
+"endFrame": 1083
+},
+{
+"s": 4,
+"w": "is",
+"start": 18.053,
+"end": 18.262,
+"startFrame": 1083,
+"endFrame": 1096
+},
+{
+"s": 4,
+"w": "five",
+"start": 18.262,
+"end": 18.592,
+"startFrame": 1096,
+"endFrame": 1116
+},
+{
+"s": 4,
+"w": "pieces",
+"start": 18.592,
+"end": 19.042,
+"startFrame": 1116,
+"endFrame": 1143
+},
+{
+"s": 4,
+"w": "of",
+"start": 19.042,
+"end": 19.251,
+"startFrame": 1143,
+"endFrame": 1155
+},
+{
+"s": 4,
+"w": "titanium,",
+"start": 19.251,
+"end": 19.821,
+"startFrame": 1155,
+"endFrame": 1189
+},
+{
+"s": 4,
+"w": "joined",
+"start": 20.081,
+"end": 20.501,
+"startFrame": 1205,
+"endFrame": 1230
+},
+{
+"s": 4,
+"w": "by",
+"start": 20.501,
+"end": 20.696,
+"startFrame": 1230,
+"endFrame": 1242
+},
+{
+"s": 4,
+"w": "seven",
+"start": 20.696,
+"end": 21.06,
+"startFrame": 1242,
+"endFrame": 1264
+},
+{
+"s": 4,
+"w": "welds.",
+"start": 21.06,
+"end": 21.535,
+"startFrame": 1264,
+"endFrame": 1292
+},
+{
+"s": 5,
+"w": "Now",
+"start": 22.106,
+"end": 22.265,
+"startFrame": 1326,
+"endFrame": 1336
+},
+{
+"s": 5,
+"w": "here's",
+"start": 22.265,
+"end": 22.531,
+"startFrame": 1336,
+"endFrame": 1352
+},
+{
+"s": 5,
+"w": "the",
+"start": 22.531,
+"end": 22.69,
+"startFrame": 1352,
+"endFrame": 1361
+},
+{
+"s": 5,
+"w": "strange",
+"start": 22.69,
+"end": 22.991,
+"startFrame": 1361,
+"endFrame": 1379
+},
+{
+"s": 5,
+"w": "part.",
+"start": 22.991,
+"end": 23.257,
+"startFrame": 1379,
+"endFrame": 1395
+},
+{
+"s": 6,
+"w": "Isro",
+"start": 23.797,
+"end": 24.095,
+"startFrame": 1428,
+"endFrame": 1446
+},
+{
+"s": 6,
+"w": "is",
+"start": 24.095,
+"end": 24.284,
+"startFrame": 1446,
+"endFrame": 1457
+},
+{
+"s": 6,
+"w": "known",
+"start": 24.284,
+"end": 24.636,
+"startFrame": 1457,
+"endFrame": 1478
+},
+{
+"s": 6,
+"w": "for",
+"start": 24.636,
+"end": 24.88,
+"startFrame": 1478,
+"endFrame": 1493
+},
+{
+"s": 6,
+"w": "rockets.",
+"start": 24.88,
+"end": 25.448,
+"startFrame": 1493,
+"endFrame": 1527
+},
+{
+"s": 7,
+"w": "But",
+"start": 25.758,
+"end": 25.998,
+"startFrame": 1545,
+"endFrame": 1560
+},
+{
+"s": 7,
+"w": "Isro's",
+"start": 25.998,
+"end": 26.398,
+"startFrame": 1560,
+"endFrame": 1584
+},
+{
+"s": 7,
+"w": "hardest",
+"start": 26.398,
+"end": 26.852,
+"startFrame": 1584,
+"endFrame": 1611
+},
+{
+"s": 7,
+"w": "weld",
+"start": 26.852,
+"end": 27.145,
+"startFrame": 1611,
+"endFrame": 1629
+},
+{
+"s": 7,
+"w": "wasn't",
+"start": 27.145,
+"end": 27.546,
+"startFrame": 1629,
+"endFrame": 1653
+},
+{
+"s": 7,
+"w": "for",
+"start": 27.546,
+"end": 27.786,
+"startFrame": 1653,
+"endFrame": 1667
+},
+{
+"s": 7,
+"w": "a",
+"start": 27.786,
+"end": 27.919,
+"startFrame": 1667,
+"endFrame": 1675
+},
+{
+"s": 7,
+"w": "rocket.",
+"start": 27.919,
+"end": 28.426,
+"startFrame": 1675,
+"endFrame": 1706
+},
+{
+"s": 8,
+"w": "It",
+"start": 28.768,
+"end": 28.911,
+"startFrame": 1726,
+"endFrame": 1735
+},
+{
+"s": 8,
+"w": "was",
+"start": 28.911,
+"end": 29.095,
+"startFrame": 1735,
+"endFrame": 1746
+},
+{
+"s": 8,
+"w": "for",
+"start": 29.095,
+"end": 29.278,
+"startFrame": 1746,
+"endFrame": 1757
+},
+{
+"s": 8,
+"w": "this",
+"start": 29.278,
+"end": 29.503,
+"startFrame": 1757,
+"endFrame": 1770
+},
+{
+"s": 8,
+"w": "ball.",
+"start": 29.503,
+"end": 29.809,
+"startFrame": 1770,
+"endFrame": 1789
+},
+{
+"s": 9,
+"w": "That",
+"start": 30.236,
+"end": 30.502,
+"startFrame": 1814,
+"endFrame": 1830
+},
+{
+"s": 9,
+"w": "weld",
+"start": 30.502,
+"end": 30.769,
+"startFrame": 1830,
+"endFrame": 1846
+},
+{
+"s": 9,
+"w": "was",
+"start": 30.769,
+"end": 30.987,
+"startFrame": 1846,
+"endFrame": 1859
+},
+{
+"s": 9,
+"w": "four",
+"start": 30.987,
+"end": 31.253,
+"startFrame": 1859,
+"endFrame": 1875
+},
+{
+"s": 9,
+"w": "times",
+"start": 31.253,
+"end": 31.568,
+"startFrame": 1875,
+"endFrame": 1894
+},
+{
+"s": 9,
+"w": "thicker",
+"start": 31.568,
+"end": 31.98,
+"startFrame": 1894,
+"endFrame": 1919
+},
+{
+"s": 9,
+"w": "than",
+"start": 31.98,
+"end": 32.246,
+"startFrame": 1919,
+"endFrame": 1935
+},
+{
+"s": 9,
+"w": "their",
+"start": 32.246,
+"end": 32.561,
+"startFrame": 1935,
+"endFrame": 1954
+},
+{
+"s": 9,
+"w": "welding",
+"start": 32.561,
+"end": 32.973,
+"startFrame": 1954,
+"endFrame": 1978
+},
+{
+"s": 9,
+"w": "machine",
+"start": 32.973,
+"end": 33.385,
+"startFrame": 1978,
+"endFrame": 2003
+},
+{
+"s": 9,
+"w": "could",
+"start": 33.385,
+"end": 33.7,
+"startFrame": 2003,
+"endFrame": 2022
+},
+{
+"s": 9,
+"w": "handle",
+"start": 33.7,
+"end": 34.063,
+"startFrame": 2022,
+"endFrame": 2044
+},
+{
+"s": 9,
+"w": "before.",
+"start": 34.063,
+"end": 34.523,
+"startFrame": 2044,
+"endFrame": 2071
+},
+{
+"s": 10,
+"w": "It",
+"start": 35.013,
+"end": 35.188,
+"startFrame": 2101,
+"endFrame": 2111
+},
+{
+"s": 10,
+"w": "took",
+"start": 35.188,
+"end": 35.464,
+"startFrame": 2111,
+"endFrame": 2128
+},
+{
+"s": 10,
+"w": "about",
+"start": 35.464,
+"end": 35.79,
+"startFrame": 2128,
+"endFrame": 2147
+},
+{
+"s": 10,
+"w": "seven",
+"start": 35.79,
+"end": 36.116,
+"startFrame": 2147,
+"endFrame": 2167
+},
+{
+"s": 10,
+"w": "hundred",
+"start": 36.116,
+"end": 36.542,
+"startFrame": 2167,
+"endFrame": 2193
+},
+{
+"s": 10,
+"w": "tries.",
+"start": 36.542,
+"end": 36.968,
+"startFrame": 2193,
+"endFrame": 2218
+},
+{
+"s": 11,
+"w": "So",
+"start": 37.489,
+"end": 37.661,
+"startFrame": 2249,
+"endFrame": 2260
+},
+{
+"s": 11,
+"w": "why",
+"start": 37.661,
+"end": 37.883,
+"startFrame": 2260,
+"endFrame": 2273
+},
+{
+"s": 11,
+"w": "was",
+"start": 37.883,
+"end": 38.105,
+"startFrame": 2273,
+"endFrame": 2286
+},
+{
+"s": 11,
+"w": "it",
+"start": 38.105,
+"end": 38.277,
+"startFrame": 2286,
+"endFrame": 2297
+},
+{
+"s": 11,
+"w": "so",
+"start": 38.277,
+"end": 38.45,
+"startFrame": 2297,
+"endFrame": 2307
+},
+{
+"s": 11,
+"w": "hard?",
+"start": 38.45,
+"end": 38.721,
+"startFrame": 2307,
+"endFrame": 2323
+},
+{
+"s": 12,
+"w": "And",
+"start": 39.169,
+"end": 39.394,
+"startFrame": 2350,
+"endFrame": 2364
+},
+{
+"s": 12,
+"w": "after",
+"start": 39.394,
+"end": 39.719,
+"startFrame": 2364,
+"endFrame": 2383
+},
+{
+"s": 12,
+"w": "Titan,",
+"start": 39.719,
+"end": 40.044,
+"startFrame": 2383,
+"endFrame": 2403
+},
+{
+"s": 12,
+"w": "how",
+"start": 40.34,
+"end": 40.528,
+"startFrame": 2420,
+"endFrame": 2432
+},
+{
+"s": 12,
+"w": "will",
+"start": 40.528,
+"end": 40.756,
+"startFrame": 2432,
+"endFrame": 2445
+},
+{
+"s": 12,
+"w": "they",
+"start": 40.756,
+"end": 40.985,
+"startFrame": 2445,
+"endFrame": 2459
+},
+{
+"s": 12,
+"w": "know",
+"start": 40.985,
+"end": 41.214,
+"startFrame": 2459,
+"endFrame": 2473
+},
+{
+"s": 12,
+"w": "it",
+"start": 41.214,
+"end": 41.36,
+"startFrame": 2473,
+"endFrame": 2482
+},
+{
+"s": 12,
+"w": "holds?",
+"start": 41.36,
+"end": 41.63,
+"startFrame": 2482,
+"endFrame": 2498
+},
+{
+"s": 13,
+"w": "By",
+"start": 42.226,
+"end": 42.38,
+"startFrame": 2534,
+"endFrame": 2543
+},
+{
+"s": 13,
+"w": "the",
+"start": 42.38,
+"end": 42.577,
+"startFrame": 2543,
+"endFrame": 2555
+},
+{
+"s": 13,
+"w": "end,",
+"start": 42.577,
+"end": 42.775,
+"startFrame": 2555,
+"endFrame": 2566
+},
+{
+"s": 13,
+"w": "you'll",
+"start": 43.0,
+"end": 43.27,
+"startFrame": 2580,
+"endFrame": 2596
+},
+{
+"s": 13,
+"w": "know",
+"start": 43.27,
+"end": 43.467,
+"startFrame": 2596,
+"endFrame": 2608
+},
+{
+"s": 13,
+"w": "both.",
+"start": 43.467,
+"end": 43.737,
+"startFrame": 2608,
+"endFrame": 2624
+},
+{
+"s": 14,
+"w": "First,",
+"start": 44.255,
+"end": 44.721,
+"startFrame": 2655,
+"endFrame": 2683
+},
+{
+"s": 14,
+"w": "I",
+"start": 44.916,
+"end": 45.048,
+"startFrame": 2695,
+"endFrame": 2703
+},
+{
+"s": 14,
+"w": "want",
+"start": 45.048,
+"end": 45.338,
+"startFrame": 2703,
+"endFrame": 2720
+},
+{
+"s": 14,
+"w": "you",
+"start": 45.338,
+"end": 45.574,
+"startFrame": 2720,
+"endFrame": 2734
+},
+{
+"s": 14,
+"w": "to",
+"start": 45.574,
+"end": 45.759,
+"startFrame": 2734,
+"endFrame": 2746
+},
+{
+"s": 14,
+"w": "feel",
+"start": 45.759,
+"end": 46.048,
+"startFrame": 2746,
+"endFrame": 2763
+},
+{
+"s": 14,
+"w": "what",
+"start": 46.048,
+"end": 46.338,
+"startFrame": 2763,
+"endFrame": 2780
+},
+{
+"s": 14,
+"w": "six",
+"start": 46.338,
+"end": 46.575,
+"startFrame": 2780,
+"endFrame": 2794
+},
+{
+"s": 14,
+"w": "kilometres",
+"start": 46.575,
+"end": 47.18,
+"startFrame": 2794,
+"endFrame": 2831
+},
+{
+"s": 14,
+"w": "of",
+"start": 47.18,
+"end": 47.364,
+"startFrame": 2831,
+"endFrame": 2842
+},
+{
+"s": 14,
+"w": "sea",
+"start": 47.364,
+"end": 47.601,
+"startFrame": 2842,
+"endFrame": 2856
+},
+{
+"s": 14,
+"w": "actually",
+"start": 47.601,
+"end": 48.101,
+"startFrame": 2856,
+"endFrame": 2886
+},
+{
+"s": 14,
+"w": "does.",
+"start": 48.101,
+"end": 48.496,
+"startFrame": 2886,
+"endFrame": 2910
+},
+{
+"s": 15,
+"w": "Every",
+"start": 49.022,
+"end": 49.367,
+"startFrame": 2941,
+"endFrame": 2962
+},
+{
+"s": 15,
+"w": "ten",
+"start": 49.367,
+"end": 49.606,
+"startFrame": 2962,
+"endFrame": 2976
+},
+{
+"s": 15,
+"w": "metres",
+"start": 49.606,
+"end": 50.004,
+"startFrame": 2976,
+"endFrame": 3000
+},
+{
+"s": 15,
+"w": "you",
+"start": 50.004,
+"end": 50.243,
+"startFrame": 3000,
+"endFrame": 3015
+},
+{
+"s": 15,
+"w": "go",
+"start": 50.243,
+"end": 50.429,
+"startFrame": 3015,
+"endFrame": 3026
+},
+{
+"s": 15,
+"w": "down,",
+"start": 50.429,
+"end": 50.721,
+"startFrame": 3026,
+"endFrame": 3043
+},
+{
+"s": 15,
+"w": "the",
+"start": 51.013,
+"end": 51.259,
+"startFrame": 3061,
+"endFrame": 3076
+},
+{
+"s": 15,
+"w": "sea",
+"start": 51.259,
+"end": 51.505,
+"startFrame": 3076,
+"endFrame": 3090
+},
+{
+"s": 15,
+"w": "presses",
+"start": 51.505,
+"end": 51.969,
+"startFrame": 3090,
+"endFrame": 3118
+},
+{
+"s": 15,
+"w": "on",
+"start": 51.969,
+"end": 52.16,
+"startFrame": 3118,
+"endFrame": 3130
+},
+{
+"s": 15,
+"w": "you",
+"start": 52.16,
+"end": 52.406,
+"startFrame": 3130,
+"endFrame": 3144
+},
+{
+"s": 15,
+"w": "as",
+"start": 52.406,
+"end": 52.597,
+"startFrame": 3144,
+"endFrame": 3156
+},
+{
+"s": 15,
+"w": "hard",
+"start": 52.597,
+"end": 52.897,
+"startFrame": 3156,
+"endFrame": 3174
+},
+{
+"s": 15,
+"w": "as",
+"start": 52.897,
+"end": 53.088,
+"startFrame": 3174,
+"endFrame": 3185
+},
+{
+"s": 15,
+"w": "all",
+"start": 53.088,
+"end": 53.334,
+"startFrame": 3185,
+"endFrame": 3200
+},
+{
+"s": 15,
+"w": "the",
+"start": 53.334,
+"end": 53.579,
+"startFrame": 3200,
+"endFrame": 3215
+},
+{
+"s": 15,
+"w": "air",
+"start": 53.579,
+"end": 53.825,
+"startFrame": 3215,
+"endFrame": 3230
+},
+{
+"s": 15,
+"w": "above",
+"start": 53.825,
+"end": 54.18,
+"startFrame": 3230,
+"endFrame": 3251
+},
+{
+"s": 15,
+"w": "you.",
+"start": 54.18,
+"end": 54.535,
+"startFrame": 3251,
+"endFrame": 3272
+},
+{
+"s": 16,
+"w": "Once",
+"start": 55.072,
+"end": 55.271,
+"startFrame": 3304,
+"endFrame": 3316
+},
+{
+"s": 16,
+"w": "more.",
+"start": 55.271,
+"end": 55.542,
+"startFrame": 3316,
+"endFrame": 3333
+},
+{
+"s": 17,
+"w": "And",
+"start": 56.089,
+"end": 56.281,
+"startFrame": 3365,
+"endFrame": 3377
+},
+{
+"s": 17,
+"w": "again.",
+"start": 56.281,
+"end": 56.644,
+"startFrame": 3377,
+"endFrame": 3399
+},
+{
+"s": 18,
+"w": "And",
+"start": 57.177,
+"end": 57.492,
+"startFrame": 3431,
+"endFrame": 3450
+},
+{
+"s": 18,
+"w": "again.",
+"start": 57.492,
+"end": 58.088,
+"startFrame": 3450,
+"endFrame": 3485
+},
+{
+"s": 19,
+"w": "At",
+"start": 58.632,
+"end": 58.843,
+"startFrame": 3518,
+"endFrame": 3531
+},
+{
+"s": 19,
+"w": "six",
+"start": 58.843,
+"end": 59.115,
+"startFrame": 3531,
+"endFrame": 3547
+},
+{
+"s": 19,
+"w": "thousand",
+"start": 59.115,
+"end": 59.689,
+"startFrame": 3547,
+"endFrame": 3581
+},
+{
+"s": 19,
+"w": "metres,",
+"start": 59.689,
+"end": 60.142,
+"startFrame": 3581,
+"endFrame": 3609
+},
+{
+"s": 19,
+"w": "hold",
+"start": 60.469,
+"end": 60.651,
+"startFrame": 3628,
+"endFrame": 3639
+},
+{
+"s": 19,
+"w": "out",
+"start": 60.651,
+"end": 60.801,
+"startFrame": 3639,
+"endFrame": 3648
+},
+{
+"s": 19,
+"w": "your",
+"start": 60.801,
+"end": 60.983,
+"startFrame": 3648,
+"endFrame": 3659
+},
+{
+"s": 19,
+"w": "finger.",
+"start": 60.983,
+"end": 61.298,
+"startFrame": 3659,
+"endFrame": 3678
+},
+{
+"s": 20,
+"w": "The",
+"start": 61.837,
+"end": 62.046,
+"startFrame": 3710,
+"endFrame": 3723
+},
+{
+"s": 20,
+"w": "water",
+"start": 62.046,
+"end": 62.349,
+"startFrame": 3723,
+"endFrame": 3741
+},
+{
+"s": 20,
+"w": "would",
+"start": 62.349,
+"end": 62.651,
+"startFrame": 3741,
+"endFrame": 3759
+},
+{
+"s": 20,
+"w": "press",
+"start": 62.651,
+"end": 62.954,
+"startFrame": 3759,
+"endFrame": 3777
+},
+{
+"s": 20,
+"w": "on",
+"start": 62.954,
+"end": 63.116,
+"startFrame": 3777,
+"endFrame": 3787
+},
+{
+"s": 20,
+"w": "your",
+"start": 63.116,
+"end": 63.372,
+"startFrame": 3787,
+"endFrame": 3802
+},
+{
+"s": 20,
+"w": "fingernail",
+"start": 63.372,
+"end": 63.907,
+"startFrame": 3802,
+"endFrame": 3834
+},
+{
+"s": 20,
+"w": "with",
+"start": 63.907,
+"end": 64.163,
+"startFrame": 3834,
+"endFrame": 3850
+},
+{
+"s": 20,
+"w": "about",
+"start": 64.163,
+"end": 64.466,
+"startFrame": 3850,
+"endFrame": 3868
+},
+{
+"s": 20,
+"w": "six",
+"start": 64.466,
+"end": 64.675,
+"startFrame": 3868,
+"endFrame": 3880
+},
+{
+"s": 20,
+"w": "hundred",
+"start": 64.675,
+"end": 65.071,
+"startFrame": 3880,
+"endFrame": 3904
+},
+{
+"s": 20,
+"w": "kilos.",
+"start": 65.071,
+"end": 65.466,
+"startFrame": 3904,
+"endFrame": 3928
+},
+{
+"s": 21,
+"w": "That's",
+"start": 65.913,
+"end": 66.273,
+"startFrame": 3955,
+"endFrame": 3976
+},
+{
+"s": 21,
+"w": "a",
+"start": 66.273,
+"end": 66.393,
+"startFrame": 3976,
+"endFrame": 3984
+},
+{
+"s": 21,
+"w": "full-grown",
+"start": 66.393,
+"end": 66.969,
+"startFrame": 3984,
+"endFrame": 4018
+},
+{
+"s": 21,
+"w": "buffalo,",
+"start": 66.969,
+"end": 67.377,
+"startFrame": 4018,
+"endFrame": 4043
+},
+{
+"s": 21,
+"w": "standing",
+"start": 67.556,
+"end": 68.023,
+"startFrame": 4053,
+"endFrame": 4081
+},
+{
+"s": 21,
+"w": "on",
+"start": 68.023,
+"end": 68.195,
+"startFrame": 4081,
+"endFrame": 4092
+},
+{
+"s": 21,
+"w": "one",
+"start": 68.195,
+"end": 68.416,
+"startFrame": 4092,
+"endFrame": 4105
+},
+{
+"s": 21,
+"w": "fingernail.",
+"start": 68.416,
+"end": 69.079,
+"startFrame": 4105,
+"endFrame": 4145
+},
+{
+"s": 22,
+"w": "Now",
+"start": 69.68,
+"end": 69.879,
+"startFrame": 4181,
+"endFrame": 4193
+},
+{
+"s": 22,
+"w": "cover",
+"start": 69.879,
+"end": 70.167,
+"startFrame": 4193,
+"endFrame": 4210
+},
+{
+"s": 22,
+"w": "the",
+"start": 70.167,
+"end": 70.366,
+"startFrame": 4210,
+"endFrame": 4222
+},
+{
+"s": 22,
+"w": "whole",
+"start": 70.366,
+"end": 70.654,
+"startFrame": 4222,
+"endFrame": 4239
+},
+{
+"s": 22,
+"w": "ball",
+"start": 70.654,
+"end": 70.898,
+"startFrame": 4239,
+"endFrame": 4254
+},
+{
+"s": 22,
+"w": "with",
+"start": 70.898,
+"end": 71.141,
+"startFrame": 4254,
+"endFrame": 4268
+},
+{
+"s": 22,
+"w": "fingernails.",
+"start": 71.141,
+"end": 71.783,
+"startFrame": 4268,
+"endFrame": 4307
+},
+{
+"s": 23,
+"w": "Every",
+"start": 72.203,
+"end": 72.561,
+"startFrame": 4332,
+"endFrame": 4354
+},
+{
+"s": 23,
+"w": "one",
+"start": 72.561,
+"end": 72.808,
+"startFrame": 4354,
+"endFrame": 4368
+},
+{
+"s": 23,
+"w": "of",
+"start": 72.808,
+"end": 73.001,
+"startFrame": 4368,
+"endFrame": 4380
+},
+{
+"s": 23,
+"w": "them",
+"start": 73.001,
+"end": 73.304,
+"startFrame": 4380,
+"endFrame": 4398
+},
+{
+"s": 23,
+"w": "carries",
+"start": 73.304,
+"end": 73.772,
+"startFrame": 4398,
+"endFrame": 4426
+},
+{
+"s": 23,
+"w": "a",
+"start": 73.772,
+"end": 73.909,
+"startFrame": 4426,
+"endFrame": 4435
+},
+{
+"s": 23,
+"w": "buffalo.",
+"start": 73.909,
+"end": 74.487,
+"startFrame": 4435,
+"endFrame": 4469
+},
+{
+"s": 24,
+"w": "Add",
+"start": 75.019,
+"end": 75.266,
+"startFrame": 4501,
+"endFrame": 4516
+},
+{
+"s": 24,
+"w": "it",
+"start": 75.266,
+"end": 75.459,
+"startFrame": 4516,
+"endFrame": 4528
+},
+{
+"s": 24,
+"w": "all",
+"start": 75.459,
+"end": 75.706,
+"startFrame": 4528,
+"endFrame": 4542
+},
+{
+"s": 24,
+"w": "up,",
+"start": 75.706,
+"end": 75.899,
+"startFrame": 4542,
+"endFrame": 4554
+},
+{
+"s": 24,
+"w": "and",
+"start": 76.048,
+"end": 76.324,
+"startFrame": 4563,
+"endFrame": 4579
+},
+{
+"s": 24,
+"w": "the",
+"start": 76.324,
+"end": 76.6,
+"startFrame": 4579,
+"endFrame": 4596
+},
+{
+"s": 24,
+"w": "sea",
+"start": 76.6,
+"end": 76.876,
+"startFrame": 4596,
+"endFrame": 4613
+},
+{
+"s": 24,
+"w": "squeezes",
+"start": 76.876,
+"end": 77.458,
+"startFrame": 4613,
+"endFrame": 4647
+},
+{
+"s": 24,
+"w": "this",
+"start": 77.458,
+"end": 77.795,
+"startFrame": 4647,
+"endFrame": 4668
+},
+{
+"s": 24,
+"w": "ball",
+"start": 77.795,
+"end": 78.133,
+"startFrame": 4668,
+"endFrame": 4688
+},
+{
+"s": 24,
+"w": "with",
+"start": 78.133,
+"end": 78.47,
+"startFrame": 4688,
+"endFrame": 4708
+},
+{
+"s": 24,
+"w": "almost",
+"start": 78.47,
+"end": 78.93,
+"startFrame": 4708,
+"endFrame": 4736
+},
+{
+"s": 24,
+"w": "one",
+"start": 78.93,
+"end": 79.206,
+"startFrame": 4736,
+"endFrame": 4752
+},
+{
+"s": 24,
+"w": "lakh",
+"start": 79.206,
+"end": 79.543,
+"startFrame": 4752,
+"endFrame": 4773
+},
+{
+"s": 24,
+"w": "tonnes,",
+"start": 79.543,
+"end": 80.003,
+"startFrame": 4773,
+"endFrame": 4800
+},
+{
+"s": 24,
+"w": "from",
+"start": 80.165,
+"end": 80.461,
+"startFrame": 4810,
+"endFrame": 4828
+},
+{
+"s": 24,
+"w": "every",
+"start": 80.461,
+"end": 80.811,
+"startFrame": 4828,
+"endFrame": 4849
+},
+{
+"s": 24,
+"w": "side",
+"start": 80.811,
+"end": 81.107,
+"startFrame": 4849,
+"endFrame": 4866
+},
+{
+"s": 24,
+"w": "at",
+"start": 81.107,
+"end": 81.295,
+"startFrame": 4866,
+"endFrame": 4878
+},
+{
+"s": 24,
+"w": "once.",
+"start": 81.295,
+"end": 81.699,
+"startFrame": 4878,
+"endFrame": 4902
+},
+{
+"s": 25,
+"w": "So",
+"start": 82.263,
+"end": 82.422,
+"startFrame": 4936,
+"endFrame": 4945
+},
+{
+"s": 25,
+"w": "you're",
+"start": 82.422,
+"end": 82.763,
+"startFrame": 4945,
+"endFrame": 4966
+},
+{
+"s": 25,
+"w": "probably",
+"start": 82.763,
+"end": 83.194,
+"startFrame": 4966,
+"endFrame": 4992
+},
+{
+"s": 25,
+"w": "asking",
+"start": 83.194,
+"end": 83.535,
+"startFrame": 4992,
+"endFrame": 5012
+},
+{
+"s": 25,
+"w": "the",
+"start": 83.535,
+"end": 83.74,
+"startFrame": 5012,
+"endFrame": 5024
+},
+{
+"s": 25,
+"w": "same",
+"start": 83.74,
+"end": 83.99,
+"startFrame": 5024,
+"endFrame": 5039
+},
+{
+"s": 25,
+"w": "question",
+"start": 83.99,
+"end": 84.421,
+"startFrame": 5039,
+"endFrame": 5065
+},
+{
+"s": 25,
+"w": "I",
+"start": 84.421,
+"end": 84.535,
+"startFrame": 5065,
+"endFrame": 5072
+},
+{
+"s": 25,
+"w": "asked.",
+"start": 84.535,
+"end": 84.921,
+"startFrame": 5072,
+"endFrame": 5095
+},
+{
+"s": 26,
+"w": "Could",
+"start": 85.328,
+"end": 85.644,
+"startFrame": 5120,
+"endFrame": 5139
+},
+{
+"s": 26,
+"w": "this",
+"start": 85.644,
+"end": 85.911,
+"startFrame": 5139,
+"endFrame": 5155
+},
+{
+"s": 26,
+"w": "end",
+"start": 85.911,
+"end": 86.13,
+"startFrame": 5155,
+"endFrame": 5168
+},
+{
+"s": 26,
+"w": "like",
+"start": 86.13,
+"end": 86.397,
+"startFrame": 5168,
+"endFrame": 5184
+},
+{
+"s": 26,
+"w": "Titan?",
+"start": 86.397,
+"end": 86.713,
+"startFrame": 5184,
+"endFrame": 5203
+},
+{
+"s": 27,
+"w": "You",
+"start": 87.264,
+"end": 87.422,
+"startFrame": 5236,
+"endFrame": 5245
+},
+{
+"s": 27,
+"w": "may",
+"start": 87.422,
+"end": 87.581,
+"startFrame": 5245,
+"endFrame": 5255
+},
+{
+"s": 27,
+"w": "remember",
+"start": 87.581,
+"end": 87.915,
+"startFrame": 5255,
+"endFrame": 5275
+},
+{
+"s": 27,
+"w": "it.",
+"start": 87.915,
+"end": 88.109,
+"startFrame": 5275,
+"endFrame": 5287
+},
+{
+"s": 28,
+"w": "In",
+"start": 88.511,
+"end": 88.673,
+"startFrame": 5311,
+"endFrame": 5320
+},
+{
+"s": 28,
+"w": "June",
+"start": 88.673,
+"end": 88.928,
+"startFrame": 5320,
+"endFrame": 5336
+},
+{
+"s": 28,
+"w": "twenty",
+"start": 88.928,
+"end": 89.276,
+"startFrame": 5336,
+"endFrame": 5357
+},
+{
+"s": 28,
+"w": "twenty-three,",
+"start": 89.276,
+"end": 89.926,
+"startFrame": 5357,
+"endFrame": 5396
+},
+{
+"s": 28,
+"w": "Titan",
+"start": 90.283,
+"end": 90.596,
+"startFrame": 5417,
+"endFrame": 5436
+},
+{
+"s": 28,
+"w": "broke",
+"start": 90.596,
+"end": 90.909,
+"startFrame": 5436,
+"endFrame": 5455
+},
+{
+"s": 28,
+"w": "apart",
+"start": 90.909,
+"end": 91.222,
+"startFrame": 5455,
+"endFrame": 5473
+},
+{
+"s": 28,
+"w": "on",
+"start": 91.222,
+"end": 91.39,
+"startFrame": 5473,
+"endFrame": 5483
+},
+{
+"s": 28,
+"w": "its",
+"start": 91.39,
+"end": 91.607,
+"startFrame": 5483,
+"endFrame": 5496
+},
+{
+"s": 28,
+"w": "way",
+"start": 91.607,
+"end": 91.824,
+"startFrame": 5496,
+"endFrame": 5509
+},
+{
+"s": 28,
+"w": "down",
+"start": 91.824,
+"end": 92.089,
+"startFrame": 5509,
+"endFrame": 5525
+},
+{
+"s": 28,
+"w": "to",
+"start": 92.089,
+"end": 92.257,
+"startFrame": 5525,
+"endFrame": 5535
+},
+{
+"s": 28,
+"w": "the",
+"start": 92.257,
+"end": 92.474,
+"startFrame": 5535,
+"endFrame": 5548
+},
+{
+"s": 28,
+"w": "Titanic.",
+"start": 92.474,
+"end": 92.98,
+"startFrame": 5548,
+"endFrame": 5579
+},
+{
+"s": 29,
+"w": "Five",
+"start": 93.338,
+"end": 93.617,
+"startFrame": 5600,
+"endFrame": 5617
+},
+{
+"s": 29,
+"w": "people",
+"start": 93.617,
+"end": 93.998,
+"startFrame": 5617,
+"endFrame": 5640
+},
+{
+"s": 29,
+"w": "died.",
+"start": 93.998,
+"end": 94.379,
+"startFrame": 5640,
+"endFrame": 5663
+},
+{
+"s": 30,
+"w": "Its",
+"start": 95.204,
+"end": 95.506,
+"startFrame": 5712,
+"endFrame": 5730
+},
+{
+"s": 30,
+"w": "hull,",
+"start": 95.506,
+"end": 95.876,
+"startFrame": 5730,
+"endFrame": 5753
+},
+{
+"s": 30,
+"w": "as",
+"start": 95.993,
+"end": 96.135,
+"startFrame": 5760,
+"endFrame": 5768
+},
+{
+"s": 30,
+"w": "you",
+"start": 96.135,
+"end": 96.318,
+"startFrame": 5768,
+"endFrame": 5779
+},
+{
+"s": 30,
+"w": "may",
+"start": 96.318,
+"end": 96.5,
+"startFrame": 5779,
+"endFrame": 5790
+},
+{
+"s": 30,
+"w": "know,",
+"start": 96.5,
+"end": 96.723,
+"startFrame": 5790,
+"endFrame": 5803
+},
+{
+"s": 30,
+"w": "was",
+"start": 96.847,
+"end": 97.099,
+"startFrame": 5811,
+"endFrame": 5826
+},
+{
+"s": 30,
+"w": "carbon",
+"start": 97.099,
+"end": 97.519,
+"startFrame": 5826,
+"endFrame": 5851
+},
+{
+"s": 30,
+"w": "fibre.",
+"start": 97.519,
+"end": 97.994,
+"startFrame": 5851,
+"endFrame": 5880
+},
+{
+"s": 31,
+"w": "After",
+"start": 98.406,
+"end": 98.751,
+"startFrame": 5904,
+"endFrame": 5925
+},
+{
+"s": 31,
+"w": "earlier",
+"start": 98.751,
+"end": 99.202,
+"startFrame": 5925,
+"endFrame": 5952
+},
+{
+"s": 31,
+"w": "dives,",
+"start": 99.202,
+"end": 99.547,
+"startFrame": 5952,
+"endFrame": 5973
+},
+{
+"s": 31,
+"w": "its",
+"start": 99.668,
+"end": 99.9,
+"startFrame": 5980,
+"endFrame": 5994
+},
+{
+"s": 31,
+"w": "layers",
+"start": 99.9,
+"end": 100.286,
+"startFrame": 5994,
+"endFrame": 6017
+},
+{
+"s": 31,
+"w": "had",
+"start": 100.286,
+"end": 100.518,
+"startFrame": 6017,
+"endFrame": 6031
+},
+{
+"s": 31,
+"w": "started",
+"start": 100.518,
+"end": 100.956,
+"startFrame": 6031,
+"endFrame": 6057
+},
+{
+"s": 31,
+"w": "to",
+"start": 100.956,
+"end": 101.136,
+"startFrame": 6057,
+"endFrame": 6068
+},
+{
+"s": 31,
+"w": "come",
+"start": 101.136,
+"end": 101.419,
+"startFrame": 6068,
+"endFrame": 6085
+},
+{
+"s": 31,
+"w": "apart,",
+"start": 101.419,
+"end": 101.754,
+"startFrame": 6085,
+"endFrame": 6105
+},
+{
+"s": 31,
+"w": "and",
+"start": 102.056,
+"end": 102.284,
+"startFrame": 6123,
+"endFrame": 6137
+},
+{
+"s": 31,
+"w": "it",
+"start": 102.284,
+"end": 102.46,
+"startFrame": 6137,
+"endFrame": 6148
+},
+{
+"s": 31,
+"w": "kept",
+"start": 102.46,
+"end": 102.739,
+"startFrame": 6148,
+"endFrame": 6164
+},
+{
+"s": 31,
+"w": "diving",
+"start": 102.739,
+"end": 103.118,
+"startFrame": 6164,
+"endFrame": 6187
+},
+{
+"s": 31,
+"w": "anyway.",
+"start": 103.118,
+"end": 103.598,
+"startFrame": 6187,
+"endFrame": 6216
+},
+{
+"s": 32,
+"w": "The",
+"start": 103.988,
+"end": 104.215,
+"startFrame": 6239,
+"endFrame": 6253
+},
+{
+"s": 32,
+"w": "U-S",
+"start": 104.215,
+"end": 104.468,
+"startFrame": 6253,
+"endFrame": 6268
+},
+{
+"s": 32,
+"w": "Coast",
+"start": 104.468,
+"end": 104.796,
+"startFrame": 6268,
+"endFrame": 6288
+},
+{
+"s": 32,
+"w": "Guard",
+"start": 104.796,
+"end": 105.125,
+"startFrame": 6288,
+"endFrame": 6308
+},
+{
+"s": 32,
+"w": "said",
+"start": 105.125,
+"end": 105.402,
+"startFrame": 6308,
+"endFrame": 6324
+},
+{
+"s": 32,
+"w": "the",
+"start": 105.402,
+"end": 105.63,
+"startFrame": 6324,
+"endFrame": 6338
+},
+{
+"s": 32,
+"w": "company's",
+"start": 105.63,
+"end": 106.16,
+"startFrame": 6338,
+"endFrame": 6370
+},
+{
+"s": 32,
+"w": "own",
+"start": 106.16,
+"end": 106.387,
+"startFrame": 6370,
+"endFrame": 6383
+},
+{
+"s": 32,
+"w": "failures",
+"start": 106.387,
+"end": 106.867,
+"startFrame": 6383,
+"endFrame": 6412
+},
+{
+"s": 32,
+"w": "caused",
+"start": 106.867,
+"end": 107.246,
+"startFrame": 6412,
+"endFrame": 6435
+},
+{
+"s": 32,
+"w": "it.",
+"start": 107.246,
+"end": 107.524,
+"startFrame": 6435,
+"endFrame": 6451
+},
+{
+"s": 33,
+"w": "So",
+"start": 107.89,
+"end": 108.075,
+"startFrame": 6473,
+"endFrame": 6484
+},
+{
+"s": 33,
+"w": "what's",
+"start": 108.075,
+"end": 108.472,
+"startFrame": 6484,
+"endFrame": 6508
+},
+{
+"s": 33,
+"w": "different",
+"start": 108.472,
+"end": 109.027,
+"startFrame": 6508,
+"endFrame": 6542
+},
+{
+"s": 33,
+"w": "here?",
+"start": 109.027,
+"end": 109.318,
+"startFrame": 6542,
+"endFrame": 6559
+},
+{
+"s": 34,
+"w": "Three",
+"start": 109.801,
+"end": 110.062,
+"startFrame": 6588,
+"endFrame": 6604
+},
+{
+"s": 34,
+"w": "things.",
+"start": 110.062,
+"end": 110.443,
+"startFrame": 6604,
+"endFrame": 6627
+},
+{
+"s": 35,
+"w": "The",
+"start": 110.792,
+"end": 111.055,
+"startFrame": 6648,
+"endFrame": 6663
+},
+{
+"s": 35,
+"w": "material",
+"start": 111.055,
+"end": 111.61,
+"startFrame": 6663,
+"endFrame": 6697
+},
+{
+"s": 35,
+"w": "is",
+"start": 111.61,
+"end": 111.814,
+"startFrame": 6697,
+"endFrame": 6709
+},
+{
+"s": 35,
+"w": "titanium,",
+"start": 111.814,
+"end": 112.369,
+"startFrame": 6709,
+"endFrame": 6742
+},
+{
+"s": 35,
+"w": "the",
+"start": 112.574,
+"end": 112.783,
+"startFrame": 6754,
+"endFrame": 6767
+},
+{
+"s": 35,
+"w": "metal",
+"start": 112.783,
+"end": 113.084,
+"startFrame": 6767,
+"endFrame": 6785
+},
+{
+"s": 35,
+"w": "deep-sea",
+"start": 113.084,
+"end": 113.548,
+"startFrame": 6785,
+"endFrame": 6813
+},
+{
+"s": 35,
+"w": "subs",
+"start": 113.548,
+"end": 113.803,
+"startFrame": 6813,
+"endFrame": 6828
+},
+{
+"s": 35,
+"w": "have",
+"start": 113.803,
+"end": 114.059,
+"startFrame": 6828,
+"endFrame": 6844
+},
+{
+"s": 35,
+"w": "trusted",
+"start": 114.059,
+"end": 114.453,
+"startFrame": 6844,
+"endFrame": 6867
+},
+{
+"s": 35,
+"w": "for",
+"start": 114.453,
+"end": 114.662,
+"startFrame": 6867,
+"endFrame": 6880
+},
+{
+"s": 35,
+"w": "more",
+"start": 114.662,
+"end": 114.917,
+"startFrame": 6880,
+"endFrame": 6895
+},
+{
+"s": 35,
+"w": "than",
+"start": 114.917,
+"end": 115.172,
+"startFrame": 6895,
+"endFrame": 6910
+},
+{
+"s": 35,
+"w": "fifty",
+"start": 115.172,
+"end": 115.474,
+"startFrame": 6910,
+"endFrame": 6928
+},
+{
+"s": 35,
+"w": "years.",
+"start": 115.474,
+"end": 115.868,
+"startFrame": 6928,
+"endFrame": 6952
+},
+{
+"s": 36,
+"w": "The",
+"start": 116.224,
+"end": 116.478,
+"startFrame": 6973,
+"endFrame": 6989
+},
+{
+"s": 36,
+"w": "shape",
+"start": 116.478,
+"end": 116.845,
+"startFrame": 6989,
+"endFrame": 7011
+},
+{
+"s": 36,
+"w": "is",
+"start": 116.845,
+"end": 117.043,
+"startFrame": 7011,
+"endFrame": 7023
+},
+{
+"s": 36,
+"w": "a",
+"start": 117.043,
+"end": 117.184,
+"startFrame": 7023,
+"endFrame": 7031
+},
+{
+"s": 36,
+"w": "ball.",
+"start": 117.184,
+"end": 117.607,
+"startFrame": 7031,
+"endFrame": 7056
+},
+{
+"s": 37,
+"w": "And",
+"start": 117.975,
+"end": 118.209,
+"startFrame": 7078,
+"endFrame": 7093
+},
+{
+"s": 37,
+"w": "an",
+"start": 118.209,
+"end": 118.391,
+"startFrame": 7093,
+"endFrame": 7103
+},
+{
+"s": 37,
+"w": "outside",
+"start": 118.391,
+"end": 118.834,
+"startFrame": 7103,
+"endFrame": 7130
+},
+{
+"s": 37,
+"w": "inspection",
+"start": 118.834,
+"end": 119.433,
+"startFrame": 7130,
+"endFrame": 7166
+},
+{
+"s": 37,
+"w": "company",
+"start": 119.433,
+"end": 119.875,
+"startFrame": 7166,
+"endFrame": 7192
+},
+{
+"s": 37,
+"w": "checks",
+"start": 119.875,
+"end": 120.266,
+"startFrame": 7192,
+"endFrame": 7216
+},
+{
+"s": 37,
+"w": "and",
+"start": 120.266,
+"end": 120.5,
+"startFrame": 7216,
+"endFrame": 7230
+},
+{
+"s": 37,
+"w": "approves",
+"start": 120.5,
+"end": 120.994,
+"startFrame": 7230,
+"endFrame": 7260
+},
+{
+"s": 37,
+"w": "the",
+"start": 120.994,
+"end": 121.229,
+"startFrame": 7260,
+"endFrame": 7274
+},
+{
+"s": 37,
+"w": "work.",
+"start": 121.229,
+"end": 121.619,
+"startFrame": 7274,
+"endFrame": 7297
+},
+{
+"s": 38,
+"w": "For",
+"start": 121.941,
+"end": 122.191,
+"startFrame": 7316,
+"endFrame": 7331
+},
+{
+"s": 38,
+"w": "Matsya,",
+"start": 122.191,
+"end": 122.608,
+"startFrame": 7331,
+"endFrame": 7356
+},
+{
+"s": 38,
+"w": "that",
+"start": 122.708,
+"end": 122.981,
+"startFrame": 7362,
+"endFrame": 7379
+},
+{
+"s": 38,
+"w": "company",
+"start": 122.981,
+"end": 123.404,
+"startFrame": 7379,
+"endFrame": 7404
+},
+{
+"s": 38,
+"w": "is",
+"start": 123.404,
+"end": 123.578,
+"startFrame": 7404,
+"endFrame": 7415
+},
+{
+"s": 38,
+"w": "from",
+"start": 123.578,
+"end": 123.851,
+"startFrame": 7415,
+"endFrame": 7431
+},
+{
+"s": 38,
+"w": "Norway.",
+"start": 123.851,
+"end": 124.323,
+"startFrame": 7431,
+"endFrame": 7459
+},
+{
+"s": 39,
+"w": "And",
+"start": 124.647,
+"end": 124.851,
+"startFrame": 7479,
+"endFrame": 7491
+},
+{
+"s": 39,
+"w": "if",
+"start": 124.851,
+"end": 125.01,
+"startFrame": 7491,
+"endFrame": 7501
+},
+{
+"s": 39,
+"w": "something",
+"start": 125.01,
+"end": 125.487,
+"startFrame": 7501,
+"endFrame": 7529
+},
+{
+"s": 39,
+"w": "goes",
+"start": 125.487,
+"end": 125.736,
+"startFrame": 7529,
+"endFrame": 7544
+},
+{
+"s": 39,
+"w": "wrong",
+"start": 125.736,
+"end": 126.031,
+"startFrame": 7544,
+"endFrame": 7562
+},
+{
+"s": 39,
+"w": "down",
+"start": 126.031,
+"end": 126.281,
+"startFrame": 7562,
+"endFrame": 7577
+},
+{
+"s": 39,
+"w": "there?",
+"start": 126.281,
+"end": 126.576,
+"startFrame": 7577,
+"endFrame": 7595
+},
+{
+"s": 40,
+"w": "The",
+"start": 126.932,
+"end": 127.14,
+"startFrame": 7616,
+"endFrame": 7628
+},
+{
+"s": 40,
+"w": "crew",
+"start": 127.14,
+"end": 127.395,
+"startFrame": 7628,
+"endFrame": 7644
+},
+{
+"s": 40,
+"w": "can",
+"start": 127.395,
+"end": 127.604,
+"startFrame": 7644,
+"endFrame": 7656
+},
+{
+"s": 40,
+"w": "drop",
+"start": 127.604,
+"end": 127.858,
+"startFrame": 7656,
+"endFrame": 7671
+},
+{
+"s": 40,
+"w": "heavy",
+"start": 127.858,
+"end": 128.159,
+"startFrame": 7671,
+"endFrame": 7690
+},
+{
+"s": 40,
+"w": "weights,",
+"start": 128.159,
+"end": 128.553,
+"startFrame": 7690,
+"endFrame": 7713
+},
+{
+"s": 40,
+"w": "and",
+"start": 128.683,
+"end": 128.912,
+"startFrame": 7721,
+"endFrame": 7735
+},
+{
+"s": 40,
+"w": "the",
+"start": 128.912,
+"end": 129.141,
+"startFrame": 7735,
+"endFrame": 7748
+},
+{
+"s": 40,
+"w": "sub",
+"start": 129.141,
+"end": 129.37,
+"startFrame": 7748,
+"endFrame": 7762
+},
+{
+"s": 40,
+"w": "rises",
+"start": 129.37,
+"end": 129.7,
+"startFrame": 7762,
+"endFrame": 7782
+},
+{
+"s": 40,
+"w": "back",
+"start": 129.7,
+"end": 129.98,
+"startFrame": 7782,
+"endFrame": 7799
+},
+{
+"s": 40,
+"w": "up.",
+"start": 129.98,
+"end": 130.26,
+"startFrame": 7799,
+"endFrame": 7816
+},
+{
+"s": 41,
+"w": "And",
+"start": 130.565,
+"end": 130.8,
+"startFrame": 7834,
+"endFrame": 7848
+},
+{
+"s": 41,
+"w": "they",
+"start": 130.8,
+"end": 131.086,
+"startFrame": 7848,
+"endFrame": 7865
+},
+{
+"s": 41,
+"w": "carry",
+"start": 131.086,
+"end": 131.425,
+"startFrame": 7865,
+"endFrame": 7886
+},
+{
+"s": 41,
+"w": "enough",
+"start": 131.425,
+"end": 131.816,
+"startFrame": 7886,
+"endFrame": 7909
+},
+{
+"s": 41,
+"w": "air",
+"start": 131.816,
+"end": 132.051,
+"startFrame": 7909,
+"endFrame": 7923
+},
+{
+"s": 41,
+"w": "for",
+"start": 132.051,
+"end": 132.285,
+"startFrame": 7923,
+"endFrame": 7937
+},
+{
+"s": 41,
+"w": "ninety-six",
+"start": 132.285,
+"end": 132.911,
+"startFrame": 7937,
+"endFrame": 7975
+},
+{
+"s": 41,
+"w": "hours.",
+"start": 132.911,
+"end": 133.354,
+"startFrame": 7975,
+"endFrame": 8001
+},
+{
+"s": 42,
+"w": "But",
+"start": 133.751,
+"end": 134.074,
+"startFrame": 8025,
+"endFrame": 8044
+},
+{
+"s": 42,
+"w": "why",
+"start": 134.074,
+"end": 134.398,
+"startFrame": 8044,
+"endFrame": 8064
+},
+{
+"s": 42,
+"w": "a",
+"start": 134.398,
+"end": 134.578,
+"startFrame": 8064,
+"endFrame": 8075
+},
+{
+"s": 42,
+"w": "ball?",
+"start": 134.578,
+"end": 134.973,
+"startFrame": 8075,
+"endFrame": 8098
+},
+{
+"s": 43,
+"w": "Why",
+"start": 135.244,
+"end": 135.401,
+"startFrame": 8115,
+"endFrame": 8124
+},
+{
+"s": 43,
+"w": "not",
+"start": 135.401,
+"end": 135.557,
+"startFrame": 8124,
+"endFrame": 8133
+},
+{
+"s": 43,
+"w": "a",
+"start": 135.557,
+"end": 135.644,
+"startFrame": 8133,
+"endFrame": 8139
+},
+{
+"s": 43,
+"w": "long",
+"start": 135.644,
+"end": 135.836,
+"startFrame": 8139,
+"endFrame": 8150
+},
+{
+"s": 43,
+"w": "tube,",
+"start": 135.836,
+"end": 136.027,
+"startFrame": 8150,
+"endFrame": 8162
+},
+{
+"s": 43,
+"w": "like",
+"start": 136.154,
+"end": 136.479,
+"startFrame": 8169,
+"endFrame": 8189
+},
+{
+"s": 43,
+"w": "a",
+"start": 136.479,
+"end": 136.627,
+"startFrame": 8189,
+"endFrame": 8198
+},
+{
+"s": 43,
+"w": "normal",
+"start": 136.627,
+"end": 137.07,
+"startFrame": 8198,
+"endFrame": 8224
+},
+{
+"s": 43,
+"w": "submarine?",
+"start": 137.07,
+"end": 137.691,
+"startFrame": 8224,
+"endFrame": 8261
+},
+{
+"s": 44,
+"w": "Squeeze",
+"start": 138.027,
+"end": 138.368,
+"startFrame": 8282,
+"endFrame": 8302
+},
+{
+"s": 44,
+"w": "a",
+"start": 138.368,
+"end": 138.469,
+"startFrame": 8302,
+"endFrame": 8308
+},
+{
+"s": 44,
+"w": "ball",
+"start": 138.469,
+"end": 138.689,
+"startFrame": 8308,
+"endFrame": 8321
+},
+{
+"s": 44,
+"w": "in",
+"start": 138.689,
+"end": 138.83,
+"startFrame": 8321,
+"endFrame": 8330
+},
+{
+"s": 44,
+"w": "your",
+"start": 138.83,
+"end": 139.051,
+"startFrame": 8330,
+"endFrame": 8343
+},
+{
+"s": 44,
+"w": "hand.",
+"start": 139.051,
+"end": 139.352,
+"startFrame": 8343,
+"endFrame": 8361
+},
+{
+"s": 45,
+"w": "You",
+"start": 139.647,
+"end": 139.863,
+"startFrame": 8379,
+"endFrame": 8392
+},
+{
+"s": 45,
+"w": "can",
+"start": 139.863,
+"end": 140.079,
+"startFrame": 8392,
+"endFrame": 8405
+},
+{
+"s": 45,
+"w": "feel",
+"start": 140.079,
+"end": 140.342,
+"startFrame": 8405,
+"endFrame": 8421
+},
+{
+"s": 45,
+"w": "the",
+"start": 140.342,
+"end": 140.558,
+"startFrame": 8421,
+"endFrame": 8433
+},
+{
+"s": 45,
+"w": "push",
+"start": 140.558,
+"end": 140.822,
+"startFrame": 8433,
+"endFrame": 8449
+},
+{
+"s": 45,
+"w": "spread",
+"start": 140.822,
+"end": 141.181,
+"startFrame": 8449,
+"endFrame": 8471
+},
+{
+"s": 45,
+"w": "all",
+"start": 141.181,
+"end": 141.397,
+"startFrame": 8471,
+"endFrame": 8484
+},
+{
+"s": 45,
+"w": "the",
+"start": 141.397,
+"end": 141.613,
+"startFrame": 8484,
+"endFrame": 8497
+},
+{
+"s": 45,
+"w": "way",
+"start": 141.613,
+"end": 141.828,
+"startFrame": 8497,
+"endFrame": 8510
+},
+{
+"s": 45,
+"w": "round.",
+"start": 141.828,
+"end": 142.236,
+"startFrame": 8510,
+"endFrame": 8534
+},
+{
+"s": 46,
+"w": "There's",
+"start": 142.565,
+"end": 142.96,
+"startFrame": 8554,
+"endFrame": 8578
+},
+{
+"s": 46,
+"w": "no",
+"start": 142.96,
+"end": 143.122,
+"startFrame": 8578,
+"endFrame": 8587
+},
+{
+"s": 46,
+"w": "corner",
+"start": 143.122,
+"end": 143.471,
+"startFrame": 8587,
+"endFrame": 8608
+},
+{
+"s": 46,
+"w": "and",
+"start": 143.471,
+"end": 143.68,
+"startFrame": 8608,
+"endFrame": 8621
+},
+{
+"s": 46,
+"w": "no",
+"start": 143.68,
+"end": 143.843,
+"startFrame": 8621,
+"endFrame": 8631
+},
+{
+"s": 46,
+"w": "flat",
+"start": 143.843,
+"end": 144.098,
+"startFrame": 8631,
+"endFrame": 8646
+},
+{
+"s": 46,
+"w": "side",
+"start": 144.098,
+"end": 144.354,
+"startFrame": 8646,
+"endFrame": 8661
+},
+{
+"s": 46,
+"w": "where",
+"start": 144.354,
+"end": 144.656,
+"startFrame": 8661,
+"endFrame": 8679
+},
+{
+"s": 46,
+"w": "the",
+"start": 144.656,
+"end": 144.865,
+"startFrame": 8679,
+"endFrame": 8692
+},
+{
+"s": 46,
+"w": "pressure",
+"start": 144.865,
+"end": 145.306,
+"startFrame": 8692,
+"endFrame": 8718
+},
+{
+"s": 46,
+"w": "can",
+"start": 145.306,
+"end": 145.515,
+"startFrame": 8718,
+"endFrame": 8731
+},
+{
+"s": 46,
+"w": "win.",
+"start": 145.515,
+"end": 145.817,
+"startFrame": 8731,
+"endFrame": 8749
+},
+{
+"s": 47,
+"w": "Even",
+"start": 146.089,
+"end": 146.374,
+"startFrame": 8765,
+"endFrame": 8782
+},
+{
+"s": 47,
+"w": "America's",
+"start": 146.374,
+"end": 146.918,
+"startFrame": 8782,
+"endFrame": 8815
+},
+{
+"s": 47,
+"w": "famous",
+"start": 146.918,
+"end": 147.306,
+"startFrame": 8815,
+"endFrame": 8838
+},
+{
+"s": 47,
+"w": "deep-sea",
+"start": 147.306,
+"end": 147.824,
+"startFrame": 8838,
+"endFrame": 8869
+},
+{
+"s": 47,
+"w": "sub,",
+"start": 147.824,
+"end": 148.057,
+"startFrame": 8869,
+"endFrame": 8883
+},
+{
+"s": 47,
+"w": "Alvin,",
+"start": 148.138,
+"end": 148.671,
+"startFrame": 8888,
+"endFrame": 8920
+},
+{
+"s": 47,
+"w": "uses",
+"start": 148.671,
+"end": 148.99,
+"startFrame": 8920,
+"endFrame": 8939
+},
+{
+"s": 47,
+"w": "a",
+"start": 148.99,
+"end": 149.135,
+"startFrame": 8939,
+"endFrame": 8948
+},
+{
+"s": 47,
+"w": "ball.",
+"start": 149.135,
+"end": 149.57,
+"startFrame": 8948,
+"endFrame": 8974
+},
+{
+"s": 48,
+"w": "Its",
+"start": 149.842,
+"end": 150.083,
+"startFrame": 8991,
+"endFrame": 9005
+},
+{
+"s": 48,
+"w": "first",
+"start": 150.083,
+"end": 150.43,
+"startFrame": 9005,
+"endFrame": 9026
+},
+{
+"s": 48,
+"w": "one,",
+"start": 150.43,
+"end": 150.671,
+"startFrame": 9026,
+"endFrame": 9040
+},
+{
+"s": 48,
+"w": "in",
+"start": 150.671,
+"end": 150.85,
+"startFrame": 9040,
+"endFrame": 9051
+},
+{
+"s": 48,
+"w": "nineteen",
+"start": 150.85,
+"end": 151.334,
+"startFrame": 9051,
+"endFrame": 9080
+},
+{
+"s": 48,
+"w": "sixty-four,",
+"start": 151.334,
+"end": 151.945,
+"startFrame": 9080,
+"endFrame": 9117
+},
+{
+"s": 48,
+"w": "was",
+"start": 152.097,
+"end": 152.307,
+"startFrame": 9126,
+"endFrame": 9138
+},
+{
+"s": 48,
+"w": "steel.",
+"start": 152.307,
+"end": 152.704,
+"startFrame": 9138,
+"endFrame": 9162
+},
+{
+"s": 49,
+"w": "In",
+"start": 152.983,
+"end": 153.14,
+"startFrame": 9179,
+"endFrame": 9188
+},
+{
+"s": 49,
+"w": "nineteen",
+"start": 153.14,
+"end": 153.566,
+"startFrame": 9188,
+"endFrame": 9214
+},
+{
+"s": 49,
+"w": "seventy-three,",
+"start": 153.566,
+"end": 154.238,
+"startFrame": 9214,
+"endFrame": 9254
+},
+{
+"s": 49,
+"w": "they",
+"start": 154.326,
+"end": 154.602,
+"startFrame": 9260,
+"endFrame": 9276
+},
+{
+"s": 49,
+"w": "changed",
+"start": 154.602,
+"end": 155.029,
+"startFrame": 9276,
+"endFrame": 9302
+},
+{
+"s": 49,
+"w": "it",
+"start": 155.029,
+"end": 155.205,
+"startFrame": 9302,
+"endFrame": 9312
+},
+{
+"s": 49,
+"w": "to",
+"start": 155.205,
+"end": 155.381,
+"startFrame": 9312,
+"endFrame": 9323
+},
+{
+"s": 49,
+"w": "titanium,",
+"start": 155.381,
+"end": 155.858,
+"startFrame": 9323,
+"endFrame": 9351
+},
+{
+"s": 49,
+"w": "and",
+"start": 156.109,
+"end": 156.352,
+"startFrame": 9367,
+"endFrame": 9381
+},
+{
+"s": 49,
+"w": "Alvin",
+"start": 156.352,
+"end": 156.702,
+"startFrame": 9381,
+"endFrame": 9402
+},
+{
+"s": 49,
+"w": "could",
+"start": 156.702,
+"end": 157.052,
+"startFrame": 9402,
+"endFrame": 9423
+},
+{
+"s": 49,
+"w": "go",
+"start": 157.052,
+"end": 157.241,
+"startFrame": 9423,
+"endFrame": 9434
+},
+{
+"s": 49,
+"w": "almost",
+"start": 157.241,
+"end": 157.646,
+"startFrame": 9434,
+"endFrame": 9459
+},
+{
+"s": 49,
+"w": "twice",
+"start": 157.646,
+"end": 157.996,
+"startFrame": 9459,
+"endFrame": 9480
+},
+{
+"s": 49,
+"w": "as",
+"start": 157.996,
+"end": 158.185,
+"startFrame": 9480,
+"endFrame": 9491
+},
+{
+"s": 49,
+"w": "deep.",
+"start": 158.185,
+"end": 158.589,
+"startFrame": 9491,
+"endFrame": 9515
+},
+{
+"s": 50,
+"w": "India",
+"start": 158.885,
+"end": 159.191,
+"startFrame": 9533,
+"endFrame": 9551
+},
+{
+"s": 50,
+"w": "walked",
+"start": 159.191,
+"end": 159.545,
+"startFrame": 9551,
+"endFrame": 9573
+},
+{
+"s": 50,
+"w": "the",
+"start": 159.545,
+"end": 159.757,
+"startFrame": 9573,
+"endFrame": 9585
+},
+{
+"s": 50,
+"w": "same",
+"start": 159.757,
+"end": 160.016,
+"startFrame": 9585,
+"endFrame": 9601
+},
+{
+"s": 50,
+"w": "road.",
+"start": 160.016,
+"end": 160.37,
+"startFrame": 9601,
+"endFrame": 9622
+},
+{
+"s": 51,
+"w": "In",
+"start": 160.647,
+"end": 160.806,
+"startFrame": 9639,
+"endFrame": 9648
+},
+{
+"s": 51,
+"w": "twenty",
+"start": 160.806,
+"end": 161.147,
+"startFrame": 9648,
+"endFrame": 9669
+},
+{
+"s": 51,
+"w": "twenty-one,",
+"start": 161.147,
+"end": 161.692,
+"startFrame": 9669,
+"endFrame": 9702
+},
+{
+"s": 51,
+"w": "it",
+"start": 161.802,
+"end": 161.982,
+"startFrame": 9708,
+"endFrame": 9719
+},
+{
+"s": 51,
+"w": "lowered",
+"start": 161.982,
+"end": 162.419,
+"startFrame": 9719,
+"endFrame": 9745
+},
+{
+"s": 51,
+"w": "a",
+"start": 162.419,
+"end": 162.548,
+"startFrame": 9745,
+"endFrame": 9753
+},
+{
+"s": 51,
+"w": "test",
+"start": 162.548,
+"end": 162.831,
+"startFrame": 9753,
+"endFrame": 9770
+},
+{
+"s": 51,
+"w": "ball",
+"start": 162.831,
+"end": 163.114,
+"startFrame": 9770,
+"endFrame": 9787
+},
+{
+"s": 51,
+"w": "of",
+"start": 163.114,
+"end": 163.294,
+"startFrame": 9787,
+"endFrame": 9798
+},
+{
+"s": 51,
+"w": "plain",
+"start": 163.294,
+"end": 163.628,
+"startFrame": 9798,
+"endFrame": 9818
+},
+{
+"s": 51,
+"w": "steel",
+"start": 163.628,
+"end": 163.963,
+"startFrame": 9818,
+"endFrame": 9838
+},
+{
+"s": 51,
+"w": "six",
+"start": 163.963,
+"end": 164.194,
+"startFrame": 9838,
+"endFrame": 9852
+},
+{
+"s": 51,
+"w": "hundred",
+"start": 164.194,
+"end": 164.631,
+"startFrame": 9852,
+"endFrame": 9878
+},
+{
+"s": 51,
+"w": "metres",
+"start": 164.631,
+"end": 165.017,
+"startFrame": 9878,
+"endFrame": 9901
+},
+{
+"s": 51,
+"w": "into",
+"start": 165.017,
+"end": 165.3,
+"startFrame": 9901,
+"endFrame": 9918
+},
+{
+"s": 51,
+"w": "the",
+"start": 165.3,
+"end": 165.532,
+"startFrame": 9918,
+"endFrame": 9932
+},
+{
+"s": 51,
+"w": "Bay",
+"start": 165.532,
+"end": 165.763,
+"startFrame": 9932,
+"endFrame": 9946
+},
+{
+"s": 51,
+"w": "of",
+"start": 165.763,
+"end": 165.943,
+"startFrame": 9946,
+"endFrame": 9957
+},
+{
+"s": 51,
+"w": "Bengal.",
+"start": 165.943,
+"end": 166.432,
+"startFrame": 9957,
+"endFrame": 9986
+},
+{
+"s": 52,
+"w": "Then",
+"start": 166.693,
+"end": 167.018,
+"startFrame": 10002,
+"endFrame": 10021
+},
+{
+"s": 52,
+"w": "came",
+"start": 167.018,
+"end": 167.343,
+"startFrame": 10021,
+"endFrame": 10041
+},
+{
+"s": 52,
+"w": "titanium.",
+"start": 167.343,
+"end": 168.022,
+"startFrame": 10041,
+"endFrame": 10081
+},
+{
+"s": 53,
+"w": "And",
+"start": 168.342,
+"end": 168.779,
+"startFrame": 10101,
+"endFrame": 10127
+},
+{
+"s": 53,
+"w": "this,",
+"start": 168.779,
+"end": 169.314,
+"startFrame": 10127,
+"endFrame": 10159
+},
+{
+"s": 53,
+"w": "you",
+"start": 169.458,
+"end": 169.632,
+"startFrame": 10167,
+"endFrame": 10178
+},
+{
+"s": 53,
+"w": "see,",
+"start": 169.632,
+"end": 169.806,
+"startFrame": 10178,
+"endFrame": 10188
+},
+{
+"s": 53,
+"w": "is",
+"start": 169.895,
+"end": 170.003,
+"startFrame": 10194,
+"endFrame": 10200
+},
+{
+"s": 53,
+"w": "where",
+"start": 170.003,
+"end": 170.204,
+"startFrame": 10200,
+"endFrame": 10212
+},
+{
+"s": 53,
+"w": "Isro",
+"start": 170.204,
+"end": 170.374,
+"startFrame": 10212,
+"endFrame": 10222
+},
+{
+"s": 53,
+"w": "comes",
+"start": 170.374,
+"end": 170.575,
+"startFrame": 10222,
+"endFrame": 10234
+},
+{
+"s": 53,
+"w": "in.",
+"start": 170.575,
+"end": 170.745,
+"startFrame": 10234,
+"endFrame": 10245
+},
+{
+"s": 54,
+"w": "Remember",
+"start": 171.037,
+"end": 171.449,
+"startFrame": 10262,
+"endFrame": 10287
+},
+{
+"s": 54,
+"w": "that",
+"start": 171.449,
+"end": 171.687,
+"startFrame": 10287,
+"endFrame": 10301
+},
+{
+"s": 54,
+"w": "weld",
+"start": 171.687,
+"end": 171.926,
+"startFrame": 10301,
+"endFrame": 10316
+},
+{
+"s": 54,
+"w": "I",
+"start": 171.926,
+"end": 172.034,
+"startFrame": 10316,
+"endFrame": 10322
+},
+{
+"s": 54,
+"w": "told",
+"start": 172.034,
+"end": 172.272,
+"startFrame": 10322,
+"endFrame": 10336
+},
+{
+"s": 54,
+"w": "you",
+"start": 172.272,
+"end": 172.467,
+"startFrame": 10336,
+"endFrame": 10348
+},
+{
+"s": 54,
+"w": "about?",
+"start": 172.467,
+"end": 172.749,
+"startFrame": 10348,
+"endFrame": 10365
+},
+{
+"s": 55,
+"w": "You",
+"start": 173.029,
+"end": 173.268,
+"startFrame": 10382,
+"endFrame": 10396
+},
+{
+"s": 55,
+"w": "can't",
+"start": 173.268,
+"end": 173.614,
+"startFrame": 10396,
+"endFrame": 10417
+},
+{
+"s": 55,
+"w": "make",
+"start": 173.614,
+"end": 173.906,
+"startFrame": 10417,
+"endFrame": 10434
+},
+{
+"s": 55,
+"w": "a",
+"start": 173.906,
+"end": 174.039,
+"startFrame": 10434,
+"endFrame": 10442
+},
+{
+"s": 55,
+"w": "ball",
+"start": 174.039,
+"end": 174.331,
+"startFrame": 10442,
+"endFrame": 10460
+},
+{
+"s": 55,
+"w": "this",
+"start": 174.331,
+"end": 174.624,
+"startFrame": 10460,
+"endFrame": 10477
+},
+{
+"s": 55,
+"w": "big",
+"start": 174.624,
+"end": 174.863,
+"startFrame": 10477,
+"endFrame": 10492
+},
+{
+"s": 55,
+"w": "in",
+"start": 174.863,
+"end": 175.049,
+"startFrame": 10492,
+"endFrame": 10503
+},
+{
+"s": 55,
+"w": "one",
+"start": 175.049,
+"end": 175.288,
+"startFrame": 10503,
+"endFrame": 10517
+},
+{
+"s": 55,
+"w": "piece.",
+"start": 175.288,
+"end": 175.74,
+"startFrame": 10517,
+"endFrame": 10544
+},
+{
+"s": 56,
+"w": "So",
+"start": 175.99,
+"end": 176.155,
+"startFrame": 10559,
+"endFrame": 10569
+},
+{
+"s": 56,
+"w": "how",
+"start": 176.155,
+"end": 176.368,
+"startFrame": 10569,
+"endFrame": 10582
+},
+{
+"s": 56,
+"w": "do",
+"start": 176.368,
+"end": 176.533,
+"startFrame": 10582,
+"endFrame": 10592
+},
+{
+"s": 56,
+"w": "you",
+"start": 176.533,
+"end": 176.745,
+"startFrame": 10592,
+"endFrame": 10605
+},
+{
+"s": 56,
+"w": "make",
+"start": 176.745,
+"end": 177.005,
+"startFrame": 10605,
+"endFrame": 10620
+},
+{
+"s": 56,
+"w": "it?",
+"start": 177.005,
+"end": 177.17,
+"startFrame": 10620,
+"endFrame": 10630
+},
+{
+"s": 57,
+"w": "Isro's",
+"start": 177.54,
+"end": 177.958,
+"startFrame": 10652,
+"endFrame": 10677
+},
+{
+"s": 57,
+"w": "drawing",
+"start": 177.958,
+"end": 178.432,
+"startFrame": 10677,
+"endFrame": 10706
+},
+{
+"s": 57,
+"w": "shows",
+"start": 178.432,
+"end": 178.794,
+"startFrame": 10706,
+"endFrame": 10728
+},
+{
+"s": 57,
+"w": "five",
+"start": 178.794,
+"end": 179.101,
+"startFrame": 10728,
+"endFrame": 10746
+},
+{
+"s": 57,
+"w": "pieces.",
+"start": 179.101,
+"end": 179.63,
+"startFrame": 10746,
+"endFrame": 10778
+},
+{
+"s": 58,
+"w": "A",
+"start": 179.91,
+"end": 180.031,
+"startFrame": 10795,
+"endFrame": 10802
+},
+{
+"s": 58,
+"w": "top",
+"start": 180.031,
+"end": 180.249,
+"startFrame": 10802,
+"endFrame": 10815
+},
+{
+"s": 58,
+"w": "hatch.",
+"start": 180.249,
+"end": 180.66,
+"startFrame": 10815,
+"endFrame": 10840
+},
+{
+"s": 59,
+"w": "Three",
+"start": 180.96,
+"end": 181.25,
+"startFrame": 10858,
+"endFrame": 10875
+},
+{
+"s": 59,
+"w": "rings.",
+"start": 181.25,
+"end": 181.63,
+"startFrame": 10875,
+"endFrame": 10898
+},
+{
+"s": 60,
+"w": "A",
+"start": 181.9,
+"end": 182.021,
+"startFrame": 10914,
+"endFrame": 10921
+},
+{
+"s": 60,
+"w": "bottom",
+"start": 182.021,
+"end": 182.386,
+"startFrame": 10921,
+"endFrame": 10943
+},
+{
+"s": 60,
+"w": "dome.",
+"start": 182.386,
+"end": 182.75,
+"startFrame": 10943,
+"endFrame": 10965
+},
+{
+"s": 61,
+"w": "Together,",
+"start": 183.03,
+"end": 183.494,
+"startFrame": 10982,
+"endFrame": 11010
+},
+{
+"s": 61,
+"w": "they",
+"start": 183.494,
+"end": 183.762,
+"startFrame": 11010,
+"endFrame": 11026
+},
+{
+"s": 61,
+"w": "weigh",
+"start": 183.762,
+"end": 184.08,
+"startFrame": 11026,
+"endFrame": 11045
+},
+{
+"s": 61,
+"w": "about",
+"start": 184.08,
+"end": 184.397,
+"startFrame": 11045,
+"endFrame": 11064
+},
+{
+"s": 61,
+"w": "five",
+"start": 184.397,
+"end": 184.666,
+"startFrame": 11064,
+"endFrame": 11080
+},
+{
+"s": 61,
+"w": "and",
+"start": 184.666,
+"end": 184.885,
+"startFrame": 11080,
+"endFrame": 11093
+},
+{
+"s": 61,
+"w": "a",
+"start": 184.885,
+"end": 185.008,
+"startFrame": 11093,
+"endFrame": 11100
+},
+{
+"s": 61,
+"w": "half",
+"start": 185.008,
+"end": 185.276,
+"startFrame": 11100,
+"endFrame": 11117
+},
+{
+"s": 61,
+"w": "tonnes.",
+"start": 185.276,
+"end": 185.74,
+"startFrame": 11117,
+"endFrame": 11144
+},
+{
+"s": 62,
+"w": "Seven",
+"start": 186.543,
+"end": 186.905,
+"startFrame": 11193,
+"endFrame": 11214
+},
+{
+"s": 62,
+"w": "welds",
+"start": 186.905,
+"end": 187.267,
+"startFrame": 11214,
+"endFrame": 11236
+},
+{
+"s": 62,
+"w": "join",
+"start": 187.267,
+"end": 187.573,
+"startFrame": 11236,
+"endFrame": 11254
+},
+{
+"s": 62,
+"w": "them.",
+"start": 187.573,
+"end": 187.99,
+"startFrame": 11254,
+"endFrame": 11279
+},
+{
+"s": 63,
+"w": "Four",
+"start": 188.376,
+"end": 188.66,
+"startFrame": 11303,
+"endFrame": 11320
+},
+{
+"s": 63,
+"w": "go",
+"start": 188.66,
+"end": 188.841,
+"startFrame": 11320,
+"endFrame": 11330
+},
+{
+"s": 63,
+"w": "right",
+"start": 188.841,
+"end": 189.177,
+"startFrame": 11330,
+"endFrame": 11351
+},
+{
+"s": 63,
+"w": "round",
+"start": 189.177,
+"end": 189.513,
+"startFrame": 11351,
+"endFrame": 11371
+},
+{
+"s": 63,
+"w": "the",
+"start": 189.513,
+"end": 189.746,
+"startFrame": 11371,
+"endFrame": 11385
+},
+{
+"s": 63,
+"w": "ball,",
+"start": 189.746,
+"end": 190.03,
+"startFrame": 11385,
+"endFrame": 11402
+},
+{
+"s": 63,
+"w": "like",
+"start": 190.186,
+"end": 190.449,
+"startFrame": 11411,
+"endFrame": 11427
+},
+{
+"s": 63,
+"w": "belts.",
+"start": 190.449,
+"end": 190.856,
+"startFrame": 11427,
+"endFrame": 11451
+},
+{
+"s": 64,
+"w": "Three",
+"start": 191.321,
+"end": 191.65,
+"startFrame": 11479,
+"endFrame": 11499
+},
+{
+"s": 64,
+"w": "go",
+"start": 191.65,
+"end": 191.826,
+"startFrame": 11499,
+"endFrame": 11510
+},
+{
+"s": 64,
+"w": "round",
+"start": 191.826,
+"end": 192.155,
+"startFrame": 11510,
+"endFrame": 11529
+},
+{
+"s": 64,
+"w": "its",
+"start": 192.155,
+"end": 192.382,
+"startFrame": 11529,
+"endFrame": 11543
+},
+{
+"s": 64,
+"w": "windows.",
+"start": 192.382,
+"end": 192.913,
+"startFrame": 11543,
+"endFrame": 11575
+},
+{
+"s": 65,
+"w": "Here's",
+"start": 193.362,
+"end": 193.669,
+"startFrame": 11602,
+"endFrame": 11620
+},
+{
+"s": 65,
+"w": "the",
+"start": 193.669,
+"end": 193.853,
+"startFrame": 11620,
+"endFrame": 11631
+},
+{
+"s": 65,
+"w": "problem",
+"start": 193.853,
+"end": 194.2,
+"startFrame": 11631,
+"endFrame": 11652
+},
+{
+"s": 65,
+"w": "you'd",
+"start": 194.2,
+"end": 194.466,
+"startFrame": 11652,
+"endFrame": 11668
+},
+{
+"s": 65,
+"w": "face.",
+"start": 194.466,
+"end": 194.773,
+"startFrame": 11668,
+"endFrame": 11686
+},
+{
+"s": 66,
+"w": "Titanium",
+"start": 195.166,
+"end": 195.857,
+"startFrame": 11710,
+"endFrame": 11751
+},
+{
+"s": 66,
+"w": "is",
+"start": 195.857,
+"end": 196.111,
+"startFrame": 11751,
+"endFrame": 11767
+},
+{
+"s": 66,
+"w": "fussy.",
+"start": 196.111,
+"end": 196.729,
+"startFrame": 11767,
+"endFrame": 11804
+},
+{
+"s": 67,
+"w": "Heat",
+"start": 197.235,
+"end": 197.506,
+"startFrame": 11834,
+"endFrame": 11850
+},
+{
+"s": 67,
+"w": "it",
+"start": 197.506,
+"end": 197.678,
+"startFrame": 11850,
+"endFrame": 11861
+},
+{
+"s": 67,
+"w": "in",
+"start": 197.678,
+"end": 197.85,
+"startFrame": 11861,
+"endFrame": 11871
+},
+{
+"s": 67,
+"w": "normal",
+"start": 197.85,
+"end": 198.219,
+"startFrame": 11871,
+"endFrame": 11893
+},
+{
+"s": 67,
+"w": "air,",
+"start": 198.219,
+"end": 198.44,
+"startFrame": 11893,
+"endFrame": 11906
+},
+{
+"s": 67,
+"w": "and",
+"start": 198.639,
+"end": 198.887,
+"startFrame": 11918,
+"endFrame": 11933
+},
+{
+"s": 67,
+"w": "it",
+"start": 198.887,
+"end": 199.08,
+"startFrame": 11933,
+"endFrame": 11945
+},
+{
+"s": 67,
+"w": "grabs",
+"start": 199.08,
+"end": 199.439,
+"startFrame": 11945,
+"endFrame": 11966
+},
+{
+"s": 67,
+"w": "oxygen",
+"start": 199.439,
+"end": 199.852,
+"startFrame": 11966,
+"endFrame": 11991
+},
+{
+"s": 67,
+"w": "and",
+"start": 199.852,
+"end": 200.101,
+"startFrame": 11991,
+"endFrame": 12006
+},
+{
+"s": 67,
+"w": "nitrogen.",
+"start": 200.101,
+"end": 200.735,
+"startFrame": 12006,
+"endFrame": 12044
+},
+{
+"s": 68,
+"w": "The",
+"start": 201.165,
+"end": 201.434,
+"startFrame": 12070,
+"endFrame": 12086
+},
+{
+"s": 68,
+"w": "weld",
+"start": 201.434,
+"end": 201.763,
+"startFrame": 12086,
+"endFrame": 12106
+},
+{
+"s": 68,
+"w": "fills",
+"start": 201.763,
+"end": 202.151,
+"startFrame": 12106,
+"endFrame": 12129
+},
+{
+"s": 68,
+"w": "with",
+"start": 202.151,
+"end": 202.48,
+"startFrame": 12129,
+"endFrame": 12149
+},
+{
+"s": 68,
+"w": "tiny",
+"start": 202.48,
+"end": 202.809,
+"startFrame": 12149,
+"endFrame": 12169
+},
+{
+"s": 68,
+"w": "holes,",
+"start": 202.809,
+"end": 203.197,
+"startFrame": 12169,
+"endFrame": 12192
+},
+{
+"s": 68,
+"w": "and",
+"start": 203.315,
+"end": 203.553,
+"startFrame": 12199,
+"endFrame": 12213
+},
+{
+"s": 68,
+"w": "it",
+"start": 203.553,
+"end": 203.738,
+"startFrame": 12213,
+"endFrame": 12224
+},
+{
+"s": 68,
+"w": "becomes",
+"start": 203.738,
+"end": 204.188,
+"startFrame": 12224,
+"endFrame": 12251
+},
+{
+"s": 68,
+"w": "weak",
+"start": 204.188,
+"end": 204.479,
+"startFrame": 12251,
+"endFrame": 12269
+},
+{
+"s": 68,
+"w": "and",
+"start": 204.479,
+"end": 204.717,
+"startFrame": 12269,
+"endFrame": 12283
+},
+{
+"s": 68,
+"w": "easy",
+"start": 204.717,
+"end": 205.008,
+"startFrame": 12283,
+"endFrame": 12300
+},
+{
+"s": 68,
+"w": "to",
+"start": 205.008,
+"end": 205.193,
+"startFrame": 12300,
+"endFrame": 12312
+},
+{
+"s": 68,
+"w": "crack.",
+"start": 205.193,
+"end": 205.643,
+"startFrame": 12312,
+"endFrame": 12339
+},
+{
+"s": 69,
+"w": "So",
+"start": 205.988,
+"end": 206.161,
+"startFrame": 12359,
+"endFrame": 12370
+},
+{
+"s": 69,
+"w": "you",
+"start": 206.161,
+"end": 206.383,
+"startFrame": 12370,
+"endFrame": 12383
+},
+{
+"s": 69,
+"w": "can't",
+"start": 206.383,
+"end": 206.703,
+"startFrame": 12383,
+"endFrame": 12402
+},
+{
+"s": 69,
+"w": "weld",
+"start": 206.703,
+"end": 206.975,
+"startFrame": 12402,
+"endFrame": 12418
+},
+{
+"s": 69,
+"w": "it",
+"start": 206.975,
+"end": 207.147,
+"startFrame": 12418,
+"endFrame": 12429
+},
+{
+"s": 69,
+"w": "with",
+"start": 207.147,
+"end": 207.418,
+"startFrame": 12429,
+"endFrame": 12445
+},
+{
+"s": 69,
+"w": "a",
+"start": 207.418,
+"end": 207.542,
+"startFrame": 12445,
+"endFrame": 12453
+},
+{
+"s": 69,
+"w": "normal",
+"start": 207.542,
+"end": 207.912,
+"startFrame": 12453,
+"endFrame": 12475
+},
+{
+"s": 69,
+"w": "flame.",
+"start": 207.912,
+"end": 208.331,
+"startFrame": 12475,
+"endFrame": 12500
+},
+{
+"s": 70,
+"w": "What",
+"start": 208.811,
+"end": 208.98,
+"startFrame": 12529,
+"endFrame": 12539
+},
+{
+"s": 70,
+"w": "do",
+"start": 208.98,
+"end": 209.087,
+"startFrame": 12539,
+"endFrame": 12545
+},
+{
+"s": 70,
+"w": "you",
+"start": 209.087,
+"end": 209.226,
+"startFrame": 12545,
+"endFrame": 12554
+},
+{
+"s": 70,
+"w": "do?",
+"start": 209.226,
+"end": 209.333,
+"startFrame": 12554,
+"endFrame": 12560
+},
+{
+"s": 71,
+"w": "Isro",
+"start": 209.83,
+"end": 210.205,
+"startFrame": 12590,
+"endFrame": 12612
+},
+{
+"s": 71,
+"w": "used",
+"start": 210.205,
+"end": 210.579,
+"startFrame": 12612,
+"endFrame": 12635
+},
+{
+"s": 71,
+"w": "a",
+"start": 210.579,
+"end": 210.75,
+"startFrame": 12635,
+"endFrame": 12645
+},
+{
+"s": 71,
+"w": "beam",
+"start": 210.75,
+"end": 211.124,
+"startFrame": 12645,
+"endFrame": 12667
+},
+{
+"s": 71,
+"w": "of",
+"start": 211.124,
+"end": 211.363,
+"startFrame": 12667,
+"endFrame": 12682
+},
+{
+"s": 71,
+"w": "electrons,",
+"start": 211.363,
+"end": 212.078,
+"startFrame": 12682,
+"endFrame": 12725
+},
+{
+"s": 71,
+"w": "fired",
+"start": 212.201,
+"end": 212.583,
+"startFrame": 12732,
+"endFrame": 12755
+},
+{
+"s": 71,
+"w": "inside",
+"start": 212.583,
+"end": 213.023,
+"startFrame": 12755,
+"endFrame": 12781
+},
+{
+"s": 71,
+"w": "a",
+"start": 213.023,
+"end": 213.17,
+"startFrame": 12781,
+"endFrame": 12790
+},
+{
+"s": 71,
+"w": "vacuum.",
+"start": 213.17,
+"end": 213.728,
+"startFrame": 12790,
+"endFrame": 12824
+},
+{
+"s": 72,
+"w": "No",
+"start": 214.127,
+"end": 214.379,
+"startFrame": 12848,
+"endFrame": 12863
+},
+{
+"s": 72,
+"w": "air,",
+"start": 214.379,
+"end": 214.702,
+"startFrame": 12863,
+"endFrame": 12882
+},
+{
+"s": 72,
+"w": "so",
+"start": 214.895,
+"end": 215.071,
+"startFrame": 12894,
+"endFrame": 12904
+},
+{
+"s": 72,
+"w": "nothing",
+"start": 215.071,
+"end": 215.5,
+"startFrame": 12904,
+"endFrame": 12930
+},
+{
+"s": 72,
+"w": "can",
+"start": 215.5,
+"end": 215.727,
+"startFrame": 12930,
+"endFrame": 12944
+},
+{
+"s": 72,
+"w": "get",
+"start": 215.727,
+"end": 215.954,
+"startFrame": 12944,
+"endFrame": 12957
+},
+{
+"s": 72,
+"w": "in.",
+"start": 215.954,
+"end": 216.231,
+"startFrame": 12957,
+"endFrame": 12974
+},
+{
+"s": 73,
+"w": "But",
+"start": 216.738,
+"end": 216.959,
+"startFrame": 13004,
+"endFrame": 13018
+},
+{
+"s": 73,
+"w": "there",
+"start": 216.959,
+"end": 217.278,
+"startFrame": 13018,
+"endFrame": 13037
+},
+{
+"s": 73,
+"w": "was",
+"start": 217.278,
+"end": 217.5,
+"startFrame": 13037,
+"endFrame": 13050
+},
+{
+"s": 73,
+"w": "a",
+"start": 217.5,
+"end": 217.622,
+"startFrame": 13050,
+"endFrame": 13057
+},
+{
+"s": 73,
+"w": "catch.",
+"start": 217.622,
+"end": 218.04,
+"startFrame": 13057,
+"endFrame": 13082
+},
+{
+"s": 74,
+"w": "Isro's",
+"start": 218.372,
+"end": 218.752,
+"startFrame": 13102,
+"endFrame": 13125
+},
+{
+"s": 74,
+"w": "welding",
+"start": 218.752,
+"end": 219.182,
+"startFrame": 13125,
+"endFrame": 13151
+},
+{
+"s": 74,
+"w": "centre",
+"start": 219.182,
+"end": 219.562,
+"startFrame": 13151,
+"endFrame": 13174
+},
+{
+"s": 74,
+"w": "in",
+"start": 219.562,
+"end": 219.739,
+"startFrame": 13174,
+"endFrame": 13184
+},
+{
+"s": 74,
+"w": "Bengaluru",
+"start": 219.739,
+"end": 220.271,
+"startFrame": 13184,
+"endFrame": 13216
+},
+{
+"s": 74,
+"w": "could",
+"start": 220.271,
+"end": 220.6,
+"startFrame": 13216,
+"endFrame": 13236
+},
+{
+"s": 74,
+"w": "weld",
+"start": 220.6,
+"end": 220.878,
+"startFrame": 13236,
+"endFrame": 13253
+},
+{
+"s": 74,
+"w": "up",
+"start": 220.878,
+"end": 221.056,
+"startFrame": 13253,
+"endFrame": 13263
+},
+{
+"s": 74,
+"w": "to",
+"start": 221.056,
+"end": 221.233,
+"startFrame": 13263,
+"endFrame": 13274
+},
+{
+"s": 74,
+"w": "two",
+"start": 221.233,
+"end": 221.461,
+"startFrame": 13274,
+"endFrame": 13288
+},
+{
+"s": 74,
+"w": "centimetres",
+"start": 221.461,
+"end": 222.094,
+"startFrame": 13288,
+"endFrame": 13326
+},
+{
+"s": 74,
+"w": "thick.",
+"start": 222.094,
+"end": 222.524,
+"startFrame": 13326,
+"endFrame": 13351
+},
+{
+"s": 75,
+"w": "This",
+"start": 222.934,
+"end": 223.288,
+"startFrame": 13376,
+"endFrame": 13397
+},
+{
+"s": 75,
+"w": "wall",
+"start": 223.288,
+"end": 223.643,
+"startFrame": 13397,
+"endFrame": 13419
+},
+{
+"s": 75,
+"w": "is",
+"start": 223.643,
+"end": 223.868,
+"startFrame": 13419,
+"endFrame": 13432
+},
+{
+"s": 75,
+"w": "eight.",
+"start": 223.868,
+"end": 224.416,
+"startFrame": 13432,
+"endFrame": 13465
+},
+{
+"s": 76,
+"w": "So",
+"start": 224.824,
+"end": 225.0,
+"startFrame": 13489,
+"endFrame": 13500
+},
+{
+"s": 76,
+"w": "they",
+"start": 225.0,
+"end": 225.276,
+"startFrame": 13500,
+"endFrame": 13517
+},
+{
+"s": 76,
+"w": "made",
+"start": 225.276,
+"end": 225.552,
+"startFrame": 13517,
+"endFrame": 13533
+},
+{
+"s": 76,
+"w": "their",
+"start": 225.552,
+"end": 225.878,
+"startFrame": 13533,
+"endFrame": 13553
+},
+{
+"s": 76,
+"w": "machine",
+"start": 225.878,
+"end": 226.305,
+"startFrame": 13553,
+"endFrame": 13578
+},
+{
+"s": 76,
+"w": "much",
+"start": 226.305,
+"end": 226.581,
+"startFrame": 13578,
+"endFrame": 13595
+},
+{
+"s": 76,
+"w": "more",
+"start": 226.581,
+"end": 226.857,
+"startFrame": 13595,
+"endFrame": 13611
+},
+{
+"s": 76,
+"w": "powerful.",
+"start": 226.857,
+"end": 227.434,
+"startFrame": 13611,
+"endFrame": 13646
+},
+{
+"s": 77,
+"w": "Then",
+"start": 227.84,
+"end": 228.127,
+"startFrame": 13670,
+"endFrame": 13688
+},
+{
+"s": 77,
+"w": "they",
+"start": 228.127,
+"end": 228.413,
+"startFrame": 13688,
+"endFrame": 13705
+},
+{
+"s": 77,
+"w": "practised.",
+"start": 228.413,
+"end": 229.065,
+"startFrame": 13705,
+"endFrame": 13744
+},
+{
+"s": 78,
+"w": "About",
+"start": 229.385,
+"end": 229.771,
+"startFrame": 13763,
+"endFrame": 13786
+},
+{
+"s": 78,
+"w": "seven",
+"start": 229.771,
+"end": 230.157,
+"startFrame": 13786,
+"endFrame": 13809
+},
+{
+"s": 78,
+"w": "hundred",
+"start": 230.157,
+"end": 230.662,
+"startFrame": 13809,
+"endFrame": 13840
+},
+{
+"s": 78,
+"w": "trial",
+"start": 230.662,
+"end": 231.048,
+"startFrame": 13840,
+"endFrame": 13863
+},
+{
+"s": 78,
+"w": "welds,",
+"start": 231.048,
+"end": 231.434,
+"startFrame": 13863,
+"endFrame": 13886
+},
+{
+"s": 78,
+"w": "to",
+"start": 231.591,
+"end": 231.761,
+"startFrame": 13895,
+"endFrame": 13906
+},
+{
+"s": 78,
+"w": "get",
+"start": 231.761,
+"end": 231.98,
+"startFrame": 13906,
+"endFrame": 13919
+},
+{
+"s": 78,
+"w": "the",
+"start": 231.98,
+"end": 232.198,
+"startFrame": 13919,
+"endFrame": 13932
+},
+{
+"s": 78,
+"w": "settings",
+"start": 232.198,
+"end": 232.659,
+"startFrame": 13932,
+"endFrame": 13960
+},
+{
+"s": 78,
+"w": "exactly",
+"start": 232.659,
+"end": 233.072,
+"startFrame": 13960,
+"endFrame": 13984
+},
+{
+"s": 78,
+"w": "right.",
+"start": 233.072,
+"end": 233.485,
+"startFrame": 13984,
+"endFrame": 14009
+},
+{
+"s": 79,
+"w": "Then",
+"start": 233.934,
+"end": 234.218,
+"startFrame": 14036,
+"endFrame": 14053
+},
+{
+"s": 79,
+"w": "came",
+"start": 234.218,
+"end": 234.501,
+"startFrame": 14053,
+"endFrame": 14070
+},
+{
+"s": 79,
+"w": "the",
+"start": 234.501,
+"end": 234.733,
+"startFrame": 14070,
+"endFrame": 14084
+},
+{
+"s": 79,
+"w": "real",
+"start": 234.733,
+"end": 235.017,
+"startFrame": 14084,
+"endFrame": 14101
+},
+{
+"s": 79,
+"w": "thing.",
+"start": 235.017,
+"end": 235.455,
+"startFrame": 14101,
+"endFrame": 14127
+},
+{
+"s": 80,
+"w": "One",
+"start": 235.844,
+"end": 236.054,
+"startFrame": 14151,
+"endFrame": 14163
+},
+{
+"s": 80,
+"w": "of",
+"start": 236.054,
+"end": 236.217,
+"startFrame": 14163,
+"endFrame": 14173
+},
+{
+"s": 80,
+"w": "the",
+"start": 236.217,
+"end": 236.427,
+"startFrame": 14173,
+"endFrame": 14186
+},
+{
+"s": 80,
+"w": "big",
+"start": 236.427,
+"end": 236.636,
+"startFrame": 14186,
+"endFrame": 14198
+},
+{
+"s": 80,
+"w": "welds",
+"start": 236.636,
+"end": 236.939,
+"startFrame": 14198,
+"endFrame": 14216
+},
+{
+"s": 80,
+"w": "that",
+"start": 236.939,
+"end": 237.196,
+"startFrame": 14216,
+"endFrame": 14232
+},
+{
+"s": 80,
+"w": "go",
+"start": 237.196,
+"end": 237.359,
+"startFrame": 14232,
+"endFrame": 14242
+},
+{
+"s": 80,
+"w": "right",
+"start": 237.359,
+"end": 237.662,
+"startFrame": 14242,
+"endFrame": 14260
+},
+{
+"s": 80,
+"w": "round",
+"start": 237.662,
+"end": 237.965,
+"startFrame": 14260,
+"endFrame": 14278
+},
+{
+"s": 80,
+"w": "the",
+"start": 237.965,
+"end": 238.174,
+"startFrame": 14278,
+"endFrame": 14290
+},
+{
+"s": 80,
+"w": "ball.",
+"start": 238.174,
+"end": 238.524,
+"startFrame": 14290,
+"endFrame": 14311
+},
+{
+"s": 81,
+"w": "Eight",
+"start": 238.911,
+"end": 239.244,
+"startFrame": 14335,
+"endFrame": 14355
+},
+{
+"s": 81,
+"w": "centimetres",
+"start": 239.244,
+"end": 239.885,
+"startFrame": 14355,
+"endFrame": 14393
+},
+{
+"s": 81,
+"w": "deep,",
+"start": 239.885,
+"end": 240.167,
+"startFrame": 14393,
+"endFrame": 14410
+},
+{
+"s": 81,
+"w": "and",
+"start": 240.341,
+"end": 240.572,
+"startFrame": 14420,
+"endFrame": 14434
+},
+{
+"s": 81,
+"w": "about",
+"start": 240.572,
+"end": 240.906,
+"startFrame": 14434,
+"endFrame": 14454
+},
+{
+"s": 81,
+"w": "seven",
+"start": 240.906,
+"end": 241.24,
+"startFrame": 14454,
+"endFrame": 14474
+},
+{
+"s": 81,
+"w": "metres",
+"start": 241.24,
+"end": 241.626,
+"startFrame": 14474,
+"endFrame": 14498
+},
+{
+"s": 81,
+"w": "long.",
+"start": 241.626,
+"end": 242.011,
+"startFrame": 14498,
+"endFrame": 14521
+},
+{
+"s": 82,
+"w": "It",
+"start": 242.401,
+"end": 242.597,
+"startFrame": 14544,
+"endFrame": 14556
+},
+{
+"s": 82,
+"w": "took",
+"start": 242.597,
+"end": 242.904,
+"startFrame": 14556,
+"endFrame": 14574
+},
+{
+"s": 82,
+"w": "thirty-two",
+"start": 242.904,
+"end": 243.574,
+"startFrame": 14574,
+"endFrame": 14614
+},
+{
+"s": 82,
+"w": "minutes,",
+"start": 243.574,
+"end": 244.049,
+"startFrame": 14614,
+"endFrame": 14643
+},
+{
+"s": 82,
+"w": "in",
+"start": 244.216,
+"end": 244.424,
+"startFrame": 14653,
+"endFrame": 14665
+},
+{
+"s": 82,
+"w": "one",
+"start": 244.424,
+"end": 244.692,
+"startFrame": 14665,
+"endFrame": 14682
+},
+{
+"s": 82,
+"w": "go.",
+"start": 244.692,
+"end": 245.02,
+"startFrame": 14682,
+"endFrame": 14701
+},
+{
+"s": 83,
+"w": "Isro",
+"start": 245.436,
+"end": 245.725,
+"startFrame": 14726,
+"endFrame": 14744
+},
+{
+"s": 83,
+"w": "says",
+"start": 245.725,
+"end": 246.014,
+"startFrame": 14744,
+"endFrame": 14761
+},
+{
+"s": 83,
+"w": "it",
+"start": 246.014,
+"end": 246.198,
+"startFrame": 14761,
+"endFrame": 14772
+},
+{
+"s": 83,
+"w": "was",
+"start": 246.198,
+"end": 246.435,
+"startFrame": 14772,
+"endFrame": 14786
+},
+{
+"s": 83,
+"w": "the",
+"start": 246.435,
+"end": 246.672,
+"startFrame": 14786,
+"endFrame": 14800
+},
+{
+"s": 83,
+"w": "first",
+"start": 246.672,
+"end": 247.014,
+"startFrame": 14800,
+"endFrame": 14821
+},
+{
+"s": 83,
+"w": "time",
+"start": 247.014,
+"end": 247.303,
+"startFrame": 14821,
+"endFrame": 14838
+},
+{
+"s": 83,
+"w": "anyone",
+"start": 247.303,
+"end": 247.697,
+"startFrame": 14838,
+"endFrame": 14862
+},
+{
+"s": 83,
+"w": "in",
+"start": 247.697,
+"end": 247.881,
+"startFrame": 14862,
+"endFrame": 14873
+},
+{
+"s": 83,
+"w": "India",
+"start": 247.881,
+"end": 248.223,
+"startFrame": 14873,
+"endFrame": 14893
+},
+{
+"s": 83,
+"w": "had",
+"start": 248.223,
+"end": 248.46,
+"startFrame": 14893,
+"endFrame": 14908
+},
+{
+"s": 83,
+"w": "made",
+"start": 248.46,
+"end": 248.749,
+"startFrame": 14908,
+"endFrame": 14925
+},
+{
+"s": 83,
+"w": "a",
+"start": 248.749,
+"end": 248.88,
+"startFrame": 14925,
+"endFrame": 14933
+},
+{
+"s": 83,
+"w": "weld",
+"start": 248.88,
+"end": 249.169,
+"startFrame": 14933,
+"endFrame": 14950
+},
+{
+"s": 83,
+"w": "like",
+"start": 249.169,
+"end": 249.459,
+"startFrame": 14950,
+"endFrame": 14968
+},
+{
+"s": 83,
+"w": "this.",
+"start": 249.459,
+"end": 249.853,
+"startFrame": 14968,
+"endFrame": 14991
+},
+{
+"s": 84,
+"w": "But",
+"start": 250.306,
+"end": 250.459,
+"startFrame": 15018,
+"endFrame": 15028
+},
+{
+"s": 84,
+"w": "then,",
+"start": 250.459,
+"end": 250.646,
+"startFrame": 15028,
+"endFrame": 15039
+},
+{
+"s": 84,
+"w": "how",
+"start": 250.804,
+"end": 251.0,
+"startFrame": 15048,
+"endFrame": 15060
+},
+{
+"s": 84,
+"w": "do",
+"start": 251.0,
+"end": 251.153,
+"startFrame": 15060,
+"endFrame": 15069
+},
+{
+"s": 84,
+"w": "you",
+"start": 251.153,
+"end": 251.349,
+"startFrame": 15069,
+"endFrame": 15081
+},
+{
+"s": 84,
+"w": "know",
+"start": 251.349,
+"end": 251.589,
+"startFrame": 15081,
+"endFrame": 15095
+},
+{
+"s": 84,
+"w": "it's",
+"start": 251.589,
+"end": 251.829,
+"startFrame": 15095,
+"endFrame": 15110
+},
+{
+"s": 84,
+"w": "good",
+"start": 251.829,
+"end": 252.069,
+"startFrame": 15110,
+"endFrame": 15124
+},
+{
+"s": 84,
+"w": "inside?",
+"start": 252.069,
+"end": 252.396,
+"startFrame": 15124,
+"endFrame": 15144
+},
+{
+"s": 85,
+"w": "You",
+"start": 252.758,
+"end": 252.964,
+"startFrame": 15165,
+"endFrame": 15178
+},
+{
+"s": 85,
+"w": "can't",
+"start": 252.964,
+"end": 253.26,
+"startFrame": 15178,
+"endFrame": 15196
+},
+{
+"s": 85,
+"w": "cut",
+"start": 253.26,
+"end": 253.466,
+"startFrame": 15196,
+"endFrame": 15208
+},
+{
+"s": 85,
+"w": "it",
+"start": 253.466,
+"end": 253.626,
+"startFrame": 15208,
+"endFrame": 15218
+},
+{
+"s": 85,
+"w": "open,",
+"start": 253.626,
+"end": 253.877,
+"startFrame": 15218,
+"endFrame": 15233
+},
+{
+"s": 85,
+"w": "can",
+"start": 253.877,
+"end": 254.082,
+"startFrame": 15233,
+"endFrame": 15245
+},
+{
+"s": 85,
+"w": "you?",
+"start": 254.082,
+"end": 254.288,
+"startFrame": 15245,
+"endFrame": 15257
+},
+{
+"s": 86,
+"w": "So",
+"start": 254.667,
+"end": 254.859,
+"startFrame": 15280,
+"endFrame": 15292
+},
+{
+"s": 86,
+"w": "they",
+"start": 254.859,
+"end": 255.16,
+"startFrame": 15292,
+"endFrame": 15310
+},
+{
+"s": 86,
+"w": "built",
+"start": 255.16,
+"end": 255.517,
+"startFrame": 15310,
+"endFrame": 15331
+},
+{
+"s": 86,
+"w": "X-ray",
+"start": 255.517,
+"end": 255.9,
+"startFrame": 15331,
+"endFrame": 15354
+},
+{
+"s": 86,
+"w": "machines",
+"start": 255.9,
+"end": 256.421,
+"startFrame": 15354,
+"endFrame": 15385
+},
+{
+"s": 86,
+"w": "strong",
+"start": 256.421,
+"end": 256.832,
+"startFrame": 15385,
+"endFrame": 15410
+},
+{
+"s": 86,
+"w": "enough",
+"start": 256.832,
+"end": 257.243,
+"startFrame": 15410,
+"endFrame": 15435
+},
+{
+"s": 86,
+"w": "to",
+"start": 257.243,
+"end": 257.435,
+"startFrame": 15435,
+"endFrame": 15446
+},
+{
+"s": 86,
+"w": "see",
+"start": 257.435,
+"end": 257.682,
+"startFrame": 15446,
+"endFrame": 15461
+},
+{
+"s": 86,
+"w": "through",
+"start": 257.682,
+"end": 258.147,
+"startFrame": 15461,
+"endFrame": 15489
+},
+{
+"s": 86,
+"w": "eight",
+"start": 258.147,
+"end": 258.504,
+"startFrame": 15489,
+"endFrame": 15510
+},
+{
+"s": 86,
+"w": "centimetres",
+"start": 258.504,
+"end": 259.189,
+"startFrame": 15510,
+"endFrame": 15551
+},
+{
+"s": 86,
+"w": "of",
+"start": 259.189,
+"end": 259.381,
+"startFrame": 15551,
+"endFrame": 15563
+},
+{
+"s": 86,
+"w": "titanium.",
+"start": 259.381,
+"end": 260.011,
+"startFrame": 15563,
+"endFrame": 15601
+},
+{
+"s": 87,
+"w": "They",
+"start": 260.336,
+"end": 260.601,
+"startFrame": 15620,
+"endFrame": 15636
+},
+{
+"s": 87,
+"w": "used",
+"start": 260.601,
+"end": 260.867,
+"startFrame": 15636,
+"endFrame": 15652
+},
+{
+"s": 87,
+"w": "sound",
+"start": 260.867,
+"end": 261.18,
+"startFrame": 15652,
+"endFrame": 15671
+},
+{
+"s": 87,
+"w": "waves",
+"start": 261.18,
+"end": 261.494,
+"startFrame": 15671,
+"endFrame": 15690
+},
+{
+"s": 87,
+"w": "too,",
+"start": 261.494,
+"end": 261.711,
+"startFrame": 15690,
+"endFrame": 15703
+},
+{
+"s": 87,
+"w": "listening",
+"start": 261.938,
+"end": 262.414,
+"startFrame": 15716,
+"endFrame": 15745
+},
+{
+"s": 87,
+"w": "for",
+"start": 262.414,
+"end": 262.619,
+"startFrame": 15745,
+"endFrame": 15757
+},
+{
+"s": 87,
+"w": "hidden",
+"start": 262.619,
+"end": 262.959,
+"startFrame": 15757,
+"endFrame": 15778
+},
+{
+"s": 87,
+"w": "cracks.",
+"start": 262.959,
+"end": 263.39,
+"startFrame": 15778,
+"endFrame": 15803
+},
+{
+"s": 88,
+"w": "And",
+"start": 263.719,
+"end": 263.99,
+"startFrame": 15823,
+"endFrame": 15839
+},
+{
+"s": 88,
+"w": "an",
+"start": 263.99,
+"end": 264.201,
+"startFrame": 15839,
+"endFrame": 15852
+},
+{
+"s": 88,
+"w": "outside",
+"start": 264.201,
+"end": 264.714,
+"startFrame": 15852,
+"endFrame": 15883
+},
+{
+"s": 88,
+"w": "agency",
+"start": 264.714,
+"end": 265.166,
+"startFrame": 15883,
+"endFrame": 15910
+},
+{
+"s": 88,
+"w": "has",
+"start": 265.166,
+"end": 265.438,
+"startFrame": 15910,
+"endFrame": 15926
+},
+{
+"s": 88,
+"w": "to",
+"start": 265.438,
+"end": 265.649,
+"startFrame": 15926,
+"endFrame": 15939
+},
+{
+"s": 88,
+"w": "certify",
+"start": 265.649,
+"end": 266.161,
+"startFrame": 15939,
+"endFrame": 15970
+},
+{
+"s": 88,
+"w": "it.",
+"start": 266.161,
+"end": 266.493,
+"startFrame": 15970,
+"endFrame": 15990
+},
+{
+"s": 89,
+"w": "Now",
+"start": 266.914,
+"end": 267.141,
+"startFrame": 16015,
+"endFrame": 16028
+},
+{
+"s": 89,
+"w": "step",
+"start": 267.141,
+"end": 267.418,
+"startFrame": 16028,
+"endFrame": 16045
+},
+{
+"s": 89,
+"w": "inside",
+"start": 267.418,
+"end": 267.795,
+"startFrame": 16045,
+"endFrame": 16068
+},
+{
+"s": 89,
+"w": "with",
+"start": 267.795,
+"end": 268.072,
+"startFrame": 16068,
+"endFrame": 16084
+},
+{
+"s": 89,
+"w": "me.",
+"start": 268.072,
+"end": 268.349,
+"startFrame": 16084,
+"endFrame": 16101
+},
+{
+"s": 90,
+"w": "The",
+"start": 268.788,
+"end": 269.017,
+"startFrame": 16127,
+"endFrame": 16141
+},
+{
+"s": 90,
+"w": "wall",
+"start": 269.017,
+"end": 269.296,
+"startFrame": 16141,
+"endFrame": 16158
+},
+{
+"s": 90,
+"w": "is",
+"start": 269.296,
+"end": 269.474,
+"startFrame": 16158,
+"endFrame": 16168
+},
+{
+"s": 90,
+"w": "eight",
+"start": 269.474,
+"end": 269.805,
+"startFrame": 16168,
+"endFrame": 16188
+},
+{
+"s": 90,
+"w": "centimetres",
+"start": 269.805,
+"end": 270.44,
+"startFrame": 16188,
+"endFrame": 16226
+},
+{
+"s": 90,
+"w": "thick,",
+"start": 270.44,
+"end": 270.771,
+"startFrame": 16226,
+"endFrame": 16246
+},
+{
+"s": 90,
+"w": "so",
+"start": 271.028,
+"end": 271.251,
+"startFrame": 16262,
+"endFrame": 16275
+},
+{
+"s": 90,
+"w": "inside,",
+"start": 271.251,
+"end": 271.728,
+"startFrame": 16275,
+"endFrame": 16304
+},
+{
+"s": 90,
+"w": "you",
+"start": 271.894,
+"end": 272.133,
+"startFrame": 16314,
+"endFrame": 16328
+},
+{
+"s": 90,
+"w": "get",
+"start": 272.133,
+"end": 272.372,
+"startFrame": 16328,
+"endFrame": 16342
+},
+{
+"s": 90,
+"w": "just",
+"start": 272.372,
+"end": 272.664,
+"startFrame": 16342,
+"endFrame": 16360
+},
+{
+"s": 90,
+"w": "over",
+"start": 272.664,
+"end": 272.956,
+"startFrame": 16360,
+"endFrame": 16377
+},
+{
+"s": 90,
+"w": "two",
+"start": 272.956,
+"end": 273.195,
+"startFrame": 16377,
+"endFrame": 16392
+},
+{
+"s": 90,
+"w": "metres.",
+"start": 273.195,
+"end": 273.7,
+"startFrame": 16392,
+"endFrame": 16422
+},
+{
+"s": 91,
+"w": "Lie",
+"start": 274.011,
+"end": 274.219,
+"startFrame": 16441,
+"endFrame": 16453
+},
+{
+"s": 91,
+"w": "down",
+"start": 274.219,
+"end": 274.474,
+"startFrame": 16453,
+"endFrame": 16468
+},
+{
+"s": 91,
+"w": "in",
+"start": 274.474,
+"end": 274.636,
+"startFrame": 16468,
+"endFrame": 16478
+},
+{
+"s": 91,
+"w": "there,",
+"start": 274.636,
+"end": 274.937,
+"startFrame": 16478,
+"endFrame": 16496
+},
+{
+"s": 91,
+"w": "and",
+"start": 275.081,
+"end": 275.328,
+"startFrame": 16505,
+"endFrame": 16520
+},
+{
+"s": 91,
+"w": "your",
+"start": 275.328,
+"end": 275.63,
+"startFrame": 16520,
+"endFrame": 16538
+},
+{
+"s": 91,
+"w": "head",
+"start": 275.63,
+"end": 275.932,
+"startFrame": 16538,
+"endFrame": 16556
+},
+{
+"s": 91,
+"w": "and",
+"start": 275.932,
+"end": 276.179,
+"startFrame": 16556,
+"endFrame": 16571
+},
+{
+"s": 91,
+"w": "your",
+"start": 276.179,
+"end": 276.481,
+"startFrame": 16571,
+"endFrame": 16589
+},
+{
+"s": 91,
+"w": "feet",
+"start": 276.481,
+"end": 276.783,
+"startFrame": 16589,
+"endFrame": 16607
+},
+{
+"s": 91,
+"w": "would",
+"start": 276.783,
+"end": 277.14,
+"startFrame": 16607,
+"endFrame": 16628
+},
+{
+"s": 91,
+"w": "almost",
+"start": 277.14,
+"end": 277.552,
+"startFrame": 16628,
+"endFrame": 16653
+},
+{
+"s": 91,
+"w": "touch",
+"start": 277.552,
+"end": 277.909,
+"startFrame": 16653,
+"endFrame": 16675
+},
+{
+"s": 91,
+"w": "the",
+"start": 277.909,
+"end": 278.156,
+"startFrame": 16675,
+"endFrame": 16689
+},
+{
+"s": 91,
+"w": "walls.",
+"start": 278.156,
+"end": 278.623,
+"startFrame": 16689,
+"endFrame": 16717
+},
+{
+"s": 92,
+"w": "You",
+"start": 279.423,
+"end": 279.678,
+"startFrame": 16765,
+"endFrame": 16781
+},
+{
+"s": 92,
+"w": "and",
+"start": 279.678,
+"end": 279.933,
+"startFrame": 16781,
+"endFrame": 16796
+},
+{
+"s": 92,
+"w": "two",
+"start": 279.933,
+"end": 280.187,
+"startFrame": 16796,
+"endFrame": 16811
+},
+{
+"s": 92,
+"w": "others",
+"start": 280.187,
+"end": 280.612,
+"startFrame": 16811,
+"endFrame": 16837
+},
+{
+"s": 92,
+"w": "sit",
+"start": 280.612,
+"end": 280.867,
+"startFrame": 16837,
+"endFrame": 16852
+},
+{
+"s": 92,
+"w": "here,",
+"start": 280.867,
+"end": 281.178,
+"startFrame": 16852,
+"endFrame": 16871
+},
+{
+"s": 92,
+"w": "for",
+"start": 281.354,
+"end": 281.584,
+"startFrame": 16881,
+"endFrame": 16895
+},
+{
+"s": 92,
+"w": "a",
+"start": 281.584,
+"end": 281.713,
+"startFrame": 16895,
+"endFrame": 16903
+},
+{
+"s": 92,
+"w": "normal",
+"start": 281.713,
+"end": 282.097,
+"startFrame": 16903,
+"endFrame": 16926
+},
+{
+"s": 92,
+"w": "dive",
+"start": 282.097,
+"end": 282.378,
+"startFrame": 16926,
+"endFrame": 16943
+},
+{
+"s": 92,
+"w": "of",
+"start": 282.378,
+"end": 282.558,
+"startFrame": 16943,
+"endFrame": 16953
+},
+{
+"s": 92,
+"w": "twelve",
+"start": 282.558,
+"end": 282.942,
+"startFrame": 16953,
+"endFrame": 16977
+},
+{
+"s": 92,
+"w": "hours.",
+"start": 282.942,
+"end": 283.377,
+"startFrame": 16977,
+"endFrame": 17003
+},
+{
+"s": 93,
+"w": "Oxygen",
+"start": 283.866,
+"end": 284.293,
+"startFrame": 17032,
+"endFrame": 17058
+},
+{
+"s": 93,
+"w": "comes",
+"start": 284.293,
+"end": 284.663,
+"startFrame": 17058,
+"endFrame": 17080
+},
+{
+"s": 93,
+"w": "in.",
+"start": 284.663,
+"end": 284.976,
+"startFrame": 17080,
+"endFrame": 17099
+},
+{
+"s": 94,
+"w": "The",
+"start": 285.203,
+"end": 285.412,
+"startFrame": 17112,
+"endFrame": 17125
+},
+{
+"s": 94,
+"w": "carbon",
+"start": 285.412,
+"end": 285.76,
+"startFrame": 17125,
+"endFrame": 17146
+},
+{
+"s": 94,
+"w": "dioxide",
+"start": 285.76,
+"end": 286.154,
+"startFrame": 17146,
+"endFrame": 17169
+},
+{
+"s": 94,
+"w": "you",
+"start": 286.154,
+"end": 286.363,
+"startFrame": 17169,
+"endFrame": 17182
+},
+{
+"s": 94,
+"w": "breathe",
+"start": 286.363,
+"end": 286.758,
+"startFrame": 17182,
+"endFrame": 17205
+},
+{
+"s": 94,
+"w": "out",
+"start": 286.758,
+"end": 286.966,
+"startFrame": 17205,
+"endFrame": 17218
+},
+{
+"s": 94,
+"w": "gets",
+"start": 286.966,
+"end": 287.222,
+"startFrame": 17218,
+"endFrame": 17233
+},
+{
+"s": 94,
+"w": "cleaned",
+"start": 287.222,
+"end": 287.616,
+"startFrame": 17233,
+"endFrame": 17257
+},
+{
+"s": 94,
+"w": "away.",
+"start": 287.616,
+"end": 287.964,
+"startFrame": 17257,
+"endFrame": 17278
+},
+{
+"s": 95,
+"w": "And",
+"start": 288.38,
+"end": 288.595,
+"startFrame": 17303,
+"endFrame": 17316
+},
+{
+"s": 95,
+"w": "who",
+"start": 288.595,
+"end": 288.81,
+"startFrame": 17316,
+"endFrame": 17329
+},
+{
+"s": 95,
+"w": "will",
+"start": 288.81,
+"end": 289.073,
+"startFrame": 17329,
+"endFrame": 17344
+},
+{
+"s": 95,
+"w": "sit",
+"start": 289.073,
+"end": 289.288,
+"startFrame": 17344,
+"endFrame": 17357
+},
+{
+"s": 95,
+"w": "where",
+"start": 289.288,
+"end": 289.598,
+"startFrame": 17357,
+"endFrame": 17376
+},
+{
+"s": 95,
+"w": "you're",
+"start": 289.598,
+"end": 289.957,
+"startFrame": 17376,
+"endFrame": 17397
+},
+{
+"s": 95,
+"w": "sitting?",
+"start": 289.957,
+"end": 290.363,
+"startFrame": 17397,
+"endFrame": 17422
+},
+{
+"s": 96,
+"w": "In",
+"start": 290.81,
+"end": 290.965,
+"startFrame": 17449,
+"endFrame": 17458
+},
+{
+"s": 96,
+"w": "August",
+"start": 290.965,
+"end": 291.298,
+"startFrame": 17458,
+"endFrame": 17478
+},
+{
+"s": 96,
+"w": "twenty",
+"start": 291.298,
+"end": 291.631,
+"startFrame": 17478,
+"endFrame": 17498
+},
+{
+"s": 96,
+"w": "twenty-five,",
+"start": 291.631,
+"end": 292.208,
+"startFrame": 17498,
+"endFrame": 17532
+},
+{
+"s": 96,
+"w": "India",
+"start": 292.394,
+"end": 292.744,
+"startFrame": 17544,
+"endFrame": 17565
+},
+{
+"s": 96,
+"w": "sent",
+"start": 292.744,
+"end": 293.04,
+"startFrame": 17565,
+"endFrame": 17582
+},
+{
+"s": 96,
+"w": "its",
+"start": 293.04,
+"end": 293.282,
+"startFrame": 17582,
+"endFrame": 17597
+},
+{
+"s": 96,
+"w": "first",
+"start": 293.282,
+"end": 293.632,
+"startFrame": 17597,
+"endFrame": 17618
+},
+{
+"s": 96,
+"w": "two",
+"start": 293.632,
+"end": 293.875,
+"startFrame": 17618,
+"endFrame": 17632
+},
+{
+"s": 96,
+"w": "trained",
+"start": 293.875,
+"end": 294.332,
+"startFrame": 17632,
+"endFrame": 17660
+},
+{
+"s": 96,
+"w": "people",
+"start": 294.332,
+"end": 294.736,
+"startFrame": 17660,
+"endFrame": 17684
+},
+{
+"s": 96,
+"w": "down",
+"start": 294.736,
+"end": 295.032,
+"startFrame": 17684,
+"endFrame": 17702
+},
+{
+"s": 96,
+"w": "in",
+"start": 295.032,
+"end": 295.221,
+"startFrame": 17702,
+"endFrame": 17713
+},
+{
+"s": 96,
+"w": "a",
+"start": 295.221,
+"end": 295.355,
+"startFrame": 17713,
+"endFrame": 17721
+},
+{
+"s": 96,
+"w": "French",
+"start": 295.355,
+"end": 295.759,
+"startFrame": 17721,
+"endFrame": 17746
+},
+{
+"s": 96,
+"w": "sub",
+"start": 295.759,
+"end": 296.001,
+"startFrame": 17746,
+"endFrame": 17760
+},
+{
+"s": 96,
+"w": "called",
+"start": 296.001,
+"end": 296.405,
+"startFrame": 17760,
+"endFrame": 17784
+},
+{
+"s": 96,
+"w": "Noh-teel.",
+"start": 296.405,
+"end": 297.051,
+"startFrame": 17784,
+"endFrame": 17823
+},
+{
+"s": 97,
+"w": "Raju",
+"start": 297.416,
+"end": 297.738,
+"startFrame": 17845,
+"endFrame": 17864
+},
+{
+"s": 97,
+"w": "Ramesh,",
+"start": 297.738,
+"end": 298.176,
+"startFrame": 17864,
+"endFrame": 17891
+},
+{
+"s": 97,
+"w": "a",
+"start": 298.176,
+"end": 298.353,
+"startFrame": 17891,
+"endFrame": 17901
+},
+{
+"s": 97,
+"w": "scientist,",
+"start": 298.353,
+"end": 299.095,
+"startFrame": 17901,
+"endFrame": 17946
+},
+{
+"s": 97,
+"w": "reached",
+"start": 299.293,
+"end": 299.713,
+"startFrame": 17958,
+"endFrame": 17983
+},
+{
+"s": 97,
+"w": "about",
+"start": 299.713,
+"end": 300.035,
+"startFrame": 17983,
+"endFrame": 18002
+},
+{
+"s": 97,
+"w": "four",
+"start": 300.035,
+"end": 300.307,
+"startFrame": 18002,
+"endFrame": 18018
+},
+{
+"s": 97,
+"w": "thousand",
+"start": 300.307,
+"end": 300.776,
+"startFrame": 18018,
+"endFrame": 18047
+},
+{
+"s": 97,
+"w": "metres.",
+"start": 300.776,
+"end": 301.246,
+"startFrame": 18047,
+"endFrame": 18075
+},
+{
+"s": 98,
+"w": "The",
+"start": 301.601,
+"end": 301.782,
+"startFrame": 18096,
+"endFrame": 18107
+},
+{
+"s": 98,
+"w": "next",
+"start": 301.782,
+"end": 302.003,
+"startFrame": 18107,
+"endFrame": 18120
+},
+{
+"s": 98,
+"w": "day,",
+"start": 302.003,
+"end": 302.184,
+"startFrame": 18120,
+"endFrame": 18131
+},
+{
+"s": 98,
+"w": "Commander",
+"start": 302.478,
+"end": 303.013,
+"startFrame": 18149,
+"endFrame": 18181
+},
+{
+"s": 98,
+"w": "Jatinder",
+"start": 303.013,
+"end": 303.497,
+"startFrame": 18181,
+"endFrame": 18210
+},
+{
+"s": 98,
+"w": "Pal",
+"start": 303.497,
+"end": 303.727,
+"startFrame": 18210,
+"endFrame": 18224
+},
+{
+"s": 98,
+"w": "Singh,",
+"start": 303.727,
+"end": 304.058,
+"startFrame": 18224,
+"endFrame": 18243
+},
+{
+"s": 98,
+"w": "a",
+"start": 304.176,
+"end": 304.321,
+"startFrame": 18251,
+"endFrame": 18259
+},
+{
+"s": 98,
+"w": "retired",
+"start": 304.321,
+"end": 304.815,
+"startFrame": 18259,
+"endFrame": 18289
+},
+{
+"s": 98,
+"w": "Navy",
+"start": 304.815,
+"end": 305.134,
+"startFrame": 18289,
+"endFrame": 18308
+},
+{
+"s": 98,
+"w": "officer,",
+"start": 305.134,
+"end": 305.628,
+"startFrame": 18308,
+"endFrame": 18338
+},
+{
+"s": 98,
+"w": "reached",
+"start": 305.765,
+"end": 306.147,
+"startFrame": 18346,
+"endFrame": 18369
+},
+{
+"s": 98,
+"w": "about",
+"start": 306.147,
+"end": 306.44,
+"startFrame": 18369,
+"endFrame": 18386
+},
+{
+"s": 98,
+"w": "five",
+"start": 306.44,
+"end": 306.687,
+"startFrame": 18386,
+"endFrame": 18401
+},
+{
+"s": 98,
+"w": "thousand.",
+"start": 306.687,
+"end": 307.204,
+"startFrame": 18401,
+"endFrame": 18432
+},
+{
+"s": 99,
+"w": "So",
+"start": 307.529,
+"end": 307.807,
+"startFrame": 18452,
+"endFrame": 18468
+},
+{
+"s": 99,
+"w": "is",
+"start": 307.807,
+"end": 308.084,
+"startFrame": 18468,
+"endFrame": 18485
+},
+{
+"s": 99,
+"w": "Matsya",
+"start": 308.084,
+"end": 308.679,
+"startFrame": 18485,
+"endFrame": 18521
+},
+{
+"s": 99,
+"w": "ready,",
+"start": 308.679,
+"end": 309.194,
+"startFrame": 18521,
+"endFrame": 18552
+},
+{
+"s": 99,
+"w": "do",
+"start": 309.324,
+"end": 309.424,
+"startFrame": 18559,
+"endFrame": 18565
+},
+{
+"s": 99,
+"w": "you",
+"start": 309.424,
+"end": 309.552,
+"startFrame": 18565,
+"endFrame": 18573
+},
+{
+"s": 99,
+"w": "think?",
+"start": 309.552,
+"end": 309.738,
+"startFrame": 18573,
+"endFrame": 18584
+},
+{
+"s": 100,
+"w": "Not",
+"start": 310.184,
+"end": 310.409,
+"startFrame": 18611,
+"endFrame": 18625
+},
+{
+"s": 100,
+"w": "quite.",
+"start": 310.409,
+"end": 310.834,
+"startFrame": 18625,
+"endFrame": 18650
+},
+{
+"s": 101,
+"w": "There's",
+"start": 311.083,
+"end": 311.481,
+"startFrame": 18665,
+"endFrame": 18689
+},
+{
+"s": 101,
+"w": "one",
+"start": 311.481,
+"end": 311.691,
+"startFrame": 18689,
+"endFrame": 18701
+},
+{
+"s": 101,
+"w": "more",
+"start": 311.691,
+"end": 311.949,
+"startFrame": 18701,
+"endFrame": 18717
+},
+{
+"s": 101,
+"w": "problem.",
+"start": 311.949,
+"end": 312.44,
+"startFrame": 18717,
+"endFrame": 18746
+},
+{
+"s": 102,
+"w": "This",
+"start": 312.809,
+"end": 313.1,
+"startFrame": 18769,
+"endFrame": 18786
+},
+{
+"s": 102,
+"w": "ball",
+"start": 313.1,
+"end": 313.39,
+"startFrame": 18786,
+"endFrame": 18803
+},
+{
+"s": 102,
+"w": "is",
+"start": 313.39,
+"end": 313.575,
+"startFrame": 18803,
+"endFrame": 18814
+},
+{
+"s": 102,
+"w": "only",
+"start": 313.575,
+"end": 313.866,
+"startFrame": 18814,
+"endFrame": 18832
+},
+{
+"s": 102,
+"w": "part",
+"start": 313.866,
+"end": 314.157,
+"startFrame": 18832,
+"endFrame": 18849
+},
+{
+"s": 102,
+"w": "of",
+"start": 314.157,
+"end": 314.342,
+"startFrame": 18849,
+"endFrame": 18861
+},
+{
+"s": 102,
+"w": "the",
+"start": 314.342,
+"end": 314.579,
+"startFrame": 18861,
+"endFrame": 18875
+},
+{
+"s": 102,
+"w": "sub.",
+"start": 314.579,
+"end": 314.923,
+"startFrame": 18875,
+"endFrame": 18895
+},
+{
+"s": 103,
+"w": "Around",
+"start": 315.244,
+"end": 315.759,
+"startFrame": 18915,
+"endFrame": 18946
+},
+{
+"s": 103,
+"w": "it",
+"start": 315.759,
+"end": 316.0,
+"startFrame": 18946,
+"endFrame": 18960
+},
+{
+"s": 103,
+"w": "go",
+"start": 316.0,
+"end": 316.24,
+"startFrame": 18960,
+"endFrame": 18974
+},
+{
+"s": 103,
+"w": "batteries,",
+"start": 316.24,
+"end": 316.962,
+"startFrame": 18974,
+"endFrame": 19018
+},
+{
+"s": 103,
+"w": "lights,",
+"start": 316.962,
+"end": 317.477,
+"startFrame": 19018,
+"endFrame": 19049
+},
+{
+"s": 103,
+"w": "motors",
+"start": 317.477,
+"end": 317.992,
+"startFrame": 19049,
+"endFrame": 19080
+},
+{
+"s": 103,
+"w": "and",
+"start": 317.992,
+"end": 318.302,
+"startFrame": 19080,
+"endFrame": 19098
+},
+{
+"s": 103,
+"w": "arms.",
+"start": 318.302,
+"end": 318.817,
+"startFrame": 19098,
+"endFrame": 19129
+},
+{
+"s": 104,
+"w": "Put",
+"start": 319.105,
+"end": 319.33,
+"startFrame": 19146,
+"endFrame": 19160
+},
+{
+"s": 104,
+"w": "it",
+"start": 319.33,
+"end": 319.504,
+"startFrame": 19160,
+"endFrame": 19170
+},
+{
+"s": 104,
+"w": "all",
+"start": 319.504,
+"end": 319.729,
+"startFrame": 19170,
+"endFrame": 19184
+},
+{
+"s": 104,
+"w": "together,",
+"start": 319.729,
+"end": 320.203,
+"startFrame": 19184,
+"endFrame": 19212
+},
+{
+"s": 104,
+"w": "and",
+"start": 320.357,
+"end": 320.566,
+"startFrame": 19221,
+"endFrame": 19234
+},
+{
+"s": 104,
+"w": "the",
+"start": 320.566,
+"end": 320.775,
+"startFrame": 19234,
+"endFrame": 19246
+},
+{
+"s": 104,
+"w": "whole",
+"start": 320.775,
+"end": 321.078,
+"startFrame": 19246,
+"endFrame": 19265
+},
+{
+"s": 104,
+"w": "thing",
+"start": 321.078,
+"end": 321.38,
+"startFrame": 19265,
+"endFrame": 19283
+},
+{
+"s": 104,
+"w": "sinks",
+"start": 321.38,
+"end": 321.682,
+"startFrame": 19283,
+"endFrame": 19301
+},
+{
+"s": 104,
+"w": "like",
+"start": 321.682,
+"end": 321.938,
+"startFrame": 19301,
+"endFrame": 19316
+},
+{
+"s": 104,
+"w": "a",
+"start": 321.938,
+"end": 322.054,
+"startFrame": 19316,
+"endFrame": 19323
+},
+{
+"s": 104,
+"w": "stone.",
+"start": 322.054,
+"end": 322.449,
+"startFrame": 19323,
+"endFrame": 19347
+},
+{
+"s": 105,
+"w": "So",
+"start": 322.742,
+"end": 322.941,
+"startFrame": 19365,
+"endFrame": 19376
+},
+{
+"s": 105,
+"w": "it's",
+"start": 322.941,
+"end": 323.255,
+"startFrame": 19376,
+"endFrame": 19395
+},
+{
+"s": 105,
+"w": "wrapped",
+"start": 323.255,
+"end": 323.739,
+"startFrame": 19395,
+"endFrame": 19424
+},
+{
+"s": 105,
+"w": "in",
+"start": 323.739,
+"end": 323.939,
+"startFrame": 19424,
+"endFrame": 19436
+},
+{
+"s": 105,
+"w": "a",
+"start": 323.939,
+"end": 324.081,
+"startFrame": 19436,
+"endFrame": 19445
+},
+{
+"s": 105,
+"w": "special",
+"start": 324.081,
+"end": 324.566,
+"startFrame": 19445,
+"endFrame": 19474
+},
+{
+"s": 105,
+"w": "foam.",
+"start": 324.566,
+"end": 324.993,
+"startFrame": 19474,
+"endFrame": 19500
+},
+{
+"s": 106,
+"w": "The",
+"start": 325.274,
+"end": 325.543,
+"startFrame": 19516,
+"endFrame": 19533
+},
+{
+"s": 106,
+"w": "foam",
+"start": 325.543,
+"end": 325.872,
+"startFrame": 19533,
+"endFrame": 19552
+},
+{
+"s": 106,
+"w": "is",
+"start": 325.872,
+"end": 326.081,
+"startFrame": 19552,
+"endFrame": 19565
+},
+{
+"s": 106,
+"w": "full",
+"start": 326.081,
+"end": 326.41,
+"startFrame": 19565,
+"endFrame": 19585
+},
+{
+"s": 106,
+"w": "of",
+"start": 326.41,
+"end": 326.619,
+"startFrame": 19585,
+"endFrame": 19597
+},
+{
+"s": 106,
+"w": "tiny",
+"start": 326.619,
+"end": 326.948,
+"startFrame": 19597,
+"endFrame": 19617
+},
+{
+"s": 106,
+"w": "hollow",
+"start": 326.948,
+"end": 327.396,
+"startFrame": 19617,
+"endFrame": 19644
+},
+{
+"s": 106,
+"w": "glass",
+"start": 327.396,
+"end": 327.785,
+"startFrame": 19644,
+"endFrame": 19667
+},
+{
+"s": 106,
+"w": "bubbles,",
+"start": 327.785,
+"end": 328.293,
+"startFrame": 19667,
+"endFrame": 19698
+},
+{
+"s": 106,
+"w": "set",
+"start": 328.422,
+"end": 328.67,
+"startFrame": 19705,
+"endFrame": 19720
+},
+{
+"s": 106,
+"w": "in",
+"start": 328.67,
+"end": 328.862,
+"startFrame": 19720,
+"endFrame": 19732
+},
+{
+"s": 106,
+"w": "hard",
+"start": 328.862,
+"end": 329.165,
+"startFrame": 19732,
+"endFrame": 19750
+},
+{
+"s": 106,
+"w": "plastic.",
+"start": 329.165,
+"end": 329.742,
+"startFrame": 19750,
+"endFrame": 19785
+},
+{
+"s": 107,
+"w": "The",
+"start": 330.01,
+"end": 330.227,
+"startFrame": 19801,
+"endFrame": 19814
+},
+{
+"s": 107,
+"w": "titanium",
+"start": 330.227,
+"end": 330.686,
+"startFrame": 19814,
+"endFrame": 19841
+},
+{
+"s": 107,
+"w": "takes",
+"start": 330.686,
+"end": 331.0,
+"startFrame": 19841,
+"endFrame": 19860
+},
+{
+"s": 107,
+"w": "the",
+"start": 331.0,
+"end": 331.218,
+"startFrame": 19860,
+"endFrame": 19873
+},
+{
+"s": 107,
+"w": "squeeze.",
+"start": 331.218,
+"end": 331.725,
+"startFrame": 19873,
+"endFrame": 19904
+},
+{
+"s": 108,
+"w": "The",
+"start": 331.985,
+"end": 332.232,
+"startFrame": 19919,
+"endFrame": 19934
+},
+{
+"s": 108,
+"w": "foam",
+"start": 332.232,
+"end": 332.534,
+"startFrame": 19934,
+"endFrame": 19952
+},
+{
+"s": 108,
+"w": "brings",
+"start": 332.534,
+"end": 332.945,
+"startFrame": 19952,
+"endFrame": 19977
+},
+{
+"s": 108,
+"w": "everyone",
+"start": 332.945,
+"end": 333.466,
+"startFrame": 19977,
+"endFrame": 20008
+},
+{
+"s": 108,
+"w": "home.",
+"start": 333.466,
+"end": 333.878,
+"startFrame": 20008,
+"endFrame": 20033
+},
+{
+"s": 109,
+"w": "That",
+"start": 334.198,
+"end": 334.507,
+"startFrame": 20052,
+"endFrame": 20070
+},
+{
+"s": 109,
+"w": "foam",
+"start": 334.507,
+"end": 334.815,
+"startFrame": 20070,
+"endFrame": 20089
+},
+{
+"s": 109,
+"w": "had",
+"start": 334.815,
+"end": 335.068,
+"startFrame": 20089,
+"endFrame": 20104
+},
+{
+"s": 109,
+"w": "to",
+"start": 335.068,
+"end": 335.265,
+"startFrame": 20104,
+"endFrame": 20116
+},
+{
+"s": 109,
+"w": "come",
+"start": 335.265,
+"end": 335.573,
+"startFrame": 20116,
+"endFrame": 20134
+},
+{
+"s": 109,
+"w": "from",
+"start": 335.573,
+"end": 335.882,
+"startFrame": 20134,
+"endFrame": 20153
+},
+{
+"s": 109,
+"w": "France,",
+"start": 335.882,
+"end": 336.303,
+"startFrame": 20153,
+"endFrame": 20178
+},
+{
+"s": 109,
+"w": "and",
+"start": 336.472,
+"end": 336.714,
+"startFrame": 20188,
+"endFrame": 20203
+},
+{
+"s": 109,
+"w": "it",
+"start": 336.714,
+"end": 336.902,
+"startFrame": 20203,
+"endFrame": 20214
+},
+{
+"s": 109,
+"w": "arrived",
+"start": 336.902,
+"end": 337.358,
+"startFrame": 20214,
+"endFrame": 20241
+},
+{
+"s": 109,
+"w": "late.",
+"start": 337.358,
+"end": 337.761,
+"startFrame": 20241,
+"endFrame": 20266
+},
+{
+"s": 110,
+"w": "Then,",
+"start": 338.039,
+"end": 338.416,
+"startFrame": 20282,
+"endFrame": 20305
+},
+{
+"s": 110,
+"w": "early",
+"start": 338.556,
+"end": 338.836,
+"startFrame": 20313,
+"endFrame": 20330
+},
+{
+"s": 110,
+"w": "this",
+"start": 338.836,
+"end": 339.074,
+"startFrame": 20330,
+"endFrame": 20344
+},
+{
+"s": 110,
+"w": "year,",
+"start": 339.074,
+"end": 339.311,
+"startFrame": 20344,
+"endFrame": 20359
+},
+{
+"s": 110,
+"w": "officials",
+"start": 339.446,
+"end": 339.987,
+"startFrame": 20367,
+"endFrame": 20399
+},
+{
+"s": 110,
+"w": "said",
+"start": 339.987,
+"end": 340.27,
+"startFrame": 20399,
+"endFrame": 20416
+},
+{
+"s": 110,
+"w": "a",
+"start": 340.27,
+"end": 340.399,
+"startFrame": 20416,
+"endFrame": 20424
+},
+{
+"s": 110,
+"w": "small",
+"start": 340.399,
+"end": 340.734,
+"startFrame": 20424,
+"endFrame": 20444
+},
+{
+"s": 110,
+"w": "crack",
+"start": 340.734,
+"end": 341.069,
+"startFrame": 20444,
+"endFrame": 20464
+},
+{
+"s": 110,
+"w": "was",
+"start": 341.069,
+"end": 341.301,
+"startFrame": 20464,
+"endFrame": 20478
+},
+{
+"s": 110,
+"w": "found",
+"start": 341.301,
+"end": 341.636,
+"startFrame": 20478,
+"endFrame": 20498
+},
+{
+"s": 110,
+"w": "in",
+"start": 341.636,
+"end": 341.816,
+"startFrame": 20498,
+"endFrame": 20509
+},
+{
+"s": 110,
+"w": "its",
+"start": 341.816,
+"end": 342.048,
+"startFrame": 20509,
+"endFrame": 20523
+},
+{
+"s": 110,
+"w": "cover.",
+"start": 342.048,
+"end": 342.486,
+"startFrame": 20523,
+"endFrame": 20549
+},
+{
+"s": 111,
+"w": "That",
+"start": 342.758,
+"end": 343.029,
+"startFrame": 20565,
+"endFrame": 20582
+},
+{
+"s": 111,
+"w": "held",
+"start": 343.029,
+"end": 343.3,
+"startFrame": 20582,
+"endFrame": 20598
+},
+{
+"s": 111,
+"w": "up",
+"start": 343.3,
+"end": 343.472,
+"startFrame": 20598,
+"endFrame": 20608
+},
+{
+"s": 111,
+"w": "the",
+"start": 343.472,
+"end": 343.694,
+"startFrame": 20608,
+"endFrame": 20622
+},
+{
+"s": 111,
+"w": "first",
+"start": 343.694,
+"end": 344.014,
+"startFrame": 20622,
+"endFrame": 20641
+},
+{
+"s": 111,
+"w": "test",
+"start": 344.014,
+"end": 344.285,
+"startFrame": 20641,
+"endFrame": 20657
+},
+{
+"s": 111,
+"w": "dive,",
+"start": 344.285,
+"end": 344.556,
+"startFrame": 20657,
+"endFrame": 20673
+},
+{
+"s": 111,
+"w": "to",
+"start": 344.646,
+"end": 344.828,
+"startFrame": 20679,
+"endFrame": 20690
+},
+{
+"s": 111,
+"w": "five",
+"start": 344.828,
+"end": 345.114,
+"startFrame": 20690,
+"endFrame": 20707
+},
+{
+"s": 111,
+"w": "hundred",
+"start": 345.114,
+"end": 345.555,
+"startFrame": 20707,
+"endFrame": 20733
+},
+{
+"s": 111,
+"w": "metres.",
+"start": 345.555,
+"end": 346.049,
+"startFrame": 20733,
+"endFrame": 20763
+},
+{
+"s": 112,
+"w": "On",
+"start": 346.291,
+"end": 346.438,
+"startFrame": 20777,
+"endFrame": 20786
+},
+{
+"s": 112,
+"w": "the",
+"start": 346.438,
+"end": 346.627,
+"startFrame": 20786,
+"endFrame": 20798
+},
+{
+"s": 112,
+"w": "sixth",
+"start": 346.627,
+"end": 346.899,
+"startFrame": 20798,
+"endFrame": 20814
+},
+{
+"s": 112,
+"w": "of",
+"start": 346.899,
+"end": 347.046,
+"startFrame": 20814,
+"endFrame": 20823
+},
+{
+"s": 112,
+"w": "November,",
+"start": 347.046,
+"end": 347.445,
+"startFrame": 20823,
+"endFrame": 20847
+},
+{
+"s": 112,
+"w": "Matsya",
+"start": 347.62,
+"end": 347.977,
+"startFrame": 20857,
+"endFrame": 20879
+},
+{
+"s": 112,
+"w": "finished",
+"start": 347.977,
+"end": 348.429,
+"startFrame": 20879,
+"endFrame": 20906
+},
+{
+"s": 112,
+"w": "another",
+"start": 348.429,
+"end": 348.833,
+"startFrame": 20906,
+"endFrame": 20930
+},
+{
+"s": 112,
+"w": "round",
+"start": 348.833,
+"end": 349.143,
+"startFrame": 20930,
+"endFrame": 20949
+},
+{
+"s": 112,
+"w": "of",
+"start": 349.143,
+"end": 349.309,
+"startFrame": 20949,
+"endFrame": 20959
+},
+{
+"s": 112,
+"w": "trials",
+"start": 349.309,
+"end": 349.666,
+"startFrame": 20959,
+"endFrame": 20980
+},
+{
+"s": 112,
+"w": "near",
+"start": 349.666,
+"end": 349.928,
+"startFrame": 20980,
+"endFrame": 20996
+},
+{
+"s": 112,
+"w": "Chennai,",
+"start": 349.928,
+"end": 350.332,
+"startFrame": 20996,
+"endFrame": 21020
+},
+{
+"s": 112,
+"w": "without",
+"start": 350.497,
+"end": 350.875,
+"startFrame": 21030,
+"endFrame": 21052
+},
+{
+"s": 112,
+"w": "people",
+"start": 350.875,
+"end": 351.209,
+"startFrame": 21052,
+"endFrame": 21073
+},
+{
+"s": 112,
+"w": "inside.",
+"start": 351.209,
+"end": 351.632,
+"startFrame": 21073,
+"endFrame": 21098
+},
+{
+"s": 113,
+"w": "Officials",
+"start": 351.875,
+"end": 352.425,
+"startFrame": 21112,
+"endFrame": 21146
+},
+{
+"s": 113,
+"w": "have",
+"start": 352.425,
+"end": 352.712,
+"startFrame": 21146,
+"endFrame": 21163
+},
+{
+"s": 113,
+"w": "said",
+"start": 352.712,
+"end": 353.0,
+"startFrame": 21163,
+"endFrame": 21180
+},
+{
+"s": 113,
+"w": "the",
+"start": 353.0,
+"end": 353.236,
+"startFrame": 21180,
+"endFrame": 21194
+},
+{
+"s": 113,
+"w": "full",
+"start": 353.236,
+"end": 353.524,
+"startFrame": 21194,
+"endFrame": 21211
+},
+{
+"s": 113,
+"w": "six",
+"start": 353.524,
+"end": 353.759,
+"startFrame": 21211,
+"endFrame": 21226
+},
+{
+"s": 113,
+"w": "kilometre",
+"start": 353.759,
+"end": 354.309,
+"startFrame": 21226,
+"endFrame": 21259
+},
+{
+"s": 113,
+"w": "dive",
+"start": 354.309,
+"end": 354.597,
+"startFrame": 21259,
+"endFrame": 21276
+},
+{
+"s": 113,
+"w": "could",
+"start": 354.597,
+"end": 354.937,
+"startFrame": 21276,
+"endFrame": 21296
+},
+{
+"s": 113,
+"w": "come",
+"start": 354.937,
+"end": 355.225,
+"startFrame": 21296,
+"endFrame": 21314
+},
+{
+"s": 113,
+"w": "in",
+"start": 355.225,
+"end": 355.408,
+"startFrame": 21314,
+"endFrame": 21324
+},
+{
+"s": 113,
+"w": "twenty",
+"start": 355.408,
+"end": 355.801,
+"startFrame": 21324,
+"endFrame": 21348
+},
+{
+"s": 113,
+"w": "twenty-seven.",
+"start": 355.801,
+"end": 356.638,
+"startFrame": 21348,
+"endFrame": 21398
+},
+{
+"s": 114,
+"w": "So",
+"start": 356.901,
+"end": 357.121,
+"startFrame": 21414,
+"endFrame": 21427
+},
+{
+"s": 114,
+"w": "why",
+"start": 357.121,
+"end": 357.403,
+"startFrame": 21427,
+"endFrame": 21444
+},
+{
+"s": 114,
+"w": "do",
+"start": 357.403,
+"end": 357.623,
+"startFrame": 21444,
+"endFrame": 21457
+},
+{
+"s": 114,
+"w": "all",
+"start": 357.623,
+"end": 357.906,
+"startFrame": 21457,
+"endFrame": 21474
+},
+{
+"s": 114,
+"w": "this,",
+"start": 357.906,
+"end": 358.251,
+"startFrame": 21474,
+"endFrame": 21495
+},
+{
+"s": 114,
+"w": "you",
+"start": 358.251,
+"end": 358.533,
+"startFrame": 21495,
+"endFrame": 21512
+},
+{
+"s": 114,
+"w": "ask?",
+"start": 358.533,
+"end": 358.816,
+"startFrame": 21512,
+"endFrame": 21529
+},
+{
+"s": 115,
+"w": "What's",
+"start": 359.136,
+"end": 359.534,
+"startFrame": 21548,
+"endFrame": 21572
+},
+{
+"s": 115,
+"w": "down",
+"start": 359.534,
+"end": 359.826,
+"startFrame": 21572,
+"endFrame": 21590
+},
+{
+"s": 115,
+"w": "there",
+"start": 359.826,
+"end": 360.171,
+"startFrame": 21590,
+"endFrame": 21610
+},
+{
+"s": 115,
+"w": "that's",
+"start": 360.171,
+"end": 360.569,
+"startFrame": 21610,
+"endFrame": 21634
+},
+{
+"s": 115,
+"w": "worth",
+"start": 360.569,
+"end": 360.914,
+"startFrame": 21634,
+"endFrame": 21655
+},
+{
+"s": 115,
+"w": "it?",
+"start": 360.914,
+"end": 361.1,
+"startFrame": 21655,
+"endFrame": 21666
+},
+{
+"s": 116,
+"w": "Six",
+"start": 361.913,
+"end": 362.167,
+"startFrame": 21715,
+"endFrame": 21730
+},
+{
+"s": 116,
+"w": "thousand",
+"start": 362.167,
+"end": 362.702,
+"startFrame": 21730,
+"endFrame": 21762
+},
+{
+"s": 116,
+"w": "metres",
+"start": 362.702,
+"end": 363.125,
+"startFrame": 21762,
+"endFrame": 21788
+},
+{
+"s": 116,
+"w": "down,",
+"start": 363.125,
+"end": 363.435,
+"startFrame": 21788,
+"endFrame": 21806
+},
+{
+"s": 116,
+"w": "you'd",
+"start": 363.6,
+"end": 363.938,
+"startFrame": 21816,
+"endFrame": 21836
+},
+{
+"s": 116,
+"w": "see",
+"start": 363.938,
+"end": 364.171,
+"startFrame": 21836,
+"endFrame": 21850
+},
+{
+"s": 116,
+"w": "no",
+"start": 364.171,
+"end": 364.353,
+"startFrame": 21850,
+"endFrame": 21861
+},
+{
+"s": 116,
+"w": "sunlight",
+"start": 364.353,
+"end": 364.847,
+"startFrame": 21861,
+"endFrame": 21891
+},
+{
+"s": 116,
+"w": "at",
+"start": 364.847,
+"end": 365.028,
+"startFrame": 21891,
+"endFrame": 21902
+},
+{
+"s": 116,
+"w": "all.",
+"start": 365.028,
+"end": 365.366,
+"startFrame": 21902,
+"endFrame": 21922
+},
+{
+"s": 117,
+"w": "Your",
+"start": 365.852,
+"end": 366.151,
+"startFrame": 21951,
+"endFrame": 21969
+},
+{
+"s": 117,
+"w": "lights",
+"start": 366.151,
+"end": 366.559,
+"startFrame": 21969,
+"endFrame": 21994
+},
+{
+"s": 117,
+"w": "are",
+"start": 366.559,
+"end": 366.804,
+"startFrame": 21994,
+"endFrame": 22008
+},
+{
+"s": 117,
+"w": "the",
+"start": 366.804,
+"end": 367.049,
+"startFrame": 22008,
+"endFrame": 22023
+},
+{
+"s": 117,
+"w": "only",
+"start": 367.049,
+"end": 367.348,
+"startFrame": 22023,
+"endFrame": 22041
+},
+{
+"s": 117,
+"w": "lights",
+"start": 367.348,
+"end": 367.756,
+"startFrame": 22041,
+"endFrame": 22065
+},
+{
+"s": 117,
+"w": "for",
+"start": 367.756,
+"end": 368.001,
+"startFrame": 22065,
+"endFrame": 22080
+},
+{
+"s": 117,
+"w": "six",
+"start": 368.001,
+"end": 368.246,
+"startFrame": 22080,
+"endFrame": 22095
+},
+{
+"s": 117,
+"w": "kilometres.",
+"start": 368.246,
+"end": 368.98,
+"startFrame": 22095,
+"endFrame": 22139
+},
+{
+"s": 118,
+"w": "Outside",
+"start": 369.451,
+"end": 369.833,
+"startFrame": 22167,
+"endFrame": 22190
+},
+{
+"s": 118,
+"w": "your",
+"start": 369.833,
+"end": 370.079,
+"startFrame": 22190,
+"endFrame": 22205
+},
+{
+"s": 118,
+"w": "window,",
+"start": 370.079,
+"end": 370.416,
+"startFrame": 22205,
+"endFrame": 22225
+},
+{
+"s": 118,
+"w": "the",
+"start": 370.718,
+"end": 370.972,
+"startFrame": 22243,
+"endFrame": 22258
+},
+{
+"s": 118,
+"w": "water",
+"start": 370.972,
+"end": 371.34,
+"startFrame": 22258,
+"endFrame": 22280
+},
+{
+"s": 118,
+"w": "is",
+"start": 371.34,
+"end": 371.537,
+"startFrame": 22280,
+"endFrame": 22292
+},
+{
+"s": 118,
+"w": "close",
+"start": 371.537,
+"end": 371.905,
+"startFrame": 22292,
+"endFrame": 22314
+},
+{
+"s": 118,
+"w": "to",
+"start": 371.905,
+"end": 372.102,
+"startFrame": 22314,
+"endFrame": 22326
+},
+{
+"s": 118,
+"w": "freezing.",
+"start": 372.102,
+"end": 372.752,
+"startFrame": 22326,
+"endFrame": 22365
+},
+{
+"s": 119,
+"w": "And",
+"start": 373.123,
+"end": 373.355,
+"startFrame": 22387,
+"endFrame": 22401
+},
+{
+"s": 119,
+"w": "the",
+"start": 373.355,
+"end": 373.587,
+"startFrame": 22401,
+"endFrame": 22415
+},
+{
+"s": 119,
+"w": "seafloor",
+"start": 373.587,
+"end": 374.077,
+"startFrame": 22415,
+"endFrame": 22445
+},
+{
+"s": 119,
+"w": "is",
+"start": 374.077,
+"end": 374.258,
+"startFrame": 22445,
+"endFrame": 22455
+},
+{
+"s": 119,
+"w": "covered",
+"start": 374.258,
+"end": 374.697,
+"startFrame": 22455,
+"endFrame": 22482
+},
+{
+"s": 119,
+"w": "with",
+"start": 374.697,
+"end": 374.98,
+"startFrame": 22482,
+"endFrame": 22499
+},
+{
+"s": 119,
+"w": "black",
+"start": 374.98,
+"end": 375.316,
+"startFrame": 22499,
+"endFrame": 22519
+},
+{
+"s": 119,
+"w": "lumps",
+"start": 375.316,
+"end": 375.651,
+"startFrame": 22519,
+"endFrame": 22539
+},
+{
+"s": 119,
+"w": "of",
+"start": 375.651,
+"end": 375.832,
+"startFrame": 22539,
+"endFrame": 22550
+},
+{
+"s": 119,
+"w": "metal,",
+"start": 375.832,
+"end": 376.167,
+"startFrame": 22550,
+"endFrame": 22570
+},
+{
+"s": 119,
+"w": "like",
+"start": 376.428,
+"end": 376.707,
+"startFrame": 22586,
+"endFrame": 22602
+},
+{
+"s": 119,
+"w": "stones.",
+"start": 376.707,
+"end": 377.189,
+"startFrame": 22602,
+"endFrame": 22631
+},
+{
+"s": 120,
+"w": "India",
+"start": 377.688,
+"end": 378.034,
+"startFrame": 22661,
+"endFrame": 22682
+},
+{
+"s": 120,
+"w": "has",
+"start": 378.034,
+"end": 378.273,
+"startFrame": 22682,
+"endFrame": 22696
+},
+{
+"s": 120,
+"w": "the",
+"start": 378.273,
+"end": 378.512,
+"startFrame": 22696,
+"endFrame": 22711
+},
+{
+"s": 120,
+"w": "right",
+"start": 378.512,
+"end": 378.857,
+"startFrame": 22711,
+"endFrame": 22731
+},
+{
+"s": 120,
+"w": "to",
+"start": 378.857,
+"end": 379.043,
+"startFrame": 22731,
+"endFrame": 22743
+},
+{
+"s": 120,
+"w": "explore",
+"start": 379.043,
+"end": 379.495,
+"startFrame": 22743,
+"endFrame": 22770
+},
+{
+"s": 120,
+"w": "a",
+"start": 379.495,
+"end": 379.628,
+"startFrame": 22770,
+"endFrame": 22778
+},
+{
+"s": 120,
+"w": "big",
+"start": 379.628,
+"end": 379.867,
+"startFrame": 22778,
+"endFrame": 22792
+},
+{
+"s": 120,
+"w": "patch",
+"start": 379.867,
+"end": 380.213,
+"startFrame": 22792,
+"endFrame": 22813
+},
+{
+"s": 120,
+"w": "of",
+"start": 380.213,
+"end": 380.399,
+"startFrame": 22813,
+"endFrame": 22824
+},
+{
+"s": 120,
+"w": "that",
+"start": 380.399,
+"end": 380.691,
+"startFrame": 22824,
+"endFrame": 22841
+},
+{
+"s": 120,
+"w": "seabed,",
+"start": 380.691,
+"end": 381.09,
+"startFrame": 22841,
+"endFrame": 22865
+},
+{
+"s": 120,
+"w": "in",
+"start": 381.319,
+"end": 381.454,
+"startFrame": 22879,
+"endFrame": 22887
+},
+{
+"s": 120,
+"w": "the",
+"start": 381.454,
+"end": 381.627,
+"startFrame": 22887,
+"endFrame": 22898
+},
+{
+"s": 120,
+"w": "middle",
+"start": 381.627,
+"end": 381.916,
+"startFrame": 22898,
+"endFrame": 22915
+},
+{
+"s": 120,
+"w": "of",
+"start": 381.916,
+"end": 382.051,
+"startFrame": 22915,
+"endFrame": 22923
+},
+{
+"s": 120,
+"w": "the",
+"start": 382.051,
+"end": 382.224,
+"startFrame": 22923,
+"endFrame": 22933
+},
+{
+"s": 120,
+"w": "Indian",
+"start": 382.224,
+"end": 382.513,
+"startFrame": 22933,
+"endFrame": 22951
+},
+{
+"s": 120,
+"w": "Ocean.",
+"start": 382.513,
+"end": 382.84,
+"startFrame": 22951,
+"endFrame": 22970
+},
+{
+"s": 121,
+"w": "It",
+"start": 383.289,
+"end": 383.437,
+"startFrame": 22997,
+"endFrame": 23006
+},
+{
+"s": 121,
+"w": "has",
+"start": 383.437,
+"end": 383.628,
+"startFrame": 23006,
+"endFrame": 23018
+},
+{
+"s": 121,
+"w": "held",
+"start": 383.628,
+"end": 383.861,
+"startFrame": 23018,
+"endFrame": 23032
+},
+{
+"s": 121,
+"w": "that",
+"start": 383.861,
+"end": 384.095,
+"startFrame": 23032,
+"endFrame": 23046
+},
+{
+"s": 121,
+"w": "right",
+"start": 384.095,
+"end": 384.37,
+"startFrame": 23046,
+"endFrame": 23062
+},
+{
+"s": 121,
+"w": "since",
+"start": 384.37,
+"end": 384.646,
+"startFrame": 23062,
+"endFrame": 23079
+},
+{
+"s": 121,
+"w": "two",
+"start": 384.646,
+"end": 384.837,
+"startFrame": 23079,
+"endFrame": 23090
+},
+{
+"s": 121,
+"w": "thousand",
+"start": 384.837,
+"end": 385.24,
+"startFrame": 23090,
+"endFrame": 23114
+},
+{
+"s": 121,
+"w": "and",
+"start": 385.24,
+"end": 385.43,
+"startFrame": 23114,
+"endFrame": 23126
+},
+{
+"s": 121,
+"w": "two.",
+"start": 385.43,
+"end": 385.706,
+"startFrame": 23126,
+"endFrame": 23142
+},
+{
+"s": 122,
+"w": "In",
+"start": 386.101,
+"end": 386.268,
+"startFrame": 23166,
+"endFrame": 23176
+},
+{
+"s": 122,
+"w": "twenty",
+"start": 386.268,
+"end": 386.625,
+"startFrame": 23176,
+"endFrame": 23198
+},
+{
+"s": 122,
+"w": "twenty-two,",
+"start": 386.625,
+"end": 387.197,
+"startFrame": 23198,
+"endFrame": 23232
+},
+{
+"s": 122,
+"w": "an",
+"start": 387.341,
+"end": 387.544,
+"startFrame": 23240,
+"endFrame": 23253
+},
+{
+"s": 122,
+"w": "Indian",
+"start": 387.544,
+"end": 387.979,
+"startFrame": 23253,
+"endFrame": 23279
+},
+{
+"s": 122,
+"w": "robot",
+"start": 387.979,
+"end": 388.356,
+"startFrame": 23279,
+"endFrame": 23301
+},
+{
+"s": 122,
+"w": "sub",
+"start": 388.356,
+"end": 388.618,
+"startFrame": 23301,
+"endFrame": 23317
+},
+{
+"s": 122,
+"w": "surveyed",
+"start": 388.618,
+"end": 389.169,
+"startFrame": 23317,
+"endFrame": 23350
+},
+{
+"s": 122,
+"w": "it,",
+"start": 389.169,
+"end": 389.372,
+"startFrame": 23350,
+"endFrame": 23362
+},
+{
+"s": 122,
+"w": "more",
+"start": 389.609,
+"end": 389.86,
+"startFrame": 23377,
+"endFrame": 23392
+},
+{
+"s": 122,
+"w": "than",
+"start": 389.86,
+"end": 390.11,
+"startFrame": 23392,
+"endFrame": 23407
+},
+{
+"s": 122,
+"w": "five",
+"start": 390.11,
+"end": 390.361,
+"startFrame": 23407,
+"endFrame": 23422
+},
+{
+"s": 122,
+"w": "kilometres",
+"start": 390.361,
+"end": 390.884,
+"startFrame": 23422,
+"endFrame": 23453
+},
+{
+"s": 122,
+"w": "down.",
+"start": 390.884,
+"end": 391.226,
+"startFrame": 23453,
+"endFrame": 23474
+},
+{
+"s": 123,
+"w": "Those",
+"start": 391.574,
+"end": 391.962,
+"startFrame": 23494,
+"endFrame": 23518
+},
+{
+"s": 123,
+"w": "lumps",
+"start": 391.962,
+"end": 392.349,
+"startFrame": 23518,
+"endFrame": 23541
+},
+{
+"s": 123,
+"w": "hold",
+"start": 392.349,
+"end": 392.677,
+"startFrame": 23541,
+"endFrame": 23561
+},
+{
+"s": 123,
+"w": "nickel,",
+"start": 392.677,
+"end": 393.124,
+"startFrame": 23561,
+"endFrame": 23587
+},
+{
+"s": 123,
+"w": "copper",
+"start": 393.299,
+"end": 393.71,
+"startFrame": 23598,
+"endFrame": 23623
+},
+{
+"s": 123,
+"w": "and",
+"start": 393.71,
+"end": 393.956,
+"startFrame": 23623,
+"endFrame": 23637
+},
+{
+"s": 123,
+"w": "cobalt.",
+"start": 393.956,
+"end": 394.476,
+"startFrame": 23637,
+"endFrame": 23669
+},
+{
+"s": 124,
+"w": "Metals",
+"start": 394.793,
+"end": 395.15,
+"startFrame": 23688,
+"endFrame": 23709
+},
+{
+"s": 124,
+"w": "that",
+"start": 395.15,
+"end": 395.412,
+"startFrame": 23709,
+"endFrame": 23725
+},
+{
+"s": 124,
+"w": "go",
+"start": 395.412,
+"end": 395.578,
+"startFrame": 23725,
+"endFrame": 23735
+},
+{
+"s": 124,
+"w": "into",
+"start": 395.578,
+"end": 395.84,
+"startFrame": 23735,
+"endFrame": 23750
+},
+{
+"s": 124,
+"w": "batteries,",
+"start": 395.84,
+"end": 396.34,
+"startFrame": 23750,
+"endFrame": 23780
+},
+{
+"s": 124,
+"w": "like",
+"start": 396.57,
+"end": 396.747,
+"startFrame": 23794,
+"endFrame": 23805
+},
+{
+"s": 124,
+"w": "the",
+"start": 396.747,
+"end": 396.892,
+"startFrame": 23805,
+"endFrame": 23814
+},
+{
+"s": 124,
+"w": "one",
+"start": 396.892,
+"end": 397.037,
+"startFrame": 23814,
+"endFrame": 23822
+},
+{
+"s": 124,
+"w": "in",
+"start": 397.037,
+"end": 397.15,
+"startFrame": 23822,
+"endFrame": 23829
+},
+{
+"s": 124,
+"w": "your",
+"start": 397.15,
+"end": 397.327,
+"startFrame": 23829,
+"endFrame": 23840
+},
+{
+"s": 124,
+"w": "phone.",
+"start": 397.327,
+"end": 397.601,
+"startFrame": 23840,
+"endFrame": 23856
+},
+{
+"s": 125,
+"w": "But",
+"start": 397.913,
+"end": 398.108,
+"startFrame": 23875,
+"endFrame": 23886
+},
+{
+"s": 125,
+"w": "let",
+"start": 398.108,
+"end": 398.303,
+"startFrame": 23886,
+"endFrame": 23898
+},
+{
+"s": 125,
+"w": "me",
+"start": 398.303,
+"end": 398.455,
+"startFrame": 23898,
+"endFrame": 23907
+},
+{
+"s": 125,
+"w": "be",
+"start": 398.455,
+"end": 398.606,
+"startFrame": 23907,
+"endFrame": 23916
+},
+{
+"s": 125,
+"w": "honest",
+"start": 398.606,
+"end": 398.931,
+"startFrame": 23916,
+"endFrame": 23936
+},
+{
+"s": 125,
+"w": "with",
+"start": 398.931,
+"end": 399.169,
+"startFrame": 23936,
+"endFrame": 23950
+},
+{
+"s": 125,
+"w": "you.",
+"start": 399.169,
+"end": 399.451,
+"startFrame": 23950,
+"endFrame": 23967
+},
+{
+"s": 126,
+"w": "Nobody",
+"start": 399.783,
+"end": 400.161,
+"startFrame": 23987,
+"endFrame": 24010
+},
+{
+"s": 126,
+"w": "is",
+"start": 400.161,
+"end": 400.338,
+"startFrame": 24010,
+"endFrame": 24020
+},
+{
+"s": 126,
+"w": "allowed",
+"start": 400.338,
+"end": 400.767,
+"startFrame": 24020,
+"endFrame": 24046
+},
+{
+"s": 126,
+"w": "to",
+"start": 400.767,
+"end": 400.944,
+"startFrame": 24046,
+"endFrame": 24057
+},
+{
+"s": 126,
+"w": "mine",
+"start": 400.944,
+"end": 401.221,
+"startFrame": 24057,
+"endFrame": 24073
+},
+{
+"s": 126,
+"w": "there",
+"start": 401.221,
+"end": 401.549,
+"startFrame": 24073,
+"endFrame": 24093
+},
+{
+"s": 126,
+"w": "yet.",
+"start": 401.549,
+"end": 401.877,
+"startFrame": 24093,
+"endFrame": 24113
+},
+{
+"s": 127,
+"w": "The",
+"start": 402.242,
+"end": 402.446,
+"startFrame": 24135,
+"endFrame": 24147
+},
+{
+"s": 127,
+"w": "world",
+"start": 402.446,
+"end": 402.742,
+"startFrame": 24147,
+"endFrame": 24165
+},
+{
+"s": 127,
+"w": "is",
+"start": 402.742,
+"end": 402.901,
+"startFrame": 24165,
+"endFrame": 24174
+},
+{
+"s": 127,
+"w": "still",
+"start": 402.901,
+"end": 403.196,
+"startFrame": 24174,
+"endFrame": 24192
+},
+{
+"s": 127,
+"w": "writing",
+"start": 403.196,
+"end": 403.582,
+"startFrame": 24192,
+"endFrame": 24215
+},
+{
+"s": 127,
+"w": "the",
+"start": 403.582,
+"end": 403.787,
+"startFrame": 24215,
+"endFrame": 24227
+},
+{
+"s": 127,
+"w": "rules.",
+"start": 403.787,
+"end": 404.173,
+"startFrame": 24227,
+"endFrame": 24250
+},
+{
+"s": 128,
+"w": "Matsya",
+"start": 404.493,
+"end": 404.893,
+"startFrame": 24270,
+"endFrame": 24294
+},
+{
+"s": 128,
+"w": "is",
+"start": 404.893,
+"end": 405.08,
+"startFrame": 24294,
+"endFrame": 24305
+},
+{
+"s": 128,
+"w": "not",
+"start": 405.08,
+"end": 405.321,
+"startFrame": 24305,
+"endFrame": 24319
+},
+{
+"s": 128,
+"w": "a",
+"start": 405.321,
+"end": 405.454,
+"startFrame": 24319,
+"endFrame": 24327
+},
+{
+"s": 128,
+"w": "mining",
+"start": 405.454,
+"end": 405.854,
+"startFrame": 24327,
+"endFrame": 24351
+},
+{
+"s": 128,
+"w": "machine.",
+"start": 405.854,
+"end": 406.415,
+"startFrame": 24351,
+"endFrame": 24385
+},
+{
+"s": 129,
+"w": "It's",
+"start": 406.754,
+"end": 407.001,
+"startFrame": 24405,
+"endFrame": 24420
+},
+{
+"s": 129,
+"w": "a",
+"start": 407.001,
+"end": 407.113,
+"startFrame": 24420,
+"endFrame": 24427
+},
+{
+"s": 129,
+"w": "pair",
+"start": 407.113,
+"end": 407.36,
+"startFrame": 24427,
+"endFrame": 24442
+},
+{
+"s": 129,
+"w": "of",
+"start": 407.36,
+"end": 407.517,
+"startFrame": 24442,
+"endFrame": 24451
+},
+{
+"s": 129,
+"w": "eyes.",
+"start": 407.517,
+"end": 407.854,
+"startFrame": 24451,
+"endFrame": 24471
+},
+{
+"s": 130,
+"w": "And",
+"start": 408.165,
+"end": 408.404,
+"startFrame": 24490,
+"endFrame": 24504
+},
+{
+"s": 130,
+"w": "you",
+"start": 408.404,
+"end": 408.643,
+"startFrame": 24504,
+"endFrame": 24519
+},
+{
+"s": 130,
+"w": "might",
+"start": 408.643,
+"end": 408.989,
+"startFrame": 24519,
+"endFrame": 24539
+},
+{
+"s": 130,
+"w": "ask,",
+"start": 408.989,
+"end": 409.228,
+"startFrame": 24539,
+"endFrame": 24554
+},
+{
+"s": 130,
+"w": "what",
+"start": 409.312,
+"end": 409.64,
+"startFrame": 24559,
+"endFrame": 24578
+},
+{
+"s": 130,
+"w": "about",
+"start": 409.64,
+"end": 410.027,
+"startFrame": 24578,
+"endFrame": 24602
+},
+{
+"s": 130,
+"w": "China?",
+"start": 410.027,
+"end": 410.415,
+"startFrame": 24602,
+"endFrame": 24625
+},
+{
+"s": 131,
+"w": "Its",
+"start": 410.773,
+"end": 411.01,
+"startFrame": 24646,
+"endFrame": 24661
+},
+{
+"s": 131,
+"w": "sub",
+"start": 411.01,
+"end": 411.246,
+"startFrame": 24661,
+"endFrame": 24675
+},
+{
+"s": 131,
+"w": "has",
+"start": 411.246,
+"end": 411.483,
+"startFrame": 24675,
+"endFrame": 24689
+},
+{
+"s": 131,
+"w": "already",
+"start": 411.483,
+"end": 411.929,
+"startFrame": 24689,
+"endFrame": 24716
+},
+{
+"s": 131,
+"w": "taken",
+"start": 411.929,
+"end": 412.271,
+"startFrame": 24716,
+"endFrame": 24736
+},
+{
+"s": 131,
+"w": "people",
+"start": 412.271,
+"end": 412.665,
+"startFrame": 24736,
+"endFrame": 24760
+},
+{
+"s": 131,
+"w": "to",
+"start": 412.665,
+"end": 412.849,
+"startFrame": 24760,
+"endFrame": 24771
+},
+{
+"s": 131,
+"w": "the",
+"start": 412.849,
+"end": 413.086,
+"startFrame": 24771,
+"endFrame": 24785
+},
+{
+"s": 131,
+"w": "deepest",
+"start": 413.086,
+"end": 413.533,
+"startFrame": 24785,
+"endFrame": 24812
+},
+{
+"s": 131,
+"w": "point",
+"start": 413.533,
+"end": 413.874,
+"startFrame": 24812,
+"endFrame": 24832
+},
+{
+"s": 131,
+"w": "on",
+"start": 413.874,
+"end": 414.058,
+"startFrame": 24832,
+"endFrame": 24843
+},
+{
+"s": 131,
+"w": "Earth,",
+"start": 414.058,
+"end": 414.4,
+"startFrame": 24843,
+"endFrame": 24864
+},
+{
+"s": 131,
+"w": "almost",
+"start": 414.696,
+"end": 415.112,
+"startFrame": 24882,
+"endFrame": 24907
+},
+{
+"s": 131,
+"w": "eleven",
+"start": 415.112,
+"end": 415.528,
+"startFrame": 24907,
+"endFrame": 24932
+},
+{
+"s": 131,
+"w": "thousand",
+"start": 415.528,
+"end": 416.054,
+"startFrame": 24932,
+"endFrame": 24963
+},
+{
+"s": 131,
+"w": "metres.",
+"start": 416.054,
+"end": 416.581,
+"startFrame": 24963,
+"endFrame": 24995
+},
+{
+"s": 132,
+"w": "India's",
+"start": 416.886,
+"end": 417.352,
+"startFrame": 25013,
+"endFrame": 25041
+},
+{
+"s": 132,
+"w": "first",
+"start": 417.352,
+"end": 417.709,
+"startFrame": 25041,
+"endFrame": 25063
+},
+{
+"s": 132,
+"w": "goal",
+"start": 417.709,
+"end": 418.01,
+"startFrame": 25063,
+"endFrame": 25081
+},
+{
+"s": 132,
+"w": "is",
+"start": 418.01,
+"end": 418.202,
+"startFrame": 25081,
+"endFrame": 25092
+},
+{
+"s": 132,
+"w": "six",
+"start": 418.202,
+"end": 418.449,
+"startFrame": 25092,
+"endFrame": 25107
+},
+{
+"s": 132,
+"w": "thousand,",
+"start": 418.449,
+"end": 418.97,
+"startFrame": 25107,
+"endFrame": 25138
+},
+{
+"s": 132,
+"w": "deep",
+"start": 419.271,
+"end": 419.53,
+"startFrame": 25156,
+"endFrame": 25172
+},
+{
+"s": 132,
+"w": "enough",
+"start": 419.53,
+"end": 419.883,
+"startFrame": 25172,
+"endFrame": 25193
+},
+{
+"s": 132,
+"w": "for",
+"start": 419.883,
+"end": 420.095,
+"startFrame": 25193,
+"endFrame": 25206
+},
+{
+"s": 132,
+"w": "the",
+"start": 420.095,
+"end": 420.306,
+"startFrame": 25206,
+"endFrame": 25218
+},
+{
+"s": 132,
+"w": "seabed",
+"start": 420.306,
+"end": 420.659,
+"startFrame": 25218,
+"endFrame": 25240
+},
+{
+"s": 132,
+"w": "it",
+"start": 420.659,
+"end": 420.824,
+"startFrame": 25240,
+"endFrame": 25249
+},
+{
+"s": 132,
+"w": "wants",
+"start": 420.824,
+"end": 421.13,
+"startFrame": 25249,
+"endFrame": 25268
+},
+{
+"s": 132,
+"w": "to",
+"start": 421.13,
+"end": 421.295,
+"startFrame": 25268,
+"endFrame": 25278
+},
+{
+"s": 132,
+"w": "explore.",
+"start": 421.295,
+"end": 421.789,
+"startFrame": 25278,
+"endFrame": 25307
+},
+{
+"s": 133,
+"w": "Now,",
+"start": 422.085,
+"end": 422.382,
+"startFrame": 25325,
+"endFrame": 25343
+},
+{
+"s": 133,
+"w": "one",
+"start": 422.543,
+"end": 422.788,
+"startFrame": 25353,
+"endFrame": 25367
+},
+{
+"s": 133,
+"w": "last",
+"start": 422.788,
+"end": 423.087,
+"startFrame": 25367,
+"endFrame": 25385
+},
+{
+"s": 133,
+"w": "time,",
+"start": 423.087,
+"end": 423.386,
+"startFrame": 25385,
+"endFrame": 25403
+},
+{
+"s": 133,
+"w": "come",
+"start": 423.671,
+"end": 423.891,
+"startFrame": 25420,
+"endFrame": 25433
+},
+{
+"s": 133,
+"w": "back",
+"start": 423.891,
+"end": 424.11,
+"startFrame": 25433,
+"endFrame": 25447
+},
+{
+"s": 133,
+"w": "inside",
+"start": 424.11,
+"end": 424.41,
+"startFrame": 25447,
+"endFrame": 25465
+},
+{
+"s": 133,
+"w": "the",
+"start": 424.41,
+"end": 424.59,
+"startFrame": 25465,
+"endFrame": 25475
+},
+{
+"s": 133,
+"w": "ball",
+"start": 424.59,
+"end": 424.81,
+"startFrame": 25475,
+"endFrame": 25489
+},
+{
+"s": 133,
+"w": "with",
+"start": 424.81,
+"end": 425.029,
+"startFrame": 25489,
+"endFrame": 25502
+},
+{
+"s": 133,
+"w": "me.",
+"start": 425.029,
+"end": 425.249,
+"startFrame": 25502,
+"endFrame": 25515
+},
+{
+"s": 134,
+"w": "I'll",
+"start": 425.607,
+"end": 425.776,
+"startFrame": 25536,
+"endFrame": 25547
+},
+{
+"s": 134,
+"w": "be",
+"start": 425.776,
+"end": 425.883,
+"startFrame": 25547,
+"endFrame": 25553
+},
+{
+"s": 134,
+"w": "straight",
+"start": 425.883,
+"end": 426.175,
+"startFrame": 25553,
+"endFrame": 25570
+},
+{
+"s": 134,
+"w": "with",
+"start": 426.175,
+"end": 426.344,
+"startFrame": 25570,
+"endFrame": 25581
+},
+{
+"s": 134,
+"w": "you.",
+"start": 426.344,
+"end": 426.544,
+"startFrame": 25581,
+"endFrame": 25593
+},
+{
+"s": 135,
+"w": "Matsya",
+"start": 426.858,
+"end": 427.246,
+"startFrame": 25611,
+"endFrame": 25635
+},
+{
+"s": 135,
+"w": "has",
+"start": 427.246,
+"end": 427.479,
+"startFrame": 25635,
+"endFrame": 25649
+},
+{
+"s": 135,
+"w": "not",
+"start": 427.479,
+"end": 427.712,
+"startFrame": 25649,
+"endFrame": 25663
+},
+{
+"s": 135,
+"w": "been",
+"start": 427.712,
+"end": 427.997,
+"startFrame": 25663,
+"endFrame": 25680
+},
+{
+"s": 135,
+"w": "to",
+"start": 427.997,
+"end": 428.178,
+"startFrame": 25680,
+"endFrame": 25691
+},
+{
+"s": 135,
+"w": "sea",
+"start": 428.178,
+"end": 428.411,
+"startFrame": 25691,
+"endFrame": 25705
+},
+{
+"s": 135,
+"w": "with",
+"start": 428.411,
+"end": 428.696,
+"startFrame": 25705,
+"endFrame": 25722
+},
+{
+"s": 135,
+"w": "people",
+"start": 428.696,
+"end": 429.084,
+"startFrame": 25722,
+"endFrame": 25745
+},
+{
+"s": 135,
+"w": "in",
+"start": 429.084,
+"end": 429.265,
+"startFrame": 25745,
+"endFrame": 25756
+},
+{
+"s": 135,
+"w": "it",
+"start": 429.265,
+"end": 429.446,
+"startFrame": 25756,
+"endFrame": 25767
+},
+{
+"s": 135,
+"w": "yet.",
+"start": 429.446,
+"end": 429.783,
+"startFrame": 25767,
+"endFrame": 25787
+},
+{
+"s": 136,
+"w": "And",
+"start": 430.075,
+"end": 430.323,
+"startFrame": 25804,
+"endFrame": 25819
+},
+{
+"s": 136,
+"w": "no",
+"start": 430.323,
+"end": 430.516,
+"startFrame": 25819,
+"endFrame": 25831
+},
+{
+"s": 136,
+"w": "public",
+"start": 430.516,
+"end": 430.929,
+"startFrame": 25831,
+"endFrame": 25856
+},
+{
+"s": 136,
+"w": "report",
+"start": 430.929,
+"end": 431.342,
+"startFrame": 25856,
+"endFrame": 25881
+},
+{
+"s": 136,
+"w": "says",
+"start": 431.342,
+"end": 431.645,
+"startFrame": 25881,
+"endFrame": 25899
+},
+{
+"s": 136,
+"w": "this",
+"start": 431.645,
+"end": 431.949,
+"startFrame": 25899,
+"endFrame": 25917
+},
+{
+"s": 136,
+"w": "titanium",
+"start": 431.949,
+"end": 432.472,
+"startFrame": 25917,
+"endFrame": 25948
+},
+{
+"s": 136,
+"w": "ball",
+"start": 432.472,
+"end": 432.775,
+"startFrame": 25948,
+"endFrame": 25966
+},
+{
+"s": 136,
+"w": "has",
+"start": 432.775,
+"end": 433.023,
+"startFrame": 25966,
+"endFrame": 25981
+},
+{
+"s": 136,
+"w": "been",
+"start": 433.023,
+"end": 433.326,
+"startFrame": 25981,
+"endFrame": 26000
+},
+{
+"s": 136,
+"w": "tested",
+"start": 433.326,
+"end": 433.739,
+"startFrame": 26000,
+"endFrame": 26024
+},
+{
+"s": 136,
+"w": "at",
+"start": 433.739,
+"end": 433.932,
+"startFrame": 26024,
+"endFrame": 26036
+},
+{
+"s": 136,
+"w": "full",
+"start": 433.932,
+"end": 434.235,
+"startFrame": 26036,
+"endFrame": 26054
+},
+{
+"s": 136,
+"w": "pressure",
+"start": 434.235,
+"end": 434.759,
+"startFrame": 26054,
+"endFrame": 26086
+},
+{
+"s": 136,
+"w": "yet.",
+"start": 434.759,
+"end": 435.117,
+"startFrame": 26086,
+"endFrame": 26107
+},
+{
+"s": 137,
+"w": "So",
+"start": 435.39,
+"end": 435.587,
+"startFrame": 26123,
+"endFrame": 26135
+},
+{
+"s": 137,
+"w": "the",
+"start": 435.587,
+"end": 435.841,
+"startFrame": 26135,
+"endFrame": 26150
+},
+{
+"s": 137,
+"w": "last",
+"start": 435.841,
+"end": 436.151,
+"startFrame": 26150,
+"endFrame": 26169
+},
+{
+"s": 137,
+"w": "test",
+"start": 436.151,
+"end": 436.461,
+"startFrame": 26169,
+"endFrame": 26188
+},
+{
+"s": 137,
+"w": "will",
+"start": 436.461,
+"end": 436.771,
+"startFrame": 26188,
+"endFrame": 26206
+},
+{
+"s": 137,
+"w": "be",
+"start": 436.771,
+"end": 436.968,
+"startFrame": 26206,
+"endFrame": 26218
+},
+{
+"s": 137,
+"w": "the",
+"start": 436.968,
+"end": 437.222,
+"startFrame": 26218,
+"endFrame": 26233
+},
+{
+"s": 137,
+"w": "sea",
+"start": 437.222,
+"end": 437.476,
+"startFrame": 26233,
+"endFrame": 26249
+},
+{
+"s": 137,
+"w": "itself.",
+"start": 437.476,
+"end": 438.011,
+"startFrame": 26249,
+"endFrame": 26281
+},
+{
+"s": 138,
+"w": "One",
+"start": 438.329,
+"end": 438.573,
+"startFrame": 26300,
+"endFrame": 26314
+},
+{
+"s": 138,
+"w": "dive.",
+"start": 438.573,
+"end": 438.979,
+"startFrame": 26314,
+"endFrame": 26339
+},
+{
+"s": 139,
+"w": "Six",
+"start": 439.353,
+"end": 439.624,
+"startFrame": 26361,
+"endFrame": 26377
+},
+{
+"s": 139,
+"w": "kilometres.",
+"start": 439.624,
+"end": 440.438,
+"startFrame": 26377,
+"endFrame": 26426
+},
+{
+"s": 140,
+"w": "Every",
+"start": 440.709,
+"end": 441.017,
+"startFrame": 26443,
+"endFrame": 26461
+},
+{
+"s": 140,
+"w": "number",
+"start": 441.017,
+"end": 441.372,
+"startFrame": 26461,
+"endFrame": 26482
+},
+{
+"s": 140,
+"w": "in",
+"start": 441.372,
+"end": 441.538,
+"startFrame": 26482,
+"endFrame": 26492
+},
+{
+"s": 140,
+"w": "this",
+"start": 441.538,
+"end": 441.798,
+"startFrame": 26492,
+"endFrame": 26508
+},
+{
+"s": 140,
+"w": "film,",
+"start": 441.798,
+"end": 442.059,
+"startFrame": 26508,
+"endFrame": 26524
+},
+{
+"s": 140,
+"w": "checked",
+"start": 442.261,
+"end": 442.741,
+"startFrame": 26536,
+"endFrame": 26564
+},
+{
+"s": 140,
+"w": "at",
+"start": 442.741,
+"end": 442.939,
+"startFrame": 26564,
+"endFrame": 26576
+},
+{
+"s": 140,
+"w": "once.",
+"start": 442.939,
+"end": 443.362,
+"startFrame": 26576,
+"endFrame": 26602
+},
+{
+"s": 141,
+"w": "This",
+"start": 443.67,
+"end": 443.966,
+"startFrame": 26620,
+"endFrame": 26638
+},
+{
+"s": 141,
+"w": "story",
+"start": 443.966,
+"end": 444.315,
+"startFrame": 26638,
+"endFrame": 26659
+},
+{
+"s": 141,
+"w": "isn't",
+"start": 444.315,
+"end": 444.664,
+"startFrame": 26659,
+"endFrame": 26680
+},
+{
+"s": 141,
+"w": "over.",
+"start": 444.664,
+"end": 445.067,
+"startFrame": 26680,
+"endFrame": 26704
+},
+{
+"s": 142,
+"w": "When",
+"start": 445.378,
+"end": 445.655,
+"startFrame": 26723,
+"endFrame": 26739
+},
+{
+"s": 142,
+"w": "Matsya",
+"start": 445.655,
+"end": 446.032,
+"startFrame": 26739,
+"endFrame": 26762
+},
+{
+"s": 142,
+"w": "makes",
+"start": 446.032,
+"end": 446.36,
+"startFrame": 26762,
+"endFrame": 26782
+},
+{
+"s": 142,
+"w": "its",
+"start": 446.36,
+"end": 446.586,
+"startFrame": 26782,
+"endFrame": 26795
+},
+{
+"s": 142,
+"w": "first",
+"start": 446.586,
+"end": 446.913,
+"startFrame": 26795,
+"endFrame": 26815
+},
+{
+"s": 142,
+"w": "deep",
+"start": 446.913,
+"end": 447.19,
+"startFrame": 26815,
+"endFrame": 26831
+},
+{
+"s": 142,
+"w": "dive,",
+"start": 447.19,
+"end": 447.467,
+"startFrame": 26831,
+"endFrame": 26848
+},
+{
+"s": 142,
+"w": "we'll",
+"start": 447.752,
+"end": 447.96,
+"startFrame": 26865,
+"endFrame": 26878
+},
+{
+"s": 142,
+"w": "be",
+"start": 447.96,
+"end": 448.072,
+"startFrame": 26878,
+"endFrame": 26884
+},
+{
+"s": 142,
+"w": "there.",
+"start": 448.072,
+"end": 448.344,
+"startFrame": 26884,
+"endFrame": 26901
+},
+{
+"s": 143,
+"w": "Subscribe",
+"start": 448.627,
+"end": 449.126,
+"startFrame": 26918,
+"endFrame": 26948
+},
+{
+"s": 143,
+"w": "to",
+"start": 449.126,
+"end": 449.292,
+"startFrame": 26948,
+"endFrame": 26958
+},
+{
+"s": 143,
+"w": "Be",
+"start": 449.292,
+"end": 449.458,
+"startFrame": 26958,
+"endFrame": 26967
+},
+{
+"s": 143,
+"w": "Practical,",
+"start": 449.458,
+"end": 449.957,
+"startFrame": 26967,
+"endFrame": 26997
+},
+{
+"s": 143,
+"w": "so",
+"start": 450.134,
+"end": 450.284,
+"startFrame": 27008,
+"endFrame": 27017
+},
+{
+"s": 143,
+"w": "you're",
+"start": 450.284,
+"end": 450.605,
+"startFrame": 27017,
+"endFrame": 27036
+},
+{
+"s": 143,
+"w": "there",
+"start": 450.605,
+"end": 450.883,
+"startFrame": 27036,
+"endFrame": 27053
+},
+{
+"s": 143,
+"w": "too.",
+"start": 450.883,
+"end": 451.161,
+"startFrame": 27053,
+"endFrame": 27070
+}
+],
+"chapters": [
+{
+"title": "Cold open",
+"start": 0.0,
+"startFrame": 0
+},
+{
+"title": "How strong is the pressure 6 km deep",
+"start": 44.255,
+"startFrame": 2655
+},
+{
+"title": "Could Matsya end like Titan",
+"start": 82.263,
+"startFrame": 4936
+},
+{
+"title": "Why deep-sea subs use a ball",
+"start": 133.751,
+"startFrame": 8025
+},
+{
+"title": "ISRO's hardest weld",
+"start": 168.342,
+"startFrame": 10101
+},
+{
+"title": "Inside Matsya, and India's first aquanauts",
+"start": 266.914,
+"startFrame": 16015
+},
+{
+"title": "The foam, and the delay",
+"start": 307.529,
+"startFrame": 18452
+},
+{
+"title": "What's on India's seabed",
+"start": 356.901,
+"startFrame": 21414
+},
+{
+"title": "The last test",
+"start": 422.085,
+"startFrame": 25325
+}
+],
+"duration": 451.161,
+"voDurationInFrames": 27070,
+"outro": 4.0,
+"durationInFrames": 27310
+}

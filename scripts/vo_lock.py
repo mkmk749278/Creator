@@ -8,6 +8,10 @@ for byte (its SHA-256 goes into the lock). No transcription: the locked script i
 3. Chapters start at the sentence whose text begins with each prefix in chapters.tsv (`prefix<TAB>title`).
 
 Usage: scripts/vo_lock.py projects/<slug> --audio projects/<slug>/assets/vo/<prefix>_vo_full.mp3 [--fps 60] [--outro 4]
+Optional vo/sentence_fix.tsv (`sentence prefix<TAB>start<TAB>end`, seconds): sentences the aligner misplaced,
+set by hand from the silences around them (never from speech recognition); listed in timing.md.
+Optional vo/caption_forms.tsv (`spoken<TAB>written`, applied in order to the SRT only): the real forms for captions
+(digits, ₹, ISRO, true spellings of respelt names), PLAYBOOK §6; a row that matches nothing stops the run.
 Writes projects/<slug>/vo/: timing.json (sentences, words, chapters; seconds and frames), captions.en.srt,
 timing.md (sentences to check), lock.json (audio name, SHA-256, duration, approval). Also writes
 assets/vo/vo_full.wav (48 kHz mono, same audio, for Remotion).
@@ -52,6 +56,14 @@ def main() -> None:
     gaps = [(x, y if y is not None else total) for x, y in silences(a.audio, -35, 0.08)]
     spans = align(total, [g for g in gaps if g[1] - g[0] >= 0.15], [{"te": s, "en": ""} for s in sents], 0.35)
 
+    fix_path = out / "sentence_fix.tsv"
+    fixes = [l.split("\t") for l in fix_path.read_text().splitlines() if l.count("\t") == 2] if fix_path.exists() else []
+    for pre, fs, fe in fixes:
+        hits = [i for i, x in enumerate(sents) if x.startswith(pre)]
+        if len(hits) != 1:
+            sys.exit(f"sentence_fix prefix must match one sentence: {pre}")
+        ss, se, ratio, margin = spans[hits[0]]
+        spans[hits[0]] = (float(fs), float(fe), ratio, 9.9)
     timing = {"fps": fps, "audio": a.audio.name, "sentences": [], "words": [], "chapters": []}
     ci = 0
     for sid, (sent, (ss, se, ratio, margin)) in enumerate(zip(sents, spans)):
@@ -80,13 +92,24 @@ def main() -> None:
         ms = round(t * 1000)
         return f"{ms // 3600000:02d}:{ms // 60000 % 60:02d}:{ms // 1000 % 60:02d},{ms % 1000:03d}"
     S = timing["sentences"]
+    forms_path = out / "caption_forms.tsv"
+    forms = [l.split("\t") for l in forms_path.read_text(encoding="utf-8").splitlines() if l.count("\t") == 1] \
+        if forms_path.exists() else []
+    shown = [x["text"] for x in S]
+    for spoken, written in forms:
+        if not any(spoken in t for t in shown):
+            sys.exit(f"caption_forms row matches no sentence: {spoken}")
+        shown = [t.replace(spoken, written) for t in shown]
     cues = [f"{i}\n{srt(x['start'])} --> {srt(min(x['end'] + 0.2, S[i]['start'] if i < len(S) else total))}\n"
-            f"{x['text']}\n" for i, x in enumerate(S, 1)]
-    (out / "captions.en.srt").write_text("\n".join(cues))
-    weak = [x for x in S if x["margin"] < 0.05 or not 0.6 < x["ratio"] < 1.6]
+            f"{shown[i - 1]}\n" for i, x in enumerate(S, 1)]
+    (out / "captions.en.srt").write_text("\n".join(cues), encoding="utf-8")
+    fixed = {f[0] for f in fixes}
+    weak = [x for x in S if not any(x["text"].startswith(f) for f in fixed)
+            and (x["margin"] < 0.05 or not 0.6 < x["ratio"] < 1.6)]
     rep = [f"# VO timing: {film.name}", "", f"{total:.2f} s · {len(S)} sentences · {len(timing['words'])} words · "
            f"{len(timing['chapters'])} chapters", "", "## Chapters"]
     rep += [f"- {int(c['start'] // 60):02d}:{int(c['start'] % 60):02d} {c['title']}" for c in timing["chapters"]]
+    rep += ["", f"## Set by hand (vo/sentence_fix.tsv): {len(fixes)}"] + [f"- {f[1]}–{f[2]} s: {f[0]}" for f in fixes]
     rep += ["", "## Sentences to check (low margin or odd length)"]
     rep += [f"- {x['start']:.2f}s ratio {x['ratio']} margin {x['margin']}: {x['text'][:70]}" for x in weak] or ["- none"]
     (out / "timing.md").write_text("\n".join(rep) + "\n")
@@ -97,7 +120,7 @@ def main() -> None:
             "duration": round(total, 3), "approved": a.approved, "wav": wav.name,
             "wav_duration": round(dur(wav), 3)}
     (out / "lock.json").write_text(json.dumps(lock, indent=1) + "\n")
-    print("\n".join(rep[:3 + len(timing["chapters"]) + 2]))
+    print("\n".join(rep[:3 + len(timing["chapters"]) + 3 + len(fixes)]))
     print(f"{len(weak)} sentences to check; lock: {lock['sha256'][:12]}")
 
 

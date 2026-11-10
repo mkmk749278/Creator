@@ -1,0 +1,575 @@
+1
+00:00:00,000 --> 00:00:06,897
+6 km under the sea, the water will squeeze this titanium ball — with almost 1,00,000 tonnes.
+
+2
+00:00:07,244 --> 00:00:10,015
+Imagine you're inside it, with two other Indians.
+
+3
+00:00:10,490 --> 00:00:14,577
+This ball is the heart of India's first deep-sea sub for people.
+
+4
+00:00:14,897 --> 00:00:16,509
+Its name is Matsya.
+
+5
+00:00:16,944 --> 00:00:21,735
+Your whole world is five pieces of titanium, joined by seven welds.
+
+6
+00:00:22,106 --> 00:00:23,457
+Now here's the strange part.
+
+7
+00:00:23,797 --> 00:00:25,648
+ISRO is known for rockets.
+
+8
+00:00:25,758 --> 00:00:28,626
+But ISRO's hardest weld wasn't for a rocket.
+
+9
+00:00:28,768 --> 00:00:30,009
+It was for this ball.
+
+10
+00:00:30,236 --> 00:00:34,723
+That weld was 4 times thicker than their welding machine could handle before.
+
+11
+00:00:35,013 --> 00:00:37,168
+It took about 700 tries.
+
+12
+00:00:37,489 --> 00:00:38,921
+So why was it so hard?
+
+13
+00:00:39,169 --> 00:00:41,830
+And after Titan, how will they know it holds?
+
+14
+00:00:42,226 --> 00:00:43,937
+By the end, you'll know both.
+
+15
+00:00:44,255 --> 00:00:48,696
+First, I want you to feel what 6 km of sea actually does.
+
+16
+00:00:49,022 --> 00:00:54,735
+Every 10 metres you go down, the sea presses on you as hard as all the air above you.
+
+17
+00:00:55,072 --> 00:00:55,742
+Once more.
+
+18
+00:00:56,089 --> 00:00:56,844
+And again.
+
+19
+00:00:57,177 --> 00:00:58,288
+And again.
+
+20
+00:00:58,632 --> 00:01:01,498
+At 6,000 metres, hold out your finger.
+
+21
+00:01:01,837 --> 00:01:05,666
+The water would press on your fingernail with about 600 kilos.
+
+22
+00:01:05,913 --> 00:01:09,279
+That's a full-grown buffalo, standing on one fingernail.
+
+23
+00:01:09,680 --> 00:01:11,983
+Now cover the whole ball with fingernails.
+
+24
+00:01:12,203 --> 00:01:14,687
+Every one of them carries a buffalo.
+
+25
+00:01:15,019 --> 00:01:21,899
+Add it all up, and the sea squeezes this ball with almost 1,00,000 tonnes, from every side at once.
+
+26
+00:01:22,263 --> 00:01:25,121
+So you're probably asking the same question I asked.
+
+27
+00:01:25,328 --> 00:01:26,913
+Could this end like Titan?
+
+28
+00:01:27,264 --> 00:01:28,309
+You may remember it.
+
+29
+00:01:28,511 --> 00:01:33,180
+In June 2023, Titan broke apart on its way down to the Titanic.
+
+30
+00:01:33,338 --> 00:01:34,579
+Five people died.
+
+31
+00:01:35,204 --> 00:01:38,194
+Its hull, as you may know, was carbon fibre.
+
+32
+00:01:38,406 --> 00:01:43,798
+After earlier dives, its layers had started to come apart, and it kept diving anyway.
+
+33
+00:01:43,988 --> 00:01:47,724
+The US Coast Guard said the company's own failures caused it.
+
+34
+00:01:47,890 --> 00:01:49,518
+So what's different here?
+
+35
+00:01:49,801 --> 00:01:50,643
+Three things.
+
+36
+00:01:50,792 --> 00:01:56,068
+The material is titanium, the metal deep-sea subs have trusted for more than 50 years.
+
+37
+00:01:56,224 --> 00:01:57,807
+The shape is a ball.
+
+38
+00:01:57,975 --> 00:02:01,819
+And an outside inspection company checks and approves the work.
+
+39
+00:02:01,941 --> 00:02:04,523
+For Matsya, that company is from Norway.
+
+40
+00:02:04,647 --> 00:02:06,776
+And if something goes wrong down there?
+
+41
+00:02:06,932 --> 00:02:10,460
+The crew can drop heavy weights, and the sub rises back up.
+
+42
+00:02:10,565 --> 00:02:13,554
+And they carry enough air for 96 hours.
+
+43
+00:02:13,751 --> 00:02:15,173
+But why a ball?
+
+44
+00:02:15,244 --> 00:02:17,891
+Why not a long tube, like a normal submarine?
+
+45
+00:02:18,027 --> 00:02:19,552
+Squeeze a ball in your hand.
+
+46
+00:02:19,647 --> 00:02:22,436
+You can feel the push spread all the way round.
+
+47
+00:02:22,565 --> 00:02:26,017
+There's no corner and no flat side where the pressure can win.
+
+48
+00:02:26,089 --> 00:02:29,770
+Even America's famous deep-sea sub, Alvin, uses a ball.
+
+49
+00:02:29,842 --> 00:02:32,904
+Its first one, in 1964, was steel.
+
+50
+00:02:32,983 --> 00:02:38,789
+In 1973, they changed it to titanium, and Alvin could go almost twice as deep.
+
+51
+00:02:38,885 --> 00:02:40,570
+India walked the same road.
+
+52
+00:02:40,647 --> 00:02:46,632
+In 2021, it lowered a test ball of plain steel 600 metres into the Bay of Bengal.
+
+53
+00:02:46,693 --> 00:02:48,222
+Then came titanium.
+
+54
+00:02:48,342 --> 00:02:50,945
+And this, you see, is where ISRO comes in.
+
+55
+00:02:51,037 --> 00:02:52,949
+Remember that weld I told you about?
+
+56
+00:02:53,029 --> 00:02:55,940
+You can't make a ball this big in one piece.
+
+57
+00:02:55,990 --> 00:02:57,370
+So how do you make it?
+
+58
+00:02:57,540 --> 00:02:59,830
+ISRO's drawing shows five pieces.
+
+59
+00:02:59,910 --> 00:03:00,860
+A top hatch.
+
+60
+00:03:00,960 --> 00:03:01,830
+Three rings.
+
+61
+00:03:01,900 --> 00:03:02,950
+A bottom dome.
+
+62
+00:03:03,030 --> 00:03:05,940
+Together, they weigh about 5.5 tonnes.
+
+63
+00:03:06,543 --> 00:03:08,190
+Seven welds join them.
+
+64
+00:03:08,376 --> 00:03:11,056
+Four go right round the ball, like belts.
+
+65
+00:03:11,321 --> 00:03:13,113
+Three go round its windows.
+
+66
+00:03:13,362 --> 00:03:14,973
+Here's the problem you'd face.
+
+67
+00:03:15,166 --> 00:03:16,929
+Titanium is fussy.
+
+68
+00:03:17,235 --> 00:03:20,935
+Heat it in normal air, and it grabs oxygen and nitrogen.
+
+69
+00:03:21,165 --> 00:03:25,843
+The weld fills with tiny holes, and it becomes weak and easy to crack.
+
+70
+00:03:25,988 --> 00:03:28,531
+So you can't weld it with a normal flame.
+
+71
+00:03:28,811 --> 00:03:29,533
+What do you do?
+
+72
+00:03:29,830 --> 00:03:33,928
+ISRO used a beam of electrons, fired inside a vacuum.
+
+73
+00:03:34,127 --> 00:03:36,431
+No air, so nothing can get in.
+
+74
+00:03:36,738 --> 00:03:38,240
+But there was a catch.
+
+75
+00:03:38,372 --> 00:03:42,724
+ISRO's welding centre in Bengaluru could weld up to 2 cm thick.
+
+76
+00:03:42,934 --> 00:03:44,616
+This wall is 8.
+
+77
+00:03:44,824 --> 00:03:47,634
+So they made their machine much more powerful.
+
+78
+00:03:47,840 --> 00:03:49,265
+Then they practised.
+
+79
+00:03:49,385 --> 00:03:53,685
+About 700 trial welds, to get the settings exactly right.
+
+80
+00:03:53,934 --> 00:03:55,655
+Then came the real thing.
+
+81
+00:03:55,844 --> 00:03:58,724
+One of the big welds that go right round the ball.
+
+82
+00:03:58,911 --> 00:04:02,211
+8 cm deep, and about 7 metres long.
+
+83
+00:04:02,401 --> 00:04:05,220
+It took 32 minutes, in one go.
+
+84
+00:04:05,436 --> 00:04:10,053
+ISRO says it was the first time anyone in India had made a weld like this.
+
+85
+00:04:10,306 --> 00:04:12,596
+But then, how do you know it's good inside?
+
+86
+00:04:12,758 --> 00:04:14,488
+You can't cut it open, can you?
+
+87
+00:04:14,667 --> 00:04:20,211
+So they built X-ray machines strong enough to see through 8 cm of titanium.
+
+88
+00:04:20,336 --> 00:04:23,590
+They used sound waves too, listening for hidden cracks.
+
+89
+00:04:23,719 --> 00:04:26,693
+And an outside agency has to certify it.
+
+90
+00:04:26,914 --> 00:04:28,549
+Now step inside with me.
+
+91
+00:04:28,788 --> 00:04:33,900
+The wall is 8 cm thick, so inside, you get just over 2 metres.
+
+92
+00:04:34,011 --> 00:04:38,823
+Lie down in there, and your head and your feet would almost touch the walls.
+
+93
+00:04:39,423 --> 00:04:43,577
+You and two others sit here, for a normal dive of 12 hours.
+
+94
+00:04:43,866 --> 00:04:45,176
+Oxygen comes in.
+
+95
+00:04:45,203 --> 00:04:48,164
+The carbon dioxide you breathe out gets cleaned away.
+
+96
+00:04:48,380 --> 00:04:50,563
+And who will sit where you're sitting?
+
+97
+00:04:50,810 --> 00:04:57,251
+In August 2025, India sent its first two trained people down in a French sub called Nautile.
+
+98
+00:04:57,416 --> 00:05:01,446
+Raju Ramesh, a scientist, reached about 4,000 metres.
+
+99
+00:05:01,601 --> 00:05:07,404
+The next day, Commander Jatinder Pal Singh, a retired Navy officer, reached about 5,000.
+
+100
+00:05:07,529 --> 00:05:09,938
+So is Matsya ready, do you think?
+
+101
+00:05:10,184 --> 00:05:11,034
+Not quite.
+
+102
+00:05:11,083 --> 00:05:12,640
+There's one more problem.
+
+103
+00:05:12,809 --> 00:05:15,123
+This ball is only part of the sub.
+
+104
+00:05:15,244 --> 00:05:19,017
+Around it go batteries, lights, motors and arms.
+
+105
+00:05:19,105 --> 00:05:22,649
+Put it all together, and the whole thing sinks like a stone.
+
+106
+00:05:22,742 --> 00:05:25,193
+So it's wrapped in a special foam.
+
+107
+00:05:25,274 --> 00:05:29,942
+The foam is full of tiny hollow glass bubbles, set in hard plastic.
+
+108
+00:05:30,010 --> 00:05:31,925
+The titanium takes the squeeze.
+
+109
+00:05:31,985 --> 00:05:34,078
+The foam brings everyone home.
+
+110
+00:05:34,198 --> 00:05:37,961
+That foam had to come from France, and it arrived late.
+
+111
+00:05:38,039 --> 00:05:42,686
+Then, early this year, officials said a small crack was found in its cover.
+
+112
+00:05:42,758 --> 00:05:46,249
+That held up the first test dive, to 500 metres.
+
+113
+00:05:46,291 --> 00:05:51,832
+On 6 November, Matsya finished another round of trials near Chennai, without people inside.
+
+114
+00:05:51,875 --> 00:05:56,838
+Officials have said the full 6 km dive could come in 2027.
+
+115
+00:05:56,901 --> 00:05:59,016
+So why do all this, you ask?
+
+116
+00:05:59,136 --> 00:06:01,300
+What's down there that's worth it?
+
+117
+00:06:01,913 --> 00:06:05,566
+6,000 metres down, you'd see no sunlight at all.
+
+118
+00:06:05,852 --> 00:06:09,180
+Your lights are the only lights for 6 km.
+
+119
+00:06:09,451 --> 00:06:12,952
+Outside your window, the water is close to freezing.
+
+120
+00:06:13,123 --> 00:06:17,389
+And the seafloor is covered with black lumps of metal, like stones.
+
+121
+00:06:17,688 --> 00:06:23,040
+India has the right to explore a big patch of that seabed, in the middle of the Indian Ocean.
+
+122
+00:06:23,289 --> 00:06:25,906
+It has held that right since 2002.
+
+123
+00:06:26,101 --> 00:06:31,426
+In 2022, an Indian robot sub surveyed it, more than 5 km down.
+
+124
+00:06:31,574 --> 00:06:34,676
+Those lumps hold nickel, copper and cobalt.
+
+125
+00:06:34,793 --> 00:06:37,801
+Metals that go into batteries, like the one in your phone.
+
+126
+00:06:37,913 --> 00:06:39,651
+But let me be honest with you.
+
+127
+00:06:39,783 --> 00:06:42,077
+Nobody is allowed to mine there yet.
+
+128
+00:06:42,242 --> 00:06:44,373
+The world is still writing the rules.
+
+129
+00:06:44,493 --> 00:06:46,615
+Matsya is not a mining machine.
+
+130
+00:06:46,754 --> 00:06:48,054
+It's a pair of eyes.
+
+131
+00:06:48,165 --> 00:06:50,615
+And you might ask, what about China?
+
+132
+00:06:50,773 --> 00:06:56,781
+Its sub has already taken people to the deepest point on Earth, almost 11,000 metres.
+
+133
+00:06:56,886 --> 00:07:01,989
+India's first goal is 6,000, deep enough for the seabed it wants to explore.
+
+134
+00:07:02,085 --> 00:07:05,449
+Now, one last time, come back inside the ball with me.
+
+135
+00:07:05,607 --> 00:07:06,744
+I'll be straight with you.
+
+136
+00:07:06,858 --> 00:07:09,983
+Matsya has not been to sea with people in it yet.
+
+137
+00:07:10,075 --> 00:07:15,317
+And no public report says this titanium ball has been tested at full pressure yet.
+
+138
+00:07:15,390 --> 00:07:18,211
+So the last test will be the sea itself.
+
+139
+00:07:18,329 --> 00:07:19,179
+One dive.
+
+140
+00:07:19,353 --> 00:07:20,638
+6 km.
+
+141
+00:07:20,709 --> 00:07:23,562
+Every number in this film, checked at once.
+
+142
+00:07:23,670 --> 00:07:25,267
+This story isn't over.
+
+143
+00:07:25,378 --> 00:07:28,544
+When Matsya makes its first deep dive, we'll be there.
+
+144
+00:07:28,627 --> 00:07:31,161
+Subscribe to Be Practical, so you're there too.
