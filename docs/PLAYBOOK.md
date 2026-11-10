@@ -323,12 +323,12 @@ The challengers vary the picture and the words, never the promise, because one o
 2–4 plain lines on what the film shows, with the main search phrase in line 1 and the secondary phrases in the others,
 then chapters: `00:00` first, at least three, each at least 10 s apart, **named like searches** ("Why submarines must
 surface", not "Part 2"). No sources, credits, disclaimers, hashtags or links in the description. *Why:* the owner
-pastes it on a phone and wants it short. Sources go in the **pinned comment** (§15.2). Chapter times come from the
+pastes it on a phone and wants it short. Sources go in the **source comment** (§15.2). Chapter times come from the
 exact file that is uploaded.
 
 ### 4.7 What else ships with the package
 `youtube/metadata.json`: title and alternatives, thumbnail files, description, chapters, playlist, schedule slot, tags
-(spellings only), the pinned source comment. Plus our own **English SRT** from the locked script (YouTube then shows
+(spellings only), the source comment and the pinned chat comment (§15.1). Plus our own **English SRT** from the locked script (YouTube then shows
 the real spellings of names). The title and description also go in the chat as click-to-copy code blocks.
 
 ---
@@ -958,8 +958,13 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
 - **Before the slot:** the fresh-facts gate (§8) is done and logged; Content ID and ad-suitability checks finish; the AI-use answer (§ AI-use disclosure, No unless the film has AI scenes); title,
   thumbnail (+ challengers in Test & Compare), description with chapters, the film's playlist (§1: "Practical India" for the
   weekly films, "Built on Bharat" for company histories; `scripts/yt_upload.py` adds it by `playlist_id`), cards and end screens (the latest film and the playlist), our SRT.
-- **At the slot:** the film goes public; post and pin the source comment (the film's main sources, plain links) within
-  60 seconds.
+- **At the slot:** the film goes public; within 60 seconds post two comments by the API: the **source comment** (the
+  film's main sources, plain links; left unpinned) and the **chat comment**, which the owner pins (owner, 2026-11-10).
+  The chat comment is two or three short lines in the film's voice: one hard question from the film that a viewer can
+  answer from their own view (a choice with two honest sides, never a quiz), "Tell us why", "We read every comment",
+  then the next film in one line. Every fact in it is in `claims.csv`. Speak as the channel ("we"), never as Kishore.
+  *Why:* the owner wants the pin to start a conversation like a chat box, not inform; a question with two honest sides
+  draws replies, and replies are what the pin is for. Sources stay one tap away for anyone who checks.
 
 ### 15.2 The first 48 hours
 - **No self-views:** never open or scrub the published film on the owner's phone, home Wi-Fi or linked accounts.

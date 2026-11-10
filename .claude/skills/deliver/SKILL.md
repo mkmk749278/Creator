@@ -14,13 +14,12 @@ Rules: `CLAUDE.md` and PLAYBOOK §4 (package), §14 (render and deliver), §15 (
 3. **The YouTube package (final films):** in `projects/<slug>/youtube/`:
    - thumbnails: a main and two challengers, 1280×720 JPG, built from the concept locked in `plan.md` (PLAYBOOK §4.5);
      challengers vary the picture and words, never the promise; re-run the promise check (§5.1) on all three;
-   - `metadata.json`: the locked title + 2 alternatives, description, chapters, playlist, schedule slot, spelling tags, the pinned
-     source comment;
+   - `metadata.json`: the locked title + 2 alternatives, description, chapters, playlist, schedule slot, spelling tags, the source
+     comment and the chat comment for the pin (PLAYBOOK §15.1);
    - the title (under 45 characters, no suffix) and the description (2–4 lines, chapters from `00:00`, no links) also
      pasted in the chat as click-to-copy code blocks. Chapter times come from the exact file uploaded.
 4. **Release plan in the reply:** the slot (Sunday 11:30 AM IST, or Thursday 6:30 PM IST), "upload now and schedule",
-   YouTube "AI use" = No unless the film has AI scenes (CLAUDE.md), add to its playlist ("Practical India" for weekly films, "Built on Bharat" for company histories; `config/youtube_playlists.json`), pin the source
-   comment within 60 s, no self-views, read Studio at 24 h.
+   YouTube "AI use" = No unless the film has AI scenes (CLAUDE.md), add to its playlist ("Practical India" for weekly films, "Built on Bharat" for company histories; `config/youtube_playlists.json`), post the source comment and the chat comment within 60 s (the owner pins the chat one), no self-views, read Studio at 24 h.
 5. **Report in plain words:** what changed since the last cut, what is illustrative, any rights or Content ID risk, and
    what you need from the owner.
 6. **Close-out:** commit (no large media), push, PR to `main`, merge, name the branch to delete, archive the session.

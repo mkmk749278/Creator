@@ -141,11 +141,12 @@ answer is the floor. **Decide early, build once.** **Promise first** (above).
   empty, readable at phone size; a main and two challengers for Test & Compare. Challengers vary the picture and the
   words, never the promise: sentence 1 must confirm every variant.
 - **Description:** 2–4 plain lines with the search phrases, then chapters from `00:00` named like searches; no links,
-  sources or hashtags (sources go in the pinned comment). Our own English SRT.
+  sources or hashtags (sources go in an unpinned source comment). Our own English SRT.
 - Everything in `projects/<slug>/youtube/metadata.json`; title and description also in the chat as click-to-copy blocks.
 - **One film a week: Sunday 11:30 AM IST** (Thursday 6:30 PM IST if QA clears early). Upload as soon as the final is
   ready and schedule it; 45 minutes ahead is the minimum. YouTube "AI use" = **No** (owner, 2026-11-09: our narrator is a synthetic voice of no real person and our reconstructions are our own animation, labelled on screen; switch to Yes if a film ever uses AI footage of a real event or place, or a realistic AI scene). Add it to the playlist;
-  pin the source comment within 60 s of going public.
+  within 60 s of going public post the source comment and the **pinned chat comment** (owner, 2026-11-10: the pin
+  opens a conversation, one question from the film the viewer can answer, not a list of links).
 - First 48 hours: no self-views; read Studio at 24 h (impressions > 1,500 and CTR < 2.5% → the challenger thumbnail).
 
 ## Owner and setup (PLAYBOOK §2)
