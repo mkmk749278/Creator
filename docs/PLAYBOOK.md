@@ -490,6 +490,15 @@ without loss? Does the last line pull into the next?
   for the "Listen for" names of each block. *Why:* the jet-engine film shipped two doubled phrases from spliced
   re-takes, and a trim cut the last sentence off four pharma blocks.
 - **Never splice words into a take:** regenerate the whole block, so voice and pace match.
+- **Join the takes with `scripts/vo_rejoin.py`, never by plain concatenation:** it cuts the late burst at a take's end,
+  fades each take in over 5 ms, and fills the gaps with room tone shaped to the takes' own pauses (about −72 dB).
+  Longer gaps go where the story turns (a new chapter, after a hard line). `--gaps` are seconds from a take's end to
+  the next take's start, so a changed gap shifts everything after it by a known amount: re-lock with `vo_lock.py`
+  and pin any sentence the aligner slips to the old time plus that shift (`sentence_fix.tsv`). *Why:* on matsya-6000
+  an outside listen heard glitches at exactly the four joins: each take carried the first 50–70 ms of the next
+  block's first word (ElevenLabs is sent the next text as context) cut off by the file end (a clipped "You"), the
+  gaps were exact digital zero against −72 dB pauses inside a take, and three takes started at full level on their
+  first sample.
 - **The owner reviews the final joined audio** (one MP3 in Drive, sent with SendUserFile) and approves it before any
   picture is timed to it. If the owner flags a line, change the text if needed (the narration file shows the change),
   regenerate that block, and send the new joined file.

@@ -18,23 +18,23 @@ Samudrayaan video (Drive `footage/isro_samudrayaan_230725.webm`), PIB photos (`f
 Labels from Remotion: ILLUSTRATION on every shot; SIMPLIFIED on `squeeze` (the give is exaggerated many times);
 OUR CALCULATION on the 7.1 m line and "just over two metres".
 
-| Shot | Frames | Starts at (s) | Sentences |
+| Shot | Frames | Starts at (s, audio r2) | Sentences |
 |---|---|---|---|
 | dive | 0–659 | 0.00 | s0–s1 (cold open, into the ball) |
 | squeeze | 0–779 | 69.68 | s22–s24 (fingernails, a lakh tonnes); reusable for s44–s46 |
-| pieces | 0–959 | 177.54 | s57–s64 (five pieces, seven welds) |
-| seam | 0–959 | 233.93 | s79–s83 (the real weld, seven metres, thirty-two minutes) |
-| cutaway | 0–999 | 266.91 | s89–s92 (step inside, two metres, lie down, three seats) |
-| dark | 0–719 | 422.08 | s133–s140 (back inside, lights off) |
+| pieces | 0–959 | 177.84 | s57–s64 (five pieces, seven welds) |
+| seam | 0–959 | 234.23 | s79–s83 (the real weld, seven metres, thirty-two minutes) |
+| cutaway | 0–999 | 267.21 | s89–s92 (step inside, two metres, lie down, three seats) |
+| dark | 0–719 | 422.83 | s133–s140 (back inside, lights off) |
 
 H3, the vehicle (`scripts/blender/matsya_vehicle.py`), from ISRO 1:12 (the frame on the crane) and the PIB wet-test
 photos (Kattupalli, 7 Feb 2025): a cream open frame about three ball-widths long, the ball at the front, ducted
 thrusters at the back, skids, four lamps and a folded arm at the front, two steel drop weights underneath, yellow foam
 blocks over the top and sides. Sizes are measured off the photos (no published drawing): ILLUSTRATION.
 
-| Shot | Frames | Starts at (s) | Sentences |
+| Shot | Frames | Starts at (s, audio r2) | Sentences |
 |---|---|---|---|
-| weights | 0–539 | 124.60 | s39–s41 (drop the weights, it rises, 96 hours) |
-| assemble | 0–779 | 312.80 | s102–s105 (only part of the sub, batteries, lights, motors, arms, sinks, the foam) |
-| seabed | 0–959 | 361.90 | s116–s119 (no sunlight, your lights, outside your window, black lumps of metal) |
-| descent | 0–539 | 443.60 | s141–s142 (the first deep dive) |
+| weights | 0–539 | 124.90 | s39–s41 (drop the weights, it rises, 96 hours) |
+| assemble | 0–779 | 313.10 | s102–s105 (only part of the sub, batteries, lights, motors, arms, sinks, the foam) |
+| seabed | 0–959 | 362.65 | s116–s119 (no sunlight, your lights, outside your window, black lumps of metal) |
+| descent | 0–539 | 444.35 | s141–s142 (the first deep dive) |

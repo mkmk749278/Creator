@@ -7,11 +7,11 @@ open frame about three ball-widths long, the ball at the front, ducted thrusters
 at the front, steel drop weights underneath, yellow syntactic-foam blocks over the top and sides. Proportions are
 measured off those photos; no published drawing gives exact sizes, so it stays ILLUSTRATION.
 
-Frame 0 is the given time in vo/timing.json (60 fps); word frames are noted in each pose.
-  weights  (0-539)  124.60 s  "And if something goes wrong down there? The crew can drop heavy weights, and the sub rises"
-  assemble (0-779)  312.80 s  "This ball is only part of the sub. Around it go batteries, lights ... wrapped in a special foam."
-  seabed   (0-959)  361.90 s  "Six thousand metres down ... Your lights are the only lights ... black lumps of metal"
-  descent  (0-539)  443.60 s  "This story isn't over. When Matsya makes its first deep dive, we'll be there."
+Frame 0 is the given time in vo/timing.json (60 fps; audio r2); word frames are noted in each pose.
+  weights  (0-539)  124.90 s  "And if something goes wrong down there? The crew can drop heavy weights, and the sub rises"
+  assemble (0-779)  313.10 s  "This ball is only part of the sub. Around it go batteries, lights ... wrapped in a special foam."
+  seabed   (0-959)  362.65 s  "Six thousand metres down ... Your lights are the only lights ... black lumps of metal"
+  descent  (0-539)  444.35 s  "This story isn't over. When Matsya makes its first deep dive, we'll be there."
 """
 import math
 import os

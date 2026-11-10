@@ -46,6 +46,20 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   release pages 2104039 / 2156508 / Nov 2026 trials as PDFs with their photos, IFREMER Nautile photos (check licence:
   NC is not allowed), the USCG Titan report PDF. Re-sent as `footage_requests.md` §B r2.
 
+## Audio r2: the joins re-cut (2026-11-10, owner asked for refinement from two outside audio reviews)
+- The four glitches the review heard were the four take joins, all measured: takes 2-4 ended with a 46-65 ms
+  clipped start of the next block's first word; the gaps were exact digital zero; takes 3-5 started at full level.
+- Rebuilt from the same five takes with `scripts/vo_rejoin.py` (no new credits, no word changed): bursts cut,
+  5 ms fade-ins, room tone at -72 dB in the gaps; gaps 0.923 / 0.8 / 0.8 / 1.25 s (+0.3 s after "Five people
+  died", +0.45 s before "Six thousand metres down"; the "Seven welds" and "You and two others" joins sit inside
+  rendered hero shots and keep their timing). 452.13 s, -16.6 LUFS. Drive `vo/r2/`; the first join kept in
+  `vo/r1_original_join/`.
+- Re-locked (`lock.json` 8deb177e…, **pending the owner's re-approval**); six sentences pinned in `sentence_fix.tsv`
+  to the old times + 0.3 s. Everything after 95.2 s moved +0.3 s, after 362.6 s +0.75 s: the hero shots keep their
+  internal word timing and are placed at their first sentence's new start.
+- The second review (EQ) is for the mix (step 10): a -1.5 dB dip at 250 Hz (Q 2), a gentle de-esser at about 7 kHz,
+  and +1 dB above 12 kHz only if the music is dense. Check each against the music before applying.
+
 ## Cowork r2 and footage vetting (2026-11-10)
 - **Cowork r2 done with real files** (saved to the laptop's synced `pexels/cowork_dl/` and to Drive
   `footage/cowork/`, with a proper `list.csv`). Vetted: genuine JPG/PNG/PDF, licences as shown.
