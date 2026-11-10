@@ -54,3 +54,23 @@ H1 inside the ball (porthole to three empty seats, and the pull-out); H2 five pi
 seven seams trace, the middle one last, then it unrolls into a seven-metre line beside a person's silhouette; H3 Matsya
 in the abyss (frame, foam blocks, lights, drop weights falling); H4 the ball under arrows from every side, stress
 shading, a small breathing squeeze (SIMPLIFIED). Designed from ISRO's drawing and the PIB/NIOT photos.
+
+## B r2 (2026-11-10). Laptop: real files only
+The first try (Antigravity, Gemini) saved Word summaries written by the AI, not the files; none of it can be used.
+PIB's Deep Ocean Mission PDF and its photos are now fetched from the cloud (Drive `footage/pib/`). Paste this into
+**Claude Cowork** in the desktop app on the home laptop:
+```text
+Use the laptop's browser to download the ORIGINAL files below into Google Drive folder
+Creator/English/matsya-6000/footage/cowork/ . Rules: save the real file the site serves (PDF, JPG, PNG); never write a
+summary, Word file or text you made yourself; if a link fails, write FAILED for it in list.csv and move on.
+First delete the old .docx files and list.xlsx in that folder. At the end save list.csv: file name, source page URL,
+title, author/owner, licence exactly as shown on the page (or "not shown").
+
+1. moes.gov.in, the four PDFs: sites/default/files/RS_English_2112.pdf, 3722English.pdf, 266English.pdf, 998English.pdf
+   (if a link 404s, search moes.gov.in for "Matsya 6000 parliament question" and save what you find).
+2. pib.gov.in: open PRID 2104039 (Feb 2025 wet test) and PRID 2156508 (Aug 2025 Nautile dives), and the Nov 2026
+   release on Matsya 6000 unmanned trials; Print > Save as PDF each page, and save every photo on them full size.
+3. niot.res.in: photos of Matsya 6000, its titanium sphere, the 2021 steel sphere, OMe 6000 and nodules, full size.
+4. image.ifremer.fr: photos of the submersible Nautile (launch, underwater, inside). Note the licence of each.
+5. US Coast Guard: the Titan Marine Board of Investigation "Report of Investigation" PDF (2025), from news.uscg.mil.
+```

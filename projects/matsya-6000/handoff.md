@@ -1,4 +1,4 @@
-# Handoff · matsya-6000 (2026-11-09)
+# Handoff · matsya-6000 (2026-11-10)
 
 Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic up). Steps 2 and 3 done 2026-11-09: research, plan v2 after the independent review (`plan.md`, `review_plan_v1.md`). **The owner approved plan v2 with the title "ISRO's Hardest Weld Isn't for a Rocket" and the thumbnail "6 KM DOWN" (challengers ISRO'S WELD, WHY A BALL?) on 2026-11-09.**
 
@@ -26,11 +26,27 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   MP3 192 kbps), one per block, no re-takes: 6,900 characters. Trimmed, joined with 0.8 s gaps:
   `mat_vo_full.wav` (451.1 s, 7:31), review MP3 loudness-normalised to −16 LUFS. All in Drive `English/matsya-6000/vo/`.
 - `align_script.py`: 144 lines, 140 high confidence (the 4 flagged are short punch lines). `vo_take_check.py`: OK.
-- **Waiting for the owner to approve the audio** (listen for Isro, Matsya, Noh-teel, Raju Ramesh, Jatinder Pal Singh).
+- **The owner approved the audio on 2026-11-10** ("Continue audio approve"). Locked with `vo_lock.py` on
+  `mat_vo_full.mp3` (SHA-256 d3dab31f…, 451.16 s): `vo/timing.json` (144 sentences, 1,241 words, 9 chapters, 60 fps,
+  4 s outro), `vo/captions.en.srt` (real forms via `vo/caption_forms.tsv`: ISRO, Nautile, 6 km, 1,00,000 tonnes),
+  `vo/lock.json`. Seven sentences at 2:53–3:06 (the five pieces) were misplaced by the aligner by one sentence; set by
+  hand from the silences in `vo/sentence_fix.tsv`. `vo_full.wav` (48 kHz) in Drive `vo/`.
+
+## Footage (2026-11-10)
+- **Termux done:** all ten clips in Drive `footage/` (`fetched.csv`). Two are vertical (02, 10), 03 is 480p and 05 is
+  360p: use as small framed inserts only. Contact sheets and clean spans still to do.
+- **Cowork not done.** Drive `footage/cowork/` holds only Word files and a list.xlsx written by an AI app
+  (Antigravity/Gemini): text summaries, not the PDFs or photos. Its list names ~25 files that do not exist, and some
+  details differ from the real sources (e.g. the wet-test dates). **Nothing in `cowork/` is a source; do not cite it.**
+  The Gemini Termux script only saved files on the phone (its rclone line was commented out).
+- **Fetched from the cloud instead** (PIB static works): PIB's Deep Ocean Mission feature (17 Aug 2025, 9 pages) and
+  its photos, plus the three-crew-inside photo, in Drive `footage/pib/`. Its progress card corroborates M-claims: wet
+  trials 22 Jan–14 Feb 2025, "first high-penetration weld of 80mm thickness over 7100mm length in just 32 minutes".
+- **Still needed (Cowork on the laptop):** the four MoES PDFs (404 from the cloud), NIOT photos (unreachable), PIB
+  release pages 2104039 / 2156508 / Nov 2026 trials as PDFs with their photos, IFREMER Nautile photos (check licence:
+  NC is not allowed), the USCG Titan report PDF. Re-sent as `footage_requests.md` §B r2.
 
 ## Next session, in order
-1. If the owner flags a line: change the text if needed, regenerate only that block (`eleven_tts.py --only N`),
-   re-join, re-check, resend. Once approved: `vo_lock.py`, `vo_timing.py` → `vo/timing.json`, captions with
-   "Nautile" and "1,00,000 tonnes".
-2. Footage: the owner runs the Termux line and the Cowork request (`footage_requests.md`).
+1. Contact sheets and clean spans for the ten clips and the PIB photos; `media_manifest.csv` rows.
+2. The owner runs the Cowork r2 request on the laptop (real files only).
 3. Blender hero shots H1–H4 (plan §7, §8a), then Remotion.
