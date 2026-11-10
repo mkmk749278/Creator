@@ -214,8 +214,8 @@ waiting at all.
 
 **6. Audio.** Only after the opening has passed the promise check and the narration is approved: `scripts/eleven_tts.py` with Akash on Eleven v4, Stability
 Creative (0.0), similarity 50%, the best quality the plan allows (`config/voice.yaml`). Every take passes
-`scripts/vo_take_check.py`; a flagged block is regenerated (credits are limited: about 66,000 characters a month on the
-Creator plan, so one take per block first). Joined and timed (§6.7). Output: the final VO in Drive, sent to the owner.
+`scripts/vo_take_check.py`; a flagged block is regenerated (credits are limited, see §6.6, so one take per block
+first). Joined and timed (§6.7). Output: the final VO in Drive, sent to the owner.
 **Owner approves the audio.**
 
 ### Phase D: the picture
@@ -477,14 +477,20 @@ without loss? Does the last line pull into the next?
 
 ### 6.6 Audio: generated after approval (owner, 2026-11-05)
 - **No audio until the owner approves `narration.md`.** Then the session generates it with the ElevenLabs API:
-  `python3 scripts/vo_blocks.py projects/<slug>/vo.txt --prefix <xx> --title "<film>"` (blocks under 1,500
-  characters, boundaries stable between edits), then
+  `python3 scripts/vo_blocks.py projects/<slug>/vo.txt --prefix <xx> --title "<film>" --limit <n>` (boundaries stable
+  between edits), then
   `python3 scripts/eleven_tts.py --blocks projects/<slug>/vo_blocks.md --prefix <xx> --outdir projects/<slug>/assets/vo`.
   Settings come from `config/voice.yaml`: Akash, Eleven v4, Stability Creative (0.0), similarity 50%, MP3 44.1 kHz
   192 kbps (the best the Creator plan allows; WAV needs Pro).
-- **Credits are limited** (about 66,000 characters a month on the Creator plan; a 15-minute film is about 13,000).
-  One take per block first; regenerate only the blocks a check or the owner flags (`--only 3,7`). Check the balance
-  before a big run.
+- **As few takes as possible** (owner, 2026-11-10). Eleven v4 takes up to **10,000 characters a request** (read from
+  the API's model list, 2026-11-10; v3 took 5,000). Every join between takes is a seam (§6.6 joining rule below), and
+  each take is its own performance, so energy can step at a join. **From film 3 on, test one take for a narration
+  under 10,000 characters** (`--limit 9990`), or two split at a chapter break (where a longer pause is natural).
+  Trade-off: one flagged line then costs a whole take, and a long take can drift in pace or repeat or skip a phrase,
+  so `vo_take_check.py` and a full listen are the gate. Record what the test showed here.
+- **Credits are limited:** the Creator plan showed 129,440 characters a month on 2026-11-10 (it resets on the 3rd);
+  a 15-minute film is about 13,000. Check the balance (`GET /v1/user/subscription`) before a big run and give the
+  owner the cost of any re-take. Regenerate only what a check or the owner flags (`--only 3,7`).
 - **Every take is checked:** `scripts/vo_take_check.py` after alignment (each sentence's speech time against its
   words; speech left after a trim). A take longer than its text predicts is a repeat until proven otherwise. Listen
   for the "Listen for" names of each block. *Why:* the jet-engine film shipped two doubled phrases from spliced
