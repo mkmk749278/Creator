@@ -47,8 +47,12 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   NC is not allowed), the USCG Titan report PDF. Re-sent as `footage_requests.md` §B r2.
 
 ## Hero renders (2026-11-10)
-- In Drive `renders/` (1080p, 30 fps clips from step-2 frames, checked): H2_pieces, H2_seam, H4_squeeze, H1_dive.
-  Rendering: dark (4 shards, restarted), descent. Still to run: cutaway, weights, assemble, seabed.
+- In Drive `renders/` (1080p, 30 fps clips from step-2 frames, checked): H2_pieces, H2_seam, H4_squeeze, H1_dive,
+  H1_dark, H3_descent, H1_cutaway. Rendering: seabed, weights. Still to run: assemble (3 shards).
+- `word_map.md` places every sentence's picture on audio r2; its "Still to get" list is open.
+- Music: Cowork made 18 Lyria 3.5 takes in Google Flow Music (Drive `music/`, `list.csv`); picks in
+  `media_manifest.csv` (M01-M10; grave = library fx09). The reel `music/matsya_music_reel.mp3` waits for the owner's
+  listen for voices before the mix.
 - Edit notes: dive 7.3–7.8 s, the camera clips through the window (black shards, a red flange slice): cover it with
   a quick dip or blur through the glass in Remotion. Seam's last 6 s and squeeze's last 3 s are slow: add a Remotion
   push. Squeeze crops the top of the ball at the end (a close-up; fine).
