@@ -54,7 +54,7 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   died", +0.45 s before "Six thousand metres down"; the "Seven welds" and "You and two others" joins sit inside
   rendered hero shots and keep their timing). 452.13 s, -16.6 LUFS. Drive `vo/r2/`; the first join kept in
   `vo/r1_original_join/`.
-- Re-locked (`lock.json` 8deb177e…, **pending the owner's re-approval**); six sentences pinned in `sentence_fix.tsv`
+- Re-locked (`lock.json` 8deb177e…); **the owner approved r2 on 2026-11-10**; six sentences pinned in `sentence_fix.tsv`
   to the old times + 0.3 s. Everything after 95.2 s moved +0.3 s, after 362.6 s +0.75 s: the hero shots keep their
   internal word timing and are placed at their first sentence's new start.
 - The second review (EQ) is for the mix (step 10): a -1.5 dB dip at 250 Hz (Q 2), a gentle de-esser at about 7 kHz,
