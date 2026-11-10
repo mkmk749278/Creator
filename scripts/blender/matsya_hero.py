@@ -8,13 +8,13 @@ three round the viewports (W3 primary, W4 and W5 secondary). Outside diameter 2,
 seam is the 7.1 m one (OUR CALCULATION, pi x 2.26 m). Bare machined titanium for the making; painted grey with red
 viewport rims (ISRO and PIB photos) for the finished ball.
 
-Frame 0 of each shot is the first word of its passage in vo/timing.json (60 fps); word frames are noted in each pose.
+Frame 0 of each shot is the first word of its passage in vo/timing.json (60 fps; times are audio r2); word frames are noted in each pose.
   dive     (0-659)    0.00 s  "Six kilometres under the sea ... this titanium ball ... Imagine you're inside it ..."
   squeeze  (0-779)   69.68 s  "Now cover the whole ball with fingernails ... from every side at once."
-  pieces   (0-959)  177.54 s  "Isro's drawing shows five pieces ... Three go round its windows."
-  seam     (0-959)  233.93 s  "Then came the real thing ... about seven metres long ... thirty-two minutes, in one go."
-  cutaway  (0-999)  266.91 s  "Now step inside with me ... just over two metres ... Lie down ... You and two others ..."
-  dark     (0-719)  422.08 s  "Now, one last time, come back inside the ball with me." (lights off, the porthole)
+  pieces   (0-959)  177.84 s  "Isro's drawing shows five pieces ... Three go round its windows."
+  seam     (0-959)  234.23 s  "Then came the real thing ... about seven metres long ... thirty-two minutes, in one go."
+  cutaway  (0-999)  267.21 s  "Now step inside with me ... just over two metres ... Lie down ... You and two others ..."
+  dark     (0-719)  422.83 s  "Now, one last time, come back inside the ball with me." (lights off, the porthole)
 Deterministic: fixed seed, no simulation; every motion is a function of the frame.
 """
 import argparse
