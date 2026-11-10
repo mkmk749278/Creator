@@ -1,5 +1,21 @@
 # Handoff · aip-submarines (2026-11-09)
 
+## Public, 2026-11-10 (checked 11:07 IST)
+- Live and public at 11:00 IST: 9:15, processed, maxres thumbnail (`thumb_a`), our English SRT and the auto track both
+  serving, first in "Practical India" (8 films), not in Built on Bharat. Correct.
+- **Source comment posted by the API at 11:07 IST** (thread `UgwcbigjM-HqunELm9F4AaABAg`), 7 min after going public
+  (the rule is 60 s: next film, post it the minute it goes public). It stays **unpinned**.
+- **Owner, 2026-11-10: the pin is a chat comment, not information.** Posted 11:15 IST (`UgwfNWg5RvqFfsSyi6F4AaABAg`,
+  text in `metadata.json` `pinned_comment`): the film's question, wait for India's AIP or take the proven German one.
+  **Pinning it is a tap for the owner** (no API). Rule in PLAYBOOK §15.1.
+- **End screen (Studio only, no API), decided from frames of the cut:** 9:01 → end (13 s). The last 20 s cannot be
+  used whole: the film's own subscribe pill sits mid-frame at 8:59–9:00. From 9:01 the frame is dark water,
+  "6,000 M DOWN" left of centre, the sphere in the middle, then the logo card at 9:10; the top-left, top-right and
+  bottom-left corners stay empty. Elements: **Video "Best for viewer" top-left, Playlist "Practical India" top-right,
+  Subscribe bottom-left.** When the Matsya film is public, change the Video element to it: the tease
+  ("Next, we go even deeper… a titanium sphere") promises exactly that film.
+- Still on the owner: pin, end screen, Test & Compare (`thumb_c`). 24 h Studio read on 11 Nov at 11:00 IST.
+
 ## Owner decisions, 2026-11-09 (standing)
 - **Claude acts as channel owner and creative director; Kishore gives every approval.**
 - **Six-month goal:** subscribers and monetisation. **Viewer:** all curious Indians, equally.

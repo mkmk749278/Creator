@@ -21,7 +21,7 @@ a script edit, check only the changed lines. If there is no draft `claims.csv`, 
 3. Set `status`:
    - `confirmed`: a primary source, or 2+ independent sources agree;
    - `claim`: it is someone's claim (VO must say so: "he says", "reportedly");
-   - `disputed`: sources disagree: VO says "as reported", the other figure goes in `note` and the pinned source comment;
+   - `disputed`: sources disagree: VO says "as reported", the other figure goes in `note` and the source comment;
    - `unverified` / `wrong`: the script must change.
    Quotes must be verbatim from the source; paraphrases are marked as such.
 4. Engineering numbers (temperatures, pressures, thicknesses, speeds) need the primary source: a datasheet, standard,
