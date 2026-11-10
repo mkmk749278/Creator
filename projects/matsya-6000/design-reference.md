@@ -27,5 +27,14 @@ OUR CALCULATION on the 7.1 m line and "just over two metres".
 | cutaway | 0–999 | 266.91 | s89–s92 (step inside, two metres, lie down, three seats) |
 | dark | 0–719 | 422.08 | s133–s140 (back inside, lights off) |
 
-The Matsya vehicle (H3: frame, foam, drop weights, the seabed) is the next script; references: ISRO 1:12 (the frame on
-the crane), 1:47 (render), PIB wet-test photos.
+H3, the vehicle (`scripts/blender/matsya_vehicle.py`), from ISRO 1:12 (the frame on the crane) and the PIB wet-test
+photos (Kattupalli, 7 Feb 2025): a cream open frame about three ball-widths long, the ball at the front, ducted
+thrusters at the back, skids, four lamps and a folded arm at the front, two steel drop weights underneath, yellow foam
+blocks over the top and sides. Sizes are measured off the photos (no published drawing): ILLUSTRATION.
+
+| Shot | Frames | Starts at (s) | Sentences |
+|---|---|---|---|
+| weights | 0–539 | 124.60 | s39–s41 (drop the weights, it rises, 96 hours) |
+| assemble | 0–779 | 312.80 | s102–s105 (only part of the sub, batteries, lights, motors, arms, sinks, the foam) |
+| seabed | 0–959 | 361.90 | s116–s119 (no sunlight, your lights, outside your window, black lumps of metal) |
+| descent | 0–539 | 443.60 | s141–s142 (the first deep dive) |
