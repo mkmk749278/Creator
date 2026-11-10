@@ -487,7 +487,13 @@ without loss? Does the last line pull into the next?
   each take is its own performance, so energy can step at a join. **From film 3 on, test one take for a narration
   under 10,000 characters** (`--limit 9990`), or two split at a chapter break (where a longer pause is natural).
   Trade-off: one flagged line then costs a whole take, and a long take can drift in pace or repeat or skip a phrase,
-  so `vo_take_check.py` and a full listen are the gate. Record what the test showed here.
+  so `vo_take_check.py` and a full listen are the gate.
+  **Test, 2026-11-10 (the owner, a free account, the whole Matsya narration, 6,870 characters, one take):** the owner
+  found it "exceptionally good"; measured: no repeat or skip (142 of 144 sentences high confidence, the other two
+  short punch lines), pace steady by quarter (162, 172, 172, 174 words a minute) against steps at r2's joins, pauses
+  even (0.29–0.76 s), no digital silence. The one weakness: chapter turns get no extra breath (0.29 s before "Seven
+  welds"), so lengthen those pauses with room tone afterwards. **So from film 3: one take on the paid account.**
+  Free-plan audio is not licensed for the channel, so a free take is for listening only.
 - **Credits are limited:** the Creator plan showed 129,440 characters a month on 2026-11-10 (it resets on the 3rd);
   a 15-minute film is about 13,000. Check the balance (`GET /v1/user/subscription`) before a big run and give the
   owner the cost of any re-take. Regenerate only what a check or the owner flags (`--only 3,7`).
