@@ -2,7 +2,7 @@
 """Build the owner's recording file for an English VO (owner, 2026-10-28; docs/archive/PLAYBOOK_2026-11-05.md §4a-2).
 
 One Markdown file holds the full narration to read through, then the same text split into click-to-copy recording
-blocks (fenced code, under 1,500 characters each, blank line between beats). Send this one file with every VO change,
+blocks (fenced code, each under --limit characters, blank line between beats). Send this one file with every VO change,
 and paste the blocks in the chat as well.
 
 usage: python3 scripts/vo_blocks.py projects/<slug>/vo.txt --prefix pha --title "pharma APIs"
@@ -67,7 +67,7 @@ def main():
     ap.add_argument("--prefix", required=True, help="take file prefix, e.g. pha -> voice/pha_b01.mp3")
     ap.add_argument("--title", required=True)
     ap.add_argument("--limit", type=int, default=1490,
-                    help="max characters per block (hard cap 1,500); keep it fixed across edits so blocks keep their lines")
+                    help="max characters per block (Eleven v4 takes up to 10,000 a request; PLAYBOOK §6.6 sets the size); keep it fixed across edits so blocks keep their lines")
     ap.add_argument("--out", help="default: vo_blocks.md next to vo.txt")
     args = ap.parse_args()
 
