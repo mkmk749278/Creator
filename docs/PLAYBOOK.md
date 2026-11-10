@@ -964,6 +964,11 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   any shot over 300 frames, or start a low-sample backup render of the slow range on spare runners and cancel
   whichever finishes second. Artifacts download through `download_workflow_run_artifact` (a URL valid for about 10
   minutes; `curl -C -` with retries).
+- **Size shards from a measured frame, not a guess:** render one full-size frame of the slowest moment locally
+  (4 threads), multiply by 1.5 for a runner, and keep each shard under about 3.5 hours. Measured on matsya-6000
+  (1080p, 12–16 samples): a lit studio shot 38–47 s, glass and a dark interior 61–93 s, scattering water 63–65 s a
+  frame locally. A 180-frame interior shard was heading past the limit and was restarted as 4 × 90. Collect each
+  shot with `scripts/blender_collect.sh` (frame count, clip, flash check, contact sheet, Drive).
 
 ---
 

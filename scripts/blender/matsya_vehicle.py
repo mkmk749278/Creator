@@ -422,8 +422,10 @@ def pose_seabed(f, cam, o):
     # "the seafloor" it drops and looks ahead along the lit nodules
     win = Vector(r) + BALL_C + Vector((0, -H.RO, -0.06))
     rv = Vector(r)
-    off = H.keys(f, [(0, (-3.2, -7.0, 0.8)), (380, (-2.8, -5.8, 0.4)), (453, (-0.9, -2.2, 0.1)),
-                     (640, (-0.6, -2.6, 0.0)), (720, (-0.7, -4.6, -0.6)), (917, (-0.5, -5.2, -0.9))])
+    # offsets are in the vehicle's frame (skids at z 0, the ball's front window at y -3.68, z 1.49): for "Outside
+    # your window" the camera stays in front of the ball (an earlier path ran under it and through the frame)
+    off = H.keys(f, [(0, (-3.2, -7.0, 0.8)), (380, (-2.8, -5.8, 0.4)), (453, (-0.9, -5.4, 1.6)),
+                     (640, (-0.5, -5.0, 1.5)), (720, (-0.7, -4.6, -0.6)), (917, (-0.5, -5.2, -0.9))])
     cam_loc = rv + Vector(off)
     aim = H.keys(f, [(0, tuple(rv + Vector((0, -1, 1.5)))), (453, tuple(win)), (640, tuple(win)),
                      (720, tuple(rv + Vector((0, -10, -2.1)))), (917, tuple(rv + Vector((0.3, -11, -2.2))))])
