@@ -74,3 +74,37 @@ title, author/owner, licence exactly as shown on the page (or "not shown").
 4. image.ifremer.fr: photos of the submersible Nautile (launch, underwater, inside). Note the licence of each.
 5. US Coast Guard: the Titan Marine Board of Investigation "Report of Investigation" PDF (2025), from news.uscg.mil.
 ```
+
+---
+
+# Footage requests r2 (2026-11-11): a real clip for every idea (owner note on the r3 cut)
+
+The owner's note on r3: "At least you need to show one real clip of everything to feel realistic. Nail, buffalo on it,
+titanium etc." Each thing the voice names gets a real shot on its word; our drawings then explain over or after it.
+
+Already found from the cloud:
+- Pixabay (real, vetted on contact sheets): water buffalo (15742, 34719, 369749), TIG welding in air (15476, 15477),
+  automatic welding (4875), shallow sea with sun rays (37712, 26572), research ship at sea (237249) and a phone in a
+  hand (142641).
+- Commons: DSV Alvin photos (US Navy, public domain).
+- Indian Navy's INS Vagir film (already in Drive for the AIP film): the boat surfacing.
+
+## Cowork (laptop): one request
+```text
+Please download these and save them to Google Drive, folder Creator/English/matsya-6000/footage/cowork_r2/
+(create it if missing). Real camera footage only: no AI, no CGI, no 3D renders. Landscape, highest quality offered,
+no re-encoding, keep original file names. When done, save list.csv in the same folder with: file name, source page
+URL, title, author/owner, licence shown on the page.
+
+1. Pexels (pexels.com), videos, the 2 best real results for each search:
+   "index finger close up", "man hand finger macro", "hand squeezing stress ball", "squeezing rubber ball hand",
+   "carbon fiber fabric close up", "carbon fiber weave texture", "smartphone battery replacement",
+   "deep sea dark water particles", "underwater going down dark blue".
+2. NOAA Ocean Exploration (oceanexplorer.noaa.gov; public domain): photos and short videos of manganese
+   (polymetallic) nodules on the deep seafloor, and of an ROV's lights in total darkness at depth. 3 to 6 files.
+   Also any NOAA photo of the submersible Alvin being launched or recovered.
+3. ISRO official YouTube, PSLV-C57 / Aditya-L1 launch: https://www.youtube.com/watch?v=_IcgGYZTXQw
+   Save only about 60 seconds around liftoff (from the final countdown to the rocket clearing the tower), 1080p.
+4. Wikimedia Commons: 2 photos of "hollow glass microspheres" under a microscope (licence must be public domain,
+   CC0, CC BY or CC BY-SA; not NC or ND).
+```
