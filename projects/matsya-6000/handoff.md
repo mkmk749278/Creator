@@ -288,3 +288,12 @@ opening may start on the real sea rather than the thumbnail's ball (the two rule
   (S16, S135): **Cowork r3** in `footage_requests.md` (also Titan and Fendouzhe photos; Commons still 429).
 - `media_manifest.csv`: rows for the six Pixabay clips.
 - **r7 dispatched:** run 42994622252 → Drive `renders/matsya_review_r7_v3_720p.mp4`.
+- **Owner, 2026-11-11: the API audio approved** (`vo/lock.json` approved); Cowork r3 delivered; "All together with
+  fixes render directly in 4k", all 20 runners free. So no 720p of these swaps and no independent viewer review
+  before the master (the owner's call). r7 (720p, before the Cowork swaps) is in Drive `renders/` for reference.
+- **Cowork r3 into the film:** S14 Coast Guard engineers at Titan's recovered end cap; S31 Titan's wreck on the
+  seabed (both US Coast Guard, public domain); S16 and S135 real hands on phones (Pexels); S48 a real hand closing
+  round a cricket ball, S49 the ball unchanged ("NOTHING HAPPENS"); S155 Fendouzhe, a full-size exhibit model
+  (CC BY-SA, labelled), then the depth bars from S156. The blue textile clips are not carbon fibre: not used. The real
+  Fendouzhe photo on Commons is portrait only; not used.
+- **4K master dispatched** on 20 runners → Drive `renders/matsya_master_4k.mp4`.

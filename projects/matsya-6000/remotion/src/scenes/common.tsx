@@ -24,6 +24,8 @@ export const CR = {
 	alvin: 'PHOTO: TAOLLAN82 · CC BY 3.0',
 	noaa: 'VIDEO: NOAA OCEAN EXPLORATION',
 	pex: 'VIDEO: PEXELS',
+	uscgp: 'PHOTO: US COAST GUARD',
+	fdz: 'PHOTO: AKAMGO YALMS · CC BY-SA 4.0',
 } as const;
 
 /** a shot with an optional honesty tag and credit */

@@ -56,5 +56,9 @@
  "PX_storm": 9.933,
  "PX_surface": 9.933,
  "PX_weld": 8.0,
- "VAG_surf": 2.533
+ "VAG_surf": 2.533,
+ "CW_grip": 4.35,
+ "CW_ball": 5.933,
+ "CW_phone": 8.933,
+ "CW_phone2": 7.433
 }
