@@ -175,7 +175,7 @@ const ch5: Part = {
 const ch6: Part = {
 	shots: [
 		hero(S(134), 'H1_dive', 0.4),
-		clip(S(135), 'PX_phone2', CR.px),
+		clip(S(135), 'CW_phone2', CR.pex),
 		hero(S(137), 'H3_descent', 0),
 		// real deep water (NOAA, public domain), then our seabed from 'Outside your window'
 		clip(S(138), 'NOAA_dark', CR.noaa, 0, 'ILLUSTRATIVE FOOTAGE'),
@@ -189,9 +189,11 @@ const ch6: Part = {
 		hero(S(150), 'H3_descent', 0.0),
 		hero(S(153), 'H1_dive', 5.0),
 		// the yardstick, short: the bars for China's dive, then the real things for India's answer
-		shot(S(155), 'ladder', (d, l) => (
+		// 'And what about China?': Fendouzhe itself (a full-size exhibit model: the only licence-clean photo), then the bars
+		photo(S(155), 'fdz_model.jpg', CR.fdz),
+		shot(S(156), 'ladder', (d, l) => (
 			<Plate dur={d} seed="ladder">
-				<DepthLadder china={w0(156, 'deepest') - S(155) + l} six={l + 6} />
+				<DepthLadder china={w0(156, 'deepest') - S(156) + l} six={l + 6} />
 			</Plate>
 		)),
 		photo(S(157), 'pib_wet_crane.jpg', CR.pib, 'contain'),
@@ -202,6 +204,7 @@ const ch6: Part = {
 		clip(S(162), 'ISRO_console', CR.isro),
 	],
 	overlays: [
+		tag(S(155) + 6, S(156), 'FENDOUZHE · CHINA', 140, 760, 56, C.ink, false, 'FULL-SIZE EXHIBIT MODEL'),
 		tag(w0(136, 'cobalt'), s1(136), 'COBALT', 140, 180, 56, C.amber),
 		tag(w0(136, 'nickel'), s1(136), 'NICKEL', 140, 270, 56, C.amber),
 		cnt(w0(137, 'six'), w0(137, 'metres'), S(138), 6000, 'M', 140, 300, 120, C.ink),

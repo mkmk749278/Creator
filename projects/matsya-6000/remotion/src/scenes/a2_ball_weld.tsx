@@ -51,8 +51,9 @@ const ch2: Part = {
 	shots: [
 		// a real cricket ball, then a real hand squeezing a ball: together they say the sentence
 		// pushed in on the ball (it is small in the source frame)
-		shot(S(48), 'PX_cricket', (d) => <Clip name="PX_cricket" dur={d} startAt={5.4} grade="day" from={[1.7, 660, -180]} to={[1.9, 760, -220]} />, {credit: CR.px}),
-		clip(S(49), 'PX_ball', CR.pex, 2.2),
+		// Cowork r3: a real hand closing round a cricket ball, then the ball, unchanged ('Nothing happens, right?')
+		clip(S(48), 'CW_grip', CR.pex),
+		clip(S(49), 'CW_ball', CR.pex, 1.0),
 		hero(S(50), 'H4_squeeze', 7.0, 'SIMPLIFIED'),
 		shot(S(52), 'tube', (d, l) => (
 			<Plate dur={d} seed="tube">
@@ -72,7 +73,7 @@ const ch2: Part = {
 	],
 	overlays: [
 		tag(w0(48, 'cricket'), S(49), 'A CRICKET BALL', 140, 760, 56),
-		tag(S(49) + 6, s1(49), 'SQUEEZE IT', 140, 760, 56),
+		tag(S(49) + 6, s1(49), 'NOTHING HAPPENS', 140, 760, 56),
 		tag(w0(50, 'spreads'), s1(50), 'THE PUSH SPREADS', 140, 760, 56, C.amber),
 		tag(w0(51, 'corner'), s1(51) + 10, 'NO CORNER · NO FLAT SIDE', 140, 860, 52),
 		tag(w0(53, 'alvin'), s1(53), 'ALVIN · USA', 140, 760, 56),

@@ -5,7 +5,7 @@ import {BuffaloTrueScale, CarbonHull, Fall, NailPress, WeldBars} from '../parts/
 import {Clip, Hero, Plate} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
-import {ask, clip, cnt, CR, Deep, hero, insert, lab, pre, PressureCompare, Quote, ReportPose, shot, stamp, tag} from './common';
+import {ask, clip, cnt, CR, Deep, hero, insert, lab, photo, pre, PressureCompare, Quote, ReportPose, shot, stamp, tag} from './common';
 
 // Narration v3 (2026-11-11). Cold open (S0–16), the pressure (S17–26), Titan and what India does differently (S27–47).
 // Frames from the locked audio (vo/timing.json).
@@ -13,10 +13,9 @@ const S = s0;
 
 const open: Part = {
 	shots: [
-		// the thumbnail's subject first, then the real ball on "this titanium ball"
-		// the real sea first (owner on r6: the deep looked like space), then down to the ball
-		clip(S(0), 'PX_surface', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
-		hero(pre(w0(0, 'water')), 'H1_dive', 0.3),
+		// the thumbnail's subject first (the ball), sinking through real-looking water with the depth counter
+		// (owner on r6: the deep looked like space; SeaOver now makes it sea), then the real ball on "this titanium ball"
+		hero(S(0), 'H1_dive', 0),
 		clip(pre(w0(0, 'this')), 'F01_ballhall', CR.dd),
 		// the hall clip pans to another vehicle after 3 s: the squeeze takes over on 'almost one lakh tonnes'
 		hero(pre(w0(0, 'almost')), 'H4_squeeze', 3.0, 'SIMPLIFIED'),
@@ -37,11 +36,13 @@ const open: Part = {
 		)),
 		clip(S(12), 'ISRO_console2', CR.isro),
 		clip(S(13), 'ISRO_monitor', CR.isro),
-		shot(S(14), 'deep-titan0', (d, l) => <Deep dur={d} word={{at: w0(14, 'titan') - S(14) + l, text: 'TITAN'}} />),
+		// the real Titan: Coast Guard engineers surveying its recovered titanium end cap (on 'how will anyone know it holds')
+		photo(S(14), 'uscg_titan_endcap.jpg', CR.uscgp),
 		clip(S(15), 'F01_ball', CR.dd, 0.4),
-		clip(S(16), 'PX_phone2', CR.px),
+		clip(S(16), 'CW_phone', CR.pex),
 	],
 	overlays: [
+		tag(w0(14, 'titan'), s1(14), 'TITAN', 140, 760, 64, C.ink, false, 'ITS RECOVERED END CAP'),
 		cnt(w0(0, 'lakh'), w0(0, 'tonnes'), S(1), 100000, 'TONNES', 140, 760, 120),
 		cnt(w0(0, 'six'), w0(0, 'sea'), pre(w0(0, 'this')), 6000, 'M DOWN', 140, 180, 110, C.amber),
 		tag(w0(1, 'three'), s1(1), 'THREE INDIANS INSIDE', 140, 760, 56),
@@ -94,7 +95,8 @@ const titan: Part = {
 		clip(S(27), 'F01_hall', CR.dd),
 		clip(S(29), 'F01_ball', CR.dd),
 		clip(S(30), 'PX_surface', CR.px, 3.0, 'ILLUSTRATIVE FOOTAGE'),
-		shot(S(31), 'deep-titan', (d, l) => <Deep dur={d} word={{at: w0(31, 'titan') - S(31) + l, text: 'TITAN'}} />),
+		// 'Titan broke apart': the real wreckage on the seabed (Coast Guard ROV still, public domain)
+		photo(S(31), 'uscg_titan_wreck.jpg', CR.uscgp),
 		shot(S(32), 'report', (d, l) => <ReportPose dur={d} dim={l + 30} />, {credit: CR.uscg}),
 		shot(S(33), 'carbon', (d, l) => (
 			<Plate dur={d} seed="carbon">
@@ -123,6 +125,7 @@ const titan: Part = {
 		hero(S(45), 'H3_weights', 0),
 	],
 	overlays: [
+		tag(w0(31, 'titan'), s1(31), 'TITAN · THE WRECK', 140, 760, 64, C.ink, false, 'ON THE SEABED, 2023'),
 		ask(w0(29, 'is'), S(30), 'Is this another Titan?'),
 		tag(w0(30, 'june'), s1(32), '18.06.2023', 140, 180, 56, C.ink, true),
 		tag(w0(34, 'kept'), s1(34), 'AND IT KEPT DIVING', 1180, 190, 48, C.red),

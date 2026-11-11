@@ -6,7 +6,7 @@ ISRO_drawing	isro.webm	114.75	119.65		ISRO's drawing: five pieces, seven welds
 ISRO_forge	isro.webm	125.45	126.50		a glowing forged billet under the press
 ISRO_ansys	isro.webm	126.60	128.70		Ansys stress plot of the sphere wall
 ISRO_machining	isro.webm	128.80	131.50	608:1080:656:0	machining chips (vertical source inside the frame)
-ISRO_ti	isro.webm	131.65	142.75		machined Ti6Al4V piece (ISRO's own caption)
+ISRO_ti	isro.webm	131.65	142.75		machined Ti6Al4V piece; the prepared 1920x1080 clip then cropped 1420:799:200:0 (removes ISRO's burned-in caption and logo, 2026-11-11)
 ISRO_ring	isro.webm	144.55	146.15		people round a titanium ring on the floor
 ISRO_ebglow	isro.webm	146.25	149.00		the electron-beam weld glow through the chamber port
 ISRO_ut	isro.webm	149.10	152.90		ultrasound testing on a block
@@ -64,3 +64,8 @@ PX_churn	pixabay_244491.mp4	1	13		Pixabay 244491: open sea, waves rolling in (IL
 PX_bubbles	pixabay_31611.mp4	0	24		Pixabay 31611: air bubbles rising in dark water (laid over our 3D deep-sea shots)
 PX_surface	pixabay_304019.mp4	0	10		Pixabay 304019: the open sea's surface, dusk (ILLUSTRATIVE)
 PX_phone2	pixabay_202987.mp4	0	9		Pixabay 202987: two hands on a phone at a wooden table
+# Cowork r3 (2026-11-11): Pexels, credit VIDEO: PEXELS
+CW_grip	pexels_17051410.mp4	7.5	11.9		Pexels 17051410 (Ashish Jatiani): a hand closing round a red cricket ball
+CW_ball	pexels_17051436.mp4	0	6		Pexels 17051436 (Ashish Jatiani): a red cricket ball on a table, unchanged
+CW_phone	pexels_10374923.mp4	0	9		Pexels 10374923 (RDNE): a man's hands typing on a phone
+CW_phone2	pexels_10374912.mp4	0	7.5		Pexels 10374912 (RDNE): a man scrolling his phone

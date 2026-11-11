@@ -119,3 +119,19 @@ Also 2 real (not cartoon) green-screen clips of a man's hand with the index fing
   search "hand green screen", "finger green screen", "hand pointing chroma key".
 When done, save list.csv in the same folder with: file name, Pexels page URL, title, author, licence.
 ```
+
+## Cowork r3 (2026-11-11): the last weak shots of r6
+The owner on r6: "Fix all of them." Commons still answers 429 to the cloud; Pexels answers 403.
+```text
+Please save these to Google Drive, folder Creator/English/matsya-6000/footage/cowork_r3/ (create it if missing).
+Real camera footage and real photos only (no AI, no CGI, no 3D renders), landscape, the highest quality offered,
+original file names, no re-encoding.
+1. From Pexels (pexels.com), videos, the 2 best results for each search:
+   "hand gripping cricket ball", "cricket ball in hand close up", "indian man hands smartphone close up",
+   "carbon fiber fabric close up".
+2. From Wikimedia Commons (commons.wikimedia.org), photos, only files whose licence is Public domain, CC0, CC BY or
+   CC BY-SA (skip anything NC or ND):
+   the Titan submersible (search "Titan submersible" and "OceanGate Titan"; a US Coast Guard photo is best),
+   and China's Fendouzhe submersible (search "Fendouzhe"). Up to 3 of each.
+When done, save list.csv in the same folder with: file name, page URL, title, author, licence.
+```

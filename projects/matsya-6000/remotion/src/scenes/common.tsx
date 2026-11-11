@@ -24,6 +24,8 @@ export const CR = {
 	alvin: 'PHOTO: TAOLLAN82 · CC BY 3.0',
 	noaa: 'VIDEO: NOAA OCEAN EXPLORATION',
 	pex: 'VIDEO: PEXELS',
+	uscgp: 'PHOTO: US COAST GUARD',
+	fdz: 'PHOTO: AKAMGO YALMS · CC BY-SA 4.0',
 } as const;
 
 /** a shot with an optional honesty tag and credit */
@@ -49,7 +51,7 @@ export const clip = (at: number, name: string, credit: string, startAt = 0, tag?
 /** a hero clip whose frame `startAt` (s) falls on frame `at`: from its first frame it cuts in hard on the sentence;
  *  later it dissolves in, starting `lead` frames earlier in the clip so its word timing stays exact */
 /** our 3D shots that happen in the sea: each gets real water laid over it (kit SeaOver) */
-const SEA: Record<string, number> = {H1_dive: 0.25, H3_descent: 1, H3_seabed: 1, H3_weights: 1, H1_dark: 1, H4_squeeze: 0.8};
+const SEA: Record<string, number> = {H1_dive: 0.25, H3_assemble: 0.5, H3_descent: 1, H3_seabed: 1, H3_weights: 1, H1_dark: 1, H4_squeeze: 0.8};
 export const hero = (at: number, name: string, startAt = 0, tag = 'ILLUSTRATION', style?: React.CSSProperties) =>
 	shot(
 		at,
