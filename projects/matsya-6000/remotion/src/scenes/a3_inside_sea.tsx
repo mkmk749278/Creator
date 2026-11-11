@@ -144,7 +144,7 @@ const ch5: Part = {
 				pins={[{at: l + 9, ll: P.chennai, label: 'CHENNAI', side: 'right'}]}
 			/>
 		)),
-		insert(S(113), 'F03_water', CR.ddt),
+		insert(pre(w0(113, 'six')), 'F03_water', CR.ddt),
 	],
 	overlays: [
 		tag(w0(100, 'not'), s1(101), 'NOT QUITE', 140, 760, 64),

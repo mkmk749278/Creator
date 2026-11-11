@@ -101,7 +101,7 @@ const ch3: Part = {
 				<WeldBars show20={w0(74, 'two') - pre(w0(74, 'two')) + l} show80={w0(75, 'eight') - pre(w0(74, 'two')) + l} />
 			</Plate>
 		)),
-		clip(S(76), 'ISRO_screens', CR.isro),
+		clip(pre(w0(76, 'machine')), 'ISRO_screens', CR.isro),
 		clip(S(77), 'ISRO_monitor', CR.isro),
 		clip(pre(w0(78, 'seven')), 'ISRO_console2', CR.isro),
 		hero(S(79), 'H2_seam', 0),

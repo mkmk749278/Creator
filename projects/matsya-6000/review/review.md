@@ -51,3 +51,25 @@
 
 ### Open for r2
 - Re-render the 720p cut, re-run freezes, flash and loudness, and re-read the sheets for the changed spans.
+
+## r2 (`renders/matsya_review_r2_720p.mp4`, 2026-11-11)
+
+### Measured
+- Picture and audio are both 456.133 s. Loudness is −14.0 LUFS, −1.4 dBTP, LRA 2.9.
+- **No freezes anywhere**: every r1 freeze is gone, the end card included.
+
+### Changed spans re-read (103 frames with their words)
+- **Confirmed fixed:**
+  - the depth counter (0 → 10 → 20 → 30 → 40 → 6,000 on its words);
+  - the Titan beat;
+  - the carbon hull on the plate;
+  - the steel ball;
+  - the full ISRO drawing;
+  - the EB chamber on "Bengaluru";
+  - the foam block → crack → jetty → Chennai map;
+  - "no sunlight" with its counter;
+  - the landing chain;
+  - the end card.
+- **Two new issues, fixed for r3:**
+  - 5:56.5 (S113): played slower to fill the longer slot, DD Telangana's clip reached its tail, which is a Telugu caption card. `clip_durations.json` now caps F03 at its clean 2.1 s, and the insert starts on "six"; the Chennai map holds until then.
+  - 3:44 (S75): the 80 MM bar was on screen for only 0.9 s before the cut. The next clip now lands on "machine", so the bar holds for 1.85 s.
