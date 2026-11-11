@@ -45,6 +45,54 @@ engineering behind India's biggest efforts.
   explainers and Shorts, money and rights explainers. Their rules and tools stay in `docs/archive/` and the
   repo; use them only if the owner brings them back.
 
+### 1.1 The roadmap
+The owner's 25 films, in order (word for word in `docs/archive/PLAYBOOK_2026-11-05.md` Part I §6):
+
+| # | Film | Mechanism |
+|---|---|---|
+| 1 | Why India's Submarines Must Surface: The AIP Dilemma | fuel-cell air-independent propulsion, acoustic silence |
+| 2 | The 6,000-Metre Titanium Sphere: Inside Matsya 6000 | 600-bar crush, Ti-6Al-4V electron-beam welding |
+| 3 | Why India Can't Build an Aircraft Carrier Catapult | EMALS linear induction motors, flywheel storage |
+| 4 | The Torpedo Sonar Blind Spot: Towed Array Cable Failure | submarine baffles, cable drag |
+| 5 | The Gas Turbine That Won't Start at Sea | salt-spray sulfidation, hot-section metallurgy |
+| 6 | The 2,000 °C Nose Cone: India's Hypersonic Glide Bottleneck | plasma sheath, hafnium carbide ceramics |
+| 7 | Why ISRO Still Imports Threads of Carbon | T1000 carbon fibre, PAN precursor spinning |
+| 8 | The Ceramic Armour Paradox: Why Arjun Tanks Are Heavy | Kanchan composite vs a 68-tonne tank |
+| 9 | The Cryogenic Injector: How ISRO Mastered Liquid Hydrogen | CE-20 combustion at −253 °C |
+| 10 | The Ramjet Air-Intake Geometry: Astra Mk-3 | SFDR intake shockwaves, flameout |
+| 11 | The 160 km/h Wheel India Couldn't Forge | forging vs cast-steel fracture |
+| 12 | Single-Crystal Blades: The 1,600 °C Turbine Wall | pigtail grain selectors |
+| 13 | The 0.23 mm Steel That Controls India's Power Grid | CRGO grain alignment |
+| 14 | Submarine Hull Steel | hull steel under pressure, hydrogen cracking |
+| 15 | The Tungsten Kinetic Penetrator: The APFSDS Dart | penetration at 1,700 m/s |
+| 16 | The 7 PM Solar Cliff | the duck curve, coal ramp limits |
+| 17 | The 800 kV Bushing | oil-paper insulation breakdown |
+| 18 | Pumped-Storage Hydro Batteries | reversible Francis pump-turbines |
+| 19 | The Nuclear Reactor's Pressure Tubes (see flags) | PHWR channels, embrittlement |
+| 20 | Coal Ash & Boiler Tube Leaks | ash erosion in supercritical boilers |
+| 21 | Why India Can't Build Its Own Shipping Containers | Corten corrugation, corner castings |
+| 22 | The Ultra-Pure Water Trap: The Chip Fab Bottleneck | 18.2 MΩ·cm water, 10 nm particles |
+| 23 | The 5-Axis CNC Controller Export Ban | Wassenaar dual-use controls |
+| 24 | The Superconducting Wire Inside an Indian MRI | NbTi at 4 K |
+| 25 | The Railway Switch Machine | point detection, thermal expansion |
+
+**Research flags (2026-11-05).** Some of the owner's one-line subtitles are wrong as written. Each film's brief starts
+from the correction, and the fact-check gate (§8) runs on every film anyway.
+
+| # | Subtitle said | Sources say | So the film |
+|---|---|---|---|
+| 1 | "30-bar hydrogen storage" | DRDO's AIP **makes hydrogen on board** from sodium borohydride and water for a phosphoric acid fuel cell, with liquid oxygen carried; it avoids storing hydrogen (Defense News, 24 Jan 2023; Janes, March 2021). L&T prime contractor, Thermax fuel cells, Naval Group integration; first Kalvari refit date not confirmed | is about a submarine that brews its own fuel |
+| 3 | "gigawatt flywheel storage" | four disk alternators, about 121 MJ each, up to 484 MJ released in 2–3 s, recharged in 45 s (encyclopaedia figures; find a Navy or General Atomics primary) | says megajoules and seconds, a few hundred megawatts at peak |
+| 14 | "DMR-249A vs HY-80" | DMR-249A is **warship** steel (Vikrant's hull; India's version of Russian AB-class). Submarine grade reported as DMR-292A (2013); Indian sources compare with HY-100 | separates ship steel from submarine steel; confirm DMR-292A with DRDO |
+| 15 | "adiabatic shear banding" in tungsten | tungsten heavy alloys **mushroom**; depleted uranium self-sharpens by adiabatic shear (DTIC ADA270477) | makes "tungsten won't shear" the paradox |
+| 19 | "300 mm reactor pressure vessel" | **PHWRs have no pressure vessel**: coolant runs through hundreds of Zr-2.5%Nb pressure tubes in a calandria (IAEA ARIS, IPHWR-220) | is about pressure tubes, or about the PWR vessels L&T forges |
+| 20 | "45% abrasive silica" | Indian coal is high in **ash** (often 30–45%); silica is a share of that ash | gives each number from its own source |
+| 25 | "2 mm locking tolerance" | installation text found tests with a **5 mm obstruction** 150 mm from the switch toe; RDSO figure not yet found | uses the RDSO drawing or circular before any number |
+
+Confirmed on a first pass (still fact-checked per film): Matsya-6000's sphere is Ti-6Al-4V ELI, 2,260 mm across with an
+80 mm wall, rated about 600 bar; LPSC built the electron-beam weld (7,100 mm in 32 minutes after about 700 trials;
+ISRO's Samudrayaan page). Arjun Mk1A is about 68–68.5 t with Kanchan composite armour plus ERA (ThePrint; Vayu).
+
 ### 1.2 What the audience has told us (read 2026-11-11; re-read after every film)
 From the channel's public counts and every top-level comment the Data API returns (172 across all films). Who they
 are (Studio, 2026-11-06) is in §13.3. CTR and retention are Studio-only until the channel token carries the
@@ -96,54 +144,6 @@ are (Studio, 2026-11-06) is in §13.3. CTR and retention are Studio-only until t
    next date to watch (§5.1). Never chest-thumping; never only the failure.
 5. **A reason to come back** in the last 20 seconds: the next film named as a question, the end screen pointing at
    the most related film (not just the latest), and one honest subscribe line tied to a real promise (§15.1).
-
-### 1.1 The roadmap
-The owner's 25 films, in order (word for word in `docs/archive/PLAYBOOK_2026-11-05.md` Part I §6):
-
-| # | Film | Mechanism |
-|---|---|---|
-| 1 | Why India's Submarines Must Surface: The AIP Dilemma | fuel-cell air-independent propulsion, acoustic silence |
-| 2 | The 6,000-Metre Titanium Sphere: Inside Matsya 6000 | 600-bar crush, Ti-6Al-4V electron-beam welding |
-| 3 | Why India Can't Build an Aircraft Carrier Catapult | EMALS linear induction motors, flywheel storage |
-| 4 | The Torpedo Sonar Blind Spot: Towed Array Cable Failure | submarine baffles, cable drag |
-| 5 | The Gas Turbine That Won't Start at Sea | salt-spray sulfidation, hot-section metallurgy |
-| 6 | The 2,000 °C Nose Cone: India's Hypersonic Glide Bottleneck | plasma sheath, hafnium carbide ceramics |
-| 7 | Why ISRO Still Imports Threads of Carbon | T1000 carbon fibre, PAN precursor spinning |
-| 8 | The Ceramic Armour Paradox: Why Arjun Tanks Are Heavy | Kanchan composite vs a 68-tonne tank |
-| 9 | The Cryogenic Injector: How ISRO Mastered Liquid Hydrogen | CE-20 combustion at −253 °C |
-| 10 | The Ramjet Air-Intake Geometry: Astra Mk-3 | SFDR intake shockwaves, flameout |
-| 11 | The 160 km/h Wheel India Couldn't Forge | forging vs cast-steel fracture |
-| 12 | Single-Crystal Blades: The 1,600 °C Turbine Wall | pigtail grain selectors |
-| 13 | The 0.23 mm Steel That Controls India's Power Grid | CRGO grain alignment |
-| 14 | Submarine Hull Steel | hull steel under pressure, hydrogen cracking |
-| 15 | The Tungsten Kinetic Penetrator: The APFSDS Dart | penetration at 1,700 m/s |
-| 16 | The 7 PM Solar Cliff | the duck curve, coal ramp limits |
-| 17 | The 800 kV Bushing | oil-paper insulation breakdown |
-| 18 | Pumped-Storage Hydro Batteries | reversible Francis pump-turbines |
-| 19 | The Nuclear Reactor's Pressure Tubes (see flags) | PHWR channels, embrittlement |
-| 20 | Coal Ash & Boiler Tube Leaks | ash erosion in supercritical boilers |
-| 21 | Why India Can't Build Its Own Shipping Containers | Corten corrugation, corner castings |
-| 22 | The Ultra-Pure Water Trap: The Chip Fab Bottleneck | 18.2 MΩ·cm water, 10 nm particles |
-| 23 | The 5-Axis CNC Controller Export Ban | Wassenaar dual-use controls |
-| 24 | The Superconducting Wire Inside an Indian MRI | NbTi at 4 K |
-| 25 | The Railway Switch Machine | point detection, thermal expansion |
-
-**Research flags (2026-11-05).** Some of the owner's one-line subtitles are wrong as written. Each film's brief starts
-from the correction, and the fact-check gate (§8) runs on every film anyway.
-
-| # | Subtitle said | Sources say | So the film |
-|---|---|---|---|
-| 1 | "30-bar hydrogen storage" | DRDO's AIP **makes hydrogen on board** from sodium borohydride and water for a phosphoric acid fuel cell, with liquid oxygen carried; it avoids storing hydrogen (Defense News, 24 Jan 2023; Janes, March 2021). L&T prime contractor, Thermax fuel cells, Naval Group integration; first Kalvari refit date not confirmed | is about a submarine that brews its own fuel |
-| 3 | "gigawatt flywheel storage" | four disk alternators, about 121 MJ each, up to 484 MJ released in 2–3 s, recharged in 45 s (encyclopaedia figures; find a Navy or General Atomics primary) | says megajoules and seconds, a few hundred megawatts at peak |
-| 14 | "DMR-249A vs HY-80" | DMR-249A is **warship** steel (Vikrant's hull; India's version of Russian AB-class). Submarine grade reported as DMR-292A (2013); Indian sources compare with HY-100 | separates ship steel from submarine steel; confirm DMR-292A with DRDO |
-| 15 | "adiabatic shear banding" in tungsten | tungsten heavy alloys **mushroom**; depleted uranium self-sharpens by adiabatic shear (DTIC ADA270477) | makes "tungsten won't shear" the paradox |
-| 19 | "300 mm reactor pressure vessel" | **PHWRs have no pressure vessel**: coolant runs through hundreds of Zr-2.5%Nb pressure tubes in a calandria (IAEA ARIS, IPHWR-220) | is about pressure tubes, or about the PWR vessels L&T forges |
-| 20 | "45% abrasive silica" | Indian coal is high in **ash** (often 30–45%); silica is a share of that ash | gives each number from its own source |
-| 25 | "2 mm locking tolerance" | installation text found tests with a **5 mm obstruction** 150 mm from the switch toe; RDSO figure not yet found | uses the RDSO drawing or circular before any number |
-
-Confirmed on a first pass (still fact-checked per film): Matsya-6000's sphere is Ti-6Al-4V ELI, 2,260 mm across with an
-80 mm wall, rated about 600 bar; LPSC built the electron-beam weld (7,100 mm in 32 minutes after about 700 trials;
-ISRO's Samudrayaan page). Arjun Mk1A is about 68–68.5 t with Kanchan composite armour plus ERA (ThePrint; Vayu).
 
 ---
 
