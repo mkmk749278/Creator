@@ -1,27 +1,133 @@
 {
-  "_why": "PLAYBOOK §12: music about -25 dB under the voice, up in the gaps; one cue per chapter from the Flow Music score (D minor), the Titan section on the library's grave track (fx09: the Flow grave cue failed its voice check)",
-  "bed_rms_db": -24,
-  "duck_db": -20,
-  "slots": [
-    {"track": "Deep", "from": 0, "to": "s:25+1", "fade_in": 1.5, "fade_out": 2.0, "why": "cold open and the pressure"},
-    {"track": "Aftermath", "from": "s:25-1", "to": "s:33+1", "fade_in": 2.0, "fade_out": 2.0, "gain_db": -3, "why": "Titan, told with dignity"},
-    {"track": "Steady", "from": "s:33-1", "to": "s:42+1", "fade_in": 2.0, "fade_out": 2.0, "why": "what's different here"},
-    {"track": "Curious", "from": "s:42-1", "to": "s:53+1", "fade_in": 2.0, "fade_out": 2.0, "why": "why a ball, Alvin, 2021"},
-    {"track": "Build", "from": "s:53-1", "to": "s:79-1", "fade_in": 2.0, "fade_out": 1.0, "why": "the weld: pieces, the problem, the practice"},
-    {"track": "Reveal", "from": "s:79", "to": "s:89+1", "fade_in": 1.0, "fade_out": 2.0, "why": "the real weld, the inspection"},
-    {"track": "Inside", "from": "s:89-1", "to": "s:99+1", "fade_in": 2.0, "fade_out": 2.0, "why": "the capsule, the aquanauts"},
-    {"track": "Waiting", "from": "s:99-1", "to": "s:114+1", "fade_in": 2.0, "fade_out": 2.0, "why": "the foam and the delay"},
-    {"track": "Abyss", "from": "s:114-1", "to": "s:133+1", "fade_in": 2.0, "fade_out": 2.5, "why": "the seabed"},
-    {"track": "Landing", "from": "s:133-1", "to": "end+4.5", "fade_in": 2.5, "fade_out": 3.0, "why": "the last test, the end card"}
-  ],
-  "rooms": [
-    {"what": "cabin", "from": "s:1", "to": "s:2", "gain_db": -30},
-    {"what": "cabin", "from": "s:89", "to": "s:95", "gain_db": -30},
-    {"what": "cabin", "from": "s:116", "to": "s:120", "gain_db": -32},
-    {"what": "cabin", "from": "s:133", "to": "s:138", "gain_db": -30}
-  ],
-  "quiet": [
-    {"from": "s:27", "to": "s:30", "gain_db": -3},
-    {"from": "s:79-1.0", "to": "s:79", "gain_db": -30}
-  ]
+ "_why": "PLAYBOOK §12: music about -25 dB under the voice, up in the gaps; one cue per chapter from the Flow Music score (D minor), the Titan section on the library's grave track (fx09: the Flow grave cue failed its voice check)",
+ "bed_rms_db": -24,
+ "duck_db": -20,
+ "slots": [
+  {
+   "track": "Deep",
+   "from": 0,
+   "to": "s:25+1",
+   "fade_in": 1.5,
+   "fade_out": 2.0,
+   "why": "cold open and the pressure"
+  },
+  {
+   "track": "Aftermath",
+   "from": "s:25-1",
+   "to": "s:33+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "gain_db": -3,
+   "why": "Titan, told with dignity"
+  },
+  {
+   "track": "Steady",
+   "from": "s:33-1",
+   "to": "s:42+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "what's different here"
+  },
+  {
+   "track": "Curious",
+   "from": "s:42-1",
+   "to": "s:53+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "why a ball, Alvin, 2021"
+  },
+  {
+   "track": "Build",
+   "from": "s:53-1",
+   "to": "s:79-1",
+   "fade_in": 2.0,
+   "fade_out": 1.0,
+   "why": "the weld: pieces, the problem, the practice"
+  },
+  {
+   "track": "Reveal",
+   "from": "s:79",
+   "to": "s:89+1",
+   "fade_in": 1.0,
+   "fade_out": 2.0,
+   "why": "the real weld, the inspection"
+  },
+  {
+   "track": "Inside",
+   "from": "s:89-1",
+   "to": "s:99+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "the capsule, the aquanauts"
+  },
+  {
+   "track": "Waiting",
+   "from": "s:99-1",
+   "to": "s:114+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "the foam and the delay"
+  },
+  {
+   "track": "Abyss",
+   "from": "s:114-1",
+   "to": "s:133+1",
+   "fade_in": 2.0,
+   "fade_out": 2.5,
+   "why": "the seabed"
+  },
+  {
+   "track": "Landing",
+   "from": "s:133-1",
+   "to": "end+4.5",
+   "fade_in": 2.5,
+   "fade_out": 3.0,
+   "why": "the last test, the end card"
+  }
+ ],
+ "rooms": [
+  {
+   "what": "cabin",
+   "from": "s:1",
+   "to": "s:2",
+   "gain_db": -30
+  },
+  {
+   "what": "cabin",
+   "from": "s:89",
+   "to": "s:95",
+   "gain_db": -30
+  },
+  {
+   "what": "cabin",
+   "from": "s:116",
+   "to": "s:120",
+   "gain_db": -32
+  },
+  {
+   "what": "cabin",
+   "from": "s:133",
+   "to": "s:138",
+   "gain_db": -30
+  }
+ ],
+ "quiet": [
+  {
+   "from": "s:27",
+   "to": "s:30",
+   "gain_db": -3
+  },
+  {
+   "from": "s:79-1.0",
+   "to": "s:79",
+   "gain_db": -30
+  }
+ ],
+ "music_mute": [
+  {
+   "from": "s:29-0.4",
+   "to": "s:30-0.2",
+   "why": "\"Five people died.\" with no music under it"
+  }
+ ]
 }
