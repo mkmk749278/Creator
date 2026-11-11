@@ -47,8 +47,10 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   NC is not allowed), the USCG Titan report PDF. Re-sent as `footage_requests.md` §B r2.
 
 ## Hero renders (2026-11-10)
-- In Drive `renders/` (1080p, 30 fps clips from step-2 frames, checked): H2_pieces, H2_seam, H4_squeeze, H1_dive,
-  H1_dark, H3_descent, H1_cutaway. Rendering: seabed, weights. Still to run: assemble (3 shards).
+- **All ten in Drive `renders/`** (1080p, 30 fps clips from step-2 frames; frame count, flash check and contact
+  sheet each): H1_dive, H1_cutaway, H1_dark, H2_pieces, H2_seam, H4_squeeze, H3_weights, H3_assemble, H3_seabed,
+  H3_descent. Seabed's frames 380-718 were re-rendered (the camera had clipped through the frame at "Outside your
+  window") and spliced in; the joins measure 0.57 and 0.47 of brightness.
 - `word_map.md` places every sentence's picture on audio r2; its "Still to get" list is open.
 - Music: Cowork made 18 Lyria 3.5 takes in Google Flow Music (Drive `music/`, `list.csv`); picks in
   `media_manifest.csv` (M01-M10; grave = library fx09). The reel `music/matsya_music_reel.mp3` waits for the owner's
@@ -94,5 +96,8 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   Nov 2026 unmanned trials (no real footage yet), Matsya at depth, the Titan comparison.
 
 ## Next session, in order
-1. Blender hero shots H1–H4 (plan §7, §8a), designed from ISRO's drawing, the PIB photos and NIOT's renders.
-2. Remotion build to `vo/timing.json`, word-by-word sync, using the kept spans in `media_manifest.csv`.
+1. The owner's listen to the music reel (`music/matsya_music_reel.mp3`): swap any cue with a voice; then add the
+   kept takes to `config/music_library.csv`.
+2. Close `word_map.md`'s "Still to get" (Alvin photo, water temperature at 6,000 m, F08's sphere, PIB's caption).
+3. Remotion: copy `projects/aip-submarines/remotion` (4.0.534) as the start, scenes from `word_map.md`, hero clips
+   placed at their sentence starts, the dive window dip, pushes on the slow holds; then step 8 onward.
