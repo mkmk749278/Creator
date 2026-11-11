@@ -70,7 +70,8 @@ const ch2: Part = {
 		clip(S(58), 'ISRO_ti', CR.isro, 6.0),
 	],
 	overlays: [
-		tag(w0(48, 'cricket'), s1(49), 'A CRICKET BALL', 140, 760, 56),
+		tag(w0(48, 'cricket'), S(49), 'A CRICKET BALL', 140, 760, 56),
+		tag(S(49) + 6, s1(49), 'SQUEEZE IT', 140, 760, 56),
 		tag(w0(50, 'spreads'), s1(50), 'THE PUSH SPREADS', 140, 760, 56, C.amber),
 		tag(w0(51, 'corner'), s1(51) + 10, 'NO CORNER · NO FLAT SIDE', 140, 860, 52),
 		tag(w0(53, 'alvin'), s1(53), 'ALVIN · USA', 140, 760, 56),

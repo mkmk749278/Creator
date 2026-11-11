@@ -16,6 +16,8 @@ const open: Part = {
 		// the thumbnail's subject first, then the real ball on "this titanium ball"
 		hero(S(0), 'H1_dive', 0),
 		clip(pre(w0(0, 'this')), 'F01_ballhall', CR.dd),
+		// the hall clip pans to another vehicle after 3 s: the squeeze takes over on 'almost one lakh tonnes'
+		hero(pre(w0(0, 'almost')), 'H4_squeeze', 3.0, 'SIMPLIFIED'),
 		hero(S(1), 'H1_cutaway', 12.2),
 		clip(S(2), 'ISRO_hall', CR.isro),
 		clip(pre(w0(2, 'india')), 'F08_ball', CR.tn),
