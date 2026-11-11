@@ -14,7 +14,8 @@ work.
 2. **Deep research** → `research/landscape.md`: what everyone says (news, the 3–5 strongest films and their comments,
    officials), what it actually is (primary documents, draft `claims.csv`), **our edge in one sentence**, what real
    pictures exist, and **the story bank** (15+ sourced moments, people, objects and senses, numbers that can become
-   things, ironies, failures). No edge: change the angle. Thin bank: research more.
+   things, ironies, failures) and **the objection ledger** (the 3–5 strongest objections from the most-liked
+   comments, each answered in the film; PLAYBOOK §1.2). No edge: change the angle. Thin bank: research more.
 3. **The plan** → `plan.md`: 3+ angles; **the promise locked at the top** (one sentence, title + 2 alternatives,
    thumbnail concept; PLAYBOOK §3 step 3, §4); 3+ cold opens / endings that differ in kind and deliver it; **the
    creative spine** (the one image, the motif and its returns, the feeling curve, a device per chapter, the retell

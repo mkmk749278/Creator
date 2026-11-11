@@ -45,6 +45,58 @@ engineering behind India's biggest efforts.
   explainers and Shorts, money and rights explainers. Their rules and tools stay in `docs/archive/` and the
   repo; use them only if the owner brings them back.
 
+### 1.2 What the audience has told us (read 2026-11-11; re-read after every film)
+From the channel's public counts and every top-level comment the Data API returns (172 across all films). Who they
+are (Studio, 2026-11-06) is in §13.3. CTR and retention are Studio-only until the channel token carries the
+`yt-analytics.readonly` scope; everything below is from what could be measured.
+
+| Film (public) | Views | Days up | Likes per 100 views | Title form |
+|---|---|---|---|---|
+| 30 Tejas Jets Are Ready. Why Can't They Fly? | 55,548 | 14 | 0.28 | named thing + number + "ready, but can't" |
+| India Has 7M Tons of Rare Earths. Why Can't We Make Magnets? | 51,730 | 20 | 0.47 | number + "has it, but can't" |
+| Why India's Medicines Rely on China (The API Paradox) | 16,158 | 11 | 0.84 | daily-life thing + China |
+| The $10 Billion Chip Gamble | 9,823 | 35 | 0.47 | number + bet |
+| India Landed on the Moon. Why Can't It Build a Jet Engine? | 1,612 | 28 | 0.93 | same paradox, navy-card thumbnail |
+| The Hidden Cost of India Not Having Its Own AI | 1,008 | 7 | 0.79 | abstract, no object |
+| How a $400B Empire Keeps Its Founders Off the Rich List | 571 | 4 | 1.58 | the famous name (Tata) is missing |
+| Why Kavach Won't Stop Every Train Crash | 402 | 25 | 2.24 | dark thumbnail, term few know |
+
+- **Reach is not the problem; attachment is.** 137,580 views have made 444 subscribers: about 3 per 1,000 views. On
+  the two big films under half of one viewer in a hundred pressed like. Recommended strangers watch once and leave.
+  Growth now comes from turning one watch into the next: a satisfied viewer, a reason to return, a next film to click.
+- **What travelled:** a thing every Indian already knows (Tejas, rare earths, medicines) + a number + "India has it,
+  but can't" + a foreign supplier holding the key. Their thumbnails are **bright, warm and instantly recognisable**
+  (a jet's tail, sand in two hands, a capsule) and their words say the contradiction (30 FIGHTERS, ZERO ENGINES).
+  **What didn't:** an abstract subject, a missing household name, a term few search for, a dark or card-like
+  thumbnail. Eight films is a small sample, so this is a strong lead, not a law; Test & Compare decides.
+- **The most-liked comments are objections the film never answered.** Tejas: "the engine is an excuse; fourteen
+  engines came and still no jet was delivered; the radar isn't integrated" (said about ten different ways). Magnets:
+  "India's are the light rare earths, not the heavy ones magnets need"; "the furnace is the missing technology".
+  A viewer who knows one thing we left out stops trusting the rest, and says so where every new viewer reads it.
+- **What they thank us for is always the same:** "easy to understand" where other channels are "only for engineers";
+  "this knowledge was hidden from us ordinary people"; "smooth narration"; "superb detailing".
+- **What breaks trust:** a wrong map of India (half the comments on the chips film); "where do you get seven million
+  tonnes?"; "get up-to-date information"; and "talk less: four of eleven minutes is fluff".
+- **The big films also drew mockery from outside India** ("all talk, no walk", China comparisons). "India can't"
+  wins the click from people who came to laugh as well as from people who care; only the second group returns. The
+  film has to leave *them* satisfied: the bottleneck told honestly, then who is solving it and the date to watch.
+- **They ask for:** thorium reactors, home-grown chips and data centres, magnet-free motors, the Kaveri engine's
+  full story, and local-language versions.
+
+**So, on every film** (each rule is detailed in its own section):
+1. **An objection ledger** at research: the 3–5 strongest objections a knowledgeable viewer will raise, taken from
+   the most-liked comments on our films and on the strongest existing films. Each is answered inside the film,
+   fairly and with its source, best of all as a chapter's turn ("You may have heard the engines have arrived.
+   Fourteen have. So why is no jet flying?"). What can't fit goes into the pinned comment (§3 step 2, §15.1).
+2. **The package carries a household name, a number and the contradiction;** the thumbnail is bright and
+   recognisable in one second (§4.4, §4.5).
+3. **The headline number shows its source on screen** (a small `SOURCE · …` line, §9.6 sizes) the first time it is
+   said. Viewers asked; it costs two words.
+4. **The landing gives the caring viewer something to hold:** who is solving it, what has already worked, and the
+   next date to watch (§5.1). Never chest-thumping; never only the failure.
+5. **A reason to come back** in the last 20 seconds: the next film named as a question, the end screen pointing at
+   the most related film (not just the latest), and one honest subscribe line tied to a real promise (§15.1).
+
 ### 1.1 The roadmap
 The owner's 25 films, in order (word for word in `docs/archive/PLAYBOOK_2026-11-05.md` Part I §6):
 
@@ -166,6 +218,9 @@ datasheets, court and parliament records). Output: `research/landscape.md` with 
 - **Our edge, in one sentence:** what nobody has shown clearly, which the film will. No edge, no film: pick another
   angle or topic.
 - **What pictures exist:** real footage, archive and documents, found now. The visuals we can get shape the plan.
+- **The objection ledger (§1.2):** the 3–5 strongest objections a knowledgeable viewer will raise (the most-liked
+  comments on our films and on the strongest existing films), each with what the sources say. The plan shows where
+  each is answered.
 - **The story bank (2026-11-11):** the raw material the narration and the picture will be made from, each item with
   its source and a `claims.csv` row. Collect while reading, at least 15 items across these kinds:
   - **moments** (a dated scene: the day, the place, who was in the room, what happened in what order);
@@ -321,6 +376,11 @@ words; the thumbnail carries the emotion and the visual question. They never rep
 - The main search phrase as early as possible, said the way people type it. No `!`, no clickbait words.
 - Write 2 alternatives for title tests. They keep the locked promise and change only its wording.
 - **Locked in the plan** (step 3). Changed later only together with the opening (§5.1).
+- **A household name, a number, and the contradiction (§1.2, 2026-11-11).** The films that travelled named something
+  every Indian already knows and set a fact against an expectation ("30 Tejas Jets Are Ready. Why Can't They Fly?").
+  A roadmap film about a part nobody has heard of (a bushing, a towed array, a grain selector) is titled by the
+  famous thing that part holds hostage (the grid, the submarine, the Tejas engine), with the part as the surprise.
+  One of the two alternatives always takes this form, so Test & Compare can measure it.
 
 ### 4.5 Thumbnail
 The one test: **a stranger who sees it for one second on a phone feels a question only the film answers.**
@@ -331,6 +391,11 @@ The challengers vary the picture and the words, never the promise, because one o
 - **A visual question:** something looks wrong, extreme or out of scale.
 - **At most 3 words**, in caution yellow or signal red, that add to the title and never answer it.
 - **High industrial contrast.** YouTube's app is dark, so a dark navy card sinks.
+- **Bright, warm, recognisable in one second (§1.2, 2026-11-11).** Our three most-watched films have thumbnails that
+  are mostly lit, warm in colour and show a thing anyone can name; our dark ones (a night railway, a grey dry dock,
+  a navy card) are among the least watched. A subject that lives in the dark (the deep sea, a vacuum chamber) is
+  shown **lit from inside or cut open in light**, never as a dark object in dark water. At least one of the three
+  variants is the bright, plain-object version.
 - **Bottom-right corner left empty** for the time badge. *Why:* the jet-engine thumbnail's words sat under the badge.
 - Check at 168×94 with the badge (`scripts/thumb_feed.py`). Make 3+ concepts, build them as HTML in
   `youtube/thumb/` and shoot them at 1280×720, then deliver a main and two challengers for Test & Compare.
@@ -1126,7 +1191,11 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   thumbnail (+ challengers in Test & Compare), description with chapters, the film's playlist (§1: "Practical India" for the
   weekly films, "Built on Bharat" for company histories; `scripts/yt_upload.py` adds it by `playlist_id`), cards and end screens (the latest film and the playlist), our SRT.
 - **At the slot:** the film goes public; post and pin the source comment (the film's main sources, plain links) within
-  60 seconds.
+  60 seconds. It is written like the narration, in plain words with no emoji, hashtags or series slogans: the
+  sources, then the answer to any ledger objection the film had no room for, then one real question.
+- **The end screen** points at the film most related to this one (the same machine, supplier or bottleneck), then
+  the playlist. *Why:* nearly every viewer is new and arrives from recommendations (§13.3); the next click is the
+  only way they become a returning viewer.
 
 ### 15.2 The first 48 hours
 - **No self-views:** never open or scrub the published film on the owner's phone, home Wi-Fi or linked accounts.
@@ -1137,7 +1206,10 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
 - **Read Studio at 24 hours.** If impressions are over 1,500 and CTR under 2.5%, switch to the challenger thumbnail
   (unless Test & Compare is still running; let it finish).
 - **Then at 7 and 28 days:** CTR and impressions per traffic source (browse, suggested, search), retention at 0:30 and
-  1:00 against the targets in §5.1, rewinds and cliffs with what was on screen, the search-terms report. Low CTR with
+  1:00 against the targets in §5.1, rewinds and cliffs with what was on screen, the search-terms report. Also the two
+  attachment numbers (§1.2): **subscribers gained per 1,000 views** (3 on 2026-11-11; the first target is 10) and
+  **likes per 100 views** (0.3–0.8 on the big films; target 2). And read every comment: objections go into the next
+  film's ledger, requests into the topic list, and §1.2 is updated. Low CTR with
   good retention: the package failed the film. High CTR with an early cliff: the film broke the promise; fix the
   opening of the next film. Log what you learn in §16.
 
@@ -1152,6 +1224,9 @@ branch to delete, archive the session.
 Short dated lessons that don't belong to one rule. The full film-by-film log (October 2026) is §15 of
 `docs/archive/PLAYBOOK_2026-11-05.md`.
 
+- **2026-11-11 · The audience read (§1.2):** plenty of reach, little attachment (3 subscribers per 1,000 views); the
+  most-liked comments were objections we never answered; bright household-name packages travelled, dark or abstract
+  ones didn't. Added the objection ledger, the package leads, the source line, the attachment numbers.
 - **2026-11-11 · Creativity got a method and gates** (owner: creativity has no limit; where do the instructions need to be?). They were missing at five points: research (no story bank, so nothing vivid to write
   from), the plan (options that differed only in count), the narration (a lint written to as a recipe), the word map
   (a picture per noun, no idea per sentence) and review (nothing asked what a viewer would remember). Now §3, §5.2,

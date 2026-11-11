@@ -33,6 +33,17 @@ reason; never a new doc file.
 - **Ask the owner with choices** (AskUserQuestion, 2–4 options, recommended first) only when the decision is truly
   theirs; decide the rest and say what you decided.
 
+## The audience (PLAYBOOK §1.2, §13.3; read 2026-11-11)
+- Mostly men over 45, on the family TV, in India and the diaspora, a third with subtitles; nearly all are new and
+  arrive from recommendations. **Reach is there, attachment is not:** about 3 subscribers per 1,000 views.
+- **What travelled:** a household name + a number + "India has it, but can't", with a bright, warm, recognisable
+  thumbnail. Abstract subjects, missing names and dark thumbnails didn't.
+- **Answer the strongest objections inside the film** (the objection ledger, from the most-liked comments): the top
+  comments on both big films were objections we never answered. Show the source of the headline number on screen.
+- **Leave the caring viewer satisfied:** the bottleneck told honestly, then who is solving it and the next date to
+  watch; then a reason to come back (the next film as a question, the end screen on the most related film).
+- After every film: subscribers per 1,000 views, likes per 100 views, and every comment read into the next film.
+
 ## The films (PLAYBOOK §1, §5)
 - **Formula:** one piece of hard machinery under extreme heat, pressure or stress that holds a national effort hostage.
   The voice: a senior engineer, or an elder brother, explaining a hard truth over coffee. **Zero Sodhi:** no fluff, no
