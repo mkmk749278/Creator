@@ -35,5 +35,8 @@
  "ISRO_shell": 1.667,
  "ISRO_ti": 11.05,
  "ISRO_ut": 3.767,
- "ISRO_xray": 2.017
+ "ISRO_xray": 2.017,
+ "PX_herd": 8.0,
+ "PX_rays": 12.0,
+ "PX_weld": 8.0
 }

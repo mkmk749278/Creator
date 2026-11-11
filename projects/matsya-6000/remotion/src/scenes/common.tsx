@@ -18,6 +18,10 @@ export const CR = {
 	pib: 'PHOTO: PIB',
 	uscg: 'US COAST GUARD REPORT, 2025',
 	map: 'MAP: NATURAL EARTH · INDIA’S OFFICIAL BOUNDARY',
+	px: 'VIDEO: PIXABAY',
+	geomar: 'PHOTO: ROV KIEL 6000, GEOMAR · CC BY 4.0',
+	navy: 'VIDEO: INDIAN NAVY',
+	alvin: 'PHOTO: WIKIMEDIA COMMONS',
 } as const;
 
 /** a shot with an optional honesty tag and credit */

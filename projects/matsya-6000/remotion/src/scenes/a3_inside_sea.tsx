@@ -169,8 +169,10 @@ const ch6: Part = {
 	shots: [
 		hero(S(114), 'H1_dive', 0.4),
 		hero(S(116), 'H3_seabed', 0),
+		photo(pre(w0(119, 'seafloor')), 'geomar_nodules_wide.jpg', CR.geomar),
 		shot(S(120), 'basin', (d, l) => <Basin dur={d} area={w0(120, 'patch') - S(120) + l} since={w0(121, 'two') - S(120) + l} robot={w0(122, 'robot') - S(120) + l} lead={l} />),
-		hero(S(123), 'H3_seabed', 11.6),
+		photo(S(123), 'geomar_nodules_top.jpg', CR.geomar),
+		clip(pre(w0(124, 'batteries')), 'PX_phone', CR.px),
 		hero(S(125), 'H3_descent', 0.0),
 		hero(S(128), 'H1_dive', 5.0),
 		shot(S(130), 'ladder', (d, l) => (
@@ -186,6 +188,8 @@ const ch6: Part = {
 		tag(w0(117, 'lights'), s1(117), 'YOUR LIGHTS ONLY', 140, 180, 56, C.amber),
 		tag(w0(118, 'freezing'), s1(118), 'NEAR FREEZING', 140, 760, 60, C.cyan, false, 'NOAA'),
 		tag(w0(119, 'black'), s1(119) + 10, 'BLACK LUMPS OF METAL', 140, 760, 56),
+		tag(pre(w0(119, 'seafloor')) + 12, S(120), 'REAL NODULES · PACIFIC SEAFLOOR', 140, 860, 40, C.dim),
+		tag(S(123) + 12, pre(w0(124, 'batteries')), 'REAL NODULES · PACIFIC SEAFLOOR', 140, 860, 40, C.dim),
 		tag(w0(121, 'two'), s1(121) + 10, 'SINCE 2002', 140, 180, 60, C.amber, true),
 		tag(w0(123, 'nickel'), s1(123) + 10, 'NICKEL · COPPER · COBALT', 140, 180, 56, C.amber),
 		tag(w0(124, 'phone'), s1(124), 'IN YOUR PHONE’S BATTERY', 140, 270, 52),
