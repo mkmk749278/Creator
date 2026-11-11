@@ -344,6 +344,17 @@ def main() -> None:
         x = x / (np.max(np.abs(x)) + 1e-9) * db(-3)
         place(sfx, x, t0, db(c["gain_db"] + 3))
 
+    # ---- music silences: the music alone drops out (0.4 s ramps) where a line needs the room to itself, e.g.
+    # "Five people died." (Matsya, owner's cue-sheet note 2026-11-11); the voice and SFX are untouched
+    if score.get("music_mute"):
+        m = np.ones(n)
+        for z in score["music_mute"]:
+            i0, i1 = int(A(z["from"]) * SR), int(A(z["to"]) * SR)
+            m[i0:i1] = 0.0
+        r = int(0.4 * SR)
+        c = np.cumsum(np.pad(m, (r // 2, r - r // 2), mode="edge"), dtype=np.float64)
+        bed = bed * ((c[r:r + n] - c[:n]) / r)[:, None].astype(np.float32)
+
     # ---- quiet zones (v8): the whole mix steps down where the film should breathe (the tragedies, the question), so
     # the loudness range opens up; 1 s ramps; the master's one static gain is applied after
     zone = np.zeros(n)
