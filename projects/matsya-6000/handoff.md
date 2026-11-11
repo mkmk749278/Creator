@@ -108,12 +108,59 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
   owner's listen; a swapped cue means re-running the mix only.
 - 720p review cut r1 dispatched on `remotion-render.yml` (6 runners) → Drive `renders/matsya_review_r1_720p.mp4`.
 
+## Real clips for every idea (owner note on r3, 2026-11-11), in progress
+The owner, on r3: "At least you need to show one real clip of everything to feel realistic. Nail, buffalo on it,
+titanium etc." And on the fingernail drawing: the buffalo was drawn the same size as the finger. "Even if you draw in
+3D that should feel near to reality."
+- **Placed on their words (merged; not rendered yet):**
+  - real sea under the depth counter (S14–18);
+  - a real buffalo, "ABOUT 600 KG" (S21);
+  - INS Vagir's hull (S43);
+  - Alvin photo (S47);
+  - a ship for 2021 (S50–51);
+  - TIG welding in air (S67);
+  - a gas flame (S69);
+  - GEOMAR nodule photos (S119, S123);
+  - a phone (S124).
+  Shot list in `remotion/src/scenes/*`; clips in `media/clips.tsv` (PX_*, VAG_surf); credits in
+  `media_manifest.csv`. All in Drive `render-media/`.
+- **Fetched and waiting in Drive `footage/`** (pull with `scripts/gdrive_pull.sh`, vet on contact sheets, cut with
+  `tools/prep_clips.py`, add to `clip_durations.json`, upload the clips to `render-media/clips`):
+  - `01_z1f9XfdthU0.mp4`, `02_SCHgaumVHis.mp4`: ISRO's PSLV-C49 / C51 liftoff and onboard camera. Use for S6
+    "Isro is known for rockets" in place of the rocket outline.
+  - `03_5LJtUk8OQ2o.mp4`: NOAA Ocean Exploration deep-sea dive (public domain). Use for S116–117 "no sunlight …
+    your lights".
+  - `cowork_r2/` (Pexels; `list.csv` has authors and licences):
+    - fingers: 9465178, 5870550 ("Finger in a Yellow Background"), 7299380, 7298020;
+    - a hand holding a ball: 11923146, 4753306, 11075640;
+    - deep dark: 14597114 (underwater cave), 3695383 (dust in the air: not usable).
+- **Not usable from Cowork:**
+  - The "carbon fiber" results (12911761, 12911888, 12911784, 11965533) are ordinary blue fabric, not carbon fibre.
+    Do not use them as carbon fibre; find a real carbon-fibre weave (Pixabay search, or another request), or keep the
+    drawing.
+  - No real green-screen finger exists on Pexels.
+- **The buffalo forced-perspective shot (the owner chose a composite over filming it himself):**
+  - a real finger near the lens with a real buffalo far away (Pixabay 34719, a buffalo grazing at a distance), lined
+    up so the hoof sits on the nail, at true scale;
+  - the finger comes from Pexels 5870550 (plain yellow background: colour-key it in Remotion, or with ffmpeg
+    `colorkey`/`chromakey`), or 7299380 / 9465178 if they key better;
+  - it replaces the flat cartoon finger (S19–21);
+  - "ABOUT 600 KG" lands on "six hundred kilos" (claim M24 / M-CALC1).
+- **Other places to bring nearer reality:**
+  - S44 "squeeze a ball in your hand" → Pexels 11923146 or 4753306;
+  - S19 "hold out your finger" → a real finger clip.
+- **Music:**
+  - The owner's cue-sheet note (`Claude.md` upload) matches our map of cues to chapters.
+  - Added: silence under "Five people died" (new `music_mute` in `score.json` and `scripts/score_mix.py`). The new
+    `mix/mix.wav` is in Drive.
+  - Level kept at about 25–27 dB under the voice (PLAYBOOK §12, older TV audience).
+
 ## Next session, in order
-1. Our own review is done (three rounds, `review/review.md`). The cut is r3, Drive id
-   `1PT0VxIVS8iQ2ft5t6TmAd7QeV37LLf0h`.
-   - Next: the independent viewer review (step 12; a no-repo session, §13.3).
-   - It needs the r3 link shared with "anyone with the link"; the owner has been asked.
-   - Then `review_ack_r1.md` and the owner's approval of the cut.
-   - Then trash r1/r2 in Drive (with the owner's OK).
-2. The owner's listen to the music reel; swap any flagged cue and re-run the mix.
-3. Fresh-facts gate before upload: ISRO's July 2025 wording on "successful testing" vs S136 / M26; M05, M33.
+1. Build the items above (the forced-perspective buffalo, the finger, the ball, the ISRO launch, the NOAA dark),
+   check stills, render the 720p review cut r4 (`remotion-render.yml`, name `matsya_review_r4_720p.mp4`), and our
+   full review (`review/review.md` § r4).
+2. Independent viewer review (§13.3): the reviewer needs r4 shared by "anyone with the link". Ask the owner first;
+   it was asked for r3 and not yet answered. Then write `review_ack_r1.md` and get the owner's approval of the cut.
+3. The owner's listen to the music reel; swap any flagged cue and re-run the mix.
+4. Fresh-facts gate before upload: ISRO's July 2025 wording on "successful testing" vs S136 / M26; M05, M33.
+5. Ask before trashing r1–r3 in Drive. Keep r3 until r4 is approved.
