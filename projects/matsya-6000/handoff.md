@@ -109,7 +109,11 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
 - 720p review cut r1 dispatched on `remotion-render.yml` (6 runners) → Drive `renders/matsya_review_r1_720p.mp4`.
 
 ## Next session, in order
-1. Our full review of the 720p cut (PLAYBOOK §13.1: flash, freeze, judder, loudness, the shot-word and sentence audits,
-   a creative pass), fixes, then the independent viewer review (step 12) and the owner's approval of the cut.
+1. Our own review is done (three rounds, `review/review.md`). The cut is r3, Drive id
+   `1PT0VxIVS8iQ2ft5t6TmAd7QeV37LLf0h`.
+   - Next: the independent viewer review (step 12; a no-repo session, §13.3).
+   - It needs the r3 link shared with "anyone with the link"; the owner has been asked.
+   - Then `review_ack_r1.md` and the owner's approval of the cut.
+   - Then trash r1/r2 in Drive (with the owner's OK).
 2. The owner's listen to the music reel; swap any flagged cue and re-run the mix.
 3. Fresh-facts gate before upload: ISRO's July 2025 wording on "successful testing" vs S136 / M26; M05, M33.

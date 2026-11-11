@@ -73,3 +73,10 @@
 - **Two new issues, fixed for r3:**
   - 5:56.5 (S113): played slower to fill the longer slot, DD Telangana's clip reached its tail, which is a Telugu caption card. `clip_durations.json` now caps F03 at its clean 2.1 s, and the insert starts on "six"; the Chennai map holds until then.
   - 3:44 (S75): the 80 MM bar was on screen for only 0.9 s before the cut. The next clip now lands on "machine", so the bar holds for 1.85 s.
+
+## r3 (`renders/matsya_review_r3_720p.mp4`, Drive id `1PT0VxIVS8iQ2ft5t6TmAd7QeV37LLf0h`, 2026-11-11)
+- Picture and audio are both 456.133 s. No freezes. −14.0 LUFS, −1.4 dBTP.
+- **Both r2 fixes confirmed on frames:**
+  - the 80 MM bar now holds 224.2–226.0;
+  - the Chennai map holds until "six", and DD Telangana's insert ends clean at 357.2, with no caption card.
+- No open blockers from our own review. Next: the independent viewer review (§13.3), then the owner's approval.
