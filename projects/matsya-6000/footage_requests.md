@@ -89,22 +89,31 @@ Already found from the cloud:
 - Commons: DSV Alvin photos (US Navy, public domain).
 - Indian Navy's INS Vagir film (already in Drive for the AIP film): the boat surfacing.
 
-## Cowork (laptop): one request
-```text
-Please download these and save them to Google Drive, folder Creator/English/matsya-6000/footage/cowork_r2/
-(create it if missing). Real camera footage only: no AI, no CGI, no 3D renders. Landscape, highest quality offered,
-no re-encoding, keep original file names. When done, save list.csv in the same folder with: file name, source page
-URL, title, author/owner, licence shown on the page.
+## Split (owner, 2026-11-11: "Termux can fetch YouTube things; give separate work for Termux and Cowork")
+- **The session fetches itself:** NOAA Ocean Exploration (its site answers from the cloud) and Wikimedia Commons
+  (glass microspheres).
+- **Termux (phone): YouTube only.** ISRO's own liftoff and onboard-camera videos for "Isro is known for rockets",
+  and NOAA Ocean Exploration's own channel for the pitch-dark deep sea.
+- **Cowork (laptop): Pexels only.** pexels.com answers 403 to the cloud.
 
-1. Pexels (pexels.com), videos, the 2 best real results for each search:
-   "index finger close up", "man hand finger macro", "hand squeezing stress ball", "squeezing rubber ball hand",
-   "carbon fiber fabric close up", "carbon fiber weave texture", "smartphone battery replacement",
-   "deep sea dark water particles", "underwater going down dark blue".
-2. NOAA Ocean Exploration (oceanexplorer.noaa.gov; public domain): photos and short videos of manganese
-   (polymetallic) nodules on the deep seafloor, and of an ROV's lights in total darkness at depth. 3 to 6 files.
-   Also any NOAA photo of the submersible Alvin being launched or recovered.
-3. ISRO official YouTube, PSLV-C57 / Aditya-L1 launch: https://www.youtube.com/watch?v=_IcgGYZTXQw
-   Save only about 60 seconds around liftoff (from the final countdown to the rocket clearing the tower), 1080p.
-4. Wikimedia Commons: 2 photos of "hollow glass microspheres" under a microscope (licence must be public domain,
-   CC0, CC BY or CC BY-SA; not NC or ND).
+### Termux
+```bash
+curl -sL https://raw.githubusercontent.com/mkmk749278/Creator/main/scripts/termux_fetch_to_drive.sh | bash -s -- \
+  English/matsya-6000 \
+  "https://www.youtube.com/watch?v=z1f9XfdthU0" \
+  "https://www.youtube.com/watch?v=SCHgaumVHis" \
+  "https://www.youtube.com/watch?v=5LJtUk8OQ2o"
+```
+ISRO Official: PSLV-C49 and PSLV-C51 liftoff with onboard camera (2 min each). NOAA Ocean Exploration: Dive 11,
+deep-sea footage (1:40, public domain).
+
+### Cowork
+```text
+Please download these from Pexels (pexels.com) and save them to Google Drive, folder
+Creator/English/matsya-6000/footage/cowork_r2/ (create it if missing). Videos only, real camera footage (no AI, no
+CGI, no 3D renders), landscape, the highest quality offered, original file names, no re-encoding. The 2 best results
+for each search:
+  "index finger close up", "man hand finger macro", "hand squeezing stress ball", "squeezing rubber ball hand",
+  "carbon fiber fabric close up", "carbon fiber weave texture", "deep sea dark water particles".
+When done, save list.csv in the same folder with: file name, Pexels page URL, title, author, licence.
 ```
