@@ -48,7 +48,7 @@ shows Matsya or its parts; SIMPLIFIED on the squeeze; OUR CALCULATION on 7.1 m a
 | 42–43 | 134.05–137.99 | **R** a long tube vs a ball on the plate, same arrows | "long tube" → the tube's flat ends glow amber (where it would fail) |
 | 44–46 | 138.32–146.12 | **H4_squeeze** (second use, 6–12 s, the arrows pressing evenly) | "spread all the way round" → a ring of amber travels round; "no corner" → R corner icon crossed out |
 | 47–49 | 146.39–158.89 | **Alvin photo** (to source: NOAA/WHOI public-domain) | "1964 · steel" → date + STEEL; "1973 · titanium" → TITANIUM; "twice as deep" → two depth bars 2,440 → 4,500 m |
-| 50–52 | 159.19–168.32 | **F08** 1:33–1:52 the black test sphere over the sea (confirm it is the 2021 steel sphere first; else R) | "2021" → date; "six hundred metres" → 600 m; "Then came titanium" → hard cut to H2_pieces frame 0 |
+| 50–52 | 159.19–168.32 | **R** (ILLUSTRATION) a plain steel ball lowered from a ship's A-frame on a cable, a depth line to 600 m. No real picture is confirmed as the 2021 sphere (F08's black sphere is unidentified), so we draw it | "2021" → date; "six hundred metres" → 600 m; "Bay of Bengal" → R small map, official boundary; "Then came titanium" → hard cut to H2_pieces frame 0 |
 
 ## Ch3 · ISRO's hardest weld (2:49–4:27)
 | S | Time | Base | → word |
@@ -67,7 +67,7 @@ shows Matsya or its parts; SIMPLIFIED on the squeeze; OUR CALCULATION on 7.1 m a
 |---|---|---|---|
 | 89–92 | 267.21–283.68 | **H1_cutaway** whole clip (frame 0 = 267.21 s) | "eight centimetres" → 80 mm on the cut wall; "just over two metres" → 2.1 m line (OUR CALCULATION); "head and feet" → the figure; "two others" → three seats |
 | 93–94 | 284.16–288.26 | **R** inside the cutaway: a blue O₂ arrow in, a grey CO₂ arrow out to a scrubber box | "Oxygen" / "carbon dioxide" → the arrows |
-| 95–98 | 288.68–307.50 | **IFR-120298** Nautile at the surface (CC BY, credit) → **F06** 0:01–0:17 Nautile's lift → **IFR-65417** inside Nautile → **PIB 2156508** photo of the aquanauts (credit PIB; names only as PIB captions them) | "France" → FRANCE · NAUTILE; "four thousand" → 4,025 m; "five thousand" → 5,002 m (claims M10) |
+| 95–98 | 288.68–307.50 | **IFR-120298** Nautile at the surface (CC BY, credit) → **F06** 0:01–0:17 Nautile's lift → **IFR-65417** inside Nautile. No face carries a name: no photo of the two is captioned by PIB or MoES, so the names are labels over Nautile, not over people | "France" → FRANCE · NAUTILE; "Raju Ramesh" → name label + 4,025 m; "Jatinder Pal Singh" → name label + 5,002 m (claims M10) |
 
 ## Ch5 · The foam, and the delay (5:08–5:57)
 | S | Time | Base | → word |
@@ -81,7 +81,7 @@ shows Matsya or its parts; SIMPLIFIED on the squeeze; OUR CALCULATION on 7.1 m a
 | S | Time | Base | → word |
 |---|---|---|---|
 | 114–115 | 357.20–361.06 | black water, the ball silhouette | "worth it" → hold |
-| 116–119 | 362.66–377.94 | **H3_seabed** whole clip (frame 0 = 362.66 s) | "no sunlight" → black; "Your lights" → the lamps come on in order; "close to freezing" → 2 °C (Mono, cyan; to source); "black lumps of metal" → the nodules lit |
+| 116–119 | 362.66–377.94 | **H3_seabed** whole clip (frame 0 = 362.66 s) | "no sunlight" → black; "Your lights" → the lamps come on in order; "close to freezing" → NEAR FREEZING (cyan; claim M36, NOAA; no number); "black lumps of metal" → the nodules lit |
 | 120–122 | 378.44–391.98 | **R** India map (official boundary), the Central Indian Ocean Basin patch, about 75,000 km² | "since 2002" → 2002; "robot sub · 2022" → 5,271 m (claim; draw the robot as an outline, no photo) |
 | 123–124 | 392.32–398.35 | **H3_seabed** nodule close-up frames | "nickel, copper and cobalt" → Ni Cu Co tiles on the nodules; "your phone" → a phone-battery outline |
 | 125–129 | 398.66–408.61 | **H3_seabed** slow drift | "Nobody is allowed to mine" → NO MINING YET; "pair of eyes" → the viewport glows |
@@ -94,8 +94,11 @@ shows Matsya or its parts; SIMPLIFIED on the squeeze; OUR CALCULATION on 7.1 m a
 | 138–140 | 439.08–444.12 | **H3_descent** 0–5 s | "One dive" / "Six kilometres" / "checked at once" → each lands on its word; the seam motif glows once |
 | 141–143 | 444.42–451.83 | **H3_descent** to black; outro sting and the channel name | — |
 
-## Still to get or settle
-- **Alvin photo** (NOAA/WHOI public domain) for S47–49; **water temperature at 6,000 m** for S118 (a claim row if shown).
-- **F08 1:33–1:52**: confirm it is the 2021 steel sphere before S51 shows it; else draw it (R).
-- **PIB 2156508 image003**: confirm from PIB's caption who is pictured before any name is shown.
-- The ISRO video carries a "Ti6Al4V" caption on 2:13–2:22: crop it, or let it stand as ISRO's own label.
+## Settled (2026-11-11)
+- S118: NEAR FREEZING, claim M36 (NOAA JetStream). S51: drawn, not F08. S96–98: names as labels over Nautile.
+- The ISRO video's own "Ti6Al4V" caption on 2:13–2:22 stays: it is ISRO's label and it is correct.
+- S47–49: **drawn Alvin** (R, ILLUSTRATION): the one clear NOAA photo is credited to a named photographer with no
+  public-domain statement, and Wikimedia refused the cloud (429). The outline's sphere changes from STEEL 1964 to
+  TITANIUM 1973; depth bars 2,440 → 4,500 m (claim M29).
+- **Fresh-facts gate before upload:** one search summary says ISRO's July 2025 announcement reported "successful testing"
+  of the titanium sphere; re-read ISRO's own words (likely the weld and its inspection) against S136 and claim M26.

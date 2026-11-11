@@ -1,5 +1,5 @@
 # The repo holds code and small text; every media file lives in Drive (owner, 2026-11-05; PLAYBOOK §2).
-node_modules/
+node_modules
 .venv/
 __pycache__/
 *.pyc
