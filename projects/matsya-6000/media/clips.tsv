@@ -39,3 +39,13 @@ H3_weights	renders/H3_weights.mp4	0	9.0		drop weights fall, Matsya rises
 H3_assemble	renders/H3_assemble.mp4	0	13.0		the sub builds round the ball, sinks, the foam
 H3_seabed	renders/H3_seabed.mp4	0	16.0		dark, the lamps, the window, the nodules
 H3_descent	renders/H3_descent.mp4	0	9.0		Matsya descending
+# Real clips for every idea (owner note on r3, 2026-11-11): Pixabay (Pixabay Content License) and Indian Navy
+PX_rays	pixabay_37712.mp4	0	12		Pixabay 37712: sunlit water, bubbles rising (ILLUSTRATIVE)
+PX_reef	pixabay_26572.mp4	2	8		Pixabay 26572: shallow sea floor, fish (ILLUSTRATIVE)
+PX_buffalo	pixabay_15742.mp4	0	7		Pixabay 15742: water buffalo, close
+PX_herd	pixabay_34719.mp4	0	8		Pixabay 34719: a buffalo grazing by a lake
+PX_weld	pixabay_15477.mp4	4	12		Pixabay 15477: TIG welding in open air (ILLUSTRATIVE: not ISRO)
+PX_flame	pixabay_109750.mp4	1	6	960:540:300:380	Pixabay 109750: an oxy-acetylene flame (ILLUSTRATIVE)
+PX_phone	pixabay_142641.mp4	1	8		Pixabay 142641: a phone in a hand
+PX_ship	pixabay_237249.mp4	0	8		Pixabay 237249: a ship at sea at dusk (ILLUSTRATIVE)
+VAG_surf	01_BDi71t9M1iI.mp4	27.4	30.0		Indian Navy: INS Vagir (Kalvari class) from above, the long hull in spray

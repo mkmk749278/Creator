@@ -5,7 +5,7 @@ import {Alvin, BeadInAir, SteelBall2021, TubeVsBall, WeldBars} from '../parts/dr
 import {ez, Insert, Plate, tw} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
-import {clip, cnt, CR, hero, lab, pre, shot, stamp, tag} from './common';
+import {clip, cnt, CR, hero, lab, photo, pre, shot, stamp, tag} from './common';
 
 // Ch2 (why a ball, S42–52) and Ch3 (ISRO's hardest weld, S53–88), word_map.md.
 const S = s0;
@@ -51,21 +51,25 @@ const ch2: Part = {
 	shots: [
 		shot(S(42), 'tube', (d, l) => (
 			<Plate dur={d} seed="tube">
-				<TubeVsBall tubeEnds={w0(43, 'tube') - S(42) + l} ring={w0(43, 'tube') - S(42) + l + 600} />
+				<TubeVsBall tubeEnds={l + 50} ring={l + 600} />
 			</Plate>
 		), {tag: 'SIMPLIFIED'}),
+		clip(pre(w0(43, 'long')), 'VAG_surf', CR.navy),
 		hero(S(44), 'H4_squeeze', 7.0, 'SIMPLIFIED'),
-		shot(S(47), 'alvin', (d, l) => (
+		photo(pre(w0(47, 'alvin')), 'alvin_panorama.jpg', CR.alvin),
+		shot(S(48), 'alvin', (d, l) => (
 			<Plate dur={d} seed="alvin">
-				<Alvin steel={w0(48, 'steel') - S(47) + l} ti={w0(49, 'titanium') - S(47) + l} bars={w0(49, 'twice') - S(47) + l} />
+				<Alvin steel={w0(48, 'steel') - S(48) + l} ti={w0(49, 'titanium') - S(48) + l} bars={w0(49, 'twice') - S(48) + l} />
 			</Plate>
 		), {tag: 'ILLUSTRATION'}),
-		shot(S(50), 'steel2021', (d, l) => <SteelBall2021 dur={d} date={w0(51, 'twenty') - S(50) + l} depth={w0(51, 'six') - S(50) + l} />, {tag: 'ILLUSTRATION'}),
+		clip(S(50), 'PX_ship', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		shot(pre(w0(51, 'lowered')), 'steel2021', (d, l) => <SteelBall2021 dur={d} date={1} depth={w0(51, 'six') - pre(w0(51, 'lowered')) + l} />, {tag: 'ILLUSTRATION'}),
 		clip(S(52), 'ISRO_ti', CR.isro, 6.0),
 	],
 	overlays: [
 		tag(w0(45, 'spread'), s1(45), 'THE PUSH SPREADS', 140, 760, 56, C.amber),
 		tag(w0(46, 'corner'), s1(46) + 10, 'NO CORNER · NO FLAT SIDE', 140, 860, 52),
+		tag(w0(51, 'twenty'), pre(w0(51, 'lowered')), 'OCTOBER 2021', 140, 300, 52),
 		tag(w0(51, 'bay'), s1(51), 'BAY OF BENGAL', 140, 480, 48, C.dim),
 		tag(w0(52, 'titanium'), s1(52) + 10, 'THEN TITANIUM', 140, 760, 64, C.ti),
 	],
@@ -86,11 +90,13 @@ const ch3: Part = {
 		hero(backAt, 'H2_pieces', (backAt - S(57)) / 60),
 		clip(S(65), 'ISRO_shell', CR.isro),
 		clip(S(66), 'ISRO_ti', CR.isro, 3.0),
-		shot(S(67), 'bead', (d, l) => (
+		clip(S(67), 'PX_weld', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		shot(pre(w0(67, 'grabs')), 'bead', (d, l) => (
 			<Plate dur={d} seed="bead">
-				<BeadInAir atoms={w0(67, 'oxygen') - S(67) + l} holes={w0(68, 'holes') - S(67) + l} crack={w0(68, 'crack') - S(67) + l} />
+				<BeadInAir atoms={w0(67, 'oxygen') - pre(w0(67, 'grabs')) + l} holes={w0(68, 'holes') - pre(w0(67, 'grabs')) + l} crack={w0(68, 'crack') - pre(w0(67, 'grabs')) + l} />
 			</Plate>
 		), {tag: 'SIMPLIFIED'}),
+		clip(S(69), 'PX_flame', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
 		clip(S(70), 'ISRO_chamber', CR.isro),
 		clip(pre(w0(71, 'electrons')), 'ISRO_console', CR.isro),
 		clip(S(72), 'ISRO_ebglow', CR.isro),

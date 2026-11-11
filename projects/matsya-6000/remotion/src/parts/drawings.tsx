@@ -82,7 +82,7 @@ export const Fingernail: React.FC<{arrow: number; kg: number; buffalo: number}> 
 };
 
 /** S14–18: falling through the sea, the depth counter, a ring of pressure passing every "ten metres". */
-export const Fall: React.FC<{dur: number; target: number; beats: number[]; race: number}> = ({dur, target, beats, race}) => {
+export const Fall: React.FC<{dur: number; target: number; beats: number[]; race: number; bare?: boolean}> = ({dur, target, beats, race, bare}) => {
 	const f = useCurrentFrame();
 	// depth: 0 at the start; 10/20/30 m on the beats; then a race to 6,000
 	// each beat takes over once it starts (r1 took the max of every beat, so it read 30 m from frame 0)
@@ -98,8 +98,13 @@ export const Fall: React.FC<{dur: number; target: number; beats: number[]; race:
 	const deep = Math.min(1, d / 6000);
 	return (
 		<AbsoluteFill>
-			<Underwater depth={0.2 + 0.8 * deep} />
-			<MarineSnow speed={2 + 10 * deep} n={170} />
+			{bare ? (
+				// over real sea footage: the water darkens as the counter goes down
+				<AbsoluteFill style={{background: `rgba(2,8,14,${Math.min(0.92, d / 160 + 0.88 * deep)})`}} />
+			) : (
+				<Underwater depth={0.2 + 0.8 * deep} />
+			)}
+			<MarineSnow speed={2 + 10 * deep} n={bare ? 90 : 170} />
 			<svg width={1920} height={1080} style={{position: 'absolute'}}>
 				{beats.map((b, i) => {
 					const k = tw(f, b, b + 40, 0, 1, ez.leave);
