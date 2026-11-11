@@ -6,7 +6,7 @@ ISRO_drawing	isro.webm	114.75	119.65		ISRO's drawing: five pieces, seven welds
 ISRO_forge	isro.webm	125.45	126.50		a glowing forged billet under the press
 ISRO_ansys	isro.webm	126.60	128.70		Ansys stress plot of the sphere wall
 ISRO_machining	isro.webm	128.80	131.50	608:1080:656:0	machining chips (vertical source inside the frame)
-ISRO_ti	isro.webm	131.65	142.75		machined Ti6Al4V piece (ISRO's own caption)
+ISRO_ti	isro.webm	131.65	142.75		machined Ti6Al4V piece; the prepared 1920x1080 clip then cropped 1420:799:200:0 (removes ISRO's burned-in caption and logo, 2026-11-11)
 ISRO_ring	isro.webm	144.55	146.15		people round a titanium ring on the floor
 ISRO_ebglow	isro.webm	146.25	149.00		the electron-beam weld glow through the chamber port
 ISRO_ut	isro.webm	149.10	152.90		ultrasound testing on a block

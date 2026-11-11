@@ -296,4 +296,5 @@ opening may start on the real sea rather than the thumbnail's ball (the two rule
   round a cricket ball, S49 the ball unchanged ("NOTHING HAPPENS"); S155 Fendouzhe, a full-size exhibit model
   (CC BY-SA, labelled), then the depth bars from S156. The blue textile clips are not carbon fibre: not used. The real
   Fendouzhe photo on Commons is portrait only; not used.
+- From the r7 check (−14.1 LUFS, −1.2 dBTP, no freezes): ISRO_ti re-cropped to remove ISRO's burned-in "Ti6Al4V" caption and logo; H3_assemble (the rig in a black starry void) now under `SeaOver` too.
 - **4K master dispatched** on 20 runners → Drive `renders/matsya_master_4k.mp4`.
