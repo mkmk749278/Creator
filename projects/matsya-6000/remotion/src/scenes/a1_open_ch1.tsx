@@ -76,8 +76,8 @@ const ch1: Part = {
 				<Fingernail arrow={w0(19, 'finger') - S(19) + l} kg={w0(20, 'six') - S(19) + l} buffalo={1e6} />
 			</Plate>
 		), {tag: 'OUR CALCULATION'}),
-		clip(pre(w0(21, 'buffalo')), 'PX_buffalo', CR.px),
-		shot(pre(w0(21, 'standing')), 'nail-buffalo', (d) => (
+		clip(S(21), 'PX_buffalo', CR.px),
+		shot(pre(w0(21, 'on')), 'nail-buffalo', (d) => (
 			<Plate dur={d} seed="nail2">
 				<Fingernail arrow={-60} kg={-60} buffalo={6} />
 			</Plate>
@@ -109,7 +109,7 @@ const ch1: Part = {
 		tag(w0(28, 'june'), s1(29), '18.06.2023', 140, 180, 56, C.ink, true),
 		cnt(w0(24, 'lakh'), w0(24, 'tonnes'), s1(24) + 20, 100000, 'TONNES'),
 		lab(S(14), S(19), 'fall', <Fall bare dur={S(19) - S(14)} target={w0(14, 'six') - S(14)} beats={[w0(15, 'ten') - S(14), w0(16, 'once') - S(14), w0(17, 'again') - S(14), w0(18, 'again') - S(14)]} race={w0(18, 'again') - S(14) + 24} />),
-		tag(pre(w0(21, 'buffalo')) + 9, pre(w0(21, 'standing')), 'ABOUT 600 KG', 140, 760, 64, C.amber),
+		tag(w0(21, 'full'), pre(w0(21, 'on')), 'ABOUT 600 KG', 140, 760, 64, C.amber),
 		tag(w0(31, 'kept'), s1(31), 'KEPT DIVING', 140, 860, 52, C.red),
 		tag(w0(35, 'titanium'), s1(35), 'TITANIUM', 140, 760, 64, C.ti),
 		tag(w0(36, 'ball'), s1(36), 'A BALL', 140, 760, 64),

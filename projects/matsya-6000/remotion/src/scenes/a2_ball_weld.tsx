@@ -51,10 +51,10 @@ const ch2: Part = {
 	shots: [
 		shot(S(42), 'tube', (d, l) => (
 			<Plate dur={d} seed="tube">
-				<TubeVsBall tubeEnds={w0(43, 'tube') - S(42) + l} ring={w0(43, 'tube') - S(42) + l + 600} />
+				<TubeVsBall tubeEnds={l + 50} ring={l + 600} />
 			</Plate>
 		), {tag: 'SIMPLIFIED'}),
-		clip(pre(w0(43, 'normal')), 'VAG_surf', CR.navy),
+		clip(pre(w0(43, 'long')), 'VAG_surf', CR.navy),
 		hero(S(44), 'H4_squeeze', 7.0, 'SIMPLIFIED'),
 		photo(pre(w0(47, 'alvin')), 'alvin_panorama.jpg', CR.alvin),
 		shot(S(48), 'alvin', (d, l) => (
