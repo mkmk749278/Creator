@@ -1,0 +1,41 @@
+# name	source (assets/footage/)	start_s	end_s	crop w:h:x:y (source px, empty = full; V = vertical/square insert)	note	colour fix (ffmpeg, optional)
+# ISRO, Samudrayaan video 23 Jul 2025 (credit ISRO; spans on its own shot cuts)
+ISRO_hall	isro.webm	100.45	103.10		the real ball in its frame in the hall
+ISRO_ballred	isro.webm	112.90	114.65		the painted ball, red primary window
+ISRO_drawing	isro.webm	114.75	119.65		ISRO's drawing: five pieces, seven welds
+ISRO_forge	isro.webm	125.45	126.50		a glowing forged billet under the press
+ISRO_ansys	isro.webm	126.60	128.70		Ansys stress plot of the sphere wall
+ISRO_machining	isro.webm	128.80	131.50	608:1080:656:0	machining chips (vertical source inside the frame)
+ISRO_ti	isro.webm	131.65	142.75		machined Ti6Al4V piece (ISRO's own caption)
+ISRO_ring	isro.webm	144.55	146.15		people round a titanium ring on the floor
+ISRO_ebglow	isro.webm	146.25	149.00		the electron-beam weld glow through the chamber port
+ISRO_ut	isro.webm	149.10	152.90		ultrasound testing on a block
+ISRO_operator	isro.webm	153.00	154.10		an operator at the welding machine
+ISRO_monitor	isro.webm	154.20	156.65		the weld monitor, orange glow
+ISRO_console	isro.webm	156.75	160.90		the operator at the EB console, the monitor
+ISRO_chamber	isro.webm	161.85	163.20		the EB vacuum chamber with its port
+ISRO_console2	isro.webm	163.30	166.70		the operator at the console
+ISRO_screens	isro.webm	166.80	168.85		the control screens
+ISRO_shell	isro.webm	170.40	172.10		a titanium shell section on the inspection rig
+ISRO_bead	isro.webm	172.20	174.75		the weld bead close up
+ISRO_xray	isro.webm	174.85	176.90		the X-ray cabinet
+# News (short, credited excerpts), cropped 16:9 above their captions
+F01_hall	01_6YhT3LlDLqA.mp4	17.0	20.0	1496:842:212:0	DD India: sphere and test sphere in the NIOT hall
+F01_crane	01_6YhT3LlDLqA.mp4	21.0	23.4	1496:842:212:0	DD India: the vehicle frame on a crane
+F01_foam	01_6YhT3LlDLqA.mp4	25.0	28.4	1496:842:212:0	DD India: Matsya with its yellow foam in the hall
+F01_ball	01_6YhT3LlDLqA.mp4	35.0	38.4	1496:842:212:0	DD India: the ball close
+F01_ballhall	01_6YhT3LlDLqA.mp4	65.0	72.0	1496:842:212:0	DD India: the ball in its hall frame
+F06_nautile	06_ZNgzbk53uU4.mp4	1.0	17.0	V	Nautile at the surface, the lift, on deck (square insert)
+F08_ball	08_2inu0MG-3Ik.mp4	29.5	33.0	1440:810:240:0	Times Now: the ball in the NIOT hall (2023)
+F03_water	03_U0L2Rew57Kk.mp4	87.0	90.0	640:360:107:0	DD Telangana: the frame lowered into clear water (480p insert)
+# Hero renders (Blender, ILLUSTRATION), whole clips
+H1_dive	renders/H1_dive.mp4	0	11.0		ball in the deep, through the window, three seats
+H1_cutaway	renders/H1_cutaway.mp4	0	16.666		section, the lying figure, the seats
+H1_dark	renders/H1_dark.mp4	0	12.0		inside, lights off, the window
+H2_pieces	renders/H2_pieces.mp4	0	16.0		five pieces close, seven welds trace
+H2_seam	renders/H2_seam.mp4	0	16.0		the weld laid, the 7.1 m line
+H4_squeeze	renders/H4_squeeze.mp4	0	13.0		arrows press on the ball
+H3_weights	renders/H3_weights.mp4	0	9.0		drop weights fall, Matsya rises
+H3_assemble	renders/H3_assemble.mp4	0	13.0		the sub builds round the ball, sinks, the foam
+H3_seabed	renders/H3_seabed.mp4	0	16.0		dark, the lamps, the window, the nodules
+H3_descent	renders/H3_descent.mp4	0	9.0		Matsya descending

@@ -1,0 +1,109 @@
+import React from 'react';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import type {Part} from '../Film';
+import {CarbonHull, Fall, Fingernail, WeldBars} from '../parts/drawings';
+import {ez, Hero, Plate, tw} from '../parts/kit';
+import {C} from '../theme';
+import {s0, s1, w0} from '../timing';
+import {clip, cnt, CR, Deep, hero, lab, pre, Quote, ReportPose, shot, stamp, tag} from './common';
+
+// Cold open and Ch1 (S0–S41), word_map.md. Frames from the locked audio r2 (vo/timing.json).
+
+/** the dive window pass (H1_dive 7.3–7.8 s clips through the glass): a dip to near black and back */
+const Dip: React.FC<{peak: number}> = ({peak}) => {
+	const f = useCurrentFrame();
+	const o = f < peak ? tw(f, peak - 18, peak, 0, 0.92, ez.leave) : tw(f, peak, peak + 20, 0.92, 0, ez.arrive);
+	return <AbsoluteFill style={{background: `rgba(2,6,11,${o})`}} />;
+};
+
+/** S5–6: "Isro is known for rockets": a rocket outline slides up out of frame on the plate */
+const RocketOutline: React.FC<{dur: number}> = ({dur}) => {
+	const f = useCurrentFrame();
+	const y = tw(f, 0, dur, 120, -260, (t) => t);
+	return (
+		<Plate dur={dur} seed="rocket">
+			<svg width={1920} height={1080} style={{position: 'absolute'}}>
+				<g transform={`translate(960 ${y})`} fill="none" stroke={C.ink} strokeWidth={5}>
+					<path d="M0 120 C30 170 40 230 40 300 L40 820 L-40 820 L-40 300 C-40 230 -30 170 0 120 Z" />
+					<path d="M-40 700 L-110 840 L-40 820 M40 700 L110 840 L40 820" />
+					<rect x={-70} y={520} width={30} height={260} rx={10} />
+					<rect x={40} y={520} width={30} height={260} rx={10} />
+				</g>
+			</svg>
+		</Plate>
+	);
+};
+
+const S = s0;
+const open: Part = {
+	shots: [
+		hero(S(0), 'H1_dive', 0),
+		clip(S(2), 'ISRO_hall', CR.isro),
+		clip(pre(w0(2, 'deep-sea')) + 60, 'ISRO_ballred', CR.isro),
+		hero(S(4), 'H2_pieces', 0),
+		shot(S(5), 'rocket', (d, l) => <RocketOutline dur={d} />),
+		clip(S(7), 'ISRO_ebglow', CR.isro),
+		clip(S(8), 'ISRO_ballred', CR.isro),
+		shot(S(9), 'weldbars', (d, l) => (
+			<Plate dur={d} seed="bars">
+				<WeldBars show20={w0(9, 'thicker') - S(9) + l} show80={w0(9, 'thicker') - S(9) + l + 20} grow={w0(9, 'four') - S(9) + l} />
+			</Plate>
+		)),
+		hero(S(11), 'H1_dive', 0.6),
+	],
+	overlays: [
+		cnt(w0(0, 'lakh'), w0(0, 'tonnes'), S(1), 100000, 'TONNES', 140, 760, 120),
+		lab(S(0) + 420, S(0) + 500, 'dip', <Dip peak={Math.round(7.55 * 60) - 420} />),
+		tag(w0(2, 'people'), s1(2), 'FOR PEOPLE'),
+		tag(w0(3, 'matsya'), s1(3) + 20, 'MATSYA 6000', 140, 760, 72, C.amber),
+		tag(w0(4, 'five'), s1(4), '5 PIECES', 140, 720, 60),
+		tag(w0(4, 'seven'), s1(4), '7 WELDS', 140, 820, 60, C.weld),
+		tag(w0(6, 'rockets'), s1(6), 'ISRO · ROCKETS'),
+		tag(w0(7, 'hardest'), s1(7), 'ITS HARDEST WELD', 140, 760, 56, C.weld),
+		cnt(w0(10, 'seven'), w0(10, 'tries'), s1(10) + 20, 700, 'TRIES'),
+		tag(w0(12, 'titan'), s1(12), 'TITAN', 140, 760, 64),
+	],
+};
+
+const ch1: Part = {
+	shots: [
+		shot(S(14), 'fall', (d, l) => <Fall dur={d} target={w0(14, 'six') - S(14) + l} beats={[w0(16, 'once') - S(14) + l, w0(17, 'again') - S(14) + l, w0(18, 'again') - S(14) + l]} race={w0(18, 'again') - S(14) + l + 30} />, {tag: 'ILLUSTRATION'}),
+		shot(S(19), 'fingernail', (d, l) => (
+			<Plate dur={d} seed="nail">
+				<Fingernail arrow={w0(19, 'finger') - S(19) + l} kg={w0(20, 'six') - S(19) + l} buffalo={w0(21, 'buffalo') - S(19) + l} />
+			</Plate>
+		), {tag: 'OUR CALCULATION'}),
+		hero(S(22), 'H4_squeeze', 0, 'SIMPLIFIED'),
+		shot(S(25), 'deep-titan', (d, l) => <Deep dur={d} word={{at: w0(26, 'titan') - S(25) + l, text: 'TITAN'}} />),
+		shot(S(27), 'report', (d, l) => <ReportPose dur={d} dim={w0(29, 'five') - S(27) + l} />, {credit: CR.uscg}),
+		shot(S(30), 'carbon', (d, l) => <CarbonHull dur={d} part={w0(31, 'layers') - S(30) + l} />, {tag: 'SIMPLIFIED'}),
+		shot(S(32), 'quote', (d, l) => (
+			<Quote
+				dur={d}
+				text="“OceanGate’s failure to follow established engineering protocols for safety, testing, and maintenance of their submersible, was the primary causal factor.”"
+				source="US COAST GUARD MARINE BOARD OF INVESTIGATION · 2025"
+			/>
+		)),
+		clip(S(33), 'ISRO_hall', CR.isro),
+		clip(S(35), 'ISRO_ti', CR.isro, 1.5),
+		hero(S(36), 'H2_seam', 0),
+		clip(S(37), 'ISRO_ut', CR.isro),
+		clip(S(38), 'F01_ball', CR.dd),
+		hero(S(39), 'H3_weights', 0),
+	],
+	overlays: [
+		tag(w0(28, 'june'), s1(29), '18.06.2023', 140, 180, 56, C.ink, true),
+		cnt(w0(24, 'lakh'), w0(24, 'tonnes'), s1(24) + 20, 100000, 'TONNES'),
+		tag(w0(31, 'kept'), s1(31), 'KEPT DIVING', 140, 860, 52, C.red),
+		tag(w0(35, 'titanium'), s1(35), 'TITANIUM', 140, 760, 64, C.ti),
+		tag(w0(36, 'ball'), s1(36), 'A BALL', 140, 760, 64),
+		stamp(w0(37, 'approves'), s1(37) + 10, 'CERTIFIED', C.green),
+		tag(w0(38, 'norway'), s1(38) + 10, 'CHECKED IN NORWAY', 140, 760, 56, C.green),
+		tag(w0(40, 'drop'), s1(40), 'DROP WEIGHTS', 140, 180, 56, C.amber),
+		tag(w0(40, 'rises'), s1(40), 'IT RISES', 140, 270, 52),
+		cnt(w0(41, 'ninety-six'), w0(41, 'hours'), s1(41) + 20, 96, 'HOURS OF AIR', 140, 720, 120, C.cyan),
+	],
+};
+
+export const a1: Part = {shots: [...open.shots, ...ch1.shots], overlays: [...open.overlays, ...ch1.overlays]};
+export {Hero};
