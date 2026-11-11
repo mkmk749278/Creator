@@ -168,7 +168,10 @@ const ch5: Part = {
 const ch6: Part = {
 	shots: [
 		hero(S(114), 'H1_dive', 0.4),
-		hero(S(116), 'H3_seabed', 0),
+		// real deep water (NOAA, public domain), then our seabed from 'Outside your window'
+		clip(S(116), 'NOAA_dark', CR.noaa, 0, 'ILLUSTRATIVE FOOTAGE'),
+		clip(S(117), 'NOAA_lights', CR.noaa, 0, 'ILLUSTRATIVE FOOTAGE'),
+		hero(S(118), 'H3_seabed', (S(118) - S(116)) / 60),
 		photo(pre(w0(119, 'seafloor')), 'geomar_nodules_wide.jpg', CR.geomar),
 		shot(S(120), 'basin', (d, l) => <Basin dur={d} area={w0(120, 'patch') - S(120) + l} since={w0(121, 'two') - S(120) + l} robot={w0(122, 'robot') - S(120) + l} lead={l} />),
 		photo(S(123), 'geomar_nodules_top.jpg', CR.geomar),

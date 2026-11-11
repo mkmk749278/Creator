@@ -155,10 +155,26 @@ titanium etc." And on the fingernail drawing: the buffalo was drawn the same siz
     `mix/mix.wav` is in Drive.
   - Level kept at about 25–27 dB under the voice (PLAYBOOK §12, older TV audience).
 
+## r4: the real clips built (2026-11-11, second session)
+- **Owner, 2026-11-11: the finger-and-buffalo shot is not that important; make it in code, but near to reality.** So no
+  composite. S21 is now `BuffaloTrueScale` (`remotion/src/parts/drawings.tsx`): world units are centimetres (finger
+  1.6 cm thick, buffalo about 1.45 m at the shoulder); the camera starts on the fingertip under a front hoof and pulls
+  back to the whole animal, a ring on ONE FINGERNAIL, the label DRAWN TO SCALE, the tag OUR CALCULATION.
+- Placed on their words: ISRO's PSLV-C51 lift-off as a framed insert (S5–6, replaces the rocket outline); a real hand
+  holding out a finger (S19); a real fingernail in macro at half speed with the arrow tracking the nail and the 600 KG
+  count (S20); a real hand squeezing a ball (S44, then H4_squeeze from S45); NOAA's dark midwater and lights on marine
+  snow (S116–117, ILLUSTRATIVE FOOTAGE; H3_seabed now enters at S118 at its own 7.5 s).
+- Six new clips in Drive `render-media/clips`; rows in `clips.tsv`, `clip_durations.json`, `media_manifest.csv`,
+  `word_map.md`. `prep_clips.py` at 3 jobs on 4K sources was killed (memory): use `--jobs 2`.
+- Not used: the Pexels finger on yellow (painted nail), the tennis-ball and massage clips, the underwater cave, the
+  "carbon fibre" fabric clips (not carbon fibre: the drawing stays).
+- 720p review cut r4 dispatched on `remotion-render.yml` from branch `ccr-6eb07f72-kfzr83` →
+  Drive `renders/matsya_review_r4_720p.mp4`.
+- AIP film at 24 h (11 Nov, 11:15 IST): public, 1,012 views, 7 likes, 1 comment (ours). This session's YouTube token
+  has no Analytics scope (403), so impressions and CTR must be read in Studio.
+
 ## Next session, in order
-1. Build the items above (the forced-perspective buffalo, the finger, the ball, the ISRO launch, the NOAA dark),
-   check stills, render the 720p review cut r4 (`remotion-render.yml`, name `matsya_review_r4_720p.mp4`), and our
-   full review (`review/review.md` § r4).
+1. Our full review of r4 (`review/review.md` § r4): measured checks and the changed shots against the audio.
 2. Independent viewer review (§13.3): the reviewer needs r4 shared by "anyone with the link". Ask the owner first;
    it was asked for r3 and not yet answered. Then write `review_ack_r1.md` and get the owner's approval of the cut.
 3. The owner's listen to the music reel; swap any flagged cue and re-run the mix.

@@ -1,11 +1,11 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import type {Part} from '../Film';
-import {CarbonHull, Fall, Fingernail, WeldBars} from '../parts/drawings';
-import {ez, Hero, Plate, tw} from '../parts/kit';
+import {BuffaloTrueScale, CarbonHull, Fall, NailPress, WeldBars} from '../parts/drawings';
+import {Clip, ez, Hero, Plate, tw} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
-import {clip, cnt, CR, Deep, hero, lab, pre, Quote, ReportPose, shot, stamp, tag} from './common';
+import {clip, cnt, CR, Deep, hero, insert, lab, pre, Quote, ReportPose, shot, stamp, tag} from './common';
 
 // Cold open and Ch1 (S0–S41), word_map.md. Frames from the locked audio r2 (vo/timing.json).
 
@@ -16,24 +16,6 @@ const Dip: React.FC<{peak: number}> = ({peak}) => {
 	return <AbsoluteFill style={{background: `rgba(2,6,11,${o})`}} />;
 };
 
-/** S5–6: "Isro is known for rockets": a rocket outline slides up out of frame on the plate */
-const RocketOutline: React.FC<{dur: number}> = ({dur}) => {
-	const f = useCurrentFrame();
-	const y = tw(f, 0, dur, 120, -260, (t) => t);
-	return (
-		<Plate dur={dur} seed="rocket">
-			<svg width={1920} height={1080} style={{position: 'absolute'}}>
-				<g transform={`translate(960 ${y})`} fill="none" stroke={C.ink} strokeWidth={5}>
-					<path d="M0 120 C30 170 40 230 40 300 L40 820 L-40 820 L-40 300 C-40 230 -30 170 0 120 Z" />
-					<path d="M-40 700 L-110 840 L-40 820 M40 700 L110 840 L40 820" />
-					<rect x={-70} y={520} width={30} height={260} rx={10} />
-					<rect x={40} y={520} width={30} height={260} rx={10} />
-				</g>
-			</svg>
-		</Plate>
-	);
-};
-
 const S = s0;
 const open: Part = {
 	shots: [
@@ -41,7 +23,8 @@ const open: Part = {
 		clip(S(2), 'ISRO_hall', CR.isro),
 		clip(pre(w0(2, 'deep-sea')) + 60, 'ISRO_ballred', CR.isro),
 		hero(S(4), 'H2_pieces', 0),
-		shot(S(5), 'rocket', (d, l) => <RocketOutline dur={d} />),
+		// ISRO's own lift-off film (PSLV-C51), a framed insert: the source is 480p
+		insert(S(5), 'ISRO_liftoff', CR.isro, 16 / 9, 2.0),
 		clip(S(7), 'ISRO_ebglow', CR.isro),
 		clip(S(8), 'ISRO_ballred', CR.isro),
 		shot(S(9), 'weldbars', (d, l) => (
@@ -71,15 +54,18 @@ const ch1: Part = {
 		clip(S(14), 'PX_rays', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
 		clip(S(15), 'PX_reef', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
 		clip(S(16), 'PX_rays', CR.px, 6, 'ILLUSTRATIVE FOOTAGE'),
-		shot(S(19), 'fingernail', (d, l) => (
-			<Plate dur={d} seed="nail">
-				<Fingernail arrow={w0(19, 'finger') - S(19) + l} kg={w0(20, 'six') - S(19) + l} buffalo={1e6} />
-			</Plate>
-		), {tag: 'OUR CALCULATION'}),
+		// a real finger, a real nail, a real buffalo; then the buffalo on the nail drawn at true size (owner, r3)
+		clip(S(19), 'PX_finger', CR.pex),
+		shot(S(20), 'nail-press', (d, l) => (
+			<AbsoluteFill>
+				<Clip name="PX_nail" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.0, 0, 0]} />
+				<NailPress arrow={w0(20, 'press') - S(20) + l} kg={w0(20, 'six') - S(20) + l} />
+			</AbsoluteFill>
+		), {tag: 'OUR CALCULATION', credit: CR.pex}),
 		clip(S(21), 'PX_buffalo', CR.px),
 		shot(pre(w0(21, 'on')), 'nail-buffalo', (d) => (
-			<Plate dur={d} seed="nail2">
-				<Fingernail arrow={-60} kg={-60} buffalo={6} />
+			<Plate dur={d} seed="nail2" from={[1.0, 0, 0]} to={[1.03, 0, 0]}>
+				<BuffaloTrueScale dur={d} />
 			</Plate>
 		), {tag: 'OUR CALCULATION'}),
 		hero(S(22), 'H4_squeeze', 0, 'SIMPLIFIED'),

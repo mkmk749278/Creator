@@ -25,7 +25,7 @@ shows Matsya or its parts; SIMPLIFIED on the squeeze; OUR CALCULATION on 7.1 m a
 | 1 | 7.24–9.82 | **H1_dive** 7.2–9.8 s: through the window (cover 7.3–7.8 s with a quick dip through the glass) to the three seats | "two other Indians" → the three seats get a soft warm light, one by one |
 | 2–3 | 10.49–16.31 | ISRO 1:41.5–1:44 the real ball in its frame at the hall; → ISRO 1:52–1:54 the painted ball, red window | "deep-sea sub for people" → label HUMAN-RATED; "Matsya" → name stamp MATSYA 6000 |
 | 4 | 16.94–21.54 | **H2_pieces** 0–4.6 s (the exploded stack) | "five pieces" → a soft count 1–5 on the pieces; "seven welds" → seven faint lines appear on the joints (R overlay) |
-| 5–8 | 22.11–29.81 | ISRO 2:05.5 the glowing forged billet → a rocket launch is NOT used (third-party); instead R: an ISRO-rocket silhouette outline that slides out of frame | "rockets" → outline; "hardest weld" → ISRO 2:26.5–2:29 the EB weld glow through the port; "this ball" → ISRO 1:52 the ball |
+| 5–8 | 22.11–29.81 | **ISRO PSLV-C51 lift-off** (ISRO's own film, 480p: a framed insert), from S5 | "rockets" → the rocket leaving the pad; "hardest weld" → ISRO 2:26.5–2:29 the EB weld glow through the port; "this ball" → ISRO 1:52 the ball |
 | 9–10 | 30.20–36.97 | **R** two weld cross-sections at true scale on the plate: 20 mm and 80 mm | "four times thicker" → the 80 mm bar grows ×4; "seven hundred tries" → counter 0→700 (Mono) |
 | 11–13 | 37.49–43.74 | **H4_squeeze** 0–6 s (the ball before the arrows), slow push | "Titan" → one word, white, no image; "know both" → hold, music dips |
 
@@ -34,7 +34,7 @@ shows Matsya or its parts; SIMPLIFIED on the squeeze; OUR CALCULATION on 7.1 m a
 |---|---|---|---|
 | 14 | 44.26–48.50 | **T** a fall through dark water, depth counter 0 m (Mono) | "six kilometres" → counter target 6,000 m appears |
 | 15–18 | 49.02–58.09 | **T** fall continues; every "ten metres" a ring of pressure passes the camera | "Once more" / "And again" ×2 → counter jumps 10→20→30 m with a pulse each, then races |
-| 19–21 | 58.63–69.08 | **R** a fingernail close-up on the plate, an arrow down | "six hundred kilos" → 600 kg (Mono, amber); "buffalo" → a buffalo silhouette standing on the nail (OUR CALCULATION: 615 kg on 1 cm² at 6,000 m) |
+| 19–21 | 58.63–69.08 | Real clips (owner, r3): S19 a hand holds out one finger (Pexels 9465178); S20 a fingernail in macro (Pexels 7299380) with the arrow and the count; S21 a real buffalo (Pixabay 15742), then **R** the buffalo on the nail drawn to scale (owner, 2026-11-11: in code, near to reality) | "finger" → the finger goes up; "press" → the arrow lands on the nail; "six hundred kilos" → 600 KG (amber); "standing on one fingernail" → the camera pulls back from the fingertip under a hoof to the whole animal, a ring on ONE FINGERNAIL (OUR CALCULATION: 615 kg on 1 cm² at 6,000 m) |
 | 22–24 | 69.68–81.71 | **H4_squeeze** 0–12 s (arrows spread at "cover", push in at "squeezes") | "one lakh tonnes" → 1,00,000 t (Mono); "every side at once" → the arrows press together. Label SIMPLIFIED |
 | 25–26 | 82.26–86.71 | black, the ball's silhouette only | "Titan" → TITAN in plain white, no image |
 | 27–29 | 87.26–94.38 | **document pose:** the USCG report cover (US government work) on the plate, slow push | "June 2023" → date 18.06.2023; "Five people died" → the frame holds still and dims; silence under the music |
@@ -46,7 +46,7 @@ shows Matsya or its parts; SIMPLIFIED on the squeeze; OUR CALCULATION on 7.1 m a
 | S | Time | Base | → word |
 |---|---|---|---|
 | 42–43 | 134.05–137.99 | **R** a long tube vs a ball on the plate, same arrows | "long tube" → the tube's flat ends glow amber (where it would fail) |
-| 44–46 | 138.32–146.12 | **H4_squeeze** (second use, 6–12 s, the arrows pressing evenly) | "spread all the way round" → a ring of amber travels round; "no corner" → R corner icon crossed out |
+| 44–46 | 138.32–146.12 | S44 a real hand squeezes a ball (Pexels 11923146); from S45 **H4_squeeze** (second use, the arrows pressing evenly) | "spread all the way round" → a ring of amber travels round; "no corner" → R corner icon crossed out |
 | 47–49 | 146.39–158.89 | **Alvin photo** (to source: NOAA/WHOI public-domain) | "1964 · steel" → date + STEEL; "1973 · titanium" → TITANIUM; "twice as deep" → two depth bars 2,440 → 4,500 m |
 | 50–52 | 159.19–168.32 | **R** (ILLUSTRATION) a plain steel ball lowered from a ship's A-frame on a cable, a depth line to 600 m. No real picture is confirmed as the 2021 sphere (F08's black sphere is unidentified), so we draw it | "2021" → date; "six hundred metres" → 600 m; "Bay of Bengal" → R small map, official boundary; "Then came titanium" → hard cut to H2_pieces frame 0 |
 
@@ -81,7 +81,7 @@ shows Matsya or its parts; SIMPLIFIED on the squeeze; OUR CALCULATION on 7.1 m a
 | S | Time | Base | → word |
 |---|---|---|---|
 | 114–115 | 357.20–361.06 | black water, the ball silhouette | "worth it" → hold |
-| 116–119 | 362.66–377.94 | **H3_seabed** whole clip (frame 0 = 362.66 s) | "no sunlight" → black; "Your lights" → the lamps come on in order; "close to freezing" → NEAR FREEZING (cyan; claim M36, NOAA; no number); "black lumps of metal" → the nodules lit |
+| 116–119 | 362.66–377.94 | S116–117 NOAA deep-dive footage (public domain, ILLUSTRATIVE FOOTAGE); **H3_seabed** from S118 at its own 7.5 s (its frame 0 still = 362.66 s) | "no sunlight" → real dark midwater; "Your lights" → real lights on marine snow; "close to freezing" → NEAR FREEZING (cyan; claim M36, NOAA; no number); "black lumps of metal" → the nodules lit |
 | 120–122 | 378.44–391.98 | **R** India map (official boundary), the Central Indian Ocean Basin patch, about 75,000 km² | "since 2002" → 2002; "robot sub · 2022" → 5,271 m (claim; draw the robot as an outline, no photo) |
 | 123–124 | 392.32–398.35 | **H3_seabed** nodule close-up frames | "nickel, copper and cobalt" → Ni Cu Co tiles on the nodules; "your phone" → a phone-battery outline |
 | 125–129 | 398.66–408.61 | **H3_seabed** slow drift | "Nobody is allowed to mine" → NO MINING YET; "pair of eyes" → the viewport glows |
