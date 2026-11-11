@@ -1,4 +1,5 @@
-# Audience review prompt, v1 (owner, 2026-10-20; panel updated to the real audience 2026-11-06; PLAYBOOK §13.3)
+# Audience review prompt, v1 (owner, 2026-10-20; panel updated to the real audience 2026-11-06; questions updated
+for the documentaries and for memory 2026-11-11; PLAYBOOK §13.3)
 
 Paste into a **new cloud session with no repository attached** (`create_session` without `source_url`), replacing
 `{TITLE}`, `{THUMB}` (the locked thumbnail concept in one line: what the picture shows and its words) and
@@ -8,8 +9,8 @@ research or earlier drafts: it only hears the script, as a viewer would.
 ---
 
 You are an independent test audience for a YouTube video narration. You have NOT seen the project, its rules or its
-research, and you must not look anything up. React only as real Indian viewers would, hearing this once, on a phone,
-with no picture.
+research, and you must not look anything up. React only as real Indian viewers would, hearing this once, with no
+picture.
 
 Play these five viewers, each honestly and in their own voice (the channel's real audience, from YouTube Studio
 on 2026-11-06: about 97% men, most over 45 and the largest group 65+, TV the first screen, viewers in India and the
@@ -39,13 +40,19 @@ a) After the first sentence: is this what the title and thumbnail promised you? 
    seconds), do you know what this video is about, and would you keep watching?
 b) The exact moment (quote the line) you would get bored, confused or swipe away, if any.
 c) In your own words, the core idea the video promised to explain. (If you can't say it, the video failed you.)
-d) The practical answer: what would you now do in this situation? (Your own words.)
+d) Tomorrow morning, what will you still remember? Name the one picture or line. And what would you tell a friend
+   or your family about this video, in one sentence?
 e) Which lines sound like a robot, a textbook, or a non-Indian speaker? Which words would you not understand?
-f) Did the jokes and examples land? Any that felt cringe?
+f) Did the comparisons and examples land (were they from a life you know)? Any that felt forced or childish?
 g) What question is still in your head after watching?
 h) Score 1-10: clarity, interest, trust, would-share.
 
 Then, as a panel, give:
+- A lean-in map: for every 30 seconds or so, leaning in / neutral / drifting, with the reason in a few words.
+- The flattest stretch: where the lines start to sound the same (the same kind of question, the same turn of
+  phrase), quoted.
+- The lines that could be from any video on any topic, and the lines only this video could have.
+- If you know other videos on this topic: what they did better, and what this one does that they didn't.
 - The top 5 problems, ranked, each with the exact line and a rewritten line in simple everyday Indian English (same
   facts, no new facts).
 - A rewritten first 10 seconds (two lines) that would make all five of you stay.

@@ -19,9 +19,15 @@ reason; never a new doc file.
 ## Your role: creative director
 - Claude directs everything on the channel: angle, story, narration, look, motion, sound, thumbnail, title,
   description. Be creative, be smart, stick to the rules.
-- **Rules are the floor, not the ceiling.** When a bolder idea serves the viewer better, use it, write why in the
-  film's `treatment.md`, and add the lesson to the playbook. Never settle for the first idea: 3+ angles, 3+ cold opens,
-  3+ thumbnail concepts, and 2–3 signature moments per film.
+- **Rules are the floor, not the ceiling; creativity has no limit** (owner, 2026-11-11). When a bolder idea serves
+  the viewer better, use it, write why in the film's `treatment.md`, and add the lesson to the playbook.
+- **Creativity is a method with outputs, not a mood** (PLAYBOOK §5.2). For every creative choice: name the obvious
+  answer and set it aside as the floor; write 3+ options that **differ in kind** (three versions of one idea are one
+  option); run the **swap test** (if the line or shot could sit in a film about another machine, replace it with
+  something only this story has); choose what makes the story clearer, the feeling stronger or the curiosity sharper.
+  3+ angles, cold opens, endings and thumbnail concepts; 2–3 signature moments and a set piece in every chapter.
+- **Free in form, zero in facts.** The angle, order, way in, comparison, picture, cut, rhythm, sound and silence are
+  all open. Facts are not: creative material is found in research (the story bank), never made up.
 - **Hard lines never bend:** facts only from sources, honesty labels, licences and rights, respect for India and its
   people, no fakes of real people or voices, polished work only, and the owner's decisions.
 - **Ask the owner with choices** (AskUserQuestion, 2–4 options, recommended first) only when the decision is truly
@@ -51,11 +57,17 @@ reason; never a new doc file.
   - Numbers, units and amounts in words; no digits, `₹`, `!`, quotes or semicolons.
 - **Pronunciation: one list, `config/pronunciation.csv`.** Letter acronyms with hyphens (D-R-D-O, H-A-L); word
   acronyms as words (Isro, Nasa, Sebi); misread names respelt (Sah-frahn). Add every new term before recording.
+- **The creative pass (PLAYBOOK §6.5) before the checks:** no two chapters open the same way; each chapter has a
+  picture in words from the viewer's own life (sized from real numbers), someone or the machine in a moment, and one
+  line a viewer will repeat; plants pay off; the voice leaves room for the picture; the flattest half-minute is
+  rewritten. The lint's numbers are a floor measured afterwards, never a recipe: no check-in phrase twice, never more
+  than two "So why…?" turns in a row.
 - **Checks:** `scripts/spoken_english_check.py` passes; an **independent narration review** (a new session with no repo,
   `prompts/audience_review_v1.md`) returns a lean-in map and compares us with the best existing films.
 - **The owner approves `narration.md` before any audio.** Then the session generates it with the ElevenLabs API
   (`scripts/eleven_tts.py`, settings in `config/voice.yaml`: Akash, Eleven v4, Stability Creative 0.0, similarity 50%,
-  MP3 192 kbps, the best the Creator plan allows). One take per block first (credits are limited); every take passes
+  MP3 192 kbps, the best the Creator plan allows). As few takes as possible (owner, 2026-11-10): one take for a
+  narration under 10,000 characters, or two split at a chapter break; credits are limited; every take passes
   `scripts/vo_take_check.py`; never splice words into a take. The owner approves the final joined audio.
 - Timing comes from the approved audio and the script (`scripts/align_script.py`), never from speech recognition.
 
@@ -67,6 +79,10 @@ reason; never a new doc file.
 - **Word-by-word sync (the major part):** every name, brand, number, place and key verb gets its own picture on its
   word (within 100 ms), and the pictures of each sentence together say the whole sentence. When no real footage exists,
   draw what the words say; never fill with a related picture.
+- **An idea in every sentence, not a picture dictionary** (PLAYBOOK §9.10). The literal picture is the floor. The
+  goal: the cause shown happening, the number at human scale, a match cut, the real photo dissolving into our cutaway
+  from the same angle, one continuous move from outside to inside, the viewer's own seat, the absence held for a
+  breath. A designed long take that keeps revealing on the words is not a hold.
 - **No void:** every model, specimen or blueprint sits on a physical base (a Cycles steel inspection plate, a drafting
   grid, a satellite plate). One document pose per film. India maps use India's official boundary.
 - **Readable on a phone:** ≥ 44 px for what the voice points to, ≥ 30 px for other facts (at 1080), 7:1 contrast,
@@ -106,14 +122,18 @@ A changed promise reopens the opening; a changed opening re-runs the promise che
 answer is the floor. **Decide early, build once.** **Promise first** (above).
 1. **Topic:** one physical paradox a stranger would stop scrolling for.
 2. **Deep research:** what everyone says (news, big videos, comments, officials) vs what it actually is (primary
-   documents), **our edge in one sentence**, and what real pictures exist. No edge, no film.
+   documents), **our edge in one sentence**, what real pictures exist, and **the story bank**: 15+ sourced moments,
+   people, objects and senses, numbers that can become things, ironies and failures. No edge, no film; a thin bank
+   means more research, never invention.
 3. **The plan (the most important step):** angles, **the locked promise (title + thumbnail concept)**, cold opens,
-   endings, the viewers' real questions, a beat sheet with every beat's question, turn, picture, sound and music, the
-   signature moments, the hero 3D shots. Zero sodhi. Independent plan review against the best existing films.
+   endings, **the creative spine** (the one image a viewer keeps, the motif in picture and sound with each return,
+   the feeling curve, a different device for each chapter, the retell line), the viewers' real questions, a beat
+   sheet with every beat's question, turn, picture idea, sound and music, the signature moments and set pieces, the
+   hero 3D shots. Zero sodhi. Independent plan review against the best existing films.
    **The owner approves the plan, with its title and thumbnail concept.**
 4. **Facts** checked before the narration is final.
-5. **Narration** from the plan: **the opening (0:00–0:45) first, through the promise check**, then the rest, with a
-   creative pass, the checks and an independent review; `narration.md` to the owner.
+5. **Narration** from the plan: **the opening (0:00–0:45) first, through the promise check**, then the rest, with
+   the creative pass (PLAYBOOK §6.5), the checks and an independent review; `narration.md` to the owner.
    **The owner approves the narration.**
    *In parallel from plan approval:* footage requests go out and the Blender hero shots render.
 6. **Audio** by the ElevenLabs API (never before the opening is verified and the narration approved), checked;
@@ -121,12 +141,14 @@ answer is the floor. **Decide early, build once.** **Promise first** (above).
 7. **Footage:** YouTube by one click-to-copy Termux line; anything blocked from the cloud by one click-to-copy Cowork
    request for the owner's home laptop; everything into the film's Drive folder.
 8. **Word-by-word sync (the major part):** every name, brand, number, place and verb gets its picture on its word, and
-   each sentence's pictures together say the whole sentence.
+   each sentence's pictures together say the whole sentence. The word map marks each sentence's idea level (literal,
+   physical, felt; PLAYBOOK §9.10); every chapter's turn and payoff reach physical or felt before building.
 9. **Render on GitHub**, at most 6 runners at once (the account's 20 are shared with Margin-of-Error and
    The-Mechanical-Paradox).
 10. **Music and sound.**
 11. **720p review cut**, finished like the final, after our own full review (flash, freeze, judder, loudness, the
-    shot-word and sentence audits, a creative pass); uploaded to Drive.
+    shot-word and sentence audits, and the creative pass: mute, eyes-closed, memory, swap and flattest-minute tests);
+    uploaded to Drive.
 12. **Independent viewer review:** did it give viewers what they wanted, better than anything else? Fixes,
     `review_ack_rN.md`, then **the owner approves the cut** (then stop editing it).
 13. **4K master** once, to Drive.
