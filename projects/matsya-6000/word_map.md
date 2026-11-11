@@ -1,3 +1,6 @@
+> **2026-11-11:** this map is for narration v2. The film now runs on v3 (`vo.txt`); until this file is rewritten,
+> the shot list in `remotion/src/scenes/*` is the truth.
+
 # Word map · ISRO's Hardest Weld Isn't for a Rocket (PLAYBOOK §9.5)
 
 Times come from the locked audio r2 (`vo/timing.json`, 452.13 s, approved 2026-11-10). `S#` = sentence id. The base

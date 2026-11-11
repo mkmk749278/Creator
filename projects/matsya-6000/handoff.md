@@ -188,3 +188,28 @@ titanium etc." And on the fingernail drawing: the buffalo was drawn the same siz
 - If the owner chooses v3: the independent narration review, a paid one-take recording (about 8,600 credits), a new
   lock, and `word_map.md` re-timed; most r3 pictures carry over, the new lines need pictures (Kishore moments, the
   Titan pressure comparison, 15 → 40 kW, Samudra Manthan, the monsoon, the closing line).
+
+## The film rebuilt on narration v3 (2026-11-11, third session)
+- **Owner, 2026-11-11:** agreed to all the audience findings, generated v3 himself as one take (uploaded
+  `Matsya.mp3`, 543.7 s, mono 128 kbps) and said "Build the full film". **v3 is now `vo.txt`**; v2's text, lock and
+  timing are in `vo/v2/`. The take is in Drive `vo/v3/mat_v3_vo_full.mp3`.
+- **Open question on the voice file:** the owner said he would generate on a free account. Free-plan audio is not
+  licensed for the channel (PLAYBOOK §6.6). Before any upload to YouTube, ask which account made this take; if free,
+  a paid take is needed (about 8,600 credits), then a new lock, and the word cues re-checked (pace will differ).
+- Lock: `vo_lock.py`, 183 sentences, 1,549 words, 9:04 + 4 s outro; every sentence ratio 0.63–1.37 except the short
+  "One pass." (1.6); no repeat or skip signs. Not listened to by a person other than the owner.
+- **Shot list re-cut for v3** in `remotion/src/scenes/*` (`word_map.md` is still the v2 map: the scene files are the
+  truth until it is rewritten). New: `Ask` speech bubbles for the two Kishore questions, `PressureCompare` (Titan about
+  340 bar against 600 bar, OUR CALCULATION, M-CALC6), 15 → 40 kW, the monsoon (PX_storm), Samudra Manthan over a real
+  sea (PX_churn), ₹4,077 crore with its source, the saying over H2_seam, the closing name and line on the end card.
+  F01_foam is no longer used (a minister stands in frame).
+- Sound: `score.json` and `sfx.json` re-mapped to the v3 sentence ids; mix −14.4 LUFS, about −1.2 dBTP, in Drive
+  `mix/mix.wav` (the v2 mix kept as `mix/mix_v2_r4.wav`).
+- **720p cut dispatched:** run 42975445665 on `remotion-render.yml` from `ccr-52953fd3-sfo7sb` →
+  Drive `renders/matsya_review_r5_v3_720p.mp4`.
+- **Known weak points to fix after the first look:** the cricket ball is small in frame (S48) and the hand squeezes a
+  blue ball (S49); the carbon-fibre drawing is faint (S33–34); the China depth ladder runs 16 s (S155–158); the
+  opening still starts on our 3D ball for 4 s before the real one; paradox lands at 0:25–0:30 and the loop ends at
+  0:53 (the rule says 0:45).
+- **Still to do:** our full review of r5 (measured checks, shot-word audit), the independent narration review of v3
+  and the independent viewer review, then the owner's approval of the cut.
