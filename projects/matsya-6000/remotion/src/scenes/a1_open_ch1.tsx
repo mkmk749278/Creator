@@ -13,10 +13,9 @@ const S = s0;
 
 const open: Part = {
 	shots: [
-		// the thumbnail's subject first, then the real ball on "this titanium ball"
-		// the real sea first (owner on r6: the deep looked like space), then down to the ball
-		clip(S(0), 'PX_surface', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
-		hero(pre(w0(0, 'water')), 'H1_dive', 0.3),
+		// the thumbnail's subject first (the ball), sinking through real-looking water with the depth counter
+		// (owner on r6: the deep looked like space; SeaOver now makes it sea), then the real ball on "this titanium ball"
+		hero(S(0), 'H1_dive', 0),
 		clip(pre(w0(0, 'this')), 'F01_ballhall', CR.dd),
 		// the hall clip pans to another vehicle after 3 s: the squeeze takes over on 'almost one lakh tonnes'
 		hero(pre(w0(0, 'almost')), 'H4_squeeze', 3.0, 'SIMPLIFIED'),
