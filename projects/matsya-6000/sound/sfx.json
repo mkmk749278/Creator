@@ -1,48 +1,263 @@
-{"cues": [
-  {"at": "w:0:lakh", "sfx": "impact_low", "gain_db": -12},
-  {"at": "s:1+0.2", "sfx": "whoosh", "gain_db": -12},
-  {"at": "w:4:seven", "sfx": "glint", "gain_db": -14},
-  {"at": "w:7:hardest", "to": "w:7:rocket", "sfx": "sparks", "gain_db": -16},
-  {"at": "w:10:tries", "sfx": "counter_land", "gain_db": -12},
-  {"at": "w:16:once", "sfx": "impact_low", "gain_db": -14},
-  {"at": "w:17:again", "sfx": "impact_low", "gain_db": -14},
-  {"at": "w:18:again", "sfx": "impact_low", "gain_db": -13},
-  {"at": "w:20:kilos", "sfx": "counter_land", "gain_db": -12},
-  {"at": "w:21:buffalo", "sfx": "impact_low", "gain_db": -10},
-  {"at": "w:24:add", "to": "w:24:squeezes", "sfx": "riser", "gain_db": -16},
-  {"at": "w:24:once", "sfx": "impact_low", "gain_db": -10},
-  {"at": "w:37:approves", "sfx": "stamp", "gain_db": -10},
-  {"at": "w:40:drop+0.6", "sfx": "impact_low", "gain_db": -12},
-  {"at": "w:41:hours", "sfx": "counter_land", "gain_db": -12},
-  {"at": "w:43:tube", "sfx": "glint", "gain_db": -14},
-  {"at": "w:49:titanium", "sfx": "glint", "gain_db": -14},
-  {"at": "w:52:titanium", "sfx": "whoosh", "gain_db": -12},
-  {"at": "w:58:hatch", "sfx": "metal_slam", "gain_db": -16},
-  {"at": "w:59:rings", "sfx": "metal_slam", "gain_db": -16},
-  {"at": "w:60:dome", "sfx": "metal_slam", "gain_db": -16},
-  {"at": "s:57+8.2", "sfx": "metal_slam", "gain_db": -11},
-  {"at": "w:63:four", "to": "w:64:windows+1.0", "sfx": "sparks", "gain_db": -17},
-  {"at": "w:68:crack", "sfx": "impact_low", "gain_db": -14},
-  {"at": "w:71:beam", "sfx": "whoosh", "gain_db": -12},
-  {"at": "w:75:eight", "sfx": "impact_low", "gain_db": -12},
-  {"at": "w:76:powerful+1.0", "sfx": "counter_land", "gain_db": -12},
-  {"at": "w:78:trial", "sfx": "counter_land", "gain_db": -12},
-  {"at": "w:79:real", "sfx": "impact_low", "gain_db": -8},
-  {"at": "s:80", "to": "e:80", "sfx": "sparks", "gain_db": -17},
-  {"at": "w:81:seven", "sfx": "whoosh", "gain_db": -10},
-  {"at": "w:82:minutes", "sfx": "counter_land", "gain_db": -10},
-  {"at": "w:86:xray", "sfx": "glint", "gain_db": -13},
-  {"at": "w:88:certify", "sfx": "stamp", "gain_db": -10},
-  {"at": "w:103:batteries", "sfx": "metal_slam", "gain_db": -18},
-  {"at": "w:103:motors", "sfx": "metal_slam", "gain_db": -18},
-  {"at": "w:104:sinks", "sfx": "whoosh", "gain_db": -10},
-  {"at": "w:105:foam", "sfx": "impact_low", "gain_db": -13},
-  {"at": "w:110:crack", "sfx": "glint", "gain_db": -14},
-  {"at": "w:117:lights", "sfx": "impact_low", "gain_db": -11},
-  {"at": "w:121:two", "sfx": "counter_land", "gain_db": -13},
-  {"at": "w:126:nobody", "sfx": "stamp", "gain_db": -12},
-  {"at": "w:131:deepest", "sfx": "whoosh", "gain_db": -13},
-  {"at": "w:138:one", "sfx": "impact_low", "gain_db": -10},
-  {"at": "w:139:six", "sfx": "impact_low", "gain_db": -10},
-  {"at": "w:143:subscribe", "sfx": "glint", "gain_db": -13}
-]}
+{
+ "cues": [
+  {
+   "at": "w:0:lakh",
+   "sfx": "impact_low",
+   "gain_db": -12
+  },
+  {
+   "at": "s:1+0.2",
+   "sfx": "whoosh",
+   "gain_db": -12
+  },
+  {
+   "at": "w:3:seven",
+   "sfx": "glint",
+   "gain_db": -14
+  },
+  {
+   "at": "w:8:hardest",
+   "sfx": "sparks",
+   "gain_db": -16,
+   "to": "w:8:rocket"
+  },
+  {
+   "at": "w:12:tries",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:19:once",
+   "sfx": "impact_low",
+   "gain_db": -14
+  },
+  {
+   "at": "w:20:twice",
+   "sfx": "impact_low",
+   "gain_db": -14
+  },
+  {
+   "at": "w:21:six",
+   "sfx": "impact_low",
+   "gain_db": -13
+  },
+  {
+   "at": "w:22:kilos",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:23:buffalo",
+   "sfx": "impact_low",
+   "gain_db": -10
+  },
+  {
+   "at": "w:26:thats",
+   "sfx": "riser",
+   "gain_db": -16,
+   "to": "w:26:lakh"
+  },
+  {
+   "at": "w:26:once",
+   "sfx": "impact_low",
+   "gain_db": -10
+  },
+  {
+   "at": "w:37:matsya",
+   "sfx": "impact_low",
+   "gain_db": -12
+  },
+  {
+   "at": "w:43:approve",
+   "sfx": "stamp",
+   "gain_db": -10
+  },
+  {
+   "at": "w:46:drop+0.6",
+   "sfx": "impact_low",
+   "gain_db": -12
+  },
+  {
+   "at": "w:47:hours",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:52:tube",
+   "sfx": "glint",
+   "gain_db": -14
+  },
+  {
+   "at": "w:55:titanium",
+   "sfx": "glint",
+   "gain_db": -14
+  },
+  {
+   "at": "w:58:titanium",
+   "sfx": "whoosh",
+   "gain_db": -12
+  },
+  {
+   "at": "w:63:hatch",
+   "sfx": "metal_slam",
+   "gain_db": -16
+  },
+  {
+   "at": "w:64:rings",
+   "sfx": "metal_slam",
+   "gain_db": -16
+  },
+  {
+   "at": "w:65:dome",
+   "sfx": "metal_slam",
+   "gain_db": -16
+  },
+  {
+   "at": "w:69:four",
+   "sfx": "sparks",
+   "gain_db": -17,
+   "to": "w:70:windows+1.0"
+  },
+  {
+   "at": "w:74:crack",
+   "sfx": "impact_low",
+   "gain_db": -14
+  },
+  {
+   "at": "w:77:beam",
+   "sfx": "whoosh",
+   "gain_db": -12
+  },
+  {
+   "at": "w:81:eight",
+   "sfx": "impact_low",
+   "gain_db": -12
+  },
+  {
+   "at": "w:84:forty",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:89:trial",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:90:real",
+   "sfx": "impact_low",
+   "gain_db": -8
+  },
+  {
+   "at": "s:92",
+   "sfx": "sparks",
+   "gain_db": -17,
+   "to": "e:92"
+  },
+  {
+   "at": "w:92:seven",
+   "sfx": "whoosh",
+   "gain_db": -10
+  },
+  {
+   "at": "w:94:minutes",
+   "sfx": "counter_land",
+   "gain_db": -10
+  },
+  {
+   "at": "w:100:xray",
+   "sfx": "glint",
+   "gain_db": -13
+  },
+  {
+   "at": "w:102:certify",
+   "sfx": "stamp",
+   "gain_db": -10
+  },
+  {
+   "at": "w:113:hours",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:121:batteries",
+   "sfx": "metal_slam",
+   "gain_db": -18
+  },
+  {
+   "at": "w:121:motors",
+   "sfx": "metal_slam",
+   "gain_db": -18
+  },
+  {
+   "at": "w:122:sinks",
+   "sfx": "whoosh",
+   "gain_db": -10
+  },
+  {
+   "at": "w:123:foam",
+   "sfx": "impact_low",
+   "gain_db": -13
+  },
+  {
+   "at": "w:128:crack",
+   "sfx": "glint",
+   "gain_db": -14
+  },
+  {
+   "at": "w:139:lights",
+   "sfx": "impact_low",
+   "gain_db": -11
+  },
+  {
+   "at": "w:144:two",
+   "sfx": "counter_land",
+   "gain_db": -13
+  },
+  {
+   "at": "w:147:samudra",
+   "sfx": "impact_low",
+   "gain_db": -10
+  },
+  {
+   "at": "w:149:crore",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:151:nobody",
+   "sfx": "stamp",
+   "gain_db": -12
+  },
+  {
+   "at": "w:156:deepest",
+   "sfx": "whoosh",
+   "gain_db": -13
+  },
+  {
+   "at": "w:162:stronger",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:168:one",
+   "sfx": "impact_low",
+   "gain_db": -10
+  },
+  {
+   "at": "w:169:six",
+   "sfx": "impact_low",
+   "gain_db": -10
+  },
+  {
+   "at": "w:171:weakest",
+   "sfx": "impact_low",
+   "gain_db": -10
+  },
+  {
+   "at": "w:177:subscribe",
+   "sfx": "glint",
+   "gain_db": -13
+  }
+ ]
+}

@@ -180,3 +180,96 @@ titanium etc." And on the fingernail drawing: the buffalo was drawn the same siz
 3. The owner's listen to the music reel; swap any flagged cue and re-run the mix.
 4. Fresh-facts gate before upload: ISRO's July 2025 wording on "successful testing" vs S136 / M26; M05, M33.
 5. Ask before trashing r1–r3 in Drive. Keep r3 until r4 is approved.
+
+## Narration v3 (2026-11-11)
+- The owner asked for a rewrite after the audience read (PLAYBOOK §1.2, §1.3). `vo_v3.txt` / `narration_v3.md`:
+  1,549 words, 8,566 characters, both gates pass (46 claims). **v2 (`vo.txt`, the lock, r1–r3) is untouched.**
+- The owner is generating v3 on a free ElevenLabs account to listen (not licensed for the channel).
+- If the owner chooses v3: the independent narration review, a paid one-take recording (about 8,600 credits), a new
+  lock, and `word_map.md` re-timed; most r3 pictures carry over, the new lines need pictures (Kishore moments, the
+  Titan pressure comparison, 15 → 40 kW, Samudra Manthan, the monsoon, the closing line).
+
+## The film rebuilt on narration v3 (2026-11-11, third session)
+- **Owner, 2026-11-11:** agreed to all the audience findings, generated v3 himself as one take (uploaded
+  `Matsya.mp3`, 543.7 s, mono 128 kbps) and said "Build the full film". **v3 is now `vo.txt`**; v2's text, lock and
+  timing are in `vo/v2/`. The take is in Drive `vo/v3/mat_v3_vo_full.mp3`.
+- **Open question on the voice file:** the owner said he would generate on a free account. Free-plan audio is not
+  licensed for the channel (PLAYBOOK §6.6). Before any upload to YouTube, ask which account made this take; if free,
+  a paid take is needed (about 8,600 credits), then a new lock, and the word cues re-checked (pace will differ).
+- Lock: `vo_lock.py`, 183 sentences, 1,549 words, 9:04 + 4 s outro; every sentence ratio 0.63–1.37 except the short
+  "One pass." (1.6); no repeat or skip signs. Not listened to by a person other than the owner.
+- **Shot list re-cut for v3** in `remotion/src/scenes/*` (`word_map.md` is still the v2 map: the scene files are the
+  truth until it is rewritten). New: `Ask` speech bubbles for the two Kishore questions, `PressureCompare` (Titan about
+  340 bar against 600 bar, OUR CALCULATION, M-CALC6), 15 → 40 kW, the monsoon (PX_storm), Samudra Manthan over a real
+  sea (PX_churn), ₹4,077 crore with its source, the saying over H2_seam, the closing name and line on the end card.
+  F01_foam is no longer used (a minister stands in frame).
+- Sound: `score.json` and `sfx.json` re-mapped to the v3 sentence ids; mix −14.4 LUFS, about −1.2 dBTP, in Drive
+  `mix/mix.wav` (the v2 mix kept as `mix/mix_v2_r4.wav`).
+- **720p cut dispatched:** run 42975445665 on `remotion-render.yml` from `ccr-52953fd3-sfo7sb` →
+  Drive `renders/matsya_review_r5_v3_720p.mp4`.
+- **Known weak points to fix after the first look:** the cricket ball is small in frame (S48) and the hand squeezes a
+  blue ball (S49); the carbon-fibre drawing is faint (S33–34); the China depth ladder runs 16 s (S155–158); the
+  opening still starts on our 3D ball for 4 s before the real one; paradox lands at 0:25–0:30 and the loop ends at
+  0:53 (the rule says 0:45).
+- **Still to do:** our full review of r5 (measured checks, shot-word audit), the independent narration review of v3
+  and the independent viewer review, then the owner's approval of the cut.
+
+## Audio locked (owner, 2026-11-11)
+- **"Lock that audio don't make any changes."** The v3 take (`mat_v3_vo_full.mp3`, SHA in `vo/lock.json`) is the
+  film's audio. No re-take, no text change, no re-timing. Every fix from here is picture, sound design or mix.
+- **No independent narration review for v3** (owner, same message: "No need of independent review at this stage in
+  narration"). The independent viewer review of the cut (step 12) still stands unless the owner says otherwise.
+- So the opening's timing (paradox at 0:25–0:32, loop to 0:53) stays as it is.
+- Still unanswered: which ElevenLabs account made the take. Ask once more before the upload (licence, PLAYBOOK §6.6).
+
+## r6 sent to the owner (2026-11-11)
+- `renders/matsya_review_r6_v3_720p.mp4` (9:08, −14.4 LUFS, no freezes) and `renders/matsya_r6_contact_sheet.jpg`.
+  Our review: `review/review.md` § r5 and § r6. r5 was not sent (two wrong pictures, fixed in r6).
+- **Next:** the owner's notes on r6; the WEAK rows (one Cowork request: a hand gripping a cricket ball, a real
+  carbon-fibre weave, an Indian hand holding a phone); the independent viewer review (needs the owner's yes to share
+  the cut by link); then the owner's approval, the 4K master, the package. Audio is locked: picture and mix only.
+
+## Session closed by the owner mid-build (2026-11-11, about 09:00 UTC): where things stand
+The owner's last notes on r6: "Fix all of them" (the weak shots), "somewhere we are saying sea but the visuals look
+like a dark universe with stars", "the audio was generated from a free account: generate it from the API", "should be
+like an outstanding film". Then: "Close the session, merge work."
+
+**Done and in the repo / Drive**
+- **Paid audio.** One API take of the same v3 text (Akash, Eleven v4, Creative, 50%, MP3 192 kbps; 3,768 credits
+  billed; 20,197 left on 2026-11-11). `vo_take_check`-style signs clean: every sentence ratio 0.6–1.45 except the
+  short "One pass." (1.58); pace 169–177 words a minute by quarter. A 0.7 s room-tone breath was added at each of the
+  8 chapter turns (PLAYBOOK §6.6). **The film's audio is now `mat_v3_api_vo_full.mp3`** (543.32 s; Drive `vo/v3/`,
+  with the raw take `mat_v3_api_take1.mp3`); `vo/lock.json`, `vo/timing.json` and the captions are from it.
+  **The owner has not heard this take yet: send it for approval before anything else.** The free take stays in Drive
+  `vo/v3/mat_v3_vo_full.mp3`; r6 was built on it.
+- **Mix for the API voice:** −14.1 LUFS, −1.2 dBTP, Drive `mix/mix.wav` (the r6 mix kept as
+  `mix/mix_v3_freetake_r6.wav`).
+- **Real water over every 3D deep-sea shot** (`kit.tsx` `SeaOver`, used by `hero()` for H1_dive, H3_descent,
+  H3_seabed, H3_weights, H1_dark, H4_squeeze, and by `Deep`): a blue body of water in screen blend, light shafts near
+  the surface only, real bubbles (PX_bubbles, Pixabay 31611). The film now opens on the real sea surface
+  (PX_surface) with a counter to 6,000 M, then the ball.
+- **Weak shots re-cut in code:** the carbon-fibre wall redrawn large and in contrast; the cricket clip pushed in on
+  the ball; a warmer phone shot (PX_phone2); "Stay with me" on the real ball; the Titan date over the real sea;
+  the China bars cut to 8 s, then the real jetty photo and real nodules for India's answer.
+
+**NOT done: nothing below has been rendered or looked at**
+- `tsc` passed before the last edits were finished being checked; **run `npx tsc --noEmit` first**, then one still to
+  confirm every word cue resolves on the new timing.
+- **The new sea look has not been seen on a single frame.** Render stills of H1_dive, H3_descent, H4_squeeze and
+  `Deep` and judge them against the owner's note before any full render. Tune `SeaOver` (tint strength, bubbles
+  opacity) or re-render the heroes in Blender with volumetric water if the composite does not read as sea.
+- Check the cricket push-in framing (`from={[1.7, 660, -180]}` was computed, not seen) and the new carbon drawing.
+- `PX_surface.mp4` was still encoding when the session closed; if it is not in Drive `render-media/clips`, run
+  `tools/prep_clips.py projects/matsya-6000 --only PX_surface --jobs 1` and upload it. `clip_durations.json` holds
+  10.0 for it as a placeholder: replace with the measured length.
+- No render on the API audio yet. After the checks: `remotion-render.yml` → `matsya_review_r7_v3_720p.mp4`
+  (if "Film to Drive" sits over 5 minutes, dispatch `join_from`), our review, then the owner.
+- Add `media_manifest.csv` rows for the six new Pixabay clips (138694, 205011, 244491, 31611, 304019, 202987).
+
+**Still needs real pictures (Wikimedia Commons rate-limited this session; Pixabay had none)**: one Cowork request for
+a hand gripping a cricket ball, a real carbon-fibre weave, an Indian hand holding a phone, a licence-clean photo of
+Titan (US Coast Guard) and of China's Fendouzhe.
+
+**Open with the owner:** approval of the API audio; a yes or skip for the independent viewer review; whether the
+opening may start on the real sea rather than the thumbnail's ball (the two rules pull apart; write the choice in
+`treatment.md`).

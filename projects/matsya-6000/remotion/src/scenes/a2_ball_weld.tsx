@@ -2,12 +2,12 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import type {Part} from '../Film';
 import {Alvin, BeadInAir, SteelBall2021, TubeVsBall, WeldBars} from '../parts/drawings';
-import {ez, Insert, Plate, tw} from '../parts/kit';
+import {Clip, ez, Insert, Plate, tw} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
-import {clip, cnt, CR, hero, lab, photo, pre, shot, stamp, tag} from './common';
+import {ask, clip, cnt, CR, hero, lab, photo, pre, shot, stamp, tag} from './common';
 
-// Ch2 (why a ball, S42–52) and Ch3 (ISRO's hardest weld, S53–88), word_map.md.
+// Narration v3: why a ball (S48–59) and ISRO's hardest weld (S60–102).
 const S = s0;
 
 /** S71: a beam line across the chamber shot, white-blue, on "beam of electrons" */
@@ -49,104 +49,130 @@ const Rings: React.FC<{x: number; y: number}> = ({x, y}) => {
 
 const ch2: Part = {
 	shots: [
-		shot(S(42), 'tube', (d, l) => (
+		// a real cricket ball, then a real hand squeezing a ball: together they say the sentence
+		// pushed in on the ball (it is small in the source frame)
+		shot(S(48), 'PX_cricket', (d) => <Clip name="PX_cricket" dur={d} startAt={5.4} grade="day" from={[1.7, 660, -180]} to={[1.9, 760, -220]} />, {credit: CR.px}),
+		clip(S(49), 'PX_ball', CR.pex, 2.2),
+		hero(S(50), 'H4_squeeze', 7.0, 'SIMPLIFIED'),
+		shot(S(52), 'tube', (d, l) => (
 			<Plate dur={d} seed="tube">
-				<TubeVsBall tubeEnds={l + 50} ring={l + 600} />
+				<TubeVsBall tubeEnds={w0(52, 'tube') - S(52) + l} ring={l + 20} />
 			</Plate>
 		), {tag: 'SIMPLIFIED'}),
-		clip(pre(w0(43, 'long')), 'VAG_surf', CR.navy),
-		clip(S(44), 'PX_ball', CR.pex, 2.2),
-		hero(S(45), 'H4_squeeze', 7.0 + (S(45) - S(44)) / 60, 'SIMPLIFIED'),
-		photo(pre(w0(47, 'alvin')), 'alvin_panorama.jpg', CR.alvin),
-		shot(S(48), 'alvin', (d, l) => (
+		clip(pre(w0(52, 'normal')), 'VAG_surf', CR.navy),
+		photo(S(53), 'alvin_panorama.jpg', CR.alvin),
+		shot(S(54), 'alvin', (d, l) => (
 			<Plate dur={d} seed="alvin">
-				<Alvin steel={w0(48, 'steel') - S(48) + l} ti={w0(49, 'titanium') - S(48) + l} bars={w0(49, 'twice') - S(48) + l} />
+				<Alvin steel={w0(54, 'steel') - S(54) + l} ti={w0(55, 'titanium') - S(54) + l} bars={w0(55, 'twice') - S(54) + l} />
 			</Plate>
 		), {tag: 'ILLUSTRATION'}),
-		clip(S(50), 'PX_ship', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
-		shot(pre(w0(51, 'lowered')), 'steel2021', (d, l) => <SteelBall2021 dur={d} date={1} depth={w0(51, 'six') - pre(w0(51, 'lowered')) + l} />, {tag: 'ILLUSTRATION'}),
-		clip(S(52), 'ISRO_ti', CR.isro, 6.0),
+		clip(S(56), 'PX_ship', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		shot(pre(w0(57, 'lowered')), 'steel2021', (d, l) => <SteelBall2021 dur={d} date={1} depth={w0(57, 'six') - pre(w0(57, 'lowered')) + l} />, {tag: 'ILLUSTRATION'}),
+		clip(S(58), 'ISRO_ti', CR.isro, 6.0),
 	],
 	overlays: [
-		tag(w0(45, 'spread'), s1(45), 'THE PUSH SPREADS', 140, 760, 56, C.amber),
-		tag(w0(46, 'corner'), s1(46) + 10, 'NO CORNER · NO FLAT SIDE', 140, 860, 52),
-		tag(w0(51, 'twenty'), pre(w0(51, 'lowered')), 'OCTOBER 2021', 140, 300, 52),
-		tag(w0(51, 'bay'), s1(51), 'BAY OF BENGAL', 140, 480, 48, C.dim),
-		tag(w0(52, 'titanium'), s1(52) + 10, 'THEN TITANIUM', 140, 760, 64, C.ti),
+		tag(w0(48, 'cricket'), S(49), 'A CRICKET BALL', 140, 760, 56),
+		tag(S(49) + 6, s1(49), 'SQUEEZE IT', 140, 760, 56),
+		tag(w0(50, 'spreads'), s1(50), 'THE PUSH SPREADS', 140, 760, 56, C.amber),
+		tag(w0(51, 'corner'), s1(51) + 10, 'NO CORNER · NO FLAT SIDE', 140, 860, 52),
+		tag(w0(53, 'alvin'), s1(53), 'ALVIN · USA', 140, 760, 56),
+		tag(w0(56, 'india'), s1(56), 'INDIA · THE SAME ROAD', 140, 760, 52),
+		tag(w0(57, 'twenty'), pre(w0(57, 'lowered')), 'OCTOBER 2021', 140, 300, 52),
+		tag(w0(57, 'bay'), s1(57), 'BAY OF BENGAL', 140, 480, 48, C.dim),
+		tag(w0(58, 'titanium'), s1(59), 'THEN TITANIUM', 140, 760, 64, C.ti),
 	],
 };
 
-// S57–64: H2_pieces with ISRO's own drawing cut in on "drawing" for 1.6 s
-const drawingAt = pre(w0(57, 'drawing'));
+// S61–67: H2_pieces (its hatch lifts about 6.9 s in) with ISRO's own drawing cut in on "drawing" for 1.6 s
+const piecesAt = S(61);
+const piecesFrom = 2.9;
+const drawingAt = pre(w0(62, 'drawing'));
 const backAt = drawingAt + 96;
+// S90–97: H2_seam, with ISRO's real weld bead on "How long did it take? Thirty-two minutes. One pass."
+const seamAt = S(90);
 
 const ch3: Part = {
 	shots: [
-		clip(S(53), 'ISRO_ring', CR.isro),
-		clip(S(54), 'ISRO_machining', CR.isro),
-		clip(S(55), 'ISRO_hall', CR.isro),
-		clip(S(56), 'ISRO_forge', CR.isro),
-		hero(S(57), 'H2_pieces', 0),
+		clip(S(60), 'ISRO_ring', CR.isro),
+		clip(pre(w0(60, 'this')), 'ISRO_machining', CR.isro),
+		hero(piecesAt, 'H2_pieces', piecesFrom),
 		shot(drawingAt, 'ISRO_drawing', (d) => <Insert name="ISRO_drawing" dur={d} startAt={0.6} height={860} />, {credit: CR.isro}),
-		hero(backAt, 'H2_pieces', (backAt - S(57)) / 60),
-		clip(S(65), 'ISRO_shell', CR.isro),
-		clip(S(66), 'ISRO_ti', CR.isro, 3.0),
-		clip(S(67), 'PX_weld', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
-		shot(pre(w0(67, 'grabs')), 'bead', (d, l) => (
+		hero(backAt, 'H2_pieces', piecesFrom + (backAt - piecesAt) / 60),
+		clip(S(67), 'ISRO_shell', CR.isro),
+		hero(S(68), 'H2_seam', 0),
+		clip(S(71), 'ISRO_ti', CR.isro, 3.0),
+		clip(S(72), 'PX_weld', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		shot(pre(w0(72, 'oxygen')), 'bead', (d, l) => (
 			<Plate dur={d} seed="bead">
-				<BeadInAir atoms={w0(67, 'oxygen') - pre(w0(67, 'grabs')) + l} holes={w0(68, 'holes') - pre(w0(67, 'grabs')) + l} crack={w0(68, 'crack') - pre(w0(67, 'grabs')) + l} />
+				<BeadInAir atoms={l + 9} holes={w0(73, 'holes') - pre(w0(72, 'oxygen')) + l} crack={w0(74, 'crack') - pre(w0(72, 'oxygen')) + l} />
 			</Plate>
 		), {tag: 'SIMPLIFIED'}),
-		clip(S(69), 'PX_flame', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
-		clip(S(70), 'ISRO_chamber', CR.isro),
-		clip(pre(w0(71, 'electrons')), 'ISRO_console', CR.isro),
-		clip(S(72), 'ISRO_ebglow', CR.isro),
-		clip(S(73), 'ISRO_operator', CR.isro),
-		clip(pre(w0(74, 'welding')), 'ISRO_chamber', CR.isro),
-		shot(pre(w0(74, 'two')), 'bars', (d, l) => (
+		clip(S(75), 'PX_flame', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		clip(S(77), 'ISRO_chamber', CR.isro),
+		clip(pre(w0(77, 'electrons')), 'ISRO_console', CR.isro),
+		clip(pre(w0(77, 'inside')), 'ISRO_ebglow', CR.isro),
+		clip(S(79), 'ISRO_operator', CR.isro),
+		clip(S(80), 'ISRO_chamber', CR.isro),
+		shot(pre(w0(80, 'two')), 'bars', (d, l) => (
 			<Plate dur={d} seed="bars2">
-				<WeldBars show20={w0(74, 'two') - pre(w0(74, 'two')) + l} show80={w0(75, 'eight') - pre(w0(74, 'two')) + l} />
+				<WeldBars show20={l + 9} show80={w0(81, 'eight') - pre(w0(80, 'two')) + l} />
 			</Plate>
 		)),
-		clip(pre(w0(76, 'machine')), 'ISRO_screens', CR.isro),
-		clip(S(77), 'ISRO_monitor', CR.isro),
-		clip(pre(w0(78, 'seven')), 'ISRO_console2', CR.isro),
-		hero(S(79), 'H2_seam', 0),
-		clip(pre(w0(79, 'real')), 'ISRO_bead', CR.isro),
-		hero(pre(w0(79, 'real')) + 72, 'H2_seam', (pre(w0(79, 'real')) + 72 - S(79)) / 60),
-		clip(S(84), 'ISRO_bead', CR.isro, 0.6),
+		clip(S(82), 'ISRO_screens', CR.isro),
+		clip(pre(w0(82, 'buy')), 'ISRO_monitor', CR.isro),
+		clip(S(83), 'ISRO_console', CR.isro),
 		clip(S(85), 'ISRO_operator', CR.isro),
-		clip(S(86), 'ISRO_shell', CR.isro),
-		clip(pre(w0(86, 'x-ray')) + 60, 'ISRO_xray', CR.isro),
-		clip(S(87), 'ISRO_ut', CR.isro),
-		clip(S(88), 'F01_hall', CR.dd),
+		clip(S(86), 'ISRO_machining', CR.isro),
+		clip(S(87), 'ISRO_console2', CR.isro),
+		clip(pre(w0(89, 'until')), 'ISRO_screens', CR.isro),
+		hero(seamAt, 'H2_seam', 0),
+		clip(S(93), 'ISRO_bead', CR.isro),
+		clip(S(96), 'ISRO_hall', CR.isro),
+		hero(S(97), 'H2_seam', 11.5),
+		clip(S(98), 'ISRO_shell', CR.isro),
+		clip(S(99), 'F01_ball', CR.dd),
+		clip(S(100), 'ISRO_xray', CR.isro),
+		clip(pre(w0(100, 'see')), 'ISRO_monitor', CR.isro),
+		clip(S(101), 'ISRO_ut', CR.isro),
+		clip(S(102), 'F01_hall', CR.dd),
 	],
 	overlays: [
-		tag(w0(55, 'big'), s1(55), '2.26 M ACROSS', 140, 760, 56),
-		tag(w0(58, 'hatch'), s1(58) + 6, 'TOP HATCH', 140, 200, 56),
-		tag(w0(59, 'rings'), s1(59) + 6, 'THREE RINGS', 140, 200, 56),
-		tag(w0(60, 'dome'), s1(60) + 6, 'BOTTOM DOME', 140, 200, 56),
-		tag(w0(61, 'weigh'), s1(61) + 20, '5,691 KG', 140, 200, 64, C.amber, true, 'ISRO’S PIECE WEIGHTS, ADDED: OUR CALCULATION'),
-		tag(w0(62, 'seven'), s1(62) + 6, 'SEVEN WELDS', 140, 200, 60, C.weld),
-		tag(w0(63, 'four'), s1(63) + 6, '4 BELTS', 140, 290, 56, C.weld),
-		tag(w0(64, 'three'), s1(64) + 10, '3 ROUND THE WINDOWS', 140, 380, 52, C.weld),
-		tag(w0(66, 'fussy'), s1(66), 'TITANIUM IS FUSSY', 140, 760, 56),
-		tag(w0(71, 'beam'), s1(71), 'A BEAM OF ELECTRONS', 140, 180, 56, C.cyan),
-		lab(w0(71, 'beam'), s1(71), 'beam', <Beam />),
-		tag(w0(71, 'vacuum'), s1(72), 'IN A VACUUM', 140, 270, 52),
-		tag(w0(72, 'air'), s1(72), 'NO AIR GETS IN', 140, 760, 52, C.green),
-		tag(w0(74, 'bengaluru'), s1(74), 'ISRO · LPSC BENGALURU', 140, 180, 48, C.dim),
-		cnt(w0(76, 'powerful'), w0(76, 'powerful') + 60, s1(76) + 60, 40, 'KW', 140, 200, 110, C.amber, 15),
-		cnt(w0(78, 'seven'), w0(78, 'trial'), s1(78) + 20, 700, 'TRIAL WELDS'),
-		tag(w0(81, 'eight'), s1(81), '80 MM DEEP', 140, 180, 56, C.weld),
-		tag(w0(81, 'seven'), s1(81) + 30, '7.1 M LONG', 1100, 180, 64, C.amber, true, 'OUR CALCULATION: π × 2.26 M'),
-		cnt(w0(82, 'thirty-two'), w0(82, 'minutes'), s1(82) + 20, 32, 'MIN · ONE GO', 140, 760, 110, C.weld),
-		tag(w0(83, 'first'), s1(83), 'FIRST IN INDIA', 140, 760, 60, C.amber, false, 'ISRO'),
-		tag(w0(86, 'x-ray'), s1(86), 'X-RAY · 7.5 MEV', 140, 180, 56, C.cyan),
-		lab(w0(86, 'x-ray'), s1(86), 'scan', <Scan />),
-		tag(w0(87, 'sound'), s1(87), 'SOUND WAVES', 140, 180, 56, C.cyan),
-		lab(w0(87, 'sound'), s1(87), 'rings', <Rings x={1250} y={560} />),
-		stamp(w0(88, 'certify'), s1(88) + 20, 'CERTIFIED', C.green),
+		tag(w0(60, 'big'), s1(60), '2.26 M ACROSS', 140, 760, 56),
+		tag(w0(62, 'five'), s1(62), 'FIVE PIECES', 140, 760, 60),
+		tag(w0(63, 'hatch'), s1(63) + 6, 'TOP HATCH', 140, 200, 56),
+		tag(w0(64, 'rings'), s1(64) + 6, 'THREE RINGS', 140, 200, 56),
+		tag(w0(65, 'dome'), s1(65) + 6, 'BOTTOM DOME', 140, 200, 56),
+		tag(w0(66, 'five'), s1(66) + 10, '5,691 KG', 140, 200, 64, C.amber, true, 'ISRO’S PIECE WEIGHTS, ADDED: OUR CALCULATION'),
+		tag(w0(68, 'seven'), s1(68) + 6, 'SEVEN WELDS', 140, 200, 60, C.weld),
+		tag(w0(69, 'four'), s1(69) + 6, '4 BELTS', 140, 290, 56, C.weld),
+		tag(w0(70, 'three'), s1(70) + 6, '3 ROUND THE WINDOWS', 140, 380, 52, C.weld),
+		tag(w0(71, 'weakness'), s1(71), 'TITANIUM’S ONE WEAKNESS', 140, 760, 56),
+		tag(w0(72, 'hot'), pre(w0(72, 'oxygen')), 'WHEN IT’S HOT', 140, 760, 56, C.weld),
+		tag(w0(75, 'flame'), s1(76), 'A NORMAL FLAME · NO USE', 140, 760, 52),
+		tag(w0(77, 'beam'), s1(77), 'A BEAM OF ELECTRONS', 140, 180, 56, C.cyan),
+		lab(w0(77, 'beam'), pre(w0(77, 'inside')), 'beam', <Beam />),
+		tag(w0(77, 'vacuum'), s1(78), 'IN A VACUUM', 140, 270, 52),
+		tag(w0(78, 'air'), s1(78), 'NO AIR GETS IN', 140, 760, 52, C.green),
+		tag(w0(80, 'bengaluru'), pre(w0(80, 'two')), 'ISRO · LPSC BENGALURU', 140, 760, 52),
+		ask(w0(82, 'buy'), s1(82) + 6, 'Then buy a bigger machine?'),
+		tag(w0(83, 'own'), s1(83), 'THEY MADE THEIR OWN STRONGER', 140, 760, 50, C.green),
+		cnt(w0(84, 'fifteen'), w0(84, 'forty'), s1(84) + 10, 40, 'KW', 140, 200, 110, C.amber, 15),
+		tag(w0(87, 'ten'), w0(88, 'hundred'), 'NOT 10', 140, 200, 64, C.dim),
+		tag(w0(88, 'hundred'), w0(89, 'seven'), 'NOT 100', 140, 200, 64, C.dim),
+		cnt(w0(89, 'seven'), w0(89, 'trial'), s1(89) + 10, 700, 'TRIAL WELDS'),
+		tag(w0(90, 'real'), s1(90), 'THE REAL ONE', 140, 760, 60, C.weld),
+		tag(w0(92, 'eight'), s1(92), '80 MM DEEP', 140, 180, 56, C.weld),
+		tag(w0(92, 'seven'), s1(92), '7.1 M LONG', 1100, 180, 64, C.amber, true, 'OUR CALCULATION: π × 2.26 M'),
+		cnt(w0(94, 'thirty-two'), w0(94, 'minutes'), s1(95) + 10, 32, 'MINUTES', 140, 720, 120, C.weld),
+		tag(w0(95, 'one'), s1(95) + 10, 'ONE PASS', 140, 180, 60, C.amber),
+		tag(w0(96, 'first'), s1(96), 'FIRST IN INDIA', 140, 760, 60, C.amber, false, 'ISRO'),
+		tag(w0(97, 'seven'), s1(97) + 10, '700 TRIES', 140, 180, 64, C.amber),
+		tag(w0(97, 'thirty-two'), s1(97) + 10, 'FOR 32 MINUTES', 140, 280, 64, C.weld),
+		tag(w0(100, 'x-ray'), s1(100), 'X-RAY · 7.5 MEV', 140, 180, 56, C.cyan),
+		lab(w0(100, 'x-ray'), s1(100), 'scan', <Scan />),
+		tag(w0(101, 'sound'), s1(101), 'SOUND WAVES', 140, 180, 56, C.cyan),
+		lab(w0(101, 'sound'), s1(101), 'rings', <Rings x={1250} y={560} />),
+		stamp(w0(102, 'certify'), s1(102) + 10, 'CERTIFIED', C.green),
 	],
 };
 

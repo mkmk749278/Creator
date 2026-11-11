@@ -93,6 +93,93 @@ Confirmed on a first pass (still fact-checked per film): Matsya-6000's sphere is
 80 mm wall, rated about 600 bar; LPSC built the electron-beam weld (7,100 mm in 32 minutes after about 700 trials;
 ISRO's Samudrayaan page). Arjun Mk1A is about 68–68.5 t with Kanchan composite armour plus ERA (ThePrint; Vayu).
 
+### 1.2 What the audience has told us (read 2026-11-11; re-read after every film)
+From the channel's public counts and every top-level comment the Data API returns (172 across all films). Who they
+are (Studio, 2026-11-06) is in §13.3. CTR and retention are Studio-only until the channel token carries the
+`yt-analytics.readonly` scope; everything below is from what could be measured.
+
+| Film (public) | Views | Days up | Likes per 100 views | Title form |
+|---|---|---|---|---|
+| 30 Tejas Jets Are Ready. Why Can't They Fly? | 55,548 | 14 | 0.28 | named thing + number + "ready, but can't" |
+| India Has 7M Tons of Rare Earths. Why Can't We Make Magnets? | 51,730 | 20 | 0.47 | number + "has it, but can't" |
+| Why India's Medicines Rely on China (The API Paradox) | 16,158 | 11 | 0.84 | daily-life thing + China |
+| The $10 Billion Chip Gamble | 9,823 | 35 | 0.47 | number + bet |
+| India Landed on the Moon. Why Can't It Build a Jet Engine? | 1,612 | 28 | 0.93 | same paradox, navy-card thumbnail |
+| The Hidden Cost of India Not Having Its Own AI | 1,008 | 7 | 0.79 | abstract, no object |
+| How a $400B Empire Keeps Its Founders Off the Rich List | 571 | 4 | 1.58 | the famous name (Tata) is missing |
+| Why Kavach Won't Stop Every Train Crash | 402 | 25 | 2.24 | dark thumbnail, term few know |
+
+- **Reach is not the problem; attachment is.** 137,580 views have made 444 subscribers: about 3 per 1,000 views. On
+  the two big films under half of one viewer in a hundred pressed like. Recommended strangers watch once and leave.
+  Growth now comes from turning one watch into the next: a satisfied viewer, a reason to return, a next film to click.
+- **What travelled:** a thing every Indian already knows (Tejas, rare earths, medicines) + a number + "India has it,
+  but can't" + a foreign supplier holding the key. Their thumbnails are **bright, warm and instantly recognisable**
+  (a jet's tail, sand in two hands, a capsule) and their words say the contradiction (30 FIGHTERS, ZERO ENGINES).
+  **What didn't:** an abstract subject, a missing household name, a term few search for, a dark or card-like
+  thumbnail. Eight films is a small sample, so this is a strong lead, not a law; Test & Compare decides.
+- **The most-liked comments are objections the film never answered.** Tejas: "the engine is an excuse; fourteen
+  engines came and still no jet was delivered; the radar isn't integrated" (said about ten different ways). Magnets:
+  "India's are the light rare earths, not the heavy ones magnets need"; "the furnace is the missing technology".
+  A viewer who knows one thing we left out stops trusting the rest, and says so where every new viewer reads it.
+- **What they thank us for is always the same:** "easy to understand" where other channels are "only for engineers";
+  "this knowledge was hidden from us ordinary people"; "smooth narration"; "superb detailing".
+- **What breaks trust:** a wrong map of India (half the comments on the chips film); "where do you get seven million
+  tonnes?"; "get up-to-date information"; and "talk less: four of eleven minutes is fluff".
+- **The big films also drew mockery from outside India** ("all talk, no walk", China comparisons). "India can't"
+  wins the click from people who came to laugh as well as from people who care; only the second group returns. The
+  film has to leave *them* satisfied: the bottleneck told honestly, then who is solving it and the date to watch.
+- **They ask for:** thorium reactors, home-grown chips and data centres, magnet-free motors, the Kaveri engine's
+  full story, and local-language versions.
+
+**So, on every film** (each rule is detailed in its own section):
+1. **An objection ledger** at research: the 3–5 strongest objections a knowledgeable viewer will raise, taken from
+   the most-liked comments on our films and on the strongest existing films. Each is answered inside the film,
+   fairly and with its source, best of all as a chapter's turn ("You may have heard the engines have arrived.
+   Fourteen have. So why is no jet flying?"). What can't fit goes into the pinned comment (§3 step 2, §15.1).
+2. **The package carries a household name, a number and the contradiction;** the thumbnail is bright and
+   recognisable in one second (§4.4, §4.5).
+3. **The headline number shows its source on screen** (a small `SOURCE · …` line, §9.6 sizes) the first time it is
+   said. Viewers asked; it costs two words.
+4. **The landing gives the caring viewer something to hold:** who is solving it, what has already worked, and the
+   next date to watch (§5.1). Never chest-thumping; never only the failure.
+5. **A reason to come back** in the last 20 seconds: the next film named as a question, the end screen pointing at
+   the most related film (not just the latest), and one honest subscribe line tied to a real promise (§15.1).
+
+### 1.3 What the films themselves show, watched as an Indian viewer (2026-11-11; owner agreed to all)
+Three films watched frame by frame (Tejas, AIP, Matsya r2) and the spoken words of all nine read. **The two films
+with 50,000+ views won on their words; their pictures were mostly graphics in a dark void.** The newer films have
+better pictures and had lost most of what made those words work. What the words did, now rules:
+
+1. **Kishore is a person beside the viewer** (§6.2). "Come with me inside the HAL hangars… walk round to the back
+   with me. What do you see? Nothing." "You might ask me, Kishore, we built cryogenic engines…" One or two "Kishore"
+   moments a film, always the viewer's own objection, never forced. People subscribe to a person.
+2. **Start and end in the viewer's own life.** "There's a magnet in your pocket right now." The scooter, the capsule,
+   the phone. By 0:45 the viewer knows what this machine has to do with them; the landing says what it means for them.
+3. **The hard truth from family, not from a mocker.** Say the gap plainly ("So yes, India is behind"), name where the
+   pressure comes from (a supplier who delays, a sanction, a permission, a part that must be imported), then defend
+   the honour **with facts**: "People call Kaveri a total failure. But look at what actually happened before you
+   judge." Never chest-thumping, never only the failure.
+4. **Memories every Indian shares** (§6.2 item 13): Pokhran and the sanctions, the Corona days, the Chandrayaan
+   evening, the monsoon, a word from the epics when a source uses it. Each a sourced fact with its own row.
+5. **A saying to take home:** one line an elder would say and a family group would forward. "If you don't own the
+   engine, you don't truly own the jet." It is the film's argument in a sentence, said at the climax and again at
+   the landing.
+6. **A yardstick and a date:** who is ahead and by how much (China, "the club of five"), then the next date to watch.
+7. **Adult stakes in simple words.** Who loses what (lives, rupees, squadrons, jobs) inside the first minute. Simple
+   never means childish: our largest group is retired engineers. "Titanium has one weakness", not "titanium is fussy".
+8. **Named places:** the town and state of every plant and lab. Viewers light up at their own state.
+9. **The closing line (owner, 2026-11-11):** every film ends "This is Be Practical with Kishore. Stay practical."
+   after the subscribe line and one real question for the comments. (The old "Know your rights… Jai Hind" stays gone.)
+
+And what the pictures must fix (§9):
+- **Real Indian people at work in every chapter:** the engineer at the console, the men testing the ring. These are
+  the frames a viewer trusts and is proud of.
+- **No run of diagrams longer than about 20 seconds** without a real shot or a physical picture (the AIP film ran
+  three minutes of boxes, a balance scale and company names as text at 3:48–6:42).
+- **Every comparison from Indian life:** the autorickshaws and the buffalo work; the red London bus under "city bus"
+  did not.
+- **Never open on an object in a void:** the real hall, the real sea, the real people first.
+
 ---
 
 ## 2. Working with the owner
@@ -137,7 +224,11 @@ ISRO's Samudrayaan page). Arjun Mk1A is about 68–68.5 t with Kanchan composite
 The owner's process, sharpened. Two principles run through every step:
 - **Creativity in every step, not only at the end.** Each step has a creative question; the obvious answer (a
   timelapse, a push-in, a "Welcome" line, a stock clip of the topic) is the floor, never the result. Narration and
-  visuals get the most of it.
+  visuals get the most of it. **Each step also has a creative output that is checked like any other gate** (owner,
+  2026-11-11; the method is §5.2): the story bank at research, the creative spine at the plan, the creative pass on
+  the narration (§6.5), the idea level of every key sentence in the word map (§9.10), and the memory tests at review
+  (§13.1). *Why:* what has a gate gets done; "be creative" without one produced films that passed every measurement
+  and were remembered for two pictures.
 - **Decide early, build once.** Direction is cheapest to change in the plan and most expensive after the audio. So the
   owner approves the plan before the narration is written, and the slow work (footage fetches, Blender hero shots)
   starts the day the plan is approved, beside the narration.
@@ -162,12 +253,28 @@ datasheets, court and parliament records). Output: `research/landscape.md` with 
 - **Our edge, in one sentence:** what nobody has shown clearly, which the film will. No edge, no film: pick another
   angle or topic.
 - **What pictures exist:** real footage, archive and documents, found now. The visuals we can get shape the plan.
+- **The objection ledger (§1.2):** the 3–5 strongest objections a knowledgeable viewer will raise (the most-liked
+  comments on our films and on the strongest existing films), each with what the sources say. The plan shows where
+  each is answered.
+- **The story bank (2026-11-11):** the raw material the narration and the picture will be made from, each item with
+  its source and a `claims.csv` row. Collect while reading, at least 15 items across these kinds:
+  - **moments** (a dated scene: the day, the place, who was in the room, what happened in what order);
+  - **people** (a name, their job, what they did with their hands, a line they said on record);
+  - **objects and senses** (what it weighs, how hot, what it sounds like, how long it takes, what it looks like up
+    close, what the room is like);
+  - **numbers that can become things** (a thickness, a force, a time: anything we can size against a body, a
+    household object or a place every Indian knows);
+  - **ironies and reversals** (the rocket agency that welds a submarine; the engine that works but can't go to sea);
+  - **failures and near-misses** (the 700 trials before the one that counted; what broke, and what it cost).
+  *Why:* facts come only from sources, so a narration can only be as vivid as its research. A script written from a
+  list of specifications sounds like a list of specifications; the lines viewers quoted back to us were all a sourced
+  detail turned into a picture. If the bank is thin, research more before planning; never fill the gap with invention.
 *Creative question:* where is the surprise: the gap between what people believe and what the steel actually does?
 
 ### Phase B: decide everything
 
 **3. The plan (the most important step).** Everything is decided here, on paper, before a word of narration:
-- 3+ angles; the chosen one and why.
+- 3+ angles **that differ in kind** (§5.2: a different way in, not the same story's chapters); the chosen one and why.
 - **The promise, locked (owner, 2026-11-08), before the cold opens and the beats:**
   - **the promise in one sentence**, the physical paradox the viewer will have explained ("why a submarine that can't
     breathe has to surface");
@@ -177,12 +284,19 @@ datasheets, court and parliament records). Output: `research/landscape.md` with 
     finished thumbnails are made at step 14 from this concept.
   Everything after this point is built to keep that promise. 3+ concepts and titles are still explored here; the lock
   is the choice among them.
-- 3+ cold opens and 3+ endings, each judged by how well it delivers the locked promise; the chosen ones and why.
+- 3+ cold opens and 3+ endings, each a different kind of entry or exit (§5.2), each judged by how well it delivers
+  the locked promise; the chosen ones and why. An option that is simply kept for a later chapter was never an
+  alternative: write another.
+- **The creative spine** (§5.2): the film's one image, its motif (picture and sound) with every return listed, the
+  feeling curve, the storytelling device of each chapter, and the retell line.
 - **The questions viewers are actually asking** (from search, comments and the research), and where each one is
   answered.
 - **The beat sheet:** every beat with its time, its viewer question (the Q column), its turn, and **its picture**
-  (real footage, document, map, Blender hero, Three.js, Remotion graphic), its sound and its music cue.
+  (real footage, document, map, Blender hero, Three.js, Remotion graphic), its sound and its music cue. The picture
+  cell says the **idea** of the shot (§9.10), not only its subject: "the seam peels off the ball and unrolls beside a
+  man", not "weld graphic".
 - **2–3 signature moments,** designed in full: the cutaway that makes the mechanism click, the match cut, the silence.
+  And **one set piece in every chapter**: the 10–25 seconds that chapter will be remembered for.
 - **The hero 3D shots** (2–4), named with their camera move, so Blender can start early.
 - **Zero sodhi:** every beat earns its place; what the viewer doesn't need to feel the paradox is cut, however
   interesting.
@@ -200,8 +314,9 @@ phone-readable summary. **Owner approves the plan, and with it the title and thu
 **5. Narration.** **The opening first (0:00–0:45):** written from the plan's chosen cold open and run through the
 promise check (§5.1) before a line of the rest is written. A cold open that fails it is rewritten now, while it costs
 nothing. Then the full narration, from the beat sheet, each chapter moving toward the promise; then:
-- a **creative pass** (§6): sharpen the cold open and every chapter's first line, plant and pay off, put the
-  viewer inside the moment, cut every line a picture already says;
+- the **creative pass** (§6.5, eight checks): chapter openings that differ, a picture in words for every chapter, a
+  person or the machine in a moment, plants and payoffs, varied devices, room for the picture, the line they will
+  repeat, and the flattest half-minute rewritten;
 - the checks: the lean-in test, `spoken_english_check.py`, the pronunciation list;
 - an **independent narration review** (§13.3), heard as viewers would hear it.
 Output: **`narration.md`** sent to the owner, opening with the locked title and thumbnail concept and the promise
@@ -213,9 +328,9 @@ check (so the owner hears sentence 1 against the package), then the full narrati
 waiting at all.
 
 **6. Audio.** Only after the opening has passed the promise check and the narration is approved: `scripts/eleven_tts.py` with Akash on Eleven v4, Stability
-Creative (0.0), similarity 50%, the best quality the plan allows (`config/voice.yaml`). Every take passes
-`scripts/vo_take_check.py`; a flagged block is regenerated (credits are limited, see §6.6, so one take per block
-first). Joined and timed (§6.7). Output: the final VO in Drive, sent to the owner.
+Creative (0.0), similarity 50%, the best quality the plan allows (`config/voice.yaml`). As few takes as possible: one
+take for a narration under 10,000 characters, or two split at a chapter break (§6.6). Every take passes
+`scripts/vo_take_check.py`; a flagged take is regenerated (credits are limited, §6.6). Joined and timed (§6.7). Output: the final VO in Drive, sent to the owner.
 **Owner approves the audio.**
 
 ### Phase D: the picture
@@ -227,14 +342,16 @@ which real shot makes this sentence undeniable?
 
 **8. Word-by-word sync (the major part).** From the audio's word timings, every name, brand, number, place and verb
 gets its own picture on its word, to the frame; and the pictures of each sentence together say the whole sentence
-(§9.5). Built as scene docs, then Remotion compositions and Blender shots. *Creative question:* for each sentence,
-what would make the viewer *feel* it, not just see a label?
+(§9.5). `word_map.md` also gives every sentence its **idea level** (§9.10): literal, physical or felt. Every chapter's
+turn and payoff reach physical or felt before anything is built. Built as scene docs, then Remotion compositions and
+Blender shots. *Creative question:* for each sentence, what would make the viewer *feel* it, not just see a label?
 
 **9. Render on GitHub.** Every full render runs on the runners, inside the account's shared runner budget with the
 other two channels (§14.1).
 
 **10. Music and sound.** Beds from the library chosen for each act in the plan, an effect on every visual event,
-silence before the big reveals, the voice always on top (§12).
+silence before the big reveals, the voice always on top (§12). *Creative question:* what does this machine sound
+like, and which one sound will the viewer still hear after the film?
 
 ### Phase E: review and finish
 
@@ -294,6 +411,11 @@ words; the thumbnail carries the emotion and the visual question. They never rep
 - The main search phrase as early as possible, said the way people type it. No `!`, no clickbait words.
 - Write 2 alternatives for title tests. They keep the locked promise and change only its wording.
 - **Locked in the plan** (step 3). Changed later only together with the opening (§5.1).
+- **A household name, a number, and the contradiction (§1.2, 2026-11-11).** The films that travelled named something
+  every Indian already knows and set a fact against an expectation ("30 Tejas Jets Are Ready. Why Can't They Fly?").
+  A roadmap film about a part nobody has heard of (a bushing, a towed array, a grain selector) is titled by the
+  famous thing that part holds hostage (the grid, the submarine, the Tejas engine), with the part as the surprise.
+  One of the two alternatives always takes this form, so Test & Compare can measure it.
 
 ### 4.5 Thumbnail
 The one test: **a stranger who sees it for one second on a phone feels a question only the film answers.**
@@ -304,6 +426,11 @@ The challengers vary the picture and the words, never the promise, because one o
 - **A visual question:** something looks wrong, extreme or out of scale.
 - **At most 3 words**, in caution yellow or signal red, that add to the title and never answer it.
 - **High industrial contrast.** YouTube's app is dark, so a dark navy card sinks.
+- **Bright, warm, recognisable in one second (§1.2, 2026-11-11).** Our three most-watched films have thumbnails that
+  are mostly lit, warm in colour and show a thing anyone can name; our dark ones (a night railway, a grey dry dock,
+  a navy card) are among the least watched. A subject that lives in the dark (the deep sea, a vacuum chamber) is
+  shown **lit from inside or cut open in light**, never as a dark object in dark water. At least one of the three
+  variants is the bright, plain-object version.
 - **Bottom-right corner left empty** for the time badge. *Why:* the jet-engine thumbnail's words sat under the badge.
 - Check at 168×94 with the badge (`scripts/thumb_feed.py`). Make 3+ concepts, build them as HTML in
   `youtube/thumb/` and shoot them at 1280×720, then deliver a main and two challengers for Test & Compare.
@@ -368,21 +495,54 @@ the real spellings of names). The title and description also go in the chat as c
   outro**; a small logo bug sits in a corner throughout. Targets: at least 65% still watching at 0:30, 50% at 1:00,
   average view duration at least 35%.
 
-### 5.2 Creative direction (owner, 2026-10-24 and 2026-10-29)
+### 5.2 Creative direction (owner, 2026-10-24, 2026-10-29 and 2026-11-11)
 - Claude is the creative director: angle, story, narration, look, motion, sound, thumbnail, title, description.
-- **Never the first idea:** 3+ angles, 3+ cold opens, 3+ thumbnail concepts; pick with a reason. Design 2–3 **signature
-  moments** people will remember and share (a match cut, the cutaway that finally makes the mechanism click, a silence
-  before the reveal).
-- **Treatment before script** (`treatment.md`, one page): logline and its tension; the feeling at the start, the low
-  point and the end; why ours beats the 3 strongest films on the topic; the film's art direction; signature moments;
-  sound palette; the package.
-- **Creativity has no ceiling.** A rule is the floor: meet it, then go past it. The obvious device (a timelapse, a
-  push-in on a document) is the basic level; ask what would make the viewer *feel the mechanism*, then build that.
+- **Creativity has no limit (owner, 2026-11-11).** A rule is the floor: meet
+  it, then go past it. The obvious device (a timelapse, a push-in on a document) is the basic level; ask what would
+  make the viewer *feel the mechanism*, then build that.
   *Example (pharma film, 2026-10-29):* the owner rejected a literal fermenter timelapse as "basic"; the scene became
   sugar streaming in, spores sprouting and branching, the broth clouding, the mould releasing golden penicillin, with
   meters rising in step. Animate the cause, not just the result.
-- **Smart, not just bold:** every creative choice makes the story clearer, the emotion stronger or the curiosity
-  sharper. Break a craft rule on purpose when it serves the viewer, write why in `treatment.md`, and add the lesson
+- **Where creativity is free, and where it is zero.** Free: the *form*. The angle, the order, the way in, whose eyes
+  we see through, the comparison, the picture, the cut, the rhythm, the sound, the silence. Zero: the *facts*. No
+  invented event, person, quote, number or outcome; an imagined scene is said as imagined ("Imagine you're inside
+  it") and its picture is labelled (§8). So creative material is **found, not made up**: it comes from the story bank
+  (§3 step 2), and a thin bank is fixed by more research.
+- **Why a method (the read of both roadmap films, 2026-11-11).** Every measurable rule here had a gate; the creative
+  rules had only counts ("3+"). The results: the Matsya plan's three cold opens were one idea plus two that moved to
+  later chapters; its narration passed every gate, yet six chapter turns in a row were the same "So why…? / But
+  why…?" question, and the review panel remembered exactly two things (the buffalo on a fingernail; "your lights are
+  the only lights for six kilometres"). The AIP film's best idea (the patrol strip whose red marks go out) was found
+  during the build, not planned. What viewers kept was always the same kind of thing: **a true number or mechanism
+  turned into a picture from their own world, and an idea that returned with new meaning.** So we plan for those.
+- **The method, for every creative choice** (angle, cold open, ending, comparison, signature moment, thumbnail, hero
+  shot, the picture of a hard sentence):
+  1. **Name the obvious answer first** (what any channel would do) and set it aside as the floor.
+  2. **Diverge by kind, not by count.** Options must differ in kind. For a way in: the object under its stress; one
+     person at one moment; the failure; a sound; a number made physical; the ordinary thing in the viewer's home that
+     depends on it; the question the comments keep asking. Three versions of one idea are one option.
+  3. **The swap test.** Could this line, shot or idea sit unchanged in a film about a different machine? Then it is
+     generic. Replace it with something only this story has (from the story bank).
+  4. **Choose for the viewer** (smart, not just bold): the option that makes the story clearer, the feeling stronger
+     or the curiosity sharper wins, with the reason written down. Decoration that does none of the three is cut.
+  5. **Explore cheaply, inside the session.** Ten rough first lines, five comparisons, stills of three framings.
+     Rough exploring never goes to the owner (polished only), but it has to happen, and the plan shows what lost.
+- **The creative spine** (a section of `plan.md`, decided before the beat sheet, approved with the plan):
+  - **The one image:** the single picture a viewer will still see tomorrow (the buffalo on a fingernail). Physical,
+    from the viewer's own world, sized from the real numbers.
+  - **The motif:** one picture idea, and one sound, that returns 3–5 times and means more each time; its last return
+    ends the film (the patrol strip's last red mark going out under "the mast stays down"). Every return is listed
+    with its time.
+  - **The feeling curve:** the feeling at the start, at the low point and at the end, and each chapter's feeling in
+    one word. No two neighbouring chapters share a feeling.
+  - **One storytelling device per chapter, none used twice:** a countdown, a reversal, a then-and-now, the viewer
+    placed inside, a question the chapter refuses to answer until its end, a confession ("let me be honest with
+    you"), a single object followed through.
+  - **The retell line:** what a viewer will tell a friend, in one sentence of their words.
+  - **Signature moments (2–3) and a set piece per chapter,** designed in full.
+  - **This film's art direction** (§9.1) and sound palette (§12), and why ours beats the 3 strongest existing films.
+- **`treatment.md`** is the build diary: every creative decision made after the plan, and every rule broken on
+  purpose, with the reason. **Break a craft rule when it serves the viewer,** write why there, and add the lesson
   here.
 
 ### 5.3 Series and connected films
@@ -407,6 +567,8 @@ the moment and leans into the story.
 - **The storyteller** (us): "Evening, twenty third of August. A control room in Bengaluru, and nobody is touching
   anything. They can't. The lander is falling towards the Moon on its own. Four years ago, India tried this exact thing —
   and lost the lander in the final minutes. Same room. A lot of the same faces."
+- **This sample shows the principle, not a template.** A film that opens "Evening, [date]. A [room] in [city]…"
+  because the sample does has copied it. Each film finds its own way in (§5.2: diverge by kind).
 
 ### 6.2 What makes a viewer lean in
 1. **Start in the middle of the moment.** The first line is inside a scene already moving.
@@ -429,6 +591,8 @@ the moment and leans into the story.
     with its own claims row; never a tragedy used for colour.
 14. **Explain the mechanism one layer deeper than common knowledge,** from primary documents, then carry it with one
     everyday analogy the viewer lives with. Every analogy stays true to the sourced mechanism.
+15. **Kishore beside the viewer, the viewer's own life, the honour defended with facts, a saying to take home**
+    (§1.3): the four things our most-watched films did that the rules had not asked for.
 
 ### 6.3 Words and rhythm
 - **Simple, warm Indian English,** the words any Indian from any state uses: pay, money, heat, pressure, steel, crack.
@@ -449,6 +613,11 @@ the moment and leans into the story.
   slang (y'all, stoked, no cap, buckle up).
 - **Place names close together sound like two places** ("Kakinada… Andhra"): name one place or join them.
 - `scripts/spoken_english_check.py projects/<slug>/vo.txt` measures all of this and must pass.
+- **The numbers are a floor measured afterwards, never a recipe to write to** (2026-11-11). Written to the numbers,
+  a script becomes a pattern the ear hears by minute two: question, answer, "here's the catch", question. So: no
+  check-in phrase twice in a film; no two chapters open with the same kind of line; never more than two "So why…?"
+  turns in a row (turn with a picture, a person, a number or a silence instead); a question is asked only when the
+  viewer is really holding it at that second.
 
 ### 6.4 Writing for Akash (Eleven v4)
 **Voice:** "Akash - Confident and Natural" on Eleven v4, **Stability "Creative" (0.0)** (owner, 2026-11-05; Eleven v4 presets: Creative 0.0, Natural 0.5, Robust 1.0); the other settings as in `config/voice.yaml`. Pace about 145–160 words a
@@ -469,11 +638,33 @@ minute. The fact-checked `vo.txt` is exactly the recording text.
 - **Low and high come only from the writing:** short quiet sentences read low; questions lift; a concrete image slows
   the voice by itself. If a line comes out with the wrong feeling, rewrite the line.
 
-### 6.5 The lean-in test (every paragraph, before recording)
-`screenplay.md` (TIME | AUDIO | VISUAL + SOUND | **Q**) has a Q column: the question the viewer is holding during that
-paragraph. For each paragraph: Is the Q cell filled? (Empty = they swipe: add a question or cut.) Is there a person,
-place and moment, or a summary? A "but" or "so", or "and then"? Would a teacher or news reader say it this way? Can it go
-without loss? Does the last line pull into the next?
+### 6.5 The creative pass and the lean-in test (every paragraph, before recording)
+**The creative pass** (2026-11-11) runs on the full draft, before the checks. Its result goes in `narration.md` as a
+small table (check → what changed), so the owner and the reviewer can see it was done.
+1. **Chapter openings and closings.** Every chapter's first line is inside a moment, or picks up a question the
+   viewer already holds; its last line pulls into the next. No two chapters open the same way.
+2. **A picture in words for every chapter,** from the viewer's own life (the kitchen, the road, the train, the cricket
+   ground, the body), sized from the real numbers with an OUR CALCULATION row. Write five candidates; keep the one
+   that a 70-year-old in Lucknow and an engineer in Houston both see at once. One per idea: two comparisons for one
+   number cancel each other.
+3. **Someone in a moment.** Where the story bank has a person, a room and a day, the chapter is told through them
+   (what they did, in order, in the present tense). Where the sources name nobody, the machine is the character:
+   what it meets, second by second. Never an invented person, feeling or quote.
+4. **Plants and payoffs.** List what is planted (an object, a number, a phrase, the motif) and where each pays off.
+   A plant with no payoff is cut; the ending pays off the first minute.
+5. **Varied devices.** Mark each chapter's device (§5.2). None repeats; no check-in phrase repeats (§6.3).
+6. **Room for the picture.** Cut every line the picture already says. Mark the 2–4 places where the voice stops and
+   the picture and real sound carry the film for 2–6 s, and write them into the beat sheet.
+7. **The line they will repeat.** Each chapter has one line a viewer could say to a friend that evening. If a
+   chapter has none, it isn't finished.
+8. **The flattest half-minute.** Read it as the ear hears it, find the 30 s where nothing turns, and rewrite or cut.
+   Then the swap test on every paragraph (§5.2): a paragraph that could sit in another film is rewritten from the
+   story bank.
+
+**The lean-in test.** The plan's beat sheet has a Q column: the question the viewer is holding during that beat, and
+every narration paragraph belongs to a beat. For each paragraph: Is there a Q? (None = they swipe: add a question or
+cut.) Is there a person, place and moment, or a summary? A "but" or "so", or "and then"? Would a teacher or news
+reader say it this way? Can it go without loss? Does the last line pull into the next?
 
 ### 6.6 Audio: generated after approval (owner, 2026-11-05)
 - **No audio until the owner approves `narration.md`.** Then the session generates it with the ElevenLabs API:
@@ -622,7 +813,12 @@ cards "a collage of templates".
   2 s under "signs off the design" and 1.7 s under "Designed at D-R-D-O's lab", both found only by `freezedetect`.
 - **Shots change about every 3.5–5 s;** split any hold over about 4.6 s into new framings. *Why:* the first pharma cut
   laid one shot per VO line and averaged 8.6 s a shot.
-- At least 85% of the runtime is moving footage or animation. Eased motion only (springs, curves), never linear.
+- **A designed long take is not a hold** (2026-11-11). One continuous move that keeps revealing (from outside the
+  ball, through the wall, to the three seats) may run 8–20 s as a signature moment or set piece, when something new
+  arrives on a word at least every 3.5 s and the camera never settles. Name it in the plan; a long shot that
+  just sits is still a hold.
+- At least 85% of the runtime is moving footage or animation. Eased motion (springs, curves) by default; a linear
+  push only for the long-shot case above, where an ease would die before the cut.
 - **Smooth to the eye:** dissolve cuts (about 0.2 s) by default, hard cuts only where the rhythm is the point (verb
   cuts, fast montages). A match cut is always a hard cut.
 
@@ -643,7 +839,9 @@ Two rules at once:
   had passed every frame measurement; and in the AI film, one shot per line left "Chinese", "Delhi", "Taiwan" and
   "Nvidia" over unrelated footage.
 - *Creative question for every sentence:* what would make the viewer feel it? A literal picture is the floor; a
-  match cut, a cause shown happening, a number made physical is the goal.
+  match cut, a cause shown happening, a number made physical is the goal (§9.10).
+- **Sync is not a picture dictionary.** A film that only shows each noun on its word is correct and dull: the viewer
+  sees labels, not a story. The base shot of each sentence carries an idea (§9.10); the word-pictures serve it.
 
 ### 9.6 Readable on a phone and the family TV (2026-11-03)
 At the 1920×1080 authoring size: **≥ 44 px** for what the voice points to; **≥ 30 px** for every other fact (dates,
@@ -678,6 +876,32 @@ dim the neighbours, real satellite ground underneath. Rail lines: DataMeet (CC0)
 A calculation is shown as the thing it describes, moving to scale: a pressure crushing a sphere, a temperature bar
 climbing past the melting point, a counter that runs. The sum itself appears at most once, small (`OUR CALCULATION ·
 …`). Never a whiteboard or a text slide of an equation.
+
+### 9.10 Visual ideas: from the literal picture to the felt one (2026-11-11)
+**Three levels.** `word_map.md` marks each sentence's level, next to its base shot:
+1. **Literal:** the picture shows the thing named. The floor; every sentence reaches it (§9.5).
+2. **Physical:** the picture shows the *cause happening*, or the number at human scale. The viewer understands
+   without the words.
+3. **Felt:** the viewer is put inside it, or the cut itself makes the point. The viewer remembers it.
+**Every chapter's turn and payoff reach level 2 or 3; every signature moment and set piece is level 3.** A chapter
+whose map is all level 1 goes back to the plan before anything is built.
+
+**Ways to get there** (a toolbox, not a checklist; use what this story needs, and no idea twice except the motif):
+- **Scale against the body or the home:** the 80 mm wall beside a hand; seven metres of weld unrolled beside a man;
+  drawn to true scale, labelled OUR CALCULATION where we computed it.
+- **The cause, happening:** not the cracked weld, but oxygen entering the hot metal and the pores opening.
+- **The cutaway in the same shot:** the real photo, and our drawing of its inside, from the same angle, one
+  dissolving into the other. Real gives trust; the drawing gives understanding.
+- **The match cut:** shape to shape, motion to motion, or sound to sound (the ball in the hall → the ball in the sea).
+- **One continuous move** from far outside to deep inside (§9.4, the designed long take).
+- **Then and now on one framing:** the same shot, two dates, the difference is the story.
+- **The viewer's seat:** from inside the machine looking out, at the height of a sitting person.
+- **The absence:** the empty seats, the dark, the mast that does not rise. What isn't there, held for a breath.
+- **Time bent at the instant that matters:** the half-second of failure slowed, a year of waiting compressed.
+- **A number that is a thing:** a counter fixed to the object it measures and moving with it, never a floating figure.
+- **The motif's return** (§5.2): the same picture, changed, each time the argument moves.
+**The test for any idea:** does it make the sentence clearer, the feeling stronger or the question sharper? If it
+only looks good, it is decoration: cut it. And every idea stays true to the sourced numbers (§8).
 
 ---
 
@@ -783,7 +1007,7 @@ from the phone. For anything the cloud can't fetch (the Pexels and Pixabay websi
 block cloud IPs, logged-in downloads), give the owner **one click-to-copy request to paste into Cowork**, complete in
 itself:
 ```text
-Download these files and save them to Google Drive, folder Creator/<English|Built-on-Bharat>/<slug>/footage/cowork/
+Download these files and save them to Google Drive, folder Creator/English/<slug>/footage/cowork/
 (create it if missing). Keep the original file names, highest quality offered, no re-encoding.
 1. <exact page URL> : <what it is> (take: <the variant/size>; range <mm:ss-mm:ss> if a video)
 2. ...
@@ -824,6 +1048,11 @@ paid archives without asking.
   complete silence before a major mechanical reveal,** then the sound of the reveal.
 - **Every visual event has a sound** from `cues.ts`: the stamp, the snap, the hiss of pressure, the clang of a forging
   press. Impacts −6 to −8 dB, small effects −8 to −10 dB.
+- **Sound tells the story too (2026-11-11).** Each film has a sound palette of the machine's own world (water
+  pressure, a vacuum pump, a furnace) and **one sound motif** that returns with the picture motif (§5.2). Decide in
+  the plan where sound leads: a reveal heard half a second before it is seen, a cut made on a sound, a chapter that
+  ends on a real sound instead of a line. Music changes when the feeling changes (the feeling curve), never just
+  because a chapter number did.
 - **Pauses are never dead air:** the picture cuts on the breath, music lifts in the gap; real sound carries 2–6 s at big
   moments (a submarine's hull groan, a furnace roar), and the voice never talks over real speech.
 - **Voice polish:** high-pass at 70 Hz, a gentle low shelf (+1.5 to +2.5 dB near 120 Hz), de-ess at 6–8 kHz, light
@@ -862,14 +1091,24 @@ paid archives without asking.
    (§9.5). Names, places, years and verbs are the hard cases.
 3. **Frames against the audio:** one frame per second with the words heard in that second; read every sheet for empty,
    unreadable, covered or off-frame moments, and for legibility at 480p (§9.6).
-4. **A creative pass over the whole film** (not only the flagged shots): where would a sharper real shot, a match cut,
-   a sound beat or a better visual idea make a moment unforgettable?
+4. **A creative pass over the whole film** (not only the flagged shots), with five tests (2026-11-11), each written
+   into `review.md` with its result:
+   - **Mute test:** read the contact sheets in order without the words. Can the story be followed from the pictures?
+     Stretches that can't are picture-dictionary stretches (§9.5): they need an idea (§9.10).
+   - **Eyes-closed test:** read the narration against only the sound cues. Does each chapter turn without the picture?
+   - **Memory test:** after one pass, write the three things remembered. They should be the one image, the motif and
+     a signature moment (§5.2). If something else won, learn from it; if nothing did, the film isn't ready.
+   - **Swap test:** list the shots that could sit in another film. Each one is replaced or earns a reason.
+   - **The flattest minute:** find it (same shot rhythm, same kind of picture, no turn) and redesign it: a sharper
+     real shot, a match cut, a sound beat, a silence.
 5. Write `review.md` (issue → shot → fix), fix, rebuild, and review again until a round finds nothing worth fixing.
 
 ### 13.2 The pre-render checklist
 - [ ] Cold open in a moment; first frame = the thumbnail's subject; sentence 1 confirms the thumbnail (the promise
   check, §5.1); paradox by 0:25; open loop by 0:45 and true.
 - [ ] Every name, number, place and verb has its picture on its word; no generic stand-ins.
+- [ ] Every chapter's turn and payoff at idea level 2 or 3 (§9.10); the one image, each motif return and each
+  signature moment built as planned, or the change written in `treatment.md`.
 - [ ] Visible motion every 3.5 s; no still over 1.5 s; no hold over 5 s; ≥ 85% moving.
 - [ ] Every model on a physical base; no void; one document pose.
 - [ ] ≥ 44 / 30 px, 7:1 contrast, readable at 480p, nothing clipped, clear of the player's corners.
@@ -886,12 +1125,13 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
 - **At the plan (step 3):** the edge sentence, the locked title and thumbnail concept, the beat sheet and the
   signature moments, plus the strongest existing films. Questions: would viewers click this package over the others,
   and stay? Which of their real questions are missing? What do the other films
-  already do better? Where is the sodhi? What would make this the best film on the topic? Saved as
-  `review_plan_vN.md`.
+  already do better? Where is the sodhi? What would make this the best film on the topic? Which idea here have they
+  never seen before, and which have they seen in every film? Saved as `review_plan_vN.md`.
 - **At the narration (step 5):** `prompts/audience_review_v1.md` with the locked title and thumbnail concept and the
   narration exactly as it will be voiced. It returns: does the first sentence confirm what they clicked, topic clear in
   10 s, where viewers would swipe, can they explain it back, robotic lines, a **lean-in map**
-  (every ~30 s: leaning in / neutral / drifting), and how it compares with the existing films. Saved as
+  (every ~30 s: leaning in / neutral / drifting), what each viewer will remember tomorrow and tell a friend, which
+  lines could be from any video, and how it compares with the existing films. Saved as
   `review_audience_vN.md`. *Why:* we read our own script so often that we can't hear it as a stranger.
 - **At the 720p cut (step 12):** the cut (a Drive download link) and the narration with times. Not "was it built
   right" but: did it meet what viewers wanted from this topic, better than the others? Where did attention drop, what
@@ -962,6 +1202,9 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   shard in a minute (2026-11-06).
 - **A shard can hang on the runner's `apt-get install ffmpeg` step** (30 min, no progress). Cancel the run, then
   `rerun_failed_jobs`: finished shards keep their artifacts and the join still runs (2026-11-06).
+- **The join's "Film to Drive" step can sit for 10+ minutes on a full run** (twice on 2026-11-11). If it runs over
+  5 minutes, dispatch the workflow again with `join_from=<run id>` (it joined and uploaded in 3 minutes both times) and
+  cancel the first run.
 - **Blender on the runners:** the job limit is 340 min and a timed-out shard loses all its frames (they upload at the
   end). Volumes, glass bubbles and emission make frames 2–4× slower than a local test predicts: use 3–4 shards for
   any shot over 300 frames, or start a low-sample backup render of the slow range on spare runners and cancel
@@ -984,11 +1227,15 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   early we finish). **45 minutes before is the minimum.** *Why:* YouTube says 4K takes about four times longer than HD
   to process and 60 fps longer still (a 60-minute 4K30 video can take up to 4 hours; Help 71674). Early viewers of an
   unprocessed film see a blurry stream and leave. The Review repo flags under 3 hours as a risk.
-- **Before the slot:** the fresh-facts gate (§8) is done and logged; Content ID and ad-suitability checks finish; the AI-use answer (§ AI-use disclosure, No unless the film has AI scenes); title,
+- **Before the slot:** the fresh-facts gate (§8) is done and logged; Content ID and ad-suitability checks finish; the AI-use answer (§8: No unless the film has AI scenes); title,
   thumbnail (+ challengers in Test & Compare), description with chapters, the film's playlist (§1: "Practical India" for the
   weekly films, "Built on Bharat" for company histories; `scripts/yt_upload.py` adds it by `playlist_id`), cards and end screens (the latest film and the playlist), our SRT.
 - **At the slot:** the film goes public; post and pin the source comment (the film's main sources, plain links) within
-  60 seconds.
+  60 seconds. It is written like the narration, in plain words with no emoji, hashtags or series slogans: the
+  sources, then the answer to any ledger objection the film had no room for, then one real question.
+- **The end screen** points at the film most related to this one (the same machine, supplier or bottleneck), then
+  the playlist. *Why:* nearly every viewer is new and arrives from recommendations (§13.3); the next click is the
+  only way they become a returning viewer.
 
 ### 15.2 The first 48 hours
 - **No self-views:** never open or scrub the published film on the owner's phone, home Wi-Fi or linked accounts.
@@ -999,7 +1246,10 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
 - **Read Studio at 24 hours.** If impressions are over 1,500 and CTR under 2.5%, switch to the challenger thumbnail
   (unless Test & Compare is still running; let it finish).
 - **Then at 7 and 28 days:** CTR and impressions per traffic source (browse, suggested, search), retention at 0:30 and
-  1:00 against the targets in §5.1, rewinds and cliffs with what was on screen, the search-terms report. Low CTR with
+  1:00 against the targets in §5.1, rewinds and cliffs with what was on screen, the search-terms report. Also the two
+  attachment numbers (§1.2): **subscribers gained per 1,000 views** (3 on 2026-11-11; the first target is 10) and
+  **likes per 100 views** (0.3–0.8 on the big films; target 2). And read every comment: objections go into the next
+  film's ledger, requests into the topic list, and §1.2 is updated. Low CTR with
   good retention: the package failed the film. High CTR with an early cliff: the film broke the promise; fix the
   opening of the next film. Log what you learn in §16.
 
@@ -1014,6 +1264,16 @@ branch to delete, archive the session.
 Short dated lessons that don't belong to one rule. The full film-by-film log (October 2026) is §15 of
 `docs/archive/PLAYBOOK_2026-11-05.md`.
 
+- **2026-11-11 · The films watched as an Indian viewer (§1.3):** the hits won on words (Kishore beside you, your own
+  life, honour defended with facts, a saying, a date); the new films had better pictures and thinner words. Kishore
+  and a closing line are back; Matsya's narration rewritten as v3.
+- **2026-11-11 · The audience read (§1.2):** plenty of reach, little attachment (3 subscribers per 1,000 views); the
+  most-liked comments were objections we never answered; bright household-name packages travelled, dark or abstract
+  ones didn't. Added the objection ledger, the package leads, the source line, the attachment numbers.
+- **2026-11-11 · Creativity got a method and gates** (owner: creativity has no limit; where do the instructions need to be?). They were missing at five points: research (no story bank, so nothing vivid to write
+  from), the plan (options that differed only in count), the narration (a lint written to as a recipe), the word map
+  (a picture per noun, no idea per sentence) and review (nothing asked what a viewer would remember). Now §3, §5.2,
+  §6.5, §9.10, §13.1.
 - **2026-11-09 · Upload by API** (`scripts/yt_upload.py`): `videos.insert` silently drops `containsSyntheticMedia`;
   a `videos.update` of `status` right after keeps it (the script does both). The Analytics API has no hour-of-day
   dimension, so a publish hour comes from country mix, weekday and our own past slots (`scripts/yt_audience.py`).

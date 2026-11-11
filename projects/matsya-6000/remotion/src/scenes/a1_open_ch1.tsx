@@ -1,111 +1,143 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {AbsoluteFill} from 'remotion';
 import type {Part} from '../Film';
 import {BuffaloTrueScale, CarbonHull, Fall, NailPress, WeldBars} from '../parts/drawings';
-import {Clip, ez, Hero, Plate, tw} from '../parts/kit';
+import {Clip, Hero, Plate} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
-import {clip, cnt, CR, Deep, hero, insert, lab, pre, Quote, ReportPose, shot, stamp, tag} from './common';
+import {ask, clip, cnt, CR, Deep, hero, insert, lab, pre, PressureCompare, Quote, ReportPose, shot, stamp, tag} from './common';
 
-// Cold open and Ch1 (S0–S41), word_map.md. Frames from the locked audio r2 (vo/timing.json).
-
-/** the dive window pass (H1_dive 7.3–7.8 s clips through the glass): a dip to near black and back */
-const Dip: React.FC<{peak: number}> = ({peak}) => {
-	const f = useCurrentFrame();
-	const o = f < peak ? tw(f, peak - 18, peak, 0, 0.92, ez.leave) : tw(f, peak, peak + 20, 0.92, 0, ez.arrive);
-	return <AbsoluteFill style={{background: `rgba(2,6,11,${o})`}} />;
-};
-
+// Narration v3 (2026-11-11). Cold open (S0–16), the pressure (S17–26), Titan and what India does differently (S27–47).
+// Frames from the locked audio (vo/timing.json).
 const S = s0;
+
 const open: Part = {
 	shots: [
-		hero(S(0), 'H1_dive', 0),
+		// the thumbnail's subject first, then the real ball on "this titanium ball"
+		// the real sea first (owner on r6: the deep looked like space), then down to the ball
+		clip(S(0), 'PX_surface', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		hero(pre(w0(0, 'water')), 'H1_dive', 0.3),
+		clip(pre(w0(0, 'this')), 'F01_ballhall', CR.dd),
+		// the hall clip pans to another vehicle after 3 s: the squeeze takes over on 'almost one lakh tonnes'
+		hero(pre(w0(0, 'almost')), 'H4_squeeze', 3.0, 'SIMPLIFIED'),
+		hero(S(1), 'H1_cutaway', 12.2),
 		clip(S(2), 'ISRO_hall', CR.isro),
-		clip(pre(w0(2, 'deep-sea')) + 60, 'ISRO_ballred', CR.isro),
-		hero(S(4), 'H2_pieces', 0),
+		clip(pre(w0(2, 'india')), 'F08_ball', CR.tn),
+		hero(S(3), 'H2_seam', 0),
+		clip(S(5), 'ISRO_ballred', CR.isro),
+		clip(S(6), 'ISRO_ebglow', CR.isro),
 		// ISRO's own lift-off film (PSLV-C51), a framed insert: the source is 480p
-		insert(S(5), 'ISRO_liftoff', CR.isro, 16 / 9, 2.0),
-		clip(S(7), 'ISRO_ebglow', CR.isro),
-		clip(S(8), 'ISRO_ballred', CR.isro),
-		shot(S(9), 'weldbars', (d, l) => (
+		insert(S(7), 'ISRO_liftoff', CR.isro, 16 / 9, 2.0),
+		clip(S(8), 'ISRO_bead', CR.isro),
+		clip(S(9), 'F01_ball', CR.dd),
+		shot(S(10), 'weldbars', (d, l) => (
 			<Plate dur={d} seed="bars">
-				<WeldBars show20={w0(9, 'thicker') - S(9) + l} show80={w0(9, 'thicker') - S(9) + l + 20} grow={w0(9, 'four') - S(9) + l} />
+				<WeldBars show20={l + 4} show80={w0(11, 'eight') - S(10) + l} grow={w0(11, 'eight') - S(10) + l + 24} />
 			</Plate>
 		)),
-		hero(S(11), 'H1_dive', 0.6),
+		clip(S(12), 'ISRO_console2', CR.isro),
+		clip(S(13), 'ISRO_monitor', CR.isro),
+		shot(S(14), 'deep-titan0', (d, l) => <Deep dur={d} word={{at: w0(14, 'titan') - S(14) + l, text: 'TITAN'}} />),
+		clip(S(15), 'F01_ball', CR.dd, 0.4),
+		clip(S(16), 'PX_phone2', CR.px),
 	],
 	overlays: [
 		cnt(w0(0, 'lakh'), w0(0, 'tonnes'), S(1), 100000, 'TONNES', 140, 760, 120),
-		lab(S(0) + 420, S(0) + 500, 'dip', <Dip peak={Math.round(7.55 * 60) - 420} />),
-		tag(w0(2, 'people'), s1(2), 'FOR PEOPLE'),
-		tag(w0(3, 'matsya'), s1(3) + 20, 'MATSYA 6000', 140, 760, 72, C.amber),
-		tag(w0(4, 'five'), s1(4), '5 PIECES', 140, 720, 60),
-		tag(w0(4, 'seven'), s1(4), '7 WELDS', 140, 820, 60, C.weld),
-		tag(w0(6, 'rockets'), s1(6), 'ISRO · ROCKETS'),
-		tag(w0(7, 'hardest'), s1(7), 'ITS HARDEST WELD', 140, 760, 56, C.weld),
-		cnt(w0(10, 'seven'), w0(10, 'tries'), s1(10) + 20, 700, 'TRIES'),
-		tag(w0(12, 'titan'), s1(12), 'TITAN', 140, 760, 64),
+		cnt(w0(0, 'six'), w0(0, 'sea'), pre(w0(0, 'this')), 6000, 'M DOWN', 140, 180, 110, C.amber),
+		tag(w0(1, 'three'), s1(1), 'THREE INDIANS INSIDE', 140, 760, 56),
+		tag(w0(2, 'matsya'), s1(2) + 10, 'MATSYA 6000', 140, 760, 72, C.amber),
+		tag(w0(3, 'seven'), s1(4), '7 WELDS', 140, 760, 64, C.weld),
+		tag(w0(4, 'weak'), s1(4), 'ONE WEAK WELD IS ENOUGH', 140, 860, 48, C.red),
+		tag(w0(6, 'isro'), s1(6), 'MADE BY ISRO', 140, 760, 60, C.weld),
+		tag(w0(7, 'rocket'), s1(7), 'THE ROCKET PEOPLE', 140, 860, 52),
+		tag(w0(8, 'hardest'), s1(9), 'ISRO’S HARDEST WELD', 140, 760, 56, C.weld),
+		cnt(w0(12, 'seven'), w0(12, 'tries'), s1(12) + 10, 700, 'TRIES'),
+		tag(w0(16, 'phone'), s1(16), 'THE PHONE IN YOUR HAND', 140, 760, 56, C.cyan),
 	],
 };
 
 const ch1: Part = {
 	shots: [
-		// real sea under the depth counter (owner, r3: a real clip for every idea)
-		clip(S(14), 'PX_rays', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
-		clip(S(15), 'PX_reef', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
-		clip(S(16), 'PX_rays', CR.px, 6, 'ILLUSTRATIVE FOOTAGE'),
-		// a real finger, a real nail, a real buffalo; then the buffalo on the nail drawn at true size (owner, r3)
-		clip(S(19), 'PX_finger', CR.pex),
-		shot(S(20), 'nail-press', (d, l) => (
+		clip(S(17), 'PX_finger', CR.pex, 1.6),
+		// real sea under the depth counter
+		clip(S(18), 'PX_rays', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		clip(S(19), 'PX_reef', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		clip(S(21), 'PX_rays', CR.px, 6, 'ILLUSTRATIVE FOOTAGE'),
+		shot(S(22), 'nail-press', (d, l) => (
 			<AbsoluteFill>
 				<Clip name="PX_nail" dur={d} grade="day" from={[1.0, 0, 0]} to={[1.0, 0, 0]} />
-				<NailPress arrow={w0(20, 'press') - S(20) + l} kg={w0(20, 'six') - S(20) + l} />
+				<NailPress arrow={w0(22, 'presses') - S(22) + l} kg={w0(22, 'six', 1) - S(22) + l} />
 			</AbsoluteFill>
 		), {tag: 'OUR CALCULATION', credit: CR.pex}),
-		clip(S(21), 'PX_buffalo', CR.px),
-		shot(pre(w0(21, 'on')), 'nail-buffalo', (d) => (
+		clip(S(23), 'PX_buffalo', CR.px),
+		shot(pre(w0(23, 'standing')), 'nail-buffalo', (d) => (
 			<Plate dur={d} seed="nail2" from={[1.0, 0, 0]} to={[1.03, 0, 0]}>
 				<BuffaloTrueScale dur={d} />
 			</Plate>
 		), {tag: 'OUR CALCULATION'}),
-		hero(S(22), 'H4_squeeze', 0, 'SIMPLIFIED'),
-		clip(S(25), 'F01_ballhall', CR.dd),
-		shot(S(26), 'deep-titan', (d, l) => <Deep dur={d} word={{at: w0(26, 'titan') - S(26) + l, text: 'TITAN'}} />),
-		shot(S(27), 'report', (d, l) => <ReportPose dur={d} dim={w0(29, 'five') - S(27) + l} />, {credit: CR.uscg}),
-		shot(S(30), 'carbon', (d, l) => (
+		hero(S(24), 'H4_squeeze', 0, 'SIMPLIFIED'),
+		clip(pre(w0(24, 'buffalo')), 'PX_herd', CR.px),
+		hero(S(26), 'H4_squeeze', 3.0, 'SIMPLIFIED'),
+	],
+	overlays: [
+		lab(S(18), S(22), 'fall', <Fall bare dur={S(22) - S(18)} target={w0(21, 'six') - S(18)} beats={[w0(19, 'ten') - S(18), w0(20, 'twenty') - S(18)]} race={w0(21, 'keep') - S(18)} />),
+		tag(w0(21, 'six'), S(22), '600 TIMES', 140, 760, 64, C.amber),
+		tag(w0(23, 'full'), pre(w0(23, 'standing')), 'ABOUT 600 KG', 140, 760, 64, C.amber),
+		tag(w0(24, 'buffalo'), S(26), 'A BUFFALO ON EVERY NAIL', 140, 760, 56, C.amber),
+		cnt(w0(26, 'lakh'), w0(26, 'tonnes'), s1(26) + 20, 100000, 'TONNES'),
+		tag(w0(26, 'every'), s1(26) + 20, 'FROM EVERY SIDE', 140, 860, 52),
+	],
+};
+
+const titan: Part = {
+	shots: [
+		clip(S(27), 'F01_hall', CR.dd),
+		clip(S(29), 'F01_ball', CR.dd),
+		clip(S(30), 'PX_surface', CR.px, 3.0, 'ILLUSTRATIVE FOOTAGE'),
+		shot(S(31), 'deep-titan', (d, l) => <Deep dur={d} word={{at: w0(31, 'titan') - S(31) + l, text: 'TITAN'}} />),
+		shot(S(32), 'report', (d, l) => <ReportPose dur={d} dim={l + 30} />, {credit: CR.uscg}),
+		shot(S(33), 'carbon', (d, l) => (
 			<Plate dur={d} seed="carbon">
-				<CarbonHull dur={d} part={w0(31, 'layers') - S(30) + l} />
+				<CarbonHull dur={d} part={w0(34, 'layers') - S(33) + l} />
 			</Plate>
 		), {tag: 'SIMPLIFIED'}),
-		shot(S(32), 'quote', (d, l) => (
+		shot(S(35), 'quote', (d) => (
 			<Quote
 				dur={d}
 				text="“OceanGate’s failure to follow established engineering protocols for safety, testing, and maintenance of their submersible, was the primary causal factor.”"
 				source="US COAST GUARD MARINE BOARD OF INVESTIGATION · 2025"
 			/>
 		)),
-		clip(S(33), 'ISRO_hall', CR.isro),
-		clip(S(35), 'ISRO_ti', CR.isro, 1.5),
-		hero(S(36), 'H2_seam', 0),
-		clip(S(37), 'ISRO_ut', CR.isro),
-		clip(S(38), 'F01_ball', CR.dd),
-		hero(S(39), 'H3_weights', 0),
+		shot(S(36), 'deep-number', (d) => <Deep dur={d} />),
+		shot(pre(w0(37, 'titan')), 'pressure', (d, l) => (
+			<Plate dur={d} seed="pressure">
+				<PressureCompare titan={l + 9} matsya={w0(37, 'matsya') - pre(w0(37, 'titan')) + l} />
+			</Plate>
+		), {tag: 'OUR CALCULATION'}),
+		clip(S(38), 'ISRO_hall', CR.isro),
+		clip(S(40), 'ISRO_ti', CR.isro, 1.5),
+		clip(S(41), 'F01_ball', CR.dd),
+		clip(S(42), 'ISRO_ut', CR.isro),
+		clip(S(43), 'ISRO_xray', CR.isro),
+		clip(S(44), 'F01_hall', CR.dd),
+		hero(S(45), 'H3_weights', 0),
 	],
 	overlays: [
-		tag(w0(28, 'june'), s1(29), '18.06.2023', 140, 180, 56, C.ink, true),
-		cnt(w0(24, 'lakh'), w0(24, 'tonnes'), s1(24) + 20, 100000, 'TONNES'),
-		lab(S(14), S(19), 'fall', <Fall bare dur={S(19) - S(14)} target={w0(14, 'six') - S(14)} beats={[w0(15, 'ten') - S(14), w0(16, 'once') - S(14), w0(17, 'again') - S(14), w0(18, 'again') - S(14)]} race={w0(18, 'again') - S(14) + 24} />),
-		tag(w0(21, 'full'), pre(w0(21, 'on')), 'ABOUT 600 KG', 140, 760, 64, C.amber),
-		tag(w0(31, 'kept'), s1(31), 'KEPT DIVING', 140, 860, 52, C.red),
-		tag(w0(35, 'titanium'), s1(35), 'TITANIUM', 140, 760, 64, C.ti),
-		tag(w0(36, 'ball'), s1(36), 'A BALL', 140, 760, 64),
-		stamp(w0(37, 'approves'), s1(37) + 10, 'CERTIFIED', C.green),
-		tag(w0(38, 'norway'), s1(38) + 10, 'CHECKED IN NORWAY', 140, 760, 56, C.green),
-		tag(w0(40, 'drop'), s1(40), 'DROP WEIGHTS', 140, 180, 56, C.amber),
-		tag(w0(40, 'rises'), s1(40), 'IT RISES', 140, 270, 52),
-		cnt(w0(41, 'ninety-six'), w0(41, 'hours'), s1(41) + 20, 96, 'HOURS OF AIR', 140, 720, 120, C.cyan),
+		ask(w0(29, 'is'), S(30), 'Is this another Titan?'),
+		tag(w0(30, 'june'), s1(32), '18.06.2023', 140, 180, 56, C.ink, true),
+		tag(w0(34, 'kept'), s1(34), 'AND IT KEPT DIVING', 1180, 190, 48, C.red),
+		tag(w0(38, 'india'), s1(39), 'WHAT INDIA DOES DIFFERENTLY', 140, 760, 52),
+		tag(w0(40, 'titanium'), s1(40), 'TITANIUM', 140, 760, 64, C.ti),
+		tag(w0(40, 'fifty'), s1(40), 'TRUSTED FOR 50+ YEARS', 140, 860, 48, C.dim),
+		tag(w0(41, 'ball'), s1(41), 'A BALL', 140, 760, 64),
+		tag(w0(42, 'builders'), s1(42), 'NOBODY PASSES THEIR OWN WORK', 140, 760, 50),
+		stamp(w0(43, 'approve'), s1(43) + 10, 'CERTIFIED', C.green),
+		tag(w0(44, 'norway'), s1(44) + 10, 'CHECKED IN NORWAY', 140, 760, 56, C.green),
+		tag(w0(46, 'drop'), s1(46), 'DROP WEIGHTS', 140, 180, 56, C.amber),
+		tag(w0(46, 'rises'), s1(46), 'IT RISES', 140, 270, 52),
+		cnt(w0(47, 'ninety-six'), w0(47, 'hours'), s1(47) + 10, 96, 'HOURS OF AIR', 140, 720, 120, C.cyan),
 	],
 };
 
-export const a1: Part = {shots: [...open.shots, ...ch1.shots], overlays: [...open.overlays, ...ch1.overlays]};
+export const a1: Part = {shots: [...open.shots, ...ch1.shots, ...titan.shots], overlays: [...open.overlays, ...ch1.overlays, ...titan.overlays]};
 export {Hero};

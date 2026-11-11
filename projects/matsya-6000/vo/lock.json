@@ -1,8 +1,8 @@
 {
- "audio": "mat_vo_full.mp3",
- "sha256": "8deb177eb883bae5c4d9181adbd8d2866694331baad6f6b2caabe5915d7d31dc",
- "duration": 452.127,
- "approved": "owner, 2026-11-10 (chat: 'Approved the mp3 you sent', audio r2)",
+ "audio": "mat_v3_api_vo_full.mp3",
+ "sha256": "af06a6f5b9e3602784018e75ad6eb96d1fa3a4189df8b7326c63fdeb9bb9a866",
+ "duration": 543.321,
+ "approved": "",
  "wav": "vo_full.wav",
- "wav_duration": 452.093
+ "wav_duration": 543.28
 }

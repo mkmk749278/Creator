@@ -298,6 +298,52 @@ export const Underwater: React.FC<{depth?: number}> = ({depth = 0}) => {
 	);
 };
 
+/** Real water over a 3D deep-sea shot (owner on r6: "looking like dark universe with stars"). Our Blender shots are
+ *  lit objects on black with white specks; this lays the sea back on top: a blue body of water (screen, so black
+ *  becomes deep blue and the lit object keeps its colour), light from above near the surface only, and real air
+ *  bubbles rising (Pixabay 31611). `depth` 0 = near the surface, 1 = six kilometres down (no sunlight: a darker,
+ *  even blue). `until` fades it out (frames), for a shot that goes inside the ball. */
+export const SeaOver: React.FC<{dur: number; depth?: number; until?: number; bubbles?: number}> = ({dur, depth = 1, until, bubbles = 0.5}) => {
+	const f = useCurrentFrame();
+	const out = until === undefined ? 1 : interpolate(f, [until - 20, until], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	if (out <= 0) {
+		return null;
+	}
+	const a = interpolate(depth, [0, 1], [0.62, 0.34]);
+	const b = interpolate(depth, [0, 1], [0.34, 0.26]);
+	return (
+		<AbsoluteFill style={{opacity: out, pointerEvents: 'none'}}>
+			<AbsoluteFill style={{mixBlendMode: 'screen', background: `linear-gradient(180deg, rgba(22,104,150,${a}) 0%, rgba(9,58,96,${b}) 50%, rgba(4,30,54,${b * 0.8}) 100%)`}} />
+			{depth < 0.6
+				? [0, 1, 2, 3].map((i) => (
+						<div
+							key={i}
+							style={{
+								position: 'absolute',
+								left: 160 + i * 470 + 70 * noise2D('sray' + i, f / 260, 0),
+								top: -220,
+								width: 170 + 70 * random('srw' + i),
+								height: 1350,
+								transform: `rotate(${13 + 4 * noise2D('srr' + i, 0, f / 380)}deg)`,
+								background: `linear-gradient(180deg, rgba(160,220,255,${0.2 * (1 - depth)}), transparent 72%)`,
+								filter: 'blur(30px)',
+								mixBlendMode: 'screen',
+							}}
+						/>
+					))
+				: null}
+			<OffthreadVideo
+				src={staticFile('assets/media/clips/PX_bubbles.mp4')}
+				startFrom={Math.round(60 * 2 * random('bub' + Math.round(dur)))}
+				playbackRate={fitRate('PX_bubbles', dur, 2)}
+				muted
+				style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', mixBlendMode: 'screen', opacity: bubbles, filter: 'blur(0.6px) brightness(1.25)'}}
+			/>
+			<AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 45%, transparent 45%, rgba(1,10,20,0.55) 100%)'}} />
+		</AbsoluteFill>
+	);
+};
+
 /** Marine snow: specks drifting past the lens; `speed` px a frame upward reads as the camera sinking. */
 export const MarineSnow: React.FC<{speed?: number; n?: number}> = ({speed = 1, n = 140}) => {
 	const f = useCurrentFrame();

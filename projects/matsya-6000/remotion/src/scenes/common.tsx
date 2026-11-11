@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import type {Overlay, Shot} from '../Film';
-import {Clip, Count, Credit, ez, Hero, Honesty, Insert, Label, MarineSnow, Photo, Plate, tw, Underwater, useSpring} from '../parts/kit';
+import {Clip, Count, Credit, ez, Hero, Honesty, Insert, Label, MarineSnow, Photo, Plate, SeaOver, tw, Underwater, useSpring} from '../parts/kit';
 import {C, F} from '../theme';
 import {s0, w0} from '../timing';
 
@@ -48,8 +48,26 @@ export const clip = (at: number, name: string, credit: string, startAt = 0, tag?
 
 /** a hero clip whose frame `startAt` (s) falls on frame `at`: from its first frame it cuts in hard on the sentence;
  *  later it dissolves in, starting `lead` frames earlier in the clip so its word timing stays exact */
+/** our 3D shots that happen in the sea: each gets real water laid over it (kit SeaOver) */
+const SEA: Record<string, number> = {H1_dive: 0.25, H3_descent: 1, H3_seabed: 1, H3_weights: 1, H1_dark: 1, H4_squeeze: 0.8};
 export const hero = (at: number, name: string, startAt = 0, tag = 'ILLUSTRATION', style?: React.CSSProperties) =>
-	shot(at, name, (d, l) => <Hero name={name} dur={d} startAt={Math.max(0, startAt - l / 60)} style={style} />, {tag, hard: startAt < 0.2});
+	shot(
+		at,
+		name,
+		(d, l) => {
+			const from = Math.max(0, startAt - l / 60);
+			// H1_dive goes through the window into the ball at about 7.3 s: no water inside
+			const until = name === 'H1_dive' ? Math.round((7.2 - from) * 60) : name === 'H3_seabed' ? undefined : undefined;
+			const sea = name in SEA && !(name === 'H1_dive' && from >= 7.0);
+			return (
+				<AbsoluteFill>
+					<Hero name={name} dur={d} startAt={from} style={style} />
+					{sea ? <SeaOver dur={d} depth={SEA[name]} until={until} bubbles={name === 'H4_squeeze' ? 0.3 : 0.5} /> : null}
+				</AbsoluteFill>
+			);
+		},
+		{tag, hard: startAt < 0.2},
+	);
 
 export const photo = (at: number, src: string, credit: string, fit: 'cover' | 'contain' = 'cover') =>
 	shot(at, src, (d) => <Photo src={src} dur={d} fit={fit} />, {credit});
@@ -60,17 +78,20 @@ export const insert = (at: number, name: string, credit: string, aspect = 16 / 9
 /** the deep, empty: black water and drifting specks (a slow descent so the frame is never static) */
 export const Deep: React.FC<{dur: number; word?: {at: number; text: string; color?: string}}> = ({dur, word}) => {
 	const f = useCurrentFrame();
-	// a visible push into the dark and denser, faster snow (r1 read as a freeze)
+	// a visible push into deep blue water with real bubbles (r6: black with specks read as space)
 	const z = tw(f, 0, Math.max(1, dur), 1.0, 1.14, (t) => t);
 	return (
-		<AbsoluteFill style={{background: C.night}}>
+		<AbsoluteFill style={{background: '#020d18'}}>
 			<AbsoluteFill style={{transform: `scale(${z})`}}>
-				<Underwater depth={0.85} />
-				<MarineSnow speed={2.4} n={220} />
+				<Underwater depth={0.7} />
+				<AbsoluteFill style={{filter: 'blur(1.6px)', opacity: 0.6}}>
+					<MarineSnow speed={1.6} n={70} />
+				</AbsoluteFill>
 			</AbsoluteFill>
+			<SeaOver dur={dur} depth={0.85} bubbles={0.6} />
 			{word && f >= word.at ? (
 				<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
-					<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 140, letterSpacing: 8, color: word.color ?? C.ink, opacity: tw(f, word.at, word.at + 18, 0, 1, ez.arrive)}}>{word.text}</div>
+					<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 140, letterSpacing: 8, color: word.color ?? C.ink, opacity: tw(f, word.at, word.at + 18, 0, 1, ez.arrive), textShadow: '0 6px 30px rgba(0,0,0,0.8)'}}>{word.text}</div>
 				</AbsoluteFill>
 			) : null}
 		</AbsoluteFill>
@@ -155,3 +176,39 @@ export const cnt = (from: number, land: number, to: number, value: number, unit:
 
 export const stamp = (from: number, to: number, text: string, color: string, x?: number, y?: number): Overlay =>
 	lab(from, to, 'stamp ' + text, <Stamp at={0} text={text} color={color} x={x} y={y} />);
+
+/** the viewer's own objection, as they would say it to Kishore: a speech bubble, lower left, on its word (v3) */
+export const Ask: React.FC<{text: string}> = ({text}) => {
+	const p = useSpring(0, 200, 16);
+	return (
+		<div style={{position: 'absolute', left: 140, top: 700, transform: `scale(${0.85 + 0.15 * p})`, transformOrigin: '0% 100%', opacity: p}}>
+			<div style={{fontFamily: F.label, fontWeight: 700, fontSize: 36, letterSpacing: 3, color: C.amber, marginBottom: 10, textShadow: '0 2px 10px rgba(0,0,0,0.9)'}}>YOU ASK KISHORE</div>
+			<div style={{display: 'inline-block', fontFamily: F.label, fontWeight: 800, fontSize: 60, color: '#0d1117', background: C.ink, padding: '18px 34px', borderRadius: '28px 28px 28px 4px', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', whiteSpace: 'nowrap'}}>
+				{text}
+			</div>
+		</div>
+	);
+};
+export const ask = (from: number, to: number, text: string): Overlay => lab(from, to, 'ask ' + text, <Ask text={text} />);
+
+/** v3 S37: the sea's push where Titan broke against what Matsya's ball is designed for (OUR CALCULATION, M-CALC6) */
+export const PressureCompare: React.FC<{titan: number; matsya: number}> = ({titan, matsya}) => {
+	const f = useCurrentFrame();
+	const a = tw(f, titan, titan + 40, 0, 1, ez.sweep);
+	const b = tw(f, matsya, matsya + 50, 0, 1, ez.sweep);
+	const row = (y: number, name: string, bar: number, k: number, col: string) => (
+		<div style={{position: 'absolute', left: 200, top: y, opacity: Math.min(1, k * 3)}}>
+			<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 50, color: C.ink, letterSpacing: 2, marginBottom: 14}}>{name}</div>
+			<div style={{display: 'flex', alignItems: 'center', gap: 28}}>
+				<div style={{width: (bar / 600) * 1150 * k, height: 110, background: col, boxShadow: '0 12px 40px rgba(0,0,0,0.5)'}} />
+				<div style={{fontFamily: F.mono, fontWeight: 700, fontSize: 76, color: col}}>{Math.round(bar * k)} BAR</div>
+			</div>
+		</div>
+	);
+	return (
+		<AbsoluteFill>
+			{row(250, 'WHERE TITAN BROKE · ABOUT', 340, a, C.red)}
+			{row(580, 'MATSYA’S BALL · DESIGNED FOR', 600, b, C.amber)}
+		</AbsoluteFill>
+	);
+};
