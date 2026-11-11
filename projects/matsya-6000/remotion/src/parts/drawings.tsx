@@ -85,11 +85,16 @@ export const Fingernail: React.FC<{arrow: number; kg: number; buffalo: number}> 
 export const Fall: React.FC<{dur: number; target: number; beats: number[]; race: number}> = ({dur, target, beats, race}) => {
 	const f = useCurrentFrame();
 	// depth: 0 at the start; 10/20/30 m on the beats; then a race to 6,000
+	// each beat takes over once it starts (r1 took the max of every beat, so it read 30 m from frame 0)
 	let d = 0;
 	beats.forEach((b, i) => {
-		d = Math.max(d, tw(f, b, b + 18, i * 10, (i + 1) * 10, ez.arrive));
+		if (f >= b) {
+			d = tw(f, b, b + 18, i * 10, (i + 1) * 10, ez.arrive);
+		}
 	});
-	d = Math.max(d, tw(f, race, dur, beats.length * 10, 6000, ez.sweep));
+	if (f >= race) {
+		d = tw(f, race, dur, beats.length * 10, 6000, ez.sweep);
+	}
 	const deep = Math.min(1, d / 6000);
 	return (
 		<AbsoluteFill>
@@ -193,8 +198,10 @@ export const Alvin: React.FC<{steel: number; ti: number; bars: number}> = ({stee
 /** S50–52: the 2021 test: a plain steel ball lowered on a cable from a ship's A-frame; a depth line to 600 m. */
 export const SteelBall2021: React.FC<{dur: number; date: number; depth: number}> = ({dur, date, depth}) => {
 	const f = useCurrentFrame();
+	// the ball is already going down from frame 0 (r1 held still until the date: a 2 s freeze)
 	const down = tw(f, date, dur, 0, 1, ez.sweep);
-	const by = 330 + 520 * down;
+	const pre0 = tw(f, 0, date, 0, 1, (t) => t);
+	const by = 300 + 70 * pre0 + 480 * down;
 	return (
 		<AbsoluteFill>
 			<Underwater depth={0.2 + 0.5 * down} />
@@ -324,6 +331,37 @@ export const DepthLadder: React.FC<{china: number; six: number}> = ({china, six}
 						</g>
 					);
 				})}
+			</svg>
+		</AbsoluteFill>
+	);
+};
+
+/** S110: a block of the yellow buoyancy foam; a crack draws itself across its face on "crack" (illustration) */
+export const FoamCrack: React.FC<{dur: number; crack: number; slide?: boolean}> = ({dur, crack, slide}) => {
+	const f = useCurrentFrame();
+	const k = tw(f, crack, crack + 40, 0, 1, ez.sweep);
+	const turn = tw(f, 0, dur, -8, 6, (t) => t);
+	// S109 "had to come from France, and it arrived late": the block slides in from the left and settles
+	const sx = slide ? tw(f, 0, Math.min(dur, 120), -1500, 0, ez.arrive) : 0;
+	const pts = [
+		[700, 330], [760, 420], [735, 470], [820, 560], [800, 610], [890, 700], [870, 760],
+	];
+	const n = Math.max(2, Math.ceil(k * pts.length));
+	const path = pts.slice(0, n).map((p, i) => `${i ? 'L' : 'M'}${p[0]} ${p[1]}`).join(' ');
+	return (
+		<AbsoluteFill>
+			<svg width={1920} height={1080} style={{position: 'absolute'}}>
+				<g transform={`translate(${sx} 0) rotate(${turn * 0.3} 960 560) translate(${turn * 4} 0)`}>
+					{/* the block: front face and top, foam yellow */}
+					<path d="M560 320 L1300 320 L1380 260 L640 260 Z" fill="#e2b93b" stroke="#8a6d1c" strokeWidth={4} />
+					<rect x={560} y={320} width={740} height={460} fill="#d4a92c" stroke="#8a6d1c" strokeWidth={4} />
+					<path d="M1300 320 L1380 260 L1380 720 L1300 780 Z" fill="#b38b1f" stroke="#8a6d1c" strokeWidth={4} />
+					{Array.from({length: 60}).map((_, i) => (
+						<circle key={i} cx={580 + random('fx' + i) * 700} cy={340 + random('fy' + i) * 420} r={2 + 3 * random('fr' + i)} fill="#f2d775" opacity={0.6} />
+					))}
+					{k > 0 ? <path d={path} fill="none" stroke="#1a1408" strokeWidth={9} strokeLinejoin="round" strokeLinecap="round" /> : null}
+					{k > 0 ? <path d={path} fill="none" stroke={C.red} strokeWidth={3} opacity={0.8 * k} strokeLinejoin="round" /> : null}
+				</g>
 			</svg>
 		</AbsoluteFill>
 	);

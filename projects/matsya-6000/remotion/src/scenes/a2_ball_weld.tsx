@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import type {Part} from '../Film';
 import {Alvin, BeadInAir, SteelBall2021, TubeVsBall, WeldBars} from '../parts/drawings';
-import {ez, Plate, tw} from '../parts/kit';
+import {ez, Insert, Plate, tw} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
 import {clip, cnt, CR, hero, lab, pre, shot, stamp, tag} from './common';
@@ -82,7 +82,7 @@ const ch3: Part = {
 		clip(S(55), 'ISRO_hall', CR.isro),
 		clip(S(56), 'ISRO_forge', CR.isro),
 		hero(S(57), 'H2_pieces', 0),
-		clip(drawingAt, 'ISRO_drawing', CR.isro, 0.6),
+		shot(drawingAt, 'ISRO_drawing', (d) => <Insert name="ISRO_drawing" dur={d} startAt={0.6} height={860} />, {credit: CR.isro}),
 		hero(backAt, 'H2_pieces', (backAt - S(57)) / 60),
 		clip(S(65), 'ISRO_shell', CR.isro),
 		clip(S(66), 'ISRO_ti', CR.isro, 3.0),
@@ -95,9 +95,10 @@ const ch3: Part = {
 		clip(pre(w0(71, 'electrons')), 'ISRO_console', CR.isro),
 		clip(S(72), 'ISRO_ebglow', CR.isro),
 		clip(S(73), 'ISRO_operator', CR.isro),
-		shot(pre(w0(74, 'welding')), 'bars', (d, l) => (
+		clip(pre(w0(74, 'welding')), 'ISRO_chamber', CR.isro),
+		shot(pre(w0(74, 'two')), 'bars', (d, l) => (
 			<Plate dur={d} seed="bars2">
-				<WeldBars show20={w0(74, 'two') - pre(w0(74, 'welding')) + l} show80={w0(75, 'eight') - pre(w0(74, 'welding')) + l} />
+				<WeldBars show20={w0(74, 'two') - pre(w0(74, 'two')) + l} show80={w0(75, 'eight') - pre(w0(74, 'two')) + l} />
 			</Plate>
 		)),
 		clip(S(76), 'ISRO_screens', CR.isro),
@@ -111,7 +112,7 @@ const ch3: Part = {
 		clip(S(86), 'ISRO_shell', CR.isro),
 		clip(pre(w0(86, 'x-ray')) + 60, 'ISRO_xray', CR.isro),
 		clip(S(87), 'ISRO_ut', CR.isro),
-		clip(S(88), 'ISRO_hall', CR.isro),
+		clip(S(88), 'F01_hall', CR.dd),
 	],
 	overlays: [
 		tag(w0(55, 'big'), s1(55), '2.26 M ACROSS', 140, 760, 56),
@@ -128,7 +129,7 @@ const ch3: Part = {
 		tag(w0(71, 'vacuum'), s1(72), 'IN A VACUUM', 140, 270, 52),
 		tag(w0(72, 'air'), s1(72), 'NO AIR GETS IN', 140, 760, 52, C.green),
 		tag(w0(74, 'bengaluru'), s1(74), 'ISRO · LPSC BENGALURU', 140, 180, 48, C.dim),
-		cnt(w0(76, 'powerful'), w0(76, 'powerful') + 60, s1(76) + 30, 40, 'KW', 140, 200, 110, C.amber, 15),
+		cnt(w0(76, 'powerful'), w0(76, 'powerful') + 60, s1(76) + 60, 40, 'KW', 140, 200, 110, C.amber, 15),
 		cnt(w0(78, 'seven'), w0(78, 'trial'), s1(78) + 20, 700, 'TRIAL WELDS'),
 		tag(w0(81, 'eight'), s1(81), '80 MM DEEP', 140, 180, 56, C.weld),
 		tag(w0(81, 'seven'), s1(81) + 30, '7.1 M LONG', 1100, 180, 64, C.amber, true, 'OUR CALCULATION: π × 2.26 M'),

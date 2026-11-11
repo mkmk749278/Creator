@@ -1,8 +1,8 @@
 import React from 'react';
 import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import type {Part} from '../Film';
-import {DepthLadder, Microspheres} from '../parts/drawings';
-import {ez, Plate, tw, useSpring} from '../parts/kit';
+import {DepthLadder, FoamCrack, Microspheres} from '../parts/drawings';
+import {ez, MarineSnow, Plate, tw, useSpring} from '../parts/kit';
 import {P, SeaMap} from '../parts/SeaMap';
 import {C, F} from '../theme';
 import {DURATION, s0, s1, w0} from '../timing';
@@ -43,8 +43,20 @@ const EndCard: React.FC<{dur: number}> = ({dur}) => {
 		<AbsoluteFill>
 			<Deep dur={dur} />
 			<AbsoluteFill style={{background: `rgba(3,7,13,${0.8 * fade})`, alignItems: 'center', justifyContent: 'center'}}>
-				<Img src={staticFile('brand/logo_square.png')} style={{width: 420, height: 420, opacity: logo, transform: `scale(${0.9 + 0.1 * logo})`, borderRadius: 24}} />
+				<Img src={staticFile('brand/logo_square.png')} style={{width: 420, height: 420, opacity: logo, transform: `scale(${(0.9 + 0.1 * logo) * (1 + 0.08 * tw(f, 0, dur, 0, 1, (t) => t))})`, borderRadius: 24}} />
 			</AbsoluteFill>
+		</AbsoluteFill>
+	);
+};
+
+/** S116: the last daylight fading out above the seabed's dark, with snow drifting past (r1: 3.5 s of plain black) */
+const Abyss: React.FC = () => {
+	const f = useCurrentFrame();
+	const sun = tw(f, 0, 150, 0.32, 0, (t) => t);
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none'}}>
+			<AbsoluteFill style={{background: `linear-gradient(180deg, rgba(60,130,175,${sun}) 0%, rgba(7,33,53,${sun * 0.6}) 45%, rgba(0,0,0,0) 100%)`}} />
+			<MarineSnow speed={2.2} n={200} />
 		</AbsoluteFill>
 	);
 };
@@ -105,13 +117,34 @@ const ch4: Part = {
 
 const ch5: Part = {
 	shots: [
-		hero(S(99), 'H1_dark', 2.0),
+		clip(S(99), 'F08_ball', CR.tn, 1.9),
+		shot(S(100), 'deep-notquite', (d) => <Deep dur={d} />),
 		hero(S(102), 'H3_assemble', 0),
 		shot(pre(w0(106, 'tiny')), 'microspheres', () => <Microspheres />, {tag: 'ILLUSTRATION'}),
 		photo(S(107), 'pib_dom_foam.png', CR.pib),
-		photo(S(109), 'pib_wet_foam.jpg', CR.pib, 'contain'),
+		shot(S(109), 'foamblock', (d) => (
+			<Plate dur={d} seed="foamblock">
+				<FoamCrack dur={d} crack={1e6} slide />
+			</Plate>
+		), {tag: 'ILLUSTRATION'}),
+		shot(S(110), 'foamcrack', (d, l) => (
+			<Plate dur={d} seed="foamcrack" from={[1.3, 0, 40]} to={[1.42, -30, 40]}>
+				<FoamCrack dur={d} crack={w0(110, 'crack') - S(110) + l} />
+			</Plate>
+		), {tag: 'ILLUSTRATION'}),
+		photo(S(111), 'pib_wet_foam.jpg', CR.pib, 'contain'),
 		photo(S(112), 'pib_wet_crane.jpg', CR.pib, 'contain'),
-		insert(pre(w0(113, 'twenty')), 'F03_water', CR.ddt),
+		shot(pre(w0(112, 'chennai')), 'chennai', (d, l) => (
+			<SeaMap
+				dur={d}
+				keys={[
+					{f: 0, lon: 81.5, lat: 13.5, zoom: 2.2},
+					{f: d, lon: 80.8, lat: 13.2, zoom: 2.8},
+				]}
+				pins={[{at: l + 9, ll: P.chennai, label: 'CHENNAI', side: 'right'}]}
+			/>
+		)),
+		insert(S(113), 'F03_water', CR.ddt),
 	],
 	overlays: [
 		tag(w0(100, 'not'), s1(101), 'NOT QUITE', 140, 760, 64),
@@ -148,6 +181,8 @@ const ch6: Part = {
 	],
 	overlays: [
 		tag(w0(116, 'sunlight'), s1(116), 'NO SUNLIGHT', 140, 180, 56),
+		lab(S(116), w0(117, 'lights') + 6, 'abyss', <Abyss />),
+		cnt(w0(116, 'six'), w0(116, 'down'), w0(117, 'lights'), 6000, 'M', 140, 300, 120, C.ink),
 		tag(w0(117, 'lights'), s1(117), 'YOUR LIGHTS ONLY', 140, 180, 56, C.amber),
 		tag(w0(118, 'freezing'), s1(118), 'NEAR FREEZING', 140, 760, 60, C.cyan, false, 'NOAA'),
 		tag(w0(119, 'black'), s1(119) + 10, 'BLACK LUMPS OF METAL', 140, 760, 56),
@@ -163,7 +198,10 @@ const ch6: Part = {
 
 const land: Part = {
 	shots: [
-		hero(S(133), 'H1_dark', 0),
+		hero(S(133), 'H1_cutaway', 10.0),
+		hero(S(135), 'H1_dive', 8.0),
+		hero(S(136), 'H4_squeeze', 3.0, 'SIMPLIFIED'),
+		hero(S(137), 'H1_dive', 0),
 		hero(S(138), 'H3_descent', 0),
 		hero(S(141), 'H3_descent', 4.6),
 		shot(s1(143) + 6, 'endcard', (d) => <EndCard dur={d} />, {hard: true}),

@@ -802,7 +802,10 @@ paid archives without asking.
   that was a cathedral). Read the signs and screens in every frame.
 - **Strip every third-party clip end to end** (`fps=1/2,tile=6x5`) and write its clean spans (no captions, logos,
   titles or people under graphics) into the EDL before choosing in-points. Sum the clean seconds before planning screen
-  time.
+  time. **Run scene detection on every cut span too** (`select='gt(scene,0.1)',showinfo`): a news span labelled from one
+  frame often cuts to something else. *Measured (Matsya r1 review):* of 3 DD India spans, one labelled "Matsya with its
+  foam" was a different vehicle with a minister, one turned into a CG render after 3 s and one into reef footage after
+  2 s.
 - **Filter licences in code**, then confirm each file's licence on its own page. Log every asset in
   `media_manifest.csv` (ID, URL, owner, licence, what it literally shows, where it's used).
 - **No stock clip more than twice** a film; real footage of the named place or machine is exempt.
