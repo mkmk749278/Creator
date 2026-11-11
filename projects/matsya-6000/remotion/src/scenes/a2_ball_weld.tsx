@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import type {Part} from '../Film';
 import {Alvin, BeadInAir, SteelBall2021, TubeVsBall, WeldBars} from '../parts/drawings';
-import {ez, Insert, Plate, tw} from '../parts/kit';
+import {Clip, ez, Insert, Plate, tw} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
 import {ask, clip, cnt, CR, hero, lab, photo, pre, shot, stamp, tag} from './common';
@@ -50,7 +50,8 @@ const Rings: React.FC<{x: number; y: number}> = ({x, y}) => {
 const ch2: Part = {
 	shots: [
 		// a real cricket ball, then a real hand squeezing a ball: together they say the sentence
-		clip(S(48), 'PX_cricket', CR.px, 5.2),
+		// pushed in on the ball (it is small in the source frame)
+		shot(S(48), 'PX_cricket', (d) => <Clip name="PX_cricket" dur={d} startAt={5.4} grade="day" from={[1.7, 660, -180]} to={[1.9, 760, -220]} />, {credit: CR.px}),
 		clip(S(49), 'PX_ball', CR.pex, 2.2),
 		hero(S(50), 'H4_squeeze', 7.0, 'SIMPLIFIED'),
 		shot(S(52), 'tube', (d, l) => (

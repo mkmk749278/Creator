@@ -228,3 +228,48 @@ titanium etc." And on the fingernail drawing: the buffalo was drawn the same siz
 - **Next:** the owner's notes on r6; the WEAK rows (one Cowork request: a hand gripping a cricket ball, a real
   carbon-fibre weave, an Indian hand holding a phone); the independent viewer review (needs the owner's yes to share
   the cut by link); then the owner's approval, the 4K master, the package. Audio is locked: picture and mix only.
+
+## Session closed by the owner mid-build (2026-11-11, about 09:00 UTC): where things stand
+The owner's last notes on r6: "Fix all of them" (the weak shots), "somewhere we are saying sea but the visuals look
+like a dark universe with stars", "the audio was generated from a free account: generate it from the API", "should be
+like an outstanding film". Then: "Close the session, merge work."
+
+**Done and in the repo / Drive**
+- **Paid audio.** One API take of the same v3 text (Akash, Eleven v4, Creative, 50%, MP3 192 kbps; 3,768 credits
+  billed; 20,197 left on 2026-11-11). `vo_take_check`-style signs clean: every sentence ratio 0.6–1.45 except the
+  short "One pass." (1.58); pace 169–177 words a minute by quarter. A 0.7 s room-tone breath was added at each of the
+  8 chapter turns (PLAYBOOK §6.6). **The film's audio is now `mat_v3_api_vo_full.mp3`** (543.32 s; Drive `vo/v3/`,
+  with the raw take `mat_v3_api_take1.mp3`); `vo/lock.json`, `vo/timing.json` and the captions are from it.
+  **The owner has not heard this take yet: send it for approval before anything else.** The free take stays in Drive
+  `vo/v3/mat_v3_vo_full.mp3`; r6 was built on it.
+- **Mix for the API voice:** −14.1 LUFS, −1.2 dBTP, Drive `mix/mix.wav` (the r6 mix kept as
+  `mix/mix_v3_freetake_r6.wav`).
+- **Real water over every 3D deep-sea shot** (`kit.tsx` `SeaOver`, used by `hero()` for H1_dive, H3_descent,
+  H3_seabed, H3_weights, H1_dark, H4_squeeze, and by `Deep`): a blue body of water in screen blend, light shafts near
+  the surface only, real bubbles (PX_bubbles, Pixabay 31611). The film now opens on the real sea surface
+  (PX_surface) with a counter to 6,000 M, then the ball.
+- **Weak shots re-cut in code:** the carbon-fibre wall redrawn large and in contrast; the cricket clip pushed in on
+  the ball; a warmer phone shot (PX_phone2); "Stay with me" on the real ball; the Titan date over the real sea;
+  the China bars cut to 8 s, then the real jetty photo and real nodules for India's answer.
+
+**NOT done: nothing below has been rendered or looked at**
+- `tsc` passed before the last edits were finished being checked; **run `npx tsc --noEmit` first**, then one still to
+  confirm every word cue resolves on the new timing.
+- **The new sea look has not been seen on a single frame.** Render stills of H1_dive, H3_descent, H4_squeeze and
+  `Deep` and judge them against the owner's note before any full render. Tune `SeaOver` (tint strength, bubbles
+  opacity) or re-render the heroes in Blender with volumetric water if the composite does not read as sea.
+- Check the cricket push-in framing (`from={[1.7, 660, -180]}` was computed, not seen) and the new carbon drawing.
+- `PX_surface.mp4` was still encoding when the session closed; if it is not in Drive `render-media/clips`, run
+  `tools/prep_clips.py projects/matsya-6000 --only PX_surface --jobs 1` and upload it. `clip_durations.json` holds
+  10.0 for it as a placeholder: replace with the measured length.
+- No render on the API audio yet. After the checks: `remotion-render.yml` → `matsya_review_r7_v3_720p.mp4`
+  (if "Film to Drive" sits over 5 minutes, dispatch `join_from`), our review, then the owner.
+- Add `media_manifest.csv` rows for the six new Pixabay clips (138694, 205011, 244491, 31611, 304019, 202987).
+
+**Still needs real pictures (Wikimedia Commons rate-limited this session; Pixabay had none)**: one Cowork request for
+a hand gripping a cricket ball, a real carbon-fibre weave, an Indian hand holding a phone, a licence-clean photo of
+Titan (US Coast Guard) and of China's Fendouzhe.
+
+**Open with the owner:** approval of the API audio; a yes or skip for the independent viewer review; whether the
+opening may start on the real sea rather than the thumbnail's ball (the two rules pull apart; write the choice in
+`treatment.md`).

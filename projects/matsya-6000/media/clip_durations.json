@@ -40,6 +40,7 @@
  "NOAA_dark": 7.983,
  "NOAA_lights": 4.65,
  "PX_ball": 5.967,
+ "PX_bubbles": 24.0,
  "PX_buffalo": 6.933,
  "PX_churn": 11.933,
  "PX_cricket": 8.0,
@@ -48,10 +49,12 @@
  "PX_herd": 8.0,
  "PX_nail": 4.6,
  "PX_phone": 6.967,
+ "PX_phone2": 9.0,
  "PX_rays": 12.0,
  "PX_reef": 5.95,
  "PX_ship": 7.933,
  "PX_storm": 9.933,
+ "PX_surface": 10.0,
  "PX_weld": 8.0,
  "VAG_surf": 2.533
 }

@@ -175,7 +175,7 @@ const ch5: Part = {
 const ch6: Part = {
 	shots: [
 		hero(S(134), 'H1_dive', 0.4),
-		clip(S(135), 'PX_phone', CR.px),
+		clip(S(135), 'PX_phone2', CR.px),
 		hero(S(137), 'H3_descent', 0),
 		// real deep water (NOAA, public domain), then our seabed from 'Outside your window'
 		clip(S(138), 'NOAA_dark', CR.noaa, 0, 'ILLUSTRATIVE FOOTAGE'),
@@ -188,11 +188,14 @@ const ch6: Part = {
 		photo(S(149), 'pib_dom_crane.png', CR.pib),
 		hero(S(150), 'H3_descent', 0.0),
 		hero(S(153), 'H1_dive', 5.0),
+		// the yardstick, short: the bars for China's dive, then the real things for India's answer
 		shot(S(155), 'ladder', (d, l) => (
 			<Plate dur={d} seed="ladder">
-				<DepthLadder china={w0(156, 'deepest') - S(155) + l} six={w0(158, 'six') - S(155) + l} />
+				<DepthLadder china={w0(156, 'deepest') - S(155) + l} six={l + 6} />
 			</Plate>
 		)),
+		photo(S(157), 'pib_wet_crane.jpg', CR.pib, 'contain'),
+		photo(S(158), 'geomar_nodules_wide.jpg', CR.geomar),
 		clip(S(159), 'ISRO_hall', CR.isro),
 		clip(S(160), 'ISRO_ansys', CR.isro),
 		clip(S(161), 'ISRO_bead', CR.isro),
@@ -217,7 +220,9 @@ const ch6: Part = {
 		tag(w0(152, 'rules'), s1(152), 'THE RULES ARE STILL BEING WRITTEN', 140, 860, 44, C.dim),
 		tag(w0(153, 'mining'), s1(153), 'NOT A MINING MACHINE', 140, 760, 56),
 		tag(w0(154, 'eyes'), s1(154) + 10, 'A PAIR OF EYES', 140, 860, 64, C.cyan),
-		tag(w0(157, 'behind'), s1(157), 'YES, INDIA IS BEHIND', 140, 900, 52, C.ink),
+		tag(w0(157, 'behind'), s1(157), 'YES, INDIA IS BEHIND', 140, 760, 56, C.ink),
+		cnt(w0(158, 'six'), w0(158, 'six') + 40, s1(158), 6000, 'M · INDIA’S FIRST GOAL', 140, 180, 96, C.amber),
+		tag(w0(158, 'seabed'), s1(158), 'DEEP ENOUGH FOR ITS SEABED', 140, 760, 52),
 		tag(w0(159, 'how'), s1(159), 'BUT LOOK HOW', 140, 760, 56, C.green),
 		tag(w0(160, 'designed'), s1(160), 'ISRO DESIGNED IT', 140, 760, 60, C.green),
 		tag(w0(161, 'welded'), s1(161), 'ISRO WELDED IT', 140, 760, 60, C.green),

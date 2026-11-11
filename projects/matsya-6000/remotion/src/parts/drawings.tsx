@@ -237,20 +237,41 @@ export const SteelBall2021: React.FC<{dur: number; date: number; depth: number}>
 /** S30–31 (SIMPLIFIED): a carbon-fibre cylinder; its layers part, a little more each dive. No implosion. */
 export const CarbonHull: React.FC<{dur: number; part: number}> = ({dur, part}) => {
 	const f = useCurrentFrame();
-	const k = tw(f, part, dur, 0, 1, ez.sweep);
+	// a slab of the hull wall, cut through: five woven layers, drawn large and in contrast (r6: grey on grey was faint)
+	const k = tw(f, part, Math.min(dur, part + 150), 0, 1, ez.sweep);
+	const inn = tw(f, 0, 30, 0, 1, ez.arrive);
+	const N = 5;
 	return (
 		<AbsoluteFill>
 			<svg width={1920} height={1080} style={{position: 'absolute'}}>
-				{Array.from({length: 9}).map((_, i) => {
-					const gap = k * (i % 3 === 1 ? 14 : 4) * (0.5 + random('g' + i));
-					return <rect key={i} x={420} y={300 + i * 52 + gap * (i - 4)} width={1080} height={44} rx={6} fill={i % 2 ? '#2a2d31' : '#34383d'} stroke="#55595f" strokeWidth={2} />;
+				<defs>
+					<pattern id="weave" width={36} height={36} patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+						<rect width={36} height={36} fill="#0c0d0f" />
+						<rect x={0} y={0} width={18} height={18} fill="#1d2126" />
+						<rect x={18} y={18} width={18} height={18} fill="#1d2126" />
+						<path d="M0 9h18M18 27h18" stroke="#4b535c" strokeWidth={2} />
+						<path d="M27 0v18M9 18v18" stroke="#39414a" strokeWidth={2} />
+					</pattern>
+				</defs>
+				{Array.from({length: N}).map((_, i) => {
+					const open = k * (i - (N - 1) / 2) * 46;
+					const y = 300 + i * 96 + open;
+					const tilt = k * (i - (N - 1) / 2) * 1.3;
+					return (
+						<g key={i} opacity={inn} transform={`rotate(${tilt} 960 ${y + 42})`}>
+							<rect x={330} y={y} width={1260} height={84} rx={8} fill="url(#weave)" stroke="#aeb7c2" strokeWidth={3} />
+							<rect x={330} y={y} width={1260} height={10} rx={5} fill="rgba(255,255,255,0.16)" />
+						</g>
+					);
 				})}
-				{/* hairline separations growing */}
-				{Array.from({length: 6}).map((_, i) => (
-					<line key={i} x1={520 + i * 160} y1={340 + (i % 3) * 100} x2={520 + i * 160 + 120 * k} y2={340 + (i % 3) * 100} stroke={C.red} strokeWidth={3} opacity={k} />
-				))}
+				{/* the gaps opening between the layers */}
+				{Array.from({length: N - 1}).map((_, i) => {
+					const y = 300 + (i + 1) * 96 - 6 + k * (i + 0.5 - (N - 1) / 2) * 46;
+					return <rect key={i} x={360 + 40 * i} y={y - 10 * k} width={1200 * k - 60 * i * k} height={Math.max(0, 22 * k)} fill={C.red} opacity={0.85 * k} rx={6} />;
+				})}
 			</svg>
-			<Label at={0} text="CARBON FIBRE" x={420} y={210} size={52} />
+			<Label at={0} text="CARBON FIBRE HULL · LAYER ON LAYER" x={330} y={190} size={52} />
+			{f >= part ? <Label at={part} text="THE LAYERS HAD STARTED TO COME APART" x={330} y={840} size={48} color={C.red} /> : null}
 		</AbsoluteFill>
 	);
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import type {Overlay, Shot} from '../Film';
-import {Clip, Count, Credit, ez, Hero, Honesty, Insert, Label, MarineSnow, Photo, Plate, tw, Underwater, useSpring} from '../parts/kit';
+import {Clip, Count, Credit, ez, Hero, Honesty, Insert, Label, MarineSnow, Photo, Plate, SeaOver, tw, Underwater, useSpring} from '../parts/kit';
 import {C, F} from '../theme';
 import {s0, w0} from '../timing';
 
@@ -48,8 +48,26 @@ export const clip = (at: number, name: string, credit: string, startAt = 0, tag?
 
 /** a hero clip whose frame `startAt` (s) falls on frame `at`: from its first frame it cuts in hard on the sentence;
  *  later it dissolves in, starting `lead` frames earlier in the clip so its word timing stays exact */
+/** our 3D shots that happen in the sea: each gets real water laid over it (kit SeaOver) */
+const SEA: Record<string, number> = {H1_dive: 0.25, H3_descent: 1, H3_seabed: 1, H3_weights: 1, H1_dark: 1, H4_squeeze: 0.8};
 export const hero = (at: number, name: string, startAt = 0, tag = 'ILLUSTRATION', style?: React.CSSProperties) =>
-	shot(at, name, (d, l) => <Hero name={name} dur={d} startAt={Math.max(0, startAt - l / 60)} style={style} />, {tag, hard: startAt < 0.2});
+	shot(
+		at,
+		name,
+		(d, l) => {
+			const from = Math.max(0, startAt - l / 60);
+			// H1_dive goes through the window into the ball at about 7.3 s: no water inside
+			const until = name === 'H1_dive' ? Math.round((7.2 - from) * 60) : name === 'H3_seabed' ? undefined : undefined;
+			const sea = name in SEA && !(name === 'H1_dive' && from >= 7.0);
+			return (
+				<AbsoluteFill>
+					<Hero name={name} dur={d} startAt={from} style={style} />
+					{sea ? <SeaOver dur={d} depth={SEA[name]} until={until} bubbles={name === 'H4_squeeze' ? 0.3 : 0.5} /> : null}
+				</AbsoluteFill>
+			);
+		},
+		{tag, hard: startAt < 0.2},
+	);
 
 export const photo = (at: number, src: string, credit: string, fit: 'cover' | 'contain' = 'cover') =>
 	shot(at, src, (d) => <Photo src={src} dur={d} fit={fit} />, {credit});
@@ -60,17 +78,20 @@ export const insert = (at: number, name: string, credit: string, aspect = 16 / 9
 /** the deep, empty: black water and drifting specks (a slow descent so the frame is never static) */
 export const Deep: React.FC<{dur: number; word?: {at: number; text: string; color?: string}}> = ({dur, word}) => {
 	const f = useCurrentFrame();
-	// a visible push into the dark and denser, faster snow (r1 read as a freeze)
+	// a visible push into deep blue water with real bubbles (r6: black with specks read as space)
 	const z = tw(f, 0, Math.max(1, dur), 1.0, 1.14, (t) => t);
 	return (
-		<AbsoluteFill style={{background: C.night}}>
+		<AbsoluteFill style={{background: '#020d18'}}>
 			<AbsoluteFill style={{transform: `scale(${z})`}}>
-				<Underwater depth={0.85} />
-				<MarineSnow speed={2.4} n={220} />
+				<Underwater depth={0.7} />
+				<AbsoluteFill style={{filter: 'blur(1.6px)', opacity: 0.6}}>
+					<MarineSnow speed={1.6} n={70} />
+				</AbsoluteFill>
 			</AbsoluteFill>
+			<SeaOver dur={dur} depth={0.85} bubbles={0.6} />
 			{word && f >= word.at ? (
 				<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
-					<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 140, letterSpacing: 8, color: word.color ?? C.ink, opacity: tw(f, word.at, word.at + 18, 0, 1, ez.arrive)}}>{word.text}</div>
+					<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 140, letterSpacing: 8, color: word.color ?? C.ink, opacity: tw(f, word.at, word.at + 18, 0, 1, ez.arrive), textShadow: '0 6px 30px rgba(0,0,0,0.8)'}}>{word.text}</div>
 				</AbsoluteFill>
 			) : null}
 		</AbsoluteFill>

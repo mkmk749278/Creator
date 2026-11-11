@@ -14,7 +14,9 @@ const S = s0;
 const open: Part = {
 	shots: [
 		// the thumbnail's subject first, then the real ball on "this titanium ball"
-		hero(S(0), 'H1_dive', 0),
+		// the real sea first (owner on r6: the deep looked like space), then down to the ball
+		clip(S(0), 'PX_surface', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		hero(pre(w0(0, 'water')), 'H1_dive', 0.3),
 		clip(pre(w0(0, 'this')), 'F01_ballhall', CR.dd),
 		// the hall clip pans to another vehicle after 3 s: the squeeze takes over on 'almost one lakh tonnes'
 		hero(pre(w0(0, 'almost')), 'H4_squeeze', 3.0, 'SIMPLIFIED'),
@@ -36,12 +38,12 @@ const open: Part = {
 		clip(S(12), 'ISRO_console2', CR.isro),
 		clip(S(13), 'ISRO_monitor', CR.isro),
 		shot(S(14), 'deep-titan0', (d, l) => <Deep dur={d} word={{at: w0(14, 'titan') - S(14) + l, text: 'TITAN'}} />),
-		hero(S(15), 'H1_dive', 2.0),
-		clip(S(16), 'PX_phone', CR.px),
+		clip(S(15), 'F01_ball', CR.dd, 0.4),
+		clip(S(16), 'PX_phone2', CR.px),
 	],
 	overlays: [
 		cnt(w0(0, 'lakh'), w0(0, 'tonnes'), S(1), 100000, 'TONNES', 140, 760, 120),
-		tag(w0(0, 'six'), pre(w0(0, 'this')), '6 KM DOWN', 140, 180, 64, C.amber),
+		cnt(w0(0, 'six'), w0(0, 'sea'), pre(w0(0, 'this')), 6000, 'M DOWN', 140, 180, 110, C.amber),
 		tag(w0(1, 'three'), s1(1), 'THREE INDIANS INSIDE', 140, 760, 56),
 		tag(w0(2, 'matsya'), s1(2) + 10, 'MATSYA 6000', 140, 760, 72, C.amber),
 		tag(w0(3, 'seven'), s1(4), '7 WELDS', 140, 760, 64, C.weld),
@@ -91,7 +93,8 @@ const titan: Part = {
 	shots: [
 		clip(S(27), 'F01_hall', CR.dd),
 		clip(S(29), 'F01_ball', CR.dd),
-		shot(S(30), 'deep-titan', (d, l) => <Deep dur={d} word={{at: w0(31, 'titan') - S(30) + l, text: 'TITAN'}} />),
+		clip(S(30), 'PX_surface', CR.px, 3.0, 'ILLUSTRATIVE FOOTAGE'),
+		shot(S(31), 'deep-titan', (d, l) => <Deep dur={d} word={{at: w0(31, 'titan') - S(31) + l, text: 'TITAN'}} />),
 		shot(S(32), 'report', (d, l) => <ReportPose dur={d} dim={l + 30} />, {credit: CR.uscg}),
 		shot(S(33), 'carbon', (d, l) => (
 			<Plate dur={d} seed="carbon">
@@ -122,7 +125,7 @@ const titan: Part = {
 	overlays: [
 		ask(w0(29, 'is'), S(30), 'Is this another Titan?'),
 		tag(w0(30, 'june'), s1(32), '18.06.2023', 140, 180, 56, C.ink, true),
-		tag(w0(34, 'kept'), s1(34), 'KEPT DIVING', 140, 860, 52, C.red),
+		tag(w0(34, 'kept'), s1(34), 'AND IT KEPT DIVING', 1180, 190, 48, C.red),
 		tag(w0(38, 'india'), s1(39), 'WHAT INDIA DOES DIFFERENTLY', 140, 760, 52),
 		tag(w0(40, 'titanium'), s1(40), 'TITANIUM', 140, 760, 64, C.ti),
 		tag(w0(40, 'fifty'), s1(40), 'TRUSTED FOR 50+ YEARS', 140, 860, 48, C.dim),
