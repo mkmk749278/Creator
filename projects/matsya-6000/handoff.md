@@ -95,9 +95,21 @@ Film 2 of the roadmap (owner, 2026-11-09: roadmap order, data may move a topic u
 - **Picture gaps** (our animation, labelled): the titanium ball's forging and the seven welds beyond ISRO's video, the
   Nov 2026 unmanned trials (no real footage yet), Matsya at depth, the Titan comparison.
 
+## The edit and the mix (2026-11-11)
+- `remotion/` (Remotion 4.0.534, comp `Matsya`, 456.13 s with the 4 s end card): scenes `a1_open_ch1`, `a2_ball_weld`,
+  `a3_inside_sea` from `word_map.md`. `Film.tsx` passes each shot its lead (the dissolve frames before its word), so
+  word cues and hero clip times are exact. Clips from `media/clips.tsv` via `tools/prep_clips.py` (37); photos and
+  the Natural Earth map plate (`scripts/ne_plate.py`, box to about 25 S) in `assets/media/`, synced to Drive
+  `render-media/`; `vo-render/` holds `lock.json`.
+- Word-map gaps settled: S118 NEAR FREEZING (claim M36, NOAA); S47-49 Alvin drawn (no clean photo licence); S51 the
+  2021 sphere drawn (F08 unidentified); S96-98 names as labels over Nautile, no faces.
+- Mix: `sound/score.json`, `sfx.json`, `music_manifest.csv`; `scripts/score_mix.py` → `assets/mix/mix.wav`
+  (-14.0 LUFS, -1.4 dBTP; music a median 27 dB under the voice), in Drive `mix/`. The music picks still wait for the
+  owner's listen; a swapped cue means re-running the mix only.
+- 720p review cut r1 dispatched on `remotion-render.yml` (6 runners) → Drive `renders/matsya_review_r1_720p.mp4`.
+
 ## Next session, in order
-1. The owner's listen to the music reel (`music/matsya_music_reel.mp3`): swap any cue with a voice; then add the
-   kept takes to `config/music_library.csv`.
-2. Close `word_map.md`'s "Still to get" (Alvin photo, water temperature at 6,000 m, F08's sphere, PIB's caption).
-3. Remotion: copy `projects/aip-submarines/remotion` (4.0.534) as the start, scenes from `word_map.md`, hero clips
-   placed at their sentence starts, the dive window dip, pushes on the slow holds; then step 8 onward.
+1. Our full review of the 720p cut (PLAYBOOK §13.1: flash, freeze, judder, loudness, the shot-word and sentence audits,
+   a creative pass), fixes, then the independent viewer review (step 12) and the owner's approval of the cut.
+2. The owner's listen to the music reel; swap any flagged cue and re-run the mix.
+3. Fresh-facts gate before upload: ISRO's July 2025 wording on "successful testing" vs S136 / M26; M05, M33.
