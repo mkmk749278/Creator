@@ -213,3 +213,11 @@ titanium etc." And on the fingernail drawing: the buffalo was drawn the same siz
   0:53 (the rule says 0:45).
 - **Still to do:** our full review of r5 (measured checks, shot-word audit), the independent narration review of v3
   and the independent viewer review, then the owner's approval of the cut.
+
+## Audio locked (owner, 2026-11-11)
+- **"Lock that audio don't make any changes."** The v3 take (`mat_v3_vo_full.mp3`, SHA in `vo/lock.json`) is the
+  film's audio. No re-take, no text change, no re-timing. Every fix from here is picture, sound design or mix.
+- **No independent narration review for v3** (owner, same message: "No need of independent review at this stage in
+  narration"). The independent viewer review of the cut (step 12) still stands unless the owner says otherwise.
+- So the opening's timing (paradox at 0:25–0:32, loop to 0:53) stays as it is.
+- Still unanswered: which ElevenLabs account made the take. Ask once more before the upload (licence, PLAYBOOK §6.6).
