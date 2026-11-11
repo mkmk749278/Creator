@@ -155,3 +155,39 @@ export const cnt = (from: number, land: number, to: number, value: number, unit:
 
 export const stamp = (from: number, to: number, text: string, color: string, x?: number, y?: number): Overlay =>
 	lab(from, to, 'stamp ' + text, <Stamp at={0} text={text} color={color} x={x} y={y} />);
+
+/** the viewer's own objection, as they would say it to Kishore: a speech bubble, lower left, on its word (v3) */
+export const Ask: React.FC<{text: string}> = ({text}) => {
+	const p = useSpring(0, 200, 16);
+	return (
+		<div style={{position: 'absolute', left: 140, top: 700, transform: `scale(${0.85 + 0.15 * p})`, transformOrigin: '0% 100%', opacity: p}}>
+			<div style={{fontFamily: F.label, fontWeight: 700, fontSize: 36, letterSpacing: 3, color: C.amber, marginBottom: 10, textShadow: '0 2px 10px rgba(0,0,0,0.9)'}}>YOU ASK KISHORE</div>
+			<div style={{display: 'inline-block', fontFamily: F.label, fontWeight: 800, fontSize: 60, color: '#0d1117', background: C.ink, padding: '18px 34px', borderRadius: '28px 28px 28px 4px', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', whiteSpace: 'nowrap'}}>
+				{text}
+			</div>
+		</div>
+	);
+};
+export const ask = (from: number, to: number, text: string): Overlay => lab(from, to, 'ask ' + text, <Ask text={text} />);
+
+/** v3 S37: the sea's push where Titan broke against what Matsya's ball is designed for (OUR CALCULATION, M-CALC6) */
+export const PressureCompare: React.FC<{titan: number; matsya: number}> = ({titan, matsya}) => {
+	const f = useCurrentFrame();
+	const a = tw(f, titan, titan + 40, 0, 1, ez.sweep);
+	const b = tw(f, matsya, matsya + 50, 0, 1, ez.sweep);
+	const row = (y: number, name: string, bar: number, k: number, col: string) => (
+		<div style={{position: 'absolute', left: 200, top: y, opacity: Math.min(1, k * 3)}}>
+			<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 50, color: C.ink, letterSpacing: 2, marginBottom: 14}}>{name}</div>
+			<div style={{display: 'flex', alignItems: 'center', gap: 28}}>
+				<div style={{width: (bar / 600) * 1150 * k, height: 110, background: col, boxShadow: '0 12px 40px rgba(0,0,0,0.5)'}} />
+				<div style={{fontFamily: F.mono, fontWeight: 700, fontSize: 76, color: col}}>{Math.round(bar * k)} BAR</div>
+			</div>
+		</div>
+	);
+	return (
+		<AbsoluteFill>
+			{row(250, 'WHERE TITAN BROKE · ABOUT', 340, a, C.red)}
+			{row(580, 'MATSYA’S BALL · DESIGNED FOR', 600, b, C.amber)}
+		</AbsoluteFill>
+	);
+};

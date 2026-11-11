@@ -41,6 +41,8 @@
  "NOAA_lights": 4.65,
  "PX_ball": 5.967,
  "PX_buffalo": 6.933,
+ "PX_churn": 11.933,
+ "PX_cricket": 8.0,
  "PX_finger": 6.65,
  "PX_flame": 4.967,
  "PX_herd": 8.0,
@@ -49,6 +51,7 @@
  "PX_rays": 12.0,
  "PX_reef": 5.95,
  "PX_ship": 7.933,
+ "PX_storm": 9.933,
  "PX_weld": 8.0,
  "VAG_surf": 2.533
 }
