@@ -273,3 +273,18 @@ Titan (US Coast Guard) and of China's Fendouzhe.
 **Open with the owner:** approval of the API audio; a yes or skip for the independent viewer review; whether the
 opening may start on the real sea rather than the thumbnail's ball (the two rules pull apart; write the choice in
 `treatment.md`).
+
+## Session 4 (2026-11-11, from the close above)
+- `tsc` clean; every word cue resolves on the API timing (stills render). PX_surface is in Drive (9.93 s, now measured).
+- **The sea look, judged on stills:** with `SeaOver` the 3D deep-sea shots read as blue water with bubbles and
+  shafts near the surface; no frame reads as space any more. Kept as coded.
+- **Opening decided (the two rules no longer pull apart):** r6's black water was why the real surface was put first.
+  Now that the ball sits in real-looking water, the film opens on the ball sinking (H1_dive from 0 s) with the depth
+  counter 0 → 6,000 M, then the real ball on "this titanium ball". First frame = the thumbnail's subject; the
+  surface-plus-"6,000 M DOWN" contradiction is gone. PX_surface stays at S30 (the Titan date). The plan's cold open
+  (H1, ball in water) is what plays.
+- Re-checked on stills: the carbon-fibre drawing reads (large, red split lines); the cricket ball is now big in frame;
+  the China bars are short. Still weak: the blue stress ball at S49 and the non-Indian hands on the phone
+  (S16, S135): **Cowork r3** in `footage_requests.md` (also Titan and Fendouzhe photos; Commons still 429).
+- `media_manifest.csv`: rows for the six Pixabay clips.
+- **r7 dispatched:** run 42994622252 → Drive `renders/matsya_review_r7_v3_720p.mp4`.
