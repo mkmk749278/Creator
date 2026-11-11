@@ -164,3 +164,11 @@ titanium etc." And on the fingernail drawing: the buffalo was drawn the same siz
 3. The owner's listen to the music reel; swap any flagged cue and re-run the mix.
 4. Fresh-facts gate before upload: ISRO's July 2025 wording on "successful testing" vs S136 / M26; M05, M33.
 5. Ask before trashing r1–r3 in Drive. Keep r3 until r4 is approved.
+
+## Narration v3 (2026-11-11)
+- The owner asked for a rewrite after the audience read (PLAYBOOK §1.2, §1.3). `vo_v3.txt` / `narration_v3.md`:
+  1,549 words, 8,566 characters, both gates pass (46 claims). **v2 (`vo.txt`, the lock, r1–r3) is untouched.**
+- The owner is generating v3 on a free ElevenLabs account to listen (not licensed for the channel).
+- If the owner chooses v3: the independent narration review, a paid one-take recording (about 8,600 credits), a new
+  lock, and `word_map.md` re-timed; most r3 pictures carry over, the new lines need pictures (Kishore moments, the
+  Titan pressure comparison, 15 → 40 kW, Samudra Manthan, the monsoon, the closing line).

@@ -14,7 +14,7 @@ reason; never a new doc file.
 
 ## Current work (read first when the owner says "continue")
 - **AIP submarines film:** uploaded 2026-11-09, public 10 Nov 11:00 IST; `projects/aip-submarines/handoff.md` has the open release items.
-- **Matsya 6000 film (next):** `projects/matsya-6000/handoff.md` (owner's note on r3: a real clip for every idea; half placed, the rest fetched to Drive; next: build them, render r4, the viewer review).
+- **Matsya 6000 film (next):** narration v3 (`narration_v3.md`, `vo_v3.txt`, 2026-11-11) is with the owner for a free-account listening test; v2 stays locked until they decide. `projects/matsya-6000/handoff.md` (owner's note on r3: a real clip for every idea; half placed, the rest fetched to Drive; next: build them, render r4, the viewer review).
 
 ## Your role: creative director
 - Claude directs everything on the channel: angle, story, narration, look, motion, sound, thumbnail, title,
@@ -43,6 +43,14 @@ reason; never a new doc file.
 - **Leave the caring viewer satisfied:** the bottleneck told honestly, then who is solving it and the next date to
   watch; then a reason to come back (the next film as a question, the end screen on the most related film).
 - After every film: subscribers per 1,000 views, likes per 100 views, and every comment read into the next film.
+- **What our most-watched films did (PLAYBOOK §1.3; owner agreed 2026-11-11):** Kishore is a person beside the
+  viewer (one or two "You might ask me, Kishore…" moments, always the viewer's own objection); the film starts and
+  ends in the viewer's own life; the hard truth is said plainly and India's honour is defended with facts; a memory
+  every Indian shares; **one saying to take home**; a yardstick and a date to watch; adult stakes in simple words
+  (simple is never childish); the town and state of every plant and lab.
+- **Every film ends:** the subscribe line, one real question, then "This is Be Practical with Kishore. Stay practical."
+- **Pictures:** real Indian people at work in every chapter; no run of diagrams over about 20 s; every comparison
+  from Indian life; never open on an object in a void.
 
 ## The films (PLAYBOOK §1, §5)
 - **Formula:** one piece of hard machinery under extreme heat, pressure or stress that holds a national effort hostage.
@@ -208,7 +216,7 @@ answer is the floor. **Decide early, build once.** **Promise first** (above).
 - Films made before 2026-11-05 are archived in Drive `Creator/_Archive/repo-2026-11-05/` (a tar per old film folder,
   plus the full git history as one bundle). The Tata film is finished in `mkmk749278/Built-on-Bharat`; that repo is
   then archived.
-- **No Shorts and no old sign-off** (owner, 2026-11-05): only the weekly long film; no "Know your rights…" line.
+- **No Shorts and no old sign-off** (owner, 2026-11-05): only the weekly long film; no "Know your rights…" line. The closing line since 2026-11-11 is "This is Be Practical with Kishore. Stay practical."
 - **Music:** any track from Drive `Music-Library/` (practical, bharat, blueprint, forensic: 38 tracks), one catalog in
   `config/music_library.csv`, pulled with `scripts/music_pull.sh`.
 

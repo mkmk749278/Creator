@@ -145,6 +145,41 @@ are (Studio, 2026-11-06) is in §13.3. CTR and retention are Studio-only until t
 5. **A reason to come back** in the last 20 seconds: the next film named as a question, the end screen pointing at
    the most related film (not just the latest), and one honest subscribe line tied to a real promise (§15.1).
 
+### 1.3 What the films themselves show, watched as an Indian viewer (2026-11-11; owner agreed to all)
+Three films watched frame by frame (Tejas, AIP, Matsya r2) and the spoken words of all nine read. **The two films
+with 50,000+ views won on their words; their pictures were mostly graphics in a dark void.** The newer films have
+better pictures and had lost most of what made those words work. What the words did, now rules:
+
+1. **Kishore is a person beside the viewer** (§6.2). "Come with me inside the HAL hangars… walk round to the back
+   with me. What do you see? Nothing." "You might ask me, Kishore, we built cryogenic engines…" One or two "Kishore"
+   moments a film, always the viewer's own objection, never forced. People subscribe to a person.
+2. **Start and end in the viewer's own life.** "There's a magnet in your pocket right now." The scooter, the capsule,
+   the phone. By 0:45 the viewer knows what this machine has to do with them; the landing says what it means for them.
+3. **The hard truth from family, not from a mocker.** Say the gap plainly ("So yes, India is behind"), name where the
+   pressure comes from (a supplier who delays, a sanction, a permission, a part that must be imported), then defend
+   the honour **with facts**: "People call Kaveri a total failure. But look at what actually happened before you
+   judge." Never chest-thumping, never only the failure.
+4. **Memories every Indian shares** (§6.2 item 13): Pokhran and the sanctions, the Corona days, the Chandrayaan
+   evening, the monsoon, a word from the epics when a source uses it. Each a sourced fact with its own row.
+5. **A saying to take home:** one line an elder would say and a family group would forward. "If you don't own the
+   engine, you don't truly own the jet." It is the film's argument in a sentence, said at the climax and again at
+   the landing.
+6. **A yardstick and a date:** who is ahead and by how much (China, "the club of five"), then the next date to watch.
+7. **Adult stakes in simple words.** Who loses what (lives, rupees, squadrons, jobs) inside the first minute. Simple
+   never means childish: our largest group is retired engineers. "Titanium has one weakness", not "titanium is fussy".
+8. **Named places:** the town and state of every plant and lab. Viewers light up at their own state.
+9. **The closing line (owner, 2026-11-11):** every film ends "This is Be Practical with Kishore. Stay practical."
+   after the subscribe line and one real question for the comments. (The old "Know your rights… Jai Hind" stays gone.)
+
+And what the pictures must fix (§9):
+- **Real Indian people at work in every chapter:** the engineer at the console, the men testing the ring. These are
+  the frames a viewer trusts and is proud of.
+- **No run of diagrams longer than about 20 seconds** without a real shot or a physical picture (the AIP film ran
+  three minutes of boxes, a balance scale and company names as text at 3:48–6:42).
+- **Every comparison from Indian life:** the autorickshaws and the buffalo work; the red London bus under "city bus"
+  did not.
+- **Never open on an object in a void:** the real hall, the real sea, the real people first.
+
 ---
 
 ## 2. Working with the owner
@@ -556,6 +591,8 @@ the moment and leans into the story.
     with its own claims row; never a tragedy used for colour.
 14. **Explain the mechanism one layer deeper than common knowledge,** from primary documents, then carry it with one
     everyday analogy the viewer lives with. Every analogy stays true to the sourced mechanism.
+15. **Kishore beside the viewer, the viewer's own life, the honour defended with facts, a saying to take home**
+    (§1.3): the four things our most-watched films did that the rules had not asked for.
 
 ### 6.3 Words and rhythm
 - **Simple, warm Indian English,** the words any Indian from any state uses: pay, money, heat, pressure, steel, crack.
@@ -1224,6 +1261,9 @@ branch to delete, archive the session.
 Short dated lessons that don't belong to one rule. The full film-by-film log (October 2026) is §15 of
 `docs/archive/PLAYBOOK_2026-11-05.md`.
 
+- **2026-11-11 · The films watched as an Indian viewer (§1.3):** the hits won on words (Kishore beside you, your own
+  life, honour defended with facts, a saying, a date); the new films had better pictures and thinner words. Kishore
+  and a closing line are back; Matsya's narration rewritten as v3.
 - **2026-11-11 · The audience read (§1.2):** plenty of reach, little attachment (3 subscribers per 1,000 views); the
   most-liked comments were objections we never answered; bright household-name packages travelled, dark or abstract
   ones didn't. Added the objection ledger, the package leads, the source line, the attachment numbers.
