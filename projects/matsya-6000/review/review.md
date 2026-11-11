@@ -119,3 +119,15 @@ The voice runs at about 171 words a minute; a shorter opening or a slower take w
 ### Not checked
 Nobody but the owner has listened to this take. The independent narration review of v3 and the independent viewer
 review have not run.
+
+## r6 (`renders/matsya_review_r6_v3_720p.mp4`, 2026-11-11): r5's two fixes
+
+- Picture 547.717 s, audio 547.716 s. Loudness −14.4 LUFS, peak −1.2 dBFS. Freezes: none.
+- 0:06: the squeeze with the tonnes count under "almost one lakh tonnes". 2:34: "A CRICKET BALL" only over the
+  cricket ball. Both checked on frames from the rendered file.
+- The WEAK rows of r5 are unchanged and open: the cricket ball, the carbon-fibre drawing, the Titan half-minute
+  without a real picture, the China bars, the 3D ball in the first 3 s, the phone hand.
+- Sent to the owner. Contact sheet: `renders/matsya_r6_contact_sheet.jpg` (one frame every 3 s).
+- **Render trap, twice today:** on a full run the join's last step "Film to Drive" sat for 9–15 minutes; a second run
+  with `join_from=<run id>` delivered the film in 3 minutes each time. If "Film to Drive" runs over 5 minutes,
+  dispatch `join_from` and cancel the first run.

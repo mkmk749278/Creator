@@ -1202,6 +1202,9 @@ what already exists**: the 3–5 strongest films on the topic (from `research/la
   shard in a minute (2026-11-06).
 - **A shard can hang on the runner's `apt-get install ffmpeg` step** (30 min, no progress). Cancel the run, then
   `rerun_failed_jobs`: finished shards keep their artifacts and the join still runs (2026-11-06).
+- **The join's "Film to Drive" step can sit for 10+ minutes on a full run** (twice on 2026-11-11). If it runs over
+  5 minutes, dispatch the workflow again with `join_from=<run id>` (it joined and uploaded in 3 minutes both times) and
+  cancel the first run.
 - **Blender on the runners:** the job limit is 340 min and a timed-out shard loses all its frames (they upload at the
   end). Volumes, glass bubbles and emission make frames 2–4× slower than a local test predicts: use 3–4 shards for
   any shot over 300 frames, or start a low-sample backup render of the slow range on spare runners and cancel

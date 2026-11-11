@@ -221,3 +221,10 @@ titanium etc." And on the fingernail drawing: the buffalo was drawn the same siz
   narration"). The independent viewer review of the cut (step 12) still stands unless the owner says otherwise.
 - So the opening's timing (paradox at 0:25–0:32, loop to 0:53) stays as it is.
 - Still unanswered: which ElevenLabs account made the take. Ask once more before the upload (licence, PLAYBOOK §6.6).
+
+## r6 sent to the owner (2026-11-11)
+- `renders/matsya_review_r6_v3_720p.mp4` (9:08, −14.4 LUFS, no freezes) and `renders/matsya_r6_contact_sheet.jpg`.
+  Our review: `review/review.md` § r5 and § r6. r5 was not sent (two wrong pictures, fixed in r6).
+- **Next:** the owner's notes on r6; the WEAK rows (one Cowork request: a hand gripping a cricket ball, a real
+  carbon-fibre weave, an Indian hand holding a phone); the independent viewer review (needs the owner's yes to share
+  the cut by link); then the owner's approval, the 4K master, the package. Audio is locked: picture and mix only.

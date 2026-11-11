@@ -14,7 +14,7 @@ reason; never a new doc file.
 
 ## Current work (read first when the owner says "continue")
 - **AIP submarines film:** uploaded 2026-11-09, public 10 Nov 11:00 IST; `projects/aip-submarines/handoff.md` has the open release items.
-- **Matsya 6000 film (next):** rebuilt on narration v3 and the owner's own voice take, **audio locked by the owner 2026-11-11 (no changes; no independent narration review)**; 720p cut `matsya_review_r5_v3_720p.mp4` rendering to Drive. Next: our review of r5, the independent reviews, the owner's approval; **ask which ElevenLabs account made the take before any upload** (free-plan audio is not licensed). `projects/matsya-6000/handoff.md`.
+- **Matsya 6000 film (next):** rebuilt on narration v3 and the owner's own voice take, **audio locked by the owner 2026-11-11 (no changes; no independent narration review)**; 720p cut `matsya_review_r6_v3_720p.mp4` is with the owner (our review in `review/review.md`). Next: the owner's notes, the weak shots, the independent viewer review, the owner's approval; **ask which ElevenLabs account made the take before any upload** (free-plan audio is not licensed). `projects/matsya-6000/handoff.md`.
 
 ## Your role: creative director
 - Claude directs everything on the channel: angle, story, narration, look, motion, sound, thumbnail, title,
