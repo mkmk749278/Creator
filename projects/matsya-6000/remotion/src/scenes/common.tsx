@@ -22,6 +22,8 @@ export const CR = {
 	geomar: 'PHOTO: ROV KIEL 6000, GEOMAR · CC BY 4.0',
 	navy: 'VIDEO: INDIAN NAVY',
 	alvin: 'PHOTO: TAOLLAN82 · CC BY 3.0',
+	noaa: 'VIDEO: NOAA OCEAN EXPLORATION',
+	pex: 'VIDEO: PEXELS',
 } as const;
 
 /** a shot with an optional honesty tag and credit */

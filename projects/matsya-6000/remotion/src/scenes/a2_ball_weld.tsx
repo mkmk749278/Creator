@@ -55,7 +55,8 @@ const ch2: Part = {
 			</Plate>
 		), {tag: 'SIMPLIFIED'}),
 		clip(pre(w0(43, 'long')), 'VAG_surf', CR.navy),
-		hero(S(44), 'H4_squeeze', 7.0, 'SIMPLIFIED'),
+		clip(S(44), 'PX_ball', CR.pex, 2.2),
+		hero(S(45), 'H4_squeeze', 7.0 + (S(45) - S(44)) / 60, 'SIMPLIFIED'),
 		photo(pre(w0(47, 'alvin')), 'alvin_panorama.jpg', CR.alvin),
 		shot(S(48), 'alvin', (d, l) => (
 			<Plate dur={d} seed="alvin">

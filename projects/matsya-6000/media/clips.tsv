@@ -49,3 +49,10 @@ PX_flame	pixabay_109750.mp4	1	6	960:540:300:380	Pixabay 109750: an oxy-acetylene
 PX_phone	pixabay_142641.mp4	1	8		Pixabay 142641: a phone in a hand
 PX_ship	pixabay_237249.mp4	0	8		Pixabay 237249: a ship at sea at dusk (ILLUSTRATIVE)
 VAG_surf	01_BDi71t9M1iI.mp4	27.4	30.0		Indian Navy: INS Vagir (Kalvari class) from above, the long hull in spray
+# Real clips, batch 2 (owner note on r3): ISRO launch, NOAA deep dive, Pexels finger, nail and ball
+ISRO_liftoff	02_SCHgaumVHis.mp4	20.0	30.0	694:390:0:78	ISRO: PSLV-C51 lift-off, high-speed camera (cropped under its caption; 480p: framed insert only)
+NOAA_dark	03_5LJtUk8OQ2o.mp4	33.0	41.0		NOAA Ocean Exploration, Okeanos Explorer 2017: dark midwater, a faint siphonophore (public domain)
+NOAA_lights	03_5LJtUk8OQ2o.mp4	3.9	8.6		NOAA: the vehicle's lights on marine snow (public domain; starts after NOAA's title card)
+PX_finger	cowork_r2/9465178-uhd_3840_2160_25fps.mp4	0.4	7.1		Pexels 9465178 (ROCKETMANN TEAM): a hand holds out one finger
+PX_nail	cowork_r2/7299380-uhd_3840_2160_30fps.mp4	0	2.3		Pexels 7299380 (Kindel Media): a fingernail, macro, at half speed so the nail stays in frame	setpts=2.0*PTS,minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1
+PX_ball	cowork_r2/11923146_3840_2160_50fps.mp4	0.6	6.6		Pexels 11923146 (Karl Byron): a hand squeezes a ball
