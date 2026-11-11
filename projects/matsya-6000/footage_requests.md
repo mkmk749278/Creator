@@ -115,5 +115,7 @@ CGI, no 3D renders), landscape, the highest quality offered, original file names
 for each search:
   "index finger close up", "man hand finger macro", "hand squeezing stress ball", "squeezing rubber ball hand",
   "carbon fiber fabric close up", "carbon fiber weave texture", "deep sea dark water particles".
+Also 2 real (not cartoon) green-screen clips of a man's hand with the index finger held out sideways, nail visible:
+  search "hand green screen", "finger green screen", "hand pointing chroma key".
 When done, save list.csv in the same folder with: file name, Pexels page URL, title, author, licence.
 ```
