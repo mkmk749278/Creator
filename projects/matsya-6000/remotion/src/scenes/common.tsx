@@ -42,8 +42,8 @@ export const clip = (at: number, name: string, credit: string, startAt = 0, tag?
 
 /** a hero clip whose frame `startAt` (s) falls on frame `at`: from its first frame it cuts in hard on the sentence;
  *  later it dissolves in, starting `lead` frames earlier in the clip so its word timing stays exact */
-export const hero = (at: number, name: string, startAt = 0, tag = 'ILLUSTRATION') =>
-	shot(at, name, (d, l) => <Hero name={name} dur={d} startAt={Math.max(0, startAt - l / 60)} />, {tag, hard: startAt < 0.2});
+export const hero = (at: number, name: string, startAt = 0, tag = 'ILLUSTRATION', style?: React.CSSProperties) =>
+	shot(at, name, (d, l) => <Hero name={name} dur={d} startAt={Math.max(0, startAt - l / 60)} style={style} />, {tag, hard: startAt < 0.2});
 
 export const photo = (at: number, src: string, credit: string, fit: 'cover' | 'contain' = 'cover') =>
 	shot(at, src, (d) => <Photo src={src} dur={d} fit={fit} />, {credit});
@@ -52,12 +52,16 @@ export const insert = (at: number, name: string, credit: string, aspect = 16 / 9
 	shot(at, name, (d) => <Insert name={name} dur={d} aspect={aspect} startAt={startAt} />, {credit});
 
 /** the deep, empty: black water and drifting specks (a slow descent so the frame is never static) */
-export const Deep: React.FC<{dur: number; word?: {at: number; text: string; color?: string}}> = ({word}) => {
+export const Deep: React.FC<{dur: number; word?: {at: number; text: string; color?: string}}> = ({dur, word}) => {
 	const f = useCurrentFrame();
+	// a visible push into the dark and denser, faster snow (r1 read as a freeze)
+	const z = tw(f, 0, Math.max(1, dur), 1.0, 1.14, (t) => t);
 	return (
 		<AbsoluteFill style={{background: C.night}}>
-			<Underwater depth={1} />
-			<MarineSnow speed={1.2} n={120} />
+			<AbsoluteFill style={{transform: `scale(${z})`}}>
+				<Underwater depth={0.85} />
+				<MarineSnow speed={2.4} n={220} />
+			</AbsoluteFill>
 			{word && f >= word.at ? (
 				<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
 					<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 140, letterSpacing: 8, color: word.color ?? C.ink, opacity: tw(f, word.at, word.at + 18, 0, 1, ez.arrive)}}>{word.text}</div>

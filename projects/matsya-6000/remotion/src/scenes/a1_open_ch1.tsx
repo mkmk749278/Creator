@@ -67,16 +67,21 @@ const open: Part = {
 
 const ch1: Part = {
 	shots: [
-		shot(S(14), 'fall', (d, l) => <Fall dur={d} target={w0(14, 'six') - S(14) + l} beats={[w0(16, 'once') - S(14) + l, w0(17, 'again') - S(14) + l, w0(18, 'again') - S(14) + l]} race={w0(18, 'again') - S(14) + l + 30} />, {tag: 'ILLUSTRATION'}),
+		shot(S(14), 'fall', (d, l) => <Fall dur={d} target={w0(14, 'six') - S(14) + l} beats={[w0(15, 'ten') - S(14) + l, w0(16, 'once') - S(14) + l, w0(17, 'again') - S(14) + l, w0(18, 'again') - S(14) + l]} race={w0(18, 'again') - S(14) + l + 24} />, {tag: 'ILLUSTRATION'}),
 		shot(S(19), 'fingernail', (d, l) => (
 			<Plate dur={d} seed="nail">
 				<Fingernail arrow={w0(19, 'finger') - S(19) + l} kg={w0(20, 'six') - S(19) + l} buffalo={w0(21, 'buffalo') - S(19) + l} />
 			</Plate>
 		), {tag: 'OUR CALCULATION'}),
 		hero(S(22), 'H4_squeeze', 0, 'SIMPLIFIED'),
-		shot(S(25), 'deep-titan', (d, l) => <Deep dur={d} word={{at: w0(26, 'titan') - S(25) + l, text: 'TITAN'}} />),
+		clip(S(25), 'F01_ballhall', CR.dd),
+		shot(S(26), 'deep-titan', (d, l) => <Deep dur={d} word={{at: w0(26, 'titan') - S(26) + l, text: 'TITAN'}} />),
 		shot(S(27), 'report', (d, l) => <ReportPose dur={d} dim={w0(29, 'five') - S(27) + l} />, {credit: CR.uscg}),
-		shot(S(30), 'carbon', (d, l) => <CarbonHull dur={d} part={w0(31, 'layers') - S(30) + l} />, {tag: 'SIMPLIFIED'}),
+		shot(S(30), 'carbon', (d, l) => (
+			<Plate dur={d} seed="carbon">
+				<CarbonHull dur={d} part={w0(31, 'layers') - S(30) + l} />
+			</Plate>
+		), {tag: 'SIMPLIFIED'}),
 		shot(S(32), 'quote', (d, l) => (
 			<Quote
 				dur={d}

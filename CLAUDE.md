@@ -14,7 +14,7 @@ reason; never a new doc file.
 
 ## Current work (read first when the owner says "continue")
 - **AIP submarines film:** uploaded 2026-11-09, public 10 Nov 11:00 IST; `projects/aip-submarines/handoff.md` has the open release items.
-- **Matsya 6000 film (next):** `projects/matsya-6000/handoff.md` (audio r2 locked, all ten hero shots rendered, word map written; next: music listen, then Remotion).
+- **Matsya 6000 film (next):** `projects/matsya-6000/handoff.md` (edit and mix done, 720p review cut r1 rendering; next: our review, the viewer review, the music listen).
 
 ## Your role: creative director
 - Claude directs everything on the channel: angle, story, narration, look, motion, sound, thumbnail, title,
