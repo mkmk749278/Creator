@@ -1,6 +1,6 @@
 import {noise2D} from '@remotion/noise';
 import React from 'react';
-import {AbsoluteFill, random, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, interpolate, random, useCurrentFrame} from 'remotion';
 import {C, F} from '../theme';
 import {Count, ez, Label, MarineSnow, tw, Underwater} from './kit';
 
@@ -368,6 +368,111 @@ export const FoamCrack: React.FC<{dur: number; crack: number; slide?: boolean}> 
 					{k > 0 ? <path d={path} fill="none" stroke={C.red} strokeWidth={3} opacity={0.8 * k} strokeLinejoin="round" /> : null}
 				</g>
 			</svg>
+		</AbsoluteFill>
+	);
+};
+
+/** S20: the water's push on a real fingernail (over the macro clip): an arrow comes down on the nail, the count runs. */
+export const NailPress: React.FC<{arrow: number; kg: number; tip?: number}> = ({arrow, kg, tip = 750}) => {
+	const f = useCurrentFrame();
+	const ar = tw(f, arrow, arrow + 30, 0, 1, ez.arrive);
+	const y = (1 - ar) * 140;
+	// the macro clip slides slowly: the arrow stays on the nail
+	const x = interpolate(f, [0, 82, 152, 257], [805, 730, 624, 420], {extrapolateLeft: 'clamp', extrapolateRight: 'extend'});
+	return (
+		<AbsoluteFill>
+			<svg width={1920} height={1080} style={{position: 'absolute'}}>
+				<g opacity={ar} transform={`translate(${x} ${tip - y})`}>
+					<rect x={-22} y={-440} width={44} height={330} fill={C.amber} />
+					<path d="M-66 -110 L66 -110 L0 0 Z" fill={C.amber} />
+				</g>
+			</svg>
+			<Count a={kg} b={kg + 40} from={0} to={600} x={1180} y={240} size={130} unit="KG" color={C.amber} />
+			<Label at={kg} text="ON ONE FINGERNAIL" x={1180} y={160} size={44} />
+		</AbsoluteFill>
+	);
+};
+
+/** S21: a full-grown buffalo on one fingernail, to scale (owner, r3: near to reality). World units are
+ *  centimetres: the finger is 1.6 cm thick, the buffalo 1.4 m at the shoulder. The camera starts on the fingertip
+ *  under a front hoof and pulls back until the whole animal stands over it. */
+export const BuffaloTrueScale: React.FC<{dur: number; pull?: number}> = ({dur, pull = 54}) => {
+	const f = useCurrentFrame();
+	const t = tw(f, 4, 4 + pull, 0, 1, ez.sweep);
+	const drift = tw(f, 4 + pull, Math.max(5 + pull, dur), 0, 1, (x) => x);
+	const k = 30 * Math.pow(3.75 / 30, t) * (1 - 0.05 * drift); // px per cm
+	const cx = 6 + (-26 - 6) * t;
+	const cy = -8 + (-70 + 8) * t;
+	const sx = 960 + (1290 - 960) * t;
+	const sy = 700 + (600 - 700) * t;
+	const sink = 0.35 * tw(f, 0, 14, 0, 1, ez.arrive); // the nail gives under the hoof
+	const end = tw(f, 4 + pull - 8, 4 + pull + 14, 0, 1, ez.arrive);
+	const body =
+		'M-166 -118 C-152 -140 -112 -141 -82 -135 C-44 -130 -12 -141 14 -147 C36 -148 52 -138 64 -126 L80 -120 ' +
+		'C97 -114 110 -100 117 -82 C121 -71 115 -62 104 -64 C92 -66 80 -74 71 -85 C61 -80 52 -70 45 -60 C41 -50 35 -46 27 -46 ' +
+		'L13 -50 L9 -24 L10 -9 L12 0 L-2 0 L-2 -9 L-4 -25 L-9 -53 C-40 -57 -90 -59 -118 -66 L-121 -42 L-128 -23 L-126 -9 L-124 0 L-139 0 L-139 -9 ' +
+		'L-142 -25 L-147 -47 C-159 -70 -170 -95 -166 -118 Z';
+	return (
+		<AbsoluteFill>
+			<svg width={1920} height={1080} style={{position: 'absolute'}}>
+				<defs>
+					<linearGradient id="bufBody" x1="0" y1="0" x2="0" y2="1">
+						<stop offset="0" stopColor="#3d4046" />
+						<stop offset="0.22" stopColor="#202226" />
+						<stop offset="1" stopColor="#0d0f12" />
+					</linearGradient>
+					<linearGradient id="bufSkin" x1="0" y1="0" x2="0" y2="1">
+						<stop offset="0" stopColor="#e2b391" />
+						<stop offset="0.6" stopColor="#c58f6d" />
+						<stop offset="1" stopColor="#8c5f47" />
+					</linearGradient>
+					<linearGradient id="bufNail" x1="0" y1="0" x2="1" y2="1">
+						<stop offset="0" stopColor="#f6e6dc" />
+						<stop offset="1" stopColor="#dcbcaa" />
+					</linearGradient>
+					<radialGradient id="bufShade" cx="0.5" cy="0.5" r="0.5">
+						<stop offset="0" stopColor="rgba(0,0,0,0.75)" />
+						<stop offset="1" stopColor="rgba(0,0,0,0)" />
+					</radialGradient>
+				</defs>
+				<g transform={`translate(${sx} ${sy}) scale(${k}) translate(${-cx} ${-cy})`}>
+					{/* ground shadow */}
+					<ellipse cx={-64} cy={1} rx={130} ry={9} fill="url(#bufShade)" />
+					{/* the hand lying on the plate, one finger out under the hoof */}
+					<g transform={`translate(0 ${sink})`}>
+						<path d="M11 -1.9 C13 -2.6 16 -3.2 19 -3.2 C24 -3.4 27 -3 30 -2.9 L70 -4.6 L70 0 L11 0 Z" fill="url(#bufSkin)" />
+						<path d="M-3.6 -0.8 C-3.6 -1.5 -2.9 -1.62 -2 -1.62 L12 -1.9 L12 0 L-2.4 0 C-3.2 0 -3.6 -0.3 -3.6 -0.8 Z" fill="url(#bufSkin)" />
+						<path d="M-3.2 -1.2 C-3.1 -1.62 -2.6 -1.7 -1.8 -1.7 L-0.9 -1.7 C-1.0 -1.2 -1.6 -0.95 -3.2 -1.2 Z" fill="url(#bufNail)" transform="translate(0.2 0)" />
+						<rect x={-3.0} y={-1.78} width={2.3} height={0.2} rx={0.1} fill="url(#bufNail)" />
+					</g>
+					{/* far-side legs */}
+					<path d="M-20 -56 L-23 -24 L-22 -9 L-20 0 L-33 0 L-33 -9 L-35 -25 L-38 -56 Z" fill="#090a0c" />
+					<path d="M-104 -62 L-108 -40 L-114 -23 L-112 -9 L-110 0 L-124 0 L-124 -9 L-127 -25 L-130 -60 Z" fill="#090a0c" />
+					{/* tail */}
+					<path d="M-165 -116 C-174 -100 -174 -70 -171 -44" stroke="#15171a" strokeWidth={3} fill="none" strokeLinecap="round" />
+					<ellipse cx={-171} cy={-38} rx={3} ry={8} fill="#0b0c0e" />
+					{/* the far horn, the body, the near horn */}
+					<path d="M86 -120 C82 -144 62 -160 40 -160 C58 -153 70 -140 76 -120 Z" fill="#6f6a60" />
+					<path d={body} fill="url(#bufBody)" />
+					<path d="M-150 -132 C-112 -141 -44 -129 14 -146" stroke="rgba(190,205,220,0.35)" strokeWidth={1.6} fill="none" strokeLinecap="round" />
+					<path d="M79 -122 C73 -147 50 -164 26 -162 C46 -155 60 -142 67 -122 Z" fill="#a39c8c" />
+					<path d="M62 -116 C54 -114 49 -108 50 -103 C56 -104 61 -109 62 -116 Z" fill="#0b0c0e" />
+					<circle cx={92} cy={-103} r={1.8} fill="#0a0a0a" />
+					<circle cx={92.5} cy={-103.5} r={0.5} fill="#b9c2cc" />
+					<ellipse cx={112} cy={-72} rx={2} ry={1.4} fill="#050506" />
+					{/* hooves */}
+					<path d="M-2.6 -6 L12.6 -6 L13.4 0 L-3.4 0 Z" fill="#2c2a27" />
+					<path d="M-139.6 -6 L-123.4 -6 L-122.6 0 L-140.4 0 Z" fill="#2c2a27" />
+				</g>
+				{/* where the finger is, once the camera is wide */}
+				<g opacity={end}>
+					<circle cx={sx + (5 - cx) * k} cy={sy + (-1 - cy) * k} r={46} fill="none" stroke={C.amber} strokeWidth={5} />
+				</g>
+			</svg>
+			<Label at={4 + pull - 8} text="ONE FINGERNAIL" x={1420} y={930} size={44} color={C.amber} />
+			<Count a={-60} b={-20} from={0} to={600} x={170} y={230} size={120} unit="KG" color={C.amber} />
+			<Label at={0} text="A FULL-GROWN BUFFALO" x={170} y={400} size={44} />
+			<Label at={0} text="DRAWN TO SCALE" x={170} y={160} size={40} color={C.dim} />
 		</AbsoluteFill>
 	);
 };
