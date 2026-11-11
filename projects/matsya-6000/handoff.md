@@ -298,3 +298,9 @@ opening may start on the real sea rather than the thumbnail's ball (the two rule
   Fendouzhe photo on Commons is portrait only; not used.
 - From the r7 check (−14.1 LUFS, −1.2 dBTP, no freezes): ISRO_ti re-cropped to remove ISRO's burned-in "Ti6Al4V" caption and logo; H3_assemble (the rig in a black starry void) now under `SeaOver` too.
 - **4K master dispatched** on 20 runners → Drive `renders/matsya_master_4k.mp4`.
+- **4K master done:** Drive `renders/matsya_master_4k.mp4` (3840×2160, 60 fps, 9:07, 1.70 GB, md5
+  9b8cecf96968cad78aa5bc667ec1015e), from run 43000831768's shards. Its "Film to Drive" hit Drive's shared rclone
+  quota (403 rateLimitExceeded, queries per minute) and retried for an hour; the copy did land (same md5 as a join
+  made in the session). Checked: −14.1 LUFS, −1.2 dBTP, no freezes, no black, every 6 s frame looked at.
+- **Next:** the owner watches the master; then the package (thumbnails from the locked concept, title, description,
+  chapters, SRT, metadata.json) when the owner asks; the fresh-facts gate within 24 h of upload.
