@@ -80,3 +80,42 @@
   - the 80 MM bar now holds 224.2–226.0;
   - the Chennai map holds until "six", and DD Telangana's insert ends clean at 357.2, with no caption card.
 - No open blockers from our own review. Next: the independent viewer review (§13.3), then the owner's approval.
+
+## r5 (`renders/matsya_review_r5_v3_720p.mp4`, 2026-11-11): the film rebuilt on narration v3
+
+Not sent to the owner: two WRONG pictures found; fixed and re-rendered as r6.
+
+### Measured
+- Picture 547.717 s, audio 547.716 s (9:04 of voice + 4 s end card). Loudness −14.4 LUFS, peak −1.2 dBFS, LRA 3.4.
+- Freezes (`freezedetect n=0.002 d=1.5`, 480p): none.
+- The first render's join hung in "Film to Drive" for 15 minutes; cancelled, and the film was joined by a second
+  run with `join_from` (PLAYBOOK §14.3: the same remedy as a hung shard).
+
+### Shot-word audit (6 sheets, one frame every 2 s, each with the sentence heard)
+| Time | Words | Grade | Fix (r6) |
+|---|---|---|---|
+| 0:05–0:08 | "with almost one lakh tonnes" | WRONG | The DD India hall clip pans to another (yellow) vehicle after 3 s. Now the squeeze (H4) cuts in on "almost", SIMPLIFIED. |
+| 2:35 | "Nothing happens, right?" | WRONG label | "A CRICKET BALL" sat over the blue ball. The label now ends with the cricket clip; "SQUEEZE IT" over the hand. |
+| 2:33 | "Squeeze a cricket ball in your fist" | WEAK | The cricket ball is small and nobody holds it; the hand then squeezes a blue ball. Needs one real clip of a hand gripping a cricket ball (Cowork request). |
+| 1:45–1:51 | "Its hull was carbon fibre … layers come apart" | WEAK | The drawing is faint grey on grey for 7 s. Redraw with contrast, or a real carbon-fibre weave clip. |
+| 0:00–0:03 | sentence 1 | WEAK | Opens on our 3D ball in a void (the thumbnail's subject), the real ball at 3.2 s. A lit, real-water version of the opening shot would meet both rules. |
+| 7:47–8:01 | China's depth, India's goal | WEAK | 14 s of bars; the Matsya row is empty until "six thousand". Shorten or show the row from the start. |
+| 0:49 | "Stay with me, and you'll know both" | WEAK | The 3D ball again; a real shot would be better. |
+| 6:45–6:49, 0:51–0:53 | the phone | OK | A light-skinned hand in a coat: replace with an Indian hand when one is found. |
+| the rest | | OK | Real ISRO people and footage in every chapter from 0:25 on; every number on its word. |
+
+### The creative tests (PLAYBOOK §13.1)
+- **Mute test:** the story follows from the pictures in the pressure, weld and foam chapters; the Titan chapter
+  (1:37–2:03) is words on dark plates and does not.
+- **Memory test (one pass over the sheets):** the buffalo on the nail, the seam unrolled beside a man, SAMUDRA
+  MANTHAN over the rolling sea. The first two were planned; the third is new in v3.
+- **Swap test:** the phone shot and the storm sea could sit in any film; both are short and labelled.
+- **Flattest minute:** 1:37–2:07 (Titan and the pressure bars): 30 s without a real picture.
+
+### Promise check on the real timings
+Sentence 1 unchanged. The paradox is spoken at 0:25–0:32 (rule: by 0:25). The loop runs 0:42–0:53 (rule: by 0:45).
+The voice runs at about 171 words a minute; a shorter opening or a slower take would bring both inside the rule.
+
+### Not checked
+Nobody but the owner has listened to this take. The independent narration review of v3 and the independent viewer
+review have not run.
