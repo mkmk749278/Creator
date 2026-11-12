@@ -1,6 +1,6 @@
 # Requests r1 (2026-11-12): the primary documents for the fact-check
 
-These sites refuse the cloud (403, 404 or a reset). Footage requests follow once the plan is approved.
+These sites refuse the cloud (403, 404 or a reset). The first footage batch is below; the rest follows the word map.
 
 ## Laptop (Cowork): documents
 ```text
@@ -33,3 +33,19 @@ title and take the official copy; if it cannot be found, write "not found" in li
     https://www.drdo.gov.in/sites/default/files/technology-focus-documrnt/TF_October2022.pdf
 11. The Vir Chakra citation of Commander Benoy Roy Chowdhury, 1971 (gallantryawards.gov.in), printed to PDF.
 ```
+
+## Phone (Termux): first footage batch (plan approved 2026-11-12)
+```bash
+curl -sL https://raw.githubusercontent.com/mkmk749278/Creator/main/scripts/termux_fetch_to_drive.sh | bash -s -- \
+  English/carrier-catapult \
+  "https://www.youtube.com/watch?v=MG5w_h2zHJc" \
+  "https://www.youtube.com/watch?v=Hk7IAediZnY" \
+  "https://www.youtube.com/watch?v=NixsoYFphQs" \
+  "https://www.youtube.com/watch?v=HQ3Ob9IF_w8" \
+  "https://www.youtube.com/watch?v=knG3O74gm2k" \
+  "https://www.youtube.com/watch?v=6Tp-4eGK_ds"
+```
+What each is for: the Navy's Rafale M landing video as carried by ANI, NDTV and India Today (29 Oct 2026; the Navy's
+own footage, credited); the US Navy's EMALS film (2015, public domain); a catapult launch heard from one deck below
+(the three-second sound; licence to check, reference only until cleared); CGTN's Fujian catapult test (rights
+unclear: at most a short credited excerpt).

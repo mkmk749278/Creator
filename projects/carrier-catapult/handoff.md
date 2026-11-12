@@ -26,3 +26,7 @@
 - **Next after approval:** step 4, the fact-check at max effort (`plan.md` §9, 15 items; every row in `claims.csv`
   is still `draft`); then the opening and the promise check; footage requests and the Blender heroes (H1, H3, H4)
   start the same day.
+- **Owner, 2026-11-12: plan v2 approved**, with the title "India Had a Catapult in 1961. Why Not Now?" and the
+  main thumbnail words "HAD ONE. 1961." ("NO CATAPULT" is the challenger). The promise is locked in `plan.md`.
+  The owner has the Cowork document request and the first Termux footage line (`footage_requests.md`).
+- **Next:** step 4, the fact-check at max effort; then the opening (0:00-0:45) and the promise check.
