@@ -30,3 +30,14 @@
   main thumbnail words "HAD ONE. 1961." ("NO CATAPULT" is the challenger). The promise is locked in `plan.md`.
   The owner has the Cowork document request and the first Termux footage line (`footage_requests.md`).
 - **Next:** step 4, the fact-check at max effort; then the opening (0:00-0:45) and the promise check.
+
+## Session 3 (2026-11-12): fact-check done
+- The owner ran the Termux line (5 of 6 clips in Drive `footage/`; the deck-sound clip failed) and Cowork (DOT&E
+  FY2025, the White House memo, the Vikrant history page, Naval News, the NWC paper, DRDO clippings and Technology
+  Focus; not reachable: Hiranandani's volumes, TPCR 2025, the 1995 paper, the Vir Chakra citation).
+- **Step 4 done:** `claims.csv` rewritten, 39 rows, gate passes (24 confirmed, 13 as reported, 2 our calculation).
+  What it changed is in `plan.md` §8a (the energy store, six days not a week, 1989, China's land catapults, DRDO said
+  as reported, no Sea Hawk count, no "first" for the Vir Chakra).
+- **Next:** step 5: the opening (0:00-0:45) and the promise check, then the full narration with the creative pass,
+  `spoken_english_check.py`, the independent narration review, and `narration.md` to the owner. In parallel: the
+  Blender heroes H1, H3, H4 and the second footage request (ramp launches, Sea Hawks, the Aero India demonstrator).
