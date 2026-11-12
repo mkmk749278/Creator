@@ -121,3 +121,53 @@ no catapult, no radar aircraft; (E) three navies, three bets (America doubts, Ch
 - IAC-2 status today (repeat Vikrant or catapult): re-search before the plan is written.
 - Views and most-liked comments on the five strongest films; search terms (`research/search_terms.md`).
 - Picture sources and licences.
+
+## 8. Second pass (2026-11-12)
+**Demand and the strongest films (channel API, 12 Nov 2026).**
+| Film | Views | What it does | Where its viewers push back (most-liked comments) |
+|---|---|---|---|
+| Not What You Think, "Why the US Navy is Replacing Electric Catapults with Steam" (Jan 2026, 11 min) | 806,852 | steam against EMALS for an American audience | "leave it to the experts" (thousands of likes); a reactor engineer: "we went electric for good reasons… he's comparing 60-year-old mature technology"; "EMALS takes about 45 seconds to cycle"; "steam guesses high and beats up the airframes"; "a launch failure on EMALS can be a warning light" |
+| Frontline Vision, "EMALS on Aircraft Carriers" (2023, 6 min) | 100,912 | a spec read-out | none of note |
+| Defence Matrix Hindi, "EMALS Aircraft Carrier & Future of the Indian Navy" (Sep 2025, 8 min) | 49,845 | the TPCR news in Hindi | pride in the Navy; "Andaman and Nicobar are our natural aircraft carriers"; "join France's PANG"; "make a dozen small drone carriers" |
+| Jetstream Battles, "India's $20 Billion INS Vishal" (2025) | 37,034 | wish-list | none of note |
+| Operation Uncovered, "India's INS Vishal" (Nov 2025, 10 min) | 19,483 | wish-list | "India already built EMALS"; "India begged the US for EMALS and got nothing"; "India is the king of PPTs" |
+**What follows:** the catapult question has real demand (800,000 views in English), and no film answers it for
+India. Indian viewers arrive with three wrong beliefs we can correct with sources (India already has one; America
+refused; the ramp costs nothing) and one fair jibe (PowerPoint carriers) that the film must answer with what exists
+in steel.
+
+**1970-71, now from the Navy's own historian** (Live History India quoting Vice Admiral G. M. Hiranandani's
+*Transition to Triumph*): Vikrant "had suffered many internal fatigue cracks and fissures in the water drums of her
+boilers"; docked at Bombay's Naval Dockyard in June 1970; Hiranandani to Admiral Nanda: "Vikrant had to be seen
+being operational even if we didn't fly any aircraft", and "During the 1965 war, Vikrant was sitting in Bombay
+Harbour and did not go out to sea"; she ran at 14 knots, about half her 25; on 4 December 1971, about 3 pm, six Sea
+Hawks left her deck, "almost skimming the surface of the sea". The embargo and the re-routed steam stay unverified
+(dropped unless the book confirms them). *Still open: how a steam catapult worked on half-pressure boilers, which is
+the heart of the scene; the book itself.*
+
+**China** (MP-IDSA issue brief, A. K. Darbey, 17 Dec 2025): Fujian is about 80,000 tons with three electromagnetic
+catapults and a flat deck; its catapult runs on a DC power system (America's on AC), after Ma Weiming's
+medium-voltage DC design; the KJ-600 fixed-wing radar aircraft launches from it; sea trials from May 2024, eight
+rounds by August 2025.
+
+**India's next carrier:** no approval reported by 12 Nov 2026. Admiral Dinesh Tripathi (30 May 2026, a day before
+retiring): carriers "remain central to maritime power projection". Reports differ on whether the repeat Vikrant
+would be a third carrier or replace Vikramaditya.
+
+**The US plan:** due mid-October 2026; nothing published by 12 Nov. AP: the switch "could cost billions"; General
+Atomics: equipment for that ship nearly 50% complete; a Hudson Institute analyst: the Navy has not bought a new
+steam catapult in more than 20 years.
+
+**Not found (so the plan does not use them):** a sourced number for what a MiG-29K or Rafale M gives up on a ramp.
+The film says the kind of loss (the jet lifts itself, so fuel and weapons are traded; the radar aircraft cannot go)
+and gives no figure until one is sourced.
+
+**Blocked from the cloud (403), for one Cowork request:** the TPCR 2025 PDF (mod.gov.in), the DOT&E FY2025 CVN 78
+chapter (dote.osd.mil), the Naval War College Review paper on carriers in Indian doctrine, USNI's 13 Aug 2026
+report, and the Doyle et al. EMALS paper.
+
+**Story bank additions (now 20):** 15 Hiranandani's "white elephant" fear and his line to Nanda (moment, person);
+16 14 knots, half speed, with cracked boilers (failure); 17 six Sea Hawks at 3 pm on 4 Dec 1971, skimming the sea
+(moment); 18 Fujian launches a radar aircraft, the one thing a ramp cannot (reversal); 19 the reactor engineer's
+comment: "comparing 60-year-old mature technology" with a new one (a line for the objection); 20 the US Navy has not
+bought a new steam catapult in over 20 years (irony).
