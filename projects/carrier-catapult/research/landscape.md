@@ -171,3 +171,10 @@ report, and the Doyle et al. EMALS paper.
 (moment); 18 Fujian launches a radar aircraft, the one thing a ramp cannot (reversal); 19 the reactor engineer's
 comment: "comparing 60-year-old mature technology" with a new one (a line for the objection); 20 the US Navy has not
 bought a new steam catapult in over 20 years (irony).
+
+**Two more leads for the story bank (weak sources; verify before use):** 21 In 1976 (4 March or May; sources differ)
+Commander Peter Debras, commanding INAS 300, was launched from Vikrant when the catapult bridle came off; his Sea
+Hawk fell ahead of the ship, he waited under water while the carrier passed over him, ejected and was in the rescue
+helicopter in under three minutes (thunder-and-lightnings.co.uk; Team-BHP). 22 The same accounts say Vikrant made
+more than 10,000 catapult launches. If the Navy's history confirms them, 22 becomes a line in chapter 2 ("India
+has done this ten thousand times") and 21 its human moment.
