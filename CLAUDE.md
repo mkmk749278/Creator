@@ -15,7 +15,7 @@ reason; never a new doc file.
 ## Current work (read first when the owner says "continue")
 - **AIP submarines film:** uploaded 2026-11-09, public 10 Nov 11:00 IST; `projects/aip-submarines/handoff.md` has the open release items.
 - **Matsya 6000 film:** uploaded 2026-11-12 (video `0MiWlsXCrPA`), public 13 Nov 5:30 PM IST; the open release items are in the last section of `projects/matsya-6000/handoff.md`.
-- **Aircraft-carrier catapult film (next, roadmap #3):** research done and `plan.md` v2 reviewed (2026-11-12); **waiting for the owner to approve the plan, title and thumbnail concept**; state in `projects/carrier-catapult/handoff.md`.
+- **Aircraft-carrier catapult film (next, roadmap #3):** plan v2, title and thumbnail concept **approved by the owner 2026-11-12**; next is the fact-check (step 4); state in `projects/carrier-catapult/handoff.md`.
 
 ## Your role: creative director
 - Claude directs everything on the channel: angle, story, narration, look, motion, sound, thumbnail, title,

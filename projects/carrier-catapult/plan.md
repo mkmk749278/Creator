@@ -1,6 +1,6 @@
 # Plan · India Had a Catapult in 1961 (carrier-catapult) · v2, 2026-11-12 (after the independent review, `review_plan_v1.md`)
 
-## The promise (proposed; locked when the owner approves this plan)
+## The promise (**locked: the owner approved plan v2, the title and the thumbnail concept on 2026-11-12**)
 **Promise in one sentence:** India threw jets off a ship with a catapult in 1961 and fought the 1971 war with it;
 in 2026 its newest carrier has a ramp, and the Rafale it has bought was built to be thrown. You'll see what a
 catapult really has to do in three seconds, why India gave it up, why even America is arguing about it, and what
