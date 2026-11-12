@@ -29,5 +29,7 @@ title and take the official copy; if it cannot be found, write "not found" in li
 9. DRDO: any official page, Technology Focus issue or press note on the "Electromagnetic Launch System" shown at
    Aero India 2025 (drdo.gov.in), printed to PDF; and this clippings PDF:
    https://www.drdo.gov.in/drdo/sites/default/files/drdo-news/NPC15to17Feb2025.pdf
-10. The Vir Chakra citation of Commander Benoy Roy Chowdhury, 1971 (gallantryawards.gov.in), printed to PDF.
+10. DRDO Technology Focus, October 2022 (PDF):
+    https://www.drdo.gov.in/sites/default/files/technology-focus-documrnt/TF_October2022.pdf
+11. The Vir Chakra citation of Commander Benoy Roy Chowdhury, 1971 (gallantryawards.gov.in), printed to PDF.
 ```
