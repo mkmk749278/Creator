@@ -90,8 +90,8 @@ The obvious one, set aside: a montage of carrier launches with "aircraft carrier
    and cold for a landing.
 
 ## 4. The creative spine
-- **The one image:** an ordinary Indian home electricity meter. About a week of an average home's units (to settle
-  in step 4: 19 units for a 30-tonne jet, 34 for the heaviest launch) run out in three seconds, and the jet is gone.
+- **The one image:** an ordinary Indian home electricity meter. About six days of an average home's units (19 units;
+  98 a month) run out in three seconds, and the jet is gone.
   (OUR CALCULATION, working on screen.)
 - **The motif (picture):** the glowing slot in the deck. (1) 0:20 it draws and stops at the ramp: the absence.
   (2) ch2, 1961: the real slot, steam rising from it. (3) ch3: we go down into it: coils. (4) ch5: 17 metres of it
@@ -162,31 +162,31 @@ AS REPORTED where they apply.
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
 | 2:00 | 4 March 1961, Belfast: India commissions Vikrant, with a steam catapult | how did steam throw a jet? | F archive on the drafting table; D the date | ship's bell |
-| 2:20 | A steam catapult works like a pressure cooker with a piston: steam held back, then let go (one line on scale: many times a cooker's pressure, figure from step 4) | — | **match cut:** a cooker's whistle lifts in an Indian kitchen → steam bursting from the deck slot (F); H4 cylinder and piston under the deck, SIMPLIFIED | cooker whistle → catapult |
-| 2:45 | 1970, Bombay: cracks in a boiler drum that could not be welded; no new drum could be made in India; the ship held to a crawl | no steam, no catapult? | H4 the drum, a crack line glowing; D Hiranandani's sentence | metal tick |
+| 2:20 | A steam catapult works like a pressure cooker with a piston: steam held back, then let go (no pressure figure: none sourced) | — | **match cut:** a cooker's whistle lifts in an Indian kitchen → steam bursting from the deck slot (F); H4 cylinder and piston under the deck, SIMPLIFIED | cooker whistle → catapult |
+| 2:45 | 1970, Bombay: cracks in a boiler drum that could not be welded; no new drum could be made in India; lasting repair was not possible in India; at low pressure the ship was held to 14 knots | no steam, no catapult? | H4 the drum, a crack line glowing; D Hiranandani's sentence | metal tick |
 | 3:05 | The same steam drove the engines and the catapult. Pushed too hard, "they could simply blow up" (Admiral Arun Prakash) | would they risk it? | T steam splitting two ways: to the propellers, to the slot (P) | low drone |
 | 3:20 | Nanda's choice: stay in harbour and be called a white elephant, or sail | — | F Nanda; D his words | — |
 | 3:35 | **Set piece:** Commander Benoy Roy Chowdhury, the ship's engineer. Steel bands round the boiler. Safety valves set to accept more risk. The boiler room left almost empty, the valve worked from above | did it hold? | H4 the bands going on, one by one; the empty boiler room, one gauge (F); F his photo if found | bands ratchet; silence |
-| 4:00 | 4 December 1971: Sea Hawks leave the catapult for Cox's Bazar (count and hour from the official history). He became the first engineer officer to wear a Vir Chakra (to verify) | — | F Sea Hawks on the catapult; D the award | the motif as steam and a clang; music lifts once |
-| 4:15 | The object's end: in the 1980s the Navy bought Sea Harriers, which needed no catapult; in 1987-89 the catapult came out and a ramp went on. A sensible choice then | and the new ship? | H4 → H1: the slot closes, the bow rises into a ramp (P) | — |
-| 4:30 | Why the *new* Vikrant has a ramp too: designed around 2000 for the MiG-29K, a ramp jet; gas turbines, so no steam; and no electric catapult existed anywhere yet. And one cannot simply be added now: the space and the power were never built in (each point sourced in step 4, or said as "naval designers say") | so what would it take? | H1 the hull in cutaway: where a catapult's machinery would have to go, already full (P), SIMPLIFIED | hull hum |
+| 4:00 | 4 December 1971: Sea Hawks leave the catapult for Cox's Bazar (no count or hour: sources differ). He was given the Vir Chakra, a gallantry medal, for work done in a boiler room (never "first" or "only": sources differ) | — | F Sea Hawks on the catapult; D the award | the motif as steam and a clang; music lifts once |
+| 4:15 | The object's end: in the 1980s the Navy bought Sea Harriers, which needed no catapult; the catapult stayed for the old Alizés, and when they retired in 1989 it came out and a ramp went on. A sensible choice then | and the new ship? | H4 → H1: the slot closes, the bow rises into a ramp (P) | — |
+| 4:30 | Why the *new* Vikrant has a ramp too: designed around 2000 for the MiG-29K, a ramp jet; gas turbines, so no steam for a catapult. And naval analysts say one cannot simply be added now: there is no room for it under the ramp (said as their view, not the Navy's) | so what would it take? | H1 the hull in cutaway: where a catapult's machinery would have to go, already full (P), SIMPLIFIED | hull hum |
 
 ### Ch3 · Three seconds (5:00–7:45) · wonder · device: the real-time count
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 5:00 | No steam on a gas-turbine ship. So: electricity. Take an induction motor, the kind that turns your ceiling fan, cut it and unroll it flat | a fan motor? | **signature S1:** T a ceiling fan's motor opens, unrolls into a straight line of coils, and the line drops into the deck slot, about 90 m, a jet's nose wheel on it (P) | soft clicks |
+| 5:00 | No steam on a gas-turbine ship. So: electricity. Take an induction motor, the kind that turns your ceiling fan, cut it and unroll it flat | a fan motor? | **signature S1:** T a ceiling fan's motor opens, unrolls into a straight line of coils, and the line drops into the deck slot, about a hundred metres, a jet's nose wheel on it (P) | soft clicks |
 | 5:35 | Only the coils under the carriage are alive; the wave runs ahead and the jet is pulled along | — | T the lit patch racing down the trough (P), SIMPLIFIED | rising whine |
-| 5:55 | **Set piece, S2:** "Count with me." One. Two. Three. A 30-tonne jet at 240 km/h. The energy in that jet: about 19 units of electricity. What an average Indian home uses in about a week. Under two hundred rupees | only two hundred rupees? | split: F a real launch in real time; a home meter running a week in three seconds; the working on screen: ½ × mass × speed² → units → ₹ (F); OUR CALCULATION | the motif in full; count spoken; silence after |
-| 6:30 | The turn: the energy is small. The time is the problem. Squeezed into three seconds, it peaks near 50 megawatts, more than half of everything Vikrant's four engines can make, a whole town's evening demand (town size from step 4). For the heaviest aircraft, nearly all of it | where does it come from? | R Vikrant's four engines as four bars, the launch as a spike rising through them; a town's lights at dusk dimming (F); OUR CALCULATION, working shown | hum, dip |
-| 7:00 | So the ship saves up. Four machines, each over 36 tonnes, spin their rotors up for forty-five seconds, then give it back in three | — | H3 four disks spinning up, glowing; they slow as the jet leaves (P); F US Navy motor generator | spin up, thump |
+| 5:55 | **Set piece, S2:** "Count with me." One. Two. Three. A 30-tonne jet at 240 km/h. The energy in that jet: about 19 units of electricity. What an average Indian home (98 units a month) uses in about six days. Under two hundred rupees | only two hundred rupees? | split: F a real launch in real time; a home meter running six days in three seconds; the working on screen: ½ × mass × speed² → units → ₹ (F); OUR CALCULATION | the motif in full; count spoken; silence after |
+| 6:30 | The turn: the energy is small. The time is the problem. Squeezed into three seconds, it peaks near 50 megawatts, more than half of the 88 megawatts all four of Vikrant's engines make | where does it come from? | R Vikrant's four engines as four bars, the launch as a spike rising through them; the ship's own lights dipping (F); OUR CALCULATION, working shown | hum, dip |
+| 7:00 | So the ship saves up. Heavy spinning machines, each over 36 tonnes (no count said), are spun up between launches, then give it back in three seconds; the whole cycle can repeat every forty-five | — | H3 the motor generators spinning up, glowing; they slow as the jet leaves (P); F US Navy motor generator | spin up, thump |
 | 7:25 | Payoff: a catapult is not a motor. It is a power station that works for three seconds, every forty-five, for years, on a ship at sea | has anyone made that work? | F Ford launch, sailors | wind |
 
 ### Ch4 · The newcomer and the inventor (7:45–9:10) · doubt · device: a reversal
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 7:45 | China never put a steam catapult to sea. It went straight to this one, after years of throwing test loads down a full-size track on land (years and place from step 4). Fujian, commissioned 5 November 2025, has thrown the flying radar. And she is not nuclear: this needs stored power, not a reactor | so it works? | F credited excerpt or R silhouette; R the land track drawn at full length (P) | — |
-| 8:10 | Now the inventor. USS Ford: required 4,166 launches between serious failures; measured in 2022: 614 | so it failed? | R two bars at one scale, SOURCE on screen (P) | — |
-| 8:30 | And yet: 36,863 launches by March 2026. A sixty-year-old machine against a ten-year-old one: the young one is still learning | which is true? | F Ford deck, counter | — |
+| 7:45 | China never sent a steam catapult to sea. It built test catapults on land, threw a modified J-15 from them from 2016, and nine years later: Fujian, commissioned 5 November 2025, has thrown the flying radar. And she is not nuclear: this needs stored power, not a reactor | so it works? | F credited excerpt or R silhouette; R the land track drawn at full length (P) | — |
+| 8:10 | Now the inventor. USS Ford: required 4,166 launches between serious failures; measured in 2020: 181; in 2022: 614 | so it failed? | R two bars at one scale, SOURCE on screen (P) | — |
+| 8:30 | And yet: 36,863 launches by March 2026, by the programme's own count. America's own testers, this year: reliability "consistent" with before, "gradual improvements". A sixty-year-old machine against a ten-year-old one: the young one is still learning | which is true? | F Ford deck, counter | — |
 | 8:45 | 13 August 2026: the President orders a plan to go back to steam on a future carrier. The maker: "warrants careful reconsideration." No decision published since (re-search at upload) | steam again? | D the memo headline; F steam catapult | cooker whistle, faint |
 | 9:00 | Turn: one country has it at sea, its inventor is still arguing. "So where is India?" | — | F the Aero India trailer | — |
 
@@ -194,9 +194,9 @@ AS REPORTED where they apply.
 Five numbers only: 400 kg, 17 m, 30 tonnes, 90 m, a decade.
 | Time | Beat | Q | Picture | Sound |
 |---|---|---|---|---|
-| 9:10 | Pune, Maharashtra: DRDO's engineers have built one. The lorry from the opening. It throws 400 kg over about 17 m | is that all? | F the demonstrator at Aero India, Bengaluru; real engineers (L) | the motif, small and thin |
+| 9:10 | Pune, Maharashtra: DRDO's engineers are building one. The lorry from the opening. As reported, it is meant to throw up to 400 kg over about 17 m; DRDO itself has published almost nothing, and the film says so | is that all? | F the demonstrator at Aero India, Bengaluru; real engineers (L) | the motif, small and thin |
 | 9:30 | **Signature S3:** the Navy needs 30 tonnes over about 90 m. Seventy-five times the mass, and faster, so far more than seventy-five times the energy | how long? | one continuous pull-back: the trailer's 17 m track stays on screen while the 90 m track draws out past it and a Rafale settles on it, one scale (P) | — |
-| 9:55 | DRDO's own people: a decade or more | — | D the line, attributed | — |
+| 9:55 | Officials quoted in the defence press: a decade or more | — | D the line, attributed as reported | — |
 | 10:05 | **"You might ask me, Kishore, who is stopping India from building its own?"** Nobody. What China had and India does not yet: a full-size track on land, and a ship waiting for it. The carrier close to approval is another Vikrant, with a ramp. The Navy's own 15-year plan asks for catapults; no ship for them is approved | then buy one? | D TPCR line; R a ship outline with a ramp, and a dotted ship with a slot (P) | — |
 | 10:40 | "America offered it." Reports in 2017 said so; nothing was signed. When America cleared the same system for France, the ceiling for one ship's catapults and landing gear was about ₹11,000 crore (rate at upload), before the ship | — | D the US notice | — |
 | 11:00 | The honest sum, said plainly: the jets are ordered, the motor is the size of a lorry, the ship is not approved | so is it hopeless? | R three items: one ticked, one small, one dotted (P) | low note |
@@ -206,7 +206,7 @@ Five numbers only: 400 kg, 17 m, 30 tonnes, 90 m, a decade.
 |---|---|---|---|
 | 11:15 | Back on the deck. Defend with facts: this Navy ran a catapult through a war with steel bands; this country builds its own carrier, one of a handful that can. What is missing is a decision and ten years of patient work | F Vikrant at sea, sailors; H4 the bands, 2 s | deck wind |
 | 11:35 | One fair line: some in India's own forces say islands, submarines and drones are the better buy. That is a real argument, and it is why the ship is not approved | R map on India's official boundary, 4 s | — |
-| 11:45 | The saying: "You can buy the jet. You have to build the throw." Then the dates to watch: the decision on the next carrier; the first Rafale M, end of 2028; DRDO's next, heavier throw | the band runs on to the dotted ship (F) | the whine begins, cut to silence |
+| 11:45 | The saying: "You can buy the jet. You have to build the throw." Then the dates to watch: the decision on the next carrier; the first Rafale M, due around 2029; DRDO's next, heavier throw | the band runs on to the dotted ship (F) | the whine begins, cut to silence |
 | 12:00 | Subscribe line tied to the promise ("when the next carrier is decided, we'll open its deck"); the question for comments: "Ramp or catapult: if it were your ₹40,000 crore, which would you build?"; the next film as a question (roadmap #4: the cable a submarine trails to hear behind itself); "This is Be Practical with Kishore. Stay practical." | end screen → the AIP submarine film | outro sting |
 
 ## 7. Signature moments and set pieces
@@ -223,10 +223,40 @@ Five numbers only: 400 kg, 17 m, 30 tonnes, 90 m, a decade.
 - **H1 · Vikrant's bow and ramp** in sea daylight, a Rafale M at its foot; the camera runs up the deck at wheel
   height; the bow can morph from a flat catapult deck (1961) to the ramp; a hull cutaway
   under the ramp. Thumbnail source.
-- **H3 · The energy store:** four disk rotors on a steel inspection plate under warm light, spun up, braked.
+- **H3 · The energy store:** motor generators (80,000 lb each, from General Atomics' photos) on a steel inspection plate under warm light, spun up, braked.
 - **H4 · The 1961 steam catapult and the boiler drum:** cylinder, piston and slot in cutaway; the cracked water
   drum; steel bands going on; the empty boiler room with one gauge.
 - (S1 and the trough are Three.js in Remotion; H2 is not used.)
+
+## 8a. Fact-check results (step 4, 2026-11-12): `claims.csv` passes the gate (24 confirmed, 13 said as reported, 2 our calculation)
+What changed in the plan, and what stays open:
+- **The energy store:** "four disks of 121 MJ" is the 1995 design paper, not the machine that was built. General
+  Atomics' own figure: a motor generator of 80,000 lb giving 60 MJ at 60 MW. The film says "heavy spinning machines,
+  each over 36 tonnes" and gives no count.
+- **The home comparison:** an average Indian home uses 98 units a month (Data For India, from the household survey),
+  so a 30-tonne jet's 19 units is about **six days**, and roughly ₹120 at about ₹6.5 a unit: "under two hundred
+  rupees" holds. The "town" comparison is dropped (no sourced input). Peak about 50 MW against Vikrant's 88 MW (GE).
+- **1971:** the cracked drums, "not feasible indigenously" and 14 knots stand on the official-history text (two
+  sources); the steel bands and safety valves on two (Karve's account from the official history; Republic World,
+  2023). Not said: the number of Sea Hawks and the hour on 4 December (six at 3 pm or eight in the morning), and
+  "first" or "only" for the Vir Chakra. New and usable: his medal was presented to INS Shivaji, Lonavala, on
+  18 December 2023; at 12 knots only the Alizés could fly, and a relit boiler brought the Sea Hawks back (one source).
+- **The catapult came out in 1989**, when the Alizés retired, not simply "1987-89".
+- **China:** it did build a steam test catapult on land (a pair, one of each, at Huangdicun from 2016), so "never
+  built steam" became "never sent a steam catapult to sea".
+- **DRDO:** no DRDO page, newsletter or press note on the launcher could be found (Cowork searched drdo.gov.in; the
+  Technology Focus issue is about the railgun). The 400 kg and 16 to 18 m come from R&DE(E)'s statement as carried by
+  India TV's reporter and idrw (Aug 2024); "a decade or more" from one outlet's unnamed officials. All said as
+  reported. **This is the film's weakest sourcing and the narration is worded for it.**
+- **The US:** the memo's own words are in hand (a plan, for CVN-81); "nearly 50% of production complete" is General
+  Atomics' statement; DOT&E FY2025 is in hand. 181 (2020), 614 (2022), 4,166 required: confirmed. 36,863 launches is
+  the programme's own count, attributed.
+- **The Rafale:** chosen after the Goa ramp trials of 2022; deliveries "from around 2029" (sources say 2028 or 2029);
+  about ₹63,000 crore. The lift dimensions have no primary source: pinned comment at most.
+- **Not reachable:** Hiranandani's two volumes (indiannavy.nic.in timed out), the TPCR 2025 PDF (removed), the 1995
+  design paper, the Vir Chakra gazette citation. Each is covered by the wording above; if the owner's laptop reaches
+  the Navy's history pages later, the 1971 rows move from two secondary sources to the primary.
+- **Fresh rows** (re-search within 24 h of upload): the US steam plan, the next carrier's approval, the Rafale trials.
 
 ## 9. Facts to settle in step 4 (before the narration)
 1. **The official history** (Hiranandani, *Transition to Triumph* and *Transition to Eminence*): the cracked drum,
