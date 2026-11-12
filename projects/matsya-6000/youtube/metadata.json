@@ -1,0 +1,94 @@
+{
+  "slug": "matsya-6000",
+  "promise": "The hardest thing ISRO had to make for India's first deep-sea dive wasn't a rocket part: it was a weld around a titanium ball that three Indians will trust six kilometres down.",
+  "title": "Why India Built a 6,000-Meter Titanium Sphere",
+  "title_note": "Owner's own wording, 2026-11-12 (46 characters; the plan's lock was 'ISRO's Hardest Weld Isn't for a Rocket'). Same promise; sentence 1 confirms it (six kilometres, this titanium ball).",
+  "title_alternatives": [
+    "ISRO Needed 700 Tries to Weld This Ball",
+    "ISRO's Hardest Weld Isn't for a Rocket"
+  ],
+  "thumbnails": {
+    "main": {
+      "file": "thumb_a.jpg",
+      "words": "6 KM DOWN",
+      "picture": "Matsya 6000 on the seabed, a crew member's silhouette (no face, no real person) in the lit viewport looking at the black nodules. Generated with Canva's image generator from our own Blender model of the vehicle (H3_descent frame) as the reference; owner, 2026-11-12: use image generation tools, near to reality, Matsya looking at the seabed.",
+      "paid_off": "sentence 1 (six kilometres, this titanium ball); 6:45 'Outside your window... the seafloor in front of you is covered with black lumps'; 'It's a pair of eyes'",
+      "compose": "make_thumbs.py --bg gen_e.png --words \"6 KM|DOWN\" --size 400 --x 100 --y 110 --gamma 0.72 --shade 0 --sat 1.2",
+      "note": "Owner chose A as main, 2026-11-12."
+    },
+    "challenger_1": {
+      "file": "thumb_b.jpg",
+      "words": "3 INDIANS INSIDE",
+      "picture": "the whole vehicle over the nodule field (same generator and reference)",
+      "paid_off": "0:07 'one of the three Indians sitting inside it'",
+      "compose": "make_thumbs.py --bg gen_d.png --words \"3 INDIANS|INSIDE\" --size 300 --x 90 --y 90 --gamma 0.7 --shade 0 --sat 1.2"
+    },
+    "challenger_2": {
+      "file": "thumb_c.jpg",
+      "words": "6 KM DOWN",
+      "picture": "the titanium ball cut open under the sea, three people seen from behind in a warm cabin, the weld glowing round its middle (generated, text prompt only)",
+      "paid_off": "sentence 1; 0:07 three Indians inside; the weld from 0:14",
+      "compose": "make_thumbs.py --bg gen_a.png --words \"6 KM|DOWN\" --size 380 --x 90 --y 170 --shade 110"
+    },
+    "source_pictures": "Drive English/matsya-6000/youtube/src/ (gen_a, gen_d, gen_e, veh_ref)"
+  },
+  "description": "Matsya 6000 is India's first deep-sea sub for people: three Indians inside a titanium sphere, six kilometres under the sea.\nThe hardest part to make was a weld, and ISRO made it. It took about 700 trial welds for 32 minutes that had to be perfect.\nHow the Samudrayaan sphere was built, how it differs from Titan, what is still missing, and what India wants to see on the seabed.\n\n00:00 Why India built a 6,000 metre titanium sphere\n00:52 How strong is the pressure 6 km deep\n01:28 Could Matsya 6000 end like Titan\n02:27 Why deep-sea subs use a ball\n03:09 ISRO's hardest weld: 700 tries\n05:01 Inside Matsya 6000 and India's aquanauts\n05:49 Why the Samudrayaan dive is delayed\n06:45 What is on India's seabed\n08:15 The last test: the sea itself",
+  "chapters": [
+    {
+      "time": "00:00",
+      "title": "Why India built a 6,000 metre titanium sphere"
+    },
+    {
+      "time": "00:52",
+      "title": "How strong is the pressure 6 km deep"
+    },
+    {
+      "time": "01:28",
+      "title": "Could Matsya 6000 end like Titan"
+    },
+    {
+      "time": "02:27",
+      "title": "Why deep-sea subs use a ball"
+    },
+    {
+      "time": "03:09",
+      "title": "ISRO's hardest weld: 700 tries"
+    },
+    {
+      "time": "05:01",
+      "title": "Inside Matsya 6000 and India's aquanauts"
+    },
+    {
+      "time": "05:49",
+      "title": "Why the Samudrayaan dive is delayed"
+    },
+    {
+      "time": "06:45",
+      "title": "What is on India's seabed"
+    },
+    {
+      "time": "08:15",
+      "title": "The last test: the sea itself"
+    }
+  ],
+  "playlist": "Practical India | Hard Truths, Simply Explained",
+  "playlist_id": "PLYqsLgsTPCfg",
+  "schedule": "Friday 13 November 2026, 5:30 PM IST (owner, 2026-11-12)",
+  "publish_at_utc": "2026-11-13T12:00:00Z",
+  "category_id": 28,
+  "altered_or_synthetic": "No",
+  "altered_or_synthetic_note": "The film has no AI footage; the voice is no real person; reconstructions are our own animation, labelled. Only the thumbnail pictures are AI-generated.",
+  "tags": [
+    "Matsya 6000",
+    "Samudrayaan",
+    "Matsya 6000 submarine",
+    "Deep Ocean Mission",
+    "ISRO titanium sphere"
+  ],
+  "captions": "vo/captions.en.srt (English, written spellings)",
+  "pinned_comment": "Sources for every fact in this film (the full list with quotes is kept with the film). The ball under the sea, the weld and the seabed are our own illustrations and reconstructions.\n\nhttps://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/aug/doc2025817614501.pdf\nhttps://theprint.in/science/big-step-for-samudrayaan-as-isro-niot-complete-key-weld-on-deep-sea-submersible-after-700-trials/2699896/\nhttps://ianslive.in/matsya6000-undergoes-trials-in-presence-of-moes-secretary-niot-director--20261106221635\nhttps://theprint.in/science/crack-samudrayaan-capsule-foam-casing-delays-500-metre-test/2843812\nhttps://isa.org.jm/news/the-ministry-of-earth-sciences-of-india-signs-a-second-extension-agreement-for-the-exploration-of-polymetallic-nodules-in-the-indian-ocean-with-the-international-seabed-authority/\nhttps://www.news.uscg.mil/Press-Releases/Article/4265651/coast-guard-marine-board-of-investigation-releases-report-on-titan-submersible/\nhttps://www.isro.gov.in/Samudrayaan_Project.html\nhttps://www.npr.org/transcripts/977960050\nhttps://english.cas.cn/Special_Reports/Highlights_of_2020_Top_12_Achievements_in_CAS/Submersible_Fendouzhe_Completing_10000_meter_Deep_diving_Trial/202011/t20201111_249059.shtml\nhttps://www.isro.gov.in/media_isro/video/Samudrayaan_vid230725.webm\nhttps://www.moes.gov.in/sites/default/files/RS_English_2112.pdf\nhttps://moes.gov.in/sites/default/files/3722English.pdf\nhttps://www.twi-global.com/what-we-do/our-processes/electron-beam-welding\nhttps://www.whoi.edu/cms/files/Rod_Catanach_186387.pdf\nhttps://buffalopedianew.cirb.res.in/murrah/\nhttps://oceanservice.noaa.gov/facts/pressure.html\nhttps://www.whoi.edu/wp-content/uploads/2019/01/AlvinBooklet_FINAL_70563-2.pdf\nhttps://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cobalt.pdf\nhttps://www.deccanherald.com/amp/story/india%2Findias-first-deep-sea-human-submersible-set-for-2026-as-aquanaut-hits-5000-metre-depth-3681248\nhttps://www.uniquegroup.com/media-centre/blog-articles/matsya-6000-human-support-safety-system/\nhttps://www.fox6now.com/news/ntsb-report-titan-submersible-implosion\nhttps://noaa.gov/jetstream/ocean/layers-of-ocean\n\nSome of you will ask, has this ball been tested at full pressure? We found no public report that says so yet, and that is exactly what the film says. When the 500 metre test dive happens, we will cover it.\n\nIs the deep sea worth this much effort for India?",
+  "fresh_facts_gate": "Done 2026-11-12 (web search): no 500 m dive reported yet; the 6 Nov 2026 unmanned trials at Kattupalli are the latest news; 6,000 m still expected in 2027; no public report of a full-pressure test; the ISA has adopted no mining code (Council sessions of March and July 2026 ended without one). Every changeable line holds.",
+  "video_file": "Drive English/matsya-6000/renders/matsya_master_4k.mp4 (md5 9b8cecf96968cad78aa5bc667ec1015e, 9:07)",
+  "drive_folder": "Creator/English/matsya-6000/youtube/",
+  "video_id": "0MiWlsXCrPA"
+}

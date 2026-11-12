@@ -46,6 +46,7 @@ def args():
     ap.add_argument("--samples", type=int, default=16)
     ap.add_argument("--bounces", type=int, default=6)
     ap.add_argument("--threads", type=int, default=0)
+    ap.add_argument("--cut", type=float, default=0.0, help="thumb: the cut wedge, degrees round Z")
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     return ap.parse_args(argv)
 
@@ -670,7 +671,7 @@ def fib_points(n):
     return pts
 
 
-def interior(b, lights_on=True, dark=False):
+def interior(b, lights_on=True, dark=False, thumb=False):
     """inside the 2.1 m ball: a padded wall, a floor deck, three low seats facing the viewports, screens, LED strips"""
     pad = mat("pad", (0.025, 0.03, 0.04), 0.7)
     noise_bump(pad, 18, 0.08)
@@ -744,10 +745,10 @@ def interior(b, lights_on=True, dark=False):
         bpy.ops.mesh.primitive_torus_add(major_radius=math.sqrt(RI ** 2 - 0.62 ** 2) - 0.05, minor_radius=0.012,
                                          location=(0, 0, 0.62), major_segments=128, minor_segments=8)
         leds = bpy.context.object
-        leds.data.materials.append(glow_mat("led", (1.0, 0.86, 0.68), 9.0))
+        leds.data.materials.append(glow_mat("led", (1.0, 0.86, 0.68), 9.0 if not thumb else 3.0))
         bpy.ops.object.light_add(type="POINT", location=(0, 0.1, 0.45))
         l = bpy.context.object
-        l.data.energy = 60
+        l.data.energy = 0 if thumb else 60
         l.data.color = (1.0, 0.88, 0.75)
         l.data.shadow_soft_size = 0.3
     else:
@@ -1160,10 +1161,118 @@ def pose_dark(f, cam, o):
     aim = keys(f, [(0, (0, -RO, -0.1)), (719, (0, -RO, -0.06))])
     aim_cam(cam, loc, aim, keys(f, [(0, 30), (719, 40)]))
 
+# ---------------------------------------------------------------- thumbnail (PLAYBOOK §4.5; youtube/make_thumbs.py)
+def seated(m, az):
+    """a plain figure (no face, no person) sitting on the seat at azimuth az, facing the viewports"""
+    d = Vector((-math.sin(az), math.cos(az), 0))      # centre -> seat (the back of the cabin)
+    f = -d                                             # the way the figure faces
+    side = Vector((f.y, -f.x, 0))
+    up = Vector((0, 0, 1))
+    hip = d * 0.5 + Vector((0, 0, -0.5 + 0.1 + 0.07 + 0.09))
+    parts = []
+
+    def cap(a, b, r):
+        bpy.ops.mesh.primitive_cylinder_add(radius=r, depth=(b - a).length, vertices=24, location=(a + b) / 2)
+        c = bpy.context.object
+        c.rotation_euler = (b - a).to_track_quat("Z", "Y").to_euler()
+        parts.append(c)
+        for q in (a, b):
+            bpy.ops.mesh.primitive_uv_sphere_add(radius=r, segments=24, ring_count=12, location=q)
+            parts.append(bpy.context.object)
+    sh = hip + up * 0.5 + d * 0.06
+    cap(hip + up * 0.06, sh - up * 0.08, 0.135)
+    for sgn in (1, -1):
+        h = hip + side * 0.1 * sgn
+        knee = h + f * 0.42 + up * 0.03
+        cap(h, knee, 0.07)
+        cap(knee, knee + f * 0.1 - up * 0.3, 0.06)
+        s = sh + side * 0.21 * sgn
+        elbow = s + f * 0.1 - up * 0.27
+        cap(s, elbow, 0.048)
+        cap(elbow, elbow + f * 0.26 - up * 0.02, 0.044)
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.11, segments=32, ring_count=16, location=sh + up * 0.2 + f * 0.02)
+    parts.append(bpy.context.object)
+    for q in parts:
+        q.data.materials.append(m)
+        for poly in q.data.polygons:
+            poly.use_smooth = True
+    return parts
+
+
+def build_thumb(a):
+    """the ball under the sea, a quarter cut away: warm light and three seated figures inside, the equator weld
+    glowing. Rendered on a transparent film; the sea, the words and the marks are added by make_thumbs.py."""
+    sc, cam = setup(a, exposure=0.0, world=(0.02, 0.07, 0.12))
+    sc.render.film_transparent = True
+    sc.render.image_settings.color_mode = "RGBA"
+    glass = glass_mat("acrylic")
+    b = build_ball("painted", glass=glass)
+    b["shell"].node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = (0.2, 0.24, 0.29, 1)
+    inside = interior(b, lights_on=True, thumb=True)
+    bpy.data.materials["pad"].node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = \
+        (0.5, 0.42, 0.3, 1)
+    bpy.data.materials["seat"].node_tree.nodes["Principled BSDF"].inputs["Base Color"].default_value = \
+        (0.1, 0.16, 0.3, 1)
+    # the equator weld (W1), thick and white-hot, readable at phone size
+    w1 = b["belts"]["W1"]
+    w1.scale = (1.004, 1.004, 2.6)
+    w1.data.materials[0] = glow_mat("weld", (1.0, 0.62, 0.22), 45.0)
+    rot = math.radians(a.cut)
+    cutface = titanium("cutface")
+    bpy.ops.mesh.primitive_cube_add(size=1)
+    box = bpy.context.object
+    box.scale = (6, 6, 6)
+    box.location = (-3 * math.cos(rot) + 3 * math.sin(rot), -3 * math.sin(rot) - 3 * math.cos(rot), 0)
+    box.rotation_euler = (0, 0, rot)
+    box.data.materials.append(cutface)
+    bpy.context.view_layer.update()
+    cut = list(b["pieces"].values()) + b["inserts"] + list(b["belts"].values()) + [inside["liner"]]
+    cut += b["wseams"] + b["windows"]
+    # bolts (children of the inserts) that sit in the cut-away quarter go with it
+    c0, s0 = math.cos(rot), math.sin(rot)
+    for ob in [o for ins in b["inserts"] for o in ins.children]:
+        w = ob.matrix_world.translation
+        lx, ly = w.x * c0 + w.y * s0, -w.x * s0 + w.y * c0
+        if lx < 0.01 and ly < 0.01:
+            ob.hide_render = True
+    if inside["leds"]:
+        cut.append(inside["leds"])
+    for ob in cut:
+        md = ob.modifiers.new("cut", "BOOLEAN")
+        md.operation = "DIFFERENCE"
+        md.object = box
+        md.solver = "EXACT"
+        md.material_mode = "TRANSFER" if ob.name in [q.name for q in b["pieces"].values()] else "INDEX"
+        bpy.context.view_layer.objects.active = ob
+        bpy.ops.object.modifier_apply(modifier=md.name)
+    bpy.data.objects.remove(box)
+    suit = mat("suit", (0.012, 0.022, 0.06), 0.45)
+    for az in (0.0, math.radians(-52), math.radians(52)):
+        seated(suit, az)
+    # warm cabin light, strong enough to spill out of the cut
+    for loc, e in (((0, 0.0, 0.52), 70), ((-0.35, -0.35, 0.2), 30)):
+        bpy.ops.object.light_add(type="POINT", location=loc)
+        l = bpy.context.object
+        l.data.energy = e
+        l.data.color = (1.0, 0.84, 0.62)
+        l.data.shadow_soft_size = 0.35
+    # the sea's light: a cool key from above left, a cyan rim from behind, a soft fill from the camera side
+    area((-5, -4, 7), (0, 0, 0), 5.0, 1100, (0.75, 0.9, 1.0))
+    area((5, 5, 3), (0, 0, 0.2), 4.0, 1500, (0.3, 0.75, 1.0))
+    area((2, -7, -1), (0, 0, 0), 6.0, 220, (0.5, 0.75, 1.0))
+    return sc, cam, dict(b=b)
+
+
+def pose_thumb(f, cam, o):
+    az = math.radians(-40)
+    dist = 4.3
+    aim_cam(cam, (dist * math.sin(az), -dist * math.cos(az), 0.95), (0, 0, 0.0), 50)
+
 
 SHOTS = {"pieces": (build_pieces, pose_pieces), "seam": (build_seam, pose_seam),
          "squeeze": (build_squeeze, pose_squeeze), "dive": (build_dive, pose_dive),
-         "cutaway": (build_cutaway, pose_cutaway), "dark": (build_dark, pose_dark)}
+         "cutaway": (build_cutaway, pose_cutaway), "dark": (build_dark, pose_dark),
+         "thumb": (build_thumb, pose_thumb)}
 
 
 def main():

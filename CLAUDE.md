@@ -14,7 +14,8 @@ reason; never a new doc file.
 
 ## Current work (read first when the owner says "continue")
 - **AIP submarines film:** uploaded 2026-11-09, public 10 Nov 11:00 IST; `projects/aip-submarines/handoff.md` has the open release items.
-- **Matsya 6000 film (next):** on narration v3. **Paid API audio generated 2026-11-11 and locked in the repo, not yet heard or approved by the owner.** r6 (free-take audio) is the last cut the owner saw; his notes: fix every weak shot, the sea must not look like space, outstanding film. Real-water layer and weak-shot fixes are coded but **unrendered and unseen**: the session was closed mid-build. Start from the last section of `projects/matsya-6000/handoff.md`.
+- **Matsya 6000 film:** uploaded 2026-11-12 (video `0MiWlsXCrPA`), public 13 Nov 5:30 PM IST; the open release items are in the last section of `projects/matsya-6000/handoff.md`.
+- **Aircraft-carrier catapult film (next, roadmap #3):** started 2026-11-12; state in `projects/carrier-catapult/handoff.md`.
 
 ## Your role: creative director
 - Claude directs everything on the channel: angle, story, narration, look, motion, sound, thumbnail, title,
