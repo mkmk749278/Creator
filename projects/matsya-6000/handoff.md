@@ -304,3 +304,18 @@ opening may start on the real sea rather than the thumbnail's ball (the two rule
   made in the session). Checked: −14.1 LUFS, −1.2 dBTP, no freezes, no black, every 6 s frame looked at.
 - **Next:** the owner watches the master; then the package (thumbnails from the locked concept, title, description,
   chapters, SRT, metadata.json) when the owner asks; the fresh-facts gate within 24 h of upload.
+
+## Session 5 (2026-11-12): approved, packaged, scheduled
+- **Owner approved the 4K master** and asked for it to go out **Friday 13 November 2026, 5:30 PM IST**.
+- **Fresh-facts gate done** (web search, 12 Nov): no 500 m dive reported; the 6 Nov trials are the latest news; 2027
+  still the date for 6,000 m; no public full-pressure test report; no ISA mining code. Every line holds.
+- **Thumbnails by image generation** (owner: "use image generation tools", "near to reality", "Matsya looking at the
+  seabed"): Canva's generator, with our own Blender vehicle frame as the reference; words set by
+  `youtube/make_thumbs.py`. Owner chose **A** (the window at the seabed, 6 KM DOWN) as main; B and C are the
+  Test & Compare challengers. Source pictures in Drive `youtube/src/`. A Blender `thumb` shot was added to
+  `matsya_hero.py` first and set aside when the owner asked for generated pictures.
+- **Title, the owner's own words:** "Why India Built a 6,000-Meter Titanium Sphere".
+- **Uploaded** by `scripts/yt_upload.py`: video **`0MiWlsXCrPA`**, private, `publishAt` 2026-11-13T12:00:00Z, main
+  thumbnail A, our SRT, playlist Practical India, AI use = No (`youtube/metadata.json`).
+- **Open:** Test & Compare with thumb_b and thumb_c (Studio only, the owner); the end screen (Studio, to the AIP
+  film, then the playlist); post and pin `pinned_comment` at 5:30 PM IST on 13 Nov; Studio at 24 h.
