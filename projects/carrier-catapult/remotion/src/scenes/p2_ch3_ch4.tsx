@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import type {Part} from '../Film';
-import {Doc, DoteBars, EngineBars, FanUnroll, LandTrack, TwoMeters, Working} from '../parts/drawings';
+import {Doc, DoteBars, EngineBars, FanUnroll, LandTrack, Radar, TwoMeters, Working} from '../parts/drawings';
 import {Clip, Plate} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
@@ -14,7 +14,7 @@ const at = (word: number, shotStart: number, l: number) => word - shotStart + l;
 const ch3: Part = {
 	shots: [
 		clip(S(92), 'PX_fan', CR.px),
-		clip(S(94), 'PX_coil', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
+		clip(S(94), 'PX_coil', CR.px, 3.0, 'ILLUSTRATIVE FOOTAGE'),
 		// S1: the fan's motor unrolled into the line under the deck (one designed long take)
 		draw(S(95), 'fan-unroll', (d, l) => (
 			<FanUnroll
@@ -33,7 +33,7 @@ const ch3: Part = {
 		// S2: count with me: a real launch in real time; the stroke starts on "One"
 		clip(S(102), 'FORD_launch', CR.usn, Math.max(0, 5.0 - (w0(103, 'one') - S(102)) / 60)),
 		clip(S(106), 'EM12_launch', CR.usn, 0.3),
-		draw(S(107), 'working-a', (d, l) => <Working at={[at(w0(109, 'energy'), S(107), l), at(w0(109, 'nineteen'), S(107), l) - 40, at(w0(109, 'nineteen'), S(107), l)]} />, 'OUR CALCULATION'),
+		draw(S(107), 'working-a', (d, l) => <Working at={[l + 30, at(w0(109, 'nineteen'), S(107), l) - 40, at(w0(109, 'nineteen'), S(107), l)]} />, 'OUR CALCULATION'),
 		clip(S(110), 'PX_fan', CR.px, 4.0),
 		draw(S(111), 'working-b', (d, l) => <Working at={[0, 0, 0, l, at(w0(111, 'two'), S(111), l)]} />, 'OUR CALCULATION'),
 		clip(S(112), 'FORD_cat', CR.usn, 1.0),
@@ -76,8 +76,13 @@ const ch4: Part = {
 	shots: [
 		clip(S(127), 'FORD_cat', CR.usn, 2.0),
 		insert(S(130), 'KJ_launch', CR.pla, 16 / 9, 0),
-		draw(S(131), 'land-track', (d, l) => <LandTrack drawAt={at(w0(132, 'land'), S(131), l)} />, 'ILLUSTRATION'),
+		draw(S(131), 'land-track', (d, l) => <LandTrack drawAt={at(w0(132, 'twenty'), S(131), l)} />, 'ILLUSTRATION'),
 		insert(S(133), 'KJ_launch', CR.pla, 16 / 9, 0.5),
+		shot(S(134), 'radar-fujian', (d, l) => (
+			<Plate dur={d} seed="radar3">
+				<Radar heliAt={99999} planeAt={l} contactAt={l + 30} />
+			</Plate>
+		), {tag: 'SIMPLIFIED'}),
 		hero(S(135), 'H_store', 4.0, 'ILLUSTRATION · SIMPLIFIED'),
 		clip(S(138), 'FORD_cat', CR.usn, 0),
 		draw(S(140), 'dote', (d, l) => <DoteBars lineAt={at(w0(140, 'four'), S(140), l)} b1At={at(w0(141, 'one'), S(140), l)} b2At={at(w0(142, 'six'), S(140), l)} />, 'SOURCE: US DOT&E'),
