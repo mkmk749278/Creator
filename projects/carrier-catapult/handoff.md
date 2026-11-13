@@ -80,8 +80,25 @@
 - **Second footage request** (`footage_requests.md` r2): one Termux line, nine clips (Sea Hawks and Alizés on the
   first Vikrant, 1971 east, the Rafale M Goa ski-jump, MiG-29Ks and a trap landing on Vikrant, the first EMALS launch,
   Ford launches, Fujian's KJ-600), and one Cowork request for stills (DRDO's demonstrator, the first Vikrant at
-  Belfast, Cdr Roy Chowdhury's photo). **Waiting for the owner to run both.**
+  Belfast, Cdr Roy Chowdhury's photo). The owner ran both (Antigravity in place of Cowork), 2026-11-13.
 - **`word_map.md` written** on the locked timing: every sentence group with its base, its word cutaways and its idea
   level; the slot motif's five returns; S1, S2, S3 and a set piece per chapter; labels; the stock list.
 - **Next:** the Blender heroes H1, H3, H4 (`scripts/blender/catapult_hero.py`, rendered by `blender-render.yml`);
   stock via the Pixabay API; contact sheets and `media_manifest.csv` once r2 lands; then the Remotion build.
+
+## Session 5, continued (2026-11-13): footage in; the lorry corrected; audio r2
+- **In Drive:** all nine r2 clips (`footage/01_…` to `09_…`, `fetched.csv`); stills from Antigravity in
+  `footage/cowork/stills/`: Cdr Roy Chowdhury's official portrait and the Vir Chakra handover (PIB, usable with
+  credit); two IWM Sea Hawk photos under IWM's non-commercial licence (H4 reference only, never in the film).
+  Not found: the Belfast commissioning photo; any DRDO launcher photo.
+- **Fact corrected:** Antigravity found DRDO showed a *railgun* trailer at Aero India 2025. Checked: Janes
+  (14 Feb 2025) and DRDO's clippings (NPC15to17Feb2025) show only a railgun model; the "EMLS on a trailer" rests on
+  one idrw post. C33 rewritten; the four lorry lines now say "a small test model" (C32, as reported).
+- **Owner: "Only record what needed, adjust that in audio".** Four paragraphs re-recorded (314 credits billed)
+  and placed into the approved audio at their paragraph pauses, levels matched (≤1.1 dB), pauses kept;
+  `vo_take_check.py` OK; re-locked: **644.15 s, SHA-256 f416a57d…**, 211 sentences. Drive `vo/r2/`. The old
+  lock's audio is still in `vo/`. New lines at 0:29.7, 7:55.5, 9:23.5, 10:18.5.
+- `word_map.md` retimed to r2 (old S156 removed; later ids −1) and its rows point at what exists. PLAYBOOK: two
+  lessons (paragraph re-records; "shown at" needs the event's own coverage).
+- **Waiting for the owner:** a listen to the four new paragraphs. **Next:** contact sheets and
+  `media_manifest.csv` for r1 and r2; the Blender heroes H1, H3, H4; stock via the Pixabay API; the Remotion build.

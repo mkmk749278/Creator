@@ -16,16 +16,16 @@ chapter 4 ("Has anyone made it work?"), where a longer pause is natural (about 6
 | 2. Inside a moment, not a topic? | **Pass.** A date, a deck, a jet coming down. |
 | 3. First frame = the thumbnail's subject? | **Pass.** The Navy's landing footage. |
 | 4. Paradox in the title's words by 0:25, loop by 0:45? | **Pass.** "Sixty-five years ago, India was throwing jets off a ship. Today the Navy wants a catapult again" at about 0:25; the two-hundred-rupees loop by about 0:40. |
-| 5. Confirms without answering? | **Pass.** Why it went, and why it is hard, are held back; the lorry is planted, its size kept for chapter 5. |
+| 5. Confirms without answering? | **Pass.** Why it went, and why it is hard, are held back; the small test model is planted, its size kept for chapter 5. |
 | 6. Every challenger and alternative title matches? | **Pass.** NO CATAPULT ("This deck is missing… a catapult"), 3 SECONDS (paid in chapter 3; the opening promises "the hardest machine"), the Rafale and the Vikrant ramp titles (lines 1 and 3). |
 
 ## The creative pass (PLAYBOOK §6.5)
 | Check | Result |
 |---|---|
 | Chapter openings, none alike | a date and a deck · "Come and stand on Vikrant's deck" · "Belfast, the fourth of March" · "Look up at your ceiling fan" · a question about two navies · "In Pune" · "Now look at what India does have" |
-| A picture in words from the viewer's life | a flyover that ends in the sky · the pressure cooker · the ceiling fan unrolled · six days of your home's electricity · giant spinning tops · the lorry |
+| A picture in words from the viewer's life | a flyover that ends in the sky · the pressure cooker · the ceiling fan unrolled · six days of your home's electricity · giant spinning tops |
 | Someone in a moment | Admiral Nanda's choice; Commander Benoy Roy Chowdhury (Bilu) and the steel bands; the machine itself in the three-second count |
-| Plants and payoffs | the lorry (opening → ch5 → the last date to watch) · two hundred rupees (opening → ch3) · steel bands (ch2 → landing) · the ceiling fan and six days (ch3 → the take-home lines) · forty thousand crore (ch5 → the comment question) |
+| Plants and payoffs | the small test model (opening → ch5 → the last date to watch) · two hundred rupees (opening → ch3) · steel bands (ch2 → landing) · the ceiling fan and six days (ch3 → the take-home lines) · forty thousand crore (ch5 → the comment question) |
 | One device per chapter | the news turned round · the viewer on the deck · one object followed (the boiler) · a real-time count · a reversal · the Kishore moment · the bookend |
 | Room for the picture | after "It holds." · after "One. Two. Three." · before "You can buy the jet." · the landing footage under line 1 |
 | The line they will repeat | "a flyover that ends in the sky" · "India kept one alive with steel bands, and took it to war" · "A power station, that works for three seconds at a time" · "the inventor is in two minds, and the newcomer is already flying" · "Nobody is stopping us" · "You can buy the jet. You have to build the throw." |
@@ -51,6 +51,15 @@ the fan; "the trailer in Pune" (it was shown at Aero India in Bengaluru); its au
 mostly men over 45). Rafale and Fujian stay "check by ear": Akash says common names well, and a respelling could do
 more harm than good.
 
+## Correction r2 (2026-11-13, after the audio was approved)
+Antigravity found no photo of a DRDO launcher at Aero India 2025, and Janes (14 Feb 2025) and DRDO's own press
+clippings show the trailer there was a model of a **railgun**. Our only source for "it stood on a trailer" was one
+blog. So the four lines that rested on it now say what C32 supports (a small, scaled test model, as reported):
+"the one India is building so far, is a small test model"; "Remember that small test model? This is it." (the
+air-show sentence is gone); "The catapult is a small test model."; "the day that test model in Pune throws something
+heavier". On the owner's instruction ("only record what needed"), those four paragraphs were re-recorded and placed
+into the approved audio at the paragraph pauses, levels matched; nothing else changed. 644.15 s, re-locked.
+
 ## Listen for (pronunciation, `config/pronunciation.csv`)
 Rafale (Ra-faal) · I-N-S Vikrant · Belfast · Arun Prakash · Nanda · Benoy Roy Chowdhury · Bilu (respelt Beeloo in `vo.txt`) ·
 Vir Chakra · Cox's Bazar · Sea Harrier · Fujian (Foo-jyen) · U-S-S Ford · D-R-D-O · Pune · megawatts.
@@ -58,7 +67,7 @@ Vir Chakra · Cox's Bazar · Sea Harrier · Fujian (Foo-jyen) · U-S-S Ford · D
 ## Labels on screen
 OUR CALCULATION, with the working: nineteen units, six days, under two hundred rupees; close to fifty megawatts and
 "more than half" of Vikrant's 88 MW; seventy-five times the weight; around eleven thousand crore rupees (rate on the
-upload day). AS REPORTED: the lorry, four hundred kilos, seventeen metres, a decade or more; the 2017 offer.
+upload day). AS REPORTED: four hundred kilos, seventeen metres, a decade or more; the 2017 offer.
 SOURCE lines: the failure figures (US DOT&E), thirty-six thousand launches (the programme's count).
 SIMPLIFIED: the steam catapult, the unrolled motor. Real people only in real photos and footage.
 
@@ -75,7 +84,7 @@ source). Each is in `plan.md` §8a.
 
 3. The Rafale was built to be thrown off a ship by one. Vikrant has a ramp instead. The jet can leave by that ramp. It passed that test in Goa. But think about this.
 
-4. Sixty-five years ago, India was throwing jets off a ship. Today the Navy wants a catapult again — and the one India has shown so far, sits on the back of a lorry.
+4. Sixty-five years ago, India was throwing jets off a ship. Today the Navy wants a catapult again — and the one India is building so far, is a small test model.
 
 5. So what happened in between? And here is something you would not guess. The electricity to throw a fighter jet costs you less than two hundred rupees. Yet it is one of the hardest machines on earth. By the end of this film, you will see why.
 
@@ -182,7 +191,7 @@ source). Each is in `plan.md` §8a.
 
 46. In Pune, in Maharashtra, engineers at a D-R-D-O laboratory are building India's own electric catapult.
 
-47. Remember the lorry? This is it. At the Bengaluru air show last year, it stood on a trailer. As reported, it is meant to throw up to four hundred kilos, over about seventeen metres.
+47. Remember that small test model? This is it. As reported, it is meant to throw up to four hundred kilos, over about seventeen metres.
 
 48. I say as reported, because D-R-D-O itself has published very little about it.
 
@@ -198,7 +207,7 @@ source). Each is in `plan.md` §8a.
 
 54. Then why not just buy one? You may remember the reports in twenty seventeen, that America was ready to sell it to India. Nothing was signed. Later, America cleared the same system for France. The estimate for one ship's set, with the wires that stop a landing jet, was one point three billion dollars. Around eleven thousand crore rupees, before you build the ship.
 
-55. So let me put it to you plainly. The jets are ordered. Twenty-six Rafales, for about sixty-three thousand crore rupees. The catapult is the size of a lorry. And the ship is not approved. Until that changes, India's Rafales will fly from ramps.
+55. So let me put it to you plainly. The jets are ordered. Twenty-six Rafales, for about sixty-three thousand crore rupees. The catapult is a small test model. And the ship is not approved. Until that changes, India's Rafales will fly from ramps.
 
 
 ### Landing
@@ -213,7 +222,7 @@ source). Each is in `plan.md` §8a.
 
 60. You can buy the jet. You have to build the throw.
 
-61. Three things for you to watch. The decision on the next carrier. The first Indian Rafale, due around twenty twenty-nine. And the day that lorry in Pune throws something heavier.
+61. Three things for you to watch. The decision on the next carrier. The first Indian Rafale, due around twenty twenty-nine. And the day that test model in Pune throws something heavier.
 
 62. If this made a hard subject simple for you, subscribe. When that decision comes, you and I will open up that deck together.
 
