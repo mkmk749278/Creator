@@ -51,3 +51,10 @@
 - **Next after approval:** `vo_blocks.py` with the split, `eleven_tts.py` (check the credit balance first),
   `vo_take_check.py`, `vo_rejoin.py`, the joined MP3 to Drive and to the owner. In parallel: the Blender heroes
   (H1, H3, H4) and the second footage request.
+
+## Session 5 (2026-11-13): outside review applied; still waiting for the owner
+- The owner attached an outside review "for refinement only". Its physics matches C22 and C23. Taken: the count in
+  three blocks of its own (real-time pause, no edit of the take), "Bilu" respelt "Beeloo" in `vo.txt` and
+  `config/pronunciation.csv`, TV-first notes for S1, the power spike and S3 in `plan.md`. Not taken, with reasons, in
+  `narration.md`. Both gates pass (10,282 characters, still two takes split at chapter 4).
+- **Waiting for the owner:** approval of `narration.md`. No audio before that. Next steps unchanged from session 4.

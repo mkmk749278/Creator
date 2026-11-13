@@ -6,7 +6,7 @@ challengers **NO CATAPULT** and **3 SECONDS**.
 
 **Gates:** `claims_check.py` passes (47 claims); `spoken_english_check.py` passes.
 
-**Length:** 1879 words, about 12 minutes with pauses. 10268 characters, so **two takes**, split at the start of
+**Length:** 1879 words, about 12 minutes with pauses. 10,282 characters, so **two takes**, split at the start of
 chapter 4 ("Has anyone made it work?"), where a longer pause is natural (about 6,100 and 4,150 characters).
 
 ## Promise check (PLAYBOOK §5.1)
@@ -39,8 +39,20 @@ statements; "landing gear" became "the wires that stop a landing jet"; fourteen 
 hour; the propeller planes are explained; the forty thousand crore is said before the comment question uses it;
 "Until that changes, India's Rafales will fly from ramps" answers the question the panel was left with.
 
+## What changed after the outside review (owner's attachment, 2026-11-13)
+Its physics agrees with `claims.csv` C22 and C23 (about 67 MJ, about 19 units, about 25 MW average, near 49 MW peak
+against Vikrant's 88 MW). **Taken:** the count "One. Two. Three." now sits in three blocks of its own in `vo.txt`,
+so Akash pauses about 1.2 s between them and the count runs close to real time, with no editing of the take;
+"Bilu" is respelt "Beeloo" in `vo.txt` before the take (captions keep Bilu), because a wrong reading would cost a
+second take; the TV-first notes for S1 (the fan motor on a drafting table), the 50 MW spike (four 22 MW bars, the
+spike into the third) and S3 (one pull-back, no cut) are in `plan.md`. **Not taken:** splitting the take and filling
+with −32 dB room tone (we never edit words into or out of a take; our room tone sits near −72 dB); a brand name on
+the fan; "the trailer in Pune" (it was shown at Aero India in Bengaluru); its audience of 25 to 44 (our analytics say
+mostly men over 45). Rafale and Fujian stay "check by ear": Akash says common names well, and a respelling could do
+more harm than good.
+
 ## Listen for (pronunciation, `config/pronunciation.csv`)
-Rafale (Ra-faal) · I-N-S Vikrant · Belfast · Arun Prakash · Nanda · Benoy Roy Chowdhury · Bilu (Bee-loo) ·
+Rafale (Ra-faal) · I-N-S Vikrant · Belfast · Arun Prakash · Nanda · Benoy Roy Chowdhury · Bilu (respelt Beeloo in `vo.txt`) ·
 Vir Chakra · Cox's Bazar · Sea Harrier · Fujian (Foo-jyen) · U-S-S Ford · D-R-D-O · Pune · megawatts.
 
 ## Labels on screen
@@ -124,7 +136,13 @@ source). Each is in `plan.md` §8a.
 
 29. Only the coils beside the jet are switched on. A wave of force, racing down the deck.
 
-30. Now count with me. One. Two. Three.
+30. Now count with me.
+
+    One.
+
+    Two.
+
+    Three.
 
 31. By the time you finish counting, a thirty-tonne fighter has gone from standing still, to two hundred and forty kilometres an hour.
 
