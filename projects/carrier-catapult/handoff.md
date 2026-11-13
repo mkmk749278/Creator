@@ -41,3 +41,13 @@
 - **Next:** step 5: the opening (0:00-0:45) and the promise check, then the full narration with the creative pass,
   `spoken_english_check.py`, the independent narration review, and `narration.md` to the owner. In parallel: the
   Blender heroes H1, H3, H4 and the second footage request (ramp launches, Sea Hawks, the Aero India demonstrator).
+
+## Session 4 (2026-11-13): narration v2 written and reviewed; waiting for the owner
+- `vo.txt` (the recording text) and `narration.md` (v2, with the promise check, the creative pass and the review's
+  changes); `review_narration_v1.md`; `words.txt` (subject words for the lint); new rows in `claims.csv` and
+  `config/pronunciation.csv`. Both gates pass.
+- 10,273 characters, so two takes, split at "Has anyone made it work?" (chapter 4).
+- **Waiting for the owner:** approval of `narration.md`. No audio before that.
+- **Next after approval:** `vo_blocks.py` with the split, `eleven_tts.py` (check the credit balance first),
+  `vo_take_check.py`, `vo_rejoin.py`, the joined MP3 to Drive and to the owner. In parallel: the Blender heroes
+  (H1, H3, H4) and the second footage request.
