@@ -1,0 +1,45 @@
+# name	source (assets/footage/)	start_s	end_s	crop w:h:x:y (source px, empty = full; V = vertical insert)	note	colour fix
+# the Navy's Rafale M landing, 29 Oct 2026 (India Today's carriage; credit Indian Navy; logo cropped off the top)
+LAND_touch	03_NixsoYFphQs.mp4	10.0	14.6	1600:900:0:170	the Rafale M touches down on Vikrant, deck crew
+LAND_bow	03_NixsoYFphQs.mp4	20.0	22.6	1600:900:0:170	Vikrant's bow ramp, sailors lining the deck
+LAND_ramp	02_Hk7IAediZnY.mp4	26.0	31.5	1120:630:640:210	the Rafale M leaves Vikrant's ramp (NDTV inset; soft)
+TRAP_deck	06_wHZ7ugJDgek.mp4	1.6	3.6	1600:900:320:180	down Vikrant's deck from the island, a MiG-29K on approach
+TRAP_trap	06_wHZ7ugJDgek.mp4	4.5	9.0	1600:900:320:180	the MiG-29K trap: the wire, the stop
+MIG_deck	05_byPfTVU5jHo.mp4	7.0	9.2	V	a MiG-29K on Vikrant's deck at sea (vertical)
+# the first Vikrant (R11), archive (credit: archive); 4:3 cropped to 16:9
+SH_launch	01_QSk6rW3PFKQ.mp4	1.0	2.6	1440:810:0:135	a Sea Hawk thrown off the bow
+SH_deck	01_QSk6rW3PFKQ.mp4	2.5	4.2	1440:810:0:135	a deck launch past Indian sailors
+SH_sea	01_QSk6rW3PFKQ.mp4	5.0	6.2	1440:810:0:135	the first Vikrant at sea
+SH_nose	01_QSk6rW3PFKQ.mp4	8.0	9.6	1440:810:0:135	a Sea Hawk's nose wheel and roundel (match-cut frame)
+SH_tail	01_QSk6rW3PFKQ.mp4	10.0	11.2	1440:810:0:135	the tail IN157
+SH_pilot	01_QSk6rW3PFKQ.mp4	13.0	15.2	1440:810:0:135	Indian pilots climbing in
+SH_bow	01_QSk6rW3PFKQ.mp4	19.0	20.8	1440:810:0:135	a launch seen over the bow
+AL_folded	02_DVyGTtS0Jl0.mp4	0.4	1.6	1440:810:0:135	an Alize with folded wings on deck
+AL_start	02_DVyGTtS0Jl0.mp4	1.5	3.6	1440:810:0:135	Alize 06, engine start, Indian deck crew
+AL_ship	02_DVyGTtS0Jl0.mp4	7.0	9.2	1440:810:0:135	the first Vikrant at sea, wide
+# Films Division, 1971 (credit: Films Division); 384x288, fd mark cropped
+W71_deck	03_Mj30oQuTBDU.mp4	3.0	6.0	384:216:0:5	Vikrant's deck, crew, 1971
+W71_bow	03_Mj30oQuTBDU.mp4	11.0	14.0	384:216:0:5	a launch over the bow, 1971
+W71_sea	03_Mj30oQuTBDU.mp4	19.0	22.0	384:216:0:5	ships at sea, 1971
+# U.S. Navy (public domain)
+EM12_trough	07_DeJBaFzl77Q.mp4	10.0	19.0		the EMALS trough at Lakehurst, a straight slot to the horizon
+EM12_slot	07_DeJBaFzl77Q.mp4	22.0	30.0		the slot and the shuttle
+EM12_launch	07_DeJBaFzl77Q.mp4	117.0	122.5		the first EMALS launch, 2010, real time
+FORD_launch	08_6qahWEhrDfg.mp4	1.0	9.0		an F/A-18 thrown off USS Ford's bow by EMALS
+FORD_cat	08_6qahWEhrDfg.mp4	11.0	17.0		a Super Hornet on Ford's catapult, crew
+# PLA via 'Chinese Forces' (rights unclear: 3 s, credited, inset)
+KJ_launch	09_-TQxHXnpDEI.mp4	9.0	13.0	720:405:0:325	the KJ-600 on Fujian's catapult
+# stock (Pixabay, Pexels)
+PX_fan	../stock/pixabay_133872.mp4	2.0	12.0		a ceiling fan turning
+PX_coil	../stock/pixabay_106754.mp4	0.0	8.0		hands winding a copper coil
+PX_steam	../stock/pixabay_154406.mp4	0.0	6.0		steam billowing
+PXL_flyover	../pexels/14927711_3840_2160_30fps.mp4	0.0	6.2	1920:1080:1920:0	an Indian flyover rising against the sky
+PXL_balance	../pexels/16308680_3840_2160_30fps.mp4	0.0	12.0	1920:1080:0:1080	a roadside seller's two-pan balance
+PXL_balance2	../pexels/16308662_3840_2160_30fps.mp4	0.0	12.0	1920:1080:0:1080	the balance at rest
+PXL_lattu	../pexels/5213591-hd_1080_1920_24fps.mp4	0.0	10.0	V	a wooden lattu spinning
+PXL_tech	../pexels/12504681_1920_1080_30fps.mp4	0.0	11.0		an Indian technician at an electrical panel
+# our hero renders (assets/renders)
+H_store	../renders/cat_H_store.mp4	0.0	16.0		H3 energy store
+H_drum	../renders/cat_H_drum.mp4	0.0	16.0		H4 drum and bands
+H_catapult	../renders/cat_H_catapult.mp4	0.0	10.0		H4 1961 steam catapult
+H_room	../renders/cat_H_room.mp4	0.0	10.0		H4 gauge and boiler room
