@@ -46,3 +46,10 @@
 
 ## Next
 Render r2 (720p) with these fixes; measure again; then the independent viewer review.
+
+# Review · r2 (render run 43404314348)
+- Loudness −14.0 LUFS, −1.4 dBTP; no flashes; every run-out fixed (checked against clip lengths: none left).
+- One freeze remained: the radar plate before "the flying radar" (1:33.5, 2.85 s: ship and faint rings only). Fixed:
+  the plane's circle opens from the shot's start (it is the answer the question sets up).
+- 216 frames read again: the r1 fixes hold. Fixed for r3: "FAR SHORT" overlapped the goal label (7:16); the model
+  shot still too tight (7:58), its label off the frame and under the 400 KG tag: the zoom eased to 1.6×, the tag moved up.

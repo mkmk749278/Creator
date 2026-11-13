@@ -55,7 +55,7 @@ const ch5: Part = {
 		insert(S(185), 'LAND_ramp', CR.navyNDTV, 16 / 9, 1.0),
 	],
 	overlays: [
-		tag(w0(156, 'four'), s1(156), '400 KG · ABOUT 17 M', 140, 760, 64, C.slot, true, 'AS REPORTED'),
+		tag(w0(156, 'four'), s1(156), '400 KG · ABOUT 17 M', 140, 180, 64, C.slot, true, 'AS REPORTED'),
 		tag(w0(157, 'published'), s1(157), 'DRDO HAS PUBLISHED LITTLE', 140, 860, 50),
 		tag(w0(163, 'seventy'), s1(163), '×75 THE WEIGHT', 140, 180, 80, C.slot, true),
 		ask(w0(165, 'who'), s1(165), 'WHO IS STOPPING INDIA?'),
