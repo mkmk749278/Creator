@@ -148,7 +148,7 @@ FOOTAGE on any stock that stands in for a real moment.
   Vir Chakra handover photo (PIB, usable with credit). The two IWM Sea Hawk photos are under IWM's **non-commercial**
   licence: design reference for H4 only, never in the film. Not found: the Belfast commissioning, any DRDO launcher
   photo (the Aero India 2025 trailer was a railgun: Janes, 14 Feb 2025, and DRDO's own clippings).
-- Stock via the Pixabay API: an Indian flyover's end, a kirana balance, a pressure cooker, a family under a ceiling
-  fan, a home meter, a wall calendar, a lattu.
+- Stock settled (2026-11-13): Pixabay (fan, coil, steam) and Pexels (flyover, balance, lattu, technician); no real clip of a
+  cooker, a family under a fan or a meter exists, so those are drawn (R).
 - Hero renders: H3 (the motor generators), H4 (steam
   catapult cutaway, the drum, the bands, the empty boiler room).
