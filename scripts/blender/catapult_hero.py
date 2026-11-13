@@ -3,14 +3,8 @@ the catapult and cutaways also SIMPLIFIED).
 
   .venv-blender/bin/python scripts/blender/catapult_hero.py --shot NAME --out DIR --frames a-b --step 2 [--w --h]
 
-H1 · the new Vikrant in sea daylight (designed from the Navy's own footage: dark non-skid deck, white centreline,
-     red-white and yellow dashed edge lines, yellow hatching, the bow ramp; ramp about 37 m long ending at 14 degrees).
-  deck     (0-599)  S16-17: a sailor's eye height, walking up the deck; the ramp's lip ends against open sky.
-  ramp     (0-599)  S18-22: low and close along the ramp's bare steel, rising with it to the lip.
-  morph    (0-719)  S83:    side view of the bow: a flat deck with a glowing catapult slot (1961); the slot seals
-                            (120-240), then the bow rises into a ramp (300-500).
-  cutaway  (0-719)  S86-89: the hull cut down its centreline; four gas turbines light one by one (60-300); the space
-                            under the ramp is packed solid (stores, machinery: SIMPLIFIED).
+H1 (Vikrant's deck, ramp, the flat-to-ramp morph, the hull cutaway) was tried here on 2026-11-13 and dropped: the
+     Navy's own footage shows the deck better, and the morph and cutaway read clearer as Remotion drawings.
 H3 · the energy store (General Atomics' motor generator: over 36 tonnes, 80,000 lb; no count is said).
   store    (0-959)  S120-125: a motor generator in cutaway on the steel inspection plate, others in shadow behind;
                             the rotor spins up (0-420), its copper glows with stored energy; at 600 the energy is
@@ -118,7 +112,7 @@ def brushed_steel(name="steel", tint=(0.36, 0.37, 0.39), rough=0.38, stretch=60)
 
 def plate_steel(name, cell):
     """The steel inspection plate: brushed steel with engraved grid lines every `cell` metres."""
-    m = brushed_steel(name, (0.30, 0.31, 0.33), 0.46)
+    m = brushed_steel(name, (0.13, 0.135, 0.14), 0.5)
     nt = m.node_tree
     tc = nt.nodes.new("ShaderNodeTexCoord")
     br = nt.nodes.new("ShaderNodeTexBrick")
@@ -168,28 +162,6 @@ def setup(a, exposure=0.0, world=(0.004, 0.005, 0.007)):
     return sc, cam
 
 
-def sky_world(sc, elevation=38, rotation=200, strength=0.35):
-    w = sc.world
-    nt = w.node_tree
-    sky = nt.nodes.new("ShaderNodeTexSky")
-    sky.sky_type = "NISHITA"
-    sky.sun_elevation = math.radians(elevation)
-    sky.sun_rotation = math.radians(rotation)
-    sky.altitude = 20
-    sky.air_density = 1.2
-    sky.dust_density = 2.5
-    bg = nt.nodes["Background"]
-    bg.inputs["Strength"].default_value = strength
-    nt.links.new(sky.outputs["Color"], bg.inputs["Color"])
-    bpy.ops.object.light_add(type="SUN")
-    sun = bpy.context.object
-    sun.data.energy = 4.0
-    sun.data.angle = math.radians(0.6)
-    sun.data.color = (1.0, 0.95, 0.88)
-    sun.rotation_euler = (math.radians(90 - elevation), 0, math.radians(rotation - 90))
-    return sun
-
-
 def area(loc, aim, size, energy, color):
     bpy.ops.object.light_add(type="AREA", location=loc)
     l = bpy.context.object
@@ -229,16 +201,6 @@ def cyl(name, loc, r, depth, m, rot=(0, 0, 0), verts=64):
     return o
 
 
-def mesh_obj(name, verts, faces, m):
-    me = bpy.data.meshes.new(name)
-    me.from_pydata(verts, [], faces)
-    me.update()
-    o = bpy.data.objects.new(name, me)
-    bpy.context.collection.objects.link(o)
-    o.data.materials.append(m)
-    return o
-
-
 def render(sc, a, build_frame):
     lo, hi = map(int, a.frames.split("-"))
     os.makedirs(a.out, exist_ok=True)
@@ -248,237 +210,6 @@ def render(sc, a, build_frame):
         sc.render.filepath = os.path.join(a.out, f"{a.shot}_{f:04d}.png")
         bpy.ops.render.render(write_still=True)
         print(f"frame {f}", flush=True)
-
-
-# ---------------------------------------------------------------- H1 · the new Vikrant
-L, W = 262.0, 60.0          # flight deck length and width (m), deck at z = 0
-RAMP_X0, RAMP_DEG = 225.0, 14.0
-RAMP_R = (L - RAMP_X0) / math.radians(RAMP_DEG)
-
-
-def ramp_z(x, m=1.0):
-    """height of the deck at x; m blends from a flat deck (0) to the ramp (1)"""
-    if x <= RAMP_X0:
-        return 0.0
-    th = (x - RAMP_X0) / RAMP_R
-    return m * RAMP_R * (1 - math.cos(th))
-
-
-def half_width(x):
-    """the deck in plan: full width amidships, a rounded stern, the bow tapering under the ramp"""
-    if x < 12:
-        return W / 2 * (0.72 + 0.28 * smooth(x / 12))
-    if x > 185:
-        return W / 2 * (1 - 0.55 * smooth((x - 185) / (L - 185)))
-    return W / 2
-
-
-def deck_mesh(name, m, morph=1.0, nx=260, ny=24):
-    vs, fs = [], []
-    for i in range(nx + 1):
-        x = L * i / nx
-        hw = half_width(x)
-        for j in range(ny + 1):
-            y = -hw + 2 * hw * j / ny
-            vs.append((x, y, ramp_z(x, morph)))
-    for i in range(nx):
-        for j in range(ny):
-            a0 = i * (ny + 1) + j
-            fs.append((a0, a0 + ny + 1, a0 + ny + 2, a0 + 1))
-    return mesh_obj(name, vs, fs, m)
-
-
-def hull_mesh(name, m, morph=1.0, nx=130, depth=19.0, half=False):
-    """the hull below the flight deck: flared sides from the deck edge to the keel"""
-    vs, fs = [], []
-    ring = 7
-    for i in range(nx + 1):
-        x = L * i / nx
-        hw = half_width(x)
-        z0 = ramp_z(x, morph) - 0.4
-        bow = smooth((x - 200) / 62)
-        stern = 1 - smooth(x / 30)
-        wl = hw * (0.78 - 0.45 * bow - 0.08 * stern)
-        pts = [(hw, z0), (hw * 0.98, z0 - 3), (wl + 2, -12), (wl, -depth + 2), (wl * 0.6, -depth), (0.0, -depth - 0.5)]
-        side = pts + [(-p[0], p[1]) for p in reversed(pts[:-1])]
-        if half:
-            side = [(p[0], p[1]) for p in side if p[0] >= -0.01]
-        for (y, z) in side:
-            vs.append((x, y, z))
-    ring = len(vs) // (nx + 1)
-    for i in range(nx):
-        for j in range(ring - 1):
-            a0 = i * ring + j
-            fs.append((a0, a0 + 1, a0 + ring + 1, a0 + ring))
-    return mesh_obj(name, vs, fs, m)
-
-
-def strip(name, m, x0, x1, y, w, morph=1.0, dash=None, lift=0.03, seg=1.0):
-    """a painted line on the deck (follows the ramp); dash=(on, off) metres"""
-    vs, fs = [], []
-    x = x0
-    while x < x1:
-        xe = min(x1, x + (dash[0] if dash else seg))
-        n = max(1, int((xe - x) / 0.8))
-        base = len(vs)
-        for k in range(n + 1):
-            xx = x + (xe - x) * k / n
-            z = ramp_z(xx, morph) + lift
-            vs += [(xx, y - w / 2, z), (xx, y + w / 2, z)]
-        for k in range(n):
-            b = base + 2 * k
-            fs.append((b, b + 2, b + 3, b + 1))
-        x = xe + (dash[1] if dash else 0)
-    return mesh_obj(name, vs, fs, m)
-
-
-def deck_paint():
-    deck = mat("deck", (0.055, 0.058, 0.062), 0.82)
-    noise_bump(deck, 900, 0.35, detail=4)
-    nt = deck.node_tree
-    n = nt.nodes.new("ShaderNodeTexNoise")
-    n.inputs["Scale"].default_value = 0.08
-    n.inputs["Detail"].default_value = 6
-    cr = nt.nodes.new("ShaderNodeValToRGB")
-    cr.color_ramp.elements[0].color = (0.045, 0.047, 0.05, 1)
-    cr.color_ramp.elements[1].color = (0.09, 0.09, 0.095, 1)
-    nt.links.new(n.outputs["Fac"], cr.inputs["Fac"])
-    nt.links.new(cr.outputs["Color"], nt.nodes["Principled BSDF"].inputs["Base Color"])
-    return deck
-
-
-def build_ship(morph=1.0, half=False, island=True):
-    deck = deck_paint()
-    hull = mat("hull", (0.30, 0.31, 0.33), 0.55, metal=0.2)
-    noise_bump(hull, 40, 0.08)
-    white = mat("white", (0.8, 0.8, 0.78), 0.6)
-    red = mat("red", (0.55, 0.05, 0.04), 0.6)
-    yel = mat("yellow", (0.75, 0.55, 0.05), 0.6)
-    objs = {"deck": deck_mesh("deck", deck, morph)}
-    objs["hull"] = hull_mesh("hull", hull, morph, half=half)
-    # markings, from the Navy's footage: the white centreline, red-white and yellow dashed lines, the edge lines
-    objs["paint"] = [
-        strip("centre", white, 10, L - 2, 0, 0.5, morph, dash=(6, 4)),
-        strip("edgeP", white, 8, 190, W / 2 - 4, 0.35, morph),
-        strip("edgeS", white, 8, 190, -W / 2 + 4, 0.35, morph),
-        strip("redP", red, 20, 200, 6, 0.6, morph, dash=(2, 2)),
-        strip("yelS", yel, 20, 200, -9, 0.6, morph, dash=(2, 3)),
-        strip("yelP", yel, 20, 200, 12, 0.6, morph, dash=(2, 3)),
-    ]
-    # yellow hatching near the island
-    for k in range(14):
-        strip(f"hatch{k}", yel, 60 + k * 1.6, 61 + k * 1.6, -W / 2 + 10, 6, morph)
-    if island:
-        grey = mat("island", (0.34, 0.35, 0.37), 0.5, metal=0.15)
-        box("island1", (140, -W / 2 + 4, 9), (34, 7, 18), grey)
-        box("island2", (125, -W / 2 + 4, 20), (14, 6, 8), grey)
-        box("mast", (142, -W / 2 + 4, 27), (2, 2, 14), grey)
-        box("radar", (142, -W / 2 + 4, 34), (5, 0.4, 2.2), grey)
-    return objs
-
-
-def sea(sc, size=1600):
-    bpy.ops.mesh.primitive_plane_add(size=size, location=(L / 2, 0, -17))
-    s = bpy.context.object
-    o = s.modifiers.new("ocean", "OCEAN")
-    o.geometry_mode = "DISPLACE"
-    o.resolution = 12
-    o.spatial_size = 120
-    o.wave_scale = 0.9
-    o.wind_velocity = 9
-    o.random_seed = 7
-    sub = s.modifiers.new("sub", "SUBSURF")
-    sub.subdivision_type = "SIMPLE"
-    sub.levels = sub.render_levels = 5
-    s.modifiers.move(1, 0)
-    wm = mat("sea", (0.02, 0.09, 0.13), 0.06)
-    p = wm.node_tree.nodes["Principled BSDF"]
-    p.inputs["Transmission Weight"].default_value = 0.0
-    p.inputs["Specular IOR Level"].default_value = 0.6
-    s.data.materials.append(wm)
-    return o
-
-
-def build_h1(a):
-    sc, cam = setup(a, exposure=-0.2)
-    sky_world(sc)
-    shot = a.shot
-    morph_f = (lambda f: smooth((f - 300) / 200)) if shot == "morph" else (lambda f: 1.0)
-    state = {"ship": None}
-    ocean = sea(sc)
-    slot_m = mat("slot", (0.9, 0.7, 0.05), 0.4, emit=(1.0, 0.72, 0.08), strength=6)
-    turb_m = [mat(f"turb{k}", (0.25, 0.22, 0.2), 0.4, metal=0.6, emit=(1.0, 0.55, 0.15), strength=0) for k in range(4)]
-    fill_m = [mat(f"fill{k}", c, 0.7) for k, c in enumerate([(0.32, 0.33, 0.35), (0.42, 0.36, 0.28), (0.25, 0.27, 0.3)])]
-    cut_m = mat("cutface", (0.62, 0.42, 0.18), 0.6, emit=(1.0, 0.62, 0.25), strength=0.4)
-
-    def rebuild(m):
-        for o in list(bpy.data.objects):
-            if o.type == "MESH" and o.name not in ("Plane",):
-                if o.name.startswith(("deck", "hull", "centre", "edge", "red", "yel", "hatch", "island", "mast", "radar",
-                                      "slot", "turb", "fill", "cut")):
-                    bpy.data.objects.remove(o, do_unlink=True)
-        build_ship(m, half=(shot == "cutaway"))
-        if shot == "morph":
-            pass
-        if shot == "cutaway":
-            # the cut face along the centreline, warm; turbines amidships; the space under the ramp packed solid
-            vs, fs = [], []
-            for i in range(131):
-                x = L * i / 130
-                vs += [(x, 0.0, ramp_z(x) - 0.4), (x, 0.0, -19.0)]
-            for i in range(130):
-                b = 2 * i
-                fs.append((b, b + 2, b + 3, b + 1))
-            cf = mesh_obj("cutface", vs, fs, cut_m)
-            cf.location.y = -0.05
-            for k in range(4):
-                cyl(f"turb{k}", (95 + k * 14, 3, -13), 1.6, 7, turb_m[k], rot=(0, math.pi / 2, 0), verts=32)
-            random.seed(11)
-            x = 186.0
-            while x < 258:
-                zt = ramp_z(x) - 1.0
-                z = -16.0
-                while z < zt - 1.0:
-                    h = min(zt - z, 2.0 + random.random() * 2.5)
-                    wd = 3 + random.random() * 4
-                    box(f"fill{int(x)}_{int(z * 10)}", (x + wd / 2, 2.2, z + h / 2), (wd - 0.25, 4.2, h - 0.2),
-                        fill_m[random.randrange(3)])
-                    z += h
-                x += 3 + random.random() * 3
-
-    rebuild(morph_f(0))
-    last = {"m": None}
-
-    def frame(f):
-        m = morph_f(f)
-        if shot == "morph" and (last["m"] is None or abs(m - last["m"]) > 1e-4):
-            rebuild(m)
-            last["m"] = m
-            for o in list(bpy.data.objects):
-                if o.name.startswith("slotline"):
-                    bpy.data.objects.remove(o, do_unlink=True)
-            seal = smooth((f - 120) / 120)
-            if seal < 0.999:
-                s = strip("slotline", slot_m, 150 + (L - 152) * seal, L - 2, 0, 0.7, m, lift=0.05)
-        ocean.time = 2.0 + f / FPS
-        if shot == "deck":
-            x = keys(f, [(0, 165.0), (599, 214.0)])
-            aim_cam(cam, (x, -6.0, 1.75), (L + 30, 2.0, 9.0), 30)
-        elif shot == "ramp":
-            x = keys(f, [(0, 222.0), (599, 256.0)])
-            aim_cam(cam, (x, 9.0, ramp_z(x) + 0.55), (x + 40, -4, ramp_z(min(L, x + 40)) + 5), 24)
-        elif shot == "morph":
-            ang = keys(f, [(0, 0.0), (719, 0.18)])
-            r = 150
-            aim_cam(cam, (215 + r * math.sin(ang), 25 + r * math.cos(ang), 14), (220, 0, 0), 50)
-        elif shot == "cutaway":
-            for k in range(4):
-                set_emit(turb_m[k], 6.0 * smooth((f - 60 - 50 * k) / 40))
-            set_emit(cut_m, 0.4)
-            px = keys(f, [(0, 120.0), (719, 205.0)])
-            aim_cam(cam, (px, 95, 6), (px + 20, 0, -6), 45)
-
-    render(sc, a, frame)
 
 
 # ---------------------------------------------------------------- H3 · the energy store
@@ -615,10 +346,10 @@ def build_catapult(a):
     steam = mat("steam", (1.0, 0.7, 0.35), 0.5, emit=(1.0, 0.62, 0.25), strength=0.0)
     LEN = 24.0
     # a slab of the 1961 deck, cut open along the slot: the deck plate, the slot, the trough below
-    box("deckL", (LEN / 2, -3.2, 3.0), (LEN + 4, 5.6, 0.35), deckm)
+    box("deckEdge", (LEN / 2, -0.95, 3.0), (LEN + 4, 0.2, 0.35), cutface)
     box("deckR", (LEN / 2, 3.2, 3.0), (LEN + 4, 5.6, 0.35), deckm)
     box("trough", (LEN / 2, 0, 1.4), (LEN + 4, 1.6, 0.12), cutface)
-    box("wallL", (LEN / 2, -0.85, 2.2), (LEN + 4, 0.1, 1.6), cutface)
+    box("wallR", (LEN / 2, 0.85, 2.2), (LEN + 4, 0.1, 1.6), cutface)
     # the cylinder, cut open on top so the piston shows, and the steam behind the piston
     tube = cyl("tube", (LEN / 2, 0, 2.0), 0.42, LEN, steel, rot=(0, math.pi / 2, 0), verts=64)
     sol = tube.modifiers.new("shell", "SOLIDIFY")
@@ -635,9 +366,9 @@ def build_catapult(a):
     shuttle.parent = piston
     shuttle.matrix_parent_inverse = piston.matrix_world.inverted()
     plume = cyl("plume", (0.5, 0, 2.0), 0.38, 1.0, steam, rot=(0, math.pi / 2, 0), verts=48)
-    jetm = mat("jet", (0.42, 0.44, 0.46), 0.45, metal=0.3)
-    jet = jet_silhouette("jet", jetm, 0.42)
-    area((LEN / 2, -10, 10), (LEN / 2, 0, 2), 10, 3200, (1.0, 0.85, 0.65))
+    jetm = mat("jet", (0.2, 0.22, 0.24), 0.5, metal=0.3)
+    jet = jet_silhouette("jet", jetm, 0.3)
+    area((LEN / 2, -10, 10), (LEN / 2, 0, 2), 10, 1400, (1.0, 0.85, 0.65))
     area((LEN / 2 + 8, 8, 6), (LEN / 2, 0, 2), 6, 900, (0.7, 0.8, 1.0))
 
     def frame(f):
@@ -647,9 +378,9 @@ def build_catapult(a):
         plume.scale.z = max(0.05, (x - 0.4))
         plume.location.x = 0.4 + (x - 0.4) / 2 - 0.6
         set_emit(steam, 7.0 * smooth((f - 130) / 25) * (1 - 0.6 * smooth((f - 360) / 120)))
-        jet.location = (x + 2.0, 0, 4.2)
+        jet.location = (x + 1.6, 0, 3.9)
         cx = keys(f, [(0, 2.0), (150, 4.0), (330, LEN - 4.0), (599, LEN - 2.0)])
-        aim_cam(cam, (cx - 6, -9.5, 6.5), (cx + 1.5, 0, 2.2), 32)
+        aim_cam(cam, (cx - 4.5, -6.2, 5.6), (cx + 1.5, 0, 2.3), 30)
 
     render(sc, a, frame)
 
@@ -672,8 +403,8 @@ def build_drum(a):
     sc, cam = setup(a, exposure=-0.5)
     bpy.ops.mesh.primitive_plane_add(size=40)
     bpy.context.object.data.materials.append(plate_steel("plate", 0.5))
-    iron = brushed_steel("drumsteel", (0.33, 0.30, 0.27), 0.45, stretch=4)
-    noise_bump(iron, 25, 0.15)
+    iron = brushed_steel("drumsteel", (0.16, 0.15, 0.14), 0.5, stretch=40)
+    noise_bump(iron, 25, 0.02)
     dark = mat("dark", (0.05, 0.05, 0.05), 0.6, metal=0.5)
     R, LEN = 0.75, 4.0
     drum = cyl("drum", (0, 0, 1.6), R, LEN, iron, rot=(0, math.pi / 2, 0), verts=96)
@@ -684,7 +415,7 @@ def build_drum(a):
         e.data.materials.append(iron)
         box(f"saddle{s}", (s * 1.3, 0, 0.55), (0.4, 1.4, 1.1), dark)
     # rivet seams
-    rivet = mat("rivet", (0.3, 0.28, 0.26), 0.4, metal=1.0)
+    rivet = mat("rivet", (0.12, 0.11, 0.1), 0.5, metal=1.0)
     for sx in (-1.0, 0.0, 1.0):
         for j in range(40):
             t = j / 40 * math.tau
@@ -697,15 +428,16 @@ def build_drum(a):
     cracks = []
     for k in range(7):
         x = -1.5 + k * 0.48 + random.uniform(-0.1, 0.1)
-        t = math.radians(-70 + random.uniform(-25, 25))
+        t = math.radians(random.uniform(-25, 30))
         pts = []
-        for s in range(9):
-            tt = t + s * 0.06 * random.choice((-1, 1)) * random.random() + s * 0.05
-            xx = x + s * 0.05 * random.uniform(-1, 1)
-            pts.append((xx, (R + 0.004) * math.cos(tt), 1.6 + (R + 0.004) * math.sin(tt)))
-        cracks.append(crack_curve(f"crack{k}", crack_m[k], pts))
+        xx, tt = x, t
+        for s in range(15):
+            tt += 0.035 + random.uniform(-0.015, 0.015)
+            xx += random.uniform(-0.018, 0.018)
+            pts.append((xx, -(R + 0.004) * math.cos(tt), 1.6 + (R + 0.004) * math.sin(tt)))
+        cracks.append(crack_curve(f"crack{k}", crack_m[k], pts, r=0.005))
     # three steel bands, each a ring that comes down and ratchets tight
-    band_m = brushed_steel("band", (0.55, 0.56, 0.58), 0.25, stretch=8)
+    band_m = brushed_steel("band", (0.42, 0.43, 0.45), 0.3, stretch=60)
     bands = []
     for k, bx in enumerate((-1.1, 0.0, 1.1)):
         bpy.ops.mesh.primitive_cylinder_add(radius=R + 0.035, depth=0.16, location=(bx, 0, 1.6), rotation=(0, math.pi / 2, 0),
@@ -731,11 +463,11 @@ def build_drum(a):
         bpy.data.objects.remove(hole, do_unlink=True)
         inner.parent = b
         inner.matrix_parent_inverse = b.matrix_world.inverted()
-        clamp = box(f"clamp{k}", (bx, 0, 1.6 + R + 0.12), (0.22, 0.3, 0.16), band_m)
+        clamp = box(f"clamp{k}", (bx, 0, 1.6 + R + 0.07), (0.2, 0.2, 0.09), dark)
         clamp.parent = b
         clamp.matrix_parent_inverse = b.matrix_world.inverted()
         bands.append(b)
-    area((-3, -5, 5), (0, 0, 1.6), 5, 1500, (1.0, 0.82, 0.6))
+    area((-3, -5, 5), (0, 0, 1.6), 5, 700, (1.0, 0.82, 0.6))
     area((4, -3, 2.5), (0, 0, 1.6), 3, 350, (0.7, 0.8, 1.0))
     area((0, 5, 4), (0, 0, 1.6), 6, 500, (1.0, 0.75, 0.5))
     starts = (420, 560, 700)
@@ -758,8 +490,8 @@ def build_drum(a):
 
 
 def build_room(a):
-    sc, cam = setup(a, exposure=-0.6)
-    wall = mat("wall", (0.16, 0.15, 0.14), 0.8, metal=0.2)
+    sc, cam = setup(a, exposure=0.0)
+    wall = mat("wall", (0.30, 0.28, 0.25), 0.8, metal=0.2)
     noise_bump(wall, 8, 0.3)
     floor = plate_steel("floor", 0.6)
     pipe = brushed_steel("pipe", (0.3, 0.28, 0.26), 0.45)
@@ -801,15 +533,16 @@ def build_room(a):
     # one bulb, warm, and a cold fill from the hatch above
     bpy.ops.object.light_add(type="POINT", location=(0.4, 0.6, 4.6))
     bulb = bpy.context.object
-    bulb.data.energy = 260
+    bulb.data.energy = 1100
     bulb.data.color = (1.0, 0.72, 0.42)
     bulb.data.shadow_soft_size = 0.08
     cyl("bulbglass", (0.4, 0.6, 4.6), 0.06, 0.12, mat("bulbm", (1, 0.8, 0.5), 0.2, emit=(1, 0.75, 0.45), strength=30))
-    area((-4, -3, 5.8), (0, 2, 1), 2, 120, (0.6, 0.72, 1.0))
+    area((-4, -3, 5.8), (0, 2, 1), 3, 600, (0.6, 0.72, 1.0))
+    area((3, -4, 2), (0.9, 2.3, 2.1), 1.5, 120, (1.0, 0.8, 0.6))
 
     def frame(f):
         # the needle: from normal towards the red, a tremble, then it holds
-        ang = keys(f, [(0, 120.0), (150, 110.0), (260, 8.0), (599, 6.0)])
+        ang = keys(f, [(0, 120.0), (150, 110.0), (260, -40.0), (599, -42.0)])
         ang += 1.2 * math.sin(f * 0.9) * smooth((f - 200) / 40) * (1 - smooth((f - 330) / 60))
         hub.rotation_euler = (0, -math.radians(ang), 0)
         pull = smooth((f - 300) / 299)
@@ -826,9 +559,7 @@ def build_room(a):
 
 def main():
     a = args()
-    if a.shot in ("deck", "ramp", "morph", "cutaway"):
-        build_h1(a)
-    elif a.shot == "store":
+    if a.shot == "store":
         build_store(a)
     elif a.shot == "catapult":
         build_catapult(a)
