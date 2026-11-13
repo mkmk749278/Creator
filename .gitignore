@@ -43,3 +43,4 @@ video/**/work-*/
 library/_cache/
 .venv-blender/
 .venv-geo/
+/assets/
