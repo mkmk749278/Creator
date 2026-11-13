@@ -230,6 +230,9 @@ Five numbers only: 400 kg, 17 m, 30 tonnes, 90 m, a decade.
 
 ## 8a. Fact-check results (step 4, 2026-11-12): `claims.csv` passes the gate (24 confirmed, 13 said as reported, 2 our calculation)
 What changed in the plan, and what stays open:
+- **Correction 2026-11-13 (after the audio):** every "lorry" and "Aero India trailer" in this plan is superseded. The
+  trailer at Aero India 2025 was a railgun model (Janes; DRDO's clippings); the film now says "a small test model"
+  (C32, as reported) and draws it (ILLUSTRATION). `word_map.md` and `narration.md` hold the current version.
 - **The energy store:** "four disks of 121 MJ" is the 1995 design paper, not the machine that was built. General
   Atomics' own figure: a motor generator of 80,000 lb giving 60 MJ at 60 MW. The film says "heavy spinning machines,
   each over 36 tonnes" and gives no count.

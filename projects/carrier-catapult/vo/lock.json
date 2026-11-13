@@ -1,8 +1,8 @@
 {
  "audio": "cat_vo_full.mp3",
- "sha256": "892915fe1e9a84fcb9a926107b3be6242f029db0024a6cce7afc8177381fec04",
- "duration": 642.978,
- "approved": "owner, 2026-11-13 (Audio aproved)",
+ "sha256": "f416a57d38f1f003f3d72b57a60d8550b282cbe286797cbb53c30fc8d8092e01",
+ "duration": 644.153,
+ "approved": "owner, 2026-11-13 (Audio aproved); r2 2026-11-13: four paragraphs re-recorded on the owner's instruction (the lorry lines)",
  "wav": "vo_full.wav",
- "wav_duration": 642.94
+ "wav_duration": 644.12
 }

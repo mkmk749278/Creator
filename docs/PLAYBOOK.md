@@ -693,6 +693,12 @@ reader say it this way? Can it go without loss? Does the last line pull into the
   for the "Listen for" names of each block. *Why:* the jet-engine film shipped two doubled phrases from spliced
   re-takes, and a trim cut the last sentence off four pharma blocks.
 - **Never splice words into a take:** regenerate the whole block, so voice and pace match.
+  **Exception, owner 2026-11-13 ("only record what needed"):** when a fact changes after the audio is approved,
+  re-record only the **whole paragraphs** that change (one request each, with the neighbouring lines as
+  `previous_text`/`next_text`), place each between the original pauses at its paragraph breaks, keep those pause
+  lengths, match the speech level (±1 dB), then re-align, `vo_take_check.py` and re-lock. Never a word or a phrase
+  inside a sentence. *Why:* the catapult film's four lorry paragraphs cost 314 credits this way, against about
+  10,300 for two new takes, and the owner approves the result by ear.
 - **Join the takes with `scripts/vo_rejoin.py`, never by plain concatenation:** it cuts the late burst at a take's end,
   fades each take in over 5 ms, and fills the gaps with room tone shaped to the takes' own pauses (about −72 dB).
   Longer gaps go where the story turns (a new chapter, after a hard line). `--gaps` are seconds from a take's end to
@@ -746,6 +752,11 @@ reader say it this way? Can it go without loss? Does the last line pull into the
   weak rows, every number and date, our own calculations and on-screen values. After an edit, re-check only changed
   lines. Gate: `scripts/claims_check.py projects/<slug>/claims.csv`. *Why:* a full re-search of 95 claims once used most
   of a 5-hour usage window and found almost nothing new.
+- **A thing "shown at" an event needs the event's own coverage (2026-11-13).** Before a line says a machine was
+  displayed at an air show, expo or parade, find it in the organiser's or maker's coverage, or a trade outlet that
+  covered the stand (Janes, Naval News), not only in a blog. *Why:* the catapult film's narration said DRDO's
+  catapult "stood on a trailer" at Aero India 2025 on one blog's word; Janes and DRDO's own clippings show the
+  trailer there was a railgun model, and four approved lines had to be re-recorded.
 - **Fresh-facts gate before upload (2026-11-07).** Every row about something still moving (deliveries, counts,
   approvals, prices, "so far", "as of", "not yet") gets `fresh` in its note. Within 24 hours of the upload, search the
   news since the row's check date for each `fresh` row, update `claims.csv` with the date checked, and fix the line (or
