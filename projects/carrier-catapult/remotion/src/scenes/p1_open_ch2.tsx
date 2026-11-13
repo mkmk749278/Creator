@@ -85,10 +85,11 @@ const ch1: Part = {
 		clip(S(39), 'LAND_bow', CR.navyIT, 1.0),
 		insert(S(40), 'LAND_ramp', CR.navyNDTV, 16 / 9, 2.5),
 		clip(S(41), 'SH_sea', CR.archive, 0, undefined, 'none'),
+		clip(pre(w0(41, 'catapult')), 'SH_deck', CR.archive, 0, undefined, 'none'),
 	],
 	overlays: [
 		tag(w0(16, 'stand'), s1(16), 'ON VIKRANT’S DECK', 140, 860, 52),
-		tag(w0(17, 'flyover'), s1(17), 'LIKE A FLYOVER', 140, 860, 56, C.slot),
+		tag(w0(17, 'flyover'), pre(w0(17, 'ends')), 'LIKE A FLYOVER', 140, 860, 56, C.slot),
 		tag(w0(23, 'clever'), s1(23), 'CHEAP · NOTHING TO BREAK', 140, 860, 50),
 		tag(w0(25, 'jet'), s1(27), 'JET', 1180, 240, 64),
 		tag(w0(26, 'lighter'), s1(27), 'TAKES OFF LIGHTER', 140, 860, 56, C.slot),
@@ -107,6 +108,7 @@ const ch2: Part = {
 	shots: [
 		clip(S(42), 'AL_ship', CR.archive, 0, undefined, 'none'),
 		clip(S(43), 'AL_folded', CR.archive, 0, undefined, 'none'),
+		clip(pre(w0(43, 'aircraft')), 'AL_ship', CR.archive, 0.2, undefined, 'none'),
 		clip(pre(w0(43, 'finished')), 'SH_tail', CR.archive, 0, undefined, 'none'),
 		clip(S(44), 'SH_pilot', CR.archive, 0, undefined, 'none'),
 		clip(S(45), 'SH_deck', CR.archive, 0, undefined, 'none'),
@@ -134,6 +136,7 @@ const ch2: Part = {
 		), 'SIMPLIFIED'),
 		clip(S(60), 'W71_sea', CR.fd, 0, undefined, 'none'),
 		clip(S(61), 'AL_ship', CR.archive, 0.4, undefined, 'none'),
+		clip(S(62), 'W71_sea', CR.fd, 1.0, undefined, 'none'),
 		clip(S(63), 'SH_sea', CR.archive, 0, undefined, 'none'),
 		clip(S(64), 'W71_deck', CR.fd, 0, undefined, 'none'),
 		shot(S(65), 'doc-nanda', (d, l) => (
@@ -152,7 +155,7 @@ const ch2: Part = {
 		photo(S(68), 'roy_face.jpg', CR.pib),
 		// the bands go on: band 1 lands about 8.0 s into the render, on "steel"
 		hero(S(70), 'H_drum', 8.0 - (w0(71, 'steel') - S(70)) / 60),
-		hero(S(73), 'H_room', 5.6),
+		hero(S(73), 'H_room', 7.5),
 		clip(S(74), 'PX_steam', CR.px, 0, 'ILLUSTRATIVE FOOTAGE'),
 		hero(S(75), 'H_room', 4.4),
 		clip(S(76), 'W71_bow', CR.fd, 0, undefined, 'none'),
@@ -165,11 +168,14 @@ const ch2: Part = {
 		clip(S(80), 'SH_sea', CR.archive, 0, undefined, 'none'),
 		draw(S(81), 'elev-harrier', () => <Elevation61 sealAt={99999} liftAt={99999} />, 'ILLUSTRATION'),
 		clip(S(82), 'AL_start', CR.archive, 0, undefined, 'none'),
+		clip(pre(w0(82, 'retired')), 'AL_ship', CR.archive, 0, undefined, 'none'),
 		draw(S(83), 'elev-ramp', (d, l) => <Elevation61 sealAt={at(w0(83, 'catapult'), S(83), l)} liftAt={at(w0(83, 'ramp'), S(83), l)} />, 'ILLUSTRATION · SIMPLIFIED'),
 		clip(S(84), 'LAND_bow', CR.navyIT, 0.2),
 		insert(S(86), 'MIG_deck', CR.navy, 9 / 16, 0, 900),
+		clip(pre(w0(86, 'ramp')), 'LAND_bow', CR.navyIT, 1.2),
 		draw(S(87), 'hullcut', (d, l) => <HullCut turbAt={at(w0(87, 'gas'), S(87), l)} fillAt={at(w0(89, 'room'), S(87), l)} />, 'ILLUSTRATION · SIMPLIFIED'),
 		clip(S(90), 'TRAP_deck', CR.navyPrint, 0.3),
+		clip(S(91), 'TRAP_trap', CR.navyPrint, 0),
 		clip(pre(w0(91, 'electricity')), 'EM12_trough', CR.usn),
 	],
 	overlays: [

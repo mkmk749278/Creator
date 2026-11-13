@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import type {Part} from '../Film';
-import {ChinaIndia, DeckPlan, Doc, MeterSolo, RampOrCatapult, ScaleCompare, ThreeItems, ThreeSlots, TwoShips, Watch} from '../parts/drawings';
+import {ChinaIndia, DeckPlan, Doc, MeterSolo, RampOrCatapult, ScaleCompare, SubBlind, ThreeItems, ThreeSlots, TwoShips, Watch} from '../parts/drawings';
 import {Clip, Plate} from '../parts/kit';
 import {SeaMap} from '../parts/SeaMap';
 import {C, F} from '../theme';
@@ -30,8 +30,8 @@ const ch5: Part = {
 		)),
 		clip(S(165), 'PX_coil', CR.px, 2.0, 'ILLUSTRATIVE FOOTAGE'),
 		clip(S(166), 'PXL_tech', CR.pex, 2.0, 'ILLUSTRATIVE FOOTAGE'),
-		draw(S(168), 'china-india', (d, l) => <ChinaIndia trackAt={at(w0(169, 'test'), S(168), l)} shipAt={at(w0(170, 'ship'), S(168), l)} />, 'ILLUSTRATION'),
-		draw(S(171), 'two-ships', (d, l) => <TwoShips slotsAt={at(w0(171, 'two'), S(171), l)} rampAt={at(w0(172, 'repeat'), S(171), l)} />, 'ILLUSTRATION'),
+		draw(S(168), 'china-india', (d, l) => <ChinaIndia trackAt={at(w0(168, 'china'), S(168), l)} shipAt={at(w0(170, 'ship'), S(168), l)} />, 'ILLUSTRATION'),
+		draw(S(171), 'two-ships', (d, l) => <TwoShips slotsAt={at(w0(171, 'plan'), S(171), l)} rampAt={at(w0(172, 'repeat'), S(171), l)} />, 'ILLUSTRATION'),
 		clip(S(174), 'FORD_cat', CR.usn, 3.0),
 		shot(S(175), 'doc-2017', (d, l) => (
 			<Plate dur={d} seed="usni">
@@ -50,6 +50,8 @@ const ch5: Part = {
 			</Plate>
 		)),
 		draw(S(180), 'three-items', (d, l) => <ThreeItems tickAt={at(w0(181, 'ordered'), S(180), l)} smallAt={at(w0(183, 'small'), S(180), l)} dotAt={at(w0(184, 'not'), S(180), l)} />, 'ILLUSTRATION'),
+		clip(pre(w0(182, 'twenty')), 'LAND_touch', CR.navyIT, 1.5),
+		draw(S(183), 'three-items-2', (d, l) => <ThreeItems tickAt={0} smallAt={at(w0(183, 'small'), S(183), l)} dotAt={at(w0(184, 'not'), S(183), l)} />, 'ILLUSTRATION'),
 		insert(S(185), 'LAND_ramp', CR.navyNDTV, 16 / 9, 1.0),
 	],
 	overlays: [
@@ -77,6 +79,7 @@ const landing: Part = {
 		)),
 		shot(S(190), 'map-india', (d) => <SeaMap dur={d} keys={[{f: 0, lon: 80, lat: 21, zoom: 1.0}, {f: d, lon: 79, lat: 20, zoom: 1.25}]} />),
 		clip(S(192), 'TRAP_deck', CR.navyPrint, 0.2),
+		clip(S(193), 'LAND_bow', CR.navyIT, 1.0),
 		clip(S(194), 'PX_fan', CR.px, 6.0),
 		shot(S(195), 'meter-six', (d, l) => (
 			<Plate dur={d} seed="meter6">
@@ -98,14 +101,8 @@ const landing: Part = {
 		)),
 		clip(S(203), 'LAND_bow', CR.navyIT, 0.8),
 		draw(S(204), 'deckplan-on', (d, l) => <DeckPlan slotAt={l} slotEnd={l + 60} />, 'ILLUSTRATION'),
-		draw(S(205), 'ramp-or-catapult', (d, l) => <RampOrCatapult at={at(w0(206, 'ramp'), S(205), l)} />),
-		shot(S(207), 'next', (d) => (
-			<Plate dur={d} seed="next">
-				<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
-					<div style={{fontFamily: F.label, fontWeight: 800, fontSize: 40, color: C.dim, letterSpacing: 4}}>NEXT TIME</div>
-				</AbsoluteFill>
-			</Plate>
-		)),
+		draw(S(205), 'ramp-or-catapult', (d, l) => <RampOrCatapult at={l + 10} />),
+		draw(S(207), 'next', () => <SubBlind />, 'ILLUSTRATION'),
 		shot(S(209), 'endcard', (d) => <EndCard dur={d} />, {hard: true}),
 	],
 	overlays: [

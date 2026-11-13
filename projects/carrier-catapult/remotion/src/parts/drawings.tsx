@@ -75,8 +75,8 @@ export const DeckPlan: React.FC<{slotAt: number; slotEnd: number; modelAt?: numb
 			{stop > 0 ? <line x1={RAMP_X - 6} y1={cy - 46 * stop} x2={RAMP_X - 6} y2={cy + 46 * stop} stroke={C.slot} strokeWidth={10} /> : null}
 			{m > 0 ? (
 				<g opacity={m}>
-					<line x1={DECK_X0 + 520} y1={cy + 290} x2={DECK_X0 + 520 + 17 * PX_M} y2={cy + 290} stroke={C.slot} strokeWidth={10} strokeLinecap="round" filter="url(#glow)" />
-					<T x={DECK_X0 + 520} y={cy + 350} size={34} color={C.dim}>TEST MODEL, SAME SCALE</T>
+					<line x1={DECK_X0 + 520} y1={cy + 230} x2={DECK_X0 + 520 + 17 * PX_M} y2={cy + 230} stroke={C.slot} strokeWidth={14} strokeLinecap="round" filter="url(#glow)" />
+					<T x={DECK_X0 + 520 + 17 * PX_M + 30} y={cy + 244} size={42} color={C.slot}>TEST MODEL · SAME SCALE</T>
 				</g>
 			) : null}
 		</Svg>
@@ -118,7 +118,7 @@ export const MeterSolo: React.FC<{a: number; b: number; f0: number; f1: number; 
 // ---------------------------------------------------------------- the ramp, side on
 const rampCurve = (x0: number, y0: number, len: number, deg: number) => {
 	const n = 30;
-	const R = len / ((deg * Math.PI) / 180);
+	const R = len / ((Math.max(0.01, deg) * Math.PI) / 180);
 	const pts: string[] = [];
 	for (let i = 0; i <= n; i++) {
 		const th = ((deg * Math.PI) / 180) * (i / n);
@@ -130,7 +130,7 @@ const rampCurve = (x0: number, y0: number, len: number, deg: number) => {
 /** S18–22: the ramp in side elevation, no moving parts; S31–32: a heavy, slow aircraft cannot leave it */
 export const RampSide: React.FC<{heavyAt?: number; dropAt?: number; noPartsAt?: number}> = ({heavyAt, dropAt, noPartsAt}) => {
 	const f = useCurrentFrame();
-	const y0 = 600;
+	const y0 = 480;
 	const pts = rampCurve(900, y0, 600, 14);
 	const last = pts[pts.length - 1].split(',').map(Number);
 	const deck = `M100 ${y0} L900 ${y0} L${pts.join(' L')} L${last[0]} ${y0 + 160} L100 ${y0 + 160} Z`;
@@ -182,6 +182,10 @@ export const Radar: React.FC<{heliAt: number; planeAt: number; contactAt: number
 					<T x={cx - r1 - 20} y={cy - r1 * 0.6} size={38} color={C.amber} anchor="end">HELICOPTER</T>
 				</g>
 			) : null}
+			{[0, 1, 2].map((i) => {
+				const ph = ((f + i * 40) % 120) / 120;
+				return <circle key={i} cx={cx} cy={cy} r={20 + 120 * ph} fill="none" stroke={ink} strokeOpacity={0.35 * (1 - ph)} strokeWidth={3} />;
+			})}
 			<path d={`M${cx - 30} ${cy + 8} L${cx + 26} ${cy + 8} L${cx + 40} ${cy} L${cx + 26} ${cy - 8} L${cx - 30} ${cy - 8} Z`} fill={ink} />
 			{c > 0 ? (
 				<g opacity={c}>
@@ -201,7 +205,7 @@ export const Cooker: React.FC<{buildAt: number; burstAt: number}> = ({buildAt, b
 	const puff = tw(f, burstAt, burstAt + 40, 0, 1, (t) => t);
 	return (
 		<Svg>
-			<g transform="translate(960 640)">
+			<g transform="translate(960 470) scale(1.15)">
 				<ellipse cx={0} cy={210} rx={300} ry={40} fill="#000" opacity={0.35} />
 				<path d="M-260 -60 L260 -60 L240 200 Q0 240 -240 200 Z" fill="#b9bfc4" stroke="#5d666e" strokeWidth={6} />
 				<rect x={-280} y={-100} width={560} height={50} rx={14} fill="#9aa2a9" stroke="#5d666e" strokeWidth={6} />
@@ -559,7 +563,7 @@ const Rafale: React.FC<{s: number}> = ({s}) => (
 export const ScaleCompare: React.FC<{dur: number; longAt: number; jetAt: number}> = ({dur, longAt, jetAt}) => {
 	const f = useCurrentFrame();
 	const pxm = 15; // px a metre at the end of the pull-back (100 m = 1500 px)
-	const zoom = 1 + 5 * (1 - tw(f, 0, Math.min(dur, longAt + 120), 0, 1, ez.cam));
+	const zoom = 1 + 1.5 * (1 - tw(f, 0, Math.min(dur, longAt + 120), 0, 1, ez.cam));
 	const L = tw(f, longAt, longAt + 90, 0, 100, ez.sweep);
 	const j = tw(f, jetAt, jetAt + 30, 0, 1, ez.arrive);
 	const x0 = 210;
@@ -647,9 +651,9 @@ export const ThreeItems: React.FC<{tickAt: number; smallAt: number; dotAt: numbe
 	const c = tw(f, dotAt, dotAt + 20, 0, 1, ez.arrive);
 	return (
 		<Svg>
-			<g opacity={a} transform="translate(360 470)">
+			<g transform="translate(360 470)">
 				<Rafale s={2.4} />
-				<path d="M-60 170 L-20 210 L70 120" fill="none" stroke={C.green} strokeWidth={14} strokeLinecap="round" />
+				<path d="M-60 170 L-20 210 L70 120" fill="none" stroke={C.green} strokeWidth={14} strokeLinecap="round" opacity={a} />
 				<T x={0} y={290} size={40} anchor="middle">JETS: ORDERED</T>
 			</g>
 			<g opacity={b} transform="translate(960 470)">
@@ -730,6 +734,27 @@ export const SlotLine: React.FC<{at: number; end: number; x0: number; y0: number
 	return (
 		<Svg>
 			<line x1={x0} y1={y0} x2={x0 + (x1 - x0) * k} y2={y0 + (y1 - y0) * k} stroke={C.slot} strokeWidth={10} strokeLinecap="round" filter="url(#glow)" />
+		</Svg>
+	);
+};
+
+/** S207–208: the next film as a question: a submarine whose sonar reaches ahead and to the sides, but not behind */
+export const SubBlind: React.FC = () => {
+	const f = useCurrentFrame();
+	const cx = 960;
+	const cy = 560;
+	return (
+		<Svg>
+			<rect width={1920} height={1080} fill="#071a26" opacity={0.85} />
+			{[0, 1, 2, 3].map((i) => {
+				const ph = ((f + i * 30) % 120) / 120;
+				const r = 120 + 520 * ph;
+				return <path key={i} d={`M ${cx + r * Math.cos(2.4)} ${cy - r * Math.sin(2.4)} A ${r} ${r} 0 1 1 ${cx + r * Math.cos(-2.4)} ${cy - r * Math.sin(-2.4)}`} fill="none" stroke={C.cyan} strokeOpacity={0.55 * (1 - ph)} strokeWidth={4} />;
+			})}
+			<path d={`M${cx - 520} ${cy} L${cx - 760} ${cy - 150} L${cx - 760} ${cy + 150} Z`} fill={C.red} fillOpacity={0.12} />
+			<T x={cx - 760} y={cy - 190} size={40} color={C.red}>BEHIND: SILENCE</T>
+			<path d={`M${cx - 200} ${cy - 30} L${cx + 160} ${cy - 30} Q${cx + 230} ${cy} ${cx + 160} ${cy + 30} L${cx - 200} ${cy + 30} Q${cx - 240} ${cy} ${cx - 200} ${cy - 30} Z`} fill="#2b3138" stroke={ink} strokeWidth={4} />
+			<rect x={cx - 20} y={cy - 70} width={70} height={42} rx={8} fill="#2b3138" stroke={ink} strokeWidth={4} />
 		</Svg>
 	);
 };
