@@ -77,5 +77,11 @@
 - Chapters (description): 00:00 Rafale on INS Vikrant without a catapult · 00:50 Why INS Vikrant has a ski-jump
   ramp · 01:59 India's 1961 steam catapult and the 1971 war · 04:41 How an electric catapult (EMALS) works · 06:25
   China's Fujian vs America's USS Ford · 07:48 DRDO's electric catapult demonstrator · 09:32 What India needs next.
-- **Next:** the word map (`word_map.md`, idea level per sentence), the Blender heroes H1, H3, H4, the second footage
-  request (ramp launches, Sea Hawks, the Aero India demonstrator), then the Remotion build.
+- **Second footage request** (`footage_requests.md` r2): one Termux line, nine clips (Sea Hawks and Alizés on the
+  first Vikrant, 1971 east, the Rafale M Goa ski-jump, MiG-29Ks and a trap landing on Vikrant, the first EMALS launch,
+  Ford launches, Fujian's KJ-600), and one Cowork request for stills (DRDO's demonstrator, the first Vikrant at
+  Belfast, Cdr Roy Chowdhury's photo). **Waiting for the owner to run both.**
+- **`word_map.md` written** on the locked timing: every sentence group with its base, its word cutaways and its idea
+  level; the slot motif's five returns; S1, S2, S3 and a set piece per chapter; labels; the stock list.
+- **Next:** the Blender heroes H1, H3, H4 (`scripts/blender/catapult_hero.py`, rendered by `blender-render.yml`);
+  stock via the Pixabay API; contact sheets and `media_manifest.csv` once r2 lands; then the Remotion build.

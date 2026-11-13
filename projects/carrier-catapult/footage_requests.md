@@ -49,3 +49,42 @@ What each is for: the Navy's Rafale M landing video as carried by ANI, NDTV and 
 own footage, credited); the US Navy's EMALS film (2015, public domain); a catapult launch heard from one deck below
 (the three-second sound; licence to check, reference only until cleared); CGTN's Fujian catapult test (rights
 unclear: at most a short credited excerpt).
+
+# Requests r2 (2026-11-13, after the audio lock): the second footage batch
+
+## Phone (Termux): nine clips
+```bash
+curl -sL https://raw.githubusercontent.com/mkmk749278/Creator/main/scripts/termux_fetch_to_drive.sh | bash -s -- \
+  English/carrier-catapult \
+  "https://www.youtube.com/watch?v=QSk6rW3PFKQ" \
+  "https://www.youtube.com/watch?v=DVyGTtS0Jl0" \
+  "https://www.youtube.com/watch?v=Mj30oQuTBDU" \
+  "https://www.youtube.com/watch?v=8rhePlPiJac" \
+  "https://www.youtube.com/watch?v=byPfTVU5jHo" \
+  "https://www.youtube.com/watch?v=wHZ7ugJDgek" \
+  "https://www.youtube.com/watch?v=DeJBaFzl77Q" \
+  "https://www.youtube.com/watch?v=6qahWEhrDfg" \
+  "https://www.youtube.com/watch?v=-TQxHXnpDEI"
+```
+What each is for: Sea Hawks on the first Vikrant (ch2, the real catapult); Alizés on the first Vikrant (ch2, "the old
+propeller planes"); the Navy in the 1971 war in the east (ch2, Cox's Bazar); the Rafale M ski-jump demo in Goa, 2022
+("It passed that test in Goa"); MiG-29Ks on the new Vikrant (ch1, the ramp; PM's channel, Navy footage); a MiG-29K
+trap landing on Vikrant (ch5, "the wires that stop a landing jet"); the US Navy's first EMALS launch, 2012 (ch3/ch4,
+public domain); Ford EMALS launches (ch4); Fujian's first KJ-600 catapult launch (ch4, rights unclear: at most a
+short credited excerpt). Archive and news clips are short credited excerpts; each is vetted on the contact sheet.
+
+## Laptop (Cowork): stills the phone cannot get
+```text
+Please save these to Google Drive, folder Creator/English/carrier-catapult/footage/cowork/stills/ (create it if
+missing), keeping original file names, with list.csv (file name, source page URL, title, owner, licence or credit
+shown). If an item cannot be found, write "not found" and go on.
+
+1. DRDO's electromagnetic launch system demonstrator (the trailer) at Aero India 2025, Bengaluru: the largest
+   photos or a short video from pib.gov.in, drdo.gov.in, ddnews.gov.in, or news agencies (ANI, PTI). Search
+   "DRDO EMALS Aero India 2025" and "electromagnetic launch system DRDO trailer".
+2. The first INS Vikrant (R11): photos of her commissioning at Belfast, 4 March 1961, and of Sea Hawks on her
+   catapult, from indiannavy.nic.in, the Imperial War Museum (iwm.org.uk, note the licence) or the National
+   Museum of the Royal Navy.
+3. A photo of Commander (later Rear Admiral) Benoy Roy Chowdhury, Vir Chakra, from gallantryawards.gov.in or the
+   Indian Navy's pages. Only an official or clearly credited photo.
+```
