@@ -100,5 +100,14 @@
   lock's audio is still in `vo/`. New lines at 0:29.7, 7:55.5, 9:23.5, 10:18.5.
 - `word_map.md` retimed to r2 (old S156 removed; later ids −1) and its rows point at what exists. PLAYBOOK: two
   lessons (paragraph re-records; "shown at" needs the event's own coverage).
-- **Waiting for the owner:** a listen to the four new paragraphs. **Next:** contact sheets and
-  `media_manifest.csv` for r1 and r2; the Blender heroes H1, H3, H4; stock via the Pixabay API; the Remotion build.
+- **The owner sent an outside audio audit of r2 (all four edits pass, levels within ~1 dB):** r2 accepted.
+- **Footage vetted** (contact sheets in the gitignored `assets/footage/sheets/`), spans and verdicts in
+  `media_manifest.csv`. Key finds: the Navy's landing full-frame in India Today's clip at 10.0–14.5 s (crop the logo):
+  the first frame; real Indian Sea Hawks on the first Vikrant (roundel, IN157, a launch off the bow at 1.0–2.5 s, the
+  nose-wheel match-cut frame at 8–9.5 s); the real EMALS trough at Lakehurst (10–19 s); a clean Ford launch (1–9 s).
+  Rejected: the "Goa" compilation (its Rafale shots are animation; S7 is a map pin now), the PM's vertical clip except
+  7–9 s, IWM photos (non-commercial).
+- **Stock:** Pixabay API: ceiling fan, coil winding, steam, an Indian city road (Drive `footage/stock-pixabay/`).
+  Request r3 in `footage_requests.md` (Pexels, for the laptop): flyover end, cooker, family under the fan, meter,
+  lattu, kirana balance, Indian engineers. **With the owner.**
+- **Next:** the Blender heroes H1, H3, H4; then the Remotion build.
