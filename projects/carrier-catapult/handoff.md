@@ -129,3 +129,21 @@
   (16 s), `cat_H_catapult.mp4` (10 s), `cat_H_room.mp4` (10 s). Logged in `media_manifest.csv`. The 16-bit frames
   stay in the gitignored `assets/renders/` (not in Drive: 7.7 GB). A shard takes about 2.3 h on a runner (not 75 min).
 - **Next:** the Remotion build (word map scenes and the R drawings), then music and sound, the 720p review cut.
+
+## Session 5, continued (2026-11-13): the Remotion build
+- `remotion/` (Remotion 4.0.534, comp `Catapult`, 648.15 s with the 4 s end card), built from Matsya's skeleton:
+  `scenes/p1_open_ch2.tsx`, `p2_ch3_ch4.tsx`, `p3_ch5_end.tsx` (every shot and tag on its word from `vo/timing.json`),
+  `parts/drawings.tsx` (the deck plan and slot, meter, ramp side, radar circles, cooker, steam split, the 1961
+  elevation, the hull cutaway, the fan unrolled, the working, two meters, engine bars, land track, DOT&E bars, the
+  document pose, 17 m vs 100 m, China/India, the two ships, the honest sum, three slots, dates, ramp or catapult),
+  `parts/SeaMap.tsx` (India's official boundary). Credits and honesty tags are drawn outside the reframing.
+  Test stills checked; fixed: SVG glow on horizontal lines (filterUnits userSpaceOnUse), cut-off credits, overlaps.
+- `media/clips.tsx` → 41 clips by `tools/prep_clips.py` (Drive `render-media/` before the GitHub render).
+- Photos: the "portrait" from Antigravity is a memorial graphic with captions not in claims.csv: only the face and
+  the medal are cropped and used (`roy_face.jpg`, `vrc_medal.jpg`).
+- Sound: `sound/score.json` (12 library tracks along the feeling curve; no music under the landing and the count),
+  `sound/sfx.json` (the three-second motif: whine, thump, wind; steam hiss and clang for 1961; the bands);
+  `scripts/score_mix.py` gained whine, thump, wind, steam_hiss, clang, whistle. Mix: −14.0 LUFS, −1.4 dBTP, in Drive
+  `mix/`. `vo-render/` holds lock.json and vo_full.wav.
+- **Next:** finish the clips, sync `render-media/`, render the 720p review cut on GitHub, our own review
+  (`review-cut`), then the independent viewer review.

@@ -503,7 +503,7 @@ export const DoteBars: React.FC<{lineAt: number; b1At: number; b2At: number}> = 
 					<T x={1130} y={base + 56} size={40} anchor="middle" color={C.dim}>2022</T>
 				</g>
 			) : null}
-			<T x={1620} y={base + 56} size={30} anchor="end" color={C.dim}>LAUNCHES BETWEEN SERIOUS FAILURES</T>
+			<T x={1620} y={base + 120} size={30} anchor="end" color={C.dim}>LAUNCHES BETWEEN SERIOUS FAILURES</T>
 		</Svg>
 	);
 };
@@ -571,11 +571,11 @@ export const ScaleCompare: React.FC<{dur: number; longAt: number; jetAt: number}
 				{L > 0 ? (
 					<g>
 						<line x1={x0} y1={560} x2={x0 + L * pxm} y2={560} stroke={C.slot} strokeWidth={12} strokeLinecap="round" opacity={0.85} />
-						<T x={x0} y={520} size={40} color={ink} o={L / 100}>ABOUT 100 M · 30 TONNES</T>
+						<T x={x0} y={470} size={40} color={ink} o={L / 100}>ABOUT 100 M · 30 TONNES</T>
 					</g>
 				) : null}
 				{j > 0 ? (
-					<g transform={`translate(${x0 + 80} ${560 - (1 - j) * 140})`} opacity={j}>
+					<g transform={`translate(${x0 + 700} ${560 - (1 - j) * 140})`} opacity={j}>
 						<Rafale s={2.0} />
 					</g>
 				) : null}
