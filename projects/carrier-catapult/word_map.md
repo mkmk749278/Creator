@@ -5,7 +5,7 @@ id in `timing.json` (0-based). The base shot carries the sentence; `→ word` = 
 word (within 100 ms; cutaways start 0.15 s before). Idea level per row (§9.10): **L** literal, **P** physical (the
 cause shown happening, the number at human scale), **F** felt. Every chapter's turn and payoff is P or F.
 
-**Sources.** **H1/H3/H4** = Blender Cycles heroes (`plan.md` §8), Drive `renders/`, frame 0 = the row's start.
+**Sources.** **H3/H4** = Blender Cycles heroes (`scripts/blender/catapult_hero.py`: store; catapult, drum, room), Drive `renders/`, frame 0 = the row's start. (H1 was dropped on 2026-11-13: the Navy's footage shows the deck better, and the morph and cutaway are clearer as **R** drawings.)
 **T** = Three.js in Remotion. **R** = Remotion drawing on a physical base (drafting grid, steel inspection plate, sea
 chart). r1 clips (Drive `footage/`): **LAND** the Navy's Rafale M landing, 29 Oct 2026 (as carried by ANI / NDTV /
 India Today; credit "Indian Navy"), **EMF** the US Navy's EMALS film (public domain), **CGTN** Fujian's catapult test
@@ -47,7 +47,7 @@ FOOTAGE on any stock that stands in for a real moment.
 | 2 | 8.79–13.64 | **LAND** last frames, the camera settles on the empty deck ahead of the jet | "missing something" → **the slot draws:** a caution-yellow line runs down the real deck ahead of the jet… | P |
 | 3 | 14.15–14.87 | (cont.) | "A catapult." → …and stops dead at the foot of the ramp. Hold, wind only | F |
 | 4 | 15.28–18.04 | **EMF** a jet thrown off a catapult deck, real speed | "thrown off a ship" → the launch on the word | L |
-| 5–7 | 18.45–23.85 | **H1** Vikrant's bow and ramp in sea daylight → **LAND-NDTV** the Rafale M leaving Vikrant's ramp (the Navy's footage, framed as an inset on the drafting table: the only copy is soft) → **R** India's map (official boundary), a pin | "ramp" → the bow rises into frame; "leave by that ramp" → the Rafale lifts off the lip; "Goa" → pin GOA, label SHORE RAMP TRIALS, 2022 (no real footage of the Rafale there: the compilation's shots are animation) | L |
+| 5–7 | 18.45–23.85 | **LAND** 20–22 s Vikrant's bow and ramp, sailors lining the deck → **LAND-NDTV** the Rafale M leaving Vikrant's ramp (the Navy's footage, framed as an inset on the drafting table: the only copy is soft) → **R** India's map (official boundary), a pin | "ramp" → the bow rises into frame; "leave by that ramp" → the Rafale lifts off the lip; "Goa" → pin GOA, label SHORE RAMP TRIALS, 2022 (no real footage of the Rafale there: the compilation's shots are animation) | L |
 | 8 | 24.25–25.16 | **match cut:** the Rafale's nose wheel on Vikrant (LAND) | "think about this" → hold on the wheel | — |
 | 9 | 25.48–29.33 | **SH** a Sea Hawk's nose wheel on the 1961 deck, the same framing (the match cut lands on "Sixty-five") | "Sixty-five years ago" → 1961 (Mono); "throwing jets" → the Sea Hawk goes off the catapult | F |
 | 10 | 29.73–36.00 | **R** on the drafting grid: Vikrant's deck plan, the slot drawn to the ramp and stopping | "wants a catapult again" → the slot glows; "a small test model" → a tiny yellow track drawn beside the deck plan, at true scale against it (the size is kept for ch5); the 3-second motif, unexplained | P |
@@ -56,16 +56,16 @@ FOOTAGE on any stock that stands in for a real moment.
 ## Ch1 · What the ramp costs (0:50–1:59) · device: the viewer on the deck
 | S | Time | Base | → word | Idea |
 |---|---|---|---|---|
-| 16 | 51.10–53.08 | **H1** camera at a sailor's eye height on Vikrant's deck, walking forward | "stand on Vikrant's deck with me" → the camera steps forward | L |
-| 17 | 53.44–58.01 | **STOCK** a real Indian flyover's rising end against the sky (Mumbai or Bengaluru) → **match cut** to H1 the ramp, same angle and rise | "curves upward" → the flyover lifts; "ends in the sky" → the cut lands: the ramp's lip against open sky | P |
-| 18–22 | 58.36–68.34 | **H1** slow track along the ramp's bare steel, close | "any moving parts" → the camera searches the surface; "None" → hold; "opens its engines" → **MIG** the take-off from the deck edge; "throws it up" → the jet lifts off the lip; "break" / "repair" → back on H1, a bare weld seam, no machinery | L |
+| 16 | 51.10–53.08 | **TRAP** 1.5–3.5 s the view down Vikrant's deck from the island, R11 on its side, a slow push in | "stand on Vikrant's deck with me" → the push begins | L |
+| 17 | 53.44–58.01 | **STOCK** a real Indian flyover's rising end against the sky (Mumbai or Bengaluru) → **match cut** to LAND 20–22 s the bow ramp's curve against the sky, matched in angle | "curves upward" → the flyover lifts; "ends in the sky" → the cut lands: the ramp's lip against open sky | P |
+| 18–22 | 58.36–68.34 | **LAND-NDTV** the ramp's steel side, close (framed inset), then **R** the ramp in side elevation on the drafting table, no moving parts drawn | "any moving parts" → the camera searches the surface; "None" → hold; "opens its engines" → **MIG** the take-off from the deck edge; "throws it up" → the jet lifts off the lip; "break" / "repair" → back on H1, a bare weld seam, no machinery | L |
 | 23 | 68.70–71.10 | **MIG** the deck crew's thumbs-up after a launch | "clever idea" → hold on the crew | F |
 | 24–27 | 71.43–81.49 | **set piece: the balance.** **STOCK** a kirana shop's brass balance on a counter; **R** overlay: one pan JET, the other FUEL and WEAPONS | "lift itself" → the jet pan sinks; "take off lighter" → weights come off the other pan; "less fuel" → a fuel can lifts away; "fewer weapons" → a missile weight lifts away; "or both" → both | P |
 | 28–30 | 81.82–86.67 | (cont.) the balance; one pan left **empty and unlabelled** | "How much lighter?" → a "?" weight hovers; "not published" → it fades; "won't invent one" → the pan stays empty, hold | F |
 | 31–32 | 87.04–93.21 | **R** on the sea chart: a heavy, slow aircraft silhouette rolling at the ramp's lip | "heavy, slow aircraft" → the silhouette swells; "off a ramp at all" → it rolls over the lip and drops out of frame | P |
 | 33–35 | 93.52–101.90 | **R** the ship on the sea chart, seen from above | "flying radar" → a radar plane silhouette with its dish; "sees trouble long before" → a wide radar circle opens far past the ship's own small circle; a contact blips at the edge | P |
 | 36–38 | 102.23–110.98 | **STOCK/F** a Navy helicopter over the sea (Ka-31 if the r2 clips carry one; else a credited still) → R the two circles | "helicopter" → the helicopter; "It works" → its circle; "as well as a plane" → the plane's circle opens beyond it, the helicopter's stays smaller, SIMPLIFIED | P |
-| 39–41 | 111.32–120.08 | **H1** the ramp from the bow, the camera pulls back down the deck | "the ramp has a price" → the empty pan from S30 ghosts on the deck, 1 s; "the catapult we already had" → dissolve to SH the 1961 deck, steam at the slot; "let it go" → the archive frame fades to monochrome | F |
+| 39–41 | 111.32–120.08 | **LAND** the bow ramp from the deck, a slow pull back | "the ramp has a price" → the empty pan from S30 ghosts on the deck, 1 s; "the catapult we already had" → dissolve to SH the 1961 deck, steam at the slot; "let it go" → the archive frame fades to monochrome | F |
 
 ## Ch2 · The catapult India had (1:59–4:41) · device: one object followed (the boiler drum)
 | S | Time | Base | → word | Idea |
@@ -86,9 +86,9 @@ FOOTAGE on any stock that stands in for a real moment.
 | 76 | 225.04–231.67 | **SH** Sea Hawks off the catapult → **W71** the east, 1971 | "fourth of December, nineteen seventy-one" → 4 DEC 1971; "leave Vikrant's catapult" → the launch (motif: steam, clang); "Cox's Bazar" → **R** sea chart of the Bay of Bengal, an arrow to COX'S BAZAR (India's official boundary); music lifts once | F |
 | 77 | 231.99–237.22 | **D** the Vir Chakra (the medal's official image) on the table beside the bands | "Vir Chakra" → the medal; "for bravery" → hold | F |
 | 78–79 | 237.50–243.67 | **H4** the banded drum, slow orbit, warm | "steel bands" → the bands catch the light; "took it to war" → dissolve to SH, a launch at sea | F |
-| 80–83 | 244.07–259.93 | **F** a Sea Harrier (credited archive) → **AL** an Alizé on the catapult → **H4→H1** the slot closes and the bow rises into a ramp | "Sea Harrier" → the Harrier rises straight up; "needs no catapult" → its pad, no slot; "old propeller planes" → the Alizé; "nineteen eighty-nine" → 1989; "catapult came out" → the slot seals; "a ramp went on" → the bow rises (P) | P |
-| 84–89 | 260.28–276.36 | **H1** the new Vikrant, sea daylight → hull cutaway under the ramp, SIMPLIFIED | "made sense then" → hold; "new Vikrant" → the ship; "gas turbines" → four turbines light in the cutaway; "no steam" → a dry pipe, no steam; "no room under that ramp" → the space under the ramp fills, full, as the analysts' view (tag: NAVAL ANALYSTS) | P |
-| 90–91 | 276.79–282.12 | **H1** the deck, the empty line where a slot would be | "steam is gone" → the last wisp clears; "electricity" → a single copper spark runs along the empty line | P |
+| 80–83 | 244.07–259.93 | **F** a Sea Harrier (credited archive) → **AL** an Alizé on the catapult → **R** side elevation of the first Vikrant on the drafting table: the yellow slot seals and the bow line lifts into a ramp (SIMPLIFIED) | "Sea Harrier" → the Harrier rises straight up; "needs no catapult" → its pad, no slot; "old propeller planes" → the Alizé; "nineteen eighty-nine" → 1989; "catapult came out" → the slot seals; "a ramp went on" → the bow rises (P) | P |
+| 84–89 | 260.28–276.36 | **LAND** the new Vikrant at sea → **R** the hull in side cutaway on the drafting table, SIMPLIFIED | "made sense then" → hold; "new Vikrant" → the ship; "gas turbines" → four turbines light in the cutaway; "no steam" → a dry pipe, no steam; "no room under that ramp" → the space under the ramp fills, full, as the analysts' view (tag: NAVAL ANALYSTS) | P |
+| 90–91 | 276.79–282.12 | **TRAP** the deck from the island; **R** a faint dotted line where a slot would be | "steam is gone" → the last wisp clears; "electricity" → a single copper spark runs along the empty line | P |
 
 ## Ch3 · Three seconds (4:41–6:25) · device: the real-time count
 | S | Time | Base | → word | Idea |
@@ -139,7 +139,7 @@ FOOTAGE on any stock that stands in for a real moment.
 | 193–196 | 597.49–606.97 | callbacks: the fan (S92) → the meter and calendar (S110) → the count (S105) | "ceiling fan" → the fan; "six days of your home" → the calendar; "three seconds" → THREE, the thump | F |
 | 197–198 | 607.29–609.89 | **LAND** the Rafale on Vikrant's deck, the slot from S3 stopping at the ramp | "You can buy the jet" → the jet; "build the throw" → the slot glows; 1 s silence | F |
 | 199–202 | 610.33–621.86 | **R** three dates to watch on the drafting table | "the next carrier" → NEXT CARRIER: DECISION; "twenty twenty-nine" → FIRST INDIAN RAFALE M ≈ 2029; "that test model in Pune" → the short track; "something heavier" → the whine begins and cuts to silence before the thump | P |
-| 203–206 | 622.27–636.66 | **H1** the deck, the slot runs on to the dotted ship (motif 5) | "subscribe" → subscribe line; "open up that deck together" → the camera drops into the slot; "a ramp, or a catapult?" → the two ship outlines, side by side | F |
+| 203–206 | 622.27–636.66 | **LAND** the deck with the Rafale; **R** the yellow slot runs on past the ramp to a dotted ship (motif 5) | "subscribe" → subscribe line; "open up that deck together" → the camera drops into the slot; "a ramp, or a catapult?" → the two ship outlines, side by side | F |
 | 207–210 | 637.02–643.94 | the end screen → the AIP submarines film; the channel sting | "A submarine" → the next film's frame; "Stay practical" → the logo sting (outro only) | — |
 
 ## Still to settle before building
@@ -150,5 +150,5 @@ FOOTAGE on any stock that stands in for a real moment.
   photo (the Aero India 2025 trailer was a railgun: Janes, 14 Feb 2025, and DRDO's own clippings).
 - Stock via the Pixabay API: an Indian flyover's end, a kirana balance, a pressure cooker, a family under a ceiling
   fan, a home meter, a wall calendar, a lattu.
-- Hero renders: H1 (deck walk, ramp, hull cutaway, slot-to-ramp morph), H3 (the motor generators), H4 (steam
+- Hero renders: H3 (the motor generators), H4 (steam
   catapult cutaway, the drum, the bands, the empty boiler room).
