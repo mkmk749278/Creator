@@ -232,6 +232,37 @@ def synth(name: str, seed: int, dur: float = 0) -> np.ndarray:
         bolt = synth("impact_low", seed + 3)[: int(0.6 * SR)] * 0.5
         out[int(0.85 * SR):int(0.85 * SR) + len(bolt)] += bolt[: n - int(0.85 * SR)]
         return out
+    # ---- carrier-catapult (2026-11-13): the three-second motif (whine, thump, open wind) and the steam of 1961
+    if name == "whine":  # an electric whine rising for 3 s (the catapult's stroke)
+        n = int(3.0 * SR)
+        t = np.arange(n) / SR
+        f = 110 + 800 * (t / 3.0) ** 1.6
+        ph = 2 * np.pi * np.cumsum(f) / SR
+        x = np.sin(ph) * 0.6 + np.sin(2 * ph) * 0.25 + np.sin(3 * ph) * 0.12
+        hum = _band(rng.standard_normal(n), 300, 3000) * 0.08
+        return (x + hum) * (np.linspace(0.15, 1, n) ** 1.5) * 0.5
+    if name == "thump":  # the end of the stroke
+        return synth("impact_low", seed)[: int(1.4 * SR)] * 1.1
+    if name == "wind":  # open deck wind, a bed: takes `dur`
+        n = int(dur * SR)
+        x = _band(rng.standard_normal(n), 120, 1800)
+        gust = 0.7 + 0.3 * _low(rng.standard_normal(n), 0.6, 1) / 0.02
+        x = x * np.clip(gust, 0.3, 1.4)
+        fade = int(min(1.0, dur / 4) * SR)
+        x[:fade] *= np.linspace(0, 1, fade)
+        x[-fade:] *= np.linspace(1, 0, fade)
+        return x / (np.sqrt(np.mean(x ** 2)) + 1e-9) * 0.08
+    if name == "steam_hiss":  # steam let go, 1.6 s
+        n = int(1.6 * SR)
+        return _band(rng.standard_normal(n), 2500, 11000) * _env(n, 0.02, 0.6) * 0.5
+    if name == "clang":  # a lighter metal hit (the shuttle at the end of the 1961 stroke)
+        return synth("metal_slam", seed)[: int(1.5 * SR)] * 0.7
+    if name == "whistle":  # a pressure cooker's whistle, 1.4 s
+        n = int(1.4 * SR)
+        t = np.arange(n) / SR
+        tone = np.sin(2 * np.pi * (2900 + 60 * np.sin(2 * np.pi * 7 * t)) * t) * 0.3
+        air = _band(rng.standard_normal(n), 2000, 7000) * 0.35
+        return (tone + air) * _env(n, 0.05, 0.5)
     if name in ("furnace_bed", "cabin", "room"):
         n = int(dur * SR)
         x = np.cumsum(rng.standard_normal(n))  # brown

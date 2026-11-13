@@ -1,0 +1,219 @@
+{
+ "cues": [
+  {
+   "at": "s:10+0.6",
+   "sfx": "whine",
+   "gain_db": -18
+  },
+  {
+   "at": "s:10+3.6",
+   "sfx": "thump",
+   "gain_db": -16
+  },
+  {
+   "at": "w:3:catapult",
+   "sfx": "impact_low",
+   "gain_db": -12
+  },
+  {
+   "at": "w:13:rupees",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:29:published",
+   "sfx": "stamp",
+   "gain_db": -10
+  },
+  {
+   "at": "w:49:force-0.7",
+   "sfx": "whistle",
+   "gain_db": -14
+  },
+  {
+   "at": "w:50:drives",
+   "sfx": "steam_hiss",
+   "gain_db": -12
+  },
+  {
+   "at": "s:51-0.3",
+   "sfx": "clang",
+   "gain_db": -14
+  },
+  {
+   "at": "w:52:cracks",
+   "sfx": "glint",
+   "gain_db": -16
+  },
+  {
+   "at": "w:59:blow",
+   "sfx": "impact_low",
+   "gain_db": -12
+  },
+  {
+   "at": "w:71:steel",
+   "sfx": "metal_slam",
+   "gain_db": -14
+  },
+  {
+   "at": "w:71:steel+2.3",
+   "sfx": "metal_slam",
+   "gain_db": -15
+  },
+  {
+   "at": "w:71:steel+4.7",
+   "sfx": "metal_slam",
+   "gain_db": -16
+  },
+  {
+   "at": "w:76:leave",
+   "sfx": "steam_hiss",
+   "gain_db": -12
+  },
+  {
+   "at": "w:76:leave+1.2",
+   "sfx": "clang",
+   "gain_db": -13
+  },
+  {
+   "at": "w:77:vir",
+   "sfx": "glint",
+   "gain_db": -14
+  },
+  {
+   "at": "w:83:ramp",
+   "sfx": "whoosh",
+   "gain_db": -12
+  },
+  {
+   "at": "w:91:electricity",
+   "sfx": "glint",
+   "gain_db": -14
+  },
+  {
+   "at": "w:97:laid",
+   "sfx": "impact_low",
+   "gain_db": -14
+  },
+  {
+   "at": "w:101:racing",
+   "sfx": "whoosh",
+   "gain_db": -12
+  },
+  {
+   "at": "w:103:one-0.1",
+   "sfx": "whine",
+   "gain_db": -8
+  },
+  {
+   "at": "w:105:three+0.4",
+   "sfx": "thump",
+   "gain_db": -6
+  },
+  {
+   "at": "w:109:nineteen",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:111:two",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:116:fifty",
+   "sfx": "impact_low",
+   "gain_db": -11
+  },
+  {
+   "at": "w:122:push",
+   "sfx": "thump",
+   "gain_db": -12
+  },
+  {
+   "at": "w:126:power",
+   "sfx": "impact_low",
+   "gain_db": -12
+  },
+  {
+   "at": "w:141:one",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:142:six",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:145:launches",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:150:nothing",
+   "sfx": "stamp",
+   "gain_db": -10
+  },
+  {
+   "at": "w:156:throw",
+   "sfx": "whine",
+   "gain_db": -22
+  },
+  {
+   "at": "w:162:hundred",
+   "sfx": "impact_low",
+   "gain_db": -13
+  },
+  {
+   "at": "w:163:seventyfive",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:166:nobody",
+   "sfx": "impact_low",
+   "gain_db": -10
+  },
+  {
+   "at": "w:176:nothing",
+   "sfx": "stamp",
+   "gain_db": -10
+  },
+  {
+   "at": "w:179:eleven",
+   "sfx": "counter_land",
+   "gain_db": -12
+  },
+  {
+   "at": "w:189:decision",
+   "sfx": "glint",
+   "gain_db": -16
+  },
+  {
+   "at": "w:189:test",
+   "sfx": "glint",
+   "gain_db": -16
+  },
+  {
+   "at": "w:189:ten",
+   "sfx": "glint",
+   "gain_db": -16
+  },
+  {
+   "at": "w:196:three",
+   "sfx": "thump",
+   "gain_db": -10
+  },
+  {
+   "at": "s:202",
+   "sfx": "whine",
+   "gain_db": -14
+  },
+  {
+   "at": "w:203:subscribe",
+   "sfx": "glint",
+   "gain_db": -12
+  }
+ ]
+}
