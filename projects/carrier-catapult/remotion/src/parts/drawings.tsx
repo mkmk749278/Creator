@@ -163,7 +163,7 @@ export const Radar: React.FC<{heliAt: number; planeAt: number; contactAt: number
 	const cx = 960;
 	const cy = 520;
 	const r1 = 150 * tw(f, heliAt, heliAt + 30, 0, 1, ez.arrive);
-	const r2 = 360 * tw(f, planeAt, planeAt + 40, 0, 1, ez.arrive);
+	const r2 = 360 * tw(f, planeAt, planeAt + 90, 0, 1, ez.cam);
 	const c = tw(f, contactAt, contactAt + 12, 0, 1, ez.arrive);
 	const sweep = (f * 3) % 360;
 	return (
@@ -563,7 +563,7 @@ const Rafale: React.FC<{s: number}> = ({s}) => (
 export const ScaleCompare: React.FC<{dur: number; longAt: number; jetAt: number}> = ({dur, longAt, jetAt}) => {
 	const f = useCurrentFrame();
 	const pxm = 15; // px a metre at the end of the pull-back (100 m = 1500 px)
-	const zoom = 1 + 1.5 * (1 - tw(f, 0, Math.min(dur, longAt + 120), 0, 1, ez.cam));
+	const zoom = 1 + 0.6 * (1 - tw(f, 0, Math.min(dur, longAt + 120), 0, 1, ez.cam));
 	const L = tw(f, longAt, longAt + 90, 0, 100, ez.sweep);
 	const j = tw(f, jetAt, jetAt + 30, 0, 1, ez.arrive);
 	const x0 = 210;

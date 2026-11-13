@@ -73,7 +73,7 @@ const ch1: Part = {
 		draw(S(31), 'heavy', (d, l) => <RampSide heavyAt={l} dropAt={at(w0(32, 'ramp'), S(31), l)} />, 'SIMPLIFIED'),
 		shot(S(33), 'radar-plane', (d, l) => (
 			<Plate dur={d} seed="radar">
-				<Radar heliAt={99999} planeAt={at(w0(34, 'flying'), S(33), l)} contactAt={at(w0(35, 'trouble'), S(33), l)} />
+				<Radar heliAt={99999} planeAt={l + 10} contactAt={at(w0(35, 'trouble'), S(33), l)} />
 			</Plate>
 		), {tag: 'SIMPLIFIED'}),
 		clip(S(36), 'TRAP_trap', CR.navyPrint, 0.5),
