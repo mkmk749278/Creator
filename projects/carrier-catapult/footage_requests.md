@@ -88,3 +88,26 @@ shown). If an item cannot be found, write "not found" and go on.
 3. A photo of Commander (later Rear Admiral) Benoy Roy Chowdhury, Vir Chakra, from gallantryawards.gov.in or the
    Indian Navy's pages. Only an official or clearly credited photo.
 ```
+
+# Requests r3 (2026-11-13): Indian-life stock the Pixabay API does not have
+
+## Laptop (Antigravity or Cowork): Pexels clips
+```text
+Please download these free stock videos from pexels.com (Pexels License: free for commercial use) and save them to
+Google Drive, folder Creator/English/carrier-catapult/footage/stock/ (create it if missing), keeping the Pexels file
+names, with list.csv (file name, Pexels page URL, creator name, what it shows). Take the largest size offered
+(4K or 1080p). Two candidates for each item is ideal; skip anything that looks AI-generated. If an item has nothing
+real and Indian, write "not found" and go on.
+
+1. An Indian city flyover seen from road level, its rising end against open sky (search "flyover India", "overpass
+   India", "Mumbai flyover").
+2. A pressure cooker whistling on a gas stove in an Indian kitchen (search "pressure cooker whistle", "Indian kitchen
+   cooker").
+3. An Indian family in their front room in the evening, a ceiling fan turning above them (search "Indian family home",
+   "Indian family living room").
+4. An electricity meter on a wall in an Indian home or building (search "electricity meter India", "electric meter").
+5. A child's wooden spinning top (lattu) spinning on a floor (search "spinning top", "lattu").
+6. A kirana shop's balance scale with weights (search "balance scale shop India", "weighing scale market India").
+7. Indian engineers or technicians at a lab bench with wiring or coils (search "Indian engineer lab", "Indian
+   technician electronics").
+```
