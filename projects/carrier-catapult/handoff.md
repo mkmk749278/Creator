@@ -124,3 +124,8 @@
 - **Next:** collect the renders; the Remotion build (word map scenes, R drawings: the deck plan, the balance, the
   radar circles, the side-elevation morph, the hull cutaway, the working of the 19 units, the engine bars, the DOT&E
   bars, the 17 m vs 90 m pull-back, India maps on the official boundary); then music and sound; the 720p review cut.
+- **Hero renders done (2026-11-13):** all 20 shards succeeded; frames checked (counts, no dark frames, contact
+  sheets); encoded at 60 fps (every 2nd frame held) to Drive `renders/`: `cat_H_store.mp4` (16 s), `cat_H_drum.mp4`
+  (16 s), `cat_H_catapult.mp4` (10 s), `cat_H_room.mp4` (10 s). Logged in `media_manifest.csv`. The 16-bit frames
+  stay in the gitignored `assets/renders/` (not in Drive: 7.7 GB). A shard takes about 2.3 h on a runner (not 75 min).
+- **Next:** the Remotion build (word map scenes and the R drawings), then music and sound, the 720p review cut.
