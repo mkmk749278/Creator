@@ -147,3 +147,11 @@
   `mix/`. `vo-render/` holds lock.json and vo_full.wav.
 - **Next:** finish the clips, sync `render-media/`, render the 720p review cut on GitHub, our own review
   (`review-cut`), then the independent viewer review.
+
+## Session 5, continued (2026-11-13): the review cuts
+- r1 (run 43399044281), r2 (43404314348), r3 (43407401810): measured and read against the words each time; every
+  fix in `review/review.md`. r3: no freezes, −14.0 LUFS, −1.4 dBTP. One overlap left in r3 ("FAR SHORT" over the
+  181 label, 7:16), fixed in code for the next render.
+- **Owner, 2026-11-13: share r3 for the independent viewer review.** r3 shared "anyone with the link" (Drive file
+  17N1kR999AlaYPqynqS9aPBANWBG4Rggg). Review session `session_019NnLekPrc9ecvtsWJk5rj8` (no repo); its answer →
+  `review/review_viewer_r3.md`, then fixes, `review_ack_r1.md`, the owner's approval of the cut, the 4K master.

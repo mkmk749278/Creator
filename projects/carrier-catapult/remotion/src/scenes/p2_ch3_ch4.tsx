@@ -119,7 +119,7 @@ const ch4: Part = {
 		tag(w0(135, 'nuclear'), s1(135), 'NOT NUCLEAR', 140, 860, 64, C.slot),
 		tag(w0(137, 'stored'), s1(137), 'STORED POWER', 140, 860, 64, C.copper),
 		tag(w0(139, 'u-s-s'), s1(139), 'USS FORD', 140, 760, 64),
-		tag(w0(143, 'far'), s1(143), 'FAR SHORT', 140, 760, 64, C.cyan),
+		tag(w0(143, 'far'), s1(143), 'FAR SHORT', 1180, 420, 64, C.cyan),
 		cnt(w0(145, 'thirty'), w0(145, 'launches'), s1(145) + 30, 36863, 'LAUNCHES', 140, 180, 110, C.cyan),
 		tag(w0(145, 'programme'), s1(145), 'SOURCE: THE PROGRAMME’S OWN COUNT', 140, 860, 40, C.dim),
 		tag(w0(147, 'young'), s1(147), 'STILL YOUNG', 140, 860, 60),
