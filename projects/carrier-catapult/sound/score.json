@@ -1,0 +1,134 @@
+{
+ "_why": "PLAYBOOK \u00a712; the feeling curve in plan.md \u00a74: puzzled pride, unease, warmth and a lump in the throat, wonder, doubt, sober honesty, steady resolve. The landing opens on real deck wind, no music; silence under the count.",
+ "bed_rms_db": -24,
+ "duck_db": -20,
+ "slots": [
+  {
+   "track": "Investigation",
+   "from": "s:2-0.5",
+   "to": "s:16+1",
+   "fade_in": 1.5,
+   "fade_out": 2.0,
+   "why": "cold open: the paradox and the loop"
+  },
+  {
+   "track": "Under Load",
+   "from": "s:16-1",
+   "to": "s:42+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "ch1: what the ramp costs (unease)"
+  },
+  {
+   "track": "Old Bombay",
+   "from": "s:42-1",
+   "to": "s:52",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "ch2: 1961, the first Vikrant (archive)"
+  },
+  {
+   "track": "Against the Odds",
+   "from": "s:52-1",
+   "to": "s:76",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "ch2: the cracked boiler, Nanda, Bilu and the bands"
+  },
+  {
+   "track": "Built on Bharat",
+   "from": "s:76-0.5",
+   "to": "s:80+1",
+   "fade_in": 1.0,
+   "fade_out": 2.0,
+   "why": "4 December 1971: the music lifts once",
+   "gain_db": 2
+  },
+  {
+   "track": "Curious Pulse",
+   "from": "s:80-1",
+   "to": "s:92+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "ch2 end: how the catapult was lost; the new Vikrant"
+  },
+  {
+   "track": "Clockwork",
+   "from": "s:92-1",
+   "to": "s:102",
+   "fade_in": 2.0,
+   "fade_out": 1.0,
+   "why": "ch3: the fan unrolled (wonder)"
+  },
+  {
+   "track": "Tolerance",
+   "from": "e:106-0.5",
+   "to": "s:127+1",
+   "fade_in": 1.0,
+   "fade_out": 2.0,
+   "why": "ch3: the numbers, the power station"
+  },
+  {
+   "track": "The Exhibit",
+   "from": "s:127-1",
+   "to": "s:153+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "ch4: the newcomer and the inventor (doubt)"
+  },
+  {
+   "track": "The Boardroom",
+   "from": "s:153-1",
+   "to": "s:186+1",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "ch5: the test model, the gap (sober honesty)"
+  },
+  {
+   "track": "A Way Forward",
+   "from": "s:186-1",
+   "to": "s:207",
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "why": "landing: what India has, the saying, the dates"
+  },
+  {
+   "track": "Stay Practical",
+   "from": "s:207-0.5",
+   "to": "end",
+   "fade_in": 1.0,
+   "fade_out": 3.0,
+   "why": "outro and end card"
+  }
+ ],
+ "rooms": [
+  {
+   "what": "wind",
+   "from": 0,
+   "to": "s:2+1",
+   "gain_db": -16
+  },
+  {
+   "what": "wind",
+   "from": "w:105:three+0.4",
+   "to": "e:106+0.5",
+   "gain_db": -18
+  },
+  {
+   "what": "wind",
+   "from": "s:186",
+   "to": "s:189",
+   "gain_db": -24
+  }
+ ],
+ "music_mute": [
+  {
+   "from": "s:102",
+   "to": "e:106"
+  },
+  {
+   "from": "s:75",
+   "to": "e:75+0.6"
+  }
+ ]
+}
