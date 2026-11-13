@@ -1,0 +1,2122 @@
+[
+ {
+  "line": 1,
+  "start": 0.0,
+  "end": 1.662,
+  "te": "The twenty-ninth of October.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.467,
+  "confidence": "high"
+ },
+ {
+  "line": 2,
+  "start": 2.122,
+  "end": 8.345,
+  "te": "A Rafale fighter, here for trials, comes down on India's newest aircraft carrier, I-N-S Vikrant.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.191,
+  "confidence": "high"
+ },
+ {
+  "line": 3,
+  "start": 8.795,
+  "end": 13.602,
+  "te": "This deck is missing something that India's first carrier had, back in nineteen sixty-one.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.191,
+  "confidence": "high"
+ },
+ {
+  "line": 4,
+  "start": 14.146,
+  "end": 14.86,
+  "te": "A catapult.",
+  "en": "",
+  "speech_vs_text": 1.23,
+  "boundary_margin": 1.262,
+  "confidence": "high"
+ },
+ {
+  "line": 5,
+  "start": 15.284,
+  "end": 17.99,
+  "te": "The Rafale was built to be thrown off a ship by one.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.279,
+  "confidence": "high"
+ },
+ {
+  "line": 6,
+  "start": 18.46,
+  "end": 20.081,
+  "te": "Vikrant has a ramp instead.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.279,
+  "confidence": "high"
+ },
+ {
+  "line": 7,
+  "start": 20.489,
+  "end": 22.073,
+  "te": "The jet can leave by that ramp.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.985,
+  "confidence": "high"
+ },
+ {
+  "line": 8,
+  "start": 22.42,
+  "end": 23.848,
+  "te": "It passed that test in Goa.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 9,
+  "start": 24.253,
+  "end": 25.129,
+  "te": "But think about this.",
+  "en": "",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 0.661,
+  "confidence": "high"
+ },
+ {
+  "line": 10,
+  "start": 25.494,
+  "end": 28.995,
+  "te": "Sixty-five years ago, India was throwing jets off a ship.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.156,
+  "confidence": "high"
+ },
+ {
+  "line": 11,
+  "start": 29.378,
+  "end": 35.613,
+  "te": "Today the Navy wants a catapult again — and the one India has shown so far, sits on the back of a lorry.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.156,
+  "confidence": "high"
+ },
+ {
+  "line": 12,
+  "start": 35.99,
+  "end": 37.245,
+  "te": "So what happened in between?",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.415,
+  "confidence": "high"
+ },
+ {
+  "line": 13,
+  "start": 37.633,
+  "end": 39.588,
+  "te": "And here is something you would not guess.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.685,
+  "confidence": "high"
+ },
+ {
+  "line": 14,
+  "start": 39.941,
+  "end": 44.388,
+  "te": "The electricity to throw a fighter jet costs you less than two hundred rupees.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.078,
+  "confidence": "high"
+ },
+ {
+  "line": 15,
+  "start": 44.729,
+  "end": 47.438,
+  "te": "Yet it is one of the hardest machines on earth.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.078,
+  "confidence": "high"
+ },
+ {
+  "line": 16,
+  "start": 47.77,
+  "end": 49.927,
+  "te": "By the end of this film, you will see why.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.59,
+  "confidence": "high"
+ },
+ {
+  "line": 17,
+  "start": 50.417,
+  "end": 52.356,
+  "te": "Come and stand on Vikrant's deck with me.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.258,
+  "confidence": "high"
+ },
+ {
+  "line": 18,
+  "start": 52.752,
+  "end": 57.288,
+  "te": "In front of you, the deck curves upward, like a flyover that ends in the sky.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.258,
+  "confidence": "high"
+ },
+ {
+  "line": 19,
+  "start": 57.683,
+  "end": 59.677,
+  "te": "Do you see any moving parts on that ramp?",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.331,
+  "confidence": "high"
+ },
+ {
+  "line": 20,
+  "start": 60.109,
+  "end": 60.38,
+  "te": "None.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 2.689,
+  "confidence": "high"
+ },
+ {
+  "line": 21,
+  "start": 60.78,
+  "end": 64.781,
+  "te": "The jet opens its engines fully, runs, and the curve throws it up.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.631,
+  "confidence": "high"
+ },
+ {
+  "line": 22,
+  "start": 65.24,
+  "end": 66.232,
+  "te": "Nothing you can break.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.631,
+  "confidence": "high"
+ },
+ {
+  "line": 23,
+  "start": 66.513,
+  "end": 67.629,
+  "te": "Nothing you must repair.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.35,
+  "confidence": "high"
+ },
+ {
+  "line": 24,
+  "start": 68.008,
+  "end": 70.372,
+  "te": "You have to admit, it is a clever idea.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.35,
+  "confidence": "high"
+ },
+ {
+  "line": 25,
+  "start": 70.742,
+  "end": 71.582,
+  "te": "But here's the catch.",
+  "en": "",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 0.255,
+  "confidence": "high"
+ },
+ {
+  "line": 26,
+  "start": 71.921,
+  "end": 75.867,
+  "te": "On a ramp, the jet must lift itself, with its own engines.",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.255,
+  "confidence": "high"
+ },
+ {
+  "line": 27,
+  "start": 76.169,
+  "end": 77.617,
+  "te": "So you take off lighter.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.404,
+  "confidence": "high"
+ },
+ {
+  "line": 28,
+  "start": 77.952,
+  "end": 80.661,
+  "te": "You carry less fuel, or fewer weapons, or both.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.317,
+  "confidence": "high"
+ },
+ {
+  "line": 29,
+  "start": 81.208,
+  "end": 81.88,
+  "te": "How much lighter?",
+  "en": "",
+  "speech_vs_text": 0.74,
+  "boundary_margin": 0.317,
+  "confidence": "high"
+ },
+ {
+  "line": 30,
+  "start": 82.235,
+  "end": 84.11,
+  "te": "The Navy has not published that number.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 31,
+  "start": 84.374,
+  "end": 85.953,
+  "te": "So I won't invent one for you.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 32,
+  "start": 86.354,
+  "end": 88.385,
+  "te": "What nobody argues about is this.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.238,
+  "confidence": "high"
+ },
+ {
+  "line": 33,
+  "start": 88.723,
+  "end": 92.516,
+  "te": "You cannot get a heavy, slow aircraft off a ramp at all.",
+  "en": "",
+  "speech_vs_text": 1.3,
+  "boundary_margin": 0.238,
+  "confidence": "high"
+ },
+ {
+  "line": 34,
+  "start": 92.835,
+  "end": 95.129,
+  "te": "And which heavy aircraft matters most at sea?",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 4.839,
+  "confidence": "high"
+ },
+ {
+  "line": 35,
+  "start": 95.446,
+  "end": 96.446,
+  "te": "The flying radar.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 1.461,
+  "confidence": "high"
+ },
+ {
+  "line": 36,
+  "start": 96.788,
+  "end": 101.171,
+  "te": "A plane with a big dish on its back, that sees trouble long before your ship can.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.957,
+  "confidence": "high"
+ },
+ {
+  "line": 37,
+  "start": 101.546,
+  "end": 103.903,
+  "te": "India's carriers do that job with a helicopter.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.957,
+  "confidence": "high"
+ },
+ {
+  "line": 38,
+  "start": 104.263,
+  "end": 104.778,
+  "te": "It works.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 2.501,
+  "confidence": "high"
+ },
+ {
+  "line": 39,
+  "start": 105.07,
+  "end": 110.228,
+  "te": "But ask naval experts, and they will tell you, a helicopter cannot do it as well as a plane.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 1.209,
+  "confidence": "high"
+ },
+ {
+  "line": 40,
+  "start": 110.641,
+  "end": 112.274,
+  "te": "So the ramp has a price.",
+  "en": "",
+  "speech_vs_text": 1.4,
+  "boundary_margin": 1.209,
+  "confidence": "high"
+ },
+ {
+  "line": 41,
+  "start": 112.663,
+  "end": 114.053,
+  "te": "Then why did India choose it?",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.305,
+  "confidence": "high"
+ },
+ {
+  "line": 42,
+  "start": 114.411,
+  "end": 119.368,
+  "te": "To answer that, you must first see the catapult we already had, and how we let it go.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.283,
+  "confidence": "high"
+ },
+ {
+  "line": 43,
+  "start": 119.874,
+  "end": 122.708,
+  "te": "Belfast, the fourth of March, nineteen sixty-one.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.283,
+  "confidence": "high"
+ },
+ {
+  "line": 44,
+  "start": 123.082,
+  "end": 128.265,
+  "te": "India commissions its first aircraft carrier, bought from Britain and finished in that shipyard.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.531,
+  "confidence": "high"
+ },
+ {
+  "line": 45,
+  "start": 128.677,
+  "end": 130.226,
+  "te": "Her name, too, is Vikrant.",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.464,
+  "confidence": "high"
+ },
+ {
+  "line": 46,
+  "start": 130.674,
+  "end": 132.956,
+  "te": "And under her deck is a steam catapult.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.464,
+  "confidence": "high"
+ },
+ {
+  "line": 47,
+  "start": 133.361,
+  "end": 134.867,
+  "te": "How does steam throw a jet?",
+  "en": "",
+  "speech_vs_text": 1.11,
+  "boundary_margin": 0.917,
+  "confidence": "high"
+ },
+ {
+  "line": 48,
+  "start": 135.236,
+  "end": 136.631,
+  "te": "You already own a small one.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 49,
+  "start": 136.907,
+  "end": 138.311,
+  "te": "The pressure cooker in your kitchen.",
+  "en": "",
+  "speech_vs_text": 0.72,
+  "boundary_margin": 0.52,
+  "confidence": "high"
+ },
+ {
+  "line": 50,
+  "start": 138.668,
+  "end": 142.908,
+  "te": "Steam builds up behind the weight, and when it goes, it goes with force.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.118,
+  "confidence": "high"
+ },
+ {
+  "line": 51,
+  "start": 143.198,
+  "end": 148.98,
+  "te": "On the ship, that steam drives a piston along a tube under the deck, and the piston drags the jet.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.118,
+  "confidence": "high"
+ },
+ {
+  "line": 52,
+  "start": 149.318,
+  "end": 150.91,
+  "te": "For nine years, it works.",
+  "en": "",
+  "speech_vs_text": 1.3,
+  "boundary_margin": 0.186,
+  "confidence": "high"
+ },
+ {
+  "line": 53,
+  "start": 151.231,
+  "end": 156.228,
+  "te": "Then, in June nineteen seventy, in Bombay, the engineers find cracks in a boiler.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.186,
+  "confidence": "high"
+ },
+ {
+  "line": 54,
+  "start": 156.591,
+  "end": 157.338,
+  "te": "Not one crack.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.266,
+  "confidence": "high"
+ },
+ {
+  "line": 55,
+  "start": 157.654,
+  "end": 160.006,
+  "te": "Many, in the drums that hold the water.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.266,
+  "confidence": "high"
+ },
+ {
+  "line": 56,
+  "start": 160.329,
+  "end": 161.42,
+  "te": "You cannot weld them.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 2.1,
+  "confidence": "high"
+ },
+ {
+  "line": 57,
+  "start": 161.896,
+  "end": 164.367,
+  "te": "And a lasting repair is not possible in India.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 58,
+  "start": 164.876,
+  "end": 165.836,
+  "te": "Do you see what that means?",
+  "en": "",
+  "speech_vs_text": 0.71,
+  "boundary_margin": 0.293,
+  "confidence": "high"
+ },
+ {
+  "line": 59,
+  "start": 166.245,
+  "end": 170.24,
+  "te": "The same steam that turns the propellers, also fires the catapult.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.293,
+  "confidence": "high"
+ },
+ {
+  "line": 60,
+  "start": 170.542,
+  "end": 176.063,
+  "te": "If you push those boilers too hard, in the words of Admiral Arun Prakash, they could simply blow up.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.319,
+  "confidence": "high"
+ },
+ {
+  "line": 61,
+  "start": 176.643,
+  "end": 177.97,
+  "te": "Would you send that ship to war?",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 0.498,
+  "confidence": "high"
+ },
+ {
+  "line": 62,
+  "start": 178.481,
+  "end": 180.58,
+  "te": "So the ship is held to fourteen knots.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.301,
+  "confidence": "high"
+ },
+ {
+  "line": 63,
+  "start": 180.869,
+  "end": 182.909,
+  "te": "That is about twenty-six kilometres an hour.",
+  "en": "",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 0.301,
+  "confidence": "high"
+ },
+ {
+  "line": 64,
+  "start": 183.389,
+  "end": 184.473,
+  "te": "Too slow for a carrier.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 1.358,
+  "confidence": "high"
+ },
+ {
+  "line": 65,
+  "start": 184.832,
+  "end": 188.285,
+  "te": "And some very senior officers say, leave her out of the next war.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.283,
+  "confidence": "high"
+ },
+ {
+  "line": 66,
+  "start": 188.767,
+  "end": 191.658,
+  "te": "The Navy chief, Admiral Nanda, will not have it.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.019,
+  "confidence": "check"
+ },
+ {
+  "line": 67,
+  "start": 191.963,
+  "end": 198.007,
+  "te": "If Vikrant sits out a war, he says, she will be called a white elephant, and naval flying will be written off.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.019,
+  "confidence": "check"
+ },
+ {
+  "line": 68,
+  "start": 198.536,
+  "end": 201.493,
+  "te": "So it comes down to the engine room, and to one man.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.274,
+  "confidence": "high"
+ },
+ {
+  "line": 69,
+  "start": 201.857,
+  "end": 204.733,
+  "te": "Commander Benoy Roy Chowdhury, the ship's engineer.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.274,
+  "confidence": "high"
+ },
+ {
+  "line": 70,
+  "start": 205.078,
+  "end": 206.603,
+  "te": "His shipmates call him Beeloo.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.464,
+  "confidence": "high"
+ },
+ {
+  "line": 71,
+  "start": 207.01,
+  "end": 209.81,
+  "te": "What would you do with a cracked boiler, and no spare?",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 72,
+  "start": 210.221,
+  "end": 212.588,
+  "te": "Beeloo and his team put steel bands around it.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.923,
+  "confidence": "high"
+ },
+ {
+  "line": 73,
+  "start": 212.991,
+  "end": 215.917,
+  "te": "They reset the safety valves, to accept more risk.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.494,
+  "confidence": "high"
+ },
+ {
+  "line": 74,
+  "start": 216.283,
+  "end": 218.566,
+  "te": "And they keep the boiler room almost empty.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.484,
+  "confidence": "high"
+ },
+ {
+  "line": 75,
+  "start": 219.037,
+  "end": 222.762,
+  "te": "Because if a drum bursts, that room fills with superheated steam.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.484,
+  "confidence": "high"
+ },
+ {
+  "line": 76,
+  "start": 223.374,
+  "end": 223.971,
+  "te": "It holds.",
+  "en": "",
+  "speech_vs_text": 1.32,
+  "boundary_margin": 2.412,
+  "confidence": "high"
+ },
+ {
+  "line": 77,
+  "start": 224.353,
+  "end": 230.936,
+  "te": "On the fourth of December, nineteen seventy-one, Sea Hawk jets leave Vikrant's catapult, and strike Cox's Bazar.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.296,
+  "confidence": "high"
+ },
+ {
+  "line": 78,
+  "start": 231.307,
+  "end": 236.465,
+  "te": "And for his work in that boiler room, Beeloo is given the Vir Chakra, a medal for bravery.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.296,
+  "confidence": "high"
+ },
+ {
+  "line": 79,
+  "start": 236.828,
+  "end": 239.004,
+  "te": "So India did not only have a catapult.",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.44,
+  "confidence": "high"
+ },
+ {
+  "line": 80,
+  "start": 239.471,
+  "end": 242.916,
+  "te": "India kept one alive with steel bands, and took it to war.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.412,
+  "confidence": "high"
+ },
+ {
+  "line": 81,
+  "start": 243.401,
+  "end": 244.703,
+  "te": "Then how did we lose it?",
+  "en": "",
+  "speech_vs_text": 1.12,
+  "boundary_margin": 0.412,
+  "confidence": "high"
+ },
+ {
+  "line": 82,
+  "start": 245.064,
+  "end": 249.887,
+  "te": "In the nineteen eighties, the Navy bought the Sea Harrier, a jet that needs no catapult.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.432,
+  "confidence": "high"
+ },
+ {
+  "line": 83,
+  "start": 250.334,
+  "end": 256.151,
+  "te": "The last planes that still needed the catapult, the old propeller planes, retired in nineteen eighty-nine.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.432,
+  "confidence": "high"
+ },
+ {
+  "line": 84,
+  "start": 256.615,
+  "end": 259.199,
+  "te": "So the catapult came out, and a ramp went on.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.65,
+  "confidence": "high"
+ },
+ {
+  "line": 85,
+  "start": 259.622,
+  "end": 260.301,
+  "te": "You can see why.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.798,
+  "confidence": "high"
+ },
+ {
+  "line": 86,
+  "start": 260.693,
+  "end": 261.597,
+  "te": "It made sense then.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 1.295,
+  "confidence": "high"
+ },
+ {
+  "line": 87,
+  "start": 262.023,
+  "end": 267.322,
+  "te": "And when India designed its own carrier, the new Vikrant, she was drawn around a ramp jet too.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.158,
+  "confidence": "high"
+ },
+ {
+  "line": 88,
+  "start": 267.722,
+  "end": 269.413,
+  "te": "Her engines are gas turbines.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 0.158,
+  "confidence": "high"
+ },
+ {
+  "line": 89,
+  "start": 269.709,
+  "end": 271.463,
+  "te": "They make no steam for a catapult.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 90,
+  "start": 271.788,
+  "end": 275.611,
+  "te": "And naval analysts say there is no room under that ramp to add one now.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 91,
+  "start": 276.118,
+  "end": 277.341,
+  "te": "So steam is gone.",
+  "en": "",
+  "speech_vs_text": 1.46,
+  "boundary_margin": 1.45,
+  "confidence": "check"
+ },
+ {
+  "line": 92,
+  "start": 277.797,
+  "end": 281.386,
+  "te": "If you want to throw a jet again, you have to do it with electricity.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 1.064,
+  "confidence": "high"
+ },
+ {
+  "line": 93,
+  "start": 281.829,
+  "end": 282.993,
+  "te": "Look up at your ceiling fan.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 1.064,
+  "confidence": "high"
+ },
+ {
+  "line": 94,
+  "start": 283.39,
+  "end": 284.263,
+  "te": "Do you know what turns it?",
+  "en": "",
+  "speech_vs_text": 0.68,
+  "boundary_margin": 9.9,
+  "confidence": "check"
+ },
+ {
+  "line": 95,
+  "start": 284.69,
+  "end": 285.764,
+  "te": "An induction motor.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.862,
+  "confidence": "high"
+ },
+ {
+  "line": 96,
+  "start": 286.138,
+  "end": 290.533,
+  "te": "Coils of wire in a circle, and a magnetic pull that chases round and round.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.192,
+  "confidence": "high"
+ },
+ {
+  "line": 97,
+  "start": 290.994,
+  "end": 294.032,
+  "te": "Now cut that circle in your mind, and unroll it flat.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.157,
+  "confidence": "high"
+ },
+ {
+  "line": 98,
+  "start": 294.369,
+  "end": 299.044,
+  "te": "You get a straight line of coils, about a hundred metres long, laid under the deck.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.157,
+  "confidence": "high"
+ },
+ {
+  "line": 99,
+  "start": 299.392,
+  "end": 301.061,
+  "te": "The pull no longer goes round.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.478,
+  "confidence": "high"
+ },
+ {
+  "line": 100,
+  "start": 301.448,
+  "end": 304.38,
+  "te": "It runs straight ahead, and it takes the jet with it.",
+  "en": "",
+  "speech_vs_text": 0.91,
+  "boundary_margin": 0.62,
+  "confidence": "high"
+ },
+ {
+  "line": 101,
+  "start": 304.701,
+  "end": 306.99,
+  "te": "Only the coils beside the jet are switched on.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.62,
+  "confidence": "high"
+ },
+ {
+  "line": 102,
+  "start": 307.39,
+  "end": 309.549,
+  "te": "A wave of force, racing down the deck.",
+  "en": "",
+  "speech_vs_text": 1.06,
+  "boundary_margin": 0.643,
+  "confidence": "high"
+ },
+ {
+  "line": 103,
+  "start": 310.006,
+  "end": 310.718,
+  "te": "Now count with me.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.764,
+  "confidence": "high"
+ },
+ {
+  "line": 104,
+  "start": 311.187,
+  "end": 311.438,
+  "te": "One.",
+  "en": "",
+  "speech_vs_text": 1.3,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 105,
+  "start": 312.134,
+  "end": 312.332,
+  "te": "Two.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 106,
+  "start": 313.124,
+  "end": 313.444,
+  "te": "Three.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 1.676,
+  "confidence": "high"
+ },
+ {
+  "line": 107,
+  "start": 313.923,
+  "end": 321.389,
+  "te": "By the time you finish counting, a thirty-tonne fighter has gone from standing still, to two hundred and forty kilometres an hour.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.374,
+  "confidence": "high"
+ },
+ {
+  "line": 108,
+  "start": 321.887,
+  "end": 323.871,
+  "te": "And what does that take, in electricity?",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 0.374,
+  "confidence": "high"
+ },
+ {
+  "line": 109,
+  "start": 324.354,
+  "end": 325.811,
+  "te": "Here is the number I promised you.",
+  "en": "",
+  "speech_vs_text": 0.84,
+  "boundary_margin": 0.604,
+  "confidence": "high"
+ },
+ {
+  "line": 110,
+  "start": 326.218,
+  "end": 330.24,
+  "te": "The energy in that moving jet is about nineteen units of electricity.",
+  "en": "",
+  "speech_vs_text": 1.09,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 111,
+  "start": 330.642,
+  "end": 334.138,
+  "te": "An average Indian home uses that much in about six days.",
+  "en": "",
+  "speech_vs_text": 1.2,
+  "boundary_margin": 0.378,
+  "confidence": "high"
+ },
+ {
+  "line": 112,
+  "start": 334.522,
+  "end": 337.137,
+  "te": "On your bill, it is well under two hundred rupees.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.378,
+  "confidence": "high"
+ },
+ {
+  "line": 113,
+  "start": 337.58,
+  "end": 338.96,
+  "te": "Then where is the difficulty?",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 1.826,
+  "confidence": "high"
+ },
+ {
+  "line": 114,
+  "start": 339.423,
+  "end": 340.761,
+  "te": "In the three seconds.",
+  "en": "",
+  "speech_vs_text": 1.22,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 115,
+  "start": 341.107,
+  "end": 343.886,
+  "te": "Your home sips that energy over six days.",
+  "en": "",
+  "speech_vs_text": 1.3,
+  "boundary_margin": 0.388,
+  "confidence": "high"
+ },
+ {
+  "line": 116,
+  "start": 344.158,
+  "end": 346.978,
+  "te": "The catapult must pour it out in three seconds.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.254,
+  "confidence": "high"
+ },
+ {
+  "line": 117,
+  "start": 347.384,
+  "end": 350.394,
+  "te": "At its peak, that is close to fifty megawatts.",
+  "en": "",
+  "speech_vs_text": 1.17,
+  "boundary_margin": 0.254,
+  "confidence": "high"
+ },
+ {
+  "line": 118,
+  "start": 350.65,
+  "end": 354.11,
+  "te": "More than half of what all four of Vikrant's engines make together.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 1.224,
+  "confidence": "high"
+ },
+ {
+  "line": 119,
+  "start": 354.485,
+  "end": 357.101,
+  "te": "Can you take that from a ship's engines, in an instant?",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 1.444,
+  "confidence": "high"
+ },
+ {
+  "line": 120,
+  "start": 357.488,
+  "end": 357.717,
+  "te": "No.",
+  "en": "",
+  "speech_vs_text": 1.77,
+  "boundary_margin": 0.665,
+  "confidence": "check"
+ },
+ {
+  "line": 121,
+  "start": 358.111,
+  "end": 359.126,
+  "te": "So you save up.",
+  "en": "",
+  "speech_vs_text": 1.21,
+  "boundary_margin": 0.358,
+  "confidence": "high"
+ },
+ {
+  "line": 122,
+  "start": 359.53,
+  "end": 366.668,
+  "te": "Between launches, you spin up great steel machines, each one over thirty-six tonnes, like giant spinning tops.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.115,
+  "confidence": "high"
+ },
+ {
+  "line": 123,
+  "start": 366.972,
+  "end": 371.424,
+  "te": "Then you pull the energy back out of that spin, and that becomes the push.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.115,
+  "confidence": "high"
+ },
+ {
+  "line": 124,
+  "start": 371.763,
+  "end": 377.163,
+  "te": "And you must do this again every forty-five seconds, for years, on a ship at sea.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.155,
+  "confidence": "high"
+ },
+ {
+  "line": 125,
+  "start": 377.568,
+  "end": 379.33,
+  "te": "So now you know the real machine.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.155,
+  "confidence": "high"
+ },
+ {
+  "line": 126,
+  "start": 379.685,
+  "end": 380.286,
+  "te": "Not a motor.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.106,
+  "confidence": "high"
+ },
+ {
+  "line": 127,
+  "start": 380.618,
+  "end": 384.027,
+  "te": "A power station, that works for three seconds at a time.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.106,
+  "confidence": "high"
+ },
+ {
+  "line": 128,
+  "start": 385.523,
+  "end": 386.784,
+  "te": "Has anyone made it work?",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 2.181,
+  "confidence": "high"
+ },
+ {
+  "line": 129,
+  "start": 387.329,
+  "end": 388.04,
+  "te": "Two navies have.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 130,
+  "start": 388.49,
+  "end": 390.97,
+  "te": "And their stories run in opposite directions.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 131,
+  "start": 391.474,
+  "end": 392.52,
+  "te": "Let's start with China.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 132,
+  "start": 392.993,
+  "end": 395.151,
+  "te": "China never sent a steam catapult to sea.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.283,
+  "confidence": "high"
+ },
+ {
+  "line": 133,
+  "start": 395.596,
+  "end": 400.193,
+  "te": "From twenty sixteen, it was throwing a test jet from catapults built on land.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.283,
+  "confidence": "high"
+ },
+ {
+  "line": 134,
+  "start": 400.59,
+  "end": 406.722,
+  "te": "Nine years later, in November twenty twenty-five, it commissioned the carrier Fujian, with electric catapults.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 0.396,
+  "confidence": "high"
+ },
+ {
+  "line": 135,
+  "start": 407.155,
+  "end": 410.419,
+  "te": "Fujian has already thrown a flying radar plane into the air.",
+  "en": "",
+  "speech_vs_text": 1.03,
+  "boundary_margin": 0.396,
+  "confidence": "high"
+ },
+ {
+  "line": 136,
+  "start": 410.82,
+  "end": 412.403,
+  "te": "And she is not nuclear powered.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 137,
+  "start": 412.801,
+  "end": 415.122,
+  "te": "So you do not need a reactor for this machine.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.311,
+  "confidence": "high"
+ },
+ {
+  "line": 138,
+  "start": 415.599,
+  "end": 416.898,
+  "te": "You need stored power.",
+  "en": "",
+  "speech_vs_text": 0.97,
+  "boundary_margin": 0.311,
+  "confidence": "high"
+ },
+ {
+  "line": 139,
+  "start": 417.383,
+  "end": 419.292,
+  "te": "And America, which invented it?",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.528,
+  "confidence": "high"
+ },
+ {
+  "line": 140,
+  "start": 419.649,
+  "end": 422.858,
+  "te": "Its first ship with electric catapults is the U-S-S Ford.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.528,
+  "confidence": "high"
+ },
+ {
+  "line": 141,
+  "start": 423.289,
+  "end": 427.771,
+  "te": "The American Navy wanted more than four thousand launches between serious failures.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.281,
+  "confidence": "high"
+ },
+ {
+  "line": 142,
+  "start": 428.105,
+  "end": 431.591,
+  "te": "In twenty twenty, the testers measured one hundred and eighty-one.",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.281,
+  "confidence": "high"
+ },
+ {
+  "line": 143,
+  "start": 432.026,
+  "end": 434.663,
+  "te": "In twenty twenty-two, six hundred and fourteen.",
+  "en": "",
+  "speech_vs_text": 0.87,
+  "boundary_margin": 0.436,
+  "confidence": "high"
+ },
+ {
+  "line": 144,
+  "start": 435.172,
+  "end": 435.657,
+  "te": "Far short.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 145,
+  "start": 436.139,
+  "end": 437.979,
+  "te": "But the ship did not stop flying.",
+  "en": "",
+  "speech_vs_text": 0.77,
+  "boundary_margin": 0.217,
+  "confidence": "high"
+ },
+ {
+  "line": 146,
+  "start": 438.39,
+  "end": 443.187,
+  "te": "By the programme's own count, the Ford has made more than thirty-six thousand launches.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.228,
+  "confidence": "high"
+ },
+ {
+  "line": 147,
+  "start": 443.554,
+  "end": 445.935,
+  "te": "Steam catapults had many decades to mature.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.23,
+  "confidence": "high"
+ },
+ {
+  "line": 148,
+  "start": 446.368,
+  "end": 447.639,
+  "te": "This one is still young.",
+  "en": "",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.089,
+  "confidence": "high"
+ },
+ {
+  "line": 149,
+  "start": 448.044,
+  "end": 453.861,
+  "te": "Even so, this August, the American President ordered a plan to go back to steam on a future carrier.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.089,
+  "confidence": "high"
+ },
+ {
+  "line": 150,
+  "start": 454.221,
+  "end": 458.262,
+  "te": "The company that builds the electric one has asked the government to think again.",
+  "en": "",
+  "speech_vs_text": 0.83,
+  "boundary_margin": 0.236,
+  "confidence": "high"
+ },
+ {
+  "line": 151,
+  "start": 458.646,
+  "end": 461.546,
+  "te": "As this film is made, nothing final has been announced.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.265,
+  "confidence": "high"
+ },
+ {
+  "line": 152,
+  "start": 461.859,
+  "end": 465.973,
+  "te": "So the inventor is in two minds, and the newcomer is already flying.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.324,
+  "confidence": "high"
+ },
+ {
+  "line": 153,
+  "start": 466.505,
+  "end": 467.662,
+  "te": "Where does that leave India?",
+  "en": "",
+  "speech_vs_text": 0.78,
+  "boundary_margin": 0.324,
+  "confidence": "high"
+ },
+ {
+  "line": 154,
+  "start": 468.052,
+  "end": 474.305,
+  "te": "In Pune, in Maharashtra, engineers at a D-R-D-O laboratory are building India's own electric catapult.",
+  "en": "",
+  "speech_vs_text": 1.1,
+  "boundary_margin": 0.393,
+  "confidence": "high"
+ },
+ {
+  "line": 155,
+  "start": 474.777,
+  "end": 475.543,
+  "te": "Remember the lorry?",
+  "en": "",
+  "speech_vs_text": 0.74,
+  "boundary_margin": 0.509,
+  "confidence": "high"
+ },
+ {
+  "line": 156,
+  "start": 475.943,
+  "end": 476.328,
+  "te": "This is it.",
+  "en": "",
+  "speech_vs_text": 0.74,
+  "boundary_margin": 2.024,
+  "confidence": "high"
+ },
+ {
+  "line": 157,
+  "start": 476.729,
+  "end": 479.888,
+  "te": "At the Bengaluru air show last year, it stood on a trailer.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.206,
+  "confidence": "high"
+ },
+ {
+  "line": 158,
+  "start": 480.25,
+  "end": 485.489,
+  "te": "As reported, it is meant to throw up to four hundred kilos, over about seventeen metres.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.206,
+  "confidence": "high"
+ },
+ {
+  "line": 159,
+  "start": 485.887,
+  "end": 490.947,
+  "te": "I say as reported, because D-R-D-O itself has published very little about it.",
+  "en": "",
+  "speech_vs_text": 1.23,
+  "boundary_margin": 0.227,
+  "confidence": "high"
+ },
+ {
+  "line": 160,
+  "start": 491.224,
+  "end": 493.991,
+  "te": "Now put the Navy's need beside it, and you see the gap.",
+  "en": "",
+  "speech_vs_text": 0.93,
+  "boundary_margin": 0.481,
+  "confidence": "high"
+ },
+ {
+  "line": 161,
+  "start": 494.416,
+  "end": 495.591,
+  "te": "Not four hundred kilos.",
+  "en": "",
+  "speech_vs_text": 0.96,
+  "boundary_margin": 0.464,
+  "confidence": "high"
+ },
+ {
+  "line": 162,
+  "start": 495.949,
+  "end": 496.782,
+  "te": "Thirty tonnes.",
+  "en": "",
+  "speech_vs_text": 0.88,
+  "boundary_margin": 0.438,
+  "confidence": "high"
+ },
+ {
+  "line": 163,
+  "start": 497.141,
+  "end": 498.4,
+  "te": "Not seventeen metres.",
+  "en": "",
+  "speech_vs_text": 1.08,
+  "boundary_margin": 0.226,
+  "confidence": "high"
+ },
+ {
+  "line": 164,
+  "start": 498.692,
+  "end": 499.674,
+  "te": "About a hundred.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.226,
+  "confidence": "high"
+ },
+ {
+  "line": 165,
+  "start": 500.021,
+  "end": 502.116,
+  "te": "That is seventy-five times the weight.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.465,
+  "confidence": "high"
+ },
+ {
+  "line": 166,
+  "start": 502.566,
+  "end": 507.676,
+  "te": "A full-size one, say officials quoted in the defence press, is a decade or more away.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.299,
+  "confidence": "high"
+ },
+ {
+  "line": 167,
+  "start": 508.161,
+  "end": 511.839,
+  "te": "You might ask me, Kishore, who is stopping India from building its own?",
+  "en": "",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 0.299,
+  "confidence": "high"
+ },
+ {
+  "line": 168,
+  "start": 512.463,
+  "end": 512.903,
+  "te": "Nobody.",
+  "en": "",
+  "speech_vs_text": 1.14,
+  "boundary_margin": 3.269,
+  "confidence": "high"
+ },
+ {
+  "line": 169,
+  "start": 513.242,
+  "end": 514.422,
+  "te": "Nobody is stopping us.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.796,
+  "confidence": "high"
+ },
+ {
+  "line": 170,
+  "start": 514.857,
+  "end": 518.16,
+  "te": "But look at what China had, that India does not have yet.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.796,
+  "confidence": "high"
+ },
+ {
+  "line": 171,
+  "start": 518.529,
+  "end": 520.751,
+  "te": "A full-size test track on land.",
+  "en": "",
+  "speech_vs_text": 1.43,
+  "boundary_margin": 0.493,
+  "confidence": "check"
+ },
+ {
+  "line": 172,
+  "start": 521.083,
+  "end": 522.875,
+  "te": "And a ship waiting for the machine.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.493,
+  "confidence": "high"
+ },
+ {
+  "line": 173,
+  "start": 523.32,
+  "end": 527.175,
+  "te": "The Navy's own fifteen-year plan asks for two electric catapults.",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.244,
+  "confidence": "high"
+ },
+ {
+  "line": 174,
+  "start": 527.524,
+  "end": 533.804,
+  "te": "But the next carrier close to approval, at an estimated forty thousand crore rupees, is a repeat of Vikrant.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.244,
+  "confidence": "high"
+ },
+ {
+  "line": 175,
+  "start": 534.18,
+  "end": 534.82,
+  "te": "With a ramp.",
+  "en": "",
+  "speech_vs_text": 0.81,
+  "boundary_margin": 0.143,
+  "confidence": "high"
+ },
+ {
+  "line": 176,
+  "start": 535.2,
+  "end": 536.578,
+  "te": "Then why not just buy one?",
+  "en": "",
+  "speech_vs_text": 1.07,
+  "boundary_margin": 0.143,
+  "confidence": "high"
+ },
+ {
+  "line": 177,
+  "start": 536.992,
+  "end": 541.616,
+  "te": "You may remember the reports in twenty seventeen, that America was ready to sell it to India.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 1.528,
+  "confidence": "high"
+ },
+ {
+  "line": 178,
+  "start": 542.09,
+  "end": 542.916,
+  "te": "Nothing was signed.",
+  "en": "",
+  "speech_vs_text": 0.8,
+  "boundary_margin": 0.157,
+  "confidence": "high"
+ },
+ {
+  "line": 179,
+  "start": 543.227,
+  "end": 546.25,
+  "te": "Later, America cleared the same system for France.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.157,
+  "confidence": "high"
+ },
+ {
+  "line": 180,
+  "start": 546.613,
+  "end": 552.819,
+  "te": "The estimate for one ship's set, with the wires that stop a landing jet, was one point three billion dollars.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 0.168,
+  "confidence": "high"
+ },
+ {
+  "line": 181,
+  "start": 553.163,
+  "end": 556.602,
+  "te": "Around eleven thousand crore rupees, before you build the ship.",
+  "en": "",
+  "speech_vs_text": 0.94,
+  "boundary_margin": 0.168,
+  "confidence": "high"
+ },
+ {
+  "line": 182,
+  "start": 556.945,
+  "end": 558.323,
+  "te": "So let me put it to you plainly.",
+  "en": "",
+  "speech_vs_text": 0.89,
+  "boundary_margin": 0.599,
+  "confidence": "high"
+ },
+ {
+  "line": 183,
+  "start": 558.717,
+  "end": 559.953,
+  "te": "The jets are ordered.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.777,
+  "confidence": "high"
+ },
+ {
+  "line": 184,
+  "start": 560.309,
+  "end": 563.968,
+  "te": "Twenty-six Rafales, for about sixty-three thousand crore rupees.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.314,
+  "confidence": "high"
+ },
+ {
+  "line": 185,
+  "start": 564.355,
+  "end": 566.367,
+  "te": "The catapult is the size of a lorry.",
+  "en": "",
+  "speech_vs_text": 1.02,
+  "boundary_margin": 0.26,
+  "confidence": "high"
+ },
+ {
+  "line": 186,
+  "start": 566.728,
+  "end": 568.539,
+  "te": "And the ship is not approved.",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.097,
+  "confidence": "high"
+ },
+ {
+  "line": 187,
+  "start": 568.873,
+  "end": 572.449,
+  "te": "Until that changes, India's Rafales will fly from ramps.",
+  "en": "",
+  "speech_vs_text": 1.13,
+  "boundary_margin": 0.097,
+  "confidence": "high"
+ },
+ {
+  "line": 188,
+  "start": 572.846,
+  "end": 574.489,
+  "te": "Now look at what India does have.",
+  "en": "",
+  "speech_vs_text": 0.98,
+  "boundary_margin": 1.398,
+  "confidence": "high"
+ },
+ {
+  "line": 189,
+  "start": 574.93,
+  "end": 578.542,
+  "te": "This is the Navy that took a catapult to war on a cracked boiler.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.329,
+  "confidence": "high"
+ },
+ {
+  "line": 190,
+  "start": 578.903,
+  "end": 582.197,
+  "te": "And India designed and built the new Vikrant itself.",
+  "en": "",
+  "speech_vs_text": 1.19,
+  "boundary_margin": 0.329,
+  "confidence": "high"
+ },
+ {
+  "line": 191,
+  "start": 582.647,
+  "end": 587.088,
+  "te": "What is missing is a decision, a test track, and ten patient years.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 0.246,
+  "confidence": "high"
+ },
+ {
+  "line": 192,
+  "start": 587.485,
+  "end": 588.983,
+  "te": "And you should hear the other side too.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.246,
+  "confidence": "high"
+ },
+ {
+  "line": 193,
+  "start": 589.327,
+  "end": 594.429,
+  "te": "Some of India's own defence leaders have said, submarines and the Army must come first.",
+  "en": "",
+  "speech_vs_text": 1.05,
+  "boundary_margin": 0.658,
+  "confidence": "high"
+ },
+ {
+  "line": 194,
+  "start": 594.727,
+  "end": 597.715,
+  "te": "That argument is one reason the ship still waits.",
+  "en": "",
+  "speech_vs_text": 1.16,
+  "boundary_margin": 0.989,
+  "confidence": "high"
+ },
+ {
+  "line": 195,
+  "start": 598.093,
+  "end": 599.323,
+  "te": "So what should you carry home?",
+  "en": "",
+  "speech_vs_text": 0.79,
+  "boundary_margin": 0.193,
+  "confidence": "high"
+ },
+ {
+  "line": 196,
+  "start": 599.774,
+  "end": 602.192,
+  "te": "The motor is a cousin of your ceiling fan.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 0.166,
+  "confidence": "high"
+ },
+ {
+  "line": 197,
+  "start": 602.549,
+  "end": 604.903,
+  "te": "The energy is six days of your home.",
+  "en": "",
+  "speech_vs_text": 1.18,
+  "boundary_margin": 0.166,
+  "confidence": "high"
+ },
+ {
+  "line": 198,
+  "start": 605.29,
+  "end": 607.535,
+  "te": "Everything hard is in the three seconds.",
+  "en": "",
+  "speech_vs_text": 0.95,
+  "boundary_margin": 0.52,
+  "confidence": "high"
+ },
+ {
+  "line": 199,
+  "start": 607.892,
+  "end": 608.852,
+  "te": "You can buy the jet.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.47,
+  "confidence": "high"
+ },
+ {
+  "line": 200,
+  "start": 609.238,
+  "end": 610.47,
+  "te": "You have to build the throw.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 0.47,
+  "confidence": "high"
+ },
+ {
+  "line": 201,
+  "start": 610.915,
+  "end": 612.179,
+  "te": "Three things for you to watch.",
+  "en": "",
+  "speech_vs_text": 0.82,
+  "boundary_margin": 1.004,
+  "confidence": "high"
+ },
+ {
+  "line": 202,
+  "start": 612.525,
+  "end": 614.089,
+  "te": "The decision on the next carrier.",
+  "en": "",
+  "speech_vs_text": 0.9,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 203,
+  "start": 614.411,
+  "end": 617.317,
+  "te": "The first Indian Rafale, due around twenty twenty-nine.",
+  "en": "",
+  "speech_vs_text": 1.0,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ },
+ {
+  "line": 204,
+  "start": 617.586,
+  "end": 620.679,
+  "te": "And the day that lorry in Pune throws something heavier.",
+  "en": "",
+  "speech_vs_text": 1.04,
+  "boundary_margin": 2.495,
+  "confidence": "high"
+ },
+ {
+  "line": 205,
+  "start": 621.1,
+  "end": 624.141,
+  "te": "If this made a hard subject simple for you, subscribe.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.269,
+  "confidence": "high"
+ },
+ {
+  "line": 206,
+  "start": 624.556,
+  "end": 628.384,
+  "te": "When that decision comes, you and I will open up that deck together.",
+  "en": "",
+  "speech_vs_text": 1.01,
+  "boundary_margin": 0.269,
+  "confidence": "high"
+ },
+ {
+  "line": 207,
+  "start": 628.764,
+  "end": 629.837,
+  "te": "And tell me in the comments.",
+  "en": "",
+  "speech_vs_text": 0.75,
+  "boundary_margin": 1.208,
+  "confidence": "high"
+ },
+ {
+  "line": 208,
+  "start": 630.112,
+  "end": 635.464,
+  "te": "If that forty thousand crore were your money, what would you build — a ramp, or a catapult?",
+  "en": "",
+  "speech_vs_text": 0.92,
+  "boundary_margin": 0.542,
+  "confidence": "high"
+ },
+ {
+  "line": 209,
+  "start": 635.846,
+  "end": 636.29,
+  "te": "Next time.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 0.542,
+  "confidence": "high"
+ },
+ {
+  "line": 210,
+  "start": 636.711,
+  "end": 639.676,
+  "te": "A submarine that cannot hear what is right behind it.",
+  "en": "",
+  "speech_vs_text": 0.99,
+  "boundary_margin": 0.661,
+  "confidence": "high"
+ },
+ {
+  "line": 211,
+  "start": 640.028,
+  "end": 641.56,
+  "te": "This is Be Practical with Kishore.",
+  "en": "",
+  "speech_vs_text": 0.85,
+  "boundary_margin": 1.411,
+  "confidence": "high"
+ },
+ {
+  "line": 212,
+  "start": 641.966,
+  "end": 642.689,
+  "te": "Stay practical.",
+  "en": "",
+  "speech_vs_text": 0.86,
+  "boundary_margin": 9.9,
+  "confidence": "high"
+ }
+]

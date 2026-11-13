@@ -57,4 +57,16 @@
   three blocks of its own (real-time pause, no edit of the take), "Bilu" respelt "Beeloo" in `vo.txt` and
   `config/pronunciation.csv`, TV-first notes for S1, the power spike and S3 in `plan.md`. Not taken, with reasons, in
   `narration.md`. Both gates pass (10,282 characters, still two takes split at chapter 4).
-- **Waiting for the owner:** approval of `narration.md`. No audio before that. Next steps unchanged from session 4.
+- **Owner, 2026-11-13: narration approved** ("max 10000 characters in one block, split where a natural split happens").
+- **Audio:** two takes (Akash, Eleven v4, Creative 0.0, 50%, MP3 192 kbps), split at chapter 4 ("Has anyone made it
+  work?"): `vo_blocks.md` built with `--limit 6127` (blocks 6,127 and 4,148 characters). No re-takes. Credit before:
+  19,005 left; the API billed 4,521. Joined with `vo_rejoin.py`, gap 1.25 s at the chapter break, room tone −73 dB.
+  Then 0.25 s of the take's own pause (−77 dB) added before "Three." so the count runs evenly (onsets 0.95 s and 0.99 s
+  apart; PLAYBOOK §6.6 allows lengthening pauses with room tone; no word touched). **642.98 s (10:43)**, review MP3
+  −16.7 LUFS, −1.6 dBTP (two-pass linear loudnorm).
+- `align/` (script.tsv 212 sentences, align.json, sentences.json): 206 high confidence; the 6 flagged are short punch
+  lines ("No.", "So steam is gone.", Nanda's two lines). `vo_take_check.py`: OK.
+- Drive `Creator/English/carrier-catapult/vo/`: `cat_vo_full.mp3`, `cat_vo_full.wav`, both takes with their `.txt`.
+- **Waiting for the owner:** approval of the joined audio (listen for Bilu, Rafale, Fujian, Chowdhury, Cox's Bazar,
+  Vir Chakra, and the count). **Next after approval:** `vo_lock.py` → `vo/timing.json` and captions (caption form
+  "Bilu", not "Beeloo"); word map; Blender heroes H1, H3, H4; the second footage request.
