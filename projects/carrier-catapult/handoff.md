@@ -110,4 +110,17 @@
 - **Stock:** Pixabay API: ceiling fan, coil winding, steam, an Indian city road (Drive `footage/stock-pixabay/`).
   Request r3 in `footage_requests.md` (Pexels, for the laptop): flyover end, cooker, family under the fan, meter,
   lattu, kirana balance, Indian engineers. **With the owner.**
-- **Next:** the Blender heroes H1, H3, H4; then the Remotion build.
+
+## Session 5, continued (2026-11-13): hero shots rendering
+- `scripts/blender/catapult_hero.py`: **H3 store** (the motor generator spins up, copper glows, the energy runs out
+  at 600), **H4 catapult** (1961 cutaway: the piston fires on steam, the shuttle drags the jet), **H4 drum** (cracks
+  glow, three steel bands ratchet tight at 420/560/700), **H4 room** (the gauge needle swings into the red and holds,
+  the camera pulls back through the empty boiler room). Test stills checked by eye at each fix.
+- **H1 dropped** (tried and judged crude): the deck moments now use the Navy's own footage (TRAP, LAND, LAND-NDTV);
+  the flat-to-ramp morph and the hull cutaway become Remotion drawings (R) on the drafting table. `word_map.md` updated.
+- **Rendering on GitHub (owner, 2026-11-13: "all 20 runners are free")**: blender-render runs 21 store (6 shards),
+  22 drum (6), 23 catapult (4), 24 room (4); 1920x1080, 24 samples, every 2nd frame; about 54 s a frame on a runner,
+  so about 75 minutes. A check-in is scheduled to collect, check and upload them to Drive `renders/`.
+- **Next:** collect the renders; the Remotion build (word map scenes, R drawings: the deck plan, the balance, the
+  radar circles, the side-elevation morph, the hull cutaway, the working of the 19 units, the engine bars, the DOT&E
+  bars, the 17 m vs 90 m pull-back, India maps on the official boundary); then music and sound; the 720p review cut.
