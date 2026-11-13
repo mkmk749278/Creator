@@ -1,0 +1,848 @@
+1
+00:00:00,000 --> 00:00:02,122
+The twenty-ninth of October.
+
+2
+00:00:02,122 --> 00:00:08,795
+A Rafale fighter, here for trials, comes down on India's newest aircraft carrier, I-N-S Vikrant.
+
+3
+00:00:08,795 --> 00:00:14,146
+This deck is missing something that India's first carrier had, back in nineteen sixty-one.
+
+4
+00:00:14,146 --> 00:00:15,284
+A catapult.
+
+5
+00:00:15,284 --> 00:00:18,460
+The Rafale was built to be thrown off a ship by one.
+
+6
+00:00:18,460 --> 00:00:20,489
+Vikrant has a ramp instead.
+
+7
+00:00:20,489 --> 00:00:22,420
+The jet can leave by that ramp.
+
+8
+00:00:22,420 --> 00:00:24,253
+It passed that test in Goa.
+
+9
+00:00:24,253 --> 00:00:25,494
+But think about this.
+
+10
+00:00:25,494 --> 00:00:29,378
+Sixty-five years ago, India was throwing jets off a ship.
+
+11
+00:00:29,378 --> 00:00:35,990
+Today the Navy wants a catapult again — and the one India has shown so far, sits on the back of a lorry.
+
+12
+00:00:35,990 --> 00:00:37,633
+So what happened in between?
+
+13
+00:00:37,633 --> 00:00:39,941
+And here is something you would not guess.
+
+14
+00:00:39,941 --> 00:00:44,729
+The electricity to throw a fighter jet costs you less than two hundred rupees.
+
+15
+00:00:44,729 --> 00:00:47,770
+Yet it is one of the hardest machines on earth.
+
+16
+00:00:47,770 --> 00:00:50,417
+By the end of this film, you will see why.
+
+17
+00:00:50,417 --> 00:00:52,752
+Come and stand on Vikrant's deck with me.
+
+18
+00:00:52,752 --> 00:00:57,683
+In front of you, the deck curves upward, like a flyover that ends in the sky.
+
+19
+00:00:57,683 --> 00:01:00,109
+Do you see any moving parts on that ramp?
+
+20
+00:01:00,109 --> 00:01:00,780
+None.
+
+21
+00:01:00,780 --> 00:01:05,240
+The jet opens its engines fully, runs, and the curve throws it up.
+
+22
+00:01:05,240 --> 00:01:06,513
+Nothing you can break.
+
+23
+00:01:06,513 --> 00:01:08,008
+Nothing you must repair.
+
+24
+00:01:08,008 --> 00:01:10,742
+You have to admit, it is a clever idea.
+
+25
+00:01:10,742 --> 00:01:11,921
+But here's the catch.
+
+26
+00:01:11,921 --> 00:01:16,169
+On a ramp, the jet must lift itself, with its own engines.
+
+27
+00:01:16,169 --> 00:01:17,952
+So you take off lighter.
+
+28
+00:01:17,952 --> 00:01:21,208
+You carry less fuel, or fewer weapons, or both.
+
+29
+00:01:21,208 --> 00:01:22,235
+How much lighter?
+
+30
+00:01:22,235 --> 00:01:24,374
+The Navy has not published that number.
+
+31
+00:01:24,374 --> 00:01:26,354
+So I won't invent one for you.
+
+32
+00:01:26,354 --> 00:01:28,723
+What nobody argues about is this.
+
+33
+00:01:28,723 --> 00:01:32,835
+You cannot get a heavy, slow aircraft off a ramp at all.
+
+34
+00:01:32,835 --> 00:01:35,446
+And which heavy aircraft matters most at sea?
+
+35
+00:01:35,446 --> 00:01:36,788
+The flying radar.
+
+36
+00:01:36,788 --> 00:01:41,546
+A plane with a big dish on its back, that sees trouble long before your ship can.
+
+37
+00:01:41,546 --> 00:01:44,263
+India's carriers do that job with a helicopter.
+
+38
+00:01:44,263 --> 00:01:45,070
+It works.
+
+39
+00:01:45,070 --> 00:01:50,641
+But ask naval experts, and they will tell you, a helicopter cannot do it as well as a plane.
+
+40
+00:01:50,641 --> 00:01:52,663
+So the ramp has a price.
+
+41
+00:01:52,663 --> 00:01:54,411
+Then why did India choose it?
+
+42
+00:01:54,411 --> 00:01:59,874
+To answer that, you must first see the catapult we already had, and how we let it go.
+
+43
+00:01:59,874 --> 00:02:03,082
+Belfast, the fourth of March, nineteen sixty-one.
+
+44
+00:02:03,082 --> 00:02:08,677
+India commissions its first aircraft carrier, bought from Britain and finished in that shipyard.
+
+45
+00:02:08,677 --> 00:02:10,674
+Her name, too, is Vikrant.
+
+46
+00:02:10,674 --> 00:02:13,361
+And under her deck is a steam catapult.
+
+47
+00:02:13,361 --> 00:02:15,236
+How does steam throw a jet?
+
+48
+00:02:15,236 --> 00:02:16,907
+You already own a small one.
+
+49
+00:02:16,907 --> 00:02:18,668
+The pressure cooker in your kitchen.
+
+50
+00:02:18,668 --> 00:02:23,198
+Steam builds up behind the weight, and when it goes, it goes with force.
+
+51
+00:02:23,198 --> 00:02:29,318
+On the ship, that steam drives a piston along a tube under the deck, and the piston drags the jet.
+
+52
+00:02:29,318 --> 00:02:31,231
+For nine years, it works.
+
+53
+00:02:31,231 --> 00:02:36,591
+Then, in June nineteen seventy, in Bombay, the engineers find cracks in a boiler.
+
+54
+00:02:36,591 --> 00:02:37,654
+Not one crack.
+
+55
+00:02:37,654 --> 00:02:40,329
+Many, in the drums that hold the water.
+
+56
+00:02:40,329 --> 00:02:41,896
+You cannot weld them.
+
+57
+00:02:41,896 --> 00:02:44,876
+And a lasting repair is not possible in India.
+
+58
+00:02:44,876 --> 00:02:46,245
+Do you see what that means?
+
+59
+00:02:46,245 --> 00:02:50,542
+The same steam that turns the propellers, also fires the catapult.
+
+60
+00:02:50,542 --> 00:02:56,643
+If you push those boilers too hard, in the words of Admiral Arun Prakash, they could simply blow up.
+
+61
+00:02:56,643 --> 00:02:58,481
+Would you send that ship to war?
+
+62
+00:02:58,481 --> 00:03:00,869
+So the ship is held to fourteen knots.
+
+63
+00:03:00,869 --> 00:03:03,389
+That is about twenty-six kilometres an hour.
+
+64
+00:03:03,389 --> 00:03:04,832
+Too slow for a carrier.
+
+65
+00:03:04,832 --> 00:03:08,767
+And some very senior officers say, leave her out of the next war.
+
+66
+00:03:08,767 --> 00:03:11,963
+The Navy chief, Admiral Nanda, will not have it.
+
+67
+00:03:11,963 --> 00:03:18,536
+If Vikrant sits out a war, he says, she will be called a white elephant, and naval flying will be written off.
+
+68
+00:03:18,536 --> 00:03:21,857
+So it comes down to the engine room, and to one man.
+
+69
+00:03:21,857 --> 00:03:25,078
+Commander Benoy Roy Chowdhury, the ship's engineer.
+
+70
+00:03:25,078 --> 00:03:27,010
+His shipmates call him Beeloo.
+
+71
+00:03:27,010 --> 00:03:30,221
+What would you do with a cracked boiler, and no spare?
+
+72
+00:03:30,221 --> 00:03:32,991
+Beeloo and his team put steel bands around it.
+
+73
+00:03:32,991 --> 00:03:36,283
+They reset the safety valves, to accept more risk.
+
+74
+00:03:36,283 --> 00:03:39,037
+And they keep the boiler room almost empty.
+
+75
+00:03:39,037 --> 00:03:43,374
+Because if a drum bursts, that room fills with superheated steam.
+
+76
+00:03:43,374 --> 00:03:44,353
+It holds.
+
+77
+00:03:44,353 --> 00:03:51,307
+On the fourth of December, nineteen seventy-one, Sea Hawk jets leave Vikrant's catapult, and strike Cox's Bazar.
+
+78
+00:03:51,307 --> 00:03:56,828
+And for his work in that boiler room, Beeloo is given the Vir Chakra, a medal for bravery.
+
+79
+00:03:56,828 --> 00:03:59,471
+So India did not only have a catapult.
+
+80
+00:03:59,471 --> 00:04:03,401
+India kept one alive with steel bands, and took it to war.
+
+81
+00:04:03,401 --> 00:04:05,064
+Then how did we lose it?
+
+82
+00:04:05,064 --> 00:04:10,334
+In the nineteen eighties, the Navy bought the Sea Harrier, a jet that needs no catapult.
+
+83
+00:04:10,334 --> 00:04:16,615
+The last planes that still needed the catapult, the old propeller planes, retired in nineteen eighty-nine.
+
+84
+00:04:16,615 --> 00:04:19,622
+So the catapult came out, and a ramp went on.
+
+85
+00:04:19,622 --> 00:04:20,693
+You can see why.
+
+86
+00:04:20,693 --> 00:04:22,023
+It made sense then.
+
+87
+00:04:22,023 --> 00:04:27,722
+And when India designed its own carrier, the new Vikrant, she was drawn around a ramp jet too.
+
+88
+00:04:27,722 --> 00:04:29,709
+Her engines are gas turbines.
+
+89
+00:04:29,709 --> 00:04:31,788
+They make no steam for a catapult.
+
+90
+00:04:31,788 --> 00:04:36,118
+And naval analysts say there is no room under that ramp to add one now.
+
+91
+00:04:36,118 --> 00:04:37,797
+So steam is gone.
+
+92
+00:04:37,797 --> 00:04:41,829
+If you want to throw a jet again, you have to do it with electricity.
+
+93
+00:04:41,829 --> 00:04:43,390
+Look up at your ceiling fan.
+
+94
+00:04:43,390 --> 00:04:44,690
+Do you know what turns it?
+
+95
+00:04:44,690 --> 00:04:46,138
+An induction motor.
+
+96
+00:04:46,138 --> 00:04:50,994
+Coils of wire in a circle, and a magnetic pull that chases round and round.
+
+97
+00:04:50,994 --> 00:04:54,369
+Now cut that circle in your mind, and unroll it flat.
+
+98
+00:04:54,369 --> 00:04:59,392
+You get a straight line of coils, about a hundred metres long, laid under the deck.
+
+99
+00:04:59,392 --> 00:05:01,448
+The pull no longer goes round.
+
+100
+00:05:01,448 --> 00:05:04,701
+It runs straight ahead, and it takes the jet with it.
+
+101
+00:05:04,701 --> 00:05:07,390
+Only the coils beside the jet are switched on.
+
+102
+00:05:07,390 --> 00:05:10,006
+A wave of force, racing down the deck.
+
+103
+00:05:10,006 --> 00:05:11,187
+Now count with me.
+
+104
+00:05:11,187 --> 00:05:12,134
+One.
+
+105
+00:05:12,134 --> 00:05:13,124
+Two.
+
+106
+00:05:13,124 --> 00:05:13,923
+Three.
+
+107
+00:05:13,923 --> 00:05:21,887
+By the time you finish counting, a thirty-tonne fighter has gone from standing still, to two hundred and forty kilometres an hour.
+
+108
+00:05:21,887 --> 00:05:24,354
+And what does that take, in electricity?
+
+109
+00:05:24,354 --> 00:05:26,218
+Here is the number I promised you.
+
+110
+00:05:26,218 --> 00:05:30,642
+The energy in that moving jet is about nineteen units of electricity.
+
+111
+00:05:30,642 --> 00:05:34,522
+An average Indian home uses that much in about six days.
+
+112
+00:05:34,522 --> 00:05:37,580
+On your bill, it is well under two hundred rupees.
+
+113
+00:05:37,580 --> 00:05:39,423
+Then where is the difficulty?
+
+114
+00:05:39,423 --> 00:05:41,107
+In the three seconds.
+
+115
+00:05:41,107 --> 00:05:44,158
+Your home sips that energy over six days.
+
+116
+00:05:44,158 --> 00:05:47,384
+The catapult must pour it out in three seconds.
+
+117
+00:05:47,384 --> 00:05:50,650
+At its peak, that is close to fifty megawatts.
+
+118
+00:05:50,650 --> 00:05:54,485
+More than half of what all four of Vikrant's engines make together.
+
+119
+00:05:54,485 --> 00:05:57,488
+Can you take that from a ship's engines, in an instant?
+
+120
+00:05:57,488 --> 00:05:58,111
+No.
+
+121
+00:05:58,111 --> 00:05:59,530
+So you save up.
+
+122
+00:05:59,530 --> 00:06:06,972
+Between launches, you spin up great steel machines, each one over thirty-six tonnes, like giant spinning tops.
+
+123
+00:06:06,972 --> 00:06:11,763
+Then you pull the energy back out of that spin, and that becomes the push.
+
+124
+00:06:11,763 --> 00:06:17,568
+And you must do this again every forty-five seconds, for years, on a ship at sea.
+
+125
+00:06:17,568 --> 00:06:19,685
+So now you know the real machine.
+
+126
+00:06:19,685 --> 00:06:20,618
+Not a motor.
+
+127
+00:06:20,618 --> 00:06:24,327
+A power station, that works for three seconds at a time.
+
+128
+00:06:25,523 --> 00:06:27,329
+Has anyone made it work?
+
+129
+00:06:27,329 --> 00:06:28,490
+Two navies have.
+
+130
+00:06:28,490 --> 00:06:31,474
+And their stories run in opposite directions.
+
+131
+00:06:31,474 --> 00:06:32,993
+Let's start with China.
+
+132
+00:06:32,993 --> 00:06:35,596
+China never sent a steam catapult to sea.
+
+133
+00:06:35,596 --> 00:06:40,590
+From twenty sixteen, it was throwing a test jet from catapults built on land.
+
+134
+00:06:40,590 --> 00:06:47,155
+Nine years later, in November twenty twenty-five, it commissioned the carrier Fujian, with electric catapults.
+
+135
+00:06:47,155 --> 00:06:50,820
+Fujian has already thrown a flying radar plane into the air.
+
+136
+00:06:50,820 --> 00:06:52,801
+And she is not nuclear powered.
+
+137
+00:06:52,801 --> 00:06:55,599
+So you do not need a reactor for this machine.
+
+138
+00:06:55,599 --> 00:06:57,383
+You need stored power.
+
+139
+00:06:57,383 --> 00:06:59,649
+And America, which invented it?
+
+140
+00:06:59,649 --> 00:07:03,289
+Its first ship with electric catapults is the U-S-S Ford.
+
+141
+00:07:03,289 --> 00:07:08,105
+The American Navy wanted more than four thousand launches between serious failures.
+
+142
+00:07:08,105 --> 00:07:12,026
+In twenty twenty, the testers measured one hundred and eighty-one.
+
+143
+00:07:12,026 --> 00:07:15,172
+In twenty twenty-two, six hundred and fourteen.
+
+144
+00:07:15,172 --> 00:07:16,139
+Far short.
+
+145
+00:07:16,139 --> 00:07:18,390
+But the ship did not stop flying.
+
+146
+00:07:18,390 --> 00:07:23,554
+By the programme's own count, the Ford has made more than thirty-six thousand launches.
+
+147
+00:07:23,554 --> 00:07:26,368
+Steam catapults had many decades to mature.
+
+148
+00:07:26,368 --> 00:07:28,044
+This one is still young.
+
+149
+00:07:28,044 --> 00:07:34,221
+Even so, this August, the American President ordered a plan to go back to steam on a future carrier.
+
+150
+00:07:34,221 --> 00:07:38,646
+The company that builds the electric one has asked the government to think again.
+
+151
+00:07:38,646 --> 00:07:41,859
+As this film is made, nothing final has been announced.
+
+152
+00:07:41,859 --> 00:07:46,505
+So the inventor is in two minds, and the newcomer is already flying.
+
+153
+00:07:46,505 --> 00:07:48,052
+Where does that leave India?
+
+154
+00:07:48,052 --> 00:07:54,777
+In Pune, in Maharashtra, engineers at a D-R-D-O laboratory are building India's own electric catapult.
+
+155
+00:07:54,777 --> 00:07:55,943
+Remember the lorry?
+
+156
+00:07:55,943 --> 00:07:56,729
+This is it.
+
+157
+00:07:56,729 --> 00:08:00,250
+At the Bengaluru air show last year, it stood on a trailer.
+
+158
+00:08:00,250 --> 00:08:05,887
+As reported, it is meant to throw up to four hundred kilos, over about seventeen metres.
+
+159
+00:08:05,887 --> 00:08:11,224
+I say as reported, because D-R-D-O itself has published very little about it.
+
+160
+00:08:11,224 --> 00:08:14,416
+Now put the Navy's need beside it, and you see the gap.
+
+161
+00:08:14,416 --> 00:08:15,949
+Not four hundred kilos.
+
+162
+00:08:15,949 --> 00:08:17,141
+Thirty tonnes.
+
+163
+00:08:17,141 --> 00:08:18,692
+Not seventeen metres.
+
+164
+00:08:18,692 --> 00:08:20,021
+About a hundred.
+
+165
+00:08:20,021 --> 00:08:22,566
+That is seventy-five times the weight.
+
+166
+00:08:22,566 --> 00:08:28,161
+A full-size one, say officials quoted in the defence press, is a decade or more away.
+
+167
+00:08:28,161 --> 00:08:32,463
+You might ask me, Kishore, who is stopping India from building its own?
+
+168
+00:08:32,463 --> 00:08:33,242
+Nobody.
+
+169
+00:08:33,242 --> 00:08:34,857
+Nobody is stopping us.
+
+170
+00:08:34,857 --> 00:08:38,529
+But look at what China had, that India does not have yet.
+
+171
+00:08:38,529 --> 00:08:41,083
+A full-size test track on land.
+
+172
+00:08:41,083 --> 00:08:43,320
+And a ship waiting for the machine.
+
+173
+00:08:43,320 --> 00:08:47,524
+The Navy's own fifteen-year plan asks for two electric catapults.
+
+174
+00:08:47,524 --> 00:08:54,180
+But the next carrier close to approval, at an estimated forty thousand crore rupees, is a repeat of Vikrant.
+
+175
+00:08:54,180 --> 00:08:55,200
+With a ramp.
+
+176
+00:08:55,200 --> 00:08:56,992
+Then why not just buy one?
+
+177
+00:08:56,992 --> 00:09:02,090
+You may remember the reports in twenty seventeen, that America was ready to sell it to India.
+
+178
+00:09:02,090 --> 00:09:03,227
+Nothing was signed.
+
+179
+00:09:03,227 --> 00:09:06,613
+Later, America cleared the same system for France.
+
+180
+00:09:06,613 --> 00:09:13,163
+The estimate for one ship's set, with the wires that stop a landing jet, was one point three billion dollars.
+
+181
+00:09:13,163 --> 00:09:16,945
+Around eleven thousand crore rupees, before you build the ship.
+
+182
+00:09:16,945 --> 00:09:18,717
+So let me put it to you plainly.
+
+183
+00:09:18,717 --> 00:09:20,309
+The jets are ordered.
+
+184
+00:09:20,309 --> 00:09:24,355
+Twenty-six Rafales, for about sixty-three thousand crore rupees.
+
+185
+00:09:24,355 --> 00:09:26,728
+The catapult is the size of a lorry.
+
+186
+00:09:26,728 --> 00:09:28,873
+And the ship is not approved.
+
+187
+00:09:28,873 --> 00:09:32,846
+Until that changes, India's Rafales will fly from ramps.
+
+188
+00:09:32,846 --> 00:09:34,930
+Now look at what India does have.
+
+189
+00:09:34,930 --> 00:09:38,903
+This is the Navy that took a catapult to war on a cracked boiler.
+
+190
+00:09:38,903 --> 00:09:42,647
+And India designed and built the new Vikrant itself.
+
+191
+00:09:42,647 --> 00:09:47,485
+What is missing is a decision, a test track, and ten patient years.
+
+192
+00:09:47,485 --> 00:09:49,327
+And you should hear the other side too.
+
+193
+00:09:49,327 --> 00:09:54,727
+Some of India's own defence leaders have said, submarines and the Army must come first.
+
+194
+00:09:54,727 --> 00:09:58,093
+That argument is one reason the ship still waits.
+
+195
+00:09:58,093 --> 00:09:59,774
+So what should you carry home?
+
+196
+00:09:59,774 --> 00:10:02,549
+The motor is a cousin of your ceiling fan.
+
+197
+00:10:02,549 --> 00:10:05,290
+The energy is six days of your home.
+
+198
+00:10:05,290 --> 00:10:07,892
+Everything hard is in the three seconds.
+
+199
+00:10:07,892 --> 00:10:09,238
+You can buy the jet.
+
+200
+00:10:09,238 --> 00:10:10,915
+You have to build the throw.
+
+201
+00:10:10,915 --> 00:10:12,525
+Three things for you to watch.
+
+202
+00:10:12,525 --> 00:10:14,411
+The decision on the next carrier.
+
+203
+00:10:14,411 --> 00:10:17,586
+The first Indian Rafale, due around twenty twenty-nine.
+
+204
+00:10:17,586 --> 00:10:21,100
+And the day that lorry in Pune throws something heavier.
+
+205
+00:10:21,100 --> 00:10:24,556
+If this made a hard subject simple for you, subscribe.
+
+206
+00:10:24,556 --> 00:10:28,764
+When that decision comes, you and I will open up that deck together.
+
+207
+00:10:28,764 --> 00:10:30,112
+And tell me in the comments.
+
+208
+00:10:30,112 --> 00:10:35,846
+If that forty thousand crore were your money, what would you build — a ramp, or a catapult?
+
+209
+00:10:35,846 --> 00:10:36,711
+Next time.
+
+210
+00:10:36,711 --> 00:10:40,028
+A submarine that cannot hear what is right behind it.
+
+211
+00:10:40,028 --> 00:10:41,966
+This is Be Practical with Kishore.
+
+212
+00:10:41,966 --> 00:10:42,940
+Stay practical.
+
