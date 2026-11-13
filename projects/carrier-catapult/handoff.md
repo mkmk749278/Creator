@@ -67,6 +67,15 @@
 - `align/` (script.tsv 212 sentences, align.json, sentences.json): 206 high confidence; the 6 flagged are short punch
   lines ("No.", "So steam is gone.", Nanda's two lines). `vo_take_check.py`: OK.
 - Drive `Creator/English/carrier-catapult/vo/`: `cat_vo_full.mp3`, `cat_vo_full.wav`, both takes with their `.txt`.
-- **Waiting for the owner:** approval of the joined audio (listen for Bilu, Rafale, Fujian, Chowdhury, Cox's Bazar,
-  Vir Chakra, and the count). **Next after approval:** `vo_lock.py` → `vo/timing.json` and captions (caption form
-  "Bilu", not "Beeloo"); word map; Blender heroes H1, H3, H4; the second footage request.
+
+## Session 5, continued (2026-11-13): audio approved and locked
+- **Owner, 2026-11-13: "Audio aproved".** Locked with `vo_lock.py` on `cat_vo_full.mp3` (SHA-256 892915fe…,
+  642.98 s, 60 fps, 4 s outro): `vo/timing.json` (212 sentences, 1,877 words, 7 chapters), `vo/captions.en.srt` (real
+  forms from `vo/caption_forms.tsv`: Bilu, INS, USS, DRDO, dates, km/h, ₹ with Indian grouping), `vo/lock.json`.
+  The two flagged sentences ("One.", "No.") sit where the first alignment put them; nothing set by hand.
+  Render copy `vo_full.wav` (48 kHz) in Drive `English/carrier-catapult/vo/`.
+- Chapters (description): 00:00 Rafale on INS Vikrant without a catapult · 00:50 Why INS Vikrant has a ski-jump
+  ramp · 01:59 India's 1961 steam catapult and the 1971 war · 04:41 How an electric catapult (EMALS) works · 06:25
+  China's Fujian vs America's USS Ford · 07:48 DRDO's electric catapult demonstrator · 09:32 What India needs next.
+- **Next:** the word map (`word_map.md`, idea level per sentence), the Blender heroes H1, H3, H4, the second footage
+  request (ramp launches, Sea Hawks, the Aero India demonstrator), then the Remotion build.
