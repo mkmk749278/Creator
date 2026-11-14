@@ -199,3 +199,20 @@
    **the owner approves the cut**, then the 4K master (`scale 2`), then the package when asked.
 4. Before upload: the fresh-facts gate (PLAYBOOK §8): the `fresh` rows in `claims.csv` (the next carrier's status,
    the US steam plan, the rupee rate for $1.321 billion).
+
+## Session 6 (2026-11-14): viewer-review fixes → r4
+- Every point of `review/review_viewer_r3.md` checked on stills, fixed in code: `review/review_ack_r1.md` (FIXED 1–10,
+  islands line not added: no source). New drawings: `RampLoad`, `Cycle45`, `Queue`, `PriceShip`, `DocPair`; `DeckPlan
+  oldAt` (the 1961 ship); lower-thirds moved above the subtitle zone in `common.tsx` `tag()`.
+- Sea Harrier photo (U.S. Navy, PD) in Drive `render-media/photos/sea_harrier.jpg`, logged.
+- End card 20 s: `vo/timing.json` outro 20 (39,849 frames; same as `vo_lock.py --outro 20`). `scripts/score_mix.py`:
+  "end" = picture end. New mix in Drive `mix/` (−14.0 LUFS, −1.4 dBTP; voice −15.0 vs bed −35.6 LUFS).
+- **r4 dispatched:** run 43578275297 (6 runners) → Drive `renders/carrier-catapult_review_r4_720p.mp4`.
+- **Next:** our review of r4 (freeze, loudness, frames at every changed beat), then r4 + `review_ack_r1.md` to the
+  owner for approval; unshare r3 (Drive file 17N1kR999AlaYPqynqS9aPBANWBG4Rggg); then the 4K master.
+- **r4 (run 43578275297) checked:** −14.0 LUFS, −1.4 dBTP, no black; frames at every changed beat right. Found and
+  fixed: the 1961 label touched the old ship's island, the document heads were cut off, the 20 s end card held
+  still (freezes from 10:45). **r5** (run 43580873877, Drive `renders/carrier-catapult_review_r5_720p.mp4`, file
+  1TceL2huLkdlBnb2eP475N5WbNGitBa4P): −14.0 LUFS, −1.4 dBTP, 11:04, no freezes, no black; the three spots checked.
+- **Next:** the owner approves r5 (or asks for changes); then unshare r3 (17N1kR999AlaYPqynqS9aPBANWBG4Rggg), the 4K
+  master (`scale 2`, same workflow), the package when asked, the fresh-facts gate within 24 h of upload.

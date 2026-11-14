@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import type {Part} from '../Film';
-import {ChinaIndia, DeckPlan, Doc, MeterSolo, RampOrCatapult, ScaleCompare, SubBlind, ThreeItems, ThreeSlots, TwoShips, Watch} from '../parts/drawings';
+import {ChinaIndia, DeckPlan, Doc, MeterSolo, PriceShip, Queue, RampOrCatapult, ScaleCompare, SubBlind, ThreeItems, ThreeSlots, TwoShips, Watch} from '../parts/drawings';
 import {Clip, Plate} from '../parts/kit';
 import {SeaMap} from '../parts/SeaMap';
 import {C, F} from '../theme';
@@ -28,11 +28,13 @@ const ch5: Part = {
 				<Doc at={l} head="DEFENCE PRESS · 15 APRIL 2025 · OFFICIALS QUOTED" lines={['A full-size catapult for fighters:', '“a decade or more”']} mark={1} markAt={at(w0(164, 'decade'), S(164), l)} stamp="AS REPORTED" />
 			</Plate>
 		)),
-		clip(S(165), 'PX_coil', CR.px, 2.0, 'ILLUSTRATIVE FOOTAGE'),
+		// r3: the viewer's question over Vikrant's own deck, not hobby coil stock
+		clip(S(165), 'TRAP_deck', CR.navyPrint, 1.5),
 		clip(S(166), 'PXL_tech', CR.pex, 2.0, 'ILLUSTRATIVE FOOTAGE'),
 		draw(S(168), 'china-india', (d, l) => <ChinaIndia trackAt={at(w0(168, 'china'), S(168), l)} shipAt={at(w0(170, 'ship'), S(168), l)} />, 'ILLUSTRATION'),
 		draw(S(171), 'two-ships', (d, l) => <TwoShips slotsAt={at(w0(171, 'plan'), S(171), l)} rampAt={at(w0(172, 'repeat'), S(171), l)} />, 'ILLUSTRATION'),
-		clip(S(174), 'FORD_cat', CR.usn, 3.0),
+		// r3 fix 8: the American system itself (Lakehurst), not a sixth Ford shot
+		clip(S(174), 'EM12_slot', CR.usn, 2.0),
 		shot(S(175), 'doc-2017', (d, l) => (
 			<Plate dur={d} seed="usni">
 				<Doc at={l} head="USNI NEWS · 20 OCTOBER 2017" lines={['“Reports: U.S. Offers EMALS', 'for Indian Carrier Development Program”']} />
@@ -44,17 +46,20 @@ const ch5: Part = {
 					at={l}
 					head="US NOTICE (DSCA) · 21 DECEMBER 2021"
 					lines={['Possible sale to France:', 'EMALS and arresting gear, one ship', 'Estimated cost: $1.321 billion']}
-					mark={2}
-					markAt={at(w0(178, 'one'), S(177), l)}
+					mark={0}
+					markAt={at(w0(177, 'france'), S(177), l)}
 				/>
 			</Plate>
 		)),
+		// r3 fix 5: the card leaves after its sentence; the price sits over an empty, dashed ship
+		draw(S(178), 'price-ship', (d, l) => <PriceShip priceAt={at(w0(178, 'billion'), S(178), l) - 50} wiresAt={at(w0(178, 'wires'), S(178), l)} shipAt={at(w0(179, 'ship'), S(178), l)} />, 'OUR CALCULATION'),
 		draw(S(180), 'three-items', (d, l) => <ThreeItems tickAt={at(w0(181, 'ordered'), S(180), l)} smallAt={at(w0(183, 'small'), S(180), l)} dotAt={at(w0(184, 'not'), S(180), l)} />, 'ILLUSTRATION'),
 		clip(pre(w0(182, 'twenty')), 'LAND_touch', CR.navyIT, 1.5),
 		draw(S(183), 'three-items-2', (d, l) => <ThreeItems tickAt={0} smallAt={at(w0(183, 'small'), S(183), l)} dotAt={at(w0(184, 'not'), S(183), l)} />, 'ILLUSTRATION'),
 		insert(S(185), 'LAND_ramp', CR.navyNDTV, 16 / 9, 1.0),
 	],
 	overlays: [
+		ask(w0(174, 'why'), s1(174) + 20, 'WHY NOT JUST BUY ONE?'),
 		tag(w0(156, 'four'), s1(156), '400 KG · ABOUT 17 M', 140, 180, 64, C.slot, true, 'AS REPORTED'),
 		tag(w0(157, 'published'), s1(157), 'DRDO HAS PUBLISHED LITTLE', 140, 860, 50),
 		tag(w0(163, 'seventy'), s1(163), '×75 THE WEIGHT', 140, 180, 80, C.slot, true),
@@ -77,8 +82,8 @@ const landing: Part = {
 		draw(S(189), 'three-slots', (d, l) => (
 			<ThreeSlots at={[at(w0(189, 'decision'), S(189), l), at(w0(189, 'test'), S(189), l), at(w0(189, 'ten'), S(189), l)]} words={['A DECISION', 'A TEST TRACK', '10 YEARS']} />
 		)),
-		shot(S(190), 'map-india', (d) => <SeaMap dur={d} keys={[{f: 0, lon: 80, lat: 21, zoom: 1.0}, {f: d, lon: 79, lat: 20, zoom: 1.25}]} />),
-		clip(S(192), 'TRAP_deck', CR.navyPrint, 0.2),
+		// r3 fix 9: the other side as a queue at one counter (the still map is gone); no islands line: no source
+		draw(S(190), 'queue', (d, l) => <Queue passAt={at(w0(191, 'submarines'), S(190), l)} waitAt={at(w0(192, 'waits'), S(190), l)} />, 'ILLUSTRATION'),
 		clip(S(193), 'LAND_bow', CR.navyIT, 1.0),
 		clip(S(194), 'PX_fan', CR.px, 6.0),
 		shot(S(195), 'meter-six', (d, l) => (

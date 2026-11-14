@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import type {Part} from '../Film';
-import {Doc, DoteBars, EngineBars, FanUnroll, LandTrack, Radar, TwoMeters, Working} from '../parts/drawings';
+import {Cycle45, DocPair, DoteBars, EngineBars, FanUnroll, LandTrack, Radar, TwoMeters, Working} from '../parts/drawings';
 import {Clip, Plate} from '../parts/kit';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
@@ -44,8 +44,11 @@ const ch3: Part = {
 		insert(pre2(w0(121, 'spinning')), 'PXL_lattu', CR.pex, 9 / 16, 1.0, 900),
 		// the energy goes out along the bus at 10 s in the render: on "pull"
 		hero(S(122), 'H_store', 10.0 - (w0(122, 'pull') - S(122)) / 60, 'ILLUSTRATION · SIMPLIFIED'),
-		clip(S(123), 'FORD_launch', CR.usn, 5.5),
+		// r3 fix 8: no fourth Ford shot; the 45-second cycle as a dial (one turn = one launch), running away on "years"
+		draw(S(123), 'cycle45', (d, l) => <Cycle45 yearsAt={at(w0(123, 'years'), S(123), l)} />, 'ILLUSTRATION'),
 		hero(S(124), 'H_store', 12.5, 'ILLUSTRATION · SIMPLIFIED'),
+		// "a power station": the 49 MW spike against Vikrant's four engines, once more
+		draw(pre2(w0(126, 'power')), 'engine-bars-2', (d, l) => <EngineBars barsAt={0} spikeAt={l + 6} />, 'OUR CALCULATION'),
 	],
 	overlays: [
 		tag(w0(92, 'ceiling'), s1(93), 'YOUR CEILING FAN', 140, 860, 56),
@@ -55,7 +58,7 @@ const ch3: Part = {
 		big(w0(104, 'two'), w0(105, 'three') - 4, 'TWO'),
 		big(w0(105, 'three'), s1(105) + 18, 'THREE', C.slot),
 		tag(w0(106, 'thirty'), s1(106), '30-TONNE FIGHTER', 140, 760, 56),
-		cnt(w0(106, 'standing'), w0(106, 'hour'), s1(106) + 20, 240, 'KM/H', 140, 180, 120, C.slot),
+		cnt(w0(106, 'standing'), w0(106, 'hour'), s1(106) + 20, 240, 'KM/H', 140, 180, 120, C.slot, 0, w0(106, 'thirty')),
 		tag(w0(110, 'six'), s1(110), 'ABOUT 6 DAYS OF YOUR HOME', 140, 860, 54, C.slot),
 		tag(w0(113, 'three'), s1(113), 'IN THE THREE SECONDS', 140, 860, 60, C.slot),
 		tag(w0(117, 'half'), s1(117), 'MORE THAN HALF', 140, 180, 60, C.red),
@@ -63,8 +66,7 @@ const ch3: Part = {
 		tag(w0(120, 'save'), s1(120), 'SO YOU SAVE UP', 140, 860, 56),
 		tag(w0(121, 'thirty'), s1(121), 'EACH OVER 36 TONNES', 140, 860, 54, C.copper),
 		tag(w0(122, 'push'), s1(122), 'THE ENERGY BECOMES THE PUSH', 140, 860, 50, C.copper),
-		tag(w0(123, 'forty'), s1(123), 'EVERY 45 SECONDS', 140, 760, 64, C.slot, true),
-		tag(w0(126, 'power'), s1(126), 'A POWER STATION', 140, 760, 70, C.slot, false, '3 SECONDS AT A TIME'),
+		tag(w0(126, 'power'), s1(126), 'A POWER STATION', 140, 160, 70, C.slot, false, '3 SECONDS AT A TIME'),
 	],
 };
 
@@ -89,21 +91,13 @@ const ch4: Part = {
 		clip(S(144), 'FORD_launch', CR.usn, 0.5),
 		clip(S(146), 'SH_launch', CR.archive, 0, undefined, 'none'),
 		clip(S(147), 'EM12_launch', CR.usn, 2.0),
-		shot(S(148), 'doc-memo', (d, l) => (
+		// r3 fix 5: the memo and the maker's reply as one split, the reply landing on its sentence
+		shot(S(148), 'doc-memo-ga', (d, l) => (
 			<Plate dur={d} seed="memo">
-				<Doc
-					at={l}
-					head="THE WHITE HOUSE · 13 AUGUST 2026"
-					lines={['A plan “to replace the Electromagnetic Aircraft', 'Launch System … with steam”', 'on a future carrier (CVN-81)']}
-					mark={1}
-					markAt={at(w0(148, 'steam'), S(148), l)}
-					stamp="PRESIDENTIAL MEMORANDUM"
+				<DocPair
+					a={{at: l, head: 'WHITE HOUSE · 13 AUG 2026', lines: ['A plan “to replace the Electromagnetic', 'Aircraft Launch System … with steam”', 'on a future carrier, CVN-81'], mark: 1, markAt: at(w0(148, 'steam'), S(148), l), stamp: 'PRESIDENTIAL MEMORANDUM', big: 48}}
+					b={{at: at(w0(149, 'company'), S(148), l), head: 'GENERAL ATOMICS · 17 AUG', lines: ['The maker: the decision', '“warrants careful reconsideration.”'], mark: 1, markAt: at(w0(149, 'think'), S(148), l), big: 48}}
 				/>
-			</Plate>
-		)),
-		shot(S(149), 'doc-ga', (d, l) => (
-			<Plate dur={d} seed="ga">
-				<Doc at={l} head="GENERAL ATOMICS (THE MAKER) · 17 AUGUST 2026" lines={['The decision', '“warrants careful reconsideration.”']} mark={1} markAt={at(w0(149, 'think'), S(149), l)} />
 			</Plate>
 		)),
 		clip(S(151), 'KJ_launch', CR.pla, 2.0),
@@ -123,7 +117,7 @@ const ch4: Part = {
 		cnt(w0(145, 'thirty'), w0(145, 'launches'), s1(145) + 30, 36863, 'LAUNCHES', 140, 180, 110, C.cyan),
 		tag(w0(145, 'programme'), s1(145), 'SOURCE: THE PROGRAMME’S OWN COUNT', 140, 860, 40, C.dim),
 		tag(w0(147, 'young'), s1(147), 'STILL YOUNG', 140, 860, 60),
-		stamp(w0(150, 'nothing'), s1(150) + 10, 'NO DECISION YET', C.slot, 1340, 860),
+		stamp(w0(150, 'nothing'), s1(150) + 10, 'NO DECISION YET', C.slot, 1180, 170),
 		tag(w0(151, 'inventor'), s1(151), 'THE INVENTOR: IN TWO MINDS', 140, 760, 50),
 		tag(w0(151, 'newcomer'), s1(151), 'THE NEWCOMER: FLYING', 140, 860, 50, C.slot),
 	],

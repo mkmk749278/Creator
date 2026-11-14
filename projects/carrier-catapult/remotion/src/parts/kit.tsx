@@ -178,7 +178,8 @@ export const Credit: React.FC<{text: string}> = ({text}) => (
 );
 
 /** A number that counts on screen and lands on frame `b` (§9.9). */
-export const Count: React.FC<{a: number; b: number; from: number; to: number; x: number; y: number; size?: number; unit?: string; color?: string; decimals?: number; align?: 'left' | 'center'}> = ({
+export const Count: React.FC<{a: number; b: number; from: number; to: number; x: number; y: number; size?: number; unit?: string; color?: string; decimals?: number; align?: 'left' | 'center'; show?: number}> = ({
+	show,
 	a,
 	b,
 	from,
@@ -192,11 +193,12 @@ export const Count: React.FC<{a: number; b: number; from: number; to: number; x:
 	align = 'left',
 }) => {
 	const f = useCurrentFrame();
-	if (f < a - 6) {
+	const s0 = show ?? a - 6;
+	if (f < s0) {
 		return null;
 	}
 	const v = tw(f, a, b, from, to, ez.sweep);
-	const p = tw(f, a - 6, a + 6, 0, 1, ez.arrive);
+	const p = tw(f, s0, s0 + 12, 0, 1, ez.arrive);
 	return (
 		<div
 			style={{
@@ -323,7 +325,7 @@ export const Insert: React.FC<{name: string; dur: number; startAt?: number; aspe
 	return (
 		<AbsoluteFill style={{background: '#000'}}>
 			<OffthreadVideo src={src} startFrom={Math.round(startAt * 60)} playbackRate={rate} muted
-				style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(40px) brightness(0.4)', transform: 'scale(1.2)'}} />
+				style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(40px) brightness(0.45) saturate(1.1)', transform: `scale(${Math.max(1.2, (1.15 * 16) / 9 / aspect)})`}} />
 			<Cam dur={dur} from={[1.0, 0, 0]} to={[1.06, 0, -10]} seed={name} ease={(t) => t}>
 				<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
 					<div style={{width: height * aspect, height, overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,0.7)', border: '2px solid rgba(238,243,248,0.12)'}}>

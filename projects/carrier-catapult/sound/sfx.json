@@ -133,7 +133,7 @@
   {
    "at": "w:126:power",
    "sfx": "impact_low",
-   "gain_db": -12
+   "gain_db": -18
   },
   {
    "at": "w:141:one",
@@ -153,7 +153,7 @@
   {
    "at": "w:150:nothing",
    "sfx": "stamp",
-   "gain_db": -10
+   "gain_db": -16
   },
   {
    "at": "w:156:throw",
