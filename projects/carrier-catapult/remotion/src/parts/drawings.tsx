@@ -80,10 +80,10 @@ export const DeckPlan: React.FC<{slotAt: number; slotEnd: number; modelAt?: numb
 				<g opacity={o} transform={`translate(${(1 - o) * -80} 0)`}>
 					<path d={old} fill="#3a3326" stroke={C.amber} strokeWidth={3} />
 					<line x1={ox0 + oL * 0.3} y1={oy + 10} x2={ox0 + oL * 0.75} y2={oy - 70} stroke={C.amber} strokeOpacity={0.45} strokeWidth={3} strokeDasharray="20 16" />
-					<rect x={ox0 + oL * 0.66} y={oy + 52} width={150} height={30} fill="#3a3326" stroke={C.amber} strokeWidth={2} />
+					<rect x={ox0 + oL * 0.76} y={oy + 52} width={150} height={30} fill="#3a3326" stroke={C.amber} strokeWidth={2} />
 					<line x1={ox1 - 70 - 48 * PX_M * oc} y1={oy - 16} x2={ox1 - 70} y2={oy - 16} stroke={C.slot} strokeWidth={12} strokeLinecap="round" filter="url(#glow)" />
 					<T x={ox0 + 420} y={oy - 110} size={46} color={C.slot}>FIRST VIKRANT · 1961</T>
-					<T x={ox0 + 40} y={oy + 90} size={34} color={C.amber}>FLAT DECK · STEAM CATAPULT AT THE BOW</T>
+					<T x={ox0 + 40} y={oy + 90} size={34} color={C.amber}>FLAT DECK · STEAM CATAPULT</T>
 				</g>
 			) : null}
 			<path d={deckPath(cy)} fill="#2b3138" stroke={C.dim} strokeWidth={3} />
@@ -542,7 +542,7 @@ export const DoteBars: React.FC<{lineAt: number; b1At: number; b2At: number}> = 
 // ---------------------------------------------------------------- a document on the drafting table (the film's one pose)
 // Viewer review r3 fix 5: the card fills about 70% of the frame; the line the voice reads is large, the rest small;
 // the source sits on one line. On a TV at 720p the marked line is ~50 px, the others ~32 px.
-const DocCard: React.FC<{at: number; lines: string[]; mark?: number; markAt?: number; head: string; stamp?: string; width: number; tilt: number; big?: number; headSize?: number}> = ({
+const DocCard: React.FC<{at: number; lines: string[]; mark?: number; markAt?: number; head: string; stamp?: string; width: number; tilt: number; big?: number; headSize?: number; small?: number}> = ({
 	at,
 	lines,
 	mark,
@@ -553,6 +553,7 @@ const DocCard: React.FC<{at: number; lines: string[]; mark?: number; markAt?: nu
 	tilt,
 	big = 78,
 	headSize = 40,
+	small = 48,
 }) => {
 	const f = useCurrentFrame();
 	const p = tw(f, at, at + 22, 0, 1, ez.arrive);
@@ -577,7 +578,7 @@ const DocCard: React.FC<{at: number; lines: string[]; mark?: number; markAt?: nu
 						style={{
 							fontFamily: F.label,
 							fontWeight: on ? 800 : 700,
-							fontSize: mark === undefined ? Math.round(big * 0.8) : on ? big : 48,
+							fontSize: mark === undefined ? Math.round(big * 0.8) : on ? big : small,
 							color: on ? C.pencil : '#4a5560',
 							lineHeight: 1.22,
 							marginBottom: 16,
@@ -604,8 +605,8 @@ export const Doc: React.FC<{at: number; lines: string[]; mark?: number; markAt?:
 /** two documents side by side (S148–150: the White House memo and the maker's reply, one split, r3 fix 5) */
 export const DocPair: React.FC<{a: React.ComponentProps<typeof Doc>; b: React.ComponentProps<typeof Doc>}> = ({a, b}) => (
 	<AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: 40}}>
-		<DocCard {...a} width={690} tilt={-1.6} big={a.big ?? 60} headSize={32} />
-		<DocCard {...b} width={690} tilt={1.4} big={b.big ?? 60} headSize={32} />
+		<DocCard {...a} width={690} tilt={-1.6} big={a.big ?? 60} headSize={32} small={40} />
+		<DocCard {...b} width={690} tilt={1.4} big={b.big ?? 60} headSize={32} small={40} />
 	</AbsoluteFill>
 );
 

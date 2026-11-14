@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Img, Loop, staticFile, useCurrentFrame} from 'remotion';
 import type {Overlay, Shot} from '../Film';
 import {DeckPlan} from '../parts/drawings';
 import {Clip, Count, Credit, ez, Hero, Honesty, Insert, Label, Photo, Plate, tw, useSpring} from '../parts/kit';
@@ -187,9 +187,12 @@ export const EndCard: React.FC<{dur: number}> = ({dur}) => {
 	const fade = tw(f, 0, 24, 0, 1, ez.arrive);
 	return (
 		<AbsoluteFill>
-			<Plate dur={dur} seed="end" from={[1.0, 0, 0]} to={[1.06, -30, 0]}>
-				<AbsoluteFill style={{opacity: 0.55}}>
-					<DeckPlan slotAt={20} slotEnd={140} />
+			{/* r4 check: the end card must never hold still: a steady push across the plate, and the slot redraws every 4 s */}
+			<Plate dur={dur} seed="end" from={[1.0, 40, 0]} to={[1.22, -90, 30]}>
+				<AbsoluteFill style={{opacity: 0.6}}>
+					<Loop durationInFrames={240}>
+						<DeckPlan slotAt={10} slotEnd={150} />
+					</Loop>
 				</AbsoluteFill>
 			</Plate>
 			<AbsoluteFill style={{background: `rgba(3,7,13,${0.55 * fade})`}} />

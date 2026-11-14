@@ -95,8 +95,8 @@ const ch4: Part = {
 		shot(S(148), 'doc-memo-ga', (d, l) => (
 			<Plate dur={d} seed="memo">
 				<DocPair
-					a={{at: l, head: 'THE WHITE HOUSE · 13 AUG 2026', lines: ['A plan “to replace the Electromagnetic', 'Aircraft Launch System … with steam”', 'on a future carrier (CVN-81)'], mark: 1, markAt: at(w0(148, 'steam'), S(148), l), stamp: 'PRESIDENTIAL MEMORANDUM', big: 48}}
-					b={{at: at(w0(149, 'company'), S(148), l), head: 'GENERAL ATOMICS · 17 AUG 2026', lines: ['The maker: the decision', '“warrants careful reconsideration.”'], mark: 1, markAt: at(w0(149, 'think'), S(148), l), big: 48}}
+					a={{at: l, head: 'WHITE HOUSE · 13 AUG 2026', lines: ['A plan “to replace the Electromagnetic', 'Aircraft Launch System … with steam”', 'on a future carrier, CVN-81'], mark: 1, markAt: at(w0(148, 'steam'), S(148), l), stamp: 'PRESIDENTIAL MEMORANDUM', big: 48}}
+					b={{at: at(w0(149, 'company'), S(148), l), head: 'GENERAL ATOMICS · 17 AUG', lines: ['The maker: the decision', '“warrants careful reconsideration.”'], mark: 1, markAt: at(w0(149, 'think'), S(148), l), big: 48}}
 				/>
 			</Plate>
 		)),

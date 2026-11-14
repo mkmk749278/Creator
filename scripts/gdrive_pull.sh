@@ -35,5 +35,5 @@ EOF
 export RCLONE_CONFIG_GD_TYPE=drive RCLONE_CONFIG_GD_SCOPE=drive RCLONE_CONFIG_GD_TOKEN="$TOKEN"
 export RCLONE_CONFIG_GD_ROOT_FOLDER_ID="$FOLDER_ID" RCLONE_CONFIG=/dev/null
 mkdir -p "$DST"
-"$RCLONE" copy --retries 4 --stats-one-line --stats 30s "gd:$SRC" "$DST"
+"$RCLONE" copy --retries 4 --stats-one-line --stats 30s ${GDRIVE_INCLUDE:+--include "$GDRIVE_INCLUDE"} "gd:$SRC" "$DST"
 ls -la "$DST"
