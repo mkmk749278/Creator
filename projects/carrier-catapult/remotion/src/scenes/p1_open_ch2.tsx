@@ -1,8 +1,8 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import type {Part} from '../Film';
-import {Cooker, DeckPlan, Doc, Elevation61, HullCut, Meter, Radar, RampSide, SteamSplit} from '../parts/drawings';
-import {Clip, Hero, Plate} from '../parts/kit';
+import {Cooker, DeckPlan, Doc, Elevation61, HullCut, Meter, Radar, RampLoad, RampSide, SteamSplit} from '../parts/drawings';
+import {Clip, Hero, Photo, Plate} from '../parts/kit';
 import {SeaMap} from '../parts/SeaMap';
 import {C} from '../theme';
 import {s0, s1, w0} from '../timing';
@@ -18,7 +18,7 @@ const open: Part = {
 		// the thumbnail's subject: the Navy's own landing footage, slowed (the clip is 4.6 s)
 		clip(S(0), 'LAND_touch', CR.navyIT),
 		// S2–3: the deck plan; the slot draws and stops dead at the ramp on "A catapult."
-		draw(S(2), 'deckplan-open', (d, l) => <DeckPlan slotAt={at(w0(2, 'missing'), S(2), l)} slotEnd={at(w0(3, 'catapult'), S(2), l)} />, 'ILLUSTRATION'),
+		draw(S(2), 'deckplan-open', (d, l) => <DeckPlan slotAt={at(w0(2, 'missing'), S(2), l)} slotEnd={at(w0(3, 'catapult'), S(2), l)} oldAt={at(w0(2, 'first'), S(2), l)} />, 'ILLUSTRATION'),
 		clip(S(4), 'FORD_launch', CR.usn, 4.0, 'ILLUSTRATIVE FOOTAGE'),
 		clip(S(5), 'LAND_bow', CR.navyIT),
 		insert(S(6), 'LAND_ramp', CR.navyNDTV),
@@ -48,7 +48,6 @@ const open: Part = {
 		tag(w0(0, 'twenty'), s1(1), '29 OCT 2026', 140, 180, 52, C.ink, true),
 		tag(w0(1, 'rafale'), s1(1), 'RAFALE M', 140, 760, 60),
 		tag(w0(1, 'vikrant'), s1(1), 'INS VIKRANT', 140, 860, 52, C.dim),
-		tag(w0(2, 'nineteen'), s1(3), 'FIRST VIKRANT · 1961', 140, 860, 50, C.slot),
 		tag(w0(4, 'thrown'), s1(4), 'A CATAPULT LAUNCH', 140, 860, 52),
 		tag(w0(5, 'ramp'), s1(5), 'A RAMP', 140, 860, 64, C.slot),
 		tag(w0(9, 'sixty'), s1(9), '1961', 140, 180, 90, C.slot, true),
@@ -64,12 +63,16 @@ const ch1: Part = {
 		clip(S(17), 'PXL_flyover', CR.pex),
 		clip(pre(w0(17, 'ends')), 'LAND_bow', CR.navyIT, 0.6),
 		draw(S(18), 'ramp-noparts', (d, l) => <RampSide noPartsAt={at(w0(19, 'none'), S(18), l)} />, 'SIMPLIFIED'),
-		insert(S(20), 'LAND_ramp', CR.navyNDTV, 16 / 9, 1.0),
-		draw(S(21), 'ramp-nothing', () => <RampSide noPartsAt={0} />, 'SIMPLIFIED'),
+		// r4: one ramp drawing through S18–22 (the LAND_ramp insert was its second of four uses)
 		insert(S(23), 'MIG_deck', CR.navy, 9 / 16, 0, 900),
 		// the balance: what the ramp costs (a roadside seller's real two-pan balance)
+		// the balance (a roadside seller's real two-pan scale) on the catch only; the price itself is the ramp
+		// drawing's load bar shrinking on its words (viewer review r3 fix 7)
 		clip(S(24), 'PXL_balance', CR.pex),
-		clip(S(28), 'PXL_balance2', CR.pex),
+		draw(S(26), 'ramp-load', (d, l) => (
+			<RampLoad lighterAt={at(w0(26, 'lighter'), S(26), l)} fuelAt={at(w0(27, 'fuel'), S(26), l)} weapAt={at(w0(27, 'weapons'), S(26), l)} qAt={at(w0(29, 'published'), S(26), l)} />
+		), 'SIMPLIFIED'),
+		clip(S(30), 'PXL_balance2', CR.pex, 2.0),
 		draw(S(31), 'heavy', (d, l) => <RampSide heavyAt={l} dropAt={at(w0(32, 'ramp'), S(31), l)} />, 'SIMPLIFIED'),
 		shot(S(33), 'radar-plane', (d, l) => (
 			<Plate dur={d} seed="radar">
@@ -91,12 +94,9 @@ const ch1: Part = {
 		tag(w0(16, 'stand'), s1(16), 'ON VIKRANT’S DECK', 140, 860, 52),
 		tag(w0(17, 'flyover'), pre(w0(17, 'ends')), 'LIKE A FLYOVER', 140, 860, 56, C.slot),
 		tag(w0(23, 'clever'), s1(23), 'CHEAP · NOTHING TO BREAK', 140, 860, 50),
-		tag(w0(25, 'jet'), s1(27), 'JET', 1180, 240, 64),
-		tag(w0(26, 'lighter'), s1(27), 'TAKES OFF LIGHTER', 140, 860, 56, C.slot),
-		tag(w0(27, 'fuel'), s1(27), 'LESS FUEL', 1180, 360, 52, C.amber),
-		tag(w0(27, 'weapons'), s1(27), 'FEWER WEAPONS', 1180, 460, 52, C.amber),
-		tag(w0(28, 'how'), s1(30), 'HOW MUCH LIGHTER?', 140, 760, 60),
-		stamp(w0(29, 'published'), s1(30), 'NOT PUBLISHED', C.slot, 1340, 420),
+		tag(w0(25, 'engines'), s1(25), 'THE JET LIFTS ITSELF', 140, 760, 56),
+		tag(w0(28, 'how'), s1(28), 'HOW MUCH LIGHTER?', 140, 180, 60, C.slot),
+		stamp(w0(29, 'published'), s1(30), 'NOT PUBLISHED', C.slot, 760, 300),
 		tag(w0(32, 'heavy'), s1(32), 'HEAVY AND SLOW: NO', 140, 860, 56),
 		tag(w0(34, 'flying'), s1(35), 'THE FLYING RADAR', 140, 180, 60, C.cyan),
 		tag(w0(36, 'helicopter'), s1(37), 'INDIA’S CARRIERS: A HELICOPTER', 140, 860, 50),
@@ -166,11 +166,12 @@ const ch2: Part = {
 		hero(S(78), 'H_drum', 12.0),
 		clip(pre(w0(79, 'war')), 'W71_bow', CR.fd, 1.0, undefined, 'none'),
 		clip(S(80), 'SH_sea', CR.archive, 0, undefined, 'none'),
-		draw(S(81), 'elev-harrier', () => <Elevation61 sealAt={99999} liftAt={99999} />, 'ILLUSTRATION'),
+		// r3 fix 6: the real jet off a real Indian ramp (INS Viraat, 2007; public domain, U.S. Navy)
+		shot(S(81), 'sea_harrier', (d) => <Photo src="sea_harrier.jpg" dur={d} fit="cover" from={[1.04, 0, 0]} to={[1.16, -60, 30]} />, {credit: 'PHOTO: U.S. NAVY'}),
 		clip(S(82), 'AL_start', CR.archive, 0, undefined, 'none'),
 		clip(pre(w0(82, 'retired')), 'AL_ship', CR.archive, 0, undefined, 'none'),
 		draw(S(83), 'elev-ramp', (d, l) => <Elevation61 sealAt={at(w0(83, 'catapult'), S(83), l)} liftAt={at(w0(83, 'ramp'), S(83), l)} />, 'ILLUSTRATION · SIMPLIFIED'),
-		clip(S(84), 'LAND_bow', CR.navyIT, 0.2),
+		clip(S(85), 'LAND_bow', CR.navyIT, 0.2),
 		insert(S(86), 'MIG_deck', CR.navy, 9 / 16, 0, 900),
 		clip(pre(w0(86, 'ramp')), 'LAND_bow', CR.navyIT, 1.2),
 		draw(S(87), 'hullcut', (d, l) => <HullCut turbAt={at(w0(87, 'gas'), S(87), l)} fillAt={at(w0(89, 'room'), S(87), l)} />, 'ILLUSTRATION · SIMPLIFIED'),
@@ -204,7 +205,7 @@ const ch2: Part = {
 		tag(w0(76, 'fourth'), s1(76), '4 DEC 1971', 140, 180, 70, C.slot, true),
 		tag(w0(77, 'vir'), s1(77), 'VIR CHAKRA', 140, 760, 64, C.slot, false, 'A MEDAL FOR BRAVERY'),
 		tag(w0(79, 'steel'), s1(79), 'KEPT ALIVE WITH STEEL BANDS', 140, 860, 50, C.slot),
-		tag(w0(81, 'harrier'), s1(81), 'SEA HARRIER · NEEDS NO CATAPULT', 140, 860, 50),
+		tag(w0(81, 'harrier'), s1(81), 'SEA HARRIER · NEEDS NO CATAPULT', 140, 860, 50, C.ink, false, 'INDIAN NAVY · INS VIRAAT, 2007'),
 		tag(w0(82, 'nineteen'), s1(82), 'LAST ALIZÉS RETIRED · 1989', 140, 860, 50, C.ink),
 		tag(w0(86, 'ramp'), s1(86), 'DESIGNED FOR A RAMP JET', 140, 860, 52),
 		tag(w0(89, 'naval'), s1(89), 'NAVAL ANALYSTS', 140, 180, 46, C.dim, false, 'THEIR VIEW, NOT THE NAVY’S'),

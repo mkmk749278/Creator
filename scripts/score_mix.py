@@ -42,7 +42,8 @@ class Anchors:
     def __init__(self, timing: dict):
         self.s = {s["id"]: s for s in timing["sentences"]}
         self.words = timing["words"]
-        self.dur = timing["duration"]
+        # 'end' is the picture's end (voice + the end card), so a last slot to 'end' scores the end card too
+        self.dur = timing.get("durationInFrames", 0) / timing.get("fps", 60) or timing["duration"]
 
     def __call__(self, a) -> float:
         if isinstance(a, (int, float)):

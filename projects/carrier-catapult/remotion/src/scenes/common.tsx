@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import type {Overlay, Shot} from '../Film';
+import {DeckPlan} from '../parts/drawings';
 import {Clip, Count, Credit, ez, Hero, Honesty, Insert, Label, Photo, Plate, tw, useSpring} from '../parts/kit';
 import {C, F} from '../theme';
 import {s0, w0} from '../timing';
@@ -91,20 +92,24 @@ export const Stamp: React.FC<{at: number; text: string; color: string; x?: numbe
 	);
 };
 
+/** Lower-thirds sit clear of YouTube's subtitles (a third of the audience reads them; viewer review r3 fix 2): the
+ *  old rows y 760 / 820 / 860 move up to 570 / 640 / 690, ~25% larger, so even a two-row stack ends above 75% of the
+ *  frame height. Tags placed higher (dates, names at the top) keep their place and size. */
+export const lowY = (y: number, sub?: string): number => (y < 740 ? y : (y >= 850 ? 690 : y >= 800 ? 640 : 570) - (sub && y >= 800 ? 50 : 0));
 export const tag = (from: number, to: number, text: string, x = 140, y = 760, size = 56, color: string = C.ink, mono = false, sub?: string): Overlay =>
-	lab(from, to, 'tag ' + text, <Label at={0} text={text} x={x} y={y} size={size} color={color} mono={mono} sub={sub} />);
+	lab(from, to, 'tag ' + text, <Label at={0} text={text} x={x} y={lowY(y, sub)} size={y >= 740 ? Math.min(84, Math.round(size * 1.25)) : size} color={color} mono={mono} sub={sub} />);
 
-export const cnt = (from: number, land: number, to: number, value: number, unit: string, x = 140, y = 200, size = 110, color: string = C.slot, startValue = 0): Overlay =>
-	lab(from, to, 'count ' + unit, <Count a={0} b={Math.max(12, land - from)} from={startValue} to={value} x={x} y={y} size={size} unit={unit} color={color} />);
+export const cnt = (from: number, land: number, to: number, value: number, unit: string, x = 140, y = 200, size = 110, color: string = C.slot, startValue = 0, show?: number): Overlay =>
+	lab(show ?? from, to, 'count ' + unit, <Count show={0} a={from - (show ?? from)} b={Math.max(12, land - from) + from - (show ?? from)} from={startValue} to={value} x={x} y={y} size={size} unit={unit} color={color} />);
 
 export const stamp = (from: number, to: number, text: string, color: string, x?: number, y?: number): Overlay =>
-	lab(from, to, 'stamp ' + text, <Stamp at={0} text={text} color={color} x={x} y={y} />);
+	lab(from, to, 'stamp ' + text, <Stamp at={0} text={text} color={color} x={x} y={y !== undefined && y > 700 ? 640 : y} />);
 
 /** the viewer's own objection, as they would say it to Kishore */
 export const Ask: React.FC<{text: string}> = ({text}) => {
 	const p = useSpring(0, 200, 16);
 	return (
-		<div style={{position: 'absolute', left: 140, top: 700, transform: `scale(${0.85 + 0.15 * p})`, transformOrigin: '0% 100%', opacity: p}}>
+		<div style={{position: 'absolute', left: 140, top: 520, transform: `scale(${0.85 + 0.15 * p})`, transformOrigin: '0% 100%', opacity: p}}>
 			<div style={{fontFamily: F.label, fontWeight: 700, fontSize: 36, letterSpacing: 3, color: C.slot, marginBottom: 10, textShadow: '0 2px 10px rgba(0,0,0,0.9)'}}>YOU ASK KISHORE</div>
 			<div style={{display: 'inline-block', fontFamily: F.label, fontWeight: 800, fontSize: 60, color: '#0d1117', background: C.ink, padding: '18px 34px', borderRadius: '28px 28px 28px 4px', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', whiteSpace: 'nowrap'}}>
 				{text}
@@ -173,16 +178,25 @@ export const SubscribePill: React.FC<{press: number}> = ({press}) => {
 	);
 };
 
-/** the end card: the channel's mark (the only logo in the film) over the deck, darkened */
+/** the end card (20 s, r3 fix 10: room for YouTube's end screen): the channel's mark (the only logo in the film) at
+ *  the top over the deck plan on the plate, its slot glowing and breathing; the lower half stays clear for the
+ *  end-screen video and subscribe elements. */
 export const EndCard: React.FC<{dur: number}> = ({dur}) => {
 	const f = useCurrentFrame();
 	const logo = useSpring(10);
 	const fade = tw(f, 0, 24, 0, 1, ez.arrive);
 	return (
 		<AbsoluteFill>
-			<Clip name="LAND_bow" dur={dur} grade="day" />
-			<AbsoluteFill style={{background: `rgba(3,7,13,${0.82 * fade})`, alignItems: 'center', justifyContent: 'center'}}>
-				<Img src={staticFile('brand/logo_square.png')} style={{width: 420, height: 420, opacity: logo, transform: `scale(${(0.9 + 0.1 * logo) * (1 + 0.08 * tw(f, 0, dur, 0, 1, (t) => t))})`, borderRadius: 24}} />
+			<Plate dur={dur} seed="end" from={[1.0, 0, 0]} to={[1.06, -30, 0]}>
+				<AbsoluteFill style={{opacity: 0.55}}>
+					<DeckPlan slotAt={20} slotEnd={140} />
+				</AbsoluteFill>
+			</Plate>
+			<AbsoluteFill style={{background: `rgba(3,7,13,${0.55 * fade})`}} />
+			<AbsoluteFill style={{alignItems: 'center', paddingTop: 70}}>
+				<Img src={staticFile('brand/logo_square.png')} style={{width: 220, height: 220, opacity: logo, transform: `scale(${(0.9 + 0.1 * logo) * (1 + 0.05 * tw(f, 0, dur, 0, 1, (t) => t))})`, borderRadius: 20}} />
+				<div style={{marginTop: 24, fontFamily: F.label, fontWeight: 800, fontSize: 52, color: C.ink, letterSpacing: 2, opacity: logo}}>BE PRACTICAL WITH KISHORE</div>
+				<div style={{marginTop: 10, fontFamily: F.label, fontWeight: 700, fontSize: 38, color: C.slot, letterSpacing: 2, opacity: tw(f, 40, 70, 0, 1)}}>STAY PRACTICAL</div>
 			</AbsoluteFill>
 		</AbsoluteFill>
 	);
