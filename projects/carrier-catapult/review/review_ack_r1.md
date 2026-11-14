@@ -1,7 +1,7 @@
 # Acknowledgement of the independent viewer review of r3 (→ r4)
 
 Each point was checked against the composition and a still before changing anything (PLAYBOOK §13.3). The narration is
-locked and unchanged. FIXED = in r4 (run 43578275297), checked on stills at its frames.
+locked and unchanged. FIXED = in r4 (run 43578275297), checked on stills at its frames. r5 (run 43580873877) adds three fixes from our own r4 check: the 1961 label clear of the island, uncut document heads, an end card that never holds still. r5: 11:04, −14.0 LUFS, −1.4 dBTP, no freezes or black.
 
 | # | Point | Status | What we did / evidence |
 |---|---|---|---|

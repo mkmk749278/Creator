@@ -210,3 +210,9 @@
 - **r4 dispatched:** run 43578275297 (6 runners) → Drive `renders/carrier-catapult_review_r4_720p.mp4`.
 - **Next:** our review of r4 (freeze, loudness, frames at every changed beat), then r4 + `review_ack_r1.md` to the
   owner for approval; unshare r3 (Drive file 17N1kR999AlaYPqynqS9aPBANWBG4Rggg); then the 4K master.
+- **r4 (run 43578275297) checked:** −14.0 LUFS, −1.4 dBTP, no black; frames at every changed beat right. Found and
+  fixed: the 1961 label touched the old ship's island, the document heads were cut off, the 20 s end card held
+  still (freezes from 10:45). **r5** (run 43580873877, Drive `renders/carrier-catapult_review_r5_720p.mp4`, file
+  1TceL2huLkdlBnb2eP475N5WbNGitBa4P): −14.0 LUFS, −1.4 dBTP, 11:04, no freezes, no black; the three spots checked.
+- **Next:** the owner approves r5 (or asks for changes); then unshare r3 (17N1kR999AlaYPqynqS9aPBANWBG4Rggg), the 4K
+  master (`scale 2`, same workflow), the package when asked, the fresh-facts gate within 24 h of upload.
