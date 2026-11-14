@@ -147,3 +147,55 @@
   `mix/`. `vo-render/` holds lock.json and vo_full.wav.
 - **Next:** finish the clips, sync `render-media/`, render the 720p review cut on GitHub, our own review
   (`review-cut`), then the independent viewer review.
+
+## Session 5, continued (2026-11-13): the review cuts
+- r1 (run 43399044281), r2 (43404314348), r3 (43407401810): measured and read against the words each time; every
+  fix in `review/review.md`. r3: no freezes, −14.0 LUFS, −1.4 dBTP. One overlap left in r3 ("FAR SHORT" over the
+  181 label, 7:16), fixed in code for the next render.
+- **Owner, 2026-11-13: share r3 for the independent viewer review.** r3 shared "anyone with the link" (Drive file
+  17N1kR999AlaYPqynqS9aPBANWBG4Rggg). Review session `session_019NnLekPrc9ecvtsWJk5rj8` (no repo); its answer →
+  `review/review_viewer_r3.md`, then fixes, `review_ack_r1.md`, the owner's approval of the cut, the 4K master.
+
+## Session 5, end (2026-11-14): viewer review collected → handoff (owner: "after collecting review, prepare handoff
+## and merge work; we open a new session later")
+- **The independent viewer review of r3 is in:** `review/review_viewer_r3.md` (verdict: not ready; publishable after
+  its fixes 1–5; scores 7–9; peak at the boiler/Bilu/1971 stretch; drifts at the repeated flywheel/Ford shots, the
+  document cards, and the end).
+- **State:** composition on `main` = r3 + one fix ("FAR SHORT" moved clear of the 181 label). Audio locked
+  (`vo/lock.json`, f416a57d…), mix in Drive `mix/` (−14 LUFS). Clips in Drive `render-media/` (37) and in the
+  gitignored `assets/media/` of this session only. Cuts: Drive `renders/carrier-catapult_review_r{1,2,3}_720p.mp4`;
+  **r3 is shared "anyone with the link"** (file 17N1kR999AlaYPqynqS9aPBANWBG4Rggg): unshare it once the review round
+  is closed.
+
+### Next session: start here
+1. **Pull the media first:** `scripts/gdrive_pull.sh English/carrier-catapult/render-media projects/carrier-catapult/assets/media`
+   and `.../vo-render` → `assets/vo`; `cd remotion && npm ci`. Test stills: `npx remotion still` on a bundle (see
+   this file's earlier sections); shot list and run-out check: the esbuild snippet in `review/review.md`'s history
+   (bundle `src/_shots.ts`, list every shot's start and length; flag clips whose footage is under half the shot).
+2. **Check every review point against the composition and a frame before changing anything** (§13.3), then fix and
+   write `review/review_ack_r1.md` (FIXED / FIXED NEXT / OPEN / CHECKED with evidence). My first read of its points:
+   - **#1 real:** S2's "FIRST VIKRANT · 1961" tag sits on the *new* ship's deck plan (the ramp hatch is drawn).
+     Either draw the 1961 ship (flat deck, slot to the bow; `Elevation61` already exists in side view) or change the
+     tag (e.g. "INDIA'S FIRST CARRIER HAD ONE · 1961") so it no longer labels this outline.
+   - **#2 real:** tags sit at y 760–860 of 1080 (`tag(..., 140, 860, ...)` in the scene files): move every lower-third
+     to ≤ 740 and the size up (subtitles take the bottom ~15% for a third of the audience). Also `Label` size.
+   - **#3 real (measured):** `sound/score.json` `duck_db` −20 → about −26 and `bed_rms_db` −24 → −28; the stamp at
+     S150 and the cue near 6:28 (`w:126:power` impact_low) down 6 dB in `sound/sfx.json`; re-run `score_mix.py`,
+     upload `mix/mix.wav`.
+   - **#4 real:** `ThreeItems` row runs off the right edge: pull the third item in (x 1560 → 1450) or scale the row.
+   - **#5 real:** `Doc` cards: larger (the line in focus big, the rest small), less time each; merge the White House
+     and General Atomics cards (S148–150) into one split.
+   - **#6:** a Sea Harrier picture needs a licence-clean source (none in hand: search Wikimedia Commons for an
+     Indian Navy Sea Harrier, CC BY / PD); animate `Elevation61` (it already seals the slot and lifts the ramp on
+     S83: check the frame the reviewer saw).
+   - **#7:** the market balance (S24–30): keep the real Indian picture, but cut it to two shorter shots and add the
+     ramp drawing's load bar; or replace as suggested.
+   - **#8:** repeats: H_store at S120/122/124/135, FORD_launch/FORD_cat ×6, LAND_ramp ×3, H_drum ×4: vary.
+   - **#9:** the islands line is a *new fact on screen*: only with a source in `claims.csv`, else skip.
+   - **#10:** a 20 s end card means re-locking with `--outro 20` (`vo_lock.py`) and re-mixing (the score's last slot runs
+     to `end`); the speed counter from 0 (S106: check, it already counts from 0 on "standing"); blurred fills behind
+     the vertical clips (the `Insert` kit already blurs a copy behind: check 1:04 and 4:22).
+3. Render r4 (720p, `remotion-render.yml`, 11 runners), our review again, send the owner r4 + `review_ack_r1.md`;
+   **the owner approves the cut**, then the 4K master (`scale 2`), then the package when asked.
+4. Before upload: the fresh-facts gate (PLAYBOOK §8): the `fresh` rows in `claims.csv` (the next carrier's status,
+   the US steam plan, the rupee rate for $1.321 billion).
